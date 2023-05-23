@@ -1,10 +1,11 @@
 import { CSSInterpolation } from "@emotion/serialize";
-import { alpha, hexToRgb } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
 import { CSSProperties } from "react";
-import tableCellClasses from "./tableCellClasses";
+import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: Partial<
+  Record<keyof HvTableCellClasses, CSSInterpolation>
+> = {
   root: {
     verticalAlign: "inherit",
     textAlign: "left",
@@ -31,10 +32,11 @@ export const styles: { [key: string]: CSSInterpolation } = {
     backgroundColor: "inherit",
     ...(theme.typography.body as CSSProperties),
     fontFamily: theme.fontFamily.body,
-
-    [`&.${tableCellClasses.sorted}`]: {
-      backgroundColor: alpha(hexToRgb(theme.colors.atmo1), 0.4),
-    },
+    //these styles were left on a styled component because of the access to the css var value to add an alpha.
+    // [`&.${tableCellClasses.sorted}`]: {
+    // backgroundColor: alpha(hexToRgb(theme.colors.atmo1), 0.4),
+    //backgroundColor: hexToRgbA(theme.colors.atmo1, 0.4),
+    // },
   },
   footer: {},
 
@@ -113,14 +115,14 @@ export const styles: { [key: string]: CSSInterpolation } = {
       {
         borderLeft: 0,
       },
-
-    [`&.${tableCellClasses.sorted}`]: {
-      backgroundColor: theme.colors.atmo2,
-      backgroundImage: `linear-gradient(to right, ${alpha(
-        hexToRgb(theme.colors.atmo1),
-        0.4
-      )}, ${alpha(hexToRgb(theme.colors.atmo1), 0.4)})`,
-    },
+    //these styles were left on a styled component because of the access to the css var value to add an alpha.
+    // [`&.${tableCellClasses.sorted}`]: {
+    //   backgroundColor: theme.colors.atmo2,
+    //   backgroundImage: `linear-gradient(to right, ${alpha(
+    //     hexToRgb(theme.colors.atmo1),
+    //     0.4
+    //   )}, ${alpha(hexToRgb(theme.colors.atmo1), 0.4)})`,
+    // },
   },
   stickyColumnMostLeft: {
     borderRight: theme.table.cellBorder,

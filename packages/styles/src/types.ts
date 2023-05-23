@@ -235,12 +235,16 @@ export type HvThemeComponents = {
     rowBorderColor: string;
     rowBackgroundColor: string;
     rowBorderRadius: string;
+    rowListBackgroundColor: string;
     rowListBorderRadius: string;
     rowListBorderColor: string;
-    rowStripedBackgroundColor: string;
+    rowStripedBackgroundColorEven: string;
+    rowStripedBackgroundColorOdd: string;
     rowExpandBackgroundColor: string;
     rowHoverColor: string;
     rowHoverBorderColor: string;
+    rowSortedColor: string;
+    rowSortedColorAlpha: string;
     cellPaddingTop: string;
     cellPaddingBottom: string;
     cellListBorder: string;

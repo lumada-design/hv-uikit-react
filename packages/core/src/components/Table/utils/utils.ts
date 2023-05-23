@@ -49,3 +49,8 @@ export const getBorderStyles = (
     };
   }
 };
+
+export const checkValidHexColorValue = (value: string): boolean => {
+  var reg = /^#([0-9a-f]{3}){1,2}$/i;
+  return reg.test(value);
+};

@@ -1,13 +1,14 @@
 import { CSSInterpolation } from "@emotion/serialize";
-import { alpha, hexToRgb } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
 import { getBorderStyles } from "../utils/utils";
-import tableRowClasses from "./tableRowClasses";
+import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: Partial<
+  Record<keyof HvTableRowClasses, CSSInterpolation>
+> = {
   root: {
     color: "inherit",
-    backgroundColor: "inherit",
+    backgroundColor: theme.table.rowBackgroundColor,
     verticalAlign: "middle",
     outline: 0,
     minHeight: 32,
@@ -26,7 +27,9 @@ export const styles: { [key: string]: CSSInterpolation } = {
   },
   body: {},
   footer: {},
-  selected: {},
+  selected: {
+    backgroundColor: theme.table.selectedRowBackgroundColor,
+  },
   expanded: {
     backgroundColor: theme.colors.atmo1,
     "& > *[role=cell]": {
@@ -34,9 +37,16 @@ export const styles: { [key: string]: CSSInterpolation } = {
     },
   },
   striped: {
-    "&:nth-child(even)": {
-      backgroundColor: alpha(hexToRgb(theme.colors.atmo1), 0.6),
-    },
+    //these styles were left on a styled component because of the access to the css var value to add an alpha.
+    // "&:nth-of-type(even)": {
+    // backgroundColor: hexToRgbA(
+    //   getVarValue(theme.table.rowStripedBackgroundColor),
+    //   0.6
+    // ),
+    //   "&:hover": {
+    //     backgroundColor: theme.table.rowHoverColor,
+    //   },
+    // },
   },
   hover: {
     transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
@@ -80,6 +90,7 @@ export const styles: { [key: string]: CSSInterpolation } = {
     },
   },
   variantListHead: {
+    backgroundColor: theme.table.rowListBackgroundColor,
     height: 16,
     "&:first-child": {
       height: 16,
@@ -89,7 +100,7 @@ export const styles: { [key: string]: CSSInterpolation } = {
       height: 16,
     },
   },
-  "&.HvIsFocused": {
-    borderRadius: theme.table.rowBorderRadius,
-  },
+  // "&.HvIsFocused": {
+  //   borderRadius: theme.table.rowBorderRadius,
+  // },
 };

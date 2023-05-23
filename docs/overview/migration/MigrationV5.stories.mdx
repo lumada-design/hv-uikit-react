@@ -43,6 +43,7 @@ Here's what there is to know about this migration:
   - [Date picker](#date-picker)
   - [Color picker](#color-picker)
   - [Carousel](#carousel)
+  - [Table Renderer - Expand Column](#table-renderer-expand-column)
 
 ## React packages <a id="react-packages" />
 
@@ -739,3 +740,10 @@ const images = ["img1.png", "img2.png", "img3.png"];
 +  {images.map((src) => <HvCarouselSlide src={src} />)}
 +</HvCarousel>
 ```
+
+### Table Renderer - hvExpandColumn <a id="table-renderer-expand-column" />
+
+The default icon for this component has changed to the one specified in DS5 specifications, in order to be possible to revert to the previous icon or customize to any other, the following properties where added:
+
+- `isExpandedIcon`
+- `isCollapsedIcon`

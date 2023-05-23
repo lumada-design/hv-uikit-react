@@ -1,16 +1,26 @@
+import styled from "@emotion/styled";
 import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
-import { CSSProperties, forwardRef, TdHTMLAttributes, useContext } from "react";
+import {
+  CSSProperties,
+  forwardRef,
+  TdHTMLAttributes,
+  useContext,
+  useMemo,
+} from "react";
 import {
   HvTableCellAlign,
   HvTableCellType,
   HvTableCellVariant,
 } from "../Table";
 import TableContext from "../TableContext";
-
+import { transientOptions } from "@core/utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 import capitalize from "lodash/capitalize";
 import { ClassNames } from "@emotion/react";
 import { styles } from "./TableCell.styles";
+import { theme } from "@hitachivantara/uikit-styles";
+import { getVarValue, hexToRgbA } from "@core/utils";
+import { checkValidHexColorValue } from "../utils";
 
 export interface HvTableCellProps
   extends Omit<TdHTMLAttributes<HTMLTableCellElement>, "align"> {
@@ -48,6 +58,39 @@ export interface HvTableCellProps
 
 const defaultComponent = "td";
 
+interface StyledTableCellProps {
+  $variantList: boolean;
+  $variantListHead: boolean;
+  $stickyColumn: boolean;
+  $stickyColumnMostLeft: boolean;
+  $stickyColumnLeastRight: boolean;
+  $groupColumnMostLeft: boolean;
+  $groupColumnMostRight: boolean;
+  $resizable: boolean;
+  $resizing: boolean;
+  $align: string;
+  $variant: string;
+  $type: string;
+  $sortedColor: string;
+}
+
+const StyledTableCell = (c: any) =>
+  styled(
+    c,
+    transientOptions
+  )(({ $stickyColumn, $type, $sortedColor }: StyledTableCellProps) => ({
+    ...($type === "body" && {
+      [`&.${tableCellClasses.sorted}`]: {
+        backgroundColor: $sortedColor,
+      },
+    }),
+    ...($stickyColumn && {
+      [`&.${tableCellClasses.sorted}`]: {
+        backgroundImage: `linear-gradient(to right, ${$sortedColor}, ${$sortedColor})`,
+      },
+    }),
+  }));
+
 /**
  * `HvTableCell` acts as a `td` element and inherits styles from its context
  */
@@ -82,76 +125,111 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
     const Component =
       component || tableContext?.components?.Td || defaultComponent;
 
+    const TableCell = useMemo(() => StyledTableCell(Component), [Component]);
+
+    const sortedColorValue = getVarValue(theme.table.rowSortedColor);
+    const sortedColorAlpha = getVarValue(theme.table.rowSortedColorAlpha);
+
+    const sortedColor = checkValidHexColorValue(sortedColorValue)
+      ? hexToRgbA(sortedColorValue, parseFloat(sortedColorAlpha))
+      : sortedColorValue;
+
     return (
       <ClassNames>
         {({ css, cx }) => (
-          <Component
+          <TableCell
             ref={externalRef}
             role={Component === defaultComponent ? null : "cell"}
             style={style}
             className={cx(
-              className,
               tableCellClasses.root,
-              tableCellClasses[type],
-              align !== "inherit" &&
-                cx(tableCellClasses[`align${capitalize(align)}`]),
-              tableContext.variant === "listrow" &&
-                cx(tableCellClasses[`align${capitalize(align)}`]),
-              tableContext.variant === "listrow" &&
-                type !== "body" &&
-                cx(tableCellClasses.variantListHead),
-              variant !== "default" &&
-                cx(tableCellClasses[`variant${capitalize(variant)}`]),
-              sorted && cx(tableCellClasses.sorted),
-              stickyColumn && cx(tableCellClasses.stickyColumn),
-              stickyColumnMostLeft && cx(tableCellClasses.stickyColumnMostLeft),
-              stickyColumnLeastRight &&
-                cx(tableCellClasses.stickyColumnLeastRight),
-              groupColumnMostLeft && cx(tableCellClasses.groupColumnMostLeft),
-              groupColumnMostRight && cx(tableCellClasses.groupColumnMostRight),
-              resizable && cx(tableCellClasses.resizable),
-              resizing && cx(tableCellClasses.resizing),
-
+              className,
+              classes?.root,
               css(styles.root),
+              tableCellClasses[type],
+              classes?.[type],
               css(styles[type]),
               align !== "inherit" &&
-                cx(css(styles[`align${capitalize(align)}`])),
-              tableContext.variant === "listrow" && cx(css(styles.variantList)),
+                cx(
+                  tableCellClasses[`align${capitalize(align)}`],
+                  classes?.[`align${capitalize(align)}`],
+                  css(styles[`align${capitalize(align)}`])
+                ),
+              tableContext.variant === "listrow" &&
+                cx(
+                  tableCellClasses.variantList,
+                  classes?.variantList,
+                  css(styles.variantList)
+                ),
               tableContext.variant === "listrow" &&
                 type !== "body" &&
-                cx(css(styles.variantListHead)),
+                cx(
+                  tableCellClasses.variantListHead,
+                  classes?.variantListHead,
+                  css(styles.variantListHead)
+                ),
               variant !== "default" &&
-                cx(css(styles[`variant${capitalize(variant)}`])),
-              sorted && cx(css(styles.sorted)),
-              stickyColumn && cx(css(styles.stickyColumn)),
-              stickyColumnMostLeft && cx(css(styles.stickyColumnMostLeft)),
-              stickyColumnLeastRight && cx(css(styles.stickyColumnLeastRight)),
-              groupColumnMostLeft && cx(css(styles.groupColumnMostLeft)),
-              groupColumnMostRight && cx(css(styles.groupColumnMostRight)),
-              resizable && cx(css(styles.resizable)),
-              resizing && cx(css(styles.resizing)),
-              classes?.root,
-              classes?.[type],
-              align !== "inherit" && cx(classes?.[`align${capitalize(align)}`]),
-              tableContext.variant === "listrow" && cx(classes?.variantList),
-              tableContext.variant === "listrow" &&
-                type !== "body" &&
-                cx(classes?.variantListHead),
-              variant !== "default" &&
-                cx(classes?.[`variant${capitalize(variant)}`]),
-              sorted && cx(classes?.sorted),
-              stickyColumn && cx(classes?.stickyColumn),
-              stickyColumnMostLeft && cx(classes?.stickyColumnMostLeft),
-              stickyColumnLeastRight && cx(classes?.stickyColumnLeastRight),
-              groupColumnMostLeft && cx(classes?.groupColumnMostLeft),
-              groupColumnMostRight && cx(classes?.groupColumnMostRight),
-              resizable && cx(classes?.resizable),
-              resizing && cx(classes?.resizing)
+                cx(
+                  tableCellClasses[`variant${capitalize(variant)}`],
+                  classes?.[`variant${capitalize(variant)}`],
+                  css(styles[`variant${capitalize(variant)}`])
+                ),
+              sorted &&
+                cx(
+                  tableCellClasses.sorted,
+                  classes?.sorted,
+                  css(styles.sorted)
+                ),
+              stickyColumn &&
+                cx(
+                  tableCellClasses.stickyColumn,
+                  classes?.stickyColumn,
+                  css(styles.stickyColumn)
+                ),
+              stickyColumnMostLeft &&
+                cx(
+                  tableCellClasses.stickyColumnMostLeft,
+                  classes?.stickyColumnMostLeft,
+                  css(styles.stickyColumnMostLeft)
+                ),
+              stickyColumnLeastRight &&
+                cx(
+                  tableCellClasses.stickyColumnLeastRight,
+                  classes?.stickyColumnLeastRight,
+                  css(styles.stickyColumnLeastRight)
+                ),
+              groupColumnMostLeft &&
+                cx(
+                  tableCellClasses.groupColumnMostLeft,
+                  classes?.groupColumnMostLeft,
+                  css(styles.groupColumnMostLeft)
+                ),
+              groupColumnMostRight &&
+                cx(
+                  tableCellClasses.groupColumnMostRight,
+                  classes?.groupColumnMostRight,
+                  css(styles.groupColumnMostRight)
+                ),
+              resizable &&
+                cx(
+                  tableCellClasses.resizable,
+                  classes?.resizable,
+                  css(styles.resizable)
+                ),
+              resizing &&
+                cx(
+                  tableCellClasses.resizing,
+                  classes?.resizing,
+                  css(styles.resizing)
+                )
             )}
+            $type={type}
+            $stickyColumn={stickyColumn}
+            $sortedColor={sortedColor}
             {...others}
           >
             {children}
-          </Component>
+          </TableCell>
         )}
       </ClassNames>
     );

@@ -1201,6 +1201,8 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
               paddingTop: 0,
               textAlign: "center",
               height: 100,
+              backgroundColor: "theme.colors.atmo2",
+              borderTop: "solid 1px theme.colors.atmo4",
             }}
             colSpan="100%"
           >

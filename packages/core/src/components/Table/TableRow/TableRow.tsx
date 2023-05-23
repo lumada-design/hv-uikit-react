@@ -1,10 +1,15 @@
 import { HvBaseProps } from "@core/types";
+import styled from "@emotion/styled";
 import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
-import { forwardRef, useContext } from "react";
+import { forwardRef, useContext, useMemo } from "react";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { ClassNames } from "@emotion/react";
 import { styles } from "./TableRow.styles";
+import { transientOptions } from "@core/utils/transientOptions";
+import { theme } from "@hitachivantara/uikit-styles";
+import { getVarValue, hexToRgbA } from "@core/utils";
+import { checkValidHexColorValue } from "../utils";
 
 export interface HvTableRowProps
   extends HvBaseProps<HTMLTableRowElement, "children"> {
@@ -25,6 +30,37 @@ export interface HvTableRowProps
 }
 
 const defaultComponent = "tr";
+
+const StyledTableRow = (c: any) =>
+  styled(
+    c,
+    transientOptions
+  )(
+    ({
+      $striped,
+      $stripedColorEven,
+      $stripedColorOdd,
+    }: {
+      $striped: boolean;
+      $stripedColorEven: string;
+      $stripedColorOdd: string;
+    }) => ({
+      ...($striped && {
+        [`&:nth-of-type(even)`]: {
+          backgroundColor: $stripedColorEven,
+          "&:hover": {
+            backgroundColor: theme.table.rowHoverColor,
+          },
+        },
+        [`&:nth-of-type(odd)`]: {
+          backgroundColor: $stripedColorOdd,
+          "&:hover": {
+            backgroundColor: theme.table.rowHoverColor,
+          },
+        },
+      }),
+    })
+  );
 
 /**
  * `HvTableRow` acts as a `tr` element and inherits styles from its context
@@ -53,42 +89,73 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
     const Component =
       component || tableContext?.components?.Tr || defaultComponent;
 
+    const TableRow = useMemo(() => StyledTableRow(Component), [Component]);
+
+    const even = getVarValue(theme.table.rowStripedBackgroundColorEven);
+
+    const odd = getVarValue(theme.table.rowStripedBackgroundColorOdd);
+
+    const stripedColorEven = checkValidHexColorValue(even)
+      ? hexToRgbA(even, 0.6)
+      : even;
+
+    const stripedColorOdd = checkValidHexColorValue(odd)
+      ? hexToRgbA(odd, 0.6)
+      : odd;
+
     return (
       <ClassNames>
         {({ css, cx }) => (
-          <Component
+          <TableRow
             ref={externalRef}
             className={cx(
-              className,
               tableSectionContext.filterClassName,
               tableRowClasses.root,
-              tableRowClasses[type],
-              hover && cx(tableRowClasses.hover),
-              selected && cx(tableRowClasses.selected),
-              expanded && cx(tableRowClasses.expanded),
-              striped && cx(tableRowClasses.striped),
-              isList && type === "body" && cx(tableRowClasses.variantList),
-              isList && type === "head" && cx(tableRowClasses.variantListHead),
-
-              css(styles.root),
-              css(styles[type]),
-              hover && cx(css(styles.hover)),
-              selected && cx(css(styles.selected)),
-              expanded && cx(css(styles.expanded)),
-              striped && cx(css(styles.striped)),
-              isList && type === "body" && cx(css(styles.variantList)),
-              isList && type === "head" && cx(css(styles.variantListHead)),
-
+              className,
               classes?.root,
+              css(styles.root),
+              tableRowClasses[type],
               classes?.[type],
-              hover && cx(classes?.hover),
-              selected && cx(classes?.selected),
-              expanded && cx(classes?.expanded),
-              striped && cx(classes?.striped),
-              isList && type === "body" && cx(classes?.variantList),
-              isList && type === "head" && cx(classes?.variantListHead)
+              css(styles[type]),
+              hover &&
+                (tableRowClasses.hover, classes?.hover, css(styles.hover)),
+              selected &&
+                cx(
+                  tableRowClasses.selected,
+                  classes?.selected,
+                  css(styles.selected)
+                ),
+              expanded &&
+                cx(
+                  tableRowClasses.expanded,
+                  classes?.expanded,
+                  css(styles.expanded)
+                ),
+              striped &&
+                cx(
+                  tableRowClasses.striped,
+                  classes?.striped,
+                  css(styles.striped)
+                ),
+              isList &&
+                type === "body" &&
+                cx(
+                  tableRowClasses.variantList,
+                  classes?.variantList,
+                  css(styles.variantList)
+                ),
+              isList &&
+                type === "head" &&
+                cx(
+                  tableRowClasses.variantListHead,
+                  classes?.variantListHead,
+                  css(styles.variantListHead)
+                )
             )}
             role={Component === defaultComponent ? null : "row"}
+            $striped={striped}
+            $stripedColorEven={stripedColorEven}
+            $stripedColorOdd={stripedColorOdd}
             {...others}
           />
         )}
