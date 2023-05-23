@@ -16,7 +16,7 @@ export const HvCalendarWeekLabel = ({
         const key = `${dayName}-${index}`;
         return (
           <StyledCalendarDay
-            variant="highlightText"
+            variant="label"
             className={clsx(
               calendarWeekLabelsClasses.calendarDay,
               classes?.calendarDay

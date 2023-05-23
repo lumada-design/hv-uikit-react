@@ -153,7 +153,6 @@ export const HvCalendarHeader = ({
       >
         {showDayOfWeek && (
           <StyledHeaderDayOfWeek
-            variant="normalText"
             className={clsx(
               calendarHeaderClasses.headerDayOfWeek,
               classes?.headerDayOfWeek
@@ -197,7 +196,7 @@ export const HvCalendarHeader = ({
         {!isValidValue && inputValue !== "" && (
           <HvTypography
             component="span"
-            variant="normalText"
+            variant="body"
             className={clsx(
               calendarHeaderClasses.invalidMessageStyling,
               classes?.invalidMessageStyling

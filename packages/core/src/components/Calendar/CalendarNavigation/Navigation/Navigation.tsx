@@ -67,7 +67,7 @@ export const Navigation = ({
         }
         tabIndex={onTextClick ? 0 : -1}
       >
-        <HvTypography variant="normalText">{navigationText}</HvTypography>
+        <HvTypography variant="body">{navigationText}</HvTypography>
       </StyledText>
 
       <StyledDropRightIcon

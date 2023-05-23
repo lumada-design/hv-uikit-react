@@ -91,7 +91,7 @@ export const HvCalendarCell = ({
       {...others}
     >
       <StyledCalendarDate
-        variant={isCellToday ? "highlightText" : "normalText"}
+        variant={isCellToday ? "label" : "body"}
         className={clsx(
           calendarCellClasses.calendarDate,
           classes?.calendarDate,

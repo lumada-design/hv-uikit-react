@@ -256,7 +256,7 @@ export const SnackbarVariations: StoryObj<HvSnackbarProps> = {
           customIcon={<Info color="base_dark" />}
         />
         <br />
-        <HvTypography variant="xsTitle">Custom content</HvTypography>
+        <HvTypography variant="title3">Custom content</HvTypography>
         <p />
 
         <HvTooltip

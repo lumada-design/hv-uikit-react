@@ -187,7 +187,7 @@ export const Skippable = () => {
           <HvTypography variant="mTitle" component="h2">
             1. API details
           </HvTypography>
-          <HvTypography variant="normalText" component="p">
+          <HvTypography>
             Some text explaining what this section is about. It can be multiline
             but 2 lines are the maximum recommended.
           </HvTypography>
@@ -263,19 +263,19 @@ export const ComponentBreakDown = () => {
           condensed
         >
           <HvListItem>
-            <HvTypography variant="highlightText" component="span">
+            <HvTypography variant="label" component="span">
               Status
             </HvTypography>{" "}
             Open
           </HvListItem>
           <HvListItem>
-            <HvTypography variant="highlightText" component="span">
+            <HvTypography variant="label" component="span">
               Date
             </HvTypography>{" "}
             12/08/2018
           </HvListItem>
           <HvListItem>
-            <HvTypography variant="highlightText" component="span">
+            <HvTypography variant="label" component="span">
               Assignee
             </HvTypography>{" "}
             Management

@@ -193,11 +193,11 @@ export const AllComponents: StoryObj<HvCardProps> = {
           <Grid container>
             <StyledBottomItem item xs={5}>
               <HvTypography variant="label">{cells[2].title}</HvTypography>
-              <HvTypography variant="sTitle">{cells[2].content}</HvTypography>
+              <HvTypography>{cells[2].content}</HvTypography>
             </StyledBottomItem>
             <StyledBottomItem item xs={7}>
               <HvTypography variant="label">{cells[3].title}</HvTypography>
-              <HvTypography variant="sTitle">{cells[3].content}</HvTypography>
+              <HvTypography>{cells[3].content}</HvTypography>
             </StyledBottomItem>
           </Grid>
         </HvCardContent>

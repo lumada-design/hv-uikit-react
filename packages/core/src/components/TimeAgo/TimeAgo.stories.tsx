@@ -134,7 +134,7 @@ export const LocaleOverride = () => {
         </HvRadioGroup>
       </div>
       <div>
-        <HvTypography variant="sTitle">
+        <HvTypography variant="title3">
           <HvTimeAgo timestamp={time} locale={locale} />
         </HvTypography>
         <span>{new Date(time).toISOString()}</span>
