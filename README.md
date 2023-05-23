@@ -91,6 +91,7 @@ See our documentation site [here](https://lumada-design.github.io/uikit/master/?
 
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/zettca"><img src="https://avatars.githubusercontent.com/u/638946?v=4" width="64px;" alt=""/><br /><sub><b>Bruno Henriques</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/francisco-guilherme"><img src="https://avatars.githubusercontent.com/u/14975353?v=4" width="64px;" alt=""/><br /><sub><b>Francisco Guilherme</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/HQFOX"><img src="https://avatars.githubusercontent.com/u/19229133?v=4" width="64px;" alt=""/><br /><sub><b>Henrique Raposo</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/MEsteves22"><img src="https://avatars.githubusercontent.com/u/43220251?v=4" width="64px;" alt=""/><br /><sub><b>Márcia Esteves</b></sub></a><br /></td>
