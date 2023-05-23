@@ -1,18 +1,12 @@
-import React, { useCallback, useMemo, useRef } from "react";
+import React, { useCallback, useMemo } from "react";
 import { ClassNames } from "@emotion/react";
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { BackdropProps } from "@mui/material";
-import isNil from "lodash/isNil";
 
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvBaseProps } from "@core/types/generic";
-import {
-  isKeypress,
-  keyboardCodes,
-  setId,
-  getFocusableList,
-} from "@core/utils";
+import { setId } from "@core/utils";
 import { withTooltip } from "@core/hocs";
 import { useTheme } from "@core/hooks";
 import dialogClasses, { HvDialogClasses } from "./dialogClasses";
@@ -34,7 +28,11 @@ export interface HvDialogProps
   maxWidth?: MuiDialogProps["maxWidth"];
   /** @inheritdoc */
   fullWidth?: MuiDialogProps["fullWidth"];
-  /** Element id that should be focus when the Dialog opens. */
+  /**
+   * Element id that should be focus when the Dialog opens.
+   * Auto-focusing elements can cause usability issues, so this should be avoided.
+   * @deprecated Use `autoFocus` on the element instead, if auto-focusing is required.
+   */
   firstFocusable?: string;
   /** Title for the button close. */
   buttonTitle?: string;
@@ -75,11 +73,6 @@ export const HvDialog = ({
 
   const { rootId } = useTheme();
 
-  const focusableQueue = useRef<{
-    first?: HTMLElement;
-    last?: HTMLElement;
-  }>({ first: undefined, last: undefined });
-
   // Because the `disableBackdropClick` property was deprecated in MUI5
   // and we want to maintain that functionality to the user we're wrapping
   // the onClose call here to make that check.
@@ -89,71 +82,19 @@ export const HvDialog = ({
       bypassValidation: boolean = false,
       reason?: "escapeKeyDown" | "backdropClick"
     ) => {
-      if (bypassValidation) {
-        onClose?.(event, reason);
-      } else if (!disableBackdropClick) {
+      if (bypassValidation || !disableBackdropClick) {
         onClose?.(event, reason);
       }
     },
     [onClose]
   );
 
-  const measuredRef = useCallback(
-    (node) => {
-      if (node) {
-        const focusableList = getFocusableList(node);
-        focusableQueue.current = {
-          first: focusableList[1],
-          last: focusableList[focusableList.length - 2],
-        };
-        if (isNil(firstFocusable)) focusableList[1].focus();
-        else {
-          const element =
-            firstFocusable && document.getElementById(firstFocusable);
-          if (element) element.focus();
-          else {
-            console.warn(`firstFocusable element ${firstFocusable} not found.`);
+  const measuredRef = useCallback(() => {
+    if (!firstFocusable) return;
 
-            focusableList[1].focus();
-          }
-        }
-      }
-    },
-    [firstFocusable]
-  );
-
-  const keyDownHandler = (event) => {
-    if (
-      isKeypress(event, keyboardCodes.Tab) &&
-      !isNil(event.target) &&
-      !isNil(focusableQueue)
-    ) {
-      if (event.shiftKey && event.target === focusableQueue.current.first) {
-        focusableQueue.current.last?.focus();
-        event.preventDefault();
-      }
-      if (!event.shiftKey && event.target === focusableQueue.current.last) {
-        focusableQueue.current.first?.focus();
-        event.preventDefault();
-      }
-    }
-    // Needed as this handler overrides the one in the material ui Modal.
-    else if (isKeypress(event, keyboardCodes.Esc)) {
-      if (
-        "onEscapeKeyDown" in others &&
-        typeof others.onEscapeKeyDown === "function"
-      ) {
-        others.onEscapeKeyDown(event);
-      }
-
-      if (!others.disableEscapeKeyDown) {
-        // Swallow the event, in case someone is listening for the escape key on the body.
-        event.stopPropagation();
-
-        wrappedClose(event, true, "escapeKeyDown");
-      }
-    }
-  };
+    const element = document.getElementById(firstFocusable);
+    element?.focus();
+  }, [firstFocusable]);
 
   const closeButtonDisplay = () => <Close role="presentation" />;
 
@@ -181,7 +122,6 @@ export const HvDialog = ({
           open={open}
           fullScreen={fullscreen}
           onClose={(event, reason) => wrappedClose(event, undefined, reason)}
-          onKeyDown={keyDownHandler}
           slots={slots}
           classes={{ container: css({ position: "relative" }) }}
           BackdropProps={{

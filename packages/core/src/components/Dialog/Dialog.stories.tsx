@@ -7,7 +7,9 @@ import {
   HvDialogProps,
   HvDialogTitle,
   HvDialogActions,
-  HvTypography,
+  HvInput,
+  HvTextArea,
+  HvGrid,
 } from "@core/components";
 import { useState } from "react";
 
@@ -39,7 +41,6 @@ const SimpleDialog = ({
       </HvButton>
       <HvDialog
         disableBackdropClick
-        id="test"
         classes={classes}
         open={open}
         onClose={() => setOpen(false)}
@@ -53,14 +54,10 @@ const SimpleDialog = ({
           </HvDialogContent>
         )}
         <HvDialogActions>
-          <HvButton id="apply" variant="secondaryGhost">
+          <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
             Apply
           </HvButton>
-          <HvButton
-            id="cancel"
-            variant="secondaryGhost"
-            onClick={() => setOpen(false)}
-          >
+          <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
         </HvDialogActions>
@@ -101,35 +98,21 @@ export const Main: StoryObj<HvDialogProps> = {
 
     return (
       <div>
-        <HvButton
-          id="openDialog"
-          style={{ width: "120px" }}
-          onClick={() => setOpen(true)}
-        >
+        <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
           Open Dialog
         </HvButton>
-        <HvDialog
-          id="test"
-          open={open}
-          {...args}
-          onClose={() => setOpen(false)}
-          firstFocusable="test-close"
-        >
+        <HvDialog open={open} {...args} onClose={() => setOpen(false)}>
           <HvDialogTitle variant="warning">Switch model view?</HvDialogTitle>
           <HvDialogContent indentContent>
             Switching to model view will clear all the fields in your
             visualization. You will need to re-select your fields.
           </HvDialogContent>
           <HvDialogActions>
-            <HvButton
-              id="apply"
-              variant="secondaryGhost"
-              onClick={() => setOpen(false)}
-            >
+            <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
               Apply
             </HvButton>
             <HvButton
-              id="cancel"
+              autoFocus
               variant="secondaryGhost"
               onClick={() => setOpen(false)}
             >
@@ -188,12 +171,95 @@ export const IconAndSemantic: StoryObj<HvDialogProps> = {
   },
 };
 
-export const Accessibility: StoryObj<HvDialogProps> = {
+export const Form: StoryObj<HvDialogProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          "Modals should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content.",
+          "An example of using a `form` in `HvDialog`. The sample uses the `autofocus` attribute to focus the Title input by default.<br /> \
+          Accessibility-wise, `HvDialog` should have an `aria-labelledby` linking to the most appropriate element, \
+          as well as an optional `aria-describedby` pointing to the main content.",
+      },
+    },
+  },
+  render: () => {
+    const [open, setOpen] = useState(false);
+    const [postData, setPostData] = useState({});
+
+    return (
+      <>
+        <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
+          Create a post
+        </HvButton>
+        <br />
+        <br />
+        Post data: {JSON.stringify(postData, null, 2)}
+        <HvDialog
+          disableBackdropClick
+          open={open}
+          onClose={() => setOpen(false)}
+          aria-labelledby="hv-dialog-title"
+          aria-describedby="hv-dialog-description"
+        >
+          <HvDialogTitle id="hv-dialog-title" variant="warning">
+            Create a new post
+          </HvDialogTitle>
+          <HvDialogContent id="hv-dialog-description" indentContent>
+            <div id="hv-dialog-description" style={{ marginBottom: 10 }}>
+              Fill the following form to create a post.
+            </div>
+            <form
+              id="create-post"
+              onSubmit={(event) => {
+                event.preventDefault();
+                const formData = new FormData(event.currentTarget);
+                setPostData(Object.fromEntries(formData.entries()));
+                setOpen(false);
+              }}
+            >
+              <HvGrid container>
+                <HvGrid item xs={12}>
+                  <HvInput
+                    required
+                    name="author"
+                    label="Author"
+                    defaultValue="John Doe"
+                  />
+                </HvGrid>
+                <HvGrid item xs={12}>
+                  <HvInput required name="title" label="Title" autoFocus />
+                </HvGrid>
+                <HvGrid item xs={12}>
+                  <HvTextArea
+                    required
+                    label="Description"
+                    name="content"
+                    rows={4}
+                  />
+                </HvGrid>
+              </HvGrid>
+            </form>
+          </HvDialogContent>
+          <HvDialogActions>
+            <HvButton type="submit" form="create-post" variant="primary">
+              Create
+            </HvButton>
+            <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
+              Cancel
+            </HvButton>
+          </HvDialogActions>
+        </HvDialog>
+      </>
+    );
+  },
+};
+
+export const LongContent: StoryObj<HvDialogProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "With very long content the dialog grows in height, up to a maximum where a margin of 100px is left on top and bottom.",
       },
     },
   },
@@ -203,59 +269,12 @@ export const Accessibility: StoryObj<HvDialogProps> = {
     return (
       <div>
         <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
-          Open Dialog
-        </HvButton>
-        <HvDialog
-          disableBackdropClick
-          open={open}
-          onClose={() => setOpen(false)}
-          aria-labelledby="hv-dialog-title"
-          aria-describedby="hv-dialog-description"
-        >
-          <HvDialogTitle id="hv-dialog-title" variant="warning">
-            Switch model view?
-          </HvDialogTitle>
-          <HvDialogContent id="hv-dialog-description" indentContent>
-            Switching to model view will clear all the fields in your
-            visualization. You will need to re-select your fields.
-          </HvDialogContent>
-          <HvDialogActions>
-            <HvButton variant="secondaryGhost">Apply</HvButton>
-            <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
-              Cancel
-            </HvButton>
-          </HvDialogActions>
-        </HvDialog>
-      </div>
-    );
-  },
-};
-
-export const LongContent: StoryObj<HvDialogProps> = {
-  render: () => {
-    const [open, setOpen] = useState(false);
-
-    return (
-      <div>
-        <HvTypography>
-          With very long content the dialog should grow in height to a maximum
-          where a margin of 100px is left on top and bottom.
-        </HvTypography>
-        <br />
-        <br />
-        <HvButton
-          id="openDialog"
-          style={{ width: "120px" }}
-          onClick={() => setOpen(true)}
-        >
           Open dialog
         </HvButton>
         <HvDialog
           disableBackdropClick
-          id="test"
           open={open}
           onClose={() => setOpen(false)}
-          firstFocusable="accept"
         >
           <HvDialogTitle variant="warning">Terms and Conditions</HvDialogTitle>
           <HvDialogContent indentContent>
@@ -333,7 +352,7 @@ export const LongContent: StoryObj<HvDialogProps> = {
           </HvDialogContent>
           <HvDialogActions>
             <HvButton
-              id="accept"
+              autoFocus
               variant="secondaryGhost"
               onClick={() => setOpen(false)}
             >
