@@ -1,3 +1,4 @@
+import { css } from "@emotion/css";
 import {
   BarChart,
   Cloud,
@@ -716,6 +717,15 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
         setShow(!show);
       };
 
+      const popupStyles = css({
+        padding: "20px",
+        backgroundColor: "coral",
+
+        "& > div": {
+          border: "3px solid orange",
+        },
+      });
+
       return (
         <div style={{ display: "flex", width: 220, height: 530 }}>
           <HvVerticalNavigation open={show} collapsedMode={"icon"}>
@@ -737,9 +747,7 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
                 setValue(data.id);
               }}
               data={navigationDataState}
-              popupStyles={{
-                backgroundColor: "red",
-              }}
+              classes={{ navigationPopup: popupStyles }}
             />
             <HvVerticalNavigationActions>
               <HvVerticalNavigationAction label="Profile" icon={<User />} />

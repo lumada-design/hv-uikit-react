@@ -7,11 +7,13 @@ import {
   HvVerticalNavigation,
   verticalNavigationTreeClasses,
 } from "@core/components";
+import { HvBaseProps } from "@core/types";
 import { setId } from "@core/utils";
 
 import { StyledPopper, StyledPopupContainer } from "./NavigationPopup.styles";
 
-export interface HvVerticalNavigationPopupProps {
+export interface HvVerticalNavigationPopupProps
+  extends HvBaseProps<HTMLDivElement> {
   id?: string;
   anchorEl?: HTMLElement | null;
   fixedMode?: boolean;
@@ -19,7 +21,6 @@ export interface HvVerticalNavigationPopupProps {
   selected?: string;
   onClose?: () => void;
   onChange?: any;
-  popupStyles?: any;
 }
 
 export const HvVerticalNavigationPopup = ({
@@ -30,7 +31,8 @@ export const HvVerticalNavigationPopup = ({
   data,
   selected,
   onChange,
-  popupStyles,
+
+  ...others
 }: HvVerticalNavigationPopupProps) => {
   const handleClickAway = () => {
     onClose?.();
@@ -47,12 +49,7 @@ export const HvVerticalNavigationPopup = ({
   };
 
   return (
-    <StyledPopper
-      open
-      anchorEl={anchorEl}
-      placement="right-start"
-      style={popupStyles}
-    >
+    <StyledPopper open anchorEl={anchorEl} placement="right-start" {...others}>
       <ClickAwayListener onClickAway={handleClickAway}>
         <StyledPopupContainer>
           <HvVerticalNavigation open>
