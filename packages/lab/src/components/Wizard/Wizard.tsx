@@ -1,4 +1,4 @@
-import { HvBaseProps } from "@hitachivantara/uikit-react-core";
+import { HvBaseProps, HvDialogProps } from "@hitachivantara/uikit-react-core";
 import { ModalProps } from "@mui/material";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { HvWizardClasses } from "./wizardClasses";
@@ -14,7 +14,9 @@ import {
 } from ".";
 import { HvStepNavigationProps } from "..";
 
-export interface HvWizardProps extends HvBaseProps {
+export interface HvWizardProps
+  extends HvBaseProps,
+    Pick<HvDialogProps, "maxWidth" | "fullWidth"> {
   /** Current state of the Wizard. */
   open: boolean;
   /** Function executed on close. */

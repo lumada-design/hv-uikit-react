@@ -248,11 +248,10 @@ export const HvStepNavigation = ({
     const next = Object.keys(themeBreakpoints).find((_, index, self) =>
       index - 1 >= 0 ? self[index - 1] === breakpoint : false
     );
-
-    const navWidth =
-      (next && Math.min(maxWidth, themeBreakpoints[next] ?? maxWidth)) ||
-      themeBreakpoints[breakpoint];
-
+    const navWidth = Math.min(
+      maxWidth,
+      next ? themeBreakpoints[next] : maxWidth
+    );
     const titleWidth =
       Number(hasTitles) * Math.ceil((navWidth + TITLE_MARGIN) / steps.length);
     const separatorWidth =

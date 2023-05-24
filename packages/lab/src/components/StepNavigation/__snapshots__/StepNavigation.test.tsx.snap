@@ -4,7 +4,7 @@ exports[`StepNavigation > should render correctly 1`] = `
 <div>
   <div>
     <nav
-      style="margin: 0px;"
+      style="width: 700px; margin: 0px;"
     >
       <ol
         class="HvStepNavigation-ol css-fg3xwr"
@@ -79,7 +79,7 @@ exports[`StepNavigation > should render correctly 1`] = `
         </li>
         <li
           aria-hidden="true"
-          class="HvStepNavigation-separator css-1h0nyka-StyledLi e1wrrltm1"
+          class="HvStepNavigation-separator css-qletfj-StyledLi e1wrrltm1"
         >
           <div
             aria-label="separator-Completed"
@@ -153,7 +153,7 @@ exports[`StepNavigation > should render correctly 1`] = `
         </li>
         <li
           aria-hidden="true"
-          class="HvStepNavigation-separator css-1mktd4n-StyledLi e1wrrltm1"
+          class="HvStepNavigation-separator css-1rte3m9-StyledLi e1wrrltm1"
         >
           <div
             aria-label="separator-Failed"
@@ -222,7 +222,7 @@ exports[`StepNavigation > should render correctly 1`] = `
         </li>
         <li
           aria-hidden="true"
-          class="HvStepNavigation-separator css-qr06ca-StyledLi e1wrrltm1"
+          class="HvStepNavigation-separator css-hle24q-StyledLi e1wrrltm1"
         >
           <div
             aria-label="separator-Pending"
@@ -276,7 +276,7 @@ exports[`StepNavigation > should render correctly 1`] = `
         </li>
         <li
           aria-hidden="true"
-          class="HvStepNavigation-separator css-15jv2oq-StyledLi e1wrrltm1"
+          class="HvStepNavigation-separator css-18yd98g-StyledLi e1wrrltm1"
         >
           <div
             aria-label="separator-Current"
@@ -328,7 +328,7 @@ exports[`StepNavigation > should render correctly 1`] = `
         </li>
         <li
           aria-hidden="true"
-          class="HvStepNavigation-separator css-kway43-StyledLi e1wrrltm1"
+          class="HvStepNavigation-separator css-1pqgfqb-StyledLi e1wrrltm1"
         >
           <div
             aria-label="separator-Enabled"
