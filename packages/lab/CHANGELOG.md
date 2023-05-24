@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.3.5...@hitachivantara/uikit-react-lab@5.3.6) (2023-05-24)
+
+### Bug Fixes
+
+- **HvWizard, HvStepNavigation:** step navigation with maxWidth on xl breakpoint; [#3368](https://github.com/lumada-design/hv-uikit-react/issues/3368) ([#3369](https://github.com/lumada-design/hv-uikit-react/issues/3369)) ([915d176](https://github.com/lumada-design/hv-uikit-react/commit/915d1768f95ac7949b90d5ae86840079669e7113))
+
 ## [5.3.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.3.4...@hitachivantara/uikit-react-lab@5.3.5) (2023-05-24)
 
 ### Bug Fixes

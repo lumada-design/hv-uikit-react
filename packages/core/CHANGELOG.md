@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.8.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.5...@hitachivantara/uikit-react-core@5.8.0) (2023-05-24)
+
+### Bug Fixes
+
+- **linting:** enable airbnb base rules & fix findings ([324805f](https://github.com/lumada-design/hv-uikit-react/commit/324805fcd50a33a534b2c04e92ad95b9e108d047))
+- **VerticalNavigation:** disabled element styles ([541e843](https://github.com/lumada-design/hv-uikit-react/commit/541e843fe43b36b93be37f08fab8ebce961ffde0))
+- **VerticalNavigation:** remove header on the first level when in Slider mode ([#3362](https://github.com/lumada-design/hv-uikit-react/issues/3362)) ([efff68f](https://github.com/lumada-design/hv-uikit-react/commit/efff68fe0b74bd88166f8bc0e250c11a52b7c6cf))
+- **VerticalNavigation:** use of aria-current ([fd16799](https://github.com/lumada-design/hv-uikit-react/commit/fd16799190ac2386b738bfdd667a150ae9cbfeac))
+
+### Features
+
+- **carousel:** implementation according to ds5 ([acf5ecb](https://github.com/lumada-design/hv-uikit-react/commit/acf5ecb3842bb1834d33ec66645e832728dae947))
+- **carousel:** promote to core ([06a4226](https://github.com/lumada-design/hv-uikit-react/commit/06a42266eee367196d975f654d5c09b59c42df39))
+- **dialog:** improve focus logic ([c52ced6](https://github.com/lumada-design/hv-uikit-react/commit/c52ced6f1853ca09ad3d69de0cd45e3eda22bff1))
+
 ## [5.7.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.4...@hitachivantara/uikit-react-core@5.7.5) (2023-05-24)
 
 ### Bug Fixes

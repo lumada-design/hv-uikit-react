@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.7.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.6.2...@hitachivantara/uikit-styles@5.7.0) (2023-05-24)
+
+### Bug Fixes
+
+- **linting:** enable airbnb base rules & fix findings ([324805f](https://github.com/lumada-design/hv-uikit-react/commit/324805fcd50a33a534b2c04e92ad95b9e108d047))
+
+### Features
+
+- **carousel:** implementation according to ds5 ([acf5ecb](https://github.com/lumada-design/hv-uikit-react/commit/acf5ecb3842bb1834d33ec66645e832728dae947))
+
 ## 5.6.2 (2023-05-24)
 
 ### Bug Fixes
