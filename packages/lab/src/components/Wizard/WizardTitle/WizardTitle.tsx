@@ -123,11 +123,16 @@ export const HvWizardTitle = ({
                   classes?.stepContainer
                 )}
                 steps={steps}
-                type={customStep?.type ?? "Default"}
-                stepSize={customStep?.stepSize ?? "xs"}
-                width={
-                  customStep?.width ?? { xs: 200, sm: 350, md: 600, lg: 800 }
-                }
+                type="Default"
+                stepSize="xs"
+                width={{
+                  xs: 200,
+                  sm: 350,
+                  md: 600,
+                  lg: 800,
+                  xl: 1000,
+                }}
+                {...customStep}
               />
             )}
             {hasSummary && (

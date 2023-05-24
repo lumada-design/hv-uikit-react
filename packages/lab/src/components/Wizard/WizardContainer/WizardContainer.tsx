@@ -1,12 +1,18 @@
 import React from "react";
 import { ClassNames } from "@emotion/react";
-import { HvBaseProps, HvDialog } from "@hitachivantara/uikit-react-core";
+import {
+  HvBaseProps,
+  HvDialog,
+  HvDialogProps,
+} from "@hitachivantara/uikit-react-core";
 import wizardContainerClasses, {
   HvWizardContainerClasses,
 } from "./wizardContainerClasses";
 import { styles } from "./WizardContainer.styles";
 
-export interface HvWizardContainerProps extends Omit<HvBaseProps, "onClose"> {
+export interface HvWizardContainerProps
+  extends Omit<HvBaseProps, "onClose">,
+    Pick<HvDialogProps, "maxWidth" | "fullWidth"> {
   /** Current state of the Wizard. */
   open: boolean;
   /** Function executed on close. */
@@ -45,6 +51,7 @@ export const HvWizardContainer = ({
           className={cx(wizardContainerClasses.root, className, classes?.root)}
           open={open}
           onClose={handleClose}
+          maxWidth="lg"
           {...others}
         >
           {children}
