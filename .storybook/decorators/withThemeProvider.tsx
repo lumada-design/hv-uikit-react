@@ -27,6 +27,7 @@ const withThemeProvider = (story) => {
     <>
       <Global styles={storyStyles} />
       <HvProvider
+        classNameKey="hv"
         themes={[ds5, ds3]}
         theme={selectedTheme?.split("-")[0]}
         colorMode={selectedTheme?.split("-")[1]}

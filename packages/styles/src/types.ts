@@ -390,6 +390,17 @@ export type HvThemeComponents = {
     savedColorsSwatchMargin: string;
     savedColorsSwatchBorderRadius: string;
   };
+  carousel: {
+    xsControlsDisplay: CSSProperties["display"];
+    counterContainerDisplay: CSSProperties["display"];
+    actionsOffsetTop: CSSProperties["top"];
+    mainContainerFlexDirection: CSSProperties["flexDirection"];
+    controlsBorder: CSSProperties["border"];
+    controlsJustifyContent: CSSProperties["justifyContent"];
+    controlsBackgroundColor: CSSProperties["backgroundColor"];
+    thumbnailBorderRadius: CSSProperties["borderRadius"];
+    thumbnailSelectedBorder: CSSProperties["border"];
+  };
 };
 
 // Theme typography

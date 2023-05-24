@@ -42,6 +42,7 @@ Here's what there is to know about this migration:
   - [Code editor](#code-editor)
   - [Date picker](#date-picker)
   - [Color picker](#color-picker)
+  - [Carousel](#carousel)
 
 ## React packages <a id="react-packages" />
 
@@ -57,7 +58,6 @@ application at the moment since their development are still in progress. Over ti
 - `@hitachivantara/uikit-react-viz`
 - The following components from `@hitachivantara/uikit-react-lab` are missing:
   - Drawer
-  - Image carrousel
   - Navigation anchors
   - Notification panel
 - The following components from `@hitachivantara/uikit-react-core` are missing:
@@ -440,6 +440,7 @@ In v5.x the components below were promoted from the lab to the core package:
 - Time ago
 - Vertical navigation
 - Color picker
+- Carousel
 
 In order to use them, you'll need to update the necessary imports. Please find an example below.
 
@@ -455,6 +456,7 @@ In v5.x some components and types were renamed as detailed in the table below.
 | Type or component | v4.x                   | v5.x                       |
 | ----------------- | ---------------------- | -------------------------- |
 | Component         | HvBreadcrumb           | HvBreadCrumb               |
+| Component         | HvImageCarousel        | HvCarousel                 |
 | Type              | NavigationItemProp     | HvHeaderNavigationItemProp |
 | Type              | ListValueProp          | HvListValue                |
 | Type              | ListLabelsProp         | HvListLabels               |
@@ -700,3 +702,40 @@ use the DS3 version, the component can easily be customized to meet the guidelin
 - `onSavedColorAdded`
 - `onSavedColorRemoved`
 - `deleteSavedColorButtonArialLabel`
+
+### Carousel <a id="carousel" />
+
+The `HvImageCarousel` component was renamed to `HvCarousel`. It can now scroll through any type of content.
+
+**Props:**
+
+- `variant` removed (unused)
+- `counter` renamed to `showCounter`
+- `fullscreen` renamed to `showFullscreen`
+- `visibleArrows` renamed to `showSlideControls`
+- `lowCardinality` renamed to `showDots` (automatic default)
+- `thumbnails` renamed to `showThumbnails`
+- `documents` removed (see below)
+
+To render Carousel slides, you now need to use the `children` prop, instead of `documents`, using the `HvCarouselSlide` component.
+Either pass `img` props (ie `<HvCarouselSlide src={src} alt={alt} />`) or custom children:
+
+```tsx
+<HvCarouselSlide>
+  custom content!
+  <video />
+  <img />
+  <HvTypography />
+</HvCarouselSlide>
+```
+
+```diff
+const images = ["img1.png", "img2.png", "img3.png"];
+
+-<HvImageCarousel
+-  documents={images.map((src) => ({src}))}
+-/>
++<HvCarousel renderThumbnail={(i) => (<img src={images[i]} />)}>
++  {images.map((src) => <HvCarouselSlide src={src} />)}
++</HvCarousel>
+```

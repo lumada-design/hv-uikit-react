@@ -177,6 +177,10 @@
       "status": "✅"
     },
     {
+      "name": "Carousel",
+      "status": "✅"
+    },
+    {
       "name": "Code Editor",
       "status": "✅"
     },
@@ -246,10 +250,6 @@
   "Lab": [
     {
       "name": "Drawer",
-      "status": "in progress"
-    },
-    {
-      "name": "Image Carrousel",
       "status": "in progress"
     },
     {
