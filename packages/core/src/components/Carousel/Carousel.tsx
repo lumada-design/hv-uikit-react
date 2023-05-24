@@ -248,17 +248,15 @@ export const HvCarousel = (props: HvCarouselProps) => {
 
                 {showSlideControls && (
                   <div className={classes.slideControls}>
-                    {
-                      <HvButton
-                        icon
-                        disabled={!canPrev}
-                        variant="secondary"
-                        aria-label="Backwards"
-                        onClick={handlePrevious}
-                      >
-                        <Backwards iconSize="XS" />
-                      </HvButton>
-                    }
+                    <HvButton
+                      icon
+                      disabled={!canPrev}
+                      variant="secondary"
+                      aria-label="Backwards"
+                      onClick={handlePrevious}
+                    >
+                      <Backwards iconSize="XS" />
+                    </HvButton>
                     <HvButton
                       icon
                       disabled={!canNext}

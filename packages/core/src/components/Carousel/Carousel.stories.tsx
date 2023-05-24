@@ -259,7 +259,7 @@ export const CustomContent: StoryObj<HvCarouselProps> = {
               </div>
               <img
                 src={src}
-                alt={`travel image ${i}`}
+                alt={`travel destination ${i}`}
                 style={{ width: 600, aspectRatio: "16/9" }}
               />
             </div>
