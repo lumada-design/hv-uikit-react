@@ -434,20 +434,21 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
               (expandable || icon != null || !isOpen ? 0 : 10) +
               level * (collapsible ? 32 : 10),
           }}
+          role={href ? undefined : "button"}
           {...(treeviewMode
             ? {
-                role: "button",
                 tabIndex: -1,
                 onFocus: handleFocus,
               }
             : {
-                role: "button",
                 tabIndex: selectable || expandable ? 0 : -1,
                 onKeyDown: handleKeyDown,
                 "aria-current":
                   (selectable && selected) ||
                   (!isOpen && isChildSelected?.(nodeId))
-                    ? "page"
+                    ? href
+                      ? "page"
+                      : true
                     : undefined,
                 "aria-expanded": expandable ? expanded : undefined,
                 "aria-controls": expandable ? setId(id, "group") : undefined,
