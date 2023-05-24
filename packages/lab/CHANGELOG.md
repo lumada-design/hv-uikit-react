@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.3.4...@hitachivantara/uikit-react-lab@5.3.5) (2023-05-24)
+
+### Bug Fixes
+
+- **linting:** enable airbnb base rules & fix findings ([324805f](https://github.com/lumada-design/hv-uikit-react/commit/324805fcd50a33a534b2c04e92ad95b9e108d047))
+
 ## [5.3.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.3.3...@hitachivantara/uikit-react-lab@5.3.4) (2023-05-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

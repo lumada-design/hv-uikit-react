@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.6.2 (2023-05-24)
+
+### Bug Fixes
+
+- **linting:** enable airbnb base rules & fix findings ([324805f](https://github.com/lumada-design/hv-uikit-react/commit/324805fcd50a33a534b2c04e92ad95b9e108d047))
+
 ## [5.6.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.6.0...@hitachivantara/uikit-styles@5.6.1) (2023-05-17)
 
 ### Bug Fixes

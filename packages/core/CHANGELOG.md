@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.7.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.4...@hitachivantara/uikit-react-core@5.7.5) (2023-05-24)
+
+### Bug Fixes
+
+- **linting:** enable airbnb base rules & fix findings ([324805f](https://github.com/lumada-design/hv-uikit-react/commit/324805fcd50a33a534b2c04e92ad95b9e108d047))
+- **VerticalNavigation:** disabled element styles ([541e843](https://github.com/lumada-design/hv-uikit-react/commit/541e843fe43b36b93be37f08fab8ebce961ffde0))
+- **VerticalNavigation:** remove header on the first level when in Slider mode ([#3362](https://github.com/lumada-design/hv-uikit-react/issues/3362)) ([efff68f](https://github.com/lumada-design/hv-uikit-react/commit/efff68fe0b74bd88166f8bc0e250c11a52b7c6cf))
+
 ## [5.7.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.3...@hitachivantara/uikit-react-core@5.7.4) (2023-05-23)
 
 ### Bug Fixes

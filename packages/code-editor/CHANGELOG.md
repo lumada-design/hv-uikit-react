@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.2.7...@hitachivantara/uikit-react-code-editor@5.2.8) (2023-05-24)
+
+### Bug Fixes
+
+- **linting:** enable airbnb base rules & fix findings ([324805f](https://github.com/lumada-design/hv-uikit-react/commit/324805fcd50a33a534b2c04e92ad95b9e108d047))
+
 ## [5.2.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.2.6...@hitachivantara/uikit-react-code-editor@5.2.7) (2023-05-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-code-editor
