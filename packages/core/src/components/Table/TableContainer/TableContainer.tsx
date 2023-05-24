@@ -1,10 +1,10 @@
 import { clsx } from "clsx";
 import styled from "@emotion/styled";
 import { HvBaseProps } from "@core/types";
+import { forwardRef, useMemo } from "react";
 import tableContainerClasses, {
   HvTableContainerClasses,
 } from "./tableContainerClasses";
-import { forwardRef, useMemo } from "react";
 
 export interface HvTableContainerProps
   extends HvBaseProps<HTMLDivElement, "children"> {

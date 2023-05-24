@@ -4,9 +4,9 @@ import { Container } from "components/common";
 import { NavigationProvider } from "lib/context/NavigationContext";
 import navigation from "lib/navigation";
 import Routes from "lib/routes";
-import { GeneratorContext } from "./GeneratorContext";
 import { useContext } from "react";
 import { Tutorial } from "pages/Instructions/Tutorial";
+import { GeneratorContext } from "./GeneratorContext";
 
 const Content = () => {
   const { selectedMode } = useTheme();

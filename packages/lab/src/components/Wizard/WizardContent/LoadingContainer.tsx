@@ -1,9 +1,9 @@
 import { HvLoading, HvLoadingProps } from "@hitachivantara/uikit-react-core";
+import { ClassNames } from "@emotion/react";
 import { styles } from "./LoadingContainer.styles";
 import wizardLoadingContainerClasses, {
   HvWizardLoadingContainerClasses,
 } from "./loadingContainerClasses";
-import { ClassNames } from "@emotion/react";
 
 interface LoadingContainerProps extends Omit<HvLoadingProps, "classes"> {
   classes?: HvWizardLoadingContainerClasses;

@@ -8,13 +8,13 @@ import capitalize from "lodash/capitalize";
 import { HvActionGeneric } from "@core/components";
 import { HvBaseProps } from "@core/types";
 import { setId } from "@core/utils";
+import { ClassNames } from "@emotion/react";
 import { styles } from "./Banner.styles";
 import bannerClasses, { HvBannerClasses } from "./bannerClasses";
 import {
   HvBannerContent,
   HvBannerContentProps,
 } from "./BannerContent/BannerContent";
-import { ClassNames } from "@emotion/react";
 
 export type HvBannerVariant = "success" | "warning" | "error" | "default";
 

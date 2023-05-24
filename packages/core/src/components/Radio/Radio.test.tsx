@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
-import { HvRadio } from "./Radio";
 import { useState } from "react";
 import userEvent from "@testing-library/user-event";
+import { HvRadio } from "./Radio";
 
 const RadioSample = () => {
   const [checkedValue, setCheckedValue] = useState(null);

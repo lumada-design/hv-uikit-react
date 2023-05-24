@@ -2,16 +2,6 @@ import { useMemo, useState } from "react";
 import { StoryObj } from "@storybook/react";
 import { useFlexLayout, useBlockLayout, useAbsoluteLayout } from "react-table";
 import {
-  useHvData,
-  useHvPagination,
-  useHvRowSelection,
-  useHvSortBy,
-  useHvBulkActions,
-  useHvResizeColumns,
-  HvTableColumnConfig,
-  HvCellProps,
-} from "../../hooks";
-import {
   HvTable,
   HvTableBody,
   HvTableContainer,
@@ -31,12 +21,6 @@ import {
   HvListValue,
 } from "@core/components";
 import {
-  makeData,
-  getColumns,
-  makeSelectedData,
-  NewEntry,
-} from "../storiesUtils";
-import {
   Ban,
   Delete,
   Duplicate,
@@ -44,6 +28,22 @@ import {
   Preview,
   Unlock,
 } from "@hitachivantara/uikit-react-icons";
+import {
+  useHvData,
+  useHvPagination,
+  useHvRowSelection,
+  useHvSortBy,
+  useHvBulkActions,
+  useHvResizeColumns,
+  HvTableColumnConfig,
+  HvCellProps,
+} from "../../hooks";
+import {
+  makeData,
+  getColumns,
+  makeSelectedData,
+  NewEntry,
+} from "../storiesUtils";
 
 const Complete = () => {
   const colSort = useMemo(() => {
@@ -377,8 +377,8 @@ const handleAction = (evt, id, action) => {
     case "duplicate": {
       const newEls = selected.map((el) => ({
         ...el,
-        id: \`\${el.id}-copy\`\,
-        name: \`\${el.name}-copy\`\,
+        id: \`\${el.id}-copy\`,
+        name: \`\${el.name}-copy\`,
       }));
       setData([...data, ...newEls]);
       break;

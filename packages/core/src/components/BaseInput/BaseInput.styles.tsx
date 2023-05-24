@@ -1,8 +1,8 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import { outlineStyles } from "@core/utils";
-import baseInputClasses, { HvBaseInputClasses } from "./baseInputClasses";
 import { CSSProperties } from "react";
 import { CSSInterpolation } from "@emotion/serialize";
+import baseInputClasses, { HvBaseInputClasses } from "./baseInputClasses";
 
 export const styles: Partial<
   Record<keyof HvBaseInputClasses, CSSInterpolation>

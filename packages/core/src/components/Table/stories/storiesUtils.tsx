@@ -37,6 +37,7 @@ export interface NewEntry {
 }
 
 // If a Cell gets a value, it has to return a react element
+// eslint-disable-next-line react/jsx-no-useless-fragment
 const getCell = (value: string) => <>{value}</>;
 
 const rand = new Random();

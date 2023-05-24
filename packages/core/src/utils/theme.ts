@@ -1,4 +1,4 @@
-/*eslint import/namespace: [2, { allowComputed: true }]*/
+/* eslint import/namespace: [2, { allowComputed: true }] */
 import { CSSProperties } from "react";
 import {
   themes,
@@ -36,7 +36,7 @@ export const setElementAttrs = (
 
     // Set default properties for all components to inherit
     setElementStyle(element, {
-      colorScheme: colorScheme,
+      colorScheme,
       backgroundColor: theme.colors.backgroundColor,
       accentColor: theme.colors.secondary,
       color: theme.colors.secondary,
@@ -67,7 +67,7 @@ const applyThemeCustomizations = (obj: object, customizations: object) => {
           customizedTheme[key],
           customizations[key]
         );
-      } else if (typeof customizedTheme[key] == typeof customizations[key]) {
+      } else if (typeof customizedTheme[key] === typeof customizations[key]) {
         customizedTheme[key] = customizations[key];
       }
     } else {
@@ -139,7 +139,7 @@ export const processThemes = (
   if (themesList && Array.isArray(themesList) && themesList.length > 0) {
     const list: (HvTheme | HvThemeStructure)[] = [];
 
-    themesList.map((thm) => {
+    themesList.forEach((thm) => {
       const i: number = list.findIndex(
         (t) => t.name.trim() === thm.name.trim()
       );
@@ -154,10 +154,9 @@ export const processThemes = (
 
     // Cleaned themes
     return list;
-  } else {
-    // DS5
-    return [themes.ds5];
   }
+  // DS5
+  return [themes.ds5];
 };
 
 /**

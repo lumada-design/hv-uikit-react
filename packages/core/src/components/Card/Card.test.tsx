@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { HvTypography } from "@core/components";
 import { describe, expect, it } from "vitest";
-import { HvCard, HvCardContent, HvCardHeader, HvCardMedia } from "./";
+import { HvCard, HvCardContent, HvCardHeader, HvCardMedia } from ".";
 
 describe("Card", () => {
   it("should be defined", () => {

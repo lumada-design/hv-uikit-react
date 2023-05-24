@@ -8,14 +8,14 @@ import {
 } from "@core/components";
 import { ClassNames } from "@emotion/react";
 import { Checkbox, ColorPicker } from "@hitachivantara/uikit-react-icons";
+import { ColorState } from "react-color";
+import { useControlled, useLabels, useTheme, useUniqueId } from "@core/hooks";
+import { setId } from "@core/utils";
 import { Picker } from "./Picker";
 import { styles } from "./ColorPicker.styles";
 import colorPickerClasses, { HvColorPickerClasses } from "./colorPickerClasses";
-import { ColorState } from "react-color";
 import { PresetColors } from "./PresetColors";
 import { SavedColors } from "./SavedColors";
-import { useControlled, useLabels, useTheme, useUniqueId } from "@core/hooks";
-import { setId } from "@core/utils";
 
 export interface HvColorPickerProps {
   "aria-label"?: string;

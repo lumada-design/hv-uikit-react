@@ -3,8 +3,8 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "@core/utils/transientOptions";
 import { HvFocus } from "@core/components";
 import { outlineStyles } from "@core/utils";
-import listItemClasses from "./listItemClasses";
 import { CSSProperties } from "react";
+import listItemClasses from "./listItemClasses";
 
 export const StyledListItem = styled(
   "li",

@@ -2,8 +2,9 @@ import { useState } from "react";
 import { clsx } from "clsx";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvAvatar, HvTooltip, HvTypography } from "@core/components";
-import { HvAppSwitcherActionApplication } from "../AppSwitcher";
 import { HvBaseProps } from "@core/types";
+import { useUniqueId } from "@core/hooks";
+import { HvAppSwitcherActionApplication } from "../AppSwitcher";
 import TitleWithTooltip from "../TitleWithTooltip";
 import {
   StyledIcon,
@@ -15,7 +16,6 @@ import {
 import appSwitcherActionClasses, {
   HvAppSwitcherActionClasses,
 } from "./actionClasses";
-import { useUniqueId } from "@core/hooks";
 
 export interface HvAppSwitcherActionProps extends HvBaseProps {
   /** The application data to be used to render the Action object. */
@@ -113,8 +113,8 @@ export const HvAppSwitcherAction = ({
         isSelected && clsx(appSwitcherActionClasses.selected, classes?.selected)
       )}
     >
-      {/*As HvTooltip don't have the id prop, is not possible to use the aria-labelledby to reference it.
-       In substitution is used the aria-label with the "title" value*/}
+      {/* As HvTooltip don't have the id prop, is not possible to use the aria-labelledby to reference it.
+       In substitution is used the aria-label with the "title" value */}
       <StyledTypography
         component={isLink ? "a" : "button"}
         href={isLink ? url : undefined}

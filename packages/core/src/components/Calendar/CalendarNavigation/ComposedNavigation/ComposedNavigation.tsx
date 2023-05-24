@@ -1,8 +1,8 @@
+import { setId } from "@core/utils";
+import { clsx } from "clsx";
 import { getMonthNamesList } from "../../utils";
 import { ViewMode } from "../../enums";
-import { setId } from "@core/utils";
 import { Navigation } from "../Navigation";
-import { clsx } from "clsx";
 import composedNavigationClasses, {
   HvComposedNavigationClasses,
 } from "./composedNavigationClasses";

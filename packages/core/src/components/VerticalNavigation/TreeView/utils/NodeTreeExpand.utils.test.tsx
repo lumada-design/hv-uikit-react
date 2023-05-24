@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { NodeTreeExpandUtils } from "../utils";
+import { NodeTreeExpandUtils } from ".";
 
 describe("NodeTreeExpandUtils", () => {
   const nodeMap = {

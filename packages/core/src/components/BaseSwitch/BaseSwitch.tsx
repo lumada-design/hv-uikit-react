@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
 import { clsx } from "clsx";
 import { SwitchProps as MuiSwitchProps } from "@mui/material";
-import { StyledSwitch } from "./BaseSwitch.styles";
 import { HvBaseProps } from "@core/types";
+import { StyledSwitch } from "./BaseSwitch.styles";
 import baseSwitchClasses, { HvBaseSwitchClasses } from "./baseSwitchClasses";
 
 export interface HvBaseSwitchProps

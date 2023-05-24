@@ -6,11 +6,7 @@ describe("ColorPicker", () => {
   it("should render correctly full color picker", () => {
     const { container } = render(
       <div style={{ width: "134px" }}>
-        <HvColorPicker
-          label="Color"
-          onChange={(color) => console.log(color)}
-          expanded={true}
-        />
+        <HvColorPicker label="Color" expanded />
       </div>
     );
 
@@ -23,8 +19,7 @@ describe("ColorPicker", () => {
         <HvColorPicker
           label="Color"
           defaultValue="#de2beb"
-          onChange={(color) => console.log(color)}
-          expanded={true}
+          expanded
           showSavedColors={false}
         />
       </div>
@@ -39,8 +34,7 @@ describe("ColorPicker", () => {
         <HvColorPicker
           label="Color"
           defaultValue="#de2beb"
-          onChange={(color) => console.log(color)}
-          expanded={true}
+          expanded
           showSavedColors={false}
           showCustomColors={false}
         />
@@ -53,11 +47,7 @@ describe("ColorPicker", () => {
   it("should render correctly full color icon picker", () => {
     const { container } = render(
       <div style={{ width: "134px" }}>
-        <HvColorPicker
-          label="Color"
-          iconOnly={true}
-          onChange={(color) => console.log(color)}
-        />
+        <HvColorPicker label="Color" iconOnly />
       </div>
     );
 
@@ -67,12 +57,7 @@ describe("ColorPicker", () => {
   it("should render correctly without saved colors icon color picker", () => {
     const { container } = render(
       <div style={{ width: "134px" }}>
-        <HvColorPicker
-          label="Color"
-          iconOnly={true}
-          onChange={(color) => console.log(color)}
-          showSavedColors={true}
-        />
+        <HvColorPicker label="Color" iconOnly showSavedColors />
       </div>
     );
 
@@ -85,10 +70,9 @@ describe("ColorPicker", () => {
         <HvColorPicker
           label="Color"
           defaultValue="#de2beb"
-          iconOnly={true}
-          showSavedColors={true}
-          showCustomColors={true}
-          onChange={(color) => console.log(color)}
+          iconOnly
+          showSavedColors
+          showCustomColors
         />
       </div>
     );

@@ -139,7 +139,7 @@ export const BulkActions = () => {
         label="Semantic"
         onChange={() => setSemantic((value) => !value)}
         checked={semantic}
-      ></HvCheckBox>
+      />
       <br />
       <HvBulkActions
         id="bulkActions"

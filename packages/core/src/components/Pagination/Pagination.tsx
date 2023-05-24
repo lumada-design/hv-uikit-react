@@ -9,6 +9,8 @@ import {
   Forwards,
 } from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps } from "@core/types";
+import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { useLabels } from "@core/hooks";
 import { Option } from "./Select";
 import {
   StyledRoot,
@@ -22,9 +24,7 @@ import {
   StyledPageInfo,
 } from "./Pagination.styles";
 import paginationClasses, { HvPaginationClasses } from "./paginationClasses";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { usePageInput, getSafePage, setColor } from "./utils";
-import { useLabels } from "@core/hooks";
 
 export interface HvPaginationLabels {
   /** The show label. */

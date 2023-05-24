@@ -3,6 +3,13 @@ import { PopperProps } from "@mui/material";
 import { clsx } from "clsx";
 import { setId } from "@core/utils";
 import { useLabels, useUniqueId, useControlled } from "@core/hooks";
+import { HvBaseProps } from "@core/types";
+import {
+  HvBaseDropdownProps,
+  HvInfoMessage,
+  HvListValue,
+  HvWarningText,
+} from "@core/components";
 import { isInvalid } from "../Forms/FormElement/validationStates";
 import { getSelected, getSelectionLabel } from "./utils";
 import dropdownClasses, { HvDropdownClasses } from "./dropdownClasses";
@@ -14,13 +21,6 @@ import {
   StyledLabelContainer,
   StyledTypography,
 } from "./Dropdown.styles";
-import { HvBaseProps } from "@core/types";
-import {
-  HvBaseDropdownProps,
-  HvInfoMessage,
-  HvListValue,
-  HvWarningText,
-} from "@core/components";
 
 export interface HvDropdownLabelsProps {
   /**

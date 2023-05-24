@@ -3,13 +3,13 @@ import { clsx } from "clsx";
 import { HvTypography } from "@core/components";
 import { HvBaseProps } from "@core/types";
 import { iconVariant } from "@core/utils";
+import { useTheme } from "@core/hooks";
 import {
   StyledTitle,
   StyledMessageContainer,
   StyledTextWithIcon,
 } from "./Title.styles";
 import dialogTitleClasses, { HvDialogTitleClasses } from "./titleClasses";
-import { useTheme } from "@core/hooks";
 
 export type HvDialogTitleVariant =
   | "success"
@@ -68,7 +68,7 @@ export const HvDialogTitle = ({
         {icon}
         <StyledTextWithIcon
           className={
-            !!icon
+            icon
               ? clsx(dialogTitleClasses.textWithIcon, classes?.textWithIcon)
               : undefined
           }

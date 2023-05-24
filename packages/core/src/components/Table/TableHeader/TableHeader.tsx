@@ -11,9 +11,11 @@ import capitalize from "lodash/capitalize";
 import styled from "@emotion/styled";
 import { hexToRgb, alpha } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
+import { transientOptions } from "@core/utils/transientOptions";
+import { HvTypographyProps } from "@core/components";
+import { useTheme } from "@core/hooks";
 import tableHeaderClasses, { HvTableHeaderClasses } from "./tableHeaderClasses";
 import TableContext from "../TableContext";
-import { transientOptions } from "@core/utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 import { getSortIcon, isParagraph } from "./utils";
 import {
@@ -27,8 +29,6 @@ import {
   HvTableCellType,
   HvTableCellVariant,
 } from "../Table";
-import { HvTypographyProps } from "@core/components";
-import { useTheme } from "@core/hooks";
 
 export interface HvTableHeaderProps
   extends Omit<ThHTMLAttributes<HTMLTableCellElement>, "align"> {

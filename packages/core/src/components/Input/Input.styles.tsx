@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import { suggestionsClasses } from "@core/components";
-import inputClasses, { HvInputClasses } from "./inputClasses";
 import { CSSInterpolation } from "@emotion/serialize";
+import inputClasses, { HvInputClasses } from "./inputClasses";
 
 export const styles: Partial<Record<keyof HvInputClasses, CSSInterpolation>> = {
   root: { display: "block" },

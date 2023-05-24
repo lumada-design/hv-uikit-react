@@ -15,7 +15,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { lazy, Suspense, useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
-import { styles } from "./Sidebar.styles";
 import debounce from "lodash/debounce";
 import CodeEditor from "generator/CodeEditor";
 import {
@@ -25,6 +24,7 @@ import {
   Template,
 } from "@hitachivantara/uikit-react-icons";
 import { css } from "@emotion/css";
+import { styles } from "./Sidebar.styles";
 
 const Colors = lazy(() => import("generator/Colors"));
 const FontSizes = lazy(() => import("generator/FontSizes"));
@@ -74,13 +74,13 @@ const Sidebar = () => {
 
   return (
     <>
-      {!open && <div className={styles.closed}></div>}
+      {!open && <div className={styles.closed} />}
       {open && (
         <div className={styles.root}>
           <HvSnackbar
             open={copied}
-            variant={"success"}
-            label={"Code copied to clipboard!"}
+            variant="success"
+            label="Code copied to clipboard!"
             onClose={handleClose}
             autoHideDuration={2000}
             offset={20}

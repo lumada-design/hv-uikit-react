@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvCodeEditor, HvCodeEditorProps } from "./CodeEditor";
 import { css } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
@@ -14,6 +13,7 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { useState } from "react";
 import { Modal } from "@mui/material";
+import { HvCodeEditor, HvCodeEditorProps } from "./CodeEditor";
 
 const meta: Meta<typeof HvCodeEditor> = {
   title: "Widgets/Code Editor",

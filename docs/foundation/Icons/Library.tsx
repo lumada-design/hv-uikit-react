@@ -96,7 +96,7 @@ const Library = ({ isIcons }: { isIcons?: boolean }) => {
 
   const handleToggle = (category) => {
     const newExpandedState = expandedState.map((element) => {
-      if (element.category == category) {
+      if (element.category === category) {
         return { ...element, open: !element.open };
       }
       return element;
@@ -173,7 +173,7 @@ const Library = ({ isIcons }: { isIcons?: boolean }) => {
         {isIcons ? (
           expandedState.map((element) => (
             <HvAccordion
-              key={element.category + "Accordion"}
+              key={`${element.category}Accordion`}
               label={element.category}
               expanded={element.open}
               onChange={() => handleToggle(element.category)}

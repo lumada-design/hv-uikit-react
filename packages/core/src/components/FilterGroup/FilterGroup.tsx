@@ -6,16 +6,16 @@ import {
   HvLabel,
   HvWarningText,
 } from "@core/components";
+import { useControlled, useLabels, useUniqueId } from "@core/hooks";
+import { setId } from "@core/utils";
+import { ClassNames } from "@emotion/react";
 import filterGroupClasses, { HvFilterGroupClasses } from "./filterGroupClasses";
 import {
   HvFilterGroupContent,
   HvFilterGroupContentProps,
 } from "./FilterContent";
-import { useControlled, useLabels, useUniqueId } from "@core/hooks";
 import { styles } from "./FilterGroup.styles";
-import { setId } from "@core/utils";
 import { HvFilterGroupProvider } from "./FilterGroupContext";
-import { ClassNames } from "@emotion/react";
 
 export type HvFilterGroupValue = (string | number)[][];
 

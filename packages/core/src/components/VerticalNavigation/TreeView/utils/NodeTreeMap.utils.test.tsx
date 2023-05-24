@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { NodeTreeMapUtils } from "../utils";
+import { NodeTreeMapUtils } from ".";
 
 describe("NodeTreeMapUtils", () => {
   let nodeMap;

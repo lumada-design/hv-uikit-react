@@ -28,7 +28,7 @@ export const HvPage = ({
   return (
     <StyledLink
       route={elem.path}
-      //component={Component}
+      // component={Component}
       onClick={onClick}
       data={elem}
       classes={{ a: clsx(pageClasses.a, classes?.a) }}

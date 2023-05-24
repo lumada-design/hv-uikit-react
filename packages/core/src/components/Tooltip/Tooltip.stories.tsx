@@ -18,28 +18,24 @@ export const Main: StoryObj<HvTooltipProps> = {
     classes: { control: { disable: true } },
   },
   render: ({ title, open }) => {
-    {
-      const styling = {
-        placeholder: {
+    return (
+      <HvBox
+        sx={{
           display: "flex",
           justifyContent: "space-between",
           maxWidth: 600,
           margin: "0 auto",
           paddingTop: 80,
-        },
-      };
-
-      return (
-        <HvBox sx={styling.placeholder}>
-          <HvTooltip title={title} open>
-            <HvTypography>Hover here</HvTypography>
-          </HvTooltip>
-          <HvTooltip title={title} open={open}>
-            <HvTypography>Tooltip open</HvTypography>
-          </HvTooltip>
-        </HvBox>
-      );
-    }
+        }}
+      >
+        <HvTooltip title={title} open>
+          <HvTypography>Hover here</HvTypography>
+        </HvTooltip>
+        <HvTooltip title={title} open={open}>
+          <HvTypography>Tooltip open</HvTypography>
+        </HvTooltip>
+      </HvBox>
+    );
   },
 };
 

@@ -68,7 +68,7 @@ export const Main: StoryObj<HvAccordionProps> = {
 };
 
 export const Disabled: StoryObj<HvAccordionProps> = {
-  render: ({}) => {
+  render: () => {
     return (
       <HvBox sx={{ maxWidth: 300 }}>
         <HvAccordion id="item1" label="Analytics" headingLevel={3} disabled>
@@ -98,7 +98,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
   parameters: {
     eyes: { include: false },
   },
-  render: ({}) => {
+  render: () => {
     const [expandedState, setExpandedState] = useState({
       personalInformation: true,
       billingAddress: false,
@@ -301,7 +301,7 @@ export const Typography: StoryObj<HvAccordionProps> = {
       },
     },
   },
-  render: ({}) => {
+  render: () => {
     const getData = () => [
       {
         id: 1,
@@ -371,7 +371,7 @@ export const Typography: StoryObj<HvAccordionProps> = {
         <HvAccordion
           id="item1"
           label="Films"
-          labelVariant={"title4"}
+          labelVariant="title4"
           headingLevel={2}
           expanded
         >

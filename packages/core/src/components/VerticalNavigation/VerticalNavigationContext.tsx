@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { NavigationData, HvVerticalNavigationMode } from "./";
+import { NavigationData, HvVerticalNavigationMode } from ".";
 
 interface VerticalNavigationContextValue {
   isOpen: boolean;

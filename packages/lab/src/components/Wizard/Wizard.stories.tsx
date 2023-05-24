@@ -9,9 +9,9 @@ import {
   HvListItem,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
+import { css } from "@emotion/css";
 import mockText from "./mockData";
 import { HvWizard, HvWizardProps, HvWizardContext } from ".";
-import { css } from "@emotion/css";
 
 const meta: Meta<typeof HvWizard> = {
   title: "Lab/Wizard",
@@ -61,7 +61,7 @@ const RandomFormComponent = () => {
       [tab]: {
         ...c[tab],
         form: { ...formData, [fieldName]: fieldValue },
-        valid: valid,
+        valid,
       },
     }));
   };
@@ -295,7 +295,7 @@ export const ComponentBreakDown = () => {
         summaryContent={summaryContent}
         onClose={handleClose}
         handleSubmit={handleSubmit}
-        title={"Super component"}
+        title="Super component"
         customStep={{ width: { xs: 200, sm: 250, md: 420, lg: 650 } }}
       >
         <div>1. Content</div>

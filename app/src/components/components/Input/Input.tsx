@@ -62,8 +62,8 @@ export const Input = () => {
           label="Invalid"
           description="Please enter your last name"
           placeholder="Insert last name"
-          status={"invalid"}
-          statusMessage={"Oh no!"}
+          status="invalid"
+          statusMessage="Oh no!"
         />
       </HvBox>
       <HvBox sx={{ width: "31%" }}>

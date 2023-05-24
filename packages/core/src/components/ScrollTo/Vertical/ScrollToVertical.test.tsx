@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { HvScrollToVertical } from "./ScrollToVertical";
 import { HvProvider } from "@core/providers";
-import { WithContent } from "./ScrollToVertical.stories";
 import userEvent from "@testing-library/user-event";
+import { HvScrollToVertical } from "./ScrollToVertical";
+import { WithContent } from "./ScrollToVertical.stories";
 
 const Main = () => {
   const options = [

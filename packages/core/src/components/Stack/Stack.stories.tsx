@@ -104,7 +104,7 @@ export const Spacing: StoryObj<HvStackProps> = {
         <div>
           <HvStack
             direction={{ xs: "column", md: "row" }}
-            spacing={"xs"}
+            spacing="xs"
             divider={false}
           >
             <Box>1</Box>

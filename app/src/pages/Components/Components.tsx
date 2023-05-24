@@ -234,7 +234,8 @@ const Component = ({
   return (
     <HvBox className={styles.component}>
       <div style={{ position: "absolute", marginTop: "-100px" }}>
-        <a id={id}></a>
+        {/* eslint-disable-next-line jsx-a11y/anchor-has-content,jsx-a11y/anchor-is-valid  */}
+        <a id={id} />
       </div>
       <HvBox className={styles.header}>
         <HvTypography variant="title2">{title}</HvTypography>

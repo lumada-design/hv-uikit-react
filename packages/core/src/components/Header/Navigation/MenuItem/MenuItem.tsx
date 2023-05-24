@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { HvHeaderNavigationItemProp, HvTypography } from "@core/components";
-import { HvMenuBar } from "../MenuBar";
 import { HvBaseProps } from "@core/types";
 import { isKeypress, keyboardCodes } from "@core/utils";
+import { HvMenuBar } from "../MenuBar";
 import { FocusContext } from "../utils/FocusContext";
 import { SelectionContext } from "../utils/SelectionContext";
 import { MenuItemLabel, MenuItemLi, MenuItemLink } from "./MenuItem.styles";
@@ -66,6 +66,7 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   if (itemHref == null) {
     // apps should configure the href even on parent items without content
     // so the fallback logic is theirs, but if not we'll do our best to find a link
+    // eslint-disable-next-line no-inner-declarations
     function traversePreOrder(node: HvHeaderNavigationItemProp) {
       if (node?.href) {
         itemHref = node?.href;
@@ -86,7 +87,7 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
     <MenuItemLi
       id={id}
       key={item.label}
-      $selected={isSelected ? true : false}
+      $selected={!!isSelected}
       $isMenu={isMenu}
     >
       {itemHref ? (

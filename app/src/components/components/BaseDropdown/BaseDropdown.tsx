@@ -10,38 +10,22 @@ export const BaseDropdown = () => {
         rowGap: "10px",
       }}
     >
-      <HvBaseDropdown
-        placeholder="Select..."
-        children={
-          <>
-            <div>Option 1</div>
-            <div>Option 2</div>
-            <div>Option 3</div>
-          </>
-        }
-      />
-      <HvBaseDropdown
-        placeholder="Disabled"
-        disabled
-        children={
-          <>
-            <div>Option 1</div>
-            <div>Option 2</div>
-            <div>Option 3</div>
-          </>
-        }
-      />
+      <HvBaseDropdown placeholder="Select...">
+        <div>Option 1</div>
+        <div>Option 2</div>
+        <div>Option 3</div>
+      </HvBaseDropdown>
+      <HvBaseDropdown placeholder="Disabled" disabled>
+        <div>Option 1</div>
+        <div>Option 2</div>
+        <div>Option 3</div>
+      </HvBaseDropdown>
       <HvBaseDropdown readOnly placeholder="Read only" />
-      <HvBaseDropdown
-        disablePortal
-        children={
-          <>
-            <div>Option 1</div>
-            <div>Option 2</div>
-            <div>Option 3</div>
-          </>
-        }
-      />
+      <HvBaseDropdown disablePortal>
+        <div>Option 1</div>
+        <div>Option 2</div>
+        <div>Option 3</div>
+      </HvBaseDropdown>
       <HvBaseDropdown variableWidth />
       <HvBaseDropdown placement="left" />
       <HvBaseDropdown placement="right" />

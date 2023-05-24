@@ -101,7 +101,7 @@ export const Samples = () => {
 
 export const LocaleOverride = () => {
   const [locale, setLocale] = useState("en");
-  const [time /*, setTime*/] = useState(Date.now());
+  const [time /* , setTime */] = useState(Date.now());
 
   // const handleTimeChange = ({ hours, minutes, seconds }) => {
   //   const newDate = new Date();

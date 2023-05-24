@@ -20,7 +20,8 @@ export const getBorderStyles = (type: string, color: string) => {
         borderBottom: `1px solid ${color}`,
       },
     };
-  } else if (type === "cell") {
+  }
+  if (type === "cell") {
     return {
       ":first-of-type&": {
         borderLeft: `1px solid ${theme.table.rowBorderColor}`,

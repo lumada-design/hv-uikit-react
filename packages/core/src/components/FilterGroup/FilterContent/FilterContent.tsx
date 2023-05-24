@@ -8,6 +8,10 @@ import {
   HvTypography,
 } from "@core/components";
 import { setId } from "@core/utils";
+import { useContext, useMemo, useRef, useState } from "react";
+import { Filters } from "@hitachivantara/uikit-react-icons";
+import { ClassNames } from "@emotion/react";
+import { useTheme } from "@core/hooks";
 import {
   HvFilterGroupLabels,
   HvFilterGroupValue,
@@ -18,13 +22,9 @@ import filterGroupContentClasses, {
   HvFilterGroupContentClasses,
 } from "./filterContentClasses";
 import { HvFilterGroupContext } from "../FilterGroupContext";
-import { useContext, useMemo, useRef, useState } from "react";
-import { Filters } from "@hitachivantara/uikit-react-icons";
 import { HvFilterGroupCounter } from "../Counter";
-import { ClassNames } from "@emotion/react";
 import { HvFilterGroupLeftPanel } from "../LeftPanel";
 import { HvFilterGroupRightPanel } from "../RightPanel";
-import { useTheme } from "@core/hooks";
 
 export interface HvFilterGroupContentProps
   extends Omit<HvBaseDropdownProps, "onChange"> {

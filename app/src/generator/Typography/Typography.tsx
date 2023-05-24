@@ -9,12 +9,12 @@ import {
   HvButton,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { styles } from "./Typography.styles";
 import { getVarValue } from "generator/utils";
 import { useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import debounce from "lodash/debounce";
 import { css } from "@emotion/css";
+import { styles } from "./Typography.styles";
 
 const typographyToShow = [
   "display",
@@ -43,7 +43,7 @@ const Typography = () => {
   );
 
   useEffect(() => {
-    let map = new Map<string, string>();
+    const map = new Map<string, string>();
     if (customTheme) {
       typographyToShow.map((t) => {
         if (customTheme.typography[t].fontSize) {
@@ -56,13 +56,13 @@ const Typography = () => {
   }, [customTheme]);
 
   const sizeChangedHandler = (typographyName: string, value) => {
-    let map = new Map<string, string>(updatedSizes);
+    const map = new Map<string, string>(updatedSizes);
     map.set(typographyName, value);
     setUpdatedSizes(map);
   };
 
   const setSizeHandler = (typographyName: string) => {
-    let currSize = {};
+    const currSize = {};
     for (const [key, val] of updatedSizes.entries()) {
       currSize[key] = val;
     }
@@ -105,7 +105,7 @@ const Typography = () => {
         lineHeights.push({
           label: h,
           value: h,
-          selected: selected,
+          selected,
         });
       });
     }
@@ -137,7 +137,7 @@ const Typography = () => {
         fontWeights.push({
           label: w,
           value: w,
-          selected: selected,
+          selected,
         });
       });
     }
@@ -158,7 +158,7 @@ const Typography = () => {
     });
     updateCustomTheme(newTheme);
 
-    let map = new Map<string, string>(updatedHeights);
+    const map = new Map<string, string>(updatedHeights);
     map.set(typographyName, lineHeight);
     setUpdatedHeights(map);
   };
@@ -176,7 +176,7 @@ const Typography = () => {
     });
     updateCustomTheme(newTheme);
 
-    let map = new Map<string, string>(updatedWeights);
+    const map = new Map<string, string>(updatedWeights);
     map.set(typographyName, fontWeight);
     setUpdatedWeights(map);
   };

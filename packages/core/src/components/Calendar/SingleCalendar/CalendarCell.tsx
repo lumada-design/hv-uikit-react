@@ -1,5 +1,7 @@
 import { SyntheticEvent, useRef } from "react";
 import { clsx } from "clsx";
+import { HvTooltip, HvTypography } from "@core/components";
+import { useComputation } from "@core/hooks";
 import {
   getDateISO,
   getFormattedDate,
@@ -10,8 +12,6 @@ import {
   isDateRangeProp,
 } from "../utils";
 import { DateRangeProp } from "../Calendar";
-import { HvTooltip, HvTypography } from "@core/components";
-import { useComputation } from "@core/hooks";
 import calendarCellClasses, {
   HvCalendarCellClasses,
 } from "./calendarCellClasses";

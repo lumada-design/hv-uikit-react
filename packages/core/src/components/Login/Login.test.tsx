@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
-import { HvLogin } from "./";
+import { HvLogin } from ".";
 
 describe("Login", () => {
   it("should be defined", () => {

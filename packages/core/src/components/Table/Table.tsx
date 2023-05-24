@@ -1,6 +1,5 @@
 import { clsx } from "clsx";
 import styled from "@emotion/styled";
-import tableClasses, { HvTableClasses } from "./tableClasses";
 import {
   CSSProperties,
   forwardRef,
@@ -8,9 +7,10 @@ import {
   useMemo,
   useRef,
 } from "react";
-import TableContext from "./TableContext";
 import { transientOptions } from "@core/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
+import TableContext from "./TableContext";
+import tableClasses, { HvTableClasses } from "./tableClasses";
 
 export type HvTableVariant = "listrow" | "default";
 export type HvTableCellAlign =

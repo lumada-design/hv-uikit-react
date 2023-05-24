@@ -1,4 +1,3 @@
-import { styles } from "./Sizes.styles";
 import { css } from "@emotion/css";
 import {
   createTheme,
@@ -9,6 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
+import { styles } from "./Sizes.styles";
 
 const Sizes = () => {
   const { activeTheme } = useTheme();
@@ -18,7 +18,7 @@ const Sizes = () => {
   );
 
   const valueChangedHandler = (size: string, value) => {
-    let map = new Map<string, string>(currValues);
+    const map = new Map<string, string>(currValues);
     map.set(size, value);
     setCurrValues(map);
   };

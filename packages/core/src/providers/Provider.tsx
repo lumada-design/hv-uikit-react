@@ -12,10 +12,10 @@ import {
 } from "@hitachivantara/uikit-styles";
 import { processThemes } from "@core/utils";
 import { HvTheme } from "@core/types";
-import { HvThemeProvider } from "./ThemeProvider";
 import React, { useMemo } from "react";
 import createCache from "@emotion/cache";
 import { useUniqueId } from "@core/hooks";
+import { HvThemeProvider } from "./ThemeProvider";
 
 // Provider props
 export interface HvProviderProps {
@@ -107,7 +107,7 @@ export const HvProvider = ({
     <CacheProvider value={emotionCache}>
       <Global
         styles={cssReact`
-          ${cssBaseline == "global" && CssBaseline}
+          ${cssBaseline === "global" && CssBaseline}
           ${getThemesVars(themesList)}
         `}
       />

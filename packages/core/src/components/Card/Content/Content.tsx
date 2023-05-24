@@ -1,10 +1,10 @@
 import { HvBaseProps } from "@core/types";
-import { styles } from "./Content.styles";
 import MuiCardContent, {
   CardContentProps as MuiCardContentProps,
 } from "@mui/material/CardContent";
-import cardContentClasses, { HvCardContentClasses } from "./contentClasses";
 import { ClassNames } from "@emotion/react";
+import { styles } from "./Content.styles";
+import cardContentClasses, { HvCardContentClasses } from "./contentClasses";
 
 export interface HvCardContentProps
   extends Omit<MuiCardContentProps, "classes">,

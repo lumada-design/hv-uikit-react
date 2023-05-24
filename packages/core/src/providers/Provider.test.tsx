@@ -11,7 +11,9 @@ const Main = () => {
 
   return (
     <>
-      <button onClick={() => changeTheme("ds3", "wicked")}>Update theme</button>
+      <button type="button" onClick={() => changeTheme("ds3", "wicked")}>
+        Update theme
+      </button>
       <p>Theme provider test</p>
     </>
   );

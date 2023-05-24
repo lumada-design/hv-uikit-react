@@ -8,7 +8,10 @@
   "extends": [
     "plugin:import/recommended",
     "plugin:import/typescript",
+    "airbnb",
+    // "airbnb/hooks", // TODO: enable
     "airbnb-typescript",
+    "plugin:react/jsx-runtime",
     "prettier"
   ],
   "plugins": ["@typescript-eslint", "import"],
@@ -26,8 +29,45 @@
       {
         "patterns": ["@hitachivantara/*/*"]
       }
-    ]
+    ],
+
+    "arrow-body-style": "off",
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+
+    // TODO: review this
+    "jsx-a11y/no-static-element-interactions": "off",
+    "array-callback-return": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "react/function-component-definition": "off",
+    "react/no-unescaped-entities": "off",
+    "react/no-unstable-nested-components": "off",
+    "react/destructuring-assignment": "off",
+    "no-restricted-globals": "off",
+    "react/no-unused-prop-types": "off",
+    "react/no-array-index-key": "off",
+    "import/no-cycle": "off",
+    "no-restricted-exports": "off",
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off",
+    "no-param-reassign": "off",
+    "no-nested-ternary": "off",
+    "consistent-return": "off",
+    "no-prototype-builtins": "off",
+    "no-plusplus": "off",
+    "no-multi-str": "off"
   },
+  "overrides": [
+    {
+      "files": ["**/*.stories.ts?(x)"],
+      "rules": {
+        "no-alert": "off",
+        "no-console": "off"
+      }
+    }
+  ],
   "settings": {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"]

@@ -20,7 +20,7 @@ import countryNamesArray, { continents, countries } from "./countries";
  * Search boxes are commonly accompanied by a search button/icon to submit the query.
  * However, the search button should be omitted in the filter as you type mode, where the trigger is automatic and related to the text string.
  */
-const SearchBox = () => <></>;
+const SearchBox = () => null;
 
 const meta: Meta<typeof HvInput> = {
   title: "Components/Input/Search Box",

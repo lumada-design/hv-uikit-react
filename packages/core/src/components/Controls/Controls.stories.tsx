@@ -89,7 +89,7 @@ export const Controls = () => {
       <HvControls
         views={views}
         defaultView="card"
-        callbacks={{ setGlobalFilter: setGlobalFilter, setSortBy: setSortBy }}
+        callbacks={{ setGlobalFilter, setSortBy }}
         onViewChange={(evt, id) => setCurrentView(id)}
       >
         <HvLeftControl
@@ -488,7 +488,7 @@ export const MixedControls = () => {
         views={singleView}
         defaultView="card"
         hideViewSwitcher
-        callbacks={{ setGlobalFilter: setGlobalFilter }}
+        callbacks={{ setGlobalFilter }}
       >
         <HvLeftControl id="MultibuttonFilter" placeholder="Search">
           <HvMultiButton style={{ width: "350px" }}>

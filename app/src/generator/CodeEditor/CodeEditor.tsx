@@ -9,7 +9,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { GeneratorContext } from "generator/GeneratorContext";
 import { useContext, useEffect, useState } from "react";
-import { styles } from "./CodeEditor.styles";
 import {
   Download,
   Undo,
@@ -19,6 +18,7 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { downloadTheme, themeDiff } from "generator/utils";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
+import { styles } from "./CodeEditor.styles";
 
 export const groupsToShow = ["acce", "atmo", "base", "sema"] as const; // "sup", "cat"
 
@@ -43,9 +43,10 @@ const CodeEditor = ({ themeName, setCopied }): JSX.Element => {
     setFullCode(
       `import { createTheme } from "@hitachivantara/uikit-react-core";
   
-const ${themeName} = createTheme(` +
-        JSON.stringify(final, null, 2).replace(/\"([^(\")"]+)\":/g, "$1:") +
-        `)
+const ${themeName} = createTheme(${JSON.stringify(final, null, 2).replace(
+        /"([^(")"]+)":/g,
+        "$1:"
+      )})
       
 export default ${themeName};`
     );
@@ -133,7 +134,6 @@ export default ${themeName};`
               </HvButton>
             </HvTooltip>
           </HvBox>
-          <HvBox></HvBox>
         </HvBox>
       </HvBox>
       <HvCodeEditor

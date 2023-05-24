@@ -1,9 +1,9 @@
-import { HvFile, HvFileData, HvFileRemovedEvent } from "../File";
-import fileListClasses, { HvFileListClasses } from "./fileListClasses";
 import { useUniqueId } from "@core/hooks";
 import { setId } from "@core/utils";
-import { StyledList } from "./FileList.styles";
 import { clsx } from "clsx";
+import { HvFile, HvFileData, HvFileRemovedEvent } from "../File";
+import fileListClasses, { HvFileListClasses } from "./fileListClasses";
+import { StyledList } from "./FileList.styles";
 
 export interface HvFileListProps {
   /**

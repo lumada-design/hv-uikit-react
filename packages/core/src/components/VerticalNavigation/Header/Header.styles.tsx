@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { HvButton, HvButtonProps } from "@core/components";
-import verticalNavigationHeaderClasses from "./headerClasses";
 import { forwardRef, Ref } from "react";
+import verticalNavigationHeaderClasses from "./headerClasses";
 
 export const StyledHeader = styled("div")({
   width: "100%",

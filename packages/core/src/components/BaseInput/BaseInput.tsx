@@ -5,16 +5,16 @@ import {
   Input as MuiInput,
 } from "@mui/material";
 import { HvBaseProps } from "@core/types";
-import { styles } from "./BaseInput.styles";
 import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
   buildFormElementPropsFromContext,
   buildAriaPropsFromContext,
 } from "@core/components";
-import baseInputClasses, { HvBaseInputClasses } from "./baseInputClasses";
 import { ClassNames, css as emotionCss, Global } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
+import baseInputClasses, { HvBaseInputClasses } from "./baseInputClasses";
+import { styles } from "./BaseInput.styles";
 
 // Global styles for the base input.
 const baseInputStyles = emotionCss`

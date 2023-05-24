@@ -1,10 +1,10 @@
 import { HvBaseProps } from "@core/types";
-import horizontalScrollListItemClasses, {
-  HvHorizontalScrollListItemClasses,
-} from "./horizontalScrollListItemClasses";
 import { ClassNames } from "@emotion/react";
 import { setId } from "@core/utils";
 import { HvTypographyProps } from "@core/components";
+import horizontalScrollListItemClasses, {
+  HvHorizontalScrollListItemClasses,
+} from "./horizontalScrollListItemClasses";
 import { styles } from "./HorizontalScrollListItem.styles";
 
 export interface HvVerticalScrollListItemProps extends HvBaseProps {

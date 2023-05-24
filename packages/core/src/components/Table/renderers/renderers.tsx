@@ -23,8 +23,8 @@ export function hvTextColumn<
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
 >(col: HvTableColumnConfig<D, H>): HvTableColumnConfig<D, H> {
   return {
-    Cell: (cellProps: HvCellProps<D, H>) => (
-      <HvOverflowTooltip data={hvStringFallback(cellProps.value)} />
+    Cell: ({ value }: HvCellProps<D, H>) => (
+      <HvOverflowTooltip data={hvStringFallback(value)} />
     ),
     sortType: "alphanumeric",
     ...col,
@@ -36,9 +36,7 @@ export function hvNumberColumn<
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
 >(col: HvTableColumnConfig<D, H>): HvTableColumnConfig<D, H> {
   return {
-    Cell: (cellProps: HvCellProps<D, H>) => (
-      <>{hvNumberFallback(cellProps.value)}</>
-    ),
+    Cell: ({ value }: HvCellProps<D, H>) => <>{hvNumberFallback(value)}</>,
     align: "right",
     sortType: "number",
     ...col,
@@ -53,8 +51,8 @@ export function hvDateColumn<
   dateFormat?: string
 ): HvTableColumnConfig<D, H> {
   return {
-    Cell: (cellProps: HvCellProps<D, H>) => (
-      <DateColumnCell date={cellProps.value} dateFormat={dateFormat} />
+    Cell: ({ value }: HvCellProps<D, H>) => (
+      <DateColumnCell date={value} dateFormat={dateFormat} />
     ),
     sortType: "alphanumeric",
     sortDescFirst: true,

@@ -4,10 +4,10 @@ import React, { RefObject, useState } from "react";
 import { HvBaseProps } from "@core/types";
 import { keyboardCodes, isBrowser } from "@core/utils";
 import ConditionalWrapper from "@core/utils/ConditionalWrapper";
+import { css, Global } from "@emotion/react";
 import { StyledFocusWrapper, StyledFalseFocus } from "./Focus.styles";
 import { getFocusableChildren, isKey, isOneOfKeys, setFocusTo } from "./utils";
 import focusClasses, { HvFocusClasses } from "./focusClasses";
-import { css, Global } from "@emotion/react";
 
 const focusStyles = css`
   .HvFocus-focused {
@@ -56,19 +56,19 @@ export interface HvFocusProps extends HvBaseProps<HTMLElement, "children"> {
   disabled?: boolean;
   /** The reference to the root element to hold all Focus' context. */
   rootRef?: RefObject<HTMLElement>;
-  /** Show focus when click element. v*/
+  /** Show focus when click element. v */
   focusOnClick?: boolean;
-  /** Show focus when click element. v*/
+  /** Show focus when click element. v */
   focusDisabled?: boolean;
   /** Use up/ down keyboard arrows to control focus. */
   useArrows?: boolean;
-  /** Focus and navigation strategy to be used. v*/
+  /** Focus and navigation strategy to be used. v */
   strategy?: HvFocusStrategies;
-  /** Uses an absolute positioned div as a focus. v*/
+  /** Uses an absolute positioned div as a focus. v */
   useFalseFocus?: boolean;
-  /** Narrows the results of the focus to only theses class v*/
+  /** Narrows the results of the focus to only theses class v */
   filterClass?: string;
-  /** How much the navigation will skip when using the arrows. v*/
+  /** How much the navigation will skip when using the arrows. v */
   navigationJump?: number;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFocusClasses;

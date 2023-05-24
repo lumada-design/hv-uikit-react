@@ -9,13 +9,13 @@ import {
   HvLabelProps,
   HvFormStatus,
 } from "@core/components";
+import { HvBaseProps } from "@core/types";
 import { isInvalid } from "../Forms/FormElement/validationStates";
 import {
   StyledFormElement,
   StyledLabel,
   StyledSwitchContainer,
 } from "./Switch.styles";
-import { HvBaseProps } from "@core/types";
 import switchClasses, { HvSwitchClasses } from "./switchClasses";
 
 export interface HvSwitchProps

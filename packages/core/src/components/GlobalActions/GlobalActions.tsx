@@ -2,6 +2,8 @@ import { clsx } from "clsx";
 import { HvBaseProps } from "@core/types";
 import isString from "lodash/isString";
 import { HvTypography } from "@core/components";
+import { useTheme as useHvTheme } from "@core/hooks";
+import { useTheme } from "@mui/material/styles";
 import {
   StyledActions,
   StyledBackButton,
@@ -11,8 +13,6 @@ import {
 import globalActionsClasses, {
   HvGlobalActionsClasses,
 } from "./globalActionsClasses";
-import { useTheme as useHvTheme } from "@core/hooks";
-import { useTheme } from "@mui/material/styles";
 
 export type HvGlobalActionsVariant = "global" | "section";
 

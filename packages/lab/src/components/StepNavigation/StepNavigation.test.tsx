@@ -13,48 +13,12 @@ type StepType = Pick<
 };
 
 const steps: StepType[] = [
-  {
-    title: "Completed",
-    state: "Completed",
-    onClick: () => {
-      alert("You clicked on 'Completed' step");
-    },
-  },
-  {
-    title: "Failed",
-    state: "Failed",
-    onClick: () => {
-      alert("You clicked on 'Failed' step");
-    },
-  },
-  {
-    title: "Pending",
-    state: "Pending",
-    onClick: () => {
-      alert("You clicked on 'Pending' step");
-    },
-  },
-  {
-    title: "Current",
-    state: "Current",
-    onClick: () => {
-      alert("You clicked on 'Current' step");
-    },
-  },
-  {
-    title: "Enabled",
-    state: "Enabled",
-    onClick: () => {
-      alert("You clicked on 'Enabled' step");
-    },
-  },
-  {
-    title: "Disabled",
-    state: "Disabled",
-    onClick: () => {
-      alert("You clicked on 'Disabled' step");
-    },
-  },
+  { title: "Completed", state: "Completed" },
+  { title: "Failed", state: "Failed" },
+  { title: "Pending", state: "Pending" },
+  { title: "Current", state: "Current" },
+  { title: "Enabled", state: "Enabled" },
+  { title: "Disabled", state: "Disabled" },
 ];
 
 describe("StepNavigation", () => {

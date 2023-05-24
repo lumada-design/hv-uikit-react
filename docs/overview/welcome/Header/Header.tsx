@@ -28,7 +28,7 @@ const Header = () => {
         <ContentWrapper>
           <>
             <HvTypography variant="title1">NEXT UI Kit</HvTypography>
-            <div></div>
+            <div />
             <HvTypography variant="title3">
               React UI library for the Next Design System
             </HvTypography>
@@ -43,6 +43,7 @@ const Header = () => {
               <a
                 href="https://github.com/lumada-design/hv-uikit-react"
                 target="_blank"
+                rel="noreferrer"
               >
                 View on GitHub
               </a>

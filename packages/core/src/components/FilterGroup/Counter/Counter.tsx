@@ -1,8 +1,8 @@
 import { useContext } from "react";
+import { ClassNames } from "@emotion/react";
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { styles } from "./Counter.styles";
 import { HvFilterGroupFilters, HvFilterGroupValue } from "../FilterGroup";
-import { ClassNames } from "@emotion/react";
 import filterGroupCounterClasses, {
   HvFilterGroupCounterClasses,
 } from "./counterClasses";

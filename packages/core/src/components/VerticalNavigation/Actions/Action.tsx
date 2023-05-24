@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { MouseEventHandler, useCallback, useContext } from "react";
 import { isKeypress, keyboardCodes, setId } from "@core/utils";
-import { VerticalNavigationContext } from "../";
+import { VerticalNavigationContext } from "..";
 import { StyledAction } from "./Action.styles";
 import actionClasses, {
   HvVerticalNavigationActionClasses,

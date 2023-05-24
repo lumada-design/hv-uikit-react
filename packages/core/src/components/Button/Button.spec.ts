@@ -16,7 +16,6 @@ test.describe("Button", () => {
       "http://localhost:6006/?path=/story/inputs-button--semantic"
     );
     page.once("dialog", (dialog) => {
-      console.log(`Dialog message: ${dialog.message()}`);
       dialog.dismiss().catch(() => {});
     });
     await page
@@ -30,7 +29,6 @@ test.describe("Button", () => {
       "http://localhost:6006/?path=/story/inputs-button--semantic"
     );
     page.once("dialog", (dialog) => {
-      console.log(`Dialog message: ${dialog.message()}`);
       dialog.dismiss().catch(() => {});
     });
     await page

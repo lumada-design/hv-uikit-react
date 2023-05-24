@@ -11,10 +11,10 @@ import {
   HvInputProps,
   HvButtonProps,
 } from "@core/components";
+import { forwardRef, Ref } from "react";
 import { HvLogin, HvLoginProps } from "./Login";
 import background from "./resources/background.png";
 import customBackground from "./resources/background-custom.jpg";
-import { forwardRef, Ref } from "react";
 
 // #region Styled components
 

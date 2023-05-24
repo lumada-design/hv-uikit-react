@@ -5,10 +5,10 @@ import {
 } from "@mui/material";
 import { forwardRef, ReactElement } from "react";
 import { TransitionProps as MuiTransitionProps } from "@mui/material/transitions";
-import { popperSx } from "./Tooltip.styles";
-import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
 import { clsx } from "clsx";
 import { useTheme } from "@core/hooks";
+import { popperSx } from "./Tooltip.styles";
+import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
 
 export type HvTooltipPlacementType =
   | "bottom-end"
@@ -86,7 +86,7 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
     children,
     title,
     TransitionComponent = Fade,
-    TransitionProps = { timeout: 400, placement: placement },
+    TransitionProps = { timeout: 400, placement },
     ...others
   } = props;
 

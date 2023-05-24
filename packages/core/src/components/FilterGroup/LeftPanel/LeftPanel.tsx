@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { HvFilterGroupContext } from "../FilterGroupContext";
 import { HvListContainer, HvListItem, HvPanel } from "@core/components";
 import { setId, wrapperTooltip } from "@core/utils";
-import { HvFilterGroupCounter } from "../Counter";
 import { ClassNames } from "@emotion/react";
+import { HvFilterGroupCounter } from "../Counter";
+import { HvFilterGroupContext } from "../FilterGroupContext";
 import { styles } from "./LeftPanel.styles";
 import filterGroupLeftPanelClasses, {
   HvFilterGroupLeftPanelClasses,

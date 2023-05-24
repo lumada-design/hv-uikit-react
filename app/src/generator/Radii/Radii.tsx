@@ -1,4 +1,3 @@
-import { styles } from "./Radii.styles";
 import { css } from "@emotion/css";
 import {
   createTheme,
@@ -9,6 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
+import { styles } from "./Radii.styles";
 
 const Radii = () => {
   const { activeTheme } = useTheme();
@@ -18,7 +18,7 @@ const Radii = () => {
   );
 
   const valueChangedHandler = (spacing: string, value) => {
-    let map = new Map<string, string | number>(currValues);
+    const map = new Map<string, string | number>(currValues);
     map.set(spacing, value);
     setCurrValues(map);
   };

@@ -1,11 +1,11 @@
 import { ClassNames } from "@emotion/react";
 import { HvButton } from "@core/components";
 import { CloseXS, Add } from "@hitachivantara/uikit-react-icons";
-import { styles } from "./SavedColors.styles";
-
 // @types/react-color seems to be broken
 // @ts-ignore
 import { Swatch } from "react-color/lib/components/common";
+import { styles } from "./SavedColors.styles";
+
 import colorPickerSavedColorsClasses, {
   HvColorPickerSavedColorsClasses,
 } from "./savedColorsClasses";

@@ -30,8 +30,8 @@ export const getColumns = (): HvTableColumnConfig<ListViewModel, string>[] => [
     Header: "Status",
     accessor: "status",
     style: { width: 40 },
-    Cell: (cellData: HvCellProps<ListViewModel, string>) => {
-      switch (cellData.row.original.status) {
+    Cell: ({ row }: HvCellProps<ListViewModel, string>) => {
+      switch (row.original.status) {
         case 0:
           return (
             <HvTooltip title={<HvTypography>Success</HvTypography>}>

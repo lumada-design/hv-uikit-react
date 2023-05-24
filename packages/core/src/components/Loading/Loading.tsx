@@ -62,7 +62,7 @@ export const HvLoading = (props: HvLoadingProps) => {
               classes?.[variant]
             )}
             $variant={variant}
-          ></StyledBar>
+          />
         ))}
       </StyledBarContainer>
       {label && (

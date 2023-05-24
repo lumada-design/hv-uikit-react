@@ -8,10 +8,10 @@ import {
   HSVColor,
   RGBColor,
 } from "react-color";
-import { styles } from "./Picker.styles";
-import { Fields } from "../Fields";
 import { HvTypography } from "@core/components";
 import { useTheme } from "@core/hooks";
+import { styles } from "./Picker.styles";
+import { Fields } from "../Fields";
 import colorPickerPickerClasses, {
   HvColorPickerPickerClasses,
 } from "./pickerClasses";

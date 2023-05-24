@@ -6,9 +6,9 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { GeneratorContext } from "generator/GeneratorContext";
 import { useContext } from "react";
+import debounce from "lodash/debounce";
 import { styles } from "./Colors.styles";
 import { getColorGroupName, getColors } from "./utils";
-import debounce from "lodash/debounce";
 
 export const groupsToShow = ["acce", "atmo", "base", "sema"] as const; // "sup", "cat"
 

@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { Preview } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvButton, HvButtonProps } from "@core/components";
-import fileUploaderPreviewClasses from "./previewClasses";
 import { forwardRef, Ref } from "react";
+import fileUploaderPreviewClasses from "./previewClasses";
 
 export const StyledOverlay = styled("div")({
   position: "absolute",

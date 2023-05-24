@@ -1,6 +1,8 @@
 import { forwardRef, isValidElement, useEffect, useMemo, useRef } from "react";
 import { clsx } from "clsx";
 import { HvBaseProps, HvExtraProps } from "@core/types";
+import { HvListContainer, HvTypography } from "@core/components";
+import { setId, wrapperTooltip } from "@core/utils";
 import {
   StyledFixedSizeList,
   StyledSelectAllCheckBox,
@@ -13,8 +15,6 @@ import {
 import listClasses, { HvListClasses } from "./listClasses";
 import useSelectableList from "./useSelectableList";
 import { parseList } from "./utils";
-import { HvListContainer, HvTypography } from "@core/components";
-import { setId, wrapperTooltip } from "@core/utils";
 
 export interface HvListValue extends HvExtraProps {
   id?: string | number;

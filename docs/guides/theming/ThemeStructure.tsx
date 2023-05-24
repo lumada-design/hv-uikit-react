@@ -152,7 +152,8 @@ export const ThemeStructure = () => {
           )}
         </HvAccordion>
       );
-    } else if (typeof value === "string" && value.trim().startsWith("#")) {
+    }
+    if (typeof value === "string" && value.trim().startsWith("#")) {
       // Color value
       return (
         <ThemeValue key={`${label}-${level}`} level={level} label={label}>
@@ -162,7 +163,8 @@ export const ThemeStructure = () => {
           </HvTypography>
         </ThemeValue>
       );
-    } else if (typeof value === "string") {
+    }
+    if (typeof value === "string") {
       const processedValue: string = value.includes("var(--")
         ? getVarValue(value)
         : value;
@@ -170,26 +172,24 @@ export const ThemeStructure = () => {
       if (processedValue.trim().startsWith("#")) {
         // Color value
         return renderLevel(processedValue, label, level);
-      } else {
-        // String value
-        return (
-          <ThemeValue key={`${label}-${level}`} level={level} label={label}>
-            <HvTypography variant="label" classes={{ root: styles.positive }}>
-              "{processedValue}"
-            </HvTypography>
-          </ThemeValue>
-        );
       }
-    } else {
-      // Other value: number, etc
+      // String value
       return (
         <ThemeValue key={`${label}-${level}`} level={level} label={label}>
-          <HvTypography variant="label" classes={{ root: styles.neutral }}>
-            {value}
+          <HvTypography variant="label" classes={{ root: styles.positive }}>
+            "{processedValue}"
           </HvTypography>
         </ThemeValue>
       );
     }
+    // Other value: number, etc
+    return (
+      <ThemeValue key={`${label}-${level}`} level={level} label={label}>
+        <HvTypography variant="label" classes={{ root: styles.neutral }}>
+          {value}
+        </HvTypography>
+      </ThemeValue>
+    );
   };
 
   return (

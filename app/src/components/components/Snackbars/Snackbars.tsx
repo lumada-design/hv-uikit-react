@@ -4,11 +4,11 @@ export const Snackbars = () => {
   return (
     <>
       <HvSnackbar
-        open={true}
-        variant={"success"}
-        label={"This is a success snackbar"}
-        transitionDirection={"left"}
-        showIcon={true}
+        open
+        variant="success"
+        label="This is a success snackbar"
+        transitionDirection="left"
+        showIcon
         offset={120}
         transitionDuration={300}
         autoHideDuration={5000}
@@ -19,11 +19,11 @@ export const Snackbars = () => {
         }}
       />
       <HvSnackbar
-        open={true}
-        variant={"error"}
-        label={"And this is an error snackbar"}
-        transitionDirection={"left"}
-        showIcon={true}
+        open
+        variant="error"
+        label="And this is an error snackbar"
+        transitionDirection="left"
+        showIcon
         offset={180}
         transitionDuration={300}
         autoHideDuration={5000}

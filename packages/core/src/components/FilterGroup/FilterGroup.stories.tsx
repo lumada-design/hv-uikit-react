@@ -1,9 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react";
-import {
-  HvFilterGroup,
-  HvFilterGroupProps,
-  HvFilterGroupValue,
-} from "./FilterGroup";
 import { useState } from "react";
 import {
   HvEmptyState,
@@ -12,6 +7,11 @@ import {
   HvTypography,
 } from "@core/components";
 import { Info } from "@hitachivantara/uikit-react-icons";
+import {
+  HvFilterGroup,
+  HvFilterGroupProps,
+  HvFilterGroupValue,
+} from "./FilterGroup";
 
 const meta: Meta<typeof HvFilterGroup> = {
   title: "Widgets/Filter Group",
@@ -185,8 +185,8 @@ const myFilters: HvFilterGroupProps["filters"] = hasFilters
         id: "1",
         name: "Filter with data",
         data: Array.from(Array(5), (el, i) => ({
-            id: \`\opt\${i}\`\,
-            name: \`\Option \${i}\`\,
+            id: \`opt\${i}\`,
+            name: \`Option \${i}\`,
         })),
         },
         {

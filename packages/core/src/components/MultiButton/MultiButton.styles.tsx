@@ -90,6 +90,7 @@ export const StyledRoot = styled(
 
 export const StyledButton = (Element) =>
   styled(({ className }) => (
+    // eslint-disable-next-line react/jsx-pascal-case
     <Element.type
       {...Element.props}
       className={clsx(

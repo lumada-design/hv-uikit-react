@@ -7,13 +7,13 @@ import {
   HvMultiButton,
   HvTypography,
 } from "@core/components";
-import { Rule } from "../Rule";
 import { withTooltip } from "@core/hocs";
+import { ClassNames } from "@emotion/react";
+import { Rule } from "../Rule";
 import queryBuilderClasses, {
   HvQueryBuilderClasses,
 } from "../queryBuilderClasses";
 import { QueryBuilderContext } from "../Context";
-import { ClassNames } from "@emotion/react";
 import { styles } from "./RuleGroup.styles";
 
 export interface RuleGroupProps {
@@ -167,7 +167,7 @@ export const RuleGroup = ({
                       selected={item.operand === combinator}
                       onClick={() => item.operand && onClickCombinator(item)}
                       disabled={readOnly}
-                      size={"xs"}
+                      size="xs"
                     >
                       {item.label}
                     </HvButton>

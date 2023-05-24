@@ -6,7 +6,7 @@ export const Switch = () => {
       <HvSwitch label="Default" />
       <HvSwitch label="Disabled" disabled />
       <HvSwitch label="Readonly" readOnly />
-      <HvSwitch label="Invalid" status={"invalid"} />
+      <HvSwitch label="Invalid" status="invalid" />
     </div>
   );
 };

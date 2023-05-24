@@ -76,14 +76,14 @@ const ds5 = makeTheme((theme: HvTheme) => ({
       lineHeight: theme.lineHeights.xs,
     },
     // LEGACY
-    ["5xlTitle"]: {
+    "5xlTitle": {
       color: theme.colors.secondary,
       fontSize: "52px",
       letterSpacing: "0.02em",
       lineHeight: "60px",
       fontWeight: 600,
     },
-    ["4xlTitle"]: {
+    "4xlTitle": {
       color: theme.colors.secondary,
       fontSize: "52px",
       letterSpacing: "0.02em",

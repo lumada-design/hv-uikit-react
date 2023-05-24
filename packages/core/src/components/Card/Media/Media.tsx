@@ -1,11 +1,11 @@
 import MuiCardMedia, {
   CardMediaProps as MuiCardMediaProps,
 } from "@mui/material/CardMedia";
-import { styles } from "./Media.styles";
 import { HvBaseProps } from "@core/types";
-import cardMediaClasses, { HvCardMediaClasses } from "./mediaClasses";
 import { ImgHTMLAttributes } from "react";
 import { ClassNames } from "@emotion/react";
+import cardMediaClasses, { HvCardMediaClasses } from "./mediaClasses";
+import { styles } from "./Media.styles";
 
 export interface HvCardMediaProps
   extends Omit<MuiCardMediaProps, "classes">,
