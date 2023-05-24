@@ -7,7 +7,6 @@ import { StyledCollapseButton, StyledHeader } from "./Header.styles";
 import verticalNavigationHeaderClasses, {
   HvVerticalNavigationHeaderClasses,
 } from "./headerClasses";
-import isArray from "lodash/isArray";
 
 export interface HvVerticalNavigationHeaderProps {
   /**
@@ -77,7 +76,7 @@ export const HvVerticalNavigationHeader = ({
   // whenever we're in a sublevel, the parentItem is always a single item.
   // In the first level it's always an array with the first level elements.
   const shouldShowTitle = useMemo(
-    () => !slider || (slider && !isArray(parentItem)),
+    () => !slider || (slider && !Array.isArray(parentItem)),
     [parentItem]
   );
 
@@ -121,7 +120,5 @@ export const HvVerticalNavigationHeader = ({
         </StyledCollapseButton>
       )}
     </StyledHeader>
-  ) : (
-    <></>
-  );
+  ) : null;
 };
