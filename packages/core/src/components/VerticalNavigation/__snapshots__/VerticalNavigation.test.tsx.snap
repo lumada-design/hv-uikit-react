@@ -256,7 +256,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   >
                     <div
                       aria-label="This Computer"
-                      class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-placeholderText css-1i34dze-getStyledComponent-StyledContent e1tnpalo0"
+                      class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1bej1oo-getStyledComponent-StyledContent e1tnpalo0"
                       id="hvtreeview3-02-01-03-button"
                       role="button"
                       style="padding-left: 74px;"

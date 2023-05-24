@@ -429,7 +429,8 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             href != null && clsx(treeViewItemClasses.link, classes?.link),
             !isOpen && clsx(treeViewItemClasses.minimized, classes?.minimized)
           )}
-          variant={disabled ? "placeholderText" : "body"}
+          variant="body"
+          disabled={disabled}
           onClick={handleClick}
           onMouseDown={handleMouseDown}
           style={{
