@@ -1,5 +1,5 @@
-import { describe, expect, it, vi } from "vitest";
-import { render } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+import { render, screen } from "@testing-library/react";
 import { useMemo, useState } from "react";
 import { LogOut, User } from "@hitachivantara/uikit-react-icons";
 import userEvent from "@testing-library/user-event";
@@ -9,6 +9,7 @@ import {
   HvVerticalNavigationActions,
   HvVerticalNavigationHeader,
   HvVerticalNavigationTree,
+  NavigationData,
 } from "@core/components";
 
 const Sample = ({
@@ -18,10 +19,10 @@ const Sample = ({
   collapsedMode?: "simple" | "icon";
   slider?: boolean;
 }) => {
-  const navigationData = useMemo(
+  const navigationData = useMemo<NavigationData[]>(
     () => [
       { id: "00", label: "Overview" },
-      { id: "01", label: "Analytics", selectable: false },
+      { id: "01", label: "Analytics" },
       {
         id: "02",
         label: "Storage",
@@ -38,7 +39,6 @@ const Sample = ({
               {
                 id: "02-01-02",
                 label: "HCP Anywhere",
-                href: "/?path=/story/structure-vertical-navigation--main",
               },
               {
                 id: "02-01-03",
@@ -52,14 +52,17 @@ const Sample = ({
       {
         id: "03",
         label: "Administration",
+        href: "#admin",
         data: [
           {
             id: "03-01",
             label: "Rest API",
+            href: "#admin-rest",
             data: [
               {
                 id: "03-01-01",
                 label: "Log Bundle",
+                href: "#admin-rest-logs",
               },
             ],
           },
@@ -78,11 +81,7 @@ const Sample = ({
   };
   return (
     <div style={{ display: "flex", width: 220, height: 530 }}>
-      <HvVerticalNavigation
-        id="sample1"
-        collapsedMode={collapsedMode}
-        slider={slider}
-      >
+      <HvVerticalNavigation collapsedMode={collapsedMode} slider={slider}>
         <HvVerticalNavigationHeader
           title="Menu"
           onCollapseButtonClick={handleExpand}
@@ -178,11 +177,11 @@ const SliderSample = () => {
     []
   );
 
-  const [value, setValue] = useState("00");
+  const [value, setValue] = useState("menu3");
 
   return (
     <div style={{ display: "flex", width: 220, height: 530 }}>
-      <HvVerticalNavigation id="sample1" slider>
+      <HvVerticalNavigation slider>
         <HvVerticalNavigationHeader
           title="Menu"
           backButtonProps={{ "aria-label": "backButton" }}
@@ -206,23 +205,6 @@ const SliderSample = () => {
 };
 
 describe("VerticalNavigation", () => {
-  const { ResizeObserver } = window;
-
-  beforeEach(() => {
-    // @ts-ignore
-    delete window.ResizeObserver;
-    window.ResizeObserver = vi.fn().mockImplementation(() => ({
-      observe: vi.fn(),
-      unobserve: vi.fn(),
-      disconnect: vi.fn(),
-    }));
-  });
-
-  afterEach(() => {
-    window.ResizeObserver = ResizeObserver;
-    vi.restoreAllMocks();
-  });
-
   it("should be defined", () => {
     const { container } = render(<Sample />);
     expect(container).toBeDefined();
@@ -233,7 +215,7 @@ describe("VerticalNavigation", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("should collapsed", async () => {
+  it("should collapse", async () => {
     const { getByRole, getByLabelText } = render(
       <Sample collapsedMode="simple" />
     );
@@ -269,48 +251,75 @@ describe("VerticalNavigation", () => {
     expect(nav).toHaveStyle(`display : block`);
   });
 
+  it("should render links when `href` is passed", async () => {
+    render(<Sample />);
+
+    const button1 = screen.getByRole("button", { name: /Analytics/i });
+    expect(button1).toBeInTheDocument();
+
+    const link = screen.getByRole("link", { name: /Administration/i });
+    expect(link).toBeInTheDocument();
+  });
+
+  it("should select elements when clicked", async () => {
+    render(<Sample />);
+
+    const button = screen.getByRole("button", { name: /Analytics/i });
+    expect(button).toBeInTheDocument();
+    expect(button).not.toHaveAttribute("aria-current");
+
+    await userEvent.click(button);
+    expect(button).toHaveAttribute("aria-current", "true");
+
+    const link = screen.getByRole("link", { name: /Administration/i });
+    expect(link).toBeInTheDocument();
+    expect(link).not.toHaveAttribute("aria-current");
+  });
+
   describe("Slider Navigation", async () => {
-    it("should change header text", async () => {
-      const { getByText, getByRole, queryByText } = render(<SliderSample />);
+    it("should not render header on first page", async () => {
+      render(<SliderSample />);
 
-      const title = queryByText("Menu");
+      const title = screen.queryByText("Menu");
       expect(title).not.toBeInTheDocument();
+    });
 
-      const navigateButton = getByRole("button");
-      expect(navigateButton).toBeInTheDocument();
+    it("should select elements when clicked", async () => {
+      render(<SliderSample />);
 
-      await userEvent.click(navigateButton);
+      const menu3 = screen.getByRole("listitem", { name: /Menu 3/i });
+      expect(menu3).toBeInTheDocument();
+      expect(menu3).toHaveAttribute("aria-current", "true");
 
-      const newTitle = getByText("Menu 1");
-      expect(newTitle).toBeInTheDocument();
+      const menu2 = screen.getByRole("listitem", { name: /Menu 2/i });
+      expect(menu2).toBeInTheDocument();
+      expect(menu2).not.toHaveAttribute("aria-current");
 
-      expect(queryByText("Menu 2")).not.toBeInTheDocument();
+      await userEvent.click(menu2);
+      expect(menu2).toHaveAttribute("aria-current", "true");
+      expect(menu3).not.toHaveAttribute("aria-current", "true");
     });
 
     it("should navigate to child", async () => {
-      const { getByText, getByRole, queryByText, getByLabelText } = render(
-        <SliderSample />
-      );
+      render(<SliderSample />);
 
-      const title = queryByText("Menu");
-      expect(title).not.toBeInTheDocument();
+      await userEvent.click(screen.getByRole("button"));
 
-      const navigateButton = getByRole("button");
-      expect(navigateButton).toBeInTheDocument();
-
-      await userEvent.click(navigateButton);
-
-      const newTitle = getByText("Menu 1");
+      const newTitle = screen.getByText("Menu 1");
       expect(newTitle).toBeInTheDocument();
 
-      expect(queryByText("Menu 2")).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole("listitem", { name: "Menu 2" })
+      ).not.toBeInTheDocument();
 
-      const goBackButton = getByLabelText("backButton");
+      const goBackButton = screen.getByRole("button", { name: "backButton" });
       expect(goBackButton).toBeInTheDocument();
 
       await userEvent.click(goBackButton);
 
-      expect(queryByText("Menu 2")).toBeInTheDocument();
+      expect(
+        screen.queryByRole("listitem", { name: "Menu 2" })
+      ).toBeInTheDocument();
     });
   });
 });

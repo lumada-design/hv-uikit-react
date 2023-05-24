@@ -49,7 +49,7 @@ export interface HvVerticalNavigationProps {
  * It is recommended to use vertical navigation when your application requires global navigation that is displayed on the left.
  * While vertical navigation menus generally consume more space than their horizontal counterparts, they have become more popular as desktop monitors move to wide-screen formats.
  *
- * Even thou both the hierarchically organized data and the visual style ressemble a treeview-like structure, the [Treeview Design Pattern](https://w3c.github.io/aria-practices/#TreeView)
+ * Although both the hierarchically organized data and the visual style resemble a treeview-like structure, the [Treeview Design Pattern](https://w3c.github.io/aria-practices/#TreeView)
  * isn't necessarily the most appropriate.
  *
  * The tree role provides complex functionality that is not needed for typical site navigation, and changes the most common keyboard navigation using TAB.

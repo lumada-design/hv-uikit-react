@@ -73,8 +73,12 @@ export const HvVerticalNavigationSlider = ({
               ),
             }}
             onClick={(event) => {
-              if (onNavigateToTarget) onNavigateToTarget(event, item);
+              onNavigateToTarget?.(event, item);
             }}
+            aria-label={item.label}
+            aria-current={
+              selected === item.id ? (item.href ? "page" : true) : undefined
+            }
             selected={selected === item.id}
             startAdornment={<div>{item.icon}</div>}
             endAdornment={
@@ -83,7 +87,7 @@ export const HvVerticalNavigationSlider = ({
                   variant="secondaryGhost"
                   icon
                   onClick={(event) => {
-                    if (onNavigateToChild) onNavigateToChild(event, item);
+                    onNavigateToChild?.(event, item);
                   }}
                 >
                   <DropRightXS />

@@ -17,13 +17,11 @@ import {
   HvVerticalNavigationHeader,
   HvVerticalNavigationProps,
   HvVerticalNavigationSlider,
+  HvVerticalNavigationTree,
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
-} from ".";
-import {
-  HvVerticalNavigationTree,
   NavigationData,
-} from "./Navigation/Navigation";
+} from ".";
 
 export default {
   title: "Widgets/Vertical Navigation",
@@ -47,10 +45,10 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
   },
   argTypes: {},
   render: (args) => {
-    const navigationData = useMemo(
+    const navigationData = useMemo<NavigationData[]>(
       () => [
         { id: "00", label: "Overview" },
-        { id: "01", label: "Analytics", selectable: false },
+        { id: "01", label: "Analytics" },
         {
           id: "02",
           label: "Storage",
@@ -67,7 +65,6 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
                 {
                   id: "02-01-02",
                   label: "HCP Anywhere",
-                  href: "/?path=/story/structure-vertical-navigation--main",
                 },
                 {
                   id: "02-01-03",
@@ -81,14 +78,17 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
         {
           id: "03",
           label: "Administration",
+          href: "#admin",
           data: [
             {
               id: "03-01",
               label: "Rest API",
+              href: "#admin-rest",
               data: [
                 {
                   id: "03-01-01",
                   label: "Log Bundle",
+                  href: "#admin-rest-logs",
                 },
               ],
             },
@@ -101,12 +101,7 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
     const [value, setValue] = useState("00");
     return (
       <div style={{ display: "flex", width: 220, height: 530 }}>
-        <HvVerticalNavigation
-          id="sample1"
-          open={args.open}
-          slider={args.slider}
-          collapsedMode={args.collapsedMode}
-        >
+        <HvVerticalNavigation {...args}>
           <HvVerticalNavigationTree
             aria-label="Example 1 navigation"
             selected={value}

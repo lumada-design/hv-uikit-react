@@ -1,4 +1,11 @@
-import { useCallback, useMemo, useContext, useEffect, useState } from "react";
+import {
+  useCallback,
+  useMemo,
+  useContext,
+  useEffect,
+  useState,
+  ComponentProps,
+} from "react";
 import { clsx } from "clsx";
 import uniqueId from "lodash/uniqueId";
 import { setId, wrapperTooltip } from "@core/utils";
@@ -16,44 +23,22 @@ import { HvVerticalNavigationSlider } from "..";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { HvVerticalNavigationPopup } from "../NavigationPopup/NavigationPopup";
 
-export interface NavigationData {
-  /**
-   * the id to be applied to the root element.
-   */
-  id: string;
-  /**
-   * the label to be rendered on the menu item.
-   */
-  label: string;
-  /**
-   * The url for the link.
-   */
-  href?: string;
-  /**
-   * The behavior when opening a link.
-   */
-  target?: string;
-  /**
-   * Icon to be render.
-   */
-  icon?: React.ReactNode;
-  /**
-   * Data subset.
-   */
-  data?: NavigationData[];
-  /**
-   * if `true` the item is disabled and is not interactive.
-   */
-  disabled?: boolean;
-  /**
-   * if `true` the item doesn't have a selected state.
-   */
-  selectable?: boolean;
-  /**
-   * Any other properties.
-   */
-  [otherProperty: string]: any;
-}
+export type NavigationData<T extends React.ElementType = "a"> =
+  ComponentProps<T> &
+    Record<string, any> & {
+      /** The id to be applied to the root element. */
+      id: string;
+      /** The label to be rendered on the menu item. */
+      label: string;
+      /** The icon to be rendered. */
+      icon?: React.ReactNode;
+      /** The Data children subset. */
+      data?: NavigationData<T>[];
+      /** Whether the item is disabled and not interactive. */
+      disabled?: boolean;
+      /** Whether the item has a selected state. */
+      selectable?: boolean;
+    };
 
 const createListHierarchy = (
   items,
