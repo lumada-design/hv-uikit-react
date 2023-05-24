@@ -3,10 +3,11 @@ import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import Chip from "@mui/material/Chip";
 import { HvButton, HvButtonProps } from "@core/components";
-import { CSSProperties, Ref, forwardRef } from "react";
+import { CSSProperties, forwardRef } from "react";
 import { outlineStyles } from "@core/utils";
 import fade from "@core/utils/hexToRgbA";
 import { transientOptions } from "@core/utils/transientOptions";
+import { PolymorphicRef } from "@core/types";
 import tagClasses from "./tagClasses";
 
 export const StyledChip = styled(
@@ -123,7 +124,7 @@ export const StyledChip = styled(
 );
 
 export const StyledButton = styled(
-  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
     return <HvButton {...props} ref={ref} />;
   })
 )({

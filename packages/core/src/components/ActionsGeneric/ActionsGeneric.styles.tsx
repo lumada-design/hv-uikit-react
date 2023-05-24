@@ -3,7 +3,8 @@ import { HvButton, HvButtonProps } from "@core/components";
 import { transientOptions } from "@core/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
 import fade from "@core/utils/hexToRgbA";
-import { forwardRef, Ref } from "react";
+import { forwardRef } from "react";
+import { PolymorphicRef } from "@core/types";
 
 export const StyledRoot = styled(
   "div",
@@ -17,7 +18,7 @@ export const StyledRoot = styled(
 }));
 
 export const StyledButton = styled(
-  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
     return <HvButton {...props} ref={ref} />;
   })
 )(({ $baseColor }: { $baseColor: string }) => ({

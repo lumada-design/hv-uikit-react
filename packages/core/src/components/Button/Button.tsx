@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
+import React, { forwardRef, ReactElement, useMemo } from "react";
 import { useTheme } from "@core/hooks";
-import React, { forwardRef, ReactElement } from "react";
+import { PolymorphicComponentRef, PolymorphicRef } from "@core/types";
 import {
   StyledButton,
   StyledChildren,
@@ -9,44 +10,59 @@ import {
 } from "./Button.styles";
 import buttonClasses, { HvButtonClasses } from "./buttonClasses";
 
-export type HvButtonVariant =
-  | "primary"
-  | "primarySubtle"
-  | "primaryGhost"
-  | "secondarySubtle"
-  | "secondaryGhost"
-  | "semantic"
+export const buttonVariant = [
+  "primary",
+  "primarySubtle",
+  "primaryGhost",
+  "secondarySubtle",
+  "secondaryGhost",
+  "semantic",
   // deprecated props
-  | "secondary"
-  | "ghost";
+  "secondary",
+  "ghost",
+] as const;
+export type HvButtonVariant = (typeof buttonVariant)[number];
 
-export type HvButtonSize = "xs" | "sm" | "md" | "lg" | "xl";
+export const buttonSize = ["xs", "sm", "md", "lg", "xl"] as const;
+export type HvButtonSize = (typeof buttonSize)[number];
 
-export type HvButtonRadius = "none" | "base" | "round" | "circle" | "full";
+export const buttonRadius = [
+  "none",
+  "base",
+  "round",
+  "circle",
+  "full",
+] as const;
+export type HvButtonRadius = (typeof buttonRadius)[number];
 
-export interface HvButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Use the variant prop to change the visual style of the Button. */
-  variant?: HvButtonVariant;
-  /** Whether the Button is an icon-only button. */
-  icon?: boolean;
-  /** Class names to be applied. */
-  className?: string;
-  /** Element placed before the children. */
-  startIcon?: ReactElement;
-  /** Element placed after the children. */
-  endIcon?: ReactElement;
-  /** Button size. */
-  size?: HvButtonSize;
-  /** Button border radius. */
-  radius?: HvButtonRadius;
-  /** Defines the default colors of the button are forced into the icon. */
-  overrideIconColors?: boolean;
-  /** A Jss Object used to override or extend the styles applied. */
-  classes?: HvButtonClasses;
-  /** Whether the Button is selected or not. */
-  selected?: boolean;
-}
+export type HvButtonProps<C extends React.ElementType = "button"> =
+  PolymorphicComponentRef<
+    C,
+    {
+      /** Use the variant prop to change the visual style of the Button. */
+      variant?: HvButtonVariant;
+      /** Whether the Button is an icon-only button. */
+      icon?: boolean;
+      /** Whether the Button is disabled or not. */
+      disabled?: boolean;
+      /** Class names to be applied. */
+      className?: string;
+      /** Element placed before the children. */
+      startIcon?: ReactElement;
+      /** Element placed after the children. */
+      endIcon?: ReactElement;
+      /** Button size. */
+      size?: HvButtonSize;
+      /** Button border radius. */
+      radius?: HvButtonRadius;
+      /** Defines the default colors of the button are forced into the icon. */
+      overrideIconColors?: boolean;
+      /** A Jss Object used to override or extend the styles applied. */
+      classes?: HvButtonClasses;
+      /** Whether the Button is selected or not. */
+      selected?: boolean;
+    }
+  >;
 
 /**
  * Normalize the button variant. It's meant to give us some retro-compatibility with
@@ -79,15 +95,20 @@ const mapVariant = (
 /**
  * Button component is used to trigger an action or event.
  */
-export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
-  (props, ref) => {
+export const HvButton: <C extends React.ElementType = "button">(
+  props: HvButtonProps<C>
+) => React.ReactElement | null = forwardRef(
+  <C extends React.ElementType = "button">(
+    props: HvButtonProps<C>,
+    ref: PolymorphicRef<C>
+  ) => {
     const {
       id,
       classes,
       children,
       variant = "primary",
       onClick,
-      disabled,
+      disabled = false,
       className,
       startIcon,
       endIcon,
@@ -95,8 +116,9 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
       size,
       radius = "base",
       overrideIconColors = true,
+      as: Component = "button",
       ...others
-    }: HvButtonProps = props;
+    } = props;
 
     const { activeTheme } = useTheme();
 
@@ -116,11 +138,13 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
       }
     };
 
+    const StyledComponent = useMemo(() => StyledButton(Component), [Component]);
+
     return (
-      <StyledButton
+      <StyledComponent
         id={id}
-        className={clsx(className, classes?.root, buttonClasses.root)}
         ref={ref}
+        className={clsx(className, classes?.root, buttonClasses.root)}
         onClick={onClick}
         disabled={disabled}
         onFocus={onFocusHandler}
@@ -130,7 +154,7 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
         $size={size}
         $radius={radius}
         $overrideIconColors={overrideIconColors}
-        $disabled={!!disabled}
+        $disabled={disabled}
         $startIcon={!!startIcon}
         $endIcon={!!endIcon}
         {...others}
@@ -152,7 +176,7 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
             </StyledIconSpan>
           )}
         </StyledContentDiv>
-      </StyledButton>
+      </StyledComponent>
     );
   }
 );
