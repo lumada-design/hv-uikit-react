@@ -2,6 +2,7 @@ import { ImgHTMLAttributes } from "react";
 import { ClassNames } from "@emotion/react";
 
 import styles, { HvCarouselSlideClasses, cc } from "./CarouselSlide.styles";
+import { makeClasses } from "../utils";
 
 export interface HvCarouselSlideProps
   extends ImgHTMLAttributes<HTMLImageElement> {
@@ -18,7 +19,7 @@ export interface HvCarouselSlideProps
  * Pass `img` props directly to it, or `children` for any custom content
  */
 export const HvCarouselSlide = ({
-  classes = {},
+  classes: classesProp = {},
   children,
   size: flexBasis = "100%",
   src,
@@ -27,25 +28,20 @@ export const HvCarouselSlide = ({
 }: HvCarouselSlideProps) => {
   return (
     <ClassNames>
-      {({ css, cx }) => (
-        <div
-          className={cx(
-            cc.slide,
-            classes.slide,
-            css(styles.slide),
-            css({ flex: `0 0 ${flexBasis}` })
-          )}
-        >
-          {children ?? (
-            <img
-              className={cx(cc.image, classes.image, css(styles.image))}
-              src={src}
-              alt={alt}
-              {...props}
-            />
-          )}
-        </div>
-      )}
+      {({ css, cx }) => {
+        const classes = makeClasses(
+          { css, cx },
+          { cc, styles, classes: classesProp }
+        );
+
+        return (
+          <div className={cx(css({ flex: `0 0 ${flexBasis}` }), classes.slide)}>
+            {children ?? (
+              <img className={classes.image} src={src} alt={alt} {...props} />
+            )}
+          </div>
+        );
+      }}
     </ClassNames>
   );
 };
