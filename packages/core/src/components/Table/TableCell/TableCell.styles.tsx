@@ -32,10 +32,10 @@ export const styles: Partial<
     backgroundColor: "inherit",
     ...(theme.typography.body as CSSProperties),
     fontFamily: theme.fontFamily.body,
-    //these styles were left on a styled component because of the access to the css var value to add an alpha.
+    // these styles were left on a styled component because of the access to the css var value to add an alpha.
     // [`&.${tableCellClasses.sorted}`]: {
-    // backgroundColor: alpha(hexToRgb(theme.colors.atmo1), 0.4),
-    //backgroundColor: hexToRgbA(theme.colors.atmo1, 0.4),
+    //   backgroundColor: alpha(hexToRgb(theme.colors.atmo1), 0.4),
+    //   backgroundColor: hexToRgbA(theme.colors.atmo1, 0.4),
     // },
   },
   footer: {},
@@ -115,7 +115,7 @@ export const styles: Partial<
       {
         borderLeft: 0,
       },
-    //these styles were left on a styled component because of the access to the css var value to add an alpha.
+    // these styles were left on a styled component because of the access to the css var value to add an alpha.
     // [`&.${tableCellClasses.sorted}`]: {
     //   backgroundColor: theme.colors.atmo2,
     //   backgroundImage: `linear-gradient(to right, ${alpha(

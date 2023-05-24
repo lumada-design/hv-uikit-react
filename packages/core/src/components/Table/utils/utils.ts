@@ -5,9 +5,7 @@ export const getBorderStyles = (
   color: string,
   borderRadius?: string
 ) => {
-  const rowBorderRadius = borderRadius
-    ? borderRadius
-    : theme.table.rowBorderRadius;
+  const rowBorderRadius = borderRadius || theme.table.rowBorderRadius;
   if (type === "row") {
     return {
       "& td:first-of-type": {
@@ -51,6 +49,6 @@ export const getBorderStyles = (
 };
 
 export const checkValidHexColorValue = (value: string): boolean => {
-  var reg = /^#([0-9a-f]{3}){1,2}$/i;
+  const reg = /^#([0-9a-f]{3}){1,2}$/i;
   return reg.test(value);
 };

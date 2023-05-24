@@ -1,3 +1,4 @@
+import { css } from "@emotion/css";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { setId } from "@core/utils";
 import {
@@ -17,7 +18,6 @@ import SwitchColumnCell from "./SwitchColumnCell";
 import ProgressColumnCell from "./ProgressColumnCell";
 import DropdownColumnCell from "./DropdownColumnCell";
 import { hvStringFallback, hvNumberFallback } from "../utils";
-import { css } from "@emotion/css";
 
 export function hvTextColumn<
   D extends object = Record<string, unknown>,
@@ -88,9 +88,9 @@ export function hvExpandColumn<
 
       const hasContent = getCanRowExpand?.(row) ?? true;
 
-      const ExpandedIcon = isExpandedIcon ? isExpandedIcon : <DropUpXS />;
+      const ExpandedIcon = isExpandedIcon || <DropUpXS />;
 
-      const CollapsedIcon = isCollapsedIcon ? isCollapsedIcon : <DropDownXS />;
+      const CollapsedIcon = isCollapsedIcon || <DropDownXS />;
 
       return (
         <>

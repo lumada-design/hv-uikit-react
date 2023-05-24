@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
+import { ClassNames } from "@emotion/react";
+import capitalize from "lodash/capitalize";
 import {
   CSSProperties,
   forwardRef,
@@ -7,19 +8,18 @@ import {
   useContext,
   useMemo,
 } from "react";
+import { theme } from "@hitachivantara/uikit-styles";
+import { transientOptions } from "@core/utils/transientOptions";
+import { getVarValue, hexToRgbA } from "@core/utils";
 import {
   HvTableCellAlign,
   HvTableCellType,
   HvTableCellVariant,
 } from "../Table";
+import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
 import TableContext from "../TableContext";
-import { transientOptions } from "@core/utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
-import capitalize from "lodash/capitalize";
-import { ClassNames } from "@emotion/react";
 import { styles } from "./TableCell.styles";
-import { theme } from "@hitachivantara/uikit-styles";
-import { getVarValue, hexToRgbA } from "@core/utils";
 import { checkValidHexColorValue } from "../utils";
 
 export interface HvTableCellProps

@@ -1,14 +1,14 @@
-import { HvBaseProps } from "@core/types";
-import styled from "@emotion/styled";
-import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
 import { forwardRef, useContext, useMemo } from "react";
-import TableContext from "../TableContext";
-import TableSectionContext from "../TableSectionContext";
 import { ClassNames } from "@emotion/react";
-import { styles } from "./TableRow.styles";
-import { transientOptions } from "@core/utils/transientOptions";
+import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { getVarValue, hexToRgbA } from "@core/utils";
+import { transientOptions } from "@core/utils/transientOptions";
+import { HvBaseProps } from "@core/types";
+import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
+import TableContext from "../TableContext";
+import TableSectionContext from "../TableSectionContext";
+import { styles } from "./TableRow.styles";
 import { checkValidHexColorValue } from "../utils";
 
 export interface HvTableRowProps

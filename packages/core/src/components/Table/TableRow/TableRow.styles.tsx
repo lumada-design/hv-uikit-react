@@ -37,7 +37,7 @@ export const styles: Partial<
     },
   },
   striped: {
-    //these styles were left on a styled component because of the access to the css var value to add an alpha.
+    // these styles were left on a styled component because of the access to the css var value to add an alpha.
     // "&:nth-of-type(even)": {
     // backgroundColor: hexToRgbA(
     //   getVarValue(theme.table.rowStripedBackgroundColor),
@@ -100,7 +100,4 @@ export const styles: Partial<
       height: 16,
     },
   },
-  // "&.HvIsFocused": {
-  //   borderRadius: theme.table.rowBorderRadius,
-  // },
 };
