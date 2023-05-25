@@ -1,4 +1,4 @@
-import { css } from "@emotion/css";
+import { ClassNames } from "@emotion/react";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { setId } from "@core/utils";
 import {
@@ -61,15 +61,6 @@ export function hvDateColumn<
   };
 }
 
-const classes = {
-  root: css({
-    position: "absolute",
-    left: 0,
-    top: "50%",
-    transform: "translateY(-50%)",
-  }),
-};
-
 export function hvExpandColumn<
   D extends object = Record<string, unknown>,
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
@@ -78,8 +69,8 @@ export function hvExpandColumn<
   expandRowButtonAriaLabel: string,
   collapseRowButtonAriaLabel: string,
   getCanRowExpand?: (row: HvRowInstance<D, H>) => boolean,
-  isExpandedIcon?: React.ReactNode,
-  isCollapsedIcon?: React.ReactNode
+  ExpandedIcon: React.ReactNode = <DropUpXS />,
+  CollapsedIcon: React.ReactNode = <DropDownXS />
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
@@ -88,31 +79,38 @@ export function hvExpandColumn<
 
       const hasContent = getCanRowExpand?.(row) ?? true;
 
-      const ExpandedIcon = isExpandedIcon || <DropUpXS />;
-
-      const CollapsedIcon = isCollapsedIcon || <DropDownXS />;
-
       return (
-        <>
-          {hasContent && (
-            <HvButton
-              icon
-              variant="secondaryGhost"
-              aria-label={
-                row.isExpanded
-                  ? collapseRowButtonAriaLabel
-                  : expandRowButtonAriaLabel
-              }
-              aria-expanded={row.isExpanded}
-              onClick={expandedProps?.onClick}
-              classes={{ root: classes.root }}
-            >
-              {row.isExpanded ? ExpandedIcon : CollapsedIcon}
-            </HvButton>
-          )}
+        <ClassNames>
+          {({ css }) => (
+            <>
+              {hasContent && (
+                <HvButton
+                  icon
+                  variant="secondaryGhost"
+                  aria-label={
+                    row.isExpanded
+                      ? collapseRowButtonAriaLabel
+                      : expandRowButtonAriaLabel
+                  }
+                  aria-expanded={row.isExpanded}
+                  onClick={expandedProps?.onClick}
+                  classes={{
+                    root: css({
+                      position: "absolute",
+                      left: 0,
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                    }),
+                  }}
+                >
+                  {row.isExpanded ? ExpandedIcon : CollapsedIcon}
+                </HvButton>
+              )}
 
-          <HvOverflowTooltip data={hvStringFallback(value)} />
-        </>
+              <HvOverflowTooltip data={hvStringFallback(value)} />
+            </>
+          )}
+        </ClassNames>
       );
     },
     sortType: "alphanumeric",

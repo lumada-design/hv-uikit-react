@@ -1,10 +1,11 @@
-import { forwardRef, useContext, useMemo } from "react";
+import { forwardRef, useContext, useEffect, useMemo } from "react";
 import { ClassNames } from "@emotion/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { getVarValue, hexToRgbA } from "@core/utils";
 import { transientOptions } from "@core/utils/transientOptions";
 import { HvBaseProps } from "@core/types";
+import { useTheme } from "@core/hooks";
 import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
@@ -46,13 +47,13 @@ const StyledTableRow = (c: any) =>
       $stripedColorOdd: string;
     }) => ({
       ...($striped && {
-        [`&:nth-of-type(even)`]: {
+        "&:nth-of-type(even)": {
           backgroundColor: $stripedColorEven,
           "&:hover": {
             backgroundColor: theme.table.rowHoverColor,
           },
         },
-        [`&:nth-of-type(odd)`]: {
+        "&:nth-of-type(odd)": {
           backgroundColor: $stripedColorOdd,
           "&:hover": {
             backgroundColor: theme.table.rowHoverColor,
@@ -79,6 +80,7 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
     },
     externalRef
   ) => {
+    const { activeTheme, selectedMode } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -91,17 +93,31 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
 
     const TableRow = useMemo(() => StyledTableRow(Component), [Component]);
 
-    const even = getVarValue(theme.table.rowStripedBackgroundColorEven);
+    let even = getVarValue(theme.table.rowStripedBackgroundColorEven);
 
-    const odd = getVarValue(theme.table.rowStripedBackgroundColorOdd);
+    let odd = getVarValue(theme.table.rowStripedBackgroundColorOdd);
 
-    const stripedColorEven = checkValidHexColorValue(even)
+    let stripedColorEven = checkValidHexColorValue(even)
       ? hexToRgbA(even, 0.6)
       : even;
 
-    const stripedColorOdd = checkValidHexColorValue(odd)
+    let stripedColorOdd = checkValidHexColorValue(odd)
       ? hexToRgbA(odd, 0.6)
       : odd;
+
+    useEffect(() => {
+      even = getVarValue(theme.table.rowStripedBackgroundColorEven);
+
+      odd = getVarValue(theme.table.rowStripedBackgroundColorOdd);
+
+      stripedColorEven = checkValidHexColorValue(even)
+        ? hexToRgbA(even, 0.6)
+        : even;
+
+      stripedColorOdd = checkValidHexColorValue(odd)
+        ? hexToRgbA(odd, 0.6)
+        : odd;
+    }, [activeTheme?.colors?.modes[selectedMode]]);
 
     return (
       <ClassNames>

@@ -450,7 +450,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     rowStripedBackgroundColorEven: theme.colors.atmo1,
     rowStripedBackgroundColorOdd: "transparent",
     rowExpandBackgroundColor: theme.colors.atmo1,
-    rowHoverColor: theme.colors.atmo2,
+    rowHoverColor: theme.colors.atmo3,
     rowHoverBorderColor: theme.colors.atmo4,
     rowSortedColor: theme.colors.atmo1,
     rowSortedColorAlpha: "0.4",
