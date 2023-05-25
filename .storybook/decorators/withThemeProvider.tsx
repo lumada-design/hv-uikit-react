@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { addons } from "@storybook/addons";
 import { Global } from "@storybook/theming";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 import { ds3, ds5, theme } from "@hitachivantara/uikit-styles";
 import { getStoryStyles } from "../theme/styles/story";
 
@@ -32,7 +33,9 @@ const withThemeProvider = (story) => {
         theme={selectedTheme?.split("-")[0]}
         colorMode={selectedTheme?.split("-")[1]}
       >
-        <div style={{ padding: 20 }}>{story()}</div>
+        <HvVizProvider>
+          <div style={{ padding: 20 }}>{story()}</div>
+        </HvVizProvider>
       </HvProvider>
     </>
   );
