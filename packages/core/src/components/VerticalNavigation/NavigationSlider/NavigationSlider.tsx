@@ -80,7 +80,7 @@ export const HvVerticalNavigationSlider = ({
               selected === item.id ? (item.href ? "page" : true) : undefined
             }
             selected={selected === item.id}
-            startAdornment={<div>{item.icon}</div>}
+            startAdornment={item.icon ? <div>{item.icon}</div> : undefined}
             endAdornment={
               item.data && item.data.length > 0 ? (
                 <HvButton
