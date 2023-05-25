@@ -19,6 +19,7 @@
       "@hitachivantara/uikit-react-core": ["packages/core/src"],
       "@hitachivantara/uikit-react-shared": ["packages/shared/src"],
       "@hitachivantara/uikit-react-lab": ["packages/lab/src"],
+      "@hitachivantara/uikit-react-viz": ["packages/viz/src"],
       "@hitachivantara/uikit-react-icons": ["packages/icons/bin"],
       "@hitachivantara/uikit-react-icons/dist/*": ["packages/icons/bin/*"],
       "@hitachivantara/uikit-styles": ["packages/styles/src"],
