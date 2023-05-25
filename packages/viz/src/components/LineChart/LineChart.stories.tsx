@@ -56,7 +56,7 @@ export const Main: StoryObj<HvLineChartProps> = {
           ["November", 2119],
           ["December", 2146],
         ]}
-        xAxis={{ dimension: "month", labelRotation: 45 }}
+        xAxis={{ dimension: "month" }}
         series={[{ dimension: "Sales Target" }]}
       />
     );
@@ -86,7 +86,7 @@ export const WithArea: StoryObj<HvLineChartProps> = {
           { month: "November", "Sales Target": 2119 },
           { month: "December", "Sales Target": 2146 },
         ]}
-        xAxis={{ dimension: "month", labelRotation: 45 }}
+        xAxis={{ dimension: "month" }}
         series={[{ dimension: "Sales Target" }]}
         type="area"
       />
@@ -118,7 +118,7 @@ export const MultipleLineCharts: StoryObj<HvLineChartProps> = {
           ["November", 8268, 4819, 2324],
           ["December", 2751, 3820, 6705],
         ]}
-        xAxis={{ dimension: "month", labelRotation: 45 }}
+        xAxis={{ dimension: "month" }}
         series={[
           { dimension: "Sales Target" },
           { dimension: "Sales Per Rep" },

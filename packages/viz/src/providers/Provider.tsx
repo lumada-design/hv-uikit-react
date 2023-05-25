@@ -102,8 +102,8 @@ export const HvVizProvider = ({ children }: HvVizProviderProps) => {
           },
         },
         tooltip: {
-          backgroundColor: themeStructure?.colors.modes[mode].atmo1,
-          borderColor: themeStructure?.colors.modes[mode].atmo1,
+          borderWidth: 0,
+          padding: 0,
           textStyle: {
             ...baseText,
           },

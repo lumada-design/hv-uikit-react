@@ -13,6 +13,7 @@ import { CanvasRenderer } from "echarts/renderers";
 import * as echarts from "echarts/core";
 import { useMemo } from "react";
 import { AxisType } from "@viz/types";
+import { useTheme } from "@hitachivantara/uikit-react-core";
 
 // Register chart components
 echarts.use([
@@ -194,6 +195,7 @@ export const HvLineChart = ({
   legend,
   type = "line",
 }: HvLineChartProps) => {
+  const { activeTheme, selectedMode, selectedTheme } = useTheme();
   const { theme } = useVizTheme();
 
   const chartData = useMemo(() => {
@@ -257,12 +259,81 @@ export const HvLineChart = ({
   const chartTooltip = useMemo(() => {
     return {
       tooltip: {
+        confine: false,
         show: tooltip?.show ?? true,
         trigger: "axis",
         valueFormatter: tooltip?.valueFormatter,
+        formatter: (params) => {
+          const tooltipName = params[0].name;
+
+          return `
+            <div style="width: fit-content; box-shadow: ${
+              activeTheme?.colors.modes[selectedMode].shadow
+            }; background-color: ${
+            activeTheme?.colors.modes[selectedMode].atmo1
+          }">
+              <div style="padding: 15px ${
+                activeTheme?.space.sm
+              }; border-bottom: 3px solid ${
+            activeTheme?.colors.modes[selectedMode].atmo2
+          }">
+                <div>
+                  <p style="font-family: ${
+                    activeTheme?.fontFamily.body
+                  }; font-weight: ${
+            activeTheme?.fontWeights.semibold
+          }; font-size: ${activeTheme?.fontSizes.sm}; color: ${
+            activeTheme?.colors.modes[selectedMode].secondary
+          };">${tooltipName}</p>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; padding: ${
+                activeTheme?.space.sm
+              };">
+                ${params
+                  .map((s, i) => {
+                    return `
+                    <div key="${
+                      s.seriesName
+                    }" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding-bottom: ${
+                      i === params.length - 1 ? 0 : activeTheme?.space.sm
+                    };">
+                        
+                    <div style="display: flex; flex-direction: row; align-items: center; margin-right: ${
+                      activeTheme?.space.sm
+                    };">
+                          <p style="width: 10px; height: 10px; background-color: ${
+                            s.color
+                          }; margin-right: 5px"/>
+                          <p style="font-family: ${
+                            activeTheme?.fontFamily.body
+                          }; font-weight: ${
+                      activeTheme?.fontWeights.semibold
+                    }; font-size: ${activeTheme?.fontSizes.sm}; color: ${
+                      activeTheme?.colors.modes[selectedMode].secondary
+                    };">${s.seriesName}</p>
+                        </div>
+                        
+                        <p style="font-family: ${
+                          activeTheme?.fontFamily.body
+                        }; font-size: ${activeTheme?.fontSizes.sm}; color: ${
+                      activeTheme?.colors.modes[selectedMode].secondary
+                    };">${
+                      Array.isArray(s.value)
+                        ? s.value[s.seriesIndex + 1]
+                        : s.value[s.seriesName]
+                    }</p>
+                    </div>
+                  `;
+                  })
+                  .join(" ")}
+              </div>
+            </div>
+          `;
+        },
       },
     };
-  }, [tooltip]);
+  }, [tooltip, selectedMode, selectedTheme, activeTheme]);
 
   const chartLegend = useMemo(() => {
     return {
