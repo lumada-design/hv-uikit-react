@@ -11,7 +11,7 @@ import {
   HvInputProps,
   HvButtonProps,
 } from "@core/components";
-import { forwardRef, Ref } from "react";
+import { FormEventHandler, forwardRef, Ref } from "react";
 import { HvLogin, HvLoginProps } from "./Login";
 import background from "./resources/background.png";
 import customBackground from "./resources/background-custom.jpg";
@@ -28,7 +28,8 @@ const StyledRoot = styled("div")({
 });
 
 const StyledInput = styled((props: HvInputProps) => <HvInput {...props} />)({
-  marginTop: 40,
+  marginTop: 20,
+  height: 90,
 });
 
 const StyledButton = styled(
@@ -72,27 +73,39 @@ export const Main: StoryObj<HvLoginProps> = {
     classes: { control: { disable: true } },
   },
   render: () => {
+    const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const data = Object.fromEntries(formData.entries());
+
+      alert(JSON.stringify(data, null, 2));
+    };
+
     return (
       <HvLogin background={background}>
         <StyledRoot>
           <HvTypography variant="title2">Welcome</HvTypography>
 
-          <StyledInput
-            name="username"
-            label="Username"
-            placeholder="Enter text"
-          />
+          <form onSubmit={handleSubmit}>
+            <StyledInput
+              required
+              name="username"
+              label="Username"
+              placeholder="Enter text"
+            />
 
-          <StyledInput
-            name="password"
-            label="Password"
-            placeholder="Enter text"
-            type="password"
-          />
+            <StyledInput
+              required
+              name="password"
+              label="Password"
+              placeholder="Enter text"
+              type="password"
+            />
 
-          <StyledButton type="submit" variant="primary">
-            Login
-          </StyledButton>
+            <StyledButton type="submit" variant="primary">
+              Login
+            </StyledButton>
+          </form>
         </StyledRoot>
       </HvLogin>
     );
@@ -105,38 +118,48 @@ export const CustomBackground: StoryObj<HvLoginProps> = {
     classes: { control: { disable: true } },
   },
   render: () => {
+    const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const data = Object.fromEntries(formData.entries());
+
+      alert(JSON.stringify(data, null, 2));
+    };
+
     return (
       <HvLogin background={customBackground}>
         <StyledRoot>
           <HvTypography variant="title2">Welcome</HvTypography>
 
-          <StyledInput
-            name="username"
-            label="Username"
-            placeholder="Enter text"
-          />
+          <form onSubmit={handleSubmit}>
+            <StyledInput
+              required
+              name="username"
+              label="Username"
+              placeholder="Enter text"
+            />
 
-          <StyledDropDown
-            name="domain"
-            label="Domain"
-            // classes={{
-            //   root: classes.dropdown,
-            //   dropdown: classes.dropdownWidthFix,
-            //   rootList: classes.dropdownWidthFix,
-            // }}
-            values={[
-              { id: "id-1", label: "Domain 1" },
-              { id: "id-2", label: "Domain 2" },
-              { id: "id-3", label: "Domain 3" },
-              { id: "id-4", label: "Domain 4" },
-            ]}
-          />
+            <StyledDropDown
+              name="domain"
+              label="Domain"
+              values={[
+                { id: "id-1", label: "Domain 1" },
+                { id: "id-2", label: "Domain 2" },
+                { id: "id-3", label: "Domain 3" },
+                { id: "id-4", label: "Domain 4" },
+              ]}
+            />
 
-          <StyledCheckBox label="Remember me" />
+            <StyledCheckBox
+              name="remember"
+              value="remember"
+              label="Remember me"
+            />
 
-          <StyledButton type="submit" variant="primary">
-            Login
-          </StyledButton>
+            <StyledButton type="submit" variant="primary">
+              Login
+            </StyledButton>
+          </form>
         </StyledRoot>
       </HvLogin>
     );
