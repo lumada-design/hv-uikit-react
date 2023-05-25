@@ -1,4 +1,4 @@
-import { forwardRef, useContext, useEffect, useMemo } from "react";
+import { forwardRef, useContext, useEffect, useMemo, useState } from "react";
 import { ClassNames } from "@emotion/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -84,6 +84,13 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
+    const [even, setEven] = useState(
+      getVarValue(theme.table.rowStripedBackgroundColorEven)
+    );
+    const [odd, setOdd] = useState(
+      getVarValue(theme.table.rowStripedBackgroundColorOdd)
+    );
+
     const type = tableSectionContext?.type || "body";
 
     const isList = tableContext.variant === "listrow";
@@ -93,30 +100,16 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
 
     const TableRow = useMemo(() => StyledTableRow(Component), [Component]);
 
-    let even = getVarValue(theme.table.rowStripedBackgroundColorEven);
-
-    let odd = getVarValue(theme.table.rowStripedBackgroundColorOdd);
-
-    let stripedColorEven = checkValidHexColorValue(even)
+    const stripedColorEven = checkValidHexColorValue(even)
       ? hexToRgbA(even, 0.6)
       : even;
-
-    let stripedColorOdd = checkValidHexColorValue(odd)
+    const stripedColorOdd = checkValidHexColorValue(odd)
       ? hexToRgbA(odd, 0.6)
       : odd;
 
     useEffect(() => {
-      even = getVarValue(theme.table.rowStripedBackgroundColorEven);
-
-      odd = getVarValue(theme.table.rowStripedBackgroundColorOdd);
-
-      stripedColorEven = checkValidHexColorValue(even)
-        ? hexToRgbA(even, 0.6)
-        : even;
-
-      stripedColorOdd = checkValidHexColorValue(odd)
-        ? hexToRgbA(odd, 0.6)
-        : odd;
+      setEven(getVarValue(theme.table.rowStripedBackgroundColorEven));
+      setOdd(getVarValue(theme.table.rowStripedBackgroundColorOdd));
     }, [activeTheme?.colors?.modes[selectedMode]]);
 
     return (
