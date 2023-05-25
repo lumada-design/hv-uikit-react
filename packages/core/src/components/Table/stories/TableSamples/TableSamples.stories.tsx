@@ -1,6 +1,7 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { StoryObj } from "@storybook/react";
 import { useFlexLayout, useBlockLayout, useAbsoluteLayout } from "react-table";
+import range from "lodash/range";
 import {
   HvTable,
   HvTableBody,
@@ -43,7 +44,9 @@ import {
   getColumns,
   makeSelectedData,
   NewEntry,
+  useServerData,
 } from "../storiesUtils";
+import LoadingContainer from "./LoadingContainer";
 
 const Complete = () => {
   const colSort = useMemo(() => {
@@ -1232,4 +1235,181 @@ return (
     },
   },
   render: () => <ColumnResize />,
+};
+
+const ServerSide = () => {
+  const [data, columns, fetchData, loading, pageCount] = useServerData();
+
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    prepareRow,
+    page,
+    gotoPage,
+    state: { pageSize, pageIndex, sortBy },
+    getHvPaginationProps,
+  } = useHvData(
+    {
+      columns,
+      data,
+      manualPagination: true,
+      manualSortBy: true,
+      autoResetPage: false,
+      autoResetSortBy: false,
+      disableMultiSort: true,
+      pageCount,
+    },
+    useHvSortBy,
+    useHvPagination
+  );
+
+  useEffect(() => {
+    gotoPage?.(0);
+  }, [sortBy, gotoPage]);
+
+  useEffect(() => {
+    fetchData({ pageIndex, pageSize, sortBy });
+  }, [sortBy, fetchData, pageIndex, pageSize]);
+
+  const EmptyRow = () => (
+    <HvTableRow>
+      <HvTableCell colSpan={100} />
+    </HvTableRow>
+  );
+
+  return (
+    <LoadingContainer loading={loading}>
+      <HvTableContainer>
+        <HvTable {...getTableProps()}>
+          <HvTableHead>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader {...col.getHeaderProps()}>
+                    {col.render("Header")}
+                  </HvTableHeader>
+                ))}
+              </HvTableRow>
+            ))}
+          </HvTableHead>
+          <HvTableBody
+            {...getTableBodyProps({ style: { position: "relative" } })}
+          >
+            {range(pageSize || 0).map((i) => {
+              const row = page[i];
+
+              if (!row) return <EmptyRow key={i} />;
+
+              prepareRow(row);
+
+              return (
+                <HvTableRow {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <HvTableCell {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </HvTableCell>
+                  ))}
+                </HvTableRow>
+              );
+            })}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
+      <HvPagination {...getHvPaginationProps?.()} />
+    </LoadingContainer>
+  );
+};
+
+export const ServerSideStory: StoryObj = {
+  parameters: {
+    docs: {
+      source: {
+        code: `
+const [data, columns, fetchData, loading, pageCount] = useServerData();
+
+const {
+  getTableProps,
+  getTableBodyProps,
+  headerGroups,
+  prepareRow,
+  page,
+  gotoPage,
+  state: { pageSize, pageIndex, sortBy },
+  getHvPaginationProps,
+} = useHvData(
+  {
+    columns,
+    data,
+    manualPagination: true,
+    manualSortBy: true,
+    autoResetPage: false,
+    autoResetSortBy: false,
+    disableMultiSort: true,
+    pageCount,
+  },
+  useHvSortBy,
+  useHvPagination
+);
+
+useEffect(() => {
+  gotoPage?.(0);
+}, [sortBy, gotoPage]);
+
+useEffect(() => {
+  fetchData({ pageIndex, pageSize, sortBy });
+}, [sortBy, fetchData, pageIndex, pageSize]);
+
+const EmptyRow = () => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} />
+  </HvTableRow>
+);
+
+return (
+  <LoadingContainer loading={loading}>
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>
+                  {col.render("Header")}
+                </HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
+        </HvTableHead>
+        <HvTableBody
+          {...getTableBodyProps({ style: { position: "relative" } })}
+        >
+          {range(pageSize || 0).map((i) => {
+            const row = page[i];
+
+            if (!row) return <EmptyRow key={i} />;
+
+            prepareRow(row);
+
+            return (
+              <HvTableRow {...row.getRowProps()}>
+                {row.cells.map((cell) => (
+                  <HvTableCell {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </HvTableCell>
+                ))}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+    <HvPagination {...getHvPaginationProps?.()} />
+  </LoadingContainer>
+);
+`,
+      },
+    },
+  },
+  render: () => <ServerSide />,
 };
