@@ -116,7 +116,7 @@ export const HvButton: <C extends React.ElementType = "button">(
       size,
       radius = "base",
       overrideIconColors = true,
-      as: Component = "button",
+      component: Component = "button",
       ...others
     } = props;
 

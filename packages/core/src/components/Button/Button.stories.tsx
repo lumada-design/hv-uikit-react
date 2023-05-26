@@ -114,7 +114,7 @@ export const Main: StoryObj<HvButtonProps> = {
       },
       control: { disable: true },
     },
-    as: {
+    component: {
       description: "Element to use for the root node. Defaults to `button`.",
       table: {
         defaultValue: { summary: "button" },
@@ -305,11 +305,14 @@ export const CustomRootComponent = ({ onClick }) => {
   return (
     <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
       <HvButton onClick={onClick}>Button</HvButton>
-      <HvButton as="a" href="https://lumada-design.github.io/uikit/master">
+      <HvButton
+        component="a"
+        href="https://lumada-design.github.io/uikit/master"
+      >
         Link
       </HvButton>
       <HvButton
-        as={CustomLink}
+        component={CustomLink}
         to="https://lumada-design.github.io/uikit/master"
       >
         Custom link
@@ -326,7 +329,7 @@ CustomRootComponent.parameters = {
   docs: {
     description: {
       story:
-        "If necessary the button's root component can be changed by setting the `as` property.",
+        "If necessary the button's root component can be changed by setting the `component` property.",
     },
   },
 };
