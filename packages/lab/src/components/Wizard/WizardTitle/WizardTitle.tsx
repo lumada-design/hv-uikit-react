@@ -8,8 +8,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Report } from "@hitachivantara/uikit-react-icons";
 import { useContext, useEffect, useState } from "react";
-import { HvStepNavigation, HvStepNavigationProps } from "components";
-import { HvStepProps } from "components/StepNavigation/DefaultNavigation";
+import { HvStepNavigation, HvStepNavigationProps } from "../../StepNavigation";
+import { HvStepProps } from "../../StepNavigation/DefaultNavigation";
 import { HvWizardContext, wizardTitleClasses, HvWizardTitleClasses } from "..";
 import { styles } from "./WizardTitle.styles";
 
