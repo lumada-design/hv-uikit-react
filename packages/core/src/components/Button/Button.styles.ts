@@ -52,7 +52,7 @@ export const StyledButton = (component) =>
       textTransform: "none",
       cursor: $disabled ? "not-allowed" : "pointer",
       ...($disabled && {
-        pointerEvents: "auto",
+        pointerEvents: "none",
       }),
       "&:hover": {},
       "&:focus": {},
