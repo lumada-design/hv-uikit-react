@@ -1,7 +1,7 @@
 import { HvBaseProps } from "@hitachivantara/uikit-react-core";
 import { ClassNames } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvStepProps } from "components/StepNavigation/DefaultNavigation";
+import { HvStepProps } from "../../DefaultNavigation";
 import { StyledButton } from "./Dot.styles";
 import dotClasses, { HvDotClasses } from "./dotClasses";
 import { getColor, dotSizes } from "../utils";
