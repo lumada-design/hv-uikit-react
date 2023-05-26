@@ -530,8 +530,12 @@ Briefly, the following properties where removed and/or updated:
 
 ### Button <a id="button" />
 
-The `HvButton` API suffered some changes: the `category` property was renamed `variant` and the variants `secondary` and `ghost` are now deprecated. Thus, you
-should update these variants to the following values:
+The `HvButton` API suffered various changes since we stopped using MUI's button under the hood. In this sense, it is expected you'll no longer be able to use
+MUI's specific properties since they were dropped. We recommend you take a look at the button's API available on this [page](/docs/components-button-button--main)
+to have a better overview of the changes and properties you can use.
+
+In this sense, the `category` property was renamed to `variant`, and the variants `secondary` and `ghost` are now deprecated and should be updated
+to the following values:
 
 - `secondary` to `secondarySubtle`
 - `ghost` to `primaryGhost`
@@ -549,8 +553,6 @@ The following `classes` were also removed:
 - `secondaryDisabled`
 - `semantic`
 - `semanticDisabled`
-
-You can have a better overview of the button's API on this [page](/docs/components-button-button--main).
 
 ### Typography <a id="typography" />
 
