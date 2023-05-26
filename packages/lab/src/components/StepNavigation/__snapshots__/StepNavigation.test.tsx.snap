@@ -26,6 +26,7 @@ exports[`StepNavigation > should render correctly 1`] = `
                 <button
                   aria-label="step-Completed"
                   class="HvStep-ghost e1bnfr851 HvButton-root css-u7l3xp-StyledButton"
+                  type="button"
                 >
                   <div
                     class="css-4uy5a6"
@@ -102,6 +103,7 @@ exports[`StepNavigation > should render correctly 1`] = `
                 <button
                   aria-label="step-Failed"
                   class="HvStep-ghost e1bnfr851 HvButton-root css-u7l3xp-StyledButton"
+                  type="button"
                 >
                   <div
                     class="css-4uy5a6"
@@ -176,6 +178,7 @@ exports[`StepNavigation > should render correctly 1`] = `
                 <button
                   aria-label="step-Pending"
                   class="HvStep-ghost e1bnfr851 HvButton-root css-u7l3xp-StyledButton"
+                  type="button"
                 >
                   <div
                     class="css-4uy5a6"
@@ -248,6 +251,7 @@ exports[`StepNavigation > should render correctly 1`] = `
                   class="HvStep-ghost HvStep-ghostDisabled e1bnfr851 HvButton-root css-iy9g5f-StyledButton"
                   disabled=""
                   tabindex="-1"
+                  type="button"
                 >
                   <div
                     class="css-4uy5a6"
@@ -301,6 +305,7 @@ exports[`StepNavigation > should render correctly 1`] = `
                 <button
                   aria-label="step-Enabled"
                   class="HvStep-ghost e1bnfr851 HvButton-root css-u7l3xp-StyledButton"
+                  type="button"
                 >
                   <div
                     class="css-4uy5a6"
@@ -356,6 +361,7 @@ exports[`StepNavigation > should render correctly 1`] = `
                   class="HvStep-ghost e1bnfr851 HvButton-root css-iy9g5f-StyledButton"
                   disabled=""
                   tabindex="-1"
+                  type="button"
                 >
                   <div
                     class="css-4uy5a6"

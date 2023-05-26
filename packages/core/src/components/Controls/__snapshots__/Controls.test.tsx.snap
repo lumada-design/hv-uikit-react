@@ -138,6 +138,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
             class="button selected e17vrbb40 HvButton-root css-6jfwuk-StyledButton-StyledButton e138pvrm0"
             id="card"
             label="Select card view"
+            type="button"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -172,6 +173,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
             class="button e17vrbb40 HvButton-root css-6jfwuk-StyledButton-StyledButton e138pvrm0"
             id="list"
             label="Select list view"
+            type="button"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -752,6 +754,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
             class="button selected e17vrbb40 HvButton-root css-6jfwuk-StyledButton-StyledButton e138pvrm0"
             id="card"
             label="Select card view"
+            type="button"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -786,6 +789,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
             class="button e17vrbb40 HvButton-root css-6jfwuk-StyledButton-StyledButton e138pvrm0"
             id="list"
             label="Select list view"
+            type="button"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -1191,6 +1195,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
               aria-pressed="true"
               class="button selected e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
               id="all"
+              type="button"
             >
               <div
                 class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -1207,6 +1212,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
               aria-pressed="false"
               class="button e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
               id="critical"
+              type="button"
             >
               <div
                 class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -1223,6 +1229,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
               aria-pressed="false"
               class="button e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
               id="major"
+              type="button"
             >
               <div
                 class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -1239,6 +1246,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
               aria-pressed="false"
               class="button e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
               id="average"
+              type="button"
             >
               <div
                 class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -1255,6 +1263,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
               aria-pressed="false"
               class="button e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
               id="minor"
+              type="button"
             >
               <div
                 class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -2175,6 +2184,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
               aria-pressed="true"
               class="button selected e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
               id="all"
+              type="button"
             >
               <div
                 class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -2191,6 +2201,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
               aria-pressed="false"
               class="button e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
               id="critical"
+              type="button"
             >
               <div
                 class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -2207,6 +2218,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
               aria-pressed="false"
               class="button e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
               id="major"
+              type="button"
             >
               <div
                 class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -2223,6 +2235,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
               aria-pressed="false"
               class="button e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
               id="average"
+              type="button"
             >
               <div
                 class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -2239,6 +2252,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
               aria-pressed="false"
               class="button e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
               id="minor"
+              type="button"
             >
               <div
                 class="css-1nxr552-StyledContentDiv e138pvrm3"

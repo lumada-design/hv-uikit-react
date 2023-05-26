@@ -10,6 +10,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-rf0utc-StyledButton-StyledButton e138pvrm0"
       disabled=""
       tabindex="-1"
+      type="button"
     >
       <div
         class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -45,6 +46,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
     </button>
     <button
       class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1thpith-StyledButton-StyledButton e138pvrm0"
+      type="button"
     >
       <div
         class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -80,6 +82,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
     </button>
     <button
       class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1thpith-StyledButton-StyledButton e138pvrm0"
+      type="button"
     >
       <div
         class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -115,6 +118,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
     </button>
     <button
       class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1thpith-StyledButton-StyledButton e138pvrm0"
+      type="button"
     >
       <div
         class="css-1nxr552-StyledContentDiv e138pvrm3"
