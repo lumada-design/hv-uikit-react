@@ -211,4 +211,68 @@ describe("Button", () => {
       });
     });
   });
+
+  describe("polymorphic button", () => {
+    it("link", () => {
+      const { getByRole } = render(
+        <HvButton component="a" href="/path/to">
+          Link
+        </HvButton>
+      );
+
+      const button = getByRole("link", { name: "Link" });
+
+      expect(button).toBeInTheDocument();
+      expect(button).toHaveAttribute("href", "/path/to");
+    });
+
+    it("disabled link", () => {
+      const { getByRole } = render(
+        <HvButton component="a" href="/path/to" disabled>
+          Link
+        </HvButton>
+      );
+
+      const button = getByRole("link", { name: "Link" });
+
+      expect(button).toHaveAttribute("aria-disabled", "true");
+    });
+
+    it("custom link", () => {
+      const CustomLink = ({ to, children, ...others }) => (
+        <a href={to} {...others}>
+          {children}
+        </a>
+      );
+
+      const { getByRole } = render(
+        <HvButton component={CustomLink} to="/path/to">
+          Link
+        </HvButton>
+      );
+
+      const button = getByRole("link", { name: "Link" });
+
+      expect(button).toBeInTheDocument();
+      expect(button).toHaveAttribute("href", "/path/to");
+    });
+
+    it("disabled custom link", () => {
+      const CustomLink = ({ to, children, ...others }) => (
+        <a href={to} {...others}>
+          {children}
+        </a>
+      );
+
+      const { getByRole } = render(
+        <HvButton component={CustomLink} to="/path/to" disabled>
+          Link
+        </HvButton>
+      );
+
+      const button = getByRole("link", { name: "Link" });
+
+      expect(button).toHaveAttribute("aria-disabled", "true");
+    });
+  });
 });
