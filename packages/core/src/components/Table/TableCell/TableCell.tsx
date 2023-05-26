@@ -6,11 +6,14 @@ import {
   forwardRef,
   TdHTMLAttributes,
   useContext,
+  useEffect,
   useMemo,
+  useState,
 } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "@core/utils/transientOptions";
 import { getVarValue, hexToRgbA } from "@core/utils";
+import { useTheme } from "@core/hooks";
 import {
   HvTableCellAlign,
   HvTableCellType,
@@ -117,8 +120,16 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
     },
     externalRef
   ) => {
+    const { activeTheme, selectedMode } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
+
+    const [sortedColorValue, setSortedColorValue] = useState<
+      string | undefined
+    >();
+    const [sortedColorAlpha, setSortedColorAlpha] = useState<
+      string | undefined
+    >();
 
     const type = typeProp || tableSectionContext?.type || "body";
 
@@ -127,12 +138,24 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
 
     const TableCell = useMemo(() => StyledTableCell(Component), [Component]);
 
-    const sortedColorValue = getVarValue(theme.table.rowSortedColor);
-    const sortedColorAlpha = getVarValue(theme.table.rowSortedColorAlpha);
+    let sortedColor =
+      checkValidHexColorValue(sortedColorValue) && sortedColorAlpha
+        ? hexToRgbA(sortedColorValue, parseFloat(sortedColorAlpha))
+        : sortedColorValue;
 
-    const sortedColor = checkValidHexColorValue(sortedColorValue)
-      ? hexToRgbA(sortedColorValue, parseFloat(sortedColorAlpha))
-      : sortedColorValue;
+    useEffect(() => {
+      setSortedColorValue(getVarValue(theme.table.rowSortedColor));
+      setSortedColorAlpha(getVarValue(theme.table.rowSortedColorAlpha));
+
+      sortedColor =
+        checkValidHexColorValue(sortedColorValue) && sortedColorAlpha
+          ? hexToRgbA(sortedColorValue, parseFloat(sortedColorAlpha))
+          : sortedColorValue;
+    }, [
+      activeTheme?.colors?.modes[selectedMode],
+      sortedColorValue,
+      sortedColorAlpha,
+    ]);
 
     return (
       <ClassNames>
