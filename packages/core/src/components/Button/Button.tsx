@@ -146,7 +146,6 @@ export const HvButton: <C extends React.ElementType = "button">(
         ref={ref}
         className={clsx(className, classes?.root, buttonClasses.root)}
         onClick={onClick}
-        disabled={disabled}
         onFocus={onFocusHandler}
         onBlur={onBlurHandler}
         $variant={mapVariant(variant, activeTheme?.name)}
@@ -154,9 +153,14 @@ export const HvButton: <C extends React.ElementType = "button">(
         $size={size}
         $radius={radius}
         $overrideIconColors={overrideIconColors}
-        $disabled={disabled}
         $startIcon={!!startIcon}
         $endIcon={!!endIcon}
+        {...(disabled && {
+          $disabled: true,
+          disabled: true,
+          tabIndex: -1,
+          "aria-disabled": true,
+        })}
         {...others}
       >
         <StyledContentDiv>

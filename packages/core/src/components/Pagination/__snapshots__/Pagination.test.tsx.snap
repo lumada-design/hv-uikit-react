@@ -67,9 +67,11 @@ exports[`Pagination > should render correctly 1`] = `
         data-mui-internal-clone-element="true"
       >
         <button
+          aria-disabled="true"
           aria-label="First Page"
-          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-199w687-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
+          tabindex="-1"
         >
           <div
             class="hv-uikit-css-1nxr552-StyledContentDiv e138pvrm3"
@@ -104,9 +106,11 @@ exports[`Pagination > should render correctly 1`] = `
         data-mui-internal-clone-element="true"
       >
         <button
+          aria-disabled="true"
           aria-label="Previous Page"
-          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-199w687-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
+          tabindex="-1"
         >
           <div
             class="hv-uikit-css-1nxr552-StyledContentDiv e138pvrm3"
@@ -210,9 +214,11 @@ exports[`Pagination > should render correctly 1`] = `
         data-mui-internal-clone-element="true"
       >
         <button
+          aria-disabled="true"
           aria-label="Next Page"
-          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-199w687-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
+          tabindex="-1"
         >
           <div
             class="hv-uikit-css-1nxr552-StyledContentDiv e138pvrm3"
@@ -247,9 +253,11 @@ exports[`Pagination > should render correctly 1`] = `
         data-mui-internal-clone-element="true"
       >
         <button
+          aria-disabled="true"
           aria-label="Last Page"
-          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-199w687-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
+          tabindex="-1"
         >
           <div
             class="hv-uikit-css-1nxr552-StyledContentDiv e138pvrm3"
