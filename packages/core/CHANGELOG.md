@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.8.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.8.0...@hitachivantara/uikit-react-core@5.8.1) (2023-05-27)
+
+### Bug Fixes
+
+- **VerticalNavigation:** no padding on menu items ([cb1d2de](https://github.com/lumada-design/hv-uikit-react/commit/cb1d2debb2824b62b0d6b718e4a0afa3292aa920))
+
 # [5.8.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.5...@hitachivantara/uikit-react-core@5.8.0) (2023-05-24)
 
 ### Bug Fixes

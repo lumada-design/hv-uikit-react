@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.3.6...@hitachivantara/uikit-react-lab@5.3.7) (2023-05-27)
+
+### Bug Fixes
+
+- d.ts typing file the lab package ([#3377](https://github.com/lumada-design/hv-uikit-react/issues/3377)) ([7928457](https://github.com/lumada-design/hv-uikit-react/commit/792845758ce31b07717af0a3d412d47a95df10ac))
+
 ## [5.3.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.3.5...@hitachivantara/uikit-react-lab@5.3.6) (2023-05-24)
 
 ### Bug Fixes
