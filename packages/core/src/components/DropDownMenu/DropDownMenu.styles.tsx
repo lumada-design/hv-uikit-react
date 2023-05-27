@@ -9,7 +9,8 @@ import {
 } from "@core/components";
 import { transientOptions } from "@core/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Ref, forwardRef } from "react";
+import { forwardRef } from "react";
+import { PolymorphicRef } from "@core/types";
 
 export const StyledBaseDropDown = styled((props: HvBaseDropdownProps) => (
   <HvBaseDropdown {...props} />
@@ -18,7 +19,7 @@ export const StyledBaseDropDown = styled((props: HvBaseDropdownProps) => (
 });
 
 export const StyledButton = styled(
-  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
     return <HvButton {...props} ref={ref} />;
   }),
   transientOptions

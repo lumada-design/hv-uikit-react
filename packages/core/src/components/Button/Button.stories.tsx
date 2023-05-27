@@ -9,19 +9,119 @@ import {
   Stop,
 } from "@hitachivantara/uikit-react-icons";
 import { HvBox } from "@core/components";
-import { HvButton, HvButtonProps } from "./Button";
+import {
+  HvButton,
+  HvButtonProps,
+  buttonRadius,
+  buttonSize,
+  buttonVariant,
+} from "./Button";
 
 export default { title: "Components/Button", component: HvButton };
 
 export const Main: StoryObj<HvButtonProps> = {
   args: {
     children: "Primary",
+    variant: "primary",
+    disabled: false,
+    size: undefined,
+    radius: "base",
+    overrideIconColors: true,
     selected: false,
   },
   argTypes: {
-    classes: { control: { disable: true } },
-    icon: { control: { disable: true } },
-    startIcon: { control: { disable: true } },
+    children: {
+      description: "Button children.",
+      table: {
+        type: { summary: "React.ReactNode" },
+      },
+    },
+    selected: {
+      description: "Whether the Button is selected or not.",
+      table: {
+        type: { summary: "boolean" },
+      },
+    },
+    variant: {
+      description:
+        "Use the variant prop to change the visual style of the Button.",
+      options: buttonVariant,
+      control: { type: "select" },
+      table: {
+        defaultValue: { summary: "primary" },
+        type: { summary: "HvButtonVariant" },
+      },
+    },
+    disabled: {
+      description: "Whether the Button is disabled or not.",
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" },
+      },
+    },
+    size: {
+      description: "Button size.",
+      options: buttonSize,
+      control: { type: "select" },
+      table: {
+        type: { summary: "HvButtonSize" },
+      },
+    },
+    radius: {
+      description: "Button border radius.",
+      options: buttonRadius,
+      control: { type: "select" },
+      table: {
+        defaultValue: { summary: "base" },
+        type: { summary: "HvButtonRadius" },
+      },
+    },
+    overrideIconColors: {
+      description:
+        "Defines the default colors of the button are forced into the icon.",
+      table: {
+        defaultValue: { summary: "true" },
+        type: { summary: "boolean" },
+      },
+    },
+    classes: {
+      description:
+        "A Jss Object used to override or extend the styles applied.",
+      table: {
+        type: { summary: "HvButtonClasses" },
+      },
+      control: { disable: true },
+    },
+    icon: {
+      description: "Whether the Button is an icon-only button.",
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" },
+      },
+      control: { disable: true },
+    },
+    startIcon: {
+      description: "Element placed before the children.",
+      table: {
+        type: { summary: "React.ReactElement" },
+      },
+      control: { disable: true },
+    },
+    endIcon: {
+      description: "Element placed after the children.",
+      table: {
+        type: { summary: "React.ReactElement" },
+      },
+      control: { disable: true },
+    },
+    component: {
+      description: "Element to use for the root node. Defaults to `button`.",
+      table: {
+        defaultValue: { summary: "button" },
+        type: { summary: "React.ElementType" },
+      },
+      control: { disable: true },
+    },
   },
 };
 
@@ -193,4 +293,43 @@ export const Semantic = ({ onClick }) => {
 
 Semantic.args = {
   onClick: clickAction,
+};
+
+export const CustomRootComponent = ({ onClick }) => {
+  const CustomLink = ({ to, children, ...others }) => (
+    <a href={to} {...others}>
+      {children}
+    </a>
+  );
+
+  return (
+    <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
+      <HvButton onClick={onClick}>Button</HvButton>
+      <HvButton
+        component="a"
+        href="https://lumada-design.github.io/uikit/master"
+      >
+        Link
+      </HvButton>
+      <HvButton
+        component={CustomLink}
+        to="https://lumada-design.github.io/uikit/master"
+      >
+        Custom link
+      </HvButton>
+    </HvBox>
+  );
+};
+
+CustomRootComponent.args = {
+  onClick: clickAction,
+};
+
+CustomRootComponent.parameters = {
+  docs: {
+    description: {
+      story:
+        "If necessary the button's root component can be changed by setting the `component` property.",
+    },
+  },
 };

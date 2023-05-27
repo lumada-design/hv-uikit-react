@@ -11,7 +11,8 @@ import {
   HvInputProps,
   HvButtonProps,
 } from "@core/components";
-import { FormEventHandler, forwardRef, Ref } from "react";
+import { FormEventHandler, forwardRef } from "react";
+import { PolymorphicRef } from "@core/types";
 import { HvLogin, HvLoginProps } from "./Login";
 import background from "./resources/background.png";
 import customBackground from "./resources/background-custom.jpg";
@@ -33,7 +34,7 @@ const StyledInput = styled((props: HvInputProps) => <HvInput {...props} />)({
 });
 
 const StyledButton = styled(
-  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
     return <HvButton {...props} ref={ref} />;
   })
 )({

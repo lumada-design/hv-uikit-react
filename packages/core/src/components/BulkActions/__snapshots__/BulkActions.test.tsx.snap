@@ -72,8 +72,10 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
       class="e1nka4cc1 HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer css-tnxbad-StyledRoot-StyledGenericActions e4fkrgz1"
     >
       <button
-        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1ktc6bx-StyledButton-StyledButton e138pvrm0"
+        aria-disabled="true"
+        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-rf0utc-StyledButton-StyledButton e138pvrm0"
         disabled=""
+        tabindex="-1"
       >
         <div
           class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -108,8 +110,10 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
         </div>
       </button>
       <button
-        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1ktc6bx-StyledButton-StyledButton e138pvrm0"
+        aria-disabled="true"
+        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-rf0utc-StyledButton-StyledButton e138pvrm0"
         disabled=""
+        tabindex="-1"
       >
         <div
           class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -154,11 +158,13 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           tabindex="-1"
         >
           <button
+            aria-disabled="true"
             aria-expanded="false"
             aria-label="Dropdown menu"
-            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 HvButton-root css-12vulei-StyledButton-StyledButton e138pvrm0"
+            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 HvButton-root css-1oi57w6-StyledButton-StyledButton e138pvrm0"
             disabled=""
             id="hv-drop-down-menu-20-icon-button"
+            tabindex="-1"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"

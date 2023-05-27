@@ -7,6 +7,7 @@ import {
 } from "@core/components";
 import { transientOptions } from "@core/utils/transientOptions";
 import { Ref, forwardRef } from "react";
+import { PolymorphicRef } from "@core/types";
 import tableHeaderClasses from "./tableHeaderClasses";
 
 export const StyledHeaderContent = styled(
@@ -32,7 +33,7 @@ export const StyledHeaderContent = styled(
 }));
 
 export const StyledButton = styled(
-  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
     return <HvButton {...props} ref={ref} />;
   })
 )({

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { HvButton, HvButtonProps } from "@core/components";
-import { forwardRef, Ref } from "react";
+import { forwardRef } from "react";
+import { PolymorphicRef } from "@core/types";
 import verticalNavigationHeaderClasses from "./headerClasses";
 
 export const StyledHeader = styled("div")({
@@ -16,7 +17,7 @@ export const StyledHeader = styled("div")({
 });
 
 export const StyledCollapseButton = styled(
-  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
     return <HvButton {...props} ref={ref} />;
   })
 )({

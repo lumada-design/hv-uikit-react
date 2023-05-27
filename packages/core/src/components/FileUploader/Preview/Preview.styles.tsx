@@ -2,7 +2,8 @@ import styled from "@emotion/styled";
 import { Preview } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvButton, HvButtonProps } from "@core/components";
-import { forwardRef, Ref } from "react";
+import { forwardRef } from "react";
+import { PolymorphicRef } from "@core/types";
 import fileUploaderPreviewClasses from "./previewClasses";
 
 export const StyledOverlay = styled("div")({
@@ -36,7 +37,7 @@ export const StyledPreviewIcon = styled(Preview)({
 });
 
 export const StyledButton = styled(
-  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
     return <HvButton {...props} ref={ref} />;
   })
 )({

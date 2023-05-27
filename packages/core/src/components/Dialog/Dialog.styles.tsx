@@ -4,8 +4,9 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "@core/utils/transientOptions";
 import fade from "@core/utils/hexToRgbA";
 import { HvButton, HvButtonProps } from "@core/components";
-import { forwardRef, Ref } from "react";
+import { forwardRef } from "react";
 import { CSSInterpolation } from "@emotion/serialize";
+import { PolymorphicRef } from "@core/types";
 import { HvDialogClasses } from "./dialogClasses";
 
 export const styles = {
@@ -25,7 +26,7 @@ export const StyledBackdrop = styled(
 }));
 
 export const StyledClose = styled(
-  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
     return <HvButton {...props} ref={ref} />;
   })
 )({

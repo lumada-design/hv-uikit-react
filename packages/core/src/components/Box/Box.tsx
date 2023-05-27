@@ -19,10 +19,10 @@ const useSx = (sx: SxProps) => {
 
 export const HvBox: HvBoxProps = forwardRef(
   <C extends React.ElementType = "div">(
-    { style, as, sx, children, ...restProps }: HvBaseProps<C>,
+    { style, component, sx, children, ...restProps }: HvBaseProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
-    const Component = as || "div";
+    const Component = component || "div";
 
     return (
       <Component style={sx ? useSx(sx) : style} ref={ref} {...restProps}>

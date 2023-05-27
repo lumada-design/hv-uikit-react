@@ -346,7 +346,7 @@ export const HvStepNavigation = ({
         >
           {({ stepsWidth, navWidth, ...itemsProps }) => (
             <HvBox
-              as="nav"
+              component="nav"
               style={{
                 width: `${navWidth}px`,
                 margin: 0,

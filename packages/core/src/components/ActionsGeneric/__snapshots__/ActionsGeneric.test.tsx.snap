@@ -6,8 +6,10 @@ exports[`ActionsGeneric > should render correctly 1`] = `
     class="HvActionsGeneric-root css-1668iss-StyledRoot e4fkrgz1"
   >
     <button
-      class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1ktc6bx-StyledButton-StyledButton e138pvrm0"
+      aria-disabled="true"
+      class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-rf0utc-StyledButton-StyledButton e138pvrm0"
       disabled=""
+      tabindex="-1"
     >
       <div
         class="css-1nxr552-StyledContentDiv e138pvrm3"
