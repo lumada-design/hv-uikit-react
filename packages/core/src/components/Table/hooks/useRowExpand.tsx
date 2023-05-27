@@ -4,7 +4,7 @@ import {
   TableExpandedToggleProps,
   UseExpandedRowProps,
 } from "react-table";
-import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
+import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvTypography } from "@core/components";
 import { useLabels } from "@core/hooks";
 
@@ -59,7 +59,7 @@ export const CellWithExpandButton = ({ row, cell, labels: labelsProp }) => {
         aria-expanded={row.isExpanded}
         onClick={onClick}
       >
-        {row.isExpanded ? <DropDownXS /> : <DropRightXS />}
+        {row.isExpanded ? <DropDownXS /> : <DropUpXS />}
       </HvButton>
       {cell?.value && (
         <HvTypography variant="label" component="span">

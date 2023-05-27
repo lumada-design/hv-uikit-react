@@ -235,10 +235,20 @@ export type HvThemeComponents = {
     rowBorderColor: string;
     rowBackgroundColor: string;
     rowBorderRadius: string;
-    rowStripedBackgroundColor: string;
+    rowListBackgroundColor: string;
+    rowListBorderRadius: string;
+    rowListBorderColor: string;
+    rowStripedBackgroundColorEven: string;
+    rowStripedBackgroundColorOdd: string;
     rowExpandBackgroundColor: string;
     rowHoverColor: string;
     rowHoverBorderColor: string;
+    rowSortedColor: string;
+    rowSortedColorAlpha: string;
+    cellPaddingTop: string;
+    cellPaddingBottom: string;
+    cellListBorder: string;
+    cellBorder: string;
   };
   calendar: {
     border: string;

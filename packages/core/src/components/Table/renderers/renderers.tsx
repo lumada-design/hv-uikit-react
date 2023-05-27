@@ -1,4 +1,5 @@
-import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
+import { ClassNames } from "@emotion/react";
+import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { setId } from "@core/utils";
 import {
   HvOverflowTooltip,
@@ -67,7 +68,9 @@ export function hvExpandColumn<
   col: HvTableColumnConfig<D, H>,
   expandRowButtonAriaLabel: string,
   collapseRowButtonAriaLabel: string,
-  getCanRowExpand?: (row: HvRowInstance<D, H>) => boolean
+  getCanRowExpand?: (row: HvRowInstance<D, H>) => boolean,
+  ExpandedIcon: React.ReactNode = <DropUpXS />,
+  CollapsedIcon: React.ReactNode = <DropDownXS />
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
@@ -77,26 +80,37 @@ export function hvExpandColumn<
       const hasContent = getCanRowExpand?.(row) ?? true;
 
       return (
-        <>
-          {hasContent && (
-            <HvButton
-              icon
-              variant="secondaryGhost"
-              aria-label={
-                row.isExpanded
-                  ? collapseRowButtonAriaLabel
-                  : expandRowButtonAriaLabel
-              }
-              aria-expanded={row.isExpanded}
-              onClick={expandedProps?.onClick}
-              style={{ position: "absolute", left: 0, top: 0 }}
-            >
-              {row.isExpanded ? <DropDownXS /> : <DropRightXS />}
-            </HvButton>
-          )}
+        <ClassNames>
+          {({ css }) => (
+            <>
+              {hasContent && (
+                <HvButton
+                  icon
+                  variant="secondaryGhost"
+                  aria-label={
+                    row.isExpanded
+                      ? collapseRowButtonAriaLabel
+                      : expandRowButtonAriaLabel
+                  }
+                  aria-expanded={row.isExpanded}
+                  onClick={expandedProps?.onClick}
+                  classes={{
+                    root: css({
+                      position: "absolute",
+                      left: 0,
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                    }),
+                  }}
+                >
+                  {row.isExpanded ? ExpandedIcon : CollapsedIcon}
+                </HvButton>
+              )}
 
-          <HvOverflowTooltip data={hvStringFallback(value)} />
-        </>
+              <HvOverflowTooltip data={hvStringFallback(value)} />
+            </>
+          )}
+        </ClassNames>
       );
     },
     sortType: "alphanumeric",

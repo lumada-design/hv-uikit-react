@@ -3,3 +3,4 @@ export {
   hvNumberFallback,
   hvNodeFallback,
 } from "./fallbacks";
+export * from "./utils";

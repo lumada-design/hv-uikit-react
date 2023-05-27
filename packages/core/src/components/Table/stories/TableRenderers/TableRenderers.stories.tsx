@@ -1,5 +1,7 @@
 import React, { useMemo, useState } from "react";
+import { StoryObj } from "@storybook/react";
 import { Ban } from "@hitachivantara/uikit-react-icons";
+import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvTable,
   HvTableBody,
@@ -17,7 +19,6 @@ import {
   HvRowInstance,
   HvCellProps,
 } from "@core/components";
-import { StoryObj } from "@storybook/react";
 import {
   hvTextColumn,
   hvDateColumn,
@@ -157,6 +158,8 @@ const AllColumnRenderers = () => {
                 paddingTop: 0,
                 textAlign: "center",
                 height: 100,
+                backgroundColor: theme.colors.atmo2,
+                borderTop: `solid 1px ${theme.colors.atmo4}`,
               }}
               colSpan={100}
             >
@@ -328,6 +331,8 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
               paddingTop: 0,
               textAlign: "center",
               height: 100,
+              backgroundColor: theme.colors.atmo2,
+              borderTop: solid 1px theme.colors.atmo4,
             }}
             colSpan={100}
           >
@@ -1067,6 +1072,8 @@ const ExpandColumnRenderer = () => {
                 paddingTop: 0,
                 textAlign: "center",
                 height: 100,
+                backgroundColor: theme.colors.atmo2,
+                borderTop: `solid 1px ${theme.colors.atmo4}`,
               }}
               // @ts-ignore
               colSpan="100%"
@@ -1194,6 +1201,8 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
               paddingTop: 0,
               textAlign: "center",
               height: 100,
+              backgroundColor: "theme.colors.atmo2",
+              borderTop: "solid 1px theme.colors.atmo4",
             }}
             colSpan="100%"
           >

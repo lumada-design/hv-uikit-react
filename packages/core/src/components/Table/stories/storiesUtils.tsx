@@ -147,7 +147,7 @@ export const getColumns = (): HvTableColumnConfig<NewEntry, string>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
   { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
-  { Header: "Status", accessor: "status", style: { width: 120 } },
+  { Header: "Status", accessor: "status", style: { width: 140 } },
   // numeric values should be right-aligned
   {
     Header: "Probability",
@@ -177,7 +177,7 @@ export const getGroupedRowsColumns = (): HvTableColumnConfig<
     style: { minWidth: 100 },
   },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
-  { Header: "Status", accessor: "status", style: { width: 120 } },
+  { Header: "Status", accessor: "status", style: { width: 140 } },
   // numeric values should be right-aligned
   {
     Header: "Probability",
@@ -201,7 +201,7 @@ export const getGroupedColumns = (): HvTableColumnConfig<
   {
     Header: "Event Info",
     columns: [
-      { Header: "Status", accessor: "status", style: { width: 120 } },
+      { Header: "Status", accessor: "status", style: { width: 140 } },
       // numeric values should be right-aligned
       {
         Header: "Probability",

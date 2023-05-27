@@ -1,15 +1,16 @@
-import { clsx } from "clsx";
+import { forwardRef, useContext, useEffect, useMemo, useState } from "react";
+import { ClassNames } from "@emotion/react";
 import styled from "@emotion/styled";
-import { hexToRgb, alpha } from "@mui/material";
-import { HvBaseProps } from "@core/types";
-import { forwardRef, useContext, useMemo } from "react";
-import { transientOptions } from "@core/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
+import { getVarValue, hexToRgbA } from "@core/utils";
+import { transientOptions } from "@core/utils/transientOptions";
+import { HvBaseProps } from "@core/types";
 import { useTheme } from "@core/hooks";
 import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
-import { getBorderStyles } from "../utils/utils";
+import { styles } from "./TableRow.styles";
+import { checkValidHexColorValue } from "../utils";
 
 export interface HvTableRowProps
   extends HvBaseProps<HTMLTableRowElement, "children"> {
@@ -37,107 +38,28 @@ const StyledTableRow = (c: any) =>
     transientOptions
   )(
     ({
-      $hover,
-      $selected,
-      $expanded,
       $striped,
-      $variantList,
-      $variantListHead,
-      $stripedColor,
-      $type,
+      $stripedColorEven,
+      $stripedColorOdd,
     }: {
-      $hover: boolean;
-      $selected: boolean;
-      $expanded: boolean;
       $striped: boolean;
-      $variantList: boolean;
-      $variantListHead: boolean;
-      $type: string;
-      $stripedColor: string;
+      $stripedColorEven: string;
+      $stripedColorOdd: string;
     }) => ({
-      backgroundColor: theme.table.rowBackgroundColor,
-      color: "inherit",
-      verticalAlign: "middle",
-      outline: 0,
-      minHeight: 32,
-      "tr&": {
-        height: 32,
-      },
-
-      ":hover": {
-        ...($type === "body" && {
-          backgroundColor: theme.table.rowHoverColor,
-        }),
-      },
-      ...($hover && {
-        transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-        "&:hover": {
-          backgroundColor: theme.table.rowHoverColor,
-        },
-      }),
-      ...($selected && {
-        backgroundColor: theme.table.selectedRowBackgroundColor,
-      }),
-      ...($expanded && {
-        "& > *[role=cell]": {
-          borderBottom: "none",
-        },
-        [`&.${tableRowClasses.expanded}`]: {
-          backgroundColor: theme.colors.atmo1,
-        },
-      }),
       ...($striped && {
         "&:nth-of-type(even)": {
-          backgroundColor: $stripedColor,
+          backgroundColor: $stripedColorEven,
+          "&:hover": {
+            backgroundColor: theme.table.rowHoverColor,
+          },
+        },
+        "&:nth-of-type(odd)": {
+          backgroundColor: $stripedColorOdd,
           "&:hover": {
             backgroundColor: theme.table.rowHoverColor,
           },
         },
       }),
-
-      // type
-      ...($type === "head" && {
-        backgroundColor: "transparent",
-        "&:first-of-type": {
-          height: 52,
-        },
-
-        "tr&:first-of-type": {
-          height: 52,
-        },
-      }),
-
-      ...($variantList && {
-        borderBottom: 0,
-        ...(!$selected && {
-          backgroundColor: theme.colors.atmo1,
-        }),
-        height: 52,
-        "&:hover": {
-          ...getBorderStyles("row", theme.table.rowHoverBorderColor),
-        },
-        [`&.${tableRowClasses.selected}`]: {
-          ...getBorderStyles("row", theme.colors.secondary),
-
-          "&:hover": {
-            ...getBorderStyles("row", theme.table.rowHoverBorderColor),
-          },
-        },
-      }),
-      ...($variantListHead && {
-        height: 16,
-        "&:first-of-type": {
-          height: 16,
-        },
-
-        "tr&:first-of-type": {
-          height: 16,
-        },
-      }),
-
-      "&.HvIsFocused": {
-        borderRadius: theme.table.rowBorderRadius,
-      },
     })
   );
 
@@ -162,6 +84,9 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
+    const [even, setEven] = useState<string | undefined>();
+    const [odd, setOdd] = useState<string | undefined>();
+
     const type = tableSectionContext?.type || "body";
 
     const isList = tableContext.variant === "listrow";
@@ -171,43 +96,82 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
 
     const TableRow = useMemo(() => StyledTableRow(Component), [Component]);
 
+    let stripedColorEven = checkValidHexColorValue(even)
+      ? hexToRgbA(even, 0.6)
+      : even;
+
+    let stripedColorOdd = checkValidHexColorValue(odd)
+      ? hexToRgbA(odd, 0.6)
+      : odd;
+
+    useEffect(() => {
+      setEven(getVarValue(theme.table.rowStripedBackgroundColorEven));
+      setOdd(getVarValue(theme.table.rowStripedBackgroundColorOdd));
+      stripedColorEven = checkValidHexColorValue(even)
+        ? hexToRgbA(even, 0.6)
+        : even;
+      stripedColorOdd = checkValidHexColorValue(odd)
+        ? hexToRgbA(odd, 0.6)
+        : odd;
+    }, [activeTheme?.colors?.modes[selectedMode], even, odd]);
+
     return (
-      <TableRow
-        ref={externalRef}
-        className={clsx(
-          className,
-          tableSectionContext.filterClassName,
-          tableRowClasses.root,
-          classes?.root,
-          tableRowClasses[type],
-          classes?.[type],
-          hover && clsx(tableRowClasses.hover, classes?.hover),
-          selected && clsx(tableRowClasses.selected, classes?.selected),
-          expanded && clsx(tableRowClasses.expanded, classes?.expanded),
-          striped && clsx(tableRowClasses.striped, classes?.striped),
-          isList &&
-            type === "body" &&
-            clsx(tableRowClasses.variantList, classes?.variantList),
-          isList &&
-            type === "head" &&
-            clsx(tableRowClasses.variantListHead, classes?.variantListHead)
+      <ClassNames>
+        {({ css, cx }) => (
+          <TableRow
+            ref={externalRef}
+            className={cx(
+              tableSectionContext.filterClassName,
+              tableRowClasses.root,
+              className,
+              classes?.root,
+              css(styles.root),
+              tableRowClasses[type],
+              classes?.[type],
+              css(styles[type]),
+              hover &&
+                (tableRowClasses.hover, classes?.hover, css(styles.hover)),
+              selected &&
+                cx(
+                  tableRowClasses.selected,
+                  classes?.selected,
+                  css(styles.selected)
+                ),
+              expanded &&
+                cx(
+                  tableRowClasses.expanded,
+                  classes?.expanded,
+                  css(styles.expanded)
+                ),
+              striped &&
+                cx(
+                  tableRowClasses.striped,
+                  classes?.striped,
+                  css(styles.striped)
+                ),
+              isList &&
+                type === "body" &&
+                cx(
+                  tableRowClasses.variantList,
+                  classes?.variantList,
+                  css(styles.variantList)
+                ),
+              isList &&
+                type === "head" &&
+                cx(
+                  tableRowClasses.variantListHead,
+                  classes?.variantListHead,
+                  css(styles.variantListHead)
+                )
+            )}
+            role={Component === defaultComponent ? null : "row"}
+            $striped={striped}
+            $stripedColorEven={stripedColorEven}
+            $stripedColorOdd={stripedColorOdd}
+            {...others}
+          />
         )}
-        role={Component === defaultComponent ? null : "row"}
-        $hover={hover}
-        $selected={selected}
-        $expanded={expanded}
-        $striped={striped}
-        $variantList={isList && type === "body"}
-        $variantListHead={isList && type === "head"}
-        $type={type}
-        $stripedColor={alpha(
-          hexToRgb(
-            activeTheme?.colors?.modes[selectedMode].atmo1 || theme.colors.atmo1
-          ),
-          0.6
-        )}
-        {...others}
-      />
+      </ClassNames>
     );
   }
 );
