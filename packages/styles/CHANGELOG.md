@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.7.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.7.0...@hitachivantara/uikit-styles@5.7.1) (2023-05-28)
+
+### Bug Fixes
+
+- add requests, add sorted ds5 styles, add striped ds5 styles ([4995290](https://github.com/lumada-design/hv-uikit-react/commit/49952902e52b9fcacf83d40351b2c4bc5743ff98))
+- striped color changing with theme, row hover color on ds3 ([900433d](https://github.com/lumada-design/hv-uikit-react/commit/900433d2deed076d5d47a52eb35ecd38732a3f00))
+- styles not apllying in first render ([65ecb39](https://github.com/lumada-design/hv-uikit-react/commit/65ecb39c2e160065fc3820a806be73e837d4d3a9))
+- **table:** align and update to ds5 icon on expandable rows ([3283924](https://github.com/lumada-design/hv-uikit-react/commit/32839244b20e71c7aa166578c3ffa2f0c5c34a5d))
+
 # [5.7.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.6.2...@hitachivantara/uikit-styles@5.7.0) (2023-05-24)
 
 ### Bug Fixes

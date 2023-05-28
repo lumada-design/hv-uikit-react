@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.9.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.8.1...@hitachivantara/uikit-react-core@5.9.0) (2023-05-28)
+
+### Bug Fixes
+
+- add requests, add sorted ds5 styles, add striped ds5 styles ([4995290](https://github.com/lumada-design/hv-uikit-react/commit/49952902e52b9fcacf83d40351b2c4bc5743ff98))
+- button still clickable if disabled ([40a5c19](https://github.com/lumada-design/hv-uikit-react/commit/40a5c197107e85bed295fc3cfc2e45ef5ab609e7))
+- button still focusable and not disabled in accessibility tree ([89d27b2](https://github.com/lumada-design/hv-uikit-react/commit/89d27b2a7459854f15c44df466c929b091c958c7))
+- fix linting errors ([7e588e1](https://github.com/lumada-design/hv-uikit-react/commit/7e588e1c1273673c9629a84397d2b9d360a2fdcf))
+- striped color changing with theme, row hover color on ds3 ([900433d](https://github.com/lumada-design/hv-uikit-react/commit/900433d2deed076d5d47a52eb35ecd38732a3f00))
+- styles not apllying in first render ([65ecb39](https://github.com/lumada-design/hv-uikit-react/commit/65ecb39c2e160065fc3820a806be73e837d4d3a9))
+- **table:** align and update to ds5 icon on expandable rows ([3283924](https://github.com/lumada-design/hv-uikit-react/commit/32839244b20e71c7aa166578c3ffa2f0c5c34a5d))
+- **VerticalNavigation:** no padding on menu items ([cb1d2de](https://github.com/lumada-design/hv-uikit-react/commit/cb1d2debb2824b62b0d6b718e4a0afa3292aa920))
+
+### Features
+
+- as property updated to component for polymorphic components ([10b8073](https://github.com/lumada-design/hv-uikit-react/commit/10b8073207d834d97a997e89d6d2b3e26eeca6b4))
+- **Button:** enable the use of a different root component ([420cbba](https://github.com/lumada-design/hv-uikit-react/commit/420cbba0bf07e85c2f4432b777d6e997dae338b2))
+
+### Performance Improvements
+
+- reduce possible re-renders ([baf91cc](https://github.com/lumada-design/hv-uikit-react/commit/baf91cc75d5365795399c8db076d8a6c24bfd4d4))
+
 ## [5.8.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.8.0...@hitachivantara/uikit-react-core@5.8.1) (2023-05-27)
 
 ### Bug Fixes

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.3.7...@hitachivantara/uikit-react-lab@5.4.0) (2023-05-28)
+
+### Bug Fixes
+
+- button still focusable and not disabled in accessibility tree ([89d27b2](https://github.com/lumada-design/hv-uikit-react/commit/89d27b2a7459854f15c44df466c929b091c958c7))
+
+### Features
+
+- as property updated to component for polymorphic components ([10b8073](https://github.com/lumada-design/hv-uikit-react/commit/10b8073207d834d97a997e89d6d2b3e26eeca6b4))
+
 ## [5.3.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.3.6...@hitachivantara/uikit-react-lab@5.3.7) (2023-05-27)
 
 ### Bug Fixes
