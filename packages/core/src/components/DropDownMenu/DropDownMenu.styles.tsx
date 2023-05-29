@@ -20,7 +20,8 @@ export const styles: Partial<
   },
   icon: {
     position: "relative",
-    boxSizing: "content-box",
+    width: 32,
+    boxSizing: "border-box",
     padding: 0,
     borderRadius: theme.dropDownMenu.borderRadius,
     border: theme.dropDownMenu.borderClosed,
