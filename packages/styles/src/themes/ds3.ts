@@ -620,6 +620,9 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     thumbnailBorderRadius: theme.radii.none,
     thumbnailSelectedBorder: `1px solid ${theme.colors.base_dark}`,
   },
+  drawer: {
+    backDropBackgroundColor: theme.colors.atmo4,
+  },
 }));
 
 export default ds3;

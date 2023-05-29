@@ -227,6 +227,10 @@
     {
       "name": "Vertical Navigation",
       "status": "✅"
+    },
+    {
+      "name": "Drawer",
+      "status": "✅"
     }
   ],
   "Templates": [
@@ -248,10 +252,6 @@
     }
   ],
   "Lab": [
-    {
-      "name": "Drawer",
-      "status": "in progress"
-    },
     {
       "name": "Navigation Anchors",
       "status": "in progress"
