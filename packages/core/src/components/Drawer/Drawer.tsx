@@ -76,9 +76,16 @@ export const HvDrawer = ({
   buttonTitle = "Close",
   ...others
 }: HvDrawerProps) => {
-  const { activeTheme, selectedMode } = useTheme();
+  const { activeTheme, selectedMode, selectedTheme } = useTheme();
+
+  const getBackgroundColor = () => {
+    const bgValue = getVarValue(theme.drawer.backDropBackgroundColor);
+
+    return checkValidHexColorValue(bgValue) ? hexToRgbA(bgValue, 0.8) : bgValue;
+  };
+
   const [backgroundColorValue, setBackgroundColorValue] = useState<string>(
-    getVarValue(theme.drawer.backDropBackgroundColor)
+    getBackgroundColor()
   );
   const closeButtonDisplay = () => <Close role="presentation" />;
 
@@ -86,26 +93,18 @@ export const HvDrawer = ({
     ? withTooltip(closeButtonDisplay, buttonTitle, "top")
     : closeButtonDisplay;
 
-  let backgroundColor = checkValidHexColorValue(backgroundColorValue)
-    ? hexToRgbA(backgroundColorValue, 0.8)
-    : backgroundColorValue;
-
   useEffect(() => {
-    setBackgroundColorValue(getVarValue(theme.drawer.backDropBackgroundColor));
-
-    backgroundColor = checkValidHexColorValue(backgroundColorValue)
-      ? hexToRgbA(backgroundColorValue, 0.8)
-      : backgroundColorValue;
-  }, [activeTheme?.colors?.modes[selectedMode], backgroundColorValue]);
+    setBackgroundColorValue(getBackgroundColor());
+  }, [activeTheme, selectedMode, selectedTheme]);
 
   return (
     <ClassNames>
       {({ css, cx }) => (
         <MuiDrawer
           className={cx(
+            css(styles.root),
             drawerClasses.root,
             classes?.root,
-            css(styles.root),
             className
           )}
           id={id}
@@ -113,17 +112,17 @@ export const HvDrawer = ({
           open={open}
           PaperProps={{
             classes: {
-              root: cx(drawerClasses.paper, classes?.paper, css(styles.paper)),
+              root: cx(css(styles.paper), drawerClasses.paper, classes?.paper),
             },
           }}
           BackdropProps={{
             classes: {
               root: cx(
-                drawerClasses.background,
-                classes?.background,
                 css`
-                  background-color: ${backgroundColor};
-                `
+                  background-color: ${backgroundColorValue};
+                `,
+                drawerClasses.background,
+                classes?.background
               ),
             },
           }}
@@ -133,9 +132,9 @@ export const HvDrawer = ({
           <HvButton
             id={setId(id, "close")}
             className={cx(
+              css(styles.closeButton),
               drawerClasses.closeButton,
-              classes?.closeButton,
-              css(styles.closeButton)
+              classes?.closeButton
             )}
             variant="primaryGhost"
             onClick={onClose}

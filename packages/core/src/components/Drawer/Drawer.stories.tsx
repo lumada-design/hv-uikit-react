@@ -10,7 +10,7 @@ import { useState } from "react";
 import { HvDrawer, HvDrawerProps } from "./Drawer";
 
 const meta: Meta<typeof HvDrawer> = {
-  title: "components/Drawer",
+  title: "widgets/Drawer",
   component: HvDrawer,
 };
 export default meta;
