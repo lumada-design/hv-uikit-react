@@ -52,7 +52,7 @@ export const HvVerticalNavigationPopup = ({
     <StyledPopper open anchorEl={anchorEl} placement="right-start" {...others}>
       <ClickAwayListener onClickAway={handleClickAway}>
         <StyledPopupContainer>
-          <HvVerticalNavigation open>
+          <HvVerticalNavigation open useIcons>
             <HvVerticalNavigationTree
               className={clsx(verticalNavigationTreeClasses.popup)}
               id={setId(id, "tree")}

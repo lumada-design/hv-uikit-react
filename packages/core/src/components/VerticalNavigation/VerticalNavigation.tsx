@@ -30,7 +30,9 @@ export interface HvVerticalNavigationProps {
    */
   open?: boolean;
   /**
-   *  Collpased Mode for the Vertical Navigation, the default value is "simple".
+   * Collpased Mode for the Vertical Navigation, the default value is "simple".
+   *
+   * @deprecated - `useIcons` property should be used instead.
    */
   collapsedMode?: HvVerticalNavigationMode;
   /**
@@ -41,6 +43,13 @@ export interface HvVerticalNavigationProps {
    * The content inside the actions container.
    */
   children?: React.ReactNode;
+  /**
+   * Boolean to determine if icons should be displayed in the navigation menu.
+   * When `true` a icon will always be displayed, if no icon is provided the first letter of the label will be
+   * displayed inside an Avatar component.
+   * When `false` no icons will be shown, even if an icon is provided.
+   */
+  useIcons?: boolean;
 }
 
 /**
@@ -68,12 +77,15 @@ export const HvVerticalNavigation = ({
 
   open = true,
 
-  collapsedMode = "simple",
-
   slider = false,
+
+  useIcons = false,
 
   ...others
 }: HvVerticalNavigationProps) => {
+  if (others.collapsedMode) {
+    console.warn("`collaspedMode` is deprecated. Please use 'useIcons'.");
+  }
   const [parentData, setParentData] = useState<NavigationData[]>([]);
 
   const [parentSelected, setParentSelected] = useState();
@@ -115,7 +127,7 @@ export const HvVerticalNavigation = ({
   const value = useMemo(
     () => ({
       isOpen: open,
-      collapsedMode,
+      useIcons,
       slider,
       headerTitle,
       setHeaderTitle,
@@ -133,7 +145,7 @@ export const HvVerticalNavigation = ({
     }),
     [
       open,
-      collapsedMode,
+      useIcons,
       slider,
       headerTitle,
       setHeaderTitle,

@@ -175,7 +175,7 @@ export const HvVerticalNavigationTree = ({
 
   const {
     isOpen,
-    collapsedMode,
+    useIcons,
     slider,
 
     parentItem,
@@ -196,7 +196,7 @@ export const HvVerticalNavigationTree = ({
 
   const handleChange = useCallback(
     (event, selectedId, selectedItem) => {
-      if (collapsedMode === "icon" && !isOpen && selectedItem.data) {
+      if (useIcons && !isOpen && selectedItem.data) {
         const currentEventTarget = event.currentTarget;
         setNavigationPopup((prevState) => {
           // We want to close the popup in case the clicked element is the same as the previous one
@@ -230,9 +230,9 @@ export const HvVerticalNavigationTree = ({
   );
 
   const treeViewItemMouseEnterHandler = (event, item) => {
-    const isCollapsedMode = collapsedMode === "icon" && !isOpen;
+    const isCollapsed = useIcons && !isOpen;
 
-    if (isCollapsedMode && item.data && !navigationPopup?.fixedMode) {
+    if (isCollapsed && item.data && !navigationPopup?.fixedMode) {
       const currentEventTarget = event.currentTarget;
 
       setNavigationPopup?.({
@@ -241,7 +241,7 @@ export const HvVerticalNavigationTree = ({
         fixedMode: false,
         data: item.data,
       });
-    } else if (isCollapsedMode && !item.data && !navigationPopup?.fixedMode) {
+    } else if (isCollapsed && !item.data && !navigationPopup?.fixedMode) {
       setNavigationPopup(null);
     }
   };
@@ -294,7 +294,7 @@ export const HvVerticalNavigationTree = ({
   };
 
   const handleStyledNavMouseLeave = () => {
-    if (collapsedMode === "icon" && !isOpen && !navigationPopup?.fixedMode) {
+    if (useIcons && !isOpen && !navigationPopup?.fixedMode) {
       setNavigationPopup(null);
     }
   };
@@ -307,7 +307,7 @@ export const HvVerticalNavigationTree = ({
         verticalNavigationTreeClasses.root,
         classes?.root,
         !isOpen &&
-          collapsedMode === "simple" &&
+          !useIcons &&
           clsx(verticalNavigationTreeClasses.collapsed, classes?.collapsed)
       )}
       onMouseLeave={handleStyledNavMouseLeave}
@@ -332,7 +332,7 @@ export const HvVerticalNavigationTree = ({
           expanded={expanded}
           onToggle={handleToggle}
         >
-          {collapsedMode === "icon" && !isOpen && navigationPopup && (
+          {useIcons && !isOpen && navigationPopup && (
             <HvVerticalNavigationPopup
               id={setId(id, "navigation-popup")}
               key={navigationPopup.uniqueKey}

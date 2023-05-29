@@ -172,7 +172,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
       [nodeId, treeitemElement]
     );
 
-    const { isOpen, collapsedMode } = useContext(VerticalNavigationContext);
+    const { isOpen, useIcons } = useContext(VerticalNavigationContext);
 
     const { index, parentId, level } = useDescendant(descendant);
 
@@ -431,7 +431,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           onMouseDown={handleMouseDown}
           style={{
             paddingLeft:
-              (expandable || icon != null || !isOpen ? 0 : 10) +
+              (expandable || useIcons || !isOpen ? 0 : 10) +
               level * (collapsible ? 32 : 10),
           }}
           role={href ? undefined : "button"}
@@ -458,12 +458,10 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           {isOpen && expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
 
           <IconWrapper
-            icon={icon}
+            icon={useIcons && icon}
             label={payload?.label}
             hasChildren={Boolean(children)}
-            showAvatar={
-              !icon && level === 0 && !isOpen && collapsedMode === "icon"
-            }
+            showAvatar={!icon && useIcons}
             isOpen={isOpen}
             disableTooltip={disableTooltip}
           />
@@ -545,11 +543,9 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             !selected &&
             clsx(treeViewItemClasses.unselected, classes?.unselected),
           focused && clsx(treeViewItemClasses.focused, classes?.focused),
+          !isOpen && !useIcons && clsx(treeViewItemClasses.hide, classes?.hide),
           !isOpen &&
-            collapsedMode === "simple" &&
-            clsx(treeViewItemClasses.hide, classes?.hide),
-          !isOpen &&
-            collapsedMode === "icon" &&
+            useIcons &&
             isChildSelected &&
             isChildSelected(nodeId) &&
             clsx(treeViewItemClasses.selected, classes?.selected)

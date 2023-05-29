@@ -40,7 +40,6 @@ export default {
 export const Main: StoryObj<HvVerticalNavigationProps> = {
   args: {
     open: true,
-    collapsedMode: "simple",
     slider: false,
   },
   argTypes: {},
@@ -366,7 +365,7 @@ export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
 
     return (
       <div style={{ display: "flex", width: 220, height: 530 }}>
-        <HvVerticalNavigation open={show} collapsedMode="simple">
+        <HvVerticalNavigation open={show}>
           <HvVerticalNavigationHeader
             title="Menu"
             onCollapseButtonClick={handleIsExpanded}
@@ -422,6 +421,7 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
             {
               id: "01-01",
               label: "Ambient Monitoring",
+              icon: <BarChart />,
             },
             {
               id: "01-02",
@@ -501,7 +501,7 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
 
     return (
       <div style={{ display: "flex", width: 220, height: 530 }}>
-        <HvVerticalNavigation open={show} collapsedMode="icon">
+        <HvVerticalNavigation open={show} useIcons>
           <HvVerticalNavigationHeader
             title="Menu"
             onCollapseButtonClick={handleIsExpanded}
@@ -578,7 +578,7 @@ export const CollapsibleIconsWithoutSubItems: StoryObj<HvVerticalNavigationProps
 
       return (
         <div style={{ display: "flex", width: 220, height: 530 }}>
-          <HvVerticalNavigation open={show} collapsedMode="icon">
+          <HvVerticalNavigation open={show} useIcons>
             <HvVerticalNavigationHeader
               title="Menu"
               onCollapseButtonClick={handleIsExpanded}
@@ -723,7 +723,7 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
 
       return (
         <div style={{ display: "flex", width: 220, height: 530 }}>
-          <HvVerticalNavigation open={show} collapsedMode="icon">
+          <HvVerticalNavigation open={show} useIcons>
             <HvVerticalNavigationHeader
               title="Menu"
               onCollapseButtonClick={handleIsExpanded}
@@ -837,7 +837,7 @@ export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
     return (
       <div>
         <div style={{ display: "flex", width: 220, height: 530 }}>
-          <HvVerticalNavigation open collapsedMode="simple" slider>
+          <HvVerticalNavigation open slider>
             <HvVerticalNavigationHeader title="Menu" />
             <HvVerticalNavigationTree
               collapsible
@@ -958,11 +958,7 @@ export const MobileNavigation: StoryObj<HvVerticalNavigationProps> = {
     return (
       <div>
         <div style={{ display: "flex", width: 220, height: 530 }}>
-          <HvVerticalNavigation
-            open={show}
-            collapsedMode="simple"
-            slider={isXs}
-          >
+          <HvVerticalNavigation open={show} slider={isXs}>
             <HvVerticalNavigationHeader
               title="Menu"
               onCollapseButtonClick={handleIsExpanded}

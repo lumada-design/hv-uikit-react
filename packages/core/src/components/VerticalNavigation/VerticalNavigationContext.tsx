@@ -1,9 +1,9 @@
 import { createContext } from "react";
-import { NavigationData, HvVerticalNavigationMode } from ".";
+import { NavigationData } from ".";
 
 interface VerticalNavigationContextValue {
   isOpen: boolean;
-  collapsedMode: HvVerticalNavigationMode;
+  useIcons: boolean;
   slider?: boolean;
   headerTitle?: string;
   setHeaderTitle?: React.Dispatch<React.SetStateAction<string | undefined>>;
@@ -24,7 +24,7 @@ interface VerticalNavigationContextValue {
 const VerticalNavigationContext = createContext<VerticalNavigationContextValue>(
   {
     isOpen: true,
-    collapsedMode: "simple",
+    useIcons: false,
     slider: false,
   }
 );

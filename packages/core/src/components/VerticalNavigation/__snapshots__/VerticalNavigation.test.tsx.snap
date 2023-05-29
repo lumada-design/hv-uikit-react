@@ -7,6 +7,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
   >
     <div
       class="HvVerticalNavigation-root css-18tuupo-StyledRoot eyka99t0"
+      id="sample1"
     >
       <div
         class="HvVerticalNavigationHeader-root css-7xt91a-StyledHeader e1arrhkt1"
