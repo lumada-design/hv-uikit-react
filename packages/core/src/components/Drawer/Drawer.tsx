@@ -78,26 +78,29 @@ export const HvDrawer = ({
   buttonTitle = "Close",
   ...others
 }: HvDrawerProps) => {
-  const { activeTheme, selectedMode, selectedTheme } = useTheme();
-
-  const getBackgroundColor = () => {
-    const bgValue = getVarValue(theme.drawer.backDropBackgroundColor);
-
-    return checkValidHexColorValue(bgValue) ? hexToRgbA(bgValue, 0.8) : bgValue;
-  };
+  const { activeTheme, selectedMode } = useTheme();
 
   const [backgroundColorValue, setBackgroundColorValue] = useState<string>(
-    getBackgroundColor()
+    getVarValue(theme.drawer.backDropBackgroundColor)
   );
+
   const closeButtonDisplay = () => <Close role="presentation" />;
 
   const CloseButtonTooltipWrapper = buttonTitle
     ? withTooltip(closeButtonDisplay, buttonTitle, "top")
     : closeButtonDisplay;
 
+  let backgroundColor = checkValidHexColorValue(backgroundColorValue)
+    ? hexToRgbA(backgroundColorValue, 0.8)
+    : backgroundColorValue;
+
   useEffect(() => {
-    setBackgroundColorValue(getBackgroundColor());
-  }, [activeTheme, selectedMode, selectedTheme]);
+    setBackgroundColorValue(getVarValue(theme.drawer.backDropBackgroundColor));
+
+    backgroundColor = checkValidHexColorValue(backgroundColorValue)
+      ? hexToRgbA(backgroundColorValue, 0.8)
+      : backgroundColorValue;
+  }, [activeTheme?.colors?.modes[selectedMode], backgroundColorValue]);
 
   return (
     <ClassNames>
@@ -121,7 +124,7 @@ export const HvDrawer = ({
             classes: {
               root: cx(
                 css({
-                  backgroundColor: backgroundColorValue,
+                  backgroundColor,
                 }),
                 drawerClasses.background,
                 classes?.background
