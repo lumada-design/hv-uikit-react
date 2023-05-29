@@ -20,12 +20,7 @@ export const styles = {
     gap: 10,
   }),
   docs: css({
-    border: `1px solid ${theme.colors.atmo4}`,
-    padding: `${theme.space.xs} ${theme.space.md}`,
-    "&:hover": {
-      borderColor: theme.colors.secondary,
-      backgroundColor: theme.colors.primary_20,
-    },
+    padding: theme.spacing(["xs", "md"]),
   }),
   label: css({
     width: "100%",

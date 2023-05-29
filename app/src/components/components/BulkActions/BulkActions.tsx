@@ -142,7 +142,6 @@ export const BulkActions = () => {
       />
       <br />
       <HvBulkActions
-        id="bulkActions"
         semantic={semantic}
         numTotal={data.length}
         numSelected={data.filter((el) => el.checked).length}
@@ -159,7 +158,6 @@ export const BulkActions = () => {
       />
       <p />
       <HvPagination
-        id="pagination"
         pages={numPages}
         page={page}
         canPrevious={page > 0}
