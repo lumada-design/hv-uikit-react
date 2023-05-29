@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { useMemo } from "react";
 import { ClassNames } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -9,22 +8,19 @@ import withId from "@core/hocs/withId";
 import {
   isKeypress,
   keyboardCodes,
-  outlineStyles,
   setId,
   getPrevNextFocus,
 } from "@core/utils";
-
 import {
+  HvBaseDropdown,
   HvBaseDropdownProps,
+  HvButton,
   HvButtonVariant,
   HvList,
   HvListValue,
+  HvPanel,
 } from "@core/components";
-import {
-  StyledBaseDropDown,
-  StyledButton,
-  StyledPanel,
-} from "./DropDownMenu.styles";
+import { styles } from "./DropDownMenu.styles";
 import dropDownMenuClasses, {
   HvDropDownMenuClasses,
 } from "./dropDownMenuClasses";
@@ -113,27 +109,6 @@ const HvDropDownMenu = ({
     containerRef?.getElementsByTagName("li")[0]?.focus();
   };
 
-  const headerComponent = (
-    <StyledButton
-      icon
-      variant={category}
-      id={setId(id, "icon-button")}
-      className={clsx(
-        dropDownMenuClasses.icon,
-        classes?.icon,
-        open && clsx(dropDownMenuClasses.iconSelected, classes?.iconSelected)
-      )}
-      aria-expanded={open}
-      disabled={disabled}
-      aria-label="Dropdown menu"
-      $open={open}
-    >
-      {icon || (
-        <MoreOptionsVertical color={disabled ? "secondary_60" : undefined} />
-      )}
-    </StyledButton>
-  );
-
   const condensed = useMemo(() => dataList.every((el) => !el.icon), [dataList]);
   const popperStyle: HvBaseDropdownProps["popperProps"] = {
     style: {
@@ -146,32 +121,46 @@ const HvDropDownMenu = ({
   return (
     <ClassNames>
       {({ css, cx }) => (
-        <StyledBaseDropDown
+        <HvBaseDropdown
           id={id}
           className={cx(
             dropDownMenuClasses.container,
+            css(styles.container),
             className,
             classes?.container
           )}
           classes={{
-            root: cx(
-              dropDownMenuClasses.root,
-              css({
-                display: "inline-block",
-                width: "auto",
-                "&.focus-visible $icon": {
-                  ...outlineStyles,
-                },
-              }),
-              classes?.root
-            ),
+            root: cx(dropDownMenuClasses.root, css(styles.root), classes?.root),
             container: cx(
               dropDownMenuClasses.baseContainer,
               classes?.baseContainer
             ),
           }}
           expanded={open && !disabled}
-          component={headerComponent}
+          component={
+            <HvButton
+              icon
+              variant={category}
+              id={setId(id, "icon-button")}
+              className={cx(
+                dropDownMenuClasses.icon,
+                open && dropDownMenuClasses.iconSelected,
+                css(styles.icon),
+                open && css(styles.iconSelected),
+                classes?.icon,
+                open && classes?.iconSelected
+              )}
+              aria-expanded={open}
+              disabled={disabled}
+              aria-label="Dropdown menu"
+            >
+              {icon || (
+                <MoreOptionsVertical
+                  color={disabled ? "secondary_60" : undefined}
+                />
+              )}
+            </HvButton>
+          }
           aria-haspopup="menu"
           placement={placement}
           variableWidth
@@ -186,7 +175,13 @@ const HvDropDownMenu = ({
           popperProps={popperStyle}
           {...others}
         >
-          <StyledPanel>
+          <HvPanel
+            className={cx(
+              dropDownMenuClasses.menuListRoot,
+              css(styles.menuListRoot),
+              classes?.menuListRoot
+            )}
+          >
             <HvList
               id={listId}
               values={dataList}
@@ -201,8 +196,8 @@ const HvDropDownMenu = ({
                 root: cx(dropDownMenuClasses.menuList, classes?.menuList),
               }}
             />
-          </StyledPanel>
-        </StyledBaseDropDown>
+          </HvPanel>
+        </HvBaseDropdown>
       )}
     </ClassNames>
   );

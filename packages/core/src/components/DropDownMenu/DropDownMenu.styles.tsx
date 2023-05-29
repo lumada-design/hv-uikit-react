@@ -1,37 +1,31 @@
-import styled from "@emotion/styled";
-import {
-  HvBaseDropdown,
-  HvBaseDropdownProps,
-  HvButton,
-  HvButtonProps,
-  HvPanel,
-  HvPanelProps,
-} from "@core/components";
-import { transientOptions } from "@core/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
-import { forwardRef } from "react";
-import { PolymorphicRef } from "@core/types";
+import { outlineStyles } from "@core/utils";
+import { CSSInterpolation } from "@emotion/serialize";
+import dropDownMenuClasses, {
+  HvDropDownMenuClasses,
+} from "./dropDownMenuClasses";
 
-export const StyledBaseDropDown = styled((props: HvBaseDropdownProps) => (
-  <HvBaseDropdown {...props} />
-))({
-  width: 32,
-});
-
-export const StyledButton = styled(
-  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
-    return <HvButton {...props} ref={ref} />;
-  }),
-  transientOptions
-)(({ $open }: { $open: boolean }) => ({
-  position: "relative",
-  boxSizing: "content-box",
-  padding: 0,
-
-  borderRadius: theme.dropDownMenu.borderRadius,
-  border: theme.dropDownMenu.borderClosed,
-
-  ...($open && {
+export const styles: Partial<
+  Record<keyof HvDropDownMenuClasses, CSSInterpolation>
+> = {
+  container: {
+    width: 32,
+  },
+  root: {
+    display: "inline-block",
+    width: "auto",
+    [`&.focus-visible .${dropDownMenuClasses.icon}`]: {
+      ...outlineStyles,
+    },
+  },
+  icon: {
+    position: "relative",
+    boxSizing: "content-box",
+    padding: 0,
+    borderRadius: theme.dropDownMenu.borderRadius,
+    border: theme.dropDownMenu.borderClosed,
+  },
+  iconSelected: {
     backgroundColor: theme.colors.atmo1,
     boxShadow: theme.colors.shadow,
 
@@ -45,12 +39,9 @@ export const StyledButton = styled(
 
     borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
     border: theme.dropDownMenu.borderOpened,
-  }),
-}));
-
-export const StyledPanel = styled((props: HvPanelProps) => (
-  <HvPanel {...props} />
-))({
-  border: theme.dropDownMenu.borderOpened,
-  borderRadius: theme.dropDownMenu.borderRadius,
-});
+  },
+  menuListRoot: {
+    border: theme.dropDownMenu.borderOpened,
+    borderRadius: theme.dropDownMenu.borderRadius,
+  },
+};
