@@ -56,6 +56,29 @@ export const themeDiff = (a: object, b: object, rootLevel = true): object => {
   return diff;
 };
 
+export const getThemeCode = (
+  themeName: string,
+  selectedTheme: string,
+  activeTheme,
+  customTheme
+) => {
+  const final = {
+    name: themeName,
+    base: selectedTheme,
+    ...themeDiff(activeTheme, customTheme),
+  };
+
+  // the `replace` bit below is just a regex to remove the quotes from
+  // the properties names, for displaying effect only.
+  return `import { createTheme } from "@hitachivantara/uikit-react-core";
+  
+export default createTheme(${JSON.stringify(final, null, 2).replace(
+    /"([^(")"]+)":/g,
+    "$1:"
+  )});
+`;
+};
+
 export const downloadTheme = (filename, text) => {
   const element = document.createElement("a");
   element.setAttribute(
