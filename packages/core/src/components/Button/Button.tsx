@@ -144,6 +144,7 @@ export const HvButton: <C extends React.ElementType = "button">(
       <StyledComponent
         id={id}
         ref={ref}
+        type="button"
         className={clsx(className, classes?.root, buttonClasses.root)}
         onClick={onClick}
         onFocus={onFocusHandler}

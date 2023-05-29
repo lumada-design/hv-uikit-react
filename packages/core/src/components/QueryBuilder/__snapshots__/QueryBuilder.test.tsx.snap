@@ -17,6 +17,7 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
           <button
             aria-pressed="true"
             class="button selected e17vrbb40 HvButton-root css-1gx6mqk-StyledButton-StyledButton e138pvrm0"
+            type="button"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -31,6 +32,7 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
           <button
             aria-pressed="false"
             class="button e17vrbb40 HvButton-root css-1gx6mqk-StyledButton-StyledButton e138pvrm0"
+            type="button"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -53,6 +55,7 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
           <button
             aria-label="Reset query"
             class="HvQueryBuilder-removeButton HvButton-root css-17gbypf-StyledButton e138pvrm0"
+            type="button"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -157,6 +160,7 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
         >
           <button
             class="HvButton-root css-1u5hgoy-StyledButton e138pvrm0"
+            type="button"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -196,6 +200,7 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
         >
           <button
             class="HvButton-root css-1u5hgoy-StyledButton e138pvrm0"
+            type="button"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"

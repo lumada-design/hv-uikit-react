@@ -103,6 +103,7 @@ exports[`FileUploader > should render correctly 1`] = `
           aria-label="Remove File"
           class="HvFile-removeButton e6pb7kb0 HvButton-root css-6nk431-StyledButton-StyledIconButton e138pvrm0"
           id="hvfilelist4-values-remove-button"
+          type="button"
         >
           <div
             class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -157,6 +158,7 @@ exports[`FileUploader > should render correctly 1`] = `
           aria-label="Remove File"
           class="HvFile-removeButton e6pb7kb0 HvButton-root css-6nk431-StyledButton-StyledIconButton e138pvrm0"
           id="hvfilelist4-values-remove-button"
+          type="button"
         >
           <div
             class="css-1nxr552-StyledContentDiv e138pvrm3"

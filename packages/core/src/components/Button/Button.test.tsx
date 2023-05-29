@@ -76,24 +76,42 @@ describe("Button", () => {
       </div>
     );
     const primary = getByRole("button", { name: "Primary" });
-    expect(primary).toBeInTheDocument();
     expect(primary).toBeDisabled();
     const primarySubtle = getByRole("button", { name: "Primary Subtle" });
-    expect(primarySubtle).toBeInTheDocument();
     expect(primarySubtle).toBeDisabled();
     const primaryGhost = getByRole("button", { name: "Primary Ghost" });
-    expect(primaryGhost).toBeInTheDocument();
     expect(primaryGhost).toBeDisabled();
 
     const secondary = getByRole("button", { name: "Secondary" });
-    expect(secondary).toBeInTheDocument();
     expect(secondary).toBeDisabled();
     const secondarySubtle = getByRole("button", { name: "Secondary Subtle" });
-    expect(secondarySubtle).toBeInTheDocument();
     expect(secondarySubtle).toBeDisabled();
     const secondaryGhost = getByRole("button", { name: "Secondary Ghost" });
-    expect(secondaryGhost).toBeInTheDocument();
     expect(secondaryGhost).toBeDisabled();
+  });
+
+  it(`is type="button" by default`, () => {
+    render(
+      <form>
+        <HvButton>Button</HvButton>
+      </form>
+    );
+    const button = screen.getByRole("button", { name: "Button" });
+    expect(button).toHaveAttribute("type", "button");
+  });
+
+  it(`submits form when type="submit"`, async () => {
+    const submitFn = vi.fn();
+    render(
+      <form onSubmit={submitFn}>
+        <HvButton type="submit">Button</HvButton>
+      </form>
+    );
+    const button = screen.getByRole("button", { name: "Button" });
+    expect(button).toHaveAttribute("type", "submit");
+
+    await userEvent.click(button);
+    expect(submitFn).toHaveBeenCalled();
   });
 
   describe("interactions", () => {
