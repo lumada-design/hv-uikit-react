@@ -12,7 +12,7 @@ import {
 } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "@core/utils/transientOptions";
-import { getVarValue, hexToRgbA } from "@core/utils";
+import { checkValidHexColorValue, getVarValue, hexToRgbA } from "@core/utils";
 import { useTheme } from "@core/hooks";
 import {
   HvTableCellAlign,
@@ -23,7 +23,6 @@ import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { styles } from "./TableCell.styles";
-import { checkValidHexColorValue } from "../utils";
 
 export interface HvTableCellProps
   extends Omit<TdHTMLAttributes<HTMLTableCellElement>, "align"> {

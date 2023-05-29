@@ -6,14 +6,18 @@ import { ClassNames } from "@emotion/react";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps } from "@core/types/generic";
 import { withTooltip } from "@core/hocs";
-import { getVarValue, hexToRgbA, setId } from "@core/utils";
+import {
+  getVarValue,
+  hexToRgbA,
+  setId,
+  checkValidHexColorValue,
+} from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvButton } from "@core/components";
 import { useEffect, useState } from "react";
 import { useTheme } from "@core/hooks";
 import { styles } from "./Drawer.styles";
 import drawerClasses, { HvDrawerClasses } from "./drawerClasses";
-import { checkValidHexColorValue } from "./utils/utils";
 
 export interface HvDrawerProps
   extends MuiDrawerProps,
@@ -43,8 +47,6 @@ export interface HvDrawerProps
    * Function executed on close.
    * Extended from Modal from material-ui
    *
-   * @param {object} event The event source of the callback.
-   * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`.
    */
   onClose?: (
     event: React.SyntheticEvent,
@@ -118,9 +120,9 @@ export const HvDrawer = ({
           BackdropProps={{
             classes: {
               root: cx(
-                css`
-                  background-color: ${backgroundColorValue};
-                `,
+                css({
+                  backgroundColor: backgroundColorValue,
+                }),
                 drawerClasses.background,
                 classes?.background
               ),

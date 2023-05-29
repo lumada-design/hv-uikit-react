@@ -6,7 +6,7 @@ export const styles: Partial<Record<keyof HvDrawerClasses, CSSInterpolation>> =
   {
     paper: {
       backgroundColor: theme.colors.atmo1,
-      padding: "0px",
+      padding: 0,
       overflow: "auto",
       boxShadow: theme.colors.shadow,
     },
