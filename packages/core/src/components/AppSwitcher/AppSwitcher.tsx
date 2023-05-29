@@ -142,7 +142,11 @@ export const HvAppSwitcher = ({
       $layout={layout}
     >
       {(header && (
-        <StyledTitle className={clsx(appSwitcherClasses.title, classes?.title)}>
+        <StyledTitle
+          component="div"
+          variant="label"
+          className={clsx(appSwitcherClasses.title, classes?.title)}
+        >
           {header}
         </StyledTitle>
       )) ||
@@ -164,6 +168,8 @@ export const HvAppSwitcher = ({
       </StyledActionsContainer>
       {footer && (
         <StyledFooter
+          component="div"
+          variant="label"
           className={clsx(
             appSwitcherClasses.footerContainer,
             classes?.footerContainer
