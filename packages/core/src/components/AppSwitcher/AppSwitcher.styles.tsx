@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography, HvListContainer } from "@core/components";
-import { CSSProperties } from "react";
 import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledRoot = styled(
@@ -42,7 +41,7 @@ export const StyledRoot = styled(
   })
 );
 
-export const StyledTitle = styled("div")({
+export const StyledTitle = styled(HvTypography)({
   minHeight: 36,
 
   // we need to play with the 4px because of the focus ring
@@ -90,19 +89,17 @@ export const StyledActionsContainer = styled(HvListContainer)({
 
   overflowY: "auto",
 
-  // we need to play with the 4px because of the focus ring
+  // We need to play with the 4px because of the focus ring
   padding: "4px 0 4px 4px",
 });
 
-export const StyledFooter = styled("div")({
+export const StyledFooter = styled(HvTypography)({
   display: "flex",
   alignItems: "center",
   marginTop: "auto",
   height: 52,
 
-  // we need to play with the 4px because of the focus ring
+  // We need to play with the 4px because of the focus ring
   // padding: `${theme.hv.spacing.sm - 4}px ${theme.hv.spacing.sm + 4}px 4px 4px`,
   padding: `${theme.space.sm} ${theme.space.sm} 4px 4px`,
-
-  ...(theme.typography.label as CSSProperties),
 });
