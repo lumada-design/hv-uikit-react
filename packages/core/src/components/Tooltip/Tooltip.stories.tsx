@@ -1,5 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvBox, HvTypography } from "@core/components";
+import { Play } from "@hitachivantara/uikit-react-icons";
+import {
+  HvAvatar,
+  HvBox,
+  HvButton,
+  HvCheckBox,
+  HvTypography,
+} from "@core/components";
 import { HvTooltip, HvTooltipProps } from "./Tooltip";
 import tooltipClasses from "./tooltipClasses";
 
@@ -12,26 +19,23 @@ export default meta;
 export const Main: StoryObj<HvTooltipProps> = {
   args: {
     open: true,
-    title: <HvTypography>Grid View</HvTypography>,
   },
   argTypes: {
     classes: { control: { disable: true } },
   },
-  render: ({ title, open }) => {
+  render: ({ open }) => {
     return (
       <HvBox
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          maxWidth: 600,
-          margin: "0 auto",
+          justifyContent: "space-around",
           paddingTop: 80,
         }}
       >
-        <HvTooltip title={title} open>
-          <HvTypography>Hover here</HvTypography>
+        <HvTooltip title="Grid View">
+          <HvButton variant="ghost">Hover or focus here</HvButton>
         </HvTooltip>
-        <HvTooltip title={title} open={open}>
+        <HvTooltip title="Grid View" open={open}>
           <HvTypography>Tooltip open</HvTypography>
         </HvTooltip>
       </HvBox>
@@ -39,133 +43,170 @@ export const Main: StoryObj<HvTooltipProps> = {
   },
 };
 
-export const LongText = () => {
-  const styling = {
-    longTextContainer: {
-      display: "flex",
-      justifyContent: "center",
-      paddingTop: 90,
+export const Disabled: StoryObj<HvTooltipProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'To "hide" a Tooltip, remove its `title`; `disableFocusListener` and `disableHoverListener` disable focus or hover, respectively.',
+      },
     },
-  };
+  },
 
-  const data = (
-    <HvTypography>
-      Tooltips can showcase truncated text. The text should be concise and not
-      redundant.
-    </HvTypography>
-  );
+  render: () => (
+    <HvBox
+      sx={{
+        display: "flex",
+        justifyContent: "space-around",
+        paddingTop: 100,
+      }}
+    >
+      <HvTooltip placement="right" title="">
+        <HvButton variant="secondaryGhost">No tooltip</HvButton>
+      </HvTooltip>
+      <HvTooltip
+        disableFocusListener
+        title="Focusing the button will not open me"
+      >
+        <HvButton variant="secondaryGhost">Focus ignored</HvButton>
+      </HvTooltip>
+      <HvTooltip
+        disableHoverListener
+        title="Hovering the button will not open me"
+      >
+        <HvButton variant="secondaryGhost">Hover ignored</HvButton>
+      </HvTooltip>
+    </HvBox>
+  ),
+};
 
-  return (
-    <HvBox sx={styling.longTextContainer}>
-      <HvTooltip open title={data}>
-        <HvTypography id="placeholder" tabIndex={0}>
-          Hover here
+export const CustomElements: StoryObj<HvTooltipProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "A Tooltip can be attached to any side (see `placement`) of any element or component that holds a `ref` and spreads its props.\
+        If the component doesn't do so, a workaround is to wrap it in a `div`.",
+      },
+    },
+  },
+
+  render: () => (
+    <HvBox
+      sx={{
+        display: "flex",
+        justifyContent: "space-around",
+        padding: "60px 0",
+      }}
+    >
+      <HvTooltip placement="right" title="Right placement">
+        <HvButton>Button</HvButton>
+      </HvTooltip>
+      <HvTooltip placement="bottom" title="Bottom placement">
+        <HvButton icon variant="secondaryGhost">
+          <Play />
+        </HvButton>
+      </HvTooltip>
+      <HvTooltip title="Wrapped HvAvatar">
+        <div>
+          <HvAvatar
+            alt="Ryan"
+            src="https://avatars.githubusercontent.com/u/80?v=4"
+          />
+        </div>
+      </HvTooltip>
+      <HvTooltip title="Wrapped HvCheckBox">
+        <div>
+          <HvCheckBox label="Value" />
+        </div>
+      </HvTooltip>
+      <HvTooltip placement="left" title="Left placement link">
+        <HvTypography
+          link
+          component="a"
+          href="https://github.com/lumada-design/hv-uikit-react"
+        >
+          UI Kit
         </HvTypography>
       </HvTooltip>
     </HvBox>
-  );
+  ),
 };
 
-export const Multiline = () => {
-  const title = {
-    title: "January",
-    elements: [
-      { name: "Sales", value: "52,000 units" },
-      { name: "Profit", value: "50%" },
-    ],
-  };
-
-  const styling = {
-    longTextContainer: {
-      display: "flex",
-      justifyContent: "center",
-      paddingTop: 170,
+export const CustomContent: StoryObj<HvTooltipProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "A Tooltip will grow to the size of its content. Keep in mind that the Tooltip `title` labels the content `children` \
+          and is not keyboard-navigable, therefore it shouldn't be too complex or contain interactable elements.",
+      },
     },
-  };
+  },
 
-  const TooltipContent = ({ classes }) => (
-    <div>
-      <div className={classes.title}>
-        <div>
-          <HvTypography variant="label">{title.title}</HvTypography>
+  render: () => {
+    const longTextTooltip = (
+      <span style={{ maxWidth: 250 }}>
+        Tooltips can showcase truncated text. The text should be concise and not
+        redundant.
+      </span>
+    );
+
+    const multilineContent1 = (
+      <div>
+        <div className={tooltipClasses.title}>
+          <HvTypography variant="label">January</HvTypography>
+        </div>
+        <div className={tooltipClasses.valueWrapper}>
+          {[
+            ["Sales", "52,000 units"],
+            ["Profit", "50%"],
+          ].map(([name, value]) => (
+            <div key={name} className={tooltipClasses.values}>
+              <HvTypography variant="label">{name}</HvTypography>
+              <div className={tooltipClasses.separator} />
+              <HvTypography>{value}</HvTypography>
+            </div>
+          ))}
         </div>
       </div>
-      <div className={classes.valueWrapper}>
-        {title.elements.map((element) => (
-          <div key={element.name} className={classes.values}>
-            <HvTypography variant="label">{element.name}</HvTypography>
-            <div className={classes.separator} />
-            <HvTypography>{element.value}</HvTypography>
+    );
+
+    const multilineContent2 = (
+      <div className={tooltipClasses.valueWrapper}>
+        {[
+          ["Status", "Open"],
+          ["Date", "12/08/2018"],
+          ["Assignee", "Management"],
+          ["Approval", "Not yet requested"],
+        ].map(([name, value]) => (
+          <div key={name} className={tooltipClasses.values}>
+            <HvTypography variant="label">{name}</HvTypography>
+            <div className={tooltipClasses.separator} />
+            <HvTypography>{value}</HvTypography>
           </div>
         ))}
       </div>
-    </div>
-  );
+    );
 
-  const classes = {
-    values: tooltipClasses.values,
-    title: tooltipClasses.title,
-    separator: tooltipClasses.separator,
-    valueWrapper: tooltipClasses.valueWrapper,
-  };
-
-  return (
-    <HvBox sx={styling.longTextContainer}>
-      <HvTooltip
-        open
-        title={<TooltipContent classes={classes} />}
-        useSingle={false}
+    return (
+      <HvBox
+        sx={{
+          display: "flex",
+          justifyContent: "space-around",
+          padding: "200px 20px 0",
+        }}
       >
-        <HvTypography>Hover here</HvTypography>
-      </HvTooltip>
-    </HvBox>
-  );
-};
-
-export const MultilineWithoutHeader = () => {
-  const data = [
-    { name: "Status", value: "Open" },
-    { name: "Date", value: "12/08/2018" },
-    { name: "Assignee", value: "Management" },
-    { name: "Approval", value: "Not yet requested" },
-  ];
-
-  const styling = {
-    container: {
-      display: "flex",
-      justifyContent: "center",
-      paddingTop: 170,
-    },
-  };
-
-  const TooltipContent = ({ classes }) => (
-    <div className={classes.valueWrapper}>
-      {data.map((element) => (
-        <div key={element.name} className={classes.values}>
-          <HvTypography variant="label">{element.name}</HvTypography>
-          <div className={classes.separator} />
-          <HvTypography>{element.value}</HvTypography>
-        </div>
-      ))}
-    </div>
-  );
-
-  const classes = {
-    values: tooltipClasses.values,
-    title: tooltipClasses.title,
-    separator: tooltipClasses.separator,
-    valueWrapper: tooltipClasses.valueWrapper,
-  };
-
-  return (
-    <HvBox sx={styling.container}>
-      <HvTooltip
-        open
-        title={<TooltipContent classes={classes} />}
-        useSingle={false}
-      >
-        <HvTypography>Hover here</HvTypography>
-      </HvTooltip>
-    </HvBox>
-  );
+        <HvTooltip open title={longTextTooltip}>
+          <HvTypography>Long text tooltip</HvTypography>
+        </HvTooltip>
+        <HvTooltip open title={multilineContent1} useSingle={false}>
+          <HvTypography>Multiline content 1</HvTypography>
+        </HvTooltip>
+        <HvTooltip open title={multilineContent2} useSingle={false}>
+          <HvTypography>Multiline content 2</HvTypography>
+        </HvTooltip>
+      </HvBox>
+    );
+  },
 };
