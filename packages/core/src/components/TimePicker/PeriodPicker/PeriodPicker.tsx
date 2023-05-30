@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import {
@@ -8,7 +8,7 @@ import {
 import { HvToggleButton } from "../..";
 import { PeriodPickerOptions } from "../enums";
 
-const PeriodPicker = (props) => {
+export const PeriodPicker = (props) => {
   const { classes, period, onChangePeriod } = props;
   const [currentPeriod, setCurrentPeriod] = useState(
     period ?? PeriodPickerOptions.AM
@@ -72,5 +72,3 @@ PeriodPicker.propTypes = {
    */
   period: PropTypes.oneOf([PeriodPickerOptions.AM, PeriodPickerOptions.PM]),
 };
-
-export default PeriodPicker;

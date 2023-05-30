@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import {
@@ -10,7 +10,7 @@ import { isUnitTimeInValidRange } from "../timePickerUtils";
 import { padTime } from "../timePickerFormatter";
 import { TimePickerUnits } from "../enums";
 
-const UnitTimePicker = (props) => {
+export const UnitTimePicker = (props) => {
   const { classes, id, placeholder, unit, unitValue, onChangeUnitTimeValue } =
     props;
 
@@ -180,5 +180,3 @@ UnitTimePicker.propTypes = {
    */
   onChangeUnitTimeValue: PropTypes.func.isRequired,
 };
-
-export default UnitTimePicker;
