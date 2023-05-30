@@ -14,31 +14,12 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
         class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
         id="hvtreeview2-1-button"
         role="button"
-        style="padding-left: 0px;"
+        style="padding-left: 10px;"
         tabindex="0"
       >
         <div
           class="css-n1g5h0-StyledIconsContainer emephz1"
-        >
-          <div
-            class="css-f95wjz"
-            name="Play"
-          >
-            <svg
-              focusable="false"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="color0"
-                d="M12.984 8 2 1.723v12.554L12.984 8M15 8 1 16V0z"
-                fill="var(--uikit-colors-secondary)"
-              />
-            </svg>
-          </div>
-        </div>
+        />
         System
       </div>
       <ul
@@ -146,31 +127,12 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
         class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
         id="hvtreeview2-7-button"
         role="button"
-        style="padding-left: 0px;"
+        style="padding-left: 10px;"
         tabindex="0"
       >
         <div
           class="css-n1g5h0-StyledIconsContainer emephz1"
-        >
-          <div
-            class="css-f95wjz"
-            name="Stop"
-          >
-            <svg
-              focusable="false"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="color0"
-                d="M14 14H2V2h12zM3 13h10V3H3z"
-                fill="var(--uikit-colors-secondary)"
-              />
-            </svg>
-          </div>
-        </div>
+        />
         Administration
       </div>
       <ul

@@ -13,10 +13,10 @@ import {
 } from "@core/components";
 
 const Sample = ({
-  collapsedMode,
+  useIcons,
   slider,
 }: {
-  collapsedMode?: "simple" | "icon";
+  useIcons?: boolean;
   slider?: boolean;
 }) => {
   const navigationData = useMemo<NavigationData[]>(
@@ -81,7 +81,7 @@ const Sample = ({
   };
   return (
     <div style={{ display: "flex", width: 220, height: 530 }}>
-      <HvVerticalNavigation collapsedMode={collapsedMode} slider={slider}>
+      <HvVerticalNavigation id="sample1" useIcons={useIcons} slider={slider}>
         <HvVerticalNavigationHeader
           title="Menu"
           onCollapseButtonClick={handleExpand}
@@ -215,10 +215,8 @@ describe("VerticalNavigation", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("should collapse", async () => {
-    const { getByRole, getByLabelText } = render(
-      <Sample collapsedMode="simple" />
-    );
+  it("should collapsed", async () => {
+    const { getByRole, getByLabelText } = render(<Sample />);
 
     const collapseButton = getByRole("button", { name: "collapseButton" });
     expect(collapseButton).toBeInTheDocument();
@@ -234,9 +232,7 @@ describe("VerticalNavigation", () => {
   });
 
   it("should have icons", async () => {
-    const { getByRole, getByLabelText } = render(
-      <Sample collapsedMode="icon" />
-    );
+    const { getByRole, getByLabelText } = render(<Sample useIcons />);
 
     const collapseButton = getByRole("button", { name: "collapseButton" });
     expect(collapseButton).toBeInTheDocument();

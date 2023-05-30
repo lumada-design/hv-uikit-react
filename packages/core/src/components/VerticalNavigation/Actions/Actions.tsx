@@ -32,7 +32,7 @@ export const HvVerticalNavigationActions = ({
   children,
   ...others
 }: HvVerticalNavigationActionsProps) => {
-  const { isOpen, collapsedMode } = useContext(VerticalNavigationContext);
+  const { isOpen, useIcons } = useContext(VerticalNavigationContext);
 
   return (
     <StyledRoot
@@ -41,9 +41,7 @@ export const HvVerticalNavigationActions = ({
         className,
         actionsClasses.root,
         classes?.root,
-        !isOpen &&
-          collapsedMode === "simple" &&
-          clsx(actionsClasses.hide, classes?.hide)
+        !isOpen && !useIcons && clsx(actionsClasses.hide, classes?.hide)
       )}
       {...others}
     >

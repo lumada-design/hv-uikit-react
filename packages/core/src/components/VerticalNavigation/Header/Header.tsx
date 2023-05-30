@@ -60,14 +60,14 @@ export const HvVerticalNavigationHeader = ({
 }: HvVerticalNavigationHeaderProps) => {
   const {
     isOpen,
-    collapsedMode,
+    useIcons,
     headerTitle,
     slider,
     navigateToParentHandler,
     parentItem,
   } = useContext(VerticalNavigationContext);
 
-  openIcon = collapsedMode === "simple" ? <Menu /> : openIcon;
+  openIcon = !useIcons ? <Menu /> : openIcon;
 
   const backButtonClickHandler = () => {
     if (navigateToParentHandler) navigateToParentHandler();
