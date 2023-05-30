@@ -14,7 +14,6 @@ export const styles: Partial<
     } ${theme.spacing(4)}`,
     borderBottom: `1px solid ${theme.colors.atmo4}`,
   },
-
   head: {
     height: 52,
     verticalAlign: "top",
@@ -32,11 +31,6 @@ export const styles: Partial<
     backgroundColor: "inherit",
     ...(theme.typography.body as CSSProperties),
     fontFamily: theme.fontFamily.body,
-    // these styles were left on a styled component because of the access to the css var value to add an alpha.
-    // [`&.${tableCellClasses.sorted}`]: {
-    //   backgroundColor: alpha(hexToRgb(theme.colors.atmo1), 0.4),
-    //   backgroundColor: hexToRgbA(theme.colors.atmo1, 0.4),
-    // },
   },
   footer: {},
 
@@ -60,13 +54,14 @@ export const styles: Partial<
     padding: 0,
   },
   variantCheckbox: {
+    boxSizing: "content-box",
     padding: 0,
     width: 32,
     maxWidth: 32,
-    overflow: "hidden",
     borderRight: theme.table.cellBorder,
   },
   variantActions: {
+    boxSizing: "content-box",
     padding: 0,
     width: 32,
     maxWidth: 32,
@@ -115,14 +110,6 @@ export const styles: Partial<
       {
         borderLeft: 0,
       },
-    // these styles were left on a styled component because of the access to the css var value to add an alpha.
-    // [`&.${tableCellClasses.sorted}`]: {
-    //   backgroundColor: theme.colors.atmo2,
-    //   backgroundImage: `linear-gradient(to right, ${alpha(
-    //     hexToRgb(theme.colors.atmo1),
-    //     0.4
-    //   )}, ${alpha(hexToRgb(theme.colors.atmo1), 0.4)})`,
-    // },
   },
   stickyColumnMostLeft: {
     borderRight: theme.table.cellBorder,

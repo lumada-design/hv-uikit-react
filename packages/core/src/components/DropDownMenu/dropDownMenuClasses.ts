@@ -11,6 +11,8 @@ export interface HvDropDownMenuClasses {
   icon?: string;
   /** Styles applied to the icon when selected. */
   iconSelected?: string;
+  /** Styles applied to the list root. */
+  menuListRoot?: string;
   /** Styles applied to the list. */
   menuList?: string;
 }
@@ -22,6 +24,7 @@ const classKeys: (keyof HvDropDownMenuClasses)[] = [
   "icon",
   "iconSelected",
   "menuList",
+  "menuListRoot",
 ];
 
 const dropDownMenuClasses = getClasses(classKeys, "HvDropDownMenu");

@@ -3,19 +3,19 @@
 exports[`DropDownMenu > should render correctly 1`] = `
 <div>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root hv-uikit-css-63m6l9-StyledRoot eapzthe9"
+    class="HvBaseDropdown-root HvDropDownMenu-root hv-uikit-css-1u1foky-StyledRoot eapzthe9"
   >
     <div
       aria-expanded="false"
       aria-haspopup="menu"
-      class="HvDropDownMenu-container e13q7myz2 HvBaseDropdown-anchor hv-uikit-css-2kevrv-StyledAnchor-StyledBaseDropDown eapzthe8"
+      class="HvDropDownMenu-container HvBaseDropdown-anchor hv-uikit-css-10kxauw-StyledAnchor eapzthe8"
       id="hv-drop-down-menu-4"
       tabindex="-1"
     >
       <button
         aria-expanded="false"
         aria-label="Dropdown menu"
-        class="HvDropDownMenu-icon e13q7myz1 HvButton-root hv-uikit-css-15tynx0-StyledButton-StyledButton e138pvrm0"
+        class="HvDropDownMenu-icon HvButton-root hv-uikit-css-1cw34jn-StyledButton e138pvrm0"
         id="hv-drop-down-menu-4-icon-button"
         type="button"
       >
