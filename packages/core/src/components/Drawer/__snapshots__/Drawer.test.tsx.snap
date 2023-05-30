@@ -12,6 +12,7 @@ exports[`HvDrawer > should render correctly 1`] = `
         aria-label="openDialog"
         class="HvButton-root css-or2r1m-StyledButton e138pvrm0"
         id="openDialog"
+        type="button"
       >
         <div
           class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -47,6 +48,7 @@ exports[`HvDrawer > should render correctly 1`] = `
         aria-label="Close"
         class="HvDrawer-closeButton HvButton-root css-1e5msc3-StyledButton e138pvrm0"
         id="drawer-test-close"
+        type="button"
       >
         <div
           class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -112,6 +114,7 @@ exports[`HvDrawer > should render correctly 1`] = `
       >
         <button
           class="HvButton-root css-1qpjfr1-StyledButton e138pvrm0"
+          type="button"
         >
           <div
             class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -125,6 +128,7 @@ exports[`HvDrawer > should render correctly 1`] = `
         </button>
         <button
           class="HvButton-root css-1qpjfr1-StyledButton e138pvrm0"
+          type="button"
         >
           <div
             class="css-1nxr552-StyledContentDiv e138pvrm3"
