@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.0...@hitachivantara/uikit-react-lab@5.4.1) (2023-05-30)
+
+### Bug Fixes
+
+- **Button:** default to type=button ([41b8494](https://github.com/lumada-design/hv-uikit-react/commit/41b84945a14e466d2692fb7c1369da45247afcb3))
+
 # [5.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.3.7...@hitachivantara/uikit-react-lab@5.4.0) (2023-05-28)
 
 ### Bug Fixes

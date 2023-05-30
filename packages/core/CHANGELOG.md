@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.9.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.9.0...@hitachivantara/uikit-react-core@5.9.1) (2023-05-30)
+
+### Bug Fixes
+
+- **AppSwitcher:** header and footer now have the same font styling ([8c5a295](https://github.com/lumada-design/hv-uikit-react/commit/8c5a2952a9e1be42881dd1a170dad62c6cab5ac2))
+- **Button:** default to type=button ([41b8494](https://github.com/lumada-design/hv-uikit-react/commit/41b84945a14e466d2692fb7c1369da45247afcb3))
+
 # [5.9.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.8.1...@hitachivantara/uikit-react-core@5.9.0) (2023-05-28)
 
 ### Bug Fixes
