@@ -45,6 +45,7 @@
     "react/no-unescaped-entities": "off",
     "react/no-unstable-nested-components": "off",
     "react/destructuring-assignment": "off",
+    "react/no-unknown-property": "off",
     "no-restricted-globals": "off",
     "react/no-unused-prop-types": "off",
     "react/no-array-index-key": "off",
