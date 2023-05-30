@@ -2,7 +2,7 @@ import { forwardRef, useContext, useEffect, useMemo, useState } from "react";
 import { ClassNames } from "@emotion/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { getVarValue, hexToRgbA } from "@core/utils";
+import { checkValidHexColorValue, getVarValue, hexToRgbA } from "@core/utils";
 import { transientOptions } from "@core/utils/transientOptions";
 import { HvBaseProps } from "@core/types";
 import { useTheme } from "@core/hooks";
@@ -10,7 +10,6 @@ import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { styles } from "./TableRow.styles";
-import { checkValidHexColorValue } from "../utils";
 
 export interface HvTableRowProps
   extends HvBaseProps<HTMLTableRowElement, "children"> {

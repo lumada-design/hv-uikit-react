@@ -411,6 +411,9 @@ export type HvThemeComponents = {
     thumbnailBorderRadius: CSSProperties["borderRadius"];
     thumbnailSelectedBorder: CSSProperties["border"];
   };
+  drawer: {
+    backDropBackgroundColor: CSSProperties["backgroundColor"];
+  };
 };
 
 // Theme typography

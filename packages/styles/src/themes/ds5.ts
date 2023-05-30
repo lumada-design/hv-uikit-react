@@ -563,6 +563,9 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     thumbnailBorderRadius: theme.radii.round,
     thumbnailSelectedBorder: "none",
   },
+  drawer: {
+    backDropBackgroundColor: theme.colors.atmo4,
+  },
 }));
 
 export default ds5;

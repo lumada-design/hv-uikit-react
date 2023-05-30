@@ -404,6 +404,9 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     thumbnailBorderRadius: "string",
     thumbnailSelectedBorder: "string",
   },
+  drawer: {
+    backDropBackgroundColor: "string",
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {

@@ -1,0 +1,151 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HvDrawer > should render correctly 1`] = `
+<body
+  style="padding-right: 1024px; overflow: hidden;"
+>
+  <div
+    aria-hidden="true"
+  >
+    <div>
+      <button
+        aria-label="openDialog"
+        class="HvButton-root css-or2r1m-StyledButton e138pvrm0"
+        id="openDialog"
+        type="button"
+      >
+        <div
+          class="css-1nxr552-StyledContentDiv e138pvrm3"
+        >
+          <span
+            class="css-1o4qkkz-StyledChildren e138pvrm1"
+          >
+            Open dialog
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div
+    class="MuiDrawer-root MuiDrawer-modal css-0 HvDrawer-root MuiModal-root css-1u2w381-MuiModal-root-MuiDrawer-root"
+    id="drawer-test"
+    role="presentation"
+  >
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root css-es7wxu HvDrawer-background MuiModal-backdrop css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop"
+      style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    />
+    <div
+      data-testid="sentinelStart"
+      tabindex="0"
+    />
+    <div
+      class="MuiPaper-root css-15fzo98 HvDrawer-paper css-2zykyd-drawerPaper MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper MuiDrawer-paperAnchorRight css-1160xiw-MuiPaper-root-MuiDrawer-paper"
+      tabindex="-1"
+    >
+      <button
+        aria-label="Close"
+        class="HvDrawer-closeButton HvButton-root css-1e5msc3-StyledButton e138pvrm0"
+        id="drawer-test-close"
+        type="button"
+      >
+        <div
+          class="css-1nxr552-StyledContentDiv e138pvrm3"
+        >
+          <span
+            class="css-1o4qkkz-StyledChildren e138pvrm1"
+          >
+            <div
+              class=""
+              data-mui-internal-clone-element="true"
+              style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+            >
+              <div
+                class="css-f95wjz"
+                name="Close"
+                role="presentation"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                    fill="var(--uikit-colors-secondary)"
+                  />
+                </svg>
+              </div>
+            </div>
+          </span>
+        </div>
+      </button>
+      <h2
+        class="MuiTypography-root MuiTypography-h6 MuiDialogTitle-root HvDialog-Title-root css-8j7nav-drawerTitle css-1kuxgnj-StyledTitle eo9hglt2 css-bdhsul-MuiTypography-root-MuiDialogTitle-root"
+      >
+        <div
+          class="HvDialog-Title-messageContainer css-ynz11o-StyledMessageContainer eo9hglt1"
+        >
+          <div
+            class="css-1slcu2n-StyledTextWithIcon eo9hglt0"
+          >
+            <p
+              class="HvTypography-root HvTypography-body css-1fbl1cl-getStyledComponent e1tnpalo0"
+            >
+              Lorem Ipsum
+            </p>
+          </div>
+        </div>
+      </h2>
+      <div
+        class="MuiDialogContent-root css-1s5cb77-drawerContent HvDialog-Content-root e4uf5ag0 HvTypography-root HvTypography-body css-1qg46v1-getStyledComponent-StyledTypography e1tnpalo0 css-ypiqx9-MuiDialogContent-root"
+      >
+        Cras mattis consectetur purus sit amet fermentum. 
+                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. 
+                  Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                  Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      </div>
+      <div
+        class="MuiDialogActions-root HvDialog-Action-root MuiDialogActions-spacing HvDialog-Action-spacing css-bzzl2y-StyledActions e5nbcch0 css-hlj6pa-MuiDialogActions-root"
+      >
+        <button
+          class="HvButton-root css-1qpjfr1-StyledButton e138pvrm0"
+          type="button"
+        >
+          <div
+            class="css-1nxr552-StyledContentDiv e138pvrm3"
+          >
+            <span
+              class="css-1o4qkkz-StyledChildren e138pvrm1"
+            >
+              Submit
+            </span>
+          </div>
+        </button>
+        <button
+          class="HvButton-root css-1qpjfr1-StyledButton e138pvrm0"
+          type="button"
+        >
+          <div
+            class="css-1nxr552-StyledContentDiv e138pvrm3"
+          >
+            <span
+              class="css-1o4qkkz-StyledChildren e138pvrm1"
+            >
+              Cancel
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      data-testid="sentinelEnd"
+      tabindex="0"
+    />
+  </div>
+</body>
+`;
