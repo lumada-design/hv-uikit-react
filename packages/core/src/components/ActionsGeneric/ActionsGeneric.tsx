@@ -120,8 +120,8 @@ export const HvActionsGeneric = ({
           }}
           icon={<MoreOptionsVertical color={iconColor} />}
           placement="left"
-          onClick={(event: React.SyntheticEvent, action: HvActionGeneric) =>
-            actionsCallback?.(event, id || "", action)
+          onClick={(event, action) =>
+            actionsCallback?.(event, id || "", action as HvActionGeneric)
           }
           dataList={actsDropdown}
           keepOpened={false}

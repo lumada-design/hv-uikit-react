@@ -3,7 +3,7 @@ import uniqueId from "lodash/uniqueId";
 import accept from "attr-accept";
 import { clsx } from "clsx";
 import { isKeypress, keyboardCodes, setId } from "@core/utils";
-import withId from "@core/hocs/withId";
+import { useUniqueId } from "@core/hooks";
 import { convertUnits } from "../utils";
 import {
   StyledDragText,
@@ -99,171 +99,190 @@ export interface HvDropZoneProps {
   classes?: HvDropZoneClasses;
 }
 
-export const HvDropZone = withId(
-  ({
-    id,
-    classes,
-    labels,
-    acceptedFiles,
-    maxFileSize,
-    inputProps,
-    hideLabels,
-    multiple = true,
-    disabled = false,
-    onFilesAdded,
-  }: HvDropZoneProps) => {
-    const [dragState, setDrag] = useState<boolean>(false);
+export const HvDropZone = ({
+  id: idProp,
+  classes,
+  labels,
+  acceptedFiles,
+  maxFileSize,
+  inputProps,
+  hideLabels,
+  multiple = true,
+  disabled = false,
+  onFilesAdded,
+}: HvDropZoneProps) => {
+  const id = useUniqueId(idProp, "dropzone");
+  const [dragState, setDrag] = useState<boolean>(false);
 
-    const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
-    const leaveDropArea = () => {
-      setDrag(false);
-    };
+  const leaveDropArea = () => {
+    setDrag(false);
+  };
 
-    const enterDropArea = () => {
-      setDrag(true);
-    };
+  const enterDropArea = () => {
+    setDrag(true);
+  };
 
-    const onChangeHandler = (filesList: FileList) => {
-      const filesToProcess = Object.keys(filesList).map((e) => filesList[e]);
+  const onChangeHandler = (filesList: FileList) => {
+    const filesToProcess = Object.keys(filesList).map((e) => filesList[e]);
 
-      const newFiles: HvFileData[] = [];
+    const newFiles: HvFileData[] = [];
 
-      filesToProcess.forEach((file: File) => {
-        const newFile: HvFileData = file;
+    filesToProcess.forEach((file: File) => {
+      const newFile: HvFileData = file;
 
-        const isSizeAllowed = file.size <= maxFileSize;
-        const isFileAccepted =
-          !acceptedFiles.length ||
-          acceptedFiles.indexOf(file.type.split("/")[1]) > -1 ||
-          acceptedFiles.some((acceptExtension) =>
-            accept({ name: file.name, type: file.type }, acceptExtension)
-          );
+      const isSizeAllowed = file.size <= maxFileSize;
+      const isFileAccepted =
+        !acceptedFiles.length ||
+        acceptedFiles.indexOf(file.type.split("/")[1]) > -1 ||
+        acceptedFiles.some((acceptExtension) =>
+          accept({ name: file.name, type: file.type }, acceptExtension)
+        );
 
-        if (!isFileAccepted) {
-          newFile.errorMessage = labels?.fileTypeError;
-          newFile.status = "fail";
-        } else if (!isSizeAllowed) {
-          newFile.errorMessage = labels?.fileSizeError;
-          newFile.status = "fail";
-        }
+      if (!isFileAccepted) {
+        newFile.errorMessage = labels?.fileTypeError;
+        newFile.status = "fail";
+      } else if (!isSizeAllowed) {
+        newFile.errorMessage = labels?.fileSizeError;
+        newFile.status = "fail";
+      }
 
-        newFile.id = uniqueId("uploaded-file-data-");
-        newFiles.push(newFile);
-      });
+      newFile.id = uniqueId("uploaded-file-data-");
+      newFiles.push(newFile);
+    });
 
-      onFilesAdded?.(newFiles);
-    };
+    onFilesAdded?.(newFiles);
+  };
 
-    return (
-      <>
-        {!hideLabels && (
-          <StyledDropZoneLabelsGroup
-            id={id}
-            className={clsx(
-              classes?.dropZoneLabelsGroup,
-              dropZoneClasses.dropZoneLabelsGroup
-            )}
-            aria-label="File Dropzone"
-          >
-            <StyledLabel
-              id={setId(id, "input-file-label")}
-              htmlFor={setId(id, "input-file")}
-              label={labels?.dropzone}
-              className={clsx(
-                classes?.dropZoneLabel,
-                dropZoneClasses.dropZoneLabel
-              )}
-              $disabled={disabled}
-            />
-            <StyledInfoMessage
-              $disabled={disabled}
-              id={setId(id, "description")}
-            >
-              {Number.isInteger(maxFileSize) &&
-                `${labels?.sizeWarning} ${convertUnits(maxFileSize)}`}
-              {labels?.acceptedFiles && labels.acceptedFiles}
-              {!labels?.acceptedFiles &&
-                acceptedFiles.length > 0 &&
-                `\u00A0(${acceptedFiles.join(", ")})`}
-            </StyledInfoMessage>
-          </StyledDropZoneLabelsGroup>
-        )}
-        <StyledDropZoneContainer
-          id={setId(id, "button")}
+  return (
+    <>
+      {!hideLabels && (
+        <StyledDropZoneLabelsGroup
+          id={id}
           className={clsx(
-            classes?.dropZoneContainer,
-            dropZoneClasses.dropZoneContainer,
-            dragState && clsx(classes?.dragAction, dropZoneClasses.dragAction),
-            disabled &&
-              clsx(
-                classes?.dropZoneContainerDisabled,
-                dropZoneClasses.dropZoneContainerDisabled
-              )
+            classes?.dropZoneLabelsGroup,
+            dropZoneClasses.dropZoneLabelsGroup
           )}
-          $drag={dragState}
-          $disabled={disabled}
-          role="button"
-          tabIndex={0}
-          onDragEnter={(event) => {
-            if (!disabled) {
-              enterDropArea();
-              event.stopPropagation();
-              event.preventDefault();
-            }
-          }}
-          onDragLeave={leaveDropArea}
-          onDropCapture={leaveDropArea}
-          onDragOver={(event) => {
-            if (!disabled) {
-              enterDropArea();
-              event.stopPropagation();
-              event.preventDefault();
-            }
-          }}
-          onDrop={(event) => {
-            if (!disabled) {
-              const { files } = event.dataTransfer;
-              if (multiple === true || files.length === 1) {
-                event.stopPropagation();
-                event.preventDefault();
-                onChangeHandler(files);
-              }
-            }
-          }}
-          onKeyDown={(e) => {
-            if (isKeypress(e, keyboardCodes.Enter) || isKeypress(e, 32)) {
-              inputRef.current?.click();
-            }
-          }}
+          aria-label="File Dropzone"
         >
-          <StyledInput
-            id={setId(id, "input-file")}
-            tabIndex={-1}
-            className={clsx(classes?.inputArea, dropZoneClasses.inputArea)}
-            type="file"
-            multiple={multiple}
-            disabled={disabled}
-            title={!disabled ? `${labels?.drag}\xa0${labels?.selectFiles}` : ""}
-            onClick={() => {
-              if (inputRef.current) {
-                inputRef.current.value = "";
-              }
-            }}
-            onChange={() => {
-              if (!disabled && inputRef.current?.files) {
-                onChangeHandler(inputRef.current.files);
-              }
-            }}
-            ref={inputRef}
-            accept={acceptedFiles.join(",")}
-            {...inputProps}
+          <StyledLabel
+            id={setId(id, "input-file-label")}
+            htmlFor={setId(id, "input-file")}
+            label={labels?.dropzone}
+            className={clsx(
+              classes?.dropZoneLabel,
+              dropZoneClasses.dropZoneLabel
+            )}
+            $disabled={disabled}
           />
-          <StyledDropArea
-            className={clsx(classes?.dropArea, dropZoneClasses.dropArea)}
-          >
-            {dragState ? (
-              <StyledDropAreaLabel
+          <StyledInfoMessage $disabled={disabled} id={setId(id, "description")}>
+            {Number.isInteger(maxFileSize) &&
+              `${labels?.sizeWarning} ${convertUnits(maxFileSize)}`}
+            {labels?.acceptedFiles && labels.acceptedFiles}
+            {!labels?.acceptedFiles &&
+              acceptedFiles.length > 0 &&
+              `\u00A0(${acceptedFiles.join(", ")})`}
+          </StyledInfoMessage>
+        </StyledDropZoneLabelsGroup>
+      )}
+      <StyledDropZoneContainer
+        id={setId(id, "button")}
+        className={clsx(
+          classes?.dropZoneContainer,
+          dropZoneClasses.dropZoneContainer,
+          dragState && clsx(classes?.dragAction, dropZoneClasses.dragAction),
+          disabled &&
+            clsx(
+              classes?.dropZoneContainerDisabled,
+              dropZoneClasses.dropZoneContainerDisabled
+            )
+        )}
+        $drag={dragState}
+        $disabled={disabled}
+        role="button"
+        tabIndex={0}
+        onDragEnter={(event) => {
+          if (!disabled) {
+            enterDropArea();
+            event.stopPropagation();
+            event.preventDefault();
+          }
+        }}
+        onDragLeave={leaveDropArea}
+        onDropCapture={leaveDropArea}
+        onDragOver={(event) => {
+          if (!disabled) {
+            enterDropArea();
+            event.stopPropagation();
+            event.preventDefault();
+          }
+        }}
+        onDrop={(event) => {
+          if (!disabled) {
+            const { files } = event.dataTransfer;
+            if (multiple === true || files.length === 1) {
+              event.stopPropagation();
+              event.preventDefault();
+              onChangeHandler(files);
+            }
+          }
+        }}
+        onKeyDown={(e) => {
+          if (isKeypress(e, keyboardCodes.Enter) || isKeypress(e, 32)) {
+            inputRef.current?.click();
+          }
+        }}
+      >
+        <StyledInput
+          id={setId(id, "input-file")}
+          tabIndex={-1}
+          className={clsx(classes?.inputArea, dropZoneClasses.inputArea)}
+          type="file"
+          multiple={multiple}
+          disabled={disabled}
+          title={!disabled ? `${labels?.drag}\xa0${labels?.selectFiles}` : ""}
+          onClick={() => {
+            if (inputRef.current) {
+              inputRef.current.value = "";
+            }
+          }}
+          onChange={() => {
+            if (!disabled && inputRef.current?.files) {
+              onChangeHandler(inputRef.current.files);
+            }
+          }}
+          ref={inputRef}
+          accept={acceptedFiles.join(",")}
+          {...inputProps}
+        />
+        <StyledDropArea
+          className={clsx(classes?.dropArea, dropZoneClasses.dropArea)}
+        >
+          {dragState ? (
+            <StyledDropAreaLabel
+              className={clsx(
+                classes?.dropZoneAreaLabels,
+                dropZoneClasses.dropZoneAreaLabels
+              )}
+            >
+              <StyledDragText
+                className={clsx(classes?.dragText, dropZoneClasses.dragText)}
+              >
+                {labels?.dropFiles}
+              </StyledDragText>
+            </StyledDropAreaLabel>
+          ) : (
+            <>
+              <StyledDropAreaIcon
+                iconSize="M"
+                className={clsx(
+                  classes?.dropZoneAreaIcon,
+                  dropZoneClasses.dropZoneAreaIcon
+                )}
+                color={disabled ? "secondary_60" : "secondary"}
+              />
+              <StyledDropAreaLabels
                 className={clsx(
                   classes?.dropZoneAreaLabels,
                   dropZoneClasses.dropZoneAreaLabels
@@ -272,45 +291,19 @@ export const HvDropZone = withId(
                 <StyledDragText
                   className={clsx(classes?.dragText, dropZoneClasses.dragText)}
                 >
-                  {labels?.dropFiles}
-                </StyledDragText>
-              </StyledDropAreaLabel>
-            ) : (
-              <>
-                <StyledDropAreaIcon
-                  iconSize="M"
-                  className={clsx(
-                    classes?.dropZoneAreaIcon,
-                    dropZoneClasses.dropZoneAreaIcon
-                  )}
-                  color={disabled ? "secondary_60" : "secondary"}
-                />
-                <StyledDropAreaLabels
-                  className={clsx(
-                    classes?.dropZoneAreaLabels,
-                    dropZoneClasses.dropZoneAreaLabels
-                  )}
-                >
-                  <StyledDragText
+                  {labels?.drag}
+                  <StyledSelectedFilesText
                     className={clsx(
-                      classes?.dragText,
-                      dropZoneClasses.dragText
+                      classes?.selectFilesText,
+                      dropZoneClasses.selectFilesText
                     )}
-                  >
-                    {labels?.drag}
-                    <StyledSelectedFilesText
-                      className={clsx(
-                        classes?.selectFilesText,
-                        dropZoneClasses.selectFilesText
-                      )}
-                    >{`\xa0${labels?.selectFiles}`}</StyledSelectedFilesText>
-                  </StyledDragText>
-                </StyledDropAreaLabels>
-              </>
-            )}
-          </StyledDropArea>
-        </StyledDropZoneContainer>
-      </>
-    );
-  }
-);
+                  >{`\xa0${labels?.selectFiles}`}</StyledSelectedFilesText>
+                </StyledDragText>
+              </StyledDropAreaLabels>
+            </>
+          )}
+        </StyledDropArea>
+      </StyledDropZoneContainer>
+    </>
+  );
+};

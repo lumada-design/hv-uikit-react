@@ -9,14 +9,14 @@ exports[`DropDownMenu > should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="menu"
       class="HvDropDownMenu-container HvBaseDropdown-anchor hv-uikit-css-10kxauw-StyledAnchor eapzthe8"
-      id="hv-drop-down-menu-4"
+      id="dropdown-menu4"
       tabindex="-1"
     >
       <button
         aria-expanded="false"
         aria-label="Dropdown menu"
         class="HvDropDownMenu-icon HvButton-root hv-uikit-css-1cw34jn-StyledButton e138pvrm0"
-        id="hv-drop-down-menu-4-icon-button"
+        id="dropdown-menu4-icon-button"
         type="button"
       >
         <div
