@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.8.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.7.1...@hitachivantara/uikit-styles@5.8.0) (2023-05-31)
+
+### Features
+
+- **drawer:** add component ([#3380](https://github.com/lumada-design/hv-uikit-react/issues/3380)) ([7163f71](https://github.com/lumada-design/hv-uikit-react/commit/7163f714f476e5a0cf4230440bca284f6da2a07b))
+
 ## [5.7.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.7.0...@hitachivantara/uikit-styles@5.7.1) (2023-05-28)
 
 ### Bug Fixes
