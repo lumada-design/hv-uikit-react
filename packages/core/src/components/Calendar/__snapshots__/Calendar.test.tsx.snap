@@ -20,7 +20,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
             class="HvCalendarHeader-headerDate"
           >
             <input
-              class="HvCalendarHeader-input css-1o02aob-StyledInput e1yjj6ap1"
+              class="HvCalendarHeader-input css-fhzinf-StyledInput e1yjj6ap1"
               id="default-header-header-input"
               placeholder="MM/DD/YYYY"
               type="text"

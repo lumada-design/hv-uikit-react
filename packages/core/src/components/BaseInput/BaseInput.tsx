@@ -17,34 +17,30 @@ import baseInputClasses, { HvBaseInputClasses } from "./baseInputClasses";
 import { styles } from "./BaseInput.styles";
 
 // Global styles for the base input.
-const baseInputStyles = emotionCss`
+const baseInputStyles = emotionCss({
   "input:-webkit-autofill": {
-    "-webkit-box-shadow": 0 0 0px 1000px ${theme.colors.atmo1} inset,
-    "-webkit-text-fill-color": ${theme.colors.secondary},
+    "-webkit-box-shadow": `0 0 0px 1000px ${theme.colors.atmo1} inset`,
+    "-webkit-text-fill-color": theme.colors.secondary,
   },
 
-  /* Clears input's clear and reveal buttons from IE */
-  "input[type=search]::-ms-clear": {
-    display: "none",
-    width: 0,
-    height: 0,
+  // Clears number input up/down arrows in Chrome and Firefox
+  "input::-webkit-outer-spin-button,\
+  input::-webkit-inner-spin-button": {
+    WebkitAppearance: "none",
+    margin: 0,
   },
-  "input[type=search]::-ms-reveal": {
-    display: "none",
-    width: 0,
-    height: 0,
+  "input[type=number]": {
+    MozAppearance: "textfield",
   },
 
-  /* Clears input's clear button from Chrome */
-  "input[type=search]::-webkit-search-decoration": { display: "none" },
-  "input[type=search]::-webkit-search-cancel-button": { display: "none" },
-  "input[type=search]::-webkit-search-results-button": {
+  // Clears search input clear button in Chrome
+  "input::-webkit-search-decoration,\
+  input::-webkit-search-cancel-button,\
+  input::-webkit-search-results-button,\
+  input::-webkit-search-results-decoration": {
     display: "none",
   },
-  "input[type=search]::-webkit-search-results-decoration": {
-    display: "none",
-  },
-}`;
+});
 
 export interface HvBaseInputProps
   extends Omit<MuiInputProps, "onChange" | "classes">,

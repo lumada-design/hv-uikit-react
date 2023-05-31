@@ -3,7 +3,7 @@
 exports[`Pagination > should render correctly 1`] = `
 <div>
   <div
-    class="HvPagination-root hv-uikit-css-1hivh81-StyledRoot e1tn2n0k8"
+    class="HvPagination-root hv-uikit-css-ynuncb-StyledRoot e1tn2n0k8"
   >
     <div
       class="HvPagination-pageSizeOptions hv-uikit-css-191htxu-StyledPageSizeOptions e1tn2n0k7"
