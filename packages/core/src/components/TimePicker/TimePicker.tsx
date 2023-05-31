@@ -17,55 +17,17 @@ import {
   HvBaseDropdownProps,
 } from "../..";
 
-import { TimeFormat } from "./enums";
 import {
+  TimeFormat,
   getFormattedTime,
-  getTimeFormatForLocale,
-} from "./timePickerFormatter";
-import {
   getHoursForTimeFormat,
+  getTimeFormatForLocale,
   getTimeWithFormat24,
-} from "./timePickerConverter";
+  timeIsEqual,
+  timeIsValid,
+} from "./utils";
 import { UnitTimePicker } from "./UnitTimePicker";
 import { PeriodPicker } from "./PeriodPicker";
-
-const setFocusToContent = (containerRef) => {
-  containerRef?.getElementsByTagName("input")[0]?.focus();
-};
-
-const timeIsEqual = (timeA, timeB) => {
-  return (
-    timeA === timeB ||
-    (timeA == null && timeB == null) ||
-    (timeA != null &&
-      timeB != null &&
-      timeA.hours === timeB.hours &&
-      timeA.minutes === timeB.minutes &&
-      timeA.seconds === timeB.seconds &&
-      timeA.period === timeB.period)
-  );
-};
-
-const timeIsValid = (time, timeFormat: TimeFormat) => {
-  const hourInputState =
-    time?.hours != null &&
-    time.hours !== "" &&
-    time.hours >= 0 &&
-    ((timeFormat === "H24" && time.hours <= 24) ||
-      (timeFormat === "H12" && time.hours <= 12));
-  const minutesInputState =
-    time?.minutes != null &&
-    time.minutes !== "" &&
-    time.minutes >= 0 &&
-    time.minutes <= 59;
-  const secondsInputState =
-    time?.seconds != null &&
-    time.seconds !== "" &&
-    time.seconds >= 0 &&
-    time.seconds <= 59;
-
-  return hourInputState && minutesInputState && secondsInputState;
-};
 
 export type HvTimePickerClassKey =
   | "root"
@@ -494,7 +456,9 @@ export const HvTimePicker = ({
         }
         expanded={isOpen}
         onToggle={onToggle}
-        onContainerCreation={setFocusToContent}
+        onContainerCreation={(ref) => {
+          ref?.getElementsByTagName("input")[0]?.focus();
+        }}
         aria-haspopup="dialog"
         aria-label={ariaLabel}
         aria-labelledby={

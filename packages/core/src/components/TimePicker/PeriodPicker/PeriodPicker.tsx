@@ -5,7 +5,7 @@ import {
   DropDownXS as DownIcon,
 } from "@hitachivantara/uikit-react-icons";
 import { HvToggleButton } from "../..";
-import { PeriodOptions } from "../enums";
+import { PeriodOptions } from "../utils";
 
 type PeriodPickerClasses =
   | "periodContainer"

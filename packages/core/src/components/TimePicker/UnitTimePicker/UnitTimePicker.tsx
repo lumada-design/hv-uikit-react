@@ -5,9 +5,12 @@ import {
   DropUpXS as AddTimeIcon,
 } from "@hitachivantara/uikit-react-icons";
 import { HvInput, isKeypress, keyboardCodes } from "../../..";
-import { isUnitTimeInValidRange } from "../timePickerUtils";
-import { padTime } from "../timePickerFormatter";
-import { TimePickerUnits, TimeType } from "../enums";
+import {
+  TimePickerUnits,
+  TimeType,
+  isUnitTimeInValidRange,
+  padTime,
+} from "../utils";
 
 export interface UnitTimePickerProps {
   classes?: any;
