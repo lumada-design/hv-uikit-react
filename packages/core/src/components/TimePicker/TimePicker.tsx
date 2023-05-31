@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
@@ -12,14 +11,13 @@ import {
   setId,
   useUniqueId,
   useControlled,
-  useLocale,
   HvTypography,
   useSavedState,
   HvFormElementProps,
   HvBaseDropdownProps,
-} from "..";
+} from "../..";
 
-import { TimePickerUnits, TimeFormat, PeriodPickerOptions } from "./enums";
+import { TimeFormat } from "./enums";
 import {
   getFormattedTime,
   getTimeFormatForLocale,
@@ -48,13 +46,13 @@ const timeIsEqual = (timeA, timeB) => {
   );
 };
 
-const timeIsValid = (time, timeFormat) => {
+const timeIsValid = (time, timeFormat: TimeFormat) => {
   const hourInputState =
     time?.hours != null &&
     time.hours !== "" &&
     time.hours >= 0 &&
-    ((timeFormat === TimeFormat.H24 && time.hours <= 24) ||
-      (timeFormat === TimeFormat.H12 && time.hours <= 12));
+    ((timeFormat === "H24" && time.hours <= 24) ||
+      (timeFormat === "H12" && time.hours <= 12));
   const minutesInputState =
     time?.minutes != null &&
     time.minutes !== "" &&
@@ -96,14 +94,14 @@ export interface HvTimePickerValue {
 export interface HvTimePickerProps
   extends Omit<
     HvFormElementProps,
-    "onChange" | "value" | "defaultValue" | "readOnly"
+    "classes" | "onChange" | "value" | "defaultValue" | "readOnly"
   > {
   /** Id to be applied to the form element root node. */
   id?: string;
   /** Current value of the form element. */
-  value?: HvTimePickerValue | null | undefined;
+  value?: HvTimePickerValue;
   /** When uncontrolled, defines the initial value. */
-  defaultValue?: HvTimePickerValue | null | undefined;
+  defaultValue?: HvTimePickerValue;
   /** Indicates that user input is required on the form element. */
   required?: boolean;
   /** Indicates that the form element is disabled. */
@@ -123,36 +121,11 @@ export interface HvTimePickerProps
    * If undefined, the component will use a format according to the passed locale.
    * If defined, it will "override" the default value given by the locale
    */
-  timeFormat?: "12" | "24" | 12 | 24 | undefined;
+  timeFormat?: TimeFormat;
   /** Locale that will provide the time format(12 or 24 hour format). It is "overwritten" by `timeFormat` */
   locale?: string;
 
-  /**
-   * Allow starting with an empty value by not defaulting to the current time.
-   * This should become the default behavior when the component is promoted to core.
-   */
-  disableDefaultValue?: boolean;
-
-  /**
-   * Default value for the hours picker
-   * @deprecated use defaultValue instead
-   */
-  hours?: number;
-  /**
-   * Default value for the minutes picker
-   * @deprecated use defaultValue instead
-   */
-  minutes?: number;
-  /**
-   * Default value for the seconds picker
-   * @deprecated use defaultValue instead
-   */
-  seconds?: number;
-  /**
-   * Default value for the period picker
-   * @deprecated use defaultValue instead
-   */
-  period?: "AM" | "PM";
+  classes?: Partial<Record<HvTimePickerClassKey, string>>;
 
   /**
    * Callback function to be triggered when the input value is changed.
@@ -190,7 +163,7 @@ export interface HvTimePickerProps
  * A TimePicker component used to choose the time.
  */
 export const HvTimePicker = ({
-  classes,
+  classes = {},
   className,
 
   id,
@@ -220,18 +193,10 @@ export const HvTimePicker = ({
   value: valueProp,
   defaultValue: defaultValueProp,
 
-  timeFormat: chosenTimeFormat,
-  locale: localeProp,
-
-  disableDefaultValue,
+  timeFormat: timeFormatProp,
+  locale,
 
   onToggle: onToggleCallback,
-
-  // deprecated properties:
-  hours = new Date().getHours(),
-  minutes = new Date().getMinutes(),
-  seconds = 0,
-  period: chosenTimePeriod,
 
   // misc properties:
   disablePortal = true,
@@ -242,49 +207,25 @@ export const HvTimePicker = ({
   // #region STATE
   const elementId = useUniqueId(id, "hvtimepicker");
 
-  const localeFromProvider = useLocale();
-  const locale = localeProp || localeFromProvider;
-  const timeFormat = useMemo(
-    () =>
-      chosenTimeFormat != null
-        ? chosenTimeFormat.toString()
-        : getTimeFormatForLocale(locale),
-    [chosenTimeFormat, locale]
+  const timeFormat = useMemo<TimeFormat>(
+    () => timeFormatProp ?? getTimeFormatForLocale(locale),
+    [timeFormatProp, locale]
   );
 
-  const [value, setValue, rollbackValue, lastValidValue] = useSavedState(() => {
-    // fallback to the deprecated properties
-    // we shouldn't do that when promoting to core
-    // as it makes impossible to start with an empty value
-    const defaultValue =
-      defaultValueProp ??
-      (disableDefaultValue
-        ? null
-        : {
-            hours,
-            minutes,
-            seconds,
-          });
+  const is12Hour = useMemo(() => timeFormat === "H12", [timeFormat]);
+  const is24Hour = useMemo(() => timeFormat === "H24", [timeFormat]);
 
-    const v = valueProp ?? defaultValue;
+  const [value, setValue, rollbackValue, lastValidValue] = useSavedState<
+    HvTimePickerValue | undefined
+  >(() => {
+    const v = valueProp ?? defaultValueProp;
 
-    return v != null
-      ? {
-          hours:
-            v?.hours != null
-              ? getHoursForTimeFormat(v.hours, timeFormat)
-              : null,
-          minutes: v?.minutes,
-          seconds: v?.seconds,
-          period:
-            timeFormat === TimeFormat.H12
-              ? chosenTimePeriod ??
-                (v?.hours == null || v.hours < 12
-                  ? PeriodPickerOptions.AM
-                  : PeriodPickerOptions.PM)
-              : null,
-        }
-      : null;
+    if (!v) return undefined;
+
+    return {
+      ...v,
+      hours: getHoursForTimeFormat(v.hours, timeFormat),
+    };
   });
 
   const [validationMessage] = useControlled(statusMessage, "Required");
@@ -303,6 +244,7 @@ export const HvTimePicker = ({
     currentValue.current = value;
   });
   const currentTimeFormat = useRef(timeFormat);
+
   useEffect(() => {
     currentTimeFormat.current = timeFormat;
   });
@@ -310,20 +252,18 @@ export const HvTimePicker = ({
   useEffect(() => {
     // allow external changes to the time format (via timeFormat or locale properties)
     if (!firstRender.current && currentValue.current != null) {
-      const to12 = timeFormat === TimeFormat.H12;
-
       let { hours: h, period: p } = currentValue.current;
-      if (to12) {
+      if (is12Hour) {
         if (h == null || h < 12) {
-          p = PeriodPickerOptions.AM;
+          p = "AM";
         } else {
-          p = PeriodPickerOptions.PM;
+          p = "PM";
           if (h > 12) {
             h -= 12;
           }
         }
       } else {
-        if (p === PeriodPickerOptions.AM) {
+        if (p === "AM") {
           if (h === 12) {
             h = 0;
           }
@@ -349,9 +289,7 @@ export const HvTimePicker = ({
     // allow control of value property
     if (!firstRender.current) {
       const dayPeriod =
-        valueProp?.hours == null || valueProp.hours < 12
-          ? PeriodPickerOptions.AM
-          : PeriodPickerOptions.PM;
+        valueProp?.hours == null || valueProp.hours < 12 ? "AM" : "PM";
 
       setValue(
         valueProp != null
@@ -365,8 +303,7 @@ export const HvTimePicker = ({
                   : null,
               minutes: valueProp?.minutes,
               seconds: valueProp?.seconds,
-              period:
-                currentTimeFormat.current === TimeFormat.H12 ? dayPeriod : null,
+              period: currentTimeFormat.current === "H12" ? dayPeriod : null,
             }
           : null,
         true
@@ -511,7 +448,6 @@ export const HvTimePicker = ({
     <HvFormElement
       id={id}
       name={name}
-      locale={locale}
       required={required}
       disabled={disabled}
       status={validationState}
@@ -523,18 +459,9 @@ export const HvTimePicker = ({
     >
       {(hasLabels || hasDescription) && (
         <div className={classes.labelContainer}>
-          {hasLabels && (
-            <HvLabel
-              id={setId(elementId, "label")}
-              label={label}
-              className={classes.label}
-            />
-          )}
+          {hasLabels && <HvLabel label={label} className={classes.label} />}
           {hasDescription && (
-            <HvInfoMessage
-              id={setId(elementId, "description")}
-              className={classes.description}
-            >
+            <HvInfoMessage className={classes.description}>
               {description}
             </HvInfoMessage>
           )}
@@ -594,33 +521,26 @@ export const HvTimePicker = ({
       >
         <div className={classes.timePopperContainer}>
           <UnitTimePicker
-            id={setId(elementId, "hours")}
             placeholder={hoursPlaceholder}
-            unit={
-              timeFormat === TimeFormat.H24
-                ? TimePickerUnits.HOUR_24.type
-                : TimePickerUnits.HOUR_12.type
-            }
+            unit={is24Hour ? "HOUR_24" : "HOUR_12"}
             unitValue={value?.hours}
             onChangeUnitTimeValue={handleHoursChange}
           />
           <span className={classes.separator}>:</span>
           <UnitTimePicker
-            id={setId(elementId, "minutes")}
             placeholder={minutesPlaceholder}
-            unit={TimePickerUnits.MINUTE.type}
+            unit="MINUTE"
             unitValue={value?.minutes}
             onChangeUnitTimeValue={handleMinutesChange}
           />
           <span className={classes.separator}>:</span>
           <UnitTimePicker
-            id={setId(elementId, "seconds")}
             placeholder={secondsPlaceholder}
-            unit={TimePickerUnits.SECOND.type}
+            unit="SECOND"
             unitValue={value?.seconds}
             onChangeUnitTimeValue={handleSecondsChange}
           />
-          {timeFormat === TimeFormat.H12 && (
+          {is12Hour && (
             <PeriodPicker
               onChangePeriod={handleChangePeriod}
               period={value?.period}
@@ -629,277 +549,10 @@ export const HvTimePicker = ({
         </div>
       </HvBaseDropdown>
       {canShowError && (
-        <HvWarningText
-          id={setId(elementId, "error")}
-          disableBorder
-          className={classes.error}
-        >
+        <HvWarningText disableBorder className={classes.error}>
           {validationMessage}
         </HvWarningText>
       )}
     </HvFormElement>
   );
-};
-
-HvTimePicker.propTypes = {
-  /**
-   * A Jss Object used to override or extend the styles applied to the input/popper
-   */
-  classes: PropTypes.shape({
-    /**
-     * Styles applied to the root element.
-     */
-    root: PropTypes.string,
-    /**
-     * Styles applied to the input.
-     */
-    input: PropTypes.string,
-    /**
-     * Styles applied to the label.
-     */
-    label: PropTypes.string,
-    /**
-     * Styles applied to the timePopperContainer.
-     */
-    timePopperContainer: PropTypes.string,
-    /**
-     * Styles applied to the separator.
-     */
-    separator: PropTypes.string,
-    /**
-     * Styles applied to the period container.
-     */
-    periodContainer: PropTypes.string,
-    /**
-     * Styles applied to the form element.
-     */
-    formElementRoot: PropTypes.string,
-    /**
-     * Styles applied to the dropdown placeholder.
-     */
-    dropdownPlaceholder: PropTypes.string,
-    /**
-     * Styles applied to the icon base.
-     */
-    iconBaseRoot: PropTypes.string,
-    /**
-     * Styles applied to the error area.
-     */
-    error: PropTypes.string,
-    /**
-     * Styles applied to the container of the labels elements.
-     */
-    labelContainer: PropTypes.string,
-    /**
-     * Styles applied to the icon information text.
-     */
-    description: PropTypes.string,
-    /**
-     * Styles applied to the dropdown when invalid information text.
-     */
-    dropdownHeaderInvalid: PropTypes.string,
-    /**
-     * Styles applied to the dropdown text when invalid.
-     */
-
-    dropdownPlaceholderDisabled: PropTypes.string,
-    /**
-     * Styles applied to the dropdown border when invalid.
-     */
-    dropdownHeaderOpen: PropTypes.string,
-  }).isRequired,
-  /**
-   * Class names to be applied.
-   */
-  className: PropTypes.string,
-
-  /**
-   * Id to be applied to the form element root node.
-   */
-  id: PropTypes.string,
-
-  /**
-   * The form element name.
-   */
-  name: PropTypes.string,
-
-  /**
-   * The value of the form element.
-   */
-  value: PropTypes.shape({
-    hours: PropTypes.number,
-    minutes: PropTypes.number,
-    seconds: PropTypes.number,
-    period: PropTypes.string,
-  }),
-  /**
-   * When uncontrolled, defines the initial input value.
-   */
-  defaultValue: PropTypes.shape({
-    hours: PropTypes.number,
-    minutes: PropTypes.number,
-    seconds: PropTypes.number,
-    period: PropTypes.string,
-  }),
-
-  /**
-   * Indicates that user input is required on the form element.
-   */
-  required: PropTypes.bool,
-  /**
-   * Indicates that the form element is disabled.
-   */
-  disabled: PropTypes.bool,
-  /**
-   * Indicates that the form element is in read only mode.
-   */
-  readOnly: PropTypes.bool,
-
-  /**
-   * The label of the form element.
-   *
-   * The form element must be labeled for accessibility reasons.
-   * If not provided, an aria-label or aria-labelledby must be provided instead.
-   */
-  label: PropTypes.string,
-
-  /**
-   * @ignore
-   */
-  "aria-label": PropTypes.string,
-
-  /**
-   * @ignore
-   */
-  "aria-labelledby": PropTypes.string,
-
-  /**
-   * Provide additional descriptive text for the form element.
-   */
-  description: PropTypes.node,
-
-  /**
-   * @ignore
-   */
-  "aria-describedby": PropTypes.string,
-
-  /**
-   * The placeholder value when no time is selected.
-   */
-  placeholder: PropTypes.string,
-
-  /**
-   * The placeholder of the hours input.
-   */
-  hoursPlaceholder: PropTypes.string,
-  /**
-   * The placeholder of the minutes input.
-   */
-  minutesPlaceholder: PropTypes.string,
-  /**
-   * The placeholder of the seconds input.
-   */
-  secondsPlaceholder: PropTypes.string,
-
-  /**
-   * The status of the form element.
-   *
-   * Valid is correct, invalid is incorrect and standBy means no validations have run.
-   *
-   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
-   * or "invalid" after any change to the state.
-   */
-  status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
-  /**
-   * The error message to show when the validation status is "invalid".
-   *
-   * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
-   */
-  statusMessage: PropTypes.node,
-  /**
-   * Identifies the element that provides an error message for the time picker.
-   *
-   * Will only be used when the validation status is invalid.
-   */
-  "aria-errormessage": PropTypes.string,
-
-  /**
-   * If the time should be presented in 12 or 24 hour format.
-   * If undefined, the component will use a format according to the passed locale.
-   * If defined, it will "override" the default value given by the locale
-   */
-  timeFormat: PropTypes.oneOf([
-    TimeFormat.H12,
-    TimeFormat.H24,
-    12,
-    24,
-    undefined,
-  ]),
-
-  /**
-   * Locale that will provide the time format(12 or 24 hour format)
-   * It is "overwritten" by the timeFormat prop
-   */
-  locale: PropTypes.string,
-
-  /**
-   * Callback function to be triggered when the input value is changed.
-   * It is invoked with a object param with the following props:
-   *  - hours (in a 24h format)
-   *  - minutes
-   *  - seconds
-   *  - period
-   *
-   * It is always invoked with the hours in a 24h format
-   */
-  onChange: PropTypes.func,
-
-  /**
-   * Callback called when dropdown changes the expanded state.
-   *
-   * @param {object} event The event source of the callback.
-   * @param {boolean} open If the dropdown new state is open (`true`) or closed (`false`).
-   */
-  onToggle: PropTypes.func,
-
-  /**
-   * Allow starting with an empty value by not defaulting to the current time.
-   * This should become the default behavior when the component is promoted to core.
-   */
-  disableDefaultValue: PropTypes.bool,
-
-  /**
-   * Default value for the hours picker
-   * @deprecated use defaultValue instead
-   */
-  hours: PropTypes.number,
-  /**
-   * Default value for the minutes picker
-   * @deprecated use defaultValue instead
-   */
-  minutes: PropTypes.number,
-  /**
-   * Default value for the seconds picker
-   * @deprecated use defaultValue instead
-   */
-  seconds: PropTypes.number,
-  /**
-   * Default value for the period picker
-   * @deprecated use defaultValue instead
-   */
-  period: PropTypes.string,
-
-  /**
-   * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
-   */
-  disablePortal: PropTypes.bool,
-
-  /**
-   * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
-   */
-  escapeWithReference: PropTypes.bool,
-  /**
-   * Extra properties to be passed to the timepicker dropdown.
-   */
-  dropdownProps: PropTypes.instanceOf(Object),
 };

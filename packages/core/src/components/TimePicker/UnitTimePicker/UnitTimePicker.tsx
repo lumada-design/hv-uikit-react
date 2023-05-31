@@ -1,19 +1,33 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 import clsx from "clsx";
 import {
   DropDownXS as SubtractTimeIcon,
   DropUpXS as AddTimeIcon,
 } from "@hitachivantara/uikit-react-icons";
-import { HvInput, isKeypress, KeyboardCodes } from "../..";
+import { HvInput, isKeypress, keyboardCodes } from "../../..";
 import { isUnitTimeInValidRange } from "../timePickerUtils";
 import { padTime } from "../timePickerFormatter";
-import { TimePickerUnits } from "../enums";
+import { TimePickerUnits, TimeType } from "../enums";
 
-export const UnitTimePicker = (props) => {
-  const { classes, id, placeholder, unit, unitValue, onChangeUnitTimeValue } =
-    props;
+export interface UnitTimePickerProps {
+  classes?: any;
+  id?: string;
+  placeholder?: string;
+  unit: TimeType;
+  /** Default unit time value */
+  unitValue?: number;
+  /** Callback function called when the unit time value changes */
+  onChangeUnitTimeValue: (value: any | null) => void;
+}
 
+export const UnitTimePicker = ({
+  classes = {},
+  id,
+  placeholder,
+  unit,
+  unitValue,
+  onChangeUnitTimeValue,
+}: UnitTimePickerProps) => {
   const minValue = TimePickerUnits[unit].min;
   const maxValue = TimePickerUnits[unit].max;
 
@@ -65,7 +79,7 @@ export const UnitTimePicker = (props) => {
   };
 
   const handleKeyPressed = (event) => {
-    if (isKeypress(event, KeyboardCodes.Enter)) {
+    if (isKeypress(event, keyboardCodes.Enter)) {
       onChangeUnitTimeValue(currentValue !== "" ? currentValue : null);
     }
   };
@@ -147,36 +161,4 @@ export const UnitTimePicker = (props) => {
       />
     </div>
   );
-};
-
-UnitTimePicker.propTypes = {
-  /**
-   * Id to be applied to the input node.
-   */
-  id: PropTypes.string,
-  /**
-   * A Jss Object used to override or extend the styles applied to the input/popper
-   */
-  classes: PropTypes.instanceOf(Object).isRequired,
-  /**
-   * The placeholder when empty.
-   */
-  placeholder: PropTypes.string,
-  /**
-   * Type of Unit time picker (hour, minute or second)
-   */
-  unit: PropTypes.oneOf([
-    TimePickerUnits.HOUR_24.type,
-    TimePickerUnits.HOUR_12.type,
-    TimePickerUnits.MINUTE.type,
-    TimePickerUnits.SECOND.type,
-  ]).isRequired,
-  /**
-   * Default unit time value
-   */
-  unitValue: PropTypes.number,
-  /**
-   * Callback function called when the unit time value changes
-   */
-  onChangeUnitTimeValue: PropTypes.func.isRequired,
 };

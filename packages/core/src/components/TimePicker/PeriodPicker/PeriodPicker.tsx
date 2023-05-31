@@ -1,18 +1,34 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 import clsx from "clsx";
 import {
   DropUpXS as UpIcon,
   DropDownXS as DownIcon,
 } from "@hitachivantara/uikit-react-icons";
 import { HvToggleButton } from "../..";
-import { PeriodPickerOptions } from "../enums";
+import { PeriodOptions } from "../enums";
 
-export const PeriodPicker = (props) => {
-  const { classes, period, onChangePeriod } = props;
-  const [currentPeriod, setCurrentPeriod] = useState(
-    period ?? PeriodPickerOptions.AM
-  );
+type PeriodPickerClasses =
+  | "periodContainer"
+  | "icon"
+  | "subtractIcon"
+  | "periodToggle";
+
+export interface PeriodPickerProps {
+  classes?: Partial<Record<PeriodPickerClasses, string>>;
+  /**
+   * Callback function called when the period value changes
+   */
+  onChangePeriod: (value: unknown) => void;
+  /** Default period value */
+  period?: PeriodOptions;
+}
+
+export const PeriodPicker = ({
+  classes = {},
+  period,
+  onChangePeriod,
+}: PeriodPickerProps) => {
+  const [currentPeriod, setCurrentPeriod] = useState(period ?? "AM");
 
   /**
    * Gets the new value for the period
@@ -20,9 +36,7 @@ export const PeriodPicker = (props) => {
    * @memberof UnitTimePicker
    */
   const selectDifferentPeriod = () => {
-    return currentPeriod === PeriodPickerOptions.AM
-      ? PeriodPickerOptions.PM
-      : PeriodPickerOptions.AM;
+    return currentPeriod === "AM" ? "PM" : "AM";
   };
 
   /**
@@ -44,7 +58,7 @@ export const PeriodPicker = (props) => {
       <UpIcon className={classes.icon} onClick={handleChangePeriod} />
       <HvToggleButton
         className={classes.periodToggle}
-        selected={currentPeriod === PeriodPickerOptions.PM}
+        selected={currentPeriod === "PM"}
         onClick={handleChangePeriod}
       >
         {currentPeriod}
@@ -55,20 +69,4 @@ export const PeriodPicker = (props) => {
       />
     </div>
   );
-};
-// }
-
-PeriodPicker.propTypes = {
-  /**
-   * A Jss Object used to override or extend the styles applied to the input/popper
-   */
-  classes: PropTypes.instanceOf(Object).isRequired,
-  /**
-   * Callback function called when the period value changes
-   */
-  onChangePeriod: PropTypes.func.isRequired,
-  /**
-   * Default period value
-   */
-  period: PropTypes.oneOf([PeriodPickerOptions.AM, PeriodPickerOptions.PM]),
 };
