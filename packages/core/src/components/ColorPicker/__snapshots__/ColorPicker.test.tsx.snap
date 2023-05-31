@@ -13,7 +13,7 @@ exports[`ColorPicker > should render correctly full color icon picker 1`] = `
       >
         <label
           class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
-          id="hvdropdown50-label"
+          id="hvdropdown26-label"
         >
           Color
         </label>
@@ -23,13 +23,13 @@ exports[`ColorPicker > should render correctly full color icon picker 1`] = `
       >
         <div
           aria-expanded="false"
-          aria-labelledby="hvdropdown50-label"
+          aria-labelledby="hvdropdown26-label"
           class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
-            aria-labelledby="hvdropdown50-label"
+            aria-labelledby="hvdropdown26-label"
             class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
@@ -147,7 +147,7 @@ exports[`ColorPicker > should render correctly recommended colors only color pic
       >
         <label
           class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
-          id="hvdropdown44-label"
+          id="hvdropdown23-label"
         >
           Color
         </label>
@@ -157,15 +157,15 @@ exports[`ColorPicker > should render correctly recommended colors only color pic
       >
         <div
           aria-expanded="true"
-          aria-labelledby="hvdropdown44-label"
-          aria-owns="hvbasedropdown46-children-container"
+          aria-labelledby="hvdropdown23-label"
+          aria-owns="hvbasedropdown25-children-container"
           class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
-            aria-controls="hvbasedropdown46-children-container"
-            aria-labelledby="hvdropdown44-label"
+            aria-controls="hvbasedropdown25-children-container"
+            aria-labelledby="hvdropdown23-label"
             class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
@@ -240,7 +240,7 @@ exports[`ColorPicker > should render correctly recommended colors only icon colo
       >
         <label
           class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
-          id="hvdropdown58-label"
+          id="hvdropdown32-label"
         >
           Color
         </label>
@@ -250,13 +250,13 @@ exports[`ColorPicker > should render correctly recommended colors only icon colo
       >
         <div
           aria-expanded="false"
-          aria-labelledby="hvdropdown58-label"
+          aria-labelledby="hvdropdown32-label"
           class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
-            aria-labelledby="hvdropdown58-label"
+            aria-labelledby="hvdropdown32-label"
             class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
@@ -307,7 +307,7 @@ exports[`ColorPicker > should render correctly without saved colors color picker
       >
         <label
           class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
-          id="hvdropdown22-label"
+          id="hvdropdown12-label"
         >
           Color
         </label>
@@ -317,15 +317,15 @@ exports[`ColorPicker > should render correctly without saved colors color picker
       >
         <div
           aria-expanded="true"
-          aria-labelledby="hvdropdown22-label"
-          aria-owns="hvbasedropdown24-children-container"
+          aria-labelledby="hvdropdown12-label"
+          aria-owns="hvbasedropdown14-children-container"
           class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
-            aria-controls="hvbasedropdown24-children-container"
-            aria-labelledby="hvdropdown22-label"
+            aria-controls="hvbasedropdown14-children-container"
+            aria-labelledby="hvdropdown12-label"
             class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
@@ -400,7 +400,7 @@ exports[`ColorPicker > should render correctly without saved colors icon color p
       >
         <label
           class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
-          id="hvdropdown54-label"
+          id="hvdropdown29-label"
         >
           Color
         </label>
@@ -410,13 +410,13 @@ exports[`ColorPicker > should render correctly without saved colors icon color p
       >
         <div
           aria-expanded="false"
-          aria-labelledby="hvdropdown54-label"
+          aria-labelledby="hvdropdown29-label"
           class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
-            aria-labelledby="hvdropdown54-label"
+            aria-labelledby="hvdropdown29-label"
             class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"

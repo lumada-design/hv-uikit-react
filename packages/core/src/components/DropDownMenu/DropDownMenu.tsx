@@ -2,9 +2,8 @@ import { useMemo } from "react";
 import { ClassNames } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
-import { useControlled } from "@core/hooks";
+import { useControlled, useUniqueId } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
-import withId from "@core/hocs/withId";
 import {
   isKeypress,
   keyboardCodes,
@@ -68,7 +67,7 @@ export interface HvDropDownMenuProps
  * A drop-down menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.
  */
 const HvDropDownMenu = ({
-  id,
+  id: idProp,
   classes,
   className,
   icon,
@@ -85,6 +84,7 @@ const HvDropDownMenu = ({
   ...others
 }: HvDropDownMenuProps) => {
   const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
+  const id = useUniqueId(idProp, "dropdown-menu");
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
 
   const listId = setId(id, "list");
@@ -203,4 +203,4 @@ const HvDropDownMenu = ({
   );
 };
 
-export default withId(HvDropDownMenu);
+export default HvDropDownMenu;

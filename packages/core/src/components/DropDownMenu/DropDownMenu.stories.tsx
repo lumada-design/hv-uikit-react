@@ -4,6 +4,7 @@ import {
   HvButton,
   HvDropDownMenu,
   HvDropDownMenuProps,
+  HvListValue,
 } from "@core/components";
 import { useState } from "react";
 
@@ -63,7 +64,7 @@ export const WithIconsAndActions: StoryObj<HvDropDownMenuProps> = {
   },
   render: () => {
     const iconSelectedColor =
-      (Icon) =>
+      (Icon: React.ElementType): HvListValue["icon"] =>
       ({ isSelected }) =>
         <Icon color={isSelected ? "atmo1" : undefined} />;
 

@@ -20,7 +20,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
               data-indeterminate="false"
-              id="hvcheckbox18-input"
+              id="hvcheckbox14-input"
               type="checkbox"
               value="on"
             />
@@ -51,8 +51,8 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           </span>
           <label
             class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-v2gp3a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
-            for="hvcheckbox18-input"
-            id="hvcheckbox18-label"
+            for="hvcheckbox14-input"
+            id="hvcheckbox14-label"
           >
             <span
               class="HvTypography-root HvTypography-body css-1fbl1cl-getStyledComponent e1tnpalo0"
@@ -156,7 +156,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           class="HvDropDownMenu-container HvBaseDropdown-anchor HvBaseDropdown-rootDisabled css-mq7o8m-StyledAnchor eapzthe8"
-          id="hv-drop-down-menu-20"
+          id="dropdown-menu16"
           tabindex="-1"
         >
           <button
@@ -165,7 +165,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
             aria-label="Dropdown menu"
             class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-root css-7qkesr-StyledButton e138pvrm0"
             disabled=""
-            id="hv-drop-down-menu-20-icon-button"
+            id="dropdown-menu16-icon-button"
             tabindex="-1"
             type="button"
           >

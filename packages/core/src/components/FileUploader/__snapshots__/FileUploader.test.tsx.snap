@@ -6,18 +6,18 @@ exports[`FileUploader > should render correctly 1`] = `
     <div
       aria-label="File Dropzone"
       class="HvDropZone-dropZoneLabelsGroup css-713atf-StyledDropZoneLabelsGroup e1r4xwg210"
-      id="-3"
+      id="dropzone3"
     >
       <label
         class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1yqg2xh-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
-        for="-3-input-file"
-        id="-3-input-file-label"
+        for="dropzone3-input-file"
+        id="dropzone3-input-file-label"
       >
         Label
       </label>
       <label
         class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-1jz6fnw-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
-        id="-3-description"
+        id="dropzone3-description"
       >
         Max. file size: 12.00B
          (jpeg)
@@ -25,14 +25,14 @@ exports[`FileUploader > should render correctly 1`] = `
     </div>
     <div
       class="HvDropZone-dropZoneContainer css-1w8y3mk-StyledDropZoneContainer e1r4xwg27"
-      id="-3-button"
+      id="dropzone3-button"
       role="button"
       tabindex="0"
     >
       <input
         accept="jpeg"
         class="HvDropZone-inputArea css-yg1b7p-StyledInput e1r4xwg26"
-        id="-3-input-file"
+        id="dropzone3-input-file"
         multiple=""
         tabindex="-1"
         title="Drop files here or click to upload"

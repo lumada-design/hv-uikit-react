@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useMemo } from "react";
 import uniqueId from "lodash/uniqueId";
 
-export default (id, idPrefix) => useState(id || uniqueId(idPrefix))[0];
+export default (id?: string, idPrefix?: string) =>
+  useMemo(() => id || uniqueId(idPrefix), [id, idPrefix]);
