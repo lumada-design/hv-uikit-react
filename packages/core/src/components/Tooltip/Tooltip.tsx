@@ -4,28 +4,14 @@ import {
   TooltipProps as MuiTooltipProps,
 } from "@mui/material";
 import { forwardRef, ReactElement } from "react";
-import { TransitionProps as MuiTransitionProps } from "@mui/material/transitions";
 import { clsx } from "clsx";
 import { useTheme } from "@core/hooks";
 import { popperSx } from "./Tooltip.styles";
 import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
 
-export type HvTooltipPlacementType =
-  | "bottom-end"
-  | "bottom-start"
-  | "bottom"
-  | "left-end"
-  | "left-start"
-  | "left"
-  | "right-end"
-  | "right-start"
-  | "right"
-  | "top-end"
-  | "top-start"
-  | "top";
+export type HvTooltipPlacementType = MuiTooltipProps["placement"];
 
-export interface HvTooltipProps
-  extends Omit<MuiTooltipProps, "classes" | "title"> {
+export interface HvTooltipProps extends Omit<MuiTooltipProps, "classes"> {
   /**
    * Class names to be applied.
    */
@@ -47,20 +33,12 @@ export interface HvTooltipProps
    * This property won't impact the enter touch delay (enterTouchDelay).
    */
   enterDelay?: number;
-  /**
-   * Tooltip title. Zero-length titles string are never displayed.
-   */
-  title?: string | ReactElement;
-  /**
-   * The component used for the transition
-   */
-  TransitionComponent?: React.JSXElementConstructor<
-    MuiTransitionProps & { children: React.ReactElement<any, any> }
-  >;
-  /**
-   * Properties applied to the Transition element.
-   */
-  TransitionProps?: MuiTransitionProps;
+  /** @inheritdoc */
+  title: MuiTooltipProps["title"];
+  /** @inheritdoc */
+  TransitionComponent?: MuiTooltipProps["TransitionComponent"];
+  /** @inheritdoc */
+  TransitionProps?: MuiTooltipProps["TransitionProps"];
   /**
    * Defines if should use a single or multiline tooltip.
    */
@@ -73,8 +51,8 @@ export interface HvTooltipProps
 
 /**
  * Tooltips display informative text when users hover over, focus on, or tap an element.
+ * Accessibility-wise, the tooltip automatically labels the `children` content.
  */
-
 export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
   const {
     className,
