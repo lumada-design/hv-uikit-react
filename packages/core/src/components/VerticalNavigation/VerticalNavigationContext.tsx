@@ -9,6 +9,7 @@ interface VerticalNavigationContextValue {
   setHeaderTitle?: React.Dispatch<React.SetStateAction<string | undefined>>;
 
   parentItem?;
+  setParentItem?: React.Dispatch<React.SetStateAction<any>>;
   withParentData?;
   navigateToChildHandler?: (event, item) => void;
   navigateToParentHandler?: () => void;

@@ -7,7 +7,7 @@ import {
   ComponentProps,
 } from "react";
 import { clsx } from "clsx";
-import uniqueId from "lodash/uniqueId";
+import { uniqueId } from "lodash";
 import { setId, wrapperTooltip } from "@core/utils";
 import { useControlled } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
@@ -22,6 +22,7 @@ import { StyledNav } from "./Navigation.styles";
 import { HvVerticalNavigationSlider } from "..";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { HvVerticalNavigationPopup } from "../NavigationPopup/NavigationPopup";
+import { getParentItemById } from "../NavigationSlider/utils/NavigationSlider.utils";
 
 export type NavigationData<T extends React.ElementType = "a"> =
   ComponentProps<T> &
@@ -179,6 +180,7 @@ export const HvVerticalNavigationTree = ({
     slider,
 
     parentItem,
+    setParentItem,
     withParentData,
     navigateToChildHandler,
 
@@ -283,6 +285,17 @@ export const HvVerticalNavigationTree = ({
   useEffect(() => {
     if (setParentData) setParentData(data);
   }, [data]);
+
+  useEffect(() => {
+    if (
+      withParentData &&
+      selected &&
+      setParentItem &&
+      getParentItemById(withParentData, selected)
+    ) {
+      setParentItem(getParentItemById(withParentData, selected));
+    }
+  }, [withParentData]);
 
   // navigation slider
   const navigateToTargetHandler = (event, selectedItem) => {
