@@ -1,5 +1,12 @@
-import { useState, useEffect, useRef, useMemo } from "react";
-import clsx from "clsx";
+import { useState, useRef, useMemo } from "react";
+import { ClassNames } from "@emotion/react";
+import { Time } from "@internationalized/date";
+import { useDateSegment, useTimeField } from "@react-aria/datepicker";
+import {
+  DateFieldState,
+  DateSegment,
+  useTimeFieldState,
+} from "@react-stately/datepicker";
 
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 import {
@@ -8,26 +15,14 @@ import {
   HvLabel,
   HvWarningText,
   HvInfoMessage,
-  setId,
-  useUniqueId,
-  useControlled,
-  HvTypography,
-  useSavedState,
   HvFormElementProps,
   HvBaseDropdownProps,
+  theme,
 } from "../..";
 
-import {
-  TimeFormat,
-  getFormattedTime,
-  getHoursForTimeFormat,
-  getTimeFormatForLocale,
-  getTimeWithFormat24,
-  timeIsEqual,
-  timeIsValid,
-} from "./utils";
 import { UnitTimePicker } from "./UnitTimePicker";
-import { PeriodPicker } from "./PeriodPicker";
+
+export type TimeFormat = "H12" | "H24";
 
 export type HvTimePickerClassKey =
   | "root"
@@ -56,20 +51,18 @@ export interface HvTimePickerValue {
 export interface HvTimePickerProps
   extends Omit<
     HvFormElementProps,
-    "classes" | "onChange" | "value" | "defaultValue" | "readOnly"
+    "classes" | "value" | "defaultValue" | "onChange"
   > {
   /** Id to be applied to the form element root node. */
   id?: string;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: Partial<Record<HvTimePickerClassKey, string>>;
+  /** Whether to show the native time picker instead */
+  native?: boolean;
   /** Current value of the form element. */
   value?: HvTimePickerValue;
   /** When uncontrolled, defines the initial value. */
   defaultValue?: HvTimePickerValue;
-  /** Indicates that user input is required on the form element. */
-  required?: boolean;
-  /** Indicates that the form element is disabled. */
-  disabled?: boolean;
-  /** Indicates that the form element is in read only mode. */
-  readOnly?: boolean;
   /** The placeholder value when no time is selected. */
   placeholder?: string;
   /** The placeholder of the hours input. */
@@ -81,13 +74,10 @@ export interface HvTimePickerProps
   /**
    * If the time should be presented in 12 or 24 hour format.
    * If undefined, the component will use a format according to the passed locale.
-   * If defined, it will "override" the default value given by the locale
    */
   timeFormat?: TimeFormat;
   /** Locale that will provide the time format(12 or 24 hour format). It is "overwritten" by `timeFormat` */
   locale?: string;
-
-  classes?: Partial<Record<HvTimePickerClassKey, string>>;
 
   /**
    * Callback function to be triggered when the input value is changed.
@@ -101,17 +91,10 @@ export interface HvTimePickerProps
    */
   onChange?: (timeIn24Format: HvTimePickerValue) => void;
 
-  /**
-   * Callback called when dropdown changes the expanded state.
-   *
-   * @param {object} event The event source of the callback.
-   * @param {boolean} open If the dropdown new state is open (`true`) or closed (`false`).
-   */
-  onToggle?: (event: Event, open: boolean) => void;
+  /** Callback called when dropdown changes the expanded state. */
+  onToggle?: (event: Event, isOpen: boolean) => void;
 
-  /**
-   * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
-   */
+  /** Disable the portal behavior. The children stay within it's parent DOM hierarchy. */
   disablePortal?: boolean;
 
   /** Sets if the calendar container should follow the date picker input out of the screen or stay visible. */
@@ -121,269 +104,93 @@ export interface HvTimePickerProps
   dropdownProps?: Partial<HvBaseDropdownProps>;
 }
 
+const toTime = (value?: HvTimePickerValue) => {
+  if (!value) return undefined;
+  const { hours, minutes, seconds } = value;
+  return new Time(hours, minutes, seconds);
+};
+
+interface InlineSegmentProps {
+  segment: DateSegment;
+  state: DateFieldState;
+  placeholder: string;
+}
+
+const InlineSegment = ({ segment, state, placeholder }: InlineSegmentProps) => {
+  const ref = useRef(null);
+  const { segmentProps } = useDateSegment(segment, state, ref);
+
+  return (
+    <div ref={ref} {...segmentProps}>
+      {(() => {
+        if (segment.type === "literal") return segment.text;
+        if (segment.isPlaceholder) return placeholder ?? segment.text;
+        return segment.text.padStart(2, "0");
+      })()}
+    </div>
+  );
+};
+
 /**
- * A TimePicker component used to choose the time.
+ * A Time Picker allows the user to choose a specific time or a time range.
  */
-export const HvTimePicker = ({
-  classes = {},
-  className,
+export const HvTimePicker = (props: HvTimePickerProps) => {
+  const {
+    classes = {},
+    className,
 
-  id,
-  name,
+    id,
+    name,
 
-  required = false,
-  disabled = false,
-  readOnly = false,
+    native = false,
+    required = false,
+    disabled = false,
+    readOnly = false,
 
-  label,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  description,
-  "aria-describedby": ariaDescribedBy,
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
 
-  onChange,
+    onChange,
 
-  status,
-  statusMessage,
-  "aria-errormessage": ariaErrorMessage,
-
-  placeholder,
-  hoursPlaceholder = "hh",
-  minutesPlaceholder = "mm",
-  secondsPlaceholder = "ss",
-
-  value: valueProp,
-  defaultValue: defaultValueProp,
-
-  timeFormat: timeFormatProp,
-  locale,
-
-  onToggle: onToggleCallback,
-
-  // misc properties:
-  disablePortal = true,
-  escapeWithReference = true,
-  dropdownProps,
-  ...others
-}: HvTimePickerProps) => {
-  // #region STATE
-  const elementId = useUniqueId(id, "hvtimepicker");
-
-  const timeFormat = useMemo<TimeFormat>(
-    () => timeFormatProp ?? getTimeFormatForLocale(locale),
-    [timeFormatProp, locale]
-  );
-
-  const is12Hour = useMemo(() => timeFormat === "H12", [timeFormat]);
-  const is24Hour = useMemo(() => timeFormat === "H24", [timeFormat]);
-
-  const [value, setValue, rollbackValue, lastValidValue] = useSavedState<
-    HvTimePickerValue | undefined
-  >(() => {
-    const v = valueProp ?? defaultValueProp;
-
-    if (!v) return undefined;
-
-    return {
-      ...v,
-      hours: getHoursForTimeFormat(v.hours, timeFormat),
-    };
-  });
-
-  const [validationMessage] = useControlled(statusMessage, "Required");
-  const [validationState, setValidationState] = useControlled(
     status,
-    "standBy"
-  );
+    statusMessage,
+    "aria-errormessage": ariaErrorMessage,
 
-  const [isOpen, setOpen] = useState(false);
-  // #endregion
+    placeholder,
+    hoursPlaceholder = "HH",
+    minutesPlaceholder = "MM",
+    secondsPlaceholder = "SS",
 
-  // #region SIDE EFFECTS
-  const firstRender = useRef(true);
-  const currentValue = useRef(value);
-  useEffect(() => {
-    currentValue.current = value;
+    value: valueProp,
+    defaultValue: defaultValueProp,
+
+    timeFormat: timeFormatProp,
+    locale = "en",
+
+    onToggle,
+
+    // misc properties:
+    disablePortal = true,
+    escapeWithReference = true,
+    dropdownProps,
+    ...others
+  } = props;
+
+  const is12Hour = timeFormatProp === "H12";
+  const state = useTimeFieldState({
+    value: toTime(valueProp),
+    defaultValue: toTime(defaultValueProp),
+    label,
+    locale,
+    granularity: "second",
+    hourCycle: is12Hour ? 12 : 24,
   });
-  const currentTimeFormat = useRef(timeFormat);
-
-  useEffect(() => {
-    currentTimeFormat.current = timeFormat;
-  });
-
-  useEffect(() => {
-    // allow external changes to the time format (via timeFormat or locale properties)
-    if (!firstRender.current && currentValue.current != null) {
-      let { hours: h, period: p } = currentValue.current;
-      if (is12Hour) {
-        if (h == null || h < 12) {
-          p = "AM";
-        } else {
-          p = "PM";
-          if (h > 12) {
-            h -= 12;
-          }
-        }
-      } else {
-        if (p === "AM") {
-          if (h === 12) {
-            h = 0;
-          }
-        } else if (h < 12) {
-          h += 12;
-        }
-        p = undefined;
-      }
-
-      setValue(
-        {
-          hours: h,
-          minutes: currentValue.current.minutes,
-          seconds: currentValue.current.seconds,
-          period: p,
-        },
-        true
-      );
-    }
-  }, [setValue, timeFormat]);
-
-  useEffect(() => {
-    // allow control of value property
-    if (!firstRender.current) {
-      const dayPeriod =
-        valueProp?.hours == null || valueProp.hours < 12 ? "AM" : "PM";
-
-      setValue(
-        valueProp != null
-          ? {
-              hours:
-                valueProp?.hours != null
-                  ? getHoursForTimeFormat(
-                      valueProp.hours,
-                      currentTimeFormat.current
-                    )
-                  : null,
-              minutes: valueProp?.minutes,
-              seconds: valueProp?.seconds,
-              period: currentTimeFormat.current === "H12" ? dayPeriod : null,
-            }
-          : null,
-        true
-      );
-    }
-  }, [setValue, valueProp]);
-
-  useEffect(() => {
-    // on close, make sure to restore the last valid value
-    // (in the case the user closed with some time part invalid)
-    if (!firstRender.current && !isOpen) {
-      rollbackValue();
-    }
-  }, [isOpen, rollbackValue]);
-
-  useEffect(() => {
-    // run validations on each render
-    // (except on the first, remaining in the standBy/untouched state)
-    if (!firstRender.current) {
-      setValidationState(() => {
-        // this will only run if status is uncontrolled
-        if (required && lastValidValue == null) {
-          return "invalid";
-        }
-        return "valid";
-      });
-    }
-  });
-
-  useEffect(() => {
-    firstRender.current = false;
-  }, []);
-  // #endregion
-
-  // #region EVENT HANDLERS
-  const handleTimeChange = (updatedTimeObject) => {
-    if (!timeIsEqual(value, updatedTimeObject)) {
-      const valid = timeIsValid(updatedTimeObject, timeFormat);
-
-      // the value only is commited if valid
-      setValue(updatedTimeObject, valid);
-
-      if (valid) {
-        // always output in 24h format
-        onChange?.(getTimeWithFormat24(updatedTimeObject, timeFormat));
-      }
-    }
-  };
-
-  /**
-   * Handles the change of the hours value
-   * @param {Number} hours - selected hours
-   * @memberof HvTimePicker
-   */
-  const handleHoursChange = (updatedHours) => {
-    const newSelectedTime = {
-      ...value,
-      hours: updatedHours,
-    };
-
-    handleTimeChange(newSelectedTime);
-  };
-
-  /**
-   * Handles the change of the minutes value
-   * @param {Number} minutes - selected minutes
-   * @memberof HvTimePicker
-   */
-  const handleMinutesChange = (updatedMinutes) => {
-    const newSelectedTime = {
-      ...value,
-      minutes: updatedMinutes,
-    };
-
-    handleTimeChange(newSelectedTime);
-  };
-
-  /**
-   * Handles the change of the seconds value
-   * @param {Number} seconds - selected seconds
-   * @memberof HvTimePicker
-   */
-  const handleSecondsChange = (updatedSeconds) => {
-    const newSelectedTime = {
-      ...value,
-      seconds: updatedSeconds,
-    };
-
-    handleTimeChange(newSelectedTime);
-  };
-
-  /**
-   * Handles the change of the period (am/pm)
-   * @param {String} period - selected period
-   * @memberof HvTimePicker
-   */
-  const handleChangePeriod = (updatedPeriod) => {
-    const newSelectedTime = {
-      ...value,
-      period: updatedPeriod,
-    };
-
-    handleTimeChange(newSelectedTime);
-  };
-
-  const onToggle = (evt, open) => {
-    /* 
-     If evt is null this toggle wasn't triggered by the user.
-     instead it was triggered by the baseDropdown useEffect after
-     the change of the expanded property.
-    */
-    if (evt === null) return;
-
-    onToggleCallback?.(evt, open);
-
-    setOpen(open);
-  };
-  // #endregion
+  const ref = useRef(null);
+  const { labelProps, fieldProps } = useTimeField(props as any, state, ref);
+  const [open, setOpen] = useState(false);
 
   const hasLabels = label != null;
   const hasDescription = description != null;
@@ -397,126 +204,156 @@ export const HvTimePicker = ({
     ((status !== undefined && statusMessage !== undefined) ||
       (status === undefined && required));
 
-  const isStateInvalid = validationState === "invalid";
+  const isStateInvalid = state.validationState === "invalid";
 
-  let errorMessageId;
-  if (isStateInvalid) {
-    errorMessageId = canShowError
-      ? setId(elementId, "error")
-      : ariaErrorMessage;
-  }
+  const placeholders = useMemo(
+    () => ({
+      hour: hoursPlaceholder,
+      minute: minutesPlaceholder,
+      second: secondsPlaceholder,
+    }),
+    [hoursPlaceholder, minutesPlaceholder, secondsPlaceholder]
+  );
+
+  const validationMessage = statusMessage ?? "Required";
+
+  const elementValue = useMemo(() => {
+    if (state.value == null) return "";
+    const { hour, minute, second } = state.value as any;
+
+    return [hour, minute, second]
+      .map((el) => String(el).padStart(2, "0"))
+      .join(":");
+  }, [state.value]);
 
   return (
-    <HvFormElement
-      id={id}
-      name={name}
-      required={required}
-      disabled={disabled}
-      status={validationState}
-      classes={{
-        root: classes.formElementRoot,
-      }}
-      className={clsx(className, classes.root)}
-      {...others}
-    >
-      {(hasLabels || hasDescription) && (
-        <div className={classes.labelContainer}>
-          {hasLabels && <HvLabel label={label} className={classes.label} />}
-          {hasDescription && (
-            <HvInfoMessage className={classes.description}>
-              {description}
-            </HvInfoMessage>
+    <ClassNames>
+      {({ css, cx }) => (
+        <HvFormElement
+          id={id}
+          name={name}
+          required={required}
+          disabled={disabled}
+          status={state.validationState}
+          label={label}
+          classes={{
+            root: classes.formElementRoot,
+          }}
+          className={cx(className, classes.root)}
+          {...others}
+        >
+          {(hasLabels || hasDescription) && (
+            <div className={classes.labelContainer}>
+              {hasLabels && (
+                <HvLabel
+                  label={label}
+                  className={classes.label}
+                  {...labelProps}
+                />
+              )}
+              {hasDescription && (
+                <HvInfoMessage className={classes.description}>
+                  {description}
+                </HvInfoMessage>
+              )}
+            </div>
           )}
-        </div>
-      )}
-      <HvBaseDropdown
-        id={setId(elementId, "timepicker-dropdown")}
-        role="combobox"
-        placeholder={
-          lastValidValue != null ? (
-            getFormattedTime(lastValidValue, timeFormat)
-          ) : (
-            <HvTypography variant="placeholderText">{placeholder}</HvTypography>
-          )
-        }
-        classes={{
-          placeholder: disabled
-            ? classes.dropdownPlaceholderDisabled
-            : classes.dropdownPlaceholder,
-          header: isStateInvalid ? classes.dropdownHeaderInvalid : undefined,
-          headerOpen: classes.dropdownHeaderOpen,
-        }}
-        variableWidth
-        placement="right"
-        adornment={
-          <TimeIcon
-            color={disabled ? "atmo5" : "acce1"}
-            className={classes.iconBaseRoot}
+          <input
+            name={name}
+            required={required}
+            readOnly={readOnly}
+            disabled={disabled}
+            {...(native
+              ? { type: "time", defaultValue: elementValue, step: 1 }
+              : { type: "hidden", value: elementValue })}
           />
-        }
-        expanded={isOpen}
-        onToggle={onToggle}
-        onContainerCreation={(ref) => {
-          ref?.getElementsByTagName("input")[0]?.focus();
-        }}
-        aria-haspopup="dialog"
-        aria-label={ariaLabel}
-        aria-labelledby={
-          [label && setId(elementId, "label"), ariaLabelledBy]
-            .join(" ")
-            .trim() || undefined
-        }
-        aria-invalid={isStateInvalid ? true : undefined}
-        aria-errormessage={errorMessageId}
-        aria-describedby={
-          [description && setId(elementId, "description"), ariaDescribedBy]
-            .join(" ")
-            .trim() || undefined
-        }
-        disablePortal={disablePortal}
-        disabled={disabled}
-        readOnly={readOnly}
-        popperProps={{
-          modifiers: [
-            { name: "preventOverflow", enabled: escapeWithReference },
-          ],
-        }}
-        {...dropdownProps}
-      >
-        <div className={classes.timePopperContainer}>
-          <UnitTimePicker
-            placeholder={hoursPlaceholder}
-            unit={is24Hour ? "HOUR_24" : "HOUR_12"}
-            unitValue={value?.hours}
-            onChangeUnitTimeValue={handleHoursChange}
-          />
-          <span className={classes.separator}>:</span>
-          <UnitTimePicker
-            placeholder={minutesPlaceholder}
-            unit="MINUTE"
-            unitValue={value?.minutes}
-            onChangeUnitTimeValue={handleMinutesChange}
-          />
-          <span className={classes.separator}>:</span>
-          <UnitTimePicker
-            placeholder={secondsPlaceholder}
-            unit="SECOND"
-            unitValue={value?.seconds}
-            onChangeUnitTimeValue={handleSecondsChange}
-          />
-          {is12Hour && (
-            <PeriodPicker
-              onChangePeriod={handleChangePeriod}
-              period={value?.period}
-            />
+          <HvBaseDropdown
+            role="combobox"
+            style={{ width: 200 }} // TODO
+            placeholder={
+              <div
+                ref={ref}
+                style={{ display: "flex", gap: 2 }}
+                {...fieldProps}
+              >
+                {state.segments.map((segment) => (
+                  <InlineSegment
+                    key={segment.type}
+                    segment={segment}
+                    state={state}
+                    placeholder={placeholders[segment.type]}
+                  />
+                ))}
+              </div>
+            }
+            classes={{
+              placeholder: disabled
+                ? classes.dropdownPlaceholderDisabled
+                : classes.dropdownPlaceholder,
+              header: css({ display: "flex", justifyContent: "space-between" }),
+              panel: css({ border: `1px solid ${theme.colors.secondary_80}` }),
+              headerOpen: classes.dropdownHeaderOpen,
+            }}
+            variableWidth
+            placement="right"
+            adornment={<TimeIcon color={disabled ? "atmo5" : undefined} />}
+            expanded={open}
+            onToggle={(evt, newOpen) => {
+              setOpen(newOpen);
+              onToggle?.(evt, newOpen);
+            }}
+            onContainerCreation={(containerRef) => {
+              containerRef?.getElementsByTagName("input")[0]?.focus();
+            }}
+            aria-haspopup="dialog"
+            aria-label={ariaLabel}
+            aria-invalid={isStateInvalid ? true : undefined}
+            disablePortal={disablePortal}
+            disabled={disabled}
+            readOnly={readOnly}
+            popperProps={{
+              modifiers: [
+                { name: "preventOverflow", enabled: escapeWithReference },
+              ],
+            }}
+            {...dropdownProps}
+          >
+            <div
+              className={css({
+                backgroundColor: theme.colors.atmo1,
+                zIndex: 10,
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: theme.space.xs,
+                userSelect: "none",
+                minWidth: "175px",
+              })}
+            >
+              {state.segments.map((segment) => (
+                <UnitTimePicker
+                  {...segment}
+                  key={segment.type}
+                  placeholder={
+                    placeholders[segment.type] || segment.placeholder
+                  }
+                  onAdd={() => state.increment(segment.type)}
+                  onSub={() => state.decrement(segment.type)}
+                  onChange={(evt, val) =>
+                    state.setSegment(segment.type, Number(val))
+                  }
+                />
+              ))}
+            </div>
+          </HvBaseDropdown>
+          {canShowError && (
+            <HvWarningText disableBorder className={classes.error}>
+              {validationMessage}
+            </HvWarningText>
           )}
-        </div>
-      </HvBaseDropdown>
-      {canShowError && (
-        <HvWarningText disableBorder className={classes.error}>
-          {validationMessage}
-        </HvWarningText>
+        </HvFormElement>
       )}
-    </HvFormElement>
+    </ClassNames>
   );
 };

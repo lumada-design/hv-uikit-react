@@ -17,15 +17,6 @@ const styles = (theme) => ({
       fontSize: 16,
       fontWeight: 600,
     },
-    "&::-webkit-outer-spin-button, &::-webkit-inner-spin-button": {
-      "-webkit-appearance": "none",
-      "-moz-appearance": "none",
-      margin: 0,
-    },
-    "&[type=number]": {
-      "-webkit-appearance": "textfield",
-      "-moz-appearance": "textfield",
-    },
   },
   unitTimeInputRoot: {},
 
