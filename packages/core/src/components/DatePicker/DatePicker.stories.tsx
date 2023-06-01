@@ -158,6 +158,12 @@ export const WithCustomLabels: StoryObj<HvDatePickerProps> = {
         showActions
         label="This is the title for the date picker"
         placeholder="Custom placeholder"
+        labels={{
+          applyLabel: "Custom apply",
+          cancelLabel: "Custom cancel",
+          clearLabel: "Custom clear",
+          invalidDateLabel: "Custom invalid",
+        }}
       />
     );
   },

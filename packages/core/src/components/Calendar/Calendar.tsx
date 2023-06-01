@@ -25,6 +25,7 @@ export const HvCalendar = ({
   onChange,
   onInputChange,
   onVisibleDateChange,
+  invalidDateLabel,
   ...others
 }: HvCalendarProps) => {
   const { elementId } = useContext(HvFormElementContext);
@@ -50,6 +51,7 @@ export const HvCalendar = ({
         onInputChange && onInputChange(evt, date, "left")
       }
       onVisibleDateChange={onVisibleDateChange}
+      invalidDateLabel={invalidDateLabel}
       {...others}
     />
   );
@@ -80,6 +82,7 @@ export const HvCalendar = ({
         onVisibleDateChange={(event, action, index) =>
           onVisibleDateChange?.(event, action, index, "left")
         }
+        invalidDateLabel={invalidDateLabel}
         {...others}
       />
 
@@ -103,6 +106,7 @@ export const HvCalendar = ({
           onVisibleDateChange?.(event, action, index, "right");
         }}
         showEndDate
+        invalidDateLabel={invalidDateLabel}
         {...others}
       />
     </StyledRangeCalendarContainer>
@@ -214,4 +218,8 @@ export interface HvCalendarProps {
    * Indicates if header should display the day of week.
    */
   showDayOfWeek?: boolean;
+  /**
+   * Label shown when date is invalid.
+   */
+  invalidDateLabel?: string;
 }

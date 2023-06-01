@@ -36,6 +36,7 @@ export const HvSingleCalendar = ({
   onVisibleDateChange,
   showEndDate,
   showDayOfWeek,
+  invalidDateLabel,
   children,
   ...others
 }: HvSingleCalendarProps) => {
@@ -157,6 +158,7 @@ export const HvSingleCalendar = ({
           onChange={handleInputChange}
           showEndDate={showEndDate && !isDateSelectionMode}
           showDayOfWeek={showDayOfWeek}
+          invalidDateLabel={invalidDateLabel}
         />
         {calViewMode === "calendar" && (
           <div>
@@ -281,4 +283,8 @@ export interface HvSingleCalendarProps {
    * Content on the upper part of the calendar.
    */
   children?: React.ReactNode;
+  /**
+   * Label shown when date is invalid.
+   */
+  invalidDateLabel?: string;
 }
