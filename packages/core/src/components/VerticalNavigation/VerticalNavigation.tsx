@@ -133,6 +133,7 @@ export const HvVerticalNavigation = ({
       setHeaderTitle,
 
       parentItem,
+      setParentItem,
       withParentData,
       navigateToChildHandler,
       navigateToParentHandler,
@@ -150,6 +151,7 @@ export const HvVerticalNavigation = ({
       headerTitle,
       setHeaderTitle,
       parentItem,
+      setParentItem,
       withParentData,
       navigateToChildHandler,
       navigateToParentHandler,
