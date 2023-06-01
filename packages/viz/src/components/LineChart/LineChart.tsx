@@ -12,8 +12,19 @@ import {
 import { CanvasRenderer } from "echarts/renderers";
 import * as echarts from "echarts/core";
 import { useMemo } from "react";
-import { AxisType } from "@viz/types";
+import {
+  HvChartAggregation,
+  HvChartAxisType,
+  HvChartDataType,
+  HvChartEmptyCellMode,
+} from "@viz/types";
 import { useTheme } from "@hitachivantara/uikit-react-core";
+import { getAggregation, getAxisType } from "@viz/utils";
+import { from, table } from "arquero";
+
+// TODO:
+// - Time representation
+// - Stacked chart
 
 // Register chart components
 echarts.use([
@@ -27,239 +38,240 @@ echarts.use([
   LegendComponent,
 ]);
 
-interface Axis {
-  /**
-   * Type of axis.
-   *
-   * Defaults to `category` for `xAxis` and `value` for `yAxis`.
-   */
-  type?: AxisType;
-  /**
-   * Formatter for the axis labels.
-   */
-  labelFormatter?:
-    | ((value?: string | number, index?: number) => string)
-    | string;
-  /**
-   * Axis name.
-   */
-  name?: string;
-  /**
-   * Rotation of the axis labels.
-   *
-   * Defaults to `0`.
-   */
-  labelRotation?: number;
-}
-
-interface XAxis extends Axis {
-  /**
-   * Dimension to use for the `xAxis`.
-   */
-  dimension: string;
-}
+export type HvChartLineChartVariant = "line" | "area";
 
 export interface HvLineChartProps {
-  /**
-   * Chart data.
-   */
-  data?:
-    | (string | number)[][]
-    | Record<string, string | number>[]
-    | Record<string, (string | number)[]>;
-  /**
-   * Data dimensions, i.e. columns.
-   */
-  dimensions?: string[];
-  /**
-   * Options for the x axis.
-   *
-   * `xAxis` will be of type `category` by default.
-   */
-  xAxis: XAxis;
-  /**
-   * Options for the y axis.
-   *
-   * `yAxis` will be of type `value` by default.
-   */
-  yAxis?: Axis;
-  /**
-   * Options for the tooltip.
-   *
-   * The tooltip is shown by default.
-   */
-  tooltip?: {
+  /** Data options. */
+  data: {
     /**
-     * Whether to show the tooltip or not.
+     * Data can have the following formats:
+     * - Table format: a set of key-value pairs where the keys are the column names and the values are arrays of identical length containing the rows.
+     * - Row format: a set of objects which can be an array of objects (where each object is a row) or a set of key-value pairs and a table with the
+     * `key` and `value` columns is creating.
+     */
+    values:
+      | Map<string | number, (string | number)[]> // Table format
+      | Record<string | number, (string | number)[]> // Table format
+      | Map<string | number, string | number> // Object format
+      | Record<string | number, string | number>[] // Object format
+      | Record<string | number, string | number>; // Object format
+    /** Type of data, table or row format. Defaults to `table`. */
+    type?: HvChartDataType;
+  };
+  /** Options for the xAxis, the horizontal axis. */
+  xAxis: {
+    /** Column to use for the horizontal axis. The data will be grouped based on this column. */
+    fields: string;
+    /** Type: continuous, categorical, or time data. Defaults to `categorical`. */
+    type?: HvChartAxisType;
+    /** Formatter for the labels on the horizontal axis. */
+    labelFormatter?:
+      | ((value?: string | number, index?: number) => string)
+      | string;
+    /** Rotation of the labels on the horizontal axis. Defaults to `0`. */
+    labelRotation?: number;
+    /** Name used on the horizontal axis. */
+    name?: string;
+  };
+  /** Options for the measures, the vertical axis. */
+  measures: {
+    /** Columns to use as measures. These are the columns to measure on the vertical axis. */
+    fields: string | string[];
+    /**
+     * Aggregation functions to use for the columns you want to measure.
      *
-     * Defaults to `true`.
+     * Each column you want to measure needs its own aggregation function.
+     * If no value is provided, `sum` will be used by default.
+     * If only one function is provided (example: `aggregation="count"`), it will be used for all columns.
+     * If an array is provided, the functions must be listed in the same order as the measures' `fields` and, if a value is missing, `sum` will be used by default.
      */
-    show?: boolean;
+    aggregation?: HvChartAggregation | HvChartAggregation[];
+    /** Type: continuous, categorical, or time data. Defaults to `continuous`. */
+    type?: HvChartAxisType;
+    /** Formatter for the labels on the vertical axis. */
+    labelFormatter?:
+      | ((value?: string | number, index?: number) => string)
+      | string;
+    /** Rotation of the labels on the vertical axis. Defaults to `0`. */
+    labelRotation?: number;
+    /** Name used on the vertical axis. */
+    name?: string;
     /**
-     * Formats the value in the tooltip.
+     * Maximum value on the vertical axis.
+     * If no value is provided, the chart will automatically set a max value in order for all values to be equally distributed.
+     * Set this property to `max` to use the maximum data value.
      */
+    maxValue?:
+      | string
+      | number
+      | "max"
+      | ((obj: {
+          max: string | number;
+          min: string | number;
+        }) => string | number);
+    /**
+     * Minimum value on the vertical axis.
+     * If no value is provided, the chart will automatically set a min value in order for all values to be equally distributed.
+     * Set this property to `min` to use the maximum data value.
+     */
+    minValue?:
+      | string
+      | number
+      | "min"
+      | ((obj: {
+          max: string | number;
+          min: string | number;
+        }) => string | number);
+  };
+  /** Columns to use to group your measures. */
+  series?: string | string[];
+  /** Tooltip options. */
+  tooltip?: {
+    /** Whether to show the tooltip or not. Defaults to `true`. */
+    show?: boolean;
+    /** Formatter for the value in the tooltip. */
     valueFormatter?: (value?: string | number) => string;
   };
-  /**
-   * Options for the legend.
-   *
-   * If multiple series are defined, the legend will appear by default.
-   */
+  /** Legend options. */
   legend?: {
     /**
      * Whether to show the legend or not.
      *
-     * Defaults to `true`.
+     * If they are multiple series, the legend will appear by default. Otherwise, the legend will not be shown.
      */
-    show?: boolean;
+    showLegend?: boolean;
   };
-  /**
-   * Chart type.
-   *
-   * The `type` provided in `series` will override this one.
-   *
-   * Defaults to `line`.
-   */
-  type?: "line" | "area";
-  /**
-   * Series to be shown in the chart.
-   */
-  series: {
-    /**
-     * Dimension to use for the `yAxis`.
-     */
-    dimension: string;
-    /**
-     * Chart type for the series.
-     *
-     * Defaults to `line`.
-     */
-    type?: "line" | "area";
-    /**
-     * Series name. This name will be used in the tooltip and legend.
-     *
-     * If this is not set, the dimension names will be used.
-     */
-    name?: string;
-  }[];
+  /** Line chart variant. Defaults to `line`. */
+  variant?: HvChartLineChartVariant;
+  /** Formatter the lines names used on the tooltips and legend. */
+  lineNameFormatter?: (value: string) => string;
+  /** Strategy to use when there are empty cells. Defaults to `void`. */
+  emptyCellMode?: HvChartEmptyCellMode;
 }
 
 /**
  * A line chart or line plot or line graph is a type of chart which displays information as a series of data points
  * connected by straight line segments. It is a basic type of chart common in many fields.
- * Our implementation leverages the ECharts charting library.
- *
- * The data provided to the chart should describe a table where the `dimensions` of your chart are the table columns
- * and `data` can have different formats to describe the rows:
- *
- * - 2D array where each array is a table row:
- *
- * ```
- * [
- *  ["January", 5929],
- *  ["February", 2393],
- *  ["March", 1590],
- *  ["April", 7817],
- * ]
- * ```
- *
- * - Object array where each object is a table row:
- *
- * ```
- * [
- *  { month: "January", sales: 5929 },
- *  { month: "February", sales: 2393 },
- *  { month: "March", sales: 1590 },
- *  { month: "April", sales: 7817 },
- * ]
- * ```
- *
- * - Object where each key is a dimension:
- *
- * ```
- * {
- *   month: ["January", "February", "March", "April"],
- *   sales: [5929, 2393, 1590, 7817],
- * }
- * ```
  */
 export const HvLineChart = ({
-  dimensions,
   data,
-  xAxis,
-  yAxis,
-  tooltip,
   series,
+  xAxis,
+  measures,
   legend,
-  type = "line",
+  tooltip,
+  lineNameFormatter,
+  variant = "line",
+  emptyCellMode = "void",
 }: HvLineChartProps) => {
   const { activeTheme, selectedMode, selectedTheme } = useTheme();
   const { theme } = useVizTheme();
 
   const chartData = useMemo(() => {
-    return {
-      dataset: {
-        sourceHeader: false,
-        dimensions,
-        source: data,
-      },
-    };
-  }, [data, dimensions]);
+    const tableData =
+      data.type === "row" ? from(data.values) : table(data.values);
+
+    const agFunction: HvChartAggregation | HvChartAggregation[] =
+      measures.aggregation ?? "sum";
+
+    const aggregations =
+      typeof measures.fields === "string"
+        ? {
+            [measures.fields]: getAggregation(
+              Array.isArray(agFunction) ? agFunction[0] : agFunction,
+              measures.fields
+            ),
+          }
+        : {};
+
+    if (Array.isArray(measures.fields)) {
+      for (let i = 0; i < measures.fields.length; i++) {
+        const field = measures.fields[i];
+        aggregations[field] = getAggregation(
+          Array.isArray(agFunction) ? agFunction[i] ?? "sum" : agFunction,
+          field
+        );
+      }
+    }
+
+    if (series) {
+      return tableData.groupby(xAxis.fields).pivot(series, aggregations);
+    }
+
+    return tableData.groupby(xAxis.fields).rollup(aggregations);
+  }, [data, series, xAxis.fields, measures.aggregation, measures.fields]);
 
   const chartXAxis = useMemo(() => {
     return {
       xAxis: {
-        type: xAxis?.type || "category",
-        name: xAxis?.name,
+        type: getAxisType(xAxis.type) ?? "category",
+        name: xAxis.name,
+        data: chartData?.array(xAxis.fields),
         axisLabel: {
-          rotate: xAxis?.labelRotation ?? 0,
-          formatter: xAxis?.labelFormatter,
+          rotate: xAxis.labelRotation ?? 0,
+          formatter: xAxis.labelFormatter,
         },
       },
     };
-  }, [xAxis]);
+  }, [
+    xAxis.labelFormatter,
+    xAxis.labelRotation,
+    xAxis.name,
+    xAxis.type,
+    xAxis.fields,
+    chartData,
+  ]);
 
   const chartYAxis = useMemo(() => {
     return {
       yAxis: {
-        type: yAxis?.type || "value",
-        name: yAxis?.name,
+        type: measures.type || "value",
+        name: measures.name,
         axisLabel: {
-          rotate: yAxis?.labelRotation ?? 0,
-          formatter: yAxis?.labelFormatter,
+          rotate: measures.labelRotation ?? 0,
+          formatter: measures.labelFormatter,
         },
+        max: measures.maxValue === "max" ? "dataMax" : measures.maxValue,
+        min: measures.minValue === "min" ? "dataMin" : measures.minValue,
       },
     };
-  }, [yAxis]);
+  }, [
+    measures.labelFormatter,
+    measures.labelRotation,
+    measures.name,
+    measures.type,
+    measures.maxValue,
+    measures.minValue,
+  ]);
 
   const chartSeries = useMemo(() => {
     return {
-      series: series.map((s) => {
-        return {
-          encode: {
-            x: xAxis.dimension,
-            y: s.dimension,
-          },
-          type: "line",
-          name: s.name || s.dimension,
-          areaStyle: s.type
-            ? s.type === "area"
-              ? {}
-              : undefined
-            : type === "area"
-            ? {}
-            : undefined,
-        };
-      }),
+      series:
+        chartData
+          ?.columnNames()
+          .filter((c) => c !== xAxis.fields)
+          .map((c) => {
+            return {
+              name: lineNameFormatter ? lineNameFormatter(c) : c,
+              data: chartData.array(c),
+              type: "line",
+              areaStyle: variant === "area" ? {} : undefined,
+              connectNulls: emptyCellMode === "connect" || false,
+            };
+          }) || [],
     };
-  }, [series, xAxis, type]);
+  }, [chartData, xAxis.fields, variant, lineNameFormatter, emptyCellMode]);
 
   const chartTooltip = useMemo(() => {
     return {
       tooltip: {
         confine: false,
+        appendToBody: true,
         show: tooltip?.show ?? true,
         trigger: "axis",
+        position: (point, params, dom, rect, size) => {
+          return [point[0], point[1] - size.contentSize[1]];
+        },
         formatter: (params) => {
           const tooltipName = params[0].name;
 
@@ -289,10 +301,6 @@ export const HvLineChart = ({
               };">
                 ${params
                   .map((s, i) => {
-                    const value = Array.isArray(s.value)
-                      ? s.value[s.encode.y[0]]
-                      : s.value[s.dimensionNames[s.encode.y[0]]];
-
                     return `
                     <div key="${
                       s.seriesName
@@ -321,8 +329,8 @@ export const HvLineChart = ({
                       activeTheme?.colors.modes[selectedMode].secondary
                     };">${
                       tooltip?.valueFormatter
-                        ? tooltip?.valueFormatter(value)
-                        : value
+                        ? tooltip.valueFormatter(s.value)
+                        : s.value
                     }</p>
                     </div>
                   `;
@@ -334,24 +342,30 @@ export const HvLineChart = ({
         },
       },
     };
-  }, [tooltip, selectedMode, selectedTheme, activeTheme]);
+  }, [
+    tooltip?.show,
+    tooltip?.valueFormatter,
+    selectedMode,
+    selectedTheme,
+    activeTheme,
+  ]);
 
   const chartLegend = useMemo(() => {
     return {
       legend: {
-        show: legend?.show ?? chartSeries.series.length > 1,
+        show: legend?.showLegend ?? chartSeries.series.length > 1,
       },
     };
-  }, [chartSeries, legend]);
+  }, [chartSeries, legend?.showLegend]);
 
   return (
     <ReactECharts
       echarts={echarts}
+      notMerge
       option={{
         aria: {
           enabled: true,
         },
-        ...chartData,
         ...chartXAxis,
         ...chartYAxis,
         ...chartSeries,

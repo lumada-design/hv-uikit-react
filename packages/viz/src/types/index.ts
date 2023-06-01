@@ -1,1 +1,1 @@
-export * from "./axis";
+export * from "./generic";

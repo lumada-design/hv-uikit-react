@@ -43,8 +43,9 @@
   "dependencies": {
     "@emotion/cache": "^11.10.5",
     "@hitachivantara/uikit-react-core": "^5.5.0",
-    "echarts-for-react": "^3.0.2",
-    "echarts": "^5.4.2"
+    "arquero": "^5.2.0",
+    "echarts": "^5.4.2",
+    "echarts-for-react": "^3.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
