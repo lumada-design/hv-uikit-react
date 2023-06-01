@@ -34,7 +34,8 @@ export default meta;
 
 export const Main: StoryObj<HvLineChartProps> = {
   args: {
-    variant: "line",
+    area: false,
+    stacked: false,
     emptyCellMode: "connect",
   },
   argTypes: {
@@ -45,6 +46,7 @@ export const Main: StoryObj<HvLineChartProps> = {
     series: { control: { disable: true } },
     tooltip: { control: { disable: true } },
     lineNameFormatter: { control: { disable: true } },
+    horizontalRangeSlider: { control: { disable: true } },
     emptyCellMode: {
       control: { type: "radio" },
       options: hvChartEmptyCellMode,
@@ -55,7 +57,7 @@ export const Main: StoryObj<HvLineChartProps> = {
       <HvLineChart
         data={{
           values: {
-            Months: [
+            Month: [
               "January",
               "February",
               "March",
@@ -76,7 +78,7 @@ export const Main: StoryObj<HvLineChartProps> = {
           },
         }}
         xAxis={{
-          fields: "Months",
+          fields: "Month",
         }}
         measures={{
           fields: "Sales Target",
@@ -98,7 +100,7 @@ export const WithArea: StoryObj<HvLineChartProps> = {
       <HvLineChart
         data={{
           values: new Map<string, (string | number)[]>()
-            .set("Months", [
+            .set("Month", [
               "January",
               "February",
               "March",
@@ -121,12 +123,12 @@ export const WithArea: StoryObj<HvLineChartProps> = {
             ),
         }}
         xAxis={{
-          fields: "Months",
+          fields: "Month",
         }}
         measures={{
           fields: "Sales Target",
         }}
-        variant="area"
+        area
       />
     );
   },
@@ -334,7 +336,7 @@ export const CustomMultipleLineCharts: StoryObj<HvLineChartProps> = {
   },
 };
 
-export const MultipleLineChartsWithPivot: StoryObj<HvLineChartProps> = {
+export const MultipleLineChartsWithPivotColumns: StoryObj<HvLineChartProps> = {
   parameters: {
     docs: {
       description: {
@@ -432,9 +434,91 @@ export const MultipleLineChartsWithPivot: StoryObj<HvLineChartProps> = {
             fields: "Total",
           }}
           series={checked ? ["Country", "Medal"] : "Country"}
-          lineNameFormatter={(s) => `${s.split("_").join(" ")}`}
+          lineNameFormatter={(s) => `${s?.split("_").join(" ")}`}
         />
       </>
+    );
+  },
+};
+
+export const StackedAreaChart: StoryObj<HvLineChartProps> = {
+  parameters: {
+    docs: {
+      description: { story: "Stacked chart with colored areas." },
+    },
+  },
+  render: () => {
+    const formatter = (value?: number | string) => `${Number(value) / 1000}k`;
+
+    return (
+      <HvLineChart
+        data={{
+          values: {
+            Group: ["Group 1", "Group 2", "Group 3"],
+            "Sales Target": [2300, 1000, 8500],
+            "Sales Per Rep": [6000, 1000, 1000],
+            "Monthly Sales": [3700, 7500, 1100],
+            Target: [2100, 8500, 3000],
+            Cash: [500, 8000, 9500],
+          },
+        }}
+        xAxis={{
+          fields: "Group",
+        }}
+        measures={{
+          fields: [
+            "Sales Target",
+            "Sales Per Rep",
+            "Monthly Sales",
+            "Target",
+            "Cash",
+          ],
+          labelFormatter: formatter,
+        }}
+        tooltip={{ valueFormatter: formatter }}
+        area
+        stacked
+      />
+    );
+  },
+};
+
+export const HorizontalRangeSlider: StoryObj<HvLineChartProps> = {
+  render: () => {
+    const r = new Random();
+    const rand = (diff) => r.next() * diff - diff / 2;
+
+    const generateDates = (num = 100, startDate = new Date(2020, 0)) =>
+      Array.from(Array(num).keys()).map((i) =>
+        new Date(new Date(startDate).setDate(startDate.getDate() + i))
+          .toISOString()
+          .slice(0, 10)
+      );
+
+    const generateValues = (num = 10, start = 100, inc = 1) => {
+      const values = [start];
+      for (let i = 0; i <= num; i += 1) {
+        values.push(values[i] + rand(inc));
+      }
+      return values;
+    };
+
+    const dates = generateDates(200, new Date(2015, 1, 17));
+    const values = generateValues(dates.length, 200, 8);
+
+    const data = {
+      Date: dates,
+      "Sales Target": values,
+      "Sales Volume": values.map((v) => v + rand(8)),
+    };
+
+    return (
+      <HvLineChart
+        data={{ values: data }}
+        xAxis={{ fields: "Date" }}
+        measures={{ fields: ["Sales Target", "Sales Volume"] }}
+        horizontalRangeSlider={{ show: true }}
+      />
     );
   },
 };
@@ -469,7 +553,7 @@ export const WithIntervalUpdates: StoryObj<HvLineChartProps> = {
 
     const generateData = () => {
       return {
-        Dates: generateDates(date.current),
+        Date: generateDates(date.current),
         "Sales Target": values.current,
       };
     };
@@ -500,7 +584,7 @@ export const WithIntervalUpdates: StoryObj<HvLineChartProps> = {
     return (
       <HvLineChart
         data={{ values: data }}
-        xAxis={{ fields: "Dates" }}
+        xAxis={{ fields: "Date" }}
         measures={{ fields: "Sales Target" }}
       />
     );

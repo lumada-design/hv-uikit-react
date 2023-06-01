@@ -8,6 +8,7 @@ import {
   TooltipComponent,
   AriaComponent,
   LegendComponent,
+  DataZoomSliderComponent,
 } from "echarts/components";
 import { CanvasRenderer } from "echarts/renderers";
 import * as echarts from "echarts/core";
@@ -22,10 +23,6 @@ import { useTheme } from "@hitachivantara/uikit-react-core";
 import { getAggregation, getAxisType } from "@viz/utils";
 import { from, table } from "arquero";
 
-// TODO:
-// - Time representation
-// - Stacked chart
-
 // Register chart components
 echarts.use([
   LineChart,
@@ -36,9 +33,8 @@ echarts.use([
   AriaComponent,
   TooltipComponent,
   LegendComponent,
+  DataZoomSliderComponent,
 ]);
-
-export type HvChartLineChartVariant = "line" | "area";
 
 export interface HvLineChartProps {
   /** Data options. */
@@ -141,12 +137,19 @@ export interface HvLineChartProps {
      */
     showLegend?: boolean;
   };
-  /** Line chart variant. Defaults to `line`. */
-  variant?: HvChartLineChartVariant;
   /** Formatter the lines names used on the tooltips and legend. */
-  lineNameFormatter?: (value: string) => string;
+  lineNameFormatter?: (value?: string) => string;
   /** Strategy to use when there are empty cells. Defaults to `void`. */
   emptyCellMode?: HvChartEmptyCellMode;
+  /** Whether the area under the lines should be filled to have an area. Defaults to `false`. */
+  area?: boolean;
+  /** Whether the chart is stacked. Defaults to `false`. */
+  stacked?: boolean;
+  /** Ranger slider options for the horizontal axis. */
+  horizontalRangeSlider?: {
+    /** Whether to show the ranger slider or not. Defaults to `false`. */
+    show?: boolean;
+  };
 }
 
 /**
@@ -161,8 +164,10 @@ export const HvLineChart = ({
   legend,
   tooltip,
   lineNameFormatter,
-  variant = "line",
+  area = false,
+  stacked = false,
   emptyCellMode = "void",
+  horizontalRangeSlider,
 }: HvLineChartProps) => {
   const { activeTheme, selectedMode, selectedTheme } = useTheme();
   const { theme } = useVizTheme();
@@ -225,7 +230,7 @@ export const HvLineChart = ({
   const chartYAxis = useMemo(() => {
     return {
       yAxis: {
-        type: measures.type || "value",
+        type: getAxisType(measures.type) ?? "value",
         name: measures.name,
         axisLabel: {
           rotate: measures.labelRotation ?? 0,
@@ -255,12 +260,20 @@ export const HvLineChart = ({
               name: lineNameFormatter ? lineNameFormatter(c) : c,
               data: chartData.array(c),
               type: "line",
-              areaStyle: variant === "area" ? {} : undefined,
+              areaStyle: area ? {} : undefined,
               connectNulls: emptyCellMode === "connect" || false,
+              stack: stacked ? "x" : undefined,
             };
           }) || [],
     };
-  }, [chartData, xAxis.fields, variant, lineNameFormatter, emptyCellMode]);
+  }, [
+    chartData,
+    xAxis.fields,
+    area,
+    stacked,
+    lineNameFormatter,
+    emptyCellMode,
+  ]);
 
   const chartTooltip = useMemo(() => {
     return {
@@ -358,6 +371,18 @@ export const HvLineChart = ({
     };
   }, [chartSeries, legend?.showLegend]);
 
+  const chartHorizontalRangerSlider = useMemo(() => {
+    return {
+      dataZoom:
+        horizontalRangeSlider?.show === true
+          ? {
+              type: "slider",
+              orient: "horizontal",
+            }
+          : undefined,
+    };
+  }, [horizontalRangeSlider?.show]);
+
   return (
     <ReactECharts
       echarts={echarts}
@@ -371,6 +396,7 @@ export const HvLineChart = ({
         ...chartSeries,
         ...chartTooltip,
         ...chartLegend,
+        ...chartHorizontalRangerSlider,
       }}
       theme={theme}
     />
