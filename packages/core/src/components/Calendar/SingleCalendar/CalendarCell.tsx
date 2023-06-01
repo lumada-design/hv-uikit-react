@@ -1,10 +1,6 @@
 import { SyntheticEvent, useRef } from "react";
 import { clsx } from "clsx";
-import { HvTooltip, HvTypography } from "@core/components";
-import { useComputation } from "@core/hooks";
 import {
-  getDateISO,
-  getFormattedDate,
   isSameDay,
   isSameMonth,
   dateInProvidedValueRange,
@@ -38,9 +34,6 @@ export const HvCalendarCell = ({
   ...others
 }: HvCalendarCellProps) => {
   const buttonEl = useRef<HTMLButtonElement>(null);
-  const [title, computeTitle] = useComputation(() =>
-    getFormattedDate(value, locale)
-  );
 
   const startDate = isDateRangeProp(calendarValue)
     ? calendarValue.startDate
@@ -134,32 +127,25 @@ export const HvCalendarCell = ({
   );
 
   return (
-    <HvTooltip
-      key={getDateISO(value)}
-      enterDelay={600}
-      onOpen={computeTitle}
-      title={title ? <HvTypography noWrap>{title}</HvTypography> : ""}
-    >
-      <StyledDateWrapper
-        className={clsx(
-          calendarCellClasses.dateWrapper,
-          classes?.dateWrapper,
-          inMonth &&
-            rangeMode &&
-            isSelecting &&
-            clsx(calendarCellClasses.cellsInRange, classes?.cellsInRange),
+    <StyledDateWrapper
+      className={clsx(
+        calendarCellClasses.dateWrapper,
+        classes?.dateWrapper,
+        inMonth &&
           rangeMode &&
-            !isSelecting &&
-            clsx(
-              calendarCellClasses.cellsOutsideRange,
-              classes?.cellsOutsideRange
-            )
-        )}
-        data-calendar-cell="calendarCell"
-      >
-        {renderDate()}
-      </StyledDateWrapper>
-    </HvTooltip>
+          isSelecting &&
+          clsx(calendarCellClasses.cellsInRange, classes?.cellsInRange),
+        rangeMode &&
+          !isSelecting &&
+          clsx(
+            calendarCellClasses.cellsOutsideRange,
+            classes?.cellsOutsideRange
+          )
+      )}
+      data-calendar-cell="calendarCell"
+    >
+      {renderDate()}
+    </StyledDateWrapper>
   );
 };
 
