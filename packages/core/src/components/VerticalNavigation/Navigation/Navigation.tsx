@@ -7,7 +7,7 @@ import {
   ComponentProps,
 } from "react";
 import { clsx } from "clsx";
-import { uniqueId } from "lodash";
+import uniqueId from "lodash/uniqueId";
 import { setId, wrapperTooltip } from "@core/utils";
 import { useControlled } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
