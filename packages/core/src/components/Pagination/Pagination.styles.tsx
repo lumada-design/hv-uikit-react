@@ -23,11 +23,6 @@ export const StyledRoot = styled("div")({
     width: 40,
     minWidth: 40,
     maxWidth: theme.spacing(8),
-    '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button':
-      {
-        WebkitAppearance: "none",
-        margin: 0,
-      },
   },
   [`&& .${paginationClasses.pageSizeInputRoot}`]: {
     backgroundColor: "transparent",

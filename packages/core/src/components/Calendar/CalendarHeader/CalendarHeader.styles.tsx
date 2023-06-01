@@ -37,10 +37,6 @@ export const StyledInput = styled((props) => <input {...props} />)({
   "&::placeholder": {
     color: theme.colors.secondary_60,
   },
-  "&::-webkit-inner-spin-button, &::-webkit-calendar-picker-indicator": {
-    " -webkit-appearance": "none",
-    display: "none",
-  },
   "&:focus": {
     outline: "none",
   },
