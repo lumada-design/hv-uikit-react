@@ -1,51 +1,51 @@
-import { clsx } from "clsx";
-import { HvOverflowTooltip } from "@core/components";
+import { ClassNames } from "@emotion/react";
+import {
+  HvBreadCrumbPathElement,
+  HvOverflowTooltip,
+  HvTypography,
+} from "@core/components";
 import startCase from "lodash/startCase";
-import { MouseEventHandler } from "react";
+import { MouseEvent } from "react";
 import pageClasses, { HvPageClasses } from "./pageClasses";
-import { StyledLink, StyledTypography } from "./Page.styles";
-
-export interface HvPageElement {
-  path?: string;
-  label?: string;
-}
+import { styles } from "./Page.styles";
 
 export interface HvPageProps {
-  Component?: React.ElementType;
-  onClick?: (
-    event: MouseEventHandler<HTMLAnchorElement>,
-    data: any
-  ) => void | undefined;
-  elem: HvPageElement;
+  component?: React.ElementType;
+  onClick?: (event: MouseEvent<HTMLElement>, data: any) => void;
+  elem: HvBreadCrumbPathElement;
   classes?: HvPageClasses;
 }
 
-export const HvPage = ({
-  /* Component, */ onClick,
-  elem,
-  classes,
-}: HvPageProps) => {
+export const HvPage = ({ component, onClick, elem, classes }: HvPageProps) => {
+  const { label, path, ...others } = elem;
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
+    event.preventDefault();
+    onClick?.(event, elem);
+  };
+
   return (
-    <StyledLink
-      route={elem.path}
-      // component={Component}
-      onClick={onClick}
-      data={elem}
-      classes={{ a: clsx(pageClasses.a, classes?.a) }}
-    >
-      <StyledTypography
-        noWrap
-        component="div"
-        variant="label"
-        className={clsx(
-          pageClasses.link,
-          classes?.link,
-          pageClasses.label,
-          classes?.label
-        )}
-      >
-        <HvOverflowTooltip data={startCase(elem.label)} />
-      </StyledTypography>
-    </StyledLink>
+    <ClassNames>
+      {({ css, cx }) => (
+        <HvTypography
+          noWrap
+          variant="label"
+          component={component || "a"}
+          href={elem.path}
+          onClick={onClick && handleClick}
+          className={cx(
+            css(styles.link),
+            pageClasses.link,
+            classes?.link,
+            pageClasses.label,
+            classes?.label,
+            pageClasses.a,
+            classes?.a
+          )}
+          {...others}
+        >
+          <HvOverflowTooltip data={startCase(elem.label)} />
+        </HvTypography>
+      )}
+    </ClassNames>
   );
 };

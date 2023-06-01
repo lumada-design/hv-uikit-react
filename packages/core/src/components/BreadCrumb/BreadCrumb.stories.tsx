@@ -89,21 +89,39 @@ export const WithURLLimited: StoryObj<HvBreadCrumbProps> = {
   },
 };
 
-export const WithClickEvents: StoryObj<HvBreadCrumbProps> = {
+export const WithCustomComponent: StoryObj<HvBreadCrumbProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Breadcrumb sample that has a onClick defined.",
+        story:
+          "Breadcrumb sample with a `CustomNavLink` component that has a custom `onClick` behavior.",
       },
     },
   },
   render: () => {
+    const CustomNavLink = ({ children, to, ariaLabel, ...others }) => (
+      <a
+        href={to}
+        aria-label={ariaLabel}
+        onClick={() => console.log("clicked", to)}
+        // make sure to forward other props
+        {...others}
+      >
+        {children}
+      </a>
+    );
+
     return (
       <HvBreadCrumb
-        listRoute={data}
+        listRoute={data.map(({ label, path }) => ({
+          label,
+          path: `#${path}`,
+          to: `#${path}`,
+          ariaLabel: label,
+        }))}
         id="breadcrumb6"
         aria-label="Breadcrumb"
-        onClick={(event, elem) => console.log(elem.path)}
+        component={CustomNavLink}
       />
     );
   },

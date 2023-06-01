@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import isNil from "lodash/isNil";
 import startCase from "lodash/startCase";
-import { isValidElement, MouseEventHandler } from "react";
+import { isValidElement, MouseEvent } from "react";
 import { HvBaseProps } from "@core/types/generic";
 import { HvDropDownMenuProps } from "@core/components";
 import breadCrumbClasses, { HvBreadCrumbClasses } from "./breadCrumbClasses";
@@ -14,7 +14,7 @@ import {
 } from "./BreadCrumb.styles";
 import { pathWithSubMenu, removeExtension } from "./utils";
 
-export interface HvBreadCrumbPathElement {
+export interface HvBreadCrumbPathElement extends Record<string, any> {
   label: string;
   path: string;
 }
@@ -30,10 +30,7 @@ export interface HvBreadCrumbProps
   /** The component used for the link node. Either a string to use a DOM element or a component. */
   component?: React.ElementType;
   /** Function passed to the component. If defined the component prop is used as the link node. */
-  onClick?: (
-    event: MouseEventHandler<HTMLAnchorElement>,
-    data: any
-  ) => void | undefined;
+  onClick?: (event: MouseEvent<HTMLElement>, data: any) => void;
   /** Props passed down to the DropDownMenu sub-menu component. */
   dropDownMenuProps?: HvDropDownMenuProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
@@ -51,7 +48,7 @@ export const HvBreadCrumb = ({
   maxVisible,
   url,
   onClick,
-  component = "div",
+  component,
   dropDownMenuProps,
   ...others
 }: HvBreadCrumbProps) => {
@@ -130,13 +127,12 @@ export const HvBreadCrumb = ({
                   </StyledTypography>
                 )) || (
                   <HvPage
-                    key={key}
                     elem={elem}
                     classes={{
                       a: clsx(breadCrumbClasses.a, classes?.a),
                       link: clsx(breadCrumbClasses.link, classes?.link),
                     }}
-                    Component={onClick ? component : undefined}
+                    component={component}
                     onClick={onClick}
                   />
                 )}
