@@ -193,10 +193,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
             </label>
              
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -213,10 +211,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -233,10 +229,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -253,10 +247,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -273,10 +265,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -292,10 +282,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -311,10 +299,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -330,10 +316,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -349,10 +333,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -368,10 +350,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -387,10 +367,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -406,10 +384,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -425,10 +401,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -444,10 +418,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -463,10 +435,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -482,10 +452,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -501,10 +469,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -520,10 +486,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -539,10 +503,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -558,10 +520,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -577,10 +537,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -596,10 +554,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -615,10 +571,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -634,10 +588,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -653,10 +605,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -672,10 +622,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -691,10 +639,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -710,10 +656,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -729,10 +673,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -748,10 +690,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -767,10 +707,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -786,10 +724,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -805,10 +741,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -824,10 +758,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -843,10 +775,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer HvSingleCalendar-focusSelection css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -862,10 +792,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -882,10 +810,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -902,10 +828,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -922,10 +846,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -942,10 +864,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -962,10 +882,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
@@ -982,10 +900,8 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
               </button>
             </div>
             <div
-              aria-label=""
               class="HvSingleCalendar-dateWrapper css-glu5si-StyledDateWrapper eulxq3n0"
               data-calendar-cell="calendarCell"
-              data-mui-internal-clone-element="true"
             >
               <button
                 class="HvSingleCalendar-cellContainer css-1unh1h1-StyledCellContainer eulxq3n2"
