@@ -94,3 +94,9 @@ export const downloadTheme = (filename, text) => {
 
   document.body.removeChild(element);
 };
+
+export const extractFontSizeUnit = (fontSize) => {
+  const unitRegex = /[a-z%]+$/i;
+  const match = fontSize.match(unitRegex);
+  return match ? match[0] : null;
+};
