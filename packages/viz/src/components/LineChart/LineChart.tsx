@@ -186,7 +186,7 @@ export const HvLineChart = ({
 
     const agFunction = Array.isArray(measures.aggregation)
       ? measures.aggregation
-      : [measures.aggregation];
+      : measuresFields.map(() => measures.aggregation as HvChartAggregation);
 
     const aggregations = measuresFields.reduce(
       (acc, field, i) => ({

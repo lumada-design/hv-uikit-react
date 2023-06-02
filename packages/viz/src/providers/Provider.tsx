@@ -86,11 +86,6 @@ export const HvVizProvider = ({ children }: HvVizProviderProps) => {
         },
       };
 
-      const dataZoomHandleStyle = {
-        color: themeStructure?.colors.modes[mode].atmo1,
-        borderColor: themeStructure?.colors.modes[mode].secondary,
-      };
-
       echarts.registerTheme(`${themeName}-${mode}`, {
         color: [
           themeStructure?.colors.modes[mode].cat1,
@@ -120,18 +115,6 @@ export const HvVizProvider = ({ children }: HvVizProviderProps) => {
         },
         dataZoom: {
           textStyle: { ...baseText },
-          backgroundColor: "transparent",
-          fillerColor: "transparent",
-          borderColor: "transparent",
-          moveHandleSize: 0,
-          emphasis: {
-            handleStyle: {
-              ...dataZoomHandleStyle,
-            },
-          },
-          handleStyle: {
-            ...dataZoomHandleStyle,
-          },
         },
         categoryAxis: {
           ...customAxis,
