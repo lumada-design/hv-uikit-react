@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.11.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.10.0...@hitachivantara/uikit-react-core@5.11.0) (2023-06-02)
+
+### Bug Fixes
+
+- **AppSwitcher:** header and footer now have the same font styling ([8c5a295](https://github.com/lumada-design/hv-uikit-react/commit/8c5a2952a9e1be42881dd1a170dad62c6cab5ac2))
+- **BreadCrumb:** custom component ([9d8fc43](https://github.com/lumada-design/hv-uikit-react/commit/9d8fc4385db9d6bc4475e57c0d078bb540941768))
+- **Table:** no scrollbar added when column has actions ([#3383](https://github.com/lumada-design/hv-uikit-react/issues/3383)) ([f85a06c](https://github.com/lumada-design/hv-uikit-react/commit/f85a06c9714e17bf49a60a0c5b353c686ed62be8))
+- **VerticalNavigation:** open slider where item is selected ([#3389](https://github.com/lumada-design/hv-uikit-react/issues/3389)) ([bdae374](https://github.com/lumada-design/hv-uikit-react/commit/bdae374c9e9909dc8ff4eba6ba950782cabc74b9))
+
+### Features
+
+- **VerticalNavigation:** deprecated collapsedMode and added useIcons ([5556b95](https://github.com/lumada-design/hv-uikit-react/commit/5556b95f72d411ec907dc0f56eb09bb942ed71b3))
+
 # [5.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.9.1...@hitachivantara/uikit-react-core@5.10.0) (2023-05-31)
 
 ### Bug Fixes
