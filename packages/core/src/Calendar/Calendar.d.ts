@@ -75,6 +75,10 @@ export interface HvCalendarProps
    * An element placed before the Calendar
    */
   startAdornment: React.ReactNode;
+  /**
+   * An element placed before the Calendar
+   */
+  invalidDateLabel?: string;
 }
 
 export default function HvCalendar(props: HvCalendarProps): JSX.Element | null;
