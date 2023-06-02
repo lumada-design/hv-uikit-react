@@ -13,14 +13,14 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
         id="default"
       >
         <div
-          class="HvCalendarHeader-root css-82wps1-StyledRoot e1yjj6ap3"
+          class="HvCalendarHeader-root css-82wps1-StyledRoot e1yjj6ap4"
           id="default-header"
         >
           <div
             class="HvCalendarHeader-headerDate"
           >
             <input
-              class="HvCalendarHeader-input css-fhzinf-StyledInput e1yjj6ap1"
+              class="HvCalendarHeader-input css-fhzinf-StyledInput e1yjj6ap2"
               id="default-header-header-input"
               placeholder="MM/DD/YYYY"
               type="text"

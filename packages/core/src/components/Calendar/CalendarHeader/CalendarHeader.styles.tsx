@@ -49,3 +49,9 @@ export const StyledHeaderDayOfWeek = styled(HvTypography)({
   color: theme.calendar.headerInputFontColor,
   paddingLeft: theme.spacing("xs"),
 });
+
+export const StyledTypography = styled(HvTypography)({
+  display: "flex",
+  alignItems: "center",
+  color: theme.colors.negative,
+});

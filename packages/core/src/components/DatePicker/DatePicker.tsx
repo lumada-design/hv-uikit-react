@@ -29,6 +29,7 @@ const DEFAULT_LABELS = {
   applyLabel: "Apply",
   cancelLabel: "Cancel",
   clearLabel: "Clear",
+  invalidLabel: "Invalid date",
 };
 
 export type HvDatePickerStatus = "standBy" | "valid" | "invalid";
@@ -139,6 +140,10 @@ export interface HvDatePickerProps
      * Clear button label.
      */
     clearLabel?: string;
+    /**
+     * Invalid Date label.
+     */
+    invalidDateLabel?: string;
   };
 
   /**
@@ -672,6 +677,7 @@ export const HvDatePicker = ({
               locale={locale}
               {...visibleDate}
               {...calendarProps}
+              invalidDateLabel={labels?.invalidDateLabel}
             />
             {(rangeMode || showActions) && renderActions()}
           </HvBaseDropdown>

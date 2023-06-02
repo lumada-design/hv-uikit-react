@@ -9,7 +9,6 @@ import {
   HvFormElementContext,
   HvFormElementValueContext,
   HvFormElementDescriptorsContext,
-  HvTypography,
 } from "@core/components";
 import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { Info } from "@hitachivantara/uikit-react-icons";
@@ -23,6 +22,7 @@ import {
   StyledInput,
   StyledInputBorderContainer,
   StyledRoot,
+  StyledTypography,
 } from "./CalendarHeader.styles";
 
 dayjs.extend(localeData);
@@ -40,6 +40,7 @@ export const HvCalendarHeader = ({
   showEndDate,
   showDayOfWeek = false,
   onFocus,
+  invalidDateLabel = "Invalid Date",
   ...others
 }: HvCalendarHeaderProps) => {
   const { elementId } = useContext(HvFormElementContext);
@@ -194,7 +195,7 @@ export const HvCalendarHeader = ({
       )}
       <div style={{ height: 32 }}>
         {!isValidValue && inputValue !== "" && (
-          <HvTypography
+          <StyledTypography
             component="span"
             variant="body"
             className={clsx(
@@ -203,8 +204,8 @@ export const HvCalendarHeader = ({
             )}
           >
             <Info color="brand" iconSize="S" />
-            Invalid date
-          </HvTypography>
+            {invalidDateLabel}
+          </StyledTypography>
         )}
       </div>
     </>
@@ -255,4 +256,8 @@ export interface HvCalendarHeaderProps {
    * Indicates if header should display the day of week.
    */
   showDayOfWeek?: boolean;
+  /**
+   * Label shown when date is invalid.
+   */
+  invalidDateLabel?: string;
 }
