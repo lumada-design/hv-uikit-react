@@ -63,5 +63,13 @@ export default defineConfig({
     exclude: ["**/package/**"],
     silent: true,
     testTimeout: 10000,
+    reporters: "default",
+    coverage: {
+      enabled: false,
+      provider: "c8",
+      reporter: "lcov",
+      include: ["src/**/*.ts?(x)"],
+      exclude: ["src/**/stories/*", "src/**/*{test,stories,spec}.ts?(x)"],
+    },
   },
 });
