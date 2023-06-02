@@ -121,7 +121,7 @@ export const styles: Partial<
   groupColumnMostLeft: {
     borderLeft: theme.table.cellBorder,
 
-    "&:first-child": {
+    "&:first-of-type": {
       borderLeft: 0,
     },
   },

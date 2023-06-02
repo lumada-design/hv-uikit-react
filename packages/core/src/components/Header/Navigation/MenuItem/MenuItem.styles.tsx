@@ -14,20 +14,10 @@ export const MenuItemLi = styled(
     color: theme.header.color,
   },
   "&:hover": {
-    "& > a:first-child": {
-      backgroundColor: hoverColor,
-    },
-    "& > div:first-child": {
-      backgroundColor: hoverColor,
-    },
-    "&:focus-within": {
-      "& > div:first-child": {
-        backgroundColor: hoverColor,
-      },
-      "& > a:first-child": {
-        backgroundColor: hoverColor,
-      },
-    },
+    backgroundColor: hoverColor,
+  },
+  "&:focus-within": {
+    backgroundColor: hoverColor,
   },
   ...($selected &&
     $isMenu && {
@@ -81,7 +71,6 @@ export const MenuItemLabel = styled(
   },
   "&:focus": {
     outline: "none",
-    backgroundColor: hoverColor,
   },
   "&:focus-visible": {
     ...outlineStyles,
@@ -128,7 +117,6 @@ export const MenuItemLink = styled("a")(
     },
     "&:focus": {
       outline: "none",
-      backgroundColor: hoverColor,
     },
     "&:focus-visible": {
       ...outlineStyles,

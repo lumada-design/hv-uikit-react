@@ -17,11 +17,11 @@ export const styles: Partial<
     },
   },
   head: {
-    "&:first-child": {
+    "&:first-of-type": {
       height: 52,
     },
 
-    "tr&:first-child": {
+    "tr&:first-of-type": {
       height: 52,
     },
   },
@@ -92,11 +92,11 @@ export const styles: Partial<
   variantListHead: {
     backgroundColor: theme.table.rowListBackgroundColor,
     height: 16,
-    "&:first-child": {
+    "&:first-of-type": {
       height: 16,
     },
 
-    "tr&:first-child": {
+    "tr&:first-of-type": {
       height: 16,
     },
   },
