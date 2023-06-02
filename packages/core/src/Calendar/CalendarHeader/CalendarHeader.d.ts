@@ -15,7 +15,11 @@ export type HvHeaderClassKey =
   | "input";
 
 export interface HvHeaderCalendarProps
-  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvHeaderClassKey, "onChange" | "onBlur" | "onFocus"> {
+  extends StandardProps<
+    React.HTMLAttributes<HTMLElement>,
+    HvHeaderClassKey,
+    "onChange" | "onBlur" | "onFocus"
+  > {
   /**
    * Locale to be used by the calendar header.
    */
@@ -27,14 +31,18 @@ export interface HvHeaderCalendarProps
   /**
    * Callback function to be triggered when the selected date has changed.
    */
-  onChange?: ( 
+  onChange?: (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement> | undefined,
     value: string | Date | DateRangeProp
-    ) => void;
+  ) => void;
   /**
    * Indicates if header should display end date in a date range.
    */
   showEndDate?: boolean;
+  /**
+   * Label shown when date is invalid.
+   */
+  invalidDateLabel: string;
 }
 
 export default function HvHeaderCalendar(props: HvHeaderCalendarProps): JSX.Element | null;

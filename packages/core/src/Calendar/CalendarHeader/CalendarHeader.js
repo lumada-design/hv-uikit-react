@@ -32,6 +32,7 @@ const HvCalendarHeader = ({
   onChange,
   showEndDate,
   onFocus,
+  invalidDateLabel = "Invalid Date",
   ...others
 }) => {
   const { elementId } = useContext(HvFormElementContext);
@@ -158,7 +159,7 @@ const HvCalendarHeader = ({
             className={classes.invalidMessageStyling}
           >
             <Info color="acce3" iconSize="S" />
-            Invalid date
+            {invalidDateLabel}
           </HvTypography>
         )}
       </div>
@@ -203,6 +204,10 @@ HvCalendarHeader.propTypes = {
    * Indicates if header should display end date in a date range.
    */
   showEndDate: PropTypes.bool,
+  /**
+   * Label shown when date is invalid.
+   */
+  invalidDateLabel: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvCalendarHeader" })(HvCalendarHeader);

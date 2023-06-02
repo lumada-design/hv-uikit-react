@@ -22,6 +22,7 @@ const HvCalendar = ({
   onChange,
   onInputChange,
   onVisibleDateChange,
+  invalidDateLabel,
   ...others
 }) => {
   const { elementId } = useContext(HvFormElementContext);
@@ -44,6 +45,7 @@ const HvCalendar = ({
       onChange={onChange}
       onInputChange={(evt, date) => onInputChange(evt, date, "left")}
       onVisibleDateChange={onVisibleDateChange}
+      invalidDateLabel={invalidDateLabel}
       {...others}
     />
   );
@@ -64,6 +66,7 @@ const HvCalendar = ({
         onVisibleDateChange={(event, action, index) =>
           onVisibleDateChange?.(event, action, index, "left")
         }
+        invalidDateLabel={invalidDateLabel}
         {...others}
       />
 
@@ -82,6 +85,7 @@ const HvCalendar = ({
           onVisibleDateChange?.(event, action, index, "right");
         }}
         showEndDate
+        invalidDateLabel={invalidDateLabel}
         {...others}
       />
     </div>
@@ -160,6 +164,10 @@ HvCalendar.propTypes = {
    * An element placed before the Calendar
    */
   startAdornment: PropTypes.node,
+  /**
+   * Label shown when date is invalid.
+   */
+  invalidDateLabel: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvCalendar" })(HvCalendar);

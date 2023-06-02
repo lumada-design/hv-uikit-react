@@ -32,6 +32,10 @@ export interface HvDatePickerProps
      * Clear button label.
      */
     clearLabel?: string;
+    /**
+     * Invalid Date label.
+     */
+    invalidDateLabel?: string;
   };
 
   /**

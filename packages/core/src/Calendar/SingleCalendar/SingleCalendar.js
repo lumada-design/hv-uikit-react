@@ -32,6 +32,7 @@ const HvSingleCalendar = ({
   onInputChange,
   onVisibleDateChange,
   showEndDate,
+  invalidDateLabel,
   children,
   ...others
 }) => {
@@ -133,6 +134,7 @@ const HvSingleCalendar = ({
           locale={locale}
           onChange={handleInputChange}
           showEndDate={showEndDate && !isDateSelectionMode}
+          invalidDateLabel={invalidDateLabel}
         />
         {calViewMode === VIEW_MODE.CALENDAR && (
           <div>
@@ -297,6 +299,10 @@ HvSingleCalendar.propTypes = {
    * Content on the upper part of the calendar.
    */
   children: PropTypes.node,
+  /**
+   * Label shown when date is invalid.
+   */
+  invalidDateLabel: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvSingleCalendar" })(HvSingleCalendar);
