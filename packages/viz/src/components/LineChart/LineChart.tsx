@@ -2,7 +2,6 @@ import { useVizTheme } from "@viz/hooks";
 import ReactECharts from "echarts-for-react/lib/core";
 import { LineChart } from "echarts/charts";
 import {
-  DatasetComponent,
   GridComponent,
   MarkLineComponent,
   TooltipComponent,
@@ -12,23 +11,22 @@ import {
 } from "echarts/components";
 import { CanvasRenderer } from "echarts/renderers";
 import * as echarts from "echarts/core";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   HvChartAggregation,
   HvChartAxisType,
-  HvChartDataType,
   HvChartEmptyCellMode,
 } from "@viz/types";
 import { useTheme } from "@hitachivantara/uikit-react-core";
-import { getAggregation, getAxisType } from "@viz/utils";
-import { from, table } from "arquero";
+import { getAgFunc, getAxisType } from "@viz/utils";
+import { from, table, internal } from "arquero";
+import ColumnTable from "arquero/dist/types/table/column-table";
 
 // Register chart components
 echarts.use([
   LineChart,
   CanvasRenderer,
   GridComponent,
-  DatasetComponent,
   MarkLineComponent,
   AriaComponent,
   TooltipComponent,
@@ -37,23 +35,17 @@ echarts.use([
 ]);
 
 export interface HvLineChartProps {
-  /** Data options. */
-  data: {
-    /**
-     * Data can have the following formats:
-     * - Table format: a set of key-value pairs where the keys are the column names and the values are arrays of identical length containing the rows.
-     * - Row format: a set of objects which can be an array of objects (where each object is a row) or a set of key-value pairs and a table with the
-     * `key` and `value` columns is creating.
-     */
-    values:
-      | Map<string | number, (string | number)[]> // Table format
-      | Record<string | number, (string | number)[]> // Table format
-      | Map<string | number, string | number> // Object format
-      | Record<string | number, string | number>[] // Object format
-      | Record<string | number, string | number>; // Object format
-    /** Type of data, table or row format. Defaults to `table`. */
-    type?: HvChartDataType;
-  };
+  /**
+   * Data can have the following formats:
+   * - Columns format: an object with a set of key-value pairs where the keys are the column names and the values are arrays of identical length containing the rows values.
+   * - Rows format: an array containing a set of objects where each object represent a row.
+   * - Arquero table format: table creating using arquero utilities.
+   */
+  data:
+    | Map<string | number, (string | number)[]> // columns
+    | Record<string | number, (string | number)[]> // columns
+    | Record<string | number, string | number>[] // rows
+    | ColumnTable; // arquero table
   /** Options for the xAxis, the horizontal axis. */
   xAxis: {
     /** Column to use for the horizontal axis. The data will be grouped based on this column. */
@@ -74,9 +66,9 @@ export interface HvLineChartProps {
     /** Columns to use as measures. These are the columns to measure on the vertical axis. */
     fields: string | string[];
     /**
-     * Aggregation functions to use for the columns you want to measure.
+     * Aggregation functions to use for the columns to measure.
      *
-     * Each column you want to measure needs its own aggregation function.
+     * Each column needs its own aggregation function.
      * If no value is provided, `sum` will be used by default.
      * If only one function is provided (example: `aggregation="count"`), it will be used for all columns.
      * If an array is provided, the functions must be listed in the same order as the measures' `fields` and, if a value is missing, `sum` will be used by default.
@@ -119,7 +111,7 @@ export interface HvLineChartProps {
           min: string | number;
         }) => string | number);
   };
-  /** Columns to use to group your measures. */
+  /** Columns to use to group the measures. */
   series?: string | string[];
   /** Tooltip options. */
   tooltip?: {
@@ -135,13 +127,13 @@ export interface HvLineChartProps {
      *
      * If they are multiple series, the legend will appear by default. Otherwise, the legend will not be shown.
      */
-    showLegend?: boolean;
+    show?: boolean;
   };
-  /** Formatter the lines names used on the tooltips and legend. */
+  /** Formatter for the lines names used on the tooltips and legend. */
   lineNameFormatter?: (value?: string) => string;
   /** Strategy to use when there are empty cells. Defaults to `void`. */
   emptyCellMode?: HvChartEmptyCellMode;
-  /** Whether the area under the lines should be filled to have an area. Defaults to `false`. */
+  /** Whether the area under the lines should be filled. Defaults to `false`. */
   area?: boolean;
   /** Whether the chart is stacked. Defaults to `false`. */
   stacked?: boolean;
@@ -172,32 +164,34 @@ export const HvLineChart = ({
   const { activeTheme, selectedMode, selectedTheme } = useTheme();
   const { theme } = useVizTheme();
 
+  const chartRef = useRef<ReactECharts>(null);
+  const isMounted = useRef<boolean>(false);
+
   const chartData = useMemo(() => {
-    const tableData =
-      data.type === "row" ? from(data.values) : table(data.values);
-
-    const agFunction: HvChartAggregation | HvChartAggregation[] =
-      measures.aggregation ?? "sum";
-
-    const aggregations =
-      typeof measures.fields === "string"
-        ? {
-            [measures.fields]: getAggregation(
-              Array.isArray(agFunction) ? agFunction[0] : agFunction,
-              measures.fields
-            ),
-          }
-        : {};
-
-    if (Array.isArray(measures.fields)) {
-      for (let i = 0; i < measures.fields.length; i++) {
-        const field = measures.fields[i];
-        aggregations[field] = getAggregation(
-          Array.isArray(agFunction) ? agFunction[i] ?? "sum" : agFunction,
-          field
-        );
-      }
+    let tableData: ColumnTable;
+    if (data instanceof internal.ColumnTable) {
+      tableData = data;
+    } else if (Array.isArray(data)) {
+      tableData = from(data);
+    } else {
+      tableData = table(data);
     }
+
+    const measuresFields = Array.isArray(measures.fields)
+      ? measures.fields
+      : [measures.fields];
+
+    const agFunction = Array.isArray(measures.aggregation)
+      ? measures.aggregation
+      : [measures.aggregation];
+
+    const aggregations = measuresFields.reduce(
+      (acc, field, i) => ({
+        ...acc,
+        [field]: getAgFunc(agFunction[i] ?? "sum", field),
+      }),
+      {}
+    );
 
     if (series) {
       return tableData.groupby(xAxis.fields).pivot(series, aggregations);
@@ -366,38 +360,67 @@ export const HvLineChart = ({
   const chartLegend = useMemo(() => {
     return {
       legend: {
-        show: legend?.showLegend ?? chartSeries.series.length > 1,
+        show: legend?.show ?? chartSeries.series.length > 1,
       },
     };
-  }, [chartSeries, legend?.showLegend]);
+  }, [chartSeries, legend?.show]);
 
   const chartHorizontalRangerSlider = useMemo(() => {
     return {
-      dataZoom:
-        horizontalRangeSlider?.show === true
-          ? {
-              type: "slider",
-              orient: "horizontal",
-            }
-          : undefined,
+      dataZoom: {
+        show: horizontalRangeSlider?.show ?? false,
+        type: "slider",
+        orient: "horizontal",
+      },
     };
   }, [horizontalRangeSlider?.show]);
 
-  return (
-    <ReactECharts
-      echarts={echarts}
-      notMerge
-      option={{
-        aria: {
-          enabled: true,
-        },
+  useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true;
+      return;
+    }
+
+    chartRef.current?.getEchartsInstance().setOption(
+      {
         ...chartXAxis,
         ...chartYAxis,
         ...chartSeries,
         ...chartTooltip,
         ...chartLegend,
         ...chartHorizontalRangerSlider,
-      }}
+      },
+      {
+        replaceMerge: ["xAxis", "yAxis", "series"],
+      }
+    );
+  }, [
+    chartXAxis,
+    chartYAxis,
+    chartSeries,
+    chartTooltip,
+    chartLegend,
+    chartHorizontalRangerSlider,
+  ]);
+
+  const [initialOption] = useState({
+    aria: {
+      enabled: true,
+    },
+    animation: false,
+    ...chartXAxis,
+    ...chartYAxis,
+    ...chartSeries,
+    ...chartTooltip,
+    ...chartLegend,
+    ...chartHorizontalRangerSlider,
+  });
+
+  return (
+    <ReactECharts
+      ref={chartRef}
+      echarts={echarts}
+      option={initialOption}
       theme={theme}
     />
   );

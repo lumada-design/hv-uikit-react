@@ -1,2 +1,2 @@
 export * from "./getAxisType";
-export * from "./getAggregation";
+export * from "./getAgFunc";

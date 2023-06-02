@@ -10,7 +10,7 @@ import {
 import { useEffect, useMemo, useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { hvChartEmptyCellMode } from "@viz/types";
+import { emptyCellMode } from "@viz/types/generic";
 import { HvLineChart, HvLineChartProps } from "./LineChart";
 import { chartData } from "./data";
 
@@ -49,33 +49,31 @@ export const Main: StoryObj<HvLineChartProps> = {
     horizontalRangeSlider: { control: { disable: true } },
     emptyCellMode: {
       control: { type: "radio" },
-      options: hvChartEmptyCellMode,
+      options: emptyCellMode,
     },
   },
   render: ({ data, xAxis, measures, ...others }) => {
     return (
       <HvLineChart
         data={{
-          values: {
-            Month: [
-              "January",
-              "February",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July",
-              "August",
-              "September",
-              "October",
-              "November",
-              "December",
-            ],
-            "Sales Target": [
-              5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119,
-              2146,
-            ],
-          },
+          Month: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ],
+          "Sales Target": [
+            5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119,
+            2146,
+          ],
         }}
         xAxis={{
           fields: "Month",
@@ -98,30 +96,28 @@ export const WithArea: StoryObj<HvLineChartProps> = {
   render: () => {
     return (
       <HvLineChart
-        data={{
-          values: new Map<string, (string | number)[]>()
-            .set("Month", [
-              "January",
-              "February",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July",
-              "August",
-              "September",
-              "October",
-              "November",
-              "December",
-            ])
-            .set(
-              "Sales Target",
-              [
-                5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098,
-                2119, 2146,
-              ]
-            ),
-        }}
+        data={new Map<string, (string | number)[]>()
+          .set("Month", [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ])
+          .set(
+            "Sales Target",
+            [
+              5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119,
+              2146,
+            ]
+          )}
         xAxis={{
           fields: "Month",
         }}
@@ -143,83 +139,80 @@ export const MultipleLineCharts: StoryObj<HvLineChartProps> = {
   render: () => {
     return (
       <HvLineChart
-        data={{
-          values: [
-            {
-              Month: "January",
-              "Sales Target": 3400,
-              "Sales Per Rep": 3022,
-              "Monthly Sales": 3900,
-            },
-            {
-              Month: "February",
-              "Sales Target": 5929,
-              "Sales Per Rep": 3005,
-              "Monthly Sales": 4971,
-            },
-            {
-              Month: "March",
-              "Sales Target": 1803,
-              "Sales Per Rep": 2517,
-              "Monthly Sales": 2694,
-            },
-            {
-              Month: "April",
-              "Sales Target": 6470,
-              "Sales Per Rep": 8397,
-              "Monthly Sales": 2177,
-            },
-            {
-              Month: "May",
-              "Sales Target": 6853,
-              "Sales Per Rep": 6587,
-              "Monthly Sales": 7756,
-            },
-            {
-              Month: "June",
-              "Sales Target": 7517,
-              "Sales Per Rep": 6648,
-              "Monthly Sales": 1717,
-            },
-            {
-              Month: "July",
-              "Sales Target": 5636,
-              "Sales Per Rep": 8067,
-              "Monthly Sales": 3308,
-            },
-            {
-              Month: "August",
-              "Sales Target": 4280,
-              "Sales Per Rep": 2723,
-              "Monthly Sales": 2200,
-            },
-            {
-              Month: "September",
-              "Sales Target": 7238,
-              "Sales Per Rep": 7523,
-              "Monthly Sales": 2294,
-            },
-            {
-              Month: "October",
-              "Sales Target": 6889,
-              "Sales Per Rep": 7853,
-              "Monthly Sales": 1771,
-            },
-            {
-              Month: "November",
-              "Sales Target": 8268,
-              "Sales Per Rep": 4819,
-              "Monthly Sales": 2324,
-            },
-            {
-              Month: "December",
-              "Sales Target": 2751,
-              "Sales Per Rep": 3820,
-              "Monthly Sales": 6705,
-            },
-          ],
-          type: "row",
-        }}
+        data={[
+          {
+            Month: "January",
+            "Sales Target": 3400,
+            "Sales Per Rep": 3022,
+            "Monthly Sales": 3900,
+          },
+          {
+            Month: "February",
+            "Sales Target": 5929,
+            "Sales Per Rep": 3005,
+            "Monthly Sales": 4971,
+          },
+          {
+            Month: "March",
+            "Sales Target": 1803,
+            "Sales Per Rep": 2517,
+            "Monthly Sales": 2694,
+          },
+          {
+            Month: "April",
+            "Sales Target": 6470,
+            "Sales Per Rep": 8397,
+            "Monthly Sales": 2177,
+          },
+          {
+            Month: "May",
+            "Sales Target": 6853,
+            "Sales Per Rep": 6587,
+            "Monthly Sales": 7756,
+          },
+          {
+            Month: "June",
+            "Sales Target": 7517,
+            "Sales Per Rep": 6648,
+            "Monthly Sales": 1717,
+          },
+          {
+            Month: "July",
+            "Sales Target": 5636,
+            "Sales Per Rep": 8067,
+            "Monthly Sales": 3308,
+          },
+          {
+            Month: "August",
+            "Sales Target": 4280,
+            "Sales Per Rep": 2723,
+            "Monthly Sales": 2200,
+          },
+          {
+            Month: "September",
+            "Sales Target": 7238,
+            "Sales Per Rep": 7523,
+            "Monthly Sales": 2294,
+          },
+          {
+            Month: "October",
+            "Sales Target": 6889,
+            "Sales Per Rep": 7853,
+            "Monthly Sales": 1771,
+          },
+          {
+            Month: "November",
+            "Sales Target": 8268,
+            "Sales Per Rep": 4819,
+            "Monthly Sales": 2324,
+          },
+          {
+            Month: "December",
+            "Sales Target": 2751,
+            "Sales Per Rep": 3820,
+            "Monthly Sales": 6705,
+          },
+        ]}
         xAxis={{ fields: "Month" }}
         measures={{
           fields: ["Sales Target", "Sales Per Rep", "Monthly Sales"],
@@ -325,7 +318,7 @@ export const CustomMultipleLineCharts: StoryObj<HvLineChartProps> = {
           </div>
         </div>
         <HvLineChart
-          data={{ values: chartData[country][time] }}
+          data={chartData[country][time]}
           xAxis={{ fields: "time" }}
           measures={{
             fields: ["Input Feed Rate", "Output Feed", "Availability"],
@@ -363,69 +356,67 @@ export const MultipleLineChartsWithPivotColumns: StoryObj<HvLineChartProps> = {
         />
         <HvLineChart
           data={{
-            values: {
-              Country: [
-                "Portugal",
-                "Portugal",
-                "Spain",
-                "Spain",
-                "USA",
-                "USA",
-                "Canada",
-                "Canada",
-                "Portugal",
-                "Portugal",
-                "Spain",
-                "Spain",
-                "USA",
-                "USA",
-                "Canada",
-                "Canada",
-                "Portugal",
-                "Portugal",
-                "Spain",
-                "Spain",
-                "USA",
-                "USA",
-                "Canada",
-                "Canada",
-              ],
-              Year: [
-                2018, 2018, 2018, 2018, 2018, 2018, 2018, 2018, 2019, 2019,
-                2019, 2019, 2019, 2019, 2019, 2019, 2020, 2020, 2020, 2020,
-                2020, 2020, 2020, 2020,
-              ],
-              Medal: [
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-                "gold",
-                "silver",
-              ],
-              Total: [
-                3, 2, 1, 0, 4, 11, 8, 3, 2, 9, 0, 5, 3, 6, 2, 1, 7, 5, 6, 9, 2,
-                5, 6, 7,
-              ],
-            },
+            Country: [
+              "Portugal",
+              "Portugal",
+              "Spain",
+              "Spain",
+              "USA",
+              "USA",
+              "Canada",
+              "Canada",
+              "Portugal",
+              "Portugal",
+              "Spain",
+              "Spain",
+              "USA",
+              "USA",
+              "Canada",
+              "Canada",
+              "Portugal",
+              "Portugal",
+              "Spain",
+              "Spain",
+              "USA",
+              "USA",
+              "Canada",
+              "Canada",
+            ],
+            Year: [
+              2018, 2018, 2018, 2018, 2018, 2018, 2018, 2018, 2019, 2019, 2019,
+              2019, 2019, 2019, 2019, 2019, 2020, 2020, 2020, 2020, 2020, 2020,
+              2020, 2020,
+            ],
+            Medal: [
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+              "gold",
+              "silver",
+            ],
+            Total: [
+              3, 2, 1, 0, 4, 11, 8, 3, 2, 9, 0, 5, 3, 6, 2, 1, 7, 5, 6, 9, 2, 5,
+              6, 7,
+            ],
           }}
           xAxis={{
             fields: "Year",
@@ -453,14 +444,12 @@ export const StackedAreaChart: StoryObj<HvLineChartProps> = {
     return (
       <HvLineChart
         data={{
-          values: {
-            Group: ["Group 1", "Group 2", "Group 3"],
-            "Sales Target": [2300, 1000, 8500],
-            "Sales Per Rep": [6000, 1000, 1000],
-            "Monthly Sales": [3700, 7500, 1100],
-            Target: [2100, 8500, 3000],
-            Cash: [500, 8000, 9500],
-          },
+          Group: ["Group 1", "Group 2", "Group 3"],
+          "Sales Target": [2300, 1000, 8500],
+          "Sales Per Rep": [6000, 1000, 1000],
+          "Monthly Sales": [3700, 7500, 1100],
+          Target: [2100, 8500, 3000],
+          Cash: [500, 8000, 9500],
         }}
         xAxis={{
           fields: "Group",
@@ -514,7 +503,7 @@ export const HorizontalRangeSlider: StoryObj<HvLineChartProps> = {
 
     return (
       <HvLineChart
-        data={{ values: data }}
+        data={data}
         xAxis={{ fields: "Date" }}
         measures={{ fields: ["Sales Target", "Sales Volume"] }}
         horizontalRangeSlider={{ show: true }}
@@ -583,7 +572,7 @@ export const WithIntervalUpdates: StoryObj<HvLineChartProps> = {
 
     return (
       <HvLineChart
-        data={{ values: data }}
+        data={data}
         xAxis={{ fields: "Date" }}
         measures={{ fields: "Sales Target" }}
       />
