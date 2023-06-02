@@ -18,7 +18,7 @@ import {
   HvChartEmptyCellMode,
 } from "@viz/types";
 import { useTheme } from "@hitachivantara/uikit-react-core";
-import { getAgFunc, getAxisType } from "@viz/utils";
+import { getAgFunc, getAxisType, getLegendIcon } from "@viz/utils";
 import { from, table, internal } from "arquero";
 import ColumnTable from "arquero/dist/types/table/column-table";
 
@@ -135,6 +135,8 @@ export interface HvLineChartProps {
   emptyCellMode?: HvChartEmptyCellMode;
   /** Whether the area under the lines should be filled. Defaults to `false`. */
   area?: boolean;
+  /** Sets opacity of the filled area if `area` is true. Defaults to `0.5`. */
+  areaOpacity?: number;
   /** Whether the chart is stacked. Defaults to `false`. */
   stacked?: boolean;
   /** Ranger slider options for the horizontal axis. */
@@ -160,6 +162,7 @@ export const HvLineChart = ({
   stacked = false,
   emptyCellMode = "void",
   horizontalRangeSlider,
+  areaOpacity = 0.5,
 }: HvLineChartProps) => {
   const { activeTheme, selectedMode, selectedTheme } = useTheme();
   const { theme } = useVizTheme();
@@ -254,7 +257,7 @@ export const HvLineChart = ({
               name: lineNameFormatter ? lineNameFormatter(c) : c,
               data: chartData.array(c),
               type: "line",
-              areaStyle: area ? {} : undefined,
+              areaStyle: area ? { opacity: areaOpacity } : undefined,
               connectNulls: emptyCellMode === "connect" || false,
               stack: stacked ? "x" : undefined,
             };
@@ -267,6 +270,7 @@ export const HvLineChart = ({
     stacked,
     lineNameFormatter,
     emptyCellMode,
+    areaOpacity,
   ]);
 
   const chartTooltip = useMemo(() => {
@@ -361,9 +365,10 @@ export const HvLineChart = ({
     return {
       legend: {
         show: legend?.show ?? chartSeries.series.length > 1,
+        icon: getLegendIcon(area),
       },
     };
-  }, [chartSeries, legend?.show]);
+  }, [chartSeries, legend?.show, area]);
 
   const chartHorizontalRangerSlider = useMemo(() => {
     return {

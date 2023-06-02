@@ -37,6 +37,7 @@ export const Main: StoryObj<HvLineChartProps> = {
     area: false,
     stacked: false,
     emptyCellMode: "connect",
+    areaOpacity: 0.5,
   },
   argTypes: {
     legend: { control: { disable: true } },

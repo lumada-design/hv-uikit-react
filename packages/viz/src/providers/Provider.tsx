@@ -101,7 +101,6 @@ export const HvVizProvider = ({ children }: HvVizProviderProps) => {
           themeStructure?.colors.modes[mode].cat6,
         ],
         legend: {
-          icon: "path://M0,0L16,0L16,2L0,2Z",
           textStyle: {
             ...baseText,
           },
