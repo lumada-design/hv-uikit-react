@@ -19,8 +19,8 @@ import { styles } from "./BaseInput.styles";
 // Global styles for the base input.
 const baseInputStyles = emotionCss({
   "input:-webkit-autofill": {
-    "-webkit-box-shadow": `0 0 0px 1000px ${theme.colors.atmo1} inset`,
-    "-webkit-text-fill-color": theme.colors.secondary,
+    WebkitBoxShadow: `0 0 0px 1000px ${theme.colors.atmo1} inset`,
+    WebkitTextFillColor: theme.colors.secondary,
   },
 
   // Clears number input up/down arrows in Chrome and Firefox
@@ -31,6 +31,11 @@ const baseInputStyles = emotionCss({
   },
   "input[type=number]": {
     MozAppearance: "textfield",
+  },
+
+  // Clears time input clock in Chrome
+  "input::-webkit-calendar-picker-indicator": {
+    display: "none",
   },
 
   // Clears search input clear button in Chrome
