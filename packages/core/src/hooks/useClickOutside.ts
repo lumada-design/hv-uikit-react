@@ -13,7 +13,7 @@ export const useClickOutside = <T extends HTMLElement = HTMLElement>(
       const isEscape = (event as KeyboardEvent).key === "Escape";
 
       if (!el || el.contains((event?.target as Node) || null)) {
-        return;
+        return {};
       }
 
       return isKeyUp ? (isEscape ? handler(event) : null) : handler(event);

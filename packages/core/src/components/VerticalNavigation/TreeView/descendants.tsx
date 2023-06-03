@@ -167,7 +167,7 @@ export function useDescendant(descendant) {
   return { parentId, index, level };
 }
 
-export function DescendantProvider(props: DescendantProviderProps) {
+export const DescendantProvider = (props: DescendantProviderProps) => {
   const { children, id, level } = props;
 
   const [items, set] = useState<Item[]>([]);
@@ -216,7 +216,6 @@ export function DescendantProvider(props: DescendantProviderProps) {
         newItems.splice(index, 0, newItem);
       }
       newItems.forEach((item, position) => {
-        // eslint-disable-next-line no-param-reassign
         item.index = position;
       });
       return newItems;
@@ -245,7 +244,7 @@ export function DescendantProvider(props: DescendantProviderProps) {
       {children}
     </DescendantContext.Provider>
   );
-}
+};
 
 export type DescendantProviderProps = {
   children?: React.ReactNode;

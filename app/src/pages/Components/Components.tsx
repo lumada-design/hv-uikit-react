@@ -40,7 +40,7 @@ import {
 } from "components/components";
 import { styles } from "./Components.styles";
 
-const components = [
+const componentsList = [
   {
     id: "avatar",
     content: <Avatar />,
@@ -242,7 +242,7 @@ const initialSelection = [
   "typography",
 ];
 
-const App = () => {
+const Components = () => {
   const [params, setParams] = useSearchParams();
   const [selection, setSelection] = useState(
     params.get("selection")?.split(",") ?? initialSelection
@@ -253,7 +253,8 @@ const App = () => {
   }, [selection]);
 
   const componentsToShow = useMemo(
-    () => components.map((c) => ({ ...c, selected: selection.includes(c.id) })),
+    () =>
+      componentsList.map((c) => ({ ...c, selected: selection.includes(c.id) })),
     [selection]
   );
 
@@ -305,7 +306,7 @@ const App = () => {
       </HvBox>
       <HvContainer maxWidth="md">
         {componentsToShow.map((c) => (
-          <div key={c.id} id={c.id} css={{ scrollMarginTop: 64 + 10 }}>
+          <div key={c.id} id={c.id} style={{ scrollMarginTop: 64 + 10 }}>
             {!!c.selected && <Component {...c} />}
           </div>
         ))}
@@ -314,4 +315,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Components;

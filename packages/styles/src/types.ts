@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import * as CSS from "csstype";
 import { colors } from "./tokens/colors";
 import * as tokens from "./tokens";
 import * as themes from "./themes";
@@ -13,6 +13,8 @@ const flattenTokens = {
     ...tokens.colors.light,
   }, // Flatten colors and add background color
 };
+
+interface CSSProperties extends CSS.Properties<string | number> {}
 
 export type HvThemeTokens = typeof flattenTokens;
 

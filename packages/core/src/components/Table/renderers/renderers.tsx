@@ -14,10 +14,10 @@ import {
   HvOverflowTooltipProps,
 } from "@core/components";
 import { HvTableHeaderRenderer, HvCellProps } from "../hooks/useTable";
-import DateColumnCell from "./DateColumnCell/index";
-import SwitchColumnCell from "./SwitchColumnCell";
-import ProgressColumnCell from "./ProgressColumnCell";
-import DropdownColumnCell from "./DropdownColumnCell";
+import { HvDateColumnCell } from "./DateColumnCell";
+import { HvSwitchColumnCell } from "./SwitchColumnCell";
+import { HvProgressColumnCell } from "./ProgressColumnCell";
+import { HvDropdownColumnCell } from "./DropdownColumnCell";
 import { hvStringFallback, hvNumberFallback } from "../utils";
 
 export function hvTextColumn<
@@ -60,7 +60,7 @@ export function hvDateColumn<
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: ({ value }: HvCellProps<D, H>) => (
-      <DateColumnCell date={value} dateFormat={dateFormat} />
+      <HvDateColumnCell date={value} dateFormat={dateFormat} />
     ),
     sortType: "alphanumeric",
     sortDescFirst: true,
@@ -186,7 +186,7 @@ export function hvSwitchColumn<
     Cell: (cellProps: HvCellProps<D, H>) => {
       const { value, row } = cellProps;
       return (
-        <SwitchColumnCell
+        <HvSwitchColumnCell
           checked={value}
           value={row.id}
           switchLabel={switchLabel}
@@ -219,7 +219,7 @@ export function hvDropdownColumn<
       const { value, row, column } = cellProps;
       const dsbld = value.length < 1;
       return (
-        <DropdownColumnCell
+        <HvDropdownColumnCell
           values={value}
           placeholder={dsbld ? disabledPlaceholder : placeholder}
           onChange={(val) => onChange?.(row.id, val)}
@@ -255,7 +255,7 @@ export function hvProgressColumn<
 
       if (total) {
         return (
-          <ProgressColumnCell partial={partial} total={total} color={color} />
+          <HvProgressColumnCell partial={partial} total={total} color={color} />
         );
       }
 

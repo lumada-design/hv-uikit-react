@@ -27,7 +27,6 @@ export const findNodeById = (id, node) => {
     return node;
   }
   if ("rules" in node) {
-    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < node.rules.length; ++i) {
       const rule = node.rules[i];
 
@@ -49,7 +48,6 @@ export const findParentById = (id, node, parent?) => {
   if ("rules" in node) {
     const group = node;
 
-    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < group.rules.length; ++i) {
       const rule = group.rules[i];
 

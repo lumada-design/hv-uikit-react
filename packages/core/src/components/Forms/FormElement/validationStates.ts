@@ -4,7 +4,8 @@ const validationState = Object.freeze({
   invalid: "invalid",
 });
 
-const isValid = (compareState) => compareState === validationState.valid;
-const isInvalid = (compareState) => compareState === validationState.invalid;
+export const isValid = (compareState) => compareState === validationState.valid;
+export const isInvalid = (compareState) =>
+  compareState === validationState.invalid;
 
-export { validationState as default, isInvalid, isValid };
+export default validationState;

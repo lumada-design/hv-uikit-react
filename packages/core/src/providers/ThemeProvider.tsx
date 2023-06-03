@@ -107,10 +107,15 @@ export const HvThemeProvider = ({
     },
   });
 
+  const emotionCacheValue = useMemo(
+    () => ({ cache: emotionCache }),
+    [emotionCache]
+  );
+
   return (
     <MuiThemeProvider theme={MuiTheme}>
       <HvThemeContext.Provider value={value}>
-        <EmotionContext.Provider value={{ cache: emotionCache }}>
+        <EmotionContext.Provider value={emotionCacheValue}>
           {children}
         </EmotionContext.Provider>
       </HvThemeContext.Provider>

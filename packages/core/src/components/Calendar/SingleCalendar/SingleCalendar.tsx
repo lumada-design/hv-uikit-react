@@ -85,11 +85,11 @@ export const HvSingleCalendar = ({
     const parent = el?.parentElement?.parentElement;
     const siblings =
       parent != null
-        ? [
-            ...parent.getElementsByClassName(
+        ? Array.from(
+            parent.getElementsByClassName(
               singleCalendarClasses.cellContainer as string
-            ),
-          ]
+            )
+          )
         : [];
     const elIndex = el ? siblings.indexOf(el) : 0;
 

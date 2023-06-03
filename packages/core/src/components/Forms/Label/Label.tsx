@@ -8,6 +8,8 @@ import { StyledTypography } from "./Label.styles";
 import labelClasses, { HvLabelClasses } from "./labelClasses";
 
 export interface HvLabelProps extends HvBaseProps {
+  /** Id to be applied to the root node */
+  id?: string;
   /** The text to be shown by the label. */
   label?: React.ReactNode;
   /** The id of the form element the label is bound to. */

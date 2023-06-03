@@ -439,6 +439,7 @@ export const HvBaseDropdown = ({
         {...attributes.popper}
       >
         <ClickAwayListener onClickAway={handleOutside}>
+          {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
           <div onKeyDown={handleContainerKeyDown}>
             {popperPlacement.includes("bottom") && (
               <StyledExtension

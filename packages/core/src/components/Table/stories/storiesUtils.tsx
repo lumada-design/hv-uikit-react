@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import range from "lodash/range";
 import { Random } from "@core/utils";
 import { HvCellProps, HvTableColumnConfig } from "@core/components";
@@ -37,8 +37,7 @@ export interface NewEntry {
 }
 
 // If a Cell gets a value, it has to return a react element
-// eslint-disable-next-line react/jsx-no-useless-fragment
-const getCell = (value: string) => <>{value}</>;
+const getCell = (value: string) => value as unknown as React.ReactElement;
 
 const rand = new Random();
 

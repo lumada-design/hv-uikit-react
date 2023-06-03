@@ -31,6 +31,17 @@ import {
 } from "../../renderers/renderers";
 import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
+const EmptyRow = ({ height }) => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} style={{ height }}>
+      <HvEmptyState
+        message="No data to display"
+        icon={<Ban role="presentation" />}
+      />
+    </HvTableCell>
+  </HvTableRow>
+);
+
 const AllColumnRenderers = () => {
   const getColumns = () => [
     hvSwitchColumn<NewRendererEntry, string>(
@@ -101,17 +112,6 @@ const AllColumnRenderers = () => {
   const initialData = useMemo(() => makeRenderersData(64), []);
 
   const [data] = useState(initialData);
-
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} style={{ height: 100 }}>
-        <HvEmptyState
-          message="No data to display"
-          icon={<Ban role="presentation" />}
-        />
-      </HvTableCell>
-    </HvTableRow>
-  );
 
   const {
     getTableProps,
@@ -191,7 +191,7 @@ const AllColumnRenderers = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow height={100} /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
@@ -394,17 +394,6 @@ const TextColumnRenderer = () => {
 
   const [data] = useState(initialData);
 
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} style={{ height: 100 }}>
-        <HvEmptyState
-          message="No data to display"
-          icon={<Ban role="presentation" />}
-        />
-      </HvTableCell>
-    </HvTableRow>
-  );
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -467,7 +456,7 @@ const TextColumnRenderer = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow height={100} /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
@@ -600,17 +589,6 @@ const NumberColumnRenderer = () => {
 
   const [data] = useState(initialData);
 
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} style={{ height: 50 }}>
-        <HvEmptyState
-          message="No data to display"
-          icon={<Ban role="presentation" />}
-        />
-      </HvTableCell>
-    </HvTableRow>
-  );
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -673,7 +651,7 @@ const NumberColumnRenderer = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow height={50} /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
@@ -805,17 +783,6 @@ const DateColumnRenderer = () => {
 
   const [data] = useState(initialData);
 
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} style={{ height: 50 }}>
-        <HvEmptyState
-          message="No data to display"
-          icon={<Ban role="presentation" />}
-        />
-      </HvTableCell>
-    </HvTableRow>
-  );
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -878,7 +845,7 @@ const DateColumnRenderer = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow height={50} /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
@@ -1016,17 +983,6 @@ const ExpandColumnRenderer = () => {
 
   const [data] = useState(initialData);
 
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} style={{ height: 50 }}>
-        <HvEmptyState
-          message="No data to display"
-          icon={<Ban role="presentation" />}
-        />
-      </HvTableCell>
-    </HvTableRow>
-  );
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -1109,7 +1065,7 @@ const ExpandColumnRenderer = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow height={50} /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
@@ -1283,17 +1239,6 @@ const SwitchColumnRenderer = () => {
     ];
   }, [data]);
 
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} style={{ height: 50 }}>
-        <HvEmptyState
-          message="No data to display"
-          icon={<Ban role="presentation" />}
-        />
-      </HvTableCell>
-    </HvTableRow>
-  );
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -1356,7 +1301,7 @@ const SwitchColumnRenderer = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow height={50} /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
@@ -1509,17 +1454,6 @@ const TagColumnRenderer = () => {
 
   const [data] = useState(initialData);
 
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} style={{ height: 50 }}>
-        <HvEmptyState
-          message="No data to display"
-          icon={<Ban role="presentation" />}
-        />
-      </HvTableCell>
-    </HvTableRow>
-  );
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -1582,7 +1516,7 @@ const TagColumnRenderer = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow height={50} /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
@@ -1723,17 +1657,6 @@ const ProgressColumnRenderer = () => {
 
   const [data] = useState(initialData);
 
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} style={{ height: 100 }}>
-        <HvEmptyState
-          message="No data to display"
-          icon={<Ban role="presentation" />}
-        />
-      </HvTableCell>
-    </HvTableRow>
-  );
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -1796,7 +1719,7 @@ const ProgressColumnRenderer = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow height={100} /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
@@ -1948,17 +1871,6 @@ const DropdownColumnRenderer = () => {
     ];
   }, [data]);
 
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} style={{ height: 100 }}>
-        <HvEmptyState
-          message="No data to display"
-          icon={<Ban role="presentation" />}
-        />
-      </HvTableCell>
-    </HvTableRow>
-  );
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -2021,7 +1933,7 @@ const DropdownColumnRenderer = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow height={100} /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>

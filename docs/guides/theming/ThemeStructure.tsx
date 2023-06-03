@@ -1,5 +1,3 @@
-/* eslint-disable import/namespace */
-
 import { ReactElement, ReactNode, useState } from "react";
 import {
   HvDropdown,
@@ -36,6 +34,77 @@ const defaultThemes = [...Object.keys(themes)].map((name) => ({
   selected: name === "ds5" || false,
 }));
 
+const styles = {
+  controls: css({
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    marginBottom: theme.spacing("sm"),
+    gap: theme.spacing("sm"),
+    flexWrap: "wrap",
+  }),
+  dropdown: css({ width: "200px" }),
+  switchContainer: css({
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+  }),
+  switch: css({ marginRight: theme.spacing("xs") }),
+  tree: css({
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+  }),
+  accordionRoot: css({ width: "100%", "& > h1": { height: "25px" } }),
+  accordionContainer: css({ padding: 0 }),
+  accordionLabel: css({ height: "25px" }),
+  themeValue: css({
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+  }),
+  colorBox: css({
+    height: "16px",
+    width: "16px",
+    marginRight: theme.space.xs,
+    border: `1px solid ${theme.colors.secondary}`,
+  }),
+  positive: css({
+    color: theme.colors.positive,
+  }),
+  neutral: css({
+    color: theme.colors.neutral,
+  }),
+};
+
+const levelSpacing = (level: number): string => {
+  return theme.spacing(1 + level);
+};
+
+const ThemeValue = ({
+  children,
+  level,
+  label,
+}: {
+  children: ReactNode;
+  level: number;
+  label: string;
+}) => (
+  <div
+    className={styles.themeValue}
+    style={{
+      paddingLeft: levelSpacing(level),
+    }}
+  >
+    <HvTypography variant="label">{label}: &nbsp;</HvTypography>
+    {children}
+  </div>
+);
+
 export const ThemeStructure = () => {
   const [selectedTheme, setSelectedTheme] = useState<string | undefined>(
     defaultThemes.find((t) => t.selected)?.id
@@ -54,77 +123,6 @@ export const ThemeStructure = () => {
 
     return computedValue;
   };
-
-  const styles = {
-    controls: css({
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "flex-start",
-      alignItems: "center",
-      marginBottom: theme.spacing("sm"),
-      gap: theme.spacing("sm"),
-      flexWrap: "wrap",
-    }),
-    dropdown: css({ width: "200px" }),
-    switchContainer: css({
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "flex-start",
-      alignItems: "center",
-    }),
-    switch: css({ marginRight: theme.spacing("xs") }),
-    tree: css({
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "flex-start",
-      alignItems: "flex-start",
-    }),
-    accordionRoot: css({ width: "100%", "& > h1": { height: "25px" } }),
-    accordionContainer: css({ padding: 0 }),
-    accordionLabel: css({ height: "25px" }),
-    themeValue: css({
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "flex-start",
-      alignItems: "center",
-    }),
-    colorBox: css({
-      height: "16px",
-      width: "16px",
-      marginRight: theme.space.xs,
-      border: `1px solid ${theme.colors.secondary}`,
-    }),
-    positive: css({
-      color: theme.colors.positive,
-    }),
-    neutral: css({
-      color: theme.colors.neutral,
-    }),
-  };
-
-  const levelSpacing = (level: number): string => {
-    return theme.spacing(1 + level);
-  };
-
-  const ThemeValue = ({
-    children,
-    level,
-    label,
-  }: {
-    children: ReactNode;
-    level: number;
-    label: string;
-  }) => (
-    <div
-      className={styles.themeValue}
-      style={{
-        paddingLeft: levelSpacing(level),
-      }}
-    >
-      <HvTypography variant="label">{label}: &nbsp;</HvTypography>
-      {children}
-    </div>
-  );
 
   const renderLevel = (
     value: object | string | number,
@@ -177,7 +175,7 @@ export const ThemeStructure = () => {
       return (
         <ThemeValue key={`${label}-${level}`} level={level} label={label}>
           <HvTypography variant="label" classes={{ root: styles.positive }}>
-            "{processedValue}"
+            {processedValue}
           </HvTypography>
         </ThemeValue>
       );

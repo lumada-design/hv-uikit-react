@@ -64,10 +64,9 @@ export const HvTimeAgo = ({
     showSeconds,
   });
 
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  if (justText && timestamp) return <>{timeAgo}</>;
-
-  return (
+  return justText && timestamp ? (
+    <>timeAgo</>
+  ) : (
     <Component className={clsx(classes?.root, timeAgoClasses.root)} {...others}>
       {!timestamp ? emptyElement : timeAgo}
     </Component>

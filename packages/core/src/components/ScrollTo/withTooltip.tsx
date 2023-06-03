@@ -8,7 +8,7 @@ import { withTooltip as withTooltipUtil } from "@core/hocs";
 const hideTooltip = (event: React.MouseEvent<HTMLDivElement>) => {
   const isOverFlow =
     (event.target as HTMLDivElement).children.length > 1
-      ? Array.of(...(event.target as HTMLDivElement).children).some(
+      ? Array.from(event.currentTarget.children).some(
           (child) => child.scrollWidth > child.clientWidth
         )
       : (event.target as HTMLDivElement).scrollWidth >

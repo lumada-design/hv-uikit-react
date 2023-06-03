@@ -10,7 +10,6 @@ import { styles } from "./Unit.styles";
 
 interface UnitProps {
   id?: string;
-  classes?: any;
   state: DateFieldState;
   segment: DateSegment;
   placeholder?: string;

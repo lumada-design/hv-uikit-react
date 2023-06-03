@@ -26,7 +26,7 @@ const FontSizes = () => {
   useEffect(() => {
     const sizes: HvListValue[] = [];
     if (activeTheme) {
-      Object.keys(activeTheme.fontSizes).map((size) => {
+      Object.keys(activeTheme.fontSizes).forEach((size) => {
         sizes.push({ label: size });
       });
     }

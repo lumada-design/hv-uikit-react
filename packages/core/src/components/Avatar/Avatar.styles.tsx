@@ -74,8 +74,7 @@ export const StyledStatus = styled(
 );
 
 export const StyledAvatar = styled(MuiAvatar)(
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ({ component, size }: { component: any; size: HvAvatarSize }) => ({
+  ({ size }: { component: any; size: HvAvatarSize }) => ({
     // root
     fontSize: "1rem",
     // avatar

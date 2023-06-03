@@ -1,1 +1,1 @@
-export { default } from "./DateColumnCell";
+export { default as HvDateColumnCell } from "./DateColumnCell";

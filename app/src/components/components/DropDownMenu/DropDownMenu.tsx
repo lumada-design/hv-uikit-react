@@ -1,12 +1,12 @@
-import { HvDropDownMenu } from "@hitachivantara/uikit-react-core";
+import { HvDropDownMenu, HvListValue } from "@hitachivantara/uikit-react-core";
 import { Calendar, Plane, User } from "@hitachivantara/uikit-react-icons";
 
-export const DropDownMenu = () => {
-  const iconSelectedColor =
-    (Icon) =>
-    ({ isSelected }) =>
-      <Icon color={isSelected ? "atmo1" : undefined} />;
+const iconSelectedColor =
+  (Icon: React.ElementType): HvListValue["icon"] =>
+  ({ isSelected }) =>
+    <Icon color={isSelected ? "atmo1" : undefined} />;
 
+export const DropDownMenu = () => {
   return (
     <div
       style={{

@@ -20,10 +20,9 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   const { data } = item;
   const hasSubLevel = data && data.length;
   const isMenu = type === "menu";
-  const isSelected =
-    (selectionPath && selectionPath[isMenu ? 1 : 0] === item.id) || false;
+  const isSelected = selectionPath?.[isMenu ? 1 : 0] === item.id;
   const isCurrent = isSelected
-    ? selectionPath.length > (isMenu ? 2 : 1)
+    ? selectionPath?.length > (isMenu ? 2 : 1)
       ? true
       : "page"
     : undefined;

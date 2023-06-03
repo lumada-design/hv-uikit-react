@@ -2,11 +2,11 @@ import { createTheme, HvTheme } from "@hitachivantara/uikit-react-core";
 import { HvThemeStructure } from "@hitachivantara/uikit-styles";
 import {
   createContext,
+  useMemo,
   useState,
   Dispatch,
   SetStateAction,
   useEffect,
-  useMemo,
 } from "react";
 import merge from "lodash/merge";
 import { themeDiff } from "./utils";

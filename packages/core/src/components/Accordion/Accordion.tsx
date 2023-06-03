@@ -59,6 +59,10 @@ export interface HvAccordionProps
    * Typography variant for the label.
    */
   labelVariant?: HvTypographyVariants;
+  /**
+   * Content to be rendered
+   */
+  children: React.ReactNode;
 }
 
 /**

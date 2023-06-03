@@ -16,7 +16,7 @@ function isAnd(rule) {
 
 const groupHasNoSubGroupsOrJustOneOR = (group) => {
   let foundOr = false;
-  // eslint-disable-next-line no-plusplus
+
   for (let i = 0; i !== group.rules.length; ++i) {
     const rule = group.rules[i];
     if ("combinator" in rule) {

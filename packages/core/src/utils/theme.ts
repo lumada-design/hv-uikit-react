@@ -12,9 +12,9 @@ import { HvTheme, HvCreateThemeProps } from "@core/types";
  * Sets the element style properties.
  */
 const setElementStyle = (element: HTMLElement, style: CSSProperties) => {
-  for (const property in style) {
-    element.style[property] = style[property];
-  }
+  Object.entries(style).forEach(([property, value]) => {
+    element.style[property] = value;
+  });
 };
 
 /**

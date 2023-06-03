@@ -90,7 +90,6 @@ export const HvTableBody = forwardRef<HTMLElement, HvTableBodyProps>(
                       rootRef={bodyRef}
                       key={`row-${element.key}`}
                       strategy="grid"
-                      useArrows
                       filterClass={tableSectionContext.filterClassName}
                       navigationJump={1}
                       focusDisabled={false}
