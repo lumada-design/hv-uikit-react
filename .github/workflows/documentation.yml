@@ -17,8 +17,8 @@ env:
   PUBLISH_FOLDER: ${{ inputs.publish-folder || github.ref_name }}
 
 jobs:
-  build-deploy:
-    name: Build and Deploy 
+  build-artifacts:
+    name: Build Documentation and App
     runs-on: ubuntu-latest
 
     steps:
@@ -27,16 +27,33 @@ jobs:
 
       - name: Build Artifacts
         uses: ./.github/actions/build-artifacts
+        env:
+          APP_BASE_PATH: uikit-app/${{ env.PUBLISH_FOLDER }}/
+
+  deploy-artifacts:
+    name: Deploy Documentation and App
+    runs-on: ubuntu-latest
+    needs: build-artifacts
+    strategy:
+      matrix:
+        include:
+          - folder: "uikit"
+            artifact: "documentation"
+          - folder: "uikit-app"
+            artifact: "app"
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Deploy Artifacts
         uses: ./.github/actions/deploy-artifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
-          ARTIFACTS_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-          DOCUMENTATION_PUBLISH_FOLDER: uikit/${{ env.PUBLISH_FOLDER }}
-          APP_PUBLISH_FOLDER: uikit-app/${{ env.PUBLISH_FOLDER }}
-          DOCUMENTATION_PUBLISH_MESSAGE: "docs: documentation for ${{ env.PUBLISH_FOLDER }} of ${{ github.repository }}"
-          APP_PUBLISH_MESSAGE: "chore: app for ${{ env.PUBLISH_FOLDER }} of ${{ github.repository }}"
-          DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ env.PUBLISH_FOLDER }}/
-          APP_URL: https://${{ github.repository_owner }}.github.io/uikit-app/${{ env.PUBLISH_FOLDER }}/
+          PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+          PUBLISH_FOLDER: ${{ matrix.folder }}/${{ env.PUBLISH_FOLDER }}
+          PUBLISH_MESSAGE: "chore: ${{ matrix.artifact }} for ${{ env.PUBLISH_FOLDER }} of ${{ github.repository }}"
+          URL: https://${{ github.repository_owner }}.github.io/${{ matrix.folder }}/${{ env.PUBLISH_FOLDER }}/ 
+          ARTIFACT: ${{ matrix.artifact }}
+

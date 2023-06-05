@@ -29,7 +29,7 @@ runs:
 
     - name: Build App
       if: ${{ inputs.build-app == 'true' }}
-      run: npx vite build app  
+      run: npx vite build app --base=${{ env.APP_BASE_PATH }}
       shell: bash
 
     - name: Archive App

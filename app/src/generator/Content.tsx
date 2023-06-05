@@ -28,7 +28,7 @@ const Content = () => {
           customTheme?.colors?.modes[selectedMode]?.backgroundColor,
       }}
     >
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <HvProvider
           classNameKey="gen-root"
           rootElementId="gen-root"
