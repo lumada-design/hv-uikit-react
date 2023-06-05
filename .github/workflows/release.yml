@@ -72,8 +72,8 @@ jobs:
             echo "published=false" >> "$GITHUB_OUTPUT"
           fi
 
-  publish-doc:
-    name: Publish Doc
+  publish-artifacts:
+    name: Publish Artifacts
     needs: [publish]
     if: needs.publish.outputs.published == 'true'
     uses: ./.github/workflows/documentation.yml

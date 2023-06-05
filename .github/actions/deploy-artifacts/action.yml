@@ -1,5 +1,5 @@
-name: Documentation
-description: Deploy UI Kit documentation
+name: Artifacts
+description: Deploy UI Kit Documentation and App
 
 runs:
   using: "composite"
@@ -26,10 +26,20 @@ runs:
         ref: ${{ env.DEPLOYMENT_REF }}
         desc: ${{ env.DOCUMENTATION_PUBLISH_MESSAGE }}
 
-    - name: Checkout Documentation Repository
+    - name: Start App Deployment
+      uses: bobheadxi/deployments@v1
+      id: deployment
+      with:
+        step: start
+        token: ${{ env.GITHUB_TOKEN }}
+        env: ${{ env.APP_PUBLISH_FOLDER }}
+        ref: ${{ env.DEPLOYMENT_REF }}
+        desc: ${{ env.APP_PUBLISH_MESSAGE }}
+
+    - name: Checkout Artifacts Repository
       uses: actions/checkout@v3
       with:
-        repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+        repository: ${{ env.ARTIFACTS_PUBLISH_REPO }}
         ref: master
         token: ${{ env.ORG_GHPAGES_DEPLOY_KEY }}
         path: gh-docs
@@ -39,23 +49,35 @@ runs:
       run: rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
       shell: bash
 
+    - name: Remove Previous App
+      run: rm -rf ${{ github.workspace }}/gh-docs/${APP_PUBLISH_FOLDER}/*
+      shell: bash
+
     - name: Fetch Documentation
       uses: actions/download-artifact@v3
       with:
         name: documentation
         path: ${{ github.workspace }}/gh-docs/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+    
+    - name: Fetch App
+      uses: actions/download-artifact@v3
+      with:
+        name: app
+        path: ${{ github.workspace }}/gh-docs/${{env.APP_PUBLISH_FOLDER}}
 
-    - name: Push Documentation
+    - name: Push Documentation and App
       run: |
         cd ${{ github.workspace }}/gh-docs
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
         git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
+        git add -A ${APP_PUBLISH_FOLDER}
+        git commit -m "${APP_PUBLISH_MESSAGE}"
         git push
       shell: bash
 
-    - name: Update Deployment Status
+    - name: Update Deployment Status for Documentation
       uses: bobheadxi/deployments@v1
       if: always()
       with:
@@ -65,3 +87,14 @@ runs:
         status: ${{ job.status }}
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
         env_url: ${{env.DOCUMENTATION_URL}}
+
+    - name: Update Deployment Status for App
+      uses: bobheadxi/deployments@v1
+      if: always()
+      with:
+        step: finish
+        token: ${{ env.GITHUB_TOKEN }}
+        env: ${{env.APP_PUBLISH_FOLDER}}
+        status: ${{ job.status }}
+        deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+        env_url: ${{env.APP_URL}}

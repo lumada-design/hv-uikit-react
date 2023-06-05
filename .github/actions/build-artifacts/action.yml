@@ -1,0 +1,40 @@
+name: Artifacts
+description: Build UI Kit Documentation and App
+
+inputs:
+  build-app: 
+    description: 'Whether the app should be built or not.'
+    required: false
+    type: boolean
+    default: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      uses: ./.github/actions/install-dependencies
+
+    - name: Build Documentation
+      run: npx cross-env NODE_OPTIONS=--max_old_space_size=8192 build-storybook --docs -o dist --quiet
+      shell: bash
+
+    - name: Archive Documentation
+      uses: actions/upload-artifact@v3
+      with:
+        name: documentation
+        path: ${{ github.workspace }}/dist
+
+    - name: Build App
+      if: ${{ inputs.build-app == 'true' }}
+      run: npx vite build app  
+      shell: bash
+
+    - name: Archive App
+      uses: actions/upload-artifact@v3
+      if: ${{ inputs.build-app == 'true' }}
+      with: 
+        name: app
+        path: ${{ github.workspace }}/app/dist

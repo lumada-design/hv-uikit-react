@@ -20,8 +20,8 @@ jobs:
     with:
       batch-id: pr-${{ github.event.number }}
 
-  documentation:
-    name: Documentation
+  artifacts:
+    name: Artifacts
     uses: ./.github/workflows/documentation.yml
     needs: [static-checks]
     secrets:

@@ -1,4 +1,4 @@
-name: Documentation
+name: Artifacts
 
 on:
   workflow_dispatch:
@@ -18,22 +18,25 @@ env:
 
 jobs:
   build-deploy:
-    name: Build and Deploy Doc
+    name: Build and Deploy 
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Build Documentation
-        uses: ./.github/actions/build-documentation
+      - name: Build Artifacts
+        uses: ./.github/actions/build-artifacts
 
-      - name: Deploy Documentation
-        uses: ./.github/actions/deploy-documentation
+      - name: Deploy Artifacts
+        uses: ./.github/actions/deploy-artifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
-          DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+          ARTIFACTS_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
           DOCUMENTATION_PUBLISH_FOLDER: uikit/${{ env.PUBLISH_FOLDER }}
+          APP_PUBLISH_FOLDER: uikit-app/${{ env.PUBLISH_FOLDER }}
           DOCUMENTATION_PUBLISH_MESSAGE: "docs: documentation for ${{ env.PUBLISH_FOLDER }} of ${{ github.repository }}"
+          APP_PUBLISH_MESSAGE: "chore: app for ${{ env.PUBLISH_FOLDER }} of ${{ github.repository }}"
           DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ env.PUBLISH_FOLDER }}/
+          APP_URL: https://${{ github.repository_owner }}.github.io/uikit-app/${{ env.PUBLISH_FOLDER }}/
