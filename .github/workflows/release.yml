@@ -61,9 +61,12 @@ jobs:
       - name: Check if packages were updated
         id: check-updates
         run: |
-         if grep -q "lerna success published" publish_logs.txt; then
+          if grep -q "lerna success published" publish_logs.txt; then
             echo "New packages were published"
             echo "published=true" >> "$GITHUB_OUTPUT"
+          elif grep -q "lerna Command failed" publish_logs.txt; then
+            echo "lerna Command failed"
+            exit 1
           else
             echo "No packages were updated"
             echo "published=false" >> "$GITHUB_OUTPUT"
