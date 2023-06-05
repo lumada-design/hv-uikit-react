@@ -12,7 +12,7 @@ exports[`List Row > should be defined 1`] = `
         class="HvTableHead-root css-1c8o9gy-StyledTableHead e122w5bu0"
       >
         <tr
-          class="HvTableRow-root HvTableRow-head HvTableRow-variantListHead css-1yn29m1-StyledTableRow e1cjstvf0"
+          class="HvTableRow-root HvTableRow-head HvTableRow-variantListHead css-19eu2u2-StyledTableRow e1cjstvf0"
         >
           <th
             class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList css-egwaik-StyledTableHeader eopmu0i1"
@@ -193,7 +193,7 @@ exports[`Simple Table > should be defined 1`] = `
         class="HvTableHead-root css-1c8o9gy-StyledTableHead e122w5bu0"
       >
         <tr
-          class="HvTableRow-root HvTableRow-head css-9e9tgp-StyledTableRow e1cjstvf0"
+          class="HvTableRow-root HvTableRow-head css-19i81t8-StyledTableRow e1cjstvf0"
         >
           <th
             class="HvTableHeader-root HvTableHeader-head css-105w81t-StyledTableHeader eopmu0i1"
