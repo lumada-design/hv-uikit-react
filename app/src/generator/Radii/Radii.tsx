@@ -1,6 +1,5 @@
 import { css } from "@emotion/css";
 import {
-  createTheme,
   HvButton,
   HvInput,
   HvTypography,
@@ -26,14 +25,13 @@ const Radii = () => {
   const setValueHandler = (radii: string) => {
     const radiiValue = currValues.get(radii) || 0;
 
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       radii: {
         ...customTheme.radii,
         [radii]: radii === "base" ? radiiValue : radiiValue,
       },
     });
-    updateCustomTheme(newTheme);
   };
 
   return (

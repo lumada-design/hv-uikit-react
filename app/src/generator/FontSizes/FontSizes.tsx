@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import {
   theme,
   useTheme,
-  createTheme,
   HvBox,
   HvDropdown,
   HvListValue,
@@ -53,22 +52,16 @@ const FontSizes = () => {
   };
 
   const onValueSetHandler = (value) => {
-    // check updated font sizes
-    const currFontSizes = {};
-    for (const [key, val] of currSizes.entries()) {
-      currFontSizes[key] = val;
-    }
-
+    // // check updated font sizes
     const fixedValue = value.toFixed(unit === "em" || unit === "rem" ? 1 : 0);
 
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       fontSizes: {
-        ...currFontSizes,
+        ...customTheme.fontSizes,
         [fontSize]: `${fixedValue}${unit}`,
       },
     });
-    updateCustomTheme(newTheme);
 
     // update curr sizes
     const map = new Map<string, string>(currSizes);
@@ -89,14 +82,13 @@ const FontSizes = () => {
       setFontValue(10);
     }
 
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       fontSizes: {
         ...customTheme.fontSizes,
         [fontSize]: `${fontValue}${parsedUnit}`,
       },
     });
-    updateCustomTheme(newTheme);
     // update curr sizes
     const map = new Map<string, string>(currSizes);
     map.set(fontSize, `${fontValue}${parsedUnit}`);

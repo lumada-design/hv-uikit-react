@@ -1,6 +1,5 @@
 import { css } from "@emotion/css";
 import {
-  createTheme,
   HvButton,
   HvInput,
   HvTypography,
@@ -26,14 +25,13 @@ const Sizes = () => {
   const setValueHandler = (size: string) => {
     const sizeValue = currValues.get(size) || 0;
 
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       sizes: {
         ...customTheme.sizes,
         [size]: sizeValue,
       },
     });
-    updateCustomTheme(newTheme);
   };
 
   return (

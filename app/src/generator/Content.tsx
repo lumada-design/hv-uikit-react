@@ -24,7 +24,8 @@ const Content = () => {
       id="gen-root"
       style={{
         width: open ? "calc(100% - 390px)" : "100%",
-        backgroundColor: customTheme.colors.modes[selectedMode].backgroundColor,
+        backgroundColor:
+          customTheme?.colors?.modes[selectedMode]?.backgroundColor,
       }}
     >
       <Router>

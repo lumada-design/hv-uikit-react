@@ -111,6 +111,7 @@ export const FontSize = ({
           </HvTypography>
           <HvDropdown
             values={getUnits()}
+            disabled={disabled}
             classes={{
               dropdownHeader: css({ border: "none!important" }),
               rootList: css({

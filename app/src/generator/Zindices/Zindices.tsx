@@ -1,6 +1,5 @@
 import { css } from "@emotion/css";
 import {
-  createTheme,
   HvButton,
   HvInput,
   HvTypography,
@@ -26,14 +25,13 @@ const Zindices = () => {
   const setValueHandler = (zIndex: string) => {
     const zIndexValue = currValues.get(zIndex) || 0;
 
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       zIndices: {
         ...customTheme.zIndices,
         [zIndex]: zIndexValue,
       },
     });
-    updateCustomTheme(newTheme);
   };
 
   return (

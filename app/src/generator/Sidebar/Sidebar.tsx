@@ -45,14 +45,6 @@ const Sidebar = () => {
   const [copied, setCopied] = useState(false);
   const [tab, setTab] = useState(0);
 
-  useEffect(() => {
-    const newTheme = createTheme({
-      name: "customTheme",
-      base: selectedTheme as HvBaseTheme,
-    });
-    updateCustomTheme(newTheme);
-  }, []);
-
   const nameChangeHandler = (name) => {
     setThemeName(name);
   };
@@ -107,9 +99,10 @@ const Sidebar = () => {
                   label: name,
                   selected: name === selectedTheme,
                 }))}
-                onChange={(t) =>
-                  changeTheme((t as HvListValue)?.value, selectedMode)
-                }
+                onChange={(t) => {
+                  // console.log("new theme is", (t as HvListValue)?.value)
+                  changeTheme((t as HvListValue)?.value, selectedMode);
+                }}
               />
             </HvBox>
             <HvBox>
