@@ -391,7 +391,6 @@ export const HvLineChart = ({
         ...chartXAxis,
         ...chartYAxis,
         ...chartSeries,
-        ...chartTooltip,
         ...chartLegend,
         ...chartHorizontalRangerSlider,
       },
@@ -403,7 +402,6 @@ export const HvLineChart = ({
     chartXAxis,
     chartYAxis,
     chartSeries,
-    chartTooltip,
     chartLegend,
     chartHorizontalRangerSlider,
   ]);
@@ -425,7 +423,10 @@ export const HvLineChart = ({
     <ReactECharts
       ref={chartRef}
       echarts={echarts}
-      option={initialOption}
+      option={{
+        ...initialOption,
+        ...chartTooltip,
+      }}
       theme={theme}
     />
   );
