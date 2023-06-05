@@ -44,6 +44,7 @@ Here's what there is to know about this migration:
   - [Date picker](#date-picker)
   - [Color picker](#color-picker)
   - [Carousel](#carousel)
+  - [Time Picker](#time-picker)
   - [Table Renderer - Expand Column](#table-renderer-expand-column)
   - [Drawer](#drawer)
 
@@ -70,7 +71,6 @@ The following components are missing:
   - Navigation anchors
   - Notification panel
 - From `@hitachivantara/uikit-react-core`:
-  - Time picker
   - User preferences
   - Query builder
 
@@ -785,3 +785,9 @@ The default icon for this component has changed to the one specified in DS5 spec
 This component was moved from the lab to the core package in this ui-kit version.
 In the story of this component in the previous uikit version we used a prop called: `disableBackdropClick`,
 this prop was deprecated by the underlining component from material ui and you should use `onClose` instead.
+
+### Time Picker <a id="time-picker" />
+
+- The deprecated props `hours`, `minutes`, and `seconds` were removed.
+  - Users should now use either `defaultValue` or `value` to set the time, in an uncontrolled or controlled way respectively (which follows the `HvTimePickerValue` type).
+- The `HvTimePickerValue` no longer has the `period` property, as it uses the 24-hour format for consistency

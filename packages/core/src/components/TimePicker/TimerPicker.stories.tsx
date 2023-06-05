@@ -23,7 +23,7 @@ export const Main: StoryObj<HvTimePickerProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
-    showAmPm: { control: { disable: true } },
+    timeFormat: { control: { disable: true } },
     onChange: { control: { disable: true } },
   },
   decorators: [makeDecorator({ minHeight: 200 })],
@@ -144,7 +144,7 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
     docs: {
       description: {
         story:
-          "Use the `showAmPm` prop to show the 12-hour format and the `AM`/`PM` toggle.",
+          "Use the `timeFormat` prop to force either the 12-hour or 24-hour clock format.",
       },
     },
   },
@@ -154,7 +154,7 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
   render: () => {
     return (
       <HvTimePicker
-        showAmPm
+        timeFormat="12"
         label="Time Picker"
         defaultValue={{ hours: 19, minutes: 30, seconds: 14 }}
       />

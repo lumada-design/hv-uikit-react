@@ -33,11 +33,18 @@ const toTime = (value?: HvTimePickerValue) => {
   return new Time(hours, minutes, seconds);
 };
 
+const getFormat = (timeFormat?: TimeFormat) => {
+  if (timeFormat == null) return 24;
+  return timeFormat === "12" ? 12 : 24;
+};
+
 type TimePickerKey = keyof typeof styles;
 
 const cc = getClasses(Object.keys(styles) as TimePickerKey[], "HvTimePicker");
 
 export { cc as timePickerClasses };
+
+export type TimeFormat = "12" | "24";
 
 export type HvTimePickerClasses = Record<TimePickerKey, string>;
 
@@ -87,10 +94,10 @@ export interface HvTimePickerProps
   /** The placeholder of the seconds input. */
   secondsPlaceholder?: string;
   /**
-   * Whether the time picker should show the AM/PM 12-hour clock options
+   * Whether the time picker should show the AM/PM 12-hour clock or the 24-hour one.
    * If undefined, the component will use a format according to the passed locale.
    */
-  showAmPm?: boolean;
+  timeFormat?: TimeFormat;
   /** Whether to show the native time picker instead */
   showNative?: boolean;
   /** Locale that will provide the time format(12 or 24 hour format). It is "overwritten" by `showAmPm` */
@@ -148,7 +155,7 @@ export const HvTimePicker = (props: HvTimePickerProps) => {
     value: valueProp,
     defaultValue: defaultValueProp,
 
-    showAmPm,
+    timeFormat,
     showNative,
     disableExpand,
     locale = "en",
@@ -175,7 +182,7 @@ export const HvTimePicker = (props: HvTimePickerProps) => {
     isReadOnly: readOnly,
     isDisabled: disabled,
     granularity: "second",
-    hourCycle: showAmPm != null ? (showAmPm ? 12 : 24) : 24, // undefined,
+    hourCycle: getFormat(timeFormat),
     onChange: (value) => {
       const { hour: hours, minute: minutes, second: seconds } = value;
       onChange?.({ hours, minutes, seconds });
