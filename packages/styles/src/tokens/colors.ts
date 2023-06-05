@@ -229,9 +229,9 @@ const semanticDark = {
   negative_120: "#D92750",
   catastrophic: "#9A76E7",
   sema6: "#928FFF",
-  neutral_20: "#D3E3F6",
-  positive_20: "#DFECD1",
-  negative_20: "#F5D8D8",
+  neutral_20: "#D8E6F1",
+  positive_20: "#D7E6CF",
+  negative_20: "#F4D3D4",
   sema10: "#F4CAB0",
   sema11: "#F1B7A0",
   sema12: "#EEA291",
@@ -242,7 +242,7 @@ const semanticDark = {
   sema17: "#26C6DA",
   sema18: "#00ACC1",
   sema19: "#00A0B7",
-  warning_20: "#F9E3C5",
+  warning_20: "#FBF2D8",
 };
 
 const supportDark = {
