@@ -7,13 +7,13 @@ import {
   HvListValue,
   useTheme,
   theme,
-  HvSlider,
 } from "@hitachivantara/uikit-react-core";
 import { extractFontSizeUnit, getVarValue } from "generator/utils";
 import { useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import debounce from "lodash/debounce";
 import { css } from "@emotion/css";
+import { FontSize } from "components/common";
 import { styles } from "./Typography.styles";
 
 const typographyToShow = [
@@ -27,32 +27,6 @@ const typographyToShow = [
   "caption1",
   "caption2",
 ];
-
-const unitsToShow = ["px", "pt", "em", "rem"];
-
-const getSliderPropsByTypography = (
-  updatedSizes: Map<string, { value: number; unit: string }>,
-  typographyName: string
-) => {
-  const defaultValue = {
-    min: 0,
-    max: 100,
-    markDigits: 0,
-  };
-  const t = updatedSizes.get(typographyName);
-
-  if (!t || t.unit === "px") {
-    return defaultValue;
-  }
-
-  if (t.unit === "em" || t.unit === "rem") {
-    return {
-      min: 0,
-      max: 10,
-      markDigits: 1,
-    };
-  }
-};
 
 const Typography = () => {
   const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
@@ -69,7 +43,6 @@ const Typography = () => {
     Map<string, { value: number; unit: string }>
   >(new Map<string, { value: number; unit: string }>());
 
-  // #region SIZES
   useEffect(() => {
     const map = new Map<string, { value: number; unit: string }>();
     if (customTheme) {
@@ -120,23 +93,6 @@ const Typography = () => {
     updateCustomTheme(newTheme);
   };
 
-  const getUnits = (typographyName: string) => {
-    const units: HvListValue[] = [];
-
-    if (updatedSizes.size > 0) {
-      unitsToShow.map((u) => {
-        let selected = false;
-        const s = updatedSizes.get(typographyName);
-        if (s?.unit === u) {
-          selected = true;
-        }
-
-        units.push({ id: u, label: u, selected });
-      });
-    }
-    return units;
-  };
-
   const unitChangedHandler = (item: HvListValue, typographyName: string) => {
     const map = new Map<string, { value: number; unit: string }>(updatedSizes);
 
@@ -167,8 +123,6 @@ const Typography = () => {
     });
     updateCustomTheme(newTheme);
   };
-
-  // #endregion
 
   const getLineHeights = (typographyName: string) => {
     const lineHeights: HvListValue[] = [];
@@ -297,7 +251,6 @@ const Typography = () => {
 
         const fontSize = updatedSizes.get(t)?.value;
         const fontUnit = updatedSizes.get(t)?.unit || "px";
-        const sliderProps = getSliderPropsByTypography(updatedSizes, t);
 
         return (
           <HvAccordion
@@ -332,67 +285,13 @@ const Typography = () => {
                   }}
                 />
               </HvBox>
-              <HvBox css={{ position: "relative" }}>
-                <HvSlider
-                  label="Font Size"
-                  values={[fontSize || 14]}
-                  hideInput
-                  // Allow changing the value and have that info be displayed on the UI ...
-                  onChange={(val) => sizeChangedHandler(t, val[0])}
-                  // ... but only change the theme when the user ends the sliding.
-                  onAfterChange={(val) => setSizeHandler(val[0], t)}
-                  minPointValue={sliderProps?.min}
-                  maxPointValue={sliderProps?.max}
-                  markDigits={sliderProps?.markDigits}
-                  classes={{
-                    sliderContainer: css({ paddingLeft: 0, paddingRight: 10 }),
-                    labelContainer: css({ marginLeft: 0, marginRight: 0 }),
-                  }}
-                  inputProps={[
-                    {
-                      readOnly: true,
-                      classes: {
-                        inputRoot: css({ border: "none" }),
-                        input: css({ textAlign: "end" }),
-                      },
-                    },
-                  ]}
-                />
-                <HvBox
-                  css={{
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    display: "flex",
-                    gap: theme.space.sm,
-                  }}
-                >
-                  <HvBox
-                    css={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                    }}
-                  >
-                    <HvTypography>
-                      {fontSize?.toFixed(fontUnit === "em" ? 1 : 0)}
-                    </HvTypography>
-                    <HvDropdown
-                      values={getUnits(t)}
-                      classes={{
-                        dropdownHeader: css({ border: "none!important" }),
-                        rootList: css({
-                          width: 60,
-                          "& > div": { padding: "0px!important" },
-                        }),
-                      }}
-                      onChange={(item) => {
-                        if (item) unitChangedHandler(item as HvListValue, t);
-                      }}
-                    />
-                  </HvBox>
-                </HvBox>
-              </HvBox>
+              <FontSize
+                fontSize={fontSize}
+                fontUnit={fontUnit}
+                onChange={(val) => sizeChangedHandler(t, val)}
+                onAfterChange={(val) => setSizeHandler(val, t)}
+                onUnitChange={(val) => unitChangedHandler(val, t)}
+              />
               <HvBox
                 css={{
                   display: "flex",
