@@ -30,7 +30,7 @@ export interface HvOverflowTooltipProps extends HvBaseProps {
     | "top-start"
     | "top";
   /** Extra properties to add to the tooltip. */
-  tooltipsProps?: HvTooltipProps;
+  tooltipsProps?: Partial<HvTooltipProps>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvOverflowTooltipClasses;
 }

@@ -22,7 +22,7 @@ const withTooltip =
     label = "",
     placement: HvTooltipPlacementType,
     hideTooltip?: (event: React.MouseEvent<HTMLDivElement>) => boolean,
-    tooltipProps?: HvTooltipProps,
+    tooltipProps?: Partial<HvTooltipProps>,
     tooltipContainerProps?: HvBaseProps
   ) =>
   (props) => {
