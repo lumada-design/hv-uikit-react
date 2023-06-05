@@ -1,7 +1,6 @@
 import {
   HvAccordion,
   HvBox,
-  createTheme,
   HvTypography,
   HvDropdown,
   HvListValue,
@@ -79,7 +78,7 @@ const Typography = () => {
   const setSizeHandler = (value: number, typographyName: string) => {
     const unit = updatedSizes.get(typographyName)?.unit || "px";
     const fixedValue = value.toFixed(unit === "em" || unit === "rem" ? 1 : 0);
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       ...customTheme,
       typography: {
@@ -90,7 +89,6 @@ const Typography = () => {
         },
       },
     });
-    updateCustomTheme(newTheme);
   };
 
   const unitChangedHandler = (item: HvListValue, typographyName: string) => {
@@ -110,7 +108,7 @@ const Typography = () => {
     map.set(typographyName, { value: fontSize, unit });
     setUpdatedSizes(map);
 
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       ...customTheme,
       typography: {
@@ -121,7 +119,6 @@ const Typography = () => {
         },
       },
     });
-    updateCustomTheme(newTheme);
   };
 
   const getLineHeights = (typographyName: string) => {
@@ -188,7 +185,7 @@ const Typography = () => {
   };
 
   const lineHeightChangedHandler = (typographyName, lineHeight) => {
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       typography: {
         ...customTheme.typography,
@@ -198,7 +195,6 @@ const Typography = () => {
         },
       },
     });
-    updateCustomTheme(newTheme);
 
     const map = new Map<string, string>(updatedHeights);
     map.set(typographyName, lineHeight);
@@ -206,7 +202,7 @@ const Typography = () => {
   };
 
   const fontWeightChangedHandler = (typographyName, fontWeight) => {
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       typography: {
         ...customTheme.typography,
@@ -216,7 +212,6 @@ const Typography = () => {
         },
       },
     });
-    updateCustomTheme(newTheme);
 
     const map = new Map<string, string>(updatedWeights);
     map.set(typographyName, fontWeight);
@@ -224,7 +219,7 @@ const Typography = () => {
   };
 
   const colorChangedHandler = (typographyName, colorValue) => {
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       typography: {
         ...customTheme.typography,
@@ -234,7 +229,6 @@ const Typography = () => {
         },
       },
     });
-    updateCustomTheme(newTheme);
   };
 
   const debouncedColorChangedHandler = debounce(colorChangedHandler, 250);

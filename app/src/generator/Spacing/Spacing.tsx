@@ -1,6 +1,5 @@
 import { css } from "@emotion/css";
 import {
-  createTheme,
   HvButton,
   HvInput,
   HvTypography,
@@ -29,7 +28,7 @@ const Spacing = () => {
         ? parseInt(currValues.get(spacing)?.toString() || "", 10)
         : currValues.get(spacing) || 0;
 
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       space: {
         ...customTheme.space,
@@ -39,7 +38,6 @@ const Spacing = () => {
             : spacingValue,
       },
     });
-    updateCustomTheme(newTheme);
   };
 
   return (

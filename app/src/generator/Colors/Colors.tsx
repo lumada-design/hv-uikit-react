@@ -1,5 +1,4 @@
 import {
-  createTheme,
   HvTooltip,
   HvTypography,
   useTheme,
@@ -19,7 +18,7 @@ const Colors = (): JSX.Element => {
   const colors = activeTheme?.colors.modes[selectedMode];
 
   const colorChangedHandler = (colorName, colorValue) => {
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       colors: {
         ...customTheme.colors,
@@ -32,8 +31,6 @@ const Colors = (): JSX.Element => {
         },
       },
     });
-
-    updateCustomTheme(newTheme);
   };
 
   const debouncedHandler = debounce(colorChangedHandler, 250);

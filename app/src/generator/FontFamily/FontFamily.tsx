@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import {
-  createTheme,
   HvBox,
   HvButton,
   HvDropdown,
@@ -26,13 +25,12 @@ const FontFamily = () => {
   const [fontAddedMsg, setFontAddedMsg] = useState("");
 
   const onDropdownClickHandler = (font) => {
-    const newTheme = createTheme({
+    updateCustomTheme({
       ...customTheme,
       fontFamily: {
         body: font,
       },
     });
-    updateCustomTheme(newTheme);
   };
 
   const onAddHandler = () => {
