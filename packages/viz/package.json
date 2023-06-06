@@ -25,10 +25,6 @@
   "scripts": {
     "build": "run-s clean build:*",
     "build:js": "vite build",
-    "test": "vitest run",
-    "test:update": "vitest -u",
-    "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build && npx clean-publish"
