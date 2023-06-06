@@ -11,6 +11,7 @@ import {
   HvTagProps,
   HvBaseSwitchProps,
   HvListValue,
+  HvOverflowTooltipProps,
 } from "@core/components";
 import { HvTableHeaderRenderer, HvCellProps } from "../hooks/useTable";
 import DateColumnCell from "./DateColumnCell/index";
@@ -22,10 +23,16 @@ import { hvStringFallback, hvNumberFallback } from "../utils";
 export function hvTextColumn<
   D extends object = Record<string, unknown>,
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
->(col: HvTableColumnConfig<D, H>): HvTableColumnConfig<D, H> {
+>(
+  col: HvTableColumnConfig<D, H>,
+  overflowTooltipProps: Omit<HvOverflowTooltipProps, "data"> = {}
+): HvTableColumnConfig<D, H> {
   return {
     Cell: ({ value }: HvCellProps<D, H>) => (
-      <HvOverflowTooltip data={hvStringFallback(value)} />
+      <HvOverflowTooltip
+        data={hvStringFallback(value)}
+        {...overflowTooltipProps}
+      />
     ),
     sortType: "alphanumeric",
     ...col,

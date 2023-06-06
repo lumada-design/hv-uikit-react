@@ -47,6 +47,10 @@ export interface HvTooltipProps extends Omit<MuiTooltipProps, "classes"> {
    * Node to apply the tooltip.
    */
   children: ReactElement;
+  /**
+   * Id attribute value of an HTML Element to have the tooltip appended to it.
+   */
+  containerId?: string;
 }
 
 /**
@@ -65,6 +69,7 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
     title,
     TransitionComponent = Fade,
     TransitionProps = { timeout: 400, placement },
+    containerId,
     ...others
   } = props;
 
@@ -88,7 +93,8 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
       title={title}
       PopperProps={{
         sx: popperSx(useSingle),
-        container: document.getElementById(rootId || "") || document.body,
+        container:
+          document.getElementById(containerId || rootId || "") || document.body,
       }}
       {...others}
     >
