@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography } from "@core/components";
 import { outlineStyles } from "@core/utils";
+import { transientOptions } from "@core/utils/transientOptions";
 import treeViewItemClasses from "./treeViewItemClasses";
 
 const selected = () => ({
@@ -20,6 +21,18 @@ export const StyledGroup = styled("ul")({
   margin: "8px 0 0 0",
   padding: 0,
 });
+
+export const StyledLabel = styled(
+  "div",
+  transientOptions
+)(({ $expandable }: { $expandable: boolean }) => ({
+  display: "flex",
+  flexGrow: 1,
+  maxWidth: "100%",
+  ...($expandable && {
+    maxWidth: "calc(100% - 32px)",
+  }),
+}));
 
 export const StyledNode = styled("li")({
   listStyle: "none",

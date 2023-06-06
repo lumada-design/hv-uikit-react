@@ -20,10 +20,14 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
         <div
           class="css-n1g5h0-StyledIconsContainer emephz1"
         />
-        System
+        <div
+          class="css-1674i57-StyledLabel er1eqbm2"
+        >
+          System
+        </div>
       </div>
       <ul
-        class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+        class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm3"
         id="hvtreeview2-1-group"
       >
         <li
@@ -40,10 +44,14 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
             <div
               class="css-n1g5h0-StyledIconsContainer emephz1"
             />
-            SCPodF
+            <div
+              class="css-1674i57-StyledLabel er1eqbm2"
+            >
+              SCPodF
+            </div>
           </div>
           <ul
-            class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+            class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm3"
             id="hvtreeview2-2-group"
           >
             <li
@@ -60,7 +68,11 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
                 <div
                   class="css-n1g5h0-StyledIconsContainer emephz1"
                 />
-                Compute
+                <div
+                  class="css-1674i57-StyledLabel er1eqbm2"
+                >
+                  Compute
+                </div>
               </div>
             </li>
             <li
@@ -77,7 +89,11 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
                 <div
                   class="css-n1g5h0-StyledIconsContainer emephz1"
                 />
-                Storage
+                <div
+                  class="css-1674i57-StyledLabel er1eqbm2"
+                >
+                  Storage
+                </div>
               </div>
             </li>
             <li
@@ -94,7 +110,11 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
                 <div
                   class="css-n1g5h0-StyledIconsContainer emephz1"
                 />
-                Ethernet
+                <div
+                  class="css-1674i57-StyledLabel er1eqbm2"
+                >
+                  Ethernet
+                </div>
               </div>
             </li>
             <li
@@ -111,7 +131,11 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
                 <div
                   class="css-n1g5h0-StyledIconsContainer emephz1"
                 />
-                Fiber Channel
+                <div
+                  class="css-1674i57-StyledLabel er1eqbm2"
+                >
+                  Fiber Channel
+                </div>
               </div>
             </li>
           </ul>
@@ -133,10 +157,14 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
         <div
           class="css-n1g5h0-StyledIconsContainer emephz1"
         />
-        Administration
+        <div
+          class="css-1674i57-StyledLabel er1eqbm2"
+        >
+          Administration
+        </div>
       </div>
       <ul
-        class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+        class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm3"
         id="hvtreeview2-7-group"
       >
         <li
@@ -153,7 +181,11 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
             <div
               class="css-n1g5h0-StyledIconsContainer emephz1"
             />
-            Rest API
+            <div
+              class="css-1674i57-StyledLabel er1eqbm2"
+            >
+              Rest API
+            </div>
           </div>
         </li>
         <li
@@ -170,7 +202,11 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
             <div
               class="css-n1g5h0-StyledIconsContainer emephz1"
             />
-            License
+            <div
+              class="css-1674i57-StyledLabel er1eqbm2"
+            >
+              License
+            </div>
           </div>
         </li>
         <li
@@ -187,7 +223,11 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
             <div
               class="css-n1g5h0-StyledIconsContainer emephz1"
             />
-            Log Bundle
+            <div
+              class="css-1674i57-StyledLabel er1eqbm2"
+            >
+              Log Bundle
+            </div>
           </div>
         </li>
       </ul>

@@ -14,7 +14,12 @@ import { setId } from "@core/utils";
 import treeViewItemClasses, {
   HvVerticalNavigationTreeViewItemClasses,
 } from "./treeViewItemClasses";
-import { StyledContent, StyledGroup, StyledNode } from "./TreeViewItem.styles";
+import {
+  StyledContent,
+  StyledGroup,
+  StyledNode,
+  StyledLabel,
+} from "./TreeViewItem.styles";
 import { DescendantProvider, useDescendant } from "./descendants";
 import {
   TreeViewControlContext,
@@ -431,8 +436,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           onMouseDown={handleMouseDown}
           style={{
             paddingLeft:
-              (expandable || useIcons || !isOpen ? 0 : 10) +
-              level * (collapsible ? 32 : 10),
+              (useIcons || !isOpen ? 0 : 10) + level * (collapsible ? 16 : 10),
           }}
           role={href ? undefined : "button"}
           {...(treeviewMode
@@ -455,8 +459,6 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                 "aria-label": payload?.label,
               })}
         >
-          {isOpen && expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
-
           <IconWrapper
             icon={useIcons && icon}
             label={payload?.label}
@@ -466,7 +468,10 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             disableTooltip={disableTooltip}
           />
 
-          {isOpen && label}
+          {isOpen && (
+            <StyledLabel $expandable={!!expandable}>{label}</StyledLabel>
+          )}
+          {isOpen && expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
         </StyledContent>
       ),
       [
