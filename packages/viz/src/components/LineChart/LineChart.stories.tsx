@@ -352,7 +352,11 @@ export const MultipleLineChartsWithPivotColumns: StoryObj<HvLineChartProps> = {
         <HvCheckBox
           checked={checked}
           onChange={(_, c) => setChecked(c)}
-          label="Show by medal type"
+          label={
+            checked
+              ? "Split data by country"
+              : "Split data by country and medal"
+          }
           className={css(styles.checkBox)}
         />
         <HvLineChart

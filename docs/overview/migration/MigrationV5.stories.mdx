@@ -26,6 +26,7 @@ Here's what there is to know about this migration:
 - [Promoted components](#promoted-components)
 - [Renamed components and types](#renamed-components-types)
 - [Colors](#colors)
+- [Visualizations](#visualizations)
 - [Breaking changes and deprecated values in components](#breaking-changes-deprecated-components)
   - [Provider](#provider)
   - [Button](#button)
@@ -54,22 +55,31 @@ them to avoid errors while using this new UI Kit version.
 ## UI Kit packages <a id="ui-kit-packages" />
 
 Before proceeding to this upgrade, you should also note that **you can't use UI Kit packages v4.x and v5.x simultaneously** due to the introduction of a new theming
-system not compatible with v4.x components. Thus, if your application relies on the packages or components below, you'll not be able to migrate your
-application at the moment since their development are still in progress. Over time, we will align these packages with v5 and add the missing components.
+system not compatible with v4.x components.
 
-- `@hitachivantara/uikit-react-viz`
-- The following components from `@hitachivantara/uikit-react-lab` are missing:
-  - Drawer
+Furthermore, some components are currently missing from v5.x. Thus, if your application relies on the components listed below, you'll not be able to completely
+migrate your application at the moment since their development is still in progress.
+
+The following components are missing:
+
+- From `@hitachivantara/uikit-react-viz`:
+  - Bar chart
+  - Donut chart
+  - Confusion matrix
+- From `@hitachivantara/uikit-react-lab`:
   - Navigation anchors
   - Notification panel
-- The following components from `@hitachivantara/uikit-react-core` are missing:
+- From `@hitachivantara/uikit-react-core`:
   - Time picker
   - User preferences
   - Query builder
 
-The `@hitachivantara/uikit-react-compat` and `@hitachivantara/uikit-common-themes` packages are **deprecated** in v5.
+The following packages were **deprecated** in v5.x and are no longer needed:
 
-Learn more about the project status on this [page](/story/overview-project-status--page#packages).
+- `@hitachivantara/uikit-react-compat`
+- `@hitachivantara/uikit-common-themes`
+
+For more information about the project status access this [page](/story/overview-project-status--page).
 
 If you are able to upgrade your application despite the limitations discussed above, upgrade the UI Kit packages to the latest v5.x versions
 using the command below.
@@ -513,6 +523,24 @@ Colors names have changed in v5.x from previous versions. The table below maps t
 | Semantic    | sema9  | critical_20  |
 | Semantic    | sema20 | warning_20   |
 | Categorical | cviz\* | cat\*        |
+
+## Visualizations <a id="visualizations" />
+
+In v5.x we revisited the visualizations package, `uikit-react-viz`, since several concerns were raised regarding the rendering library Plotly used in v4.x, namely:
+
+- Difficulty and increased effort to implement Design System specifications;
+- Large bundle size for applications using visualizations;
+- Existing issues with server-side rendering.
+
+For all theses reasons, we decided to drop Plotly in v5.x and use the [Apache ECharts library](https://echarts.apache.org/en/index.html) behind the scenes.
+Regarding styling capabilities, this library is more flexible and Design System specifications can be more easily achieved. ECharts also has build-in
+sampling features not rendering sub-pixel points when handling large amounts of data.
+
+Furthermore, we also use [Arquero](https://uwdata.github.io/arquero/api/), which is a library for query processing and data tables transformation,
+to manipulate and transform data points. Thus, in v5.x, the visualizations are able to manipulate your data if necessary by splitting, grouping,
+and aggregating data points.
+
+For more information about how to use the new visualizations, please take a look at the [visualizations guide](/docs/guides-visualizations--page).
 
 ## Breaking changes and deprecated values in components <a id="breaking-changes-deprecated-components" />
 
