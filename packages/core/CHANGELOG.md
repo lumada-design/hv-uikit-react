@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.75.1 (2023-06-06)
+
+
+### Bug Fixes
+
+* **avatar:** make the prop containerProps not required #HVUIKIT-6488 ([e7af389](https://github.com/lumada-design/hv-uikit-react/commit/e7af38928c99db196cca29fa33aae4a808a3c62e)), closes [#HVUIKIT-6488](https://github.com/lumada-design/hv-uikit-react/issues/HVUIKIT-6488)
+* **DatePicker:** remove hardcoded invalid label, add it as a prop ([#3400](https://github.com/lumada-design/hv-uikit-react/issues/3400)) ([e1bbba7](https://github.com/lumada-design/hv-uikit-react/commit/e1bbba733ab2ba640245de4783cbef82dc0a2fda))
+
+
+
+
+
 # [3.75.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.74.2...@hitachivantara/uikit-react-core@3.75.0) (2022-09-06)
 
 
