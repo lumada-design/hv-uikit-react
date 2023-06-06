@@ -6,7 +6,7 @@
       "npmClient": "npm"
     },
     "version": {
-      "allowBranch": ["master", "feat/*", "bug/*"],
+      "allowBranch": ["master", "feat/*", "bug/*", "v3.x"],
       "message": "chore(release): publish",
       "conventionalCommits": true,
       "createRelease": "github"
