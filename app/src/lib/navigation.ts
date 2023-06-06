@@ -3,24 +3,24 @@ const navigation = [
   {
     id: "templates",
     label: "Preview",
-    path: "/templates",
+    path: "/preview",
     data: [
       {
         id: "instuctions",
         label: "Instructions",
-        path: "/templates/instructions",
+        path: "/preview/instructions",
       },
       {
         id: "asset-inventory",
         label: "Asset Inventory",
-        path: "/templates/asset-inventory",
+        path: "/preview/asset-inventory",
       },
-      { id: "list-view", label: "List View", path: "/templates/list-view" },
-      { id: "form", label: "Form", path: "/templates/form" },
+      { id: "list-view", label: "List View", path: "/preview/list-view" },
+      { id: "form", label: "Form", path: "/preview/form" },
       {
         id: "details-view",
         label: "Details View",
-        path: "/templates/details-view",
+        path: "/preview/details-view",
       },
     ],
   },

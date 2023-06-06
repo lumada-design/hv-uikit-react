@@ -29,7 +29,7 @@ export const Step = ({
     } else if (idx === 2) {
       setOpen?.(true);
     } else if (idx === 6) {
-      navigate("/templates/list-view");
+      navigate("/preview/list-view");
     } else if (idx === 8) {
       navigate("/components");
     }
