@@ -20,8 +20,10 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Build Documentation
-        uses: ./.github/actions/build-documentation
+        uses: ./.github/actions/build-artifacts
         if: github.event_name == 'workflow_dispatch'
+        with:
+          build-app: false
 
       - name: Fetch Documentation
         uses: actions/download-artifact@v3

@@ -1,5 +1,5 @@
-name: Documentation
-description: Deploy UI Kit documentation
+name: Artifacts
+description: Deploy UI Kit Artifact
 
 runs:
   using: "composite"
@@ -16,42 +16,43 @@ runs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Start Documentation Deployment
+    - name: Start Deployment
       uses: bobheadxi/deployments@v1
       id: deployment
       with:
         step: start
         token: ${{ env.GITHUB_TOKEN }}
-        env: ${{ env.DOCUMENTATION_PUBLISH_FOLDER }}
+        env: ${{ env.PUBLISH_FOLDER }}
         ref: ${{ env.DEPLOYMENT_REF }}
-        desc: ${{ env.DOCUMENTATION_PUBLISH_MESSAGE }}
+        desc: ${{ env.PUBLISH_MESSAGE }}
 
-    - name: Checkout Documentation Repository
+    - name: Checkout Artifacts Repository
       uses: actions/checkout@v3
       with:
-        repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+        repository: ${{ env.PUBLISH_REPO }}
         ref: master
         token: ${{ env.ORG_GHPAGES_DEPLOY_KEY }}
         path: gh-docs
         fetch-depth: 1
 
-    - name: Remove Previous Documentation
-      run: rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+    - name: Remove Previous Artifact
+      run: rm -rf ${{ github.workspace }}/gh-docs/${PUBLISH_FOLDER}/*
       shell: bash
 
-    - name: Fetch Documentation
+    - name: Fetch Artifact
       uses: actions/download-artifact@v3
       with:
-        name: documentation
-        path: ${{ github.workspace }}/gh-docs/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-
-    - name: Push Documentation
+        name: ${{ env.ARTIFACT }}
+        path: ${{ github.workspace }}/gh-docs/${{env.PUBLISH_FOLDER}}
+    
+    - name: Push Artifact
       run: |
         cd ${{ github.workspace }}/gh-docs
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
-        git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
+        git pull
+        git add -A ${PUBLISH_FOLDER}
+        git commit -m "${PUBLISH_MESSAGE}"
         git push
       shell: bash
 
@@ -61,7 +62,7 @@ runs:
       with:
         step: finish
         token: ${{ env.GITHUB_TOKEN }}
-        env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+        env: ${{env.PUBLISH_FOLDER}}
         status: ${{ job.status }}
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-        env_url: ${{env.DOCUMENTATION_URL}}
+        env_url: ${{env.URL}}
