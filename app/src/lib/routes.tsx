@@ -11,17 +11,17 @@ const NotFound = lazy(() => import("pages/NotFound"));
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<Navigate to="/templates/list-view" replace />} />
+    <Route path="/" element={<Navigate to="/preview" replace />} />
     <Route path="/components" element={<Components />} />
     <Route
-      path="/templates"
-      element={<Navigate to="/templates/instructions" replace />}
+      path="/preview"
+      element={<Navigate to="/preview/instructions" replace />}
     />
-    <Route path="/templates/instructions" element={<Instructions />} />
-    <Route path="/templates/asset-inventory" element={<AssetInventory />} />
-    <Route path="/templates/list-view" element={<ListView />} />
-    <Route path="/templates/form" element={<Form />} />
-    <Route path="/templates/details-view" element={<DetailsView />} />
+    <Route path="/preview/instructions" element={<Instructions />} />
+    <Route path="/preview/asset-inventory" element={<AssetInventory />} />
+    <Route path="/preview/list-view" element={<ListView />} />
+    <Route path="/preview/form" element={<Form />} />
+    <Route path="/preview/details-view" element={<DetailsView />} />
     <Route path="/*" element={<NotFound />} />
   </Routes>
 );
