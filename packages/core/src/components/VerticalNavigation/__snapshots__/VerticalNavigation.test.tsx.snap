@@ -75,11 +75,15 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                 class="css-vykerq-StyledIconsContainer emephz1"
               />
               <div
-                class=""
-                data-mui-internal-clone-element="true"
-                style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                class="css-1674i57-StyledLabel er1eqbm2"
               >
-                Overview
+                <div
+                  class=""
+                  data-mui-internal-clone-element="true"
+                  style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                >
+                  Overview
+                </div>
               </div>
             </div>
           </li>
@@ -99,11 +103,15 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                 class="css-vykerq-StyledIconsContainer emephz1"
               />
               <div
-                class=""
-                data-mui-internal-clone-element="true"
-                style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                class="css-1674i57-StyledLabel er1eqbm2"
               >
-                Analytics
+                <div
+                  class=""
+                  data-mui-internal-clone-element="true"
+                  style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                >
+                  Analytics
+                </div>
               </div>
             </div>
           </li>
@@ -122,6 +130,20 @@ exports[`VerticalNavigation > should render correctly 1`] = `
               tabindex="0"
             >
               <div
+                class="css-vykerq-StyledIconsContainer emephz1"
+              />
+              <div
+                class="css-12oelea-StyledLabel er1eqbm2"
+              >
+                <div
+                  class=""
+                  data-mui-internal-clone-element="true"
+                  style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                >
+                  Storage
+                </div>
+              </div>
+              <div
                 class="css-f95wjz"
                 name="DropDownXS"
               >
@@ -139,19 +161,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   />
                 </svg>
               </div>
-              <div
-                class="css-vykerq-StyledIconsContainer emephz1"
-              />
-              <div
-                class=""
-                data-mui-internal-clone-element="true"
-                style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
-              >
-                Storage
-              </div>
             </div>
             <ul
-              class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+              class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm3"
               id="hvtreeview2-02-group"
             >
               <li
@@ -168,6 +180,20 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   style="padding-left: 32px;"
                   tabindex="0"
                 >
+                  <div
+                    class="css-vykerq-StyledIconsContainer emephz1"
+                  />
+                  <div
+                    class="css-12oelea-StyledLabel er1eqbm2"
+                  >
+                    <div
+                      class=""
+                      data-mui-internal-clone-element="true"
+                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                    >
+                      Cloud
+                    </div>
+                  </div>
                   <div
                     class="css-f95wjz"
                     name="DropDownXS"
@@ -186,19 +212,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                       />
                     </svg>
                   </div>
-                  <div
-                    class="css-vykerq-StyledIconsContainer emephz1"
-                  />
-                  <div
-                    class=""
-                    data-mui-internal-clone-element="true"
-                    style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
-                  >
-                    Cloud
-                  </div>
                 </div>
                 <ul
-                  class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+                  class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm3"
                   id="hvtreeview2-02-01-group"
                 >
                   <li
@@ -217,11 +233,15 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                         class="css-vykerq-StyledIconsContainer emephz1"
                       />
                       <div
-                        class=""
-                        data-mui-internal-clone-element="true"
-                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        class="css-1674i57-StyledLabel er1eqbm2"
                       >
-                        Servers
+                        <div
+                          class=""
+                          data-mui-internal-clone-element="true"
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Servers
+                        </div>
                       </div>
                     </a>
                   </li>
@@ -241,11 +261,15 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                         class="css-vykerq-StyledIconsContainer emephz1"
                       />
                       <div
-                        class=""
-                        data-mui-internal-clone-element="true"
-                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        class="css-1674i57-StyledLabel er1eqbm2"
                       >
-                        HCP Anywhere
+                        <div
+                          class=""
+                          data-mui-internal-clone-element="true"
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          HCP Anywhere
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -265,11 +289,15 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                         class="css-vykerq-StyledIconsContainer emephz1"
                       />
                       <div
-                        class=""
-                        data-mui-internal-clone-element="true"
-                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        class="css-1674i57-StyledLabel er1eqbm2"
                       >
-                        This Computer
+                        <div
+                          class=""
+                          data-mui-internal-clone-element="true"
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          This Computer
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -292,6 +320,20 @@ exports[`VerticalNavigation > should render correctly 1`] = `
               tabindex="0"
             >
               <div
+                class="css-vykerq-StyledIconsContainer emephz1"
+              />
+              <div
+                class="css-12oelea-StyledLabel er1eqbm2"
+              >
+                <div
+                  class=""
+                  data-mui-internal-clone-element="true"
+                  style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                >
+                  Administration
+                </div>
+              </div>
+              <div
                 class="css-f95wjz"
                 name="DropDownXS"
               >
@@ -309,19 +351,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   />
                 </svg>
               </div>
-              <div
-                class="css-vykerq-StyledIconsContainer emephz1"
-              />
-              <div
-                class=""
-                data-mui-internal-clone-element="true"
-                style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
-              >
-                Administration
-              </div>
             </a>
             <ul
-              class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+              class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm3"
               id="hvtreeview2-03-group"
             >
               <li
@@ -338,6 +370,20 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   style="padding-left: 32px;"
                   tabindex="0"
                 >
+                  <div
+                    class="css-vykerq-StyledIconsContainer emephz1"
+                  />
+                  <div
+                    class="css-12oelea-StyledLabel er1eqbm2"
+                  >
+                    <div
+                      class=""
+                      data-mui-internal-clone-element="true"
+                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                    >
+                      Rest API
+                    </div>
+                  </div>
                   <div
                     class="css-f95wjz"
                     name="DropDownXS"
@@ -356,19 +402,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                       />
                     </svg>
                   </div>
-                  <div
-                    class="css-vykerq-StyledIconsContainer emephz1"
-                  />
-                  <div
-                    class=""
-                    data-mui-internal-clone-element="true"
-                    style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
-                  >
-                    Rest API
-                  </div>
                 </a>
                 <ul
-                  class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+                  class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm3"
                   id="hvtreeview2-03-01-group"
                 >
                   <li
@@ -387,11 +423,15 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                         class="css-vykerq-StyledIconsContainer emephz1"
                       />
                       <div
-                        class=""
-                        data-mui-internal-clone-element="true"
-                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        class="css-1674i57-StyledLabel er1eqbm2"
                       >
-                        Log Bundle
+                        <div
+                          class=""
+                          data-mui-internal-clone-element="true"
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Log Bundle
+                        </div>
                       </div>
                     </a>
                   </li>
