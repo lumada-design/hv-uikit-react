@@ -98,8 +98,11 @@ export interface HvLineChartProps {
           min: string | number;
         }) => string | number);
   };
-  /** Columns to use to group the measures. */
-  series?: string | string[];
+  /** Series options. */
+  series?: {
+    /** Columns to use to split the measures. */
+    fields?: string | string[];
+  };
   /** Tooltip options. */
   tooltip?: {
     /** Whether to show the tooltip or not. Defaults to `true`. */
@@ -179,12 +182,18 @@ export const HvLineChart = ({
       {}
     );
 
-    if (series) {
-      return tableData.groupby(xAxis.fields).pivot(series, aggregations);
+    if (series?.fields) {
+      return tableData.groupby(xAxis.fields).pivot(series.fields, aggregations);
     }
 
     return tableData.groupby(xAxis.fields).rollup(aggregations);
-  }, [data, series, xAxis.fields, measures.aggregation, measures.fields]);
+  }, [
+    data,
+    series?.fields,
+    xAxis.fields,
+    measures.aggregation,
+    measures.fields,
+  ]);
 
   const chartXAxis = useMemo(() => {
     return {

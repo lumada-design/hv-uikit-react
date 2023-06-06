@@ -425,7 +425,7 @@ export const MultipleLineChartsWithPivotColumns: StoryObj<HvLineChartProps> = {
           measures={{
             fields: "Total",
           }}
-          series={checked ? ["Country", "Medal"] : "Country"}
+          series={{ fields: checked ? ["Country", "Medal"] : "Country" }}
           lineNameFormatter={(s) => `${s?.split("_").join(" ")}`}
         />
       </>
