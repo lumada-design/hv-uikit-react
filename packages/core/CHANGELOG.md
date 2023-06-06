@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.4.4 (2023-06-06)
+
+### Bug Fixes
+
+- **DatePicker:** remove hardcoded invalid label, add it as a prop ([#3400](https://github.com/lumada-design/hv-uikit-react/issues/3400)) ([c80d5f1](https://github.com/lumada-design/hv-uikit-react/commit/c80d5f1092ae7cf65d3a26997922acf6526705df))
+
 ## 4.4.3 (2023-02-24)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

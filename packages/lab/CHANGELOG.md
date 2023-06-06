@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.5.0...@hitachivantara/uikit-react-lab@4.5.1) (2023-06-06)
+
+### Bug Fixes
+
+- **NavigationSlider:** fixed the issues with the position of the panel ([ceb8fa9](https://github.com/lumada-design/hv-uikit-react/commit/ceb8fa964a0e154f6f54742d8c221e2a48499bf5))
+
 # [4.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.4.0...@hitachivantara/uikit-react-lab@4.5.0) (2023-03-13)
 
 ### Bug Fixes
