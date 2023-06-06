@@ -35,21 +35,16 @@ echarts.use([
 ]);
 
 export interface HvLineChartProps {
-  /**
-   * Data can have the following formats:
-   * - Columns format: an object with a set of key-value pairs where the keys are the column names and the values are arrays of identical length containing the rows values.
-   * - Rows format: an array containing a set of objects where each object represent a row.
-   * - Arquero table format: table creating using arquero utilities.
-   */
+  /** Chart data. */
   data:
-    | Map<string | number, (string | number)[]> // columns
-    | Record<string | number, (string | number)[]> // columns
-    | Record<string | number, string | number>[] // rows
-    | ColumnTable; // arquero table
-  /** Options for the xAxis, the horizontal axis. */
+    | Map<string | number, (string | number)[]>
+    | Record<string | number, (string | number)[]>
+    | Record<string | number, string | number>[]
+    | ColumnTable;
+  /** Options for the xAxis, i.e. the horizontal axis. */
   xAxis: {
-    /** Column to use for the horizontal axis. The data will be grouped based on this column. */
-    fields: string;
+    /** Columns to use for the horizontal axis. The data will be grouped based on these columns. */
+    fields: string | string[];
     /** Type: continuous, categorical, or time data. Defaults to `categorical`. */
     type?: HvChartAxisType;
     /** Formatter for the labels on the horizontal axis. */
@@ -61,7 +56,7 @@ export interface HvLineChartProps {
     /** Name used on the horizontal axis. */
     name?: string;
   };
-  /** Options for the measures, the vertical axis. */
+  /** Options for the measures, i.e. the vertical axis. */
   measures: {
     /** Columns to use as measures. These are the columns to measure on the vertical axis. */
     fields: string | string[];
@@ -84,11 +79,7 @@ export interface HvLineChartProps {
     labelRotation?: number;
     /** Name used on the vertical axis. */
     name?: string;
-    /**
-     * Maximum value on the vertical axis.
-     * If no value is provided, the chart will automatically set a max value in order for all values to be equally distributed.
-     * Set this property to `max` to use the maximum data value.
-     */
+    /** Maximum value on the vertical axis. Set this property to `max` to use the maximum data value. */
     maxValue?:
       | string
       | number
@@ -97,11 +88,7 @@ export interface HvLineChartProps {
           max: string | number;
           min: string | number;
         }) => string | number);
-    /**
-     * Minimum value on the vertical axis.
-     * If no value is provided, the chart will automatically set a min value in order for all values to be equally distributed.
-     * Set this property to `min` to use the maximum data value.
-     */
+    /** Minimum value on the vertical axis. Set this property to `min` to use the maximum data value. */
     minValue?:
       | string
       | number
@@ -122,11 +109,7 @@ export interface HvLineChartProps {
   };
   /** Legend options. */
   legend?: {
-    /**
-     * Whether to show the legend or not.
-     *
-     * If they are multiple series, the legend will appear by default. Otherwise, the legend will not be shown.
-     */
+    /** Whether to show the legend or not. If they are multiple series, the legend will appear by default. Otherwise, the legend will not be shown. */
     show?: boolean;
   };
   /** Formatter for the lines names used on the tooltips and legend. */
@@ -208,7 +191,19 @@ export const HvLineChart = ({
       xAxis: {
         type: getAxisType(xAxis.type) ?? "category",
         name: xAxis.name,
-        data: chartData?.array(xAxis.fields),
+        data: Array.isArray(xAxis.fields)
+          ? chartData
+              ?.array(xAxis.fields[0])
+              .map((field: string, num: number) => {
+                let label: string = field;
+
+                for (let i = 1; i < xAxis.fields.length; i++) {
+                  label += `-${chartData.array(xAxis.fields[i])[num]}`;
+                }
+
+                return label;
+              })
+          : chartData?.array(xAxis.fields),
         axisLabel: {
           rotate: xAxis.labelRotation ?? 0,
           formatter: xAxis.labelFormatter,
@@ -251,7 +246,11 @@ export const HvLineChart = ({
       series:
         chartData
           ?.columnNames()
-          .filter((c) => c !== xAxis.fields)
+          .filter((c) =>
+            Array.isArray(xAxis.fields)
+              ? !xAxis.fields.includes(c)
+              : c !== xAxis.fields
+          )
           .map((c) => {
             return {
               name: lineNameFormatter ? lineNameFormatter(c) : c,
