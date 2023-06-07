@@ -125,7 +125,6 @@ export const HvBaseInput = ({
     disabled,
     readOnly,
     required,
-    status,
     formElementContext
   );
 

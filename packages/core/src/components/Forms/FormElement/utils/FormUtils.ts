@@ -76,7 +76,6 @@ const buildFormElementPropsFromContext = (
   disabled,
   readOnly,
   required,
-  status,
   context
 ) => {
   return {
@@ -84,7 +83,7 @@ const buildFormElementPropsFromContext = (
     disabled: disabled !== undefined ? disabled : context?.elementDisabled,
     readOnly: readOnly !== undefined ? readOnly : context?.elementReadOnly,
     required: required !== undefined ? required : context?.elementRequired,
-    status: status || context?.elementStatus,
+    status: context?.elementStatus,
   };
 };
 
