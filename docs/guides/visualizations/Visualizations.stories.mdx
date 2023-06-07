@@ -12,14 +12,15 @@ At the moment, the following visualizations are available and we are continuousl
 - [KPI](/docs/visualizations-kpi--main)
 - [Line chart](/docs/visualizations-line-chart--main)
 
-The KPI component is available on the `uikit-react-core` package while all the other visualizations are in the `uikit-react-viz` package. For this reason, all
-the information below is only applicable to the visualizations from the `uikit-react-viz` package.
+The KPI component is available on the `uikit-react-core` package while all the other visualizations are in the `uikit-react-viz` package.
+
+All the information below is only applicable to the visualizations from the `uikit-react-viz` package.
 
 ## Provider
 
 Before using any of the UI Kit visualizations, it's necessary to add the `HvVizProvider` component to your application.
-This component is responsible for enabling theming capabilities for the visualizations. Without this provider the visualizations will not comply to the
-UI Kit themes defined by the [`HvProvider` component](/docs/guides-provider--main) from the core package.
+This component is responsible for enabling theming capabilities for the visualizations. Without this provider the visualizations will not comply to Design System
+and consequently to the UI Kit themes defined by the [`HvProvider` component](/docs/guides-provider--main) from the core package.
 
 The `HvVizProvider` component should preferably be used at the root of your component tree and should always be wrapped by the `HvProvider` component
 since the former uses the themes provided by the latter to configure the visualizations themes.
@@ -132,28 +133,34 @@ For more information take a look at the [Arquero API documentation](https://uwda
 aq.fromJSON('{"Country":["Portugal","Spain"],"Population":[10.33,47.42]}');
 ```
 
+## Axis types
+
+The `xAxis` and `yAxis` are by default of type `categorical` and `continuous`, respectively. These types must be updated if necessary depending on the data provided.
+The valid values are `continuous` for continuous data, `categorical` for discrete data, and `time` for continuous time data.
+
 ## Visual roles
 
 In order to create visualizations, you'll also need to define visual roles for your data table columns. The following visual roles are supported:
 
-- `xAxis`: this visual role represents the chart's horizontal axis. The data will be grouped based on the columns selected for this visual role.
-- `measures`: this visual role represents the chart's vertical axis. These are the columns that you want to measure. For each one of the selected columns, you can
-  choose an aggregation function to aggregate values with the same `xAxis` value. When no aggregation function is specified, the values will be summed by default.
+- `groupBy`: this visual role will be used for the chart's horizontal axis. The data will be grouped based on the columns selected for this visual role.
+- `measures`: this visual role will be used for the chart's vertical axis. These are the columns that you want to measure. For each one of the selected columns, you can
+  choose a function to aggregate the values. When no aggregation function is specified, the values will be summed by default.
   The valid aggregation functions are `sum`, `average`, `min`, `max`, and `count`.
-- `series`: this visual role can be used to split your data based on specific data table columns.
+- `splitBy`: splits your data based on specific data table columns.
+- `sortBy`: sorts data points by specifying the columns to use. For each one of the selected columns, you can
+  choose how to order the data points. The values will be sorted in ascending order by default.
+  The valid sorting functions are `asc` and `desc`.
 
-The `xAxis` and `measures` visual roles are by default of type `categorical` and `continuous`, respectively. These types must be changed if this is not the case
-for your data. The valid values are `continuous` for continuous data, `categorical` for discrete data, and `time` for continuous time data.
-
-Please find below an example for the `HvLineChart`.
+Please find below an example with the `HvLineChart`.
 
 _Example:_
 
 In this example, a data table with 4 columns (`Country`, `Year`, `Medal`, and `Total`) and 8 rows
-was provided. Since we want to showcase the total of medals for each country over the years, the `Year` column was used for the `xAxis` in order to group
+was provided. Since we want to showcase the total of medals for each country over the years, the `Year` column was used for the `groupBy` visual role in order to group
 the data by year. Then, the `Total` column was used for the `measures` since it's the column we want to visually measure on the vertical axis.
-In this case, no aggregation function was specified for the `measures` since the values will be summed by default. Regarding the `series`,
-the `Country` column was used in order to split the data by country and showcase one line for each country.
+In this case, no aggregation function was specified for the `measures` since the values will be summed by default. Regarding the `splitBy` visual role,
+the `Country` column was used in order to split the data by country and showcase one line for each country. The `sortBy` visual role was also needed since the data
+didn't have the years sorted by ascending order originally.
 
 ```tsx
 <HvLineChart
@@ -168,7 +175,7 @@ the `Country` column was used in order to split the data by country and showcase
       "Spain",
       "Spain",
     ],
-    Year: [2018, 2018, 2018, 2018, 2019, 2019, 2019, 2019],
+    Year: [2019, 2019, 2019, 2019, 2018, 2018, 2018, 2018],
     Medal: [
       "gold",
       "silver",
@@ -181,13 +188,10 @@ the `Country` column was used in order to split the data by country and showcase
     ],
     Total: [3, 2, 1, 0, 4, 11, 8, 3],
   }}
-  xAxis={{
-    fields: "Year",
-  }}
-  measures={{
-    fields: "Total",
-  }}
-  series={{ fields: "Country" }}
+  groupBy="Year"
+  measures="Total"
+  splitBy="Country"
+  sortBy="Year"
 />
 ```
 
@@ -206,7 +210,7 @@ the `Country` column was used in order to split the data by country and showcase
             "Spain",
             "Spain",
           ],
-          Year: [2018, 2018, 2018, 2018, 2019, 2019, 2019, 2019],
+          Year: [2019, 2019, 2019, 2019, 2018, 2018, 2018, 2018],
           Medal: [
             "gold",
             "silver",
@@ -219,13 +223,10 @@ the `Country` column was used in order to split the data by country and showcase
           ],
           Total: [3, 2, 1, 0, 4, 11, 8, 3],
         }}
-        xAxis={{
-          fields: "Year",
-        }}
-        measures={{
-          fields: "Total",
-        }}
-        series={{ fields: "Country" }}
+        groupBy="Year"
+        measures="Total"
+        splitBy="Country"
+        sortBy="Year"
       />
     </HvVizProvider>
   </HvProvider>

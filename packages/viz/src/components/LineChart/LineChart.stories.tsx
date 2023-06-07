@@ -331,11 +331,11 @@ export const CustomMultipleLineCharts: StoryObj<HvLineChartProps> = {
   },
 };
 
-export const MultipleLineChartsWithPivotColumns: StoryObj<HvLineChartProps> = {
+export const MultipleLineChartsWithSplitBy: StoryObj<HvLineChartProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Multiple line charts using pivot columns to create series.",
+        story: "Multiple line charts created by splitting the data.",
       },
     },
   },
@@ -353,11 +353,7 @@ export const MultipleLineChartsWithPivotColumns: StoryObj<HvLineChartProps> = {
         <HvCheckBox
           checked={checked}
           onChange={(_, c) => setChecked(c)}
-          label={
-            checked
-              ? "Split data by country"
-              : "Split data by country and medal"
-          }
+          label={checked ? "Split by country" : "Split by country and medal"}
           className={css(styles.checkBox)}
         />
         <HvLineChart
@@ -587,6 +583,7 @@ export const ArrowData: StoryObj<HvLineChartProps> = {
   },
   loaders: [
     async () => ({
+      // @ts-ignore
       data: await loadArrow(import.meta.resolve("./steelwheels.arrow")),
     }),
   ],
