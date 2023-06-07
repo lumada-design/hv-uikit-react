@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.14.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.14.0...@hitachivantara/uikit-react-core@5.14.1) (2023-06-07)
+
+### Bug Fixes
+
+- **BaseInput:** remove unused status prop ([#3418](https://github.com/lumada-design/hv-uikit-react/issues/3418)) ([8b73ea0](https://github.com/lumada-design/hv-uikit-react/commit/8b73ea0e98670c9f19e583cda2416f3c3199e1b5))
+
 # [5.14.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.13.0...@hitachivantara/uikit-react-core@5.14.0) (2023-06-07)
 
 ### Bug Fixes
