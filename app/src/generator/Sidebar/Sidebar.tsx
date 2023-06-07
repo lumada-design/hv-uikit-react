@@ -3,7 +3,6 @@ import {
   HvBaseTheme,
   HvBox,
   HvDropdown,
-  HvInput,
   HvListValue,
   HvLoading,
   HvSnackbar,
@@ -15,7 +14,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { lazy, Suspense, useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
-import debounce from "lodash/debounce";
 import CodeEditor from "generator/CodeEditor";
 import {
   Bold,
@@ -36,28 +34,23 @@ const Zindices = lazy(() => import("generator/Zindices"));
 const Sizes = lazy(() => import("generator/Sizes"));
 
 const Sidebar = () => {
-  const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
+  const { selectedTheme, selectedMode, colorModes, changeTheme, themes } =
     useTheme();
 
-  const { updateCustomTheme, open } = useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme, open, themeChanges } =
+    useContext(GeneratorContext);
 
-  const [themeName, setThemeName] = useState("customTheme");
   const [copied, setCopied] = useState(false);
   const [tab, setTab] = useState(0);
 
-  const nameChangeHandler = (name) => {
-    setThemeName(name);
-  };
-
   useEffect(() => {
     const newTheme = createTheme({
-      name: themeName,
+      name: customTheme.name,
       base: selectedTheme as HvBaseTheme,
+      ...themeChanges,
     });
-    updateCustomTheme(newTheme, false);
-  }, [themeName, selectedTheme]);
-
-  const debouncedNameChangeHandler = debounce(nameChangeHandler, 250);
+    updateCustomTheme(newTheme, false, false);
+  }, [customTheme.name, selectedTheme]);
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") return;
@@ -80,48 +73,32 @@ const Sidebar = () => {
           <HvBox css={{ display: "flex", justifyContent: "center" }}>
             <HvTypography variant="title2">Theme Creator</HvTypography>
           </HvBox>
-          <HvBox className={styles.themeName}>
-            <HvTypography variant="label">Name: </HvTypography>
-            <HvBox className={styles.themeNameInput}>
-              <HvInput
-                onChange={(event, value) => debouncedNameChangeHandler(value)}
-                placeholder={themeName}
-              />
-            </HvBox>
-          </HvBox>
           <HvBox className={styles.themeBase}>
-            <HvBox>
-              <HvTypography variant="label">Theme: </HvTypography>
-              <HvDropdown
-                css={{ width: 100 }}
-                values={themes.map((name) => ({
-                  value: name,
-                  label: name,
-                  selected: name === selectedTheme,
-                }))}
-                onChange={(t) => {
-                  // console.log("new theme is", (t as HvListValue)?.value)
-                  changeTheme((t as HvListValue)?.value, selectedMode);
-                }}
-              />
-            </HvBox>
-            <HvBox>
-              <HvTypography variant="label">Mode: </HvTypography>
-              <HvDropdown
-                css={{ width: 120 }}
-                values={colorModes.map((name) => ({
-                  value: name,
-                  label: name,
-                  selected: name === selectedMode,
-                }))}
-                onChange={(mode) =>
-                  changeTheme(selectedTheme, (mode as HvListValue)?.value)
-                }
-              />
-            </HvBox>
+            <HvTypography variant="label">Base:</HvTypography>
+            <HvDropdown
+              values={themes.map((name) => ({
+                value: name,
+                label: name,
+                selected: name === selectedTheme,
+              }))}
+              onChange={(base) => {
+                changeTheme((base as HvListValue)?.value, selectedMode);
+              }}
+            />
+            <HvTypography variant="label">Mode:</HvTypography>
+            <HvDropdown
+              values={colorModes.map((name) => ({
+                value: name,
+                label: name,
+                selected: name === selectedMode,
+              }))}
+              onChange={(mode) =>
+                changeTheme(selectedTheme, (mode as HvListValue)?.value)
+              }
+            />
           </HvBox>
           <HvBox>
-            <CodeEditor themeName={themeName} setCopied={setCopied} />
+            <CodeEditor themeName={customTheme.name} setCopied={setCopied} />
           </HvBox>
           <HvBox>
             <HvTabs

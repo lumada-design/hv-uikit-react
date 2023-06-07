@@ -59,13 +59,12 @@ export const themeDiff = (a: object, b: object, rootLevel = true): object => {
 export const getThemeCode = (
   themeName: string,
   selectedTheme: string,
-  activeTheme,
-  customTheme
+  themeChanges
 ) => {
   const final = {
     name: themeName,
     base: selectedTheme,
-    ...themeDiff(activeTheme, customTheme),
+    ...themeChanges,
   };
 
   // the `replace` bit below is just a regex to remove the quotes from

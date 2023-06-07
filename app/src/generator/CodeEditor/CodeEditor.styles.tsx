@@ -12,6 +12,9 @@ export const styles = {
         top: "2px!important",
       },
     },
+    ".suggest-widget": {
+      display: "none!important",
+    },
   }),
   codeEditorTools: css({
     display: "flex",
