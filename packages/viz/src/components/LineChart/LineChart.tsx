@@ -23,6 +23,7 @@ import { useTheme } from "@hitachivantara/uikit-react-core";
 import { getAgFunc, getAxisType, getLegendIcon } from "@viz/utils";
 import { from, table, internal, desc, not } from "arquero";
 import ColumnTable from "arquero/dist/types/table/column-table";
+import { EChartsOption } from "echarts";
 
 // Register chart components
 echarts.use([
@@ -194,7 +195,7 @@ export const HvLineChart = ({
 
   const groupByKey = Array.isArray(groupBy) ? groupBy.join("_") : groupBy;
 
-  const chartData = useMemo(() => {
+  const chartData = useMemo<ColumnTable>(() => {
     let tableData: ColumnTable;
     if (data instanceof internal.ColumnTable) {
       tableData = data;
@@ -321,7 +322,7 @@ export const HvLineChart = ({
 
   chartData.print();
 
-  const chartDataset = useMemo(() => {
+  const chartDataset = useMemo<Pick<EChartsOption, "dataset">>(() => {
     return {
       dataset: {
         source: chartData.columnNames().reduce(
@@ -335,7 +336,7 @@ export const HvLineChart = ({
     };
   }, [chartData]);
 
-  const chartXAxis = useMemo(() => {
+  const chartXAxis = useMemo<Pick<EChartsOption, "xAxis">>(() => {
     return {
       xAxis: {
         type: getAxisType(xAxis?.type) ?? "category",
@@ -359,7 +360,7 @@ export const HvLineChart = ({
     chartData,
   ]);
 
-  const chartYAxis = useMemo(() => {
+  const chartYAxis = useMemo<Pick<EChartsOption, "yAxis">>(() => {
     return {
       yAxis: {
         type: getAxisType(yAxis?.type) ?? "value",
@@ -381,7 +382,7 @@ export const HvLineChart = ({
     yAxis?.minValue,
   ]);
 
-  const chartSeries = useMemo(() => {
+  const chartSeries = useMemo<Pick<EChartsOption, "series">>(() => {
     return {
       series: chartData
         .columnNames()
@@ -408,7 +409,7 @@ export const HvLineChart = ({
     areaOpacity,
   ]);
 
-  const chartTooltip = useMemo(() => {
+  const chartTooltip = useMemo<Pick<EChartsOption, "tooltip">>(() => {
     return {
       tooltip: {
         confine: false,
@@ -496,16 +497,20 @@ export const HvLineChart = ({
     activeTheme,
   ]);
 
-  const chartLegend = useMemo(() => {
+  const chartLegend = useMemo<Pick<EChartsOption, "legend">>(() => {
     return {
       legend: {
-        show: legend?.show ?? chartSeries.series.length > 1,
+        show:
+          legend?.show ??
+          (Array.isArray(chartSeries.series) && chartSeries.series.length > 1),
         icon: getLegendIcon(area),
       },
     };
   }, [chartSeries, legend?.show, area]);
 
-  const chartHorizontalRangerSlider = useMemo(() => {
+  const chartHorizontalRangerSlider = useMemo<
+    Pick<EChartsOption, "dataZoom">
+  >(() => {
     return {
       dataZoom: {
         show: horizontalRangeSlider?.show ?? false,
@@ -543,7 +548,7 @@ export const HvLineChart = ({
     chartHorizontalRangerSlider,
   ]);
 
-  const [initialOption] = useState({
+  const [initialOption] = useState<EChartsOption>({
     aria: {
       enabled: true,
     },
