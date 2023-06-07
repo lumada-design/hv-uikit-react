@@ -132,7 +132,6 @@ export const HvVizProvider = ({ children }: HvVizProviderProps) => {
           lineStyle: {
             width: 2,
           },
-          symbol: "none",
         },
       });
     });
