@@ -2,6 +2,7 @@ import { useVizTheme } from "@viz/hooks";
 import ReactECharts from "echarts-for-react/lib/core";
 import { LineChart } from "echarts/charts";
 import {
+  DatasetComponent,
   GridComponent,
   MarkLineComponent,
   TooltipComponent,
@@ -14,18 +15,20 @@ import * as echarts from "echarts/core";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   HvChartAggregation,
+  HvChartOrder,
   HvChartAxisType,
   HvChartEmptyCellMode,
 } from "@viz/types";
 import { useTheme } from "@hitachivantara/uikit-react-core";
 import { getAgFunc, getAxisType, getLegendIcon } from "@viz/utils";
-import { from, table, internal } from "arquero";
+import { from, table, internal, desc, not } from "arquero";
 import ColumnTable from "arquero/dist/types/table/column-table";
 
 // Register chart components
 echarts.use([
   LineChart,
   CanvasRenderer,
+  DatasetComponent,
   GridComponent,
   MarkLineComponent,
   AriaComponent,
@@ -33,6 +36,21 @@ echarts.use([
   LegendComponent,
   DataZoomSliderComponent,
 ]);
+
+type GroupByField = string;
+type SplitByField = string;
+
+type FullMeasuresField = {
+  field: string;
+  agg?: HvChartAggregation;
+};
+type MeasuresField = string | FullMeasuresField;
+
+type FullSortByField = {
+  field: string;
+  order?: HvChartOrder;
+};
+type SortByField = string | FullSortByField;
 
 export interface HvLineChartProps {
   /** Chart data. */
@@ -42,9 +60,7 @@ export interface HvLineChartProps {
     | Record<string | number, string | number>[]
     | ColumnTable;
   /** Options for the xAxis, i.e. the horizontal axis. */
-  xAxis: {
-    /** Columns to use for the horizontal axis. The data will be grouped based on these columns. */
-    fields: string | string[];
+  xAxis?: {
     /** Type: continuous, categorical, or time data. Defaults to `categorical`. */
     type?: HvChartAxisType;
     /** Formatter for the labels on the horizontal axis. */
@@ -55,20 +71,35 @@ export interface HvLineChartProps {
     labelRotation?: number;
     /** Name used on the horizontal axis. */
     name?: string;
-  };
-  /** Options for the measures, i.e. the vertical axis. */
-  measures: {
-    /** Columns to use as measures. These are the columns to measure on the vertical axis. */
-    fields: string | string[];
     /**
-     * Aggregation functions to use for the columns to measure.
-     *
-     * Each column needs its own aggregation function.
-     * If no value is provided, `sum` will be used by default.
-     * If only one function is provided (example: `aggregation="count"`), it will be used for all columns.
-     * If an array is provided, the functions must be listed in the same order as the measures' `fields` and, if a value is missing, `sum` will be used by default.
+     * Maximum value on the horizontal axis.
+     * If no value is provided, the chart will automatically set a max value in order for all values to be equally distributed.
+     * Set this property to `max` to use the maximum data value.
      */
-    aggregation?: HvChartAggregation | HvChartAggregation[];
+    maxValue?:
+      | string
+      | number
+      | "max"
+      | ((obj: {
+          max: string | number;
+          min: string | number;
+        }) => string | number);
+    /**
+     * Minimum value on the horizontal axis.
+     * If no value is provided, the chart will automatically set a min value in order for all values to be equally distributed.
+     * Set this property to `min` to use the maximum data value.
+     */
+    minValue?:
+      | string
+      | number
+      | "min"
+      | ((obj: {
+          max: string | number;
+          min: string | number;
+        }) => string | number);
+  };
+  /** Options for the yAxis, i.e. the vertical axis. */
+  yAxis?: {
     /** Type: continuous, categorical, or time data. Defaults to `continuous`. */
     type?: HvChartAxisType;
     /** Formatter for the labels on the vertical axis. */
@@ -98,11 +129,13 @@ export interface HvLineChartProps {
           min: string | number;
         }) => string | number);
   };
-  /** Series options. */
-  series?: {
-    /** Columns to use to split the measures. */
-    fields?: string | string[];
-  };
+
+  // Visual Roles
+  groupBy: GroupByField | GroupByField[];
+  splitBy?: SplitByField | SplitByField[];
+  measures: MeasuresField | MeasuresField[];
+  sortBy?: SortByField | SortByField[];
+
   /** Tooltip options. */
   tooltip?: {
     /** Whether to show the tooltip or not. Defaults to `true`. */
@@ -138,9 +171,12 @@ export interface HvLineChartProps {
  */
 export const HvLineChart = ({
   data,
-  series,
-  xAxis,
+  groupBy,
+  splitBy,
   measures,
+  sortBy,
+  xAxis,
+  yAxis,
   legend,
   tooltip,
   lineNameFormatter,
@@ -156,6 +192,8 @@ export const HvLineChart = ({
   const chartRef = useRef<ReactECharts>(null);
   const isMounted = useRef<boolean>(false);
 
+  const groupByKey = Array.isArray(groupBy) ? groupBy.join("_") : groupBy;
+
   const chartData = useMemo(() => {
     let tableData: ColumnTable;
     if (data instanceof internal.ColumnTable) {
@@ -166,114 +204,203 @@ export const HvLineChart = ({
       tableData = table(data);
     }
 
-    const measuresFields = Array.isArray(measures.fields)
-      ? measures.fields
-      : [measures.fields];
+    const groupByFields = groupBy
+      ? Array.isArray(groupBy)
+        ? groupBy
+        : [groupBy]
+      : [];
 
-    const agFunction = Array.isArray(measures.aggregation)
-      ? measures.aggregation
-      : measuresFields.map(() => measures.aggregation as HvChartAggregation);
+    const splitByFields = Array.isArray(splitBy)
+      ? splitBy
+      : splitBy != null
+      ? [splitBy]
+      : [];
 
-    const aggregations = measuresFields.reduce(
-      (acc, field, i) => ({
-        ...acc,
-        [field]: getAgFunc(agFunction[i] ?? "sum", field),
-      }),
-      {}
-    );
+    const measuresFields: { [key: string]: string } =
+      measures == null
+        ? {}
+        : typeof measures === "string"
+        ? { [measures]: getAgFunc("sum", measures) }
+        : Array.isArray(measures)
+        ? measures.reduce<{ [key: string]: string }>((acc, value) => {
+            let field: string;
+            let agFunction: HvChartAggregation;
+            if (typeof value === "string") {
+              field = value;
+              agFunction = "sum";
+            } else {
+              field = value.field;
+              agFunction = value.agg ?? "sum";
+            }
 
-    if (series?.fields) {
-      return tableData.groupby(xAxis.fields).pivot(series.fields, aggregations);
+            return {
+              ...acc,
+              [field]: getAgFunc(agFunction, field),
+            };
+          }, {})
+        : {
+            [measures.field]: getAgFunc(measures.agg ?? "sum", measures.field),
+          };
+
+    const sortByFields: { [key: string]: HvChartOrder } =
+      sortBy == null
+        ? {}
+        : typeof sortBy === "string"
+        ? { [sortBy]: "asc" }
+        : Array.isArray(sortBy)
+        ? sortBy.reduce<{ [key: string]: HvChartOrder }>((acc, value) => {
+            let field: string;
+            let orderFunction: HvChartOrder;
+            if (typeof value === "string") {
+              field = value;
+              orderFunction = "asc";
+            } else {
+              field = value.field;
+              orderFunction = value.order ?? "asc";
+            }
+
+            return {
+              ...acc,
+              [field]: orderFunction,
+            };
+          }, {})
+        : { [sortBy.field]: sortBy.order ?? "asc" };
+
+    const allFields = [
+      ...groupByFields,
+      ...splitByFields,
+      ...Object.keys(measuresFields),
+    ];
+
+    // remove unneeded fields
+    tableData = tableData.select(...allFields);
+
+    // group by groupBy fields
+    if (groupByFields.length > 0) {
+      tableData = tableData.groupby(groupByFields);
     }
 
-    return tableData.groupby(xAxis.fields).rollup(aggregations);
-  }, [
-    data,
-    series?.fields,
-    xAxis.fields,
-    measures.aggregation,
-    measures.fields,
-  ]);
+    if (splitByFields.length > 0) {
+      // pivot by splitBy fields
+      tableData = tableData.pivot(splitByFields, measuresFields);
+    } else {
+      // if there is no splitBy fields, just aggregate measures fields
+      tableData = tableData.rollup(measuresFields);
+    }
+
+    // if grouped by multiple fields, create a new joint field
+    // as the line chart doesn't implement hierarchical axis label grouping
+    if (groupByFields.length > 1) {
+      const expression = `d => ${groupByFields
+        .map((field) => `d.${field}`)
+        .join(" + '_' + ")}`;
+
+      tableData = tableData.derive(
+        { [groupByKey]: expression },
+        { after: groupByFields[groupByFields.length - 1] }
+      );
+    }
+
+    // sort by sortBy fields
+    if (Object.keys(sortByFields).length > 0) {
+      tableData = tableData.orderby(
+        ...Object.keys(sortByFields)
+          // only sort by fields that are in the table, ignore the rest
+          .filter((key) => allFields.includes(key))
+          .map((key) => (sortByFields[key] === "desc" ? desc(key) : key))
+      );
+    }
+
+    // if a derived field was created, remove the original fields
+    if (groupByFields.length > 1) {
+      tableData = tableData.select(not(...groupByFields));
+    }
+
+    return tableData;
+  }, [data, groupBy, groupByKey, splitBy, measures, sortBy]);
+
+  chartData.print();
+
+  const chartDataset = useMemo(() => {
+    return {
+      dataset: {
+        source: chartData.columnNames().reduce(
+          (acc, c) => ({
+            ...acc,
+            [c]: chartData.array(c),
+          }),
+          {}
+        ),
+      },
+    };
+  }, [chartData]);
 
   const chartXAxis = useMemo(() => {
     return {
       xAxis: {
-        type: getAxisType(xAxis.type) ?? "category",
-        name: xAxis.name,
-        data: Array.isArray(xAxis.fields)
-          ? chartData
-              ?.array(xAxis.fields[0])
-              .map((field: string, num: number) => {
-                let label: string = field;
-
-                for (let i = 1; i < xAxis.fields.length; i++) {
-                  label += `-${chartData.array(xAxis.fields[i])[num]}`;
-                }
-
-                return label;
-              })
-          : chartData?.array(xAxis.fields),
+        type: getAxisType(xAxis?.type) ?? "category",
+        scale: true,
+        name: xAxis?.name,
         axisLabel: {
-          rotate: xAxis.labelRotation ?? 0,
-          formatter: xAxis.labelFormatter,
+          rotate: xAxis?.labelRotation ?? 0,
+          formatter: xAxis?.labelFormatter,
         },
+        max: xAxis?.maxValue === "max" ? "dataMax" : xAxis?.maxValue,
+        min: xAxis?.minValue === "min" ? "dataMin" : xAxis?.minValue,
       },
     };
   }, [
-    xAxis.labelFormatter,
-    xAxis.labelRotation,
-    xAxis.name,
-    xAxis.type,
-    xAxis.fields,
+    xAxis?.labelFormatter,
+    xAxis?.labelRotation,
+    xAxis?.name,
+    xAxis?.type,
+    xAxis?.maxValue,
+    xAxis?.minValue,
     chartData,
   ]);
 
   const chartYAxis = useMemo(() => {
     return {
       yAxis: {
-        type: getAxisType(measures.type) ?? "value",
-        name: measures.name,
+        type: getAxisType(yAxis?.type) ?? "value",
+        name: yAxis?.name,
         axisLabel: {
-          rotate: measures.labelRotation ?? 0,
-          formatter: measures.labelFormatter,
+          rotate: yAxis?.labelRotation ?? 0,
+          formatter: yAxis?.labelFormatter,
         },
-        max: measures.maxValue === "max" ? "dataMax" : measures.maxValue,
-        min: measures.minValue === "min" ? "dataMin" : measures.minValue,
+        max: yAxis?.maxValue === "max" ? "dataMax" : yAxis?.maxValue,
+        min: yAxis?.minValue === "min" ? "dataMin" : yAxis?.minValue,
       },
     };
   }, [
-    measures.labelFormatter,
-    measures.labelRotation,
-    measures.name,
-    measures.type,
-    measures.maxValue,
-    measures.minValue,
+    yAxis?.labelFormatter,
+    yAxis?.labelRotation,
+    yAxis?.name,
+    yAxis?.type,
+    yAxis?.maxValue,
+    yAxis?.minValue,
   ]);
 
   const chartSeries = useMemo(() => {
     return {
-      series:
-        chartData
-          ?.columnNames()
-          .filter((c) =>
-            Array.isArray(xAxis.fields)
-              ? !xAxis.fields.includes(c)
-              : c !== xAxis.fields
-          )
-          .map((c) => {
-            return {
-              name: lineNameFormatter ? lineNameFormatter(c) : c,
-              data: chartData.array(c),
-              type: "line",
-              areaStyle: area ? { opacity: areaOpacity } : undefined,
-              connectNulls: emptyCellMode === "connect" || false,
-              stack: stacked ? "x" : undefined,
-            };
-          }) || [],
+      series: chartData
+        .columnNames()
+        .filter((c) => c !== groupByKey)
+        .map((c) => {
+          return {
+            id: `series~${groupByKey}~${c}`,
+            name: lineNameFormatter ? lineNameFormatter(c) : c,
+            encode: { x: groupByKey, y: c },
+            type: "line",
+            areaStyle: area ? { opacity: areaOpacity } : undefined,
+            connectNulls: emptyCellMode === "connect" || false,
+            stack: stacked ? "x" : undefined,
+          };
+        }),
     };
   }, [
     chartData,
-    xAxis.fields,
+    groupByKey,
     area,
     stacked,
     lineNameFormatter,
@@ -348,8 +475,8 @@ export const HvLineChart = ({
                       activeTheme?.colors.modes[selectedMode].secondary
                     };">${
                       tooltip?.valueFormatter
-                        ? tooltip.valueFormatter(s.value)
-                        : s.value
+                        ? tooltip.valueFormatter(s.value[s.encode.y[0]])
+                        : s.value[s.encode.y[0]]
                     }</p>
                     </div>
                   `;
@@ -396,6 +523,7 @@ export const HvLineChart = ({
 
     chartRef.current?.getEchartsInstance().setOption(
       {
+        ...chartDataset,
         ...chartXAxis,
         ...chartYAxis,
         ...chartSeries,
@@ -407,6 +535,7 @@ export const HvLineChart = ({
       }
     );
   }, [
+    chartDataset,
     chartXAxis,
     chartYAxis,
     chartSeries,
@@ -419,6 +548,7 @@ export const HvLineChart = ({
       enabled: true,
     },
     animation: false,
+    ...chartDataset,
     ...chartXAxis,
     ...chartYAxis,
     ...chartSeries,

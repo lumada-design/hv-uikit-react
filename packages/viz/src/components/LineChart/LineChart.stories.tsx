@@ -10,6 +10,7 @@ import {
 import { useEffect, useMemo, useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
+import { loadArrow } from "arquero";
 import { emptyCellMode } from "@viz/types/generic";
 import { HvLineChart, HvLineChartProps } from "./LineChart";
 import { chartData } from "./data";
@@ -43,8 +44,11 @@ export const Main: StoryObj<HvLineChartProps> = {
     legend: { control: { disable: true } },
     data: { control: { disable: true } },
     xAxis: { control: { disable: true } },
+    yAxis: { control: { disable: true } },
+    groupBy: { control: { disable: true } },
+    splitBy: { control: { disable: true } },
     measures: { control: { disable: true } },
-    series: { control: { disable: true } },
+    sortBy: { control: { disable: true } },
     tooltip: { control: { disable: true } },
     lineNameFormatter: { control: { disable: true } },
     horizontalRangeSlider: { control: { disable: true } },
@@ -53,7 +57,16 @@ export const Main: StoryObj<HvLineChartProps> = {
       options: emptyCellMode,
     },
   },
-  render: ({ data, xAxis, measures, ...others }) => {
+  render: ({
+    data,
+    xAxis,
+    yAxis,
+    groupBy,
+    splitBy,
+    measures,
+    sortBy,
+    ...others
+  }) => {
     return (
       <HvLineChart
         data={{
@@ -76,12 +89,8 @@ export const Main: StoryObj<HvLineChartProps> = {
             2146,
           ],
         }}
-        xAxis={{
-          fields: "Month",
-        }}
-        measures={{
-          fields: "Sales Target",
-        }}
+        groupBy="Month"
+        measures="Sales Target"
         {...others}
       />
     );
@@ -119,12 +128,8 @@ export const WithArea: StoryObj<HvLineChartProps> = {
               2146,
             ]
           )}
-        xAxis={{
-          fields: "Month",
-        }}
-        measures={{
-          fields: "Sales Target",
-        }}
+        groupBy="Month"
+        measures="Sales Target"
         area
       />
     );
@@ -214,10 +219,8 @@ export const MultipleLineCharts: StoryObj<HvLineChartProps> = {
             "Monthly Sales": 6705,
           },
         ]}
-        xAxis={{ fields: "Month" }}
-        measures={{
-          fields: ["Sales Target", "Sales Per Rep", "Monthly Sales"],
-        }}
+        groupBy="Month"
+        measures={["Sales Target", "Sales Per Rep", "Monthly Sales"]}
       />
     );
   },
@@ -320,10 +323,8 @@ export const CustomMultipleLineCharts: StoryObj<HvLineChartProps> = {
         </div>
         <HvLineChart
           data={chartData[country][time]}
-          xAxis={{ fields: "time" }}
-          measures={{
-            fields: ["Input Feed Rate", "Output Feed", "Availability"],
-          }}
+          groupBy="time"
+          measures={["Input Feed Rate", "Output Feed", "Availability"]}
         />
       </>
     );
@@ -423,13 +424,9 @@ export const MultipleLineChartsWithPivotColumns: StoryObj<HvLineChartProps> = {
               6, 7,
             ],
           }}
-          xAxis={{
-            fields: "Year",
-          }}
-          measures={{
-            fields: "Total",
-          }}
-          series={{ fields: checked ? ["Country", "Medal"] : "Country" }}
+          groupBy="Year"
+          measures="Total"
+          splitBy={checked ? ["Country", "Medal"] : "Country"}
           lineNameFormatter={(s) => `${s?.split("_").join(" ")}`}
         />
       </>
@@ -456,17 +453,15 @@ export const StackedAreaChart: StoryObj<HvLineChartProps> = {
           Target: [2100, 8500, 3000],
           Cash: [500, 8000, 9500],
         }}
-        xAxis={{
-          fields: "Group",
-        }}
-        measures={{
-          fields: [
-            "Sales Target",
-            "Sales Per Rep",
-            "Monthly Sales",
-            "Target",
-            "Cash",
-          ],
+        groupBy="Group"
+        measures={[
+          "Sales Target",
+          "Sales Per Rep",
+          "Monthly Sales",
+          "Target",
+          "Cash",
+        ]}
+        yAxis={{
           labelFormatter: formatter,
         }}
         tooltip={{ valueFormatter: formatter }}
@@ -509,8 +504,8 @@ export const HorizontalRangeSlider: StoryObj<HvLineChartProps> = {
     return (
       <HvLineChart
         data={data}
-        xAxis={{ fields: "Date" }}
-        measures={{ fields: ["Sales Target", "Sales Volume"] }}
+        groupBy="Date"
+        measures={["Sales Target", "Sales Volume"]}
         horizontalRangeSlider={{ show: true }}
       />
     );
@@ -575,12 +570,69 @@ export const WithIntervalUpdates: StoryObj<HvLineChartProps> = {
       return () => clearTimeout(interval);
     });
 
+    return <HvLineChart data={data} groupBy="Date" measures="Sales Target" />;
+  },
+};
+
+export const ArrowData: StoryObj<HvLineChartProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Data loaded in arrow format.",
+      },
+      // https://github.com/storybookjs/storybook/issues/12726
+      inlineStories: false,
+      iframeHeight: 550,
+    },
+  },
+  loaders: [
+    async () => ({
+      data: await loadArrow(import.meta.resolve("./steelwheels.arrow")),
+    }),
+  ],
+  render: (args, { loaded: { data } }) => {
+    const [groupBy, setGroupBy] = useState("Territory");
+    const [checked, setChecked] = useState(false);
+
+    const styles = {
+      checkBox: {
+        paddingBottom: 20,
+      },
+    };
+
+    const salesBy = useMemo(
+      () => [
+        { label: "Territory", value: "Territory", selected: true },
+        { label: "Country", value: "Country" },
+      ],
+      []
+    );
+
     return (
-      <HvLineChart
-        data={data}
-        xAxis={{ fields: "Date" }}
-        measures={{ fields: "Sales Target" }}
-      />
+      <>
+        <HvDropdown
+          label="Show sales by"
+          values={salesBy}
+          placement="left"
+          onChange={(v: any) => setGroupBy(v?.label ?? "Territory")}
+          singleSelectionToggle={false}
+        />
+        <HvCheckBox
+          checked={checked}
+          onChange={(_, c) => setChecked(c)}
+          label="Split by year"
+          className={css(styles.checkBox)}
+        />
+        <HvLineChart
+          data={data}
+          xAxis={{
+            labelRotation: 60,
+          }}
+          groupBy={groupBy}
+          splitBy={checked ? "Years" : undefined}
+          measures="Sales"
+        />
+      </>
     );
   },
 };
