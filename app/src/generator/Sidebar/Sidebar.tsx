@@ -123,15 +123,12 @@ const Sidebar = () => {
           <HvBox>
             <CodeEditor themeName={themeName} setCopied={setCopied} />
           </HvBox>
-          <HvBox
-            css={{
-              overflowY: "scroll",
-            }}
-          >
+          <HvBox>
             <HvTabs
               value={tab}
               onChange={(e, val) => setTab(val)}
               classes={{ flexContainer: styles.themeTools }}
+              variant="scrollable"
             >
               <HvTab
                 icon={<PaintBucket />}
@@ -158,37 +155,38 @@ const Sidebar = () => {
                 classes={{ root: css({ fontSize: 12 }) }}
               />
             </HvTabs>
-            <HvBox
-              css={{
-                padding: theme.space.sm,
-                paddingTop: theme.space.md,
-              }}
+          </HvBox>
+          <HvBox
+            css={{
+              padding: theme.space.sm,
+              paddingTop: 0,
+              overflowY: "scroll",
+            }}
+          >
+            <Suspense
+              fallback={
+                <div>
+                  <HvLoading label="Loading..." />
+                </div>
+              }
             >
-              <Suspense
-                fallback={
-                  <div>
-                    <HvLoading label="Loading..." />
-                  </div>
-                }
-              >
-                {tab === 0 && <Colors />}
-                {tab === 1 && <Typography />}
-                {tab === 2 && (
-                  <>
-                    <FontFamily />
-                    <FontSizes />
-                  </>
-                )}
-                {tab === 3 && (
-                  <>
-                    <Sizes />
-                    <Radii />
-                    <Spacing />
-                    <Zindices />
-                  </>
-                )}
-              </Suspense>
-            </HvBox>
+              {tab === 0 && <Colors />}
+              {tab === 1 && <Typography />}
+              {tab === 2 && (
+                <>
+                  <FontFamily />
+                  <FontSizes />
+                </>
+              )}
+              {tab === 3 && (
+                <>
+                  <Sizes />
+                  <Radii />
+                  <Spacing />
+                  <Zindices />
+                </>
+              )}
+            </Suspense>
           </HvBox>
         </div>
       )}
