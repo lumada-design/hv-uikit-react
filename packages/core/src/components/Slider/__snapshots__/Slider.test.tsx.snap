@@ -9,7 +9,7 @@ exports[`Slider > should render correctly 1`] = `
       class="HvSlider-labelContainer HvSlider-labelIncluded css-1e3d9vv-StyledLabelContainer e153xy1v5"
     >
       <label
-        class="HvSlider-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-yrcxlf-getStyledComponent-StyledTypography e1tnpalo0"
+        class="HvSlider-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-10w0u6t-getStyledComponent-StyledTypography e1tnpalo0"
         for="hvSlider1-slider"
         id="hvSlider1-label"
       >

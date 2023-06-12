@@ -6,7 +6,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
     class="HvCheckBoxGroup-root css-whistd-StyledFormElement e1pxeedd2 HvFormElement-root"
   >
     <label
-      class="HvCheckBoxGroup-label e1pxeedd1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1c34mh5-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+      class="HvCheckBoxGroup-label e1pxeedd1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-j4cetd-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       id="hvcheckboxgroup9-label"
     >
       Favorite Pet
@@ -58,7 +58,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-v2gp3a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-4j7x8p-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox11-input"
             id="hvcheckbox11-label"
           >
@@ -108,7 +108,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-v2gp3a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-4j7x8p-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox13-input"
             id="hvcheckbox13-label"
           >
@@ -158,7 +158,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-v2gp3a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-4j7x8p-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox15-input"
             id="hvcheckbox15-label"
           >

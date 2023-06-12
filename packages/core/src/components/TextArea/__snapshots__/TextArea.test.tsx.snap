@@ -9,7 +9,7 @@ exports[`TextArea > should render correctly 1`] = `
       class="HvTextArea-labelContainer css-1rvt36b-StyledLabelContainer e1e5t49x5"
     >
       <label
-        class="HvTextArea-label e1e5t49x4 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-12xxcei-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+        class="HvTextArea-label e1e5t49x4 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-wg864v-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="hvtextarea3-input"
         id="hvformelement4-label"
       >
