@@ -19,11 +19,13 @@ import {
   HvChartAxisType,
   HvChartEmptyCellMode,
 } from "@viz/types";
-import { useTheme } from "@hitachivantara/uikit-react-core";
 import { getAgFunc, getAxisType, getLegendIcon } from "@viz/utils";
 import { from, table, internal, desc, not } from "arquero";
 import ColumnTable from "arquero/dist/types/table/column-table";
 import { EChartsOption } from "echarts";
+import { css, cx } from "@emotion/css";
+import { styles } from "./LineChart.styles";
+import lineChartClasses, { HvLineChartClasses } from "./lineChartClasses";
 
 // Register chart components
 echarts.use([
@@ -60,6 +62,26 @@ export interface HvLineChartProps {
     | Record<string | number, (string | number)[]>
     | Record<string | number, string | number>[]
     | ColumnTable;
+
+  // Visual Roles
+
+  /** Columns to use for the horizontal axis. The data will be grouped based on these columns. */
+  groupBy: GroupByField | GroupByField[];
+  /**
+   * Columns to measure along the vertical axis.
+   *
+   * If no `agg` is defined, it will default to `sum`.
+   */
+  measures: MeasuresField | MeasuresField[];
+  /** Columns to use to split the measures. */
+  splitBy?: SplitByField | SplitByField[];
+  /**
+   * Columns to use to sort the data points.
+   *
+   * If no `order` is defined, it will default to `asc`.
+   */
+  sortBy?: SortByField | SortByField[];
+
   /** Options for the xAxis, i.e. the horizontal axis. */
   xAxis?: {
     /** Type: continuous, categorical, or time data. Defaults to `categorical`. */
@@ -130,13 +152,6 @@ export interface HvLineChartProps {
           min: string | number;
         }) => string | number);
   };
-
-  // Visual Roles
-  groupBy: GroupByField | GroupByField[];
-  splitBy?: SplitByField | SplitByField[];
-  measures: MeasuresField | MeasuresField[];
-  sortBy?: SortByField | SortByField[];
-
   /** Tooltip options. */
   tooltip?: {
     /** Whether to show the tooltip or not. Defaults to `true`. */
@@ -164,6 +179,8 @@ export interface HvLineChartProps {
     /** Whether to show the ranger slider or not. Defaults to `false`. */
     show?: boolean;
   };
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvLineChartClasses;
 }
 
 /**
@@ -186,8 +203,8 @@ export const HvLineChart = ({
   emptyCellMode = "void",
   horizontalRangeSlider,
   areaOpacity = 0.5,
+  classes,
 }: HvLineChartProps) => {
-  const { activeTheme, selectedMode, selectedTheme } = useTheme();
   const { theme } = useVizTheme();
 
   const chartRef = useRef<ReactECharts>(null);
@@ -320,8 +337,6 @@ export const HvLineChart = ({
     return tableData;
   }, [data, groupBy, groupByKey, splitBy, measures, sortBy]);
 
-  chartData.print();
-
   const chartDataset = useMemo<Pick<EChartsOption, "dataset">>(() => {
     return {
       dataset: {
@@ -357,7 +372,6 @@ export const HvLineChart = ({
     xAxis?.type,
     xAxis?.maxValue,
     xAxis?.minValue,
-    chartData,
   ]);
 
   const chartYAxis = useMemo<Pick<EChartsOption, "yAxis">>(() => {
@@ -423,79 +437,73 @@ export const HvLineChart = ({
           const tooltipName = params[0].name;
 
           return `
-            <div style="width: fit-content; box-shadow: ${
-              activeTheme?.colors.modes[selectedMode].shadow
-            }; background-color: ${
-            activeTheme?.colors.modes[selectedMode].atmo1
-          }">
-              <div style="padding: 15px ${
-                activeTheme?.space.sm
-              }; border-bottom: 3px solid ${
-            activeTheme?.colors.modes[selectedMode].atmo2
-          }">
-                <div>
-                  <p style="font-family: ${
-                    activeTheme?.fontFamily.body
-                  }; font-weight: ${
-            activeTheme?.fontWeights.semibold
-          }; font-size: ${activeTheme?.fontSizes.sm}; color: ${
-            activeTheme?.colors.modes[selectedMode].secondary
-          };">${tooltipName}</p>
-                </div>
-              </div>
-              <div style="display: flex; flex-direction: column; padding: ${
-                activeTheme?.space.sm
-              };">
-                ${params
-                  .map((s, i) => {
-                    return `
-                    <div key="${
-                      s.seriesName
-                    }" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding-bottom: ${
-                      i === params.length - 1 ? 0 : activeTheme?.space.sm
-                    };">
-                        
-                    <div style="display: flex; flex-direction: row; align-items: center; margin-right: ${
-                      activeTheme?.space.sm
-                    };">
-                          <p style="width: 10px; height: 10px; background-color: ${
-                            s.color
-                          }; margin-right: 5px"/>
-                          <p style="font-family: ${
-                            activeTheme?.fontFamily.body
-                          }; font-weight: ${
-                      activeTheme?.fontWeights.semibold
-                    }; font-size: ${activeTheme?.fontSizes.sm}; color: ${
-                      activeTheme?.colors.modes[selectedMode].secondary
-                    };">${s.seriesName}</p>
-                        </div>
-                        
-                        <p style="font-family: ${
-                          activeTheme?.fontFamily.body
-                        }; font-size: ${activeTheme?.fontSizes.sm}; color: ${
-                      activeTheme?.colors.modes[selectedMode].secondary
-                    };">${
-                      tooltip?.valueFormatter
-                        ? tooltip.valueFormatter(s.value[s.encode.y[0]])
-                        : s.value[s.encode.y[0]]
-                    }</p>
-                    </div>
-                  `;
-                  })
-                  .join(" ")}
+          <div class="${cx(
+            lineChartClasses.tooltipRoot,
+            css(styles.tooltipRoot),
+            classes?.tooltipRoot
+          )}">
+            <div class="${cx(
+              lineChartClasses.tooltipTitleRoot,
+              css(styles.tooltipTitleRoot),
+              classes?.tooltipTitleRoot
+            )}">
+              <div>
+                <p class="${cx(
+                  lineChartClasses.tooltipTitle,
+                  css(styles.tooltipTitle),
+                  classes?.tooltipTitle
+                )}">${tooltipName}</p>
               </div>
             </div>
+            <div class="${cx(
+              lineChartClasses.tooltipContentRoot,
+              css(styles.tooltipContentRoot),
+              classes?.tooltipContentRoot
+            )}">
+              ${params
+                .map((s) => {
+                  return `
+                  <div key="${s.seriesName}" class="${cx(
+                    lineChartClasses.tooltipSeriesRoot,
+                    css(styles.tooltipSeriesRoot),
+                    classes?.tooltipSeriesRoot
+                  )}">
+                    <div class="${cx(
+                      lineChartClasses.tooltipSeriesNameRoot,
+                      css(styles.tooltipSeriesNameRoot),
+                      classes?.tooltipSeriesNameRoot
+                    )}">
+                      <p style="background-color: ${s.color};" class="${cx(
+                    lineChartClasses.tooltipSeriesNameColor,
+                    css(styles.tooltipSeriesNameColor),
+                    classes?.tooltipSeriesNameColor
+                  )}" />
+                      <p class="${cx(
+                        lineChartClasses.tooltipSeriesName,
+                        css(styles.tooltipSeriesName),
+                        classes?.tooltipSeriesName
+                      )}">${s.seriesName}</p>
+                    </div>
+                    <p class="${cx(
+                      lineChartClasses.tooltipSeriesValue,
+                      css(styles.tooltipSeriesValue),
+                      classes?.tooltipSeriesValue
+                    )}">${
+                    tooltip?.valueFormatter
+                      ? tooltip.valueFormatter(s.value[s.encode.y[0]])
+                      : s.value[s.encode.y[0]]
+                  }</p>
+                  </div>
+                `;
+                })
+                .join(" ")}
+            </div>
+          </div>
           `;
         },
       },
     };
-  }, [
-    tooltip?.show,
-    tooltip?.valueFormatter,
-    selectedMode,
-    selectedTheme,
-    activeTheme,
-  ]);
+  }, [tooltip?.show, tooltip?.valueFormatter, classes]);
 
   const chartLegend = useMemo<Pick<EChartsOption, "legend">>(() => {
     return {
@@ -533,6 +541,7 @@ export const HvLineChart = ({
         ...chartYAxis,
         ...chartSeries,
         ...chartLegend,
+        ...chartTooltip,
         ...chartHorizontalRangerSlider,
       },
       {
@@ -545,6 +554,7 @@ export const HvLineChart = ({
     chartYAxis,
     chartSeries,
     chartLegend,
+    chartTooltip,
     chartHorizontalRangerSlider,
   ]);
 
@@ -566,10 +576,7 @@ export const HvLineChart = ({
     <ReactECharts
       ref={chartRef}
       echarts={echarts}
-      option={{
-        ...initialOption,
-        ...chartTooltip,
-      }}
+      option={initialOption}
       theme={theme}
     />
   );

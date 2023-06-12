@@ -56,6 +56,7 @@ export const Main: StoryObj<HvLineChartProps> = {
       control: { type: "radio" },
       options: emptyCellMode,
     },
+    classes: { control: { disable: true } },
   },
   render: ({
     data,
