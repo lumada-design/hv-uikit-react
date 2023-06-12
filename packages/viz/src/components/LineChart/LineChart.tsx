@@ -540,7 +540,7 @@ export const HvLineChart = ({
         ...chartHorizontalRangerSlider,
       },
       {
-        replaceMerge: ["xAxis", "yAxis", "series"],
+        replaceMerge: ["xAxis", "yAxis", "series", "dataset"],
       }
     );
   }, [
