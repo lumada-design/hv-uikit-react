@@ -566,6 +566,14 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   drawer: {
     backDropBackgroundColor: theme.colors.atmo4,
   },
+  forms: {
+    infoMessage: {
+      textColor: theme.colors.secondary_80,
+    },
+    label: {
+      fontWeight: theme.fontWeights.normal,
+    },
+  },
 }));
 
 export default ds5;

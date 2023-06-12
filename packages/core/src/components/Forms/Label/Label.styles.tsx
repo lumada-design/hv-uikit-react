@@ -14,6 +14,7 @@ export const StyledTypography = styled(
     $labelDisabled: boolean;
     $childGutter: boolean;
   }) => ({
+    fontWeight: theme.forms.label.fontWeight,
     display: "inline-block",
     ...($labelDisabled && {
       color: theme.colors.secondary_60,

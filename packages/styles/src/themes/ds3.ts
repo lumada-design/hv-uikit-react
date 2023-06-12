@@ -623,6 +623,14 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   drawer: {
     backDropBackgroundColor: theme.colors.atmo4,
   },
+  forms: {
+    infoMessage: {
+      textColor: theme.colors.secondary,
+    },
+    label: {
+      fontWeight: theme.fontWeights.semibold,
+    },
+  },
 }));
 
 export default ds3;

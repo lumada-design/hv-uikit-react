@@ -14,6 +14,7 @@ export const StyledTypography = styled(
     $infoDisabled: boolean;
     $gutter: boolean;
   }) => ({
+    color: theme.forms.infoMessage.textColor,
     display: "inline-block",
     ...($infoDisabled && {
       color: theme.colors.secondary_60,
