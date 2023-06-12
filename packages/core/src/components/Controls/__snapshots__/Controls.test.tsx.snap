@@ -1285,7 +1285,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           class="HvRightControl-root css-binna-StyledRoot e16dy5r71"
         >
           <label
-            class="HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-yrcxlf-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-10w0u6t-getStyledComponent-StyledTypography e1tnpalo0"
             for="tempFilter"
             id="temp-label"
           >
@@ -2274,7 +2274,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           class="HvRightControl-root css-binna-StyledRoot e16dy5r71"
         >
           <label
-            class="HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-yrcxlf-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-10w0u6t-getStyledComponent-StyledTypography e1tnpalo0"
             for="tempFilter"
             id="temp-label"
           >

@@ -9,14 +9,14 @@ exports[`FileUploader > should render correctly 1`] = `
       id="dropzone3"
     >
       <label
-        class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1yqg2xh-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+        class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-10r9fn1-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="dropzone3-input-file"
         id="dropzone3-input-file-label"
       >
         Label
       </label>
       <label
-        class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-1jz6fnw-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
+        class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-pg9ch7-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
         id="dropzone3-description"
       >
         Max. file size: 12.00B

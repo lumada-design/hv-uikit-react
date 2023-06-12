@@ -12,7 +12,7 @@ exports[`ColorPicker > should render correctly full color icon picker 1`] = `
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown26-label"
         >
           Color
@@ -75,7 +75,7 @@ exports[`ColorPicker > should render correctly full color picker 1`] = `
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown1-label"
         >
           Color
@@ -146,7 +146,7 @@ exports[`ColorPicker > should render correctly recommended colors only color pic
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown23-label"
         >
           Color
@@ -239,7 +239,7 @@ exports[`ColorPicker > should render correctly recommended colors only icon colo
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown32-label"
         >
           Color
@@ -306,7 +306,7 @@ exports[`ColorPicker > should render correctly without saved colors color picker
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown12-label"
         >
           Color
@@ -399,7 +399,7 @@ exports[`ColorPicker > should render correctly without saved colors icon color p
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown29-label"
         >
           Color

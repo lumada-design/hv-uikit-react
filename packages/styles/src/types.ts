@@ -414,6 +414,14 @@ export type HvThemeComponents = {
   drawer: {
     backDropBackgroundColor: CSSProperties["backgroundColor"];
   };
+  forms: {
+    infoMessage: {
+      textColor: string;
+    };
+    label: {
+      fontWeight: string;
+    };
+  };
 };
 
 // Theme typography

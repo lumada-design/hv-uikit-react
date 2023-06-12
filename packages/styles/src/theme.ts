@@ -407,6 +407,14 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   drawer: {
     backDropBackgroundColor: "string",
   },
+  forms: {
+    infoMessage: {
+      textColor: "string",
+    },
+    label: {
+      fontWeight: "string",
+    },
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {

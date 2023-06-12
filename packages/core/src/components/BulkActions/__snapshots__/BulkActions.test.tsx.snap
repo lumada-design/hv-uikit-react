@@ -50,7 +50,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-v2gp3a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-4j7x8p-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox14-input"
             id="hvcheckbox14-label"
           >
@@ -253,7 +253,7 @@ exports[`BulkActions > Without actions > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-v2gp3a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-4j7x8p-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox3-input"
             id="hvcheckbox3-label"
           >
