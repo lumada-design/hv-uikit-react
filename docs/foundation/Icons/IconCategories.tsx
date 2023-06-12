@@ -253,6 +253,10 @@ const iconCategories = [
       "Topics",
       "Wand",
       "WindowsLogoFilled",
+      "CyberSecurity",
+      "VideoSecurity",
+      "MachineLearning",
+      "Contactless",
     ],
   },
   {
@@ -344,7 +348,15 @@ const iconCategories = [
     ],
   },
   {
-    Shopping: ["Cart", "Cash", "CreditCard", "GiftVoucher", "Ticket", "Upsell"],
+    Shopping: [
+      "Cart",
+      "Cash",
+      "CreditCard",
+      "GiftVoucher",
+      "Ticket",
+      "Upsell",
+      "Receipt",
+    ],
   },
   {
     Status: [
@@ -354,12 +366,13 @@ const iconCategories = [
       "Level2Alt",
       "Level2Average",
       "Canceled",
+      "Caution",
       "Fail",
       "Pending",
       "Running",
+      "Success",
     ],
   },
-  { "System Feedback": ["Caution", "Fail", "Success"] },
   {
     Transports: [
       "AerialTramway",
@@ -373,6 +386,8 @@ const iconCategories = [
       "PaperBoat",
       "Plane",
       "Train",
+      "ElectricVehicle",
+      "ContactLess",
     ],
   },
   {
