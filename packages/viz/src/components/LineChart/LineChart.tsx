@@ -423,7 +423,6 @@ export const HvLineChart = ({
     return {
       tooltip: {
         confine: false,
-        appendToBody: true,
         show: tooltip?.show ?? true,
         trigger: "axis",
         position: (point, params, dom, rect, size) => {
