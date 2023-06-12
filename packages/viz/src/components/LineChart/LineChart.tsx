@@ -62,9 +62,6 @@ export interface HvLineChartProps {
     | Record<string | number, (string | number)[]>
     | Record<string | number, string | number>[]
     | ColumnTable;
-
-  // Visual Roles
-
   /** Columns to use for the horizontal axis. The data will be grouped based on these columns. */
   groupBy: GroupByField | GroupByField[];
   /**
@@ -81,7 +78,6 @@ export interface HvLineChartProps {
    * If no `order` is defined, it will default to `asc`.
    */
   sortBy?: SortByField | SortByField[];
-
   /** Options for the xAxis, i.e. the horizontal axis. */
   xAxis?: {
     /** Type: continuous, categorical, or time data. Defaults to `categorical`. */

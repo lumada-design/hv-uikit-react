@@ -629,6 +629,11 @@ export const ArrowData: StoryObj<HvLineChartProps> = {
           groupBy={groupBy}
           splitBy={checked ? "Years" : undefined}
           measures="Sales"
+          tooltip={{
+            valueFormatter(value) {
+              return value ? Number(value).toFixed(2) : "-";
+            },
+          }}
         />
       </>
     );

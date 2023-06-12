@@ -29,7 +29,13 @@ module.exports = {
     storyStoreV7: true,
     uildStoriesJson: true,
   },
-  staticDirs: ["./assets"],
+  staticDirs: [
+    "./assets",
+    {
+      from: "../packages/viz/src/components/LineChart/steelwheels.arrow",
+      to: "assets/steelwheels.arrow",
+    },
+  ],
   async viteFinal(config, { configType }) {
     config.plugins.push(tsconfigPaths.default({ loose: true }));
 
