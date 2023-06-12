@@ -26,7 +26,7 @@ export const MenuItemLi = styled(
       paddingTop: theme.header.secondLevelSelectedItemBorderBottomThickness,
       height: "100%",
       "& > * > span": {
-        color: theme.header.selectedItemColor,
+        color: theme.header.secondLevelSelectedItemColor,
       },
     }),
   ...($selected &&
@@ -56,13 +56,16 @@ export const MenuItemLi = styled(
       height: "100%",
       borderTop: `${theme.header.secondLevelSelectedItemBorderTopThickness} solid ${theme.header.secondLevelBackgroundColor}`,
       borderBottom: `${theme.header.secondLevelSelectedItemBorderBottomThickness} solid ${theme.header.secondLevelBackgroundColor}`,
+      "&& > * > span": {
+        color: theme.header.secondLevelItemColor,
+      },
     }),
 }));
 
 export const MenuItemLabel = styled(
   "div",
   transientOptions
-)(({ $isSelected }: { $isSelected?: boolean }) => ({
+)(({ $isSelected, $isMenu }: { $isSelected?: boolean; $isMenu?: boolean }) => ({
   border: "none",
   cursor: "pointer",
   padding: `${theme.space.xs} ${theme.space.sm}`,
@@ -86,10 +89,16 @@ export const MenuItemLabel = styled(
     alignItems: "center",
     justifyContent: "space-between",
     ...($isSelected && {
-      backgroundColor: theme.header.selectedItemBackgroundColor,
       borderRadius: theme.radii.full,
       padding: theme.space.xs,
-      color: theme.header.selectedItemColor,
+      ...(!$isMenu && {
+        color: theme.header.selectedItemColor,
+        backgroundColor: theme.header.selectedItemBackgroundColor,
+      }),
+      ...($isMenu && {
+        color: theme.header.secondLevelSelectedItemColor,
+        backgroundColor: theme.header.secondLevelSelectedItemBackgroundColor,
+      }),
     }),
   },
   "& span::after": {
@@ -108,7 +117,7 @@ export const MenuItemLabel = styled(
 }));
 
 export const MenuItemLink = styled("a")(
-  ({ $isSelected }: { $isSelected?: boolean }) => ({
+  ({ $isSelected, $isMenu }: { $isSelected?: boolean; $isMenu?: boolean }) => ({
     border: "none",
     cursor: "pointer",
     padding: `${theme.space.xs} ${theme.space.sm}`,
@@ -126,7 +135,14 @@ export const MenuItemLink = styled("a")(
       ...outlineStyles,
     },
     ...($isSelected && {
-      "& > div > span": { color: theme.header.selectedItemColor },
+      "& > div > span": {
+        ...(!$isMenu && {
+          color: theme.header.selectedItemColor,
+        }),
+        ...($isMenu && {
+          color: theme.header.secondLevelSelectedItemColor,
+        }),
+      },
     }),
     "& span": {
       display: "inline-flex",
