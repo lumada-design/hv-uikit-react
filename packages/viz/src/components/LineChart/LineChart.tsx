@@ -1,10 +1,9 @@
-import { useVizTheme } from "@viz/hooks";
-import ReactECharts from "echarts-for-react/lib/core";
-import { LineChart } from "echarts/charts";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { css, cx } from "@emotion/css";
+
 import {
   DatasetComponent,
   GridComponent,
-  MarkLineComponent,
   TooltipComponent,
   AriaComponent,
   LegendComponent,
@@ -12,7 +11,14 @@ import {
 } from "echarts/components";
 import { CanvasRenderer } from "echarts/renderers";
 import * as echarts from "echarts/core";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { LineChart } from "echarts/charts";
+import type { EChartsOption } from "echarts";
+
+import ReactECharts from "echarts-for-react";
+
+import { from, internal, not, table, desc } from "arquero";
+import type ColumnTable from "arquero/dist/types/table/column-table";
+
 import {
   HvChartAggregation,
   HvChartOrder,
@@ -20,10 +26,8 @@ import {
   HvChartEmptyCellMode,
 } from "@viz/types";
 import { getAgFunc, getAxisType, getLegendIcon } from "@viz/utils";
-import { from, table, internal, desc, not } from "arquero";
-import ColumnTable from "arquero/dist/types/table/column-table";
-import { EChartsOption } from "echarts";
-import { css, cx } from "@emotion/css";
+import { useVizTheme } from "@viz/hooks";
+
 import { styles } from "./LineChart.styles";
 import lineChartClasses, { HvLineChartClasses } from "./lineChartClasses";
 
@@ -33,7 +37,6 @@ echarts.use([
   CanvasRenderer,
   DatasetComponent,
   GridComponent,
-  MarkLineComponent,
   AriaComponent,
   TooltipComponent,
   LegendComponent,
