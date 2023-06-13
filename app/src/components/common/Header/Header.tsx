@@ -22,7 +22,6 @@ export const Header = () => {
   const { activePath } = useContext(NavigationContext);
   const { setOpen, open, setTutorialOpen } = useContext(GeneratorContext);
 
-  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
 
   const handleChange = (event: MouseEvent, selection: any): void => {
@@ -42,53 +41,41 @@ export const Header = () => {
         left: 0,
       }}
     >
-      {!isMdUp && (
-        <div>
-          <HvButton variant="primaryGhost" icon>
-            <Menu />
-          </HvButton>
-        </div>
-      )}
-
       <HvHeaderBrand
         logo={<img src={logo} style={{ height: 20 }} alt="logo" />}
         name={!isXs ? "Theme Creator" : undefined}
       />
 
-      {isMdUp && (
-        <HvHeaderNavigation
-          data={navigation}
-          selected={activePath?.id}
-          onClick={handleChange}
-        />
-      )}
+      <HvHeaderNavigation
+        data={navigation}
+        selected={activePath?.id}
+        onClick={handleChange}
+      />
 
-      {isMdUp && (
-        <HvHeaderActions>
+      <HvHeaderActions>
+        <HvButton
+          variant="secondaryGhost"
+          onClick={handleOpenTutorial}
+          style={{ padding: 10 }}
+        >
+          TUTORIAL
+        </HvButton>
+        <HvTooltip
+          title={
+            <HvTypography>
+              {open ? "Close Theme Creator" : "Open Theme Creator"}
+            </HvTypography>
+          }
+        >
           <HvButton
             variant="secondaryGhost"
-            onClick={handleOpenTutorial}
-            style={{ padding: 10 }}
+            icon
+            onClick={() => setOpen?.((prev) => !prev)}
           >
-            TUTORIAL
+            <Menu />
           </HvButton>
-          <HvTooltip
-            title={
-              <HvTypography>
-                {open ? "Close Theme Creator" : "Open Theme Creator"}
-              </HvTypography>
-            }
-          >
-            <HvButton
-              variant="secondaryGhost"
-              icon
-              onClick={() => setOpen?.((prev) => !prev)}
-            >
-              <Menu />
-            </HvButton>
-          </HvTooltip>
-        </HvHeaderActions>
-      )}
+        </HvTooltip>
+      </HvHeaderActions>
     </HvHeader>
   );
 };
