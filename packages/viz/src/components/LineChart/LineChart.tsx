@@ -54,6 +54,7 @@ type SplitByField = string;
 
 type FullMeasuresField = {
   field: string;
+  sampling?: "none" | "average" | "min" | "max" | "sum" | "lttb";
   yAxis?: string;
   hideSymbol?: boolean;
   agg?: HvChartAggregation;
@@ -366,6 +367,8 @@ export const HvLineChart = ({
 
           const showSymbol =
             typeof measure !== "string" ? !measure.hideSymbol : true;
+          const sampling =
+            typeof measure !== "string" ? measure.sampling : undefined;
           const yAxisId =
             typeof measure !== "string" ? measure.yAxis : undefined;
 
@@ -375,6 +378,7 @@ export const HvLineChart = ({
             encode: { x: groupByKey, y: c },
             type: "line",
             showSymbol,
+            sampling,
             areaStyle: area ? { opacity: areaOpacity } : undefined,
             connectNulls: emptyCellMode === "connect" || false,
             stack: stacked ? "x" : undefined,
