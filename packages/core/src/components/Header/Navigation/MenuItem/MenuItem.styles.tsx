@@ -42,16 +42,20 @@ export const MenuItemLi = styled(
   ...(!$selected &&
     !$isMenu && {
       marginTop: theme.header.selectedItemBorderTopThickness,
-      marginBottom: theme.header.selectedItemBorderBottomThickness,
+      paddingBottom: theme.header.selectedItemBorderBottomThickness,
       paddingTop: theme.header.selectedItemBorderBottomThickness,
-      height: `calc(100% - ${theme.header.selectedItemBorderTopThickness} - ${theme.header.selectedItemBorderBottomThickness})`,
+      height: "100%",
+      borderTop: `${theme.header.selectedItemBorderTopThickness} solid ${theme.header.backgroundColor}`,
+      borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.backgroundColor}`,
     }),
   ...(!$selected &&
     $isMenu && {
       marginTop: theme.header.secondLevelSelectedItemBorderTopThickness,
-      marginBottom: theme.header.secondLevelSelectedItemBorderBottomThickness,
+      paddingBottom: theme.header.secondLevelSelectedItemBorderBottomThickness,
       paddingTop: theme.header.secondLevelSelectedItemBorderBottomThickness,
-      height: `calc(100% - ${theme.header.secondLevelSelectedItemBorderTopThickness} - ${theme.header.secondLevelSelectedItemBorderBottomThickness})`,
+      height: "100%",
+      borderTop: `${theme.header.secondLevelSelectedItemBorderTopThickness} solid ${theme.header.secondLevelBackgroundColor}`,
+      borderBottom: `${theme.header.secondLevelSelectedItemBorderBottomThickness} solid ${theme.header.secondLevelBackgroundColor}`,
     }),
 }));
 
