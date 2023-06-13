@@ -55,6 +55,7 @@ type SplitByField = string;
 type FullMeasuresField = {
   field: string;
   yAxis?: string;
+  hideSymbol?: boolean;
   agg?: HvChartAggregation;
 };
 type MeasuresField = string | FullMeasuresField;
@@ -363,6 +364,8 @@ export const HvLineChart = ({
               return m.field === measureName;
             }) ?? measuresArray[0];
 
+          const showSymbol =
+            typeof measure !== "string" ? !measure.hideSymbol : true;
           const yAxisId =
             typeof measure !== "string" ? measure.yAxis : undefined;
 
@@ -371,6 +374,7 @@ export const HvLineChart = ({
             name: lineNameFormatter ? lineNameFormatter(c) : c,
             encode: { x: groupByKey, y: c },
             type: "line",
+            showSymbol,
             areaStyle: area ? { opacity: areaOpacity } : undefined,
             connectNulls: emptyCellMode === "connect" || false,
             stack: stacked ? "x" : undefined,

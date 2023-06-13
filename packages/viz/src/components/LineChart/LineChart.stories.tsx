@@ -567,7 +567,13 @@ export const WithIntervalUpdates: StoryObj<HvLineChartProps> = {
       return () => clearTimeout(interval);
     });
 
-    return <HvLineChart data={data} groupBy="Date" measures="Sales Target" />;
+    return (
+      <HvLineChart
+        data={data}
+        groupBy="Date"
+        measures={{ field: "Sales Target", hideSymbol: true }}
+      />
+    );
   },
 };
 
