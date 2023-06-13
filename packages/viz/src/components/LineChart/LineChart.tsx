@@ -8,6 +8,7 @@ import {
   AriaComponent,
   LegendComponent,
   DataZoomSliderComponent,
+  DataZoomInsideComponent,
 } from "echarts/components";
 import { CanvasRenderer } from "echarts/renderers";
 import * as echarts from "echarts/core";
@@ -41,6 +42,7 @@ echarts.use([
   TooltipComponent,
   LegendComponent,
   DataZoomSliderComponent,
+  DataZoomInsideComponent,
 ]);
 
 type GroupByField = string;
@@ -517,11 +519,20 @@ export const HvLineChart = ({
     Pick<EChartsOption, "dataZoom">
   >(() => {
     return {
-      dataZoom: {
-        show: horizontalRangeSlider?.show ?? false,
-        type: "slider",
-        orient: "horizontal",
-      },
+      dataZoom: [
+        {
+          show: horizontalRangeSlider?.show ?? false,
+          type: "slider",
+          orient: "horizontal",
+        },
+        {
+          show: horizontalRangeSlider?.show ?? false,
+          type: "inside",
+          orient: "horizontal",
+          zoomOnMouseWheel: "shift",
+          moveOnMouseWheel: true,
+        },
+      ],
     };
   }, [horizontalRangeSlider?.show]);
 
