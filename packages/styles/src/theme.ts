@@ -59,6 +59,9 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     secondLevelSelectedItemBorderBottomColor: "string",
     secondLevelSelectedItemBorderBottomThickness: "string",
     shadow: "string",
+    secondLevelItemColor: "string",
+    secondLevelSelectedItemColor: "string",
+    secondLevelSelectedItemBackgroundColor: "string",
   },
   card: {
     iconMargin: "string",

@@ -96,6 +96,7 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
           target={itemTarget}
           {...itemProps}
           $isSelected={isSelected}
+          $isMenu={isMenu}
           aria-current={isCurrent}
         >
           {label}
@@ -108,6 +109,7 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
           {...itemProps}
           tabIndex={0}
           $isSelected={isSelected}
+          $isMenu={isMenu}
           aria-current={isCurrent}
         >
           {label}
