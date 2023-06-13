@@ -62,10 +62,10 @@ export interface HvLineChartProps {
     | Record<string | number, (string | number)[]>
     | Record<string | number, string | number>[]
     | ColumnTable;
-  /** Columns to use for the horizontal axis. The data will be grouped based on these columns. */
+  /** Columns to use to group the data. */
   groupBy: GroupByField | GroupByField[];
   /**
-   * Columns to measure along the vertical axis.
+   * Columns to measure on the chart.
    *
    * If no `agg` is defined, it will default to `sum`.
    */
