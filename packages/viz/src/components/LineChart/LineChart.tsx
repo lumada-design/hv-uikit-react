@@ -351,7 +351,6 @@ export const HvLineChart = ({
     return {
       xAxis: {
         type: getAxisType(xAxis?.type) ?? "category",
-        scale: true,
         name: xAxis?.name,
         axisLabel: {
           rotate: xAxis?.labelRotation ?? 0,
