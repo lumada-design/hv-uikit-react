@@ -13,7 +13,11 @@ import {
 import { CanvasRenderer } from "echarts/renderers";
 import * as echarts from "echarts/core";
 import { LineChart } from "echarts/charts";
-import type { EChartsOption } from "echarts";
+import type {
+  EChartsOption,
+  LineSeriesOption,
+  YAXisComponentOption,
+} from "echarts";
 
 import ReactECharts from "echarts-for-react";
 
@@ -23,7 +27,7 @@ import type ColumnTable from "arquero/dist/types/table/column-table";
 import {
   HvChartAggregation,
   HvChartOrder,
-  HvChartAxisType,
+  HvChartAxis,
   HvChartEmptyCellMode,
 } from "@viz/types";
 import { getAgFunc, getAxisType, getLegendIcon } from "@viz/utils";
@@ -50,6 +54,7 @@ type SplitByField = string;
 
 type FullMeasuresField = {
   field: string;
+  yAxis?: string;
   agg?: HvChartAggregation;
 };
 type MeasuresField = string | FullMeasuresField;
@@ -84,75 +89,10 @@ export interface HvLineChartProps {
    */
   sortBy?: SortByField | SortByField[];
   /** Options for the xAxis, i.e. the horizontal axis. */
-  xAxis?: {
-    /** Type: continuous, categorical, or time data. Defaults to `categorical`. */
-    type?: HvChartAxisType;
-    /** Formatter for the labels on the horizontal axis. */
-    labelFormatter?:
-      | ((value?: string | number, index?: number) => string)
-      | string;
-    /** Rotation of the labels on the horizontal axis. Defaults to `0`. */
-    labelRotation?: number;
-    /** Name used on the horizontal axis. */
-    name?: string;
-    /**
-     * Maximum value on the horizontal axis.
-     * If no value is provided, the chart will automatically set a max value in order for all values to be equally distributed.
-     * Set this property to `max` to use the maximum data value.
-     */
-    maxValue?:
-      | string
-      | number
-      | "max"
-      | ((obj: {
-          max: string | number;
-          min: string | number;
-        }) => string | number);
-    /**
-     * Minimum value on the horizontal axis.
-     * If no value is provided, the chart will automatically set a min value in order for all values to be equally distributed.
-     * Set this property to `min` to use the maximum data value.
-     */
-    minValue?:
-      | string
-      | number
-      | "min"
-      | ((obj: {
-          max: string | number;
-          min: string | number;
-        }) => string | number);
-  };
+  xAxis?: HvChartAxis;
   /** Options for the yAxis, i.e. the vertical axis. */
-  yAxis?: {
-    /** Type: continuous, categorical, or time data. Defaults to `continuous`. */
-    type?: HvChartAxisType;
-    /** Formatter for the labels on the vertical axis. */
-    labelFormatter?:
-      | ((value?: string | number, index?: number) => string)
-      | string;
-    /** Rotation of the labels on the vertical axis. Defaults to `0`. */
-    labelRotation?: number;
-    /** Name used on the vertical axis. */
-    name?: string;
-    /** Maximum value on the vertical axis. Set this property to `max` to use the maximum data value. */
-    maxValue?:
-      | string
-      | number
-      | "max"
-      | ((obj: {
-          max: string | number;
-          min: string | number;
-        }) => string | number);
-    /** Minimum value on the vertical axis. Set this property to `min` to use the maximum data value. */
-    minValue?:
-      | string
-      | number
-      | "min"
-      | ((obj: {
-          max: string | number;
-          min: string | number;
-        }) => string | number);
-  };
+  yAxis?: HvChartAxis | [HvChartAxis, HvChartAxis];
+
   /** Tooltip options. */
   tooltip?: {
     /** Whether to show the tooltip or not. Defaults to `true`. */
@@ -375,33 +315,57 @@ export const HvLineChart = ({
   ]);
 
   const chartYAxis = useMemo<Pick<EChartsOption, "yAxis">>(() => {
-    return {
-      yAxis: {
-        type: getAxisType(yAxis?.type) ?? "value",
-        name: yAxis?.name,
-        axisLabel: {
-          rotate: yAxis?.labelRotation ?? 0,
-          formatter: yAxis?.labelFormatter,
+    if (!yAxis || !Array.isArray(yAxis)) {
+      return {
+        yAxis: {
+          id: yAxis?.id,
+          type: getAxisType(yAxis?.type) ?? "value",
+          name: yAxis?.name,
+          axisLabel: {
+            rotate: yAxis?.labelRotation ?? 0,
+            formatter: yAxis?.labelFormatter,
+          },
+          max: yAxis?.maxValue === "max" ? "dataMax" : yAxis?.maxValue,
+          min: yAxis?.minValue === "min" ? "dataMin" : yAxis?.minValue,
         },
-        max: yAxis?.maxValue === "max" ? "dataMax" : yAxis?.maxValue,
-        min: yAxis?.minValue === "min" ? "dataMin" : yAxis?.minValue,
-      },
+      };
+    }
+
+    return {
+      yAxis: yAxis.map<YAXisComponentOption>((axis) => ({
+        id: axis?.id,
+        type: getAxisType(axis?.type) ?? "value",
+        name: axis?.name,
+        axisLabel: {
+          rotate: axis?.labelRotation ?? 0,
+          formatter: axis?.labelFormatter,
+        },
+        max: axis?.maxValue === "max" ? "dataMax" : axis?.maxValue,
+        min: axis?.minValue === "min" ? "dataMin" : axis?.minValue,
+      })),
     };
-  }, [
-    yAxis?.labelFormatter,
-    yAxis?.labelRotation,
-    yAxis?.name,
-    yAxis?.type,
-    yAxis?.maxValue,
-    yAxis?.minValue,
-  ]);
+  }, [yAxis]);
 
   const chartSeries = useMemo<Pick<EChartsOption, "series">>(() => {
     return {
       series: chartData
         .columnNames()
         .filter((c) => c !== groupByKey)
-        .map((c) => {
+        .map<LineSeriesOption>((c) => {
+          const measureName = c.split("_")[0];
+          const measuresArray = Array.isArray(measures) ? measures : [measures];
+          // find the measure in measures array or return the first one
+          const measure =
+            measuresArray.find((m) => {
+              if (typeof m === "string") {
+                return m === measureName;
+              }
+              return m.field === measureName;
+            }) ?? measuresArray[0];
+
+          const yAxisId =
+            typeof measure !== "string" ? measure.yAxis : undefined;
+
           return {
             id: `series~${groupByKey}~${c}`,
             name: lineNameFormatter ? lineNameFormatter(c) : c,
@@ -410,6 +374,7 @@ export const HvLineChart = ({
             areaStyle: area ? { opacity: areaOpacity } : undefined,
             connectNulls: emptyCellMode === "connect" || false,
             stack: stacked ? "x" : undefined,
+            yAxisId,
           };
         }),
     };
