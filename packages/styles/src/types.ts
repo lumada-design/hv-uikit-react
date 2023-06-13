@@ -497,7 +497,10 @@ export type HvThemeColorModeStructure = HvThemeColors & {
 };
 
 // Theme structure
-export type HvThemeStructure = { name: string } & HvThemeComponents &
+export type HvThemeStructure = {
+  name: string;
+  base?: string;
+} & HvThemeComponents &
   HvThemeTypography &
   Omit<HvThemeTokens, "colors"> & {
     colors: {

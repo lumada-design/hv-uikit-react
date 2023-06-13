@@ -99,6 +99,8 @@ export const createTheme = (
 
   // Set theme name
   customizedTheme.name = name.trim();
+  // Set theme base
+  customizedTheme.base = base;
 
   // Fill new color modes with missing colors
   if (customizations) {
