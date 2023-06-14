@@ -35,7 +35,7 @@ export interface HvCreateThemeProps extends HvThemeCustomizationProps {
 
 // Theme customization
 export type HvThemeCustomizationProps = HvExtraDeepPartialProps<
-  Omit<HvThemeStructure, "colors" | "name">
+  Omit<HvThemeStructure, "colors" | "name" | "base">
 > & {
   colors?: {
     modes?: {
