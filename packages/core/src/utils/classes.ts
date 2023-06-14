@@ -1,3 +1,10 @@
+import { CSSInterpolation } from "@emotion/css";
+import { useCss } from "@core/hooks/useCss";
+
+export type ExtractNames<
+  T extends (...args: any) => { classes: Record<string, any>; cx: any }
+> = ReturnType<T>["classes"];
+
 export const getClasses = <T extends string, N extends string>(
   keys: T[],
   name: N
@@ -8,3 +15,58 @@ export const getClasses = <T extends string, N extends string>(
   });
   return classesObj as { [P in T]: `${N}-${P}` };
 };
+
+const deepRenameKeys = <T extends object>(
+  obj: T,
+  mapFn: (key: string) => string
+): T => {
+  const result: any = {};
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const newKey = mapFn(key);
+      const value = obj[key];
+      result[newKey] =
+        typeof value === "object" ? deepRenameKeys(value as any, mapFn) : value;
+    }
+  }
+  return result;
+};
+
+/** Given a `stylesObj`, replaces its keys' `$myClass` with `.{name}-myClass`. */
+export const replace$ = <T extends object>(stylesObj: T, name: string): T => {
+  return deepRenameKeys(stylesObj, (key) => {
+    const matches = key.match(/\$\w+/g);
+    if (!matches?.length) return key;
+    const newKey = matches.reduce(
+      (acc, match) => acc.replace(match, `.${name}-${match.slice(1)}`),
+      key
+    );
+    return newKey ?? key;
+  });
+};
+
+/** Utility function to create classes for a component. */
+export function createClasses<Name extends string, ClassName extends string>(
+  /** Component name in PascalCase (ie. `HvTableCell`). */
+  name: Name,
+  stylesObject: Record<ClassName, CSSInterpolation>
+) {
+  const styles = replace$(stylesObject, name);
+
+  const staticClasses = getClasses(Object.keys(styles) as ClassName[], name);
+
+  function useClasses(classesProp: Partial<Record<ClassName, string>>) {
+    const { cx, css } = useCss();
+
+    const mergeClasses = (key: string) =>
+      cx(`${name}-${key}`, css(styles[key]), classesProp?.[key]);
+
+    const classes = Object.fromEntries(
+      Object.keys(styles).map((key) => [key, mergeClasses(key)])
+    ) as { [P in ClassName]: string };
+
+    return { cx, classes };
+  }
+
+  return { useClasses, staticClasses };
+}

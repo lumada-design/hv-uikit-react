@@ -15,7 +15,11 @@ import { HvTheme } from "@core/types";
 import React, { useMemo } from "react";
 import createCache from "@emotion/cache";
 import { useUniqueId } from "@core/hooks";
-import { HvThemeProvider } from "./ThemeProvider";
+import {
+  HvThemeProvider,
+  defaultCacheKey,
+  defaultEmotionCache,
+} from "./ThemeProvider";
 
 // Provider props
 export interface HvProviderProps {
@@ -46,7 +50,7 @@ export interface HvProviderProps {
    * The string used to prefix the class names and uniquely identify them. The key can only contain lower case alphabetical characters.
    * This is useful to avoid class name collisions.
    *
-   * If no value is provided, the default is `hv-uikit-css`.
+   * If no value is provided, the default is `hv`.
    */
   classNameKey?: string;
   /**
@@ -84,7 +88,7 @@ export const HvProvider = ({
   themes,
   theme,
   colorMode,
-  classNameKey = "hv-uikit-css",
+  classNameKey = defaultCacheKey,
 }: HvProviderProps) => {
   const scopedRootId = useUniqueId(undefined, scopedRootPrefix);
 
@@ -96,10 +100,9 @@ export const HvProvider = ({
   // This enables users to override the UI Kit styles if necessary
   const emotionCache = useMemo(
     () =>
-      createCache({
-        key: classNameKey,
-        prepend: true,
-      }),
+      classNameKey === defaultCacheKey
+        ? defaultEmotionCache
+        : createCache({ key: classNameKey, prepend: true }),
     [classNameKey]
   );
 
@@ -114,6 +117,7 @@ export const HvProvider = ({
       <HvThemeProvider
         themes={themesList}
         theme={theme || themesList[0].name}
+        emotionCache={emotionCache}
         colorMode={colorMode || Object.keys(themesList[0].colors.modes)[0]}
         themeRootId={
           cssTheme === "scoped" ? rootElementId || scopedRootId : undefined
