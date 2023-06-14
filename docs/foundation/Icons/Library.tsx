@@ -178,11 +178,6 @@ const Library = ({ isIcons }: { isIcons?: boolean }) => {
               expanded={element.open}
               onChange={() => handleToggle(element.category)}
             >
-              {/* <Library
-              isIcons
-              size={iconSize?.label}
-              iconList={filterByCategory(element.category)}
-            /> */}
               <Group
                 iconSize={iconSize?.label}
                 widerSpacing={!isIcons}
@@ -191,11 +186,6 @@ const Library = ({ isIcons }: { isIcons?: boolean }) => {
             </HvAccordion>
           ))
         ) : (
-          //   <Library
-          //   isIcons={false}
-          //   size={iconSize?.label}
-          //   iconList={iconList}
-          // />
           <Group
             iconSize={iconSize?.label}
             widerSpacing={!isIcons}
