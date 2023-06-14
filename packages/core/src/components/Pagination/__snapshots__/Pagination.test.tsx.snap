@@ -3,41 +3,41 @@
 exports[`Pagination > should render correctly 1`] = `
 <div>
   <div
-    class="HvPagination-root hv-uikit-css-ynuncb-StyledRoot e1tn2n0k8"
+    class="HvPagination-root hv-ynuncb-StyledRoot e1tn2n0k8"
   >
     <div
-      class="HvPagination-pageSizeOptions hv-uikit-css-191htxu-StyledPageSizeOptions e1tn2n0k7"
+      class="HvPagination-pageSizeOptions hv-191htxu-StyledPageSizeOptions e1tn2n0k7"
     >
       <div
-        class="hv-uikit-css-7ddhyu-StyledRoot eakxe9u0"
+        class="hv-7ddhyu-StyledRoot eakxe9u0"
       >
         <div
-          class="HvBaseDropdown-root hv-uikit-css-1nukton-StyledRoot eapzthe9"
+          class="HvBaseDropdown-root hv-1nukton-StyledRoot eapzthe9"
         >
           <div
             aria-expanded="false"
             aria-label="Select how many to display"
-            class="HvPagination-pageSizeOptionsSelect e1tn2n0k5 HvBaseDropdown-anchor hv-uikit-css-7v8964-StyledAnchor-StyledSelect eapzthe8"
+            class="HvPagination-pageSizeOptionsSelect e1tn2n0k5 HvBaseDropdown-anchor hv-7v8964-StyledAnchor-StyledSelect eapzthe8"
             role="combobox"
             tabindex="-1"
           >
             <div
               aria-label="Select how many to display"
-              class="HvBaseDropdown-header hv-uikit-css-4bvoko-StyledHeaderRoot eapzthe7"
+              class="HvBaseDropdown-header hv-4bvoko-StyledHeaderRoot eapzthe7"
               role="textbox"
               tabindex="0"
             >
               <div
-                class="HvBaseDropdown-selection hv-uikit-css-b6yxdh-StyledSelection eapzthe6"
+                class="HvBaseDropdown-selection hv-b6yxdh-StyledSelection eapzthe6"
               >
                 <p
-                  class="HvTypography-root HvTypography-body hv-uikit-css-1fbl1cl-getStyledComponent e1tnpalo0"
+                  class="HvTypography-root HvTypography-body hv-1fbl1cl-getStyledComponent e1tnpalo0"
                 >
                   1
                 </p>
               </div>
               <div
-                class="HvBaseDropdown-arrow eapzthe3 hv-uikit-css-1ij2a3c-StyledDropDownXS"
+                class="HvBaseDropdown-arrow eapzthe3 hv-1ij2a3c-StyledDropDownXS"
                 name="DropDownXS"
               >
                 <svg
@@ -60,7 +60,7 @@ exports[`Pagination > should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="HvPagination-pageNavigator hv-uikit-css-1swz9zu-StyledPageNavigator e1tn2n0k3"
+      class="HvPagination-pageNavigator hv-1swz9zu-StyledPageNavigator e1tn2n0k3"
     >
       <div
         class=""
@@ -69,19 +69,19 @@ exports[`Pagination > should render correctly 1`] = `
         <button
           aria-disabled="true"
           aria-label="First Page"
-          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
           tabindex="-1"
           type="button"
         >
           <div
-            class="hv-uikit-css-1nxr552-StyledContentDiv e138pvrm3"
+            class="hv-1nxr552-StyledContentDiv e138pvrm3"
           >
             <span
-              class="hv-uikit-css-1o4qkkz-StyledChildren e138pvrm1"
+              class="hv-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon hv-uikit-css-f95wjz"
+                class="HvPagination-icon hv-f95wjz"
                 name="Start"
               >
                 <svg
@@ -109,19 +109,19 @@ exports[`Pagination > should render correctly 1`] = `
         <button
           aria-disabled="true"
           aria-label="Previous Page"
-          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
           tabindex="-1"
           type="button"
         >
           <div
-            class="hv-uikit-css-1nxr552-StyledContentDiv e138pvrm3"
+            class="hv-1nxr552-StyledContentDiv e138pvrm3"
           >
             <span
-              class="hv-uikit-css-1o4qkkz-StyledChildren e138pvrm1"
+              class="hv-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon hv-uikit-css-f95wjz"
+                class="HvPagination-icon hv-f95wjz"
                 name="Backwards"
               >
                 <svg
@@ -143,38 +143,38 @@ exports[`Pagination > should render correctly 1`] = `
         </button>
       </div>
       <div
-        class="HvPagination-pageInfo hv-uikit-css-1wjzhg6-StyledPageInfo e1tn2n0k1"
+        class="HvPagination-pageInfo hv-1wjzhg6-StyledPageInfo e1tn2n0k1"
       >
         <div
-          class="HvPagination-pageJump hv-uikit-css-bz8qz2-StyledPageJump e1tn2n0k0"
+          class="HvPagination-pageJump hv-bz8qz2-StyledPageJump e1tn2n0k0"
         >
           <div
-            class="HvInput-root hv-uikit-css-13o7eu2 HvPagination-pageSizeInputContainer HvFormElement-root"
+            class="HvInput-root hv-13o7eu2 HvPagination-pageSizeInputContainer HvFormElement-root"
           >
             <div
-              class="HvBaseInput-root hv-uikit-css-rfscxw"
+              class="HvBaseInput-root hv-rfscxw"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot hv-uikit-css-ftwxz3 MuiInput-underline MuiInputBase-colorPrimary css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot hv-ftwxz3 MuiInput-underline MuiInputBase-colorPrimary css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Current page"
-                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput hv-uikit-css-8684bs css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput hv-8684bs css-1x51dt5-MuiInputBase-input-MuiInput-input"
                   rows="10"
                   type="number"
                   value="1"
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer hv-uikit-css-8g6lar"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer hv-8g6lar"
                 role="presentation"
               />
             </div>
             <div
-              class="HvInput-error HvWarningText-root hv-uikit-css-wyhb5v-StyledRoot e1jkc0dp2"
+              class="HvInput-error HvWarningText-root hv-wyhb5v-StyledRoot e1jkc0dp2"
             >
               <div
-                class="HvWarningText-defaultIcon e1jkc0dp0 hv-uikit-css-1en9bxk-StyledIcon"
+                class="HvWarningText-defaultIcon e1jkc0dp0 hv-1en9bxk-StyledIcon"
                 name="Fail"
               >
                 <svg
@@ -193,7 +193,7 @@ exports[`Pagination > should render correctly 1`] = `
               </div>
               <p
                 aria-relevant="additions text"
-                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body hv-uikit-css-1x6n3lw-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body hv-1x6n3lw-getStyledComponent-StyledTypography e1tnpalo0"
                 id="hvinput7-error"
                 role="status"
               />
@@ -201,12 +201,12 @@ exports[`Pagination > should render correctly 1`] = `
           </div>
         </div>
         <span
-          class="HvTypography-root HvTypography-body hv-uikit-css-1fbl1cl-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-body hv-1fbl1cl-getStyledComponent e1tnpalo0"
         >
           / 
         </span>
         <span
-          class="HvTypography-root HvTypography-body hv-uikit-css-1fbl1cl-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-body hv-1fbl1cl-getStyledComponent e1tnpalo0"
         >
           1
         </span>
@@ -218,19 +218,19 @@ exports[`Pagination > should render correctly 1`] = `
         <button
           aria-disabled="true"
           aria-label="Next Page"
-          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
           tabindex="-1"
           type="button"
         >
           <div
-            class="hv-uikit-css-1nxr552-StyledContentDiv e138pvrm3"
+            class="hv-1nxr552-StyledContentDiv e138pvrm3"
           >
             <span
-              class="hv-uikit-css-1o4qkkz-StyledChildren e138pvrm1"
+              class="hv-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon hv-uikit-css-f95wjz"
+                class="HvPagination-icon hv-f95wjz"
                 name="Forwards"
               >
                 <svg
@@ -258,19 +258,19 @@ exports[`Pagination > should render correctly 1`] = `
         <button
           aria-disabled="true"
           aria-label="Last Page"
-          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-uikit-css-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 HvButton-root hv-purpg8-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
           tabindex="-1"
           type="button"
         >
           <div
-            class="hv-uikit-css-1nxr552-StyledContentDiv e138pvrm3"
+            class="hv-1nxr552-StyledContentDiv e138pvrm3"
           >
             <span
-              class="hv-uikit-css-1o4qkkz-StyledChildren e138pvrm1"
+              class="hv-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon hv-uikit-css-f95wjz"
+                class="HvPagination-icon hv-f95wjz"
                 name="End"
               >
                 <svg

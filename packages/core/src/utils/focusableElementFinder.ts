@@ -1,5 +1,5 @@
 const SELECTORS =
-  'input, button, select, textarea, a[href], [tabindex]:not([tabindex="-1"]';
+  'input, button, select, textarea, a[href], [tabindex]:not([tabindex="-1"])';
 
 /**
  * Gets the list of focusable elements.

@@ -4,17 +4,18 @@ import Snackbar, {
   SnackbarProps as MuiSnackbarProps,
   SnackbarOrigin,
 } from "@mui/material/Snackbar";
-import capitalize from "lodash/capitalize";
 import { HvActionGeneric } from "@core/components";
 import { HvBaseProps } from "@core/types";
-import { setId } from "@core/utils";
-import { ClassNames } from "@emotion/react";
-import { styles } from "./Banner.styles";
-import bannerClasses, { HvBannerClasses } from "./bannerClasses";
+import { ExtractNames, setId } from "@core/utils";
+import { useClasses, staticClasses } from "./Banner.styles";
 import {
   HvBannerContent,
   HvBannerContentProps,
 } from "./BannerContent/BannerContent";
+
+export { staticClasses as bannerClasses };
+
+export type HvBannerClasses = ExtractNames<typeof useClasses>;
 
 export type HvBannerVariant = "success" | "warning" | "error" | "default";
 
@@ -56,7 +57,7 @@ export interface HvBannerProps
   /** Props to pass down to the Banner Wrapper. An object `actionProps` can be included to be passed as others to actions. */
   bannerContentProps?: HvBannerContentProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvBannerClasses;
+  classes?: Partial<HvBannerClasses>;
 }
 
 /**
@@ -65,7 +66,7 @@ export interface HvBannerProps
  */
 export const HvBanner = ({
   id,
-  classes,
+  classes: classesProp = {},
   className,
   open,
   onClose,
@@ -83,14 +84,7 @@ export const HvBanner = ({
   bannerContentProps,
   ...others
 }: HvBannerProps) => {
-  const anchorOriginOffset = {
-    anchorOriginTop: {
-      top: `${offset || 0}px`,
-    },
-    anchorOriginBottom: {
-      bottom: `${offset || 0}px`,
-    },
-  };
+  const { classes, cx } = useClasses(classesProp);
 
   const anchorOriginBanner: SnackbarOrigin = {
     horizontal: "center",
@@ -103,53 +97,33 @@ export const HvBanner = ({
   );
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <Snackbar
-          id={id}
-          open={open}
-          className={className}
-          classes={{
-            root: cx(
-              open
-                ? cx(bannerClasses.root, css(styles.root), classes?.root)
-                : cx(
-                    bannerClasses.rootClosed,
-                    css(styles.rootClosed),
-                    classes?.rootClosed
-                  )
-            ),
-            anchorOriginTopCenter: cx(
-              bannerClasses.anchorOriginTopCenter,
-              css(styles.anchorOriginTopCenter),
-              classes?.anchorOriginTopCenter
-            ),
-            anchorOriginBottomCenter: cx(
-              bannerClasses.anchorOriginBottomCenter,
-              css(styles.anchorOriginBottomCenter),
-              classes?.anchorOriginBottomCenter
-            ),
-          }}
-          style={anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]}
-          anchorOrigin={anchorOriginBanner}
-          TransitionComponent={SlideTransition}
-          transitionDuration={transitionDuration}
-          {...others}
-        >
-          <HvBannerContent
-            id={setId(id, "content")}
-            content={label}
-            variant={variant}
-            customIcon={customIcon}
-            showIcon={showIcon}
-            actions={actions}
-            actionsCallback={actionsCallback}
-            actionsPosition={actionsPosition}
-            onClose={onClose}
-            {...bannerContentProps}
-          />
-        </Snackbar>
-      )}
-    </ClassNames>
+    <Snackbar
+      id={id}
+      open={open}
+      className={className}
+      classes={{
+        root: cx(classes.root, { [classes.rootClosed]: !open }),
+        anchorOriginTopCenter: classes.anchorOriginTopCenter,
+        anchorOriginBottomCenter: classes.anchorOriginBottomCenter,
+      }}
+      style={{ [anchorOrigin]: offset }}
+      anchorOrigin={anchorOriginBanner}
+      TransitionComponent={SlideTransition}
+      transitionDuration={transitionDuration}
+      {...others}
+    >
+      <HvBannerContent
+        id={setId(id, "content")}
+        content={label}
+        variant={variant}
+        customIcon={customIcon}
+        showIcon={showIcon}
+        actions={actions}
+        actionsCallback={actionsCallback}
+        actionsPosition={actionsPosition}
+        onClose={onClose}
+        {...bannerContentProps}
+      />
+    </Snackbar>
   );
 };

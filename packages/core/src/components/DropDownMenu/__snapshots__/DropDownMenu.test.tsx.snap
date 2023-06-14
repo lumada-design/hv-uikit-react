@@ -3,30 +3,30 @@
 exports[`DropDownMenu > should render correctly 1`] = `
 <div>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root hv-uikit-css-1u1foky-StyledRoot eapzthe9"
+    class="HvBaseDropdown-root HvDropDownMenu-root hv-1u1foky-StyledRoot eapzthe9"
   >
     <div
       aria-expanded="false"
       aria-haspopup="menu"
-      class="HvDropDownMenu-container HvBaseDropdown-anchor hv-uikit-css-10kxauw-StyledAnchor eapzthe8"
+      class="HvDropDownMenu-container HvBaseDropdown-anchor hv-10kxauw-StyledAnchor eapzthe8"
       id="dropdown-menu4"
       tabindex="-1"
     >
       <button
         aria-expanded="false"
         aria-label="Dropdown menu"
-        class="HvDropDownMenu-icon HvButton-root hv-uikit-css-1cw34jn-StyledButton e138pvrm0"
+        class="HvDropDownMenu-icon HvButton-root hv-1cw34jn-StyledButton e138pvrm0"
         id="dropdown-menu4-icon-button"
         type="button"
       >
         <div
-          class="hv-uikit-css-1nxr552-StyledContentDiv e138pvrm3"
+          class="hv-1nxr552-StyledContentDiv e138pvrm3"
         >
           <span
-            class="hv-uikit-css-1o4qkkz-StyledChildren e138pvrm1"
+            class="hv-1o4qkkz-StyledChildren e138pvrm1"
           >
             <div
-              class="hv-uikit-css-f95wjz"
+              class="hv-f95wjz"
               name="MoreOptionsVertical"
             >
               <svg

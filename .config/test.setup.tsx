@@ -1,11 +1,13 @@
+import React from "react";
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { beforeAll, beforeEach, vi } from "vitest";
 
 const customRender = (ui: React.ReactElement, options = {}) =>
   render(ui, {
     // wrap provider(s) here if needed
-    wrapper: ({ children }) => children,
+    wrapper: ({ children }) => <HvProvider>{children}</HvProvider>,
     ...options,
   });
 
