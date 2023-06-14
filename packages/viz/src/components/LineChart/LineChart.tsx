@@ -29,11 +29,13 @@ import {
   HvChartOrder,
   HvChartAxis,
   HvChartEmptyCellMode,
+  HvChartSampling,
+  HvChartTooltipType,
 } from "@viz/types";
 import { getAgFunc, getAxisType, getLegendIcon } from "@viz/utils";
 import { useVizTheme } from "@viz/hooks";
 
-import { styles } from "./LineChart.styles";
+import { multipleStyles, singleStyles } from "./LineChart.styles";
 import lineChartClasses, { HvLineChartClasses } from "./lineChartClasses";
 
 // Register chart components
@@ -53,16 +55,40 @@ type GroupByField = string;
 type SplitByField = string;
 
 type FullMeasuresField = {
+  /** Column name. */
   field: string;
-  sampling?: "none" | "average" | "min" | "max" | "sum" | "lttb";
+  /** Sampling function to use. */
+  sampling?: HvChartSampling;
+  /** Id of the yAxis. */
   yAxis?: string;
+  /** Whether to hide the symbol for data points. Defaults to `false`. */
   hideSymbol?: boolean;
+  /** Aggregation function to use. If no `agg` is defined, it will default to `sum`. */
   agg?: HvChartAggregation;
+  /** Whether the area under the lines should be filled. If not specified, it defaults to the global `area` prop. */
+  area?: boolean;
+  /** Sets opacity of the filled area if `area` is true. If not specified, it defaults to the global `areaOpacity` prop. */
+  areaOpacity?: number;
+  /**
+   * Stack name to use when the measure should be stacked.
+   *
+   * Measures stacked together have the same name.
+   *
+   * If not specified, it defaults to the global `stacked` prop.
+   */
+  stack?: string;
+  /** Strategy to use when there are empty cells. If not specified, it defaults to the global `emptyCellMode` prop. */
+  emptyCellMode?: HvChartEmptyCellMode;
+  /** Formatter for the value in the tooltip. If not specified, it defaults to the one defined in the global `tooltip` prop. */
+  valueFormatter?: (value?: string | number) => string;
 };
+
 type MeasuresField = string | FullMeasuresField;
 
 type FullSortByField = {
+  /** Column name. */
   field: string;
+  /** Order function to use. If no `order` is defined, it will default to `asc`. */
   order?: HvChartOrder;
 };
 type SortByField = string | FullSortByField;
@@ -76,47 +102,48 @@ export interface HvLineChartProps {
     | ColumnTable;
   /** Columns to use to group the data. */
   groupBy: GroupByField | GroupByField[];
-  /**
-   * Columns to measure on the chart.
-   *
-   * If no `agg` is defined, it will default to `sum`.
-   */
+  /**  Columns to measure on the chart. */
   measures: MeasuresField | MeasuresField[];
   /** Columns to use to split the measures. */
   splitBy?: SplitByField | SplitByField[];
-  /**
-   * Columns to use to sort the data points.
-   *
-   * If no `order` is defined, it will default to `asc`.
-   */
+  /** Columns to use to sort the data points. */
   sortBy?: SortByField | SortByField[];
-  /** Options for the xAxis, i.e. the horizontal axis. */
+  /**
+   * Options for the xAxis, i.e. the horizontal axis.
+   *
+   * The default `type` for this axis is `categorical`.
+   * */
   xAxis?: HvChartAxis;
-  /** Options for the yAxis, i.e. the vertical axis. */
+  /**
+   * Options for the yAxis, i.e. the vertical axis.
+   *
+   * The default `type` for this axis is `continuous`.
+   * */
   yAxis?: HvChartAxis | [HvChartAxis, HvChartAxis];
-
   /** Tooltip options. */
   tooltip?: {
     /** Whether to show the tooltip or not. Defaults to `true`. */
     show?: boolean;
     /** Formatter for the value in the tooltip. */
     valueFormatter?: (value?: string | number) => string;
+    /** Tooltip type: single line or multiple lines modes. The single line mode should only be used when there's one series. Defaults to `multiple`. */
+    type?: HvChartTooltipType;
   };
   /** Legend options. */
   legend?: {
-    /** Whether to show the legend or not. If they are multiple series, the legend will appear by default. Otherwise, the legend will not be shown. */
+    /** Whether to show the legend or not. The legend will appear by default for multiple series. Otherwise, the legend will not be shown. */
     show?: boolean;
   };
-  /** Formatter for the lines names used on the tooltips and legend. */
-  lineNameFormatter?: (value?: string) => string;
+  /** Formatter for the series names used on the tooltips and legend. */
+  seriesNameFormatter?: (value?: string) => string;
   /** Strategy to use when there are empty cells. Defaults to `void`. */
   emptyCellMode?: HvChartEmptyCellMode;
   /** Whether the area under the lines should be filled. Defaults to `false`. */
   area?: boolean;
   /** Sets opacity of the filled area if `area` is true. Defaults to `0.5`. */
   areaOpacity?: number;
-  /** Whether the chart is stacked. Defaults to `false`. */
-  stacked?: boolean;
+  /** Stack name to use when all the series should be stacked together. If not provided, the series are not stacked. */
+  stack?: string;
   /** Ranger slider options for the horizontal axis. */
   horizontalRangeSlider?: {
     /** Whether to show the ranger slider or not. Defaults to `false`. */
@@ -124,6 +151,17 @@ export interface HvLineChartProps {
   };
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvLineChartClasses;
+  /** Grid options. */
+  grid?: {
+    /** Distance between the grid and the top of the container. */
+    top?: string | number;
+    /** Distance between the grid and the right side of the container. */
+    right?: string | number;
+    /** Distance between the grid and the left side of the container. */
+    left?: string | number;
+    /** Distance between the grid and the bottom of the container. */
+    bottom?: string | number;
+  };
 }
 
 /**
@@ -140,16 +178,18 @@ export const HvLineChart = ({
   yAxis,
   legend,
   tooltip,
-  lineNameFormatter,
+  seriesNameFormatter,
   area = false,
-  stacked = false,
+  stack,
   emptyCellMode = "void",
   horizontalRangeSlider,
   areaOpacity = 0.5,
   classes,
+  grid,
 }: HvLineChartProps) => {
   const { theme } = useVizTheme();
 
+  const currentTheme = useRef<string | undefined>(theme);
   const chartRef = useRef<ReactECharts>(null);
   const isMounted = useRef<boolean>(false);
 
@@ -299,6 +339,7 @@ export const HvLineChart = ({
       xAxis: {
         type: getAxisType(xAxis?.type) ?? "category",
         name: xAxis?.name,
+        scale: true,
         axisLabel: {
           rotate: xAxis?.labelRotation ?? 0,
           formatter: xAxis?.labelFormatter,
@@ -348,22 +389,27 @@ export const HvLineChart = ({
     };
   }, [yAxis]);
 
+  const getMeasure = (name: string, msr: MeasuresField | MeasuresField[]) => {
+    const measureName = name.split("_")[0];
+    const measuresArray = Array.isArray(msr) ? msr : [msr];
+    // find the measure in measures array or return the first one
+    return (
+      measuresArray.find((m) => {
+        if (typeof m === "string") {
+          return m === measureName;
+        }
+        return m.field === measureName;
+      }) ?? measuresArray[0]
+    );
+  };
+
   const chartSeries = useMemo<Pick<EChartsOption, "series">>(() => {
     return {
       series: chartData
         .columnNames()
         .filter((c) => c !== groupByKey)
         .map<LineSeriesOption>((c) => {
-          const measureName = c.split("_")[0];
-          const measuresArray = Array.isArray(measures) ? measures : [measures];
-          // find the measure in measures array or return the first one
-          const measure =
-            measuresArray.find((m) => {
-              if (typeof m === "string") {
-                return m === measureName;
-              }
-              return m.field === measureName;
-            }) ?? measuresArray[0];
+          const measure = getMeasure(c, measures);
 
           const showSymbol =
             typeof measure !== "string" ? !measure.hideSymbol : true;
@@ -371,17 +417,31 @@ export const HvLineChart = ({
             typeof measure !== "string" ? measure.sampling : undefined;
           const yAxisId =
             typeof measure !== "string" ? measure.yAxis : undefined;
+          const isArea =
+            typeof measure !== "string" ? measure.area ?? area : area;
+          const aOpacity =
+            typeof measure !== "string"
+              ? measure.areaOpacity ?? areaOpacity
+              : areaOpacity;
+          const stackName =
+            typeof measure !== "string"
+              ? measure.stack ?? stack ?? undefined
+              : stack ?? undefined;
+          const connectNulls =
+            typeof measure !== "string" && measure.emptyCellMode
+              ? measure.emptyCellMode === "connect"
+              : emptyCellMode === "connect";
 
           return {
             id: `series~${groupByKey}~${c}`,
-            name: lineNameFormatter ? lineNameFormatter(c) : c,
+            name: seriesNameFormatter ? seriesNameFormatter(c) : c,
             encode: { x: groupByKey, y: c },
             type: "line",
             showSymbol,
             sampling,
-            areaStyle: area ? { opacity: areaOpacity } : undefined,
-            connectNulls: emptyCellMode === "connect" || false,
-            stack: stacked ? "x" : undefined,
+            areaStyle: isArea ? { opacity: aOpacity } : undefined,
+            connectNulls,
+            stack: stackName,
             yAxisId,
           };
         }),
@@ -390,11 +450,131 @@ export const HvLineChart = ({
     chartData,
     groupByKey,
     area,
-    stacked,
-    lineNameFormatter,
+    stack,
+    seriesNameFormatter,
     emptyCellMode,
     areaOpacity,
+    measures,
   ]);
+
+  const renderTooltip = (
+    params: {
+      seriesName: string;
+      value: (string | number)[];
+      encode: { [key: string]: number[] };
+      color: string;
+      dimensionNames: string[];
+    }[],
+    single: boolean,
+    msr: MeasuresField | MeasuresField[],
+    customClasses?: HvLineChartClasses,
+    formatter?: (value?: string | number) => string
+  ) => {
+    const tooltipName = params[0].value[params[0].encode.x[0]];
+
+    if (single) {
+      const measure = getMeasure(
+        params[0].dimensionNames[params[0].encode.y[0]],
+        msr
+      );
+      const value = params[0].value[params[0].encode.y[0]];
+      const formattedValue =
+        typeof measure !== "string" && measure.valueFormatter
+          ? measure.valueFormatter(value)
+          : formatter
+          ? formatter(value)
+          : value;
+
+      return `
+        <div class="${cx(
+          lineChartClasses?.tooltipRoot,
+          css(singleStyles.tooltipRoot),
+          customClasses?.tooltipRoot
+        )}">
+          <p class="${cx(
+            lineChartClasses?.tooltipSeriesName,
+            css(singleStyles.tooltipSeriesName),
+            customClasses?.tooltipSeriesName
+          )}">${tooltipName}</p>
+          <p class="${cx(
+            lineChartClasses?.tooltipSeriesValue,
+            css(singleStyles.tooltipSeriesValue),
+            customClasses?.tooltipSeriesValue
+          )}">${formattedValue}</p>
+        </div>
+        `;
+    }
+
+    return `
+    <div class="${cx(
+      lineChartClasses?.tooltipRoot,
+      css(multipleStyles.tooltipRoot),
+      customClasses?.tooltipRoot
+    )}">
+      <div class="${cx(
+        lineChartClasses?.tooltipTitleContainer,
+        css(multipleStyles.tooltipTitleContainer),
+        customClasses?.tooltipTitleContainer
+      )}">
+        <div>
+          <p class="${cx(
+            lineChartClasses?.tooltipTitle,
+            css(multipleStyles.tooltipTitle),
+            customClasses?.tooltipTitle
+          )}">${tooltipName}</p>
+        </div>
+      </div>
+      <div class="${cx(
+        lineChartClasses?.tooltipValuesContainer,
+        css(multipleStyles.tooltipValuesContainer),
+        customClasses?.tooltipValuesContainer
+      )}">
+        ${params
+          .map((s) => {
+            const measure = getMeasure(s.dimensionNames[s.encode.y[0]], msr);
+            const value = s.value[s.encode.y[0]];
+            const formattedValue =
+              typeof measure !== "string" && measure.valueFormatter
+                ? measure.valueFormatter(value)
+                : formatter
+                ? formatter(value)
+                : value;
+
+            return `
+            <div key="${s.seriesName}" class="${cx(
+              lineChartClasses?.tooltipSeriesContainer,
+              css(multipleStyles.tooltipSeriesContainer),
+              customClasses?.tooltipSeriesContainer
+            )}">
+              <div class="${cx(
+                lineChartClasses?.tooltipSeriesNameContainer,
+                css(multipleStyles.tooltipSeriesNameContainer),
+                classes?.tooltipSeriesNameContainer
+              )}">
+                <p style="background-color: ${s.color};" class="${cx(
+              lineChartClasses?.tooltipSeriesColor,
+              css(multipleStyles.tooltipSeriesColor),
+              customClasses?.tooltipSeriesColor
+            )}" />
+                <p class="${cx(
+                  lineChartClasses?.tooltipSeriesName,
+                  css(multipleStyles.tooltipSeriesName),
+                  customClasses?.tooltipSeriesName
+                )}">${s.seriesName}</p>
+              </div>
+              <p class="${cx(
+                lineChartClasses?.tooltipSeriesValue,
+                css(multipleStyles.tooltipSeriesValue),
+                customClasses?.tooltipSeriesValue
+              )}">${formattedValue}</p>
+            </div>
+          `;
+          })
+          .join(" ")}
+      </div>
+    </div>
+    `;
+  };
 
   const chartTooltip = useMemo<Pick<EChartsOption, "tooltip">>(() => {
     return {
@@ -405,77 +585,23 @@ export const HvLineChart = ({
         position: (point, params, dom, rect, size) => {
           return [point[0], point[1] - size.contentSize[1]];
         },
-        formatter: (params) => {
-          const tooltipName = params[0].name;
-
-          return `
-          <div class="${cx(
-            lineChartClasses.tooltipRoot,
-            css(styles.tooltipRoot),
-            classes?.tooltipRoot
-          )}">
-            <div class="${cx(
-              lineChartClasses.tooltipTitleRoot,
-              css(styles.tooltipTitleRoot),
-              classes?.tooltipTitleRoot
-            )}">
-              <div>
-                <p class="${cx(
-                  lineChartClasses.tooltipTitle,
-                  css(styles.tooltipTitle),
-                  classes?.tooltipTitle
-                )}">${tooltipName}</p>
-              </div>
-            </div>
-            <div class="${cx(
-              lineChartClasses.tooltipContentRoot,
-              css(styles.tooltipContentRoot),
-              classes?.tooltipContentRoot
-            )}">
-              ${params
-                .map((s) => {
-                  return `
-                  <div key="${s.seriesName}" class="${cx(
-                    lineChartClasses.tooltipSeriesRoot,
-                    css(styles.tooltipSeriesRoot),
-                    classes?.tooltipSeriesRoot
-                  )}">
-                    <div class="${cx(
-                      lineChartClasses.tooltipSeriesNameRoot,
-                      css(styles.tooltipSeriesNameRoot),
-                      classes?.tooltipSeriesNameRoot
-                    )}">
-                      <p style="background-color: ${s.color};" class="${cx(
-                    lineChartClasses.tooltipSeriesNameColor,
-                    css(styles.tooltipSeriesNameColor),
-                    classes?.tooltipSeriesNameColor
-                  )}" />
-                      <p class="${cx(
-                        lineChartClasses.tooltipSeriesName,
-                        css(styles.tooltipSeriesName),
-                        classes?.tooltipSeriesName
-                      )}">${s.seriesName}</p>
-                    </div>
-                    <p class="${cx(
-                      lineChartClasses.tooltipSeriesValue,
-                      css(styles.tooltipSeriesValue),
-                      classes?.tooltipSeriesValue
-                    )}">${
-                    tooltip?.valueFormatter
-                      ? tooltip.valueFormatter(s.value[s.encode.y[0]])
-                      : s.value[s.encode.y[0]]
-                  }</p>
-                  </div>
-                `;
-                })
-                .join(" ")}
-            </div>
-          </div>
-          `;
-        },
+        formatter: (params) =>
+          renderTooltip(
+            params,
+            tooltip?.type === "single",
+            measures,
+            classes,
+            tooltip?.valueFormatter
+          ),
       },
     };
-  }, [tooltip?.show, tooltip?.valueFormatter, classes]);
+  }, [
+    tooltip?.show,
+    tooltip?.valueFormatter,
+    tooltip?.type,
+    classes,
+    measures,
+  ]);
 
   const chartLegend = useMemo<Pick<EChartsOption, "legend">>(() => {
     return {
@@ -483,10 +609,19 @@ export const HvLineChart = ({
         show:
           legend?.show ??
           (Array.isArray(chartSeries.series) && chartSeries.series.length > 1),
-        icon: getLegendIcon(area),
+        itemGap: 20,
+        data:
+          legend?.show !== false && Array.isArray(chartSeries.series)
+            ? chartSeries.series.map((s) => {
+                return {
+                  name: s.name as string,
+                  icon: getLegendIcon((s as any).areaStyle != null),
+                };
+              })
+            : undefined,
       },
     };
-  }, [chartSeries, legend?.show, area]);
+  }, [chartSeries, legend?.show]);
 
   const chartHorizontalRangerSlider = useMemo<
     Pick<EChartsOption, "dataZoom">
@@ -509,9 +644,65 @@ export const HvLineChart = ({
     };
   }, [horizontalRangeSlider?.show]);
 
+  const chartGrid = useMemo(() => {
+    return {
+      // if no value is defined we shouldn't pass anything because echarts doesn't behave well otherwise
+      grid: {
+        ...(grid?.top != null && {
+          top: grid.top,
+        }),
+        ...(grid?.bottom != null && {
+          bottom: grid.bottom,
+        }),
+        ...(grid?.left != null && {
+          left: grid.left,
+        }),
+        ...(grid?.right != null && {
+          right: grid.right,
+        }),
+      },
+    };
+  }, [grid?.bottom, grid?.left, grid?.right, grid?.top]);
+
+  const [initialOption, setInitialOption] = useState<EChartsOption>({
+    aria: {
+      enabled: true,
+    },
+    animation: false,
+    ...chartDataset,
+    ...chartXAxis,
+    ...chartYAxis,
+    ...chartSeries,
+    ...chartTooltip,
+    ...chartLegend,
+    ...chartHorizontalRangerSlider,
+    ...chartGrid,
+  });
+
   useEffect(() => {
     if (!isMounted.current) {
       isMounted.current = true;
+      return;
+    }
+
+    // when the theme changes echarts destroys the chart and mounts it again
+    // thus we need to reset the initial option
+    if (theme !== currentTheme.current) {
+      setInitialOption({
+        aria: {
+          enabled: true,
+        },
+        animation: false,
+        ...chartDataset,
+        ...chartXAxis,
+        ...chartYAxis,
+        ...chartSeries,
+        ...chartTooltip,
+        ...chartLegend,
+        ...chartHorizontalRangerSlider,
+        ...chartGrid,
+      });
+      currentTheme.current = theme;
       return;
     }
 
@@ -524,12 +715,14 @@ export const HvLineChart = ({
         ...chartLegend,
         ...chartTooltip,
         ...chartHorizontalRangerSlider,
+        ...chartGrid,
       },
       {
         replaceMerge: ["xAxis", "yAxis", "series", "dataset"],
       }
     );
   }, [
+    theme,
     chartDataset,
     chartXAxis,
     chartYAxis,
@@ -537,21 +730,8 @@ export const HvLineChart = ({
     chartLegend,
     chartTooltip,
     chartHorizontalRangerSlider,
+    chartGrid,
   ]);
-
-  const [initialOption] = useState<EChartsOption>({
-    aria: {
-      enabled: true,
-    },
-    animation: false,
-    ...chartDataset,
-    ...chartXAxis,
-    ...chartYAxis,
-    ...chartSeries,
-    ...chartTooltip,
-    ...chartLegend,
-    ...chartHorizontalRangerSlider,
-  });
 
   return (
     <ReactECharts
@@ -559,6 +739,7 @@ export const HvLineChart = ({
       echarts={echarts}
       option={initialOption}
       theme={theme}
+      notMerge
     />
   );
 };

@@ -36,7 +36,7 @@ export default meta;
 export const Main: StoryObj<HvLineChartProps> = {
   args: {
     area: false,
-    stacked: false,
+    stack: undefined,
     emptyCellMode: "connect",
     areaOpacity: 0.5,
   },
@@ -50,13 +50,14 @@ export const Main: StoryObj<HvLineChartProps> = {
     measures: { control: { disable: true } },
     sortBy: { control: { disable: true } },
     tooltip: { control: { disable: true } },
-    lineNameFormatter: { control: { disable: true } },
+    seriesNameFormatter: { control: { disable: true } },
     horizontalRangeSlider: { control: { disable: true } },
     emptyCellMode: {
       control: { type: "radio" },
       options: emptyCellMode,
     },
     classes: { control: { disable: true } },
+    grid: { control: { disable: true } },
   },
   render: ({
     data,
@@ -424,7 +425,7 @@ export const MultipleLineChartsWithSplitBy: StoryObj<HvLineChartProps> = {
           groupBy="Year"
           measures="Total"
           splitBy={checked ? ["Country", "Medal"] : "Country"}
-          lineNameFormatter={(s) => `${s?.split("_").join(" ")}`}
+          seriesNameFormatter={(s) => `${s?.split("_").join(" ")}`}
         />
       </>
     );
@@ -463,13 +464,20 @@ export const StackedAreaChart: StoryObj<HvLineChartProps> = {
         }}
         tooltip={{ valueFormatter: formatter }}
         area
-        stacked
+        stack="total"
       />
     );
   },
 };
 
 export const HorizontalRangeSlider: StoryObj<HvLineChartProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Chart with a range slider to zoom the data along the x axis.",
+      },
+    },
+  },
   render: () => {
     const r = new Random();
     const rand = (diff) => r.next() * diff - diff / 2;
@@ -642,6 +650,124 @@ export const ArrowData: StoryObj<HvLineChartProps> = {
           }}
         />
       </>
+    );
+  },
+};
+
+export const MultipleYAxes: StoryObj<HvLineChartProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Line chart with multiple y axes.",
+      },
+    },
+  },
+  render: () => {
+    const tempFormatter = (value?: string | number) => `${value} ºC`;
+
+    const precFormatter = (value?: string | number) => `${value} ml`;
+
+    return (
+      <HvLineChart
+        data={{
+          Month: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ],
+          Temperature: [
+            7.0, 6.2, 4.3, 12.5, 5.3, 12.2, 20.3, 23.4, 25.0, 17.5, 13.0, 11.2,
+          ],
+          Precipitation: [
+            12.6, 15.9, 19.0, 26.0, 28.2, 70.7, 145.6, 132.2, 78.7, 22.8, 4.0,
+            2.9,
+          ],
+        }}
+        yAxis={[
+          {
+            id: "temp",
+            labelFormatter: tempFormatter,
+            name: "Temperature",
+          },
+          {
+            id: "prec",
+            labelFormatter: precFormatter,
+            name: "Precipitation",
+          },
+        ]}
+        groupBy="Month"
+        measures={[
+          {
+            field: "Temperature",
+            yAxis: "temp",
+            valueFormatter: tempFormatter,
+          },
+          {
+            field: "Precipitation",
+            yAxis: "prec",
+            valueFormatter: precFormatter,
+          },
+        ]}
+      />
+    );
+  },
+};
+
+export const MixedAreaAndLine: StoryObj<HvLineChartProps> = {
+  parameters: {
+    docs: {
+      description: { story: "Chart with a line and colored area." },
+    },
+  },
+  render: () => {
+    return (
+      <HvLineChart
+        data={{
+          Quarter: ["Q1", "Q2", "Q3", "Q4"],
+          "Sales Target": [5000, 5000, 5000, 5000],
+          Sales: [6000, 4300, 4760, 7230],
+        }}
+        groupBy="Quarter"
+        measures={["Sales Target", { field: "Sales", area: true }]}
+      />
+    );
+  },
+};
+
+export const PartiallyStackedChart: StoryObj<HvLineChartProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Chart where only the sales for each department are stacked together and not the sales target.",
+      },
+    },
+  },
+  render: () => {
+    return (
+      <HvLineChart
+        data={{
+          Quarter: ["Q1", "Q2", "Q3", "Q4"],
+          "Sales Dep 1": [2300, 9000, 8500, 1000],
+          "Sales Dep 2": [6000, 2000, 1000, 2000],
+          "Sales Target": [10000, 10000, 10000, 10000],
+        }}
+        groupBy="Quarter"
+        measures={[
+          { field: "Sales Dep 1", stack: "total", area: true },
+          { field: "Sales Dep 2", stack: "total", area: true },
+          { field: "Sales Target" },
+        ]}
+      />
     );
   },
 };

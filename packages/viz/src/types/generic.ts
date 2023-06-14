@@ -16,21 +16,33 @@ export type HvChartOrder = "asc" | "desc";
 export const emptyCellMode = ["connect", "void"] as const;
 export type HvChartEmptyCellMode = (typeof emptyCellMode)[number];
 
-/** Axis definition */
+/** Sampling functions */
+export type HvChartSampling =
+  | "none"
+  | "average"
+  | "min"
+  | "max"
+  | "sum"
+  | "lttb";
 
+/** Tooltip type */
+export const tooltipType = ["single", "multiple"] as const;
+export type HvChartTooltipType = (typeof tooltipType)[number];
+
+/** Axis definition */
 export interface HvChartAxis {
   id?: string;
   /** Type: continuous, categorical, or time data. Defaults varies per visualization type and axis orientation. */
   type?: HvChartAxisType;
-  /** Formatter for the labels on the vertical axis. */
+  /** Formatter for the labels on the axis. */
   labelFormatter?:
     | ((value?: string | number, index?: number) => string)
     | string;
-  /** Rotation of the labels on the vertical axis. Defaults to `0`. */
+  /** Rotation of the labels on the axis. Defaults to `0`. */
   labelRotation?: number;
-  /** Name used on the vertical axis. */
+  /** Name used for the axis. */
   name?: string;
-  /** Maximum value on the vertical axis. Set this property to `max` to use the maximum data value. */
+  /** Maximum value on the axis. Set this property to `max` to use the maximum data value. */
   maxValue?:
     | string
     | number
@@ -39,7 +51,7 @@ export interface HvChartAxis {
         max: string | number;
         min: string | number;
       }) => string | number);
-  /** Minimum value on the vertical axis. Set this property to `min` to use the maximum data value. */
+  /** Minimum value on the axis. Set this property to `min` to use the maximum data value. */
   minValue?:
     | string
     | number

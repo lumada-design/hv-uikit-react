@@ -2,24 +2,24 @@ import { getClasses } from "@hitachivantara/uikit-react-core";
 
 export interface HvLineChartClasses {
   tooltipRoot?: string;
-  tooltipTitleRoot?: string;
+  tooltipTitleContainer?: string;
   tooltipTitle?: string;
-  tooltipContentRoot?: string;
-  tooltipSeriesRoot?: string;
-  tooltipSeriesNameRoot?: string;
-  tooltipSeriesNameColor?: string;
+  tooltipValuesContainer?: string;
+  tooltipSeriesContainer?: string;
+  tooltipSeriesNameContainer?: string;
+  tooltipSeriesColor?: string;
   tooltipSeriesName?: string;
   tooltipSeriesValue?: string;
 }
 
 const classKeys: (keyof HvLineChartClasses)[] = [
   "tooltipRoot",
-  "tooltipTitleRoot",
+  "tooltipTitleContainer",
   "tooltipTitle",
-  "tooltipContentRoot",
-  "tooltipSeriesRoot",
-  "tooltipSeriesNameRoot",
-  "tooltipSeriesNameColor",
+  "tooltipValuesContainer",
+  "tooltipSeriesContainer",
+  "tooltipSeriesNameContainer",
+  "tooltipSeriesColor",
   "tooltipSeriesName",
   "tooltipSeriesValue",
 ];

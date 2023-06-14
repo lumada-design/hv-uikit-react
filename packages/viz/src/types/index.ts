@@ -4,4 +4,6 @@ export type {
   HvChartAxis,
   HvChartAxisType,
   HvChartEmptyCellMode,
+  HvChartSampling,
+  HvChartTooltipType,
 } from "./generic";
