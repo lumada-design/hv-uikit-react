@@ -1,84 +1,77 @@
-import { CSSInterpolation } from "@emotion/serialize";
-import { theme } from "@hitachivantara/uikit-react-core";
-import { HvLineChartClasses } from "./lineChartClasses";
+import { theme, createClasses } from "@hitachivantara/uikit-react-core";
 
-export const singleStyles: Partial<
-  Record<keyof HvLineChartClasses, CSSInterpolation>
-> = {
-  tooltipRoot: {
+export const { useClasses, staticClasses } = createClasses("HvLineChart", {
+  /** Single tooltip styles */
+  singleTooltipRoot: {
     width: "fit-content",
     boxShadow: theme.colors.shadow,
     backgroundColor: theme.colors.atmo1,
     padding: theme.space.sm,
     display: "flex",
   },
-  tooltipSeriesName: {
+  singleTooltipTitle: {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.semibold,
     fontSize: theme.fontSizes.sm,
     color: theme.colors.secondary,
   },
-  tooltipSeriesValue: {
+  singleTooltipValue: {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.normal,
     fontSize: theme.fontSizes.sm,
     color: theme.colors.secondary,
     marginLeft: theme.space.xs,
   },
-};
-
-export const multipleStyles: Partial<
-  Record<keyof HvLineChartClasses, CSSInterpolation>
-> = {
-  tooltipRoot: {
+  /** Multiple tooltip styles */
+  multipleTooltipRoot: {
     width: "fit-content",
     boxShadow: theme.colors.shadow,
     backgroundColor: theme.colors.atmo1,
   },
-  tooltipTitleContainer: {
+  multipleTooltipTitleContainer: {
     padding: `15px ${theme.space.sm}`,
     borderBottom: `3px solid ${theme.colors.atmo2}`,
   },
-  tooltipTitle: {
+  multipleTooltipTitle: {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.semibold,
     fontSize: theme.fontSizes.sm,
     color: theme.colors.secondary,
   },
-  tooltipValuesContainer: {
+  multipleTooltipValuesContainer: {
     display: "flex",
     flexDirection: "column",
     padding: theme.space.sm,
 
     "& > *:not(:last-child)": { paddingBottom: theme.space.sm },
   },
-  tooltipSeriesContainer: {
+  multipleTooltipSeriesContainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
-  tooltipSeriesNameContainer: {
+  multipleTooltipSeriesNameContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     marginRight: theme.space.sm,
   },
-  tooltipSeriesColor: {
+  multipleTooltipSeriesColor: {
     width: "10px",
     height: "10px",
     marginRight: "5px",
   },
-  tooltipSeriesName: {
+  multipleTooltipSeriesName: {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.semibold,
     fontSize: theme.fontSizes.sm,
     color: theme.colors.secondary,
   },
-  tooltipSeriesValue: {
+  multipleTooltipSeriesValue: {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.normal,
     fontSize: theme.fontSizes.sm,
     color: theme.colors.secondary,
   },
-};
+});

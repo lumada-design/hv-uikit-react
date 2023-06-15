@@ -40,9 +40,7 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@emotion/css": "^11.11.0",
-    "@emotion/serialize": "^1.1.2",
-    "@hitachivantara/uikit-react-core": "^5.5.0"
+    "@hitachivantara/uikit-react-core": "^5.14.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

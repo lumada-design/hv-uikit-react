@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { css, cx } from "@emotion/css";
 
 import {
   DatasetComponent,
@@ -24,6 +23,8 @@ import ReactECharts from "echarts-for-react";
 import { from, internal, not, table, desc } from "arquero";
 import type ColumnTable from "arquero/dist/types/table/column-table";
 
+import { ExtractNames } from "@hitachivantara/uikit-react-core";
+
 import {
   HvChartAggregation,
   HvChartOrder,
@@ -34,9 +35,9 @@ import {
 } from "@viz/types";
 import { getAgFunc, getAxisType, getLegendIcon } from "@viz/utils";
 import { useVizTheme } from "@viz/hooks";
+import { useClasses } from "./LineChart.styles";
 
-import { multipleStyles, singleStyles } from "./LineChart.styles";
-import lineChartClasses, { HvLineChartClasses } from "./lineChartClasses";
+export type HvLineChartClasses = ExtractNames<typeof useClasses>;
 
 // Register chart components
 echarts.use([
@@ -150,7 +151,7 @@ export interface HvLineChartProps {
     show?: boolean;
   };
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvLineChartClasses;
+  classes?: Partial<HvLineChartClasses>;
   /** Grid options. */
   grid?: {
     /** Distance between the grid and the top of the container. */
@@ -184,10 +185,11 @@ export const HvLineChart = ({
   emptyCellMode = "void",
   horizontalRangeSlider,
   areaOpacity = 0.5,
-  classes,
+  classes: classesProp = {},
   grid,
 }: HvLineChartProps) => {
   const { theme } = useVizTheme();
+  const { classes } = useClasses(classesProp);
 
   const currentTheme = useRef<string | undefined>(theme);
   const chartRef = useRef<ReactECharts>(null);
@@ -467,10 +469,10 @@ export const HvLineChart = ({
     }[],
     single: boolean,
     msr: MeasuresField | MeasuresField[],
-    customClasses?: HvLineChartClasses,
+    cls?: typeof classes,
     formatter?: (value?: string | number) => string
   ) => {
-    const tooltipName = params[0].value[params[0].encode.x[0]];
+    const tooltipTitle = params[0].value[params[0].encode.x[0]];
 
     if (single) {
       const measure = getMeasure(
@@ -486,49 +488,21 @@ export const HvLineChart = ({
           : value;
 
       return `
-        <div class="${cx(
-          lineChartClasses?.tooltipRoot,
-          css(singleStyles.tooltipRoot),
-          customClasses?.tooltipRoot
-        )}">
-          <p class="${cx(
-            lineChartClasses?.tooltipSeriesName,
-            css(singleStyles.tooltipSeriesName),
-            customClasses?.tooltipSeriesName
-          )}">${tooltipName}</p>
-          <p class="${cx(
-            lineChartClasses?.tooltipSeriesValue,
-            css(singleStyles.tooltipSeriesValue),
-            customClasses?.tooltipSeriesValue
-          )}">${formattedValue}</p>
+        <div class="${cls?.singleTooltipRoot}">
+          <p class="${cls?.singleTooltipTitle}">${tooltipTitle}</p>
+          <p class="${cls?.singleTooltipValue}">${formattedValue}</p>
         </div>
         `;
     }
 
     return `
-    <div class="${cx(
-      lineChartClasses?.tooltipRoot,
-      css(multipleStyles.tooltipRoot),
-      customClasses?.tooltipRoot
-    )}">
-      <div class="${cx(
-        lineChartClasses?.tooltipTitleContainer,
-        css(multipleStyles.tooltipTitleContainer),
-        customClasses?.tooltipTitleContainer
-      )}">
+    <div class="${cls?.multipleTooltipRoot}">
+      <div class="${cls?.multipleTooltipTitleContainer}">
         <div>
-          <p class="${cx(
-            lineChartClasses?.tooltipTitle,
-            css(multipleStyles.tooltipTitle),
-            customClasses?.tooltipTitle
-          )}">${tooltipName}</p>
+          <p class="${cls?.multipleTooltipTitle}">${tooltipTitle}</p>
         </div>
       </div>
-      <div class="${cx(
-        lineChartClasses?.tooltipValuesContainer,
-        css(multipleStyles.tooltipValuesContainer),
-        customClasses?.tooltipValuesContainer
-      )}">
+      <div class="${cls?.multipleTooltipValuesContainer}">
         ${params
           .map((s) => {
             const measure = getMeasure(s.dimensionNames[s.encode.y[0]], msr);
@@ -541,32 +515,12 @@ export const HvLineChart = ({
                 : value;
 
             return `
-            <div key="${s.seriesName}" class="${cx(
-              lineChartClasses?.tooltipSeriesContainer,
-              css(multipleStyles.tooltipSeriesContainer),
-              customClasses?.tooltipSeriesContainer
-            )}">
-              <div class="${cx(
-                lineChartClasses?.tooltipSeriesNameContainer,
-                css(multipleStyles.tooltipSeriesNameContainer),
-                classes?.tooltipSeriesNameContainer
-              )}">
-                <p style="background-color: ${s.color};" class="${cx(
-              lineChartClasses?.tooltipSeriesColor,
-              css(multipleStyles.tooltipSeriesColor),
-              customClasses?.tooltipSeriesColor
-            )}" />
-                <p class="${cx(
-                  lineChartClasses?.tooltipSeriesName,
-                  css(multipleStyles.tooltipSeriesName),
-                  customClasses?.tooltipSeriesName
-                )}">${s.seriesName}</p>
+            <div key="${s.seriesName}" class="${cls?.multipleTooltipSeriesContainer}">
+              <div class="${cls?.multipleTooltipSeriesNameContainer}">
+                <p style="background-color: ${s.color};" class="${cls?.multipleTooltipSeriesColor}" />
+                <p class="${cls?.multipleTooltipSeriesName}">${s.seriesName}</p>
               </div>
-              <p class="${cx(
-                lineChartClasses?.tooltipSeriesValue,
-                css(multipleStyles.tooltipSeriesValue),
-                customClasses?.tooltipSeriesValue
-              )}">${formattedValue}</p>
+              <p class="${cls?.multipleTooltipSeriesValue}">${formattedValue}</p>
             </div>
           `;
           })
