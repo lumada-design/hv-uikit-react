@@ -10,6 +10,18 @@ export const getDocsStyles = (theme) => {
         maxWidth: "90% !important",
       },
 
+      ".sbdocs-preview": {
+        overflow: "visible",
+
+        "& > div": {
+          overflow: "visible",
+
+          "& > div": {
+            overflow: "visible",
+          },
+        },
+      },
+
       "a.sbdocs": {
         color: "#2064B4",
       },

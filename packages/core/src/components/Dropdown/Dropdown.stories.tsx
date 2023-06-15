@@ -261,7 +261,7 @@ const StyledDropdown = styled(HvDropdown)({
   width: "180px",
 });
 
-export const DiferentSizeAndPlacements: StoryObj<HvDropdownProps> = {
+export const DifferentSizeAndPlacements: StoryObj<HvDropdownProps> = {
   parameters: {
     docs: {
       description: {
