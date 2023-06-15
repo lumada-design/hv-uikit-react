@@ -1,6 +1,6 @@
 import { HvTheme, useTheme } from "@hitachivantara/uikit-react-core";
 import * as echarts from "echarts/core";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 
 export interface HvVizContextValue {
   /**
@@ -139,13 +139,20 @@ export const HvVizProvider = ({ children }: HvVizProviderProps) => {
 
   useEffect(() => {
     registerThemes(selectedTheme, colorModes, activeTheme);
-  }, [selectedTheme]);
+  }, [selectedTheme, colorModes, activeTheme]);
 
   useEffect(() => {
     setTheme(`${selectedTheme}-${selectedMode}`);
   }, [selectedMode, selectedTheme]);
 
+  const value = useMemo<HvVizContextValue>(
+    () => ({
+      theme,
+    }),
+    [theme]
+  );
+
   return (
-    <HvVizContext.Provider value={{ theme }}>{children}</HvVizContext.Provider>
+    <HvVizContext.Provider value={value}>{children}</HvVizContext.Provider>
   );
 };
