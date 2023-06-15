@@ -1,10 +1,7 @@
-import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvBannerContentClasses } from "./bannerContentClasses";
+import { createClasses } from "@core/utils";
 
-export const styles: Partial<
-  Record<keyof HvBannerContentClasses, CSSInterpolation>
-> = {
+export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
   root: {
     minWidth: "100%",
     position: "relative",
@@ -44,4 +41,4 @@ export const styles: Partial<
     width: "100%",
     position: "relative",
   },
-};
+});

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 import { parseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
 import { HvThemeContext } from "@hitachivantara/uikit-react-shared";
 import type { HvThemeContextValue } from "@hitachivantara/uikit-react-shared";
@@ -6,16 +6,29 @@ import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
+import createCache, { EmotionCache } from "@emotion/cache";
 import { setElementAttrs } from "@core/utils";
 import { HvTheme } from "@core/types";
 
 export { HvThemeContext };
 export type { HvThemeContextValue };
 
+export const defaultCacheKey = "hv";
+
+export const defaultEmotionCache = createCache({
+  key: defaultCacheKey,
+  prepend: true,
+});
+
+export const EmotionContext = createContext<{ cache: EmotionCache }>({
+  cache: defaultEmotionCache,
+});
+
 interface HvThemeProviderProps {
   children: React.ReactNode;
   themes: (HvTheme | HvThemeStructure)[];
   theme: string;
+  emotionCache: EmotionCache;
   colorMode: string;
   themeRootId?: string;
 }
@@ -24,6 +37,7 @@ export const HvThemeProvider = ({
   children,
   themes: themesList,
   theme,
+  emotionCache,
   colorMode,
   themeRootId,
 }: HvThemeProviderProps) => {
@@ -64,7 +78,7 @@ export const HvThemeProvider = ({
     changeTheme(theme, colorMode);
   }, [theme, colorMode]);
 
-  const value = useMemo(
+  const value = useMemo<HvThemeContextValue>(
     () => ({
       themes,
       colorModes,
@@ -96,7 +110,9 @@ export const HvThemeProvider = ({
   return (
     <MuiThemeProvider theme={MuiTheme}>
       <HvThemeContext.Provider value={value}>
-        {children}
+        <EmotionContext.Provider value={{ cache: emotionCache }}>
+          {children}
+        </EmotionContext.Provider>
       </HvThemeContext.Provider>
     </MuiThemeProvider>
   );

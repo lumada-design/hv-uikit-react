@@ -3,27 +3,27 @@
 exports[`Banner > should render correctly 1`] = `
 <div>
   <div
-    class="MuiSnackbar-root HvBanner-root css-a16ynx MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter css-1s4dbob css-zzms1-MuiSnackbar-root"
+    class="MuiSnackbar-root HvBanner-root hv-a16ynx MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter hv-1s4dbob css-zzms1-MuiSnackbar-root"
     role="presentation"
     style="top: 60px;"
   >
     <div
-      class="HvBanner-Content-outContainer css-1kxonj9"
+      class="HvBannerContent-outContainer hv-1kxonj9"
     >
       <div
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root HvBanner-Content-root css-1gkohjr HvBanner-Content-baseVariant HvBanner-Content-default css-1ffogu7 css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root HvBannerContent-root hv-1gkohjr HvBannerContent-baseVariant HvBannerContent-default hv-1ffogu7 css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root"
         role="alert"
         style="webkit-transform: none; transform: none; webkit-transition: -webkit-transform 300ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; transition: transform 300ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;"
       >
         <div
-          class="MuiSnackbarContent-message HvBanner-Content-message css-vfvgre css-1exqwzz-MuiSnackbarContent-message"
+          class="MuiSnackbarContent-message HvBannerContent-message hv-vfvgre css-1exqwzz-MuiSnackbarContent-message"
         >
           <p
             class="HvBanner-MessageContainer-message HvTypography-root HvTypography-body css-r1qw90-getStyledComponent e1tnpalo0"
           />
         </div>
         <div
-          class="MuiSnackbarContent-action HvBanner-Content-action css-u5xit6 css-1kr9x0n-MuiSnackbarContent-action"
+          class="MuiSnackbarContent-action HvBannerContent-action hv-u5xit6 css-1kr9x0n-MuiSnackbarContent-action"
         >
           <div
             class="HvBanner-ActionContainer-actionContainer css-dmmwmi"

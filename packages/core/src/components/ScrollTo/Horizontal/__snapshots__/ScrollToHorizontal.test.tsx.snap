@@ -3,17 +3,17 @@
 exports[`ScrollToHorizontal > should render correctly 1`] = `
 <div>
   <ol
-    class="HvScrollToHorizontal-root hv-uikit-css-jnv3q4"
+    class="HvScrollToHorizontal-root hv-jnv3q4"
     id="hvHorizontalScrollto2"
   >
     <li
       aria-current="true"
-      class="HvHorizontalScrollListItem-root hv-uikit-css-sq4ju6"
+      class="HvHorizontalScrollListItem-root hv-sq4ju6"
       id="hvHorizontalScrollto2-item-0"
     >
       <div
         aria-labelledby="hvHorizontalScrollto2-item-0-label"
-        class="HvHorizontalScrollListItem-button hv-uikit-css-i30r6u"
+        class="HvHorizontalScrollListItem-button hv-i30r6u"
         id="hvHorizontalScrollto2-item-0-button"
         role="button"
         tabindex="0"
@@ -24,14 +24,14 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvHorizontalScrollListItem-text HvHorizontalScrollListItem-selected HvTypography-root HvTypography-label hv-uikit-css-1ofmnzo-getStyledComponent e1tnpalo0"
+            class="HvHorizontalScrollListItem-text HvHorizontalScrollListItem-selected HvTypography-root HvTypography-label hv-1ofmnzo-getStyledComponent e1tnpalo0"
             id="hvHorizontalScrollto2-item-0-label"
           >
             <p>
               Tab 1
             </p>
             <div
-              class="HvScrollToHorizontal-selected hv-uikit-css-k37bgh"
+              class="HvScrollToHorizontal-selected hv-k37bgh"
               name="CurrentStep"
             >
               <svg
@@ -54,12 +54,12 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvHorizontalScrollListItem-root hv-uikit-css-sq4ju6"
+      class="HvHorizontalScrollListItem-root hv-sq4ju6"
       id="hvHorizontalScrollto2-item-1"
     >
       <div
         aria-labelledby="hvHorizontalScrollto2-item-1-label"
-        class="HvHorizontalScrollListItem-button hv-uikit-css-i30r6u"
+        class="HvHorizontalScrollListItem-button hv-i30r6u"
         id="hvHorizontalScrollto2-item-1-button"
         role="button"
         tabindex="0"
@@ -70,17 +70,17 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-body hv-uikit-css-12gtkp4-getStyledComponent e1tnpalo0"
+            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-body hv-12gtkp4-getStyledComponent e1tnpalo0"
             id="hvHorizontalScrollto2-item-1-label"
           >
             <p>
               Tab 2
             </p>
             <div
-              class="HvScrollToHorizontal-notSelectedRoot hv-uikit-css-foh5vn"
+              class="HvScrollToHorizontal-notSelectedRoot hv-foh5vn"
             >
               <div
-                class="HvScrollToHorizontal-notSelected hv-uikit-css-1xppivs"
+                class="HvScrollToHorizontal-notSelected hv-1xppivs"
               />
             </div>
           </div>
@@ -89,12 +89,12 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvHorizontalScrollListItem-root hv-uikit-css-sq4ju6"
+      class="HvHorizontalScrollListItem-root hv-sq4ju6"
       id="hvHorizontalScrollto2-item-2"
     >
       <div
         aria-labelledby="hvHorizontalScrollto2-item-2-label"
-        class="HvHorizontalScrollListItem-button hv-uikit-css-i30r6u"
+        class="HvHorizontalScrollListItem-button hv-i30r6u"
         id="hvHorizontalScrollto2-item-2-button"
         role="button"
         tabindex="0"
@@ -105,17 +105,17 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-body hv-uikit-css-12gtkp4-getStyledComponent e1tnpalo0"
+            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-body hv-12gtkp4-getStyledComponent e1tnpalo0"
             id="hvHorizontalScrollto2-item-2-label"
           >
             <p>
               Tab 3
             </p>
             <div
-              class="HvScrollToHorizontal-notSelectedRoot hv-uikit-css-foh5vn"
+              class="HvScrollToHorizontal-notSelectedRoot hv-foh5vn"
             >
               <div
-                class="HvScrollToHorizontal-notSelected hv-uikit-css-1xppivs"
+                class="HvScrollToHorizontal-notSelected hv-1xppivs"
               />
             </div>
           </div>
@@ -124,12 +124,12 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvHorizontalScrollListItem-root hv-uikit-css-sq4ju6"
+      class="HvHorizontalScrollListItem-root hv-sq4ju6"
       id="hvHorizontalScrollto2-item-3"
     >
       <div
         aria-labelledby="hvHorizontalScrollto2-item-3-label"
-        class="HvHorizontalScrollListItem-button hv-uikit-css-i30r6u"
+        class="HvHorizontalScrollListItem-button hv-i30r6u"
         id="hvHorizontalScrollto2-item-3-button"
         role="button"
         tabindex="0"
@@ -140,17 +140,17 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-body hv-uikit-css-12gtkp4-getStyledComponent e1tnpalo0"
+            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-body hv-12gtkp4-getStyledComponent e1tnpalo0"
             id="hvHorizontalScrollto2-item-3-label"
           >
             <p>
               Tab 4
             </p>
             <div
-              class="HvScrollToHorizontal-notSelectedRoot hv-uikit-css-foh5vn"
+              class="HvScrollToHorizontal-notSelectedRoot hv-foh5vn"
             >
               <div
-                class="HvScrollToHorizontal-notSelected hv-uikit-css-1xppivs"
+                class="HvScrollToHorizontal-notSelected hv-1xppivs"
               />
             </div>
           </div>

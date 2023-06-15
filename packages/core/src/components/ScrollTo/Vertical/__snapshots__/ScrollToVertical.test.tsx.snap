@@ -3,18 +3,18 @@
 exports[`ScrollToVertical > should render correctly 1`] = `
 <div>
   <ol
-    class="HvScrollToVertical-root hv-uikit-css-1iz8oef"
+    class="HvScrollToVertical-root hv-1iz8oef"
     id="hvVerticalScrollto2"
   >
     <li
       aria-current="true"
-      class="HvVerticalScrollListItem-root hv-uikit-css-1ip7bvy"
+      class="HvVerticalScrollListItem-root hv-1ip7bvy"
       id="hvVerticalScrollto2-item-0"
     >
       <div
         aria-label="Tab 1"
         aria-labelledby="hvVerticalScrollto2-item-0-label"
-        class="HvVerticalScrollListItem-button hv-uikit-css-d71joc"
+        class="HvVerticalScrollListItem-button hv-d71joc"
         id="hvVerticalScrollto2-item-0-button"
         role="button"
         tabindex="0"
@@ -25,11 +25,11 @@ exports[`ScrollToVertical > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-label hv-uikit-css-nikb6h-getStyledComponent e1tnpalo0"
+            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-label hv-nikb6h-getStyledComponent e1tnpalo0"
             id="hvVerticalScrollto2-item-0-label"
           >
             <div
-              class="hv-uikit-css-f95wjz"
+              class="hv-f95wjz"
               name="CurrentStep"
             >
               <svg
@@ -52,13 +52,13 @@ exports[`ScrollToVertical > should render correctly 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvVerticalScrollListItem-root hv-uikit-css-1ip7bvy"
+      class="HvVerticalScrollListItem-root hv-1ip7bvy"
       id="hvVerticalScrollto2-item-1"
     >
       <div
         aria-label="Tab 2"
         aria-labelledby="hvVerticalScrollto2-item-1-label"
-        class="HvVerticalScrollListItem-button hv-uikit-css-d71joc"
+        class="HvVerticalScrollListItem-button hv-d71joc"
         id="hvVerticalScrollto2-item-1-button"
         role="button"
         tabindex="0"
@@ -69,11 +69,11 @@ exports[`ScrollToVertical > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-uikit-css-xi6bie-getStyledComponent e1tnpalo0"
+            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-xi6bie-getStyledComponent e1tnpalo0"
             id="hvVerticalScrollto2-item-1-label"
           >
             <div
-              class="HvVerticalScrollListItem-notSelected hv-uikit-css-1xppivs"
+              class="HvVerticalScrollListItem-notSelected hv-1xppivs"
             />
           </div>
         </div>
@@ -81,13 +81,13 @@ exports[`ScrollToVertical > should render correctly 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvVerticalScrollListItem-root hv-uikit-css-1ip7bvy"
+      class="HvVerticalScrollListItem-root hv-1ip7bvy"
       id="hvVerticalScrollto2-item-2"
     >
       <div
         aria-label="Tab 3"
         aria-labelledby="hvVerticalScrollto2-item-2-label"
-        class="HvVerticalScrollListItem-button hv-uikit-css-d71joc"
+        class="HvVerticalScrollListItem-button hv-d71joc"
         id="hvVerticalScrollto2-item-2-button"
         role="button"
         tabindex="0"
@@ -98,11 +98,11 @@ exports[`ScrollToVertical > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-uikit-css-xi6bie-getStyledComponent e1tnpalo0"
+            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-xi6bie-getStyledComponent e1tnpalo0"
             id="hvVerticalScrollto2-item-2-label"
           >
             <div
-              class="HvVerticalScrollListItem-notSelected hv-uikit-css-1xppivs"
+              class="HvVerticalScrollListItem-notSelected hv-1xppivs"
             />
           </div>
         </div>
@@ -110,13 +110,13 @@ exports[`ScrollToVertical > should render correctly 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvVerticalScrollListItem-root hv-uikit-css-1ip7bvy"
+      class="HvVerticalScrollListItem-root hv-1ip7bvy"
       id="hvVerticalScrollto2-item-3"
     >
       <div
         aria-label="Tab 4"
         aria-labelledby="hvVerticalScrollto2-item-3-label"
-        class="HvVerticalScrollListItem-button hv-uikit-css-d71joc"
+        class="HvVerticalScrollListItem-button hv-d71joc"
         id="hvVerticalScrollto2-item-3-button"
         role="button"
         tabindex="0"
@@ -127,11 +127,11 @@ exports[`ScrollToVertical > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-uikit-css-xi6bie-getStyledComponent e1tnpalo0"
+            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-xi6bie-getStyledComponent e1tnpalo0"
             id="hvVerticalScrollto2-item-3-label"
           >
             <div
-              class="HvVerticalScrollListItem-notSelected hv-uikit-css-1xppivs"
+              class="HvVerticalScrollListItem-notSelected hv-1xppivs"
             />
           </div>
         </div>
