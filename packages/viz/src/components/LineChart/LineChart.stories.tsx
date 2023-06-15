@@ -138,10 +138,10 @@ export const WithArea: StoryObj<HvLineChartProps> = {
   },
 };
 
-export const MultipleLineCharts: StoryObj<HvLineChartProps> = {
+export const MultipleLinesChart: StoryObj<HvLineChartProps> = {
   parameters: {
     docs: {
-      description: { story: "Multiple line charts." },
+      description: { story: "Multiple lines chart." },
     },
   },
   render: () => {
@@ -228,11 +228,11 @@ export const MultipleLineCharts: StoryObj<HvLineChartProps> = {
   },
 };
 
-export const CustomMultipleLineCharts: StoryObj<HvLineChartProps> = {
+export const CustomMultipleLinesChart: StoryObj<HvLineChartProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Multiple line charts with a custom title and controls.",
+        story: "Multiple lines chart with a custom title and controls.",
       },
     },
   },
@@ -333,11 +333,11 @@ export const CustomMultipleLineCharts: StoryObj<HvLineChartProps> = {
   },
 };
 
-export const MultipleLineChartsWithSplitBy: StoryObj<HvLineChartProps> = {
+export const MultipleLinesChartWithSplitBy: StoryObj<HvLineChartProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Multiple line charts created by splitting the data.",
+        story: "Multiple lines chart created by splitting the data.",
       },
     },
   },
@@ -665,7 +665,7 @@ export const MultipleYAxes: StoryObj<HvLineChartProps> = {
   render: () => {
     const tempFormatter = (value?: string | number) => `${value} ºC`;
 
-    const precFormatter = (value?: string | number) => `${value} ml`;
+    const precFormatter = (value?: string | number) => `${value} mm`;
 
     return (
       <HvLineChart
