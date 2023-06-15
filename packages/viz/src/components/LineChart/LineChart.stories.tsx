@@ -59,16 +59,7 @@ export const Main: StoryObj<HvLineChartProps> = {
     classes: { control: { disable: true } },
     grid: { control: { disable: true } },
   },
-  render: ({
-    data,
-    xAxis,
-    yAxis,
-    groupBy,
-    splitBy,
-    measures,
-    sortBy,
-    ...others
-  }) => {
+  render: ({ data, groupBy, measures, ...others }) => {
     return (
       <HvLineChart
         data={{

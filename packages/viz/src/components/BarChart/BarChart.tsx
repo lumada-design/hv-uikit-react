@@ -1,24 +1,23 @@
 import {
   HvBaseChart,
+  HvBaseChartBarProps,
   HvBaseChartClasses,
   HvBaseChartCommonProps,
-  HvBaseChartLineProps,
 } from "../BaseChart";
 
-export interface HvLineChartClasses extends HvBaseChartClasses {}
+export interface HvBarChartClasses extends HvBaseChartClasses {}
 
-export interface HvLineChartProps
+export interface HvBarChartProps
   extends HvBaseChartCommonProps,
-    HvBaseChartLineProps {
+    HvBaseChartBarProps {
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvLineChartClasses;
+  classes?: HvBarChartClasses;
 }
 
 /**
- * A line chart or line plot or line graph is a type of chart which displays information as a series of data points
- * connected by straight line segments. It is a basic type of chart common in many fields.
+ * A bar chart is a chart or graph that presents categorical data with rectangular bars.
  */
-export const HvLineChart = ({
+export const HvBarChart = ({
   data,
   groupBy,
   splitBy,
@@ -29,32 +28,28 @@ export const HvLineChart = ({
   legend,
   tooltip,
   seriesNameFormatter,
-  area = false,
   stack,
-  emptyCellMode = "void",
   horizontalRangeSlider,
-  areaOpacity = 0.5,
   classes,
+  horizontal = false,
   grid,
-}: HvLineChartProps) => {
+}: HvBarChartProps) => {
   return (
     <HvBaseChart
-      type="line"
+      type="bar"
       data={data}
       groupBy={groupBy}
       splitBy={splitBy}
       measures={measures}
       sortBy={sortBy}
-      xAxis={xAxis}
       yAxis={yAxis}
-      legend={legend}
+      xAxis={xAxis}
       tooltip={tooltip}
+      legend={legend}
       seriesNameFormatter={seriesNameFormatter}
-      area={area}
       stack={stack}
-      emptyCellMode={emptyCellMode}
       horizontalRangeSlider={horizontalRangeSlider}
-      areaOpacity={areaOpacity}
+      horizontal={horizontal}
       classes={classes}
       grid={grid}
     />

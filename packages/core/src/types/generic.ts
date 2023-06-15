@@ -41,3 +41,5 @@ export type HvExtraDeepPartialProps<T> = Partial<{
   [P in keyof T]: DeepPartial<T[P]> & HvExtraProps;
 }> &
   HvExtraProps;
+
+export type Arrayable<T> = T | T[];
