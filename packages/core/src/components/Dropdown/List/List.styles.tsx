@@ -3,12 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { HvList, HvListProps } from "@core/components";
 import { transientOptions } from "@core/utils/transientOptions";
 
-export const StyledRootList = styled("div")({
-  width: "100%",
-  backgroundColor: theme.dropdown.listBackgroundColor,
-  border: theme.dropdown.listBorder,
-  borderRadius: theme.dropdown.listBorderRadius,
-});
+export const StyledRootList = styled("div")({});
 
 export const StyledListContainer = styled("div")({
   padding: theme.dropdown.listContainerPadding,

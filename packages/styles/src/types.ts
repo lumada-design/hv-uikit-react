@@ -219,6 +219,7 @@ export type HvThemeComponents = {
   };
   pagination: {
     pageSizeBorderColor: string;
+    pageSizeHoverBorderColor: string;
     pageSizeBorderRadius: string;
     pageJumpTextAlign: string;
   };

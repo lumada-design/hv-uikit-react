@@ -10,24 +10,24 @@ exports[`FilterGroup > should render correctly 1`] = `
       id="filter-group-main"
     >
       <div
-        class="HvBaseDropdown-root HvFilterGroupContent-dropdown css-1nukton-StyledRoot eapzthe9"
+        class="HvBaseDropdown-root HvFilterGroupContent-dropdown css-1nukton-StyledRoot eapzthe8"
       >
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
-          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe7"
           id="filter-group-main-dropdown"
           role="combobox"
           tabindex="-1"
         >
           <div
-            class="HvBaseDropdown-header HvFilterGroupContent-header css-1vsvx69-StyledHeaderRoot eapzthe7"
+            class="HvBaseDropdown-header HvFilterGroupContent-header css-1vsvx69-StyledHeaderRoot eapzthe6"
             id="filter-group-main-dropdown-header"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection HvFilterGroupContent-baseDropdownSelection css-dcsvb4-StyledSelection eapzthe6"
+              class="HvBaseDropdown-selection HvFilterGroupContent-baseDropdownSelection css-1n8at67-StyledSelection eapzthe5"
             >
               <div
                 class="css-f95wjz"
@@ -54,14 +54,18 @@ exports[`FilterGroup > should render correctly 1`] = `
               </label>
             </div>
             <div
-              class="HvFilterGroupCounter-root css-10czyyf"
+              class="css-zsju0o-StyledAdornment eapzthe3"
             >
-              <p
-                class="HvFilterGroupCounter-partialCounter css-atimhy"
+              <div
+                class="HvFilterGroupCounter-root css-xrd8ac"
               >
-                4
-              </p>
-               / 20
+                <p
+                  class="HvFilterGroupCounter-partialCounter css-atimhy"
+                >
+                  4
+                </p>
+                 / 20
+              </div>
             </div>
           </div>
         </div>

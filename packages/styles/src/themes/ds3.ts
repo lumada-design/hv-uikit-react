@@ -321,7 +321,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     disabledBackgroundColor: theme.colors.atmo3,
     readOnlyBorder: "none",
     readOnlyBackgroundColor: theme.colors.atmo1,
-    openBorderColor: theme.colors.atmo1,
+    openBorderColor: "transparent",
   },
   baseRadio: {
     hoverColor: theme.colors.atmo3,
@@ -428,6 +428,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   },
   pagination: {
     pageSizeBorderColor: "transparent",
+    pageSizeHoverBorderColor: "transparent",
     pageSizeBorderRadius: "0px",
     pageJumpTextAlign: "right",
   },

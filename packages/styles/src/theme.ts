@@ -212,6 +212,7 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   },
   pagination: {
     pageSizeBorderColor: "string",
+    pageSizeHoverBorderColor: "string",
     pageSizeBorderRadius: "string",
     pageJumpTextAlign: "string",
   },

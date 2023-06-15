@@ -28,10 +28,7 @@ export const styles: Partial<
   dropdown: {
     display: "block",
   },
-  panel: {
-    border: theme.datePicker.panelBorder,
-    backgroundColor: theme.datePicker.panelBackgroundColor,
-  },
+  panel: {},
 
   dropdownHeaderInvalid: {
     border: `1px solid ${theme.colors.negative}`,
@@ -39,17 +36,8 @@ export const styles: Partial<
       border: `1px solid ${theme.colors.negative}`,
     },
   },
-  dropdownHeaderOpen: {
-    border: theme.datePicker.dropdownHeaderOpenBorder,
-    "&:hover": {
-      border: theme.datePicker.dropdownHeaderOpenBorder,
-    },
-  },
-  icon: {
-    position: "absolute",
-    right: -1,
-    bottom: -1,
-  },
+  dropdownHeaderOpen: {},
+  icon: {},
   action: {
     "&:first-of-type": {
       marginRight: theme.space.xs,

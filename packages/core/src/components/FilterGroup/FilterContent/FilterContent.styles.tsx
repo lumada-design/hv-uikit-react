@@ -19,11 +19,8 @@ export const styles: Partial<
   },
   root: {
     width: 640,
-    backgroundColor: theme.colors.atmo1,
     maxHeight: "calc(500px - 75px)",
     minHeight: "calc(370px - 75px)",
-    border: theme.filterGroup.panelsBorder,
-    borderBottom: theme.filterGroup.panelsBorderBottom,
   },
   rightSidePanel: {
     display: "inline-block",
@@ -48,12 +45,7 @@ export const styles: Partial<
     padding: 4,
     margin: `calc(${theme.spacing("sm")} - 4px)`,
   },
-  actionBar: {
-    backgroundColor: theme.colors.atmo1,
-    border: theme.filterGroup.actionBarBorder,
-    borderTop: theme.filterGroup.actionBarBorderTop,
-    alignItems: "center",
-  },
+  actionBar: {},
   space: {
     flex: 1,
   },

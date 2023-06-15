@@ -6,6 +6,8 @@ import {
   PopperPlacementType,
   PopperProps,
 } from "@mui/material";
+import { theme } from "@hitachivantara/uikit-styles";
+import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { useControlled, useForkRef, useTheme, useUniqueId } from "@core/hooks";
 import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { getFirstAndLastFocus } from "@core/utils/focusableElementFinder";
@@ -13,10 +15,9 @@ import { HvBaseProps } from "@core/types";
 import { usePopper } from "react-popper";
 import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
 import {
+  StyledAdornment,
   StyledAnchor,
   StyledContainer,
-  StyledDropDownXS,
-  StyledDropUpXS,
   StyledExtension,
   StyledHeaderRoot,
   StyledPanel,
@@ -236,7 +237,7 @@ export const HvBaseDropdown = ({
     []
   );
 
-  const modifiers: any = useMemo(
+  const modifiers: PopperProps["modifiers"] = useMemo(
     () => [
       {
         name: "variableWidth",
@@ -283,10 +284,8 @@ export const HvBaseDropdown = ({
     }
   );
 
-  let popperPlacement = "bottom";
-  if (attributes.popper) {
-    popperPlacement = attributes.popper["data-popper-placement"];
-  }
+  const popperPlacement =
+    attributes.popper?.["data-popper-placement"] ?? "bottom";
 
   const handleToggle = useCallback(
     (event) => {
@@ -331,6 +330,8 @@ export const HvBaseDropdown = ({
         ref: handleDropdownHeaderRef,
       });
     }
+
+    const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
 
     return (
       <StyledHeaderRoot
@@ -390,19 +391,15 @@ export const HvBaseDropdown = ({
             placeholder
           )}
         </StyledSelection>
-        {adornment ||
-          (isOpen ? (
-            <StyledDropUpXS
+        <StyledAdornment>
+          {adornment || (
+            <ExpanderComponent
               iconSize="XS"
+              color={disabled ? theme.colors.secondary_60 : undefined}
               className={clsx(baseDropdownClasses.arrow, classes?.arrow)}
             />
-          ) : (
-            <StyledDropDownXS
-              iconSize="XS"
-              className={clsx(baseDropdownClasses.arrow, classes?.arrow)}
-              $disabled={disabled}
-            />
-          ))}
+          )}
+        </StyledAdornment>
       </StyledHeaderRoot>
     );
   })();

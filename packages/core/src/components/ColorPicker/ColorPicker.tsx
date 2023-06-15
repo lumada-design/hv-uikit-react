@@ -231,6 +231,7 @@ export const HvColorPicker = ({
             </div>
           )}
           <HvBaseDropdown
+            variableWidth
             className={className}
             expanded={isOpen}
             onToggle={handleToggle}
@@ -243,6 +244,7 @@ export const HvColorPicker = ({
                     classes?.dropdownRootIconOnly
                   )
                 : undefined,
+              selection: cx(iconOnly && css({ padding: 0 })),
             }}
             adornment={
               iconOnly && color ? (
@@ -250,14 +252,9 @@ export const HvColorPicker = ({
                   className={cx(
                     colorPickerClasses.headerColorIconOnly,
                     css(styles.headerColorIconOnly),
-                    css({
-                      "& svg:last-child": {
-                        fill: color,
-                      },
-                    }),
                     classes?.headerColorIconOnly
                   )}
-                  color={[color]}
+                  color={color}
                 />
               ) : dropdownIcon === "colorPicker" ? (
                 <ColorPicker
@@ -276,14 +273,9 @@ export const HvColorPicker = ({
                     className={cx(
                       colorPickerClasses.headerColorIcon,
                       css(styles.headerColorIcon),
-                      css({
-                        "& svg:last-child": {
-                          fill: color,
-                        },
-                      }),
                       classes?.headerColorIcon
                     )}
-                    color={[color]}
+                    color={color}
                   />
                   <HvTypography
                     className={cx(

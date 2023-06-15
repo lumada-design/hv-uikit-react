@@ -41,8 +41,5 @@ export const styles: Partial<
     borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
     border: theme.dropDownMenu.borderOpened,
   },
-  menuListRoot: {
-    border: theme.dropDownMenu.borderOpened,
-    borderRadius: theme.dropDownMenu.borderRadius,
-  },
+  menuListRoot: {},
 };

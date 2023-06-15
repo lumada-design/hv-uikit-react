@@ -1,25 +1,19 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { baseDropdownClasses } from "@core/components";
 
-export const StyledRoot = styled("div")({
-  [`& .${baseDropdownClasses.root}`]: {
-    width: "auto",
-
-    [`& > div.${baseDropdownClasses.anchor}`]: {
-      width: "auto",
+export const { useClasses } = createClasses("HvPaginationSelect", {
+  header: {
+    backgroundColor: "transparent",
+    borderColor: theme.pagination.pageSizeBorderColor,
+    "&:hover": {
+      borderColor: theme.pagination.pageSizeHoverBorderColor,
     },
-    [`& .${baseDropdownClasses.header}`]: {
-      backgroundColor: "transparent",
-      borderColor: "transparent",
-    },
-    [`& .${baseDropdownClasses.headerOpen}`]: {
-      backgroundColor: theme.colors.atmo1,
-      borderColor: theme.colors.atmo1,
-    },
-    [`& .${baseDropdownClasses.selection}`]: {
-      borderRadius: theme.pagination.pageSizeBorderRadius,
-      border: `1px solid ${theme.pagination.pageSizeBorderColor}`,
-    },
+  },
+  selection: {
+    borderRadius: theme.pagination.pageSizeBorderRadius,
+    padding: theme.spacing([0, "md", 0, "xs"]),
+  },
+  headerOpen: {
+    backgroundColor: theme.colors.atmo1,
   },
 });

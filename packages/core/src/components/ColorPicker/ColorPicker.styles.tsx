@@ -12,6 +12,7 @@ export const styles: Partial<
   label: {
     paddingBottom: "6px",
     display: "block",
+    cursor: "pointer",
   },
   headerColorValue: {
     textTransform: "uppercase",
@@ -28,29 +29,15 @@ export const styles: Partial<
     display: "flex",
     justifyContent: "center",
     padding: theme.colorPicker.panelPadding,
-    border: theme.colorPicker.panelBorder,
-    borderRadius: theme.colorPicker.panelBorderRadius,
   },
   colorPicker: {
     width: theme.colorPicker.colorPickerWidth,
   },
-  colorPickerIcon: {
-    position: "absolute",
-    pointerEvents: "none",
-    top: -1,
-    right: -1,
-  },
+  colorPickerIcon: {},
   dropdownRootIconOnly: {
     width: 32,
     height: 32,
   },
-  headerColorIconOnly: {
-    position: "absolute",
-    pointerEvents: "none",
-    top: -1,
-    right: -1,
-    width: 32,
-    height: 32,
-  },
+  headerColorIconOnly: {},
   pickerFields: { paddingBottom: 20 },
 };

@@ -1,13 +1,6 @@
 import { useState } from "react";
-import { clsx } from "clsx";
-import {
-  HvBaseDropdown,
-  HvSelectionList,
-  HvListItem,
-  HvPanel,
-  HvTypography,
-} from "../index";
-import { StyledRoot } from "./Select.styles";
+import { HvBaseDropdown, HvSelectionList, HvListItem, HvPanel } from "..";
+import { useClasses } from "./Select.styles";
 
 export const Option = ({ children, ...others }) => (
   <HvListItem {...others}>{children}</HvListItem>
@@ -15,13 +8,14 @@ export const Option = ({ children, ...others }) => (
 
 const HvSelect = ({
   className,
-  classes,
+  classes: classesProp = {},
   onChange,
   disabled,
   value,
   children,
   ...others
 }) => {
+  const { classes } = useClasses(classesProp);
   const [open, setOpen] = useState(false);
 
   const handleSelect = (evt, val) => {
@@ -46,30 +40,27 @@ const HvSelect = ({
   };
 
   return (
-    <StyledRoot>
-      <HvBaseDropdown
-        className={className}
-        classes={{
-          root: clsx(classes.base, classes.root),
-          anchor: classes.anchor,
-          header: classes.header,
-          headerOpen: classes.headerOpen,
-        }}
-        expanded={open}
-        onToggle={handleToggle}
-        onContainerCreation={setFocusToContent}
-        placeholder={<HvTypography>{value}</HvTypography>}
-        disabled={disabled}
-        variableWidth
-        {...others}
-      >
-        <HvPanel>
-          <HvSelectionList value={value} onChange={handleSelect}>
-            {children}
-          </HvSelectionList>
-        </HvPanel>
-      </HvBaseDropdown>
-    </StyledRoot>
+    <HvBaseDropdown
+      className={className}
+      classes={{
+        selection: classes.selection,
+        header: classes.header,
+        headerOpen: classes.headerOpen,
+      }}
+      expanded={open}
+      onToggle={handleToggle}
+      onContainerCreation={setFocusToContent}
+      placeholder={value}
+      disabled={disabled}
+      variableWidth
+      {...others}
+    >
+      <HvPanel>
+        <HvSelectionList value={value} onChange={handleSelect}>
+          {children}
+        </HvSelectionList>
+      </HvPanel>
+    </HvBaseDropdown>
   );
 };
 

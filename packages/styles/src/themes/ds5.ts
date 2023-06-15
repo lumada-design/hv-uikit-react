@@ -370,7 +370,8 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     extensionBorderColor: theme.colors.secondary_80,
   },
   pagination: {
-    pageSizeBorderColor: theme.colors.secondary,
+    pageSizeBorderColor: theme.colors.secondary_80,
+    pageSizeHoverBorderColor: theme.colors.secondary_80,
     pageSizeBorderRadius: theme.radii.base,
     pageJumpTextAlign: "center",
   },

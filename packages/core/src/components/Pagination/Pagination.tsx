@@ -232,7 +232,6 @@ export const HvPagination = ({
                 paginationClasses.pageSizeOptionsSelect,
                 classes?.pageSizeOptionsSelect
               )}
-              classes={{}}
               aria-label={labels?.pageSizeSelectorDescription}
               onChange={(_, val: number) => onPageSizeChange?.(val)}
               value={pageSize}
