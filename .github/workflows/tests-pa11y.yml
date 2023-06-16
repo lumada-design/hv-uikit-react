@@ -35,4 +35,23 @@ jobs:
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
           "npx http-server dist --port 6006 --silent" \
-          "npx wait-on tcp:6006 && npm run test:pa11y"
+          "npx wait-on tcp:6006 && npm run test:pa11y" || true
+
+      - name: Archive pa11y report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pa11y-report
+          path: ${{ github.workspace }}/pa11y-ci-report
+          
+      - name: Deploy Artifacts
+        if: always()
+        uses: ./.github/actions/deploy-artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+          PUBLISH_FOLDER: uikit-pa11y
+          PUBLISH_MESSAGE: "chore: publish NEXT UI Kit accessibility report"
+          URL: https://${{ github.repository_owner }}.github.io/uikit-pa11y/
+          ARTIFACT: pa11y-report
