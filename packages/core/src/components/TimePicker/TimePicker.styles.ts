@@ -32,10 +32,7 @@ export const { useClasses, staticClasses } = createClasses("HvTimerPicker", {
       border: `1px solid ${theme.colors.negative}`,
     },
   },
-  dropdownPanel: {
-    // TODO: move styles to HvBaseDropdown
-    border: `1px solid ${theme.colors.secondary_80}`,
-  },
+  dropdownPanel: {},
 
   icon: {},
 

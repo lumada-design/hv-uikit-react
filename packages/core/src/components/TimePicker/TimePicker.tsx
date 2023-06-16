@@ -273,12 +273,9 @@ export const HvTimePicker = (props: HvTimePickerProps) => {
             )
           }
           classes={{
-            header: cx(
-              // TODO: move styles to HvBaseDropdown
-              css({ display: "flex", justifyContent: "space-between" }),
-              classes.dropdownHeader,
-              { [classes.dropdownHeaderInvalid]: isStateInvalid }
-            ),
+            header: cx(classes.dropdownHeader, {
+              [classes.dropdownHeaderInvalid]: isStateInvalid,
+            }),
             panel: classes.dropdownPanel,
             headerOpen: classes.dropdownHeaderOpen,
           }}
