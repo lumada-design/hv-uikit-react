@@ -23,9 +23,9 @@ jobs:
     secrets:
       APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
 
-  # pa11y:
-  #   name: Pa11y Tests
-  #   uses: ./.github/workflows/tests-pa11y.yml
+  pa11y:
+    name: Pa11y Tests
+    uses: ./.github/workflows/tests-pa11y.yml
 
   security-scans:
     name: Security Scans
