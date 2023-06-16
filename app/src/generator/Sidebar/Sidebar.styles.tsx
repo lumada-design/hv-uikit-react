@@ -23,16 +23,9 @@ export const styles = {
     ...theme.typography.sectionTitle,
     textTransform: "uppercase",
   }),
-  themeName: css({
-    display: "flex",
-    gap: 10,
-    alignItems: "center",
-  }),
-  themeNameInput: css({
-    width: "100%",
-  }),
   themeBase: css({
     display: "flex",
+    flexDirection: "row",
     justifyContent: "space-between",
     gap: 20,
     alignItems: "center",

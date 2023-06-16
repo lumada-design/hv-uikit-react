@@ -6,13 +6,17 @@ import {
   Dispatch,
   SetStateAction,
   useEffect,
+  useMemo,
 } from "react";
+import merge from "lodash/merge";
+import { themeDiff } from "./utils";
 
 type GeneratorContextProp = {
   customTheme: HvTheme | HvThemeStructure;
   updateCustomTheme: (
     newTheme: HvThemeStructure | HvTheme,
-    addToHistory?: boolean
+    addToHistory?: boolean,
+    updateThemeChanges?: boolean
   ) => void;
 
   open?: boolean;
@@ -28,6 +32,8 @@ type GeneratorContextProp = {
   redo?: () => void;
   canUndo?: boolean;
   canRedo?: boolean;
+
+  themeChanges?: Partial<HvTheme | HvThemeStructure>;
 };
 
 export const GeneratorContext = createContext<GeneratorContextProp>({
@@ -46,8 +52,13 @@ const GeneratorProvider = ({ children }) => {
   const [historyStep, setHistoryStep] = useState(-1);
   const [canUndo, setCanUndo] = useState(false);
   const [canRedo, setCanRedo] = useState(false);
+  const [themeChanges, setThemeChanges] = useState({});
 
-  const updateCustomTheme = (newTheme, addToHistory = true) => {
+  const updateCustomTheme = (
+    newTheme,
+    addToHistory = true,
+    updateThemeChanges = true
+  ) => {
     if (addToHistory) {
       let newHistory: HvTheme[] = history;
       if (history.length - historyStep > 1) {
@@ -58,6 +69,13 @@ const GeneratorProvider = ({ children }) => {
 
       setHistory([...newHistory, newTheme]);
       setHistoryStep((prev) => prev + 1);
+    }
+
+    if (updateThemeChanges) {
+      setThemeChanges((prev) => {
+        const diff = themeDiff(customTheme, newTheme);
+        return merge({}, prev, diff);
+      });
     }
     setCustomTheme(newTheme);
   };
@@ -88,23 +106,41 @@ const GeneratorProvider = ({ children }) => {
     setHistoryStep((prev) => prev + 1);
   };
 
+  const value = useMemo(
+    () => ({
+      customTheme,
+      updateCustomTheme,
+      open,
+      setOpen,
+      tutorialOpen,
+      setTutorialOpen,
+      currentStep,
+      setCurrentStep,
+      undo,
+      redo,
+      canUndo,
+      canRedo,
+      themeChanges,
+    }),
+    [
+      customTheme,
+      updateCustomTheme,
+      open,
+      setOpen,
+      tutorialOpen,
+      setTutorialOpen,
+      currentStep,
+      setCurrentStep,
+      undo,
+      redo,
+      canUndo,
+      canRedo,
+      themeChanges,
+    ]
+  );
+
   return (
-    <GeneratorContext.Provider
-      value={{
-        customTheme,
-        updateCustomTheme,
-        open,
-        setOpen,
-        tutorialOpen,
-        setTutorialOpen,
-        currentStep,
-        setCurrentStep,
-        undo,
-        redo,
-        canUndo,
-        canRedo,
-      }}
-    >
+    <GeneratorContext.Provider value={value}>
       {children}
     </GeneratorContext.Provider>
   );

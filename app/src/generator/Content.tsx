@@ -25,7 +25,7 @@ const Content = () => {
       style={{
         width: open ? "calc(100% - 390px)" : "100%",
         backgroundColor:
-          customTheme?.colors?.modes[selectedMode]?.backgroundColor,
+          customTheme?.colors?.modes?.[selectedMode]?.backgroundColor,
       }}
     >
       <Router basename={import.meta.env.BASE_URL}>
