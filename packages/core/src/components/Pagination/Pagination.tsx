@@ -1,5 +1,4 @@
 import { HTMLAttributes, useCallback, useEffect } from "react";
-import { clsx } from "clsx";
 import { Hidden } from "@mui/material";
 import { HvInput, HvInputProps, HvTypography } from "@core/components";
 import {
@@ -9,22 +8,16 @@ import {
   Forwards,
 } from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps } from "@core/types";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { ExtractNames, isKeypress, keyboardCodes, setId } from "@core/utils";
 import { useLabels } from "@core/hooks";
-import { Option } from "./Select";
-import {
-  StyledRoot,
-  StyledPageSizeOptions,
-  StyledPageSizePrev,
-  StyledSelect,
-  StyledPageSizeTextContainer,
-  StyledPageNavigator,
-  StyledButtonIconTooltip,
-  StyledPageJump,
-  StyledPageInfo,
-} from "./Pagination.styles";
-import paginationClasses, { HvPaginationClasses } from "./paginationClasses";
+import HvSelect, { Option } from "./Select";
+import { staticClasses, useClasses } from "./Pagination.styles";
 import { usePageInput, getSafePage, setColor } from "./utils";
+import ButtonIconTooltip from "./ButtonIconTooltip";
+
+export { staticClasses as paginationClasses };
+
+export type HvPaginationClasses = ExtractNames<typeof useClasses>;
 
 export interface HvPaginationLabels {
   /** The show label. */
@@ -85,7 +78,7 @@ export interface HvPaginationProps extends HvBaseProps {
   /** Extra properties passed to the input component representing the current pages. */
   currentPageInputProps?: HvInputProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvPaginationClasses;
+  classes?: Partial<HvPaginationClasses>;
 }
 
 const DEFAULT_LABELS = {
@@ -111,7 +104,7 @@ const { Enter } = keyboardCodes;
  * with structured content on a website or application.
  */
 export const HvPagination = ({
-  classes,
+  classes: classesProp = {},
   className,
   id,
   pages = 1,
@@ -132,9 +125,10 @@ export const HvPagination = ({
 }: HvPaginationProps) => {
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const [pageInput, handleInputChange] = usePageInput(page);
+  const { classes, cx } = useClasses(classesProp);
 
   const changePage = useCallback(
-    (newPage) => {
+    (newPage: number) => {
       const safePage: number = getSafePage(newPage, page, pages);
 
       onPageChange?.(safePage);
@@ -163,9 +157,7 @@ export const HvPagination = ({
   }, [handleInputChange, page]);
 
   const renderPageJump = () => (
-    <StyledPageJump
-      className={clsx(paginationClasses.pageJump, classes?.pageJump)}
-    >
+    <div className={classes.pageJump}>
       <HvInput
         id={setId(id, "currentPage")}
         labels={labels}
@@ -175,15 +167,9 @@ export const HvPagination = ({
           type: "number",
         }}
         classes={{
-          root: clsx(
-            paginationClasses.pageSizeInputContainer,
-            classes?.pageSizeInputContainer
-          ),
-          input: clsx(paginationClasses.pageSizeInput, classes?.pageSizeInput),
-          inputRoot: clsx(
-            paginationClasses.pageSizeInputRoot,
-            classes?.pageSizeInputRoot
-          ),
+          root: classes?.pageSizeInputContainer,
+          input: classes?.pageSizeInput,
+          inputRoot: classes?.pageSizeInputRoot,
         }}
         onChange={(event, value) => handleInputChange(event, Number(value))}
         value={String(pageInput)}
@@ -195,43 +181,26 @@ export const HvPagination = ({
         disableClear
         {...currentPageInputProps}
       />
-    </StyledPageJump>
+    </div>
   );
 
   return (
-    <StyledRoot
-      id={id}
-      className={clsx(className, paginationClasses.root, classes?.root)}
-      {...others}
-    >
-      <StyledPageSizeOptions
-        className={clsx(
-          paginationClasses.pageSizeOptions,
-          classes?.pageSizeOptions
-        )}
-        {...showPageProps}
-      >
+    <div id={id} className={cx(classes.root, className)} {...others}>
+      <div className={classes.pageSizeOptions} {...showPageProps}>
         {showPageSizeOptions && (
           <>
             <Hidden xsDown>
-              <StyledPageSizePrev
-                className={clsx(
-                  paginationClasses.pageSizeTextContainer,
-                  classes?.pageSizeTextContainer
-                )}
+              <HvTypography
+                component="span"
+                className={classes?.pageSizeTextContainer}
               >
-                <HvTypography component="span">
-                  {labels?.pageSizePrev}
-                </HvTypography>
-              </StyledPageSizePrev>
+                {labels?.pageSizePrev}
+              </HvTypography>
             </Hidden>
-            <StyledSelect
+            <HvSelect
               id={setId(id, "pageSize")}
               disabled={pageSize === 0}
-              className={clsx(
-                paginationClasses.pageSizeOptionsSelect,
-                classes?.pageSizeOptionsSelect
-              )}
+              className={classes.pageSizeOptionsSelect}
               aria-label={labels?.pageSizeSelectorDescription}
               onChange={(_, val: number) => onPageSizeChange?.(val)}
               value={pageSize}
@@ -241,107 +210,71 @@ export const HvPagination = ({
                   {option}
                 </Option>
               ))}
-            </StyledSelect>
+            </HvSelect>
             <Hidden xsDown>
-              <StyledPageSizeTextContainer
-                className={clsx(
-                  paginationClasses.pageSizeTextContainer,
-                  classes?.pageSizeTextContainer
-                )}
+              <HvTypography
+                component="span"
+                className={classes.pageSizeTextContainer}
               >
-                <HvTypography component="span">
-                  {labels?.pageSizeEntryName}
-                </HvTypography>
-              </StyledPageSizeTextContainer>
+                {labels?.pageSizeEntryName}
+              </HvTypography>
             </Hidden>
           </>
         )}
-      </StyledPageSizeOptions>
-      <StyledPageNavigator
-        className={clsx(
-          paginationClasses.pageNavigator,
-          classes?.pageNavigator
-        )}
-        {...navigationProps}
-      >
-        <StyledButtonIconTooltip
+      </div>
+      <div className={classes.pageNavigator} {...navigationProps}>
+        <ButtonIconTooltip
           id={setId(id, "firstPage-button")}
           aria-label={labels?.firstPage}
-          className={clsx(
-            paginationClasses.iconContainer,
-            classes?.iconContainer
-          )}
+          className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
           tooltip={labels?.paginationFirstPageTitle}
         >
-          <Start
-            className={clsx(paginationClasses.icon, classes?.icon)}
-            color={setColor(!canPrevious)}
-          />
-        </StyledButtonIconTooltip>
-        <StyledButtonIconTooltip
+          <Start className={classes.icon} color={setColor(!canPrevious)} />
+        </ButtonIconTooltip>
+        <ButtonIconTooltip
           id={setId(id, "previousPage-button")}
           aria-label={labels?.previousPage}
-          className={clsx(
-            paginationClasses.iconContainer,
-            classes?.iconContainer
-          )}
+          className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(page - 1)}
           tooltip={labels?.paginationPreviousPageTitle}
         >
-          <Backwards
-            className={clsx(paginationClasses.icon, classes?.icon)}
-            color={setColor(!canPrevious)}
-          />
-        </StyledButtonIconTooltip>
-        <StyledPageInfo
-          className={clsx(paginationClasses.pageInfo, classes?.pageInfo)}
-        >
+          <Backwards className={classes.icon} color={setColor(!canPrevious)} />
+        </ButtonIconTooltip>
+        <div className={classes.pageInfo}>
           {showPageJump ? (
             renderPageJump()
           ) : (
             <HvTypography component="span">{`${page + 1}`}</HvTypography>
           )}
           <HvTypography component="span">{`${labels?.pagesSeparator} `}</HvTypography>
-          <HvTypography id={setId(id, "totalPages")} component="span">
+          <HvTypography component="span" id={setId(id, "totalPages")}>
             {pages}
           </HvTypography>
-        </StyledPageInfo>
-        <StyledButtonIconTooltip
+        </div>
+        <ButtonIconTooltip
           id={setId(id, "nextPage-button")}
           aria-label={labels?.nextPage}
-          className={clsx(
-            paginationClasses.iconContainer,
-            classes?.iconContainer
-          )}
+          className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(page + 1)}
           tooltip={labels?.paginationNextPageTitle}
         >
-          <Forwards
-            className={clsx(paginationClasses.icon, classes?.icon)}
-            color={setColor(!canNext)}
-          />
-        </StyledButtonIconTooltip>
-        <StyledButtonIconTooltip
+          <Forwards className={classes.icon} color={setColor(!canNext)} />
+        </ButtonIconTooltip>
+        <ButtonIconTooltip
           id={setId(id, "lastPage-button")}
           aria-label={labels?.lastPage}
-          className={clsx(
-            paginationClasses.iconContainer,
-            classes?.iconContainer
-          )}
+          className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
           tooltip={labels?.paginationLastPageTitle}
         >
-          <End
-            className={clsx(paginationClasses.icon, classes?.icon)}
-            color={setColor(!canNext)}
-          />
-        </StyledButtonIconTooltip>
-      </StyledPageNavigator>
-    </StyledRoot>
+          <End className={classes.icon} color={setColor(!canNext)} />
+        </ButtonIconTooltip>
+      </div>
+    </div>
   );
 };
