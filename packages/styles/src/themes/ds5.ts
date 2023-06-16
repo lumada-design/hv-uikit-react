@@ -170,6 +170,9 @@ const ds5 = makeTheme((theme: HvTheme) => ({
       textDecoration: "underline",
     },
   },
+  actionBar: {
+    borderTop: `1px solid ${theme.colors.atmo3}`,
+  },
   dropdown: {
     borderRadius: theme.radii.base,
     disabledColor: theme.colors.secondary_60,

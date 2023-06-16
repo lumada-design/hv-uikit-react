@@ -4,10 +4,10 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { staticClasses, useClasses } = createClasses("HvActionBar", {
   root: {
     width: "100%",
-    height: "75px",
     padding: theme.space.sm,
-    borderTop: `3px solid ${theme.colors.atmo2}`,
+    borderTop: theme.actionBar.borderTop,
     display: "flex",
+    alignItems: "center",
     justifyContent: "flex-end",
   },
 });

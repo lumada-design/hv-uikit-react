@@ -8,12 +8,12 @@ export type HvActionBarClasses = ExtractNames<typeof useClasses>;
 
 export interface HvActionBarProps extends HvBaseProps {
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvActionBarClasses;
+  classes?: Partial<HvActionBarClasses>;
 }
 
 export const HvActionBar = (props: HvActionBarProps) => {
-  const { className, children, ...others } = props;
-  const { classes, cx } = useClasses(props.classes);
+  const { classes: classesProp, className, children, ...others } = props;
+  const { classes, cx } = useClasses(classesProp);
 
   return (
     <div className={cx(classes.root, className)} {...others}>
