@@ -14,7 +14,7 @@ exports[`Dropdown > should render correctly 1`] = `
         <div
           aria-expanded="false"
           aria-label="Main sample"
-          class="etta2py3 HvBaseDropdown-anchor css-149gb3r-StyledAnchor-StyledDropdown eapzthe7"
+          class="etta2py3 HvBaseDropdown-anchor css-1b71fhc-StyledAnchor-StyledDropdown eapzthe7"
           role="combobox"
           tabindex="-1"
         >

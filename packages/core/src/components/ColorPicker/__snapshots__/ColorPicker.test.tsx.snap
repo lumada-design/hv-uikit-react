@@ -200,6 +200,7 @@ exports[`ColorPicker > should render correctly recommended colors only color pic
                   <path
                     class="color1"
                     d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="transparent"
                   />
                 </svg>
               </div>
@@ -298,6 +299,7 @@ exports[`ColorPicker > should render correctly recommended colors only icon colo
                   <path
                     class="color1"
                     d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="transparent"
                   />
                 </svg>
               </div>
@@ -368,6 +370,7 @@ exports[`ColorPicker > should render correctly without saved colors color picker
                   <path
                     class="color1"
                     d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="transparent"
                   />
                 </svg>
               </div>

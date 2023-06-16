@@ -13,7 +13,6 @@ import { mapCSSVars } from "./utils";
 const componentsSpec: DeepString<HvThemeComponents> = {
   dropdown: {
     borderRadius: "string",
-    headerBorder: "string",
     disabledColor: "string",
     readOnlyBorder: "string",
     readOnlyBackgroundColor: "string",

@@ -254,7 +254,7 @@ export const HvColorPicker = ({
                     css(styles.headerColorIconOnly),
                     classes?.headerColorIconOnly
                   )}
-                  color={color}
+                  color={[color, "transparent"]}
                 />
               ) : dropdownIcon === "colorPicker" ? (
                 <ColorPicker
@@ -275,7 +275,7 @@ export const HvColorPicker = ({
                       css(styles.headerColorIcon),
                       classes?.headerColorIcon
                     )}
-                    color={color}
+                    color={[color, "transparent"]}
                   />
                   <HvTypography
                     className={cx(

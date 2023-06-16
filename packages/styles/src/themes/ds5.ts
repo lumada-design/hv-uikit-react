@@ -172,7 +172,6 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   },
   dropdown: {
     borderRadius: theme.radii.base,
-    headerBorder: `1px solid ${theme.colors.secondary_80}`,
     disabledColor: theme.colors.secondary_60,
     readOnlyBorder: `1px solid ${theme.colors.secondary_80}`,
     readOnlyBackgroundColor: theme.colors.atmo1,

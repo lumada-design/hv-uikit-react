@@ -40,10 +40,6 @@ export const StyledDropdown = styled(
     borderRadius: theme.radii.base,
 
     [`& .${dropdownClasses.dropdownHeader}`]: {
-      border: theme.dropdown.headerBorder,
-      "&:hover": {
-        border: `1px solid ${theme.colors.secondary_80}`,
-      },
       ...($dropdownHeaderInvalid && {
         border: "none",
         "&:hover": {
