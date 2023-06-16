@@ -35,7 +35,9 @@ exports[`Accordion > should render correctly 1`] = `
       class="HvAccordion-container HvAccordion-hidden css-1av53l8-StyledContainer e86r8k01"
       hidden=""
       role="region"
-    />
+    >
+      some content
+    </div>
   </div>
 </div>
 `;

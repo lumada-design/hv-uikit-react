@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const SelectionContext = createContext<string[]>([]);
+export const SelectionContext = createContext<string[]>([""]);

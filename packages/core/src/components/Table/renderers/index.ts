@@ -8,10 +8,7 @@ export {
   hvDropdownColumn,
   hvProgressColumn,
 } from "./renderers";
-export { default as HvDateColumnCell } from "./DateColumnCell";
-export { default as HvDropdownColumnCell } from "./DropdownColumnCell";
-export {
-  default as HvProgressColumnCell,
-  normalizeProgressBar,
-} from "./ProgressColumnCell";
-export { default as HvSwitchColumnCell } from "./SwitchColumnCell";
+export * from "./DateColumnCell";
+export * from "./DropdownColumnCell";
+export * from "./ProgressColumnCell";
+export * from "./SwitchColumnCell";

@@ -1,2 +1,2 @@
-export { default } from "./ProgressColumnCell";
+export { default as HvProgressColumnCell } from "./ProgressColumnCell";
 export * from "./ProgressColumnCell";

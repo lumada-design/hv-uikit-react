@@ -83,9 +83,6 @@ export const HvVerticalNavigation = ({
 
   ...others
 }: HvVerticalNavigationProps) => {
-  if (others.collapsedMode) {
-    console.warn("`collaspedMode` is deprecated. Please use 'useIcons'.");
-  }
   const [parentData, setParentData] = useState<NavigationData[]>([]);
 
   const [parentSelected, setParentSelected] = useState();

@@ -22,7 +22,7 @@ const deepRename = <T extends object>(
 ): T => {
   const result: any = {};
   for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
+    if (Object.hasOwn(obj, key)) {
       const newKey = mapFn(key);
       const value = obj[key];
       result[newKey] =

@@ -48,6 +48,17 @@ import {
 } from "../storiesUtils";
 import LoadingContainer from "./LoadingContainer";
 
+const EmptyRow = ({ height }) => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} style={{ height }}>
+      <HvEmptyState
+        message="No data to display"
+        icon={<Ban role="presentation" />}
+      />
+    </HvTableCell>
+  </HvTableRow>
+);
+
 const Complete = () => {
   const colSort = useMemo(() => {
     const levels = ["minor", "average", "major", "critical"];
@@ -121,17 +132,6 @@ const Complete = () => {
     []
   );
   const [data, setData] = useState(initialData);
-
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} style={{ height: 100 }}>
-        <HvEmptyState
-          message="No data to display"
-          icon={<Ban role="presentation" />}
-        />
-      </HvTableCell>
-    </HvTableRow>
-  );
 
   const {
     getTableProps,
@@ -243,7 +243,7 @@ const Complete = () => {
             ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow height={100} /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
@@ -1237,6 +1237,12 @@ return (
   render: () => <ColumnResize />,
 };
 
+const EmptyRowSimple = () => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} />
+  </HvTableRow>
+);
+
 const ServerSide = () => {
   const [data, columns, fetchData, loading, pageCount] = useServerData();
 
@@ -1272,12 +1278,6 @@ const ServerSide = () => {
     fetchData({ pageIndex, pageSize, sortBy });
   }, [sortBy, fetchData, pageIndex, pageSize]);
 
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} />
-    </HvTableRow>
-  );
-
   return (
     <LoadingContainer loading={loading}>
       <HvTableContainer>
@@ -1299,7 +1299,7 @@ const ServerSide = () => {
             {range(pageSize || 0).map((i) => {
               const row = page[i];
 
-              if (!row) return <EmptyRow key={i} />;
+              if (!row) return <EmptyRowSimple key={i} />;
 
               prepareRow(row);
 

@@ -1,1 +1,1 @@
-export { default } from "./SwitchColumnCell";
+export { default as HvSwitchColumnCell } from "./SwitchColumnCell";

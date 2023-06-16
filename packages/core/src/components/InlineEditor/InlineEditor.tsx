@@ -45,7 +45,7 @@ export interface HvInlineEditorProps
 
 const getTypographyStyles = (typography): HvThemeTypographyProps => {
   const typographyStyles = {};
-  Object.keys(typography).map((k) => {
+  Object.keys(typography).forEach((k) => {
     typographyStyles[k] = getVarValue(typography[k]);
   });
   return typographyStyles;

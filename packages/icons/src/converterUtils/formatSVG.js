@@ -42,7 +42,6 @@ const formatSVG = (svg) => {
     const single = Boolean(ln.match(/<.+\/>/)); // is this line a single tag? ex. <br />
     const closing = Boolean(ln.match(/<\/.+>/)); // is this a closing tag? ex. </a>
     const opening = Boolean(ln.match(/<[^!].*>/)); // is this even a tag (that's not <!something>)
-    // eslint-disable-next-line no-nested-ternary
     const type = single
       ? "single"
       : closing

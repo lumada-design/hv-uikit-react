@@ -137,6 +137,12 @@ return (
   render: () => <UseHvHooks />,
 };
 
+const EmptyRow = () => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} />
+  </HvTableRow>
+);
+
 const UseHvPagination = () => {
   const columns = useMemo(() => getColumns(), []);
   const data = useMemo(() => makeData(32), []);
@@ -150,12 +156,6 @@ const UseHvPagination = () => {
     state: { pageSize },
     getHvPaginationProps,
   } = useHvData<NewEntry, string>({ columns, data }, useHvPagination);
-
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan={100} />
-    </HvTableRow>
-  );
 
   return (
     <>

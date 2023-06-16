@@ -10,4 +10,4 @@ const isBrowser = (browsers) => {
   );
 };
 
-export { isBrowser as default };
+export default isBrowser;

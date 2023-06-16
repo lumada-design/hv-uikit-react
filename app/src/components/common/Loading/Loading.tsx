@@ -5,6 +5,36 @@ import { Info } from "@hitachivantara/uikit-react-icons";
 
 import classes from "./styles";
 
+interface ErrorStateProps {
+  errorTitle?: string | React.ReactNode;
+  errorMessage?: string | React.ReactNode;
+  errorAction?: string | React.ReactNode;
+}
+
+const ErrorState = (props: ErrorStateProps) => {
+  const { errorTitle, errorMessage, errorAction } = props;
+
+  return (
+    <HvEmptyState
+      classes={{ root: classes.error }}
+      title={errorTitle}
+      message={errorMessage}
+      action={errorAction}
+      icon={<Info semantic="negative" />}
+    />
+  );
+};
+
+interface LoadingStateProps {
+  loadingLabel?: string;
+}
+
+const LoadingState = (props: LoadingStateProps) => {
+  const { loadingLabel } = props;
+
+  return <HvLoading classes={{ root: classes.loading }} label={loadingLabel} />;
+};
+
 export interface LoadingProps extends React.HTMLAttributes<HTMLDivElement> {
   delay?: number;
   hasError?: boolean;
@@ -25,7 +55,6 @@ export const Loading = (props: LoadingProps) => {
     errorTitle = t("loading.errorTitle"),
     errorMessage = t("loading.errorMessage"),
     errorAction = t("loading.errorAction"),
-    ...rest
   } = props;
 
   useEffect(() => {
@@ -34,32 +63,18 @@ export const Loading = (props: LoadingProps) => {
     return () => {
       clearTimeout(timer);
     };
-  });
-
-  const ErrorState = () => (
-    <HvEmptyState
-      classes={{ root: classes.error }}
-      title={errorTitle}
-      message={errorMessage}
-      action={errorAction}
-      icon={<Info semantic="negative" />}
-      {...rest}
-    />
-  );
-
-  const LoadingState = () => (
-    <HvLoading
-      classes={{ root: classes.loading }}
-      hidden={!isLoading}
-      label={loadingLabel}
-      {...rest}
-    />
-  );
+  }, [delay]);
 
   return (
     <>
-      {hasError && <ErrorState />}
-      {!hasError && isLoading && <LoadingState />}
+      {hasError && (
+        <ErrorState
+          errorTitle={errorTitle}
+          errorMessage={errorMessage}
+          errorAction={errorAction}
+        />
+      )}
+      {!hasError && isLoading && <LoadingState loadingLabel={loadingLabel} />}
     </>
   );
 };

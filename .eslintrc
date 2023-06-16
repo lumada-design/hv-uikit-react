@@ -22,50 +22,79 @@
   },
   "ignorePatterns": ["*.d.ts", "dist", "node_modules"],
   "rules": {
-    "react/jsx-filename-extension": "off",
-    "import/no-extraneous-dependencies": "off",
+    "arrow-body-style": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/no-unstable-nested-components": [
+      "error",
+      {
+        "allowAsProps": true
+      }
+    ],
+    "no-nested-ternary": "off",
     "no-restricted-imports": [
       "error",
       {
         "patterns": ["@hitachivantara/*/*"]
       }
     ],
-
-    "arrow-body-style": "off",
+    "no-restricted-exports": [
+      "error",
+      {
+        "restrictDefaultExports": {
+          "defaultFrom": false
+        }
+      }
+    ],
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
     "import/prefer-default-export": "off",
-    "react/prop-types": "off",
-    "react/require-default-props": "off",
-    "react/jsx-props-no-spreading": "off",
-
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "app/**",
+          "docs/**",
+          "templates/**",
+          "**/*.config.ts",
+          "**/*.stories.ts?(x)",
+          "**/*.spec.ts?(x)",
+          "**/*.test.ts?(x)"
+        ]
+      }
+    ],
     // TODO: review this
-    "jsx-a11y/no-static-element-interactions": "off",
-    "array-callback-return": "off",
-    "react/jsx-no-constructed-context-values": "off",
-    "react/function-component-definition": "off",
-    "react/no-unescaped-entities": "off",
-    "react/no-unstable-nested-components": "off",
-    "react/destructuring-assignment": "off",
-    "react/no-unknown-property": "off",
-    "no-restricted-globals": "off",
-    "react/no-unused-prop-types": "off",
     "react/no-array-index-key": "off",
     "import/no-cycle": "off",
-    "no-restricted-exports": "off",
-    "no-restricted-syntax": "off",
-    "guard-for-in": "off",
+    "no-restricted-syntax": "off", // loops are fine?
     "no-param-reassign": "off",
-    "no-nested-ternary": "off",
-    "consistent-return": "off",
-    "no-prototype-builtins": "off",
-    "no-plusplus": "off",
-    "no-multi-str": "off"
+    "consistent-return": "off"
   },
   "overrides": [
     {
-      "files": ["**/*.stories.ts?(x)"],
+      "files": ["**/*.stories.ts?(x)", "**/templates/**/*.ts?(x)"],
       "rules": {
         "no-alert": "off",
-        "no-console": "off"
+        "no-console": "off",
+        "no-multi-str": "off"
+      }
+    },
+    {
+      "files": ["**/*.config.ts"],
+      "rules": {
+        "import/no-relative-packages": "off"
       }
     }
   ],

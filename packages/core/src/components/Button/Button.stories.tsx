@@ -295,13 +295,13 @@ Semantic.args = {
   onClick: clickAction,
 };
 
-export const CustomRootComponent = ({ onClick }) => {
-  const CustomLink = ({ to, children, ...others }) => (
-    <a href={to} {...others}>
-      {children}
-    </a>
-  );
+const CustomLink = ({ to, children, ...others }) => (
+  <a href={to} {...others}>
+    {children}
+  </a>
+);
 
+export const CustomRootComponent = ({ onClick }) => {
   return (
     <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
       <HvButton onClick={onClick}>Button</HvButton>

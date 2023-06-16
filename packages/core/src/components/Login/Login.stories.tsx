@@ -76,6 +76,7 @@ export const Main: StoryObj<HvLoginProps> = {
   render: () => {
     const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
       event.preventDefault();
+
       const formData = new FormData(event.currentTarget);
       const data = Object.fromEntries(formData.entries());
 
@@ -122,7 +123,10 @@ export const CustomBackground: StoryObj<HvLoginProps> = {
     const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
-      const data = Object.fromEntries(formData.entries());
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
 
       alert(JSON.stringify(data, null, 2));
     };

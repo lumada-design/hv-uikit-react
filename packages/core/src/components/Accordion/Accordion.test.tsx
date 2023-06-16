@@ -5,12 +5,12 @@ import { HvAccordion, HvTypography } from "@core/components";
 
 describe("Accordion", () => {
   it("should be defined", () => {
-    const { container } = render(<HvAccordion />);
+    const { container } = render(<HvAccordion>some content</HvAccordion>);
     expect(container).toBeDefined();
   });
 
   it("should render correctly", () => {
-    const { container } = render(<HvAccordion />);
+    const { container } = render(<HvAccordion>some content</HvAccordion>);
     expect(container).toMatchSnapshot();
   });
 

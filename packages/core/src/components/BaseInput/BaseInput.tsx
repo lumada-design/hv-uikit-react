@@ -24,8 +24,7 @@ const baseInputStyles = emotionCss({
   },
 
   // Clears number input up/down arrows in Chrome and Firefox
-  "input::-webkit-outer-spin-button,\
-  input::-webkit-inner-spin-button": {
+  "input::-webkit-outer-spin-button,input::-webkit-inner-spin-button": {
     WebkitAppearance: "none",
     margin: 0,
   },
@@ -39,12 +38,10 @@ const baseInputStyles = emotionCss({
   },
 
   // Clears search input clear button in Chrome
-  "input::-webkit-search-decoration,\
-  input::-webkit-search-cancel-button,\
-  input::-webkit-search-results-button,\
-  input::-webkit-search-results-decoration": {
-    display: "none",
-  },
+  "input::-webkit-search-decoration,input::-webkit-search-cancel-button,input::-webkit-search-results-button,input::-webkit-search-results-decoration":
+    {
+      display: "none",
+    },
 });
 
 export interface HvBaseInputProps

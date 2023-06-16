@@ -38,12 +38,14 @@ export const mapVariant = (variant: string, theme?: string) => {
 
   if (theme !== "ds3") {
     if (mappedVariant) {
+      // eslint-disable-next-line no-console
       console.warn(
         `The typography variant ${variant} is deprecated. You should use ${mappedVariant} instead.`
       );
       return mappedVariant;
     }
     if (isLegacyVariant(variant)) {
+      // eslint-disable-next-line no-console
       console.warn(`The typography variant ${variant} is deprecated.`);
     }
   }

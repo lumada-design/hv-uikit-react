@@ -51,7 +51,7 @@ export const FontSize = ({
 
   const getUnits = () => {
     const units: HvListValue[] = [];
-    unitsToShow.map((u) => {
+    unitsToShow.forEach((u) => {
       let selected = false;
       if (fontUnit === u) {
         selected = true;

@@ -15,32 +15,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
-    "baseUrl": "src",
-    "noImplicitAny": false
+    "baseUrl": "./src"
   },
   "include": ["src"],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "../packages/icons/tsconfig.json"
-    },
-    {
-      "path": "../packages/styles/tsconfig.json"
-    },
-    {
-      "path": "../packages/core/tsconfig.json"
-    },
-    {
-      "path": "../packages/shared/tsconfig.json"
-    },
-    {
-      "path": "../packages/lab/tsconfig.json"
-    },
-    {
-      "path": "../packages/code-editor/tsconfig.json"
-    }
-  ]
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

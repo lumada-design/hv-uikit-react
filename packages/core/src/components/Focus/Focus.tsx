@@ -60,8 +60,6 @@ export interface HvFocusProps extends HvBaseProps<HTMLElement, "children"> {
   focusOnClick?: boolean;
   /** Show focus when click element. v */
   focusDisabled?: boolean;
-  /** Use up/ down keyboard arrows to control focus. */
-  useArrows?: boolean;
   /** Focus and navigation strategy to be used. v */
   strategy?: HvFocusStrategies;
   /** Uses an absolute positioned div as a focus. v */

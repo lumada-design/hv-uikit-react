@@ -1,5 +1,4 @@
 import { clsx } from "clsx";
-import { DateRangeProp } from "../Calendar";
 import { StyledCalendarDay } from "./CalendarWeekLabels.styles";
 import calendarWeekLabelsClasses, {
   HvCalendarWeekLabelsClasses,
@@ -37,20 +36,7 @@ export type HvCalendarWeekLabelProps = {
    */
   classes?: HvCalendarWeekLabelsClasses;
   /**
-   * Identifier.
-   */
-  id?: string;
-  /**
    * Localized day of week labels.
    */
   labels?: string[];
-  /**
-   * Callback to define the input date.
-   */
-  onChange?: (
-    event:
-      | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-      | undefined,
-    value: Date | DateRangeProp
-  ) => void;
 };

@@ -28,7 +28,7 @@ export const Tooltip = () => {
         <HvTypography>Hover here</HvTypography>
       </HvTooltip>
       <HvTooltip title={data} open>
-        <p>I'm always showing a tooltip</p>
+        <p>{`I'm always showing a tooltip`}</p>
       </HvTooltip>
       <HvTooltip title={data}>
         <HvButton icon variant="secondaryGhost">

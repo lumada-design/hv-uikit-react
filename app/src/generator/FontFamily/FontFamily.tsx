@@ -37,15 +37,15 @@ const FontFamily = () => {
     if (fontName.includes("http")) {
       const names = extractFontsNames(fontName);
 
-      for (const n in names) {
+      names.forEach((name) => {
         setFontAddedMsg(`Fonts "${names.join(", ")}" added!`);
-        setFontValues((prev) => [...prev, { label: names[n] }]);
+        setFontValues((prev) => [...prev, { label: name }]);
 
         const link = document.createElement("link");
         link.rel = "stylesheet";
         link.href = fontName;
         document.head.appendChild(link);
-      }
+      });
     } else {
       setFontAddedMsg(`Fonts "${fontName}" added!`);
       setFontValues((prev) => [...prev, { label: fontName }]);

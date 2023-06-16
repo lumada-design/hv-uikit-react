@@ -77,12 +77,14 @@ const mapVariant = (
 ): HvButtonVariant => {
   if (theme !== "ds3") {
     if (variant === "secondary") {
+      // eslint-disable-next-line no-console
       console.warn(
         "Button variant 'secondary' is deprecated. Please use 'secondarySubtle'."
       );
       return "secondarySubtle";
     }
     if (variant === "ghost") {
+      // eslint-disable-next-line no-console
       console.warn(
         "Button variant 'ghost' is deprecated. Please use 'primaryGhost'."
       );

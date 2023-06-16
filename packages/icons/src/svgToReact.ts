@@ -40,7 +40,7 @@ const { rmStyle, format } = args;
 const outputPath = args.output as string;
 
 // Bootstrap base variables
-const htmlToReactParser = new Parser();
+const htmlToReactParser = new (Parser as any)();
 
 const svg = `./${firstArg}.svg`; // append the file extension
 

@@ -235,7 +235,7 @@ export const CustomContent: StoryObj<HvCarouselProps> = {
     return (
       <HvCarousel title="Travel Suggestions" carouselOptions={{ loop: false }}>
         {images.map((src, i) => (
-          <HvCarouselSlide key={i} size="50%">
+          <HvCarouselSlide key={src} size="50%">
             <div style={{ position: "relative" }}>
               <div
                 style={{

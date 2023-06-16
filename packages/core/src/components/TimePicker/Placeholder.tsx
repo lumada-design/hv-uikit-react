@@ -48,27 +48,30 @@ export const Placeholder = forwardRef<HTMLDivElement, PlaceholderProps>(
     const { value, segments } = state;
 
     return (
-      <div
-        ref={ref}
-        onKeyDown={(event) => {
-          // stop ArrowDown from opening dropdown
-          event.stopPropagation();
-          onKeyDown?.(event);
-        }}
-        {...others}
-      >
-        {name && (
-          <input type="hidden" name={name} value={getDateValue(value)} />
-        )}
-        {segments.map((segment, i) => (
-          <PlaceholderSegment
-            key={i}
-            segment={segment}
-            state={state}
-            placeholder={placeholders[segment.type]}
-          />
-        ))}
-      </div>
+      <>
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+        <div
+          ref={ref}
+          onKeyDown={(event) => {
+            // stop ArrowDown from opening dropdown
+            event.stopPropagation();
+            onKeyDown?.(event);
+          }}
+          {...others}
+        >
+          {name && (
+            <input type="hidden" name={name} value={getDateValue(value)} />
+          )}
+          {segments.map((segment, i) => (
+            <PlaceholderSegment
+              key={i}
+              segment={segment}
+              state={state}
+              placeholder={placeholders[segment.type]}
+            />
+          ))}
+        </div>
+      </>
     );
   }
 );

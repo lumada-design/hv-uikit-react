@@ -49,7 +49,7 @@ export const themeDiff = (a: object, b: object, rootLevel = true): object => {
       if (Object.keys(nestedDiff).length > 0) {
         diff[key] = nestedDiff;
       }
-    } else if (!a.hasOwnProperty(key) || a[key] !== b[key]) {
+    } else if (!Object.hasOwn(a, key) || a[key] !== b[key]) {
       diff[key] = b[key];
     }
   }

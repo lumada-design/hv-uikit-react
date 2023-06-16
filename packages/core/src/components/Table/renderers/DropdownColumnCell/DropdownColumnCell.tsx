@@ -13,7 +13,7 @@ export interface HvDropdownColumnCellProp {
   dropdownProps?: HvDropdownProps;
 }
 
-const HvDateColumnCell = ({
+const HvDropdownColumnCell = ({
   values,
   disabled,
   onChange,
@@ -34,4 +34,4 @@ const HvDateColumnCell = ({
   );
 };
 
-export default HvDateColumnCell;
+export default HvDropdownColumnCell;

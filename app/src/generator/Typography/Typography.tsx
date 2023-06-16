@@ -45,7 +45,7 @@ const Typography = () => {
   useEffect(() => {
     const map = new Map<string, { value: number; unit: string }>();
     if (customTheme) {
-      typographyToShow.map((t) => {
+      typographyToShow.forEach((t) => {
         if (customTheme.typography[t].fontSize) {
           let val;
 
@@ -125,7 +125,7 @@ const Typography = () => {
     const lineHeights: HvListValue[] = [];
 
     if (customTheme) {
-      Object.keys(customTheme.lineHeights).map((h) => {
+      Object.keys(customTheme.lineHeights).forEach((h) => {
         let selected = false;
         const updatedHeight = updatedHeights.get(typographyName);
         if (updatedHeight && updatedHeight === h) {
@@ -156,7 +156,7 @@ const Typography = () => {
     const fontWeights: HvListValue[] = [];
 
     if (customTheme) {
-      Object.keys(customTheme.fontWeights).map((w) => {
+      Object.keys(customTheme.fontWeights).forEach((w) => {
         let selected = false;
         const updatedWeight = updatedWeights.get(typographyName);
         if (updatedWeight && updatedWeight === w) {

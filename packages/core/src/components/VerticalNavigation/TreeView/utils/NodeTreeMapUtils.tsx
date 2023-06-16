@@ -10,7 +10,6 @@ export default class NodeTreeMapUtils {
     };
     childrenIds.forEach((childId) => {
       const currentChildMap = newMap[childId];
-      // eslint-disable-next-line no-param-reassign
       newMap[childId] = {
         ...currentChildMap,
         parent: nodeId,
