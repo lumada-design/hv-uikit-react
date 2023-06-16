@@ -99,6 +99,8 @@ const DEFAULT_LABELS = {
 
 const { Enter } = keyboardCodes;
 
+const defaultPageSizeOptions = [5, 10, 20, 25, 50, 100];
+
 /**
  * Pagination is the process of dividing a document into discrete pages. It relates to how users interact
  * with structured content on a website or application.
@@ -110,8 +112,8 @@ export const HvPagination = ({
   pages = 1,
   page = 0,
   showPageSizeOptions = true,
-  pageSizeOptions = [5, 10, 20, 25, 50, 100],
-  pageSize = 1,
+  pageSizeOptions = defaultPageSizeOptions,
+  pageSize = defaultPageSizeOptions[1],
   showPageJump = true,
   canPrevious = false,
   canNext = false,

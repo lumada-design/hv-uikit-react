@@ -35,7 +35,6 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
     display: "flex",
     position: "absolute",
     height: 32,
-    marginRight: 40,
     top: "50%",
     transform: "translateY(-50%)",
     left: "0",
@@ -59,9 +58,7 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
     display: "flex",
     alignItems: "stretch",
     height: "32px",
-    "&>*": {
-      margin: `0 4px`,
-    },
+    gap: 8,
   },
   /** Styles applied to each navigation `HvButton` icon container. */
   iconContainer: {
