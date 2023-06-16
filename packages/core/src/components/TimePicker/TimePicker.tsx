@@ -1,5 +1,4 @@
 import { useState, useRef, useMemo } from "react";
-import { ClassNames } from "@emotion/react";
 import { Time } from "@internationalized/date";
 import { useTimeField } from "@react-aria/datepicker";
 import {
@@ -8,6 +7,7 @@ import {
 } from "@react-stately/datepicker";
 
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
+import { useCss } from "@core/hooks/useCss";
 import {
   HvFormElement,
   HvBaseDropdown,
@@ -16,15 +16,15 @@ import {
   HvInfoMessage,
   HvFormElementProps,
   HvBaseDropdownProps,
-  getClasses,
   useControlled,
   useUniqueId,
   setId,
+  ExtractNames,
 } from "../..";
 
 import { Unit } from "./Unit";
 import { Placeholder } from "./Placeholder";
-import { styles } from "./TimePicker.styles";
+import { staticClasses, useClasses } from "./TimePicker.styles";
 
 const toTime = (value?: HvTimePickerValue) => {
   if (!value) return undefined;
@@ -37,15 +37,11 @@ const getFormat = (timeFormat?: TimeFormat) => {
   return timeFormat === "12" ? 12 : 24;
 };
 
-type TimePickerKey = keyof typeof styles;
-
-const cc = getClasses(Object.keys(styles) as TimePickerKey[], "HvTimePicker");
-
-export { cc as timePickerClasses };
+export { staticClasses as timePickerClasses };
 
 export type TimeFormat = "12" | "24";
 
-export type HvTimePickerClasses = Record<TimePickerKey, string>;
+export type HvTimePickerClasses = ExtractNames<typeof useClasses>;
 
 export type HvTimePickerClassKey =
   | "root"
@@ -128,7 +124,7 @@ export interface HvTimePickerProps
  */
 export const HvTimePicker = (props: HvTimePickerProps) => {
   const {
-    classes = {},
+    classes: classesProp = {},
     className,
 
     id: idProp,
@@ -170,6 +166,8 @@ export const HvTimePicker = (props: HvTimePickerProps) => {
   } = props;
   const id = useUniqueId(idProp, "hvtimepicker");
   const ref = useRef<HTMLDivElement>(null);
+  const { css } = useCss();
+  const { classes, cx } = useClasses(classesProp);
 
   const stateProps: TimeFieldStateOptions = {
     value: toTime(valueProp),
@@ -231,159 +229,113 @@ export const HvTimePicker = (props: HvTimePickerProps) => {
     : undefined;
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvFormElement
-          name={name}
-          required={required}
-          disabled={disabled}
-          status={validationState}
-          className={cx(cc.root, css(styles.root), classes.root, className)}
-          {...others}
-        >
-          {(label || description) && (
-            <div
-              className={cx(
-                cc.labelContainer,
-                css(styles.labelContainer),
-                classes.labelContainer
-              )}
-            >
-              {label && (
-                <HvLabel
-                  label={label}
-                  className={cx(cc.label, css(styles.label), classes.label)}
-                  {...labelProps}
-                />
-              )}
-              {description && (
-                <HvInfoMessage
-                  className={cx(
-                    cc.description,
-                    css(styles.description),
-                    classes.description
-                  )}
-                >
-                  {description}
-                </HvInfoMessage>
-              )}
-            </div>
+    <HvFormElement
+      name={name}
+      required={required}
+      disabled={disabled}
+      status={validationState}
+      className={cx(classes.root, className)}
+      {...others}
+    >
+      {(label || description) && (
+        <div className={classes.labelContainer}>
+          {label && (
+            <HvLabel label={label} className={classes.label} {...labelProps} />
           )}
-
-          <div className={css({ width: is12HrFormat ? 220 : 200 })}>
-            <HvBaseDropdown
-              role="combobox"
-              variableWidth
-              disabled={disabled}
-              readOnly={readOnly}
-              placeholder={
-                placeholder && !state.value ? (
-                  placeholder
-                ) : (
-                  <Placeholder
-                    ref={ref}
-                    name={name}
-                    state={state}
-                    placeholders={placeholders}
-                    className={cx(
-                      cc.placeholder,
-                      css(styles.placeholder),
-                      classes.placeholder,
-                      disabled &&
-                        cx(
-                          cc.placeholderDisabled,
-                          css(styles.placeholderDisabled),
-                          classes.placeholderDisabled
-                        )
-                    )}
-                    {...fieldProps}
-                  />
-                )
-              }
-              classes={{
-                header: cx(
-                  cc.dropdownHeader,
-                  css(styles.dropdownHeader),
-                  // TODO: move styles to HvBaseDropdown
-                  css({ display: "flex", justifyContent: "space-between" }),
-                  classes.dropdownHeader,
-                  isStateInvalid &&
-                    cx(
-                      cc.dropdownHeaderInvalid,
-                      css(styles.dropdownHeaderInvalid),
-                      classes.dropdownHeaderInvalid
-                    )
-                ),
-                panel: css(styles.dropdownPanel),
-                headerOpen: cx(
-                  cc.dropdownHeaderOpen,
-                  css(styles.dropdownHeaderOpen),
-                  classes.dropdownHeaderOpen
-                ),
-              }}
-              placement="right"
-              adornment={
-                <TimeIcon
-                  color={disabled ? "secondary_60" : undefined}
-                  className={cx(cc.icon, css(styles.icon), classes.icon)}
-                />
-              }
-              expanded={open}
-              onToggle={(evt, newOpen) => {
-                if (disableExpand) return;
-                setOpen(newOpen);
-                onToggle?.(evt, newOpen);
-              }}
-              onContainerCreation={(containerRef) => {
-                containerRef?.getElementsByTagName("input")[0]?.focus();
-              }}
-              aria-haspopup="dialog"
-              aria-invalid={isStateInvalid ? true : undefined}
-              aria-errormessage={errorMessageId}
-              disablePortal={disablePortal}
-              popperProps={{
-                modifiers: [
-                  { name: "preventOverflow", enabled: escapeWithReference },
-                ],
-              }}
-              {...dropdownProps}
-            >
-              <div
-                ref={ref}
-                className={cx(
-                  cc.timePopperContainer,
-                  css(styles.timePopperContainer),
-                  classes.timePopperContainer
-                )}
-              >
-                {state.segments.map((segment, i) => (
-                  <Unit
-                    key={i}
-                    state={state}
-                    segment={segment}
-                    placeholder={placeholders[segment.type]}
-                    onAdd={() => state.increment(segment.type)}
-                    onSub={() => state.decrement(segment.type)}
-                    onChange={(evt, val) => {
-                      state.setSegment(segment.type, Number(val));
-                    }}
-                  />
-                ))}
-              </div>
-            </HvBaseDropdown>
-          </div>
-
-          {canShowError && (
-            <HvWarningText
-              id={setId(id, "error")}
-              disableBorder
-              className={cx(cc.error, css(styles.error), classes.error)}
-            >
-              {validationMessage}
-            </HvWarningText>
+          {description && (
+            <HvInfoMessage className={classes.description}>
+              {description}
+            </HvInfoMessage>
           )}
-        </HvFormElement>
+        </div>
       )}
-    </ClassNames>
+
+      <div className={css({ width: is12HrFormat ? 220 : 200 })}>
+        <HvBaseDropdown
+          role="combobox"
+          variableWidth
+          disabled={disabled}
+          readOnly={readOnly}
+          placeholder={
+            placeholder && !state.value ? (
+              placeholder
+            ) : (
+              <Placeholder
+                ref={ref}
+                name={name}
+                state={state}
+                placeholders={placeholders}
+                className={cx(classes.placeholder, {
+                  [classes.placeholderDisabled]: disabled,
+                })}
+                {...fieldProps}
+              />
+            )
+          }
+          classes={{
+            header: cx(
+              // TODO: move styles to HvBaseDropdown
+              css({ display: "flex", justifyContent: "space-between" }),
+              classes.dropdownHeader,
+              { [classes.dropdownHeaderInvalid]: isStateInvalid }
+            ),
+            panel: classes.dropdownPanel,
+            headerOpen: classes.dropdownHeaderOpen,
+          }}
+          placement="right"
+          adornment={
+            <TimeIcon
+              color={disabled ? "secondary_60" : undefined}
+              className={classes.icon}
+            />
+          }
+          expanded={open}
+          onToggle={(evt, newOpen) => {
+            if (disableExpand) return;
+            setOpen(newOpen);
+            onToggle?.(evt, newOpen);
+          }}
+          onContainerCreation={(containerRef) => {
+            containerRef?.getElementsByTagName("input")[0]?.focus();
+          }}
+          aria-haspopup="dialog"
+          aria-invalid={isStateInvalid ? true : undefined}
+          aria-errormessage={errorMessageId}
+          disablePortal={disablePortal}
+          popperProps={{
+            modifiers: [
+              { name: "preventOverflow", enabled: escapeWithReference },
+            ],
+          }}
+          {...dropdownProps}
+        >
+          <div ref={ref} className={classes.timePopperContainer}>
+            {state.segments.map((segment, i) => (
+              <Unit
+                key={i}
+                state={state}
+                segment={segment}
+                placeholder={placeholders[segment.type]}
+                onAdd={() => state.increment(segment.type)}
+                onSub={() => state.decrement(segment.type)}
+                onChange={(evt, val) => {
+                  state.setSegment(segment.type, Number(val));
+                }}
+              />
+            ))}
+          </div>
+        </HvBaseDropdown>
+      </div>
+
+      {canShowError && (
+        <HvWarningText
+          id={setId(id, "error")}
+          disableBorder
+          className={classes.error}
+        >
+          {validationMessage}
+        </HvWarningText>
+      )}
+    </HvFormElement>
   );
 };

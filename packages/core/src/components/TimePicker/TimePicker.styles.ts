@@ -1,8 +1,7 @@
-import { getClasses } from "@core/utils";
-import { CSSInterpolation } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
+import { createClasses } from "@core/utils";
 
-export const styles = {
+export const { useClasses, staticClasses } = createClasses("HvTimerPicker", {
   root: {
     position: "relative",
   },
@@ -53,9 +52,4 @@ export const styles = {
   },
 
   error: {},
-} satisfies Record<string, CSSInterpolation>;
-
-export const staticClasses = getClasses(
-  Object.keys(styles) as Array<keyof typeof styles>,
-  "HvTimePicker"
-);
+});
