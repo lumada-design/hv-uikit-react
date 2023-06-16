@@ -32,7 +32,9 @@ import {
   HvChartAxis,
   HvChartEmptyCellMode,
   HvChartSampling,
-  HvChartTooltipType,
+  HvChartTooltip,
+  HvChartTooltipParams,
+  HvChartGrid,
 } from "@viz/types";
 import { getAgFunc, getAxisType, getLegendIcon } from "@viz/utils";
 import { useVizTheme } from "@viz/hooks";
@@ -115,29 +117,12 @@ export interface HvBaseChartCommonProps {
   splitBy?: Arrayable<SplitByField>;
   /** Columns to use to sort the data points. */
   sortBy?: Arrayable<SortByField>;
-  /**
-   * Options for the xAxis, i.e. the horizontal axis.
-   *
-   * The default `type` for this axis is `categorical`.
-   * */
+  /** Options for the xAxis, i.e. the horizontal axis. */
   xAxis?: HvChartAxis;
-  /**
-   * Options for the yAxis, i.e. the vertical axis.
-   *
-   * The default `type` for this axis is `continuous`.
-   * */
+  /** Options for the yAxis, i.e. the vertical axis. */
   yAxis?: HvChartAxis | [HvChartAxis, HvChartAxis];
   /** Tooltip options. */
-  tooltip?: {
-    /** Whether to show the tooltip or not. Defaults to `true`. */
-    show?: boolean;
-    /** Tooltip type: single line or multiple lines modes. The single line mode should only be used when there's one series. Defaults to `multiple`. */
-    type?: HvChartTooltipType;
-    /** Formatter for the value in the tooltip. */
-    valueFormatter?: (value?: string | number) => string;
-    /** Formatter for the title in the tooltip. */
-    titleFormatter?: (value?: string | number) => string;
-  };
+  tooltip?: HvChartTooltip;
   /** Legend options. */
   legend?: {
     /** Whether to show the legend or not. The legend will appear by default for multiple series. Otherwise, the legend will not be shown. */
@@ -153,16 +138,7 @@ export interface HvBaseChartCommonProps {
     show?: boolean;
   };
   /** Grid options. */
-  grid?: {
-    /** Distance between the grid and the top of the container. */
-    top?: string | number;
-    /** Distance between the grid and the right side of the container. */
-    right?: string | number;
-    /** Distance between the grid and the left side of the container. */
-    left?: string | number;
-    /** Distance between the grid and the bottom of the container. */
-    bottom?: string | number;
-  };
+  grid?: HvChartGrid;
 }
 
 /** Line chart props only */
@@ -200,6 +176,15 @@ export interface HvBaseChartProps
     HvBaseChartOnlyProps {
   /**  Columns to measure on the chart. */
   measures: Arrayable<string | (BaseFullMeasuresField & LineFullMeasuresField)>;
+}
+
+/** Echarts doesn't seem to have the type for the tooltip params */
+interface EChartsTooltipParams {
+  seriesName: string;
+  value: (string | number)[];
+  encode: { [key: string]: number[] };
+  color: string;
+  dimensionNames: string[];
 }
 
 /**
@@ -378,7 +363,7 @@ export const HvBaseChart = ({
     return {
       xAxis: {
         id: xAxis?.id,
-        type: getAxisType(xAxis?.type) ?? "category",
+        type: getAxisType(xAxis?.type) ?? (horizontal ? "value" : "category"),
         name: xAxis?.name,
         scale: !(type === "bar"),
         axisLabel: {
@@ -389,14 +374,14 @@ export const HvBaseChart = ({
         min: xAxis?.minValue === "min" ? "dataMin" : xAxis?.minValue,
       },
     };
-  }, [xAxis, type]);
+  }, [xAxis, type, horizontal]);
 
   const chartYAxis = useMemo<Pick<EChartsOption, "yAxis">>(() => {
     if (!yAxis || !Array.isArray(yAxis)) {
       return {
         yAxis: {
           id: yAxis?.id,
-          type: getAxisType(yAxis?.type) ?? "value",
+          type: getAxisType(yAxis?.type) ?? (horizontal ? "category" : "value"),
           name: yAxis?.name,
           axisLabel: {
             rotate: yAxis?.labelRotation ?? 0,
@@ -421,7 +406,7 @@ export const HvBaseChart = ({
         min: axis?.minValue === "min" ? "dataMin" : axis?.minValue,
       })),
     };
-  }, [yAxis]);
+  }, [yAxis, horizontal]);
 
   const getMeasure = (name: string, msr: HvBaseChartProps["measures"]) => {
     const measureName = name.split("_")[0];
@@ -504,13 +489,7 @@ export const HvBaseChart = ({
   ]);
 
   const renderTooltip = (
-    params: {
-      seriesName: string;
-      value: (string | number)[];
-      encode: { [key: string]: number[] };
-      color: string;
-      dimensionNames: string[];
-    }[],
+    params: EChartsTooltipParams[],
     single: boolean,
     msr: HvBaseChartProps["measures"],
     reverse: boolean,
@@ -590,6 +569,31 @@ export const HvBaseChart = ({
     `;
   };
 
+  const renderCustomTooltip = (
+    params: EChartsTooltipParams[],
+    reverse: boolean,
+    customTooltip: Required<HvChartTooltip["component"]>
+  ) => {
+    if (typeof customTooltip === "function") {
+      const values: HvChartTooltipParams = {
+        title: reverse
+          ? params[0].value[params[0].encode.y[0]]
+          : params[0].value[params[0].encode.x[0]],
+        series: params.map((p) => {
+          return {
+            color: p.color,
+            name: p.seriesName,
+            value: reverse ? p.value[p.encode.x[0]] : p.value[p.encode.y[0]],
+          };
+        }),
+      };
+
+      return customTooltip(values);
+    }
+
+    return customTooltip;
+  };
+
   const chartTooltip = useMemo<Pick<EChartsOption, "tooltip">>(() => {
     return {
       tooltip: {
@@ -600,15 +604,17 @@ export const HvBaseChart = ({
           return [point[0], point[1] - size.contentSize[1]];
         },
         formatter: (params) =>
-          renderTooltip(
-            params,
-            tooltip?.type === "single",
-            measures,
-            horizontal,
-            classes,
-            tooltip?.valueFormatter,
-            tooltip?.titleFormatter
-          ),
+          tooltip?.component
+            ? renderCustomTooltip(params, horizontal, tooltip.component)
+            : renderTooltip(
+                params,
+                tooltip?.type === "single",
+                measures,
+                horizontal,
+                classes,
+                tooltip?.valueFormatter,
+                tooltip?.titleFormatter
+              ),
       },
     };
   }, [tooltip, classes, measures, horizontal]);

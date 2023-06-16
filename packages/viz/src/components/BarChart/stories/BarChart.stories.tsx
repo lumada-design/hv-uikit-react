@@ -9,9 +9,10 @@ import {
 import { Meta, StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
 import { useMemo, useState } from "react";
-import { HvBarChart, HvBarChartProps } from "./BarChart";
-import { chartData } from "./data";
-import { HvLineChartProps } from "../LineChart";
+import { HvBarChart, HvBarChartProps } from "../BarChart";
+import { customChartData } from "./mockData";
+import { HvLineChartProps } from "../../LineChart";
+import { renderTooltip } from "./customTooltip";
 
 const meta: Meta<typeof HvBarChart> = {
   title: "Visualizations/Bar Chart",
@@ -39,8 +40,16 @@ export const Main: StoryObj<HvBarChartProps> = {
   argTypes: {
     legend: { control: { disable: true } },
     data: { control: { disable: true } },
-    xAxis: { control: { disable: true } },
-    yAxis: { control: { disable: true } },
+    xAxis: {
+      control: { disable: true },
+      description:
+        "Options for the xAxis, i.e. the horizontal axis. The default `type` for this axis is `continuous` or `categorical` whether the bar chart is horizontal or not, respectively.",
+    },
+    yAxis: {
+      control: { disable: true },
+      description:
+        "Options for the yAxis, i.e. the vertical axis. The default `type` for this axis is `categorical` or `continuous` whether the bar chart is horizontal or not, respectively.",
+    },
     groupBy: { control: { disable: true } },
     splitBy: { control: { disable: true } },
     measures: { control: { disable: true } },
@@ -60,12 +69,6 @@ export const Main: StoryObj<HvBarChartProps> = {
         }}
         groupBy="Month"
         measures="Sales Target"
-        xAxis={{
-          type: others.horizontal ? "continuous" : "categorical",
-        }}
-        yAxis={{
-          type: others.horizontal ? "categorical" : "continuous",
-        }}
         {...others}
       />
     );
@@ -230,7 +233,7 @@ export const CustomStackedBarChart: StoryObj<HvBarChartProps> = {
           </div>
         </div>
         <HvBarChart
-          data={chartData[time]}
+          data={customChartData[time]}
           groupBy="Category"
           measures={["Downloads", "Uploads"]}
           tooltip={{
@@ -261,12 +264,6 @@ export const HorizontalBarChart: StoryObj<HvBarChartProps> = {
         }}
         groupBy="Month"
         measures="Sales Target"
-        xAxis={{
-          type: "continuous",
-        }}
-        yAxis={{
-          type: "categorical",
-        }}
         horizontal
       />
     );
@@ -290,12 +287,6 @@ export const HorizontalSingleTooltip: StoryObj<HvBarChartProps> = {
         }}
         groupBy="Month"
         measures="Sales Target"
-        xAxis={{
-          type: "continuous",
-        }}
-        yAxis={{
-          type: "categorical",
-        }}
         tooltip={{
           type: "single",
         }}
@@ -330,12 +321,6 @@ export const MultipleHorizontalBarsChart: StoryObj<HvBarChartProps> = {
           "Target",
           "Cash",
         ]}
-        xAxis={{
-          type: "continuous",
-        }}
-        yAxis={{
-          type: "categorical",
-        }}
         horizontal
       />
     );
@@ -370,11 +355,7 @@ export const StackedHorizontalBarChart: StoryObj<HvBarChartProps> = {
           "Cash",
         ]}
         xAxis={{
-          type: "continuous",
           labelFormatter: formatter,
-        }}
-        yAxis={{
-          type: "categorical",
         }}
         tooltip={{
           valueFormatter: formatter,
@@ -481,7 +462,7 @@ export const PartiallyStackedChart: StoryObj<HvLineChartProps> = {
   },
 };
 
-/* export const CustomTooltip: StoryObj<HvLineChartProps> = {
+export const CustomTooltip: StoryObj<HvLineChartProps> = {
   parameters: {
     docs: {
       description: {
@@ -493,12 +474,15 @@ export const PartiallyStackedChart: StoryObj<HvLineChartProps> = {
     return (
       <HvBarChart
         data={{
-          Category: ["precision", "recall", "f1-score"],
+          Metric: ["precision", "recall", "f1-score"],
           "Sales Target": [2300, 1000, 6700],
         }}
-        groupBy="Category"
+        groupBy="Metric"
         measures="Sales Target"
+        tooltip={{
+          component: renderTooltip,
+        }}
       />
     );
   },
-}; */
+};

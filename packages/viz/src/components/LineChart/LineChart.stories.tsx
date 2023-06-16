@@ -13,7 +13,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { loadArrow } from "arquero";
 import { emptyCellMode } from "@viz/types/generic";
 import { HvLineChart, HvLineChartProps } from "./LineChart";
-import { chartData } from "./data";
+import { chartData } from "./mockData";
 
 const meta: Meta<typeof HvLineChart> = {
   title: "Visualizations/Line Chart",
@@ -43,8 +43,16 @@ export const Main: StoryObj<HvLineChartProps> = {
   argTypes: {
     legend: { control: { disable: true } },
     data: { control: { disable: true } },
-    xAxis: { control: { disable: true } },
-    yAxis: { control: { disable: true } },
+    xAxis: {
+      control: { disable: true },
+      description:
+        "Options for the xAxis, i.e. the horizontal axis. The default `type` for this axis is `categorical`.",
+    },
+    yAxis: {
+      control: { disable: true },
+      description:
+        "Options for the yAxis, i.e. the vertical axis. The default `type` for this axis is `continuous`.",
+    },
     groupBy: { control: { disable: true } },
     splitBy: { control: { disable: true } },
     measures: { control: { disable: true } },
