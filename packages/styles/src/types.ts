@@ -21,16 +21,11 @@ export type HvThemeComponents = {
   dropdown: {
     borderRadius: string;
     headerBorder: string;
-    headerBorderHover: string;
     disabledColor: string;
     readOnlyBorder: string;
     readOnlyBackgroundColor: string;
     placeholderColor: string;
     dropdownHeaderInvalidBorder: string;
-    dropdownHeaderOpenBorder: string;
-    listBackgroundColor: string;
-    listBorder: string;
-    listBorderRadius: string;
     listContainerPadding: string;
     searchContainerMargin: string;
   };
@@ -220,8 +215,6 @@ export type HvThemeComponents = {
   pagination: {
     pageSizeBorderColor: string;
     pageSizeHoverBorderColor: string;
-    pageSizeBorderRadius: string;
-    pageJumpTextAlign: string;
   };
   actionsGeneric: { buttonSize: string };
   bulkActions: {
@@ -299,10 +292,6 @@ export type HvThemeComponents = {
     applyButtonVariant: string;
     cancelButtonVariant: string;
     applyButtonMarginRight: string;
-    panelsBorder: string;
-    panelsBorderBottom: string;
-    actionBarBorder: string;
-    actionBarBorderTop: string;
     rightPanelBorderLeft: string;
     rightPanelShadow: string;
     partialCounterFontWeight: string;
@@ -311,9 +300,6 @@ export type HvThemeComponents = {
     disabledBackgroundColor: string;
   };
   datePicker: {
-    panelBorder: string;
-    panelBackgroundColor: string;
-    dropdownHeaderOpenBorder: string;
     dropdownPlaceholderColor: string;
     placeholderVariant: keyof HvThemeTypography["typography"];
   };
@@ -357,8 +343,6 @@ export type HvThemeComponents = {
   };
   colorPicker: {
     inputValueVariant: keyof HvThemeTypography["typography"];
-    panelBorder: string;
-    panelBorderRadius: string;
     panelMinWidth: string;
     panelPadding: string;
     pickersFlexDirection: CSSProperties["flexDirection"];

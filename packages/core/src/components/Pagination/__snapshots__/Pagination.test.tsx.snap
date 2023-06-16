@@ -25,7 +25,7 @@ exports[`Pagination > should render correctly 1`] = `
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection HvPaginationSelect-selection hv-lqabp-StyledSelection eapzthe5"
+              class="HvBaseDropdown-selection HvPaginationSelect-selection hv-6beslu-StyledSelection eapzthe5"
             >
               1
             </div>

@@ -10,7 +10,6 @@ export const { useClasses } = createClasses("HvPaginationSelect", {
     },
   },
   selection: {
-    borderRadius: theme.pagination.pageSizeBorderRadius,
     padding: theme.spacing([0, "md", 0, "xs"]),
   },
   headerOpen: {
