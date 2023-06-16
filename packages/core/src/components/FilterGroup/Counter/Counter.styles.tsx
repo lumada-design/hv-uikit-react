@@ -6,10 +6,8 @@ export const styles: Partial<
   Record<keyof HvFilterGroupCounterClasses, CSSInterpolation>
 > = {
   root: {
-    height: "100%",
-    lineHeight: "32px",
-    margin: "0 10px",
-    pointerEvents: "none",
+    lineHeight: "34px",
+    marginRight: 10,
   },
   partialCounter: {
     display: "inline-block",

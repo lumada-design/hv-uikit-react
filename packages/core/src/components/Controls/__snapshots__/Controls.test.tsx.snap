@@ -84,21 +84,21 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
             class=" e16dy5r70 HvDropdown-root css-u5677i-StyledHvFormElement-StyledDropdown etta2py4 HvFormElement-root"
           >
             <div
-              class="HvBaseDropdown-root HvDropdown-dropdown css-1nukton-StyledRoot eapzthe9"
+              class="HvBaseDropdown-root HvDropdown-dropdown css-1nukton-StyledRoot eapzthe8"
             >
               <div
                 aria-expanded="false"
-                class="etta2py3 HvBaseDropdown-anchor css-hfl5st-StyledAnchor-StyledDropdown eapzthe8"
+                class="etta2py3 HvBaseDropdown-anchor css-1b71fhc-StyledAnchor-StyledDropdown eapzthe7"
                 role="combobox"
                 tabindex="-1"
               >
                 <div
-                  class="HvBaseDropdown-header HvDropdown-dropdownHeader css-4bvoko-StyledHeaderRoot eapzthe7"
+                  class="HvBaseDropdown-header HvDropdown-dropdownHeader css-4bvoko-StyledHeaderRoot eapzthe6"
                   role="textbox"
                   tabindex="0"
                 >
                   <div
-                    class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+                    class="HvBaseDropdown-selection css-14ov9q3-StyledSelection eapzthe5"
                   >
                     <div
                       class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-1mbgbjx-getStyledComponent-StyledTypography e1tnpalo0"
@@ -107,22 +107,26 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                     </div>
                   </div>
                   <div
-                    class="HvBaseDropdown-arrow HvDropdown-arrow eapzthe3 css-1ij2a3c-StyledDropDownXS"
-                    name="DropDownXS"
+                    class="css-zsju0o-StyledAdornment eapzthe3"
                   >
-                    <svg
-                      focusable="false"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      width="12"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="HvBaseDropdown-arrow HvDropdown-arrow css-f95wjz"
+                      name="DropDownXS"
                     >
-                      <path
-                        class="color0"
-                        d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                        fill="var(--uikit-colors-secondary)"
-                      />
-                    </svg>
+                      <svg
+                        focusable="false"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        width="12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="color0"
+                          d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                          fill="var(--uikit-colors-secondary)"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -700,21 +704,21 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
             class=" e16dy5r70 HvDropdown-root css-u5677i-StyledHvFormElement-StyledDropdown etta2py4 HvFormElement-root"
           >
             <div
-              class="HvBaseDropdown-root HvDropdown-dropdown css-1nukton-StyledRoot eapzthe9"
+              class="HvBaseDropdown-root HvDropdown-dropdown css-1nukton-StyledRoot eapzthe8"
             >
               <div
                 aria-expanded="false"
-                class="etta2py3 HvBaseDropdown-anchor css-hfl5st-StyledAnchor-StyledDropdown eapzthe8"
+                class="etta2py3 HvBaseDropdown-anchor css-1b71fhc-StyledAnchor-StyledDropdown eapzthe7"
                 role="combobox"
                 tabindex="-1"
               >
                 <div
-                  class="HvBaseDropdown-header HvDropdown-dropdownHeader css-4bvoko-StyledHeaderRoot eapzthe7"
+                  class="HvBaseDropdown-header HvDropdown-dropdownHeader css-4bvoko-StyledHeaderRoot eapzthe6"
                   role="textbox"
                   tabindex="0"
                 >
                   <div
-                    class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+                    class="HvBaseDropdown-selection css-14ov9q3-StyledSelection eapzthe5"
                   >
                     <div
                       class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-uq00g8-getStyledComponent-StyledTypography e1tnpalo0"
@@ -723,22 +727,26 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                     </div>
                   </div>
                   <div
-                    class="HvBaseDropdown-arrow HvDropdown-arrow eapzthe3 css-1ij2a3c-StyledDropDownXS"
-                    name="DropDownXS"
+                    class="css-zsju0o-StyledAdornment eapzthe3"
                   >
-                    <svg
-                      focusable="false"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      width="12"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="HvBaseDropdown-arrow HvDropdown-arrow css-f95wjz"
+                      name="DropDownXS"
                     >
-                      <path
-                        class="color0"
-                        d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                        fill="var(--uikit-colors-secondary)"
-                      />
-                    </svg>
+                      <svg
+                        focusable="false"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        width="12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="color0"
+                          d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                          fill="var(--uikit-colors-secondary)"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>

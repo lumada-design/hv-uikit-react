@@ -12,48 +12,52 @@ exports[`ColorPicker > should render correctly full color icon picker 1`] = `
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-abwxqd-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown26-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-4fbzw2-StyledRoot eapzthe9"
+        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-4fbzw2-StyledRoot eapzthe8"
       >
         <div
           aria-expanded="false"
           aria-labelledby="hvdropdown26-label"
-          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe7"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-labelledby="hvdropdown26-label"
-            class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
+            class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe6"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+              class="HvBaseDropdown-selection css-yu3ol7-StyledSelection eapzthe5"
             />
             <div
-              class="HvColorPicker-colorPickerIcon css-1rtiqvt"
-              name="ColorPicker"
+              class="css-zsju0o-StyledAdornment eapzthe3"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                class="HvColorPicker-colorPickerIcon css-1ocd5l7"
+                name="ColorPicker"
               >
-                <path
-                  class="color0"
-                  d="M15.415.567a2.047 2.047 0 0 0-2.828 0l-2.121 2.121L9.05 1.274l-.707.707L14 7.638l.707-.707-1.414-1.415 2.121-2.121a2 2 0 0 0 .001-2.828zM12.587 4.81zm2.121-2.122-2.121 2.121-1.414-1.414 2.121-2.121a1 1 0 0 1 1.414 1.414zM0 13v3h3l9-9-3-3zm2.586 2H1v-1.585l8-8L10.586 7z"
-                  fill="var(--uikit-colors-secondary)"
-                />
-              </svg>
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M15.415.567a2.047 2.047 0 0 0-2.828 0l-2.121 2.121L9.05 1.274l-.707.707L14 7.638l.707-.707-1.414-1.415 2.121-2.121a2 2 0 0 0 .001-2.828zM12.587 4.81zm2.121-2.122-2.121 2.121-1.414-1.414 2.121-2.121a1 1 0 0 1 1.414 1.414zM0 13v3h3l9-9-3-3zm2.586 2H1v-1.585l8-8L10.586 7z"
+                    fill="var(--uikit-colors-secondary)"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -75,56 +79,60 @@ exports[`ColorPicker > should render correctly full color picker 1`] = `
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-abwxqd-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown1-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe9"
+        class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe8"
       >
         <div
           aria-expanded="true"
           aria-labelledby="hvdropdown1-label"
           aria-owns="hvbasedropdown3-children-container"
-          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe7"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-controls="hvbasedropdown3-children-container"
             aria-labelledby="hvdropdown1-label"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe7"
+            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe6"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+              class="HvBaseDropdown-selection css-14ov9q3-StyledSelection eapzthe5"
             >
               <p
-                class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body css-1cbtqw8-getStyledComponent-StyledPlaceholder e1tnpalo0"
+                class="HvBaseDropdown-placeholder eapzthe4 HvTypography-root HvTypography-body css-1cbtqw8-getStyledComponent-StyledPlaceholder e1tnpalo0"
               >
                 Select color...
               </p>
             </div>
             <div
-              class="HvColorPicker-colorPickerIcon css-1rtiqvt"
-              name="ColorPicker"
+              class="css-zsju0o-StyledAdornment eapzthe3"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                class="HvColorPicker-colorPickerIcon css-1ocd5l7"
+                name="ColorPicker"
               >
-                <path
-                  class="color0"
-                  d="M15.415.567a2.047 2.047 0 0 0-2.828 0l-2.121 2.121L9.05 1.274l-.707.707L14 7.638l.707-.707-1.414-1.415 2.121-2.121a2 2 0 0 0 .001-2.828zM12.587 4.81zm2.121-2.122-2.121 2.121-1.414-1.414 2.121-2.121a1 1 0 0 1 1.414 1.414zM0 13v3h3l9-9-3-3zm2.586 2H1v-1.585l8-8L10.586 7z"
-                  fill="var(--uikit-colors-secondary)"
-                />
-              </svg>
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M15.415.567a2.047 2.047 0 0 0-2.828 0l-2.121 2.121L9.05 1.274l-.707.707L14 7.638l.707-.707-1.414-1.415 2.121-2.121a2 2 0 0 0 .001-2.828zM12.587 4.81zm2.121-2.122-2.121 2.121-1.414-1.414 2.121-2.121a1 1 0 0 1 1.414 1.414zM0 13v3h3l9-9-3-3zm2.586 2H1v-1.585l8-8L10.586 7z"
+                    fill="var(--uikit-colors-secondary)"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -146,35 +154,35 @@ exports[`ColorPicker > should render correctly recommended colors only color pic
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-abwxqd-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown23-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe9"
+        class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe8"
       >
         <div
           aria-expanded="true"
           aria-labelledby="hvdropdown23-label"
           aria-owns="hvbasedropdown25-children-container"
-          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe7"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-controls="hvbasedropdown25-children-container"
             aria-labelledby="hvdropdown23-label"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe7"
+            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe6"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+              class="HvBaseDropdown-selection css-14ov9q3-StyledSelection eapzthe5"
             >
               <div
-                class="HvColorPicker-headerColorIcon css-11agson"
+                class="HvColorPicker-headerColorIcon css-l2cp81"
                 name="Checkbox"
               >
                 <svg
@@ -192,6 +200,7 @@ exports[`ColorPicker > should render correctly recommended colors only color pic
                   <path
                     class="color1"
                     d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="transparent"
                   />
                 </svg>
               </div>
@@ -202,22 +211,26 @@ exports[`ColorPicker > should render correctly recommended colors only color pic
               </p>
             </div>
             <div
-              class="HvColorPicker-colorPickerIcon css-1rtiqvt"
-              name="ColorPicker"
+              class="css-zsju0o-StyledAdornment eapzthe3"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                class="HvColorPicker-colorPickerIcon css-1ocd5l7"
+                name="ColorPicker"
               >
-                <path
-                  class="color0"
-                  d="M15.415.567a2.047 2.047 0 0 0-2.828 0l-2.121 2.121L9.05 1.274l-.707.707L14 7.638l.707-.707-1.414-1.415 2.121-2.121a2 2 0 0 0 .001-2.828zM12.587 4.81zm2.121-2.122-2.121 2.121-1.414-1.414 2.121-2.121a1 1 0 0 1 1.414 1.414zM0 13v3h3l9-9-3-3zm2.586 2H1v-1.585l8-8L10.586 7z"
-                  fill="var(--uikit-colors-secondary)"
-                />
-              </svg>
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M15.415.567a2.047 2.047 0 0 0-2.828 0l-2.121 2.121L9.05 1.274l-.707.707L14 7.638l.707-.707-1.414-1.415 2.121-2.121a2 2 0 0 0 .001-2.828zM12.587 4.81zm2.121-2.122-2.121 2.121-1.414-1.414 2.121-2.121a1 1 0 0 1 1.414 1.414zM0 13v3h3l9-9-3-3zm2.586 2H1v-1.585l8-8L10.586 7z"
+                    fill="var(--uikit-colors-secondary)"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -239,52 +252,57 @@ exports[`ColorPicker > should render correctly recommended colors only icon colo
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-abwxqd-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown32-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-4fbzw2-StyledRoot eapzthe9"
+        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-4fbzw2-StyledRoot eapzthe8"
       >
         <div
           aria-expanded="false"
           aria-labelledby="hvdropdown32-label"
-          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe7"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-labelledby="hvdropdown32-label"
-            class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
+            class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe6"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+              class="HvBaseDropdown-selection css-yu3ol7-StyledSelection eapzthe5"
             />
             <div
-              class="HvColorPicker-headerColorIconOnly css-zlcxrp"
-              name="Checkbox"
+              class="css-zsju0o-StyledAdornment eapzthe3"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                class="HvColorPicker-headerColorIconOnly css-1ocd5l7"
+                name="Checkbox"
               >
-                <path
-                  class="color0"
-                  d="M0 0h16v16H0z"
-                  fill="#de2beb"
-                />
-                <path
-                  class="color1"
-                  d="M16 16H0V0h16zM1 15h14V1H1z"
-                />
-              </svg>
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 0h16v16H0z"
+                    fill="#de2beb"
+                  />
+                  <path
+                    class="color1"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="transparent"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -306,35 +324,35 @@ exports[`ColorPicker > should render correctly without saved colors color picker
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-abwxqd-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown12-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe9"
+        class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe8"
       >
         <div
           aria-expanded="true"
           aria-labelledby="hvdropdown12-label"
           aria-owns="hvbasedropdown14-children-container"
-          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe7"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-controls="hvbasedropdown14-children-container"
             aria-labelledby="hvdropdown12-label"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe7"
+            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe6"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+              class="HvBaseDropdown-selection css-14ov9q3-StyledSelection eapzthe5"
             >
               <div
-                class="HvColorPicker-headerColorIcon css-11agson"
+                class="HvColorPicker-headerColorIcon css-l2cp81"
                 name="Checkbox"
               >
                 <svg
@@ -352,6 +370,7 @@ exports[`ColorPicker > should render correctly without saved colors color picker
                   <path
                     class="color1"
                     d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="transparent"
                   />
                 </svg>
               </div>
@@ -362,22 +381,26 @@ exports[`ColorPicker > should render correctly without saved colors color picker
               </p>
             </div>
             <div
-              class="HvColorPicker-colorPickerIcon css-1rtiqvt"
-              name="ColorPicker"
+              class="css-zsju0o-StyledAdornment eapzthe3"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                class="HvColorPicker-colorPickerIcon css-1ocd5l7"
+                name="ColorPicker"
               >
-                <path
-                  class="color0"
-                  d="M15.415.567a2.047 2.047 0 0 0-2.828 0l-2.121 2.121L9.05 1.274l-.707.707L14 7.638l.707-.707-1.414-1.415 2.121-2.121a2 2 0 0 0 .001-2.828zM12.587 4.81zm2.121-2.122-2.121 2.121-1.414-1.414 2.121-2.121a1 1 0 0 1 1.414 1.414zM0 13v3h3l9-9-3-3zm2.586 2H1v-1.585l8-8L10.586 7z"
-                  fill="var(--uikit-colors-secondary)"
-                />
-              </svg>
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M15.415.567a2.047 2.047 0 0 0-2.828 0l-2.121 2.121L9.05 1.274l-.707.707L14 7.638l.707-.707-1.414-1.415 2.121-2.121a2 2 0 0 0 .001-2.828zM12.587 4.81zm2.121-2.122-2.121 2.121-1.414-1.414 2.121-2.121a1 1 0 0 1 1.414 1.414zM0 13v3h3l9-9-3-3zm2.586 2H1v-1.585l8-8L10.586 7z"
+                    fill="var(--uikit-colors-secondary)"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -399,48 +422,52 @@ exports[`ColorPicker > should render correctly without saved colors icon color p
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-q9br3g-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-abwxqd-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown29-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-4fbzw2-StyledRoot eapzthe9"
+        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-4fbzw2-StyledRoot eapzthe8"
       >
         <div
           aria-expanded="false"
           aria-labelledby="hvdropdown29-label"
-          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe7"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-labelledby="hvdropdown29-label"
-            class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
+            class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe6"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+              class="HvBaseDropdown-selection css-yu3ol7-StyledSelection eapzthe5"
             />
             <div
-              class="HvColorPicker-colorPickerIcon css-1rtiqvt"
-              name="ColorPicker"
+              class="css-zsju0o-StyledAdornment eapzthe3"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                class="HvColorPicker-colorPickerIcon css-1ocd5l7"
+                name="ColorPicker"
               >
-                <path
-                  class="color0"
-                  d="M15.415.567a2.047 2.047 0 0 0-2.828 0l-2.121 2.121L9.05 1.274l-.707.707L14 7.638l.707-.707-1.414-1.415 2.121-2.121a2 2 0 0 0 .001-2.828zM12.587 4.81zm2.121-2.122-2.121 2.121-1.414-1.414 2.121-2.121a1 1 0 0 1 1.414 1.414zM0 13v3h3l9-9-3-3zm2.586 2H1v-1.585l8-8L10.586 7z"
-                  fill="var(--uikit-colors-secondary)"
-                />
-              </svg>
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M15.415.567a2.047 2.047 0 0 0-2.828 0l-2.121 2.121L9.05 1.274l-.707.707L14 7.638l.707-.707-1.414-1.415 2.121-2.121a2 2 0 0 0 .001-2.828zM12.587 4.81zm2.121-2.122-2.121 2.121-1.414-1.414 2.121-2.121a1 1 0 0 1 1.414 1.414zM0 13v3h3l9-9-3-3zm2.586 2H1v-1.585l8-8L10.586 7z"
+                    fill="var(--uikit-colors-secondary)"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>

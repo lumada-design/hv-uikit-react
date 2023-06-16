@@ -3,12 +3,12 @@
 exports[`DropDownMenu > should render correctly 1`] = `
 <div>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root hv-1u1foky-StyledRoot eapzthe9"
+    class="HvBaseDropdown-root HvDropDownMenu-root hv-1u1foky-StyledRoot eapzthe8"
   >
     <div
       aria-expanded="false"
       aria-haspopup="menu"
-      class="HvDropDownMenu-container HvBaseDropdown-anchor hv-10kxauw-StyledAnchor eapzthe8"
+      class="HvDropDownMenu-container HvBaseDropdown-anchor hv-10kxauw-StyledAnchor eapzthe7"
       id="dropdown-menu4"
       tabindex="-1"
     >

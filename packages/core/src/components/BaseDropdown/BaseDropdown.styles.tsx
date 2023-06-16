@@ -1,6 +1,5 @@
 import { CSSProperties } from "@emotion/serialize";
 import styled from "@emotion/styled";
-import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography } from "@core/components";
 import { outlineStyles } from "@core/utils";
@@ -107,7 +106,7 @@ export const StyledSelection = styled("div")({
   alignItems: "center",
   height: "30px",
   boxSizing: "border-box",
-  padding: `0px ${theme.space.md} 0px ${theme.space.xs}`,
+  paddingLeft: theme.space.xs,
 });
 
 export const StyledPlaceholder = styled(
@@ -126,31 +125,12 @@ export const StyledPlaceholder = styled(
   }),
 }));
 
-const iconsStyles: CSSProperties = {
+export const StyledAdornment = styled("div")({
   position: "absolute",
   pointerEvents: "none",
   top: -1,
   right: -1,
-};
-
-export const StyledDropUpXS = styled(DropUpXS)({
-  ...iconsStyles,
 });
-
-export const StyledDropDownXS = styled(
-  DropDownXS,
-  transientOptions
-)(({ $disabled }: { $disabled: boolean }) => ({
-  ...iconsStyles,
-
-  ...($disabled && {
-    "& svg": {
-      "& path": {
-        fill: theme.colors.secondary_60,
-      },
-    },
-  }),
-}));
 
 export const StyledContainer = styled("div")({
   zIndex: theme.zIndices.popover,
@@ -203,10 +183,14 @@ export const StyledPanel = styled(
 )(({ $popperPlacement }: { $popperPlacement: string }) => ({
   position: "relative",
   boxShadow: theme.baseDropdown.shadow,
+  backgroundColor: theme.colors.atmo1,
+  border: `1px solid ${theme.baseDropdown.openBorderColor}`,
   ...($popperPlacement === "top" && {
-    top: "1px",
+    top: 1,
+    borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,
   }),
   ...($popperPlacement === "bottom" && {
-    top: "-1px",
+    top: -1,
+    borderRadius: `0 0 ${theme.radii.base} ${theme.radii.base}`,
   }),
 }));

@@ -37,13 +37,9 @@ export const StyledDropdown = styled(
     $readOnly?: boolean;
   }) => ({
     width: "100%",
-    borderRadius: 2,
+    borderRadius: theme.radii.base,
 
     [`& .${dropdownClasses.dropdownHeader}`]: {
-      border: theme.dropdown.headerBorder,
-      "&:hover": {
-        border: `1px solid ${theme.colors.secondary_80}`,
-      },
       ...($dropdownHeaderInvalid && {
         border: "none",
         "&:hover": {
@@ -60,13 +56,6 @@ export const StyledDropdown = styled(
       border: theme.dropdown.dropdownHeaderInvalidBorder,
       "&:hover": {
         border: theme.dropdown.dropdownHeaderInvalidBorder,
-      },
-    },
-
-    [`& .${dropdownClasses.dropdownHeaderOpen}`]: {
-      border: theme.dropdown.dropdownHeaderOpenBorder,
-      "&:hover": {
-        border: theme.dropdown.dropdownHeaderOpenBorder,
       },
     },
   })

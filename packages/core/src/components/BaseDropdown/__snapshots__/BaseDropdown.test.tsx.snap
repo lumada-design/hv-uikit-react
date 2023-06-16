@@ -6,47 +6,51 @@ exports[`BaseDropDown > should render correctly 1`] = `
     style="width: 121px;"
   >
     <div
-      class="HvBaseDropdown-root hv-1nukton-StyledRoot eapzthe9"
+      class="HvBaseDropdown-root hv-1nukton-StyledRoot eapzthe8"
     >
       <div
         aria-expanded="false"
         aria-label="Main sample"
-        class="HvBaseDropdown-anchor hv-c41kvr-StyledAnchor eapzthe8"
+        class="HvBaseDropdown-anchor hv-c41kvr-StyledAnchor eapzthe7"
         role="combobox"
         tabindex="-1"
       >
         <div
           aria-label="Main sample"
-          class="HvBaseDropdown-header hv-4bvoko-StyledHeaderRoot eapzthe7"
+          class="HvBaseDropdown-header hv-4bvoko-StyledHeaderRoot eapzthe6"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection hv-b6yxdh-StyledSelection eapzthe6"
+            class="HvBaseDropdown-selection hv-14ov9q3-StyledSelection eapzthe5"
           >
             <p
-              class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body hv-1cbtqw8-getStyledComponent-StyledPlaceholder e1tnpalo0"
+              class="HvBaseDropdown-placeholder eapzthe4 HvTypography-root HvTypography-body hv-1cbtqw8-getStyledComponent-StyledPlaceholder e1tnpalo0"
             >
               Placeholder...
             </p>
           </div>
           <div
-            class="HvBaseDropdown-arrow eapzthe3 hv-1ij2a3c-StyledDropDownXS"
-            name="DropDownXS"
+            class="hv-zsju0o-StyledAdornment eapzthe3"
           >
-            <svg
-              focusable="false"
-              height="12"
-              viewBox="0 0 12 12"
-              width="12"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="HvBaseDropdown-arrow hv-f95wjz"
+              name="DropDownXS"
             >
-              <path
-                class="color0"
-                d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                fill="var(--uikit-colors-secondary)"
-              />
-            </svg>
+              <svg
+                focusable="false"
+                height="12"
+                viewBox="0 0 12 12"
+                width="12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                  fill="var(--uikit-colors-secondary)"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>

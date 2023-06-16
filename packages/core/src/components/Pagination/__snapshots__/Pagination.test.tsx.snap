@@ -9,35 +9,31 @@ exports[`Pagination > should render correctly 1`] = `
       class="HvPagination-pageSizeOptions hv-191htxu-StyledPageSizeOptions e1tn2n0k7"
     >
       <div
-        class="hv-7ddhyu-StyledRoot eakxe9u0"
+        class="HvBaseDropdown-root hv-1nukton-StyledRoot eapzthe8"
       >
         <div
-          class="HvBaseDropdown-root hv-1nukton-StyledRoot eapzthe9"
+          aria-expanded="false"
+          aria-label="Select how many to display"
+          class="HvPagination-pageSizeOptionsSelect e1tn2n0k5 HvBaseDropdown-anchor hv-7v8964-StyledAnchor-StyledSelect eapzthe7"
+          role="combobox"
+          tabindex="-1"
         >
           <div
-            aria-expanded="false"
             aria-label="Select how many to display"
-            class="HvPagination-pageSizeOptionsSelect e1tn2n0k5 HvBaseDropdown-anchor hv-7v8964-StyledAnchor-StyledSelect eapzthe8"
-            role="combobox"
-            tabindex="-1"
+            class="HvBaseDropdown-header HvPaginationSelect-header hv-8g6cid-StyledHeaderRoot eapzthe6"
+            role="textbox"
+            tabindex="0"
           >
             <div
-              aria-label="Select how many to display"
-              class="HvBaseDropdown-header hv-4bvoko-StyledHeaderRoot eapzthe7"
-              role="textbox"
-              tabindex="0"
+              class="HvBaseDropdown-selection HvPaginationSelect-selection hv-6beslu-StyledSelection eapzthe5"
+            >
+              1
+            </div>
+            <div
+              class="hv-zsju0o-StyledAdornment eapzthe3"
             >
               <div
-                class="HvBaseDropdown-selection hv-b6yxdh-StyledSelection eapzthe6"
-              >
-                <p
-                  class="HvTypography-root HvTypography-body hv-1fbl1cl-getStyledComponent e1tnpalo0"
-                >
-                  1
-                </p>
-              </div>
-              <div
-                class="HvBaseDropdown-arrow eapzthe3 hv-1ij2a3c-StyledDropDownXS"
+                class="HvBaseDropdown-arrow hv-f95wjz"
                 name="DropDownXS"
               >
                 <svg

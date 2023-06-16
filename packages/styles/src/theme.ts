@@ -13,17 +13,11 @@ import { mapCSSVars } from "./utils";
 const componentsSpec: DeepString<HvThemeComponents> = {
   dropdown: {
     borderRadius: "string",
-    headerBorder: "string",
-    headerBorderHover: "string",
     disabledColor: "string",
     readOnlyBorder: "string",
     readOnlyBackgroundColor: "string",
     placeholderColor: "string",
     dropdownHeaderInvalidBorder: "string",
-    dropdownHeaderOpenBorder: "string",
-    listBackgroundColor: "string",
-    listBorder: "string",
-    listBorderRadius: "string",
     listContainerPadding: "string",
     searchContainerMargin: "string",
   },
@@ -212,8 +206,7 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   },
   pagination: {
     pageSizeBorderColor: "string",
-    pageSizeBorderRadius: "string",
-    pageJumpTextAlign: "string",
+    pageSizeHoverBorderColor: "string",
   },
   actionsGeneric: { buttonSize: "string" },
   bulkActions: {
@@ -291,10 +284,6 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     applyButtonVariant: "string",
     cancelButtonVariant: "string",
     applyButtonMarginRight: "string",
-    panelsBorder: "string",
-    panelsBorderBottom: "string",
-    actionBarBorder: "string",
-    actionBarBorderTop: "string",
     rightPanelBorderLeft: "string",
     rightPanelShadow: "string",
     partialCounterFontWeight: "string",
@@ -303,9 +292,6 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     disabledBackgroundColor: "string",
   },
   datePicker: {
-    panelBorder: "string",
-    panelBackgroundColor: "string",
-    dropdownHeaderOpenBorder: "string",
     dropdownPlaceholderColor: "string",
     placeholderVariant: "string",
   },
@@ -349,8 +335,6 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   },
   colorPicker: {
     inputValueVariant: "string",
-    panelBorder: "string",
-    panelBorderRadius: "string",
     panelMinWidth: "string",
     panelPadding: "string",
     pickersFlexDirection: "string",
