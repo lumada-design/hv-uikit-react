@@ -55,7 +55,7 @@ export function createClasses<Name extends string, ClassName extends string>(
 
   const staticClasses = getClasses(Object.keys(styles) as ClassName[], name);
 
-  function useClasses(classesProp: Partial<Record<ClassName, string>>) {
+  function useClasses(classesProp: Partial<Record<ClassName, string>> = {}) {
     const { cx, css } = useCss();
 
     const mergeClasses = (key: string) =>
@@ -65,7 +65,7 @@ export function createClasses<Name extends string, ClassName extends string>(
       Object.keys(styles).map((key) => [key, mergeClasses(key)])
     ) as { [P in ClassName]: string };
 
-    return { cx, classes };
+    return { classes, css, cx };
   }
 
   return { useClasses, staticClasses };
