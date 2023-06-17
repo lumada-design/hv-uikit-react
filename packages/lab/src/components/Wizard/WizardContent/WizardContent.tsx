@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ClassNames } from "@emotion/react";
 import { HvBaseProps, HvDialogContent } from "@hitachivantara/uikit-react-core";
 import { useElementSize } from "usehooks-ts";
@@ -121,7 +122,7 @@ export const HvWizardContent = ({
 
       setContext(updatedContext);
     }
-  }, [tab]);
+  }, [tab, context, setContext]);
 
   const translateX = summaryWidth ? summaryWidth + 10 : 450;
 

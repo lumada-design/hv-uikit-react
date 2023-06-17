@@ -1,6 +1,7 @@
 import React, {
   CSSProperties,
   Children,
+  useCallback,
   useEffect,
   useRef,
   useState,
@@ -99,19 +100,19 @@ export const HvCarousel = (props: HvCarouselProps) => {
 
   const numSlides = Children.count(children);
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     controller?.scrollPrev();
-  };
+  }, [controller]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     controller?.scrollNext();
-  };
+  }, [controller]);
 
   const handleScroll = (index: number) => {
     controller?.scrollTo(index);
   };
 
-  const handleSelect = () => {
+  const handleSelect = useCallback(() => {
     if (!controller) return;
 
     const slideIndex = controller.selectedScrollSnap();
@@ -126,7 +127,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
       });
 
     onChange?.(slideIndex);
-  };
+  }, [controller, onChange]);
 
   useEffect(() => {
     if (!controller) return;
@@ -136,14 +137,14 @@ export const HvCarousel = (props: HvCarouselProps) => {
     return () => {
       controller.off("select", handleSelect);
     };
-  }, [controller]);
+  }, [controller, handleSelect]);
 
   useEffect(() => {
     if (!controller) return;
 
     controller.reInit();
     setSelectedIndex((currentIndex) => clamp(currentIndex, numSlides, 0));
-  }, [numSlides]);
+  }, [numSlides, controller]);
 
   const canPrev = controller?.canScrollPrev() ?? false;
   const canNext = controller?.canScrollNext() ?? false;

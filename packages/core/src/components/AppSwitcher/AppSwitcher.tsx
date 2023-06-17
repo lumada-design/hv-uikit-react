@@ -77,13 +77,6 @@ export const HvAppSwitcher = ({
   footer,
   isOpen,
 }: HvAppSwitcherProps) => {
-  const actionClicked = (
-    event: React.MouseEvent,
-    application: HvAppSwitcherActionApplication
-  ) => {
-    onActionClickedCallback?.(event, application);
-  };
-
   const panelActions = useMemo(
     () =>
       applications &&
@@ -93,7 +86,7 @@ export const HvAppSwitcher = ({
             <HvAppSwitcherAction
               key={application.id || `${application.name}_${application.url}`}
               application={application}
-              onClickCallback={actionClicked}
+              onClickCallback={onActionClickedCallback}
               isSelectedCallback={isActionSelectedCallback}
               classes={{
                 root: clsx(classes?.item, appSwitcherClasses.item),
@@ -122,7 +115,7 @@ export const HvAppSwitcher = ({
 
         return undefined;
       }),
-    [applications]
+    [applications, classes, isActionSelectedCallback, onActionClickedCallback]
   );
 
   return (

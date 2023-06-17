@@ -267,7 +267,6 @@ export const HvSlider = ({
       markStep,
       minPointValue,
       stepValue,
-      sliderStyles,
     ]
   );
 

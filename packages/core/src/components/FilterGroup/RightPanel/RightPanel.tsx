@@ -152,6 +152,8 @@ export const HvFilterGroupRightPanel = ({
     handleSelectAll,
     id,
     labels,
+    classes?.selectAllContainer,
+    classes?.selectAll,
   ]);
 
   return (

@@ -288,7 +288,7 @@ export const HvDatePicker = ({
   useEffect(() => {
     setStartDate(rangeMode ? startValue : value, true);
     setEndDate(endValue, true);
-  }, [value, startValue, endValue, rangeMode]);
+  }, [value, startValue, endValue, rangeMode, setStartDate, setEndDate]);
 
   const endDateIsSet = useRef(false);
   endDateIsSet.current = endDate != null;

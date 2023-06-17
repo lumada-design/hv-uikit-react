@@ -59,7 +59,7 @@ export const HvWizardTitle = ({
     return () => {
       setSummary(false);
     };
-  }, []);
+  }, [hasSummary, setSummary, summary]);
 
   useEffect(() => {
     const contextArray = Object.entries(context);

@@ -45,7 +45,7 @@ const CodeEditor = ({ themeName, setCopied }): JSX.Element => {
   useEffect(() => {
     const code = getThemeCode(themeName, selectedTheme, themeChanges);
     setValue(code);
-  }, [customTheme]);
+  }, [customTheme, selectedTheme, selectedMode, themeChanges, themeName]);
 
   const onCopyHandler = () => {
     navigator.clipboard.writeText(value);

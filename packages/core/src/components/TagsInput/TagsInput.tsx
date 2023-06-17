@@ -213,12 +213,7 @@ export const HvTagsInput = ({
 
   const errorMessages = useMemo(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
-    [
-      validationMessages?.error,
-      validationMessages?.requiredError,
-      validationMessages?.minCharError,
-      validationMessages?.maxCharError,
-    ]
+    [validationMessages]
   );
 
   const performValidation = useCallback(

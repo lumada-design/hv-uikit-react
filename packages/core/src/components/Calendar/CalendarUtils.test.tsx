@@ -18,8 +18,6 @@ import {
   makeUTCDate,
 } from "./utils";
 
-/* eslint-disable no-console */
-
 describe("Calendar utils - zeroPad", () => {
   it("should return 01 when the input is 1 and the length is 2", () => {
     expect(zeroPad(1, 2)).toBe("01");

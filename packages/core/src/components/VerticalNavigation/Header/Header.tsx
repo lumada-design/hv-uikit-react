@@ -77,7 +77,7 @@ export const HvVerticalNavigationHeader = ({
   // In the first level it's always an array with the first level elements.
   const shouldShowTitle = useMemo(
     () => !slider || (slider && !Array.isArray(parentItem)),
-    [parentItem]
+    [parentItem, slider]
   );
 
   return shouldShowTitle ? (

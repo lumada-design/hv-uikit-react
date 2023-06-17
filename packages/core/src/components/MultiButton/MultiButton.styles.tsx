@@ -88,16 +88,11 @@ export const StyledRoot = styled(
   }),
 }));
 
-export const StyledButton = (Element) =>
+export const StyledButton = ({ type: Component, props }) =>
   styled(({ className }) => (
-    // eslint-disable-next-line react/jsx-pascal-case
-    <Element.type
-      {...Element.props}
-      className={clsx(
-        "button",
-        Element.props.selected && "selected",
-        className
-      )}
+    <Component
+      {...props}
+      className={clsx("button", props.selected && "selected", className)}
     />
   ))({
     height: 32,

@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { StyledRoot } from "./VerticalNavigation.styles";
 import verticalNavigationClasses, {
   HvVerticalNavigationClasses,
@@ -112,14 +112,17 @@ export const HvVerticalNavigation = ({
     [parentItem, setParentItem]
   );
 
-  const navigateToParentHandler = () => {
+  const navigateToParentHandler = useCallback(() => {
     setParentItem(getParentItemById(withParentData, parentItem.id));
-  };
+  }, [parentItem, setParentItem, withParentData]);
 
-  const navigateToChildHandler = (event, item) => {
-    setParentItem(getNavigationItemById(withParentData, item.id));
-    event.stopPropagation();
-  };
+  const navigateToChildHandler = useCallback(
+    (event, item) => {
+      setParentItem(getNavigationItemById(withParentData, item.id));
+      event.stopPropagation();
+    },
+    [setParentItem, withParentData]
+  );
 
   const value = useMemo(
     () => ({
@@ -153,6 +156,8 @@ export const HvVerticalNavigation = ({
       navigateToChildHandler,
       navigateToParentHandler,
       hasAnyChildWithData,
+      parentData,
+      parentSelected,
     ]
   );
 

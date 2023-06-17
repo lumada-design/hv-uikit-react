@@ -228,25 +228,28 @@ export const HvVerticalNavigationTree = ({
         }
       }
     },
-    [onChange, setSelected]
+    [onChange, setSelected, setExpanded, isOpen, useIcons, data]
   );
 
-  const treeViewItemMouseEnterHandler = (event, item) => {
-    const isCollapsed = useIcons && !isOpen;
+  const treeViewItemMouseEnterHandler = useCallback(
+    (event, item) => {
+      const isCollapsed = useIcons && !isOpen;
 
-    if (isCollapsed && item.data && !navigationPopup?.fixedMode) {
-      const currentEventTarget = event.currentTarget;
+      if (isCollapsed && item.data && !navigationPopup?.fixedMode) {
+        const currentEventTarget = event.currentTarget;
 
-      setNavigationPopup?.({
-        uniqueKey: uniqueId(),
-        anchorEl: currentEventTarget,
-        fixedMode: false,
-        data: item.data,
-      });
-    } else if (isCollapsed && !item.data && !navigationPopup?.fixedMode) {
-      setNavigationPopup(null);
-    }
-  };
+        setNavigationPopup?.({
+          uniqueKey: uniqueId(),
+          anchorEl: currentEventTarget,
+          fixedMode: false,
+          data: item.data,
+        });
+      } else if (isCollapsed && !item.data && !navigationPopup?.fixedMode) {
+        setNavigationPopup(null);
+      }
+    },
+    [isOpen, useIcons, navigationPopup]
+  );
 
   const handleToggle = useCallback(
     (event, newExpanded) => {
@@ -269,7 +272,7 @@ export const HvVerticalNavigationTree = ({
         treeViewItemMouseEnterHandler,
         navigationPopup?.fixedMode
       ),
-    [classes, data, id, navigationPopup, isOpen]
+    [classes, data, id, navigationPopup, treeViewItemMouseEnterHandler]
   );
 
   useEffect(() => {
@@ -280,11 +283,11 @@ export const HvVerticalNavigationTree = ({
 
   useEffect(() => {
     if (setParentSelected) setParentSelected(selected);
-  }, [selected, setSelected]);
+  }, [selected, setSelected, setParentSelected]);
 
   useEffect(() => {
     if (setParentData) setParentData(data);
-  }, [data]);
+  }, [data, setParentData]);
 
   useEffect(() => {
     if (
@@ -295,7 +298,7 @@ export const HvVerticalNavigationTree = ({
     ) {
       setParentItem(getParentItemById(withParentData, selected));
     }
-  }, [withParentData]);
+  }, [withParentData, selected, setParentItem]);
 
   // navigation slider
   const navigateToTargetHandler = (event, selectedItem) => {

@@ -150,7 +150,7 @@ export const HvDropdownList = ({
     if (notifyChangesOnFirstRender) {
       onChange?.(values, false, false, true);
     }
-  }, [values]);
+  }, [values, notifyChangesOnFirstRender, onChange]);
 
   /**
    * Sets the filtered values to the state.

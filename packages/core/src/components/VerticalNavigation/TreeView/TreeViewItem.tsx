@@ -311,6 +311,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         nodeId,
         toggleExpansion,
         treeviewMode,
+        isOpen,
       ]
     );
 
@@ -380,6 +381,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         handleSelection,
         onClick,
         selectable,
+        isOpen,
       ]
     );
 
@@ -413,7 +415,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           }
         }
       },
-      [expandable, handleExpansion, handleSelection, selectable]
+      [expandable, handleExpansion, handleSelection, selectable, isOpen]
     );
 
     const renderedContent = useMemo(
@@ -479,11 +481,8 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         href,
         target,
         classes?.content,
-        treeViewItemClasses.content,
         classes?.link,
-        treeViewItemClasses.link,
         classes?.minimized,
-        treeViewItemClasses.minimized,
         disabled,
         handleClick,
         handleMouseDown,
@@ -499,6 +498,12 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         expanded,
         label,
         disableTooltip,
+        payload?.label,
+        children,
+        isOpen,
+        useIcons,
+        isChildSelected,
+        nodeId,
       ]
     );
 
@@ -513,7 +518,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             {children}
           </StyledGroup>
         ),
-      [children, treeViewItemClasses.group, classes?.group, id, treeviewMode]
+      [children, classes?.group, id, treeviewMode]
     );
 
     return (

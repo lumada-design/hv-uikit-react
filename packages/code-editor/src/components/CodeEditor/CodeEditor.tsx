@@ -1,7 +1,7 @@
 import { HvTheme, useTheme } from "@hitachivantara/uikit-react-core";
 import { Editor, EditorProps, useMonaco } from "@monaco-editor/react";
 import { clsx } from "clsx";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { StyledContainer } from "./CodeEditor.styles";
 import codeEditorClasses, { HvCodeEditorClasses } from "./codeEditorClasses";
 
@@ -54,30 +54,29 @@ export const HvCodeEditor = ({
     ...options,
   };
 
-  const defineActiveThemes = (
-    themeName: string,
-    modes: string[],
-    theme?: HvTheme
-  ) => {
-    if (monaco) {
-      modes.forEach((mode) => {
-        monaco?.editor.defineTheme(`hv-${themeName}-${mode}`, {
-          base: theme?.colors.modes[mode].type === "light" ? "vs" : "vs-dark",
-          inherit: true,
-          rules: [],
-          colors: {
-            "editor.background": theme?.colors.modes[mode].atmo1 || "",
-            "editorLineNumber.foreground":
-              theme?.colors.modes[mode].secondary_60 || "",
-          },
+  const defineActiveThemes = useCallback(
+    (themeName: string, modes: string[], theme?: HvTheme) => {
+      if (monaco) {
+        modes.forEach((mode) => {
+          monaco?.editor.defineTheme(`hv-${themeName}-${mode}`, {
+            base: theme?.colors.modes[mode].type === "light" ? "vs" : "vs-dark",
+            inherit: true,
+            rules: [],
+            colors: {
+              "editor.background": theme?.colors.modes[mode].atmo1 || "",
+              "editorLineNumber.foreground":
+                theme?.colors.modes[mode].secondary_60 || "",
+            },
+          });
         });
-      });
-    }
-  };
+      }
+    },
+    [monaco]
+  );
 
   useEffect(() => {
     defineActiveThemes(selectedTheme, colorModes, activeTheme);
-  }, [monaco, selectedTheme]);
+  }, [selectedTheme, colorModes, activeTheme, defineActiveThemes]);
 
   return (
     <StyledContainer className={clsx(classes?.root, codeEditorClasses.root)}>

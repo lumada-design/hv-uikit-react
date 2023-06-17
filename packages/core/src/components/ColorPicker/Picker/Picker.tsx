@@ -42,12 +42,12 @@ export const Picker = ({
 
   const SaturationPointer = useCallback(
     () => <div className={classes?.saturationPointer} />,
-    []
+    [classes?.saturationPointer]
   );
 
   const HueSlider = useCallback(
     () => <div className={classes?.hueSlider} />,
-    []
+    [classes?.hueSlider]
   );
 
   return (

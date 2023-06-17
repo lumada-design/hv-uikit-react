@@ -1,4 +1,10 @@
-import { createContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { parseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
 import { HvThemeContext } from "@hitachivantara/uikit-react-shared";
 import type { HvThemeContextValue } from "@hitachivantara/uikit-react-shared";
@@ -39,44 +45,44 @@ export const HvThemeProvider = ({
   theme,
   emotionCache,
   colorMode,
-  themeRootId,
+  themeRootId: rootId,
 }: HvThemeProviderProps) => {
-  let pTheme = parseTheme(themesList, theme, colorMode);
+  const initTheme = parseTheme(themesList, theme, colorMode);
 
-  const [rootId] = useState<string | undefined>(themeRootId);
-  const [activeTheme, setActiveTheme] = useState<HvTheme | HvThemeStructure>(
-    pTheme.theme
-  );
-  const [selectedTheme, setSelectedTheme] = useState<string>(
-    pTheme.selectedTheme
-  );
-  const [selectedMode, setThemeMode] = useState<string>(pTheme.selectedMode);
-  const [colorModes, setColorModes] = useState<string[]>(pTheme.colorModes);
-  const [themes, setThemes] = useState<string[]>(themesList.map((t) => t.name));
+  const [parsedTheme, setParsedTheme] = useState(initTheme);
+  const [activeTheme, setActiveTheme] = useState(parsedTheme.theme);
+  const [selectedTheme, setSelectedTheme] = useState(parsedTheme.selectedTheme);
+  const [selectedMode, setThemeMode] = useState(parsedTheme.selectedMode);
+  const [colorModes, setColorModes] = useState(parsedTheme.colorModes);
+  const [themes, setThemes] = useState(themesList.map((t) => t.name));
 
   useEffect(() => {
+    const pTheme = parseTheme(themesList, theme, colorMode);
     setThemes(themesList.map((t) => t.name));
-  }, [themesList]);
+    setParsedTheme(pTheme);
+  }, [themesList, theme, colorMode]);
 
-  const changeTheme = (newTheme = selectedTheme, newMode = selectedMode) => {
-    pTheme = parseTheme(themesList, newTheme, newMode);
-
-    setActiveTheme(pTheme.theme);
-    setSelectedTheme(pTheme.selectedTheme);
-    setThemeMode(pTheme.selectedMode);
-    setColorModes(pTheme.colorModes);
+  useEffect(() => {
+    setActiveTheme(parsedTheme.theme);
+    setSelectedTheme(parsedTheme.selectedTheme);
+    setThemeMode(parsedTheme.selectedMode);
+    setColorModes(parsedTheme.colorModes);
 
     setElementAttrs(
-      pTheme.selectedTheme,
-      pTheme.selectedMode,
-      pTheme.colorScheme,
+      parsedTheme.selectedTheme,
+      parsedTheme.selectedMode,
+      parsedTheme.colorScheme,
       rootId
     );
-  };
+  }, [parsedTheme, rootId]);
 
-  useEffect(() => {
-    changeTheme(theme, colorMode);
-  }, [theme, colorMode]);
+  const changeTheme = useCallback(
+    (newTheme = selectedTheme, newMode = selectedMode) => {
+      const pTheme = parseTheme(themesList, newTheme, newMode);
+      setParsedTheme(pTheme);
+    },
+    [selectedMode, selectedTheme, themesList]
+  );
 
   const value = useMemo<HvThemeContextValue>(
     () => ({

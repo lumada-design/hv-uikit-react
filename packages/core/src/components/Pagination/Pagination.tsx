@@ -156,6 +156,7 @@ export const HvPagination = ({
     // breaking a rule of hooks isn't ideal and it's just a hack for fixing
     // a bug preventing properly controlling of the `page` property.
     // fixing it some other way would potentially introduce a breaking change.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [handleInputChange, page]);
 
   const renderPageJump = () => (

@@ -33,7 +33,7 @@ export const Step = ({
     } else if (idx === 8) {
       navigate("/components");
     }
-  }, [idx]);
+  }, [idx, navigate, setOpen]);
 
   const onCloseHandler = () => {
     setTutorialOpen(false);

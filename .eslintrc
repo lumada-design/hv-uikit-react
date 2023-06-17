@@ -9,7 +9,7 @@
     "plugin:import/recommended",
     "plugin:import/typescript",
     "airbnb",
-    // "airbnb/hooks", // TODO: enable
+    "airbnb/hooks",
     "airbnb-typescript",
     "plugin:react/jsx-runtime",
     "prettier"
@@ -37,6 +37,12 @@
       "error",
       {
         "allowAsProps": true
+      }
+    ],
+    "react/jsx-pascal-case": [
+      "error",
+      {
+        "allowNamespace": true
       }
     ],
     "no-nested-ternary": "off",
@@ -68,6 +74,7 @@
           "app/**",
           "docs/**",
           "templates/**",
+          "packages/icons/**",
           "**/*.config.ts",
           "**/*.stories.ts?(x)",
           "**/*.spec.ts?(x)",
@@ -84,7 +91,17 @@
   },
   "overrides": [
     {
-      "files": ["**/*.stories.ts?(x)", "**/templates/**/*.ts?(x)"],
+      "files": ["**/*.stories.ts?(x)"],
+      "rules": {
+        "react-hooks/rules-of-hooks": "off"
+      }
+    },
+    {
+      "files": [
+        "**/*.stories.ts?(x)",
+        "**/*.test.ts?(x)",
+        "**/templates/**/*.ts?(x)"
+      ],
       "rules": {
         "no-alert": "off",
         "no-console": "off",
