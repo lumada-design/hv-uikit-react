@@ -2,9 +2,6 @@ name: Static Checks
 
 on:
   workflow_dispatch:
-    branches:
-      - master
-      - "next*"
   workflow_call:
 
 env:

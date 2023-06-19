@@ -2,9 +2,6 @@ name: Applitools
 
 on:
   workflow_dispatch:
-    branches:
-      - master
-      - "next*"
   workflow_call:
     secrets:
       APPLITOOLS_API_KEY:
@@ -49,3 +46,4 @@ jobs:
         with:
           name: applitools-logs
           path: ${{ github.workspace }}/applitools-logs.txt
+          retention-days: 2
