@@ -1,10 +1,16 @@
 import { describe, expect, it } from "vitest";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { HvActionBar } from "./ActionBar";
+import { HvButton } from "..";
 
 describe("ActionBar", () => {
-  it("should render correctly", () => {
-    const { container } = render(<HvActionBar />);
-    expect(container).toBeDefined();
+  it("renders content correctly", () => {
+    render(
+      <HvActionBar>
+        <HvButton>CONTENT</HvButton>
+      </HvActionBar>
+    );
+    const content = screen.getByRole("button", { name: "CONTENT" });
+    expect(content).toBeInTheDocument();
   });
 });

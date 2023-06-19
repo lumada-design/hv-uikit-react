@@ -227,6 +227,9 @@ const ds3 = makeTheme((theme: HvTheme) => ({
       textDecoration: "underline",
     },
   },
+  actionBar: {
+    borderTop: `3px solid ${theme.colors.atmo2}`,
+  },
   dropdown: {
     borderRadius: "2px",
     disabledColor: theme.colors.secondary_60,

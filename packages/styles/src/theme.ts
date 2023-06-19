@@ -11,6 +11,9 @@ import * as tokens from "./tokens";
 import { mapCSSVars } from "./utils";
 
 const componentsSpec: DeepString<HvThemeComponents> = {
+  actionBar: {
+    borderTop: "string",
+  },
   dropdown: {
     borderRadius: "string",
     disabledColor: "string",

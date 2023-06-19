@@ -20,6 +20,9 @@ export type HvThemeTokens = typeof flattenTokens;
 
 // Theme components
 export type HvThemeComponents = {
+  actionBar: {
+    borderTop: string;
+  };
   dropdown: {
     borderRadius: string;
     disabledColor: string;
