@@ -11,15 +11,16 @@ import {
 } from "echarts/components";
 import { CanvasRenderer } from "echarts/renderers";
 import * as echarts from "echarts/core";
-import { BarChart, LineChart } from "echarts/charts";
-import type {
+import {
+  BarChart,
   BarSeriesOption,
-  EChartsOption,
+  LineChart,
   LineSeriesOption,
-  YAXisComponentOption,
-} from "echarts";
+} from "echarts/charts";
+import type { YAXisComponentOption } from "echarts/types/dist/echarts";
 
-import ReactECharts from "echarts-for-react";
+import ReactECharts from "echarts-for-react/lib/core";
+import type { EChartsOption } from "echarts-for-react/lib/types";
 
 import { from, internal, not, table, desc } from "arquero";
 import type ColumnTable from "arquero/dist/types/table/column-table";
