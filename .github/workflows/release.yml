@@ -4,9 +4,6 @@ on:
   repository_dispatch:
     types: [release]
   workflow_dispatch:
-    branches:
-      - master
-      - "next*"
 
 jobs:
   publish:

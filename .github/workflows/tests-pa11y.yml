@@ -2,9 +2,6 @@ name: Pa11y
 
 on:
   workflow_dispatch:
-    branches:
-      - master
-      - "next*"
   workflow_call:
     secrets:
       ORG_GHPAGES_DEPLOY_KEY:
@@ -45,6 +42,7 @@ jobs:
         with:
           name: pa11y-report
           path: ${{ github.workspace }}/pa11y-ci-report
+          retention-days: 2
           
       - name: Deploy Artifacts
         if: always()

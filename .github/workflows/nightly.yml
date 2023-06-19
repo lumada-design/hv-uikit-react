@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: "0 5 * * *" # daily at 05:00
   workflow_dispatch:
-    branches:
-      - master
-      - "next*"
 
 env:
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"

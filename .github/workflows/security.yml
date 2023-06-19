@@ -2,9 +2,6 @@ name: Security Scans
 
 on:
   workflow_dispatch:
-    branches:
-      - master
-      - "next*"
   workflow_call:
     secrets:
       CODE_DX_URL:
@@ -45,6 +42,7 @@ jobs:
         with:
           name: dependency-check-reports
           path: ./reports
+          retention-days: 2
 
       - name: Upload Reports to CodeDX
         run: .github/scripts/codedx-upload.sh

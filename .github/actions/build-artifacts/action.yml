@@ -26,6 +26,7 @@ runs:
       with:
         name: documentation
         path: ${{ github.workspace }}/dist
+        retention-days: 2
 
     - name: Build App
       if: ${{ inputs.build-app == 'true' }}
@@ -38,3 +39,4 @@ runs:
       with: 
         name: app
         path: ${{ github.workspace }}/app/dist
+        retention-days: 2
