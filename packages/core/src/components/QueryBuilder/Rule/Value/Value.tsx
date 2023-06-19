@@ -3,9 +3,8 @@ import { memo, useContext } from "react";
 import { QueryBuilderContext } from "../../Context";
 import { BooleanValue } from "./BooleanValue";
 import { NumericValue } from "./NumericValue";
-import TextValue from "./TextValue/TextValue";
-
-// import DateTimeValue from "./DateTimeValue";
+import { TextValue } from "./TextValue";
+import { DateTimeValue } from "./DateTimeValue";
 
 export interface ValueProps {
   id: number;
@@ -41,7 +40,14 @@ export const Value = ({
       );
     }
     case "dateandtime": {
-      return <BooleanValue id={id} value={!!valueProp} />;
+      return (
+        <DateTimeValue
+          id={id}
+          operator={operator}
+          value={valueProp}
+          initialTouched={initialTouched}
+        />
+      );
     }
     case "text":
     case "textarea":

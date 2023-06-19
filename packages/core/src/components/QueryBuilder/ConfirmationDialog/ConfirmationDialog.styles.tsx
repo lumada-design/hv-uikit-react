@@ -1,10 +1,10 @@
 import { createClasses } from "@core/utils";
 
 export const { useClasses, staticClasses } = createClasses(
-  "HvQueryBuilder-TextValue",
+  "HvQueryBuilder-ConfirmationDialog",
   {
-    location: {
-      flexGrow: 1,
+    paper: {
+      width: 500,
     },
   }
 );
