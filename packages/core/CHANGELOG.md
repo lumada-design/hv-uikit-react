@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.15.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.14.1...@hitachivantara/uikit-react-core@5.15.0) (2023-06-19)
+
+### Bug Fixes
+
+- **BaseDropdown:** border styles & dedupe ([#3404](https://github.com/lumada-design/hv-uikit-react/issues/3404)) ([7ffab29](https://github.com/lumada-design/hv-uikit-react/commit/7ffab29a2f801193e1821d5ba0be293f2e358afb))
+- **Header:** fix incorrect height for the items on the Header ([6256028](https://github.com/lumada-design/hv-uikit-react/commit/6256028e476b100562500213ef2a3bc498acc17a))
+- **Input:** fix styles on the input label and info message ([089cff1](https://github.com/lumada-design/hv-uikit-react/commit/089cff168f9c1af754ffa2d6ae84be5aacdaec53))
+
+### Features
+
+- **TimePicker:** editable inline date ([5fb76b0](https://github.com/lumada-design/hv-uikit-react/commit/5fb76b0cc3a85b3e8d66c11c6915158dc5f6e322))
+- **Viz:** viz provider and line chart added ([#3376](https://github.com/lumada-design/hv-uikit-react/issues/3376)) ([18f67cc](https://github.com/lumada-design/hv-uikit-react/commit/18f67ccd0a8376c706ee1c478032cd046177a7f1))
+
 ## [5.14.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.14.0...@hitachivantara/uikit-react-core@5.14.1) (2023-06-07)
 
 ### Bug Fixes

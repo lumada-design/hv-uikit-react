@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.8.2 (2023-06-19)
+
+### Bug Fixes
+
+- **BaseDropdown:** border styles & dedupe ([#3404](https://github.com/lumada-design/hv-uikit-react/issues/3404)) ([7ffab29](https://github.com/lumada-design/hv-uikit-react/commit/7ffab29a2f801193e1821d5ba0be293f2e358afb))
+- **Input:** fix styles on the input label and info message ([089cff1](https://github.com/lumada-design/hv-uikit-react/commit/089cff168f9c1af754ffa2d6ae84be5aacdaec53))
+
 ## [5.8.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.8.0...@hitachivantara/uikit-styles@5.8.1) (2023-06-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles
