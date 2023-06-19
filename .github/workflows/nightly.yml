@@ -26,6 +26,8 @@ jobs:
   pa11y:
     name: Pa11y Tests
     uses: ./.github/workflows/tests-pa11y.yml
+    secrets:
+      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
 
   security-scans:
     name: Security Scans
