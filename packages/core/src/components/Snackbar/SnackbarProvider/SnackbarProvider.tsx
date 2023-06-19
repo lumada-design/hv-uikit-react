@@ -45,6 +45,7 @@ const HvNotistackSnackMessage = forwardRef<
         variant={variant}
         showIcon
         label={message}
+        role="none"
         {...snackbarContentProps}
       />
     </SnackbarContent>
