@@ -79,3 +79,4 @@ export * from "./TimeAgo";
 export * from "./QueryBuilder";
 export * from "./ColorPicker";
 export * from "./Carousel";
+export * from "./TimePicker";
