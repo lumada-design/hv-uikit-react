@@ -1,11 +1,11 @@
 import { HvBaseProps } from "@core/types";
-import { ClassNames } from "@emotion/react";
-import { setId } from "@core/utils";
+import { ExtractNames, setId } from "@core/utils";
 import { HvTypographyProps } from "@core/components";
-import horizontalScrollListItemClasses, {
-  HvHorizontalScrollListItemClasses,
-} from "./horizontalScrollListItemClasses";
-import { styles } from "./HorizontalScrollListItem.styles";
+import { staticClasses, useClasses } from "./HorizontalScrollListItem.styles";
+
+export { staticClasses as horizontalScrollListItemClasses };
+
+export type HvHorizontalScrollListItemClasses = ExtractNames<typeof useClasses>;
 
 export interface HvVerticalScrollListItemProps extends HvBaseProps {
   /** The text to render.  */
@@ -33,7 +33,7 @@ export interface HvVerticalScrollListItemProps extends HvBaseProps {
 export const HvHorizontalScrollListItem = ({
   id,
   className,
-  classes,
+  classes: classesProp,
   selected,
   children,
   onClick,
@@ -41,55 +41,32 @@ export const HvHorizontalScrollListItem = ({
   tooltipWrapper,
   ...others
 }: HvVerticalScrollListItemProps) => {
+  const { classes, cx } = useClasses(classesProp);
   const variant = selected ? "label" : "body";
   const labelId = setId(id, "label");
   const buttonId = setId(id, "button");
   const Tooltip = tooltipWrapper;
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <li
-          id={id}
-          className={cx(
-            horizontalScrollListItemClasses.root,
-            css(styles.root),
-            className,
-            classes?.root
-          )}
-          aria-current={selected}
+    <li id={id} className={cx(className, classes.root)} aria-current={selected}>
+      <div
+        id={buttonId}
+        role="button"
+        tabIndex={0}
+        onClick={onClick}
+        onKeyDown={onKeyDown}
+        className={classes.button}
+        aria-labelledby={labelId}
+        {...others}
+      >
+        <Tooltip
+          id={labelId}
+          className={cx(classes.text, { [classes.selected]: selected })}
+          variant={variant}
         >
-          <div
-            id={buttonId}
-            role="button"
-            tabIndex={0}
-            onClick={onClick}
-            onKeyDown={onKeyDown}
-            className={cx(
-              horizontalScrollListItemClasses.button,
-              css(styles.button),
-              classes?.button
-            )}
-            aria-labelledby={labelId}
-            {...others}
-          >
-            <Tooltip
-              id={labelId}
-              className={cx(
-                horizontalScrollListItemClasses.text,
-                selected && horizontalScrollListItemClasses.selected,
-                css(styles.text),
-                selected && css(styles.selected),
-                classes?.text,
-                selected && classes?.selected
-              )}
-              variant={variant}
-            >
-              {children}
-            </Tooltip>
-          </div>
-        </li>
-      )}
-    </ClassNames>
+          {children}
+        </Tooltip>
+      </div>
+    </li>
   );
 };

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { ClassNames } from "@emotion/react";
 import capitalize from "lodash/capitalize";
 import {
   CSSProperties,
@@ -12,17 +11,25 @@ import {
 } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "@core/utils/transientOptions";
-import { checkValidHexColorValue, getVarValue, hexToRgbA } from "@core/utils";
+import {
+  checkValidHexColorValue,
+  ExtractNames,
+  getVarValue,
+  hexToRgbA,
+} from "@core/utils";
 import { useTheme } from "@core/hooks";
 import {
   HvTableCellAlign,
   HvTableCellType,
   HvTableCellVariant,
 } from "../Table";
-import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
-import { styles } from "./TableCell.styles";
+import { staticClasses, useClasses } from "./TableCell.styles";
+
+export { staticClasses as tableCellClasses };
+
+export type HvTableCellClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTableCellProps
   extends Omit<TdHTMLAttributes<HTMLTableCellElement>, "align"> {
@@ -82,12 +89,12 @@ const StyledTableCell = (c: any) =>
     transientOptions
   )(({ $stickyColumn, $type, $sortedColor }: StyledTableCellProps) => ({
     ...($type === "body" && {
-      [`&.${tableCellClasses.sorted}`]: {
+      [`&.${staticClasses.sorted}`]: {
         backgroundColor: $sortedColor,
       },
     }),
     ...($stickyColumn && {
-      [`&.${tableCellClasses.sorted}`]: {
+      [`&.${staticClasses.sorted}`]: {
         backgroundImage: `linear-gradient(to right, ${$sortedColor}, ${$sortedColor})`,
       },
     }),
@@ -97,13 +104,13 @@ const StyledTableCell = (c: any) =>
  * `HvTableCell` acts as a `td` element and inherits styles from its context
  */
 export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
-  (
-    {
+  (props, externalRef) => {
+    const {
       children,
       component,
       className,
       style,
-      classes,
+      classes: classesProp,
       align = "inherit",
       variant = "default",
       type: typeProp,
@@ -116,9 +123,8 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
       resizable = false,
       resizing = false,
       ...others
-    },
-    externalRef
-  ) => {
+    } = props;
+    const { classes, cx } = useClasses(classesProp);
     const { activeTheme, selectedMode } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
@@ -157,103 +163,32 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
     ]);
 
     return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <TableCell
-            ref={externalRef}
-            role={Component === defaultComponent ? null : "cell"}
-            style={style}
-            className={cx(
-              tableCellClasses.root,
-              className,
-              classes?.root,
-              css(styles.root),
-              tableCellClasses[type],
-              classes?.[type],
-              css(styles[type]),
-              align !== "inherit" &&
-                cx(
-                  tableCellClasses[`align${capitalize(align)}`],
-                  classes?.[`align${capitalize(align)}`],
-                  css(styles[`align${capitalize(align)}`])
-                ),
-              tableContext.variant === "listrow" &&
-                cx(
-                  tableCellClasses.variantList,
-                  classes?.variantList,
-                  css(styles.variantList)
-                ),
-              tableContext.variant === "listrow" &&
-                type !== "body" &&
-                cx(
-                  tableCellClasses.variantListHead,
-                  classes?.variantListHead,
-                  css(styles.variantListHead)
-                ),
-              variant !== "default" &&
-                cx(
-                  tableCellClasses[`variant${capitalize(variant)}`],
-                  classes?.[`variant${capitalize(variant)}`],
-                  css(styles[`variant${capitalize(variant)}`])
-                ),
-              sorted &&
-                cx(
-                  tableCellClasses.sorted,
-                  classes?.sorted,
-                  css(styles.sorted)
-                ),
-              stickyColumn &&
-                cx(
-                  tableCellClasses.stickyColumn,
-                  classes?.stickyColumn,
-                  css(styles.stickyColumn)
-                ),
-              stickyColumnMostLeft &&
-                cx(
-                  tableCellClasses.stickyColumnMostLeft,
-                  classes?.stickyColumnMostLeft,
-                  css(styles.stickyColumnMostLeft)
-                ),
-              stickyColumnLeastRight &&
-                cx(
-                  tableCellClasses.stickyColumnLeastRight,
-                  classes?.stickyColumnLeastRight,
-                  css(styles.stickyColumnLeastRight)
-                ),
-              groupColumnMostLeft &&
-                cx(
-                  tableCellClasses.groupColumnMostLeft,
-                  classes?.groupColumnMostLeft,
-                  css(styles.groupColumnMostLeft)
-                ),
-              groupColumnMostRight &&
-                cx(
-                  tableCellClasses.groupColumnMostRight,
-                  classes?.groupColumnMostRight,
-                  css(styles.groupColumnMostRight)
-                ),
-              resizable &&
-                cx(
-                  tableCellClasses.resizable,
-                  classes?.resizable,
-                  css(styles.resizable)
-                ),
-              resizing &&
-                cx(
-                  tableCellClasses.resizing,
-                  classes?.resizing,
-                  css(styles.resizing)
-                )
-            )}
-            $type={type}
-            $stickyColumn={stickyColumn}
-            $sortedColor={sortedColor}
-            {...others}
-          >
-            {children}
-          </TableCell>
-        )}
-      </ClassNames>
+      <TableCell
+        ref={externalRef}
+        role={Component === defaultComponent ? null : "cell"}
+        style={style}
+        className={cx(className, classes.root, classes[type], {
+          [classes[`align${capitalize(align)}`]]: align !== "inherit",
+          [classes.variantList]: tableContext.variant === "listrow",
+          [classes.variantListHead]:
+            tableContext.variant === "listrow" && type !== "body",
+          [classes[`variant${capitalize(variant)}`]]: variant !== "default",
+          [classes.sorted]: sorted,
+          [classes.stickyColumn]: stickyColumn,
+          [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
+          [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
+          [classes.groupColumnMostLeft]: groupColumnMostLeft,
+          [classes.groupColumnMostRight]: groupColumnMostRight,
+          [classes.resizable]: resizable,
+          [classes.resizing]: resizing,
+        })}
+        $type={type}
+        $stickyColumn={stickyColumn}
+        $sortedColor={sortedColor}
+        {...others}
+      >
+        {children}
+      </TableCell>
     );
   }
 );

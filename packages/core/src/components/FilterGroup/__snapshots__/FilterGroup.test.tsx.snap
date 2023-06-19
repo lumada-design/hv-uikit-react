@@ -6,11 +6,11 @@ exports[`FilterGroup > should render correctly 1`] = `
     style="width: 180px;"
   >
     <div
-      class="HvFilterGroup-root HvFormElement-root"
+      class="HvFilterGroup-root hv-0 HvFormElement-root"
       id="filter-group-main"
     >
       <div
-        class="HvBaseDropdown-root HvFilterGroupContent-dropdown css-1nukton-StyledRoot eapzthe8"
+        class="HvBaseDropdown-root HvFilterGroupContent-dropdown hv-0 css-1nukton-StyledRoot eapzthe8"
       >
         <div
           aria-expanded="false"
@@ -21,13 +21,13 @@ exports[`FilterGroup > should render correctly 1`] = `
           tabindex="-1"
         >
           <div
-            class="HvBaseDropdown-header HvFilterGroupContent-header css-1vsvx69-StyledHeaderRoot eapzthe6"
+            class="HvBaseDropdown-header HvFilterGroupContent-header hv-1h85zx css-4bvoko-StyledHeaderRoot eapzthe6"
             id="filter-group-main-dropdown-header"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection HvFilterGroupContent-baseDropdownSelection css-1n8at67-StyledSelection eapzthe5"
+              class="HvBaseDropdown-selection HvFilterGroupContent-baseDropdownSelection hv-fdnk2k css-14ov9q3-StyledSelection eapzthe5"
             >
               <div
                 class="css-f95wjz"
@@ -57,10 +57,10 @@ exports[`FilterGroup > should render correctly 1`] = `
               class="css-zsju0o-StyledAdornment eapzthe3"
             >
               <div
-                class="HvFilterGroupCounter-root css-xrd8ac"
+                class="HvFilterGroupCounter-root hv-xrd8ac"
               >
                 <p
-                  class="HvFilterGroupCounter-partialCounter css-atimhy"
+                  class="HvFilterGroupCounter-partialCounter hv-atimhy"
                 >
                   4
                 </p>

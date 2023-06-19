@@ -15,7 +15,13 @@ import {
   Search,
   Success,
 } from "@hitachivantara/uikit-react-icons";
-import { isBrowser, isKeypress, keyboardCodes, setId } from "@core/utils";
+import {
+  ExtractNames,
+  isBrowser,
+  isKeypress,
+  keyboardCodes,
+  setId,
+} from "@core/utils";
 import {
   HvBaseProps,
   HvExtraProps,
@@ -42,8 +48,7 @@ import {
   useLabels,
   useUniqueId,
 } from "@core/hooks";
-import { ClassNames } from "@emotion/react";
-import { styles } from "./Input.styles";
+import { staticClasses, useClasses } from "./Input.styles";
 import validationStates, {
   isValid,
   isInvalid,
@@ -57,7 +62,10 @@ import {
   computeValidationMessage,
   HvInputValidity,
 } from "../BaseInput/validations";
-import inputClasses, { HvInputClasses } from "./inputClasses";
+
+export { staticClasses as inputClasses };
+
+export type HvInputClasses = ExtractNames<typeof useClasses>;
 
 export interface HvInputProps
   extends HvBaseProps<
@@ -205,7 +213,7 @@ function eventTargetIsInsideContainer(container, event) {
  * A text input box is a graphical control element intended to enable the user to input text information to be used by the software.
  */
 export const HvInput = ({
-  classes,
+  classes: classesProp,
   className,
   id,
   name,
@@ -245,6 +253,7 @@ export const HvInput = ({
   inputProps = {},
   ...others
 }: HvInputProps) => {
+  const { classes, cx } = useClasses(classesProp);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const elementId = useUniqueId(id, "hvinput");
 
@@ -567,30 +576,21 @@ export const HvInput = ({
     }
 
     return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <HvAdornment
-            // Don't control visibility when the search icon is enabled
-            className={cx(
-              inputClasses.adornmentButton,
-              !showSearchIcon && inputClasses.iconClear,
-              css(styles.adornmentButton),
-              !showSearchIcon && css(styles.iconClear),
-              classes?.adornmentButton,
-              !showSearchIcon && classes?.iconClear
-            )}
-            onClick={handleClear}
-            aria-label={labels?.clearButtonLabel}
-            aria-controls={setId(elementId, "input")}
-            icon={<CloseXS />}
-          />
-        )}
-      </ClassNames>
+      <HvAdornment
+        // Don't control visibility when the search icon is enabled
+        className={cx(classes.adornmentButton, {
+          [classes.iconClear]: !showSearchIcon,
+        })}
+        onClick={handleClear}
+        aria-label={labels?.clearButtonLabel}
+        aria-controls={setId(elementId, "input")}
+        icon={<CloseXS />}
+      />
     );
   }, [
     showClear,
-    classes?.adornmentButton,
-    classes?.iconClear,
+    classes.adornmentButton,
+    classes.iconClear,
     showSearchIcon,
     handleClear,
     labels?.clearButtonLabel,
@@ -619,27 +619,19 @@ export const HvInput = ({
     }
 
     return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <HvAdornment
-            className={cx(
-              inputClasses.adornmentButton,
-              css(styles.adornmentButton),
-              classes?.adornmentButton
-            )}
-            onClick={hasOnEnter ? handleSearch : undefined}
-            aria-label={labels?.searchButtonLabel}
-            icon={<Search />}
-          />
-        )}
-      </ClassNames>
+      <HvAdornment
+        className={classes.adornmentButton}
+        onClick={hasOnEnter ? handleSearch : undefined}
+        aria-label={labels?.searchButtonLabel}
+        icon={<Search />}
+      />
     );
   }, [
     showSearchIcon,
     isEmptyValue,
     hasOnEnter,
     validationState,
-    classes?.adornmentButton,
+    classes.adornmentButton,
     handleSearch,
     labels?.searchButtonLabel,
   ]);
@@ -657,33 +649,25 @@ export const HvInput = ({
     }
 
     return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <HvTooltip
-            disableFocusListener
-            disableTouchListener
-            title={
-              <HvTypography>
-                {revealPassword
-                  ? labels?.revealPasswordButtonClickToHideTooltip
-                  : labels?.revealPasswordButtonClickToShowTooltip}
-              </HvTypography>
-            }
-          >
-            <HvAdornment
-              className={cx(
-                inputClasses.adornmentButton,
-                css(styles.adornmentButton),
-                classes?.adornmentButton
-              )}
-              onClick={handleRevealPassword}
-              aria-label={labels?.revealPasswordButtonLabel}
-              aria-controls={setId(elementId, "input")}
-              icon={revealPassword ? <PreviewOff /> : <Preview />}
-            />
-          </HvTooltip>
-        )}
-      </ClassNames>
+      <HvTooltip
+        disableFocusListener
+        disableTouchListener
+        title={
+          <HvTypography>
+            {revealPassword
+              ? labels?.revealPasswordButtonClickToHideTooltip
+              : labels?.revealPasswordButtonClickToShowTooltip}
+          </HvTypography>
+        }
+      >
+        <HvAdornment
+          className={classes.adornmentButton}
+          onClick={handleRevealPassword}
+          aria-label={labels?.revealPasswordButtonLabel}
+          aria-controls={setId(elementId, "input")}
+          icon={revealPassword ? <PreviewOff /> : <Preview />}
+        />
+      </HvTooltip>
     );
   }, [
     showRevealPasswordButton,
@@ -691,7 +675,7 @@ export const HvInput = ({
     labels?.revealPasswordButtonClickToHideTooltip,
     labels?.revealPasswordButtonClickToShowTooltip,
     labels?.revealPasswordButtonLabel,
-    classes?.adornmentButton,
+    classes.adornmentButton,
     handleRevealPassword,
     elementId,
   ]);
@@ -705,36 +689,17 @@ export const HvInput = ({
       return null;
     }
 
-    return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <Success
-            semantic="positive"
-            className={cx(inputClasses.icon, css(styles.icon), classes?.icon)}
-          />
-        )}
-      </ClassNames>
-    );
-  }, [showValidationIcon, validationState, classes?.icon]);
+    return <Success semantic="positive" className={classes.icon} />;
+  }, [showValidationIcon, validationState, classes.icon]);
 
   // useMemo to avoid repetitive cloning of the custom icon
   const customIconEl = useMemo(
     () =>
-      isValidElement(endAdornment) && (
-        <ClassNames>
-          {({ css, cx }) =>
-            React.cloneElement(endAdornment as React.ReactElement, {
-              className: cx(
-                inputClasses.icon,
-                css(styles.icon),
-                endAdornment.props.className,
-                classes?.icon
-              ),
-            })
-          }
-        </ClassNames>
-      ),
-    [classes?.icon, endAdornment]
+      isValidElement(endAdornment) &&
+      React.cloneElement(endAdornment as React.ReactElement, {
+        className: cx(endAdornment.props.className, classes.icon),
+      }),
+    [classes.icon, endAdornment]
   );
 
   const adornments = useMemo(() => {
@@ -750,26 +715,15 @@ export const HvInput = ({
     // note: specification implies that the custom icon should be hidden when
     // a validation feedback icon is being shown.
     return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <div
-            className={cx(
-              inputClasses.adornmentsBox,
-              css(styles.adornmentsBox),
-              classes?.adornmentsBox
-            )}
-            aria-hidden="true"
-          >
-            {clearButton}
-            {revealPasswordButton}
-            {searchButton}
-            {validationIcon || customIconEl}
-          </div>
-        )}
-      </ClassNames>
+      <div className={classes.adornmentsBox} aria-hidden="true">
+        {clearButton}
+        {revealPasswordButton}
+        {searchButton}
+        {validationIcon || customIconEl}
+      </div>
     );
   }, [
-    classes?.adornmentsBox,
+    classes.adornmentsBox,
     clearButton,
     customIconEl,
     revealPasswordButton,
@@ -797,175 +751,121 @@ export const HvInput = ({
   }
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvFormElement
-          id={id}
-          name={name}
-          status={validationState}
-          disabled={disabled}
-          required={required}
-          readOnly={readOnly}
-          className={cx(
-            inputClasses.root,
-            hasSuggestions && inputClasses.hasSuggestions,
-            css(styles.root),
-            className,
-            classes?.root,
-            hasSuggestions && classes?.hasSuggestions
+    <HvFormElement
+      id={id}
+      name={name}
+      status={validationState}
+      disabled={disabled}
+      required={required}
+      readOnly={readOnly}
+      className={cx(className, classes.root, {
+        [classes.hasSuggestions]: hasSuggestions,
+      })}
+      onBlur={onContainerBlurHandler}
+    >
+      {(hasLabel || hasDescription) && (
+        <div className={classes.labelContainer}>
+          {hasLabel && (
+            <HvLabel
+              id={setId(elementId, "label")}
+              className={classes.label}
+              htmlFor={setId(elementId, "input")}
+              label={label}
+            />
           )}
-          onBlur={onContainerBlurHandler}
-        >
-          {(hasLabel || hasDescription) && (
-            <div
-              className={cx(
-                inputClasses.labelContainer,
-                css(styles.labelContainer),
-                classes?.labelContainer
-              )}
+
+          {hasDescription && (
+            <HvInfoMessage
+              id={setId(elementId, "description")}
+              className={classes.description}
             >
-              {hasLabel && (
-                <HvLabel
-                  id={setId(elementId, "label")}
-                  className={cx(
-                    inputClasses.label,
-                    css(styles.label),
-                    classes?.label
-                  )}
-                  htmlFor={setId(elementId, "input")}
-                  label={label}
-                />
-              )}
-
-              {hasDescription && (
-                <HvInfoMessage
-                  id={setId(elementId, "description")}
-                  className={cx(inputClasses.description, classes?.description)}
-                >
-                  {description}
-                </HvInfoMessage>
-              )}
-            </div>
+              {description}
+            </HvInfoMessage>
           )}
-          <HvBaseInput
-            id={
-              hasLabel || showClear || showRevealPasswordButton
-                ? setId(elementId, "input")
-                : setId(id, "input")
-            }
-            name={name}
-            value={value}
-            required={required}
-            readOnly={readOnly}
-            disabled={disabled}
-            onChange={onChangeHandler}
-            autoFocus={autoFocus}
-            onKeyDown={onKeyDownHandler}
-            onBlur={onInputBlurHandler}
-            onFocus={onFocusHandler}
-            placeholder={placeholder}
-            type={realType}
-            classes={{
-              input: cx(inputClasses.input, css(styles.input), classes?.input),
-              inputRoot: cx(
-                inputClasses.inputRoot,
-                css(styles.inputRoot),
-                classes?.inputRoot
-              ),
-              inputRootFocused: cx(
-                inputClasses.inputRootFocused,
-                css(styles.inputRootFocused),
-                classes?.inputRootFocused
-              ),
-              inputRootDisabled: cx(
-                inputClasses.inputRootDisabled,
-                css(styles.inputRootDisabled),
-                classes?.inputRootDisabled
-              ),
-              inputRootMultiline: cx(
-                inputClasses.inputRootMultiline,
-                css(styles.inputRootMultiline),
-                classes?.inputRootMultiline
-              ),
-              inputBorderContainer: cx(
-                inputClasses.inputBorderContainer,
-                css(styles.inputBorderContainer),
-                classes?.inputBorderContainer
-              ),
-            }}
-            invalid={isStateInvalid}
-            inputProps={{
-              "aria-label": ariaLabel,
-              "aria-labelledby": ariaLabelledBy,
-              "aria-invalid": isStateInvalid ? true : undefined,
-              "aria-errormessage": errorMessageId,
-              "aria-describedby":
-                ariaDescribedBy != null
-                  ? ariaDescribedBy
-                  : description
-                  ? setId(elementId, "description")
-                  : undefined,
-              "aria-controls": canShowSuggestions
-                ? setId(elementId, "suggestions")
-                : undefined,
-
-              ref: materialInputRef,
-
-              // prevent browsers auto-fill/suggestions when we have our own
-              autoComplete: canShowSuggestions ? "off" : undefined,
-
-              ...inputProps,
-            }}
-            inputRef={inputRefProp || inputRef}
-            endAdornment={adornments}
-            {...others}
-          />
-          {canShowSuggestions && (
-            <>
-              {hasSuggestions && (
-                <div
-                  role="presentation"
-                  className={cx(
-                    inputClasses.inputExtension,
-                    css(styles.inputExtension),
-                    classes?.inputExtension
-                  )}
-                />
-              )}
-              <HvSuggestions
-                id={setId(elementId, "suggestions")}
-                classes={{
-                  root: cx(
-                    inputClasses.suggestionsContainer,
-                    css(styles.suggestionsContainer),
-                    classes?.suggestionsContainer
-                  ),
-                  list: cx(
-                    inputClasses.suggestionList,
-                    css(styles.suggestionList),
-                    classes?.suggestionList
-                  ),
-                }}
-                expanded={hasSuggestions}
-                anchorEl={inputRef?.current?.parentElement}
-                onClose={suggestionClearHandler}
-                onKeyDown={onSuggestionKeyDown}
-                onSuggestionSelected={suggestionSelectedHandler}
-                suggestionValues={suggestionValues}
-              />
-            </>
-          )}
-          {canShowError && (
-            <HvWarningText
-              id={setId(elementId, "error")}
-              disableBorder
-              className={cx(inputClasses.error, classes?.error)}
-            >
-              {validationMessage}
-            </HvWarningText>
-          )}
-        </HvFormElement>
+        </div>
       )}
-    </ClassNames>
+      <HvBaseInput
+        id={
+          hasLabel || showClear || showRevealPasswordButton
+            ? setId(elementId, "input")
+            : setId(id, "input")
+        }
+        name={name}
+        value={value}
+        required={required}
+        readOnly={readOnly}
+        disabled={disabled}
+        onChange={onChangeHandler}
+        autoFocus={autoFocus}
+        onKeyDown={onKeyDownHandler}
+        onBlur={onInputBlurHandler}
+        onFocus={onFocusHandler}
+        placeholder={placeholder}
+        type={realType}
+        classes={{
+          input: classes.input,
+          inputRoot: classes.inputRoot,
+          inputRootFocused: classes.inputRootFocused,
+          inputRootDisabled: classes.inputRootDisabled,
+          inputRootMultiline: classes.inputRootMultiline,
+          inputBorderContainer: classes.inputBorderContainer,
+        }}
+        invalid={isStateInvalid}
+        inputProps={{
+          "aria-label": ariaLabel,
+          "aria-labelledby": ariaLabelledBy,
+          "aria-invalid": isStateInvalid ? true : undefined,
+          "aria-errormessage": errorMessageId,
+          "aria-describedby":
+            ariaDescribedBy != null
+              ? ariaDescribedBy
+              : description
+              ? setId(elementId, "description")
+              : undefined,
+          "aria-controls": canShowSuggestions
+            ? setId(elementId, "suggestions")
+            : undefined,
+
+          ref: materialInputRef,
+
+          // prevent browsers auto-fill/suggestions when we have our own
+          autoComplete: canShowSuggestions ? "off" : undefined,
+
+          ...inputProps,
+        }}
+        inputRef={inputRefProp || inputRef}
+        endAdornment={adornments}
+        {...others}
+      />
+      {canShowSuggestions && (
+        <>
+          {hasSuggestions && (
+            <div role="presentation" className={classes.inputExtension} />
+          )}
+          <HvSuggestions
+            id={setId(elementId, "suggestions")}
+            classes={{
+              root: classes.suggestionsContainer,
+              list: classes.suggestionList,
+            }}
+            expanded={hasSuggestions}
+            anchorEl={inputRef?.current?.parentElement}
+            onClose={suggestionClearHandler}
+            onKeyDown={onSuggestionKeyDown}
+            onSuggestionSelected={suggestionSelectedHandler}
+            suggestionValues={suggestionValues}
+          />
+        </>
+      )}
+      {canShowError && (
+        <HvWarningText
+          id={setId(elementId, "error")}
+          disableBorder
+          className={classes.error}
+        >
+          {validationMessage}
+        </HvWarningText>
+      )}
+    </HvFormElement>
   );
 };

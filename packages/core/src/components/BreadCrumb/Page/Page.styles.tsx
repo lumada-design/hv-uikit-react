@@ -1,8 +1,8 @@
-import { CSSInterpolation } from "@emotion/css";
+import { createClasses } from "@core/utils";
 import { outlineStyles } from "@hitachivantara/uikit-react-core";
 import { theme } from "@hitachivantara/uikit-styles";
 
-export const styles = {
+export const { staticClasses, useClasses } = createClasses("HvPage", {
   link: {
     padding: `8px ${theme.space.xs}`,
     borderRadius: theme.radii.base,
@@ -19,4 +19,6 @@ export const styles = {
       ...outlineStyles,
     },
   },
-} satisfies Record<string, CSSInterpolation>;
+  label: {},
+  a: {},
+});

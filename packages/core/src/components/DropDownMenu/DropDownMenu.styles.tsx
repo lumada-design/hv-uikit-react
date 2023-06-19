@@ -1,23 +1,22 @@
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "@core/utils";
-import { CSSInterpolation } from "@emotion/serialize";
-import dropDownMenuClasses, {
-  HvDropDownMenuClasses,
-} from "./dropDownMenuClasses";
+import { createClasses, outlineStyles } from "@core/utils";
 
-export const styles: Partial<
-  Record<keyof HvDropDownMenuClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
+  /** Styles applied to the container. */
   container: {
     width: 32,
   },
+  /** Styles applied to the BaseDropdown container. */
+  baseContainer: {},
+  /** Styles applied to the root. */
   root: {
     display: "inline-block",
     width: "auto",
-    [`&.focus-visible .${dropDownMenuClasses.icon}`]: {
+    "&.focus-visible $icon": {
       ...outlineStyles,
     },
   },
+  /** Styles applied to the icon. */
   icon: {
     position: "relative",
     width: 32,
@@ -26,6 +25,7 @@ export const styles: Partial<
     borderRadius: theme.dropDownMenu.borderRadius,
     border: theme.dropDownMenu.borderClosed,
   },
+  /** Styles applied to the icon when selected. */
   iconSelected: {
     backgroundColor: theme.colors.atmo1,
     boxShadow: theme.colors.shadow,
@@ -41,5 +41,8 @@ export const styles: Partial<
     borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
     border: theme.dropDownMenu.borderOpened,
   },
+  /** Styles applied to the list root. */
   menuListRoot: {},
-};
+  /** Styles applied to the list. */
+  menuList: {},
+});

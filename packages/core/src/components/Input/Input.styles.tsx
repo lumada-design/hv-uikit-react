@@ -1,12 +1,12 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import { suggestionsClasses } from "@core/components";
-import { CSSInterpolation } from "@emotion/serialize";
-import inputClasses, { HvInputClasses } from "./inputClasses";
+import { createClasses } from "@core/utils";
 
-export const styles: Partial<Record<keyof HvInputClasses, CSSInterpolation>> = {
+export const { staticClasses, useClasses } = createClasses("HvInput", {
   root: { display: "block" },
   labelContainer: { display: "flex", alignItems: "flex-start" },
   label: { paddingBottom: "6px", display: "block" },
+  description: {},
   adornmentsBox: {
     display: "flex",
     flexDirection: "row",
@@ -23,6 +23,7 @@ export const styles: Partial<Record<keyof HvInputClasses, CSSInterpolation>> = {
     cursor: "pointer",
   },
   iconClear: { display: "none" },
+  hasSuggestions: {},
   suggestionsContainer: { width: "100%", position: "relative" },
   suggestionList: {
     [`& .${suggestionsClasses.root} .${suggestionsClasses.list} &`]: {
@@ -41,16 +42,16 @@ export const styles: Partial<Record<keyof HvInputClasses, CSSInterpolation>> = {
   },
   inputRoot: {
     ":hover": {
-      [`& .${inputClasses.iconClear}`]: {
+      "& $iconClear": {
         display: "block",
       },
     },
-    [`&:focus-within .${inputClasses.iconClear}`]: {
+    ":focus-within $iconClear": {
       display: "block",
     },
   },
   inputRootFocused: {
-    [`& .${inputClasses.iconClear}`]: {
+    "& $iconClear": {
       display: "block",
     },
   },
@@ -59,8 +60,9 @@ export const styles: Partial<Record<keyof HvInputClasses, CSSInterpolation>> = {
   },
   inputRootMultiline: { padding: 0 },
   inputBorderContainer: {
-    [`.${inputClasses.hasSuggestions} &`]: {
+    "$hasSuggestions &": {
       display: "none",
     },
   },
-};
+  error: {},
+});

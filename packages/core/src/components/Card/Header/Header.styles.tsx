@@ -1,10 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
-import { CSSInterpolation } from "@emotion/serialize";
-import { HvCardHeaderClasses } from "./headerClasses";
+import { createClasses } from "@core/utils";
 
-export const styles: Partial<
-  Record<keyof HvCardHeaderClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvCardHeader", {
   root: { padding: `15px ${theme.space.sm}`, position: "relative" },
   titleShort: {
     fontFamily: theme.fontFamily.body,
@@ -16,6 +13,7 @@ export const styles: Partial<
   subheader: {
     fontFamily: theme.fontFamily.body,
   },
+  content: {},
   action: {
     position: "absolute",
     right: 20,
@@ -24,4 +22,4 @@ export const styles: Partial<
     paddingLeft: theme.space.xs,
     top: "15px",
   },
-};
+});

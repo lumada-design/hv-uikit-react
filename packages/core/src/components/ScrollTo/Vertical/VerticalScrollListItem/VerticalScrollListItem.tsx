@@ -1,14 +1,13 @@
 import { HvBaseProps } from "@core/types";
-import { ClassNames } from "@emotion/react";
 import { HvTypographyProps } from "@core/components";
-import { setId } from "@core/utils";
-import { useCallback } from "react";
+import { ExtractNames, setId } from "@core/utils";
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
 import { useTheme } from "@core/hooks";
-import { styles } from "./VerticalScrollListItem.styles";
-import verticalScrollListItemClasses, {
-  HvVerticalScrollListItemClasses,
-} from "./verticalScrollListItemClasses";
+import { staticClasses, useClasses } from "./VerticalScrollListItem.styles";
+
+export { staticClasses as verticalScrollListItemClasses };
+
+export type HvVerticalScrollListItemClasses = ExtractNames<typeof useClasses>;
 
 export interface HvVerticalScrollListItemProps extends HvBaseProps {
   /** A function component that renders a typography wrapped with a tooltip. */
@@ -34,7 +33,7 @@ export interface HvVerticalScrollListItemProps extends HvBaseProps {
 export const HvVerticalScrollListItem = ({
   id,
   className,
-  classes,
+  classes: classesProp,
   selected,
   "aria-label": ariaLabel,
   onClick,
@@ -42,6 +41,7 @@ export const HvVerticalScrollListItem = ({
   tooltipWrapper,
   ...others
 }: HvVerticalScrollListItemProps) => {
+  const { classes, cx } = useClasses(classesProp);
   const { activeTheme } = useTheme();
 
   const variant: HvTypographyProps["variant"] = selected ? "label" : "body";
@@ -52,73 +52,32 @@ export const HvVerticalScrollListItem = ({
 
   const Tooltip = tooltipWrapper;
 
-  const NotSelected = useCallback(() => {
-    return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <div
-            className={cx(
-              verticalScrollListItemClasses.notSelected,
-              css(styles.notSelected),
-              classes?.notSelected
-            )}
-          />
-        )}
-      </ClassNames>
-    );
-  }, [classes?.notSelected]);
-
   const icon = selected ? (
     <CurrentStep
       height={activeTheme?.scrollTo.dotSelectedSize}
       width={activeTheme?.scrollTo.dotSelectedSize}
     />
   ) : (
-    <NotSelected />
+    <div className={cx(classes.notSelected)} />
   );
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <li
-          id={id}
-          className={cx(
-            verticalScrollListItemClasses.root,
-            css(styles.root),
-            className,
-            classes?.root
-          )}
-          aria-current={selected}
-        >
-          <div
-            id={buttonId}
-            role="button"
-            tabIndex={0}
-            onClick={onClick}
-            onKeyDown={onKeyDown}
-            className={cx(
-              verticalScrollListItemClasses.button,
-              css(styles.button),
-              classes?.button
-            )}
-            aria-label={ariaLabel}
-            aria-labelledby={labelId}
-            {...others}
-          >
-            <Tooltip
-              id={labelId}
-              className={cx(
-                verticalScrollListItemClasses.text,
-                css(styles.text),
-                classes?.text
-              )}
-              variant={variant}
-            >
-              {icon}
-            </Tooltip>
-          </div>
-        </li>
-      )}
-    </ClassNames>
+    <li id={id} className={cx(className, classes.root)} aria-current={selected}>
+      <div
+        id={buttonId}
+        role="button"
+        tabIndex={0}
+        onClick={onClick}
+        onKeyDown={onKeyDown}
+        className={classes.button}
+        aria-label={ariaLabel}
+        aria-labelledby={labelId}
+        {...others}
+      >
+        <Tooltip id={labelId} className={classes.text} variant={variant}>
+          {icon}
+        </Tooltip>
+      </div>
+    </li>
   );
 };

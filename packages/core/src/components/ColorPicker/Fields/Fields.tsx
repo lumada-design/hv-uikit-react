@@ -1,12 +1,13 @@
-import { ClassNames } from "@emotion/react";
 import { useEffect, useRef, useState } from "react";
-import { HvInput } from "@core/components";
 import { HSLColor, HSVColor, RGBColor } from "react-color";
 import * as color from "react-color/lib/helpers/color";
-import { styles } from "./Fields.styles";
-import colorPickerFieldsClasses, {
-  HvColorPickerFieldsClasses,
-} from "./fieldsClasses";
+import { HvInput } from "@core/components";
+import { ExtractNames } from "@core/utils";
+import { staticClasses, useClasses } from "./Fields.styles";
+
+export { staticClasses as colorPickerFieldsClasses };
+
+export type HvColorPickerFieldsClasses = ExtractNames<typeof useClasses>;
 
 interface FieldsProps {
   className?: string;
@@ -31,8 +32,9 @@ export const Fields = ({
   onChange,
   rgb,
   hex,
-  classes,
+  classes: classesProp,
 }: FieldsProps) => {
+  const { classes, cx } = useClasses(classesProp);
   const [internalHex, setInternalHex] = useState<string | undefined>(hex);
   const [internalRed, setInternalRed] = useState<number | undefined>(rgb?.r);
   const [internalGreen, setInternalGreen] = useState<number | undefined>(
@@ -123,70 +125,43 @@ export const Fields = ({
   };
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <div
-          className={cx(
-            colorPickerFieldsClasses.fields,
-            css(styles.fields),
-            className,
-            classes?.fields
-          )}
-        >
-          <HvInput
-            inputRef={hexInputRef}
-            className={cx(
-              colorPickerFieldsClasses.double,
-              css(styles.double),
-              classes?.double
-            )}
-            label="HEX"
-            value={internalHex?.replace("#", "")}
-            onChange={onChangeHex}
-            onBlur={() => setInternalHex(hex)}
-            disableClear
-          />
-          <HvInput
-            inputRef={redInputRef}
-            className={cx(
-              colorPickerFieldsClasses.single,
-              css(styles.single),
-              classes?.single
-            )}
-            label="R"
-            value={`${internalRed}`}
-            onChange={(event, value) => onChangeRbg(event, value, "r")}
-            onBlur={() => setInternalRed(rgb?.r)}
-            disableClear
-          />
-          <HvInput
-            inputRef={greenInputRef}
-            className={cx(
-              colorPickerFieldsClasses.single,
-              css(styles.single),
-              classes?.single
-            )}
-            label="G"
-            value={`${internalGreen}`}
-            onChange={(event, value) => onChangeRbg(event, value, "g")}
-            onBlur={() => setInternalGreen(rgb?.g)}
-            disableClear
-          />
-          <HvInput
-            inputRef={blueInputRef}
-            className={cx(
-              colorPickerFieldsClasses.single,
-              css(styles.single),
-              classes?.single
-            )}
-            label="B"
-            value={`${internalBlue}`}
-            onChange={(event, value) => onChangeRbg(event, value, "b")}
-            onBlur={() => setInternalBlue(rgb?.b)}
-            disableClear
-          />
-        </div>
-      )}
-    </ClassNames>
+    <div className={cx(className, classes.fields)}>
+      <HvInput
+        inputRef={hexInputRef}
+        className={classes.double}
+        label="HEX"
+        value={internalHex?.replace("#", "")}
+        onChange={onChangeHex}
+        onBlur={() => setInternalHex(hex)}
+        disableClear
+      />
+      <HvInput
+        inputRef={redInputRef}
+        className={classes.single}
+        label="R"
+        value={`${internalRed}`}
+        onChange={(event, value) => onChangeRbg(event, value, "r")}
+        onBlur={() => setInternalRed(rgb?.r)}
+        disableClear
+      />
+      <HvInput
+        inputRef={greenInputRef}
+        className={classes.single}
+        label="G"
+        value={`${internalGreen}`}
+        onChange={(event, value) => onChangeRbg(event, value, "g")}
+        onBlur={() => setInternalGreen(rgb?.g)}
+        disableClear
+      />
+      <HvInput
+        inputRef={blueInputRef}
+        className={classes.single}
+        label="B"
+        value={`${internalBlue}`}
+        onChange={(event, value) => onChangeRbg(event, value, "b")}
+        onBlur={() => setInternalBlue(rgb?.b)}
+        disableClear
+      />
+    </div>
   );
 };

@@ -1,8 +1,6 @@
-import { CSSInterpolation } from "@emotion/serialize";
-import { HvCardMediaClasses } from "./mediaClasses";
+import { createClasses } from "@core/utils";
 
-export const styles: Partial<
-  Record<keyof HvCardMediaClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvCardMedia", {
   root: { width: "100%" },
-};
+  media: {},
+});

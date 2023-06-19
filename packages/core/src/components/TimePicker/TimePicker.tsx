@@ -74,7 +74,7 @@ export interface HvTimePickerProps
   /** Id to be applied to the form element root node. */
   id?: string;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: Partial<HvTimePickerClasses>;
+  classes?: HvTimePickerClasses;
   /** Current value of the element when _controlled_. Follows the 24-hour format. */
   value?: HvTimePickerValue;
   /** Initial value of the element when _uncontrolled_. Follows the 24-hour format. */

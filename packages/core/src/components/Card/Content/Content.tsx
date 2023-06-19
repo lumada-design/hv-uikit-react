@@ -2,9 +2,12 @@ import { HvBaseProps } from "@core/types";
 import MuiCardContent, {
   CardContentProps as MuiCardContentProps,
 } from "@mui/material/CardContent";
-import { ClassNames } from "@emotion/react";
-import { styles } from "./Content.styles";
-import cardContentClasses, { HvCardContentClasses } from "./contentClasses";
+import { ExtractNames } from "@core/utils";
+import { staticClasses, useClasses } from "./Content.styles";
+
+export { staticClasses as cardContentClasses };
+
+export type HvCardContentClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCardContentProps
   extends Omit<MuiCardContentProps, "classes">,
@@ -19,29 +22,21 @@ export interface HvCardContentProps
 
 export const HvCardContent = ({
   id,
-  classes,
+  classes: classesProp,
   className,
   children,
   onClick,
   ...others
 }: HvCardContentProps) => {
+  const { classes, cx } = useClasses(classesProp);
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <MuiCardContent
-          id={id}
-          className={cx(
-            cardContentClasses.content,
-            css(styles.content),
-            className,
-            classes?.content
-          )}
-          onClick={onClick}
-          {...others}
-        >
-          {children}
-        </MuiCardContent>
-      )}
-    </ClassNames>
+    <MuiCardContent
+      id={id}
+      className={cx(classes.content, className)}
+      onClick={onClick}
+      {...others}
+    >
+      {children}
+    </MuiCardContent>
   );
 };

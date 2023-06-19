@@ -6,16 +6,18 @@ import {
   HvPanel,
   HvTypography,
 } from "@core/components";
-import { ClassNames } from "@emotion/react";
 import { Checkbox, ColorPicker } from "@hitachivantara/uikit-react-icons";
 import { ColorState } from "react-color";
 import { useControlled, useLabels, useTheme, useUniqueId } from "@core/hooks";
-import { setId } from "@core/utils";
+import { ExtractNames, setId } from "@core/utils";
 import { Picker } from "./Picker";
-import { styles } from "./ColorPicker.styles";
-import colorPickerClasses, { HvColorPickerClasses } from "./colorPickerClasses";
+import { staticClasses, useClasses } from "./ColorPicker.styles";
 import { PresetColors } from "./PresetColors";
 import { SavedColors } from "./SavedColors";
+
+export { staticClasses as colorPickerClasses };
+
+export type HvColorPickerClasses = ExtractNames<typeof useClasses>;
 
 export interface HvColorPickerProps {
   "aria-label"?: string;
@@ -105,7 +107,7 @@ export const HvColorPicker = ({
   description,
   "aria-describedby": ariaDescribedBy,
   className,
-  classes,
+  classes: classesProp,
   value,
   onChange,
   defaultValue = "",
@@ -139,6 +141,7 @@ export const HvColorPicker = ({
   onSavedColorRemoved,
   deleteSavedColorButtonArialLabel = "Delete saved color",
 }: HvColorPickerProps) => {
+  const { classes, css, cx } = useClasses(classesProp);
   const { activeTheme } = useTheme();
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
@@ -188,196 +191,132 @@ export const HvColorPicker = ({
   };
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvFormElement
-          id={id}
-          name={name}
-          disabled={disabled}
-          required={required}
-          className={cx(colorPickerClasses.root, className, classes?.root)}
-        >
-          {(hasLabel || hasDescription) && (
-            <div
-              className={cx(
-                colorPickerClasses.labelContainer,
-                css(styles.labelContainer),
-                classes?.labelContainer
-              )}
-            >
-              {hasLabel && (
-                <HvLabel
-                  id={setId(elementId, "label")}
-                  label={label}
-                  className={cx(
-                    colorPickerClasses.label,
-                    css(styles.label),
-                    classes?.label
-                  )}
-                />
-              )}
-
-              {hasDescription && (
-                <HvInfoMessage
-                  id={setId(elementId, "description")}
-                  className={cx(
-                    colorPickerClasses.description,
-                    classes?.description
-                  )}
-                >
-                  {description}
-                </HvInfoMessage>
-              )}
-            </div>
+    <HvFormElement
+      id={id}
+      name={name}
+      disabled={disabled}
+      required={required}
+      className={cx(className, classes.root)}
+    >
+      {(hasLabel || hasDescription) && (
+        <div className={classes.labelContainer}>
+          {hasLabel && (
+            <HvLabel
+              id={setId(elementId, "label")}
+              label={label}
+              className={classes.label}
+            />
           )}
-          <HvBaseDropdown
-            variableWidth
-            className={className}
-            expanded={isOpen}
-            onToggle={handleToggle}
-            onContainerCreation={setFocusToContent}
-            classes={{
-              root: iconOnly
-                ? cx(
-                    colorPickerClasses.dropdownRootIconOnly,
-                    css(styles.dropdownRootIconOnly),
-                    classes?.dropdownRootIconOnly
-                  )
-                : undefined,
-              selection: cx(iconOnly && css({ padding: 0 })),
-            }}
-            adornment={
-              iconOnly && color ? (
-                <Checkbox
-                  className={cx(
-                    colorPickerClasses.headerColorIconOnly,
-                    css(styles.headerColorIconOnly),
-                    classes?.headerColorIconOnly
-                  )}
-                  color={[color, "transparent"]}
-                />
-              ) : dropdownIcon === "colorPicker" ? (
-                <ColorPicker
-                  className={cx(
-                    colorPickerClasses.colorPickerIcon,
-                    css(styles.colorPickerIcon),
-                    classes?.colorPickerIcon
-                  )}
-                />
-              ) : undefined
-            }
-            placeholder={
-              iconOnly ? undefined : color ? (
-                <>
-                  <Checkbox
-                    className={cx(
-                      colorPickerClasses.headerColorIcon,
-                      css(styles.headerColorIcon),
-                      classes?.headerColorIcon
-                    )}
-                    color={[color, "transparent"]}
-                  />
-                  <HvTypography
-                    className={cx(
-                      colorPickerClasses.headerColorValue,
-                      css(styles.headerColorValue),
-                      classes?.headerColorValue
-                    )}
-                    variant={activeTheme?.colorPicker.inputValueVariant}
-                  >
-                    {color}
-                  </HvTypography>
-                </>
-              ) : (
-                placeholder
-              )
-            }
-            aria-label={ariaLabel}
-            aria-labelledby={
-              [label && setId(elementId, "label"), ariaLabelledBy]
-                .join(" ")
-                .trim() || undefined
-            }
-            aria-describedby={
-              [description && setId(elementId, "description"), ariaDescribedBy]
-                .join(" ")
-                .trim() || undefined
-            }
-          >
-            <HvPanel
-              className={cx(
-                colorPickerClasses.panel,
-                css(styles.panel),
-                classes?.panel
-              )}
+
+          {hasDescription && (
+            <HvInfoMessage
+              id={setId(elementId, "description")}
+              className={classes.description}
             >
-              <div
-                className={cx(
-                  colorPickerClasses.colorPicker,
-                  css(styles.colorPicker),
-                  classes?.colorPicker
-                )}
-              >
-                {recommendedColorsPosition === "top" && (
-                  <PresetColors
-                    className={cx(
-                      colorPickerClasses.recommendedColorsRoot,
-                      (showCustomColors || showSavedColors) &&
-                        css({
-                          paddingBottom:
-                            activeTheme?.colorPicker
-                              .recommendedColorsBottomPadding,
-                        }),
-                      classes?.recommendedColorsRoot
-                    )}
-                    colors={recommendedColors}
-                    onClick={handleSelect}
-                    title={
-                      showLabels ? labels?.recommendedColorsLabel : undefined
-                    }
-                  />
-                )}
-                {showCustomColors && (
-                  <Picker
-                    classes={{
-                      fields:
-                        recommendedColorsPosition === "bottom" ||
-                        showSavedColors
-                          ? cx(
-                              colorPickerClasses.pickerFields,
-                              css(styles.pickerFields),
-                              classes?.pickerFields
-                            )
-                          : undefined,
-                    }}
-                    title={showLabels ? labels?.customColorsLabel : undefined}
-                    color={color}
-                    onChange={handleSelect}
-                  />
-                )}
-                {showSavedColors && (
-                  <SavedColors
-                    colors={savedColors}
-                    onAddColor={handleAddColor}
-                    onClickColor={handleSelect}
-                    onRemoveColor={handleRemoveColor}
-                    deleteButtonArialLabel={deleteSavedColorButtonArialLabel}
-                  />
-                )}
-                {recommendedColorsPosition === "bottom" && (
-                  <PresetColors
-                    colors={recommendedColors}
-                    onClick={handleSelect}
-                    title={
-                      showLabels ? labels?.recommendedColorsLabel : undefined
-                    }
-                  />
-                )}
-              </div>
-            </HvPanel>
-          </HvBaseDropdown>
-        </HvFormElement>
+              {description}
+            </HvInfoMessage>
+          )}
+        </div>
       )}
-    </ClassNames>
+      <HvBaseDropdown
+        variableWidth
+        className={className}
+        expanded={isOpen}
+        onToggle={handleToggle}
+        onContainerCreation={setFocusToContent}
+        classes={{
+          root: cx({ [classes.dropdownRootIconOnly]: iconOnly }),
+          selection: cx(iconOnly && css({ padding: 0 })),
+        }}
+        adornment={
+          iconOnly && color ? (
+            <Checkbox
+              className={classes.headerColorIconOnly}
+              color={[color, "transparent"]}
+            />
+          ) : dropdownIcon === "colorPicker" ? (
+            <ColorPicker className={classes.colorPickerIcon} />
+          ) : undefined
+        }
+        placeholder={
+          iconOnly ? undefined : color ? (
+            <>
+              <Checkbox
+                className={classes.headerColorIcon}
+                color={[color, "transparent"]}
+              />
+              <HvTypography
+                className={classes.headerColorValue}
+                variant={activeTheme?.colorPicker.inputValueVariant}
+              >
+                {color}
+              </HvTypography>
+            </>
+          ) : (
+            placeholder
+          )
+        }
+        aria-label={ariaLabel}
+        aria-labelledby={
+          [label && setId(elementId, "label"), ariaLabelledBy]
+            .join(" ")
+            .trim() || undefined
+        }
+        aria-describedby={
+          [description && setId(elementId, "description"), ariaDescribedBy]
+            .join(" ")
+            .trim() || undefined
+        }
+      >
+        <HvPanel className={classes.panel}>
+          <div className={classes.colorPicker}>
+            {recommendedColorsPosition === "top" && (
+              <PresetColors
+                className={cx(
+                  (showCustomColors || showSavedColors) &&
+                    css({
+                      paddingBottom:
+                        activeTheme?.colorPicker.recommendedColorsBottomPadding,
+                    }),
+                  classes.recommendedColorsRoot
+                )}
+                colors={recommendedColors}
+                onClick={handleSelect}
+                title={showLabels ? labels?.recommendedColorsLabel : undefined}
+              />
+            )}
+            {showCustomColors && (
+              <Picker
+                classes={{
+                  fields: cx({
+                    [classes.pickerFields]:
+                      recommendedColorsPosition === "bottom" || showSavedColors,
+                  }),
+                }}
+                title={showLabels ? labels?.customColorsLabel : undefined}
+                color={color}
+                onChange={handleSelect}
+              />
+            )}
+            {showSavedColors && (
+              <SavedColors
+                colors={savedColors}
+                onAddColor={handleAddColor}
+                onClickColor={handleSelect}
+                onRemoveColor={handleRemoveColor}
+                deleteButtonArialLabel={deleteSavedColorButtonArialLabel}
+              />
+            )}
+            {recommendedColorsPosition === "bottom" && (
+              <PresetColors
+                colors={recommendedColors}
+                onClick={handleSelect}
+                title={showLabels ? labels?.recommendedColorsLabel : undefined}
+              />
+            )}
+          </div>
+        </HvPanel>
+      </HvBaseDropdown>
+    </HvFormElement>
   );
 };

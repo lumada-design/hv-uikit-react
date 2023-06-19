@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { ClassNames } from "@emotion/react";
+import { ExtractNames } from "@core/utils";
 import { HvFilterGroupContext } from "../FilterGroupContext";
-import { styles } from "./Counter.styles";
+import { staticClasses, useClasses } from "./Counter.styles";
 import { HvFilterGroupFilters, HvFilterGroupValue } from "../FilterGroup";
-import filterGroupCounterClasses, {
-  HvFilterGroupCounterClasses,
-} from "./counterClasses";
+
+export { staticClasses as filterGroupCounterClasses };
+
+export type HvFilterGroupCounterClasses = ExtractNames<typeof useClasses>;
 
 export interface HvFilterGroupCounterProps {
   className?: string;
@@ -30,8 +31,9 @@ const getExistingFiltersById = (
 export const HvFilterGroupCounter = ({
   className,
   id,
-  classes,
+  classes: classesProp,
 }: HvFilterGroupCounterProps) => {
+  const { classes, cx } = useClasses(classesProp);
   const {
     filterOptions,
     filterValues = [],
@@ -63,32 +65,13 @@ export const HvFilterGroupCounter = ({
   );
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <div
-          className={cx(
-            filterGroupCounterClasses.root,
-            css(styles.root),
-            className,
-            classes?.root
-          )}
-        >
-          {partialCounter > 0 ? (
-            <p
-              className={cx(
-                filterGroupCounterClasses.partialCounter,
-                css(styles.partialCounter),
-                classes?.partialCounter
-              )}
-            >
-              {partialCounter}
-            </p>
-          ) : (
-            partialCounter
-          )}
-          {` / ${totalCounter}`}
-        </div>
+    <div className={cx(className, classes.root)}>
+      {partialCounter > 0 ? (
+        <p className={classes.partialCounter}>{partialCounter}</p>
+      ) : (
+        partialCounter
       )}
-    </ClassNames>
+      {` / ${totalCounter}`}
+    </div>
   );
 };

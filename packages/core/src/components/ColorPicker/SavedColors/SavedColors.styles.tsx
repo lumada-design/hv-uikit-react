@@ -1,10 +1,9 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvColorPickerSavedColorsClasses } from "./savedColorsClasses";
 
-export const styles: Partial<
-  Record<keyof HvColorPickerSavedColorsClasses, CSSInterpolation>
-> = {
+const name = "HvColorPicker-SavedColors";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   addButton: {
     margin: theme.colorPicker.addSavedColorButtonMargin,
     width: theme.colorPicker.addSavedColorButtonWidth,
@@ -56,4 +55,4 @@ export const styles: Partial<
       "& > div": { height: 16, width: 16 },
     },
   },
-};
+});

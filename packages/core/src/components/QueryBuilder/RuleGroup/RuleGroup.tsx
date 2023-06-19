@@ -80,11 +80,7 @@ export const RuleGroup = ({
 
   const DeleteIcon = withTooltip(
     () => (
-      <Delete
-        className={cx({
-          [classes.topRemoveButtonDisabled]: readOnly,
-        })}
-      />
+      <Delete className={cx({ [classes.topRemoveButtonDisabled]: readOnly })} />
     ),
     level === 0 && labels.query?.delete?.tooltip
       ? labels.query?.delete?.tooltip
@@ -107,7 +103,7 @@ export const RuleGroup = ({
     <div
       className={cx(classes.root, {
         [classes.topGroup]: level === 0,
-        [classes.subGroup]: !(level === 0),
+        [classes.subGroup]: level > 0,
       })}
     >
       <HvGrid container>

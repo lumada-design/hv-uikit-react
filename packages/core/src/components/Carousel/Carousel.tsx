@@ -6,7 +6,6 @@ import React, {
   useState,
 } from "react";
 import useCarousel, { EmblaOptionsType } from "embla-carousel-react";
-import { ClassNames } from "@emotion/react";
 import {
   Backwards,
   Forwards,
@@ -15,20 +14,21 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvContainer, HvStack, HvTypography } from "@core/components";
 import { HvBaseProps } from "@core/types";
+import { ExtractNames } from "@core/utils";
 
-import styles, {
-  HvCarouselClasses,
-  carouselClasses as cc,
-} from "./Carousel.styles";
-import { makeClasses } from "./utils";
+import { staticClasses, useClasses } from "./Carousel.styles";
 
 const clamp = (num: number, max: number, min = 0) =>
   Math.min(Math.max(num, min), max);
 
+export { staticClasses as carouselClasses };
+
+export type HvCarouselClasses = ExtractNames<typeof useClasses>;
+
 export interface HvCarouselProps
   extends HvBaseProps<HTMLDivElement, "title" | "onChange"> {
   /** A Jss Object used to override or extend the styles applied. */
-  classes?: Partial<HvCarouselClasses>;
+  classes?: HvCarouselClasses;
   /** Height of the Slider container. If `undefined`, images will keep a 16/9 aspect-ratio */
   height?: CSSProperties["height"];
   /** Width of the thumbnail. Height will try to maintain a 16/9 aspect-ratio */
@@ -66,7 +66,7 @@ export interface HvCarouselProps
 export const HvCarousel = (props: HvCarouselProps) => {
   const {
     className,
-    classes: classesProp = {},
+    classes: classesProp,
     height: heightProp = "auto",
     thumbnailWidth = 90,
     title,
@@ -83,6 +83,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
     onChange,
     ...others
   } = props;
+  const { classes, cx } = useClasses(classesProp);
   const thumbnailsRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -155,153 +156,143 @@ export const HvCarousel = (props: HvCarouselProps) => {
   const showDots = showDotsProp ?? numSlides <= 5;
 
   return (
-    <ClassNames>
-      {({ css, cx }) => {
-        const classes = makeClasses(
-          { css, cx },
-          { cc, styles, classes: classesProp }
-        );
-        return (
-          <HvContainer
-            className={cx(classes.root, className, {
-              [classes.xs]: xs,
-              [classes.fullscreen]: isFullscreen,
-            })}
-            {...others}
+    <HvContainer
+      className={cx(classes.root, className, {
+        [classes.xs]: xs,
+        [classes.fullscreen]: isFullscreen,
+      })}
+      {...others}
+    >
+      {showTitle && (
+        <HvTypography variant="title2" className={classes.title}>
+          {title}
+        </HvTypography>
+      )}
+      <div className={classes.actions}>
+        {showFullscreen && (
+          <HvButton
+            icon
+            variant="secondaryGhost"
+            onClick={() => setIsFullscreen((curr) => !curr)}
+            className={classes.closeButton}
           >
-            {showTitle && (
-              <HvTypography variant="title2" className={classes.title}>
-                {title}
-              </HvTypography>
+            {isFullscreen ? (
+              <Close aria-label="Close" />
+            ) : (
+              <Fullscreen aria-label="Fullscreen" />
             )}
-            <div className={classes.actions}>
-              {showFullscreen && (
-                <HvButton
-                  icon
-                  variant="secondaryGhost"
-                  onClick={() => setIsFullscreen((curr) => !curr)}
-                  className={classes.closeButton}
-                >
-                  {isFullscreen ? (
-                    <Close aria-label="Close" />
-                  ) : (
-                    <Fullscreen aria-label="Fullscreen" />
-                  )}
-                </HvButton>
-              )}
-              {actions}
+          </HvButton>
+        )}
+        {actions}
+      </div>
+
+      <div className={classes.mainContainer}>
+        <div className={classes.controls}>
+          {showDots ? (
+            <div className={classes.dots}>
+              {Array.from(Array(numSlides)).map((el, index) => (
+                <span
+                  key={`circle-${index}`}
+                  className={cx(classes.dot, {
+                    [classes.dotSelected]: index === selectedIndex,
+                  })}
+                />
+              ))}
             </div>
-
-            <div className={classes.mainContainer}>
-              <div className={classes.controls}>
-                {showDots ? (
-                  <div className={classes.dots}>
-                    {Array.from(Array(numSlides)).map((el, index) => (
-                      <span
-                        key={`circle-${index}`}
-                        className={cx(classes.dot, {
-                          [classes.dotSelected]: index === selectedIndex,
-                        })}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <>
-                    <HvButton
-                      icon
-                      disabled={!canPrev}
-                      variant="secondaryGhost"
-                      aria-label="Backwards"
-                      onClick={handlePrevious}
-                    >
-                      <Backwards iconSize="XS" />
-                    </HvButton>
-                    <div className={classes.pageCounter}>
-                      {`${selectedIndex + 1} / ${numSlides}`}
-                    </div>
-                    <HvButton
-                      icon
-                      disabled={!canNext}
-                      variant="secondaryGhost"
-                      aria-label="Forwards"
-                      onClick={handleNext}
-                    >
-                      <Forwards iconSize="XS" />
-                    </HvButton>
-                  </>
-                )}
-              </div>
-
-              <div
-                className={cx(classes.main, {
-                  [classes.mainXs]: xs,
-                  [classes.mainFullscreen]: isFullscreen,
-                })}
+          ) : (
+            <>
+              <HvButton
+                icon
+                disabled={!canPrev}
+                variant="secondaryGhost"
+                aria-label="Backwards"
+                onClick={handlePrevious}
               >
-                {showCounter && (
-                  <div className={classes.counterContainer}>
-                    <span className={classes.counter}>
-                      {`${selectedIndex + 1}/${numSlides}`}
-                    </span>
-                  </div>
-                )}
-
-                {showSlideControls && (
-                  <div className={classes.slideControls}>
-                    <HvButton
-                      icon
-                      disabled={!canPrev}
-                      variant="secondary"
-                      aria-label="Backwards"
-                      onClick={handlePrevious}
-                    >
-                      <Backwards iconSize="XS" />
-                    </HvButton>
-                    <HvButton
-                      icon
-                      disabled={!canNext}
-                      variant="secondary"
-                      aria-label="Forwards"
-                      onClick={handleNext}
-                    >
-                      <Forwards iconSize="XS" />
-                    </HvButton>
-                  </div>
-                )}
-
-                <div
-                  ref={containerRef}
-                  style={{ height }}
-                  className={classes.slidesViewport}
-                >
-                  <div className={classes.slidesContainer}>{children}</div>
-                </div>
+                <Backwards iconSize="XS" />
+              </HvButton>
+              <div className={classes.pageCounter}>
+                {`${selectedIndex + 1} / ${numSlides}`}
               </div>
+              <HvButton
+                icon
+                disabled={!canNext}
+                variant="secondaryGhost"
+                aria-label="Forwards"
+                onClick={handleNext}
+              >
+                <Forwards iconSize="XS" />
+              </HvButton>
+            </>
+          )}
+        </div>
+
+        <div
+          className={cx(classes.main, {
+            [classes.mainXs]: xs,
+            [classes.mainFullscreen]: isFullscreen,
+          })}
+        >
+          {showCounter && (
+            <div className={classes.counterContainer}>
+              <span className={classes.counter}>
+                {`${selectedIndex + 1}/${numSlides}`}
+              </span>
             </div>
+          )}
 
-            {showThumbnails && (
-              <div ref={thumbnailsRef} className={classes.panel}>
-                <HvStack direction="row" spacing="xs">
-                  {Array.from(Array(numSlides)).map((doc, i) => (
-                    <HvButton
-                      icon
-                      variant="secondaryGhost"
-                      key={`button-${i}`}
-                      style={{ width: thumbnailWidth }}
-                      className={cx(classes.thumbnail, {
-                        [classes.thumbnailSelected]: i === selectedIndex,
-                      })}
-                      onClick={() => handleScroll(i)}
-                    >
-                      {renderThumbnail(i)}
-                    </HvButton>
-                  ))}
-                </HvStack>
-              </div>
-            )}
-          </HvContainer>
-        );
-      }}
-    </ClassNames>
+          {showSlideControls && (
+            <div className={classes.slideControls}>
+              <HvButton
+                icon
+                disabled={!canPrev}
+                variant="secondary"
+                aria-label="Backwards"
+                onClick={handlePrevious}
+              >
+                <Backwards iconSize="XS" />
+              </HvButton>
+              <HvButton
+                icon
+                disabled={!canNext}
+                variant="secondary"
+                aria-label="Forwards"
+                onClick={handleNext}
+              >
+                <Forwards iconSize="XS" />
+              </HvButton>
+            </div>
+          )}
+
+          <div
+            ref={containerRef}
+            style={{ height }}
+            className={classes.slidesViewport}
+          >
+            <div className={classes.slidesContainer}>{children}</div>
+          </div>
+        </div>
+      </div>
+
+      {showThumbnails && (
+        <div ref={thumbnailsRef} className={classes.panel}>
+          <HvStack direction="row" spacing="xs">
+            {Array.from(Array(numSlides)).map((doc, i) => (
+              <HvButton
+                icon
+                variant="secondaryGhost"
+                key={`button-${i}`}
+                style={{ width: thumbnailWidth }}
+                className={cx(classes.thumbnail, {
+                  [classes.thumbnailSelected]: i === selectedIndex,
+                })}
+                onClick={() => handleScroll(i)}
+              >
+                {renderThumbnail(i)}
+              </HvButton>
+            ))}
+          </HvStack>
+        </div>
+      )}
+    </HvContainer>
   );
 };

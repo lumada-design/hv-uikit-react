@@ -1,14 +1,11 @@
-import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvCardContentClasses } from "./contentClasses";
+import { createClasses } from "@core/utils";
 
-export const styles: Partial<
-  Record<keyof HvCardContentClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvCardContent", {
   content: {
     padding: `0 ${theme.space.sm} 15px ${theme.space.sm}`,
     "&:last-child": {
       paddingBottom: theme.space.sm,
     },
   },
-};
+});

@@ -5,15 +5,15 @@ import {
   HvPanel,
   HvTypography,
 } from "@core/components";
-import { setId } from "@core/utils";
+import { ExtractNames, setId } from "@core/utils";
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import cloneDeep from "lodash/cloneDeep";
-import { ClassNames } from "@emotion/react";
 import { HvFilterGroupContext } from "../FilterGroupContext";
-import { styles } from "./RightPanel.styles";
-import filterGroupRightPanelClasses, {
-  HvFilterGroupRightPanelClasses,
-} from "./rightPanelClasses";
+import { staticClasses, useClasses } from "./RightPanel.styles";
+
+export { staticClasses as filterGroupRightPanelClasses };
+
+export type HvFilterGroupRightPanelClasses = ExtractNames<typeof useClasses>;
 
 export interface HvFilterGroupRightPanelProps {
   id?: string;
@@ -32,8 +32,9 @@ export const HvFilterGroupRightPanel = ({
   className,
   labels,
   emptyElement,
-  classes,
+  classes: classesProp,
 }: HvFilterGroupRightPanelProps) => {
+  const { classes } = useClasses(classesProp);
   const [searchStr, setSearchStr] = useState<string>("");
   const [allSelected, setAllSelected] = useState<boolean>(false);
   const [anySelected, setAnySelected] = useState<boolean>(false);
@@ -132,30 +133,16 @@ export const HvFilterGroupRightPanel = ({
     );
 
     return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <div
-            className={cx(
-              filterGroupRightPanelClasses.selectAllContainer,
-              css(styles.selectAllContainer),
-              classes?.selectAllContainer
-            )}
-          >
-            <HvCheckBox
-              id={setId(id, "select-all")}
-              label={defaultLabel}
-              onChange={() => handleSelectAll()}
-              className={cx(
-                filterGroupRightPanelClasses.selectAll,
-                css(styles.selectAll),
-                classes?.selectAll
-              )}
-              indeterminate={anySelected && !allSelected}
-              checked={allSelected}
-            />
-          </div>
-        )}
-      </ClassNames>
+      <div className={classes.selectAllContainer}>
+        <HvCheckBox
+          id={setId(id, "select-all")}
+          label={defaultLabel}
+          onChange={() => handleSelectAll()}
+          className={classes.selectAll}
+          indeterminate={anySelected && !allSelected}
+          checked={allSelected}
+        />
+      </div>
     );
   }, [
     activeFilterValues?.length,
@@ -168,49 +155,37 @@ export const HvFilterGroupRightPanel = ({
   ]);
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvPanel id={setId(id, "rightPanel")} className={className}>
-          {listValues.length > 0 ? (
-            <>
-              <HvInput
-                id={setId(id, "search")}
-                classes={{
-                  root: cx(
-                    filterGroupRightPanelClasses.search,
-                    css(styles.search),
-                    classes?.search
-                  ),
-                }}
-                type="search"
-                placeholder={labels?.searchBoxPlaceholder}
-                value={searchStr}
-                onChange={(_, str) => setSearchStr(str)}
-              />
-              <SelectAll />
-              <HvList
-                key={activeGroup}
-                id={setId(id, "list")}
-                values={listValues}
-                className={cx(
-                  filterGroupRightPanelClasses.list,
-                  css(styles.list),
-                  classes?.list
-                )}
-                multiSelect
-                useSelector
-                showSelectAll={false}
-                onChange={onChangeHandler}
-                selectable
-                condensed
-                hasTooltips
-              />
-            </>
-          ) : (
-            emptyElement
-          )}
-        </HvPanel>
+    <HvPanel id={setId(id, "rightPanel")} className={className}>
+      {listValues.length > 0 ? (
+        <>
+          <HvInput
+            id={setId(id, "search")}
+            classes={{
+              root: classes.search,
+            }}
+            type="search"
+            placeholder={labels?.searchBoxPlaceholder}
+            value={searchStr}
+            onChange={(_, str) => setSearchStr(str)}
+          />
+          <SelectAll />
+          <HvList
+            key={activeGroup}
+            id={setId(id, "list")}
+            values={listValues}
+            className={classes.list}
+            multiSelect
+            useSelector
+            showSelectAll={false}
+            onChange={onChangeHandler}
+            selectable
+            condensed
+            hasTooltips
+          />
+        </>
+      ) : (
+        emptyElement
       )}
-    </ClassNames>
+    </HvPanel>
   );
 };

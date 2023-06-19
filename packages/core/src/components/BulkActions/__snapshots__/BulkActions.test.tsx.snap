@@ -150,12 +150,12 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
         </div>
       </button>
       <div
-        class="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu css-1u1foky-StyledRoot eapzthe8"
+        class="HvBaseDropdown-root HvDropDownMenu-root hv-5pn39y HvActionsGeneric-dropDownMenu css-1nukton-StyledRoot eapzthe8"
       >
         <div
           aria-expanded="false"
           aria-haspopup="menu"
-          class="HvDropDownMenu-container HvBaseDropdown-anchor HvBaseDropdown-rootDisabled css-mq7o8m-StyledAnchor eapzthe7"
+          class="HvDropDownMenu-container hv-1ty7gog HvBaseDropdown-anchor HvBaseDropdown-rootDisabled css-h3bduv-StyledAnchor eapzthe7"
           id="dropdown-menu16"
           tabindex="-1"
         >
@@ -163,7 +163,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
             aria-disabled="true"
             aria-expanded="false"
             aria-label="Dropdown menu"
-            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-root css-7qkesr-StyledButton e138pvrm0"
+            class="HvDropDownMenu-icon hv-xy4vrv HvActionsGeneric-dropDownMenuButton HvButton-root css-1fapl7x-StyledButton e138pvrm0"
             disabled=""
             id="dropdown-menu16-icon-button"
             tabindex="-1"

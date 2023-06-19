@@ -1,7 +1,6 @@
 import { HvBaseProps } from "@core/types";
-import { ClassNames } from "@emotion/react";
 import { useTheme, useUniqueId } from "@core/hooks";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { ExtractNames, isKeypress, keyboardCodes, setId } from "@core/utils";
 import { useCallback, useMemo } from "react";
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -12,12 +11,13 @@ import { HvScrollToTooltipPositions } from "../types";
 import { withTooltip } from "../withTooltip";
 import { HvHorizontalScrollListItem } from "./HorizontalScrollListItem";
 import { useScrollTo } from "../useScrollTo";
-import { styles } from "./ScrollToHorizontal.styles";
-import scrollToHorizontalClasses, {
-  HvScrollToHorizontalClasses,
-} from "./scrollToHorizontalClasses";
+import { staticClasses, useClasses } from "./ScrollToHorizontal.styles";
 
 const { Enter } = keyboardCodes;
+
+export { staticClasses as scrollToHorizontalClasses };
+
+export type HvScrollToHorizontalClasses = ExtractNames<typeof useClasses>;
 
 export interface HvScrollToHorizontalOption {
   key?: string;
@@ -82,13 +82,14 @@ export const HvScrollToHorizontal = ({
   onClick,
   onEnter,
   className,
-  classes,
+  classes: classesProp,
   options,
   offset = 0,
   position = "relative",
   tooltipPosition = "top",
   ...others
 }: HvScrollToHorizontalProps) => {
+  const { classes, css, cx } = useClasses(classesProp);
   const muiTheme = useMuiTheme();
 
   const downSm = useMediaQuery(muiTheme.breakpoints.down("sm"));
@@ -131,45 +132,21 @@ export const HvScrollToHorizontal = ({
 
   const NotSelected = useCallback(() => {
     return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <div
-            className={cx(
-              scrollToHorizontalClasses.notSelectedRoot,
-              css(styles.notSelectedRoot),
-              classes?.notSelectedRoot
-            )}
-          >
-            <div
-              className={cx(
-                scrollToHorizontalClasses.notSelected,
-                css(styles.notSelected),
-                classes?.notSelected
-              )}
-            />
-          </div>
-        )}
-      </ClassNames>
+      <div className={classes.notSelectedRoot}>
+        <div className={classes.notSelected} />
+      </div>
     );
-  }, [classes?.notSelectedRoot, classes?.notSelected]);
+  }, [classes.notSelectedRoot, classes.notSelected]);
 
   const Selected = useCallback(() => {
     return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <CurrentStep
-            height={activeTheme?.scrollTo.dotSelectedSize}
-            width={activeTheme?.scrollTo.dotSelectedSize}
-            className={cx(
-              scrollToHorizontalClasses.selected,
-              css(styles.selected),
-              classes?.selected
-            )}
-          />
-        )}
-      </ClassNames>
+      <CurrentStep
+        height={activeTheme?.scrollTo.dotSelectedSize}
+        width={activeTheme?.scrollTo.dotSelectedSize}
+        className={classes.selected}
+      />
     );
-  }, [classes?.selected, activeTheme?.scrollTo.dotSelectedSize]);
+  }, [classes.selected, activeTheme?.scrollTo.dotSelectedSize]);
 
   const tabs = options.map((option, index) => {
     const selected = selectedIndex === index;
@@ -199,47 +176,39 @@ export const HvScrollToHorizontal = ({
   });
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <ol
-          className={cx(
-            scrollToHorizontalClasses.root,
-            position === "sticky" && scrollToHorizontalClasses.positionSticky,
-            position === "fixed" && scrollToHorizontalClasses.positionFixed,
-            css(styles.root),
-            css({
-              width:
-                position === "fixed" && (upMd || downSm)
-                  ? `calc(100% - 2*${theme.spacing(upMd ? 4 : 2)})`
-                  : "100%",
-              marginTop: 0,
-              marginBottom: 0,
-              marginRight:
-                position === "fixed" && (upMd || downSm)
-                  ? theme.spacing(upMd ? 4 : 2)
-                  : 0,
-              marginLeft:
-                position === "fixed" && (upMd || downSm)
-                  ? theme.spacing(upMd ? 4 : 2)
-                  : 0,
-              backgroundColor: fade(
-                activeTheme?.colors.modes[selectedMode].atmo2,
-                activeTheme?.scrollTo.backgroundColorOpacity
-              ),
-            }),
-            position === "sticky" && css(styles.positionSticky),
-            position === "fixed" && css(styles.positionFixed),
-            className,
-            classes?.root,
-            position === "sticky" && classes?.positionSticky,
-            position === "fixed" && classes?.positionFixed
-          )}
-          id={elementId}
-          {...others}
-        >
-          {tabs}
-        </ol>
+    <ol
+      className={cx(
+        css({
+          width:
+            position === "fixed" && (upMd || downSm)
+              ? `calc(100% - 2*${theme.spacing(upMd ? 4 : 2)})`
+              : "100%",
+          marginTop: 0,
+          marginBottom: 0,
+          marginRight:
+            position === "fixed" && (upMd || downSm)
+              ? theme.spacing(upMd ? 4 : 2)
+              : 0,
+          marginLeft:
+            position === "fixed" && (upMd || downSm)
+              ? theme.spacing(upMd ? 4 : 2)
+              : 0,
+          backgroundColor: fade(
+            activeTheme?.colors.modes[selectedMode].atmo2,
+            activeTheme?.scrollTo.backgroundColorOpacity
+          ),
+        }),
+        className,
+        classes.root,
+        {
+          [classes.positionSticky]: position === "sticky",
+          [classes.positionFixed]: position === "fixed",
+        }
       )}
-    </ClassNames>
+      id={elementId}
+      {...others}
+    >
+      {tabs}
+    </ol>
   );
 };

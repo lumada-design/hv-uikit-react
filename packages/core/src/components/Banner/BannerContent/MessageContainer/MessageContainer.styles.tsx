@@ -1,10 +1,9 @@
-import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvMessageContainerClasses } from "./messageContainerClasses";
+import { createClasses } from "@core/utils";
 
-export const styles: Partial<
-  Record<keyof HvMessageContainerClasses, CSSInterpolation>
-> = {
+const name = "HvBannerMessageContainer";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   message: {
     color: theme.colors.base_dark,
     wordBreak: "break-word",
@@ -19,4 +18,4 @@ export const styles: Partial<
   actionMessageContainer: {
     flex: "0 0 auto",
   },
-};
+});

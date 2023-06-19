@@ -1,10 +1,9 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvFilterGroupRightPanelClasses } from "./rightPanelClasses";
 
-export const styles: Partial<
-  Record<keyof HvFilterGroupRightPanelClasses, CSSInterpolation>
-> = {
+const name = "HvFilterGroupRightPanel";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   search: {
     marginBottom: theme.spacing("xs"),
   },
@@ -32,4 +31,4 @@ export const styles: Partial<
   selectAll: {
     width: "100%",
   },
-};
+});

@@ -43,7 +43,7 @@ export interface HvBannerContentProps
   /** The props to pass down to the Action Container. */
   actionProps?: HvActionContainerProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: Partial<HvBannerContentClasses>;
+  classes?: HvBannerContentClasses;
 }
 
 export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(

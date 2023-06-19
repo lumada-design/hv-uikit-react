@@ -1,13 +1,9 @@
-import { outlineStyles } from "@core/utils";
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses, outlineStyles } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import verticalScrollListItemClasses, {
-  HvVerticalScrollListItemClasses,
-} from "./verticalScrollListItemClasses";
 
-export const styles: Partial<
-  Record<keyof HvVerticalScrollListItemClasses, CSSInterpolation>
-> = {
+const name = "HvVerticalScrollListItem";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   root: {
     padding: "0",
     height: "32px",
@@ -41,7 +37,7 @@ export const styles: Partial<
     "&:hover": {
       backgroundColor: theme.scrollTo.dotHoverBackgroundColor,
 
-      [`& .${verticalScrollListItemClasses.notSelected}`]: {
+      "& $notSelected": {
         height: theme.scrollTo.dotHoverSize,
         width: theme.scrollTo.dotHoverSize,
         backgroundColor: theme.scrollTo.dotHoverColor,
@@ -54,4 +50,4 @@ export const styles: Partial<
       ...outlineStyles,
     },
   },
-};
+});

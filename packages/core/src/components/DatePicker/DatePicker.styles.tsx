@@ -1,10 +1,7 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvDatePickerClasses } from "./datePickerClasses";
 
-export const styles: Partial<
-  Record<keyof HvDatePickerClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvDatePicker", {
   root: {
     position: "relative",
   },
@@ -43,4 +40,4 @@ export const styles: Partial<
       marginRight: theme.space.xs,
     },
   },
-};
+});

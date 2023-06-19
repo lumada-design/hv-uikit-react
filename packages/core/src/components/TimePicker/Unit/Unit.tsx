@@ -1,12 +1,11 @@
 import { KeyboardEvent } from "react";
-import { ClassNames } from "@emotion/react";
 import { DateFieldState, DateSegment } from "@react-stately/datepicker";
 import {
   DropDownXS as SubtractTimeIcon,
   DropUpXS as AddTimeIcon,
 } from "@hitachivantara/uikit-react-icons";
 import { HvInput, HvInputProps, HvToggleButton, theme } from "../../..";
-import { styles } from "./Unit.styles";
+import { useClasses } from "./Unit.styles";
 
 interface UnitProps {
   id?: string;
@@ -30,55 +29,47 @@ export const Unit = ({
   onAdd,
   onSub,
 }: UnitProps) => {
+  const { classes } = useClasses();
   const { type, text } = segment;
   const placeholder = placeholderProp ?? segment.placeholder;
 
   return (
-    <ClassNames>
-      {({ css }) => (
-        <div className={css(styles.root)}>
-          {type !== "literal" && <AddTimeIcon onClick={onAdd} />}
-          {type === "literal" && (
-            <div className={css(styles.separator)}>{text}</div>
-          )}
-          {type === "dayPeriod" && (
-            <HvToggleButton
-              className={css(styles.periodToggle)}
-              onClick={onAdd}
-            >
-              {text}
-            </HvToggleButton>
-          )}
-          {["hour", "minute", "second"].includes(type) && (
-            <HvInput
-              id={id}
-              disableClear
-              style={{
-                ...theme.typography.title3,
-              }}
-              classes={{
-                input: css(styles.input),
-                root: css(styles.inputContainer),
-                inputBorderContainer: css(styles.inputBorderContainer),
-                inputRoot: css(styles.inputRoot),
-              }}
-              onKeyDown={(event) => {
-                if ((event as KeyboardEvent).key === "Enter") {
-                  event.preventDefault();
-                  event.stopPropagation();
-                }
-              }}
-              required
-              status={state.validationState}
-              value={text.padStart(2, "0")}
-              onChange={onChange}
-              placeholder={placeholder}
-              inputProps={{ autoComplete: "off", type: "number" }}
-            />
-          )}
-          {type !== "literal" && <SubtractTimeIcon onClick={onSub} />}
-        </div>
+    <div className={classes.root}>
+      {type !== "literal" && <AddTimeIcon onClick={onAdd} />}
+      {type === "literal" && <div className={classes.separator}>{text}</div>}
+      {type === "dayPeriod" && (
+        <HvToggleButton className={classes.periodToggle} onClick={onAdd}>
+          {text}
+        </HvToggleButton>
       )}
-    </ClassNames>
+      {["hour", "minute", "second"].includes(type) && (
+        <HvInput
+          id={id}
+          disableClear
+          style={{
+            ...theme.typography.title3,
+          }}
+          classes={{
+            input: classes.input,
+            root: classes.inputContainer,
+            inputBorderContainer: classes.inputBorderContainer,
+            inputRoot: classes.inputRoot,
+          }}
+          onKeyDown={(event) => {
+            if ((event as KeyboardEvent).key === "Enter") {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+          }}
+          required
+          status={state.validationState}
+          value={text.padStart(2, "0")}
+          onChange={onChange}
+          placeholder={placeholder}
+          inputProps={{ autoComplete: "off", type: "number" }}
+        />
+      )}
+      {type !== "literal" && <SubtractTimeIcon onClick={onSub} />}
+    </div>
   );
 };

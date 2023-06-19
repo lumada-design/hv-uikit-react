@@ -1,10 +1,9 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvFilterGroupCounterClasses } from "./counterClasses";
 
-export const styles: Partial<
-  Record<keyof HvFilterGroupCounterClasses, CSSInterpolation>
-> = {
+const name = "HvFilterGroupCounter";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   root: {
     lineHeight: "34px",
     marginRight: 10,
@@ -13,4 +12,4 @@ export const styles: Partial<
     display: "inline-block",
     fontWeight: theme.filterGroup.partialCounterFontWeight,
   },
-};
+});

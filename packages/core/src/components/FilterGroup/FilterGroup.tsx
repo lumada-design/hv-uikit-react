@@ -7,15 +7,17 @@ import {
   HvWarningText,
 } from "@core/components";
 import { useControlled, useLabels, useUniqueId } from "@core/hooks";
-import { setId } from "@core/utils";
-import { ClassNames } from "@emotion/react";
-import filterGroupClasses, { HvFilterGroupClasses } from "./filterGroupClasses";
+import { ExtractNames, setId } from "@core/utils";
 import {
   HvFilterGroupContent,
   HvFilterGroupContentProps,
 } from "./FilterContent";
-import { styles } from "./FilterGroup.styles";
+import { staticClasses, useClasses } from "./FilterGroup.styles";
 import { HvFilterGroupProvider } from "./FilterGroupContext";
+
+export { staticClasses as filterGroupClasses };
+
+export type HvFilterGroupClasses = ExtractNames<typeof useClasses>;
 
 export type HvFilterGroupValue = (string | number)[][];
 
@@ -50,7 +52,7 @@ export type HvFilterGroupHorizontalPlacement = "left" | "right";
 export interface HvFilterGroupProps
   extends Omit<
     HvFormElementProps,
-    "onChange" | "defaultValue" | "statusMessage"
+    "classes" | "onChange" | "defaultValue" | "statusMessage"
   > {
   /** The initial value of the input when in single calendar mode. */
   filters: HvFilterGroupFilters;
@@ -151,9 +153,10 @@ export const HvFilterGroup = ({
   escapeWithReference = true,
   height = 350,
   filterContentProps,
-  classes,
+  classes: classesProp,
   ...others
 }: HvFilterGroupProps) => {
+  const { classes, cx } = useClasses(classesProp);
   const [validationMessage] = useControlled(statusMessage, "Required");
 
   const elementId = useUniqueId(id, "hvfiltergroup");
@@ -169,86 +172,69 @@ export const HvFilterGroup = ({
   const canShowError = status !== undefined || required;
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvFormElement
-          id={id}
-          name={name}
-          value={value}
-          status={status}
-          disabled={disabled}
-          required={required}
-          className={cx(filterGroupClasses.root, className, classes?.root)}
-          {...others}
-        >
-          {(hasLabel || hasDescription) && (
-            <div
-              className={cx(
-                filterGroupClasses.labelContainer,
-                css(styles.labelContainer),
-                classes?.labelContainer
-              )}
-            >
-              {hasLabel && (
-                <HvLabel
-                  id={setId(elementId, "label")}
-                  htmlFor={setId(elementId, "input")}
-                  label={label}
-                  className={cx(
-                    filterGroupClasses.label,
-                    css(styles.label),
-                    classes?.label
-                  )}
-                />
-              )}
-
-              {hasDescription && (
-                <HvInfoMessage
-                  id={setId(elementId, "description")}
-                  className={cx(
-                    filterGroupClasses.description,
-                    classes?.description
-                  )}
-                >
-                  {description}
-                </HvInfoMessage>
-              )}
-            </div>
-          )}
-          <HvFilterGroupProvider
-            defaultValue={defaultValue}
-            value={value}
-            filters={filters}
-          >
-            <HvFilterGroupContent
-              id={elementId}
-              disabled={disabled}
-              disablePortal={disablePortal}
-              variableWidth
-              placement={horizontalPlacement}
-              escapeWithReference={escapeWithReference}
-              aria-label={ariaLabel}
-              aria-labelledby={ariaLabelledBy}
-              status={status}
-              onChange={onChange}
-              onCancel={onCancel}
-              onClear={onClear}
-              labels={labels}
-              height={height}
-              {...filterContentProps}
+    <HvFormElement
+      id={id}
+      name={name}
+      value={value}
+      status={status}
+      disabled={disabled}
+      required={required}
+      className={cx(className, classes.root)}
+      {...others}
+    >
+      {(hasLabel || hasDescription) && (
+        <div className={classes.labelContainer}>
+          {hasLabel && (
+            <HvLabel
+              id={setId(elementId, "label")}
+              htmlFor={setId(elementId, "input")}
+              label={label}
+              className={classes.label}
             />
-            {canShowError && (
-              <HvWarningText
-                id={setId(elementId, "error")}
-                disableBorder
-                className={cx(filterGroupClasses.error, classes?.error)}
-              >
-                {validationMessage}
-              </HvWarningText>
-            )}
-          </HvFilterGroupProvider>
-        </HvFormElement>
+          )}
+
+          {hasDescription && (
+            <HvInfoMessage
+              id={setId(elementId, "description")}
+              className={classes.description}
+            >
+              {description}
+            </HvInfoMessage>
+          )}
+        </div>
       )}
-    </ClassNames>
+      <HvFilterGroupProvider
+        defaultValue={defaultValue}
+        value={value}
+        filters={filters}
+      >
+        <HvFilterGroupContent
+          id={elementId}
+          disabled={disabled}
+          disablePortal={disablePortal}
+          variableWidth
+          placement={horizontalPlacement}
+          escapeWithReference={escapeWithReference}
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          status={status}
+          onChange={onChange}
+          onCancel={onCancel}
+          onClear={onClear}
+          labels={labels}
+          height={height}
+          {...filterContentProps}
+        />
+        {canShowError && (
+          <HvWarningText
+            id={setId(elementId, "error")}
+            disableBorder
+            className={classes.error}
+          >
+            {validationMessage}
+          </HvWarningText>
+        )}
+      </HvFilterGroupProvider>
+    </HvFormElement>
   );
 };

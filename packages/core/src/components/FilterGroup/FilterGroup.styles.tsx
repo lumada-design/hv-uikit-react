@@ -1,12 +1,12 @@
-import { CSSInterpolation } from "@emotion/serialize";
-import { HvFilterGroupClasses } from "./filterGroupClasses";
+import { createClasses } from "@core/utils";
 
-export const styles: Partial<
-  Record<keyof HvFilterGroupClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvFilterGroup", {
+  root: {},
   label: {
     display: "flex",
     alignItems: "flex-start",
   },
   labelContainer: { display: "flex", alignItems: "flex-start" },
-};
+  description: {},
+  error: {},
+});

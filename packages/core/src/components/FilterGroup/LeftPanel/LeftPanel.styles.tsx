@@ -1,11 +1,10 @@
-import { CSSInterpolation } from "@emotion/serialize";
-import { HvFilterGroupLeftPanelClasses } from "./leftPanelClasses";
+import { createClasses } from "@core/utils";
 
-export const styles: Partial<
-  Record<keyof HvFilterGroupLeftPanelClasses, CSSInterpolation>
-> = {
+const name = "HvFilterGroupLeftPanel";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   listItem: {
     display: "flex",
     justifyContent: "space-between",
   },
-};
+});

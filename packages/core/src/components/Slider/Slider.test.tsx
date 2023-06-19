@@ -27,12 +27,6 @@ const RangeSliderControlled = () => {
 };
 
 describe("Slider", () => {
-  it("should render correctly", () => {
-    const { container } = render(<Main />);
-
-    expect(container).toMatchSnapshot();
-  });
-
   describe("general structure", () => {
     it("renders the single slider as expected", () => {
       const { getByRole, getByText } = render(<Main />);

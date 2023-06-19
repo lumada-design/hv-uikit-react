@@ -19,13 +19,13 @@ import {
   HvTagProps,
   HvInputProps,
   HvSuggestionsProps,
+  baseInputClasses,
+  listItemClasses,
+  suggestionsClasses,
 } from "@core/components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "@core/utils/transientOptions";
 import tagsInputClasses from "./tagsInputClasses";
-import baseInputClasses from "../BaseInput/baseInputClasses";
-import suggestionsClasses from "../Forms/Suggestions/suggestionsClasses";
-import listItemClasses from "../ListContainer/ListItem/listItemClasses";
 
 export const StyledFormElement = styled((props: HvFormElementProps) => (
   <HvFormElement {...props} />

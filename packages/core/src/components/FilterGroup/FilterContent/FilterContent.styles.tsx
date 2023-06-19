@@ -1,10 +1,10 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvFilterGroupContentClasses } from "./filterContentClasses";
 
-export const styles: Partial<
-  Record<keyof HvFilterGroupContentClasses, CSSInterpolation>
-> = {
+const name = "HvFilterGroupContent";
+
+export const { staticClasses, useClasses } = createClasses(name, {
+  dropdown: {},
   panel: {
     maxHeight: 500,
     minHeight: 370,
@@ -52,4 +52,4 @@ export const styles: Partial<
   applyButton: {
     marginRight: theme.filterGroup.applyButtonMarginRight,
   },
-};
+});
