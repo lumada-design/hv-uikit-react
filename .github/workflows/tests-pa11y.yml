@@ -6,6 +6,9 @@ on:
       - master
       - "next*"
   workflow_call:
+    secrets:
+      ORG_GHPAGES_DEPLOY_KEY:
+        required: true
 
 jobs:
   run-tests:
@@ -21,7 +24,6 @@ jobs:
 
       - name: Build Documentation
         uses: ./.github/actions/build-artifacts
-        if: github.event_name == 'workflow_dispatch'
         with:
           build-app: false
 
