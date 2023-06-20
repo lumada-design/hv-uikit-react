@@ -6,4 +6,7 @@ export type {
   HvChartEmptyCellMode,
   HvChartSampling,
   HvChartTooltipType,
+  HvChartTooltip,
+  HvChartGrid,
+  HvChartTooltipParams,
 } from "./generic";

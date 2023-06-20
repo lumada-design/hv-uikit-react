@@ -140,7 +140,7 @@
   "Visualizations": [
     {
       "name": "Bar Chart",
-      "status": "in progress"
+      "status": "✅"
     },
     {
       "name": "Confusion Matrix",
