@@ -1,6 +1,7 @@
 import { CSSProperties, useRef, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
+import { CSSInterpolation, css } from "@emotion/css";
 import {
   HvTimePicker,
   HvTimePickerProps,
@@ -19,7 +20,7 @@ const makeDecorator = (styles: CSSProperties) => (Story) =>
 export const Main: StoryObj<HvTimePickerProps> = {
   args: {
     label: "Time Picker",
-    description: "This is a description",
+    description: "",
     placeholder: "Select a date",
   },
   argTypes: {
@@ -27,7 +28,7 @@ export const Main: StoryObj<HvTimePickerProps> = {
     timeFormat: { control: { disable: true } },
     onChange: { control: { disable: true } },
   },
-  decorators: [makeDecorator({ minHeight: 200 })],
+  decorators: [makeDecorator({ minHeight: 200, width: 200 })],
   render: (args) => {
     return <HvTimePicker {...args} />;
   },
@@ -43,9 +44,7 @@ export const Form: StoryObj<HvTimePickerProps> = {
       },
     },
   },
-  args: {},
-  argTypes: {},
-  decorators: [makeDecorator({ minHeight: 200 })],
+  decorators: [makeDecorator({ minHeight: 200, width: 200 })],
   render: () => {
     return (
       <form
@@ -78,20 +77,22 @@ export const Variants: StoryObj<HvTimePickerProps> = {
       },
     },
   },
-  args: {},
-  argTypes: {},
-  decorators: [
-    makeDecorator({
-      minHeight: 200,
-      display: "flex",
-      gap: 20,
-      flexWrap: "wrap",
-    }),
-  ],
   render: () => {
     const value: HvTimePickerValue = { hours: 5, minutes: 30, seconds: 14 };
+
+    const styles: { root: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        gap: 20,
+        flexWrap: "wrap",
+        "& > div": {
+          width: 200,
+        },
+      },
+    };
+
     return (
-      <>
+      <div className={css(styles.root)}>
         <HvTimePicker required label="Required" defaultValue={value} />
         <HvTimePicker disabled label="Disabled" defaultValue={value} />
         <HvTimePicker readOnly label="Read-only" defaultValue={value} />
@@ -101,7 +102,7 @@ export const Variants: StoryObj<HvTimePickerProps> = {
           statusMessage="This is an invalid time"
           defaultValue={value}
         />
-      </>
+      </div>
     );
   },
 };
@@ -115,9 +116,7 @@ export const Controlled: StoryObj<HvTimePickerProps> = {
       },
     },
   },
-  args: {},
-  argTypes: {},
-  decorators: [makeDecorator({ minHeight: 200 })],
+  decorators: [makeDecorator({ minHeight: 200, width: 200 })],
   render: () => {
     const [value, setValue] = useState<HvTimePickerValue>({
       hours: 19,
@@ -150,9 +149,7 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
       },
     },
   },
-  args: {},
-  argTypes: {},
-  decorators: [makeDecorator({ minHeight: 200 })],
+  decorators: [makeDecorator({ minHeight: 200, width: 220 })],
   render: () => {
     return (
       <HvTimePicker
@@ -174,8 +171,6 @@ export const Native: StoryObj<HvTimePickerProps> = {
       },
     },
   },
-  args: {},
-  argTypes: {},
   decorators: [makeDecorator({ minHeight: 200 })],
   render: () => {
     const ref = useRef<HTMLInputElement>(null);

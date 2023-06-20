@@ -28,10 +28,10 @@ export const { useClasses, staticClasses } = createClasses(
       },
     },
     datePicker: {
-      flex: "0 1 320px",
+      flex: "0 1 300px",
     },
     timePicker: {
-      flex: "0 1 200px",
+      flex: "0 1 220px",
     },
   }
 );
