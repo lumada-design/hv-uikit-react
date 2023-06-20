@@ -1,5 +1,12 @@
 import { clsx } from "clsx";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { useForkRef } from "@mui/material";
 import { HvBaseProps } from "@core/types";
 import { setId } from "@core/utils";
 import {
@@ -34,24 +41,27 @@ export interface HvSuggestionsProps extends HvBaseProps {
   classes?: HvSuggestionsClasses;
 }
 
-export const HvSuggestions = ({
-  id,
-  className,
-  classes,
-  expanded = false,
-  anchorEl,
-  suggestionValues = [],
-  onClose,
-  onSuggestionSelected,
-  ...others
-}: HvSuggestionsProps) => {
+export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
+  const {
+    id,
+    className,
+    classes,
+    expanded = false,
+    anchorEl,
+    suggestionValues = [],
+    onClose,
+    onSuggestionSelected,
+    ...others
+  } = props;
   const { elementId } = useContext(HvFormElementContext);
   const localId = id ?? setId(elementId, "suggestions");
 
   const ref = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState<boolean>(expanded);
+  const forkedRef = useForkRef(ref, extRef);
 
-  useClickOutside(ref, (event: HvClickOutsideEvent) => {
+  const [isOpen, setIsOpen] = useState(expanded);
+
+  useClickOutside(ref, (event) => {
     setIsOpen(false);
     onClose?.(event);
   });
@@ -63,7 +73,7 @@ export const HvSuggestions = ({
   return (
     <StyledRoot
       id={localId}
-      ref={ref}
+      ref={forkedRef}
       className={clsx(className, suggestionsClasses.root, classes?.root)}
       {...others}
     >
@@ -95,4 +105,4 @@ export const HvSuggestions = ({
       </StyledPopper>
     </StyledRoot>
   );
-};
+});

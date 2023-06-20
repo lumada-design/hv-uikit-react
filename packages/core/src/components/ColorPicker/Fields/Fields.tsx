@@ -35,17 +35,15 @@ export const Fields = ({
   classes: classesProp,
 }: FieldsProps) => {
   const { classes, cx } = useClasses(classesProp);
-  const [internalHex, setInternalHex] = useState<string | undefined>(hex);
-  const [internalRed, setInternalRed] = useState<number | undefined>(rgb?.r);
-  const [internalGreen, setInternalGreen] = useState<number | undefined>(
-    rgb?.g
-  );
-  const [internalBlue, setInternalBlue] = useState<number | undefined>(rgb?.b);
+  const [internalHex, setInternalHex] = useState(hex);
+  const [internalRed, setInternalRed] = useState(rgb?.r);
+  const [internalGreen, setInternalGreen] = useState(rgb?.g);
+  const [internalBlue, setInternalBlue] = useState(rgb?.b);
 
-  const hexInputRef = useRef();
-  const redInputRef = useRef();
-  const greenInputRef = useRef();
-  const blueInputRef = useRef();
+  const hexInputRef = useRef<HTMLInputElement>(null);
+  const redInputRef = useRef<HTMLInputElement>(null);
+  const greenInputRef = useRef<HTMLInputElement>(null);
+  const blueInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (document.activeElement !== hexInputRef.current) {
@@ -97,16 +95,13 @@ export const Fields = ({
     }
   };
 
-  const onChangeHex = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    value: string
-  ) => {
+  const onChangeHex = (event: React.ChangeEvent<any>, value: string) => {
     setInternalHex(value);
     handleChange({ hex: value }, event);
   };
 
   const onChangeRbg = (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: React.ChangeEvent<any>,
     value: string,
     colorPart: "r" | "g" | "b"
   ) => {
@@ -127,7 +122,7 @@ export const Fields = ({
   return (
     <div className={cx(className, classes.fields)}>
       <HvInput
-        inputRef={hexInputRef}
+        ref={hexInputRef}
         className={classes.double}
         label="HEX"
         value={internalHex?.replace("#", "")}
@@ -136,7 +131,7 @@ export const Fields = ({
         disableClear
       />
       <HvInput
-        inputRef={redInputRef}
+        ref={redInputRef}
         className={classes.single}
         label="R"
         value={`${internalRed}`}
@@ -145,7 +140,7 @@ export const Fields = ({
         disableClear
       />
       <HvInput
-        inputRef={greenInputRef}
+        ref={greenInputRef}
         className={classes.single}
         label="G"
         value={`${internalGreen}`}
@@ -154,7 +149,7 @@ export const Fields = ({
         disableClear
       />
       <HvInput
-        inputRef={blueInputRef}
+        ref={blueInputRef}
         className={classes.single}
         label="B"
         value={`${internalBlue}`}

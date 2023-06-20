@@ -3,7 +3,15 @@ import validationStates, {
   isInvalid,
 } from "@core/components/Forms/FormElement/validationStates";
 import { clsx } from "clsx";
-import { useCallback, useRef, useState, useMemo, useEffect } from "react";
+import {
+  useCallback,
+  useRef,
+  useState,
+  useMemo,
+  useEffect,
+  forwardRef,
+} from "react";
+import { useForkRef } from "@mui/material";
 import { setId } from "@core/utils";
 import isNil from "lodash/isNil";
 import { HvValidationMessages } from "@core/types";
@@ -143,52 +151,52 @@ export interface HvTextAreaProps
 /**
  * A text area is a multiline text input box, with an optional character counter when there is a length limit.
  */
-export const HvTextArea = ({
-  id,
-  className,
-  classes,
-  name,
-  label,
-  description,
-  placeholder,
-  status,
-  statusMessage,
-  validationMessages,
-  maxCharQuantity,
-  minCharQuantity,
-  value: valueProp,
-  inputRef: inputRefProp,
-  rows = 1,
-  defaultValue = "",
-  middleCountLabel = "/",
-  countCharProps = {},
-  inputProps = {},
-  required = false,
-  readOnly = false,
-  disabled = false,
-  autoFocus = false,
-  resizable = false,
-  autoScroll = false,
-  hideCounter = false,
-  blockMax = false,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  "aria-describedby": ariaDescribedBy,
-  "aria-errormessage": ariaErrorMessage,
-  validation,
-  onChange,
-  onBlur,
-  onFocus,
-  ...others
-}: HvTextAreaProps) => {
+export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
+  const {
+    id,
+    className,
+    classes,
+    name,
+    label,
+    description,
+    placeholder,
+    status,
+    statusMessage,
+    validationMessages,
+    maxCharQuantity,
+    minCharQuantity,
+    value: valueProp,
+    inputRef: inputRefProp,
+    rows = 1,
+    defaultValue = "",
+    middleCountLabel = "/",
+    countCharProps = {},
+    inputProps = {},
+    required = false,
+    readOnly = false,
+    disabled = false,
+    autoFocus = false,
+    resizable = false,
+    autoScroll = false,
+    hideCounter = false,
+    blockMax = false,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    "aria-describedby": ariaDescribedBy,
+    "aria-errormessage": ariaErrorMessage,
+    validation,
+    onChange,
+    onBlur,
+    onFocus,
+    ...others
+  } = props;
   const elementId = useUniqueId(id, "hvtextarea");
 
   // Signals that the user has manually edited the input value
   const isDirty = useRef<boolean>(false);
 
-  const inputRefOwn = useRef(null);
-
-  const inputRef = inputRefProp || inputRefOwn;
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const forkedRef = useForkRef(ref, inputRefProp, inputRef);
 
   const [focused, setFocused] = useState<boolean>(false);
 
@@ -491,7 +499,7 @@ export const HvTextArea = ({
             : undefined,
           ...inputProps,
         }}
-        inputRef={inputRef}
+        inputRef={forkedRef}
         $resizable={resizable}
         {...others}
       />
@@ -507,4 +515,4 @@ export const HvTextArea = ({
       )}
     </StyledFormElement>
   );
-};
+});
