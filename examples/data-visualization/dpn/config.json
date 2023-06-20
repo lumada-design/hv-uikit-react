@@ -1,0 +1,15 @@
+{
+  "server": {
+    "host": "localhost",
+    "port": 5050
+  },
+  "log": "error",
+  "database": {
+    "url": "sqlite://config.db"
+  },
+  "tracing": {
+    "enabled": false,
+    "filter": "debug,data_plane_engine=info",
+    "otlp_endpoint": "http://localhost:4317"
+  }
+}

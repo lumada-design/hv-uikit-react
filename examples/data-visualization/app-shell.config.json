@@ -1,0 +1,22 @@
+{
+  "name": "Data Visualization",
+  "logo": { "name": "HITACHI" },
+
+  "apps": [
+    {
+      "id": "@self",
+      "baseUrl": "/",
+      "views": [
+        { "bundle": "src/pages/DataVisualization", "route": "/" },
+        { "bundle": "src/pages/Sensors", "route": "/sensors" },
+        { "bundle": "src/pages/SteelWheels", "route": "/steelwheels" }
+      ]
+    }
+  ],
+
+  "menu": [
+    { "label": "Data Visualization", "target": "/" },
+    { "label": "Heavy Load", "target": "/sensors" },
+    { "label": "Steel Wheels", "target": "/steelwheels" }
+  ]
+}

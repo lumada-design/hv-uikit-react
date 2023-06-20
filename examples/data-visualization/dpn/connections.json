@@ -1,0 +1,8 @@
+{
+  "local": {
+    "type": "store.local",
+    "properties": {
+      "path": "./store"
+    }
+  }
+}
