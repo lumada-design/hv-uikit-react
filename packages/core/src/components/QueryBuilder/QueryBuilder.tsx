@@ -1,5 +1,6 @@
 import cloneDeep from "lodash/cloneDeep";
 import isEqual from "lodash/isEqual";
+
 import {
   useContext,
   useEffect,
@@ -8,9 +9,11 @@ import {
   useRef,
   useState,
 } from "react";
+
+import { ExtractNames } from "@core/utils";
+
 import { ConfirmationDialog } from "./ConfirmationDialog";
 import { QueryBuilderContext } from "./Context";
-import { HvQueryBuilderClasses } from "./queryBuilderClasses";
 import { RuleGroup } from "./RuleGroup";
 import {
   AskAction,
@@ -22,13 +25,13 @@ import {
 } from "./types";
 import { clearNodeIds, emptyGroup } from "./utils";
 import reducer from "./utils/reducer";
+import { useClasses, staticClasses } from "./QueryBuilder.styles";
+
+export { staticClasses as queryBuilderClasses };
+
+export type HvQueryBuilderClasses = Partial<ExtractNames<typeof useClasses>>;
 
 export interface HvQueryBuilderProps {
-  /**
-   * Override or extend the styles applied to the component.
-   * See CSS API tab for more details.
-   */
-  classes?: HvQueryBuilderClasses;
   attributes?: Record<string, Attribute>;
   /**
    * The query rules operators by attribute type and combinator.
@@ -59,13 +62,16 @@ export interface HvQueryBuilderProps {
    * A flag indicating if the Query Builder is in read only mode.
    */
   readOnly?: boolean;
+  /**
+   * Override or extend the styles applied to the component.
+   * See CSS API tab for more details.
+   */
+  classes?: HvQueryBuilderClasses;
 }
 
 /**
  * **HvQueryBuilder** component allows you to create conditions and group them using logical operators.
  * It outputs a structured set of rules which can be easily parsed to create SQL/NoSQL/whatever queries.
- *
- * **PLEASE NOTE**: This component implementation is still a WIP. There might be breaking changes.
  */
 export const HvQueryBuilder = ({
   attributes,
@@ -91,7 +97,7 @@ export const HvQueryBuilder = ({
   const initialState = query === state;
   const [prevState, setPrevState] = useState();
 
-  const defaultcontext = useContext(QueryBuilderContext);
+  const defaultContext = useContext(QueryBuilderContext);
 
   const context = useMemo(
     () => ({
@@ -99,20 +105,20 @@ export const HvQueryBuilder = ({
       askAction,
       attributes,
       /* eslint-disable react/destructuring-assignment */
-      operators: operators ?? defaultcontext.operators,
-      combinators: combinators ?? defaultcontext.combinators,
-      maxDepth: maxDepth ?? defaultcontext.maxDepth,
-      labels: labels ?? defaultcontext.labels,
+      operators: operators ?? defaultContext.operators,
+      combinators: combinators ?? defaultContext.combinators,
+      maxDepth: maxDepth ?? defaultContext.maxDepth,
+      labels: labels ?? defaultContext.labels,
       initialTouched: initialState,
       readOnly,
     }),
     [
       attributes,
       operators,
-      defaultcontext.operators,
-      defaultcontext.combinators,
-      defaultcontext.maxDepth,
-      defaultcontext.labels,
+      defaultContext.operators,
+      defaultContext.combinators,
+      defaultContext.maxDepth,
+      defaultContext.labels,
       combinators,
       maxDepth,
       labels,

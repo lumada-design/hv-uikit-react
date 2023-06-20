@@ -1,62 +1,64 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import queryBuilderClasses from "../queryBuilderClasses";
-import { HvRuleClasses } from "./ruleClasses";
+import { staticClasses as queryBuilderClasses } from "../QueryBuilder.styles";
 
-export const styles: Partial<Record<keyof HvRuleClasses, CSSInterpolation>> = {
-  root: {
-    position: "relative",
-    marginTop: theme.space.xs,
+export const { useClasses, staticClasses } = createClasses(
+  "HvQueryBuilder-Rule",
+  {
+    root: {
+      position: "relative",
+      marginTop: theme.space.xs,
 
-    minHeight: 94,
+      minHeight: 94,
 
-    "&>div:not(:last-child)": {
-      marginRight: theme.space.md,
+      "&>div:not(:last-child)": {
+        marginRight: theme.space.md,
+      },
+
+      // hide required * as all fields are required
+      "& label>span[aria-hidden]": {
+        visibility: "hidden",
+      },
+      "&::before": {
+        content: '""',
+        position: "absolute",
+        zIndex: 2,
+
+        width: theme.queryBuilder.ruleConnectorHorizontalSize,
+        height: theme.queryBuilder.ruleConnectorHeight,
+
+        borderBottom: theme.queryBuilder.border,
+        borderLeft: theme.queryBuilder.border,
+
+        top: 0,
+        left: theme.queryBuilder.ruleLeftConnectorPosition,
+      },
+      [`:not(.${queryBuilderClasses.topRulesContainer})>&:last-child::after`]: {
+        content: '""',
+        position: "absolute",
+        zIndex: 1,
+
+        width: theme.queryBuilder.ruleConnectorHorizontalSize,
+        height: "100%",
+
+        borderLeft: theme.queryBuilder.border,
+
+        top: 0,
+        left: theme.queryBuilder.ruleLeftConnectorPosition,
+      },
     },
+    actionsContainer: {
+      marginLeft: "auto",
+      marginTop: theme.queryBuilder.actionsContainerMarginTop,
 
-    // hide required * as all fields are required
-    "& label>span[aria-hidden]": {
-      visibility: "hidden",
+      "&>:not(:last-child)": {
+        marginRight: theme.space.xs,
+      },
     },
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      zIndex: 2,
-
-      width: theme.queryBuilder.ruleConnectorHorizontalSize,
-      height: theme.queryBuilder.ruleConnectorHeight,
-
-      borderBottom: theme.queryBuilder.border,
-      borderLeft: theme.queryBuilder.border,
-
-      top: 0,
-      left: theme.queryBuilder.ruleLeftConnectorPosition,
+    isMdDown: {
+      "&>div:not(:last-child)": {
+        marginRight: `calc(${theme.space.md} / 2)`,
+      },
     },
-    [`:not(.${queryBuilderClasses.topRulesContainer})>&:last-child::after`]: {
-      content: '""',
-      position: "absolute",
-      zIndex: 1,
-
-      width: theme.queryBuilder.ruleConnectorHorizontalSize,
-      height: "100%",
-
-      borderLeft: theme.queryBuilder.border,
-
-      top: 0,
-      left: theme.queryBuilder.ruleLeftConnectorPosition,
-    },
-  },
-  actionsContainer: {
-    marginLeft: "auto",
-    marginTop: theme.queryBuilder.actionsContainerMarginTop,
-
-    "&>:not(:last-child)": {
-      marginRight: theme.space.xs,
-    },
-  },
-  isMdDown: {
-    "&>div:not(:last-child)": {
-      marginRight: `calc(${theme.space.md} / 2)`,
-    },
-  },
-};
+  }
+);

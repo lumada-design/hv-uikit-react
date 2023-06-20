@@ -5,7 +5,8 @@ import {
   HvDialogContent,
   HvDialogTitle,
 } from "@core/components";
-import { ClassNames } from "@emotion/react";
+
+import { useClasses } from "./ConfirmationDialog.styles";
 
 export interface ConfirmationDialogProps {
   title?: string;
@@ -28,38 +29,36 @@ export const ConfirmationDialog = ({
   cancelButtonLabel,
   closeButtonTooltip,
 }: ConfirmationDialogProps) => {
-  const handleClose = (event, reason) => {
+  const { classes } = useClasses();
+
+  const handleClose = (_, reason) => {
     if (reason !== "backdropClick") {
       onCancel?.();
     }
   };
 
   return (
-    <ClassNames>
-      {({ css }) => (
-        <HvDialog
-          classes={{ paper: css({ width: 500 }) }}
-          open={isOpen}
-          onClose={handleClose}
-          firstFocusable="confirmation-dialog-cancel"
-          buttonTitle={closeButtonTooltip}
+    <HvDialog
+      classes={{ paper: classes.paper }}
+      open={isOpen}
+      onClose={handleClose}
+      firstFocusable="confirmation-dialog-cancel"
+      buttonTitle={closeButtonTooltip}
+    >
+      <HvDialogTitle variant="warning">{title}</HvDialogTitle>
+      <HvDialogContent indentContent>{message}</HvDialogContent>
+      <HvDialogActions>
+        <HvButton variant="primaryGhost" onClick={onConfirm}>
+          {confirmButtonLabel}
+        </HvButton>
+        <HvButton
+          id="confirmation-dialog-cancel"
+          variant="primaryGhost"
+          onClick={() => onCancel?.()}
         >
-          <HvDialogTitle variant="warning">{title}</HvDialogTitle>
-          <HvDialogContent indentContent>{message}</HvDialogContent>
-          <HvDialogActions>
-            <HvButton variant="primaryGhost" onClick={onConfirm}>
-              {confirmButtonLabel}
-            </HvButton>
-            <HvButton
-              id="confirmation-dialog-cancel"
-              variant="primaryGhost"
-              onClick={() => onCancel?.()}
-            >
-              {cancelButtonLabel}
-            </HvButton>
-          </HvDialogActions>
-        </HvDialog>
-      )}
-    </ClassNames>
+          {cancelButtonLabel}
+        </HvButton>
+      </HvDialogActions>
+    </HvDialog>
   );
 };

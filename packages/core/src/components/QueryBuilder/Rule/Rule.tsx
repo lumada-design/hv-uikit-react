@@ -1,15 +1,17 @@
 import { HvButton, HvGrid } from "@core/components";
 import { withTooltip } from "@core/hocs";
-import { ClassNames } from "@emotion/react";
+
 import { Delete } from "@hitachivantara/uikit-react-icons";
+
 import { useMediaQuery, useTheme } from "@mui/material";
+
 import { useContext, useMemo } from "react";
+
 import { QueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";
-import { styles } from "./Rule.styles";
-import ruleClasses from "./ruleClasses";
 import { Value } from "./Value";
+import { useClasses } from "./Rule.styles";
 
 export interface RuleProps {
   id: number;
@@ -30,6 +32,8 @@ export const Rule = ({
   disabled,
   isInvalid,
 }: RuleProps) => {
+  const { classes, cx } = useClasses();
+
   const context = useContext(QueryBuilderContext);
 
   const theme = useTheme();
@@ -65,73 +69,58 @@ export const Rule = ({
   );
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvGrid
-          container
-          className={cx(
-            ruleClasses.root,
-            css(styles.root),
-            isMdDown ? cx(ruleClasses.isMdDown, css(styles.isMdDown)) : ""
-          )}
-          spacing={0}
-          wrap="nowrap"
-        >
-          <HvGrid item xs={2} lg={3}>
-            <Attribute
-              attribute={attribute}
-              id={id}
-              disabled={disabled}
-              isInvalid={isInvalid}
-            />
-          </HvGrid>
-          {attribute != null && availableOperators > 0 && (
-            <HvGrid item xs={2} lg={3}>
-              <Operator
-                id={id}
-                combinator={combinator}
-                attribute={attribute}
-                operator={operator}
-              />
-            </HvGrid>
-          )}
-          {attribute != null &&
-            (operator != null || availableOperators === 0) && (
-              <HvGrid item xs>
-                {shouldShowValueInput && (
-                  <Value
-                    attribute={attribute}
-                    id={id}
-                    operator={operator}
-                    value={value}
-                  />
-                )}
-              </HvGrid>
-            )}
-          <HvGrid
-            item
-            className={cx(
-              ruleClasses.actionsContainer,
-              css(styles.actionsContainer)
-            )}
-          >
-            <HvButton
-              icon
-              aria-label={labels.rule.delete.ariaLabel}
-              onClick={() => {
-                askAction({
-                  actions: [{ type: "remove-node", id }],
-                  dialog: labels.rule.delete,
-                });
-              }}
-              disabled={readOnly}
-              variant="secondaryGhost"
-            >
-              <DeleteIcon />
-            </HvButton>
-          </HvGrid>
+    <HvGrid
+      container
+      className={cx(classes.root, { [classes.isMdDown]: isMdDown })}
+      spacing={0}
+      wrap="nowrap"
+    >
+      <HvGrid item xs={2} lg={3}>
+        <Attribute
+          attribute={attribute}
+          id={id}
+          disabled={disabled}
+          isInvalid={isInvalid}
+        />
+      </HvGrid>
+      {attribute != null && availableOperators > 0 && (
+        <HvGrid item xs={2} lg={3}>
+          <Operator
+            id={id}
+            combinator={combinator}
+            attribute={attribute}
+            operator={operator}
+          />
         </HvGrid>
       )}
-    </ClassNames>
+      {attribute != null && (operator != null || availableOperators === 0) && (
+        <HvGrid item xs>
+          {shouldShowValueInput && (
+            <Value
+              attribute={attribute}
+              id={id}
+              operator={operator}
+              value={value}
+            />
+          )}
+        </HvGrid>
+      )}
+      <HvGrid item className={classes.actionsContainer}>
+        <HvButton
+          icon
+          aria-label={labels.rule.delete.ariaLabel}
+          onClick={() => {
+            askAction({
+              actions: [{ type: "remove-node", id }],
+              dialog: labels.rule.delete,
+            });
+          }}
+          disabled={readOnly}
+          variant="secondaryGhost"
+        >
+          <DeleteIcon />
+        </HvButton>
+      </HvGrid>
+    </HvGrid>
   );
 };

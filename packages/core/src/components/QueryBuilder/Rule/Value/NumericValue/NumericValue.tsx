@@ -1,12 +1,14 @@
 import { memo, useCallback, useContext, useState } from "react";
+
 import uniqueId from "lodash/uniqueId";
 import isEmpty from "lodash/isEmpty";
-import { ClassNames } from "@emotion/react";
+
 import { useMediaQuery, useTheme } from "@mui/material";
-import { HvInput } from "../../../..";
+
+import { HvInput } from "@core/components";
+
 import { QueryBuilderContext } from "../../../Context";
-import { styles } from "./Numeric.styles";
-import numericValueClasses from "./numericValueClasses";
+import { useClasses } from "./Numeric.styles";
 
 export interface NumericValueProps {
   id: number;
@@ -21,6 +23,8 @@ export const NumericValue = ({
   operator,
   initialTouched = false,
 }: NumericValueProps) => {
+  const { classes, cx } = useClasses();
+
   const isRange = operator === "range";
   const context = useContext(QueryBuilderContext);
   const { labels, dispatchAction, readOnly } = context;
@@ -111,137 +115,108 @@ export const NumericValue = ({
   const rightStatus = rightValidation != null ? "invalid" : "valid";
 
   const renderRangeInputs = (rangeValue) => (
-    <ClassNames>
-      {({ css, cx }) => (
-        <div
-          className={cx(
-            numericValueClasses.rangeContainer,
-            css(styles.rangeContainer),
-            isMdDown
-              ? cx(numericValueClasses.isMdDown, css(styles.isMdDown))
+    <div
+      className={cx(classes.rangeContainer, { [classes.isMdDown]: isMdDown })}
+    >
+      <div className={classes.inputContainer}>
+        <HvInput
+          label={labels.rule.value.numeric.range.leftLabel}
+          className={classes.input}
+          id={`${elementId}-numeric-from`}
+          name={`${elementId}-numeric-from`}
+          value={rangeValue?.from?.toString() || ""}
+          onChange={(event, data) => onRangeValueChange(event, data)}
+          onBlur={() => {
+            setTouchedNumeric(true);
+          }}
+          onKeyDown={(e: any) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+            }
+          }}
+          status={!touchedNumeric ? "standBy" : numericStatus}
+          statusMessage={
+            numericValidation
+              ? labels.rule.value.numeric.validation[numericValidation]
               : ""
-          )}
-        >
-          <div
-            className={cx(
-              numericValueClasses.inputContainer,
-              css(styles.inputContainer)
-            )}
-          >
-            <HvInput
-              label={labels.rule.value.numeric.range.leftLabel}
-              className={cx(numericValueClasses.input, css(styles.input))}
-              id={`${elementId}-numeric-from`}
-              name={`${elementId}-numeric-from`}
-              value={rangeValue?.from?.toString() || ""}
-              onChange={(event, data) => onRangeValueChange(event, data)}
-              onBlur={() => {
-                setTouchedNumeric(true);
-              }}
-              onKeyDown={(e: any) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                }
-              }}
-              status={!touchedNumeric ? "standBy" : numericStatus}
-              statusMessage={
-                numericValidation
-                  ? labels.rule.value.numeric.validation[numericValidation]
-                  : ""
-              }
-              required
-              inputProps={{
-                autoComplete: "off",
-              }}
-              placeholder={labels.rule.value.numeric.placeholder}
-              readOnly={readOnly}
-            />
-          </div>
-          <div
-            className={cx(
-              numericValueClasses.inputContainer,
-              css(styles.inputContainer)
-            )}
-          >
-            <HvInput
-              label={labels.rule.value.numeric.range.rightLabel}
-              className={cx(numericValueClasses.input, css(styles.input))}
-              id={`${elementId}-numeric-to`}
-              name={`${elementId}-numeric-to`}
-              value={rangeValue?.to?.toString() || ""}
-              onChange={(event, data) => onRangeValueChange(event, data, false)}
-              onBlur={() => {
-                setTouchedNumericTo(true);
-              }}
-              onKeyDown={(e: any) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                }
-              }}
-              status={!touchedNumericTo ? "standBy" : rightStatus}
-              statusMessage={
-                rightValidation
-                  ? labels.rule.value.numeric.validation[rightValidation]
-                  : ""
-              }
-              required
-              inputProps={{
-                autoComplete: "off",
-              }}
-              placeholder={labels.rule.value.numeric.placeholder}
-              readOnly={readOnly}
-            />
-          </div>
-        </div>
-      )}
-    </ClassNames>
+          }
+          required
+          inputProps={{
+            autoComplete: "off",
+          }}
+          placeholder={labels.rule.value.numeric.placeholder}
+          readOnly={readOnly}
+        />
+      </div>
+      <div className={classes.inputContainer}>
+        <HvInput
+          label={labels.rule.value.numeric.range.rightLabel}
+          className={classes.input}
+          id={`${elementId}-numeric-to`}
+          name={`${elementId}-numeric-to`}
+          value={rangeValue?.to?.toString() || ""}
+          onChange={(event, data) => onRangeValueChange(event, data, false)}
+          onBlur={() => {
+            setTouchedNumericTo(true);
+          }}
+          onKeyDown={(e: any) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+            }
+          }}
+          status={!touchedNumericTo ? "standBy" : rightStatus}
+          statusMessage={
+            rightValidation
+              ? labels.rule.value.numeric.validation[rightValidation]
+              : ""
+          }
+          required
+          inputProps={{
+            autoComplete: "off",
+          }}
+          placeholder={labels.rule.value.numeric.placeholder}
+          readOnly={readOnly}
+        />
+      </div>
+    </div>
   );
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <div className={cx(numericValueClasses.root, css(styles.root))}>
-          {isRange && renderRangeInputs(value || {})}
-          {!isRange && (
-            <div
-              className={cx(
-                numericValueClasses.inputContainer,
-                css(styles.inputContainer)
-              )}
-            >
-              <HvInput
-                label={labels.rule.value.numeric.label}
-                className={cx(numericValueClasses.input, css(styles.input))}
-                id={`${elementId}-numeric`}
-                name={`${elementId}-numeric`}
-                value={value ? value.toString() : ""}
-                onChange={onSingleValueChange}
-                onBlur={() => {
-                  setTouchedNumeric(true);
-                }}
-                onKeyDown={(e: any) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                  }
-                }}
-                status={!touchedNumeric ? "standBy" : numericStatus}
-                required
-                inputProps={{
-                  autoComplete: "off",
-                }}
-                placeholder={labels.rule.value.numeric.placeholder}
-                statusMessage={
-                  numericValidation
-                    ? labels.rule.value.numeric.validation[numericValidation]
-                    : ""
-                }
-                readOnly={readOnly}
-              />
-            </div>
-          )}
+    <div className={classes.root}>
+      {isRange && renderRangeInputs(value || {})}
+      {!isRange && (
+        <div className={classes.inputContainer}>
+          <HvInput
+            label={labels.rule.value.numeric.label}
+            className={classes.input}
+            id={`${elementId}-numeric`}
+            name={`${elementId}-numeric`}
+            value={value ? value.toString() : ""}
+            onChange={onSingleValueChange}
+            onBlur={() => {
+              setTouchedNumeric(true);
+            }}
+            onKeyDown={(e: any) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+              }
+            }}
+            status={!touchedNumeric ? "standBy" : numericStatus}
+            required
+            inputProps={{
+              autoComplete: "off",
+            }}
+            placeholder={labels.rule.value.numeric.placeholder}
+            statusMessage={
+              numericValidation
+                ? labels.rule.value.numeric.validation[numericValidation]
+                : ""
+            }
+            readOnly={readOnly}
+          />
         </div>
       )}
-    </ClassNames>
+    </div>
   );
 };
 
