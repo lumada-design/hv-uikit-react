@@ -38,7 +38,7 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
       top: -38,
       left: theme.queryBuilder.ruleSubGroupLeftConnectorPosition,
     },
-    [`:not(.$topRulesContainer)>&:last-child::after`]: {
+    ":not($topRulesContainer)>&:last-child::after": {
       content: '""',
       position: "absolute",
       zIndex: 1,

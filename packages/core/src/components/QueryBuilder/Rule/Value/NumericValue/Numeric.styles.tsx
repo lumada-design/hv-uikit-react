@@ -20,7 +20,7 @@ export const { useClasses, staticClasses } = createClasses(
       display: "flex",
       flexGrow: 1,
 
-      [`& > .$inputContainer:not(:last-child)`]: {
+      "& > $inputContainer:not(:last-child)": {
         marginRight: theme.space.md,
       },
     },
@@ -28,7 +28,7 @@ export const { useClasses, staticClasses } = createClasses(
       flexGrow: 1,
     },
     isMdDown: {
-      [`& > .$inputContainer:not(:last-child)`]: {
+      "& > $inputContainer:not(:last-child)": {
         marginRight: `calc(${theme.space.md} / 2)`,
       },
     },
