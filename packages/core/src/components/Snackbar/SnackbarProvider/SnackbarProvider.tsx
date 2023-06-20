@@ -1,12 +1,25 @@
 import { forwardRef, useCallback, useMemo } from "react";
-import { SnackbarContent, SnackbarProvider, useSnackbar } from "notistack";
+import {
+  CombinedClassKey,
+  SnackbarContent,
+  SnackbarProvider,
+  useSnackbar,
+} from "notistack";
 import { clsx } from "clsx";
-import styled from "@emotion/styled";
 import { SnackbarOrigin } from "@mui/material/Snackbar";
-import { transientOptions } from "@core/utils/transientOptions";
+import { ExtractNames } from "@core/utils";
+import { ClassNameMap } from "@mui/material";
+import { css } from "@emotion/css";
 import { HvSnackbarContent } from "../SnackbarContentWrapper";
 import { HvSnackbarVariant } from "../Snackbar";
 import { HvSnackbarContentProps } from "../SnackbarContentWrapper/SnackbarContentWrapper";
+import { staticClasses, useClasses } from "./SnackbarProvider.styles";
+
+export { staticClasses as snackbarProviderClasses };
+
+export type HvSnackbarProviderClasses = ExtractNames<typeof useClasses>;
+
+export type HvSnackbarProviderClassKey = "snackItemRoot";
 
 export interface HvSnackbarProviderProps {
   /** Your component tree. */
@@ -18,7 +31,11 @@ export interface HvSnackbarProviderProps {
   /** Where is the snackbar placed. */
   anchorOrigin?: SnackbarOrigin;
   /** Class object used to override notistack classes. */
-  notistackClassesOverride?: object;
+  notistackClassesOverride?: Partial<ClassNameMap<CombinedClassKey>>;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: Partial<HvSnackbarProviderClasses>;
+
+  className?: string;
 }
 
 export interface HvNotistackSnackMessageProps {
@@ -52,41 +69,8 @@ const HvNotistackSnackMessage = forwardRef<
   );
 });
 
-const StyledRoot = styled(
-  "div",
-  transientOptions
-)(({ $notistackClassesOverride }: { $notistackClassesOverride: object }) => ({
-  "& .SnackbarContainer-root": {
-    pointerEvents: "all",
-    "& > div > div": {
-      // Overrides notistack extra padding
-      padding: "0 !important",
-      transition: "all 0s ease 0s !important",
-    },
-  },
-  ...$notistackClassesOverride,
-}));
-
-const StyledSnackbarProvider = styled(SnackbarProvider)({
-  backgroundColor: "transparent !important",
-  boxShadow: "none !important",
-  "&&": {
-    color: "inherit",
-    padding: "0",
-    fontSize: "inherit",
-    boxShadow: "none",
-    alignItems: "center",
-    fontFamily: "inherit",
-    fontWeight: "inherit",
-    lineHeight: "inherit",
-    borderRadius: "0",
-    letterSpacing: "inherit",
-    backgroundColor: "inherit",
-  },
-});
-
 // We override notistack hook to be able to customize the snackbar that should be called.
-const useHvSnackbar = () => {
+export const useHvSnackbar = () => {
   const { enqueueSnackbar: enqueueNotistackSnackbar, closeSnackbar } =
     useSnackbar();
   const enqueueSnackbar = useCallback(
@@ -120,30 +104,43 @@ const useHvSnackbar = () => {
   );
 };
 
-const HvSnackbarProvider = ({
+export const HvSnackbarProvider = ({
   children,
-  notistackClassesOverride = {},
+  notistackClassesOverride,
   maxSnack = 5,
   autoHideDuration = 5000,
   anchorOrigin = {
     vertical: "top",
     horizontal: "right",
   },
+  classes: classesProp = {},
+  className,
   ...others
-}) => {
+}: HvSnackbarProviderProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
+  const test: Partial<ClassNameMap<CombinedClassKey>> = {
+    containerRoot: css({
+      pointerEvents: "all",
+      "& > div > div": {
+        // Overrides notistack extra padding
+        padding: "0 !important",
+        transition: "all 0s ease 0s !important",
+      },
+    }),
+    ...notistackClassesOverride,
+  };
+
   return (
-    <StyledRoot $notistackClassesOverride={notistackClassesOverride}>
-      <StyledSnackbarProvider
-        maxSnack={maxSnack}
-        autoHideDuration={autoHideDuration}
-        anchorOrigin={anchorOrigin as SnackbarOrigin}
-        {...others}
-      >
-        {children}
-      </StyledSnackbarProvider>
-    </StyledRoot>
+    <SnackbarProvider
+      classes={test}
+      maxSnack={maxSnack}
+      autoHideDuration={autoHideDuration}
+      anchorOrigin={anchorOrigin as SnackbarOrigin}
+      className={cx(classes.snackItemRoot, className)}
+      {...others}
+    >
+      {children}
+    </SnackbarProvider>
   );
 };
-
-export default HvSnackbarProvider;
-export { useHvSnackbar };

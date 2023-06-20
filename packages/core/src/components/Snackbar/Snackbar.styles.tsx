@@ -1,27 +1,27 @@
-import styled from "@emotion/styled";
-import Snackbar, { snackbarClasses } from "@mui/material/Snackbar";
 import { theme } from "@hitachivantara/uikit-styles";
+import { createClasses } from "@core/utils";
 
-export const StyledSnackbar = styled(Snackbar)({
-  [`&.${snackbarClasses.anchorOriginTopRight}`]: {
+export const { useClasses, staticClasses } = createClasses("HvSnackbar", {
+  root: {},
+  anchorOriginTopRight: {
     top: theme.space.xs,
     right: theme.space.xs,
   },
-  [`&.${snackbarClasses.anchorOriginTopLeft}`]: {
+  anchorOriginTopLeft: {
     top: theme.space.xs,
     left: theme.space.xs,
   },
-  [`&.${snackbarClasses.anchorOriginTopCenter}`]: {
+  anchorOriginTopCenter: {
     top: theme.space.xs,
   },
-  [`&.${snackbarClasses.anchorOriginBottomCenter}`]: {
+  anchorOriginBottomCenter: {
     bottom: theme.space.xs,
   },
-  [`&.${snackbarClasses.anchorOriginBottomLeft}`]: {
+  anchorOriginBottomLeft: {
     bottom: theme.space.xs,
     left: theme.space.xs,
   },
-  [`&.${snackbarClasses.anchorOriginBottomRight}`]: {
+  anchorOriginBottomRight: {
     bottom: theme.space.xs,
     right: theme.space.xs,
   },

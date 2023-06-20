@@ -4,18 +4,30 @@ import {
   SnackbarOrigin,
   SnackbarProps as MuiSnackbarProps,
 } from "@mui/material/Snackbar";
+import { Snackbar as MuiSnackbar } from "@mui/material";
 import { HvBaseProps } from "@core/types";
 import capitalize from "lodash/capitalize";
 import { SyntheticEvent } from "react";
-import { setId } from "@core/utils";
+import { ExtractNames, setId } from "@core/utils";
 import { HvActionGeneric } from "@core/components";
-import { clsx } from "clsx";
 import {
   HvSnackbarContentProps,
   HvSnackbarContent,
 } from "./SnackbarContentWrapper";
-import snackbarClasses, { HvSnackbarClasses } from "./snackbarClasses";
-import { StyledSnackbar } from "./Snackbar.styles";
+import { staticClasses, useClasses } from "./Snackbar.styles";
+
+export { staticClasses as snackbarClasses };
+
+export type HvSnackbarClasses = ExtractNames<typeof useClasses>;
+
+export type HvSnackbarClassKey =
+  | "anchorOriginTopRight"
+  | "root"
+  | "anchorOriginTopLeft"
+  | "anchorOriginTopCenter"
+  | "anchorOriginBottomCenter"
+  | "anchorOriginBottomLeft"
+  | "anchorOriginBottomRight";
 
 export type HvSnackbarVariant = "default" | "success" | "warning" | "error";
 
@@ -60,7 +72,7 @@ export interface HvSnackbarProps
   /** Others applied to the content of the snackbar. */
   snackbarContentProps?: HvSnackbarContentProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvSnackbarClasses;
+  classes?: Partial<HvSnackbarClasses>;
 }
 
 const transLeft = (props) => <Slide {...props} direction="left" />;
@@ -91,7 +103,7 @@ const snackBarDirComponent = (direction) => {
  * The other is the HvSnackbarContent, which allows a finer control and customization of the content of the Snackbar.
  */
 export const HvSnackbar = ({
-  classes,
+  classes: classesProp = {},
   className,
   id,
   open = false,
@@ -110,6 +122,8 @@ export const HvSnackbar = ({
   snackbarContentProps,
   ...others
 }: HvSnackbarProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const anchorOriginOffset = {
     anchorOriginTop: {
       top: `${offset}px`,
@@ -120,36 +134,18 @@ export const HvSnackbar = ({
   };
 
   return (
-    <StyledSnackbar
+    <MuiSnackbar
       style={
         anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]
       }
       classes={{
-        root: clsx(classes?.root, snackbarClasses.root),
-        anchorOriginBottomCenter: clsx(
-          classes?.anchorOriginBottomCenter,
-          snackbarClasses.anchorOriginBottomCenter
-        ),
-        anchorOriginBottomLeft: clsx(
-          classes?.anchorOriginBottomLeft,
-          snackbarClasses.anchorOriginBottomLeft
-        ),
-        anchorOriginBottomRight: clsx(
-          classes?.anchorOriginBottomRight,
-          snackbarClasses.anchorOriginBottomRight
-        ),
-        anchorOriginTopCenter: clsx(
-          classes?.anchorOriginTopCenter,
-          snackbarClasses.anchorOriginTopCenter
-        ),
-        anchorOriginTopLeft: clsx(
-          classes?.anchorOriginTopLeft,
-          snackbarClasses.anchorOriginTopLeft
-        ),
-        anchorOriginTopRight: clsx(
-          classes?.anchorOriginTopRight,
-          snackbarClasses.anchorOriginTopRight
-        ),
+        root: cx(classes?.root),
+        anchorOriginBottomCenter: cx(classes?.anchorOriginBottomCenter),
+        anchorOriginBottomLeft: cx(classes?.anchorOriginBottomLeft),
+        anchorOriginBottomRight: cx(classes?.anchorOriginBottomRight),
+        anchorOriginTopCenter: cx(classes?.anchorOriginTopCenter),
+        anchorOriginTopLeft: cx(classes?.anchorOriginTopLeft),
+        anchorOriginTopRight: cx(classes?.anchorOriginTopRight),
       }}
       className={className}
       id={id}
@@ -171,6 +167,6 @@ export const HvSnackbar = ({
         actionCallback={actionCallback}
         {...snackbarContentProps}
       />
-    </StyledSnackbar>
+    </MuiSnackbar>
   );
 };
