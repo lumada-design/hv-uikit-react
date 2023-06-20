@@ -42,6 +42,4 @@ export type HvExtraDeepPartialProps<T> = Partial<{
 }> &
   HvExtraProps;
 
-export type NonEmptyArray<T> = [T, ...T[]];
-
-export type Arrayable<T> = T | NonEmptyArray<T>;
+export type Arrayable<T> = T | T[];
