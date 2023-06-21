@@ -2,7 +2,6 @@ import { HvBaseProps } from "@core/types";
 import {
   HvButton,
   HvButtonProps,
-  HvButtonSize,
   HvCheckBox,
   HvCheckBoxProps,
   HvActionGeneric,
@@ -184,9 +183,6 @@ export const HvBulkActions = ({
               )}
               variant={isSemantic ? "semantic" : "secondaryGhost"}
               onClick={onSelectAllPages}
-              size={
-                (activeTheme?.bulkActions?.buttonSize as HvButtonSize) || "md"
-              }
             >
               {selectAllPagesLabel ??
                 `Select all ${numTotal} items across all pages`}

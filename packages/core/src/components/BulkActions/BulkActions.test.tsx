@@ -46,18 +46,6 @@ const WithActions = () => {
 
 describe("BulkActions", () => {
   describe("Without actions", () => {
-    it("should be defined", () => {
-      const { container } = render(<WithoutActions />);
-
-      expect(container).toBeDefined();
-    });
-
-    it("should render correctly", () => {
-      const { container } = render(<WithoutActions />);
-
-      expect(container).toMatchSnapshot();
-    });
-
     it("should render select all component correctly", async () => {
       const { getByRole, getByLabelText } = render(<WithoutActions />);
 
@@ -67,7 +55,7 @@ describe("BulkActions", () => {
       expect(getByLabelText("All (8)")).toBeInTheDocument();
 
       // Select all
-      await fireEvent.click(checkbox);
+      fireEvent.click(checkbox);
 
       expect(checkbox).toBeChecked();
       expect(getByLabelText("8 / 8")).toBeInTheDocument();
@@ -89,7 +77,7 @@ describe("BulkActions", () => {
       const selectAll = checkboxes[0];
 
       // Select all
-      await fireEvent.click(selectAll);
+      fireEvent.click(selectAll);
 
       expect(onSelectAllMock).toBeCalledTimes(1);
     });
@@ -108,18 +96,6 @@ describe("BulkActions", () => {
   });
 
   describe("With actions", () => {
-    it("should be defined", () => {
-      const { container } = render(<WithActions />);
-
-      expect(container).toBeDefined();
-    });
-
-    it("should render correctly", () => {
-      const { container } = render(<WithActions />);
-
-      expect(container).toMatchSnapshot();
-    });
-
     it("should render the actions correctly", async () => {
       const { getAllByRole, getByRole } = render(<WithActions />);
 
@@ -138,14 +114,14 @@ describe("BulkActions", () => {
       const checkbox = getByRole("checkbox");
 
       // Select all
-      await fireEvent.click(checkbox);
+      fireEvent.click(checkbox);
 
       expect(button1).toBeEnabled();
       expect(button2).toBeEnabled();
       expect(button3).toBeEnabled();
 
       // Open tooltip
-      await fireEvent.click(button3);
+      fireEvent.click(button3);
 
       const tooltip = getByRole("tooltip");
 

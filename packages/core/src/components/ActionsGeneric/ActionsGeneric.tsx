@@ -1,9 +1,5 @@
 import { clsx } from "clsx";
-import {
-  HvButtonSize,
-  HvButtonVariant,
-  HvDropDownMenu,
-} from "@core/components";
+import { HvButtonVariant, HvDropDownMenu } from "@core/components";
 import { setId } from "@core/utils";
 import React, { isValidElement } from "react";
 import { HvBaseProps } from "@core/types";
@@ -73,15 +69,12 @@ export const HvActionsGeneric = ({
         variant={category}
         className={clsx(actionsGenericClasses.button, classes?.button)}
         disabled={actDisabled ?? disabled}
-        onClick={(event: React.SyntheticEvent) =>
-          actionsCallback?.(event, id || "", action)
-        }
+        onClick={(event) => actionsCallback?.(event, id || "", action)}
         startIcon={renderedIcon}
         $baseColor={
           activeTheme?.colors?.modes[selectedMode].base_light ||
           theme.colors.base_light
         }
-        size={(activeTheme?.actionsGeneric?.buttonSize as HvButtonSize) || "md"}
         {...other}
       >
         {label}

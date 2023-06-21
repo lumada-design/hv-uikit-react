@@ -427,14 +427,13 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     pageSizeBorderColor: "transparent",
     pageSizeHoverBorderColor: "transparent",
   },
-  actionsGeneric: { buttonSize: "sm" },
+  actionsGeneric: {},
   bulkActions: {
     separatorDisplay: "none",
     border: "none",
     backgroundColor: theme.colors.atmo1,
     padding: "0px",
     anySelectedBackgroundColor: theme.colors.neutral_20,
-    buttonSize: "sm",
   },
   table: {
     headerHoverColor: theme.colors.atmo3,
