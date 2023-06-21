@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.1.1...@hitachivantara/uikit-react-viz@5.2.0) (2023-06-21)
+
+### Features
+
+- **BarChart:** bar chart added ([4b81d32](https://github.com/lumada-design/hv-uikit-react/commit/4b81d32ed1ed27b386e765ebb481f1eb89212a84))
+- **BarChart:** review and custom tooltip added ([63b29c0](https://github.com/lumada-design/hv-uikit-react/commit/63b29c07b7b70721a59f54a04bd597b25fe5ca6a))
+
 ## [5.1.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.1.0...@hitachivantara/uikit-react-viz@5.1.1) (2023-06-20)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz
