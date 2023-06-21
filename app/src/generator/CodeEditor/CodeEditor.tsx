@@ -8,7 +8,13 @@ import {
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { GeneratorContext } from "generator/GeneratorContext";
-import { useContext, useEffect, useState } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import debounce from "lodash/debounce";
 import {
   Download,
@@ -22,7 +28,13 @@ import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 import { IconButton } from "components/common/IconButton";
 import { styles } from "./CodeEditor.styles";
 
-const CodeEditor = ({ themeName, setCopied }): JSX.Element => {
+const CodeEditor = ({
+  themeName,
+  setCopied,
+}: {
+  themeName: string;
+  setCopied: Dispatch<SetStateAction<boolean>>;
+}): JSX.Element => {
   const { selectedTheme, selectedMode, changeTheme } = useTheme();
 
   const {

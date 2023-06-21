@@ -12,7 +12,14 @@ import {
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { lazy, Suspense, useContext, useEffect, useState } from "react";
+import {
+  lazy,
+  Suspense,
+  SyntheticEvent,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import CodeEditor from "generator/CodeEditor";
 import {
@@ -22,6 +29,7 @@ import {
   Template,
 } from "@hitachivantara/uikit-react-icons";
 import { css } from "@emotion/css";
+import { SnackbarCloseReason } from "@mui/material";
 import { styles } from "./Sidebar.styles";
 
 const Colors = lazy(() => import("generator/Colors"));
@@ -52,7 +60,10 @@ const Sidebar = () => {
     updateCustomTheme(newTheme, false, false);
   }, [customTheme.name, selectedTheme, themeChanges, updateCustomTheme]);
 
-  const handleClose = (event, reason) => {
+  const handleClose = (
+    event: Event | SyntheticEvent<any, Event>,
+    reason: SnackbarCloseReason
+  ) => {
     if (reason === "clickaway") return;
     setCopied(false);
   };

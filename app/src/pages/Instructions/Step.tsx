@@ -9,7 +9,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { GeneratorContext } from "generator/GeneratorContext";
-import { useContext, useEffect } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { tutorialData } from "./tutorialData";
 import classes from "./tutorialStyles";
@@ -19,6 +19,11 @@ export const Step = ({
   previousHandler,
   nextHandler,
   setTutorialOpen,
+}: {
+  idx: number | undefined;
+  previousHandler: (event?: React.MouseEvent<HTMLButtonElement>) => void;
+  nextHandler: (value: boolean) => void;
+  setTutorialOpen: Dispatch<SetStateAction<boolean>> | undefined;
 }) => {
   const { setOpen, setCurrentStep } = useContext(GeneratorContext);
   const navigate = useNavigate();
@@ -36,11 +41,11 @@ export const Step = ({
   }, [idx, navigate, setOpen]);
 
   const onCloseHandler = () => {
-    setTutorialOpen(false);
+    setTutorialOpen?.(false);
     setCurrentStep?.(1);
   };
 
-  const stepData = tutorialData[idx - 1];
+  const stepData = idx ? tutorialData[idx - 1] : undefined;
   const isLastStep = idx === tutorialData.length;
 
   return (
@@ -55,8 +60,8 @@ export const Step = ({
         }),
         paper: clsx(
           css({
-            ...stepData.position,
-            ...stepData.size,
+            ...stepData?.position,
+            ...stepData?.size,
           }),
           classes.paper
         ),
@@ -64,14 +69,20 @@ export const Step = ({
       onClose={onCloseHandler}
     >
       <HvDialogTitle>
-        <HvTypography variant="title3">{stepData.title}</HvTypography>
+        <HvTypography variant="title3">{stepData?.title}</HvTypography>
       </HvDialogTitle>
       <HvDialogContent>
         <div
-          className={classes[`triangle_${stepData.orientation || "up"}`]}
-          style={{ ...stepData.arrow }}
+          className={
+            classes[
+              `triangle_${
+                stepData?.orientation || "up"
+              }` as keyof typeof classes
+            ]
+          }
+          style={{ ...stepData?.arrow }}
         />
-        {stepData.content}
+        {stepData?.content}
       </HvDialogContent>
       <HvDialogActions>
         {!isLastStep && (

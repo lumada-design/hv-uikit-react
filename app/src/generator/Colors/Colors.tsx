@@ -6,6 +6,7 @@ import {
 import { GeneratorContext } from "generator/GeneratorContext";
 import { useContext } from "react";
 import debounce from "lodash/debounce";
+import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 import { styles } from "./Colors.styles";
 import { getColorGroupName, getColors } from "./utils";
 
@@ -17,7 +18,7 @@ const Colors = (): JSX.Element => {
 
   const colors = activeTheme?.colors.modes[selectedMode];
 
-  const colorChangedHandler = (colorName, colorValue) => {
+  const colorChangedHandler = (colorName: string, colorValue: string) => {
     updateCustomTheme({
       ...customTheme,
       colors: {
@@ -86,8 +87,9 @@ const Colors = (): JSX.Element => {
                       <div className={styles.tooltip}>
                         <HvTypography variant="label">{c}</HvTypography>
                         <HvTypography>
-                          {customTheme?.colors?.modes?.[selectedMode]?.[c] ||
-                            groupColors[c]}
+                          {customTheme?.colors?.modes?.[selectedMode]?.[
+                            c as keyof HvThemeTokens["colors"]
+                          ] || groupColors[c]}
                         </HvTypography>
                       </div>
                     }
@@ -100,7 +102,9 @@ const Colors = (): JSX.Element => {
                         (customTheme &&
                           customTheme.colors &&
                           customTheme.colors.modes[selectedMode] &&
-                          customTheme.colors.modes?.[selectedMode][c]) ||
+                          customTheme.colors.modes?.[selectedMode][
+                            c as keyof HvThemeTokens["colors"]
+                          ]) ||
                         groupColors[c]
                       }
                       onChange={(e) => {

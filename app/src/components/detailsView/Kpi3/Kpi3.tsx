@@ -1,7 +1,13 @@
 import { HvCard, HvTypography } from "@hitachivantara/uikit-react-core";
 import { theme } from "@hitachivantara/uikit-styles";
 
-export const Kpi3 = ({ children, title }) => {
+export const Kpi3 = ({
+  children,
+  title,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => {
   return (
     <HvCard
       style={{

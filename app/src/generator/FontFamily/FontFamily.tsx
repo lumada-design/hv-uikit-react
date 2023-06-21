@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { SyntheticEvent, useContext, useState } from "react";
 import {
   HvBox,
   HvButton,
@@ -10,6 +10,7 @@ import {
 import { GeneratorContext } from "generator/GeneratorContext";
 import { Add } from "@hitachivantara/uikit-react-icons";
 import { css } from "@emotion/css";
+import { SnackbarCloseReason } from "@mui/material";
 import { extractFontsNames } from "generator/utils";
 import { styles } from "./FontFamily.styles";
 
@@ -24,13 +25,15 @@ const FontFamily = () => {
   const [fontAdded, setFontAdded] = useState(false);
   const [fontAddedMsg, setFontAddedMsg] = useState("");
 
-  const onDropdownClickHandler = (font) => {
-    updateCustomTheme({
-      ...customTheme,
-      fontFamily: {
-        body: font,
-      },
-    });
+  const onDropdownClickHandler = (font?: string) => {
+    if (font) {
+      updateCustomTheme({
+        ...customTheme,
+        fontFamily: {
+          body: font,
+        },
+      });
+    }
   };
 
   const onAddHandler = () => {
@@ -54,7 +57,10 @@ const FontFamily = () => {
     setFontAdded(true);
   };
 
-  const handleClose = (event, reason) => {
+  const handleClose = (
+    event: Event | SyntheticEvent<any, Event>,
+    reason: SnackbarCloseReason
+  ) => {
     if (reason === "clickaway") return;
     setFontAdded(false);
   };
@@ -97,7 +103,11 @@ const FontFamily = () => {
       <HvDropdown
         label="Font Family"
         values={fontValues}
-        onChange={(item) => onDropdownClickHandler((item as HvListValue).label)}
+        onChange={(item) =>
+          onDropdownClickHandler(
+            (item as HvListValue)?.label as string | undefined
+          )
+        }
       />
     </div>
   );

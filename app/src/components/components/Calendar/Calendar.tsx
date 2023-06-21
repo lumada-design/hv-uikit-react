@@ -16,7 +16,14 @@ export const Calendar = () => {
   const [visibleMonth, setVisibleMonth] = useState(8);
   const [visibleYear, setVisibleYear] = useState(2020);
 
-  const onChangeHandler = (event, value) => {
+  const onChangeHandler = (
+    event:
+      | React.ChangeEvent<
+          HTMLTextAreaElement | HTMLInputElement | HTMLButtonElement
+        >
+      | undefined,
+    value: Date | DateRangeProp
+  ) => {
     if (value instanceof Date) {
       setSelectionDate({
         startDate: value,
@@ -28,21 +35,23 @@ export const Calendar = () => {
       value < selectionDate.startDate
     ) {
       setSelectionDate({
-        startDate: value,
+        startDate: value as Date,
         endDate: undefined,
       });
     } else {
       setSelectionDate({
         startDate: selectionDate.startDate,
-        endDate: value,
+        endDate: value as Date,
       });
     }
   };
 
   const visibleDateChangeHandler = (
-    event: any,
+    event:
+      | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+      | undefined,
     action: VisibilitySelectorActions,
-    index
+    index?: Date | DateRangeProp | number
   ) => {
     if (action === "previous_month") {
       const previousMonth = visibleMonth - 1;
@@ -68,7 +77,7 @@ export const Calendar = () => {
     } else if (action === "next_year") {
       setVisibleYear(visibleYear + 1);
     } else if (action === "month") {
-      setVisibleMonth(index);
+      setVisibleMonth(index as number);
     }
   };
 

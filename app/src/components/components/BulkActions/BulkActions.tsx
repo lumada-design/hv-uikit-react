@@ -103,13 +103,21 @@ export const BulkActions = () => {
     setData(newData);
   };
 
-  const handleChange = (_, i: number, checked: boolean) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    i: number,
+    checked: boolean
+  ) => {
     const newData = [...data];
     newData[i + pageSize * page].checked = checked;
     setData(newData);
   };
 
-  const handleAction = (_, __, action: HvActionGeneric | HvListValue) => {
+  const handleAction = (
+    event: React.SyntheticEvent,
+    id: string,
+    action: HvActionGeneric | HvListValue
+  ) => {
     const selected = data.filter((el) => el.checked);
 
     switch (action.id) {

@@ -1,6 +1,6 @@
 import { createTheme, HvTheme } from "@hitachivantara/uikit-react-core";
 import { HvThemeStructure } from "@hitachivantara/uikit-styles";
-import {
+import React, {
   createContext,
   useMemo,
   useState,
@@ -42,23 +42,27 @@ export const GeneratorContext = createContext<GeneratorContextProp>({
   updateCustomTheme: () => {},
 });
 
-const GeneratorProvider = ({ children }) => {
+const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState(false);
   const [tutorialOpen, setTutorialOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [customTheme, setCustomTheme] = useState(
     createTheme({ name: "customTheme", base: "ds5" })
   );
-  const [history, setHistory] = useState<HvTheme[]>([]);
+  const [history, setHistory] = useState<(HvTheme | HvThemeStructure)[]>([]);
   const [historyStep, setHistoryStep] = useState(-1);
   const [canUndo, setCanUndo] = useState(false);
   const [canRedo, setCanRedo] = useState(false);
   const [themeChanges, setThemeChanges] = useState({});
 
   const updateCustomTheme = useCallback(
-    (newTheme, addToHistory = true, updateThemeChanges = true) => {
+    (
+      newTheme: HvTheme | HvThemeStructure,
+      addToHistory = true,
+      updateThemeChanges = true
+    ) => {
       if (addToHistory) {
-        let newHistory: HvTheme[] = history;
+        let newHistory: HvTheme | HvThemeStructure[] = history;
         if (history.length - historyStep > 1) {
           // changing the theme with posterior history, we want to clear
           // that history so that the new custom theme is the most current

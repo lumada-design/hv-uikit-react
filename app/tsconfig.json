@@ -18,5 +18,28 @@
     "baseUrl": "./src"
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    {
+      "path": "../packages/icons/tsconfig.json"
+    },
+    {
+      "path": "../packages/styles/tsconfig.json"
+    },
+    {
+      "path": "../packages/core/tsconfig.json"
+    },
+    {
+      "path": "../packages/shared/tsconfig.json"
+    },
+    {
+      "path": "../packages/lab/tsconfig.json"
+    },
+    {
+      "path": "../packages/viz/tsconfig.json"
+    },
+    {
+      "path": "../packages/code-editor/tsconfig.json"
+    }
+  ]
 }

@@ -8,13 +8,14 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 
-export interface FontSizeProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FontSizeProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "onChange"> {
   disabled?: boolean;
   fontSize?: number;
   fontUnit: string;
-  onChange?: (val) => void;
-  onAfterChange?: (val) => void;
-  onUnitChange?: (val) => void;
+  onChange?: (val: number) => void;
+  onAfterChange?: (val: number) => void;
+  onUnitChange?: (val: HvListValue) => void;
 }
 
 const unitsToShow = ["px", "pt", "em", "rem"];
