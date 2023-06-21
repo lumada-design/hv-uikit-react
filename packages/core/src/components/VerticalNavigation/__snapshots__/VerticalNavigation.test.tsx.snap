@@ -20,7 +20,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
         <button
           aria-expanded="true"
           aria-label="collapseButton"
-          class="e1arrhkt0 HvButton-root css-135ktzz-StyledButton-StyledCollapseButton e138pvrm0"
+          class="e1arrhkt0 HvButton-root css-1vt7y3p-StyledButton-StyledCollapseButton e138pvrm0"
           type="button"
         >
           <div

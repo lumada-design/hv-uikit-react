@@ -25,7 +25,7 @@ exports[`StepNavigation > should render correctly 1`] = `
               >
                 <button
                   aria-label="step-Completed"
-                  class="HvStep-ghost e1bnfr851 HvButton-root css-u7l3xp-StyledButton"
+                  class="HvStep-ghost e1bnfr851 HvButton-root css-cxlwkl-StyledButton"
                   type="button"
                 >
                   <div
@@ -102,7 +102,7 @@ exports[`StepNavigation > should render correctly 1`] = `
               >
                 <button
                   aria-label="step-Failed"
-                  class="HvStep-ghost e1bnfr851 HvButton-root css-u7l3xp-StyledButton"
+                  class="HvStep-ghost e1bnfr851 HvButton-root css-cxlwkl-StyledButton"
                   type="button"
                 >
                   <div
@@ -177,7 +177,7 @@ exports[`StepNavigation > should render correctly 1`] = `
               >
                 <button
                   aria-label="step-Pending"
-                  class="HvStep-ghost e1bnfr851 HvButton-root css-u7l3xp-StyledButton"
+                  class="HvStep-ghost e1bnfr851 HvButton-root css-cxlwkl-StyledButton"
                   type="button"
                 >
                   <div
@@ -248,7 +248,7 @@ exports[`StepNavigation > should render correctly 1`] = `
                 <button
                   aria-disabled="true"
                   aria-label="step-Current"
-                  class="HvStep-ghost HvStep-ghostDisabled e1bnfr851 HvButton-root css-iy9g5f-StyledButton"
+                  class="HvStep-ghost HvStep-ghostDisabled e1bnfr851 HvButton-root css-1vqn1ni-StyledButton"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -304,7 +304,7 @@ exports[`StepNavigation > should render correctly 1`] = `
               >
                 <button
                   aria-label="step-Enabled"
-                  class="HvStep-ghost e1bnfr851 HvButton-root css-u7l3xp-StyledButton"
+                  class="HvStep-ghost e1bnfr851 HvButton-root css-cxlwkl-StyledButton"
                   type="button"
                 >
                   <div
@@ -358,7 +358,7 @@ exports[`StepNavigation > should render correctly 1`] = `
                 <button
                   aria-disabled="true"
                   aria-label="step-Disabled"
-                  class="HvStep-ghost e1bnfr851 HvButton-root css-iy9g5f-StyledButton"
+                  class="HvStep-ghost e1bnfr851 HvButton-root css-1vqn1ni-StyledButton"
                   disabled=""
                   tabindex="-1"
                   type="button"

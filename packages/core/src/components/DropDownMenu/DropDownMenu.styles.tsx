@@ -20,6 +20,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
   icon: {
     position: "relative",
     width: 32,
+    height: 32,
     boxSizing: "border-box",
     padding: 0,
     borderRadius: theme.dropDownMenu.borderRadius,

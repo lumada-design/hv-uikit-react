@@ -237,6 +237,7 @@ export const StyledButton = (component) =>
       ...($iconOnly && {
         margin: 0,
         padding: 0,
+        height: "fit-content",
       }),
       ...(!$iconOnly && {
         minWidth: "70px",
