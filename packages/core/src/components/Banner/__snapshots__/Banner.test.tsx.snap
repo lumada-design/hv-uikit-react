@@ -19,18 +19,18 @@ exports[`Banner > should render correctly 1`] = `
           class="MuiSnackbarContent-message HvBannerContent-message hv-vfvgre css-1exqwzz-MuiSnackbarContent-message"
         >
           <p
-            class="HvBanner-MessageContainer-message HvTypography-root HvTypography-body css-r1qw90-getStyledComponent e1tnpalo0"
+            class="HvBannerMessageContainer-message hv-g4mxg0 HvTypography-root HvTypography-body css-1fbl1cl-getStyledComponent e1tnpalo0"
           />
         </div>
         <div
           class="MuiSnackbarContent-action HvBannerContent-action hv-u5xit6 css-1kr9x0n-MuiSnackbarContent-action"
         >
           <div
-            class="HvBanner-ActionContainer-actionContainer css-dmmwmi"
+            class="HvBannerActionContainer-actionContainer hv-dmmwmi"
           >
             <button
               aria-label="Close"
-              class="HvBanner-ActionContainer-closeAction HvButton-root css-48f9xl-StyledButton e138pvrm0"
+              class="HvBannerActionContainer-closeAction hv-v6ff5y HvButton-root css-4vzt0e-StyledButton e138pvrm0"
               tabindex="0"
               type="button"
             >
@@ -41,7 +41,7 @@ exports[`Banner > should render correctly 1`] = `
                   class="css-1o4qkkz-StyledChildren e138pvrm1"
                 >
                   <div
-                    class="HvBanner-ActionContainer-iconContainer css-jada57"
+                    class="HvBannerActionContainer-iconContainer hv-x3wokz css-f95wjz"
                     name="Close"
                   >
                     <svg

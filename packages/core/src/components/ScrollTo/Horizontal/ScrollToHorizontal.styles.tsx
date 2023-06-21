@@ -1,10 +1,9 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvScrollToHorizontalClasses } from "./scrollToHorizontalClasses";
 
-export const styles: Partial<
-  Record<keyof HvScrollToHorizontalClasses, CSSInterpolation>
-> = {
+const name = "HvScrollToHorizontal";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   root: {
     display: "flex",
     padding: "0 30px",
@@ -44,4 +43,4 @@ export const styles: Partial<
     height: theme.scrollTo.dotRootSize,
     width: theme.scrollTo.dotRootSize,
   },
-};
+});

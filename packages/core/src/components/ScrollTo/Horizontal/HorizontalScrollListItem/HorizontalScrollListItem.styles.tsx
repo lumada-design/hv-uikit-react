@@ -1,12 +1,9 @@
-import { outlineStyles } from "@core/utils";
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses, outlineStyles } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import scrollToHorizontalClasses from "../scrollToHorizontalClasses";
-import { HvHorizontalScrollListItemClasses } from "./horizontalScrollListItemClasses";
 
-export const styles: Partial<
-  Record<keyof HvHorizontalScrollListItemClasses, CSSInterpolation>
-> = {
+const name = "HvHorizontalScrollListItem";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   root: {
     padding: "10px 0",
   },
@@ -20,13 +17,13 @@ export const styles: Partial<
     "&:hover": {
       backgroundColor: theme.scrollTo.horizontal.buttonHoverBackgroundColor,
 
-      [`& .${scrollToHorizontalClasses.notSelected}`]: {
+      "& $notSelected": {
         height: theme.scrollTo.dotHoverSize,
         width: theme.scrollTo.dotHoverSize,
         backgroundColor: theme.scrollTo.dotHoverColor,
       },
 
-      [`& .${scrollToHorizontalClasses.notSelectedRoot}`]: {
+      "& $notSelectedRoot": {
         backgroundColor: theme.scrollTo.dotHoverBackgroundColor,
       },
     },
@@ -55,4 +52,4 @@ export const styles: Partial<
   selected: {
     borderBottom: theme.scrollTo.horizontal.selectedButtonBottomBorder,
   },
-};
+});

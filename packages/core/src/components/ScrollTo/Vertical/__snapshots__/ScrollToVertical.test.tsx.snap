@@ -3,8 +3,9 @@
 exports[`ScrollToVertical > should render correctly 1`] = `
 <div>
   <ol
-    class="HvScrollToVertical-root hv-1iz8oef"
+    class="HvScrollToVertical-root hv-e9v9kf"
     id="hvVerticalScrollto2"
+    style="top: calc(50% - 64px);"
   >
     <li
       aria-current="true"

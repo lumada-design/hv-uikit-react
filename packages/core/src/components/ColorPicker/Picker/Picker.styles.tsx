@@ -1,11 +1,10 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
 import { CSSProperties } from "react";
-import { HvColorPickerPickerClasses } from "./pickerClasses";
 
-export const styles: Partial<
-  Record<keyof HvColorPickerPickerClasses, CSSInterpolation>
-> = {
+const name = "HvColorPicker-Picker";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   pickers: {
     display: "flex",
     flexDirection: theme.colorPicker
@@ -63,4 +62,5 @@ export const styles: Partial<
     fontWeight: theme.fontWeights.semibold,
     marginBottom: 8,
   },
-};
+  fields: {},
+});

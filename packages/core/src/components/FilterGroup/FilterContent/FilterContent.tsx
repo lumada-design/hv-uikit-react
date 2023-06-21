@@ -7,24 +7,24 @@ import {
   HvFormStatus,
   HvTypography,
 } from "@core/components";
-import { setId } from "@core/utils";
+import { ExtractNames, setId } from "@core/utils";
 import { useContext, useMemo, useRef, useState } from "react";
 import { Filters } from "@hitachivantara/uikit-react-icons";
-import { ClassNames } from "@emotion/react";
 import { useTheme } from "@core/hooks";
 import {
   HvFilterGroupLabels,
   HvFilterGroupValue,
   HvFilterGroupHorizontalPlacement,
 } from "../FilterGroup";
-import { styles } from "./FilterContent.styles";
-import filterGroupContentClasses, {
-  HvFilterGroupContentClasses,
-} from "./filterContentClasses";
+import { staticClasses, useClasses } from "./FilterContent.styles";
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { HvFilterGroupCounter } from "../Counter";
 import { HvFilterGroupLeftPanel } from "../LeftPanel";
 import { HvFilterGroupRightPanel } from "../RightPanel";
+
+export { staticClasses as filterGroupContentClasses };
+
+export type HvFilterGroupContentClasses = ExtractNames<typeof useClasses>;
 
 export interface HvFilterGroupContentProps
   extends Omit<HvBaseDropdownProps, "onChange"> {
@@ -65,9 +65,10 @@ export const HvFilterGroupContent = ({
   height,
   leftEmptyElement,
   rightEmptyElement,
-  classes,
+  classes: classesProp,
   ...others
 }: HvFilterGroupContentProps) => {
+  const { classes } = useClasses(classesProp);
   const { activeTheme } = useTheme();
 
   const [filterGroupOpen, setFilterGroupOpen] = useState<boolean>(false);
@@ -128,143 +129,91 @@ export const HvFilterGroupContent = ({
   );
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvBaseDropdown
-          id={setId(id, "dropdown")}
-          role="combobox"
-          classes={{
-            root: cx(filterGroupContentClasses.dropdown, classes?.dropdown),
-            panel: cx(
-              filterGroupContentClasses.panel,
-              css(styles.panel),
-              classes?.panel
-            ),
-            selection: cx(
-              filterGroupContentClasses.baseDropdownSelection,
-              css(styles.baseDropdownSelection),
-              classes?.baseDropdownSelection
-            ),
-            header: cx(
-              filterGroupContentClasses.header,
-              css(styles.header),
-              classes?.header
-            ),
-          }}
-          disabled={disabled}
-          disablePortal={disablePortal}
-          variableWidth
-          placement={horizontalPlacement}
-          expanded={filterGroupOpen}
-          onToggle={handleToggle}
-          onClickOutside={onCancelHandler}
-          onContainerCreation={focusOnContainer}
-          placeholder={Header}
-          adornment={<HvFilterGroupCounter />}
-          popperProps={{
-            modifiers: [
-              { name: "preventOverflow", enabled: escapeWithReference },
-            ],
-          }}
-          aria-haspopup="dialog"
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          aria-invalid={status === "invalid" ? true : undefined}
-          aria-errormessage={
-            status === "invalid" ? setId(id, "error") : undefined
+    <HvBaseDropdown
+      id={setId(id, "dropdown")}
+      role="combobox"
+      classes={{
+        root: classes.dropdown,
+        panel: classes.panel,
+        selection: classes.baseDropdownSelection,
+        header: classes.header,
+      }}
+      disabled={disabled}
+      disablePortal={disablePortal}
+      variableWidth
+      placement={horizontalPlacement}
+      expanded={filterGroupOpen}
+      onToggle={handleToggle}
+      onClickOutside={onCancelHandler}
+      onContainerCreation={focusOnContainer}
+      placeholder={Header}
+      adornment={<HvFilterGroupCounter />}
+      popperProps={{
+        modifiers: [{ name: "preventOverflow", enabled: escapeWithReference }],
+      }}
+      aria-haspopup="dialog"
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+      aria-invalid={status === "invalid" ? true : undefined}
+      aria-errormessage={status === "invalid" ? setId(id, "error") : undefined}
+      aria-describedby={
+        [description && setId(id, "description"), ariaDescribedBy]
+          .join(" ")
+          .trim() || undefined
+      }
+      {...others}
+    >
+      <div ref={focusTarget} tabIndex={-1} />
+      <div className={classes.root} style={{ height }}>
+        <HvFilterGroupLeftPanel
+          id={id}
+          className={classes.leftSidePanel}
+          emptyElement={leftEmptyElement}
+        />
+        <HvFilterGroupRightPanel
+          id={id}
+          className={classes.rightSidePanel}
+          emptyElement={rightEmptyElement}
+          labels={labels}
+        />
+      </div>
+      <HvActionBar className={classes.actionBar}>
+        <HvButton
+          id={setId(id, "clearFilters-button")}
+          disabled={
+            defaultValue
+              ? defaultValue?.flat().length === filterValues?.flat().length
+              : filterValues?.flat().length === 0
           }
-          aria-describedby={
-            [description && setId(id, "description"), ariaDescribedBy]
-              .join(" ")
-              .trim() || undefined
-          }
-          {...others}
+          variant="secondaryGhost"
+          onClick={onClearHandler}
         >
-          <div ref={focusTarget} tabIndex={-1} />
-          <div
-            className={cx(
-              filterGroupContentClasses.root,
-              css(styles.root),
-              classes?.root
-            )}
-            style={{ height }}
-          >
-            <HvFilterGroupLeftPanel
-              id={id}
-              className={cx(
-                filterGroupContentClasses.leftSidePanel,
-                css(styles.leftSidePanel),
-                classes?.leftSidePanel
-              )}
-              emptyElement={leftEmptyElement}
-            />
-            <HvFilterGroupRightPanel
-              id={id}
-              className={cx(
-                filterGroupContentClasses.rightSidePanel,
-                css(styles.rightSidePanel),
-                classes?.rightSidePanel
-              )}
-              emptyElement={rightEmptyElement}
-              labels={labels}
-            />
-          </div>
-          <HvActionBar
-            className={cx(
-              filterGroupContentClasses.actionBar,
-              css(styles.actionBar),
-              classes?.actionBar
-            )}
-          >
-            <HvButton
-              id={setId(id, "clearFilters-button")}
-              disabled={
-                defaultValue
-                  ? defaultValue?.flat().length === filterValues?.flat().length
-                  : filterValues?.flat().length === 0
-              }
-              variant="secondaryGhost"
-              onClick={onClearHandler}
-            >
-              {labels?.clearLabel}
-            </HvButton>
-            <div
-              aria-hidden="true"
-              className={cx(
-                filterGroupContentClasses.space,
-                css(styles.space),
-                classes?.space
-              )}
-            >
-              &nbsp;
-            </div>
-            <HvButton
-              id={setId(id, "apply-button")}
-              disabled={applyDisabled}
-              variant={
-                activeTheme?.filterGroup.applyButtonVariant as HvButtonVariant
-              }
-              onClick={onApplyHandler}
-              className={cx(
-                filterGroupContentClasses.applyButton,
-                css(styles.applyButton),
-                classes?.applyButton
-              )}
-            >
-              {labels?.applyLabel}
-            </HvButton>
-            <HvButton
-              id={setId(id, "cancel-button")}
-              variant={
-                activeTheme?.filterGroup.cancelButtonVariant as HvButtonVariant
-              }
-              onClick={onCancelHandler}
-            >
-              {labels?.cancelLabel}
-            </HvButton>
-          </HvActionBar>
-        </HvBaseDropdown>
-      )}
-    </ClassNames>
+          {labels?.clearLabel}
+        </HvButton>
+        <div aria-hidden="true" className={classes.space}>
+          &nbsp;
+        </div>
+        <HvButton
+          id={setId(id, "apply-button")}
+          disabled={applyDisabled}
+          variant={
+            activeTheme?.filterGroup.applyButtonVariant as HvButtonVariant
+          }
+          onClick={onApplyHandler}
+          className={classes.applyButton}
+        >
+          {labels?.applyLabel}
+        </HvButton>
+        <HvButton
+          id={setId(id, "cancel-button")}
+          variant={
+            activeTheme?.filterGroup.cancelButtonVariant as HvButtonVariant
+          }
+          onClick={onCancelHandler}
+        >
+          {labels?.cancelLabel}
+        </HvButton>
+      </HvActionBar>
+    </HvBaseDropdown>
   );
 };

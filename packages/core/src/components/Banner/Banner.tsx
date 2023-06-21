@@ -57,7 +57,7 @@ export interface HvBannerProps
   /** Props to pass down to the Banner Wrapper. An object `actionProps` can be included to be passed as others to actions. */
   bannerContentProps?: HvBannerContentProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: Partial<HvBannerClasses>;
+  classes?: HvBannerClasses;
 }
 
 /**

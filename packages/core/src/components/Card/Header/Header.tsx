@@ -3,9 +3,12 @@ import MuiCardHeader, {
 } from "@mui/material/CardHeader";
 import { HvBaseProps } from "@core/types";
 import { useTheme } from "@core/hooks";
-import { ClassNames } from "@emotion/react";
-import cardHeaderClasses, { HvCardHeaderClasses } from "./headerClasses";
-import { styles } from "./Header.styles";
+import { ExtractNames } from "@core/utils";
+import { staticClasses, useClasses } from "./Header.styles";
+
+export { staticClasses as cardHeaderClasses };
+
+export type HvCardHeaderClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCardHeaderProps
   extends Omit<MuiCardHeaderProps, "classes">,
@@ -23,7 +26,7 @@ export interface HvCardHeaderProps
 }
 
 export const HvCardHeader = ({
-  classes,
+  classes: classesProp,
   className,
   title,
   subheader,
@@ -32,58 +35,36 @@ export const HvCardHeader = ({
   ...others
 }: HvCardHeaderProps) => {
   const { activeTheme } = useTheme();
+  const { classes, css, cx } = useClasses(classesProp);
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <MuiCardHeader
-          title={title}
-          subheader={subheader}
-          action={icon}
-          onClick={onClick}
-          className={cx(
-            cardHeaderClasses.root,
-            css(styles.root),
-            className,
-            classes?.root
-          )}
-          classes={{
-            title: icon
-              ? cx(
-                  cardHeaderClasses.titleShort,
-                  css(styles.titleShort),
-                  css({
-                    ...activeTheme?.typography[activeTheme?.card.titleVariant],
-                  }),
-                  classes?.titleShort
-                )
-              : cx(
-                  cardHeaderClasses.title,
-                  css(styles.title),
-                  css({
-                    ...activeTheme?.typography[activeTheme?.card.titleVariant],
-                  }),
-                  classes?.title
-                ),
-            subheader: cx(
-              cardHeaderClasses.subheader,
-              css(styles.subheader),
-              css({
-                ...activeTheme?.typography[activeTheme?.card.subheaderVariant],
-                color: activeTheme?.card.subheaderColor,
-              }),
-              classes?.subheader
-            ),
-            action: cx(
-              cardHeaderClasses.action,
-              css(styles.action),
-              classes?.action
-            ),
-            content: cx(cardHeaderClasses.content, classes?.content),
-          }}
-          {...others}
-        />
-      )}
-    </ClassNames>
+    <MuiCardHeader
+      title={title}
+      subheader={subheader}
+      action={icon}
+      onClick={onClick}
+      className={cx(className, classes.root)}
+      classes={{
+        title: cx(
+          css({
+            ...activeTheme?.typography[activeTheme?.card.titleVariant],
+          }),
+          {
+            [classes.titleShort]: icon,
+            [classes.title]: !icon,
+          }
+        ),
+        subheader: cx(
+          css({
+            ...activeTheme?.typography[activeTheme?.card.subheaderVariant],
+            color: activeTheme?.card.subheaderColor,
+          }),
+          classes.subheader
+        ),
+        action: classes.action,
+        content: classes.content,
+      }}
+      {...others}
+    />
   );
 };

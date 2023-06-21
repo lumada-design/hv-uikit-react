@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { ClassNames } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { useControlled, useUniqueId } from "@core/hooks";
@@ -9,6 +8,7 @@ import {
   keyboardCodes,
   setId,
   getPrevNextFocus,
+  ExtractNames,
 } from "@core/utils";
 import {
   HvBaseDropdown,
@@ -19,10 +19,11 @@ import {
   HvListValue,
   HvPanel,
 } from "@core/components";
-import { styles } from "./DropDownMenu.styles";
-import dropDownMenuClasses, {
-  HvDropDownMenuClasses,
-} from "./dropDownMenuClasses";
+import { staticClasses, useClasses } from "./DropDownMenu.styles";
+
+export { staticClasses as dropDownMenuClasses };
+
+export type HvDropDownMenuClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDropDownMenuProps
   extends HvBaseProps<HTMLDivElement, "onClick"> {
@@ -66,9 +67,9 @@ export interface HvDropDownMenuProps
 /**
  * A drop-down menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.
  */
-const HvDropDownMenu = ({
+export const HvDropDownMenu = ({
   id: idProp,
-  classes,
+  classes: classesProp,
   className,
   icon,
   placement = "right",
@@ -83,6 +84,7 @@ const HvDropDownMenu = ({
   category = "secondaryGhost",
   ...others
 }: HvDropDownMenuProps) => {
+  const { classes, cx } = useClasses(classesProp);
   const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
   const id = useUniqueId(idProp, "dropdown-menu");
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
@@ -119,88 +121,61 @@ const HvDropDownMenu = ({
   };
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvBaseDropdown
-          id={id}
-          className={cx(
-            dropDownMenuClasses.container,
-            css(styles.container),
-            className,
-            classes?.container
-          )}
-          classes={{
-            root: cx(dropDownMenuClasses.root, css(styles.root), classes?.root),
-            container: cx(
-              dropDownMenuClasses.baseContainer,
-              classes?.baseContainer
-            ),
-          }}
-          expanded={open && !disabled}
-          component={
-            <HvButton
-              icon
-              variant={category}
-              id={setId(id, "icon-button")}
-              className={cx(
-                dropDownMenuClasses.icon,
-                open && dropDownMenuClasses.iconSelected,
-                css(styles.icon),
-                open && css(styles.iconSelected),
-                classes?.icon,
-                open && classes?.iconSelected
-              )}
-              aria-expanded={open}
-              disabled={disabled}
-              aria-label="Dropdown menu"
-            >
-              {icon || (
-                <MoreOptionsVertical
-                  color={disabled ? "secondary_60" : undefined}
-                />
-              )}
-            </HvButton>
-          }
-          aria-haspopup="menu"
-          placement={placement}
-          variableWidth
-          disablePortal={disablePortal}
-          onToggle={(e, s) => {
-            // this will only run if uncontrolled
-            setOpen(s);
-            onToggle?.(e, s);
-          }}
+    <HvBaseDropdown
+      id={id}
+      className={cx(className, classes.container)}
+      classes={{
+        root: classes.root,
+        container: classes.baseContainer,
+      }}
+      expanded={open && !disabled}
+      component={
+        <HvButton
+          icon
+          variant={category}
+          id={setId(id, "icon-button")}
+          className={cx(classes.icon, { [classes.iconSelected]: open })}
+          aria-expanded={open}
           disabled={disabled}
-          onContainerCreation={setFocusToContent}
-          popperProps={popperStyle}
-          {...others}
+          aria-label="Dropdown menu"
         >
-          <HvPanel
-            className={cx(
-              dropDownMenuClasses.menuListRoot,
-              css(styles.menuListRoot),
-              classes?.menuListRoot
-            )}
-          >
-            <HvList
-              id={listId}
-              values={dataList}
-              selectable={false}
-              condensed={condensed}
-              onClick={(event, item) => {
-                if (!keepOpened) handleClose(event);
-                onClick?.(event, item);
-              }}
-              onKeyDown={handleKeyDown}
-              classes={{
-                root: cx(dropDownMenuClasses.menuList, classes?.menuList),
-              }}
+          {icon || (
+            <MoreOptionsVertical
+              color={disabled ? "secondary_60" : undefined}
             />
-          </HvPanel>
-        </HvBaseDropdown>
-      )}
-    </ClassNames>
+          )}
+        </HvButton>
+      }
+      aria-haspopup="menu"
+      placement={placement}
+      variableWidth
+      disablePortal={disablePortal}
+      onToggle={(e, s) => {
+        // this will only run if uncontrolled
+        setOpen(s);
+        onToggle?.(e, s);
+      }}
+      disabled={disabled}
+      onContainerCreation={setFocusToContent}
+      popperProps={popperStyle}
+      {...others}
+    >
+      <HvPanel className={classes.menuListRoot}>
+        <HvList
+          id={listId}
+          values={dataList}
+          selectable={false}
+          condensed={condensed}
+          onClick={(event, item) => {
+            if (!keepOpened) handleClose(event);
+            onClick?.(event, item);
+          }}
+          onKeyDown={handleKeyDown}
+          classes={{
+            root: classes.menuList,
+          }}
+        />
+      </HvPanel>
+    </HvBaseDropdown>
   );
 };
-
-export default HvDropDownMenu;

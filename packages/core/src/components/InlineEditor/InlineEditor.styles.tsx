@@ -1,13 +1,8 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
 import { baseInputClasses, inputClasses } from "@core/components";
-import inlineEditorClasses, {
-  HvInlineEditorClasses,
-} from "./inlineEditorClasses";
 
-export const styles: Partial<
-  Record<keyof HvInlineEditorClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
   root: {
     [`& .${baseInputClasses.inputRoot}.${inputClasses.inputRoot}`]: {
       height: "100%",
@@ -18,12 +13,15 @@ export const styles: Partial<
     top: "unset",
     bottom: 0,
   },
+  input: {},
+  inputRoot: {},
   text: {
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
     alignSelf: "center",
   },
+  largeText: {},
   textEmpty: {
     color: theme.typography.placeholderText.color,
   },
@@ -46,7 +44,7 @@ export const styles: Partial<
       border: `${theme.inlineEditor.borderWidth} solid ${theme.inlineEditor.hoverBorderColor}`,
       backgroundColor: "transparent",
 
-      [`& .${inlineEditorClasses.icon}`]: {
+      "& $icon": {
         visibility: "visible",
       },
     },
@@ -55,7 +53,7 @@ export const styles: Partial<
       border: `${theme.inlineEditor.borderWidth} solid ${theme.inlineEditor.activeBorderColor}`,
       backgroundColor: "transparent",
 
-      [`& .${inlineEditorClasses.icon}`]: {
+      "& $icon": {
         visibility: "visible",
       },
     },
@@ -82,4 +80,4 @@ export const styles: Partial<
   iconVisible: {
     visibility: "visible",
   },
-};
+});

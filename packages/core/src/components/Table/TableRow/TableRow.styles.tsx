@@ -1,11 +1,9 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
 import { getBorderStyles } from "../utils/utils";
-import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
 
-export const styles: Partial<
-  Record<keyof HvTableRowClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvTableRow", {
+  /** Styles applied to the component root class. */
   root: {
     color: "inherit",
     backgroundColor: theme.table.rowBackgroundColor,
@@ -16,6 +14,7 @@ export const styles: Partial<
       height: 32,
     },
   },
+  /** Styles applied to the component root when inside a `HvTableHead`. */
   head: {
     "&:first-of-type": {
       height: 52,
@@ -25,17 +24,22 @@ export const styles: Partial<
       height: 52,
     },
   },
+  /** Styles applied to the component root when inside a `HvTableBody`. */
   body: {},
+  /** Styles applied to the component root when inside a `HvTableFooter`. */
   footer: {},
+  /** Styles applied to the component root when selected. */
   selected: {
     backgroundColor: theme.table.selectedRowBackgroundColor,
   },
+  /** Styles applied to the component root when expanded. */
   expanded: {
     backgroundColor: theme.colors.atmo1,
     "& > *[role=cell]": {
       borderBottom: "none",
     },
   },
+  /** Styles applied to the component root when striped. */
   striped: {
     // these styles were left on a styled component because of the access to the css var value to add an alpha.
     // "&:nth-of-type(even)": {
@@ -48,12 +52,14 @@ export const styles: Partial<
     //   },
     // },
   },
+  /** Styles applied to the component root on hover. */
   hover: {
     transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
     "&:hover": {
       backgroundColor: theme.table.rowHoverColor,
     },
   },
+  /** Styles applied to the component root when its table variant is list. */
   variantList: {
     ...getBorderStyles(
       "row",
@@ -62,7 +68,7 @@ export const styles: Partial<
     ),
     backgroundColor: theme.colors.atmo1,
     height: 52,
-    [`&.${tableRowClasses.selected}`]: {
+    "&$selected": {
       ...getBorderStyles(
         "row",
         theme.colors.secondary,
@@ -89,6 +95,7 @@ export const styles: Partial<
       borderRadius: theme.table.rowListBorderRadius,
     },
   },
+  /** Styles applied to the component root when its table variant is list. */
   variantListHead: {
     backgroundColor: theme.table.rowListBackgroundColor,
     height: 16,
@@ -100,4 +107,4 @@ export const styles: Partial<
       height: 16,
     },
   },
-};
+});

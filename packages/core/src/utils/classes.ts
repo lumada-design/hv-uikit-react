@@ -3,7 +3,7 @@ import { useCss } from "@core/hooks/useCss";
 
 export type ExtractNames<
   T extends (...args: any) => { classes: Record<string, any>; cx: any }
-> = ReturnType<T>["classes"];
+> = Partial<ReturnType<T>["classes"]>;
 
 export const getClasses = <T extends string, N extends string>(
   keys: T[],

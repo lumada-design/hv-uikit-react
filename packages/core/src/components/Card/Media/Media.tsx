@@ -2,10 +2,13 @@ import MuiCardMedia, {
   CardMediaProps as MuiCardMediaProps,
 } from "@mui/material/CardMedia";
 import { HvBaseProps } from "@core/types";
+import { ExtractNames } from "@core/utils";
 import { ImgHTMLAttributes } from "react";
-import { ClassNames } from "@emotion/react";
-import cardMediaClasses, { HvCardMediaClasses } from "./mediaClasses";
-import { styles } from "./Media.styles";
+import { staticClasses, useClasses } from "./Media.styles";
+
+export { staticClasses as cardMediaClasses };
+
+export type HvCardMediaClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCardMediaProps
   extends Omit<MuiCardMediaProps, "classes">,
@@ -27,31 +30,28 @@ export interface HvCardMediaProps
 
 export const HvCardMedia = ({
   id,
-  classes,
+  classes: classesProp,
   className,
   children,
   title,
   onClick,
   ...others
 }: HvCardMediaProps) => {
+  const { classes } = useClasses(classesProp);
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <MuiCardMedia
-          id={id}
-          classes={{
-            root: cx(cardMediaClasses.root, css(styles.root), classes?.root),
-            media: cx(cardMediaClasses.media, classes?.media),
-          }}
-          className={className}
-          role="img"
-          title={title}
-          onClick={onClick}
-          {...others}
-        >
-          {children}
-        </MuiCardMedia>
-      )}
-    </ClassNames>
+    <MuiCardMedia
+      id={id}
+      classes={{
+        root: classes.root,
+        media: classes.media,
+      }}
+      className={className}
+      role="img"
+      title={title}
+      onClick={onClick}
+      {...others}
+    >
+      {children}
+    </MuiCardMedia>
   );
 };

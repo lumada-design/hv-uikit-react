@@ -1,43 +1,39 @@
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "@core/utils";
+import { createClasses, outlineStyles } from "@core/utils";
 import { CSSProperties } from "react";
-import { CSSInterpolation } from "@emotion/serialize";
-import baseInputClasses, { HvBaseInputClasses } from "./baseInputClasses";
 
-export const styles: Partial<
-  Record<keyof HvBaseInputClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
   root: {
     display: "inline-block",
     width: "100%",
     position: "relative",
 
-    [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
+    "&:hover $inputBorderContainer": {
       backgroundColor: theme.baseInput.hoverColor,
     },
 
-    [`&:focus-within .${baseInputClasses.inputBorderContainer}`]: {
+    "&:focus-within $inputBorderContainer": {
       backgroundColor: theme.baseInput.hoverColor,
     },
   },
   disabled: {
-    [`& .${baseInputClasses.inputBorderContainer}`]: {
+    "& $inputBorderContainer": {
       backgroundColor: theme.colors.atmo4,
     },
 
-    [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
+    "&:hover $inputBorderContainer": {
       backgroundColor: theme.colors.atmo4,
     },
 
-    [`& .${baseInputClasses.inputRootMultiline}`]: {
-      [`& .${baseInputClasses.input}`]: {
+    "& $inputRootMultiline": {
+      "& $input": {
         backgroundColor: theme.baseInput.disabledBackgroundColor,
         border: `1px solid ${theme.baseInput.multilineDisabledBorderColor}`,
       },
     },
 
-    [`&:hover .${baseInputClasses.inputRootMultiline}`]: {
-      [`& .${baseInputClasses.input}`]: {
+    "&:hover $inputRootMultiline": {
+      "& $input": {
         backgroundColor: theme.baseInput.disabledBackgroundColor,
         border: `1px solid ${theme.baseInput.multilineDisabledBorderColor}`,
       },
@@ -45,28 +41,28 @@ export const styles: Partial<
   },
   invalid: {
     "&:not(.disabled)": {
-      [`& .${baseInputClasses.inputBorderContainer}`]: {
+      "& $inputBorderContainer": {
         backgroundColor: theme.colors.negative,
       },
 
-      [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
+      "&:hover $inputBorderContainer": {
         backgroundColor: theme.colors.negative,
       },
 
-      [`& .${baseInputClasses.inputRootMultiline}`]: {
-        [`& .${baseInputClasses.input}`]: {
+      "& $inputRootMultiline": {
+        "& $input": {
           border: `1px solid ${theme.colors.negative}`,
         },
       },
 
-      [`&:hover .${baseInputClasses.inputRootMultiline}`]: {
-        [`& .${baseInputClasses.input}`]: {
+      "&:hover $inputRootMultiline": {
+        "& $input": {
           border: `1px solid ${theme.colors.negative}`,
         },
       },
 
-      [`&:focus-within .${baseInputClasses.inputRootMultiline}`]: {
-        [`& .${baseInputClasses.input}`]: {
+      "&:focus-within $inputRootMultiline": {
+        "& $input": {
           border: `1px solid ${theme.colors.negative}`,
         },
       },
@@ -74,34 +70,34 @@ export const styles: Partial<
   },
   resizable: { width: "auto" },
   readOnly: {
-    [`& .${baseInputClasses.inputBorderContainer}`]: {
+    "& $inputBorderContainer": {
       backgroundColor: "transparent",
     },
 
-    [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
+    "&:hover $inputBorderContainer": {
       backgroundColor: "transparent",
     },
 
-    [`&:focus-within .${baseInputClasses.inputBorderContainer}`]: {
+    "&:focus-within $inputBorderContainer": {
       backgroundColor: "transparent",
     },
 
-    [`& .${baseInputClasses.inputRootMultiline}`]: {
-      [`& .${baseInputClasses.input}`]: {
+    "& $inputRootMultiline": {
+      "& $input": {
         border: `1px solid ${theme.baseInput.readOnlyBorderColor}`,
         backgroundColor: theme.baseInput.readOnlyBackgroundColor,
       },
     },
 
-    [`&:hover .${baseInputClasses.inputRootMultiline}`]: {
-      [`& .${baseInputClasses.input}`]: {
+    "&:hover $inputRootMultiline": {
+      "& $input": {
         border: `1px solid ${theme.baseInput.readOnlyBorderColor}`,
         backgroundColor: theme.baseInput.readOnlyBackgroundColor,
       },
     },
 
-    [`&:focus-within .${baseInputClasses.inputRootMultiline}`]: {
-      [`& .${baseInputClasses.input}`]: {
+    "&:focus-within $inputRootMultiline": {
+      "& $input": {
         border: `1px solid ${theme.baseInput.readOnlyBorderColor}`,
         backgroundColor: theme.baseInput.readOnlyBackgroundColor,
       },
@@ -130,12 +126,12 @@ export const styles: Partial<
     backgroundColor: theme.colors.atmo1,
     fontFamily: theme.fontFamily.body,
 
-    [`&:hover:not(.${baseInputClasses.inputRootDisabled}):not(.${baseInputClasses.inputRootInvalid}):not(.${baseInputClasses.inputRootReadOnly})`]:
+    "&:hover:not($inputRootDisabled):not($inputRootInvalid):not($inputRootReadOnly)":
       {
         borderColor: theme.baseInput.hoverColor,
       },
 
-    [`&:hover:not(.${baseInputClasses.inputRootDisabled})::before`]: {
+    "&:hover:not($inputRootDisabled)::before": {
       borderBottom: "none",
     },
 
@@ -155,7 +151,7 @@ export const styles: Partial<
       background: theme.colors.atmo1,
     },
 
-    [`&.${baseInputClasses.inputRootReadOnly}`]: {
+    "& $inputRootReadOnly": {
       backgroundColor: theme.baseInput.readOnlyBackgroundColor,
     },
   },
@@ -180,7 +176,7 @@ export const styles: Partial<
     border: "none",
     height: "auto",
 
-    [`& .${baseInputClasses.input}`]: {
+    "& $input": {
       border: `1px solid ${theme.baseInput.multilineBorderColor}`,
       borderRadius: theme.radii.base,
       backgroundColor: theme.colors.atmo1,
@@ -224,4 +220,4 @@ export const styles: Partial<
     color: theme.baseInput.readOnlyTextColor,
   },
   inputResizable: { resize: "both", width: "100%" },
-};
+});

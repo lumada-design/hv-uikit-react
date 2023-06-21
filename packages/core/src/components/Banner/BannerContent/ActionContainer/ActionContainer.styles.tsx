@@ -1,10 +1,8 @@
-import { CSSInterpolation } from "@emotion/serialize";
-import { outlineStyles } from "@core/utils";
-import { HvActionContainerClasses } from "./actionContainerClasses";
+import { createClasses, outlineStyles } from "@core/utils";
 
-export const styles: Partial<
-  Record<keyof HvActionContainerClasses, CSSInterpolation>
-> = {
+const name = "HvBannerActionContainer";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   actionContainer: {
     display: "flex",
     flexDirection: "column",
@@ -26,4 +24,4 @@ export const styles: Partial<
     width: "32px",
     height: "32px",
   },
-};
+});

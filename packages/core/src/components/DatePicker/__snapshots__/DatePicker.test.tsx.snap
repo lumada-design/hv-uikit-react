@@ -3,11 +3,11 @@
 exports[`HvDatepicker > calendar custom properties > should render correctly 1`] = `
 <div>
   <div
-    class="HvDatePicker-root css-79elbk HvFormElement-root"
+    class="HvDatePicker-root hv-79elbk HvFormElement-root"
     id="testingDatePicker"
   >
     <div
-      class="HvBaseDropdown-root HvDatePicker-dropdown css-z8zbcm-StyledRoot eapzthe8"
+      class="HvBaseDropdown-root HvDatePicker-dropdown hv-13o7eu2 css-1nukton-StyledRoot eapzthe8"
     >
       <div
         aria-expanded="false"
@@ -34,7 +34,7 @@ exports[`HvDatepicker > calendar custom properties > should render correctly 1`]
             class="css-zsju0o-StyledAdornment eapzthe3"
           >
             <div
-              class="HvDatePicker-icon css-1ocd5l7"
+              class="HvDatePicker-icon hv-0 css-f95wjz"
               name="Calendar"
             >
               <svg
@@ -62,10 +62,10 @@ exports[`HvDatepicker > calendar custom properties > should render correctly 1`]
 exports[`HvDatepicker > ranged calendar > should render correctly 1`] = `
 <div>
   <div
-    class="HvDatePicker-root css-79elbk HvFormElement-root"
+    class="HvDatePicker-root hv-79elbk HvFormElement-root"
   >
     <div
-      class="HvBaseDropdown-root HvDatePicker-dropdown css-z8zbcm-StyledRoot eapzthe8"
+      class="HvBaseDropdown-root HvDatePicker-dropdown hv-13o7eu2 css-1nukton-StyledRoot eapzthe8"
     >
       <div
         aria-expanded="false"
@@ -92,7 +92,7 @@ exports[`HvDatepicker > ranged calendar > should render correctly 1`] = `
             class="css-zsju0o-StyledAdornment eapzthe3"
           >
             <div
-              class="HvDatePicker-icon css-1ocd5l7"
+              class="HvDatePicker-icon hv-0 css-f95wjz"
               name="Calendar"
             >
               <svg
@@ -120,11 +120,11 @@ exports[`HvDatepicker > ranged calendar > should render correctly 1`] = `
 exports[`HvDatepicker > sample snapshot testing > Main 1`] = `
 <div>
   <div
-    class="HvDatePicker-root css-79elbk HvFormElement-root"
+    class="HvDatePicker-root hv-79elbk HvFormElement-root"
     id="DatePicker"
   >
     <div
-      class="HvBaseDropdown-root HvDatePicker-dropdown css-z8zbcm-StyledRoot eapzthe8"
+      class="HvBaseDropdown-root HvDatePicker-dropdown hv-13o7eu2 css-1nukton-StyledRoot eapzthe8"
     >
       <div
         aria-expanded="false"
@@ -153,7 +153,7 @@ exports[`HvDatepicker > sample snapshot testing > Main 1`] = `
             class="css-zsju0o-StyledAdornment eapzthe3"
           >
             <div
-              class="HvDatePicker-icon css-1ocd5l7"
+              class="HvDatePicker-icon hv-0 css-f95wjz"
               name="Calendar"
             >
               <svg
@@ -181,10 +181,10 @@ exports[`HvDatepicker > sample snapshot testing > Main 1`] = `
 exports[`HvDatepicker > single calendar > should render correctly 1`] = `
 <div>
   <div
-    class="HvDatePicker-root css-79elbk HvFormElement-root"
+    class="HvDatePicker-root hv-79elbk HvFormElement-root"
   >
     <div
-      class="HvBaseDropdown-root HvDatePicker-dropdown css-z8zbcm-StyledRoot eapzthe8"
+      class="HvBaseDropdown-root HvDatePicker-dropdown hv-13o7eu2 css-1nukton-StyledRoot eapzthe8"
     >
       <div
         aria-expanded="false"
@@ -211,7 +211,7 @@ exports[`HvDatepicker > single calendar > should render correctly 1`] = `
             class="css-zsju0o-StyledAdornment eapzthe3"
           >
             <div
-              class="HvDatePicker-icon css-1ocd5l7"
+              class="HvDatePicker-icon hv-0 css-f95wjz"
               name="Calendar"
             >
               <svg
@@ -239,10 +239,10 @@ exports[`HvDatepicker > single calendar > should render correctly 1`] = `
 exports[`HvDatepicker > with minimum configuration > should render correctly 1`] = `
 <div>
   <div
-    class="HvDatePicker-root css-79elbk HvFormElement-root"
+    class="HvDatePicker-root hv-79elbk HvFormElement-root"
   >
     <div
-      class="HvBaseDropdown-root HvDatePicker-dropdown css-z8zbcm-StyledRoot eapzthe8"
+      class="HvBaseDropdown-root HvDatePicker-dropdown hv-13o7eu2 css-1nukton-StyledRoot eapzthe8"
     >
       <div
         aria-expanded="false"
@@ -267,7 +267,7 @@ exports[`HvDatepicker > with minimum configuration > should render correctly 1`]
             class="css-zsju0o-StyledAdornment eapzthe3"
           >
             <div
-              class="HvDatePicker-icon css-1ocd5l7"
+              class="HvDatePicker-icon hv-0 css-f95wjz"
               name="Calendar"
             >
               <svg

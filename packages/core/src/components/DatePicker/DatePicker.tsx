@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { ClassNames } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Calendar } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -17,13 +16,16 @@ import {
 } from "@core/components";
 import { useControlled, useLabels, useTheme, useUniqueId } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
-import { setId, useSavedState } from "@core/utils";
+import { ExtractNames, setId, useSavedState } from "@core/utils";
 import { isInvalid } from "../Forms/FormElement/validationStates";
 import { isDate } from "../Calendar/utils";
 import { getDateLabel } from "./utils";
 import useVisibleDate from "./useVisibleDate";
-import datePickerClasses, { HvDatePickerClasses } from "./datePickerClasses";
-import { styles } from "./DatePicker.styles";
+import { staticClasses, useClasses } from "./DatePicker.styles";
+
+export { staticClasses as datePickerClasses };
+
+export type HvDatePickerClasses = ExtractNames<typeof useClasses>;
 
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
@@ -213,7 +215,7 @@ export interface HvDatePickerProps
  * interface widget which allows the user to select a date from a calendar.
  */
 export const HvDatePicker = ({
-  classes,
+  classes: classesProp,
   className,
 
   id,
@@ -256,6 +258,7 @@ export const HvDatePicker = ({
   calendarProps,
   ...others
 }: HvDatePickerProps) => {
+  const { classes, cx } = useClasses(classesProp);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   const elementId = useUniqueId(id, "hvdatepicker");
@@ -433,74 +436,38 @@ export const HvDatePicker = ({
    * Renders the container for the action elements.
    */
   const renderActions = () => (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvActionBar
-          className={
-            showClear
-              ? cx(
-                  datePickerClasses.actionContainer,
-                  css(styles.actionContainer),
-                  classes?.actionContainer
-                )
-              : ""
-          }
-        >
-          {showClear && (
-            <div
-              className={cx(
-                datePickerClasses.leftContainer,
-                classes?.leftContainer
-              )}
-            >
-              <HvButton
-                id={setId(id, "action", "clear")}
-                className={cx(
-                  datePickerClasses.action,
-                  css(styles.action),
-                  classes?.action
-                )}
-                variant="primaryGhost"
-                onClick={handleClear}
-              >
-                {labels?.clearLabel}
-              </HvButton>
-            </div>
-          )}
-          <div
-            className={cx(
-              datePickerClasses.rightContainer,
-              classes?.rightContainer
-            )}
+    <HvActionBar className={cx({ [classes.actionContainer]: showClear })}>
+      {showClear && (
+        <div className={classes.leftContainer}>
+          <HvButton
+            id={setId(id, "action", "clear")}
+            className={classes.action}
+            variant="primaryGhost"
+            onClick={handleClear}
           >
-            <HvButton
-              id={setId(id, "action", "apply")}
-              className={cx(
-                datePickerClasses.action,
-                css(styles.action),
-                classes?.action
-              )}
-              variant="primaryGhost"
-              onClick={handleApply}
-            >
-              {labels?.applyLabel}
-            </HvButton>
-            <HvButton
-              id={setId(id, "action", "cancel")}
-              className={cx(
-                datePickerClasses.action,
-                css(styles.action),
-                classes?.action
-              )}
-              variant="primaryGhost"
-              onClick={handleCancel}
-            >
-              {labels?.cancelLabel}
-            </HvButton>
-          </div>
-        </HvActionBar>
+            {labels?.clearLabel}
+          </HvButton>
+        </div>
       )}
-    </ClassNames>
+      <div className={classes.rightContainer}>
+        <HvButton
+          id={setId(id, "action", "apply")}
+          className={classes.action}
+          variant="primaryGhost"
+          onClick={handleApply}
+        >
+          {labels?.applyLabel}
+        </HvButton>
+        <HvButton
+          id={setId(id, "action", "cancel")}
+          className={classes.action}
+          variant="primaryGhost"
+          onClick={handleCancel}
+        >
+          {labels?.cancelLabel}
+        </HvButton>
+      </div>
+    </HvActionBar>
   );
 
   const styledTypography = (dateString, variant, text) => {
@@ -544,154 +511,107 @@ export const HvDatePicker = ({
   }
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvFormElement
-          id={id}
-          name={name}
-          value={dateValue}
-          status={validationState}
-          disabled={disabled}
-          required={required}
-          className={cx(
-            datePickerClasses.root,
-            css(styles.root),
-            className,
-            classes?.root
-          )}
-          readOnly={readOnly}
-          {...others}
-        >
-          {(hasLabel || hasDescription) && (
-            <div
-              className={cx(
-                datePickerClasses.labelContainer,
-                css(styles.labelContainer),
-                classes?.labelContainer
-              )}
-            >
-              {hasLabel && (
-                <HvLabel
-                  id={setId(elementId, "label")}
-                  label={label}
-                  className={cx(
-                    datePickerClasses.label,
-                    css(styles.label),
-                    classes?.label
-                  )}
-                />
-              )}
-
-              {hasDescription && (
-                <HvInfoMessage
-                  id={setId(elementId, "description")}
-                  className={cx(
-                    datePickerClasses.description,
-                    css(styles.description),
-                    classes?.description
-                  )}
-                >
-                  {description}
-                </HvInfoMessage>
-              )}
-            </div>
-          )}
-          <HvBaseDropdown
-            role="combobox"
-            classes={{
-              root: cx(
-                datePickerClasses.dropdown,
-                css(styles.dropdown),
-                classes?.dropdown
-              ),
-              panel: cx(
-                datePickerClasses.panel,
-                css(styles.panel),
-                classes?.panel
-              ),
-              header: isStateInvalid
-                ? cx(
-                    datePickerClasses.dropdownHeaderInvalid,
-                    css(styles.dropdownHeaderInvalid),
-                    classes?.dropdownHeaderInvalid
-                  )
-                : undefined,
-              headerOpen: cx(
-                datePickerClasses.dropdownHeaderOpen,
-                css(styles.dropdownHeaderOpen),
-                classes?.dropdownHeaderOpen
-              ),
-            }}
-            readOnly={readOnly}
-            disabled={disabled}
-            disablePortal={disablePortal}
-            variableWidth
-            placement={horizontalPlacement}
-            expanded={calendarOpen}
-            onToggle={handleToggle}
-            onClickOutside={handleCalendarClose}
-            onContainerCreation={focusOnContainer}
-            placeholder={renderInput(
-              getDateLabel(dateValue, rangeMode, locale)
-            )}
-            adornment={
-              <Calendar
-                className={cx(
-                  datePickerClasses.icon,
-                  css(styles.icon),
-                  classes?.icon
-                )}
-                color={disabled ? "secondary_80" : undefined}
-              />
-            }
-            popperProps={{
-              modifiers: [
-                { name: "preventOverflow", enabled: escapeWithReference },
-              ],
-            }}
-            aria-haspopup="dialog"
-            aria-label={ariaLabel}
-            aria-labelledby={
-              [label && setId(elementId, "label"), ariaLabelledBy]
-                .join(" ")
-                .trim() || undefined
-            }
-            aria-invalid={isStateInvalid ? true : undefined}
-            aria-errormessage={errorMessageId}
-            aria-describedby={
-              [description && setId(elementId, "description"), ariaDescribedBy]
-                .join(" ")
-                .trim() || undefined
-            }
-            {...dropdownProps}
-          >
-            <div ref={focusTarget} tabIndex={-1} />
-            <HvCalendar
-              id={setId(id, "calendar")}
-              startAdornment={startAdornment}
-              onChange={handleDateChange}
-              onInputChange={handleInputDateChange}
-              onVisibleDateChange={(_event, type, month, target) => {
-                dispatchAction({ type, target, month });
-              }}
-              locale={locale}
-              {...visibleDate}
-              {...calendarProps}
-              invalidDateLabel={labels?.invalidDateLabel}
+    <HvFormElement
+      id={id}
+      name={name}
+      value={dateValue}
+      status={validationState}
+      disabled={disabled}
+      required={required}
+      className={cx(className, classes.root)}
+      readOnly={readOnly}
+      {...others}
+    >
+      {(hasLabel || hasDescription) && (
+        <div className={classes.labelContainer}>
+          {hasLabel && (
+            <HvLabel
+              id={setId(elementId, "label")}
+              label={label}
+              className={classes.label}
             />
-            {(rangeMode || showActions) && renderActions()}
-          </HvBaseDropdown>
-          {canShowError && (
-            <HvWarningText
-              id={setId(elementId, "error")}
-              disableBorder
-              className={cx(datePickerClasses.error, classes?.error)}
-            >
-              {validationMessage}
-            </HvWarningText>
           )}
-        </HvFormElement>
+
+          {hasDescription && (
+            <HvInfoMessage
+              id={setId(elementId, "description")}
+              className={classes.description}
+            >
+              {description}
+            </HvInfoMessage>
+          )}
+        </div>
       )}
-    </ClassNames>
+      <HvBaseDropdown
+        role="combobox"
+        classes={{
+          root: classes.dropdown,
+          panel: classes.panel,
+          header: cx({ [classes.dropdownHeaderInvalid]: isStateInvalid }),
+          headerOpen: classes.dropdownHeaderOpen,
+        }}
+        readOnly={readOnly}
+        disabled={disabled}
+        disablePortal={disablePortal}
+        variableWidth
+        placement={horizontalPlacement}
+        expanded={calendarOpen}
+        onToggle={handleToggle}
+        onClickOutside={handleCalendarClose}
+        onContainerCreation={focusOnContainer}
+        placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
+        adornment={
+          <Calendar
+            className={classes.icon}
+            color={disabled ? "secondary_80" : undefined}
+          />
+        }
+        popperProps={{
+          modifiers: [
+            { name: "preventOverflow", enabled: escapeWithReference },
+          ],
+        }}
+        aria-haspopup="dialog"
+        aria-label={ariaLabel}
+        aria-labelledby={
+          [label && setId(elementId, "label"), ariaLabelledBy]
+            .join(" ")
+            .trim() || undefined
+        }
+        aria-invalid={isStateInvalid ? true : undefined}
+        aria-errormessage={errorMessageId}
+        aria-describedby={
+          [description && setId(elementId, "description"), ariaDescribedBy]
+            .join(" ")
+            .trim() || undefined
+        }
+        {...dropdownProps}
+      >
+        <div ref={focusTarget} tabIndex={-1} />
+        <HvCalendar
+          id={setId(id, "calendar")}
+          startAdornment={startAdornment}
+          onChange={handleDateChange}
+          onInputChange={handleInputDateChange}
+          onVisibleDateChange={(_event, type, month, target) => {
+            dispatchAction({ type, target, month });
+          }}
+          locale={locale}
+          {...visibleDate}
+          {...calendarProps}
+          invalidDateLabel={labels?.invalidDateLabel}
+        />
+        {(rangeMode || showActions) && renderActions()}
+      </HvBaseDropdown>
+      {canShowError && (
+        <HvWarningText
+          id={setId(elementId, "error")}
+          disableBorder
+          className={cx(classes.error)}
+        >
+          {validationMessage}
+        </HvWarningText>
+      )}
+    </HvFormElement>
   );
 };

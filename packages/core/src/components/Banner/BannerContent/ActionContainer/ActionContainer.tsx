@@ -1,11 +1,12 @@
 import { HvBaseProps } from "@core/types";
 import { HvActionGeneric, HvActionsGeneric, HvButton } from "@core/components";
 import { Close } from "@hitachivantara/uikit-react-icons";
-import { ClassNames } from "@emotion/react";
-import actionContainerClasses, {
-  HvActionContainerClasses,
-} from "./actionContainerClasses";
-import { styles } from "./ActionContainer.styles";
+import { ExtractNames } from "@core/utils";
+import { staticClasses, useClasses } from "./ActionContainer.styles";
+
+export { staticClasses as actionContainerClasses };
+
+export type HvActionContainerClasses = ExtractNames<typeof useClasses>;
 
 export interface HvActionContainerProps extends HvBaseProps<HTMLButtonElement> {
   /** onClose function. */
@@ -22,65 +23,39 @@ export interface HvActionContainerProps extends HvBaseProps<HTMLButtonElement> {
   classes?: HvActionContainerClasses;
 }
 
-export const HvActionContainer = ({
-  id,
-  classes,
-  onClose,
-  action,
-  actionCallback,
-  ...others
-}: HvActionContainerProps) => {
+export const HvActionContainer = (props: HvActionContainerProps) => {
+  const {
+    id,
+    classes: classesProp,
+    onClose,
+    action,
+    actionCallback,
+    ...others
+  } = props;
+  const { classes } = useClasses(classesProp);
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <div
-          className={cx(
-            actionContainerClasses.actionContainer,
-            css(styles.actionContainer),
-            classes?.actionContainer
-          )}
-        >
-          <HvButton
-            icon
-            className={cx(
-              actionContainerClasses.closeAction,
-              css(styles.closeAction),
-              classes?.closeAction
-            )}
-            variant="semantic"
-            aria-label="Close"
-            onClick={onClose}
-            tabIndex={0}
-            {...others}
-          >
-            <Close
-              iconSize="XS"
-              className={cx(
-                actionContainerClasses.iconContainer,
-                css(styles.iconContainer),
-                classes?.iconContainer
-              )}
-              color="base2"
-            />
-          </HvButton>
-          {action && (
-            <div
-              className={cx(
-                actionContainerClasses.actionsInnerContainer,
-                css(styles.actionsInnerContainer),
-                classes?.actionsInnerContainer
-              )}
-            >
-              <HvActionsGeneric
-                id={id}
-                category="semantic"
-                actions={action}
-                actionsCallback={actionCallback}
-              />
-            </div>
-          )}
+    <div className={classes.actionContainer}>
+      <HvButton
+        icon
+        className={classes.closeAction}
+        variant="semantic"
+        aria-label="Close"
+        onClick={onClose}
+        tabIndex={0}
+        {...others}
+      >
+        <Close iconSize="XS" className={classes.iconContainer} color="base2" />
+      </HvButton>
+      {action && (
+        <div className={classes.actionsInnerContainer}>
+          <HvActionsGeneric
+            id={id}
+            category="semantic"
+            actions={action}
+            actionsCallback={actionCallback}
+          />
         </div>
       )}
-    </ClassNames>
+    </div>
   );
 };

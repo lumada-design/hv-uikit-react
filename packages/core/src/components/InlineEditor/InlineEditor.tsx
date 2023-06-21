@@ -1,8 +1,12 @@
-import { ClassNames } from "@emotion/react";
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { HvBaseProps } from "@core/types";
 import { useControlled } from "@core/hooks";
-import { getVarValue, isKeypress, keyboardCodes } from "@core/utils";
+import {
+  ExtractNames,
+  getVarValue,
+  isKeypress,
+  keyboardCodes,
+} from "@core/utils";
 import {
   HvButtonProps,
   HvTypographyVariants,
@@ -13,10 +17,11 @@ import {
 } from "@core/components";
 import { HvThemeTypographyProps, theme } from "@hitachivantara/uikit-styles";
 import { Edit } from "@hitachivantara/uikit-react-icons";
-import inlineEditorClasses, {
-  HvInlineEditorClasses,
-} from "./inlineEditorClasses";
-import { styles } from "./InlineEditor.styles";
+import { staticClasses, useClasses } from "./InlineEditor.styles";
+
+export { staticClasses as inlineEditorClasses };
+
+export type HvInlineEditorClasses = ExtractNames<typeof useClasses>;
 
 export interface HvInlineEditorProps
   extends HvBaseProps<HTMLDivElement, "onBlur" | "onChange"> {
@@ -57,7 +62,7 @@ const getTypographyStyles = (typography): HvThemeTypographyProps => {
  */
 export const HvInlineEditor = ({
   className,
-  classes,
+  classes: classesProp,
   value: valueProp,
   defaultValue,
   showIcon,
@@ -71,6 +76,7 @@ export const HvInlineEditor = ({
   typographyProps,
   ...others
 }: HvInlineEditorProps) => {
+  const { classes, cx } = useClasses(classesProp);
   const [value, setValue] = useControlled(valueProp, defaultValue);
   const [editMode, setEditMode] = useState(false);
   const [cachedValue, setCachedValue] = useState(value);
@@ -114,92 +120,52 @@ export const HvInlineEditor = ({
   };
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <div
-          className={cx(
-            inlineEditorClasses.root,
-            css(styles.root),
-            className,
-            classes?.root
-          )}
+    <div className={cx(className, classes.root)}>
+      {editMode ? (
+        <InputComponent
+          inputRef={inputRef}
+          classes={{
+            root: classes.inputRoot,
+            input: classes.input,
+            inputBorderContainer: classes.inputBorderContainer,
+          }}
+          inputProps={{
+            style: {
+              ...typographyStyles,
+              height: InputComponent === HvInput ? lineHeight : undefined,
+            },
+          }}
+          value={value}
+          onBlur={handleBlur}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+          {...others}
+        />
+      ) : (
+        <HvButton
+          variant="secondaryGhost"
+          overrideIconColors={false}
+          className={cx(classes.button, {
+            [classes.largeText]: parseInt(lineHeight as string, 10) >= 28,
+          })}
+          onClick={handleClick}
+          {...buttonProps}
         >
-          {editMode ? (
-            <InputComponent
-              inputRef={inputRef}
-              classes={{
-                root: cx(inlineEditorClasses.inputRoot, classes?.inputRoot),
-                input: cx(
-                  inlineEditorClasses.input,
-                  css(styles.input),
-                  classes?.input
-                ),
-                inputBorderContainer: cx(
-                  inlineEditorClasses.inputBorderContainer,
-                  css(styles.inputBorderContainer),
-                  classes?.inputBorderContainer
-                ),
-              }}
-              inputProps={{
-                style: {
-                  ...typographyStyles,
-                  height: InputComponent === HvInput ? lineHeight : undefined,
-                },
-              }}
-              value={value}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              onKeyDown={handleKeyDown}
-              {...others}
-            />
-          ) : (
-            <HvButton
-              variant="secondaryGhost"
-              overrideIconColors={false}
-              className={cx(
-                inlineEditorClasses.button,
-                parseInt(lineHeight as string, 10) >= 28 &&
-                  inlineEditorClasses.largeText,
-                css(styles.button),
-                parseInt(lineHeight as string, 10) >= 28 &&
-                  css(styles.largeText),
-                classes?.button,
-                parseInt(lineHeight as string, 10) >= 28 && classes?.largeText
-              )}
-              onClick={handleClick}
-              {...buttonProps}
-            >
-              <HvTypography
-                variant={variant}
-                noWrap
-                className={cx(
-                  inlineEditorClasses.text,
-                  !value && inlineEditorClasses.textEmpty,
-                  css(styles.text),
-                  !value && css(styles.textEmpty),
-                  classes?.text,
-                  !value && classes?.textEmpty
-                )}
-                {...typographyProps}
-              >
-                {value || placeholder}
-              </HvTypography>
-              <Edit
-                color="secondary_60"
-                role="presentation"
-                className={cx(
-                  inlineEditorClasses.icon,
-                  showIcon && inlineEditorClasses.iconVisible,
-                  css(styles.icon),
-                  showIcon && css(styles.iconVisible),
-                  classes?.icon,
-                  showIcon && classes?.iconVisible
-                )}
-              />
-            </HvButton>
-          )}
-        </div>
+          <HvTypography
+            variant={variant}
+            noWrap
+            className={cx(classes.text, { [classes.textEmpty]: !value })}
+            {...typographyProps}
+          >
+            {value || placeholder}
+          </HvTypography>
+          <Edit
+            color="secondary_60"
+            role="presentation"
+            className={cx(classes.icon, { [classes.iconVisible]: showIcon })}
+          />
+        </HvButton>
       )}
-    </ClassNames>
+    </div>
   );
 };

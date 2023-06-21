@@ -1,12 +1,8 @@
 import { CSSProperties } from "react";
-import { CSSInterpolation } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
-import { getClasses } from "@core/utils";
-import { replace$ } from "./utils";
+import { createClasses } from "@core/utils";
 
-export type HvCarouselClasses = Record<keyof typeof styles, string>;
-
-const styles = {
+export const { staticClasses, useClasses } = createClasses("HvCarousel", {
   /** Styles applied to the component root class. */
   root: {
     display: "flex",
@@ -177,15 +173,4 @@ const styles = {
       opacity: "100%",
     },
   },
-} satisfies Record<string, CSSInterpolation>;
-
-const name = "HvCarousel";
-
-export const carouselClasses = getClasses(
-  Object.keys(styles) as (keyof HvCarouselClasses)[],
-  name
-);
-
-const newStyles = replace$(styles, name);
-
-export default newStyles;
+});

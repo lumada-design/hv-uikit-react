@@ -1,19 +1,23 @@
 import { HvBaseProps } from "@core/types";
 import { useTheme, useUniqueId } from "@core/hooks";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { ExtractNames, isKeypress, keyboardCodes, setId } from "@core/utils";
 import { useMemo } from "react";
-import { ClassNames } from "@emotion/react";
 import fade from "@core/utils/hexToRgbA";
-import scrollToVerticalClasses, {
-  HvScrollToVerticalClasses,
-} from "./scrollToVerticalClasses";
-import { generateDynamicStyles, styles } from "./ScrollToVertical.styles";
+import {
+  staticClasses,
+  useClasses,
+  calculateOffset,
+} from "./ScrollToVertical.styles";
 import { HvVerticalScrollListItem } from "./VerticalScrollListItem";
 import { useScrollTo } from "../useScrollTo";
 import { withTooltip } from "../withTooltip";
 import { HvScrollToTooltipPositions } from "../types";
 
 const { Enter } = keyboardCodes;
+
+export { staticClasses as scrollToVerticalClasses };
+
+export type HvScrollToVerticalClasses = ExtractNames<typeof useClasses>;
 
 export interface HvScrollToVerticalOption {
   key?: string;
@@ -78,13 +82,15 @@ export const HvScrollToVertical = ({
   onClick,
   onEnter,
   className,
-  classes,
+  classes: classesProp,
   options,
   offset = 0,
   position = "relative",
   tooltipPosition = "left",
+  style,
   ...others
 }: HvScrollToVerticalProps) => {
+  const { classes, css, cx } = useClasses(classesProp);
   const { activeTheme, selectedMode } = useTheme();
 
   const elementId = useUniqueId(id, "hvVerticalScrollto");
@@ -145,36 +151,23 @@ export const HvScrollToVertical = ({
     );
   });
 
-  const dynamicClasses = generateDynamicStyles(options.length);
+  const positionOffset = calculateOffset(options.length);
+  const backgroundColor = fade(
+    activeTheme?.colors.modes[selectedMode].atmo2,
+    activeTheme?.scrollTo.backgroundColorOpacity
+  );
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <ol
-          className={cx(
-            scrollToVerticalClasses.root,
-            position === "fixed" && scrollToVerticalClasses.positionFixed,
-            position === "absolute" && scrollToVerticalClasses.positionAbsolute,
-            css(styles.root),
-            css({
-              backgroundColor: fade(
-                activeTheme?.colors.modes[selectedMode].atmo2,
-                activeTheme?.scrollTo.backgroundColorOpacity
-              ),
-            }),
-            position === "fixed" && css(dynamicClasses.positionFixed),
-            position === "absolute" && css(dynamicClasses.positionAbsolute),
-            className,
-            classes?.root,
-            position === "fixed" && classes?.positionFixed,
-            position === "absolute" && classes?.positionAbsolute
-          )}
-          id={elementId}
-          {...others}
-        >
-          {tabs}
-        </ol>
-      )}
-    </ClassNames>
+    <ol
+      className={cx(css({ backgroundColor }), className, classes.root, {
+        [classes.positionFixed]: position === "fixed",
+        [classes.positionAbsolute]: position === "absolute",
+      })}
+      style={{ top: `calc(50% - ${positionOffset}px)`, ...style }}
+      id={elementId}
+      {...others}
+    >
+      {tabs}
+    </ol>
   );
 };

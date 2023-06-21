@@ -1,10 +1,9 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvColorPickerFieldsClasses } from "./fieldsClasses";
 
-export const styles: Partial<
-  Record<keyof HvColorPickerFieldsClasses, CSSInterpolation>
-> = {
+const name = "HvColorPicker-Fields";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   fields: {
     width: "100%",
     display: "flex",
@@ -34,4 +33,4 @@ export const styles: Partial<
       paddingLeft: 5,
     },
   },
-};
+});

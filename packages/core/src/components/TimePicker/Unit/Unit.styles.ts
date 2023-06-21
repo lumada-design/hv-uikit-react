@@ -1,7 +1,7 @@
-import { CSSInterpolation } from "@emotion/css";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-export const styles = {
+export const { staticClasses, useClasses } = createClasses("HvTimePickerUnit", {
   root: {
     display: "flex",
     flexDirection: "column",
@@ -56,4 +56,4 @@ export const styles = {
   inputBorderContainer: {
     top: 40,
   },
-} satisfies Record<string, CSSInterpolation>;
+});

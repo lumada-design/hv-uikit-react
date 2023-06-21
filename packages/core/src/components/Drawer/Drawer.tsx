@@ -2,7 +2,6 @@ import {
   Drawer as MuiDrawer,
   DrawerProps as MuiDrawerProps,
 } from "@mui/material";
-import { ClassNames } from "@emotion/react";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps } from "@core/types/generic";
 import { withTooltip } from "@core/hocs";
@@ -11,13 +10,17 @@ import {
   hexToRgbA,
   setId,
   checkValidHexColorValue,
+  ExtractNames,
 } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvButton } from "@core/components";
 import { useEffect, useState } from "react";
 import { useTheme } from "@core/hooks";
-import { styles } from "./Drawer.styles";
-import drawerClasses, { HvDrawerClasses } from "./drawerClasses";
+import { staticClasses, useClasses } from "./Drawer.styles";
+
+export { staticClasses as drawerClasses };
+
+export type HvDrawerClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDrawerProps
   extends MuiDrawerProps,
@@ -69,7 +72,7 @@ export interface HvDrawerProps
  */
 export const HvDrawer = ({
   className,
-  classes,
+  classes: classesProp,
   id,
   children,
   open,
@@ -78,6 +81,7 @@ export const HvDrawer = ({
   buttonTitle = "Close",
   ...others
 }: HvDrawerProps) => {
+  const { classes, css, cx } = useClasses(classesProp);
   const { activeTheme, selectedMode } = useTheme();
 
   const [backgroundColorValue, setBackgroundColorValue] = useState<string>(
@@ -103,53 +107,34 @@ export const HvDrawer = ({
   }, [activeTheme?.colors?.modes[selectedMode], backgroundColorValue]);
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <MuiDrawer
-          className={cx(
-            css(styles.root),
-            drawerClasses.root,
-            classes?.root,
-            className
-          )}
-          id={id}
-          anchor={anchor}
-          open={open}
-          PaperProps={{
-            classes: {
-              root: cx(css(styles.paper), drawerClasses.paper, classes?.paper),
-            },
-          }}
-          BackdropProps={{
-            classes: {
-              root: cx(
-                css({
-                  backgroundColor,
-                }),
-                drawerClasses.background,
-                classes?.background
-              ),
-            },
-          }}
-          onClose={onClose}
-          {...others}
-        >
-          <HvButton
-            id={setId(id, "close")}
-            className={cx(
-              css(styles.closeButton),
-              drawerClasses.closeButton,
-              classes?.closeButton
-            )}
-            variant="primaryGhost"
-            onClick={onClose}
-            aria-label={buttonTitle}
-          >
-            <CloseButtonTooltipWrapper />
-          </HvButton>
-          {children}
-        </MuiDrawer>
-      )}
-    </ClassNames>
+    <MuiDrawer
+      className={cx(classes.root, className)}
+      id={id}
+      anchor={anchor}
+      open={open}
+      PaperProps={{
+        classes: {
+          root: classes.paper,
+        },
+      }}
+      BackdropProps={{
+        classes: {
+          root: cx(css({ backgroundColor }), classes.background),
+        },
+      }}
+      onClose={onClose}
+      {...others}
+    >
+      <HvButton
+        id={setId(id, "close")}
+        className={classes.closeButton}
+        variant="primaryGhost"
+        onClick={onClose}
+        aria-label={buttonTitle}
+      >
+        <CloseButtonTooltipWrapper />
+      </HvButton>
+      {children}
+    </MuiDrawer>
   );
 };

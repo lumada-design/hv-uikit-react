@@ -1,10 +1,8 @@
-import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvColorPickerClasses } from "./colorPickerClasses";
+import { createClasses } from "@core/utils";
 
-export const styles: Partial<
-  Record<keyof HvColorPickerClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
+  root: {},
   labelContainer: {
     display: "flex",
     alignItems: "flex-start",
@@ -14,6 +12,7 @@ export const styles: Partial<
     display: "block",
     cursor: "pointer",
   },
+  description: {},
   headerColorValue: {
     textTransform: "uppercase",
   },
@@ -34,10 +33,11 @@ export const styles: Partial<
     width: theme.colorPicker.colorPickerWidth,
   },
   colorPickerIcon: {},
+  recommendedColorsRoot: {},
   dropdownRootIconOnly: {
     width: 32,
     height: 32,
   },
   headerColorIconOnly: {},
   pickerFields: { paddingBottom: 20 },
-};
+});

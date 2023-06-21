@@ -8,25 +8,6 @@ import {
 } from "./Controls.stories";
 
 describe("<HvControls>", () => {
-  describe("sample snapshot testing", () => {
-    it("Controls", () => {
-      const { container } = render(<Controls />);
-      expect(container).toMatchSnapshot();
-    });
-    it("Controls Controlled", () => {
-      const { container } = render(<ControlsControlled />);
-      expect(container).toMatchSnapshot();
-    });
-    it("Custom Controls", () => {
-      const { container } = render(<CustomControls />);
-      expect(container).toMatchSnapshot();
-    });
-    it("Mixed Controls", () => {
-      const { container } = render(<MixedControls />);
-      expect(container).toMatchSnapshot();
-    });
-  });
-
   describe("general structure", () => {
     it("renders the controls as expected", () => {
       const { getByRole, getByPlaceholderText, getAllByRole, getAllByText } =

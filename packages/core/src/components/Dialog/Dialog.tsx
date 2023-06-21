@@ -1,16 +1,19 @@
 import React, { useCallback, useMemo } from "react";
-import { ClassNames } from "@emotion/react";
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { BackdropProps } from "@mui/material";
 
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvBaseProps } from "@core/types/generic";
-import { setId } from "@core/utils";
+import { ExtractNames, setId } from "@core/utils";
 import { withTooltip } from "@core/hocs";
 import { useTheme } from "@core/hooks";
-import dialogClasses, { HvDialogClasses } from "./dialogClasses";
-import { StyledBackdrop, StyledClose, styles } from "./Dialog.styles";
+import { StyledBackdrop, staticClasses, useClasses } from "./Dialog.styles";
+import { HvButton } from "..";
+
+export { staticClasses as dialogClasses };
+
+export type HvDialogClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDialogProps
   extends Omit<MuiDialogProps, "fullScreen" | "classes" | "open">,
@@ -57,7 +60,7 @@ const DialogBackdrop = (backdropProps: BackdropProps) => {
 };
 
 export const HvDialog = ({
-  classes,
+  classes: classesProp,
   className,
   id,
   children,
@@ -69,6 +72,7 @@ export const HvDialog = ({
   disableBackdropClick = false,
   ...others
 }: HvDialogProps) => {
+  const { classes, css, cx } = useClasses(classesProp);
   delete (others as any).fullScreen;
 
   const { rootId } = useTheme();
@@ -112,57 +116,48 @@ export const HvDialog = ({
   );
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <MuiDialog
-          container={document.getElementById(rootId || "") || document.body}
-          className={cx(dialogClasses.root, className, classes?.root)}
-          id={id}
-          ref={measuredRef}
-          open={open}
-          fullScreen={fullscreen}
-          onClose={(event, reason) => wrappedClose(event, undefined, reason)}
-          slots={slots}
-          classes={{ container: css({ position: "relative" }) }}
-          BackdropProps={{
-            classes: {
-              root: cx(dialogClasses.background, classes?.background),
-            },
-          }}
-          PaperProps={{
-            classes: {
-              root: cx(
-                dialogClasses.paper,
-                fullscreen && cx(dialogClasses.fullscreen, "fullscreen"),
-                css(styles.paper),
-                css({ position: "absolute" }),
-                classes?.paper,
-                fullscreen && classes?.fullscreen
-              ),
-            },
-          }}
-          aria-modal
-          {...others}
-        >
-          <StyledClose
-            id={setId(id, "close")}
-            className={cx(dialogClasses.closeButton, classes?.closeButton)}
-            variant="secondaryGhost"
-            onClick={(event) => wrappedClose(event, true, undefined)}
-            aria-label={buttonTitle}
-          >
-            <CloseButtonTooltipWrapper />
-          </StyledClose>
-          {children && typeof children === "object"
-            ? React.Children.map(
-                children,
-                (c: React.ReactNode) =>
-                  c &&
-                  React.cloneElement(c as React.ReactElement, { fullscreen })
-              )
-            : children}
-        </MuiDialog>
-      )}
-    </ClassNames>
+    <MuiDialog
+      container={document.getElementById(rootId || "") || document.body}
+      className={cx(className, classes.root)}
+      id={id}
+      ref={measuredRef}
+      open={open}
+      fullScreen={fullscreen}
+      onClose={(event, reason) => wrappedClose(event, undefined, reason)}
+      slots={slots}
+      classes={{ container: css({ position: "relative" }) }}
+      BackdropProps={{
+        classes: {
+          root: classes.background,
+        },
+      }}
+      PaperProps={{
+        classes: {
+          root: cx(css({ position: "absolute" }), classes.paper, {
+            fullscreen,
+            [classes.fullscreen]: fullscreen,
+          }),
+        },
+      }}
+      aria-modal
+      {...others}
+    >
+      <HvButton
+        id={setId(id, "close")}
+        className={classes.closeButton}
+        variant="secondaryGhost"
+        onClick={(event) => wrappedClose(event, true, undefined)}
+        aria-label={buttonTitle}
+      >
+        <CloseButtonTooltipWrapper />
+      </HvButton>
+      {children && typeof children === "object"
+        ? React.Children.map(
+            children,
+            (c: React.ReactNode) =>
+              c && React.cloneElement(c as React.ReactElement, { fullscreen })
+          )
+        : children}
+    </MuiDialog>
   );
 };

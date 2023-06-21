@@ -1,10 +1,9 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvColorPickerPresetColorsClasses } from "./presetColorsClasses";
 
-export const styles: Partial<
-  Record<keyof HvColorPickerPresetColorsClasses, CSSInterpolation>
-> = {
+const name = "HvColorPicker-PresetColors";
+
+export const { staticClasses, useClasses } = createClasses(name, {
   root: { width: theme.colorPicker.recommendedColorsRootWidth },
   colors: {
     display: "flex",
@@ -27,4 +26,4 @@ export const styles: Partial<
       borderRadius: theme.colorPicker.recommendedColorsSwatchBorderRadius,
     },
   },
-};
+});

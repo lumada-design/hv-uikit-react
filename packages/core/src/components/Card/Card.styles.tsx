@@ -1,9 +1,8 @@
-import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 import { outlineStyles } from "@core/utils/focusUtils";
-import { HvCardClasses } from "./cardClasses";
+import { createClasses } from "@core/utils";
 
-export const styles: Partial<Record<keyof HvCardClasses, CSSInterpolation>> = {
+export const { staticClasses, useClasses } = createClasses("HvCard", {
   root: {
     overflow: "visible",
     position: "relative",
@@ -46,4 +45,4 @@ export const styles: Partial<Record<keyof HvCardClasses, CSSInterpolation>> = {
     top: -1,
     right: 0,
   },
-};
+});

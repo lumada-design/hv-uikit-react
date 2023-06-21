@@ -3,7 +3,7 @@
 exports[`ScrollToHorizontal > should render correctly 1`] = `
 <div>
   <ol
-    class="HvScrollToHorizontal-root hv-jnv3q4"
+    class="HvScrollToHorizontal-root hv-190u181"
     id="hvHorizontalScrollto2"
   >
     <li
@@ -13,7 +13,7 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
     >
       <div
         aria-labelledby="hvHorizontalScrollto2-item-0-label"
-        class="HvHorizontalScrollListItem-button hv-i30r6u"
+        class="HvHorizontalScrollListItem-button hv-8cg0mn"
         id="hvHorizontalScrollto2-item-0-button"
         role="button"
         tabindex="0"
@@ -59,7 +59,7 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
     >
       <div
         aria-labelledby="hvHorizontalScrollto2-item-1-label"
-        class="HvHorizontalScrollListItem-button hv-i30r6u"
+        class="HvHorizontalScrollListItem-button hv-8cg0mn"
         id="hvHorizontalScrollto2-item-1-button"
         role="button"
         tabindex="0"
@@ -94,7 +94,7 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
     >
       <div
         aria-labelledby="hvHorizontalScrollto2-item-2-label"
-        class="HvHorizontalScrollListItem-button hv-i30r6u"
+        class="HvHorizontalScrollListItem-button hv-8cg0mn"
         id="hvHorizontalScrollto2-item-2-button"
         role="button"
         tabindex="0"
@@ -129,7 +129,7 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
     >
       <div
         aria-labelledby="hvHorizontalScrollto2-item-3-label"
-        class="HvHorizontalScrollListItem-button hv-i30r6u"
+        class="HvHorizontalScrollListItem-button hv-8cg0mn"
         id="hvHorizontalScrollto2-item-3-button"
         role="button"
         tabindex="0"
