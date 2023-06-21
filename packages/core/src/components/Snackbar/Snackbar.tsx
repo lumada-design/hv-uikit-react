@@ -35,7 +35,7 @@ export interface HvSnackbarProps
       ) => void)
     | undefined;
   /** The message to display. */
-  label?: string;
+  label?: React.ReactNode;
   /** The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left","center","right. It defines where the snackbar will end his animation */
   anchorOrigin?: SnackbarOrigin;
   /** The number of milliseconds to wait before automatically calling the onClose function. onClose should then set the state of the open prop to hide the Snackbar */

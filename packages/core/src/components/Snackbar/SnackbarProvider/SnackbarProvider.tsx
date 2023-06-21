@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useMemo } from "react";
+import { forwardRef, ReactNode, useCallback, useMemo } from "react";
 import {
   CombinedClassKey,
   SnackbarContent,
@@ -42,7 +42,7 @@ export interface HvNotistackSnackMessageProps {
   /** Classname to apply on the root node */
   className?: string;
   /** Your component tree. */
-  message?: string;
+  message?: ReactNode | string;
   /** Variant of the snackbar. */
   variant?: HvSnackbarVariant;
   /** Extra values to pass to the snackbar. */
@@ -72,7 +72,7 @@ export const useHvSnackbar = () => {
   const { enqueueSnackbar: enqueueNotistackSnackbar, closeSnackbar } =
     useSnackbar();
   const enqueueSnackbar = useCallback(
-    (message: string | undefined, options = {}) => {
+    (message: ReactNode | string | undefined, options = {}) => {
       const {
         id,
         variant = "success",
@@ -117,7 +117,7 @@ export const HvSnackbarProvider = ({
 }: HvSnackbarProviderProps) => {
   const { classes, cx } = useClasses(classesProp);
 
-  const test: Partial<ClassNameMap<CombinedClassKey>> = {
+  const notistackClasses: Partial<ClassNameMap<CombinedClassKey>> = {
     containerRoot: css({
       pointerEvents: "all",
       "& > div > div": {
@@ -131,7 +131,7 @@ export const HvSnackbarProvider = ({
 
   return (
     <SnackbarProvider
-      classes={test}
+      classes={notistackClasses}
       maxSnack={maxSnack}
       autoHideDuration={autoHideDuration}
       anchorOrigin={anchorOrigin as SnackbarOrigin}
