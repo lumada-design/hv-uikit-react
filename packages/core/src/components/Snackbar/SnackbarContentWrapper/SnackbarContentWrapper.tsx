@@ -12,18 +12,6 @@ export { staticClasses as snackbarContentClasses };
 
 export type HvSnackbarContentClasses = ExtractNames<typeof useClasses>;
 
-export type HvSnackbarContentClassKey =
-  | "root"
-  | "success"
-  | "error"
-  | "default"
-  | "warning"
-  | "message"
-  | "messageSpan"
-  | "messageText"
-  | "action"
-  | "iconVariant";
-
 export interface HvSnackbarContentProps
   extends Omit<MuiSnackbarContentProps, "variant" | "action" | "classes">,
     HvBaseProps {
@@ -76,16 +64,16 @@ export const HvSnackbarContent = forwardRef<
         ref={ref}
         id={id}
         classes={{
-          root: cx(classes?.root),
-          message: cx(classes?.message),
+          root: classes?.root,
+          message: classes?.message,
         }}
         className={cx(className, classes?.[variant])}
         message={
-          <div id={setId(id, "message")} className={cx(classes?.messageSpan)}>
-            {icon && <div className={cx(classes?.iconVariant)}>{icon}</div>}
-            <div className={cx(classes?.messageText)}>{label}</div>
+          <div id={setId(id, "message")} className={classes?.messageSpan}>
+            {icon && <div className={classes?.iconVariant}>{icon}</div>}
+            <div className={classes?.messageText}>{label}</div>
             {action && (
-              <div id={setId(id, "action")} className={cx(classes?.action)}>
+              <div id={setId(id, "action")} className={classes?.action}>
                 <HvActionsGeneric
                   id={id}
                   category="secondaryGhost"

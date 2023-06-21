@@ -20,15 +20,6 @@ export { staticClasses as snackbarClasses };
 
 export type HvSnackbarClasses = ExtractNames<typeof useClasses>;
 
-export type HvSnackbarClassKey =
-  | "anchorOriginTopRight"
-  | "root"
-  | "anchorOriginTopLeft"
-  | "anchorOriginTopCenter"
-  | "anchorOriginBottomCenter"
-  | "anchorOriginBottomLeft"
-  | "anchorOriginBottomRight";
-
 export type HvSnackbarVariant = "default" | "success" | "warning" | "error";
 
 export interface HvSnackbarProps
@@ -122,7 +113,7 @@ export const HvSnackbar = ({
   snackbarContentProps,
   ...others
 }: HvSnackbarProps) => {
-  const { classes, cx } = useClasses(classesProp);
+  const { classes } = useClasses(classesProp);
 
   const anchorOriginOffset = {
     anchorOriginTop: {
@@ -138,15 +129,7 @@ export const HvSnackbar = ({
       style={
         anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]
       }
-      classes={{
-        root: cx(classes?.root),
-        anchorOriginBottomCenter: cx(classes?.anchorOriginBottomCenter),
-        anchorOriginBottomLeft: cx(classes?.anchorOriginBottomLeft),
-        anchorOriginBottomRight: cx(classes?.anchorOriginBottomRight),
-        anchorOriginTopCenter: cx(classes?.anchorOriginTopCenter),
-        anchorOriginTopLeft: cx(classes?.anchorOriginTopLeft),
-        anchorOriginTopRight: cx(classes?.anchorOriginTopRight),
-      }}
+      classes={classes}
       className={className}
       id={id}
       anchorOrigin={anchorOrigin}

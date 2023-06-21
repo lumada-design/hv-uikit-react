@@ -19,8 +19,6 @@ export { staticClasses as snackbarProviderClasses };
 
 export type HvSnackbarProviderClasses = ExtractNames<typeof useClasses>;
 
-export type HvSnackbarProviderClassKey = "snackItemRoot";
-
 export interface HvSnackbarProviderProps {
   /** Your component tree. */
   children: React.ReactNode;
@@ -74,7 +72,7 @@ export const useHvSnackbar = () => {
   const { enqueueSnackbar: enqueueNotistackSnackbar, closeSnackbar } =
     useSnackbar();
   const enqueueSnackbar = useCallback(
-    (message, options = {}) => {
+    (message: string | undefined, options = {}) => {
       const {
         id,
         variant = "success",
