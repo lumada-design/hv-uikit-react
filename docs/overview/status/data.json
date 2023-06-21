@@ -1,272 +1,388 @@
 {
-  "Core": [
+  "Components": [
     {
       "name": "Accordion",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "ActionBar",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Avatar",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Badge",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Banner",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Button",
-      "status": "✅"
+      "features": "Dropdown",
+      "status": "Supported",
+      "notes": "Use the Dropdown component"
     },
     {
       "name": "Card",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Checkbox",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Container",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Date Picker",
-      "status": "✅"
+      "features": "Month range",
+      "status": "Not Planned",
+      "notes": ""
     },
     {
       "name": "Dialog",
-      "status": "✅"
-    },
-    {
-      "name": "Pagination",
-      "status": "✅"
+      "features": "Semantic",
+      "status": "Planned",
+      "notes": ""
     },
     {
       "name": "Dropdown",
-      "status": "✅"
+      "features": "Split",
+      "status": "Not Planned",
+      "notes": ""
     },
     {
       "name": "Empty State",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Grid",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Inline Editor",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Input",
-      "status": "✅"
+      "features": "With dropdown",
+      "status": "Not Planned",
+      "notes": ""
     },
     {
       "name": "List",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Loading",
-      "status": "✅"
+      "features": "Progress Bar",
+      "status": "Supported",
+      "notes": "Use the Progress Bar component"
     },
     {
-      "name": "Tooltip",
-      "status": "✅"
+      "name": "Multi Button",
+      "features": "",
+      "status": "✅",
+      "notes": ""
+    },
+    {
+      "name": "Pagination",
+      "features": "Dot Pagination",
+      "status": "Supported",
+      "notes": "Use the DotPagination component"
     },
     {
       "name": "Panel",
-      "status": "✅"
+      "features": "Overlap content",
+      "status": "Supported",
+      "notes": "Use the Drawer component"
     },
     {
       "name": "Radio",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Scroll To horizontal",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Scroll To vertical",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Search Box",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Slider",
-      "status": "✅"
+      "features": "Multirange",
+      "status": "Not Planned",
+      "notes": ""
     },
     {
       "name": "Snackbar",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Stack",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Switch",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Tabs",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Tag",
-      "status": "✅"
+      "features": "Actions",
+      "status": "Planned",
+      "notes": ""
     },
     {
       "name": "Text Area",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Time Ago",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Time Picker",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
+    },
+    {
+      "name": "Tooltip",
+      "features": "",
+      "status": "✅",
+      "notes": ""
+    },
+    {
+      "name": "Typography",
+      "features": "",
+      "status": "✅",
+      "notes": ""
     }
   ],
   "Visualizations": [
     {
       "name": "Bar Chart",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Confusion Matrix",
-      "status": "in progress"
+      "features": "",
+      "status": "⌛",
+      "notes": ""
     },
     {
       "name": "Donut Chart",
-      "status": "in progress"
+      "features": "",
+      "status": "⌛",
+      "notes": ""
     },
     {
       "name": "KPI",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Line Chart",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
+    },
+    {
+      "name": "Table",
+      "features": "",
+      "status": "✅",
+      "notes": ""
     }
   ],
   "Widgets": [
     {
       "name": "Action Bar",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "App Switcher",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Breadcrumb",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Bulk Actions",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Carousel",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Code Editor",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Color Picker",
-      "status": "✅"
+      "features": "Alpha slider",
+      "status": "Not Planned",
+      "notes": ""
     },
     {
       "name": "Controls",
-      "status": "✅"
-    },
-    {
-      "name": "File Uploader",
-      "status": "✅"
-    },
-    {
-      "name": "Filter Group",
-      "status": "✅"
-    },
-    {
-      "name": "Footer",
-      "status": "✅"
-    },
-    {
-      "name": "Global Actions",
-      "status": "✅"
-    },
-    {
-      "name": "Header",
-      "status": "✅"
-    },
-    {
-      "name": "Login",
-      "status": "✅"
-    },
-    {
-      "name": "Query Builder",
-      "status": "✅"
-    },
-    {
-      "name": "User Preferences",
-      "status": "in progress"
-    },
-    {
-      "name": "Vertical Navigation",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Drawer",
-      "status": "✅"
-    }
-  ],
-  "Templates": [
-    {
-      "name": "Asset Inventory",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
-      "name": "Details View",
-      "status": "✅"
+      "name": "File Uploader",
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
-      "name": "Form",
-      "status": "✅"
+      "name": "Filter Group",
+      "features": "Extended",
+      "status": "Not Planned",
+      "notes": ""
     },
     {
-      "name": "List View",
-      "status": "✅"
+      "name": "Footer",
+      "features": "",
+      "status": "✅",
+      "notes": ""
+    },
+    {
+      "name": "Global Actions",
+      "features": "",
+      "status": "✅",
+      "notes": ""
+    },
+    {
+      "name": "Header",
+      "features": "",
+      "status": "✅",
+      "notes": ""
+    },
+    {
+      "name": "Login",
+      "features": "",
+      "status": "✅",
+      "notes": ""
+    },
+    {
+      "name": "Query Builder",
+      "features": "",
+      "status": "✅",
+      "notes": ""
+    },
+    {
+      "name": "User Preferences",
+      "features": "",
+      "status": "⌛",
+      "notes": ""
+    },
+    {
+      "name": "Vertical Navigation",
+      "features": "Dynamic",
+      "status": "✅",
+      "notes": ""
     }
   ],
   "Lab": [
     {
-      "name": "Navigation Anchors",
-      "status": "in progress"
-    },
-    {
       "name": "Notification Panel",
-      "status": "in progress"
+      "features": "",
+      "status": "⌛",
+      "notes": ""
     },
     {
       "name": "Step Navigation",
-      "status": "✅"
+      "features": "Vertical",
+      "status": "Not Planned",
+      "notes": ""
     },
     {
       "name": "Wizard",
-      "status": "✅"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     }
   ]
 }

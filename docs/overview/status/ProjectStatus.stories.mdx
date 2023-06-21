@@ -5,16 +5,16 @@ import data from "./data.json";
 
 # Project Status
 
-Here you can stay up-to-date on the status of project and its development. This can help users of the UI kit understand what features they can currently take advantage of, as well as what they can expect to see in future updates.
+Stay up-to-date on the status of the project and its development. This can help users of the UI kit understand which features they can currently take advantage of, as well as what they can expect to see in future updates.
 
 - [Versions](#versions)
 - [Supported browsers](#supported-browsers)
 - [Packages](#packages)
-- [Components](#components)
+- [DS alignment](#ds-alignment)
 
 ## Versions <a id="versions" />
 
-Here you can find all supported UI Kit versions and their corresponding Design System and core dependencies versions.  
+Here you can find all the supported UI Kit versions, along with their corresponding Design System and core dependency versions.
 The most recent version is recommended for use in production.
 
 | Release date   | UI Kit version                                              | Design System version                                                                                     | React version | MUI version                | Emotion version |
@@ -23,7 +23,7 @@ The most recent version is recommended for use in production.
 | September 2022 | [UI Kit v4.x](https://lumada-design.github.io/uikit/v4.x)   | [Design System 3.x](https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx) | 16, 17        | [5.x](https://mui.com/)    | 11.x            |
 | October 2020   | [UI Kit v3.x](https://lumada-design.github.io/uikit/v3.x)   | [Design System 3.x](https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx) | 16, 17        | [4.x](https://v4.mui.com/) | -               |
 
-To know more about the practices that are followed for release and versioning, please read our [**release and versioning**](/docs/overview-community-releases--page) documentation.
+To know more about the practices that are followed for release and versioning, please read our [release and versioning](/docs/overview-community-releases--page) documentation.
 
 ## Supported browsers <a id="supported-browsers" />
 
@@ -33,53 +33,54 @@ NEXT UI Kit supports the latest, stable releases of all major browsers and platf
 | :---: | :-----: | :----: | :------------: | :-----------: |
 | >= 91 |  >= 78  | >= 90  |     >= 14      | Not supported |
 
-## Packages <a id="packages" />
+## DS alignment <a id="ds-alignment" />
 
-In UI Kit v5.x some packages were deprecated and new ones were created as shown in the table below.
+While we strive to follow the [NEXT Design System](https://designsystem.hitachivantara.com/), we do not expect to support every component, nor every feature of every component, but rather to provide the building blocks to allow developers to create compelling user interfaces and experiences.
 
-Bear in mind that v4.x and v5.x packages can't be used simultaneously due to the introduction of the new theming system not compatible with the v4.x components.
-Thus, if you wish to keep using the deprecated packages, you can't update the other packages to v5.x.
+The following table shows the components alignment with **NEXT DS 5.6.0** and the identified **missing features** status.
 
-| Package                                 |    Status    |
-| --------------------------------------- | :----------: |
-| @hitachivantara/uikit-react-core        |  `updated`   |
-| @hitachivantara/uikit-react-icons       |  `updated`   |
-| @hitachivantara/uikit-react-lab         |  `updated`   |
-| @hitachivantara/uikit-react-viz         |  `updated`   |
-| @hitachivantara/uikit-react-code-editor |  `updated`   |
-| @hitachivantara/uikit-react-shared      |    `new`     |
-| @hitachivantara/uikit-styles            |    `new`     |
-| @hitachivantara/uikit-react-compat      | `deprecated` |
-| @hitachivantara/uikit-common-themes     | `deprecated` |
+### Status description
 
-## Components <a id="components" />
+<ul>
+  <li>
+    <b>✅:</b> all the features have been implemented.
+  </li>
+  <li>
+    <b>Supported:</b> the feature has been implemented in another component.
+    Check the <b>Notes</b> column for more details.
+  </li>
+  <li>
+    <b>Planned:</b> the feature is planned to be implemented.
+  </li>
+  <li>
+    <b>Not Planned:</b> there's no planning at the moment to implement the
+    feature.
+  </li>
+</ul>
 
-While we strive to follow the NEXT Design System guidelines, we do not expect to support every component, nor every feature of every component, but rather to provide the building blocks to allow developers to create compelling user interfaces and experiences.
+If you need a component or feature that is not supported, please reach out to us or check our [contribution guide](/docs/overview-community-contributing--page).
 
-If you need a component or feature that is not supported, please reach out to us or check our [**contribution guide**](/docs/overview-community-contributing--page).
-
-The following table shows the current status of each component and its features, as well as the NEXT DS alignment.
-
-<table>
-  <thead>
-    <tr>
-      <th>Components</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    {Object.entries(data).map(([key, value]) => (
-      <React.Fragment key={key}>
+<>
+  {Object.entries(data).map(([key, value]) => (
+    <table>
+      <thead>
         <tr>
-          <th colSpan="3">{key}</th>
+          <th style={{ textAlign: "left", width: 150 }}>{key}</th>
+          <th style={{ width: 200 }}>Missing Features / Variants</th>
+          <th style={{ width: 120 }}>Status</th>
+          <th style={{ width: 200 }}>Notes</th>
         </tr>
+      </thead>
+      <tbody>
         {value.map((item) => (
           <tr key={item.name}>
             <td>{item.name}</td>
+            <td style={{ textAlign: "center" }}>{item.features}</td>
             <td style={{ textAlign: "center" }}>{item.status}</td>
+            <td>{item.notes}</td>
           </tr>
         ))}
-      </React.Fragment>
-    ))}
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  ))}
+</>
