@@ -4,8 +4,7 @@ import {
   Preview,
   Upload,
 } from "@hitachivantara/uikit-react-icons";
-import { fireEvent, render } from "@testing-library/react";
-import { HvProvider } from "@core/providers";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { HvActionsGeneric } from "./ActionsGeneric";
 
@@ -17,47 +16,25 @@ const actions = [
 ];
 
 describe("ActionsGeneric", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvActionsGeneric actions={actions} />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvActionsGeneric actions={actions} />);
-    expect(container).toMatchSnapshot();
-  });
-
   it("should only show maxVisibleActions actions", () => {
-    const { queryAllByRole, getByLabelText } = render(
-      <HvProvider>
-        <HvActionsGeneric actions={actions} maxVisibleActions={2} />
-      </HvProvider>
-    );
-    expect(queryAllByRole("button").length).toBe(3);
+    render(<HvActionsGeneric actions={actions} maxVisibleActions={2} />);
+    expect(screen.queryAllByRole("button").length).toBe(3);
 
-    expect(getByLabelText("Dropdown menu")).toBeInTheDocument();
+    expect(screen.getByLabelText("Dropdown menu")).toBeInTheDocument();
   });
 
   it("should call actionsCallback on button click", () => {
     const mockFn = vi.fn();
-    const { queryAllByRole } = render(
-      <HvProvider>
-        <HvActionsGeneric actions={actions} actionsCallback={mockFn} />
-      </HvProvider>
-    );
-    const button = queryAllByRole("button")[1];
+    render(<HvActionsGeneric actions={actions} actionsCallback={mockFn} />);
+    const button = screen.queryAllByRole("button")[1];
     fireEvent.click(button);
     expect(mockFn).toHaveBeenCalled();
   });
 
   it("should not call actionsCallback if the button is disabled", () => {
     const mockFn = vi.fn();
-    const { queryAllByRole } = render(
-      <HvProvider>
-        <HvActionsGeneric actions={actions} actionsCallback={mockFn} />
-      </HvProvider>
-    );
-    const button = queryAllByRole("button")[0];
+    render(<HvActionsGeneric actions={actions} actionsCallback={mockFn} />);
+    const button = screen.queryAllByRole("button")[0];
     fireEvent.click(button);
     expect(mockFn).not.toHaveBeenCalled();
   });

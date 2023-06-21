@@ -370,14 +370,13 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     pageSizeBorderColor: theme.colors.secondary_80,
     pageSizeHoverBorderColor: theme.colors.secondary_80,
   },
-  actionsGeneric: { buttonSize: "md" },
+  actionsGeneric: {},
   bulkActions: {
     separatorDisplay: "flex",
     border: `1px solid ${theme.colors.atmo4}`,
     backgroundColor: theme.colors.atmo2,
     padding: `${theme.space.xs} ${theme.space.md}`,
     anySelectedBackgroundColor: theme.colors.primary_20,
-    buttonSize: "md",
   },
   table: {
     headerHoverColor: "transparent",

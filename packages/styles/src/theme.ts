@@ -211,14 +211,13 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     pageSizeBorderColor: "string",
     pageSizeHoverBorderColor: "string",
   },
-  actionsGeneric: { buttonSize: "string" },
+  actionsGeneric: {},
   bulkActions: {
     separatorDisplay: "string",
     border: "string",
     backgroundColor: "string",
     padding: "string",
     anySelectedBackgroundColor: "string",
-    buttonSize: "string",
   },
   table: {
     headerHoverColor: "string",
