@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import {
   HvCheckBox,
   HvActionGeneric,
-  HvListValue,
   HvBulkActions,
   HvPagination,
+  HvBulkActionsProps,
 } from "@hitachivantara/uikit-react-core";
 import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -113,10 +113,10 @@ export const BulkActions = () => {
     setData(newData);
   };
 
-  const handleAction = (
-    event: React.SyntheticEvent,
-    id: string,
-    action: HvActionGeneric | HvListValue
+  const handleAction: HvBulkActionsProps["actionsCallback"] = (
+    event,
+    id,
+    action
   ) => {
     const selected = data.filter((el) => el.checked);
 

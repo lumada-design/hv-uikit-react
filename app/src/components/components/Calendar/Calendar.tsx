@@ -1,9 +1,9 @@
 import {
   DateRangeProp,
   HvCalendar,
+  HvCalendarProps,
   HvFormElement,
   HvLabel,
-  VisibilitySelectorActions,
 } from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 
@@ -16,14 +16,8 @@ export const Calendar = () => {
   const [visibleMonth, setVisibleMonth] = useState(8);
   const [visibleYear, setVisibleYear] = useState(2020);
 
-  const onChangeHandler = (
-    event:
-      | React.ChangeEvent<
-          HTMLTextAreaElement | HTMLInputElement | HTMLButtonElement
-        >
-      | undefined,
-    value: Date | DateRangeProp
-  ) => {
+  const onChangeHandler: HvCalendarProps["onChange"] &
+    HvCalendarProps["onInputChange"] = (event, value) => {
     if (value instanceof Date) {
       setSelectionDate({
         startDate: value,
@@ -46,12 +40,10 @@ export const Calendar = () => {
     }
   };
 
-  const visibleDateChangeHandler = (
-    event:
-      | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-      | undefined,
-    action: VisibilitySelectorActions,
-    index?: Date | DateRangeProp | number
+  const visibleDateChangeHandler: HvCalendarProps["onVisibleDateChange"] = (
+    event,
+    action,
+    index
   ) => {
     if (action === "previous_month") {
       const previousMonth = visibleMonth - 1;
