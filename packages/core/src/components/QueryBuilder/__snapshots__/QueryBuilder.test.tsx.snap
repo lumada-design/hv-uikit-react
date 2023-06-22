@@ -125,22 +125,22 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
           class="HvEmptyState-textContainer css-1jusbkl-StyledTextContainer e1r2ohw11"
         >
           <p
-            class="HvEmptyState-titleContainer e1r2ohw10 HvTypography-root HvTypography-body css-1cuxejy-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvTypography-root HvTypography-body HvEmptyState-titleContainer css-67zm0g-StyledTypography e1r2ohw10 hv-1gxwolr"
           >
             No conditions created yet
           </p>
           <p
-            class="HvEmptyState-messageContainer e1r2ohw10 HvTypography-root HvTypography-body css-vzxsl1-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvTypography-root HvTypography-body HvEmptyState-messageContainer css-lt2tsc-StyledTypography e1r2ohw10 hv-1gxwolr"
           >
             <a
-              class="HvTypography-root HvTypography-link css-cweeuc-getStyledComponent e1tnpalo0"
+              class="HvTypography-root HvTypography-link hv-jl6wmm"
               style="cursor: pointer; text-decoration: underline;"
             >
               Create a condition
             </a>
              or a 
             <a
-              class="HvTypography-root HvTypography-link css-cweeuc-getStyledComponent e1tnpalo0"
+              class="HvTypography-root HvTypography-link hv-jl6wmm"
               style="cursor: pointer; text-decoration: underline;"
             >
               condition group

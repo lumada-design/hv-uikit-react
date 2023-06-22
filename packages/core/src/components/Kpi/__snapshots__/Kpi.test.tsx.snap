@@ -7,7 +7,7 @@ exports[`Kpi > should render correctly 1`] = `
   >
     <div>
       <label
-        class="HvTypography-root HvTypography-label css-9vbp9s-getStyledComponent e1tnpalo0"
+        class="HvTypography-root HvTypography-label hv-1j8ohlw"
       >
         Title
       </label>
@@ -16,12 +16,12 @@ exports[`Kpi > should render correctly 1`] = `
       class="HvKpi-indicatorsContainer css-1a6w73h-StyledIndicatorsContainer e70l5p68"
     >
       <h1
-        class="HvKpi-spacingToTheRight HvKpi-indicatorText e70l5p66 HvTypography-root HvTypography-title1 css-of1tqm-getStyledComponent-StyledIndicatorText e1tnpalo0"
+        class="HvTypography-root HvTypography-title1 HvKpi-spacingToTheRight HvKpi-indicatorText css-x90fx7-StyledIndicatorText e70l5p66 hv-1dl6v8h"
       >
         Indicator
       </h1>
       <h2
-        class="HvKpi-indicatorUnit e70l5p65 HvTypography-root HvTypography-title2 css-1stzdg-getStyledComponent-StyledIndicatorUnit e1tnpalo0"
+        class="HvTypography-root HvTypography-title2 HvKpi-indicatorUnit css-1660xyl-StyledIndicatorUnit e70l5p65 hv-cj4ur9"
       >
         Unit
       </h2>
@@ -34,7 +34,7 @@ exports[`Kpi > should render correctly 1`] = `
           class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer e70l5p62"
         >
           <label
-            class="HvKpi-comparisons HvKpi-spacingToTheRight e70l5p60 HvTypography-root HvTypography-label css-1dpe4yx-getStyledComponent-StyledInternalVisualComparisonTypography e1tnpalo0"
+            class="HvTypography-root HvTypography-label HvKpi-comparisons HvKpi-spacingToTheRight css-rf3cez-StyledInternalVisualComparisonTypography e70l5p60 hv-1j8ohlw"
           >
             Visual comparison
           </label>
@@ -43,7 +43,7 @@ exports[`Kpi > should render correctly 1`] = `
           class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer e70l5p62"
         >
           <p
-            class="HvKpi-comparisons HvTypography-root HvTypography-caption2 css-xss9s-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-caption2 HvKpi-comparisons hv-1ph81jk"
           >
             Comparison indicator info
           </p>

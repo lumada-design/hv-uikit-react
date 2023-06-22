@@ -48,7 +48,7 @@ exports[`FilterGroup > should render correctly 1`] = `
                 </svg>
               </div>
               <label
-                class="HvTypography-root HvTypography-label css-9vbp9s-getStyledComponent e1tnpalo0"
+                class="HvTypography-root HvTypography-label hv-1j8ohlw"
               >
                 Filters
               </label>

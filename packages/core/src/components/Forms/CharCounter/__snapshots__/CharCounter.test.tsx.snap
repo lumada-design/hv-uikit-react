@@ -7,12 +7,12 @@ exports[`CharCounter > should render correctly 1`] = `
     class="HvCharCounter-root HvCharCounter-gutter css-ltrngp-StyledRoot e11kw0681"
   >
     <label
-      class=" e11kw0680 HvTypography-root HvTypography-label css-1h8xeqc-getStyledComponent-StyledTypography e1tnpalo0"
+      class="HvTypography-root HvTypography-label  css-lt2tsc-StyledTypography e11kw0680 hv-1j8ohlw"
     >
       0
     </label>
     <label
-      class=" e11kw0680 HvTypography-root HvTypography-body css-vzxsl1-getStyledComponent-StyledTypography e1tnpalo0"
+      class="HvTypography-root HvTypography-body  css-lt2tsc-StyledTypography e11kw0680 hv-1gxwolr"
     >
        / 10
     </label>

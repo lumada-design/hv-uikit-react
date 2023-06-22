@@ -26,7 +26,7 @@ exports[`ScrollToVertical > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-label hv-nikb6h-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-label HvVerticalScrollListItem-text hv-1q1i3ox"
             id="hvVerticalScrollto2-item-0-label"
           >
             <div
@@ -70,7 +70,7 @@ exports[`ScrollToVertical > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-xi6bie-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-body HvVerticalScrollListItem-text hv-17ues5g"
             id="hvVerticalScrollto2-item-1-label"
           >
             <div
@@ -99,7 +99,7 @@ exports[`ScrollToVertical > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-xi6bie-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-body HvVerticalScrollListItem-text hv-17ues5g"
             id="hvVerticalScrollto2-item-2-label"
           >
             <div
@@ -128,7 +128,7 @@ exports[`ScrollToVertical > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-xi6bie-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-body HvVerticalScrollListItem-text hv-17ues5g"
             id="hvVerticalScrollto2-item-3-label"
           >
             <div

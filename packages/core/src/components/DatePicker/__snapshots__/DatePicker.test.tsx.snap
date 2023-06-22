@@ -25,7 +25,7 @@ exports[`HvDatepicker > calendar custom properties > should render correctly 1`]
             class="HvBaseDropdown-selection css-14ov9q3-StyledSelection eapzthe5"
           >
             <p
-              class="e2irjnc0 HvTypography-root HvTypography-body css-okb0r0-getStyledComponent-StyledTypography e1tnpalo0"
+              class="HvTypography-root HvTypography-body css-52j90-StyledTypography e2irjnc0 hv-1gxwolr"
             >
               I'M THE PLACEHOLDER
             </p>
@@ -83,7 +83,7 @@ exports[`HvDatepicker > ranged calendar > should render correctly 1`] = `
             class="HvBaseDropdown-selection css-14ov9q3-StyledSelection eapzthe5"
           >
             <p
-              class="e2irjnc0 HvTypography-root HvTypography-body css-1uypsb3-getStyledComponent-StyledTypography e1tnpalo0"
+              class="HvTypography-root HvTypography-body css-1npf9b9-StyledTypography e2irjnc0 hv-1gxwolr"
             >
               5 - 10 Jan 2019
             </p>
@@ -144,7 +144,7 @@ exports[`HvDatepicker > sample snapshot testing > Main 1`] = `
             class="HvBaseDropdown-selection css-14ov9q3-StyledSelection eapzthe5"
           >
             <p
-              class="e2irjnc0 HvTypography-root HvTypography-body css-okb0r0-getStyledComponent-StyledTypography e1tnpalo0"
+              class="HvTypography-root HvTypography-body css-52j90-StyledTypography e2irjnc0 hv-1gxwolr"
             >
               Select date
             </p>
@@ -202,7 +202,7 @@ exports[`HvDatepicker > single calendar > should render correctly 1`] = `
             class="HvBaseDropdown-selection css-14ov9q3-StyledSelection eapzthe5"
           >
             <p
-              class="e2irjnc0 HvTypography-root HvTypography-body css-1uypsb3-getStyledComponent-StyledTypography e1tnpalo0"
+              class="HvTypography-root HvTypography-body css-1npf9b9-StyledTypography e2irjnc0 hv-1gxwolr"
             >
               1 Jan 2019
             </p>
@@ -260,7 +260,7 @@ exports[`HvDatepicker > with minimum configuration > should render correctly 1`]
             class="HvBaseDropdown-selection css-14ov9q3-StyledSelection eapzthe5"
           >
             <p
-              class="e2irjnc0 HvTypography-root HvTypography-body css-okb0r0-getStyledComponent-StyledTypography e1tnpalo0"
+              class="HvTypography-root HvTypography-body css-52j90-StyledTypography e2irjnc0 hv-1gxwolr"
             />
           </div>
           <div

@@ -28,7 +28,7 @@ exports[`FileList > should render correctly 1`] = `
         </svg>
       </div>
       <label
-        class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-1khzaxq-getStyledComponent-StyledNameText e1tnpalo0"
+        class="HvTypography-root HvTypography-label HvFile-nameText css-lpofo3-StyledNameText e6pb7kb3 hv-1j8ohlw"
       >
         Screenshot 2019-12-05 at 17.15.43.png
       </label>
@@ -37,7 +37,7 @@ exports[`FileList > should render correctly 1`] = `
       >
          | 
         <p
-          class="HvFile-fail e6pb7kb6 HvTypography-root HvTypography-body css-1fm7ylu-getStyledComponent-StyledErrorMessage e1tnpalo0"
+          class="HvTypography-root HvTypography-body HvFile-fail css-dkes0-StyledErrorMessage e6pb7kb6 hv-1gxwolr"
         >
           File type not allowed for upload
         </p>
@@ -98,7 +98,7 @@ exports[`FileList > should render correctly 1`] = `
         </svg>
       </div>
       <label
-        class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-1khzaxq-getStyledComponent-StyledNameText e1tnpalo0"
+        class="HvTypography-root HvTypography-label HvFile-nameText css-lpofo3-StyledNameText e6pb7kb3 hv-1j8ohlw"
       >
         Screenshot 2019-12-05 at 12.03.13.png
       </label>
@@ -107,7 +107,7 @@ exports[`FileList > should render correctly 1`] = `
       >
          | 
         <p
-          class="HvFile-fail e6pb7kb6 HvTypography-root HvTypography-body css-1fm7ylu-getStyledComponent-StyledErrorMessage e1tnpalo0"
+          class="HvTypography-root HvTypography-body HvFile-fail css-dkes0-StyledErrorMessage e6pb7kb6 hv-1gxwolr"
         >
           File type not allowed for upload
         </p>

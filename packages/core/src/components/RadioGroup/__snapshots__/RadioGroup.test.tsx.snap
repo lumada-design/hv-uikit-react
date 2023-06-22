@@ -6,7 +6,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
     class="HvRadioGroup-root css-whistd-StyledFormElement e1qvmihv2 HvFormElement-root"
   >
     <label
-      class="HvRadioGroup-label e1qvmihv1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-j4cetd-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+      class="HvTypography-root HvTypography-label HvRadioGroup-label e1qvmihv1 HvLabel-root css-4p22yw-StyledTypography-StyledLabel e17iqvr40 hv-1j8ohlw"
       id="hvradiogroup9-label"
     >
       Choose your favorite radio button
@@ -58,7 +58,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvRadio-label e11n8xyl0 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-jvq66j-getStyledComponent-StyledTypography-StyledHvLabel e1tnpalo0"
+            class="HvTypography-root HvTypography-label HvRadio-label e11n8xyl0 HvLabel-root css-i0l4pk-StyledTypography-StyledHvLabel e17iqvr40 hv-1j8ohlw"
             for="hvradio11-input"
             id="hvradio11-label"
           >
@@ -114,7 +114,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvRadio-label e11n8xyl0 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-jvq66j-getStyledComponent-StyledTypography-StyledHvLabel e1tnpalo0"
+            class="HvTypography-root HvTypography-label HvRadio-label e11n8xyl0 HvLabel-root css-i0l4pk-StyledTypography-StyledHvLabel e17iqvr40 hv-1j8ohlw"
             for="hvradio13-input"
             id="hvradio13-label"
           >
@@ -164,7 +164,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvRadio-label e11n8xyl0 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-jvq66j-getStyledComponent-StyledTypography-StyledHvLabel e1tnpalo0"
+            class="HvTypography-root HvTypography-label HvRadio-label e11n8xyl0 HvLabel-root css-i0l4pk-StyledTypography-StyledHvLabel e17iqvr40 hv-1j8ohlw"
             for="hvradio15-input"
             id="hvradio15-label"
           >
