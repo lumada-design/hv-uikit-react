@@ -1,5 +1,6 @@
 import React, {
   HTMLInputTypeAttribute,
+  forwardRef,
   isValidElement,
   useCallback,
   useEffect,
@@ -7,7 +8,10 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
+import {
+  InputBaseComponentProps as MuiInputBaseComponentProps,
+  useForkRef,
+} from "@mui/material";
 import {
   CloseXS,
   PreviewOff,
@@ -31,13 +35,17 @@ import {
 } from "@core/types";
 import {
   HvAdornment,
+  HvAdornmentProps,
   HvBaseInput,
+  HvBaseInputProps,
   HvFormElement,
+  HvFormElementProps,
   HvFormStatus,
   HvInfoMessage,
   HvLabel,
   HvSuggestion,
   HvSuggestions,
+  HvSuggestionsProps,
   HvTooltip,
   HvTypography,
   HvWarningText,
@@ -66,6 +74,8 @@ import {
 export { staticClasses as inputClasses };
 
 export type HvInputClasses = ExtractNames<typeof useClasses>;
+
+type InputElement = HTMLInputElement | HTMLTextAreaElement;
 
 export interface HvInputProps
   extends HvBaseProps<
@@ -108,17 +118,14 @@ export interface HvInputProps
    * The function that will be executed onChange, allows modification of the input,
    * it receives the value. If a new value should be presented it must returned it.
    */
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    value: string
-  ) => void;
+  onChange?: HvBaseInputProps["onChange"];
   /**
    * Callback called when the user submits the value by pressing Enter/Return.
    *
    * Also called when the search button is clicked (when type is "search").
    */
   onEnter?: (
-    event: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent,
+    event: React.KeyboardEvent<InputElement> | React.MouseEvent,
     value: string
   ) => void;
   /**
@@ -126,7 +133,7 @@ export interface HvInputProps
    * it receives the value and the validation state.
    */
   onBlur?: (
-    event: React.FocusEvent<HTMLInputElement>,
+    event: React.FocusEvent<InputElement>,
     value: string,
     validationState: HvInputValidity
   ) => void;
@@ -134,16 +141,13 @@ export interface HvInputProps
    * The function that will be executed onBlur, allows checking the value state,
    * it receives the value.
    */
-  onFocus?: (
-    event: React.FocusEventHandler<HTMLInputElement>,
-    value: string
-  ) => void;
+  onFocus?: (event: React.FocusEvent<InputElement>, value: string) => void;
   /**
    * The function that will be executed onKeyDown, allows checking the value state,
    * it receives the event and value.
    */
   onKeyDown?: (
-    event: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent,
+    event: React.KeyboardEvent<InputElement> | React.MouseEvent,
     value: string
   ) => void;
   /** The input type. */
@@ -156,8 +160,11 @@ export interface HvInputProps
   validationMessages?: HvValidationMessages;
   /** Attributes applied to the input element. */
   inputProps?: MuiInputBaseComponentProps;
-  /** Allows passing a ref to the underlying input */
-  inputRef?: any;
+  /**
+   * Allows passing a ref to the underlying input
+   * @deprecated Use `ref` directly instead
+   * */
+  inputRef?: HvBaseInputProps["inputRef"];
   /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
   suggestionListCallback?: (value: string) => HvInputSuggestion[] | null;
   /**
@@ -209,55 +216,71 @@ function eventTargetIsInsideContainer(container, event) {
   return container != null && container.contains(getFocusedElement(event));
 }
 
+/** Original `input.value` setter (React overrides it). */
+const setInputValue = Object.getOwnPropertyDescriptor(
+  window.HTMLInputElement.prototype,
+  "value"
+)?.set;
+
+/** Changes a given `input`'s `value`, triggering its `onChange` */
+const changeInputValue = (input: HTMLInputElement | null, value = "") => {
+  const event = new Event("input", { bubbles: true });
+  setInputValue?.call(input, value);
+  input?.dispatchEvent(event);
+};
+
 /**
  * A text input box is a graphical control element intended to enable the user to input text information to be used by the software.
  */
-export const HvInput = ({
-  classes: classesProp,
-  className,
-  id,
-  name,
-  value: valueProp,
-  defaultValue = "",
-  required = false,
-  readOnly = false,
-  disabled = false,
-  label,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  description,
-  "aria-describedby": ariaDescribedBy,
-  onChange,
-  onEnter,
-  status,
-  statusMessage,
-  "aria-errormessage": ariaErrorMessage,
-  type = "text",
-  placeholder,
-  autoFocus = false,
-  labels: labelsProp,
-  validationMessages,
-  disableClear = false,
-  disableRevealPassword = false,
-  disableSearchButton = false,
-  endAdornment,
-  maxCharQuantity,
-  minCharQuantity,
-  validation,
-  showValidationIcon = false,
-  suggestionListCallback,
-  inputRef: inputRefProp,
-  onBlur,
-  onFocus,
-  onKeyDown,
-  inputProps = {},
-  ...others
-}: HvInputProps) => {
+export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
+  const {
+    classes: classesProp,
+    className,
+    id,
+    name,
+    value: valueProp,
+    defaultValue = "",
+    required = false,
+    readOnly = false,
+    disabled = false,
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
+    onChange,
+    onEnter,
+    status,
+    statusMessage,
+    "aria-errormessage": ariaErrorMessage,
+    type = "text",
+    placeholder,
+    autoFocus = false,
+    labels: labelsProp,
+    validationMessages,
+    disableClear = false,
+    disableRevealPassword = false,
+    disableSearchButton = false,
+    endAdornment,
+    maxCharQuantity,
+    minCharQuantity,
+    validation,
+    showValidationIcon = false,
+    suggestionListCallback,
+    inputRef: inputRefProp,
+    onBlur,
+    onFocus,
+    onKeyDown,
+    inputProps = {},
+    ...others
+  } = props;
   const { classes, cx } = useClasses(classesProp);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const elementId = useUniqueId(id, "hvinput");
 
-  const inputRef = useRef(inputRefProp || null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const forkedRef = useForkRef(ref, inputRef, inputRefProp);
+  const suggestionsRef = useRef<HTMLElement>(null);
 
   const [focused, setFocused] = useState(false);
 
@@ -373,16 +396,6 @@ export const HvInput = ({
   const canShowSuggestions = suggestionListCallback != null;
   const hasSuggestions = !!suggestionValues;
 
-  const materialInputRef = useRef<HTMLElement | null>(null);
-  const suggestionRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    // TODO Replace with ref
-    suggestionRef.current = document.getElementById(
-      setId(elementId, "suggestions") || ""
-    );
-  }, [elementId]);
-
   // Miscellaneous state
   const hasLabel = label != null;
   const hasDescription = description != null;
@@ -391,7 +404,7 @@ export const HvInput = ({
    * Looks for the node that represent the input inside the material tree and focus it.
    */
   const focusInput = () => {
-    materialInputRef.current?.focus();
+    inputRef.current?.focus();
   };
 
   const isMounted = useIsMounted();
@@ -421,12 +434,9 @@ export const HvInput = ({
    * Executes the user callback adds the selection to the state and clears the suggestions.
    */
   const suggestionSelectedHandler = (event, item) => {
-    const newValue: string = item.value || item.label;
+    const newValue = item.value || item.label;
 
-    // set the input value (only when value is uncontrolled)
-    setValue(newValue);
-
-    onChange?.(event, newValue);
+    changeInputValue(inputRef.current, newValue);
 
     focusInput();
     suggestionClearHandler();
@@ -437,7 +447,7 @@ export const HvInput = ({
     }
   };
 
-  const onChangeHandler = (event, newValue) => {
+  const onChangeHandler: HvBaseInputProps["onChange"] = (event, newValue) => {
     isDirty.current = true;
 
     // set the input value (only when value is uncontrolled)
@@ -459,12 +469,10 @@ export const HvInput = ({
   /**
    * Validates the input updating the state and modifying the info text, also executes
    * the user provided onBlur passing the current validation status and value.
-   *
-   * @returns {undefined}
    */
-  const onInputBlurHandler = (event) => {
+  const onInputBlurHandler: HvBaseInputProps["onBlur"] = (event) => {
     // If the blur is executed when choosing an suggestion it should be ignored.
-    if (eventTargetIsInsideContainer(suggestionRef?.current, event)) return;
+    if (eventTargetIsInsideContainer(suggestionsRef.current, event)) return;
 
     setFocused(false);
 
@@ -477,7 +485,7 @@ export const HvInput = ({
    * Updates the state putting again the value from the state because the input value is
    * not automatically manage, it also executes the onFocus function from the user passing the value
    */
-  const onFocusHandler = (event) => {
+  const onFocusHandler: HvBaseInputProps["onFocus"] = (event) => {
     setFocused(true);
 
     // reset validation status to standBy (only when status is uncontrolled)
@@ -486,7 +494,7 @@ export const HvInput = ({
     onFocus?.(event, value);
   };
 
-  const getSuggestions = (li) => {
+  const getSuggestions = (li: number | null) => {
     // TODO Replace with ref
     const listEl = document.getElementById(
       setId(elementId, "suggestions-list") || ""
@@ -494,7 +502,7 @@ export const HvInput = ({
     return li != null ? listEl?.getElementsByTagName("li")?.[li] : listEl;
   };
 
-  const onSuggestionKeyDown = (event) => {
+  const onSuggestionKeyDown: HvSuggestionsProps["onKeyDown"] = (event) => {
     if (isKeypress(event, keyboardCodes.Esc)) {
       suggestionClearHandler();
       focusInput();
@@ -503,12 +511,8 @@ export const HvInput = ({
     }
   };
 
-  /**
-   * Focus the suggestion list when the arrow down is pressed.
-   *
-   * @param {Object} event - The event provided by the material ui input
-   */
-  const onKeyDownHandler = (event) => {
+  /** Focus the suggestion list when the arrow down is pressed. */
+  const onKeyDownHandler: HvBaseInputProps["onKeyDown"] = (event) => {
     if (isKeypress(event, keyboardCodes.ArrowDown) && hasSuggestions) {
       const li = getSuggestions(0);
       li?.focus();
@@ -519,12 +523,8 @@ export const HvInput = ({
     onKeyDown?.(event, value);
   };
 
-  /**
-   * Clears the suggestion list on blur.
-   *
-   * @param {Object} event - The event provided by the material ui input.
-   */
-  const onContainerBlurHandler = (event) => {
+  /** Clears the suggestion list on blur. */
+  const onContainerBlurHandler: HvFormElementProps["onBlur"] = (event) => {
     if (event.relatedTarget) {
       setTimeout(() => {
         const list = getSuggestions(null);
@@ -555,21 +555,15 @@ export const HvInput = ({
   /**
    * Clears the input value from the state and refocus the input.
    */
-  const handleClear = useCallback(
-    (event) => {
-      // reset validation status to standBy (only when status is uncontrolled)
-      setValidationState(validationStates.standBy);
+  const handleClear = useCallback(() => {
+    // reset validation status to standBy (only when status is uncontrolled)
+    setValidationState(validationStates.standBy);
 
-      // clear the input value (only when value is uncontrolled)
-      setValue("");
+    changeInputValue(inputRef.current, "");
 
-      onChange?.(event, "");
-
-      // we wan't to focus the input when clicked and not active
-      setTimeout(focusInput);
-    },
-    [onChange, setValidationState, setValue]
-  );
+    // we want to focus the input when clicked and not active
+    setTimeout(focusInput);
+  }, [setValidationState]);
 
   const clearButton = useMemo(() => {
     if (!showClear) {
@@ -602,7 +596,7 @@ export const HvInput = ({
   /**
    * Calls the onEnter callback and refocus the input.
    */
-  const handleSearch = useCallback(
+  const handleSearch = useCallback<NonNullable<HvAdornmentProps["onClick"]>>(
     (event) => {
       onEnter?.(event, value);
     },
@@ -745,12 +739,11 @@ export const HvInput = ({
     performValidation();
   }, [focused, isEmptyValue, performValidation]);
 
-  let errorMessageId;
-  if (isStateInvalid) {
-    errorMessageId = canShowError
+  const errorMessageId = isStateInvalid
+    ? canShowError
       ? setId(elementId, "error")
-      : ariaErrorMessage;
-  }
+      : ariaErrorMessage
+    : undefined;
 
   return (
     <HvFormElement
@@ -828,14 +821,14 @@ export const HvInput = ({
             ? setId(elementId, "suggestions")
             : undefined,
 
-          ref: materialInputRef,
+          ref: inputRef,
 
           // prevent browsers auto-fill/suggestions when we have our own
           autoComplete: canShowSuggestions ? "off" : undefined,
 
           ...inputProps,
         }}
-        inputRef={inputRefProp || inputRef}
+        inputRef={forkedRef}
         endAdornment={adornments}
         {...others}
       />
@@ -845,13 +838,14 @@ export const HvInput = ({
             <div role="presentation" className={classes.inputExtension} />
           )}
           <HvSuggestions
+            ref={suggestionsRef}
             id={setId(elementId, "suggestions")}
             classes={{
               root: classes.suggestionsContainer,
               list: classes.suggestionList,
             }}
             expanded={hasSuggestions}
-            anchorEl={inputRef?.current?.parentElement}
+            anchorEl={inputRef.current?.parentElement}
             onClose={suggestionClearHandler}
             onKeyDown={onSuggestionKeyDown}
             onSuggestionSelected={suggestionSelectedHandler}
@@ -870,4 +864,4 @@ export const HvInput = ({
       )}
     </HvFormElement>
   );
-};
+});

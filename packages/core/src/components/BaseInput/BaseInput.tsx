@@ -1,8 +1,9 @@
-import { RefObject, useContext } from "react";
+import { useContext } from "react";
 import {
   InputBaseComponentProps as MuiInputBaseComponentProps,
   InputProps as MuiInputProps,
   Input as MuiInput,
+  InputBaseProps,
 } from "@mui/material";
 import { HvBaseProps } from "@core/types";
 import { ExtractNames } from "@core/utils";
@@ -91,7 +92,7 @@ export interface HvBaseInputProps
   /** Attributes applied to the input element. */
   inputProps?: MuiInputBaseComponentProps;
   /** Allows passing a ref to the underlying input */
-  inputRef?: RefObject<HTMLElement>;
+  inputRef?: InputBaseProps["inputRef"];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBaseInputClasses;
 }
@@ -142,9 +143,7 @@ export const HvBaseInput = ({
     id
   );
 
-  const onChangeHandler = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const onChangeHandler: MuiInputProps["onChange"] = (event) => {
     onChange?.(event, event.target.value);
   };
 
