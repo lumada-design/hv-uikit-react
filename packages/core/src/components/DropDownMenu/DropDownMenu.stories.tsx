@@ -39,8 +39,10 @@ export const Main: StoryObj<HvDropDownMenuProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+    onToggle: { control: { disable: true } },
+    onClick: { control: { disable: true } },
   },
-  render: ({ expanded, ...rest }) => {
+  render: ({ expanded, onToggle, ...rest }) => {
     const [open, setOpen] = useState<boolean>(!!expanded);
 
     return (
