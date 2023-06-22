@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
 import {
   Archives,
   Bookmark,
+  Link as LinkIcon,
   LogIn,
   Search,
 } from "@hitachivantara/uikit-react-icons";
@@ -12,23 +12,16 @@ import man2 from "./resources/man-2.png";
 import woman1 from "./resources/woman-1.png";
 import woman2 from "./resources/woman-2.png";
 
-const FlexDecorator = ({ children }) => {
-  const StyledDiv = styled("div")({
-    display: "flex",
-    alignItems: "center",
-    flexWrap: "wrap",
-    "& > *": {
-      margin: "0 10px 5px 0!important",
-    },
-  });
-
-  return <StyledDiv>{children}</StyledDiv>;
-};
+const flexDecorator = (Story) => (
+  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+    {Story()}
+  </div>
+);
 
 const meta: Meta<typeof HvAvatar> = {
   title: "Components/Avatar",
   component: HvAvatar,
-  decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
+  decorators: [flexDecorator],
   parameters: {
     eyes: {
       waitBeforeCapture: 5000,
@@ -143,30 +136,22 @@ export const Fallbacks: StoryObj<HvAvatarProps> = {
   render: () => {
     return (
       <>
-        <HvAvatar
-          id="fallback_to_children"
-          alt="Clara Soul"
-          src="/broken-image.jpg"
-        >
+        <HvAvatar alt="Clara Soul" src="/broken-image.jpg">
           CS
         </HvAvatar>
-        <HvAvatar
-          id="falback_to_alt"
-          alt="Clara Soul"
-          src="/broken-image.jpg"
-        />
-        <HvAvatar id="fallback_to_default_icon" src="/broken-image.jpg" />
+        <HvAvatar alt="Clara Soul" src="/broken-image.jpg" />
+        <HvAvatar src="/broken-image.jpg" />
       </>
     );
   },
 };
 
-export const Sizes: StoryObj<HvAvatarProps> = {
+export const Variants: StoryObj<HvAvatarProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          "You can change the size of the avatar with the size property (xs sm md lg and xl). When using an icon avatar, preferably use as iconSize the size immediately below the avatar size.",
+          "You can configure the `size` and `variant` of an avatar. When using an icon, set its `iconSize` to the size immediately below the avatar size.",
       },
     },
   },
@@ -174,14 +159,15 @@ export const Sizes: StoryObj<HvAvatarProps> = {
     return (
       <>
         <HvAvatar size="xs" />
+        <HvAvatar size="xs" variant="square" />
         <HvAvatar backgroundColor="sema6" size="sm">
           NA
         </HvAvatar>
-        <HvAvatar size="md" backgroundColor="warning">
-          <Bookmark iconSize="S" color="atmo1" />
+        <HvAvatar size="lg" backgroundColor="warning">
+          <Bookmark iconSize="M" color={["base_light", "base_dark"]} />
         </HvAvatar>
-        <HvAvatar size="lg" alt="Beatrice" src={woman1} />
         <HvAvatar size="xl" alt="Beatrice" src={woman1} />
+        <HvAvatar size="xl" variant="square" alt="Beatrice" src={woman1} />
       </>
     );
   },
@@ -199,19 +185,19 @@ export const Status: StoryObj<HvAvatarProps> = {
   render: () => {
     return (
       <>
-        <HvAvatar id="status1" size="xs" status="positive">
+        <HvAvatar size="xs" status="positive">
           AB
         </HvAvatar>
-        <HvAvatar id="status2" size="sm" status="neutral">
+        <HvAvatar size="sm" status="neutral">
           AB
         </HvAvatar>
-        <HvAvatar id="status3" size="md" status="negative">
+        <HvAvatar size="md" status="negative">
           AB
         </HvAvatar>
-        <HvAvatar id="status4" size="lg" status="atmo4">
+        <HvAvatar size="lg" status="atmo4">
           AB
         </HvAvatar>
-        <HvAvatar id="status5" size="xl" status="#8CEB34">
+        <HvAvatar size="xl" status="#8CEB34">
           AB
         </HvAvatar>
       </>
@@ -231,19 +217,19 @@ export const Badge: StoryObj<HvAvatarProps> = {
   render: () => {
     return (
       <>
-        <HvAvatar id="badge1" size="xs" badge="positive">
+        <HvAvatar size="xs" badge="positive">
           AB
         </HvAvatar>
-        <HvAvatar id="badge2" size="sm" badge="neutral">
+        <HvAvatar size="sm" badge="neutral">
           AB
         </HvAvatar>
-        <HvAvatar id="badge3" size="md" badge="negative">
+        <HvAvatar size="md" badge="negative">
           AB
         </HvAvatar>
-        <HvAvatar id="badge4" size="lg" badge="atmo4">
+        <HvAvatar size="lg" badge="atmo4">
           AB
         </HvAvatar>
-        <HvAvatar id="badge5" size="xl" badge="#8CEB34">
+        <HvAvatar size="xl" badge="#8CEB34">
           AB
         </HvAvatar>
       </>
@@ -251,114 +237,69 @@ export const Badge: StoryObj<HvAvatarProps> = {
   },
 };
 
-export const ContainerProps: StoryObj<HvAvatarProps> = {
+export const Actions: StoryObj<HvAvatarProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          "The avatar container can receive a props object to allow for focusing and dynamically setting other props like the aria-label or the tabIndex.",
+          "An avatar should be interacted with by wrapping it in an _interactable_ element, such as an `HvButton` or a link. Make sure the elements are labelled accordingly.",
       },
     },
   },
   render: () => {
-    return (
-      <>
-        <HvAvatar
-          id="props2"
-          size="sm"
-          role="button"
-          aria-label="Login"
-          tabIndex={0}
-        >
-          <LogIn color="atmo1" iconSize="XS" />
-        </HvAvatar>
-        <HvAvatar
-          id="props1"
-          size="md"
-          status="positive"
-          alt="Ben"
-          src={man1}
-          role="button"
-          aria-label="Ben - online"
-          tabIndex={0}
-        />
-        <HvAvatar
-          id="props3"
-          size="lg"
-          badge="negative"
-          alt="Beatrice"
-          src={woman1}
-          role="button"
-          aria-label="Beatrice - offline"
-          tabIndex={0}
-        />
-      </>
-    );
-  },
-};
-
-export const Buttons: StoryObj<HvAvatarProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "You can change the component used for the root node, for instance for rendering a HvButton. All other properties are spread in the root node, such as event callbacks.",
-      },
-    },
-  },
-  render: () => {
-    const doAlert = () => alert("Avatar clicked");
-
     return (
       <>
         <HvButton
-          aria-label="Open the user profile"
           icon
           overrideIconColors={false}
-          onClick={doAlert}
           variant="secondaryGhost"
+          component="a"
+          href="#profile-url"
         >
-          <HvAvatar id="icon" backgroundColor="positive">
-            <LogIn semantic="positive_20" iconSize="XS" />
+          <HvAvatar size="md">
+            <LinkIcon color="base_dark" aria-label="External link" />
           </HvAvatar>
         </HvButton>
-        <HvButton
-          aria-label="Open the user profile"
-          icon
-          overrideIconColors={false}
-          onClick={doAlert}
-          variant="secondaryGhost"
-        >
-          <HvAvatar id="default_icon" />
+        <HvButton icon overrideIconColors={false} variant="secondaryGhost">
+          <HvAvatar size="md" aria-label="Open the user profile" />
         </HvButton>
-        <HvButton
-          aria-label="Open the user profile"
-          icon
-          overrideIconColors={false}
-          onClick={doAlert}
-          variant="secondaryGhost"
-        >
+        <HvButton icon overrideIconColors={false} variant="secondaryGhost">
           <HvAvatar
-            id="letters"
             backgroundColor="sema19"
             size="md"
             badge="negative"
+            aria-label="Business Manager"
           >
             BM
           </HvAvatar>
         </HvButton>
-        <HvButton
-          aria-label="Open the user profile"
-          icon
-          overrideIconColors={false}
-          onClick={doAlert}
-          variant="secondaryGhost"
-        >
+        <HvButton icon overrideIconColors={false} variant="secondaryGhost">
           <HvAvatar
-            id="image"
+            backgroundColor="sema19"
+            size="md"
+            variant="square"
+            badge="negative"
+            aria-label="Business Manager"
+          >
+            BM
+          </HvAvatar>
+        </HvButton>
+        <HvButton icon overrideIconColors={false} variant="secondaryGhost">
+          <HvAvatar
+            aria-label="Clara Soul profile"
             alt="Clara Soul"
             src={woman2}
-            size="xl"
+            size="lg"
+            status="positive"
+          />
+        </HvButton>
+        <HvButton icon overrideIconColors={false} variant="secondaryGhost">
+          <HvAvatar
+            aria-label="Clara Soul profile"
+            alt="Clara Soul"
+            src={woman2}
+            size="lg"
+            variant="square"
             status="positive"
           />
         </HvButton>

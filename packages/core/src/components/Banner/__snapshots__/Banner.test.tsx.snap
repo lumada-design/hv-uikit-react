@@ -30,7 +30,7 @@ exports[`Banner > should render correctly 1`] = `
           >
             <button
               aria-label="Close"
-              class="HvBannerActionContainer-closeAction hv-v6ff5y HvButton-root css-4vzt0e-StyledButton e138pvrm0"
+              class="HvBannerActionContainer-closeAction hv-v6ff5y HvButton-root css-9a2ltd-StyledButton e138pvrm0"
               tabindex="0"
               type="button"
             >

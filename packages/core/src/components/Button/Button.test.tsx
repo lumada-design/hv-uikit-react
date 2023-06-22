@@ -1,58 +1,49 @@
 import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Disabled, Icons, Semantic } from "./Button.stories";
+import { Alert } from "@hitachivantara/uikit-react-icons";
 import { HvButton } from "./Button";
+import { HvLoading } from "..";
 
 describe("Button", () => {
-  describe("sample snapshot testing", () => {
-    it("should match the snapshot", () => {
-      const { asFragment } = render(<HvButton />);
-      expect(asFragment()).toMatchSnapshot();
-    });
+  it("renders the content", () => {
+    render(<HvButton>content</HvButton>);
+
+    expect(screen.getByRole("button", { name: "content" })).toBeInTheDocument();
   });
 
-  describe("storybook sample checks", () => {
-    it("renders the disabled sample correctly", () => {
-      const { getByRole } = render(<Disabled onClick={() => {}} />);
+  it("renders the custom content", () => {
+    render(
+      <HvButton
+        startIcon={<Alert data-testid="startId" />}
+        endIcon={<Alert data-testid="endId" />}
+      >
+        <HvLoading data-testid="loadingId" />
+        content
+      </HvButton>
+    );
 
-      const button = getByRole("button", { name: "Primary" });
-      expect(button).toBeInTheDocument();
-      expect(button).toBeDisabled();
-    });
-
-    it("renders the icons sample correctly", () => {
-      const { getAllByRole } = render(<Icons onClick={() => {}} />);
-
-      const playButton = getAllByRole("button", { name: "Play" });
-      expect(playButton.length).toEqual(3);
-      expect(playButton[0]).toBeInTheDocument();
-      expect(playButton[1]).toBeInTheDocument();
-      const pauseButton = getAllByRole("button", { name: "Pause" });
-      expect(pauseButton.length).toEqual(3);
-      expect(pauseButton[0]).toBeInTheDocument();
-      expect(pauseButton[1]).toBeInTheDocument();
-      const stopButton = getAllByRole("button", { name: "Stop" });
-      expect(stopButton.length).toEqual(3);
-      expect(stopButton[0]).toBeInTheDocument();
-      expect(stopButton[1]).toBeInTheDocument();
-    });
-
-    it("renders the semantic sample correctly", () => {
-      const { getByRole } = render(<Semantic onClick={() => {}} />);
-
-      const favoriteButton = getByRole("button", { name: "Favorite" });
-      expect(favoriteButton).toBeInTheDocument();
-      const refreshButton = getByRole("button", { name: "Refresh" });
-      expect(refreshButton).toBeInTheDocument();
-      const deleteButton = getByRole("button", { name: "Delete" });
-      expect(deleteButton).toBeInTheDocument();
-      const optionsButtons = getByRole("button", { name: "More options" });
-      expect(optionsButtons).toBeInTheDocument();
-    });
+    expect(screen.getByTestId("startId")).toBeInTheDocument();
+    expect(screen.getByTestId("endId")).toBeInTheDocument();
+    expect(screen.getByTestId("loadingId")).toBeInTheDocument();
+    expect(screen.getByRole("button")).toHaveTextContent("content");
   });
 
-  it("disabled", () => {
+  it("calls onClick when clicked", async () => {
+    const clickMock = vi.fn();
+    render(<HvButton onClick={clickMock}>content</HvButton>);
+
+    const button = screen.getByRole("button", { name: "content" });
+
+    expect(button).toBeInTheDocument();
+    expect(clickMock).not.toHaveBeenCalled();
+    await userEvent.click(button);
+    expect(clickMock).toHaveBeenCalledTimes(1);
+    await userEvent.click(button);
+    expect(clickMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("disables for all variants", () => {
     const { getByRole } = render(
       <div>
         <HvButton variant="primary" disabled>
@@ -75,6 +66,7 @@ describe("Button", () => {
         </HvButton>
       </div>
     );
+
     const primary = getByRole("button", { name: "Primary" });
     expect(primary).toBeDisabled();
     const primarySubtle = getByRole("button", { name: "Primary Subtle" });

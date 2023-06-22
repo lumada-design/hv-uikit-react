@@ -25,8 +25,8 @@ export const Main: StoryObj<HvButtonProps> = {
     variant: "primary",
     disabled: false,
     size: undefined,
-    radius: "base",
-    overrideIconColors: true,
+    radius: undefined,
+    overrideIconColors: false,
     selected: false,
   },
   argTypes: {
@@ -125,29 +125,37 @@ export const Main: StoryObj<HvButtonProps> = {
   },
 };
 
-export const Disabled = ({ onClick }) => {
+export const Variants = ({ onClick }) => {
   return (
-    <HvBox sx={{ display: "flex", gap: 20 }}>
-      <HvButton variant="primary" onClick={onClick} disabled>
+    <HvBox
+      sx={{ display: "grid", gap: 20, gridTemplateColumns: "repeat(3, 140px)" }}
+    >
+      <HvButton variant="primary" onClick={onClick}>
         Primary
       </HvButton>
-      <HvButton variant="primarySubtle" onClick={onClick} disabled>
+      <HvButton variant="primarySubtle" onClick={onClick}>
         Primary Subtle
       </HvButton>
-      <HvButton variant="primaryGhost" onClick={onClick} disabled>
+      <HvButton variant="primaryGhost" onClick={onClick}>
         Primary Ghost
       </HvButton>
-      <HvButton variant="secondary" onClick={onClick} disabled>
+      <HvButton variant="secondary" onClick={onClick}>
         Secondary
       </HvButton>
-      <HvButton variant="secondarySubtle" onClick={onClick} disabled>
+      <HvButton variant="secondarySubtle" onClick={onClick}>
         Secondary Subtle
       </HvButton>
-      <HvButton variant="secondaryGhost" onClick={onClick} disabled>
+      <HvButton variant="secondaryGhost" onClick={onClick}>
         Secondary Ghost
       </HvButton>
-      <HvButton variant="semantic" onClick={onClick} disabled>
-        Semantic
+      <HvButton disabled variant="primary" onClick={onClick}>
+        Disabled
+      </HvButton>
+      <HvButton disabled variant="primarySubtle" onClick={onClick}>
+        Disabled Subtle
+      </HvButton>
+      <HvButton disabled variant="primaryGhost" onClick={onClick}>
+        Disabled Ghost
       </HvButton>
     </HvBox>
   );
@@ -157,7 +165,7 @@ const clickAction = () => {
   alert("This can be triggered");
 };
 
-Disabled.args = {
+Variants.args = {
   onClick: clickAction,
 };
 
@@ -171,7 +179,7 @@ export const Icons = ({ onClick }) => {
           onClick={onClick}
           variant="secondaryGhost"
         >
-          <Play />
+          <Play iconSize="M" />
         </HvButton>
         <HvButton
           icon
@@ -179,7 +187,7 @@ export const Icons = ({ onClick }) => {
           onClick={onClick}
           variant="secondaryGhost"
         >
-          <Pause />
+          <Pause iconSize="M" />
         </HvButton>
         <HvButton
           icon
@@ -187,7 +195,7 @@ export const Icons = ({ onClick }) => {
           onClick={onClick}
           variant="secondaryGhost"
         >
-          <Stop />
+          <Stop iconSize="M" />
         </HvButton>
       </HvBox>
       <HvBox sx={{ display: "flex", gap: 20, marginTop: 10 }}>

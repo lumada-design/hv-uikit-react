@@ -54,7 +54,7 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
         >
           <button
             aria-label="Reset query"
-            class="HvQueryBuilder-removeButton hv-0 HvButton-root css-1711hqm-StyledButton e138pvrm0"
+            class="HvQueryBuilder-removeButton hv-0 HvButton-root css-v4s99v-StyledButton e138pvrm0"
             type="button"
           >
             <div

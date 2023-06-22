@@ -44,7 +44,7 @@ exports[`FileList > should render correctly 1`] = `
       </span>
       <button
         aria-label="removeFileButtonLabel"
-        class="HvFile-removeButton e6pb7kb0 HvButton-root css-6nk431-StyledButton-StyledIconButton e138pvrm0"
+        class="HvFile-removeButton e6pb7kb0 HvButton-root css-ag14u3-StyledButton-StyledIconButton e138pvrm0"
         id="list-values-remove-button"
         type="button"
       >
@@ -114,7 +114,7 @@ exports[`FileList > should render correctly 1`] = `
       </span>
       <button
         aria-label="removeFileButtonLabel"
-        class="HvFile-removeButton e6pb7kb0 HvButton-root css-6nk431-StyledButton-StyledIconButton e138pvrm0"
+        class="HvFile-removeButton e6pb7kb0 HvButton-root css-ag14u3-StyledButton-StyledIconButton e138pvrm0"
         id="list-values-remove-button"
         type="button"
       >
