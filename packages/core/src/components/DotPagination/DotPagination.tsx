@@ -1,15 +1,13 @@
-import { clsx } from "clsx";
+import { CurrentStep, OtherStep } from "@hitachivantara/uikit-react-icons";
 import { cloneElement } from "react";
-import { HvRadioGroupProps } from "../RadioGroup";
-import dotPaginationClasses, {
-  HvDotPaginationClasses,
-} from "./dotPaginationClasses";
-import {
-  StyledCurrentStep,
-  StyledOtherStep,
-  StyledRadio,
-  StyledRadioGroup,
-} from "./DotPagination.styles";
+import { HvRadio, HvRadioGroup, HvRadioGroupProps } from "@core/components";
+import { ExtractNames } from "@core/utils";
+
+import { staticClasses, useClasses } from "./DotPagination.styles";
+
+export { staticClasses as dotPaginationClasses };
+
+export type HvDotPaginationClasses = Partial<ExtractNames<typeof useClasses>>;
 
 export interface HvDotPaginationProps
   extends Omit<HvRadioGroupProps, "classes"> {
@@ -47,7 +45,7 @@ export interface HvDotPaginationProps
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes?: HvDotPaginationClasses;
+  classes?: Partial<HvDotPaginationClasses>;
 }
 
 const getSelectorIcons = (
@@ -56,13 +54,13 @@ const getSelectorIcons = (
   classes?: HvDotPaginationClasses
 ) => {
   return {
-    radio: cloneElement(radioIcon || <StyledOtherStep width={8} height={8} />, {
-      className: clsx(classes?.icon, dotPaginationClasses.icon),
+    radio: cloneElement(radioIcon || <OtherStep width={8} height={8} />, {
+      className: classes?.icon,
     }),
     radioChecked: cloneElement(
-      radioCheckedIcon || <StyledCurrentStep width={8} height={8} />,
+      radioCheckedIcon || <CurrentStep width={8} height={8} />,
       {
-        className: clsx(classes?.icon, dotPaginationClasses.icon),
+        className: classes?.icon,
       }
     ),
   };
@@ -74,7 +72,7 @@ const getSelectorIcons = (
  */
 export const HvDotPagination = ({
   className,
-  classes,
+  classes: classesProp = {},
   unselectedIcon,
   selectedIcon,
   pages = 1,
@@ -85,22 +83,24 @@ export const HvDotPagination = ({
 }: HvDotPaginationProps) => {
   const range = (n: number) => Array.from(Array(n), (_, i) => i);
 
+  const { classes, cx } = useClasses(classesProp);
+
   const icons = getSelectorIcons(unselectedIcon, selectedIcon, classes);
 
   return (
-    <StyledRadioGroup
-      className={clsx(className, classes?.root, dotPaginationClasses.root)}
+    <HvRadioGroup
+      className={cx(className, classes.root)}
       classes={{
-        horizontal: clsx(classes?.horizontal, dotPaginationClasses.horizontal),
+        horizontal: classes.horizontal,
       }}
       orientation="horizontal"
       {...others}
     >
       {range(pages).map((i) => (
-        <StyledRadio
+        <HvRadio
           classes={{
-            radio: clsx(classes?.radio, dotPaginationClasses.radio),
-            root: clsx(classes?.radioRoot, dotPaginationClasses.radioRoot),
+            radio: classes.radio,
+            root: classes.radioRoot,
           }}
           key={i}
           value={i}
@@ -111,6 +111,6 @@ export const HvDotPagination = ({
           aria-label={getItemAriaLabel?.(i)}
         />
       ))}
-    </StyledRadioGroup>
+    </HvRadioGroup>
   );
 };
