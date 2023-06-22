@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.8.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.8.3...@hitachivantara/uikit-styles@5.8.4) (2023-06-22)
+
+### Bug Fixes
+
+- actions height in components ([b9b386a](https://github.com/lumada-design/hv-uikit-react/commit/b9b386ab55ee917a9737f399597e0462d2516eb9))
+
 ## [5.8.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.8.2...@hitachivantara/uikit-styles@5.8.3) (2023-06-20)
 
 ### Bug Fixes

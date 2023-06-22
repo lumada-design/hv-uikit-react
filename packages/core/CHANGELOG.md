@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.18.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.17.0...@hitachivantara/uikit-react-core@5.18.0) (2023-06-22)
+
+### Bug Fixes
+
+- actions height in components ([b9b386a](https://github.com/lumada-design/hv-uikit-react/commit/b9b386ab55ee917a9737f399597e0462d2516eb9))
+
+### Features
+
+- **BarChart:** bar chart added ([4b81d32](https://github.com/lumada-design/hv-uikit-react/commit/4b81d32ed1ed27b386e765ebb481f1eb89212a84))
+- **QueryBuilder:** date time value added and styling refactored ([#3438](https://github.com/lumada-design/hv-uikit-react/issues/3438)) ([1a47fea](https://github.com/lumada-design/hv-uikit-react/commit/1a47feabb4271f691b7633f861c2e08c7703229e))
+
 # [5.17.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.16.0...@hitachivantara/uikit-react-core@5.17.0) (2023-06-21)
 
 ### Features
