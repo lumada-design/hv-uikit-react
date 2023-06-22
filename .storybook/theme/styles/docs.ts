@@ -1,6 +1,8 @@
 export const getDocsStyles = (theme) => {
   return {
     ".sbdocs.sbdocs-wrapper": {
+      overflow: "hidden",
+
       ".sbdocs": {
         fontFamily: "'Open Sans',sans-serif !important",
       },
@@ -10,17 +12,21 @@ export const getDocsStyles = (theme) => {
         maxWidth: "90% !important",
       },
 
-      ".sbdocs-preview": {
-        overflow: "visible",
-
-        "& > div": {
-          overflow: "visible",
-
-          "& > div": {
+      // This is necessary for the chart tooltips to not be hidden
+      "div[id*='anchor--visualizations-bar-chart'], div[id*='anchor--visualizations-line-chart']":
+        {
+          ".sbdocs-preview": {
             overflow: "visible",
+
+            "& > div": {
+              overflow: "visible",
+
+              "& > div": {
+                overflow: "visible",
+              },
+            },
           },
         },
-      },
 
       "a.sbdocs": {
         color: "#2064B4",
