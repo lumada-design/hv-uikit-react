@@ -1,19 +1,16 @@
-import { clsx } from "clsx";
 import { forwardRef, isValidElement } from "react";
-import { SnackbarContentProps as MuiSnackbarContentProps } from "@mui/material/SnackbarContent";
-import { iconVariant, setId } from "@core/utils";
+import SnackbarContent, {
+  SnackbarContentProps as MuiSnackbarContentProps,
+} from "@mui/material/SnackbarContent";
+import { ExtractNames, iconVariant, setId } from "@core/utils";
 import { HvBaseProps } from "@core/types";
 import { HvActionsGeneric, HvActionGeneric } from "@core/components";
 import { HvSnackbarVariant } from "../Snackbar";
-import {
-  StyledMessageSpan,
-  StyledSnackbarContent,
-  StyledMessageText,
-  StyledAction,
-} from "./SnackbarContentWrapper.styles";
-import snackbarContentClasses, {
-  HvSnackbarContentClasses,
-} from "./snackbarContentWrapperClasses";
+import { staticClasses, useClasses } from "./SnackbarContentWrapper.styles";
+
+export { staticClasses as snackbarContentClasses };
+
+export type HvSnackbarContentClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSnackbarContentProps
   extends Omit<MuiSnackbarContentProps, "variant" | "action" | "classes">,
@@ -35,15 +32,18 @@ export interface HvSnackbarContentProps
     action: HvActionGeneric
   ) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvSnackbarContentClasses;
+  classes?: Partial<HvSnackbarContentClasses>;
 }
 
-const HvSnackbarContent = forwardRef<HTMLDivElement, HvSnackbarContentProps>(
+export const HvSnackbarContent = forwardRef<
+  HTMLDivElement,
+  HvSnackbarContentProps
+>(
   (
     {
       className,
       id,
-      classes,
+      classes: classesProp = {},
       label,
       variant,
       showIcon,
@@ -57,65 +57,35 @@ const HvSnackbarContent = forwardRef<HTMLDivElement, HvSnackbarContentProps>(
     const icon = customIcon || (showIcon && iconVariant(variant, "base_dark"));
     const innerAction: any = isValidElement(action) ? action : [action];
 
+    const { classes, cx } = useClasses(classesProp);
+
     return (
-      <StyledSnackbarContent
+      <SnackbarContent
         ref={ref}
         id={id}
         classes={{
-          root: clsx(snackbarContentClasses.root, classes?.root),
-          message: clsx(snackbarContentClasses.message, classes?.message),
+          root: classes?.root,
+          message: classes?.message,
         }}
-        className={clsx(
-          className,
-          classes?.[variant],
-          snackbarContentClasses[variant]
-        )}
+        className={cx(className, classes?.[variant])}
         message={
-          <StyledMessageSpan
-            id={setId(id, "message")}
-            className={clsx(
-              snackbarContentClasses.messageSpan,
-              classes?.messageSpan
-            )}
-          >
-            {icon && (
-              <div
-                className={clsx(
-                  snackbarContentClasses.iconVariant,
-                  classes?.iconVariant
-                )}
-              >
-                {icon}
-              </div>
-            )}
-            <StyledMessageText
-              className={clsx(
-                snackbarContentClasses.messageText,
-                classes?.messageText
-              )}
-            >
-              {label}
-            </StyledMessageText>
+          <div id={setId(id, "message")} className={classes?.messageSpan}>
+            {icon && <div className={classes?.iconVariant}>{icon}</div>}
+            <div className={classes?.messageText}>{label}</div>
             {action && (
-              <StyledAction
-                id={setId(id, "action")}
-                className={clsx(snackbarContentClasses.action, classes?.action)}
-              >
+              <div id={setId(id, "action")} className={classes?.action}>
                 <HvActionsGeneric
                   id={id}
                   category="secondaryGhost"
                   actions={innerAction}
                   actionsCallback={actionCallback}
                 />
-              </StyledAction>
+              </div>
             )}
-          </StyledMessageSpan>
+          </div>
         }
-        $variant={variant}
         {...others}
       />
     );
   }
 );
-
-export default HvSnackbarContent;

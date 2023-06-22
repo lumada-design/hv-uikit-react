@@ -1,28 +1,41 @@
-import styled from "@emotion/styled";
-import Snackbar, { snackbarClasses } from "@mui/material/Snackbar";
 import { theme } from "@hitachivantara/uikit-styles";
+import { createClasses } from "@core/utils";
+import { snackbarClasses } from "@mui/material";
 
-export const StyledSnackbar = styled(Snackbar)({
-  [`&.${snackbarClasses.anchorOriginTopRight}`]: {
-    top: theme.space.xs,
-    right: theme.space.xs,
+export const { useClasses, staticClasses } = createClasses("HvSnackbar", {
+  root: {},
+  anchorOriginTopRight: {
+    [`&.${snackbarClasses.anchorOriginTopRight}`]: {
+      top: theme.space.xs,
+      right: theme.space.xs,
+    },
   },
-  [`&.${snackbarClasses.anchorOriginTopLeft}`]: {
-    top: theme.space.xs,
-    left: theme.space.xs,
+  anchorOriginTopLeft: {
+    [`&.${snackbarClasses.anchorOriginTopLeft}`]: {
+      top: theme.space.xs,
+      left: theme.space.xs,
+    },
   },
-  [`&.${snackbarClasses.anchorOriginTopCenter}`]: {
-    top: theme.space.xs,
+  anchorOriginTopCenter: {
+    [`&.${snackbarClasses.anchorOriginTopCenter}`]: {
+      top: theme.space.xs,
+    },
   },
-  [`&.${snackbarClasses.anchorOriginBottomCenter}`]: {
-    bottom: theme.space.xs,
+  anchorOriginBottomCenter: {
+    [`&.${snackbarClasses.anchorOriginBottomCenter}`]: {
+      bottom: theme.space.xs,
+    },
   },
-  [`&.${snackbarClasses.anchorOriginBottomLeft}`]: {
-    bottom: theme.space.xs,
-    left: theme.space.xs,
+  anchorOriginBottomLeft: {
+    [`&.${snackbarClasses.anchorOriginBottomLeft}`]: {
+      bottom: theme.space.xs,
+      left: theme.space.xs,
+    },
   },
-  [`&.${snackbarClasses.anchorOriginBottomRight}`]: {
-    bottom: theme.space.xs,
-    right: theme.space.xs,
+  anchorOriginBottomRight: {
+    [`&.${snackbarClasses.anchorOriginBottomRight}`]: {
+      bottom: theme.space.xs,
+      right: theme.space.xs,
+    },
   },
 });
