@@ -155,7 +155,7 @@ exports[`Badge > should render correctly with text 1`] = `
     class="HvBadgeClasses-root css-1q5qni0-StyledRoot e16y1fwq2"
   >
     <h3
-      class="HvTypography-root HvTypography-title3 css-bj1yqo-getStyledComponent e1tnpalo0"
+      class="HvTypography-root HvTypography-title3 hv-8rticu"
     >
       hello
     </h3>

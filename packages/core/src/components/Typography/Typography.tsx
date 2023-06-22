@@ -1,29 +1,27 @@
-import {
-  forwardRef,
-  useMemo,
-  CSSProperties,
-  AllHTMLAttributes,
-  Ref,
-} from "react";
+import { forwardRef, AllHTMLAttributes, Ref } from "react";
 import { HvBaseProps } from "@core/types";
-import styled from "@emotion/styled";
-import { transientOptions } from "@core/utils/transientOptions";
-import { theme } from "@hitachivantara/uikit-styles";
-import { clsx } from "clsx";
+import { ExtractNames } from "@core/utils";
 import { useTheme } from "@core/hooks";
 import { mapVariant } from "./utils";
-import typographyClasses, { HvTypographyClasses } from "./typographyClasses";
+import { staticClasses, useClasses } from "./Typography.styles";
 
-export type HvTypographyVariants =
-  | "display"
-  | "title1"
-  | "title2"
-  | "title3"
-  | "title4"
-  | "body"
-  | "label"
-  | "caption1"
-  | "caption2";
+export { staticClasses as typographyClasses };
+
+export type HvTypographyClasses = ExtractNames<typeof useClasses>;
+
+export const typographyVariants = [
+  "display",
+  "title1",
+  "title2",
+  "title3",
+  "title4",
+  "body",
+  "label",
+  "caption1",
+  "caption2",
+] as const;
+
+export type HvTypographyVariants = (typeof typographyVariants)[number];
 
 /** @deprecated */
 export type HvTypographyLegacyVariants =
@@ -74,114 +72,10 @@ const HvTypographyMap = {
   xsInlineLink: "p",
 } as const;
 
-const getStyledComponent = <T extends keyof JSX.IntrinsicElements>(c: T) =>
-  styled(
-    c,
-    transientOptions
-  )(
-    ({
-      $variant,
-      $link = false,
-      $disabled = false,
-      $noWrap = false,
-    }: {
-      $variant: HvTypographyVariants | HvTypographyLegacyVariants;
-      $link?: boolean;
-      $disabled?: boolean;
-      $noWrap?: boolean;
-    }) => ({
-      ...($variant === "display" && {
-        ...(theme.typography.display as CSSProperties),
-      }),
-      ...($variant === "title1" && {
-        ...(theme.typography.title1 as CSSProperties),
-      }),
-      ...($variant === "title2" && {
-        ...(theme.typography.title2 as CSSProperties),
-      }),
-      ...($variant === "title3" && {
-        ...(theme.typography.title3 as CSSProperties),
-      }),
-      ...($variant === "title4" && {
-        ...(theme.typography.title4 as CSSProperties),
-      }),
-      ...($variant === "body" && {
-        ...(theme.typography.body as CSSProperties),
-      }),
-      ...($variant === "label" && {
-        ...(theme.typography.label as CSSProperties),
-      }),
-      ...($variant === "caption1" && {
-        ...(theme.typography.caption1 as CSSProperties),
-      }),
-      ...($variant === "caption2" && {
-        ...(theme.typography.caption2 as CSSProperties),
-      }),
-      // LEGACY
-      ...($variant === "5xlTitle" && {
-        ...(theme.typography["5xlTitle"] as CSSProperties),
-      }),
-      ...($variant === "4xlTitle" && {
-        ...(theme.typography["4xlTitle"] as CSSProperties),
-      }),
-      ...($variant === "xxlTitle" && {
-        ...(theme.typography.xxlTitle as CSSProperties),
-      }),
-      ...($variant === "lTitle" && {
-        ...(theme.typography.lTitle as CSSProperties),
-      }),
-      ...($variant === "sTitle" && {
-        ...(theme.typography.sTitle as CSSProperties),
-      }),
-      ...($variant === "xxsTitle" && {
-        ...(theme.typography.xxsTitle as CSSProperties),
-      }),
-      ...($variant === "sectionTitle" && {
-        ...(theme.typography.sectionTitle as CSSProperties),
-        textTransform: "uppercase",
-      }),
-      ...($variant === "placeholderText" && {
-        ...(theme.typography.placeholderText as CSSProperties),
-      }),
-      ...($variant === "link" && {
-        ...(theme.typography.link as CSSProperties),
-        textDecoration: "underline",
-        cursor: "pointer",
-      }),
-      ...($variant === "disabledText" && {
-        ...(theme.typography.disabledText as CSSProperties),
-      }),
-      ...($variant === "selectedNavText" && {
-        ...(theme.typography.selectedNavText as CSSProperties),
-      }),
-      ...($variant === "vizTextDisabled" && {
-        ...(theme.typography.vizTextDisabled as CSSProperties),
-      }),
-      ...($variant === "xsInlineLink" && {
-        ...(theme.typography.xsInlineLink as CSSProperties),
-      }),
-      fontFamily: theme.fontFamily.body,
-      // ADDED PROPS
-      ...($link && {
-        color: theme.colors.primary,
-        textDecoration: "underline",
-        cursor: "pointer",
-      }),
-      ...($disabled && {
-        color: theme.colors.secondary_60,
-      }),
-      ...($noWrap && {
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-        whiteSpace: "nowrap",
-      }),
-    })
-  );
-
 export interface HvTypographyProps
   extends Omit<AllHTMLAttributes<HTMLElement>, "disabled">,
     HvBaseProps<HTMLElement> {
-  component?: React.ReactNode | React.ElementType;
+  component?: React.ElementType;
   /** Use the variant prop to change the visual style of the Typography. */
   variant?: HvTypographyVariants | HvTypographyLegacyVariants;
   /** If `true` the typography will display the look of a link. */
@@ -207,50 +101,34 @@ export interface HvTypographyProps
 export const HvTypography = forwardRef(
   (props: HvTypographyProps, ref: Ref<HTMLElement>) => {
     const {
-      children,
       className,
-      component,
-      classes,
-      variant = "body",
+      component: ComponentProp,
+      classes: classesProp,
+      variant: variantProp = "body",
       link = false,
       disabled = false,
       noWrap = false,
       paragraph = false,
       ...others
     } = props;
+    const { classes, cx } = useClasses(classesProp);
     const { activeTheme } = useTheme();
 
-    const mappedVariant = mapVariant(variant, activeTheme?.name);
+    const variant = mapVariant(variantProp, activeTheme?.name);
 
-    const comp =
-      component || (paragraph ? "p" : HvTypographyMap[mappedVariant] || "span");
-
-    const StyledComponent = useMemo(
-      () => getStyledComponent(comp || "p"),
-      [comp]
-    );
+    const Component =
+      ComponentProp || (paragraph && "p") || HvTypographyMap[variant] || "span";
 
     return (
-      <StyledComponent
+      <Component
         ref={ref}
-        className={clsx(
-          className,
-          classes?.root,
-          typographyClasses.root,
-          classes?.[variant],
-          typographyClasses[variant],
-          noWrap && clsx(typographyClasses.noWrap, classes?.noWrap)
-        )}
-        $variant={
-          mappedVariant as HvTypographyVariants | HvTypographyLegacyVariants
-        }
-        $link={link}
-        $disabled={disabled}
-        $noWrap={noWrap}
+        className={cx(classes.root, classes[variant], className, {
+          [classes.isLink]: link,
+          [classes.noWrap]: noWrap,
+          [classes.disabled]: disabled,
+        })}
         {...others}
-      >
-        {children}
-      </StyledComponent>
+      />
     );
   }
 );

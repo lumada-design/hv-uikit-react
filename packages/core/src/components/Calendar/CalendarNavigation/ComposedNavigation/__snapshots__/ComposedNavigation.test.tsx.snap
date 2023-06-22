@@ -36,7 +36,7 @@ exports[`<Navigation /> > should render correctly 1`] = `
           tabindex="0"
         >
           <p
-            class="HvTypography-root HvTypography-body css-1fbl1cl-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-body hv-1gxwolr"
           >
             April
           </p>
@@ -90,7 +90,7 @@ exports[`<Navigation /> > should render correctly 1`] = `
         tabindex="-1"
       >
         <p
-          class="HvTypography-root HvTypography-body css-1fbl1cl-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-body hv-1gxwolr"
         >
           2020
         </p>

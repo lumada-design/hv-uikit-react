@@ -4,7 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvTypography,
   HvTypographyProps,
-  HvTypographyVariants,
+  typographyVariants,
 } from "./Typography";
 
 export default { title: "Foundation/Typography", component: HvTypography };
@@ -17,40 +17,29 @@ export const Main: StoryObj<HvTypographyProps> = {
     noWrap: false,
     paragraph: false,
   },
+  argTypes: {
+    variant: { options: typographyVariants },
+    component: { control: { disable: true } },
+    classes: { control: { disable: true } },
+  },
   decorators: [(Story) => <div style={{ width: 400 }}>{Story()}</div>],
   render: (args) => (
     <HvTypography {...args}>Welcome to NEXT Design System!</HvTypography>
   ),
 };
 
-const variants = [
-  "display",
-  "title1",
-  "title2",
-  "title3",
-  "title4",
-  "body",
-  "label",
-  "caption1",
-  "caption2",
-] as HvTypographyVariants[];
-
 export const Variants = () => {
   return (
     <HvBox sx={{ marginBottom: theme.spacing(7) }}>
-      {variants.map((variant: HvTypographyVariants) => {
-        return (
-          <HvBox key={`key_${variant}`} sx={{ marginBottom: theme.space.sm }}>
-            <HvTypography variant="label" key={`label_${variant}`}>
-              {variant}
-            </HvTypography>
-            <br />
-            <HvTypography variant={variant} key={variant}>
-              Welcome to NEXT Design System!
-            </HvTypography>
-          </HvBox>
-        );
-      })}
+      {typographyVariants.map((variant) => (
+        <HvBox key={variant} sx={{ marginBottom: theme.space.sm }}>
+          <HvTypography variant="label">{variant}</HvTypography>
+          <br />
+          <HvTypography variant={variant}>
+            Welcome to NEXT Design System!
+          </HvTypography>
+        </HvBox>
+      ))}
     </HvBox>
   );
 };

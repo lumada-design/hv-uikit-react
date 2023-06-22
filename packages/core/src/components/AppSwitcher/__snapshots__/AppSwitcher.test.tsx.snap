@@ -6,7 +6,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
     class="HvAppSwitcher-root HvAppSwitcher-single HvAppSwitcher-open css-dklnei-StyledRoot e1lxr4i84"
   >
     <span
-      class="HvAppSwitcher-title e1lxr4i82 HvTypography-root HvTypography-label css-188sozb-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
+      class="HvTypography-root HvTypography-label HvAppSwitcher-title css-em9k1j-StyledTitleWithTooltip e1lxr4i82 hv-1j8ohlw"
       data-mui-internal-clone-element="true"
     >
       Mock title
@@ -21,7 +21,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         <a
           aria-describedby="hvAction-description1"
           aria-label="Mock App 1"
-          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 HvTypography-root HvTypography-body css-1j5cad3-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvTypography-root HvTypography-body HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger css-1arlysi-StyledTypography e187pp8e3 hv-1gxwolr"
           href="http://mockapp1/"
           tabindex="0"
           target="_top"
@@ -45,7 +45,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             </div>
           </div>
           <span
-            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 HvTypography-root HvTypography-label css-1v3xlhd-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
+            class="HvTypography-root HvTypography-label HvAppSwitcher-Action-title HvAppSwitcher-itemTitle css-1o0m4uh-StyledTitleWithTooltip e1lxr4i82 hv-1j8ohlw"
             data-mui-internal-clone-element="true"
           >
             Mock App 1
@@ -59,7 +59,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         <a
           aria-describedby="hvAction-description2"
           aria-label="Mock App 2"
-          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 HvTypography-root HvTypography-body css-1j5cad3-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvTypography-root HvTypography-body HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger css-1arlysi-StyledTypography e187pp8e3 hv-1gxwolr"
           href="http://mockapp2/"
           tabindex="0"
           target="_blank"
@@ -74,7 +74,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 HvTypography-root HvTypography-label css-1v3xlhd-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
+            class="HvTypography-root HvTypography-label HvAppSwitcher-Action-title HvAppSwitcher-itemTitle css-1o0m4uh-StyledTitleWithTooltip e1lxr4i82 hv-1j8ohlw"
             data-mui-internal-clone-element="true"
           >
             Mock App 2
@@ -114,7 +114,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         <a
           aria-describedby="hvAction-description3"
           aria-label="Mock App 3"
-          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 HvTypography-root HvTypography-body css-1j5cad3-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvTypography-root HvTypography-body HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger css-1arlysi-StyledTypography e187pp8e3 hv-1gxwolr"
           href="http://mockapp2/"
           tabindex="0"
           target="_top"
@@ -129,7 +129,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 HvTypography-root HvTypography-label css-1v3xlhd-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
+            class="HvTypography-root HvTypography-label HvAppSwitcher-Action-title HvAppSwitcher-itemTitle css-1o0m4uh-StyledTitleWithTooltip e1lxr4i82 hv-1j8ohlw"
             data-mui-internal-clone-element="true"
           >
             Mock App 3

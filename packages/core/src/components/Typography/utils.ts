@@ -1,4 +1,8 @@
-const mappableVariants = new Map([
+import { HvTypographyLegacyVariants, HvTypographyVariants } from ".";
+
+type Variant = HvTypographyVariants | HvTypographyLegacyVariants;
+
+const mappableVariants = new Map<Variant, HvTypographyVariants>([
   ["3xlTitle", "display"],
   ["xlTitle", "title1"],
   ["mTitle", "title2"],
@@ -33,7 +37,7 @@ const isLegacyVariant = (variant: string) => {
   ].includes(variant);
 };
 
-export const mapVariant = (variant: string, theme?: string) => {
+export const mapVariant = (variant: Variant, theme?: string) => {
   const mappedVariant = mappableVariants.get(variant);
 
   if (theme !== "ds3") {

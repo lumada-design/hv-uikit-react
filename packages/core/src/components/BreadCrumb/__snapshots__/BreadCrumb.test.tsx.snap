@@ -12,7 +12,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a hv-1ypbssm HvTypography-root HvTypography-label HvTypography-noWrap css-6ka2zm-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-label HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a HvTypography-noWrap hv-yrsxp3"
           href="route1"
         >
           <div
@@ -44,7 +44,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a hv-1ypbssm HvTypography-root HvTypography-label HvTypography-noWrap css-6ka2zm-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-label HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a HvTypography-noWrap hv-yrsxp3"
           href="route2"
         >
           <div
@@ -76,7 +76,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a hv-1ypbssm HvTypography-root HvTypography-label HvTypography-noWrap css-6ka2zm-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-label HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a HvTypography-noWrap hv-yrsxp3"
           href="route3"
         >
           <div
@@ -108,7 +108,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a hv-1ypbssm HvTypography-root HvTypography-label HvTypography-noWrap css-6ka2zm-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-label HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a HvTypography-noWrap hv-yrsxp3"
           href="route4"
         >
           <div
@@ -140,7 +140,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a hv-1ypbssm HvTypography-root HvTypography-label HvTypography-noWrap css-6ka2zm-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-label HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a HvTypography-noWrap hv-yrsxp3"
           href="route5"
         >
           <div
@@ -172,7 +172,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a hv-1ypbssm HvTypography-root HvTypography-label HvTypography-noWrap css-6ka2zm-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-label HvPage-link HvBreadCrumb-link HvPage-label HvPage-a HvBreadCrumb-a HvTypography-noWrap hv-yrsxp3"
           href="route6"
         >
           <div
@@ -204,7 +204,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <p
-          class="HvBreadCrumb-currentPage e17idydo0 HvTypography-root HvTypography-body css-1bqbcd8-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvTypography-root HvTypography-body HvBreadCrumb-currentPage css-6uegx7-StyledTypography e17idydo0 hv-1gxwolr"
         >
           Label 7
         </p>

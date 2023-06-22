@@ -24,7 +24,7 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvHorizontalScrollListItem-text HvHorizontalScrollListItem-selected HvTypography-root HvTypography-label hv-1ofmnzo-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-label HvHorizontalScrollListItem-text HvHorizontalScrollListItem-selected hv-1ehq73l"
             id="hvHorizontalScrollto2-item-0-label"
           >
             <p>
@@ -70,7 +70,7 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-body hv-12gtkp4-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-body HvHorizontalScrollListItem-text hv-6vi3bn"
             id="hvHorizontalScrollto2-item-1-label"
           >
             <p>
@@ -105,7 +105,7 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-body hv-12gtkp4-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-body HvHorizontalScrollListItem-text hv-6vi3bn"
             id="hvHorizontalScrollto2-item-2-label"
           >
             <p>
@@ -140,7 +140,7 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-body hv-12gtkp4-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-body HvHorizontalScrollListItem-text hv-6vi3bn"
             id="hvHorizontalScrollto2-item-3-label"
           >
             <p>

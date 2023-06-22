@@ -68,7 +68,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                   tabindex="0"
                 >
                   <p
-                    class="HvTypography-root HvTypography-body css-1fbl1cl-getStyledComponent e1tnpalo0"
+                    class="HvTypography-root HvTypography-body hv-1gxwolr"
                   >
                     January
                   </p>
@@ -125,7 +125,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 tabindex="-1"
               >
                 <p
-                  class="HvTypography-root HvTypography-body css-1fbl1cl-getStyledComponent e1tnpalo0"
+                  class="HvTypography-root HvTypography-body hv-1gxwolr"
                 >
                   2023
                 </p>
@@ -157,37 +157,37 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
           >
              
             <label
-              class="HvCalendarWeekLabels-calendarDay exstlpd0 HvTypography-root HvTypography-label css-1smxvi3-getStyledComponent-StyledCalendarDay e1tnpalo0"
+              class="HvTypography-root HvTypography-label HvCalendarWeekLabels-calendarDay css-13lkucx-StyledCalendarDay exstlpd0 hv-1j8ohlw"
             >
               S
             </label>
             <label
-              class="HvCalendarWeekLabels-calendarDay exstlpd0 HvTypography-root HvTypography-label css-1smxvi3-getStyledComponent-StyledCalendarDay e1tnpalo0"
+              class="HvTypography-root HvTypography-label HvCalendarWeekLabels-calendarDay css-13lkucx-StyledCalendarDay exstlpd0 hv-1j8ohlw"
             >
               M
             </label>
             <label
-              class="HvCalendarWeekLabels-calendarDay exstlpd0 HvTypography-root HvTypography-label css-1smxvi3-getStyledComponent-StyledCalendarDay e1tnpalo0"
+              class="HvTypography-root HvTypography-label HvCalendarWeekLabels-calendarDay css-13lkucx-StyledCalendarDay exstlpd0 hv-1j8ohlw"
             >
               T
             </label>
             <label
-              class="HvCalendarWeekLabels-calendarDay exstlpd0 HvTypography-root HvTypography-label css-1smxvi3-getStyledComponent-StyledCalendarDay e1tnpalo0"
+              class="HvTypography-root HvTypography-label HvCalendarWeekLabels-calendarDay css-13lkucx-StyledCalendarDay exstlpd0 hv-1j8ohlw"
             >
               W
             </label>
             <label
-              class="HvCalendarWeekLabels-calendarDay exstlpd0 HvTypography-root HvTypography-label css-1smxvi3-getStyledComponent-StyledCalendarDay e1tnpalo0"
+              class="HvTypography-root HvTypography-label HvCalendarWeekLabels-calendarDay css-13lkucx-StyledCalendarDay exstlpd0 hv-1j8ohlw"
             >
               T
             </label>
             <label
-              class="HvCalendarWeekLabels-calendarDay exstlpd0 HvTypography-root HvTypography-label css-1smxvi3-getStyledComponent-StyledCalendarDay e1tnpalo0"
+              class="HvTypography-root HvTypography-label HvCalendarWeekLabels-calendarDay css-13lkucx-StyledCalendarDay exstlpd0 hv-1j8ohlw"
             >
               F
             </label>
             <label
-              class="HvCalendarWeekLabels-calendarDay exstlpd0 HvTypography-root HvTypography-label css-1smxvi3-getStyledComponent-StyledCalendarDay e1tnpalo0"
+              class="HvTypography-root HvTypography-label HvCalendarWeekLabels-calendarDay css-13lkucx-StyledCalendarDay exstlpd0 hv-1j8ohlw"
             >
               S
             </label>
@@ -204,7 +204,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   28
                 </p>
@@ -222,7 +222,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   29
                 </p>
@@ -240,7 +240,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   30
                 </p>
@@ -258,7 +258,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   31
                 </p>
@@ -275,7 +275,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateSelected eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateSelected css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   1
                 </p>
@@ -292,7 +292,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   2
                 </p>
@@ -309,7 +309,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   3
                 </p>
@@ -326,7 +326,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   4
                 </p>
@@ -343,7 +343,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   5
                 </p>
@@ -360,7 +360,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   6
                 </p>
@@ -377,7 +377,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   7
                 </p>
@@ -394,7 +394,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   8
                 </p>
@@ -411,7 +411,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   9
                 </p>
@@ -428,7 +428,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   10
                 </p>
@@ -445,7 +445,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   11
                 </p>
@@ -462,7 +462,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   12
                 </p>
@@ -479,7 +479,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   13
                 </p>
@@ -496,7 +496,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   14
                 </p>
@@ -513,7 +513,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   15
                 </p>
@@ -530,7 +530,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   16
                 </p>
@@ -547,7 +547,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   17
                 </p>
@@ -564,7 +564,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   18
                 </p>
@@ -581,7 +581,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   19
                 </p>
@@ -598,7 +598,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   20
                 </p>
@@ -615,7 +615,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   21
                 </p>
@@ -632,7 +632,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   22
                 </p>
@@ -649,7 +649,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   23
                 </p>
@@ -666,7 +666,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   24
                 </p>
@@ -683,7 +683,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   25
                 </p>
@@ -700,7 +700,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   26
                 </p>
@@ -717,7 +717,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   27
                 </p>
@@ -734,7 +734,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   28
                 </p>
@@ -751,7 +751,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   29
                 </p>
@@ -768,7 +768,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   30
                 </p>
@@ -785,7 +785,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   31
                 </p>
@@ -803,7 +803,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   1
                 </p>
@@ -821,7 +821,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   2
                 </p>
@@ -839,7 +839,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   3
                 </p>
@@ -857,7 +857,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   4
                 </p>
@@ -875,7 +875,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   5
                 </p>
@@ -893,7 +893,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   6
                 </p>
@@ -911,7 +911,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
                 type="button"
               >
                 <p
-                  class="HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth eulxq3n1 HvTypography-root HvTypography-body css-1lpyu14-getStyledComponent-StyledCalendarDate e1tnpalo0"
+                  class="HvTypography-root HvTypography-body HvSingleCalendar-calendarDate HvSingleCalendar-calendarDateNotInMonth css-1sl39ae-StyledCalendarDate eulxq3n1 hv-1gxwolr"
                 >
                   7
                 </p>

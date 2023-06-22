@@ -94,7 +94,7 @@ exports[`HvDrawer > should render correctly 1`] = `
             class="css-1slcu2n-StyledTextWithIcon eo9hglt0"
           >
             <p
-              class="HvTypography-root HvTypography-body css-1fbl1cl-getStyledComponent e1tnpalo0"
+              class="HvTypography-root HvTypography-body hv-1gxwolr"
             >
               Lorem Ipsum
             </p>
@@ -102,7 +102,7 @@ exports[`HvDrawer > should render correctly 1`] = `
         </div>
       </h2>
       <div
-        class="MuiDialogContent-root css-1s5cb77-drawerContent HvDialog-Content-root e4uf5ag0 HvTypography-root HvTypography-body css-1qg46v1-getStyledComponent-StyledTypography e1tnpalo0 css-ypiqx9-MuiDialogContent-root"
+        class="MuiDialogContent-root HvTypography-root HvTypography-body css-1s5cb77-drawerContent HvDialog-Content-root css-a17m5c-StyledTypography e4uf5ag0 hv-1gxwolr css-ypiqx9-MuiDialogContent-root"
       >
         Cras mattis consectetur purus sit amet fermentum. 
                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. 
