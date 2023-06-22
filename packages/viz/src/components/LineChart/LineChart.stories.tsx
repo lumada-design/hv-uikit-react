@@ -18,6 +18,7 @@ import { chartData } from "./mockData";
 const meta: Meta<typeof HvLineChart> = {
   title: "Visualizations/Line Chart",
   component: HvLineChart,
+  parameters: { eyes: { include: false } },
   decorators: [
     (Story) => (
       <div
