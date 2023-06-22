@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.18.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.18.0...@hitachivantara/uikit-react-core@5.18.1) (2023-06-22)
+
+### Bug Fixes
+
+- **Input:** onChange event type & forwardRef ([#3444](https://github.com/lumada-design/hv-uikit-react/issues/3444)) ([32dc757](https://github.com/lumada-design/hv-uikit-react/commit/32dc757211c7f1b5cffd8b20b84762c558463fc9))
+- **snackbar:** remove duplicated alert role ([#3443](https://github.com/lumada-design/hv-uikit-react/issues/3443)) ([c7eba2e](https://github.com/lumada-design/hv-uikit-react/commit/c7eba2e93a16dbc853f81b826a94e6daf908a005))
+
 # [5.18.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.17.0...@hitachivantara/uikit-react-core@5.18.0) (2023-06-22)
 
 ### Bug Fixes
