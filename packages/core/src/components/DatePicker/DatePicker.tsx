@@ -13,6 +13,7 @@ import {
   HvTypography,
   HvBaseDropdown,
   HvLabel,
+  HvFormStatus,
 } from "@core/components";
 import { useControlled, useLabels, useTheme, useUniqueId } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
@@ -34,7 +35,8 @@ const DEFAULT_LABELS = {
   invalidLabel: "Invalid date",
 };
 
-export type HvDatePickerStatus = "standBy" | "valid" | "invalid";
+/** @deprecated use `HvFormStatus` instead */
+export type HvDatePickerStatus = HvFormStatus;
 
 export interface HvDatePickerProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
@@ -100,7 +102,7 @@ export interface HvDatePickerProps
    * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
    * or "invalid" after any change to the state.
    */
-  status?: HvDatePickerStatus;
+  status?: HvFormStatus;
   /**
    * The error message to show when the validation status is "invalid".
    *
