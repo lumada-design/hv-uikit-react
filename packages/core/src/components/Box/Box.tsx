@@ -1,8 +1,8 @@
-import { theme } from "@hitachivantara/uikit-styles";
+import { HvTheme, theme } from "@hitachivantara/uikit-styles";
 import { forwardRef } from "react";
 import { PolymorphicComponentRef, PolymorphicRef } from "@core/types";
 
-type SxProps = React.CSSProperties | ((theme) => React.CSSProperties);
+type SxProps = React.CSSProperties | ((theme: HvTheme) => React.CSSProperties);
 
 type HvBoxBaseProps<C extends React.ElementType> = PolymorphicComponentRef<
   C,

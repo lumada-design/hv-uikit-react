@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Spacing, Breakpoint } from ".";
 
-function size(props) {
+function size(props: { size: any; sizes: any }) {
   if (typeof props.size === "number") {
     return props.size;
   }
@@ -10,7 +10,7 @@ function size(props) {
   return props.sizes[props.size] || props.size || props.sizes.md;
 }
 
-function getSortedBreakpoints(breakpoints) {
+function getSortedBreakpoints(breakpoints: Breakpoint[]) {
   if (breakpoints.length === 0) {
     return breakpoints;
   }

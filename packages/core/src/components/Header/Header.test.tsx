@@ -6,7 +6,7 @@ import { HvHeader } from "./Header";
 import { HvHeaderNavigation } from "./Navigation";
 import { HvHeaderBrand } from "./Brand";
 import { HvHeaderActions } from "./Actions";
-import HitachiLogo from "./assets/HitachiLogo";
+import { HitachiLogo } from "./assets/HitachiLogo";
 
 describe("Header", () => {
   it("should render correctly with no data", () => {

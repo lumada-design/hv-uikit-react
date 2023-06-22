@@ -51,7 +51,6 @@ export const InputAdornment: StoryObj<HvAdornmentProps> = {
     const toggleType = () => {
       setPasswordType(!isPassword);
     };
-    const getIcon = (isPass) => (isPass ? <Preview /> : <PreviewOff />);
 
     return (
       <HvFormElement status="standBy">
@@ -64,7 +63,7 @@ export const InputAdornment: StoryObj<HvAdornmentProps> = {
             endAdornment={
               <HvAdornment
                 aria-label="show password"
-                icon={getIcon(isPassword)}
+                icon={isPassword ? <Preview /> : <PreviewOff />}
                 onClick={toggleType}
               />
             }

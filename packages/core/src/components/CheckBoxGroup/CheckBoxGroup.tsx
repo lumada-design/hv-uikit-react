@@ -14,7 +14,7 @@ import checkBoxGroupClasses, {
   HvCheckBoxGroupClasses,
 } from "./checkBoxGroupClasses";
 
-const computeSelectAllState = (selected, total) => {
+const computeSelectAllState = (selected: number, total: number) => {
   if (selected === 0) {
     return "none";
   }

@@ -42,7 +42,7 @@ export const HvRightControl = ({
 
   const { onSort: onSortHandler } = useContext(HvControlsContext);
 
-  const handleChangeSort = (value) => {
+  const handleChangeSort: HvDropdownProps["onChange"] = (value: any) => {
     onSort?.(value);
     onSortHandler?.(value);
     // this should be changed when dropdown changes his "values" behavior

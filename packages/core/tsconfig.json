@@ -5,6 +5,7 @@
     "baseUrl": "src",
     "rootDir": "src",
     "outDir": "dist",
+    // "noImplicitAny": true,
     "paths": {
       "@core/*": ["./*"]
     }

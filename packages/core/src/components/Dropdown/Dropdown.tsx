@@ -344,8 +344,8 @@ export const HvDropdown = (props: HvDropdownProps) => {
 
   const dropdownHeaderRef = useRef<HTMLDivElement>();
 
-  const handleToggle = (_e, open) => {
-    onToggle?.(_e, open);
+  const handleToggle: HvBaseDropdownProps["onToggle"] = (event, open) => {
+    onToggle?.(event, open);
 
     setIsOpen(open);
 
@@ -367,15 +367,8 @@ export const HvDropdown = (props: HvDropdownProps) => {
     }
   };
 
-  /**
-   * Applies the selected values to the state
-   *
-   * @param {Array} listValues - An array containing the selected values.
-   * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
-   * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
-   * @param {Boolean} notifyChanges -If `true` the dropdown will call onChange.
-   */
-  const handleSelection = (
+  /** Applies the selected values to the state */
+  const handleSelection: HvDropdownListProps["onChange"] = (
     listValues,
     commitChanges,
     toggle,
@@ -400,7 +393,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
     }
     if (notifyChanges) onChange?.(multiSelect ? selected : selected[0]);
     if (toggle) {
-      handleToggle(undefined, false);
+      handleToggle(undefined as any, false);
 
       // focus-ring won't be visible even if using the keyboard:
       // https://github.com/WICG/focus-visible/issues/88
@@ -411,24 +404,26 @@ export const HvDropdown = (props: HvDropdownProps) => {
   /**
    * Handles the `Cancel` action. Both single and ranged modes are handled here.
    */
-  const handleCancel = (evt) => {
-    onCancel?.(evt);
+  const handleCancel: HvDropdownListProps["onCancel"] = (evt) => {
+    onCancel?.(evt as any);
 
-    handleToggle(evt, false);
+    handleToggle(evt as any, false);
 
     // focus-ring won't be visible even if using the keyboard:
     // https://github.com/WICG/focus-visible/issues/88
     dropdownHeaderRef.current?.focus({ preventScroll: true });
   };
 
-  const handleClickOutside = (evt) => {
+  const handleClickOutside: HvBaseDropdownProps["onClickOutside"] = (evt) => {
     onClickOutside?.(evt);
     onCancel?.(evt);
   };
 
-  const setFocusToContent = (containerRef) => {
+  const setFocusToContent: HvBaseDropdownProps["onContainerCreation"] = (
+    containerRef
+  ) => {
     const inputs = containerRef?.getElementsByTagName("input");
-    if (inputs?.length > 0) {
+    if (inputs && inputs.length > 0) {
       inputs[0].focus();
       return;
     }

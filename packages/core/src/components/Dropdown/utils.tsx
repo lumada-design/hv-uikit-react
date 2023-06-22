@@ -1,37 +1,20 @@
-import { HvListValue } from "@core/components";
+import { HvDropdownLabelsProps, HvListValue } from "@core/components";
 
-/**
- * Filter selected elements.
- *
- * @param {Object} list - the list to filter
- * @returns {Array} - the selected elements
- */
-const getSelected = (list) => list?.filter((elem) => elem.selected) || [];
+/** Filter selected elements. */
+const getSelected = (list: HvListValue[] = []) =>
+  list.filter((elem) => elem.selected);
 
-/**
- * Checks if any element of the list is selected.
- *
- * @param list
- * @returns {boolean}
- */
-const hasSelected = (list) => getSelected(list).length > 0;
+/** Checks if any element of the list is selected. */
+const hasSelected = (list: HvListValue[]) => getSelected(list).length > 0;
 
-/**
- * Gets the selection label according to selection.
- *
- * @param {Object} list - the list to filter the selected elements from
- * @param {Object} labels - the labels to extract the textual values for the label
- * @param {Boolean} multiSelect - if "true" the label will have a different format
- *
- * @returns {Object} - the selection label
- */
+/** Gets the selection label according to selection. */
 const getSelectionLabel = (
-  labels,
-  placeholder,
-  multiSelect,
+  labels: HvDropdownLabelsProps | undefined,
+  placeholder: string,
+  multiSelect: boolean,
   list: HvListValue[] = []
 ) => {
-  const { select } = labels;
+  const { select } = labels || {};
   const selected = getSelected(list);
 
   if (select) return { selected: select };

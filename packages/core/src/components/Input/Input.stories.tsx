@@ -163,11 +163,6 @@ export const ControlledWithButtons: StoryObj<HvInputProps> = {
 
     const [value, setValue] = useState("Initial value");
 
-    // to be possible to change the input value by user action
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
-
     return (
       <StyledContainer>
         <StyledWrapper>
@@ -198,7 +193,8 @@ export const ControlledWithButtons: StoryObj<HvInputProps> = {
           label="Label"
           placeholder="Enter value"
           value={value}
-          onChange={handleChange}
+          // to be possible to change the input value by user action
+          onChange={(event, newValue) => setValue(newValue)}
         />
       </StyledContainer>
     );
@@ -594,7 +590,7 @@ export const PrefixAndSuffix: StoryObj<HvInputProps> = {
       error: "Invalid subdomain",
     };
 
-    const validateSubdomain = (value) => {
+    const validateSubdomain: HvInputProps["validation"] = (value) => {
       const re = /[^a-zA-Z0-9-]/;
 
       return !re.test(value);

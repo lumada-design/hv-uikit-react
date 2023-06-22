@@ -1,4 +1,4 @@
-import { useState, useEffect, CSSProperties } from "react";
+import { useState, useEffect, CSSProperties, MouseEvent } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import styled from "@emotion/styled";
 import {
@@ -97,11 +97,7 @@ export const Main: StoryObj<HvListContainerProps> = {
 
 export const SingleSelection: StoryObj<HvListContainerProps> = {
   render: () => {
-    const [selectedItem, setSelectedItem] = useState(null);
-
-    const handleListItemClick = (_evt, index) => {
-      setSelectedItem(index);
-    };
+    const [selectedItem, setSelectedItem] = useState(-1);
 
     return (
       <div
@@ -115,44 +111,44 @@ export const SingleSelection: StoryObj<HvListContainerProps> = {
       >
         <HvListContainer interactive condensed aria-label="Stores">
           <HvListItem
-            onClick={(event) => handleListItemClick(event, 0)}
+            onClick={() => setSelectedItem(0)}
             selected={selectedItem === 0}
           >
             98001, Store Manager
           </HvListItem>
           <HvListItem
-            onClick={(event) => handleListItemClick(event, 1)}
+            onClick={() => setSelectedItem(1)}
             selected={selectedItem === 1}
           >
             98002, Store Manager
           </HvListItem>
           <HvListItem
-            onClick={(event) => handleListItemClick(event, 2)}
+            onClick={() => setSelectedItem(2)}
             selected={selectedItem === 2}
           >
             98003, Store Manager
           </HvListItem>
           <HvListItem
-            onClick={(event) => handleListItemClick(event, 3)}
+            onClick={() => setSelectedItem(3)}
             selected={selectedItem === 3}
           >
             98004, Store Manager
           </HvListItem>
           <HvListItem disabled>98005, Store Manager</HvListItem>
           <HvListItem
-            onClick={(event) => handleListItemClick(event, 5)}
+            onClick={() => setSelectedItem(5)}
             selected={selectedItem === 5}
           >
             98001, Store Manager
           </HvListItem>
           <HvListItem
-            onClick={(event) => handleListItemClick(event, 6)}
+            onClick={() => setSelectedItem(6)}
             selected={selectedItem === 6}
           >
             98002, Store Manager
           </HvListItem>
           <HvListItem
-            onClick={(event) => handleListItemClick(event, 7)}
+            onClick={() => setSelectedItem(7)}
             selected={selectedItem === 7}
           >
             98003, Store Manager
@@ -173,7 +169,7 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
       4: false,
     });
 
-    const handleListItemClick = (_evt, index) => {
+    const handleListItemClick = (_evt: MouseEvent, index: number) => {
       setSelectedItems((previousSelection) => {
         return {
           ...previousSelection,

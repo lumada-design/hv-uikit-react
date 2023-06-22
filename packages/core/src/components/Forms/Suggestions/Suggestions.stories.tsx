@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseInput,
+  HvBaseInputProps,
   HvFormElement,
   HvLabel,
   HvSuggestions,
@@ -35,7 +36,7 @@ export const Main: StoryObj<HvSuggestionsProps> = {
     const [value, setValue] = useState("");
     const inputRef = useRef<HTMLElement>(null);
 
-    const handleChange = (e, val) => {
+    const handleChange: HvBaseInputProps["onChange"] = (e, val) => {
       const matches = suggestions.filter((v) =>
         v.toUpperCase().startsWith(val.toUpperCase())
       );
@@ -45,14 +46,17 @@ export const Main: StoryObj<HvSuggestionsProps> = {
       setValue(val);
     };
 
-    const handleSelection = (e, val) => {
+    const handleSelection: HvSuggestionsProps["onSuggestionSelected"] = (
+      e,
+      val
+    ) => {
       console.log(val);
       setOpen(false);
-      setValue(val.label);
+      setValue(val.label as any);
       inputRef?.current?.focus();
     };
 
-    const handleSuggestionsKey = (evt) => {
+    const handleSuggestionsKey: HvSuggestionsProps["onKeyDown"] = (evt) => {
       if (isKeypress(evt, Esc)) {
         inputRef?.current?.focus();
         setOpen(false);
@@ -101,7 +105,7 @@ export const ServerSideSuggestions: StoryObj<HvSuggestionsProps> = {
     const inputRef = useRef<HTMLElement>(null);
 
     // Server-side mock function
-    const fetchCountries = (input) =>
+    const fetchCountries = (input: string) =>
       new Promise((resolve) => {
         const countries = countryList
           .filter((c) => c.toUpperCase().includes(input.toUpperCase()))
@@ -110,7 +114,7 @@ export const ServerSideSuggestions: StoryObj<HvSuggestionsProps> = {
         setTimeout(() => resolve(countries), 300);
       });
 
-    const handleChange = (e, val) => {
+    const handleChange: HvBaseInputProps["onChange"] = (e, val) => {
       setValue(val);
       setOpen(false);
       if (val.length < 1) return;
@@ -120,14 +124,17 @@ export const ServerSideSuggestions: StoryObj<HvSuggestionsProps> = {
       });
     };
 
-    const handleSelection = (e, val) => {
+    const handleSelection: HvSuggestionsProps["onSuggestionSelected"] = (
+      e,
+      val
+    ) => {
       console.log(val);
       setOpen(false);
-      setValue(val.label);
+      setValue(val.label as any);
       inputRef?.current?.focus();
     };
 
-    const handleSuggestionsKey = (evt) => {
+    const handleSuggestionsKey: HvSuggestionsProps["onKeyDown"] = (evt) => {
       if (isKeypress(evt, Esc)) {
         inputRef?.current?.focus();
         setOpen(false);
@@ -176,7 +183,7 @@ export const OpenWithDownArrow: StoryObj<HvSuggestionsProps> = {
     const [value, setValue] = useState("");
     const inputRef = useRef<HTMLElement>(null);
 
-    const handleChange = (e, val) => {
+    const handleChange: HvBaseInputProps["onChange"] = (e, val) => {
       const matches = suggestions.filter((v) =>
         v.toUpperCase().startsWith(val.toUpperCase())
       );
@@ -186,21 +193,24 @@ export const OpenWithDownArrow: StoryObj<HvSuggestionsProps> = {
       setValue(val);
     };
 
-    const handleSelection = (e, val) => {
+    const handleSelection: HvSuggestionsProps["onSuggestionSelected"] = (
+      e,
+      val
+    ) => {
       console.log(val);
       setOpen(false);
-      setValue(val.label);
+      setValue(val.label as any);
       inputRef?.current?.focus();
     };
 
-    const handleKey = (e) => {
+    const handleKey: HvBaseInputProps["onKeyDown"] = (e) => {
       if (isKeypress(e, keyboardCodes.ArrowDown)) {
         setOpen(true);
         document.getElementById("suggestions-list-item-0")?.focus();
       }
     };
 
-    const handleSuggestionsKey = (evt) => {
+    const handleSuggestionsKey: HvSuggestionsProps["onKeyDown"] = (evt) => {
       if (isKeypress(evt, Esc)) {
         inputRef?.current?.focus();
         setOpen(false);

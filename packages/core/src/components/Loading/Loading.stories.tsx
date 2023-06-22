@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvButton, HvTypography } from "@core/components";
+import { HvButton, HvButtonProps, HvTypography } from "@core/components";
 import { HvLoading, HvLoadingProps } from "./Loading";
 
 const meta: Meta<typeof HvLoading> = {
@@ -23,7 +23,15 @@ export const Main: StoryObj<HvLoadingProps> = {
   },
 };
 
-const Button = ({ label, variant, color = "base_dark" }) => {
+const Button = ({
+  label,
+  variant,
+  color = "base_dark",
+}: {
+  label: string;
+  variant?: HvButtonProps["variant"];
+  color?: string;
+}) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const activateTimer = () => {
@@ -64,7 +72,13 @@ export const Buttons = () => {
   );
 };
 
-const ButtonDeterminate = ({ label, children }) => (
+const ButtonDeterminate = ({
+  label,
+  children,
+}: {
+  label: string;
+  children: ReactNode;
+}) => (
   <div>
     <HvTypography variant="caption1">{label}</HvTypography>
     <br />
@@ -72,8 +86,14 @@ const ButtonDeterminate = ({ label, children }) => (
   </div>
 );
 
-const Progress = ({ label, inc }) => {
-  const [value, setValue] = useState(0);
+const Progress = ({
+  label,
+  inc,
+}: {
+  label: (val: any) => ReactNode;
+  inc: (val: number) => any;
+}) => {
+  const [value, setValue] = useState<any>(0);
 
   useEffect(() => {
     const interval = setInterval(() => {

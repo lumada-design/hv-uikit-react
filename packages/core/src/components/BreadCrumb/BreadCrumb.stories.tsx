@@ -99,7 +99,7 @@ export const WithCustomComponent: StoryObj<HvBreadCrumbProps> = {
     },
   },
   render: () => {
-    const CustomNavLink = ({ children, to, ariaLabel, ...others }) => (
+    const CustomNavLink = ({ children, to, ariaLabel, ...others }: any) => (
       <a
         href={to}
         aria-label={ariaLabel}

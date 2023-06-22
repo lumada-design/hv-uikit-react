@@ -1,24 +1,15 @@
+import { HTMLInputTypeAttribute } from "react";
+import { InputBaseComponentProps } from "@mui/material";
 import validationStates from "../Forms/FormElement/validationStates";
+import { HvInputProps } from "..";
 
-/**
- * Checks if the value is a number.
- *
- * @param {Number || String} num - The value to test.
- *
- * @returns {Boolean} - `true` if the value is a number `false` otherwise.
- */
-const isNumeric = (num) =>
+/** Checks if the value is a number. */
+const isNumeric = (num: string) =>
   // to prevent Number( <spaces> ) = 0
   num.trim().length > 0 && !Number.isNaN(Number(num));
 
-/**
- * Checks if the value is an email
- *
- * @param {String} email - The value to test.
- *
- * @returns {Boolean} - `true` if the value is an email `false` otherwise.
- */
-const isEmail = (email) => {
+/** Checks if the value is an email */
+const isEmail = (email: string) => {
   const regexp =
     /^[^\\s]+[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?[.])+[a-z0-9](?:[a-z0-9-]*[a-z0-9])$/i;
   return regexp.test(email);
@@ -30,14 +21,8 @@ export const validationTypes = Object.freeze({
   email: "email",
 });
 
-/**
- * Returns the input's validation type based in the type of the input.
- *
- * @param {String} type - the input type.
- *
- * @returns {String}    - the validation type.
- */
-export const computeValidationType = (type) => {
+/** Returns the input's validation type based in the type of the input. */
+export const computeValidationType = (type: HTMLInputTypeAttribute) => {
   switch (type) {
     case "number":
       return validationTypes.number;
@@ -53,12 +38,12 @@ export const computeValidationType = (type) => {
  * Checks whether any integrated validation, native or not, is active.
  */
 export const hasBuiltInValidations = (
-  required,
-  validationType,
-  minCharQuantity,
-  maxCharQuantity,
-  validation,
-  inputProps
+  required: boolean,
+  validationType: HTMLInputTypeAttribute,
+  minCharQuantity: number | null | undefined,
+  maxCharQuantity: number | null | undefined,
+  validation?: (value: string) => boolean,
+  inputProps?: InputBaseComponentProps
 ) =>
   required ||
   validationType !== validationTypes.none ||
@@ -75,14 +60,11 @@ export const hasBuiltInValidations = (
     inputProps?.type !== "password") ||
   inputProps?.pattern != null;
 
-/**
- * Returns the form element's validation state based in the validity state of the input.
- *
- * @param {Object} inputValidity    - the input validity state (implementing ValidityState interface).
- *
- * @returns {String}                - the validation state.
- */
-export const computeValidationState = (inputValidity, isEmptyValue) => {
+/** Returns the form element's validation state based in the validity state of the input. */
+export const computeValidationState = (
+  inputValidity: HvInputValidity,
+  isEmptyValue: boolean
+) => {
   // to keep 2.x behaviour,
   // consider that if the value is empty (and not required) we're returning to the standBy state.
   // might not make sense, as it makes impossible to say if the user explicitly cleared the input.
@@ -103,13 +85,12 @@ export const computeValidationState = (inputValidity, isEmptyValue) => {
  *
  * For further customization both status and statusMessage should be controlled and
  * set using the onBlur callback that receives both the value and the input validity object.
- *
- * @param {Object} inputValidity    - the input validity state (implementing ValidityState interface).
- * @param {Object} errorMessages    - the available localized error messages.
- *
- * @returns {String}                - the error message.
  */
-export const computeValidationMessage = (inputValidity, errorMessages) => {
+export const computeValidationMessage = (
+  inputValidity: HvInputValidity,
+  /** The available localized error messages. */
+  errorMessages: Record<string, string>
+) => {
   if (inputValidity.valid) {
     return "";
   }
@@ -135,25 +116,15 @@ export const computeValidationMessage = (inputValidity, errorMessages) => {
  *
  * It implements the native browser's ValidityState interface:
  * https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
- *
- * @param {DOMElement} input        - the input being validated.
- * @param {String} value            - the inputted value.
- * @param {Boolean} required        - if the input needs to be filled.
- * @param {Number} minCharQuantity  - the minimum length of the value.
- * @param {Number} maxCharQuantity  - the maximum length of the value.
- * @param {String} validationType   - the input value type.
- * @param {Function} validation     - a custom validation function.
- *
- * @returns {Object}                - the validity state of the input.
  */
 export const validateInput = (
-  input,
-  value,
-  required,
-  minCharQuantity,
-  maxCharQuantity,
-  validationType,
-  validation
+  input: HTMLInputElement | HTMLTextAreaElement | null,
+  value: string,
+  required: boolean,
+  minCharQuantity: any,
+  maxCharQuantity: any,
+  validationType: string,
+  validation: HvInputProps["validation"]
 ): HvInputValidity => {
   // bootstrap validity object using browser's built-in validation
   const inputValidity: HvInputValidity = {

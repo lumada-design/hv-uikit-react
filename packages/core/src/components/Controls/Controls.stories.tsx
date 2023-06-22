@@ -16,13 +16,14 @@ import {
   HvRightControl,
   HvSimpleGrid,
   HvSlider,
+  HvSliderProps,
   HvTableColumnConfig,
   useHvData,
   useHvFilters,
   useHvGlobalFilter,
   useHvSortBy,
 } from "@core/components";
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState } from "react";
 import { getColumns, makeData, NewEntry } from "./makedata";
 
 const meta: Meta<typeof HvControls> = {
@@ -298,24 +299,20 @@ export const CustomControls = () => {
     []
   );
 
-  const filterSeverity = useCallback(
-    (rows) =>
+  const columns = useMemo<HvTableColumnConfig<NewEntry, string>[]>(() => {
+    const filterSeverity: HvTableColumnConfig<NewEntry>["filter"] = (rows) =>
       rows.filter(
         (row) =>
           buttons[severitySelection] === "All" ||
           row.original.severity === buttons[severitySelection]
-      ),
-    [buttons, severitySelection]
-  );
+      );
 
-  const sliderTemperature = useCallback(
-    (rows) =>
-      rows.filter((row) => row.original.temperature > temperatureSelection),
-    [temperatureSelection]
-  );
+    const filterTemperature: HvTableColumnConfig<NewEntry>["filter"] = (rows) =>
+      rows.filter(
+        (row) => row.original.temperature > String(temperatureSelection)
+      );
 
-  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
-    () => [
+    return [
       { Header: "Title", accessor: "name" },
       { Header: "Event Type", accessor: "eventType" },
       { Header: "Status", accessor: "status" },
@@ -324,11 +321,10 @@ export const CustomControls = () => {
       {
         Header: "Temperature",
         accessor: "temperature",
-        filter: sliderTemperature,
+        filter: filterTemperature,
       },
-    ],
-    [filterSeverity, sliderTemperature]
-  );
+    ];
+  }, [temperatureSelection, buttons, severitySelection]);
 
   const { rows, setFilter } = useHvData<NewEntry, string>(
     {
@@ -338,12 +334,12 @@ export const CustomControls = () => {
     useHvFilters
   );
 
-  const handleChange = (_, idx) => {
+  const handleChange = (_: any, idx: number) => {
     setSeveritySelection(idx);
     setFilter?.("severity", buttons[idx]);
   };
 
-  const onSliderChange = (values) => {
+  const onSliderChange: HvSliderProps["onChange"] = (values) => {
     setTemperatureSelection(values[0]);
     setFilter?.("temperature", values[0]);
   };
@@ -424,24 +420,20 @@ export const MixedControls = () => {
     []
   );
 
-  const filterSeverity = useCallback(
-    (rows) =>
+  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(() => {
+    const filterSeverity: HvTableColumnConfig<NewEntry>["filter"] = (rows) =>
       rows.filter(
         (row) =>
           buttons[severitySelection] === "All" ||
           row.original.severity === buttons[severitySelection]
-      ),
-    [buttons, severitySelection]
-  );
+      );
 
-  const sliderTemperature = useCallback(
-    (rows) =>
-      rows.filter((row) => row.original.temperature > temperatureSelection),
-    [temperatureSelection]
-  );
+    const sliderTemperature: HvTableColumnConfig<NewEntry>["filter"] = (rows) =>
+      rows.filter(
+        (row) => row.original.temperature > String(temperatureSelection)
+      );
 
-  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
-    () => [
+    return [
       { Header: "Title", accessor: "name" },
       { Header: "Event Type", accessor: "eventType" },
       { Header: "Status", accessor: "status" },
@@ -452,9 +444,8 @@ export const MixedControls = () => {
         accessor: "temperature",
         filter: sliderTemperature,
       },
-    ],
-    [filterSeverity, sliderTemperature]
-  );
+    ];
+  }, [temperatureSelection, buttons, severitySelection]);
 
   const { rows, setFilter, setGlobalFilter } = useHvData<NewEntry, string>(
     {
@@ -465,12 +456,12 @@ export const MixedControls = () => {
     useHvGlobalFilter
   );
 
-  const handleChange = (_, idx) => {
+  const handleChange = (_: any, idx: number) => {
     setSeveritySelection(idx);
     setFilter?.("severity", buttons[idx]);
   };
 
-  const onSliderChange = (values) => {
+  const onSliderChange: HvSliderProps["onChange"] = (values) => {
     setTemperatureSelection(values[0]);
     setFilter?.("temperature", values[0]);
   };

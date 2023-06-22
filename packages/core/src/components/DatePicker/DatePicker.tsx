@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, ReactNode } from "react";
 import styled from "@emotion/styled";
 import { Calendar } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -14,6 +14,7 @@ import {
   HvBaseDropdown,
   HvLabel,
   HvFormStatus,
+  HvBaseDropdownProps,
 } from "@core/components";
 import { useControlled, useLabels, useTheme, useUniqueId } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
@@ -368,7 +369,7 @@ export const HvDatePicker = ({
     }
   };
 
-  const handleToggle = (evt, open) => {
+  const handleToggle: HvBaseDropdownProps["onToggle"] = (evt, open) => {
     /* 
      If evt is null this toggle wasn't triggered by the user.
      instead it was triggered by the baseDropdown useEffect after
@@ -383,7 +384,7 @@ export const HvDatePicker = ({
     focusTarget.current?.focus();
   };
 
-  const handleDateChange = (event, newDate) => {
+  const handleDateChange: HvCalendarProps["onChange"] = (event, newDate) => {
     if (!isDate(newDate)) return;
 
     const autoSave = !showActions && !rangeMode;
@@ -415,11 +416,15 @@ export const HvDatePicker = ({
     }
   };
 
-  const handleInputDateChange = (event, newDate, position) => {
+  const handleInputDateChange: HvCalendarProps["onInputChange"] = (
+    event,
+    newDate,
+    position
+  ) => {
     if (!isDate(newDate)) return;
 
     if (!rangeMode) {
-      handleDateChange(event, newDate);
+      handleDateChange(event as any, newDate);
       return;
     }
 
@@ -472,7 +477,11 @@ export const HvDatePicker = ({
     </HvActionBar>
   );
 
-  const styledTypography = (dateString, variant, text) => {
+  const styledTypography = (
+    dateString: string,
+    variant: any,
+    text: ReactNode
+  ) => {
     const StyledTypography = styled(HvTypography)({
       color: dateString
         ? theme.colors.secondary
@@ -482,7 +491,7 @@ export const HvDatePicker = ({
     return <StyledTypography variant={variant}>{text}</StyledTypography>;
   };
 
-  const renderInput = (dateString) =>
+  const renderInput = (dateString: string) =>
     styledTypography(
       dateString,
       activeTheme?.datePicker.placeholderVariant,

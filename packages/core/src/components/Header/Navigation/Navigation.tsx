@@ -2,7 +2,7 @@ import { clsx } from "clsx";
 import { MouseEvent } from "react";
 import { useSelectionPath } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
-import { HvMenuBar } from "./MenuBar";
+import { HvMenuBar, HvMenuBarProps } from "./MenuBar";
 import { StyledNav } from "./Navigation.styles";
 import { FocusProvider } from "./utils/FocusContext";
 import { SelectionContext } from "./utils/SelectionContext";
@@ -37,7 +37,7 @@ export const HvHeaderNavigation = ({
 }: HvHeaderNavigationProps) => {
   const selectionPath = useSelectionPath(data, selected);
 
-  const handleClick = (event, selection) => {
+  const handleClick: HvMenuBarProps["onClick"] = (event, selection) => {
     event.preventDefault();
 
     onClick?.(event, selection);

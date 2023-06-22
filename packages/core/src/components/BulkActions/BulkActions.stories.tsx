@@ -2,12 +2,7 @@ import styled from "@emotion/styled";
 import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
-import {
-  HvCheckBox,
-  HvListValue,
-  HvPagination,
-  HvActionGeneric,
-} from "@core/components";
+import { HvCheckBox, HvPagination, HvActionGeneric } from "@core/components";
 import uniqueId from "lodash/uniqueId";
 import { useState } from "react";
 import { HvBulkActions, HvBulkActionsProps } from "./BulkActions";
@@ -47,17 +42,16 @@ type SampleComponentDatum = {
   checked: boolean;
 };
 
-const SampleComponent = ({
-  data,
-  onChange,
-}: {
+type SampleComponentProps = {
   data: SampleComponentDatum[];
   onChange: (
     event: React.ChangeEvent<HTMLInputElement>,
     index: number,
     checked: boolean
   ) => void;
-}) => (
+};
+
+const SampleComponent = ({ data, onChange }: SampleComponentProps) => (
   <StyledRoot>
     {data.map((el, i) => (
       <div key={el.id}>
@@ -93,13 +87,14 @@ export const Main: StoryObj<HvBulkActionsProps> = {
       Array.from(Array(8), (_, i) => addEntry(i))
     );
 
-    const handleSelectAll = (_, checked = false) => {
+    const handleSelectAll = (_: any, checked = false) => {
       setData(data.map((el) => ({ ...el, checked })));
     };
 
-    const handleSelectAllPages = (e) => handleSelectAll(e, true);
+    const handleSelectAllPages: HvBulkActionsProps["onSelectAllPages"] = (e) =>
+      handleSelectAll(e, true);
 
-    const handleChange = (_, i: number, checked: boolean) => {
+    const handleChange: SampleComponentProps["onChange"] = (_, i, checked) => {
       const newData = [...data];
       newData[i].checked = checked;
       setData(newData);
@@ -133,17 +128,21 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
       Array.from(Array(8), (_, i) => addEntry(i))
     );
 
-    const handleSelectAll = (_, checked = false) => {
+    const handleSelectAll: HvBulkActionsProps["onSelectAll"] = (_, checked) => {
       setData(data.map((el) => ({ ...el, checked })));
     };
 
-    const handleChange = (_, i: number, checked: boolean) => {
+    const handleChange: SampleComponentProps["onChange"] = (_, i, checked) => {
       const newData = [...data];
       newData[i].checked = checked;
       setData(newData);
     };
 
-    const handleAction = (_, __, action: HvListValue | HvActionGeneric) => {
+    const handleAction: HvBulkActionsProps["actionsCallback"] = (
+      _,
+      __,
+      action
+    ) => {
       const selected = data.filter((el) => el.checked);
 
       switch (action.id) {
@@ -227,13 +226,17 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
       setData(newData);
     };
 
-    const handleChange = (_, i: number, checked: boolean) => {
+    const handleChange: SampleComponentProps["onChange"] = (_, i, checked) => {
       const newData = [...data];
       newData[i + pageSize * page].checked = checked;
       setData(newData);
     };
 
-    const handleAction = (_, __, action: HvActionGeneric | HvListValue) => {
+    const handleAction: HvBulkActionsProps["actionsCallback"] = (
+      _,
+      __,
+      action
+    ) => {
       const selected = data.filter((el) => el.checked);
 
       switch (action.id) {

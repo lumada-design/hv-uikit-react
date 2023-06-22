@@ -3,7 +3,7 @@ import { HvBaseProps, HvExtraProps } from "@core/types";
 import { HvButton, HvMultiButton } from "@core/components";
 import { setId } from "@core/utils";
 import { useControlled } from "@core/hooks";
-import { Children } from "react";
+import { Children, MouseEvent } from "react";
 import { HvTableInstance } from "@core/components/Table/hooks/useTable";
 import { HvControlsContextProvider } from "./context/ControlsContext";
 import controlsClasses, { HvControlsClasses } from "./controlClasses";
@@ -41,7 +41,7 @@ export interface HvControlsProps extends HvBaseProps {
   /**
    * Callback called when the view switcher button is pressed
    */
-  onViewChange?: (event: Event, id: string) => void;
+  onViewChange?: (event: MouseEvent<HTMLButtonElement>, id: string) => void;
   /**
    * if `true` the button to switch views is not rendered
    */
@@ -67,13 +67,16 @@ export const HvControls = ({
     defaultView
   );
 
-  const onViewChangeHandler = (evt, btnId) => {
+  const onViewChangeHandler = (
+    evt: MouseEvent<HTMLButtonElement>,
+    btnId: any
+  ) => {
     setCurrentView(btnId);
     onViewChange?.(evt, btnId);
   };
 
-  const onSearchHandler = (value) => callbacks?.setGlobalFilter?.(value);
-  const onSortHandler = (value) =>
+  const onSearchHandler = (value: any) => callbacks?.setGlobalFilter?.(value);
+  const onSortHandler = (value: any) =>
     callbacks?.setSortBy?.([
       {
         id: value?.accessor,

@@ -104,12 +104,12 @@ export const Controlled: StoryObj<HvAccordionProps> = {
       billingAddress: false,
       shippingAddress: false,
     });
-    const handleToggle = (key) => {
+    const handleToggle = (key: keyof typeof expandedState) => {
       const newValue = { ...expandedState };
       newValue[key] = !newValue[key];
       setExpandedState(newValue);
     };
-    const handleAll = (option) => {
+    const handleAll = (option: boolean) => {
       setExpandedState({
         personalInformation: option,
         billingAddress: option,

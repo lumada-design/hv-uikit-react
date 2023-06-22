@@ -31,7 +31,7 @@ export interface HvAppSwitcherActionProps extends HvBaseProps {
   classes?: HvAppSwitcherActionClasses;
 }
 
-const getColor = (color, defaultColor) =>
+const getColor = (color: any, defaultColor: string) =>
   theme.colors[color] || color || defaultColor;
 
 export const HvAppSwitcherAction = ({

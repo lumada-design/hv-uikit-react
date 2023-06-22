@@ -1,16 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { HvProvider } from "@core/providers";
 import { describe, expect, it } from "vitest";
-import { HvWarningText } from "@core/components";
+import { HvWarningText, HvWarningTextProps } from "@core/components";
 
 const TEXT = "text-content";
 
-const setup = (props) =>
-  render(
-    <HvProvider>
-      <HvWarningText {...props}>{TEXT}</HvWarningText>
-    </HvProvider>
-  );
+const setup = (props: Partial<HvWarningTextProps>) =>
+  render(<HvWarningText {...props}>{TEXT}</HvWarningText>);
 
 describe("WarningText", () => {
   it("should be defined", () => {

@@ -14,7 +14,7 @@ export interface HvLeftControlProps extends HvBaseProps {
   placeholder?: string;
   /** Callback called when a search action occurs */
   onSearch?: (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     value: string
   ) => void;
   /** Extra props passed to input */
@@ -36,7 +36,7 @@ export const HvLeftControl = ({
 }: HvLeftControlProps) => {
   const { onSearch: onSearchHandler } = useContext(HvControlsContext);
 
-  const onChangeFilter = (e, value) => {
+  const onChangeFilter: HvInputProps["onChange"] = (e, value) => {
     onSearch?.(e, value);
     onSearchHandler?.(value);
   };
@@ -52,7 +52,7 @@ export const HvLeftControl = ({
           id={setId(id, "search-input")}
           type="search"
           placeholder={placeholder}
-          onChange={(e, value) => onChangeFilter(e, value)}
+          onChange={onChangeFilter}
           {...searchProps}
         />
       )}

@@ -91,7 +91,9 @@ export const HvBanner = ({
     vertical: anchorOrigin,
   };
 
-  const SlideTransition = useCallback(
+  const SlideTransition = useCallback<
+    NonNullable<MuiSnackbarProps["TransitionComponent"]>
+  >(
     (properties) => <Slide {...properties} direction={transitionDirection} />,
     [transitionDirection]
   );

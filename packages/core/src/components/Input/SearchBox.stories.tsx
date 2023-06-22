@@ -11,6 +11,7 @@ import {
   HvPanel,
   HvTypography,
   HvInput,
+  HvInputProps,
 } from "@core/components";
 import { HvInputSuggestion } from "@core/types";
 import countryNamesArray, { continents, countries } from "./countries";
@@ -35,16 +36,12 @@ export default meta;
 
 export const Main: StoryObj = {
   render: () => {
-    const handleSearch = (_, value: string) => {
-      console.log(value);
-    };
-
     return (
       <HvInput
         type="search"
         aria-label="Select country"
         placeholder="Search"
-        onEnter={handleSearch}
+        onEnter={(_, value) => console.log(value)}
       />
     );
   },
@@ -62,7 +59,7 @@ export const BasicSearch: StoryObj = {
   render: () => {
     const [results, setResults] = useState<string[]>([]);
 
-    const handleSearch = (_evt, val) => {
+    const handleSearch: HvInputProps["onEnter"] = (_evt, val) => {
       setResults([
         `First result related with ${val}`,
         `Second result related with ${val}`,
@@ -125,7 +122,7 @@ export const DynamicSearch: StoryObj = {
       panel: css({ maxWidth: "610px", marginTop: "20px", padding: "5px" }),
     };
 
-    const handleSearch = (_, value: string) => {
+    const handleSearch: HvInputProps["onEnter"] = (_, value) => {
       const newResults: string[] = [];
 
       countryNamesArray
@@ -263,7 +260,7 @@ export const ScopedSearch: StoryObj = {
       []
     );
 
-    const handleSearch = (_, value: string) => {
+    const handleSearch: HvInputProps["onEnter"] = (_, value) => {
       const newResults: string[] = [];
 
       filterByContinent()
@@ -355,7 +352,7 @@ export const SearchAsYouType: StoryObj = {
       }),
     };
 
-    const handleSearch = (_, value: string) => {
+    const handleSearch: HvInputProps["onChange"] = (_, value) => {
       const newResults: string[] = data
         .filter((v) => v.toUpperCase().includes(value.toUpperCase()))
         .map(

@@ -10,6 +10,7 @@ import {
   HvInfoMessage,
   HvAdornment,
   HvFormStatus,
+  HvBaseInputProps,
 } from "@core/components";
 import { setId } from "@core/utils";
 
@@ -45,8 +46,8 @@ export const Main: StoryObj<HvFormElementProps> = {
       setElementValue(value);
     };
 
-    const onFocusHandler = (event) => {
-      const { type } = event.target;
+    const onFocusHandler: HvFormElementProps["onFocus"] = (event) => {
+      const { type } = event.target as any;
       if (type === "button") return;
       if (
         !event.currentTarget.contains(document.activeElement) ||
@@ -63,22 +64,18 @@ export const Main: StoryObj<HvFormElementProps> = {
       }
     };
 
-    /**
-     * Extra validation is needed because of the close adornment.
-     *
-     * @param event
-     */
-    const onBlurHandler = (event) => {
+    /** Extra validation is needed because of the close adornment. */
+    const onBlurHandler: HvFormElementProps["onBlur"] = (event) => {
       if (
         event.relatedTarget === null ||
         event?.relatedTarget?.id !== setId(inputId, "clear")
       ) {
-        setElement(event.target.value);
+        setElement((event.target as any).value);
         setShowCloseAdornment(false);
       }
     };
 
-    const onMouseLeaveHandler = (event) => {
+    const onMouseLeaveHandler: HvBaseInputProps["onMouseLeave"] = (event) => {
       if (!event.currentTarget.contains(document.activeElement))
         setShowCloseAdornment(false);
     };
@@ -89,8 +86,8 @@ export const Main: StoryObj<HvFormElementProps> = {
 
     return (
       <HvFormElement
-        onBlur={(event) => onBlurHandler(event)}
-        onFocus={(event) => onFocusHandler(event)}
+        onBlur={onBlurHandler}
+        onFocus={onFocusHandler}
         status={elementStatus}
       >
         <HvLabel id="controlled-input-label" label="First name">
@@ -104,7 +101,7 @@ export const Main: StoryObj<HvFormElementProps> = {
             placeholder="Insert your name"
             onChange={(event, value) => setElement(value, false)}
             onMouseEnter={onMouseEnterHandler}
-            onMouseLeave={(event) => onMouseLeaveHandler(event)}
+            onMouseLeave={onMouseLeaveHandler}
             endAdornment={
               <>
                 <HvAdornment

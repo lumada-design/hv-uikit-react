@@ -1,8 +1,14 @@
-import React, { useMemo, useState, useCallback } from "react";
+import React, {
+  useMemo,
+  useState,
+  useCallback,
+  KeyboardEventHandler,
+} from "react";
 import { createPortal } from "react-dom";
 import { clsx } from "clsx";
 import {
   ClickAwayListener,
+  ClickAwayListenerProps,
   PopperPlacementType,
   PopperProps,
 } from "@mui/material";
@@ -408,7 +414,7 @@ export const HvBaseDropdown = ({
     /**
      *  Handle keyboard inside children container.
      */
-    const handleContainerKeyDown = (event) => {
+    const handleContainerKeyDown: KeyboardEventHandler = (event) => {
       if (isKeypress(event, Esc)) {
         handleToggle(event);
       }
@@ -421,8 +427,8 @@ export const HvBaseDropdown = ({
       }
     };
 
-    const handleOutside = (event) => {
-      const isButtonClick = referenceElement?.contains(event.target);
+    const handleOutside: ClickAwayListenerProps["onClickAway"] = (event) => {
+      const isButtonClick = referenceElement?.contains(event.target as any);
       if (!isButtonClick) {
         onClickOutside?.(event);
         setIsOpen(false);

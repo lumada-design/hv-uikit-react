@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import range from "lodash/range";
 import { Meta, StoryObj } from "@storybook/react";
 import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
@@ -55,10 +55,6 @@ export const OnlyLabels: StoryObj<HvMultiButtonProps> = {
     const [selection, setSelection] = useState(0);
     const buttons = ["Map", "Satellite"];
 
-    const handleChange = (event, idx) => {
-      setSelection(idx);
-    };
-
     return (
       <HvMultiButton style={{ width: "210px" }}>
         {buttons.map((button, i) => (
@@ -66,7 +62,7 @@ export const OnlyLabels: StoryObj<HvMultiButtonProps> = {
             id={button.toLowerCase()}
             key={`${buttons[i]}`}
             selected={selection === i}
-            onClick={(evt) => handleChange(evt, i)}
+            onClick={() => setSelection(i)}
           >
             {button}
           </HvButton>
@@ -84,7 +80,7 @@ export const OnlyIcons: StoryObj<HvMultiButtonProps> = {
       { name: "Location", icon: <LocationPin /> },
     ];
 
-    const handleChange = (event, idx) => {
+    const handleChange = (event: MouseEvent, idx: number) => {
       const newSelection = selection.includes(idx)
         ? selection.filter((v) => v !== idx)
         : [...selection, idx];
@@ -114,7 +110,7 @@ export const Disabled: StoryObj<HvMultiButtonProps> = {
   render: () => {
     const [selection, setSelection] = useState([0]);
 
-    const toggleIndex = (idx) => {
+    const toggleIndex = (idx: number) => {
       const newSelection = selection.includes(idx)
         ? selection.filter((v) => v !== idx)
         : [...selection, idx];
@@ -157,7 +153,7 @@ export const DisabledItem: StoryObj<HvMultiButtonProps> = {
   render: () => {
     const [selection, setSelection] = useState([0]);
 
-    const toggleIndex = (idx) => {
+    const toggleIndex = (idx: number) => {
       const newSelection = selection.includes(idx)
         ? selection.filter((v) => v !== idx)
         : [...selection, idx];
@@ -210,7 +206,7 @@ export const MultipleSelection: StoryObj<HvMultiButtonProps> = {
       "Sunday",
     ];
 
-    const handleChange = (event, idx) => {
+    const handleChange = (event: MouseEvent, idx: number) => {
       const newSelection = selection.includes(idx)
         ? selection.filter((v) => v !== idx)
         : [...selection, idx];
@@ -246,7 +242,7 @@ export const EnforcedSelection: StoryObj<HvMultiButtonProps> = {
   render: () => {
     const [selection, setSelection] = useState([0]);
 
-    const handleChange = (event, idx) => {
+    const handleChange = (event: MouseEvent, idx: number) => {
       if (idx === 0) return; // enforced
       const newSelection = selection.includes(idx)
         ? selection.filter((v) => v !== idx)
@@ -286,7 +282,7 @@ export const MinimumSelection: StoryObj<HvMultiButtonProps> = {
   render: () => {
     const [selection, setSelection] = useState([1, 2]);
 
-    const handleChange = (event, idx) => {
+    const handleChange = (event: MouseEvent, idx: number) => {
       const newSelection = selection.includes(idx)
         ? selection.filter((v) => v !== idx)
         : [...selection, idx];
@@ -326,7 +322,7 @@ export const MaximumSelection: StoryObj<HvMultiButtonProps> = {
   render: () => {
     const [selection, setSelection] = useState<number[]>([]);
 
-    const handleChange = (event, idx) => {
+    const handleChange = (event: MouseEvent, idx: number) => {
       const newSelection = selection.includes(idx)
         ? selection.filter((v) => v !== idx)
         : [...selection, idx];
@@ -375,7 +371,7 @@ export const VerticalOrientation: StoryObj<HvMultiButtonProps> = {
       { name: "Location", icon: <LocationPin />, key: 6 },
     ];
 
-    const handleChange = (event, idx) => {
+    const handleChange = (event: MouseEvent, idx: number) => {
       const newSelection = selection.includes(idx)
         ? selection.filter((v) => v !== idx)
         : [...selection, idx];

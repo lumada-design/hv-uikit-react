@@ -82,7 +82,7 @@ export const HvDialog = ({
   // the onClose call here to make that check.
   const wrappedClose = useCallback(
     (
-      event,
+      event: any,
       bypassValidation: boolean = false,
       reason?: "escapeKeyDown" | "backdropClick"
     ) => {

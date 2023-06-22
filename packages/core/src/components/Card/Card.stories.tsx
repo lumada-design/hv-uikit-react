@@ -28,7 +28,7 @@ import {
   HvToggleButton,
 } from "@core/components";
 import { isKeypress, keyboardCodes } from "@core/utils";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import compressor from "./assets/compressor.png";
 import leaf from "./assets/leaf.png";
 
@@ -303,12 +303,18 @@ export const KPICard: StoryObj<HvCardProps> = {
         "Shaft may be bent, check for bends. Straighten if possible and replace shaft if necessary.",
     };
 
-    const getKpiLabels = (score) => ({
+    const getKpiLabels = (score: string) => ({
       title: "Confidence score",
       indicator: `${score}%`,
     });
 
-    const CardContent = ({ value, icon }) => (
+    const CardContent = ({
+      value,
+      icon,
+    }: {
+      value: string;
+      icon: ReactNode;
+    }) => (
       <HvCardContent>
         <Grid container>
           <HvKpi labels={getKpiLabels(value)} visualIndicator={icon} />
@@ -328,7 +334,7 @@ export const KPICard: StoryObj<HvCardProps> = {
       </HvCardContent>
     );
 
-    const CardFooter = ({ n }) => (
+    const CardFooter = ({ n }: { n: number }) => (
       <HvActionBar aria-label="Leaf">
         <HvCheckBox
           onChange={() => setChecked(n)}
@@ -400,7 +406,7 @@ export const Selectable: StoryObj<HvCardProps> = {
       </HvCardContent>
     );
 
-    const CardClickableContent = ({ children }) => {
+    const CardClickableContent = ({ children }: { children: ReactNode }) => {
       return (
         <StyledButton
           type="button"
