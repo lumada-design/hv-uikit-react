@@ -44,7 +44,7 @@ export const getColors = (
   type: (typeof groupsToShow)[number],
   colors?: HvTheme["colors"]["modes"][number]
 ) => {
-  const res = {};
+  const res: Record<string, string> = {};
   for (const key in colors) {
     if (
       key.includes(type) ||

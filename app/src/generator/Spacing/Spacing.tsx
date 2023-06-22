@@ -5,6 +5,7 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
+import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./Spacing.styles";
@@ -16,7 +17,7 @@ const Spacing = () => {
     new Map<string, string | number>()
   );
 
-  const valueChangedHandler = (spacing: string, value) => {
+  const valueChangedHandler = (spacing: string, value: string) => {
     const map = new Map<string, string | number>(currValues);
     map.set(spacing, value);
     setCurrValues(map);
@@ -52,7 +53,12 @@ const Spacing = () => {
               </div>
               <div className={styles.value}>
                 <HvInput
-                  value={currValues?.get(s)?.toString() || customTheme.space[s]}
+                  value={
+                    currValues?.get(s)?.toString() ||
+                    customTheme.space[
+                      s as keyof HvThemeTokens["space"]
+                    ].toString()
+                  }
                   classes={{ root: css({ width: "100%" }) }}
                   onChange={(event, value) => valueChangedHandler(s, value)}
                 />

@@ -1,3 +1,6 @@
+import { HvTheme } from "@hitachivantara/uikit-react-core";
+import { HvThemeStructure } from "@hitachivantara/uikit-styles";
+
 export const getVarValue = (cssVar: string, rootElementId?: string) => {
   const root = document.getElementById(rootElementId || "hv-root");
   if (root) {
@@ -33,24 +36,31 @@ export const extractFontsNames = (webfontLink: string): string[] => {
 };
 
 export const themeDiff = (a: object, b: object, rootLevel = true): object => {
-  const diff = {};
+  const diff: Record<string, object> = {};
   for (const key in b) {
     if (rootLevel && (key === "name" || key === "base")) {
       // eslint-disable-next-line no-continue
       continue; // ignore 'name' and 'base' at the root level
     }
     if (
-      typeof b[key] === "object" &&
-      b[key] !== null &&
-      typeof a[key] === "object" &&
-      a[key] !== null
+      typeof b[key as keyof typeof b] === "object" &&
+      b[key as keyof typeof b] !== null &&
+      typeof a[key as keyof typeof b] === "object" &&
+      a[key as keyof typeof b] !== null
     ) {
-      const nestedDiff = themeDiff(a[key], b[key], false);
+      const nestedDiff = themeDiff(
+        a[key as keyof typeof b],
+        b[key as keyof typeof b],
+        false
+      );
       if (Object.keys(nestedDiff).length > 0) {
         diff[key] = nestedDiff;
       }
-    } else if (!Object.hasOwn(a, key) || a[key] !== b[key]) {
-      diff[key] = b[key];
+    } else if (
+      !Object.hasOwn(a, key) ||
+      a[key as keyof typeof b] !== b[key as keyof typeof b]
+    ) {
+      diff[key as keyof typeof b] = b[key as keyof typeof b];
     }
   }
   return diff;
@@ -59,7 +69,7 @@ export const themeDiff = (a: object, b: object, rootLevel = true): object => {
 export const getThemeCode = (
   themeName: string,
   selectedTheme: string,
-  themeChanges
+  themeChanges?: Partial<HvTheme | HvThemeStructure>
 ) => {
   const final = {
     name: themeName,
@@ -78,7 +88,7 @@ export default createTheme(${JSON.stringify(final, null, 2).replace(
 `;
 };
 
-export const downloadTheme = (filename, text) => {
+export const downloadTheme = (filename: string, text: string) => {
   const element = document.createElement("a");
   element.setAttribute(
     "href",
@@ -94,7 +104,7 @@ export const downloadTheme = (filename, text) => {
   document.body.removeChild(element);
 };
 
-export const extractFontSizeUnit = (fontSize) => {
+export const extractFontSizeUnit = (fontSize: string) => {
   const unitRegex = /[a-z%]+$/i;
   const match = fontSize.match(unitRegex);
   return match ? match[0] : null;

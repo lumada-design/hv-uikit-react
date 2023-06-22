@@ -4,7 +4,15 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import classes from "./styles.js";
 
-export const Kpi1 = ({ title, count, diff }) => {
+export const Kpi1 = ({
+  title,
+  count,
+  diff,
+}: {
+  title: string;
+  count: number;
+  diff: number;
+}) => {
   return (
     <HvCard style={{ outline: "none" }}>
       <div style={{ padding: theme.space.sm }}>

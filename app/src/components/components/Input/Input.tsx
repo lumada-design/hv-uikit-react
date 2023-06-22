@@ -8,7 +8,7 @@ export const Input = () => {
 
   const countries = countryNamesArray;
 
-  const suggestionHandler = (val) => {
+  const suggestionHandler = (val: string) => {
     if (typeof val !== "string" || val === "") return null;
     const foundCountries = countries.filter((country) =>
       country.toUpperCase().startsWith(val.toUpperCase())

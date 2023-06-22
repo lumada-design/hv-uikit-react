@@ -5,6 +5,7 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
+import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./Zindices.styles";
@@ -16,7 +17,7 @@ const Zindices = () => {
     new Map<string, number>()
   );
 
-  const valueChangedHandler = (zIndex: string, value) => {
+  const valueChangedHandler = (zIndex: string, value: string) => {
     const map = new Map<string, number>(currValues);
     map.set(zIndex, parseInt(value, 10));
     setCurrValues(map);
@@ -47,7 +48,10 @@ const Zindices = () => {
               <div className={styles.value}>
                 <HvInput
                   value={
-                    currValues?.get(r)?.toString() || customTheme.zIndices[r]
+                    currValues?.get(r)?.toString() ||
+                    customTheme.zIndices[
+                      r as keyof HvThemeTokens["zIndices"]
+                    ].toString()
                   }
                   classes={{ root: css({ width: "100%" }) }}
                   onChange={(event, value) => valueChangedHandler(r, value)}

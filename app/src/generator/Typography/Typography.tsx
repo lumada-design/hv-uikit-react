@@ -7,6 +7,7 @@ import {
   useTheme,
   theme,
 } from "@hitachivantara/uikit-react-core";
+import { HvThemeTokens, HvThemeTypography } from "@hitachivantara/uikit-styles";
 import { extractFontSizeUnit, getVarValue } from "generator/utils";
 import { useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
@@ -15,7 +16,7 @@ import { css } from "@emotion/css";
 import { FontSize } from "components/common";
 import { styles } from "./Typography.styles";
 
-const typographyToShow = [
+const typographyToShow: (keyof HvThemeTypography["typography"])[] = [
   "display",
   "title1",
   "title2",
@@ -49,16 +50,22 @@ const Typography = () => {
         if (customTheme.typography[t].fontSize) {
           let val;
 
-          if (customTheme.typography[t].fontSize.includes("var")) {
-            val = getVarValue(customTheme.typography[t].fontSize, rootId);
+          if (
+            typeof customTheme.typography[t].fontSize === "string" &&
+            (customTheme.typography[t].fontSize as string).includes("var")
+          ) {
+            val = getVarValue(
+              customTheme.typography[t].fontSize as string,
+              rootId
+            );
           } else {
             val = customTheme.typography[t].fontSize;
           }
 
           if (val)
             map.set(t, {
-              value: parseFloat(val),
-              unit: extractFontSizeUnit(val),
+              value: typeof val === "number" ? val : parseFloat(val),
+              unit: extractFontSizeUnit(val.toString()) || "",
             });
         }
       });
@@ -66,7 +73,7 @@ const Typography = () => {
     }
   }, [customTheme, rootId]);
 
-  const sizeChangedHandler = (typographyName: string, value) => {
+  const sizeChangedHandler = (typographyName: string, value: number) => {
     const map = new Map<string, { value: number; unit: string }>(updatedSizes);
     map.set(typographyName, {
       value,
@@ -75,7 +82,10 @@ const Typography = () => {
     setUpdatedSizes(map);
   };
 
-  const setSizeHandler = (value: number, typographyName: string) => {
+  const setSizeHandler = (
+    value: number,
+    typographyName: keyof HvThemeTypography["typography"]
+  ) => {
     const unit = updatedSizes.get(typographyName)?.unit || "px";
     const fixedValue = value.toFixed(unit === "em" || unit === "rem" ? 1 : 0);
     updateCustomTheme({
@@ -91,7 +101,10 @@ const Typography = () => {
     });
   };
 
-  const unitChangedHandler = (item: HvListValue, typographyName: string) => {
+  const unitChangedHandler = (
+    item: HvListValue,
+    typographyName: keyof HvThemeTypography["typography"]
+  ) => {
     const map = new Map<string, { value: number; unit: string }>(updatedSizes);
 
     const t = updatedSizes.get(typographyName);
@@ -121,7 +134,9 @@ const Typography = () => {
     });
   };
 
-  const getLineHeights = (typographyName: string) => {
+  const getLineHeights = (
+    typographyName: keyof HvThemeTypography["typography"]
+  ) => {
     const lineHeights: HvListValue[] = [];
 
     if (customTheme) {
@@ -134,6 +149,7 @@ const Typography = () => {
           const parsedHeight = customTheme?.typography[
             typographyName
           ].lineHeight
+            ?.toString()
             ?.replace("var(--uikit-lineHeights-", "")
             ?.replace(")", "");
           if (parsedHeight === h) {
@@ -152,7 +168,9 @@ const Typography = () => {
     return lineHeights;
   };
 
-  const getFontWeights = (typographyName: string) => {
+  const getFontWeights = (
+    typographyName: keyof HvThemeTypography["typography"]
+  ) => {
     const fontWeights: HvListValue[] = [];
 
     if (customTheme) {
@@ -165,7 +183,7 @@ const Typography = () => {
           const parsedWeight = customTheme?.typography[
             typographyName
           ].fontWeight
-            .toString()
+            ?.toString()
             ?.replace("var(--uikit-fontWeights-", "")
             ?.replace(")", "");
           if (parsedWeight === w) {
@@ -184,7 +202,10 @@ const Typography = () => {
     return fontWeights;
   };
 
-  const lineHeightChangedHandler = (typographyName, lineHeight) => {
+  const lineHeightChangedHandler = (
+    typographyName: keyof HvThemeTypography["typography"],
+    lineHeight: keyof HvThemeTokens["lineHeights"]
+  ) => {
     updateCustomTheme({
       ...customTheme,
       typography: {
@@ -201,7 +222,10 @@ const Typography = () => {
     setUpdatedHeights(map);
   };
 
-  const fontWeightChangedHandler = (typographyName, fontWeight) => {
+  const fontWeightChangedHandler = (
+    typographyName: keyof HvThemeTypography["typography"],
+    fontWeight: keyof HvThemeTokens["fontWeights"]
+  ) => {
     updateCustomTheme({
       ...customTheme,
       typography: {
@@ -218,7 +242,10 @@ const Typography = () => {
     setUpdatedWeights(map);
   };
 
-  const colorChangedHandler = (typographyName, colorValue) => {
+  const colorChangedHandler = (
+    typographyName: keyof HvThemeTypography["typography"],
+    colorValue: string
+  ) => {
     updateCustomTheme({
       ...customTheme,
       typography: {
@@ -238,10 +265,10 @@ const Typography = () => {
       {typographyToShow.map((t) => {
         const typography = customTheme?.typography[t];
         const color =
-          (customTheme.typography[t].color.includes("#")
+          (customTheme.typography[t].color?.includes("#")
             ? customTheme.typography[t].color
-            : getVarValue(customTheme.typography[t].color)) ||
-          getVarValue(typography.color);
+            : getVarValue(customTheme.typography[t].color || "")) ||
+          getVarValue(typography.color || "");
 
         const fontSize = updatedSizes.get(t)?.value;
         const fontUnit = updatedSizes.get(t)?.unit || "px";
@@ -251,7 +278,12 @@ const Typography = () => {
             key={t}
             label={t}
             className={styles.label}
-            classes={{ label: css({ ...theme.typography[t], height: "auto" }) }}
+            classes={{
+              label: css({
+                ...theme.typography[t],
+                height: "auto",
+              }),
+            }}
           >
             <HvBox
               css={{
@@ -299,7 +331,11 @@ const Typography = () => {
                   values={getLineHeights(t)}
                   classes={{ root: css({ width: 130 }) }}
                   onChange={(item) =>
-                    lineHeightChangedHandler(t, (item as HvListValue)?.label)
+                    lineHeightChangedHandler(
+                      t,
+                      (item as HvListValue)
+                        ?.label as keyof HvThemeTokens["lineHeights"]
+                    )
                   }
                 />
                 <HvDropdown

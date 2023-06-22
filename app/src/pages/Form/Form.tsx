@@ -12,7 +12,7 @@ import {
   HvTagsInput,
 } from "@hitachivantara/uikit-react-core";
 import { Map } from "@hitachivantara/uikit-react-icons";
-import { fields, allCountries } from "lib/utils/form";
+import { fields, allCountries, FormData, FormDataKey } from "lib/utils/form";
 import classes from "./styles";
 
 /**
@@ -43,7 +43,10 @@ const validationSchema = yup.object({
  *
  * @param {Object} data - the data inserted on the form.
  */
-const onSubmit = (data, { setSubmitting }) => {
+const onSubmit = (
+  data: FormData,
+  { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
+) => {
   setSubmitting(false);
   alert(`Formik: ${JSON.stringify(data)}`);
 };
@@ -53,7 +56,7 @@ const onSubmit = (data, { setSubmitting }) => {
  *
  * @param {String} val - the value entered on the input
  */
-const suggestionHandler = (val) => {
+const suggestionHandler = (val: string) => {
   if (typeof val !== "string" || isEmpty(val)) return null;
   const foundCountries = allCountries.filter((country) =>
     country.toUpperCase().startsWith(val.toUpperCase())
@@ -100,21 +103,26 @@ const Form = () => {
             initialValues,
           } = props;
           // Parse the status for the field
-          const parseStatus = (name) => {
+          const parseStatus = (name: FormDataKey) => {
             return errors[name] && touched[name] ? "invalid" : "valid";
           };
 
           // Get the status message for the field
-          const parseStatusMessage = (name) => {
+          const parseStatusMessage = (name: FormDataKey) => {
             return errors[name] && touched[name] ? errors[name] : "";
           };
 
           // Get generic status properties for each field
-          const fieldStatusProps = (id) => {
+          const fieldStatusProps = (id: FormDataKey) => {
             return {
               status: parseStatus(id) as HvFormStatus,
               statusMessage: parseStatusMessage(id),
-              onChange: (evt, value) => {
+              onChange: (
+                event: React.ChangeEvent<
+                  HTMLInputElement | HTMLTextAreaElement
+                >,
+                value: string
+              ) => {
                 setFieldTouched(id);
                 setFieldValue(id, value);
               },

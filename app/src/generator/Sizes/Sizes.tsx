@@ -5,6 +5,7 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
+import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./Sizes.styles";
@@ -16,7 +17,7 @@ const Sizes = () => {
     new Map<string, string>()
   );
 
-  const valueChangedHandler = (size: string, value) => {
+  const valueChangedHandler = (size: string, value: string) => {
     const map = new Map<string, string>(currValues);
     map.set(size, value);
     setCurrValues(map);
@@ -46,7 +47,12 @@ const Sizes = () => {
               </div>
               <div className={styles.value}>
                 <HvInput
-                  value={currValues?.get(r)?.toString() || customTheme.sizes[r]}
+                  value={
+                    currValues?.get(r)?.toString() ||
+                    customTheme.sizes[
+                      r as keyof HvThemeTokens["sizes"]
+                    ].toString()
+                  }
                   classes={{ root: css({ width: "100%" }) }}
                   onChange={(event, value) => valueChangedHandler(r, value)}
                 />

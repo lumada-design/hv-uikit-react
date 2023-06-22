@@ -6,6 +6,7 @@ import {
   HvDropdown,
   HvTypography,
   HvButtonRadius,
+  HvListValue,
 } from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 
@@ -35,7 +36,7 @@ export const ButtonConfigurator = () => {
           label: name,
         }))}
         onChange={(item) => {
-          setVariant(item.value as HvButtonVariant);
+          setVariant((item as HvListValue).value as HvButtonVariant);
         }}
       />
       <HvTypography>Sizes: </HvTypography>
@@ -46,7 +47,7 @@ export const ButtonConfigurator = () => {
           label: name,
         }))}
         onChange={(item) => {
-          setSize(item?.value);
+          setSize((item as HvListValue)?.value);
         }}
       />
       <HvTypography>Radius: </HvTypography>
@@ -57,7 +58,7 @@ export const ButtonConfigurator = () => {
           label: name,
         }))}
         onChange={(item) => {
-          setRadius(item.value);
+          setRadius((item as HvListValue).value);
         }}
       />
       <HvButton variant={variant} size={size} radius={radius}>

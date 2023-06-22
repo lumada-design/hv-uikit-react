@@ -33,26 +33,29 @@ const FontSizes = () => {
     setFontSizes(sizes);
   }, [activeTheme]);
 
-  const onSizeChangedHandler = (size: string) => {
-    const currSize = currSizes.get(size);
-    setFontSize(size);
-    if (currSize) {
-      const value = parseFloat(currSize);
-      setUnit(currSize.replace(value.toString(), ""));
-      setFontValue(value);
-    } else {
-      const f = activeTheme?.fontSizes[size];
-      const u = extractFontSizeUnit(f);
-      setFontValue(parseFloat(f));
-      setUnit(u);
+  const onSizeChangedHandler = (size?: string) => {
+    if (size) {
+      const currSize = currSizes.get(size);
+      setFontSize(size);
+      if (currSize) {
+        const value = parseFloat(currSize);
+        setUnit(currSize.replace(value.toString(), ""));
+        setFontValue(value);
+      } else {
+        const f = activeTheme?.fontSizes[size];
+        const u = extractFontSizeUnit(f);
+        setFontValue(parseFloat(f));
+        setUnit(u || "");
+      }
     }
   };
-  const onValueChangeHandler = (value) => {
+
+  const onValueChangeHandler = (value: number) => {
     setFontValue(value);
   };
 
-  const onValueSetHandler = (value) => {
-    // // check updated font sizes
+  const onValueSetHandler = (value: number) => {
+    // check updated font sizes
     const fixedValue = value.toFixed(unit === "em" || unit === "rem" ? 1 : 0);
 
     updateCustomTheme({
@@ -102,7 +105,11 @@ const FontSizes = () => {
           label="Font Sizes"
           classes={{ root: css({ width: 120 }) }}
           values={fontSizes}
-          onChange={(item) => onSizeChangedHandler(item?.label)}
+          onChange={(item) =>
+            onSizeChangedHandler(
+              (item as HvListValue)?.label as string | undefined
+            )
+          }
         />
       </HvBox>
       <FontSize

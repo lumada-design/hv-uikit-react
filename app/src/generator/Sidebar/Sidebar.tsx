@@ -6,6 +6,7 @@ import {
   HvListValue,
   HvLoading,
   HvSnackbar,
+  HvSnackbarProps,
   HvTab,
   HvTabs,
   HvTypography,
@@ -52,7 +53,7 @@ const Sidebar = () => {
     updateCustomTheme(newTheme, false, false);
   }, [customTheme.name, selectedTheme, themeChanges, updateCustomTheme]);
 
-  const handleClose = (event, reason) => {
+  const handleClose: HvSnackbarProps["onClose"] = (event, reason) => {
     if (reason === "clickaway") return;
     setCopied(false);
   };

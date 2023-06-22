@@ -1,4 +1,27 @@
-export const fields = {
+export interface FormData {
+  asset: string;
+  location: string;
+  project: string;
+  version?: string;
+  name: string;
+  description: string;
+  date?: string;
+  time?: string;
+  public: boolean;
+  release?: string;
+  tags?: string;
+}
+
+export type FormDataKey = keyof FormData;
+
+interface Field {
+  id: FormDataKey;
+  label: string;
+  placeholder?: string;
+  required?: string;
+}
+
+export const fields: Record<FormDataKey, Field> = {
   asset: {
     id: "asset",
     label: "Asset",
@@ -52,7 +75,6 @@ export const fields = {
     label: "date",
     placeholder: "Insert date",
   },
-
   time: {
     id: "time",
     label: "time",

@@ -1,6 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-const HitachiLogo = (props) => {
+const HitachiLogo = (props: React.SVGProps<SVGSVGElement>) => {
   const color = theme.colors.secondary;
   return (
     <svg
@@ -46,6 +46,6 @@ const HitachiLogo = (props) => {
   );
 };
 
-export default (props) => (
+export default (props: React.SVGProps<SVGSVGElement>) => (
   <HitachiLogo style={{ width: 72, height: 20 }} {...props} />
 );
