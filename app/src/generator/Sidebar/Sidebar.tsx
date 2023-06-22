@@ -50,7 +50,7 @@ const Sidebar = () => {
       ...themeChanges,
     });
     updateCustomTheme(newTheme, false, false);
-  }, [customTheme.name, selectedTheme]);
+  }, [customTheme.name, selectedTheme, themeChanges, updateCustomTheme]);
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") return;

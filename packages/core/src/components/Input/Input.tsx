@@ -284,6 +284,7 @@ export const HvInput = ({
   // dependencies must be more explicit so we set
   const errorMessages = useMemo(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [
       validationMessages?.error,
       validationMessages?.requiredError,
@@ -595,6 +596,7 @@ export const HvInput = ({
     handleClear,
     labels?.clearButtonLabel,
     elementId,
+    cx,
   ]);
 
   /**
@@ -699,7 +701,7 @@ export const HvInput = ({
       React.cloneElement(endAdornment as React.ReactElement, {
         className: cx(endAdornment.props.className, classes.icon),
       }),
-    [classes.icon, endAdornment]
+    [classes.icon, endAdornment, cx]
   );
 
   const adornments = useMemo(() => {

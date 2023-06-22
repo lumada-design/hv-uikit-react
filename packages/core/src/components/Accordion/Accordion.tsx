@@ -181,6 +181,7 @@ export const HvAccordion = ({
     disabled,
     headingLevel,
     isOpen,
+    labelVariant,
   ]);
 
   return (

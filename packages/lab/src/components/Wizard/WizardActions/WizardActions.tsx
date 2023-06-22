@@ -74,7 +74,7 @@ export const HvWizardActions = ({
         setCanSubmit(validWizard);
       }
     }
-  }, [context]);
+  }, [context, canSubmit, setCanSubmit, setPages]);
 
   const lastPage = pages - 1;
   const isLastPage = tab >= lastPage;

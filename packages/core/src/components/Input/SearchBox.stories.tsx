@@ -260,7 +260,7 @@ export const ScopedSearch: StoryObj = {
           value: c,
         })),
       ],
-      [continents]
+      []
     );
 
     const handleSearch = (_, value: string) => {

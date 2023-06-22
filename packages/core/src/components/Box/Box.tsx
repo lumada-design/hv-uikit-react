@@ -4,28 +4,33 @@ import { PolymorphicComponentRef, PolymorphicRef } from "@core/types";
 
 type SxProps = React.CSSProperties | ((theme) => React.CSSProperties);
 
-type HvBaseProps<C extends React.ElementType> = PolymorphicComponentRef<
+type HvBoxBaseProps<C extends React.ElementType> = PolymorphicComponentRef<
   C,
   { style?: React.CSSProperties; sx?: SxProps }
 >;
 
 export type HvBoxProps = <C extends React.ElementType = "div">(
-  props: HvBaseProps<C>
+  props: HvBoxBaseProps<C>
 ) => React.ReactElement | null;
 
-const useSx = (sx: SxProps) => {
+const sxFn = (sx: SxProps) => {
   return typeof sx === "function" ? sx(theme) : sx;
 };
 
+/**
+ * Customizable layout component that can be used to wrap other components.
+ * It can be used to add styles to the wrapped components.
+ * It can also be used to create a layout using the flexbox properties.
+ */
 export const HvBox: HvBoxProps = forwardRef(
   <C extends React.ElementType = "div">(
-    { style, component, sx, children, ...restProps }: HvBaseProps<C>,
+    { style, component, sx, children, ...restProps }: HvBoxBaseProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
     const Component = component || "div";
 
     return (
-      <Component style={sx ? useSx(sx) : style} ref={ref} {...restProps}>
+      <Component style={sx ? sxFn(sx) : style} ref={ref} {...restProps}>
         {children}
       </Component>
     );

@@ -69,6 +69,10 @@ const StyledTableRow = (c: any) =>
     })
   );
 
+const getStripedColor = (color?: string, opacity: number = 0.6) => {
+  return checkValidHexColorValue(color) ? hexToRgbA(color, opacity) : color;
+};
+
 /**
  * `HvTableRow` acts as a `tr` element and inherits styles from its context
  */
@@ -101,23 +105,19 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
 
     const TableRow = useMemo(() => StyledTableRow(Component), [Component]);
 
-    let stripedColorEven = checkValidHexColorValue(even)
-      ? hexToRgbA(even, 0.6)
-      : even;
-
-    let stripedColorOdd = checkValidHexColorValue(odd)
-      ? hexToRgbA(odd, 0.6)
-      : odd;
+    const [stripedColorEven, setStripedColorEven] = useState(
+      getStripedColor(even)
+    );
+    const [stripedColorOdd, setStripedColorOdd] = useState(
+      getStripedColor(odd)
+    );
 
     useEffect(() => {
       setEven(getVarValue(theme.table.rowStripedBackgroundColorEven));
       setOdd(getVarValue(theme.table.rowStripedBackgroundColorOdd));
-      stripedColorEven = checkValidHexColorValue(even)
-        ? hexToRgbA(even, 0.6)
-        : even;
-      stripedColorOdd = checkValidHexColorValue(odd)
-        ? hexToRgbA(odd, 0.6)
-        : odd;
+
+      setStripedColorEven(getStripedColor(even));
+      setStripedColorOdd(getStripedColor(odd));
     }, [activeTheme?.colors?.modes[selectedMode], even, odd]);
 
     return (

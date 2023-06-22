@@ -167,6 +167,7 @@ export const useScrollTo = (
 
     // We really want to run this just in the first load
     // in fact this doesn't even belong here, the logic should be external
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setScrollTo = (

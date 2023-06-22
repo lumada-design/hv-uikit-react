@@ -7,6 +7,7 @@ import {
   Dispatch,
   SetStateAction,
   useEffect,
+  useCallback,
 } from "react";
 import merge from "lodash/merge";
 import { themeDiff } from "./utils";
@@ -54,31 +55,30 @@ const GeneratorProvider = ({ children }) => {
   const [canRedo, setCanRedo] = useState(false);
   const [themeChanges, setThemeChanges] = useState({});
 
-  const updateCustomTheme = (
-    newTheme,
-    addToHistory = true,
-    updateThemeChanges = true
-  ) => {
-    if (addToHistory) {
-      let newHistory: HvTheme[] = history;
-      if (history.length - historyStep > 1) {
-        // changing the theme with posterior history, we want to clear
-        // that history so that the new custom theme is the most current
-        newHistory = history.slice(0, historyStep + 1);
+  const updateCustomTheme = useCallback(
+    (newTheme, addToHistory = true, updateThemeChanges = true) => {
+      if (addToHistory) {
+        let newHistory: HvTheme[] = history;
+        if (history.length - historyStep > 1) {
+          // changing the theme with posterior history, we want to clear
+          // that history so that the new custom theme is the most current
+          newHistory = history.slice(0, historyStep + 1);
+        }
+
+        setHistory([...newHistory, newTheme]);
+        setHistoryStep((prev) => prev + 1);
       }
 
-      setHistory([...newHistory, newTheme]);
-      setHistoryStep((prev) => prev + 1);
-    }
-
-    if (updateThemeChanges) {
-      setThemeChanges((prev) => {
-        const diff = themeDiff(customTheme, newTheme);
-        return merge({}, prev, diff);
-      });
-    }
-    setCustomTheme(newTheme);
-  };
+      if (updateThemeChanges) {
+        setThemeChanges((prev) => {
+          const diff = themeDiff(customTheme, newTheme);
+          return merge({}, prev, diff);
+        });
+      }
+      setCustomTheme(newTheme);
+    },
+    [customTheme, history, historyStep]
+  );
 
   useEffect(() => {
     if (historyStep > 0) {
@@ -91,20 +91,20 @@ const GeneratorProvider = ({ children }) => {
     } else {
       setCanRedo(false);
     }
-  }, [historyStep]);
+  }, [historyStep, history.length]);
 
   useEffect(() => {
     const historyTheme = history[historyStep];
     if (historyTheme) setCustomTheme(historyTheme);
-  }, [historyStep]);
+  }, [historyStep, history]);
 
-  const undo = () => {
+  const undo = useCallback(() => {
     setHistoryStep((prev) => prev - 1);
-  };
+  }, []);
 
-  const redo = () => {
+  const redo = useCallback(() => {
     setHistoryStep((prev) => prev + 1);
-  };
+  }, []);
 
   const value = useMemo(
     () => ({

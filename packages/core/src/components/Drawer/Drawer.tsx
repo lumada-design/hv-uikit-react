@@ -65,6 +65,10 @@ export interface HvDrawerProps
   buttonTitle?: string;
 }
 
+const getBackgroundColor = (color: string) => {
+  return checkValidHexColorValue(color) ? hexToRgbA(color, 0.8) : color;
+};
+
 /**
  * The Drawer component provides a foundation to create a sliding pane.
  * It only provides the pane with a close button, the rest of the
@@ -94,17 +98,19 @@ export const HvDrawer = ({
     ? withTooltip(closeButtonDisplay, buttonTitle, "top")
     : closeButtonDisplay;
 
-  let backgroundColor = checkValidHexColorValue(backgroundColorValue)
-    ? hexToRgbA(backgroundColorValue, 0.8)
-    : backgroundColorValue;
+  const [backgroundColor, setBackgroundColor] = useState(
+    getBackgroundColor(backgroundColorValue)
+  );
 
   useEffect(() => {
     setBackgroundColorValue(getVarValue(theme.drawer.backDropBackgroundColor));
 
-    backgroundColor = checkValidHexColorValue(backgroundColorValue)
-      ? hexToRgbA(backgroundColorValue, 0.8)
-      : backgroundColorValue;
-  }, [activeTheme?.colors?.modes[selectedMode], backgroundColorValue]);
+    setBackgroundColor(getBackgroundColor(backgroundColorValue));
+  }, [
+    activeTheme?.colors?.modes[selectedMode],
+    backgroundColorValue,
+    setBackgroundColor,
+  ]);
 
   return (
     <MuiDrawer

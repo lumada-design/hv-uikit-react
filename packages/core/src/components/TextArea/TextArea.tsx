@@ -220,12 +220,7 @@ export const HvTextArea = ({
   // Dependencies must be more explicit so we set
   const errorMessages = useMemo(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
-    [
-      validationMessages?.error,
-      validationMessages?.requiredError,
-      validationMessages?.minCharError,
-      validationMessages?.maxCharError,
-    ]
+    [validationMessages]
   );
 
   // Validates the input, sets the status and the statusMessage accordingly (if uncontrolled)

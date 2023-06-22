@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { describe, expect, it, vi } from "vitest";
 import { render } from "@testing-library/react";
 import { HvAppSwitcher, HvAppSwitcherProps } from "./AppSwitcher";

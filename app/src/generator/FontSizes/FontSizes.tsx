@@ -31,7 +31,7 @@ const FontSizes = () => {
       });
     }
     setFontSizes(sizes);
-  }, []);
+  }, [activeTheme]);
 
   const onSizeChangedHandler = (size: string) => {
     const currSize = currSizes.get(size);

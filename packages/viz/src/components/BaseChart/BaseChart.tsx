@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   DatasetComponent,
   GridComponent,
@@ -489,46 +488,47 @@ export const HvBaseChart = ({
     horizontal,
   ]);
 
-  const renderTooltip = (
-    params: EChartsTooltipParams[],
-    single: boolean,
-    msr: HvBaseChartProps["measures"],
-    reverse: boolean,
-    cls?: typeof classes,
-    valueFormatter?: (value?: string | number) => string,
-    titleFormatter?: (value?: string | number) => string
-  ) => {
-    const title = reverse
-      ? params[0].value[params[0].encode.y[0]]
-      : params[0].value[params[0].encode.x[0]];
-    const formattedTitle = titleFormatter ? titleFormatter(title) : title;
+  const renderTooltip = useCallback(
+    (
+      params: EChartsTooltipParams[],
+      single: boolean,
+      msr: HvBaseChartProps["measures"],
+      reverse: boolean,
+      cls?: typeof classes,
+      valueFormatter?: (value?: string | number) => string,
+      titleFormatter?: (value?: string | number) => string
+    ) => {
+      const title = reverse
+        ? params[0].value[params[0].encode.y[0]]
+        : params[0].value[params[0].encode.x[0]];
+      const formattedTitle = titleFormatter ? titleFormatter(title) : title;
 
-    if (single) {
-      const measure = getMeasure(
-        reverse
-          ? params[0].dimensionNames[params[0].encode.x[0]]
-          : params[0].dimensionNames[params[0].encode.y[0]],
-        msr
-      );
-      const value = reverse
-        ? params[0].value[params[0].encode.x[0]]
-        : params[0].value[params[0].encode.y[0]];
-      const formattedValue =
-        typeof measure !== "string" && measure.valueFormatter
-          ? measure.valueFormatter(value)
-          : valueFormatter
-          ? valueFormatter(value)
-          : value;
+      if (single) {
+        const measure = getMeasure(
+          reverse
+            ? params[0].dimensionNames[params[0].encode.x[0]]
+            : params[0].dimensionNames[params[0].encode.y[0]],
+          msr
+        );
+        const value = reverse
+          ? params[0].value[params[0].encode.x[0]]
+          : params[0].value[params[0].encode.y[0]];
+        const formattedValue =
+          typeof measure !== "string" && measure.valueFormatter
+            ? measure.valueFormatter(value)
+            : valueFormatter
+            ? valueFormatter(value)
+            : value;
 
-      return `
+        return `
         <div class="${cls?.singleTooltipRoot}">
           <p class="${cls?.singleTooltipTitle}">${formattedTitle}</p>
           <p class="${cls?.singleTooltipValue}">${formattedValue}</p>
         </div>
         `;
-    }
+      }
 
-    return `
+      return `
     <div class="${cls?.multipleTooltipRoot}">
       <div class="${cls?.multipleTooltipTitleContainer}">
         <div>
@@ -568,7 +568,9 @@ export const HvBaseChart = ({
       </div>
     </div>
     `;
-  };
+    },
+    []
+  );
 
   const renderCustomTooltip = (
     params: EChartsTooltipParams[],
@@ -618,7 +620,7 @@ export const HvBaseChart = ({
               ),
       },
     };
-  }, [tooltip, classes, measures, horizontal]);
+  }, [tooltip, classes, measures, horizontal, renderTooltip]);
 
   const chartLegend = useMemo<Pick<EChartsOption, "legend">>(() => {
     return {

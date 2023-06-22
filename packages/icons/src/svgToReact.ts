@@ -1,18 +1,13 @@
 /* eslint-disable no-console */
-/* eslint-disable import/no-extraneous-dependencies */
-// Vendor includes
-import fs from "fs"; // file system
+import fs from "fs";
 import { Parser } from "html-to-react";
-import path from "path"; // utilities for working with file and directory
+import path from "path";
 import ReactDOMServer from "react-dom/server";
 import recursive from "recursive-readdir";
-import yargs from "yargs"; // argument reader
-
+import yargs from "yargs";
 import jsdom from "jsdom-no-contextify";
-
 import { colors } from "@hitachivantara/uikit-styles";
 
-// Local includes
 import colorExtractor from "./colorUtils/colorExtractor";
 import fillColorReplacer from "./colorUtils/fillColorReplacer";
 import formatSVG from "./converterUtils/formatSVG";

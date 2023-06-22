@@ -46,8 +46,7 @@ function binaryFindElement(array, element) {
     }
 
     if (
-      // eslint-disable-next-line no-bitwise
-      array[middle].element.compareDocumentPosition(element) &
+      array[middle].element.compareDocumentPosition(element) &&
       Node.DOCUMENT_POSITION_PRECEDING
     ) {
       end = middle - 1;

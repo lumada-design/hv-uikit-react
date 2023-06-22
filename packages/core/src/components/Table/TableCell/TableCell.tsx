@@ -100,6 +100,12 @@ const StyledTableCell = (c: any) =>
     }),
   }));
 
+const getSortedColor = (color?: string, alpha?: string) => {
+  return checkValidHexColorValue(color) && alpha
+    ? hexToRgbA(color, parseFloat(alpha))
+    : color;
+};
+
 /**
  * `HvTableCell` acts as a `td` element and inherits styles from its context
  */
@@ -143,19 +149,15 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
 
     const TableCell = useMemo(() => StyledTableCell(Component), [Component]);
 
-    let sortedColor =
-      checkValidHexColorValue(sortedColorValue) && sortedColorAlpha
-        ? hexToRgbA(sortedColorValue, parseFloat(sortedColorAlpha))
-        : sortedColorValue;
+    const [sortedColor, setSortedColor] = useState(
+      getSortedColor(sortedColorValue, sortedColorAlpha)
+    );
 
     useEffect(() => {
       setSortedColorValue(getVarValue(theme.table.rowSortedColor));
       setSortedColorAlpha(getVarValue(theme.table.rowSortedColorAlpha));
 
-      sortedColor =
-        checkValidHexColorValue(sortedColorValue) && sortedColorAlpha
-          ? hexToRgbA(sortedColorValue, parseFloat(sortedColorAlpha))
-          : sortedColorValue;
+      setSortedColor(getSortedColor(sortedColorValue, sortedColorAlpha));
     }, [
       activeTheme?.colors?.modes[selectedMode],
       sortedColorValue,

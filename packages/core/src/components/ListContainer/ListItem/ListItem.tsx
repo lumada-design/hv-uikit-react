@@ -139,7 +139,14 @@ export const HvListItem = ({
         ),
         clsx(classes?.startAdornment, disabled && classes?.disabled)
       ),
-    [classes?.startAdornment, disabled, handleOnClick, selected, startAdornment]
+    [
+      classes?.startAdornment,
+      classes?.disabled,
+      disabled,
+      handleOnClick,
+      selected,
+      startAdornment,
+    ]
   );
   const clonedEndAdornment = useMemo(
     () =>
@@ -151,7 +158,7 @@ export const HvListItem = ({
         ),
         clsx(classes?.endAdornment, disabled && classes?.disabled)
       ),
-    [classes?.endAdornment, endAdornment]
+    [classes?.endAdornment, classes?.disabled, disabled, endAdornment]
   );
 
   const roleOptionAriaProps =

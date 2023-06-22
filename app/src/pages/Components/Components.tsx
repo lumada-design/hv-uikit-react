@@ -250,7 +250,7 @@ const Components = () => {
 
   useEffect(() => {
     setParams({ selection: selection.join(",") }, { replace: true });
-  }, [selection]);
+  }, [selection, setParams]);
 
   const componentsToShow = useMemo(
     () =>

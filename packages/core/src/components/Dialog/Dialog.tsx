@@ -90,7 +90,7 @@ export const HvDialog = ({
         onClose?.(event, reason);
       }
     },
-    [onClose]
+    [onClose, disableBackdropClick]
   );
 
   const measuredRef = useCallback(() => {

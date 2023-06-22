@@ -64,7 +64,7 @@ const Typography = () => {
       });
       setUpdatedSizes(map);
     }
-  }, [customTheme]);
+  }, [customTheme, rootId]);
 
   const sizeChangedHandler = (typographyName: string, value) => {
     const map = new Map<string, { value: number; unit: string }>(updatedSizes);

@@ -13,6 +13,25 @@ export interface MenuItemProps extends HvBaseProps<HTMLDivElement, "onClick"> {
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
 }
 
+// Traverse the tree of items and return the first href it finds
+const traverseItem = (node: HvHeaderNavigationItemProp) => {
+  let href;
+  let target;
+
+  if (node?.href) {
+    href = node?.href;
+    target = node?.target;
+  } else if (node?.data != null && node?.data?.length > 0) {
+    let i = 0;
+    while (href == null && i < node.data.length) {
+      traverseItem(node?.data[i]);
+      i += 1;
+    }
+  }
+
+  return { href, target };
+};
+
 export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   const selectionPath = useContext(SelectionContext);
   const { dispatch } = useContext(FocusContext);
@@ -62,24 +81,13 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
 
   let itemHref = item?.href;
   let itemTarget = item?.target;
-  if (itemHref == null) {
-    // apps should configure the href even on parent items without content
-    // so the fallback logic is theirs, but if not we'll do our best to find a link
-    // eslint-disable-next-line no-inner-declarations
-    function traversePreOrder(node: HvHeaderNavigationItemProp) {
-      if (node?.href) {
-        itemHref = node?.href;
-        itemTarget = node?.target;
-      } else if (node?.data != null && node?.data?.length > 0) {
-        let i = 0;
-        while (itemHref == null && i < node.data.length) {
-          traversePreOrder(node?.data[i]);
-          i += 1;
-        }
-      }
-    }
 
-    traversePreOrder(item);
+  // apps should configure the href even on parent items without content
+  // so the fallback logic is theirs, but if not we'll do our best to find a link
+  if (item?.href == null) {
+    const { href, target } = traverseItem(item);
+    itemHref = href;
+    itemTarget = target;
   }
 
   return (
