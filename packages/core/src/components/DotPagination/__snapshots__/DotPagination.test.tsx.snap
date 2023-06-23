@@ -10,7 +10,7 @@ exports[`DotPagination > should render correctly 1`] = `
       role="navigation"
     >
       <div
-        class="HvRadio-root HvDotPagination-radioRoot hv-1isemmb css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
+        class="HvRadio-root HvDotPagination-radioRoot hv-1clog4o css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
       >
         <span
           class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault Mui-checked MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvDotPagination-radio hv-16e0yw4 e11n8xyl3 HvBaseRadio-root css-daifdf-StyledRadio-StyledHvBaseRadio e1sbb5xr0 css-wxwe5p-MuiButtonBase-root-MuiRadio-root"
@@ -45,7 +45,7 @@ exports[`DotPagination > should render correctly 1`] = `
         </span>
       </div>
       <div
-        class="HvRadio-root HvDotPagination-radioRoot hv-1isemmb css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
+        class="HvRadio-root HvDotPagination-radioRoot hv-1clog4o css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
       >
         <span
           class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvDotPagination-radio hv-16e0yw4 e11n8xyl3 HvBaseRadio-root css-daifdf-StyledRadio-StyledHvBaseRadio e1sbb5xr0 css-wxwe5p-MuiButtonBase-root-MuiRadio-root"
@@ -79,7 +79,7 @@ exports[`DotPagination > should render correctly 1`] = `
         </span>
       </div>
       <div
-        class="HvRadio-root HvDotPagination-radioRoot hv-1isemmb css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
+        class="HvRadio-root HvDotPagination-radioRoot hv-1clog4o css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
       >
         <span
           class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvDotPagination-radio hv-16e0yw4 e11n8xyl3 HvBaseRadio-root css-daifdf-StyledRadio-StyledHvBaseRadio e1sbb5xr0 css-wxwe5p-MuiButtonBase-root-MuiRadio-root"
