@@ -26,6 +26,7 @@ import {
 import { getThemeCode } from "generator/utils";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 import { IconButton } from "components/common/IconButton";
+import merge from "lodash/merge";
 import { styles } from "./CodeEditor.styles";
 
 const CodeEditor = ({
@@ -89,6 +90,9 @@ const CodeEditor = ({
       const parsed = JSON.parse(themeJson);
       if (customTheme.base !== parsed.base) {
         changeTheme(parsed.base, selectedMode);
+        const merged = merge({}, parsed, themeChanges);
+        const newTheme = createTheme(merged);
+        updateCustomTheme(newTheme, true, false);
       } else {
         const newTheme = createTheme(parsed);
         updateCustomTheme(newTheme);

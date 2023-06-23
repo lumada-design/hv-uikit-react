@@ -1,6 +1,4 @@
 import {
-  createTheme,
-  HvBaseTheme,
   HvBox,
   HvDropdown,
   HvListValue,
@@ -13,7 +11,7 @@ import {
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { lazy, Suspense, useContext, useEffect, useState } from "react";
+import { lazy, Suspense, useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import CodeEditor from "generator/CodeEditor";
 import {
@@ -38,20 +36,10 @@ const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, changeTheme, themes } =
     useTheme();
 
-  const { customTheme, updateCustomTheme, open, themeChanges } =
-    useContext(GeneratorContext);
+  const { customTheme, open } = useContext(GeneratorContext);
 
   const [copied, setCopied] = useState(false);
   const [tab, setTab] = useState(0);
-
-  useEffect(() => {
-    const newTheme = createTheme({
-      name: customTheme.name,
-      base: selectedTheme as HvBaseTheme,
-      ...themeChanges,
-    });
-    updateCustomTheme(newTheme, false, false);
-  }, [customTheme.name, selectedTheme, themeChanges, updateCustomTheme]);
 
   const handleClose: HvSnackbarProps["onClose"] = (event, reason) => {
     if (reason === "clickaway") return;
