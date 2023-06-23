@@ -1,34 +1,22 @@
-import styled from "@emotion/styled";
-import {
-  HvRadio,
-  HvRadioGroup,
-  HvRadioGroupProps,
-  HvRadioProps,
-} from "@core/components";
+import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { CurrentStep, OtherStep } from "@hitachivantara/uikit-react-icons";
-import dotPaginationClasses from "./dotPaginationClasses";
 
-export const StyledRadioGroup = styled((props: HvRadioGroupProps) => (
-  <HvRadioGroup {...props} />
-))({
-  display: "flex",
-  justifyContent: "center",
+export const { useClasses, staticClasses } = createClasses("HvDotPagination", {
+  root: {
+    display: "flex",
+    justifyContent: "center",
+  },
 
-  [`& .${dotPaginationClasses.horizontal}`]: {
+  horizontal: {
     marginLeft: 0,
     width: "auto",
   },
-});
 
-export const StyledRadio = styled((props: HvRadioProps) => (
-  <HvRadio {...props} />
-))({
-  [`&.${dotPaginationClasses.radioRoot}`]: {
-    marginLeft: "8px",
+  radioRoot: {
+    marginLeft: theme.space.xs,
   },
 
-  [`& .${dotPaginationClasses.radio}`]: {
+  radio: {
     height: "16px",
 
     "&:hover": {
@@ -36,14 +24,9 @@ export const StyledRadio = styled((props: HvRadioProps) => (
       borderRadius: "100%",
     },
   },
-});
 
-export const StyledOtherStep = styled(OtherStep)({
-  width: "16px",
-  height: "16px",
-});
-
-export const StyledCurrentStep = styled(CurrentStep)({
-  width: "16px",
-  height: "16px",
+  icon: {
+    width: "16px",
+    height: "16px",
+  },
 });

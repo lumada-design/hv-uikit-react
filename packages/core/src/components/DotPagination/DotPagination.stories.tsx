@@ -7,8 +7,12 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvTypography } from "@core/components";
 import { useState } from "react";
-import { HvDotPagination, HvDotPaginationProps } from "./DotPagination";
-import dotPaginationClasses from "./dotPaginationClasses";
+import { css } from "@emotion/css";
+import {
+  HvDotPagination,
+  HvDotPaginationClasses,
+  HvDotPaginationProps,
+} from "./DotPagination";
 
 const meta: Meta<typeof HvDotPagination> = {
   title: "Components/Pagination/Dot Pagination",
@@ -97,20 +101,25 @@ export const CustomizedDotPagination: StoryObj<HvDotPaginationProps> = {
       textAlign: "center",
     });
 
-    const StyledDotPagination = styled(HvDotPagination)({
-      [`& .${dotPaginationClasses.radioRoot}`]: {
-        marginLeft: "0px",
-      },
-
-      [`& .${dotPaginationClasses.radio}`]: {
+    const dotpaginationStyle: HvDotPaginationClasses = {
+      radioRoot: css({
+        marginLeft: 0,
+      }),
+      horizontal: css({
+        "&>*:not(:first-of-type)": {
+          marginLeft: 0,
+        },
+      }),
+      radio: css({
         height: "32px",
+        width: "32px",
 
         "&:hover": {
           backgroundColor: theme.colors.atmo3,
           borderRadius: 0,
         },
-      },
-    });
+      }),
+    };
 
     return (
       <StyledRoot>
@@ -118,7 +127,8 @@ export const CustomizedDotPagination: StoryObj<HvDotPaginationProps> = {
           <HvTypography>{pages[page]}</HvTypography>
         </StyledPage>
         <br />
-        <StyledDotPagination
+        <HvDotPagination
+          classes={dotpaginationStyle}
           unselectedIcon={<RadioButtonUnselected iconSize="XS" />}
           selectedIcon={<CurrentStep iconSize="XS" />}
           page={page}
