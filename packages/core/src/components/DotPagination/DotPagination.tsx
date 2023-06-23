@@ -7,7 +7,7 @@ import { staticClasses, useClasses } from "./DotPagination.styles";
 
 export { staticClasses as dotPaginationClasses };
 
-export type HvDotPaginationClasses = Partial<ExtractNames<typeof useClasses>>;
+export type HvDotPaginationClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDotPaginationProps
   extends Omit<HvRadioGroupProps, "classes"> {
