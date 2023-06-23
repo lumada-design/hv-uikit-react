@@ -52,6 +52,12 @@ export const registerThemes = (
         themeStructure?.colors.modes[mode].cat4,
         themeStructure?.colors.modes[mode].cat5,
         themeStructure?.colors.modes[mode].cat6,
+        themeStructure?.colors.modes[mode].cat7,
+        themeStructure?.colors.modes[mode].cat8,
+        themeStructure?.colors.modes[mode].cat9,
+        themeStructure?.colors.modes[mode].cat10,
+        themeStructure?.colors.modes[mode].cat11,
+        themeStructure?.colors.modes[mode].cat12,
       ],
       legend: {
         textStyle: {
