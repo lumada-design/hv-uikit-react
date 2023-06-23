@@ -1,9 +1,13 @@
 import { HvTypography } from "@core/components";
 import { HvBaseProps } from "@core/types";
-import { clsx } from "clsx";
 import isEmpty from "lodash/isEmpty";
-import timeAgoClasses, { HvTimeAgoClasses } from "./timeAgoClasses";
+import { ExtractNames } from "@core/utils";
+import { staticClasses, useClasses } from "./TimeAgo.styles";
 import useTimeAgo from "./useTimeAgo";
+
+export { staticClasses as timeAgoClasses };
+
+export type HvTimeAgoClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTimeAgoProps extends HvBaseProps<HTMLElement, "children"> {
   /**
@@ -47,7 +51,8 @@ export interface HvTimeAgoProps extends HvBaseProps<HTMLElement, "children"> {
  * The HvTimeAgo component implements the Design System relative time format guidelines.
  */
 export const HvTimeAgo = ({
-  classes,
+  classes: classesProp,
+  className,
   timestamp,
   locale: localeProp = "en",
   component: Component = HvTypography,
@@ -57,6 +62,7 @@ export const HvTimeAgo = ({
   justText = false,
   ...others
 }: HvTimeAgoProps) => {
+  const { classes, cx } = useClasses(classesProp);
   const locale = isEmpty(localeProp) ? "en" : localeProp;
   const timeAgo = useTimeAgo(timestamp, {
     locale,
@@ -68,7 +74,7 @@ export const HvTimeAgo = ({
   if (justText && timestamp) return <>{timeAgo}</>;
 
   return (
-    <Component className={clsx(classes?.root, timeAgoClasses.root)} {...others}>
+    <Component className={cx(classes.root, className)} {...others}>
       {!timestamp ? emptyElement : timeAgo}
     </Component>
   );
