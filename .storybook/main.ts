@@ -18,6 +18,7 @@ module.exports = {
     },
     "@storybook/addon-a11y",
     "@storybook/addon-links",
+    "storybook-dark-mode",
     __dirname + "/addons/version-selector/register",
     __dirname + "/addons/theme-selector/register",
   ],

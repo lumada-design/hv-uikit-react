@@ -6,13 +6,13 @@ import {
   IconButton,
 } from "@storybook/components";
 
-import { theme, themes } from "../../../packages/styles/src";
+import { themes } from "../../../packages/styles/src";
 import { getManagerStyles } from "../../theme/styles/manager";
 import { getThemesList, getInitialTheme, setLocalTheme } from "./utils";
 import { ADDON_ID } from "./constants";
 
 const ThemeSelector = ({ api }) => {
-  const managerStyles = getManagerStyles(theme);
+  const managerStyles = getManagerStyles();
   const themesList = getThemesList(themes);
   const initialTheme = getInitialTheme(themesList);
   const [selectedTheme, setSelectedTheme] = useState(initialTheme);
