@@ -38,6 +38,7 @@ const styles = {
 const meta: Meta<typeof HvTimeAgo> = {
   title: "Components/Time Ago",
   component: HvTimeAgo,
+  parameters: { eyes: { include: false } },
 };
 export default meta;
 

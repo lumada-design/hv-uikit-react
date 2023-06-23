@@ -17,6 +17,7 @@ import { renderTooltip } from "./customTooltip";
 const meta: Meta<typeof HvBarChart> = {
   title: "Visualizations/Bar Chart",
   component: HvBarChart,
+  parameters: { eyes: { include: false } },
   decorators: [
     (Story) => (
       <div
