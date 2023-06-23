@@ -2,19 +2,17 @@ import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
+import { CSSInterpolation, css } from "@emotion/css";
 import {
   HvButton,
+  HvFormStatus,
   HvGrid,
   HvListContainer,
   HvListItem,
   HvRadio,
   HvRadioGroup,
 } from "@core/components";
-import {
-  HvDatePicker,
-  HvDatePickerProps,
-  HvDatePickerStatus,
-} from "./DatePicker";
+import { HvDatePicker, HvDatePickerProps } from "./DatePicker";
 
 const Decorator = ({ children }) => {
   return <div style={{ width: 340, height: 600, padding: 10 }}>{children}</div>;
@@ -23,7 +21,6 @@ const Decorator = ({ children }) => {
 const meta: Meta<typeof HvDatePicker> = {
   title: "Components/Date Picker",
   component: HvDatePicker,
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
 };
 export default meta;
 
@@ -42,6 +39,7 @@ export const Main: StoryObj<HvDatePickerProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
+  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: (args) => {
     return (
       <HvDatePicker
@@ -50,6 +48,46 @@ export const Main: StoryObj<HvDatePickerProps> = {
         aria-label="Date"
         {...args}
       />
+    );
+  },
+};
+
+export const Variants: StoryObj<HvDatePickerProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Date Pickers in their various form state variants. `value` is used to configure the _uncontrolled_ initial value.",
+      },
+    },
+  },
+  render: () => {
+    const value = new Date("2023-01-01");
+
+    const styles: { root: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        height: 550,
+        gap: 20,
+        flexWrap: "wrap",
+        "& > div": {
+          width: 200,
+        },
+      },
+    };
+
+    return (
+      <div className={css(styles.root)}>
+        <HvDatePicker required label="Required" value={value} />
+        <HvDatePicker disabled label="Disabled" value={value} />
+        <HvDatePicker readOnly label="Read-only" value={value} />
+        <HvDatePicker
+          label="Invalid"
+          status="invalid"
+          statusMessage="This is an invalid date"
+          value={value}
+        />
+      </div>
     );
   },
 };
@@ -63,6 +101,7 @@ export const DefaultValue: StoryObj<HvDatePickerProps> = {
       },
     },
   },
+  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     return (
       <HvDatePicker
@@ -84,7 +123,7 @@ export const Localized: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-
+  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     // Locales must be imported beforehand:
     // import "dayjs/locale/pt";
@@ -126,7 +165,7 @@ export const WithActions: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-
+  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     return (
       <HvDatePicker
@@ -150,7 +189,7 @@ export const WithCustomLabels: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-
+  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     return (
       <HvDatePicker
@@ -179,7 +218,7 @@ export const RangeMode: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-
+  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     return (
       <HvDatePicker
@@ -207,7 +246,7 @@ export const RangeModeWithNoValues: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-
+  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     return (
       <HvDatePicker
@@ -232,7 +271,7 @@ export const NearInvalid: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-
+  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     return (
       <HvDatePicker
@@ -245,6 +284,7 @@ export const NearInvalid: StoryObj<HvDatePickerProps> = {
 };
 
 export const WithValueChange: StoryObj<HvDatePickerProps> = {
+  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     const [date, setDate] = useState<Date | undefined>(new Date(2020, 0, 1));
 
@@ -278,6 +318,7 @@ export const WithValueChange: StoryObj<HvDatePickerProps> = {
 };
 
 export const WithSelectionList: StoryObj<HvDatePickerProps> = {
+  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     const [startDate, setStartDate] = useState<Date>(new Date(2020, 8, 5));
     const [endDate, setEndDate] = useState<Date>(new Date(2020, 8, 10));
@@ -371,43 +412,6 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
   },
 };
 
-export const Disable: StoryObj<HvDatePickerProps> = {
-  render: () => {
-    return (
-      <HvDatePicker
-        id="DatePicker"
-        placeholder="Can't select a date now"
-        disabled
-        aria-label="Disabled date picker"
-      />
-    );
-  },
-};
-
-export const Invalid: StoryObj<HvDatePickerProps> = {
-  parameters: {
-    eyes: { include: false },
-    docs: {
-      description: {
-        story:
-          "Datepicker sample with invalid status. It is a Form Element and it inherits all Form capabilities.",
-      },
-    },
-  },
-
-  render: () => {
-    return (
-      <HvDatePicker
-        placeholder="Select date"
-        id="DatePicker"
-        status="invalid"
-        statusMessage="This date picker is always invalid"
-        aria-label="Invalid date picker"
-      />
-    );
-  },
-};
-
 export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
   parameters: {
     eyes: { include: false },
@@ -418,10 +422,9 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-
   render: () => {
     const [deathValidationState, setDeathValidationState] =
-      useState<HvDatePickerStatus>("invalid");
+      useState<HvFormStatus>("invalid");
 
     const [birthErrorMessage, setBirthErrorMessage] = useState<
       string | undefined
@@ -514,16 +517,3 @@ ExternalErrorMessage.decorators = [
     </div>
   ),
 ];
-
-export const ReadOnly: StoryObj<HvDatePickerProps> = {
-  render: () => {
-    return (
-      <HvDatePicker
-        id="DatePicker"
-        placeholder="Can't select a date now"
-        aria-label="Read only date picker"
-        readOnly
-      />
-    );
-  },
-};
