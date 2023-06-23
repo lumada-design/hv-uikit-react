@@ -13,7 +13,7 @@ export const { useClasses, staticClasses } = createClasses("HvDotPagination", {
   },
 
   radioRoot: {
-    marginLeft: "8px",
+    marginLeft: theme.space.xs,
   },
 
   radio: {

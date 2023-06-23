@@ -45,7 +45,7 @@ export interface HvDotPaginationProps
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes?: Partial<HvDotPaginationClasses>;
+  classes?: HvDotPaginationClasses;
 }
 
 const getSelectorIcons = (
@@ -89,7 +89,7 @@ export const HvDotPagination = ({
 
   return (
     <HvRadioGroup
-      className={cx(className, classes.root)}
+      className={cx(classes.root, className)}
       classes={{
         horizontal: classes.horizontal,
       }}
