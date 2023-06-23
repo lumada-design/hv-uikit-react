@@ -1,15 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { HvListValue } from ".";
 
 export default function useSelectableList(defaultList: HvListValue[] = []) {
-  const [list, setList] = useState<HvListValue[]>(defaultList);
-  const [selection, setSelection] = useState<HvListValue[]>([]);
+  const [list, setList] = useState(defaultList);
 
-  useEffect(() => {
-    setSelection(
-      (list as HvListValue[]).filter((elem: HvListValue) => elem.selected)
-    );
-  }, [list]);
+  const selection = useMemo(() => list.filter((elem) => elem.selected), [list]);
 
   return [list, setList, selection] as const;
 }

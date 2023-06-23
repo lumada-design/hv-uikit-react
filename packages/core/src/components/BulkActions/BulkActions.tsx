@@ -8,7 +8,6 @@ import {
   HvActionsGenericProps,
   HvTypography,
 } from "@core/components";
-import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { setId } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -112,13 +111,8 @@ export const HvBulkActions = ({
 }: HvBulkActionsProps) => {
   const { activeTheme, selectedMode } = useTheme();
 
-  const [anySelected, setAnySelected] = useState<boolean>(false);
-
+  const anySelected = numSelected > 0;
   const isSemantic = semantic && anySelected;
-
-  useEffect(() => {
-    setAnySelected(numSelected > 0);
-  }, [numSelected]);
 
   const selectAllLabelComponent = (
     <HvTypography
