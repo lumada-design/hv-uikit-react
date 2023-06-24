@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.18.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.18.1...@hitachivantara/uikit-react-core@5.18.2) (2023-06-24)
+
+### Bug Fixes
+
+- **button:** grow according to content in icon mode ([#3447](https://github.com/lumada-design/hv-uikit-react/issues/3447)) ([68ad431](https://github.com/lumada-design/hv-uikit-react/commit/68ad43195529ea44051625c28c20aaae81b8a8d6))
+- **DatePicker:** use the HvFormStatus type for its status prop ([#3453](https://github.com/lumada-design/hv-uikit-react/issues/3453)) ([4d500f2](https://github.com/lumada-design/hv-uikit-react/commit/4d500f21f32dbd9f5469ca9f64a312a00b311959))
+
 ## [5.18.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.18.0...@hitachivantara/uikit-react-core@5.18.1) (2023-06-22)
 
 ### Bug Fixes

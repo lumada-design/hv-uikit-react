@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.13](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.12...@hitachivantara/uikit-react-lab@5.4.13) (2023-06-24)
+
+### Bug Fixes
+
+- **button:** grow according to content in icon mode ([#3447](https://github.com/lumada-design/hv-uikit-react/issues/3447)) ([68ad431](https://github.com/lumada-design/hv-uikit-react/commit/68ad43195529ea44051625c28c20aaae81b8a8d6))
+
 ## [5.4.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.11...@hitachivantara/uikit-react-lab@5.4.12) (2023-06-22)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
