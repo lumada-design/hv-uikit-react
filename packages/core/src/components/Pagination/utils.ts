@@ -14,7 +14,7 @@ export const usePageInput = (initialPage: number) => {
   const [page, setPage] = useState<number>(initialPage + 1);
 
   const handleChange = useCallback(
-    (evt, newPage: number) => setPage(newPage),
+    (evt: any, newPage: number) => setPage(newPage),
     []
   );
 

@@ -28,7 +28,7 @@ export interface HvLoadingProps extends HvBaseProps {
 export const HvLoading = (props: HvLoadingProps) => {
   const { color, hidden, small, label, classes, className, ...others } = props;
 
-  const getColor = (colorName) => {
+  const getColor = (colorName: string) => {
     return color ? theme.colors[color] || color : theme.colors[colorName];
   };
 

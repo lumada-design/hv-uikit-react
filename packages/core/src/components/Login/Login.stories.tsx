@@ -123,10 +123,7 @@ export const CustomBackground: StoryObj<HvLoginProps> = {
     const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
-      const data = {};
-      formData.forEach((value, key) => {
-        data[key] = value;
-      });
+      const data = Object.fromEntries(formData.entries());
 
       alert(JSON.stringify(data, null, 2));
     };

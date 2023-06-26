@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { MouseEvent, useContext } from "react";
 import { HvHeaderNavigationItemProp, HvTypography } from "@core/components";
 import { HvBaseProps } from "@core/types";
 import { isKeypress, keyboardCodes } from "@core/utils";
@@ -46,7 +46,7 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
       : "page"
     : undefined;
 
-  const actionHandler = (event) => {
+  const actionHandler = (event: any) => {
     if (
       event.type === "click" ||
       isKeypress(event, keyboardCodes.Enter) ||

@@ -335,7 +335,7 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
       setEndDate(trueEndDate);
     }, [trueEndDate]);
 
-    const handleClick = (item) => {
+    const handleClick = (item: string) => {
       console.log(item);
       const today = new Date();
       const [d, m, y] = [

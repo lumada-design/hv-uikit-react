@@ -12,16 +12,13 @@ import { HvGrid, HvListValue } from "@core/components";
 import { useEffect, useMemo, useState } from "react";
 import { HvDropdown, HvDropdownProps, HvDropdownStatus } from "./Dropdown";
 
-const Decorator = ({ children }) => {
-  return <div style={{ padding: 10, height: 600 }}>{children}</div>;
-};
-
-const meta: Meta<typeof HvDropdown> = {
+export default {
   title: "Components/Dropdown",
   component: HvDropdown,
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
-};
-export default meta;
+  decorators: [
+    (Story) => <div style={{ padding: 10, height: 600 }}>{Story()}</div>,
+  ],
+} as Meta<typeof HvDropdown>;
 
 export const Main: StoryObj<HvDropdownProps> = {
   args: {
@@ -67,7 +64,13 @@ const StyledSpan = styled("span")({
   alignItems: "center",
 });
 
-const PriorityIcon = ({ Icon, label }) => (
+const PriorityIcon = ({
+  Icon,
+  label,
+}: {
+  Icon: React.ElementType;
+  label: string;
+}) => (
   <StyledSpan>
     <Icon
       style={{ float: "left", width: 22, height: 22, margin: "5px 5px 5px 0" }}

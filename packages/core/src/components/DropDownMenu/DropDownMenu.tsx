@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { ChangeEvent, useMemo } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { useControlled, useUniqueId } from "@core/hooks";
@@ -16,6 +16,7 @@ import {
   HvButton,
   HvButtonVariant,
   HvList,
+  HvListProps,
   HvListValue,
   HvPanel,
 } from "@core/components";
@@ -91,23 +92,25 @@ export const HvDropDownMenu = ({
 
   const listId = setId(id, "list");
 
-  const handleClose = (event) => {
+  const handleClose = (event: ChangeEvent) => {
     // this will only run if uncontrolled
     setOpen(false);
-    onToggle?.(event, false);
+    onToggle?.(event as any, false);
   };
 
   // If the ESCAPE key is pressed inside the list, the close handler must be called.
-  const handleKeyDown = (event) => {
+  const handleKeyDown: HvListProps["onKeyDown"] = (event) => {
     if (isKeypress(event, keyboardCodes.Tab)) {
       const node = event.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
       if (node) setTimeout(() => node.focus(), 0);
-      handleClose(event);
+      handleClose(event as any);
     }
     event.preventDefault();
   };
 
-  const setFocusToContent = (containerRef) => {
+  const setFocusToContent: HvBaseDropdownProps["onContainerCreation"] = (
+    containerRef
+  ) => {
     containerRef?.getElementsByTagName("li")[0]?.focus();
   };
 

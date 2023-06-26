@@ -32,7 +32,7 @@ export interface HvBreadCrumbProps
   /** Function passed to the component. If defined the component prop is used as the link node. */
   onClick?: (event: MouseEvent<HTMLElement>, data: any) => void;
   /** Props passed down to the DropDownMenu sub-menu component. */
-  dropDownMenuProps?: HvDropDownMenuProps;
+  dropDownMenuProps?: Partial<HvDropDownMenuProps>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBreadCrumbClasses;
 }

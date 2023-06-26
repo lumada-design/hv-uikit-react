@@ -1,9 +1,17 @@
 import { useState } from "react";
-import { HvBaseDropdown, HvSelectionList, HvListItem, HvPanel } from "..";
+import {
+  HvBaseDropdown,
+  HvSelectionList,
+  HvListItem,
+  HvPanel,
+  HvSelectionListProps,
+  HvBaseDropdownProps,
+  HvListItemProps,
+} from "..";
 import { useClasses } from "./Select.styles";
 
-export const Option = ({ children, ...others }) => (
-  <HvListItem {...others}>{children}</HvListItem>
+export const Option = ({ ...props }: Partial<HvListItemProps>) => (
+  <HvListItem {...props} />
 );
 
 const HvSelect = ({
@@ -14,20 +22,22 @@ const HvSelect = ({
   value,
   children,
   ...others
-}) => {
+}: any) => {
   const { classes } = useClasses(classesProp);
   const [open, setOpen] = useState(false);
 
-  const handleSelect = (evt, val) => {
+  const handleSelect: HvSelectionListProps["onChange"] = (evt, val) => {
     onChange?.(evt, val);
     setOpen(false);
   };
 
-  const handleToggle = (_evt, s) => {
+  const handleToggle: HvBaseDropdownProps["onToggle"] = (_evt, s) => {
     setOpen(s);
   };
 
-  const setFocusToContent = (containerRef) => {
+  const setFocusToContent: HvBaseDropdownProps["onContainerCreation"] = (
+    containerRef
+  ) => {
     const listItems =
       containerRef != null ? [...containerRef.getElementsByTagName("li")] : [];
     listItems.every((listItem) => {

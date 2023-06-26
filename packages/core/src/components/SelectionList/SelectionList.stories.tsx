@@ -57,7 +57,10 @@ export const Controlled: StoryObj<HvSelectionListProps> = {
     const [value, setValue] = useState(["2"]);
     const [status, setStatus] = useState<HvFormStatus>("standBy");
 
-    const handleOnChange = (_evt, newValue) => {
+    const handleOnChange: HvSelectionListProps["onChange"] = (
+      _evt,
+      newValue
+    ) => {
       setValue(newValue);
 
       if (newValue === "0") {

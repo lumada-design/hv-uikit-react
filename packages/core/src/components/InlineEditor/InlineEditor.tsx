@@ -14,6 +14,7 @@ import {
   HvInput,
   HvButton,
   HvTypography,
+  HvInputProps,
 } from "@core/components";
 import { HvThemeTypographyProps, theme } from "@hitachivantara/uikit-styles";
 import { Edit } from "@hitachivantara/uikit-react-icons";
@@ -98,7 +99,7 @@ export const HvInlineEditor = ({
     setCachedValue(value);
   };
 
-  const handleBlur = (event) => {
+  const handleBlur: HvInputProps["onBlur"] = (event) => {
     setEditMode(false);
 
     const newValue = value || cachedValue; // empty values should be ignored
@@ -106,15 +107,15 @@ export const HvInlineEditor = ({
     onBlur?.(event, newValue);
   };
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown: HvInputProps["onKeyDown"] = (event) => {
     if (isKeypress(event, keyboardCodes.Esc)) {
       setEditMode(false);
       setValue(cachedValue);
     }
-    onKeyDown?.(event);
+    onKeyDown?.(event as any);
   };
 
-  const handleChange = (event, val) => {
+  const handleChange: HvInputProps["onChange"] = (event, val) => {
     setValue(val);
     onChange?.(event, val);
   };

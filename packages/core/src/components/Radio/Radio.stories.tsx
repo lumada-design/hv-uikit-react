@@ -14,17 +14,12 @@ const StyledDiv = styled("div")({
   },
 });
 
-const FlexDecorator = ({ children }) => {
-  return <StyledDiv>{children}</StyledDiv>;
-};
-
-const meta: Meta<typeof HvRadio> = {
+export default {
   title: "Components/Radio/Radio",
   component: HvRadio,
   subcomponents: { HvBaseRadio },
-  decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
-};
-export default meta;
+  decorators: [(Story) => <StyledDiv>{Story()}</StyledDiv>],
+} as Meta<typeof HvRadio>;
 
 export const Main: StoryObj<HvRadioProps> = {
   args: {

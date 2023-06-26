@@ -16,7 +16,7 @@ describe("Accordion", () => {
 
   describe("general structure", () => {
     it("renders the component as expected", () => {
-      const testAttributes = (component) => {
+      const testAttributes = (component: HTMLElement) => {
         expect(component).toBeInTheDocument();
         expect(component).toHaveAttribute("aria-expanded", "false");
         expect(component).toHaveAttribute("aria-disabled", "false");

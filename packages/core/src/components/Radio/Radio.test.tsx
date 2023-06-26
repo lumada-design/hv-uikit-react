@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
 import { useState } from "react";
 import userEvent from "@testing-library/user-event";
-import { HvRadio } from "./Radio";
+import { HvRadio, HvRadioProps } from "./Radio";
 
 const RadioSample = () => {
   const [checkedValue, setCheckedValue] = useState(null);
@@ -219,7 +219,7 @@ describe("HvRadio", () => {
     });
 
     it("clicking readonly checkbox does not update state", () => {
-      const DisabledSample = ({ onChange }) => {
+      const DisabledSample = ({ onChange }: Partial<HvRadioProps>) => {
         return (
           <>
             <HvRadio

@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { useContext } from "react";
+import { MouseEvent, useContext } from "react";
 import { HvHeaderNavigationItemProp } from "@core/components";
 import { HvBaseProps } from "@core/types";
 import { HvMenuItem } from "../MenuItem";

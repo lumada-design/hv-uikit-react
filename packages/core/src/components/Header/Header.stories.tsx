@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { User, Menu, Alert } from "@hitachivantara/uikit-react-icons";
@@ -11,8 +11,9 @@ import {
   HvHeaderActions,
   HvHeaderBrand,
   HvHeaderNavigation,
+  HvHeaderNavigationProps,
 } from "@core/components";
-import HitachiLogo from "./assets/HitachiLogo";
+import { HitachiLogo } from "./assets/HitachiLogo";
 
 const navigationData = [
   {
@@ -80,7 +81,7 @@ export default {
   component: HvHeader,
   subcomponents: { HvHeaderBrand, HvHeaderNavigation, HvHeaderActions },
   decorators: [(Story) => <div style={{ height: 150 }}>{Story()}</div>],
-};
+} as Meta<typeof HvHeader>;
 
 export const Main: StoryObj<HvHeaderProps> = {
   args: {
@@ -94,7 +95,10 @@ export const Main: StoryObj<HvHeaderProps> = {
   },
   render: ({ position }) => {
     const [selected, setSelected] = useState<string>("2");
-    const handleChange = (e, selectedItem) => {
+    const handleChange: HvHeaderNavigationProps["onClick"] = (
+      e,
+      selectedItem
+    ) => {
       if (selectedItem.href) {
         setSelected(selectedItem.id);
       } else if (selectedItem.data?.length) {

@@ -9,7 +9,6 @@ import {
 } from "../FormElement";
 import adornmentClasses, { HvAdornmentClasses } from "./adornmentClasses";
 
-const preventDefault = (event) => event.preventDefault();
 const noop = () => {};
 
 export interface HvAdornmentProps
@@ -84,7 +83,7 @@ export const HvAdornment = forwardRef<
           !displayIcon && clsx(adornmentClasses.hideIcon, classes?.hideIcon)
         )}
         onClick={onClick}
-        onMouseDown={preventDefault}
+        onMouseDown={(event) => event.preventDefault()}
         onKeyDown={noop}
         $hideIcon={!displayIcon}
         {...others}

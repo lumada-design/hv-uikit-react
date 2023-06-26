@@ -8,7 +8,7 @@ import {
   HvTypography,
 } from "@core/components";
 import { useState } from "react";
-import { HvBannerContent } from "./BannerContent";
+import { HvBannerContent, HvBannerContentProps } from "./BannerContent";
 
 const StyledBanner = styled(HvBanner)({
   position: "relative",
@@ -98,14 +98,15 @@ export const BannerController: StoryObj<HvBannerProps> = {
     eyes: { include: false },
   },
   render: () => {
-    const SimpleBanner = ({ variant, ...others }) => {
+    const SimpleBanner = ({
+      variant,
+      ...others
+    }: Omit<HvBannerProps, "open">) => {
       const [open, setOpen] = useState(false);
 
       const handleOpen = () => setOpen(true);
 
-      const handleClose = () => {
-        setOpen(false);
-      };
+      const handleClose = () => setOpen(false);
 
       return (
         <>
@@ -211,12 +212,12 @@ export const BannerVariations: StoryObj<HvBannerProps> = {
     },
   },
   render: () => {
-    const actionArray = (id) => [
+    const actionArray = (id: string) => [
       { id: `action${id}_1`, label: "Action 1", disabled: false },
       { id: `action${id}_2`, label: "Action 2", disabled: false },
     ];
 
-    const BannerContent = (props) => (
+    const BannerContent = (props: HvBannerContentProps) => (
       <>
         <br />
         <HvBannerContent {...props} />

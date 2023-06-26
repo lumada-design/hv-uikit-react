@@ -1,4 +1,10 @@
-import React, { useCallback, useMemo, useRef, useEffect } from "react";
+import React, {
+  useCallback,
+  useMemo,
+  useRef,
+  useEffect,
+  ReactNode,
+} from "react";
 import { clsx } from "clsx";
 import { HvBaseProps } from "@core/types";
 import { useControlled, useUniqueId } from "@core/hooks";
@@ -77,7 +83,10 @@ export interface HvSelectionListProps
   classes?: HvSelectionListClasses;
 }
 
-const getValueFromSelectedChildren = (children, multiple) => {
+const getValueFromSelectedChildren = (
+  children: ReactNode,
+  multiple: boolean
+) => {
   const selectedValues = React.Children.toArray(children)
     .map((child: any) => {
       const childIsControlled = child?.props?.selected !== undefined;
@@ -166,7 +175,7 @@ export const HvSelectionList = ({
   const { ArrowUp, ArrowDown } = keyboardCodes;
 
   useEffect(() => {
-    const handleMeta = (event) => {
+    const handleMeta = (event: KeyboardEvent) => {
       const tempArray: any[] = [];
       if (
         (isKeypress(event, ArrowUp) &&
@@ -177,7 +186,7 @@ export const HvSelectionList = ({
           listContainer.current.contains(event.target))
       ) {
         selectedState.forEach((isSelected, i) => {
-          if (i === event.target.value - 1) {
+          if (i === (event.target as any).value - 1) {
             if (!isSelected) {
               tempArray.push(allValues[i]);
             }

@@ -57,14 +57,18 @@ export const Main: StoryObj<HvAppSwitcherProps> = {
     classes: { control: { disable: true } },
   },
   render: ({ layout }) => {
-    const handlesActionSelectedCallback = (application) => {
-      return (
-        application.url != null &&
-        window.location.href.startsWith(application.url)
-      );
-    };
+    const handlesActionSelectedCallback: HvAppSwitcherProps["isActionSelectedCallback"] =
+      (application) => {
+        return (
+          application.url != null &&
+          window.location.href.startsWith(application.url)
+        );
+      };
 
-    const handleActionClicked = (event, application) => {
+    const handleActionClicked: HvAppSwitcherProps["onActionClickedCallback"] = (
+      event,
+      application
+    ) => {
       if (!application.url) {
         alert(`The clicked application was: ${application.name}`);
       }
@@ -85,9 +89,10 @@ export const Main: StoryObj<HvAppSwitcherProps> = {
 
 export const ManyEntries: StoryObj<HvAppSwitcherProps> = {
   render: () => {
-    const handlesActionSelectedCallback = (application) => {
-      return window.location.href.startsWith(application.url);
-    };
+    const handlesActionSelectedCallback: HvAppSwitcherProps["isActionSelectedCallback"] =
+      (application) => {
+        return window.location.href.startsWith(application.url || "");
+      };
 
     const getDummyApplicationsList = () => {
       const dummyApplicationsList: HvAppSwitcherActionApplication[] = [];
@@ -126,13 +131,17 @@ export const ManyEntries: StoryObj<HvAppSwitcherProps> = {
 
 export const CustomHeader: StoryObj<HvAppSwitcherProps> = {
   render: () => {
-    const [selected, setSelected] = useState(null);
+    const [selected, setSelected] = useState<string>();
 
-    const handleIsActionSelected = (application) => {
-      return application.name === selected;
-    };
+    const handleIsActionSelected: HvAppSwitcherProps["isActionSelectedCallback"] =
+      (application) => {
+        return !!selected && application.name === selected;
+      };
 
-    const handleActionClicked = (event, application) => {
+    const handleActionClicked: HvAppSwitcherProps["onActionClickedCallback"] = (
+      event,
+      application
+    ) => {
       setSelected(application.name);
     };
 

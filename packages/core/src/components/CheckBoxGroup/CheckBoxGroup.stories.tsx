@@ -154,7 +154,7 @@ export const Controlled: StoryObj<HvCheckBoxGroupProps> = {
   render: () => {
     const [value, setValue] = useState(["2"]);
 
-    const handleOnChange = (_, newValue) => {
+    const handleOnChange: HvCheckBoxGroupProps["onChange"] = (_, newValue) => {
       setValue(newValue);
     };
 

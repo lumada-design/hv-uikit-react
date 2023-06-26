@@ -6,7 +6,7 @@ import {
   isSameMonth,
 } from "../Calendar/utils";
 
-export const validateDate = (date) => (isDate(date) && date) || new Date();
+export const validateDate = (date: any) => (isDate(date) && date) || new Date();
 
 export const getFormattedDateRange = (
   date: DateRangeProp,
@@ -22,10 +22,13 @@ export const getFormattedDateRange = (
   return `${startDate.getDate()} - ${endDate?.getDate()} ${monthYear}`;
 };
 
-export const getSingleDateLabel = (date, locale?) =>
+export const getSingleDateLabel = (date: any, locale?: string) =>
   isDate(date) ? getFormattedDate(date, locale) : "";
 
-export const getRangeDateLabel = ({ startDate, endDate }, locale) => {
+export const getRangeDateLabel = (
+  { startDate, endDate }: any,
+  locale: string
+) => {
   if (!(isDate(startDate) && isDate(endDate)))
     return getSingleDateLabel(startDate);
 

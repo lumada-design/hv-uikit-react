@@ -104,7 +104,9 @@ export const HvCheckBox = ({
 
   const isStateInvalid = isInvalid(validationState);
 
-  const onChangeCallback = useCallback(
+  const onChangeCallback = useCallback<
+    NonNullable<HvBaseCheckBoxProps["onChange"]>
+  >(
     (event, newChecked) => {
       setIsChecked(() => {
         // This will only run if uncontrolled
@@ -131,21 +133,15 @@ export const HvCheckBox = ({
     ]
   );
 
-  const onFocusVisibleCallback = useCallback(
-    (event) => {
-      setFocusVisible(true);
-      onFocusVisible?.(event);
-    },
-    [onFocusVisible]
-  );
+  const onFocusVisibleCallback: HvBaseCheckBoxProps["onBlur"] = (event) => {
+    setFocusVisible(true);
+    onFocusVisible?.(event);
+  };
 
-  const onBlurCallback = useCallback(
-    (event) => {
-      setFocusVisible(false);
-      onBlur?.(event);
-    },
-    [onBlur]
-  );
+  const onBlurCallback: HvBaseCheckBoxProps["onBlur"] = (event) => {
+    setFocusVisible(false);
+    onBlur?.(event);
+  };
 
   // The error message area will only be created if:
   //   - an external element that provides an error message isn't identified via aria-errormessage AND

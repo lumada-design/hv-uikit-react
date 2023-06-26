@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { MouseEvent, useContext, useEffect, useState } from "react";
 import { clsx } from "clsx";
 import isNil from "lodash/isNil";
 import { setId } from "@core/utils";
@@ -7,6 +7,7 @@ import {
   HvButton,
   HvCheckBox,
   HvInput,
+  HvListProps,
   HvListValue,
   HvTypography,
 } from "@core/components";
@@ -46,11 +47,20 @@ export interface HvDropdownListProps {
    * A function to be executed whenever a item is selected in the list
    * or the Apply button is activated (when `multiSelect` is `true`).
    */
-  onChange: any;
+  onChange: (
+    /** An array containing the selected values */
+    listValues: HvListValue[],
+    /** If `true` the selection if finally committed the dropdown header text should reflect the new selection */
+    commitChanges: boolean,
+    /** If `true` the dropdown should toggle it's current state */
+    toggle: boolean,
+    /** If `true` the dropdown will call onChange */
+    notifyChanges: boolean
+  ) => void;
   /**
    * A function to be executed whenever the Cancel button is activated.
    */
-  onCancel: any;
+  onCancel: (event: MouseEvent) => void;
   /**
    * An object containing all the labels for the dropdown.
    */
@@ -97,7 +107,8 @@ const clone = (values: HvListValue[]) => values.map((value) => ({ ...value }));
 const cleanHidden = (lst: HvListValue[]) =>
   lst.map((item) => ({ ...item, isHidden: false }));
 
-const valuesExist = (values) => !isNil(values) && values?.length > 0;
+const valuesExist = (values: HvListValue[]) =>
+  !isNil(values) && values?.length > 0;
 
 export const HvDropdownList = ({
   id,
@@ -283,7 +294,7 @@ export const HvDropdownList = ({
    *
    * @param listValues - elements selected.
    */
-  const onSelection = (listValues) => {
+  const onSelection: HvListProps["onChange"] = (listValues) => {
     if (!multiSelect) {
       onChange(cleanHidden(listValues), true, true, true);
     } else {

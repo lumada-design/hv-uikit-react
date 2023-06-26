@@ -1,5 +1,6 @@
 import {
   HvBaseDropdown,
+  HvDropdownProps,
   HvFormElement,
   HvInfoMessage,
   HvLabel,
@@ -156,7 +157,7 @@ export const HvColorPicker = ({
   const hasLabel = label != null;
   const hasDescription = description != null;
 
-  const handleToggle = (_, open: boolean) => {
+  const handleToggle: HvDropdownProps["onToggle"] = (_, open) => {
     setIsOpen(open);
   };
 

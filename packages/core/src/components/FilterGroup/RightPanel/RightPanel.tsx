@@ -2,6 +2,7 @@ import {
   HvCheckBox,
   HvInput,
   HvList,
+  HvListProps,
   HvPanel,
   HvTypography,
 } from "@core/components";
@@ -86,13 +87,13 @@ export const HvFilterGroupRightPanel = ({
 
   useEffect(() => setSearchStr(""), [activeGroup]);
 
-  const onChangeHandler = (values) => {
+  const onChangeHandler: HvListProps["onChange"] = (values) => {
     const newFilterValues = filterOptions.map((_, i) =>
       activeGroup === i
         ? values.filter((v) => v.selected).map((v) => v.id)
         : [...(filterValues[i] || [])]
     );
-    setFilterValues(newFilterValues);
+    setFilterValues(newFilterValues as any);
   };
 
   const handleSelectAll = useCallback(() => {

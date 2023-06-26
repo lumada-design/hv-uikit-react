@@ -1,6 +1,21 @@
-import { HvButton, HvTooltip, HvTypography } from "@core/components";
+import {
+  HvButton,
+  HvButtonProps,
+  HvTooltip,
+  HvTypography,
+} from "@core/components";
+import { ReactNode } from "react";
 
-const ButtonIconTooltip = ({ tooltip, children, ...buttonProps }) => {
+interface ButtonIconTooltipProps extends HvButtonProps {
+  tooltip: ReactNode;
+  children: ReactNode;
+}
+
+const ButtonIconTooltip = ({
+  tooltip,
+  children,
+  ...buttonProps
+}: ButtonIconTooltipProps) => {
   return (
     <HvTooltip title={<HvTypography>{tooltip}</HvTypography>}>
       <div>

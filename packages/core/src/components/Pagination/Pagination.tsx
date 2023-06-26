@@ -205,7 +205,7 @@ export const HvPagination = ({
               disabled={pageSize === 0}
               className={classes.pageSizeOptionsSelect}
               aria-label={labels?.pageSizeSelectorDescription}
-              onChange={(_, val: number) => onPageSizeChange?.(val)}
+              onChange={(_: any, val: number) => onPageSizeChange?.(val)}
               value={pageSize}
             >
               {pageSizeOptions.map((option) => (
