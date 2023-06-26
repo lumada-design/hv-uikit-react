@@ -39,3 +39,20 @@ describe("TimeAgo with custom Button element", () => {
     expect(screen.getByRole("button")).toBeVisible();
   });
 });
+
+describe("TimeAgo with justText", () => {
+  it("should render the text", () => {
+    const timestamp = Date.now();
+    render(<HvTimeAgo justText timestamp={timestamp} />);
+
+    expect(screen.getByText("a few seconds")).toBeInTheDocument();
+  });
+
+  it("should not render the custom component", () => {
+    const timestamp = Date.now();
+    render(<HvTimeAgo justText timestamp={timestamp} component="button" />);
+
+    expect(screen.getByText("a few seconds")).toBeInTheDocument();
+    expect(screen.queryByRole("button")).toBeNull();
+  });
+});
