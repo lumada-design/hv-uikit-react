@@ -1,18 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useMemo, useRef } from "react";
 import { HvTooltip, HvTypography } from "@core/components";
 import { StyledTitleWithTooltip } from "./AppSwitcher.styles";
 
 const TitleWithTooltip = ({ className, title, type }) => {
-  const [isOverflowed, setIsOverflowed] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (textRef?.current) {
-      setIsOverflowed(
-        textRef.current.scrollWidth > textRef.current.clientWidth ||
-          textRef.current.scrollHeight > textRef.current.clientHeight
-      );
-    }
+  const isOverflowed = useMemo(() => {
+    const el = textRef.current;
+    if (!el) return false;
+
+    return el.scrollWidth > el.clientWidth || el.scrollHeight > el.clientHeight;
   }, []);
 
   return (
