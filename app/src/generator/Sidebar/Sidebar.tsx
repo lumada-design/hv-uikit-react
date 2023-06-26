@@ -51,7 +51,8 @@ const Sidebar = () => {
       ...themeChanges,
     });
     updateCustomTheme(newTheme, false, false);
-  }, [customTheme.name, selectedTheme, themeChanges, updateCustomTheme]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [customTheme.name, selectedTheme, themeChanges]);
 
   const handleClose: HvSnackbarProps["onClose"] = (event, reason) => {
     if (reason === "clickaway") return;
