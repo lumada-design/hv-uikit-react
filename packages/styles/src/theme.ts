@@ -404,6 +404,10 @@ const componentsSpec: DeepString<HvThemeComponents> = {
       fontWeight: "string",
     },
   },
+  snackbar: {
+    actionButtonVariant: "string",
+    actionMarginLeft: "string",
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {

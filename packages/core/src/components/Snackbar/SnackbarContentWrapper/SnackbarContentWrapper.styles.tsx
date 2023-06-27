@@ -1,6 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import { CSSProperties } from "react";
 import { createClasses } from "@core/utils";
+import { actionsGenericClasses } from "@core/components";
 
 export const { useClasses, staticClasses } = createClasses(
   "HvSnackbar-Content",
@@ -43,6 +44,14 @@ export const { useClasses, staticClasses } = createClasses(
     },
     action: {
       textAlign: "right",
+      marginLeft: theme.snackbar.actionMarginLeft,
+      [`& .${actionsGenericClasses.button}`]: {
+        borderColor: theme.colors.base_dark,
+        color: theme.colors.base_dark,
+        "&:hover": {
+          borderColor: theme.colors.base_dark,
+        },
+      },
     },
     iconVariant: {},
   }

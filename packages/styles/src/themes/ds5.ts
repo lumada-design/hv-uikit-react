@@ -563,6 +563,10 @@ const ds5 = makeTheme((theme: HvTheme) => ({
       fontWeight: theme.fontWeights.normal,
     },
   },
+  snackbar: {
+    actionButtonVariant: "secondarySubtle",
+    actionMarginLeft: "auto",
+  },
 }));
 
 export default ds5;
