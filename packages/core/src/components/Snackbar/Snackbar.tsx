@@ -63,7 +63,7 @@ export interface HvSnackbarProps
   /** Others applied to the content of the snackbar. */
   snackbarContentProps?: HvSnackbarContentProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: Partial<HvSnackbarClasses>;
+  classes?: HvSnackbarClasses;
 }
 
 const transLeft = (props) => <Slide {...props} direction="left" />;

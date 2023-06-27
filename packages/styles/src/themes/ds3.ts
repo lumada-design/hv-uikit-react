@@ -620,6 +620,10 @@ const ds3 = makeTheme((theme: HvTheme) => ({
       fontWeight: theme.fontWeights.semibold,
     },
   },
+  snackbar: {
+    actionButtonVariant: "secondaryGhost",
+    actionMarginLeft: "inherit",
+  },
 }));
 
 export default ds3;

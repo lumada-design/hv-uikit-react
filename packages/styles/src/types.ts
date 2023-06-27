@@ -413,6 +413,10 @@ export type HvThemeComponents = {
       fontWeight: string;
     };
   };
+  snackbar: {
+    actionButtonVariant: string;
+    actionMarginLeft: CSSProperties["marginLeft"];
+  };
 };
 
 // Theme typography

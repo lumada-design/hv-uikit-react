@@ -4,7 +4,12 @@ import SnackbarContent, {
 } from "@mui/material/SnackbarContent";
 import { ExtractNames, iconVariant, setId } from "@core/utils";
 import { HvBaseProps } from "@core/types";
-import { HvActionsGeneric, HvActionGeneric } from "@core/components";
+import {
+  HvActionsGeneric,
+  HvActionGeneric,
+  HvButtonVariant,
+} from "@core/components";
+import { useTheme } from "@core/hooks";
 import { HvSnackbarVariant } from "../Snackbar";
 import { staticClasses, useClasses } from "./SnackbarContentWrapper.styles";
 
@@ -18,7 +23,7 @@ export interface HvSnackbarContentProps
   /** The message to display. */
   label?: React.ReactNode;
   /** Variant of the snackbar. */
-  variant: HvSnackbarVariant;
+  variant?: HvSnackbarVariant;
   /** Controls if the associated icon to the variant should be shown. */
   showIcon?: boolean;
   /** Custom icon to replace the variant default. */
@@ -45,7 +50,7 @@ export const HvSnackbarContent = forwardRef<
       id,
       classes: classesProp = {},
       label,
-      variant,
+      variant = "default",
       showIcon,
       customIcon,
       action,
@@ -58,25 +63,28 @@ export const HvSnackbarContent = forwardRef<
     const innerAction: any = isValidElement(action) ? action : [action];
 
     const { classes, cx } = useClasses(classesProp);
+    const { activeTheme } = useTheme();
 
     return (
       <SnackbarContent
         ref={ref}
         id={id}
         classes={{
-          root: classes?.root,
-          message: classes?.message,
+          root: classes.root,
+          message: classes.message,
         }}
         className={cx(className, classes?.[variant])}
         message={
-          <div id={setId(id, "message")} className={classes?.messageSpan}>
-            {icon && <div className={classes?.iconVariant}>{icon}</div>}
-            <div className={classes?.messageText}>{label}</div>
+          <div id={setId(id, "message")} className={classes.messageSpan}>
+            {icon && <div className={classes.iconVariant}>{icon}</div>}
+            <div className={classes.messageText}>{label}</div>
             {action && (
-              <div id={setId(id, "action")} className={classes?.action}>
+              <div id={setId(id, "action")} className={classes.action}>
                 <HvActionsGeneric
                   id={id}
-                  category="secondaryGhost"
+                  category={
+                    activeTheme?.snackbar.actionButtonVariant as HvButtonVariant
+                  }
                   actions={innerAction}
                   actionsCallback={actionCallback}
                 />
