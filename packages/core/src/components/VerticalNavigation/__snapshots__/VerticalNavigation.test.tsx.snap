@@ -20,34 +20,26 @@ exports[`VerticalNavigation > should render correctly 1`] = `
         <button
           aria-expanded="true"
           aria-label="collapseButton"
-          class="e1arrhkt0 HvButton-root css-1vt7y3p-StyledButton-StyledCollapseButton e138pvrm0"
+          class="HvButton-root HvButton-icon css-7gfthz-StyledCollapseButton e1arrhkt0 hv-ukdrh6"
           type="button"
         >
           <div
-            class="css-1nxr552-StyledContentDiv e138pvrm3"
+            class="css-f95wjz"
+            name="Backwards"
           >
-            <span
-              class="css-1o4qkkz-StyledChildren e138pvrm1"
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="css-f95wjz"
-                name="Backwards"
-              >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M11.30863 15.5 4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-                    fill="var(--uikit-colors-secondary)"
-                  />
-                </svg>
-              </div>
-            </span>
+              <path
+                class="color0"
+                d="M11.30863 15.5 4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
           </div>
         </button>
       </div>

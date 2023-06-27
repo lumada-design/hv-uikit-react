@@ -53,8 +53,9 @@ const baseline = {
   },
 
   /* Buttons have a default outline. */
-  "button:focus": {
-    outline: "5px auto -webkit-focus-ring-color",
+  "button:focus-visible": {
+    outline: "#52A8EC solid 0px",
+    outlineOffset: "-1px",
   },
 
   /* fieldset have no margin and padding. */

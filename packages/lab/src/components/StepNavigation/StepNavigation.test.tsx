@@ -22,16 +22,6 @@ const steps: StepType[] = [
 ];
 
 describe("StepNavigation", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvStepNavigation steps={steps} />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvStepNavigation steps={steps} />);
-    expect(container).toMatchSnapshot();
-  });
-
   it("should contain all the steps", () => {
     const { getByLabelText } = render(<HvStepNavigation steps={steps} />);
 

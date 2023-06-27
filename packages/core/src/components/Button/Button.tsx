@@ -1,14 +1,19 @@
-import { clsx } from "clsx";
-import React, { forwardRef, ReactElement, useMemo } from "react";
+import React, { forwardRef, ReactElement } from "react";
 import { useTheme } from "@core/hooks";
 import { PolymorphicComponentRef, PolymorphicRef } from "@core/types";
+import { ExtractNames } from "@core/utils";
 import {
-  StyledButton,
-  StyledChildren,
-  StyledContentDiv,
-  StyledIconSpan,
+  staticClasses as buttonClasses,
+  getOverrideColors,
+  getRadiusStyles,
+  getSizeStyles,
+  getVariantStyles,
+  useClasses,
 } from "./Button.styles";
-import buttonClasses, { HvButtonClasses } from "./buttonClasses";
+
+export { buttonClasses };
+
+export type HvButtonClasses = ExtractNames<typeof useClasses>;
 
 export const buttonVariant = [
   "primary",
@@ -67,31 +72,29 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
 /**
  * Normalize the button variant. It's meant to give us some retro-compatibility with
  * the DS 3.6 API.
- *
- * @param variant the variant of the button
- * @returns       the normalized variant in DS 5 API
+ * @returns the normalized variant in DS 5 API
  */
 const mapVariant = (
   variant: HvButtonVariant,
   theme?: string
 ): HvButtonVariant => {
-  if (theme !== "ds3") {
-    if (variant === "secondary") {
-      // eslint-disable-next-line no-console
-      console.warn(
-        "Button variant 'secondary' is deprecated. Please use 'secondarySubtle'."
-      );
-      return "secondarySubtle";
-    }
-    if (variant === "ghost") {
-      // eslint-disable-next-line no-console
-      console.warn(
-        "Button variant 'ghost' is deprecated. Please use 'primaryGhost'."
-      );
-      return "primaryGhost";
-    }
+  if (theme === "ds3") return variant;
+
+  const deprecatedVariantMap: Record<string, HvButtonVariant> = {
+    secondary: "secondarySubtle",
+    ghost: "primaryGhost",
+  };
+
+  const mappedVariant = deprecatedVariantMap[variant];
+
+  if (mappedVariant) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `Button variant '${variant}' is deprecated. Please use '${mappedVariant}'.`
+    );
   }
-  return variant;
+
+  return mappedVariant || variant;
 };
 
 /**
@@ -106,84 +109,52 @@ export const HvButton: <C extends React.ElementType = "button">(
   ) => {
     const {
       id,
-      classes,
+      classes: classesProp,
       children,
-      variant = "primary",
-      onClick,
+      variant: variantProp = "primary",
       disabled = false,
       className,
       startIcon,
       endIcon,
       icon = false,
       size,
-      radius = "base",
+      radius,
       overrideIconColors = true,
       component: Component = "button",
       ...others
     } = props;
-
+    const { classes, css, cx } = useClasses(classesProp);
     const { activeTheme } = useTheme();
 
-    const onFocusHandler = (event) => {
-      event.target.classList.add("HvIsFocusVisible");
-      event.target.classList.add(buttonClasses.focusVisible);
-      if (classes?.focusVisible) {
-        event.target.classList.add(classes.focusVisible);
-      }
-    };
-
-    const onBlurHandler = (event) => {
-      event.target.classList.remove("HvIsFocusVisible");
-      event.target.classList.remove(buttonClasses.focusVisible);
-      if (classes?.focusVisible) {
-        event.target.classList.remove(classes.focusVisible);
-      }
-    };
-
-    const StyledComponent = useMemo(() => StyledButton(Component), [Component]);
+    const variant = mapVariant(variantProp, activeTheme?.name);
 
     return (
-      <StyledComponent
-        id={id}
+      <Component
         ref={ref}
         type="button"
-        className={clsx(className, classes?.root, buttonClasses.root)}
-        onClick={onClick}
-        onFocus={onFocusHandler}
-        onBlur={onBlurHandler}
-        $variant={mapVariant(variant, activeTheme?.name)}
-        $iconOnly={icon}
-        $size={size}
-        $radius={radius}
-        $overrideIconColors={overrideIconColors}
-        $startIcon={!!startIcon}
-        $endIcon={!!endIcon}
+        className={cx(
+          classes.root,
+          css(getVariantStyles(variant)),
+          size && css(getSizeStyles(size)),
+          radius && css(getRadiusStyles(radius)),
+          overrideIconColors && css(getOverrideColors(variant)),
+          {
+            [classes.icon]: icon,
+            [classes.disabled]: disabled,
+          },
+          className
+        )}
         {...(disabled && {
-          $disabled: true,
           disabled: true,
           tabIndex: -1,
           "aria-disabled": true,
         })}
         {...others}
       >
-        <StyledContentDiv>
-          {startIcon && (
-            <StyledIconSpan
-              className={clsx(classes?.startIcon, buttonClasses.startIcon)}
-            >
-              {startIcon}
-            </StyledIconSpan>
-          )}
-          {children && <StyledChildren>{children}</StyledChildren>}
-          {endIcon && (
-            <StyledIconSpan
-              className={clsx(classes?.endIcon, buttonClasses.endIcon)}
-            >
-              {endIcon}
-            </StyledIconSpan>
-          )}
-        </StyledContentDiv>
-      </StyledComponent>
+        {startIcon && <span className={classes.startIcon}>{startIcon}</span>}
+        {children}
+        {endIcon && <span className={classes.endIcon}>{endIcon}</span>}
+      </Component>
     );
   }
 );

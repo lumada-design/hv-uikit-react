@@ -10,19 +10,10 @@ exports[`HvDrawer > should render correctly 1`] = `
     <div>
       <button
         aria-label="openDialog"
-        class="HvButton-root css-or2r1m-StyledButton e138pvrm0"
-        id="openDialog"
+        class="HvButton-root hv-lelg73"
         type="button"
       >
-        <div
-          class="css-1nxr552-StyledContentDiv e138pvrm3"
-        >
-          <span
-            class="css-1o4qkkz-StyledChildren e138pvrm1"
-          >
-            Open dialog
-          </span>
-        </div>
+        Open dialog
       </button>
     </div>
   </div>
@@ -46,42 +37,33 @@ exports[`HvDrawer > should render correctly 1`] = `
     >
       <button
         aria-label="Close"
-        class="HvDrawer-closeButton hv-1qc33vj HvButton-root css-1qpjfr1-StyledButton e138pvrm0"
-        id="drawer-test-close"
+        class="HvButton-root HvDrawer-closeButton hv-14jhohb"
         type="button"
       >
         <div
-          class="css-1nxr552-StyledContentDiv e138pvrm3"
+          class=""
+          data-mui-internal-clone-element="true"
+          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
-          <span
-            class="css-1o4qkkz-StyledChildren e138pvrm1"
+          <div
+            class="css-f95wjz"
+            name="Close"
+            role="presentation"
           >
-            <div
-              class=""
-              data-mui-internal-clone-element="true"
-              style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="css-f95wjz"
-                name="Close"
-                role="presentation"
-              >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                    fill="var(--uikit-colors-secondary)"
-                  />
-                </svg>
-              </div>
-            </div>
-          </span>
+              <path
+                class="color0"
+                d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
+          </div>
         </div>
       </button>
       <h2
@@ -113,32 +95,16 @@ exports[`HvDrawer > should render correctly 1`] = `
         class="MuiDialogActions-root HvDialog-Action-root MuiDialogActions-spacing HvDialog-Action-spacing css-bzzl2y-StyledActions e5nbcch0 css-hlj6pa-MuiDialogActions-root"
       >
         <button
-          class="HvButton-root css-1qpjfr1-StyledButton e138pvrm0"
+          class="HvButton-root hv-1w5her9"
           type="button"
         >
-          <div
-            class="css-1nxr552-StyledContentDiv e138pvrm3"
-          >
-            <span
-              class="css-1o4qkkz-StyledChildren e138pvrm1"
-            >
-              Submit
-            </span>
-          </div>
+          Submit
         </button>
         <button
-          class="HvButton-root css-1qpjfr1-StyledButton e138pvrm0"
+          class="HvButton-root hv-1w5her9"
           type="button"
         >
-          <div
-            class="css-1nxr552-StyledContentDiv e138pvrm3"
-          >
-            <span
-              class="css-1o4qkkz-StyledChildren e138pvrm1"
-            >
-              Cancel
-            </span>
-          </div>
+          Cancel
         </button>
       </div>
     </div>

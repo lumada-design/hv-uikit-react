@@ -146,6 +146,13 @@ export const HvInlineEditor = ({
         <HvButton
           variant="secondaryGhost"
           overrideIconColors={false}
+          endIcon={
+            <Edit
+              color="secondary_60"
+              role="presentation"
+              className={cx(classes.icon, { [classes.iconVisible]: showIcon })}
+            />
+          }
           className={cx(classes.button, {
             [classes.largeText]: parseInt(lineHeight as string, 10) >= 28,
           })}
@@ -160,11 +167,6 @@ export const HvInlineEditor = ({
           >
             {value || placeholder}
           </HvTypography>
-          <Edit
-            color="secondary_60"
-            role="presentation"
-            className={cx(classes.icon, { [classes.iconVisible]: showIcon })}
-          />
         </HvButton>
       )}
     </div>

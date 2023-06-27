@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Alert } from "@hitachivantara/uikit-react-icons";
-import { HvButton } from "./Button";
+import { HvButton, buttonVariant } from "./Button";
 import { HvLoading } from "..";
 
 describe("Button", () => {
@@ -44,42 +44,20 @@ describe("Button", () => {
   });
 
   it("disables for all variants", () => {
-    const { getByRole } = render(
+    render(
       <div>
-        <HvButton variant="primary" disabled>
-          Primary
-        </HvButton>
-        <HvButton variant="primarySubtle" disabled>
-          Primary Subtle
-        </HvButton>
-        <HvButton variant="primaryGhost" disabled>
-          Primary Ghost
-        </HvButton>
-        <HvButton variant="secondary" disabled>
-          Secondary
-        </HvButton>
-        <HvButton variant="secondarySubtle" disabled>
-          Secondary Subtle
-        </HvButton>
-        <HvButton variant="secondaryGhost" disabled>
-          Secondary Ghost
-        </HvButton>
+        {buttonVariant.map((variant) => (
+          <HvButton key={variant} variant={variant} disabled>
+            {variant}
+          </HvButton>
+        ))}
       </div>
     );
 
-    const primary = getByRole("button", { name: "Primary" });
-    expect(primary).toBeDisabled();
-    const primarySubtle = getByRole("button", { name: "Primary Subtle" });
-    expect(primarySubtle).toBeDisabled();
-    const primaryGhost = getByRole("button", { name: "Primary Ghost" });
-    expect(primaryGhost).toBeDisabled();
-
-    const secondary = getByRole("button", { name: "Secondary" });
-    expect(secondary).toBeDisabled();
-    const secondarySubtle = getByRole("button", { name: "Secondary Subtle" });
-    expect(secondarySubtle).toBeDisabled();
-    const secondaryGhost = getByRole("button", { name: "Secondary Ghost" });
-    expect(secondaryGhost).toBeDisabled();
+    buttonVariant.forEach((variant) => {
+      const button = screen.getByRole("button", { name: variant });
+      expect(button).toBeDisabled();
+    });
   });
 
   it(`is type="button" by default`, () => {

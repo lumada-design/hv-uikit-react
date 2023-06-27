@@ -101,6 +101,7 @@ export const StyledButton = ({ type: Component, props }) =>
     maxWidth: 200,
     transition: "none",
     flex: "1 0 0px",
+    padding: 0,
     borderTop: `solid 1px ${theme.colors.atmo4}`,
     borderBottom: `solid 1px ${theme.colors.atmo4}`,
     borderLeft: "solid 1px transparent",

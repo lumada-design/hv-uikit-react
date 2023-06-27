@@ -101,35 +101,26 @@ exports[`FileUploader > should render correctly 1`] = `
         </span>
         <button
           aria-label="Remove File"
-          class="HvFile-removeButton e6pb7kb0 HvButton-root css-ag14u3-StyledButton-StyledIconButton e138pvrm0"
-          id="hvfilelist4-values-remove-button"
+          class="HvButton-root HvButton-icon HvFile-removeButton css-thin9a-StyledIconButton e6pb7kb0 hv-ukdrh6"
           type="button"
         >
           <div
-            class="css-1nxr552-StyledContentDiv e138pvrm3"
+            class="css-f95wjz"
+            name="Close"
           >
-            <span
-              class="css-1o4qkkz-StyledChildren e138pvrm1"
+            <svg
+              focusable="false"
+              height="12"
+              viewBox="0 0 16 16"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="css-f95wjz"
-                name="Close"
-              >
-                <svg
-                  focusable="false"
-                  height="12"
-                  viewBox="0 0 16 16"
-                  width="12"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                    fill="var(--uikit-colors-secondary)"
-                  />
-                </svg>
-              </div>
-            </span>
+              <path
+                class="color0"
+                d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
           </div>
         </button>
       </li>
@@ -156,35 +147,26 @@ exports[`FileUploader > should render correctly 1`] = `
         </span>
         <button
           aria-label="Remove File"
-          class="HvFile-removeButton e6pb7kb0 HvButton-root css-ag14u3-StyledButton-StyledIconButton e138pvrm0"
-          id="hvfilelist4-values-remove-button"
+          class="HvButton-root HvButton-icon HvFile-removeButton css-thin9a-StyledIconButton e6pb7kb0 hv-ukdrh6"
           type="button"
         >
           <div
-            class="css-1nxr552-StyledContentDiv e138pvrm3"
+            class="css-f95wjz"
+            name="Close"
           >
-            <span
-              class="css-1o4qkkz-StyledChildren e138pvrm1"
+            <svg
+              focusable="false"
+              height="12"
+              viewBox="0 0 16 16"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="css-f95wjz"
-                name="Close"
-              >
-                <svg
-                  focusable="false"
-                  height="12"
-                  viewBox="0 0 16 16"
-                  width="12"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                    fill="var(--uikit-colors-secondary)"
-                  />
-                </svg>
-              </div>
-            </span>
+              <path
+                class="color0"
+                d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
           </div>
         </button>
       </li>
