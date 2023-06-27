@@ -37,6 +37,8 @@ coverage
 # clean-publish
 package
 
-# blackduck
+# security
 detect.sh
 output
+reports
+dependency-check-bin

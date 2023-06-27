@@ -18,34 +18,23 @@ jobs:
     name: Run CodeDx Scans
     runs-on: [self-hosted, Linux]
 
-    env:
-      CODE_DX_URL: "${{ secrets.CODE_DX_URL }}"
-      CODE_DX_API_KEY: ${{ secrets.CODE_DX_API_KEY }}
-      CODE_DX_PROJECT_ID: 120
-      DEP_CHECK_VERSION: 8.1.2
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: "11"
-          distribution: "adopt"
-
       - name: Run Dependency Check Scans
-        run: .github/scripts/dependency-check.sh
-
-      - name: Archive Reports
-        uses: actions/upload-artifact@v3
+        uses: dependency-check/Dependency-Check_Action@1.1.0
         with:
-          name: dependency-check-reports
-          path: ./reports
-          retention-days: 2
+         project: "uikit"
+         path: "."
+         format: "XML"
 
       - name: Upload Reports to CodeDX
         run: .github/scripts/codedx-upload.sh
+        env:
+          CODE_DX_URL: "${{ secrets.CODE_DX_URL }}"
+          CODE_DX_API_KEY: ${{ secrets.CODE_DX_API_KEY }}
+          CODE_DX_PROJECT_ID: 120
 
   black-duck-scans:
     name: Run Black Duck Scans
