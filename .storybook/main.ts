@@ -20,6 +20,7 @@ module.exports = {
     "@storybook/addon-links",
     __dirname + "/addons/version-selector/register",
     __dirname + "/addons/theme-selector/register",
+    __dirname + "/addons/mode-selector/register",
   ],
   framework: "@storybook/react",
   core: {

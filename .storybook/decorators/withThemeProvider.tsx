@@ -20,15 +20,16 @@ const withThemeProvider = (story) => {
     channel.on("THEME_SELECT", switchTheme);
 
     return () => {
-      channel.removeListener("THEME_SELECT", switchTheme);
+      channel.off("THEME_SELECT", switchTheme);
     };
-  });
+  }, []);
 
   return (
     <>
       <Global styles={storyStyles} />
       <HvProvider
-        classNameKey="hv"
+        classNameKey="hv-story"
+        cssTheme="scoped"
         themes={[ds5, ds3]}
         theme={selectedTheme?.split("-")[0]}
         colorMode={selectedTheme?.split("-")[1]}

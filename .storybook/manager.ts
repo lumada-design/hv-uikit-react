@@ -1,11 +1,11 @@
-import "./theme/fonts/font-faces.css";
-
 import { addons } from "@storybook/addons";
 
-import theme from "./theme";
+import "./theme/fonts/font-faces.css";
+import { themes } from "./theme";
+import { getInitialMode } from "./addons/mode-selector/utils";
 
 addons.setConfig({
-  theme: theme,
+  theme: themes[getInitialMode()],
   panelPosition: "bottom",
   enableShortcuts: true,
   showNav: true,
