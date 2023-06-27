@@ -1,18 +1,12 @@
 import { HvButton, HvTypography } from "@hitachivantara/uikit-react-core";
 
-import { useDarkMode } from "storybook-dark-mode";
-
 import { Wrapper, BackgroundWrapper, ContentWrapper } from "./styles";
 
 const Header = () => {
-  const dark = useDarkMode();
-
   return (
     <BackgroundWrapper
       style={{
-        backgroundImage: `url(${
-          dark ? "welcome-dark.png" : "welcome-light.png"
-        })`,
+        backgroundImage: `url(welcome-dark.png)`,
       }}
     >
       <Wrapper>

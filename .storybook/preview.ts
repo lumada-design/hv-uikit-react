@@ -1,15 +1,15 @@
-import { colors } from "@hitachivantara/uikit-styles";
+/* import { colors } from "@hitachivantara/uikit-styles";
 
 import { themes } from "@storybook/theming";
-
+ */
 import DocsContainer from "./blocks/DocsContainer";
 import withThemeProvider from "./decorators/withThemeProvider";
 
-const common = {
+/* const common = {
   appBorderRadius: 0,
   fontBase: "'Open Sans',sans-serif",
   brandTitle: "NEXT UI Kit",
-};
+}; */
 
 export const parameters = {
   viewMode: process.env.STORYBOOK_VIEW_MODE,
@@ -22,7 +22,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  darkMode: {
+  /* darkMode: {
     dark: {
       ...themes.dark,
       ...common,
@@ -49,7 +49,7 @@ export const parameters = {
       barBg: colors.light.atmo1,
       brandImage: "ui-kit-logo-light.png",
     },
-  },
+  }, */
   options: {
     storySort: {
       order: [
