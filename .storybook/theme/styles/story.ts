@@ -1,4 +1,4 @@
-export const getStoryStyles = (theme) => {
+export const getStoryStyles = (bgColor: string) => {
   return {
     "body.sb-main-padded.sb-show-main": {
       padding: 0,
@@ -9,7 +9,11 @@ export const getStoryStyles = (theme) => {
     },
 
     ".docs-story": {
-      backgroundColor: theme.colors.atmo2,
+      backgroundColor: bgColor,
+    },
+
+    ".sb-main-fullscreen.sb-show-main": {
+      backgroundColor: bgColor,
     },
   };
 };
