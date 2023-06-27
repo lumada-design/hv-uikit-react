@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
@@ -30,6 +30,10 @@ import {
   hvProgressColumn,
 } from "../../renderers/renderers";
 import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
+
+export default {
+  component: HvTable,
+} satisfies Meta<typeof HvTable>;
 
 const EmptyRow = ({ height }) => (
   <HvTableRow>

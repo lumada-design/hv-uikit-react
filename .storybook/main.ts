@@ -1,7 +1,7 @@
-const tsconfigPaths = require("vite-tsconfig-paths");
-const path = require("path");
+import { StorybookConfig } from "@storybook/react-vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
-module.exports = {
+const config: StorybookConfig = {
   stories: [
     "../docs/**/*.stories.@(tsx|mdx)",
     "../packages/**/src/**/*.stories.@(ts|tsx|mdx)",
@@ -18,17 +18,19 @@ module.exports = {
     },
     "@storybook/addon-a11y",
     "@storybook/addon-links",
+    "@storybook/addon-mdx-gfm",
     __dirname + "/addons/version-selector/register",
     __dirname + "/addons/theme-selector/register",
   ],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-vite",
+  framework: {
+    name: "@storybook/react-vite",
+    options: {},
   },
   features: {
     storyStoreV7: true,
-    uildStoriesJson: true,
+    // buildStoriesJson: true,
   },
+
   staticDirs: [
     "./assets",
     {
@@ -36,9 +38,13 @@ module.exports = {
       to: "assets/steelwheels.arrow",
     },
   ],
+  // is auto
   async viteFinal(config, { configType }) {
-    config.plugins.push(tsconfigPaths.default({ loose: true }));
-
+    config.plugins?.push(
+      tsconfigPaths({
+        loose: true,
+      })
+    );
     config.optimizeDeps = {
       ...config.optimizeDeps,
       include: [
@@ -50,11 +56,9 @@ module.exports = {
         "@storybook/addon-links",
       ],
     };
-
     if (configType === "PRODUCTION") {
       config.base = "./";
     }
-
     return config;
   },
   typescript: {
@@ -65,4 +69,9 @@ module.exports = {
       shouldRemoveUndefinedFromOptional: true,
     },
   },
+  docs: {
+    autodocs: true, // TODO: review
+  },
 };
+
+export default config;

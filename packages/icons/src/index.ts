@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
-import fs from "fs";
+import fs from "node:fs";
+import path from "node:path";
 import { Parser } from "html-to-react";
-import path from "path";
 import ReactDOMServer from "react-dom/server";
 import recursive from "recursive-readdir";
-import yargs from "yargs";
 import jsdom from "jsdom-no-contextify";
 import { colors } from "@hitachivantara/uikit-styles";
 
@@ -20,19 +19,21 @@ import sizeReplacer from "./sizeUtils/sizeReplacer";
 const printErrors = console.warn;
 
 // Argument setup
-const args = yargs // reading arguments from the command line
-  .option("format", { default: true })
-  .option("output", { alias: "o" })
-  .option("input", { alias: "i" })
-  .option("rm-style", { default: false })
-  .option("force", { alias: "f", default: false }).argv;
+const args = {
+  _: ["dir"],
+  input: "assets",
+  output: "bin",
+  format: true,
+  rmStyle: false,
+  force: true,
+};
 
 // Resolve arguments
 const firstArg = args._[0];
 const secondArgs = args._[1] || "MyComponent";
 const inputPath = args.input;
 const { rmStyle, format } = args;
-const outputPath = args.output as string;
+const outputPath = args.output;
 
 // Bootstrap base variables
 const htmlToReactParser = new (Parser as any)();

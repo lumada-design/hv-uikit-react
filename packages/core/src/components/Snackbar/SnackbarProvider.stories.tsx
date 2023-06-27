@@ -9,6 +9,11 @@ import {
   HvSnackbarProvider,
   useHvSnackbar,
 } from "@core/components";
+import { Meta } from "@storybook/react";
+
+export default {
+  component: HvSnackbarProvider,
+} satisfies Meta<typeof HvSnackbarProvider>;
 
 const Button = ({ onClick, variant }) => (
   <HvButton
@@ -21,7 +26,7 @@ const Button = ({ onClick, variant }) => (
   </HvButton>
 );
 
-const SnackbarWithAction = ({ label, variant }: HvSnackbarProps) => {
+export const SnackbarWithAction = ({ label, variant }: HvSnackbarProps) => {
   const { enqueueSnackbar } = useHvSnackbar();
 
   const handleOpen = () => {
@@ -40,7 +45,7 @@ const SnackbarWithAction = ({ label, variant }: HvSnackbarProps) => {
   return <Button onClick={handleOpen} variant={variant} />;
 };
 
-const Snackbar = ({ label, variant }: HvSnackbarProps) => {
+export const Snackbar = ({ label, variant }: HvSnackbarProps) => {
   const { enqueueSnackbar } = useHvSnackbar();
 
   const handleOpen = () => {

@@ -8,16 +8,11 @@ import { getDocsStyles } from "../theme/styles/docs";
 export default ({ context, children }) => {
   const docsStyles = getDocsStyles(theme);
 
-  const docsContext = {
-    ...context,
-    parameters: { ...context.parameters, docs: { ...context.parameters.docs } },
-  };
-
   return (
     <>
       <Global styles={docsStyles} />
       <HvProvider>
-        <DocsContainer context={docsContext}>{children}</DocsContainer>
+        <DocsContainer context={context}>{children}</DocsContainer>
       </HvProvider>
     </>
   );

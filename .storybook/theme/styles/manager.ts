@@ -1,21 +1,27 @@
-export const getManagerStyles = (theme) => {
+import { HvTheme } from "@hitachivantara/uikit-styles";
+
+export const getManagerStyles = (theme: HvTheme) => {
   return {
     ".sidebar-container": {
-      ".sidebar-header button": {
-        display: "none",
-      },
+      ".sidebar-header": {
+        button: {
+          position: "absolute",
+          right: 0,
+          top: 0,
+        },
 
-      ".sidebar-header div": {
-        margin: 0,
-      },
+        div: {
+          margin: 0,
+        },
 
-      ".sidebar-header a": {
-        textAlign: "center",
-        fontSize: 27,
-      },
+        a: {
+          textAlign: "center",
+          fontSize: 27,
+        },
 
-      ".sidebar-header img": {
-        width: "80%",
+        img: {
+          // width: "80%",
+        },
       },
 
       "#storybook-explorer-searchfield": {

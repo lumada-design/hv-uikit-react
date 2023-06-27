@@ -33,20 +33,22 @@ const Header = () => {
               React UI library for the Next Design System
             </HvTypography>
           </>
-          <div>
-            <HvButton variant="primary" style={{ marginRight: 10 }}>
-              <a href="https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--page">
-                Get Started
-              </a>
+          <div style={{ display: "flex", gap: 10 }}>
+            <HvButton
+              variant="primary"
+              component="a"
+              href="https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--page"
+            >
+              Get Started
             </HvButton>
-            <HvButton variant="primarySubtle">
-              <a
-                href="https://github.com/lumada-design/hv-uikit-react"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View on GitHub
-              </a>
+            <HvButton
+              variant="primarySubtle"
+              component="a"
+              href="https://github.com/lumada-design/hv-uikit-react"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View on GitHub
             </HvButton>
           </div>
         </ContentWrapper>

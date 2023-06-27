@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { useFlexLayout, useBlockLayout, useAbsoluteLayout } from "react-table";
 import range from "lodash/range";
 import {
@@ -47,6 +47,10 @@ import {
   useServerData,
 } from "../storiesUtils";
 import LoadingContainer from "./LoadingContainer";
+
+export default {
+  component: HvTable,
+} satisfies Meta<typeof HvTable>;
 
 const EmptyRow = ({ height }) => (
   <HvTableRow>

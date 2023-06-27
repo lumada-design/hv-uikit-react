@@ -1,8 +1,9 @@
+import { Preview } from "@storybook/react";
 import DocsContainer from "./blocks/DocsContainer";
 import withThemeProvider from "./decorators/withThemeProvider";
 
-export const parameters = {
-  viewMode: process.env.STORYBOOK_VIEW_MODE,
+export const parameters: Preview["parameters"] = {
+  // viewMode: process.env.STORYBOOK_VIEW_MODE,
   layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },
   docs: { container: DocsContainer, source: { type: "dynamic" } },
@@ -46,4 +47,4 @@ export const parameters = {
   },
 };
 
-export const decorators = [withThemeProvider];
+export const decorators: Preview["decorators"] = [withThemeProvider];
