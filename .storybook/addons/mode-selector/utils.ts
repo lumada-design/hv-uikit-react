@@ -10,9 +10,9 @@ export const getLocalMode = (): string | null => {
 
 export const getInitialMode = () => {
   const localMode = getLocalMode();
-  const prefersDark = window?.matchMedia?.(
+  /* const prefersDark = window?.matchMedia?.(
     "(prefers-color-scheme: dark)"
-  )?.matches;
+  )?.matches; */
 
-  return localMode ?? (prefersDark ? "wicked" : "dawn");
+  return localMode ?? "wicked";
 };
