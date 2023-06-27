@@ -1,26 +1,16 @@
-import { useState, useEffect } from "react";
-import {
-  HvButton,
-  HvTypography,
-  useTheme,
-} from "@hitachivantara/uikit-react-core";
-import { Wrapper, BackgroundWrapper, ContentWrapper } from "./styles";
+import { HvButton, HvTypography } from "@hitachivantara/uikit-react-core";
 
-const getIsDark = (mode) => mode.includes("wicked");
+import { Wrapper, BackgroundWrapper, ContentWrapper } from "./styles";
+import { useModeSelector } from "../../../../.storybook/addons/mode-selector/useModeSelector";
 
 const Header = () => {
-  const { selectedMode } = useTheme();
-  const [isDark, setIsDark] = useState(getIsDark(selectedMode));
-
-  useEffect(() => {
-    setIsDark(getIsDark(selectedMode));
-  }, [selectedMode]);
+  const dark = useModeSelector();
 
   return (
     <BackgroundWrapper
       style={{
         backgroundImage: `url(${
-          isDark ? "welcome-dark.png" : "welcome-light.png"
+          dark ? "welcome-dark.png" : "welcome-light.png"
         })`,
       }}
     >

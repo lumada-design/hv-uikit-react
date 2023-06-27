@@ -16,7 +16,9 @@ export const getInitialTheme = (themes) => {
   ).matches;
 
   const initialTheme = localTheme ? localTheme.split("-")[0] : DEFAULT_THEME;
-  const initialMode = `${prefersDark ? "wicked" : "dawn"}`;
+  const initialMode = localTheme
+    ? localTheme.split("-")[1]
+    : `${prefersDark ? "wicked" : "dawn"}`;
 
   return themes.find(
     (theme) => theme.name === `${initialTheme}-${initialMode}`
