@@ -139,9 +139,7 @@ export const Variants = ({ onClick }) => {
       <HvButton variant="primaryGhost" onClick={onClick}>
         Primary Ghost
       </HvButton>
-      <HvButton variant="secondary" onClick={onClick}>
-        Secondary
-      </HvButton>
+      <div />
       <HvButton variant="secondarySubtle" onClick={onClick}>
         Secondary Subtle
       </HvButton>
