@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.8.5 (2023-06-28)
+
+### Bug Fixes
+
+- **Snackbar:** fix incorrect action button ([#3464](https://github.com/lumada-design/hv-uikit-react/issues/3464)) ([11b25a7](https://github.com/lumada-design/hv-uikit-react/commit/11b25a749532ef9f870ab59a21e356a59d6df78b))
+
 ## [5.8.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.8.3...@hitachivantara/uikit-styles@5.8.4) (2023-06-22)
 
 ### Bug Fixes
