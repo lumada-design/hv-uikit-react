@@ -20,13 +20,9 @@ const Colors = (): JSX.Element => {
 
   const colorChangedHandler = (colorName: string, colorValue: string) => {
     updateCustomTheme({
-      ...customTheme,
       colors: {
-        ...customTheme.colors,
         modes: {
-          ...customTheme.colors.modes,
           [selectedMode]: {
-            ...customTheme.colors.modes[selectedMode],
             [colorName]: colorValue,
           },
         },

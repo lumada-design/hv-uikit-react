@@ -1,6 +1,5 @@
 import {
   createTheme,
-  HvBaseTheme,
   HvBox,
   HvButton,
   HvTooltip,
@@ -16,13 +15,7 @@ import {
   useState,
 } from "react";
 import debounce from "lodash/debounce";
-import {
-  Download,
-  Undo,
-  Redo,
-  Reset,
-  Duplicate,
-} from "@hitachivantara/uikit-react-icons";
+import { Download, Reset, Duplicate } from "@hitachivantara/uikit-react-icons";
 import { getThemeCode } from "generator/utils";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 import { IconButton } from "components/common/IconButton";
@@ -37,15 +30,8 @@ const CodeEditor = ({
 }): JSX.Element => {
   const { selectedTheme, selectedMode, changeTheme } = useTheme();
 
-  const {
-    customTheme,
-    updateCustomTheme,
-    undo,
-    redo,
-    canUndo,
-    canRedo,
-    themeChanges,
-  } = useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme, themeChanges } =
+    useContext(GeneratorContext);
 
   const fileName = `${themeName}.ts`;
 
@@ -67,9 +53,9 @@ const CodeEditor = ({
   const onResetHandler = () => {
     const newTheme = createTheme({
       name: "customTheme",
-      base: selectedTheme as HvBaseTheme,
+      base: "ds5",
     });
-    updateCustomTheme(newTheme);
+    updateCustomTheme({ ...newTheme }, { isReset: true });
   };
 
   const codeChangedHandler = (code?: string) => {
@@ -87,11 +73,19 @@ const CodeEditor = ({
 
     try {
       const parsed = JSON.parse(themeJson);
-      if (customTheme.base !== parsed.base) {
+      if (
+        customTheme.base !== parsed.base &&
+        (parsed.base === "ds3" || parsed.base === "ds5")
+      ) {
         changeTheme(parsed.base, selectedMode);
+        updateCustomTheme(
+          { base: parsed.base },
+          {
+            isBaseChange: true,
+          }
+        );
       } else {
-        const newTheme = createTheme(parsed);
-        updateCustomTheme(newTheme);
+        updateCustomTheme({ ...parsed });
       }
     } catch {
       console.log("error processing theme JSON");
@@ -116,22 +110,10 @@ const CodeEditor = ({
         </HvTooltip>
         <HvBox css={{ display: "flex" }}>
           <IconButton
-            label="Undo"
-            icon={<Undo />}
-            disabled={!canUndo}
-            onClick={undo}
-          />
-          <IconButton
-            label="Redo"
-            icon={<Redo />}
-            disabled={!canRedo}
-            onClick={redo}
-          />
-          <IconButton
             label="Reset"
             icon={<Reset />}
-            disabled={!canUndo && !canRedo}
             onClick={onResetHandler}
+            disabled={!themeChanges || Object.keys(themeChanges).length === 0}
           />
           <IconButton
             label="Copy to Clipboard"
@@ -143,7 +125,6 @@ const CodeEditor = ({
       <HvCodeEditor
         options={{
           minimap: { enabled: false },
-          // readOnly: true,
           lineDecorationsWidth: 0,
           lineNumbersMinChars: 0,
         }}

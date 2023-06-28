@@ -30,9 +30,7 @@ const Spacing = () => {
         : currValues.get(spacing) || 0;
 
     updateCustomTheme({
-      ...customTheme,
       space: {
-        ...customTheme.space,
         [spacing]:
           spacing === "base"
             ? parseInt(spacingValue.toString(), 10)

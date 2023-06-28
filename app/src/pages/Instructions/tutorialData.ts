@@ -55,7 +55,7 @@ export const tutorialData: StepProps[] = [
   {
     title: "Code Editor",
     content:
-      "All the changes you make to your theme will be available here. You can use the icons to reset or copy the code.",
+      "All the changes you make to your theme will be available here. You can use the icons to reset or copy the code and the usual keyboard shortcuts to undo or redo.",
     orientation: "right",
     size: {
       width: 350,

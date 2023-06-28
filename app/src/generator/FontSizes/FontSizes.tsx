@@ -14,7 +14,7 @@ import { styles } from "./FontSizes.styles";
 
 const FontSizes = () => {
   const { activeTheme } = useTheme();
-  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
+  const { updateCustomTheme } = useContext(GeneratorContext);
   const [fontSizes, setFontSizes] = useState<HvListValue[]>([]);
   const [fontSize, setFontSize] = useState(""); // base, sm, ...
   const [fontValue, setFontValue] = useState<number>(); // 14, 16, ...
@@ -59,9 +59,7 @@ const FontSizes = () => {
     const fixedValue = value.toFixed(unit === "em" || unit === "rem" ? 1 : 0);
 
     updateCustomTheme({
-      ...customTheme,
       fontSizes: {
-        ...customTheme.fontSizes,
         [fontSize]: `${fixedValue}${unit}`,
       },
     });
@@ -86,9 +84,7 @@ const FontSizes = () => {
     }
 
     updateCustomTheme({
-      ...customTheme,
       fontSizes: {
-        ...customTheme.fontSizes,
         [fontSize]: `${fontValue}${parsedUnit}`,
       },
     });

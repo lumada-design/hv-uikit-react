@@ -27,9 +27,7 @@ const Radii = () => {
     const radiiValue = currValues.get(radii) || 0;
 
     updateCustomTheme({
-      ...customTheme,
       radii: {
-        ...customTheme.radii,
         [radii]: radii === "base" ? radiiValue : radiiValue,
       },
     });

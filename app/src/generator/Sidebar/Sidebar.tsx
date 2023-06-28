@@ -1,5 +1,4 @@
 import {
-  createTheme,
   HvBaseTheme,
   HvBox,
   HvDropdown,
@@ -13,7 +12,7 @@ import {
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { lazy, Suspense, useContext, useEffect, useState } from "react";
+import { lazy, Suspense, useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import CodeEditor from "generator/CodeEditor";
 import {
@@ -38,25 +37,19 @@ const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, changeTheme, themes } =
     useTheme();
 
-  const { customTheme, updateCustomTheme, open, themeChanges } =
-    useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme, open } = useContext(GeneratorContext);
 
   const [copied, setCopied] = useState(false);
   const [tab, setTab] = useState(0);
 
-  useEffect(() => {
-    const newTheme = createTheme({
-      name: customTheme.name,
-      base: selectedTheme as HvBaseTheme,
-      ...themeChanges,
-    });
-    updateCustomTheme(newTheme, false, false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [customTheme.name, selectedTheme, themeChanges]);
-
   const handleClose: HvSnackbarProps["onClose"] = (event, reason) => {
     if (reason === "clickaway") return;
     setCopied(false);
+  };
+
+  const handleThemeChange = (base: HvBaseTheme, mode: string) => {
+    updateCustomTheme({ base, name: customTheme.name }, { isBaseChange: true });
+    changeTheme(base, mode);
   };
 
   return (
@@ -84,7 +77,7 @@ const Sidebar = () => {
                 selected: name === selectedTheme,
               }))}
               onChange={(base) => {
-                changeTheme((base as HvListValue)?.value, selectedMode);
+                handleThemeChange((base as HvListValue)?.value, selectedMode);
               }}
             />
             <HvTypography variant="label">Mode:</HvTypography>

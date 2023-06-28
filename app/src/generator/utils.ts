@@ -35,13 +35,13 @@ export const extractFontsNames = (webfontLink: string): string[] => {
   return fontNames;
 };
 
-export const themeDiff = (a: object, b: object, rootLevel = true): object => {
+export const themeDiff = (a: object, b: object): object => {
   const diff: Record<string, object> = {};
   for (const key in b) {
-    if (rootLevel && (key === "name" || key === "base")) {
-      // eslint-disable-next-line no-continue
-      continue; // ignore 'name' and 'base' at the root level
-    }
+    // if (rootLevel && (key === "name" || key === "base")) {
+    //   // eslint-disable-next-line no-continue
+    //   continue; // ignore 'name' and 'base' at the root level
+    // }
     if (
       typeof b[key as keyof typeof b] === "object" &&
       b[key as keyof typeof b] !== null &&
@@ -50,8 +50,8 @@ export const themeDiff = (a: object, b: object, rootLevel = true): object => {
     ) {
       const nestedDiff = themeDiff(
         a[key as keyof typeof b],
-        b[key as keyof typeof b],
-        false
+        b[key as keyof typeof b]
+        // false
       );
       if (Object.keys(nestedDiff).length > 0) {
         diff[key] = nestedDiff;
