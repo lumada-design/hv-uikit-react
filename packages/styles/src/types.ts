@@ -394,7 +394,6 @@ export type HvThemeComponents = {
   carousel: {
     xsControlsDisplay: CSSProperties["display"];
     counterContainerDisplay: CSSProperties["display"];
-    actionsOffsetTop: CSSProperties["top"];
     mainContainerFlexDirection: CSSProperties["flexDirection"];
     controlsBorder: CSSProperties["border"];
     controlsJustifyContent: CSSProperties["justifyContent"];

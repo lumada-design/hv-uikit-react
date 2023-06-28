@@ -601,7 +601,6 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   carousel: {
     xsControlsDisplay: "none",
     counterContainerDisplay: "block",
-    actionsOffsetTop: `calc(-32px - ${theme.space.xs})`,
     mainContainerFlexDirection: "column-reverse",
     controlsBorder: "none",
     controlsBackgroundColor: "transparent",
