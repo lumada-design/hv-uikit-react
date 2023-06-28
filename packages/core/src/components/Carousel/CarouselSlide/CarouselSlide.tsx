@@ -20,6 +20,7 @@ export interface HvCarouselSlideProps
  */
 export const HvCarouselSlide = ({
   classes: classesProp = {},
+  className,
   children,
   size: flexBasis = "100%",
   src,
@@ -28,7 +29,13 @@ export const HvCarouselSlide = ({
 }: HvCarouselSlideProps) => {
   const { classes, css, cx } = useClasses(classesProp);
   return (
-    <div className={cx(css({ flex: `0 0 ${flexBasis}` }), classes.slide)}>
+    <div
+      className={cx(
+        css({ flex: `0 0 ${flexBasis}` }),
+        classes.slide,
+        className
+      )}
+    >
       {children ?? (
         <img className={classes.image} src={src} alt={alt} {...props} />
       )}

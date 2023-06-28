@@ -55,11 +55,19 @@ export function createClasses<Name extends string, ClassName extends string>(
 
   const staticClasses = getClasses(Object.keys(styles) as ClassName[], name);
 
-  function useClasses(classesProp: Partial<Record<ClassName, string>> = {}) {
+  /**
+   * Hook that takes in a component's `classesProp` overrides, and returns the
+   * concatenated static/internal/override `classes`, and the cached `cx` and `css` utilities.
+   */
+  function useClasses(
+    classesProp: Partial<Record<ClassName, string>> = {},
+    /** Whether to add the static classes. Disable when included by `classesProp` */
+    addStatic = true
+  ) {
     const { cx, css } = useCss();
 
     const mergeClasses = (key: string) =>
-      cx(`${name}-${key}`, css(styles[key]), classesProp?.[key]);
+      cx(addStatic && `${name}-${key}`, css(styles[key]), classesProp?.[key]);
 
     const classes = Object.fromEntries(
       Object.keys(styles).map((key) => [key, mergeClasses(key)])

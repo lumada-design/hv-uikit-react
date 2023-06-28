@@ -13,10 +13,16 @@ import {
   Close,
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
-import { HvButton, HvContainer, HvStack, HvTypography } from "@core/components";
-import { HvBaseProps } from "@core/types";
-import { ExtractNames } from "@core/utils";
+import {
+  ExtractNames,
+  HvBaseProps,
+  HvButton,
+  HvContainer,
+  HvTypography,
+} from "../..";
 
+import { HvCarouselControls } from "./CarouselControls";
+import { HvCarouselThumbnails } from "./CarouselThumbnails";
 import { staticClasses, useClasses } from "./Carousel.styles";
 
 const clamp = (num: number, max: number, min = 0) =>
@@ -188,44 +194,16 @@ export const HvCarousel = (props: HvCarouselProps) => {
       </div>
 
       <div className={classes.mainContainer}>
-        <div className={classes.controls}>
-          {showDots ? (
-            <div className={classes.dots}>
-              {Array.from(Array(numSlides)).map((el, index) => (
-                <span
-                  key={`circle-${index}`}
-                  className={cx(classes.dot, {
-                    [classes.dotSelected]: index === selectedIndex,
-                  })}
-                />
-              ))}
-            </div>
-          ) : (
-            <>
-              <HvButton
-                icon
-                disabled={!canPrev}
-                variant="secondaryGhost"
-                aria-label="Backwards"
-                onClick={handlePrevious}
-              >
-                <Backwards iconSize="XS" />
-              </HvButton>
-              <div className={classes.pageCounter}>
-                {`${selectedIndex + 1} / ${numSlides}`}
-              </div>
-              <HvButton
-                icon
-                disabled={!canNext}
-                variant="secondaryGhost"
-                aria-label="Forwards"
-                onClick={handleNext}
-              >
-                <Forwards iconSize="XS" />
-              </HvButton>
-            </>
-          )}
-        </div>
+        <HvCarouselControls
+          classes={classes}
+          showDots={showDots}
+          page={selectedIndex}
+          pages={numSlides}
+          canPrevious={canPrev}
+          canNext={canNext}
+          onPreviousClick={handlePrevious}
+          onNextClick={handleNext}
+        />
 
         <div
           className={cx(classes.main, {
@@ -275,24 +253,15 @@ export const HvCarousel = (props: HvCarouselProps) => {
       </div>
 
       {showThumbnails && (
-        <div ref={thumbnailsRef} className={classes.panel}>
-          <HvStack direction="row" spacing="xs">
-            {Array.from(Array(numSlides)).map((doc, i) => (
-              <HvButton
-                icon
-                variant="secondaryGhost"
-                key={`button-${i}`}
-                style={{ width: thumbnailWidth }}
-                className={cx(classes.thumbnail, {
-                  [classes.thumbnailSelected]: i === selectedIndex,
-                })}
-                onClick={() => handleScroll(i)}
-              >
-                {renderThumbnail(i)}
-              </HvButton>
-            ))}
-          </HvStack>
-        </div>
+        <HvCarouselThumbnails
+          classes={classes}
+          ref={thumbnailsRef}
+          page={selectedIndex}
+          pages={numSlides}
+          width={thumbnailWidth}
+          onThumbnailClick={(evt, i) => handleScroll(i)}
+          renderThumbnail={renderThumbnail}
+        />
       )}
     </HvContainer>
   );
