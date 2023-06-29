@@ -23,6 +23,7 @@ export * from "./Button";
 export * from "./Card";
 export * from "./Container";
 export * from "./Dialog";
+export * from "./Drawer";
 export * from "./EmptyState";
 export * from "./Footer";
 export * from "./Grid";
