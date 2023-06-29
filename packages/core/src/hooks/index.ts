@@ -1,5 +1,7 @@
 export * from "./useClickOutside";
 export * from "./useControlled";
+export * from "./useCss";
+export * from "./useDefaultProps";
 export { default as useForkRef } from "./useForkRef";
 export * from "./useImageLoaded";
 export * from "./useSelectionPath";

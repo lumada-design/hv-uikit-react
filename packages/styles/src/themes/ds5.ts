@@ -170,6 +170,12 @@ const ds5 = makeTheme((theme: HvTheme) => ({
       textDecoration: "underline",
     },
   },
+  components: {
+    avatar: {
+      size: "lg",
+      variant: "square",
+    },
+  },
   actionBar: {
     borderTop: `1px solid ${theme.colors.atmo3}`,
   },

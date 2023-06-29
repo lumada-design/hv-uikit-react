@@ -4,7 +4,7 @@ import { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 import { clsx } from "clsx";
 import { CSSProperties, HTMLAttributes } from "react";
 import { HvBaseProps } from "@core/types";
-import { useImageLoaded } from "@core/hooks";
+import { useDefaultProps, useImageLoaded } from "@core/hooks";
 import { decreaseSize } from "@core/utils";
 import {
   StyledAvatar,
@@ -72,26 +72,27 @@ const getColor = (color: string, defaultColor: string): string =>
  * Avatars can be used to represent a user or a brand.
  * They can show an image, an icon or the initial letters of a name, for example.
  */
-export const HvAvatar = ({
-  className,
-  style,
-  classes,
-  children: childrenProp,
-  component = "div",
-  size = "sm",
-  backgroundColor = "secondary",
-  color = "atmo1",
-  src,
-  srcSet,
-  sizes,
-  alt,
-  imgProps,
-  status,
-  badge,
-  variant = "circular",
-  avatarProps,
-  ...others
-}: HvAvatarProps) => {
+export const HvAvatar = (props: HvAvatarProps) => {
+  const {
+    className,
+    style,
+    classes,
+    children: childrenProp,
+    component = "div",
+    size = "sm",
+    backgroundColor = "secondary",
+    color = "atmo1",
+    src,
+    srcSet,
+    sizes,
+    alt,
+    imgProps,
+    status,
+    badge,
+    variant = "circular",
+    avatarProps,
+    ...others
+  } = useDefaultProps("avatar", props);
   let children: React.ReactNode;
 
   // Use a hook instead of onError on the img element to support server-side rendering.

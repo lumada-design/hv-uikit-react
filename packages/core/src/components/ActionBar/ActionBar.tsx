@@ -1,5 +1,6 @@
 import { HvBaseProps } from "@core/types";
 import { ExtractNames } from "@core/utils";
+import { useDefaultProps } from "@core/hooks";
 import { staticClasses, useClasses } from "./ActionBar.styles";
 
 export { staticClasses as actionBarClasses };
@@ -12,7 +13,12 @@ export interface HvActionBarProps extends HvBaseProps {
 }
 
 export const HvActionBar = (props: HvActionBarProps) => {
-  const { classes: classesProp, className, children, ...others } = props;
+  const {
+    classes: classesProp,
+    className,
+    children,
+    ...others
+  } = useDefaultProps("actionBar", props);
   const { classes, cx } = useClasses(classesProp);
 
   return (
