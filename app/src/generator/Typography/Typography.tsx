@@ -89,12 +89,8 @@ const Typography = () => {
     const unit = updatedSizes.get(typographyName)?.unit || "px";
     const fixedValue = value.toFixed(unit === "em" || unit === "rem" ? 1 : 0);
     updateCustomTheme({
-      ...customTheme,
-      ...customTheme,
       typography: {
-        ...customTheme.typography,
         [typographyName]: {
-          ...customTheme.typography[typographyName],
           fontSize: `${fixedValue}${unit}`,
         },
       },

@@ -34,7 +34,7 @@ export type HvBaseProps<
 > = Omit<HTMLAttributes<E>, K>;
 
 /** This type allows to do a deep partial by applying the Partial type to each key recursively */
-type DeepPartial<T> = Partial<{ [P in keyof T]: DeepPartial<T[P]> }>;
+export type DeepPartial<T> = Partial<{ [P in keyof T]: DeepPartial<T[P]> }>;
 
 /** This type combines the HvExtraProps and DeepPartial types */
 export type HvExtraDeepPartialProps<T> = Partial<{

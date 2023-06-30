@@ -27,9 +27,7 @@ const Sizes = () => {
     const sizeValue = currValues.get(size) || 0;
 
     updateCustomTheme({
-      ...customTheme,
       sizes: {
-        ...customTheme.sizes,
         [size]: sizeValue,
       },
     });

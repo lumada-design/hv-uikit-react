@@ -15,7 +15,7 @@ import { extractFontsNames } from "generator/utils";
 import { styles } from "./FontFamily.styles";
 
 const FontFamily = () => {
-  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
+  const { updateCustomTheme } = useContext(GeneratorContext);
 
   const [fontName, setFontName] = useState("");
   const [fontValues, setFontValues] = useState<HvListValue[]>([
@@ -28,7 +28,6 @@ const FontFamily = () => {
   const onDropdownClickHandler = (font?: string) => {
     if (font) {
       updateCustomTheme({
-        ...customTheme,
         fontFamily: {
           body: font,
         },

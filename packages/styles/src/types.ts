@@ -508,7 +508,7 @@ export type HvCustomTheme = { name: string } & HvThemeComponents &
   Partial<Omit<HvThemeTokens, "colors">> & {
     colors: {
       modes: {
-        [key: string]: HvThemeColorModeStructure;
+        [key: string]: Partial<HvThemeColorModeStructure>;
       };
     };
   };

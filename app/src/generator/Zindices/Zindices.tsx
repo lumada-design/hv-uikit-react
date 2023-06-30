@@ -27,9 +27,7 @@ const Zindices = () => {
     const zIndexValue = currValues.get(zIndex) || 0;
 
     updateCustomTheme({
-      ...customTheme,
       zIndices: {
-        ...customTheme.zIndices,
         [zIndex]: zIndexValue,
       },
     });

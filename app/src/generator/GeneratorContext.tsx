@@ -1,23 +1,32 @@
-import { createTheme, HvTheme } from "@hitachivantara/uikit-react-core";
-import { HvThemeStructure } from "@hitachivantara/uikit-styles";
+import {
+  createTheme,
+  DeepPartial,
+  HvTheme,
+} from "@hitachivantara/uikit-react-core";
+import { HvBaseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
 import React, {
   createContext,
   useMemo,
   useState,
   Dispatch,
   SetStateAction,
-  useEffect,
   useCallback,
 } from "react";
 import merge from "lodash/merge";
 import { themeDiff } from "./utils";
 
+type GeneratorContextOptions = {
+  addToHistory?: boolean;
+  updateThemeChanges?: boolean;
+  isBaseChange?: boolean;
+  isReset?: boolean;
+};
+
 type GeneratorContextProp = {
   customTheme: HvTheme | HvThemeStructure;
   updateCustomTheme: (
-    newTheme: HvThemeStructure | HvTheme,
-    addToHistory?: boolean,
-    updateThemeChanges?: boolean
+    changes: DeepPartial<HvTheme | HvThemeStructure>,
+    options?: GeneratorContextOptions
   ) => void;
 
   open?: boolean;
@@ -28,11 +37,6 @@ type GeneratorContextProp = {
 
   currentStep?: number;
   setCurrentStep?: Dispatch<SetStateAction<number>>;
-
-  undo?: () => void;
-  redo?: () => void;
-  canUndo?: boolean;
-  canRedo?: boolean;
 
   themeChanges?: Partial<HvTheme | HvThemeStructure>;
 };
@@ -46,69 +50,55 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState(false);
   const [tutorialOpen, setTutorialOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
-  const [customTheme, setCustomTheme] = useState(
+  const [customTheme, setCustomTheme] = useState(() =>
     createTheme({ name: "customTheme", base: "ds5" })
   );
-  const [history, setHistory] = useState<(HvTheme | HvThemeStructure)[]>([]);
-  const [historyStep, setHistoryStep] = useState(-1);
-  const [canUndo, setCanUndo] = useState(false);
-  const [canRedo, setCanRedo] = useState(false);
   const [themeChanges, setThemeChanges] = useState({});
 
   const updateCustomTheme = useCallback(
     (
-      newTheme: HvTheme | HvThemeStructure,
-      addToHistory = true,
-      updateThemeChanges = true
+      changes: DeepPartial<HvTheme | HvThemeStructure>,
+      options: GeneratorContextOptions = {
+        addToHistory: true,
+        updateThemeChanges: true,
+        isBaseChange: false,
+        isReset: false,
+      }
     ) => {
-      if (addToHistory) {
-        let newHistory: HvTheme | HvThemeStructure[] = history;
-        if (history.length - historyStep > 1) {
-          // changing the theme with posterior history, we want to clear
-          // that history so that the new custom theme is the most current
-          newHistory = history.slice(0, historyStep + 1);
+      const { updateThemeChanges, isBaseChange, isReset } = options;
+      setCustomTheme((prev) => {
+        let newTheme;
+        if (isReset) {
+          setThemeChanges({});
+          newTheme = createTheme({
+            base: changes.base as HvBaseTheme,
+            name: prev.name,
+          });
+          return newTheme;
         }
 
-        setHistory([...newHistory, newTheme]);
-        setHistoryStep((prev) => prev + 1);
-      }
+        if (!isBaseChange) {
+          const diff = themeDiff(prev, changes);
+          return merge({}, prev, diff);
+        }
 
+        newTheme = createTheme({
+          base: changes.base as HvBaseTheme,
+          name: prev.name,
+          ...themeChanges,
+        });
+        return newTheme;
+      });
+
+      // Update theme changes
       if (updateThemeChanges) {
         setThemeChanges((prev) => {
-          const diff = themeDiff(customTheme, newTheme);
-          return merge({}, prev, diff);
+          return merge({}, prev, changes);
         });
       }
-      setCustomTheme(newTheme);
     },
-    [customTheme, history, historyStep]
+    [themeChanges]
   );
-
-  useEffect(() => {
-    if (historyStep > 0) {
-      setCanUndo(true);
-    } else {
-      setCanUndo(false);
-    }
-    if (historyStep < history.length - 1) {
-      setCanRedo(true);
-    } else {
-      setCanRedo(false);
-    }
-  }, [historyStep, history.length]);
-
-  useEffect(() => {
-    const historyTheme = history[historyStep];
-    if (historyTheme) setCustomTheme(historyTheme);
-  }, [historyStep, history]);
-
-  const undo = useCallback(() => {
-    setHistoryStep((prev) => prev - 1);
-  }, []);
-
-  const redo = useCallback(() => {
-    setHistoryStep((prev) => prev + 1);
-  }, []);
 
   const value = useMemo(
     () => ({
@@ -120,10 +110,6 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
       setTutorialOpen,
       currentStep,
       setCurrentStep,
-      undo,
-      redo,
-      canUndo,
-      canRedo,
       themeChanges,
     }),
     [
@@ -135,10 +121,6 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
       setTutorialOpen,
       currentStep,
       setCurrentStep,
-      undo,
-      redo,
-      canUndo,
-      canRedo,
       themeChanges,
     ]
   );
