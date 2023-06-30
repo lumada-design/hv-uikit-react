@@ -61,10 +61,11 @@ const CodeEditor = ({
   const codeChangedHandler = (code?: string) => {
     if (!code) return;
 
-    const snippet = code.substring(
-      code.indexOf("({") + 1,
-      code.indexOf("});") + 1
-    );
+    const snippet = code
+      .substring(code.indexOf("({") + 1, code.indexOf("});") + 1)
+      .replaceAll("\n", "")
+      .replaceAll(" ", "")
+      .replaceAll(",}", "}");
 
     const themeJson = snippet.replace(
       /(['"])?([a-zA-Z0-9_]+)(['"])?:/g,
@@ -73,19 +74,21 @@ const CodeEditor = ({
 
     try {
       const parsed = JSON.parse(themeJson);
-      if (
-        customTheme.base !== parsed.base &&
-        (parsed.base === "ds3" || parsed.base === "ds5")
-      ) {
-        changeTheme(parsed.base, selectedMode);
-        updateCustomTheme(
-          { base: parsed.base },
-          {
-            isBaseChange: true,
-          }
-        );
+      if (customTheme.base !== parsed.base) {
+        if (parsed.base === "ds3" || parsed.base === "ds5") {
+          changeTheme(parsed.base, selectedMode);
+          updateCustomTheme(
+            { ...parsed },
+            {
+              isBaseChange: true,
+              isCodeEdit: true,
+            }
+          );
+        } else {
+          console.log("invalid base theme");
+        }
       } else {
-        updateCustomTheme({ ...parsed });
+        updateCustomTheme({ ...parsed }, { isCodeEdit: true });
       }
     } catch {
       console.log("error processing theme JSON");
@@ -97,7 +100,10 @@ const CodeEditor = ({
   return (
     <HvBox css={{ position: "relative" }}>
       <HvBox className={styles.codeEditorTools}>
-        <HvTooltip title={<HvTypography>Download</HvTypography>}>
+        <HvTooltip
+          enterDelay={500}
+          title={<HvTypography>Download</HvTypography>}
+        >
           <HvButton
             variant="secondaryGhost"
             component="a"

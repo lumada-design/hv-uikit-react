@@ -16,10 +16,10 @@ import merge from "lodash/merge";
 import { themeDiff } from "./utils";
 
 type GeneratorContextOptions = {
-  addToHistory?: boolean;
   updateThemeChanges?: boolean;
   isBaseChange?: boolean;
   isReset?: boolean;
+  isCodeEdit?: boolean;
 };
 
 type GeneratorContextProp = {
@@ -46,26 +46,31 @@ export const GeneratorContext = createContext<GeneratorContextProp>({
   updateCustomTheme: () => {},
 });
 
+const initialTheme = createTheme({ name: "customTheme", base: "ds5" });
+
 const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState(false);
   const [tutorialOpen, setTutorialOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
-  const [customTheme, setCustomTheme] = useState(() =>
-    createTheme({ name: "customTheme", base: "ds5" })
-  );
+  const [customTheme, setCustomTheme] = useState(initialTheme);
   const [themeChanges, setThemeChanges] = useState({});
 
   const updateCustomTheme = useCallback(
     (
       changes: DeepPartial<HvTheme | HvThemeStructure>,
       options: GeneratorContextOptions = {
-        addToHistory: true,
         updateThemeChanges: true,
         isBaseChange: false,
         isReset: false,
+        isCodeEdit: false,
       }
     ) => {
-      const { updateThemeChanges, isBaseChange, isReset } = options;
+      const {
+        updateThemeChanges = true,
+        isBaseChange = false,
+        isReset = false,
+        isCodeEdit = false,
+      } = options;
       setCustomTheme((prev) => {
         let newTheme;
         if (isReset) {
@@ -78,23 +83,35 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
         }
 
         if (!isBaseChange) {
-          const diff = themeDiff(prev, changes);
-          return merge({}, prev, diff);
+          if (!isCodeEdit) {
+            const diff = themeDiff(prev, changes);
+            return merge({}, prev, diff);
+          }
+          newTheme = createTheme({
+            base: changes.base as HvBaseTheme,
+            name: prev.name,
+          });
+          const merged = merge({}, newTheme, changes);
+          return merged;
         }
 
         newTheme = createTheme({
+          ...themeChanges,
           base: changes.base as HvBaseTheme,
           name: prev.name,
-          ...themeChanges,
         });
         return newTheme;
       });
 
       // Update theme changes
       if (updateThemeChanges) {
-        setThemeChanges((prev) => {
-          return merge({}, prev, changes);
-        });
+        if (!isCodeEdit) {
+          setThemeChanges((prev) => {
+            return merge({}, prev, changes);
+          });
+        } else {
+          setThemeChanges(changes);
+        }
       }
     },
     [themeChanges]
