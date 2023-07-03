@@ -9,7 +9,6 @@ module.exports = {
 
   puppeteerOptions: {
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    ignoreHTTPSErrors: true,
   },
 
   appName: process.env.APPLITOOLS_APP_NAME,
