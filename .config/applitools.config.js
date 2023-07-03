@@ -25,5 +25,7 @@ module.exports = {
 
   include: ({ kind }) => !isExcludedPath(kind),
 
-  concurrency: 10,
+  testConcurrency: 10,
+
+  disableBrowserFetching: true,
 };
