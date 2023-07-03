@@ -37,7 +37,7 @@ jobs:
           fi
 
       - name: Eyes Storybook
-        run: npx eyes-storybook -f ${{ github.workspace }}/.config/applitools.config.js
+        run: npx cross-env NODE_OPTIONS=--max_old_space_size=8192 eyes-storybook -f ${{ github.workspace }}/.config/applitools.config.js
         timeout-minutes: 60
 
       - name: Archive Logs
