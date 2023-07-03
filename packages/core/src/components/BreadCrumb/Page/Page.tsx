@@ -4,6 +4,7 @@ import {
   HvTypography,
 } from "@core/components";
 import { ExtractNames } from "@core/utils";
+import startCase from "lodash/startCase";
 import { MouseEvent } from "react";
 import { staticClasses, useClasses } from "./Page.styles";
 
@@ -41,7 +42,7 @@ export const HvPage = ({
       className={cx(classes.link, classes.label, classes.a)}
       {...others}
     >
-      <HvOverflowTooltip data={elem.label} />
+      <HvOverflowTooltip data={startCase(elem.label)} />
     </HvTypography>
   );
 };
