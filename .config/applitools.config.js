@@ -28,4 +28,6 @@ module.exports = {
   testConcurrency: 10,
 
   disableBrowserFetching: true,
+
+  showLogs: true,
 };
