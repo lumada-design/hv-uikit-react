@@ -37,8 +37,8 @@ jobs:
           fi
 
       - name: Eyes Storybook
-        run: npx eyes-storybook -f ${{ github.workspace }}/.config/applitools.config.js
-        timeout-minutes: 60
+        run: npm run test:eyes
+        timeout-minutes: 30
 
       - name: Archive Logs
         uses: actions/upload-artifact@v3
