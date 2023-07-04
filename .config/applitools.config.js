@@ -9,6 +9,7 @@ module.exports = {
 
   puppeteerOptions: {
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    ignoreHTTPSErrors: true,
   },
 
   appName: process.env.APPLITOOLS_APP_NAME,
@@ -24,9 +25,5 @@ module.exports = {
 
   include: ({ kind }) => !isExcludedPath(kind),
 
-  testConcurrency: 10,
-
-  disableBrowserFetching: true,
-
-  showLogs: true,
+  testConcurrency: 20,
 };
