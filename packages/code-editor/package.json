@@ -23,8 +23,7 @@
     "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
   "scripts": {
-    "build": "run-s clean build:*",
-    "build:js": "vite build",
+    "build": "vite build",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build && npx clean-publish"

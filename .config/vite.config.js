@@ -27,6 +27,7 @@ export default defineConfig({
   ],
   build: {
     minify: false,
+    emptyOutDir: true,
     lib: {
       name: pkg.name,
       entry: path.resolve(process.cwd(), "src/index.ts"),
