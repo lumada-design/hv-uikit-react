@@ -137,11 +137,11 @@ export const WithLongLabels: StoryObj<HvBreadCrumbProps> = {
   },
   render: (args) => {
     const longData = [
-      { label: "Label 1 with some long text", path: "route1" },
-      { label: "Label 2 with some long text", path: "route2" },
-      { label: "Label 3 with some long text", path: "route3" },
-      { label: "Label 4 with some long text", path: "route4" },
-      { label: "Label 5 with some long text", path: "route5" },
+      { label: "Label 1 With Some Long Text", path: "route1" },
+      { label: "Label 2 With Some Long Text", path: "route2" },
+      { label: "Label 3 With Some Long Text", path: "route3" },
+      { label: "Label 4 With Some Long Text", path: "route4" },
+      { label: "Label 5 With Some Long Text", path: "route5" },
     ];
 
     return (

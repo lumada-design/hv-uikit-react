@@ -1,6 +1,5 @@
 import { clsx } from "clsx";
 import isNil from "lodash/isNil";
-import startCase from "lodash/startCase";
 import { isValidElement, MouseEvent } from "react";
 import { HvBaseProps } from "@core/types/generic";
 import { HvDropDownMenuProps } from "@core/components";
@@ -123,7 +122,7 @@ export const HvBreadCrumb = ({
                     )}
                     variant="body"
                   >
-                    {startCase(removeExtension(elem.label))}
+                    {removeExtension(elem.label)}
                   </StyledTypography>
                 )) || (
                   <HvPage

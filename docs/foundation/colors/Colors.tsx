@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import startCase from "lodash/startCase";
 import capitalize from "lodash/capitalize";
 import {
   HvProvider,
@@ -46,7 +45,7 @@ const ColorsGroup = ({
           <StyledGroup>
             <div>
               <StyledGroupName variant="title2">
-                {capitalize(startCase(group))}
+                {capitalize(group)}
               </StyledGroupName>
               <StyledColors>
                 {Object.values(themeColors[selectedTheme][group]).map(
