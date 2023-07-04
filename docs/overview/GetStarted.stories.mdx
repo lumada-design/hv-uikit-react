@@ -4,23 +4,39 @@ import { Meta } from "@storybook/addon-docs";
 
 # Get Started
 
-## Installation
+If you're starting a new project, we recommend you follow the [**Automation setup**](#automatic-setup) instructions.
+If you're adding UI Kit to an existing project, follow the [**Manual setup**](#manual-setup).
+
+## Automatic setup
+
+NEXT UI Kit offers an interactive command-line tool to easily bootstrap new projects, [**hv-uikit-cli**](https://github.com/lumada-design/hv-uikit-cli/):
+Follow [this link](https://github.com/lumada-design/hv-uikit-cli/#usage) for usage documentation.
+
+```sh
+npx @hitachivantara/hv-uikit-cli@latest create
+```
+
+## Manual setup
+
+### Installation
 
 NEXT UI Kit uses [Emotion](https://emotion.sh/) as its default styling engine and [MUI](https://mui.com/) as a core dependency.
 
 To use NEXT UI Kit in your project, run the following command:
 
-```
+```sh
 npm install @hitachivantara/uikit-react-core @emotion/react @emotion/styled @mui/material
 ```
 
-### Peer dependencies
+`react` and `react-dom` are peer dependencies and must be included in your project. We currently support versions `17.x` and `18.x`.
 
-`react` >= 17.0.0 and `react-dom` >= 17.0.0 are also peer dependencies and should already be included in your project.
+```sh
+npm install react@18 react-dom@18
+```
 
-## Usage
+### Usage
 
-### 1. Set up the provider
+#### 1. Set up the provider
 
 After installing the core package, you'll need to setup the `HvProvider`, which can be imported from `@hitachivantara/uikit-react-core`,
 and wrap your application with it like so:
@@ -38,7 +54,7 @@ This will initialize the UI Kit with the `Design System 5`theme and the `dawn` c
 For more information, please report to the [**provider**](/docs/guides-provider--main#provider)
 and [**theming**](/docs/guides-theming--main#theming) documentation.
 
-### 2. Load the default font
+#### 2. Load the default font
 
 The UI Kit uses **Open Sans** as its default font family since it is the one defined by the Design System specifications. Thus, you'll need to ensure the font
 is loaded properly since the UI Kit can't do it automatically.
@@ -54,7 +70,7 @@ This can be achieved through the **Google Web Fonts CDN** by using the following
 
 Please, report to the [**typography**](/docs/foundation-typography--main) documentation for more information.
 
-### 3. Use the components
+#### 3. Use the components
 
 After setting up the provider and load the font, you can start using the components provided by the UI Kit core package like so:
 
@@ -65,14 +81,3 @@ const MyComponent = () => {
   return <HvTypography>Hello from the UI Kit team!</HvTypography>;
 };
 ```
-
-## Use an example project
-
-In the UI Kit's [GitHub repository](https://github.com/lumada-design/hv-uikit-react) you can find inside the [`/examples` folder](https://github.com/lumada-design/hv-uikit-react/tree/next-mirage/examples)
-some example projects that can get you quickly started with UI Kit. You only need to download the example, install the dependencies, and run the project.
-
-At the moment, you can find the following example projects:
-
-- [Vite.js with TypeScript](https://github.com/lumada-design/hv-uikit-react/tree/next-mirage/examples/uikit-vite-ts)
-
-In the future, we will work toward providing more examples.

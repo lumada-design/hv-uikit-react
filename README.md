@@ -33,59 +33,17 @@ Check the [project status](https://lumada-design.github.io/uikit/master/?path=/d
 
 ## Installation 🚀
 
-**NEXT UI Kit** uses [Emotion](https://emotion.sh) as its default styling engine and [MUI](https://mui.com) as a core dependency.  
-To use it in your project, run the following command:
+The fastest way to setup a new **NEXT UI Kit** project is by using [`hv-uikit-cli`](https://github.com/lumada-design/hv-uikit-cli/). Follow the link for usage documentation.
 
 ```sh
-npm install @hitachivantara/uikit-react-core @emotion/react @emotion/styled @mui/material
+npx @hitachivantara/hv-uikit-cli@latest create
 ```
 
-Check the other available [packages](https://lumada-design.github.io/uikit/master/?path=/docs/overview-project-status--page#packages) to use any non-core or community contributed component.
-
-#### Migrating to v5
-
-This [guide](<(https://lumada-design.github.io/uikit/master/?path=/story/overview-migration-from-v4-x--pages)>) explains how and why to migrate from UI Kit v4 to v5.
-If you are using an older version follow the documentation for the supported [versions](https://lumada-design.github.io/uikit/master/?path=/docs/overview-project-status--page#versions).
-
-## Usage
-
-1. Wrap your application with the `HvProvider` provided by `@hitachivantara/uikit-react-core`.
-
-```jsx
-import { HvProvider } from "@hitachivantara/uikit-react-core";
-
-// Do this at the root of your application
-function App({ children }) {
-  return <HvProvider>{children}</HvProvider>;
-}
-```
-
-Optionally, you can configure the active theme and color mode, among others.
-Check <LinkTo kind="Guides/Provider" story="Main" className="sbdocs sbdocs-a">the [Provider's](https://lumada-design.github.io/uikit/master/?path=/docs/guides-provider--main) documentation</LinkTo> for more information.
-
-2. Now you can start using components:
-
-```jsx
-import { HvButton } from "@hitachivantara/uikit-react-core";
-
-function Example() {
-  return <HvButton>Hello from UI Kit!</HvButton>;
-}
-```
-
-3. For a fully functioning setup, you'll also need to ensure the loading of the Open Sans font. Check the [Get started](https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--page) section for further details.
-
-## Examples
-
-We provide [example](https://github.com/lumada-design/hv-uikit-react/tree/next-mirage/examples) projects that can get you quickly started with UI Kit:
-
-- [Vite.js with TypeScript](https://github.com/lumada-design/hv-uikit-react/tree/next-mirage/examples/uikit-vite-ts)
-
-We'll keep working toward providing more examples.
+If you're adding UI Kit to an existing project, please follow our [Get Started](https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--page) guide for more information. If you're migrating from an older UI Kit version, please follow the [Migration Guides](https://lumada-design.github.io/uikit/master/?path=/docs/overview-migration-from-v4-x--page).
 
 ## Documentation
 
-See our documentation site [here](https://lumada-design.github.io/uikit/master/?path=/docs) for full how-to docs and guidelines
+See our documentation site [here](https://lumada-design.github.io/uikit/master/) for full how-to docs and guidelines.
 
 ## Team ✨
 
