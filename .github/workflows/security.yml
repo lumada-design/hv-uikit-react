@@ -25,9 +25,9 @@ jobs:
       - name: Run Dependency Check Scans
         uses: dependency-check/Dependency-Check_Action@1.1.0
         with:
-         project: "uikit"
-         path: "."
-         format: "XML"
+          project: "uikit"
+          path: "."
+          format: "XML"
 
       - name: Upload Reports to CodeDX
         run: .github/scripts/codedx-upload.sh

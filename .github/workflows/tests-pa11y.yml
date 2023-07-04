@@ -43,7 +43,7 @@ jobs:
           name: pa11y-report
           path: ${{ github.workspace }}/pa11y-ci-report
           retention-days: 2
-          
+
       - name: Deploy Artifacts
         if: always()
         uses: ./.github/actions/deploy-artifacts

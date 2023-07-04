@@ -1,2 +1,3 @@
-.github
 dist
+bin
+coverage
