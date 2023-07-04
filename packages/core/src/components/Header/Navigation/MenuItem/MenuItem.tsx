@@ -24,7 +24,13 @@ const traverseItem = (node: HvHeaderNavigationItemProp) => {
   } else if (node?.data != null && node?.data?.length > 0) {
     let i = 0;
     while (href == null && i < node.data.length) {
-      traverseItem(node?.data[i]);
+      const childNavItem = traverseItem(node?.data[i]);
+      if (childNavItem?.href != null) {
+        href = childNavItem?.href;
+        target = childNavItem?.target;
+        break;
+      }
+
       i += 1;
     }
   }
