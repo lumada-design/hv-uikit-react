@@ -1,6 +1,6 @@
 import { theme, createClasses } from "@hitachivantara/uikit-react-core";
 
-export const { useClasses, staticClasses } = createClasses("HvBaseChart", {
+export const { useClasses, staticClasses } = createClasses("HvChartTooltip", {
   /** Single tooltip styles */
   singleTooltipRoot: {
     width: "fit-content",

@@ -1,15 +1,59 @@
-import {
-  HvBaseChart,
-  HvBaseChartClasses,
-  HvBaseChartCommonProps,
-  HvBaseChartLineProps,
-} from "../BaseChart";
+import { useMemo } from "react";
 
-export interface HvLineChartClasses extends HvBaseChartClasses {}
+import { Arrayable } from "@hitachivantara/uikit-react-core";
+
+import * as echarts from "echarts/core";
+import { LineChart } from "echarts/charts";
+import {
+  DatasetComponent,
+  GridComponent,
+  TooltipComponent,
+  LegendComponent,
+  DataZoomSliderComponent,
+  DataZoomInsideComponent,
+} from "echarts/components";
+
+import {
+  useYAxis,
+  useXAxis,
+  useDataZoom,
+  useGrid,
+  useData,
+  useDataset,
+  useSeries,
+  useLegend,
+  useTooltip,
+  HvChartTooltipClasses,
+} from "@viz/hooks";
+
+import { HvChartEmptyCellMode, HvLineChartMeasures } from "../../types";
+import { HvBaseChart } from "../BaseChart";
+import { HvAxisChartCommonProps, HvChartCommonProps } from "../../types/common";
+
+// Register chart components
+echarts.use([
+  LineChart,
+  DatasetComponent,
+  GridComponent,
+  TooltipComponent,
+  LegendComponent,
+  DataZoomSliderComponent,
+  DataZoomInsideComponent,
+]);
+
+export interface HvLineChartClasses extends HvChartTooltipClasses {}
 
 export interface HvLineChartProps
-  extends HvBaseChartCommonProps,
-    HvBaseChartLineProps {
+  extends HvAxisChartCommonProps,
+    HvChartCommonProps {
+  /**  Columns to measure on the chart. */
+  measures: Arrayable<HvLineChartMeasures>;
+  /** Strategy to use when there are empty cells. Defaults to `void`. */
+  emptyCellMode?: HvChartEmptyCellMode;
+  /** Whether the area under the lines should be filled. Defaults to `false`. */
+  area?: boolean;
+  /** Sets opacity of the filled area if `area` is true. Defaults to `0.5`. */
+  areaOpacity?: number;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvLineChartClasses;
 }
@@ -22,15 +66,80 @@ export const HvLineChart = ({
   area = false,
   emptyCellMode = "void",
   areaOpacity = 0.5,
-  ...others
+  yAxis,
+  xAxis,
+  horizontalRangeSlider,
+  grid,
+  data,
+  groupBy,
+  splitBy,
+  sortBy,
+  measures,
+  stack,
+  seriesNameFormatter,
+  legend,
+  classes,
+  tooltip,
 }: HvLineChartProps) => {
-  return (
-    <HvBaseChart
-      type="line"
-      area={area}
-      emptyCellMode={emptyCellMode}
-      areaOpacity={areaOpacity}
-      {...others}
-    />
-  );
+  const chartData = useData({ data, groupBy, measures, splitBy, sortBy });
+
+  const chartDataset = useDataset(chartData);
+
+  const chartYAxis = useYAxis({ yAxis });
+
+  const chartXAxis = useXAxis({ xAxis, scale: true });
+
+  const chartSlider = useDataZoom({
+    showHorizontal: horizontalRangeSlider?.show,
+  });
+
+  const chartGrid = useGrid({ ...grid });
+
+  const chartSeries = useSeries({
+    type: "line",
+    data: chartData,
+    groupBy,
+    measures,
+    area,
+    areaOpacity,
+    emptyCellMode,
+    stack,
+    nameFormatter: seriesNameFormatter,
+  });
+
+  const chartLegend = useLegend({
+    series: chartSeries.series,
+    show: legend?.show,
+  });
+
+  const chartTooltip = useTooltip({
+    ...tooltip,
+    trigger: "axis",
+    measures,
+    classes,
+  });
+
+  const options = useMemo(() => {
+    return {
+      ...chartYAxis,
+      ...chartXAxis,
+      ...chartSlider,
+      ...chartGrid,
+      ...chartDataset,
+      ...chartSeries,
+      ...chartLegend,
+      ...chartTooltip,
+    };
+  }, [
+    chartXAxis,
+    chartYAxis,
+    chartSlider,
+    chartGrid,
+    chartDataset,
+    chartSeries,
+    chartLegend,
+    chartTooltip,
+  ]);
+
+  return <HvBaseChart options={options} />;
 };
