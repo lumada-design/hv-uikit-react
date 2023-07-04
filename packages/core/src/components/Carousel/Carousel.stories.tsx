@@ -18,6 +18,11 @@ export default {
   title: "Widgets/Carousel",
   component: HvCarousel,
   subcomponents: { HvCarouselSlide },
+  parameters: {
+    eyes: {
+      waitBeforeCapture: 5000,
+    },
+  },
 } as Meta<typeof HvCarousel>;
 
 export const Main: StoryObj<HvCarouselProps> = {
