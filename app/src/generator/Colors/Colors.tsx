@@ -79,6 +79,7 @@ const Colors = (): JSX.Element => {
                 return (
                   <HvTooltip
                     key={c}
+                    enterDelay={500}
                     title={
                       <div className={styles.tooltip}>
                         <HvTypography variant="label">{c}</HvTypography>

@@ -15,7 +15,7 @@ export interface IconButtonProps extends Omit<HvButtonProps, "icon"> {
 /** An `HvButton` of type icon wrapped in a tooltip  */
 export const IconButton = ({ label, icon, ...others }: IconButtonProps) => {
   return (
-    <HvTooltip title={<HvTypography>{label}</HvTypography>}>
+    <HvTooltip enterDelay={500} title={<HvTypography>{label}</HvTypography>}>
       <span>
         <HvButton icon variant="secondaryGhost" aria-label={label} {...others}>
           {icon}

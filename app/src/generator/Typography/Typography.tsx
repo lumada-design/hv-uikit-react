@@ -118,12 +118,8 @@ const Typography = () => {
     setUpdatedSizes(map);
 
     updateCustomTheme({
-      ...customTheme,
-      ...customTheme,
       typography: {
-        ...customTheme.typography,
         [typographyName]: {
-          ...customTheme.typography[typographyName],
           fontSize: `${fontSize}${unit}`,
         },
       },
@@ -203,11 +199,8 @@ const Typography = () => {
     lineHeight: keyof HvThemeTokens["lineHeights"]
   ) => {
     updateCustomTheme({
-      ...customTheme,
       typography: {
-        ...customTheme.typography,
         [typographyName]: {
-          ...customTheme.typography[typographyName],
           lineHeight: customTheme?.lineHeights[lineHeight],
         },
       },
@@ -223,11 +216,8 @@ const Typography = () => {
     fontWeight: keyof HvThemeTokens["fontWeights"]
   ) => {
     updateCustomTheme({
-      ...customTheme,
       typography: {
-        ...customTheme.typography,
         [typographyName]: {
-          ...customTheme.typography[typographyName],
           fontWeight: customTheme?.fontWeights[fontWeight],
         },
       },
@@ -243,11 +233,8 @@ const Typography = () => {
     colorValue: string
   ) => {
     updateCustomTheme({
-      ...customTheme,
       typography: {
-        ...customTheme.typography,
         [typographyName]: {
-          ...customTheme.typography[typographyName],
           color: colorValue,
         },
       },
