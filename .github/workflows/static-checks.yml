@@ -3,9 +3,12 @@ name: Static Checks
 on:
   workflow_dispatch:
   workflow_call:
+    secrets:
+      NX_CLOUD_ACCESS_TOKEN:
+        required: false
 
 env:
-  LICENSES_WHITELIST: Apache-2.0\;ISC\;BSD-2-Clause\;BSD-3-Clause\;MIT\;W3C\;Zlib\;CC-BY-4.0
+  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
 jobs:
   run-checks:
@@ -20,8 +23,9 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: License Check
-        run: |
-          npm exec npx license-checker --onlyAllow ${{ env.LICENSES_WHITELIST }} --workspaces
+        env:
+          LICENSES_WHITELIST: Apache-2.0\;ISC\;BSD-2-Clause\;BSD-3-Clause\;MIT\;W3C\;Zlib\;CC-BY-4.0
+        run: npm exec npx license-checker --onlyAllow ${{ env.LICENSES_WHITELIST }} --workspaces
 
       - name: Run Lint
         run: npm run lint

@@ -6,12 +6,15 @@ on:
     secrets:
       ORG_GHPAGES_DEPLOY_KEY:
         required: true
+      NX_CLOUD_ACCESS_TOKEN:
+        required: false
     inputs:
       publish-folder:
         type: string
 
 env:
   PUBLISH_FOLDER: ${{ inputs.publish-folder || github.ref_name }}
+  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
 jobs:
   build-artifacts:

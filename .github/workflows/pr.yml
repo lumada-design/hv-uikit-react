@@ -10,6 +10,8 @@ jobs:
   static-checks:
     name: Static Checks
     uses: ./.github/workflows/static-checks.yml
+    secrets:
+      NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
   applitools:
     name: Applitools
@@ -26,5 +28,6 @@ jobs:
     needs: [static-checks]
     secrets:
       ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+      NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
     with:
       publish-folder: pr-${{ github.event.number }}
