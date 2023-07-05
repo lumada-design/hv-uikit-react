@@ -1,12 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { HvBaseProps } from "@core/types";
 import { useControlled } from "@core/hooks";
-import {
-  ExtractNames,
-  getVarValue,
-  isKeypress,
-  keyboardCodes,
-} from "@core/utils";
+import { ExtractNames, isKeypress, keyboardCodes } from "@core/utils";
 import {
   HvButtonProps,
   HvTypographyVariants,
@@ -16,8 +11,8 @@ import {
   HvTypography,
   HvInputProps,
 } from "@core/components";
-import { HvThemeTypographyProps, theme } from "@hitachivantara/uikit-styles";
 import { Edit } from "@hitachivantara/uikit-react-icons";
+import { useTheme } from "@hitachivantara/uikit-react-core";
 import { staticClasses, useClasses } from "./InlineEditor.styles";
 
 export { staticClasses as inlineEditorClasses };
@@ -49,14 +44,6 @@ export interface HvInlineEditorProps
   classes?: HvInlineEditorClasses;
 }
 
-const getTypographyStyles = (typography): HvThemeTypographyProps => {
-  const typographyStyles = {};
-  Object.keys(typography).forEach((k) => {
-    typographyStyles[k] = getVarValue(typography[k]);
-  });
-  return typographyStyles;
-};
-
 /**
  * An Inline Editor allows the user to edit a record without making a major switch
  * between viewing and editing, making it an efficient method of updating a record.
@@ -82,8 +69,9 @@ export const HvInlineEditor = ({
   const [editMode, setEditMode] = useState(false);
   const [cachedValue, setCachedValue] = useState(value);
   const inputRef = useRef<HTMLInputElement>();
+  const { activeTheme } = useTheme();
 
-  const typographyStyles = getTypographyStyles(theme.typography[variant] || {});
+  const typographyStyles = activeTheme?.typography[variant] || {};
   const { lineHeight } = typographyStyles;
 
   useLayoutEffect(() => {

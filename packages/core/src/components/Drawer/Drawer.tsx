@@ -6,11 +6,11 @@ import { Close } from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps } from "@core/types/generic";
 import { withTooltip } from "@core/hocs";
 import {
-  getVarValue,
   hexToRgbA,
   setId,
   checkValidHexColorValue,
   ExtractNames,
+  getVarValue,
 } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvButton } from "@core/components";
@@ -86,10 +86,10 @@ export const HvDrawer = ({
   ...others
 }: HvDrawerProps) => {
   const { classes, css, cx } = useClasses(classesProp);
-  const { activeTheme, selectedMode } = useTheme();
+  const { activeTheme, rootId } = useTheme();
 
   const [backgroundColorValue, setBackgroundColorValue] = useState<string>(
-    getVarValue(theme.drawer.backDropBackgroundColor)
+    getVarValue(theme.drawer.backDropBackgroundColor, rootId) || ""
   );
 
   const closeButtonDisplay = () => <Close role="presentation" />;
@@ -103,13 +103,19 @@ export const HvDrawer = ({
   );
 
   useEffect(() => {
-    setBackgroundColorValue(getVarValue(theme.drawer.backDropBackgroundColor));
+    setBackgroundColorValue(
+      getVarValue(theme.drawer.backDropBackgroundColor, rootId) ||
+        activeTheme?.drawer.backDropBackgroundColor ||
+        ""
+    );
 
     setBackgroundColor(getBackgroundColor(backgroundColorValue));
   }, [
-    activeTheme?.colors?.modes[selectedMode],
+    activeTheme?.colors.modes.selectedMode,
     backgroundColorValue,
     setBackgroundColor,
+    rootId,
+    activeTheme?.drawer.backDropBackgroundColor,
   ]);
 
   return (

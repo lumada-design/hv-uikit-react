@@ -7,6 +7,8 @@ import {
   HvLabel,
   themes,
   theme,
+  getVarValue,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 import { clsx } from "clsx";
@@ -111,18 +113,7 @@ export const ThemeStructure = () => {
   );
   const [showComponents, setShowComponents] = useState<boolean>(false);
 
-  const getVarValue = (cssVar: string): string => {
-    // Creating a temporary element to get CSS variables
-    const tempEl = document.createElement("div");
-    tempEl.style.setProperty("--temp", cssVar);
-    document.body.appendChild(tempEl);
-    const computedValue = getComputedStyle(tempEl)
-      .getPropertyValue("--temp")
-      .trim();
-    document.body.removeChild(tempEl);
-
-    return computedValue;
-  };
+  const { rootId } = useTheme();
 
   const renderLevel = (
     value: object | string | number,
@@ -164,7 +155,7 @@ export const ThemeStructure = () => {
     }
     if (typeof value === "string") {
       const processedValue: string = value.includes("var(--")
-        ? getVarValue(value)
+        ? getVarValue(value, rootId) || ""
         : value;
 
       if (processedValue.trim().startsWith("#")) {
