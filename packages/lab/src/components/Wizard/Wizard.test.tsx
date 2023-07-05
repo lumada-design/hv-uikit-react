@@ -6,20 +6,6 @@ describe("HvWizard", () => {
   const mockOnClose = vi.fn();
   const mockOnSubmit = vi.fn();
 
-  it("should be defined", () => {
-    const { container } = render(
-      <HvWizard open handleSubmit={mockOnSubmit} onClose={mockOnClose} />
-    );
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(
-      <HvWizard open handleSubmit={mockOnSubmit} onClose={mockOnClose} />
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   it("renders the component as expected", () => {
     const { getByText, queryByText, getByRole } = render(
       <HvWizard

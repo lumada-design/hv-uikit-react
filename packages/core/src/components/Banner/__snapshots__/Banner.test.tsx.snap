@@ -30,35 +30,27 @@ exports[`Banner > should render correctly 1`] = `
           >
             <button
               aria-label="Close"
-              class="HvBannerActionContainer-closeAction hv-v6ff5y HvButton-root css-9a2ltd-StyledButton e138pvrm0"
+              class="HvButton-root HvButton-icon HvBannerActionContainer-closeAction hv-1cl6pa3"
               tabindex="0"
               type="button"
             >
               <div
-                class="css-1nxr552-StyledContentDiv e138pvrm3"
+                class="HvBannerActionContainer-iconContainer hv-x3wokz css-f95wjz"
+                name="Close"
               >
-                <span
-                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                <svg
+                  focusable="false"
+                  height="12"
+                  viewBox="0 0 16 16"
+                  width="12"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <div
-                    class="HvBannerActionContainer-iconContainer hv-x3wokz css-f95wjz"
-                    name="Close"
-                  >
-                    <svg
-                      focusable="false"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      width="12"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="color0"
-                        d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                        fill="base2"
-                      />
-                    </svg>
-                  </div>
-                </span>
+                  <path
+                    class="color0"
+                    d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                    fill="base2"
+                  />
+                </svg>
               </div>
             </button>
           </div>

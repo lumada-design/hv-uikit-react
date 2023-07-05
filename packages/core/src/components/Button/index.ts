@@ -1,7 +1,6 @@
-export { default as buttonClasses } from "./buttonClasses";
-export * from "./buttonClasses";
-export { HvButton } from "./Button";
+export { HvButton, buttonClasses } from "./Button";
 export type {
+  HvButtonClasses,
   HvButtonProps,
   HvButtonRadius,
   HvButtonSize,
