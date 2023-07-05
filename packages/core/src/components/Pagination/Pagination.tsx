@@ -78,7 +78,7 @@ export interface HvPaginationProps extends HvBaseProps {
   /** Extra properties passed to the input component representing the current pages. */
   currentPageInputProps?: HvInputProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: Partial<HvPaginationClasses>;
+  classes?: HvPaginationClasses;
 }
 
 const DEFAULT_LABELS = {

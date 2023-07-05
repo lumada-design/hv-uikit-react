@@ -29,7 +29,7 @@ import { useClasses, staticClasses } from "./QueryBuilder.styles";
 
 export { staticClasses as queryBuilderClasses };
 
-export type HvQueryBuilderClasses = Partial<ExtractNames<typeof useClasses>>;
+export type HvQueryBuilderClasses = ExtractNames<typeof useClasses>;
 
 export interface HvQueryBuilderProps {
   attributes?: Record<string, Attribute>;

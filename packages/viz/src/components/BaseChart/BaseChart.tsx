@@ -54,7 +54,7 @@ echarts.use([
   DataZoomInsideComponent,
 ]);
 
-export type HvBaseChartClasses = Partial<ExtractNames<typeof useClasses>>;
+export type HvBaseChartClasses = ExtractNames<typeof useClasses>;
 
 type GroupByField = string;
 type SplitByField = string;

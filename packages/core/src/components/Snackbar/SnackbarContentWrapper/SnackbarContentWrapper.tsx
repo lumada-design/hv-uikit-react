@@ -37,7 +37,7 @@ export interface HvSnackbarContentProps
     action: HvActionGeneric
   ) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: Partial<HvSnackbarContentClasses>;
+  classes?: HvSnackbarContentClasses;
 }
 
 export const HvSnackbarContent = forwardRef<
