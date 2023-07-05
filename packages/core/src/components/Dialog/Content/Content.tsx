@@ -1,10 +1,16 @@
-import { clsx } from "clsx";
 import MuiDialogContent, {
   DialogContentProps as MuiDialogContentProps,
 } from "@mui/material/DialogContent";
+
 import { HvBaseProps } from "@core/types";
-import { StyledTypography } from "./Content.styles";
-import dialogContentClasses, { HvDialogContentClasses } from "./contentClasses";
+import { ExtractNames } from "@core/utils";
+import { HvTypography } from "@core/components";
+
+import { staticClasses, useClasses } from "./Content.styles";
+
+export { staticClasses as dialogContentClasses };
+
+export type HvDialogContentClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDialogContentProps
   extends Omit<MuiDialogContentProps, "classes">,
@@ -15,24 +21,23 @@ export interface HvDialogContentProps
 }
 
 export const HvDialogContent = ({
-  classes,
+  classes: classesProp,
   className,
   children,
   indentContent = false,
 }: HvDialogContentProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   return (
-    <StyledTypography
+    <HvTypography
       component={MuiDialogContent}
-      className={clsx(
-        className,
-        dialogContentClasses.root,
-        classes?.root,
-        !!indentContent &&
-          clsx(dialogContentClasses.textContent, classes?.textContent)
+      className={cx(
+        classes.root,
+        { [classes.textContent]: !!indentContent },
+        className
       )}
-      $indentContent={indentContent}
     >
       {children}
-    </StyledTypography>
+    </HvTypography>
   );
 };

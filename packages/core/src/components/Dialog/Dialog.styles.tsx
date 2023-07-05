@@ -1,8 +1,5 @@
-import styled from "@emotion/styled";
-import { Backdrop as MuiBackdrop } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "@core/utils/transientOptions";
-import fade from "@core/utils/hexToRgbA";
+
 import { createClasses } from "@core/utils";
 
 export const { staticClasses, useClasses } = createClasses("HvDialog", {
@@ -25,10 +22,3 @@ export const { staticClasses, useClasses } = createClasses("HvDialog", {
     height: 32,
   },
 });
-
-export const StyledBackdrop = styled(
-  MuiBackdrop,
-  transientOptions
-)(({ $backColor }: { $backColor: string }) => ({
-  background: fade($backColor, 0.8),
-}));

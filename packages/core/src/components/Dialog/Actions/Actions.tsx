@@ -1,8 +1,15 @@
-import { clsx } from "clsx";
-import { DialogActionsProps as MuiDialogActionsProps } from "@mui/material/DialogActions";
+import MuiDialogActions, {
+  DialogActionsProps as MuiDialogActionsProps,
+} from "@mui/material/DialogActions";
+
 import { HvBaseProps } from "@core/types";
-import { StyledActions } from "./Actions.styles";
-import dialogActionClasses, { HvDialogActionClasses } from "./actionsClasses";
+import { ExtractNames } from "@core/utils";
+
+import { staticClasses, useClasses } from "./Actions.styles";
+
+export { staticClasses as dialogActionClasses };
+
+export type HvDialogActionClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDialogActionsProps
   extends Omit<MuiDialogActionsProps, "classes">,
@@ -13,28 +20,24 @@ export interface HvDialogActionsProps
 }
 
 export const HvDialogActions = ({
-  classes,
+  classes: classesProp,
   className,
   children,
   fullscreen = false,
   ...others
 }: HvDialogActionsProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   return (
-    <StyledActions
+    <MuiDialogActions
       className={className}
       classes={{
-        root: clsx(
-          dialogActionClasses.root,
-          classes?.root,
-          fullscreen &&
-            clsx(dialogActionClasses.fullscreen, classes?.fullscreen)
-        ),
-        spacing: clsx(dialogActionClasses.spacing, classes?.spacing),
+        root: cx(classes.root, { [classes.fullscreen]: fullscreen }),
+        spacing: classes.spacing,
       }}
-      $fullscreen={fullscreen}
       {...others}
     >
       {children}
-    </StyledActions>
+    </MuiDialogActions>
   );
 };
