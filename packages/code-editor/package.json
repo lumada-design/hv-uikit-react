@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-code-editor",
-  "version": "5.2.26",
+  "version": "5.2.27",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "A wrapper to the React Monaco editor (https://github.com/react-monaco-editor/react-monaco-editor) using the Hitachi Vantara's Design System styles.",
@@ -38,9 +38,9 @@
   },
   "dependencies": {
     "@emotion/css": "^11.11.0",
-    "@hitachivantara/uikit-react-core": "^5.18.4",
-    "@hitachivantara/uikit-react-icons": "^5.2.4",
-    "@hitachivantara/uikit-styles": "^5.8.5",
+    "@hitachivantara/uikit-react-core": "^5.18.5",
+    "@hitachivantara/uikit-react-icons": "^5.2.5",
+    "@hitachivantara/uikit-styles": "^5.8.6",
     "@monaco-editor/react": "^4.5.1",
     "clsx": "^1.2.1"
   },
