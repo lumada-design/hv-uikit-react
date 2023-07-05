@@ -593,7 +593,7 @@ export const ArrowData: StoryObj<HvLineChartProps> = {
       },
       // https://github.com/storybookjs/storybook/issues/12726
       inlineStories: false,
-      iframeHeight: 550,
+      iframeHeight: 485,
     },
   },
   loaders: [

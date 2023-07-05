@@ -1,4 +1,4 @@
-import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { Meta, Story } from "@storybook/addon-docs";
 import { HvLineChart, HvVizProvider } from "@hitachivantara/uikit-react-viz";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 
@@ -196,39 +196,35 @@ didn't have the years sorted by ascending order originally.
 />
 ```
 
-<Canvas>
-  <HvProvider>
-    <HvVizProvider>
-      <HvLineChart
-        data={{
-          Country: [
-            "Portugal",
-            "Portugal",
-            "Spain",
-            "Spain",
-            "Portugal",
-            "Portugal",
-            "Spain",
-            "Spain",
-          ],
-          Year: [2019, 2019, 2019, 2019, 2018, 2018, 2018, 2018],
-          Medal: [
-            "gold",
-            "silver",
-            "gold",
-            "silver",
-            "gold",
-            "silver",
-            "gold",
-            "silver",
-          ],
-          Total: [3, 2, 1, 0, 4, 11, 8, 3],
-        }}
-        groupBy="Year"
-        measures="Total"
-        splitBy="Country"
-        sortBy="Year"
-      />
-    </HvVizProvider>
-  </HvProvider>
-</Canvas>
+<Story name="Main">
+  <HvLineChart
+    data={{
+      Country: [
+        "Portugal",
+        "Portugal",
+        "Spain",
+        "Spain",
+        "Portugal",
+        "Portugal",
+        "Spain",
+        "Spain",
+      ],
+      Year: [2019, 2019, 2019, 2019, 2018, 2018, 2018, 2018],
+      Medal: [
+        "gold",
+        "silver",
+        "gold",
+        "silver",
+        "gold",
+        "silver",
+        "gold",
+        "silver",
+      ],
+      Total: [3, 2, 1, 0, 4, 11, 8, 3],
+    }}
+    groupBy="Year"
+    measures="Total"
+    splitBy="Country"
+    sortBy="Year"
+  />
+</Story>
