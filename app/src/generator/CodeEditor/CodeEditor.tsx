@@ -15,6 +15,7 @@ import {
   useState,
 } from "react";
 import debounce from "lodash/debounce";
+import JSON5 from "json5";
 import { Download, Reset, Duplicate } from "@hitachivantara/uikit-react-icons";
 import { getThemeCode } from "generator/utils";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
@@ -61,19 +62,13 @@ const CodeEditor = ({
   const codeChangedHandler = (code?: string) => {
     if (!code) return;
 
-    const snippet = code
-      .substring(code.indexOf("({") + 1, code.indexOf("});") + 1)
-      .replaceAll("\n", "")
-      .replaceAll(" ", "")
-      .replaceAll(",}", "}");
-
-    const themeJson = snippet.replace(
-      /(['"])?([a-zA-Z0-9_]+)(['"])?:/g,
-      '"$2": '
+    const snippet = code.substring(
+      code.indexOf("({") + 1,
+      code.indexOf("});") + 1
     );
 
     try {
-      const parsed = JSON.parse(themeJson);
+      const parsed = JSON5.parse(snippet);
       if (customTheme.base !== parsed.base) {
         if (parsed.base === "ds3" || parsed.base === "ds5") {
           changeTheme(parsed.base, selectedMode);

@@ -21,6 +21,7 @@
     "i18next-browser-languagedetector": "^7.0.2",
     "i18next-http-backend": "^2.2.1",
     "js-cookie": "^3.0.5",
+    "json5": "^2.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.0",
