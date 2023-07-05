@@ -108,8 +108,8 @@ export const HvLineChart = ({
   });
 
   const chartLegend = useLegend({
+    ...legend,
     series: chartSeries.series,
-    show: legend?.show,
   });
 
   const chartTooltip = useTooltip({

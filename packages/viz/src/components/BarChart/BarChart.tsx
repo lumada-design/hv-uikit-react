@@ -105,8 +105,9 @@ export const HvBarChart = ({
   });
 
   const chartLegend = useLegend({
+    ...legend,
     series: chartSeries.series,
-    show: legend?.show,
+    icon: "square",
   });
 
   const chartTooltip = useTooltip({

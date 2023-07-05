@@ -74,9 +74,10 @@ export const HvDonutChart = ({
   });
 
   const chartLegend = useLegend({
-    series: chartSeries.series,
+    ...legend,
     show: legend?.show ?? true,
     icon: "square",
+    series: chartSeries.series,
     formatter: slicesNameFormatter,
   });
 
