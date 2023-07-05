@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { createClasses } from "@core/utils";
 
@@ -47,23 +46,18 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
   actions: {
     display: "flex",
     justifyContent: "flex-end",
-    height: 0,
-    zIndex: 1,
+    right: 0,
 
     position: "relative",
-    top: theme.carousel.actionsOffsetTop,
   },
   closeButton: {},
 
-  mainContainer: {
-    display: "flex",
-    flexDirection: theme.carousel
-      .mainContainerFlexDirection as CSSProperties["flexDirection"],
-  },
+  mainContainer: {},
 
   controls: {
     display: "flex",
     alignItems: "center",
+    position: "relative",
     height: 32,
     justifyContent: theme.carousel.controlsJustifyContent,
     backgroundColor: theme.carousel.controlsBackgroundColor,

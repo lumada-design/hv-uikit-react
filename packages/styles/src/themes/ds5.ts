@@ -544,7 +544,6 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   carousel: {
     xsControlsDisplay: "flex",
     counterContainerDisplay: "none",
-    actionsOffsetTop: 0,
     mainContainerFlexDirection: "column",
     controlsBorder: `1px solid ${theme.colors.atmo4}`,
     controlsBackgroundColor: theme.colors.atmo2,

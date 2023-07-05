@@ -13,10 +13,17 @@ import {
   Close,
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
-import { HvButton, HvContainer, HvStack, HvTypography } from "@core/components";
-import { HvBaseProps } from "@core/types";
-import { ExtractNames } from "@core/utils";
+import {
+  ExtractNames,
+  HvBaseProps,
+  HvButton,
+  HvContainer,
+  HvTypography,
+  useTheme,
+} from "../..";
 
+import { HvCarouselControls } from "./CarouselControls";
+import { HvCarouselThumbnails } from "./CarouselThumbnails";
 import { staticClasses, useClasses } from "./Carousel.styles";
 
 const clamp = (num: number, max: number, min = 0) =>
@@ -52,6 +59,8 @@ export interface HvCarouselProps
   showFullscreen?: boolean;
   /** Whether to hide the thumbnails. Hidden by default in "xs" mode */
   hideThumbnails?: boolean;
+  controlsPosition?: "top" | "bottom";
+  thumbnailsPosition?: "top" | "bottom";
   /** Carousel configuration options. @see https://www.embla-carousel.com/api/options/ */
   carouselOptions?: EmblaOptionsType;
   /** */
@@ -72,21 +81,29 @@ export const HvCarousel = (props: HvCarouselProps) => {
     thumbnailWidth = 90,
     title,
     children,
-    actions,
+    actions: actionsProp,
     xs,
     showDots: showDotsProp,
     showCounter: showCounterProp,
     showSlideControls,
     showFullscreen: showFullscreenProp,
     hideThumbnails: hideThumbnailsProp,
+    controlsPosition: controlsPositionProp,
+    thumbnailsPosition: thumbnailsPositionProp,
     carouselOptions,
     renderThumbnail,
     onChange,
     ...others
   } = props;
-  const { classes, cx } = useClasses(classesProp);
+  const { activeTheme } = useTheme();
+  const { classes, css, cx } = useClasses(classesProp);
   const thumbnailsRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const isDs3 = activeTheme?.name === "ds3";
+  const actionsPosition = isDs3 ? "header" : "controls";
+  const controlsPosition = controlsPositionProp ?? (isDs3 ? "bottom" : "top");
+  const thumbnailsPosition = thumbnailsPositionProp ?? "bottom";
 
   const [containerRef, controller] = useCarousel({
     align: "start",
@@ -156,6 +173,59 @@ export const HvCarousel = (props: HvCarouselProps) => {
   const showThumbnails = !hideThumbnails && !!renderThumbnail;
   const showDots = showDotsProp ?? numSlides <= 5;
 
+  const actions = (
+    <div
+      className={cx(
+        classes.actions,
+        actionsPosition === "header"
+          ? css({ position: "relative", top: -40, height: 0 })
+          : css({ position: "absolute" })
+      )}
+    >
+      {actionsProp}
+      {showFullscreen && (
+        <HvButton
+          icon
+          variant="secondaryGhost"
+          onClick={() => setIsFullscreen((curr) => !curr)}
+          className={classes.closeButton}
+        >
+          {isFullscreen ? (
+            <Close aria-label="Close" />
+          ) : (
+            <Fullscreen aria-label="Fullscreen" />
+          )}
+        </HvButton>
+      )}
+    </div>
+  );
+
+  const controls = (
+    <HvCarouselControls
+      classes={classes}
+      showDots={showDots}
+      page={selectedIndex}
+      pages={numSlides}
+      canPrevious={canPrev}
+      canNext={canNext}
+      onPreviousClick={handlePrevious}
+      onNextClick={handleNext}
+      actions={actionsPosition === "controls" && actions}
+    />
+  );
+
+  const thumbnails = showThumbnails && (
+    <HvCarouselThumbnails
+      classes={classes}
+      ref={thumbnailsRef}
+      page={selectedIndex}
+      pages={numSlides}
+      width={thumbnailWidth}
+      onThumbnailClick={(evt, i) => handleScroll(i)}
+      renderThumbnail={renderThumbnail}
+    />
+  );
+
   return (
     <HvContainer
       className={cx(classes.root, className, {
@@ -169,131 +239,57 @@ export const HvCarousel = (props: HvCarouselProps) => {
           {title}
         </HvTypography>
       )}
-      <div className={classes.actions}>
-        {showFullscreen && (
-          <HvButton
-            icon
-            variant="secondaryGhost"
-            onClick={() => setIsFullscreen((curr) => !curr)}
-            className={classes.closeButton}
-          >
-            {isFullscreen ? (
-              <Close aria-label="Close" />
-            ) : (
-              <Fullscreen aria-label="Fullscreen" />
-            )}
-          </HvButton>
-        )}
-        {actions}
-      </div>
 
-      <div className={classes.mainContainer}>
-        <div className={classes.controls}>
-          {showDots ? (
-            <div className={classes.dots}>
-              {Array.from(Array(numSlides)).map((el, index) => (
-                <span
-                  key={`circle-${index}`}
-                  className={cx(classes.dot, {
-                    [classes.dotSelected]: index === selectedIndex,
-                  })}
-                />
-              ))}
-            </div>
-          ) : (
-            <>
-              <HvButton
-                icon
-                disabled={!canPrev}
-                variant="secondaryGhost"
-                aria-label="Backwards"
-                onClick={handlePrevious}
-              >
-                <Backwards iconSize="XS" />
-              </HvButton>
-              <div className={classes.pageCounter}>
-                {`${selectedIndex + 1} / ${numSlides}`}
-              </div>
-              <HvButton
-                icon
-                disabled={!canNext}
-                variant="secondaryGhost"
-                aria-label="Forwards"
-                onClick={handleNext}
-              >
-                <Forwards iconSize="XS" />
-              </HvButton>
-            </>
-          )}
-        </div>
+      {actionsPosition === "header" && actions}
+      {thumbnailsPosition === "top" && thumbnails}
+      {controlsPosition === "top" && controls}
+      <div
+        className={cx(classes.main, {
+          [classes.mainXs]: xs,
+          [classes.mainFullscreen]: isFullscreen,
+        })}
+      >
+        {showCounter && (
+          <div className={classes.counterContainer}>
+            <span className={classes.counter}>
+              {`${selectedIndex + 1}/${numSlides}`}
+            </span>
+          </div>
+        )}
+
+        {showSlideControls && (
+          <div className={classes.slideControls}>
+            <HvButton
+              icon
+              disabled={!canPrev}
+              variant="secondary"
+              aria-label="Backwards"
+              onClick={handlePrevious}
+            >
+              <Backwards iconSize="XS" />
+            </HvButton>
+            <HvButton
+              icon
+              disabled={!canNext}
+              variant="secondary"
+              aria-label="Forwards"
+              onClick={handleNext}
+            >
+              <Forwards iconSize="XS" />
+            </HvButton>
+          </div>
+        )}
 
         <div
-          className={cx(classes.main, {
-            [classes.mainXs]: xs,
-            [classes.mainFullscreen]: isFullscreen,
-          })}
+          ref={containerRef}
+          style={{ height }}
+          className={classes.slidesViewport}
         >
-          {showCounter && (
-            <div className={classes.counterContainer}>
-              <span className={classes.counter}>
-                {`${selectedIndex + 1}/${numSlides}`}
-              </span>
-            </div>
-          )}
-
-          {showSlideControls && (
-            <div className={classes.slideControls}>
-              <HvButton
-                icon
-                disabled={!canPrev}
-                variant="secondary"
-                aria-label="Backwards"
-                onClick={handlePrevious}
-              >
-                <Backwards iconSize="XS" />
-              </HvButton>
-              <HvButton
-                icon
-                disabled={!canNext}
-                variant="secondary"
-                aria-label="Forwards"
-                onClick={handleNext}
-              >
-                <Forwards iconSize="XS" />
-              </HvButton>
-            </div>
-          )}
-
-          <div
-            ref={containerRef}
-            style={{ height }}
-            className={classes.slidesViewport}
-          >
-            <div className={classes.slidesContainer}>{children}</div>
-          </div>
+          <div className={classes.slidesContainer}>{children}</div>
         </div>
       </div>
-
-      {showThumbnails && (
-        <div ref={thumbnailsRef} className={classes.panel}>
-          <HvStack direction="row" spacing="xs">
-            {Array.from(Array(numSlides)).map((doc, i) => (
-              <HvButton
-                icon
-                variant="secondaryGhost"
-                key={`button-${i}`}
-                style={{ width: thumbnailWidth }}
-                className={cx(classes.thumbnail, {
-                  [classes.thumbnailSelected]: i === selectedIndex,
-                })}
-                onClick={() => handleScroll(i)}
-              >
-                {renderThumbnail(i)}
-              </HvButton>
-            ))}
-          </HvStack>
-        </div>
-      )}
+      {controlsPosition === "bottom" && controls}
+      {thumbnailsPosition === "bottom" && thumbnails}
     </HvContainer>
   );
 };

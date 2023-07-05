@@ -385,7 +385,6 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   carousel: {
     xsControlsDisplay: "string",
     counterContainerDisplay: "string",
-    actionsOffsetTop: "string",
     mainContainerFlexDirection: "string",
     controlsBorder: "string",
     controlsBackgroundColor: "string",
