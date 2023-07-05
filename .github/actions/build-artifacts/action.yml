@@ -18,7 +18,9 @@ runs:
       uses: ./.github/actions/install-dependencies
 
     - name: Build Documentation
-      run: npx cross-env NODE_OPTIONS=--max_old_space_size=8192 build-storybook --docs -o dist --quiet
+      run: npm run build:doc
+      env:
+        NODE_OPTIONS: "--max_old_space_size=8192"
       shell: bash
 
     - name: Archive Documentation
@@ -30,7 +32,7 @@ runs:
 
     - name: Build App
       if: ${{ inputs.build-app == 'true' }}
-      run: npx vite build app --base=${{ env.APP_BASE_PATH }}
+      run: npm run build:app -- --base=${{ env.APP_BASE_PATH }}
       shell: bash
 
     - name: Archive App
