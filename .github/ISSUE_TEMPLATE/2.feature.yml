@@ -1,6 +1,6 @@
 name: Feature request 💄
 description: Suggest a new idea for NEXT UI Kit.
-labels: ['⌛ needs triage']
+labels: ["⌛ needs triage"]
 body:
   - type: markdown
     attributes:
@@ -18,10 +18,10 @@ body:
   - type: checkboxes
     attributes:
       label: No Hitachi confidential content
-      description: Keep in mind this is a public repository. Do not share any information that you might even think is Hitachi confidential. Logos, references to work in progress projects, and of course, credentials. We will delete the issue immediately. 
+      description: Keep in mind this is a public repository. Do not share any information that you might even think is Hitachi confidential. Logos, references to work in progress projects, and of course, credentials. We will delete the issue immediately.
       options:
         - label: I'm not including any Hitachi confidential content
-          required: true                
+          required: true
   - type: textarea
     attributes:
       label: Summary 💡

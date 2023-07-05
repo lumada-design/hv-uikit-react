@@ -44,7 +44,7 @@ runs:
       with:
         name: ${{ env.ARTIFACT }}
         path: ${{ github.workspace }}/gh-docs/${{env.PUBLISH_FOLDER}}
-    
+
     - name: Push Artifact
       run: |
         cd ${{ github.workspace }}/gh-docs

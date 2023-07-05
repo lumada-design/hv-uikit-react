@@ -38,7 +38,7 @@ jobs:
             artifact: "documentation"
           - folder: "uikit-app"
             artifact: "app"
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -51,6 +51,5 @@ jobs:
           PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
           PUBLISH_FOLDER: ${{ matrix.folder }}/${{ env.PUBLISH_FOLDER }}
           PUBLISH_MESSAGE: "chore: ${{ matrix.artifact }} for ${{ env.PUBLISH_FOLDER }} of ${{ github.repository }}"
-          URL: https://${{ github.repository_owner }}.github.io/${{ matrix.folder }}/${{ env.PUBLISH_FOLDER }}/ 
+          URL: https://${{ github.repository_owner }}.github.io/${{ matrix.folder }}/${{ env.PUBLISH_FOLDER }}/
           ARTIFACT: ${{ matrix.artifact }}
-
