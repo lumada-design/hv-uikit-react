@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.17](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.16...@hitachivantara/uikit-react-lab@5.4.17) (2023-07-06)
+
+### Bug Fixes
+
+- **Button:** styles & port to createClasses ([#3466](https://github.com/lumada-design/hv-uikit-react/issues/3466)) ([9c8a2f6](https://github.com/lumada-design/hv-uikit-react/commit/9c8a2f6753376923acb09cd9c4f7044c8f43374a))
+
 ## [5.4.16](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.15...@hitachivantara/uikit-react-lab@5.4.16) (2023-07-05)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.19.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.18.5...@hitachivantara/uikit-react-core@5.19.0) (2023-07-06)
+
+### Bug Fixes
+
+- a menu item with a child with a link should also be a link ([3f8a583](https://github.com/lumada-design/hv-uikit-react/commit/3f8a583c4fa98b440b0c8755fa5f77c026087b8d))
+- **breadcrumb:** allow special characters on labels ([#3469](https://github.com/lumada-design/hv-uikit-react/issues/3469)) ([3b544bb](https://github.com/lumada-design/hv-uikit-react/commit/3b544bb3204e9ad9947bac3f81f507717625cf95))
+- **Button:** styles & port to createClasses ([#3466](https://github.com/lumada-design/hv-uikit-react/issues/3466)) ([9c8a2f6](https://github.com/lumada-design/hv-uikit-react/commit/9c8a2f6753376923acb09cd9c4f7044c8f43374a))
+- export HvDrawer ([#3479](https://github.com/lumada-design/hv-uikit-react/issues/3479)) ([c2f93cb](https://github.com/lumada-design/hv-uikit-react/commit/c2f93cb18c405d9095e116f23d22779bdc5c08ab))
+
+### Features
+
+- **Carousel:** add customizable controls/thumbnail position ([c46515c](https://github.com/lumada-design/hv-uikit-react/commit/c46515c8a2cd8a9cb292c4452386f006bb900d02))
+
+### Reverts
+
+- Revert "fix(breadcrumb): allow special characters on labels (#3469)" (#3484) ([268099f](https://github.com/lumada-design/hv-uikit-react/commit/268099f6fdea16e3cfd46e43c01f8d428792dd77)), closes [#3469](https://github.com/lumada-design/hv-uikit-react/issues/3469) [#3484](https://github.com/lumada-design/hv-uikit-react/issues/3484) [#3469](https://github.com/lumada-design/hv-uikit-react/issues/3469)
+
 ## [5.18.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.18.4...@hitachivantara/uikit-react-core@5.18.5) (2023-07-05)
 
 ### Bug Fixes

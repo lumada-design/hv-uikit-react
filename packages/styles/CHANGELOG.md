@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.9.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.8.6...@hitachivantara/uikit-styles@5.9.0) (2023-07-06)
+
+### Bug Fixes
+
+- **Button:** styles & port to createClasses ([#3466](https://github.com/lumada-design/hv-uikit-react/issues/3466)) ([9c8a2f6](https://github.com/lumada-design/hv-uikit-react/commit/9c8a2f6753376923acb09cd9c4f7044c8f43374a))
+
+### Features
+
+- **Carousel:** add customizable controls/thumbnail position ([c46515c](https://github.com/lumada-design/hv-uikit-react/commit/c46515c8a2cd8a9cb292c4452386f006bb900d02))
+
 ## [5.8.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.8.5...@hitachivantara/uikit-styles@5.8.6) (2023-07-05)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles
