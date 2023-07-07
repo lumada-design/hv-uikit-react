@@ -6,9 +6,10 @@ import {
   HvListValue,
   useTheme,
   theme,
+  getVarValue,
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens, HvThemeTypography } from "@hitachivantara/uikit-styles";
-import { extractFontSizeUnit, getVarValue } from "generator/utils";
+import { extractFontSizeUnit } from "generator/utils";
 import { useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import debounce from "lodash/debounce";

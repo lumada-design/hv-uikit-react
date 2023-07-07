@@ -1,17 +1,6 @@
 import { HvTheme } from "@hitachivantara/uikit-react-core";
 import { HvThemeStructure } from "@hitachivantara/uikit-styles";
 
-export const getVarValue = (cssVar: string, rootElementId?: string) => {
-  const root = document.getElementById(rootElementId || "hv-root");
-  if (root) {
-    const computedValue = getComputedStyle(root)
-      .getPropertyValue(cssVar.replace("var(", "").replace(")", ""))
-      .trim();
-
-    return computedValue;
-  }
-};
-
 export const extractFontsNames = (webfontLink: string): string[] => {
   const fontNames: string[] = [];
 

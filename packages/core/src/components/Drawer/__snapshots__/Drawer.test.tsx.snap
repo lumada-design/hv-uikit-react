@@ -24,7 +24,7 @@ exports[`HvDrawer > should render correctly 1`] = `
   >
     <div
       aria-hidden="true"
-      class="MuiBackdrop-root HvDrawer-background hv-v41n4a MuiModal-backdrop css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop"
+      class="MuiBackdrop-root HvDrawer-background hv-8ripq6 MuiModal-backdrop css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop"
       style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
     />
     <div

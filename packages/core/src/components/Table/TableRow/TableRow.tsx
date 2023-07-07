@@ -4,8 +4,8 @@ import { theme } from "@hitachivantara/uikit-styles";
 import {
   ExtractNames,
   checkValidHexColorValue,
-  getVarValue,
   hexToRgbA,
+  getVarValue,
 } from "@core/utils";
 import { transientOptions } from "@core/utils/transientOptions";
 import { HvBaseProps } from "@core/types";
@@ -89,7 +89,7 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
       ...others
     } = props;
     const { classes, cx } = useClasses(classesProp);
-    const { activeTheme, selectedMode } = useTheme();
+    const { activeTheme, selectedMode, rootId } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -113,12 +113,12 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
     );
 
     useEffect(() => {
-      setEven(getVarValue(theme.table.rowStripedBackgroundColorEven));
-      setOdd(getVarValue(theme.table.rowStripedBackgroundColorOdd));
+      setEven(getVarValue(theme.table.rowStripedBackgroundColorEven, rootId));
+      setOdd(getVarValue(theme.table.rowStripedBackgroundColorOdd, rootId));
 
       setStripedColorEven(getStripedColor(even));
       setStripedColorOdd(getStripedColor(odd));
-    }, [activeTheme?.colors?.modes[selectedMode], even, odd]);
+    }, [activeTheme?.colors?.modes[selectedMode], even, odd, rootId]);
 
     return (
       <TableRow

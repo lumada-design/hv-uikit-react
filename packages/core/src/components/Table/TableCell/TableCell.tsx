@@ -14,8 +14,8 @@ import { transientOptions } from "@core/utils/transientOptions";
 import {
   checkValidHexColorValue,
   ExtractNames,
-  getVarValue,
   hexToRgbA,
+  getVarValue,
 } from "@core/utils";
 import { useTheme } from "@core/hooks";
 import {
@@ -131,7 +131,7 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
       ...others
     } = props;
     const { classes, cx } = useClasses(classesProp);
-    const { activeTheme, selectedMode } = useTheme();
+    const { activeTheme, rootId } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -154,14 +154,15 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
     );
 
     useEffect(() => {
-      setSortedColorValue(getVarValue(theme.table.rowSortedColor));
-      setSortedColorAlpha(getVarValue(theme.table.rowSortedColorAlpha));
+      setSortedColorValue(getVarValue(theme.table.rowSortedColor, rootId));
+      setSortedColorAlpha(getVarValue(theme.table.rowSortedColorAlpha, rootId));
 
       setSortedColor(getSortedColor(sortedColorValue, sortedColorAlpha));
     }, [
-      activeTheme?.colors?.modes[selectedMode],
+      activeTheme?.colors.modes.selectedMode,
       sortedColorValue,
       sortedColorAlpha,
+      rootId,
     ]);
 
     return (
