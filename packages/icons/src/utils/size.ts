@@ -1,9 +1,7 @@
 /**
- * Creates a standardized component name from a given gile and filename
- * @param  string fileData
- * @return Object
+ * Creates a standardized component name from a given file and filename
  */
-const extractSize = (fileData) => {
+export const extractSize = (fileData: string) => {
   const viewBoxRegexp = /viewBox="(\d*?) (\d*?) (\d*?) (\d*?)"/g;
   const widthRegexp = /width={(\d*?)}/g;
   const heightRegexp = /height={(\d*?)}/g;
@@ -32,4 +30,19 @@ const extractSize = (fileData) => {
   return result;
 };
 
-export default extractSize;
+/**
+ * Replace sizes in the svg
+ */
+export const replaceSize = (fileData: string) => {
+  const viewBoxRegexp = /viewBox="(\d*?) (\d*?) (\d*?) (\d*?)"/;
+  const widthRegexp = /width={(\d*?)}/;
+  const heightRegexp = /height={(\d*?)}/;
+
+  return fileData
+    .replace(widthRegexp, ``)
+    .replace(heightRegexp, ``)
+    .replace(
+      viewBoxRegexp,
+      `viewBox={viewbox} height={size.height} width={size.width}`
+    );
+};

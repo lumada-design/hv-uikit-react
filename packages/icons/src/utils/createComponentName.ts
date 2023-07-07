@@ -2,20 +2,15 @@ import path from "path";
 
 /**
  * Convert a string from snake case to camel case
- * @param  string s The input string
- * @return string The output string
  */
-function snakeToCamel(s) {
+function snakeToCamel(s: string) {
   return s.replace(/(-\w)/g, (m) => m[1].toUpperCase());
 }
 
 /**
- * Creates a standardized component name from a given gile and filename
- * @param  string file
- * @param  string fileName
- * @return string
+ * Creates a standardized component name from a given file and filename
  */
-const createComponentName = (file, fileName) => {
+export const createComponentName = (file: string, fileName: string) => {
   let componentNamePrep;
 
   if (fileName.indexOf("-") !== -1) {
@@ -27,5 +22,3 @@ const createComponentName = (file, fileName) => {
   componentNameArr[0] = componentNameArr[0].toUpperCase();
   return componentNameArr.join("");
 };
-
-export default createComponentName;

@@ -2,10 +2,8 @@
 
 /**
  * This pretty prints the provided svg.
- * @param  string  svg The svg data to format
- * @return string The formatted svg data
  */
-const formatSVG = (svg) => {
+export const formatSVG = (svg) => {
   const reg = /(>)\s*(<)(\/*)/g;
   const wsexp = / *(.*) +\n/g;
   const contexp = /(<.+>)(.+\n)/g;
@@ -65,5 +63,3 @@ const formatSVG = (svg) => {
 
   return formatted.trim();
 };
-
-export default formatSVG;

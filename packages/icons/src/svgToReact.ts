@@ -8,14 +8,10 @@ import yargs from "yargs";
 import jsdom from "jsdom-no-contextify";
 import { colors } from "@hitachivantara/uikit-styles";
 
-import colorExtractor from "./colorUtils/colorExtractor";
-import fillColorReplacer from "./colorUtils/fillColorReplacer";
-import formatSVG from "./converterUtils/formatSVG";
-import generateComponent from "./converterUtils/generateComponent";
-import removeStyle from "./converterUtils/removeStyle";
-import createComponentName from "./fileSystemUtils/createComponentName";
-import sizeExtractor from "./sizeUtils/sizeExtractor";
-import sizeReplacer from "./sizeUtils/sizeReplacer";
+import { extractColors, replaceFill } from "./utils/colors";
+import { formatSVG, generateComponent, removeStyle } from "./utils/converter";
+import { createComponentName } from "./utils/createComponentName";
+import { extractSize, replaceSize } from "./utils/size";
 
 const printErrors = console.warn;
 
@@ -178,11 +174,11 @@ const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
         .replace('style="isolation:isolate"', "")
         .replace('="">', ">");
 
-      const sizeObject = sizeExtractor(output);
-      output = sizeReplacer(output);
+      const sizeObject = extractSize(output);
+      output = replaceSize(output);
 
-      const colorObject = colorExtractor(output);
-      output = fillColorReplacer(output, colorObject);
+      const colorObject = extractColors(output);
+      output = replaceFill(output, colorObject);
 
       // regexp fill="(.*?)"
 

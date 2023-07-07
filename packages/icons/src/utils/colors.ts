@@ -1,9 +1,7 @@
 /**
- * Creates a standardized component name from a given gile and filename
- * @param  string fileData
- * @return Object
+ * Creates a standardized component name from a given file and filename
  */
-const extractColors = (fileData) => {
+export const extractColors = (fileData: string) => {
   const regexp = /fill="(.*?)"|fill: (.*?);/g; // find all the fills inside the component
   let matcher;
 
@@ -34,4 +32,16 @@ const extractColors = (fileData) => {
   return result;
 };
 
-export default extractColors;
+/**
+ * Extract colors from the svg to an object
+ */
+export const replaceFill = (fileData: string, colorObject) => {
+  let result = fileData;
+  colorObject.colorArray.forEach((element, index) => {
+    result = result
+      .split(`fill="${element}"`)
+      .join(`fill={colorArray[${index}]} className="color${index}" `);
+  });
+
+  return result;
+};
