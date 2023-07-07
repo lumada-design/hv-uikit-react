@@ -1,14 +1,18 @@
 import React, { useCallback, useMemo } from "react";
+
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
-import { BackdropProps } from "@mui/material";
+import MuiBackdrop from "@mui/material/Backdrop";
 
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames, setId } from "@core/utils";
 import { withTooltip } from "@core/hocs";
 import { useTheme } from "@core/hooks";
-import { StyledBackdrop, staticClasses, useClasses } from "./Dialog.styles";
+import fade from "@core/utils/hexToRgbA";
+
+import { staticClasses, useClasses } from "./Dialog.styles";
 import { HvButton } from "..";
 
 export { staticClasses as dialogClasses };
@@ -47,18 +51,6 @@ export interface HvDialogProps
   classes?: HvDialogClasses;
 }
 
-const DialogBackdrop = (backdropProps: BackdropProps) => {
-  const { activeTheme, selectedMode } = useTheme();
-  return (
-    <StyledBackdrop
-      $backColor={
-        activeTheme?.colors?.modes[selectedMode].atmo4 || theme.colors.atmo4
-      }
-      {...backdropProps}
-    />
-  );
-};
-
 export const HvDialog = ({
   classes: classesProp,
   className,
@@ -75,7 +67,7 @@ export const HvDialog = ({
   const { classes, css, cx } = useClasses(classesProp);
   delete (others as any).fullScreen;
 
-  const { rootId } = useTheme();
+  const { rootId, activeTheme, selectedMode } = useTheme();
 
   // Because the `disableBackdropClick` property was deprecated in MUI5
   // and we want to maintain that functionality to the user we're wrapping
@@ -109,7 +101,7 @@ export const HvDialog = ({
   const slots = useMemo<MuiDialogProps["slots"]>(
     () => ({
       backdrop: (backdropProps) => (
-        <DialogBackdrop open={open} onClick={wrappedClose} {...backdropProps} />
+        <MuiBackdrop open={open} onClick={wrappedClose} {...backdropProps} />
       ),
     }),
     [open, wrappedClose]
@@ -119,16 +111,27 @@ export const HvDialog = ({
     <MuiDialog
       container={document.getElementById(rootId || "") || document.body}
       className={cx(className, classes.root)}
+      classes={{ container: css({ position: "relative" }) }}
       id={id}
       ref={measuredRef}
       open={open}
       fullScreen={fullscreen}
       onClose={(event, reason) => wrappedClose(event, undefined, reason)}
       slots={slots}
-      classes={{ container: css({ position: "relative" }) }}
-      BackdropProps={{
-        classes: {
-          root: classes.background,
+      slotProps={{
+        backdrop: {
+          classes: {
+            root: cx(
+              css({
+                background: fade(
+                  activeTheme?.colors?.modes[selectedMode].atmo4 ||
+                    theme.colors.atmo4,
+                  0.8
+                ),
+              }),
+              classes.background
+            ),
+          },
         },
       }}
       PaperProps={{

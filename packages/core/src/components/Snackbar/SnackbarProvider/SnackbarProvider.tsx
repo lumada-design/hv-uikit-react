@@ -31,8 +31,7 @@ export interface HvSnackbarProviderProps {
   /** Class object used to override notistack classes. */
   notistackClassesOverride?: Partial<ClassNameMap<CombinedClassKey>>;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: Partial<HvSnackbarProviderClasses>;
-
+  classes?: HvSnackbarProviderClasses;
   className?: string;
 }
 

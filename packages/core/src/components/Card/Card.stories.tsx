@@ -75,6 +75,11 @@ const meta: Meta<typeof HvCard> = {
   title: "Components/Card",
   component: HvCard,
   subcomponents: { HvCardHeader, HvCardContent, HvCardMedia },
+  parameters: {
+    eyes: {
+      waitBeforeCapture: 5000,
+    },
+  },
   decorators: [(Story) => <div style={{ margin: 20 }}>{Story()}</div>],
 };
 export default meta;

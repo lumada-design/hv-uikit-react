@@ -1,15 +1,17 @@
-import { DialogTitleProps as MuiDialogTitleProps } from "@mui/material/DialogTitle";
-import { clsx } from "clsx";
+import MuiDialogTitle, {
+  DialogTitleProps as MuiDialogTitleProps,
+} from "@mui/material/DialogTitle";
+
 import { HvTypography } from "@core/components";
 import { HvBaseProps } from "@core/types";
-import { iconVariant } from "@core/utils";
+import { ExtractNames, iconVariant } from "@core/utils";
 import { useTheme } from "@core/hooks";
-import {
-  StyledTitle,
-  StyledMessageContainer,
-  StyledTextWithIcon,
-} from "./Title.styles";
-import dialogTitleClasses, { HvDialogTitleClasses } from "./titleClasses";
+
+import { staticClasses, useClasses } from "./Title.styles";
+
+export { staticClasses as dialogTitleClasses };
+
+export type HvDialogTitleClasses = ExtractNames<typeof useClasses>;
 
 export type HvDialogTitleVariant =
   | "success"
@@ -31,7 +33,7 @@ export interface HvDialogTitleProps
 }
 
 export const HvDialogTitle = ({
-  classes,
+  classes: classesProp,
   className,
   children,
   variant = "default",
@@ -39,6 +41,8 @@ export const HvDialogTitle = ({
   customIcon = null,
   ...others
 }: HvDialogTitleProps) => {
+  const { classes, css, cx } = useClasses(classesProp);
+
   const { activeTheme } = useTheme();
 
   const isString = typeof children === "string";
@@ -49,39 +53,28 @@ export const HvDialogTitle = ({
   const icon = customIcon || (showIcon && iconVariant(variant));
 
   return (
-    <StyledTitle
-      className={clsx(
-        dialogTitleClasses.root,
-        classes?.root,
-        className,
-        fullscreen && clsx(dialogTitleClasses.fullscreen, classes?.fullscreen)
+    <MuiDialogTitle
+      className={cx(
+        !fullscreen && css({ flex: 1 }),
+        classes.root,
+        {
+          [classes.fullscreen]: fullscreen,
+        },
+        className
       )}
-      $fullscreen={fullscreen}
       {...others}
     >
-      <StyledMessageContainer
-        className={clsx(
-          dialogTitleClasses.messageContainer,
-          classes?.messageContainer
-        )}
-      >
+      <div className={classes.messageContainer}>
         {icon}
-        <StyledTextWithIcon
-          className={
-            icon
-              ? clsx(dialogTitleClasses.textWithIcon, classes?.textWithIcon)
-              : undefined
-          }
-          $hasIcon={!!icon}
-        >
+        <div className={cx({ [classes.textWithIcon]: !!icon })}>
           {!isString && children}
           {isString && (
             <HvTypography variant={activeTheme?.dialog.titleVariant}>
               {children}
             </HvTypography>
           )}
-        </StyledTextWithIcon>
-      </StyledMessageContainer>
-    </StyledTitle>
+        </div>
+      </div>
+    </MuiDialogTitle>
   );
 };

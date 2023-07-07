@@ -67,13 +67,13 @@ exports[`HvDrawer > should render correctly 1`] = `
         </div>
       </button>
       <h2
-        class="MuiTypography-root MuiTypography-h6 MuiDialogTitle-root HvDialog-Title-root css-8j7nav-drawerTitle css-1kuxgnj-StyledTitle eo9hglt2 css-bdhsul-MuiTypography-root-MuiDialogTitle-root"
+        class="MuiTypography-root MuiTypography-h6 MuiDialogTitle-root HvDialog-Title-root css-8j7nav-drawerTitle hv-1ao4m9s css-bdhsul-MuiTypography-root-MuiDialogTitle-root"
       >
         <div
-          class="HvDialog-Title-messageContainer css-ynz11o-StyledMessageContainer eo9hglt1"
+          class="HvDialog-Title-messageContainer hv-70qvj9"
         >
           <div
-            class="css-1slcu2n-StyledTextWithIcon eo9hglt0"
+            class=""
           >
             <p
               class="HvTypography-root HvTypography-body hv-1gxwolr"
@@ -84,7 +84,7 @@ exports[`HvDrawer > should render correctly 1`] = `
         </div>
       </h2>
       <div
-        class="MuiDialogContent-root HvTypography-root HvTypography-body css-1s5cb77-drawerContent HvDialog-Content-root css-a17m5c-StyledTypography e4uf5ag0 hv-1gxwolr css-ypiqx9-MuiDialogContent-root"
+        class="MuiDialogContent-root HvTypography-root HvTypography-body HvDialog-Content-root css-1s5cb77-drawerContent hv-1vzogr4 css-ypiqx9-MuiDialogContent-root"
       >
         Cras mattis consectetur purus sit amet fermentum. 
                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. 
@@ -92,7 +92,7 @@ exports[`HvDrawer > should render correctly 1`] = `
                   Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
       </div>
       <div
-        class="MuiDialogActions-root HvDialog-Action-root MuiDialogActions-spacing HvDialog-Action-spacing css-bzzl2y-StyledActions e5nbcch0 css-hlj6pa-MuiDialogActions-root"
+        class="MuiDialogActions-root HvDialog-Action-root hv-1gvprvf MuiDialogActions-spacing HvDialog-Action-spacing hv-1r9lznk css-hlj6pa-MuiDialogActions-root"
       >
         <button
           class="HvButton-root hv-1w5her9"
