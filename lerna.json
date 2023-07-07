@@ -1,6 +1,7 @@
 {
-  "useWorkspaces": true,
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "version": "independent",
+  "packages": ["packages/*"],
   "command": {
     "publish": {
       "npmClientArgs": ["--legacy-peer-deps", "--production=false"]
