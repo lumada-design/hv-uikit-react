@@ -34,28 +34,24 @@ export const tutorialData: StepProps[] = [
       top: 60,
     },
     arrow: {
-      right: 10,
+      left: 310,
     },
   },
   {
     title: "Theme base configuration",
-    content:
-      "Enter the name of your custom theme and select the base theme and color mode.",
+    content: "Select the base theme and color mode.",
     size: {
       width: 350,
     },
     position: {
       right: 20,
-      top: 170,
-    },
-    arrow: {
-      right: "calc(50% - 15px)",
+      top: 120,
     },
   },
   {
     title: "Code Editor",
     content:
-      "All the changes you make to your theme will be available here. You can use the icons to reset or copy the code and the usual keyboard shortcuts to undo or redo.",
+      "All the changes you make to your theme will be available here. You can use the icons to reset or copy the code and the usual keyboard shortcuts to undo or redo. You can also download your theme here.",
     orientation: "right",
     size: {
       width: 350,
@@ -63,9 +59,6 @@ export const tutorialData: StepProps[] = [
     position: {
       right: 415,
       top: 180,
-    },
-    arrow: {
-      top: "calc(50% - 15px)",
     },
   },
   {
@@ -80,9 +73,6 @@ export const tutorialData: StepProps[] = [
       right: 415,
       top: 455,
     },
-    arrow: {
-      top: "calc(50% - 15px)",
-    },
   },
   {
     title: "Preview",
@@ -94,9 +84,6 @@ export const tutorialData: StepProps[] = [
     position: {
       right: "calc(50% - 40px)",
       top: `calc(${theme.header.height} + 20px)`,
-    },
-    arrow: {
-      right: "calc(50% - 15px)",
     },
   },
   {
@@ -111,9 +98,6 @@ export const tutorialData: StepProps[] = [
       right: "calc(50% - 40px)",
       top: `calc(2 * ${theme.header.height} + 20px)`,
     },
-    arrow: {
-      right: "calc(50% - 15px)",
-    },
   },
   {
     title: "Components",
@@ -125,9 +109,6 @@ export const tutorialData: StepProps[] = [
     position: {
       right: "calc(50% + 70px)",
       top: `calc(${theme.header.height} + 20px)`,
-    },
-    arrow: {
-      right: "calc(50% - 15px)",
     },
   },
   {
@@ -141,9 +122,6 @@ export const tutorialData: StepProps[] = [
     position: {
       left: 220,
       top: `calc(50% - 100px)`,
-    },
-    arrow: {
-      top: "calc(50% - 15px)",
     },
   },
 ];
