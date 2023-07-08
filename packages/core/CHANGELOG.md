@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.19.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.19.0...@hitachivantara/uikit-react-core@5.19.1) (2023-07-08)
+
+### Bug Fixes
+
+- **InlineEditor:** losing variant styles when in edit mode ([#3493](https://github.com/lumada-design/hv-uikit-react/issues/3493)) ([c1de54b](https://github.com/lumada-design/hv-uikit-react/commit/c1de54bad93744f096e2249c18e06dd47103d1ec))
+
 # [5.19.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.18.5...@hitachivantara/uikit-react-core@5.19.0) (2023-07-06)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-lab",
-  "version": "5.4.17",
+  "version": "5.4.18",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Contributed React components for the NEXT UI Kit.",
@@ -43,7 +43,7 @@
   "dependencies": {
     "@emotion/css": "^11.11.0",
     "@emotion/serialize": "^1.1.2",
-    "@hitachivantara/uikit-react-core": "^5.19.0",
+    "@hitachivantara/uikit-react-core": "^5.19.1",
     "@hitachivantara/uikit-react-icons": "^5.2.6",
     "@hitachivantara/uikit-styles": "^5.9.0",
     "clsx": "^1.2.1",
