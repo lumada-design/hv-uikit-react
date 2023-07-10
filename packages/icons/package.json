@@ -28,8 +28,8 @@
     "preconvert": "npx rimraf bin",
     "convert": "run-s convert:*",
     "convert:optimize": "svgo --config=./svgo.config.js -r -f assets assets",
-    "convert:svg": "ts-node -r tsconfig-paths/register src/svgToReact.ts dir --input assets --output bin --force",
-    "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
+    "convert:svg": "tsx src/svgToReact.ts dir --input assets --output bin --force",
+    "convert:copy": "npx cpy \"src/IconBase*\" \"bin\"",
     "clean": "npx rimraf dist bin package",
     "prepare": "npm run convert",
     "prepublishOnly": "npm run build && npx clean-publish"
@@ -52,8 +52,7 @@
     "npm-run-all": "^4.1.5",
     "recursive-readdir": "^2.2.3",
     "svgo": "^3.0.2",
-    "ts-node": "^10.9.1",
-    "tsconfig-paths": "^4.2.0",
+    "tsx": "^3.12.7",
     "vite": "^4.3.9",
     "yargs": "^17.7.2"
   },

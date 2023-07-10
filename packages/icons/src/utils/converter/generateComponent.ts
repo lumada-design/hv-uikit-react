@@ -25,7 +25,7 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
  * @param  string colors - The defaults value of colors to add to the component
  * @return string The parsed component string
  */
-const generateComponent = (
+export const generateComponent = (
   {
     svgOutput,
     componentName,
@@ -118,5 +118,3 @@ const ${componentName} = ({
 
 export default ${componentName};`;
 };
-
-export default generateComponent;
