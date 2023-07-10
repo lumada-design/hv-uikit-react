@@ -1,7 +1,11 @@
-export const getLegendIcon = (square: boolean) => {
-  if (square) {
-    return "path://M0,0L16,0L16,16L0,16L0,0Z";
-  }
+import { HvChartLegendIcon } from "@viz/types/legend";
 
-  return "path://M0,0L16,0L16,2L0,2Z";
+export const getLegendIcon = (icon: HvChartLegendIcon) => {
+  switch (icon) {
+    case "square":
+      return "path://M0,0L16,0L16,16L0,16L0,0Z";
+    case "line":
+    default:
+      return "path://M0,0L16,0L16,2L0,2Z";
+  }
 };

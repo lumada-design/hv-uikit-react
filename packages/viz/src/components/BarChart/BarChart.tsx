@@ -1,15 +1,55 @@
-import {
-  HvBaseChart,
-  HvBaseChartBarProps,
-  HvBaseChartClasses,
-  HvBaseChartCommonProps,
-} from "../BaseChart";
+import { useMemo } from "react";
 
-export interface HvBarChartClasses extends HvBaseChartClasses {}
+import { Arrayable } from "@hitachivantara/uikit-react-core";
+
+import * as echarts from "echarts/core";
+import { BarChart } from "echarts/charts";
+import {
+  DatasetComponent,
+  GridComponent,
+  TooltipComponent,
+  LegendComponent,
+  DataZoomSliderComponent,
+  DataZoomInsideComponent,
+} from "echarts/components";
+
+import {
+  useXAxis,
+  useYAxis,
+  useDataZoom,
+  useGrid,
+  useData,
+  useDataset,
+  useSeries,
+  useLegend,
+  useTooltip,
+  HvChartTooltipClasses,
+} from "@viz/hooks";
+
+import { HvBarChartMeasures } from "../../types";
+import { HvBaseChart } from "../BaseChart";
+import { HvAxisChartCommonProps, HvChartCommonProps } from "../../types/common";
+
+// Register chart components
+echarts.use([
+  BarChart,
+  DatasetComponent,
+  GridComponent,
+  TooltipComponent,
+  LegendComponent,
+  DataZoomSliderComponent,
+  DataZoomInsideComponent,
+]);
+
+export interface HvBarChartClasses extends HvChartTooltipClasses {}
 
 export interface HvBarChartProps
-  extends HvBaseChartCommonProps,
-    HvBaseChartBarProps {
+  extends HvAxisChartCommonProps,
+    HvChartCommonProps {
+  /**  Columns to measure on the chart. */
+  measures: Arrayable<HvBarChartMeasures>;
+  /** Whether the bar chart should be horizontal. Defaults to `false`. */
+  horizontal?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBarChartClasses;
 }
@@ -18,8 +58,87 @@ export interface HvBarChartProps
  * A bar chart is a chart or graph that presents categorical data with rectangular bars.
  */
 export const HvBarChart = ({
+  yAxis,
+  xAxis,
   horizontal = false,
-  ...others
+  horizontalRangeSlider,
+  grid,
+  data,
+  groupBy,
+  splitBy,
+  sortBy,
+  stack,
+  seriesNameFormatter,
+  measures,
+  legend,
+  tooltip,
+  classes,
 }: HvBarChartProps) => {
-  return <HvBaseChart type="bar" horizontal={horizontal} {...others} />;
+  const chartData = useData({ data, groupBy, sortBy, splitBy, measures });
+
+  const chartDataset = useDataset(chartData);
+
+  const chartYAxis = useYAxis({
+    yAxis,
+    defaultType: horizontal ? "categorical" : "continuous",
+  });
+
+  const chartXAxis = useXAxis({
+    xAxis,
+    defaultType: horizontal ? "continuous" : "categorical",
+  });
+
+  const chartSlider = useDataZoom({
+    showHorizontal: horizontalRangeSlider?.show,
+  });
+
+  const chartGrid = useGrid({ ...grid });
+
+  const chartSeries = useSeries({
+    type: "bar",
+    data: chartData,
+    groupBy,
+    measures,
+    stack,
+    nameFormatter: seriesNameFormatter,
+    horizontal,
+  });
+
+  const chartLegend = useLegend({
+    ...legend,
+    series: chartSeries.series,
+    icon: "square",
+  });
+
+  const chartTooltip = useTooltip({
+    ...tooltip,
+    trigger: "axis",
+    measures,
+    classes,
+    horizontal,
+  });
+
+  const options = useMemo(() => {
+    return {
+      ...chartYAxis,
+      ...chartXAxis,
+      ...chartSlider,
+      ...chartGrid,
+      ...chartDataset,
+      ...chartSeries,
+      ...chartLegend,
+      ...chartTooltip,
+    };
+  }, [
+    chartXAxis,
+    chartYAxis,
+    chartSlider,
+    chartGrid,
+    chartDataset,
+    chartSeries,
+    chartLegend,
+    chartTooltip,
+  ]);
+
+  return <HvBaseChart options={options} />;
 };

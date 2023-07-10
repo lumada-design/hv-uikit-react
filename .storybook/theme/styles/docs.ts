@@ -47,7 +47,7 @@ export const getDocsStyles = (dark: boolean) => {
       },
 
       // This is necessary for the chart tooltips to not be hidden
-      "div[id*='anchor--visualizations-bar-chart'], div[id*='anchor--visualizations-line-chart']":
+      "div[id*='anchor--visualizations-bar-chart'], div[id*='anchor--visualizations-line-chart'], div[id*='anchor--visualizations-donut-chart']":
         {
           ".sbdocs-preview": {
             overflow: "visible",
