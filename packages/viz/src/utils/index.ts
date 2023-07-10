@@ -1,6 +1,6 @@
 export * from "./getAxisType";
 export * from "./getAgFunc";
 export * from "./getLegendIcon";
-export * from "./registerThemes";
+export * from "./registerTheme";
 export * from "./getGroupKey";
 export * from "./getMeasure";
