@@ -114,9 +114,8 @@ export const FontSize = ({
             values={getUnits()}
             disabled={disabled}
             classes={{
-              dropdownHeader: css({ border: "none!important" }),
+              dropdownHeader: css({ border: "none!important", width: 60 }),
               rootList: css({
-                width: 60,
                 "& > div": { padding: "0px!important" },
               }),
             }}
