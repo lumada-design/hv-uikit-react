@@ -23,9 +23,10 @@
     "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
   "scripts": {
-    "build": "run-s clean convert:* build:*",
-    "build:js": "vite build",
-    "convert": "run-s clean convert:*",
+    "prebuild": "npm run convert",
+    "build": "vite build",
+    "preconvert": "npx rimraf bin",
+    "convert": "run-s convert:*",
     "convert:optimize": "svgo --config=./svgo.config.js -r -f assets assets",
     "convert:svg": "ts-node -r tsconfig-paths/register src/svgToReact.ts dir --input assets --output bin --force",
     "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
