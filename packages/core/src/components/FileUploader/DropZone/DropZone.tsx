@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import uniqueId from "lodash/uniqueId";
 import accept from "attr-accept";
 import { clsx } from "clsx";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { isKey, setId } from "@core/utils";
 import { useUniqueId } from "@core/hooks";
 import { convertUnits } from "../utils";
 import {
@@ -229,7 +229,7 @@ export const HvDropZone = ({
           }
         }}
         onKeyDown={(e) => {
-          if (isKeypress(e, keyboardCodes.Enter) || isKeypress(e, 32)) {
+          if (isKey(e, "Enter") || isKey(e, "Space")) {
             inputRef.current?.click();
           }
         }}

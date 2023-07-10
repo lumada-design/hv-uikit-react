@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { isKey, setId } from "@core/utils";
 import { HvTypography } from "@core/components";
 import { HvBaseProps } from "@core/types";
 import {
@@ -21,10 +21,7 @@ export const Navigation = ({
   isNextEnabled = true,
 }: NavigationProps) => {
   const onkeyDownHandler = (event, funcAction) => {
-    if (
-      isKeypress(event, keyboardCodes.Enter) ||
-      isKeypress(event, keyboardCodes.Space)
-    ) {
+    if (isKey(event, "Enter") || isKey(event, "Space")) {
       event.preventDefault();
       funcAction(event);
     }

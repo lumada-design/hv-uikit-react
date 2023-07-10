@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { HvBaseProps } from "@core/types";
 import { useControlled, useTheme } from "@core/hooks";
-import { ExtractNames, isKeypress, keyboardCodes } from "@core/utils";
+import { ExtractNames, isKey } from "@core/utils";
 import {
   HvButtonProps,
   HvTypographyVariants,
@@ -95,7 +95,7 @@ export const HvInlineEditor = ({
   };
 
   const handleKeyDown: HvInputProps["onKeyDown"] = (event) => {
-    if (isKeypress(event, keyboardCodes.Esc)) {
+    if (isKey(event, "Esc")) {
       setEditMode(false);
       setValue(cachedValue);
     }

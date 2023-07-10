@@ -1,6 +1,6 @@
 import { HvBaseProps } from "@core/types";
 import { useTheme, useUniqueId } from "@core/hooks";
-import { ExtractNames, isKeypress, keyboardCodes, setId } from "@core/utils";
+import { ExtractNames, isKey, setId } from "@core/utils";
 import { useMemo } from "react";
 import fade from "@core/utils/hexToRgbA";
 import {
@@ -12,8 +12,6 @@ import { HvVerticalScrollListItem } from "./VerticalScrollListItem";
 import { useScrollTo } from "../useScrollTo";
 import { withTooltip } from "../withTooltip";
 import { HvScrollToTooltipPositions } from "../types";
-
-const { Enter } = keyboardCodes;
 
 export { staticClasses as scrollToVerticalClasses };
 
@@ -138,7 +136,7 @@ export const HvScrollToVertical = ({
           onClick?.(event, index);
         }}
         onKeyDown={(event) => {
-          if (isKeypress(event, Enter) === true) {
+          if (isKey(event, "Enter") === true) {
             handleSelection(event, option.value, index);
             onEnter?.(event, index);
           }

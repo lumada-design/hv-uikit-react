@@ -19,13 +19,7 @@ import {
   Search,
   Success,
 } from "@hitachivantara/uikit-react-icons";
-import {
-  ExtractNames,
-  isBrowser,
-  isKeypress,
-  keyboardCodes,
-  setId,
-} from "@core/utils";
+import { ExtractNames, isBrowser, isKey, setId } from "@core/utils";
 import {
   HvBaseProps,
   HvExtraProps,
@@ -504,20 +498,20 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
   };
 
   const onSuggestionKeyDown: HvSuggestionsProps["onKeyDown"] = (event) => {
-    if (isKeypress(event, keyboardCodes.Esc)) {
+    if (isKey(event, "Esc")) {
       suggestionClearHandler();
       focusInput();
-    } else if (isKeypress(event, keyboardCodes.Tab)) {
+    } else if (isKey(event, "Tab")) {
       suggestionClearHandler();
     }
   };
 
   /** Focus the suggestion list when the arrow down is pressed. */
   const onKeyDownHandler: HvBaseInputProps["onKeyDown"] = (event) => {
-    if (isKeypress(event, keyboardCodes.ArrowDown) && hasSuggestions) {
+    if (isKey(event, "ArrowDown") && hasSuggestions) {
       const li = getSuggestions(0);
       li?.focus();
-    } else if (isKeypress(event, keyboardCodes.Enter)) {
+    } else if (isKey(event, "Enter")) {
       onEnter?.(event, value);
     }
 

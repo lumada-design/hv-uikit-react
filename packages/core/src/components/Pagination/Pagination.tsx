@@ -8,7 +8,7 @@ import {
   Forwards,
 } from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps } from "@core/types";
-import { ExtractNames, isKeypress, keyboardCodes, setId } from "@core/utils";
+import { ExtractNames, isKey, setId } from "@core/utils";
 import { useLabels } from "@core/hooks";
 import HvSelect, { Option } from "./Select";
 import { staticClasses, useClasses } from "./Pagination.styles";
@@ -97,8 +97,6 @@ const DEFAULT_LABELS = {
   lastPage: "Last Page",
 };
 
-const { Enter } = keyboardCodes;
-
 const defaultPageSizeOptions = [5, 10, 20, 25, 50, 100];
 
 /**
@@ -178,7 +176,7 @@ export const HvPagination = ({
         value={String(pageInput)}
         onBlur={(evt, value) => changePage(Number(value) - 1)}
         onKeyDown={(evt, value) =>
-          isKeypress(evt, Enter) && changePage(Number(value) - 1)
+          isKey(evt, "Enter") && changePage(Number(value) - 1)
         }
         disabled={pageSize === 0}
         disableClear

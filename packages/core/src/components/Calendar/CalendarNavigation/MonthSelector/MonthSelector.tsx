@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { isKeypress, keyboardCodes } from "@core/utils";
+import { isKey } from "@core/utils";
 import { getMonthNamesList } from "../../utils";
 import { ViewMode } from "../../enums";
 import monthSelectorClasses, {
@@ -24,7 +24,7 @@ export const HvMonthSelector = ({
 }: HvMonthSelectorProps) => {
   const listMonthNamesShort = getMonthNamesList(locale, "short");
   const onKeyDownHandler = (event, index) => {
-    if (isKeypress(event, keyboardCodes.Enter)) {
+    if (isKey(event, "Enter")) {
       onChange?.(event, "month", index + 1);
       onViewModeChange("calendar");
     }

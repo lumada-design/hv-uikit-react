@@ -3,13 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { useControlled, useUniqueId } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
-import {
-  isKeypress,
-  keyboardCodes,
-  setId,
-  getPrevNextFocus,
-  ExtractNames,
-} from "@core/utils";
+import { isKey, setId, getPrevNextFocus, ExtractNames } from "@core/utils";
 import {
   HvBaseDropdown,
   HvBaseDropdownProps,
@@ -100,7 +94,7 @@ export const HvDropDownMenu = ({
 
   // If the ESCAPE key is pressed inside the list, the close handler must be called.
   const handleKeyDown: HvListProps["onKeyDown"] = (event) => {
-    if (isKeypress(event, keyboardCodes.Tab)) {
+    if (isKey(event, "Tab")) {
       const node = event.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
       if (node) setTimeout(() => node.focus(), 0);
       handleClose(event as any);

@@ -27,7 +27,6 @@ import {
   HvKpi,
   HvToggleButton,
 } from "@core/components";
-import { isKeypress, keyboardCodes } from "@core/utils";
 import { ReactNode, useEffect, useState } from "react";
 import compressor from "./assets/compressor.png";
 import leaf from "./assets/leaf.png";
@@ -505,10 +504,7 @@ export const SelectableNoFooter: StoryObj<HvCardProps> = {
         tabIndex={0}
         role="button"
         onKeyDown={(event) => {
-          if (
-            isKeypress(event, keyboardCodes.Enter) ||
-            isKeypress(event, keyboardCodes.SpaceBar)
-          ) {
+          if (event.code === "Enter" || event.code === "Space") {
             setSelected(!selected);
           }
         }}

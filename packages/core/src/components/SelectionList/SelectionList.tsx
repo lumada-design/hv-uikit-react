@@ -8,12 +8,7 @@ import React, {
 import { clsx } from "clsx";
 import { HvBaseProps } from "@core/types";
 import { useControlled, useUniqueId } from "@core/hooks";
-import {
-  isKeypress,
-  keyboardCodes,
-  setId,
-  multiSelectionEventHandler,
-} from "@core/utils";
+import { isKey, setId, multiSelectionEventHandler } from "@core/utils";
 import {
   StyledListContainer,
   StyledFormElement,
@@ -172,16 +167,14 @@ export const HvSelectionList = ({
 
   const listContainer = useRef<any>(null);
 
-  const { ArrowUp, ArrowDown } = keyboardCodes;
-
   useEffect(() => {
     const handleMeta = (event: KeyboardEvent) => {
       const tempArray: any[] = [];
       if (
-        (isKeypress(event, ArrowUp) &&
+        (isKey(event, "ArrowUp") &&
           event.shiftKey &&
           listContainer.current.contains(event.target)) ||
-        (isKeypress(event, ArrowDown) &&
+        (isKey(event, "ArrowDown") &&
           event.shiftKey &&
           listContainer.current.contains(event.target))
       ) {
@@ -202,7 +195,7 @@ export const HvSelectionList = ({
     return () => {
       window.removeEventListener("keyup", handleMeta);
     };
-  }, [allValues, selectedState, setValue, ArrowUp, ArrowDown]);
+  }, [allValues, selectedState, setValue]);
 
   const onChildChangeInterceptor = useCallback(
     (
