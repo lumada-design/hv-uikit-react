@@ -109,6 +109,8 @@ export const HvDialog = ({
 
   return (
     <MuiDialog
+      // TODO: review
+      // eslint-disable-next-line ssr-friendly/no-dom-globals-in-react-fc
       container={document.getElementById(rootId || "") || document.body}
       className={cx(className, classes.root)}
       classes={{ container: css({ position: "relative" }) }}

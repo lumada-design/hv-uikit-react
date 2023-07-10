@@ -14,7 +14,7 @@
     "plugin:react/jsx-runtime",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint", "import"],
+  "plugins": ["@typescript-eslint", "import", "ssr-friendly"],
   "env": {
     "es2021": true,
     "browser": true,
@@ -90,6 +90,10 @@
     "consistent-return": "off"
   },
   "overrides": [
+    {
+      "files": ["packages/**/*.ts?(x)"],
+      "extends": ["plugin:ssr-friendly/recommended"]
+    },
     {
       "files": ["**/*.stories.ts?(x)"],
       "rules": {
