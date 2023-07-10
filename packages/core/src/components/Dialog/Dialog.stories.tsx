@@ -1,5 +1,12 @@
+import { useState } from "react";
+
 import { Ungroup } from "@hitachivantara/uikit-react-icons";
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { css } from "@emotion/css";
+
 import { Meta, StoryObj } from "@storybook/react";
+
 import {
   HvButton,
   HvDialogContent,
@@ -11,7 +18,6 @@ import {
   HvTextArea,
   HvGrid,
 } from "@core/components";
-import { useState } from "react";
 
 type SimpleDialogProps = {
   buttonMessage?: string;
@@ -19,6 +25,7 @@ type SimpleDialogProps = {
   content?: React.ReactNode;
   classes?: any;
   indentContent?: boolean;
+  variant?: HvDialogProps["variant"];
 };
 
 const SimpleDialog = ({
@@ -26,9 +33,32 @@ const SimpleDialog = ({
   title,
   content,
   classes,
+  variant,
   indentContent = false,
 }: SimpleDialogProps) => {
   const [open, setOpen] = useState(false);
+
+  const styles = {
+    success: {
+      backgroundColor: theme.colors.positive,
+      ":hover": {
+        backgroundColor: theme.colors.positive_120,
+      },
+    },
+    warning: {
+      backgroundColor: theme.colors.warning,
+      color: theme.colors.secondary,
+      ":hover": {
+        backgroundColor: theme.colors.warning_120,
+      },
+    },
+    error: {
+      backgroundColor: theme.colors.negative,
+      ":hover": {
+        backgroundColor: theme.colors.negative_120,
+      },
+    },
+  };
 
   return (
     <div>
@@ -44,20 +74,27 @@ const SimpleDialog = ({
         classes={classes}
         open={open}
         onClose={() => setOpen(false)}
+        variant={variant}
       >
         {title}
-
         {content || (
           <HvDialogContent indentContent={indentContent}>
-            Switching to model view will clear all the fields in your
-            visualization. You will need to re-select your fields.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </HvDialogContent>
         )}
         <HvDialogActions>
-          <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
+          <HvButton
+            className={variant ? css(styles[variant]) : undefined}
+            variant={variant ? "primary" : "secondaryGhost"}
+            onClick={() => setOpen(false)}
+          >
             Apply
           </HvButton>
-          <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
+          <HvButton
+            variant={variant ? "secondarySubtle" : "secondaryGhost"}
+            onClick={() => setOpen(false)}
+          >
             Cancel
           </HvButton>
         </HvDialogActions>
@@ -73,6 +110,7 @@ const meta: Meta<typeof HvDialog> = {
   parameters: {
     eyes: { include: false },
   },
+  decorators: [(Story) => <div style={{ height: 250 }}>{Story()}</div>],
 };
 export default meta;
 
@@ -125,13 +163,12 @@ export const Main: StoryObj<HvDialogProps> = {
   },
 };
 
-export const IconAndSemantic: StoryObj<HvDialogProps> = {
+export const SemanticVariants: StoryObj<HvDialogProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          "`HvDialogTitle` accepts a `variant` prop, that changes the icon. <br />\
-          Alternatively, the `customIcon` prop allows for any custom icon",
+          "The `HvDialog` component can receive a `variant` prop to set the status of the dialog. `HvDialogTitle` also accepts a `variant` prop that changes the icon. Alternatively, the `customIcon` prop allows for any custom icon",
       },
     },
   },
@@ -139,29 +176,33 @@ export const IconAndSemantic: StoryObj<HvDialogProps> = {
     return (
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
         <SimpleDialog
-          buttonMessage="No icon"
-          title={<HvDialogTitle showIcon={false}>Dialog</HvDialogTitle>}
-        />
-        <SimpleDialog
           buttonMessage="Warning"
-          title={<HvDialogTitle variant="warning">Warn Dialog</HvDialogTitle>}
+          variant="warning"
+          title={<HvDialogTitle variant="error">Warning</HvDialogTitle>}
           indentContent
         />
         <SimpleDialog
-          buttonMessage="Info"
-          title={<HvDialogTitle variant="info">Info Dialog</HvDialogTitle>}
+          buttonMessage="Success"
+          variant="success"
+          title={<HvDialogTitle variant="success">Success</HvDialogTitle>}
           indentContent
         />
         <SimpleDialog
           buttonMessage="Error"
-          title={<HvDialogTitle variant="error">Error Dialog</HvDialogTitle>}
+          variant="error"
+          title={<HvDialogTitle variant="error">Error</HvDialogTitle>}
           indentContent
         />
         <SimpleDialog
-          buttonMessage="Custom icon"
+          buttonMessage="Info"
+          title={<HvDialogTitle variant="info">Info</HvDialogTitle>}
+          indentContent
+        />
+        <SimpleDialog
+          buttonMessage="Custom"
           title={
             <HvDialogTitle customIcon={<Ungroup iconSize="S" />}>
-              Custom icon Dialog
+              Custom
             </HvDialogTitle>
           }
           indentContent
