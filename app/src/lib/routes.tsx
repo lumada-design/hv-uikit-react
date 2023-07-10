@@ -7,6 +7,7 @@ const AssetInventory = lazy(() => import("pages/AssetInventory"));
 const ListView = lazy(() => import("pages/ListView"));
 const Form = lazy(() => import("pages/Form"));
 const DetailsView = lazy(() => import("pages/DetailsView"));
+const Icons = lazy(() => import("pages/Icons"));
 const NotFound = lazy(() => import("pages/NotFound"));
 
 const AppRoutes = () => (
@@ -22,6 +23,7 @@ const AppRoutes = () => (
     <Route path="/preview/list-view" element={<ListView />} />
     <Route path="/preview/form" element={<Form />} />
     <Route path="/preview/details-view" element={<DetailsView />} />
+    <Route path="/icons" element={<Icons />} />
     <Route path="/*" element={<NotFound />} />
   </Routes>
 );

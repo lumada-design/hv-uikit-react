@@ -65,7 +65,7 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
   });
 
   const exportName = fileName.split(".").join("");
-  const exportString = `export { default as ${exportName} } from "./${fileName}";\n`;
+  const exportString = `export { ${exportName} } from "./${fileName}";\n`;
 
   if (subFolder === ".") {
     fs.appendFile(

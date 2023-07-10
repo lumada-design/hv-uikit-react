@@ -51,7 +51,6 @@ export const generateComponent = (
   const hasSpecialSize = largerIcons.includes(componentName);
 
   const hasSpecialSizeXS = componentName.endsWith("XS");
-  const calcSize = (size) => (hasSpecialSize ? size + 8 : size);
 
   const themedPalette = colors
     .replace(/"#414141"/g, "theme.colors.secondary")
@@ -62,27 +61,9 @@ export const generateComponent = (
 
   return `
 import { theme } from "@hitachivantara/uikit-styles";
-import { IconBase, IconBaseProps } from "${iconBasePath}";
+import { IconBase, IconBaseProps, useIconColor, useIconSize } from "${iconBasePath}";
 
-const sizeSelector = (iconSize, height, width) => {
-  if (height && width) {
-    return { width, height };
-  }
-
-  switch (iconSize) {
-    case "XS":
-      return { width: ${calcSize(12)}, height: ${calcSize(12)} };
-    default:
-    case "S":
-      return { width: ${calcSize(16)}, height: ${calcSize(16)} };
-    case "M":
-      return { width: ${calcSize(32)}, height: ${calcSize(32)} };
-    case "L":
-      return { width: ${calcSize(96)}, height: ${calcSize(96)} };
-  }
-};
-
-const ${componentName} = ({
+export const ${componentName} = ({
   color,
   iconSize = "${hasSpecialSizeXS ? "XS" : "S"}",
   viewbox = "${defaultSizes.viewBoxRegexp.join(" ")}",
@@ -93,28 +74,13 @@ const ${componentName} = ({
   svgProps,
   ...others
 }: IconBaseProps) => {
-  const getColor = c => theme?.colors?.[c] || c;
-  const colorArray = 
-    (typeof color === "string" && [getColor(color)]) ||
-    (Array.isArray(color) && color.map?.(getColor)) ||
-    [${palette}];
-
-  if (semantic) {
-    colorArray[0] = theme.colors?.[semantic] || colorArray[0];
-  }
-
-  if (inverted && colorArray[1]) {
-    colorArray[1] = colorArray[0];
-    colorArray[0] = "none";
-  }
-
-  const size = sizeSelector(iconSize, height, width);
+  const colorArray = useIconColor(color, semantic, inverted, [${palette}]);
+  const size = useIconSize(iconSize, height, width, ${hasSpecialSize});
 
   return (
-    <IconBase iconSize={iconSize ?? "S"} name="${componentName}" {...others}>
-      ${svgOutput.replace("{...other}", "focusable={false} {...svgProps}")}
+    <IconBase iconSize={iconSize} name="${componentName}" {...others}>
+    ${svgOutput.replace("{...other}", "focusable={false} {...svgProps}")}
     </IconBase>
 )};
-
-export default ${componentName};`;
+`;
 };
