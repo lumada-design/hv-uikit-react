@@ -1,5 +1,4 @@
 import {
-  createTheme,
   HvBox,
   HvButton,
   HvTooltip,
@@ -52,11 +51,8 @@ const CodeEditor = ({
   };
 
   const onResetHandler = () => {
-    const newTheme = createTheme({
-      name: "customTheme",
-      base: "ds5",
-    });
-    updateCustomTheme({ ...newTheme }, { isReset: true });
+    updateCustomTheme({}, { isReset: true, updateThemeChanges: false });
+    changeTheme("ds5", "dawn");
   };
 
   const codeChangedHandler = (code?: string) => {

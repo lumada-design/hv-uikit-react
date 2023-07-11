@@ -67,11 +67,11 @@ export const getColorGroupName = (type: (typeof groupsToShow)[number]) => {
       return "Base";
     case "sema":
       return "Semantic";
-    /* case "sup":
+    case "sup":
       return "Support";
     case "cat":
-      return "Visualizations"; */
+      return "Categorical";
     default:
-      return "";
+      return type;
   }
 };

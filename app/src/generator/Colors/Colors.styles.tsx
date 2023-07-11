@@ -6,21 +6,22 @@ export const styles = {
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    paddingLeft: theme.space.xs,
   }),
   group: css({
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    marginBottom: theme.space.xs,
+    marginBottom: theme.space.sm,
   }),
   groupName: css({
     width: "30%",
   }),
   groupColors: css({
     width: "70%",
-    textAlign: "end",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "flex-end",
   }),
   color: css({
     width: 20,

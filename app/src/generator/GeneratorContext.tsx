@@ -76,8 +76,8 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
         if (isReset) {
           setThemeChanges({});
           newTheme = createTheme({
-            base: changes.base as HvBaseTheme,
-            name: prev.name,
+            base: "ds5",
+            name: "customTheme",
           });
           return newTheme;
         }
