@@ -30,7 +30,7 @@
     "coverage": "vitest run --coverage",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run build && npx clean-publish"
+    "prepublishOnly": "run-s clean build && npx clean-publish"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",
@@ -107,6 +107,5 @@
     "files": [
       "tsconfig.json"
     ]
-  },
-  "gitHead": "c040141e323ce6aed12fd7ca98ddb3720f78141a"
+  }
 }

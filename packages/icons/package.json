@@ -32,7 +32,7 @@
     "convert:copy": "npx cpy \"src/IconBase*\" \"bin\"",
     "clean": "npx rimraf dist bin package",
     "prepare": "npm run convert",
-    "prepublishOnly": "npm run build && npx clean-publish"
+    "prepublishOnly": "run-s clean build && npx clean-publish"
   },
   "peerDependencies": {
     "@emotion/styled": "^11.10.6",

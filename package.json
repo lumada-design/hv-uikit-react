@@ -29,6 +29,7 @@
     "lint-staged": "lint-staged",
     "typecheck": "lerna run typecheck",
     "depcheck": "npx -y owasp-dependency-check --project uikit -o reports --cveStartYear 2015",
+    "publish:test": "lerna publish --conventional-graduate --yes --no-git-tag-version --no-push",
     "publish:release": "lerna publish --conventional-graduate --yes",
     "publish:next": "lerna publish --conventional-prerelease --yes --preid next --dist-tag next",
     "prepare": "npx husky install .config/husky"
@@ -59,6 +60,7 @@
     "@typescript-eslint/parser": "^5.59.11",
     "@vitest/coverage-c8": "^0.32.0",
     "arquero": "^5.2.0",
+    "clean-publish": "^4.2.0",
     "clsx": "^1.2.1",
     "echarts": "^5.4.2",
     "echarts-for-react": "^3.0.2",

@@ -17,7 +17,7 @@
     "build": "vite build",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run build && npx clean-publish"
+    "prepublishOnly": "run-s clean build && npx clean-publish"
   },
   "dependencies": {
     "csstype": "^3.1.2"
