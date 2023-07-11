@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import { createClasses } from "@core/utils";
 
-export const { useClasses, staticClasses } = createClasses("HvTimerPicker", {
+export const { useClasses, staticClasses } = createClasses("HvTimePicker", {
   root: {
     position: "relative",
   },
