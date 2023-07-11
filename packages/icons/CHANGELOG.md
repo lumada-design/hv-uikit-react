@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.2.6...@hitachivantara/uikit-react-icons@5.2.7) (2023-07-11)
+
+### Performance Improvements
+
+- **Icons:** move icon logic to hook to reduce size ([01effc9](https://github.com/lumada-design/hv-uikit-react/commit/01effc9eb29fbfca1869ee15509e4c0d53cb80c0))
+
+### Reverts
+
+- Revert "chore(release): publish" ([dd13624](https://github.com/lumada-design/hv-uikit-react/commit/dd13624834dbd9d33745201829c137fe39a3f19c))
+
 ## [5.2.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.2.5...@hitachivantara/uikit-react-icons@5.2.6) (2023-07-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

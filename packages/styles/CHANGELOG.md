@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.9.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.9.0...@hitachivantara/uikit-styles@5.9.1) (2023-07-11)
+
+### Reverts
+
+- Revert "chore(release): publish" ([dd13624](https://github.com/lumada-design/hv-uikit-react/commit/dd13624834dbd9d33745201829c137fe39a3f19c))
+
 # [5.9.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.8.6...@hitachivantara/uikit-styles@5.9.0) (2023-07-06)
 
 ### Bug Fixes
