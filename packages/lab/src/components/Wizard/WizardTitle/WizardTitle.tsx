@@ -1,5 +1,7 @@
-import { ClassNames } from "@emotion/react";
+import { useContext, useEffect, useState } from "react";
+
 import {
+  ExtractNames,
   HvBaseProps,
   HvButton,
   HvDialogTitle,
@@ -7,11 +9,15 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Report } from "@hitachivantara/uikit-react-icons";
-import { useContext, useEffect, useState } from "react";
+
 import { HvStepNavigation, HvStepNavigationProps } from "../../StepNavigation";
 import { HvStepProps } from "../../StepNavigation/DefaultNavigation";
-import { HvWizardContext, wizardTitleClasses, HvWizardTitleClasses } from "..";
-import { styles } from "./WizardTitle.styles";
+import { HvWizardContext } from "../WizardContext";
+import { staticClasses, useClasses } from "./WizardTitle.styles";
+
+export { staticClasses as wizardTitleClasses };
+
+export type HvWizardTitleClasses = ExtractNames<typeof useClasses>;
 
 export interface HvWizardTitleProps extends HvBaseProps {
   /** Title for the wizard. */
@@ -43,10 +49,12 @@ export const HvWizardTitle = ({
   title,
   hasSummary = false,
   labels = {},
-  classes,
+  classes: classesProp,
   customStep = {},
 }: HvWizardTitleProps) => {
   const { context, setSummary, tab, setTab } = useContext(HvWizardContext);
+
+  const { classes } = useClasses(classesProp);
 
   const [steps, setSteps] = useState<HvStepProps[]>([]);
 
@@ -79,81 +87,53 @@ export const HvWizardTitle = ({
   }, [context, tab, setTab]);
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvDialogTitle
-          className={cx(
-            wizardTitleClasses.headerContainer,
-            css(styles.headerContainer),
-            classes?.headerContainer
-          )}
-          classes={{
-            messageContainer: cx(
-              wizardTitleClasses.messageContainer,
-              css(styles.messageContainer),
-              classes?.messageContainer
-            ),
-          }}
-        >
-          <HvGrid
-            container
-            justifyContent="space-between"
-            alignItems="center"
-            className={cx(
-              wizardTitleClasses.titleContainer,
-              css(styles.titleContainer),
-              classes?.titleContainer
-            )}
+    <HvDialogTitle
+      className={classes.headerContainer}
+      classes={{
+        messageContainer: classes.messageContainer,
+      }}
+    >
+      <HvGrid
+        container
+        justifyContent="space-between"
+        alignItems="center"
+        className={classes.titleContainer}
+      >
+        {title && (
+          <HvTypography variant="title3" component="h3">
+            {title}
+          </HvTypography>
+        )}
+        {!!steps.length && (
+          <HvStepNavigation
+            className={classes.stepContainer}
+            steps={steps}
+            type="Default"
+            stepSize="xs"
+            width={{
+              xs: 200,
+              sm: 350,
+              md: 600,
+              lg: 800,
+              xl: 1000,
+            }}
+            {...customStep}
+          />
+        )}
+        {hasSummary && (
+          <HvButton
+            variant="secondarySubtle"
+            className={classes.buttonWidth}
+            classes={{
+              root: classes.rootSummaryButton,
+            }}
+            onClick={toggleSummary}
+            startIcon={<Report />}
           >
-            {title && (
-              <HvTypography variant="title3" component="h3">
-                {title}
-              </HvTypography>
-            )}
-            {!!steps.length && (
-              <HvStepNavigation
-                className={cx(
-                  wizardTitleClasses.stepContainer,
-                  css(styles.stepContainer),
-                  classes?.stepContainer
-                )}
-                steps={steps}
-                type="Default"
-                stepSize="xs"
-                width={{
-                  xs: 200,
-                  sm: 350,
-                  md: 600,
-                  lg: 800,
-                  xl: 1000,
-                }}
-                {...customStep}
-              />
-            )}
-            {hasSummary && (
-              <HvButton
-                variant="secondarySubtle"
-                className={cx(
-                  wizardTitleClasses.buttonWidth,
-                  css(styles.buttonWidth),
-                  classes?.buttonWidth
-                )}
-                classes={{
-                  root: cx(
-                    wizardTitleClasses.rootSummaryButton,
-                    css(styles.rootSummaryButton),
-                    classes?.rootSummaryButton
-                  ),
-                }}
-                onClick={toggleSummary}
-                startIcon={<Report />}
-              >
-                {`${labels.summary ?? "Summary"}`}
-              </HvButton>
-            )}
-          </HvGrid>
-        </HvDialogTitle>
-      )}
-    </ClassNames>
+            {`${labels.summary ?? "Summary"}`}
+          </HvButton>
+        )}
+      </HvGrid>
+    </HvDialogTitle>
   );
 };

@@ -1,19 +1,20 @@
 import { useCallback, useContext, useEffect, useState } from "react";
-import { ClassNames } from "@emotion/react";
+
 import {
+  ExtractNames,
   HvBaseProps,
   HvButton,
   HvDialogActions,
   HvGrid,
 } from "@hitachivantara/uikit-react-core";
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
-import { styles } from "./WizardActions.styles";
-import {
-  HvWizardContext,
-  HvWizardTabs,
-  wizardActionsClasses,
-  HvWizardActionsClasses,
-} from "..";
+
+import { HvWizardContext, HvWizardTabs } from "..";
+import { staticClasses, useClasses } from "./WizardActions.styles";
+
+export { staticClasses as wizardActionsClasses };
+
+export type HvWizardActionsClasses = ExtractNames<typeof useClasses>;
 
 export interface HvWizardActionsProps extends HvBaseProps {
   /** Function to handle the cancel button. */
@@ -45,7 +46,7 @@ export interface HvWizardActionsProps extends HvBaseProps {
 }
 
 export const HvWizardActions = ({
-  classes,
+  classes: classesProp,
   handleClose,
   handleSubmit,
   loading = false,
@@ -58,6 +59,8 @@ export const HvWizardActions = ({
     submit: "Submit",
   },
 }: HvWizardActionsProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const { context, setContext, tab, setTab } = useContext(HvWizardContext);
   const [pages, setPages] = useState(0);
   const [canSubmit, setCanSubmit] = useState(false);
@@ -101,96 +104,57 @@ export const HvWizardActions = ({
   );
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvDialogActions
-          className={cx(
-            wizardActionsClasses.actionsContainer,
-            css(styles.actionsContainer),
-            classes?.actionsContainer
-          )}
+    <HvDialogActions className={classes.actionsContainer}>
+      <HvGrid>
+        <HvButton
+          variant="secondaryGhost"
+          onClick={handleClose}
+          className={classes.buttonWidth}
         >
-          <HvGrid>
-            <HvButton
-              variant="secondaryGhost"
-              onClick={handleClose}
-              className={cx(
-                wizardActionsClasses.buttonWidth,
-                css(styles.buttonWidth),
-                classes?.buttonWidth
-              )}
-            >
-              {`${labels.cancel ?? "Cancel"}`}
-            </HvButton>
-            {skippable && (
-              <HvButton
-                variant="secondaryGhost"
-                disabled={isLastPage}
-                className={cx(
-                  wizardActionsClasses.buttonWidth,
-                  css(styles.buttonWidth),
-                  classes?.buttonWidth
-                )}
-                onClick={handleSkip}
-              >
-                {`${labels.skip ?? "Skip"}`}
-              </HvButton>
-            )}
-          </HvGrid>
-          <HvGrid
-            className={cx(
-              wizardActionsClasses.buttonsContainer,
-              css(styles.buttonsContainer),
-              classes?.buttonsContainer
-            )}
+          {`${labels.cancel ?? "Cancel"}`}
+        </HvButton>
+        {skippable && (
+          <HvButton
+            variant="secondaryGhost"
+            disabled={isLastPage}
+            className={classes.buttonWidth}
+            onClick={handleSkip}
           >
-            <HvButton
-              variant="secondaryGhost"
-              className={cx(
-                wizardActionsClasses.buttonWidth,
-                css(styles.buttonWidth),
-                classes?.buttonWidth
-              )}
-              disabled={tab <= 0}
-              onClick={() => setTab((t) => t - 1)}
-              startIcon={<Backwards />}
-            >
-              {`${labels.previous ?? "Previous"}`}
-            </HvButton>
-            {isLastPage ? (
-              <HvButton
-                variant="primary"
-                className={cx(
-                  wizardActionsClasses.buttonWidth,
-                  css(styles.buttonWidth),
-                  classes?.buttonWidth
-                )}
-                disabled={loading || !canSubmit}
-                onClick={handleSubmitInternal}
-              >
-                {`${labels.submit ?? "Submit"}`}
-              </HvButton>
-            ) : (
-              <HvButton
-                variant="secondaryGhost"
-                className={cx(
-                  wizardActionsClasses.buttonWidth,
-                  wizardActionsClasses.buttonSpacing,
-                  css(styles.buttonWidth),
-                  css(styles.buttonSpacing),
-                  classes?.buttonWidth,
-                  classes?.buttonSpacing
-                )}
-                onClick={() => setTab((t) => t + 1)}
-                disabled={!skippable && !context?.[tab]?.valid}
-                endIcon={<Forwards />}
-              >
-                {`${labels.next ?? "Next"}`}
-              </HvButton>
-            )}
-          </HvGrid>
-        </HvDialogActions>
-      )}
-    </ClassNames>
+            {`${labels.skip ?? "Skip"}`}
+          </HvButton>
+        )}
+      </HvGrid>
+      <HvGrid className={classes.buttonsContainer}>
+        <HvButton
+          variant="secondaryGhost"
+          className={classes.buttonWidth}
+          disabled={tab <= 0}
+          onClick={() => setTab((t) => t - 1)}
+          startIcon={<Backwards />}
+        >
+          {`${labels.previous ?? "Previous"}`}
+        </HvButton>
+        {isLastPage ? (
+          <HvButton
+            variant="primary"
+            className={classes.buttonWidth}
+            disabled={loading || !canSubmit}
+            onClick={handleSubmitInternal}
+          >
+            {`${labels.submit ?? "Submit"}`}
+          </HvButton>
+        ) : (
+          <HvButton
+            variant="secondaryGhost"
+            className={cx(classes.buttonWidth, classes.buttonSpacing)}
+            onClick={() => setTab((t) => t + 1)}
+            disabled={!skippable && !context?.[tab]?.valid}
+            endIcon={<Forwards />}
+          >
+            {`${labels.next ?? "Next"}`}
+          </HvButton>
+        )}
+      </HvGrid>
+    </HvDialogActions>
   );
 };
