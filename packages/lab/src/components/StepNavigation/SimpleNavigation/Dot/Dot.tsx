@@ -1,10 +1,18 @@
-import { HvBaseProps } from "@hitachivantara/uikit-react-core";
-import { ClassNames } from "@emotion/react";
+import {
+  ExtractNames,
+  HvBaseProps,
+  HvButton,
+} from "@hitachivantara/uikit-react-core";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { HvStepProps } from "../../DefaultNavigation";
-import { StyledButton } from "./Dot.styles";
-import dotClasses, { HvDotClasses } from "./dotClasses";
 import { getColor, dotSizes } from "../utils";
+import { staticClasses, useClasses } from "./Dot.styles";
+
+export { staticClasses as dotClasses };
+
+export type HvDotClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDotProps
   extends Pick<
@@ -17,7 +25,7 @@ export interface HvDotProps
 }
 
 export const HvDot = ({
-  classes,
+  classes: classesProp,
   className,
   state,
   title,
@@ -25,40 +33,36 @@ export const HvDot = ({
   onClick,
   disabled,
 }: HvDotProps) => {
+  const { classes, cx, css } = useClasses(classesProp);
+
   const dotSize = dotSizes[size] * (state === "Current" ? 1.5 : 1);
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <StyledButton
-          className={cx(
-            dotClasses.root,
-            state === "Current" && dotClasses.active,
-            (disabled ?? ["Current", "Disabled"].includes(state)) &&
-              dotClasses.ghostDisabled,
-            css({
-              backgroundColor: getColor(state, theme),
-              width: dotSize,
-              height: dotSize,
-              "&:hover": {
-                backgroundColor: getColor(state, theme),
-              },
-            }),
-            className,
-            classes?.root,
-            state === "Current" && classes?.active,
-            (disabled ?? ["Current", "Disabled"].includes(state)) &&
-              classes?.ghostDisabled
-          )}
-          aria-label={`step-${title}`}
-          icon
-          overrideIconColors={false}
-          disabled={disabled ?? ["Current", "Disabled"].includes(state)}
-          onClick={onClick}
-        >
-          {[]}
-        </StyledButton>
+    <HvButton
+      className={cx(
+        css({
+          backgroundColor: getColor(state, theme),
+          width: dotSize,
+          height: dotSize,
+          "&:hover": {
+            backgroundColor: getColor(state, theme),
+          },
+        }),
+        classes.root,
+        {
+          [classes.active]: state === "Current",
+          [classes.ghostDisabled]:
+            disabled ?? ["Current", "Disabled"].includes(state),
+        },
+        className
       )}
-    </ClassNames>
+      aria-label={`step-${title}`}
+      icon
+      overrideIconColors={false}
+      disabled={disabled ?? ["Current", "Disabled"].includes(state)}
+      onClick={onClick}
+    >
+      {[]}
+    </HvButton>
   );
 };
