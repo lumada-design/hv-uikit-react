@@ -3,13 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [5.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.2.8...@hitachivantara/uikit-react-viz@5.3.0) (2023-07-11)
-
-### Features
-
-- **DonutChart:** add donut chart ([030d7ee](https://github.com/lumada-design/hv-uikit-react/commit/030d7ee61c0494a84aa806f5dbd5500f7f178a48))
-- viz legend position and direction ([5db998e](https://github.com/lumada-design/hv-uikit-react/commit/5db998e21a431575f4af405c380fa09f2823e61f))
-
 ## [5.2.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.2.7...@hitachivantara/uikit-react-viz@5.2.8) (2023-07-08)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz

@@ -3,12 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [5.19.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.19.1...@hitachivantara/uikit-react-core@5.19.2) (2023-07-11)
-
-### Bug Fixes
-
-- **Input:** unprotected window usage breaking SSR ([#3502](https://github.com/lumada-design/hv-uikit-react/issues/3502)) ([d91f528](https://github.com/lumada-design/hv-uikit-react/commit/d91f528ce5093241656a893f63b3060620008a82))
-
 ## [5.19.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.19.0...@hitachivantara/uikit-react-core@5.19.1) (2023-07-08)
 
 ### Bug Fixes
