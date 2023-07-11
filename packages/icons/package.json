@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-icons",
-  "version": "5.2.7",
+  "version": "5.2.6",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "NEXT Design System icons packaged as a set of React components.",
@@ -32,7 +32,7 @@
     "convert:copy": "npx cpy \"src/IconBase*\" \"bin\"",
     "clean": "npx rimraf dist bin package",
     "prepare": "npm run convert",
-    "prepublishOnly": "npm run build && npx clean-publish"
+    "prepublishOnly": "run-s clean build && npx clean-publish"
   },
   "peerDependencies": {
     "@emotion/styled": "^11.10.6",
@@ -40,7 +40,7 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@hitachivantara/uikit-styles": "^5.9.1"
+    "@hitachivantara/uikit-styles": "^5.9.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.12",

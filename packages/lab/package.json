@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-lab",
-  "version": "5.4.19",
+  "version": "5.4.18",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Contributed React components for the NEXT UI Kit.",
@@ -30,7 +30,7 @@
     "coverage": "vitest run --coverage",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run build && npx clean-publish"
+    "prepublishOnly": "run-s clean build && npx clean-publish"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",
@@ -42,9 +42,9 @@
   "dependencies": {
     "@emotion/css": "^11.11.0",
     "@emotion/serialize": "^1.1.2",
-    "@hitachivantara/uikit-react-core": "^5.19.2",
-    "@hitachivantara/uikit-react-icons": "^5.2.7",
-    "@hitachivantara/uikit-styles": "^5.9.1",
+    "@hitachivantara/uikit-react-core": "^5.19.1",
+    "@hitachivantara/uikit-react-icons": "^5.2.6",
+    "@hitachivantara/uikit-styles": "^5.9.0",
     "clsx": "^1.2.1",
     "usehooks-ts": "^2.9.1"
   },
@@ -83,6 +83,5 @@
     "files": [
       "tsconfig.json"
     ]
-  },
-  "gitHead": "c040141e323ce6aed12fd7ca98ddb3720f78141a"
+  }
 }

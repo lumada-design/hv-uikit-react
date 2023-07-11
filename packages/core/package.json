@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-core",
-  "version": "5.19.2",
+  "version": "5.19.1",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Core React components for the NEXT Design System.",
@@ -30,7 +30,7 @@
     "coverage": "vitest run --coverage",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run build && npx clean-publish"
+    "prepublishOnly": "run-s clean build && npx clean-publish"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",
@@ -44,9 +44,9 @@
     "@emotion/css": "^11.11.0",
     "@emotion/serialize": "^1.1.2",
     "@emotion/utils": "^1.2.1",
-    "@hitachivantara/uikit-react-icons": "^5.2.7",
-    "@hitachivantara/uikit-react-shared": "^5.0.22",
-    "@hitachivantara/uikit-styles": "^5.9.1",
+    "@hitachivantara/uikit-react-icons": "^5.2.6",
+    "@hitachivantara/uikit-react-shared": "^5.0.21",
+    "@hitachivantara/uikit-styles": "^5.9.0",
     "@internationalized/date": "^3.2.0",
     "@mui/base": "^5.0.0-beta.4",
     "@popperjs/core": "^2.11.8",
@@ -107,6 +107,5 @@
     "files": [
       "tsconfig.json"
     ]
-  },
-  "gitHead": "c040141e323ce6aed12fd7ca98ddb3720f78141a"
+  }
 }
