@@ -1,5 +1,4 @@
-import { createClasses } from "@core/utils";
-import { outlineStyles } from "@hitachivantara/uikit-react-core";
+import { createClasses, outlineStyles } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvPage", {

@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { HvBaseProps } from "@core/types";
-import { useControlled } from "@core/hooks";
+import { useControlled, useTheme } from "@core/hooks";
 import { ExtractNames, isKeypress, keyboardCodes } from "@core/utils";
 import {
   HvButtonProps,
@@ -12,7 +12,6 @@ import {
   HvInputProps,
 } from "@core/components";
 import { Edit } from "@hitachivantara/uikit-react-icons";
-import { useTheme } from "@hitachivantara/uikit-react-core";
 import { staticClasses, useClasses } from "./InlineEditor.styles";
 
 export { staticClasses as inlineEditorClasses };

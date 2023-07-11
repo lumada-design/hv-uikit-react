@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { HvButton } from "@hitachivantara/uikit-react-core";
+import { HvButton } from "../..";
 import { HvTimeAgo } from "./TimeAgo";
 
 const EM_DASH = "—";
