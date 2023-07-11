@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { CSSInterpolation, css } from "@emotion/css";
 import {
   HvFormStatus,
   HvListItem,
@@ -45,6 +46,58 @@ export const Main: StoryObj<HvSelectionListProps> = {
   },
 };
 
+export const Variants: StoryObj<HvSelectionListProps> = {
+  render: () => {
+    const styles: { root: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        justifyContent: "space-around",
+        flexWrap: "wrap",
+        "& > div": {
+          width: 175,
+        },
+      },
+    };
+
+    return (
+      <div className={css(styles.root)}>
+        <HvSelectionList required label="Required">
+          <HvListItem value="1">ListItem 1</HvListItem>
+          <HvListItem value="2" selected>
+            ListItem 2
+          </HvListItem>
+          <HvListItem value="3">ListItem 3</HvListItem>
+        </HvSelectionList>
+        <HvSelectionList disabled label="Disabled">
+          <HvListItem value="1">ListItem 1</HvListItem>
+          <HvListItem value="2" selected>
+            ListItem 2
+          </HvListItem>
+          <HvListItem value="3">ListItem 3</HvListItem>
+        </HvSelectionList>
+        <HvSelectionList readOnly label="Readonly">
+          <HvListItem value="1">ListItem 1</HvListItem>
+          <HvListItem value="2" selected>
+            ListItem 2
+          </HvListItem>
+          <HvListItem value="3">ListItem 3</HvListItem>
+        </HvSelectionList>
+        <HvSelectionList
+          status="invalid"
+          statusMessage="Oh no!"
+          label="Invalid"
+        >
+          <HvListItem value="1">ListItem 1</HvListItem>
+          <HvListItem value="2" selected>
+            ListItem 2
+          </HvListItem>
+          <HvListItem value="3">ListItem 3</HvListItem>
+        </HvSelectionList>
+      </div>
+    );
+  },
+};
+
 export const Controlled: StoryObj<HvSelectionListProps> = {
   parameters: {
     docs: {
@@ -52,6 +105,7 @@ export const Controlled: StoryObj<HvSelectionListProps> = {
         story: "Controlled selection list.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [value, setValue] = useState(["2"]);
@@ -87,6 +141,9 @@ export const Controlled: StoryObj<HvSelectionListProps> = {
 };
 
 export const CleanMultiSelection: StoryObj<HvSelectionListProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
   render: () => {
     return (
       <HvSelectionList

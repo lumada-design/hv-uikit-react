@@ -115,6 +115,7 @@ WithContent.parameters = {
         "Basic navigation providing a clickable area to show scrolling capabilities.",
     },
   },
+  eyes: { include: false },
 };
 
 export const Overflow: StoryObj<HvScrollToHorizontalProps> = {

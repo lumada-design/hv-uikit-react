@@ -13,7 +13,6 @@ import {
 const Button = ({ onClick, variant }) => (
   <HvButton
     onClick={onClick}
-    // variant="contained"
     color="primary"
     style={{ width: "150px", textTransform: "capitalize" }}
   >

@@ -8,6 +8,7 @@ import {
   HvTypography,
 } from "@core/components";
 import { useState } from "react";
+import { css } from "@emotion/css";
 import { HvBannerContent, HvBannerContentProps } from "./BannerContent";
 
 const StyledBanner = styled(HvBanner)({
@@ -42,47 +43,94 @@ export const Main: StoryObj<HvBannerProps> = {
   },
 };
 
-export const MultipleExamples: StoryObj<HvBannerProps> = {
+export const Variants: StoryObj<HvBannerProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Banner with custom icon with base color on the semantic background.",
+      },
+    },
+  },
   render: () => {
-    return (
+    const actionArray = (id: string) => [
+      { id: `action${id}_1`, label: "Action 1", disabled: false },
+      { id: `action${id}_2`, label: "Action 2", disabled: false },
+    ];
+
+    const BannerContent = (props: HvBannerContentProps) => (
       <>
-        <StyledBanner
-          open
-          offset={0}
-          variant="default"
-          label="This is an informational message."
-        />
-        <StyledBanner
-          open
-          offset={0}
+        <br />
+        <HvBannerContent {...props} />
+      </>
+    );
+
+    return (
+      <div>
+        <HvTypography variant="title3">Semantics</HvTypography>
+        <BannerContent content="This is a default banner." variant="default" />
+        <BannerContent
+          content="This is a success banner."
           variant="success"
           showIcon
-          label="This is a success message."
         />
-        <StyledBanner
-          open
-          offset={0}
+        <BannerContent
+          content="This is a warning banner."
           variant="warning"
           showIcon
-          label="This is an alert message."
         />
-        <StyledBanner
-          open
-          offset={0}
+        <BannerContent
+          content="This is an error banner."
           variant="error"
           showIcon
-          label="This is an error message."
         />
-        <StyledBanner
+        <br />
+        <HvTypography variant="title3">Actions</HvTypography>
+        <br />
+        <HvBanner
           open
+          id="actionStructure"
           offset={0}
-          label="This is a banner with an action."
-          actions={[{ id: "post", label: "Action" }]}
+          label="This is a banner."
+          showIcon
+          actions={[{ id: "post", label: "Action", disabled: false }]}
           actionsCallback={(e, id, action) =>
-            console.log(`Clicked ${action.label}`)
+            alert(`clicked ${id} with ${action.label}`)
           }
+          className={css({
+            position: "relative",
+            top: "0px",
+            marginBottom: 10,
+          })}
         />
-      </>
+        <BannerContent
+          content="This is a banner with two actions."
+          actions={actionArray("banner3")}
+          actionsPosition="inline"
+        />
+        <BannerContent
+          content="This could be a one-line message text string with two actions on a tablet or on a desktop. However, this is actually is a two-lines message text string with two actions on a tablet or on a desktop."
+          actions={actionArray("banner1")}
+          actionsPosition="bottom-right"
+        />
+        <BannerContent
+          content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
+          actions={actionArray("banner2")}
+          actionsPosition="bottom-right"
+        />
+        <br />
+        <HvTypography variant="title3">Custom icon</HvTypography>
+        <BannerContent
+          content="This is a banner with a custom icon."
+          customIcon={<Info color="base_dark" />}
+          onClose={() => {}}
+        />
+        <BannerContent
+          content="This could be a one-line message text string with no actions on a tablet or on a desktop. This could be a two-lines message text string with no actions on a tablet or on a desktop. However, this is actually a three-lines message text string with no actions on a tablet or on a desktop."
+          customIcon={<Info color="base_dark" />}
+          onClose={() => {}}
+        />
+      </div>
     );
   },
 };
@@ -149,133 +197,6 @@ export const BannerController: StoryObj<HvBannerProps> = {
           id="banner3"
           variant="error"
           label="This is an error banner."
-        />
-      </div>
-    );
-  },
-};
-
-export const CustomIcon: StoryObj<HvBannerProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Banner with custom icon with base color on the semantic background.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <StyledBanner
-        open
-        offset={0}
-        label="This is a banner with a custom icon."
-        customIcon={<Info color="base_dark" />}
-      />
-    );
-  },
-};
-
-export const CustomAction: StoryObj<HvBannerProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Banner can receive a component or object action that will render a semantic button.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <StyledBanner
-        open
-        id="actionStructure"
-        offset={0}
-        label="This is a banner."
-        showIcon
-        actions={[{ id: "post", label: "Action", disabled: false }]}
-        actionsCallback={(e, id, action) =>
-          alert(`clicked ${id} with ${action.label}`)
-        }
-      />
-    );
-  },
-};
-
-export const BannerVariations: StoryObj<HvBannerProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Banner with custom icon with base color on the semantic background.",
-      },
-    },
-  },
-  render: () => {
-    const actionArray = (id: string) => [
-      { id: `action${id}_1`, label: "Action 1", disabled: false },
-      { id: `action${id}_2`, label: "Action 2", disabled: false },
-    ];
-
-    const BannerContent = (props: HvBannerContentProps) => (
-      <>
-        <br />
-        <HvBannerContent {...props} />
-      </>
-    );
-
-    return (
-      <div>
-        <HvTypography variant="title3">Semantics</HvTypography>
-        <BannerContent content="This is a default banner." variant="default" />
-        <BannerContent
-          content="This is a success banner."
-          variant="success"
-          showIcon
-        />
-        <BannerContent
-          content="This is a warning banner."
-          variant="warning"
-          showIcon
-        />
-        <BannerContent
-          content="This is an error banner."
-          variant="error"
-          showIcon
-        />
-        <p />
-        <HvTypography variant="title3">Actions</HvTypography>
-        <BannerContent
-          content="This is a default banner."
-          actions={<HvButton variant="semantic">Action</HvButton>}
-          actionsPosition="inline"
-        />
-        <BannerContent
-          content="This is a banner with two actions."
-          actions={actionArray("banner3")}
-          actionsPosition="inline"
-        />
-        <BannerContent
-          content="This could be a one-line message text string with two actions on a tablet or on a desktop. However, this is actually is a two-lines message text string with two actions on a tablet or on a desktop."
-          actions={actionArray("banner1")}
-          actionsPosition="bottom-right"
-        />
-        <BannerContent
-          content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
-          actions={actionArray("banner2")}
-          actionsPosition="bottom-right"
-        />
-        <p />
-        <HvTypography variant="title3">Custom icon</HvTypography>
-        <BannerContent
-          content="This is a default banner."
-          customIcon={<Info color="base_dark" />}
-          onClose={() => {}}
-        />
-        <BannerContent
-          content="This could be a one-line message text string with no actions on a tablet or on a desktop. This could be a two-lines message text string with no actions on a tablet or on a desktop. However, this is actually a three-lines message text string with no actions on a tablet or on a desktop."
-          customIcon={<Info color="base_dark" />}
-          onClose={() => {}}
         />
       </div>
     );

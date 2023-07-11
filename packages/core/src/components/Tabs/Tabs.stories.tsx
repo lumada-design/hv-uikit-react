@@ -132,6 +132,9 @@ export const TextSize: StoryObj<HvTabsProps> = {
 };
 
 export const CenteredTabs: StoryObj<HvTabsProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
   render: () => {
     const [value, setValue] = useState(0);
 

@@ -45,7 +45,7 @@ export const Main: StoryObj<HvAccordionProps> = {
     label: "Analytics",
     headingLevel: 1,
     disabled: false,
-    expanded: false,
+    expanded: true,
     defaultExpanded: false,
     labelVariant: "label",
   },

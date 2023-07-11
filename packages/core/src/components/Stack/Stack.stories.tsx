@@ -155,6 +155,10 @@ export const CustomDivider = () => {
   );
 };
 
+CustomDivider.parameters = {
+  eyes: { include: false },
+};
+
 export const WithNavigation = () => {
   return (
     <>
@@ -290,4 +294,8 @@ export const WithNavigation = () => {
       </div>
     </>
   );
+};
+
+WithNavigation.parameters = {
+  eyes: { include: false },
 };

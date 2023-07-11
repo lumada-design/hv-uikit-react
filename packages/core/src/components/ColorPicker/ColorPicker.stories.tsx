@@ -1,5 +1,9 @@
+import { CSSProperties } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvColorPicker, HvColorPickerProps } from "./ColorPicker";
+
+const makeDecorator = (styles: CSSProperties) => (Story) =>
+  <div style={styles}>{Story()}</div>;
 
 const meta: Meta<typeof HvColorPicker> = {
   title: "Widgets/Color Picker",
@@ -10,6 +14,7 @@ export default meta;
 export const Main: StoryObj<HvColorPickerProps> = {
   args: {
     label: "Color",
+    expanded: true,
   },
   argTypes: {
     classes: { control: { disable: true } },
@@ -18,6 +23,7 @@ export const Main: StoryObj<HvColorPickerProps> = {
     "aria-describedby": { table: { disable: true } },
     "aria-labelledby": { table: { disable: true } },
   },
+  decorators: [makeDecorator({ height: 600 })],
   render: (args) => {
     return (
       <div style={{ width: "134px" }}>
@@ -35,10 +41,12 @@ export const WithoutSavedColors: StoryObj<HvColorPickerProps> = {
       },
     },
   },
+  decorators: [makeDecorator({ height: 500 })],
   render: () => {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
+          expanded
           showSavedColors={false}
           onChange={(color) => console.log(color)}
           defaultValue="#C62828"
@@ -56,10 +64,12 @@ export const OnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
       },
     },
   },
+  decorators: [makeDecorator({ height: 200 })],
   render: () => {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
+          expanded
           showSavedColors={false}
           showCustomColors={false}
           onChange={(color) => console.log(color)}
@@ -78,10 +88,15 @@ export const IconOnly: StoryObj<HvColorPickerProps> = {
       },
     },
   },
+  decorators: [makeDecorator({ height: 500 })],
   render: () => {
     return (
       <div style={{ width: "134px" }}>
-        <HvColorPicker iconOnly onChange={(color) => console.log(color)} />
+        <HvColorPicker
+          iconOnly
+          expanded
+          onChange={(color) => console.log(color)}
+        />
       </div>
     );
   },
@@ -96,11 +111,13 @@ export const IconOnlyWithoutSavedColors: StoryObj<HvColorPickerProps> = {
       },
     },
   },
+  decorators: [makeDecorator({ height: 500 })],
   render: () => {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
           iconOnly
+          expanded
           showSavedColors={false}
           defaultValue="#477DBD"
           onChange={(color) => console.log(color)}
@@ -119,11 +136,13 @@ export const IconOnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
       },
     },
   },
+  decorators: [makeDecorator({ height: 200 })],
   render: () => {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
           iconOnly
+          expanded
           showSavedColors={false}
           showCustomColors={false}
           defaultValue="#59941B"
@@ -143,10 +162,12 @@ export const CustomizedColorPicker: StoryObj<HvColorPickerProps> = {
       },
     },
   },
+  decorators: [makeDecorator({ height: 450 })],
   render: () => {
     return (
       <div style={{ width: "240px" }}>
         <HvColorPicker
+          expanded
           showLabels={false}
           showSavedColors={false}
           dropdownIcon="arrow"

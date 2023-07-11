@@ -17,7 +17,7 @@ const meta: Meta<typeof HvDropDownMenu> = {
         style={{
           display: "flex",
           justifyContent: "center",
-          height: 150,
+          height: 175,
         }}
       >
         {storyFn()}
@@ -33,7 +33,7 @@ export const Main: StoryObj<HvDropDownMenuProps> = {
     placement: "left",
     keepOpened: false,
     disabled: false,
-    expanded: false,
+    expanded: true,
     defaultExpanded: false,
     category: "secondaryGhost",
   },
@@ -72,6 +72,7 @@ export const WithIconsAndActions: StoryObj<HvDropDownMenuProps> = {
 
     return (
       <HvDropDownMenu
+        expanded
         id="dropdownmenu-with-icons-and-actions"
         placement="right"
         onClick={(e, item) => console.log(item.label)}
@@ -86,10 +87,6 @@ export const WithIconsAndActions: StoryObj<HvDropDownMenuProps> = {
   },
 };
 
-WithIconsAndActions.parameters = {
-  eyes: { include: false },
-};
-
 export const DisabledItems: StoryObj<HvDropDownMenuProps> = {
   parameters: {
     docs: {
@@ -102,6 +99,7 @@ export const DisabledItems: StoryObj<HvDropDownMenuProps> = {
     return (
       <HvDropDownMenu
         id="dpmDisabledItems"
+        expanded
         aria-label="dropdownMenu-DisabledItems"
         dataList={[
           { label: "Label 1" },
@@ -113,10 +111,6 @@ export const DisabledItems: StoryObj<HvDropDownMenuProps> = {
   },
 };
 
-DisabledItems.parameters = {
-  eyes: { include: false },
-};
-
 export const Controlled: StoryObj<HvDropDownMenuProps> = {
   parameters: {
     docs: {
@@ -126,7 +120,7 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
     },
   },
   render: () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     return (
       <>

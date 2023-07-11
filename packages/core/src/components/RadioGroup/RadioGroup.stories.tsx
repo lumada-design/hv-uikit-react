@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { CSSInterpolation, css } from "@emotion/css";
 import { HvFormStatus, HvRadio } from "@core/components";
 import React, { useState } from "react";
 import { HvRadioGroup, HvRadioGroupProps } from "./RadioGroup";
@@ -30,6 +31,43 @@ export const Main: StoryObj<HvRadioGroupProps> = {
   },
 };
 
+export const Variants: StoryObj<HvRadioGroupProps> = {
+  render: () => {
+    const styles: { root: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        justifyContent: "space-around",
+        flexWrap: "wrap",
+      },
+    };
+
+    return (
+      <div className={css(styles.root)}>
+        <HvRadioGroup required label="Required">
+          <HvRadio label="Radio 1" value="1" />
+          <HvRadio label="Radio 2" value="2" checked />
+          <HvRadio label="Radio 3" value="3" />
+        </HvRadioGroup>
+        <HvRadioGroup disabled label="Disabled">
+          <HvRadio label="Radio 1" value="1" />
+          <HvRadio label="Radio 2" value="2" checked />
+          <HvRadio label="Radio 3" value="3" />
+        </HvRadioGroup>
+        <HvRadioGroup readOnly label="Readonly">
+          <HvRadio label="Radio 1" value="1" />
+          <HvRadio label="Radio 2" value="2" checked />
+          <HvRadio label="Radio 3" value="3" />
+        </HvRadioGroup>
+        <HvRadioGroup status="invalid" statusMessage="Oh no!" label="Invalid">
+          <HvRadio label="Radio 1" value="1" />
+          <HvRadio label="Radio 2" value="2" checked />
+          <HvRadio label="Radio 3" value="3" />
+        </HvRadioGroup>
+      </div>
+    );
+  },
+};
+
 export const Horizontal: StoryObj<HvRadioGroupProps> = {
   parameters: {
     docs: {
@@ -43,44 +81,6 @@ export const Horizontal: StoryObj<HvRadioGroupProps> = {
         label="Choose your favorite radio button"
         description="Horizontally, this time"
       >
-        <HvRadio label="Radio 1" value="1" />
-        <HvRadio label="Radio 2" value="2" checked />
-        <HvRadio label="Radio 3" value="3" />
-      </HvRadioGroup>
-    );
-  },
-};
-
-export const Disabled: StoryObj<HvRadioGroupProps> = {
-  parameters: {
-    docs: {
-      description: { story: "Disabled radio button group." },
-    },
-  },
-  render: () => {
-    return (
-      <HvRadioGroup
-        disabled
-        label="No way to choose"
-        description="They're all disabled"
-      >
-        <HvRadio label="Radio 1" value="1" />
-        <HvRadio label="Radio 2" value="2" checked />
-        <HvRadio label="Radio 3" value="3" />
-      </HvRadioGroup>
-    );
-  },
-};
-
-export const ReadOnly: StoryObj<HvRadioGroupProps> = {
-  parameters: {
-    docs: {
-      description: { story: "Not editable radio button group." },
-    },
-  },
-  render: () => {
-    return (
-      <HvRadioGroup readOnly label="Can't change anything">
         <HvRadio label="Radio 1" value="1" />
         <HvRadio label="Radio 2" value="2" checked />
         <HvRadio label="Radio 3" value="3" />
@@ -116,6 +116,7 @@ export const Controlled: StoryObj<HvRadioGroupProps> = {
         story: "Controlled radio button group.",
       },
     },
+    eyes: { include: true },
   },
   render: () => {
     const [value, setValue] = useState<string>("2");
@@ -145,22 +146,6 @@ export const Controlled: StoryObj<HvRadioGroupProps> = {
         <HvRadio label="None" value="none" />
         <HvRadio label="Radio 1" value="1" />
         <HvRadio label="Radio 2" value="2" />
-      </HvRadioGroup>
-    );
-  },
-};
-
-export const ErrorMessage: StoryObj<HvRadioGroupProps> = {
-  render: () => {
-    return (
-      <HvRadioGroup
-        status="invalid"
-        statusMessage="No way for this to be valid!"
-        label="Choose"
-      >
-        <HvRadio label="Radio 1" value="1" />
-        <HvRadio label="Radio 2" value="2" checked />
-        <HvRadio label="Radio 3" value="3" />
       </HvRadioGroup>
     );
   },

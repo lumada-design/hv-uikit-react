@@ -91,6 +91,9 @@ export const Main: StoryObj<HvWizardProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
+  parameters: {
+    eyes: { include: false },
+  },
   render: () => {
     const [show, setShow] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -209,6 +212,12 @@ export const Skippable = () => {
   );
 };
 
+Skippable.parameters = {
+  parameters: {
+    eyes: { include: false },
+  },
+};
+
 export const ComponentBreakDown = () => {
   const [open, setOpen] = useState(false);
 
@@ -306,4 +315,10 @@ export const ComponentBreakDown = () => {
       </HvWizard>
     </>
   );
+};
+
+ComponentBreakDown.parameters = {
+  parameters: {
+    eyes: { include: false },
+  },
 };

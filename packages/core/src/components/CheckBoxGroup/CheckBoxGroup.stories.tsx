@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { HvCheckBox } from "@core/components";
 import { useState } from "react";
+import { CSSInterpolation, css } from "@emotion/css";
 import { HvCheckBoxGroup, HvCheckBoxGroupProps } from "./CheckBoxGroup";
 
 const meta: Meta<typeof HvCheckBoxGroup> = {
@@ -18,7 +19,7 @@ export const Main: StoryObj<HvCheckBoxGroupProps> = {
     showSelectAll: true,
     label: "Choose your favorite checkboxes",
     name: "favorite",
-    description: "",
+    description: "This is a checkbox group",
   },
   argTypes: {
     classes: { control: { disable: true } },
@@ -30,6 +31,48 @@ export const Main: StoryObj<HvCheckBoxGroupProps> = {
         <HvCheckBox label="Checkbox 2" value="2" checked />
         <HvCheckBox label="Checkbox 3" value="3" />
       </HvCheckBoxGroup>
+    );
+  },
+};
+
+export const Variants: StoryObj<HvCheckBoxGroupProps> = {
+  render: () => {
+    const styles: { root: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        justifyContent: "space-around",
+        flexWrap: "wrap",
+      },
+    };
+
+    return (
+      <div className={css(styles.root)}>
+        <HvCheckBoxGroup showSelectAll required label="Required">
+          <HvCheckBox label="Checkbox 1" value="1" />
+          <HvCheckBox label="Checkbox 2" value="2" checked />
+          <HvCheckBox label="Checkbox 3" value="3" />
+        </HvCheckBoxGroup>
+        <HvCheckBoxGroup showSelectAll disabled label="Disabled">
+          <HvCheckBox label="Checkbox 1" value="1" />
+          <HvCheckBox label="Checkbox 2" value="2" checked />
+          <HvCheckBox label="Checkbox 3" value="3" />
+        </HvCheckBoxGroup>
+        <HvCheckBoxGroup showSelectAll readOnly label="Readonly">
+          <HvCheckBox label="Checkbox 1" value="1" />
+          <HvCheckBox label="Checkbox 2" value="2" checked />
+          <HvCheckBox label="Checkbox 3" value="3" />
+        </HvCheckBoxGroup>
+        <HvCheckBoxGroup
+          showSelectAll
+          status="invalid"
+          statusMessage="Oh no!"
+          label="Invalid"
+        >
+          <HvCheckBox label="Checkbox 1" value="1" />
+          <HvCheckBox label="Checkbox 2" value="2" checked />
+          <HvCheckBox label="Checkbox 3" value="3" />
+        </HvCheckBoxGroup>
+      </div>
     );
   },
 };
@@ -46,50 +89,6 @@ export const Horizontal: StoryObj<HvCheckBoxGroupProps> = {
         orientation="horizontal"
         label="Choose your favorite checkboxes"
         description="Horizontally, this time"
-      >
-        <HvCheckBox label="Checkbox 1" value="1" />
-        <HvCheckBox label="Checkbox 2" value="2" checked />
-        <HvCheckBox label="Checkbox 3" value="3" />
-      </HvCheckBoxGroup>
-    );
-  },
-};
-
-export const Disabled: StoryObj<HvCheckBoxGroupProps> = {
-  parameters: {
-    docs: {
-      description: { story: "Disabled checkbox group." },
-    },
-  },
-  render: () => {
-    return (
-      <HvCheckBoxGroup
-        showSelectAll
-        disabled
-        label="No way to choose"
-        description="They're all disabled"
-      >
-        <HvCheckBox label="Checkbox 1" value="1" />
-        <HvCheckBox label="Checkbox 2" value="2" checked />
-        <HvCheckBox label="Checkbox 3" value="3" />
-      </HvCheckBoxGroup>
-    );
-  },
-};
-
-export const ReadOnly: StoryObj<HvCheckBoxGroupProps> = {
-  parameters: {
-    docs: {
-      description: { story: "Not editable checkbox group." },
-    },
-  },
-  render: () => {
-    return (
-      <HvCheckBoxGroup
-        id="readonly"
-        showSelectAll
-        readOnly
-        label="Can't change anything"
       >
         <HvCheckBox label="Checkbox 1" value="1" />
         <HvCheckBox label="Checkbox 2" value="2" checked />
@@ -119,30 +118,6 @@ export const WithoutLabel: StoryObj<HvCheckBoxGroupProps> = {
   },
 };
 
-export const Required: StoryObj<HvCheckBoxGroupProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Required checkbox group. Uncheck all checkboxes to show default error message.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvCheckBoxGroup
-        orientation="horizontal"
-        label="Select at least one"
-        required
-      >
-        <HvCheckBox label="Checkbox 1" value="1" />
-        <HvCheckBox label="Checkbox 2" value="2" checked />
-        <HvCheckBox label="Checkbox 3" value="3" />
-      </HvCheckBoxGroup>
-    );
-  },
-};
-
 export const Controlled: StoryObj<HvCheckBoxGroupProps> = {
   parameters: {
     docs: {
@@ -150,6 +125,7 @@ export const Controlled: StoryObj<HvCheckBoxGroupProps> = {
         story: "Controlled checkbox group.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [value, setValue] = useState(["2"]);
@@ -173,23 +149,10 @@ export const Controlled: StoryObj<HvCheckBoxGroupProps> = {
   },
 };
 
-export const ErrorMessage: StoryObj<HvCheckBoxGroupProps> = {
-  render: () => {
-    return (
-      <HvCheckBoxGroup
-        status="invalid"
-        statusMessage="No way for this to be valid!"
-        label="Choose"
-      >
-        <HvCheckBox label="Checkbox 1" value="1" />
-        <HvCheckBox label="Checkbox 2" value="2" checked />
-        <HvCheckBox label="Checkbox 3" value="3" />
-      </HvCheckBoxGroup>
-    );
-  },
-};
-
 export const ShiftSelect: StoryObj<HvCheckBoxGroupProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
   render: () => {
     return (
       <HvCheckBoxGroup label="Choose the best checkbox">

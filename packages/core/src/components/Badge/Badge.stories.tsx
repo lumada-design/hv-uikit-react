@@ -18,11 +18,11 @@ export default meta;
 export const Main: StoryObj<HvBadgeProps> = {
   args: {
     count: 1,
-    showCount: false,
+    showCount: true,
     label: "",
     maxCount: 99,
-    text: "",
-    textVariant: "body",
+    text: "Messages",
+    textVariant: "label",
   },
   argTypes: {
     classes: { control: { disable: true } },
