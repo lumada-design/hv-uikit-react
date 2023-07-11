@@ -46,20 +46,19 @@ export const HvWizardTitle = ({
   classes,
   customStep = {},
 }: HvWizardTitleProps) => {
-  const { context, summary, setSummary, tab, setTab } =
-    useContext(HvWizardContext);
+  const { context, setSummary, tab, setTab } = useContext(HvWizardContext);
 
   const [steps, setSteps] = useState<HvStepProps[]>([]);
 
   useEffect(() => {
-    if (summary === null && hasSummary) {
-      setSummary(false);
-    }
-
     return () => {
       setSummary(false);
     };
-  }, [hasSummary, setSummary, summary]);
+  }, [setSummary]);
+
+  const toggleSummary = () => {
+    setSummary((prevValue) => !prevValue);
+  };
 
   useEffect(() => {
     const contextArray = Object.entries(context);
@@ -78,10 +77,6 @@ export const HvWizardTitle = ({
       setSteps(updatedSteps);
     }
   }, [context, tab, setTab]);
-
-  const toggleSummary = () => {
-    setSummary((oldSummary) => !oldSummary);
-  };
 
   return (
     <ClassNames>
