@@ -1,15 +1,10 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { HvInfoMessage } from "@core/components";
 
 describe("InfoMessage", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvInfoMessage />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvInfoMessage />);
-    expect(container).toMatchSnapshot();
+  it("should render the content", () => {
+    render(<HvInfoMessage>CONTENT</HvInfoMessage>);
+    expect(screen.getByText("CONTENT")).toBeInTheDocument();
   });
 });

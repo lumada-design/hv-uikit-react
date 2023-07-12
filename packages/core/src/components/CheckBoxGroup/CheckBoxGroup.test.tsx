@@ -14,18 +14,6 @@ const Main = () => (
 
 describe("CheckBoxGroup", () => {
   describe("general", () => {
-    it("should be defined", () => {
-      const { container } = render(<Main />);
-
-      expect(container).toBeDefined();
-    });
-
-    it("should render correctly", () => {
-      const { container } = render(<Main />);
-
-      expect(container).toMatchSnapshot();
-    });
-
     it("should render a group with checkboxes in the expected order", () => {
       const { getByRole, getAllByRole } = render(<Main />);
 

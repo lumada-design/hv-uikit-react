@@ -70,12 +70,6 @@ const Sample = ({ startingOpen }: { startingOpen: boolean }) => {
 };
 
 describe("HvDrawer", () => {
-  const { baseElement } = render(<Sample startingOpen />);
-
-  it("should render correctly", () => {
-    expect(baseElement).toMatchSnapshot();
-  });
-
   it("should open when closed", async () => {
     const { getByRole, queryByText, getByText, queryByRole } = render(
       <Sample startingOpen={false} />

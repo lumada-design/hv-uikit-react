@@ -1,22 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
 import { HvButton } from "@core/components";
 import { HvMultiButton } from "./MultiButton";
 
 describe("MultiButton", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvMultiButton />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvMultiButton />);
-    expect(container).toMatchSnapshot();
-  });
-
   it("should render the buttons", () => {
-    const { queryAllByRole } = render(
+    render(
       <HvMultiButton>
         <HvButton key="1" startIcon={<Map />}>
           Button1
@@ -26,7 +16,7 @@ describe("MultiButton", () => {
         </HvButton>
       </HvMultiButton>
     );
-    const buttons = queryAllByRole("button");
+    const buttons = screen.queryAllByRole("button");
     expect(buttons.length).toBe(2);
   });
 });

@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { HvFileData } from "../File";
 import { HvFileList } from "./FileList";
@@ -30,25 +30,10 @@ const Main = () => (
 );
 
 describe("FileList", () => {
-  it("should be defined", () => {
-    const { container } = render(<Main />);
-
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<Main />);
-
-    expect(container).toMatchSnapshot();
-  });
-
   it("should render the list with items", () => {
-    const { container, queryAllByRole } = render(<Main />);
+    render(<Main />);
 
-    expect(container).toBeVisible();
-
-    const lists = queryAllByRole("listitem");
-
+    const lists = screen.queryAllByRole("listitem");
     expect(lists.length).toBe(2);
   });
 });

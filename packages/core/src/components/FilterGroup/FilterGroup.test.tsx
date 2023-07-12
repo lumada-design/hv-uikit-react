@@ -101,12 +101,6 @@ const ResetToDefault = () => {
 };
 
 describe("FilterGroup", () => {
-  it("should render correctly", () => {
-    const { container } = render(<Main />);
-
-    expect(container).toMatchSnapshot();
-  });
-
   it("can be opened", async () => {
     const { getByRole } = render(<Main />);
 

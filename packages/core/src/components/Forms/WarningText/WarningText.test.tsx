@@ -8,18 +8,6 @@ const setup = (props: Partial<HvWarningTextProps>) =>
   render(<HvWarningText {...props}>{TEXT}</HvWarningText>);
 
 describe("WarningText", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvWarningText />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvWarningText />);
-    expect(container).toMatchSnapshot();
-  });
-});
-
-describe("HelperText", () => {
   it("doesn't render component when not visible", () => {
     setup({ isVisible: false });
     expect(screen.queryByRole("status")).not.toBeInTheDocument();

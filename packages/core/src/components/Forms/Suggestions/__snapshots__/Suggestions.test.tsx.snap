@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Suggestions > should render correctly 1`] = `
-<div>
-  <div
-    class="HvSuggestions-root css-1xgkixt-StyledRoot eqrftyh2"
-  />
-</div>
-`;

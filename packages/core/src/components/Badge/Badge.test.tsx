@@ -1,65 +1,67 @@
 import { describe, expect, it } from "vitest";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Alert } from "@hitachivantara/uikit-react-icons";
 import { HvBadge } from "./Badge";
 
 describe("Badge", () => {
-  it("should render correctly", () => {
-    const { container } = render(<HvBadge />);
-    expect(container).toBeDefined();
-  });
-
   it("should render a small dot when count>0 without showCount", () => {
-    const { container } = render(<HvBadge count={12} />);
-    expect(container).toMatchSnapshot();
+    render(<HvBadge count={12} />);
+    expect(screen.queryByText("12")).toBeNull();
   });
 
   it("should render correctly with showCount", () => {
-    const { container } = render(<HvBadge count={12} showCount />);
-    expect(container).toMatchSnapshot();
+    render(<HvBadge count={12} showCount />);
+    expect(screen.getByText("12")).toBeInTheDocument();
   });
 
   it("should render correctly with showCount and one-digit count", () => {
-    const { container } = render(<HvBadge count={9} showCount />);
-    expect(container).toMatchSnapshot();
+    render(<HvBadge count={9} showCount />);
+    expect(screen.getByText("9")).toBeInTheDocument();
   });
 
   it("should render nothing when count is 0 even with showCount", () => {
-    const { container } = render(<HvBadge count={0} showCount />);
-    expect(container).toMatchSnapshot();
+    render(<HvBadge count={0} showCount />);
+    expect(screen.queryByText("0")).toBeNull();
   });
 
   it("should render correctly with maxCount", () => {
-    const { container } = render(<HvBadge count={100} showCount />);
-    expect(container).toMatchSnapshot();
+    render(<HvBadge count={100} showCount />);
+    expect(screen.getByLabelText("99+")).toBeInTheDocument();
   });
 
   it("should render correctly with text", () => {
-    const { container } = render(
-      <HvBadge count={100} showCount text="hello" textVariant="title3" />
-    );
-    expect(container).toMatchSnapshot();
+    render(<HvBadge count={100} showCount text="hello" textVariant="title3" />);
+    expect(screen.getByLabelText("99+")).toBeInTheDocument();
+    expect(screen.getByText("hello")).toBeInTheDocument();
   });
 
   it("should render correctly with svg", () => {
-    const { container } = render(
-      <HvBadge count={100} showCount icon={<Alert />} />
+    render(
+      <HvBadge
+        count={100}
+        showCount
+        icon={<Alert role="presentation" aria-label="Alert" />}
+      />
     );
-    expect(container).toMatchSnapshot();
+    expect(screen.getByLabelText("99+")).toBeInTheDocument();
+    expect(
+      screen.getByRole("presentation", { name: "Alert" })
+    ).toBeInTheDocument();
   });
 
   it("should render correctly with custom label", () => {
-    const { container } = render(<HvBadge label="New!" />);
-    expect(container).toMatchSnapshot();
+    render(<HvBadge label="New!" />);
+    expect(screen.getByText("New!")).toBeInTheDocument();
   });
 
   it("should render correctly with custom one-character label", () => {
-    const { container } = render(<HvBadge label="!" />);
-    expect(container).toMatchSnapshot();
+    render(<HvBadge label="!" />);
+    expect(screen.getByText("!")).toBeInTheDocument();
   });
 
   it("should render custom label but not count when both are specified", () => {
-    const { container } = render(<HvBadge label="New!" count={23} showCount />);
-    expect(container).toMatchSnapshot();
+    render(<HvBadge label="New!" count={23} showCount />);
+    expect(screen.getByText("New!")).toBeInTheDocument();
+    expect(screen.queryByText("23")).toBeNull();
   });
 });

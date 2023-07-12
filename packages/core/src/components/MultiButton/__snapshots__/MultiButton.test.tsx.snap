@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`MultiButton > should render correctly 1`] = `
-<div>
-  <div
-    class="HvMultiButton-root css-fxit71-StyledRoot e17vrbb41"
-  />
-</div>
-`;

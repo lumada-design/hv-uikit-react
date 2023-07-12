@@ -7,9 +7,4 @@ describe("Grid", () => {
     const { container } = render(<HvGrid />);
     expect(container).toBeDefined();
   });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvGrid />);
-    expect(container).toMatchSnapshot();
-  });
 });

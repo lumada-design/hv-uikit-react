@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 import {
   HvVerticalNavigationAction,
@@ -14,14 +14,9 @@ const Sample = () => (
   </HvVerticalNavigationActions>
 );
 
-describe("VerticalNavigation - Actions", () => {
-  it("should be defined", () => {
-    const { container } = render(<Sample />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<Sample />);
-    expect(container).toMatchSnapshot();
+describe("VerticalNavigation Actions", () => {
+  it("should render the actions", () => {
+    render(<Sample />);
+    expect(screen.getAllByRole("button").length).toBe(3);
   });
 });

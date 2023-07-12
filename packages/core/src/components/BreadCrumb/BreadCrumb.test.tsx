@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { HvProvider } from "@core/providers";
 import { describe, expect, it } from "vitest";
 import { HvBreadCrumb } from "./BreadCrumb";
@@ -14,27 +14,24 @@ const data = [
 ];
 
 describe("BreadCrumb", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvBreadCrumb />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvBreadCrumb listRoute={data} />);
-    expect(container).toMatchSnapshot();
-  });
-
   it("should render the correct number of items", () => {
-    const { queryAllByRole } = render(<HvBreadCrumb listRoute={data} />);
-    expect(queryAllByRole("listitem").length).toBe(7);
+    render(<HvBreadCrumb listRoute={data} />);
+    expect(screen.queryAllByRole("listitem").length).toBe(7);
+    expect(screen.getByText("Label 1")).toBeInTheDocument();
+    expect(screen.getByText("Label 7")).toBeInTheDocument();
   });
 
   it("should render the correct number of items if maxVisible is specified", () => {
-    const { queryAllByRole } = render(
+    render(
       <HvProvider>
-        <HvBreadCrumb listRoute={data} maxVisible={2} />
+        <HvBreadCrumb listRoute={data} maxVisible={3} />
       </HvProvider>
     );
-    expect(queryAllByRole("listitem").length).toBe(3);
+    expect(screen.queryAllByRole("listitem").length).toBe(4);
+    expect(screen.getByText("Label 1")).toBeInTheDocument();
+    expect(screen.queryByText("Label 2")).toBeNull();
+    expect(screen.queryByText("Label 5")).toBeNull();
+    expect(screen.getByText("Label 6")).toBeInTheDocument();
+    expect(screen.getByText("Label 7")).toBeInTheDocument();
   });
 });

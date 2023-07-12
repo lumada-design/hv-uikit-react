@@ -1,24 +1,29 @@
 import { CloseXS } from "@hitachivantara/uikit-react-icons";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import { HvAdornment } from "@core/components";
 
 describe("Adornment", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvAdornment icon={<CloseXS />} />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvAdornment icon={<CloseXS />} />);
-    expect(container).toMatchSnapshot();
-  });
-
-  it("should render a button if a 'onClick' is passed", () => {
-    const mockFn = vi.fn();
-    const { getByRole } = render(
-      <HvAdornment icon={<CloseXS />} onClick={mockFn} />
+  it("should render the passed icon", () => {
+    render(
+      <HvAdornment
+        icon={<CloseXS role="presentation" aria-label="close icon" />}
+      />
     );
-    expect(getByRole("button")).toBeInTheDocument();
+    expect(
+      screen.getByRole("presentation", { name: "close icon" })
+    ).toBeInTheDocument();
+  });
+
+  it("should render a button if a 'onClick' is passed", async () => {
+    const mockFn = vi.fn();
+    render(<HvAdornment icon={<CloseXS />} onClick={mockFn} />);
+
+    const button = screen.getByRole("button");
+    expect(button).toBeInTheDocument();
+
+    await userEvent.click(button);
+    expect(mockFn).toHaveBeenCalledTimes(1);
   });
 });

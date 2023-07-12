@@ -1,11 +1,13 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { HvTab } from "@core/components";
 
 describe("Tab", () => {
   it("should render correctly", () => {
-    const { container } = render(<HvTab label="Clickable tab" />);
+    render(<HvTab label="Clickable tab" />);
 
-    expect(container).toMatchSnapshot();
+    expect(
+      screen.getByRole("tab", { name: "Clickable tab" })
+    ).toBeInTheDocument();
   });
 });

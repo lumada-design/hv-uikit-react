@@ -1,15 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { HvLogin } from ".";
 
 describe("Login", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvLogin>Login content</HvLogin>);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvLogin>Login content</HvLogin>);
-    expect(container).toMatchSnapshot();
+  it("should render the content", () => {
+    render(<HvLogin>Login content</HvLogin>);
+    expect(screen.getByText("Login content")).toBeInTheDocument();
   });
 });

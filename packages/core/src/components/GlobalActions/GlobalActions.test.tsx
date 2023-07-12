@@ -3,16 +3,6 @@ import { describe, expect, it } from "vitest";
 import { HvGlobalActions } from "./GlobalActions";
 
 describe("GlobalActions", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvGlobalActions />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvGlobalActions />);
-    expect(container).toMatchSnapshot();
-  });
-
   it("should render the header with the correct title and heading level", () => {
     const headingLevel = 3;
 

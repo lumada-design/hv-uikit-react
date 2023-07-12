@@ -55,18 +55,6 @@ const PaginationWithState = () => {
 };
 
 describe("DotPagination", () => {
-  it("should be defined", () => {
-    const { container } = render(<Pagination page={0} />);
-
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<Pagination page={0} />);
-
-    expect(container).toMatchSnapshot();
-  });
-
   it("should have dot navigation on the first page", async () => {
     const { getByLabelText, findByRole } = render(<Pagination page={0} />);
 

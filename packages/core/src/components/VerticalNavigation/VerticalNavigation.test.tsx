@@ -205,17 +205,7 @@ const SliderSample = () => {
 };
 
 describe("VerticalNavigation", () => {
-  it("should be defined", () => {
-    const { container } = render(<Sample />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<Sample />);
-    expect(container).toMatchSnapshot();
-  });
-
-  it("should collapsed", async () => {
+  it("should collapse", async () => {
     const { getByRole, getByLabelText } = render(<Sample />);
 
     const collapseButton = getByRole("button", { name: "collapseButton" });

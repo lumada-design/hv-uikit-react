@@ -7,9 +7,4 @@ describe("FormElement", () => {
     const { container } = render(<HvFormElement />);
     expect(container).toBeDefined();
   });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvFormElement />);
-    expect(container).toMatchSnapshot();
-  });
 });

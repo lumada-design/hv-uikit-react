@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`FormElement > should render correctly 1`] = `
-<div>
-  <div
-    class="HvFormElement-root"
-  />
-</div>
-`;

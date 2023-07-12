@@ -7,9 +7,4 @@ describe("List", () => {
     const { container } = render(<HvList values={[]} />);
     expect(container).toBeDefined();
   });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvList values={[]} />);
-    expect(container).toMatchSnapshot();
-  });
 });

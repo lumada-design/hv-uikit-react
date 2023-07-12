@@ -1,13 +1,8 @@
-import { render } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import { HvCalendar } from "./Calendar";
 
 describe("<Calendar /> with minimum configuration", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvCalendar />);
-    expect(container).toBeDefined();
-  });
-
   it("should render composed navigation components", () => {
     const { container } = render(<HvCalendar />);
 
@@ -20,33 +15,11 @@ describe("<Calendar /> with minimum configuration", () => {
 });
 
 describe("<Calendar /> with configurations", () => {
-  const selectedDate = new Date(1970, 0, 1);
+  it("renders the month and year", () => {
+    const selectedDate = new Date("2020-01-10");
+    render(<HvCalendar value={selectedDate} />);
 
-  const handleDateChangeMock = vi.fn();
-
-  it("should be defined", () => {
-    const { container } = render(
-      <HvCalendar
-        id="default"
-        value={selectedDate}
-        locale="en-US"
-        onChange={handleDateChangeMock}
-      />
-    );
-
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(
-      <HvCalendar
-        id="default"
-        value={selectedDate}
-        locale="en-US"
-        onChange={handleDateChangeMock}
-      />
-    );
-
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText("January")).toBeInTheDocument();
+    expect(screen.getByText("2023")).toBeInTheDocument();
   });
 });

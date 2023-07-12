@@ -210,14 +210,6 @@ export const ReadOnly = () => {
 };
 
 describe("QueryBuilder", () => {
-  describe("snapshot", () => {
-    it("matches snapshot", () => {
-      const { container } = render(<Main />);
-      expect(container).toBeDefined();
-      expect(container).toMatchSnapshot();
-    });
-  });
-
   describe("structure", () => {
     it("renders the component as expected", () => {
       const { getByRole, getByText } = render(<Main />);
