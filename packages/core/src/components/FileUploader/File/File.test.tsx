@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import { HvFile, HvFileData, HvFileProps } from "./File";
@@ -28,32 +28,16 @@ const Main = (props: HvFileProps) => (
 );
 
 describe("File", () => {
-  it("should be defined", () => {
-    const { getByRole } = render(<Main data={dataSuccess} />);
-
-    const file = getByRole("listitem");
-
-    expect(file).toBeDefined();
-  });
-
   it("should render correctly success status", () => {
-    const { getByRole } = render(<Main data={dataSuccess} />);
+    render(<Main data={dataSuccess} />);
 
-    const file = getByRole("listitem");
-
-    expect(file).toBeVisible();
-
-    expect(file).toMatchSnapshot();
+    expect(screen.getByRole("listitem")).toBeVisible();
   });
 
   it("should render correctly fail status", () => {
-    const { getByRole } = render(<Main data={dataFail} />);
+    render(<Main data={dataFail} />);
 
-    const file = getByRole("listitem");
-
-    expect(file).toBeVisible();
-
-    expect(file).toMatchSnapshot();
+    expect(screen.getByRole("listitem")).toBeVisible();
   });
 
   it("should call the delete file callback", async () => {

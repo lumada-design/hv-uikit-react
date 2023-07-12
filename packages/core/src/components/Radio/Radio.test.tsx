@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { useState } from "react";
 import userEvent from "@testing-library/user-event";
 import { HvRadio, HvRadioProps } from "./Radio";
@@ -78,39 +78,23 @@ const ReadOnly = () => {
 };
 
 describe("HvRadio", () => {
-  describe("sample snapshot testing", () => {
-    it("should match the snapshot", () => {
-      const { asFragment } = render(<HvRadio />);
-      expect(asFragment()).toMatchSnapshot();
-    });
+  it("can have name", () => {
+    render(<HvRadio name="main" label="Radio 1" value="1" />);
+
+    const radioBtn = screen.getByRole("radio");
+    expect(radioBtn).toHaveAttribute("name", "main");
   });
 
-  describe("name", () => {
-    it("can have name", () => {
-      const { getByRole } = render(
-        <HvRadio name="main" label="Radio 1" value="1" />
-      );
+  it("can have a controlled checked state", () => {
+    render(<HvRadio name="main" label="Radio 1" value="1" checked />);
 
-      const radioBtn = getByRole("radio");
+    const radioBtn = screen.getByRole("radio");
 
-      expect(radioBtn).toHaveAttribute("name", "main");
-    });
-  });
+    expect(radioBtn).toBeChecked();
 
-  describe("checked", () => {
-    it("can have a controlled checked state", () => {
-      const { getByRole } = render(
-        <HvRadio name="main" label="Radio 1" value="1" checked />
-      );
+    fireEvent.click(radioBtn);
 
-      const radioBtn = getByRole("radio");
-
-      expect(radioBtn).toBeChecked();
-
-      fireEvent.click(radioBtn);
-
-      expect(radioBtn).toBeChecked();
-    });
+    expect(radioBtn).toBeChecked();
   });
 
   describe("Radio interactions", () => {

@@ -1,15 +1,10 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { HvLabel } from "@core/components";
 
 describe("Label", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvLabel />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvLabel />);
-    expect(container).toMatchSnapshot();
+  it("should render the label", () => {
+    render(<HvLabel label="LABEL" />);
+    expect(screen.getByText("LABEL")).toBeInTheDocument();
   });
 });

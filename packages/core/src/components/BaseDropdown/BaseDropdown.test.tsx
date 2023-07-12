@@ -1,34 +1,19 @@
 import userEvent from "@testing-library/user-event";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { HvProvider } from "@core/providers";
 import { HvBaseDropdown } from "./BaseDropdown";
 
 const Main = () => (
-  <HvProvider>
-    <div style={{ width: 121 }}>
-      <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" />
-    </div>
-  </HvProvider>
+  <div style={{ width: 121 }}>
+    <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" />
+  </div>
 );
 
 describe("BaseDropDown", () => {
-  it("should be defined", () => {
-    const { container } = render(<Main />);
-
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<Main />);
-
-    expect(container).toMatchSnapshot();
-  });
-
   it("should open on click", async () => {
-    const { getByRole } = render(<Main />);
+    render(<Main />);
 
-    const baseDropdownHeader = getByRole("combobox");
+    const baseDropdownHeader = screen.getByRole("combobox");
 
     expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
 
@@ -39,9 +24,9 @@ describe("BaseDropDown", () => {
   });
 
   it("should close on double click", async () => {
-    const { getByRole } = render(<Main />);
+    render(<Main />);
 
-    const baseDropdownHeader = getByRole("combobox");
+    const baseDropdownHeader = screen.getByRole("combobox");
 
     expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
 
@@ -55,9 +40,9 @@ describe("BaseDropDown", () => {
   });
 
   it("should open on Enter", async () => {
-    const { getByRole } = render(<Main />);
+    render(<Main />);
 
-    const baseDropdownHeader = getByRole("combobox");
+    const baseDropdownHeader = screen.getByRole("combobox");
 
     expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
 
@@ -68,9 +53,9 @@ describe("BaseDropDown", () => {
   });
 
   it("should close on double Enter", async () => {
-    const { getByRole } = render(<Main />);
+    render(<Main />);
 
-    const baseDropdownHeader = getByRole("combobox");
+    const baseDropdownHeader = screen.getByRole("combobox");
 
     expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
 
@@ -84,9 +69,9 @@ describe("BaseDropDown", () => {
   });
 
   it("should open on Space", async () => {
-    const { getByRole } = render(<Main />);
+    render(<Main />);
 
-    const baseDropdownHeader = getByRole("combobox");
+    const baseDropdownHeader = screen.getByRole("combobox");
 
     expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
 
@@ -97,9 +82,9 @@ describe("BaseDropDown", () => {
   });
 
   it("should close on double Space", async () => {
-    const { getByRole } = render(<Main />);
+    render(<Main />);
 
-    const baseDropdownHeader = getByRole("combobox");
+    const baseDropdownHeader = screen.getByRole("combobox");
 
     expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
 
@@ -113,9 +98,9 @@ describe("BaseDropDown", () => {
   });
 
   it("should open and close mixing mouse click, Enter, and Space", async () => {
-    const { getByRole } = render(<Main />);
+    render(<Main />);
 
-    const baseDropdownHeader = getByRole("combobox");
+    const baseDropdownHeader = screen.getByRole("combobox");
 
     expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
 

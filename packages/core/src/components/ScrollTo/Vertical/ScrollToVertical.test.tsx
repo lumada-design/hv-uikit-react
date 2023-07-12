@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { HvProvider } from "@core/providers";
 import userEvent from "@testing-library/user-event";
@@ -21,44 +21,44 @@ const Main = () => {
 };
 
 describe("ScrollToVertical", () => {
-  it("should render correctly", () => {
-    const { container } = render(<Main />);
+  it("should render the buttons", () => {
+    render(<Main />);
 
-    expect(container).toMatchSnapshot();
+    expect(screen.getAllByRole("button").length).toBe(4);
   });
 
   it("should render the component as expected", () => {
-    const { getByText } = render(
+    render(
       <HvProvider>
         <WithContent />
       </HvProvider>
     );
 
-    const tab1 = getByText("Server status summary");
+    const tab1 = screen.getByText("Server status summary");
     expect(tab1).toBeInTheDocument();
 
-    const tab2 = getByText("Optimization");
+    const tab2 = screen.getByText("Optimization");
     expect(tab2).toBeInTheDocument();
 
-    const tab3 = getByText("Performance analysis");
+    const tab3 = screen.getByText("Performance analysis");
     expect(tab3).toBeInTheDocument();
 
-    const tab4 = getByText("Insights");
+    const tab4 = screen.getByText("Insights");
     expect(tab4).toBeInTheDocument();
   });
 
   it("should have the correct tab selected", async () => {
-    const { getAllByRole } = render(
+    render(
       <HvProvider>
         <WithContent />
       </HvProvider>
     );
 
-    const tabs = getAllByRole("listitem");
+    const tabs = screen.getAllByRole("listitem");
     expect(tabs.length).toBe(4);
     expect(tabs[0]).toHaveAttribute("aria-current", "true");
 
-    const tabButtons = getAllByRole("button");
+    const tabButtons = screen.getAllByRole("button");
     expect(tabButtons.length).toBe(4);
 
     await userEvent.click(tabButtons[3]);

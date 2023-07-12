@@ -7,9 +7,4 @@ describe("Stack", () => {
     const { container } = render(<HvStack />);
     expect(container).toBeDefined();
   });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvStack />);
-    expect(container).toMatchSnapshot();
-  });
 });

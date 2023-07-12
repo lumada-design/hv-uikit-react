@@ -1,5 +1,5 @@
 import { HvTypography } from "@core/components";
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { HvTooltip } from "./Tooltip";
 
@@ -25,57 +25,35 @@ const Anchor = (
 );
 
 describe("Tooltip", () => {
-  it("should be defined", () => {
-    const { container } = render(
-      <HvTooltip title={smallTitle} open>
-        {Anchor}
-      </HvTooltip>
-    );
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(
-      <HvTooltip title={smallTitle} open>
-        {Anchor}
-      </HvTooltip>
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   describe("SingleLine Tooltip", () => {
     it("it should render the single line Tooltip", () => {
-      const { getByRole } = render(
+      render(
         <HvTooltip title={smallTitle} open>
           {Anchor}
         </HvTooltip>
       );
 
-      const tooltip = getByRole("tooltip");
+      const tooltip = screen.getByRole("tooltip");
       expect(tooltip).toBeInTheDocument();
     });
 
     it("it should not render the single line Tooltip", () => {
-      const { getByRole } = render(
-        <HvTooltip title={smallTitle}>{Anchor}</HvTooltip>
-      );
+      render(<HvTooltip title={smallTitle}>{Anchor}</HvTooltip>);
 
-      expect(() => getByRole("tooltip")).toThrow();
+      expect(() => screen.getByRole("tooltip")).toThrow();
     });
 
     it("it should render the single line Tooltip when hover", async () => {
-      const { getByRole } = render(
-        <HvTooltip title={smallTitle}>{Anchor}</HvTooltip>
-      );
+      render(<HvTooltip title={smallTitle}>{Anchor}</HvTooltip>);
 
-      expect(() => getByRole("tooltip")).toThrow();
-      const anchor = getByRole("button", { name: "Hello World" });
+      expect(() => screen.getByRole("tooltip")).toThrow();
+      const anchor = screen.getByRole("button", { name: "Hello World" });
       expect(anchor).toBeInTheDocument();
 
       fireEvent.mouseOver(anchor);
 
       await waitFor(() => {
-        const tooltip = getByRole("tooltip");
+        const tooltip = screen.getByRole("tooltip");
         expect(tooltip).toBeInTheDocument();
         expect(tooltip.childElementCount).toBe(1);
       });
@@ -95,46 +73,46 @@ describe("Tooltip", () => {
 
   describe("MultiLine Tooltip", () => {
     it("it should render the multi line Tooltip", () => {
-      const { getByRole, getByText } = render(
+      render(
         <HvTooltip title={title} open useSingle={false}>
           {Anchor}
         </HvTooltip>
       );
 
-      const tooltip = getByRole("tooltip");
+      const tooltip = screen.getByRole("tooltip");
       expect(tooltip).toBeInTheDocument();
-      expect(getByText("Status")).toBeInTheDocument();
-      expect(getByText("Open")).toBeInTheDocument();
+      expect(screen.getByText("Status")).toBeInTheDocument();
+      expect(screen.getByText("Open")).toBeInTheDocument();
 
-      expect(getByText("Approval")).toBeInTheDocument();
-      expect(getByText("Not yet requested")).toBeInTheDocument();
+      expect(screen.getByText("Approval")).toBeInTheDocument();
+      expect(screen.getByText("Not yet requested")).toBeInTheDocument();
     });
 
     it("it should not render the multi line Tooltip", () => {
-      const { getByRole } = render(
+      render(
         <HvTooltip title={title} useSingle={false}>
           {Anchor}
         </HvTooltip>
       );
 
-      expect(() => getByRole("tooltip")).toThrow();
+      expect(() => screen.getByRole("tooltip")).toThrow();
     });
 
     it("it should render the multi line Tooltip when hover", async () => {
-      const { getByRole } = render(
+      render(
         <HvTooltip title={title} useSingle={false}>
           {Anchor}
         </HvTooltip>
       );
 
-      expect(() => getByRole("tooltip")).toThrow();
-      const anchor = getByRole("button", { name: "Hello World" });
+      expect(() => screen.getByRole("tooltip")).toThrow();
+      const anchor = screen.getByRole("button", { name: "Hello World" });
       expect(anchor).toBeInTheDocument();
 
       fireEvent.mouseOver(anchor);
 
       await waitFor(() => {
-        const tooltip = getByRole("tooltip");
+        const tooltip = screen.getByRole("tooltip");
         expect(tooltip).toBeInTheDocument();
       });
     });

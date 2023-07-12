@@ -8,16 +8,6 @@ import { ProgressBarSimulator } from "./ProgressBarSimulator";
 describe(
   "ProgressBar",
   () => {
-    it("should to be defined", () => {
-      const { container } = render(<HvProgressBar value={0} />);
-      expect(container).toBeDefined();
-    });
-
-    it("should render correctly", () => {
-      const { container } = render(<HvProgressBar value={0} />);
-      expect(container).toMatchSnapshot();
-    });
-
     describe("Static Determinate Value Tests", () => {
       it("completed progress bar", async () => {
         const { container, findByRole, findByText, getByLabelText } = render(

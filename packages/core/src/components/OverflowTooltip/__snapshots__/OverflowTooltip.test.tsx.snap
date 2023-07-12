@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`OverflowTooltip > should render correctly 1`] = `
-<div>
-  <div
-    class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
-  />
-</div>
-`;

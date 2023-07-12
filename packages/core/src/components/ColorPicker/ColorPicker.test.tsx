@@ -1,82 +1,76 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { HvColorPicker } from "./ColorPicker";
 
 describe("ColorPicker", () => {
-  it("should render correctly full color picker", () => {
-    const { container } = render(
-      <div style={{ width: "134px" }}>
-        <HvColorPicker label="Color" expanded />
-      </div>
-    );
+  it("should render the dropdown with the label", () => {
+    render(<HvColorPicker label="Color" expanded />);
 
-    expect(container).toMatchSnapshot();
+    expect(screen.getByRole("combobox", { name: "Color" })).toBeInTheDocument();
   });
 
-  it("should render correctly without saved colors color picker", () => {
-    const { container } = render(
-      <div style={{ width: "134px" }}>
-        <HvColorPicker
-          label="Color"
-          defaultValue="#de2beb"
-          expanded
-          showSavedColors={false}
-        />
-      </div>
+  it("should render without saved colors color picker", () => {
+    render(
+      <HvColorPicker
+        label="Color"
+        defaultValue="#de2beb"
+        expanded
+        showSavedColors={false}
+      />
     );
 
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText("#de2beb")).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: "R" })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: "G" })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: "B" })).toBeInTheDocument();
   });
 
-  it("should render correctly recommended colors only color picker", () => {
-    const { container } = render(
-      <div style={{ width: "134px" }}>
-        <HvColorPicker
-          label="Color"
-          defaultValue="#de2beb"
-          expanded
-          showSavedColors={false}
-          showCustomColors={false}
-        />
-      </div>
+  it("should render recommended colors", () => {
+    render(
+      <HvColorPicker
+        label="Color"
+        defaultValue="#de2beb"
+        expanded
+        showSavedColors={false}
+        showCustomColors={false}
+      />
     );
 
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText(/recommended colors/i)).toBeInTheDocument();
+    expect(screen.getByTitle("#95AFE8")).toBeInTheDocument();
+    expect(screen.getByTitle("#E89E5D")).toBeInTheDocument();
+    expect(screen.getByTitle("#83B8A6")).toBeInTheDocument();
   });
 
-  it("should render correctly full color icon picker", () => {
-    const { container } = render(
-      <div style={{ width: "134px" }}>
-        <HvColorPicker label="Color" iconOnly />
-      </div>
-    );
+  it("should render full color icon picker", () => {
+    render(<HvColorPicker label="Color" iconOnly />);
 
-    expect(container).toMatchSnapshot();
+    const dropdown = screen.getByRole("combobox");
+    expect(dropdown).toBeInTheDocument();
+    expect(dropdown.querySelector("svg")).toBeDefined();
   });
 
-  it("should render correctly without saved colors icon color picker", () => {
-    const { container } = render(
-      <div style={{ width: "134px" }}>
-        <HvColorPicker label="Color" iconOnly showSavedColors />
-      </div>
+  it("allows adding custom colors", () => {
+    render(
+      <HvColorPicker
+        label="Color"
+        defaultValue="#de2beb"
+        expanded
+        showSavedColors
+        showCustomColors
+        deleteSavedColorButtonArialLabel="DELETE"
+      />
     );
 
-    expect(container).toMatchSnapshot();
-  });
+    const addButton = screen.getByRole("button");
 
-  it("should render correctly recommended colors only icon color picker", () => {
-    const { container } = render(
-      <div style={{ width: "134px" }}>
-        <HvColorPicker
-          label="Color"
-          defaultValue="#de2beb"
-          iconOnly
-          showSavedColors
-          showCustomColors
-        />
-      </div>
-    );
+    fireEvent.click(addButton);
+    expect(screen.getByTitle("#de2beb")).toBeInTheDocument();
 
-    expect(container).toMatchSnapshot();
+    const deleteColorButton = screen.getByRole("button", { name: "DELETE" });
+    expect(deleteColorButton).toBeInTheDocument();
+
+    fireEvent.click(deleteColorButton);
+    expect(screen.queryByLabelText("#de2beb")).not.toBeInTheDocument();
   });
 });

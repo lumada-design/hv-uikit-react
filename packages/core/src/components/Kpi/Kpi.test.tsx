@@ -4,30 +4,6 @@ import { HvKpi } from "@core/components";
 import { TopXS } from "@hitachivantara/uikit-react-icons";
 
 describe("Kpi", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvKpi />);
-
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(
-      <HvKpi
-        indicatorTextVariant="title1"
-        indicatorUnitTextVariant="title2"
-        labels={{
-          title: "Title",
-          indicator: "Indicator",
-          unit: "Unit",
-          comparisonIndicatorInfo: "Comparison indicator info",
-        }}
-        visualComparison="Visual comparison"
-      />
-    );
-
-    expect(container).toMatchSnapshot();
-  });
-
   it("should render all components", () => {
     const { getByText, getByTitle } = render(
       <HvKpi

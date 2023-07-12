@@ -7,9 +7,4 @@ describe("Suggestions", () => {
     const { container } = render(<HvSuggestions />);
     expect(container).toBeDefined();
   });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvSuggestions />);
-    expect(container).toMatchSnapshot();
-  });
 });

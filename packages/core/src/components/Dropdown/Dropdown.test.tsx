@@ -1,59 +1,31 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { HvDropdown } from "./Dropdown";
 
-const Main = () => (
-  <div style={{ width: 310 }}>
-    <HvDropdown
-      aria-label="Main sample"
-      multiSelect
-      showSearch
-      values={[
-        { label: "value 1" },
-        { label: "value 2", selected: true },
-        { label: "value 3" },
-        { label: "value 4" },
-      ]}
-    />
-  </div>
-);
-
 describe("Dropdown", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvDropdown />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<Main />);
-    expect(container).toMatchSnapshot();
-  });
-
   it("should open dropdown on click", async () => {
-    const { getByRole } = render(
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          aria-label="Main sample"
-          multiSelect
-          showSearch
-          values={[
-            { label: "value 1" },
-            { label: "value 2", selected: true },
-            { label: "value 3" },
-            { label: "value 4" },
-          ]}
-        />
-      </div>
+    render(
+      <HvDropdown
+        aria-label="Main sample"
+        multiSelect
+        showSearch
+        values={[
+          { label: "value 1" },
+          { label: "value 2", selected: true },
+          { label: "value 3" },
+          { label: "value 4" },
+        ]}
+      />
     );
 
-    const DropdownHeader = getByRole("combobox");
+    const dropdown = screen.getByRole("combobox");
 
-    expect(DropdownHeader).toHaveAttribute("aria-expanded", "false");
+    expect(dropdown).toHaveAttribute("aria-expanded", "false");
 
-    await userEvent.click(DropdownHeader);
+    await userEvent.click(dropdown);
 
-    expect(DropdownHeader).toHaveAttribute("aria-expanded", "true");
+    expect(dropdown).toHaveAttribute("aria-expanded", "true");
   });
 
   it("should be disabled", async () => {

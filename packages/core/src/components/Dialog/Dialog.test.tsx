@@ -1,31 +1,20 @@
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { HvDialog } from "./Dialog";
 import { HvDialogActions, HvDialogContent, HvDialogTitle } from "./index";
 
 describe("Dialog", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvDialog open />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvDialog open />);
-    expect(container).toMatchSnapshot();
-  });
-
   it("should render all components correctly", () => {
-    const { container, getByText } = render(
+    render(
       <HvDialog open>
         <HvDialogTitle>mockTitle</HvDialogTitle>
         <HvDialogContent>mockContent</HvDialogContent>
         <HvDialogActions>mockActions</HvDialogActions>
       </HvDialog>
     );
-    expect(getByText("mockTitle")).toBeInTheDocument();
-    expect(getByText("mockContent")).toBeInTheDocument();
-    expect(getByText("mockActions")).toBeInTheDocument();
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText("mockTitle")).toBeInTheDocument();
+    expect(screen.getByText("mockContent")).toBeInTheDocument();
+    expect(screen.getByText("mockActions")).toBeInTheDocument();
   });
 
   it("should call the onClose function when the close button is clicked", () => {

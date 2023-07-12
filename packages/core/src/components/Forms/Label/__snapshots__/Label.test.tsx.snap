@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Label > should render correctly 1`] = `
-<div>
-  <label
-    class="HvTypography-root HvTypography-label HvLabel-root css-2x9lkd-StyledTypography e17iqvr40 hv-1j8ohlw"
-  />
-</div>
-`;

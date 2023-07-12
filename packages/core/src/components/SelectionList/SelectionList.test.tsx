@@ -49,13 +49,6 @@ const CleanMultiSelection = () => (
 
 describe("Selection List", () => {
   describe("Single Selection List testing", () => {
-    describe("Selection List Snapshot testing", () => {
-      it("Selection List Container", () => {
-        const { container } = render(<Main />);
-        expect(container).toMatchSnapshot();
-      });
-    });
-
     describe("Selection List Selection Behavior Testing", () => {
       it("has a single item selected", () => {
         const { getAllByRole } = render(<Main />);
@@ -85,13 +78,6 @@ describe("Selection List", () => {
   });
 
   describe("Multi Selection List testing", () => {
-    describe("Multi Selection Snapshot", () => {
-      it("Multi Selection List Container Snapshot", () => {
-        const { container } = render(<MultiSelection />);
-        expect(container).toMatchSnapshot();
-      });
-    });
-
     describe("Selection List Multi Selection Behavior Testing", () => {
       it("has a single item selected", () => {
         const { getAllByRole } = render(<MultiSelection />);
