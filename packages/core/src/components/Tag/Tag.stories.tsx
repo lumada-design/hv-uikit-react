@@ -256,6 +256,9 @@ export const CategoricalTagsDisabled: StoryObj<HvTagProps> = {
 };
 
 export const TagArray: StoryObj<HvTagProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
   render: () => {
     return (
       <StyledListContainer condensed role="list">

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
+import { CSSInterpolation, css } from "@emotion/css";
 import { HvBaseCheckBox, HvGrid, HvTypography } from "@core/components";
 import { useState } from "react";
 import { HvCheckBox, HvCheckBoxProps } from "./CheckBox";
@@ -42,76 +43,70 @@ export const Main: StoryObj<HvCheckBoxProps> = {
   },
 };
 
-export const Disabled: StoryObj<HvCheckBoxProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Disabled checkboxes.",
-      },
-    },
-  },
+export const Variants: StoryObj<HvCheckBoxProps> = {
   render: () => {
-    return (
-      <>
-        <HvCheckBox disabled label="Checkbox 1" />
-        <HvCheckBox defaultChecked disabled label="Checkbox 2" />
-        <HvCheckBox indeterminate disabled label="Checkbox 3" />
-      </>
-    );
-  },
-};
+    const styles: { root: CSSInterpolation; group: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        flexDirection: "column",
+        gap: 20,
+        flexWrap: "wrap",
+      },
+      group: {
+        display: "flex",
+        flexDirection: "row",
+        gap: 20,
+      },
+    };
 
-export const ReadOnly: StoryObj<HvCheckBoxProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Not editable checkboxes.",
-      },
-    },
-    eyes: { include: false },
-  },
-  render: () => {
     return (
-      <>
-        <HvCheckBox readOnly label="Checkbox 1" />
-        <HvCheckBox defaultChecked readOnly label="Checkbox 2" />
-        <HvCheckBox indeterminate readOnly label="Checkbox 3" />
-      </>
+      <div className={css(styles.root)}>
+        <HvTypography variant="title3">Disabled</HvTypography>
+        <div className={css(styles.group)}>
+          <HvCheckBox disabled label="Checkbox 1" />
+          <HvCheckBox defaultChecked disabled label="Checkbox 2" />
+          <HvCheckBox indeterminate disabled label="Checkbox 3" />
+        </div>
+        <HvTypography variant="title3">Readonly</HvTypography>
+        <div className={css(styles.group)}>
+          <HvCheckBox readOnly label="Checkbox 1" />
+          <HvCheckBox defaultChecked readOnly label="Checkbox 2" />
+          <HvCheckBox indeterminate readOnly label="Checkbox 3" />
+        </div>
+        <HvTypography variant="title3">Required</HvTypography>
+        <div className={css(styles.group)}>
+          <HvCheckBox required label="Checkbox 1" />
+          <HvCheckBox required defaultChecked label="Checkbox 2" />
+          <HvCheckBox required indeterminate label="Checkbox 3" />
+        </div>
+        <HvTypography variant="title3">Invalid</HvTypography>
+        <div className={css(styles.group)}>
+          <HvCheckBox
+            status="invalid"
+            statusMessage="No way for this to be valid!"
+            label="Checkbox 1"
+          />
+          <HvCheckBox
+            status="invalid"
+            statusMessage="No way for this to be valid!"
+            defaultChecked
+            label="Checkbox 2"
+          />
+          <HvCheckBox
+            status="invalid"
+            statusMessage="No way for this to be valid!"
+            indeterminate
+            label="Checkbox 3"
+          />
+        </div>
+        <HvTypography variant="title3">No label</HvTypography>
+        <div className={css(styles.group)}>
+          <HvCheckBox aria-label="Checkbox 1" />
+          <HvCheckBox defaultChecked aria-label="Checkbox 2" />
+          <HvCheckBox indeterminate aria-label="Checkbox 3" />
+        </div>
+      </div>
     );
-  },
-};
-
-export const WithoutLabel: StoryObj<HvCheckBoxProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Checkboxes without labels. The accessible name is provided via the `aria-label` property.",
-      },
-    },
-    eyes: { include: false },
-  },
-  render: () => {
-    return (
-      <>
-        <HvCheckBox aria-label="Checkbox 1" />
-        <HvCheckBox defaultChecked aria-label="Checkbox 2" />
-        <HvCheckBox indeterminate aria-label="Checkbox 3" />
-      </>
-    );
-  },
-};
-
-export const Required: StoryObj<HvCheckBoxProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Required checkbox. Uncheck to show default error message.",
-      },
-    },
-  },
-  render: () => {
-    return <HvCheckBox required defaultChecked label="Checkbox 1" />;
   },
 };
 
@@ -123,6 +118,7 @@ export const Controlled: StoryObj<HvCheckBoxProps> = {
           "Controlled checkbox. Clicking the Checkbox 1 does nothing, while clicking Checkbox 2 changes both inputs.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [isChecked, setIsChecked] = useState(false);
@@ -136,18 +132,6 @@ export const Controlled: StoryObj<HvCheckBoxProps> = {
           label="Checkbox 2"
         />
       </>
-    );
-  },
-};
-
-export const ErrorMessage: StoryObj<HvCheckBoxProps> = {
-  render: () => {
-    return (
-      <HvCheckBox
-        status="invalid"
-        statusMessage="No way for this to be valid!"
-        label="Checkbox 1"
-      />
     );
   },
 };

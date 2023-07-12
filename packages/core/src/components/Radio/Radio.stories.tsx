@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { HvBaseRadio, HvGrid } from "@core/components";
 import { theme } from "@hitachivantara/uikit-styles";
+import { CSSInterpolation, css } from "@emotion/css";
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvRadio, HvRadioProps, HvRadioStatus } from "./Radio";
@@ -37,89 +38,49 @@ export const Main: StoryObj<HvRadioProps> = {
   },
   argTypes: {},
   render: (args) => {
-    return (
-      <HvRadio
-        name={args.name}
-        label={args.label}
-        value={args.value}
-        required={args.required}
-        checked={args.checked}
-        defaultChecked={args.defaultChecked}
-        semantic={args.semantic}
-        status={args.status}
-        statusMessage={args.statusMessage}
-      />
-    );
+    return <HvRadio {...args} />;
   },
 };
 
-export const Disabled: StoryObj<HvRadioProps> = {
+export const Variants: StoryObj<HvRadioProps> = {
   render: () => {
-    const [checkedValue, setCheckedValue] = useState("1");
+    const styles: { root: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        gap: 20,
+        flexWrap: "wrap",
+        "& > div": {
+          width: 200,
+        },
+      },
+    };
 
     return (
-      <>
+      <div className={css(styles.root)}>
+        <HvRadio required name="required" label="Required" value="1" />
+        <HvRadio disabled name="disabled" label="Disabled" value="1" />
+        <HvRadio readOnly name="readonly" label="Readonly" value="1" />
         <HvRadio
-          disabled
-          name="disabled"
-          label="Radio 1"
+          status="invalid"
+          statusMessage="Oh no!"
+          name="invalid"
+          label="Invalid"
           value="1"
-          checked={checkedValue === "1"}
-          onChange={(_evt, _checked, value) => setCheckedValue(value)}
         />
-        <HvRadio
-          disabled
-          name="disabled"
-          label="Radio 2"
-          value="2"
-          checked={checkedValue === "2"}
-          onChange={(_evt, _checked, value) => setCheckedValue(value)}
-        />
-      </>
+      </div>
     );
-  },
-};
-
-Disabled.parameters = {
-  docs: {
-    description: { story: "Disabled radio buttons." },
-  },
-};
-
-export const ReadOnly: StoryObj<HvRadioProps> = {
-  render: () => {
-    const [checkedValue, setCheckedValue] = useState("2");
-
-    return (
-      <>
-        <HvRadio
-          readOnly
-          name="readonly"
-          label="Radio 1"
-          value="1"
-          checked={checkedValue === "1"}
-          onChange={(_evt, _checked, value) => setCheckedValue(value)}
-        />
-        <HvRadio
-          readOnly
-          name="readonly"
-          label="Radio 2"
-          value="2"
-          checked={checkedValue === "2"}
-          onChange={(_evt, _checked, value) => setCheckedValue(value)}
-        />
-      </>
-    );
-  },
-};
-
-ReadOnly.parameters = {
-  docs: {
-    description: { story: "Not editable radio buttons." },
   },
 };
 
 export const WithoutLabel: StoryObj<HvRadioProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Radio buttons without labels. The accessible name is provided via the `aria-label` property.",
+      },
+    },
+  },
   render: () => {
     const [checkedValue, setCheckedValue] = useState("2");
 
@@ -140,25 +101,6 @@ export const WithoutLabel: StoryObj<HvRadioProps> = {
           onChange={(_evt, _checked, value) => setCheckedValue(value)}
         />
       </>
-    );
-  },
-};
-
-WithoutLabel.parameters = {
-  docs: {
-    description:
-      "Radio buttons without labels. The accessible name is provided via the `aria-label` property.",
-  },
-};
-
-export const ErrorMessage: StoryObj<HvRadioProps> = {
-  render: () => {
-    return (
-      <HvRadio
-        status="invalid"
-        statusMessage="No way for this to be valid!"
-        label="Radio 1"
-      />
     );
   },
 };

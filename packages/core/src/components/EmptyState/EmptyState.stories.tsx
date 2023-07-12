@@ -41,10 +41,7 @@ export const WithAction: StoryObj<HvEmptyStateProps> = {
     classes: { control: { disable: true } },
   },
   render: ({ title, message, icon }) => {
-    const CustomAction = (
-      // <HvTypography variant="label">Create a new data route</HvTypography>
-      <HvLink route="/">Create a new data route</HvLink>
-    );
+    const CustomAction = <HvLink route="/">Create a new data route</HvLink>;
     return (
       <HvEmptyState
         title={title}

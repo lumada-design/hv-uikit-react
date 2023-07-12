@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
+import { CSSInterpolation, css } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Map } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
@@ -63,44 +64,51 @@ export const Main: StoryObj<HvInputProps> = {
   },
 };
 
-export const Disabled: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Input sample that does not allow interactions",
-      },
-    },
-  },
+export const Variants: StoryObj<HvInputProps> = {
   render: () => {
-    return (
-      <HvInput
-        id="input-disabled-sample"
-        disabled
-        label="First name"
-        description="Please enter your first name"
-        placeholder="Insert first name"
-      />
-    );
-  },
-};
+    const styles: { root: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        justifyContent: "space-around",
+        flexWrap: "wrap",
+        "& > div": {
+          width: 200,
+        },
+      },
+    };
 
-export const ReadOnly: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Not editable input.",
-      },
-    },
-  },
-  render: () => {
     return (
-      <HvInput
-        readOnly
-        label="First name"
-        description="Please enter your first name"
-        placeholder="Insert first name"
-        defaultValue="You can't change this..."
-      />
+      <div className={css(styles.root)}>
+        <HvInput
+          id="input-required-sample"
+          required
+          label="Required"
+          description="Enter your name"
+          placeholder="Insert first name"
+        />
+        <HvInput
+          id="input-disabled-sample"
+          disabled
+          label="Disabled"
+          description="Enter your name"
+          placeholder="Insert first name"
+        />
+        <HvInput
+          id="input-readonly-sample"
+          readOnly
+          label="Readonly"
+          description="Enter your name"
+          placeholder="Insert first name"
+        />
+        <HvInput
+          id="input-invalid-sample"
+          status="invalid"
+          statusMessage="Oh no!"
+          label="Invalid"
+          description="Enter your name"
+          placeholder="Insert first name"
+        />
+      </div>
     );
   },
 };
@@ -116,27 +124,6 @@ export const WithoutLabel: StoryObj<HvInputProps> = {
   },
   render: () => {
     return <HvInput aria-label="First name" placeholder="Insert first name" />;
-  },
-};
-
-export const Required: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Required input value. Clear the input to show default error message.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvInput
-        required
-        label="First name"
-        placeholder="Insert first name"
-        defaultValue="Clear this text"
-      />
-    );
   },
 };
 
@@ -209,6 +196,7 @@ export const InvalidState: StoryObj<HvInputProps> = {
           "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the statusMessage property. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [validationState, setValidationState] =
@@ -345,6 +333,7 @@ export const NumericRequired: StoryObj<HvInputProps> = {
           "Required Input that only accepts numbers and limits the maximum length to 5.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const validationMessages = {
@@ -376,6 +365,7 @@ export const Email: StoryObj<HvInputProps> = {
         story: "Required Input that only accepts valid emails.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const validationMessages = {
@@ -452,6 +442,7 @@ export const CustomValidation: StoryObj<HvInputProps> = {
           "Input with a custom validation function, it validates if the input contains the value `hello`.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const validationMessages = {
@@ -584,6 +575,7 @@ export const PrefixAndSuffix: StoryObj<HvInputProps> = {
           "If you need to apply a custom layout, e.g. for providing a prefix or suffix, you can and should externalize both the label and description.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const validationMessages = {

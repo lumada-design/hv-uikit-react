@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import styled from "@emotion/styled";
+import { CSSInterpolation, css } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvBaseSwitch,
@@ -49,48 +50,52 @@ export const Main: StoryObj<HvSwitchProps> = {
   },
 };
 
-export const Disabled: StoryObj<HvSwitchProps> = {
-  parameters: {
-    docs: {
-      description: { story: "Disabled switches." },
-    },
-  },
+export const Variants: StoryObj<HvSwitchProps> = {
   render: () => {
-    return (
-      <>
-        <HvSwitch disabled aria-label="Engine 1" />
-        <HvSwitch defaultChecked disabled aria-label="Engine 2" />
-      </>
-    );
-  },
-};
-
-export const ReadOnly: StoryObj<HvSwitchProps> = {
-  parameters: {
-    docs: {
-      description: { story: "Not editable switches." },
-    },
-  },
-  render: () => {
-    return (
-      <>
-        <HvSwitch readOnly aria-label="Engine 1" />
-        <HvSwitch defaultChecked readOnly aria-label="Engine 2" />
-      </>
-    );
-  },
-};
-
-export const Required: StoryObj<HvSwitchProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Required switch. Uncheck to show the error state.",
+    const styles: { root: CSSInterpolation; group: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        justifyContent: "space-around",
+        flexWrap: "wrap",
+        gap: 40,
       },
-    },
-  },
-  render: () => {
-    return <HvSwitch required defaultChecked aria-label="Engine 1" />;
+      group: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "flex-end",
+      },
+    };
+
+    return (
+      <div className={css(styles.root)}>
+        <div className={css(styles.group)}>
+          <HvSwitch required aria-label="Engine 1" label="Required" />
+          <HvSwitch defaultChecked required aria-label="Engine 2" />
+        </div>
+        <div className={css(styles.group)}>
+          <HvSwitch disabled aria-label="Engine 1" label="Disabled" />
+          <HvSwitch defaultChecked disabled aria-label="Engine 2" />
+        </div>
+        <div className={css(styles.group)}>
+          <HvSwitch readOnly aria-label="Engine 1" label="Readonly" />
+          <HvSwitch defaultChecked readOnly aria-label="Engine 2" />
+        </div>
+        <div className={css(styles.group)}>
+          <HvSwitch
+            status="invalid"
+            statusMessage="On no!"
+            aria-label="Engine 1"
+            label="Invalid"
+          />
+          <HvSwitch
+            defaultChecked
+            status="invalid"
+            statusMessage="On no!"
+            aria-label="Engine 2"
+          />
+        </div>
+      </div>
+    );
   },
 };
 

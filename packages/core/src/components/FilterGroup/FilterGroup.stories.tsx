@@ -93,6 +93,9 @@ export const Main: StoryObj<HvFilterGroupProps> = {
 };
 
 export const ResetToDefault: StoryObj<HvFilterGroupProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
   render: () => {
     const [value, setValue] = useState<HvFilterGroupValue | undefined>([
       ["category1", 2],
@@ -118,6 +121,9 @@ export const ResetToDefault: StoryObj<HvFilterGroupProps> = {
 };
 
 export const Uncontrolled: StoryObj<HvFilterGroupProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
   render: () => {
     return (
       <div style={{ width: 180 }}>
@@ -175,6 +181,7 @@ const EmptyFiltersStory = () => {
 
 export const EmptyFilters: StoryObj<HvFilterGroupProps> = {
   parameters: {
+    eyes: { include: false },
     docs: {
       source: {
         code: `

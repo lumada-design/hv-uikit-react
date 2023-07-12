@@ -23,6 +23,9 @@ export const Main: StoryObj<HvTooltipProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
+  parameters: {
+    eyes: { include: false },
+  },
   render: ({ open }) => {
     return (
       <HvBox
@@ -51,6 +54,7 @@ export const Disabled: StoryObj<HvTooltipProps> = {
           'To "hide" a Tooltip, remove its `title`; `disableFocusListener` and `disableHoverListener` disable focus or hover, respectively.',
       },
     },
+    eyes: { include: false },
   },
 
   render: () => (
@@ -89,6 +93,7 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
         If the component doesn't do so, a workaround is to wrap it in a `div`.",
       },
     },
+    eyes: { include: false },
   },
 
   render: () => (

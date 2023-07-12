@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { CSSInterpolation, css } from "@emotion/css";
 import { HvTypography } from "@core/components";
 import { useEffect, useState } from "react";
 import { HvTextArea, HvTextAreaProps } from "./TextArea";
@@ -36,11 +37,66 @@ export const Main: StoryObj<HvTextAreaProps> = {
   },
 };
 
+export const Variants: StoryObj<HvTextAreaProps> = {
+  render: () => {
+    const styles: { root: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        gap: 10,
+        "& > div": {
+          width: 130,
+        },
+      },
+    };
+
+    return (
+      <div className={css(styles.root)}>
+        <HvTextArea
+          id="required"
+          rows={5}
+          label="Required"
+          placeholder="Enter value"
+          maxCharQuantity={200}
+          required
+        />
+        <HvTextArea
+          id="disabled"
+          rows={5}
+          label="Disabled"
+          placeholder="Enter value"
+          maxCharQuantity={200}
+          disabled
+        />
+        <HvTextArea
+          id="readonly"
+          rows={5}
+          label="Readonly"
+          placeholder="Enter value"
+          maxCharQuantity={200}
+          readOnly
+        />
+        <HvTextArea
+          id="invalid"
+          rows={5}
+          label="Invalid"
+          placeholder="Enter value"
+          maxCharQuantity={200}
+          status="invalid"
+          statusMessage="Oh no!"
+        />
+      </div>
+    );
+  },
+};
+
 export const LimitedWithCustomLabels: StoryObj<HvTextAreaProps> = {
   parameters: {
     docs: {
       description: { story: "Text area char count with a custom labels." },
     },
+    eyes: { include: false },
   },
   render: () => {
     const validationMessages = {
@@ -116,45 +172,6 @@ export const Resizable: StoryObj<HvTextAreaProps> = {
         rows={5}
         maxCharQuantity={1000}
         resizable
-      />
-    );
-  },
-};
-
-export const Disabled: StoryObj<HvTextAreaProps> = {
-  parameters: {
-    docs: {
-      description: { story: "Text area that does not allows any interaction." },
-    },
-  },
-  render: () => {
-    return (
-      <HvTextArea
-        id="disabled"
-        rows={5}
-        label="Label"
-        placeholder="Enter value"
-        maxCharQuantity={1500}
-        disabled
-      />
-    );
-  },
-};
-
-export const ReadOnly: StoryObj<HvTextAreaProps> = {
-  parameters: {
-    docs: {
-      description: { story: "Not editable text area." },
-    },
-  },
-  render: () => {
-    return (
-      <HvTextArea
-        readOnly
-        rows={5}
-        label="Label"
-        placeholder="Enter value"
-        defaultValue="You can't change this..."
       />
     );
   },

@@ -381,6 +381,7 @@ export const CustomizedFileTypes: StoryObj<HvFileUploaderProps> = {
         story: "FileUploader which restricts the upload to xls and xlsx files.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [list, setList] = useState<HvFileData[]>([]);

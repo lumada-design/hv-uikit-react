@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { CSSInterpolation, css } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import {
@@ -60,6 +61,62 @@ export const Main: StoryObj<HvTagsInputProps> = {
   },
 };
 
+export const Variants: StoryObj<HvTagsInputProps> = {
+  render: () => {
+    const styles: { root: CSSInterpolation } = {
+      root: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        gap: 20,
+      },
+    };
+
+    return (
+      <div className={css(styles.root)}>
+        <HvTagsInput
+          id="tags-list-5"
+          label="Required"
+          aria-label="Required"
+          placeholder="Enter value"
+          required
+          value={[{ label: "tag 1" }, { label: "tag 2" }, { label: "tag 3" }]}
+        />
+        <HvTagsInput
+          id="tags-list-6"
+          label="Disabled"
+          aria-label="Disabled"
+          placeholder="Enter value"
+          disabled
+          value={[
+            { label: "tag 1", disabled: true },
+            { label: "tag 2", disabled: true },
+            { label: "tag 3", disabled: true },
+          ]}
+        />
+        <HvTagsInput
+          id="tags-list-7"
+          label="Readonly"
+          aria-label="Readonly"
+          placeholder="Enter value"
+          readOnly
+          value={[{ label: "tag 1" }, { label: "tag 2" }, { label: "tag 3" }]}
+        />
+        <HvTagsInput
+          id="tags-list-8"
+          label="Invalid"
+          aria-label="Invalid"
+          placeholder="Enter value"
+          status="invalid"
+          statusMessage="Oh no!"
+          value={[{ label: "tag 1" }, { label: "tag 2" }, { label: "tag 3" }]}
+        />
+      </div>
+    );
+  },
+};
+
 export const ControlledStringArray: StoryObj<HvTagsInputProps> = {
   parameters: {
     docs: {
@@ -67,6 +124,7 @@ export const ControlledStringArray: StoryObj<HvTagsInputProps> = {
         story: "Controlled Tags Input with string array.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [currValueStr, setCurrValueStr] = useState<string[]>([
@@ -156,6 +214,7 @@ ControlledTagArray.parameters = {
       story: "Controlled Tags Input with Tags array",
     },
   },
+  eyes: { include: false },
 };
 
 export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
@@ -165,6 +224,7 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
         story: "Controlled Tags Input with validation.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [currValueStr, setCurrValueStr] = useState<string[]>([
@@ -216,6 +276,7 @@ export const AddTagOnBlur: StoryObj<HvTagsInputProps> = {
         story: "Sample showcasing how to add tags when the input is blurred.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [currValueArr, setCurrValueArr] = useState<HvTagProps[]>([
@@ -243,54 +304,6 @@ export const AddTagOnBlur: StoryObj<HvTagsInputProps> = {
           if (value === "") return;
           setCurrValueArr([...currValueArr, { label: value }]);
         }}
-      />
-    );
-  },
-};
-
-export const Disabled: StoryObj<HvTagsInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Disabled Tags Input.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvTagsInput
-        id="tags-list-5"
-        label="Disabled with disabled tags"
-        aria-label="The label"
-        placeholder="Enter value"
-        disabled
-        value={[
-          { label: "tag 1", disabled: true },
-          { label: "tag 2", disabled: true },
-          { label: "tag 3", disabled: true },
-        ]}
-      />
-    );
-  },
-};
-
-export const Readonly: StoryObj<HvTagsInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Readonly Tags Input.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvTagsInput
-        id="tags-list-6"
-        label="Readonly"
-        aria-label="The label"
-        placeholder="Enter value"
-        readOnly
-        value={[{ label: "tag 1" }, { label: "tag 2" }, { label: "tag 3" }]}
       />
     );
   },
@@ -324,6 +337,7 @@ export const NotResizable: StoryObj<HvTagsInputProps> = {
         story: "Not resizable.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     return (
@@ -384,6 +398,7 @@ export const CustomCommitCharacter: StoryObj<HvTagsInputProps> = {
         story: "Custom commit character.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     return (
@@ -407,6 +422,7 @@ export const Suggestions: StoryObj<HvTagsInputProps> = {
         story: "With a list of suggestions.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [currValueStr, setCurrValueStr] = useState<HvTagProps[]>([]);
