@@ -13,6 +13,7 @@ import {
   HvDropDownMenu,
   theme,
 } from "../..";
+import Anomalies from "./Anomalies";
 
 export default {
   title: "Widgets/Carousel",
@@ -272,5 +273,19 @@ export const CustomContent: StoryObj<HvCarouselProps> = {
         ))}
       </HvCarousel>
     );
+  },
+};
+
+export const Annotations: StoryObj<HvCarouselProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "A Carousel with annotations on each slide.",
+      },
+    },
+    eyes: { include: false },
+  },
+  render: () => {
+    return <Anomalies />;
   },
 };
