@@ -21,4 +21,19 @@ export const { staticClasses, useClasses } = createClasses("HvDialog", {
     width: 32,
     height: 32,
   },
+  statusBar: {
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+    borderTopWidth: 4,
+    borderTopStyle: "solid",
+  },
+  success: {
+    borderTopColor: theme.colors.positive,
+  },
+  error: {
+    borderTopColor: theme.colors.negative,
+  },
+  warning: {
+    borderTopColor: theme.colors.warning,
+  },
 });

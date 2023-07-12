@@ -16,6 +16,7 @@ export interface HvDialogActionsProps
     HvBaseProps {
   /** Set the dialog to fullscreen mode. */
   fullscreen?: boolean;
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvDialogActionClasses;
 }
 
