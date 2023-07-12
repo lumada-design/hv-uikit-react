@@ -1,5 +1,5 @@
-import { ClassNames } from "@emotion/react";
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvBaseProps,
@@ -9,14 +9,17 @@ import {
   HvBox,
   HvTooltip,
   HvTypography,
+  ExtractNames,
 } from "@hitachivantara/uikit-react-core";
+
 import { HvDefaultNavigation, HvStepProps } from "./DefaultNavigation";
 import { HvSimpleNavigation } from "./SimpleNavigation";
-import { styles } from "./StepNavigation.styles";
-import stepNavigationClasses, {
-  HvStepNavigationClasses,
-} from "./stepNavigationClasses";
 import { SEPARATOR_WIDTH, TITLE_MARGIN, TITLE_WIDTH } from "./utils";
+import { staticClasses, useClasses } from "./StepNavigation.styles";
+
+export { staticClasses as stepNavigationClasses };
+
+export type HvStepNavigationClasses = ExtractNames<typeof useClasses>;
 
 export interface HvStepNavigationProps extends HvBaseProps {
   /** Type of step navigation. Values = {"Simple", "Default"} */
@@ -66,7 +69,7 @@ export interface HvStepNavigationProps extends HvBaseProps {
  */
 export const HvStepNavigation = ({
   className,
-  classes,
+  classes: classesProp,
   width,
   steps,
   stepSize,
@@ -74,6 +77,8 @@ export const HvStepNavigation = ({
   type = "Default",
   ...others
 }: HvStepNavigationProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const { activeTheme } = useTheme();
 
   // current breakpoint 'xs' | 'sm' | 'md' | 'lg' | 'xl'
@@ -118,23 +123,13 @@ export const HvStepNavigation = ({
     });
 
     return (
-      <ClassNames key={`separator-${title}`}>
-        {({ css, cx }) => (
-          <StyledLi
-            aria-hidden
-            className={cx(
-              stepNavigationClasses.separator,
-              css(styles.separator),
-              classes?.separator
-            )}
-          >
-            <div
-              aria-label={`separator-${title}`}
-              className={separatorClassName}
-            />
-          </StyledLi>
-        )}
-      </ClassNames>
+      <StyledLi
+        aria-hidden
+        key={`separator-${title}`}
+        className={classes.separator}
+      >
+        <div aria-label={`separator-${title}`} className={separatorClassName} />
+      </StyledLi>
     );
   };
 
@@ -157,47 +152,29 @@ export const HvStepNavigation = ({
           },
         };
         const stepElement = (
-          <ClassNames key={`step-${title}`}>
-            {({ css, cx }) => (
-              <StepContainer
-                className={cx(
-                  stepNavigationClasses.li,
-                  css(styles.li),
-                  classes?.li
-                )}
+          <StepContainer key={`step-${title}`} className={classes.li}>
+            {hasTitles ? (
+              <StepComponent
+                key={`step-${title}`}
+                aria-label={`step-${title}`}
+                {...stepProps}
+              />
+            ) : (
+              <HvTooltip
+                placement="bottom"
+                title={<HvTypography>{`${index + 1}. ${title}`}</HvTypography>}
               >
-                {hasTitles ? (
-                  <StepComponent
-                    key={`step-${title}`}
-                    aria-label={`step-${title}`}
-                    {...stepProps}
-                  />
-                ) : (
-                  <HvTooltip
-                    placement="bottom"
-                    title={
-                      <HvTypography>{`${index + 1}. ${title}`}</HvTypography>
-                    }
-                  >
-                    <div aria-label={`step-container-${title}`}>
-                      <Step
-                        className={cx(
-                          stepNavigationClasses.li,
-                          css(styles.li),
-                          classes?.li
-                        )}
-                      >
-                        <StepComponent
-                          aria-label={`step-${title}`}
-                          {...stepProps}
-                        />
-                      </Step>
-                    </div>
-                  </HvTooltip>
-                )}
-              </StepContainer>
+                <div aria-label={`step-container-${title}`}>
+                  <Step className={classes.li}>
+                    <StepComponent
+                      aria-label={`step-${title}`}
+                      {...stepProps}
+                    />
+                  </Step>
+                </div>
+              </HvTooltip>
             )}
-          </ClassNames>
+          </StepContainer>
         );
         if (index < steps.length - 1) {
           const separatorElement = styledSeparatorElement(
@@ -219,21 +196,7 @@ export const HvStepNavigation = ({
       []
     );
 
-    return (
-      <ClassNames>
-        {({ css, cx }) => (
-          <ol
-            className={cx(
-              stepNavigationClasses.ol,
-              css(styles.ol),
-              classes?.ol
-            )}
-          >
-            {items}
-          </ol>
-        )}
-      </ClassNames>
-    );
+    return <ol className={classes.ol}>{items}</ol>;
   };
 
   const getDynamicValues = (stepsWidth) => {
@@ -287,38 +250,28 @@ export const HvStepNavigation = ({
 
   const getTitles = (getTitleProps) =>
     hasTitles ? (
-      <ClassNames>
-        {({ css, cx }) => (
-          <div
-            className={cx(
-              stepNavigationClasses.titles,
-              css(styles.titles),
-              classes?.titles
-            )}
-          >
-            {steps.map(({ title: rawTitle, state, titleClassName }, index) => {
-              const {
-                variant = "label",
-                title = rawTitle,
-                titleWidth = 0,
-                titleDisabled = false,
-              } = getTitleProps({
-                state,
-                rawTitle,
-                number: index + 1,
-              });
-              const Title = styledTitle(
-                titleClassName,
-                variant,
-                title,
-                titleWidth,
-                titleDisabled
-              );
-              return Title;
-            })}
-          </div>
-        )}
-      </ClassNames>
+      <div className={classes.titles}>
+        {steps.map(({ title: rawTitle, state, titleClassName }, index) => {
+          const {
+            variant = "label",
+            title = rawTitle,
+            titleWidth = 0,
+            titleDisabled = false,
+          } = getTitleProps({
+            state,
+            rawTitle,
+            number: index + 1,
+          });
+          const Title = styledTitle(
+            titleClassName,
+            variant,
+            title,
+            titleWidth,
+            titleDisabled
+          );
+          return Title;
+        })}
+      </div>
     ) : null;
 
   const StepNavigation = {
@@ -327,36 +280,27 @@ export const HvStepNavigation = ({
   }[type];
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <StepNavigation
-          {...{
-            numSteps: steps.length,
-            stepSize: stepSizeKey,
-            getTitles,
-            getDynamicValues,
-            className: cx(
-              stepNavigationClasses.root,
-              css(styles.root),
-              className,
-              classes?.root
-            ),
-            ...others,
+    <StepNavigation
+      {...{
+        numSteps: steps.length,
+        stepSize: stepSizeKey,
+        getTitles,
+        getDynamicValues,
+        className: cx(classes.root, className),
+        ...others,
+      }}
+    >
+      {({ stepsWidth, navWidth, ...itemsProps }) => (
+        <HvBox
+          component="nav"
+          style={{
+            width: `${navWidth}px`,
+            margin: 0,
           }}
         >
-          {({ stepsWidth, navWidth, ...itemsProps }) => (
-            <HvBox
-              component="nav"
-              style={{
-                width: `${navWidth}px`,
-                margin: 0,
-              }}
-            >
-              {drawItems(itemsProps)}
-            </HvBox>
-          )}
-        </StepNavigation>
+          {drawItems(itemsProps)}
+        </HvBox>
       )}
-    </ClassNames>
+    </StepNavigation>
   );
 };

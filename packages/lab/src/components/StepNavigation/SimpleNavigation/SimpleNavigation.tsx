@@ -3,9 +3,9 @@ import {
   HvTheme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
+
 import { HvStepNavigationProps } from "../StepNavigation";
 import { HvDot, HvDotProps } from "./Dot";
-import { HvSimpleNavigationClasses } from "./simpleNavigationClasses";
 import { getColor, dotSizes } from "./utils";
 
 export type ComponentChildProps = {
@@ -43,8 +43,6 @@ export interface HvSimpleNavigationProps
     titleWidth: number;
     separatorWidth: number;
   };
-  /** A Jss Object used to override or extend the styles applied to the empty state StepNavigation. */
-  classes?: HvSimpleNavigationClasses;
   /** Component to render Step Navigation with props = {separatorValues, stepValues, stepsWidth} */
   children: React.FunctionComponent<ComponentChildProps>;
 }

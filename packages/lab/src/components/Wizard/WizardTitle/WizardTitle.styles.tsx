@@ -1,10 +1,7 @@
-import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvWizardTitleClasses } from "./wizardTitleClasses";
+import { createClasses } from "@hitachivantara/uikit-react-core";
 
-export const styles: Partial<
-  Record<keyof HvWizardTitleClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvWizardTitle", {
   messageContainer: {
     "& > div": {
       width: "100%",
@@ -31,4 +28,4 @@ export const styles: Partial<
   stepContainer: {
     margin: "auto",
   },
-};
+});

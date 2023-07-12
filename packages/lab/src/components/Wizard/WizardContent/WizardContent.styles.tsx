@@ -1,10 +1,7 @@
-import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvWizardContentClasses } from "./wizardContentClasses";
+import { createClasses } from "@hitachivantara/uikit-react-core";
 
-export const styles: Partial<
-  Record<keyof HvWizardContentClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvWizardContent", {
   contentContainer: {
     position: "relative",
     padding: 20,
@@ -35,4 +32,4 @@ export const styles: Partial<
     transitionTimingFunction: "ease-in-out",
     overflowY: "scroll",
   },
-};
+});

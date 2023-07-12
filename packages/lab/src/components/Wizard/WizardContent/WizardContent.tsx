@@ -1,7 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { ClassNames } from "@emotion/react";
-import { HvBaseProps, HvDialogContent } from "@hitachivantara/uikit-react-core";
+import {
+  ExtractNames,
+  HvBaseProps,
+  HvDialogContent,
+} from "@hitachivantara/uikit-react-core";
+
 import { useElementSize } from "usehooks-ts";
+
 import React, {
   useCallback,
   useContext,
@@ -9,14 +14,14 @@ import React, {
   useRef,
   useState,
 } from "react";
-import {
-  HvWizardContext,
-  HvWizardTabs,
-  wizardContentClasses,
-  HvWizardContentClasses,
-} from "..";
-import { styles } from "./WizardContent.styles";
+
+import { HvWizardContext, HvWizardTabs } from "..";
+import { staticClasses, useClasses } from "./WizardContent.styles";
 import { LoadingContainer } from "./LoadingContainer";
+
+export { staticClasses as wizardContentClasses };
+
+export type HvWizardContentClasses = ExtractNames<typeof useClasses>;
 
 export interface HvWizardContentProps extends HvBaseProps {
   /** Forces minimum height to the component. */
@@ -35,12 +40,14 @@ const DRAWER_PERCENTAGE = 0.3;
 const DRAWER_MIN_WIDTH = 280;
 
 export const HvWizardContent = ({
-  classes,
+  classes: classesProp,
   fixedHeight = false,
   loading = false,
   children,
   summaryContent,
 }: HvWizardContentProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const { context, setContext, summary, tab } = useContext(HvWizardContext);
 
   const arrayChildren = React.Children.toArray(children) as ChildElement[];
@@ -127,70 +134,47 @@ export const HvWizardContent = ({
   const translateX = summaryWidth ? summaryWidth + 10 : 450;
 
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <div
-          className={cx(
-            wizardContentClasses.summaryRef,
-            css(styles.summaryRef),
-            classes?.summaryRef
-          )}
-          ref={(el) => {
-            containerRef(el);
-            if (el) {
-              summaryRef.current = el;
-            }
-          }}
-        >
-          {summary !== null && (
-            <div
-              className={cx(
-                wizardContentClasses.summarySticky,
-                css(styles.summarySticky),
-                classes?.summarySticky
-              )}
-            >
-              <div
-                className={cx(
-                  wizardContentClasses.summaryContainer,
-                  css(styles.summaryContainer),
-                  classes?.summaryContainer
-                )}
-                style={{
-                  left: summaryLeft,
-                  width: summaryWidth,
-                  height: summaryHeight,
-                  transform: `translate(${summary ? 0 : translateX}px, 0)`,
-                }}
-              >
-                {summaryContent}
-              </div>
-            </div>
-          )}
-          <HvDialogContent
-            className={cx(
-              wizardContentClasses.contentContainer,
-              fixedHeight && wizardContentClasses.fixedHeight,
-              css(styles.contentContainer),
-              fixedHeight && css(styles.fixedHeight),
-              classes?.contentContainer,
-              fixedHeight && classes?.fixedHeight
-            )}
-            indentContent
+    <div
+      className={classes.summaryRef}
+      ref={(el) => {
+        containerRef(el);
+        if (el) {
+          summaryRef.current = el;
+        }
+      }}
+    >
+      {summary !== null && (
+        <div className={classes.summarySticky}>
+          <div
+            className={classes.summaryContainer}
+            style={{
+              left: summaryLeft,
+              width: summaryWidth,
+              height: summaryHeight,
+              transform: `translate(${summary ? 0 : translateX}px, 0)`,
+            }}
           >
-            <LoadingContainer hidden={!loading}>
-              {React.Children.map(arrayChildren, (child, index) => {
-                if (index === tab) {
-                  return React.cloneElement(child as React.ReactElement, {
-                    tab,
-                  });
-                }
-                return null;
-              })}
-            </LoadingContainer>
-          </HvDialogContent>
+            {summaryContent}
+          </div>
         </div>
       )}
-    </ClassNames>
+      <HvDialogContent
+        className={cx(classes.contentContainer, {
+          [classes.fixedHeight]: fixedHeight,
+        })}
+        indentContent
+      >
+        <LoadingContainer hidden={!loading}>
+          {React.Children.map(arrayChildren, (child, index) => {
+            if (index === tab) {
+              return React.cloneElement(child as React.ReactElement, {
+                tab,
+              });
+            }
+            return null;
+          })}
+        </LoadingContainer>
+      </HvDialogContent>
+    </div>
   );
 };

@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import {
   Level0Good,
   Level3Bad,
@@ -8,11 +7,16 @@ import {
   HvAvatarSize,
   HvButtonProps,
   HvBaseProps,
+  ExtractNames,
+  HvAvatar,
+  HvButton,
 } from "@hitachivantara/uikit-react-core";
 import { theme } from "@hitachivantara/uikit-styles";
-import { StyledRoot, StyledButton, StyledAvatar } from "./Step.styles";
-import stepClasses, { HvStepClasses } from "./stepClasses";
+
 import { getColor, getSemantic } from "../utils";
+import { useClasses } from "./Step.styles";
+
+type HvStepClasses = ExtractNames<typeof useClasses>;
 
 export interface HvStepProps
   extends Pick<HvButtonProps, "onClick">,
@@ -45,7 +49,7 @@ export interface HvStepProps
  */
 export const HvStep = ({
   className,
-  classes,
+  classes: classesProp,
   state,
   title,
   onClick,
@@ -53,6 +57,8 @@ export const HvStep = ({
   size = "md",
   number = 1,
 }: HvStepProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const iconSize = {
     xs: "XS",
     sm: "XS",
@@ -88,22 +94,19 @@ export const HvStep = ({
   }[state];
 
   return (
-    <StyledRoot
-      className={clsx(
-        className,
-        stepClasses.root,
-        classes?.root,
-        state !== "Current" && clsx(stepClasses.notCurrent, classes?.notCurrent)
+    <div
+      className={cx(
+        classes.root,
+        {
+          [classes.notCurrent]: state !== "Current",
+        },
+        className
       )}
-      $notCurrent={state !== "Current"}
     >
-      <StyledButton
-        className={clsx(
-          stepClasses.ghost,
-          classes?.ghost,
-          state === "Current" &&
-            clsx(stepClasses.ghostDisabled, classes?.ghostDisabled)
-        )}
+      <HvButton
+        className={cx(classes.ghost, {
+          [classes.ghostDisabled]: state === "Current",
+        })}
         aria-label={`step-${title}`}
         icon
         variant="secondaryGhost"
@@ -111,17 +114,11 @@ export const HvStep = ({
         disabled={disabled ?? ["Current", "Disabled"].includes(state)}
         onClick={onClick}
       >
-        <StyledAvatar
-          className={clsx(
-            stepClasses.avatar,
-            classes?.avatar,
-            stepClasses[size],
-            classes?.[size]
-          )}
+        <HvAvatar
+          className={cx(classes.avatar, classes[size])}
           backgroundColor={backgroundColor}
           status={status}
           size={size}
-          $size={size}
         >
           {IconComponent ? (
             <IconComponent
@@ -134,8 +131,8 @@ export const HvStep = ({
           ) : (
             number
           )}
-        </StyledAvatar>
-      </StyledButton>
-    </StyledRoot>
+        </HvAvatar>
+      </HvButton>
+    </div>
   );
 };

@@ -1,9 +1,6 @@
-import { CSSInterpolation } from "@emotion/serialize";
-import { HvStepNavigationClasses } from "./stepNavigationClasses";
+import { createClasses } from "@hitachivantara/uikit-react-core";
 
-export const styles: Partial<
-  Record<keyof HvStepNavigationClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvStepNavigation", {
   root: {
     display: "flex",
     flexDirection: "column",
@@ -31,4 +28,4 @@ export const styles: Partial<
       display: "flex",
     },
   },
-};
+});

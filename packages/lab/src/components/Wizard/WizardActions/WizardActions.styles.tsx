@@ -1,10 +1,7 @@
-import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvWizardActionsClasses } from "./wizardActionsClasses";
+import { createClasses } from "@hitachivantara/uikit-react-core";
 
-export const styles: Partial<
-  Record<keyof HvWizardActionsClasses, CSSInterpolation>
-> = {
+export const { staticClasses, useClasses } = createClasses("HvWizardActions", {
   buttonWidth: {
     width: 120,
     "& span": {
@@ -26,4 +23,4 @@ export const styles: Partial<
   buttonSpacing: {
     paddingLeft: 28,
   },
-};
+});
