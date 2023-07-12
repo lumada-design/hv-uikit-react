@@ -94,7 +94,10 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
       PopperProps={{
         sx: popperSx(useSingle),
         container:
-          document.getElementById(containerId || rootId || "") || document.body,
+          typeof window !== "undefined"
+            ? document.getElementById(containerId || rootId || "") ||
+              document.body
+            : undefined,
       }}
       {...others}
     >
