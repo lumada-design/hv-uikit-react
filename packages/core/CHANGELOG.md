@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.19.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.19.2...@hitachivantara/uikit-react-core@5.19.3) (2023-07-12)
+
+### Bug Fixes
+
+- **TimePicker:** fix the classes name ([#3508](https://github.com/lumada-design/hv-uikit-react/issues/3508)) ([b7b8525](https://github.com/lumada-design/hv-uikit-react/commit/b7b8525da3a077e01bdbca2034b1374e66bbfd12))
+
 ## [5.19.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.19.1...@hitachivantara/uikit-react-core@5.19.2) (2023-07-11)
 
 ### Bug Fixes

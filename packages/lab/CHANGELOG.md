@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.20](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.19...@hitachivantara/uikit-react-lab@5.4.20) (2023-07-12)
+
+### Bug Fixes
+
+- **Wizard:** summary not opening ([4c02344](https://github.com/lumada-design/hv-uikit-react/commit/4c023441af9e2a1b2f21d1e57c368d06af0a1e5d))
+
 ## [5.4.19](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.18...@hitachivantara/uikit-react-lab@5.4.19) (2023-07-11)
 
 ### Reverts
