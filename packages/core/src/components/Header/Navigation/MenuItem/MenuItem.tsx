@@ -11,6 +11,8 @@ export interface MenuItemProps extends HvBaseProps<HTMLDivElement, "onClick"> {
   item: HvHeaderNavigationItemProp;
   type?: string;
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
+  maxDepth: number;
+  currentDepth: number;
 }
 
 // Traverse the tree of items and return the first href it finds
@@ -38,7 +40,14 @@ const traverseItem = (node: HvHeaderNavigationItemProp) => {
   return { href, target };
 };
 
-export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
+export const HvMenuItem = ({
+  id,
+  item,
+  type,
+  onClick,
+  maxDepth,
+  currentDepth,
+}: MenuItemProps) => {
   const selectionPath = useContext(SelectionContext);
   const { dispatch } = useContext(FocusContext);
 
@@ -128,7 +137,15 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
           {label}
         </MenuItemLabel>
       )}
-      {hasSubLevel && <HvMenuBar data={data} onClick={onClick} type="menu" />}
+      {hasSubLevel && currentDepth < maxDepth && (
+        <HvMenuBar
+          data={data}
+          onClick={onClick}
+          type="menu"
+          maxDepth={maxDepth}
+          currentDepth={currentDepth + 1}
+        />
+      )}
     </MenuItemLi>
   );
 };

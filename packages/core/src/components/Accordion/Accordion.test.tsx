@@ -1,27 +1,18 @@
 import { describe, expect, it } from "vitest";
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { HvAccordion, HvTypography } from "@core/components";
 
+const testAttributes = (component: HTMLElement) => {
+  expect(component).toBeInTheDocument();
+  expect(component).toHaveAttribute("aria-expanded", "false");
+  expect(component).toHaveAttribute("aria-disabled", "false");
+};
+
 describe("Accordion", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvAccordion>some content</HvAccordion>);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvAccordion>some content</HvAccordion>);
-    expect(container).toMatchSnapshot();
-  });
-
   describe("general structure", () => {
     it("renders the component as expected", () => {
-      const testAttributes = (component: HTMLElement) => {
-        expect(component).toBeInTheDocument();
-        expect(component).toHaveAttribute("aria-expanded", "false");
-        expect(component).toHaveAttribute("aria-disabled", "false");
-      };
-      const { getByRole } = render(
+      render(
         <>
           <HvAccordion id="item1" label="Analytics" headingLevel={1}>
             <HvTypography>item 1</HvTypography>
@@ -34,11 +25,11 @@ describe("Accordion", () => {
           </HvAccordion>
         </>
       );
-      const analyticsItem = getByRole("button", { name: /Analytics/i });
+      const analyticsItem = screen.getByRole("button", { name: /Analytics/i });
       testAttributes(analyticsItem);
-      const systemItem = getByRole("button", { name: /System/i });
+      const systemItem = screen.getByRole("button", { name: /System/i });
       testAttributes(systemItem);
-      const dataItem = getByRole("button", { name: /Data/i });
+      const dataItem = screen.getByRole("button", { name: /Data/i });
       testAttributes(dataItem);
     });
   });

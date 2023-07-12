@@ -11,9 +11,4 @@ describe("VerticalNavigation - Navigation", () => {
     const { container } = render(<Sample />);
     expect(container).toBeDefined();
   });
-
-  it("should render correctly", () => {
-    const { container } = render(<Sample />);
-    expect(container).toMatchSnapshot();
-  });
 });

@@ -1,26 +1,22 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import { LogIn } from "@hitachivantara/uikit-react-icons";
 import { HvAvatar } from "./Avatar";
 
 describe("Avatar", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvAvatar />);
-    expect(container).toBeDefined();
+  it("renders the text", () => {
+    render(<HvAvatar>AB</HvAvatar>);
+
+    expect(screen.getByText("AB")).toBeInTheDocument();
   });
 
-  it("should render correctly", () => {
-    const { container } = render(<HvAvatar />);
-    expect(container).toMatchSnapshot();
-  });
+  it("renders the icon", () => {
+    render(
+      <HvAvatar>
+        <LogIn aria-label="login" />
+      </HvAvatar>
+    );
 
-  describe("letter avatar", () => {
-    it("should render the avatar as text", () => {
-      const { container, getByText } = render(
-        <HvAvatar badge="negative">AB</HvAvatar>
-      );
-
-      expect(container).toMatchSnapshot();
-      expect(getByText("AB")).toBeInTheDocument();
-    });
+    expect(screen.getByLabelText("login")).toBeInTheDocument();
   });
 });

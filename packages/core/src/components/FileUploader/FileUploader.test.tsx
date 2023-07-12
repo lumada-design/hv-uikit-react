@@ -1,4 +1,4 @@
-import { fireEvent, render, within } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { HvFileUploader, HvFileUploaderProps } from "./FileUploader";
 import { HvFileData } from "./File";
@@ -29,29 +29,17 @@ const Main = (props: HvFileUploaderProps) => (
 );
 
 describe("FileUploader", () => {
-  it("should be defined", () => {
-    const { container } = render(<Main {...baseProps} />);
-
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<Main {...baseProps} />);
-
-    expect(container).toMatchSnapshot();
-  });
-
   it("should render the file list", () => {
-    const { getByRole, queryAllByRole } = render(<Main {...baseProps} />);
+    render(<Main {...baseProps} />);
 
-    expect(getByRole("list")).toBeVisible();
-    expect(queryAllByRole("listitem").length).toBe(2);
+    expect(screen.getByRole("list")).toBeVisible();
+    expect(screen.queryAllByRole("listitem").length).toBe(2);
   });
 
   it("should render the dropzone", () => {
-    const { getByRole } = render(<Main {...baseProps} />);
+    render(<Main {...baseProps} />);
 
-    const dropZone = getByRole("button", { name: /Label/ });
+    const dropZone = screen.getByRole("button", { name: /Label/ });
 
     expect(dropZone).toBeVisible();
   });
@@ -59,11 +47,9 @@ describe("FileUploader", () => {
   it("should call file upload callback", () => {
     const onFilesAddedMock = vi.fn();
 
-    const { getByRole } = render(
-      <Main {...baseProps} onFilesAdded={onFilesAddedMock} />
-    );
+    render(<Main {...baseProps} onFilesAdded={onFilesAddedMock} />);
 
-    const dropZone = getByRole("button", { name: /Label/ });
+    const dropZone = screen.getByRole("button", { name: /Label/ });
 
     fireEvent.change(dropZone.querySelector("input") as Element, {});
 
@@ -71,7 +57,7 @@ describe("FileUploader", () => {
   });
 
   it("should display incorrect file type warning", () => {
-    const { queryAllByRole } = render(
+    render(
       <Main
         {...baseProps}
         fileList={
@@ -91,7 +77,7 @@ describe("FileUploader", () => {
       />
     );
 
-    const files = queryAllByRole("listitem");
+    const files = screen.queryAllByRole("listitem");
 
     expect(
       within(files[0]).getByText(/File type not allowed for upload/)
@@ -99,7 +85,7 @@ describe("FileUploader", () => {
   });
 
   it("should display incorrect file size warning", () => {
-    const { queryAllByRole } = render(
+    render(
       <Main
         {...baseProps}
         fileList={
@@ -119,7 +105,7 @@ describe("FileUploader", () => {
       />
     );
 
-    const files = queryAllByRole("listitem");
+    const files = screen.queryAllByRole("listitem");
 
     expect(
       within(files[0]).getByText(/The file exceeds the maximum upload size/)

@@ -1,9 +1,12 @@
-import { HvLoading, HvLoadingProps } from "@hitachivantara/uikit-react-core";
-import { ClassNames } from "@emotion/react";
-import { styles } from "./LoadingContainer.styles";
-import wizardLoadingContainerClasses, {
-  HvWizardLoadingContainerClasses,
-} from "./loadingContainerClasses";
+import {
+  HvLoading,
+  HvLoadingProps,
+  ExtractNames,
+} from "@hitachivantara/uikit-react-core";
+
+import { useClasses } from "./LoadingContainer.styles";
+
+type HvWizardLoadingContainerClasses = ExtractNames<typeof useClasses>;
 
 interface LoadingContainerProps extends Omit<HvLoadingProps, "classes"> {
   classes?: HvWizardLoadingContainerClasses;
@@ -12,44 +15,31 @@ interface LoadingContainerProps extends Omit<HvLoadingProps, "classes"> {
 export const LoadingContainer = ({
   children,
   hidden,
-  classes,
+  classes: classesProp,
   ...others
 }: LoadingContainerProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <>
-          <div
-            style={{
-              top: 0,
-              left: 0,
-              height: "100%",
-              width: "100%",
-            }}
-            className={cx(
-              wizardLoadingContainerClasses.overlay,
-              !hidden && wizardLoadingContainerClasses.blur,
-              css(styles.overlay),
-              !hidden && css(styles.blur),
-              classes?.overlay,
-              !hidden && classes?.blur
-            )}
-          >
-            <HvLoading
-              classes={{
-                root: cx(
-                  wizardLoadingContainerClasses.loading,
-                  css(styles.loading),
-                  classes?.loading
-                ),
-              }}
-              hidden={hidden}
-              {...others}
-            />
-          </div>
-          <div style={{ display: "flow-root" }}>{children}</div>
-        </>
-      )}
-    </ClassNames>
+    <>
+      <div
+        style={{
+          top: 0,
+          left: 0,
+          height: "100%",
+          width: "100%",
+        }}
+        className={cx(classes.overlay, { [classes.blur]: !hidden })}
+      >
+        <HvLoading
+          classes={{
+            root: classes.loading,
+          }}
+          hidden={hidden}
+          {...others}
+        />
+      </div>
+      <div style={{ display: "flow-root" }}>{children}</div>
+    </>
   );
 };

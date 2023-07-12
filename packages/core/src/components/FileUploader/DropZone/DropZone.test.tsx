@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { HvDropZone, HvDropZoneProps } from "./DropZone";
 
@@ -19,23 +19,12 @@ const props: HvDropZoneProps = {
 };
 
 describe("DropZone", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvDropZone id="dropzone-test" {...props} />);
+  it("should render drop zone button and labels", () => {
+    render(<HvDropZone {...props} />);
 
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvDropZone id="dropzone-test" {...props} />);
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it("should render correctly when disabled", () => {
-    const { container } = render(
-      <HvDropZone id="dropzone-test" disabled multiple {...props} />
-    );
-
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText("Select files")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /Drag and drop or Select files/i })
+    ).toBeInTheDocument();
   });
 });

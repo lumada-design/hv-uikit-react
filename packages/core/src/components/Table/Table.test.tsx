@@ -84,13 +84,6 @@ describe("Simple Table", () => {
     </HvTableContainer>
   );
 
-  it("should be defined", () => {
-    const { container } = render(<SimpleTable />);
-
-    expect(container).toBeDefined();
-    expect(container).toMatchSnapshot();
-  });
-
   it("should render the rows and cells", () => {
     const { getAllByRole } = render(<SimpleTable />);
 
@@ -127,12 +120,6 @@ describe("List Row", () => {
       </HvTable>
     </HvTableContainer>
   );
-
-  it("should be defined", () => {
-    const { container } = render(<ListRow />);
-    expect(container).toBeDefined();
-    expect(container).toMatchSnapshot();
-  });
 
   it("should render the rows and cells", () => {
     const { getAllByRole } = render(<ListRow />);

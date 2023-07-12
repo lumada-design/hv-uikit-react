@@ -9,7 +9,7 @@ export const getLocalTheme = (): string | null => {
   return localStorage?.getItem(STORAGE_KEY);
 };
 
-export const getInitialTheme = (themes) => {
+export const getInitialTheme = (themes: Theme[]) => {
   const localTheme = getLocalTheme();
   const prefersDark = window?.matchMedia(
     "(prefers-color-scheme: dark)"
@@ -20,8 +20,9 @@ export const getInitialTheme = (themes) => {
     ? localTheme.split("-")[1]
     : `${prefersDark ? "wicked" : "dawn"}`;
 
-  return themes.find(
-    (theme) => theme.name === `${initialTheme}-${initialMode}`
+  return (
+    themes.find((theme) => theme.name === `${initialTheme}-${initialMode}`) ||
+    themes[0]
   );
 };
 

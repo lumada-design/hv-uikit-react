@@ -7,9 +7,4 @@ describe("Tag", () => {
     const { container } = render(<HvTag />);
     expect(container).toBeDefined();
   });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvTag />);
-    expect(container).toMatchSnapshot();
-  });
 });

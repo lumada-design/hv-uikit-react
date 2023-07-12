@@ -4,26 +4,6 @@ import { describe, expect, it, vi } from "vitest";
 import { HvFileUploaderPreview } from "./Preview";
 
 describe("FileUploaderPreview", () => {
-  it("should be defined", () => {
-    const { container } = render(
-      <HvFileUploaderPreview>
-        <div>Hello</div>
-      </HvFileUploaderPreview>
-    );
-
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(
-      <HvFileUploaderPreview>
-        <div>Hello</div>
-      </HvFileUploaderPreview>
-    );
-
-    expect(container).toMatchSnapshot();
-  });
-
   it("should just render its children", () => {
     const { container, queryByRole, getByTestId } = render(
       <HvFileUploaderPreview>

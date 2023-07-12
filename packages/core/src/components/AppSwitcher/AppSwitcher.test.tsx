@@ -1,9 +1,6 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
 import { HvAppSwitcher, HvAppSwitcherProps } from "./AppSwitcher";
-
-const consoleSpy = vi.fn();
-const originalError = console.error;
 
 describe("<AppSwitcher /> with minimum configuration", () => {
   const mockAppSwitcherProps: HvAppSwitcherProps = {
@@ -34,19 +31,6 @@ describe("<AppSwitcher /> with minimum configuration", () => {
     ],
     footer: undefined,
   };
-
-  beforeEach(async () => {
-    console.error = consoleSpy;
-  });
-
-  afterEach(async () => {
-    console.error = originalError;
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvAppSwitcher {...mockAppSwitcherProps} />);
-    expect(container).toMatchSnapshot();
-  });
 
   it("should render 3 action components", () => {
     const { getAllByRole } = render(

@@ -1,7 +1,10 @@
-import { HvBaseProps, HvDialogProps } from "@hitachivantara/uikit-react-core";
+import {
+  ExtractNames,
+  HvBaseProps,
+  HvDialogProps,
+} from "@hitachivantara/uikit-react-core";
 import { ModalProps } from "@mui/material";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { HvWizardClasses } from "./wizardClasses";
 import {
   HvWizardContainer,
   HvWizardContent,
@@ -13,6 +16,11 @@ import {
   HvWizardActionsProps,
 } from ".";
 import { HvStepNavigationProps } from "..";
+import { staticClasses, useClasses } from "./Wizard.styles";
+
+export { staticClasses as wizardClasses };
+
+export type HvWizardClasses = ExtractNames<typeof useClasses>;
 
 export interface HvWizardProps
   extends HvBaseProps,
@@ -64,8 +72,11 @@ export const HvWizard = ({
   },
   fixedHeight = false,
   customStep,
+  classes: classesProp,
   ...others
 }: HvWizardProps) => {
+  const { classes } = useClasses(classesProp);
+
   const [context, setContext] = useState<HvWizardTabs>({});
   const [summary, setSummary] = useState(false);
   const [tab, setTab] = useState(0);
@@ -109,6 +120,7 @@ export const HvWizard = ({
     <HvWizardContext.Provider value={value}>
       <HvWizardContainer
         className={className}
+        classes={{ root: classes.root }}
         handleClose={handleClose}
         open={open}
         {...others}

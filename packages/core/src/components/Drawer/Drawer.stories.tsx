@@ -1,13 +1,14 @@
 import { css } from "@emotion/css";
+import { Meta, StoryObj } from "@storybook/react";
+import { useState } from "react";
 import {
   HvButton,
   HvDialogActions,
   HvDialogContent,
   HvDialogTitle,
-} from "@hitachivantara/uikit-react-core";
-import { Meta, StoryObj } from "@storybook/react";
-import { useState } from "react";
-import { HvDrawer, HvDrawerProps } from "./Drawer";
+  HvDrawer,
+  HvDrawerProps,
+} from "..";
 
 const meta: Meta<typeof HvDrawer> = {
   title: "widgets/Drawer",

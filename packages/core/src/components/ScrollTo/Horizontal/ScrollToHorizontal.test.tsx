@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { HvProvider } from "@core/providers";
 import userEvent from "@testing-library/user-event";
@@ -21,10 +21,13 @@ const Main = () => {
 };
 
 describe("ScrollToHorizontal", () => {
-  it("should render correctly", () => {
-    const { container } = render(<Main />);
+  it("should render the buttons", () => {
+    render(<Main />);
 
-    expect(container).toMatchSnapshot();
+    expect(screen.getByRole("button", { name: "Tab 1" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Tab 2" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Tab 3" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Tab 4" })).toBeInTheDocument();
   });
 
   it("should render the component as expected", () => {

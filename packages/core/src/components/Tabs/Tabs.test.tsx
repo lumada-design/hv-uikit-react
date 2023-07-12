@@ -1,18 +1,18 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { HvTabs } from "@core/components";
-import { Main } from "./Tabs.stories";
+import { HvTab, HvTabs } from "@core/components";
 
 describe("Tabs", () => {
   it("should render correctly", () => {
-    const { container } = render(<HvTabs />);
+    render(
+      <HvTabs>
+        <HvTab label="Clickable tab 1" />
+        <HvTab label="Clickable tab 2" />
+        <HvTab label="Clickable tab 3" />
+      </HvTabs>
+    );
 
-    expect(container).toMatchSnapshot();
-  });
-
-  it("should render correctly all components", () => {
-    const { container } = render(<Main />);
-
-    expect(container).toMatchSnapshot();
+    expect(screen.getByRole("tablist")).toBeInTheDocument();
+    expect(screen.getAllByRole("tab").length).toBe(3);
   });
 });

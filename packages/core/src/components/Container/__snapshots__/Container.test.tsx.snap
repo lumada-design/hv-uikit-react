@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Container > should render correctly 1`] = `
-<div>
-  <div
-    class="MuiContainer-root HvContainer-root css-110fwnx-StyledRoot eq8pv0f0 css-ur2jdm-MuiContainer-root"
-  />
-</div>
-`;

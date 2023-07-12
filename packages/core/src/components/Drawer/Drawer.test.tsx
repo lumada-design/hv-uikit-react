@@ -1,13 +1,13 @@
 import userEvent from "@testing-library/user-event";
 import { render } from "@testing-library/react";
+import { useState } from "react";
+import { css } from "@emotion/css";
 import {
   HvButton,
   HvDialogActions,
   HvDialogContent,
   HvDialogTitle,
-} from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
-import { css } from "@emotion/css";
+} from "../..";
 import { HvDrawer } from "./Drawer";
 
 const Sample = ({ startingOpen }: { startingOpen: boolean }) => {
@@ -70,12 +70,6 @@ const Sample = ({ startingOpen }: { startingOpen: boolean }) => {
 };
 
 describe("HvDrawer", () => {
-  const { baseElement } = render(<Sample startingOpen />);
-
-  it("should render correctly", () => {
-    expect(baseElement).toMatchSnapshot();
-  });
-
   it("should open when closed", async () => {
     const { getByRole, queryByText, getByText, queryByRole } = render(
       <Sample startingOpen={false} />

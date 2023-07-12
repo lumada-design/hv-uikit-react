@@ -1,14 +1,17 @@
 import React from "react";
-import { ClassNames } from "@emotion/react";
+
 import {
+  ExtractNames,
   HvBaseProps,
   HvDialog,
   HvDialogProps,
 } from "@hitachivantara/uikit-react-core";
-import wizardContainerClasses, {
-  HvWizardContainerClasses,
-} from "./wizardContainerClasses";
-import { styles } from "./WizardContainer.styles";
+
+import { staticClasses, useClasses } from "./WizardContainer.styles";
+
+export { staticClasses as wizardContainerClasses };
+
+export type HvWizardContainerClasses = ExtractNames<typeof useClasses>;
 
 export interface HvWizardContainerProps
   extends Omit<HvBaseProps, "onClose">,
@@ -25,38 +28,28 @@ export interface HvWizardContainerProps
 }
 
 export const HvWizardContainer = ({
-  classes,
+  classes: classesProp,
   className,
   children,
   handleClose,
   open,
   ...others
 }: HvWizardContainerProps) => {
+  const { classes } = useClasses(classesProp);
+
   return (
-    <ClassNames>
-      {({ css, cx }) => (
-        <HvDialog
-          classes={{
-            closeButton: cx(
-              wizardContainerClasses.closeButton,
-              css(styles.closeButton),
-              classes?.closeButton
-            ),
-            paper: cx(
-              wizardContainerClasses.paper,
-              css(styles.paper),
-              classes?.paper
-            ),
-          }}
-          className={cx(wizardContainerClasses.root, className, classes?.root)}
-          open={open}
-          onClose={handleClose}
-          maxWidth="lg"
-          {...others}
-        >
-          {children}
-        </HvDialog>
-      )}
-    </ClassNames>
+    <HvDialog
+      classes={{
+        closeButton: classes.closeButton,
+        paper: classes.paper,
+      }}
+      className={classes.root}
+      open={open}
+      onClose={handleClose}
+      maxWidth="lg"
+      {...others}
+    >
+      {children}
+    </HvDialog>
   );
 };

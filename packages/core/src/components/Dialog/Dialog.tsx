@@ -49,9 +49,12 @@ export interface HvDialogProps
   disableBackdropClick?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvDialogClasses;
+  /** Variant of the dialog. Adds a status bar to the top of the dialog. If not provided, no status bar is added. */
+  variant?: "success" | "error" | "warning";
 }
 
 export const HvDialog = ({
+  variant,
   classes: classesProp,
   className,
   id,
@@ -116,7 +119,7 @@ export const HvDialog = ({
             document.getElementById(rootId || "") || document.body
           : undefined
       }
-      className={cx(className, classes.root)}
+      className={cx(classes.root, className)}
       classes={{ container: css({ position: "relative" }) }}
       id={id}
       ref={measuredRef}
@@ -142,10 +145,14 @@ export const HvDialog = ({
       }}
       PaperProps={{
         classes: {
-          root: cx(css({ position: "absolute" }), classes.paper, {
-            fullscreen,
-            [classes.fullscreen]: fullscreen,
-          }),
+          root: cx(
+            css({ position: "absolute" }),
+            classes.paper,
+            variant && cx(classes.statusBar, classes[variant]),
+            {
+              [classes.fullscreen]: fullscreen,
+            }
+          ),
         },
       }}
       aria-modal

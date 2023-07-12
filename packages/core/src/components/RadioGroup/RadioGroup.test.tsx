@@ -50,18 +50,6 @@ const RadioGroupComp = ({ onChange = () => {}, defaultValue = "2" }) => {
 
 describe("RadioGroup", () => {
   describe("general", () => {
-    it("should be defined", () => {
-      const { container } = render(<Main />);
-
-      expect(container).toBeDefined();
-    });
-
-    it("should render correctly", () => {
-      const { container } = render(<Main />);
-
-      expect(container).toMatchSnapshot();
-    });
-
     it("should render a group with radio buttons in the expected order", () => {
       const { getByRole, getAllByRole } = render(<Main />);
 

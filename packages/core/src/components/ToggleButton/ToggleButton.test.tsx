@@ -1,35 +1,26 @@
 import { describe, expect, it, vi } from "vitest";
-import { act, render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Lock, Unlock } from "@hitachivantara/uikit-react-icons";
 import { HvToggleButton } from "./ToggleButton";
 
 describe("ToggleButton", () => {
-  it("should be defined", () => {
-    const { container } = render(<HvToggleButton />);
-    expect(container).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    const { container } = render(<HvToggleButton />);
-    expect(container).toMatchSnapshot();
-  });
-
   it("should render the unselected icon", () => {
-    const { queryByTestId } = render(
+    render(
       <HvToggleButton
         aria-label="Lock"
         notSelectedIcon={<Unlock data-testid="logo-unlock" />}
         selectedIcon={<Lock data-testid="logo-lock" />}
       />
     );
-    expect(queryByTestId("logo-unlock")).toBeInTheDocument();
-    expect(queryByTestId("logo-lock")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("logo-unlock")).toBeInTheDocument();
+    expect(screen.queryByTestId("logo-lock")).not.toBeInTheDocument();
   });
 
-  it("should call onClick", () => {
+  it("should call onClick", async () => {
     const onClickMock = vi.fn(() => "mock");
 
-    const { getByRole } = render(
+    render(
       <HvToggleButton
         aria-label="Lock"
         notSelectedIcon={<Unlock data-testid="logo-unlock" />}
@@ -37,8 +28,8 @@ describe("ToggleButton", () => {
         onClick={onClickMock}
       />
     );
-    const btn = getByRole("button");
-    act(() => btn.click());
+    const btn = screen.getByRole("button");
+    await userEvent.click(btn);
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 });

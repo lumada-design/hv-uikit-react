@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
+
 import { addons } from "@storybook/addons";
 import { Global } from "@storybook/theming";
+
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 import { ds3, ds5 } from "@hitachivantara/uikit-styles";
+
 import { getStoryStyles } from "../theme/styles/story";
+import { ADDON_EVENT } from "../addons/theme-selector/constants";
+import { getLocalTheme } from "../addons/theme-selector/utils";
 
 const withThemeProvider = (story) => {
-  const initialTheme = localStorage?.getItem("sb-uikit-theme");
+  const initialTheme = getLocalTheme();
+
   const [selectedTheme, setSelectedTheme] = useState(initialTheme);
 
   const theme = selectedTheme?.split("-")[0] || "ds5";
@@ -16,16 +22,16 @@ const withThemeProvider = (story) => {
 
   const storyStyles = getStoryStyles(base.colors.modes[mode].atmo2);
 
-  const switchTheme = ({ name }) => {
+  const switchTheme = ({ name }: Theme) => {
     setSelectedTheme(name);
   };
 
   useEffect(() => {
     const channel = addons.getChannel();
-    channel.on("THEME_SELECT", switchTheme);
+    channel.on(ADDON_EVENT, switchTheme);
 
     return () => {
-      channel.off("THEME_SELECT", switchTheme);
+      channel.off(ADDON_EVENT, switchTheme);
     };
   }, []);
 

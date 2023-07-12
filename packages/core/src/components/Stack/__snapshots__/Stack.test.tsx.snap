@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Stack > should render correctly 1`] = `
-<div>
-  <div
-    class="HvStack-root css-1i6kc02-StyledRoot evwozt80"
-  />
-</div>
-`;

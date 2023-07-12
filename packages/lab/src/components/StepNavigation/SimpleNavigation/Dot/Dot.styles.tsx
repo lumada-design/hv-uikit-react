@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import { HvButton } from "@hitachivantara/uikit-react-core";
+import { createClasses } from "@hitachivantara/uikit-react-core";
 
-export const StyledButton = styled(HvButton)({
-  borderRadius: "50%",
-  zIndex: 1,
+export const { staticClasses, useClasses } = createClasses("HvDot", {
+  root: { borderRadius: "50%", zIndex: 1 },
+  active: {},
+  ghostDisabled: {},
 });
