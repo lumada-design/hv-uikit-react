@@ -20,7 +20,8 @@ export const StyledRoot = styled(
 export const StyledButton = styled(
   forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
     return <HvButton {...props} ref={ref} />;
-  })
+  }),
+  transientOptions
 )(({ $baseColor }: { $baseColor: string }) => ({
   "&:not(:last-child)": {
     marginRight: theme.space.xs,
