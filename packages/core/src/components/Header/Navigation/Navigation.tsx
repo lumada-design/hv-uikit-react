@@ -25,6 +25,7 @@ export interface HvHeaderNavigationProps
   selected?: string;
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
   classes?: HvHeaderNavigationClasses;
+  maxDepth?: 0 | 1;
 }
 
 export const HvHeaderNavigation = ({
@@ -33,6 +34,7 @@ export const HvHeaderNavigation = ({
   onClick,
   className,
   classes,
+  maxDepth = 1,
   ...others
 }: HvHeaderNavigationProps) => {
   const selectionPath = useSelectionPath(data, selected);
@@ -54,7 +56,13 @@ export const HvHeaderNavigation = ({
           )}
           {...others}
         >
-          <HvMenuBar data={data} type="menubar" onClick={handleClick} />
+          <HvMenuBar
+            data={data}
+            type="menubar"
+            onClick={handleClick}
+            maxDepth={maxDepth}
+            currentDepth={0}
+          />
         </StyledNav>
       </FocusProvider>
     </SelectionContext.Provider>
