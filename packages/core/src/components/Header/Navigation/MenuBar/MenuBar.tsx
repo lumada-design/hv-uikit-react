@@ -11,8 +11,8 @@ export interface HvMenuBarProps extends HvBaseProps<HTMLDivElement, "onClick"> {
   data: HvHeaderNavigationItemProp[];
   type: string;
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
-  maxDepth: number;
-  currentDepth: number;
+  levels: number;
+  currentLevel: number;
 }
 
 export const HvMenuBar = ({
@@ -20,8 +20,8 @@ export const HvMenuBar = ({
   data = [],
   onClick,
   type = "menubar",
-  maxDepth,
-  currentDepth,
+  levels,
+  currentLevel,
   className,
 }: HvMenuBarProps) => {
   const selectionPath = useContext(SelectionContext);
@@ -49,8 +49,8 @@ export const HvMenuBar = ({
             item={item}
             type={type}
             onClick={onClick}
-            maxDepth={maxDepth}
-            currentDepth={currentDepth}
+            levels={levels}
+            currentLevel={currentLevel}
           />
         ))}
       </MenuBarUl>
