@@ -26,7 +26,7 @@ function getRef(args: any[]) {
   return { args: [argCopy], ref };
 }
 
-const { cssFactory } = (() => {
+const cssFactory = (() => {
   function merge(registered: RegisteredCache, css: CSS, className: string) {
     const registeredStyles: string[] = [];
 
@@ -43,13 +43,11 @@ const { cssFactory } = (() => {
     return rawClassName + css(registeredStyles);
   }
 
-  function innerCssFactory(params: { cache: EmotionCache }) {
-    const { cache } = params;
-
+  function innerCssFactory(cache: EmotionCache) {
     const css: CSS = (...styles: any) => {
       const { ref, args } = getRef(styles);
       const serialized = serializeStyles(args, cache.registered);
-      insertStyles(cache as any, serialized, false);
+      insertStyles(cache, serialized, false);
       return `${cache.key}-${serialized.name}${
         ref === undefined ? "" : ` ${ref}`
       }`;
@@ -60,10 +58,10 @@ const { cssFactory } = (() => {
     return { css, cx };
   }
 
-  return { cssFactory: innerCssFactory };
+  return innerCssFactory;
 })();
 
 export function useCss() {
   const cache = useEmotionCache();
-  return useMemo(() => cssFactory({ cache }), [cache]);
+  return useMemo(() => cssFactory(cache), [cache]);
 }

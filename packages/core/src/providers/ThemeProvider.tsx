@@ -1,34 +1,24 @@
-import {
-  createContext,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { parseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
-import { HvThemeContext } from "@hitachivantara/uikit-react-shared";
+import {
+  HvThemeContext,
+  defaultCacheKey,
+  defaultEmotionCache,
+  EmotionContext,
+} from "@hitachivantara/uikit-react-shared";
 import type { HvThemeContextValue } from "@hitachivantara/uikit-react-shared";
 import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
-import createCache, { EmotionCache } from "@emotion/cache";
+import { EmotionCache } from "@emotion/cache";
 import { setElementAttrs } from "@core/utils";
 import { HvTheme } from "@core/types";
 
 export { HvThemeContext };
 export type { HvThemeContextValue };
 
-export const defaultCacheKey = "hv";
-
-export const defaultEmotionCache = createCache({
-  key: defaultCacheKey,
-  prepend: true,
-});
-
-export const EmotionContext = createContext<{ cache: EmotionCache }>({
-  cache: defaultEmotionCache,
-});
+export { defaultCacheKey, defaultEmotionCache, EmotionContext };
 
 interface HvThemeProviderProps {
   children: React.ReactNode;
