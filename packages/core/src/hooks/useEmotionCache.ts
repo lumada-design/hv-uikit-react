@@ -1,7 +1,6 @@
 import { useContext } from "react";
-import { EmotionContext, defaultEmotionCache } from "..";
+import { EmotionContext } from "..";
 
 export function useEmotionCache() {
-  const cache = useContext(EmotionContext)?.cache;
-  return cache || defaultEmotionCache;
+  return useContext(EmotionContext).cache;
 }
