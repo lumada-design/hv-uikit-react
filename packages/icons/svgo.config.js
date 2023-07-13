@@ -35,6 +35,12 @@ module.exports = {
     "removeXMLProcInst",
     "sortAttrs",
     {
+      name: "removeUselessStrokeAndFill",
+      params: {
+        removeNone: true,
+      },
+    },
+    {
       name: "preset-default",
       params: {
         overrides: {
