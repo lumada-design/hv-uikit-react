@@ -1,15 +1,19 @@
-import { clsx } from "clsx";
-import { HvButtonVariant, HvDropDownMenu } from "@core/components";
-import { setId } from "@core/utils";
 import React, { isValidElement } from "react";
-import { HvBaseProps } from "@core/types";
+
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import fade from "@core/utils/hexToRgbA";
+import { HvButton, HvButtonVariant, HvDropDownMenu } from "@core/components";
+import { ExtractNames, setId } from "@core/utils";
+import { HvBaseProps } from "@core/types";
 import { useTheme } from "@core/hooks";
-import { StyledButton, StyledRoot } from "./ActionsGeneric.styles";
-import actionsGenericClasses, {
-  HvActionsGenericClasses,
-} from "./actionsGenericClasses";
+
+import { staticClasses, useClasses } from "./ActionsGeneric.styles";
+
+export { staticClasses as actionsGenericClasses };
+
+export type HvActionsGenericClasses = ExtractNames<typeof useClasses>;
 
 export interface HvActionGeneric {
   id: string;
@@ -41,7 +45,7 @@ export interface HvActionsGenericProps extends HvBaseProps {
 
 export const HvActionsGeneric = ({
   id,
-  classes,
+  classes: classesProp,
   className,
   category = "secondaryGhost",
   disabled = false,
@@ -50,6 +54,8 @@ export const HvActionsGeneric = ({
   maxVisibleActions = Infinity,
   ...others
 }: HvActionsGenericProps) => {
+  const { classes, cx, css } = useClasses(classesProp);
+
   const { activeTheme, selectedMode } = useTheme();
 
   if (!Array.isArray(actions)) return isValidElement(actions) ? actions : null;
@@ -63,22 +69,29 @@ export const HvActionsGeneric = ({
       : (icon as Function)?.({ isDisabled: disabled });
 
     return (
-      <StyledButton
+      <HvButton
         id={actionId}
         key={actionId || idx}
         variant={category}
-        className={clsx(actionsGenericClasses.button, classes?.button)}
+        className={cx(
+          css({
+            "&:hover": {
+              backgroundColor: fade(
+                activeTheme?.colors?.modes[selectedMode].base_light ||
+                  theme.colors.base_light,
+                0.3
+              ),
+            },
+          }),
+          classes.button
+        )}
         disabled={actDisabled ?? disabled}
         onClick={(event) => actionsCallback?.(event, id || "", action)}
         startIcon={renderedIcon}
-        $baseColor={
-          activeTheme?.colors?.modes[selectedMode].base_light ||
-          theme.colors.base_light
-        }
         {...other}
       >
         {label}
-      </StyledButton>
+      </HvButton>
     );
   };
 
@@ -98,18 +111,9 @@ export const HvActionsGeneric = ({
           disabled={disabled}
           category={category}
           classes={{
-            root: clsx(
-              actionsGenericClasses.dropDownMenu,
-              classes?.dropDownMenu
-            ),
-            icon: clsx(
-              actionsGenericClasses.dropDownMenuButton,
-              classes?.dropDownMenuButton
-            ),
-            iconSelected: clsx(
-              actionsGenericClasses.dropDownMenuButtonSelected,
-              classes?.dropDownMenuButtonSelected
-            ),
+            root: classes.dropDownMenu,
+            icon: classes.dropDownMenuButton,
+            iconSelected: classes.dropDownMenuButtonSelected,
           }}
           icon={<MoreOptionsVertical color={iconColor} />}
           placement="left"
@@ -127,20 +131,17 @@ export const HvActionsGeneric = ({
   const actionOverflow = actions.length > maxVisibleActions;
 
   return (
-    <StyledRoot
-      className={clsx(
-        className,
-        actionsGenericClasses.root,
-        classes?.root,
-        actionOverflow &&
-          clsx(actionsGenericClasses.actionContainer, classes?.actionContainer)
+    <div
+      className={cx(
+        classes.root,
+        { [classes.actionContainer]: actionOverflow },
+        className
       )}
-      $actionOverflow={actionOverflow}
       {...others}
     >
       {actionOverflow
         ? renderActionsGrid()
         : actions.map((action, idx) => renderButton(action, idx))}
-    </StyledRoot>
+    </div>
   );
 };

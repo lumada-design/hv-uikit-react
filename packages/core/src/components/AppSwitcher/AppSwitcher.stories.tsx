@@ -1,12 +1,15 @@
+import { useState } from "react";
+
 import { Champion, Code, LeftAlign } from "@hitachivantara/uikit-react-icons";
+
 import { Meta, StoryObj } from "@storybook/react";
+
 import {
   HvAppSwitcher,
   HvAppSwitcherProps,
   HvAppSwitcherActionApplication,
   HvTypography,
 } from "@core/components";
-import { useState } from "react";
 
 const applicationsList: HvAppSwitcherActionApplication[] = [
   {

@@ -1,52 +1,55 @@
-import styled from "@emotion/styled";
-import { HvListItem, HvListItemProps, HvTypography } from "@core/components";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Info } from "@hitachivantara/uikit-react-icons";
-import appSwitcherActionClasses from "./actionClasses";
 
-export const StyledListItem = styled((props: HvListItemProps) => (
-  <HvListItem {...props} />
-))({
-  width: "100%",
-  maxWidth: 280,
-  minHeight: 52,
-  marginRight: theme.space.sm,
-});
+import { createClasses } from "@core/utils";
 
-export const StyledTypography = styled(HvTypography)(() => ({
-  display: "flex",
-  justifyContent: "flex-start",
-  alignItems: "center",
+export const { staticClasses, useClasses } = createClasses(
+  "HvAppSwitcher-Action",
+  {
+    root: {
+      width: "100%",
+      maxWidth: 280,
+      minHeight: 52,
+      marginRight: theme.space.sm,
+    },
+    icon: { display: "flex", minWidth: 40, justifyContent: "center" },
+    iconUrl: { width: 32 },
+    iconInfo: { minWidth: 32 },
+    disabled: {},
+    selected: {},
+    typography: {
+      display: "flex",
+      justifyContent: "flex-start",
+      alignItems: "center",
 
-  width: "100%",
-  minHeight: 52,
+      width: "100%",
+      minHeight: 52,
 
-  padding: `6px ${theme.space.xs}`,
+      padding: `6px ${theme.space.xs}`,
 
-  border: "none",
-  borderLeft: `solid 2px ${theme.colors.secondary}`,
+      border: "none",
+      borderLeft: `solid 2px ${theme.colors.secondary}`,
 
-  cursor: "pointer",
+      cursor: "pointer",
 
-  textDecoration: "inherit",
-  color: "inherit",
-  backgroundColor: "inherit",
+      textDecoration: "inherit",
+      color: "inherit",
+      backgroundColor: "inherit",
 
-  [`.${appSwitcherActionClasses.disabled} &`]: {
-    cursor: "not-allowed",
-  },
-}));
+      "$disabled &": {
+        cursor: "not-allowed",
+      },
+    },
+    title: {
+      flexGrow: 1,
+      margin: `0 ${theme.space.xs}`,
 
-export const StyledImg = styled("img")({
-  width: 32,
-});
+      textAlign: "left",
 
-export const StyledIconInfo = styled(Info)({
-  minWidth: 32,
-});
+      overflow: "hidden",
+      whiteSpace: "nowrap",
+      textOverflow: "ellipsis",
 
-export const StyledIcon = styled("div")({
-  display: "flex",
-  minWidth: 40,
-  justifyContent: "center",
-});
+      color: "inherit",
+    },
+  }
+);

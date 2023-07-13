@@ -4,14 +4,19 @@ import React, {
   useMemo,
   HTMLAttributes,
 } from "react";
-import { clsx } from "clsx";
-import { useControlled } from "@core/hooks";
+
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
+
+import { useControlled } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
-import { setId } from "@core/utils";
-import { HvTypographyVariants } from "@core/components";
-import { StyledContainer, StyledLabel, StyledRoot } from "./Accordion.styles";
-import accordionClasses, { HvAccordionClasses } from "./accordionClasses";
+import { ExtractNames, setId } from "@core/utils";
+import { HvTypography, HvTypographyVariants } from "@core/components";
+
+import { staticClasses, useClasses } from "./Accordion.styles";
+
+export { staticClasses as accordionClasses };
+
+export type HvAccordionClasses = ExtractNames<typeof useClasses>;
 
 export interface HvAccordionProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
@@ -71,7 +76,7 @@ export interface HvAccordionProps
 export const HvAccordion = ({
   id,
   className,
-  classes,
+  classes: classesProp,
   disabled = false,
   label,
   onChange,
@@ -83,6 +88,8 @@ export const HvAccordion = ({
   labelVariant = "label",
   ...others
 }: HvAccordionProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
 
   const handleAction = useCallback(
@@ -142,15 +149,11 @@ export const HvAccordion = ({
     const color = (disabled && ["secondary_60"]) || undefined;
 
     const accordionButton = (
-      <StyledLabel
+      <HvTypography
         id={accordionHeaderId}
         component="div"
         role="button"
-        className={clsx(
-          accordionClasses.label,
-          classes?.label,
-          disabled && clsx(accordionClasses.disabled, classes?.disabled)
-        )}
+        className={cx(classes.label, { [classes.disabled]: disabled })}
         disabled={disabled}
         tabIndex={0}
         onKeyDown={handleKeyDown}
@@ -161,18 +164,19 @@ export const HvAccordion = ({
       >
         {isOpen ? <DropUpXS color={color} /> : <DropDownXS color={color} />}
         {label}
-      </StyledLabel>
+      </HvTypography>
     );
     const result =
       headingLevel === undefined ? (
         accordionButton
       ) : (
-        <StyledLabel component={`h${headingLevel}`} variant={labelVariant}>
+        <HvTypography component={`h${headingLevel}`} variant={labelVariant}>
           {accordionButton}
-        </StyledLabel>
+        </HvTypography>
       );
     return result;
   }, [
+    cx,
     classes,
     handleClick,
     handleKeyDown,
@@ -185,26 +189,18 @@ export const HvAccordion = ({
   ]);
 
   return (
-    <StyledRoot
-      id={id}
-      className={clsx(className, accordionClasses.root, classes?.root)}
-      {...others}
-    >
+    <div id={id} className={cx(classes.root, className)} {...others}>
       {accordionHeader}
-      <StyledContainer
+      <div
         id={accordionContainer}
         role="region"
         aria-labelledby={accordionHeaderId}
-        className={clsx(
-          accordionClasses.container,
-          classes?.container,
-          !isOpen && clsx(accordionClasses.hidden, classes?.hidden)
-        )}
+        className={cx(classes.container, { [classes.hidden]: !isOpen })}
         hidden={!isOpen}
         {...containerProps}
       >
         {children}
-      </StyledContainer>
-    </StyledRoot>
+      </div>
+    </div>
   );
 };
