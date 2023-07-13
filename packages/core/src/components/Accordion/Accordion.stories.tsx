@@ -1,5 +1,9 @@
-import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
+
+import { css, CSSInterpolation } from "@emotion/css";
+
+import { useMemo, useState } from "react";
+
 import {
   Breakpoint,
   HvBox,
@@ -18,21 +22,22 @@ import {
   useHvData,
   useHvTableSticky,
 } from "@core/components";
-import { useMemo, useState } from "react";
+
 import { HvAccordionProps, HvAccordion } from "./Accordion";
 
-const StyledListContainer = styled(HvListContainer)({
-  "& > li": {
-    paddingLeft: 32,
+const styles: { [key: string]: CSSInterpolation } = {
+  listContainer: {
+    "& > li": {
+      paddingLeft: 32,
+    },
   },
-});
-
-const StyledFormContainer = styled("div")({
-  padding: "0 32px",
-  "& > div": {
-    paddingTop: 17,
+  formContainer: {
+    padding: "0 32px",
+    "& > div": {
+      paddingTop: 17,
+    },
   },
-});
+};
 
 const meta: Meta<typeof HvAccordion> = {
   title: "Components/Accordion",
@@ -57,10 +62,14 @@ export const Main: StoryObj<HvAccordionProps> = {
     return (
       <HvBox sx={{ maxWidth: 300 }}>
         <HvAccordion id="item1" {...args}>
-          <StyledListContainer interactive condensed>
+          <HvListContainer
+            className={css(styles.listContainer)}
+            interactive
+            condensed
+          >
             <HvListItem>Views</HvListItem>
             <HvListItem>Parameters</HvListItem>
-          </StyledListContainer>
+          </HvListContainer>
         </HvAccordion>
       </HvBox>
     );
@@ -72,22 +81,34 @@ export const Disabled: StoryObj<HvAccordionProps> = {
     return (
       <HvBox sx={{ maxWidth: 300 }}>
         <HvAccordion id="item1" label="Analytics" headingLevel={3} disabled>
-          <StyledListContainer interactive condensed>
+          <HvListContainer
+            className={css(styles.listContainer)}
+            interactive
+            condensed
+          >
             <HvListItem>Views</HvListItem>
             <HvListItem>Parameters</HvListItem>
-          </StyledListContainer>
+          </HvListContainer>
         </HvAccordion>
         <HvAccordion id="item2" label="System" headingLevel={3}>
-          <StyledListContainer interactive condensed>
+          <HvListContainer
+            className={css(styles.listContainer)}
+            interactive
+            condensed
+          >
             <HvListItem>Settings</HvListItem>
             <HvListItem>Network</HvListItem>
-          </StyledListContainer>
+          </HvListContainer>
         </HvAccordion>
         <HvAccordion id="item3" label="Data" headingLevel={3} disabled>
-          <StyledListContainer interactive condensed>
+          <HvListContainer
+            className={css(styles.listContainer)}
+            interactive
+            condensed
+          >
             <HvListItem>Storage</HvListItem>
             <HvListItem>Memory</HvListItem>
-          </StyledListContainer>
+          </HvListContainer>
         </HvAccordion>
       </HvBox>
     );
@@ -175,7 +196,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("personalInformation")}
             expanded={expandedState.personalInformation}
           >
-            <StyledFormContainer>
+            <div className={css(styles.formContainer)}>
               <HvInput
                 id="input-name"
                 label="Name"
@@ -208,7 +229,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
                 label="City/Province"
                 placeholder="Insert province name"
               />
-            </StyledFormContainer>
+            </div>
           </HvAccordion>
           <HvAccordion
             id="controlled-item2"
@@ -216,7 +237,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("billingAddress")}
             expanded={expandedState.billingAddress}
           >
-            <StyledFormContainer>
+            <div className={css(styles.formContainer)}>
               <HvInput
                 id="input-address"
                 label="Address 1"
@@ -242,7 +263,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
                 label="Zip Code"
                 placeholder="Insert code"
               />
-            </StyledFormContainer>
+            </div>
           </HvAccordion>
           <HvAccordion
             id="controlled-item3"
@@ -250,7 +271,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("shippingAddress")}
             expanded={expandedState.shippingAddress}
           >
-            <StyledFormContainer>
+            <div className={css(styles.formContainer)}>
               <HvInput
                 id="input-address-bill"
                 label="Address 1"
@@ -276,7 +297,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
                 label="Zip Code"
                 placeholder="Insert code"
               />
-            </StyledFormContainer>
+            </div>
           </HvAccordion>
         </HvBox>
       </>

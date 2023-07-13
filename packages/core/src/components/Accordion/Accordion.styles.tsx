@@ -1,42 +1,20 @@
-import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "@core/components";
-import { outlineStyles } from "@core/utils";
+import { createClasses, outlineStyles } from "@core/utils";
 
-export const StyledRoot = styled("div")({
-  "& + root": {
-    paddingTop: 8,
+export const { staticClasses, useClasses } = createClasses("HvAccordion", {
+  root: {
+    "& + root": {
+      paddingTop: 8,
+    },
   },
-});
-
-export const StyledContainer = styled("div")(
-  ({ hidden }: { hidden: boolean }) => ({
-    paddingTop: 8,
-    height: "auto",
-
-    ...(hidden && {
-      height: 0,
-      display: "none",
-    }),
-  })
-);
-
-export const StyledLabel = styled(HvTypography)(
-  ({ disabled }: { disabled?: boolean }) => ({
+  hidden: { height: 0, display: "none" },
+  container: { paddingTop: 8, height: "auto" },
+  label: {
     width: "100%",
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
     height: "32px",
-
-    ...(!disabled && {
-      "&:hover": {
-        background: theme.colors.atmo3,
-      },
-      "&:focus": {
-        background: theme.colors.atmo3,
-      },
-    }),
 
     "&[disabled], &:active": {
       outline: "none",
@@ -44,17 +22,29 @@ export const StyledLabel = styled(HvTypography)(
 
     "&:focus": {
       outline: "none",
+      background: theme.colors.atmo3,
+    },
+
+    "&:hover": {
+      background: theme.colors.atmo3,
     },
 
     "&:focus-visible": {
       ...outlineStyles,
     },
 
-    // cursor
     cursor: "pointer",
-    ...(disabled && {
-      cursor: "not-allowed",
-      color: theme.colors.secondary_60,
-    }),
-  })
-);
+  },
+  disabled: {
+    cursor: "not-allowed",
+    color: theme.colors.secondary_60,
+
+    "&:focus": {
+      background: "none",
+    },
+
+    "&:hover": {
+      background: "none",
+    },
+  },
+});
