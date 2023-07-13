@@ -7,17 +7,20 @@ import React, {
 
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { useControlled } from "@core/hooks";
-import { HvBaseProps } from "@core/types";
-import { ExtractNames, setId } from "@core/utils";
-import { HvTypography, HvTypographyVariants } from "@core/components";
+import { useControlled } from "@core/hooks/useControlled";
+import { HvBaseProps } from "@core/types/generic";
+import { setId } from "@core/utils/setId";
+import {
+  HvTypographyVariants,
+  HvTypography,
+} from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
 
 import { staticClasses, useClasses } from "./Accordion.styles";
 
 export { staticClasses as accordionClasses };
 
 export type HvAccordionClasses = ExtractNames<typeof useClasses>;
-
 export interface HvAccordionProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**

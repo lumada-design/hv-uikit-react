@@ -1,5 +1,7 @@
-import { setId } from "@core/utils";
+import { setId } from "@core/utils/setId";
+
 import { clsx } from "clsx";
+
 import { getMonthNamesList } from "../../utils";
 import { ViewMode } from "../../enums";
 import { Navigation } from "../Navigation";
@@ -10,7 +12,7 @@ import {
   StyledNavigationContainer,
   StyledNavigationMonth,
 } from "./ComposedNavigation.styles";
-import { VisibilitySelectorActions } from "../../Calendar";
+import { VisibilitySelectorActions } from "../../types";
 
 export const HvComposedNavigation = ({
   classes,

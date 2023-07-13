@@ -1,50 +1,19 @@
 import { forwardRef, AllHTMLAttributes, Ref } from "react";
-import { HvBaseProps } from "@core/types";
-import { ExtractNames } from "@core/utils";
-import { useTheme } from "@core/hooks";
-import { mapVariant } from "./utils";
+
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { useTheme } from "@core/hooks/useTheme";
+
+import {
+  HvTypographyLegacyVariants,
+  HvTypographyVariants,
+  mapVariant,
+} from "./utils";
 import { staticClasses, useClasses } from "./Typography.styles";
 
 export { staticClasses as typographyClasses };
 
 export type HvTypographyClasses = ExtractNames<typeof useClasses>;
-
-export const typographyVariants = [
-  "display",
-  "title1",
-  "title2",
-  "title3",
-  "title4",
-  "body",
-  "label",
-  "caption1",
-  "caption2",
-] as const;
-
-export type HvTypographyVariants = (typeof typographyVariants)[number];
-
-/** @deprecated */
-export type HvTypographyLegacyVariants =
-  | "5xlTitle"
-  | "4xlTitle"
-  | "3xlTitle"
-  | "xxlTitle"
-  | "xlTitle"
-  | "lTitle"
-  | "mTitle"
-  | "sTitle"
-  | "xsTitle"
-  | "xxsTitle"
-  | "sectionTitle"
-  | "highlightText"
-  | "normalText"
-  | "placeholderText"
-  | "link"
-  | "disabledText"
-  | "selectedNavText"
-  | "vizText"
-  | "vizTextDisabled"
-  | "xsInlineLink";
 
 const HvTypographyMap = {
   display: "h1",

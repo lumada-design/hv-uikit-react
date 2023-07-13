@@ -1,11 +1,8 @@
 import { StoryObj } from "@storybook/react";
 import { HvBox } from "@core/components";
 import { theme } from "@hitachivantara/uikit-styles";
-import {
-  HvTypography,
-  HvTypographyProps,
-  typographyVariants,
-} from "./Typography";
+import { HvTypography, HvTypographyProps } from "./Typography";
+import { typographyVariants } from "./utils";
 
 export default { title: "Foundation/Typography", component: HvTypography };
 

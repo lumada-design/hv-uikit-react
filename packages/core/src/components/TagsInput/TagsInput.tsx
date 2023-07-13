@@ -5,16 +5,25 @@ import React, {
   useRef,
   useState,
 } from "react";
+
 import { clsx } from "clsx";
+
 import isNil from "lodash/isNil";
+
 import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
-import {
-  HvBaseProps,
-  HvTagSuggestion,
-  HvValidationMessages,
-} from "@core/types";
-import { useControlled, useIsMounted, useUniqueId } from "@core/hooks";
-import { isKey, setId } from "@core/utils";
+
+import { HvTagSuggestion, HvValidationMessages } from "@core/types/forms";
+import { HvBaseProps } from "@core/types/generic";
+import { useControlled } from "@core/hooks/useControlled";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useIsMounted } from "@core/hooks/useIsMounted";
+import { isKey } from "@core/utils/keyboardUtils";
+import { setId } from "@core/utils/setId";
+import validationStates from "@core/components/Forms/FormElement/validationStates";
+import { DEFAULT_ERROR_MESSAGES } from "@core/components/BaseInput/validations";
+import { HvTagProps } from "@core/components/Tag";
+import { HvCharCounterProps, HvFormStatus } from "@core/components/Forms";
+
 import {
   StyledCharCounter,
   StyledDescription,
@@ -29,11 +38,7 @@ import {
   StyledInput,
   StyledSuggestions,
 } from "./TagsInput.styles";
-import validationStates from "../Forms/FormElement/validationStates";
-import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
-import { HvTagProps } from "../Tag";
 import tagsInputClasses, { HvTagsInputClasses } from "./tagsInputClasses";
-import { HvCharCounterProps, HvFormStatus } from "../Forms";
 
 export interface HvTagsInputProps
   extends HvBaseProps<

@@ -1,15 +1,16 @@
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
+
 import { clsx } from "clsx";
-import {
-  HvButton,
-  HvListContainer,
-  HvOverflowTooltip,
-  NavigationData,
-} from "@core/components";
+
+import { HvButton } from "@core/components/Button";
+import { HvListContainer } from "@core/components/ListContainer";
+import { HvOverflowTooltip } from "@core/components/OverflowTooltip";
+
 import { StyledListItem } from "./NavigationSlider.styles";
 import verticalNavigationSliderClasses, {
   HvVerticalNavigationSliderClasses,
 } from "./navigationSliderClasses";
+import { NavigationData } from "../VerticalNavigationContext";
 
 export interface HvVerticalNavigationSliderProps {
   /**

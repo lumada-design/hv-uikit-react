@@ -1,7 +1,10 @@
 import { useContext } from "react";
+
 import { clsx } from "clsx";
-import { HvBaseProps } from "@core/types";
-import { setId } from "@core/utils";
+
+import { HvBaseProps } from "@core/types/generic";
+import { setId } from "@core/utils/setId";
+
 import { StyledRoot, StyledTypography } from "./CharCounter.styles";
 import { HvFormElementContext } from "../FormElement";
 import charCounterClasses, { HvCharCounterClasses } from "./charCounterClasses";

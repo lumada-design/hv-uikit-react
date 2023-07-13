@@ -1,7 +1,12 @@
 import { Backwards, Forwards, Menu } from "@hitachivantara/uikit-react-icons";
-import { clsx } from "clsx";
-import { HvButton, HvButtonProps, HvTypography } from "@core/components";
+
 import { MouseEventHandler, useContext, useMemo } from "react";
+
+import { clsx } from "clsx";
+
+import { HvButton, HvButtonProps } from "@core/components/Button";
+import { HvTypography } from "@core/components/Typography";
+
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { StyledCollapseButton, StyledHeader } from "./Header.styles";
 import verticalNavigationHeaderClasses, {

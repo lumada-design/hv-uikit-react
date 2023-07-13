@@ -1,9 +1,18 @@
-import { clsx } from "clsx";
-import { useControlled, useUniqueId } from "@core/hooks";
 import { useCallback, useState } from "react";
-import { setId } from "@core/utils";
-import { HvBaseCheckBoxProps } from "../BaseCheckBox";
-import { HvLabelProps, HvFormStatus, HvWarningText, isInvalid } from "../Forms";
+
+import { clsx } from "clsx";
+
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useControlled } from "@core/hooks/useControlled";
+import { setId } from "@core/utils/setId";
+import { HvBaseCheckBoxProps } from "@core/components/BaseCheckBox";
+import {
+  HvLabelProps,
+  HvFormStatus,
+  HvWarningText,
+  isInvalid,
+} from "@core/components/Forms";
+
 import {
   StyledBaseCheckBox,
   StyledFormElement,

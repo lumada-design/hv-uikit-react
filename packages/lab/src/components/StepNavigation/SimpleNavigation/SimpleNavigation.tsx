@@ -4,7 +4,6 @@ import {
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 
-import { HvStepNavigationProps } from "../StepNavigation";
 import { HvDot, HvDotProps } from "./Dot";
 import { getColor, dotSizes } from "./utils";
 
@@ -24,9 +23,9 @@ export type ComponentChildProps = {
   };
 };
 
-export interface HvSimpleNavigationProps
-  extends Pick<HvStepNavigationProps, "stepSize">,
-    Omit<HvBaseProps, "children"> {
+export interface HvSimpleNavigationProps extends Omit<HvBaseProps, "children"> {
+  /** Sets one of the standard sizes of the steps. */
+  stepSize?: "xs" | "sm" | "md" | "lg" | "xl";
   /** Number of steps to show on the component. */
   numSteps: number;
   /** Returns a JSX.element of the titles container. */

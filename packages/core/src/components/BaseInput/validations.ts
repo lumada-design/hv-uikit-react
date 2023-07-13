@@ -1,7 +1,8 @@
 import { HTMLInputTypeAttribute } from "react";
+
 import { InputBaseComponentProps } from "@mui/material";
-import validationStates from "../Forms/FormElement/validationStates";
-import { HvInputProps } from "..";
+
+import validationStates from "@core/components/Forms/FormElement/validationStates";
 
 /** Checks if the value is a number. */
 const isNumeric = (num: string) =>
@@ -124,7 +125,7 @@ export const validateInput = (
   minCharQuantity: any,
   maxCharQuantity: any,
   validationType: string,
-  validation: HvInputProps["validation"]
+  validation?: (value: string) => boolean
 ): HvInputValidity => {
   // bootstrap validity object using browser's built-in validation
   const inputValidity: HvInputValidity = {

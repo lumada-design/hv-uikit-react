@@ -1,16 +1,22 @@
+import { CSSProperties } from "react";
+
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "@core/utils";
+
+import { outlineStyles } from "@core/utils/focusUtils";
 import { transientOptions } from "@core/utils/transientOptions";
 import {
-  HvBaseCheckBox,
   HvLabel,
   HvFormElement,
-  checkBoxClasses,
-  HvBaseCheckBoxProps,
   HvFormElementProps,
-} from "@core/components";
-import { CSSProperties } from "react";
+} from "@core/components/Forms";
+import {
+  HvBaseCheckBox,
+  HvBaseCheckBoxProps,
+} from "@core/components/BaseCheckBox";
+
+import checkBoxClasses from "./checkBoxClasses";
 
 export const StyledFormElement = styled(
   (props: HvFormElementProps) => <HvFormElement {...props} />,

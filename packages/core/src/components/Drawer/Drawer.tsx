@@ -1,21 +1,23 @@
+import { useEffect, useState } from "react";
+
 import {
   Drawer as MuiDrawer,
   DrawerProps as MuiDrawerProps,
 } from "@mui/material";
+
 import { Close } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps } from "@core/types/generic";
-import { withTooltip } from "@core/hocs";
-import {
-  hexToRgbA,
-  setId,
-  checkValidHexColorValue,
-  ExtractNames,
-  getVarValue,
-} from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvButton } from "@core/components";
-import { useEffect, useState } from "react";
-import { useTheme } from "@core/hooks";
+
+import { HvBaseProps } from "@core/types/generic";
+import { withTooltip } from "@core/hocs/withTooltip";
+import { hexToRgbA } from "@core/utils/hexToRgbA";
+import { setId } from "@core/utils/setId";
+import { checkValidHexColorValue } from "@core/utils/checkValidHexColorValue";
+import { ExtractNames } from "@core/utils/classes";
+import { getVarValue } from "@core/utils/theme";
+import { HvButton } from "@core/components/Button";
+import { useTheme } from "@core/hooks/useTheme";
+
 import { staticClasses, useClasses } from "./Drawer.styles";
 
 export { staticClasses as drawerClasses };

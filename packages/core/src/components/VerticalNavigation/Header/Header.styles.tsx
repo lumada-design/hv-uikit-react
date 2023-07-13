@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
-import { HvButton, HvButtonProps } from "@core/components";
 import { forwardRef } from "react";
-import { PolymorphicRef } from "@core/types";
+import { HvButton, HvButtonProps } from "@core/components/Button";
+import { PolymorphicRef } from "@core/types/generic";
+
 import verticalNavigationHeaderClasses from "./headerClasses";
 
 export const StyledHeader = styled("div")({

@@ -10,7 +10,7 @@ import {
   useState,
 } from "react";
 
-import { ExtractNames } from "@core/utils";
+import { ExtractNames } from "@core/utils/classes";
 
 import { ConfirmationDialog } from "./ConfirmationDialog";
 import { QueryBuilderContext } from "./Context";

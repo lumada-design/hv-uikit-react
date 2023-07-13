@@ -1,7 +1,10 @@
 import { Close } from "@hitachivantara/uikit-react-icons";
+
 import { clsx } from "clsx";
-import { setId } from "@core/utils";
-import { HvTypography } from "@core/components";
+
+import { setId } from "@core/utils/setId";
+import { HvTypography } from "@core/components/Typography";
+
 import fileClasses, { HvFileClasses } from "./fileClasses";
 import { convertUnits } from "../utils";
 import {

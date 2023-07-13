@@ -1,8 +1,13 @@
 import { forwardRef, isValidElement, useEffect, useMemo, useRef } from "react";
+
 import { clsx } from "clsx";
-import { HvBaseProps, HvExtraProps } from "@core/types";
-import { HvListContainer, HvTypography } from "@core/components";
-import { setId, wrapperTooltip } from "@core/utils";
+
+import { HvBaseProps } from "@core/types/generic";
+import { HvListContainer } from "@core/components/ListContainer";
+import { HvTypography } from "@core/components/Typography";
+import { setId } from "@core/utils/setId";
+import { wrapperTooltip } from "@core/utils/wrapperTooltip";
+
 import {
   StyledFixedSizeList,
   StyledSelectAllCheckBox,
@@ -13,34 +18,9 @@ import {
   StyledDropRightXS,
 } from "./List.styles";
 import listClasses, { HvListClasses } from "./listClasses";
-import useSelectableList from "./useSelectableList";
+import { useSelectableList } from "./useSelectableList";
 import { parseList } from "./utils";
-
-export interface HvListValue extends HvExtraProps {
-  id?: string | number;
-  label: React.ReactNode;
-  searchValue?: string;
-  selected?: boolean;
-  disabled?: boolean;
-  isHidden?: boolean;
-  icon?:
-    | React.ReactNode
-    | ((params: {
-        isDisabled?: boolean;
-        isSelected?: boolean;
-      }) => React.ReactNode);
-  showNavIcon?: boolean;
-  path?: string;
-  params?: object;
-  tabIndex?: number;
-}
-
-export interface HvListLabels {
-  /** The label used for the All checkbox action. */
-  selectAll?: string;
-  /** The label used in the middle of the multi-selection count. */
-  selectionConjunction?: string;
-}
+import { HvListLabels, HvListValue } from "./types";
 
 export interface HvListProps
   extends HvBaseProps<HTMLUListElement, "onChange" | "onClick"> {

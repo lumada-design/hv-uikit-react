@@ -2,9 +2,9 @@ import MuiDialogContent, {
   DialogContentProps as MuiDialogContentProps,
 } from "@mui/material/DialogContent";
 
-import { HvBaseProps } from "@core/types";
-import { ExtractNames } from "@core/utils";
-import { HvTypography } from "@core/components";
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "@core/components/Typography";
 
 import { staticClasses, useClasses } from "./Content.styles";
 

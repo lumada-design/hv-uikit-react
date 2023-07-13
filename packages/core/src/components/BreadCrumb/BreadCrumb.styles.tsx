@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { Ref, forwardRef } from "react";
-import { HvTypography, HvTypographyProps } from "@core/components";
+
+import { HvTypography, HvTypographyProps } from "@core/components/Typography";
 
 export const StyledRoot = styled("nav")({
   display: "flex",

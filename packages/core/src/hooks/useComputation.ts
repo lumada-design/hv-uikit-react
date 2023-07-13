@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-export default function useComputation(valueFn, valueFallback?) {
+export const useComputation = (valueFn, valueFallback?) => {
   const computed = useRef<any>(null);
   const [value, setValue] = useState(valueFallback);
 
@@ -12,4 +12,4 @@ export default function useComputation(valueFn, valueFallback?) {
   };
 
   return [value, computeValue];
-}
+};

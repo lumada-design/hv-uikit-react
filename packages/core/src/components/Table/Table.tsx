@@ -1,5 +1,7 @@
 import { clsx } from "clsx";
+
 import styled from "@emotion/styled";
+
 import {
   CSSProperties,
   forwardRef,
@@ -7,8 +9,11 @@ import {
   useMemo,
   useRef,
 } from "react";
-import { transientOptions } from "@core/utils/transientOptions";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { transientOptions } from "@core/utils/transientOptions";
+
 import TableContext from "./TableContext";
 import tableClasses, { HvTableClasses } from "./tableClasses";
 

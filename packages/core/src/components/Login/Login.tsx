@@ -1,5 +1,7 @@
 import { clsx } from "clsx";
-import { HvBaseProps } from "@core/types";
+
+import { HvBaseProps } from "@core/types/generic";
+
 import { StyledFormContainer, StyledRoot } from "./Login.styles";
 import loginClasses, { HvLoginClasses } from "./loginClasses";
 

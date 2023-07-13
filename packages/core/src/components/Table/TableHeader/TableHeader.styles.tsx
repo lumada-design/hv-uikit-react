@@ -1,13 +1,11 @@
 import styled from "@emotion/styled";
-import {
-  HvButton,
-  HvButtonProps,
-  HvTypography,
-  HvTypographyProps,
-} from "@core/components";
-import { transientOptions } from "@core/utils/transientOptions";
 import { Ref, forwardRef } from "react";
-import { PolymorphicRef } from "@core/types";
+
+import { HvTypography, HvTypographyProps } from "@core/components/Typography";
+import { HvButton, HvButtonProps } from "@core/components/Button";
+import { transientOptions } from "@core/utils/transientOptions";
+import { PolymorphicRef } from "@core/types/generic";
+
 import tableHeaderClasses from "./tableHeaderClasses";
 
 export const StyledHeaderContent = styled(

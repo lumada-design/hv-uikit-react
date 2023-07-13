@@ -1,7 +1,9 @@
 import React, { forwardRef, ReactElement } from "react";
-import { useTheme } from "@core/hooks";
-import { PolymorphicComponentRef, PolymorphicRef } from "@core/types";
-import { ExtractNames } from "@core/utils";
+
+import { useTheme } from "@core/hooks/useTheme";
+import { PolymorphicComponentRef, PolymorphicRef } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+
 import {
   staticClasses as buttonClasses,
   getOverrideColors,
@@ -10,35 +12,11 @@ import {
   getVariantStyles,
   useClasses,
 } from "./Button.styles";
+import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./types";
 
 export { buttonClasses };
 
 export type HvButtonClasses = ExtractNames<typeof useClasses>;
-
-export const buttonVariant = [
-  "primary",
-  "primarySubtle",
-  "primaryGhost",
-  "secondarySubtle",
-  "secondaryGhost",
-  "semantic",
-  // deprecated props
-  "secondary",
-  "ghost",
-] as const;
-export type HvButtonVariant = (typeof buttonVariant)[number];
-
-export const buttonSize = ["xs", "sm", "md", "lg", "xl"] as const;
-export type HvButtonSize = (typeof buttonSize)[number];
-
-export const buttonRadius = [
-  "none",
-  "base",
-  "round",
-  "circle",
-  "full",
-] as const;
-export type HvButtonRadius = (typeof buttonRadius)[number];
 
 export type HvButtonProps<C extends React.ElementType = "button"> =
   PolymorphicComponentRef<

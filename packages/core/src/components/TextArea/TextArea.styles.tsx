@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
+
 import {
-  HvBaseInput,
-  HvBaseInputProps,
   HvCharCounter,
   HvCharCounterProps,
   HvFormElement,
@@ -12,7 +11,8 @@ import {
   HvLabelProps,
   HvWarningText,
   HvWarningTextProps,
-} from "@core/components";
+} from "@core/components/Forms";
+import { HvBaseInput, HvBaseInputProps } from "@core/components/BaseInput";
 import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledFormElement = styled(

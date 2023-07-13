@@ -1,6 +1,7 @@
 import { useMemo, useContext, memo } from "react";
 
-import { HvDropdown } from "../../..";
+import { HvDropdown } from "@core/components/Dropdown";
+
 import { QueryBuilderContext } from "../../Context";
 import { isBigList } from "../../utils";
 

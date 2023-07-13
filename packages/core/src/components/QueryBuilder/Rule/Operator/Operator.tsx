@@ -1,7 +1,9 @@
-import { HvDropdown } from "@core/components";
 import { memo, useContext, useMemo } from "react";
+
+import { HvDropdown } from "@core/components/Dropdown";
+
 import { QueryBuilderContext } from "../../Context";
-import { isBigList } from "../../utils/index";
+import { isBigList } from "../../utils";
 
 export interface OperatorProps {
   id: number;

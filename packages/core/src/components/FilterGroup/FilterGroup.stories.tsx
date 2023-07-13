@@ -7,11 +7,8 @@ import {
   HvTypography,
 } from "@core/components";
 import { Info } from "@hitachivantara/uikit-react-icons";
-import {
-  HvFilterGroup,
-  HvFilterGroupProps,
-  HvFilterGroupValue,
-} from "./FilterGroup";
+import { HvFilterGroup, HvFilterGroupProps } from "./FilterGroup";
+import { HvFilterGroupValue } from "./types";
 
 const meta: Meta<typeof HvFilterGroup> = {
   title: "Widgets/Filter Group",

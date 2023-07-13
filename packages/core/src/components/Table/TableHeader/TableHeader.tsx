@@ -6,14 +6,21 @@ import {
   useContext,
   useMemo,
 } from "react";
+
 import { clsx } from "clsx";
+
 import capitalize from "lodash/capitalize";
+
 import styled from "@emotion/styled";
+
 import { hexToRgb, alpha } from "@mui/material";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { transientOptions } from "@core/utils/transientOptions";
-import { HvTypographyProps } from "@core/components";
-import { useTheme } from "@core/hooks";
+import { HvTypographyProps } from "@core/components/Typography";
+import { useTheme } from "@core/hooks/useTheme";
+
 import tableHeaderClasses, { HvTableHeaderClasses } from "./tableHeaderClasses";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";

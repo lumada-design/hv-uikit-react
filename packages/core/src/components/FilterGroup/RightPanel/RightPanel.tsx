@@ -1,14 +1,15 @@
-import {
-  HvCheckBox,
-  HvInput,
-  HvList,
-  HvListProps,
-  HvPanel,
-  HvTypography,
-} from "@core/components";
-import { ExtractNames, setId } from "@core/utils";
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+
 import cloneDeep from "lodash/cloneDeep";
+
+import { HvCheckBox } from "@core/components/CheckBox";
+import { HvInput } from "@core/components/Input";
+import { HvList, HvListProps } from "@core/components/List";
+import { HvPanel } from "@core/components/Panel";
+import { HvTypography } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { staticClasses, useClasses } from "./RightPanel.styles";
 

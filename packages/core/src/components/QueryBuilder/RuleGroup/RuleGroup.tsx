@@ -2,18 +2,16 @@ import { useCallback, useContext } from "react";
 
 import { Add, Delete, Info } from "@hitachivantara/uikit-react-icons";
 
-import {
-  HvButton,
-  HvEmptyState,
-  HvGrid,
-  HvMultiButton,
-  HvTypography,
-} from "@core/components";
-import { withTooltip } from "@core/hocs";
+import { HvButton } from "@core/components/Button";
+import { HvEmptyState } from "@core/components/EmptyState";
+import { HvGrid } from "@core/components/Grid";
+import { HvMultiButton } from "@core/components/MultiButton";
+import { HvTypography } from "@core/components/Typography";
+import { withTooltip } from "@core/hocs/withTooltip";
+import { ExtractNames } from "@core/utils/classes";
 
 import { Rule } from "../Rule";
 import { QueryBuilderContext } from "../Context";
-import { HvQueryBuilderClasses } from "../QueryBuilder";
 import { useClasses } from "../QueryBuilder.styles";
 
 export interface RuleGroupProps {
@@ -21,7 +19,7 @@ export interface RuleGroupProps {
    * Override or extend the styles applied to the component.
    * See CSS API tab for more details.
    */
-  classes?: HvQueryBuilderClasses;
+  classes?: ExtractNames<typeof useClasses>;
   id?: number;
   level?: number;
   combinator?: string;

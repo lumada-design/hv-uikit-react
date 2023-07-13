@@ -10,7 +10,8 @@ import {
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvGrid, HvListValue } from "@core/components";
 import { useEffect, useMemo, useState } from "react";
-import { HvDropdown, HvDropdownProps, HvDropdownStatus } from "./Dropdown";
+import { HvDropdown, HvDropdownProps } from "./Dropdown";
+import { HvDropdownStatus } from "./types";
 
 export default {
   title: "Components/Dropdown",

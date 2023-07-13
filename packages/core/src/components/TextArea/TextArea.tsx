@@ -1,8 +1,5 @@
-import { useControlled, useUniqueId } from "@core/hooks";
-import validationStates, {
-  isInvalid,
-} from "@core/components/Forms/FormElement/validationStates";
 import { clsx } from "clsx";
+
 import {
   useCallback,
   useRef,
@@ -11,10 +8,18 @@ import {
   useEffect,
   forwardRef,
 } from "react";
+
 import { useForkRef } from "@mui/material";
-import { setId } from "@core/utils";
+
 import isNil from "lodash/isNil";
-import { HvValidationMessages } from "@core/types";
+
+import { setId } from "@core/utils/setId";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useControlled } from "@core/hooks/useControlled";
+import validationStates, {
+  isInvalid,
+} from "@core/components/Forms/FormElement/validationStates";
+import { HvValidationMessages } from "@core/types/forms";
 import {
   computeValidationMessage,
   computeValidationState,
@@ -23,7 +28,10 @@ import {
   HvInputValidity,
   validateInput,
   validationTypes,
-} from "../BaseInput/validations";
+} from "@core/components/BaseInput/validations";
+import { HvBaseInputProps } from "@core/components/BaseInput";
+import { HvCharCounterProps, HvFormStatus } from "@core/components/Forms";
+
 import {
   StyledBaseInput,
   StyledCharCounter,
@@ -33,8 +41,6 @@ import {
   StyledLabelContainer,
   StyledWarningText,
 } from "./TextArea.styles";
-import { HvBaseInputProps } from "../BaseInput";
-import { HvCharCounterProps, HvFormStatus } from "../Forms";
 import textAreaClasses, { HvTextAreaClasses } from "./textAreaClasses";
 
 export interface HvTextAreaProps

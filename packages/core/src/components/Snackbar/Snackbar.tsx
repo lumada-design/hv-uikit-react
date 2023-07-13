@@ -5,22 +5,26 @@ import {
   SnackbarProps as MuiSnackbarProps,
 } from "@mui/material/Snackbar";
 import { Snackbar as MuiSnackbar } from "@mui/material";
-import { HvBaseProps } from "@core/types";
+
 import capitalize from "lodash/capitalize";
+
 import { SyntheticEvent } from "react";
-import { ExtractNames, setId } from "@core/utils";
-import { HvActionGeneric } from "@core/components";
+
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+import { HvActionGeneric } from "@core/components/ActionsGeneric";
+
 import {
   HvSnackbarContentProps,
   HvSnackbarContent,
 } from "./SnackbarContentWrapper";
 import { staticClasses, useClasses } from "./Snackbar.styles";
+import { HvSnackbarVariant } from "./types";
 
 export { staticClasses as snackbarClasses };
 
 export type HvSnackbarClasses = ExtractNames<typeof useClasses>;
-
-export type HvSnackbarVariant = "default" | "success" | "warning" | "error";
 
 export interface HvSnackbarProps
   extends Omit<MuiSnackbarProps, "action" | "classes">,

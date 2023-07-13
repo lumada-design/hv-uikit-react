@@ -1,45 +1,99 @@
-import {
-  useCallback,
-  useMemo,
-  useContext,
-  useEffect,
-  useState,
-  ComponentProps,
-} from "react";
+import { useCallback, useMemo, useContext, useEffect, useState } from "react";
+
 import { clsx } from "clsx";
+
 import uniqueId from "lodash/uniqueId";
-import { setId, wrapperTooltip } from "@core/utils";
-import { useControlled } from "@core/hooks";
-import { HvBaseProps } from "@core/types";
+
+import { wrapperTooltip } from "@core/utils/wrapperTooltip";
+import { setId } from "@core/utils/setId";
+import { useControlled } from "@core/hooks/useControlled";
+import { HvBaseProps } from "@core/types/generic";
+
 import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
+  NavigationMode,
 } from "../TreeView";
 import verticalNavigationTreeClasses, {
   HvVerticalNavigationTreeClasses,
 } from "./navigationClasses";
 import { StyledNav } from "./Navigation.styles";
-import { HvVerticalNavigationSlider } from "..";
-import { VerticalNavigationContext } from "../VerticalNavigationContext";
-import { HvVerticalNavigationPopup } from "../NavigationPopup/NavigationPopup";
+import { HvVerticalNavigationSlider } from "../NavigationSlider";
+import {
+  VerticalNavigationContext,
+  NavigationData,
+} from "../VerticalNavigationContext";
 import { getParentItemById } from "../NavigationSlider/utils/NavigationSlider.utils";
+import { NavigationPopupContainer } from "../NavigationPopup/NavigationPopupContainer";
 
-export type NavigationData<T extends React.ElementType = "a"> =
-  ComponentProps<T> &
-    Record<string, any> & {
-      /** The id to be applied to the root element. */
-      id: string;
-      /** The label to be rendered on the menu item. */
-      label: string;
-      /** The icon to be rendered. */
-      icon?: React.ReactNode;
-      /** The Data children subset. */
-      data?: NavigationData<T>[];
-      /** Whether the item is disabled and not interactive. */
-      disabled?: boolean;
-      /** Whether the item has a selected state. */
-      selectable?: boolean;
-    };
+export interface HvVerticalNavigationTreeProps
+  extends HvBaseProps<HTMLDivElement, "onChange"> {
+  /**
+   * Id to be applied to the root node.
+   */
+  id?: string;
+  /**
+   * Class names to be applied.
+   */
+  className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied.
+   */
+  classes?: HvVerticalNavigationTreeClasses;
+  /**
+   * Modus operandi (role) of the widget instance.
+   */
+  mode?: NavigationMode;
+  /**
+   * Can non-leaf nodes be collapsed / expanded.
+   */
+  collapsible?: boolean;
+  /**
+   * The ID of the selected page.
+   */
+  selected?: string;
+  /**
+   * When uncontrolled, defines the initial selected page ID.
+   */
+  defaultSelected?: string;
+  /**
+   * Callback fired when a navigation item is selected.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {object} page The data of the selected page.
+   */
+  onChange?: (event, page) => void;
+  /**
+   * Expanded nodes' ids.
+   */
+  expanded?: string[];
+  /**
+   * When uncontrolled, defines the initial expanded nodes' ids.
+   *
+   * It also supports `true` for starting with all nodes expanded.
+   * With `false` all nodes will be collapsed.
+   *
+   * By default it expands the needed nodes to display the current selection, if any.
+   */
+  defaultExpanded?: string[] | boolean;
+  /**
+   * Callback fired when tree items are expanded/collapsed.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {array} nodeIds The ids of the expanded nodes (old and new).
+   */
+  onToggle?: (event, nodeIds) => void;
+  /**
+   * An array containing the data for each menu item.
+   *
+   * id - the id to be applied to the root element.
+   * label - the label to be rendered on the menu item.
+   * data - sub-menu items
+   * href - the url used for navigation.
+   * target - the behavior when opening an url.
+   */
+  data?: NavigationData[];
+}
 
 const createListHierarchy = (
   items,
@@ -315,6 +369,16 @@ export const HvVerticalNavigationTree = ({
     }
   };
 
+  const handleNavigationPopupMouseLeave = () => {
+    if (!navigationPopup?.fixedMode) {
+      handleNavigationPopupClose();
+    }
+  };
+
+  const handleNavigationPopupChange = (event, selectedItem) => {
+    handleChange(event, selectedItem.id, selectedItem);
+  };
+
   return (
     <StyledNav
       id={id}
@@ -349,20 +413,26 @@ export const HvVerticalNavigationTree = ({
           onToggle={handleToggle}
         >
           {useIcons && !isOpen && navigationPopup && (
-            <HvVerticalNavigationPopup
-              id={setId(id, "navigation-popup")}
-              key={navigationPopup.uniqueKey}
+            <NavigationPopupContainer
               anchorEl={navigationPopup.anchorEl}
-              selected={selected}
-              fixedMode={navigationPopup.fixedMode}
-              data={navigationPopup.data}
               onClose={handleNavigationPopupClose}
-              onChange={handleChange}
+              key={navigationPopup.uniqueKey}
               className={clsx(
                 verticalNavigationTreeClasses.navigationPopup,
                 classes?.navigationPopup
               )}
-            />
+            >
+              <HvVerticalNavigationTree
+                className={clsx(verticalNavigationTreeClasses.popup)}
+                id={setId(id, "navigation-popup-tree")}
+                collapsible
+                defaultExpanded
+                selected={selected}
+                data={navigationPopup.data}
+                onChange={handleNavigationPopupChange}
+                onMouseLeave={handleNavigationPopupMouseLeave}
+              />
+            </NavigationPopupContainer>
           )}
           {children}
         </HvVerticalNavigationTreeView>
@@ -370,74 +440,3 @@ export const HvVerticalNavigationTree = ({
     </StyledNav>
   );
 };
-
-export interface HvVerticalNavigationTreeProps
-  extends HvBaseProps<HTMLDivElement, "onChange"> {
-  /**
-   * Id to be applied to the root node.
-   */
-  id?: string;
-  /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied.
-   */
-  classes?: HvVerticalNavigationTreeClasses;
-  /**
-   * Modus operandi (role) of the widget instance.
-   */
-  mode?: NavigationMode;
-  /**
-   * Can non-leaf nodes be collapsed / expanded.
-   */
-  collapsible?: boolean;
-  /**
-   * The ID of the selected page.
-   */
-  selected?: string;
-  /**
-   * When uncontrolled, defines the initial selected page ID.
-   */
-  defaultSelected?: string;
-  /**
-   * Callback fired when a navigation item is selected.
-   *
-   * @param {object} event The event source of the callback.
-   * @param {object} page The data of the selected page.
-   */
-  onChange?: (event, page) => void;
-  /**
-   * Expanded nodes' ids.
-   */
-  expanded?: string[];
-  /**
-   * When uncontrolled, defines the initial expanded nodes' ids.
-   *
-   * It also supports `true` for starting with all nodes expanded.
-   * With `false` all nodes will be collapsed.
-   *
-   * By default it expands the needed nodes to display the current selection, if any.
-   */
-  defaultExpanded?: string[] | boolean;
-  /**
-   * Callback fired when tree items are expanded/collapsed.
-   *
-   * @param {object} event The event source of the callback.
-   * @param {array} nodeIds The ids of the expanded nodes (old and new).
-   */
-  onToggle?: (event, nodeIds) => void;
-  /**
-   * An array containing the data for each menu item.
-   *
-   * id - the id to be applied to the root element.
-   * label - the label to be rendered on the menu item.
-   * data - sub-menu items
-   * href - the url used for navigation.
-   * target - the behavior when opening an url.
-   */
-  data?: NavigationData[];
-}
-
-export type NavigationMode = "treeview" | "navigation" | "slider";

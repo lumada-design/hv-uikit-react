@@ -5,10 +5,9 @@ import {
   Info,
   IconBaseProps,
 } from "@hitachivantara/uikit-react-icons";
-import { HvDialogTitleVariant } from "..";
 
-const iconVariant = (
-  variant: HvDialogTitleVariant,
+export const iconVariant = (
+  variant: "success" | "warning" | "error" | "info" | "default",
   color?: IconBaseProps["color"],
   semantic?: true
 ) => {
@@ -25,5 +24,3 @@ const iconVariant = (
       return null;
   }
 };
-
-export default iconVariant;

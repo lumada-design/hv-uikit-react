@@ -39,9 +39,9 @@ import {
   useHvRowSelection,
   useHvSortBy,
   useHvTableSticky,
-  useHvBulkActions,
   HvTableColumnConfig,
   HvCellProps,
+  useHvBulkActions,
 } from "../../hooks";
 
 const UseHvHooks = () => {

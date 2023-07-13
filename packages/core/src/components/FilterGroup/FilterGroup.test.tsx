@@ -2,11 +2,8 @@ import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { useState } from "react";
-import {
-  HvFilterGroup,
-  HvFilterGroupProps,
-  HvFilterGroupValue,
-} from "./FilterGroup";
+import { HvFilterGroup, HvFilterGroupProps } from "./FilterGroup";
+import { HvFilterGroupValue } from "./types";
 
 const filters: HvFilterGroupProps["filters"] = [
   {

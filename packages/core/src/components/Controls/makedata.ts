@@ -1,5 +1,6 @@
 import range from "lodash/range";
-import { HvTableColumnConfig } from "../Table/hooks/useTable";
+
+import { HvTableColumnConfig } from "@core/components/Table";
 
 export interface NewEntry {
   id: string;

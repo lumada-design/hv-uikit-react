@@ -17,7 +17,7 @@ export const normalizeProgressBar = (value: number, max: number) => {
   return max > 0 ? Math.floor((value * 100) / max) : 0;
 };
 
-const HvProgressColumnCell = ({
+export const HvProgressColumnCell = ({
   partial,
   total,
   color = "primary",
@@ -36,5 +36,3 @@ const HvProgressColumnCell = ({
     </StyledRoot>
   );
 };
-
-export default HvProgressColumnCell;

@@ -1,4 +1,4 @@
-import { getClasses } from "@core/utils";
+import { getClasses } from "@core/utils/classes";
 
 export interface HvTooltipClasses {
   /** Styles applied to the tooltip root class. */

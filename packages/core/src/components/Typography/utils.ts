@@ -1,4 +1,39 @@
-import { HvTypographyLegacyVariants, HvTypographyVariants } from ".";
+export const typographyVariants = [
+  "display",
+  "title1",
+  "title2",
+  "title3",
+  "title4",
+  "body",
+  "label",
+  "caption1",
+  "caption2",
+] as const;
+
+export type HvTypographyVariants = (typeof typographyVariants)[number];
+
+/** @deprecated */
+export type HvTypographyLegacyVariants =
+  | "5xlTitle"
+  | "4xlTitle"
+  | "3xlTitle"
+  | "xxlTitle"
+  | "xlTitle"
+  | "lTitle"
+  | "mTitle"
+  | "sTitle"
+  | "xsTitle"
+  | "xxsTitle"
+  | "sectionTitle"
+  | "highlightText"
+  | "normalText"
+  | "placeholderText"
+  | "link"
+  | "disabledText"
+  | "selectedNavText"
+  | "vizText"
+  | "vizTextDisabled"
+  | "xsInlineLink";
 
 type Variant = HvTypographyVariants | HvTypographyLegacyVariants;
 

@@ -1,5 +1,6 @@
-import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvDrawer", {
   root: {},

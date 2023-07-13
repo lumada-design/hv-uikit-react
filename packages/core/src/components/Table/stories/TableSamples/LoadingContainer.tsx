@@ -1,9 +1,14 @@
-import { hexToRgbA, HvLoading } from "@core/index";
 import { useEffect, useRef, useState } from "react";
+
 import clsx from "clsx";
+
 import { css } from "@emotion/css";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "@core/hooks";
+
+import { hexToRgbA } from "@core/utils/hexToRgbA";
+import { HvLoading } from "@core/components/Loading";
+import { useTheme } from "@core/hooks/useTheme";
 
 const styles = {
   loading: css({

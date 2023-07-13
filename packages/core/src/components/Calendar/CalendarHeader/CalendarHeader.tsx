@@ -1,19 +1,26 @@
 import { useState, useEffect, useContext } from "react";
+
+import { Info } from "@hitachivantara/uikit-react-icons";
+
 import dayjs from "dayjs";
 import localeData from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+
 import { clsx } from "clsx";
+
 import isNil from "lodash/isNil";
+
 import {
   HvFormElementContext,
   HvFormElementValueContext,
   HvFormElementDescriptorsContext,
-} from "@core/components";
-import { isKey, setId } from "@core/utils";
-import { Info } from "@hitachivantara/uikit-react-icons";
+} from "@core/components/Forms";
+import { isKey } from "@core/utils/keyboardUtils";
+import { setId } from "@core/utils/setId";
+
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
-import { DateRangeProp } from "../Calendar";
+import { DateRangeProp } from "../types";
 import calendarHeaderClasses, {
   HvCalendarHeaderClasses,
 } from "./calendarHeaderClasses";

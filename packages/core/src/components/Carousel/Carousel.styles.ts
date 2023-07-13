@@ -1,5 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
-import { createClasses } from "@core/utils";
+
+import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvCarousel", {
   /** Styles applied to the component root class. */

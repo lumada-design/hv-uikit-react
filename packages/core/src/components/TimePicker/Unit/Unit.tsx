@@ -1,10 +1,16 @@
 import { KeyboardEvent } from "react";
+
 import { DateFieldState, DateSegment } from "@react-stately/datepicker";
+
 import {
   DropDownXS as SubtractTimeIcon,
   DropUpXS as AddTimeIcon,
 } from "@hitachivantara/uikit-react-icons";
-import { HvInput, HvInputProps, HvToggleButton, theme } from "../../..";
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { HvInput, HvInputProps } from "@core/components/Input";
+import { HvToggleButton } from "@core/components/ToggleButton";
+
 import { useClasses } from "./Unit.styles";
 
 interface UnitProps {

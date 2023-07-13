@@ -1,8 +1,12 @@
 import { clsx } from "clsx";
+
 import styled from "@emotion/styled";
-import { HvBaseProps } from "@core/types";
+
 import { forwardRef, useContext, useMemo } from "react";
+
+import { HvBaseProps } from "@core/types/generic";
 import { transientOptions } from "@core/utils/transientOptions";
+
 import tableHeadClasses, { HvTableHeadClasses } from "./tableHeadClasses";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";

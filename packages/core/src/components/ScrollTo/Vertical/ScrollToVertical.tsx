@@ -1,8 +1,13 @@
-import { HvBaseProps } from "@core/types";
-import { useTheme, useUniqueId } from "@core/hooks";
-import { ExtractNames, isKey, setId } from "@core/utils";
 import { useMemo } from "react";
-import fade from "@core/utils/hexToRgbA";
+
+import { HvBaseProps } from "@core/types/generic";
+import { useTheme } from "@core/hooks/useTheme";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { ExtractNames } from "@core/utils/classes";
+import { isKey } from "@core/utils/keyboardUtils";
+import { setId } from "@core/utils/setId";
+import { hexToRgbA } from "@core/utils/hexToRgbA";
+
 import {
   staticClasses,
   useClasses,
@@ -11,20 +16,15 @@ import {
 import { HvVerticalScrollListItem } from "./VerticalScrollListItem";
 import { useScrollTo } from "../useScrollTo";
 import { withTooltip } from "../withTooltip";
-import { HvScrollToTooltipPositions } from "../types";
+import {
+  HvScrollToTooltipPositions,
+  HvScrollToVerticalOption,
+  HvScrollToVerticalPositions,
+} from "../types";
 
 export { staticClasses as scrollToVerticalClasses };
 
 export type HvScrollToVerticalClasses = ExtractNames<typeof useClasses>;
-
-export interface HvScrollToVerticalOption {
-  key?: string;
-  label: string;
-  value: string;
-  offset?: number;
-}
-
-export type HvScrollToVerticalPositions = "absolute" | "fixed" | "relative";
 
 export interface HvScrollToVerticalProps
   extends HvBaseProps<HTMLOListElement, "onChange" | "onClick"> {
@@ -150,7 +150,7 @@ export const HvScrollToVertical = ({
   });
 
   const positionOffset = calculateOffset(options.length);
-  const backgroundColor = fade(
+  const backgroundColor = hexToRgbA(
     activeTheme?.colors.modes[selectedMode].atmo2,
     activeTheme?.scrollTo.backgroundColorOpacity
   );

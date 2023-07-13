@@ -1,26 +1,36 @@
 import { useState, useEffect, useRef, ReactNode } from "react";
+
 import styled from "@emotion/styled";
+
 import { Calendar } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { useControlled } from "@core/hooks/useControlled";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useLabels } from "@core/hooks/useLabels";
+import { useTheme } from "@core/hooks/useTheme";
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+import { useSavedState } from "@core/utils/useSavedState";
 import {
-  HvCalendar,
-  HvInfoMessage,
-  HvWarningText,
-  HvCalendarProps,
-  HvActionBar,
-  HvButton,
-  HvFormElement,
-  HvTypography,
-  HvBaseDropdown,
+  isInvalid,
   HvLabel,
   HvFormStatus,
+  HvWarningText,
+  HvFormElement,
+  HvInfoMessage,
+} from "@core/components/Forms";
+import { isDate } from "@core/components/Calendar/utils";
+import { HvCalendar, HvCalendarProps } from "@core/components/Calendar";
+import {
+  HvBaseDropdown,
   HvBaseDropdownProps,
-} from "@core/components";
-import { useControlled, useLabels, useTheme, useUniqueId } from "@core/hooks";
-import { HvBaseProps } from "@core/types";
-import { ExtractNames, setId, useSavedState } from "@core/utils";
-import { isInvalid } from "../Forms/FormElement/validationStates";
-import { isDate } from "../Calendar/utils";
+} from "@core/components/BaseDropdown";
+import { HvTypography } from "@core/components/Typography";
+import { HvActionBar } from "@core/components/ActionBar";
+import { HvButton } from "@core/components/Button";
+
 import { getDateLabel } from "./utils";
 import useVisibleDate from "./useVisibleDate";
 import { staticClasses, useClasses } from "./DatePicker.styles";

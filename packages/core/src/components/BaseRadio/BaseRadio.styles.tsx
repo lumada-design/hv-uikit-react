@@ -2,9 +2,12 @@ import {
   Radio as MuiRadio,
   radioClasses as MuiRadioClasses,
 } from "@mui/material";
+
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "@core/utils";
+
+import { outlineStyles } from "@core/utils/focusUtils";
 import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledRadio = styled(

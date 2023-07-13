@@ -1,9 +1,15 @@
 import React, { useRef, useState } from "react";
+
 import uniqueId from "lodash/uniqueId";
+
 import accept from "attr-accept";
+
 import { clsx } from "clsx";
-import { isKey, setId } from "@core/utils";
-import { useUniqueId } from "@core/hooks";
+
+import { isKey } from "@core/utils/keyboardUtils";
+import { setId } from "@core/utils/setId";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+
 import { convertUnits } from "../utils";
 import {
   StyledDragText,

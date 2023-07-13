@@ -1,25 +1,27 @@
 import { useCallback } from "react";
+
 import Slide from "@mui/material/Slide";
+
 import Snackbar, {
   SnackbarProps as MuiSnackbarProps,
   SnackbarOrigin,
 } from "@mui/material/Snackbar";
-import { HvActionGeneric } from "@core/components";
-import { HvBaseProps } from "@core/types";
-import { ExtractNames, setId } from "@core/utils";
+
+import { HvActionGeneric } from "@core/components/ActionsGeneric";
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+
 import { useClasses, staticClasses } from "./Banner.styles";
 import {
   HvBannerContent,
   HvBannerContentProps,
 } from "./BannerContent/BannerContent";
+import { HvBannerActionPosition, HvBannerVariant } from "./types";
 
 export { staticClasses as bannerClasses };
 
 export type HvBannerClasses = ExtractNames<typeof useClasses>;
-
-export type HvBannerVariant = "success" | "warning" | "error" | "default";
-
-export type HvBannerActionPosition = "auto" | "inline" | "bottom-right";
 
 export interface HvBannerProps
   extends Omit<MuiSnackbarProps, "anchorOrigin" | "classes" | "onClose">,

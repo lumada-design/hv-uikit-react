@@ -1,8 +1,10 @@
-import { HvBaseProps } from "@core/types";
 import MuiCardContent, {
   CardContentProps as MuiCardContentProps,
 } from "@mui/material/CardContent";
-import { ExtractNames } from "@core/utils";
+
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./Content.styles";
 
 export { staticClasses as cardContentClasses };

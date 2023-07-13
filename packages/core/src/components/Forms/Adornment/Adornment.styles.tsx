@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import { outlineStyles } from "@core/utils";
+
+import { outlineStyles } from "@core/utils/focusUtils";
 import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledRoot = styled(

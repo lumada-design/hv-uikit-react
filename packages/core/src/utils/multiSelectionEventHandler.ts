@@ -18,7 +18,7 @@ const cycleThroughSelection = (
   return newValue;
 };
 
-const multiSelectionEventHandler = (
+export const multiSelectionEventHandler = (
   evt,
   index,
   selectionAnchor,
@@ -69,5 +69,3 @@ const multiSelectionEventHandler = (
 
   return newValue;
 };
-
-export default multiSelectionEventHandler;

@@ -1,4 +1,5 @@
-import { HvBaseSwitch, HvBaseSwitchProps } from "@core/components";
+import { HvBaseSwitch, HvBaseSwitchProps } from "@core/components/BaseSwitch";
+
 import { StyledYes, StyledNo } from "./SwitchColumnCell.styles";
 
 export interface HvSwitchColumnCellProp {
@@ -16,7 +17,7 @@ export interface HvSwitchColumnCellProp {
   switchProps?: HvBaseSwitchProps;
 }
 
-const HvSwitchColumnCell = ({
+export const HvSwitchColumnCell = ({
   checked,
   value,
   switchLabel,
@@ -45,5 +46,3 @@ const HvSwitchColumnCell = ({
     </>
   );
 };
-
-export default HvSwitchColumnCell;

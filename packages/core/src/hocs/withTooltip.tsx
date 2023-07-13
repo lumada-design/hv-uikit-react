@@ -1,11 +1,12 @@
 import { useState } from "react";
+
+import { HvTypography } from "@core/components/Typography";
 import {
-  HvTypography,
   HvTooltip,
   HvTooltipPlacementType,
   HvTooltipProps,
-} from "@core/components";
-import { HvBaseProps } from "@core/types";
+} from "@core/components/Tooltip";
+import { HvBaseProps } from "@core/types/generic";
 
 const styles: { truncate: React.CSSProperties } = {
   truncate: {
@@ -15,7 +16,7 @@ const styles: { truncate: React.CSSProperties } = {
   },
 };
 
-const withTooltip =
+export const withTooltip =
   (
     Component: React.FunctionComponent,
     // eslint-disable-next-line @typescript-eslint/default-param-last
@@ -65,5 +66,3 @@ const withTooltip =
       </HvTooltip>
     );
   };
-
-export default withTooltip;

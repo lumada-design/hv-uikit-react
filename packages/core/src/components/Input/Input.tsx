@@ -8,10 +8,12 @@ import React, {
   useRef,
   useState,
 } from "react";
+
 import {
   InputBaseComponentProps as MuiInputBaseComponentProps,
   useForkRef,
 } from "@mui/material";
+
 import {
   CloseXS,
   PreviewOff,
@@ -19,19 +21,20 @@ import {
   Search,
   Success,
 } from "@hitachivantara/uikit-react-icons";
-import { ExtractNames, isBrowser, isKey, setId } from "@core/utils";
+
+import { ExtractNames } from "@core/utils/classes";
+import { isBrowser } from "@core/utils/browser";
+import { isKey } from "@core/utils/keyboardUtils";
+import { setId } from "@core/utils/setId";
 import {
-  HvBaseProps,
-  HvExtraProps,
   HvInputLabels,
   HvInputSuggestion,
   HvValidationMessages,
-} from "@core/types";
+} from "@core/types/forms";
+import { HvBaseProps, HvExtraProps } from "@core/types/generic";
 import {
   HvAdornment,
   HvAdornmentProps,
-  HvBaseInput,
-  HvBaseInputProps,
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
@@ -40,21 +43,12 @@ import {
   HvSuggestion,
   HvSuggestions,
   HvSuggestionsProps,
-  HvTooltip,
-  HvTypography,
   HvWarningText,
-} from "@core/components";
-import {
-  useControlled,
-  useIsMounted,
-  useLabels,
-  useUniqueId,
-} from "@core/hooks";
-import { staticClasses, useClasses } from "./Input.styles";
-import validationStates, {
   isValid,
   isInvalid,
-} from "../Forms/FormElement/validationStates";
+} from "@core/components/Forms";
+import validationStates from "@core/components/Forms/FormElement/validationStates";
+import { HvBaseInput, HvBaseInputProps } from "@core/components/BaseInput";
 import {
   DEFAULT_ERROR_MESSAGES,
   computeValidationType,
@@ -63,7 +57,15 @@ import {
   computeValidationState,
   computeValidationMessage,
   HvInputValidity,
-} from "../BaseInput/validations";
+} from "@core/components/BaseInput/validations";
+import { HvTypography } from "@core/components/Typography";
+import { HvTooltip } from "@core/components/Tooltip";
+import { useControlled } from "@core/hooks/useControlled";
+import { useIsMounted } from "@core/hooks/useIsMounted";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useLabels } from "@core/hooks/useLabels";
+
+import { staticClasses, useClasses } from "./Input.styles";
 
 export { staticClasses as inputClasses };
 

@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
+
 import { clsx } from "clsx";
+
 import { Remove } from "@hitachivantara/uikit-react-icons";
-import { setId } from "@core/utils";
-import { HvFormStatus, HvInputProps } from "@core/components";
-import { HvBaseProps } from "@core/types";
+
+import { setId } from "@core/utils/setId";
+import { HvFormStatus } from "@core/components/Forms";
+import { HvInputProps } from "@core/components/Input";
+import { HvBaseProps } from "@core/types/generic";
+
 import { knobsValuesToString, stringValuesToKnobs } from "../utils";
 import {
   StyledInput,

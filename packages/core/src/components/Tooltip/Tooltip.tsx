@@ -3,9 +3,13 @@ import {
   Tooltip as MuiTooltip,
   TooltipProps as MuiTooltipProps,
 } from "@mui/material";
+
 import { forwardRef, ReactElement } from "react";
+
 import { clsx } from "clsx";
-import { useTheme } from "@core/hooks";
+
+import { useTheme } from "@core/hooks/useTheme";
+
 import { popperSx } from "./Tooltip.styles";
 import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
 

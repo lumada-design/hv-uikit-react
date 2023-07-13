@@ -1,13 +1,16 @@
 import { useState } from "react";
+
 import {
   HvBaseDropdown,
-  HvSelectionList,
-  HvListItem,
-  HvPanel,
-  HvSelectionListProps,
   HvBaseDropdownProps,
-  HvListItemProps,
-} from "..";
+} from "@core/components/BaseDropdown";
+import {
+  HvSelectionList,
+  HvSelectionListProps,
+} from "@core/components/SelectionList";
+import { HvPanel } from "@core/components/Panel";
+import { HvListItem, HvListItemProps } from "@core/components/ListContainer";
+
 import { useClasses } from "./Select.styles";
 
 export const Option = ({ ...props }: Partial<HvListItemProps>) => (

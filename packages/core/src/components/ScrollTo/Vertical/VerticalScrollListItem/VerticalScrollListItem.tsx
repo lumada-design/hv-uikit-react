@@ -1,8 +1,11 @@
-import { HvBaseProps } from "@core/types";
-import { HvTypographyProps } from "@core/components";
-import { ExtractNames, setId } from "@core/utils";
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
-import { useTheme } from "@core/hooks";
+
+import { HvBaseProps } from "@core/types/generic";
+import { HvTypographyProps } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+import { useTheme } from "@core/hooks/useTheme";
+
 import { staticClasses, useClasses } from "./VerticalScrollListItem.styles";
 
 export { staticClasses as verticalScrollListItemClasses };

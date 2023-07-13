@@ -9,7 +9,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 
-import { HvWizardContext, HvWizardTabs } from "..";
+import { HvWizardContext, HvWizardTabs } from "../WizardContext";
 import { staticClasses, useClasses } from "./WizardActions.styles";
 
 export { staticClasses as wizardActionsClasses };

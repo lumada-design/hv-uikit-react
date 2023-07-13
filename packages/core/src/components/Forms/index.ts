@@ -4,3 +4,4 @@ export * from "./FormElement";
 export * from "./InfoMessage";
 export * from "./Label";
 export * from "./WarningText";
+export * from "./Suggestions";

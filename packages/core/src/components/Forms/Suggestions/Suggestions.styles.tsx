@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
+
 import { Popper } from "@mui/base";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvSelectionList } from "@core/components";
+
+import { HvSelectionList } from "@core/components/SelectionList";
 
 export const StyledRoot = styled("div")({
   position: "relative",

@@ -1,39 +1,17 @@
 import { useMemo } from "react";
 
-import { HvBaseProps } from "@core/types";
-import { ExtractNames } from "@core/utils";
-import { HvListContainer, HvTypography } from "@core/components";
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { HvListContainer } from "@core/components/ListContainer";
+import { HvTypography } from "@core/components/Typography";
 
-import { HvAppSwitcherAction } from "./Action";
+import { HvAppSwitcherAction, HvAppSwitcherActionApplication } from "./Action";
 import { useClasses, staticClasses } from "./AppSwitcher.styles";
 import TitleWithTooltip from "./TitleWithTooltip";
 
 export { staticClasses as appSwitcherClasses };
 
 export type HvAppSwitcherClasses = ExtractNames<typeof useClasses>;
-
-export interface HvAppSwitcherActionApplication {
-  /** Id of the application. */
-  id?: string;
-  /** Name of the application, this is the value that will be displayed on the component. */
-  name: string;
-  /** URL with the icon location to be used to represent the application. iconUrl will only be used if no iconElement is provided. */
-  iconUrl?: string;
-  /** Element to be added as the icon representing the application. The iconElement will be the primary option to be displayed. */
-  iconElement?: React.ReactElement;
-  /** Small description of the application. */
-  description?: string;
-  /**  URL where the application is accessible. */
-  url?: string;
-  /** Defines if the application should be opened in the same tab or in a new one. */
-  target?: "_top" | "_blank";
-  /** If true, the item will be disabled. */
-  disabled?: boolean;
-  /** True when the application is selected, false otherwise. */
-  isSelected?: boolean;
-  /** The color of the application. */
-  color?: string;
-}
 
 export interface HvAppSwitcherProps extends HvBaseProps {
   /** Number of columns to render. One, two, or whatever fits the component's width. */

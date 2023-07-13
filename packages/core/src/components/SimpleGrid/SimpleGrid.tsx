@@ -1,14 +1,7 @@
-import { HvBaseProps } from "@core/types";
+import { HvBaseProps } from "@core/types/generic";
+
 import { StyledContainer } from "./SimpleGrid.styles";
-
-export type Spacing = "sm" | "md" | "lg" | "xl";
-
-export interface Breakpoint {
-  cols?: number;
-  maxWidth?: number;
-  minWidth?: number;
-  spacing?: Spacing;
-}
+import { Breakpoint, Spacing } from "./types";
 
 export interface HvSimpleGridProps extends HvBaseProps {
   /**

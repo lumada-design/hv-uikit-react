@@ -1,9 +1,13 @@
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "@core/utils/transientOptions";
-import { HvFocus } from "@core/components";
-import { outlineStyles } from "@core/utils";
+
 import { CSSProperties } from "react";
+
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { transientOptions } from "@core/utils/transientOptions";
+import { HvFocus } from "@core/components/Focus";
+import { outlineStyles } from "@core/utils/focusUtils";
+
 import listItemClasses from "./listItemClasses";
 
 export const StyledListItem = styled(

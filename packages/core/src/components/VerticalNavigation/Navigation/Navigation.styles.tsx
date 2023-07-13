@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import navigationClasses from "./navigationClasses";
 
 export const StyledNav = styled("nav")({

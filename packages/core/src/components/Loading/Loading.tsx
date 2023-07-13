@@ -1,7 +1,11 @@
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { clsx } from "clsx";
+
 import range from "lodash/range";
-import { HvBaseProps } from "@core/types";
+
+import { HvBaseProps } from "@core/types/generic";
+
 import {
   StyledBar,
   StyledBarContainer,

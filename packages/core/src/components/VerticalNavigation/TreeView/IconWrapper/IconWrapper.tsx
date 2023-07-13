@@ -1,8 +1,10 @@
 import { Forwards } from "@hitachivantara/uikit-react-icons";
+
 import { useContext } from "react";
 
-import { HvAvatar, VerticalNavigationContext } from "@core/components";
+import { HvAvatar } from "@core/components/Avatar";
 
+import { VerticalNavigationContext } from "../../VerticalNavigationContext";
 import { TooltipWrapper } from "../TooltipWrapper";
 import { SpacerDiv, StyledIconsContainer } from "./IconWrapper.styles";
 
