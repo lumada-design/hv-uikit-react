@@ -1,6 +1,6 @@
 import { HvBaseProps } from "@core/types";
 import { useTheme, useUniqueId } from "@core/hooks";
-import { ExtractNames, isKeypress, keyboardCodes, setId } from "@core/utils";
+import { ExtractNames, isKey, setId } from "@core/utils";
 import { useCallback, useMemo } from "react";
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -12,8 +12,6 @@ import { withTooltip } from "../withTooltip";
 import { HvHorizontalScrollListItem } from "./HorizontalScrollListItem";
 import { useScrollTo } from "../useScrollTo";
 import { staticClasses, useClasses } from "./ScrollToHorizontal.styles";
-
-const { Enter } = keyboardCodes;
 
 export { staticClasses as scrollToHorizontalClasses };
 
@@ -160,7 +158,7 @@ export const HvScrollToHorizontal = ({
           onClick?.(event, index);
         }}
         onKeyDown={(event) => {
-          if (isKeypress(event, Enter) === true) {
+          if (isKey(event, "Enter") === true) {
             handleSelection(event, option.value, index);
             onEnter?.(event, index);
           }

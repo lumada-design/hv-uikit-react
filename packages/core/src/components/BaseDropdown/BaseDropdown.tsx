@@ -15,7 +15,7 @@ import {
 import { theme } from "@hitachivantara/uikit-styles";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { useControlled, useForkRef, useTheme, useUniqueId } from "@core/hooks";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { isKey, isOneOfKeys, setId } from "@core/utils";
 import { getFirstAndLastFocus } from "@core/utils/focusableElementFinder";
 import { HvBaseProps } from "@core/types";
 import { usePopper } from "react-popper";
@@ -35,8 +35,6 @@ import BaseDropdownContext from "./BaseDropdownContext";
 import baseDropdownClasses, {
   HvBaseDropdownClasses,
 } from "./baseDropdownClasses";
-
-const { Tab, Enter, Esc, Space, ArrowDown } = keyboardCodes;
 
 export interface HvBaseDropdownProps
   extends HvBaseProps<HTMLDivElement, "placeholder"> {
@@ -295,19 +293,18 @@ export const HvBaseDropdown = ({
 
   const handleToggle = useCallback(
     (event) => {
-      if (event && !isKeypress(event, Tab)) {
+      if (event && !isKey(event, "Tab")) {
         event.preventDefault();
       }
 
-      // We are checking specifically for false because if "isKeypress" returns true or undefined it should continue
-      const notControlKey = [Tab, Enter, Esc, ArrowDown, Space].every(
-        (key) => isKeypress(event, key) === false
-      );
+      const notControlKey =
+        !!event?.code &&
+        !isOneOfKeys(event, ["Tab", "Enter", "Esc", "ArrowDown", "Space"]);
 
       const ignoredCombinations =
-        (isKeypress(event, Esc) && !isOpen) ||
-        (isKeypress(event, ArrowDown) && isOpen) ||
-        (isKeypress(event, Tab) && !isOpen);
+        (isKey(event, "Esc") && !isOpen) ||
+        (isKey(event, "ArrowDown") && isOpen) ||
+        (isKey(event, "Tab") && !isOpen);
 
       if (disabled || notControlKey || ignoredCombinations) return;
 
@@ -415,10 +412,10 @@ export const HvBaseDropdown = ({
      *  Handle keyboard inside children container.
      */
     const handleContainerKeyDown: KeyboardEventHandler = (event) => {
-      if (isKeypress(event, Esc)) {
+      if (isKey(event, "Esc")) {
         handleToggle(event);
       }
-      if (isKeypress(event, Tab) && !event.shiftKey) {
+      if (isKey(event, "Tab") && !event.shiftKey) {
         const focusList = getFirstAndLastFocus(popperElement);
         if (document.activeElement === focusList?.last) {
           event.preventDefault();

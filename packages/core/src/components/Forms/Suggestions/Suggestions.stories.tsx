@@ -8,10 +8,7 @@ import {
   HvSuggestionsProps,
 } from "@core/components";
 import { useRef, useState } from "react";
-import { isKeypress, keyboardCodes } from "@core/utils";
 import countryList from "../../Input/countries";
-
-const { Esc, Tab } = keyboardCodes;
 
 const meta: Meta<typeof HvSuggestions> = {
   title: "Guides/Forms/Form Element Blocks/Suggestions",
@@ -57,10 +54,10 @@ export const Main: StoryObj<HvSuggestionsProps> = {
     };
 
     const handleSuggestionsKey: HvSuggestionsProps["onKeyDown"] = (evt) => {
-      if (isKeypress(evt, Esc)) {
+      if (evt.code === "Esc") {
         inputRef?.current?.focus();
         setOpen(false);
-      } else if (isKeypress(evt, Tab)) {
+      } else if (evt.code === "Tab") {
         if (evt.shiftKey) {
           setTimeout(() => inputRef?.current?.focus());
         } else {
@@ -135,10 +132,10 @@ export const ServerSideSuggestions: StoryObj<HvSuggestionsProps> = {
     };
 
     const handleSuggestionsKey: HvSuggestionsProps["onKeyDown"] = (evt) => {
-      if (isKeypress(evt, Esc)) {
+      if (evt.code === "Esc") {
         inputRef?.current?.focus();
         setOpen(false);
-      } else if (isKeypress(evt, Tab)) {
+      } else if (evt.code === "Tab") {
         if (evt.shiftKey) {
           setTimeout(() => inputRef?.current?.focus());
         } else {
@@ -204,17 +201,17 @@ export const OpenWithDownArrow: StoryObj<HvSuggestionsProps> = {
     };
 
     const handleKey: HvBaseInputProps["onKeyDown"] = (e) => {
-      if (isKeypress(e, keyboardCodes.ArrowDown)) {
+      if (e.code === "ArrowDown") {
         setOpen(true);
         document.getElementById("suggestions-list-item-0")?.focus();
       }
     };
 
     const handleSuggestionsKey: HvSuggestionsProps["onKeyDown"] = (evt) => {
-      if (isKeypress(evt, Esc)) {
+      if (evt.code === "Esc") {
         inputRef?.current?.focus();
         setOpen(false);
-      } else if (isKeypress(evt, Tab)) {
+      } else if (evt.code === "Tab") {
         if (evt.shiftKey) {
           setTimeout(() => inputRef?.current?.focus());
         } else {

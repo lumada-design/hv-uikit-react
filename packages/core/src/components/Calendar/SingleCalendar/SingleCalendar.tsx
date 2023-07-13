@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { clsx } from "clsx";
 import isNil from "lodash/isNil";
-import { setId, keyboardCodes, isKeypress } from "@core/utils";
+import { setId, isKey } from "@core/utils";
 import { ViewMode } from "../enums";
 import { isRange, isDate, getWeekdayNamesList } from "../utils";
 import { generateCalendarModel } from "../model";
@@ -18,8 +18,6 @@ import singleCalendarClasses, {
 import { HvCalendarCell } from "./CalendarCell";
 import { HvCalendarWeekLabel } from "../CalendarWeekLabels";
 import { HvCalendarHeader } from "../CalendarHeader/CalendarHeader";
-
-const { Enter, ArrowLeft, ArrowRight, ArrowUp, ArrowDown } = keyboardCodes;
 
 export const HvSingleCalendar = ({
   classes,
@@ -72,10 +70,10 @@ export const HvSingleCalendar = ({
   };
 
   const getNavChild = (event: KeyboardEvent, siblings, i: number) => {
-    if (isKeypress(event, ArrowLeft)) return siblings[i - 1];
-    if (isKeypress(event, ArrowRight)) return siblings[i + 1];
-    if (isKeypress(event, ArrowUp)) return siblings[i - 7];
-    if (isKeypress(event, ArrowDown)) return siblings[i + 7];
+    if (isKey(event, "ArrowLeft")) return siblings[i - 1];
+    if (isKey(event, "ArrowRight")) return siblings[i + 1];
+    if (isKey(event, "ArrowUp")) return siblings[i - 7];
+    if (isKey(event, "ArrowDown")) return siblings[i + 7];
     return undefined;
   };
 
@@ -93,7 +91,7 @@ export const HvSingleCalendar = ({
         : [];
     const elIndex = el ? siblings.indexOf(el) : 0;
 
-    if (isKeypress(event, Enter)) {
+    if (isKey(event, "Enter")) {
       (el as HTMLElement).focus();
       return;
     }

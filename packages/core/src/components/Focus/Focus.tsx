@@ -2,11 +2,11 @@ import { clsx } from "clsx";
 import isNil from "lodash/isNil";
 import React, { RefObject, useState } from "react";
 import { HvBaseProps } from "@core/types";
-import { keyboardCodes, isBrowser } from "@core/utils";
+import { isBrowser, isKey, isOneOfKeys } from "@core/utils";
 import ConditionalWrapper from "@core/utils/ConditionalWrapper";
 import { css, Global } from "@emotion/react";
 import { StyledFocusWrapper, StyledFalseFocus } from "./Focus.styles";
-import { getFocusableChildren, isKey, isOneOfKeys, setFocusTo } from "./utils";
+import { getFocusableChildren, setFocusTo } from "./utils";
 import focusClasses, { HvFocusClasses } from "./focusClasses";
 
 const focusStyles = css`
@@ -258,31 +258,20 @@ export const HvFocus = ({
     currentFocusIndex,
     jump
   ) => {
-    const {
-      ArrowUp,
-      ArrowDown,
-      Home,
-      End,
-      ArrowLeft,
-      ArrowRight,
-      Enter,
-      SpaceBar,
-    } = keyboardCodes;
-
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
     if (
       !isOneOfKeys(evt, [
-        ArrowUp,
-        ArrowDown,
-        ArrowLeft,
-        ArrowRight,
-        Home,
-        End,
-        SpaceBar,
-        Enter,
+        "ArrowUp",
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End",
+        "Space",
+        "Enter",
       ]) ||
-      (childFocusIsInput && isKey(evt, Enter))
+      (childFocusIsInput && isKey(evt, "Enter"))
     ) {
       // nothing to do
       return;
@@ -290,7 +279,7 @@ export const HvFocus = ({
 
     // we'll do something with the key so prevent default and stop propagation
     // except for Enter and SpaceBar
-    if (!isOneOfKeys(evt, [Enter, SpaceBar])) {
+    if (!isOneOfKeys(evt, ["Enter", "Space"])) {
       evt.preventDefault();
       evt.stopPropagation();
     }
@@ -301,16 +290,16 @@ export const HvFocus = ({
       focusesList.length
     );
 
-    switch (evt.keyCode) {
-      case SpaceBar:
-      case Enter:
+    switch (evt.code) {
+      case "Space":
+      case "Enter":
         if (isBrowser("firefox")) {
           evt.target.click();
         } else {
           evt.currentTarget.click();
         }
         break;
-      case ArrowUp:
+      case "ArrowUp":
         if (!blockedKeys.up) {
           focusAndUpdateIndex(
             focuses.jump || focuses.last,
@@ -319,7 +308,7 @@ export const HvFocus = ({
           );
         }
         break;
-      case ArrowDown:
+      case "ArrowDown":
         if (!blockedKeys.down) {
           focusAndUpdateIndex(
             focuses.fall || focuses.first,
@@ -328,7 +317,7 @@ export const HvFocus = ({
           );
         }
         break;
-      case ArrowLeft:
+      case "ArrowLeft":
         if (!blockedKeys.left) {
           focusAndUpdateIndex(
             focuses.previous || focuses.last,
@@ -337,7 +326,7 @@ export const HvFocus = ({
           );
         }
         break;
-      case ArrowRight:
+      case "ArrowRight":
         if (!blockedKeys.right) {
           focusAndUpdateIndex(
             focuses.next || focuses.first,
@@ -346,10 +335,10 @@ export const HvFocus = ({
           );
         }
         break;
-      case Home:
+      case "Home":
         focusAndUpdateIndex(focuses.first, evt.current, focusesList);
         break;
-      case End:
+      case "End":
         focusAndUpdateIndex(focuses.last, evt.current, focusesList);
         break;
       default:
@@ -357,12 +346,18 @@ export const HvFocus = ({
   };
 
   const onVerticalArrangementHandler = (evt, focuses, focusesList) => {
-    const { ArrowUp, ArrowDown, Home, End, Enter, SpaceBar } = keyboardCodes;
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
     if (
-      !isOneOfKeys(evt, [ArrowUp, ArrowDown, Home, End, SpaceBar, Enter]) ||
-      (childFocusIsInput && isKey(evt, Enter))
+      !isOneOfKeys(evt, [
+        "ArrowUp",
+        "ArrowDown",
+        "Home",
+        "End",
+        "Space",
+        "Enter",
+      ]) ||
+      (childFocusIsInput && isKey(evt, "Enter"))
     ) {
       // nothing to do
       return;
@@ -372,29 +367,29 @@ export const HvFocus = ({
     evt.preventDefault();
     evt.stopPropagation();
 
-    switch (evt.keyCode) {
-      case SpaceBar:
-      case Enter:
+    switch (evt.code) {
+      case "Space":
+      case "Enter":
         evt.target.click();
         break;
-      case ArrowUp:
+      case "ArrowUp":
         focusAndUpdateIndex(
           focuses.previous || focuses.last,
           evt.current,
           focusesList
         );
         break;
-      case ArrowDown:
+      case "ArrowDown":
         focusAndUpdateIndex(
           focuses.next || focuses.first,
           evt.current,
           focusesList
         );
         break;
-      case Home:
+      case "Home":
         focusAndUpdateIndex(focuses.first, evt.current, focusesList);
         break;
-      case End:
+      case "End":
         focusAndUpdateIndex(focuses.last, evt.current, focusesList);
         break;
       default:
@@ -402,12 +397,11 @@ export const HvFocus = ({
   };
 
   const onSingleHandler = (evt) => {
-    const { Enter, SpaceBar } = keyboardCodes;
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
     if (
-      !isOneOfKeys(evt, [SpaceBar, Enter]) ||
-      (childFocusIsInput && isKey(evt, Enter))
+      !isOneOfKeys(evt, ["Space", "Enter"]) ||
+      (childFocusIsInput && isKey(evt, "Enter"))
     ) {
       // nothing to do
       return;

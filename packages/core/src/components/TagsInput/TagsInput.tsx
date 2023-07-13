@@ -14,7 +14,7 @@ import {
   HvValidationMessages,
 } from "@core/types";
 import { useControlled, useIsMounted, useUniqueId } from "@core/hooks";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { isKey, setId } from "@core/utils";
 import {
   StyledCharCounter,
   StyledDescription,
@@ -383,10 +383,10 @@ export const HvTagsInput = ({
    * Handler for the `onKeyDown` event on the suggestions component
    */
   const onSuggestionKeyDown = (event) => {
-    if (isKeypress(event, keyboardCodes.Esc)) {
+    if (isKey(event, "Esc")) {
       suggestionClearHandler();
       focusInput();
-    } else if (isKeypress(event, keyboardCodes.Tab)) {
+    } else if (isKey(event, "Tab")) {
       suggestionClearHandler();
     }
   };

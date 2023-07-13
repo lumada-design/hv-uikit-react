@@ -10,7 +10,7 @@ import {
   HvFormElementValueContext,
   HvFormElementDescriptorsContext,
 } from "@core/components";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { isKey, setId } from "@core/utils";
 import { Info } from "@hitachivantara/uikit-react-icons";
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
 import { DateRangeProp } from "../Calendar";
@@ -28,8 +28,6 @@ import {
 dayjs.extend(localeData);
 dayjs.extend(localizedFormat);
 dayjs.extend(customParseFormat);
-
-const { Enter } = keyboardCodes;
 
 export const HvCalendarHeader = ({
   id,
@@ -120,7 +118,7 @@ export const HvCalendarHeader = ({
   };
 
   const keyDownHandler = (event) => {
-    if (!isKeypress(event, Enter) || isNil(editedValue) || editedValue === "")
+    if (!isKey(event, "Enter") || isNil(editedValue) || editedValue === "")
       return;
     event.preventDefault();
 
