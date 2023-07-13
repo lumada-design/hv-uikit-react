@@ -53,7 +53,7 @@ const HvTypographyMap = {
   title3: "h3",
   title4: "h4",
   body: "p",
-  label: "label",
+  label: "span",
   caption1: "p",
   caption2: "p",
   // LEGACY
