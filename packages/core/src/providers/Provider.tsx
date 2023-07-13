@@ -125,7 +125,11 @@ export const HvProvider = ({
       >
         <ClassNames>
           {({ css }) => {
-            if (cssBaseline === "scoped" && rootElementId) {
+            if (
+              typeof window !== "undefined" &&
+              cssBaseline === "scoped" &&
+              rootElementId
+            ) {
               const rootElement = document.getElementById(rootElementId);
 
               if (rootElement) {
