@@ -1,21 +1,25 @@
 import { useState } from "react";
-import { clsx } from "clsx";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvAvatar, HvTooltip, HvTypography } from "@core/components";
+import { Info } from "@hitachivantara/uikit-react-icons";
+
+import {
+  HvAvatar,
+  HvListItem,
+  HvTooltip,
+  HvTypography,
+} from "@core/components";
 import { HvBaseProps } from "@core/types";
 import { useUniqueId } from "@core/hooks";
+import { ExtractNames } from "@core/utils";
+
 import { HvAppSwitcherActionApplication } from "../AppSwitcher";
 import TitleWithTooltip from "../TitleWithTooltip";
-import {
-  StyledIcon,
-  StyledIconInfo,
-  StyledListItem,
-  StyledTypography,
-  StyledImg,
-} from "./Action.styles";
-import appSwitcherActionClasses, {
-  HvAppSwitcherActionClasses,
-} from "./actionClasses";
+import { useClasses, staticClasses } from "./Action.styles";
+
+export { staticClasses as appSwitcherActionClasses };
+
+export type HvAppSwitcherActionClasses = ExtractNames<typeof useClasses>;
 
 export interface HvAppSwitcherActionProps extends HvBaseProps {
   /** The application data to be used to render the Action object. */
@@ -37,11 +41,13 @@ const getColor = (color: any, defaultColor: string) =>
 export const HvAppSwitcherAction = ({
   id,
   className,
-  classes,
+  classes: classesProp,
   application,
   onClickCallback = () => {},
   isSelectedCallback = () => false,
 }: HvAppSwitcherActionProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const { name, description, disabled, iconElement, iconUrl, url, target } =
     application;
 
@@ -58,8 +64,8 @@ export const HvAppSwitcherAction = ({
 
     if (iconUrl && validIconUrl) {
       return (
-        <StyledImg
-          className={clsx(appSwitcherActionClasses.iconUrl, classes?.iconUrl)}
+        <img
+          className={classes.iconUrl}
           src={iconUrl}
           onError={() => {
             setValidIconUrl(false);
@@ -99,46 +105,33 @@ export const HvAppSwitcherAction = ({
   const descriptionElementId = useUniqueId(id, "hvAction-description");
 
   return (
-    <StyledListItem
+    <HvListItem
       id={id}
       interactive
       tabIndex={0}
       selected={isSelected}
       disabled={disabled}
-      className={clsx(
-        className,
-        appSwitcherActionClasses.root,
-        classes?.root,
-        disabled && clsx(appSwitcherActionClasses.disabled, classes?.disabled),
-        isSelected && clsx(appSwitcherActionClasses.selected, classes?.selected)
+      className={cx(
+        classes.root,
+        { [classes.disabled]: disabled, [classes.selected]: isSelected },
+        className
       )}
     >
       {/* As HvTooltip don't have the id prop, is not possible to use the aria-labelledby to reference it.
        In substitution is used the aria-label with the "title" value */}
-      <StyledTypography
+      <HvTypography
         component={isLink ? "a" : "button"}
         href={isLink ? url : undefined}
         target={isLink ? target || "_top" : undefined}
-        className={clsx(
-          appSwitcherActionClasses.typography,
-          classes?.typography
-        )}
+        className={classes.typography}
         onClick={handleOnClick}
         style={{ borderColor: color }}
         aria-describedby={descriptionElementId}
         aria-label={name}
       >
-        <StyledIcon
-          className={clsx(appSwitcherActionClasses.icon, classes?.icon)}
-        >
-          {renderApplicationIcon()}
-        </StyledIcon>
+        <div className={classes.icon}>{renderApplicationIcon()}</div>
 
-        <TitleWithTooltip
-          title={name}
-          className={clsx(appSwitcherActionClasses.title, classes?.title)}
-          type="action"
-        />
+        <TitleWithTooltip title={name} className={classes.title} />
 
         {description && (
           <HvTooltip
@@ -147,11 +140,8 @@ export const HvAppSwitcherAction = ({
             title={<HvTypography>{description}</HvTypography>}
           >
             <div>
-              <StyledIconInfo
-                className={clsx(
-                  appSwitcherActionClasses.iconInfo,
-                  classes?.iconInfo
-                )}
+              <Info
+                className={classes.iconInfo}
                 role="img"
                 aria-label={description}
                 id={descriptionElementId}
@@ -159,7 +149,7 @@ export const HvAppSwitcherAction = ({
             </div>
           </HvTooltip>
         )}
-      </StyledTypography>
-    </StyledListItem>
+      </HvTypography>
+    </HvListItem>
   );
 };

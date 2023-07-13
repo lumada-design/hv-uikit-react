@@ -1,15 +1,16 @@
-import { clsx } from "clsx";
 import { useMemo } from "react";
+
 import { HvBaseProps } from "@core/types";
+import { ExtractNames } from "@core/utils";
+import { HvListContainer, HvTypography } from "@core/components";
+
 import { HvAppSwitcherAction } from "./Action";
-import {
-  StyledRoot,
-  StyledTitle,
-  StyledActionsContainer,
-  StyledFooter,
-} from "./AppSwitcher.styles";
+import { useClasses, staticClasses } from "./AppSwitcher.styles";
 import TitleWithTooltip from "./TitleWithTooltip";
-import appSwitcherClasses, { HvAppSwitcherClasses } from "./appSwitcherClasses";
+
+export { staticClasses as appSwitcherClasses };
+
+export type HvAppSwitcherClasses = ExtractNames<typeof useClasses>;
 
 export interface HvAppSwitcherActionApplication {
   /** Id of the application. */
@@ -67,7 +68,7 @@ export interface HvAppSwitcherProps extends HvBaseProps {
 export const HvAppSwitcher = ({
   id,
   className,
-  classes,
+  classes: classesProp,
   layout = "single",
   title,
   applications,
@@ -77,6 +78,8 @@ export const HvAppSwitcher = ({
   footer,
   isOpen,
 }: HvAppSwitcherProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const panelActions = useMemo(
     () =>
       applications &&
@@ -89,25 +92,13 @@ export const HvAppSwitcher = ({
               onClickCallback={onActionClickedCallback}
               isSelectedCallback={isActionSelectedCallback}
               classes={{
-                root: clsx(classes?.item, appSwitcherClasses.item),
-                selected: clsx(
-                  classes?.itemSelected,
-                  appSwitcherClasses.itemSelected
-                ),
-                disabled: clsx(
-                  classes?.itemDisabled,
-                  appSwitcherClasses.itemDisabled
-                ),
-                typography: clsx(
-                  classes?.itemTrigger,
-                  appSwitcherClasses.itemTrigger
-                ),
-                icon: clsx(classes?.itemIcon, appSwitcherClasses.itemIcon),
-                title: clsx(classes?.itemTitle, appSwitcherClasses.itemTitle),
-                iconInfo: clsx(
-                  classes?.itemInfoIcon,
-                  appSwitcherClasses.itemInfoIcon
-                ),
+                root: classes.item,
+                selected: classes.itemSelected,
+                disabled: classes.itemDisabled,
+                typography: classes.itemTrigger,
+                icon: classes.itemIcon,
+                title: classes.itemTitle,
+                iconInfo: classes.itemInfoIcon,
               }}
             />
           );
@@ -119,58 +110,33 @@ export const HvAppSwitcher = ({
   );
 
   return (
-    <StyledRoot
+    <div
       id={id}
-      className={clsx(
-        className,
-        appSwitcherClasses.root,
-        classes?.root,
-        appSwitcherClasses[layout],
-        classes?.[layout],
-        isOpen && clsx(appSwitcherClasses.open, classes?.open),
-        isOpen === false && clsx(appSwitcherClasses.closed, classes?.closed)
+      className={cx(
+        classes.root,
+        classes[layout],
+        { [classes.open]: !!isOpen, [classes.closed]: isOpen === false },
+        className
       )}
-      $open={!!isOpen}
-      $closed={isOpen === false}
-      $layout={layout}
     >
       {(header && (
-        <StyledTitle
-          component="div"
-          variant="label"
-          className={clsx(appSwitcherClasses.title, classes?.title)}
-        >
+        <HvTypography component="div" variant="label" className={classes.title}>
           {header}
-        </StyledTitle>
+        </HvTypography>
       )) ||
-        (title && (
-          <TitleWithTooltip
-            className={clsx(appSwitcherClasses.title, classes?.title)}
-            title={title}
-            type="appSwitcher"
-          />
-        ))}
-      <StyledActionsContainer
-        disableGutters
-        className={clsx(
-          appSwitcherClasses.actionsContainer,
-          classes?.actionsContainer
-        )}
-      >
+        (title && <TitleWithTooltip className={classes.title} title={title} />)}
+      <HvListContainer disableGutters className={classes.actionsContainer}>
         {panelActions}
-      </StyledActionsContainer>
+      </HvListContainer>
       {footer && (
-        <StyledFooter
+        <HvTypography
           component="div"
           variant="label"
-          className={clsx(
-            appSwitcherClasses.footerContainer,
-            classes?.footerContainer
-          )}
+          className={classes.footerContainer}
         >
           {footer}
-        </StyledFooter>
+        </HvTypography>
       )}
-    </StyledRoot>
+    </div>
   );
 };

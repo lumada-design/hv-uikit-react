@@ -1,8 +1,7 @@
 import { useMemo, useRef } from "react";
 import { HvTooltip, HvTypography } from "@core/components";
-import { StyledTitleWithTooltip } from "./AppSwitcher.styles";
 
-const TitleWithTooltip = ({ className, title, type }) => {
+const TitleWithTooltip = ({ className, title }) => {
   const textRef = useRef<HTMLDivElement>(null);
 
   const isOverflowed = useMemo(() => {
@@ -18,15 +17,14 @@ const TitleWithTooltip = ({ className, title, type }) => {
       placement="top-start"
       title={<HvTypography>{title}</HvTypography>}
     >
-      <StyledTitleWithTooltip
+      <HvTypography
+        className={className}
         variant="label"
         component="span"
         ref={textRef}
-        className={className}
-        $type={type}
       >
         {title}
-      </StyledTitleWithTooltip>
+      </HvTypography>
     </HvTooltip>
   );
 };
