@@ -227,6 +227,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
       textDecoration: "underline",
     },
   },
+  components: {},
   actionBar: {
     borderTop: `3px solid ${theme.colors.atmo2}`,
   },

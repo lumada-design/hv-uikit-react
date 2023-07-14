@@ -17,7 +17,13 @@ interface CSSProperties extends CSS.Properties<string | number> {}
 
 export type HvThemeTokens = typeof flattenTokens;
 
-// Theme components
+/** Theme components props */
+export type HvThemeComponentsProps<ComponentNames extends string = string> = {
+  /** Component properties to override */
+  components?: Record<ComponentNames, Record<string, any>>;
+};
+
+/** Theme components */
 export type HvThemeComponents = {
   actionBar: {
     borderTop: string;
@@ -498,6 +504,7 @@ export type HvThemeStructure = {
   name: string;
   base?: HvBaseTheme;
 } & HvThemeComponents &
+  HvThemeComponentsProps &
   HvThemeTypography &
   Omit<HvThemeTokens, "colors"> & {
     colors: {
@@ -509,6 +516,7 @@ export type HvThemeStructure = {
 
 // Custom theme
 export type HvCustomTheme = { name: string } & HvThemeComponents &
+  HvThemeComponentsProps &
   HvThemeTypography &
   Partial<Omit<HvThemeTokens, "colors">> & {
     colors: {
