@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.0.22...@hitachivantara/uikit-react-shared@5.1.0) (2023-07-14)
+
+### Features
+
+- emotion cache accessible via shared package context ([#3520](https://github.com/lumada-design/hv-uikit-react/issues/3520)) ([e4a7d4f](https://github.com/lumada-design/hv-uikit-react/commit/e4a7d4f1c0556683d50afb8e53b74a5fb7239bb7))
+
 ## [5.0.22](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.0.21...@hitachivantara/uikit-react-shared@5.0.22) (2023-07-11)
 
 ### Reverts

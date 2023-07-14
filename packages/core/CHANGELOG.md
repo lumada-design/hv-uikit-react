@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.20.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.19.3...@hitachivantara/uikit-react-core@5.20.0) (2023-07-14)
+
+### Bug Fixes
+
+- **Header:** change propname maxdepth to levels ([dbdf7d1](https://github.com/lumada-design/hv-uikit-react/commit/dbdf7d15d9bd5ea94773a66bf9cca127724c3c45))
+- imports in core components ([#3511](https://github.com/lumada-design/hv-uikit-react/issues/3511)) ([1b7b4d9](https://github.com/lumada-design/hv-uikit-react/commit/1b7b4d9092589461eba4f45871cb61b8866f5923))
+- problems related to ssr ([#3515](https://github.com/lumada-design/hv-uikit-react/issues/3515)) ([93f507d](https://github.com/lumada-design/hv-uikit-react/commit/93f507d23bc7caae627694082a1ff60f246c7448))
+- **TimePicker:** fix the classes name ([#3508](https://github.com/lumada-design/hv-uikit-react/issues/3508)) ([b7b8525](https://github.com/lumada-design/hv-uikit-react/commit/b7b8525da3a077e01bdbca2034b1374e66bbfd12))
+- use of document on provider ([#3518](https://github.com/lumada-design/hv-uikit-react/issues/3518)) ([0985328](https://github.com/lumada-design/hv-uikit-react/commit/0985328fb8e6382f08719979df7e0484b3941f5e))
+
+### Features
+
+- **Dialog:** variant prop added for dialog status bar ([#3503](https://github.com/lumada-design/hv-uikit-react/issues/3503)) ([afacfb5](https://github.com/lumada-design/hv-uikit-react/commit/afacfb571cff6e46aba98c2ce1ab508e496b1584))
+- emotion cache accessible via shared package context ([#3520](https://github.com/lumada-design/hv-uikit-react/issues/3520)) ([e4a7d4f](https://github.com/lumada-design/hv-uikit-react/commit/e4a7d4f1c0556683d50afb8e53b74a5fb7239bb7))
+
 ## [5.19.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.19.2...@hitachivantara/uikit-react-core@5.19.3) (2023-07-12)
 
 ### Bug Fixes

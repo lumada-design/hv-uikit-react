@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.2.7...@hitachivantara/uikit-react-icons@5.3.0) (2023-07-14)
+
+### Features
+
+- **icons:** add new ds 5.6.0 icons ([#3500](https://github.com/lumada-design/hv-uikit-react/issues/3500)) ([f1b1594](https://github.com/lumada-design/hv-uikit-react/commit/f1b15949a49b9fd840d32edef4aa9caf15666deb))
+
 ## [5.2.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.2.6...@hitachivantara/uikit-react-icons@5.2.7) (2023-07-11)
 
 ### Performance Improvements
