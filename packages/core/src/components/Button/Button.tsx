@@ -137,7 +137,7 @@ export const HvButton: <C extends React.ElementType = "button">(
           css(getVariantStyles(variant)),
           size && css(getSizeStyles(size)),
           radius && css(getRadiusStyles(radius)),
-          overrideIconColors && css(getOverrideColors(variant)),
+          overrideIconColors && css(getOverrideColors()),
           {
             [classes.icon]: icon,
             [classes.disabled]: disabled,
