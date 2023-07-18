@@ -11,7 +11,7 @@ import {
 } from "..";
 
 const meta: Meta<typeof HvDrawer> = {
-  title: "widgets/Drawer",
+  title: "Widgets/Drawer",
   component: HvDrawer,
 };
 export default meta;
@@ -47,12 +47,10 @@ export const Main: StoryObj<HvDrawerProps> = {
 
     return (
       <div>
-        <HvButton id="openDialog" onClick={() => setOpen(true)}>
-          Open dialog
-        </HvButton>
+        <HvButton onClick={() => setOpen(true)}>Open drawer</HvButton>
         <HvDrawer
-          id="drawer-test"
           open={open}
+          disablePortal
           classes={{
             paper: classes.drawerPaper,
           }}
@@ -79,7 +77,7 @@ export const Main: StoryObj<HvDrawerProps> = {
             >
               Submit
             </HvButton>
-            <HvButton variant="primaryGhost" onClick={() => setOpen(false)}>
+            <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
               Cancel
             </HvButton>
           </HvDialogActions>

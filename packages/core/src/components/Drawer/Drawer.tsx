@@ -140,7 +140,7 @@ export const HvDrawer = ({
       <HvButton
         id={setId(id, "close")}
         className={classes.closeButton}
-        variant="primaryGhost"
+        variant="secondaryGhost"
         onClick={onClose}
         aria-label={buttonTitle}
       >
