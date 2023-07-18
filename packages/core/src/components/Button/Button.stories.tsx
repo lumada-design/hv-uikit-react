@@ -2,9 +2,11 @@ import { StoryObj } from "@storybook/react";
 import {
   Delete,
   Favorite,
+  Link as LinkIcon,
   MoreOptionsVertical,
   Pause,
   Play,
+  Point,
   Refresh,
   Stop,
 } from "@hitachivantara/uikit-react-icons";
@@ -175,7 +177,7 @@ export const Icons = ({ onClick }) => {
           icon
           aria-label="Play"
           onClick={onClick}
-          variant="secondaryGhost"
+          variant="primaryGhost"
         >
           <Play iconSize="M" />
         </HvButton>
@@ -189,6 +191,7 @@ export const Icons = ({ onClick }) => {
         </HvButton>
         <HvButton
           icon
+          disabled
           aria-label="Stop"
           onClick={onClick}
           variant="secondaryGhost"
@@ -199,7 +202,7 @@ export const Icons = ({ onClick }) => {
       <HvBox sx={{ display: "flex", gap: 20, marginTop: 10 }}>
         <HvButton
           startIcon={<Play />}
-          variant="secondaryGhost"
+          variant="primaryGhost"
           aria-label="Play"
           onClick={onClick}
         >
@@ -214,6 +217,7 @@ export const Icons = ({ onClick }) => {
           Pause
         </HvButton>
         <HvButton
+          disabled
           startIcon={<Stop />}
           variant="secondaryGhost"
           aria-label="Stop"
@@ -225,7 +229,7 @@ export const Icons = ({ onClick }) => {
       <HvBox sx={{ display: "flex", gap: 20, marginTop: 10 }}>
         <HvButton
           endIcon={<Play />}
-          variant="secondaryGhost"
+          variant="primaryGhost"
           aria-label="Play"
           onClick={onClick}
         >
@@ -241,6 +245,7 @@ export const Icons = ({ onClick }) => {
         </HvButton>
         <HvButton
           endIcon={<Stop />}
+          disabled
           variant="secondaryGhost"
           aria-label="Stop"
           onClick={onClick}
@@ -310,16 +315,22 @@ const CustomLink = ({ to, children, ...others }) => (
 export const CustomRootComponent = ({ onClick }) => {
   return (
     <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
-      <HvButton onClick={onClick}>Button</HvButton>
+      <HvButton onClick={onClick} startIcon={<Point />}>
+        Button
+      </HvButton>
       <HvButton
+        variant="secondaryGhost"
         component="a"
         href="https://lumada-design.github.io/uikit/master"
+        startIcon={<LinkIcon />}
       >
         Link
       </HvButton>
       <HvButton
+        variant="secondarySubtle"
         component={CustomLink}
         to="https://lumada-design.github.io/uikit/master"
+        startIcon={<LinkIcon />}
       >
         Custom link
       </HvButton>

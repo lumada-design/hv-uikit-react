@@ -126,10 +126,8 @@ export const getSizeStyles = (size: HvButtonSize): CSSInterpolation => ({
   fontSize: theme.fontSizes[size],
 });
 
-export const getOverrideColors = (
-  variant: HvButtonVariant
-): CSSInterpolation => ({
+export const getOverrideColors = (): CSSInterpolation => ({
   "& svg .color0": {
-    fill: variant === "primary" ? theme.colors.primary : "currentcolor",
+    fill: "currentcolor",
   },
 });
