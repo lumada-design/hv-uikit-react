@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.20.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.20.0...@hitachivantara/uikit-react-core@5.20.1) (2023-07-19)
+
+### Bug Fixes
+
+- **button:** primary icon default color ([3aa1f4a](https://github.com/lumada-design/hv-uikit-react/commit/3aa1f4a650ab2012fe7aeebe1e3dbead510b3d39))
+- **Typography:** change label variant default to span ([0aa3367](https://github.com/lumada-design/hv-uikit-react/commit/0aa3367e97266a3c3596f6e61bb470ceec99e916))
+
 # [5.20.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.19.3...@hitachivantara/uikit-react-core@5.20.0) (2023-07-14)
 
 ### Bug Fixes

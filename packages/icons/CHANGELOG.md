@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.3.0...@hitachivantara/uikit-react-icons@5.4.0) (2023-07-19)
+
+### Bug Fixes
+
+- **Icons:** cleanup svgs ([2478001](https://github.com/lumada-design/hv-uikit-react/commit/2478001d0bcbf9a455bb6de4bf8b89f6d6b2ff69))
+- **Icons:** color order & improve docs ([7bb5728](https://github.com/lumada-design/hv-uikit-react/commit/7bb57284a88a3fb266637cd564a870472f986444))
+
+### Features
+
+- **icons:** add missing icons for DA ([#3528](https://github.com/lumada-design/hv-uikit-react/issues/3528)) ([ff38e29](https://github.com/lumada-design/hv-uikit-react/commit/ff38e2947c15f0db8fbed4c14433aa369ae72512))
+
 # [5.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.2.7...@hitachivantara/uikit-react-icons@5.3.0) (2023-07-14)
 
 ### Features
