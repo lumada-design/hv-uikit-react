@@ -162,12 +162,15 @@ export const processThemes = (
 };
 
 export const getVarValue = (cssVar: string, rootElementId?: string) => {
-  const root = document.getElementById(rootElementId || "hv-root");
-  if (root) {
-    const computedValue = getComputedStyle(root)
-      .getPropertyValue(cssVar.replace("var(", "").replace(")", ""))
-      .trim();
+  if (typeof window !== "undefined") {
+    const root = document.getElementById(rootElementId || "hv-root");
 
-    return computedValue;
+    if (root) {
+      const computedValue = getComputedStyle(root)
+        .getPropertyValue(cssVar.replace("var(", "").replace(")", ""))
+        .trim();
+
+      return computedValue;
+    }
   }
 };
