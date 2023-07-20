@@ -68,51 +68,93 @@ export const Main: StoryObj<HvGridProps> = {
   },
 };
 
+const BREAKPOINT_GUTTERS = {
+  xs: "15px",
+  sm: "15px",
+  md: "30px",
+  lg: "30px",
+  xl: "30px",
+};
+
 export const The12Columns: StoryObj<HvGridProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Grid using the default 12 columns. You can resize the browser to see the gutters' size change.",
+      },
+    },
+  },
   render: () => {
     const width = useWidth();
-
-    const StyledContainer = styled(HvGrid)({
-      border: "1px solid",
-      borderColor: theme.colors.atmo4,
-      backgroundColor: theme.colors.atmo2,
-      marginTop: theme.space.xs,
-      marginLeft: 0,
-      marginRight: 32,
-      width: "100%",
-      "& div": {
-        paddingTop: "0px!important",
-        paddingLeft: "8px!important",
-        paddingBottom: 0,
-        paddingRight: 8,
-      },
-    });
 
     const StyledBox = styled("div")({
       backgroundColor: theme.colors.neutral_20,
       display: "flex",
-      height: "150px",
+      height: "100px",
       width: "100%",
-      padding: 20,
       justifyContent: "center",
       alignItems: "center",
-      paddingTop: 0,
-      "&>*": {
-        margin: "auto",
-        color: theme.colors.base_dark,
-      },
     });
+
+    const columns = Array.from({ length: 24 }, (_, index) => index + 1);
 
     return (
       <>
-        <HvTypography variant="label">{`Current width: ${width}`}</HvTypography>
-        <StyledContainer container>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((value) => (
-            <HvGrid key={value} item xs={1} sm={1} md={1} lg={1} xl={1}>
+        <HvTypography variant="label">{`Current width: ${width} (gutter size: ${BREAKPOINT_GUTTERS[width]})`}</HvTypography>
+        <HvGrid container>
+          {columns.map((value) => (
+            <HvGrid key={value} item xs={1}>
               <StyledBox>{value.toString()}</StyledBox>
             </HvGrid>
           ))}
-        </StyledContainer>
+        </HvGrid>
+      </>
+    );
+  },
+};
+
+const BREAKPOINT_COLUMNS = {
+  xs: 4,
+  sm: 8,
+  md: 12,
+  lg: 12,
+  xl: 12,
+};
+
+export const TheDesignSystemColumns: StoryObj<HvGridProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Grid using the Design System's column definitions. The number of columns is based on the current breakpoint. Resize the browser to see the number of columns change.",
+      },
+    },
+  },
+  render: () => {
+    const width = useWidth();
+
+    const StyledBox = styled("div")({
+      backgroundColor: theme.colors.neutral_20,
+      display: "flex",
+      height: "100px",
+      width: "100%",
+      justifyContent: "center",
+      alignItems: "center",
+    });
+
+    const columns = Array.from({ length: 24 }, (_, index) => index + 1);
+
+    return (
+      <>
+        <HvTypography variant="label">{`Current width: ${width} (${BREAKPOINT_COLUMNS[width]} columns)`}</HvTypography>
+        <HvGrid container columns="auto">
+          {columns.map((value) => (
+            <HvGrid key={value} item xs={1}>
+              <StyledBox>{value.toString()}</StyledBox>
+            </HvGrid>
+          ))}
+        </HvGrid>
       </>
     );
   },
