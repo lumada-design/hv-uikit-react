@@ -69,6 +69,8 @@ export const StyledWrapper = styled(
   display: "flex",
   justifyContent: "flex-start",
   alignItems: "center",
+  border: theme.globalActions.border,
+  borderRadius: theme.globalActions.borderRadius,
   ...($variant === "global" && {
     position: "absolute",
     top: 0,
@@ -79,8 +81,9 @@ export const StyledWrapper = styled(
     marginTop: theme.space.xs,
   }),
   ...($variant === "section" && {
-    background: "none",
+    backgroundColor: theme.globalActions.sectionBackgroundColor,
     borderTop: `1px solid ${theme.colors.atmo4}`,
+    paddingLeft: theme.globalActions.sectionPaddingLeft,
   }),
 }));
 

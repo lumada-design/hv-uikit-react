@@ -473,6 +473,10 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   },
   globalActions: {
     sectionVariant: "sectionTitle",
+    border: "transparent",
+    borderRadius: theme.radii.none,
+    sectionBackgroundColor: "transparent",
+    sectionPaddingLeft: "0px",
   },
   emptyState: {
     titleVariant: "xxsTitle",

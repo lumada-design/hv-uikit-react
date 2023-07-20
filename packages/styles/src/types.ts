@@ -266,6 +266,10 @@ export type HvThemeComponents = {
   };
   globalActions: {
     sectionVariant: keyof HvThemeTypography["typography"];
+    border: string;
+    borderRadius: string;
+    sectionBackgroundColor: string;
+    sectionPaddingLeft: string;
   };
   emptyState: {
     titleVariant: keyof HvThemeTypography["typography"];

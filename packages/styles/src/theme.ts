@@ -257,6 +257,10 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   },
   globalActions: {
     sectionVariant: "string",
+    border: "string",
+    borderRadius: "string",
+    sectionBackgroundColor: "string",
+    sectionPaddingLeft: "string",
   },
   emptyState: {
     titleVariant: "string",
