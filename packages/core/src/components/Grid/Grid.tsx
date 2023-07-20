@@ -1,7 +1,6 @@
 import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
 import isString from "lodash/isString";
 import { forwardRef } from "react";
-import { useWidth } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
 import { HvGridClasses } from "./gridClasses";
 
@@ -57,6 +56,20 @@ export interface HvGridProps
    */
   spacing?: HvGridSpacing | number;
   /**
+   * Defines the vertical space between the type item component. It can only be used on a type container component.
+   * Based in the 8x factor defined in the theme, it allows the definition of this factor based on the factor
+   * (number between 0 and 10), breakpoint or auto.
+   * It overrides the value of the spacing prop.
+   */
+  rowSpacing?: HvGridSpacing | number;
+  /**
+   * Defines the horizontal space between the type item component. It can only be used on a type container component.
+   * Based in the 8x factor defined in the theme, it allows the definition of this factor based on the factor
+   * (number between 0 and 10), breakpoint or auto.
+   * It overrides the value of the spacing prop.
+   */
+  columnSpacing?: HvGridSpacing | number;
+  /**
    * Defines the `flex-direction` style property.
    * It is applied for all screen sizes.
    */
@@ -111,6 +124,33 @@ export interface HvGridProps
   classes?: HvGridClasses;
 }
 
+function getGridSpacing(spacing: HvGridProps["spacing"]) {
+  let gridSpacing: MuiGridProps["spacing"];
+
+  if (isString(spacing)) {
+    if (spacing === "auto") {
+      gridSpacing = BREAKPOINT_GUTTERS;
+    } else {
+      gridSpacing = BREAKPOINT_GUTTERS[spacing];
+    }
+  } else if (typeof spacing === "object") {
+    gridSpacing = Object.keys(spacing).reduce(
+      (acc, breakpoint) => ({
+        ...acc,
+        [breakpoint]:
+          BREAKPOINT_GUTTERS[spacing[breakpoint]] ?? spacing[breakpoint],
+      }),
+      {}
+    );
+  } else if (spacing === 0) {
+    gridSpacing = { xs: 0 };
+  } else {
+    gridSpacing = spacing;
+  }
+
+  return gridSpacing;
+}
+
 /**
  * The grid creates visual consistency between layouts while allowing flexibility
  * across a wide variety of designs. This component is based in a 12-column grid layout.
@@ -127,26 +167,34 @@ export interface HvGridProps
  * | lg         | [992-1199[    | 32              | 12                |
  * | xl         | [1200-...[    | 32              | 12                |
  *
+ * The Design System specifications are omissive about the horizontal gutters.
+ * The HvGrid sets them to the same value as the vertical gutters, depending on the breakpoint.
+ * It can be overridden by setting the `rowSpacing` prop.
  */
 export const HvGrid = forwardRef<HTMLDivElement, HvGridProps>(
-  ({ container, spacing = "auto", ...others }, ref) => {
-    const width = useWidth();
-    let gridSpacing = spacing;
+  (
+    { container, spacing = "auto", rowSpacing, columnSpacing, ...others },
+    ref
+  ) => {
+    const containerProps: Pick<
+      MuiGridProps,
+      "container" | "spacing" | "rowSpacing" | "columnSpacing"
+    > = {};
 
-    if (isString(spacing)) {
-      if (spacing === "auto") {
-        gridSpacing = BREAKPOINT_GUTTERS[width];
-      } else {
-        gridSpacing = BREAKPOINT_GUTTERS[spacing];
+    if (container) {
+      containerProps.container = true;
+
+      if (spacing != null) {
+        containerProps.spacing = getGridSpacing(spacing);
+      }
+      if (rowSpacing != null) {
+        containerProps.rowSpacing = getGridSpacing(rowSpacing);
+      }
+      if (columnSpacing != null) {
+        containerProps.columnSpacing = getGridSpacing(columnSpacing);
       }
     }
 
-    return (
-      <MuiGrid
-        ref={ref}
-        {...(container && { container, spacing: gridSpacing })}
-        {...others}
-      />
-    );
+    return <MuiGrid ref={ref} {...containerProps} {...others} />;
   }
 );
