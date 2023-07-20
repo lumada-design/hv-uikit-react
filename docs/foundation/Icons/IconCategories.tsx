@@ -421,6 +421,12 @@ export const iconCategories = {
     "Pending",
     "Running",
     "Success",
+    "Completed",
+    "InProgress",
+    "Validated",
+    "Reviewed",
+    "Rejected",
+    "New",
   ],
   Stepper: ["CurrentStep", "OtherStep"],
   Tools: [
