@@ -419,7 +419,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     border: `1px solid ${theme.colors.atmo4}`,
     borderRadius: theme.radii.round,
     sectionBackgroundColor: theme.colors.atmo1,
-    sectionPaddingLeft: theme.space.xs,
+    sectionPaddingLeft: theme.space.sm,
   },
   emptyState: {
     titleVariant: "title4",
