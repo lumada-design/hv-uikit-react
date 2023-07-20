@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.20.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.20.1...@hitachivantara/uikit-react-core@5.20.2) (2023-07-20)
+
+### Bug Fixes
+
+- unprotected document access from theme ([#3530](https://github.com/lumada-design/hv-uikit-react/issues/3530)) ([6a06273](https://github.com/lumada-design/hv-uikit-react/commit/6a06273e7d6d57f52f89d60d98bec14ce4066b73))
+
 ## [5.20.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.20.0...@hitachivantara/uikit-react-core@5.20.1) (2023-07-19)
 
 ### Bug Fixes
