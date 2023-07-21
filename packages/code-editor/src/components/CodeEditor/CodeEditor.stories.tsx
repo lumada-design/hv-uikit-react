@@ -79,7 +79,6 @@ const Header = (props: {
             className={styles.buttonMargin}
             icon
             aria-label="Popup"
-            variant="secondaryGhost"
             component="a"
             href="http://localhost:9001/iframe.html?id=components-code-editor--main"
             target="_blank"
@@ -97,18 +96,12 @@ const Header = (props: {
             onClick={() => {
               handleOpen(true);
             }}
-            variant="secondaryGhost"
           >
             <Fullscreen />
           </HvButton>
         </HvTooltip>
         <HvTooltip title={<HvTypography>Duplicate</HvTypography>}>
-          <HvButton
-            className={styles.buttonMargin}
-            icon
-            aria-label="Duplicate"
-            variant="secondaryGhost"
-          >
+          <HvButton className={styles.buttonMargin} icon aria-label="Duplicate">
             <Duplicate />
           </HvButton>
         </HvTooltip>

@@ -51,7 +51,6 @@ export const HvToggleButton = forwardRef<
     <HvButton
       ref={ref}
       icon
-      variant="secondaryGhost"
       aria-pressed={isSelected}
       onClick={onClickHandler}
       {...others}

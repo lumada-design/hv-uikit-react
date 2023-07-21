@@ -417,7 +417,6 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
                 classes?.sortButton
               )}
               icon
-              variant="secondaryGhost"
               overrideIconColors={false}
             >
               <SortComponent

@@ -256,7 +256,6 @@ export const Actions: StoryObj<HvAvatarProps> = {
         <HvButton
           icon
           overrideIconColors={false}
-          variant="secondaryGhost"
           component="a"
           href="#profile-url"
         >
@@ -264,10 +263,10 @@ export const Actions: StoryObj<HvAvatarProps> = {
             <LinkIcon color="base_dark" aria-label="External link" />
           </HvAvatar>
         </HvButton>
-        <HvButton icon overrideIconColors={false} variant="secondaryGhost">
+        <HvButton icon overrideIconColors={false}>
           <HvAvatar size="md" aria-label="Open the user profile" />
         </HvButton>
-        <HvButton icon overrideIconColors={false} variant="secondaryGhost">
+        <HvButton icon overrideIconColors={false}>
           <HvAvatar
             backgroundColor="sema19"
             size="md"
@@ -277,7 +276,7 @@ export const Actions: StoryObj<HvAvatarProps> = {
             BM
           </HvAvatar>
         </HvButton>
-        <HvButton icon overrideIconColors={false} variant="secondaryGhost">
+        <HvButton icon overrideIconColors={false}>
           <HvAvatar
             backgroundColor="sema19"
             size="md"
@@ -288,7 +287,7 @@ export const Actions: StoryObj<HvAvatarProps> = {
             BM
           </HvAvatar>
         </HvButton>
-        <HvButton icon overrideIconColors={false} variant="secondaryGhost">
+        <HvButton icon overrideIconColors={false}>
           <HvAvatar
             aria-label="Clara Soul profile"
             alt="Clara Soul"
@@ -297,7 +296,7 @@ export const Actions: StoryObj<HvAvatarProps> = {
             status="positive"
           />
         </HvButton>
-        <HvButton icon overrideIconColors={false} variant="secondaryGhost">
+        <HvButton icon overrideIconColors={false}>
           <HvAvatar
             aria-label="Clara Soul profile"
             alt="Clara Soul"

@@ -29,12 +29,7 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
   decorators: [(Story) => <div style={{ height: 300 }}>{Story()}</div>],
   render: ({ title, headingLevel, variant }) => {
     const BackButton = () => (
-      <HvButton
-        aria-label="Back"
-        variant="secondaryGhost"
-        icon
-        onClick={() => alert("Back!")}
-      >
+      <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
         <Backwards />
       </HvButton>
     );
@@ -227,12 +222,7 @@ export const SampleWithAdditionalActions: StoryObj<HvGlobalActionsProps> = {
   },
   render: () => {
     const BackButton = () => (
-      <HvButton
-        aria-label="Back"
-        icon
-        variant="secondaryGhost"
-        onClick={() => alert("Back!")}
-      >
+      <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
         <Backwards />
       </HvButton>
     );
@@ -300,12 +290,7 @@ export const SampleWithCustomTitleAndAdditionalActions: StoryObj<HvGlobalActions
       );
 
       const BackButton = () => (
-        <HvButton
-          aria-label="Back"
-          variant="secondaryGhost"
-          icon
-          onClick={() => alert("Back!")}
-        >
+        <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
           <Backwards />
         </HvButton>
       );

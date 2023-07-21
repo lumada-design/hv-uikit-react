@@ -39,12 +39,7 @@ const App = () => {
           <HvTypography variant="label">
             Current theme: {selectedMode}
           </HvTypography>
-          <HvButton
-            icon
-            aria-label="Change theme"
-            variant="secondaryGhost"
-            onClick={handleChangeTheme}
-          >
+          <HvButton icon aria-label="Change theme" onClick={handleChangeTheme}>
             <ThemeSwitcher />
           </HvButton>
         </StyledThemeSwitcherContainer>

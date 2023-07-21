@@ -67,11 +67,7 @@ export const Header = () => {
             </HvTypography>
           }
         >
-          <HvButton
-            variant="secondaryGhost"
-            icon
-            onClick={() => setOpen?.((prev) => !prev)}
-          >
+          <HvButton icon onClick={() => setOpen?.((prev) => !prev)}>
             <Menu />
           </HvButton>
         </HvTooltip>

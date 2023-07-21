@@ -147,7 +147,6 @@ export const RuleGroup = ({
                   : labels.group.delete.ariaLabel
               }
               disabled={readOnly}
-              variant="secondaryGhost"
             >
               <DeleteIcon />
             </HvButton>
