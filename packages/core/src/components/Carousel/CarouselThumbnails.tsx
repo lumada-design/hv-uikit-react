@@ -1,9 +1,8 @@
 import { CSSProperties, MouseEvent, forwardRef } from "react";
 import { HvBaseProps } from "@core/types";
-import { HvPaginationProps, HvStack } from "..";
+import { HvButton, HvButtonProps, HvPaginationProps, HvStack } from "..";
 import { HvCarouselClasses, HvCarouselProps } from ".";
 import { useClasses } from "./Carousel.styles";
-import { HvCarouselThumbnail } from "./CarouselThumbnail";
 
 interface HvCarouselThumbnailsProps
   extends HvBaseProps<HTMLDivElement, "children">,
@@ -15,6 +14,7 @@ interface HvCarouselThumbnailsProps
     event: MouseEvent<HTMLButtonElement>,
     index: number
   ) => void;
+  thumbnailProps?: Partial<HvButtonProps>;
 }
 
 export const HvCarouselThumbnails = forwardRef<
@@ -29,6 +29,7 @@ export const HvCarouselThumbnails = forwardRef<
     width,
     renderThumbnail,
     onThumbnailClick,
+    thumbnailProps,
     ...others
   } = props;
   const { classes, cx } = useClasses(classesProp);
@@ -40,14 +41,19 @@ export const HvCarouselThumbnails = forwardRef<
     <div ref={ref} className={cx(classes.panel, className)} {...others}>
       <HvStack direction="row" spacing="xs">
         {Array.from(Array(numSlides)).map((doc, i) => (
-          <HvCarouselThumbnail
+          <HvButton
+            icon
             key={`thumbnail-${i}`}
             style={{ width }}
-            selected={i === selectedIndex}
+            variant="secondaryGhost"
+            className={cx(classes.thumbnail, {
+              [classes.thumbnailSelected]: i === selectedIndex,
+            })}
             onClick={(event) => onThumbnailClick?.(event, i)}
+            {...thumbnailProps}
           >
             {renderThumbnail?.(i)}
-          </HvCarouselThumbnail>
+          </HvButton>
         ))}
       </HvStack>
     </div>
