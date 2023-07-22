@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.21.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.20.2...@hitachivantara/uikit-react-core@5.21.0) (2023-07-22)
+
+### Bug Fixes
+
+- **GlobalActions:** align with DS5 specs ([#3531](https://github.com/lumada-design/hv-uikit-react/issues/3531)) ([8e9b3de](https://github.com/lumada-design/hv-uikit-react/commit/8e9b3de4d67259be65f3cf78b096c7cf3e89e494))
+
+### Features
+
+- **Carousel:** expose sub-components & more thumbnail customization ([6d413f5](https://github.com/lumada-design/hv-uikit-react/commit/6d413f5075c3d6ea8c41f50d897d8cde180180de))
+
 ## [5.20.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.20.1...@hitachivantara/uikit-react-core@5.20.2) (2023-07-20)
 
 ### Bug Fixes

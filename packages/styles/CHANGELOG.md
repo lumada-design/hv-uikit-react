@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.9.2 (2023-07-22)
+
+### Bug Fixes
+
+- **GlobalActions:** align with DS5 specs ([#3531](https://github.com/lumada-design/hv-uikit-react/issues/3531)) ([8e9b3de](https://github.com/lumada-design/hv-uikit-react/commit/8e9b3de4d67259be65f3cf78b096c7cf3e89e494))
+- **GlobalActions:** update styles on section variant ([#3534](https://github.com/lumada-design/hv-uikit-react/issues/3534)) ([df3cde3](https://github.com/lumada-design/hv-uikit-react/commit/df3cde36c09e5a250c3adea07e3cd9cfe87f83f5))
+
 ## [5.9.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.9.0...@hitachivantara/uikit-styles@5.9.1) (2023-07-11)
 
 ### Reverts

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.5.0 (2023-07-22)
+
+### Features
+
+- **icons:** add inprogress icon for DA ([#3532](https://github.com/lumada-design/hv-uikit-react/issues/3532)) ([f9915f9](https://github.com/lumada-design/hv-uikit-react/commit/f9915f911c750ab7f87a47092f5c8ac61210312f))
+
 # [5.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.3.0...@hitachivantara/uikit-react-icons@5.4.0) (2023-07-19)
 
 ### Bug Fixes
