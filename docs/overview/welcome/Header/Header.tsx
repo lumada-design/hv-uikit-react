@@ -15,19 +15,22 @@ const Header = () => {
             </HvTypography>
           </>
           <div>
-            <HvButton variant="primary" style={{ marginRight: 10 }}>
-              <a href="https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--page">
-                Get Started
-              </a>
+            <HvButton
+              component="a"
+              variant="primary"
+              style={{ marginRight: 10 }}
+              href="https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--page"
+            >
+              Get Started
             </HvButton>
-            <HvButton variant="primarySubtle">
-              <a
-                href="https://github.com/lumada-design/hv-uikit-react"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View on GitHub
-              </a>
+            <HvButton
+              component="a"
+              variant="primarySubtle"
+              href="https://github.com/lumada-design/hv-uikit-react"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View on GitHub
             </HvButton>
           </div>
         </ContentWrapper>
