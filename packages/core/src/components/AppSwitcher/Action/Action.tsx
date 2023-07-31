@@ -146,8 +146,8 @@ export const HvAppSwitcherAction = ({
         className={classes.typography}
         onClick={handleOnClick}
         style={{ borderColor: color }}
-        aria-describedby={descriptionElementId}
         aria-label={name}
+        {...(description && { "aria-describedby": descriptionElementId })}
       >
         <div className={classes.icon}>{renderApplicationIcon()}</div>
 
