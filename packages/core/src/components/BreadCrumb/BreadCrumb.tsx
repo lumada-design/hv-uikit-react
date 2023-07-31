@@ -1,8 +1,12 @@
 import { clsx } from "clsx";
+
 import isNil from "lodash/isNil";
+
 import { isValidElement, MouseEvent } from "react";
+
 import { HvBaseProps } from "@core/types/generic";
-import { HvDropDownMenuProps } from "@core/components";
+import { HvDropDownMenuProps } from "@core/components/DropDownMenu";
+
 import breadCrumbClasses, { HvBreadCrumbClasses } from "./breadCrumbClasses";
 import { HvPathElement } from "./PathElement";
 import { HvPage } from "./Page";
@@ -12,11 +16,7 @@ import {
   StyledTypography,
 } from "./BreadCrumb.styles";
 import { pathWithSubMenu, removeExtension } from "./utils";
-
-export interface HvBreadCrumbPathElement extends Record<string, any> {
-  label: string;
-  path: string;
-}
+import { HvBreadCrumbPathElement } from "./types";
 
 export interface HvBreadCrumbProps
   extends HvBaseProps<HTMLDivElement, "onClick"> {
@@ -78,9 +78,9 @@ export const HvBreadCrumb = ({
     maxVisibleElem && listPath.length > maxVisibleElem
       ? pathWithSubMenu(
           id,
-          onClick,
           listPath,
           maxVisibleElem,
+          onClick,
           dropDownMenuProps
         )
       : listPath;

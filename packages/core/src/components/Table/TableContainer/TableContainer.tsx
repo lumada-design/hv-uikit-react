@@ -1,7 +1,11 @@
 import { clsx } from "clsx";
-import styled from "@emotion/styled";
-import { HvBaseProps } from "@core/types";
+
 import { forwardRef, useMemo } from "react";
+
+import styled from "@emotion/styled";
+
+import { HvBaseProps } from "@core/types/generic";
+
 import tableContainerClasses, {
   HvTableContainerClasses,
 } from "./tableContainerClasses";

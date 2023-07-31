@@ -2,8 +2,8 @@ import MuiDialogActions, {
   DialogActionsProps as MuiDialogActionsProps,
 } from "@mui/material/DialogActions";
 
-import { HvBaseProps } from "@core/types";
-import { ExtractNames } from "@core/utils";
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
 import { staticClasses, useClasses } from "./Actions.styles";
 

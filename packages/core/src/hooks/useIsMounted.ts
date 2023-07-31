@@ -1,6 +1,6 @@
 import React from "react";
 
-export default () => {
+export const useIsMounted = () => {
   const isMounted = React.useRef(false);
 
   React.useEffect(() => {

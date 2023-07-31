@@ -1,10 +1,10 @@
-import {
-  HvBreadCrumbPathElement,
-  HvOverflowTooltip,
-  HvTypography,
-} from "@core/components";
-import { ExtractNames } from "@core/utils";
 import { MouseEvent } from "react";
+
+import { HvTypography } from "@core/components/Typography";
+import { HvOverflowTooltip } from "@core/components/OverflowTooltip";
+import { ExtractNames } from "@core/utils/classes";
+
+import { HvBreadCrumbPathElement } from "../types";
 import { staticClasses, useClasses } from "./Page.styles";
 
 export { staticClasses as pageClasses };

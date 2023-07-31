@@ -15,7 +15,7 @@ import React, {
   useState,
 } from "react";
 
-import { HvWizardContext, HvWizardTabs } from "..";
+import { HvWizardContext, HvWizardTabs } from "../WizardContext";
 import { staticClasses, useClasses } from "./WizardContent.styles";
 import { LoadingContainer } from "./LoadingContainer";
 

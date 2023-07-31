@@ -1,13 +1,18 @@
 import styled from "@emotion/styled";
+
+import { CSSProperties, forwardRef } from "react";
+
 import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
+
 import Chip from "@mui/material/Chip";
-import { HvButton, HvButtonProps } from "@core/components";
-import { CSSProperties, forwardRef } from "react";
-import { outlineStyles } from "@core/utils";
-import fade from "@core/utils/hexToRgbA";
+
+import { HvButton, HvButtonProps } from "@core/components/Button";
+import { outlineStyles } from "@core/utils/focusUtils";
+import { hexToRgbA } from "@core/utils/hexToRgbA";
 import { transientOptions } from "@core/utils/transientOptions";
-import { PolymorphicRef } from "@core/types";
+import { PolymorphicRef } from "@core/types/generic";
+
 import tagClasses from "./tagClasses";
 
 export const StyledChip = styled(
@@ -34,7 +39,7 @@ export const StyledChip = styled(
       fontFamily: theme.fontFamily.body,
 
       [`& .${tagClasses.focusVisible}`]: {
-        backgroundColor: fade(theme.colors.base_light, 0.3),
+        backgroundColor: hexToRgbA(theme.colors.base_light, 0.3),
       },
       ...($type === "categorical" && {
         backgroundColor: "red",

@@ -1,5 +1,7 @@
 import { clsx } from "clsx";
-import { HvBaseProps } from "@core/types";
+
+import { HvBaseProps } from "@core/types/generic";
+
 import { BrandRoot, BrandSeparator, BrandName } from "./Brand.styles";
 import headerBrandClasses, { HvHeaderBrandClasses } from "./brandClasses";
 

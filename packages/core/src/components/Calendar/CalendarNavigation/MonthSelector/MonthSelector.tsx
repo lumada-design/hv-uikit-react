@@ -1,5 +1,7 @@
 import { clsx } from "clsx";
-import { isKey } from "@core/utils";
+
+import { isKey } from "@core/utils/keyboardUtils";
+
 import { getMonthNamesList } from "../../utils";
 import { ViewMode } from "../../enums";
 import monthSelectorClasses, {
@@ -10,7 +12,7 @@ import {
   StyledCalendarMonthlyGrid,
   StyledFocusSelection,
 } from "./MonthSelector.styles";
-import { DateRangeProp, VisibilitySelectorActions } from "../../Calendar";
+import { DateRangeProp, VisibilitySelectorActions } from "../../types";
 
 export const HvMonthSelector = ({
   classes,

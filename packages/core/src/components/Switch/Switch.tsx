@@ -1,16 +1,21 @@
 import React, { useCallback } from "react";
+
 import { clsx } from "clsx";
+
 import { SwitchProps as MuiSwitchProps } from "@mui/material";
-import { useControlled, useUniqueId } from "@core/hooks";
-import { setId } from "@core/utils";
+
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useControlled } from "@core/hooks/useControlled";
+import { setId } from "@core/utils/setId";
 import {
   HvWarningText,
-  HvBaseSwitch,
   HvLabelProps,
   HvFormStatus,
-} from "@core/components";
-import { HvBaseProps } from "@core/types";
-import { isInvalid } from "../Forms/FormElement/validationStates";
+} from "@core/components/Forms";
+import { HvBaseSwitch } from "@core/components/BaseSwitch";
+import { HvBaseProps } from "@core/types/generic";
+import { isInvalid } from "@core/components/Forms/FormElement/validationStates";
+
 import {
   StyledFormElement,
   StyledLabel,

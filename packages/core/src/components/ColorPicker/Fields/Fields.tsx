@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+
 import { HSLColor, HSVColor, RGBColor } from "react-color";
+
 import * as color from "react-color/lib/helpers/color";
-import { HvInput } from "@core/components";
-import { ExtractNames } from "@core/utils";
+
+import { HvInput } from "@core/components/Input";
+import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./Fields.styles";
 
 export { staticClasses as colorPickerFieldsClasses };

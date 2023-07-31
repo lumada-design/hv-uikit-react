@@ -1,17 +1,22 @@
 import { forwardRef, isValidElement } from "react";
+
 import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
-import { ExtractNames, iconVariant, setId } from "@core/utils";
-import { HvBaseProps } from "@core/types";
+
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+import { iconVariant } from "@core/utils/iconVariant";
+import { HvBaseProps } from "@core/types/generic";
 import {
   HvActionsGeneric,
   HvActionGeneric,
-  HvButtonVariant,
-} from "@core/components";
-import { useTheme } from "@core/hooks";
-import { HvSnackbarVariant } from "../Snackbar";
+} from "@core/components/ActionsGeneric";
+import { HvButtonVariant } from "@core/components/Button";
+import { useTheme } from "@core/hooks/useTheme";
+
 import { staticClasses, useClasses } from "./SnackbarContentWrapper.styles";
+import { HvSnackbarVariant } from "../types";
 
 export { staticClasses as snackbarContentClasses };
 

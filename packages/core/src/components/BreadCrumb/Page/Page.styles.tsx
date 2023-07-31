@@ -1,5 +1,7 @@
-import { createClasses, outlineStyles } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { createClasses } from "@core/utils/classes";
+import { outlineStyles } from "@core/utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvPage", {
   link: {

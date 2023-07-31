@@ -1,14 +1,19 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import {
-  HvBaseDropdown,
-  HvBaseDropdownProps,
   HvFormElement,
   HvFormElementProps,
   HvLabel,
-  HvTypography,
-} from "@core/components";
+} from "@core/components/Forms";
+import {
+  HvBaseDropdown,
+  HvBaseDropdownProps,
+} from "@core/components/BaseDropdown";
+import { HvTypography } from "@core/components/Typography";
 import { transientOptions } from "@core/utils/transientOptions";
+
 import dropdownClasses from "./dropdownClasses";
 
 export const StyledHvFormElement = styled(

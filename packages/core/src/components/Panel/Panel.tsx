@@ -1,5 +1,7 @@
 import { clsx } from "clsx";
-import { HvBaseProps } from "@core/types";
+
+import { HvBaseProps } from "@core/types/generic";
+
 import { StyledDiv } from "./Panel.styles";
 import panelClasses, { HvPanelClasses } from "./panelClasses";
 

@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
+
 import capitalize from "lodash/capitalize";
+
 import {
   CSSProperties,
   forwardRef,
@@ -9,15 +11,16 @@ import {
   useMemo,
   useState,
 } from "react";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { transientOptions } from "@core/utils/transientOptions";
-import {
-  checkValidHexColorValue,
-  ExtractNames,
-  hexToRgbA,
-  getVarValue,
-} from "@core/utils";
-import { useTheme } from "@core/hooks";
+import { checkValidHexColorValue } from "@core/utils/checkValidHexColorValue";
+import { ExtractNames } from "@core/utils/classes";
+import { getVarValue } from "@core/utils/theme";
+import { hexToRgbA } from "@core/utils/hexToRgbA";
+import { useTheme } from "@core/hooks/useTheme";
+
 import {
   HvTableCellAlign,
   HvTableCellType,

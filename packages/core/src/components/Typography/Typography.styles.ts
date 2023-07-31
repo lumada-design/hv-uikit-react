@@ -1,5 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
-import { createClasses } from "../../utils";
+
+import { createClasses } from "@core/utils/classes";
 
 export const { useClasses, staticClasses } = createClasses("HvTypography", {
   root: {

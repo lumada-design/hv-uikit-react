@@ -1,9 +1,11 @@
 import MuiCardHeader, {
   CardHeaderProps as MuiCardHeaderProps,
 } from "@mui/material/CardHeader";
-import { HvBaseProps } from "@core/types";
-import { useTheme } from "@core/hooks";
-import { ExtractNames } from "@core/utils";
+
+import { HvBaseProps } from "@core/types/generic";
+import { useTheme } from "@core/hooks/useTheme";
+import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./Header.styles";
 
 export { staticClasses as cardHeaderClasses };

@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "@core/utils";
+
+import { outlineStyles } from "@core/utils/focusUtils";
 import { transientOptions } from "@core/utils/transientOptions";
 
 const { hoverColor } = theme.header;
@@ -25,7 +27,7 @@ export const MenuItemLi = styled(
       borderBottom: `${theme.header.secondLevelSelectedItemBorderBottomThickness} solid ${theme.header.secondLevelSelectedItemBorderBottomColor}`,
       paddingTop: theme.header.secondLevelSelectedItemBorderBottomThickness,
       height: "100%",
-      "& > * > span": {
+      "&& > * > span": {
         color: theme.header.secondLevelSelectedItemColor,
       },
     }),
@@ -35,7 +37,7 @@ export const MenuItemLi = styled(
       borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.selectedItemBorderBottomColor}`,
       paddingTop: theme.header.selectedItemBorderBottomThickness,
       height: "100%",
-      "& > * > span": {
+      "&& > * > span": {
         color: theme.header.selectedItemColor,
       },
     }),

@@ -1,13 +1,16 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { CSSProperties } from "react";
+
 import {
-  HvBaseRadio,
   HvFormElement,
   HvFormElementProps,
   HvLabel,
-} from "@core/components";
-import { CSSProperties } from "react";
-import { outlineStyles } from "@core/utils";
+} from "@core/components/Forms";
+import { HvBaseRadio } from "@core/components/BaseRadio";
+import { outlineStyles } from "@core/utils/focusUtils";
 import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledHvBaseRadio = styled(

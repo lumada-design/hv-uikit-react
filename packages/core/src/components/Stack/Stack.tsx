@@ -1,15 +1,20 @@
 import React, { useMemo, useRef, useCallback } from "react";
+
 import { useTheme } from "@mui/material/styles";
 import MuiDivider, {
   DividerProps as MuiDividerProps,
 } from "@mui/material/Divider";
+
 import { clsx } from "clsx";
+
 import isString from "lodash/isString";
 import isBoolean from "lodash/isBoolean";
-import { useWidth } from "@core/hooks";
-import { HvBaseProps } from "@core/types";
-import { HvFocus } from "@core/components";
+
+import { useWidth } from "@core/hooks/useWidth";
+import { HvBaseProps } from "@core/types/generic";
+import { HvFocus } from "@core/components/Focus";
 import { HvBreakpoints } from "@core/types/tokens";
+
 import { StyledRoot } from "./Stack.styles";
 import stackClasses, { HvStackClasses } from "./stackClasses";
 

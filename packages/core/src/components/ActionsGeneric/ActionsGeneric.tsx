@@ -3,11 +3,13 @@ import React, { isValidElement } from "react";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import fade from "@core/utils/hexToRgbA";
-import { HvButton, HvButtonVariant, HvDropDownMenu } from "@core/components";
-import { ExtractNames, setId } from "@core/utils";
-import { HvBaseProps } from "@core/types";
-import { useTheme } from "@core/hooks";
+import { hexToRgbA } from "@core/utils/hexToRgbA";
+import { HvButton, HvButtonVariant } from "@core/components/Button";
+import { HvDropDownMenu } from "@core/components/DropDownMenu";
+import { setId } from "@core/utils/setId";
+import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "@core/types/generic";
+import { useTheme } from "@core/hooks/useTheme";
 
 import { staticClasses, useClasses } from "./ActionsGeneric.styles";
 
@@ -76,7 +78,7 @@ export const HvActionsGeneric = ({
         className={cx(
           css({
             "&:hover": {
-              backgroundColor: fade(
+              backgroundColor: hexToRgbA(
                 activeTheme?.colors?.modes[selectedMode].base_light ||
                   theme.colors.base_light,
                 0.3

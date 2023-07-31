@@ -1,20 +1,24 @@
+import React, { useMemo } from "react";
+
+import createCache from "@emotion/cache";
 import {
   css as cssReact,
   Global,
   CacheProvider,
   ClassNames,
 } from "@emotion/react";
+
 import {
   CssBaseline,
   CssScopedBaseline,
   getThemesVars,
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
-import { processThemes } from "@core/utils";
-import { HvTheme } from "@core/types";
-import React, { useMemo } from "react";
-import createCache from "@emotion/cache";
-import { useUniqueId } from "@core/hooks";
+
+import { processThemes } from "@core/utils/theme";
+import { HvTheme } from "@core/types/theme";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+
 import {
   HvThemeProvider,
   defaultCacheKey,

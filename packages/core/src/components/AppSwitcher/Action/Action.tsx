@@ -3,23 +3,43 @@ import { useState } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
-import {
-  HvAvatar,
-  HvListItem,
-  HvTooltip,
-  HvTypography,
-} from "@core/components";
-import { HvBaseProps } from "@core/types";
-import { useUniqueId } from "@core/hooks";
-import { ExtractNames } from "@core/utils";
+import { HvAvatar } from "@core/components/Avatar";
+import { HvListItem } from "@core/components/ListContainer";
+import { HvTypography } from "@core/components/Typography";
+import { HvTooltip } from "@core/components/Tooltip";
+import { HvBaseProps } from "@core/types/generic";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { ExtractNames } from "@core/utils/classes";
 
-import { HvAppSwitcherActionApplication } from "../AppSwitcher";
 import TitleWithTooltip from "../TitleWithTooltip";
 import { useClasses, staticClasses } from "./Action.styles";
 
 export { staticClasses as appSwitcherActionClasses };
 
 export type HvAppSwitcherActionClasses = ExtractNames<typeof useClasses>;
+
+export interface HvAppSwitcherActionApplication {
+  /** Id of the application. */
+  id?: string;
+  /** Name of the application, this is the value that will be displayed on the component. */
+  name: string;
+  /** URL with the icon location to be used to represent the application. iconUrl will only be used if no iconElement is provided. */
+  iconUrl?: string;
+  /** Element to be added as the icon representing the application. The iconElement will be the primary option to be displayed. */
+  iconElement?: React.ReactElement;
+  /** Small description of the application. */
+  description?: string;
+  /**  URL where the application is accessible. */
+  url?: string;
+  /** Defines if the application should be opened in the same tab or in a new one. */
+  target?: "_top" | "_blank";
+  /** If true, the item will be disabled. */
+  disabled?: boolean;
+  /** True when the application is selected, false otherwise. */
+  isSelected?: boolean;
+  /** The color of the application. */
+  color?: string;
+}
 
 export interface HvAppSwitcherActionProps extends HvBaseProps {
   /** The application data to be used to render the Action object. */
@@ -126,8 +146,8 @@ export const HvAppSwitcherAction = ({
         className={classes.typography}
         onClick={handleOnClick}
         style={{ borderColor: color }}
-        aria-describedby={descriptionElementId}
         aria-label={name}
+        {...(description && { "aria-describedby": descriptionElementId })}
       >
         <div className={classes.icon}>{renderApplicationIcon()}</div>
 

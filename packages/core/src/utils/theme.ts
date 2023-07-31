@@ -1,12 +1,14 @@
 /* eslint import/namespace: [2, { allowComputed: true }] */
 import { CSSProperties } from "react";
+
 import {
   themes,
   HvThemeColorModeStructure,
   HvThemeStructure,
   theme,
 } from "@hitachivantara/uikit-styles";
-import { HvTheme, HvCreateThemeProps } from "@core/types";
+
+import { HvTheme, HvCreateThemeProps } from "@core/types/theme";
 
 /**
  * Sets the element style properties.

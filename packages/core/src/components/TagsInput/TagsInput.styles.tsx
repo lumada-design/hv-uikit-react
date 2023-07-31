@@ -1,13 +1,12 @@
 import styled from "@emotion/styled";
+
+import { theme } from "@hitachivantara/uikit-styles";
+
 import {
-  HvTag,
   HvCharCounter,
   HvFormElement,
   HvInfoMessage,
-  HvInput,
   HvLabel,
-  HvListContainer,
-  HvListItem,
   HvSuggestions,
   HvWarningText,
   HvFormElementProps,
@@ -15,16 +14,20 @@ import {
   HvInfoMessageProps,
   HvCharCounterProps,
   HvWarningTextProps,
-  HvListItemProps,
-  HvTagProps,
-  HvInputProps,
   HvSuggestionsProps,
-  baseInputClasses,
-  listItemClasses,
   suggestionsClasses,
-} from "@core/components";
-import { theme } from "@hitachivantara/uikit-styles";
+} from "@core/components/Forms";
+import { HvInput, HvInputProps } from "@core/components/Input";
+import { HvTag, HvTagProps } from "@core/components/Tag";
+import { baseInputClasses } from "@core/components/BaseInput";
+import {
+  HvListContainer,
+  HvListItemProps,
+  HvListItem,
+  listItemClasses,
+} from "@core/components/ListContainer";
 import { transientOptions } from "@core/utils/transientOptions";
+
 import tagsInputClasses from "./tagsInputClasses";
 
 export const StyledFormElement = styled((props: HvFormElementProps) => (

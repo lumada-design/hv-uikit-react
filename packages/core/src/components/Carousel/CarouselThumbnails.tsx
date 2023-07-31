@@ -1,20 +1,25 @@
 import { CSSProperties, MouseEvent, forwardRef } from "react";
-import { HvBaseProps } from "@core/types";
-import { HvButton, HvButtonProps, HvPaginationProps, HvStack } from "..";
-import { HvCarouselClasses, HvCarouselProps } from ".";
+
+import { HvBaseProps } from "@core/types/generic";
+import { HvPaginationProps } from "@core/components/Pagination";
+import { HvStack } from "@core/components/Stack";
+import { HvButton, HvButtonProps } from "@core/components/Button";
+import { ExtractNames } from "@core/utils/classes";
+
 import { useClasses } from "./Carousel.styles";
 
 interface HvCarouselThumbnailsProps
   extends HvBaseProps<HTMLDivElement, "children">,
-    Pick<HvPaginationProps, "page" | "pages" | "canPrevious" | "canNext">,
-    Pick<HvCarouselProps, "showDots" | "renderThumbnail"> {
+    Pick<HvPaginationProps, "page" | "pages" | "canPrevious" | "canNext"> {
   width?: CSSProperties["width"];
-  classes?: HvCarouselClasses;
+  classes?: ExtractNames<typeof useClasses>;
   onThumbnailClick?: (
     event: MouseEvent<HTMLButtonElement>,
     index: number
   ) => void;
   thumbnailProps?: Partial<HvButtonProps>;
+  showDots?: boolean;
+  renderThumbnail?: (index: number) => React.ReactNode;
 }
 
 export const HvCarouselThumbnails = forwardRef<

@@ -1,23 +1,20 @@
 import { clsx } from "clsx";
+
 import { MouseEvent } from "react";
-import { useSelectionPath } from "@core/hooks";
-import { HvBaseProps } from "@core/types";
-import { HvMenuBar, HvMenuBarProps } from "./MenuBar";
+
+import { HvBaseProps } from "@core/types/generic";
+
+import { HvHeaderMenuBar, HvHeaderMenuBarProps } from "./MenuBar";
 import { StyledNav } from "./Navigation.styles";
 import { FocusProvider } from "./utils/FocusContext";
 import { SelectionContext } from "./utils/SelectionContext";
 import headerNavigationClasses, {
   HvHeaderNavigationClasses,
 } from "./navigationClasses";
-
-export interface HvHeaderNavigationItemProp {
-  id: string;
-  label: string;
-  path?: string;
-  href?: string;
-  target?: string;
-  data?: HvHeaderNavigationItemProp[];
-}
+import {
+  HvHeaderNavigationItemProp,
+  useSelectionPath,
+} from "./useSelectionPath";
 
 export interface HvHeaderNavigationProps
   extends HvBaseProps<HTMLDivElement, "onClick"> {
@@ -39,7 +36,7 @@ export const HvHeaderNavigation = ({
 }: HvHeaderNavigationProps) => {
   const selectionPath = useSelectionPath(data, selected);
 
-  const handleClick: HvMenuBarProps["onClick"] = (event, selection) => {
+  const handleClick: HvHeaderMenuBarProps["onClick"] = (event, selection) => {
     event.preventDefault();
 
     onClick?.(event, selection);
@@ -56,7 +53,7 @@ export const HvHeaderNavigation = ({
           )}
           {...others}
         >
-          <HvMenuBar
+          <HvHeaderMenuBar
             data={data}
             type="menubar"
             onClick={handleClick}

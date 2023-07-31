@@ -1,8 +1,10 @@
 import { useContext } from "react";
-import { ExtractNames } from "@core/utils";
+
+import { ExtractNames } from "@core/utils/classes";
+
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { staticClasses, useClasses } from "./Counter.styles";
-import { HvFilterGroupFilters, HvFilterGroupValue } from "../FilterGroup";
+import { HvFilterGroupFilters, HvFilterGroupValue } from "../types";
 
 export { staticClasses as filterGroupCounterClasses };
 

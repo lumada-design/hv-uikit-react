@@ -1,6 +1,8 @@
 import { useMemo } from "react";
+
 import dayjs from "dayjs";
-import { HvOverflowTooltip } from "@core/components";
+
+import { HvOverflowTooltip } from "@core/components/OverflowTooltip";
 
 export interface HvDateColumnCellProp {
   /** The date's text representation format. */
@@ -9,7 +11,7 @@ export interface HvDateColumnCellProp {
   date?: string;
 }
 
-const HvDateColumnCell = ({
+export const HvDateColumnCell = ({
   date,
   dateFormat,
 }: HvDateColumnCellProp): JSX.Element => {
@@ -23,5 +25,3 @@ const HvDateColumnCell = ({
 
   return <HvOverflowTooltip data={formattedDate} />;
 };
-
-export default HvDateColumnCell;

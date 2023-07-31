@@ -1,14 +1,15 @@
 import { forwardRef } from "react";
+
 import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
-import { HvBaseProps } from "@core/types";
-import { ExtractNames, iconVariant } from "@core/utils";
-import {
-  HvActionGeneric,
-  HvBannerActionPosition,
-  HvBannerVariant,
-} from "@core/components";
+
+import { HvBaseProps } from "@core/types/generic";
+import { iconVariant } from "@core/utils/iconVariant";
+import { ExtractNames } from "@core/utils/classes";
+import { HvActionGeneric } from "@core/components/ActionsGeneric";
+
+import { HvBannerActionPosition, HvBannerVariant } from "../types";
 import { HvActionContainer, HvActionContainerProps } from "./ActionContainer";
 import { HvMessageContainer } from "./MessageContainer";
 import { useClasses, staticClasses } from "./BannerContent.styles";

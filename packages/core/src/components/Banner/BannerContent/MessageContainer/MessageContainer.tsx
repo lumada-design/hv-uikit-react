@@ -1,10 +1,12 @@
-import { HvBaseProps } from "@core/types";
+import { HvBaseProps } from "@core/types/generic";
 import {
   HvActionGeneric,
   HvActionsGeneric,
-  HvTypography,
-} from "@core/components";
-import { ExtractNames, setId } from "@core/utils";
+} from "@core/components/ActionsGeneric";
+import { HvTypography } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+
 import { staticClasses, useClasses } from "./MessageContainer.styles";
 
 export { staticClasses as messageContainerClasses };

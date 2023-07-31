@@ -4,9 +4,13 @@ import {
   TableExpandedToggleProps,
   UseExpandedRowProps,
 } from "react-table";
+
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-import { HvButton, HvTypography } from "@core/components";
-import { useLabels } from "@core/hooks";
+
+import { HvTypography } from "@core/components/Typography";
+import { HvButton } from "@core/components/Button";
+
+import { useLabels } from "@core/hooks/useLabels";
 
 // #region ##### TYPES #####
 

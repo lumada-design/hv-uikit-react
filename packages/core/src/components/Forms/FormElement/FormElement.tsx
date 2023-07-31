@@ -1,7 +1,10 @@
 import { useMemo } from "react";
+
 import { clsx } from "clsx";
-import { HvBaseProps } from "@core/types";
-import { useUniqueId } from "@core/hooks";
+
+import { HvBaseProps } from "@core/types/generic";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+
 import { findDescriptors } from "./utils/FormUtils";
 import { HvFormElementContextProvider } from "./context/FormElementContext";
 import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";

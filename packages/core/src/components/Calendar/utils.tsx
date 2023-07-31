@@ -1,7 +1,9 @@
 import dayjs from "dayjs";
+
 import isNil from "lodash/isNil";
 import capitalize from "lodash/capitalize";
-import { DateRangeProp } from ".";
+
+import { DateRangeProp } from "./types";
 
 /**
  * Constant with the number of weeks to be displayed on the calendar.

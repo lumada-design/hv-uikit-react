@@ -1,10 +1,13 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import {
   Switch as MuiSwitch,
   switchClasses as MuiSwitchClasses,
 } from "@mui/material";
-import { outlineStyles } from "@core/utils";
+
+import { outlineStyles } from "@core/utils/focusUtils";
 import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledSwitch = styled(

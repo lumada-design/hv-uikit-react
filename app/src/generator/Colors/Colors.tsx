@@ -8,16 +8,7 @@ import { useContext } from "react";
 import debounce from "lodash/debounce";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 import { styles } from "./Colors.styles";
-import { getColorGroupName, getColors } from "./utils";
-
-export const groupsToShow = [
-  "acce",
-  "atmo",
-  "base",
-  "sema",
-  "sup",
-  "cat",
-] as const;
+import { getColorGroupName, getColors, groupsToShow } from "./utils";
 
 const Colors = (): JSX.Element => {
   const { activeTheme, selectedMode } = useTheme();

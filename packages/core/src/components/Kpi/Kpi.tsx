@@ -1,7 +1,9 @@
 import { clsx } from "clsx";
-import { useLabels } from "@core/hooks";
-import { HvBaseProps } from "@core/types";
-import { HvTypography } from "..";
+
+import { useLabels } from "@core/hooks/useLabels";
+import { HvBaseProps } from "@core/types/generic";
+import { HvTypography } from "@core/components/Typography";
+
 import {
   StyledComparisonComposition,
   StyledComparisonContainer,

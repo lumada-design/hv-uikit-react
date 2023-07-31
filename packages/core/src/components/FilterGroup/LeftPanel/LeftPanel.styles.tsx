@@ -1,4 +1,4 @@
-import { createClasses } from "@core/utils";
+import { createClasses } from "@core/utils/classes";
 
 const name = "HvFilterGroupLeftPanel";
 

@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
-import { HvTypography } from "@core/components";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { HvTypography } from "@core/components/Typography";
 import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledRoot = styled(

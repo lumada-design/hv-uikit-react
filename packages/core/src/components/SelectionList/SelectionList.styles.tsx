@@ -1,16 +1,21 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import {
-  HvListContainer,
   HvFormElement,
-  HvLabel,
-  HvInfoMessage,
-  HvWarningText,
-  HvLabelProps,
-  HvWarningTextProps,
-  HvInfoMessageProps,
   HvFormElementProps,
-} from "@core/components";
+} from "@core/components/Forms/FormElement";
+import { HvLabel, HvLabelProps } from "@core/components/Forms/Label";
+import {
+  HvInfoMessage,
+  HvInfoMessageProps,
+} from "@core/components/Forms/InfoMessage";
+import {
+  HvWarningText,
+  HvWarningTextProps,
+} from "@core/components/Forms/WarningText";
+import { HvListContainer } from "@core/components/ListContainer";
 import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledFormElement = styled((props: HvFormElementProps) => (

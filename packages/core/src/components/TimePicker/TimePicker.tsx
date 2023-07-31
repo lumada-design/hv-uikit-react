@@ -1,5 +1,7 @@
 import { useState, useRef, useMemo } from "react";
+
 import { Time } from "@internationalized/date";
+
 import { useTimeField } from "@react-aria/datepicker";
 import {
   TimeFieldStateOptions,
@@ -7,19 +9,22 @@ import {
 } from "@react-stately/datepicker";
 
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
+
 import {
   HvFormElement,
-  HvBaseDropdown,
   HvLabel,
   HvWarningText,
   HvInfoMessage,
   HvFormElementProps,
+} from "@core/components/Forms";
+import {
+  HvBaseDropdown,
   HvBaseDropdownProps,
-  useControlled,
-  useUniqueId,
-  setId,
-  ExtractNames,
-} from "../..";
+} from "@core/components/BaseDropdown";
+import { useControlled } from "@core/hooks/useControlled";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
 
 import { Unit } from "./Unit";
 import { Placeholder } from "./Placeholder";

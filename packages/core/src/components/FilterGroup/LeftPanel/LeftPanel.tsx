@@ -1,6 +1,11 @@
 import { useContext } from "react";
-import { HvListContainer, HvListItem, HvPanel } from "@core/components";
-import { ExtractNames, setId, wrapperTooltip } from "@core/utils";
+
+import { HvListContainer, HvListItem } from "@core/components/ListContainer";
+import { HvPanel } from "@core/components/Panel";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+import { wrapperTooltip } from "@core/utils/wrapperTooltip";
+
 import { HvFilterGroupCounter } from "../Counter";
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { staticClasses, useClasses } from "./LeftPanel.styles";

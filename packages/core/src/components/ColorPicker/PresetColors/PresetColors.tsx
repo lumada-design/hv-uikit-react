@@ -1,8 +1,10 @@
 // @types/react-color seems to be broken
 // @ts-ignore
 import { Swatch } from "react-color/lib/components/common";
-import { HvTypography } from "@core/components";
-import { ExtractNames } from "@core/utils";
+
+import { HvTypography } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./PresetColors.styles";
 
 export { staticClasses as colorPickerPresetColorsClasses };

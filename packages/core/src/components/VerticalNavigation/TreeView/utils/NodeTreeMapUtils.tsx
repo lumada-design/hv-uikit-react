@@ -1,4 +1,4 @@
-export default class NodeTreeMapUtils {
+export class NodeTreeMapUtils {
   static addNodeToNodeMap(nodeMap, nodeId, childrenIds, nodeData) {
     const newMap = { ...nodeMap };
 

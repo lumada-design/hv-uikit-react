@@ -4,22 +4,33 @@ import React, {
   useCallback,
   KeyboardEventHandler,
 } from "react";
+
 import { createPortal } from "react-dom";
+
 import { clsx } from "clsx";
+
 import {
   ClickAwayListener,
   ClickAwayListenerProps,
   PopperPlacementType,
   PopperProps,
 } from "@mui/material";
+
 import { theme } from "@hitachivantara/uikit-styles";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-import { useControlled, useForkRef, useTheme, useUniqueId } from "@core/hooks";
-import { isKey, isOneOfKeys, setId } from "@core/utils";
-import { getFirstAndLastFocus } from "@core/utils/focusableElementFinder";
-import { HvBaseProps } from "@core/types";
+
 import { usePopper } from "react-popper";
 import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
+
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useTheme } from "@core/hooks/useTheme";
+import { useForkRef } from "@core/hooks/useForkRef";
+import { useControlled } from "@core/hooks/useControlled";
+import { isKey, isOneOfKeys } from "@core/utils/keyboardUtils";
+import { setId } from "@core/utils/setId";
+import { getFirstAndLastFocus } from "@core/utils/focusableElementFinder";
+import { HvBaseProps } from "@core/types/generic";
+
 import {
   StyledAdornment,
   StyledAnchor,

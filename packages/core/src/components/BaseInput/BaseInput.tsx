@@ -1,20 +1,25 @@
 import { useContext } from "react";
+
 import {
   InputBaseComponentProps as MuiInputBaseComponentProps,
   InputProps as MuiInputProps,
   Input as MuiInput,
   InputBaseProps,
 } from "@mui/material";
-import { HvBaseProps } from "@core/types";
-import { ExtractNames } from "@core/utils";
+
+import { css as emotionCss, Global } from "@emotion/react";
+
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
   buildFormElementPropsFromContext,
   buildAriaPropsFromContext,
-} from "@core/components";
-import { css as emotionCss, Global } from "@emotion/react";
-import { theme } from "@hitachivantara/uikit-styles";
+} from "@core/components/Forms";
+
 import { staticClasses, useClasses } from "./BaseInput.styles";
 
 export { staticClasses as baseInputClasses };

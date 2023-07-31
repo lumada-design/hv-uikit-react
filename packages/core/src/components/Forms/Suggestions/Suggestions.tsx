@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+
 import React, {
   forwardRef,
   useContext,
@@ -6,17 +7,23 @@ import React, {
   useRef,
   useState,
 } from "react";
+
 import { useForkRef } from "@mui/material";
-import { HvBaseProps } from "@core/types";
-import { setId } from "@core/utils";
+
+import { HvBaseProps } from "@core/types/generic";
+import { setId } from "@core/utils/setId";
+import { HvListItem } from "@core/components/ListContainer";
+import {
+  HvClickOutsideEvent,
+  useClickOutside,
+} from "@core/hooks/useClickOutside";
+
 import {
   StyledRoot,
   StyledSelectionList,
   StyledPopper,
 } from "./Suggestions.styles";
 import { HvFormElementContext } from "../FormElement";
-import { HvListItem } from "../../ListContainer/ListItem";
-import { HvClickOutsideEvent, useClickOutside } from "../../../hooks";
 import suggestionsClasses, { HvSuggestionsClasses } from "./suggestionsClasses";
 
 export interface HvSuggestion {

@@ -1,7 +1,11 @@
 import { CSSInterpolation } from "@emotion/serialize";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import { createClasses, outlineStyles } from "@core/utils";
-import { HvButtonRadius, HvButtonSize, HvButtonVariant } from ".";
+
+import { outlineStyles } from "@core/utils/focusUtils";
+import { createClasses } from "@core/utils/classes";
+
+import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./types";
 
 export const { staticClasses, useClasses } = createClasses("HvButton", {
   root: {

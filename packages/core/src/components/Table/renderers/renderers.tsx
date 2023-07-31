@@ -1,19 +1,24 @@
 import { ClassNames } from "@emotion/react";
+
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-import { setId } from "@core/utils";
+
+import { setId } from "@core/utils/setId";
+import { HvTag, HvTagProps } from "@core/components/Tag";
+import { HvButton } from "@core/components/Button";
+import { HvTypography } from "@core/components/Typography";
 import {
   HvOverflowTooltip,
-  HvTag,
-  HvTypography,
-  HvButton,
+  HvOverflowTooltipProps,
+} from "@core/components/OverflowTooltip";
+import { HvBaseSwitchProps } from "@core/components/BaseSwitch";
+import { HvListValue } from "@core/components/List";
+
+import {
+  HvTableHeaderRenderer,
+  HvCellProps,
   HvTableColumnConfig,
   HvRowInstance,
-  HvTagProps,
-  HvBaseSwitchProps,
-  HvListValue,
-  HvOverflowTooltipProps,
-} from "@core/components";
-import { HvTableHeaderRenderer, HvCellProps } from "../hooks/useTable";
+} from "../hooks/useTable";
 import { HvDateColumnCell } from "./DateColumnCell";
 import { HvSwitchColumnCell } from "./SwitchColumnCell";
 import { HvProgressColumnCell } from "./ProgressColumnCell";

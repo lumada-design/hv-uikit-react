@@ -1,4 +1,4 @@
-import { HvFormStatus } from ".";
+import { HvFormStatus } from "./FormElement";
 
 const validationState = Object.freeze({
   standBy: "standBy",

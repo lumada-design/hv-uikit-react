@@ -7,9 +7,12 @@ import {
   useMemo,
   useState,
 } from "react";
+
 import isEqual from "lodash/isEqual";
-import { useSavedState } from "@core/utils";
-import { HvFilterGroupFilters, HvFilterGroupValue } from "./FilterGroup";
+
+import { useSavedState } from "@core/utils/useSavedState";
+
+import { HvFilterGroupFilters, HvFilterGroupValue } from "./types";
 
 interface HvFilterGroupContextValue {
   activeGroup: number;

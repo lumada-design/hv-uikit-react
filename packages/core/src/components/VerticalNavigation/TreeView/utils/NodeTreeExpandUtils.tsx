@@ -1,4 +1,4 @@
-export default class NodeTreeExpandUtils {
+export class NodeTreeExpandUtils {
   static isExpanded(expanded, nodeId) {
     return Array.isArray(expanded) ? expanded.indexOf(nodeId) !== -1 : false;
   }

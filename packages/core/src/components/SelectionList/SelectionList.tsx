@@ -5,10 +5,17 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
+
 import { clsx } from "clsx";
-import { HvBaseProps } from "@core/types";
-import { useControlled, useUniqueId } from "@core/hooks";
-import { isKey, setId, multiSelectionEventHandler } from "@core/utils";
+
+import { HvBaseProps } from "@core/types/generic";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useControlled } from "@core/hooks/useControlled";
+import { multiSelectionEventHandler } from "@core/utils/multiSelectionEventHandler";
+import { isKey } from "@core/utils/keyboardUtils";
+import { setId } from "@core/utils/setId";
+import { HvFormStatus } from "@core/components/Forms/FormElement";
+
 import {
   StyledListContainer,
   StyledFormElement,
@@ -16,7 +23,6 @@ import {
   StyledInfoMessage,
   StyledError,
 } from "./SelectionList.styles";
-import { HvFormStatus } from "../Forms/FormElement";
 import selectionListClasses, {
   HvSelectionListClasses,
 } from "./selectionListClasses";

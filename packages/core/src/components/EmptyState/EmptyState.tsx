@@ -1,9 +1,13 @@
 import { clsx } from "clsx";
+
 import React from "react";
-import { HvBaseProps } from "@core/types";
-import { HvTypographyProps } from "@core/components";
-import { useTheme as useHvTheme } from "@core/hooks";
+
 import { useTheme } from "@mui/material/styles";
+
+import { HvBaseProps } from "@core/types/generic";
+import { HvTypographyProps } from "@core/components/Typography";
+import { useTheme as useHvTheme } from "@core/hooks/useTheme";
+
 import {
   StyledContainer,
   StyledRoot,

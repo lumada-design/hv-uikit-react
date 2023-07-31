@@ -6,21 +6,22 @@ import React, {
   useRef,
   useState,
 } from "react";
+
 import useCarousel, { EmblaOptionsType } from "embla-carousel-react";
+
 import {
   Backwards,
   Forwards,
   Close,
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
-import {
-  ExtractNames,
-  HvBaseProps,
-  HvButton,
-  HvContainer,
-  HvTypography,
-  useTheme,
-} from "../..";
+
+import { HvBaseProps } from "@core/types/generic";
+import { HvButton } from "@core/components/Button";
+import { useTheme } from "@core/hooks/useTheme";
+import { HvTypography } from "@core/components/Typography";
+import { HvContainer } from "@core/components/Container";
+import { ExtractNames } from "@core/utils/classes";
 
 import { HvCarouselControls } from "./CarouselControls";
 import { HvCarouselThumbnails } from "./CarouselThumbnails";

@@ -1,5 +1,7 @@
 import { SyntheticEvent, useRef } from "react";
+
 import { clsx } from "clsx";
+
 import {
   isSameDay,
   isSameMonth,
@@ -7,7 +9,7 @@ import {
   checkIfDateIsDisabled,
   isDateRangeProp,
 } from "../utils";
-import { DateRangeProp } from "../Calendar";
+import { DateRangeProp } from "../types";
 import calendarCellClasses, {
   HvCalendarCellClasses,
 } from "./calendarCellClasses";

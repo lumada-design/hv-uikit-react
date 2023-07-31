@@ -26,14 +26,15 @@ export const CustomLabels: StoryObj<HvFooterProps> = {
     name: "Hitachi Vantara",
     copyright: "© Hitachi Vantara Corporation 2022",
     links: (
-      <HvTypography variant="label" style={{ color: "#2064B4" }}>
-        <a
-          href="https://www.hitachivantara.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          License information
-        </a>
+      <HvTypography
+        variant="label"
+        style={{ color: "#2064B4" }}
+        component="a"
+        href="https://www.hitachivantara.com"
+        target="_blank"
+        rel="noreferrer"
+      >
+        License information
       </HvTypography>
     ),
   },

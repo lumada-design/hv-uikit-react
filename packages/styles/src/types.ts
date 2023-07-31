@@ -1,7 +1,6 @@
 import * as CSS from "csstype";
 import { colors } from "./tokens/colors";
 import * as tokens from "./tokens";
-import * as themes from "./themes";
 
 // Theme tokens
 const flattenTokens = {
@@ -479,6 +478,9 @@ export type HvThemeUtils = {
 // Theme colors
 export type HvThemeColors = typeof colors.common & typeof colors.light;
 
+// Base themes: DS3 and DS5
+export type HvBaseTheme = "ds3" | "ds5";
+
 // Theme color modes
 export type HvThemeColorMode = "dawn" | "wicked";
 
@@ -528,7 +530,3 @@ export type HvThemeVars = DeepString<HvThemeTokens> &
 
 // Theme: utils + CSS vars
 export type HvTheme = HvThemeVars & HvThemeUtils;
-
-// Base themes: DS3 and DS5
-const baseThemes = { ...themes } as const;
-export type HvBaseTheme = keyof typeof baseThemes;

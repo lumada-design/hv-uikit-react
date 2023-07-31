@@ -1,8 +1,13 @@
 import { useTheme } from "@mui/material/styles";
-import { ContainerProps as MuiContainerProps } from "@mui/material/Container";
-import { forwardRef } from "react";
-import { HvBaseProps } from "@core/types";
+
 import { clsx } from "clsx";
+
+import { ContainerProps as MuiContainerProps } from "@mui/material/Container";
+
+import { forwardRef } from "react";
+
+import { HvBaseProps } from "@core/types/generic";
+
 import { StyledRoot } from "./Container.styles";
 import containerClasses, { HvContainerClasses } from "./containerClasses";
 

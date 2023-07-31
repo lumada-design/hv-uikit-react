@@ -1,4 +1,5 @@
-import { createClasses, outlineStyles } from "@core/utils";
+import { createClasses } from "@core/utils/classes";
+import { outlineStyles } from "@core/utils/focusUtils";
 
 const name = "HvBannerActionContainer";
 

@@ -1,9 +1,13 @@
 import { clsx } from "clsx";
-import { HvBaseProps } from "@core/types";
-import isString from "lodash/isString";
-import { HvTypography } from "@core/components";
-import { useTheme as useHvTheme } from "@core/hooks";
+
 import { useTheme } from "@mui/material/styles";
+
+import isString from "lodash/isString";
+
+import { HvBaseProps } from "@core/types/generic";
+import { HvTypography } from "@core/components/Typography";
+import { useTheme as useHvTheme } from "@core/hooks/useTheme";
+
 import {
   StyledActions,
   StyledBackButton,
