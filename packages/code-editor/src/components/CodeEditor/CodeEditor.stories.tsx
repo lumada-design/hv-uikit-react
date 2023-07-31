@@ -77,14 +77,12 @@ const Header = (props: {
             icon
             aria-label="Popup"
             variant="secondaryGhost"
+            component="a"
+            href="http://localhost:9001/iframe.html?id=components-code-editor--main"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <a
-              href="http://localhost:9001/iframe.html?id=components-code-editor--main"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <PopUp />
-            </a>
+            <PopUp />
           </HvButton>
         </HvTooltip>
       </div>
