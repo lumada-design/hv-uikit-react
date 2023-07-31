@@ -1,8 +1,11 @@
 import { CSSProperties } from "react";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import validationStates from "@core/components/Forms/FormElement/validationStates";
-import { HvFormStatus } from "@core/components";
-import { HvKnobProperty, HvMarkProperty } from ".";
+import { HvFormStatus } from "@core/components/Forms";
+
+import { HvKnobProperty, HvMarkProperty } from "./types";
 import { SliderStyles } from "./Slider.styles";
 
 /**

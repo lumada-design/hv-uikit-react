@@ -1,4 +1,4 @@
-import { HvScrollToVerticalOption } from "./Vertical";
+import { HvScrollToVerticalOption } from "./types";
 
 type ExtendedWindow = Window & typeof globalThis & HTMLElement;
 

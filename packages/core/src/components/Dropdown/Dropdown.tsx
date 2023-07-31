@@ -1,16 +1,20 @@
 import { useEffect, useRef, useState } from "react";
+
 import { PopperProps } from "@mui/material";
+
 import { clsx } from "clsx";
-import { setId } from "@core/utils";
+
+import { setId } from "@core/utils/setId";
 import { useLabels, useUniqueId, useControlled } from "@core/hooks";
-import { HvBaseProps } from "@core/types";
+import { HvBaseProps } from "@core/types/generic";
+import { HvBaseDropdownProps } from "@core/components/BaseDropdown";
+import { HvListValue } from "@core/components/List";
 import {
-  HvBaseDropdownProps,
+  isInvalid,
   HvInfoMessage,
-  HvListValue,
   HvWarningText,
-} from "@core/components";
-import { isInvalid } from "../Forms/FormElement/validationStates";
+} from "@core/components/Forms";
+
 import { getSelected, getSelectionLabel } from "./utils";
 import dropdownClasses, { HvDropdownClasses } from "./dropdownClasses";
 import { HvDropdownList, HvDropdownListProps } from "./List";
@@ -21,35 +25,7 @@ import {
   StyledLabelContainer,
   StyledTypography,
 } from "./Dropdown.styles";
-
-export interface HvDropdownLabelsProps {
-  /**
-   * Label for overwrite the default header behavior.
-   */
-  select?: string;
-  /**
-   * Label used for the All checkbox action.
-   */
-  selectAll?: string;
-  /**
-   * Cancel button label.
-   */
-  cancelLabel?: string;
-  /**
-   * Apply button label.
-   */
-  applyLabel?: string;
-  /**
-   * The label used in the middle of the multiSelection count.
-   */
-  multiSelectionConjunction?: string;
-  /**
-   * The label used in search.
-   */
-  searchPlaceholder?: string;
-}
-
-export type HvDropdownStatus = "standBy" | "valid" | "invalid";
+import { HvDropdownLabelsProps, HvDropdownStatus } from "./types";
 
 export interface HvDropdownProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {

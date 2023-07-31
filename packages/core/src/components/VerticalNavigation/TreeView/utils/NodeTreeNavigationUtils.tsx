@@ -1,4 +1,4 @@
-export default class NodeTreeNavigationUtils {
+export class NodeTreeNavigationUtils {
   static getNextNode(isExpanded, nodeMap, nodeId, end = false) {
     const node = nodeMap[nodeId];
     const parent = nodeMap[node.parent];

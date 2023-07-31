@@ -1,8 +1,8 @@
 import { Reducer, useReducer } from "react";
 
-import { validateDate } from "./utils";
+import { VisibilitySelectorActions } from "@core/components/Calendar";
 
-import { VisibilitySelectorActions } from "..";
+import { validateDate } from "./utils";
 
 function stateToLeftRight({
   visibleYear,

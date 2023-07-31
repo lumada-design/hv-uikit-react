@@ -1,4 +1,4 @@
-import { NavigationData } from "../Navigation";
+import { NavigationData } from "../VerticalNavigationContext";
 
 /**
  * Checks if there are any sub items in the NavigationItem data structure.

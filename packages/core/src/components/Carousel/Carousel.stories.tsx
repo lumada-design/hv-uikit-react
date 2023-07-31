@@ -1,18 +1,20 @@
 import { useState } from "react";
+
 import { Meta, StoryObj } from "@storybook/react";
 
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { HvTypography } from "@core/components/Typography";
 import {
-  HvTypography,
   HvCard,
   HvCardHeader,
   HvCardMedia,
   HvCardContent,
-  HvCarousel,
-  HvCarouselProps,
-  HvCarouselSlide,
-  HvDropDownMenu,
-  theme,
-} from "../..";
+} from "@core/components/Card";
+import { HvDropDownMenu } from "@core/components/DropDownMenu";
+
+import { HvCarousel, HvCarouselProps } from "./Carousel";
+import { HvCarouselSlide } from "./CarouselSlide";
 
 export default {
   title: "Widgets/Carousel",

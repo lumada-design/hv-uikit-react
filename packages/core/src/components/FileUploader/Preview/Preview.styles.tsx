@@ -1,9 +1,13 @@
 import styled from "@emotion/styled";
+
+import { forwardRef } from "react";
+
 import { Preview } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvButton, HvButtonProps } from "@core/components";
-import { forwardRef } from "react";
-import { PolymorphicRef } from "@core/types";
+
+import { HvButton, HvButtonProps } from "@core/components/Button";
+import { PolymorphicRef } from "@core/types/generic";
+
 import fileUploaderPreviewClasses from "./previewClasses";
 
 export const StyledOverlay = styled("div")({

@@ -1,8 +1,12 @@
-import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
-import { Tab as MuiTab } from "@mui/material";
 import { CSSProperties } from "react";
-import { outlineStyles } from "@core/utils";
+
+import styled from "@emotion/styled";
+
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { Tab as MuiTab } from "@mui/material";
+
+import { outlineStyles } from "@core/utils/focusUtils";
 
 export const StyledTab = styled(MuiTab)({
   // Root

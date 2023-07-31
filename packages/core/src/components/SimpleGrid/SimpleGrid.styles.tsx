@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import { Spacing, Breakpoint } from ".";
+
+import { Spacing, Breakpoint } from "./types";
 
 function size(props: { size: any; sizes: any }) {
   if (typeof props.size === "number") {

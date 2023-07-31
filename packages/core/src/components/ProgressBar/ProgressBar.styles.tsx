@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "@core/components";
+
+import { HvTypography } from "@core/components/Typography";
 import { transientOptions } from "@core/utils/transientOptions";
-import { HvProgressBarStatus } from ".";
 
 export const StyledRoot = styled("div")({
   display: "flex",
@@ -34,7 +35,7 @@ export const StyledProgressBarContainer = styled("div")({
 export const StyledProgressBar = styled(
   "div",
   transientOptions
-)(({ $status }: { $status?: HvProgressBarStatus }) => ({
+)(({ $status }: { $status?: "inProgress" | "completed" | "error" }) => ({
   backgroundColor: "#000",
   height: 4,
   ...($status === "completed" && {

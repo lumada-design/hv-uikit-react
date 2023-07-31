@@ -6,14 +6,15 @@ import MuiBackdrop from "@mui/material/Backdrop";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
+import { HvButton } from "@core/components/Button";
 import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames, setId } from "@core/utils";
-import { withTooltip } from "@core/hocs";
-import { useTheme } from "@core/hooks";
-import fade from "@core/utils/hexToRgbA";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+import { withTooltip } from "@core/hocs/withTooltip";
+import { useTheme } from "@core/hooks/useTheme";
+import { hexToRgbA } from "@core/utils/hexToRgbA";
 
 import { staticClasses, useClasses } from "./Dialog.styles";
-import { HvButton } from "..";
 
 export { staticClasses as dialogClasses };
 
@@ -132,7 +133,7 @@ export const HvDialog = ({
           classes: {
             root: cx(
               css({
-                background: fade(
+                background: hexToRgbA(
                   activeTheme?.colors?.modes[selectedMode].atmo4 ||
                     theme.colors.atmo4,
                   0.8

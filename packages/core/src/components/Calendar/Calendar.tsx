@@ -1,14 +1,109 @@
 import { clsx } from "clsx";
+
 import React, { useContext } from "react";
-import { setId } from "@core/utils";
+
+import { setId } from "@core/utils/setId";
 import {
   HvFormElementContext,
   HvFormElementValueContext,
-} from "@core/components";
+} from "@core/components/Forms";
+
 import { isRange } from "./utils";
 import { HvSingleCalendar } from "./SingleCalendar";
 import calendarClasses, { HvCalendarClasses } from "./calendarClasses";
 import { StyledRangeCalendarContainer, StyledRoot } from "./Calendar.styles";
+import { DateRangeProp, VisibilitySelectorActions } from "./types";
+
+export interface HvCalendarProps {
+  /**
+   * Styles applied from the theme.
+   */
+  classes?: HvCalendarClasses;
+  /**
+   * Identifier.
+   */
+  id?: string;
+  /**
+   * The calendar locale. If undefined, it defaults to en-US
+   *
+   */
+  locale?: string;
+  /**
+   * Date that the calendar would show.
+   * if using the object format the calendar enter in range mode showing two calendars
+   */
+  value?: DateRangeProp | Date;
+  /**
+   * Controls the visible month of the Calendar
+   */
+  visibleMonth?: number;
+  /**
+   * Controls the visible year of the Calendar
+   */
+  visibleYear?: number;
+  /**
+   * Controls the visible month of the Calendar on the right side of the datepicker
+   */
+  rightVisibleMonth?: number;
+  /**
+   * Controls the visible year of the Calendar on the right side of the datepicker
+   */
+  rightVisibleYear?: number;
+  /**
+   * Callback function to be triggered when the selected date has changed.
+   */
+  onChange?: (
+    event:
+      | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+      | undefined,
+    value: Date | DateRangeProp
+  ) => void;
+  /**
+   * Callback function to be triggered when the selected date input has changed.
+   */
+  onInputChange?: (
+    event:
+      | React.ChangeEvent<
+          HTMLTextAreaElement | HTMLInputElement | HTMLButtonElement
+        >
+      | undefined,
+    value: Date | DateRangeProp,
+    position: "left" | "right"
+  ) => void;
+  /**
+   * Callback function to be triggered when the user clicks on the month or year selector.
+   * it receives the action that was pressed:
+   * previous_month, next_month, previous_year, next_year,month
+   */
+  onVisibleDateChange?: (
+    event:
+      | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+      | undefined,
+    action: VisibilitySelectorActions,
+    value?: Date | DateRangeProp | number,
+    position?: "left" | "right"
+  ) => void;
+  /**
+   * The maximum selectable date after this all values are disabled.
+   */
+  maximumDate?: Date;
+  /**
+   * The minimum selectable date before this all values are disabled.
+   */
+  minimumDate?: Date;
+  /**
+   * An element placed before the Calendar
+   */
+  startAdornment?: React.ReactNode;
+  /**
+   * Indicates if header should display the day of week.
+   */
+  showDayOfWeek?: boolean;
+  /**
+   * Label shown when date is invalid.
+   */
+  invalidDateLabel?: string;
+}
 
 export const HvCalendar = ({
   classes,
@@ -119,107 +214,3 @@ export const HvCalendar = ({
     </StyledRoot>
   );
 };
-
-export interface DateRangeProp {
-  startDate: Date;
-  endDate?: Date;
-}
-
-export type VisibilitySelectorActions =
-  | "previous_month"
-  | "next_month"
-  | "previous_year"
-  | "next_year"
-  | "month"
-  | "month_year";
-
-export interface HvCalendarProps {
-  /**
-   * Styles applied from the theme.
-   */
-  classes?: HvCalendarClasses;
-  /**
-   * Identifier.
-   */
-  id?: string;
-  /**
-   * The calendar locale. If undefined, it defaults to en-US
-   *
-   */
-  locale?: string;
-  /**
-   * Date that the calendar would show.
-   * if using the object format the calendar enter in range mode showing two calendars
-   */
-  value?: DateRangeProp | Date;
-  /**
-   * Controls the visible month of the Calendar
-   */
-  visibleMonth?: number;
-  /**
-   * Controls the visible year of the Calendar
-   */
-  visibleYear?: number;
-  /**
-   * Controls the visible month of the Calendar on the right side of the datepicker
-   */
-  rightVisibleMonth?: number;
-  /**
-   * Controls the visible year of the Calendar on the right side of the datepicker
-   */
-  rightVisibleYear?: number;
-  /**
-   * Callback function to be triggered when the selected date has changed.
-   */
-  onChange?: (
-    event:
-      | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-      | undefined,
-    value: Date | DateRangeProp
-  ) => void;
-  /**
-   * Callback function to be triggered when the selected date input has changed.
-   */
-  onInputChange?: (
-    event:
-      | React.ChangeEvent<
-          HTMLTextAreaElement | HTMLInputElement | HTMLButtonElement
-        >
-      | undefined,
-    value: Date | DateRangeProp,
-    position: "left" | "right"
-  ) => void;
-  /**
-   * Callback function to be triggered when the user clicks on the month or year selector.
-   * it receives the action that was pressed:
-   * previous_month, next_month, previous_year, next_year,month
-   */
-  onVisibleDateChange?: (
-    event:
-      | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-      | undefined,
-    action: VisibilitySelectorActions,
-    value?: Date | DateRangeProp | number,
-    position?: "left" | "right"
-  ) => void;
-  /**
-   * The maximum selectable date after this all values are disabled.
-   */
-  maximumDate?: Date;
-  /**
-   * The minimum selectable date before this all values are disabled.
-   */
-  minimumDate?: Date;
-  /**
-   * An element placed before the Calendar
-   */
-  startAdornment?: React.ReactNode;
-  /**
-   * Indicates if header should display the day of week.
-   */
-  showDayOfWeek?: boolean;
-  /**
-   * Label shown when date is invalid.
-   */
-  invalidDateLabel?: string;
-}

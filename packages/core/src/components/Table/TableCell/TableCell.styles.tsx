@@ -1,6 +1,8 @@
-import { createClasses } from "@core/utils";
-import { theme } from "@hitachivantara/uikit-styles";
 import { CSSProperties } from "react";
+
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   /** Styles applied to the component root class. */

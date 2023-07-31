@@ -1,5 +1,13 @@
 import { HvTheme } from "@hitachivantara/uikit-react-core";
-import { groupsToShow } from "./Colors";
+
+export const groupsToShow = [
+  "acce",
+  "atmo",
+  "base",
+  "sema",
+  "sup",
+  "cat",
+] as const;
 
 const accentColors = [
   "primary",

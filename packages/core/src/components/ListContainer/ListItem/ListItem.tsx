@@ -1,6 +1,9 @@
 import { clsx } from "clsx";
+
 import React, { useCallback, useContext, useMemo } from "react";
-import { HvBaseProps } from "@core/types";
+
+import { HvBaseProps } from "@core/types/generic";
+
 import HvListContext from "../ListContext";
 import { StyledListItem, StyledFocus } from "./ListItem.styles";
 import listItemClasses, { HvListItemClasses } from "./listItemClasses";

@@ -1,7 +1,9 @@
-import { HvTypography } from "@core/components";
-import { HvBaseProps } from "@core/types";
 import isEmpty from "lodash/isEmpty";
-import { ExtractNames } from "@core/utils";
+
+import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "@core/components/Typography";
+import { HvBaseProps } from "@core/types/generic";
+
 import { staticClasses, useClasses } from "./TimeAgo.styles";
 import useTimeAgo from "./useTimeAgo";
 

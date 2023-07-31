@@ -1,13 +1,17 @@
 import React, { MouseEvent, useContext } from "react";
-import { HvHeaderNavigationItemProp, HvTypography } from "@core/components";
-import { HvBaseProps } from "@core/types";
-import { isKey } from "@core/utils";
-import { HvMenuBar } from "../MenuBar";
+
+import { HvTypography } from "@core/components/Typography";
+import { HvBaseProps } from "@core/types/generic";
+import { isKey } from "@core/utils/keyboardUtils";
+
 import { FocusContext } from "../utils/FocusContext";
 import { SelectionContext } from "../utils/SelectionContext";
 import { MenuItemLabel, MenuItemLi, MenuItemLink } from "./MenuItem.styles";
+import { HvHeaderNavigationItemProp } from "../useSelectionPath";
+import { Bar } from "../MenuBar/Bar";
 
-export interface MenuItemProps extends HvBaseProps<HTMLDivElement, "onClick"> {
+export interface HvHeaderMenuItemProps
+  extends HvBaseProps<HTMLDivElement, "onClick"> {
   item: HvHeaderNavigationItemProp;
   type?: string;
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
@@ -40,14 +44,14 @@ const traverseItem = (node: HvHeaderNavigationItemProp) => {
   return { href, target };
 };
 
-export const HvMenuItem = ({
+export const HvHeaderMenuItem = ({
   id,
   item,
   type,
   onClick,
   levels,
   currentLevel,
-}: MenuItemProps) => {
+}: HvHeaderMenuItemProps) => {
   const selectionPath = useContext(SelectionContext);
   const { dispatch } = useContext(FocusContext);
 
@@ -138,13 +142,18 @@ export const HvMenuItem = ({
         </MenuItemLabel>
       )}
       {hasSubLevel && currentLevel < levels && (
-        <HvMenuBar
-          data={data}
-          onClick={onClick}
-          type="menu"
-          levels={levels}
-          currentLevel={currentLevel + 1}
-        />
+        <Bar data={data} type="menu">
+          {data.map((itm: HvHeaderNavigationItemProp) => (
+            <HvHeaderMenuItem
+              key={itm.id}
+              item={itm}
+              type="menu"
+              onClick={onClick}
+              levels={levels}
+              currentLevel={currentLevel + 1}
+            />
+          ))}
+        </Bar>
       )}
     </MenuItemLi>
   );

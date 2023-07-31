@@ -82,9 +82,9 @@
         ]
       }
     ],
+    "import/no-cycle": "error",
     // TODO: review this
     "react/no-array-index-key": "off",
-    "import/no-cycle": "off",
     "no-restricted-syntax": "off", // loops are fine?
     "no-param-reassign": "off",
     "consistent-return": "off"

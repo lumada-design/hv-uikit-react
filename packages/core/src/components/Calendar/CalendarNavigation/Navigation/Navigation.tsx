@@ -1,7 +1,10 @@
 import { clsx } from "clsx";
-import { isKey, setId } from "@core/utils";
-import { HvTypography } from "@core/components";
-import { HvBaseProps } from "@core/types";
+
+import { isKey } from "@core/utils/keyboardUtils";
+import { setId } from "@core/utils/setId";
+import { HvTypography } from "@core/components/Typography";
+import { HvBaseProps } from "@core/types/generic";
+
 import {
   StyledDropLeftIcon,
   StyledDropRightIcon,

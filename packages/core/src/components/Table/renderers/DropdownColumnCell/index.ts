@@ -1,1 +1,1 @@
-export { default as HvDropdownColumnCell } from "./DropdownColumnCell";
+export * from "./DropdownColumnCell";

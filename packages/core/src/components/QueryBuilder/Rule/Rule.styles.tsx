@@ -1,5 +1,7 @@
-import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { createClasses } from "@core/utils/classes";
+
 import { staticClasses as queryBuilderClasses } from "../QueryBuilder.styles";
 
 export const { useClasses, staticClasses } = createClasses(

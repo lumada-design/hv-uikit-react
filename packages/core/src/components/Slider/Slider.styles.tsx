@@ -1,15 +1,20 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { CSSProperties } from "react";
+
 import Tooltip from "rc-tooltip";
 import Slider from "rc-slider";
+
 import {
   HvFormElement,
   HvFormElementProps,
   HvWarningText,
-} from "@core/components";
+} from "@core/components/Forms";
 import { transientOptions } from "@core/utils/transientOptions";
-import { outlineStyles } from "@core/utils";
+import { outlineStyles } from "@core/utils/focusUtils";
+
 import base from "./base";
 
 const dot: CSSProperties = {

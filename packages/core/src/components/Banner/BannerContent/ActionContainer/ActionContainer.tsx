@@ -1,7 +1,13 @@
-import { HvBaseProps } from "@core/types";
-import { HvActionGeneric, HvActionsGeneric, HvButton } from "@core/components";
 import { Close } from "@hitachivantara/uikit-react-icons";
-import { ExtractNames } from "@core/utils";
+
+import { HvBaseProps } from "@core/types/generic";
+import {
+  HvActionGeneric,
+  HvActionsGeneric,
+} from "@core/components/ActionsGeneric";
+import { HvButton } from "@core/components/Button";
+import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./ActionContainer.styles";
 
 export { staticClasses as actionContainerClasses };

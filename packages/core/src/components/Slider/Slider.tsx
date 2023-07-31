@@ -1,5 +1,7 @@
 import { SliderProps } from "rc-slider";
+
 import { clsx } from "clsx";
+
 import React, {
   useCallback,
   useEffect,
@@ -7,11 +9,15 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { HvBaseProps } from "@core/types";
-import { setId } from "@core/utils";
-import { useControlled, useUniqueId } from "@core/hooks";
+
+import { HvBaseProps } from "@core/types/generic";
+import { setId } from "@core/utils/setId";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useControlled } from "@core/hooks/useControlled";
 import validationStates from "@core/components/Forms/FormElement/validationStates";
-import { HvFormStatus, HvLabel, HvInputProps } from "@core/components";
+import { HvInputProps } from "@core/components/Input";
+import { HvFormStatus, HvLabel } from "@core/components/Forms";
+
 import sliderClasses, { HvSliderClasses } from "./sliderClasses";
 import {
   sliderStyles,
@@ -39,21 +45,7 @@ import {
   statusArrayToFormStatus,
 } from "./utils";
 import { HvSliderInput } from "./SliderInput/SliderInput";
-
-export interface HvKnobProperty {
-  color?: string;
-  defaultValue?: number;
-  hidden?: boolean;
-  fixed?: boolean;
-  hoverColor?: string;
-  trackColor?: string;
-  dragColor?: string;
-}
-
-export interface HvMarkProperty {
-  position?: number;
-  label?: string;
-}
+import { HvKnobProperty, HvMarkProperty } from "./types";
 
 export interface HvSliderProps
   extends HvBaseProps<HTMLDivElement, "onChange" | "onBlur"> {

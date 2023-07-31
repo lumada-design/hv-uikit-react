@@ -1,11 +1,16 @@
+import { CSSProperties, HTMLAttributes } from "react";
+
 import { User } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
+
 import { clsx } from "clsx";
-import { CSSProperties, HTMLAttributes } from "react";
-import { HvBaseProps } from "@core/types";
-import { useImageLoaded } from "@core/hooks";
-import { decreaseSize } from "@core/utils";
+
+import { HvBaseProps } from "@core/types/generic";
+import { useImageLoaded } from "@core/hooks/useImageLoaded";
+import { decreaseSize } from "@core/utils/sizes";
+
 import {
   StyledAvatar,
   StyledBadge,
@@ -14,10 +19,7 @@ import {
   StyledStatus,
 } from "./Avatar.styles";
 import avatarClasses, { HvAvatarClasses } from "./avatarClasses";
-
-export type HvAvatarVariant = "circular" | "square";
-
-export type HvAvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
+import { HvAvatarSize, HvAvatarVariant } from "./types";
 
 export interface HvAvatarProps extends HvBaseProps {
   /** Inline styles to be applied to the root element. */

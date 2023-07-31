@@ -1,16 +1,21 @@
 import { clsx } from "clsx";
+
 import { CSSProperties, useState } from "react";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { ChipProps as MuiChipProps } from "@mui/material/Chip";
-import { HvBaseProps } from "@core/types";
+
+import { HvBaseProps } from "@core/types/generic";
 import {
   HvSemanticColorKeys,
   HvCategoricalColorKeys,
 } from "@core/types/tokens";
-import { useTheme } from "@core/hooks";
+import { useTheme } from "@core/hooks/useTheme";
+import { HvButtonProps } from "@core/components/Button";
+
 import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
-import { HvButtonProps } from "../Button";
 import tagClasses, { HvTagClasses } from "./tagClasses";
 
 export interface HvTagProps

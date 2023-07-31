@@ -1,12 +1,11 @@
 export * from "./useClickOutside";
 export * from "./useControlled";
-export { default as useForkRef } from "./useForkRef";
+export * from "./useForkRef";
 export * from "./useImageLoaded";
-export * from "./useSelectionPath";
 export * from "./useWidth";
 export * from "./useLabels";
-export { default as useUniqueId } from "./useUniqueId";
-export { default as useIsMounted } from "./useIsMounted";
-export { default as useComputation } from "./useComputation";
+export * from "./useUniqueId";
+export * from "./useIsMounted";
+export * from "./useComputation";
 export * from "./useTheme";
 export * from "./useEnhancedEffect";

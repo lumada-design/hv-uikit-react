@@ -1,5 +1,7 @@
 import { AriaAttributes, useEffect, useState } from "react";
-import { HvButton } from "@core/components";
+
+import { HvButton } from "@core/components/Button";
+
 import { HvProgressBar, HvProgressBarStatus } from "./ProgressBar";
 
 export const ProgressBarSimulator = ({

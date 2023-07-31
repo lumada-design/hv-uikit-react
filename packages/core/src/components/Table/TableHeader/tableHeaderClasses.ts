@@ -1,4 +1,4 @@
-import { getClasses } from "@core/utils";
+import { getClasses } from "@core/utils/classes";
 
 export interface HvTableHeaderClasses {
   /** Styles applied to the component root class. */

@@ -1,14 +1,22 @@
 import { Children, useMemo, useCallback, cloneElement } from "react";
-import { HvBaseProps } from "@core/types";
+
 import { clsx } from "clsx";
-import { useControlled, useUniqueId } from "@core/hooks";
-import { setId } from "@core/utils";
+
+import { HvBaseProps } from "@core/types/generic";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useControlled } from "@core/hooks/useControlled";
+import { setId } from "@core/utils/setId";
+import {
+  HvFormStatus,
+  HvInfoMessage,
+  HvWarningText,
+} from "@core/components/Forms";
+
 import {
   StyledFormElement,
   StyledGroup,
   StyledLabel,
 } from "./RadioGroup.styles";
-import { HvFormStatus, HvInfoMessage, HvWarningText } from "../Forms";
 import radioGroupClasses, { HvRadioGroupClasses } from "./radioGroupClasses";
 
 export interface HvRadioGroupProps

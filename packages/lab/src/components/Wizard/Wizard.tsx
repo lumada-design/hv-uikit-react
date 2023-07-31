@@ -1,21 +1,20 @@
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+
 import {
   ExtractNames,
   HvBaseProps,
   HvDialogProps,
 } from "@hitachivantara/uikit-react-core";
+
 import { ModalProps } from "@mui/material";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import {
-  HvWizardContainer,
-  HvWizardContent,
-  HvWizardContext,
-  HvWizardTitle,
-  HvWizardTitleProps,
-  HvWizardTabs,
-  HvWizardActions,
-  HvWizardActionsProps,
-} from ".";
-import { HvStepNavigationProps } from "..";
+
+import { HvStepNavigationProps } from "../StepNavigation";
+import { HvWizardContent } from "./WizardContent";
+import { HvWizardContext, HvWizardTabs } from "./WizardContext";
+import { HvWizardTitle, HvWizardTitleProps } from "./WizardTitle";
+import { HvWizardActions, HvWizardActionsProps } from "./WizardActions";
+import { HvWizardContainer } from "./WizardContainer";
+
 import { staticClasses, useClasses } from "./Wizard.styles";
 
 export { staticClasses as wizardClasses };

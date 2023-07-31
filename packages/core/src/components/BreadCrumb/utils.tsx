@@ -1,16 +1,22 @@
+import { MouseEvent } from "react";
+
 import { MoreOptionsHorizontal } from "@hitachivantara/uikit-react-icons";
-import { HvBreadCrumbProps, HvDropDownMenu } from "@core/components";
-import { setId } from "@core/utils";
+
+import {
+  HvDropDownMenu,
+  HvDropDownMenuProps,
+} from "@core/components/DropDownMenu";
+import { setId } from "@core/utils/setId";
 
 export const removeExtension = (label: string) =>
   label.includes(".") ? label.substring(0, label.lastIndexOf(".")) : label;
 
 export const pathWithSubMenu = (
   id: string | undefined,
-  onClick: HvBreadCrumbProps["onClick"],
   listRoute: any,
   maxVisible: number,
-  dropDownMenuProps?: HvBreadCrumbProps["dropDownMenuProps"]
+  onClick?: (event: MouseEvent<HTMLElement>, data: any) => void,
+  dropDownMenuProps?: Partial<HvDropDownMenuProps>
 ) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);

@@ -1,4 +1,5 @@
-import { HvDropdownProps, HvDropdown, HvListValue } from "@core/components";
+import { HvDropdownProps, HvDropdown } from "@core/components/Dropdown";
+import { HvListValue } from "@core/components/List";
 
 export interface HvDropdownColumnCellProp {
   /** Values to render in the dropdown. */
@@ -13,7 +14,7 @@ export interface HvDropdownColumnCellProp {
   dropdownProps?: HvDropdownProps;
 }
 
-const HvDropdownColumnCell = ({
+export const HvDropdownColumnCell = ({
   values,
   disabled,
   onChange,
@@ -33,5 +34,3 @@ const HvDropdownColumnCell = ({
     />
   );
 };
-
-export default HvDropdownColumnCell;

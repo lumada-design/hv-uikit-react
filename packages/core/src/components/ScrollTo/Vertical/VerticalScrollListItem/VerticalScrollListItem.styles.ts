@@ -1,5 +1,7 @@
-import { createClasses, outlineStyles } from "@core/utils";
+import { outlineStyles } from "@core/utils/focusUtils";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { createClasses } from "@core/utils/classes";
 
 const name = "HvVerticalScrollListItem";
 

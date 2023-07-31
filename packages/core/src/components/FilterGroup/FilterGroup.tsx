@@ -5,49 +5,29 @@ import {
   HvInfoMessage,
   HvLabel,
   HvWarningText,
-} from "@core/components";
-import { useControlled, useLabels, useUniqueId } from "@core/hooks";
-import { ExtractNames, setId } from "@core/utils";
+} from "@core/components/Forms";
+import { useLabels } from "@core/hooks/useLabels";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useControlled } from "@core/hooks/useControlled";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+
 import {
   HvFilterGroupContent,
   HvFilterGroupContentProps,
 } from "./FilterContent";
 import { staticClasses, useClasses } from "./FilterGroup.styles";
 import { HvFilterGroupProvider } from "./FilterGroupContext";
+import {
+  HvFilterGroupFilters,
+  HvFilterGroupHorizontalPlacement,
+  HvFilterGroupLabels,
+  HvFilterGroupValue,
+} from "./types";
 
 export { staticClasses as filterGroupClasses };
 
 export type HvFilterGroupClasses = ExtractNames<typeof useClasses>;
-
-export type HvFilterGroupValue = (string | number)[][];
-
-export interface HvFilterGroupLabels {
-  /** Apply button label. */
-  applyLabel?: string;
-  /** Cancel button label. */
-  cancelLabel?: string;
-  /** Cancel button label. */
-  clearLabel?: string;
-  /** Placeholder label. */
-  placeholder?: string;
-  /** SearchBox placeholder label. */
-  searchBoxPlaceholder?: string;
-  /** Select All placeholder label. */
-  selectAll?: string;
-  /** Multi selection conjunction placeholder label. */
-  multiSelectionConjunction?: string;
-}
-
-export type HvFilterGroupFilters = {
-  id: string;
-  name: string;
-  data: {
-    id: string | number;
-    name: string;
-  }[];
-}[];
-
-export type HvFilterGroupHorizontalPlacement = "left" | "right";
 
 export interface HvFilterGroupProps
   extends Omit<

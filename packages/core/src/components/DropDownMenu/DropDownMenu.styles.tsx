@@ -1,5 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
-import { createClasses, outlineStyles } from "@core/utils";
+
+import { outlineStyles } from "@core/utils/focusUtils";
+import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
   /** Styles applied to the container. */

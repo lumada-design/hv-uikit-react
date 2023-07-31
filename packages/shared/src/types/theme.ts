@@ -3,7 +3,7 @@ import {
   HvThemeColorModeStructure,
 } from "@hitachivantara/uikit-styles";
 
-import { HvExtraDeepProps } from ".";
+import { HvExtraDeepProps } from "./generic";
 
 /**
  * Theme structure

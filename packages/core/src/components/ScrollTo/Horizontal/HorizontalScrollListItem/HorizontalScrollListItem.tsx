@@ -1,6 +1,8 @@
-import { HvBaseProps } from "@core/types";
-import { ExtractNames, setId } from "@core/utils";
-import { HvTypographyProps } from "@core/components";
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+import { HvTypographyProps } from "@core/components/Typography";
+
 import { staticClasses, useClasses } from "./HorizontalScrollListItem.styles";
 
 export { staticClasses as horizontalScrollListItemClasses };

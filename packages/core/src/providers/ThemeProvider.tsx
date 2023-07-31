@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+
 import { parseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
 import {
   HvThemeContext,
@@ -7,13 +8,16 @@ import {
   EmotionContext,
 } from "@hitachivantara/uikit-react-shared";
 import type { HvThemeContextValue } from "@hitachivantara/uikit-react-shared";
+
 import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
+
 import { EmotionCache } from "@emotion/cache";
-import { setElementAttrs } from "@core/utils";
-import { HvTheme } from "@core/types";
+
+import { setElementAttrs } from "@core/utils/theme";
+import { HvTheme } from "@core/types/theme";
 
 export { HvThemeContext };
 export type { HvThemeContextValue };

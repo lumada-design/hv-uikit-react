@@ -1,6 +1,8 @@
-import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { CSSProperties } from "react";
+
+import { createClasses } from "@core/utils/classes";
 
 const name = "HvColorPicker-Picker";
 

@@ -1,9 +1,13 @@
 import styled from "@emotion/styled";
+
 import { Fail, Success } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { forwardRef } from "react";
-import { HvButton, HvButtonProps, HvTypography } from "@core/components";
-import { PolymorphicRef } from "@core/types";
+
+import { HvTypography } from "@core/components/Typography";
+import { HvButton, HvButtonProps } from "@core/components/Button";
+import { PolymorphicRef } from "@core/types/generic";
 
 const iconStyles = {
   width: 32,

@@ -1,6 +1,8 @@
 import { clsx } from "clsx";
+
 import { useContext } from "react";
-import { VerticalNavigationContext } from "..";
+
+import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { StyledRoot } from "./Actions.styles";
 import actionsClasses, {
   HvVerticalNavigationActionsClasses,

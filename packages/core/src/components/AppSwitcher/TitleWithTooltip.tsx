@@ -1,5 +1,7 @@
 import { useMemo, useRef } from "react";
-import { HvTooltip, HvTypography } from "@core/components";
+
+import { HvTooltip } from "@core/components/Tooltip";
+import { HvTypography } from "@core/components/Typography";
 
 const TitleWithTooltip = ({ className, title }) => {
   const textRef = useRef<HTMLDivElement>(null);

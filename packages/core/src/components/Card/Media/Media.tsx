@@ -1,9 +1,12 @@
 import MuiCardMedia, {
   CardMediaProps as MuiCardMediaProps,
 } from "@mui/material/CardMedia";
-import { HvBaseProps } from "@core/types";
-import { ExtractNames } from "@core/utils";
+
 import { ImgHTMLAttributes } from "react";
+
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./Media.styles";
 
 export { staticClasses as cardMediaClasses };

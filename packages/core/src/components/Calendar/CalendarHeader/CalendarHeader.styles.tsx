@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "@core/components";
-import { outlineStyles } from "@core/utils";
+
+import { HvTypography } from "@core/components/Typography";
+import { outlineStyles } from "@core/utils/focusUtils";
 
 export const StyledRoot = styled("div")({
   marginTop: theme.spacing("xs"),

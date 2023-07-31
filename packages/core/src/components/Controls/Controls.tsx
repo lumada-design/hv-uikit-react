@@ -1,10 +1,14 @@
-import { clsx } from "clsx";
-import { HvBaseProps, HvExtraProps } from "@core/types";
-import { HvButton, HvMultiButton } from "@core/components";
-import { setId } from "@core/utils";
-import { useControlled } from "@core/hooks";
 import { Children, MouseEvent } from "react";
+
+import { clsx } from "clsx";
+
+import { HvBaseProps, HvExtraProps } from "@core/types/generic";
+import { HvButton } from "@core/components/Button";
+import { HvMultiButton } from "@core/components/MultiButton";
+import { setId } from "@core/utils/setId";
+import { useControlled } from "@core/hooks/useControlled";
 import { HvTableInstance } from "@core/components/Table/hooks/useTable";
+
 import { HvControlsContextProvider } from "./context/ControlsContext";
 import controlsClasses, { HvControlsClasses } from "./controlClasses";
 import { StyledRoot, StyledSection } from "./Controls.styles";

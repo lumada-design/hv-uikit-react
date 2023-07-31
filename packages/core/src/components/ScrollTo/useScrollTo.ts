@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+
 import {
   findFirstVisibleElement,
   getScrollTop,
@@ -6,7 +7,7 @@ import {
   scrollElement,
   verticalScrollOffset,
 } from "./utils";
-import { HvScrollToVerticalOption } from "./Vertical";
+import { HvScrollToVerticalOption } from "./types";
 
 export const useScrollTo = (
   selectedIndexProp: number = 0,

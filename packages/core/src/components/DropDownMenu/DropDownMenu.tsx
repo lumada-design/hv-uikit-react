@@ -1,19 +1,23 @@
 import { ChangeEvent, useMemo } from "react";
+
 import { theme } from "@hitachivantara/uikit-styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
-import { useControlled, useUniqueId } from "@core/hooks";
-import { HvBaseProps } from "@core/types";
-import { isKey, setId, getPrevNextFocus, ExtractNames } from "@core/utils";
+
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useControlled } from "@core/hooks/useControlled";
+import { HvBaseProps } from "@core/types/generic";
+import { isKey } from "@core/utils/keyboardUtils";
+import { setId } from "@core/utils/setId";
+import { getPrevNextFocus } from "@core/utils/focusableElementFinder";
+import { ExtractNames } from "@core/utils/classes";
 import {
   HvBaseDropdown,
   HvBaseDropdownProps,
-  HvButton,
-  HvButtonVariant,
-  HvList,
-  HvListProps,
-  HvListValue,
-  HvPanel,
-} from "@core/components";
+} from "@core/components/BaseDropdown";
+import { HvButton, HvButtonVariant } from "@core/components/Button";
+import { HvList, HvListProps, HvListValue } from "@core/components/List";
+import { HvPanel } from "@core/components/Panel";
+
 import { staticClasses, useClasses } from "./DropDownMenu.styles";
 
 export { staticClasses as dropDownMenuClasses };

@@ -1,21 +1,24 @@
+import { useContext, useMemo, useRef, useState } from "react";
+
+import { Filters } from "@hitachivantara/uikit-react-icons";
+
+import { useTheme } from "@core/hooks/useTheme";
+import { HvActionBar } from "@core/components/ActionBar";
 import {
-  HvActionBar,
   HvBaseDropdown,
   HvBaseDropdownProps,
-  HvButton,
-  HvButtonVariant,
-  HvFormStatus,
-  HvTypography,
-} from "@core/components";
-import { ExtractNames, setId } from "@core/utils";
-import { useContext, useMemo, useRef, useState } from "react";
-import { Filters } from "@hitachivantara/uikit-react-icons";
-import { useTheme } from "@core/hooks";
+} from "@core/components/BaseDropdown";
+import { HvButton, HvButtonVariant } from "@core/components/Button";
+import { HvFormStatus } from "@core/components/Forms";
+import { HvTypography } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
+import { setId } from "@core/utils/setId";
+
 import {
   HvFilterGroupLabels,
   HvFilterGroupValue,
   HvFilterGroupHorizontalPlacement,
-} from "../FilterGroup";
+} from "../types";
 import { staticClasses, useClasses } from "./FilterContent.styles";
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { HvFilterGroupCounter } from "../Counter";

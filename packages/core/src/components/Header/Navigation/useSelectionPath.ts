@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
-import { HvHeaderNavigationItemProp } from "@core/components";
+
+export interface HvHeaderNavigationItemProp {
+  id: string;
+  label: string;
+  path?: string;
+  href?: string;
+  target?: string;
+  data?: HvHeaderNavigationItemProp[];
+}
 
 const getSelectionPath = (
   data: HvHeaderNavigationItemProp[] | undefined,

@@ -1,15 +1,22 @@
 import { HTMLAttributes, useCallback, useEffect } from "react";
+
 import { Hidden } from "@mui/material";
-import { HvInput, HvInputProps, HvTypography } from "@core/components";
+
 import {
   Start,
   End,
   Backwards,
   Forwards,
 } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps } from "@core/types";
-import { ExtractNames, isKey, setId } from "@core/utils";
-import { useLabels } from "@core/hooks";
+
+import { HvInput, HvInputProps } from "@core/components/Input";
+import { HvTypography } from "@core/components/Typography";
+import { HvBaseProps } from "@core/types/generic";
+import { setId } from "@core/utils/setId";
+import { isKey } from "@core/utils/keyboardUtils";
+import { ExtractNames } from "@core/utils/classes";
+import { useLabels } from "@core/hooks/useLabels";
+
 import HvSelect, { Option } from "./Select";
 import { staticClasses, useClasses } from "./Pagination.styles";
 import { usePageInput, getSafePage, setColor } from "./utils";

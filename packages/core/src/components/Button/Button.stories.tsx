@@ -11,13 +11,8 @@ import {
   Stop,
 } from "@hitachivantara/uikit-react-icons";
 import { HvBox } from "@core/components";
-import {
-  HvButton,
-  HvButtonProps,
-  buttonRadius,
-  buttonSize,
-  buttonVariant,
-} from "./Button";
+import { HvButton, HvButtonProps } from "./Button";
+import { buttonRadius, buttonSize, buttonVariant } from "./types";
 
 export default { title: "Components/Button", component: HvButton };
 

@@ -10,8 +10,10 @@ import {
   useMountedLayoutEffect,
   makePropGetter,
 } from "react-table";
-import { useLabels } from "@core/hooks";
-import { HvCheckBox } from "@core/components";
+
+import { useLabels } from "@core/hooks/useLabels";
+
+import { HvCheckBox } from "@core/components/CheckBox";
 
 // #region ##### TYPES #####
 

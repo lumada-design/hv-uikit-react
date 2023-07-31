@@ -1,9 +1,7 @@
-import {
-  HvScrollToTooltipPositions,
-  HvTypography,
-  HvTypographyProps,
-} from "@core/components";
-import { withTooltip as withTooltipUtil } from "@core/hocs";
+import { HvTypography, HvTypographyProps } from "@core/components/Typography";
+import { withTooltip as withTooltipUtil } from "@core/hocs/withTooltip";
+
+import { HvScrollToTooltipPositions } from "./types";
 
 const hideTooltip = (event: React.MouseEvent<HTMLDivElement>) => {
   const isOverFlow =

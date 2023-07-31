@@ -1,10 +1,15 @@
 import { clsx } from "clsx";
+
 import { useCallback, useEffect, useMemo, useState } from "react";
+
 import { StyledRoot } from "./VerticalNavigation.styles";
 import verticalNavigationClasses, {
   HvVerticalNavigationClasses,
 } from "./verticalNavigationClasses";
-import { NavigationData, VerticalNavigationContext } from ".";
+import {
+  VerticalNavigationContext,
+  NavigationData,
+} from "./VerticalNavigationContext";
 import {
   fillDataWithParentId,
   getNavigationItemById,

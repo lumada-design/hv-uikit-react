@@ -1,10 +1,13 @@
 import styled from "@emotion/styled";
+
 import {
   DropLeftXS as DropLeftIcon,
   DropRightXS as DropRightIcon,
 } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "@core/utils";
+
+import { outlineStyles } from "@core/utils/focusUtils";
+
 import navigationClasses from "./navigationClasses";
 
 export const StyledRoot = styled("div")({

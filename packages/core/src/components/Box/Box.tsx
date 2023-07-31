@@ -1,6 +1,8 @@
 import { HvTheme, theme } from "@hitachivantara/uikit-styles";
+
 import { forwardRef } from "react";
-import { PolymorphicComponentRef, PolymorphicRef } from "@core/types";
+
+import { PolymorphicComponentRef, PolymorphicRef } from "@core/types/generic";
 
 type SxProps = React.CSSProperties | ((theme: HvTheme) => React.CSSProperties);
 

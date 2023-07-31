@@ -1,7 +1,10 @@
 import { clsx } from "clsx";
+
 import { useContext } from "react";
-import { setId } from "@core/utils";
-import { HvBaseProps } from "@core/types";
+
+import { setId } from "@core/utils/setId";
+import { HvBaseProps } from "@core/types/generic";
+
 import { StyledTypography } from "./InfoMessage.styles";
 import { HvFormElementContext } from "../FormElement";
 import infoMessageClasses, { HvInfoMessageClasses } from "./infoMessageClasses";

@@ -1,4 +1,6 @@
-import { HvDropdownLabelsProps, HvListValue } from "@core/components";
+import { HvListValue } from "@core/components/List";
+
+import { HvDropdownLabelsProps } from "./types";
 
 /** Filter selected elements. */
 const getSelected = (list: HvListValue[] = []) =>

@@ -1,5 +1,6 @@
 import { createContext } from "react";
-import { NavigationMode } from "../Navigation";
+
+export type NavigationMode = "treeview" | "navigation" | "slider";
 
 const TreeViewControlContext = createContext<TreeViewControlContextValue>({});
 TreeViewControlContext.displayName = "TreeViewControlContext";

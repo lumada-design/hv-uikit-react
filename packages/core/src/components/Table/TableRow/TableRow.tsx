@@ -1,15 +1,17 @@
 import { forwardRef, useContext, useEffect, useMemo, useState } from "react";
+
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
-import {
-  ExtractNames,
-  checkValidHexColorValue,
-  hexToRgbA,
-  getVarValue,
-} from "@core/utils";
+
+import { ExtractNames } from "@core/utils/classes";
+import { checkValidHexColorValue } from "@core/utils/checkValidHexColorValue";
+import { hexToRgbA } from "@core/utils/hexToRgbA";
+import { getVarValue } from "@core/utils/theme";
 import { transientOptions } from "@core/utils/transientOptions";
-import { HvBaseProps } from "@core/types";
-import { useTheme } from "@core/hooks";
+import { HvBaseProps } from "@core/types/generic";
+import { useTheme } from "@core/hooks/useTheme";
+
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableRow.styles";

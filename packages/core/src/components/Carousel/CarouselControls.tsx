@@ -1,15 +1,19 @@
 import { MouseEventHandler, ReactNode } from "react";
+
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps } from "@core/types";
-import { HvButton, HvPaginationProps } from "..";
-import { HvCarouselClasses, HvCarouselProps } from ".";
+
+import { HvBaseProps } from "@core/types/generic";
+import { HvButton } from "@core/components/Button";
+import { HvPaginationProps } from "@core/components/Pagination";
+import { ExtractNames } from "@core/utils/classes";
+
 import { useClasses } from "./Carousel.styles";
 
 interface HvCarouselControlsProps
   extends HvBaseProps<HTMLDivElement>,
-    Pick<HvPaginationProps, "page" | "pages" | "canPrevious" | "canNext">,
-    Pick<HvCarouselProps, "showDots"> {
-  classes?: HvCarouselClasses;
+    Pick<HvPaginationProps, "page" | "pages" | "canPrevious" | "canNext"> {
+  showDots?: boolean;
+  classes?: ExtractNames<typeof useClasses>;
   actions?: ReactNode;
   onPreviousClick?: MouseEventHandler<HTMLButtonElement>;
   onNextClick?: MouseEventHandler<HTMLButtonElement>;

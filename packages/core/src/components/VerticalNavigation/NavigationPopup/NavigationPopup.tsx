@@ -1,16 +1,14 @@
-import { ClickAwayListener } from "@mui/material";
 import { clsx } from "clsx";
 
-import {
-  NavigationData,
-  HvVerticalNavigationTree,
-  HvVerticalNavigation,
-  verticalNavigationTreeClasses,
-} from "@core/components";
-import { HvBaseProps } from "@core/types";
-import { setId } from "@core/utils";
+import { HvBaseProps } from "@core/types/generic";
+import { setId } from "@core/utils/setId";
 
-import { StyledPopper, StyledPopupContainer } from "./NavigationPopup.styles";
+import {
+  HvVerticalNavigationTree,
+  verticalNavigationTreeClasses,
+} from "../Navigation";
+import { NavigationData } from "../VerticalNavigationContext";
+import { NavigationPopupContainer } from "./NavigationPopupContainer";
 
 export interface HvVerticalNavigationPopupProps
   extends HvBaseProps<HTMLDivElement> {
@@ -31,13 +29,8 @@ export const HvVerticalNavigationPopup = ({
   data,
   selected,
   onChange,
-
   ...others
 }: HvVerticalNavigationPopupProps) => {
-  const handleClickAway = () => {
-    onClose?.();
-  };
-
   const handleChange = (event, selectedItem) => {
     onChange(event, selectedItem.id, selectedItem);
   };
@@ -49,23 +42,17 @@ export const HvVerticalNavigationPopup = ({
   };
 
   return (
-    <StyledPopper open anchorEl={anchorEl} placement="right-start" {...others}>
-      <ClickAwayListener onClickAway={handleClickAway}>
-        <StyledPopupContainer>
-          <HvVerticalNavigation open useIcons>
-            <HvVerticalNavigationTree
-              className={clsx(verticalNavigationTreeClasses.popup)}
-              id={setId(id, "tree")}
-              collapsible
-              defaultExpanded
-              selected={selected}
-              onChange={handleChange}
-              data={data}
-              onMouseLeave={handleMouseLeave}
-            />
-          </HvVerticalNavigation>
-        </StyledPopupContainer>
-      </ClickAwayListener>
-    </StyledPopper>
+    <NavigationPopupContainer anchorEl={anchorEl} onClose={onClose} {...others}>
+      <HvVerticalNavigationTree
+        className={clsx(verticalNavigationTreeClasses.popup)}
+        id={setId(id, "tree")}
+        collapsible
+        defaultExpanded
+        selected={selected}
+        onChange={handleChange}
+        data={data}
+        onMouseLeave={handleMouseLeave}
+      />
+    </NavigationPopupContainer>
   );
 };

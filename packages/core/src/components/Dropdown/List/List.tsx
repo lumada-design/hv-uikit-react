@@ -1,17 +1,18 @@
 import { MouseEvent, useContext, useEffect, useState } from "react";
+
 import { clsx } from "clsx";
+
 import isNil from "lodash/isNil";
-import { setId } from "@core/utils";
-import {
-  HvActionBar,
-  HvButton,
-  HvCheckBox,
-  HvInput,
-  HvListProps,
-  HvListValue,
-  HvTypography,
-} from "@core/components";
-import BaseDropdownContext from "../../BaseDropdown/BaseDropdownContext";
+
+import { setId } from "@core/utils/setId";
+import { HvTypography } from "@core/components/Typography";
+import { HvButton } from "@core/components/Button";
+import { HvCheckBox } from "@core/components/CheckBox";
+import { HvInput } from "@core/components/Input";
+import { HvListProps, HvListValue } from "@core/components/List";
+import { HvActionBar } from "@core/components/ActionBar";
+import BaseDropdownContext from "@core/components/BaseDropdown/BaseDropdownContext";
+
 import {
   StyledList,
   StyledListContainer,
@@ -19,8 +20,8 @@ import {
   StyledSearchContainer,
 } from "./List.styles";
 import { getSelected } from "../utils";
-import { HvDropdownLabelsProps } from "../Dropdown";
 import dropdownListClasses, { HvDropdownListClasses } from "./listClasses";
+import { HvDropdownLabelsProps } from "../types";
 
 export interface HvDropdownListProps {
   /**

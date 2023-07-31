@@ -1,6 +1,8 @@
-import { useUniqueId } from "@core/hooks";
-import { setId } from "@core/utils";
 import { clsx } from "clsx";
+
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { setId } from "@core/utils/setId";
+
 import { HvFile, HvFileData, HvFileRemovedEvent } from "../File";
 import fileListClasses, { HvFileListClasses } from "./fileListClasses";
 import { StyledList } from "./FileList.styles";

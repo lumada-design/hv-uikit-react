@@ -1,5 +1,7 @@
-import { createClasses } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { createClasses } from "@core/utils/classes";
+
 import { getBorderStyles } from "../utils/utils";
 
 export const { staticClasses, useClasses } = createClasses("HvTableRow", {

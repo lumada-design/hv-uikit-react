@@ -1,8 +1,14 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { transientOptions } from "@core/utils/transientOptions";
-import fade from "@core/utils/hexToRgbA";
-import { HvActionsGeneric, HvActionsGenericProps } from "@core/components";
+import { hexToRgbA } from "@core/utils/hexToRgbA";
+import {
+  HvActionsGeneric,
+  HvActionsGenericProps,
+} from "@core/components/ActionsGeneric";
+
 import bulkActionsClasses from "./bulkActionsClasses";
 
 export const StyledRoot = styled(
@@ -30,7 +36,7 @@ export const StyledRoot = styled(
         color: theme.colors.base_dark,
 
         "&:hover:not(:disabled)": {
-          backgroundColor: fade($baseColor, 0.3),
+          backgroundColor: hexToRgbA($baseColor, 0.3),
         },
 
         "& *": {
@@ -40,12 +46,12 @@ export const StyledRoot = styled(
       },
 
       [`& .${bulkActionsClasses.selectAll}:focus-within div`]: {
-        backgroundColor: fade($baseColor, 0.3),
+        backgroundColor: hexToRgbA($baseColor, 0.3),
       },
 
       // IE fallback code (using focus-within-polyfill)
       [`& .${bulkActionsClasses.selectAll}.focus-within div`]: {
-        backgroundColor: fade($baseColor, 0.3),
+        backgroundColor: hexToRgbA($baseColor, 0.3),
       },
     }),
   })

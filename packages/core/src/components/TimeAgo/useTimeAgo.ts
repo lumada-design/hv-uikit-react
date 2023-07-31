@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import useTimeout from "./useTimeout";
+
+import { useTimeout } from "./useTimeout";
 import { formatTimeAgo } from "./formatUtils";
 
 /**

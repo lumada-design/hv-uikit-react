@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const StyledRoot = styled("div")({

@@ -1,19 +1,25 @@
 import { forwardRef, ReactNode, useCallback, useMemo } from "react";
+
 import {
   CombinedClassKey,
   SnackbarContent,
   SnackbarProvider,
   useSnackbar,
 } from "notistack";
+
 import { clsx } from "clsx";
+
 import { SnackbarOrigin } from "@mui/material/Snackbar";
-import { ExtractNames } from "@core/utils";
 import { ClassNameMap } from "@mui/material";
+
 import { css } from "@emotion/css";
+
+import { ExtractNames } from "@core/utils/classes";
+
 import { HvSnackbarContent } from "../SnackbarContentWrapper";
-import { HvSnackbarVariant } from "../Snackbar";
 import { HvSnackbarContentProps } from "../SnackbarContentWrapper/SnackbarContentWrapper";
 import { staticClasses, useClasses } from "./SnackbarProvider.styles";
+import { HvSnackbarVariant } from "../types";
 
 export { staticClasses as snackbarProviderClasses };
 

@@ -1,4 +1,4 @@
-import { withTooltip } from "@core/hocs";
+import { withTooltip } from "@core/hocs/withTooltip";
 
 const hideTooltip = (evt) => {
   const isOverFlow =

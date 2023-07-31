@@ -1,17 +1,18 @@
-import { HvBaseProps } from "@core/types";
+import { clsx } from "clsx";
+
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { setId } from "@core/utils/setId";
+import { useTheme } from "@core/hooks/useTheme";
+import { HvBaseProps } from "@core/types/generic";
+import { HvButton, HvButtonProps } from "@core/components/Button";
+import { HvCheckBox, HvCheckBoxProps } from "@core/components/CheckBox";
 import {
-  HvButton,
-  HvButtonProps,
-  HvCheckBox,
-  HvCheckBoxProps,
   HvActionGeneric,
   HvActionsGenericProps,
-  HvTypography,
-} from "@core/components";
-import { clsx } from "clsx";
-import { setId } from "@core/utils";
-import { theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "@core/hooks";
+} from "@core/components/ActionsGeneric";
+import { HvTypography } from "@core/components/Typography";
+
 import {
   StyledGenericActions,
   StyledRoot,

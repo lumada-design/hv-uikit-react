@@ -1,7 +1,9 @@
 import React, { useRef, useContext, useMemo } from "react";
+
 import { clsx } from "clsx";
-import { HvBaseProps } from "@core/types";
-import { useForkRef } from "@core/hooks";
+import { HvBaseProps } from "@core/types/generic";
+import { useForkRef } from "@core/hooks/useForkRef";
+
 import HvListContext from "./ListContext";
 import listContainerClasses, {
   HvListContainerClasses,

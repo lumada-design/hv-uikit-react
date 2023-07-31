@@ -1,7 +1,10 @@
 import { clsx } from "clsx";
+
 import clamp from "lodash/clamp";
-import { HvBaseProps } from "@core/types";
-import { HvTypographyProps } from "../Typography";
+
+import { HvBaseProps } from "@core/types/generic";
+import { HvTypographyProps } from "@core/components/Typography";
+
 import {
   StyledProgressBar,
   StyledProgressBarContainer,

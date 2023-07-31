@@ -1,5 +1,7 @@
 import { ImgHTMLAttributes } from "react";
-import { ExtractNames } from "@core/utils";
+
+import { ExtractNames } from "@core/utils/classes";
+
 import { useClasses } from "./CarouselSlide.styles";
 
 export type HvCarouselSlideClasses = ExtractNames<typeof useClasses>;

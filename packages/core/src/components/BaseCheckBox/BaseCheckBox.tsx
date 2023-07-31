@@ -3,10 +3,15 @@ import {
   CheckboxPartial as CheckboxPartialIcon,
   Checkbox as CheckboxIcon,
 } from "@hitachivantara/uikit-react-icons";
+
 import { CheckboxProps as MuiCheckboxProps } from "@mui/material";
+
 import { clsx } from "clsx";
+
 import React, { useCallback, useState } from "react";
-import { HvBaseProps } from "@core/types";
+
+import { HvBaseProps } from "@core/types/generic";
+
 import { StyledCheckedBox } from "./BaseCheckBox.styles";
 import baseCheckBoxClasses, {
   HvBaseCheckBoxClasses,

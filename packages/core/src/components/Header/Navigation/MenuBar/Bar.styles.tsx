@@ -1,13 +1,10 @@
-import { transientOptions } from "@core/utils/transientOptions";
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
-import headerMenuBarClasses from "./menuBarClasses";
 
-export interface MenuBarRootProps {
-  $type: string;
-  $hidden?: boolean;
-  $active?: boolean;
-}
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { transientOptions } from "@core/utils/transientOptions";
+
+import headerMenuBarClasses from "./menuBarClasses";
 
 const show = {
   top: `calc(${theme.header.height} - ${theme.header.borderTopThickness})`,
@@ -27,29 +24,39 @@ export const hide = {
 export const MenuBarRoot = styled(
   "div",
   transientOptions
-)(({ $type, $hidden, $active }: MenuBarRootProps) => ({
-  left: 0,
-  width: "100%",
-  height: "100%",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  ...($type === "menubar" && {
-    position: "relative",
-    backgroundColor: theme.header.backgroundColor,
-  }),
-  ...($type === "menu" && {
-    position: "absolute",
-    zIndex: -2,
-    height: theme.header.secondLevelHeight,
-    backgroundColor: theme.header.secondLevelBackgroundColor,
-    "& li > div": {
-      marginTop: 0,
-    },
-  }),
-  ...($hidden && { ...hide }),
-  ...($active && { ...show }),
-}));
+)(
+  ({
+    $type,
+    $hidden,
+    $active,
+  }: {
+    $type: string;
+    $hidden?: boolean;
+    $active?: boolean;
+  }) => ({
+    left: 0,
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    ...($type === "menubar" && {
+      position: "relative",
+      backgroundColor: theme.header.backgroundColor,
+    }),
+    ...($type === "menu" && {
+      position: "absolute",
+      zIndex: -2,
+      height: theme.header.secondLevelHeight,
+      backgroundColor: theme.header.secondLevelBackgroundColor,
+      "& li > div": {
+        marginTop: 0,
+      },
+    }),
+    ...($hidden && { ...hide }),
+    ...($active && { ...show }),
+  })
+);
 
 export const MenuBarUl = styled("ul")({
   margin: 0,

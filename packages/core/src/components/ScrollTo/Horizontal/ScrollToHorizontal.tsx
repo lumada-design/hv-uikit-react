@@ -1,12 +1,19 @@
-import { HvBaseProps } from "@core/types";
-import { useTheme, useUniqueId } from "@core/hooks";
-import { ExtractNames, isKey, setId } from "@core/utils";
 import { useCallback, useMemo } from "react";
+
 import { useTheme as useMuiTheme } from "@mui/material/styles";
-import { theme } from "@hitachivantara/uikit-styles";
-import fade from "@core/utils/hexToRgbA";
-import { CurrentStep } from "@hitachivantara/uikit-react-icons";
 import { useMediaQuery } from "@mui/material";
+
+import { theme } from "@hitachivantara/uikit-styles";
+import { CurrentStep } from "@hitachivantara/uikit-react-icons";
+
+import { HvBaseProps } from "@core/types/generic";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useTheme } from "@core/hooks/useTheme";
+import { ExtractNames } from "@core/utils/classes";
+import { isKey } from "@core/utils/keyboardUtils";
+import { setId } from "@core/utils/setId";
+import { hexToRgbA } from "@core/utils/hexToRgbA";
+
 import { HvScrollToTooltipPositions } from "../types";
 import { withTooltip } from "../withTooltip";
 import { HvHorizontalScrollListItem } from "./HorizontalScrollListItem";
@@ -191,7 +198,7 @@ export const HvScrollToHorizontal = ({
             position === "fixed" && (upMd || downSm)
               ? theme.spacing(upMd ? 4 : 2)
               : 0,
-          backgroundColor: fade(
+          backgroundColor: hexToRgbA(
             activeTheme?.colors.modes[selectedMode].atmo2,
             activeTheme?.scrollTo.backgroundColorOpacity
           ),
