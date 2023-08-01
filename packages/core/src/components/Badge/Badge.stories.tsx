@@ -32,6 +32,9 @@ export const Main: StoryObj<HvBadgeProps> = {
     classes: { control: { disable: true } },
     icon: { control: { disable: true } },
   },
+  decorators: [
+    (Story) => <div style={{ ...container, width: 500 }}>{Story()}</div>,
+  ],
   render: (args) => {
     return <HvBadge {...args} />;
   },
