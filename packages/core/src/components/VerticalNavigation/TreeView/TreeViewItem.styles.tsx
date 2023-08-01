@@ -28,13 +28,17 @@ export const StyledGroup = styled("ul")({
 export const StyledLabel = styled(
   "div",
   transientOptions
-)(({ $expandable }: { $expandable: boolean }) => ({
+)(({ $expandable, $hasIcon }: { $expandable: boolean; $hasIcon: boolean }) => ({
   display: "flex",
   flexGrow: 1,
   maxWidth: "100%",
-  ...($expandable && {
+  ...(($hasIcon || $expandable) && {
     maxWidth: "calc(100% - 32px)",
   }),
+  ...($expandable &&
+    $hasIcon && {
+      maxWidth: "calc(100% - 64px)",
+    }),
 }));
 
 export const StyledNode = styled("li")({

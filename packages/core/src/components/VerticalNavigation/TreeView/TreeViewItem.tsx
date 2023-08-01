@@ -475,8 +475,11 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           />
 
           {isOpen && (
-            <StyledLabel $expandable={!!expandable}>{label}</StyledLabel>
+            <StyledLabel $hasIcon={useIcons} $expandable={!!expandable}>
+              {label}
+            </StyledLabel>
           )}
+
           {isOpen && expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
         </StyledContent>
       ),
