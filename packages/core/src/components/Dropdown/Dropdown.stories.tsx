@@ -7,11 +7,15 @@ import {
   Priority4,
   Priority5,
 } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
-import { HvGrid, HvListValue } from "@core/components";
+import {
+  HvDropdown,
+  HvDropdownProps,
+  HvDropdownStatus,
+  HvGrid,
+  HvListValue,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import { useEffect, useMemo, useState } from "react";
-import { HvDropdown, HvDropdownProps } from "./Dropdown";
-import { HvDropdownStatus } from "./types";
 
 export default {
   title: "Components/Dropdown",

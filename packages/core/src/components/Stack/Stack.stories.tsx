@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { theme } from "@hitachivantara/uikit-styles";
 import {
   Tool,
   Favorite,
@@ -15,8 +14,9 @@ import {
   HvStack,
   HvStackProps,
   HvButton,
-} from "@core/components";
-import { useWidth } from "@core/hooks";
+  theme,
+  useWidth,
+} from "@hitachivantara/uikit-react-core";
 import styled from "@emotion/styled";
 
 const StyledBox = styled("div")({

@@ -6,7 +6,8 @@ import {
   HvLoading,
   HvTypography,
   cardClasses,
-} from "@core/components";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import {
   Level0Good,
   TopXS,
@@ -23,7 +24,6 @@ import {
   Severity4,
   Severity5,
 } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 import { useState } from "react";
 import ReactChart from "react-google-charts";
 import { CSSInterpolation, css, cx } from "@emotion/css";

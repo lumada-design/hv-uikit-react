@@ -2,13 +2,14 @@ import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import {
   HvEmptyState,
+  HvFilterGroup,
+  HvFilterGroupProps,
+  HvFilterGroupValue,
   HvLoading,
   HvSwitch,
   HvTypography,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
-import { HvFilterGroup, HvFilterGroupProps } from "./FilterGroup";
-import { HvFilterGroupValue } from "./types";
 
 const meta: Meta<typeof HvFilterGroup> = {
   title: "Widgets/Filter Group",

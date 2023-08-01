@@ -20,16 +20,6 @@ import {
   HvButton,
   HvDropDownMenu,
   HvListValue,
-} from "@core/components";
-import {
-  Ban,
-  Delete,
-  Duplicate,
-  Lock,
-  Preview,
-  Unlock,
-} from "@hitachivantara/uikit-react-icons";
-import {
   useHvData,
   useHvPagination,
   useHvRowSelection,
@@ -38,7 +28,15 @@ import {
   useHvResizeColumns,
   HvTableColumnConfig,
   HvCellProps,
-} from "../../hooks";
+} from "@hitachivantara/uikit-react-core";
+import {
+  Ban,
+  Delete,
+  Duplicate,
+  Lock,
+  Preview,
+  Unlock,
+} from "@hitachivantara/uikit-react-icons";
 import {
   makeData,
   getColumns,

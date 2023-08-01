@@ -2,7 +2,11 @@ import { MouseEvent, useState } from "react";
 import range from "lodash/range";
 import { Meta, StoryObj } from "@storybook/react";
 import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
-import { HvButton, HvMultiButton, HvMultiButtonProps } from "@core/components";
+import {
+  HvButton,
+  HvMultiButton,
+  HvMultiButtonProps,
+} from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvMultiButton> = {
   title: "Components/Multi Button",

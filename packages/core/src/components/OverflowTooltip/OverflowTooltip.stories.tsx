@@ -1,7 +1,10 @@
 import { ReactNode } from "react";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvOverflowTooltip, HvOverflowTooltipProps } from "@core/components";
+import {
+  HvOverflowTooltip,
+  HvOverflowTooltipProps,
+} from "@hitachivantara/uikit-react-core";
 
 const Container = ({ children }: { children: ReactNode }) => {
   const StyledContainer = styled("div")({ display: "flex" });

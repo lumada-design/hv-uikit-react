@@ -10,8 +10,11 @@ import {
   Refresh,
   Stop,
 } from "@hitachivantara/uikit-react-icons";
-import { HvBox } from "@core/components";
-import { HvButton, HvButtonProps } from "./Button";
+import {
+  HvBox,
+  HvButton,
+  HvButtonProps,
+} from "@hitachivantara/uikit-react-core";
 import { buttonRadius, buttonSize, buttonVariant } from "./types";
 
 export default { title: "Components/Button", component: HvButton };

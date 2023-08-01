@@ -11,8 +11,8 @@ import {
   HvAdornment,
   HvFormStatus,
   HvBaseInputProps,
-} from "@core/components";
-import { setId } from "@core/utils";
+  setId,
+} from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvFormElement> = {
   title: "Guides/Forms/Form Element",

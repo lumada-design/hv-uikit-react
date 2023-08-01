@@ -1,5 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvBreadCrumb, HvBreadCrumbProps } from "@core/components";
+import {
+  HvBreadCrumb,
+  HvBreadCrumbProps,
+} from "@hitachivantara/uikit-react-core";
 
 const data = [
   { label: "Label 1", path: "route1" },

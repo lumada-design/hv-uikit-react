@@ -1,5 +1,4 @@
-import { HvGrid, HvAvatar } from "@hitachivantara/uikit-react-core";
-import { theme } from "@hitachivantara/uikit-styles";
+import { HvGrid, HvAvatar, theme } from "@hitachivantara/uikit-react-core";
 
 import { Kpi1 } from "../Kpi1";
 import { Kpi2 } from "../Kpi2";

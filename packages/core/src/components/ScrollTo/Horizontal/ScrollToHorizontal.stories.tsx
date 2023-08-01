@@ -1,11 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { theme } from "@hitachivantara/uikit-styles";
 import { css } from "@emotion/css";
-import { HvContainer, HvInput, HvTypography } from "@core/components";
 import {
+  HvContainer,
+  HvInput,
   HvScrollToHorizontal,
   HvScrollToHorizontalProps,
-} from "./ScrollToHorizontal";
+  HvTypography,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvScrollToHorizontal> = {
   title: "Components/Scroll To/Horizontal",

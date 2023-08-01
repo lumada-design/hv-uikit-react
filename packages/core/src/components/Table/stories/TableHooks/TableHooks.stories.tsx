@@ -14,8 +14,18 @@ import {
   HvTypography,
   HvEmptyState,
   HvBulkActions,
-} from "@core/components";
-import { theme } from "@hitachivantara/uikit-styles";
+  useHvData,
+  useHvHeaderGroups,
+  useHvPagination,
+  useHvRowExpand,
+  useHvRowSelection,
+  useHvSortBy,
+  useHvTableSticky,
+  HvTableColumnConfig,
+  HvCellProps,
+  useHvBulkActions,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import {
   Ban,
   Delete,
@@ -31,18 +41,6 @@ import {
   getGroupedColumns,
   NewEntry,
 } from "../storiesUtils";
-import {
-  useHvData,
-  useHvHeaderGroups,
-  useHvPagination,
-  useHvRowExpand,
-  useHvRowSelection,
-  useHvSortBy,
-  useHvTableSticky,
-  HvTableColumnConfig,
-  HvCellProps,
-  useHvBulkActions,
-} from "../../hooks";
 
 const UseHvHooks = () => {
   const data = useMemo(() => makeData(6), []);

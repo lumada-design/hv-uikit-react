@@ -6,7 +6,7 @@ import {
   HvButton,
   HvSnackbarContent,
   HvOverflowTooltip,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 import { css } from "@emotion/css";
 

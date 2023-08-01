@@ -9,7 +9,7 @@ import {
   HvAppSwitcherProps,
   HvAppSwitcherActionApplication,
   HvTypography,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 
 const applicationsList: HvAppSwitcherActionApplication[] = [
   {

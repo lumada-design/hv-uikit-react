@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { useTheme, Breakpoints as MuiBreakpoints } from "@mui/material/styles";
 import { Ban } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvTableContainer,
@@ -18,7 +17,8 @@ import {
   HvDropDownMenu,
   HvButton,
   HvOverflowTooltip,
-} from "@core/components";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import { useMemo } from "react";
 import {
   getColumns,

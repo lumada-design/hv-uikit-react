@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-styles";
+import { theme } from "@hitachivantara/uikit-react-core";
 
 const styles = {
   indicator: css({

@@ -5,10 +5,11 @@ import {
   HvBox,
   HvButton,
   HvCheckBox,
+  HvTooltip,
+  HvTooltipProps,
   HvTypography,
-} from "@core/components";
-import { HvTooltip, HvTooltipProps } from "./Tooltip";
-import tooltipClasses from "./tooltipClasses";
+  tooltipClasses,
+} from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvTooltip> = {
   title: "Components/Tooltip/Tooltip",

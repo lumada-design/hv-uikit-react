@@ -6,7 +6,11 @@ import {
   Search,
 } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvAvatar, HvAvatarProps, HvButton } from "@core/components";
+import {
+  HvAvatar,
+  HvAvatarProps,
+  HvButton,
+} from "@hitachivantara/uikit-react-core";
 import man1 from "./resources/man-1.png";
 import man2 from "./resources/man-2.png";
 import woman1 from "./resources/woman-1.png";

@@ -6,7 +6,7 @@ import {
   HvLabel,
   HvSuggestions,
   HvSuggestionsProps,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 import { useRef, useState } from "react";
 import countryList from "../../Input/countries";
 

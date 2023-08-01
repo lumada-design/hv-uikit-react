@@ -9,8 +9,8 @@ import {
   HvLink,
   HvTooltip,
   HvPanel,
-} from "@core/components";
-import { theme } from "@hitachivantara/uikit-styles";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import {
   Calendar,
   DropRightXS,

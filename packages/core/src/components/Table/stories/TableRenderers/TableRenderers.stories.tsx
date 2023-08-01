@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { StoryObj } from "@storybook/react";
 import { Ban } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvTable,
   HvTableBody,
@@ -18,8 +17,6 @@ import {
   HvTypography,
   HvRowInstance,
   HvCellProps,
-} from "@core/components";
-import {
   hvTextColumn,
   hvDateColumn,
   hvExpandColumn,
@@ -28,7 +25,9 @@ import {
   hvTagColumn,
   hvDropdownColumn,
   hvProgressColumn,
-} from "../../renderers/renderers";
+  theme,
+} from "@hitachivantara/uikit-react-core";
+
 import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
 const EmptyRow = ({ height }) => (

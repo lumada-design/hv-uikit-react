@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import { HvTypography } from "@hitachivantara/uikit-react-core";
-import { theme } from "@hitachivantara/uikit-styles";
+import { HvTypography, theme } from "@hitachivantara/uikit-react-core";
 
 export const StyledGroup = styled("div")({
   paddingBottom: theme.space.sm,

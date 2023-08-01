@@ -8,7 +8,7 @@ import {
   HvDropDownMenu,
   HvGlobalActions,
   HvGlobalActionsProps,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvGlobalActions> = {
   title: "Widgets/Global Actions",

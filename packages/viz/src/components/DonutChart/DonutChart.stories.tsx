@@ -9,9 +9,11 @@ import {
 import { Meta, StoryObj } from "@storybook/react";
 import { useMemo, useState } from "react";
 import { CSSInterpolation, css } from "@emotion/css";
+import {
+  HvDonutChart,
+  HvDonutChartProps,
+} from "@hitachivantara/uikit-react-viz";
 import { Ticket } from "@hitachivantara/uikit-react-icons"; // eslint-disable-line
-
-import { HvDonutChart, HvDonutChartProps } from "./DonutChart";
 
 const meta: Meta<typeof HvDonutChart> = {
   title: "Visualizations/Donut Chart",

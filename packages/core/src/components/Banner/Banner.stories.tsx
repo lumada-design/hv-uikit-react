@@ -4,12 +4,13 @@ import { Meta, StoryObj } from "@storybook/react";
 import {
   HvBanner,
   HvBannerProps,
+  HvBannerContent,
+  HvBannerContentProps,
   HvButton,
   HvTypography,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { HvBannerContent, HvBannerContentProps } from "./BannerContent";
 
 const StyledBanner = styled(HvBanner)({
   position: "relative",

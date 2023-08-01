@@ -6,6 +6,8 @@ import { useMemo, useState } from "react";
 
 import {
   Breakpoint,
+  HvAccordionProps,
+  HvAccordion,
   HvBox,
   HvButton,
   HvInput,
@@ -21,9 +23,7 @@ import {
   HvTableRow,
   useHvData,
   useHvTableSticky,
-} from "@core/components";
-
-import { HvAccordionProps, HvAccordion } from "./Accordion";
+} from "@hitachivantara/uikit-react-core";
 
 const styles: { [key: string]: CSSInterpolation } = {
   listContainer: {

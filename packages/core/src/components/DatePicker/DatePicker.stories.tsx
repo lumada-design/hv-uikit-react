@@ -1,18 +1,19 @@
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
 import { CSSInterpolation, css } from "@emotion/css";
 import {
   HvButton,
+  HvDatePicker,
+  HvDatePickerProps,
   HvFormStatus,
   HvGrid,
   HvListContainer,
   HvListItem,
   HvRadio,
   HvRadioGroup,
-} from "@core/components";
-import { HvDatePicker, HvDatePickerProps } from "./DatePicker";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 const Decorator = ({ children }) => {
   return <div style={{ width: 340, height: 600, padding: 10 }}>{children}</div>;

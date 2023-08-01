@@ -1,8 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { CSSInterpolation, css } from "@emotion/css";
-import { HvTypography } from "@core/components";
+import {
+  HvTextArea,
+  HvTextAreaProps,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 import { useEffect, useState } from "react";
-import { HvTextArea, HvTextAreaProps } from "./TextArea";
 
 const meta: Meta<typeof HvTextArea> = {
   title: "Components/Text Area",

@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvButton,
   HvActionBar,
   HvActionBarProps,
   HvDropDownMenu,
-} from "@core/components";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 // Common styles
 const StyledContainer = styled("div")({

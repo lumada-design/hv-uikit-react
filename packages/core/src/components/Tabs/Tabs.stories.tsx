@@ -5,7 +5,8 @@ import {
   HvBadge,
   HvTabs,
   HvTabsProps,
-} from "@core/components";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 import {
   Helicopter,
@@ -15,7 +16,6 @@ import {
   DataStore,
 } from "@hitachivantara/uikit-react-icons";
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
 
 const meta: Meta<typeof HvTabs> = {
   title: "Components/Tabs",
