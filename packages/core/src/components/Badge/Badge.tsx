@@ -1,13 +1,15 @@
-import { clsx } from "clsx";
-
 import {
   HvTypography,
   HvTypographyVariants,
 } from "@core/components/Typography";
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
-import badgeClasses, { HvBadgeClasses } from "./badgeClasses";
+import { staticClasses, useClasses } from "./Badge.styles";
+
+export { staticClasses as badgeClasses };
+
+export type HvBadgeClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBadgeProps extends HvBaseProps {
   /**
@@ -45,7 +47,7 @@ export interface HvBadgeProps extends HvBaseProps {
  */
 export const HvBadge = (props: HvBadgeProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
     showCount = false,
     count = 0,
@@ -56,6 +58,8 @@ export const HvBadge = (props: HvBadgeProps) => {
     textVariant = undefined,
     ...others
   } = props;
+
+  const { classes, cx } = useClasses(classesProp);
 
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
   // If label is specified and non-empty, render it.
@@ -68,42 +72,25 @@ export const HvBadge = (props: HvBadgeProps) => {
     icon || (text && <HvTypography variant={textVariant}>{text}</HvTypography>);
 
   return (
-    <StyledRoot
+    <div
       aria-label={renderedCountOrLabel?.toString()}
-      className={clsx(className, badgeClasses.root, classes?.root)}
+      className={cx(classes.root, className)}
       {...others}
     >
       {Component}
-      <StyledContainer
-        $component={!!Component}
-        className={
-          Component
-            ? clsx(badgeClasses.badgeContainer, classes?.badgeContainer)
-            : ""
-        }
-      >
-        <StyledBadge
-          className={clsx(
-            badgeClasses.badgePosition,
-            classes?.badgePosition,
-            !!(count > 0 || renderedCountOrLabel) &&
-              clsx(badgeClasses.badge, classes?.badge),
-            !!(!label && renderedCountOrLabel) &&
-              clsx(badgeClasses.showCount, classes?.showCount),
-            !!label && clsx(badgeClasses.showLabel, classes?.showLabel),
-            !!icon && clsx(badgeClasses.badgeIcon, classes?.badgeIcon),
-            String(renderedCountOrLabel).length === 1 &&
-              clsx(badgeClasses.badgeOneDigit, classes?.badgeOneDigit)
-          )}
-          $badge={!!(count > 0 || renderedCountOrLabel)}
-          $showCount={!!(!label && renderedCountOrLabel)}
-          $showLabel={!!label}
-          $badgeIcon={!!icon}
-          $badgeOneDigit={String(renderedCountOrLabel).length === 1}
+      <div className={Component ? classes.badgeContainer : undefined}>
+        <div
+          className={cx(classes.badgePosition, {
+            [classes.badge]: !!(count > 0 || renderedCountOrLabel),
+            [classes.showCount]: !!(!label && renderedCountOrLabel),
+            [classes.showLabel]: !!label,
+            [classes.badgeIcon]: !!icon,
+            [classes.badgeOneDigit]: String(renderedCountOrLabel).length === 1,
+          })}
         >
           {renderedCountOrLabel}
-        </StyledBadge>
-      </StyledContainer>
-    </StyledRoot>
+        </div>
+      </div>
+    </div>
   );
 };

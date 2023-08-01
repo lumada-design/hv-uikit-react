@@ -3,23 +3,22 @@ import { CSSProperties, HTMLAttributes } from "react";
 import { User } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
-
-import { clsx } from "clsx";
+import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useImageLoaded } from "@core/hooks/useImageLoaded";
 import { decreaseSize } from "@core/utils/sizes";
+import { ExtractNames } from "@core/utils/classes";
 
-import {
-  StyledAvatar,
-  StyledBadge,
-  StyledContainer,
-  StyledImg,
-  StyledStatus,
-} from "./Avatar.styles";
-import avatarClasses, { HvAvatarClasses } from "./avatarClasses";
-import { HvAvatarSize, HvAvatarVariant } from "./types";
+import { staticClasses, useClasses } from "./Avatar.styles";
+
+export { staticClasses as avatarClasses };
+
+export type HvAvatarClasses = ExtractNames<typeof useClasses>;
+
+export type HvAvatarVariant = "circular" | "square";
+
+export type HvAvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
 
 export interface HvAvatarProps extends HvBaseProps {
   /** Inline styles to be applied to the root element. */
@@ -77,7 +76,7 @@ const getColor = (color: string, defaultColor: string): string =>
 export const HvAvatar = ({
   className,
   style,
-  classes,
+  classes: classesProp,
   children: childrenProp,
   component = "div",
   size = "sm",
@@ -94,6 +93,8 @@ export const HvAvatar = ({
   avatarProps,
   ...others
 }: HvAvatarProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   let children: React.ReactNode;
 
   // Use a hook instead of onError on the img element to support server-side rendering.
@@ -103,12 +104,12 @@ export const HvAvatar = ({
 
   if (hasImgNotFailing) {
     children = (
-      <StyledImg
+      <img
         alt={alt}
         src={src}
         srcSet={srcSet}
         sizes={sizes}
-        className={clsx(classes?.img, avatarClasses.img)}
+        className={classes.img}
         {...imgProps}
       />
     );
@@ -121,7 +122,7 @@ export const HvAvatar = ({
       <User
         color={color}
         iconSize={decreaseSize(size)}
-        className={clsx(avatarClasses.fallback, classes?.fallback)}
+        className={classes.fallback}
       />
     );
   }
@@ -154,48 +155,28 @@ export const HvAvatar = ({
   const badgeColor = getColor(badge || "", theme.colors.positive);
 
   return (
-    <StyledContainer
-      className={clsx(avatarClasses.container, classes?.container)}
-      {...others}
-    >
-      <StyledStatus
-        className={clsx(
-          avatarClasses.status,
-          classes?.status,
-          avatarClasses[variant],
-          classes?.[variant],
-          avatarClasses[size],
-          classes?.[size]
-        )}
+    <div className={classes.container} {...others}>
+      <div
+        className={cx(classes.status, classes[variant], classes[size])}
         style={statusInlineStyle}
-        $variant={variant}
-        $size={size}
       >
         {badge && (
-          <StyledBadge
-            className={clsx(avatarClasses.badge, classes?.badge)}
+          <div
+            className={classes.badge}
             style={{ backgroundColor: badgeColor }}
           />
         )}
-        <StyledAvatar
+        <MuiAvatar
           component={component}
-          className={clsx(
-            className,
-            avatarClasses.root,
-            classes?.root,
-            avatarClasses.avatar,
-            classes?.avatar,
-            avatarClasses[size],
-            classes?.[size]
-          )}
+          className={cx(classes.root, classes.avatar, classes[size], className)}
           style={inlineStyle}
           variant={variant}
           size={size}
           {...avatarProps}
         >
           {children}
-        </StyledAvatar>
-      </StyledStatus>
-    </StyledContainer>
+        </MuiAvatar>
+      </div>
+    </div>
   );
 };
