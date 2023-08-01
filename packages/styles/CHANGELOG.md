@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.9.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.9.2...@hitachivantara/uikit-styles@5.9.3) (2023-08-01)
+
+**Note:** Version bump only for package @hitachivantara/uikit-styles
+
 ## 5.9.2 (2023-07-22)
 
 ### Bug Fixes

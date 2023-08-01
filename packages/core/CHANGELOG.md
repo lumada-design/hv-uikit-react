@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.22.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.21.0...@hitachivantara/uikit-react-core@5.22.0) (2023-08-01)
+
+### Bug Fixes
+
+- **AppSwitcher:** aria-describedby only defined when a description exists ([c4a8754](https://github.com/lumada-design/hv-uikit-react/commit/c4a87543a071d14c72bff95dea05607e93e4dda4))
+
+### Features
+
+- **grid:** allow variable column number following design system specs ([063d12c](https://github.com/lumada-design/hv-uikit-react/commit/063d12c7e29c18caa786ff8371f6970860826480))
+- **grid:** support rowSpacing and columnSpacing ([7ca8570](https://github.com/lumada-design/hv-uikit-react/commit/7ca857076f9c4d948ecb99e2444a439d43c1cb2c))
+
 # [5.21.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.20.2...@hitachivantara/uikit-react-core@5.21.0) (2023-07-22)
 
 ### Bug Fixes
