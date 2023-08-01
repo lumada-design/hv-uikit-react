@@ -1,10 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
 import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
-import { HvDialog, HvDialogContent, HvDialogTitle } from "@core/components";
-import { HvFileData } from "./File";
-import { HvFileUploader, HvFileUploaderProps } from "./FileUploader";
-import { HvFileUploaderPreview } from "./Preview";
+import {
+  HvDialog,
+  HvDialogContent,
+  HvDialogTitle,
+  HvFileData,
+  HvFileUploader,
+  HvFileUploaderProps,
+  HvFileUploaderPreview,
+} from "@hitachivantara/uikit-react-core";
 import { cancelUpload, simulateUpload } from "./simulators";
 import rainbow from "./assets/rainbow.jpg";
 

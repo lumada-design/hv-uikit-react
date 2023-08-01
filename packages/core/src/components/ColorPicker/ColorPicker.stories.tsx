@@ -1,6 +1,9 @@
 import { CSSProperties } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvColorPicker, HvColorPickerProps } from "./ColorPicker";
+import {
+  HvColorPicker,
+  HvColorPickerProps,
+} from "@hitachivantara/uikit-react-core";
 
 const makeDecorator = (styles: CSSProperties) => (Story) =>
   <div style={styles}>{Story()}</div>;

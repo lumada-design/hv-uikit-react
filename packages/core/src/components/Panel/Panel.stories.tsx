@@ -1,9 +1,13 @@
 import styled from "@emotion/styled";
 import { Close, Edit } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvButton, HvTypography } from "@core/components";
-import { theme } from "@hitachivantara/uikit-styles";
-import { HvPanel, HvPanelProps } from "./Panel";
+import {
+  HvButton,
+  HvPanel,
+  HvPanelProps,
+  HvTypography,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvPanel> = {
   title: "Components/Panel",

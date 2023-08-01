@@ -1,11 +1,16 @@
 import styled from "@emotion/styled";
 import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvCheckBox, HvPagination, HvActionGeneric } from "@core/components";
+import {
+  HvBulkActions,
+  HvBulkActionsProps,
+  HvCheckBox,
+  HvPagination,
+  HvActionGeneric,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import uniqueId from "lodash/uniqueId";
 import { useState } from "react";
-import { HvBulkActions, HvBulkActionsProps } from "./BulkActions";
 
 const actions: HvActionGeneric[] = [
   { id: "add", label: "Add", icon: <Add /> },

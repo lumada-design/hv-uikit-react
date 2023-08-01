@@ -15,7 +15,7 @@ import {
   HvFormElement,
   HvFormStatus,
   HvLabel,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 
 const StyledButton = styled(HvButton)({
   width: "250px",

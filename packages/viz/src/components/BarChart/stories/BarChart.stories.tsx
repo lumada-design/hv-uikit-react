@@ -9,9 +9,12 @@ import {
 import { Meta, StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
 import { useMemo, useState } from "react";
-import { HvBarChart, HvBarChartProps } from "../BarChart";
+import {
+  HvBarChart,
+  HvBarChartProps,
+  HvLineChartProps,
+} from "@hitachivantara/uikit-react-viz";
 import { customChartData } from "./mockData";
-import { HvLineChartProps } from "../../LineChart";
 import { renderTooltip } from "./customTooltip";
 
 const meta: Meta<typeof HvBarChart> = {

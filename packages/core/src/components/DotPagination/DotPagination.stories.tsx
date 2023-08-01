@@ -3,16 +3,16 @@ import {
   CurrentStep,
   RadioButtonUnselected,
 } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvTypography } from "@core/components";
-import { useState } from "react";
-import { css } from "@emotion/css";
 import {
   HvDotPagination,
   HvDotPaginationClasses,
   HvDotPaginationProps,
-} from "./DotPagination";
+  HvTypography,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+import { useState } from "react";
+import { css } from "@emotion/css";
 
 const meta: Meta<typeof HvDotPagination> = {
   title: "Components/Pagination/Dot Pagination",

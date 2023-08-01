@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvListContainer,
@@ -7,7 +6,8 @@ import {
   HvOverflowTooltip,
   HvTag,
   HvTagProps,
-} from "@core/components";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 // #region styled components
 

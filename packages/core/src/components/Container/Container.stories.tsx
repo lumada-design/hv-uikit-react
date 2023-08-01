@@ -1,12 +1,14 @@
 import styled from "@emotion/styled";
 
-import { theme } from "@hitachivantara/uikit-styles";
+import {
+  HvContainer,
+  HvContainerProps,
+  HvTypography,
+  theme,
+  useWidth,
+} from "@hitachivantara/uikit-react-core";
 
 import { Meta, StoryObj } from "@storybook/react";
-
-import { useWidth } from "@core/hooks/useWidth";
-import { HvTypography } from "@core/components/Typography";
-import { HvContainer, HvContainerProps } from "@core/components/Container";
 
 const meta: Meta<typeof HvContainer> = {
   title: "Components/Container",

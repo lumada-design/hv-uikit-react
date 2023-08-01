@@ -6,7 +6,7 @@ import {
   HvTypography,
   HvEmptyState,
   HvEmptyStateProps,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvEmptyState> = {
   title: "Components/Empty State",

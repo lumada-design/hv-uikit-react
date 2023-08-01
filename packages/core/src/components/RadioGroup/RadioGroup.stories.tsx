@@ -1,8 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { CSSInterpolation, css } from "@emotion/css";
-import { HvFormStatus, HvRadio } from "@core/components";
+import {
+  HvFormStatus,
+  HvRadio,
+  HvRadioGroup,
+  HvRadioGroupProps,
+} from "@hitachivantara/uikit-react-core";
 import React, { useState } from "react";
-import { HvRadioGroup, HvRadioGroupProps } from "./RadioGroup";
 
 const meta: Meta<typeof HvRadioGroup> = {
   title: "Components/Radio/Radio Group",

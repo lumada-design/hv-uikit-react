@@ -8,7 +8,7 @@ import {
   HvSnackbarProps,
   HvSnackbarProvider,
   useHvSnackbar,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 
 const Button = ({ onClick, variant }) => (
   <HvButton

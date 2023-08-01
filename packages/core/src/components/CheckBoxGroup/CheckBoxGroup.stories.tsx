@@ -1,8 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvCheckBox } from "@core/components";
+import {
+  HvCheckBox,
+  HvCheckBoxGroup,
+  HvCheckBoxGroupProps,
+} from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 import { CSSInterpolation, css } from "@emotion/css";
-import { HvCheckBoxGroup, HvCheckBoxGroupProps } from "./CheckBoxGroup";
 
 const meta: Meta<typeof HvCheckBoxGroup> = {
   title: "Components/Checkbox/Checkbox Group",

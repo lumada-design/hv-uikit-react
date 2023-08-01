@@ -11,7 +11,6 @@ import {
   Tool,
   Upload,
 } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Grid } from "@mui/material";
 import { Meta, StoryObj } from "@storybook/react";
 import {
@@ -26,7 +25,8 @@ import {
   HvActionsGeneric,
   HvKpi,
   HvToggleButton,
-} from "@core/components";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import { ReactNode, useEffect, useState } from "react";
 import compressor from "./assets/compressor.png";
 import leaf from "./assets/leaf.png";

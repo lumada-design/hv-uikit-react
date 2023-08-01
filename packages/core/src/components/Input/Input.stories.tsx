@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { CSSInterpolation, css } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Map } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import {
@@ -9,13 +8,14 @@ import {
   HvFormStatus,
   HvInput,
   HvInputProps,
+  HvInputSuggestion,
   HvGrid,
   HvLabel,
   HvInfoMessage,
   HvTypography,
   HvBaseInput,
-} from "@core/components";
-import { HvInputSuggestion } from "@core/types";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import countryNamesArray from "./countries";
 
 const meta: Meta<typeof HvInput> = {

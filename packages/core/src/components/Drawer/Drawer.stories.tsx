@@ -8,7 +8,7 @@ import {
   HvDialogTitle,
   HvDrawer,
   HvDrawerProps,
-} from "..";
+} from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvDrawer> = {
   title: "Widgets/Drawer",

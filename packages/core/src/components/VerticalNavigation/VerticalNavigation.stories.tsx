@@ -21,7 +21,7 @@ import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
   NavigationData,
-} from ".";
+} from "@hitachivantara/uikit-react-core";
 
 export default {
   title: "Widgets/Vertical Navigation",

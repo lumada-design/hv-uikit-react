@@ -1,19 +1,20 @@
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
   HvCheckBox,
   HvDropdown,
   HvInput,
+  HvLogin,
+  HvLoginProps,
   HvTypography,
+  PolymorphicRef,
   dropdownClasses,
   HvInputProps,
   HvButtonProps,
-} from "@core/components";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import { FormEventHandler, forwardRef } from "react";
-import { PolymorphicRef } from "@core/types";
-import { HvLogin, HvLoginProps } from "./Login";
 import background from "./resources/background.png";
 import customBackground from "./resources/background-custom.jpg";
 

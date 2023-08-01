@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { CSSInterpolation, css } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
@@ -9,11 +8,12 @@ import {
   HvTypography,
   HvTagProps,
   HvFormStatus,
-} from "@core/components";
+  tagsInputClasses,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import isEmpty from "lodash/isEmpty";
 import { useState } from "react";
 import countryNamesArray from "./countries";
-import tagsInputClasses from "./tagsInputClasses";
 
 const StyledMultilineTagsInput = styled(HvTagsInput)({
   [`& .${tagsInputClasses.tagsList}`]: {

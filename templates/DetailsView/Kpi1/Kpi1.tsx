@@ -1,6 +1,5 @@
-import { HvCard, HvTypography } from "@hitachivantara/uikit-react-core";
+import { HvCard, HvTypography, theme } from "@hitachivantara/uikit-react-core";
 import { Top, Bottom } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 import classes from "./styles";
 
 export const Kpi1 = ({ title, count, diff }) => {

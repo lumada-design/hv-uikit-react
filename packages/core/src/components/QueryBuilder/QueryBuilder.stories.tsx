@@ -1,4 +1,7 @@
-import { HvQueryBuilder, HvQueryBuilderProps } from "@core/components";
+import {
+  HvQueryBuilder,
+  HvQueryBuilderProps,
+} from "@hitachivantara/uikit-react-core";
 import { Meta, StoryObj } from "@storybook/react";
 import { useMemo, useState } from "react";
 import { defaultOperators } from "./Context";

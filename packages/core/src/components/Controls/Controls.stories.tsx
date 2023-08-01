@@ -22,7 +22,7 @@ import {
   useHvFilters,
   useHvGlobalFilter,
   useHvSortBy,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 import { useMemo, useState } from "react";
 import { getColumns, makeData, NewEntry } from "./makedata";
 

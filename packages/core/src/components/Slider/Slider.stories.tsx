@@ -1,9 +1,12 @@
 import { css } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import React, { useState } from "react";
-import { HvButton } from "@core/components";
-import { HvSlider, HvSliderProps } from "./Slider";
+import {
+  HvButton,
+  HvSlider,
+  HvSliderProps,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvSlider> = {
   title: "Components/Slider",

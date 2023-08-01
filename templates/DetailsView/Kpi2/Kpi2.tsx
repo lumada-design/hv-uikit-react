@@ -1,5 +1,4 @@
-import { HvCard, HvTypography } from "@hitachivantara/uikit-react-core";
-import { theme } from "@hitachivantara/uikit-styles";
+import { HvCard, HvTypography, theme } from "@hitachivantara/uikit-react-core";
 
 export const Kpi2 = ({ title, value }) => {
   return (

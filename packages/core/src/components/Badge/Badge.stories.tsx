@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Alert } from "@hitachivantara/uikit-react-icons";
-import { HvButton, HvBadge, HvBadgeProps } from "@core/components";
+import {
+  HvButton,
+  HvBadge,
+  HvBadgeProps,
+} from "@hitachivantara/uikit-react-core";
 
 const container = {
   width: 400,

@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { Ungroup } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { css } from "@emotion/css";
 
@@ -17,7 +16,8 @@ import {
   HvInput,
   HvTextArea,
   HvGrid,
-} from "@core/components";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 type SimpleDialogProps = {
   buttonMessage?: string;

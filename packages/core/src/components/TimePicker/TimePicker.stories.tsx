@@ -3,11 +3,13 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 import { CSSInterpolation, css } from "@emotion/css";
 import {
+  HvButton,
+  HvInput,
+  HvSwitch,
   HvTimePicker,
   HvTimePickerProps,
   HvTimePickerValue,
-} from "./TimePicker";
-import { HvButton, HvInput, HvSwitch } from "../index";
+} from "@hitachivantara/uikit-react-core";
 
 export default {
   title: "Components/Time Picker",

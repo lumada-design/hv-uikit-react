@@ -12,7 +12,7 @@ import {
   HvHeaderBrand,
   HvHeaderNavigation,
   HvHeaderNavigationProps,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 import { HitachiLogo } from "./assets/HitachiLogo";
 
 const navigationData = [

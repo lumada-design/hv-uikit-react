@@ -1,10 +1,15 @@
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import { CSSInterpolation, css } from "@emotion/css";
-import { HvBaseCheckBox, HvGrid, HvTypography } from "@core/components";
+import {
+  HvBaseCheckBox,
+  HvCheckBox,
+  HvCheckBoxProps,
+  HvGrid,
+  HvTypography,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
-import { HvCheckBox, HvCheckBoxProps } from "./CheckBox";
 
 const StyledDecorator = styled("div")({
   display: "flex",

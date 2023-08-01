@@ -25,7 +25,7 @@ import {
   HvToggleButtonProps,
   HvTooltip,
   HvTypography,
-} from "@core/components";
+} from "@hitachivantara/uikit-react-core";
 import { ToggleEye } from "./ToggleEye";
 
 const FlexDecorator = ({ children }) => {

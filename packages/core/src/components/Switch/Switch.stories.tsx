@@ -2,16 +2,17 @@ import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import styled from "@emotion/styled";
 import { CSSInterpolation, css } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvBaseSwitch,
   HvButton,
   HvGrid,
   HvInfoMessage,
   HvLabel,
+  HvSwitch,
+  HvSwitchProps,
   HvTypography,
-} from "@core/components";
-import { HvSwitch, HvSwitchProps } from "./Switch";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 const StyledDecorator = styled("div")({
   display: "flex",

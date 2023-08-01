@@ -5,14 +5,14 @@ import {
   HvTimeAgo,
   HvTimeAgoProps,
   HvTypography,
-} from "@core/components";
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import { useMemo, useState } from "react";
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
 import "dayjs/locale/de";
 import "dayjs/locale/pt";
 import { css } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-styles";
 
 const styles = {
   root: css({

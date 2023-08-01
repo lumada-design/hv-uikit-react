@@ -9,9 +9,13 @@ import {
   HvListItem,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
+import {
+  HvWizard,
+  HvWizardProps,
+  HvWizardContext,
+} from "@hitachivantara/uikit-react-lab";
 import { css } from "@emotion/css";
 import mockText from "./mockData";
-import { HvWizard, HvWizardProps, HvWizardContext } from ".";
 
 const meta: Meta<typeof HvWizard> = {
   title: "Lab/Wizard",

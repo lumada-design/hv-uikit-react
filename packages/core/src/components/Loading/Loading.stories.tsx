@@ -1,7 +1,12 @@
 import { ReactNode, useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvButton, HvButtonProps, HvTypography } from "@core/components";
-import { HvLoading, HvLoadingProps } from "./Loading";
+import {
+  HvButton,
+  HvButtonProps,
+  HvLoading,
+  HvLoadingProps,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvLoading> = {
   title: "Components/Loading/Loading",

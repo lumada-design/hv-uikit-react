@@ -2,9 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import parser from "html-react-parser";
-import { HvInputSuggestion } from "@core/types";
 import { Fail } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvDropdown,
   HvListValue,
@@ -13,7 +11,9 @@ import {
   HvTypography,
   HvInput,
   HvInputProps,
-} from "@core/components";
+  HvInputSuggestion,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import countryNamesArray, { continents, countries } from "./countries";
 
 /**

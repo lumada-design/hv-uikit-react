@@ -1,10 +1,15 @@
 import styled from "@emotion/styled";
-import { HvBaseRadio, HvGrid } from "@core/components";
-import { theme } from "@hitachivantara/uikit-styles";
+import {
+  HvBaseRadio,
+  HvGrid,
+  HvRadio,
+  HvRadioProps,
+  HvRadioStatus,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import { CSSInterpolation, css } from "@emotion/css";
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvRadio, HvRadioProps, HvRadioStatus } from "./Radio";
 
 const StyledDiv = styled("div")({
   display: "flex",
