@@ -1,4 +1,7 @@
-const dotSizes = {
+import { theme } from "@hitachivantara/uikit-styles";
+import { HvStepProps } from "../DefaultNavigation";
+
+export const dotSizes = {
   xs: 8,
   sm: 10,
   md: 12,
@@ -6,10 +9,5 @@ const dotSizes = {
   xl: 16,
 };
 
-const defaultColor = (theme) => theme.colors.secondary ?? "secondary";
-const disabledColor = (theme) => theme.colors.secondary_60 ?? "secondary_60";
-
-const getColor = (state, theme) =>
-  state === "Disabled" ? disabledColor(theme) : defaultColor(theme);
-
-export { dotSizes, getColor };
+export const getColor = (state: HvStepProps["state"]) =>
+  state === "Disabled" ? theme.colors.secondary_60 : theme.colors.secondary;

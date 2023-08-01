@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import styled from "@emotion/styled";
 
 import { theme } from "@hitachivantara/uikit-styles";
@@ -12,7 +13,11 @@ import {
   ExtractNames,
 } from "@hitachivantara/uikit-react-core";
 
-import { HvDefaultNavigation, HvStepProps } from "./DefaultNavigation";
+import {
+  HvDefaultNavigation,
+  HvDefaultNavigationProps,
+  HvStepProps,
+} from "./DefaultNavigation";
 import { HvSimpleNavigation } from "./SimpleNavigation";
 import { SEPARATOR_WIDTH, TITLE_MARGIN, TITLE_WIDTH } from "./utils";
 import { staticClasses, useClasses } from "./StepNavigation.styles";
@@ -77,7 +82,7 @@ export const HvStepNavigation = ({
   type = "Default",
   ...others
 }: HvStepNavigationProps) => {
-  const { classes, cx } = useClasses(classesProp);
+  const { classes, css, cx } = useClasses(classesProp);
 
   const { activeTheme } = useTheme();
 
@@ -107,29 +112,32 @@ export const HvStepNavigation = ({
     separatorWidth,
     backgroundColor
   ) => {
-    const StyledLi = styled("li")({
-      height: separatorHeight,
-      width:
-        separatorWidth -
-        2 *
-          Number(
-            (activeTheme?.stepNavigation.separatorMargin || "0px").replace(
-              "px",
-              ""
-            )
-          ),
-      backgroundColor,
-      margin: `0 ${theme.stepNavigation.separatorMargin}`,
-    });
+    const widthValue =
+      separatorWidth -
+      2 *
+        Number(
+          (activeTheme?.stepNavigation.separatorMargin || "0px").replace(
+            "px",
+            ""
+          )
+        );
 
     return (
-      <StyledLi
+      <li
         aria-hidden
         key={`separator-${title}`}
-        className={classes.separator}
+        className={cx(
+          css({
+            height: separatorHeight,
+            width: widthValue,
+            backgroundColor,
+            margin: `0 ${theme.stepNavigation.separatorMargin}`,
+          }),
+          classes.separator
+        )}
       >
         <div aria-label={`separator-${title}`} className={separatorClassName} />
-      </StyledLi>
+      </li>
     );
   };
 
@@ -137,7 +145,7 @@ export const HvStepNavigation = ({
     separatorValues: { minWidth, maxWidth, getColor, height },
     stepValues: { minSize, maxSize, StepComponent },
   }: any) => {
-    const items = steps.reduce(
+    const items = steps.reduce<ReactNode[]>(
       (acc, { state, title, separatorClassName, ...props }, index): any => {
         const containerSize = state === "Current" ? maxSize : minSize;
         const StepContainer = styledLi(containerSize);
@@ -199,7 +207,9 @@ export const HvStepNavigation = ({
     return <ol className={classes.ol}>{items}</ol>;
   };
 
-  const getDynamicValues = (stepsWidth) => {
+  const getDynamicValues: HvDefaultNavigationProps["getDynamicValues"] = (
+    stepsWidth
+  ) => {
     const themeBreakpoints = activeTheme?.breakpoints.values || {};
     const maxWidth =
       width?.[breakpoint] ??
@@ -223,31 +233,6 @@ export const HvStepNavigation = ({
     return { width: navWidth, titleWidth, separatorWidth };
   };
 
-  const styledTitle = (
-    titleClassName,
-    variant,
-    title,
-    titleWidth,
-    titleDisabled
-  ) => {
-    const StyledTitle = styled(HvTypography)({
-      textAlign: "center",
-      width: titleWidth - TITLE_MARGIN,
-      marginRight: TITLE_MARGIN,
-    });
-
-    return (
-      <StyledTitle
-        variant={variant}
-        className={titleClassName}
-        disabled={titleDisabled}
-        key={`title-${title}`}
-      >
-        {title}
-      </StyledTitle>
-    );
-  };
-
   const getTitles = (getTitleProps) =>
     hasTitles ? (
       <div className={classes.titles}>
@@ -262,14 +247,24 @@ export const HvStepNavigation = ({
             rawTitle,
             number: index + 1,
           });
-          const Title = styledTitle(
-            titleClassName,
-            variant,
-            title,
-            titleWidth,
-            titleDisabled
+
+          return (
+            <HvTypography
+              variant={variant}
+              className={cx(
+                css({
+                  textAlign: "center",
+                  width: titleWidth - TITLE_MARGIN,
+                  marginRight: TITLE_MARGIN,
+                }),
+                titleClassName
+              )}
+              disabled={titleDisabled}
+              key={title}
+            >
+              {title}
+            </HvTypography>
           );
-          return Title;
         })}
       </div>
     ) : null;
@@ -281,14 +276,12 @@ export const HvStepNavigation = ({
 
   return (
     <StepNavigation
-      {...{
-        numSteps: steps.length,
-        stepSize: stepSizeKey,
-        getTitles,
-        getDynamicValues,
-        className: cx(classes.root, className),
-        ...others,
-      }}
+      numSteps={steps.length}
+      stepSize={stepSizeKey}
+      getTitles={getTitles}
+      getDynamicValues={getDynamicValues}
+      className={cx(classes.root, className)}
+      {...others}
     >
       {({ stepsWidth, navWidth, ...itemsProps }) => (
         <HvBox
