@@ -19,7 +19,7 @@ import { themeColors } from "./themeColors";
 function groupColors(colorsJson) {
   const colorsMap = new Map();
   for (const key in colorsJson) {
-    if (Object.hasOwn(colorsJson, key)) {
+    if (Object.prototype.hasOwnProperty.call(colorsJson, key)) {
       colorsMap.set(key, colorsJson[key]);
     }
   }
