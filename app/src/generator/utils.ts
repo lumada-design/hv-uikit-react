@@ -46,7 +46,7 @@ export const themeDiff = (a: object, b: object): object => {
         diff[key] = nestedDiff;
       }
     } else if (
-      !Object.hasOwn(a, key) ||
+      !Object.prototype.hasOwnProperty.call(a, key) ||
       a[key as keyof typeof b] !== b[key as keyof typeof b]
     ) {
       diff[key as keyof typeof b] = b[key as keyof typeof b];
