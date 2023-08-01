@@ -15,10 +15,26 @@ export const { staticClasses, useClasses } = createClasses("HvStep", {
   },
   ghostDisabled: {},
   notCurrent: { margin: "-8px" },
-  xs: { fontSize: "0.625rem" },
-  sm: { fontSize: "1rem" },
-  md: { fontSize: "1.5rem" },
-  lg: { fontSize: "2rem" },
-  xl: { fontSize: "2.5rem" },
-  avatar: {},
+  xs: {},
+  sm: {},
+  md: {},
+  lg: {},
+  xl: {},
+  avatar: {
+    "&$xs": {
+      fontSize: "0.625rem",
+    },
+    "&$sm": {
+      fontSize: "1rem",
+    },
+    "&$md": {
+      fontSize: "1.5rem",
+    },
+    "&$lg": {
+      fontSize: "2rem",
+    },
+    "&$xl": {
+      fontSize: "2.5rem",
+    },
+  },
 });
