@@ -3,6 +3,7 @@ import { clsx } from "clsx";
 import React, { useCallback, useContext, useMemo } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import HvListContext from "../ListContext";
 import { StyledListItem, StyledFocus } from "./ListItem.styles";
@@ -89,24 +90,26 @@ const applyClassNameToElement = (element, className, externalClassname) => {
 /**
  * ListItem description/documentation paragraph
  */
-export const HvListItem = ({
-  id,
-  classes,
-  className,
-  role,
-  value,
-  selected,
-  disabled,
-  interactive: interactiveProp,
-  condensed: condensedProp,
-  disableGutters: disableGuttersProp,
-  startAdornment,
-  endAdornment,
-  onClick,
-  children,
-  tabIndex,
-  ...others
-}: HvListItemProps) => {
+export const HvListItem = (props: HvListItemProps) => {
+  const {
+    id,
+    classes,
+    className,
+    role,
+    value,
+    selected,
+    disabled,
+    interactive: interactiveProp,
+    condensed: condensedProp,
+    disableGutters: disableGuttersProp,
+    startAdornment,
+    endAdornment,
+    onClick,
+    children,
+    tabIndex,
+    ...others
+  } = useDefaultProps("HvListItem", props);
+
   const {
     topContainerRef,
     condensed: condensedContext,

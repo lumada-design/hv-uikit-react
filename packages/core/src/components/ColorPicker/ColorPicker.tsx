@@ -1,4 +1,5 @@
 import { Checkbox, ColorPicker } from "@hitachivantara/uikit-react-icons";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { ColorState } from "react-color";
 
@@ -100,51 +101,53 @@ const DEFAULT_LABELS: HvColorPickerProps["labels"] = {
  * A color picker component which allows the user to select a color from a list of pre-defined colors or freely select one color via the Hue and Saturation.
  * It receives a color string in HEX format and outputs an HEX formatted color.
  */
-export const HvColorPicker = ({
-  id,
-  name,
-  required = false,
-  disabled = false,
-  label,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  description,
-  "aria-describedby": ariaDescribedBy,
-  className,
-  classes: classesProp,
-  value,
-  onChange,
-  defaultValue = "",
-  expanded,
-  defaultExpanded = false,
-  recommendedColorsPosition = "top",
-  recommendedColors = [
-    "#95AFE8",
-    "#E89E5D",
-    "#83B8A6",
-    "#70759C",
-    "#C57E7E",
-    "#FADA95",
-    "#ADBFE8",
-    "#E3B386",
-    "#9AC6B7",
-    "#8B90AF",
-    "#CF9797",
-    "#FAE1AA",
-  ],
-  showLabels = true,
-  labels: labelsProp,
-  dropdownIcon = "colorPicker",
-  placeholder = "Select color...",
-  iconOnly = false,
-  showSavedColors = true,
-  showCustomColors = true,
-  savedColorsValue,
-  defaultSavedColorsValue = [],
-  onSavedColorAdded,
-  onSavedColorRemoved,
-  deleteSavedColorButtonArialLabel = "Delete saved color",
-}: HvColorPickerProps) => {
+export const HvColorPicker = (props: HvColorPickerProps) => {
+  const {
+    id,
+    name,
+    required = false,
+    disabled = false,
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
+    className,
+    classes: classesProp,
+    value,
+    onChange,
+    defaultValue = "",
+    expanded,
+    defaultExpanded = false,
+    recommendedColorsPosition = "top",
+    recommendedColors = [
+      "#95AFE8",
+      "#E89E5D",
+      "#83B8A6",
+      "#70759C",
+      "#C57E7E",
+      "#FADA95",
+      "#ADBFE8",
+      "#E3B386",
+      "#9AC6B7",
+      "#8B90AF",
+      "#CF9797",
+      "#FAE1AA",
+    ],
+    showLabels = true,
+    labels: labelsProp,
+    dropdownIcon = "colorPicker",
+    placeholder = "Select color...",
+    iconOnly = false,
+    showSavedColors = true,
+    showCustomColors = true,
+    savedColorsValue,
+    defaultSavedColorsValue = [],
+    onSavedColorAdded,
+    onSavedColorRemoved,
+    deleteSavedColorButtonArialLabel = "Delete saved color",
+  } = useDefaultProps("HvColorPicker", props);
+
   const { classes, css, cx } = useClasses(classesProp);
   const { activeTheme } = useTheme();
 

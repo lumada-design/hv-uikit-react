@@ -1,4 +1,5 @@
 import { ChangeEvent, useMemo } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { theme } from "@hitachivantara/uikit-styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
@@ -66,23 +67,25 @@ export interface HvDropDownMenuProps
 /**
  * A drop-down menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.
  */
-export const HvDropDownMenu = ({
-  id: idProp,
-  classes: classesProp,
-  className,
-  icon,
-  placement = "right",
-  dataList,
-  disablePortal = false,
-  onToggle,
-  onClick,
-  keepOpened = true,
-  disabled = false,
-  expanded,
-  defaultExpanded = false,
-  category = "secondaryGhost",
-  ...others
-}: HvDropDownMenuProps) => {
+export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
+  const {
+    id: idProp,
+    classes: classesProp,
+    className,
+    icon,
+    placement = "right",
+    dataList,
+    disablePortal = false,
+    onToggle,
+    onClick,
+    keepOpened = true,
+    disabled = false,
+    expanded,
+    defaultExpanded = false,
+    category = "secondaryGhost",
+    ...others
+  } = useDefaultProps("HvDropDownMenu", props);
+
   const { classes, cx } = useClasses(classesProp);
   const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
   const id = useUniqueId(idProp, "dropdown-menu");

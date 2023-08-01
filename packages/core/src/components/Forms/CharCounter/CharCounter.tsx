@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -30,17 +31,19 @@ export interface HvCharCounterProps extends HvBaseProps {
  * Use the character counter when there is a character or word limit.
  * By itself it doesn't block the user from going above the limit.
  */
-export const HvCharCounter = ({
-  separator = "/",
-  maxCharQuantity,
-  currentCharQuantity = 0,
-  classes,
-  className,
-  id,
-  disabled,
-  disableGutter = false,
-  ...others
-}: HvCharCounterProps) => {
+export const HvCharCounter = (props: HvCharCounterProps) => {
+  const {
+    separator = "/",
+    maxCharQuantity,
+    currentCharQuantity = 0,
+    classes,
+    className,
+    id,
+    disabled,
+    disableGutter = false,
+    ...others
+  } = useDefaultProps("HvCharCounter", props);
+
   const { elementId, elementDisabled } = useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;
   const localId = id ?? setId(elementId, "counter");

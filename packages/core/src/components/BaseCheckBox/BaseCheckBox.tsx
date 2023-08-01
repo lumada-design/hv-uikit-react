@@ -3,6 +3,7 @@ import {
   CheckboxPartial as CheckboxPartialIcon,
   Checkbox as CheckboxIcon,
 } from "@hitachivantara/uikit-react-icons";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { CheckboxProps as MuiCheckboxProps } from "@mui/material";
 
@@ -136,25 +137,27 @@ const getSelectorIcons = (
  * The Base Checkbox is a building block of the Checkbox form element. Don't use unless
  * implementing a custom use case not covered by the Checkbox form element.
  */
-export const HvBaseCheckBox = ({
-  id,
-  classes,
-  className,
-  name,
-  inputProps,
-  onChange,
-  onFocusVisible,
-  onBlur,
-  checked,
-  indeterminate,
-  defaultChecked,
-  value = "on",
-  required = false,
-  readOnly = false,
-  disabled = false,
-  semantic = false,
-  ...others
-}: HvBaseCheckBoxProps) => {
+export const HvBaseCheckBox = (props: HvBaseCheckBoxProps) => {
+  const {
+    id,
+    classes,
+    className,
+    name,
+    inputProps,
+    onChange,
+    onFocusVisible,
+    onBlur,
+    checked,
+    indeterminate,
+    defaultChecked,
+    value = "on",
+    required = false,
+    readOnly = false,
+    disabled = false,
+    semantic = false,
+    ...others
+  } = useDefaultProps("HvBaseCheckBox", props);
+
   const [focusVisible, setFocusVisible] = useState<boolean>(false);
 
   const icons = getSelectorIcons({ disabled, semantic }, classes);

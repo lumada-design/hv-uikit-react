@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { MouseEvent } from "react";
 
@@ -25,15 +26,17 @@ export interface HvHeaderNavigationProps
   levels?: 1 | 2;
 }
 
-export const HvHeaderNavigation = ({
-  data,
-  selected,
-  onClick,
-  className,
-  classes,
-  levels = 2,
-  ...others
-}: HvHeaderNavigationProps) => {
+export const HvHeaderNavigation = (props: HvHeaderNavigationProps) => {
+  const {
+    data,
+    selected,
+    onClick,
+    className,
+    classes,
+    levels = 2,
+    ...others
+  } = useDefaultProps("HvHeaderNavigation", props);
+
   const selectionPath = useSelectionPath(data, selected);
 
   const handleClick: HvHeaderMenuBarProps["onClick"] = (event, selection) => {

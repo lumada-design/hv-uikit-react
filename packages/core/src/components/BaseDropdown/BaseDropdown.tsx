@@ -26,6 +26,7 @@ import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useTheme } from "@core/hooks/useTheme";
 import { useForkRef } from "@core/hooks/useForkRef";
 import { useControlled } from "@core/hooks/useControlled";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { isKey, isOneOfKeys } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 import { getFirstAndLastFocus } from "@core/utils/focusableElementFinder";
@@ -132,30 +133,31 @@ export interface HvBaseDropdownProps
   classes?: HvBaseDropdownClasses;
 }
 
-export const HvBaseDropdown = ({
-  id,
-  className,
-  classes,
-  children,
-  role,
-  placeholder,
-  component,
-  adornment,
-  expanded,
-  dropdownHeaderProps,
-  defaultExpanded = false,
-  disabled = false,
-  readOnly = false,
-  disablePortal = false,
-  variableWidth = false,
-  placement = "right",
-  popperProps = {},
-  dropdownHeaderRef: dropdownHeaderRefProp,
-  onToggle,
-  onClickOutside,
-  onContainerCreation,
-  ...others
-}: HvBaseDropdownProps) => {
+export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
+  const {
+    id,
+    className,
+    classes,
+    children,
+    role,
+    placeholder,
+    component,
+    adornment,
+    expanded,
+    dropdownHeaderProps,
+    defaultExpanded = false,
+    disabled = false,
+    readOnly = false,
+    disablePortal = false,
+    variableWidth = false,
+    placement = "right",
+    popperProps = {},
+    dropdownHeaderRef: dropdownHeaderRefProp,
+    onToggle,
+    onClickOutside,
+    onContainerCreation,
+    ...others
+  } = useDefaultProps("HvBaseDropdown", props);
   const { rootId } = useTheme();
 
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));

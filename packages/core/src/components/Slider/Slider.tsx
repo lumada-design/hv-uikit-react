@@ -1,4 +1,5 @@
 import { SliderProps } from "rc-slider";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -185,41 +186,43 @@ export interface HvSliderProps
 /**
  * Sliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters.
  */
-export const HvSlider = ({
-  id,
-  className,
-  name,
-  label,
-  status,
-  statusMessage,
-  disabled,
-  classes,
-  sliderProps,
-  knobProps,
-  inputProps,
-  requiredMessage = "The value is required",
-  noOverlap = true,
-  hideInput = false,
-  required = false,
-  readOnly = false,
-  markProperties = [],
-  defaultValues = [undefined],
-  values: valuesProp = [],
-  knobProperties: knobPropertiesProp,
-  "aria-errormessage": ariaErrorMessage,
-  maxPointValue = 100,
-  minPointValue = 0,
-  divisionQuantity = 100,
-  markStep = 20,
-  markDigits = 0,
-  formatMark,
-  onChange,
-  onBlur,
-  onBeforeChange,
-  onAfterChange,
-  formatTooltip,
-  ...others
-}: HvSliderProps) => {
+export const HvSlider = (props: HvSliderProps) => {
+  const {
+    id,
+    className,
+    name,
+    label,
+    status,
+    statusMessage,
+    disabled,
+    classes,
+    sliderProps,
+    knobProps,
+    inputProps,
+    requiredMessage = "The value is required",
+    noOverlap = true,
+    hideInput = false,
+    required = false,
+    readOnly = false,
+    markProperties = [],
+    defaultValues = [undefined],
+    values: valuesProp = [],
+    knobProperties: knobPropertiesProp,
+    "aria-errormessage": ariaErrorMessage,
+    maxPointValue = 100,
+    minPointValue = 0,
+    divisionQuantity = 100,
+    markStep = 20,
+    markDigits = 0,
+    formatMark,
+    onChange,
+    onBlur,
+    onBeforeChange,
+    onAfterChange,
+    formatTooltip,
+    ...others
+  } = useDefaultProps("HvSlider", props);
+
   // Miscellaneous state
   const hasLabel = label != null;
 

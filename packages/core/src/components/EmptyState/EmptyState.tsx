@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import React from "react";
 
@@ -50,7 +51,8 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
       </StyledTypography>
     );
 
-  const { action, icon, title, message, classes, className, ...others } = props;
+  const { action, icon, title, message, classes, className, ...others } =
+    useDefaultProps("HvEmptyState", props);
 
   return (
     <StyledRoot

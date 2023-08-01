@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useContext } from "react";
 
@@ -21,15 +22,17 @@ export interface HvInfoMessageProps extends HvBaseProps {
 /**
  * Provides the user with additional descriptive text for the form element.
  */
-export const HvInfoMessage = ({
-  id,
-  classes,
-  className,
-  children,
-  disabled,
-  disableGutter = false,
-  ...others
-}: HvInfoMessageProps) => {
+export const HvInfoMessage = (props: HvInfoMessageProps) => {
+  const {
+    id,
+    classes,
+    className,
+    children,
+    disabled,
+    disableGutter = false,
+    ...others
+  } = useDefaultProps("HvInfoMessage", props);
+
   const { elementId, elementDisabled } = useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;
   const localId = id ?? setId(elementId, "description");

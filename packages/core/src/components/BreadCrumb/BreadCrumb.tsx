@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import isNil from "lodash/isNil";
 
@@ -39,18 +40,20 @@ export interface HvBreadCrumbProps
 /**
  * A breadcrumb is a graphical control element frequently used as a navigational aid.
  */
-export const HvBreadCrumb = ({
-  classes,
-  className,
-  id,
-  listRoute = [],
-  maxVisible,
-  url,
-  onClick,
-  component,
-  dropDownMenuProps,
-  ...others
-}: HvBreadCrumbProps) => {
+export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
+  const {
+    classes,
+    className,
+    id,
+    listRoute = [],
+    maxVisible,
+    url,
+    onClick,
+    component,
+    dropDownMenuProps,
+    ...others
+  } = useDefaultProps("HvBreadCrumb", props);
+
   const maxVisibleElem = maxVisible && maxVisible < 2 ? 2 : maxVisible;
   let listPath = listRoute.slice();
 

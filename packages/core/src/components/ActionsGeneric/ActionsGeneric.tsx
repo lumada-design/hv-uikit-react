@@ -1,4 +1,5 @@
 import React, { isValidElement } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -45,17 +46,19 @@ export interface HvActionsGenericProps extends HvBaseProps {
   classes?: HvActionsGenericClasses;
 }
 
-export const HvActionsGeneric = ({
-  id,
-  classes: classesProp,
-  className,
-  category = "secondaryGhost",
-  disabled = false,
-  actions = [],
-  actionsCallback,
-  maxVisibleActions = Infinity,
-  ...others
-}: HvActionsGenericProps) => {
+export const HvActionsGeneric = (props: HvActionsGenericProps) => {
+  const {
+    id,
+    classes: classesProp,
+    className,
+    category = "secondaryGhost",
+    disabled = false,
+    actions = [],
+    actionsCallback,
+    maxVisibleActions = Infinity,
+    ...others
+  } = useDefaultProps("HvActionsGeneric", props);
+
   const { classes, cx, css } = useClasses(classesProp);
 
   const { activeTheme, selectedMode } = useTheme();

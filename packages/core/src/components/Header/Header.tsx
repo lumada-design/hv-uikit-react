@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 
@@ -23,7 +24,13 @@ export interface HvHeaderProps extends HvBaseProps {
  * Header component is used to render a header bar with logo and brand name, navigation and actions.
  */
 export const HvHeader = (props: HvHeaderProps) => {
-  const { className, classes, children, position = "fixed", ...others } = props;
+  const {
+    className,
+    classes,
+    children,
+    position = "fixed",
+    ...others
+  } = useDefaultProps("HvHeader", props);
 
   return (
     <StyledAppBar

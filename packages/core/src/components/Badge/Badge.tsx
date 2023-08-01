@@ -2,6 +2,7 @@ import {
   HvTypography,
   HvTypographyVariants,
 } from "@core/components/Typography";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 
@@ -57,7 +58,7 @@ export const HvBadge = (props: HvBadgeProps) => {
     text = null,
     textVariant = undefined,
     ...others
-  } = props;
+  } = useDefaultProps("HvBadge", props);
 
   const { classes, cx } = useClasses(classesProp);
 

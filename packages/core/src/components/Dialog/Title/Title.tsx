@@ -1,6 +1,7 @@
 import MuiDialogTitle, {
   DialogTitleProps as MuiDialogTitleProps,
 } from "@mui/material/DialogTitle";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvTypography } from "@core/components/Typography";
 import { HvBaseProps } from "@core/types/generic";
@@ -34,15 +35,17 @@ export interface HvDialogTitleProps
   classes?: HvDialogTitleClasses;
 }
 
-export const HvDialogTitle = ({
-  classes: classesProp,
-  className,
-  children,
-  variant = "default",
-  showIcon = true,
-  customIcon = null,
-  ...others
-}: HvDialogTitleProps) => {
+export const HvDialogTitle = (props: HvDialogTitleProps) => {
+  const {
+    classes: classesProp,
+    className,
+    children,
+    variant = "default",
+    showIcon = true,
+    customIcon = null,
+    ...others
+  } = useDefaultProps("HvDialogTitle", props);
+
   const { classes, css, cx } = useClasses(classesProp);
 
   const { activeTheme } = useTheme();

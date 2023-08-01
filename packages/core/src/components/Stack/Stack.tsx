@@ -11,6 +11,7 @@ import isString from "lodash/isString";
 import isBoolean from "lodash/isBoolean";
 
 import { useWidth } from "@core/hooks/useWidth";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { HvFocus } from "@core/components/Focus";
 import { HvBreakpoints } from "@core/types/tokens";
@@ -62,17 +63,18 @@ const getDirection = (direction, width, breakpoints) => {
  *
  * It also allows the specification of the spacing between the stack elements and the addition of a divider between the elements.
  */
-export const HvStack = ({
-  classes,
-  className,
-  children,
-  direction = "column",
-  spacing = "sm",
-  divider = false,
-  withNavigation = false,
-  dividerProps = {},
-  ...others
-}: HvStackProps) => {
+export const HvStack = (props: HvStackProps) => {
+  const {
+    classes,
+    className,
+    children,
+    direction = "column",
+    spacing = "sm",
+    divider = false,
+    withNavigation = false,
+    dividerProps = {},
+    ...others
+  } = useDefaultProps("HvStack", props);
   const width = useWidth();
   const containerRef = useRef(null);
   const { breakpoints } = useTheme();

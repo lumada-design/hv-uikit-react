@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 
@@ -73,21 +74,23 @@ export interface HvVerticalNavigationProps {
  *
  * Both modes are available via the `mode` property and each app should choose the most appropriate.
  */
-export const HvVerticalNavigation = ({
-  id,
-  className,
-  classes,
+export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
+  const {
+    id,
+    className,
+    classes,
 
-  children,
+    children,
 
-  open = true,
+    open = true,
 
-  slider = false,
+    slider = false,
 
-  useIcons = false,
+    useIcons = false,
 
-  ...others
-}: HvVerticalNavigationProps) => {
+    ...others
+  } = useDefaultProps("HvVerticalNavigation", props);
+
   const [parentData, setParentData] = useState<NavigationData[]>([]);
 
   const [parentSelected, setParentSelected] = useState();

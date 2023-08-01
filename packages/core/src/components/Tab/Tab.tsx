@@ -1,4 +1,5 @@
 import { TabProps as MuiTabProps } from "@mui/material";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -23,12 +24,14 @@ export interface HvTabProps
   classes?: HvTabClasses;
 }
 
-export const HvTab = ({
-  classes,
-  iconPosition = "top",
-  disabled = false,
-  ...others
-}: HvTabProps) => {
+export const HvTab = (props: HvTabProps) => {
+  const {
+    classes,
+    iconPosition = "top",
+    disabled = false,
+    ...others
+  } = useDefaultProps("HvTab", props);
+
   return (
     <StyledTab
       classes={{

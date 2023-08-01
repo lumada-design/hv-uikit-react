@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -28,17 +29,19 @@ export interface HvLabelProps extends HvBaseProps {
 /**
  * Provides the user with a recognizable name for a given form element.
  */
-export const HvLabel = ({
-  id,
-  classes,
-  className,
-  children,
-  label,
-  disabled,
-  required,
-  htmlFor: htmlForProp,
-  ...others
-}: HvLabelProps) => {
+export const HvLabel = (props: HvLabelProps) => {
+  const {
+    id,
+    classes,
+    className,
+    children,
+    label,
+    disabled,
+    required,
+    htmlFor: htmlForProp,
+    ...others
+  } = useDefaultProps("HvLabel", props);
+
   const { elementId, elementDisabled, elementRequired } =
     useContext(HvFormElementContext);
 

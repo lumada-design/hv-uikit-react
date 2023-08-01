@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -63,33 +64,35 @@ export interface HvCheckBoxProps extends Omit<HvBaseCheckBoxProps, "classes"> {
  * It can also be used individually to represent the toggle of a single option, when
  * the Toggle Switch and Toggle Button aren't more appropriate.
  */
-export const HvCheckBox = ({
-  id,
-  classes,
-  className,
-  name,
-  checked,
-  status,
-  indeterminate,
-  statusMessage,
-  label,
-  labelProps,
-  inputProps,
-  value = "on",
-  required = false,
-  readOnly = false,
-  disabled = false,
-  semantic = false,
-  defaultChecked = false,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  "aria-describedby": ariaDescribedBy,
-  "aria-errormessage": ariaErrorMessage,
-  onChange,
-  onFocusVisible,
-  onBlur,
-  ...others
-}: HvCheckBoxProps) => {
+export const HvCheckBox = (props: HvCheckBoxProps) => {
+  const {
+    id,
+    classes,
+    className,
+    name,
+    checked,
+    status,
+    indeterminate,
+    statusMessage,
+    label,
+    labelProps,
+    inputProps,
+    value = "on",
+    required = false,
+    readOnly = false,
+    disabled = false,
+    semantic = false,
+    defaultChecked = false,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    "aria-describedby": ariaDescribedBy,
+    "aria-errormessage": ariaErrorMessage,
+    onChange,
+    onFocusVisible,
+    onBlur,
+    ...others
+  } = useDefaultProps("HvCheckBox", props);
+
   const elementId = useUniqueId(id, "hvcheckbox");
 
   const [focusVisible, setFocusVisible] = useState<boolean>(false);

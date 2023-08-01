@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -163,7 +164,7 @@ export const HvSwitch = (props: HvSwitchProps) => {
     inputProps,
 
     ...others
-  } = props;
+  } = useDefaultProps("HvSwitch", props);
 
   const elementId = useUniqueId(id, "hvswitch");
 

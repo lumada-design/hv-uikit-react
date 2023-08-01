@@ -1,4 +1,5 @@
 import { Children, cloneElement, useCallback, useMemo, useRef } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -139,32 +140,34 @@ export interface HvCheckBoxGroupProps
 /**
  * A checkbox group is a type of selection list that allows the user to select multiple options through the use of checkboxes.
  */
-export const HvCheckBoxGroup = ({
-  id,
-  classes,
-  className,
-  children,
-  name,
-  label,
-  description,
-  status,
-  statusMessage,
-  defaultValue,
-  value: valueProp,
-  required = false,
-  readOnly = false,
-  disabled = false,
-  showSelectAll = false,
-  orientation = "vertical",
-  selectAllLabel = "All",
-  selectAllConjunctionLabel = "/",
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  "aria-describedby": ariaDescribedBy,
-  "aria-errormessage": ariaErrorMessage,
-  onChange,
-  ...others
-}: HvCheckBoxGroupProps) => {
+export const HvCheckBoxGroup = (props: HvCheckBoxGroupProps) => {
+  const {
+    id,
+    classes,
+    className,
+    children,
+    name,
+    label,
+    description,
+    status,
+    statusMessage,
+    defaultValue,
+    value: valueProp,
+    required = false,
+    readOnly = false,
+    disabled = false,
+    showSelectAll = false,
+    orientation = "vertical",
+    selectAllLabel = "All",
+    selectAllConjunctionLabel = "/",
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    "aria-describedby": ariaDescribedBy,
+    "aria-errormessage": ariaErrorMessage,
+    onChange,
+    ...others
+  } = useDefaultProps("HvCheckBoxGroup", props);
+
   const [value, setValue] = useControlled(
     valueProp,
     defaultValue !== undefined

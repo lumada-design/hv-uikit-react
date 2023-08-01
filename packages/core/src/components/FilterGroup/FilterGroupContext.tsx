@@ -7,6 +7,7 @@ import {
   useMemo,
   useState,
 } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import isEqual from "lodash/isEqual";
 
@@ -51,12 +52,12 @@ interface HvFilterGroupProviderProps {
   value?: HvFilterGroupValue;
 }
 
-export const HvFilterGroupProvider = ({
-  defaultValue,
-  value,
-  filters,
-  children,
-}: HvFilterGroupProviderProps) => {
+export const HvFilterGroupProvider = (props: HvFilterGroupProviderProps) => {
+  const { defaultValue, value, filters, children } = useDefaultProps(
+    "HvFilterGroupProvider",
+    props
+  );
+
   const [group, setActiveGroup] = useState<number>(0);
   const [filterValues, setFilterValues, rollbackFilters, appliedFilters] =
     useSavedState<HvFilterGroupValue>(value || groups(filters));

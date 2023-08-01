@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import React, { useContext } from "react";
 
@@ -105,24 +106,26 @@ export interface HvCalendarProps {
   invalidDateLabel?: string;
 }
 
-export const HvCalendar = ({
-  classes,
-  id,
-  locale = "en-US",
-  value,
-  visibleMonth,
-  visibleYear,
-  rightVisibleMonth,
-  rightVisibleYear,
-  minimumDate,
-  maximumDate,
-  startAdornment,
-  onChange,
-  onInputChange,
-  onVisibleDateChange,
-  invalidDateLabel,
-  ...others
-}: HvCalendarProps) => {
+export const HvCalendar = (props: HvCalendarProps) => {
+  const {
+    classes,
+    id,
+    locale = "en-US",
+    value,
+    visibleMonth,
+    visibleYear,
+    rightVisibleMonth,
+    rightVisibleYear,
+    minimumDate,
+    maximumDate,
+    startAdornment,
+    onChange,
+    onInputChange,
+    onVisibleDateChange,
+    invalidDateLabel,
+    ...others
+  } = useDefaultProps("HvCalendar", props);
+
   const { elementId } = useContext(HvFormElementContext);
   const elementValue = useContext(HvFormElementValueContext);
   const localValue = value ?? elementValue;

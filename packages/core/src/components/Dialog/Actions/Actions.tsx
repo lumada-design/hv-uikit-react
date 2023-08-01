@@ -1,6 +1,7 @@
 import MuiDialogActions, {
   DialogActionsProps as MuiDialogActionsProps,
 } from "@mui/material/DialogActions";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
@@ -20,13 +21,15 @@ export interface HvDialogActionsProps
   classes?: HvDialogActionClasses;
 }
 
-export const HvDialogActions = ({
-  classes: classesProp,
-  className,
-  children,
-  fullscreen = false,
-  ...others
-}: HvDialogActionsProps) => {
+export const HvDialogActions = (props: HvDialogActionsProps) => {
+  const {
+    classes: classesProp,
+    className,
+    children,
+    fullscreen = false,
+    ...others
+  } = useDefaultProps("HvDialogActions", props);
+
   const { classes, cx } = useClasses(classesProp);
 
   return (

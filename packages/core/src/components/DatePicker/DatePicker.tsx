@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, ReactNode } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import styled from "@emotion/styled";
 
@@ -227,50 +228,52 @@ export interface HvDatePickerProps
  * A date picker, popup calendar or date range picker is a graphical user
  * interface widget which allows the user to select a date from a calendar.
  */
-export const HvDatePicker = ({
-  classes: classesProp,
-  className,
+export const HvDatePicker = (props: HvDatePickerProps) => {
+  const {
+    classes: classesProp,
+    className,
 
-  id,
-  name,
+    id,
+    name,
 
-  required = false,
-  disabled = false,
-  readOnly,
+    required = false,
+    disabled = false,
+    readOnly,
 
-  label,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  description,
-  "aria-describedby": ariaDescribedBy,
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
 
-  onChange,
-  onCancel,
-  onClear,
-  status,
-  statusMessage,
-  "aria-errormessage": ariaErrorMessage,
+    onChange,
+    onCancel,
+    onClear,
+    status,
+    statusMessage,
+    "aria-errormessage": ariaErrorMessage,
 
-  placeholder,
+    placeholder,
 
-  labels: labelsProp,
+    labels: labelsProp,
 
-  value,
-  startValue,
-  endValue,
+    value,
+    startValue,
+    endValue,
 
-  rangeMode = false,
-  startAdornment,
-  horizontalPlacement = "right",
-  locale: localeProp,
-  showActions = false,
-  showClear = false,
-  disablePortal = true,
-  escapeWithReference = true,
-  dropdownProps,
-  calendarProps,
-  ...others
-}: HvDatePickerProps) => {
+    rangeMode = false,
+    startAdornment,
+    horizontalPlacement = "right",
+    locale: localeProp,
+    showActions = false,
+    showClear = false,
+    disablePortal = true,
+    escapeWithReference = true,
+    dropdownProps,
+    calendarProps,
+    ...others
+  } = useDefaultProps("HvDatePicker", props);
+
   const { classes, cx } = useClasses(classesProp);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 

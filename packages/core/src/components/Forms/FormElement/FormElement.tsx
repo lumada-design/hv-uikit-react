@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -59,19 +60,21 @@ export interface HvFormElementProps
   classes?: HvFormElementClasses;
 }
 
-export const HvFormElement = ({
-  classes,
-  className,
-  children,
-  id,
-  name,
-  value,
-  disabled = false,
-  required = false,
-  readOnly = false,
-  status = "standBy",
-  ...others
-}: HvFormElementProps) => {
+export const HvFormElement = (props: HvFormElementProps) => {
+  const {
+    classes,
+    className,
+    children,
+    id,
+    name,
+    value,
+    disabled = false,
+    required = false,
+    readOnly = false,
+    status = "standBy",
+    ...others
+  } = useDefaultProps("HvFormElement", props);
+
   const elementId = useUniqueId(id, "hvformelement");
 
   const contextValue = useMemo(

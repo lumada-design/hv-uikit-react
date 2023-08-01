@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 
@@ -15,13 +16,12 @@ export interface HvPanelProps extends HvBaseProps {
  * It can be horizontal or vertical and its size is defined by its content and how it relates to surrounding patterns.
  * Regardless of its content, a panel look and feel should be consistent.
  */
-export const HvPanel = ({
-  id,
-  className,
-  classes,
-  children,
-  ...others
-}: HvPanelProps) => {
+export const HvPanel = (props: HvPanelProps) => {
+  const { id, className, classes, children, ...others } = useDefaultProps(
+    "HvPanel",
+    props
+  );
+
   return (
     <StyledDiv
       id={id}

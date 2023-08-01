@@ -1,4 +1,5 @@
 import { Children, useMemo, useCallback, cloneElement } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -116,29 +117,31 @@ const getValueFromSelectedChildren = (children: React.ReactNode) => {
  *
  * A radio group is a type of selection list that can only have a single entry checked at any one time.
  */
-export const HvRadioGroup = ({
-  id,
-  classes,
-  className,
-  children,
-  name,
-  value: valueProp,
-  defaultValue,
-  label,
-  description,
-  status,
-  statusMessage,
-  required = false,
-  readOnly = false,
-  disabled = false,
-  orientation = "vertical",
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  "aria-describedby": ariaDescribedBy,
-  "aria-errormessage": ariaErrorMessage,
-  onChange,
-  ...others
-}: HvRadioGroupProps) => {
+export const HvRadioGroup = (props: HvRadioGroupProps) => {
+  const {
+    id,
+    classes,
+    className,
+    children,
+    name,
+    value: valueProp,
+    defaultValue,
+    label,
+    description,
+    status,
+    statusMessage,
+    required = false,
+    readOnly = false,
+    disabled = false,
+    orientation = "vertical",
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    "aria-describedby": ariaDescribedBy,
+    "aria-errormessage": ariaErrorMessage,
+    onChange,
+    ...others
+  } = useDefaultProps("HvRadioGroup", props);
+
   const elementId = useUniqueId(id, "hvradiogroup");
 
   const [value, setValue] = useControlled(

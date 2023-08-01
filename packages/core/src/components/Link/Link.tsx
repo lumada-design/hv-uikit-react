@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { MouseEventHandler } from "react";
 
@@ -19,15 +20,10 @@ export interface HvLinkProps extends HvBaseProps<HTMLAnchorElement, "onClick"> {
   classes?: HvLinkClasses;
 }
 
-export const HvLink = ({
-  onClick,
-  classes,
-  className,
-  route,
-  data,
-  children,
-  ...others
-}: HvLinkProps) => {
+export const HvLink = (props: HvLinkProps) => {
+  const { onClick, classes, className, route, data, children, ...others } =
+    useDefaultProps("HvLink", props);
+
   const handleClick = (event) => {
     event.preventDefault();
 

@@ -1,4 +1,5 @@
 import { Children, MouseEvent } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -54,18 +55,20 @@ export interface HvControlsProps extends HvBaseProps {
   classes?: HvControlsClasses;
 }
 
-export const HvControls = ({
-  id,
-  className,
-  classes,
-  views,
-  callbacks,
-  selectedView,
-  defaultView,
-  children,
-  hideViewSwitcher = false,
-  onViewChange,
-}: HvControlsProps) => {
+export const HvControls = (props: HvControlsProps) => {
+  const {
+    id,
+    className,
+    classes,
+    views,
+    callbacks,
+    selectedView,
+    defaultView,
+    children,
+    hideViewSwitcher = false,
+    onViewChange,
+  } = useDefaultProps("HvControls", props);
+
   const [currentView, setCurrentView] = useControlled(
     selectedView,
     defaultView

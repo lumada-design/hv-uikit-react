@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import clamp from "lodash/clamp";
 
@@ -44,7 +45,7 @@ export const HvProgressBar = (props: HvProgressBarProps) => {
     status = "inProgress",
     labelProps,
     ...others
-  } = props;
+  } = useDefaultProps("HvProgressBar", props);
 
   const clampedValue = clamp(value, 0, 100);
 

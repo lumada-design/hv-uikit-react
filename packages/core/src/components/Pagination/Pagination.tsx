@@ -1,4 +1,5 @@
 import { HTMLAttributes, useCallback, useEffect } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { Hidden } from "@mui/material";
 
@@ -110,26 +111,28 @@ const defaultPageSizeOptions = [5, 10, 20, 25, 50, 100];
  * Pagination is the process of dividing a document into discrete pages. It relates to how users interact
  * with structured content on a website or application.
  */
-export const HvPagination = ({
-  classes: classesProp = {},
-  className,
-  id,
-  pages = 1,
-  page = 0,
-  showPageSizeOptions = true,
-  pageSizeOptions = defaultPageSizeOptions,
-  pageSize = defaultPageSizeOptions[1],
-  showPageJump = true,
-  canPrevious = false,
-  canNext = false,
-  onPageChange,
-  onPageSizeChange,
-  labels: labelsProp,
-  showPageProps,
-  navigationProps,
-  currentPageInputProps,
-  ...others
-}: HvPaginationProps) => {
+export const HvPagination = (props: HvPaginationProps) => {
+  const {
+    classes: classesProp,
+    className,
+    id,
+    pages = 1,
+    page = 0,
+    showPageSizeOptions = true,
+    pageSizeOptions = defaultPageSizeOptions,
+    pageSize = defaultPageSizeOptions[1],
+    showPageJump = true,
+    canPrevious = false,
+    canNext = false,
+    onPageChange,
+    onPageSizeChange,
+    labels: labelsProp,
+    showPageProps,
+    navigationProps,
+    currentPageInputProps,
+    ...others
+  } = useDefaultProps("HvPagination", props);
+
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const [pageInput, handleInputChange] = usePageInput(page);
   const { classes, cx } = useClasses(classesProp);

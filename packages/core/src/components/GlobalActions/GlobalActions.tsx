@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useTheme } from "@mui/material/styles";
 
@@ -47,17 +48,19 @@ export interface HvGlobalActionsProps
  * Global Actions are actions that affect the entire page they live in.
  * They should persist while scrolling down the screen.
  */
-export const HvGlobalActions = ({
-  children,
-  classes,
-  className,
-  title,
-  variant = "global",
-  backButton,
-  headingLevel,
-  position: positionProp,
-  ...others
-}: HvGlobalActionsProps) => {
+export const HvGlobalActions = (props: HvGlobalActionsProps) => {
+  const {
+    children,
+    classes,
+    className,
+    title,
+    variant = "global",
+    backButton,
+    headingLevel,
+    position: positionProp,
+    ...others
+  } = useDefaultProps("HvGlobalActions", props);
+
   const { activeTheme } = useHvTheme();
 
   const muiTheme = useTheme();

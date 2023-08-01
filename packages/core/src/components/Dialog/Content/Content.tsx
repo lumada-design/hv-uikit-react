@@ -1,6 +1,7 @@
 import MuiDialogContent, {
   DialogContentProps as MuiDialogContentProps,
 } from "@mui/material/DialogContent";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
@@ -21,12 +22,14 @@ export interface HvDialogContentProps
   classes?: HvDialogContentClasses;
 }
 
-export const HvDialogContent = ({
-  classes: classesProp,
-  className,
-  children,
-  indentContent = false,
-}: HvDialogContentProps) => {
+export const HvDialogContent = (props: HvDialogContentProps) => {
+  const {
+    classes: classesProp,
+    className,
+    children,
+    indentContent = false,
+  } = useDefaultProps("HvDialogContent", props);
+
   const { classes, cx } = useClasses(classesProp);
 
   return (

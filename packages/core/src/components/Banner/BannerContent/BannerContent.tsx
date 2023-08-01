@@ -51,7 +51,7 @@ export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
   (props, ref) => {
     const {
       id,
-      classes: classesProp = {},
+      classes: classesProp,
       showIcon = false,
       customIcon,
       variant = "default",

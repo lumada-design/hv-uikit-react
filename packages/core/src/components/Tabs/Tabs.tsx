@@ -1,4 +1,5 @@
 import { TabsProps as MuiTabsProps } from "@mui/material";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -29,7 +30,9 @@ export interface HvTabsProps
  * A Tab is a graphical control element that allows multiple documents or panels to be contained within a single window.
  * Tabs can be used as a navigational widget for switching between sets of documents.
  */
-export const HvTabs = ({ classes, ...others }: HvTabsProps) => {
+export const HvTabs = (props: HvTabsProps) => {
+  const { classes, ...others } = useDefaultProps("HvTabs", props);
+
   return (
     <StyledTabs
       classes={{

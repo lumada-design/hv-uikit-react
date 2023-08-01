@@ -1,4 +1,5 @@
 import { theme } from "@hitachivantara/uikit-styles";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -30,7 +31,8 @@ export interface HvLoadingProps extends HvBaseProps {
  * Loading provides feedback about a process that is taking place in the application.
  */
 export const HvLoading = (props: HvLoadingProps) => {
-  const { color, hidden, small, label, classes, className, ...others } = props;
+  const { color, hidden, small, label, classes, className, ...others } =
+    useDefaultProps("HvLoading", props);
 
   const getColor = (colorName: string) => {
     return color ? theme.colors[color] || color : theme.colors[colorName];

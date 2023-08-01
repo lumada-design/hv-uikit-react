@@ -1,4 +1,5 @@
 import { HvBaseProps } from "@core/types/generic";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { StyledContainer } from "./SimpleGrid.styles";
 import { Breakpoint, Spacing } from "./types";
@@ -24,13 +25,15 @@ export interface HvSimpleGridProps extends HvBaseProps {
   cols?: number;
 }
 
-export const HvSimpleGrid = ({
-  children,
-  breakpoints,
-  spacing = "sm",
-  cols,
-  ...others
-}: HvSimpleGridProps) => {
+export const HvSimpleGrid = (props: HvSimpleGridProps) => {
+  const {
+    children,
+    breakpoints,
+    spacing = "sm",
+    cols,
+    ...others
+  } = useDefaultProps("HvSimpleGrid", props);
+
   return (
     <StyledContainer
       spacing={spacing}

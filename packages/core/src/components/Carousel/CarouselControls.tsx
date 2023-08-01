@@ -1,4 +1,5 @@
 import { MouseEventHandler, ReactNode } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 
@@ -31,7 +32,7 @@ export const HvCarouselControls = (props: HvCarouselControlsProps) => {
     actions,
     onPreviousClick,
     onNextClick,
-  } = props;
+  } = useDefaultProps("HvCarouselControls", props);
   const { classes, cx } = useClasses(classesProp, false);
 
   const selectedIndex = page || 0;

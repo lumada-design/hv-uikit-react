@@ -16,6 +16,7 @@ import isNil from "lodash/isNil";
 import { setId } from "@core/utils/setId";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import validationStates, {
   isInvalid,
 } from "@core/components/Forms/FormElement/validationStates";
@@ -195,7 +196,7 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
     onBlur,
     onFocus,
     ...others
-  } = props;
+  } = useDefaultProps("HvTextArea", props);
   const elementId = useUniqueId(id, "hvtextarea");
 
   // Signals that the user has manually edited the input value

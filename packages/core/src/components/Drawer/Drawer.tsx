@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import {
   Drawer as MuiDrawer,
@@ -76,17 +77,19 @@ const getBackgroundColor = (color: string) => {
  * It only provides the pane with a close button, the rest of the
  * content can be customized.
  */
-export const HvDrawer = ({
-  className,
-  classes: classesProp,
-  id,
-  children,
-  open,
-  onClose,
-  anchor = "right",
-  buttonTitle = "Close",
-  ...others
-}: HvDrawerProps) => {
+export const HvDrawer = (props: HvDrawerProps) => {
+  const {
+    className,
+    classes: classesProp,
+    id,
+    children,
+    open,
+    onClose,
+    anchor = "right",
+    buttonTitle = "Close",
+    ...others
+  } = useDefaultProps("HvDrawer", props);
+
   const { classes, css, cx } = useClasses(classesProp);
   const { activeTheme, rootId } = useTheme();
 

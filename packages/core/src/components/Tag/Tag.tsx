@@ -12,6 +12,7 @@ import {
   HvCategoricalColorKeys,
 } from "@core/types/tokens";
 import { useTheme } from "@core/hooks/useTheme";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvButtonProps } from "@core/components/Button";
 
 import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
@@ -75,22 +76,23 @@ const getColor = (customColor, type, colors) => {
  *
  * It leverages the Chip component from Material UI
  */
-export const HvTag = ({
-  classes,
-  className,
-  style,
-  label,
-  disabled,
-  type = "semantic",
-  color,
-  deleteIcon,
-  onDelete,
-  onClick,
-  role,
-  deleteButtonArialLabel = "Delete tag",
-  deleteButtonProps = {},
-  ...others
-}: HvTagProps) => {
+export const HvTag = (props: HvTagProps) => {
+  const {
+    classes,
+    className,
+    style,
+    label,
+    disabled,
+    type = "semantic",
+    color,
+    deleteIcon,
+    onDelete,
+    onClick,
+    role,
+    deleteButtonArialLabel = "Delete tag",
+    deleteButtonProps = {},
+    ...others
+  } = useDefaultProps("HvTag", props);
   const { activeTheme, selectedMode } = useTheme();
 
   const getDeleteIcon = () => {

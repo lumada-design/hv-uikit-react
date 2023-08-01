@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import useCarousel, { EmblaOptionsType } from "embla-carousel-react";
 
@@ -95,7 +96,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
     renderThumbnail,
     onChange,
     ...others
-  } = props;
+  } = useDefaultProps("HvCarousel", props);
   const { activeTheme } = useTheme();
   const { classes, css, cx } = useClasses(classesProp);
   const thumbnailsRef = useRef<HTMLDivElement>(null);

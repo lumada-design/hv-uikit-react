@@ -1,4 +1,5 @@
 import { useState, useRef, useMemo } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { Time } from "@internationalized/date";
 
@@ -128,7 +129,7 @@ export interface HvTimePickerProps
  */
 export const HvTimePicker = (props: HvTimePickerProps) => {
   const {
-    classes: classesProp = {},
+    classes: classesProp,
     className,
 
     id: idProp,
@@ -167,7 +168,7 @@ export const HvTimePicker = (props: HvTimePickerProps) => {
     escapeWithReference = true,
     dropdownProps,
     ...others
-  } = props;
+  } = useDefaultProps("HvTimePicker", props);
   const id = useUniqueId(idProp, "hvtimepicker");
   const ref = useRef<HTMLDivElement>(null);
   const { classes, cx } = useClasses(classesProp);

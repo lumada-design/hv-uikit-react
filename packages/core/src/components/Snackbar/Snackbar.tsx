@@ -98,7 +98,7 @@ const snackBarDirComponent = (direction) => {
  * The other is the HvSnackbarContent, which allows a finer control and customization of the content of the Snackbar.
  */
 export const HvSnackbar = ({
-  classes: classesProp = {},
+  classes: classesProp,
   className,
   id,
   open = false,
