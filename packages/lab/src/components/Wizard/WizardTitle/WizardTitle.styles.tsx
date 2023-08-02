@@ -8,7 +8,10 @@ export const { staticClasses, useClasses } = createClasses("HvWizardTitle", {
     },
   },
   titleContainer: {
-    margin: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: theme.spacing(1),
     width: "100%",
   },
   buttonWidth: {
