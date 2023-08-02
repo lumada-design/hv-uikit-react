@@ -50,6 +50,8 @@ export interface HvVerticalNavigationSliderProps {
     event: React.MouseEvent<HTMLButtonElement>,
     item: NavigationData
   ) => void;
+  /** Aria label to apply to the navigate to submenu button on the list items. */
+  forwardButtonAriaLabel?: string;
 }
 
 export const HvVerticalNavigationSlider = ({
@@ -59,6 +61,7 @@ export const HvVerticalNavigationSlider = ({
   selected,
   onNavigateToTarget,
   onNavigateToChild,
+  forwardButtonAriaLabel = "Navigate to submenu",
 }: HvVerticalNavigationSliderProps) => {
   return (
     <HvListContainer interactive id={id}>
@@ -89,6 +92,7 @@ export const HvVerticalNavigationSlider = ({
                   onClick={(event) => {
                     onNavigateToChild?.(event, item);
                   }}
+                  aria-label={forwardButtonAriaLabel}
                 >
                   <DropRightXS />
                 </HvButton>
