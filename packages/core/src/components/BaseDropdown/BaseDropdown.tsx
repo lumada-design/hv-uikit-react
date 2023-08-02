@@ -7,8 +7,6 @@ import React, {
 
 import { createPortal } from "react-dom";
 
-import { clsx } from "clsx";
-
 import {
   ClickAwayListener,
   ClickAwayListenerProps,
@@ -22,6 +20,7 @@ import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { usePopper } from "react-popper";
 import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
 
+import { HvTypography } from "@core/components/Typography";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useTheme } from "@core/hooks/useTheme";
 import { useForkRef } from "@core/hooks/useForkRef";
@@ -31,22 +30,14 @@ import { isKey, isOneOfKeys } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 import { getFirstAndLastFocus } from "@core/utils/focusableElementFinder";
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
-import {
-  StyledAdornment,
-  StyledAnchor,
-  StyledContainer,
-  StyledExtension,
-  StyledHeaderRoot,
-  StyledPanel,
-  StyledPlaceholder,
-  StyledRoot,
-  StyledSelection,
-} from "./BaseDropdown.styles";
+import { staticClasses, useClasses } from "./BaseDropdown.styles";
 import BaseDropdownContext from "./BaseDropdownContext";
-import baseDropdownClasses, {
-  HvBaseDropdownClasses,
-} from "./baseDropdownClasses";
+
+export { staticClasses as baseDropdownClasses };
+
+export type HvBaseDropdownClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBaseDropdownProps
   extends HvBaseProps<HTMLDivElement, "placeholder"> {
@@ -137,7 +128,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
   const {
     id,
     className,
-    classes,
+    classes: classesProp,
     children,
     role,
     placeholder,
@@ -158,6 +149,8 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     onContainerCreation,
     ...others
   } = useDefaultProps("HvBaseDropdown", props);
+  const { classes, cx } = useClasses(classesProp);
+
   const { rootId } = useTheme();
 
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
@@ -350,28 +343,16 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
 
     return (
-      <StyledHeaderRoot
+      <div
         id={setId(id, "header")}
-        className={clsx(
-          baseDropdownClasses.header,
-          classes?.header,
-          disabled &&
-            clsx(baseDropdownClasses.headerDisabled, classes?.headerDisabled),
-          readOnly &&
-            clsx(baseDropdownClasses.headerReadOnly, classes?.headerReadOnly),
-          isOpen && clsx(baseDropdownClasses.headerOpen, classes?.headerOpen),
-          isOpen &&
-            popperPlacement.includes("top") &&
-            clsx(baseDropdownClasses.headerOpenUp, classes?.headerOpenUp),
-          isOpen &&
-            popperPlacement.includes("bottom") &&
-            clsx(baseDropdownClasses.headerOpenDown, classes?.headerOpenDown)
-        )}
-        $disabled={disabled}
-        $readOnly={readOnly}
-        $opened={isOpen}
-        $openedUp={isOpen && popperPlacement.includes("top")}
-        $openedDown={isOpen && popperPlacement.includes("bottom")}
+        className={cx(classes.header, {
+          [classes.headerDisabled]: disabled,
+          [classes.headerReadOnly]: readOnly,
+          [classes.headerOpen]: isOpen,
+          [classes.headerOpenUp]: isOpen && popperPlacement.includes("top"),
+          [classes.headerOpenDown]:
+            isOpen && popperPlacement.includes("bottom"),
+        })}
         role={ariaRole === "combobox" ? "textbox" : undefined}
         style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
         aria-controls={
@@ -384,39 +365,30 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
         ref={handleDropdownHeaderRef}
         {...dropdownHeaderProps}
       >
-        <StyledSelection
-          className={clsx(baseDropdownClasses.selection, classes?.selection)}
-        >
+        <div className={classes.selection}>
           {placeholder && typeof placeholder === "string" ? (
-            <StyledPlaceholder
-              className={clsx(
-                baseDropdownClasses.placeholder,
-                classes?.placeholder,
-                disabled &&
-                  clsx(
-                    baseDropdownClasses.selectionDisabled,
-                    classes?.selectionDisabled
-                  )
-              )}
-              $disabled={disabled}
+            <HvTypography
+              className={cx(classes.placeholder, {
+                [classes.selectionDisabled]: disabled,
+              })}
               variant="body"
             >
               {placeholder}
-            </StyledPlaceholder>
+            </HvTypography>
           ) : (
             placeholder
           )}
-        </StyledSelection>
-        <StyledAdornment>
+        </div>
+        <div className={classes.arrowContainer}>
           {adornment || (
             <ExpanderComponent
               iconSize="XS"
               color={disabled ? theme.colors.secondary_60 : undefined}
-              className={clsx(baseDropdownClasses.arrow, classes?.arrow)}
+              className={classes.arrow}
             />
           )}
-        </StyledAdornment>
-      </StyledHeaderRoot>
+        </div>
+      </div>
     );
   })();
 
@@ -447,10 +419,10 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     };
 
     const container = (
-      <StyledContainer
+      <div
         role="tooltip"
         ref={setPopperElement}
-        className={clsx(baseDropdownClasses.container, classes?.container)}
+        className={classes.container}
         style={popperStyles.popper}
         {...attributes.popper}
       >
@@ -458,62 +430,43 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
           {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
           <div onKeyDown={handleContainerKeyDown}>
             {popperPlacement.includes("bottom") && (
-              <StyledExtension
+              <div
                 style={{ width: extensionWidth }}
-                className={clsx(
-                  baseDropdownClasses.inputExtensionOpen,
-                  classes?.inputExtensionOpen,
-                  popperPlacement.includes("end") &&
-                    clsx(
-                      baseDropdownClasses.inputExtensionLeftPosition,
-                      classes?.inputExtensionLeftPosition
-                    )
-                )}
-                $leftPosition={popperPlacement.includes("end")}
-                $openShadow={false}
-                $floatLeft={false}
-                $floatRight={false}
+                className={cx(classes.inputExtensionOpen, {
+                  [classes.inputExtensionLeftPosition]:
+                    popperPlacement.includes("end"),
+                })}
               />
             )}
             <BaseDropdownContext.Provider value={popperMaxSize}>
-              <StyledPanel
+              <div
                 id={setId(elementId, "children-container")}
-                className={clsx(baseDropdownClasses.panel, classes?.panel)}
-                $popperPlacement={
-                  popperPlacement.includes("top") ? "top" : "bottom"
-                }
+                className={cx(classes.panel, {
+                  [classes.panelOpenedUp]: popperPlacement.includes("top"),
+                  [classes.panelOpenedDown]: popperPlacement.includes("bottom"),
+                })}
               >
                 {children}
-              </StyledPanel>
+              </div>
             </BaseDropdownContext.Provider>
             {popperPlacement.includes("top") && (
-              <StyledExtension
+              <div
                 style={{ width: extensionWidth }}
-                className={clsx(
-                  baseDropdownClasses.inputExtensionOpen,
-                  classes?.inputExtensionOpen,
-                  baseDropdownClasses.inputExtensionOpenShadow,
-                  classes?.inputExtensionOpenShadow,
-                  popperPlacement.includes("end") &&
-                    clsx(
-                      baseDropdownClasses.inputExtensionFloatRight,
-                      classes?.inputExtensionFloatRight
-                    ),
-                  popperPlacement.includes("start") &&
-                    clsx(
-                      baseDropdownClasses.inputExtensionFloatLeft,
-                      classes?.inputExtensionFloatLeft
-                    )
+                className={cx(
+                  classes.inputExtensionOpen,
+                  classes.inputExtensionOpenShadow,
+                  {
+                    [classes.inputExtensionFloatRight]:
+                      popperPlacement.includes("end"),
+                    [classes.inputExtensionFloatLeft]:
+                      popperPlacement.includes("start"),
+                  }
                 )}
-                $leftPosition={false}
-                $openShadow
-                $floatLeft={popperPlacement.includes("start")}
-                $floatRight={popperPlacement.includes("end")}
               />
             )}
           </div>
         </ClickAwayListener>
-      </StyledContainer>
+      </div>
     );
 
     if (disablePortal) return container;
@@ -525,20 +478,17 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
   })();
 
   return (
-    <StyledRoot className={clsx(baseDropdownClasses.root, classes?.root)}>
-      <StyledAnchor
+    <div className={classes.root}>
+      <div
         id={id}
         role={ariaRole}
         aria-expanded={!!isOpen}
         aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
-        className={clsx(
-          className,
-          baseDropdownClasses.anchor,
-          classes?.anchor,
-          disabled &&
-            clsx(baseDropdownClasses.rootDisabled, classes?.rootDisabled)
+        className={cx(
+          classes.anchor,
+          { [classes.rootDisabled]: disabled },
+          className
         )}
-        $disabled={disabled}
         {...(!readOnly && {
           onKeyDown: handleToggle,
           onClick: handleToggle,
@@ -548,8 +498,8 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
         {...others}
       >
         {headerComponent}
-      </StyledAnchor>
+      </div>
       {isOpen && containerComponent}
-    </StyledRoot>
+    </div>
   );
 };
