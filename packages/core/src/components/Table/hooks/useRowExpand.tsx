@@ -54,7 +54,6 @@ export const CellWithExpandButton = ({ row, cell, labels: labelsProp }) => {
     <>
       <HvButton
         icon
-        variant="secondaryGhost"
         aria-label={
           row.isExpanded
             ? labels.collapseRowButtonAriaLabel

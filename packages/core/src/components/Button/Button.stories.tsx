@@ -179,21 +179,10 @@ export const Icons = ({ onClick }) => {
         >
           <Play iconSize="M" />
         </HvButton>
-        <HvButton
-          icon
-          aria-label="Pause"
-          onClick={onClick}
-          variant="secondaryGhost"
-        >
+        <HvButton icon aria-label="Pause" onClick={onClick}>
           <Pause iconSize="M" />
         </HvButton>
-        <HvButton
-          icon
-          disabled
-          aria-label="Stop"
-          onClick={onClick}
-          variant="secondaryGhost"
-        >
+        <HvButton icon disabled aria-label="Stop" onClick={onClick}>
           <Stop iconSize="M" />
         </HvButton>
       </HvBox>

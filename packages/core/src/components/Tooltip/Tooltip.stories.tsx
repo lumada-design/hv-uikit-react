@@ -109,7 +109,7 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
         <HvButton>Button</HvButton>
       </HvTooltip>
       <HvTooltip placement="bottom" title="Bottom placement">
-        <HvButton icon variant="secondaryGhost">
+        <HvButton icon>
           <Play />
         </HvButton>
       </HvTooltip>

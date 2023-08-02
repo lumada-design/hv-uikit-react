@@ -889,7 +889,7 @@ const AlternativeLayout = () => {
         width: 32,
         Cell: () => {
           return (
-            <HvButton aria-label="Delete" icon variant="secondaryGhost">
+            <HvButton aria-label="Delete" icon>
               <Delete />
             </HvButton>
           );
@@ -998,7 +998,7 @@ const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
       width: 32,
       Cell: () => {
         return (
-          <HvButton aria-label="Delete" icon variant="secondaryGhost">
+          <HvButton aria-label="Delete" icon>
             <Delete />
           </HvButton>
         );

@@ -188,7 +188,6 @@ export const HvCarousel = (props: HvCarouselProps) => {
       {showFullscreen && (
         <HvButton
           icon
-          variant="secondaryGhost"
           onClick={() => setIsFullscreen((curr) => !curr)}
           className={classes.closeButton}
         >

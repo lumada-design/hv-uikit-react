@@ -17,7 +17,7 @@ const ButtonIconTooltip = ({
   return (
     <HvTooltip title={<HvTypography>{tooltip}</HvTypography>}>
       <div>
-        <HvButton icon variant="secondaryGhost" {...buttonProps}>
+        <HvButton icon {...buttonProps}>
           {children}
         </HvButton>
       </div>

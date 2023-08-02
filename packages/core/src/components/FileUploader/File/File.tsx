@@ -210,7 +210,6 @@ export const HvFile = ({
         aria-label={removeFileButtonLabel}
         className={clsx(classes?.removeButton, fileClasses.removeButton)}
         onClick={() => onFileRemoved?.(data)}
-        variant="secondaryGhost"
         icon
       >
         <Close iconSize="XS" />

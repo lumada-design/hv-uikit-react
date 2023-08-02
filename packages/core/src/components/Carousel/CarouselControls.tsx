@@ -56,7 +56,6 @@ export const HvCarouselControls = (props: HvCarouselControlsProps) => {
           <HvButton
             icon
             disabled={!canPrevious}
-            variant="secondaryGhost"
             aria-label="Backwards"
             onClick={onPreviousClick}
           >
@@ -68,7 +67,6 @@ export const HvCarouselControls = (props: HvCarouselControlsProps) => {
           <HvButton
             icon
             disabled={!canNext}
-            variant="secondaryGhost"
             aria-label="Forwards"
             onClick={onNextClick}
           >

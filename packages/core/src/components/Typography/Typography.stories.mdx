@@ -35,10 +35,8 @@ as its content, allowing the styling of the text inside with the help of the typ
 <Preview>
   <Story name="Usage">
     <HvTooltip title={<HvTypography>Open in new window</HvTypography>}>
-      <HvButton icon variant="secondaryGhost" aria-label="Popup">
-        <a href="#">
-          <PopUp />
-        </a>
+      <HvButton icon aria-label="Popup" component="a" href="#">
+        <PopUp />
       </HvButton>
     </HvTooltip>
   </Story>

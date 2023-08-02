@@ -85,7 +85,6 @@ export const HvVerticalNavigationSlider = ({
             endAdornment={
               item.data && item.data.length > 0 ? (
                 <HvButton
-                  variant="secondaryGhost"
                   icon
                   onClick={(event) => {
                     onNavigateToChild?.(event, item);

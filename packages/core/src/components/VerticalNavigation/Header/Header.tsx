@@ -97,12 +97,7 @@ export const HvVerticalNavigationHeader = ({
       {...others}
     >
       {isOpen && headerTitle && slider && (
-        <HvButton
-          icon
-          variant="secondaryGhost"
-          onClick={backButtonClickHandler}
-          {...backButtonProps}
-        >
+        <HvButton icon onClick={backButtonClickHandler} {...backButtonProps}>
           <Backwards iconSize="XS" />
         </HvButton>
       )}
@@ -114,7 +109,6 @@ export const HvVerticalNavigationHeader = ({
       {onCollapseButtonClick && (
         <StyledCollapseButton
           icon
-          variant="secondaryGhost"
           onClick={onCollapseButtonClick}
           classes={{
             root: isOpen ? "" : verticalNavigationHeaderClasses.minimized,

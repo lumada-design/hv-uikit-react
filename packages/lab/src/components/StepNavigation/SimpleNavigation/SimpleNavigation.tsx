@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import {
   HvBaseProps,
   HvTheme,
@@ -28,14 +29,14 @@ export interface HvSimpleNavigationProps extends Omit<HvBaseProps, "children"> {
   stepSize?: "xs" | "sm" | "md" | "lg" | "xl";
   /** Number of steps to show on the component. */
   numSteps: number;
-  /** Returns a JSX.element of the titles container. */
+  /** Returns a `ReactNode` of the titles container. */
   getTitles: (
     getTitleProps?: (params: {
       state: HvDotProps["state"];
       rawTitle: string;
       number: number;
     }) => { variant: string; title: string }
-  ) => JSX.Element | null;
+  ) => ReactNode;
   /** Returns dynamic width values of the component (width, titleWidth, separatorWidth). */
   getDynamicValues: (stepsWidth: number) => {
     width: number;

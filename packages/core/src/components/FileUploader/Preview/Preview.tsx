@@ -66,7 +66,6 @@ export const HvFileUploaderPreview = ({
           fileUploaderPreviewClasses.previewButton
         )}
         onClick={onClick}
-        variant="secondaryGhost"
         {...others}
       >
         {children}

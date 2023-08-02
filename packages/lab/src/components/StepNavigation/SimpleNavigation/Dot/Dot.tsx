@@ -4,8 +4,6 @@ import {
   HvButton,
 } from "@hitachivantara/uikit-react-core";
 
-import { theme } from "@hitachivantara/uikit-styles";
-
 import { HvStepProps } from "../../DefaultNavigation";
 import { getColor, dotSizes } from "../utils";
 import { staticClasses, useClasses } from "./Dot.styles";
@@ -41,11 +39,11 @@ export const HvDot = ({
     <HvButton
       className={cx(
         css({
-          backgroundColor: getColor(state, theme),
+          backgroundColor: getColor(state),
           width: dotSize,
           height: dotSize,
-          "&:hover": {
-            backgroundColor: getColor(state, theme),
+          "&:hover, &:disabled": {
+            backgroundColor: getColor(state),
           },
         }),
         classes.root,

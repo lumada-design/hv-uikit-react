@@ -90,7 +90,7 @@ export const HvButton: <C extends React.ElementType = "button">(
       id,
       classes: classesProp,
       children,
-      variant: variantProp = "primary",
+      variant: variantProp,
       disabled = false,
       className,
       startIcon,
@@ -104,8 +104,10 @@ export const HvButton: <C extends React.ElementType = "button">(
     } = useDefaultProps("HvButton", props);
     const { classes, css, cx } = useClasses(classesProp);
     const { activeTheme } = useTheme();
-
-    const variant = mapVariant(variantProp, activeTheme?.name);
+    const variant = mapVariant(
+      variantProp ?? (icon ? "secondaryGhost" : "primary"),
+      activeTheme?.name
+    );
 
     return (
       <Component

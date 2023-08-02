@@ -109,7 +109,6 @@ export const HvStep = ({
         })}
         aria-label={`step-${title}`}
         icon
-        variant="secondaryGhost"
         overrideIconColors={false}
         disabled={disabled ?? ["Current", "Disabled"].includes(state)}
         onClick={onClick}

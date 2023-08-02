@@ -98,7 +98,6 @@ export function hvExpandColumn<
               {hasContent && (
                 <HvButton
                   icon
-                  variant="secondaryGhost"
                   aria-label={
                     row.isExpanded
                       ? collapseRowButtonAriaLabel

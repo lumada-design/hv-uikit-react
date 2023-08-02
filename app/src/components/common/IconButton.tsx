@@ -17,7 +17,7 @@ export const IconButton = ({ label, icon, ...others }: IconButtonProps) => {
   return (
     <HvTooltip enterDelay={500} title={<HvTypography>{label}</HvTypography>}>
       <span>
-        <HvButton icon variant="secondaryGhost" aria-label={label} {...others}>
+        <HvButton icon aria-label={label} {...others}>
           {icon}
         </HvButton>
       </span>

@@ -109,12 +109,7 @@ export const WhiteLabeling = () => {
         themes={[turquoiseTheme]}
       >
         <HvHeader position="relative">
-          <HvButton
-            icon
-            className={classes.menuButton}
-            variant="secondaryGhost"
-            onClick={() => {}}
-          >
+          <HvButton icon className={classes.menuButton} onClick={() => {}}>
             <Menu />
           </HvButton>
           <HvHeaderBrand name="My App" />

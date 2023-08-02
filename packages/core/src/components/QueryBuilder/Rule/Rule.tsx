@@ -117,7 +117,6 @@ export const Rule = ({
             });
           }}
           disabled={readOnly}
-          variant="secondaryGhost"
         >
           <DeleteIcon />
         </HvButton>

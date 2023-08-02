@@ -115,7 +115,6 @@ export const Main: StoryObj<HvHeaderProps> = {
           {!isLgUp && (
             <HvButton
               style={{ width: 32, height: 32 }}
-              variant="secondaryGhost"
               icon
               onClick={() => console.log("menu")}
             >
@@ -134,19 +133,13 @@ export const Main: StoryObj<HvHeaderProps> = {
           <HvHeaderActions aria-label="My-aria-label">
             <HvButton
               icon
-              variant="secondaryGhost"
               onClick={() => console.log("alerts")}
               aria-label="Open Notifications panel"
             >
               <HvBadge count={1} icon={<Alert />} />
             </HvButton>
             {isLgUp && (
-              <HvButton
-                onClick={() => {}}
-                aria-label="Open User panel"
-                icon
-                variant="secondaryGhost"
-              >
+              <HvButton onClick={() => {}} aria-label="Open User panel" icon>
                 <User />
               </HvButton>
             )}
