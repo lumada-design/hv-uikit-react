@@ -1,4 +1,5 @@
 import { forwardRef, isValidElement, useEffect, useMemo, useRef } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -79,25 +80,27 @@ const DEFAULT_LABELS = {
 /**
  * Component used to show a set of related data to the user.
  */
-export const HvList = ({
-  id,
-  classes,
-  className,
-  multiSelect = false,
-  hasTooltips = false,
-  showSelectAll = false,
-  labels = DEFAULT_LABELS,
-  useSelector = false,
-  selectable = true,
-  singleSelectionToggle = true,
-  condensed = false,
-  onChange,
-  onClick,
-  values: valuesProp = [],
-  height,
-  virtualized = false,
-  ...others
-}: HvListProps) => {
+export const HvList = (props: HvListProps) => {
+  const {
+    id,
+    classes,
+    className,
+    multiSelect = false,
+    hasTooltips = false,
+    showSelectAll = false,
+    labels = DEFAULT_LABELS,
+    useSelector = false,
+    selectable = true,
+    singleSelectionToggle = true,
+    condensed = false,
+    onChange,
+    onClick,
+    values: valuesProp = [],
+    height,
+    virtualized = false,
+    ...others
+  } = useDefaultProps("HvList", props);
+
   const [list, setList, selection] = useSelectableList(valuesProp);
   const listRef = useRef<any>(null);
 

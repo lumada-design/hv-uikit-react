@@ -5,6 +5,7 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -109,31 +110,33 @@ const getValueFromSelectedChildren = (
  * Although it supports multi-selection, DS recommends the use of a selection list
  * when it’s clear that the user can only select just one option from the range provided.
  */
-export const HvSelectionList = ({
-  id,
-  classes,
-  className,
-  children,
-  name,
-  value: valueProp,
-  defaultValue,
-  required = false,
-  readOnly = false,
-  disabled = false,
-  label,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  description,
-  "aria-describedby": ariaDescribedBy,
-  onChange,
-  status,
-  statusMessage,
-  "aria-errormessage": ariaErrorMessage,
-  orientation = "vertical",
-  multiple = false,
-  singleSelectionToggle = false,
-  ...others
-}: HvSelectionListProps) => {
+export const HvSelectionList = (props: HvSelectionListProps) => {
+  const {
+    id,
+    classes,
+    className,
+    children,
+    name,
+    value: valueProp,
+    defaultValue,
+    required = false,
+    readOnly = false,
+    disabled = false,
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
+    onChange,
+    status,
+    statusMessage,
+    "aria-errormessage": ariaErrorMessage,
+    orientation = "vertical",
+    multiple = false,
+    singleSelectionToggle = false,
+    ...others
+  } = useDefaultProps("HvSelectionList", props);
+
   const elementId = useUniqueId(id, "hvselectionlist");
 
   const [value, setValue] = useControlled(

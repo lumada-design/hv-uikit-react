@@ -19,6 +19,7 @@ import {
   buildFormElementPropsFromContext,
   buildAriaPropsFromContext,
 } from "@core/components/Forms";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./BaseInput.styles";
 
@@ -106,26 +107,27 @@ export interface HvBaseInputProps
  * An Input component that only posses the most basic functionalities.
  * It should be used alongside the other form elements to construct a proper accessible form.
  */
-export const HvBaseInput = ({
-  classes: classesProp,
-  className = "",
-  id,
-  name,
-  value,
-  defaultValue,
-  required,
-  readOnly,
-  disabled,
-  onChange,
-  type = "text",
-  placeholder,
-  multiline = false,
-  resizable = false,
-  invalid = false,
-  inputRef,
-  inputProps = {},
-  ...others
-}: HvBaseInputProps) => {
+export const HvBaseInput = (props: HvBaseInputProps) => {
+  const {
+    classes: classesProp,
+    className = "",
+    id,
+    name,
+    value,
+    defaultValue,
+    required,
+    readOnly,
+    disabled,
+    onChange,
+    type = "text",
+    placeholder,
+    multiline = false,
+    resizable = false,
+    invalid = false,
+    inputRef,
+    inputProps = {},
+    ...others
+  } = useDefaultProps("HvBaseInput", props);
   const { classes, cx } = useClasses(classesProp);
   const formElementContext = useContext(HvFormElementContext);
   const formElementProps = buildFormElementPropsFromContext(

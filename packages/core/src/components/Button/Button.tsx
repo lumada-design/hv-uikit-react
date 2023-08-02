@@ -1,6 +1,7 @@
 import React, { forwardRef, ReactElement } from "react";
 
 import { useTheme } from "@core/hooks/useTheme";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { PolymorphicComponentRef, PolymorphicRef } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 
@@ -100,7 +101,7 @@ export const HvButton: <C extends React.ElementType = "button">(
       overrideIconColors = true,
       component: Component = "button",
       ...others
-    } = props;
+    } = useDefaultProps("HvButton", props);
     const { classes, css, cx } = useClasses(classesProp);
     const { activeTheme } = useTheme();
 

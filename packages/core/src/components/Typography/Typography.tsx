@@ -3,6 +3,7 @@ import { forwardRef, AllHTMLAttributes, Ref } from "react";
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { useTheme } from "@core/hooks/useTheme";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import {
   HvTypographyLegacyVariants,
@@ -79,7 +80,7 @@ export const HvTypography = forwardRef(
       noWrap = false,
       paragraph = false,
       ...others
-    } = props;
+    } = useDefaultProps("HvTypography", props);
     const { classes, cx } = useClasses(classesProp);
     const { activeTheme } = useTheme();
 

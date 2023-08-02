@@ -1,4 +1,5 @@
 import { useCallback, useMemo } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
@@ -78,22 +79,24 @@ export interface HvScrollToHorizontalProps
 /**
  * The horizontal scroll to element can be used to quickly navigate in a page.
  */
-export const HvScrollToHorizontal = ({
-  id,
-  defaultSelectedIndex = 0,
-  scrollElementId,
-  href = true,
-  onChange,
-  onClick,
-  onEnter,
-  className,
-  classes: classesProp,
-  options,
-  offset = 0,
-  position = "relative",
-  tooltipPosition = "top",
-  ...others
-}: HvScrollToHorizontalProps) => {
+export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
+  const {
+    id,
+    defaultSelectedIndex = 0,
+    scrollElementId,
+    href = true,
+    onChange,
+    onClick,
+    onEnter,
+    className,
+    classes: classesProp,
+    options,
+    offset = 0,
+    position = "relative",
+    tooltipPosition = "top",
+    ...others
+  } = useDefaultProps("HvScrollToHorizontal", props);
+
   const { classes, css, cx } = useClasses(classesProp);
   const muiTheme = useMuiTheme();
 

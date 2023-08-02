@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 
@@ -9,12 +10,12 @@ export interface HvHeaderActionsProps extends HvBaseProps {
   classes?: HvHeaderActionsClasses;
 }
 
-export const HvHeaderActions = ({
-  classes,
-  className,
-  children,
-  ...others
-}: HvHeaderActionsProps) => {
+export const HvHeaderActions = (props: HvHeaderActionsProps) => {
+  const { classes, className, children, ...others } = useDefaultProps(
+    "HvHeaderActions",
+    props
+  );
+
   return (
     <StyledDiv
       className={clsx(className, headerActionsClasses.root, classes?.root)}

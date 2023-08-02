@@ -4,6 +4,7 @@ import { clsx } from "clsx";
 import { HvBaseProps } from "@core/types/generic";
 import { useForkRef } from "@core/hooks/useForkRef";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import HvListContext from "./ListContext";
 import listContainerClasses, {
   HvListContainerClasses,
@@ -29,8 +30,8 @@ export interface HvListContainerProps extends HvBaseProps<HTMLUListElement> {
  * This pattern is ideal for <b>selections</b>. It should be used inside a HvPanel.
  */
 export const HvListContainer = React.forwardRef(
-  (
-    {
+  (props: HvListContainerProps, externalRef) => {
+    const {
       id,
       classes,
       className,
@@ -39,9 +40,7 @@ export const HvListContainer = React.forwardRef(
       disableGutters,
       children,
       ...others
-    }: HvListContainerProps,
-    externalRef
-  ) => {
+    } = useDefaultProps("HvListContainer", props);
     const containerRef = useRef(null);
 
     const { topContainerRef, nesting = -1 } = useContext<any>(HvListContext);

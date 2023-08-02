@@ -9,6 +9,7 @@ import {
   RadioButtonSelected,
 } from "@hitachivantara/uikit-react-icons";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 
 import { StyledRadio } from "./BaseRadio.styles";
@@ -142,7 +143,7 @@ export const HvBaseRadio = (props: HvBaseRadioProps) => {
     onFocusVisible,
     onBlur,
     ...others
-  } = props;
+  } = useDefaultProps("HvBaseRadio", props);
 
   const [focusVisible, setFocusVisible] = useState(false);
 

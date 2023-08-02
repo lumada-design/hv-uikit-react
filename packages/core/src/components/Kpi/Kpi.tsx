@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useLabels } from "@core/hooks/useLabels";
 import { HvBaseProps } from "@core/types/generic";
@@ -80,17 +81,19 @@ const DEFAULT_LABELS = {
  * and its success/failure against a given target. KPIs are the first item read on a dashboard.
  * Communicates simple, immediate and vital information for operational decision making.
  */
-export const HvKpi = ({
-  trendIndicator = null,
-  visualIndicator = null,
-  visualComparison = null,
-  indicatorUnitTextVariant = "title2",
-  indicatorTextVariant = "title1",
-  labels,
-  classes,
-  className,
-  ...others
-}: HvKpiProps) => {
+export const HvKpi = (props: HvKpiProps) => {
+  const {
+    trendIndicator = null,
+    visualIndicator = null,
+    visualComparison = null,
+    indicatorUnitTextVariant = "title2",
+    indicatorTextVariant = "title1",
+    labels,
+    classes,
+    className,
+    ...others
+  } = useDefaultProps("HvKpi", props);
+
   const mergedLabels = useLabels(DEFAULT_LABELS, labels);
 
   const InternalVisualComparison =

@@ -31,7 +31,7 @@ export const RuleGroup = ({
   id,
   combinator = "and",
   rules = [],
-  classes: classesProp = {},
+  classes: classesProp,
 }: RuleGroupProps) => {
   const { classes, cx } = useClasses(classesProp);
 

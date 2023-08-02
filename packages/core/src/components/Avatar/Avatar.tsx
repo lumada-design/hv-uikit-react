@@ -1,4 +1,5 @@
 import { CSSProperties, HTMLAttributes } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { User } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -73,26 +74,27 @@ const getColor = (color: string, defaultColor: string): string =>
  * Avatars can be used to represent a user or a brand.
  * They can show an image, an icon or the initial letters of a name, for example.
  */
-export const HvAvatar = ({
-  className,
-  style,
-  classes: classesProp,
-  children: childrenProp,
-  component = "div",
-  size = "sm",
-  backgroundColor = "secondary",
-  color = "atmo1",
-  src,
-  srcSet,
-  sizes,
-  alt,
-  imgProps,
-  status,
-  badge,
-  variant = "circular",
-  avatarProps,
-  ...others
-}: HvAvatarProps) => {
+export const HvAvatar = (props: HvAvatarProps) => {
+  const {
+    className,
+    style,
+    classes: classesProp,
+    children: childrenProp,
+    component = "div",
+    size = "sm",
+    backgroundColor = "secondary",
+    color = "atmo1",
+    src,
+    srcSet,
+    sizes,
+    alt,
+    imgProps,
+    status,
+    badge,
+    variant = "circular",
+    avatarProps,
+    ...others
+  } = useDefaultProps("HvAvatar", props);
   const { classes, cx } = useClasses(classesProp);
 
   let children: React.ReactNode;

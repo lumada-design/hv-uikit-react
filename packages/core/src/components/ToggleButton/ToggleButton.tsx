@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 
 import { useControlled } from "@core/hooks/useControlled";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { HvButton } from "@core/components/Button";
 
@@ -35,7 +36,7 @@ export const HvToggleButton = forwardRef<
     onClick,
     children,
     ...others
-  } = props;
+  } = useDefaultProps("HvToggleButton", props);
 
   const [isSelected, setIsSelected] = useControlled(
     selected,

@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useMemo } from "react";
 
@@ -45,16 +46,18 @@ const isParagraph = (children = "") => /\s/.test(children);
 /**
  * This component generates a tooltip whenever the text is overflowed.
  */
-export const HvOverflowTooltip = ({
-  id,
-  classes,
-  className,
-  data,
-  open,
-  paragraphOverflow,
-  placement = "top-start",
-  tooltipsProps,
-}: HvOverflowTooltipProps) => {
+export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
+  const {
+    id,
+    classes,
+    className,
+    data,
+    open,
+    paragraphOverflow,
+    placement = "top-start",
+    tooltipsProps,
+  } = useDefaultProps("HvOverflowTooltip", props);
+
   const { width = 0, ref } = useResizeDetector({
     refreshMode: "debounce",
     refreshOptions: {

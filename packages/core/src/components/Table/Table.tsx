@@ -13,6 +13,7 @@ import {
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { transientOptions } from "@core/utils/transientOptions";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import TableContext from "./TableContext";
 import tableClasses, { HvTableClasses } from "./tableClasses";
@@ -128,55 +129,50 @@ const StyledTable = (c: any) =>
  * For better data handling and **advanced features** we recommend the use of the utility hooks collection.
  * See the <a href="?id=guides-table-table-hooks--use-hv-hooks&viewMode=docs" target="_self">Table Hooks documentation</a> for more details.
  */
-export const HvTable = forwardRef<HTMLElement, HvTableProps>(
-  (
-    {
-      classes,
-      className,
-      component = defaultComponent,
-      stickyHeader = false,
-      stickyColumns = false,
-      variant = "default",
-      ...others
-    },
-    ref
-  ) => {
-    const containerRef = useRef(ref);
+export const HvTable = forwardRef<HTMLElement, HvTableProps>((props, ref) => {
+  const {
+    classes,
+    className,
+    component = defaultComponent,
+    stickyHeader = false,
+    stickyColumns = false,
+    variant = "default",
+    ...others
+  } = useDefaultProps("HvTable", props);
+  const containerRef = useRef(ref);
 
-    const components = useMemo(
-      () => computeTablePartComponents(component),
-      [component]
-    );
+  const components = useMemo(
+    () => computeTablePartComponents(component),
+    [component]
+  );
 
-    const tableContext = useMemo(
-      () => ({ components, variant, containerRef }),
-      [components, variant, containerRef]
-    );
+  const tableContext = useMemo(
+    () => ({ components, variant, containerRef }),
+    [components, variant, containerRef]
+  );
 
-    const Table = useMemo(() => StyledTable(components.Table), [components]);
+  const Table = useMemo(() => StyledTable(components.Table), [components]);
 
-    return (
-      <TableContext.Provider value={tableContext}>
-        <Table
-          ref={ref}
-          role={component === defaultComponent ? null : "table"}
-          className={clsx(
-            tableClasses.root,
-            classes?.root,
-            stickyHeader &&
-              clsx(tableClasses.stickyHeader, classes?.stickyHeader),
-            stickyColumns &&
-              clsx(tableClasses.stickyColumns, classes?.stickyColumns),
-            variant === "listrow" &&
-              clsx(tableClasses.listRow, classes?.listRow),
-            className
-          )}
-          $stickyColumns={stickyColumns}
-          $stickyHeader={stickyHeader}
-          $listrow={variant === "listrow"}
-          {...others}
-        />
-      </TableContext.Provider>
-    );
-  }
-);
+  return (
+    <TableContext.Provider value={tableContext}>
+      <Table
+        ref={ref}
+        role={component === defaultComponent ? null : "table"}
+        className={clsx(
+          tableClasses.root,
+          classes?.root,
+          stickyHeader &&
+            clsx(tableClasses.stickyHeader, classes?.stickyHeader),
+          stickyColumns &&
+            clsx(tableClasses.stickyColumns, classes?.stickyColumns),
+          variant === "listrow" && clsx(tableClasses.listRow, classes?.listRow),
+          className
+        )}
+        $stickyColumns={stickyColumns}
+        $stickyHeader={stickyHeader}
+        $listrow={variant === "listrow"}
+        {...others}
+      />
+    </TableContext.Provider>
+  );
+});

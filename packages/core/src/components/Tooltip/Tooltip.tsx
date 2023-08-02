@@ -9,6 +9,7 @@ import { forwardRef, ReactElement } from "react";
 import { clsx } from "clsx";
 
 import { useTheme } from "@core/hooks/useTheme";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { popperSx } from "./Tooltip.styles";
 import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
@@ -75,7 +76,7 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
     TransitionProps = { timeout: 400, placement },
     containerId,
     ...others
-  } = props;
+  } = useDefaultProps("HvTooltip", props);
 
   const { rootId } = useTheme();
 

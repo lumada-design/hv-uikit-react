@@ -21,7 +21,7 @@ export interface HvCarouselSlideProps
  * Pass `img` props directly to it, or `children` for any custom content
  */
 export const HvCarouselSlide = ({
-  classes: classesProp = {},
+  classes: classesProp,
   className,
   children,
   size: flexBasis = "100%",

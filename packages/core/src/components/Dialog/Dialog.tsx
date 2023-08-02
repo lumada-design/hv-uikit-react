@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import MuiBackdrop from "@mui/material/Backdrop";
@@ -54,20 +55,22 @@ export interface HvDialogProps
   variant?: "success" | "error" | "warning";
 }
 
-export const HvDialog = ({
-  variant,
-  classes: classesProp,
-  className,
-  id,
-  children,
-  open = false,
-  onClose,
-  firstFocusable,
-  buttonTitle = "Close",
-  fullscreen = false,
-  disableBackdropClick = false,
-  ...others
-}: HvDialogProps) => {
+export const HvDialog = (props: HvDialogProps) => {
+  const {
+    variant,
+    classes: classesProp,
+    className,
+    id,
+    children,
+    open = false,
+    onClose,
+    firstFocusable,
+    buttonTitle = "Close",
+    fullscreen = false,
+    disableBackdropClick = false,
+    ...others
+  } = useDefaultProps("HvDialog", props);
+
   const { classes, css, cx } = useClasses(classesProp);
   delete (others as any).fullScreen;
 

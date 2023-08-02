@@ -1,4 +1,5 @@
 import { theme } from "@hitachivantara/uikit-styles";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBox } from "@core/components/Box";
 import { ExtractNames } from "@core/utils/classes";
@@ -39,17 +40,19 @@ export interface HvCardProps extends HvBaseProps {
  * linked short representation of a conceptual unit. For that reason,
  * this pattern must be used as an entry-point for further information.
  */
-export const HvCard = ({
-  classes: classesProp,
-  className,
-  children,
-  icon,
-  selectable = false,
-  selected = false,
-  statusColor = "sema0",
-  bgcolor,
-  ...others
-}: HvCardProps) => {
+export const HvCard = (props: HvCardProps) => {
+  const {
+    classes: classesProp,
+    className,
+    children,
+    icon,
+    selectable = false,
+    selected = false,
+    statusColor = "sema0",
+    bgcolor,
+    ...others
+  } = useDefaultProps("HvCard", props);
+
   const { classes, css, cx } = useClasses(classesProp);
   return (
     <HvBox

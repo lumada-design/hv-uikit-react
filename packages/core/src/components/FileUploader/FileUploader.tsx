@@ -2,6 +2,7 @@ import { useLabels } from "@core/hooks/useLabels";
 import { setId } from "@core/utils/setId";
 import { HvBaseProps } from "@core/types/generic";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvDropZone, HvDropZoneLabels } from "./DropZone";
 import { HvFileData, HvFileRemovedEvent, HvFilesAddedEvent } from "./File";
 import { HvFileList } from "./FileList";
@@ -75,21 +76,22 @@ const DEFAULT_LABELS: HvFileUploaderLabels = {
  *
  * Accepted file types follow the format of the html input accept attribute. Please check https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file for more details.
  */
-export const HvFileUploader = ({
-  id,
-  className,
-  labels: labelsProp,
-  fileList,
-  multiple = true,
-  disabled = false,
-  hideLabels = false,
-  maxFileSize = Infinity,
-  inputProps = {},
-  acceptedFiles = [],
-  onFilesAdded,
-  onFileRemoved,
-  ...others
-}: HvFileUploaderProps) => {
+export const HvFileUploader = (props: HvFileUploaderProps) => {
+  const {
+    id,
+    className,
+    labels: labelsProp,
+    fileList,
+    multiple = true,
+    disabled = false,
+    hideLabels = false,
+    maxFileSize = Infinity,
+    inputProps = {},
+    acceptedFiles = [],
+    onFilesAdded,
+    onFileRemoved,
+    ...others
+  } = useDefaultProps("HvFileUploader", props);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   return (

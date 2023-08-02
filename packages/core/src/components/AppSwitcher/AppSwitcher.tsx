@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvListContainer } from "@core/components/ListContainer";
 import { HvTypography } from "@core/components/Typography";
 
@@ -43,19 +44,20 @@ export interface HvAppSwitcherProps extends HvBaseProps {
   classes?: HvAppSwitcherClasses;
 }
 
-export const HvAppSwitcher = ({
-  id,
-  className,
-  classes: classesProp,
-  layout = "single",
-  title,
-  applications,
-  onActionClickedCallback = () => {},
-  isActionSelectedCallback = () => false,
-  header,
-  footer,
-  isOpen,
-}: HvAppSwitcherProps) => {
+export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
+  const {
+    id,
+    className,
+    classes: classesProp,
+    layout = "single",
+    title,
+    applications,
+    onActionClickedCallback = () => {},
+    isActionSelectedCallback = () => false,
+    header,
+    footer,
+    isOpen,
+  } = useDefaultProps("HvAppSwitcher", props);
   const { classes, cx } = useClasses(classesProp);
 
   const panelActions = useMemo(

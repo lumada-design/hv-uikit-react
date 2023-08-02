@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
@@ -90,26 +91,28 @@ export interface HvBulkActionsProps extends HvBaseProps {
  * Bulk Actions allow users to perform an action on a single or multiple items.
  * Also known as "batch production" of multiple items at once, one stage at a time.
  */
-export const HvBulkActions = ({
-  id,
-  className,
-  classes,
-  selectAllPagesLabel,
-  actionsDisabled,
-  maxVisibleActions,
-  checkboxProps,
-  actions,
-  numTotal = 0,
-  numSelected = 0,
-  selectAllLabel = "All",
-  selectAllConjunctionLabel = "/",
-  showSelectAllPages = false,
-  semantic = true,
-  actionsCallback,
-  onSelectAll,
-  onSelectAllPages,
-  ...others
-}: HvBulkActionsProps) => {
+export const HvBulkActions = (props: HvBulkActionsProps) => {
+  const {
+    id,
+    className,
+    classes,
+    selectAllPagesLabel,
+    actionsDisabled,
+    maxVisibleActions,
+    checkboxProps,
+    actions,
+    numTotal = 0,
+    numSelected = 0,
+    selectAllLabel = "All",
+    selectAllConjunctionLabel = "/",
+    showSelectAllPages = false,
+    semantic = true,
+    actionsCallback,
+    onSelectAll,
+    onSelectAllPages,
+    ...others
+  } = useDefaultProps("HvBulkActions", props);
+
   const { activeTheme, selectedMode } = useTheme();
 
   const anySelected = numSelected > 0;

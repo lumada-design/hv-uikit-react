@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -174,7 +175,7 @@ export const HvRadio = (props: HvRadioProps) => {
     onFocusVisible,
     onBlur,
     ...others
-  } = props;
+  } = useDefaultProps("HvRadio", props);
 
   const elementId = useUniqueId(id, "hvradio");
 

@@ -7,6 +7,7 @@ import { ContainerProps as MuiContainerProps } from "@mui/material/Container";
 import { forwardRef } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { StyledRoot } from "./Container.styles";
 import containerClasses, { HvContainerClasses } from "./containerClasses";
@@ -39,7 +40,14 @@ export interface HvContainerProps
 }
 
 export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
-  ({ maxWidth = false, classes, className, fixed, ...others }, ref) => {
+  (props, ref) => {
+    const {
+      maxWidth = false,
+      classes,
+      className,
+      fixed,
+      ...others
+    } = useDefaultProps("HvContainer", props);
     const muiTheme = useTheme();
     return (
       <StyledRoot

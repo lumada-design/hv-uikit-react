@@ -17,6 +17,7 @@ import { HvBaseProps } from "@core/types/generic";
 import { useControlled } from "@core/hooks/useControlled";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useIsMounted } from "@core/hooks/useIsMounted";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 import validationStates from "@core/components/Forms/FormElement/validationStates";
@@ -138,43 +139,44 @@ export interface HvTagsInputProps
 /**
  * A tags input is a single or multiline control that allows the input of tags.
  */
-export const HvTagsInput = ({
-  classes,
-  className,
-  id,
-  name,
-  value: valueProp,
-  defaultValue = [],
-  readOnly = false,
-  disabled = false,
-  required = false,
-  label: textAreaLabel,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  description,
-  "aria-describedby": ariaDescribedBy,
-  onChange,
-  onAdd,
-  onDelete,
-  onBlur,
-  onFocus,
-  placeholder,
-  hideCounter = false,
-  middleCountLabel = "/",
-  maxTagsQuantity,
-  autoFocus = false,
-  resizable = true,
-  inputProps = {},
-  countCharProps = {},
-  multiline = false,
-  status,
-  statusMessage,
-  validationMessages,
-  commitTagOn = ["Enter"],
-  commitOnBlur = false,
-  suggestionListCallback,
-  ...others
-}: HvTagsInputProps) => {
+export const HvTagsInput = (props: HvTagsInputProps) => {
+  const {
+    classes,
+    className,
+    id,
+    name,
+    value: valueProp,
+    defaultValue = [],
+    readOnly = false,
+    disabled = false,
+    required = false,
+    label: textAreaLabel,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
+    onChange,
+    onAdd,
+    onDelete,
+    onBlur,
+    onFocus,
+    placeholder,
+    hideCounter = false,
+    middleCountLabel = "/",
+    maxTagsQuantity,
+    autoFocus = false,
+    resizable = true,
+    inputProps = {},
+    countCharProps = {},
+    multiline = false,
+    status,
+    statusMessage,
+    validationMessages,
+    commitTagOn = ["Enter"],
+    commitOnBlur = false,
+    suggestionListCallback,
+    ...others
+  } = useDefaultProps("HvTagsInput", props);
   const elementId = useUniqueId(id, "hvTagsInput");
 
   const hasLabel = textAreaLabel != null;

@@ -1,4 +1,5 @@
 import { useTheme } from "@mui/material/styles";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -32,7 +33,7 @@ export const HvFooter = (props: HvFooterProps) => {
     classes,
     className,
     ...others
-  } = props;
+  } = useDefaultProps("HvFooter", props);
   const muiTheme = useTheme();
 
   return (

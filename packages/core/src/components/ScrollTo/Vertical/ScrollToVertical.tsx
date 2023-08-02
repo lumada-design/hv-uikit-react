@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useTheme } from "@core/hooks/useTheme";
@@ -71,23 +72,25 @@ export interface HvScrollToVerticalProps
 /**
  * The vertical scroll to element can be used to quickly navigate in a page.
  */
-export const HvScrollToVertical = ({
-  id,
-  defaultSelectedIndex = 0,
-  scrollElementId,
-  href = true,
-  onChange,
-  onClick,
-  onEnter,
-  className,
-  classes: classesProp,
-  options,
-  offset = 0,
-  position = "relative",
-  tooltipPosition = "left",
-  style,
-  ...others
-}: HvScrollToVerticalProps) => {
+export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
+  const {
+    id,
+    defaultSelectedIndex = 0,
+    scrollElementId,
+    href = true,
+    onChange,
+    onClick,
+    onEnter,
+    className,
+    classes: classesProp,
+    options,
+    offset = 0,
+    position = "relative",
+    tooltipPosition = "left",
+    style,
+    ...others
+  } = useDefaultProps("HvScrollToVertical", props);
+
   const { classes, css, cx } = useClasses(classesProp);
   const { activeTheme, selectedMode } = useTheme();
 

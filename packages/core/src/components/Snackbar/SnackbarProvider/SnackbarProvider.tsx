@@ -116,7 +116,7 @@ export const HvSnackbarProvider = ({
     vertical: "top",
     horizontal: "right",
   },
-  classes: classesProp = {},
+  classes: classesProp,
   className,
   ...others
 }: HvSnackbarProviderProps) => {

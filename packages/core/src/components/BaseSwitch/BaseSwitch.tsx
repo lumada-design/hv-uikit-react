@@ -5,6 +5,7 @@ import { clsx } from "clsx";
 import { SwitchProps as MuiSwitchProps } from "@mui/material";
 
 import { HvBaseProps } from "@core/types/generic";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { StyledSwitch } from "./BaseSwitch.styles";
 import baseSwitchClasses, { HvBaseSwitchClasses } from "./baseSwitchClasses";
@@ -108,7 +109,7 @@ export const HvBaseSwitch = (props: HvBaseSwitchProps) => {
     onBlur,
 
     ...others
-  } = props;
+  } = useDefaultProps("HvBaseSwitch", props);
 
   const [focusVisible, setFocusVisible] = useState(false);
 

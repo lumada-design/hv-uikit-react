@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import React, { cloneElement } from "react";
 
@@ -19,15 +20,17 @@ export interface HvMultiButtonProps extends HvBaseProps {
   classes?: HvMultiButtonClasses;
 }
 
-export const HvMultiButton = ({
-  className,
-  children,
-  classes,
-  disabled = false,
-  vertical = false,
-  variant = "secondarySubtle",
-  ...others
-}: HvMultiButtonProps) => {
+export const HvMultiButton = (props: HvMultiButtonProps) => {
+  const {
+    className,
+    children,
+    classes,
+    disabled = false,
+    vertical = false,
+    variant = "secondarySubtle",
+    ...others
+  } = useDefaultProps("HvMultiButton", props);
+
   return (
     <StyledRoot
       className={clsx(

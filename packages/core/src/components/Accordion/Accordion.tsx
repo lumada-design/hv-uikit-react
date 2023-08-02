@@ -4,6 +4,7 @@ import React, {
   useMemo,
   HTMLAttributes,
 } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
@@ -76,21 +77,23 @@ export interface HvAccordionProps
 /**
  * A accordion is a design element that expands in place to expose hidden information.
  */
-export const HvAccordion = ({
-  id,
-  className,
-  classes: classesProp,
-  disabled = false,
-  label,
-  onChange,
-  children,
-  expanded,
-  headingLevel,
-  defaultExpanded = false,
-  containerProps,
-  labelVariant = "label",
-  ...others
-}: HvAccordionProps) => {
+export const HvAccordion = (props: HvAccordionProps) => {
+  const {
+    id,
+    className,
+    classes: classesProp,
+    disabled = false,
+    label,
+    onChange,
+    children,
+    expanded,
+    headingLevel,
+    defaultExpanded = false,
+    containerProps,
+    labelVariant = "label",
+    ...others
+  } = useDefaultProps("HvAccordion", props);
+
   const { classes, cx } = useClasses(classesProp);
 
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));

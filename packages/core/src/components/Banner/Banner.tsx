@@ -11,6 +11,7 @@ import { HvActionGeneric } from "@core/components/ActionsGeneric";
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useClasses, staticClasses } from "./Banner.styles";
 import {
@@ -66,26 +67,27 @@ export interface HvBannerProps
  * A Banner displays an important and succinct message. It can also provide actions for the user to address, or dismiss.
  * It requires a user action, for it to be dismissed. Banners should appear at the top of the screen, below a top app bar.
  */
-export const HvBanner = ({
-  id,
-  classes: classesProp = {},
-  className,
-  open,
-  onClose,
-  anchorOrigin = "top",
-  variant = "default",
-  transitionDuration = 300,
-  transitionDirection = "down",
-  showIcon = false,
-  customIcon,
-  actions,
-  actionsCallback,
-  actionsPosition = "auto",
-  label,
-  offset = 60,
-  bannerContentProps,
-  ...others
-}: HvBannerProps) => {
+export const HvBanner = (props: HvBannerProps) => {
+  const {
+    id,
+    classes: classesProp,
+    className,
+    open,
+    onClose,
+    anchorOrigin = "top",
+    variant = "default",
+    transitionDuration = 300,
+    transitionDirection = "down",
+    showIcon = false,
+    customIcon,
+    actions,
+    actionsCallback,
+    actionsPosition = "auto",
+    label,
+    offset = 60,
+    bannerContentProps,
+    ...others
+  } = useDefaultProps("HvBanner", props);
   const { classes, cx } = useClasses(classesProp);
 
   const anchorOriginBanner: SnackbarOrigin = {

@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { Edit } from "@hitachivantara/uikit-react-icons";
 
@@ -50,22 +51,24 @@ export interface HvInlineEditorProps
  * An Inline Editor allows the user to edit a record without making a major switch
  * between viewing and editing, making it an efficient method of updating a record.
  */
-export const HvInlineEditor = ({
-  className,
-  classes: classesProp,
-  value: valueProp,
-  defaultValue,
-  showIcon,
-  component: InputComponent = HvInput,
-  variant = "body",
-  placeholder = "Enter text",
-  onBlur,
-  onChange,
-  onKeyDown,
-  buttonProps,
-  typographyProps,
-  ...others
-}: HvInlineEditorProps) => {
+export const HvInlineEditor = (props: HvInlineEditorProps) => {
+  const {
+    className,
+    classes: classesProp,
+    value: valueProp,
+    defaultValue,
+    showIcon,
+    component: InputComponent = HvInput,
+    variant = "body",
+    placeholder = "Enter text",
+    onBlur,
+    onChange,
+    onKeyDown,
+    buttonProps,
+    typographyProps,
+    ...others
+  } = useDefaultProps("HvInlineEditor", props);
+
   const { classes, cx } = useClasses(classesProp);
   const [value, setValue] = useControlled(valueProp, defaultValue);
   const [editMode, setEditMode] = useState(false);

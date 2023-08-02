@@ -5,6 +5,7 @@ import isString from "lodash/isString";
 import { forwardRef } from "react";
 import { HvBaseProps } from "@core/types/generic";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvGridClasses } from "./gridClasses";
 
 const BREAKPOINT_GUTTERS = {
@@ -205,40 +206,36 @@ function getNumberOfColumns(columns: HvGridProps["columns"]) {
  * The HvGrid sets them to the same value as the vertical gutters, depending on the breakpoint.
  * It can be overridden by setting the `rowSpacing` prop.
  */
-export const HvGrid = forwardRef<HTMLDivElement, HvGridProps>(
-  (
-    {
-      container,
-      spacing = "auto",
-      rowSpacing,
-      columnSpacing,
-      columns,
-      ...others
-    },
-    ref
-  ) => {
-    const containerProps: Pick<
-      MuiGridProps,
-      "container" | "spacing" | "rowSpacing" | "columnSpacing" | "columns"
-    > = {};
+export const HvGrid = forwardRef<HTMLDivElement, HvGridProps>((props, ref) => {
+  const {
+    container,
+    spacing = "auto",
+    rowSpacing,
+    columnSpacing,
+    columns,
+    ...others
+  } = useDefaultProps("HvGrid", props);
+  const containerProps: Pick<
+    MuiGridProps,
+    "container" | "spacing" | "rowSpacing" | "columnSpacing" | "columns"
+  > = {};
 
-    if (container) {
-      containerProps.container = true;
+  if (container) {
+    containerProps.container = true;
 
-      if (spacing != null) {
-        containerProps.spacing = getGridSpacing(spacing);
-      }
-      if (rowSpacing != null) {
-        containerProps.rowSpacing = getGridSpacing(rowSpacing);
-      }
-      if (columnSpacing != null) {
-        containerProps.columnSpacing = getGridSpacing(columnSpacing);
-      }
-      if (columns != null) {
-        containerProps.columns = getNumberOfColumns(columns);
-      }
+    if (spacing != null) {
+      containerProps.spacing = getGridSpacing(spacing);
     }
-
-    return <MuiGrid ref={ref} {...containerProps} {...others} />;
+    if (rowSpacing != null) {
+      containerProps.rowSpacing = getGridSpacing(rowSpacing);
+    }
+    if (columnSpacing != null) {
+      containerProps.columnSpacing = getGridSpacing(columnSpacing);
+    }
+    if (columns != null) {
+      containerProps.columns = getNumberOfColumns(columns);
+    }
   }
-);
+
+  return <MuiGrid ref={ref} {...containerProps} {...others} />;
+});

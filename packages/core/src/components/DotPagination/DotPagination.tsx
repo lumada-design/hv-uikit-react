@@ -6,6 +6,7 @@ import { HvRadio } from "@core/components/Radio";
 import { HvRadioGroup, HvRadioGroupProps } from "@core/components/RadioGroup";
 import { ExtractNames } from "@core/utils/classes";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { staticClasses, useClasses } from "./DotPagination.styles";
 
 export { staticClasses as dotPaginationClasses };
@@ -69,22 +70,24 @@ const getSelectorIcons = (
   };
 };
 
+const range = (n: number) => Array.from(Array(n), (_, i) => i);
+
 /**
  * Pagination is the process of dividing a document into discrete pages. It relates to how users interact with structured content on a website or application.
  * This component uses Radio Buttons to represent each page.
  */
-export const HvDotPagination = ({
-  className,
-  classes: classesProp = {},
-  unselectedIcon,
-  selectedIcon,
-  pages = 1,
-  page = 0,
-  onPageChange,
-  getItemAriaLabel,
-  ...others
-}: HvDotPaginationProps) => {
-  const range = (n: number) => Array.from(Array(n), (_, i) => i);
+export const HvDotPagination = (props: HvDotPaginationProps) => {
+  const {
+    className,
+    classes: classesProp,
+    unselectedIcon,
+    selectedIcon,
+    pages = 1,
+    page = 0,
+    onPageChange,
+    getItemAriaLabel,
+    ...others
+  } = useDefaultProps("HvDotPagination", props);
 
   const { classes, cx } = useClasses(classesProp);
 

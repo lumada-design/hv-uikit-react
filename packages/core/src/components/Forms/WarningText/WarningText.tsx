@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { clsx } from "clsx";
 
@@ -33,20 +34,22 @@ export interface HvWarningTextProps extends HvBaseProps {
 /**
  * Provides the user with a descriptive text, signaling an error, for when the form element is in an invalid state.
  */
-export const HvWarningText = ({
-  children,
-  adornment,
-  isVisible,
-  classes,
-  className,
-  id,
-  disabled,
-  disableGutter = false,
-  disableBorder = false,
-  disableAdornment = false,
-  hideText = false,
-  ...others
-}: HvWarningTextProps) => {
+export const HvWarningText = (props: HvWarningTextProps) => {
+  const {
+    children,
+    adornment,
+    isVisible,
+    classes,
+    className,
+    id,
+    disabled,
+    disableGutter = false,
+    disableBorder = false,
+    disableAdornment = false,
+    hideText = false,
+    ...others
+  } = useDefaultProps("HvWarningText", props);
+
   const { elementId, elementStatus, elementDisabled } =
     useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;

@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 
@@ -19,14 +20,10 @@ export interface HvLoginProps extends HvBaseProps {
 /**
  * Container layout for the login form.
  */
-export const HvLogin = ({
-  id,
-  className,
-  classes,
-  children,
-  background,
-  ...others
-}: HvLoginProps) => {
+export const HvLogin = (props: HvLoginProps) => {
+  const { id, className, classes, children, background, ...others } =
+    useDefaultProps("HvLogin", props);
+
   return (
     <StyledRoot
       id={id}

@@ -53,7 +53,7 @@ export const HvSnackbarContent = forwardRef<
     {
       className,
       id,
-      classes: classesProp = {},
+      classes: classesProp,
       label,
       variant = "default",
       showIcon,

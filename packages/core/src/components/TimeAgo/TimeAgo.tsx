@@ -1,4 +1,5 @@
 import isEmpty from "lodash/isEmpty";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { ExtractNames } from "@core/utils/classes";
 import { HvTypography } from "@core/components/Typography";
@@ -52,18 +53,20 @@ export interface HvTimeAgoProps extends HvBaseProps<HTMLElement, "children"> {
 /**
  * The HvTimeAgo component implements the Design System relative time format guidelines.
  */
-export const HvTimeAgo = ({
-  classes: classesProp,
-  className,
-  timestamp,
-  locale: localeProp = "en",
-  component: Component = HvTypography,
-  emptyElement = "—",
-  disableRefresh = false,
-  showSeconds = false,
-  justText = false,
-  ...others
-}: HvTimeAgoProps) => {
+export const HvTimeAgo = (props: HvTimeAgoProps) => {
+  const {
+    classes: classesProp,
+    className,
+    timestamp,
+    locale: localeProp = "en",
+    component: Component = HvTypography,
+    emptyElement = "—",
+    disableRefresh = false,
+    showSeconds = false,
+    justText = false,
+    ...others
+  } = useDefaultProps("HvTimeAgo", props);
+
   const { classes, cx } = useClasses(classesProp);
   const locale = isEmpty(localeProp) ? "en" : localeProp;
   const timeAgo = useTimeAgo(timestamp, {

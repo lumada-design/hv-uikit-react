@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { PopperProps } from "@mui/material";
 
@@ -282,7 +283,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
     baseDropdownProps = {},
     listProps = {},
     ...others
-  } = props;
+  } = useDefaultProps("HvDropdown", props);
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 

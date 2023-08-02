@@ -1,5 +1,6 @@
 import cloneDeep from "lodash/cloneDeep";
 import isEqual from "lodash/isEqual";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import {
   useContext,
@@ -73,17 +74,19 @@ export interface HvQueryBuilderProps {
  * **HvQueryBuilder** component allows you to create conditions and group them using logical operators.
  * It outputs a structured set of rules which can be easily parsed to create SQL/NoSQL/whatever queries.
  */
-export const HvQueryBuilder = ({
-  attributes,
-  query,
-  onChange,
-  operators,
-  combinators,
-  maxDepth = 1,
-  labels,
-  readOnly = false,
-  classes,
-}: HvQueryBuilderProps) => {
+export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
+  const {
+    attributes,
+    query,
+    onChange,
+    operators,
+    combinators,
+    maxDepth = 1,
+    labels,
+    readOnly = false,
+    classes,
+  } = useDefaultProps("HvQueryBuilder", props);
+
   const [pendingAction, askAction] = useState<AskAction>();
   const currentAttributes = useRef<
     Record<string, Attribute> | undefined | null

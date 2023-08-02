@@ -65,6 +65,7 @@ import { useIsMounted } from "@core/hooks/useIsMounted";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useLabels } from "@core/hooks/useLabels";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { staticClasses, useClasses } from "./Input.styles";
 
 export { staticClasses as inputClasses };
@@ -270,7 +271,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
     onKeyDown,
     inputProps = {},
     ...others
-  } = props;
+  } = useDefaultProps("HvInput", props);
   const { classes, cx } = useClasses(classesProp);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const elementId = useUniqueId(id, "hvinput");

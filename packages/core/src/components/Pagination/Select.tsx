@@ -19,7 +19,7 @@ export const Option = ({ ...props }: Partial<HvListItemProps>) => (
 
 const HvSelect = ({
   className,
-  classes: classesProp = {},
+  classes: classesProp,
   onChange,
   disabled,
   value,

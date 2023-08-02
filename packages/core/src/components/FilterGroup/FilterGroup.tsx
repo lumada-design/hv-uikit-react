@@ -11,6 +11,7 @@ import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import {
   HvFilterGroupContent,
@@ -108,34 +109,36 @@ const DEFAULT_LABELS: HvFilterGroupLabels = {
  * Due to the enormous variety of capabilities required for this, we strongly recommend checking the code of the component and extend it yourself,
  * while we do not provide a better approach for building this component with smaller and more composable parts.
  */
-export const HvFilterGroup = ({
-  className,
-  id,
-  name,
-  required = false,
-  disabled = false,
-  label,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  description,
-  "aria-describedby": ariaDescribedBy,
-  onChange,
-  onCancel,
-  onClear,
-  status,
-  statusMessage,
-  labels: labelsProp,
-  defaultValue,
-  value,
-  filters,
-  horizontalPlacement = "right",
-  disablePortal = true,
-  escapeWithReference = true,
-  height = 350,
-  filterContentProps,
-  classes: classesProp,
-  ...others
-}: HvFilterGroupProps) => {
+export const HvFilterGroup = (props: HvFilterGroupProps) => {
+  const {
+    className,
+    id,
+    name,
+    required = false,
+    disabled = false,
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
+    onChange,
+    onCancel,
+    onClear,
+    status,
+    statusMessage,
+    labels: labelsProp,
+    defaultValue,
+    value,
+    filters,
+    horizontalPlacement = "right",
+    disablePortal = true,
+    escapeWithReference = true,
+    height = 350,
+    filterContentProps,
+    classes: classesProp,
+    ...others
+  } = useDefaultProps("HvFilterGroup", props);
+
   const { classes, cx } = useClasses(classesProp);
   const [validationMessage] = useControlled(statusMessage, "Required");
 
