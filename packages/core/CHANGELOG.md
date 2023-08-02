@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.22.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.22.0...@hitachivantara/uikit-react-core@5.22.1) (2023-08-02)
+
+### Bug Fixes
+
+- **VerticalNavigation:** collapse/expand icon ([e299c4a](https://github.com/lumada-design/hv-uikit-react/commit/e299c4a6125158ac730d51ba16a663a3156af2fc))
+
 # [5.22.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.21.0...@hitachivantara/uikit-react-core@5.22.0) (2023-08-01)
 
 ### Bug Fixes
