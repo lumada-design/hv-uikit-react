@@ -170,6 +170,7 @@ export const HvAvatar = (props: HvAvatarProps) => {
         )}
         <MuiAvatar
           component={component}
+          // Consider not using the root and className classes in this component
           className={cx(classes.root, classes.avatar, classes[size], className)}
           style={inlineStyle}
           variant={variant}

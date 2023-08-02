@@ -1,8 +1,6 @@
 import React, { useState, useCallback } from "react";
 
-import { clsx } from "clsx";
-
-import { RadioProps as MuiRadioProps } from "@mui/material";
+import MuiRadio, { RadioProps as MuiRadioProps } from "@mui/material/Radio";
 
 import {
   RadioButtonUnselected,
@@ -11,9 +9,13 @@ import {
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledRadio } from "./BaseRadio.styles";
-import baseRadioClasses, { HvBaseRadioClasses } from "./baseRadioClasses";
+import { staticClasses, useClasses } from "./BaseRadio.styles";
+
+export { staticClasses as baseRadioClasses };
+
+export type HvBaseRadioClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBaseRadioProps
   extends Omit<MuiRadioProps, "onChange" | "classes">,
@@ -91,7 +93,7 @@ export interface HvBaseRadioProps
 
 export const getSelectorIcons = (
   options: { disabled: boolean; semantic: boolean },
-  classes?: HvBaseRadioClasses
+  classes: HvBaseRadioClasses
 ) => {
   const { disabled, semantic } = options;
   const color =
@@ -104,17 +106,9 @@ export const getSelectorIcons = (
     undefined;
 
   return {
-    radio: (
-      <RadioButtonUnselected
-        color={color}
-        className={clsx(baseRadioClasses.icon, classes?.icon)}
-      />
-    ),
+    radio: <RadioButtonUnselected color={color} className={classes.icon} />,
     radioChecked: (
-      <RadioButtonSelected
-        color={checkedColor}
-        className={clsx(baseRadioClasses.icon, classes?.icon)}
-      />
+      <RadioButtonSelected color={checkedColor} className={classes.icon} />
     ),
   };
 };
@@ -127,7 +121,7 @@ export const getSelectorIcons = (
  */
 export const HvBaseRadio = (props: HvBaseRadioProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
     id,
     name,
@@ -144,6 +138,8 @@ export const HvBaseRadio = (props: HvBaseRadioProps) => {
     onBlur,
     ...others
   } = useDefaultProps("HvBaseRadio", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const [focusVisible, setFocusVisible] = useState(false);
 
@@ -177,18 +173,17 @@ export const HvBaseRadio = (props: HvBaseRadioProps) => {
   );
 
   return (
-    <StyledRadio
+    <MuiRadio
       id={id}
       name={name}
-      className={clsx(
-        className,
-        baseRadioClasses.root,
-        classes?.root,
-        disabled && clsx(baseRadioClasses.disabled, classes?.disabled),
-        focusVisible &&
-          clsx(baseRadioClasses.focusVisible, classes?.focusVisible)
+      className={cx(
+        classes.root,
+        {
+          [classes.disabled]: disabled,
+          [classes.focusVisible]: focusVisible,
+        },
+        className
       )}
-      $focusVisible={focusVisible}
       icon={icons.radio}
       checkedIcon={icons.radioChecked}
       color="default"
