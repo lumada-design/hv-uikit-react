@@ -145,6 +145,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
         >
           {icon || (
             <MoreOptionsVertical
+              role="presentation"
               color={disabled ? "secondary_60" : undefined}
             />
           )}

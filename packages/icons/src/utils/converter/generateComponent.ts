@@ -78,7 +78,7 @@ export const ${componentName} = ({
   const size = useIconSize(iconSize, height, width, ${hasSpecialSize});
 
   return (
-    <IconBase iconSize={iconSize} name="${componentName}" {...others}>
+    <IconBase iconSize={iconSize} data-name="${componentName}" {...others}>
     ${svgOutput.replace("{...other}", "focusable={false} {...svgProps}")}
     </IconBase>
 )};
