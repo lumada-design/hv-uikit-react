@@ -5,7 +5,6 @@ import {
   HvBaseProps,
   HvButton,
   HvDialogTitle,
-  HvGrid,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Report } from "@hitachivantara/uikit-react-icons";
@@ -93,12 +92,7 @@ export const HvWizardTitle = ({
         messageContainer: classes.messageContainer,
       }}
     >
-      <HvGrid
-        container
-        justifyContent="space-between"
-        alignItems="center"
-        className={classes.titleContainer}
-      >
+      <div className={classes.titleContainer}>
         {title && (
           <HvTypography variant="title3" component="h3">
             {title}
@@ -133,7 +127,7 @@ export const HvWizardTitle = ({
             {`${labels.summary ?? "Summary"}`}
           </HvButton>
         )}
-      </HvGrid>
+      </div>
     </HvDialogTitle>
   );
 };

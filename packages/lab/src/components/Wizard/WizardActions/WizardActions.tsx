@@ -5,7 +5,6 @@ import {
   HvBaseProps,
   HvButton,
   HvDialogActions,
-  HvGrid,
 } from "@hitachivantara/uikit-react-core";
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 
@@ -59,7 +58,7 @@ export const HvWizardActions = ({
     submit: "Submit",
   },
 }: HvWizardActionsProps) => {
-  const { classes, cx } = useClasses(classesProp);
+  const { classes, css, cx } = useClasses(classesProp);
 
   const { context, setContext, tab, setTab } = useContext(HvWizardContext);
   const [pages, setPages] = useState(0);
@@ -105,26 +104,27 @@ export const HvWizardActions = ({
 
   return (
     <HvDialogActions className={classes.actionsContainer}>
-      <HvGrid>
+      <HvButton
+        variant="secondaryGhost"
+        onClick={handleClose}
+        className={classes.buttonWidth}
+      >
+        {`${labels.cancel ?? "Cancel"}`}
+      </HvButton>
+      {skippable && (
         <HvButton
           variant="secondaryGhost"
-          onClick={handleClose}
+          disabled={isLastPage}
           className={classes.buttonWidth}
+          onClick={handleSkip}
         >
-          {`${labels.cancel ?? "Cancel"}`}
+          {`${labels.skip ?? "Skip"}`}
         </HvButton>
-        {skippable && (
-          <HvButton
-            variant="secondaryGhost"
-            disabled={isLastPage}
-            className={classes.buttonWidth}
-            onClick={handleSkip}
-          >
-            {`${labels.skip ?? "Skip"}`}
-          </HvButton>
-        )}
-      </HvGrid>
-      <HvGrid className={classes.buttonsContainer}>
+      )}
+      <div aria-hidden className={css({ flex: 1 })}>
+        &nbsp;
+      </div>
+      <div className={classes.buttonsContainer}>
         <HvButton
           variant="secondaryGhost"
           className={classes.buttonWidth}
@@ -154,7 +154,7 @@ export const HvWizardActions = ({
             {`${labels.next ?? "Next"}`}
           </HvButton>
         )}
-      </HvGrid>
+      </div>
     </HvDialogActions>
   );
 };
