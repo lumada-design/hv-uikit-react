@@ -15,7 +15,7 @@ import {
 import { HvButtonVariant } from "@core/components/Button";
 import { useTheme } from "@core/hooks/useTheme";
 
-import { staticClasses, useClasses } from "./SnackbarContentWrapper.styles";
+import { staticClasses, useClasses } from "./SnackbarContent.styles";
 import { HvSnackbarVariant } from "../types";
 
 export { staticClasses as snackbarContentClasses };

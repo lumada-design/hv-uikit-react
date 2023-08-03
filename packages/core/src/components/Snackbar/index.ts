@@ -1,4 +1,4 @@
 export * from "./Snackbar";
 export * from "./SnackbarProvider";
-export * from "./SnackbarContentWrapper";
+export * from "./SnackbarContent";
 export * from "./types";
