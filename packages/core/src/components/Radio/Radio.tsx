@@ -1,23 +1,27 @@
 import React, { useCallback, useState } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
 
 import { RadioProps as MuiRadioProps } from "@mui/material";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
-import { HvWarningText, HvLabelProps, isInvalid } from "@core/components/Forms";
+import { HvBaseRadio } from "@core/components/BaseRadio";
+import {
+  HvWarningText,
+  HvLabelProps,
+  isInvalid,
+  HvFormElement,
+  HvLabel,
+} from "@core/components/Forms";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";
 import { setId } from "@core/utils/setId";
+import { ExtractNames } from "@core/utils/classes";
 
-import {
-  StyledDivContainer,
-  StyledHvBaseRadio,
-  StyledHvFormElement,
-  StyledHvLabel,
-} from "./Radio.styles";
-import radioClasses, { HvRadioClasses } from "./radioClasses";
+import { staticClasses, useClasses } from "./Radio.styles";
+
+export { staticClasses as radioClasses };
+
+export type HvRadioClasses = ExtractNames<typeof useClasses>;
 
 export type HvRadioStatus = "standBy" | "valid" | "invalid";
 
@@ -151,7 +155,7 @@ export interface HvRadioProps
  */
 export const HvRadio = (props: HvRadioProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
     id,
     name,
@@ -176,6 +180,8 @@ export const HvRadio = (props: HvRadioProps) => {
     onBlur,
     ...others
   } = useDefaultProps("HvRadio", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const elementId = useUniqueId(id, "hvradio");
 
@@ -231,15 +237,10 @@ export const HvRadio = (props: HvRadioProps) => {
   }
 
   const radio = (
-    <StyledHvBaseRadio
+    <HvBaseRadio
       id={label ? setId(elementId, "input") : setId(id, "input")}
       name={name}
-      className={clsx(
-        radioClasses.radio,
-        classes?.radio,
-        isStateInvalid && clsx(radioClasses.invalidRadio, classes?.invalidRadio)
-      )}
-      $invalid={isStateInvalid}
+      className={cx(classes.radio, { [classes.invalidRadio]: isStateInvalid })}
       disabled={disabled}
       readOnly={readOnly}
       onChange={onLocalChange}
@@ -261,41 +262,32 @@ export const HvRadio = (props: HvRadioProps) => {
   );
 
   return (
-    <StyledHvFormElement
+    <HvFormElement
       id={id}
       name={name}
       status={status || "standBy"}
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(className, radioClasses.root, classes?.root)}
+      className={cx(classes.root, className)}
     >
       {hasLabel ? (
-        <StyledDivContainer
-          className={clsx(
-            radioClasses.container,
-            classes?.container,
-            disabled && clsx(radioClasses.disabled, classes?.disabled),
-            focusVisible &&
-              label &&
-              clsx(radioClasses.focusVisible, classes?.focusVisible),
-            isStateInvalid &&
-              clsx(radioClasses.invalidContainer, classes?.invalidContainer)
-          )}
-          $invalid={isStateInvalid}
-          $focusVisible={!!(focusVisible && label)}
-          $disabled={disabled}
+        <div
+          className={cx(classes.container, {
+            [classes.disabled]: disabled,
+            [classes.focusVisible]: !!(focusVisible && label),
+            [classes.invalidContainer]: isStateInvalid,
+          })}
         >
           {radio}
-          <StyledHvLabel
+          <HvLabel
             id={setId(elementId, "label")}
             htmlFor={setId(elementId, "input")}
             label={label}
-            className={clsx(radioClasses.label, classes?.label)}
-            $disabled={disabled}
+            className={classes.label}
             {...labelProps}
           />
-        </StyledDivContainer>
+        </div>
       ) : (
         radio
       )}
@@ -304,6 +296,6 @@ export const HvRadio = (props: HvRadioProps) => {
           {statusMessage}
         </HvWarningText>
       )}
-    </StyledHvFormElement>
+    </HvFormElement>
   );
 };
