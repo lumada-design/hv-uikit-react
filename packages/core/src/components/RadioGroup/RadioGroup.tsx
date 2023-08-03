@@ -1,24 +1,24 @@
 import { Children, useMemo, useCallback, cloneElement } from "react";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";
 import { setId } from "@core/utils/setId";
 import {
+  HvFormElement,
   HvFormStatus,
   HvInfoMessage,
+  HvLabel,
   HvWarningText,
 } from "@core/components/Forms";
+import { ExtractNames } from "@core/utils/classes";
 
-import {
-  StyledFormElement,
-  StyledGroup,
-  StyledLabel,
-} from "./RadioGroup.styles";
-import radioGroupClasses, { HvRadioGroupClasses } from "./radioGroupClasses";
+import { staticClasses, useClasses } from "./RadioGroup.styles";
+
+export { staticClasses as radioGroupClasses };
+
+export type HvRadioGroupClasses = ExtractNames<typeof useClasses>;
 
 export interface HvRadioGroupProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
@@ -120,7 +120,7 @@ const getValueFromSelectedChildren = (children: React.ReactNode) => {
 export const HvRadioGroup = (props: HvRadioGroupProps) => {
   const {
     id,
-    classes,
+    classes: classesProp,
     className,
     children,
     name,
@@ -141,6 +141,8 @@ export const HvRadioGroup = (props: HvRadioGroupProps) => {
     onChange,
     ...others
   } = useDefaultProps("HvRadioGroup", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const elementId = useUniqueId(id, "hvradiogroup");
 
@@ -229,20 +231,20 @@ export const HvRadioGroup = (props: HvRadioGroupProps) => {
     : ariaErrorMessage;
 
   return (
-    <StyledFormElement
+    <HvFormElement
       id={id}
       name={name}
       status={status || "standBy"}
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(className, classes?.root, radioGroupClasses.root)}
+      className={cx(classes.root, className)}
     >
       {label && (
-        <StyledLabel
+        <HvLabel
           id={setId(elementId, "label")}
           label={label}
-          className={clsx(classes?.label, radioGroupClasses.label)}
+          className={classes.label}
         />
       )}
 
@@ -252,7 +254,7 @@ export const HvRadioGroup = (props: HvRadioGroupProps) => {
         </HvInfoMessage>
       )}
 
-      <StyledGroup
+      <div
         role="radiogroup"
         aria-label={ariaLabel}
         aria-labelledby={
@@ -265,33 +267,25 @@ export const HvRadioGroup = (props: HvRadioGroupProps) => {
             .join(" ")
             .trim() || undefined
         }
-        className={clsx(
-          classes?.group,
-          radioGroupClasses.group,
-          orientation === "vertical" &&
-            clsx(classes?.vertical, radioGroupClasses.vertical),
-          orientation === "horizontal" &&
-            clsx(classes?.horizontal, radioGroupClasses.horizontal),
-          status === "invalid" &&
-            clsx(classes?.invalid, radioGroupClasses.invalid)
-        )}
-        $vertical={orientation === "vertical"}
-        $horizontal={orientation === "horizontal"}
-        $invalid={status === "invalid"}
+        className={cx(classes.group, {
+          [classes.vertical]: orientation === "vertical",
+          [classes.horizontal]: orientation === "horizontal",
+          [classes.invalid]: status === "invalid",
+        })}
         {...others}
       >
         {modifiedChildren}
-      </StyledGroup>
+      </div>
 
       {canShowError && (
         <HvWarningText
           id={setId(elementId, "error")}
           disableBorder
-          className={clsx(classes?.error, radioGroupClasses.error)}
+          className={classes.error}
         >
           {statusMessage}
         </HvWarningText>
       )}
-    </StyledFormElement>
+    </HvFormElement>
   );
 };
