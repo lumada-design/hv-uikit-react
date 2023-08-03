@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.23.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.22.1...@hitachivantara/uikit-react-core@5.23.0) (2023-08-03)
+
+### Bug Fixes
+
+- **DropdownMenu:** icon a11y role ([b2ae351](https://github.com/lumada-design/hv-uikit-react/commit/b2ae351dcea61e9a494d250e0cb585704656a51e))
+
+### Features
+
+- add useDefaultProps ([376f97e](https://github.com/lumada-design/hv-uikit-react/commit/376f97ecfaffb02912de1ef59bbab07d306af329))
+- add useDefaultProps in components ([4e188ef](https://github.com/lumada-design/hv-uikit-react/commit/4e188ef5bda0a1a2cacdf411d16c4b91940b36f5))
+- **button:** icon buttons default to ghost variant ([6ed0df1](https://github.com/lumada-design/hv-uikit-react/commit/6ed0df1759e68a9429a6de46ed228668a8943ac2))
+
 ## [5.22.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.22.0...@hitachivantara/uikit-react-core@5.22.1) (2023-08-02)
 
 ### Bug Fixes

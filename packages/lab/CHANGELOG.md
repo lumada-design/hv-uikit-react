@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.27](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.26...@hitachivantara/uikit-react-lab@5.4.27) (2023-08-03)
+
+### Bug Fixes
+
+- **Wizard:** grid usage & styles ([627d182](https://github.com/lumada-design/hv-uikit-react/commit/627d1828f44be0d5a4cb944f13727905111cd162))
+
 ## [5.4.26](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.25...@hitachivantara/uikit-react-lab@5.4.26) (2023-08-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
