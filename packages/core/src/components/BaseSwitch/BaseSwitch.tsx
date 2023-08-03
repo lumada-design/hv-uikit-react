@@ -1,14 +1,16 @@
 import React, { useState, useCallback } from "react";
 
-import { clsx } from "clsx";
-
-import { SwitchProps as MuiSwitchProps } from "@mui/material";
+import MuiSwitch, { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledSwitch } from "./BaseSwitch.styles";
-import baseSwitchClasses, { HvBaseSwitchClasses } from "./baseSwitchClasses";
+import { useClasses, staticClasses } from "./BaseSwitch.styles";
+
+export { staticClasses as baseSwitchClasses };
+
+export type HvBaseSwitchClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBaseSwitchProps
   extends Omit<MuiSwitchProps, "onChange" | "classes">,
@@ -87,7 +89,7 @@ export interface HvBaseSwitchProps
  */
 export const HvBaseSwitch = (props: HvBaseSwitchProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
 
     id,
@@ -110,6 +112,8 @@ export const HvBaseSwitch = (props: HvBaseSwitchProps) => {
 
     ...others
   } = useDefaultProps("HvBaseSwitch", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const [focusVisible, setFocusVisible] = useState(false);
 
@@ -141,21 +145,18 @@ export const HvBaseSwitch = (props: HvBaseSwitchProps) => {
   );
 
   return (
-    <StyledSwitch
+    <MuiSwitch
       id={id}
       name={name}
-      className={clsx(
-        className,
-        baseSwitchClasses.root,
-        classes?.root,
-        disabled && clsx(baseSwitchClasses.disabled, classes?.disabled),
-        readOnly && clsx(baseSwitchClasses.readOnly, classes?.readOnly),
-        focusVisible &&
-          clsx(baseSwitchClasses.focusVisible, classes?.focusVisible)
+      className={cx(
+        classes.root,
+        {
+          [classes.disabled]: disabled,
+          [classes.readOnly]: readOnly,
+          [classes.focusVisible]: focusVisible,
+        },
+        className
       )}
-      $focusVisible={focusVisible}
-      $readOnly={readOnly}
-      $disabled={disabled}
       color="default"
       disabled={disabled}
       required={required}
@@ -166,12 +167,12 @@ export const HvBaseSwitch = (props: HvBaseSwitchProps) => {
       checked={checked}
       defaultChecked={defaultChecked}
       classes={{
-        root: clsx(baseSwitchClasses.switch, classes?.switch),
-        switchBase: clsx(baseSwitchClasses.switchBase, classes?.switchBase),
-        checked: clsx(baseSwitchClasses.checked, classes?.checked),
-        track: clsx(baseSwitchClasses.track, classes?.track),
-        thumb: clsx(baseSwitchClasses.thumb, classes?.thumb),
-        disabled: clsx(baseSwitchClasses.disabled, classes?.disabled),
+        root: classes.switch,
+        switchBase: classes.switchBase,
+        checked: classes.checked,
+        track: classes.track,
+        thumb: classes.thumb,
+        disabled: classes.disabled,
       }}
       inputProps={inputProps}
       onFocusVisible={onFocusVisibleCallback}

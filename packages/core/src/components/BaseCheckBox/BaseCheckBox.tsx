@@ -1,3 +1,5 @@
+import React, { useCallback, useState } from "react";
+
 import {
   CheckboxCheck as CheckboxCheckIcon,
   CheckboxPartial as CheckboxPartialIcon,
@@ -5,18 +7,18 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
-import { CheckboxProps as MuiCheckboxProps } from "@mui/material";
-
-import { clsx } from "clsx";
-
-import React, { useCallback, useState } from "react";
+import MuiCheckbox, {
+  CheckboxProps as MuiCheckboxProps,
+} from "@mui/material/Checkbox";
 
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledCheckedBox } from "./BaseCheckBox.styles";
-import baseCheckBoxClasses, {
-  HvBaseCheckBoxClasses,
-} from "./baseCheckBoxClasses";
+import { staticClasses, useClasses } from "./BaseCheckBox.styles";
+
+export { staticClasses as baseCheckBoxClasses };
+
+export type HvBaseCheckBoxClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBaseCheckBoxProps
   extends Omit<MuiCheckboxProps, "onChange" | "classes">,
@@ -96,7 +98,7 @@ const getSelectorIcons = (
     disabled: boolean;
     semantic: boolean;
   },
-  classes?: HvBaseCheckBoxClasses
+  classes: HvBaseCheckBoxClasses
 ) => {
   const { disabled, semantic } = options;
   const color =
@@ -110,23 +112,12 @@ const getSelectorIcons = (
 
   // Default colors: ["atmo1","secondary"]
   return {
-    checkbox: (
-      <CheckboxIcon
-        color={color}
-        className={clsx(classes?.icon, baseCheckBoxClasses.icon)}
-      />
-    ),
+    checkbox: <CheckboxIcon color={color} className={classes.icon} />,
     checkboxPartial: (
-      <CheckboxPartialIcon
-        color={color}
-        className={clsx(classes?.icon, baseCheckBoxClasses.icon)}
-      />
+      <CheckboxPartialIcon color={color} className={classes.icon} />
     ),
     checkboxChecked: (
-      <CheckboxCheckIcon
-        color={checkedColor}
-        className={clsx(classes?.icon, baseCheckBoxClasses.icon)}
-      />
+      <CheckboxCheckIcon color={checkedColor} className={classes.icon} />
     ),
   };
 };
@@ -140,7 +131,7 @@ const getSelectorIcons = (
 export const HvBaseCheckBox = (props: HvBaseCheckBoxProps) => {
   const {
     id,
-    classes,
+    classes: classesProp,
     className,
     name,
     inputProps,
@@ -157,6 +148,8 @@ export const HvBaseCheckBox = (props: HvBaseCheckBoxProps) => {
     semantic = false,
     ...others
   } = useDefaultProps("HvBaseCheckBox", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const [focusVisible, setFocusVisible] = useState<boolean>(false);
 
@@ -190,19 +183,15 @@ export const HvBaseCheckBox = (props: HvBaseCheckBoxProps) => {
   );
 
   return (
-    <StyledCheckedBox
+    <MuiCheckbox
       id={id}
       name={name}
       value={value}
-      className={clsx(
-        className,
-        baseCheckBoxClasses.root,
-        classes?.root,
-        disabled && clsx(baseCheckBoxClasses.disabled, classes?.disabled),
-        focusVisible &&
-          clsx(baseCheckBoxClasses.focusVisible, classes?.focusVisible)
+      className={cx(
+        classes.root,
+        { [classes.disabled]: disabled, [classes.focusVisible]: focusVisible },
+        className
       )}
-      $focusVisible={focusVisible}
       icon={icons.checkbox}
       indeterminateIcon={icons.checkboxPartial}
       checkedIcon={icons.checkboxChecked}

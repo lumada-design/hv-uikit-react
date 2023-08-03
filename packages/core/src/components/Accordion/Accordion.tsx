@@ -22,6 +22,7 @@ import { staticClasses, useClasses } from "./Accordion.styles";
 export { staticClasses as accordionClasses };
 
 export type HvAccordionClasses = ExtractNames<typeof useClasses>;
+
 export interface HvAccordionProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**

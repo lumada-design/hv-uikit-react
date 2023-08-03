@@ -1,28 +1,19 @@
-import {
-  Radio as MuiRadio,
-  radioClasses as MuiRadioClasses,
-} from "@mui/material";
-
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "@core/utils/focusUtils";
-import { transientOptions } from "@core/utils/transientOptions";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledRadio = styled(
-  MuiRadio,
-  transientOptions
-)(({ $focusVisible }: { $focusVisible: boolean }) => ({
-  padding: 0,
-  cursor: "pointer",
-  "&:hover": {
-    backgroundColor: theme.baseRadio.hoverColor,
-    borderRadius: theme.baseRadio.hoverBorderRadius,
+export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
+  root: {
+    padding: 0,
+    cursor: "pointer",
+    "&:hover": {
+      backgroundColor: theme.baseRadio.hoverColor,
+      borderRadius: theme.baseRadio.hoverBorderRadius,
+    },
+    borderRadius: 0,
   },
-  borderRadius: 0,
-
-  [`&.${MuiRadioClasses.disabled}`]: {
+  disabled: {
     cursor: "not-allowed",
     pointerEvents: "initial",
     "& svg": {
@@ -31,10 +22,11 @@ export const StyledRadio = styled(
       },
     },
   },
-  ...($focusVisible && {
+  focusVisible: {
     "& svg": {
       borderRadius: "8px",
       ...outlineStyles,
     },
-  }),
-}));
+  },
+  icon: {},
+});
