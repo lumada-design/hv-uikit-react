@@ -55,81 +55,67 @@ export const Variants: StoryObj<HvSnackbarProps> = {
   },
 
   render: () => {
-    const classes = {
-      snackbar: css({
-        position: "relative",
-        top: 0,
-        marginBottom: 10,
-      }),
+    const props: Partial<HvSnackbarProps> = {
+      open: true,
+      offset: 0,
+      classes: {
+        root: css({
+          position: "relative",
+          top: 0,
+          marginBottom: 10,
+        }),
+      },
     };
 
     return (
       <>
         <HvSnackbar
-          open
-          offset={0}
+          {...props}
           variant="default"
           label="This is a default snackbar."
-          classes={{ root: classes.snackbar }}
         />
         <HvSnackbar
-          open
-          offset={0}
+          {...props}
           variant="success"
           showIcon
           label="This is a success message."
-          classes={{ root: classes.snackbar }}
         />
         <HvSnackbar
-          open
-          offset={0}
+          {...props}
           variant="warning"
           showIcon
           label="This is a warning message."
-          classes={{ root: classes.snackbar }}
         />
         <HvSnackbar
-          open
-          offset={0}
+          {...props}
           variant="error"
           showIcon
           label="This is an error message."
-          classes={{ root: classes.snackbar }}
         />
         <HvSnackbar
-          open
-          offset={0}
+          {...props}
           variant="success"
           label="This is a snackbar with a custom icon."
-          showIcon
           customIcon={<Deploy color="base_dark" />}
-          classes={{ root: classes.snackbar }}
         />
         <HvSnackbar
-          open
-          id="actionStructure"
-          offset={0}
+          {...props}
           label="This is a snackbar with a custom action."
-          showIcon
           customIcon={<Info color="base_dark" />}
           action={{ id: "post", label: "Action", disabled: false }}
-          actionCallback={(evt, id, action) =>
-            alert(`clicked ${id} with ${action.label}`)
-          }
-          classes={{ root: classes.snackbar }}
+          actionCallback={(evt, id, action) => {
+            alert(`clicked ${id} with ${action.label}`);
+          }}
         />
         <HvSnackbar
-          open
-          offset={0}
-          variant="error"
-          showIcon
-          snackbarContentProps={{
-            classes: { messageText: css({ maxWidth: "250px" }) },
-          }}
+          {...props}
+          label="This is a very very very very very long multi-line snackbar message displaying wrapping text."
+        />
+        <HvSnackbar
+          {...props}
           label={
-            <HvOverflowTooltip data="This is an very very very very long long long long error message." />
+            <HvOverflowTooltip data="This message uses HvOverflowTooltip to display ellipsis + tooltip." />
           }
-          classes={{ root: classes.snackbar }}
         />
       </>
     );
@@ -160,8 +146,7 @@ export const Controller: StoryObj<HvSnackbarProps> = {
         <div style={{ marginBottom: 10 }}>
           <HvButton
             onClick={handleOpen}
-            // variant="contained"
-            color="primary"
+            variant="secondary"
             style={{ width: "150px", textTransform: "capitalize" }}
           >
             {variant}

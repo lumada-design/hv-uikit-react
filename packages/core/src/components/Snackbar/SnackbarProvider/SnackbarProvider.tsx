@@ -2,8 +2,10 @@ import { forwardRef, ReactNode, useCallback, useMemo } from "react";
 
 import {
   CombinedClassKey,
+  OptionsObject,
   SnackbarContent,
   SnackbarProvider,
+  SnackbarProviderProps,
   useSnackbar,
 } from "notistack";
 
@@ -40,13 +42,13 @@ export interface HvSnackbarProviderProps {
   className?: string;
 }
 
-export interface HvNotistackSnackMessageProps {
+export interface HvNotistackSnackMessageProps extends OptionsObject {
   /** Id to be applied to the root node. */
   id?: string;
   /** Classname to apply on the root node */
   className?: string;
   /** Your component tree. */
-  message?: ReactNode | string;
+  message?: ReactNode;
   /** Variant of the snackbar. */
   variant?: HvSnackbarVariant;
   /** Extra values to pass to the snackbar. */
@@ -56,7 +58,8 @@ export interface HvNotistackSnackMessageProps {
 const HvNotistackSnackMessage = forwardRef<
   HTMLDivElement,
   HvNotistackSnackMessageProps
->(({ id, message, variant = "success", snackbarContentProps }, ref) => {
+>((props, ref) => {
+  const { id, message, variant = "success", snackbarContentProps } = props;
   return (
     <SnackbarContent ref={ref}>
       <HvSnackbarContent
@@ -75,15 +78,16 @@ const HvNotistackSnackMessage = forwardRef<
 export const useHvSnackbar = () => {
   const { enqueueSnackbar: enqueueNotistackSnackbar, closeSnackbar } =
     useSnackbar();
+
   const enqueueSnackbar = useCallback(
-    (message: ReactNode | string | undefined, options = {}) => {
+    (message: ReactNode, options: HvNotistackSnackMessageProps = {}) => {
       const {
         id,
         variant = "success",
         snackbarContentProps,
         className,
         ...otherOptions
-      }: HvNotistackSnackMessageProps = options;
+      } = options;
 
       return enqueueNotistackSnackbar(
         <HvNotistackSnackMessage
@@ -121,7 +125,7 @@ export const HvSnackbarProvider = ({
 }: HvSnackbarProviderProps) => {
   const { classes, cx } = useClasses(classesProp);
 
-  const notistackClasses: Partial<ClassNameMap<CombinedClassKey>> = {
+  const notistackClasses: SnackbarProviderProps["classes"] = {
     containerRoot: css({
       pointerEvents: "all",
       "& > div > div": {
