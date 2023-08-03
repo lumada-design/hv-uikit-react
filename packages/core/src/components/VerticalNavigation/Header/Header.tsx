@@ -97,7 +97,7 @@ export const HvVerticalNavigationHeader = ({
       {...others}
     >
       {isOpen && headerTitle && slider && (
-        <HvButton icon onClick={backButtonClickHandler} {...backButtonProps}>
+        <HvButton icon onClick={backButtonClickHandler} aria-label="Back" {...backButtonProps}>
           <Backwards iconSize="XS" />
         </HvButton>
       )}

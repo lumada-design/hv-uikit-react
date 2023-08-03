@@ -93,6 +93,8 @@ export interface HvVerticalNavigationTreeProps
    * target - the behavior when opening an url.
    */
   data?: NavigationData[];
+  /** Aria label to apply to the navigate to submenu button on the navigation slider list items. */
+  sliderForwardButtonAriaLabel?: string;
 }
 
 const createListHierarchy = (
@@ -199,6 +201,8 @@ export const HvVerticalNavigationTree = ({
   selected: selectedProp,
   defaultSelected,
   onChange,
+
+  sliderForwardButtonAriaLabel = "Navigate to submenu",
 
   ...others
 }: HvVerticalNavigationTreeProps) => {
@@ -399,6 +403,7 @@ export const HvVerticalNavigationTree = ({
           selected={selected}
           onNavigateToTarget={navigateToTargetHandler}
           onNavigateToChild={navigateToChildHandler}
+          forwardButtonAriaLabel={sliderForwardButtonAriaLabel}
         />
       ) : (
         <HvVerticalNavigationTreeView
