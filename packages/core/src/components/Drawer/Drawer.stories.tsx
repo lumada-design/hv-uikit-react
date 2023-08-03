@@ -1,6 +1,10 @@
-import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
+
+import { css } from "@emotion/css";
+
+import { Meta, StoryObj } from "@storybook/react";
+import { waitFor, screen, fireEvent } from "@storybook/testing-library";
+
 import {
   HvButton,
   HvDialogActions,
@@ -22,6 +26,15 @@ export const Main: StoryObj<HvDrawerProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+  },
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("button"));
+
+        return waitFor(() => screen.getByText("Lorem Ipsum"));
+      },
+    },
   },
   render: (args) => {
     const [open, setOpen] = useState(false);

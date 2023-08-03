@@ -1,7 +1,9 @@
 import { CSSProperties, useRef, useState } from "react";
+
 import { Meta, StoryObj } from "@storybook/react";
+import { waitFor, screen, fireEvent } from "@storybook/testing-library";
+
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
-import { CSSInterpolation, css } from "@emotion/css";
 import {
   HvButton,
   HvInput,
@@ -10,6 +12,8 @@ import {
   HvTimePickerProps,
   HvTimePickerValue,
 } from "@hitachivantara/uikit-react-core";
+
+import { CSSInterpolation, css } from "@emotion/css";
 
 export default {
   title: "Components/Time Picker",
@@ -29,6 +33,15 @@ export const Main: StoryObj<HvTimePickerProps> = {
     classes: { control: { disable: true } },
     timeFormat: { control: { disable: true } },
     onChange: { control: { disable: true } },
+  },
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("combobox"));
+
+        return waitFor(() => screen.getByRole("tooltip"));
+      },
+    },
   },
   decorators: [makeDecorator({ minHeight: 200, width: 200 })],
   render: (args) => {
@@ -149,6 +162,13 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
       description: {
         story:
           "Use the `timeFormat` prop to force either the 12-hour or 24-hour clock format.",
+      },
+    },
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("combobox"));
+
+        return waitFor(() => screen.getByRole("tooltip"));
       },
     },
   },

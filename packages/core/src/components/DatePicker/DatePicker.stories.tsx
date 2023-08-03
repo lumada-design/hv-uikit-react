@@ -1,6 +1,10 @@
-import styled from "@emotion/styled";
-import { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
+
+import styled from "@emotion/styled";
+
+import { waitFor, screen, fireEvent } from "@storybook/testing-library";
+import { Meta, StoryObj } from "@storybook/react";
+
 import { CSSInterpolation, css } from "@emotion/css";
 import {
   HvButton,
@@ -39,6 +43,15 @@ export const Main: StoryObj<HvDatePickerProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+  },
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("combobox"));
+
+        return waitFor(() => screen.getByRole("tooltip"));
+      },
+    },
   },
   decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: (args) => {
@@ -319,6 +332,15 @@ export const WithValueChange: StoryObj<HvDatePickerProps> = {
 };
 
 export const WithSelectionList: StoryObj<HvDatePickerProps> = {
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("combobox"));
+
+        return waitFor(() => screen.getByRole("tooltip"));
+      },
+    },
+  },
   decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     const [startDate, setStartDate] = useState<Date>(new Date(2020, 8, 5));

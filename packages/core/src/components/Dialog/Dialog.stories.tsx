@@ -5,6 +5,7 @@ import { Ungroup } from "@hitachivantara/uikit-react-icons";
 import { css } from "@emotion/css";
 
 import { Meta, StoryObj } from "@storybook/react";
+import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 
 import {
   HvButton,
@@ -107,9 +108,6 @@ const meta: Meta<typeof HvDialog> = {
   title: "Components/Dialog",
   component: HvDialog,
   subcomponents: { HvDialogTitle, HvDialogContent, HvDialogActions },
-  parameters: {
-    eyes: { include: false },
-  },
   decorators: [(Story) => <div style={{ height: 250 }}>{Story()}</div>],
 };
 export default meta;
@@ -130,6 +128,15 @@ export const Main: StoryObj<HvDialogProps> = {
     slotProps: { control: { disable: true } },
     components: { control: { disable: true } },
     componentsProps: { control: { disable: true } },
+  },
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("button"));
+
+        return waitFor(() => screen.getByRole("dialog"));
+      },
+    },
   },
   render: (args) => {
     const [open, setOpen] = useState(false);
@@ -169,6 +176,17 @@ export const SemanticVariants: StoryObj<HvDialogProps> = {
       description: {
         story:
           "The `HvDialog` component can receive a `variant` prop to set the status of the dialog. `HvDialogTitle` also accepts a `variant` prop that changes the icon. Alternatively, the `customIcon` prop allows for any custom icon",
+      },
+    },
+    eyes: {
+      runBefore() {
+        fireEvent.click(
+          screen.getByRole("button", {
+            name: "Success",
+          })
+        );
+
+        return waitFor(() => screen.getByRole("dialog"));
       },
     },
   },
@@ -222,6 +240,7 @@ export const Form: StoryObj<HvDialogProps> = {
           as well as an optional `aria-describedby` pointing to the main content.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [open, setOpen] = useState(false);
@@ -303,6 +322,7 @@ export const LongContent: StoryObj<HvDialogProps> = {
           "With very long content the dialog grows in height, up to a maximum where a margin of 100px is left on top and bottom.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [open, setOpen] = useState(false);
