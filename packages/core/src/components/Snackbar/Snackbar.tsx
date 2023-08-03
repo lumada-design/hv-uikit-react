@@ -15,10 +15,7 @@ import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { HvActionGeneric } from "@core/components/ActionsGeneric";
 
-import {
-  HvSnackbarContentProps,
-  HvSnackbarContent,
-} from "./SnackbarContentWrapper";
+import { HvSnackbarContentProps, HvSnackbarContent } from "./SnackbarContent";
 import { staticClasses, useClasses } from "./Snackbar.styles";
 import { HvSnackbarVariant } from "./types";
 

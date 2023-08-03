@@ -16,8 +16,7 @@ import { css } from "@emotion/css";
 
 import { ExtractNames } from "@core/utils/classes";
 
-import { HvSnackbarContent } from "../SnackbarContentWrapper";
-import { HvSnackbarContentProps } from "../SnackbarContentWrapper/SnackbarContentWrapper";
+import { HvSnackbarContent, HvSnackbarContentProps } from "../SnackbarContent";
 import { staticClasses, useClasses } from "./SnackbarProvider.styles";
 import { HvSnackbarVariant } from "../types";
 
