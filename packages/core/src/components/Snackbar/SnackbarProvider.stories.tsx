@@ -13,7 +13,7 @@ import {
 const Button = ({ onClick, variant }) => (
   <HvButton
     onClick={onClick}
-    color="primary"
+    variant="secondary"
     style={{ width: "150px", textTransform: "capitalize" }}
   >
     {variant}
@@ -51,20 +51,12 @@ const Snackbar = ({ label, variant }: HvSnackbarProps) => {
 
 export const SnackbarProvider = () => (
   <HvSnackbarProvider autoHideDuration={5000000}>
-    <SnackbarWithAction
-      variant="default"
-      showIcon
-      label="This is a snackbar."
-    />
-    <br />
-    <br />
-    <Snackbar variant="success" showIcon label="This is a success message." />
-    <br />
-    <br />
-    <Snackbar variant="warning" showIcon label="This is a warning message." />
-    <br />
-    <br />
-    <Snackbar variant="error" label="This is an error message." />
+    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+      <SnackbarWithAction variant="default" label="This is a snackbar." />
+      <Snackbar variant="success" label="This is a success message." />
+      <Snackbar variant="warning" label="This is a warning message." />
+      <Snackbar variant="error" label="This is an error message." />
+    </div>
   </HvSnackbarProvider>
 );
 

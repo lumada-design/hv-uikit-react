@@ -1,7 +1,5 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { CSSProperties } from "react";
-
 import { createClasses } from "@core/utils/classes";
 import { actionsGenericClasses } from "@core/components/ActionsGeneric";
 
@@ -37,15 +35,17 @@ export const { useClasses, staticClasses } = createClasses(
       minHeight: "32px",
     },
     messageText: {
-      ...(theme.typography.body as CSSProperties),
-      padding: `0 ${theme.space.xs}`,
+      paddingLeft: theme.space.xs,
       color: theme.colors.base_dark,
       fontFamily: theme.fontFamily.body,
       maxHeight: "72px",
       wordBreak: "break-word",
+      textWrap: "balance",
+      overflow: "hidden",
     },
     action: {
       textAlign: "right",
+      paddingLeft: theme.space.xs,
       marginLeft: theme.snackbar.actionMarginLeft,
       [`& .${actionsGenericClasses.button}`]: {
         borderColor: theme.colors.base_dark,
