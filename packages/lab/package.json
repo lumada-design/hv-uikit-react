@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.2.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.2.12",

@@ -1,5 +1,8 @@
-import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
+
+import { Meta, StoryObj } from "@storybook/react";
+import { waitFor, screen, fireEvent } from "@storybook/testing-library";
+
 import {
   HvEmptyState,
   HvFilterGroup,
@@ -70,6 +73,15 @@ const filters: HvFilterGroupProps["filters"] = [
 ];
 
 export const Main: StoryObj<HvFilterGroupProps> = {
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("combobox"));
+
+        return waitFor(() => screen.getByRole("tooltip"));
+      },
+    },
+  },
   render: () => {
     const [value, setValue] = useState<HvFilterGroupValue | undefined>([
       ["category1", 2],

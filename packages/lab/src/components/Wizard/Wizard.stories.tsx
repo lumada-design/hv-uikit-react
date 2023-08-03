@@ -1,5 +1,10 @@
-import { Meta, StoryObj } from "@storybook/react";
 import { useCallback, useContext, useState } from "react";
+
+import { Meta, StoryObj } from "@storybook/react";
+import { waitFor, screen, fireEvent } from "@storybook/testing-library";
+
+import { css } from "@emotion/css";
+
 import {
   HvAccordion,
   HvButton,
@@ -14,7 +19,7 @@ import {
   HvWizardProps,
   HvWizardContext,
 } from "@hitachivantara/uikit-react-lab";
-import { css } from "@emotion/css";
+
 import mockText from "./mockData";
 
 const meta: Meta<typeof HvWizard> = {
@@ -96,7 +101,13 @@ export const Main: StoryObj<HvWizardProps> = {
     classes: { control: { disable: true } },
   },
   parameters: {
-    eyes: { include: false },
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("button"));
+
+        return waitFor(() => screen.getByRole("dialog"));
+      },
+    },
   },
   render: () => {
     const [show, setShow] = useState(false);
