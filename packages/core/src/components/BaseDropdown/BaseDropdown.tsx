@@ -147,6 +147,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     onToggle,
     onClickOutside,
     onContainerCreation,
+    "aria-expanded": ariaExpandedProp,
     ...others
   } = useDefaultProps("HvBaseDropdown", props);
   const { classes, cx } = useClasses(classesProp);
@@ -174,6 +175,8 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
   );
 
   const ariaRole = role || (component == null ? "combobox" : undefined);
+
+  const ariaExpanded = ariaExpandedProp ?? (ariaRole ? !!isOpen : undefined);
 
   const elementId = useUniqueId(id, "hvbasedropdown");
 
@@ -337,6 +340,9 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     if (component) {
       return React.cloneElement(component as React.ReactElement, {
         ref: handleDropdownHeaderRef,
+        "aria-controls": isOpen
+          ? setId(elementId, "children-container")
+          : undefined,
       });
     }
 
@@ -482,7 +488,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
       <div
         id={id}
         role={ariaRole}
-        aria-expanded={!!isOpen}
+        aria-expanded={ariaExpanded}
         aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
         className={cx(
           classes.anchor,
