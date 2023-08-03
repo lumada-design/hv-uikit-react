@@ -1,24 +1,15 @@
-import { Close } from "@hitachivantara/uikit-react-icons";
-
-import { clsx } from "clsx";
+import { Close, Fail, Success } from "@hitachivantara/uikit-react-icons";
 
 import { setId } from "@core/utils/setId";
+import { HvButton } from "@core/components/Button";
 import { HvTypography } from "@core/components/Typography";
-
-import fileClasses, { HvFileClasses } from "./fileClasses";
+import { ExtractNames } from "@core/utils/classes";
 import { convertUnits } from "../utils";
-import {
-  StyledFail,
-  StyledErrorMessage,
-  StyledSuccess,
-  StyledProgressBarBack,
-  StyledProgressBar,
-  StyledNameText,
-  StyledProgressTextContainer,
-  StyledPreviewContainer,
-  StyledIconButton,
-  StyledEmptyIcon,
-} from "./File.styles";
+import { staticClasses, useClasses } from "./File.styles";
+
+export { staticClasses as fileClasses };
+
+export type HvFileClasses = ExtractNames<typeof useClasses>;
 
 export interface HvFileData extends Omit<File, "name" | "size"> {
   /**
@@ -84,23 +75,11 @@ const getStatusIcon = (
 ) => {
   switch (status) {
     case "success":
-      return (
-        <StyledSuccess
-          className={clsx(classes?.icon, fileClasses.icon)}
-          color="positive"
-        />
-      );
+      return <Success className={classes?.icon} color="positive" />;
     case "fail":
-      return (
-        <StyledFail
-          className={clsx(classes?.icon, fileClasses.icon)}
-          color="negative"
-        />
-      );
+      return <Fail className={classes?.icon} color="negative" />;
     default:
-      return (
-        <StyledEmptyIcon className={clsx(classes?.icon, fileClasses.icon)} />
-      );
+      return <div className={classes?.icon} />;
   }
 };
 
@@ -123,9 +102,9 @@ const getProgressText = (data: HvFileData, classes?: HvFileClasses) => {
       )}
 
       {hasFailed && data.errorMessage && (
-        <StyledErrorMessage className={clsx(classes?.fail, fileClasses.fail)}>
+        <HvTypography className={classes?.fail}>
           {data.errorMessage}
-        </StyledErrorMessage>
+        </HvTypography>
       )}
     </>
   );
@@ -140,11 +119,13 @@ const getProgressBarWith = ({ size, progress }: HvFileData) => {
 
 export const HvFile = ({
   id,
-  classes,
+  classes: classesProp,
   data,
   onFileRemoved,
   removeFileButtonLabel,
 }: HvFileProps) => {
+  const { classes } = useClasses(classesProp);
+
   const hasError = data.status === "fail";
 
   const inProgress = data.status === "progress";
@@ -156,19 +137,12 @@ export const HvFile = ({
   const currentProgress = getProgressBarWith(data);
 
   return (
-    <li className={clsx(classes?.root, fileClasses.root)}>
-      {!hasError && inProgress && (
-        <StyledProgressBarBack
-          className={clsx(
-            classes?.progressbarBack,
-            fileClasses.progressbarBack
-          )}
-        />
-      )}
+    <li className={classes.root}>
+      {!hasError && inProgress && <span className={classes.progressbarBack} />}
 
       {!hasError && inProgress && (
-        <StyledProgressBar
-          className={clsx(classes?.progressbar, fileClasses.progressbar)}
+        <progress
+          className={classes.progressbar}
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={currentProgress}
@@ -178,42 +152,25 @@ export const HvFile = ({
 
       {statusIcon}
 
-      <StyledNameText
-        className={clsx(classes?.nameText, fileClasses.nameText)}
-        variant="label"
-      >
+      <HvTypography className={classes.nameText} variant="label">
         {data.name}
-      </StyledNameText>
+      </HvTypography>
 
-      <StyledProgressTextContainer
-        className={clsx(
-          classes?.progressTextContainer,
-          fileClasses.progressTextContainer
-        )}
-      >
-        {progressText}
-      </StyledProgressTextContainer>
+      <span className={classes.progressTextContainer}>{progressText}</span>
 
       {data.preview && (
-        <StyledPreviewContainer
-          className={clsx(
-            classes?.previewContainer,
-            fileClasses.previewContainer
-          )}
-        >
-          {data.preview}
-        </StyledPreviewContainer>
+        <div className={classes.previewContainer}>{data.preview}</div>
       )}
 
-      <StyledIconButton
+      <HvButton
         id={setId(id, "remove-button")}
         aria-label={removeFileButtonLabel}
-        className={clsx(classes?.removeButton, fileClasses.removeButton)}
+        className={classes.removeButton}
         onClick={() => onFileRemoved?.(data)}
         icon
       >
         <Close iconSize="XS" />
-      </StyledIconButton>
+      </HvButton>
     </li>
   );
 };

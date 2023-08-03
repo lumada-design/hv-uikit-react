@@ -1,132 +1,91 @@
-import styled from "@emotion/styled";
-
-import { Doc } from "@hitachivantara/uikit-react-icons";
+import { createClasses } from "@core/utils/classes";
+import { outlineStyles } from "@core/utils/focusUtils";
 import { theme } from "@hitachivantara/uikit-styles";
-
 import { CSSProperties } from "react";
 
-import { HvTypography } from "@core/components/Typography";
-import { HvInfoMessage, HvLabel } from "@core/components/Forms";
-import { outlineStyles } from "@core/utils/focusUtils";
-import { transientOptions } from "@core/utils/transientOptions";
+export const { staticClasses, useClasses } = createClasses("HvDropZone", {
+  dropZoneContainer: {
+    position: "relative",
+    width: "100%",
+    display: "flex",
+    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.fileUploader.dropZone.borderColor}`,
+    cursor: "pointer",
+    background: theme.fileUploader.dropZone.backgroundColor,
+    borderRadius: theme.fileUploader.dropZone.borderRadius,
 
-import dropZoneClasses from "./dropZoneClasses";
+    "&:hover": {
+      background: `${theme.colors.atmo1}`,
+      border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.secondary}`,
+    },
 
-export const StyledDropZoneLabelsGroup = styled("div")({
-  display: "flex",
-  justifyContent: "start",
-
-  "& label:nth-of-type(1)": {},
-
-  "& p:nth-of-type(2)": {
-    marginLeft: "auto",
+    "&:focus": {
+      background: `${theme.colors.atmo1}`,
+      border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.secondary}`,
+      ...outlineStyles,
+    },
   },
-});
+  dropZoneLabelsGroup: {
+    display: "flex",
+    justifyContent: "start",
 
-export const StyledLabel = styled(
-  HvLabel,
-  transientOptions
-)(({ $disabled }: { $disabled: boolean }) => ({
-  paddingBottom: 6,
+    "& label:nth-of-type(1)": {},
 
-  ...($disabled && {
-    color: theme.colors.secondary_60,
-  }),
-}));
-
-export const StyledInfoMessage = styled(
-  HvInfoMessage,
-  transientOptions
-)(({ $disabled }: { $disabled: boolean }) => ({
-  ...($disabled && {
-    color: theme.colors.secondary_60,
-  }),
-}));
-
-export const StyledDropZoneContainer = styled(
-  "div",
-  transientOptions
-)(({ $drag, $disabled }: { $drag: boolean; $disabled: boolean }) => ({
-  position: "relative",
-  width: "100%",
-  display: "flex",
-  border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.fileUploader.dropZone.borderColor}`,
-  cursor: "pointer",
-  background: theme.fileUploader.dropZone.backgroundColor,
-  borderRadius: theme.fileUploader.dropZone.borderRadius,
-
-  "&:hover": {
-    background: `${theme.colors.atmo1}`,
-    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.secondary}`,
+    "& p:nth-of-type(2)": {
+      marginLeft: "auto",
+    },
   },
-
-  "&:focus": {
-    background: `${theme.colors.atmo1}`,
-    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.secondary}`,
-    ...outlineStyles,
-  },
-
-  ...($drag && {
+  dragAction: {
     background: `${theme.colors.atmo1}`,
     border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.fileUploader.dropZone.borderColorDrag}`,
-  }),
-
-  ...($disabled && {
-    [`&.${dropZoneClasses.dropZoneContainer}`]: {
+  },
+  dropZoneContainerDisabled: {
+    background: `${theme.colors.atmo3}`,
+    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.fileUploader.dropZone.borderColorDisabled}`,
+    cursor: "not-allowed",
+    "&:hover": {
       background: `${theme.colors.atmo3}`,
       border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.fileUploader.dropZone.borderColorDisabled}`,
+    },
+
+    "& $dragText": {
+      color: theme.colors.secondary_60,
+    },
+    "& $selectFilesText": {
+      color: theme.colors.secondary_60,
+    },
+  },
+  inputArea: {
+    opacity: 0,
+    width: "100%",
+    position: "absolute",
+    height: "100%",
+    cursor: "pointer",
+
+    "&:disabled": {
       cursor: "not-allowed",
     },
-
-    [`& .${dropZoneClasses.dragText}`]: {
-      color: theme.colors.secondary_60,
-    },
-
-    [`& .${dropZoneClasses.selectFilesText}`]: {
-      color: theme.colors.secondary_60,
-    },
-  }),
-}));
-
-export const StyledInput = styled("input")({
-  opacity: 0,
-  width: "100%",
-  position: "absolute",
-  height: "100%",
-  cursor: "pointer",
-
-  "&:disabled": {
-    cursor: "not-allowed",
   },
-});
-
-export const StyledDropArea = styled("div")({
-  display: "flex",
-  margin: `${theme.space.md} auto`,
-  minHeight: 48,
-});
-
-export const StyledDropAreaLabel = styled("div")({
-  display: "flex",
-  width: 115,
-  margin: "auto",
-});
-
-export const StyledDragText = styled(HvTypography)({
-  ...(theme.typography.body as CSSProperties),
-});
-
-export const StyledDropAreaIcon = styled(Doc)({
-  margin: "auto",
-  marginRight: theme.space.xs,
-});
-
-export const StyledDropAreaLabels = styled("div")({
-  display: "flex",
-  width: 115,
-  margin: "auto",
-});
-
-export const StyledSelectedFilesText = styled("span")({
-  ...(theme.typography.label as CSSProperties),
+  dropArea: {
+    display: "flex",
+    margin: `${theme.space.md} auto`,
+    minHeight: 48,
+  },
+  dropZoneAreaLabels: {
+    display: "flex",
+    width: 115,
+    margin: "auto",
+  },
+  dropZoneAreaIcon: {
+    margin: "auto",
+    marginRight: theme.space.xs,
+  },
+  dropZoneLabel: {
+    paddingBottom: 6,
+  },
+  dragText: {
+    ...(theme.typography.body as CSSProperties),
+  },
+  selectFilesText: {
+    ...(theme.typography.label as CSSProperties),
+  },
 });
