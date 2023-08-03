@@ -1,7 +1,12 @@
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
-import { clsx } from "clsx";
-import { StyledLi } from "./PathElement.styles";
-import pathElementClasses, { HvPathElementClasses } from "./pathElementClasses";
+
+import { ExtractNames } from "@core/utils/classes";
+
+import { staticClasses, useClasses } from "./PathElement.styles";
+
+export { staticClasses as pathElementClasses };
+
+export type HvPathElementClasses = ExtractNames<typeof useClasses>;
 
 export interface HvPathElementProps {
   last?: boolean;
@@ -10,27 +15,21 @@ export interface HvPathElementProps {
 }
 
 export const HvPathElement = ({
-  classes,
+  classes: classesProp,
   last = false,
   children,
 }: HvPathElementProps) => {
+  const { classes } = useClasses(classesProp);
+
   return (
-    <StyledLi
-      className={clsx(
-        pathElementClasses.centerContainer,
-        classes?.centerContainer
-      )}
-    >
+    <li className={classes.centerContainer}>
       {children}
       {!last && (
         <DropRightXS
-          className={clsx(
-            pathElementClasses.separatorContainer,
-            classes?.separatorContainer
-          )}
+          className={classes.separatorContainer}
           color="secondary_60"
         />
       )}
-    </StyledLi>
+    </li>
   );
 };

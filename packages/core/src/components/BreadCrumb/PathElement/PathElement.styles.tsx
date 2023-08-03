@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledLi = styled("li")({
-  display: "flex",
-  alignItems: "center",
+export const { staticClasses, useClasses } = createClasses("HvPathElement", {
+  centerContainer: { display: "flex", alignItems: "center" },
+  separatorContainer: {},
 });
