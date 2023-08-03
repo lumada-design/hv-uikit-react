@@ -4,28 +4,22 @@ import uniqueId from "lodash/uniqueId";
 
 import accept from "attr-accept";
 
-import { clsx } from "clsx";
-
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 
+import { HvTypography } from "@core/components/Typography";
+import { Doc } from "@hitachivantara/uikit-react-icons";
+import { HvInfoMessage, HvLabel } from "@core/components/Forms";
+import { ExtractNames } from "@core/utils/classes";
 import { convertUnits } from "../utils";
-import {
-  StyledDragText,
-  StyledDropArea,
-  StyledDropAreaIcon,
-  StyledDropAreaLabel,
-  StyledDropAreaLabels,
-  StyledDropZoneContainer,
-  StyledDropZoneLabelsGroup,
-  StyledInfoMessage,
-  StyledInput,
-  StyledLabel,
-  StyledSelectedFilesText,
-} from "./DropZone.styles";
-import dropZoneClasses, { HvDropZoneClasses } from "./dropZoneClasses";
 import { HvFileData, HvFilesAddedEvent } from "../File";
+
+import { staticClasses, useClasses } from "./DropZone.styles";
+
+export { staticClasses as dropZoneClasses };
+
+export type HvDropZoneClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDropZoneLabels {
   /**
@@ -107,7 +101,7 @@ export interface HvDropZoneProps {
 
 export const HvDropZone = ({
   id: idProp,
-  classes,
+  classes: classesProp,
   labels,
   acceptedFiles,
   maxFileSize,
@@ -118,6 +112,9 @@ export const HvDropZone = ({
   onFilesAdded,
 }: HvDropZoneProps) => {
   const id = useUniqueId(idProp, "dropzone");
+
+  const { classes, cx } = useClasses(classesProp);
+
   const [dragState, setDrag] = useState<boolean>(false);
 
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -164,48 +161,33 @@ export const HvDropZone = ({
   return (
     <>
       {!hideLabels && (
-        <StyledDropZoneLabelsGroup
+        <div
           id={id}
-          className={clsx(
-            classes?.dropZoneLabelsGroup,
-            dropZoneClasses.dropZoneLabelsGroup
-          )}
+          className={classes.dropZoneLabelsGroup}
           aria-label="File Dropzone"
         >
-          <StyledLabel
+          <HvLabel
             id={setId(id, "input-file-label")}
             htmlFor={setId(id, "input-file")}
             label={labels?.dropzone}
-            className={clsx(
-              classes?.dropZoneLabel,
-              dropZoneClasses.dropZoneLabel
-            )}
-            $disabled={disabled}
+            className={classes.dropZoneLabel}
           />
-          <StyledInfoMessage $disabled={disabled} id={setId(id, "description")}>
+          <HvInfoMessage id={setId(id, "description")}>
             {Number.isInteger(maxFileSize) &&
               `${labels?.sizeWarning} ${convertUnits(maxFileSize)}`}
             {labels?.acceptedFiles && labels.acceptedFiles}
             {!labels?.acceptedFiles &&
               acceptedFiles.length > 0 &&
               `\u00A0(${acceptedFiles.join(", ")})`}
-          </StyledInfoMessage>
-        </StyledDropZoneLabelsGroup>
+          </HvInfoMessage>
+        </div>
       )}
-      <StyledDropZoneContainer
+      <div
         id={setId(id, "button")}
-        className={clsx(
-          classes?.dropZoneContainer,
-          dropZoneClasses.dropZoneContainer,
-          dragState && clsx(classes?.dragAction, dropZoneClasses.dragAction),
-          disabled &&
-            clsx(
-              classes?.dropZoneContainerDisabled,
-              dropZoneClasses.dropZoneContainerDisabled
-            )
-        )}
-        $drag={dragState}
-        $disabled={disabled}
+        className={cx(classes.dropZoneContainer, {
+          [classes.dragAction]: dragState,
+          [classes.dropZoneContainerDisabled]: disabled,
+        })}
         role="button"
         tabIndex={0}
         onDragEnter={(event) => {
@@ -240,10 +222,10 @@ export const HvDropZone = ({
           }
         }}
       >
-        <StyledInput
+        <input
           id={setId(id, "input-file")}
           tabIndex={-1}
-          className={clsx(classes?.inputArea, dropZoneClasses.inputArea)}
+          className={classes.inputArea}
           type="file"
           multiple={multiple}
           disabled={disabled}
@@ -262,54 +244,32 @@ export const HvDropZone = ({
           accept={acceptedFiles.join(",")}
           {...inputProps}
         />
-        <StyledDropArea
-          className={clsx(classes?.dropArea, dropZoneClasses.dropArea)}
-        >
+        <div className={classes?.dropArea}>
           {dragState ? (
-            <StyledDropAreaLabel
-              className={clsx(
-                classes?.dropZoneAreaLabels,
-                dropZoneClasses.dropZoneAreaLabels
-              )}
-            >
-              <StyledDragText
-                className={clsx(classes?.dragText, dropZoneClasses.dragText)}
-              >
+            <div className={classes.dropZoneAreaLabels}>
+              <HvTypography className={classes.dragText}>
                 {labels?.dropFiles}
-              </StyledDragText>
-            </StyledDropAreaLabel>
+              </HvTypography>
+            </div>
           ) : (
             <>
-              <StyledDropAreaIcon
+              <Doc
                 iconSize="M"
-                className={clsx(
-                  classes?.dropZoneAreaIcon,
-                  dropZoneClasses.dropZoneAreaIcon
-                )}
+                className={classes.dropZoneAreaIcon}
                 color={disabled ? "secondary_60" : "secondary"}
               />
-              <StyledDropAreaLabels
-                className={clsx(
-                  classes?.dropZoneAreaLabels,
-                  dropZoneClasses.dropZoneAreaLabels
-                )}
-              >
-                <StyledDragText
-                  className={clsx(classes?.dragText, dropZoneClasses.dragText)}
-                >
+              <div className={classes.dropZoneAreaLabels}>
+                <HvTypography className={classes.dragText}>
                   {labels?.drag}
-                  <StyledSelectedFilesText
-                    className={clsx(
-                      classes?.selectFilesText,
-                      dropZoneClasses.selectFilesText
-                    )}
-                  >{`\xa0${labels?.selectFiles}`}</StyledSelectedFilesText>
-                </StyledDragText>
-              </StyledDropAreaLabels>
+                  <span
+                    className={classes.selectFilesText}
+                  >{`\xa0${labels?.selectFiles}`}</span>
+                </HvTypography>
+              </div>
             </>
           )}
-        </StyledDropArea>
-      </StyledDropZoneContainer>
+        </div>
+      </div>
     </>
   );
 };

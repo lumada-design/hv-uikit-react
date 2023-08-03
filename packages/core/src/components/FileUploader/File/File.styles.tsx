@@ -1,96 +1,68 @@
-import styled from "@emotion/styled";
-
-import { Fail, Success } from "@hitachivantara/uikit-react-icons";
+import { createClasses } from "@core/utils/classes";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { forwardRef } from "react";
+export const { staticClasses, useClasses } = createClasses("HvFile", {
+  root: {},
+  progressbar: {
+    position: "absolute",
+    top: "-1px",
+    width: "80%",
+    height: theme.fileUploader.file.progressHeight,
+    border: `${theme.fileUploader.file.borderWidth} solid ${theme.colors.secondary}`,
 
-import { HvTypography } from "@core/components/Typography";
-import { HvButton, HvButtonProps } from "@core/components/Button";
-import { PolymorphicRef } from "@core/types/generic";
-
-const iconStyles = {
-  width: 32,
-  height: 32,
-  margin: `0px ${theme.space.xs}`,
-};
-
-export const StyledSuccess = styled(Success)({
-  ...iconStyles,
-});
-
-export const StyledFail = styled(Fail)({
-  ...iconStyles,
-});
-
-export const StyledEmptyIcon = styled("div")({
-  ...iconStyles,
-});
-
-export const StyledErrorMessage = styled(HvTypography)({
-  color: theme.colors.negative,
-});
-
-export const StyledProgressBarBack = styled("span")({
-  position: "absolute",
-  top: "-1px",
-  width: "100%",
-  border: `${theme.fileUploader.file.borderWidth} solid ${theme.colors.atmo4}`,
-});
-
-export const StyledProgressBar = styled("progress")({
-  position: "absolute",
-  top: "-1px",
-  width: "80%",
-  height: theme.fileUploader.file.progressHeight,
-  border: `${theme.fileUploader.file.borderWidth} solid ${theme.colors.secondary}`,
-
-  "&::-moz-progress-bar": {
-    background: theme.colors.secondary,
+    "&::-moz-progress-bar": {
+      background: theme.colors.secondary,
+    },
   },
-});
-
-export const StyledNameText = styled(HvTypography)({
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  whiteSpace: "nowrap",
-});
-
-export const StyledProgressTextContainer = styled("span")({
-  display: "flex",
-  flexGrow: 1,
-  alignItems: "center",
-});
-
-export const StyledPreviewContainer = styled("div")({
-  display: "flex",
-  margin: `0px ${theme.space.xs}`,
-  width: theme.fileUploader.file.previewContainerSize,
-  height: theme.fileUploader.file.previewContainerSize,
-  justifyContent: "center",
-  alignItems: "center",
-
-  "& span": {
+  progressbarBack: {
+    position: "absolute",
+    top: "-1px",
+    width: "100%",
+    border: `${theme.fileUploader.file.borderWidth} solid ${theme.colors.atmo4}`,
+  },
+  nameText: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+  },
+  progressTextContainer: {
     display: "flex",
+    flexGrow: 1,
+    alignItems: "center",
+  },
+  removeButton: {
+    width: 32,
+    height: 32,
+    margin: `0px ${theme.space.xs}`,
+  },
+  previewContainer: {
+    display: "flex",
+    margin: `0px ${theme.space.xs}`,
+    width: theme.fileUploader.file.previewContainerSize,
+    height: theme.fileUploader.file.previewContainerSize,
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
-    height: "100%",
-  },
 
-  "& img": {
-    width: theme.fileUploader.file.imageSize,
-    height: theme.fileUploader.file.imageSize,
-    objectFit: "cover",
-    objectPosition: "center",
-    alignSelf: "center",
-  },
-});
+    "& span": {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
+      height: "100%",
+    },
 
-export const StyledIconButton = styled(
-  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
-    return <HvButton {...props} ref={ref} />;
-  })
-)({
-  margin: `0px ${theme.space.xs}`,
+    "& img": {
+      width: theme.fileUploader.file.imageSize,
+      height: theme.fileUploader.file.imageSize,
+      objectFit: "cover",
+      objectPosition: "center",
+      alignSelf: "center",
+    },
+  },
+  icon: {
+    width: 32,
+    height: 32,
+    margin: `0px ${theme.space.xs}`,
+  },
+  fail: {},
 });

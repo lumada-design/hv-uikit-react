@@ -1,17 +1,16 @@
-import { clsx } from "clsx";
-
 import { useEffect } from "react";
 
-import { HvButtonProps } from "@core/components/Button";
+import { HvButton, HvButtonProps } from "@core/components/Button";
 
-import fileUploaderPreviewClasses, {
-  HvFileUploaderPreviewClasses,
-} from "./previewClasses";
-import {
-  StyledButton,
-  StyledOverlay,
-  StyledPreviewIcon,
-} from "./Preview.styles";
+import { Preview } from "@hitachivantara/uikit-react-icons";
+
+import { ExtractNames } from "@core/utils/classes";
+
+import { staticClasses, useClasses } from "./Preview.styles";
+
+export { staticClasses as fileUploaderPreviewClasses };
+
+export type HvFileUploaderPreviewClasses = ExtractNames<typeof useClasses>;
 
 export interface HvFileUploaderPreviewProps
   extends Omit<HvButtonProps, "children" | "classes"> {
@@ -44,12 +43,14 @@ export interface HvFileUploaderPreviewProps
 export const HvFileUploaderPreview = ({
   className,
   children,
-  classes,
+  classes: classesProp,
   disableOverlay = false,
   onUnload,
   onClick,
   ...others
 }: HvFileUploaderPreviewProps) => {
+  const { classes, cx, css } = useClasses(classesProp);
+
   useEffect(() => {
     return () => {
       onUnload?.();
@@ -58,30 +59,27 @@ export const HvFileUploaderPreview = ({
 
   if (onClick) {
     return (
-      <StyledButton
+      <HvButton
         icon
-        className={clsx(
-          className,
-          classes?.previewButton,
-          fileUploaderPreviewClasses.previewButton
-        )}
+        className={cx(classes.previewButton, className)}
         onClick={onClick}
         {...others}
       >
         {children}
         {!disableOverlay && (
-          <>
-            <StyledOverlay
-              className={clsx(
-                classes?.overlay,
-                fileUploaderPreviewClasses.overlay
-              )}
-              aria-hidden="true"
+          <div className={classes.overlay} aria-hidden="true">
+            <Preview
+              className={css({
+                position: "absolute",
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%, -50%)",
+                display: "none",
+              })}
             />
-            <StyledPreviewIcon />
-          </>
+          </div>
         )}
-      </StyledButton>
+      </HvButton>
     );
   }
 
