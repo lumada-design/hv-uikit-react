@@ -1,58 +1,11 @@
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { CSSProperties } from "react";
-
-import {
-  HvFormElement,
-  HvFormElementProps,
-  HvLabel,
-} from "@core/components/Forms";
-import { HvBaseRadio } from "@core/components/BaseRadio";
 import { outlineStyles } from "@core/utils/focusUtils";
-import { transientOptions } from "@core/utils/transientOptions";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledHvBaseRadio = styled(
-  HvBaseRadio,
-  transientOptions
-)(({ $invalid }: { $invalid: boolean }) => ({
-  height: "32px",
-
-  ...($invalid && {
-    borderBottom: `1px solid ${theme.colors.negative}`,
-
-    "&:hover": {
-      borderBottomLeftRadius: "0px",
-      borderBottomRightRadius: "0px",
-    },
-  }),
-
-  "& svg": {
-    outline: "none",
-    boxShadow: "none",
-  },
-}));
-
-export const StyledHvFormElement = styled((props: HvFormElementProps) => (
-  <HvFormElement {...props} />
-))({
-  display: "inline-block",
-});
-
-export const StyledDivContainer = styled(
-  "div",
-  transientOptions
-)(
-  ({
-    $invalid,
-    $focusVisible,
-    $disabled,
-  }: {
-    $disabled: boolean;
-    $invalid: boolean;
-    $focusVisible: boolean;
-  }) => ({
+export const { staticClasses, useClasses } = createClasses("HvRadio", {
+  root: { display: "inline-block" },
+  container: {
     cursor: "pointer",
     display: "flex",
     height: "32px",
@@ -64,45 +17,48 @@ export const StyledDivContainer = styled(
     "&:hover": {
       backgroundColor: theme.radio.hoverColor,
       borderRadius: theme.radio.borderRadius,
-
-      ...($invalid && {
-        borderBottomLeftRadius: "0px",
-        borderBottomRightRadius: "0px",
-      }),
     },
+  },
+  invalidContainer: {
+    borderBottom: `1px solid ${theme.colors.negative}`,
 
-    ...($disabled && {
-      cursor: "not-allowed",
-    }),
-
-    ...($invalid && {
-      borderBottom: `1px solid ${theme.colors.negative}`,
-    }),
-
-    ...($focusVisible && {
-      backgroundColor: theme.colors.atmo3,
-      ...outlineStyles,
-    }),
-  })
-);
-
-export const StyledHvLabel = styled(
-  HvLabel,
-  transientOptions
-)(({ $disabled }: { $disabled: boolean }) => ({
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  verticalAlign: "middle",
-  paddingRight: theme.space.xs,
-  whiteSpace: "nowrap",
-  ...(theme.typography.body as CSSProperties),
-  cursor: "pointer",
-  height: "32px",
-  lineHeight: "32px",
-  width: "100%",
-
-  ...($disabled && {
-    color: theme.colors.secondary_60,
+    "&:hover": {
+      borderBottomLeftRadius: "0px",
+      borderBottomRightRadius: "0px",
+    },
+  },
+  disabled: {
     cursor: "not-allowed",
-  }),
-}));
+
+    "& $label": { color: theme.colors.secondary_60, cursor: "not-allowed" },
+  },
+  radio: {
+    height: "32px",
+
+    "& svg": {
+      outline: "none",
+      boxShadow: "none",
+    },
+  },
+  invalidRadio: {
+    borderBottom: `1px solid ${theme.colors.negative}`,
+
+    "&:hover": {
+      borderBottomLeftRadius: "0px",
+      borderBottomRightRadius: "0px",
+    },
+  },
+  label: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    verticalAlign: "middle",
+    paddingRight: theme.space.xs,
+    whiteSpace: "nowrap",
+    ...theme.typography.body,
+    cursor: "pointer",
+    height: "32px",
+    lineHeight: "32px",
+    width: "100%",
+  },
+  focusVisible: { backgroundColor: theme.colors.atmo3, ...outlineStyles },
+});

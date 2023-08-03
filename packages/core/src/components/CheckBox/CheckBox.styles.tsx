@@ -1,101 +1,61 @@
-import { CSSProperties } from "react";
-
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "@core/utils/focusUtils";
-import { transientOptions } from "@core/utils/transientOptions";
-import {
-  HvLabel,
-  HvFormElement,
-  HvFormElementProps,
-} from "@core/components/Forms";
-import {
-  HvBaseCheckBox,
-  HvBaseCheckBoxProps,
-} from "@core/components/BaseCheckBox";
+import { createClasses } from "@core/utils/classes";
 
-import checkBoxClasses from "./checkBoxClasses";
+export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
+  root: { display: "inline-block" },
+  container: {
+    cursor: "pointer",
+    display: "flex",
+    height: "32px",
+    transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
 
-export const StyledFormElement = styled(
-  (props: HvFormElementProps) => <HvFormElement {...props} />,
-  transientOptions
-)(({ $focusVisible }: { $focusVisible: boolean }) => ({
-  display: "inline-block",
-
-  ...($focusVisible && {
+    "&:hover": {
+      backgroundColor: theme.checkbox.hoverColor,
+      borderRadius: theme.checkbox.borderRadius,
+    },
+  },
+  disabled: {
+    cursor: "not-allowed",
+    "& $label": { color: theme.colors.secondary_60, cursor: "not-allowed" },
+  },
+  focusVisible: {
     ...outlineStyles,
 
     "& div": {
       backgroundColor: theme.colors.atmo3,
     },
 
-    [`& .${checkBoxClasses.checkbox} div > svg`]: {
+    [`& $checkbox div > svg`]: {
       outline: "none",
       boxShadow: "none",
     },
-  }),
-}));
+  },
+  invalidContainer: {
+    borderBottom: `1px solid ${theme.colors.negative}`,
 
-export const StyledLabelContainer = styled(
-  "div",
-  transientOptions
-)(({ $disabled, $invalid }: { $disabled: boolean; $invalid: boolean }) => ({
-  cursor: "pointer",
-  display: "flex",
-  height: "32px",
-  transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-
-  "&:hover": {
-    backgroundColor: theme.checkbox.hoverColor,
-    borderRadius: theme.checkbox.borderRadius,
-
-    ...($invalid && {
+    "&:hover": {
       borderBottomLeftRadius: "0px",
       borderBottomRightRadius: "0px",
-    }),
+    },
   },
-
-  ...($disabled && {
-    cursor: "not-allowed",
-  }),
-
-  ...($invalid && {
-    borderBottom: `1px solid ${theme.colors.negative}`,
-  }),
-}));
-
-export const StyledLabel = styled(
-  HvLabel,
-  transientOptions
-)(({ $disabled }: { $disabled: boolean }) => ({
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  verticalAlign: "middle",
-  paddingRight: theme.space.xs,
-  whiteSpace: "nowrap",
-  ...(theme.typography.body as CSSProperties),
-  cursor: "pointer",
-  height: "32px",
-  lineHeight: "32px",
-  width: "100%",
-
-  ...($disabled && {
-    color: theme.colors.secondary_60,
-    cursor: "not-allowed",
-  }),
-}));
-
-export const StyledBaseCheckBox = styled(
-  (props: HvBaseCheckBoxProps) => <HvBaseCheckBox {...props} />,
-  transientOptions
-)(({ $invalid }: { $invalid: boolean }) => ({
-  height: "32px",
-
-  ...($invalid && {
+  checkbox: { height: "32px" },
+  invalidCheckbox: {
     borderBottom: `1px solid ${theme.colors.negative}`,
     borderBottomLeftRadius: "0px",
     borderBottomRightRadius: "0px",
-  }),
-}));
+  },
+  label: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    verticalAlign: "middle",
+    paddingRight: theme.space.xs,
+    whiteSpace: "nowrap",
+    ...theme.typography.body,
+    cursor: "pointer",
+    height: "32px",
+    lineHeight: "32px",
+    width: "100%",
+  },
+});

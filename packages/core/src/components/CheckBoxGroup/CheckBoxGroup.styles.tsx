@@ -1,71 +1,44 @@
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
-import {
-  HvFormElement,
-  HvFormElementProps,
-  HvLabel,
-} from "@core/components/Forms";
-import { transientOptions } from "@core/utils/transientOptions";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledFormElement = styled((props: HvFormElementProps) => (
-  <HvFormElement {...props} />
-))({
-  display: "inline-block",
-  padding: 0,
-  margin: 0,
-  overflow: "hidden",
-  verticalAlign: "top",
+export const { staticClasses, useClasses } = createClasses("HvCheckBoxGroup", {
+  root: {
+    display: "inline-block",
+    padding: 0,
+    margin: 0,
+    overflow: "hidden",
+    verticalAlign: "top",
+  },
+  label: { marginBottom: theme.space.xs },
+  group: { display: "flex" },
+  vertical: {
+    flexDirection: "column",
+
+    // Prevent the focus ring to be hidden by sibling hover background
+    "&>*": {
+      zIndex: 0,
+    },
+    "&>*:focus-within": {
+      zIndex: 1,
+    },
+    // IE fallback code (using focus-within-polyfill)
+    "&>*.focus-within": {
+      zIndex: 1,
+    },
+  },
+  horizontal: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+
+    "&>*:not(:first-of-type)": {
+      marginLeft: theme.space.sm,
+    },
+  },
+  invalid: {
+    paddingBottom: theme.space.xs,
+    borderBottom: `1px solid ${theme.colors.negative}`,
+  },
+  selectAll: {},
+  error: {},
 });
-
-export const StyledLabel = styled(HvLabel)({
-  marginBottom: theme.space.xs,
-});
-
-export const StyledGroupContainer = styled(
-  "div",
-  transientOptions
-)(
-  ({
-    $vertical,
-    $horizontal,
-    $invalid,
-  }: {
-    $vertical: boolean;
-    $horizontal: boolean;
-    $invalid: boolean;
-  }) => ({
-    display: "flex",
-
-    ...($vertical && {
-      flexDirection: "column",
-
-      // Prevent the focus ring to be hidden by sibling hover background
-      "&>*": {
-        zIndex: 0,
-      },
-      "&>*:focus-within": {
-        zIndex: 1,
-      },
-      // IE fallback code (using focus-within-polyfill)
-      "&>*.focus-within": {
-        zIndex: 1,
-      },
-    }),
-
-    ...($horizontal && {
-      flexDirection: "row",
-      flexWrap: "wrap",
-
-      "&>*:not(:first-of-type)": {
-        marginLeft: theme.space.sm,
-      },
-    }),
-
-    ...($invalid && {
-      paddingBottom: theme.space.xs,
-      borderBottom: `1px solid ${theme.colors.negative}`,
-    }),
-  })
-);

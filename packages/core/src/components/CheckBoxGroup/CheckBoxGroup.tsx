@@ -1,8 +1,6 @@
 import { Children, cloneElement, useCallback, useMemo, useRef } from "react";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";
@@ -10,19 +8,15 @@ import { setId } from "@core/utils/setId";
 import { multiSelectionEventHandler } from "@core/utils/multiSelectionEventHandler";
 import { HvCheckBox } from "@core/components/CheckBox";
 import {
+  HvFormElement,
   HvFormStatus,
   HvInfoMessage,
+  HvLabel,
   HvWarningText,
 } from "@core/components/Forms";
+import { ExtractNames } from "@core/utils/classes";
 
-import {
-  StyledFormElement,
-  StyledGroupContainer,
-  StyledLabel,
-} from "./CheckBoxGroup.styles";
-import checkBoxGroupClasses, {
-  HvCheckBoxGroupClasses,
-} from "./checkBoxGroupClasses";
+import { staticClasses, useClasses } from "./CheckBoxGroup.styles";
 
 const computeSelectAllState = (selected: number, total: number) => {
   if (selected === 0) {
@@ -50,6 +44,10 @@ const getValueFromSelectedChildren = (children: React.ReactNode) => {
 
   return selectedValues;
 };
+
+export { staticClasses as checkBoxGroupClasses };
+
+export type HvCheckBoxGroupClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCheckBoxGroupProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
@@ -143,7 +141,7 @@ export interface HvCheckBoxGroupProps
 export const HvCheckBoxGroup = (props: HvCheckBoxGroupProps) => {
   const {
     id,
-    classes,
+    classes: classesProp,
     className,
     children,
     name,
@@ -167,6 +165,8 @@ export const HvCheckBoxGroup = (props: HvCheckBoxGroupProps) => {
     onChange,
     ...others
   } = useDefaultProps("HvCheckBoxGroup", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const [value, setValue] = useControlled(
     valueProp,
@@ -328,20 +328,20 @@ export const HvCheckBoxGroup = (props: HvCheckBoxGroupProps) => {
     : ariaErrorMessage;
 
   return (
-    <StyledFormElement
+    <HvFormElement
       id={id}
       name={name}
       status={validationState}
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(className, classes?.root, checkBoxGroupClasses.root)}
+      className={cx(classes.root, className)}
     >
       {label && (
-        <StyledLabel
+        <HvLabel
           id={setId(elementId, "label")}
           label={label}
-          className={clsx(classes?.label, checkBoxGroupClasses.label)}
+          className={classes.label}
         />
       )}
 
@@ -351,7 +351,7 @@ export const HvCheckBoxGroup = (props: HvCheckBoxGroupProps) => {
         </HvInfoMessage>
       )}
 
-      <StyledGroupContainer
+      <div
         role="group"
         aria-label={ariaLabel}
         aria-labelledby={
@@ -367,19 +367,11 @@ export const HvCheckBoxGroup = (props: HvCheckBoxGroupProps) => {
             .join(" ")
             .trim() || undefined
         }
-        className={clsx(
-          classes?.group,
-          checkBoxGroupClasses.group,
-          orientation === "vertical" &&
-            clsx(classes?.vertical, checkBoxGroupClasses.vertical),
-          orientation === "horizontal" &&
-            clsx(classes?.horizontal, checkBoxGroupClasses.horizontal),
-          validationState === "invalid" &&
-            clsx(classes?.invalid, checkBoxGroupClasses.invalid)
-        )}
-        $vertical={orientation === "vertical"}
-        $horizontal={orientation === "horizontal"}
-        $invalid={validationState === "invalid"}
+        className={cx(classes.group, {
+          [classes.vertical]: orientation === "vertical",
+          [classes.horizontal]: orientation === "horizontal",
+          [classes.invalid]: validationState === "invalid",
+        })}
         {...others}
       >
         {showSelectAll && (
@@ -389,22 +381,22 @@ export const HvCheckBoxGroup = (props: HvCheckBoxGroupProps) => {
             label={selectAllLabelComponent}
             disabled={disabled}
             readOnly={readOnly}
-            className={clsx(classes?.selectAll, checkBoxGroupClasses.selectAll)}
+            className={classes.selectAll}
             onChange={handleSelectAll}
           />
         )}
         {modifiedChildren}
-      </StyledGroupContainer>
+      </div>
 
       {canShowError && (
         <HvWarningText
           id={setId(elementId, "error")}
           disableBorder
-          className={clsx(classes?.error, checkBoxGroupClasses.error)}
+          className={classes.error}
         >
           {validationMessage}
         </HvWarningText>
       )}
-    </StyledFormElement>
+    </HvFormElement>
   );
 };
