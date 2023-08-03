@@ -1,10 +1,8 @@
 import React, { useCallback } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
 
 import { SwitchProps as MuiSwitchProps } from "@mui/material";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";
 import { setId } from "@core/utils/setId";
@@ -12,17 +10,19 @@ import {
   HvWarningText,
   HvLabelProps,
   HvFormStatus,
+  HvFormElement,
+  HvLabel,
 } from "@core/components/Forms";
 import { HvBaseSwitch } from "@core/components/BaseSwitch";
 import { HvBaseProps } from "@core/types/generic";
 import { isInvalid } from "@core/components/Forms/FormElement/validationStates";
+import { ExtractNames } from "@core/utils/classes";
 
-import {
-  StyledFormElement,
-  StyledLabel,
-  StyledSwitchContainer,
-} from "./Switch.styles";
-import switchClasses, { HvSwitchClasses } from "./switchClasses";
+import { staticClasses, useClasses } from "./Switch.styles";
+
+export { staticClasses as switchClasses };
+
+export type HvSwitchClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSwitchProps
   extends Omit<MuiSwitchProps, "onChange" | "classes">,
@@ -136,7 +136,7 @@ export interface HvSwitchProps
  */
 export const HvSwitch = (props: HvSwitchProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
 
     id,
@@ -165,6 +165,8 @@ export const HvSwitch = (props: HvSwitchProps) => {
 
     ...others
   } = useDefaultProps("HvSwitch", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const elementId = useUniqueId(id, "hvswitch");
 
@@ -217,32 +219,28 @@ export const HvSwitch = (props: HvSwitchProps) => {
   }
 
   return (
-    <StyledFormElement
+    <HvFormElement
       id={id}
       name={name}
       status={validationState}
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(className, switchClasses.root, classes?.root)}
+      className={cx(classes.root, className)}
     >
       {label && (
-        <StyledLabel
+        <HvLabel
           id={setId(elementId, "label")}
           htmlFor={setId(elementId, "input")}
           label={label}
-          className={clsx(switchClasses.label, classes?.label)}
+          className={classes.label}
           {...labelProps}
         />
       )}
-      <StyledSwitchContainer
-        className={clsx(
-          switchClasses.switchContainer,
-          classes?.switchContainer,
-          isStateInvalid &&
-            clsx(switchClasses.invalidSwitch, classes?.invalidSwitch)
-        )}
-        $invalid={isStateInvalid}
+      <div
+        className={cx(classes.switchContainer, {
+          [classes.invalidSwitch]: isStateInvalid,
+        })}
       >
         <HvBaseSwitch
           id={label ? setId(elementId, "input") : setId(id, "input")}
@@ -263,11 +261,11 @@ export const HvSwitch = (props: HvSwitchProps) => {
           }}
           {...others}
         />
-      </StyledSwitchContainer>
+      </div>
       {canShowError && (
         <HvWarningText
           id={setId(elementId, "error")}
-          className={clsx(switchClasses.error, classes?.error)}
+          className={classes.error}
           disableBorder
           disableAdornment
           hideText
@@ -275,6 +273,6 @@ export const HvSwitch = (props: HvSwitchProps) => {
           {validationMessage}
         </HvWarningText>
       )}
-    </StyledFormElement>
+    </HvFormElement>
   );
 };
