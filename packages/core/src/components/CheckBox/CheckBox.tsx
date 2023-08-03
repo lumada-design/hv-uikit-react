@@ -1,26 +1,28 @@
 import { useCallback, useState } from "react";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";
 import { setId } from "@core/utils/setId";
-import { HvBaseCheckBoxProps } from "@core/components/BaseCheckBox";
+import {
+  HvBaseCheckBox,
+  HvBaseCheckBoxProps,
+} from "@core/components/BaseCheckBox";
 import {
   HvLabelProps,
   HvFormStatus,
   HvWarningText,
   isInvalid,
+  HvFormElement,
+  HvLabel,
 } from "@core/components/Forms";
+import { ExtractNames } from "@core/utils/classes";
 
-import {
-  StyledBaseCheckBox,
-  StyledFormElement,
-  StyledLabel,
-  StyledLabelContainer,
-} from "./CheckBox.styles";
-import checkBoxClasses, { HvCheckBoxClasses } from "./checkBoxClasses";
+import { staticClasses, useClasses } from "./CheckBox.styles";
+
+export { staticClasses as checkBoxClasses };
+
+export type HvCheckBoxClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCheckBoxProps extends Omit<HvBaseCheckBoxProps, "classes"> {
   /**
@@ -67,7 +69,7 @@ export interface HvCheckBoxProps extends Omit<HvBaseCheckBoxProps, "classes"> {
 export const HvCheckBox = (props: HvCheckBoxProps) => {
   const {
     id,
-    classes,
+    classes: classesProp,
     className,
     name,
     checked,
@@ -92,6 +94,8 @@ export const HvCheckBox = (props: HvCheckBoxProps) => {
     onBlur,
     ...others
   } = useDefaultProps("HvCheckBox", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const elementId = useUniqueId(id, "hvcheckbox");
 
@@ -174,16 +178,12 @@ export const HvCheckBox = (props: HvCheckBoxProps) => {
   }
 
   const checkbox = (
-    <StyledBaseCheckBox
+    <HvBaseCheckBox
       id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
       name={name}
-      className={clsx(
-        checkBoxClasses.checkbox,
-        classes?.checkbox,
-        isStateInvalid &&
-          clsx(checkBoxClasses.invalidCheckbox, classes?.invalidCheckbox)
-      )}
-      $invalid={isStateInvalid}
+      className={cx(classes.checkbox, {
+        [classes.invalidCheckbox]: isStateInvalid,
+      })}
       disabled={disabled}
       readOnly={readOnly}
       required={required}
@@ -207,44 +207,35 @@ export const HvCheckBox = (props: HvCheckBoxProps) => {
   );
 
   return (
-    <StyledFormElement
+    <HvFormElement
       id={id}
       name={name}
       status={validationState}
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(
-        className,
-        checkBoxClasses.root,
-        classes?.root,
-        !!(focusVisible && label) &&
-          clsx(checkBoxClasses.focusVisible, classes?.focusVisible)
+      className={cx(
+        classes.root,
+        { [classes.focusVisible]: !!(focusVisible && label) },
+        className
       )}
-      $focusVisible={!!(focusVisible && label)}
     >
       {hasLabel ? (
-        <StyledLabelContainer
-          className={clsx(
-            checkBoxClasses.container,
-            classes?.container,
-            disabled && clsx(checkBoxClasses.disabled, classes?.disabled),
-            isStateInvalid &&
-              clsx(checkBoxClasses.invalidContainer, classes?.invalidContainer)
-          )}
-          $disabled={disabled}
-          $invalid={isStateInvalid}
+        <div
+          className={cx(classes.container, {
+            [classes.disabled]: disabled,
+            [classes.invalidContainer]: isStateInvalid,
+          })}
         >
           {checkbox}
-          <StyledLabel
+          <HvLabel
             id={setId(elementId, "label")}
             htmlFor={setId(elementId, "input")}
             label={label}
-            className={clsx(checkBoxClasses.label, classes?.label)}
-            $disabled={disabled}
+            className={classes.label}
             {...labelProps}
           />
-        </StyledLabelContainer>
+        </div>
       ) : (
         checkbox
       )}
@@ -258,6 +249,6 @@ export const HvCheckBox = (props: HvCheckBoxProps) => {
           {validationMessage}
         </HvWarningText>
       )}
-    </StyledFormElement>
+    </HvFormElement>
   );
 };
