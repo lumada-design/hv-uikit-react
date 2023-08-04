@@ -52,6 +52,7 @@ export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
       classes: classesProp,
       className,
       fixed,
+      disableGutters,
       ...others
     } = useDefaultProps("HvContainer", props);
 
@@ -79,7 +80,7 @@ export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
 
     return (
       <MuiContainer
-        className={cx(css(gutters), className)}
+        className={cx({ [css(gutters)]: !disableGutters }, className)}
         classes={{
           root: classes.root,
           disableGutters: classes.disableGutters,
@@ -93,6 +94,7 @@ export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
         ref={ref}
         maxWidth={maxWidth}
         fixed={fixed}
+        disableGutters={disableGutters}
         {...others}
       />
     );
