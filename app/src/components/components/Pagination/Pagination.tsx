@@ -1,3 +1,4 @@
+import { css } from "@emotion/css";
 import styled from "@emotion/styled";
 import {
   HvDotPagination,
@@ -54,6 +55,11 @@ export const Pagination = () => {
   );
 };
 
+const styles = {
+  container: css({ width: "100%", justifyContent: "center" }),
+  page: css({ textAlign: "center" }),
+};
+
 export const DotPagination = () => {
   const [page, setPage] = useState<number>(0);
   const pages = [
@@ -64,20 +70,11 @@ export const DotPagination = () => {
     "And finally, this is page 5",
   ];
 
-  const StyledRoot = styled("div")({
-    width: "100%",
-    justifyContent: "center",
-  });
-
-  const StyledPage = styled("div")({
-    textAlign: "center",
-  });
-
   return (
-    <StyledRoot>
-      <StyledPage>
+    <div className={styles.container}>
+      <div className={styles.page}>
         <HvTypography>{pages[page]}</HvTypography>
-      </StyledPage>
+      </div>
       <br />
       <HvDotPagination
         page={page}
@@ -96,6 +93,6 @@ export const DotPagination = () => {
         role="navigation"
         aria-label="Example Dot Navigation"
       />
-    </StyledRoot>
+    </div>
   );
 };

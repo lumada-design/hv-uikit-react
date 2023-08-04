@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import {
   CurrentStep,
   RadioButtonUnselected,
@@ -21,6 +20,11 @@ const meta: Meta<typeof HvDotPagination> = {
 
 export default meta;
 
+const styles = {
+  container: css({ width: "100%", justifyContent: "center" }),
+  page: css({ textAlign: "center" }),
+};
+
 export const Main: StoryObj<HvDotPaginationProps> = {
   argTypes: {
     classes: { control: { disable: true } },
@@ -35,20 +39,11 @@ export const Main: StoryObj<HvDotPaginationProps> = {
       "And finally, this is page 5",
     ];
 
-    const StyledRoot = styled("div")({
-      width: "100%",
-      justifyContent: "center",
-    });
-
-    const StyledPage = styled("div")({
-      textAlign: "center",
-    });
-
     return (
-      <StyledRoot>
-        <StyledPage>
+      <div className={styles.container}>
+        <div className={styles.page}>
           <HvTypography>{pages[page]}</HvTypography>
-        </StyledPage>
+        </div>
         <br />
         <HvDotPagination
           page={page}
@@ -67,7 +62,7 @@ export const Main: StoryObj<HvDotPaginationProps> = {
           role="navigation"
           aria-label="Example Dot Navigation"
         />
-      </StyledRoot>
+      </div>
     );
   },
 };
@@ -92,15 +87,6 @@ export const CustomizedDotPagination: StoryObj<HvDotPaginationProps> = {
       "And finally, this is page 5",
     ];
 
-    const StyledRoot = styled("div")({
-      width: "100%",
-      justifyContent: "center",
-    });
-
-    const StyledPage = styled("div")({
-      textAlign: "center",
-    });
-
     const dotpaginationStyle: HvDotPaginationClasses = {
       radioRoot: css({
         marginLeft: 0,
@@ -122,10 +108,10 @@ export const CustomizedDotPagination: StoryObj<HvDotPaginationProps> = {
     };
 
     return (
-      <StyledRoot>
-        <StyledPage>
+      <div className={styles.container}>
+        <div className={styles.page}>
           <HvTypography>{pages[page]}</HvTypography>
-        </StyledPage>
+        </div>
         <br />
         <HvDotPagination
           classes={dotpaginationStyle}
@@ -147,7 +133,7 @@ export const CustomizedDotPagination: StoryObj<HvDotPaginationProps> = {
           role="navigation"
           aria-label="Example Dot Navigation"
         />
-      </StyledRoot>
+      </div>
     );
   },
 };
