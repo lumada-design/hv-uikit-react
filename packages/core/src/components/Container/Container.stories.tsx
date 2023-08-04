@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import { CSSInterpolation, css } from "@emotion/css";
 
 import {
   HvContainer,
@@ -28,28 +28,35 @@ export const Main: StoryObj<HvContainerProps> = {
     sx: { control: { disable: true } },
   },
   render: (args) => {
-    const StyledContainer = styled(HvContainer)({
-      border: "1px solid",
-      borderColor: theme.colors.atmo4,
-      backgroundColor: theme.colors.atmo3,
-      height: 100,
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "column",
-    });
+    const styles: { [key: string]: CSSInterpolation } = {
+      content: {
+        border: "1px solid",
+        borderColor: theme.colors.atmo4,
+        backgroundColor: theme.colors.atmo3,
+        height: 100,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      },
+      row: { display: "flex", flexDirection: "row" },
+    };
+
     const width = useWidth();
+
     return (
-      <StyledContainer {...args}>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <HvTypography variant="label">Current width:</HvTypography>
-          <HvTypography variant="body">{width}</HvTypography>
+      <HvContainer {...args}>
+        <div className={css(styles.content)}>
+          <div className={css(styles.row)}>
+            <HvTypography variant="label">Current width:</HvTypography>
+            <HvTypography variant="body">{width}</HvTypography>
+          </div>
+          <div className={css(styles.row)}>
+            <HvTypography variant="label">maxWidth:</HvTypography>
+            <HvTypography variant="body">{args.maxWidth}</HvTypography>
+          </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <HvTypography variant="label">maxWidth:</HvTypography>
-          <HvTypography variant="body">{args.maxWidth}</HvTypography>
-        </div>
-      </StyledContainer>
+      </HvContainer>
     );
   },
 };
