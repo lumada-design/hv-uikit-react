@@ -276,6 +276,10 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     secondLevelItemColor: theme.colors.secondary,
     secondLevelSelectedItemColor: theme.colors.brand,
     secondLevelSelectedItemBackgroundColor: "transparent",
+    selectedItemBorderRadius: "0px",
+    secondLevelSelectedItemBorderRadius: "0px",
+    itemPadding: "0px",
+    secondLevelItemPadding: "0px",
   },
   card: {
     iconMargin: "-24px",

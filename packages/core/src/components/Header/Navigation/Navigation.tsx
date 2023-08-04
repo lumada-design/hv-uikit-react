@@ -1,21 +1,21 @@
-import { clsx } from "clsx";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { MouseEvent } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "@core/utils/classes";
 
 import { HvHeaderMenuBar, HvHeaderMenuBarProps } from "./MenuBar";
-import { StyledNav } from "./Navigation.styles";
+import { staticClasses, useClasses } from "./Navigation.styles";
 import { FocusProvider } from "./utils/FocusContext";
 import { SelectionContext } from "./utils/SelectionContext";
-import headerNavigationClasses, {
-  HvHeaderNavigationClasses,
-} from "./navigationClasses";
 import {
   HvHeaderNavigationItemProp,
   useSelectionPath,
 } from "./useSelectionPath";
+
+export { staticClasses as headerNavigationClasses };
+
+export type HvHeaderNavigationClasses = ExtractNames<typeof useClasses>;
 
 export interface HvHeaderNavigationProps
   extends HvBaseProps<HTMLDivElement, "onClick"> {
@@ -32,10 +32,12 @@ export const HvHeaderNavigation = (props: HvHeaderNavigationProps) => {
     selected,
     onClick,
     className,
-    classes,
+    classes: classesProp,
     levels = 2,
     ...others
   } = useDefaultProps("HvHeaderNavigation", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const selectionPath = useSelectionPath(data, selected);
 
@@ -48,14 +50,7 @@ export const HvHeaderNavigation = (props: HvHeaderNavigationProps) => {
   return (
     <SelectionContext.Provider value={selectionPath}>
       <FocusProvider>
-        <StyledNav
-          className={clsx(
-            className,
-            headerNavigationClasses.root,
-            classes?.root
-          )}
-          {...others}
-        >
+        <nav className={cx(classes.root, className)} {...others}>
           <HvHeaderMenuBar
             data={data}
             type="menubar"
@@ -63,7 +58,7 @@ export const HvHeaderNavigation = (props: HvHeaderNavigationProps) => {
             levels={levels}
             currentLevel={1}
           />
-        </StyledNav>
+        </nav>
       </FocusProvider>
     </SelectionContext.Provider>
   );

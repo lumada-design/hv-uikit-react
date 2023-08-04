@@ -3,12 +3,17 @@ import React, { MouseEvent, useContext } from "react";
 import { HvTypography } from "@core/components/Typography";
 import { HvBaseProps } from "@core/types/generic";
 import { isKey } from "@core/utils/keyboardUtils";
+import { ExtractNames } from "@core/utils/classes";
 
 import { FocusContext } from "../utils/FocusContext";
 import { SelectionContext } from "../utils/SelectionContext";
-import { MenuItemLabel, MenuItemLi, MenuItemLink } from "./MenuItem.styles";
+import { useClasses, staticClasses } from "./MenuItem.styles";
 import { HvHeaderNavigationItemProp } from "../useSelectionPath";
 import { Bar } from "../MenuBar/Bar";
+
+export { staticClasses as headerMenuItemClasses };
+
+export type HvHeaderMenuItemClasses = ExtractNames<typeof useClasses>;
 
 export interface HvHeaderMenuItemProps
   extends HvBaseProps<HTMLDivElement, "onClick"> {
@@ -17,6 +22,7 @@ export interface HvHeaderMenuItemProps
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
   levels: number;
   currentLevel: number;
+  classes?: HvHeaderMenuItemClasses;
 }
 
 // Traverse the tree of items and return the first href it finds
@@ -51,7 +57,11 @@ export const HvHeaderMenuItem = ({
   onClick,
   levels,
   currentLevel,
+  classes: classesProp,
+  className,
 }: HvHeaderMenuItemProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const selectionPath = useContext(SelectionContext);
   const { dispatch } = useContext(FocusContext);
 
@@ -110,36 +120,41 @@ export const HvHeaderMenuItem = ({
   }
 
   return (
-    <MenuItemLi
+    <li
       id={id}
       key={item.label}
-      $selected={!!isSelected}
-      $isMenu={isMenu}
+      className={cx(
+        classes.root,
+        {
+          [classes.menu]: isMenu,
+          [classes.menubar]: !isMenu,
+          [classes.selected]: !!isSelected,
+        },
+        className
+      )}
     >
       {itemHref ? (
-        <MenuItemLink
+        <a
+          className={classes.link}
           href={itemHref}
           target={itemTarget}
           {...itemProps}
-          $isSelected={isSelected}
-          $isMenu={isMenu}
           aria-current={isCurrent}
         >
           {label}
-        </MenuItemLink>
+        </a>
       ) : (
         // keeping this code path for backwards compatibility, but
         // shouldn't really be used as it's not accessible
-        <MenuItemLabel
+        <div
+          className={classes.button}
           role="button"
           {...itemProps}
           tabIndex={0}
-          $isSelected={isSelected}
-          $isMenu={isMenu}
           aria-current={isCurrent}
         >
           {label}
-        </MenuItemLabel>
+        </div>
       )}
       {hasSubLevel && currentLevel < levels && (
         <Bar data={data} type="menu">
@@ -155,6 +170,6 @@ export const HvHeaderMenuItem = ({
           ))}
         </Bar>
       )}
-    </MenuItemLi>
+    </li>
   );
 };

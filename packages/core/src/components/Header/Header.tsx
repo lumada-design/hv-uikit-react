@@ -1,10 +1,12 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledHeaderRoot, StyledAppBar } from "./Header.styles";
-import headerClasses, { HvHeaderClasses } from "./headerClasses";
+import { useClasses, staticClasses } from "./Header.styles";
+
+export { staticClasses as headerClasses };
+
+export type HvHeaderClasses = ExtractNames<typeof useClasses>;
 
 export type HvHeaderPosition =
   | "fixed"
@@ -26,27 +28,32 @@ export interface HvHeaderProps extends HvBaseProps {
 export const HvHeader = (props: HvHeaderProps) => {
   const {
     className,
-    classes,
+    classes: classesProp,
     children,
     position = "fixed",
     ...others
   } = useDefaultProps("HvHeader", props);
 
+  const { classes, cx, css } = useClasses(classesProp);
+
   return (
-    <StyledAppBar
-      className={clsx(
-        className,
-        classes?.root,
-        headerClasses.root,
-        classes?.backgroundColor,
-        headerClasses.backgroundColor
+    <header
+      className={cx(
+        classes.root,
+        classes.backgroundColor,
+        css({
+          position,
+          ...(position === "fixed" && {
+            top: 0,
+            left: "auto",
+            right: 0,
+          }),
+        }),
+        className
       )}
-      $position={position}
       {...others}
     >
-      <StyledHeaderRoot className={clsx(classes?.header, headerClasses.header)}>
-        {children}
-      </StyledHeaderRoot>
-    </StyledAppBar>
+      <div className={classes.header}>{children}</div>
+    </header>
   );
 };

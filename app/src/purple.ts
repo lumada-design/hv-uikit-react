@@ -18,6 +18,8 @@ const headerTheme = createTheme({
     selectedItemBorderTopThickness: "0px",
     selectedItemBorderBottomColor: "transparent",
     selectedItemBorderBottomThickness: "0px",
+    selectedItemBorderRadius: theme.radii.full,
+    itemPadding: theme.space.xs,
   },
 });
 
