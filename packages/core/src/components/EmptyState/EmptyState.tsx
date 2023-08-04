@@ -1,21 +1,21 @@
-import { clsx } from "clsx";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import React from "react";
 
 import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
-import { HvTypographyProps } from "@core/components/Typography";
+import { HvTypography, HvTypographyProps } from "@core/components/Typography";
 import { useTheme as useHvTheme } from "@core/hooks/useTheme";
+import { ExtractNames } from "@core/utils/classes";
 
-import {
-  StyledContainer,
-  StyledRoot,
-  StyledTextContainer,
-  StyledTypography,
-} from "./EmptyState.styles";
-import emptyStateClasses, { HvEmptyStateClasses } from "./emptyStateClasses";
+import { staticClasses, useClasses } from "./EmptyState.styles";
+
+export { staticClasses as emptyStateClasses };
+
+export type HvEmptyStateClasses = ExtractNames<typeof useClasses>;
 
 export interface HvEmptyStateProps
   extends HvBaseProps<HTMLDivElement, "title"> {
@@ -35,78 +35,71 @@ export interface HvEmptyStateProps
  * Empty states communicate that there’s no information, data or values to display in a given context.
  */
 export const HvEmptyState = (props: HvEmptyStateProps) => {
+  const {
+    action,
+    icon,
+    title,
+    message,
+    classes: classesProp,
+    className,
+    ...others
+  } = useDefaultProps("HvEmptyState", props);
+
+  const { classes, cx, css } = useClasses(classesProp);
+
   const { activeTheme } = useHvTheme();
 
   const muiTheme = useTheme();
 
+  const onlyXs = useMediaQuery(muiTheme.breakpoints.only("xs"));
+  const upSm = useMediaQuery(muiTheme.breakpoints.up("sm"));
+
+  const messageOnly = !!(message && !(title || action));
+
   const renderNode = (
-    type: "action" | "message" | "title",
     variant?: HvTypographyProps["variant"],
-    node?: string | React.ReactNode,
-    className?: string
+    node?: React.ReactNode,
+    style?: string
   ) =>
     node && (
-      <StyledTypography $type={type} variant={variant} className={className}>
+      <HvTypography variant={variant} className={style}>
         {node}
-      </StyledTypography>
+      </HvTypography>
     );
 
-  const { action, icon, title, message, classes, className, ...others } =
-    useDefaultProps("HvEmptyState", props);
-
   return (
-    <StyledRoot
-      className={clsx(className, emptyStateClasses.root, classes?.root)}
-      {...others}
-    >
-      <StyledContainer
-        className={clsx(
-          emptyStateClasses.container,
-          classes?.container,
-          !!(message && !(title || action)) &&
-            clsx(
-              emptyStateClasses.containerMessageOnly,
-              classes?.containerMessageOnly
-            )
+    <div className={cx(classes.root, className)} {...others}>
+      <div
+        className={cx(
+          classes.container,
+          onlyXs &&
+            css({
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+            }),
+          {
+            [classes.containerMessageOnly]: messageOnly,
+          },
+          onlyXs && messageOnly && css({ flexDirection: "row" })
         )}
-        $breakpoints={muiTheme.breakpoints}
-        $messageOnly={!!(message && !(title || action))}
       >
+        <div className={classes.iconContainer}>{icon}</div>
         <div
-          className={clsx(
-            emptyStateClasses.iconContainer,
-            classes?.iconContainer
-          )}
-        >
-          {icon}
-        </div>
-        <StyledTextContainer
-          $breakpoints={muiTheme.breakpoints}
-          className={clsx(
-            emptyStateClasses.textContainer,
-            classes?.textContainer
+          className={cx(
+            classes.textContainer,
+            upSm && css({ marginLeft: theme.space.xs })
           )}
         >
           {renderNode(
-            "title",
             activeTheme?.emptyState.titleVariant,
             title,
-            clsx(emptyStateClasses.titleContainer, classes?.titleContainer)
+            classes.titleContainer
           )}
-          {renderNode(
-            "message",
-            "body",
-            message,
-            clsx(emptyStateClasses.messageContainer, classes?.messageContainer)
-          )}
-          {renderNode(
-            "action",
-            "body",
-            action,
-            clsx(emptyStateClasses.actionContainer, classes?.actionContainer)
-          )}
-        </StyledTextContainer>
-      </StyledContainer>
-    </StyledRoot>
+          {renderNode("body", message, classes.messageContainer)}
+          {renderNode("body", action, classes.actionContainer)}
+        </div>
+      </div>
+    </div>
   );
 };
