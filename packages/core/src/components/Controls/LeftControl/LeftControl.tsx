@@ -1,14 +1,16 @@
-import { clsx } from "clsx";
-
 import { useContext } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
 import { HvInput, HvInputProps } from "@core/components/Input";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledRoot } from "./LeftControl.styles";
-import leftControlClasses, { HvLeftControlClasses } from "./leftControlClasses";
+import { useClasses, staticClasses } from "./LeftControl.styles";
 import { HvControlsContext } from "../context/ControlsContext";
+
+export { staticClasses as leftControlClasses };
+
+export type HvLeftControlClasses = ExtractNames<typeof useClasses>;
 
 export interface HvLeftControlProps extends HvBaseProps {
   /** if `true` the hide sort by dropdown is not rendered */
@@ -28,7 +30,7 @@ export interface HvLeftControlProps extends HvBaseProps {
 
 export const HvLeftControl = ({
   id,
-  classes,
+  classes: classesProp,
   className,
   children,
   placeholder = "Search",
@@ -37,6 +39,8 @@ export const HvLeftControl = ({
   searchProps,
   ...others
 }: HvLeftControlProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const { onSearch: onSearchHandler } = useContext(HvControlsContext);
 
   const onChangeFilter: HvInputProps["onChange"] = (e, value) => {
@@ -45,11 +49,7 @@ export const HvLeftControl = ({
   };
 
   return (
-    <StyledRoot
-      id={id}
-      className={clsx(className, leftControlClasses.root, classes?.root)}
-      {...others}
-    >
+    <div id={id} className={cx(classes.root, className)} {...others}>
       {!hideSearch && (
         <HvInput
           id={setId(id, "search-input")}
@@ -60,6 +60,6 @@ export const HvLeftControl = ({
         />
       )}
       {children}
-    </StyledRoot>
+    </div>
   );
 };

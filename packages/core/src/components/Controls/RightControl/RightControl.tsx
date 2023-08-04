@@ -1,17 +1,17 @@
-import { clsx } from "clsx";
-
 import { useContext, useState } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
-import { HvDropdownProps } from "@core/components/Dropdown";
+import { HvDropdown, HvDropdownProps } from "@core/components/Dropdown";
 import { HvListValue } from "@core/components/List";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledDropdown, StyledRoot } from "./RightControl.styles";
-import rightControlClasses, {
-  HvRightControlClasses,
-} from "./rightControlClasses";
+import { useClasses, staticClasses } from "./RightControl.styles";
 import { HvControlsContext } from "../context/ControlsContext";
+
+export { staticClasses as rightControlClasses };
+
+export type HvRightControlClasses = ExtractNames<typeof useClasses>;
 
 export interface HvRightListControls extends HvListValue {
   accessor: string;
@@ -33,7 +33,7 @@ export interface HvRightControlProps extends HvBaseProps {
 
 export const HvRightControl = ({
   id,
-  classes,
+  classes: classesProp,
   className,
   children,
   values,
@@ -42,6 +42,8 @@ export const HvRightControl = ({
   sortProps,
   ...others
 }: HvRightControlProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const [dropDownValues, setDropdownValues] = useState(values);
 
   const { onSort: onSortHandler } = useContext(HvControlsContext);
@@ -59,25 +61,18 @@ export const HvRightControl = ({
   };
 
   return (
-    <StyledRoot
-      id={id}
-      className={clsx(className, rightControlClasses.root, classes?.root)}
-      {...others}
-    >
+    <div id={id} className={cx(classes.root, className)} {...others}>
       {!hideSortBy && (
-        <StyledDropdown
+        <HvDropdown
           id={setId(id, "sort-by-dropdown")}
           values={dropDownValues}
-          className={clsx(
-            rightControlClasses.sortDropdown,
-            classes?.sortDropdown
-          )}
+          className={classes.sortDropdown}
           onChange={handleChangeSort}
           singleSelectionToggle={false}
           {...sortProps}
         />
       )}
       {children}
-    </StyledRoot>
+    </div>
   );
 };

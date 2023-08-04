@@ -1,6 +1,5 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledRoot = styled("div")({
-  display: "inline-flex",
-  gap: 10,
+export const { staticClasses, useClasses } = createClasses("HvLeftControl", {
+  root: { display: "inline-flex", gap: 10 },
 });

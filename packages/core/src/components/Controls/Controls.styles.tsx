@@ -1,13 +1,12 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledRoot = styled("div")({
-  display: "inline-flex",
-  width: "100%",
-  justifyContent: "space-between",
-});
-
-export const StyledSection = styled("div")({
-  display: "inline-flex",
-  alignItems: "flex-end",
-  gap: 10,
+export const { staticClasses, useClasses } = createClasses("HvControls", {
+  root: {
+    display: "inline-flex",
+    width: "100%",
+    justifyContent: "space-between",
+  },
+  section: { display: "inline-flex", alignItems: "flex-end", gap: 10 },
+  rightSection: {},
+  leftSection: {},
 });
