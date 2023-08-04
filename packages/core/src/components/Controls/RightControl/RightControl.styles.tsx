@@ -1,14 +1,6 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils/classes";
 
-import { HvDropdown, HvDropdownProps } from "@core/components/Dropdown";
-
-export const StyledRoot = styled("div")({
-  display: "inline-flex",
-  gap: 10,
-});
-
-export const StyledDropdown = styled((props: HvDropdownProps) => (
-  <HvDropdown {...props} />
-))({
-  minWidth: 200,
+export const { staticClasses, useClasses } = createClasses("HvRightControl", {
+  root: { display: "inline-flex", gap: 10 },
+  sortDropdown: { minWidth: 200 },
 });

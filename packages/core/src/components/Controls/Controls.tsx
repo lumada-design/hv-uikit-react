@@ -1,18 +1,20 @@
 import { Children, MouseEvent } from "react";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { HvBaseProps, HvExtraProps } from "@core/types/generic";
 import { HvButton } from "@core/components/Button";
 import { HvMultiButton } from "@core/components/MultiButton";
 import { setId } from "@core/utils/setId";
 import { useControlled } from "@core/hooks/useControlled";
 import { HvTableInstance } from "@core/components/Table/hooks/useTable";
+import { ExtractNames } from "@core/utils/classes";
 
 import { HvControlsContextProvider } from "./context/ControlsContext";
-import controlsClasses, { HvControlsClasses } from "./controlClasses";
-import { StyledRoot, StyledSection } from "./Controls.styles";
+import { staticClasses, useClasses } from "./Controls.styles";
+
+export { staticClasses as controlsClasses };
+
+export type HvControlsClasses = ExtractNames<typeof useClasses>;
 
 export interface HvControlsViewConfiguration extends HvExtraProps {
   id?: string;
@@ -59,7 +61,7 @@ export const HvControls = (props: HvControlsProps) => {
   const {
     id,
     className,
-    classes,
+    classes: classesProp,
     views,
     callbacks,
     selectedView,
@@ -68,6 +70,8 @@ export const HvControls = (props: HvControlsProps) => {
     hideViewSwitcher = false,
     onViewChange,
   } = useDefaultProps("HvControls", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const [currentView, setCurrentView] = useControlled(
     selectedView,
@@ -103,34 +107,17 @@ export const HvControls = (props: HvControlsProps) => {
   );
 
   return (
-    <StyledRoot
-      id={id}
-      className={clsx(className, controlsClasses.root, classes?.root)}
-    >
+    <div id={id} className={cx(classes.root, className)}>
       <HvControlsContextProvider
         value={{
           onSearch: onSearchHandler,
           onSort: onSortHandler,
         }}
       >
-        <StyledSection
-          className={clsx(
-            classes?.section,
-            controlsClasses.section,
-            classes?.leftSection,
-            controlsClasses.leftSection
-          )}
-        >
+        <div className={cx(classes.section, classes.leftSection)}>
           {leftChildren}
-        </StyledSection>
-        <StyledSection
-          className={clsx(
-            classes?.section,
-            controlsClasses.section,
-            classes?.rightSection,
-            controlsClasses.rightSection
-          )}
-        >
+        </div>
+        <div className={cx(classes.section, classes.rightSection)}>
           {rightChildren}
           {views && !hideViewSwitcher && views?.length > 0 && (
             <HvMultiButton id={setId(id, "view-multi-button")}>
@@ -148,8 +135,8 @@ export const HvControls = (props: HvControlsProps) => {
               ))}
             </HvMultiButton>
           )}
-        </StyledSection>
+        </div>
       </HvControlsContextProvider>
-    </StyledRoot>
+    </div>
   );
 };
