@@ -1,23 +1,22 @@
-import { clsx } from "clsx";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { isValidElement, MouseEvent } from "react";
 
 import isNil from "lodash/isNil";
 
-import { isValidElement, MouseEvent } from "react";
-
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { HvDropDownMenuProps } from "@core/components/DropDownMenu";
+import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "@core/components/Typography";
 
-import breadCrumbClasses, { HvBreadCrumbClasses } from "./breadCrumbClasses";
 import { HvPathElement } from "./PathElement";
 import { HvPage } from "./Page";
-import {
-  StyledOrderedList,
-  StyledRoot,
-  StyledTypography,
-} from "./BreadCrumb.styles";
+import { staticClasses, useClasses } from "./BreadCrumb.styles";
 import { pathWithSubMenu, removeExtension } from "./utils";
 import { HvBreadCrumbPathElement } from "./types";
+
+export { staticClasses as breadCrumbClasses };
+
+export type HvBreadCrumbClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBreadCrumbProps
   extends HvBaseProps<HTMLDivElement, "onClick"> {
@@ -42,7 +41,7 @@ export interface HvBreadCrumbProps
  */
 export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
     id,
     listRoute = [],
@@ -53,6 +52,8 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
     dropDownMenuProps,
     ...others
   } = useDefaultProps("HvBreadCrumb", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const maxVisibleElem = maxVisible && maxVisible < 2 ? 2 : maxVisible;
   let listPath = listRoute.slice();
@@ -89,14 +90,8 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
       : listPath;
 
   return (
-    <StyledRoot
-      id={id}
-      className={clsx(breadCrumbClasses.root, classes?.root, className)}
-      {...others}
-    >
-      <StyledOrderedList
-        className={clsx(breadCrumbClasses.orderedList, classes?.orderedList)}
-      >
+    <nav id={id} className={cx(classes.root, className)} {...others}>
+      <ol className={classes.orderedList}>
         {listPath.map((elem, index) => {
           const key = `key_${index}`;
           const isLast = index === breadcrumbPath.length - 1;
@@ -104,35 +99,23 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
           return (
             <HvPathElement
               classes={{
-                centerContainer: clsx(
-                  breadCrumbClasses.centerContainer,
-                  classes?.centerContainer
-                ),
-                separatorContainer: clsx(
-                  breadCrumbClasses.separatorContainer,
-                  classes?.separatorContainer
-                ),
+                centerContainer: classes.centerContainer,
+                separatorContainer: classes.separatorContainer,
               }}
               key={key}
               last={isLast}
             >
               {(isValidElement(elem) && elem) ||
                 (isLast && (
-                  <StyledTypography
-                    className={clsx(
-                      breadCrumbClasses.currentPage,
-                      classes?.currentPage
-                    )}
-                    variant="body"
-                  >
+                  <HvTypography className={classes.currentPage} variant="body">
                     {removeExtension(elem.label)}
-                  </StyledTypography>
+                  </HvTypography>
                 )) || (
                   <HvPage
                     elem={elem}
                     classes={{
-                      a: clsx(breadCrumbClasses.a, classes?.a),
-                      link: clsx(breadCrumbClasses.link, classes?.link),
+                      a: classes.a,
+                      link: classes.link,
                     }}
                     component={component}
                     onClick={onClick}
@@ -141,7 +124,7 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
             </HvPathElement>
           );
         })}
-      </StyledOrderedList>
-    </StyledRoot>
+      </ol>
+    </nav>
   );
 };
