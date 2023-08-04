@@ -1,16 +1,22 @@
-import { useTheme } from "@mui/material/styles";
-
-import { clsx } from "clsx";
-
-import { ContainerProps as MuiContainerProps } from "@mui/material/Container";
-
 import { forwardRef } from "react";
+
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { useTheme } from "@mui/material/styles";
+import MuiContainer, {
+  ContainerProps as MuiContainerProps,
+} from "@mui/material/Container";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledRoot } from "./Container.styles";
-import containerClasses, { HvContainerClasses } from "./containerClasses";
+import { staticClasses, useClasses } from "./Container.styles";
+
+export { staticClasses as containerClasses };
+
+export type HvContainerClasses = ExtractNames<typeof useClasses>;
 
 export interface HvContainerProps
   extends Omit<MuiContainerProps, "classes">,
@@ -43,29 +49,47 @@ export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
   (props, ref) => {
     const {
       maxWidth = false,
-      classes,
+      classes: classesProp,
       className,
       fixed,
       ...others
     } = useDefaultProps("HvContainer", props);
+
+    const { classes, cx, css } = useClasses(classesProp);
+
     const muiTheme = useTheme();
+
+    const upMd = useMediaQuery(muiTheme.breakpoints.up("md"));
+
+    const gutters = upMd
+      ? {
+          // Increases specificity
+          [`&.${staticClasses.root}`]: {
+            paddingLeft: theme.spacing(4),
+            paddingRight: theme.spacing(4),
+          },
+        }
+      : {
+          // Increases specificity
+          [`&.${staticClasses.root}`]: {
+            paddingLeft: theme.space.sm,
+            paddingRight: theme.space.sm,
+          },
+        };
+
     return (
-      <StyledRoot
-        className={className}
+      <MuiContainer
+        className={cx(css(gutters), className)}
         classes={{
-          root: clsx(containerClasses.root, classes?.root),
-          disableGutters: clsx(
-            containerClasses.disableGutters,
-            classes?.disableGutters
-          ),
-          fixed: clsx(containerClasses.fixed, classes?.fixed),
-          maxWidthXs: clsx(containerClasses.maxWidthXs, classes?.maxWidthXs),
-          maxWidthSm: clsx(containerClasses.maxWidthSm, classes?.maxWidthSm),
-          maxWidthMd: clsx(containerClasses.maxWidthMd, classes?.maxWidthMd),
-          maxWidthLg: clsx(containerClasses.maxWidthLg, classes?.maxWidthLg),
-          maxWidthXl: clsx(containerClasses.maxWidthXl, classes?.maxWidthXl),
+          root: classes.root,
+          disableGutters: classes.disableGutters,
+          fixed: classes.fixed,
+          maxWidthXs: classes.maxWidthXs,
+          maxWidthSm: classes.maxWidthSm,
+          maxWidthMd: classes.maxWidthMd,
+          maxWidthLg: classes.maxWidthLg,
+          maxWidthXl: classes.maxWidthXl,
         }}
-        $breakpoints={muiTheme.breakpoints}
         ref={ref}
         maxWidth={maxWidth}
         fixed={fixed}
