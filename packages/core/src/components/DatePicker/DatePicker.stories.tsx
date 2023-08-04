@@ -44,15 +44,6 @@ export const Main: StoryObj<HvDatePickerProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-
-        return waitFor(() => screen.getByRole("tooltip"));
-      },
-    },
-  },
   decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: (args) => {
     return (
@@ -298,6 +289,15 @@ export const NearInvalid: StoryObj<HvDatePickerProps> = {
 };
 
 export const WithValueChange: StoryObj<HvDatePickerProps> = {
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("combobox"));
+
+        return waitFor(() => screen.getByRole("tooltip"));
+      },
+    },
+  },
   decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     const [date, setDate] = useState<Date | undefined>(new Date(2020, 0, 1));
