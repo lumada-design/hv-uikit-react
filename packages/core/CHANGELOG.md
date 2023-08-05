@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.24.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.23.0...@hitachivantara/uikit-react-core@5.24.0) (2023-08-05)
+
+### Bug Fixes
+
+- **BaseDropdown:** aria expanded set if role exists ([4cf0ee3](https://github.com/lumada-design/hv-uikit-react/commit/4cf0ee3c392365287969bb05b75dda09e93ef6fc))
+- **Container:** disable gutters not working ([#3567](https://github.com/lumada-design/hv-uikit-react/issues/3567)) ([4cbd9c3](https://github.com/lumada-design/hv-uikit-react/commit/4cbd9c39d9a0449f06e73bf9f9a6b0cf0ee0055c))
+- **dotPagination:** re-renders breaking keyboard navigation ([d042c6b](https://github.com/lumada-design/hv-uikit-react/commit/d042c6ba2b3a18de0bb4512e3a21c1fb98747df2))
+- **VerticalNavigation:** arial labels added to navigation slider buttons ([#3556](https://github.com/lumada-design/hv-uikit-react/issues/3556)) ([739fe55](https://github.com/lumada-design/hv-uikit-react/commit/739fe5514cb64a140de092693447a39712e5027d))
+
+### Features
+
+- **Snackbar:** improve text wrapping ([f2beca4](https://github.com/lumada-design/hv-uikit-react/commit/f2beca49388ba8659b1dfe7a803a5ae9034c0c21))
+
 # [5.23.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.22.1...@hitachivantara/uikit-react-core@5.23.0) (2023-08-03)
 
 ### Bug Fixes
