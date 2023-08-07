@@ -150,7 +150,7 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
         { [classes.semantic]: isSemantic },
         isSemantic &&
           css({
-            "& $selectAll div": {
+            [`& .${staticClasses.selectAll} div`]: {
               color: theme.colors.base_dark,
 
               "&:hover:not(:disabled)": {
@@ -163,12 +163,12 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
               },
             },
 
-            "& $selectAll:focus-within div": {
+            [`& .${staticClasses.selectAll}:focus-within div`]: {
               backgroundColor: hexToRgbA(baseColor, 0.3),
             },
 
             // IE fallback code (using focus-within-polyfill)
-            "& $selectAll.focus-within div": {
+            [`& .${staticClasses.selectAll}.focus-within div`]: {
               backgroundColor: hexToRgbA(baseColor, 0.3),
             },
           }),
