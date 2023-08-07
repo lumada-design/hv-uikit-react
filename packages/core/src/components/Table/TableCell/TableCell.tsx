@@ -1,5 +1,3 @@
-import styled from "@emotion/styled";
-
 import capitalize from "lodash/capitalize";
 
 import {
@@ -8,13 +6,11 @@ import {
   TdHTMLAttributes,
   useContext,
   useEffect,
-  useMemo,
   useState,
 } from "react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { transientOptions } from "@core/utils/transientOptions";
 import { checkValidHexColorValue } from "@core/utils/checkValidHexColorValue";
 import { ExtractNames } from "@core/utils/classes";
 import { getVarValue } from "@core/utils/theme";
@@ -70,39 +66,6 @@ export interface HvTableCellProps
 
 const defaultComponent = "td";
 
-interface StyledTableCellProps {
-  $variantList: boolean;
-  $variantListHead: boolean;
-  $stickyColumn: boolean;
-  $stickyColumnMostLeft: boolean;
-  $stickyColumnLeastRight: boolean;
-  $groupColumnMostLeft: boolean;
-  $groupColumnMostRight: boolean;
-  $resizable: boolean;
-  $resizing: boolean;
-  $align: string;
-  $variant: string;
-  $type: string;
-  $sortedColor: string;
-}
-
-const StyledTableCell = (c: any) =>
-  styled(
-    c,
-    transientOptions
-  )(({ $stickyColumn, $type, $sortedColor }: StyledTableCellProps) => ({
-    ...($type === "body" && {
-      [`&.${staticClasses.sorted}`]: {
-        backgroundColor: $sortedColor,
-      },
-    }),
-    ...($stickyColumn && {
-      [`&.${staticClasses.sorted}`]: {
-        backgroundImage: `linear-gradient(to right, ${$sortedColor}, ${$sortedColor})`,
-      },
-    }),
-  }));
-
 const getSortedColor = (color?: string, alpha?: string) => {
   return checkValidHexColorValue(color) && alpha
     ? hexToRgbA(color, parseFloat(alpha))
@@ -133,7 +96,7 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
       resizing = false,
       ...others
     } = props;
-    const { classes, cx } = useClasses(classesProp);
+    const { classes, cx, css } = useClasses(classesProp);
     const { activeTheme, rootId } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
@@ -149,8 +112,6 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
 
     const Component =
       component || tableContext?.components?.Td || defaultComponent;
-
-    const TableCell = useMemo(() => StyledTableCell(Component), [Component]);
 
     const [sortedColor, setSortedColor] = useState(
       getSortedColor(sortedColorValue, sortedColorAlpha)
@@ -169,32 +130,46 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
     ]);
 
     return (
-      <TableCell
+      <Component
         ref={externalRef}
         role={Component === defaultComponent ? null : "cell"}
         style={style}
-        className={cx(className, classes.root, classes[type], {
-          [classes[`align${capitalize(align)}`]]: align !== "inherit",
-          [classes.variantList]: tableContext.variant === "listrow",
-          [classes.variantListHead]:
-            tableContext.variant === "listrow" && type !== "body",
-          [classes[`variant${capitalize(variant)}`]]: variant !== "default",
-          [classes.sorted]: sorted,
-          [classes.stickyColumn]: stickyColumn,
-          [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
-          [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
-          [classes.groupColumnMostLeft]: groupColumnMostLeft,
-          [classes.groupColumnMostRight]: groupColumnMostRight,
-          [classes.resizable]: resizable,
-          [classes.resizing]: resizing,
-        })}
-        $type={type}
-        $stickyColumn={stickyColumn}
-        $sortedColor={sortedColor}
+        className={cx(
+          classes.root,
+          classes[type],
+          type === "body" &&
+            css({
+              [`&.${staticClasses.sorted}`]: {
+                backgroundColor: sortedColor,
+              },
+            }),
+          stickyColumn &&
+            css({
+              [`&.${staticClasses.sorted}`]: {
+                backgroundImage: `linear-gradient(to right, ${sortedColor}, ${sortedColor})`,
+              },
+            }),
+          {
+            [classes[`align${capitalize(align)}`]]: align !== "inherit",
+            [classes.variantList]: tableContext.variant === "listrow",
+            [classes.variantListHead]:
+              tableContext.variant === "listrow" && type !== "body",
+            [classes[`variant${capitalize(variant)}`]]: variant !== "default",
+            [classes.sorted]: sorted,
+            [classes.stickyColumn]: stickyColumn,
+            [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
+            [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
+            [classes.groupColumnMostLeft]: groupColumnMostLeft,
+            [classes.groupColumnMostRight]: groupColumnMostRight,
+            [classes.resizable]: resizable,
+            [classes.resizing]: resizing,
+          },
+          className
+        )}
         {...others}
       >
         {children}
-      </TableCell>
+      </Component>
     );
   }
 );

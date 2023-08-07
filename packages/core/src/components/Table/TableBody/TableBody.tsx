@@ -1,23 +1,23 @@
-import { clsx } from "clsx";
-
-import styled from "@emotion/styled";
-
 import React, {
   Children,
   forwardRef,
   isValidElement,
   useContext,
-  useMemo,
   useRef,
 } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useForkRef } from "@core/hooks/useForkRef";
 import { HvFocus } from "@core/components/Focus";
+import { ExtractNames } from "@core/utils/classes";
 
-import tableBodyClasses, { HvTableBodyClasses } from "./tableBodyClasses";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
+import { staticClasses, useClasses } from "./TableBody.styles";
+
+export { staticClasses as tableBodyClasses };
+
+export type HvTableBodyClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTableBodyProps
   extends HvBaseProps<HTMLTableSectionElement, "children"> {
@@ -43,13 +43,6 @@ const tableSectionContext = {
 
 const defaultComponent = "tbody";
 
-const StyledTableBody = (c: any) =>
-  styled(c)({
-    backgroundColor: "inherit",
-    position: "relative",
-    zIndex: 0,
-  });
-
 /**
  * HvTableBody acts as a `tbody` element.
  * `HvTableCell` and `HvTableRow` elements in it inherit body-specific styles
@@ -57,7 +50,7 @@ const StyledTableBody = (c: any) =>
 export const HvTableBody = forwardRef<HTMLElement, HvTableBodyProps>(
   (
     {
-      classes,
+      classes: classesProp,
       className,
       component,
       children,
@@ -66,6 +59,8 @@ export const HvTableBody = forwardRef<HTMLElement, HvTableBodyProps>(
     },
     externalRef
   ) => {
+    const { classes, cx } = useClasses(classesProp);
+
     const tableContext = useContext(TableContext);
 
     const bodyRef = useRef(null);
@@ -75,12 +70,10 @@ export const HvTableBody = forwardRef<HTMLElement, HvTableBodyProps>(
     const Component =
       component || tableContext?.components?.TBody || defaultComponent;
 
-    const TableBody = useMemo(() => StyledTableBody(Component), [Component]);
-
     return (
       <TableSectionContext.Provider value={tableSectionContext}>
-        <TableBody
-          className={clsx(tableBodyClasses.root, classes?.root, className)}
+        <Component
+          className={cx(classes.root, className)}
           ref={handleRef}
           role={Component === defaultComponent ? null : "rowgroup"}
           {...others}
@@ -105,7 +98,7 @@ export const HvTableBody = forwardRef<HTMLElement, HvTableBodyProps>(
                 }
               })
             : children}
-        </TableBody>
+        </Component>
       </TableSectionContext.Provider>
     );
   }

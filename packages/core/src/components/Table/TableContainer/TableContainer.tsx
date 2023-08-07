@@ -1,14 +1,13 @@
-import { clsx } from "clsx";
-
-import { forwardRef, useMemo } from "react";
-
-import styled from "@emotion/styled";
+import { forwardRef } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
-import tableContainerClasses, {
-  HvTableContainerClasses,
-} from "./tableContainerClasses";
+import { staticClasses, useClasses } from "./TableContainer.styles";
+
+export { staticClasses as tableContainerClasses };
+
+export type HvTableContainerClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTableContainerProps
   extends HvBaseProps<HTMLDivElement, "children"> {
@@ -25,30 +24,19 @@ export interface HvTableContainerProps
   classes?: HvTableContainerClasses;
 }
 
-const StyledTableContainer = (c: any) =>
-  styled(c)({
-    width: "100%",
-    overflow: "auto",
-    // extra padding to avoid cutting focus rings in the last line
-    paddingBottom: 3,
-  });
-
 /**
  * HvTableContainer is a container for the HvTable
  */
 export const HvTableContainer = forwardRef<HTMLElement, HvTableContainerProps>(
-  ({ classes, className, component, ...others }, externalRef) => {
+  ({ classes: classesProp, className, component, ...others }, externalRef) => {
+    const { classes, cx } = useClasses(classesProp);
+
     const Component = component || "div";
 
-    const TableContainer = useMemo(
-      () => StyledTableContainer(Component),
-      [Component]
-    );
-
     return (
-      <TableContainer
+      <Component
         ref={externalRef}
-        className={clsx(tableContainerClasses.root, classes?.root, className)}
+        className={cx(classes.root, className)}
         {...others}
       />
     );

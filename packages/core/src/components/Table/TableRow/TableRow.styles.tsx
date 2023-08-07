@@ -42,18 +42,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
     },
   },
   /** Styles applied to the component root when striped. */
-  striped: {
-    // these styles were left on a styled component because of the access to the css var value to add an alpha.
-    // "&:nth-of-type(even)": {
-    // backgroundColor: hexToRgbA(
-    //   getVarValue(theme.table.rowStripedBackgroundColor),
-    //   0.6
-    // ),
-    //   "&:hover": {
-    //     backgroundColor: theme.table.rowHoverColor,
-    //   },
-    // },
-  },
+  striped: {},
   /** Styles applied to the component root on hover. */
   hover: {
     transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
