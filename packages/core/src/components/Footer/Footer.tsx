@@ -1,18 +1,14 @@
 import { useTheme } from "@mui/material/styles";
+import { useMediaQuery } from "@mui/material";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
+import { HvTypography } from "@core/components/Typography";
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { staticClasses, useClasses } from "./Footer.styles";
 
-import footerClasses, { HvFooterClasses } from "./footerClasses";
-import {
-  StyledCopyright,
-  StyledName,
-  StyledRightContainer,
-  StyledRoot,
-  StyledSeparator,
-} from "./Footer.styles";
+export { staticClasses as footerClasses };
+
+export type HvFooterClasses = ExtractNames<typeof useClasses>;
 
 export interface HvFooterProps extends HvBaseProps {
   name?: React.ReactNode;
@@ -30,43 +26,28 @@ export const HvFooter = (props: HvFooterProps) => {
     name = "Hitachi Vantara",
     copyright = `© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`,
     links,
-    classes,
+    classes: classesProp,
     className,
     ...others
   } = useDefaultProps("HvFooter", props);
   const muiTheme = useTheme();
+  const { classes, cx } = useClasses(classesProp);
+
+  const isSmDown = useMediaQuery(muiTheme.breakpoints.down("sm"));
 
   return (
-    <StyledRoot
-      $breakpoints={muiTheme.breakpoints}
-      className={clsx(className, footerClasses.root, classes?.root)}
+    <footer
+      className={cx(classes.root, className, { [classes.small]: isSmDown })}
       {...others}
     >
-      <StyledName
-        $breakpoints={muiTheme.breakpoints}
-        variant="label"
-        className={clsx(footerClasses.name, classes?.name)}
-      >
+      <HvTypography variant="highlightText" className={classes.name}>
         {name}
-      </StyledName>
-      <StyledRightContainer
-        className={clsx(footerClasses.rightContainer, classes?.rightContainer)}
-        $breakpoints={muiTheme.breakpoints}
-      >
-        <StyledCopyright
-          $breakpoints={muiTheme.breakpoints}
-          className={clsx(footerClasses.copyright, classes?.copyright)}
-        >
-          {copyright}
-        </StyledCopyright>
-        {links && (
-          <StyledSeparator
-            $breakpoints={muiTheme.breakpoints}
-            className={clsx(footerClasses.separator, classes?.separator)}
-          />
-        )}
+      </HvTypography>
+      <div className={classes.rightContainer}>
+        <HvTypography className={classes.copyright}>{copyright}</HvTypography>
+        {links && <div className={classes.separator} />}
         {links}
-      </StyledRightContainer>
-    </StyledRoot>
+      </div>
+    </footer>
   );
 };
