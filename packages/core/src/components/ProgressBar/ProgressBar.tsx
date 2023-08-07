@@ -1,19 +1,16 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import clamp from "lodash/clamp";
 
 import { HvBaseProps } from "@core/types/generic";
-import { HvTypographyProps } from "@core/components/Typography";
+import { HvTypography, HvTypographyProps } from "@core/components/Typography";
 
-import {
-  StyledProgressBar,
-  StyledProgressBarContainer,
-  StyledProgressContainer,
-  StyledRoot,
-  StyledValue,
-} from "./ProgressBar.styles";
-import progressBarClasses, { HvProgressBarClasses } from "./progressBarClasses";
+import { ExtractNames } from "@core/utils/classes";
+import { staticClasses, useClasses } from "./ProgressBar.styles";
+
+export { staticClasses as progressBarClasses };
+
+export type HvProgressBarClasses = ExtractNames<typeof useClasses>;
 
 export type HvProgressBarStatus = "inProgress" | "completed" | "error";
 
@@ -40,69 +37,45 @@ export interface HvProgressBarProps extends HvBaseProps {
 export const HvProgressBar = (props: HvProgressBarProps) => {
   const {
     className,
-    classes,
+    classes: classesProp,
     value = 0,
     status = "inProgress",
     labelProps,
     ...others
   } = useDefaultProps("HvProgressBar", props);
 
+  const { classes, cx } = useClasses(classesProp);
+
   const clampedValue = clamp(value, 0, 100);
 
   return (
-    <StyledRoot
-      className={clsx(
-        className,
-        progressBarClasses.root,
-        classes?.root,
-        progressBarClasses.progress,
-        classes?.progress
-      )}
+    <div
+      className={cx(classes.root, classes.progress, className)}
       role="progressbar"
       aria-valuemin={0}
       aria-valuemax={100}
       aria-valuenow={clampedValue}
       {...others}
     >
-      <StyledProgressContainer
-        className={clsx(
-          classes?.progressContainer,
-          progressBarClasses.progressContainer
-        )}
-      >
-        <StyledValue
-          className={clsx(
-            progressBarClasses.progressBarLabel,
-            classes?.progressBarLabel,
-            status === "completed" &&
-              clsx(progressBarClasses.progressDone, classes?.progressDone)
-          )}
+      <div className={classes.progressContainer}>
+        <HvTypography
+          className={classes.progressBarLabel}
           variant="caption2"
           style={{ width: `${clampedValue}%` }}
           {...labelProps}
         >
           {`${clampedValue}%`}
-        </StyledValue>
-        <StyledProgressBarContainer
-          className={clsx(
-            classes?.progressBarContainer,
-            progressBarClasses.progressBarContainer
-          )}
-        >
-          <StyledProgressBar
+        </HvTypography>
+        <div className={classes.progressBarContainer}>
+          <div
             style={{ width: `${clampedValue}%` }}
-            className={clsx(
-              progressBarClasses.progressBar,
-              classes?.progressBar,
-              status === "completed" &&
-                clsx(classes?.progressDone, progressBarClasses.progressDone),
-              status === "error" &&
-                clsx(classes?.progressError, progressBarClasses.progressError)
-            )}
-            $status={status}
+            className={cx(classes.progressBar, {
+              [classes.progressDone]: status === "completed",
+              [classes.progressError]: status === "error",
+            })}
           />
-        </StyledProgressBarContainer>
-      </StyledProgressContainer>
-    </StyledRoot>
+        </div>
+      </div>
+    </div>
   );
 };

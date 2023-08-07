@@ -1,47 +1,42 @@
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvTypography } from "@core/components/Typography";
-import { transientOptions } from "@core/utils/transientOptions";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledRoot = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
+export const { useClasses, staticClasses } = createClasses("HvProgressBar", {
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
 
-  // progress
-  width: "100%",
-});
-
-export const StyledProgressContainer = styled("div")({
-  width: "100%",
-});
-
-export const StyledValue = styled(HvTypography)({
-  backgroundColor: "transparent",
-  display: "flex",
-  justifyContent: "end",
-});
-
-export const StyledProgressBarContainer = styled("div")({
-  display: "flex",
-  width: "100%",
-  height: 4,
-  backgroundColor: theme.colors.atmo4,
-});
-
-export const StyledProgressBar = styled(
-  "div",
-  transientOptions
-)(({ $status }: { $status?: "inProgress" | "completed" | "error" }) => ({
-  backgroundColor: "#000",
-  height: 4,
-  ...($status === "completed" && {
+    // progress
+    width: "100%",
+  },
+  progress: {
+    width: "100%",
+  },
+  progressBar: {
+    backgroundColor: "#000",
+    height: 4,
+  },
+  progressBarLabel: {
+    backgroundColor: "transparent",
+    display: "flex",
+    justifyContent: "end",
+  },
+  progressContainer: {
+    width: "100%",
+  },
+  progressDone: {
     backgroundColor: theme.colors.positive,
-  }),
-  ...($status === "error" && {
+  },
+  progressBarContainer: {
+    display: "flex",
+    width: "100%",
+    height: 4,
+    backgroundColor: theme.colors.atmo4,
+  },
+  progressError: {
     backgroundColor: theme.colors.negative,
-  }),
-}));
+  },
+});

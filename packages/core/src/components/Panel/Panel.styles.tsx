@@ -1,9 +1,12 @@
-import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 
-export const StyledDiv = styled("div")({
-  position: "relative",
-  padding: theme.space.sm,
-  backgroundColor: theme.colors.atmo1,
-  overflow: "auto",
+import { createClasses } from "@core/utils/classes";
+
+export const { useClasses, staticClasses } = createClasses("HvPanel", {
+  root: {
+    position: "relative",
+    padding: theme.space.sm,
+    backgroundColor: theme.colors.atmo1,
+    overflow: "auto",
+  },
 });

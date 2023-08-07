@@ -1,10 +1,13 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 
-import { StyledDiv } from "./Panel.styles";
-import panelClasses, { HvPanelClasses } from "./panelClasses";
+import { ExtractNames } from "@core/utils/classes";
+import { staticClasses, useClasses } from "./Panel.styles";
+
+export { staticClasses as panelClasses };
+
+export type HvPanelClasses = ExtractNames<typeof useClasses>;
 
 export interface HvPanelProps extends HvBaseProps {
   /** A Jss Object used to override or extend the styles applied. */
@@ -17,18 +20,18 @@ export interface HvPanelProps extends HvBaseProps {
  * Regardless of its content, a panel look and feel should be consistent.
  */
 export const HvPanel = (props: HvPanelProps) => {
-  const { id, className, classes, children, ...others } = useDefaultProps(
-    "HvPanel",
-    props
-  );
+  const {
+    id,
+    className,
+    classes: classesProp,
+    children,
+    ...others
+  } = useDefaultProps("HvPanel", props);
+  const { classes, cx } = useClasses(classesProp);
 
   return (
-    <StyledDiv
-      id={id}
-      className={clsx(className, panelClasses.root, classes?.root)}
-      {...others}
-    >
+    <div id={id} className={cx(classes.root, className)} {...others}>
       {children}
-    </StyledDiv>
+    </div>
   );
 };
