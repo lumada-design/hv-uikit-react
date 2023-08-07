@@ -1,6 +1,6 @@
-import { forwardRef, AllHTMLAttributes, Ref } from "react";
+import { forwardRef } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
+import { PolymorphicComponentRef, PolymorphicRef } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { useTheme } from "@core/hooks/useTheme";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
@@ -42,34 +42,40 @@ const HvTypographyMap = {
   xsInlineLink: "p",
 } as const;
 
-export interface HvTypographyProps
-  extends Omit<AllHTMLAttributes<HTMLElement>, "disabled">,
-    HvBaseProps<HTMLElement> {
-  component?: React.ElementType;
-  /** Use the variant prop to change the visual style of the Typography. */
-  variant?: HvTypographyVariants | HvTypographyLegacyVariants;
-  /** If `true` the typography will display the look of a link. */
-  link?: boolean;
-  /** If `true` the typography will display the look of a disabled state. */
-  disabled?: boolean;
-  /** If `true`, the text will have a bottom margin. */
-  paragraph?: boolean;
-  /**
-   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
-   *
-   * Note that text overflow can only happen with block or inline-block level elements
-   * (the element needs to have a width in order to overflow).
-   */
-  noWrap?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvTypographyClasses;
-}
+export type HvTypographyProps<C extends React.ElementType = "p"> =
+  PolymorphicComponentRef<
+    C,
+    {
+      /** Use the variant prop to change the visual style of the Typography. */
+      variant?: HvTypographyVariants | HvTypographyLegacyVariants;
+      /** If `true` the typography will display the look of a link. */
+      link?: boolean;
+      /** If `true` the typography will display the look of a disabled state. */
+      disabled?: boolean;
+      /** If `true`, the text will have a bottom margin. */
+      paragraph?: boolean;
+      /**
+       * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+       *
+       * Note that text overflow can only happen with block or inline-block level elements
+       * (the element needs to have a width in order to overflow).
+       */
+      noWrap?: boolean;
+      /** A Jss Object used to override or extend the styles applied to the component. */
+      classes?: HvTypographyClasses;
+    }
+  >;
 
 /**
  * Typography component is used to render text and paragraphs within an interface.
  */
-export const HvTypography = forwardRef(
-  (props: HvTypographyProps, ref: Ref<HTMLElement>) => {
+export const HvTypography: <C extends React.ElementType = "p">(
+  props: HvTypographyProps<C>
+) => React.ReactElement | null = forwardRef(
+  <C extends React.ElementType = "p">(
+    props: HvTypographyProps<C>,
+    ref: PolymorphicRef<C>
+  ) => {
     const {
       className,
       component: ComponentProp,
