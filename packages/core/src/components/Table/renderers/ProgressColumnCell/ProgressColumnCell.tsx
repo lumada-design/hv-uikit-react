@@ -1,8 +1,6 @@
-import {
-  StyledRoot,
-  StyledContainer,
-  StyledLinearProgress,
-} from "./ProgressColumnCell.styles";
+import MuiLinearProgress from "@mui/material/LinearProgress";
+
+import { useClasses } from "./ProgressColumnCell.styles";
 
 export interface HvProgressColumnCellProp {
   /** Current value of the bar. */
@@ -22,17 +20,26 @@ export const HvProgressColumnCell = ({
   total,
   color = "primary",
 }: HvProgressColumnCellProp): JSX.Element => {
+  const { classes } = useClasses();
+
   const percentage = normalizeProgressBar(partial, total);
 
   return (
-    <StyledRoot>
-      <StyledContainer>
-        <StyledLinearProgress
+    <div className={classes.root}>
+      <div className={classes.linearProgressContainer}>
+        <MuiLinearProgress
+          className={classes.linearProgress}
+          classes={{
+            root: classes.linearProgressRoot,
+            colorPrimary: classes.linearProgressColorPrimary,
+            barColorPrimary: classes.linearProgressBarColorPrimary,
+            barColorSecondary: classes.linearProgressBarColorSecondary,
+          }}
           color={color}
           variant="determinate"
           value={percentage}
         />
-      </StyledContainer>
-    </StyledRoot>
+      </div>
+    </div>
   );
 };

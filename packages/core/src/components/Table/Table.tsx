@@ -1,22 +1,14 @@
-import { clsx } from "clsx";
+import { forwardRef, TableHTMLAttributes, useMemo, useRef } from "react";
 
-import styled from "@emotion/styled";
-
-import {
-  CSSProperties,
-  forwardRef,
-  TableHTMLAttributes,
-  useMemo,
-  useRef,
-} from "react";
-
-import { theme } from "@hitachivantara/uikit-styles";
-
-import { transientOptions } from "@core/utils/transientOptions";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "@core/utils/classes";
 
 import TableContext from "./TableContext";
-import tableClasses, { HvTableClasses } from "./tableClasses";
+import { staticClasses, useClasses } from "./Table.styles";
+
+export { staticClasses as tableClasses };
+
+export type HvTableClasses = ExtractNames<typeof useClasses>;
 
 export type HvTableVariant = "listrow" | "default";
 export type HvTableCellAlign =
@@ -77,48 +69,6 @@ const computeTablePartComponents = (rootComponent) => {
   };
 };
 
-const StyledTable = (c: any) =>
-  styled(
-    c,
-    transientOptions
-  )(
-    ({
-      $stickyHeader,
-      $stickyColumns,
-      $listrow,
-    }: {
-      $stickyHeader: boolean;
-      $stickyColumns: boolean;
-      $listrow: boolean;
-    }) => ({
-      position: "relative",
-      width: "100%",
-
-      ...(theme.typography.body as CSSProperties),
-
-      "table&": {
-        borderSpacing: 0,
-      },
-
-      "& caption": {
-        ...(theme.typography.body as CSSProperties),
-        padding: theme.space.xs,
-        textAlign: "left",
-        captionSide: "bottom",
-      },
-
-      ...($stickyHeader && {}),
-      ...($stickyColumns && {
-        backgroundColor: theme.colors.atmo2,
-      }),
-      ...($listrow && {
-        "table&": {
-          borderSpacing: `0 ${theme.space.xs}`,
-        },
-      }),
-    })
-  );
-
 /**
  * A table gathers relational data. It displays values arranged to allow quick numerical analysis like comparison and sorting.
  *
@@ -131,7 +81,7 @@ const StyledTable = (c: any) =>
  */
 export const HvTable = forwardRef<HTMLElement, HvTableProps>((props, ref) => {
   const {
-    classes,
+    classes: classesProp,
     className,
     component = defaultComponent,
     stickyHeader = false,
@@ -139,6 +89,8 @@ export const HvTable = forwardRef<HTMLElement, HvTableProps>((props, ref) => {
     variant = "default",
     ...others
   } = useDefaultProps("HvTable", props);
+  const { classes, cx } = useClasses(classesProp);
+
   const containerRef = useRef(ref);
 
   const components = useMemo(
@@ -151,26 +103,22 @@ export const HvTable = forwardRef<HTMLElement, HvTableProps>((props, ref) => {
     [components, variant, containerRef]
   );
 
-  const Table = useMemo(() => StyledTable(components.Table), [components]);
+  const Table = useMemo(() => components.Table, [components]);
 
   return (
     <TableContext.Provider value={tableContext}>
       <Table
         ref={ref}
         role={component === defaultComponent ? null : "table"}
-        className={clsx(
-          tableClasses.root,
-          classes?.root,
-          stickyHeader &&
-            clsx(tableClasses.stickyHeader, classes?.stickyHeader),
-          stickyColumns &&
-            clsx(tableClasses.stickyColumns, classes?.stickyColumns),
-          variant === "listrow" && clsx(tableClasses.listRow, classes?.listRow),
+        className={cx(
+          classes.root,
+          {
+            [classes.stickyHeader]: stickyHeader,
+            [classes.stickyColumns]: stickyColumns,
+            [classes.listRow]: variant === "listrow",
+          },
           className
         )}
-        $stickyColumns={stickyColumns}
-        $stickyHeader={stickyHeader}
-        $listrow={variant === "listrow"}
         {...others}
       />
     </TableContext.Provider>

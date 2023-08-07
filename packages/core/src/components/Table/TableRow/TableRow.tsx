@@ -1,6 +1,4 @@
-import { forwardRef, useContext, useEffect, useMemo, useState } from "react";
-
-import styled from "@emotion/styled";
+import { forwardRef, useContext, useEffect, useState } from "react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
@@ -8,7 +6,6 @@ import { ExtractNames } from "@core/utils/classes";
 import { checkValidHexColorValue } from "@core/utils/checkValidHexColorValue";
 import { hexToRgbA } from "@core/utils/hexToRgbA";
 import { getVarValue } from "@core/utils/theme";
-import { transientOptions } from "@core/utils/transientOptions";
 import { HvBaseProps } from "@core/types/generic";
 import { useTheme } from "@core/hooks/useTheme";
 
@@ -40,37 +37,6 @@ export interface HvTableRowProps
 
 const defaultComponent = "tr";
 
-const StyledTableRow = (c: any) =>
-  styled(
-    c,
-    transientOptions
-  )(
-    ({
-      $striped,
-      $stripedColorEven,
-      $stripedColorOdd,
-    }: {
-      $striped: boolean;
-      $stripedColorEven: string;
-      $stripedColorOdd: string;
-    }) => ({
-      ...($striped && {
-        "&:nth-of-type(even)": {
-          backgroundColor: $stripedColorEven,
-          "&:hover": {
-            backgroundColor: theme.table.rowHoverColor,
-          },
-        },
-        "&:nth-of-type(odd)": {
-          backgroundColor: $stripedColorOdd,
-          "&:hover": {
-            backgroundColor: theme.table.rowHoverColor,
-          },
-        },
-      }),
-    })
-  );
-
 const getStripedColor = (color?: string, opacity: number = 0.6) => {
   return checkValidHexColorValue(color) ? hexToRgbA(color, opacity) : color;
 };
@@ -90,7 +56,7 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
       striped = false,
       ...others
     } = props;
-    const { classes, cx } = useClasses(classesProp);
+    const { classes, cx, css } = useClasses(classesProp);
     const { activeTheme, selectedMode, rootId } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
@@ -104,8 +70,6 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
 
     const Component =
       component || tableContext?.components?.Tr || defaultComponent;
-
-    const TableRow = useMemo(() => StyledTableRow(Component), [Component]);
 
     const [stripedColorEven, setStripedColorEven] = useState(
       getStripedColor(even)
@@ -123,13 +87,27 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
     }, [activeTheme?.colors?.modes[selectedMode], even, odd, rootId]);
 
     return (
-      <TableRow
+      <Component
         ref={externalRef}
         className={cx(
           tableSectionContext.filterClassName,
-          className,
           classes.root,
-          classes?.[type],
+          classes[type],
+          striped &&
+            css({
+              "&:nth-of-type(even)": {
+                backgroundColor: stripedColorEven,
+                "&:hover": {
+                  backgroundColor: theme.table.rowHoverColor,
+                },
+              },
+              "&:nth-of-type(odd)": {
+                backgroundColor: stripedColorOdd,
+                "&:hover": {
+                  backgroundColor: theme.table.rowHoverColor,
+                },
+              },
+            }),
           {
             [classes.hover]: hover,
             [classes.selected]: selected,
@@ -137,12 +115,10 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
             [classes.striped]: striped,
             [classes.variantList]: isList && type === "body",
             [classes.variantListHead]: isList && type === "head",
-          }
+          },
+          className
         )}
         role={Component === defaultComponent ? null : "row"}
-        $striped={striped}
-        $stripedColorEven={stripedColorEven}
-        $stripedColorOdd={stripedColorOdd}
         {...others}
       />
     );

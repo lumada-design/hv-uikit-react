@@ -1,6 +1,7 @@
 import { HvBaseSwitch, HvBaseSwitchProps } from "@core/components/BaseSwitch";
+import { HvTypography } from "@core/components/Typography";
 
-import { StyledYes, StyledNo } from "./SwitchColumnCell.styles";
+import { useClasses } from "./SwitchColumnCell.styles";
 
 export interface HvSwitchColumnCellProp {
   /** Whether the switch is checked or not. */
@@ -25,12 +26,18 @@ export const HvSwitchColumnCell = ({
   trueLabel,
   switchProps,
 }: HvSwitchColumnCellProp): JSX.Element => {
+  const { classes } = useClasses();
+
   return (
     <>
       {falseLabel != null && (
-        <StyledNo aria-hidden="true" variant="body">
+        <HvTypography
+          aria-hidden="true"
+          variant="body"
+          className={classes.switchNo}
+        >
           {falseLabel}
-        </StyledNo>
+        </HvTypography>
       )}
       <HvBaseSwitch
         aria-label={switchLabel}
@@ -39,9 +46,13 @@ export const HvSwitchColumnCell = ({
         {...switchProps}
       />
       {trueLabel != null && (
-        <StyledYes aria-hidden="true" variant="body">
+        <HvTypography
+          aria-hidden="true"
+          variant="body"
+          className={classes.switchYes}
+        >
           {trueLabel}
-        </StyledYes>
+        </HvTypography>
       )}
     </>
   );

@@ -1,5 +1,3 @@
-export { default as tableClasses } from "./tableClasses";
-export * from "./tableClasses";
 export * from "./Table";
 export * from "./TableContainer";
 export * from "./TableBody";
