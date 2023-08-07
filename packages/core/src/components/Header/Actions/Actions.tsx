@@ -1,27 +1,30 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledDiv } from "./Actions.styles";
-import headerActionsClasses, { HvHeaderActionsClasses } from "./actionsClasses";
+import { useClasses, staticClasses } from "./Actions.styles";
+
+export { staticClasses as headerActionsClasses };
+
+export type HvHeaderActionsClasses = ExtractNames<typeof useClasses>;
 
 export interface HvHeaderActionsProps extends HvBaseProps {
   classes?: HvHeaderActionsClasses;
 }
 
 export const HvHeaderActions = (props: HvHeaderActionsProps) => {
-  const { classes, className, children, ...others } = useDefaultProps(
-    "HvHeaderActions",
-    props
-  );
+  const {
+    classes: classesProp,
+    className,
+    children,
+    ...others
+  } = useDefaultProps("HvHeaderActions", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   return (
-    <StyledDiv
-      className={clsx(className, headerActionsClasses.root, classes?.root)}
-      {...others}
-    >
+    <div className={cx(classes.root, className)} {...others}>
       {children}
-    </StyledDiv>
+    </div>
   );
 };

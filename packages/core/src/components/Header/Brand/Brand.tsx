@@ -1,10 +1,15 @@
-import { clsx } from "clsx";
+import { theme } from "@hitachivantara/uikit-styles";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
+import { ExtractNames } from "@core/utils/classes";
 import { HvBaseProps } from "@core/types/generic";
+import { HvTypography } from "@core/components/Typography";
 
-import { BrandRoot, BrandSeparator, BrandName } from "./Brand.styles";
-import headerBrandClasses, { HvHeaderBrandClasses } from "./brandClasses";
+import { staticClasses, useClasses } from "./Brand.styles";
+
+export { staticClasses as headerBrandClasses };
+
+export type HvHeaderBrandClasses = ExtractNames<typeof useClasses>;
 
 export interface HvHeaderBrandProps extends HvBaseProps {
   logo?: React.ReactNode;
@@ -16,23 +21,28 @@ export interface HvHeaderBrandProps extends HvBaseProps {
  * Header component is used to render a header bar with logo and brand name, navigation and actions.
  */
 export const HvHeaderBrand = (props: HvHeaderBrandProps) => {
-  const { classes, logo, name, className, ...others } = useDefaultProps(
-    "HvHeaderBrand",
-    props
-  );
+  const {
+    classes: classesProp,
+    logo,
+    name,
+    className,
+    ...others
+  } = useDefaultProps("HvHeaderBrand", props);
+
+  const { classes, cx, css } = useClasses(classesProp);
 
   return (
-    <BrandRoot
-      className={clsx(classes?.root, headerBrandClasses.root, className)}
-      {...others}
-    >
+    <div className={cx(classes.root, className)} {...others}>
       {logo}
-      {logo && name && (
-        <BrandSeparator
-          className={clsx(classes?.separator, headerBrandClasses.separator)}
-        />
+      {logo && name && <div className={classes.separator} />}
+      {name && (
+        <HvTypography
+          className={css({ color: theme.header.brandColor })}
+          variant="label"
+        >
+          {name}
+        </HvTypography>
       )}
-      {name && <BrandName variant="label">{name}</BrandName>}
-    </BrandRoot>
+    </div>
   );
 };

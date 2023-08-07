@@ -1,19 +1,17 @@
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { buttonClasses } from "@core/components/Button";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledDiv = styled.div({
-  backgroundColor: "transparent",
-  display: "flex",
-  gap: theme.space.xs,
-  alignItems: "center",
-  marginLeft: "auto",
-  "& > *": {
-    marginLeft: theme.space.xs,
-  },
-  [`& .${buttonClasses?.root}`]: {
-    "&:hover": { backgroundColor: theme.header.hoverColor },
+export const { staticClasses, useClasses } = createClasses("HvHeader-Actions", {
+  root: {
+    backgroundColor: "transparent",
+    display: "flex",
+    gap: theme.space.xs,
+    alignItems: "center",
+    marginLeft: "auto",
+    [`& .${buttonClasses?.root}`]: {
+      "&:hover": { backgroundColor: theme.header.hoverColor },
+    },
   },
 });

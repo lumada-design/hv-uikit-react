@@ -1,17 +1,20 @@
-import { clsx } from "clsx";
-
 import { useContext } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
 import { SelectionContext } from "../utils/SelectionContext";
-import { MenuBarRoot, MenuBarUl } from "./Bar.styles";
-import headerMenuBarClasses from "./menuBarClasses";
+import { staticClasses, useClasses } from "./Bar.styles";
 import { HvHeaderNavigationItemProp } from "../useSelectionPath";
+
+export { staticClasses as headerMenuBarClasses };
+
+export type HvHeaderMenuBarClasses = ExtractNames<typeof useClasses>;
 
 export interface BarProps extends HvBaseProps {
   data: HvHeaderNavigationItemProp[];
   type?: string;
+  classes?: HvHeaderMenuBarClasses;
 }
 
 export const Bar = ({
@@ -20,7 +23,10 @@ export const Bar = ({
   type = "menubar",
   className,
   children,
+  classes: classesProp,
 }: BarProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const selectionPath = useContext(SelectionContext);
 
   const isMenu = type === "menu";
@@ -29,19 +35,20 @@ export const Bar = ({
     isMenu && data.filter((item) => item.id === selectionPath?.[1]).length > 0;
 
   return (
-    <MenuBarRoot
-      className={clsx(
-        className,
-        isMenu && headerMenuBarClasses.hidden,
-        isActive && headerMenuBarClasses.active
+    <div
+      className={cx(
+        classes.root,
+        classes[type],
+        {
+          [classes.hidden]: isMenu,
+          [classes.active]: isActive,
+        },
+        className
       )}
-      $type={type}
-      $hidden={isMenu}
-      $active={isActive}
     >
-      <MenuBarUl id={id} onFocus={() => {}}>
+      <ul className={classes.list} id={id} onFocus={() => {}}>
         {children}
-      </MenuBarUl>
-    </MenuBarRoot>
+      </ul>
+    </div>
   );
 };
