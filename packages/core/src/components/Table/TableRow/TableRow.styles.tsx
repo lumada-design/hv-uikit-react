@@ -11,21 +11,9 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
     backgroundColor: theme.table.rowBackgroundColor,
     verticalAlign: "middle",
     outline: 0,
-    minHeight: 32,
-    "tr&": {
-      height: 32,
-    },
   },
   /** Styles applied to the component root when inside a `HvTableHead`. */
-  head: {
-    "&:first-of-type": {
-      height: 52,
-    },
-
-    "tr&:first-of-type": {
-      height: 52,
-    },
-  },
+  head: {},
   /** Styles applied to the component root when inside a `HvTableBody`. */
   body: {},
   /** Styles applied to the component root when inside a `HvTableFooter`. */
@@ -52,13 +40,16 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
   },
   /** Styles applied to the component root when its table variant is list. */
   variantList: {
+    // only applied on custom `display`
+    marginBottom: theme.space.xs,
+    borderRadius: theme.table.rowListBorderRadius,
+
     ...getBorderStyles(
       "row",
       theme.table.rowListBorderColor,
       theme.table.rowListBorderRadius
     ),
     backgroundColor: theme.colors.atmo1,
-    height: 52,
     "&$selected": {
       ...getBorderStyles(
         "row",
@@ -89,13 +80,5 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
   /** Styles applied to the component root when its table variant is list. */
   variantListHead: {
     backgroundColor: theme.table.rowListBackgroundColor,
-    height: 16,
-    "&:first-of-type": {
-      height: 16,
-    },
-
-    "tr&:first-of-type": {
-      height: 16,
-    },
   },
 });
