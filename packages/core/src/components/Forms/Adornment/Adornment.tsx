@@ -1,18 +1,20 @@
 import { useContext, forwardRef, MouseEventHandler, ForwardedRef } from "react";
 
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledRoot, StyledIcon, StyledButton } from "./Adornment.styles";
+import { staticClasses, useClasses } from "./Adornment.styles";
 import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
   HvFormStatus,
 } from "../FormElement";
-import adornmentClasses, { HvAdornmentClasses } from "./adornmentClasses";
 
 const noop = () => {};
+
+export { staticClasses as adornmentClasses };
+
+export type HvAdornmentClasses = ExtractNames<typeof useClasses>;
 
 export interface HvAdornmentProps
   extends HvBaseProps<
@@ -49,7 +51,7 @@ export const HvAdornment = forwardRef<
   (
     {
       id,
-      classes,
+      classes: classesProp,
       className,
       icon,
       showWhen = undefined,
@@ -59,6 +61,8 @@ export const HvAdornment = forwardRef<
     },
     ref
   ) => {
+    const { classes, cx } = useClasses(classesProp);
+
     const { elementStatus = "" } = useContext(HvFormElementContext);
 
     const { input } = useContext(HvFormElementDescriptorsContext);
@@ -69,54 +73,42 @@ export const HvAdornment = forwardRef<
     const isClickable = !!onClick;
 
     return isClickable ? (
-      <StyledButton
+      <button
         id={id}
         ref={ref as ForwardedRef<HTMLButtonElement>}
         type="button"
         tabIndex={-1}
         aria-controls={input?.[0]?.id}
-        className={clsx(
-          className,
-          adornmentClasses.root,
-          classes?.root,
-          adornmentClasses.adornment,
-          classes?.adornment,
-          adornmentClasses.adornmentButton,
-          classes?.adornmentButton,
-          !displayIcon && clsx(adornmentClasses.hideIcon, classes?.hideIcon)
+        className={cx(
+          classes.root,
+          classes.adornment,
+          classes.adornmentButton,
+          { [classes.hideIcon]: !displayIcon },
+          className
         )}
         onClick={onClick}
         onMouseDown={(event) => event.preventDefault()}
         onKeyDown={noop}
-        $hideIcon={!displayIcon}
         {...others}
       >
-        <StyledIcon className={clsx(adornmentClasses.icon, classes?.icon)}>
-          {icon}
-        </StyledIcon>
-      </StyledButton>
+        <div className={classes.icon}>{icon}</div>
+      </button>
     ) : (
-      <StyledRoot
+      <div
         id={id}
         ref={ref as ForwardedRef<HTMLDivElement>}
-        className={clsx(
-          className,
-          adornmentClasses.root,
-          classes?.root,
-          adornmentClasses.adornment,
-          classes?.adornment,
-          adornmentClasses.adornmentIcon,
-          classes?.adornmentIcon,
-          !displayIcon && clsx(adornmentClasses.hideIcon, classes?.hideIcon)
+        className={cx(
+          classes.root,
+          classes.adornment,
+          classes.adornmentIcon,
+          { [classes.hideIcon]: !displayIcon },
+          className
         )}
-        $hideIcon={!displayIcon}
         role="presentation"
         {...others}
       >
-        <StyledIcon className={clsx(adornmentClasses.icon, classes?.icon)}>
-          {icon}
-        </StyledIcon>
-      </StyledRoot>
+        <div className={classes.icon}>{icon}</div>
+      </div>
     );
   }
 );

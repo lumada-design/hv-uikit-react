@@ -1,45 +1,21 @@
-import styled from "@emotion/styled";
-
 import { outlineStyles } from "@core/utils/focusUtils";
-import { transientOptions } from "@core/utils/transientOptions";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledRoot = styled(
-  "div",
-  transientOptions
-)(({ $hideIcon }: { $hideIcon: boolean }) => ({
-  // adornment
-  backgroundColor: "transparent",
-  border: "none",
-  padding: 0,
-  margin: 0,
-  // adornmentIcon
-  cursor: "default",
-  pointerEvents: "none",
-  ...($hideIcon && {
-    display: "none",
-  }),
-}));
-
-export const StyledIcon = styled("div")({
-  width: 32,
-  height: 32,
-});
-
-export const StyledButton = styled(
-  "button",
-  transientOptions
-)(({ $hideIcon }: { $hideIcon: boolean }) => ({
-  // adornment
-  backgroundColor: "transparent",
-  border: "none",
-  padding: 0,
-  margin: 0,
-  // adornmentButton
-  cursor: "pointer",
-  "&:focus": {
-    ...outlineStyles,
+export const { staticClasses, useClasses } = createClasses("HvAdornment", {
+  root: {},
+  icon: { width: 32, height: 32 },
+  adornment: {
+    backgroundColor: "transparent",
+    border: "none",
+    padding: 0,
+    margin: 0,
   },
-  ...($hideIcon && {
-    display: "none",
-  }),
-}));
+  adornmentIcon: { cursor: "default", pointerEvents: "none" },
+  hideIcon: { display: "none" },
+  adornmentButton: {
+    cursor: "pointer",
+    "&:focus": {
+      ...outlineStyles,
+    },
+  },
+});
