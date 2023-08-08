@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 import { Info } from "@hitachivantara/uikit-react-icons";
@@ -112,17 +112,62 @@ export const HvAppSwitcherAction = ({
   /**
    * Handles the onClick event and triggers the appropriate callback if it exists.
    */
-  const handleOnClick = (event: React.MouseEvent) => {
-    if (disabled) {
-      event.preventDefault();
-      return;
-    }
+  const handleOnClick = useCallback(
+    (event: React.MouseEvent) => {
+      if (disabled) {
+        event.preventDefault();
+        return;
+      }
 
-    onClickCallback?.(event, { ...application, isSelected });
-  };
+      onClickCallback?.(event, { ...application, isSelected });
+    },
+    [application, disabled, isSelected, onClickCallback]
+  );
 
   const isLink = url != null;
   const descriptionElementId = useUniqueId(id, "hvAction-description");
+
+  const renderApplication = useCallback(
+    (children: React.ReactNode) => {
+      const typographyProps = {
+        className: classes.typography,
+        onClick: handleOnClick,
+        style: { borderColor: color },
+        "aria-label": name,
+        ...(description && { "aria-describedby": descriptionElementId }),
+      };
+
+      if (isLink) {
+        return (
+          <HvTypography
+            component="a"
+            href={url}
+            target={target || "_top"}
+            {...typographyProps}
+          >
+            {children}
+          </HvTypography>
+        );
+      }
+
+      return (
+        <HvTypography component="button" {...typographyProps}>
+          {children}
+        </HvTypography>
+      );
+    },
+    [
+      classes.typography,
+      color,
+      description,
+      descriptionElementId,
+      handleOnClick,
+      isLink,
+      name,
+      target,
+      url,
+    ]
+  );
 
   return (
     <HvListItem
@@ -139,37 +184,30 @@ export const HvAppSwitcherAction = ({
     >
       {/* As HvTooltip don't have the id prop, is not possible to use the aria-labelledby to reference it.
        In substitution is used the aria-label with the "title" value */}
-      <HvTypography
-        component={isLink ? "a" : "button"}
-        href={isLink ? url : undefined}
-        target={isLink ? target || "_top" : undefined}
-        className={classes.typography}
-        onClick={handleOnClick}
-        style={{ borderColor: color }}
-        aria-label={name}
-        {...(description && { "aria-describedby": descriptionElementId })}
-      >
-        <div className={classes.icon}>{renderApplicationIcon()}</div>
+      {renderApplication(
+        <>
+          <div className={classes.icon}>{renderApplicationIcon()}</div>
 
-        <TitleWithTooltip title={name} className={classes.title} />
+          <TitleWithTooltip title={name} className={classes.title} />
 
-        {description && (
-          <HvTooltip
-            disableFocusListener
-            disableTouchListener
-            title={<HvTypography>{description}</HvTypography>}
-          >
-            <div>
-              <Info
-                className={classes.iconInfo}
-                role="img"
-                aria-label={description}
-                id={descriptionElementId}
-              />
-            </div>
-          </HvTooltip>
-        )}
-      </HvTypography>
+          {description && (
+            <HvTooltip
+              disableFocusListener
+              disableTouchListener
+              title={<HvTypography>{description}</HvTypography>}
+            >
+              <div>
+                <Info
+                  className={classes.iconInfo}
+                  role="img"
+                  aria-label={description}
+                  id={descriptionElementId}
+                />
+              </div>
+            </HvTooltip>
+          )}
+        </>
+      )}
     </HvListItem>
   );
 };

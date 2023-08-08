@@ -43,3 +43,33 @@ export const Variants = () => {
     </HvBox>
   );
 };
+
+interface CustomLinkProps extends HvTypographyProps<"a"> {
+  to: string;
+}
+
+const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
+  <a href={to} {...others}>
+    {children}
+  </a>
+);
+
+export const CustomRootComponent = () => {
+  return (
+    <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
+      <HvTypography>Typography</HvTypography>
+      <HvTypography
+        component="a"
+        href="https://lumada-design.github.io/uikit/master"
+      >
+        Link
+      </HvTypography>
+      <HvTypography
+        component={CustomLink}
+        to="https://lumada-design.github.io/uikit/master"
+      >
+        Custom link
+      </HvTypography>
+    </HvBox>
+  );
+};

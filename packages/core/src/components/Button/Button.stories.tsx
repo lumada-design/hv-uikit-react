@@ -293,7 +293,11 @@ Semantic.args = {
   onClick: clickAction,
 };
 
-const CustomLink = ({ to, children, ...others }) => (
+interface CustomLinkProps extends HvButtonProps<"a"> {
+  to: string;
+}
+
+const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
   <a href={to} {...others}>
     {children}
   </a>
