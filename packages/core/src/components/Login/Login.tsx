@@ -1,10 +1,12 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
+import { ExtractNames } from "@core/utils/classes";
 import { HvBaseProps } from "@core/types/generic";
 
-import { StyledFormContainer, StyledRoot } from "./Login.styles";
-import loginClasses, { HvLoginClasses } from "./loginClasses";
+import { staticClasses, useClasses } from "./Login.styles";
+
+export { staticClasses as loginClasses };
+
+export type HvLoginClasses = ExtractNames<typeof useClasses>;
 
 export interface HvLoginProps extends HvBaseProps {
   /**
@@ -21,23 +23,27 @@ export interface HvLoginProps extends HvBaseProps {
  * Container layout for the login form.
  */
 export const HvLogin = (props: HvLoginProps) => {
-  const { id, className, classes, children, background, ...others } =
-    useDefaultProps("HvLogin", props);
+  const {
+    id,
+    className,
+    classes: classesProp,
+    children,
+    background,
+    ...others
+  } = useDefaultProps("HvLogin", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   return (
-    <StyledRoot
+    <div
       id={id}
-      className={clsx(className, loginClasses.root, classes?.root)}
+      className={cx(classes.root, className)}
       style={{
         backgroundImage: background && `url(${background})`,
       }}
       {...others}
     >
-      <StyledFormContainer
-        className={clsx(loginClasses.formContainer, classes?.formContainer)}
-      >
-        {children}
-      </StyledFormContainer>
-    </StyledRoot>
+      <div className={classes.formContainer}>{children}</div>
+    </div>
   );
 };
