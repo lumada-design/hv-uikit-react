@@ -1,12 +1,12 @@
-import { TabsProps as MuiTabsProps } from "@mui/material";
+import { Tabs, TabsProps as MuiTabsProps } from "@mui/material";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { staticClasses, useClasses } from "./Tabs.styles";
 
-import { StyledTabs } from "./Tabs.styles";
-import tabsClasses, { HvTabsClasses } from "./tabsClasses";
+export { staticClasses as tabsClasses };
+
+export type HvTabsClasses = ExtractNames<typeof useClasses>;
 
 // Mui Tabs props: https://mui.com/material-ui/api/tabs/#props
 export interface HvTabsProps
@@ -31,15 +31,17 @@ export interface HvTabsProps
  * Tabs can be used as a navigational widget for switching between sets of documents.
  */
 export const HvTabs = (props: HvTabsProps) => {
-  const { classes, ...others } = useDefaultProps("HvTabs", props);
+  const { classes: classesProp, ...others } = useDefaultProps("HvTabs", props);
+
+  const { classes } = useClasses(classesProp);
 
   return (
-    <StyledTabs
+    <Tabs
       classes={{
-        root: clsx(tabsClasses.root, classes?.root),
-        flexContainer: clsx(tabsClasses.flexContainer, classes?.flexContainer),
-        indicator: clsx(tabsClasses.indicator, classes?.indicator),
-        scroller: clsx(tabsClasses.scroller, classes?.scroller),
+        root: classes.root,
+        flexContainer: classes.flexContainer,
+        indicator: classes.indicator,
+        scroller: classes.scroller,
       }}
       TabIndicatorProps={{ children: <div /> }}
       {...others}

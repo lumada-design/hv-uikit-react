@@ -1,27 +1,25 @@
-import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Tabs as MuiTabs } from "@mui/material";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledTabs = styled(MuiTabs)({
-  // Root
-  minHeight: 0,
-  overflow: "visible",
-
-  // Override Mui styling: https://mui.com/material-ui/api/tabs/#css
-  "& .MuiTabs-indicator": {
+export const { staticClasses, useClasses } = createClasses("HvTabs", {
+  root: {
+    minHeight: 0,
+    overflow: "visible",
+  },
+  indicator: {
     display: "flex",
     justifyContent: "center",
     backgroundColor: "transparent",
     "& > div": {
       width: "100%",
-      backgroundColor: theme.colors.secondary,
+      backgroundColor: `${theme.colors.secondary}`,
     },
     height: 2,
   },
-  "& .MuiTabs-scroller": {
+  scroller: {
     overflow: "visible !important",
   },
-  "& .MuiTabs-flexContainer": {
+  flexContainer: {
     "& button:first-of-type": {
       marginLeft: "3px",
     },
