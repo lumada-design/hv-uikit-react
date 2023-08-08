@@ -1,6 +1,6 @@
 import { MouseEvent, useContext, useEffect, useState } from "react";
 
-import { clsx } from "clsx";
+import { theme } from "@hitachivantara/uikit-styles";
 
 import isNil from "lodash/isNil";
 
@@ -9,19 +9,18 @@ import { HvTypography } from "@core/components/Typography";
 import { HvButton } from "@core/components/Button";
 import { HvCheckBox } from "@core/components/CheckBox";
 import { HvInput } from "@core/components/Input";
-import { HvListProps, HvListValue } from "@core/components/List";
+import { HvList, HvListProps, HvListValue } from "@core/components/List";
 import { HvActionBar } from "@core/components/ActionBar";
 import BaseDropdownContext from "@core/components/BaseDropdown/BaseDropdownContext";
+import { ExtractNames } from "@core/utils/classes";
 
-import {
-  StyledList,
-  StyledListContainer,
-  StyledRootList,
-  StyledSearchContainer,
-} from "./List.styles";
+import { staticClasses, useClasses } from "./List.styles";
 import { getSelected } from "../utils";
-import dropdownListClasses, { HvDropdownListClasses } from "./listClasses";
 import { HvDropdownLabelsProps } from "../types";
+
+export { staticClasses as dropdownListClasses };
+
+export type HvDropdownListClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDropdownListProps {
   /**
@@ -113,7 +112,7 @@ const valuesExist = (values: HvListValue[]) =>
 
 export const HvDropdownList = ({
   id,
-  classes,
+  classes: classesProp,
   values = [],
   multiSelect = false,
   showSearch = false,
@@ -128,6 +127,8 @@ export const HvDropdownList = ({
   virtualized = false,
   ...others
 }: HvDropdownListProps) => {
+  const { classes, cx, css } = useClasses(classesProp);
+
   const [searchStr, setSearchStr] = useState<string>("");
   const [list, setList] = useState<HvListValue[]>(clone(values));
   const [allSelected, setAllSelected] = useState<boolean>(false);
@@ -216,12 +217,7 @@ export const HvDropdownList = ({
    * @returns {*}
    */
   const renderSearch = () => (
-    <StyledSearchContainer
-      className={clsx(
-        dropdownListClasses.searchContainer,
-        classes?.searchContainer
-      )}
-    >
+    <div className={classes.searchContainer}>
       <HvInput
         id={setId(id, "search")}
         type="search"
@@ -229,7 +225,7 @@ export const HvDropdownList = ({
         placeholder={labels?.searchPlaceholder}
         onChange={(event, str) => handleSearch(str)}
       />
-    </StyledSearchContainer>
+    </div>
   );
 
   /**
@@ -269,20 +265,15 @@ export const HvDropdownList = ({
     );
 
     return (
-      <div
-        className={clsx(
-          dropdownListClasses.selectAllContainer,
-          classes?.selectAllContainer
-        )}
-      >
+      <div className={classes.selectAllContainer}>
         <HvCheckBox
           id={setId(id, "select-all")}
           label={defaultLabel}
           onChange={() => handleSelectAll()}
           classes={{
-            container: clsx(dropdownListClasses.selection, classes?.selection),
+            container: classes.selection,
           }}
-          className={clsx(dropdownListClasses.selectAll, classes?.selectAll)}
+          className={classes.selectAll}
           indeterminate={anySelected && !allSelected}
           checked={allSelected}
         />
@@ -333,37 +324,38 @@ export const HvDropdownList = ({
   const showList = valuesExist(values);
 
   return (
-    <StyledRootList
-      className={clsx(dropdownListClasses.rootList, classes?.rootList)}
-    >
-      <div
-        className={clsx(
-          dropdownListClasses.listBorderDown,
-          classes?.listBorderDown
-        )}
-      />
-      <StyledListContainer
-        className={clsx(
-          dropdownListClasses.listContainer,
-          classes?.listContainer
-        )}
-      >
+    <div className={classes.rootList}>
+      <div className={classes.listBorderDown} />
+      <div className={classes.listContainer}>
         {showSearch && renderSearch()}
         {showList && multiSelect && renderSelectAll()}
         {showList && (
-          <StyledList
+          <HvList
             id={setId(id, "list")}
             classes={{
-              root: clsx(
-                dropdownListClasses.dropdownListContainer,
-                classes?.dropdownListContainer
+              root: cx(
+                classes.dropdownListContainer,
+                css({
+                  maxWidth: width,
+                  maxHeight:
+                    maxHeight ??
+                    `calc(${height}px - 32px - ${theme.space.xs} - ${theme.space.sm})`,
+                  overflow: "auto",
+                  padding: 5,
+                }),
+                dropdownHeight &&
+                  css({
+                    height: dropdownHeight,
+                  }),
+                virtualized &&
+                  css({
+                    maxWidth: "inherit",
+                    maxHeight: "inherit",
+                    overflow: "inherit",
+                    padding: 0,
+                  })
               ),
             }}
-            $dropdownHeight={dropdownHeight}
-            $maxHeight={maxHeight}
-            $virtualized={virtualized}
-            $height={height}
-            $width={width}
             values={list}
             multiSelect={multiSelect}
             useSelector={multiSelect}
@@ -379,8 +371,8 @@ export const HvDropdownList = ({
             {...others}
           />
         )}
-      </StyledListContainer>
+      </div>
       {showList && multiSelect ? renderActions() : null}
-    </StyledRootList>
+    </div>
   );
 };
