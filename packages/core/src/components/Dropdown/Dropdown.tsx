@@ -1,32 +1,36 @@
 import { useEffect, useRef, useState } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+
+import { theme } from "@hitachivantara/uikit-styles";
 
 import { PopperProps } from "@mui/material";
 
-import { clsx } from "clsx";
-
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { setId } from "@core/utils/setId";
 import { useLabels, useUniqueId, useControlled } from "@core/hooks";
 import { HvBaseProps } from "@core/types/generic";
-import { HvBaseDropdownProps } from "@core/components/BaseDropdown";
+import {
+  HvBaseDropdown,
+  HvBaseDropdownProps,
+} from "@core/components/BaseDropdown";
 import { HvListValue } from "@core/components/List";
 import {
   isInvalid,
   HvInfoMessage,
   HvWarningText,
+  HvFormElement,
+  HvLabel,
 } from "@core/components/Forms";
+import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "@core/components/Typography";
 
 import { getSelected, getSelectionLabel } from "./utils";
-import dropdownClasses, { HvDropdownClasses } from "./dropdownClasses";
 import { HvDropdownList, HvDropdownListProps } from "./List";
-import {
-  StyledDropdown,
-  StyledHvFormElement,
-  StyledLabel,
-  StyledLabelContainer,
-  StyledTypography,
-} from "./Dropdown.styles";
+import { staticClasses, useClasses } from "./Dropdown.styles";
 import { HvDropdownLabelsProps, HvDropdownStatus } from "./types";
+
+export { staticClasses as dropdownClasses };
+
+export type HvDropdownClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDropdownProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
@@ -233,7 +237,7 @@ const DEFAULT_LABELS: HvDropdownLabelsProps = {
  */
 export const HvDropdown = (props: HvDropdownProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
 
     id,
@@ -284,6 +288,8 @@ export const HvDropdown = (props: HvDropdownProps) => {
     listProps = {},
     ...others
   } = useDefaultProps("HvDropdown", props);
+
+  const { classes, cx, css } = useClasses(classesProp);
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
@@ -418,35 +424,31 @@ export const HvDropdown = (props: HvDropdownProps) => {
   const buildHeaderLabel = () => {
     const hasSelection = getSelected(internalValues).length > 0;
     return labels?.select || !multiSelect ? (
-      <StyledTypography
+      <HvTypography
         component="div"
-        $selectionDisabled={disabled}
-        $isOpen={isOpen || hasSelection}
         variant="body"
-        className={clsx(
-          dropdownClasses?.placeholder,
-          classes?.placeholder,
-          disabled &&
-            clsx(dropdownClasses?.selectionDisabled, classes?.selectionDisabled)
+        className={cx(
+          classes.placeholder,
+          {
+            [classes.selectionDisabled]: disabled,
+          },
+          !(isOpen || hasSelection) &&
+            css({ color: theme.dropdown.placeholderColor })
         )}
       >
         {selectionLabel.selected}
-      </StyledTypography>
+      </HvTypography>
     ) : (
-      <StyledTypography
+      <HvTypography
         component="div"
-        $selectionDisabled={disabled}
-        className={clsx(
-          dropdownClasses?.placeholder,
-          classes?.placeholder,
-          disabled &&
-            clsx(dropdownClasses?.selectionDisabled, classes?.selectionDisabled)
-        )}
+        className={cx(classes.placeholder, {
+          [classes.selectionDisabled]: disabled,
+        })}
         variant="body"
       >
         <b>{selectionLabel.selected}</b>
         {` ${labels?.multiSelectionConjunction} ${selectionLabel.total}`}
-      </StyledTypography>
+      </HvTypography>
     );
   };
 
@@ -472,66 +474,59 @@ export const HvDropdown = (props: HvDropdownProps) => {
   }
 
   return (
-    <StyledHvFormElement
+    <HvFormElement
       id={id}
       name={name}
       status={validationState}
       disabled={disabled}
       readOnly={readOnly}
       required={required}
-      className={clsx(className, dropdownClasses.root, classes?.root)}
-      $selectionDisabled={disabled}
+      className={cx(
+        classes.root,
+        disabled && css({ color: theme.dropdown.disabledColor }),
+        className
+      )}
       {...others}
     >
       {(hasLabel || hasDescription) && (
-        <StyledLabelContainer
-          className={clsx(
-            dropdownClasses.labelContainer,
-            classes?.labelContainer
-          )}
-        >
+        <div className={classes.labelContainer}>
           {hasLabel && (
-            <StyledLabel
+            <HvLabel
               id={setId(elementId, "label")}
               label={label}
-              className={clsx(classes?.label, dropdownClasses.label)}
+              className={classes.label}
             />
           )}
 
           {hasDescription && (
             <HvInfoMessage
               id={setId(elementId, "description")}
-              className={clsx(
-                classes?.description,
-                dropdownClasses.description
-              )}
+              className={classes.description}
             >
               {description}
             </HvInfoMessage>
           )}
-        </StyledLabelContainer>
+        </div>
       )}
-      <StyledDropdown
+      <HvBaseDropdown
         id={setId(id, "dropdown")}
         classes={{
-          root: clsx(classes?.dropdown, dropdownClasses.dropdown),
-          arrow: clsx(classes?.arrow, dropdownClasses.arrow),
-          header: clsx(
-            dropdownClasses.dropdownHeader,
-            classes?.dropdownHeader,
-            isStateInvalid &&
-              clsx(
-                dropdownClasses.dropdownHeaderInvalid,
-                classes?.dropdownHeaderInvalid
-              )
+          root: cx(
+            classes.dropdown,
+            readOnly &&
+              css({
+                [`& .${staticClasses.dropdownHeader}`]: {
+                  border: theme.dropdown.readOnlyBorder,
+                  backgroundColor: theme.dropdown.readOnlyBackgroundColor,
+                },
+              })
           ),
-          headerOpen: clsx(
-            dropdownClasses.dropdownHeaderOpen,
-            classes?.dropdownHeaderOpen
-          ),
+          arrow: classes.arrow,
+          header: cx(classes.dropdownHeader, {
+            [classes.dropdownHeaderInvalid]: isStateInvalid,
+          }),
+          headerOpen: classes.dropdownHeaderOpen,
         }}
-        $dropdownHeaderInvalid={isStateInvalid}
-        $readOnly={readOnly}
         expanded={isOpen}
         disabled={disabled}
         readOnly={readOnly}
@@ -565,11 +560,8 @@ export const HvDropdown = (props: HvDropdownProps) => {
         <HvDropdownList
           id={setId(elementId, "values")}
           classes={{
-            rootList: clsx(dropdownClasses.rootList, classes?.rootList),
-            dropdownListContainer: clsx(
-              dropdownClasses.dropdownListContainer,
-              classes?.dropdownListContainer
-            ),
+            rootList: classes.rootList,
+            dropdownListContainer: classes.dropdownListContainer,
           }}
           values={internalValues}
           multiSelect={multiSelect}
@@ -586,16 +578,16 @@ export const HvDropdown = (props: HvDropdownProps) => {
           virtualized={virtualized}
           {...listProps}
         />
-      </StyledDropdown>
+      </HvBaseDropdown>
       {canShowError && (
         <HvWarningText
           id={setId(elementId, "error")}
           disableBorder
-          className={clsx(dropdownClasses.error, classes?.error)}
+          className={classes.error}
         >
           {validationMessage}
         </HvWarningText>
       )}
-    </StyledHvFormElement>
+    </HvFormElement>
   );
 };
