@@ -1,15 +1,18 @@
 import { useContext } from "react";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
+import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "@core/components/Typography";
 
 import { HvFormElementContext } from "../FormElement";
 import { findDescriptors } from "../FormElement/utils/FormUtils";
-import { StyledTypography } from "./Label.styles";
-import labelClasses, { HvLabelClasses } from "./labelClasses";
+import { staticClasses, useClasses } from "./Label.styles";
+
+export { staticClasses as labelClasses };
+
+export type HvLabelClasses = ExtractNames<typeof useClasses>;
 
 export interface HvLabelProps extends HvBaseProps {
   /** Id to be applied to the root node */
@@ -32,7 +35,7 @@ export interface HvLabelProps extends HvBaseProps {
 export const HvLabel = (props: HvLabelProps) => {
   const {
     id,
-    classes,
+    classes: classesProp,
     className,
     children,
     label,
@@ -41,6 +44,8 @@ export const HvLabel = (props: HvLabelProps) => {
     htmlFor: htmlForProp,
     ...others
   } = useDefaultProps("HvLabel", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const { elementId, elementDisabled, elementRequired } =
     useContext(HvFormElementContext);
@@ -54,28 +59,24 @@ export const HvLabel = (props: HvLabelProps) => {
 
   return (
     <>
-      <StyledTypography
+      <HvTypography
         id={localId}
-        className={clsx(
-          className,
-          labelClasses.root,
-          classes?.root,
-          localDisabled &&
-            clsx(labelClasses.labelDisabled, classes?.labelDisabled),
-          children &&
-            label &&
-            clsx(labelClasses.childGutter, classes?.childGutter)
+        className={cx(
+          classes.root,
+          {
+            [classes.labelDisabled]: !!localDisabled,
+            [classes.childGutter]: !!(children && label),
+          },
+          className
         )}
         variant="label"
         component="label"
         htmlFor={forId}
-        $labelDisabled={!!localDisabled}
-        $childGutter={!!(children && label)}
         {...others}
       >
         {label}
         {localRequired && <span aria-hidden="true">*</span>}
-      </StyledTypography>
+      </HvTypography>
       {children}
     </>
   );
