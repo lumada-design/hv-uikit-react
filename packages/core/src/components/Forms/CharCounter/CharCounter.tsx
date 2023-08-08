@@ -1,14 +1,17 @@
 import { useContext } from "react";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
+import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "@core/components/Typography";
 
-import { StyledRoot, StyledTypography } from "./CharCounter.styles";
+import { staticClasses, useClasses } from "./CharCounter.styles";
 import { HvFormElementContext } from "../FormElement";
-import charCounterClasses, { HvCharCounterClasses } from "./charCounterClasses";
+
+export { staticClasses as charCounterClasses };
+
+export type HvCharCounterClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCharCounterProps extends HvBaseProps {
   /** The string that separates the current char quantity from the max quantity. */
@@ -36,13 +39,15 @@ export const HvCharCounter = (props: HvCharCounterProps) => {
     separator = "/",
     maxCharQuantity,
     currentCharQuantity = 0,
-    classes,
+    classes: classesProp,
     className,
     id,
     disabled,
     disableGutter = false,
     ...others
   } = useDefaultProps("HvCharCounter", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const { elementId, elementDisabled } = useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;
@@ -52,54 +57,42 @@ export const HvCharCounter = (props: HvCharCounterProps) => {
   const isOverloaded = currentCharQuantity > maxCharQuantity;
 
   return (
-    <StyledRoot
+    <div
       id={localId}
-      className={clsx(
-        className,
-        charCounterClasses.root,
-        classes?.root,
-        localDisabled &&
-          clsx(charCounterClasses.counterDisabled, classes?.counterDisabled),
-        !disableGutter && clsx(charCounterClasses.gutter, classes?.gutter)
+      className={cx(
+        classes.root,
+        {
+          [classes.counterDisabled]: !!localDisabled,
+          [classes.gutter]: !disableGutter,
+        },
+        className
       )}
-      $counterDisabled={!!localDisabled}
-      $gutter={!disableGutter}
       aria-live="polite"
       aria-disabled={localDisabled}
       {...others}
     >
-      <StyledTypography
+      <HvTypography
         id={currentId}
-        className={clsx(
-          isOverloaded &&
-            !localDisabled &&
-            clsx(charCounterClasses.overloaded, classes?.overloaded),
-          localDisabled &&
-            clsx(charCounterClasses.counterDisabled, classes?.counterDisabled)
-        )}
+        className={cx({
+          [classes.overloaded]: isOverloaded && !localDisabled,
+          [classes.counterDisabled]: !!localDisabled,
+        })}
         variant="label"
         component="label"
-        $overloaded={isOverloaded && !localDisabled}
-        $counterDisabled={!!localDisabled}
       >
         {currentCharQuantity}
-      </StyledTypography>
-      <StyledTypography
+      </HvTypography>
+      <HvTypography
         id={maxQuantityId}
-        className={clsx(
-          isOverloaded &&
-            !localDisabled &&
-            clsx(charCounterClasses.overloaded, classes?.overloaded),
-          localDisabled &&
-            clsx(charCounterClasses.counterDisabled, classes?.counterDisabled)
-        )}
+        className={cx({
+          [classes.overloaded]: isOverloaded && !localDisabled,
+          [classes.counterDisabled]: !!localDisabled,
+        })}
         variant="body"
         component="label"
-        $overloaded={isOverloaded && !localDisabled}
-        $counterDisabled={!!localDisabled}
       >
         {` ${separator} ${maxCharQuantity}`}
-      </StyledTypography>
-    </StyledRoot>
+      </HvTypography>
+    </div>
   );
 };
