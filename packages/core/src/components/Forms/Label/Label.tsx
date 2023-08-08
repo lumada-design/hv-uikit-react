@@ -1,10 +1,9 @@
 import { useContext } from "react";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
 import { ExtractNames } from "@core/utils/classes";
-import { HvTypography } from "@core/components/Typography";
+import { HvTypography, HvTypographyProps } from "@core/components/Typography";
 
 import { HvFormElementContext } from "../FormElement";
 import { findDescriptors } from "../FormElement/utils/FormUtils";
@@ -14,7 +13,7 @@ export { staticClasses as labelClasses };
 
 export type HvLabelClasses = ExtractNames<typeof useClasses>;
 
-export interface HvLabelProps extends HvBaseProps {
+export interface HvLabelProps extends HvTypographyProps<"label"> {
   /** Id to be applied to the root node */
   id?: string;
   /** The text to be shown by the label. */

@@ -2,9 +2,8 @@ import { useContext } from "react";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { setId } from "@core/utils/setId";
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
-import { HvTypography } from "@core/components/Typography";
+import { HvTypography, HvTypographyProps } from "@core/components/Typography";
 
 import { staticClasses, useClasses } from "./InfoMessage.styles";
 import { HvFormElementContext } from "../FormElement";
@@ -13,7 +12,7 @@ export { staticClasses as infoMessageClasses };
 
 export type HvInfoMessageClasses = ExtractNames<typeof useClasses>;
 
-export interface HvInfoMessageProps extends HvBaseProps {
+export interface HvInfoMessageProps extends HvTypographyProps<"label"> {
   /** If `true` the label is disabled. */
   disabled?: boolean;
   /** If `true` the info message won't have margins. */
