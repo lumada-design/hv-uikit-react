@@ -22,7 +22,6 @@ import {
   useHvSortBy,
   useHvTableSticky,
   HvTableColumnConfig,
-  HvCellProps,
   useHvBulkActions,
   theme,
 } from "@hitachivantara/uikit-react-core";
@@ -39,16 +38,14 @@ import {
   makeSelectedData,
   getGroupedRowsColumns,
   getGroupedColumns,
-  NewEntry,
+  AssetEvent,
 } from "../storiesUtils";
 
 const UseHvHooks = () => {
   const data = useMemo(() => makeData(6), []);
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-    useHvData<NewEntry, string>({
-      data,
-    });
+    useHvData<AssetEvent, string>({ data });
 
   return (
     <HvTableContainer>
@@ -92,9 +89,7 @@ export const UseHvHooksStory: StoryObj = {
 const data = useMemo(() => makeData(6), []);
 
 const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-  useHvData<NewEntry, string>({
-    data,
-  });
+  useHvData<AssetEvent, string>({ data });
 
 return (
   <HvTableContainer>
@@ -153,7 +148,7 @@ const UseHvPagination = () => {
     page,
     state: { pageSize },
     getHvPaginationProps,
-  } = useHvData<NewEntry, string>({ columns, data }, useHvPagination);
+  } = useHvData<AssetEvent, string>({ columns, data }, useHvPagination);
 
   return (
     <>
@@ -217,7 +212,7 @@ const {
   page,
   state: { pageSize },
   getHvPaginationProps,
-} = useHvData<NewEntry, string>({ columns, data }, useHvPagination);
+} = useHvData<AssetEvent, string>({ columns, data }, useHvPagination);
 
 const EmptyRow = () => (
   <HvTableRow>
@@ -281,7 +276,7 @@ const UseHvSelection = () => {
   const data = useMemo(() => makeData(6), []);
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-    useHvData<NewEntry, string>({ columns, data }, useHvRowSelection);
+    useHvData<AssetEvent, string>({ columns, data }, useHvRowSelection);
 
   return (
     <HvTableContainer>
@@ -325,7 +320,7 @@ const columns = useMemo(() => getColumns(), []);
 const data = useMemo(() => makeData(6), []);
 
 const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-  useHvData<NewEntry, string>({ columns, data }, useHvRowSelection);
+  useHvData<AssetEvent, string>({ columns, data }, useHvRowSelection);
 
 return (
   <HvTableContainer>
@@ -371,7 +366,7 @@ const UseHvSelectionControlled = () => {
   const [data, setData] = useState(initialData);
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-    useHvData<NewEntry, string>(
+    useHvData<AssetEvent, string>(
       { columns, data, manualRowSelectedKey: "selected" },
       useHvRowSelection
     );
@@ -429,7 +424,7 @@ const initialData = useMemo(() => makeSelectedData(6), []);
 const [data, setData] = useState(initialData);
 
 const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-  useHvData<NewEntry, string>(
+  useHvData<AssetEvent, string>(
     { columns, data, manualRowSelectedKey: "selected" },
     useHvRowSelection
   );
@@ -496,7 +491,7 @@ const UseHvBulkActions = () => {
     toggleAllRowsSelected,
     getHvBulkActionsProps,
     getHvPaginationProps,
-  } = useHvData<NewEntry, string>(
+  } = useHvData<AssetEvent, string>(
     { columns, data },
     useHvPagination,
     useHvRowSelection,
@@ -618,7 +613,7 @@ const {
   toggleAllRowsSelected,
   getHvBulkActionsProps,
   getHvPaginationProps,
-} = useHvData<NewEntry, string>(
+} = useHvData<AssetEvent, string>(
   { columns, data },
   useHvPagination,
   useHvRowSelection,
@@ -748,7 +743,7 @@ const UseHvSortBy = () => {
   const data = useMemo(() => makeData(5), []);
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useHvData<NewEntry, string>({ columns, data }, useHvSortBy);
+    useHvData<AssetEvent, string>({ columns, data }, useHvSortBy);
 
   return (
     <HvTableContainer>
@@ -810,7 +805,7 @@ const columns = useMemo(() => {
 const data = useMemo(() => makeData(5), []);
 
 const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-  useHvData<NewEntry, string>({ columns, data }, useHvSortBy);
+  useHvData<AssetEvent, string>({ columns, data }, useHvSortBy);
 
 return (
   <HvTableContainer>
@@ -862,7 +857,7 @@ const UseHvRowExpand = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-    useHvData<NewEntry, string>(
+    useHvData<AssetEvent, string>(
       { columns, data, labels: i18n },
       useHvRowExpand
     );
@@ -939,7 +934,7 @@ const i18n = useMemo(
 );
 
 const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-  useHvData<NewEntry, string>(
+  useHvData<AssetEvent, string>(
     { columns, data, labels: i18n },
     useHvRowExpand
   );
@@ -1009,7 +1004,7 @@ const UseHvGroupBy = () => {
   const data = useMemo(() => makeData(6), []);
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-    useHvData<NewEntry, string>(
+    useHvData<AssetEvent, string>(
       {
         columns,
         data,
@@ -1044,36 +1039,34 @@ const UseHvGroupBy = () => {
             prepareRow(row);
 
             return (
-              <Fragment key={row.id}>
-                <HvTableRow
-                  {...row.getRowProps()}
-                  style={{
-                    backgroundColor:
-                      row.subRows.length > 0
-                        ? theme.colors.atmo1
-                        : theme.table.rowExpandBackgroundColor,
-                  }}
-                >
-                  {row.cells.map((cell) => (
-                    <HvTableCell {...cell.getCellProps()}>
-                      {cell.isGrouped ? (
-                        // If it's a grouped cell, add an expander and row count
-                        <>
-                          {cell.render("Cell")} ({row.subRows.length})
-                        </>
-                      ) : cell.isAggregated ? (
-                        // If the cell is aggregated, use the Aggregated
-                        // renderer for cell
-                        cell.render("Aggregated")
-                      ) : cell.isPlaceholder ? null : (
-                        // For cells with repeated values, render null
-                        // Otherwise, just render the regular cell
-                        cell.render("Cell")
-                      )}
-                    </HvTableCell>
-                  ))}
-                </HvTableRow>
-              </Fragment>
+              <HvTableRow
+                {...row.getRowProps()}
+                style={{
+                  backgroundColor:
+                    row.subRows.length > 0
+                      ? theme.colors.atmo1
+                      : theme.table.rowExpandBackgroundColor,
+                }}
+              >
+                {row.cells.map((cell) => (
+                  <HvTableCell {...cell.getCellProps()}>
+                    {cell.isGrouped ? (
+                      // If it's a grouped cell, add an expander and row count
+                      <>
+                        {cell.render("Cell")} ({row.subRows.length})
+                      </>
+                    ) : cell.isAggregated ? (
+                      // If the cell is aggregated, use the Aggregated
+                      // renderer for cell
+                      cell.render("Aggregated")
+                    ) : cell.isPlaceholder ? null : (
+                      // For cells with repeated values, render null
+                      // Otherwise, just render the regular cell
+                      cell.render("Cell")
+                    )}
+                  </HvTableCell>
+                ))}
+              </HvTableRow>
             );
           })}
         </HvTableBody>
@@ -1091,7 +1084,7 @@ const columns = useMemo(() => getGroupedRowsColumns(), []);
 const data = useMemo(() => makeData(6), []);
 
 const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-  useHvData<NewEntry, string>(
+  useHvData<AssetEvent, string>(
     {
       columns,
       data,
@@ -1126,31 +1119,29 @@ return (
           prepareRow(row);
 
           return (
-            <Fragment key={row.id}>
-              <HvTableRow
-                {...row.getRowProps()}
-                style={{
-                  backgroundColor:
-                    row.subRows.length > 0
-                      ? theme.colors.atmo1
-                      : theme.table.rowExpandBackgroundColor,
-                }}
-              >
-                {row.cells.map((cell) => (
-                  <HvTableCell {...cell.getCellProps()}>
-                    {cell.isGrouped ? (
-                      <>
-                        {cell.render("Cell")} ({row.subRows.length})
-                      </>
-                    ) : cell.isAggregated ? (
-                      cell.render("Aggregated")
-                    ) : cell.isPlaceholder ? null : (
-                      cell.render("Cell")
-                    )}
-                  </HvTableCell>
-                ))}
-              </HvTableRow>
-            </Fragment>
+            <HvTableRow
+              {...row.getRowProps()}
+              style={{
+                backgroundColor:
+                  row.subRows.length > 0
+                    ? theme.colors.atmo1
+                    : theme.table.rowExpandBackgroundColor,
+              }}
+            >
+              {row.cells.map((cell) => (
+                <HvTableCell {...cell.getCellProps()}>
+                  {cell.isGrouped ? (
+                    <>
+                      {cell.render("Cell")} ({row.subRows.length})
+                    </>
+                  ) : cell.isAggregated ? (
+                    cell.render("Aggregated")
+                  ) : cell.isPlaceholder ? null : (
+                    cell.render("Cell")
+                  )}
+                </HvTableCell>
+              ))}
+            </HvTableRow>
           );
         })}
       </HvTableBody>
@@ -1164,7 +1155,7 @@ return (
 };
 
 const UseHvTableSticky = () => {
-  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
+  const columns = useMemo<HvTableColumnConfig<AssetEvent, string>[]>(
     () => [
       { Header: "Title", accessor: "name", sticky: "left", width: 120 },
       {
@@ -1179,7 +1170,7 @@ const UseHvTableSticky = () => {
         Header: "Probability",
         accessor: "riskScore",
         align: "right",
-        Cell: ({ value }: HvCellProps<NewEntry, string>) => <>{value}%</>,
+        Cell: ({ value }) => <>{value}%</>,
         width: 80,
       },
       {
@@ -1201,7 +1192,7 @@ const UseHvTableSticky = () => {
     prepareRow,
     headerGroups,
     rows,
-  } = useHvData<NewEntry, string>(
+  } = useHvData<AssetEvent, string>(
     {
       columns,
       data,
@@ -1249,7 +1240,7 @@ export const UseHvTableStickyStory: StoryObj = {
     docs: {
       source: {
         code: `
-const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
+const columns = useMemo<HvTableColumnConfig<AssetEvent, string>[]>(
   () => [
     { Header: "Title", accessor: "name", sticky: "left", width: 120 },
     {
@@ -1264,7 +1255,7 @@ const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
       Header: "Probability",
       accessor: "riskScore",
       align: "right",
-      Cell: ({ value }: HvCellProps<NewEntry, string>) => <>{value}%</>,
+      Cell: ({ value }) => <>{value}%</>,
       width: 80,
     },
     {
@@ -1286,7 +1277,7 @@ const {
   prepareRow,
   headerGroups,
   rows,
-} = useHvData<NewEntry, string>(
+} = useHvData<AssetEvent, string>(
   {
     columns,
     data,
@@ -1338,7 +1329,7 @@ const UseHvHeaderGroups = () => {
   const data = useMemo(() => makeData(), []);
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-    useHvData<NewEntry, string>(
+    useHvData<AssetEvent, string>(
       {
         columns,
         data,
@@ -1389,7 +1380,7 @@ const columns = useMemo(() => getGroupedColumns(), []);
 const data = useMemo(() => makeData(), []);
 
 const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-  useHvData<NewEntry, string>(
+  useHvData<AssetEvent, string>(
     {
       columns,
       data,

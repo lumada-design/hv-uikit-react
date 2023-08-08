@@ -1,6 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { StoryObj } from "@storybook/react";
-import { useFlexLayout, useBlockLayout, useAbsoluteLayout } from "react-table";
+import {
+  useFlexLayout,
+  useBlockLayout,
+  useAbsoluteLayout,
+  SortByFn,
+} from "react-table";
 import range from "lodash/range";
 import {
   HvTable,
@@ -10,10 +15,12 @@ import {
   HvTableHeader,
   HvTableRow,
   HvTableCell,
+  HvRowInstance,
   HvPagination,
   HvTypography,
   HvEmptyState,
   HvBulkActions,
+  HvBulkActionsProps,
   HvToggleButton,
   HvDropdown,
   HvSwitch,
@@ -27,7 +34,6 @@ import {
   useHvBulkActions,
   useHvResizeColumns,
   HvTableColumnConfig,
-  HvCellProps,
 } from "@hitachivantara/uikit-react-core";
 import {
   Ban,
@@ -41,7 +47,7 @@ import {
   makeData,
   getColumns,
   makeSelectedData,
-  NewEntry,
+  AssetEvent,
   useServerData,
 } from "../storiesUtils";
 import LoadingContainer from "./LoadingContainer";
@@ -58,59 +64,47 @@ const EmptyRow = ({ height }) => (
 );
 
 const Complete = () => {
-  const colSort = useMemo(() => {
+  const colSort = useCallback<SortByFn<AssetEvent>>((rowA, rowB, columnId) => {
     const levels = ["minor", "average", "major", "critical"];
 
-    return (rowA, rowB, columnId) => {
-      const a = levels.indexOf(rowA.values[columnId]?.toLowerCase());
-      const b = levels.indexOf(rowB.values[columnId]?.toLowerCase());
+    const a = levels.indexOf(rowA.values[columnId]?.toLowerCase());
+    const b = levels.indexOf(rowB.values[columnId]?.toLowerCase());
 
-      return a === b ? 0 : a > b ? 1 : -1;
-    };
+    return a - b;
   }, []);
 
-  const columns = useMemo(() => {
-    const cols: HvTableColumnConfig<NewEntry, string>[] = [
+  const columns = useMemo<HvTableColumnConfig<AssetEvent, string>[]>(() => {
+    const cols: HvTableColumnConfig<AssetEvent, string>[] = [
       ...getColumns(),
       {
         id: "actions",
         variant: "actions",
-        Cell: ({ row }: HvCellProps<NewEntry, string>) => {
-          return (
-            <HvToggleButton
-              aria-label="Lock"
-              notSelectedIcon={<Unlock />}
-              selectedIcon={<Lock />}
-              selected={row.isSelectionLocked}
-              onClick={() => row.toggleRowLockedSelection?.()}
-            />
-          );
-        },
+        Cell: ({ row }) => (
+          <HvToggleButton
+            aria-label="Lock"
+            notSelectedIcon={<Unlock />}
+            selectedIcon={<Lock />}
+            selected={row.isSelectionLocked}
+            onClick={() => row.toggleRowLockedSelection?.()}
+          />
+        ),
       },
       {
-        id: "secundaryActions",
+        id: "secondaryActions",
         variant: "actions",
         width: 32,
-        Cell: () => {
-          return (
-            <HvDropDownMenu
-              keepOpened={false}
-              placement="left"
-              onClick={(e, item) => alert(item.label)}
-              dataList={[
-                {
-                  label: "Share",
-                },
-                {
-                  label: "Hide",
-                },
-                {
-                  label: "Remove",
-                },
-              ]}
-            />
-          );
-        },
+        Cell: () => (
+          <HvDropDownMenu
+            keepOpened={false}
+            placement="left"
+            onClick={(e, item) => alert(item.id)}
+            dataList={[
+              { id: "share", label: "Share" },
+              { id: "hide", label: "Hide" },
+              { id: "remove", label: "Remove" },
+            ]}
+          />
+        ),
       },
     ];
 
@@ -141,7 +135,7 @@ const Complete = () => {
     toggleAllRowsSelected,
     getHvBulkActionsProps,
     getHvPaginationProps,
-  } = useHvData<NewEntry, string>(
+  } = useHvData<AssetEvent, string>(
     {
       columns,
       data,
@@ -153,7 +147,7 @@ const Complete = () => {
         lockedSelectionRowIds: { 1: true, 6: true },
       },
       defaultColumn: {
-        Cell: ({ value }: HvCellProps<NewEntry, string>) => value ?? "—",
+        Cell: ({ value }) => value ?? "—",
       },
     },
     useHvSortBy,
@@ -162,7 +156,11 @@ const Complete = () => {
     useHvBulkActions
   );
 
-  const handleAction = (evt, id, action) => {
+  const handleAction: HvBulkActionsProps["actionsCallback"] = (
+    evt,
+    id,
+    action
+  ) => {
     const selected = selectedFlatRows.map((el) => el.original);
 
     switch (action.id) {
@@ -188,19 +186,18 @@ const Complete = () => {
     }
   };
 
-  const rowRenderer = (pages) => {
-    return pages.map((row, index) => {
+  const rowRenderer = (pageRows: HvRowInstance<AssetEvent, string>[]) => {
+    return pageRows.map((row, index) => {
       prepareRow(row);
 
       return (
         <HvTableRow
-          key={row.Header}
           {...row.getRowProps({
             "aria-rowindex": index,
           })}
         >
           {row.cells.map((cell) => (
-            <HvTableCell key={cell.Header} {...cell.getCellProps()}>
+            <HvTableCell {...cell.getCellProps()}>
               {cell.render("Cell")}
             </HvTableCell>
           ))}
@@ -256,59 +253,47 @@ export const CompleteStory: StoryObj = {
     docs: {
       source: {
         code: `
-const colSort = useMemo(() => {
+const colSort = useCallback<SortByFn<AssetEvent>>((rowA, rowB, columnId) => {
   const levels = ["minor", "average", "major", "critical"];
 
-  return (rowA, rowB, columnId) => {
-    const a = levels.indexOf(rowA.values[columnId]?.toLowerCase());
-    const b = levels.indexOf(rowB.values[columnId]?.toLowerCase());
+  const a = levels.indexOf(rowA.values[columnId]?.toLowerCase());
+  const b = levels.indexOf(rowB.values[columnId]?.toLowerCase());
 
-    return a === b ? 0 : a > b ? 1 : -1;
-  };
+  return a - b;
 }, []);
 
-const columns = useMemo(() => {
-  const cols: HvTableColumnConfig<NewEntry, string>[] = [
+const columns = useMemo<HvTableColumnConfig<AssetEvent, string>[]>(() => {
+  const cols: HvTableColumnConfig<AssetEvent, string>[] = [
     ...getColumns(),
     {
       id: "actions",
       variant: "actions",
-      Cell: ({ row }: HvCellProps<NewEntry, string>) => {
-        return (
-          <HvToggleButton
-            aria-label="Lock"
-            notSelectedIcon={<Unlock />}
-            selectedIcon={<Lock />}
-            selected={row.isSelectionLocked}
-            onClick={() => row.toggleRowLockedSelection?.()}
-          />
-        );
-      },
+      Cell: ({ row }) => (
+        <HvToggleButton
+          aria-label="Lock"
+          notSelectedIcon={<Unlock />}
+          selectedIcon={<Lock />}
+          selected={row.isSelectionLocked}
+          onClick={() => row.toggleRowLockedSelection?.()}
+        />
+      ),
     },
     {
-      id: "secundaryActions",
+      id: "secondaryActions",
       variant: "actions",
       width: 32,
-      Cell: () => {
-        return (
-          <HvDropDownMenu
-            keepOpened={false}
-            placement="left"
-            onClick={(e, item) => alert(item.label)}
-            dataList={[
-              {
-                label: "Share",
-              },
-              {
-                label: "Hide",
-              },
-              {
-                label: "Remove",
-              },
-            ]}
-          />
-        );
-      },
+      Cell: () => (
+        <HvDropDownMenu
+          keepOpened={false}
+          placement="left"
+          onClick={(e, item) => alert(item.id)}
+          dataList={[
+            { id: "share", label: "Share" },
+            { id: "hide", label: "Hide" },
+            { id: "remove", label: "Remove" },
+          ]}
+        />
+      ),
     },
   ];
 
@@ -329,17 +314,6 @@ const initialData = useMemo(
 );
 const [data, setData] = useState(initialData);
 
-const EmptyRow = () => (
-  <HvTableRow>
-    <HvTableCell colSpan={100} style={{ height: 100 }}>
-      <HvEmptyState
-        message="No data to display"
-        icon={<Ban role="presentation" />}
-      />
-    </HvTableCell>
-  </HvTableRow>
-);
-
 const {
   getTableProps,
   getTableBodyProps,
@@ -350,7 +324,7 @@ const {
   toggleAllRowsSelected,
   getHvBulkActionsProps,
   getHvPaginationProps,
-} = useHvData<NewEntry, string>(
+} = useHvData<AssetEvent, string>(
   {
     columns,
     data,
@@ -362,7 +336,7 @@ const {
       lockedSelectionRowIds: { 1: true, 6: true },
     },
     defaultColumn: {
-      Cell: ({ value }: HvCellProps<NewEntry, string>) => value ?? "—",
+      Cell: ({ value }) => value ?? "—",
     },
   },
   useHvSortBy,
@@ -371,7 +345,11 @@ const {
   useHvBulkActions
 );
 
-const handleAction = (evt, id, action) => {
+const handleAction: HvBulkActionsProps["actionsCallback"] = (
+  evt,
+  id,
+  action
+) => {
   const selected = selectedFlatRows.map((el) => el.original);
 
   switch (action.id) {
@@ -397,19 +375,18 @@ const handleAction = (evt, id, action) => {
   }
 };
 
-const rowRenderer = (pages) => {
-  return pages.map((row, index) => {
+const rowRenderer = (pageRows: HvRowInstance<AssetEvent, string>[]) => {
+  return pageRows.map((row, index) => {
     prepareRow(row);
 
     return (
       <HvTableRow
-        key={row.Header}
         {...row.getRowProps({
           "aria-rowindex": index,
         })}
       >
         {row.cells.map((cell) => (
-          <HvTableCell key={cell.Header} {...cell.getCellProps()}>
+          <HvTableCell {...cell.getCellProps()}>
             {cell.render("Cell")}
           </HvTableCell>
         ))}
@@ -450,7 +427,7 @@ return (
           ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
-          {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+          {page.length === 0 ? <EmptyRow height={100} /> : rowRenderer(page)}
         </HvTableBody>
       </HvTable>
     </HvTableContainer>
@@ -477,11 +454,11 @@ const EmptyCells = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-    useHvData<NewEntry, string>({
+    useHvData<AssetEvent, string>({
       columns,
       data,
       defaultColumn: {
-        Cell: ({ value }: HvCellProps<NewEntry, string>) => value ?? "—",
+        Cell: ({ value }) => value ?? "—",
       },
     });
 
@@ -538,11 +515,11 @@ const data = useMemo(
 );
 
 const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-  useHvData<NewEntry, string>({
+  useHvData<AssetEvent, string>({
     columns,
     data,
     defaultColumn: {
-      Cell: ({ value }: HvCellProps<NewEntry, string>) => value ?? "—",
+      Cell: ({ value }) => value ?? "—",
     },
   });
 
@@ -590,13 +567,13 @@ return (
 const LockedSelection = () => {
   const data = useMemo(() => makeData(64), []);
 
-  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
+  const columns: HvTableColumnConfig<AssetEvent, string>[] = useMemo(
     () => [
       ...getColumns(),
       {
         id: "actions",
         variant: "actions",
-        Cell: ({ row }: HvCellProps<NewEntry, string>) => {
+        Cell: ({ row }) => {
           return (
             <HvToggleButton
               aria-label="Lock"
@@ -622,7 +599,7 @@ const LockedSelection = () => {
     selectedFlatRows,
     getHvBulkActionsProps,
     getHvPaginationProps,
-  } = useHvData<NewEntry, string>(
+  } = useHvData<AssetEvent, string>(
     {
       columns,
       data,
@@ -689,13 +666,13 @@ export const LockedSelectionStory: StoryObj = {
         code: `
 const data = useMemo(() => makeData(64), []);
 
-const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
+const columns: HvTableColumnConfig<AssetEvent, string>[] = useMemo(
   () => [
     ...getColumns(),
     {
       id: "actions",
       variant: "actions",
-      Cell: ({ row }: HvCellProps<NewEntry, string>) => {
+      Cell: ({ row }) => {
         return (
           <HvToggleButton
             aria-label="Lock"
@@ -721,7 +698,7 @@ const {
   selectedFlatRows,
   getHvBulkActionsProps,
   getHvPaginationProps,
-} = useHvData<NewEntry, string>(
+} = useHvData<AssetEvent, string>(
   {
     columns,
     data,
@@ -852,7 +829,7 @@ const SampleTable = ({ columns, data, layoutHook, component }) => {
 };
 
 const AlternativeLayout = () => {
-  const alternativeLayouts: HvListValue[] = useMemo(
+  const alternativeLayouts = useMemo<HvListValue[]>(
     () => [
       {
         id: "0",
@@ -871,7 +848,7 @@ const AlternativeLayout = () => {
 
   const data = useMemo(() => makeData(64), []);
 
-  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
+  const columns: HvTableColumnConfig<AssetEvent, string>[] = useMemo(
     () => [
       { Header: "Title", accessor: "name", minWidth: 120 },
       { Header: "Time", accessor: "createdDate", minWidth: 100 },
@@ -880,7 +857,7 @@ const AlternativeLayout = () => {
         Header: "Probability",
         accessor: "riskScore",
         align: "right",
-        Cell: ({ value }: HvCellProps<NewEntry, string>) => <>{value}%</>,
+        Cell: ({ value }) => <>{value}%</>,
       },
       { Header: "Priority", accessor: "priority" },
       {
@@ -961,7 +938,7 @@ export const AlternativeLayoutStory: StoryObj = {
     docs: {
       source: {
         code: `
-const alternativeLayouts: HvListValue[] = useMemo(
+const alternativeLayouts = useMemo<HvListValue[]>(
   () => [
     {
       id: "0",
@@ -980,7 +957,7 @@ const [tableElements, setTableElements] = useState(false);
 
 const data = useMemo(() => makeData(64), []);
 
-const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
+const columns: HvTableColumnConfig<AssetEvent, string>[] = useMemo(
   () => [
     { Header: "Title", accessor: "name", minWidth: 120 },
     { Header: "Time", accessor: "createdDate", minWidth: 100 },
@@ -989,7 +966,7 @@ const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
       Header: "Probability",
       accessor: "riskScore",
       align: "right",
-      Cell: ({ value }: HvCellProps<NewEntry, string>) => <>{value}%</>,
+      Cell: ({ value }) => <>{value}%</>,
     },
     { Header: "Priority", accessor: "priority" },
     {
@@ -1070,7 +1047,7 @@ return (
 };
 
 const ColumnResize = () => {
-  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
+  const columns: HvTableColumnConfig<AssetEvent, string>[] = useMemo(
     () => [
       { Header: "Title", accessor: "name", minWidth: 120 },
       { Header: "Time", accessor: "createdDate", minWidth: 100 },
@@ -1084,7 +1061,7 @@ const ColumnResize = () => {
         Header: "Probability",
         accessor: "riskScore",
         align: "right",
-        Cell: ({ value }: HvCellProps<NewEntry, string>) => <>{value}%</>,
+        Cell: ({ value }) => <>{value}%</>,
       },
       { Header: "Priority", accessor: "priority" },
     ],
@@ -1102,7 +1079,7 @@ const ColumnResize = () => {
   );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useHvData<NewEntry, string>(
+    useHvData<AssetEvent, string>(
       {
         columns,
         data,
@@ -1153,7 +1130,7 @@ export const ColumnResizeStory: StoryObj = {
     docs: {
       source: {
         code: `
-const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
+const columns: HvTableColumnConfig<AssetEvent, string>[] = useMemo(
   () => [
     { Header: "Title", accessor: "name", minWidth: 120 },
     { Header: "Time", accessor: "createdDate", minWidth: 100 },
@@ -1167,7 +1144,7 @@ const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
       Header: "Probability",
       accessor: "riskScore",
       align: "right",
-      Cell: ({ value }: HvCellProps<NewEntry, string>) => <>{value}%</>,
+      Cell: ({ value }) => <>{value}%</>,
     },
     { Header: "Priority", accessor: "priority" },
   ],
@@ -1185,7 +1162,7 @@ const defaultColumn = useMemo(
 );
 
 const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-  useHvData<NewEntry, string>(
+  useHvData<AssetEvent, string>(
     {
       columns,
       data,
@@ -1242,7 +1219,8 @@ const EmptyRowSimple = () => (
 );
 
 const ServerSide = () => {
-  const [data, columns, fetchData, loading, pageCount] = useServerData();
+  const columns = useMemo(() => getColumns(), []);
+  const { data = [], fetchData, loading, pageCount } = useServerData();
 
   const {
     getTableProps,
@@ -1324,7 +1302,8 @@ export const ServerSideStory: StoryObj = {
     docs: {
       source: {
         code: `
-const [data, columns, fetchData, loading, pageCount] = useServerData();
+const columns = useMemo(() => getColumns(), []);
+const { data = [], fetchData, loading, pageCount } = useServerData();
 
 const {
   getTableProps,

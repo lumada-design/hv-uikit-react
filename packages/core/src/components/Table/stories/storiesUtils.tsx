@@ -1,10 +1,10 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 
 import range from "lodash/range";
 
 import { Random } from "@core/utils/Random";
 
-import { HvCellProps, HvTableColumnConfig } from "../hooks/useTable";
+import { HvTableColumnConfig } from "../hooks/useTable";
 
 export interface NewRendererEntry {
   id: string;
@@ -26,7 +26,11 @@ export interface NewRendererEntry {
   eventQuantity?: number;
 }
 
-export interface NewEntry {
+/**
+ * `AssetEvent` is a dummy data type for HvTable samples
+ * In a real-world scenario, this would probably come from the API
+ * */
+export interface AssetEvent {
   id: string;
   name: string;
   createdDate: string;
@@ -76,7 +80,7 @@ const getDropdownOptions = (options: string[] = [], selected = "") => {
   });
 };
 
-const newEntry = (i: number): NewEntry => {
+const makeEvent = (i: number): AssetEvent => {
   const r = rand.next();
   const [dateMax, dateMin] = [2018, 2023].map((y) => new Date(y, 0).getTime());
 
@@ -119,7 +123,7 @@ const newRendererEntry = (i: number): NewRendererEntry => {
   };
 };
 
-const controlledSelectedEntry = (i: number): NewEntry => {
+const controlledSelectedEntry = (i: number): AssetEvent => {
   const r = rand.next();
   const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
   return {
@@ -138,34 +142,30 @@ const controlledSelectedEntry = (i: number): NewEntry => {
 export const makeRenderersData = (len: number = 10) =>
   range(len).map(newRendererEntry);
 
-export const makeData = (len: number = 10) => range(len).map(newEntry);
+export const makeData = (len: number = 10) => range(len).map(makeEvent);
 
 export const makeSelectedData = (len: number = 10) =>
   range(len).map(controlledSelectedEntry);
 
 // https://react-table.tanstack.com/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps
-export const getColumns = (): HvTableColumnConfig<NewEntry, string>[] => [
+export const getColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
   { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   { Header: "Status", accessor: "status", style: { width: 140 } },
-  // numeric values should be right-aligned
   {
     Header: "Probability",
     accessor: "riskScore",
-    align: "right",
-    Cell: ({ value }: HvCellProps<NewEntry, string>) => getCell(`${value}%`),
+    align: "right", // numeric values should be right-aligned
+    Cell: ({ value }) => getCell(`${value}%`),
   },
   { Header: "Severity", accessor: "severity" },
-  {
-    Header: "Priority",
-    accessor: "priority",
-  },
+  { Header: "Priority", accessor: "priority" },
 ];
 
 export const getGroupedRowsColumns = (): HvTableColumnConfig<
-  NewEntry,
+  AssetEvent,
   string
 >[] => [
   {
@@ -180,12 +180,11 @@ export const getGroupedRowsColumns = (): HvTableColumnConfig<
   },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   { Header: "Status", accessor: "status", style: { width: 140 } },
-  // numeric values should be right-aligned
   {
     Header: "Probability",
     accessor: "riskScore",
-    align: "right",
-    Cell: ({ value }: HvCellProps<NewEntry, string>) => getCell(`${value}%`),
+    align: "right", // numeric values should be right-aligned
+    Cell: ({ value }) => getCell(`${value}%`),
     aggregate: "average",
     Aggregated: ({ value }) => getCell(`Avg. ${value}%`),
   },
@@ -194,7 +193,7 @@ export const getGroupedRowsColumns = (): HvTableColumnConfig<
 ];
 
 export const getGroupedColumns = (): HvTableColumnConfig<
-  NewEntry,
+  AssetEvent,
   string
 >[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
@@ -204,13 +203,11 @@ export const getGroupedColumns = (): HvTableColumnConfig<
     Header: "Event Info",
     columns: [
       { Header: "Status", accessor: "status", style: { width: 140 } },
-      // numeric values should be right-aligned
       {
         Header: "Probability",
         accessor: "riskScore",
-        align: "right",
-        Cell: ({ value }: HvCellProps<NewEntry, string>) =>
-          getCell(`${value}%`),
+        align: "right", // numeric values should be right-aligned
+        Cell: ({ value }) => getCell(`${value}%`),
       },
       { Header: "Severity", accessor: "severity" },
     ],
@@ -218,62 +215,52 @@ export const getGroupedColumns = (): HvTableColumnConfig<
   { Header: "Priority", accessor: "priority" },
 ];
 
-export const useToggleIndex = (initialState) => {
+export const useToggleIndex = (initialState: number) => {
   const [index, setIndex] = useState(initialState);
 
-  const toggleState = (idx) => () => {
+  const toggleState = (idx: number) => () => {
     setIndex(idx === index ? -1 : idx);
   };
 
-  return [index, toggleState];
+  return [index, toggleState] as const;
 };
 
-const simpleSortBy = (a, b, sortBy) => {
+const simpleSortBy = (a: AssetEvent, b: AssetEvent, sortBy) => {
   const { id, desc } = sortBy;
-  if (a[id] < b[id]) return desc ? -1 : 1;
-  if (a[id] > b[id]) return desc ? 1 : -1;
-  return 0;
+  return desc ? b[id] - a[id] : a[id] - b[id];
 };
+
+const serverData = makeData(999);
 
 export const useServerData = () => {
-  const serverData = useMemo(() => makeData(999), []);
-  const columns = useMemo(() => getColumns(), []);
-
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<AssetEvent[]>();
   const [loading, setLoading] = useState(false);
   const [pageCount, setPageCount] = useState(0);
   const fetchIdRef = useRef(0);
 
-  const fetchData = useCallback(
-    ({ pageSize, pageIndex, sortBy }) => {
-      fetchIdRef.current += 1;
-      const fetchId = fetchIdRef.current;
+  const fetchData = useCallback(({ pageSize, pageIndex, sortBy }) => {
+    fetchIdRef.current += 1;
+    const fetchId = fetchIdRef.current;
 
-      setLoading(true);
+    setLoading(true);
 
-      setTimeout(() => {
-        if (fetchId !== fetchIdRef.current) return;
+    setTimeout(() => {
+      if (fetchId !== fetchIdRef.current) return;
 
-        const startRow = pageSize * pageIndex;
-        const endRow = startRow + pageSize;
+      const startRow = pageSize * pageIndex;
+      const endRow = startRow + pageSize;
 
-        const newData = [...serverData]
-          .sort(
-            sortBy.length === 0
-              ? undefined
-              : (a, b) => simpleSortBy(a, b, sortBy[0])
-          )
-          .slice(startRow, endRow);
-        setData(newData);
+      const newData = [...serverData]
+        .sort(sortBy[0] ? (a, b) => simpleSortBy(a, b, sortBy[0]) : undefined)
+        .slice(startRow, endRow);
+      setData(newData);
 
-        // Static example . Set server-side page count here
-        setPageCount(Math.ceil(serverData.length / pageSize));
+      // Static example . Set server-side page count here
+      setPageCount(Math.ceil(serverData.length / pageSize));
 
-        setLoading(false);
-      }, 600);
-    },
-    [serverData]
-  );
+      setLoading(false);
+    }, 600);
+  }, []);
 
-  return [data, columns, fetchData, loading, pageCount];
+  return { data, fetchData, loading, pageCount };
 };
