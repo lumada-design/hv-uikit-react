@@ -1,19 +1,17 @@
 import { theme } from "@hitachivantara/uikit-styles";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
 
 import range from "lodash/range";
 
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { HvTypography } from "@core/components/Typography";
 
-import {
-  StyledBar,
-  StyledBarContainer,
-  StyledLabel,
-  StyledRoot,
-} from "./Loading.styles";
-import loadingClasses, { HvLoadingClasses } from "./loadingClasses";
+import { staticClasses, useClasses } from "./Loading.styles";
+
+export { staticClasses as loadingClasses };
+
+export type HvLoadingClasses = ExtractNames<typeof useClasses>;
 
 export interface HvLoadingProps extends HvBaseProps {
   /** Indicates if the component should be render in a small size. */
@@ -31,8 +29,17 @@ export interface HvLoadingProps extends HvBaseProps {
  * Loading provides feedback about a process that is taking place in the application.
  */
 export const HvLoading = (props: HvLoadingProps) => {
-  const { color, hidden, small, label, classes, className, ...others } =
-    useDefaultProps("HvLoading", props);
+  const {
+    color,
+    hidden,
+    small,
+    label,
+    classes: classesProp,
+    className,
+    ...others
+  } = useDefaultProps("HvLoading", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const getColor = (colorName: string) => {
     return color ? theme.colors[color] || color : theme.colors[colorName];
@@ -44,41 +51,31 @@ export const HvLoading = (props: HvLoadingProps) => {
 
   const inline = { backgroundColor: getColor(small ? "secondary" : "brand") };
   return (
-    <StyledRoot
+    <div
       hidden={!!hidden}
-      className={clsx(
-        className,
-        loadingClasses.root,
-        classes?.root,
-        hidden && clsx(classes?.hidden, loadingClasses.hidden)
+      className={cx(
+        classes.root,
+        {
+          [classes.hidden]: hidden,
+        },
+        className
       )}
       {...others}
     >
-      <StyledBarContainer
-        className={clsx(loadingClasses.barContainer, classes?.barContainer)}
-      >
+      <div className={classes.barContainer}>
         {range(0, 3).map((e) => (
-          <StyledBar
+          <div
             key={e}
             style={inline}
-            className={clsx(
-              loadingClasses.loadingBar,
-              classes?.loadingBar,
-              loadingClasses[variant],
-              classes?.[variant]
-            )}
-            $variant={variant}
+            className={cx(classes.loadingBar, classes[variant])}
           />
         ))}
-      </StyledBarContainer>
+      </div>
       {label && (
-        <StyledLabel
-          variant="caption1"
-          className={clsx(loadingClasses.label, classes?.label)}
-        >
+        <HvTypography variant="caption1" className={classes.label}>
           {label}
-        </StyledLabel>
+        </HvTypography>
       )}
-    </StyledRoot>
+    </div>
   );
 };

@@ -1,10 +1,8 @@
 import { keyframes } from "@emotion/react";
-import styled from "@emotion/styled";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvTypography } from "@core/components/Typography";
-import { transientOptions } from "@core/utils/transientOptions";
+import { createClasses } from "@core/utils/classes";
 
 const interval = 0.11;
 
@@ -73,55 +71,42 @@ const smallColorAnimation = keyframes`
   }
 `;
 
-export const StyledRoot = styled("div")(({ hidden }: { hidden: boolean }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
+export const { staticClasses, useClasses } = createClasses("HvLoading", {
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  barContainer: { display: "flex" },
+  loadingBar: {
+    display: "inline-block",
 
-  ...(hidden && {
-    display: "none",
-  }),
-}));
-
-export const StyledBarContainer = styled("div")({
-  display: "flex",
-});
-
-export const StyledLabel = styled(HvTypography)({
-  marginTop: "15px",
-});
-
-export const StyledBar = styled(
-  "div",
-  transientOptions
-)(({ $variant }: { $variant: string }) => ({
-  display: "inline-block",
-
-  ...($variant === "regular" && {
+    "@keyframes loading-small": {
+      "0%": {
+        transform: "scale(1)",
+      },
+      "50%": {
+        transform: "scale(1,0.223)",
+      },
+      "100%": {},
+    },
+  },
+  label: { marginTop: "15px" },
+  overlay: {},
+  blur: {},
+  hidden: { display: "none" },
+  small: { animation: `${smallAnimation} 1s ease-in-out infinite`, ...small },
+  regular: {
     animation: `${regularAnimation} 1s ease-in-out infinite`,
     ...regular,
-  }),
-  ...($variant === "regularColor" && {
-    animation: `${regularColorAnimation} 1s ease-in-out infinite`,
-    ...regular,
-  }),
-  ...($variant === "small" && {
-    animation: `${smallAnimation} 1s ease-in-out infinite`,
-    ...small,
-  }),
-  ...($variant === "smallColor" && {
+  },
+  smallColor: {
     animation: `${smallColorAnimation} 1s ease-in-out infinite`,
     ...small,
-  }),
-
-  "@keyframes loading-small": {
-    "0%": {
-      transform: "scale(1)",
-    },
-    "50%": {
-      transform: "scale(1,0.223)",
-    },
-    "100%": {},
   },
-}));
+  regularColor: {
+    animation: `${regularColorAnimation} 1s ease-in-out infinite`,
+    ...regular,
+  },
+});
