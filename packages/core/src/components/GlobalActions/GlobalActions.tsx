@@ -1,28 +1,19 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { useTheme } from "@mui/material/styles";
-
+import { useTheme as useMuiTheme } from "@mui/material/styles";
+import { useMediaQuery } from "@mui/material";
 import isString from "lodash/isString";
-
+import { theme } from "@hitachivantara/uikit-styles";
+import { useTheme } from "@core/hooks/useTheme";
 import { HvBaseProps } from "@core/types/generic";
 import { HvTypography } from "@core/components/Typography";
-import { useTheme as useHvTheme } from "@core/hooks/useTheme";
+import { ExtractNames } from "@core/utils/classes";
+import { staticClasses, useClasses } from "./GlobalActions.styles";
 
-import {
-  StyledActions,
-  StyledBackButton,
-  StyledRoot,
-  StyledWrapper,
-} from "./GlobalActions.styles";
-import globalActionsClasses, {
-  HvGlobalActionsClasses,
-} from "./globalActionsClasses";
+export { staticClasses as globalActionsClasses };
+export type HvGlobalActionsClasses = ExtractNames<typeof useClasses>;
 
 export type HvGlobalActionsVariant = "global" | "section";
-
 export type HvGlobalActionsPosition = "sticky" | "fixed" | "relative";
-
 export type HvGlobalActionsHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
 export interface HvGlobalActionsProps
@@ -44,6 +35,21 @@ export interface HvGlobalActionsProps
   classes?: HvGlobalActionsClasses;
 }
 
+const getBreakpointStyles = (isUpMd, isSmDown) =>
+  isUpMd
+    ? {
+        width: `calc(100% - 2 * ${theme.spacing(4)})`,
+        marginLeft: `${theme.spacing(4)}`,
+        marginRight: `${theme.spacing(4)}`,
+      }
+    : isSmDown
+    ? {
+        width: `calc(100% - 2 * ${theme.spacing(2)})`,
+        marginLeft: `${theme.spacing(2)}`,
+        marginRight: `${theme.spacing(2)}`,
+      }
+    : {};
+
 /**
  * Global Actions are actions that affect the entire page they live in.
  * They should persist while scrolling down the screen.
@@ -51,7 +57,7 @@ export interface HvGlobalActionsProps
 export const HvGlobalActions = (props: HvGlobalActionsProps) => {
   const {
     children,
-    classes,
+    classes: classesProp,
     className,
     title,
     variant = "global",
@@ -60,22 +66,20 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
     position: positionProp,
     ...others
   } = useDefaultProps("HvGlobalActions", props);
+  const muiTheme = useMuiTheme();
+  const { activeTheme } = useTheme();
+  const { classes, cx, css } = useClasses(classesProp);
+  const isSmDown = useMediaQuery(muiTheme.breakpoints.down("sm"));
+  const isUpMd = useMediaQuery(muiTheme.breakpoints.up("md"));
 
-  const { activeTheme } = useHvTheme();
-
-  const muiTheme = useTheme();
+  const fixedPositionCss =
+    positionProp === "fixed" && getBreakpointStyles(isUpMd, isSmDown);
 
   const headingLevelToApply = headingLevel || (variant === "global" ? 1 : 2);
 
   const backButtonRenderer = () => {
     if (backButton) {
-      return (
-        <StyledBackButton
-          className={clsx(globalActionsClasses.backButton, classes?.backButton)}
-        >
-          {backButton}
-        </StyledBackButton>
-      );
+      return <div className={classes.backButton}>{backButton}</div>;
     }
   };
 
@@ -83,39 +87,24 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
     positionProp || (variant === "global" ? "sticky" : "relative");
 
   return (
-    <StyledRoot
-      $variant={variant}
-      $position={position}
-      className={clsx(
-        className,
-        globalActionsClasses.root,
-        classes?.root,
-        position === "sticky" &&
-          clsx(classes?.positionSticky, globalActionsClasses.positionSticky),
-        position === "fixed" &&
-          clsx(classes?.positionFixed, globalActionsClasses.positionFixed),
-        variant === "global" &&
-          clsx(classes?.global, globalActionsClasses.global)
+    <div
+      className={cx(
+        classes.root,
+        {
+          [classes.positionSticky]: position === "sticky",
+          [classes.positionFixed]: position === "fixed",
+          [classes.global]: variant === "global",
+        },
+        css(fixedPositionCss),
+        className
       )}
-      $breakpoints={muiTheme.breakpoints}
       {...others}
     >
-      <StyledWrapper
-        className={clsx(
-          globalActionsClasses.wrapper,
-          classes?.wrapper,
-          variant === "global" &&
-            clsx(
-              classes?.globalWrapperComplement,
-              globalActionsClasses.globalWrapperComplement
-            ),
-          variant === "section" &&
-            clsx(
-              classes?.globalSectionArea,
-              globalActionsClasses.globalSectionArea
-            )
-        )}
-        $variant={variant}
+      <div
+        className={cx(classes.wrapper, {
+          [classes.globalWrapperComplement]: variant === "global",
+          [classes.globalSectionArea]: variant === "section",
+        })}
       >
         {variant === "global" && backButtonRenderer()}
         {!isString(title) ? (
@@ -128,19 +117,13 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
                 : activeTheme?.globalActions.sectionVariant
             }
             component={`h${headingLevelToApply}`}
-            className={clsx(globalActionsClasses.name, classes?.name)}
+            className={classes.name}
           >
             {title}
           </HvTypography>
         )}
-        {children && (
-          <StyledActions
-            className={clsx(globalActionsClasses.actions, classes?.actions)}
-          >
-            {children}
-          </StyledActions>
-        )}
-      </StyledWrapper>
-    </StyledRoot>
+        {children && <div className={classes.actions}>{children}</div>}
+      </div>
+    </div>
   );
 };
