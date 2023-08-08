@@ -57,6 +57,8 @@ export interface HvColorPickerProps {
   defaultExpanded?: boolean;
   /** A function to be executed whenever the color changes. */
   onChange?: (color: string) => void;
+  /** A function to be executed whenever the color change is complete. */
+  onChangeComplete?: (color: string) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvColorPickerClasses;
   /** The placeholder value when nothing is selected. */
@@ -116,6 +118,7 @@ export const HvColorPicker = (props: HvColorPickerProps) => {
     classes: classesProp,
     value,
     onChange,
+    onChangeComplete,
     defaultValue = "",
     expanded,
     defaultExpanded = false,
@@ -169,6 +172,21 @@ export const HvColorPicker = (props: HvColorPickerProps) => {
 
   const handleSelect = (val: ColorState | { hex: string; source: string }) => {
     onChange?.(val.hex);
+    onChangeComplete?.(val.hex);
+    setColor(val.hex);
+  };
+
+  const handleOnChange = (
+    val: ColorState | { hex: string; source: string }
+  ) => {
+    onChange?.(val.hex);
+    setColor(val.hex);
+  };
+
+  const handleOnChangeComplete = (
+    val: ColorState | { hex: string; source: string }
+  ) => {
+    onChangeComplete?.(val.hex);
     setColor(val.hex);
   };
 
@@ -302,7 +320,8 @@ export const HvColorPicker = (props: HvColorPickerProps) => {
                 }}
                 title={showLabels ? labels?.customColorsLabel : undefined}
                 color={color}
-                onChange={handleSelect}
+                onChange={handleOnChange}
+                onChangeComplete={handleOnChangeComplete}
               />
             )}
             {showSavedColors && (
