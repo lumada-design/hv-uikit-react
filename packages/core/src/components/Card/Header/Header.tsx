@@ -45,7 +45,7 @@ export const HvCardHeader = ({
       subheader={subheader}
       action={icon}
       onClick={onClick}
-      className={cx(className, classes.root)}
+      className={cx(classes.root, className)}
       classes={{
         title: cx(
           css({

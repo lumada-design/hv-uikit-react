@@ -67,7 +67,7 @@ export const HvFilterGroupCounter = ({
   );
 
   return (
-    <div className={cx(className, classes.root)}>
+    <div className={cx(classes.root, className)}>
       {partialCounter > 0 ? (
         <p className={classes.partialCounter}>{partialCounter}</p>
       ) : (

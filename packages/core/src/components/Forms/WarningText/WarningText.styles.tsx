@@ -1,37 +1,20 @@
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
-import { Fail } from "@hitachivantara/uikit-react-icons";
 
-import { HvTypography } from "@core/components/Typography";
-import { transientOptions } from "@core/utils/transientOptions";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledRoot = styled(
-  "div",
-  transientOptions
-)(({ $show, $topBorder }: { $show: boolean; $topBorder: boolean }) => ({
-  display: "none",
-  ...($show && {
-    display: "flex",
-  }),
-  ...($topBorder && {
-    borderTop: `solid 1px ${theme.colors.negative}`,
-  }),
-}));
-
-export const StyledTypography = styled(
-  HvTypography,
-  transientOptions
-)(({ $topGutter, $hideText }: { $topGutter: boolean; $hideText: boolean }) => ({
-  color: theme.colors.negative,
-  paddingRight: theme.space.xs,
-  "&:first-of-type": {
-    paddingLeft: theme.space.xs,
+export const { staticClasses, useClasses } = createClasses("HvWarningText", {
+  root: { display: "none" },
+  defaultIcon: { minWidth: "32px" },
+  warningText: {
+    color: theme.colors.negative,
+    paddingRight: theme.space.xs,
+    "&:first-of-type": {
+      paddingLeft: theme.space.xs,
+    },
   },
-  ...($topGutter && {
-    paddingTop: 6,
-  }),
-  ...($hideText && {
+  show: { display: "flex" },
+  topGutter: { paddingTop: 6 },
+  hideText: {
     // display none or visibility hidden prevents
     // browser to trigger the aria-alert
     width: 0,
@@ -39,9 +22,6 @@ export const StyledTypography = styled(
     padding: 0,
     margin: 0,
     overflow: "hidden",
-  }),
-}));
-
-export const StyledIcon = styled(Fail)({
-  minWidth: "32px",
+  },
+  topBorder: { borderTop: `solid 1px ${theme.colors.negative}` },
 });

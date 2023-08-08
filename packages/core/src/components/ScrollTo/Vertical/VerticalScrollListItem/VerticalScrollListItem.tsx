@@ -65,7 +65,7 @@ export const HvVerticalScrollListItem = ({
   );
 
   return (
-    <li id={id} className={cx(className, classes.root)} aria-current={selected}>
+    <li id={id} className={cx(classes.root, className)} aria-current={selected}>
       <div
         id={buttonId}
         role="button"

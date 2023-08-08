@@ -1,16 +1,19 @@
 import { useMemo } from "react";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
 import { useUniqueId } from "@core/hooks/useUniqueId";
+import { ExtractNames } from "@core/utils/classes";
 
 import { findDescriptors } from "./utils/FormUtils";
 import { HvFormElementContextProvider } from "./context/FormElementContext";
 import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";
 import { HvFormElementDescriptorsContextProvider } from "./context/FormElementDescriptorsContext";
-import formElementClasses, { HvFormElementClasses } from "./formElementClasses";
+import { staticClasses, useClasses } from "./FormElement.styles";
+
+export { staticClasses as formElementClasses };
+
+export type HvFormElementClasses = ExtractNames<typeof useClasses>;
 
 export type HvFormStatus = "standBy" | "valid" | "invalid" | "empty";
 
@@ -62,7 +65,7 @@ export interface HvFormElementProps
 
 export const HvFormElement = (props: HvFormElementProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
     children,
     id,
@@ -74,6 +77,8 @@ export const HvFormElement = (props: HvFormElementProps) => {
     status = "standBy",
     ...others
   } = useDefaultProps("HvFormElement", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const elementId = useUniqueId(id, "hvformelement");
 
@@ -92,11 +97,7 @@ export const HvFormElement = (props: HvFormElementProps) => {
   const descriptors = useMemo(() => findDescriptors(children), [children]);
 
   return (
-    <div
-      id={id}
-      className={clsx(className, formElementClasses.root, classes?.root)}
-      {...others}
-    >
+    <div id={id} className={cx(classes.root, className)} {...others}>
       <HvFormElementContextProvider value={contextValue}>
         <HvFormElementValueContextProvider value={value}>
           <HvFormElementDescriptorsContextProvider value={descriptors}>

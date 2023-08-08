@@ -1,16 +1,21 @@
 import { useContext } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
 
 import isNil from "lodash/isNil";
 
+import { Fail } from "@hitachivantara/uikit-react-icons";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
+import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "@core/components/Typography";
 
-import { StyledRoot, StyledTypography, StyledIcon } from "./WarningText.styles";
-import warningTextClasses, { HvWarningTextClasses } from "./warningTextClasses";
+import { staticClasses, useClasses } from "./WarningText.styles";
 import { HvFormElementContext } from "../FormElement";
+
+export { staticClasses as warningTextClasses };
+
+export type HvWarningTextClasses = ExtractNames<typeof useClasses>;
 
 export interface HvWarningTextProps extends HvBaseProps {
   /** Icon to be rendered alongside the warning text. */
@@ -39,7 +44,7 @@ export const HvWarningText = (props: HvWarningTextProps) => {
     children,
     adornment,
     isVisible,
-    classes,
+    classes: classesProp,
     className,
     id,
     disabled,
@@ -49,6 +54,8 @@ export const HvWarningText = (props: HvWarningTextProps) => {
     hideText = false,
     ...others
   } = useDefaultProps("HvWarningText", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const { elementId, elementStatus, elementDisabled } =
     useContext(HvFormElementContext);
@@ -60,42 +67,33 @@ export const HvWarningText = (props: HvWarningTextProps) => {
   const showWarning = localVisible && !localDisabled;
   const content = showWarning ? children : "";
   const localAdornment = adornment || (
-    <StyledIcon
-      className={clsx(warningTextClasses.defaultIcon, classes?.defaultIcon)}
-      semantic="negative"
-    />
+    <Fail className={classes.defaultIcon} semantic="negative" />
   );
 
   return (
-    <StyledRoot
-      className={clsx(
-        className,
-        warningTextClasses.root,
-        classes?.root,
-        showWarning && clsx(warningTextClasses.show, classes?.show),
-        !disableBorder && clsx(warningTextClasses.topBorder, classes?.topBorder)
+    <div
+      className={cx(
+        classes.root,
+        {
+          [classes.show]: showWarning,
+          [classes.topBorder]: !disableBorder,
+        },
+        className
       )}
-      $show={showWarning}
-      $topBorder={!disableBorder}
     >
       {!disableAdornment && localAdornment}
-      <StyledTypography
+      <HvTypography
         id={localId}
-        className={clsx(
-          warningTextClasses.warningText,
-          classes?.warningText,
-          !disableGutter &&
-            clsx(warningTextClasses.topGutter, classes?.topGutter),
-          hideText && clsx(warningTextClasses.hideText, classes?.hideText)
-        )}
-        $topGutter={!disableGutter}
-        $hideText={hideText}
+        className={cx(classes.warningText, {
+          [classes.topGutter]: !disableGutter,
+          [classes.hideText]: hideText,
+        })}
         role="status"
         aria-relevant="additions text"
         {...others}
       >
         {showWarning && content}
-      </StyledTypography>
-    </StyledRoot>
+      </HvTypography>
+    </div>
   );
 };

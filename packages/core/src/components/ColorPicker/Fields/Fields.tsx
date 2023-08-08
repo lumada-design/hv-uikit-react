@@ -124,7 +124,7 @@ export const Fields = ({
   };
 
   return (
-    <div className={cx(className, classes.fields)}>
+    <div className={cx(classes.fields, className)}>
       <HvInput
         ref={hexInputRef}
         className={classes.double}

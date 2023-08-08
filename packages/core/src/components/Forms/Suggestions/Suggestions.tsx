@@ -1,5 +1,3 @@
-import { clsx } from "clsx";
-
 import React, {
   forwardRef,
   useContext,
@@ -8,7 +6,7 @@ import React, {
   useState,
 } from "react";
 
-import { useForkRef } from "@mui/material";
+import { useForkRef, Popper as MuiPopper } from "@mui/material";
 
 import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
@@ -17,14 +15,15 @@ import {
   HvClickOutsideEvent,
   useClickOutside,
 } from "@core/hooks/useClickOutside";
+import { ExtractNames } from "@core/utils/classes";
+import { HvSelectionList } from "@core/components/SelectionList";
 
-import {
-  StyledRoot,
-  StyledSelectionList,
-  StyledPopper,
-} from "./Suggestions.styles";
+import { staticClasses, useClasses } from "./Suggestions.styles";
 import { HvFormElementContext } from "../FormElement";
-import suggestionsClasses, { HvSuggestionsClasses } from "./suggestionsClasses";
+
+export { staticClasses as suggestionsClasses };
+
+export type HvSuggestionsClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSuggestion {
   id?: string;
@@ -52,7 +51,7 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
   const {
     id,
     className,
-    classes,
+    classes: classesProp,
     expanded = false,
     anchorEl,
     suggestionValues = [],
@@ -60,6 +59,8 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
     onSuggestionSelected,
     ...others
   } = props;
+  const { classes, cx } = useClasses(classesProp);
+
   const { elementId } = useContext(HvFormElementContext);
   const localId = id ?? setId(elementId, "suggestions");
 
@@ -78,20 +79,20 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
   }, [expanded]);
 
   return (
-    <StyledRoot
+    <div
       id={localId}
       ref={forkedRef}
-      className={clsx(className, suggestionsClasses.root, classes?.root)}
+      className={cx(classes.root, className)}
       {...others}
     >
-      <StyledPopper
+      <MuiPopper
         open={isOpen}
         disablePortal
         anchorEl={anchorEl}
-        className={clsx(suggestionsClasses.popper, classes?.popper)}
+        className={classes.popper}
       >
-        <StyledSelectionList
-          className={clsx(suggestionsClasses.list, classes?.list)}
+        <HvSelectionList
+          className={classes.list}
           id={setId(localId, "list")}
           onChange={onSuggestionSelected}
         >
@@ -108,8 +109,8 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
               </HvListItem>
             );
           })}
-        </StyledSelectionList>
-      </StyledPopper>
-    </StyledRoot>
+        </HvSelectionList>
+      </MuiPopper>
+    </div>
   );
 });

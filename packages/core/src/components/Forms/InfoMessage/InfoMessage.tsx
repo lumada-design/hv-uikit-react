@@ -1,16 +1,18 @@
-import { clsx } from "clsx";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { useContext } from "react";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { setId } from "@core/utils/setId";
-import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { HvTypography, HvTypographyProps } from "@core/components/Typography";
 
-import { StyledTypography } from "./InfoMessage.styles";
+import { staticClasses, useClasses } from "./InfoMessage.styles";
 import { HvFormElementContext } from "../FormElement";
-import infoMessageClasses, { HvInfoMessageClasses } from "./infoMessageClasses";
 
-export interface HvInfoMessageProps extends HvBaseProps {
+export { staticClasses as infoMessageClasses };
+
+export type HvInfoMessageClasses = ExtractNames<typeof useClasses>;
+
+export interface HvInfoMessageProps extends HvTypographyProps<"label"> {
   /** If `true` the label is disabled. */
   disabled?: boolean;
   /** If `true` the info message won't have margins. */
@@ -25,7 +27,7 @@ export interface HvInfoMessageProps extends HvBaseProps {
 export const HvInfoMessage = (props: HvInfoMessageProps) => {
   const {
     id,
-    classes,
+    classes: classesProp,
     className,
     children,
     disabled,
@@ -33,28 +35,28 @@ export const HvInfoMessage = (props: HvInfoMessageProps) => {
     ...others
   } = useDefaultProps("HvInfoMessage", props);
 
+  const { classes, cx } = useClasses(classesProp);
+
   const { elementId, elementDisabled } = useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;
   const localId = id ?? setId(elementId, "description");
 
   return (
-    <StyledTypography
+    <HvTypography
       id={localId}
-      className={clsx(
-        className,
-        infoMessageClasses.root,
-        classes?.root,
-        localDisabled &&
-          clsx(infoMessageClasses.infoDisabled, classes?.infoDisabled),
-        !disableGutter && clsx(infoMessageClasses.gutter, classes?.gutter)
+      className={cx(
+        classes.root,
+        {
+          [classes.infoDisabled]: !!localDisabled,
+          [classes.gutter]: !disableGutter,
+        },
+        className
       )}
       variant="body"
       component="label"
-      $infoDisabled={!!localDisabled}
-      $gutter={!disableGutter}
       {...others}
     >
       {children}
-    </StyledTypography>
+    </HvTypography>
   );
 };
