@@ -5,8 +5,6 @@ import MuiDivider, {
   DividerProps as MuiDividerProps,
 } from "@mui/material/Divider";
 
-import { clsx } from "clsx";
-
 import isString from "lodash/isString";
 import isBoolean from "lodash/isBoolean";
 
@@ -15,9 +13,13 @@ import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { HvFocus } from "@core/components/Focus";
 import { HvBreakpoints } from "@core/types/tokens";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledRoot } from "./Stack.styles";
-import stackClasses, { HvStackClasses } from "./stackClasses";
+import { useClasses, staticClasses } from "./Stack.styles";
+
+export { staticClasses as stackClasses };
+
+export type HvStackClasses = ExtractNames<typeof useClasses>;
 
 export type HvStackDirection = "column" | "row" | Partial<HvStackBreakpoints>;
 export interface HvStackBreakpoints extends Record<HvBreakpoints, string> {}
@@ -65,7 +67,7 @@ const getDirection = (direction, width, breakpoints) => {
  */
 export const HvStack = (props: HvStackProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
     children,
     direction = "column",
@@ -75,6 +77,8 @@ export const HvStack = (props: HvStackProps) => {
     dividerProps = {},
     ...others
   } = useDefaultProps("HvStack", props);
+  const { classes, cx } = useClasses(classesProp);
+
   const width = useWidth();
   const containerRef = useRef(null);
   const { breakpoints } = useTheme();
@@ -106,11 +110,14 @@ export const HvStack = (props: HvStackProps) => {
   }, [divider, dividerProps, processedDirection]);
 
   return (
-    <StyledRoot
+    <div
       ref={containerRef}
-      className={clsx(className, stackClasses.root, classes?.root)}
-      $direction={processedDirection}
-      $breakpoint={spacing}
+      className={cx(
+        classes.root,
+        classes[processedDirection],
+        classes[spacing],
+        className
+      )}
       {...others}
     >
       {React.Children.map(children, (child, i) => {
@@ -137,6 +144,6 @@ export const HvStack = (props: HvStackProps) => {
           </>
         );
       })}
-    </StyledRoot>
+    </div>
   );
 };
