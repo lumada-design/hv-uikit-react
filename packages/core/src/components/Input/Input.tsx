@@ -751,9 +751,13 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={cx(className, classes.root, {
-        [classes.hasSuggestions]: hasSuggestions,
-      })}
+      className={cx(
+        classes.root,
+        {
+          [classes.hasSuggestions]: hasSuggestions,
+        },
+        className
+      )}
       onBlur={onContainerBlurHandler}
     >
       {(hasLabel || hasDescription) && (

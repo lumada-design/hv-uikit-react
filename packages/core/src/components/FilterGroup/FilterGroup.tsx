@@ -162,7 +162,7 @@ export const HvFilterGroup = (props: HvFilterGroupProps) => {
       status={status}
       disabled={disabled}
       required={required}
-      className={cx(className, classes.root)}
+      className={cx(classes.root, className)}
       {...others}
     >
       {(hasLabel || hasDescription) && (

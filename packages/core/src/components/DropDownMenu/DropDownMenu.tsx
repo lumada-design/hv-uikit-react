@@ -127,7 +127,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
   return (
     <HvBaseDropdown
       id={id}
-      className={cx(className, classes.container)}
+      className={cx(classes.container, className)}
       classes={{
         root: classes.root,
         container: classes.baseContainer,

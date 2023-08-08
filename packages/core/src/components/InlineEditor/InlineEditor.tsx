@@ -114,7 +114,7 @@ export const HvInlineEditor = (props: HvInlineEditorProps) => {
   };
 
   return (
-    <div className={cx(className, classes.root)}>
+    <div className={cx(classes.root, className)}>
       {editMode ? (
         <InputComponent
           inputRef={inputRef}

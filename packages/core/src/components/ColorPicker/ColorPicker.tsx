@@ -203,7 +203,7 @@ export const HvColorPicker = (props: HvColorPickerProps) => {
       name={name}
       disabled={disabled}
       required={required}
-      className={cx(className, classes.root)}
+      className={cx(classes.root, className)}
     >
       {(hasLabel || hasDescription) && (
         <div className={classes.labelContainer}>

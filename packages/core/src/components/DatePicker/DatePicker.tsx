@@ -542,7 +542,7 @@ export const HvDatePicker = (props: HvDatePickerProps) => {
       status={validationState}
       disabled={disabled}
       required={required}
-      className={cx(className, classes.root)}
+      className={cx(classes.root, className)}
       readOnly={readOnly}
       {...others}
     >
