@@ -1,12 +1,12 @@
-import { TabProps as MuiTabProps } from "@mui/material";
+import { Tab, TabProps as MuiTabProps } from "@mui/material";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { staticClasses, useClasses } from "./Tab.styles";
 
-import { StyledTab } from "./Tab.styles";
-import tabClasses, { HvTabClasses } from "./tabClasses";
+export { staticClasses as tabClasses };
+
+export type HvTabClasses = ExtractNames<typeof useClasses>;
 
 // Mui Tab props: https://mui.com/material-ui/api/tab/#props
 export interface HvTabProps
@@ -26,27 +26,25 @@ export interface HvTabProps
 
 export const HvTab = (props: HvTabProps) => {
   const {
-    classes,
+    classes: classesProp,
     iconPosition = "top",
     disabled = false,
     ...others
   } = useDefaultProps("HvTab", props);
+  const { classes, cx } = useClasses(classesProp);
 
   return (
-    <StyledTab
+    <Tab
       classes={{
-        root: clsx(tabClasses.root, classes?.root),
-        selected: clsx(tabClasses.selected, classes?.selected),
-        disabled: clsx(tabClasses.disabled, classes?.disabled),
+        root: classes.root,
+        selected: classes.selected,
+        disabled: classes.disabled,
       }}
       disableRipple
       disableTouchRipple
-      // Exposes the global class HvIsFocusVisible as a marker not to
-      // be styled directly, but only as helper in specific css queries
-      focusVisibleClassName={clsx(
-        "HvIsFocusVisible",
-        clsx(tabClasses.focusVisible, classes?.focusVisible)
-      )}
+      // expose the global class HvIsFocusVisible as a marker
+      // not to be styled directly, only as helper in specific css queries
+      focusVisibleClassName={cx("HvIsFocusVisible", classes.focusVisible)}
       disabled={disabled}
       iconPosition={iconPosition}
       {...others}
