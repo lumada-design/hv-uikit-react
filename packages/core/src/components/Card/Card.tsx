@@ -64,11 +64,11 @@ export const HvCard = (props: HvCardProps) => {
           backgroundColor:
             (bgcolor && theme.colors[bgcolor]) || theme.card.backgroundColor,
         }),
-        className,
         {
           [classes.selectable]: selectable,
           [classes.selected]: selected,
-        }
+        },
+        className
       )}
       {...others}
     >

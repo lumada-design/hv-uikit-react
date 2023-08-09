@@ -37,7 +37,7 @@ export const HvFooter = (props: HvFooterProps) => {
 
   return (
     <footer
-      className={cx(classes.root, className, { [classes.small]: isSmDown })}
+      className={cx(classes.root, { [classes.small]: isSmDown }, className)}
       {...others}
     >
       <HvTypography variant="highlightText" className={classes.name}>

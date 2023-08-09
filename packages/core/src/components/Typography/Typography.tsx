@@ -98,11 +98,16 @@ export const HvTypography: <C extends React.ElementType = "p">(
     return (
       <Component
         ref={ref}
-        className={cx(classes.root, classes[variant], className, {
-          [classes.isLink]: link,
-          [classes.noWrap]: noWrap,
-          [classes.disabled]: disabled,
-        })}
+        className={cx(
+          classes.root,
+          classes[variant],
+          {
+            [classes.isLink]: link,
+            [classes.noWrap]: noWrap,
+            [classes.disabled]: disabled,
+          },
+          className
+        )}
         {...others}
       />
     );
