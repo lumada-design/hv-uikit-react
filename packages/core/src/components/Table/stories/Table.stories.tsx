@@ -7,6 +7,7 @@ import {
   HvTable,
   HvTableProps,
   HvTableBody,
+  HvTableColumnConfig,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
@@ -21,6 +22,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { useMemo } from "react";
 import {
+  AssetEvent,
   getColumns,
   getGroupedRowsColumns,
   makeData,
@@ -121,7 +123,7 @@ const StyledResponsiveTableHeader = styled(HvTableHeader)({
 
 // #endregion Responsive table styled components
 
-const meta: Meta<typeof HvTable> = {
+export default {
   title: "Guides/Table",
   component: HvTable,
   subcomponents: {
@@ -132,8 +134,7 @@ const meta: Meta<typeof HvTable> = {
     HvTableBody,
     HvTableCell,
   },
-};
-export default meta;
+} as Meta<typeof HvTable>;
 
 export const Main: StoryObj<HvTableProps> = {
   args: {
@@ -225,15 +226,8 @@ export const SimpleTable: StoryObj<HvTableProps> = {
   render: () => {
     const [checkedIdx, toggleChecked] = useToggleIndex(0);
 
-    const columns = useMemo(() => {
-      const initialColumns = getColumns();
-
-      initialColumns.push({
-        Header: "Details",
-        accessor: "link",
-      });
-
-      return initialColumns;
+    const columns = useMemo<HvTableColumnConfig<AssetEvent, string>[]>(() => {
+      return [...getColumns(), { Header: "Details", accessor: "link" }];
     }, []);
 
     const data = useMemo(
@@ -286,17 +280,11 @@ export const SimpleTable: StoryObj<HvTableProps> = {
                   <HvDropDownMenu
                     keepOpened={false}
                     placement="left"
-                    onClick={(e, item) => alert(item.label)}
+                    onClick={(e, item) => alert(item.id)}
                     dataList={[
-                      {
-                        label: "Share",
-                      },
-                      {
-                        label: "Hide",
-                      },
-                      {
-                        label: "Remove",
-                      },
+                      { id: "share", label: "Share" },
+                      { id: "hide", label: "Hide" },
+                      { id: "remove", label: "Remove" },
                     ]}
                   />
                 </HvTableCell>
@@ -427,23 +415,12 @@ ResponsiveTable.parameters = {
 export const ListRow = () => {
   const [checkedIdx, toggleChecked] = useToggleIndex(0);
 
-  const columns = useMemo(() => {
-    const initialColumns = getColumns();
-
-    initialColumns.push({
-      Header: "Details",
-      accessor: "link",
-    });
-
-    return initialColumns;
+  const columns = useMemo<HvTableColumnConfig<AssetEvent, string>[]>(() => {
+    return [...getColumns(), { Header: "Details", accessor: "link" }];
   }, []);
 
   const data = useMemo(
-    () =>
-      makeData(4).map((row) => ({
-        ...row,
-        link: "/details",
-      })),
+    () => makeData(4).map((row) => ({ ...row, link: "/details" })),
     []
   );
 
@@ -486,17 +463,11 @@ export const ListRow = () => {
                     <HvDropDownMenu
                       keepOpened={false}
                       placement="left"
-                      onClick={(_, item) => alert(item.label)}
+                      onClick={(e, item) => alert(item.id)}
                       dataList={[
-                        {
-                          label: "Share",
-                        },
-                        {
-                          label: "Hide",
-                        },
-                        {
-                          label: "Remove",
-                        },
+                        { id: "share", label: "Share" },
+                        { id: "hide", label: "Hide" },
+                        { id: "remove", label: "Remove" },
                       ]}
                     />
                   </HvTableCell>
