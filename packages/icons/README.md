@@ -12,4 +12,16 @@ npm install @hitachivantara/uikit-react-icons
 
 ## Adding New Icons
 
-To add new icons, you should copy the `.svg` to the `assets` directory and execute `npm run build`.
+1. Copy the `.svg` to the `assets` directory.
+2. Run `npm run optimize` to optimize the icons (using `svgo`).
+3. Run `npm run build` to convert the SVGs to React components & build the package.
+
+## File structure
+
+```sh
+icons/
+├── assets # optimized `.svg` assets
+├── bin    # `.tsx` icon components
+├── dist   # built artifacts (by `vite build`)
+└── src    # .svg to React component generator scripts
+```
