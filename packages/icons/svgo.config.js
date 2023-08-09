@@ -31,7 +31,6 @@ module.exports = {
     "removeTitle",
     "removeUnusedNS",
     "removeUselessDefs",
-    "removeUselessStrokeAndFill",
     "removeXMLProcInst",
     "sortAttrs",
     {
@@ -51,7 +50,7 @@ module.exports = {
             keepDataAttrs: false,
           },
           convertPathData: {
-            floatPrecision: 10,
+            floatPrecision: 2,
           },
           cleanupNumericValues: {
             floatPrecision: 2,
