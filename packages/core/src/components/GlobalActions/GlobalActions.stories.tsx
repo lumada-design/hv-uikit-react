@@ -21,13 +21,14 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
     title: "Details Page Title",
     headingLevel: 1,
     variant: "global",
+    position: "sticky",
   },
   argTypes: {
     classes: { control: { disable: true } },
     backButton: { control: { disable: true } },
   },
   decorators: [(Story) => <div style={{ height: 300 }}>{Story()}</div>],
-  render: ({ title, headingLevel, variant }) => {
+  render: (args) => {
     const BackButton = () => (
       <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
         <Backwards />
@@ -36,12 +37,7 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
 
     return (
       <HvContainer>
-        <HvGlobalActions
-          title={title}
-          headingLevel={headingLevel}
-          variant={variant}
-          backButton={<BackButton />}
-        >
+        <HvGlobalActions backButton={<BackButton />} {...args}>
           <HvButton variant="primary">Approve & Share</HvButton>
           <HvButton variant="secondarySubtle">Reset</HvButton>
           <HvDropDownMenu
