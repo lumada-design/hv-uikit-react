@@ -32,10 +32,6 @@ export const { staticClasses, useClasses } = createClasses("HvSelectionList", {
     "&>*:focus-within": {
       zIndex: 1,
     },
-    // IE fallback code (using focus-within-polyfill)
-    "&>*.focus-within": {
-      zIndex: 1,
-    },
   },
   invalid: { borderBottom: `1px solid ${theme.colors.negative}` },
 });

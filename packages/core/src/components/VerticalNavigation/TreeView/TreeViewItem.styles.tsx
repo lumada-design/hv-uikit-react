@@ -95,14 +95,8 @@ export const StyledContent = styled(HvTypography)({
   // focus
   [`:not(.${treeViewItemClasses.disabled}>&):not(.${treeViewItemClasses.selected}>&):focus-visible`]:
     hover(),
-  [`:not(.${treeViewItemClasses.disabled}>&):not(.${treeViewItemClasses.selected}>&).focus-visible`]:
-    hover(),
 
   [`*:focus-visible .${treeViewItemClasses.focused}>&`]: {
-    ...outlineStyles,
-  },
-
-  [` .focus-visible .${treeViewItemClasses.focused}>&`]: {
     ...outlineStyles,
   },
 
@@ -119,10 +113,6 @@ export const StyledContent = styled(HvTypography)({
   },
 
   "&:focus-visible": {
-    ...outlineStyles,
-  },
-
-  "&.focus-visible": {
     ...outlineStyles,
   },
 
