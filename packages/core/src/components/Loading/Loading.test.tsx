@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
-import { HvLoading } from "./Loading";
-import loadingClasses from "./loadingClasses";
+import { HvLoading, loadingClasses } from "./Loading";
 
 describe("Loading", () => {
   const mockLabel = "mockLabel";
