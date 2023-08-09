@@ -9,9 +9,7 @@ export const { staticClasses, useClasses } = createClasses("HvTable", {
 
     ...theme.typography.body,
 
-    "table&": {
-      borderSpacing: 0,
-    },
+    borderSpacing: 0,
 
     "& caption": {
       ...theme.typography.body,
@@ -21,10 +19,13 @@ export const { staticClasses, useClasses } = createClasses("HvTable", {
     },
   },
   stickyHeader: {},
-  stickyColumns: { backgroundColor: theme.colors.atmo2 },
-  listRow: {
-    "table&": {
-      borderSpacing: `0 ${theme.space.xs}`,
+  stickyColumns: {
+    backgroundColor: theme.colors.atmo2,
+    "&": {
+      borderSpacing: 0,
     },
+  },
+  listRow: {
+    borderSpacing: `0 ${theme.space.xs}`,
   },
 });

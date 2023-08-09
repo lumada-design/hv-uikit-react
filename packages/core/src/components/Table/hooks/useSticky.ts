@@ -6,6 +6,7 @@ import {
   TableCommonProps,
 } from "react-table";
 import { CSSProperties } from "react";
+import { theme } from "@hitachivantara/uikit-styles";
 
 // #region ##### TYPES #####
 
@@ -183,7 +184,7 @@ const getRowProps = () => ({
   },
 });
 
-const getCellProps = (header, isHeaderCell) => {
+const getCellProps = (header, isHeaderCell: boolean) => {
   const props: UseHvTableStickyCellProps & { style: CSSProperties } = {
     style: {
       display: "inline-flex",
@@ -193,6 +194,7 @@ const getCellProps = (header, isHeaderCell) => {
 
       width: `${header.totalWidth}px`,
       minWidth: `${header.totalMinWidth}px`,
+      ...(isHeaderCell && { backgroundColor: theme.colors.atmo2 }),
     },
   };
 
