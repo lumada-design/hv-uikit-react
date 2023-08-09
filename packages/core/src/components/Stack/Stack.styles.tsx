@@ -1,41 +1,30 @@
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { transientOptions } from "@core/utils/transientOptions";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledRoot = styled(
-  "div",
-  transientOptions
-)(
-  ({
-    $direction,
-    $breakpoint,
-  }: {
-    $direction: string;
-    $breakpoint: string;
-  }) => ({
+export const { staticClasses, useClasses } = createClasses("HvStack", {
+  root: {
     display: "flex",
-    ...($direction === "column" && {
-      flexDirection: "column",
-    }),
-    ...($direction === "row" && {
-      flexDirection: "row",
-    }),
-    ...($breakpoint === "xs" && {
-      gap: theme.space.xs,
-    }),
-    ...($breakpoint === "sm" && {
-      gap: theme.space.sm,
-    }),
-    ...($breakpoint === "md" && {
-      gap: theme.spacing(4),
-    }),
-    ...($breakpoint === "lg" && {
-      gap: theme.spacing(6),
-    }),
-    ...($breakpoint === "xl" && {
-      gap: theme.spacing(11),
-    }),
-  })
-);
+  },
+  column: {
+    flexDirection: "column",
+  },
+  row: {
+    flexDirection: "row",
+  },
+  xs: {
+    gap: theme.space.xs,
+  },
+  sm: {
+    gap: theme.space.sm,
+  },
+  md: {
+    gap: theme.spacing(4),
+  },
+  lg: {
+    gap: theme.spacing(6),
+  },
+  xl: {
+    gap: theme.spacing(11),
+  },
+});
