@@ -9,7 +9,7 @@ export const { staticClasses, useClasses } = createClasses("HvCard", {
     position: "relative",
     outline: theme.card.outline,
     borderRadius: theme.card.borderRadius,
-    "&.focus-visible": {
+    "&:focus-visible": {
       ...outlineStyles,
     },
     "&:focus": {
