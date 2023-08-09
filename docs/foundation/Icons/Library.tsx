@@ -80,9 +80,7 @@ const Group = ({ iconSize, iconsLibrary }) => {
 const Library = () => {
   const [search, setSearch] = useState("");
   const [iconSize, setIconSize] = useState<(typeof dropdownSizes)[0]>();
-  const [expandedCategories, setExpandedCategories] = useState<IconCategory[]>(
-    []
-  );
+  const [expandedCategories, setExpandedCategories] = useState(iconKeys);
 
   const isAnyExpanded = expandedCategories.length > 0;
 
