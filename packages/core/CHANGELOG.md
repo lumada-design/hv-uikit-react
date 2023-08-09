@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.24.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.24.0...@hitachivantara/uikit-react-core@5.24.1) (2023-08-09)
+
+### Bug Fixes
+
+- **BulkActions:** select all semantic styling ([#3574](https://github.com/lumada-design/hv-uikit-react/issues/3574)) ([6e1f278](https://github.com/lumada-design/hv-uikit-react/commit/6e1f278fc867d004032174ce69f465e71cc698dd))
+- polymorphic types for Typography and TimeAgo ([#3576](https://github.com/lumada-design/hv-uikit-react/issues/3576)) ([16fe93a](https://github.com/lumada-design/hv-uikit-react/commit/16fe93a6f5298e740b30a84a9a8b7756850a2a91))
+
 # [5.24.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.23.0...@hitachivantara/uikit-react-core@5.24.0) (2023-08-05)
 
 ### Bug Fixes
