@@ -166,11 +166,6 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
             [`& .${staticClasses.selectAll}:focus-within div`]: {
               backgroundColor: hexToRgbA(baseColor, 0.3),
             },
-
-            // IE fallback code (using focus-within-polyfill)
-            [`& .${staticClasses.selectAll}.focus-within div`]: {
-              backgroundColor: hexToRgbA(baseColor, 0.3),
-            },
           }),
         className
       )}

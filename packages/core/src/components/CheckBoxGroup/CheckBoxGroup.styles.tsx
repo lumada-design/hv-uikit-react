@@ -22,10 +22,6 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBoxGroup", {
     "&>*:focus-within": {
       zIndex: 1,
     },
-    // IE fallback code (using focus-within-polyfill)
-    "&>*.focus-within": {
-      zIndex: 1,
-    },
   },
   horizontal: {
     flexDirection: "row",

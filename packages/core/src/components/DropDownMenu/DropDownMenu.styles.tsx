@@ -14,7 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
   root: {
     display: "inline-block",
     width: "auto",
-    "&.focus-visible $icon": {
+    "&:focus-visible $icon": {
       ...outlineStyles,
     },
   },

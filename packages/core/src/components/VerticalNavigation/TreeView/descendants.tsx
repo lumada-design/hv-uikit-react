@@ -23,17 +23,6 @@ type Item = {
   [key: string]: unknown;
 };
 
-// To replace with .findIndex() once we stop IE11 support.
-function findIndex(array, comp) {
-  for (let i = 0; i < array.length; i += 1) {
-    if (comp(array[i])) {
-      return i;
-    }
-  }
-
-  return -1;
-}
-
 function binaryFindElement(array, element) {
   let start = 0;
   let end = array.length - 1;
@@ -120,8 +109,7 @@ export function useDescendant(descendant) {
   // index on the following render and we will re-register descendants
   // so that everything is up-to-date before the user interacts with a
   // collection.
-  const index = findIndex(
-    descendants,
+  const index = descendants.findIndex(
     (item) => item.element === descendant.element
   );
 

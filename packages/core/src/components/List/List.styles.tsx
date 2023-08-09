@@ -34,10 +34,6 @@ export const StyledSelectAllCheckBox = styled((props: HvCheckBoxProps) => (
   "&:focus-within": {
     zIndex: 1,
   },
-  // IE fallback code (using focus-within-polyfill)
-  "&.focus-within": {
-    zIndex: 1,
-  },
 });
 
 export const StyledMultiSelectCheckBox = styled((props: HvCheckBoxProps) => (
@@ -53,12 +49,6 @@ export const StyledMultiSelectCheckBox = styled((props: HvCheckBoxProps) => (
     },
 
     "&:focus-within": {
-      backgroundColor: "transparent",
-      outline: "none",
-      boxShadow: "none",
-    },
-    // IE fallback code (using focus-within-polyfill)
-    "&.focus-within": {
       backgroundColor: "transparent",
       outline: "none",
       boxShadow: "none",
@@ -100,12 +90,6 @@ export const StyledSingleSelectRadio = styled((props: HvRadioProps) => (
       outline: "none",
       boxShadow: "none",
     },
-    // IE fallback code (using focus-within-polyfill)
-    "&.focus-within": {
-      backgroundColor: "transparent",
-      outline: "none",
-      boxShadow: "none",
-    },
   },
   [`& .${radioClasses.label}`]: {
     display: "inline-block",
@@ -122,9 +106,6 @@ export const StyledListItem = styled(
   [`& .${listItemClasses.selected}`]: {
     ...($applySelected && {
       "&:not(:hover):not(.HvIsFocused):not(:focus-within)": {
-        backgroundColor: "transparent",
-      },
-      "&:not(:hover):not(.HvIsFocused):not(.focus-within)": {
         backgroundColor: "transparent",
       },
     }),
