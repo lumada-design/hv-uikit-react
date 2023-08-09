@@ -5,28 +5,29 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";
 import { multiSelectionEventHandler } from "@core/utils/multiSelectionEventHandler";
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
-import { HvFormStatus } from "@core/components/Forms/FormElement";
-
 import {
-  StyledListContainer,
-  StyledFormElement,
-  StyledLabel,
-  StyledInfoMessage,
-  StyledError,
-} from "./SelectionList.styles";
-import selectionListClasses, {
-  HvSelectionListClasses,
-} from "./selectionListClasses";
+  HvFormElement,
+  HvFormStatus,
+} from "@core/components/Forms/FormElement";
+import { ExtractNames } from "@core/utils/classes";
+import { HvLabel } from "@core/components/Forms/Label";
+import { HvInfoMessage } from "@core/components/Forms/InfoMessage";
+import { HvWarningText } from "@core/components/Forms/WarningText";
+import { HvListContainer } from "@core/components/ListContainer";
+
+import { staticClasses, useClasses } from "./SelectionList.styles";
+
+export { staticClasses as selectionListClasses };
+
+export type HvSelectionListClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSelectionListProps
   extends HvBaseProps<HTMLUListElement, "onChange"> {
@@ -113,7 +114,7 @@ const getValueFromSelectedChildren = (
 export const HvSelectionList = (props: HvSelectionListProps) => {
   const {
     id,
-    classes,
+    classes: classesProp,
     className,
     children,
     name,
@@ -136,6 +137,8 @@ export const HvSelectionList = (props: HvSelectionListProps) => {
     singleSelectionToggle = false,
     ...others
   } = useDefaultProps("HvSelectionList", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const elementId = useUniqueId(id, "hvselectionlist");
 
@@ -292,35 +295,32 @@ export const HvSelectionList = (props: HvSelectionListProps) => {
   const listId = (label && setId(elementId, "listbox")) || "";
 
   return (
-    <StyledFormElement
+    <HvFormElement
       id={id}
       name={name}
       status={validationState}
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(className, selectionListClasses.root, classes?.root)}
+      className={cx(classes.root, className)}
     >
       {label && (
-        <StyledLabel
+        <HvLabel
           id={setId(elementId, "label")}
           label={label}
-          className={clsx(selectionListClasses.label, classes?.label)}
+          className={classes.label}
         />
       )}
       {description && (
-        <StyledInfoMessage
+        <HvInfoMessage
           id={setId(elementId, "description")}
-          className={clsx(
-            selectionListClasses.description,
-            classes?.description
-          )}
+          className={classes.description}
         >
           {description}
-        </StyledInfoMessage>
+        </HvInfoMessage>
       )}
 
-      <StyledListContainer
+      <HvListContainer
         id={listId}
         interactive
         condensed
@@ -341,33 +341,26 @@ export const HvSelectionList = (props: HvSelectionListProps) => {
             .join(" ")
             .trim() || undefined
         }
-        className={clsx(
-          classes?.listbox,
-          selectionListClasses.listbox,
-          orientation === "vertical" &&
-            clsx(selectionListClasses.vertical, classes?.vertical),
-          orientation === "horizontal" &&
-            clsx(selectionListClasses.horizontal, classes?.horizontal),
-          validationState === "invalid" &&
-            clsx(selectionListClasses.invalid, classes?.invalid)
-        )}
+        className={cx(classes.listbox, {
+          [classes.vertical]: orientation === "vertical",
+          [classes.horizontal]: orientation === "horizontal",
+          [classes.invalid]: validationState === "invalid",
+        })}
         ref={listContainer}
-        $orientation={orientation}
-        $validationState={validationState}
         {...others}
       >
         {modifiedChildren}
-      </StyledListContainer>
+      </HvListContainer>
 
       {canShowError && (
-        <StyledError
+        <HvWarningText
           id={setId(elementId, "error")}
           disableBorder
-          className={clsx(selectionListClasses.error, classes?.error)}
+          className={classes.error}
         >
           {validationMessage}
-        </StyledError>
+        </HvWarningText>
       )}
-    </StyledFormElement>
+    </HvFormElement>
   );
 };
