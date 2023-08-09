@@ -6,6 +6,7 @@ import {
   Machine,
   IconBase,
   IconBaseProps,
+  icons,
 } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 
@@ -21,10 +22,9 @@ export default meta;
 export const Main: StoryObj<IconBaseProps> = {
   args: {
     iconSize: "S",
-    inverted: false,
   },
   argTypes: {
-    svgProps: { control: { disable: true } },
+    svgProps: { table: { disable: true } },
   },
   render: (args) => {
     return <CheckboxCheck {...args} />;
@@ -97,4 +97,21 @@ InvertedColors.parameters = {
   docs: {
     description: { story: "Inverts Generic Icon colors" },
   },
+};
+
+export const IconLibraryTest = () => {
+  const colors = ["secondary", "negative", "positive"];
+
+  return (
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
+      {Object.entries(icons).map(([, Icon]) => (
+        <Icon iconSize="M" color={colors} />
+      ))}
+    </div>
+  );
+};
+
+IconLibraryTest.parameters = {
+  eyes: { include: true },
+  docs: { disable: true },
 };
