@@ -1,5 +1,3 @@
-import { clsx } from "clsx";
-
 import {
   useCallback,
   useRef,
@@ -30,19 +28,23 @@ import {
   validateInput,
   validationTypes,
 } from "@core/components/BaseInput/validations";
-import { HvBaseInputProps } from "@core/components/BaseInput";
-import { HvCharCounterProps, HvFormStatus } from "@core/components/Forms";
-
+import { HvBaseInput, HvBaseInputProps } from "@core/components/BaseInput";
 import {
-  StyledBaseInput,
-  StyledCharCounter,
-  StyledFormElement,
-  StyledInfoMessage,
-  StyledLabel,
-  StyledLabelContainer,
-  StyledWarningText,
-} from "./TextArea.styles";
-import textAreaClasses, { HvTextAreaClasses } from "./textAreaClasses";
+  HvCharCounter,
+  HvCharCounterProps,
+  HvFormElement,
+  HvFormStatus,
+  HvInfoMessage,
+  HvLabel,
+  HvWarningText,
+} from "@core/components/Forms";
+import { ExtractNames } from "@core/utils/classes";
+
+import { staticClasses, useClasses } from "./TextArea.styles";
+
+export { staticClasses as textAreaClasses };
+
+export type HvTextAreaClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTextAreaProps
   extends Omit<
@@ -162,7 +164,7 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
   const {
     id,
     className,
-    classes,
+    classes: classesProp,
     name,
     label,
     description,
@@ -197,6 +199,9 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
     onFocus,
     ...others
   } = useDefaultProps("HvTextArea", props);
+
+  const { classes, cx } = useClasses(classesProp);
+
   const elementId = useUniqueId(id, "hvtextarea");
 
   // Signals that the user has manually edited the input value
@@ -407,34 +412,29 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
   }
 
   return (
-    <StyledFormElement
+    <HvFormElement
       id={id}
       name={name}
       status={validationState}
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(
-        textAreaClasses.root,
-        classes?.root,
-        className,
-        resizable && clsx(textAreaClasses.resizable, classes?.resizable),
-        disabled && clsx(textAreaClasses.disabled, classes?.disabled),
-        isStateInvalid && clsx(textAreaClasses.invalid, classes?.invalid)
+      className={cx(
+        classes.root,
+        {
+          [classes.resizable]: resizable,
+          [classes.disabled]: disabled,
+          [classes.invalid]: isStateInvalid,
+        },
+        className
       )}
-      $resizable={resizable}
       onBlur={onContainerBlurHandler}
     >
       {(hasLabel || hasDescription) && (
-        <StyledLabelContainer
-          className={clsx(
-            textAreaClasses.labelContainer,
-            classes?.labelContainer
-          )}
-        >
+        <div className={classes.labelContainer}>
           {hasLabel && (
-            <StyledLabel
-              className={clsx(textAreaClasses.label, classes?.label)}
+            <HvLabel
+              className={classes.label}
               id={setId(id, "label")}
               htmlFor={setId(elementId, "input")}
               label={label}
@@ -442,26 +442,20 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
           )}
 
           {hasDescription && (
-            <StyledInfoMessage
-              className={clsx(
-                textAreaClasses.description,
-                classes?.description
-              )}
+            <HvInfoMessage
+              className={classes.description}
               id={setId(elementId, "description")}
             >
               {description}
-            </StyledInfoMessage>
+            </HvInfoMessage>
           )}
-        </StyledLabelContainer>
+        </div>
       )}
 
       {hasCounter && (
-        <StyledCharCounter
+        <HvCharCounter
           id={setId(elementId, "charCounter")}
-          className={clsx(
-            textAreaClasses.characterCounter,
-            classes?.characterCounter
-          )}
+          className={classes.characterCounter}
           separator={middleCountLabel}
           currentCharQuantity={value.length}
           maxCharQuantity={maxCharQuantity}
@@ -469,14 +463,11 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
         />
       )}
 
-      <StyledBaseInput
+      <HvBaseInput
         classes={{
-          root: clsx(textAreaClasses.baseInput, classes?.baseInput),
-          input: clsx(textAreaClasses.input, classes?.input),
-          inputResizable: clsx(
-            textAreaClasses.inputResizable,
-            classes?.inputResizable
-          ),
+          root: classes.baseInput,
+          input: classes.input,
+          inputResizable: classes.inputResizable,
         }}
         id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
         name={name}
@@ -507,19 +498,18 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
           ...inputProps,
         }}
         inputRef={forkedRef}
-        $resizable={resizable}
         {...others}
       />
 
       {canShowError && (
-        <StyledWarningText
+        <HvWarningText
           id={setId(elementId, "error")}
-          className={clsx(textAreaClasses.error, classes?.error)}
+          className={classes.error}
           disableBorder
         >
           {validationMessage}
-        </StyledWarningText>
+        </HvWarningText>
       )}
-    </StyledFormElement>
+    </HvFormElement>
   );
 });
