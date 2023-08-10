@@ -1,6 +1,20 @@
-import { tooltipClasses as MuitooltipClasses } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
-import tooltipClasses from "./tooltipClasses";
+import { tooltipClasses as MuitooltipClasses } from "@mui/material";
+import { createClasses } from "@core/utils/classes";
+
+export const { staticClasses, useClasses } = createClasses("HvTooltip", {
+  root: {},
+  tooltip: {},
+  tooltipMulti: {},
+  popper: {},
+  title: {},
+  valuesContainer: {},
+  values: {},
+  color: {},
+  separatorColor: {},
+  separator: {},
+  valueWrapper: {},
+});
 
 export const popperSx = (useSingle: boolean) => {
   return {
@@ -29,14 +43,14 @@ export const popperSx = (useSingle: boolean) => {
         ...(useSingle && { wordBreak: "break-word" }),
       },
     },
-    [`& .${tooltipClasses.title}`]: {
+    [`& .${staticClasses.title}`]: {
       padding: "15px 20px",
       borderBottom: `3px solid ${theme.colors.atmo2}`,
     },
-    [`& .${tooltipClasses.valuesContainer}`]: {
+    [`& .${staticClasses.valuesContainer}`]: {
       padding: theme.space.sm,
     },
-    [`& .${tooltipClasses.values}`]: {
+    [`& .${staticClasses.values}`]: {
       display: "flex",
       justifyContent: "space-between",
       paddingBottom: "10px",
@@ -44,16 +58,16 @@ export const popperSx = (useSingle: boolean) => {
         paddingBottom: 0,
       },
     },
-    [`& .${tooltipClasses.color}`]: {
+    [`& .${staticClasses.color}`]: {
       width: theme.space.xs,
     },
-    [`& .${tooltipClasses.separator}`]: {
+    [`& .${staticClasses.separator}`]: {
       width: theme.space.xs,
     },
-    [`& .${tooltipClasses.separatorColor}`]: {
+    [`& .${staticClasses.separatorColor}`]: {
       width: "5px",
     },
-    [`& .${tooltipClasses.valueWrapper}`]: {
+    [`& .${staticClasses.valueWrapper}`]: {
       padding: theme.space.sm,
     },
   };

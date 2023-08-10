@@ -1,19 +1,13 @@
-import {
-  Fade,
-  Tooltip as MuiTooltip,
-  TooltipProps as MuiTooltipProps,
-} from "@mui/material";
-
+import { Fade, Tooltip, TooltipProps as MuiTooltipProps } from "@mui/material";
 import { forwardRef, ReactElement } from "react";
-
-import { clsx } from "clsx";
-
 import { useTheme } from "@core/hooks/useTheme";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "@core/utils/classes";
+import { popperSx, staticClasses, useClasses } from "./Tooltip.styles";
 
-import { popperSx } from "./Tooltip.styles";
-import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
+export { staticClasses as tooltipClasses };
 
+export type HvTooltipClasses = ExtractNames<typeof useClasses>;
 export type HvTooltipPlacementType = MuiTooltipProps["placement"];
 
 export interface HvTooltipProps extends Omit<MuiTooltipProps, "classes"> {
@@ -65,7 +59,7 @@ export interface HvTooltipProps extends Omit<MuiTooltipProps, "classes"> {
 export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
   const {
     className,
-    classes,
+    classes: classesProp,
     open,
     enterDelay = 300,
     placement = "top",
@@ -79,9 +73,10 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
   } = useDefaultProps("HvTooltip", props);
 
   const { rootId } = useTheme();
+  const { classes } = useClasses(classesProp);
 
   return (
-    <MuiTooltip
+    <Tooltip
       ref={ref}
       open={open ?? undefined}
       enterDelay={enterDelay}
@@ -90,10 +85,8 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
       TransitionProps={TransitionProps}
       className={className}
       classes={{
-        tooltip: useSingle
-          ? clsx(tooltipClasses.tooltip, classes?.tooltip)
-          : clsx(tooltipClasses.tooltipMulti, classes?.tooltipMulti),
-        popper: clsx(tooltipClasses.popper, classes?.popper),
+        tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
+        popper: classes.popper,
       }}
       title={title}
       PopperProps={{
@@ -107,6 +100,6 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
       {...others}
     >
       {children}
-    </MuiTooltip>
+    </Tooltip>
   );
 });
