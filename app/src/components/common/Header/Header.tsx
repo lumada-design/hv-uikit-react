@@ -14,13 +14,13 @@ import {
 import logo from "assets/logo.png";
 import { NavigationContext } from "lib/context/NavigationContext";
 import navigation from "lib/navigation";
-import { GeneratorContext } from "generator/GeneratorContext";
+import { useGeneratorContext } from "generator/GeneratorContext";
 
 export const Header = () => {
   const navigate = useNavigate();
   const theme = useTheme();
   const { activePath } = useContext(NavigationContext);
-  const { setOpen, open, setTutorialOpen } = useContext(GeneratorContext);
+  const { setOpen, open, setTutorialOpen } = useGeneratorContext();
 
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
 

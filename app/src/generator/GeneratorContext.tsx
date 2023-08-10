@@ -11,6 +11,7 @@ import React, {
   Dispatch,
   SetStateAction,
   useCallback,
+  useContext,
 } from "react";
 import merge from "lodash/merge";
 import { themeDiff } from "./utils";
@@ -41,10 +42,9 @@ type GeneratorContextProp = {
   themeChanges?: Partial<HvTheme | HvThemeStructure>;
 };
 
-export const GeneratorContext = createContext<GeneratorContextProp>({
-  customTheme: createTheme({ name: "customTheme", base: "ds5" }),
-  updateCustomTheme: () => {},
-});
+export const GeneratorContext = createContext<GeneratorContextProp | null>(
+  null
+);
 
 const initialTheme = createTheme({ name: "customTheme", base: "ds5" });
 
@@ -147,6 +147,16 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
       {children}
     </GeneratorContext.Provider>
   );
+};
+
+export const useGeneratorContext = () => {
+  const context = useContext(GeneratorContext);
+  if (context === null) {
+    throw new Error(
+      "useGeneratorContext must be used within a GeneratorProvider"
+    );
+  }
+  return context;
 };
 
 export default GeneratorProvider;

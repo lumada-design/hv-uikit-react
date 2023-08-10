@@ -5,14 +5,8 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { GeneratorContext } from "generator/GeneratorContext";
-import {
-  Dispatch,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { useGeneratorContext } from "generator/GeneratorContext";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import debounce from "lodash/debounce";
 import JSON5 from "json5";
 import { Download, Reset, Duplicate } from "@hitachivantara/uikit-react-icons";
@@ -31,7 +25,7 @@ const CodeEditor = ({
   const { selectedTheme, selectedMode, changeTheme } = useTheme();
 
   const { customTheme, updateCustomTheme, themeChanges } =
-    useContext(GeneratorContext);
+    useGeneratorContext();
 
   const fileName = `${themeName}.ts`;
 

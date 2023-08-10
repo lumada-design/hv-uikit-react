@@ -3,8 +3,7 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { GeneratorContext } from "generator/GeneratorContext";
-import { useContext } from "react";
+import { useGeneratorContext } from "generator/GeneratorContext";
 import debounce from "lodash/debounce";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 import { styles } from "./Colors.styles";
@@ -12,7 +11,7 @@ import { getColorGroupName, getColors, groupsToShow } from "./utils";
 
 const Colors = (): JSX.Element => {
   const { activeTheme, selectedMode } = useTheme();
-  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useGeneratorContext();
 
   const colors = activeTheme?.colors.modes[selectedMode];
 

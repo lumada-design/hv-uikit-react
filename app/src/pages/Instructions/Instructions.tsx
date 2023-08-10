@@ -23,12 +23,11 @@ import {
   ColorPicker,
   FontSizeBigger,
 } from "@hitachivantara/uikit-react-icons";
-import { GeneratorContext } from "generator/GeneratorContext";
-import { useContext } from "react";
+import { useGeneratorContext } from "generator/GeneratorContext";
 import classes from "./styles";
 
 const Instructions = () => {
-  const { setTutorialOpen } = useContext(GeneratorContext);
+  const { setTutorialOpen } = useGeneratorContext();
 
   const tutorialClickHandler = () => {
     setTutorialOpen?.((prev) => !prev);

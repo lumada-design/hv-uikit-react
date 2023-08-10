@@ -12,8 +12,8 @@ import {
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { lazy, Suspense, useContext, useState } from "react";
-import { GeneratorContext } from "generator/GeneratorContext";
+import { lazy, Suspense, useState } from "react";
+import { useGeneratorContext } from "generator/GeneratorContext";
 import CodeEditor from "generator/CodeEditor";
 import {
   Bold,
@@ -37,7 +37,7 @@ const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, changeTheme, themes } =
     useTheme();
 
-  const { customTheme, updateCustomTheme, open } = useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme, open } = useGeneratorContext();
 
   const [copied, setCopied] = useState(false);
   const [tab, setTab] = useState(0);
