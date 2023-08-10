@@ -6,13 +6,13 @@ import {
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
-import { useContext, useState } from "react";
-import { GeneratorContext } from "generator/GeneratorContext";
+import { useState } from "react";
+import { useGeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./Sizes.styles";
 
 const Sizes = () => {
   const { activeTheme } = useTheme();
-  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useGeneratorContext();
   const [currValues, setCurrValues] = useState<Map<string, string>>(
     new Map<string, string>()
   );

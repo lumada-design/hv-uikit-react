@@ -4,8 +4,7 @@ import { Container, Tutorial } from "components/common";
 import { NavigationProvider } from "lib/context/NavigationContext";
 import navigation from "lib/navigation";
 import Routes from "lib/routes";
-import { useContext } from "react";
-import { GeneratorContext } from "./GeneratorContext";
+import { useGeneratorContext } from "./GeneratorContext";
 
 const Content = () => {
   const { selectedMode } = useTheme();
@@ -16,7 +15,7 @@ const Content = () => {
     setTutorialOpen,
     currentStep,
     setCurrentStep,
-  } = useContext(GeneratorContext);
+  } = useGeneratorContext();
 
   return (
     <div

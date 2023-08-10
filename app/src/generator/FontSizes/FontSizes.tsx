@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   theme,
   useTheme,
@@ -6,7 +6,7 @@ import {
   HvDropdown,
   HvListValue,
 } from "@hitachivantara/uikit-react-core";
-import { GeneratorContext } from "generator/GeneratorContext";
+import { useGeneratorContext } from "generator/GeneratorContext";
 import { css } from "@emotion/css";
 import { FontSize } from "components/common";
 import { extractFontSizeUnit } from "generator/utils";
@@ -14,7 +14,7 @@ import { styles } from "./FontSizes.styles";
 
 const FontSizes = () => {
   const { activeTheme } = useTheme();
-  const { updateCustomTheme } = useContext(GeneratorContext);
+  const { updateCustomTheme } = useGeneratorContext();
   const [fontSizes, setFontSizes] = useState<HvListValue[]>([]);
   const [fontSize, setFontSize] = useState(""); // base, sm, ...
   const [fontValue, setFontValue] = useState<number>(); // 14, 16, ...

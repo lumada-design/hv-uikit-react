@@ -8,8 +8,8 @@ import {
   HvDialogTitle,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { GeneratorContext } from "generator/GeneratorContext";
-import { Dispatch, SetStateAction, useContext, useEffect } from "react";
+import { useGeneratorContext } from "generator/GeneratorContext";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { tutorialData } from "./tutorialData";
 import classes from "./tutorialStyles";
@@ -25,7 +25,7 @@ export const Step = ({
   nextHandler: (value: boolean) => void;
   setTutorialOpen: Dispatch<SetStateAction<boolean>> | undefined;
 }) => {
-  const { setOpen, setCurrentStep } = useContext(GeneratorContext);
+  const { setOpen, setCurrentStep } = useGeneratorContext();
   const navigate = useNavigate();
 
   useEffect(() => {

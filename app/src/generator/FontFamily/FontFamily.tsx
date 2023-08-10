@@ -1,4 +1,4 @@
-import { SyntheticEvent, useContext, useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import {
   HvBox,
   HvButton,
@@ -7,7 +7,7 @@ import {
   HvListValue,
   HvSnackbar,
 } from "@hitachivantara/uikit-react-core";
-import { GeneratorContext } from "generator/GeneratorContext";
+import { useGeneratorContext } from "generator/GeneratorContext";
 import { Add } from "@hitachivantara/uikit-react-icons";
 import { css } from "@emotion/css";
 import { SnackbarCloseReason } from "@mui/material";
@@ -15,7 +15,7 @@ import { extractFontsNames } from "generator/utils";
 import { styles } from "./FontFamily.styles";
 
 const FontFamily = () => {
-  const { updateCustomTheme } = useContext(GeneratorContext);
+  const { updateCustomTheme } = useGeneratorContext();
 
   const [fontName, setFontName] = useState("");
   const [fontValues, setFontValues] = useState<HvListValue[]>([

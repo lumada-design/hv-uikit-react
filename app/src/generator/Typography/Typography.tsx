@@ -10,8 +10,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens, HvThemeTypography } from "@hitachivantara/uikit-styles";
 import { extractFontSizeUnit } from "generator/utils";
-import { useContext, useEffect, useState } from "react";
-import { GeneratorContext } from "generator/GeneratorContext";
+import { useEffect, useState } from "react";
+import { useGeneratorContext } from "generator/GeneratorContext";
 import debounce from "lodash/debounce";
 import { css } from "@emotion/css";
 import { FontSize } from "components/common";
@@ -30,7 +30,7 @@ const typographyToShow: (keyof HvThemeTypography["typography"])[] = [
 ];
 
 const Typography = () => {
-  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useGeneratorContext();
   const { rootId } = useTheme();
 
   const [updatedHeights, setUpdatedHeights] = useState<Map<string, string>>(
