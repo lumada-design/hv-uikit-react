@@ -7,6 +7,7 @@ import {
   IconBase,
   IconBaseProps,
   icons,
+  Level3Bad,
 } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 
@@ -40,11 +41,19 @@ IconSize.parameters = {
 };
 
 export const CustomColors = () => (
-  <Bookmark
-    color={["brand", "secondary"]}
-    iconSize="M"
-    aria-label="Click to bookmark"
-  />
+  <div style={{ display: "flex", gap: 8 }}>
+    <Bookmark
+      color={["brand", "secondary"]}
+      iconSize="M"
+      aria-label="Click to bookmark"
+    />
+    <Level3Bad
+      color={["warning", "base_light"]}
+      iconSize="M"
+      aria-label="Attention"
+    />
+    <Level5 color={["none", "negative"]} iconSize="M" aria-label="Error" />
+  </div>
 );
 
 CustomColors.parameters = {
@@ -67,7 +76,7 @@ DecorativeIcon.parameters = {
 };
 
 export const SemanticIcon = () => (
-  <Level4 role="img" title="Warning!" iconSize="M" semantic="negative" />
+  <Level4 role="img" title="Warning!" iconSize="M" color="negative" />
 );
 
 SemanticIcon.parameters = {
@@ -89,23 +98,13 @@ CustomSize.parameters = {
   },
 };
 
-export const InvertedColors = () => (
-  <Level5 iconSize="L" inverted role="img" title="Critical!" />
-);
-
-InvertedColors.parameters = {
-  docs: {
-    description: { story: "Inverts Generic Icon colors" },
-  },
-};
-
 export const IconLibraryTest = () => {
   const colors = ["secondary", "negative", "positive"];
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {Object.entries(icons).map(([, Icon]) => (
-        <Icon iconSize="M" color={colors} />
+      {Object.entries(icons).map(([name, Icon]) => (
+        <Icon key={name} iconSize="M" color={colors} />
       ))}
     </div>
   );

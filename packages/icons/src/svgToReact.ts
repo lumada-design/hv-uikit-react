@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import fs from "fs";
+import fs from "node:fs";
+import path from "node:path";
 import { Parser } from "html-to-react";
-import path from "path";
 import ReactDOMServer from "react-dom/server";
 import recursive from "recursive-readdir";
 import yargs from "yargs";
@@ -87,19 +87,19 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
     if (subFolder === ".") {
       fs.appendFile(
         path.resolve(componentOutputFolder, `index.ts`),
-        `\nexport * from "./icons";\nimport * as icons from "./icons"; export { icons };\n`,
+        `\nexport * from "./icons";\nimport * as icons from "./icons";\nexport { icons };\n`,
         () => {}
       );
       fs.appendFile(
         path.resolve(componentOutputFolder, `index.ts`),
-        `\nexport * from "./IconBase";\n`,
+        `\nexport * from "./IconBase";\nexport * from "./IconSprite";\n`,
         () => {}
       );
     } else {
       const subFolderName = subFolder.replace("./", "");
       fs.appendFile(
         path.resolve(componentOutputFolder, subFolder, "..", `index.ts`),
-        `\nexport * from "${subFolder}";\nimport * as ${subFolderName} from "${subFolder}"; export { ${subFolderName} };\n`,
+        `\nexport * from "${subFolder}";\nimport * as ${subFolderName} from "${subFolder}";\nexport { ${subFolderName} };\n`,
         () => {}
       );
     }
@@ -192,10 +192,10 @@ const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
       // Wrap it up in a React component
       const params = {
         svgOutput: output,
-        componentName: processedFileToWrite,
+        iconName: processedFileToWrite,
         colors: colorObject.colorText,
         defaultSizes: sizeObject,
-        iconBasePath: `${".".repeat(depth + 1)}/IconBase`,
+        basePath: `${".".repeat(depth + 1)}`,
       };
 
       output = generateComponent(params, colors.light);

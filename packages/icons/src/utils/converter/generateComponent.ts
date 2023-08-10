@@ -1,3 +1,5 @@
+import { isSemantic, isXS, isSelector } from "../../../lib/utils";
+
 const replaceColorsWithTheme = (defaultPalette, themePalette) => {
   let result = defaultPalette;
   const paletteArray = defaultPalette.split(",");
@@ -20,65 +22,43 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
 
 /**
  * Creates a full component string based upon provided svg data and a component name
- * @param  string svgOutput -The svg data, preformatted
- * @param  string componentName - The name of the component without extension
- * @param  string colors - The defaults value of colors to add to the component
- * @return string The parsed component string
+ * @return The parsed component string
  */
 export const generateComponent = (
-  {
-    svgOutput,
-    componentName,
-    colors,
-    defaultSizes,
-    iconBasePath = "../IconBase",
-  },
+  { svgOutput, iconName, colors, defaultSizes, basePath = ".." },
   lightPalette
 ) => {
-  const selectors = ["Checkbox", "RadioButton"];
-  const isSelector = selectors.some((el) => componentName.startsWith(el));
-  const largerIcons = [
-    "Level0Good",
-    "Level1",
-    "Level2Average",
-    "Level3Bad",
-    "Level4",
-    "Level5",
-    "Canceled",
-    "Running",
-    "Pending",
-  ];
-  const hasSpecialSize = largerIcons.includes(componentName);
-
-  const hasSpecialSizeXS = componentName.endsWith("XS");
+  const whiteColor = isSelector(iconName) ? "atmo1" : "acce0";
 
   const themedPalette = colors
     .replace(/"#414141"/g, "theme.colors.secondary")
-    .replace(/"#fff"/g, `theme.colors.${isSelector ? "atmo1" : "acce0"}`)
+    .replace(/"#fff"/g, `theme.colors.${whiteColor}`)
     .replace(/"#f0f0f0"/g, "theme.colors.atmo2")
     .replace(/"#ccced0"/g, "theme.colors.atmo4");
   const palette = replaceColorsWithTheme(themedPalette, lightPalette);
 
   return `
 import { theme } from "@hitachivantara/uikit-styles";
-import { IconBase, IconBaseProps, useIconColor, useIconSize } from "${iconBasePath}";
+import { IconBase, IconBaseProps, useIconColor, useIconSize, getColorVars } from "${basePath}/IconBase";
 
-export const ${componentName} = ({
+export const ${iconName} = ({
   color,
-  iconSize = "${hasSpecialSizeXS ? "XS" : "S"}",
+  iconSize = "${isXS(iconName) ? "XS" : "S"}",
   viewbox = "${defaultSizes.viewBoxRegexp.join(" ")}",
   height,
   width,
   semantic,
   inverted = false,
+  style,
   svgProps,
   ...others
 }: IconBaseProps) => {
-  const colorArray = useIconColor(color, semantic, inverted, [${palette}]);
-  const size = useIconSize(iconSize, height, width, ${hasSpecialSize});
+  const colorArray = useIconColor([${palette}], color, semantic, inverted);
+  const size = useIconSize(iconSize, height, width, ${isSemantic(iconName)});
+  const colorVars = getColorVars(colorArray);
 
   return (
-    <IconBase iconSize={iconSize} data-name="${componentName}" {...others}>
+    <IconBase iconSize={iconSize} data-name="${iconName}" style={{...colorVars, ...style}} {...others}>
     ${svgOutput.replace("{...other}", "focusable={false} {...svgProps}")}
     </IconBase>
 )};

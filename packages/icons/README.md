@@ -24,4 +24,5 @@ icons/
 ├── bin    # `.tsx` icon components
 ├── dist   # built artifacts (by `vite build`)
 └── src    # .svg to React component generator scripts
+└── lib    # library code to be moved to `./bin`
 ```

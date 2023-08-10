@@ -36,6 +36,14 @@ module.exports = {
       from: "../packages/viz/src/components/LineChart/steelwheels.arrow",
       to: "assets/steelwheels.arrow",
     },
+    {
+      from: "../packages/icons/sprites/icons.svg",
+      to: "assets/icons.svg",
+    },
+    {
+      from: "../packages/icons/sprites/pictograms.svg",
+      to: "assets/pictograms.svg",
+    },
   ],
   async viteFinal(config, { configType }) {
     config.plugins.push(tsconfigPaths.default({ loose: true }));

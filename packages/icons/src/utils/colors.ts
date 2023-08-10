@@ -6,7 +6,8 @@ export const extractColors = (fileData: string) => {
   let matcher;
 
   const result = {
-    colorArray: [],
+    // ensure the main color (#414141) is always first (all users use it)
+    colorArray: ["#414141"],
     colorText: "",
   };
 
@@ -19,16 +20,14 @@ export const extractColors = (fileData: string) => {
       ) {
         if (matcher[1] !== undefined && matcher[1] !== null) {
           result.colorArray.push(matcher[1]);
-          result.colorText = result.colorText.concat(`"${matcher[1]}",`);
         }
         if (matcher[2] !== undefined && matcher[2] !== null) {
           result.colorArray.push(matcher[2]);
-          result.colorText = result.colorText.concat(`"${matcher[2]}",`);
         }
       }
     }
   } while (matcher);
-  result.colorText = result.colorText.slice(0, -1); // eliminate the last comma
+  result.colorText = result.colorArray.map((el) => `"${el}"`).join(", ");
   return result;
 };
 
@@ -40,7 +39,7 @@ export const replaceFill = (fileData: string, colorObject) => {
   colorObject.colorArray.forEach((element, index) => {
     result = result
       .split(`fill="${element}"`)
-      .join(`fill={colorArray[${index}]} className="color${index}" `);
+      .join(`fill="var(--color-${index})" className="color${index}" `);
   });
 
   return result;

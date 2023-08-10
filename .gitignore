@@ -24,6 +24,8 @@ lerna-debug.log*
 # Build
 dist
 bin
+packages/icons/sprites
+*.tgz
 
 # tests
 coverage
