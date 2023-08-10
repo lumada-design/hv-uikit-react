@@ -206,12 +206,12 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
             activeTheme?.scrollTo.backgroundColorOpacity
           ),
         }),
-        className,
         classes.root,
         {
           [classes.positionSticky]: position === "sticky",
           [classes.positionFixed]: position === "fixed",
-        }
+        },
+        className
       )}
       id={elementId}
       {...others}

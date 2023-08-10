@@ -1,14 +1,16 @@
 import React, { useRef, useContext, useMemo } from "react";
 
-import { clsx } from "clsx";
 import { HvBaseProps } from "@core/types/generic";
 import { useForkRef } from "@core/hooks/useForkRef";
-
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "@core/utils/classes";
+
+import { staticClasses, useClasses } from "./ListContainer.styles";
 import HvListContext from "./ListContext";
-import listContainerClasses, {
-  HvListContainerClasses,
-} from "./listContainerClasses";
+
+export { staticClasses as listContainerClasses };
+
+export type HvListContainerClasses = ExtractNames<typeof useClasses>;
 
 export interface HvListContainerProps extends HvBaseProps<HTMLUListElement> {
   /**
@@ -33,7 +35,7 @@ export const HvListContainer = React.forwardRef(
   (props: HvListContainerProps, externalRef) => {
     const {
       id,
-      classes,
+      classes: classesProp,
       className,
       interactive = false,
       condensed,
@@ -41,9 +43,12 @@ export const HvListContainer = React.forwardRef(
       children,
       ...others
     } = useDefaultProps("HvListContainer", props);
+
+    const { classes, cx } = useClasses(classesProp);
+
     const containerRef = useRef(null);
 
-    const { topContainerRef, nesting = -1 } = useContext<any>(HvListContext);
+    const { topContainerRef, nesting = -1 } = useContext(HvListContext);
 
     const listContext = useMemo(
       () => ({
@@ -87,7 +92,7 @@ export const HvListContainer = React.forwardRef(
         <ul
           ref={handleRef}
           id={id}
-          className={clsx(className, listContainerClasses.root, classes?.root)}
+          className={cx(classes.root, className)}
           {...others}
         >
           {renderChildren()}

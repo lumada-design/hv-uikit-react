@@ -160,10 +160,15 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
 
   return (
     <ol
-      className={cx(css({ backgroundColor }), className, classes.root, {
-        [classes.positionFixed]: position === "fixed",
-        [classes.positionAbsolute]: position === "absolute",
-      })}
+      className={cx(
+        css({ backgroundColor }),
+        classes.root,
+        {
+          [classes.positionFixed]: position === "fixed",
+          [classes.positionAbsolute]: position === "absolute",
+        },
+        className
+      )}
       style={{ top: `calc(50% - ${positionOffset}px)`, ...style }}
       id={elementId}
       {...others}
