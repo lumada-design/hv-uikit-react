@@ -1,7 +1,7 @@
 import { SyntheticEvent, useRef } from "react";
 
-import { clsx } from "clsx";
-
+import { HvTypography } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
 import {
   isSameDay,
   isSameMonth,
@@ -10,18 +10,16 @@ import {
   isDateRangeProp,
 } from "../utils";
 import { DateRangeProp } from "../types";
-import calendarCellClasses, {
-  HvCalendarCellClasses,
-} from "./calendarCellClasses";
-import {
-  StyledCalendarDate,
-  StyledCellContainer,
-  StyledDateWrapper,
-} from "./CalendarCell.styles";
 import CalendarModel from "../model";
 
+import { staticClasses, useClasses } from "./CalendarCell.styles";
+
+export { staticClasses as calendarCellClasses };
+
+export type HvCalendarCellClasses = ExtractNames<typeof useClasses>;
+
 export const HvCalendarCell = ({
-  classes,
+  classes: classesProp,
   onChange,
   onKeyDown,
   calendarValue,
@@ -35,6 +33,8 @@ export const HvCalendarCell = ({
   rangeMode = false,
   ...others
 }: HvCalendarCellProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const buttonEl = useRef<HTMLButtonElement>(null);
 
   const startDate = isDateRangeProp(calendarValue)
@@ -70,84 +70,48 @@ export const HvCalendarCell = ({
   };
 
   const renderDate = () => (
-    <StyledCellContainer
+    <button
       ref={buttonEl}
       type="button"
-      className={clsx(
-        calendarCellClasses.cellContainer,
-        classes?.cellContainer,
-        inMonth &&
-          clsx(calendarCellClasses.focusSelection, classes?.focusSelection)
-      )}
+      className={cx(classes.cellContainer, {
+        [classes.focusSelection]: inMonth,
+      })}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       disabled={isDateDisabled || !inMonth}
       data-in-month={inMonth}
       {...others}
     >
-      <StyledCalendarDate
+      <HvTypography
         variant={isCellToday ? "label" : "body"}
-        className={clsx(
-          calendarCellClasses.calendarDate,
-          classes?.calendarDate,
-          inMonth &&
-            isCellSelected &&
-            clsx(
-              calendarCellClasses.calendarDateSelected,
-              classes?.calendarDateSelected
-            ),
-          !inMonth &&
-            clsx(
-              calendarCellClasses.calendarDateNotInMonth,
-              classes?.calendarDateNotInMonth
-            ),
-          inMonth &&
-            rangeMode &&
-            isDateInSelectionRange &&
-            clsx(
-              calendarCellClasses.calendarDateInSelectionRange,
-              classes?.calendarDateInSelectionRange
-            ),
-          isDateDisabled &&
-            clsx(
-              calendarCellClasses.calendarDateDisabled,
-              classes?.calendarDateDisabled
-            ),
-          inMonth &&
+        className={cx(classes.calendarDate, {
+          [classes.calendarDateSelected]: inMonth && isCellSelected,
+          [classes.calendarDateNotInMonth]: !inMonth,
+          [classes.calendarDateInSelectionRange]:
+            inMonth && rangeMode && isDateInSelectionRange,
+          [classes.calendarDateDisabled]: isDateDisabled,
+          [classes.startBookend]:
+            inMonth &&
             ((startBookend && rangeMode) ||
-              (isCellStartingDate && isDateSelectionMode)) &&
-            clsx(calendarCellClasses.startBookend, classes?.startBookend),
-          inMonth &&
-            endBookend &&
-            rangeMode &&
-            clsx(calendarCellClasses.endBookend, classes?.endBookend)
-        )}
+              (isCellStartingDate && isDateSelectionMode)),
+          [classes.endBookend]: inMonth && endBookend && rangeMode,
+        })}
       >
         {value && value.getDate()}
-      </StyledCalendarDate>
-    </StyledCellContainer>
+      </HvTypography>
+    </button>
   );
 
   return (
-    <StyledDateWrapper
-      className={clsx(
-        calendarCellClasses.dateWrapper,
-        classes?.dateWrapper,
-        inMonth &&
-          rangeMode &&
-          isSelecting &&
-          clsx(calendarCellClasses.cellsInRange, classes?.cellsInRange),
-        rangeMode &&
-          !isSelecting &&
-          clsx(
-            calendarCellClasses.cellsOutsideRange,
-            classes?.cellsOutsideRange
-          )
-      )}
+    <div
+      className={cx(classes.dateWrapper, {
+        [classes.cellsInRange]: inMonth && rangeMode && isSelecting,
+        [classes.cellsOutsideRange]: rangeMode && !isSelecting,
+      })}
       data-calendar-cell="calendarCell"
     >
       {renderDate()}
-    </StyledDateWrapper>
+    </div>
   );
 };
 

@@ -1,12 +1,16 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils/classes";
 import { theme } from "@hitachivantara/uikit-styles";
 
-export const StyledNavigationContainer = styled("div")({
-  display: "flex",
-  justifyContent: "space-between",
-  padding: theme.spacing(["xs", 0]),
-});
-
-export const StyledNavigationMonth = styled("div")({
-  minWidth: "160px",
-});
+export const { staticClasses, useClasses } = createClasses(
+  "HvComposedNavigation",
+  {
+    navigationContainer: {
+      display: "flex",
+      justifyContent: "space-between",
+      padding: theme.spacing(["xs", 0]),
+    },
+    navigationMonth: {
+      minWidth: "160px",
+    },
+  }
+);

@@ -1,54 +1,53 @@
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvTypography } from "@core/components/Typography";
 import { outlineStyles } from "@core/utils/focusUtils";
 
-import monthSelectorClasses from "./monthSelectorClasses";
+import { createClasses } from "@core/utils/classes";
 
 const hover = {
   backgroundColor: theme.colors.atmo3,
   cursor: "pointer",
 };
 
-export const StyledFocusSelection = styled("div")({
-  "&:hover": {
-    ...hover,
+export const { staticClasses, useClasses } = createClasses("HvMothSelector", {
+  calendarMonthlyGrid: {
+    marginTop: "50px",
+    marginLeft: "-16px",
+    display: "flex",
+    zIndex: "10",
+    padding: "0 20px",
+    position: "absolute",
+    flexFlow: "wrap",
+    alignContent: "center",
+    justifyContent: "space-evenly",
+    backgroundColor: theme.colors.atmo1,
   },
-  "&:focus": {
-    outline: "none",
+  rangeModeWidth: {},
+  normalWidth: {},
+  focusSelection: {
+    "&:hover": {
+      ...hover,
+    },
+    "&:focus": {
+      outline: "none",
+    },
+    "&:focus-visible": {
+      ...hover,
+      ...outlineStyles,
+    },
   },
-  "&:focus-visible": {
-    ...hover,
-    ...outlineStyles,
+  calendarMonthlyCell: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    textAlign: "center",
+    height: "40px",
+    width: "92px",
+    "&:hover": {
+      ...hover,
+    },
   },
-});
-
-export const StyledCalendarMonthlyGrid = styled("div")({
-  marginTop: "50px",
-  marginLeft: "-16px",
-  display: "flex",
-  zIndex: "10",
-  padding: "0 20px",
-  position: "absolute",
-  flexFlow: "wrap",
-  alignContent: "center",
-  justifyContent: "space-evenly",
-  backgroundColor: theme.colors.atmo1,
-});
-
-export const StyledCalendarMonthlyCell = styled(HvTypography)({
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "column",
-  textAlign: "center",
-  height: "40px",
-  width: "92px",
-  "&:hover": {
-    ...hover,
-  },
-  [`&.${monthSelectorClasses.calendarMonthlyCellSelected}`]: {
+  calendarMonthlyCellSelected: {
     backgroundColor: theme.colors.atmo3,
     color: theme.colors.secondary,
     "&:hover": {

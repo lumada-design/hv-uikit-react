@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import React, { useContext } from "react";
@@ -9,11 +8,16 @@ import {
   HvFormElementValueContext,
 } from "@core/components/Forms";
 
+import { ExtractNames } from "@core/utils/classes";
 import { isRange } from "./utils";
 import { HvSingleCalendar } from "./SingleCalendar";
-import calendarClasses, { HvCalendarClasses } from "./calendarClasses";
-import { StyledRangeCalendarContainer, StyledRoot } from "./Calendar.styles";
 import { DateRangeProp, VisibilitySelectorActions } from "./types";
+
+import { staticClasses, useClasses } from "./Calendar.styles";
+
+export { staticClasses as calendarClasses };
+
+export type HvCalendarClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCalendarProps {
   /**
@@ -108,7 +112,7 @@ export interface HvCalendarProps {
 
 export const HvCalendar = (props: HvCalendarProps) => {
   const {
-    classes,
+    classes: classesProp,
     id,
     locale = "en-US",
     value,
@@ -125,6 +129,7 @@ export const HvCalendar = (props: HvCalendarProps) => {
     invalidDateLabel,
     ...others
   } = useDefaultProps("HvCalendar", props);
+  const { classes } = useClasses(classesProp);
 
   const { elementId } = useContext(HvFormElementContext);
   const elementValue = useContext(HvFormElementValueContext);
@@ -155,17 +160,9 @@ export const HvCalendar = (props: HvCalendarProps) => {
   );
 
   const rangeCalendar = (
-    <StyledRangeCalendarContainer
-      className={clsx(
-        calendarClasses.rangeCalendarContainer,
-        classes?.rangeCalendarContainer
-      )}
-    >
+    <div className={classes.rangeCalendarContainer}>
       <HvSingleCalendar
-        className={clsx(
-          calendarClasses.singleCalendar,
-          classes?.singleCalendar
-        )}
+        className={classes.singleCalendar}
         id={localId}
         locale={locale}
         value={localValue}
@@ -185,10 +182,7 @@ export const HvCalendar = (props: HvCalendarProps) => {
       />
 
       <HvSingleCalendar
-        className={clsx(
-          calendarClasses.singleCalendar,
-          classes?.singleCalendar
-        )}
+        className={classes.singleCalendar}
         id={rightCalendarId}
         locale={locale}
         value={localValue}
@@ -207,13 +201,13 @@ export const HvCalendar = (props: HvCalendarProps) => {
         invalidDateLabel={invalidDateLabel}
         {...others}
       />
-    </StyledRangeCalendarContainer>
+    </div>
   );
 
   return (
-    <StyledRoot className={clsx(calendarClasses.root, classes?.root)}>
+    <div className={classes.root}>
       {startAdornment}
       {rangeMode ? rangeCalendar : singleCalendar}
-    </StyledRoot>
+    </div>
   );
 };

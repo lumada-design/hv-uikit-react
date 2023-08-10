@@ -7,8 +7,6 @@ import localeData from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 
-import { clsx } from "clsx";
-
 import isNil from "lodash/isNil";
 
 import {
@@ -19,18 +17,15 @@ import {
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 
+import { HvTypography } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
 import { DateRangeProp } from "../types";
-import calendarHeaderClasses, {
-  HvCalendarHeaderClasses,
-} from "./calendarHeaderClasses";
-import {
-  StyledHeaderDayOfWeek,
-  StyledInput,
-  StyledInputBorderContainer,
-  StyledRoot,
-  StyledTypography,
-} from "./CalendarHeader.styles";
+import { staticClasses, useClasses } from "./CalendarHeader.styles";
+
+export { staticClasses as calendarHeaderClasses };
+
+export type HvCalendarHeaderClasses = ExtractNames<typeof useClasses>;
 
 dayjs.extend(localeData);
 dayjs.extend(localizedFormat);
@@ -40,7 +35,7 @@ export const HvCalendarHeader = ({
   id,
   value,
   locale = "en-US",
-  classes,
+  classes: classesProp,
   onChange,
   showEndDate,
   showDayOfWeek = false,
@@ -48,6 +43,8 @@ export const HvCalendarHeader = ({
   invalidDateLabel = "Invalid Date",
   ...others
 }: HvCalendarHeaderProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const { elementId } = useContext(HvFormElementContext);
   const elementValue = useContext(HvFormElementValueContext);
   const { label } = useContext(HvFormElementDescriptorsContext);
@@ -147,39 +144,25 @@ export const HvCalendarHeader = ({
   };
   return (
     <>
-      <StyledRoot
+      <div
         id={localId}
-        className={clsx(
-          calendarHeaderClasses.root,
-          classes?.root,
-          !isValidValue &&
-            inputValue !== "" &&
-            clsx(calendarHeaderClasses.invalid, classes?.invalid)
-        )}
+        className={cx(classes.root, {
+          [classes.invalid]: !isValidValue && inputValue !== "",
+        })}
       >
         {showDayOfWeek && (
-          <StyledHeaderDayOfWeek
-            className={clsx(
-              calendarHeaderClasses.headerDayOfWeek,
-              classes?.headerDayOfWeek
-            )}
-          >
+          <HvTypography className={classes.headerDayOfWeek}>
             {weekdayDisplay || "\u00A0"}
-          </StyledHeaderDayOfWeek>
+          </HvTypography>
         )}
 
-        <div
-          className={clsx(
-            calendarHeaderClasses.headerDate,
-            classes?.headerDate
-          )}
-        >
-          <StyledInput
+        <div className={classes.headerDate}>
+          <input
             type="text"
             id={setId(localId, "header-input")}
             placeholder={localeFormat}
             value={inputValue}
-            className={clsx(calendarHeaderClasses.input, classes?.input)}
+            className={cx(classes.input)}
             onBlur={onBlurHandler}
             onFocus={onFocusHandler}
             onChange={onChangeHandler}
@@ -188,29 +171,20 @@ export const HvCalendarHeader = ({
             {...others}
           />
         </div>
-      </StyledRoot>
+      </div>
       {!isValidValue && inputValue !== "" && (
-        <StyledInputBorderContainer
-          role="presentation"
-          className={clsx(
-            calendarHeaderClasses.inputBorderContainer,
-            classes?.inputBorderContainer
-          )}
-        />
+        <div role="presentation" className={classes.inputBorderContainer} />
       )}
       <div style={{ height: 32 }}>
         {!isValidValue && inputValue !== "" && (
-          <StyledTypography
+          <HvTypography
             component="span"
             variant="body"
-            className={clsx(
-              calendarHeaderClasses.invalidMessageStyling,
-              classes?.invalidMessageStyling
-            )}
+            className={classes?.invalidMessageStyling}
           >
             <Info color="brand" iconSize="S" />
             {invalidDateLabel}
-          </StyledTypography>
+          </HvTypography>
         )}
       </div>
     </>

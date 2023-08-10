@@ -1,21 +1,19 @@
-import { clsx } from "clsx";
-
 import { isKey } from "@core/utils/keyboardUtils";
 
+import { HvTypography } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
 import { getMonthNamesList } from "../../utils";
 import { ViewMode } from "../../enums";
-import monthSelectorClasses, {
-  HvMonthSelectorClasses,
-} from "./monthSelectorClasses";
-import {
-  StyledCalendarMonthlyCell,
-  StyledCalendarMonthlyGrid,
-  StyledFocusSelection,
-} from "./MonthSelector.styles";
 import { DateRangeProp, VisibilitySelectorActions } from "../../types";
 
+import { staticClasses, useClasses } from "./MonthSelector.styles";
+
+export { staticClasses as monthSelectorClasses };
+
+export type HvMonthSelectorClasses = ExtractNames<typeof useClasses>;
+
 export const HvMonthSelector = ({
-  classes,
+  classes: classesProp,
   id,
   locale,
   onChange,
@@ -24,6 +22,8 @@ export const HvMonthSelector = ({
   visibleMonth,
   ...others
 }: HvMonthSelectorProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const listMonthNamesShort = getMonthNamesList(locale, "short");
   const onKeyDownHandler = (event, index) => {
     if (isKey(event, "Enter")) {
@@ -32,21 +32,15 @@ export const HvMonthSelector = ({
     }
   };
   return (
-    <StyledCalendarMonthlyGrid
-      className={clsx(
-        monthSelectorClasses.calendarMonthlyGrid,
-        classes?.calendarMonthlyGrid,
-        rangeMode
-          ? clsx(monthSelectorClasses.rangeModeWidth, classes?.rangeModeWidth)
-          : clsx(monthSelectorClasses.normalWidth, classes?.normalWidth)
-      )}
+    <div
+      className={cx(classes.calendarMonthlyGrid, {
+        [classes.rangeModeWidth]: rangeMode,
+        [classes.normalWidth]: !rangeMode,
+      })}
     >
       {listMonthNamesShort.map((monthName, index) => (
-        <StyledFocusSelection
-          className={clsx(
-            monthSelectorClasses.focusSelection,
-            classes?.focusSelection
-          )}
+        <div
+          className={classes.focusSelection}
           key={monthName}
           role="button"
           onClick={(event) => {
@@ -57,22 +51,16 @@ export const HvMonthSelector = ({
           tabIndex={0}
           {...others}
         >
-          <StyledCalendarMonthlyCell
-            className={clsx(
-              monthSelectorClasses.calendarMonthlyCell,
-              classes?.calendarMonthlyCell,
-              index + 1 === visibleMonth &&
-                clsx(
-                  monthSelectorClasses.calendarMonthlyCellSelected,
-                  classes?.calendarMonthlyCellSelected
-                )
-            )}
+          <HvTypography
+            className={cx(classes.calendarMonthlyCell, {
+              [classes.calendarMonthlyCellSelected]: index + 1 === visibleMonth,
+            })}
           >
             {monthName}
-          </StyledCalendarMonthlyCell>
-        </StyledFocusSelection>
+          </HvTypography>
+        </div>
       ))}
-    </StyledCalendarMonthlyGrid>
+    </div>
   );
 };
 
