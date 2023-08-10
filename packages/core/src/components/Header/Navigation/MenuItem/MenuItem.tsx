@@ -63,17 +63,20 @@ export const HvHeaderMenuItem = ({
   const { classes, cx } = useClasses(classesProp);
 
   const selectionPath = useContext(SelectionContext);
+
   const { dispatch } = useContext(FocusContext);
 
   const { data } = item;
+
   const hasSubLevel = data && data.length;
+
   const isMenu = type === "menu";
+
   const isSelected = selectionPath?.[isMenu ? 1 : 0] === item.id;
-  const isCurrent = isSelected
-    ? selectionPath?.length > (isMenu ? 2 : 1)
-      ? true
-      : "page"
-    : undefined;
+
+  // true: if the item is part of the selection path but is not the current page the user is seeing, i.e has more sub levels
+  // page: used when the selected item is actually the current page the user is seeing
+  const isCurrent = isSelected ? (hasSubLevel ? true : "page") : undefined;
 
   const actionHandler = (event: any) => {
     if (
@@ -84,6 +87,7 @@ export const HvHeaderMenuItem = ({
       if (event.type === "click") {
         event.currentTarget.blur();
       }
+
       onClick?.(event, item);
     }
   };
@@ -156,7 +160,8 @@ export const HvHeaderMenuItem = ({
           {label}
         </div>
       )}
-      {hasSubLevel && currentLevel < levels && (
+      {/* Limits levels to no more than 2. More than that is not expected and not in DS. */}
+      {hasSubLevel && currentLevel < levels && currentLevel < 2 && (
         <Bar data={data} type="menu">
           {data.map((itm: HvHeaderNavigationItemProp) => (
             <HvHeaderMenuItem

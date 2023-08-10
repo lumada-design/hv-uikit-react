@@ -11,28 +11,34 @@ export interface HvHeaderNavigationItemProp {
 
 const getSelectionPath = (
   data: HvHeaderNavigationItemProp[] | undefined,
-  selectedId: string,
+  selectedId: string | undefined,
   selection: string[] = [],
   idx: number = -1,
   parent: HvHeaderNavigationItemProp[] = []
 ): string[] => {
   data?.forEach((item: HvHeaderNavigationItemProp, i) => {
     const hasData = item.data && item.data.length;
+
     const isSelected = item.id === selectedId;
 
     if (isSelected)
       selection.push(...(idx > -1 ? [parent[idx].id] : []), item.id);
+
     if (hasData) getSelectionPath(item.data, selectedId, selection, i, data);
   });
 
   return selection;
 };
 
-export const useSelectionPath = (data, selectedId): string[] => {
+export const useSelectionPath = (
+  data: HvHeaderNavigationItemProp[],
+  selectedId?: string
+): string[] => {
   const [selectionPath, setSelectionPath] = useState<string[]>([]);
 
   useEffect(() => {
     const path = getSelectionPath(data, selectedId);
+
     setSelectionPath(path);
   }, [data, selectedId]);
 
