@@ -6,7 +6,21 @@ const getColor = (c: string): string => theme?.colors?.[c] || c;
 
 const getDims = (size: number) => ({ width: size, height: size });
 
-const sizeSelector = (iconSize?: IconSize, hasSpecialSize?: boolean) => {
+export const getColorVars = (colorArray: string[]) => {
+  return colorArray.reduce((acc, value, index) => {
+    acc[`--color-${index}`] = value;
+    return acc;
+  }, {} as Record<string, string>);
+};
+
+export const getIconSize = (
+  iconSize?: IconSize,
+  hasSpecialSize?: boolean,
+  width?: number,
+  height?: number
+) => {
+  if (width && height) return { width, height };
+
   const calcSize = (size: number) => (hasSpecialSize ? size + 8 : size);
 
   switch (iconSize) {
@@ -23,29 +37,43 @@ const sizeSelector = (iconSize?: IconSize, hasSpecialSize?: boolean) => {
   }
 };
 
-export function useIconColor(
+export const getIconColors = (
+  palette: string[] = [],
   color?: string | string[],
   semantic?: string,
-  inverted = false,
-  palette: string[] = []
+  inverted = false
+) => {
+  const colorArray = palette;
+
+  if (typeof color === "string") {
+    colorArray[0] = getColor(color);
+  } else if (Array.isArray(color)) {
+    colorArray.forEach((_, i) => {
+      colorArray[i] = getColor(color[i]);
+    });
+  }
+
+  if (semantic) {
+    colorArray[0] = theme.colors?.[semantic] || colorArray[0];
+  }
+
+  if (inverted && colorArray[1]) {
+    // eslint-disable-next-line prefer-destructuring
+    colorArray[1] = colorArray[0];
+    colorArray[0] = "none";
+  }
+
+  return colorArray;
+};
+
+export function useIconColor(
+  palette: string[] = [],
+  color?: string | string[],
+  semantic?: string,
+  inverted = false
 ) {
   return useMemo(() => {
-    const colorArray =
-      (typeof color === "string" && [getColor(color)]) ||
-      (Array.isArray(color) && color.map?.(getColor)) ||
-      palette;
-
-    if (semantic) {
-      colorArray[0] = theme.colors?.[semantic] || colorArray[0];
-    }
-
-    if (inverted && colorArray[1]) {
-      // eslint-disable-next-line prefer-destructuring
-      colorArray[1] = colorArray[0];
-      colorArray[0] = "none";
-    }
-
-    return colorArray;
+    return getIconColors(palette, color, semantic, inverted);
   }, [color, inverted, palette, semantic]);
 }
 
@@ -56,8 +84,7 @@ export function useIconSize(
   hasSpecialSize = false
 ) {
   return useMemo(() => {
-    if (height && width) return { width, height };
-    return sizeSelector(iconSize, hasSpecialSize);
+    return getIconSize(iconSize, hasSpecialSize, width, height);
   }, [hasSpecialSize, height, iconSize, width]);
 }
 
@@ -67,7 +94,7 @@ export function useIcon(
   hasSpecialSize = false
 ) {
   const { color, iconSize, width, height, semantic, inverted } = props;
-  const colorArray = useIconColor(color, semantic, inverted, palette);
+  const colorArray = useIconColor(palette, color, semantic, inverted);
   const size = useIconSize(iconSize, height, width, hasSpecialSize);
 
   return { size, colorArray };
@@ -96,9 +123,15 @@ export interface IconBaseProps extends HTMLDivProps {
   height?: number;
   /** A string that will override the width of the svg */
   width?: number;
-  /** Sets one of the standard semantic palette colors of the icon */
+  /**
+   * Sets one of the standard semantic palette colors of the icon
+   * @deprecated use the `color` prop instead
+   */
   semantic?: string;
-  /** Inverts the background-foreground on semantic icons */
+  /**
+   * Inverts the background-foreground on semantic icons
+   * @deprecated use the `color` prop instead
+   */
   inverted?: boolean;
   /** Props passed down to the svg element. */
   svgProps?: React.SVGProps<SVGSVGElement>;
