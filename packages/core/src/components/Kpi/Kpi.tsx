@@ -1,23 +1,14 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { useLabels } from "@core/hooks/useLabels";
 import { HvBaseProps } from "@core/types/generic";
 import { HvTypography } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
 
-import {
-  StyledComparisonComposition,
-  StyledComparisonContainer,
-  StyledIndicatorsContainer,
-  StyledIndicatorText,
-  StyledIndicatorUnit,
-  StyledInternalVisualComparisonDiv,
-  StyledInternalVisualComparisonTypography,
-  StyledRoot,
-  StyledTrendIndicator,
-  StyledVisualIndicator,
-} from "./Kpi.styles";
-import kpiClasses, { HvKpiClasses } from "./kpiClasses";
+import { staticClasses, useClasses } from "./Kpi.styles";
+
+export { staticClasses as kpiClasses };
+
+export type HvKpiClasses = ExtractNames<typeof useClasses>;
 
 export interface HvKpiLabelProps {
   /**
@@ -89,120 +80,75 @@ export const HvKpi = (props: HvKpiProps) => {
     indicatorUnitTextVariant = "title2",
     indicatorTextVariant = "title1",
     labels,
-    classes,
+    classes: classesProp,
     className,
     ...others
   } = useDefaultProps("HvKpi", props);
 
+  const { classes, cx } = useClasses(classesProp);
+
   const mergedLabels = useLabels(DEFAULT_LABELS, labels);
 
   const InternalVisualComparison =
-    typeof visualComparison === "string"
-      ? StyledInternalVisualComparisonTypography
-      : StyledInternalVisualComparisonDiv;
+    typeof visualComparison === "string" ? HvTypography : "div";
 
   return (
-    <StyledRoot
-      className={clsx(classes?.root, className, kpiClasses.root)}
-      {...others}
-    >
+    <div className={cx(classes.root, className)} {...others}>
       <div>
         <HvTypography variant="label">{mergedLabels?.title}</HvTypography>
       </div>
-      <StyledIndicatorsContainer
-        className={clsx(
-          kpiClasses.indicatorsContainer,
-          classes?.indicatorsContainer
-        )}
-      >
+      <div className={classes.indicatorsContainer}>
         {visualIndicator && (
-          <StyledVisualIndicator
-            className={clsx(
-              kpiClasses.visualIndicatorContainer,
-              kpiClasses.spacingToTheRight,
-              classes?.visualIndicatorContainer,
-              classes?.spacingToTheRight
+          <div
+            className={cx(
+              classes.visualIndicatorContainer,
+              classes.spacingToTheRight
             )}
           >
             {visualIndicator}
-          </StyledVisualIndicator>
+          </div>
         )}
         {mergedLabels?.indicator && (
-          <StyledIndicatorText
-            className={clsx(
-              kpiClasses.spacingToTheRight,
-              kpiClasses.indicatorText,
-              classes?.spacingToTheRight,
-              classes?.indicatorText
-            )}
+          <HvTypography
+            className={cx(classes.spacingToTheRight, classes.indicatorText)}
             variant={indicatorTextVariant}
           >
             {mergedLabels.indicator}
-          </StyledIndicatorText>
+          </HvTypography>
         )}
         {mergedLabels?.unit && (
-          <StyledIndicatorUnit
-            className={clsx(kpiClasses.indicatorUnit, classes?.indicatorUnit)}
+          <HvTypography
+            className={classes.indicatorUnit}
             variant={indicatorUnitTextVariant}
           >
             {mergedLabels.unit}
-          </StyledIndicatorUnit>
+          </HvTypography>
         )}
-      </StyledIndicatorsContainer>
+      </div>
       {visualComparison && (
-        <StyledComparisonComposition
-          className={clsx(
-            kpiClasses.comparisonComposition,
-            classes?.comparisonComposition
-          )}
-        >
+        <div className={classes.comparisonComposition}>
           {trendIndicator && (
-            <StyledTrendIndicator
-              className={clsx(
-                kpiClasses.trendLine,
-                kpiClasses.spacingToTheRight,
-                classes?.trendLine,
-                classes?.spacingToTheRight
-              )}
-            >
+            <div className={cx(classes.trendLine, classes.spacingToTheRight)}>
               {trendIndicator}
-            </StyledTrendIndicator>
+            </div>
           )}
           <div>
-            <StyledComparisonContainer
-              className={clsx(
-                kpiClasses.comparisonContainer,
-                classes?.comparisonContainer
-              )}
-            >
+            <div className={classes.comparisonContainer}>
               <InternalVisualComparison
-                className={clsx(
-                  kpiClasses.comparisons,
-                  kpiClasses.spacingToTheRight,
-                  classes?.comparisons,
-                  classes?.spacingToTheRight
-                )}
+                className={cx(classes.comparisons, classes.spacingToTheRight)}
                 variant="label"
               >
                 {visualComparison}
               </InternalVisualComparison>
-            </StyledComparisonContainer>
-            <StyledComparisonContainer
-              className={clsx(
-                kpiClasses.comparisonContainer,
-                classes?.comparisonContainer
-              )}
-            >
-              <HvTypography
-                className={clsx(kpiClasses.comparisons, classes?.comparisons)}
-                variant="caption2"
-              >
+            </div>
+            <div className={classes.comparisonContainer}>
+              <HvTypography className={classes.comparisons} variant="caption2">
                 {mergedLabels?.comparisonIndicatorInfo}
               </HvTypography>
-            </StyledComparisonContainer>
+            </div>
           </div>
-        </StyledComparisonComposition>
+        </div>
       )}
-    </StyledRoot>
+    </div>
   );
 };
