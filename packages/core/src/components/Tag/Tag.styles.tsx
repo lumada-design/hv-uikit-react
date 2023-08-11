@@ -1,88 +1,39 @@
-import styled from "@emotion/styled";
-
-import { CSSProperties, forwardRef } from "react";
-
-import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import Chip from "@mui/material/Chip";
-
-import { HvButton, HvButtonProps } from "@core/components/Button";
 import { outlineStyles } from "@core/utils/focusUtils";
+import { createClasses } from "@core/utils/classes";
 import { hexToRgbA } from "@core/utils/hexToRgbA";
-import { transientOptions } from "@core/utils/transientOptions";
-import { PolymorphicRef } from "@core/types/generic";
+import { CSSProperties } from "react";
 
-import tagClasses from "./tagClasses";
+export const { staticClasses, useClasses } = createClasses("HvTag", {
+  root: {},
 
-export const StyledChip = styled(
-  Chip,
-  transientOptions
-)(
-  ({
-    $type,
-    $disabled,
-    $categoricalFocus,
-    $categoricalDisabled,
-    $baseLightColor,
-  }: {
-    $type: string;
-    $disabled: boolean;
-    $categoricalFocus: boolean;
-    $categoricalDisabled: boolean;
-    $baseLightColor: string;
-  }) => ({
+  chipRoot: {
     "&.MuiChip-root": {
       height: 16,
       borderRadius: 0,
       maxWidth: 180,
       fontFamily: theme.fontFamily.body,
 
-      [`& .${tagClasses.focusVisible}`]: {
+      "& $focusVisible": {
         backgroundColor: hexToRgbA(theme.colors.base_light, 0.3),
       },
-      ...($type === "categorical" && {
-        backgroundColor: "red",
+
+      "&$categorical": {
         borderRadius: 8,
-        [`&.${tagClasses.clickable}`]: {
+        "&$clickable": {
           cursor: "pointer",
         },
         "&:hover": {
           borderRadius: 8,
         },
-        [`& .${tagClasses.label}`]: {
+        "& $label": {
           color: theme.colors.secondary,
         },
         "&:focus:not(:focus-visible)": {
           outline: "0 !important",
           boxShadow: "none !important",
         },
-      }),
-      ...($disabled && {
-        backgroundColor: theme.colors.atmo3,
-        cursor: "not-allowed",
-        [`& .${tagClasses.label}`]: {
-          color: theme.colors.secondary_60,
-        },
-      }),
-      ...($categoricalFocus && {
-        "&:focus": {
-          ...outlineStyles,
-        },
-      }),
-      ...($categoricalDisabled && {
-        backgroundColor: theme.colors.atmo3,
-        cursor: "not-allowed",
-        [`& .${tagClasses.label}`]: {
-          color: theme.colors.secondary_60,
-        },
-        "&:hover": {
-          backgroundColor: theme.colors.atmo3,
-        },
-        "&:focus": {
-          outline: "none",
-        },
-      }),
+      },
     },
 
     "& .MuiChip-label": {
@@ -103,7 +54,7 @@ export const StyledChip = styled(
       minHeight: 16,
       padding: 0,
       "&:hover": {
-        backgroundColor: `${$baseLightColor}30`,
+        backgroundColor: hexToRgbA(theme.colors.base_light, 0.3),
       },
       "&:focus": {
         ...outlineStyles,
@@ -113,27 +64,18 @@ export const StyledChip = styled(
         outline: "0 !important",
         boxShadow: "none !important",
       },
-      ...($disabled && {
-        "&:hover": {
-          backgroundColor: theme.colors.atmo3,
-        },
-        "&:focus": {
-          backgroundColor: theme.colors.atmo3,
-          outline: "none",
-          boxShadow: "none",
-          outlineOffset: 0,
-        },
-      }),
     },
-  })
-);
+  },
 
-export const StyledButton = styled(
-  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
-    return <HvButton {...props} ref={ref} />;
-  })
-)({
-  "& .MuiButton-startIcon": {
+  focusVisible: {},
+
+  button: {
+    background: "transparent",
+  },
+
+  label: {},
+
+  tagButton: {
     width: 16,
     height: 16,
     minWidth: 16,
@@ -141,16 +83,49 @@ export const StyledButton = styled(
     padding: 0,
     margin: 0,
   },
-  "& .MuiButton-textPrimary": {
-    background: "transparent",
+
+  deleteIcon: {},
+
+  disabledDeleteIcon: {
+    "&:hover": {
+      backgroundColor: theme.colors.atmo3,
+    },
+    "&:focus": {
+      backgroundColor: theme.colors.atmo3,
+      outline: "none",
+      boxShadow: "none",
+      outlineOffset: 0,
+    },
+  },
+
+  categorical: {},
+  clickable: {},
+
+  categoricalFocus: {
+    "&:focus": {
+      ...outlineStyles,
+    },
+  },
+
+  disabled: {
+    backgroundColor: theme.colors.atmo3,
+    cursor: "not-allowed",
+    "& $label": {
+      color: theme.colors.secondary_60,
+    },
+  },
+
+  categoricalDisabled: {
+    backgroundColor: theme.colors.atmo3,
+    cursor: "not-allowed",
+    "& $label": {
+      color: theme.colors.secondary_60,
+    },
+    "&:hover": {
+      backgroundColor: theme.colors.atmo3,
+    },
+    "&:focus": {
+      outline: "none",
+    },
   },
 });
-
-export const StyledCloseXS = styled(
-  CloseXS,
-  transientOptions
-)(({ $color }: { $color: string }) => ({
-  "& svg .color0": {
-    fill: theme.colors[$color],
-  },
-}));

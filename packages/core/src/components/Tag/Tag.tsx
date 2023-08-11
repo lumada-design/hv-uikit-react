@@ -1,11 +1,6 @@
-import { clsx } from "clsx";
-
 import { CSSProperties, useState } from "react";
-
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { ChipProps as MuiChipProps } from "@mui/material/Chip";
-
+import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
 import { HvBaseProps } from "@core/types/generic";
 import {
   HvSemanticColorKeys,
@@ -13,11 +8,16 @@ import {
 } from "@core/types/tokens";
 import { useTheme } from "@core/hooks/useTheme";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvButtonProps } from "@core/components/Button";
+import { HvButton, HvButtonProps } from "@core/components/Button";
 
-import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
+import { ExtractNames } from "@core/utils/classes";
+import { CloseXS } from "@hitachivantara/uikit-react-icons";
+import { staticClasses, useClasses } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
-import tagClasses, { HvTagClasses } from "./tagClasses";
+
+export { staticClasses as tagClasses };
+
+export type HvTagClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTagProps
   extends Omit<MuiChipProps, "color" | "classes">,
@@ -78,7 +78,7 @@ const getColor = (customColor, type, colors) => {
  */
 export const HvTag = (props: HvTagProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
     style,
     label,
@@ -94,34 +94,38 @@ export const HvTag = (props: HvTagProps) => {
     ...others
   } = useDefaultProps("HvTag", props);
   const { activeTheme, selectedMode } = useTheme();
+  const { classes, cx, css } = useClasses(classesProp);
 
   const getDeleteIcon = () => {
     const disabledSemanticColor =
       type === "semantic" ? "secondary_60" : "base_dark";
     const { tabIndex = 0 } = deleteButtonProps;
 
+    const closeIconStyles = css({
+      ...(disabled ? { cursor: "not-allowed" } : undefined),
+      height: 16,
+      "& svg .color0": {
+        fill: theme.colors[disabled ? disabledSemanticColor : "base_dark"],
+      },
+    });
     return (
-      <StyledButton
+      <HvButton
         classes={{
-          startIcon: clsx(tagClasses.tagButton, classes?.tagButton),
-          focusVisible: clsx(tagClasses.focusVisible, classes?.focusVisible),
-          root: clsx(tagClasses.button, classes?.button),
+          startIcon: classes.tagButton,
+          focusVisible: classes.focusVisible,
+          root: classes.button,
         }}
         aria-label={deleteButtonArialLabel}
         tabIndex={tabIndex}
         variant="secondaryGhost"
         {...deleteButtonProps}
       >
-        <StyledCloseXS
+        <CloseXS
           iconSize="XS"
-          style={{
-            ...(disabled ? { cursor: "not-allowed" } : undefined),
-            height: 16,
-          }}
+          className={closeIconStyles}
           color={disabled ? disabledSemanticColor : "base_dark"}
-          $color={disabled ? disabledSemanticColor : "base_dark"}
         />
-      </StyledButton>
+      </HvButton>
     );
   };
 
@@ -146,9 +150,9 @@ export const HvTag = (props: HvTagProps) => {
   const [hover, setHover] = useState(false);
 
   return (
-    <StyledChip
+    <Chip
       label={label}
-      className={clsx(classes?.root, className, tagClasses.root)}
+      className={cx(classes.root, className)}
       onMouseEnter={() => {
         setHover(!!onClick);
       }}
@@ -162,41 +166,23 @@ export const HvTag = (props: HvTagProps) => {
           : null),
       }}
       classes={{
-        root: clsx(
-          tagClasses.chipRoot,
-          classes?.chipRoot,
-          type === "categorical" &&
-            clsx(tagClasses.categorical, classes?.categorical),
-          disabled && clsx(tagClasses.disabled, classes?.disabled),
-          !!onClick && clsx(tagClasses.clickable, classes?.clickable),
-          type === "categorical" &&
-            !disabled &&
-            clsx(tagClasses.categoricalFocus, classes?.categoricalFocus),
-          type === "categorical" &&
-            disabled &&
-            clsx(tagClasses.categoricalDisabled, classes?.categoricalDisabled)
-        ),
-        label: clsx(tagClasses.label, classes?.label),
-        deleteIcon: clsx(
-          classes?.deleteIcon,
-          tagClasses.deleteIcon,
-          disabled &&
-            clsx(tagClasses.disabledDeleteIcon, classes?.disabledDeleteIcon)
-        ),
+        root: cx(classes.chipRoot, {
+          [classes.disabled]: disabled,
+          [classes.clickable]: !!onClick,
+          [classes.categorical]: type === "categorical",
+          [classes.categoricalFocus]: type === "categorical" && !disabled,
+          [classes.categoricalDisabled]: type === "categorical" && disabled,
+        }),
+        label: classes.label,
+        deleteIcon: cx(classes.deleteIcon, {
+          [classes.disabledDeleteIcon]: disabled,
+        }),
       }}
       deleteIcon={(hasDeleteAction(onDelete) && deleteIcon) || getDeleteIcon()}
       onDelete={getOnDeleteCallback(disabled, onDelete)}
       onClick={disabled ? undefined : onClick}
       role={role || (hasClickAction(onClick) ? "button" : undefined)}
       tabIndex={hasDeleteAction(onDelete) ? undefined : 0}
-      $type={type}
-      $disabled={disabled || false}
-      $categoricalFocus={type === "categorical" && !disabled}
-      $categoricalDisabled={(type === "categorical" && disabled) || false}
-      $baseLightColor={
-        activeTheme?.colors?.modes[selectedMode].base_light ||
-        theme.colors.base_light
-      }
       {...others}
     />
   );
