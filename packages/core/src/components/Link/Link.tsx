@@ -1,12 +1,14 @@
-import { clsx } from "clsx";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { MouseEventHandler } from "react";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
-import { StyledA } from "./Link.styles";
-import linkClasses, { HvLinkClasses } from "./linkClasses";
+import { staticClasses, useClasses } from "./Link.styles";
+
+export { staticClasses as linkClasses };
+
+export type HvLinkClasses = ExtractNames<typeof useClasses>;
 
 export interface HvLinkProps extends HvBaseProps<HTMLAnchorElement, "onClick"> {
   onClick?: (
@@ -21,8 +23,17 @@ export interface HvLinkProps extends HvBaseProps<HTMLAnchorElement, "onClick"> {
 }
 
 export const HvLink = (props: HvLinkProps) => {
-  const { onClick, classes, className, route, data, children, ...others } =
-    useDefaultProps("HvLink", props);
+  const {
+    onClick,
+    classes: classesProp,
+    className,
+    route,
+    data,
+    children,
+    ...others
+  } = useDefaultProps("HvLink", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -31,13 +42,13 @@ export const HvLink = (props: HvLinkProps) => {
   };
 
   return (
-    <StyledA
+    <a
       href={route}
       onClick={onClick != null ? handleClick : undefined}
-      className={clsx(className, linkClasses.a, classes?.a)}
+      className={cx(classes.a, className)}
       {...others}
     >
       {children}
-    </StyledA>
+    </a>
   );
 };

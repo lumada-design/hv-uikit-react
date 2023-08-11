@@ -1,14 +1,14 @@
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { CSSProperties } from "react";
-
 import { outlineStyles } from "@core/utils/focusUtils";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledA = styled("a")({
-  ...(theme.typography.label as CSSProperties),
-  textDecoration: "underline",
-  color: theme.colors.primary,
-  "&:focus-visible": { ...outlineStyles },
+export const { staticClasses, useClasses } = createClasses("HvLink", {
+  a: {
+    ...theme.typography.label,
+    textDecoration: "underline",
+    color: theme.colors.primary,
+
+    "&:focus-visible": { ...outlineStyles },
+  },
 });
