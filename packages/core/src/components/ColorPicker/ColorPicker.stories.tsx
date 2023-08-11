@@ -226,7 +226,7 @@ export const ControlledColorPicker: StoryObj<HvColorPickerProps> = {
     );
 
     return (
-      <HvStack direction="column" spacing="lg">
+      <HvStack direction="row" spacing="lg">
         <div
           className={css({
             display: "flex",
