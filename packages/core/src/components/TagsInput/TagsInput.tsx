@@ -6,12 +6,15 @@ import React, {
   useState,
 } from "react";
 
-import { clsx } from "clsx";
-
 import isNil from "lodash/isNil";
 
 import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
 
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { HvListContainer, HvListItem } from "@core/components/ListContainer";
+import { baseInputClasses } from "@core/components/BaseInput";
+import { HvInput } from "@core/components/Input";
 import { HvTagSuggestion, HvValidationMessages } from "@core/types/forms";
 import { HvBaseProps } from "@core/types/generic";
 import { useControlled } from "@core/hooks/useControlled";
@@ -22,24 +25,24 @@ import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 import validationStates from "@core/components/Forms/FormElement/validationStates";
 import { DEFAULT_ERROR_MESSAGES } from "@core/components/BaseInput/validations";
-import { HvTagProps } from "@core/components/Tag";
-import { HvCharCounterProps, HvFormStatus } from "@core/components/Forms";
-
+import { HvTag, HvTagProps } from "@core/components/Tag";
 import {
-  StyledCharCounter,
-  StyledDescription,
-  StyledError,
-  StyledFormElement,
-  StyledLabel,
-  StyledLabelContainer,
-  StyledListItem,
-  StyledTag,
-  StyledTagsList,
-  StyledInputListItem,
-  StyledInput,
-  StyledSuggestions,
-} from "./TagsInput.styles";
-import tagsInputClasses, { HvTagsInputClasses } from "./tagsInputClasses";
+  HvCharCounter,
+  HvCharCounterProps,
+  HvFormElement,
+  HvFormStatus,
+  HvInfoMessage,
+  HvLabel,
+  HvSuggestions,
+  HvWarningText,
+} from "@core/components/Forms";
+import { ExtractNames } from "@core/utils/classes";
+
+import { staticClasses, useClasses } from "./TagsInput.styles";
+
+export { staticClasses as tagsInputClasses };
+
+export type HvTagsInputClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTagsInputProps
   extends HvBaseProps<
@@ -141,7 +144,7 @@ export interface HvTagsInputProps
  */
 export const HvTagsInput = (props: HvTagsInputProps) => {
   const {
-    classes,
+    classes: classesProp,
     className,
     id,
     name,
@@ -177,6 +180,9 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
     suggestionListCallback,
     ...others
   } = useDefaultProps("HvTagsInput", props);
+
+  const { classes, cx, css } = useClasses(classesProp);
+
   const elementId = useUniqueId(id, "hvTagsInput");
 
   const hasLabel = textAreaLabel != null;
@@ -515,7 +521,7 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
   };
 
   return (
-    <StyledFormElement
+    <HvFormElement
       id={id}
       name={name}
       disabled={disabled}
@@ -524,23 +530,17 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
       required={required}
       onBlur={onBlurHandler}
       onFocus={onFocusHandler}
-      className={clsx(
-        tagsInputClasses.root,
-        classes?.root,
-        className,
-        disabled && clsx(tagsInputClasses.disabled, classes?.disabled)
+      className={cx(
+        classes.root,
+        { [classes.disabled]: disabled, [classes.readOnly]: readOnly },
+        className
       )}
     >
       {(hasLabel || hasDescription) && (
-        <StyledLabelContainer
-          className={clsx(
-            tagsInputClasses.labelContainer,
-            classes?.labelContainer
-          )}
-        >
+        <div className={classes.labelContainer}>
           {hasLabel && (
-            <StyledLabel
-              className={clsx(tagsInputClasses.label, classes?.label)}
+            <HvLabel
+              className={classes.label}
               id={setId(id, "label")}
               htmlFor={setId(elementId, "input")}
               label={textAreaLabel}
@@ -548,26 +548,20 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
           )}
 
           {hasDescription && (
-            <StyledDescription
-              className={clsx(
-                tagsInputClasses.description,
-                classes?.description
-              )}
+            <HvInfoMessage
+              className={classes.description}
               id={setId(elementId, "description")}
             >
               {description}
-            </StyledDescription>
+            </HvInfoMessage>
           )}
-        </StyledLabelContainer>
+        </div>
       )}
 
       {hasCounter && (
-        <StyledCharCounter
+        <HvCharCounter
           id={setId(elementId, "charCounter")}
-          className={clsx(
-            tagsInputClasses.characterCounter,
-            classes?.characterCounter
-          )}
+          className={classes.characterCounter}
           separator={middleCountLabel}
           currentCharQuantity={value.length}
           maxCharQuantity={maxTagsQuantity}
@@ -575,23 +569,13 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
         />
       )}
 
-      <StyledTagsList
-        className={clsx(
-          tagsInputClasses.tagsList,
-          classes?.tagsList,
-          canShowError && clsx(tagsInputClasses.error, classes?.error),
-          resizable &&
-            multiline &&
-            clsx(tagsInputClasses.resizable, classes?.resizable),
-          isStateInvalid && clsx(tagsInputClasses.invalid, classes?.invalid),
-          !multiline && clsx(tagsInputClasses.singleLine, classes?.singleLine)
-        )}
-        $disabled={disabled}
-        $singleLine={!multiline}
-        $error={canShowError}
-        $resizable={resizable && multiline}
-        $invalid={isStateInvalid}
-        $readOnly={readOnly}
+      <HvListContainer
+        className={cx(classes.tagsList, {
+          [classes.error]: canShowError,
+          [classes.resizable]: resizable && multiline,
+          [classes.invalid]: isStateInvalid,
+          [classes.singleLine]: !multiline,
+        })}
         onKeyDown={onKeyDownHandler}
         onClick={onContainerClickHandler}
         ref={containerRef}
@@ -607,37 +591,21 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
                 : t;
             const { label, type, ...otherProps } = tag;
             return (
-              <StyledListItem
+              <HvListItem
                 key={`${tag.label}-${i}`}
                 tabIndex={-1}
-                className={clsx(
-                  !multiline &&
-                    clsx(tagsInputClasses.singleLine, classes?.singleLine)
-                )}
+                className={cx({ [classes.singleLine]: !multiline })}
                 classes={{
-                  gutters: clsx(
-                    tagsInputClasses.listItemGutters,
-                    classes?.listItemGutters
-                  ),
-                  root: clsx(
-                    tagsInputClasses.listItemRoot,
-                    classes?.listItemRoot
-                  ),
+                  gutters: classes.listItemGutters,
+                  root: classes.listItemRoot,
                 }}
                 id={`tag-${i}`}
-                $singleLine={!multiline}
               >
-                <StyledTag
+                <HvTag
                   label={label}
-                  className={clsx(
-                    i === tagCursorPos &&
-                      clsx(tagsInputClasses.tagSelected, classes?.tagSelected)
-                  )}
+                  className={cx({ [classes.tagSelected]: i === tagCursorPos })}
                   classes={{
-                    chipRoot: clsx(
-                      tagsInputClasses.chipRoot,
-                      classes?.chipRoot
-                    ),
+                    chipRoot: classes.chipRoot,
                   }}
                   type={type}
                   {...(!(readOnly || disabled || type === "categorical") && {
@@ -646,65 +614,46 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
                   deleteButtonProps={{
                     tabIndex: -1,
                   }}
-                  $selected={i === tagCursorPos}
                   {...otherProps}
                 />
-              </StyledListItem>
+              </HvListItem>
             );
           })}
         {!(disabled || readOnly) && (
-          <StyledInputListItem
-            className={clsx(
-              !multiline &&
-                clsx(
-                  tagsInputClasses.singleLine,
-                  classes?.singleLine,
-                  value.length === 0 &&
-                    clsx(
-                      tagsInputClasses.tagInputRootEmpty,
-                      classes?.tagInputRootEmpty
-                    )
-                )
+          <HvListItem
+            className={cx(
+              {
+                [classes.singleLine]: !multiline,
+                [classes.tagInputRootEmpty]: value.length === 0,
+              },
+              !!isTagSelected &&
+                css({
+                  [`& .${baseInputClasses.inputRoot}`]: {
+                    backgroundColor: theme.colors.atmo1,
+                  },
+                })
             )}
             classes={{
-              root: clsx(
-                tagsInputClasses.tagInputContainerRoot,
-                classes?.tagInputContainerRoot
-              ),
-              gutters: clsx(
-                tagsInputClasses.listItemGutters,
-                classes?.listItemGutters
-              ),
+              root: classes.tagInputContainerRoot,
+              gutters: classes.listItemGutters,
             }}
             id={`tag-${value.length}`}
-            $singleLine={!multiline}
-            $isTagSelected={!!isTagSelected}
           >
-            <StyledInput
+            <HvInput
               value={tagInput}
               disableClear
               onChange={onChangeHandler}
               onKeyDown={onInputKeyDownHandler}
               placeholder={value.length === 0 ? placeholder : ""}
               autoFocus={autoFocus}
-              className={clsx(
-                !multiline &&
-                  clsx(tagsInputClasses.singleLine, classes?.singleLine)
-              )}
+              className={cx({
+                [classes.singleLine]: !multiline,
+              })}
               classes={{
-                root: clsx(
-                  tagsInputClasses.tagInputRoot,
-                  classes?.tagInputRoot
-                ),
-                input: clsx(tagsInputClasses.input, classes?.input),
-                inputBorderContainer: clsx(
-                  tagsInputClasses.tagInputBorderContainer,
-                  classes?.tagInputBorderContainer
-                ),
-                inputRootFocused: clsx(
-                  tagsInputClasses.tagInputRootFocused,
-                  classes?.tagInputRootFocused
-                ),
+                root: classes.tagInputRoot,
+                input: classes.input,
+                inputBorderContainer: classes.tagInputBorderContainer,
+                inputRootFocused: classes.tagInputRootFocused,
               }}
               disabled={disabled}
               readOnly={readOnly || isTagSelected}
@@ -721,34 +670,21 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
                 ...inputProps,
               }}
               inputRef={inputRef}
-              $singleLine={!multiline}
               {...others}
             />
-          </StyledInputListItem>
+          </HvListItem>
         )}
-      </StyledTagsList>
+      </HvListContainer>
       {canShowSuggestions && (
         <>
           {hasSuggestions && (
-            <div
-              role="presentation"
-              className={clsx(
-                tagsInputClasses.inputExtension,
-                classes?.inputExtension
-              )}
-            />
+            <div role="presentation" className={classes.inputExtension} />
           )}
-          <StyledSuggestions
+          <HvSuggestions
             id={setId(elementId, "suggestions")}
             classes={{
-              root: clsx(
-                tagsInputClasses.suggestionsContainer,
-                classes?.suggestionsContainer
-              ),
-              list: clsx(
-                tagsInputClasses.suggestionList,
-                classes?.suggestionList
-              ),
+              root: classes.suggestionsContainer,
+              list: classes.suggestionList,
             }}
             expanded={hasSuggestions}
             anchorEl={containerRef?.current?.parentElement}
@@ -760,14 +696,14 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
         </>
       )}
       {canShowError && (
-        <StyledError
+        <HvWarningText
           id={setId(elementId, "error")}
           disableBorder
-          className={clsx(tagsInputClasses.error, classes?.error)}
+          className={classes.error}
         >
           {validationMessage}
-        </StyledError>
+        </HvWarningText>
       )}
-    </StyledFormElement>
+    </HvFormElement>
   );
 };
