@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.5.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.5.3...@hitachivantara/uikit-react-icons@5.5.4) (2023-08-11)
+
+### Performance Improvements
+
+- **icons:** merge path on grouped icons (automatic) ([dfb4669](https://github.com/lumada-design/hv-uikit-react/commit/dfb4669001bd833271fc5a7697333f2d8cb8be0e))
+- **icons:** merge path on ungrouped icons (automatic) ([f6d45f0](https://github.com/lumada-design/hv-uikit-react/commit/f6d45f0c6556e3790f495c0f1fbb9690097c6073))
+- **icons:** reduce precision ([3ce0087](https://github.com/lumada-design/hv-uikit-react/commit/3ce008788133e55df2561bb3d9ddbef993b882e1))
+- **icons:** svg path optimization (manual) ([00edeac](https://github.com/lumada-design/hv-uikit-react/commit/00edeac157b8f6392333f7a99edae7eb964cec10))
+
 ## 5.5.3 (2023-08-09)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons
