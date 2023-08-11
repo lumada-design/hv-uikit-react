@@ -1,7 +1,4 @@
-import { SliderProps } from "rc-slider";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
+import Slider, { SliderProps } from "rc-slider";
 
 import React, {
   useCallback,
@@ -11,25 +8,24 @@ import React, {
   useState,
 } from "react";
 
+import Tooltip from "rc-tooltip";
+
 import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";
 import validationStates from "@core/components/Forms/FormElement/validationStates";
 import { HvInputProps } from "@core/components/Input";
-import { HvFormStatus, HvLabel } from "@core/components/Forms";
-
-import sliderClasses, { HvSliderClasses } from "./sliderClasses";
 import {
-  sliderStyles,
-  StyledFormElement,
-  StyledLabelContainer,
-  StyledSlider,
-  StyledSliderContainer,
-  StyledTooltip,
-  StyledTooltipContainer,
-  StyledWarning,
-} from "./Slider.styles";
+  HvFormElement,
+  HvFormStatus,
+  HvLabel,
+  HvWarningText,
+} from "@core/components/Forms";
+import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
+
+import { sliderStyles, staticClasses, useClasses } from "./Slider.styles";
 import {
   calculateStepValue,
   convertStatusToArray,
@@ -47,6 +43,10 @@ import {
 } from "./utils";
 import { HvSliderInput } from "./SliderInput/SliderInput";
 import { HvKnobProperty, HvMarkProperty } from "./types";
+
+export { staticClasses as sliderClasses };
+
+export type HvSliderClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSliderProps
   extends HvBaseProps<HTMLDivElement, "onChange" | "onBlur"> {
@@ -195,7 +195,7 @@ export const HvSlider = (props: HvSliderProps) => {
     status,
     statusMessage,
     disabled,
-    classes,
+    classes: classesProp,
     sliderProps,
     knobProps,
     inputProps,
@@ -222,6 +222,8 @@ export const HvSlider = (props: HvSliderProps) => {
     formatTooltip,
     ...others
   } = useDefaultProps("HvSlider", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   // Miscellaneous state
   const hasLabel = label != null;
@@ -562,37 +564,20 @@ export const HvSlider = (props: HvSliderProps) => {
     const indexedHandleId = setId(handleId, index);
 
     return (
-      <StyledTooltipContainer
+      <div
         key={index}
-        className={clsx(
-          !disabled &&
-            !isEmpty &&
-            clsx(classes?.handleContainer, sliderClasses.handleContainer),
-          disabled &&
-            !isEmpty &&
-            clsx(
-              classes?.handleContainerDisabled,
-              sliderClasses.handleContainerDisabled
-            ),
-          (isEmpty || readOnly) &&
-            clsx(
-              classes?.handleHiddenContainer,
-              sliderClasses.handleHiddenContainer
-            )
-        )}
-        $active={!!(!disabled && !isEmpty)}
-        $disabled={!!(disabled && !isEmpty)}
-        $hidden={isEmpty || readOnly}
+        className={cx({
+          [classes.handleContainer]: !!(!disabled && !isEmpty),
+          [classes.handleContainerDisabled]: !!(disabled && !isEmpty),
+          [classes.handleHiddenContainer]: isEmpty || readOnly,
+        })}
       >
-        <StyledTooltip
+        <Tooltip
           prefixCls="rc-slider-tooltip"
           overlay={formatTooltip?.(scaledKnobValue) || scaledKnobValue}
           visible={dragging}
           placement="top"
-          overlayClassName={clsx(
-            classes?.sliderTooltip,
-            sliderClasses.sliderTooltip
-          )}
+          overlayClassName={classes.sliderTooltip}
           getTooltipContainer={() =>
             document.getElementById(indexedHandleId || "") as HTMLElement
           }
@@ -600,11 +585,7 @@ export const HvSlider = (props: HvSliderProps) => {
           <div
             id={indexedHandleId}
             style={style}
-            className={clsx(
-              knobClassName,
-              classes?.handle,
-              sliderClasses.handle
-            )}
+            className={cx(knobClassName, classes.handle)}
             {...restProps}
             aria-label={`${label}-knob-${index}`}
             aria-valuenow={knobsPositionToScaledValue(
@@ -616,32 +597,24 @@ export const HvSlider = (props: HvSliderProps) => {
             aria-valuemax={maxPointValue}
             {...knobProps?.[index]}
           />
-        </StyledTooltip>
-      </StyledTooltipContainer>
+        </Tooltip>
+      </div>
     );
   };
 
   return (
-    <StyledFormElement
-      className={clsx(
-        className,
-        classes?.root,
-        sliderClasses.root,
-        !readOnly &&
-          !disabled &&
-          !isSingle &&
-          isDraggingTrack &&
-          clsx(classes?.trackDragging, sliderClasses.trackDragging),
-        !readOnly &&
-          !disabled &&
-          !isSingle &&
-          !isDraggingTrack &&
-          clsx(classes?.trackStandBy, sliderClasses.trackStandBy),
-        disabled && clsx(classes?.rootDisabled, sliderClasses.rootDisabled)
+    <HvFormElement
+      className={cx(
+        classes.root,
+        {
+          [classes.trackStandBy]:
+            !readOnly && !disabled && !isSingle && !isDraggingTrack,
+          [classes.trackDragging]:
+            !readOnly && !disabled && !isSingle && isDraggingTrack,
+          [classes.rootDisabled]: !!disabled,
+        },
+        className
       )}
-      $dragging={!readOnly && !disabled && !isSingle && isDraggingTrack}
-      $standBy={!readOnly && !disabled && !isSingle && !isDraggingTrack}
-      $disabled={!!disabled}
       id={id}
       name={name}
       status={statusArrayToFormStatus(validationStatus)}
@@ -654,20 +627,16 @@ export const HvSlider = (props: HvSliderProps) => {
       {...others}
     >
       {(hasLabel || !hideInput) && (
-        <StyledLabelContainer
-          className={clsx(
-            classes?.labelContainer,
-            sliderClasses.labelContainer,
-            hasLabel &&
-              clsx(classes?.labelIncluded, sliderClasses.labelIncluded),
-            !hasLabel && clsx(classes?.onlyInput, sliderClasses.onlyInput)
-          )}
-          $hasLabel={hasLabel}
+        <div
+          className={cx(classes.labelContainer, {
+            [classes.labelIncluded]: hasLabel,
+            [classes.onlyInput]: !hasLabel,
+          })}
         >
           {hasLabel && (
             <HvLabel
               id={setId(elementId, "label")}
-              className={clsx(classes?.label, sliderClasses.label)}
+              className={classes.label}
               htmlFor={setId(elementId, "slider")}
               label={label}
             />
@@ -690,21 +659,14 @@ export const HvSlider = (props: HvSliderProps) => {
               inputProps={inputProps}
             />
           )}
-        </StyledLabelContainer>
+        </div>
       )}
 
-      <StyledSliderContainer
-        className={clsx(
-          classes?.sliderBase,
-          sliderClasses.sliderBase,
-          classes?.sliderContainer,
-          sliderClasses.sliderContainer
-        )}
-      >
+      <div className={cx(classes.sliderBase, classes.sliderContainer)}>
         {isSingle && (
-          <StyledSlider
+          <Slider
             handleRender={createKnob}
-            className={clsx(classes?.sliderRoot, sliderClasses.sliderRoot)}
+            className={classes.sliderRoot}
             min={0}
             max={divisionQuantity}
             step={1}
@@ -736,14 +698,12 @@ export const HvSlider = (props: HvSliderProps) => {
           />
         )}
         {!isSingle && (
-          <StyledSlider
+          <Slider
             range
             handleRender={createKnob}
-            className={clsx(
-              classes?.sliderRoot,
-              sliderClasses.sliderRoot,
-              !isSingle && clsx(classes?.rootRange, sliderClasses.rootRange)
-            )}
+            className={cx(classes.sliderRoot, {
+              [classes.rootRange]: !isSingle,
+            })}
             min={0}
             max={divisionQuantity}
             step={1}
@@ -775,17 +735,17 @@ export const HvSlider = (props: HvSliderProps) => {
             {...sliderProps}
           />
         )}
-      </StyledSliderContainer>
+      </div>
 
       {canShowError && (
-        <StyledWarning
+        <HvWarningText
           id={setId(elementId, "error")}
-          className={clsx(classes?.error, sliderClasses.error)}
+          className={classes.error}
           disableBorder
         >
           {validationMessage}
-        </StyledWarning>
+        </HvWarningText>
       )}
-    </StyledFormElement>
+    </HvFormElement>
   );
 };

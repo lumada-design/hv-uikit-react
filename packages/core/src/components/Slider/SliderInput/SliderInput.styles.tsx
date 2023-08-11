@@ -1,9 +1,7 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils/classes";
 
-import { HvInput } from "@core/components/Input";
-
-export const StyledRoot = styled("div")({ display: "flex" });
-
-export const StyledInputContainer = styled("div")({ display: "flex" });
-
-export const StyledInput = styled(HvInput)({ maxWidth: "50px" });
+export const { staticClasses, useClasses } = createClasses("HvSliderInput", {
+  inputRoot: { display: "flex" },
+  input: { maxWidth: "50px" },
+  inputContainer: { display: "flex" },
+});

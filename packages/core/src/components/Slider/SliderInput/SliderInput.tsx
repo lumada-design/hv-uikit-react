@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
 
-import { clsx } from "clsx";
-
 import { Remove } from "@hitachivantara/uikit-react-icons";
 
 import { setId } from "@core/utils/setId";
 import { HvFormStatus } from "@core/components/Forms";
-import { HvInputProps } from "@core/components/Input";
+import { HvInput, HvInputProps } from "@core/components/Input";
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
 
 import { knobsValuesToString, stringValuesToKnobs } from "../utils";
-import {
-  StyledInput,
-  StyledInputContainer,
-  StyledRoot,
-} from "./SliderInput.styles";
-import sliderInputClasses, { HvSliderInputClasses } from "./sliderInputClasses";
+import { staticClasses, useClasses } from "./SliderInput.styles";
+
+export { staticClasses as sliderInputClasses };
+
+export type HvSliderInputClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSliderInputProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
@@ -58,7 +56,7 @@ export interface HvSliderInputProps
 }
 
 export const HvSliderInput = ({
-  classes,
+  classes: classesProp,
   className,
   id,
   label,
@@ -71,6 +69,8 @@ export const HvSliderInput = ({
   onChange,
   ...others
 }: HvSliderInputProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const [inputValues, setInputValues] = useState<string[]>(
     knobsValuesToString(valuesProp, markDigits)
   );
@@ -86,27 +86,14 @@ export const HvSliderInput = ({
   }, [markDigits, valuesProp]);
 
   return (
-    <StyledRoot
-      className={clsx(
-        className,
-        classes?.inputRoot,
-        sliderInputClasses.inputRoot
-      )}
-      {...others}
-    >
+    <div className={cx(classes.inputRoot, className)} {...others}>
       {inputValues.map((value, index) => (
-        <StyledInputContainer
-          key={setId(id, index)}
-          className={clsx(
-            classes?.inputContainer,
-            sliderInputClasses.inputContainer
-          )}
-        >
+        <div key={setId(id, index)} className={classes.inputContainer}>
           {index !== 0 && <Remove color={disabled ? ["atmo4"] : undefined} />}
-          <StyledInput
+          <HvInput
             id={setId(id, index)}
             aria-label={`${label}-${index}`}
-            className={clsx(classes?.input, sliderInputClasses.input)}
+            className={classes.input}
             disabled={disabled}
             type="number"
             value={Number.isNaN(value) || value == null ? "" : value.toString()}
@@ -122,8 +109,8 @@ export const HvSliderInput = ({
             disableClear
             {...inputProps[index]}
           />
-        </StyledInputContainer>
+        </div>
       ))}
-    </StyledRoot>
+    </div>
   );
 };
