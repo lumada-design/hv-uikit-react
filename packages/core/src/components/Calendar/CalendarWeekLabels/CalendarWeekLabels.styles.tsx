@@ -1,12 +1,15 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils/classes";
 
-import { HvTypography } from "@core/components/Typography";
-
-export const StyledCalendarDay = styled(HvTypography)({
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "column",
-  textAlign: "center",
-  height: "40px",
-  width: "40px",
-});
+export const { staticClasses, useClasses } = createClasses(
+  "HvCalendarWeekLabels",
+  {
+    calendarDay: {
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: "column",
+      textAlign: "center",
+      height: "40px",
+      width: "40px",
+    },
+  }
+);

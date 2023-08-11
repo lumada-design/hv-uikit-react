@@ -1,29 +1,31 @@
-import { clsx } from "clsx";
-import { StyledCalendarDay } from "./CalendarWeekLabels.styles";
-import calendarWeekLabelsClasses, {
-  HvCalendarWeekLabelsClasses,
-} from "./calendarWeekLabelsClasses";
+import { HvTypography } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
+
+import { staticClasses, useClasses } from "./CalendarWeekLabels.styles";
+
+export { staticClasses as calendarWeekLabelsClasses };
+
+export type HvCalendarWeekLabelsClasses = ExtractNames<typeof useClasses>;
 
 export const HvCalendarWeekLabel = ({
-  classes,
+  classes: classesProp,
   labels = [],
 }: HvCalendarWeekLabelProps) => {
+  const { classes } = useClasses(classesProp);
+
   return (
     <>
       {" "}
       {labels.map((dayName, index) => {
         const key = `${dayName}-${index}`;
         return (
-          <StyledCalendarDay
+          <HvTypography
             variant="label"
-            className={clsx(
-              calendarWeekLabelsClasses.calendarDay,
-              classes?.calendarDay
-            )}
+            className={classes.calendarDay}
             key={key}
           >
             {dayName}
-          </StyledCalendarDay>
+          </HvTypography>
         );
       })}{" "}
     </>

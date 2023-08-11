@@ -1,21 +1,19 @@
 import { setId } from "@core/utils/setId";
 
-import { clsx } from "clsx";
-
+import { ExtractNames } from "@core/utils/classes";
 import { getMonthNamesList } from "../../utils";
 import { ViewMode } from "../../enums";
 import { Navigation } from "../Navigation";
-import composedNavigationClasses, {
-  HvComposedNavigationClasses,
-} from "./composedNavigationClasses";
-import {
-  StyledNavigationContainer,
-  StyledNavigationMonth,
-} from "./ComposedNavigation.styles";
 import { VisibilitySelectorActions } from "../../types";
 
+import { staticClasses, useClasses } from "./ComposedNavigation.styles";
+
+export { staticClasses as composedNavigationClasses };
+
+export type HvComposedNavigationClasses = ExtractNames<typeof useClasses>;
+
 export const HvComposedNavigation = ({
-  classes,
+  classes: classesProp,
   id,
   locale,
   onChange,
@@ -24,23 +22,14 @@ export const HvComposedNavigation = ({
   visibleMonth,
   ...others
 }: HvComposedNavigationProps) => {
+  const { classes } = useClasses(classesProp);
+
   const listMonthNamesLong = getMonthNamesList(locale, "long");
   const monthName = listMonthNamesLong[visibleMonth - 1];
 
   return (
-    <StyledNavigationContainer
-      className={clsx(
-        composedNavigationClasses.navigationContainer,
-        classes?.navigationContainer
-      )}
-      {...others}
-    >
-      <StyledNavigationMonth
-        className={clsx(
-          composedNavigationClasses.navigationMonth,
-          classes?.navigationMonth
-        )}
-      >
+    <div className={classes.navigationContainer} {...others}>
+      <div className={classes.navigationMonth}>
         <Navigation
           id={setId(id, "navigation-month")}
           navigationText={monthName}
@@ -53,12 +42,9 @@ export const HvComposedNavigation = ({
           onTextClick={() => {
             onViewModeChange("monthly");
           }}
-          className={clsx(
-            composedNavigationClasses.navigationMonth,
-            classes?.navigationMonth
-          )}
+          className={classes.navigationMonth}
         />
-      </StyledNavigationMonth>
+      </div>
 
       <Navigation
         id={setId(id, "navigation-year")}
@@ -70,7 +56,7 @@ export const HvComposedNavigation = ({
           onChange?.(event, "next_year");
         }}
       />
-    </StyledNavigationContainer>
+    </div>
   );
 };
 

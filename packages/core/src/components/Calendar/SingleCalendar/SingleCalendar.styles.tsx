@@ -1,56 +1,65 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils/classes";
 import { theme } from "@hitachivantara/uikit-styles";
-import singleCalendarClasses from "./singleCalendarClasses";
 
-export const StyledCalendarContainer = styled("div")({
-  backgroundColor: theme.colors.atmo1,
-  width: "318px",
-  minHeight: "440px",
-  position: "relative",
-});
-
-export const StyledCalendarWrapper = styled("div")({
-  overflow: "hidden",
-  backgroundColor: theme.colors.atmo1,
-  padding: theme.spacing("sm"),
-});
-
-export const StyledCalendarGrid = styled("div")({
-  display: "flex",
-  flexFlow: "wrap",
-  width: "280px",
-  [`& .${singleCalendarClasses.cellsInRange}`]: {
-    backgroundColor: theme.colors.atmo3,
-    [`& .${singleCalendarClasses.startBookend}`]: {
-      borderLeft: `1px solid ${theme.colors.secondary}`,
+export const { staticClasses, useClasses } = createClasses("HvSingleCalendar", {
+  calendarContainer: {
+    backgroundColor: theme.colors.atmo1,
+    width: "318px",
+    minHeight: "440px",
+    position: "relative",
+  },
+  calendarWrapper: {
+    overflow: "hidden",
+    backgroundColor: theme.colors.atmo1,
+    padding: theme.spacing("sm"),
+  },
+  calendarGrid: {
+    display: "flex",
+    flexFlow: "wrap",
+    width: "280px",
+    "& $cellsInRange": {
       backgroundColor: theme.colors.atmo3,
-      "&:hover": {
+      "& $startBookend": {
+        borderLeft: `1px solid ${theme.colors.secondary}`,
+        backgroundColor: theme.colors.atmo3,
+        "&:hover": {
+          borderRight: `1px solid ${theme.colors.secondary}`,
+        },
+      },
+    },
+    "&:hover $cellsInRange": {
+      backgroundColor: theme.colors.atmo3,
+      "& $startBookend": {
+        borderLeft: `1px solid ${theme.colors.secondary}`,
+        borderRight: "inherit",
+      },
+    },
+    "& $cellsInRange:hover": {
+      backgroundColor: theme.colors.atmo3,
+      "& $calendarDate": {
         borderRight: `1px solid ${theme.colors.secondary}`,
       },
     },
-  },
-
-  [`&:hover .${singleCalendarClasses.cellsInRange}`]: {
-    backgroundColor: theme.colors.atmo3,
-    [`& .${singleCalendarClasses.startBookend}`]: {
-      borderLeft: `1px solid ${theme.colors.secondary}`,
-      borderRight: "inherit",
-    },
-  },
-
-  [`& .${singleCalendarClasses.cellsInRange}:hover`]: {
-    backgroundColor: theme.colors.atmo3,
-    [`& .${singleCalendarClasses.calendarDate}`]: {
-      borderRight: `1px solid ${theme.colors.secondary}`,
-    },
-  },
-
-  [`& .${singleCalendarClasses.cellsInRange}:hover ~ .${singleCalendarClasses.cellsInRange}`]:
-    {
+    "& $cellsInRange:hover ~ $cellsInRange": {
       backgroundColor: theme.colors.atmo1, // controls the right side of the hovered range
     },
-  [`& .${singleCalendarClasses.cellsOutsideRange}:hover ~ .${singleCalendarClasses.cellsInRange}`]:
-    {
+    "& $cellsOutsideRange:hover ~ $cellsInRange": {
       backgroundColor: theme.colors.atmo1, // control the right side when hovering outside of the range
     },
+  },
+  navigationContainer: {},
+  focusSelection: {},
+  navigationMonth: {},
+  calendarDate: {},
+  calendarDateNotInMonth: {},
+  calendarDateSelected: {},
+  calendarDateInvalid: {},
+  calendarDateInSelectionRange: {},
+  startBookend: {},
+  endBookend: {},
+  cellsInRange: {
+    backgroundColor: theme.colors.atmo3,
+  },
+  cellsOutsideRange: {},
+  cellContainer: {},
 });

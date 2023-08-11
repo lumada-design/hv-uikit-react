@@ -1,31 +1,29 @@
 import { useState, useMemo } from "react";
 
-import { clsx } from "clsx";
-
 import isNil from "lodash/isNil";
 
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 
+import { ExtractNames } from "@core/utils/classes";
 import { ViewMode } from "../enums";
 import { isRange, isDate, getWeekdayNamesList } from "../utils";
 import { generateCalendarModel } from "../model";
 import { HvComposedNavigation, HvMonthSelector } from "../CalendarNavigation";
 import { DateRangeProp, VisibilitySelectorActions } from "../types";
-import {
-  StyledCalendarContainer,
-  StyledCalendarGrid,
-  StyledCalendarWrapper,
-} from "./SingleCalendar.styles";
-import singleCalendarClasses, {
-  HvSingleCalendarClasses,
-} from "./singleCalendarClasses";
+
 import { HvCalendarCell } from "./CalendarCell";
 import { HvCalendarWeekLabel } from "../CalendarWeekLabels";
 import { HvCalendarHeader } from "../CalendarHeader/CalendarHeader";
 
+import { staticClasses, useClasses } from "./SingleCalendar.styles";
+
+export { staticClasses as singleCalendarClasses };
+
+export type HvSingleCalendarClasses = ExtractNames<typeof useClasses>;
+
 export const HvSingleCalendar = ({
-  classes,
+  classes: classesProp,
   className,
   id,
   locale = "en-US",
@@ -45,6 +43,8 @@ export const HvSingleCalendar = ({
 }: HvSingleCalendarProps) => {
   // TODO: refactor this out
   // const { HvCalendarHeader } = useContext(HvFormElementDescriptorsContext);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const today = new Date();
   const localValue = isNil(value) ? today : value;
@@ -89,9 +89,7 @@ export const HvSingleCalendar = ({
     const siblings =
       parent != null
         ? Array.from(
-            parent.getElementsByClassName(
-              singleCalendarClasses.cellContainer as string
-            )
+            parent.getElementsByClassName(classes.cellContainer as string)
           )
         : [];
     const elIndex = el ? siblings.indexOf(el) : 0;
@@ -140,21 +138,8 @@ export const HvSingleCalendar = ({
   };
 
   return (
-    <StyledCalendarContainer
-      className={clsx(
-        className,
-        singleCalendarClasses.calendarContainer,
-        classes?.calendarContainer
-      )}
-      {...others}
-    >
-      <StyledCalendarWrapper
-        id={id}
-        className={clsx(
-          singleCalendarClasses.calendarWrapper,
-          classes?.calendarWrapper
-        )}
-      >
+    <div className={cx(classes.calendarContainer, className)} {...others}>
+      <div id={id} className={classes.calendarWrapper}>
         <HvCalendarHeader
           id={setId(id, "header")}
           locale={locale}
@@ -173,16 +158,13 @@ export const HvSingleCalendar = ({
               visibleYear={visibleYear || today.getFullYear()}
               visibleMonth={visibleMonth || today.getMonth() + 1}
             />
-            <StyledCalendarGrid
-              className={clsx(
-                singleCalendarClasses.calendarGrid,
-                classes?.calendarGrid
-              )}
+            <div
+              className={classes.calendarGrid}
               aria-controls={HvCalendarHeader?.[0]?.id}
             >
               <HvCalendarWeekLabel labels={listWeekdayNames} />
               {calModel.dates.map(renderCalendarDate)}
-            </StyledCalendarGrid>
+            </div>
           </div>
         )}
         {calViewMode === "monthly" && (
@@ -195,8 +177,8 @@ export const HvSingleCalendar = ({
             rangeMode={rangeMode}
           />
         )}
-      </StyledCalendarWrapper>
-    </StyledCalendarContainer>
+      </div>
+    </div>
   );
 };
 

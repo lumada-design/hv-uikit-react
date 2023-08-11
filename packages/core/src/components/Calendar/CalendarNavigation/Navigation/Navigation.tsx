@@ -1,21 +1,24 @@
-import { clsx } from "clsx";
+import {
+  DropLeftXS as DropLeftIcon,
+  DropRightXS as DropRightIcon,
+} from "@hitachivantara/uikit-react-icons";
 
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 import { HvTypography } from "@core/components/Typography";
 import { HvBaseProps } from "@core/types/generic";
 
-import {
-  StyledDropLeftIcon,
-  StyledDropRightIcon,
-  StyledRoot,
-  StyledText,
-} from "./Navigation.styles";
-import navigationClasses, { HvNavigationClasses } from "./navigationClasses";
+import { ExtractNames } from "@core/utils/classes";
+
+import { staticClasses, useClasses } from "./Navigation.styles";
+
+export { staticClasses as navigationClasses };
+
+export type HvNavigationClasses = ExtractNames<typeof useClasses>;
 
 export const Navigation = ({
   id,
-  classes,
+  classes: classesProp,
   onNavigatePrevious,
   onNavigateNext,
   onTextClick,
@@ -23,6 +26,8 @@ export const Navigation = ({
   isPreviousEnabled = true,
   isNextEnabled = true,
 }: NavigationProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const onkeyDownHandler = (event, funcAction) => {
     if (isKey(event, "Enter") || isKey(event, "Space")) {
       event.preventDefault();
@@ -33,15 +38,12 @@ export const Navigation = ({
   const onTextClickIsFunction = typeof onTextClick === "function";
 
   return (
-    <StyledRoot className={clsx(navigationClasses.root, classes?.root)}>
-      <StyledDropLeftIcon
+    <div className={classes.root}>
+      <DropLeftIcon
         id={setId(id, "left")}
-        className={clsx(
-          navigationClasses.icon,
-          classes?.icon,
-          !isPreviousEnabled &&
-            clsx(navigationClasses.disabled, classes?.disabled)
-        )}
+        className={cx(classes.icon, {
+          [classes.disabled]: !isPreviousEnabled,
+        })}
         onClick={
           isPreviousEnabled ? (event) => onNavigatePrevious(event) : undefined
         }
@@ -53,37 +55,35 @@ export const Navigation = ({
         tabIndex={0}
       />
 
-      <StyledText
+      <div
         id={id}
-        className={clsx(
-          onTextClickIsFunction && clsx(navigationClasses.text, classes?.text),
-          !onTextClickIsFunction &&
-            clsx(navigationClasses.textWithoutHover, classes?.textWithoutHover)
-        )}
+        className={cx({
+          [classes.text]: onTextClickIsFunction,
+          [classes.textWithoutHover]: !onTextClickIsFunction,
+        })}
         role="presentation"
         onClick={onTextClick}
         onKeyDown={
           onTextClick && ((event) => onkeyDownHandler(event, onTextClick))
         }
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         tabIndex={onTextClick ? 0 : -1}
       >
         <HvTypography variant="body">{navigationText}</HvTypography>
-      </StyledText>
+      </div>
 
-      <StyledDropRightIcon
+      <DropRightIcon
         id={setId(id, "right")}
-        className={`${clsx(navigationClasses.icon, classes?.icon)} ${
-          isNextEnabled
-            ? ""
-            : clsx(navigationClasses.disabled, classes?.disabled)
-        }`}
+        className={cx(classes.icon, {
+          [classes.disabled]: !isNextEnabled,
+        })}
         onClick={isNextEnabled ? (event) => onNavigateNext(event) : undefined}
         onKeyDown={(event) =>
           isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined
         }
         tabIndex={0}
       />
-    </StyledRoot>
+    </div>
   );
 };
 
