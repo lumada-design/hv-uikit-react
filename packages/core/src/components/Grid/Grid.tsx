@@ -3,10 +3,16 @@ import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
 import isString from "lodash/isString";
 
 import { forwardRef } from "react";
-import { HvBaseProps } from "@core/types/generic";
 
+import { HvBaseProps } from "@core/types/generic";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvGridClasses } from "./gridClasses";
+import { ExtractNames } from "@core/utils/classes";
+
+import { staticClasses, useClasses } from "./Grid.styles";
+
+export { staticClasses as gridClasses };
+
+export type HvGridClasses = ExtractNames<typeof useClasses>;
 
 const BREAKPOINT_GUTTERS = {
   xs: 2,
@@ -213,8 +219,12 @@ export const HvGrid = forwardRef<HTMLDivElement, HvGridProps>((props, ref) => {
     rowSpacing,
     columnSpacing,
     columns,
+    classes: classesProp,
     ...others
   } = useDefaultProps("HvGrid", props);
+
+  const { classes } = useClasses(classesProp);
+
   const containerProps: Pick<
     MuiGridProps,
     "container" | "spacing" | "rowSpacing" | "columnSpacing" | "columns"
@@ -237,5 +247,7 @@ export const HvGrid = forwardRef<HTMLDivElement, HvGridProps>((props, ref) => {
     }
   }
 
-  return <MuiGrid ref={ref} {...containerProps} {...others} />;
+  return (
+    <MuiGrid ref={ref} classes={classes} {...containerProps} {...others} />
+  );
 });
