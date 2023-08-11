@@ -3,7 +3,7 @@ import { ExtractNames } from "@core/utils/classes";
 
 import { staticClasses, useClasses } from "./CalendarWeekLabels.styles";
 
-export { staticClasses as calendarWeekLabels };
+export { staticClasses as calendarWeekLabelsClasses };
 
 export type HvCalendarWeekLabelsClasses = ExtractNames<typeof useClasses>;
 

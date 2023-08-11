@@ -9,7 +9,7 @@ const hover = {
   cursor: "pointer",
 };
 
-export const { staticClasses, useClasses } = createClasses("HvMothSelector", {
+export const { staticClasses, useClasses } = createClasses("HvMonthSelector", {
   calendarMonthlyGrid: {
     marginTop: "50px",
     marginLeft: "-16px",
