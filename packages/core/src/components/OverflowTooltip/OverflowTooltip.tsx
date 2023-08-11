@@ -1,18 +1,14 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { useMemo } from "react";
-
 import { useResizeDetector } from "react-resize-detector";
-
 import { HvBaseProps } from "@core/types/generic";
 import { HvTooltip, HvTooltipProps } from "@core/components/Tooltip";
 import { HvTypography } from "@core/components/Typography";
+import { ExtractNames } from "@core/utils/classes";
+import { staticClasses, useClasses } from "./OverflowTooltip.styles";
 
-import { StyledDataContainer } from "./OverflowTooltip.styles";
-import overflowTooltipClasses, {
-  HvOverflowTooltipClasses,
-} from "./overflowTooltipClasses";
+export { staticClasses as overflowTooltipClasses };
+export type HvOverflowTooltipClasses = ExtractNames<typeof useClasses>;
 
 export interface HvOverflowTooltipProps extends HvBaseProps {
   /** The node that will be rendered inside the tooltip. */
@@ -49,7 +45,7 @@ const isParagraph = (children = "") => /\s/.test(children);
 export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
   const {
     id,
-    classes,
+    classes: classesProp,
     className,
     data,
     open,
@@ -57,6 +53,7 @@ export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
     placement = "top-start",
     tooltipsProps,
   } = useDefaultProps("HvOverflowTooltip", props);
+  const { classes, cx } = useClasses(classesProp);
 
   const { width = 0, ref } = useResizeDetector({
     refreshMode: "debounce",
@@ -76,27 +73,24 @@ export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
 
   const content = useMemo(
     () => (
-      <StyledDataContainer
+      <div
         ref={ref}
-        className={clsx(
-          className,
-          !isParag &&
-            clsx(overflowTooltipClasses.tooltipAnchor, classes?.tooltipAnchor),
-          isParag &&
-            clsx(
-              overflowTooltipClasses.tooltipAnchorParagraph,
-              classes?.tooltipAnchorParagraph
-            )
+        className={cx(
+          {
+            [classes.tooltipAnchor]: !isParag,
+            [classes.tooltipAnchorParagraph]: isParag,
+          },
+          className
         )}
-        $isParag={isParag}
       >
         {data}
-      </StyledDataContainer>
+      </div>
     ),
     [
       className,
-      classes?.tooltipAnchor,
-      classes?.tooltipAnchorParagraph,
+      classes.tooltipAnchor,
+      classes.tooltipAnchorParagraph,
+      cx,
       data,
       isParag,
       ref,
@@ -110,13 +104,7 @@ export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
       open={open}
       placement={placement}
       title={
-        <HvTypography
-          className={clsx(
-            overflowTooltipClasses.tooltipData,
-            classes?.tooltipData
-          )}
-          variant="body"
-        >
+        <HvTypography className={classes.tooltipData} variant="body">
           {data}
         </HvTypography>
       }
