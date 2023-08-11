@@ -1,34 +1,74 @@
-import { css } from "@emotion/css";
 import {
-  HvButton,
-  HvInput,
+  HvListValue,
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useGeneratorContext } from "generator/GeneratorContext";
+import { UnitSlider } from "components/common";
+import { extractFontSizeUnit } from "generator/utils";
 import { styles } from "./Radii.styles";
+
+type Radius = keyof HvThemeTokens["radii"];
 
 const Radii = () => {
   const { activeTheme } = useTheme();
   const { customTheme, updateCustomTheme } = useGeneratorContext();
-  const [currValues, setCurrValues] = useState<Map<string, string | number>>(
-    new Map<string, string | number>()
+  const [currValues, setCurrValues] = useState<Map<Radius, string | number>>(
+    new Map<Radius, string | number>()
   );
+  const currValuesRef = useRef(currValues);
 
-  const valueChangedHandler = (spacing: string, value: string) => {
-    const map = new Map<string, string | number>(currValues);
-    map.set(spacing, value);
+  const valueChangedHandler = (radii: Radius, value: string) => {
+    const map = new Map<Radius, string | number>(currValues);
+
+    const storedValue =
+      currValuesRef.current.get(radii) ||
+      customTheme.radii[radii as keyof HvThemeTokens["radii"]];
+
+    const unit = extractFontSizeUnit(storedValue.toString());
+
+    map.set(radii, `${value}${unit}`);
+    currValuesRef.current = map;
     setCurrValues(map);
   };
 
-  const setValueHandler = (radii: string) => {
-    const radiiValue = currValues.get(radii) || 0;
+  const setValueHandler = (radii: Radius) => {
+    const value = currValuesRef.current.get(radii);
+    if (!value) return;
+
+    const radiiValue = parseInt(value.toString(), 10) || 0;
+
+    const storedValue =
+      currValuesRef.current.get(radii) ||
+      customTheme.radii[radii as keyof HvThemeTokens["radii"]];
+
+    const unit = extractFontSizeUnit(storedValue.toString());
 
     updateCustomTheme({
       radii: {
-        [radii]: radii === "base" ? radiiValue : radiiValue,
+        [radii]: `${radiiValue}${unit}`,
+      },
+    });
+  };
+
+  const onUnitChangedHandler = (selectedUnit: HvListValue, radii: Radius) => {
+    const unit = selectedUnit.label;
+    const value = parseInt(
+      currValuesRef.current.get(radii)?.toString() ||
+        customTheme.radii[radii as keyof HvThemeTokens["radii"]].toString(),
+      10
+    );
+
+    const map = new Map<Radius, string | number>(currValues);
+    map.set(radii, `${value}${unit}`);
+    currValuesRef.current = map;
+    setCurrValues(map);
+
+    updateCustomTheme({
+      radii: {
+        [radii]: `${value}${unit}`,
       },
     });
   };
@@ -37,30 +77,22 @@ const Radii = () => {
     <div className={styles.root}>
       <HvTypography variant="title4">Radii</HvTypography>
       {activeTheme &&
-        Object.keys(activeTheme.radii).map((r) => {
+        Object.keys(activeTheme.radii).map((radius: string) => {
+          const r = radius as Radius;
+          const v = currValues?.get(r)?.toString() || customTheme.radii[r];
+          const u = extractFontSizeUnit(v);
           return (
             <div key={r} className={styles.item}>
-              <div className={styles.radii}>
-                <HvTypography variant="label">{r}</HvTypography>
-              </div>
-              <div className={styles.value}>
-                <HvInput
-                  value={
-                    currValues?.get(r)?.toString() ||
-                    customTheme.radii[r as keyof HvThemeTokens["radii"]]
-                  }
-                  classes={{ root: css({ width: "100%" }) }}
-                  onChange={(event, value) => valueChangedHandler(r, value)}
-                />
-              </div>
-              <div>
-                <HvButton
-                  variant="secondarySubtle"
-                  onClick={() => setValueHandler(r)}
-                >
-                  Set
-                </HvButton>
-              </div>
+              <UnitSlider
+                defaultSize={parseInt(v, 10)}
+                unit={u || "px"}
+                unitsToShow={["px", "%"]}
+                onAfterChange={() => setValueHandler(r)}
+                onChange={(val) => valueChangedHandler(r, val.toString())}
+                onUnitChange={(val) => onUnitChangedHandler(val, r)}
+                scaleProps={{ minMax: [0, 50], markDigits: 0 }}
+                label={r}
+              />
             </div>
           );
         })}

@@ -8,7 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { useGeneratorContext } from "generator/GeneratorContext";
 import { css } from "@emotion/css";
-import { FontSize } from "components/common";
+import { ScaleProps, UnitSlider } from "components/common";
 import { extractFontSizeUnit } from "generator/utils";
 import { styles } from "./FontSizes.styles";
 
@@ -22,6 +22,10 @@ const FontSizes = () => {
   const [currSizes, setCurrSizes] = useState<Map<string, string>>(
     new Map<string, string>()
   );
+  const [scale, setScale] = useState<ScaleProps>({
+    minMax: [0, 100],
+    markDigits: 0,
+  });
 
   useEffect(() => {
     const sizes: HvListValue[] = [];
@@ -75,12 +79,14 @@ const FontSizes = () => {
 
     setUnit(parsedUnit);
 
-    if (
-      (parsedUnit === "em" || parsedUnit === "rem") &&
-      fontValue &&
-      fontValue > 10
-    ) {
-      setFontValue(10);
+    if (parsedUnit === "em" || parsedUnit === "rem") {
+      if (fontValue && fontValue > 5) {
+        setFontValue(5);
+      }
+      setScale({
+        minMax: [0, 5],
+        markDigits: 1,
+      });
     }
 
     updateCustomTheme({
@@ -108,13 +114,15 @@ const FontSizes = () => {
           }
         />
       </HvBox>
-      <FontSize
+      <UnitSlider
         disabled={fontSize === ""}
-        fontSize={fontValue}
-        fontUnit={unit}
+        defaultSize={fontValue}
+        unit={unit}
         onAfterChange={(val) => onValueSetHandler(val)}
         onChange={(val) => onValueChangeHandler(val)}
         onUnitChange={(val) => onUnitChangedHandler(val)}
+        scaleProps={scale}
+        label="Font Size"
       />
     </HvBox>
   );

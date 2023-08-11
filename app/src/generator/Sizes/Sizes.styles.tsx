@@ -14,6 +14,7 @@ export const styles = {
     flexDirection: "row",
     justifyContent: "space-between",
     gap: 10,
+    marginBottom: 20,
   }),
   size: css({ width: 60 }),
   value: css({ width: 140 }),

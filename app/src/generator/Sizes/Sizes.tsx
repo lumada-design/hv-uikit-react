@@ -1,13 +1,8 @@
-import { css } from "@emotion/css";
-import {
-  HvButton,
-  HvInput,
-  HvTypography,
-  useTheme,
-} from "@hitachivantara/uikit-react-core";
+import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useGeneratorContext } from "generator/GeneratorContext";
+import { UnitSlider } from "components/common";
 import { styles } from "./Sizes.styles";
 
 const Sizes = () => {
@@ -16,19 +11,21 @@ const Sizes = () => {
   const [currValues, setCurrValues] = useState<Map<string, string>>(
     new Map<string, string>()
   );
+  const currValuesRef = useRef<Map<string, string>>(currValues);
 
   const valueChangedHandler = (size: string, value: string) => {
     const map = new Map<string, string>(currValues);
     map.set(size, value);
+    currValuesRef.current = map;
     setCurrValues(map);
   };
 
   const setValueHandler = (size: string) => {
-    const sizeValue = currValues.get(size) || 0;
+    const sizeValue = currValuesRef.current.get(size) || 0;
 
     updateCustomTheme({
       sizes: {
-        [size]: sizeValue,
+        [size]: `${sizeValue}px`,
       },
     });
   };
@@ -40,29 +37,18 @@ const Sizes = () => {
         Object.keys(activeTheme.sizes).map((r) => {
           return (
             <div key={r} className={styles.item}>
-              <div className={styles.size}>
-                <HvTypography variant="label">{r}</HvTypography>
-              </div>
-              <div className={styles.value}>
-                <HvInput
-                  value={
-                    currValues?.get(r)?.toString() ||
-                    customTheme.sizes[
-                      r as keyof HvThemeTokens["sizes"]
-                    ].toString()
-                  }
-                  classes={{ root: css({ width: "100%" }) }}
-                  onChange={(event, value) => valueChangedHandler(r, value)}
-                />
-              </div>
-              <div>
-                <HvButton
-                  variant="secondarySubtle"
-                  onClick={() => setValueHandler(r)}
-                >
-                  Set
-                </HvButton>
-              </div>
+              <UnitSlider
+                defaultSize={parseInt(
+                  currValues?.get(r)?.toString() ||
+                    customTheme.sizes[r as keyof HvThemeTokens["sizes"]],
+                  10
+                )}
+                unit="px"
+                hideUnits
+                onAfterChange={() => setValueHandler(r)}
+                onChange={(val) => valueChangedHandler(r, val.toString())}
+                label={r}
+              />
             </div>
           );
         })}

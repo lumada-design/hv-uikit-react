@@ -1,13 +1,8 @@
-import { css } from "@emotion/css";
-import {
-  HvButton,
-  HvInput,
-  HvTypography,
-  useTheme,
-} from "@hitachivantara/uikit-react-core";
+import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useGeneratorContext } from "generator/GeneratorContext";
+import { UnitSlider } from "components/common";
 import { styles } from "./Spacing.styles";
 
 const Spacing = () => {
@@ -16,25 +11,29 @@ const Spacing = () => {
   const [currValues, setCurrValues] = useState<Map<string, string | number>>(
     new Map<string, string | number>()
   );
+  const currValuesRef = useRef<Map<string, string | number>>(currValues);
 
   const valueChangedHandler = (spacing: string, value: string) => {
     const map = new Map<string, string | number>(currValues);
     map.set(spacing, value);
+    currValuesRef.current = map;
     setCurrValues(map);
   };
 
   const setValueHandler = (spacing: string) => {
-    const spacingValue =
+    const value = currValuesRef.current.get(spacing);
+    if (!value) return;
+
+    const spacingValue = parseInt(
       spacing === "base"
-        ? parseInt(currValues.get(spacing)?.toString() || "", 10)
-        : currValues.get(spacing) || 0;
+        ? value.toString() || ""
+        : currValues.get(spacing)?.toString() || "",
+      10
+    );
 
     updateCustomTheme({
       space: {
-        [spacing]:
-          spacing === "base"
-            ? parseInt(spacingValue.toString(), 10)
-            : spacingValue,
+        [spacing]: `${spacingValue}px`,
       },
     });
   };
@@ -46,29 +45,21 @@ const Spacing = () => {
         Object.keys(activeTheme.space).map((s) => {
           return (
             <div key={s} className={styles.item}>
-              <div className={styles.spacing}>
-                <HvTypography variant="label">{s}</HvTypography>
-              </div>
-              <div className={styles.value}>
-                <HvInput
-                  value={
-                    currValues?.get(s)?.toString() ||
+              <UnitSlider
+                defaultSize={parseInt(
+                  currValues?.get(s)?.toString() ||
                     customTheme.space[
                       s as keyof HvThemeTokens["space"]
-                    ].toString()
-                  }
-                  classes={{ root: css({ width: "100%" }) }}
-                  onChange={(event, value) => valueChangedHandler(s, value)}
-                />
-              </div>
-              <div>
-                <HvButton
-                  variant="secondarySubtle"
-                  onClick={() => setValueHandler(s)}
-                >
-                  Set
-                </HvButton>
-              </div>
+                    ].toString(),
+                  10
+                )}
+                unit="px"
+                hideUnits
+                onAfterChange={() => setValueHandler(s)}
+                onChange={(val) => valueChangedHandler(s, val.toString())}
+                scaleProps={{ minMax: [0, 80] }}
+                label={s}
+              />
             </div>
           );
         })}
