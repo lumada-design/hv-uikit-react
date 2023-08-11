@@ -23,6 +23,11 @@ export interface HvHeaderNavigationProps
   selected?: string;
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
   classes?: HvHeaderNavigationClasses;
+  /**
+   * The number of levels to show: the first level (1) or the first and second level (2).
+   *
+   * Defaults to `2`.
+   * */
   levels?: 1 | 2;
 }
 
@@ -41,7 +46,10 @@ export const HvHeaderNavigation = (props: HvHeaderNavigationProps) => {
 
   const selectionPath = useSelectionPath(data, selected);
 
-  const handleClick: HvHeaderMenuBarProps["onClick"] = (event, selection) => {
+  const handleClick: HvHeaderMenuBarProps["onClick"] = (
+    event: MouseEvent,
+    selection: HvHeaderNavigationItemProp
+  ) => {
     event.preventDefault();
 
     onClick?.(event, selection);
