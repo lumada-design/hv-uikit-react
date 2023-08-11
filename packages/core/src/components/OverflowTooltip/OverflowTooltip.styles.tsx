@@ -1,19 +1,19 @@
-import styled from "@emotion/styled";
-import { transientOptions } from "@core/utils/transientOptions";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledDataContainer = styled(
-  "div",
-  transientOptions
-)(({ $isParag }: { $isParag?: boolean }) => ({
-  ...($isParag && {
-    overflow: "hidden",
-    display: "-webkit-box",
-    // "-webkit-line-clamp": "2",
-    // "-webkit-box-orient": "vertical",
-  }),
-  ...(!$isParag && {
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-  }),
-}));
+export const { staticClasses, useClasses } = createClasses(
+  "HvOverflowTooltip",
+  {
+    tooltipData: {},
+    tooltipAnchor: {
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
+    tooltipAnchorParagraph: {
+      overflow: "hidden",
+      display: "-webkit-box",
+      "-webkit-line-clamp": 2,
+      "-webkit-box-orient": "vertical",
+    },
+  }
+);
