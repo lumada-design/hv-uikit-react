@@ -1,27 +1,28 @@
 import { forwardRef, isValidElement, useEffect, useMemo, useRef } from "react";
+
+import { FixedSizeList } from "react-window";
+
+import { DropRightXS } from "@hitachivantara/uikit-react-icons";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
-import { HvListContainer } from "@core/components/ListContainer";
+import { HvListContainer, HvListItem } from "@core/components/ListContainer";
 import { HvTypography } from "@core/components/Typography";
 import { setId } from "@core/utils/setId";
 import { wrapperTooltip } from "@core/utils/wrapperTooltip";
+import { ExtractNames } from "@core/utils/classes";
+import { HvCheckBox } from "@core/components/CheckBox";
+import { HvLink } from "@core/components/Link";
+import { HvRadio } from "@core/components/Radio";
 
-import {
-  StyledFixedSizeList,
-  StyledSelectAllCheckBox,
-  StyledLink,
-  StyledMultiSelectCheckBox,
-  StyledSingleSelectRadio,
-  StyledListItem,
-  StyledDropRightXS,
-} from "./List.styles";
-import listClasses, { HvListClasses } from "./listClasses";
+import { staticClasses, useClasses } from "./List.styles";
 import { useSelectableList } from "./useSelectableList";
 import { parseList } from "./utils";
 import { HvListLabels, HvListValue } from "./types";
+
+export { staticClasses as listClasses };
+
+export type HvListClasses = ExtractNames<typeof useClasses>;
 
 export interface HvListProps
   extends HvBaseProps<HTMLUListElement, "onChange" | "onClick"> {
@@ -83,7 +84,7 @@ const DEFAULT_LABELS = {
 export const HvList = (props: HvListProps) => {
   const {
     id,
-    classes,
+    classes: classesProp,
     className,
     multiSelect = false,
     hasTooltips = false,
@@ -100,6 +101,8 @@ export const HvList = (props: HvListProps) => {
     virtualized = false,
     ...others
   } = useDefaultProps("HvList", props);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const [list, setList, selection] = useSelectableList(valuesProp);
   const listRef = useRef<any>(null);
@@ -177,14 +180,11 @@ export const HvList = (props: HvListProps) => {
     );
 
     return (
-      <StyledSelectAllCheckBox
+      <HvCheckBox
         id={setId(id, "select-all")}
         label={selectionLabel}
         onChange={handleSelectAll}
-        className={clsx(
-          listClasses.selectAllSelector,
-          classes?.selectAllSelector
-        )}
+        className={classes.selectAllSelector}
         indeterminate={anySelected && !allSelected}
         checked={allSelected}
       />
@@ -195,13 +195,9 @@ export const HvList = (props: HvListProps) => {
     const ItemText = wrapperTooltip(hasTooltips, item.label, item.label);
 
     return !multiSelect && item.path ? (
-      <StyledLink
-        key={item.label}
-        route={item.path}
-        classes={{ a: clsx(listClasses.link, classes?.link) }}
-      >
+      <HvLink key={item.label} route={item.path} classes={{ a: classes.link }}>
         <ItemText />
-      </StyledLink>
+      </HvLink>
     ) : (
       <ItemText />
     );
@@ -211,19 +207,16 @@ export const HvList = (props: HvListProps) => {
     if (useSelector) {
       const Selection = wrapperTooltip(
         hasTooltips,
-        <StyledMultiSelectCheckBox
+        <HvCheckBox
           id={setId(itemId, "selector")}
           label={item.label}
           checked={item.selected}
           disabled={item.disabled}
           onChange={(evt) => handleSelect(evt, item)}
           classes={{
-            root: clsx(listClasses.selectorRoot, classes?.selectorRoot),
-            container: clsx(
-              listClasses.selectorContainer,
-              classes?.selectorContainer
-            ),
-            label: clsx(listClasses.truncate, classes?.truncate),
+            root: classes.selectorRoot,
+            container: classes.selectorContainer,
+            label: classes.truncate,
           }}
         />,
         item.label
@@ -238,18 +231,15 @@ export const HvList = (props: HvListProps) => {
     if (useSelector) {
       const Selection = wrapperTooltip(
         hasTooltips,
-        <StyledSingleSelectRadio
+        <HvRadio
           id={setId(itemId, "selector")}
           label={item.label}
           checked={item.selected}
           disabled={item.disabled}
           classes={{
-            root: clsx(listClasses.selectorRoot, classes?.selectorRoot),
-            container: clsx(
-              listClasses.selectorContainer,
-              classes?.selectorContainer
-            ),
-            label: clsx(listClasses.truncate, classes?.truncate),
+            root: classes.selectorRoot,
+            container: classes.selectorContainer,
+            label: classes.truncate,
           }}
         />,
         item.label
@@ -269,36 +259,31 @@ export const HvList = (props: HvListProps) => {
     }
 
     return (
-      <StyledListItem
+      <HvListItem
         key={i}
         id={itemId}
         role={selectable ? "option" : "menuitem"}
         disabled={item.disabled || undefined}
-        className={clsx(listClasses.item, classes?.item)}
+        className={classes.item}
         classes={{
-          selected:
-            useSelector || multiSelect
-              ? clsx(listClasses.itemSelector, classes?.itemSelector)
-              : undefined,
+          selected: cx({
+            [classes.itemSelector]: useSelector || multiSelect,
+          }),
         }}
         selected={multiSelect || selected ? selected : undefined}
         onClick={(evt) => handleSelect(evt, item)}
         startAdornment={startAdornment}
         endAdornment={
           item.showNavIcon && (
-            <StyledDropRightXS
-              className={clsx(listClasses.box, classes?.box)}
-              iconSize="XS"
-            />
+            <DropRightXS className={classes.box} iconSize="XS" />
           )
         }
-        $applySelected={useSelector || multiSelect}
         {...otherProps}
       >
         {multiSelect
           ? renderMultiSelectItem(item, itemId)
           : renderSingleSelectItem(item, itemId)}
-      </StyledListItem>
+      </HvListItem>
     );
   };
 
@@ -341,7 +326,7 @@ export const HvList = (props: HvListProps) => {
     return forwardRef(({ ...rest }, ref) => (
       <HvListContainer
         id={id}
-        className={clsx(className, listClasses.root, classes?.root)}
+        className={cx(classes.root, className)}
         role={selectable ? "listbox" : "menu"}
         interactive
         condensed={condensed}
@@ -351,7 +336,16 @@ export const HvList = (props: HvListProps) => {
         {...rest}
       />
     ));
-  }, [id, useSelector, className, classes, condensed, selectable, multiSelect]);
+  }, [
+    cx,
+    id,
+    useSelector,
+    className,
+    classes,
+    condensed,
+    selectable,
+    multiSelect,
+  ]);
 
   return (
     <>
@@ -360,7 +354,7 @@ export const HvList = (props: HvListProps) => {
       {filteredList.length > 0 && !virtualized && (
         <HvListContainer
           id={id}
-          className={clsx(className, listClasses.root, classes?.root)}
+          className={cx(classes.root, className)}
           role={selectable ? "listbox" : "menu"}
           interactive
           condensed={condensed}
@@ -372,12 +366,9 @@ export const HvList = (props: HvListProps) => {
         </HvListContainer>
       )}
       {filteredList.length > 0 && virtualized && (
-        <StyledFixedSizeList
+        <FixedSizeList
           ref={listRef}
-          className={clsx(
-            listClasses.virtualizedRoot,
-            classes?.virtualizedRoot
-          )}
+          className={classes.virtualizedRoot}
           height={(height || 0) + 5}
           width="100%"
           itemCount={filteredList.length}
@@ -386,7 +377,7 @@ export const HvList = (props: HvListProps) => {
           {...others}
         >
           {ListItem}
-        </StyledFixedSizeList>
+        </FixedSizeList>
       )}
     </>
   );
