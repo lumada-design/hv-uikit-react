@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.24.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.24.3...@hitachivantara/uikit-react-core@5.24.4) (2023-08-12)
+
+### Bug Fixes
+
+- **BulkActions:** select all semantic styling ([#3574](https://github.com/lumada-design/hv-uikit-react/issues/3574)) ([6e1f278](https://github.com/lumada-design/hv-uikit-react/commit/6e1f278fc867d004032174ce69f465e71cc698dd))
+- **Card:** focus outline ([#3589](https://github.com/lumada-design/hv-uikit-react/issues/3589)) ([3192c8d](https://github.com/lumada-design/hv-uikit-react/commit/3192c8dba129a3e85181672c96bb36c417724afb))
+- correct static classes type component name ([992aa0d](https://github.com/lumada-design/hv-uikit-react/commit/992aa0d38d30214f6a024be1d63a8241e145c4d5))
+- **Header:** handle header with more than 2 levels ([19c2b9a](https://github.com/lumada-design/hv-uikit-react/commit/19c2b9a24e7e2bee86c33d2a249ec37b4774c5a9))
+- polymorphic types for Typography and TimeAgo ([#3576](https://github.com/lumada-design/hv-uikit-react/issues/3576)) ([16fe93a](https://github.com/lumada-design/hv-uikit-react/commit/16fe93a6f5298e740b30a84a9a8b7756850a2a91))
+- **Table:** list sticky styles ([#3579](https://github.com/lumada-design/hv-uikit-react/issues/3579)) ([2672655](https://github.com/lumada-design/hv-uikit-react/commit/2672655ec1203920291f4e10c86587237ad4b7d7))
+
 ## [5.24.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.24.2...@hitachivantara/uikit-react-core@5.24.3) (2023-08-11)
 
 ### Bug Fixes
