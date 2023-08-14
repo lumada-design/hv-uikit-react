@@ -1,19 +1,9 @@
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { CSSProperties } from "react";
 
-import Tooltip from "rc-tooltip";
-import Slider from "rc-slider";
-
-import {
-  HvFormElement,
-  HvFormElementProps,
-  HvWarningText,
-} from "@core/components/Forms";
-import { transientOptions } from "@core/utils/transientOptions";
 import { outlineStyles } from "@core/utils/focusUtils";
+import { createClasses } from "@core/utils/classes";
 
 import base from "./base";
 
@@ -143,162 +133,114 @@ export const sliderStyles: SliderStyles = {
   rail: { backgroundColor: theme.colors.atmo4, height: "1px", zIndex: "-3" },
 };
 
-export const StyledFormElement = styled(
-  (props: HvFormElementProps) => <HvFormElement {...props} />,
-  transientOptions
-)(
-  ({
-    $dragging,
-    $standBy,
-    $disabled,
-  }: {
-    $dragging: boolean;
-    $standBy: boolean;
-    $disabled: boolean;
-  }) => ({
-    ...($dragging && {
-      cursor: "grabbing",
+export const { staticClasses, useClasses } = createClasses("HvSlider", {
+  sliderBase: { ...(base as CSSProperties) },
+  rootDisabled: {
+    cursor: "not-allowed",
+    "&& .rc-slider-disabled": {
+      background: "transparent",
+    },
+  },
+  sliderContainer: { marginBottom: "18px", padding: "0 23px" },
+  error: { padding: "0 8px" },
+  trackDragging: {
+    cursor: "grabbing",
 
-      "& .rc-slider-track": {
+    "&& .rc-slider-track": {
+      "&::before": {
+        ...dragSquare,
+        cursor: "grabbing",
+      },
+    },
+  },
+  trackStandBy: {
+    "&& .rc-slider-track": {
+      "&:hover": {
         "&::before": {
           ...dragSquare,
-          cursor: "grabbing",
         },
       },
-    }),
-
-    ...($standBy && {
-      "& .rc-slider-track": {
-        "&:hover": {
-          "&::before": {
-            ...dragSquare,
-          },
+    },
+  },
+  sliderRoot: { zIndex: 0 },
+  rootRange: {},
+  handleContainer: {
+    "&& .rc-slider-handle": {
+      cursor: "pointer",
+      marginTop: "-8px",
+      opacity: 1,
+      "&:active": {
+        cursor: "grab",
+        "&::before": {
+          ...ring,
+        },
+        "&::after": {
+          ...border,
         },
       },
-    }),
+      "&:hover": {
+        "&::before": {
+          ...ring,
+        },
+        "&::after": {
+          ...border,
+        },
+      },
 
-    ...($disabled && {
+      // Note about the usage of `!important below`: the way the rc-slider allows us to
+      // style the knobs is through inline styles. This means that the `box-shadow`, which
+      // is an inline style and is set to `none` to prevent the default rc-slider style to
+      // show, can't be overridden for the focus scenario unless we use the `!important` flag.
+      "&:focus-visible": {
+        ...outlineStyles,
+        boxShadow: "0 0 0 3px #52A8EC, 0 0 0 7px rgba(29,155,209,.3)!important",
+        "&::after": {
+          ...border,
+        },
+      },
+    },
+  },
+  handle: {},
+  handleContainerDisabled: {
+    "&& .rc-slider-handle": {
       cursor: "not-allowed",
-      "&& .rc-slider-disabled": {
-        background: "transparent",
-      },
-    }),
-  })
-);
-
-export const StyledLabelContainer = styled(
-  "div",
-  transientOptions
-)(({ $hasLabel }: { $hasLabel: boolean }) => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  marginBottom: "12px",
-  marginLeft: "20px",
-  marginRight: "20px",
-
-  ...($hasLabel && { justifyContent: "space-between" }),
-
-  ...(!$hasLabel && { justifyContent: "flex-end" }),
-}));
-
-export const StyledWarning = styled(HvWarningText)({ padding: "0 8px" });
-
-export const StyledSlider = styled(Slider)({
-  zIndex: 0,
-});
-
-export const StyledTooltipContainer = styled(
-  "div",
-  transientOptions
-)(
-  ({
-    $hidden,
-    $disabled,
-    $active,
-  }: {
-    $hidden: boolean;
-    $disabled: boolean;
-    $active: boolean;
-  }) => ({
-    ...($active && {
-      "& .rc-slider-handle": {
-        cursor: "pointer",
-        marginTop: "-8px",
-        opacity: 1,
-        "&:active": {
-          cursor: "grab",
-          "&::before": {
-            ...ring,
-          },
-          "&::after": {
-            ...border,
-          },
-        },
-        "&:hover": {
-          "&::before": {
-            ...ring,
-          },
-          "&::after": {
-            ...border,
-          },
-        },
-
-        // Note about the usage of `!important below`: the way the rc-slider allows us to
-        // style the knobs is through inline styles. This means that the `box-shadow`, which
-        // is an inline style and is set to `none` to prevent the default rc-slider style to
-        // show, can't be overridden for the focus scenario unless we use the `!important` flag.
-        "&:focus-visible": {
-          ...outlineStyles,
-          boxShadow:
-            "0 0 0 3px #52A8EC, 0 0 0 7px rgba(29,155,209,.3)!important",
-          "&::after": {
-            ...border,
-          },
-        },
-      },
-    }),
-
-    ...($disabled && {
-      "&& .rc-slider-handle": {
+      marginTop: "-8px",
+      opacity: 1,
+      "&:active": {
         cursor: "not-allowed",
-        marginTop: "-8px",
-        opacity: 1,
-        "&:active": {
-          cursor: "not-allowed",
-        },
-        "&:hover": {
-          cursor: "not-allowed",
-        },
       },
-    }),
-
-    ...($hidden && {
-      display: "none",
-    }),
-  })
-);
-
-export const StyledTooltip = styled(Tooltip)({
-  "& .rc-slider-tooltip-inner": {
-    background: theme.colors.atmo1,
-    borderRadius: 0,
-    maxWidth: "532px",
-    height: "100%",
-    padding: theme.space.sm,
-    ...(theme.typography.body as CSSProperties),
-    fontFamily: theme.fontFamily.body,
-    boxShadow: "none",
+      "&:hover": {
+        cursor: "not-allowed",
+      },
+    },
   },
-
-  "& .rc-slider-tooltip-arrow": {
-    visibility: "hidden",
+  handleHiddenContainer: { display: "none" },
+  labelContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: "12px",
+    marginLeft: "20px",
+    marginRight: "20px",
   },
-});
+  labelIncluded: { justifyContent: "space-between" },
+  onlyInput: { justifyContent: "flex-end" },
+  label: {},
+  root: {},
+  sliderTooltip: {
+    "&& .rc-slider-tooltip-inner": {
+      background: theme.colors.atmo1,
+      borderRadius: 0,
+      maxWidth: "532px",
+      height: "100%",
+      padding: theme.space.sm,
+      ...theme.typography.body,
+      fontFamily: theme.fontFamily.body,
+      boxShadow: "none",
+    },
 
-export const StyledSliderContainer = styled("div")({
-  ...(base as CSSProperties),
-
-  marginBottom: "18px",
-  padding: "0 23px",
+    "&& .rc-slider-tooltip-arrow": {
+      visibility: "hidden",
+    },
+  },
 });
