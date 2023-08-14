@@ -1,50 +1,15 @@
-import { clsx } from "clsx";
-
 import isNil from "lodash/isNil";
-
 import React, { RefObject, useState } from "react";
-
-import { css, Global } from "@emotion/react";
-
 import { HvBaseProps } from "@core/types/generic";
 import { isKey, isOneOfKeys } from "@core/utils/keyboardUtils";
 import { isBrowser } from "@core/utils/browser";
 import { ConditionalWrapper } from "@core/utils/ConditionalWrapper";
-
-import { StyledFocusWrapper, StyledFalseFocus } from "./Focus.styles";
+import { ExtractNames } from "@core/utils/classes";
 import { getFocusableChildren, setFocusTo } from "./utils";
-import focusClasses, { HvFocusClasses } from "./focusClasses";
+import { staticClasses, useClasses } from "./Focus.styles";
 
-const focusStyles = css`
-  .HvFocus-focused {
-    outline-color: #52a8ec;
-    outline-style: solid;
-    outline-width: 0px;
-    outline-offset: -1px;
-    box-shadow: 0 0 0 1px #52a8ec, 0 0 0 4px rgba(29, 155, 209, 0.3);
-
-    @media (-webkit-min-device-pixel-ratio: 0) {
-      outline-color: #52a8ec;
-      outline-style: solid;
-      outline-width: 0px;
-      outline-offset: -1px;
-      box-shadow: 0 0 0 1px #52a8ec, 0 0 0 4px rgba(29, 155, 209, 0.3);
-    }
-  }
-
-  .HvFocus-focusDisabled {
-    outline: none;
-    box-shadow: none;
-  }
-  .HvFocus-focusDisabled *:focus {
-    outline: none;
-    box-shadow: none;
-  }
-  .HvFocus-focusDisabled * {
-    outline: none !important;
-    box-shadow: none !important;
-  }
-`;
+export { staticClasses as focusClasses };
+export type HvFocusClasses = ExtractNames<typeof useClasses>;
 
 export type HvFocusStrategies = "listbox" | "menu" | "card" | "grid";
 
@@ -79,7 +44,7 @@ export interface HvFocusProps extends HvBaseProps<HTMLElement, "children"> {
 }
 
 export const HvFocus = ({
-  classes,
+  classes: classesProp,
   children,
   configuration = {},
   disabledClass = false,
@@ -96,12 +61,13 @@ export const HvFocus = ({
   const [showFocus, setShowFocus] = useState<boolean>(false);
   const [childFocus, setChildFocus] = useState<any>();
   const [hasRunConfig, setHasRunConfig] = useState(false);
+  const { classes, cx } = useClasses(classesProp);
 
   const getFocuses = () => {
     const focuses = rootRef?.current
       ? Array.from(
           rootRef.current.getElementsByClassName(
-            filterClass || focusClasses.root || classes?.root || "root"
+            filterClass || staticClasses.root || "root"
           )
         )
       : [];
@@ -109,6 +75,7 @@ export const HvFocus = ({
   };
 
   const setTabIndex = (el, tabIndex = 0) => {
+    if (!el) return;
     const elChildFocus = getFocusableChildren(el)[0];
     if (elChildFocus) {
       el.tabIndex = -1;
@@ -121,9 +88,7 @@ export const HvFocus = ({
   const setSelectedTabIndex = () => {
     const focuses = getFocuses();
     const firstSelected = focuses.find((focus) =>
-      focus.classList.contains(
-        focusClasses.selected || classes?.selected || "selected"
-      )
+      focus.classList.contains(classes.selected || "selected")
     );
 
     if (!firstSelected) return;
@@ -179,10 +144,10 @@ export const HvFocus = ({
 
   const addFocusClass = (evt) => {
     if (!useFalseFocus) {
-      evt.currentTarget.classList.add(focusClasses.focused);
-      if (classes?.focused) {
-        evt.currentTarget.classList.add(classes.focused);
-      }
+      // evt.currentTarget.classList.add(classes.focused);
+      classes.focused
+        .split(" ")
+        .forEach((c) => evt.currentTarget.classList.add(c));
       // add global class HvIsFocused as a marker
       // not to be styled directly, only as helper in specific css queries
       evt.currentTarget.classList.add("HvIsFocused");
@@ -195,12 +160,8 @@ export const HvFocus = ({
   const removeFocusClass = () => {
     if (!useFalseFocus) {
       getFocuses().forEach((element) => {
-        if (focusClasses.focused) {
-          element.classList.remove(focusClasses.focused);
-        }
-        if (classes?.focused) {
-          element.classList.remove(classes.focused);
-        }
+        // element.classList.remove(classes.focused);
+        classes.focused.split(" ").forEach((c) => element.classList.remove(c));
         // remove the global class HvIsFocused
         element.classList.remove("HvIsFocused");
         classes?.focus?.split(" ").forEach((c) => element.classList.remove(c));
@@ -470,34 +431,23 @@ export const HvFocus = ({
   if (disabled) return children;
 
   const focusWrapper = (childrenToWrap) => (
-    <StyledFocusWrapper
-      className={clsx(
-        classes?.externalReference,
-        focusClasses.externalReference
-      )}
-    >
+    <div className={classes.externalReference}>
       {childrenToWrap}
-      {showFocus && (
-        <StyledFalseFocus
-          className={clsx(classes?.falseFocus, focusClasses.falseFocus)}
-        />
-      )}
-    </StyledFocusWrapper>
+      {showFocus && <div className={classes.falseFocus} />}
+    </div>
   );
 
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
-      <Global styles={focusStyles} />
       {React.cloneElement(children, {
-        className: clsx(
-          children.props.className,
-          focusClasses.root,
-          classes?.root,
-          filterClass,
-          selected && clsx(focusClasses.selected, classes?.selected),
-          disabledClass && clsx(focusClasses.disabled, classes?.disabled),
-          focusDisabled &&
-            clsx(focusClasses.focusDisabled, classes?.focusDisabled)
+        className: cx(
+          [classes.root, filterClass],
+          {
+            [classes.selected]: selected,
+            [classes.disabled]: disabledClass,
+            [classes.focusDisabled]: focusDisabled,
+          },
+          children.props.className
         ),
         ref: config,
         onFocus,
