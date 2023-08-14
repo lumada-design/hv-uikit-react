@@ -1,13 +1,12 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import React, { cloneElement } from "react";
-
 import { HvButtonVariant } from "@core/components/Button";
 import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { staticClasses, useClasses } from "./MultiButton.styles";
 
-import { StyledButton, StyledRoot } from "./MultiButton.styles";
-import multiButtonClasses, { HvMultiButtonClasses } from "./multiButtonClasses";
+export { staticClasses as multiButtonClasses };
+export type HvMultiButtonClasses = ExtractNames<typeof useClasses>;
 
 export interface HvMultiButtonProps extends HvBaseProps {
   /** If all the buttons are disabled. */
@@ -24,46 +23,39 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
   const {
     className,
     children,
-    classes,
+    classes: classesProp,
     disabled = false,
     vertical = false,
     variant = "secondarySubtle",
     ...others
   } = useDefaultProps("HvMultiButton", props);
+  const { classes, cx } = useClasses(classesProp);
 
   return (
-    <StyledRoot
-      className={clsx(
-        className,
-        multiButtonClasses.root,
-        classes?.root,
-        vertical && clsx(classes?.vertical, multiButtonClasses.vertical)
+    <div
+      className={cx(
+        classes.root,
+        {
+          [classes.vertical]: vertical,
+        },
+        className
       )}
-      $vertical={vertical}
       {...others}
     >
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
           const childIsSelected = !!child.props.selected;
 
-          const btn = cloneElement(child as React.ReactElement, {
+          return cloneElement(child as React.ReactElement, {
             variant,
             disabled: disabled || child.props.disabled,
+            className: cx(child.props.className, classes.button, {
+              [classes.selected]: childIsSelected,
+            }),
             "aria-pressed": childIsSelected,
-            className: clsx(
-              child.props.className,
-              multiButtonClasses.button,
-              classes?.button,
-              childIsSelected &&
-                clsx(multiButtonClasses.selected, classes?.selected)
-            ),
           });
-
-          const StyledBtn = StyledButton(btn);
-
-          return React.createElement(StyledBtn);
         }
       })}
-    </StyledRoot>
+    </div>
   );
 };
