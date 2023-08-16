@@ -61,6 +61,10 @@ export interface HvBaseDropdownProps
    */
   readOnly?: boolean;
   /**
+   * Indicates that user input is required on the form element.
+   */
+  required?: boolean;
+  /**
    * Disable the portal behavior.
    * The children stay within it's parent DOM hierarchy.
    */
@@ -139,6 +143,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     defaultExpanded = false,
     disabled = false,
     readOnly = false,
+    required = false,
     disablePortal = false,
     variableWidth = false,
     placement = "right",
@@ -366,6 +371,8 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
         }
         aria-label={others["aria-label"] ?? undefined}
         aria-labelledby={others["aria-labelledby"] ?? undefined}
+        aria-required={required ?? undefined}
+        aria-readonly={readOnly ?? undefined}
         // Removes the element from the navigation sequence for keyboard focus if disabled
         tabIndex={disabled ? -1 : 0}
         ref={handleDropdownHeaderRef}
@@ -490,6 +497,8 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
         role={ariaRole}
         aria-expanded={ariaExpanded}
         aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
+        aria-required={required ?? undefined}
+        aria-readonly={readOnly ?? undefined}
         className={cx(
           classes.anchor,
           { [classes.rootDisabled]: disabled },

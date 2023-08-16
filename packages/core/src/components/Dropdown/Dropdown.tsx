@@ -530,6 +530,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
         expanded={isOpen}
         disabled={disabled}
         readOnly={readOnly}
+        required={required}
         disablePortal={disablePortal}
         placement={placement}
         popperProps={popperProps}
