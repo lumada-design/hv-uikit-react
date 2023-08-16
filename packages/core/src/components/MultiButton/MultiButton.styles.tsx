@@ -1,33 +1,113 @@
-import { clsx } from "clsx";
-import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { CSSProperties } from "react";
-import { transientOptions } from "@core/utils/transientOptions";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledRoot = styled(
-  "div",
-  transientOptions
-)(({ $vertical }: { $vertical: boolean }) => ({
-  display: "flex",
-  height: 32,
-  alignItems: "center",
-  transition: "none",
-  background: theme.colors.atmo2,
-  position: "relative",
-  zIndex: 0,
+export const { staticClasses, useClasses } = createClasses("HvFooter", {
+  root: {
+    display: "flex",
+    height: 32,
+    alignItems: "center",
+    transition: "none",
+    background: theme.colors.atmo2,
+    position: "relative",
+    zIndex: 0,
 
-  // prevent the focus ring to be hidden by sibling hover background
-  "&>.HvIsFocusVisible": {
-    zIndex: 5,
+    // prevent the focus ring to be hidden by sibling hover background
+    "&>.HvIsFocusVisible": {
+      zIndex: 5,
+    },
+
+    "& button$button": {
+      height: 32,
+      width: "100%",
+      minWidth: 32,
+      maxWidth: 200,
+      padding: 0,
+      transition: "none",
+      flex: "1 0 0px",
+      borderTop: `solid 1px ${theme.colors.atmo4}`,
+      borderBottom: `solid 1px ${theme.colors.atmo4}`,
+      borderLeft: "solid 1px transparent",
+      borderRight: "solid 1px transparent",
+      borderRadius: 0,
+      ...theme.typography.body,
+      "&:active": {
+        backgroundColor: `${theme.colors.atmo3}`,
+      },
+      "&:disabled": {
+        color: theme.colors.secondary_60,
+        borderTop: `solid 1px ${theme.colors.atmo4}`,
+        borderBottom: `solid 1px ${theme.colors.atmo4}`,
+        "&:hover": {
+          borderTop: `solid 1px ${theme.colors.atmo4}`,
+          borderBottom: `solid 1px ${theme.colors.atmo4}`,
+          borderLeft: "solid 1px transparent",
+          borderRight: "solid 1px transparent",
+        },
+      },
+      "&:first-of-type": {
+        borderLeft: `solid 1px ${theme.colors.atmo4}`,
+        borderTopLeftRadius: theme.radii.base,
+        borderBottomLeftRadius: theme.radii.base,
+      },
+      "&:last-of-type": {
+        borderRight: `solid 1px ${theme.colors.atmo4}`,
+        borderTopRightRadius: theme.radii.base,
+        borderBottomRightRadius: theme.radii.base,
+        "&:disabled:hover": {
+          borderRight: `solid 1px ${theme.colors.atmo4} !important`,
+        },
+      },
+      "&:not(:first-of-type)": {
+        marginLeft: "-1px",
+      },
+      "&$selected": {
+        "&:hover": {
+          "&:not(:disabled)": {
+            border: `solid 1px ${theme.colors.secondary}`,
+          },
+          "&:disabled": {
+            border: `solid 1px ${theme.colors.atmo4}`,
+          },
+        },
+        "&:disabled": {
+          zIndex: 1,
+          color: theme.colors.secondary_60,
+          background: theme.colors.atmo1,
+          border: `solid 1px ${theme.colors.atmo4}`,
+        },
+      },
+    },
+    "& button$button$selected": {
+      background: theme.colors.atmo1,
+      height: 34,
+      ...theme.typography.label,
+      borderRadius: theme.radii.base,
+      border: `solid 1px ${theme.colors.secondary}`,
+      zIndex: 2,
+      "&:hover": {
+        background: theme.colors.atmo3,
+      },
+      "&:first-of-type, &:last-of-type": {
+        border: `solid 1px ${theme.colors.secondary}`,
+      },
+
+      // prevent the focus ring to be hidden by sibling hover background
+      // even when selected
+      "&.HvIsFocusVisible": {
+        zIndex: 5,
+      },
+    },
   },
-
-  ...($vertical && {
+  button: {},
+  selected: {},
+  // vertical button display Styling
+  vertical: {
     flexDirection: "column",
     height: "auto",
     btnSecondary: {
       flex: "1 1 20px",
     },
-    "& button.button": {
+    "& button$button": {
       width: "100%",
       borderLeft: `solid 1px ${theme.colors.atmo4}`,
       borderRight: `solid 1px ${theme.colors.atmo4}`,
@@ -48,29 +128,26 @@ export const StyledRoot = styled(
       },
       "&:first-of-type": {
         borderTop: `solid 1px ${theme.colors.atmo4}`,
-        borderTopLeftRadius: "2px",
-        borderTopRightRadius: "2px",
-        "&:disabled:hover": {
-          borderTop: `solid 1px ${theme.colors.atmo4}`,
-        },
+        borderTopLeftRadius: theme.radii.base,
+        borderTopRightRadius: theme.radii.base,
       },
-      "&:last-child": {
+      "&:last-of-type": {
         borderBottom: `solid 1px ${theme.colors.atmo4}`,
-        borderBottomLeftRadius: "2px",
-        borderBottomRightRadius: "2px",
+        borderBottomLeftRadius: theme.radii.base,
+        borderBottomRightRadius: theme.radii.base,
         "&:disabled:hover": {
-          borderBottom: `solid 1px ${theme.colors.atmo4}`,
+          borderBottom: `solid 1px ${theme.colors.atmo4} !important`,
         },
       },
       "&:not(:first-of-type)": {
         marginLeft: 0,
         marginTop: -1,
       },
-      "&.selected": {
+      "&$selected": {
         height: 32,
         width: `calc(100% + 2px) !important`,
         background: theme.colors.atmo1,
-        ...(theme.typography.label as CSSProperties),
+        ...theme.typography.label,
         borderRadius: theme.radii.base,
         border: `solid 1px ${theme.colors.secondary}`,
         zIndex: 2,
@@ -85,99 +162,5 @@ export const StyledRoot = styled(
         },
       },
     },
-  }),
-}));
-
-export const StyledButton = ({ type: Component, props }) =>
-  styled(({ className }) => (
-    <Component
-      {...props}
-      className={clsx("button", props.selected && "selected", className)}
-    />
-  ))({
-    height: 32,
-    width: "100%",
-    minWidth: 32,
-    maxWidth: 200,
-    transition: "none",
-    flex: "1 0 0px",
-    padding: 0,
-    borderTop: `solid 1px ${theme.colors.atmo4}`,
-    borderBottom: `solid 1px ${theme.colors.atmo4}`,
-    borderLeft: "solid 1px transparent",
-    borderRight: "solid 1px transparent",
-    borderRadius: 0,
-    backgroundColor: theme.colors.atmo2,
-    ":disabled": { backgroundColor: theme.multiButton.disabledBackgroundColor },
-    ":hover": {
-      borderTop: `solid 1px ${theme.colors.atmo4}`,
-      borderBottom: `solid 1px ${theme.colors.atmo4}`,
-      borderLeft: "solid 1px transparent",
-      borderRight: "solid 1px transparent",
-    },
-    ...(theme.typography.body as CSSProperties),
-    "&:active": {
-      backgroundColor: `${theme.colors.atmo3}`,
-    },
-    "&:disabled": {
-      color: theme.colors.secondary_60,
-      borderTop: `solid 1px ${theme.colors.atmo4}`,
-      borderBottom: `solid 1px ${theme.colors.atmo4}`,
-      "&:hover": {
-        borderTop: `solid 1px ${theme.colors.atmo4}`,
-        borderBottom: `solid 1px ${theme.colors.atmo4}`,
-        borderLeft: "solid 1px transparent",
-        borderRight: "solid 1px transparent",
-      },
-    },
-    "&:first-of-type": {
-      borderLeft: `solid 1px ${theme.colors.atmo4}`,
-      borderTopLeftRadius: theme.radii.base,
-      borderBottomLeftRadius: theme.radii.base,
-      "&:disabled:hover": {
-        borderLeft: `solid 1px ${theme.colors.atmo4}`,
-      },
-    },
-    "&:last-child": {
-      borderRight: `solid 1px ${theme.colors.atmo4}`,
-      borderTopRightRadius: theme.radii.base,
-      borderBottomRightRadius: theme.radii.base,
-      "&:disabled:hover": {
-        borderRight: `solid 1px ${theme.colors.atmo4}`,
-      },
-    },
-    "&:not(:first-of-type)": {
-      marginLeft: "-1px",
-    },
-    "&.selected": {
-      background: theme.colors.atmo1,
-      height: 34,
-      ...(theme.typography.label as CSSProperties),
-      border: `solid 1px ${theme.colors.secondary}`,
-      zIndex: 2,
-      "&:hover": {
-        background: theme.colors.atmo3,
-        "&:not(:disabled)": {
-          border: `solid 1px ${theme.colors.secondary}`,
-        },
-        "&:disabled": {
-          border: `solid 1px ${theme.colors.atmo4}`,
-        },
-      },
-      "&:first-of-type, &:last-child": {
-        border: `solid 1px ${theme.colors.secondary}`,
-      },
-
-      // prevent the focus ring to be hidden by sibling hover background
-      // even when selected
-      "&.HvIsFocusVisible": {
-        zIndex: 5,
-      },
-      "&:disabled": {
-        zIndex: 1,
-        color: theme.colors.secondary_60,
-        background: theme.colors.atmo1,
-        border: `solid 1px ${theme.colors.atmo4}`,
-      },
-    },
-  });
+  },
+});
