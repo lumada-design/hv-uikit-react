@@ -32,6 +32,7 @@
     "convert:copy": "npx cpy \"src/IconBase*\" \"bin\"",
     "clean": "npx rimraf dist bin package",
     "prepare": "npm run convert",
+    "typecheck": "tsc --noEmit",
     "prepublishOnly": "run-s clean build && npx clean-publish"
   },
   "peerDependencies": {

@@ -171,6 +171,7 @@ const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
         .replace(/:props:/g, "{...other}")
         .replace(/width="(\d*?)"/g, `width={${widthValue}}`)
         .replace(/height="(\d*?)"/g, `height={${heightValue}}`)
+        .replace(/xmlns="[\w:/.]+" /, "")
         .replace('style="isolation:isolate"', "")
         .replace('="">', ">");
 

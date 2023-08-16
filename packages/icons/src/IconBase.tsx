@@ -1,13 +1,32 @@
 import styled from "@emotion/styled";
-import React, { HTMLAttributes, AllHTMLAttributes, useMemo } from "react";
+import React, { HTMLAttributes, useMemo } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
+
+const largerIcons = [
+  "Level0Good",
+  "Level1",
+  "Level2Average",
+  "Level3Bad",
+  "Level4",
+  "Level5",
+  "Canceled",
+  "Running",
+  "Pending",
+];
+
+const hasSpecialSize = (iconId: string) => largerIcons.includes(iconId);
 
 const getColor = (c: string): string => theme?.colors?.[c] || c;
 
 const getDims = (size: number) => ({ width: size, height: size });
 
-const sizeSelector = (iconSize?: IconSize, hasSpecialSize?: boolean) => {
-  const calcSize = (size: number) => (hasSpecialSize ? size + 8 : size);
+const getMargin = (id: string, iconSize: IconSize) => {
+  const padding = iconSize === "XS" ? 10 : 8;
+  return hasSpecialSize(id) ? padding - 4 : padding;
+};
+
+const sizeSelector = (iconId: string, iconSize?: IconSize) => {
+  const calcSize = (size: number) => (hasSpecialSize(iconId) ? size + 8 : size);
 
   switch (iconSize) {
     case "XS":
@@ -23,12 +42,8 @@ const sizeSelector = (iconSize?: IconSize, hasSpecialSize?: boolean) => {
   }
 };
 
-export function useIconColor(
-  color?: string | string[],
-  semantic?: string,
-  inverted = false,
-  palette: string[] = []
-) {
+export function useIconColor(props: IconBaseProps, palette: string[] = []) {
+  const { color, semantic, inverted = false } = props;
   return useMemo(() => {
     const colorArray =
       (typeof color === "string" && [getColor(color)]) ||
@@ -50,38 +65,21 @@ export function useIconColor(
 }
 
 export function useIconSize(
+  iconId: string,
   iconSize?: IconSize,
-  height?: number,
-  width?: number,
-  hasSpecialSize = false
+  height?: string | number,
+  width?: string | number
 ) {
   return useMemo(() => {
     if (height && width) return { width, height };
-    return sizeSelector(iconSize, hasSpecialSize);
-  }, [hasSpecialSize, height, iconSize, width]);
-}
-
-export function useIcon(
-  props: IconBaseProps,
-  palette: string[] = [],
-  hasSpecialSize = false
-) {
-  const { color, iconSize, width, height, semantic, inverted } = props;
-  const colorArray = useIconColor(color, semantic, inverted, palette);
-  const size = useIconSize(iconSize, height, width, hasSpecialSize);
-
-  return { size, colorArray };
+    return sizeSelector(iconId, iconSize);
+  }, [iconId, height, iconSize, width]);
 }
 
 export type IconSize = "XS" | "S" | "M" | "L";
 
-type HTMLDivProps = Pick<AllHTMLAttributes<HTMLDivElement>, "name"> &
-  Pick<
-    HTMLAttributes<HTMLDivElement>,
-    Exclude<keyof HTMLAttributes<HTMLDivElement>, "color" | "height" | "width">
-  >;
-
-export interface IconBaseProps extends HTMLDivProps {
+export interface IconBaseProps
+  extends Omit<HTMLAttributes<HTMLOrSVGElement>, "color" | "height" | "width"> {
   /**
    * A String or Array of strings representing the colors to override in the icon.
    * Each element inside the array will override a different color.
@@ -93,9 +91,9 @@ export interface IconBaseProps extends HTMLDivProps {
   /** A string that will override the viewbox of the svg */
   viewbox?: string;
   /** A string that will override the height of the svg */
-  height?: number;
+  height?: string | number;
   /** A string that will override the width of the svg */
-  width?: number;
+  width?: string | number;
   /** Sets one of the standard semantic palette colors of the icon */
   semantic?: string;
   /** Inverts the background-foreground on semantic icons */
@@ -104,29 +102,42 @@ export interface IconBaseProps extends HTMLDivProps {
   svgProps?: React.SVGProps<SVGSVGElement>;
 }
 
-export const StyledIconBase = styled("div")(
-  ({ iconSize }: { iconSize: IconSize }) => ({
-    display: "flex",
-    "& svg": {
-      margin: "auto",
-      color: "inherit",
-    },
-    ...(iconSize === "XS" && getDims(32)),
-    ...(iconSize === "S" && getDims(32)),
-    ...(iconSize === "M" && getDims(48)),
-    ...(iconSize === "L" && getDims(112)),
-  })
-);
+const StyledSvg = styled("svg", {
+  shouldForwardProp: (prop) => !prop.startsWith("$"),
+})(({ $id, $iconSize }: { $id: string; $iconSize: IconSize }) => ({
+  display: "flex",
+  color: "inherit",
+  margin: getMargin($id, $iconSize),
+  ...($iconSize === "XS" && getDims(12)),
+  ...($iconSize === "S" && getDims(16)),
+  ...($iconSize === "M" && getDims(32)),
+  ...($iconSize === "L" && getDims(96)),
+}));
 
 export const IconBase = ({
+  id,
   children,
-  color,
+  height,
+  width,
   iconSize = "S",
+  // remove from others
+  color,
+  semantic,
+  inverted,
   ...others
-}: IconBaseProps) => {
+}: IconBaseProps & { id: string }) => {
+  const size = useIconSize(id, iconSize, height, width);
+
   return (
-    <StyledIconBase iconSize={iconSize} {...others}>
+    <StyledSvg
+      $id={id}
+      data-name={id}
+      $iconSize={iconSize}
+      focusable={false}
+      {...size}
+      {...others}
+    >
       {children}
-    </StyledIconBase>
+    </StyledSvg>
   );
 };

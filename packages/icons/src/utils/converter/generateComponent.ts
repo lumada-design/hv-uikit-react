@@ -37,18 +37,6 @@ export const generateComponent = (
 ) => {
   const selectors = ["Checkbox", "RadioButton"];
   const isSelector = selectors.some((el) => componentName.startsWith(el));
-  const largerIcons = [
-    "Level0Good",
-    "Level1",
-    "Level2Average",
-    "Level3Bad",
-    "Level4",
-    "Level5",
-    "Canceled",
-    "Running",
-    "Pending",
-  ];
-  const hasSpecialSize = largerIcons.includes(componentName);
 
   const hasSpecialSizeXS = componentName.endsWith("XS");
 
@@ -61,26 +49,24 @@ export const generateComponent = (
 
   return `
 import { theme } from "@hitachivantara/uikit-styles";
-import { IconBase, IconBaseProps, useIconColor, useIconSize } from "${iconBasePath}";
+import { IconBase, IconBaseProps, useIconColor } from "${iconBasePath}";
 
-export const ${componentName} = ({
-  color,
-  iconSize = "${hasSpecialSizeXS ? "XS" : "S"}",
-  viewbox = "${defaultSizes.viewBoxRegexp.join(" ")}",
-  height,
-  width,
-  semantic,
-  inverted = false,
-  svgProps,
-  ...others
-}: IconBaseProps) => {
-  const colorArray = useIconColor(color, semantic, inverted, [${palette}]);
-  const size = useIconSize(iconSize, height, width, ${hasSpecialSize});
+export const ${componentName} = (props: IconBaseProps) => {
+  const {
+    iconSize = "${hasSpecialSizeXS ? "XS" : "S"}",
+    viewbox = "${defaultSizes.viewBoxRegexp.join(" ")}",
+    svgProps,
+    ...others
+  } = props;
+  const colorArray = useIconColor(props, [${palette}]);
 
   return (
-    <IconBase iconSize={iconSize} data-name="${componentName}" {...others}>
-    ${svgOutput.replace("{...other}", "focusable={false} {...svgProps}")}
-    </IconBase>
+    ${svgOutput
+      .replace(/svg/g, `IconBase`)
+      .replace(
+        "{...other}",
+        `id="${componentName}" iconSize={iconSize} {...svgProps} {...others}`
+      )}
 )};
 `;
 };

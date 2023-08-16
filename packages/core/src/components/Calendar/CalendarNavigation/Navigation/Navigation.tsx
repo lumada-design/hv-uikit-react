@@ -99,11 +99,11 @@ export interface NavigationProps extends HvBaseProps {
   /**
    * A function to be executed whenever the navigate previous action is triggered.
    */
-  onNavigatePrevious: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onNavigatePrevious: (event: React.MouseEvent<any>) => void;
   /**
    * A function to be executed whenever the navigate next action is triggered.
    */
-  onNavigateNext: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onNavigateNext: (event: React.MouseEvent<any>) => void;
   /**
    * A function to be executed whenever the text is clicked.
    */
