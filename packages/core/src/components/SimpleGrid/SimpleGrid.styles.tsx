@@ -1,8 +1,12 @@
-import styled from "@emotion/styled";
+import { CSSObject } from "@emotion/serialize";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
+import { createClasses } from "@core/utils/classes";
+
 import { Spacing, Breakpoint } from "./types";
+
+export const { staticClasses, useClasses } = createClasses("HvSimpleGrid", {});
 
 function size(props: { size: any; sizes: any }) {
   if (typeof props.size === "number") {
@@ -27,16 +31,16 @@ function getSortedBreakpoints(breakpoints: Breakpoint[]) {
   return property === "minWidth" ? sorted.reverse() : sorted;
 }
 
-export const StyledContainer = styled("div")(
-  ({
-    breakpoints,
-    spacing,
-    cols,
-  }: {
-    breakpoints?: Breakpoint[];
-    spacing: Spacing;
-    cols?: number;
-  }) => ({
+export const getContainerStyle = ({
+  breakpoints,
+  spacing,
+  cols,
+}: {
+  breakpoints?: Breakpoint[];
+  spacing: Spacing;
+  cols?: number;
+}): CSSObject => {
+  return {
     boxSizing: "border-box",
     display: "grid",
     gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
@@ -63,5 +67,5 @@ export const StyledContainer = styled("div")(
 
         return acc;
       }, {})),
-  })
-);
+  };
+};

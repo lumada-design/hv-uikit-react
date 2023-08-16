@@ -1,8 +1,8 @@
 import { HvBaseProps } from "@core/types/generic";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
-import { StyledContainer } from "./SimpleGrid.styles";
 import { Breakpoint, Spacing } from "./types";
+import { getContainerStyle, useClasses } from "./SimpleGrid.styles";
 
 export interface HvSimpleGridProps extends HvBaseProps {
   /**
@@ -31,17 +31,17 @@ export const HvSimpleGrid = (props: HvSimpleGridProps) => {
     breakpoints,
     spacing = "sm",
     cols,
+    className,
     ...others
   } = useDefaultProps("HvSimpleGrid", props);
 
+  const { cx, css } = useClasses();
+
+  const containerStyle = getContainerStyle({ breakpoints, spacing, cols });
+
   return (
-    <StyledContainer
-      spacing={spacing}
-      cols={cols}
-      breakpoints={breakpoints}
-      {...others}
-    >
+    <div className={cx(css(containerStyle), className)} {...others}>
       {children}
-    </StyledContainer>
+    </div>
   );
 };
