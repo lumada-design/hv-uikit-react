@@ -263,42 +263,41 @@ export const Actions: StoryObj<HvAvatarProps> = {
             <LinkIcon color="base_dark" aria-label="External link" />
           </HvAvatar>
         </HvButton>
-        <HvButton icon overrideIconColors={false}>
-          <HvAvatar size="md" aria-label="Open the user profile" />
+        <HvButton
+          icon
+          overrideIconColors={false}
+          aria-label="Open the user profile"
+        >
+          <HvAvatar size="md" />
         </HvButton>
-        <HvButton icon overrideIconColors={false}>
-          <HvAvatar
-            backgroundColor="sema19"
-            size="md"
-            badge="negative"
-            aria-label="Business Manager"
-          >
+        <HvButton icon overrideIconColors={false} aria-label="Business Manager">
+          <HvAvatar backgroundColor="sema19" size="md" badge="negative">
             BM
           </HvAvatar>
         </HvButton>
-        <HvButton icon overrideIconColors={false}>
+        <HvButton icon overrideIconColors={false} aria-label="Business Manager">
           <HvAvatar
             backgroundColor="sema19"
             size="md"
             variant="square"
             badge="negative"
-            aria-label="Business Manager"
           >
             BM
           </HvAvatar>
         </HvButton>
-        <HvButton icon overrideIconColors={false}>
-          <HvAvatar
-            aria-label="Clara Soul profile"
-            alt="Clara Soul"
-            src={woman2}
-            size="lg"
-            status="positive"
-          />
+        <HvButton
+          icon
+          overrideIconColors={false}
+          aria-label="Clara Soul profile"
+        >
+          <HvAvatar alt="Clara Soul" src={woman2} size="lg" status="positive" />
         </HvButton>
-        <HvButton icon overrideIconColors={false}>
+        <HvButton
+          icon
+          overrideIconColors={false}
+          aria-label="Clara Soul profile"
+        >
           <HvAvatar
-            aria-label="Clara Soul profile"
             alt="Clara Soul"
             src={woman2}
             size="lg"
