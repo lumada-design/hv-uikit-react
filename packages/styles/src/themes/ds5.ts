@@ -243,6 +243,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   list: {
     hoverColor: theme.colors.primary_20,
     disabledBackgroundColor: theme.colors.atmo3,
+    selectedBackgroundColor: theme.colors.primary_20,
   },
   dialog: {
     borderRadius: theme.radii.round,

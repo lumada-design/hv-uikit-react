@@ -97,6 +97,7 @@ export type HvThemeComponents = {
   list: {
     hoverColor: string;
     disabledBackgroundColor: string;
+    selectedBackgroundColor: string;
   };
   dialog: {
     borderRadius: string;

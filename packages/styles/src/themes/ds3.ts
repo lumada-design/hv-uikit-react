@@ -300,6 +300,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   list: {
     hoverColor: theme.colors.atmo3,
     disabledBackgroundColor: "transparent",
+    selectedBackgroundColor: "transparent",
   },
   dialog: {
     borderRadius: "0",
