@@ -26,12 +26,12 @@ describe("Badge", () => {
 
   it("should render correctly with maxCount", () => {
     render(<HvBadge count={100} showCount />);
-    expect(screen.getByLabelText("99+")).toBeInTheDocument();
+    expect(screen.getByText("99+")).toBeInTheDocument();
   });
 
   it("should render correctly with text", () => {
     render(<HvBadge count={100} showCount text="hello" textVariant="title3" />);
-    expect(screen.getByLabelText("99+")).toBeInTheDocument();
+    expect(screen.queryByText("99+")).toBeInTheDocument();
     expect(screen.getByText("hello")).toBeInTheDocument();
   });
 
@@ -43,10 +43,8 @@ describe("Badge", () => {
         icon={<Alert role="presentation" aria-label="Alert" />}
       />
     );
-    expect(screen.getByLabelText("99+")).toBeInTheDocument();
-    expect(
-      screen.getByRole("presentation", { name: "Alert" })
-    ).toBeInTheDocument();
+    expect(screen.queryByText("99+")).toBeInTheDocument();
+    expect(screen.getByLabelText("Alert")).toBeInTheDocument();
   });
 
   it("should render correctly with custom label", () => {
