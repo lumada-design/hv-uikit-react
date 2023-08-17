@@ -1,9 +1,11 @@
-import { CSSProperties } from "react";
+import { CSSProperties, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvColorPicker,
   HvColorPickerProps,
 } from "@hitachivantara/uikit-react-core";
+import { css } from "@emotion/css";
+import { HvStack, HvTypography } from "@core/components";
 
 const makeDecorator = (styles: CSSProperties) => (Story) =>
   <div style={styles}>{Story()}</div>;
@@ -30,7 +32,12 @@ export const Main: StoryObj<HvColorPickerProps> = {
   render: (args) => {
     return (
       <div style={{ width: "134px" }}>
-        <HvColorPicker {...args} onChange={(color) => console.log(color)} />
+        <HvColorPicker
+          onChange={(value) => {
+            console.log(value);
+          }}
+          {...args}
+        />
       </div>
     );
   },
@@ -197,6 +204,53 @@ export const CustomizedColorPicker: StoryObj<HvColorPickerProps> = {
           ]}
         />
       </div>
+    );
+  },
+};
+
+export const ControlledColorPicker: StoryObj<HvColorPickerProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Controlled ColorPicker component using the onChangeComplete callback. You can use this color picker to change the color of the square.",
+      },
+    },
+  },
+  decorators: [makeDecorator({ height: 450 })],
+  render: () => {
+    const [color, setColor] = useState<string | undefined>("#95AFE8");
+
+    const [squareColor, setSquareColor] = useState<string | undefined>(
+      "#95AFE8"
+    );
+
+    return (
+      <HvStack direction="row" spacing="lg">
+        <div
+          className={css({
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "134px",
+            height: "134px",
+          })}
+          style={{ backgroundColor: squareColor }}
+        >
+          <HvTypography variant="label">{squareColor}</HvTypography>
+        </div>
+        <div style={{ width: "134px" }}>
+          <HvColorPicker
+            expanded
+            showSavedColors={false}
+            onChange={(value) => {
+              setColor(value);
+            }}
+            onChangeComplete={setSquareColor}
+            value={color}
+          />
+        </div>
+      </HvStack>
     );
   },
 };
