@@ -64,12 +64,12 @@ export const CustomMessages: StoryObj<HvEmptyStateProps> = {
   },
   render: ({ title, icon }) => {
     const CustomAction = (
-      <HvTypography>
-        <div>Here are some helpful links instead:</div>
-        <a href="#" target="_blank">
-          Online Help
-        </a>
-      </HvTypography>
+      <>
+        <HvTypography>Here are some helpful links instead:</HvTypography>
+        <HvTypography link component="a" href="#" target="_blank">
+          Online help
+        </HvTypography>
+      </>
     );
 
     const CustomMessage = <HvTypography>404 Not Found</HvTypography>;
