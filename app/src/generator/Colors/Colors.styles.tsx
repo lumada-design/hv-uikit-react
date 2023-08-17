@@ -15,13 +15,14 @@ export const styles = {
     marginBottom: theme.space.sm,
   }),
   groupName: css({
-    width: "30%",
+    width: "27%",
   }),
   groupColors: css({
-    width: "70%",
+    width: "73%",
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "flex-end",
+    gap: 2,
   }),
   color: css({
     width: 20,
