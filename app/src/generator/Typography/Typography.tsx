@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { useGeneratorContext } from "generator/GeneratorContext";
 import debounce from "lodash/debounce";
 import { css } from "@emotion/css";
-import { FontSize } from "components/common";
+import { ScaleProps, UnitSlider } from "components/common";
 import { styles } from "./Typography.styles";
 
 const typographyToShow: (keyof HvThemeTypography["typography"])[] = [
@@ -39,10 +39,13 @@ const Typography = () => {
   const [updatedWeights, setUpdatedWeights] = useState<Map<string, string>>(
     new Map<string, string>()
   );
-
   const [updatedSizes, setUpdatedSizes] = useState<
     Map<string, { value: number; unit: string }>
   >(new Map<string, { value: number; unit: string }>());
+  const [scale, setScale] = useState<ScaleProps>({
+    minMax: [0, 100],
+    markDigits: 0,
+  });
 
   useEffect(() => {
     const map = new Map<string, { value: number; unit: string }>();
@@ -110,8 +113,19 @@ const Typography = () => {
     let fontSize = 0;
     if (t) {
       fontSize = t.value;
-      if ((unit === "em" || unit === "rem") && t.value > 10) {
-        fontSize = 10;
+      if (unit === "em" || unit === "rem") {
+        if (fontSize > 5) {
+          fontSize = 5;
+        }
+        setScale({
+          minMax: [0, 5],
+          markDigits: 1,
+        });
+      } else {
+        setScale({
+          minMax: [0, 100],
+          markDigits: 0,
+        });
       }
     }
 
@@ -295,12 +309,14 @@ const Typography = () => {
                   }}
                 />
               </HvBox>
-              <FontSize
-                fontSize={fontSize}
-                fontUnit={fontUnit}
+              <UnitSlider
+                defaultSize={fontSize}
+                unit={fontUnit}
                 onChange={(val) => sizeChangedHandler(t, val)}
                 onAfterChange={(val) => setSizeHandler(val, t)}
                 onUnitChange={(val) => unitChangedHandler(val, t)}
+                label="Font Size"
+                scaleProps={scale}
               />
               <HvBox
                 css={{
