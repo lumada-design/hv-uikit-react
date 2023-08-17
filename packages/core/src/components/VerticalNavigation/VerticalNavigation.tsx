@@ -1,12 +1,8 @@
-import { clsx } from "clsx";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { StyledRoot } from "./VerticalNavigation.styles";
-import verticalNavigationClasses, {
-  HvVerticalNavigationClasses,
-} from "./verticalNavigationClasses";
+import { ExtractNames } from "@core/utils/classes";
 import {
   VerticalNavigationContext,
   NavigationData,
@@ -17,6 +13,12 @@ import {
   getParentItemById,
 } from "./NavigationSlider/utils";
 import { hasChildNavigationItems } from "./utils/VerticalNavigation.utils";
+
+import { staticClasses, useClasses } from "./VerticalNavigation.styles";
+
+export { staticClasses as verticalNavigationClasses };
+
+export type HvVerticalNavigationClasses = ExtractNames<typeof useClasses>;
 
 export interface HvVerticalNavigationProps {
   /**
@@ -78,7 +80,7 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
   const {
     id,
     className,
-    classes,
+    classes: classesProp,
 
     children,
 
@@ -90,6 +92,7 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
 
     ...others
   } = useDefaultProps("HvVerticalNavigation", props);
+  const { classes, cx } = useClasses(classesProp);
 
   const [parentData, setParentData] = useState<NavigationData[]>([]);
 
@@ -171,21 +174,21 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
 
   const content = (
     <VerticalNavigationContext.Provider value={value}>
-      <StyledRoot
+      <div
         id={id}
-        className={clsx(
-          className,
-          verticalNavigationClasses.root,
-          classes?.root,
-          !open && verticalNavigationClasses.collapsed,
-          slider && verticalNavigationClasses.slider,
-          classes?.collapsed
+        className={cx(
+          classes.root,
+          {
+            [classes.collapsed]: !open,
+            [classes.slider]: slider,
+            [classes.childData]: hasAnyChildWithData,
+          },
+          className
         )}
-        hasAnyChildWithData={hasAnyChildWithData}
         {...others}
       >
         {children}
-      </StyledRoot>
+      </div>
     </VerticalNavigationContext.Provider>
   );
 

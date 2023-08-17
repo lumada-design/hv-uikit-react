@@ -1,15 +1,16 @@
-import { clsx } from "clsx";
-
 import { MouseEventHandler, useCallback, useContext } from "react";
 
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 
+import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "@core/components/Typography";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
-import { StyledAction } from "./Action.styles";
-import actionClasses, {
-  HvVerticalNavigationActionClasses,
-} from "./actionClasses";
+import { staticClasses, useClasses } from "./Action.styles";
+
+export { staticClasses as actionClasses };
+
+export type HvVerticalNavigationActionClasses = ExtractNames<typeof useClasses>;
 
 export interface HvVerticalNavigationActionProps {
   /**
@@ -40,7 +41,7 @@ export interface HvVerticalNavigationActionProps {
 
 export const HvVerticalNavigationAction = ({
   className,
-  classes,
+  classes: classesProp,
   id,
   label = "",
   icon,
@@ -48,6 +49,8 @@ export const HvVerticalNavigationAction = ({
   ...others
 }: HvVerticalNavigationActionProps) => {
   const { isOpen } = useContext(VerticalNavigationContext);
+
+  const { classes, cx } = useClasses(classesProp);
 
   const handleKeyDown = useCallback(
     (event) => {
@@ -64,16 +67,17 @@ export const HvVerticalNavigationAction = ({
   );
 
   return (
-    <StyledAction
+    <HvTypography
       id={setId(id, "button")}
       component="div"
       role="button"
-      className={clsx(
-        className,
-        actionClasses.action,
-        classes?.action,
-        !icon && clsx(actionClasses.noIcon, classes?.noIcon),
-        !isOpen && clsx(actionClasses.minimized, classes?.action)
+      className={cx(
+        classes.action,
+        {
+          [classes.noIcon]: !icon,
+          [classes.minimized]: !isOpen,
+        },
+        className
       )}
       tabIndex={0}
       onKeyDown={handleKeyDown}
@@ -82,6 +86,6 @@ export const HvVerticalNavigationAction = ({
     >
       {icon}
       {isOpen && label}
-    </StyledAction>
+    </HvTypography>
   );
 };

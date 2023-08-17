@@ -1,7 +1,5 @@
 import { useCallback, useMemo, useContext, useEffect, useState } from "react";
 
-import { clsx } from "clsx";
-
 import uniqueId from "lodash/uniqueId";
 
 import { wrapperTooltip } from "@core/utils/wrapperTooltip";
@@ -9,15 +7,13 @@ import { setId } from "@core/utils/setId";
 import { useControlled } from "@core/hooks/useControlled";
 import { HvBaseProps } from "@core/types/generic";
 
+import { ExtractNames } from "@core/utils/classes";
 import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
   NavigationMode,
 } from "../TreeView";
-import verticalNavigationTreeClasses, {
-  HvVerticalNavigationTreeClasses,
-} from "./navigationClasses";
-import { StyledNav } from "./Navigation.styles";
+import { staticClasses, useClasses } from "./Navigation.styles";
 import { HvVerticalNavigationSlider } from "../NavigationSlider";
 import {
   VerticalNavigationContext,
@@ -25,6 +21,10 @@ import {
 } from "../VerticalNavigationContext";
 import { getParentItemById } from "../NavigationSlider/utils/NavigationSlider.utils";
 import { NavigationPopupContainer } from "../NavigationPopup/NavigationPopupContainer";
+
+export { staticClasses as verticalNavigationTreeClasses };
+
+export type HvVerticalNavigationTreeClasses = ExtractNames<typeof useClasses>;
 
 export interface HvVerticalNavigationTreeProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
@@ -187,7 +187,7 @@ export const HvVerticalNavigationTree = ({
   id,
 
   className,
-  classes,
+  classes: classesProp,
 
   data,
 
@@ -206,6 +206,8 @@ export const HvVerticalNavigationTree = ({
 
   ...others
 }: HvVerticalNavigationTreeProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const [selected, setSelected] = useControlled(selectedProp, defaultSelected);
   const [expanded, setExpanded] = useControlled(expandedProp, () => {
     if (defaultExpanded === true) {
@@ -384,15 +386,12 @@ export const HvVerticalNavigationTree = ({
   };
 
   return (
-    <StyledNav
+    <nav
       id={id}
-      className={clsx(
-        className,
-        verticalNavigationTreeClasses.root,
-        classes?.root,
-        !isOpen &&
-          !useIcons &&
-          clsx(verticalNavigationTreeClasses.collapsed, classes?.collapsed)
+      className={cx(
+        classes.root,
+        { [classes.collapsed]: !isOpen && !useIcons },
+        className
       )}
       onMouseLeave={handleStyledNavMouseLeave}
       {...others}
@@ -408,7 +407,7 @@ export const HvVerticalNavigationTree = ({
       ) : (
         <HvVerticalNavigationTreeView
           id={setId(id, "tree")}
-          className={clsx(verticalNavigationTreeClasses.list, classes?.list)}
+          className={classes.list}
           selectable
           mode={mode}
           collapsible={collapsible}
@@ -422,13 +421,10 @@ export const HvVerticalNavigationTree = ({
               anchorEl={navigationPopup.anchorEl}
               onClose={handleNavigationPopupClose}
               key={navigationPopup.uniqueKey}
-              className={clsx(
-                verticalNavigationTreeClasses.navigationPopup,
-                classes?.navigationPopup
-              )}
+              className={classes.navigationPopup}
             >
               <HvVerticalNavigationTree
-                className={clsx(verticalNavigationTreeClasses.popup)}
+                className={classes.popup}
                 id={setId(id, "navigation-popup-tree")}
                 collapsible
                 defaultExpanded
@@ -442,6 +438,6 @@ export const HvVerticalNavigationTree = ({
           {children}
         </HvVerticalNavigationTreeView>
       )}
-    </StyledNav>
+    </nav>
   );
 };

@@ -1,20 +1,21 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils/classes";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import actionsClasses from "./actionsClasses";
+export const { staticClasses, useClasses } = createClasses(
+  "HvVerticalNavigationActions",
+  {
+    root: {
+      display: "block",
+      background: theme.colors.atmo1,
+      marginTop: theme.verticalNavigation.actionsMarginTop,
 
-export const StyledRoot = styled("div")({
-  display: "block",
-  background: theme.colors.atmo1,
-  marginTop: theme.verticalNavigation.actionsMarginTop,
-
-  "& :not(:last-child)": {
-    // theme.verticalNavigation.actionsMarginTop,
-    marginBottom: "8px",
-  },
-
-  [`&.${actionsClasses.hide}`]: {
-    display: "none",
-  },
-});
+      "& :not(:last-child)": {
+        marginBottom: "8px",
+      },
+    },
+    hide: {
+      display: "none",
+    },
+  }
+);

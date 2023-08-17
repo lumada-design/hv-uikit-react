@@ -8,22 +8,14 @@ import {
   useState,
 } from "react";
 
-import { clsx } from "clsx";
-
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
 import { useForkRef } from "@core/hooks/useForkRef";
 import { setId } from "@core/utils/setId";
 
-import treeViewItemClasses, {
-  HvVerticalNavigationTreeViewItemClasses,
-} from "./treeViewItemClasses";
-import {
-  StyledContent,
-  StyledGroup,
-  StyledNode,
-  StyledLabel,
-} from "./TreeViewItem.styles";
+import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "@core/components/Typography";
+import { staticClasses, useClasses } from "./TreeViewItem.styles";
 import { DescendantProvider, useDescendant } from "./descendants";
 import {
   TreeViewControlContext,
@@ -31,6 +23,12 @@ import {
 } from "./TreeViewContext";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { IconWrapper } from "./IconWrapper";
+
+export { staticClasses as treeViewItemClasses };
+
+export type HvVerticalNavigationTreeViewItemClasses = ExtractNames<
+  typeof useClasses
+>;
 
 export interface HvVerticalNavigationTreeViewItemProps {
   /**
@@ -115,7 +113,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     const {
       id: idProp,
       className,
-      classes,
+      classes: classesProp,
 
       disabled: disabledProp = false,
 
@@ -138,6 +136,8 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
 
       ...others
     } = props;
+
+    const { classes, cx } = useClasses(classesProp);
 
     const treeViewControlContext = useContext(TreeViewControlContext);
     const { isExpanded, isSelected, isFocused, isDisabled, isChildSelected } =
@@ -422,20 +422,22 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
       [expandable, handleExpansion, handleSelection, selectable, isOpen]
     );
 
-    const renderedContent = useMemo(
-      () => (
-        <StyledContent
+    const renderedContent = useMemo(() => {
+      const buttonLinkProps = {
+        href,
+        target,
+      };
+
+      return (
+        <HvTypography
           id={setId(id, "button")}
           component={href ? "a" : "div"}
-          href={href}
-          target={target}
+          {...(href ? buttonLinkProps : null)}
           ref={contentRef}
-          className={clsx(
-            treeViewItemClasses.content,
-            classes?.content,
-            href != null && clsx(treeViewItemClasses.link, classes?.link),
-            !isOpen && clsx(treeViewItemClasses.minimized, classes?.minimized)
-          )}
+          className={cx(classes.content, {
+            [classes.link]: href != null,
+            [classes.minimized]: !isOpen,
+          })}
           variant="body"
           disabled={disabled}
           onClick={handleClick}
@@ -475,98 +477,86 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           />
 
           {isOpen && (
-            <StyledLabel $hasIcon={useIcons} $expandable={!!expandable}>
+            <div
+              className={cx(classes.label, {
+                [classes.labelIcon]: useIcons,
+                [classes.labelExpandable]: !!expandable,
+              })}
+            >
               {label}
-            </StyledLabel>
+            </div>
           )}
 
           {isOpen && expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
-        </StyledContent>
-      ),
-      [
-        id,
-        href,
-        target,
-        classes?.content,
-        classes?.link,
-        classes?.minimized,
-        disabled,
-        handleClick,
-        handleMouseDown,
-        expandable,
-        icon,
-        level,
-        collapsible,
-        treeviewMode,
-        handleFocus,
-        selectable,
-        handleKeyDown,
-        selected,
-        expanded,
-        label,
-        disableTooltip,
-        payload?.label,
-        children,
-        isOpen,
-        useIcons,
-        isChildSelected,
-        nodeId,
-      ]
-    );
+        </HvTypography>
+      );
+    }, [
+      id,
+      href,
+      target,
+      cx,
+      classes.content,
+      classes.link,
+      classes.minimized,
+      classes.label,
+      classes.labelIcon,
+      classes.labelExpandable,
+      disabled,
+      handleClick,
+      handleMouseDown,
+      expandable,
+      icon,
+      level,
+      collapsible,
+      treeviewMode,
+      handleFocus,
+      selectable,
+      handleKeyDown,
+      selected,
+      expanded,
+      label,
+      disableTooltip,
+      payload?.label,
+      children,
+      isOpen,
+      useIcons,
+      isChildSelected,
+      nodeId,
+    ]);
 
     const renderedChildren = useMemo(
       () =>
         children && (
-          <StyledGroup
+          <ul
             id={setId(id, "group")}
-            className={clsx(treeViewItemClasses.group, classes?.group)}
+            className={classes.group}
             role={treeviewMode ? "group" : undefined}
           >
             {children}
-          </StyledGroup>
+          </ul>
         ),
       [children, classes?.group, id, treeviewMode]
     );
 
     return (
-      <StyledNode
+      <li
         ref={handleRef}
         id={id ?? undefined}
-        className={clsx(
-          treeViewItemClasses?.node,
-          classes?.node,
+        className={cx(classes.node, {
+          [classes.disabled]: disabled,
+          [classes.expandable]: expandable,
+          [classes.collapsed]: expandable && !expanded,
+          [classes.expanded]: expandable && expanded,
+          [classes.selectable]: selectable && !disabled,
+          [classes.unselectable]: !disabled && !selectable,
+          [classes.selected]:
+            (!disabled && selectable && selected) ||
+            (!isOpen && useIcons && isChildSelected && isChildSelected(nodeId)),
+          [classes.unselected]: !disabled && selectable && !selected,
+          [classes.focused]: focused,
+          [classes.hide]: !isOpen && !useIcons,
           className,
-          disabled && clsx(treeViewItemClasses.disabled, classes?.disabled),
-          expandable &&
-            clsx(treeViewItemClasses.expandable, classes?.expandable),
-          expandable &&
-            !expanded &&
-            clsx(treeViewItemClasses.collapsed, classes?.collapsed),
-          expandable &&
-            expanded &&
-            clsx(treeViewItemClasses.expanded, classes?.expanded),
-          selectable &&
-            !disabled &&
-            clsx(treeViewItemClasses.selectable, classes?.selectable),
-          !disabled &&
-            !selectable &&
-            clsx(treeViewItemClasses.unselectable, classes?.unselectable),
-          !disabled &&
-            selectable &&
-            selected &&
-            clsx(treeViewItemClasses.selected, classes?.selected),
-          !disabled &&
-            selectable &&
-            !selected &&
-            clsx(treeViewItemClasses.unselected, classes?.unselected),
-          focused && clsx(treeViewItemClasses.focused, classes?.focused),
-          !isOpen && !useIcons && clsx(treeViewItemClasses.hide, classes?.hide),
-          !isOpen &&
-            useIcons &&
-            isChildSelected &&
-            isChildSelected(nodeId) &&
-            clsx(treeViewItemClasses.selected, classes?.selected)
-        )}
+        })}
         data-hasicon={icon != null ? true : undefined}
         {...(mode === "treeview" && {
           role: "treeitem",
@@ -582,7 +572,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             {renderedChildren}
           </DescendantProvider>
         )}
-      </StyledNode>
+      </li>
     );
   }
 );

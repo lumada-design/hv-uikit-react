@@ -1,45 +1,46 @@
-import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "@core/components/Typography";
 import { outlineStyles } from "@core/utils/focusUtils";
-import actionClasses from "./actionClasses";
+import { createClasses } from "@core/utils/classes";
 
 const hover = () => ({
   background: theme.verticalNavigation.hoverColor,
 });
 
-export const StyledAction = styled(HvTypography)({
-  width: "100%",
-  display: "flex",
-  justifyContent: "flex-start",
-  alignItems: "center",
-  height: "32px",
-  color: theme.colors.secondary,
+export const { staticClasses, useClasses } = createClasses(
+  "HvVerticalNavigationAction",
+  {
+    action: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "flex-start",
+      alignItems: "center",
+      height: "32px",
+      color: theme.colors.secondary,
 
-  // hover
-  "&:hover": hover(),
+      // hover
+      "&:hover": hover(),
 
-  "&:focus": {
-    outline: "none",
-    ...hover(),
-  },
+      "&:focus": {
+        outline: "none",
+        ...hover(),
+      },
 
-  "&:focus-visible": {
-    ...outlineStyles,
-  },
+      "&:focus-visible": {
+        ...outlineStyles,
+      },
 
-  // cursor
-  cursor: "pointer",
-  "& *": {
-    cursor: "pointer",
-  },
-
-  [`& .${actionClasses.noIcon}`]: {
-    paddingLeft: theme.space.xs,
-  },
-
-  [`&.${actionClasses.minimized}`]: {
-    justifyContent: "center",
-    paddingRight: 0,
-  },
-});
+      // cursor
+      cursor: "pointer",
+      "& *": {
+        cursor: "pointer",
+      },
+    },
+    noIcon: {
+      paddingLeft: theme.space.xs,
+    },
+    minimized: {
+      justifyContent: "center",
+      paddingRight: 0,
+    },
+  }
+);
