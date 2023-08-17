@@ -103,11 +103,7 @@ export const Main: StoryObj<HvCardProps> = {
         selectable={selectable}
         selected={selected}
       >
-        <HvCardHeader
-          title="Asset Avatar L90"
-          subheader="Compressor"
-          aria-label="Compressor"
-        />
+        <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
         <HvCardMedia
           component="img"
           alt="Compressor"
@@ -211,7 +207,7 @@ export const AllComponents: StoryObj<HvCardProps> = {
           height={160}
           image={leaf}
         />
-        <HvActionBar aria-label="Leaf">
+        <HvActionBar>
           <HvCheckBox
             id="controller"
             onChange={() => setChecked(!checked)}
