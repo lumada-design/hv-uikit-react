@@ -39,26 +39,20 @@ export const generateComponent = (
 
   return `
 import { theme } from "@hitachivantara/uikit-styles";
-import { IconBase, IconBaseProps, useIconColor, useIconSize, getColorVars } from "${basePath}/IconBase";
+import { IconBase, IconBaseProps, useIconSize } from "${basePath}/IconBase";
 
 export const ${iconName} = ({
-  color,
   iconSize = "${isXS(iconName) ? "XS" : "S"}",
   viewbox = "${defaultSizes.viewBoxRegexp.join(" ")}",
   height,
   width,
-  semantic,
-  inverted = false,
-  style,
   svgProps,
   ...others
 }: IconBaseProps) => {
-  const colorArray = useIconColor([${palette}], color, semantic, inverted);
   const size = useIconSize(iconSize, height, width, ${isSemantic(iconName)});
-  const colorVars = getColorVars(colorArray);
 
   return (
-    <IconBase iconSize={iconSize} data-name="${iconName}" style={{...colorVars, ...style}} {...others}>
+    <IconBase iconSize={iconSize} data-name="${iconName}" palette={[${palette}]} {...others}>
     ${svgOutput.replace("{...other}", "focusable={false} {...svgProps}")}
     </IconBase>
 )};

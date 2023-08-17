@@ -153,12 +153,23 @@ export const StyledIconBase = styled("div")(
 
 export const IconBase = ({
   children,
+  palette,
   color,
+  semantic,
+  inverted = false,
   iconSize = "S",
+  style,
   ...others
-}: IconBaseProps) => {
+}: IconBaseProps & { palette: string[] }) => {
+  const colorArray = getIconColors(palette, color, semantic, inverted);
+  const colorVars = getColorVars(colorArray);
+
   return (
-    <StyledIconBase iconSize={iconSize} {...others}>
+    <StyledIconBase
+      iconSize={iconSize}
+      style={{ ...colorVars, ...style }}
+      {...others}
+    >
       {children}
     </StyledIconBase>
   );
