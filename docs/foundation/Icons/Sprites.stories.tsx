@@ -50,7 +50,7 @@ export const CustomColors = () => (
   <HvIconSprite
     spriteUrl="./assets/icons.svg"
     iconName="Bookmark"
-    color={["secondary", "brand"]}
+    color={["brand", "secondary"]}
     iconSize="M"
     aria-label="Click to bookmark"
   />

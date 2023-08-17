@@ -6,8 +6,7 @@ export const extractColors = (fileData: string) => {
   let matcher;
 
   const result = {
-    // ensure the main color (#414141) is always first (all users use it)
-    colorArray: ["#414141"],
+    colorArray: [] as string[],
     colorText: "",
   };
 
