@@ -2,12 +2,10 @@ import {
   Bookmark,
   CheckboxCheck,
   Level4,
-  Level5,
   Machine,
   IconBase,
   IconBaseProps,
   icons,
-  Level3Bad,
 } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 
@@ -41,19 +39,11 @@ IconSize.parameters = {
 };
 
 export const CustomColors = () => (
-  <div style={{ display: "flex", gap: 8 }}>
-    <Bookmark
-      color={["brand", "secondary"]}
-      iconSize="M"
-      aria-label="Click to bookmark"
-    />
-    <Level3Bad
-      color={["warning", "base_light"]}
-      iconSize="M"
-      aria-label="Attention"
-    />
-    <Level5 color={["none", "negative"]} iconSize="M" aria-label="Error" />
-  </div>
+  <Bookmark
+    color={["brand", "secondary"]}
+    iconSize="M"
+    aria-label="Click to bookmark"
+  />
 );
 
 CustomColors.parameters = {
