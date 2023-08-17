@@ -1,11 +1,13 @@
 import {
   HvTooltip,
   HvTypography,
+  HvColorPicker,
   useTheme,
+  baseDropdownClasses,
 } from "@hitachivantara/uikit-react-core";
 import { useGeneratorContext } from "generator/GeneratorContext";
-import debounce from "lodash/debounce";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
+import { css } from "@emotion/css";
 import { styles } from "./Colors.styles";
 import { getColorGroupName, getColors, groupsToShow } from "./utils";
 
@@ -27,8 +29,6 @@ const Colors = (): JSX.Element => {
     });
   };
 
-  const debouncedHandler = debounce(colorChangedHandler, 250);
-
   return (
     <div className={styles.root}>
       <div className={styles.group}>
@@ -46,22 +46,38 @@ const Colors = (): JSX.Element => {
               </div>
             }
           >
-            <input
-              type="color"
-              className={styles.color}
-              value={
-                customTheme &&
-                customTheme.colors &&
-                customTheme.colors.modes[selectedMode] &&
-                customTheme.colors.modes?.[selectedMode].backgroundColor
-              }
-              onChange={(e) => {
-                debouncedHandler("backgroundColor", e.target.value);
-              }}
-            />
+            <div>
+              <HvColorPicker
+                iconOnly
+                defaultValue={
+                  customTheme &&
+                  customTheme.colors &&
+                  customTheme.colors.modes[selectedMode] &&
+                  customTheme.colors.modes?.[selectedMode].backgroundColor
+                }
+                onChangeComplete={(color) =>
+                  colorChangedHandler("backgroundColor", color)
+                }
+                classes={{
+                  root: css({ width: 24, height: 24 }),
+                  headerColorIconOnly: css({ width: 24, height: 24 }),
+                  dropdownRootIconOnly: css({
+                    width: 24,
+                    height: 24,
+                    [`& .${baseDropdownClasses.selection}`]: {
+                      height: 24,
+                    },
+                    [`& .${baseDropdownClasses.header}`]: {
+                      height: 24,
+                    },
+                  }),
+                }}
+              />
+            </div>
           </HvTooltip>
         </div>
       </div>
+
       {groupsToShow.map((group) => {
         const groupColors = getColors(group, colors);
         return (
@@ -88,23 +104,37 @@ const Colors = (): JSX.Element => {
                       </div>
                     }
                   >
-                    <input
-                      key={c}
-                      type="color"
-                      className={styles.color}
-                      value={
-                        (customTheme &&
-                          customTheme.colors &&
-                          customTheme.colors.modes[selectedMode] &&
-                          customTheme.colors.modes?.[selectedMode][
-                            c as keyof HvThemeTokens["colors"]
-                          ]) ||
-                        groupColors[c]
-                      }
-                      onChange={(e) => {
-                        debouncedHandler(c, e.target.value);
-                      }}
-                    />
+                    <div>
+                      <HvColorPicker
+                        iconOnly
+                        defaultValue={
+                          (customTheme &&
+                            customTheme.colors &&
+                            customTheme.colors.modes[selectedMode] &&
+                            customTheme.colors.modes?.[selectedMode][
+                              c as keyof HvThemeTokens["colors"]
+                            ]) ||
+                          groupColors[c]
+                        }
+                        onChangeComplete={(color) =>
+                          colorChangedHandler(c, color)
+                        }
+                        classes={{
+                          root: css({ width: 24, height: 24 }),
+                          headerColorIconOnly: css({ width: 24, height: 24 }),
+                          dropdownRootIconOnly: css({
+                            width: 24,
+                            height: 24,
+                            [`& .${baseDropdownClasses.selection}`]: {
+                              height: 24,
+                            },
+                            [`& .${baseDropdownClasses.header}`]: {
+                              height: 24,
+                            },
+                          }),
+                        }}
+                      />
+                    </div>
                   </HvTooltip>
                 );
               })}
