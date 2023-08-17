@@ -25,10 +25,6 @@ export const { staticClasses, useClasses } = createClasses("HvEmptyState", {
     background: "transparent",
     maxWidth: "510px",
     overflow: "hidden",
-    "& a": {
-      color: theme.colors.primary,
-      textDecoration: "none",
-    },
   },
   messageContainer: {},
   actionContainer: { marginTop: theme.space.sm },
