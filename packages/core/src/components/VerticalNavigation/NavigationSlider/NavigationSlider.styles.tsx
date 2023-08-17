@@ -1,29 +1,31 @@
-import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvListItem, listItemClasses } from "@core/components/ListContainer";
+import { createClasses } from "@core/utils/classes";
 
-export const StyledListItem = styled(HvListItem)({
-  display: "flex",
-  alignItems: "center",
-  borderLeft: theme.verticalNavigation.inactiveBorderLeft,
-  minHeight: "48px",
-  marginBottom: "8px",
-  "& > button": {
-    marginLeft: "auto",
-  },
-
-  [`&.${listItemClasses.selected}`]: {
-    background: theme.colors.atmo3,
-    borderLeft: theme.verticalNavigation.activeBorderLeft,
-    "& *": {
-      background: theme.colors.atmo3,
+export const { staticClasses, useClasses } = createClasses(
+  "HvVerticalNavigationSlider",
+  {
+    root: {
+      display: "flex",
+      alignItems: "center",
+      borderLeft: theme.verticalNavigation.inactiveBorderLeft,
+      minHeight: "48px",
+      marginBottom: "8px",
+      "& > button": {
+        marginLeft: "auto",
+      },
     },
-  },
-
-  [`&.${listItemClasses.focus}`]: {
-    background: theme.colors.atmo3,
-    "& *": {
+    listItemSelected: {
       background: theme.colors.atmo3,
+      borderLeft: theme.verticalNavigation.activeBorderLeft,
+      "& *": {
+        background: theme.colors.atmo3,
+      },
     },
-  },
-});
+    listItemFocus: {
+      background: theme.colors.atmo3,
+      "& *": {
+        background: theme.colors.atmo3,
+      },
+    },
+  }
+);

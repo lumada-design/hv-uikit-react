@@ -2,21 +2,34 @@ import { ClickAwayListener } from "@mui/material";
 
 import { HvBaseProps } from "@core/types/generic";
 
+import { ExtractNames } from "@core/utils/classes";
 import { HvVerticalNavigation } from "../VerticalNavigation";
 
-import { StyledPopper, StyledPopupContainer } from "./NavigationPopup.styles";
+import {
+  StyledPopper,
+  staticClasses,
+  useClasses,
+} from "./NavigationPopup.styles";
+
+export { staticClasses as verticalNavigationPopupClasses };
+
+export type HvVerticalNavigationPopupClasses = ExtractNames<typeof useClasses>;
 
 export interface NavigationPopupContainerProps extends HvBaseProps {
   anchorEl?: HTMLElement | null;
   onClose?: () => void;
+  classes?: HvVerticalNavigationPopupClasses;
 }
 
 export const NavigationPopupContainer = ({
   anchorEl,
   onClose,
   children,
+  classes: classesProp,
   ...others
 }: NavigationPopupContainerProps) => {
+  const { classes } = useClasses(classesProp);
+
   const handleClickAway = () => {
     onClose?.();
   };
@@ -24,11 +37,11 @@ export const NavigationPopupContainer = ({
   return (
     <StyledPopper open anchorEl={anchorEl} placement="right-start" {...others}>
       <ClickAwayListener onClickAway={handleClickAway}>
-        <StyledPopupContainer>
+        <div className={classes.container}>
           <HvVerticalNavigation open useIcons>
             {children}
           </HvVerticalNavigation>
-        </StyledPopupContainer>
+        </div>
       </ClickAwayListener>
     </StyledPopper>
   );

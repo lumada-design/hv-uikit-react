@@ -1,12 +1,15 @@
-import { clsx } from "clsx";
+import { ExtractNames } from "@core/utils/classes";
 
 import { useContext } from "react";
 
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
-import { StyledRoot } from "./Actions.styles";
-import actionsClasses, {
-  HvVerticalNavigationActionsClasses,
-} from "./actionsClasses";
+import { staticClasses, useClasses } from "./Actions.styles";
+
+export { staticClasses as actionsClasses };
+
+export type HvVerticalNavigationActionsClasses = ExtractNames<
+  typeof useClasses
+>;
 
 export interface HvVerticalNavigationActionsProps {
   /**
@@ -29,25 +32,28 @@ export interface HvVerticalNavigationActionsProps {
 
 export const HvVerticalNavigationActions = ({
   className,
-  classes,
+  classes: classesProp,
   id,
   children,
   ...others
 }: HvVerticalNavigationActionsProps) => {
+  const { classes, cx } = useClasses(classesProp);
+
   const { isOpen, useIcons } = useContext(VerticalNavigationContext);
 
   return (
-    <StyledRoot
+    <div
       id={id}
-      className={clsx(
-        className,
-        actionsClasses.root,
-        classes?.root,
-        !isOpen && !useIcons && clsx(actionsClasses.hide, classes?.hide)
+      className={cx(
+        classes.root,
+        {
+          [classes.hide]: !isOpen && !useIcons,
+        },
+        className
       )}
       {...others}
     >
       {children}
-    </StyledRoot>
+    </div>
   );
 };

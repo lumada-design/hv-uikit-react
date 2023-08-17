@@ -2,16 +2,15 @@ import { Backwards, Forwards, Menu } from "@hitachivantara/uikit-react-icons";
 
 import { MouseEventHandler, useContext, useMemo } from "react";
 
-import { clsx } from "clsx";
-
-import { HvButton, HvButtonProps } from "@core/components/Button";
+import { ExtractNames } from "@core/utils/classes";
 import { HvTypography } from "@core/components/Typography";
-
+import { HvButton, HvButtonProps } from "@core/components/Button";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
-import { StyledCollapseButton, StyledHeader } from "./Header.styles";
-import verticalNavigationHeaderClasses, {
-  HvVerticalNavigationHeaderClasses,
-} from "./headerClasses";
+import { staticClasses, useClasses } from "./Header.styles";
+
+export { staticClasses as verticalNavigationHeaderClasses };
+
+export type HvVerticalNavigationHeaderClasses = ExtractNames<typeof useClasses>;
 
 export interface HvVerticalNavigationHeaderProps {
   /**
@@ -59,7 +58,7 @@ export const HvVerticalNavigationHeader = ({
   collapseButtonProps,
   backButtonProps,
   className,
-  classes,
+  classes: classesProp,
   onCollapseButtonClick,
   ...others
 }: HvVerticalNavigationHeaderProps) => {
@@ -71,6 +70,8 @@ export const HvVerticalNavigationHeader = ({
     navigateToParentHandler,
     parentItem,
   } = useContext(VerticalNavigationContext);
+
+  const { classes, cx } = useClasses(classesProp);
 
   openIcon = !useIcons ? <Menu /> : openIcon;
 
@@ -86,18 +87,17 @@ export const HvVerticalNavigationHeader = ({
   );
 
   return shouldShowTitle ? (
-    <StyledHeader
-      className={clsx(
-        className,
-        verticalNavigationHeaderClasses.root,
-        classes?.root,
-        !isOpen &&
-          clsx(verticalNavigationHeaderClasses.minimized, classes?.minimized)
-      )}
+    <div
+      className={cx(classes.root, { [classes.minimized]: !isOpen }, className)}
       {...others}
     >
       {isOpen && headerTitle && slider && (
-        <HvButton icon onClick={backButtonClickHandler} aria-label="Back" {...backButtonProps}>
+        <HvButton
+          icon
+          onClick={backButtonClickHandler}
+          aria-label="Back"
+          {...backButtonProps}
+        >
           <Backwards iconSize="XS" />
         </HvButton>
       )}
@@ -107,17 +107,18 @@ export const HvVerticalNavigationHeader = ({
         </HvTypography>
       )}
       {onCollapseButtonClick && (
-        <StyledCollapseButton
+        <HvButton
           icon
           onClick={onCollapseButtonClick}
+          className={classes.collapseButton}
           classes={{
-            root: isOpen ? "" : verticalNavigationHeaderClasses.minimized,
+            root: isOpen ? "" : classes.minimized,
           }}
           {...collapseButtonProps}
         >
           {isOpen ? closeIcon : openIcon}
-        </StyledCollapseButton>
+        </HvButton>
       )}
-    </StyledHeader>
+    </div>
   ) : null;
 };

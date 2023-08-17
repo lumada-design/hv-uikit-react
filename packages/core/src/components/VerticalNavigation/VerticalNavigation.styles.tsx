@@ -1,26 +1,38 @@
-import styled from "@emotion/styled";
+import { createClasses } from "@core/utils/classes";
 import { theme } from "@hitachivantara/uikit-styles";
-import verticalNavigationClasses from "./verticalNavigationClasses";
 
-interface StyledRootProps {
-  hasAnyChildWithData: boolean;
-}
+export const { staticClasses, useClasses } = createClasses(
+  "HvVerticalNavigation",
+  {
+    root: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: theme.verticalNavigation.justifyContent,
 
-export const StyledRoot = styled("div")(
-  ({ hasAnyChildWithData }: StyledRootProps) => ({
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: theme.verticalNavigation.justifyContent,
+      width: "220px",
 
-    width: "220px",
+      background: theme.colors.atmo1,
+      boxShadow: theme.colors.shadow,
+      clipPath: "inset(0px -12px 0px 0px)",
 
-    background: theme.colors.atmo1,
-    boxShadow: theme.colors.shadow,
-    clipPath: "inset(0px -12px 0px 0px)",
+      "& > :only-child": {
+        padding: theme.space.sm,
+      },
+      "& > :not(nav:first-of-type)": {
+        borderTop: `3px solid ${theme.colors.atmo2}`,
+        padding: theme.spacing(["xs", "sm", "sm", "sm"]),
+      },
 
-    [`&.${verticalNavigationClasses.collapsed}`]: {
-      width: hasAnyChildWithData ? "66px" : "56px",
-
+      "& > :first-of-type:not(:last-child)": {
+        borderTop: "none",
+        padding: theme.spacing(["sm", "sm", "xs", "sm"]),
+      },
+    },
+    collapsed: {
+      width: "56px",
+      "&$childData": {
+        width: "66px",
+      },
       "& > :first-of-type:not(:last-child)": {
         padding: theme.spacing(["sm", "xs", "xs", "xs"]),
       },
@@ -30,23 +42,12 @@ export const StyledRoot = styled("div")(
       },
     },
 
-    "& > :only-child": {
-      padding: theme.space.sm,
-    },
-    "& > :not(nav:first-of-type)": {
-      borderTop: `3px solid ${theme.colors.atmo2}`,
-      padding: theme.spacing(["xs", "sm", "sm", "sm"]),
-    },
-
-    "& > :first-of-type:not(:last-child)": {
-      borderTop: "none",
-      padding: theme.spacing(["sm", "sm", "xs", "sm"]),
-    },
-
-    [`&.${verticalNavigationClasses.slider}`]: {
+    slider: {
       "& > div:first-of-type": {
         borderBottom: `3px solid ${theme.colors.atmo2}`,
       },
     },
-  })
+
+    childData: {},
+  }
 );

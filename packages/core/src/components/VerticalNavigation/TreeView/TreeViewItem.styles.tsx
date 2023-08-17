@@ -1,12 +1,8 @@
-import styled from "@emotion/styled";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvTypography } from "@core/components/Typography";
 import { outlineStyles } from "@core/utils/focusUtils";
-import { transientOptions } from "@core/utils/transientOptions";
 
-import treeViewItemClasses from "./treeViewItemClasses";
+import { createClasses } from "@core/utils/classes";
 
 const selected = () => ({
   background: theme.colors.atmo3,
@@ -20,111 +16,128 @@ const hover = () => ({
   background: theme.verticalNavigation.hoverColor,
 });
 
-export const StyledGroup = styled("ul")({
-  margin: "8px 0 0 0",
-  padding: 0,
-});
-
-export const StyledLabel = styled(
-  "div",
-  transientOptions
-)(({ $expandable, $hasIcon }: { $expandable: boolean; $hasIcon: boolean }) => ({
-  display: "flex",
-  flexGrow: 1,
-  maxWidth: "100%",
-  ...(($hasIcon || $expandable) && {
-    maxWidth: "calc(100% - 32px)",
-  }),
-  ...($expandable &&
-    $hasIcon && {
-      maxWidth: "calc(100% - 64px)",
-    }),
-}));
-
-export const StyledNode = styled("li")({
-  listStyle: "none",
-  minHeight: "32px",
-  "&:not(:last-child)": {
-    marginBottom: "8px",
-  },
-  [`&.${treeViewItemClasses.collapsed}`]: {
-    [`&>.${treeViewItemClasses.group}`]: {
-      display: "none",
+export const { staticClasses, useClasses } = createClasses(
+  "HvVerticalNavigationTreeViewItem",
+  {
+    node: {
+      listStyle: "none",
+      minHeight: "32px",
+      "&:not(:last-child)": {
+        marginBottom: "8px",
+      },
+      "&$collapsed": {
+        "&>$group": {
+          display: "none",
+        },
+      },
+      "&$expanded": {
+        "&>$group": {
+          display: "block",
+        },
+      },
+      "&$link": {
+        textDecoration: "none",
+      },
+      "&$hide": {
+        display: "none",
+      },
     },
-  },
-  [`&.${treeViewItemClasses.expanded}`]: {
-    [`&>.${treeViewItemClasses.group}`]: {
-      display: "block",
+    content: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "flex-start",
+      alignItems: "center",
+      height: "32px",
+      borderLeft: theme.verticalNavigation.inactiveBorderLeft,
+      paddingRight: theme.space.xs,
+      "&$minimized": {
+        justifyContent: "center",
+        paddingRight: 0,
+      },
+      "$expandable>&": {
+        fontWeight: 600,
+      },
+      "$selected>&": selected(),
+      // hover
+      ":not($disabled>&):not($selected>&):hover": hover(),
+      ":not($disabled)$selected>&:hover": {},
+
+      // focus
+      ":not($disabled>&):not($selected>&):focus-visible": hover(),
+      ":not($disabled>&):not($selected>&).focus-visible": hover(),
+
+      "*:focus-visible $focused>&": {
+        ...outlineStyles,
+      },
+
+      ".focus-visible $focused>&": {
+        ...outlineStyles,
+      },
+      "$focused>&": {
+        ...hover(),
+      },
+
+      "&[disabled], &:active": {
+        outline: "none",
+      },
+
+      "&:focus": {
+        outline: "none",
+      },
+
+      "&:focus-visible": {
+        ...outlineStyles,
+      },
+
+      "&.focus-visible": {
+        ...outlineStyles,
+      },
+
+      // cursor
+      cursor: "pointer",
+      "& *": {
+        cursor: "pointer",
+      },
+
+      "$disabled>&": {
+        cursor: "not-allowed",
+        "& *": {
+          cursor: "not-allowed",
+        },
+      },
     },
-  },
-  [`&.${treeViewItemClasses.link}`]: {
-    textDecoration: "none",
-  },
-  [`&.${treeViewItemClasses.hide}`]: {
-    display: "none",
-  },
-});
-
-export const StyledContent = styled(HvTypography)({
-  width: "100%",
-  display: "flex",
-  justifyContent: "flex-start",
-  alignItems: "center",
-  height: "32px",
-  borderLeft: theme.verticalNavigation.inactiveBorderLeft,
-  paddingRight: theme.space.xs,
-
-  [`&.${treeViewItemClasses.minimized}`]: {
-    justifyContent: "center",
-    paddingRight: 0,
-  },
-
-  [`.${treeViewItemClasses.expandable}>&`]: {
-    fontWeight: 600,
-  },
-
-  // selected state
-  [`.${treeViewItemClasses.selected}>&`]: selected(),
-
-  // hover
-  [`:not(.${treeViewItemClasses.disabled} > &):not(.${treeViewItemClasses.selected} > &):hover`]:
-    hover(),
-  [`:not(.${treeViewItemClasses.disabled} > &).${treeViewItemClasses.selected} >:hover`]:
-    {},
-
-  // focus
-  [`:not(.${treeViewItemClasses.disabled}>&):not(.${treeViewItemClasses.selected}>&):focus-visible`]:
-    hover(),
-
-  [`*:focus-visible .${treeViewItemClasses.focused}>&`]: {
-    ...outlineStyles,
-  },
-
-  [` .${treeViewItemClasses.focused}>&`]: {
-    ...hover(),
-  },
-
-  "&[disabled], &:active": {
-    outline: "none",
-  },
-
-  "&:focus": {
-    outline: "none",
-  },
-
-  "&:focus-visible": {
-    ...outlineStyles,
-  },
-
-  // cursor
-  cursor: "pointer",
-  "& *": {
-    cursor: "pointer",
-  },
-  [` .${treeViewItemClasses.disabled}>&`]: {
-    cursor: "not-allowed",
-    "& *": {
-      cursor: "not-allowed",
+    link: {},
+    group: {
+      margin: "8px 0 0 0",
+      padding: 0,
     },
-  },
-});
+    disabled: {},
+    expandable: {
+      fontWeight: 600,
+    },
+    collapsed: {},
+    expanded: {},
+    selectable: {},
+    unselectable: {},
+    selected: {},
+    unselected: {},
+    focused: {},
+    minimized: {},
+    hide: {},
+    label: {
+      display: "flex",
+      flexGrow: 1,
+      maxWidth: "100%",
+    },
+    labelIcon: {
+      maxWidth: "calc(100% - 32px)",
+    },
+    labelExpandable: {
+      maxWidth: "calc(100% - 32px)",
+
+      "&$labelIcon": {
+        maxWidth: "calc(100% - 64px)",
+      },
+    },
+  }
+);

@@ -1,20 +1,23 @@
 import { forwardRef, useCallback, useMemo, useRef, useState } from "react";
 
-import { clsx } from "clsx";
-
 import { useControlled } from "@core/hooks/useControlled";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useForkRef } from "@core/hooks/useForkRef";
 
-import { HvVerticalNavigationTreeClasses } from "../Navigation/navigationClasses";
+import { ExtractNames } from "@core/utils/classes";
 import {
   NavigationMode,
   TreeViewControlContext,
   TreeViewStateContext,
 } from "./TreeViewContext";
 import { DescendantProvider } from "./descendants";
-import { StyledRoot } from "./TreeView.styles";
-import treeViewClasses from "./treeViewClasses";
+import { staticClasses, useClasses } from "./TreeView.styles";
+
+export { staticClasses as treeViewClasses };
+
+export type HvVerticalNavigationTreeViewClasses = ExtractNames<
+  typeof useClasses
+>;
 
 export interface HvVerticalNavigationTreeViewProps {
   /**
@@ -26,9 +29,9 @@ export interface HvVerticalNavigationTreeViewProps {
    */
   className?: string;
   /**
-   * A Jss Object used to override or extend the styles applied to the Radio button.
+   * A Jss Object used to override or extend the styles applied to the component.
    */
-  classes?: HvVerticalNavigationTreeClasses;
+  classes?: HvVerticalNavigationTreeViewClasses;
   /**
    * Modus operandi (role) of the widget instance.
    */
@@ -128,7 +131,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
     const {
       id: idProp,
       className,
-      classes,
+      classes: classesProp,
 
       mode = "treeview",
 
@@ -153,6 +156,8 @@ export const HvVerticalNavigationTreeView = forwardRef(
 
       ...others
     } = props;
+
+    const { classes, cx } = useClasses(classesProp);
 
     const treeviewMode = mode === "treeview";
     const multiSelect = selectable && multiSelectProp;
@@ -1018,10 +1023,10 @@ export const HvVerticalNavigationTreeView = forwardRef(
       <TreeViewControlContext.Provider value={treeControlContext}>
         <TreeViewStateContext.Provider value={treeStateContext}>
           <DescendantProvider>
-            <StyledRoot
+            <ul
               ref={handleRef}
               id={idProp}
-              className={clsx(treeViewClasses.root, classes?.root, className)}
+              className={cx(classes.root, className)}
               {...(treeviewMode && {
                 id: treeId,
                 role: "tree",
@@ -1035,7 +1040,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
               {...others}
             >
               {children}
-            </StyledRoot>
+            </ul>
           </DescendantProvider>
         </TreeViewStateContext.Provider>
       </TreeViewControlContext.Provider>

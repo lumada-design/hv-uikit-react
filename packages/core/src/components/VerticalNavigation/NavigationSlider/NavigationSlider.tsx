@@ -1,16 +1,17 @@
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 
-import { clsx } from "clsx";
-
 import { HvButton } from "@core/components/Button";
-import { HvListContainer } from "@core/components/ListContainer";
+import { HvListContainer, HvListItem } from "@core/components/ListContainer";
 import { HvOverflowTooltip } from "@core/components/OverflowTooltip";
 
-import { StyledListItem } from "./NavigationSlider.styles";
-import verticalNavigationSliderClasses, {
-  HvVerticalNavigationSliderClasses,
-} from "./navigationSliderClasses";
+import { ExtractNames } from "@core/utils/classes";
 import { NavigationData } from "../VerticalNavigationContext";
+
+import { staticClasses, useClasses } from "./NavigationSlider.styles";
+
+export { staticClasses as verticalNavigationSliderClasses };
+
+export type HvVerticalNavigationSliderClasses = ExtractNames<typeof useClasses>;
 
 export interface HvVerticalNavigationSliderProps {
   /**
@@ -56,25 +57,25 @@ export interface HvVerticalNavigationSliderProps {
 
 export const HvVerticalNavigationSlider = ({
   id,
-  classes,
+  classes: classesProp,
   data,
   selected,
   onNavigateToTarget,
   onNavigateToChild,
   forwardButtonAriaLabel = "Navigate to submenu",
 }: HvVerticalNavigationSliderProps) => {
+  const { classes } = useClasses(classesProp);
+
   return (
     <HvListContainer interactive id={id}>
       {data &&
         data.map((item) => (
-          <StyledListItem
+          <HvListItem
             key={item.id}
             classes={{
-              root: classes?.root,
-              selected: clsx(
-                classes?.listItemSelected,
-                verticalNavigationSliderClasses.listItemSelected
-              ),
+              root: classes.root,
+              selected: classes.listItemSelected,
+              focus: classes.listItemFocus,
             }}
             onClick={(event) => {
               onNavigateToTarget?.(event, item);
@@ -100,7 +101,7 @@ export const HvVerticalNavigationSlider = ({
             }
           >
             <HvOverflowTooltip data={item.label} />
-          </StyledListItem>
+          </HvListItem>
         ))}
     </HvListContainer>
   );

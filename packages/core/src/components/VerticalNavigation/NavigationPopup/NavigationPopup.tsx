@@ -1,14 +1,13 @@
-import { clsx } from "clsx";
-
 import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
 
-import {
-  HvVerticalNavigationTree,
-  verticalNavigationTreeClasses,
-} from "../Navigation";
+import { HvVerticalNavigationTree } from "../Navigation";
 import { NavigationData } from "../VerticalNavigationContext";
-import { NavigationPopupContainer } from "./NavigationPopupContainer";
+import {
+  HvVerticalNavigationPopupClasses,
+  NavigationPopupContainer,
+} from "./NavigationPopupContainer";
+import { useClasses } from "./NavigationPopup.styles";
 
 export interface HvVerticalNavigationPopupProps
   extends HvBaseProps<HTMLDivElement> {
@@ -19,6 +18,7 @@ export interface HvVerticalNavigationPopupProps
   selected?: string;
   onClose?: () => void;
   onChange?: any;
+  classes?: HvVerticalNavigationPopupClasses;
 }
 
 export const HvVerticalNavigationPopup = ({
@@ -29,8 +29,11 @@ export const HvVerticalNavigationPopup = ({
   data,
   selected,
   onChange,
+  classes: classesProp,
   ...others
 }: HvVerticalNavigationPopupProps) => {
+  const { classes } = useClasses(classesProp);
+
   const handleChange = (event, selectedItem) => {
     onChange(event, selectedItem.id, selectedItem);
   };
@@ -42,9 +45,14 @@ export const HvVerticalNavigationPopup = ({
   };
 
   return (
-    <NavigationPopupContainer anchorEl={anchorEl} onClose={onClose} {...others}>
+    <NavigationPopupContainer
+      anchorEl={anchorEl}
+      onClose={onClose}
+      classes={classes}
+      {...others}
+    >
       <HvVerticalNavigationTree
-        className={clsx(verticalNavigationTreeClasses.popup)}
+        className={classes.popup}
         id={setId(id, "tree")}
         collapsible
         defaultExpanded
