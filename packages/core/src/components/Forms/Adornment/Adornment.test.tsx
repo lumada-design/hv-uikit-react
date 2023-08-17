@@ -7,13 +7,9 @@ import { HvAdornment } from "@core/components";
 describe("Adornment", () => {
   it("should render the passed icon", () => {
     render(
-      <HvAdornment
-        icon={<CloseXS role="presentation" aria-label="close icon" />}
-      />
+      <HvAdornment icon={<CloseXS role="img" aria-label="close icon" />} />
     );
-    expect(
-      screen.getByRole("presentation", { name: "close icon" })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "close icon" })).toBeInTheDocument();
   });
 
   it("should render a button if a 'onClick' is passed", async () => {

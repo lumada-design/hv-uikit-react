@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React, { HTMLAttributes, AllHTMLAttributes, useMemo } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
+import { isSemantic, isXS } from "./utils";
 
 const getColor = (c: string): string => theme?.colors?.[c] || c;
 
@@ -64,6 +65,45 @@ export const getIconColors = (
   }
 
   return colorArray;
+};
+
+/** Splits icon `props` between those to be passed to container or svg */
+export const splitIconProps = (iconName: string, props: IconBaseProps) => {
+  const {
+    role,
+    title,
+    iconSize: iconSizeProp,
+    width,
+    height,
+    svgProps,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    "aria-describedby": ariaDescribedBy,
+    ...rest
+  } = props;
+  const iconSize = iconSizeProp ?? (isXS(iconName) ? "XS" : "S");
+  const size = getIconSize(iconSize, isSemantic(iconName), width, height);
+
+  const newSvgProps = {
+    focusable: false,
+    // pass size props
+    ...size,
+    // pass a11y props
+    title,
+    role,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    "aria-describedby": ariaDescribedBy,
+    // pass all other `svgProps`
+    ...svgProps,
+  } satisfies HTMLAttributes<SVGElement>;
+
+  const newOtherProps = {
+    iconSize,
+    ...rest,
+  } satisfies IconBaseProps;
+
+  return [newSvgProps, newOtherProps] as const;
 };
 
 export function useIconColor(
@@ -154,18 +194,22 @@ export const StyledIconBase = styled("div")(
 export const IconBase = ({
   children,
   palette,
+  height,
+  width,
   color,
   semantic,
   inverted = false,
   iconSize = "S",
+  iconName,
   style,
   ...others
-}: IconBaseProps & { palette: string[] }) => {
+}: IconBaseProps & { palette: string[]; iconName: string }) => {
   const colorArray = getIconColors(palette, color, semantic, inverted);
   const colorVars = getColorVars(colorArray);
 
   return (
     <StyledIconBase
+      data-name={iconName}
       iconSize={iconSize}
       style={{ ...colorVars, ...style }}
       {...others}

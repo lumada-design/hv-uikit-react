@@ -40,11 +40,11 @@ describe("Badge", () => {
       <HvBadge
         count={100}
         showCount
-        icon={<Alert role="presentation" aria-label="Alert" />}
+        icon={<Alert role="img" aria-label="Alert" />}
       />
     );
     expect(screen.queryByText("99+")).toBeInTheDocument();
-    expect(screen.getByLabelText("Alert")).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "Alert" })).toBeInTheDocument();
   });
 
   it("should render correctly with custom label", () => {
