@@ -34,6 +34,7 @@ export const HvIconSprite = ({
 
   return (
     <IconBase
+      iconName={iconName}
       iconSize={iconSize}
       color={color}
       palette={baseColors}

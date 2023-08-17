@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { HvAppSwitcher, HvAppSwitcherProps } from "./AppSwitcher";
 
 describe("<AppSwitcher /> with minimum configuration", () => {
@@ -33,18 +33,14 @@ describe("<AppSwitcher /> with minimum configuration", () => {
   };
 
   it("should render 3 action components", () => {
-    const { getAllByRole } = render(
-      <HvAppSwitcher {...mockAppSwitcherProps} />
-    );
-    const actions = getAllByRole("listitem");
+    render(<HvAppSwitcher {...mockAppSwitcherProps} />);
+    const actions = screen.getAllByRole("listitem");
     expect(actions.length).toBe(3);
   });
 
   it("should have 2 Info icons rendered", () => {
-    const { getAllByLabelText } = render(
-      <HvAppSwitcher {...mockAppSwitcherProps} />
-    );
-    const images = getAllByLabelText("Description", { exact: false });
+    render(<HvAppSwitcher {...mockAppSwitcherProps} />);
+    const images = screen.getAllByAltText(/Description/i);
     expect(images.length).toBe(2);
   });
 
@@ -57,13 +53,11 @@ describe("<AppSwitcher /> with minimum configuration", () => {
   });
 
   it('should have "aria-hidden" for avatars', () => {
-    const { getAllByRole } = render(
-      <HvAppSwitcher {...mockAppSwitcherProps} />
-    );
+    render(<HvAppSwitcher {...mockAppSwitcherProps} />);
 
-    const hiddenAvatar = getAllByRole("listitem")[0].querySelector(
-      '[aria-hidden="true"]'
-    );
+    const hiddenAvatar = screen
+      .getAllByRole("listitem")[0]
+      .querySelector('[aria-hidden="true"]');
     expect(hiddenAvatar).not.toBeNull();
   });
 });

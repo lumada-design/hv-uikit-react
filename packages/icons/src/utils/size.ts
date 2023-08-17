@@ -41,8 +41,5 @@ export const replaceSize = (fileData: string) => {
   return fileData
     .replace(widthRegexp, ``)
     .replace(heightRegexp, ``)
-    .replace(
-      viewBoxRegexp,
-      `viewBox={viewbox} height={size.height} width={size.width}`
-    );
+    .replace(viewBoxRegexp, `viewBox={viewbox}`);
 };

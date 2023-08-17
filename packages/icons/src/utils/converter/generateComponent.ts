@@ -1,4 +1,4 @@
-import { isSemantic, isXS, isSelector } from "../../../lib/utils";
+import { isSelector } from "../../../lib/utils";
 
 const replaceColorsWithTheme = (defaultPalette, themePalette) => {
   let result = defaultPalette;
@@ -39,21 +39,17 @@ export const generateComponent = (
 
   return `
 import { theme } from "@hitachivantara/uikit-styles";
-import { IconBase, IconBaseProps, useIconSize } from "${basePath}/IconBase";
+import { IconBase, IconBaseProps, splitIconProps } from "${basePath}/IconBase";
 
 export const ${iconName} = ({
-  iconSize = "${isXS(iconName) ? "XS" : "S"}",
   viewbox = "${defaultSizes.viewBoxRegexp.join(" ")}",
-  height,
-  width,
-  svgProps,
   ...others
 }: IconBaseProps) => {
-  const size = useIconSize(iconSize, height, width, ${isSemantic(iconName)});
+  const [svgProps, rest] = splitIconProps("${iconName}", others);
 
   return (
-    <IconBase iconSize={iconSize} data-name="${iconName}" palette={[${palette}]} {...others}>
-    ${svgOutput.replace("{...other}", "focusable={false} {...svgProps}")}
+    <IconBase iconName="${iconName}" palette={[${palette}]} {...rest}>
+    ${svgOutput.replace("{...other}", "{...svgProps}")}
     </IconBase>
 )};
 `;

@@ -13,10 +13,10 @@ describe("Avatar", () => {
   it("renders the icon", () => {
     render(
       <HvAvatar>
-        <LogIn aria-label="login" />
+        <LogIn role="img" aria-label="login" />
       </HvAvatar>
     );
 
-    expect(screen.getByLabelText("login")).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "login" })).toBeInTheDocument();
   });
 });
