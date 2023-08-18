@@ -5,7 +5,15 @@ const storiesUrl = baseUrl + "/stories.json";
 const iframeUrl = baseUrl + "/iframe.html";
 
 const filterStories = (stories) => {
-  const exclude = ["Overview/", "Foundation/", "Guides/", "Templates/"];
+  const exclude = [
+    "Overview/",
+    "Foundation/",
+    "Guides/",
+    "Templates/",
+    "Visualizations/Bar Chart",
+    "Visualizations/Line Chart",
+    "Visualizations/Donut Chart",
+  ];
 
   return Object.values(stories).reduce((acc, story) => {
     const isExcluded = exclude.some((p) => story.title.includes(p));
