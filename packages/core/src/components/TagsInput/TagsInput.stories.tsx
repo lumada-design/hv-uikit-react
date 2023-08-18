@@ -45,6 +45,7 @@ export const Main: StoryObj<HvTagsInputProps> = {
     label: "Enter your tags",
     description: "This is where you enter your tags",
     placeholder: "Enter value",
+    "aria-label": "The label",
     disabled: false,
     readOnly: false,
     required: false,
@@ -76,7 +77,7 @@ export const Variants: StoryObj<HvTagsInputProps> = {
     return (
       <div className={css(styles.root)}>
         <HvTagsInput
-          id="tags-list-5"
+          id="tags-list-variants-1"
           label="Required"
           aria-label="Required"
           placeholder="Enter value"
@@ -84,33 +85,37 @@ export const Variants: StoryObj<HvTagsInputProps> = {
           value={[{ label: "tag 1" }, { label: "tag 2" }, { label: "tag 3" }]}
         />
         <HvTagsInput
-          id="tags-list-6"
+          id="tags-list-variants-2"
           label="Disabled"
           aria-label="Disabled"
           placeholder="Enter value"
           disabled
           value={[
-            { label: "tag 1", disabled: true },
-            { label: "tag 2", disabled: true },
-            { label: "tag 3", disabled: true },
+            { label: "tag 4", disabled: true },
+            { label: "tag 5", disabled: true },
+            { label: "tag 6", disabled: true },
           ]}
         />
         <HvTagsInput
-          id="tags-list-7"
+          id="tags-list-variants-3"
           label="Readonly"
           aria-label="Readonly"
           placeholder="Enter value"
           readOnly
-          value={[{ label: "tag 1" }, { label: "tag 2" }, { label: "tag 3" }]}
+          value={[{ label: "tag 7" }, { label: "tag 8" }, { label: "tag 9" }]}
         />
         <HvTagsInput
-          id="tags-list-8"
+          id="tags-list-variants-4"
           label="Invalid"
           aria-label="Invalid"
           placeholder="Enter value"
           status="invalid"
           statusMessage="Oh no!"
-          value={[{ label: "tag 1" }, { label: "tag 2" }, { label: "tag 3" }]}
+          value={[
+            { label: "tag 10" },
+            { label: "tag 11" },
+            { label: "tag 12" },
+          ]}
         />
       </div>
     );
@@ -385,6 +390,7 @@ export const TagsCounterValidation: StoryObj<HvTagsInputProps> = {
         maxTagsQuantity={3}
         countCharProps={{
           "aria-label": `You have inserted ${tagsLength} tags`,
+          role: "status",
         }}
       />
     );
