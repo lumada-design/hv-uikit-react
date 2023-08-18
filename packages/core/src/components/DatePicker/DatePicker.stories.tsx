@@ -8,6 +8,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { CSSInterpolation, css } from "@emotion/css";
 import {
   HvButton,
+  HvCalendar,
   HvDatePicker,
   HvDatePickerProps,
   HvFormStatus,
@@ -25,6 +26,7 @@ const Decorator = ({ children }) => {
 
 const meta: Meta<typeof HvDatePicker> = {
   title: "Components/Date Picker",
+  subcomponents: { HvCalendar },
   component: HvDatePicker,
 };
 export default meta;
