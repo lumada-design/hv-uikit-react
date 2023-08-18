@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.5.5...@hitachivantara/uikit-react-icons@5.6.0) (2023-08-18)
+
+### Features
+
+- **icons:** add icon sprites ([af27502](https://github.com/lumada-design/hv-uikit-react/commit/af27502925b3de1bb57b3764328f9822fb9c6efa))
+
 ## [5.5.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.5.4...@hitachivantara/uikit-react-icons@5.5.5) (2023-08-17)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

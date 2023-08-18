@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.25.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.24.6...@hitachivantara/uikit-react-core@5.25.0) (2023-08-18)
+
+### Bug Fixes
+
+- **Badge:** fix a11y issues ([2eeb5dc](https://github.com/lumada-design/hv-uikit-react/commit/2eeb5dc9124cda282adfd03f49acfe7611dffdaf))
+
+### Features
+
+- **colorPicker:** expose onChangeComplete property ([50d6b36](https://github.com/lumada-design/hv-uikit-react/commit/50d6b364fe2d86c1fe12b088efcf55ec3d15bcdb))
+
 ## [5.24.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.24.5...@hitachivantara/uikit-react-core@5.24.6) (2023-08-17)
 
 ### Bug Fixes
