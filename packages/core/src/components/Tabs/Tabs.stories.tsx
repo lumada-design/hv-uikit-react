@@ -273,9 +273,9 @@ export const OnlyIcons: StoryObj<HvTabsProps> = {
 
     return (
       <HvTabs value={value} onChange={handleChange}>
-        <HvTab icon={<Alert />} />
-        <HvTab icon={<Reload />} />
-        <HvTab icon={<Calendar />} />
+        <HvTab icon={<Alert />} aria-label="Alert" />
+        <HvTab icon={<Reload />} aria-label="Reload" />
+        <HvTab icon={<Calendar />} aria-label="Calendar" />
       </HvTabs>
     );
   },
