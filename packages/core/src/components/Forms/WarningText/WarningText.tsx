@@ -89,6 +89,7 @@ export const HvWarningText = (props: HvWarningTextProps) => {
           [classes.hideText]: hideText,
         })}
         role="status"
+        aria-live="polite"
         aria-relevant="additions text"
         {...others}
       >
