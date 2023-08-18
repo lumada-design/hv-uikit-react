@@ -599,7 +599,7 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
                   gutters: classes.listItemGutters,
                   root: classes.listItemRoot,
                 }}
-                id={`tag-${i}`}
+                id={setId(elementId, `tag-${i}`)}
               >
                 <HvTag
                   label={label}
@@ -637,7 +637,7 @@ export const HvTagsInput = (props: HvTagsInputProps) => {
               root: classes.tagInputContainerRoot,
               gutters: classes.listItemGutters,
             }}
-            id={`tag-${value.length}`}
+            id={setId(elementId, `tag-${value.length}`)}
           >
             <HvInput
               value={tagInput}
