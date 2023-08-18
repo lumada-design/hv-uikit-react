@@ -73,11 +73,7 @@ export const HvBadge = (props: HvBadgeProps) => {
     icon || (text && <HvTypography variant={textVariant}>{text}</HvTypography>);
 
   return (
-    <div
-      aria-label={renderedCountOrLabel?.toString()}
-      className={cx(classes.root, className)}
-      {...others}
-    >
+    <div className={cx(classes.root, className)} {...others}>
       {Component}
       <div className={Component ? classes.badgeContainer : undefined}>
         <div

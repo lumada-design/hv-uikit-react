@@ -169,3 +169,33 @@ export const WithState: StoryObj<HvBadgeProps> = {
     );
   },
 };
+
+export const Accessibility: StoryObj<HvBadgeProps> = {
+  argTypes: {
+    classes: { control: { disable: true } },
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: "If you want to specify a custom aria-label, use the role prop.",
+      },
+    },
+    eyes: { include: false },
+  },
+  decorators: [
+    (Story) => <div style={{ ...container, width: 650 }}>{Story()}</div>,
+  ],
+  render: () => {
+    return (
+      <HvBadge
+        id="badge15"
+        showCount
+        count={25}
+        text="Events"
+        textVariant="title4"
+        role="status"
+        aria-label="25 unread notifications"
+      />
+    );
+  },
+};
