@@ -73,19 +73,21 @@ export const HvBarChart = ({
   legend,
   tooltip,
   classes,
+  height,
+  width,
 }: HvBarChartProps) => {
   const chartData = useData({ data, groupBy, sortBy, splitBy, measures });
 
   const chartDataset = useDataset(chartData);
 
   const chartYAxis = useYAxis({
-    yAxis,
+    axes: Array.isArray(yAxis) || yAxis == null ? yAxis : [yAxis],
     defaultType: horizontal ? "categorical" : "continuous",
   });
 
   const chartXAxis = useXAxis({
-    xAxis,
-    defaultType: horizontal ? "continuous" : "categorical",
+    type: horizontal ? "continuous" : "categorical",
+    ...xAxis,
   });
 
   const chartSlider = useDataZoom({
@@ -140,5 +142,5 @@ export const HvBarChart = ({
     chartTooltip,
   ]);
 
-  return <HvBaseChart options={options} />;
+  return <HvBaseChart options={options} width={width} height={height} />;
 };

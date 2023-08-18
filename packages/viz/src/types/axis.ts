@@ -6,6 +6,8 @@
  */
 export type HvChartAxisType = "continuous" | "categorical" | "time";
 
+export type HvChartAxisNameLocation = "start" | "end" | "center";
+
 /** Axis definition */
 export interface HvChartAxis {
   id?: string;
@@ -19,6 +21,21 @@ export interface HvChartAxis {
   labelRotation?: number;
   /** Name used for the axis. */
   name?: string;
+  /** Properties to customize the axis name. */
+  nameProps?: {
+    /** Location. */
+    location?: HvChartAxisNameLocation;
+    /** Padding. */
+    padding?: number | number[];
+    /** Color. You can use either an HEX or color name from the palette. */
+    color?: string;
+    /** Font size. */
+    fontSize?: number;
+    /** Font style. */
+    fontStyle?: "normal" | "italic";
+    /** Font weight. */
+    fontWeight?: number;
+  };
   /** Maximum value on the axis. Set this property to `max` to use the maximum data value. */
   maxValue?:
     | string

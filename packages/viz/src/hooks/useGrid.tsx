@@ -9,9 +9,18 @@ interface HvGridHookProps {
   bottom?: HvChartGrid["bottom"];
   left?: HvChartGrid["left"];
   right?: HvChartGrid["right"];
+  width?: number | string;
+  height?: number | string;
 }
 
-export const useGrid = ({ top, left, right, bottom }: HvGridHookProps) => {
+export const useGrid = ({
+  top,
+  left,
+  right,
+  bottom,
+  width,
+  height,
+}: HvGridHookProps) => {
   const option = useMemo<Pick<EChartsOption, "grid">>(() => {
     return {
       // if no value is defined we shouldn't pass anything because echarts doesn't behave well otherwise
@@ -28,9 +37,15 @@ export const useGrid = ({ top, left, right, bottom }: HvGridHookProps) => {
         ...(right != null && {
           right,
         }),
+        ...(width != null && {
+          width,
+        }),
+        ...(height != null && {
+          height,
+        }),
       },
     };
-  }, [top, left, right, bottom]);
+  }, [top, left, right, bottom, height, width]);
 
   return option;
 };

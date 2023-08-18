@@ -1,52 +1,89 @@
-import { useMemo } from "react";
+import { useMemo, useCallback } from "react";
 
 import type { EChartsOption } from "echarts-for-react/lib/types";
-import type { YAXisComponentOption } from "echarts/types/dist/echarts";
+
+import { useTheme } from "@hitachivantara/uikit-react-core";
 
 import { getAxisType } from "@viz/utils";
-import { HvAxisChartCommonProps } from "@viz/types/common";
 import { HvChartAxisType } from "@viz/types";
+import { HvChartYAxis } from "@viz/types/common";
+
+interface YAxis extends HvChartYAxis {
+  data?: string[];
+}
 
 interface HvYAxisHookProps {
-  yAxis: HvAxisChartCommonProps["yAxis"];
+  axes?: YAxis[];
   defaultType?: HvChartAxisType;
 }
 
 export const useYAxis = ({
-  yAxis,
+  axes,
   defaultType = "continuous",
 }: HvYAxisHookProps) => {
-  const option = useMemo<Pick<EChartsOption, "yAxis">>(() => {
-    if (!yAxis || !Array.isArray(yAxis)) {
-      return {
-        yAxis: {
-          id: yAxis?.id,
-          type: getAxisType(yAxis?.type) ?? getAxisType(defaultType),
-          name: yAxis?.name,
-          axisLabel: {
-            rotate: yAxis?.labelRotation ?? 0,
-            formatter: yAxis?.labelFormatter,
-          },
-          max: yAxis?.maxValue === "max" ? "dataMax" : yAxis?.maxValue,
-          min: yAxis?.minValue === "min" ? "dataMin" : yAxis?.minValue,
-        },
-      };
-    }
+  const { activeTheme, selectedMode } = useTheme();
 
-    return {
-      yAxis: yAxis.map<YAXisComponentOption>((axis) => ({
-        id: axis?.id,
-        type: getAxisType(axis?.type) ?? "value",
-        name: axis?.name,
+  const createAxis = useCallback(
+    ({
+      id,
+      type,
+      name,
+      labelFormatter,
+      labelRotation,
+      maxValue,
+      minValue,
+      nameProps,
+      data,
+      position,
+    }: YAxis) => {
+      const nameStyleKeys = nameProps
+        ? Object.keys(nameProps).filter((key) => key !== "location")
+        : undefined;
+      const nameStyle =
+        nameProps && nameStyleKeys
+          ? nameStyleKeys.reduce((acc, curr) => {
+              return {
+                ...acc,
+                [curr]:
+                  curr === "color"
+                    ? activeTheme?.colors.modes[selectedMode][
+                        nameProps[curr] as string
+                      ] || nameProps[curr]
+                    : nameProps[curr],
+              };
+            }, {})
+          : undefined;
+
+      return {
+        id,
+        type: getAxisType(type) ?? getAxisType(defaultType),
+        name,
         axisLabel: {
-          rotate: axis?.labelRotation ?? 0,
-          formatter: axis?.labelFormatter,
+          rotate: labelRotation ?? 0,
+          formatter: labelFormatter,
         },
-        max: axis?.maxValue === "max" ? "dataMax" : axis?.maxValue,
-        min: axis?.minValue === "min" ? "dataMin" : axis?.minValue,
-      })),
+        max: maxValue === "max" ? "dataMax" : maxValue,
+        min: minValue === "min" ? "dataMin" : minValue,
+        ...(nameProps?.location && {
+          nameLocation: nameProps?.location,
+        }),
+        ...(nameStyle && {
+          nameTextStyle: nameStyle,
+        }),
+        ...(data && { data }),
+        ...(position && { position }),
+      };
+    },
+    [activeTheme?.colors.modes, defaultType, selectedMode]
+  );
+
+  const option = useMemo<Pick<EChartsOption, "yAxis">>(() => {
+    return {
+      yAxis: Array.isArray(axes)
+        ? axes.map((axis) => createAxis(axis))
+        : createAxis({}),
     };
-  }, [yAxis, defaultType]);
+  }, [axes, createAxis]);
 
   return option;
 };

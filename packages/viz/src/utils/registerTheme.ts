@@ -16,6 +16,7 @@ export const registerTheme = (
   const customAxis = {
     nameTextStyle: {
       ...baseText,
+      color: themeStructure?.colors.modes[mode].secondary_80,
     },
     axisLine: {
       show: true,
@@ -94,6 +95,22 @@ export const registerTheme = (
     line: {
       lineStyle: {
         width: 2,
+      },
+    },
+    visualMap: {
+      textStyle: {
+        ...baseText,
+      },
+    },
+    heatmap: {
+      label: {
+        fontWeight: baseText.fontWeight,
+        fontSize: baseText.fontSize,
+        fontFamily: baseText.fontFamily,
+      },
+      itemStyle: {
+        borderColor: themeStructure?.colors.modes[mode].atmo3,
+        borderWidth: 1,
       },
     },
   });

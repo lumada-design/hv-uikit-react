@@ -14,12 +14,14 @@ echarts.use([CanvasRenderer, AriaComponent]);
 
 export interface HvBaseChartProps {
   options: EChartsOption;
+  width?: echarts.ResizeOpts["width"];
+  height?: echarts.ResizeOpts["height"];
 }
 
 /**
  * Base chart.
  */
-export const HvBaseChart = ({ options }: HvBaseChartProps) => {
+export const HvBaseChart = ({ options, width, height }: HvBaseChartProps) => {
   const { theme } = useVizTheme();
 
   const currentTheme = useRef<string | undefined>(theme);
@@ -33,6 +35,14 @@ export const HvBaseChart = ({ options }: HvBaseChartProps) => {
     animation: false,
     ...options,
   });
+  const [initialSize, setInitialSize] = useState(
+    width != null || height != null
+      ? {
+          width,
+          height,
+        }
+      : undefined
+  );
 
   useEffect(() => {
     if (!isMounted.current) {
@@ -41,7 +51,7 @@ export const HvBaseChart = ({ options }: HvBaseChartProps) => {
     }
 
     // when the theme changes echarts destroys the chart and mounts it again
-    // thus we need to reset the initial option
+    // thus we need to reset the initial data
     if (theme !== currentTheme.current) {
       setInitialOption({
         aria: {
@@ -50,11 +60,26 @@ export const HvBaseChart = ({ options }: HvBaseChartProps) => {
         animation: false,
         ...options,
       });
+      setInitialSize({
+        width,
+        height,
+      });
       currentTheme.current = theme;
       return;
     }
 
-    chartRef.current?.getEchartsInstance().setOption(
+    const instance = chartRef.current?.getEchartsInstance();
+
+    if (!instance) return;
+
+    if (width !== instance.getWidth() || height !== instance.getHeight()) {
+      instance.resize({
+        width,
+        height,
+      });
+    }
+
+    instance.setOption(
       {
         ...options,
       },
@@ -62,7 +87,7 @@ export const HvBaseChart = ({ options }: HvBaseChartProps) => {
         replaceMerge: ["xAxis", "yAxis", "series", "dataset"],
       }
     );
-  }, [theme, options]);
+  }, [theme, options, width, height]);
 
   return (
     <ReactECharts
@@ -71,6 +96,9 @@ export const HvBaseChart = ({ options }: HvBaseChartProps) => {
       option={initialOption}
       theme={theme}
       notMerge
+      {...(initialSize && {
+        style: { ...initialSize },
+      })}
     />
   );
 };

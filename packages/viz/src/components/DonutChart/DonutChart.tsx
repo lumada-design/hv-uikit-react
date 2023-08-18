@@ -58,6 +58,8 @@ export const HvDonutChart = ({
   measure: measures,
   sortBy,
   grid,
+  width,
+  height,
   type = "regular",
   slicesNameFormatter,
 }: HvDonutChartProps) => {
@@ -100,5 +102,5 @@ export const HvDonutChart = ({
     };
   }, [chartSeries, chartDataset, chartLegend, chartTooltip, chartGrid]);
 
-  return <HvBaseChart options={options} />;
+  return <HvBaseChart options={options} width={width} height={height} />;
 };

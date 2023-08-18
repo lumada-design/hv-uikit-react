@@ -5,9 +5,9 @@ export type HvChartTooltipType = (typeof tooltipType)[number];
 export interface HvChartTooltipParams {
   title?: string | number;
   series?: {
+    color?: string;
     name?: string;
     value?: string | number;
-    color?: string;
   }[];
 }
 

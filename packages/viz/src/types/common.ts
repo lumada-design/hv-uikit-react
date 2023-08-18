@@ -8,7 +8,7 @@ import { HvChartLegend } from "./legend";
 import { HvChartHorizontalRangeSlider } from "./slider";
 import { HvChartAxis } from "./axis";
 
-// Note: These types should not be exported for now since they can change over time.
+// Note: These types should not be exported at the moment since they can change over time.
 
 /** Props common among all charts.  */
 export interface HvChartCommonProps {
@@ -24,6 +24,20 @@ export interface HvChartCommonProps {
   legend?: HvChartLegend;
   /** Grid options. */
   grid?: HvChartGrid;
+  /** Chart width. */
+  width?: number;
+  /** Chart height. */
+  height?: number;
+}
+
+export interface HvChartXAxis extends HvChartAxis {
+  /** Position of the axis. */
+  position?: "top" | "bottom";
+}
+
+export interface HvChartYAxis extends HvChartAxis {
+  /** Position of the axis. */
+  position?: "left" | "right";
 }
 
 /** Axis charts (line and bar) common props  */
@@ -31,9 +45,9 @@ export interface HvAxisChartCommonProps {
   /** Columns to use to split the measures. */
   splitBy?: Arrayable<string>;
   /** Options for the xAxis, i.e. the horizontal axis. */
-  xAxis?: HvChartAxis;
+  xAxis?: HvChartXAxis;
   /** Options for the yAxis, i.e. the vertical axis. */
-  yAxis?: HvChartAxis | [HvChartAxis, HvChartAxis];
+  yAxis?: HvChartYAxis | [HvChartYAxis, HvChartYAxis];
   /** Stack name to use when all the series should be stacked together. If not provided, the series are not stacked. */
   stack?: string;
   /** Ranger slider options for the horizontal axis. */
