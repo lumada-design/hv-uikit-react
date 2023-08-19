@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.6.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.6.0...@hitachivantara/uikit-react-icons@5.6.1) (2023-08-19)
+
+### Bug Fixes
+
+- **Icons:** pass a11y props to the svg ([c29c45f](https://github.com/lumada-design/hv-uikit-react/commit/c29c45f00a4a4d7ee5a38c26bed7d9f5f67d80ff))
+
 # [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.5.5...@hitachivantara/uikit-react-icons@5.6.0) (2023-08-18)
 
 ### Features

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.25.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.25.0...@hitachivantara/uikit-react-core@5.25.1) (2023-08-19)
+
+### Bug Fixes
+
+- **Icons:** pass a11y props to the svg ([c29c45f](https://github.com/lumada-design/hv-uikit-react/commit/c29c45f00a4a4d7ee5a38c26bed7d9f5f67d80ff))
+- **TagsInput:** fix a11y issues ([4948021](https://github.com/lumada-design/hv-uikit-react/commit/49480217a04765efdff474d952f867e3b6fbcc91))
+
 # [5.25.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.24.6...@hitachivantara/uikit-react-core@5.25.0) (2023-08-18)
 
 ### Bug Fixes
