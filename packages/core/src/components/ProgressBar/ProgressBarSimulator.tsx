@@ -8,7 +8,6 @@ export const ProgressBarSimulator = ({
   inc,
   error,
   ariaLabel,
-  ariaLive,
 }: {
   inc: (v: number) => number;
   error?: number;
@@ -47,11 +46,8 @@ export const ProgressBarSimulator = ({
       <HvProgressBar
         value={value}
         status={status as HvProgressBarStatus}
-        labelProps={{
-          "aria-label": ariaLabel,
-          "aria-busy": false,
-          "aria-live": ariaLive,
-        }}
+        aria-label={ariaLabel}
+        aria-busy={status === "inProgress"}
       />
       <div style={{ marginTop: 10 }}>
         <HvButton onClick={start}>Start</HvButton>
