@@ -39,6 +39,9 @@
       "path": "../packages/viz/tsconfig.json"
     },
     {
+      "path": "../packages/flow/tsconfig.json"
+    },
+    {
       "path": "../packages/code-editor/tsconfig.json"
     }
   ]

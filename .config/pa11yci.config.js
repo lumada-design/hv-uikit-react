@@ -19,7 +19,10 @@ const filterStories = (stories) => {
   return Object.values(stories).reduce((acc, story) => {
     const isExcluded = exclude.some((p) => story.title.includes(p));
 
-    if (!isExcluded) acc.push(iframeUrl + "?id=" + story.id);
+    // if (!isExcluded) acc.push(iframeUrl + "?id=" + story.id);
+    if (story.id.includes("components-inline-editor--main")) {
+      acc.push(iframeUrl + "?id=" + story.id);
+    }
     return acc;
   }, []);
 };
