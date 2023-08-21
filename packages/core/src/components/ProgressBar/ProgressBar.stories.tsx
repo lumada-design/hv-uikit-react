@@ -22,7 +22,7 @@ export const Main: StoryObj<HvProgressBarProps> = {
     value: { control: { type: "range" } },
   },
   render: (args) => {
-    return <HvProgressBar {...args} />;
+    return <HvProgressBar aria-label="Status" {...args} />;
   },
 };
 
@@ -41,7 +41,7 @@ export const Progressive: StoryObj<HvProgressBarProps> = {
     return (
       <div
         style={{
-          display: "flex:",
+          display: "flex",
           flexDirection: "column",
         }}
       >
@@ -118,11 +118,7 @@ export const Determinate: StoryObj<HvProgressBarProps> = {
           <HvProgressBar
             value={100}
             status="completed"
-            labelProps={{
-              "aria-label": "Example Determined Progress Bar",
-              // "aria-busy":run,
-              "aria-live": "polite",
-            }}
+            aria-label="Example Determined Progress Bar"
           />
         </div>
         <div
@@ -140,11 +136,7 @@ export const Determinate: StoryObj<HvProgressBarProps> = {
           <HvTypography variant="label">Loading</HvTypography>
           <HvProgressBar
             value={40}
-            labelProps={{
-              "aria-label": "Example Determined Loading Progress Bar",
-              // "aria-busy":run,
-              "aria-live": "polite",
-            }}
+            aria-label="Example Determined Loading Progress Bar"
           />
         </div>
         <div
@@ -161,11 +153,7 @@ export const Determinate: StoryObj<HvProgressBarProps> = {
           <HvProgressBar
             value={30}
             status="error"
-            labelProps={{
-              "aria-label": "Example Determined Error Progress Bar",
-              // "aria-busy":run,
-              "aria-live": "polite",
-            }}
+            aria-label="Example Determined Error Progress Bar"
           />
         </div>
       </div>
