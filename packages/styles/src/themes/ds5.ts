@@ -383,6 +383,8 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     backgroundColor: theme.colors.atmo2,
     padding: `${theme.space.xs} ${theme.space.md}`,
     anySelectedBackgroundColor: theme.colors.primary_20,
+    actionButtonVariant: "primaryGhost",
+    semanticColor: "inherit",
   },
   table: {
     headerHoverColor: "transparent",

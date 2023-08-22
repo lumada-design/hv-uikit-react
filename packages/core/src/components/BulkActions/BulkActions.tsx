@@ -4,7 +4,11 @@ import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { setId } from "@core/utils/setId";
 import { useTheme } from "@core/hooks/useTheme";
 import { HvBaseProps } from "@core/types/generic";
-import { HvButton, HvButtonProps } from "@core/components/Button";
+import {
+  HvButton,
+  HvButtonProps,
+  HvButtonVariant,
+} from "@core/components/Button";
 import { HvCheckBox, HvCheckBoxProps } from "@core/components/CheckBox";
 import {
   HvActionGeneric,
@@ -122,6 +126,11 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
   const anySelected = numSelected > 0;
   const isSemantic = semantic && anySelected;
 
+  const dividerColor =
+    activeTheme?.colors?.modes[selectedMode].type === "dark"
+      ? theme.colors.secondary
+      : theme.colors.atmo4;
+
   const selectAllLabelComponent = (
     <HvTypography
       component="span"
@@ -151,14 +160,14 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
         isSemantic &&
           css({
             [`& .${staticClasses.selectAll} div`]: {
-              color: theme.colors.base_dark,
+              color: theme.bulkActions.semanticColor,
 
               "&:hover:not(:disabled)": {
                 backgroundColor: hexToRgbA(baseColor, 0.3),
               },
 
               "& *": {
-                color: theme.colors.base_dark,
+                color: theme.bulkActions.semanticColor,
                 backgroundColor: "transparent",
               },
             },
@@ -184,15 +193,24 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
         />
         {showSelectAllPages && anySelected && numSelected < numTotal && (
           <>
-            <div className={classes.divider} />
+            <div
+              className={cx(
+                css({ backgroundColor: dividerColor }),
+                classes.divider
+              )}
+            />
             <HvButton
               id={setId(id, "pages")}
               className={classes.selectAllPages}
-              variant={isSemantic ? "semantic" : "secondaryGhost"}
+              variant={
+                isSemantic
+                  ? (activeTheme?.bulkActions
+                      .actionButtonVariant as HvButtonVariant)
+                  : "secondaryGhost"
+              }
               onClick={onSelectAllPages}
             >
-              {selectAllPagesLabel ??
-                `Select all ${numTotal} items across all pages`}
+              {selectAllPagesLabel ?? `Select all ${numTotal} items`}
             </HvButton>
           </>
         )}
@@ -200,7 +218,11 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
       <HvActionsGeneric
         id={setId(id, "actions")}
         classes={{ root: classes.actions }}
-        category={isSemantic ? "semantic" : "secondaryGhost"}
+        category={
+          isSemantic
+            ? (activeTheme?.bulkActions.actionButtonVariant as HvButtonVariant)
+            : "secondaryGhost"
+        }
         actions={actions}
         disabled={actionsDisabled ?? numSelected === 0}
         actionsCallback={actionsCallback}
