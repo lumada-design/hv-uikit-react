@@ -298,6 +298,7 @@ export const HvTimePicker = (props: HvTimePickerProps) => {
           containerRef?.getElementsByTagName("input")[0]?.focus();
         }}
         aria-haspopup="dialog"
+        aria-label={ariaLabel}
         aria-invalid={isStateInvalid ? true : undefined}
         aria-errormessage={errorMessageId}
         disablePortal={disablePortal}
