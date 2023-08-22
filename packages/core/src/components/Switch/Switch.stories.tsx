@@ -35,7 +35,7 @@ export default meta;
 export const Main: StoryObj<HvSwitchProps> = {
   args: {
     value: "on",
-    label: "",
+    label: "Main Switch",
     required: false,
     readOnly: false,
     disabled: false,
