@@ -258,9 +258,10 @@ export const Actions: StoryObj<HvAvatarProps> = {
           overrideIconColors={false}
           component="a"
           href="#profile-url"
+          aria-label="External link"
         >
           <HvAvatar size="md">
-            <LinkIcon color="base_dark" aria-label="External link" />
+            <LinkIcon color="atmo1" />
           </HvAvatar>
         </HvButton>
         <HvButton

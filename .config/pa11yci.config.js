@@ -41,8 +41,11 @@ module.exports = (async () => {
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
       },
       ignore: [
+        // The two rules below are related with color contrast
         "color-contrast",
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        // Ignoring this rule because it's ok to have links to inexisting anchors on our stories
+        "WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID",
       ],
     },
     urls: storiesUrls,
