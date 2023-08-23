@@ -126,11 +126,6 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
   const anySelected = numSelected > 0;
   const isSemantic = semantic && anySelected;
 
-  const dividerColor =
-    activeTheme?.colors?.modes[selectedMode].type === "dark"
-      ? theme.colors.secondary
-      : theme.colors.atmo4;
-
   const selectAllLabelComponent = (
     <HvTypography
       component="span"
@@ -193,12 +188,7 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
         />
         {showSelectAllPages && anySelected && numSelected < numTotal && (
           <>
-            <div
-              className={cx(
-                css({ backgroundColor: dividerColor }),
-                classes.divider
-              )}
-            />
+            <div className={classes.divider} />
             <HvButton
               id={setId(id, "pages")}
               className={classes.selectAllPages}

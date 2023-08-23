@@ -20,6 +20,7 @@ export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
   selectAllPages: {},
   divider: {
     display: theme.bulkActions.separatorDisplay,
+    backgroundColor: theme.colors.atmo4,
     width: "1px",
     height: "32px",
     marginLeft: theme.space.sm,
