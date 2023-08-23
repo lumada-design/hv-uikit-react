@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.25.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.25.2...@hitachivantara/uikit-react-core@5.25.3) (2023-08-23)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-core
+
 ## [5.25.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.25.1...@hitachivantara/uikit-react-core@5.25.2) (2023-08-22)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
