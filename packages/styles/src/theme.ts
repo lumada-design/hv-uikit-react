@@ -223,6 +223,8 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     backgroundColor: "string",
     padding: "string",
     anySelectedBackgroundColor: "string",
+    actionButtonVariant: "string",
+    semanticColor: "string",
   },
   table: {
     headerHoverColor: "string",

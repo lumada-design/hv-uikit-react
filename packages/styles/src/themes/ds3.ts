@@ -440,6 +440,8 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     backgroundColor: theme.colors.atmo1,
     padding: "0px",
     anySelectedBackgroundColor: theme.colors.neutral_20,
+    actionButtonVariant: "semantic",
+    semanticColor: theme.colors.base_dark,
   },
   table: {
     headerHoverColor: theme.colors.atmo3,
