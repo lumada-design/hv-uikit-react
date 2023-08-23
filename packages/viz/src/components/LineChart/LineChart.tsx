@@ -80,14 +80,18 @@ export const HvLineChart = ({
   legend,
   classes,
   tooltip,
+  width,
+  height,
 }: HvLineChartProps) => {
   const chartData = useData({ data, groupBy, measures, splitBy, sortBy });
 
   const chartDataset = useDataset(chartData);
 
-  const chartYAxis = useYAxis({ yAxis });
+  const chartYAxis = useYAxis({
+    axes: Array.isArray(yAxis) || yAxis == null ? yAxis : [yAxis],
+  });
 
-  const chartXAxis = useXAxis({ xAxis, scale: true });
+  const chartXAxis = useXAxis({ ...xAxis, scale: true });
 
   const chartSlider = useDataZoom({
     showHorizontal: horizontalRangeSlider?.show,
@@ -141,5 +145,5 @@ export const HvLineChart = ({
     chartTooltip,
   ]);
 
-  return <HvBaseChart options={options} />;
+  return <HvBaseChart options={options} width={width} height={height} />;
 };

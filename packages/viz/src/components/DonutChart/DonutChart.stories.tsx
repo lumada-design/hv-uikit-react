@@ -35,7 +35,21 @@ const meta: Meta<typeof HvDonutChart> = {
 export default meta;
 
 export const Main: StoryObj<HvDonutChartProps> = {
-  render: () => {
+  args: {
+    type: "regular",
+  },
+  argTypes: {
+    measure: { control: { disable: true } },
+    slicesNameFormatter: { control: { disable: true } },
+    data: { control: { disable: true } },
+    groupBy: { control: { disable: true } },
+    sortBy: { control: { disable: true } },
+    tooltip: { control: { disable: true } },
+    legend: { control: { disable: true } },
+    grid: { control: { disable: true } },
+    classes: { control: { disable: true } },
+  },
+  render: ({ data, groupBy, measure, ...others }) => {
     return (
       <HvDonutChart
         data={{
@@ -44,6 +58,7 @@ export const Main: StoryObj<HvDonutChartProps> = {
         }}
         groupBy="Type"
         measure="Music"
+        {...others}
       />
     );
   },

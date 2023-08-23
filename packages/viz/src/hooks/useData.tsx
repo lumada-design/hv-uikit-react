@@ -24,6 +24,7 @@ interface HvDataHookProps {
     | HvDonutChartMeasure;
   splitBy?: HvAxisChartCommonProps["splitBy"];
   sortBy?: HvChartCommonProps["sortBy"];
+  delta?: string;
 }
 
 export const useData = ({
@@ -32,6 +33,7 @@ export const useData = ({
   measures,
   sortBy,
   splitBy,
+  delta,
 }: HvDataHookProps): internal.ColumnTable => {
   const groupByKey = getGroupKey(groupBy);
 
@@ -113,6 +115,22 @@ export const useData = ({
       ...Object.keys(measuresFields),
     ];
 
+    // --- Confusion matrix ---
+    // Recalculate the measures columns according to the delta column
+    if (delta) {
+      const deltaExpression = Object.keys(measuresFields).reduce(
+        (acc, curr) => {
+          return {
+            ...acc,
+            [curr]: `d => d.${curr} - d.${delta}`,
+          };
+        },
+        {}
+      );
+
+      tableData = tableData.derive(deltaExpression);
+    }
+
     // remove unneeded fields
     tableData = tableData.select(...allFields);
 
@@ -158,7 +176,7 @@ export const useData = ({
     }
 
     return tableData;
-  }, [data, groupBy, groupByKey, splitBy, measures, sortBy]);
+  }, [data, groupBy, splitBy, measures, sortBy, delta, groupByKey]);
 
   return chartData;
 };

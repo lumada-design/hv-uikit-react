@@ -29,7 +29,7 @@ interface EChartsTooltipParams {
 }
 
 interface HvTooltipHookProps {
-  measures:
+  measures?:
     | Arrayable<HvLineChartMeasures | HvBarChartMeasures>
     | HvDonutChartMeasure;
   trigger?: "item" | "axis";
@@ -44,7 +44,7 @@ interface HvTooltipHookProps {
 }
 
 export const useTooltip = ({
-  measures,
+  measures = [],
   classes,
   component,
   show = true,
@@ -75,7 +75,6 @@ export const useTooltip = ({
             : horizontal
             ? params[0].dimensionNames[params[0].encode.x[0]]
             : params[0].dimensionNames[params[0].encode.y[0]],
-
           measures
         );
 
@@ -181,9 +180,14 @@ export const useTooltip = ({
           series: params.map((p) => {
             return {
               color: p.color,
-              name: p.seriesType === "pie" ? p.name : p.seriesName,
+              name:
+                p.seriesType === "heatmap"
+                  ? String(p.value[p.encode.y[0]])
+                  : p.seriesType === "pie"
+                  ? p.name
+                  : p.seriesName,
               value:
-                p.seriesType === "pie"
+                p.seriesType === "pie" || p.seriesType === "heatmap"
                   ? p.value[p.encode.value[0]]
                   : horizontal
                   ? p.value[p.encode.x[0]]

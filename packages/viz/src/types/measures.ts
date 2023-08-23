@@ -51,8 +51,12 @@ export interface BarFullMeasures extends BaseMeasures, AxisMeasures {}
 
 export interface DonutFullMeasures extends BaseMeasures {}
 
+export interface ConfusionMatrixMeasure extends BaseMeasures {}
+
 export type HvLineChartMeasures = string | LineFullMeasures;
 
 export type HvBarChartMeasures = string | BarFullMeasures;
 
 export type HvDonutChartMeasure = string | DonutFullMeasures;
+
+export type HvConfusionMatrixMeasure = string | ConfusionMatrixMeasure;
