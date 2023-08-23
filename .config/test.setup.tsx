@@ -24,7 +24,19 @@ beforeAll(() => {
     disconnect() {}
   }
 
+  class IntersectionObserver {
+    observe() {}
+    disconnect() {}
+    unobserve() {}
+  }
+
   window.ResizeObserver = ResizeObserver;
+
+  Object.defineProperty(window, "IntersectionObserver", {
+    writable: true,
+    configurable: true,
+    value: IntersectionObserver,
+  });
 
   Object.defineProperty(window, "matchMedia", {
     writable: true,
