@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, SetStateAction, useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
@@ -95,10 +95,10 @@ const Progress = ({
   label,
   inc,
 }: {
-  label: (val: any) => ReactNode;
-  inc: (val: number) => any;
+  label: (val: number) => ReactNode;
+  inc: SetStateAction<number>;
 }) => {
-  const [value, setValue] = useState<any>(0);
+  const [value, setValue] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -110,18 +110,26 @@ const Progress = ({
   return <HvLoading label={label?.(value)} />;
 };
 
-export const Determinate = () => {
-  return (
-    <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <ButtonDeterminate label="Determine w/ percentages">
-        <Progress label={(v) => `${v}%`} inc={(v) => (v === 100 ? 0 : v + 5)} />
-      </ButtonDeterminate>
-      <ButtonDeterminate label="Determine w/ progress">
-        <Progress
-          label={(v) => `${v}M/75M`}
-          inc={(v) => (v >= 75 ? 0 : Math.round(v + 5))}
-        />
-      </ButtonDeterminate>
-    </div>
-  );
+export const Determinate: StoryObj<HvLoadingProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
+  render: () => {
+    return (
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <ButtonDeterminate label="Determine w/ percentages">
+          <Progress
+            label={(v) => `${v}%`}
+            inc={(v) => (v === 100 ? 0 : v + 5)}
+          />
+        </ButtonDeterminate>
+        <ButtonDeterminate label="Determine w/ progress">
+          <Progress
+            label={(v) => `${v}M/75M`}
+            inc={(v) => (v >= 75 ? 0 : Math.round(v + 5))}
+          />
+        </ButtonDeterminate>
+      </div>
+    );
+  },
 };

@@ -1,6 +1,5 @@
 import { Tabs, TabsProps as MuiTabsProps } from "@mui/material";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { staticClasses, useClasses } from "./Tabs.styles";
 
@@ -9,9 +8,7 @@ export { staticClasses as tabsClasses };
 export type HvTabsClasses = ExtractNames<typeof useClasses>;
 
 // Mui Tabs props: https://mui.com/material-ui/api/tabs/#props
-export interface HvTabsProps
-  extends MuiTabsProps,
-    HvBaseProps<HTMLButtonElement, "onChange"> {
+export interface HvTabsProps extends Omit<MuiTabsProps, "onChange"> {
   /**
    * The value of the currently selected Tab. If you don't want any selected Tab, you can set this property to `false`.
    */
