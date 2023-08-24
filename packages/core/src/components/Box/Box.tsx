@@ -35,6 +35,7 @@ export const HvBox: HvBoxProps = forwardRef(
       component: Component = "div",
       sx,
       children,
+      classes,
       ...restProps
     } = useDefaultProps("HvBox", props);
 
