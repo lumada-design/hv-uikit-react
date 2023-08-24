@@ -18,7 +18,8 @@ interface SavedColorsProps {
   onClickColor: (color: { hex: string; source: string }) => void;
   onAddColor: () => void;
   onRemoveColor: (color: string, index: number) => void;
-  deleteButtonArialLabel?: string;
+  deleteButtonAriaLabel?: string;
+  addButtonAriaLabel?: string;
   classes?: HvColorPickerSavedColorsClasses;
 }
 
@@ -27,7 +28,8 @@ export const SavedColors = ({
   onClickColor,
   onAddColor,
   onRemoveColor,
-  deleteButtonArialLabel,
+  deleteButtonAriaLabel,
+  addButtonAriaLabel,
   classes: classesProp,
 }: SavedColorsProps) => {
   const { classes } = useClasses(classesProp);
@@ -46,8 +48,9 @@ export const SavedColors = ({
         variant="secondarySubtle"
         icon
         onClick={onAddColor}
+        aria-label={addButtonAriaLabel}
       >
-        <Add />
+        <Add aria-hidden />
       </HvButton>
       {colors.map((color, index) => (
         <div
@@ -69,9 +72,9 @@ export const SavedColors = ({
               variant="secondarySubtle"
               onClick={() => onRemoveColor(color, index)}
               tabIndex={0}
-              aria-label={deleteButtonArialLabel}
+              aria-label={deleteButtonAriaLabel}
             >
-              <CloseXS iconSize="XS" />
+              <CloseXS aria-hidden iconSize="XS" />
             </HvButton>
           </div>
         </div>

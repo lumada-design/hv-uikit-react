@@ -44,7 +44,7 @@ export interface HvTagProps
   /** The role of the element with an attributed event. */
   role?: string;
   /** Aria properties to apply to delete button in tag */
-  deleteButtonArialLabel?: string;
+  deleteButtonArialLabel?: string; // TODO: fix typo "ArialLabel" in next version
   /** Props to apply to delete button */
   deleteButtonProps?: HvButtonProps;
   /** A Jss Object used to override or extend the styles applied to the component. */

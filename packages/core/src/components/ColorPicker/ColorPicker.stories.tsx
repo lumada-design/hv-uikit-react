@@ -56,6 +56,7 @@ export const WithoutSavedColors: StoryObj<HvColorPickerProps> = {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
+          aria-label="Color"
           expanded
           showSavedColors={false}
           onChange={(color) => console.log(color)}
@@ -79,6 +80,7 @@ export const OnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
+          aria-label="Color"
           expanded
           showSavedColors={false}
           showCustomColors={false}
@@ -103,6 +105,7 @@ export const IconOnly: StoryObj<HvColorPickerProps> = {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
+          aria-label="Color"
           iconOnly
           expanded
           onChange={(color) => console.log(color)}
@@ -126,6 +129,7 @@ export const IconOnlyWithoutSavedColors: StoryObj<HvColorPickerProps> = {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
+          aria-label="Color"
           iconOnly
           expanded
           showSavedColors={false}
@@ -151,6 +155,7 @@ export const IconOnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
+          aria-label="Color"
           iconOnly
           expanded
           showSavedColors={false}
@@ -177,6 +182,7 @@ export const CustomizedColorPicker: StoryObj<HvColorPickerProps> = {
     return (
       <div style={{ width: "240px" }}>
         <HvColorPicker
+          aria-label="Color"
           expanded
           showLabels={false}
           showSavedColors={false}
@@ -241,6 +247,7 @@ export const ControlledColorPicker: StoryObj<HvColorPickerProps> = {
         </div>
         <div style={{ width: "134px" }}>
           <HvColorPicker
+            aria-label="Color"
             expanded
             showSavedColors={false}
             onChange={(value) => {
