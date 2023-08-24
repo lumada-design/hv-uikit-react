@@ -1,22 +1,20 @@
-export const getManagerStyles = () => {
+import { GlobalProps } from "@emotion/react";
+import { colors } from "@hitachivantara/uikit-styles";
+
+export const getManagerStyles = (isDark: boolean): GlobalProps["styles"] => {
+  const color = colors[isDark ? "dark" : "light"];
+
   return {
     ".sidebar-container": {
       ".sidebar-header": {
         button: {
-          display: "none",
+          opacity: 0,
         },
-
         div: {
           margin: 0,
         },
-
-        a: {
-          textAlign: "center",
-          fontSize: 27,
-        },
-
         img: {
-          width: "80%",
+          maxHeight: 80,
         },
       },
 
@@ -24,24 +22,22 @@ export const getManagerStyles = () => {
         borderRadius: 2,
       },
 
-      ".sidebar-item.sidebar-item": {
-        fontSize: 14,
-        paddingBottom: 4,
-        paddingTop: 4,
+      ".sidebar-item": {
+        "&[data-selected=true]": {
+          background: color.primary,
+          "&:hover, &:focus": {
+            background: color.primary_80,
+          },
+        },
       },
 
       ".sidebar-subheading button": {
-        fontWeight: 900,
         fontSize: 12,
       },
     },
 
     "button[title='Apply outlines to the preview']": {
       display: "none",
-    },
-
-    ".sidebar-item.sidebar-item svg": {
-      color: "inherit",
     },
   };
 };

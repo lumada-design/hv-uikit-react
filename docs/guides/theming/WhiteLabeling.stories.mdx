@@ -1,4 +1,4 @@
-import { Meta, Canvas } from "@storybook/addon-docs";
+import { Meta, Unstyled } from "@storybook/addon-docs";
 import { WhiteLabeling } from "./WhiteLabeling";
 
 <Meta title="Guides/Theming/White Labeling" />
@@ -67,7 +67,9 @@ const MyApp = ({ children }) => {
 Only by customizing the theme, the `HvHeader`, `HvButton`, `HvHeaderBrand`, `HvHeaderNavigation`, `HvGlobalActions`, `HvTypography`, and `HvContainer`
 components were able change their default styling.
 
-<WhiteLabeling />
+<Unstyled>
+  <WhiteLabeling />
+</Unstyled>
 
 Implementing deeper customizations to an element than the ones presented above requires you to use others types of customization.
 For more information on how you can customize components, report to the [customization](/docs/guides-styling-customization--inline-styles#customization) documentation.

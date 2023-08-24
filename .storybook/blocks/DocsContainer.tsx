@@ -27,7 +27,7 @@ export default ({ context, children }) => {
     };
   }, []);
 
-  const docsStyles = useMemo(() => getDocsStyles(mode === "wicked"), [mode]);
+  const docsStyles = useMemo(() => getDocsStyles(), [mode]);
 
   return (
     <>

@@ -12,7 +12,7 @@ export default {
     "../packages/**/src/**/*.stories.@(ts|tsx|mdx)",
   ],
   addons: [
-    "@storybook/addon-actions",
+    // "@storybook/addon-actions",
     "@storybook/addon-controls",
     "@storybook/addon-toolbars",
     {

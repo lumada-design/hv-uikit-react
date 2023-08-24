@@ -18,14 +18,16 @@ import {
 import { ADDON_EVENT, ADDON_ID } from "./constants";
 
 const ThemeSelector = ({ api }) => {
-  const managerStyles = getManagerStyles();
   const themesList = getThemesList(themes);
   const initialTheme = getInitialTheme(themesList);
   const [selectedTheme, setSelectedTheme] = useState(initialTheme);
 
-  const switchMode = (mode: string) => {
-    const currentTheme = getLocalTheme();
+  const currentTheme = getLocalTheme();
 
+  const [, mode] = currentTheme?.split("-") || ["ds5", "dawn"];
+  const managerStyles = getManagerStyles(mode === "wicked");
+
+  const switchMode = (mode: string) => {
     const newTheme = themesList.find(
       (el) => el.name === `${currentTheme?.split("-")[0]}-${mode}`
     );
@@ -68,7 +70,12 @@ const ThemeSelector = ({ api }) => {
         trigger="click"
         tooltip={<TooltipLinkList links={links} />}
       >
-        <IconButton key={ADDON_ID} active={false} title={"Select theme"}>
+        <IconButton
+          key={ADDON_ID}
+          active={false}
+          title="Select theme"
+          style={{ width: 140 }}
+        >
           {`Theme: ${selectedTheme?.label}`}
         </IconButton>
       </WithTooltip>

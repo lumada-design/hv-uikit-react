@@ -1,19 +1,24 @@
-import { HvButton, HvTypography } from "@hitachivantara/uikit-react-core";
+import {
+  HvButton,
+  HvTypography,
+  useTheme,
+} from "@hitachivantara/uikit-react-core";
 
 import { Wrapper, BackgroundWrapper, ContentWrapper } from "./styles";
 
 const Header = () => {
+  const { selectedMode } = useTheme();
+  const mode = selectedMode === "wicked" ? "dark" : "light";
+
   return (
-    <BackgroundWrapper id="hv-welcome-image">
+    <BackgroundWrapper style={{ backgroundImage: `url(welcome-${mode}.png)` }}>
       <Wrapper>
         <ContentWrapper>
-          <>
-            <HvTypography variant="title1">NEXT UI Kit</HvTypography>
-            <div />
-            <HvTypography variant="title3">
-              React UI library for the Next Design System
-            </HvTypography>
-          </>
+          <HvTypography variant="title1">NEXT UI Kit</HvTypography>
+          <div />
+          <HvTypography variant="title3">
+            React UI library for the Next Design System
+          </HvTypography>
           <div>
             <HvButton
               component="a"
