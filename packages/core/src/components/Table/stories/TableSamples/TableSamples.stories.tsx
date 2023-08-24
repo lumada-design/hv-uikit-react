@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   useFlexLayout,
   useBlockLayout,
@@ -51,6 +51,12 @@ import {
   useServerData,
 } from "../storiesUtils";
 import LoadingContainer from "./LoadingContainer";
+
+export default {
+  component: HvTable,
+  title: "Guides/Table/Table Samples",
+  parameters: { docs: { disabled: true }, sidebar: { disabled: true } },
+} satisfies Meta<typeof HvTable>;
 
 const EmptyRow = ({ height }) => (
   <HvTableRow>

@@ -1,14 +1,20 @@
-// build warning is expected:
-// Skipping packages/core/src/Snackbar/stories/SnackbarProvider.stories.js: NoMetaError: CSF: missing default export
-// this .stories.js file is only intended to be parsed for retrieving the stories' source code,
-// but they are rendered by the SnackbarProvider.stories.mdx file
-
+import { Meta } from "@storybook/react";
 import {
   HvButton,
   HvSnackbarProps,
   HvSnackbarProvider,
   useHvSnackbar,
 } from "@hitachivantara/uikit-react-core";
+
+export default {
+  component: HvSnackbarProvider,
+  title: "Components/Snackbar/Provider/Samples",
+  parameters: {
+    docs: { disabled: true },
+    sidebar: { disabled: true },
+    eyes: { include: false },
+  },
+} satisfies Meta<typeof HvSnackbarProvider>;
 
 const Button = ({ onClick, variant }) => (
   <HvButton
@@ -59,7 +65,3 @@ export const SnackbarProvider = () => (
     </div>
   </HvSnackbarProvider>
 );
-
-SnackbarProvider.parameters = {
-  eyes: { include: false },
-};
