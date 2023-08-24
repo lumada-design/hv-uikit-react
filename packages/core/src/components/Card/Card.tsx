@@ -54,9 +54,9 @@ export const HvCard = (props: HvCardProps) => {
   } = useDefaultProps("HvCard", props);
 
   const { classes, css, cx } = useClasses(classesProp);
+
   return (
     <HvBox
-      aria-selected={selectable ? selected : undefined}
       className={cx(
         "HvIsCardGridElement",
         classes.root,
