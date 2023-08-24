@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.26.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.25.3...@hitachivantara/uikit-react-core@5.26.0) (2023-08-24)
+
+### Features
+
+- **bulkActions:** update do ds5 styles ([#3631](https://github.com/lumada-design/hv-uikit-react/issues/3631)) ([778424d](https://github.com/lumada-design/hv-uikit-react/commit/778424d0f50a22cabf5526a0658127b92f99eab5))
+
 ## [5.25.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.25.2...@hitachivantara/uikit-react-core@5.25.3) (2023-08-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
