@@ -57,7 +57,7 @@ export const Main: StoryObj<HvToggleButtonProps> = {
   },
   decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
   render: (args) => {
-    return <HvToggleButton {...args} />;
+    return <HvToggleButton aria-label="Favorite" {...args} />;
   },
 };
 
