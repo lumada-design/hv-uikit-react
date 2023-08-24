@@ -345,9 +345,6 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     if (component) {
       return React.cloneElement(component as React.ReactElement, {
         ref: handleDropdownHeaderRef,
-        "aria-controls": isOpen
-          ? setId(elementId, "children-container")
-          : undefined,
       });
     }
 
@@ -366,9 +363,6 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
         })}
         role={ariaRole === "combobox" ? "textbox" : undefined}
         style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
-        aria-controls={
-          isOpen ? setId(elementId, "children-container") : undefined
-        }
         aria-label={others["aria-label"] ?? undefined}
         aria-labelledby={others["aria-labelledby"] ?? undefined}
         aria-required={required ?? undefined}
@@ -497,6 +491,9 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
         role={ariaRole}
         aria-expanded={ariaExpanded}
         aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
+        aria-controls={
+          isOpen ? setId(elementId, "children-container") : undefined
+        }
         aria-required={required ?? undefined}
         aria-readonly={readOnly ?? undefined}
         className={cx(
