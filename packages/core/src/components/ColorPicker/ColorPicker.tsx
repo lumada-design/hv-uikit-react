@@ -91,7 +91,9 @@ export interface HvColorPickerProps {
   /** Callback fired when a new saved color is removed. */
   onSavedColorRemoved?: (color?: string) => void;
   /** Aria label to apply to delete saved color button. */
-  deleteSavedColorButtonArialLabel?: string;
+  deleteSavedColorButtonArialLabel?: string; // TODO: fix typo "ArialLabel" in next version
+  /** Aria label to apply to add saved color button. */
+  addSavedColorButtonAriaLabel?: string;
 }
 
 const DEFAULT_LABELS: HvColorPickerProps["labels"] = {
@@ -149,6 +151,7 @@ export const HvColorPicker = (props: HvColorPickerProps) => {
     onSavedColorAdded,
     onSavedColorRemoved,
     deleteSavedColorButtonArialLabel = "Delete saved color",
+    addSavedColorButtonAriaLabel = "Add current color to saved colors",
   } = useDefaultProps("HvColorPicker", props);
 
   const { classes, css, cx } = useClasses(classesProp);
@@ -330,7 +333,8 @@ export const HvColorPicker = (props: HvColorPickerProps) => {
                 onAddColor={handleAddColor}
                 onClickColor={handleSelect}
                 onRemoveColor={handleRemoveColor}
-                deleteButtonArialLabel={deleteSavedColorButtonArialLabel}
+                deleteButtonAriaLabel={deleteSavedColorButtonArialLabel}
+                addButtonAriaLabel={addSavedColorButtonAriaLabel}
               />
             )}
             {recommendedColorsPosition === "bottom" && (
