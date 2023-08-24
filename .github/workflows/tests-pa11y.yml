@@ -19,16 +19,11 @@ jobs:
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
 
-      - name: Build Documentation
-        uses: ./.github/actions/build-artifacts
-        with:
-          build-app: false
-
-      - name: Fetch Documentation
-        uses: actions/download-artifact@v3
-        with:
-          name: documentation
-          path: ${{ github.workspace }}/dist
+      - name: Build Storybook
+        run: npm run build:doc
+        env:
+          NODE_OPTIONS: "--max_old_space_size=8192"
+        shell: bash
 
       - name: Run Tests
         run: |
