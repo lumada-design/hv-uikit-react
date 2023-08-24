@@ -1,8 +1,8 @@
 import { colors } from "@hitachivantara/uikit-styles";
 
-import { create, ThemeVars } from "@storybook/theming";
+import { create, ThemeVarsPartial } from "@storybook/theming";
 
-const getThemeVars = (base: "light" | "dark"): ThemeVars => ({
+const getThemeVars = (base: "light" | "dark"): ThemeVarsPartial => ({
   base,
 
   appBg: colors[base].atmo1,
@@ -23,10 +23,10 @@ const getThemeVars = (base: "light" | "dark"): ThemeVars => ({
   textMutedColor: colors[base].secondary_80,
 
   // controls styles
-  // booleanBg: colors[base].atmo2,
-  // booleanSelectedBg: colors[base].atmo1,
-  // buttonBg: colors[base].atmo1,
-  // buttonBorder: colors[base].secondary,
+  booleanBg: colors[base].atmo2,
+  booleanSelectedBg: colors[base].atmo1,
+  buttonBg: colors[base].atmo1,
+  buttonBorder: colors[base].secondary,
   inputBg: colors[base].atmo1,
   inputBorder: colors[base].secondary_60,
   inputBorderRadius: 2,

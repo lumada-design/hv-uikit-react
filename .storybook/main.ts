@@ -1,31 +1,36 @@
-const tsconfigPaths = require("vite-tsconfig-paths");
-const path = require("path");
+import { StorybookConfig } from "@storybook/react-vite";
+import tsconfigPaths from "vite-tsconfig-paths";
+import remarkGfm from "remark-gfm";
 
-module.exports = {
+export default {
+  framework: {
+    name: "@storybook/react-vite",
+    options: {},
+  },
   stories: [
     "../docs/**/*.stories.@(tsx|mdx)",
     "../packages/**/src/**/*.stories.@(ts|tsx|mdx)",
   ],
   addons: [
+    // "@storybook/addon-actions",
+    "@storybook/addon-controls",
+    "@storybook/addon-toolbars",
     {
-      name: "@storybook/addon-essentials",
+      name: "@storybook/addon-docs",
       options: {
-        backgrounds: false,
-        viewport: false,
-        measure: false,
-        outline: false,
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
       },
     },
     "@storybook/addon-a11y",
     "@storybook/addon-links",
-    __dirname + "/addons/version-selector/register",
-    __dirname + "/addons/theme-selector/register",
-    __dirname + "/addons/mode-selector/register",
+    __dirname + "/addons/version-selector",
+    __dirname + "/addons/theme-selector",
+    __dirname + "/addons/mode-selector",
   ],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-vite",
-  },
   features: {
     storyStoreV7: true,
     buildStoriesJson: true,
@@ -46,13 +51,12 @@ module.exports = {
     },
   ],
   async viteFinal(config, { configType }) {
-    config.plugins.push(tsconfigPaths.default({ loose: true }));
+    config.plugins?.push(tsconfigPaths({ loose: true }));
 
     config.optimizeDeps = {
       ...config.optimizeDeps,
       include: [
         "@mdx-js/react",
-        "@storybook/api",
         "@storybook/theming",
         "@storybook/addon-docs",
         "@storybook/addon-links/react",
@@ -74,4 +78,7 @@ module.exports = {
       shouldRemoveUndefinedFromOptional: true,
     },
   },
-};
+  docs: {
+    autodocs: true,
+  },
+} as StorybookConfig;

@@ -16,6 +16,10 @@ const meta: Meta<typeof HvSnackbar> = {
   subcomponents: {
     HvSnackbarContent,
   },
+  decorators: [(Story) => <div style={{ minHeight: 60 }}>{Story()}</div>],
+  args: {
+    offset: 20,
+  },
 };
 export default meta;
 
@@ -24,7 +28,7 @@ export const Main: StoryObj<HvSnackbarProps> = {
     open: true,
     variant: "default",
     label: "This is a snackbar",
-    offset: 0,
+    offset: 20,
     transitionDirection: "left",
     showIcon: true,
     transitionDuration: 300,
@@ -38,9 +42,6 @@ export const Main: StoryObj<HvSnackbarProps> = {
     actionCallback: { control: { disable: true } },
     snackbarContentProps: { control: { disable: true } },
   },
-  render: (args) => {
-    return <HvSnackbar {...args} />;
-  },
 };
 
 export const Variants: StoryObj<HvSnackbarProps> = {
@@ -52,20 +53,16 @@ export const Variants: StoryObj<HvSnackbarProps> = {
       },
     },
   },
-
-  render: () => {
-    const props: Partial<HvSnackbarProps> = {
-      open: true,
-      offset: 0,
-      classes: {
-        root: css({
-          position: "relative",
-          top: 0,
-          marginBottom: 10,
-        }),
-      },
-    };
-
+  args: {
+    open: true,
+    offset: 0,
+    className: css({
+      position: "relative",
+      top: 0,
+      marginBottom: 10,
+    }),
+  },
+  render: (props) => {
     return (
       <>
         <HvSnackbar

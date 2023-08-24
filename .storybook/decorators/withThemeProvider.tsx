@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 import { addons } from "@storybook/addons";
 import { Global } from "@storybook/theming";
@@ -16,8 +16,7 @@ const withThemeProvider = (story) => {
 
   const [selectedTheme, setSelectedTheme] = useState(initialTheme);
 
-  const theme = selectedTheme?.split("-")[0] || "ds5";
-  const mode = selectedTheme?.split("-")[1] || "dawn";
+  const [theme, mode] = selectedTheme?.split("-") || ["ds5", "dawn"];
   const base = theme === "ds3" ? ds3 : ds5;
 
   const storyStyles = getStoryStyles(base.colors.modes[mode].atmo2);
@@ -46,7 +45,9 @@ const withThemeProvider = (story) => {
         colorMode={mode}
       >
         <HvVizProvider>
-          <div style={{ padding: 20 }}>{story()}</div>
+          <div className="hv-story-sample" style={{ padding: 20 }}>
+            {story()}
+          </div>
         </HvVizProvider>
       </HvProvider>
     </>

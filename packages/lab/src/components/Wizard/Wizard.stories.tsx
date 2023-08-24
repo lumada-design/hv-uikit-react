@@ -26,6 +26,7 @@ const meta: Meta<typeof HvWizard> = {
   title: "Lab/Wizard",
   component: HvWizard,
   subcomponents: {},
+  decorators: [(Story) => <div style={{ minHeight: 600 }}>{Story()}</div>],
 };
 export default meta;
 
