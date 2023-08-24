@@ -130,6 +130,8 @@ export const AllComponents: StoryObj<HvCardProps> = {
     const [checked, setChecked] = useState(false);
     const [myActions, setMyActions] = useState<any[]>([]);
 
+    // Note: Fixes an issue with Storybook where the screen will freeze if the state is already
+    // initialized. Thus, we initialized it here in useEffect when the component mounts.
     useEffect(() => {
       setMyActions([
         { id: "post", label: "Upload", icon: <Upload />, disabled: false },
@@ -163,12 +165,10 @@ export const AllComponents: StoryObj<HvCardProps> = {
       <HvCard
         style={{ width: 360 }}
         bgcolor="atmo1"
-        icon={<Level3Bad semantic="negative" />}
+        icon={<Level3Bad color="negative" />}
         statusColor="negative"
         selected={checked}
         selectable
-        // @ts-ignore
-        onClick={(event) => console.log(`my value is ${event.target.value}`)}
       >
         <HvCardHeader
           title="Leaves appear wilted and scorched"
@@ -201,25 +201,25 @@ export const AllComponents: StoryObj<HvCardProps> = {
             </StyledBottomItem>
           </Grid>
         </HvCardContent>
-        <HvCardMedia
-          component="img"
-          alt="leafy leaf"
-          height={160}
-          image={leaf}
-        />
+        <HvCardMedia component="img" alt="Leaves" height={160} image={leaf} />
         <HvActionBar>
           <HvCheckBox
             id="controller"
             onChange={() => setChecked(!checked)}
             checked={checked}
             value="value"
-            inputProps={{ "aria-label": "leaf input" }}
+            inputProps={{
+              "aria-label":
+                "Tick to select the wilted and scorched leaves card.",
+            }}
           />
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
             actions={myActions}
             maxVisibleActions={1}
-            actionsCallback={(e, id, a) => alert(`You have pressed ${a.label}`)}
+            actionsCallback={(e, id, a) =>
+              alert(`You have pressed ${a.label}.`)
+            }
           />
         </HvActionBar>
       </HvCard>
@@ -337,47 +337,65 @@ export const KPICard: StoryObj<HvCardProps> = {
       </HvCardContent>
     );
 
-    const CardFooter = ({ n }: { n: number }) => (
-      <HvActionBar aria-label="Leaf">
+    const CardFooter = ({ n, value }: { n: number; value: string }) => (
+      <HvActionBar>
         <HvCheckBox
           onChange={() => setChecked(n)}
           checked={checked === n}
           value="value"
-          inputProps={{ "aria-label": "leaf input" }}
+          inputProps={{
+            "aria-label": `Tick to select the replace contaminated oil card with confidence score of ${value}%`,
+          }}
         />
         <div style={{ flex: 1 }} />
       </HvActionBar>
     );
 
     return (
-      <Grid container>
-        <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-          <StyledCard statusColor="neutral" selectable selected={checked === 1}>
-            <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
-            <CardContent value="85" icon={<Level1 semantic="neutral" />} />
-            <CardFooter n={1} />
-          </StyledCard>
-        </Grid>
-        <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-          <StyledCard statusColor="warning" selectable selected={checked === 2}>
-            <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
-            <CardContent
-              value="45"
-              icon={<Level2Average semantic="warning" />}
-            />
-            <CardFooter n={2} />
-          </StyledCard>
-        </Grid>
-        <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-          <StyledCard
-            statusColor="negative"
-            selectable
-            selected={checked === 3}
-          >
-            <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
-            <CardContent value="19" icon={<Level3Bad semantic="negative" />} />
-            <CardFooter n={3} />
-          </StyledCard>
+      <Grid container role="grid" aria-label="Select one card">
+        <Grid container role="row">
+          <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
+            <StyledCard
+              statusColor="neutral"
+              selectable
+              selected={checked === 1}
+              role="gridcell"
+              aria-selected={checked === 1}
+            >
+              <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
+              <CardContent value="85" icon={<Level1 color="neutral" />} />
+              <CardFooter n={1} value="85" />
+            </StyledCard>
+          </Grid>
+          <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
+            <StyledCard
+              statusColor="warning"
+              selectable
+              selected={checked === 2}
+              role="gridcell"
+              aria-selected={checked === 2}
+            >
+              <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
+              <CardContent
+                value="45"
+                icon={<Level2Average color="warning" />}
+              />
+              <CardFooter n={2} value="84" />
+            </StyledCard>
+          </Grid>
+          <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
+            <StyledCard
+              statusColor="negative"
+              selectable
+              selected={checked === 3}
+              role="gridcell"
+              aria-selected={checked === 3}
+            >
+              <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
+              <CardContent value="19" icon={<Level3Bad color="negative" />} />
+              <CardFooter n={3} value="19" />
+            </StyledCard>
+          </Grid>
         </Grid>
       </Grid>
     );
@@ -415,7 +433,7 @@ export const Selectable: StoryObj<HvCardProps> = {
         <StyledButton
           type="button"
           onClick={() => setChecked(!checked)}
-          aria-label="Asset Avatar L90 press enter or space to select this card"
+          aria-label="Press enter or space to select the asset avatar L90 card."
           tabIndex={-1}
         >
           {children}
@@ -445,7 +463,9 @@ export const Selectable: StoryObj<HvCardProps> = {
             onChange={() => setChecked(!checked)}
             checked={checked}
             value="value"
-            inputProps={{ "aria-label": "leaf input" }}
+            inputProps={{
+              "aria-label": "Tick to select the asset avatar L90 card.",
+            }}
           />
           <div style={{ width: 32, height: 32 }}>
             <HvToggleButton
@@ -491,11 +511,7 @@ export const SelectableNoFooter: StoryObj<HvCardProps> = {
         </div>
       </HvCardContent>
     );
-    /*
-    `aria-selected` is explicitly unset because cards
-    are normally used in groups, however this being an isolated card
-    the proper role for it is a button/toggle-button with `aria-pressed`
-  */
+
     return (
       <HvCard
         bgcolor="atmo1"
@@ -510,7 +526,6 @@ export const SelectableNoFooter: StoryObj<HvCardProps> = {
           }
         }}
         aria-pressed={selected}
-        aria-selected={undefined}
         onClick={() => setSelected(!selected)}
         statusColor="negative"
       >
