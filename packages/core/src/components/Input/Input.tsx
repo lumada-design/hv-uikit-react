@@ -683,7 +683,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
       return null;
     }
 
-    return <Success semantic="positive" className={classes.icon} />;
+    return <Success color="positive" className={classes.icon} />;
   }, [showValidationIcon, validationState, classes.icon]);
 
   // useMemo to avoid repetitive cloning of the custom icon

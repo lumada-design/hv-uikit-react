@@ -77,13 +77,13 @@ export const getColumns = (): HvTableColumnConfig<
 export const getStatusIcon = (color: string) => {
   switch (color) {
     case "positive":
-      return <Level0Good semantic="positive" />;
+      return <Level0Good color="positive" />;
     case "neutral":
-      return <Level1 semantic="neutral" />;
+      return <Level1 color="neutral" />;
     case "warning":
-      return <Level2Average semantic="warning" />;
+      return <Level2Average color="warning" />;
     case "negative":
-      return <Level3Bad semantic="negative" />;
+      return <Level3Bad color="negative" />;
     default:
       return undefined;
   }
