@@ -35,14 +35,6 @@ export const HvBaseChart = ({ options, width, height }: HvBaseChartProps) => {
     animation: false,
     ...options,
   });
-  const [initialSize, setInitialSize] = useState(
-    width != null || height != null
-      ? {
-          width,
-          height,
-        }
-      : undefined
-  );
 
   useEffect(() => {
     if (!isMounted.current) {
@@ -51,7 +43,7 @@ export const HvBaseChart = ({ options, width, height }: HvBaseChartProps) => {
     }
 
     // when the theme changes echarts destroys the chart and mounts it again
-    // thus we need to reset the initial data
+    // thus we need to reset the initial option
     if (theme !== currentTheme.current) {
       setInitialOption({
         aria: {
@@ -59,10 +51,6 @@ export const HvBaseChart = ({ options, width, height }: HvBaseChartProps) => {
         },
         animation: false,
         ...options,
-      });
-      setInitialSize({
-        width,
-        height,
       });
       currentTheme.current = theme;
       return;
@@ -72,13 +60,6 @@ export const HvBaseChart = ({ options, width, height }: HvBaseChartProps) => {
 
     if (!instance) return;
 
-    if (width !== instance.getWidth() || height !== instance.getHeight()) {
-      instance.resize({
-        width,
-        height,
-      });
-    }
-
     instance.setOption(
       {
         ...options,
@@ -87,7 +68,7 @@ export const HvBaseChart = ({ options, width, height }: HvBaseChartProps) => {
         replaceMerge: ["xAxis", "yAxis", "series", "dataset"],
       }
     );
-  }, [theme, options, width, height]);
+  }, [theme, options]);
 
   return (
     <ReactECharts
@@ -96,8 +77,8 @@ export const HvBaseChart = ({ options, width, height }: HvBaseChartProps) => {
       option={initialOption}
       theme={theme}
       notMerge
-      {...(initialSize && {
-        style: { ...initialSize },
+      {...((width || height) && {
+        style: { width, height },
       })}
     />
   );
