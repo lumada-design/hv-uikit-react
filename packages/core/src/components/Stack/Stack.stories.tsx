@@ -182,12 +182,7 @@ export const WithNavigation = () => {
           divider={false}
           dividerProps={{ variant: "middle", light: true }}
         >
-          <HvCard
-            bgcolor="atmo1"
-            statusColor="negative"
-            style={{ width: 275 }}
-            selectable
-          >
+          <HvCard bgcolor="atmo1" statusColor="negative" style={{ width: 275 }}>
             <HvCardHeader title="Card 1" icon={<Tool />} />
             <HvCardContent>
               <div style={{ marginTop: "20px" }}>
@@ -216,12 +211,7 @@ export const WithNavigation = () => {
               <div style={{ flex: 1 }} />
             </HvActionBar>
           </HvCard>
-          <HvCard
-            bgcolor="atmo1"
-            statusColor="positive"
-            style={{ width: 275 }}
-            selectable
-          >
+          <HvCard bgcolor="atmo1" statusColor="positive" style={{ width: 275 }}>
             <HvCardHeader title="Card 2" icon={<Tool />} />
             <HvCardContent>
               <div style={{ marginTop: "20px" }}>
@@ -243,12 +233,7 @@ export const WithNavigation = () => {
               <div style={{ flex: 1 }} />
             </HvActionBar>
           </HvCard>
-          <HvCard
-            bgcolor="atmo1"
-            statusColor="sema15"
-            style={{ width: 275 }}
-            selectable
-          >
+          <HvCard bgcolor="atmo1" statusColor="sema15" style={{ width: 275 }}>
             <HvCardHeader title="Card 3" icon={<Tool />} />
             <HvCardContent>
               <div style={{ marginTop: "20px" }}>
@@ -274,7 +259,6 @@ export const WithNavigation = () => {
             bgcolor="atmo1"
             statusColor="neutral_20"
             style={{ width: 275 }}
-            selectable
           >
             <HvCardHeader title="Card 4" icon={<Tool />} />
             <HvCardContent>

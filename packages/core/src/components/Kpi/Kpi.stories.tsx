@@ -98,7 +98,7 @@ export const AverageService: StoryObj<HvKpiProps> = {
         className={css(styles.root)}
         statusColor="positive"
         bgcolor="atmo2"
-        icon={<Level0Good title="Good" semantic="positive" />}
+        icon={<Level0Good title="Good" color="positive" />}
       >
         <div className={css(styles.contentContainer)}>
           <HvTypography className={css(styles.title)} variant="label">
@@ -108,7 +108,7 @@ export const AverageService: StoryObj<HvKpiProps> = {
             <HvTypography className={css(styles.value)} variant="title2">
               12 414
             </HvTypography>
-            <TopXS title="Up" semantic="positive" />
+            <TopXS title="Up" color="positive" />
             <HvTypography>10%</HvTypography>
           </div>
         </div>
@@ -200,8 +200,16 @@ export const IOPS: StoryObj<HvKpiProps> = {
         selectable
         selected={selected}
         onClick={() => setSelected(!selected)}
+        tabIndex={0}
+        role="button"
+        onKeyDown={(event) => {
+          if (event.code === "Enter" || event.code === "Space") {
+            setSelected(!selected);
+          }
+        }}
+        aria-pressed={selected}
         statusColor="negative"
-        icon={<Level2Average title="Bad" semantic="negative" />}
+        icon={<Level2Average title="Bad" color="negative" />}
       >
         <div className={css(styles.contentContainer)}>
           <HvTypography className={css(styles.title)} variant="label">
@@ -330,6 +338,14 @@ export const Selectable: StoryObj<HvKpiProps> = {
         selectable
         selected={selected}
         onClick={() => setSelected(!selected)}
+        tabIndex={0}
+        role="button"
+        onKeyDown={(event) => {
+          if (event.code === "Enter" || event.code === "Space") {
+            setSelected(!selected);
+          }
+        }}
+        aria-pressed={selected}
         statusColor="sema0"
       >
         <div className={css(styles.contentContainer)}>
@@ -441,6 +457,14 @@ export const SelectableSemantic: StoryObj<HvKpiProps> = {
         selectable
         selected={selected}
         onClick={() => setSelected(!selected)}
+        tabIndex={0}
+        role="button"
+        onKeyDown={(event) => {
+          if (event.code === "Enter" || event.code === "Space") {
+            setSelected(!selected);
+          }
+        }}
+        aria-pressed={selected}
         statusColor="negative"
       >
         <div className={css(styles.contentContainer)}>
@@ -564,7 +588,7 @@ export const Gauge: StoryObj<HvKpiProps> = {
         className={css(styles.root)}
         statusColor="positive"
         bgcolor="atmo2"
-        icon={<Level0Good title="Good" semantic="positive" />}
+        icon={<Level0Good title="Good" color="positive" />}
       >
         <div className={css(styles.contentContainer)}>
           <HvTypography className={css(styles.title)} variant="label">
@@ -681,7 +705,7 @@ export const StatusTrain: StoryObj<HvKpiProps> = {
           className={css(styles.root)}
           statusColor="positive"
           bgcolor="atmo2"
-          icon={<Level0Good semantic="positive" />}
+          icon={<Level0Good color="positive" />}
         >
           <div className={css(styles.contentContainer)}>
             <HvTypography variant="label">Alarms</HvTypography>
@@ -694,7 +718,7 @@ export const StatusTrain: StoryObj<HvKpiProps> = {
           className={css(styles.root)}
           statusColor="negative"
           bgcolor="atmo2"
-          icon={<Level3Bad semantic="negative" />}
+          icon={<Level3Bad color="negative" />}
         >
           <div className={css(styles.contentContainer)}>
             <HvTypography variant="label">Transport</HvTypography>
@@ -779,6 +803,14 @@ export const Small: StoryObj<HvKpiProps> = {
           selectable
           selected={selected}
           onClick={() => setSelected(!selected)}
+          tabIndex={0}
+          role="button"
+          onKeyDown={(event) => {
+            if (event.code === "Enter" || event.code === "Space") {
+              setSelected(!selected);
+            }
+          }}
+          aria-pressed={selected}
           classes={{
             semanticBar: css(styles.semanticBar),
             selectable: css(styles.selectable),
@@ -786,7 +818,7 @@ export const Small: StoryObj<HvKpiProps> = {
           }}
         >
           <div className={css(styles.contentContainer)}>
-            <Level3Bad semantic="negative" />
+            <Level3Bad color="negative" />
             <div className={css(styles.textContainer)}>
               <div className={css(styles.valueContainer)}>
                 <HvTypography variant="title2">7</HvTypography>
