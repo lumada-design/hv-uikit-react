@@ -20,7 +20,7 @@ const ErrorState = (props: ErrorStateProps) => {
       title={errorTitle}
       message={errorMessage}
       action={errorAction}
-      icon={<Info semantic="negative" />}
+      icon={<Info color="negative" />}
     />
   );
 };

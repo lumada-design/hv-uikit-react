@@ -98,11 +98,11 @@ export const DynamicAdornments: StoryObj<HvAdornmentProps> = {
                 <>
                   <HvAdornment
                     showWhen="invalid"
-                    icon={<Fail semantic="negative" />}
+                    icon={<Fail color="negative" />}
                   />
                   <HvAdornment
                     showWhen="valid"
-                    icon={<Success semantic="positive" />}
+                    icon={<Success color="positive" />}
                   />
                 </>
               }

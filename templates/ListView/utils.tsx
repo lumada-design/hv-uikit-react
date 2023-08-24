@@ -15,13 +15,13 @@ import {
 export const getStatusIcon = (status: number) => {
   switch (status) {
     case 0:
-      return <Level0Good semantic="positive" iconSize="XS" />;
+      return <Level0Good color="positive" iconSize="XS" />;
     case 1:
-      return <Level3Bad semantic="negative" iconSize="XS" />;
+      return <Level3Bad color="negative" iconSize="XS" />;
     case 2:
-      return <Level2Average semantic="warning" iconSize="XS" />;
+      return <Level2Average color="warning" iconSize="XS" />;
     default:
-      return <Level1 semantic="neutral" iconSize="XS" />;
+      return <Level1 color="neutral" iconSize="XS" />;
   }
 };
 

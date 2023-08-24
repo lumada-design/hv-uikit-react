@@ -67,7 +67,7 @@ export const HvWarningText = (props: HvWarningTextProps) => {
   const showWarning = localVisible && !localDisabled;
   const content = showWarning ? children : "";
   const localAdornment = adornment || (
-    <Fail className={classes.defaultIcon} semantic="negative" />
+    <Fail className={classes.defaultIcon} color="negative" />
   );
 
   return (
