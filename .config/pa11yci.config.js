@@ -14,6 +14,7 @@ const filterStories = (stories) => {
     "Visualizations/Line Chart",
     "Visualizations/Donut Chart",
     "Visualizations/Confusion Matrix",
+    "Widgets/Code Editor",
   ];
 
   return Object.values(stories).reduce((acc, story) => {

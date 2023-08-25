@@ -25,12 +25,12 @@ describe("StepNavigation", () => {
   it("should contain all the steps", () => {
     const { getByLabelText } = render(<HvStepNavigation steps={steps} />);
 
-    expect(getByLabelText("step-Completed")).toBeInTheDocument();
-    expect(getByLabelText("step-Failed")).toBeInTheDocument();
-    expect(getByLabelText("step-Pending")).toBeInTheDocument();
-    expect(getByLabelText("step-Current")).toBeInTheDocument();
-    expect(getByLabelText("step-Enabled")).toBeInTheDocument();
-    expect(getByLabelText("step-Disabled")).toBeInTheDocument();
+    expect(getByLabelText("Completed")).toBeInTheDocument();
+    expect(getByLabelText("Failed")).toBeInTheDocument();
+    expect(getByLabelText("Pending")).toBeInTheDocument();
+    expect(getByLabelText("Current")).toBeInTheDocument();
+    expect(getByLabelText("Enabled")).toBeInTheDocument();
+    expect(getByLabelText("Disabled")).toBeInTheDocument();
   });
 
   it("should show a tooltip on hover", () => {
@@ -38,10 +38,10 @@ describe("StepNavigation", () => {
       <HvStepNavigation type="Simple" showTitles={false} steps={steps} />
     );
     act(async () => {
-      userEvent.hover(getByLabelText("step-container-Pending"));
+      userEvent.hover(getByLabelText("Pending"));
       const tooltip = await findByRole("tooltip");
       expect(tooltip).toBeInTheDocument();
-      userEvent.unhover(getByLabelText("step-container-Pending"));
+      userEvent.unhover(getByLabelText("Pending"));
       await waitForElementToBeRemoved(() => queryByRole("tooltip"));
       expect(tooltip).not.toBeInTheDocument();
     });

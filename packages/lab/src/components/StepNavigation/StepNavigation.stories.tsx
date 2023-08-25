@@ -122,12 +122,14 @@ export const WithTooltip = () => (
       steps={steps}
       id="Simple-WithTooltip"
       showTitles={false}
+      aria-label="Simple step navigation with tooltip"
     />
     <HvStepNavigation
       type="Default"
       steps={steps}
       id="Default-WithTooltip"
       showTitles={false}
+      aria-label="Default step navigation with tooltip"
     />
   </div>
 );

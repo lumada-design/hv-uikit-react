@@ -107,7 +107,7 @@ export const HvStep = ({
         className={cx(classes.ghost, {
           [classes.ghostDisabled]: state === "Current",
         })}
-        aria-label={`step-${title}`}
+        aria-label={`${title}`}
         icon
         overrideIconColors={false}
         disabled={disabled ?? ["Current", "Disabled"].includes(state)}
