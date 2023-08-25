@@ -78,6 +78,7 @@
           "packages/icons/**",
           "**/*.config.ts",
           "**/*.stories.ts?(x)",
+          "**/stories/*.ts?(x)",
           "**/*.spec.ts?(x)",
           "**/*.test.ts?(x)"
         ]
@@ -104,7 +105,9 @@
     {
       "files": [
         "**/*.stories.ts?(x)",
+        "**/stories/*",
         "**/*.test.ts?(x)",
+        "**/test/*",
         "**/templates/**/*.ts?(x)"
       ],
       "rules": {

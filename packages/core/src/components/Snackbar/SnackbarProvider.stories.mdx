@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs";
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
 import { SnackbarProvider } from "./SnackbarProvider.stories.tsx";
 
 <Meta
@@ -23,8 +23,8 @@ Ideally the `HvSnackbarProvider` should be at the top of the component tree of y
 This will allow the snackbar to be triggered in any page.
 For more information of the provider API check the [notistack documentation](https://iamhosseindhv.com/notistack/api).
 
-```
-  {'import { HvSnackbarProvider } from "@hitachivantara/uikit-react-core";'}
+```tsx
+import { HvSnackbarProvider } from "@hitachivantara/uikit-react-core";
 ```
 
 After adding the provider at the root of your app, you can call the `useHvSnackbar` at any
@@ -33,21 +33,21 @@ of the `enqueueSnackbar` function which follows the API bellow:
 
 parameters:
 
-- `message: string | React.node`: The message to render inside the snackbar.
+- `message: ReactNode`: The message to render inside the snackbar.
 - `options: HvEnqueueOptions`: The options to configure the snackbar.
   - `HvEnqueueOptions`:
     - `id?: string`: The id to pass to the snackbar
-    - `variant: success | default | warning`: The color of the snackbar
+    - `variant: "success" | "default" | "warning"`: The color of the snackbar
     - `snackbarContentProps?: HvSnackbarContentProps`: Extra properties to be passed onto the snackbar
 
 output:
 
 - `SnackbarKey: string | number`: How many snackbars to render.
 
-```
-  {'import { useHvSnackbar } from "@hitachivantara/uikit-react-core";'}
+```tsx
+import { useHvSnackbar } from "@hitachivantara/uikit-react-core";
 ```
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story inline story={SnackbarProvider} />
-</Preview>
+</Canvas>

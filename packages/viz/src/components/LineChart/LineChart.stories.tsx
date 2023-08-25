@@ -1,5 +1,4 @@
 import {
-  theme,
   HvDropDownMenu,
   HvDropdown,
   HvListValue,
@@ -12,6 +11,7 @@ import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import { loadArrow } from "arquero";
 import { emptyCellMode } from "@viz/types/generic";
+import { vizDecorator } from "../BaseChart/stories/utils";
 import { HvLineChart, HvLineChartProps } from "./LineChart";
 import { chartData } from "./mockData";
 
@@ -19,18 +19,7 @@ const meta: Meta<typeof HvLineChart> = {
   title: "Visualizations/Line Chart",
   component: HvLineChart,
   parameters: { eyes: { include: false } },
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          backgroundColor: theme.colors.atmo1,
-          padding: 20,
-        }}
-      >
-        {Story()}
-      </div>
-    ),
-  ],
+  decorators: [vizDecorator],
 };
 export default meta;
 

@@ -1,18 +1,13 @@
-import { colors as hvColors } from "@hitachivantara/uikit-styles";
+import { CSSObject } from "@emotion/css";
+import { theme } from "@hitachivantara/uikit-react-core";
 
-export const getDocsStyles = (dark: boolean) => {
-  const colors = dark ? hvColors.dark : hvColors.light;
+const { colors } = theme;
 
+export const getDocsStyles = () => {
   return {
     ".sbdocs.sbdocs-wrapper": {
       overflow: "hidden",
       backgroundColor: colors.atmo1,
-
-      "div[id*='hv-welcome-image']": {
-        backgroundImage: `url(${
-          dark ? "welcome-dark.png" : "welcome-light.png"
-        })`,
-      },
 
       ".sbdocs": {
         fontFamily: "'Open Sans',sans-serif !important",
@@ -45,22 +40,6 @@ export const getDocsStyles = (dark: boolean) => {
         width: "940px !important",
         maxWidth: "90% !important",
       },
-
-      // This is necessary for the chart tooltips to not be hidden
-      "div[id*='anchor--visualizations-bar-chart'], div[id*='anchor--visualizations-line-chart'], div[id*='anchor--visualizations-donut-chart']":
-        {
-          ".sbdocs-preview": {
-            overflow: "visible",
-
-            "& > div": {
-              overflow: "visible",
-
-              "& > div": {
-                overflow: "visible",
-              },
-            },
-          },
-        },
 
       "div[id*='panel-tab-content']": {
         background: colors.atmo1,
@@ -203,6 +182,7 @@ export const getDocsStyles = (dark: boolean) => {
 
       ".sbdocs-title": { color: colors.secondary },
 
+      // Styles for MD/MDX files
       "a.sbdocs": {
         color: colors.primary,
         fontSize: "inherit",
@@ -253,6 +233,7 @@ export const getDocsStyles = (dark: boolean) => {
         border: "none",
       },
 
+      // Styles for code block theming
       "& .token": {
         fontFamily: "monospace",
         WebkitFontSmoothing: "antialiased",

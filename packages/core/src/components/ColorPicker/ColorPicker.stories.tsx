@@ -3,9 +3,10 @@ import { Meta, StoryObj } from "@storybook/react";
 import {
   HvColorPicker,
   HvColorPickerProps,
+  HvStack,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
-import { HvStack, HvTypography } from "@core/components";
 
 const makeDecorator = (styles: CSSProperties) => (Story) =>
   <div style={styles}>{Story()}</div>;

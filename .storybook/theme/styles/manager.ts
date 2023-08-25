@@ -1,22 +1,17 @@
-export const getManagerStyles = () => {
+import { GlobalProps } from "@emotion/react";
+
+export const getManagerStyles = (): GlobalProps["styles"] => {
   return {
     ".sidebar-container": {
       ".sidebar-header": {
         button: {
-          display: "none",
+          opacity: 0,
         },
-
         div: {
           margin: 0,
         },
-
-        a: {
-          textAlign: "center",
-          fontSize: 27,
-        },
-
         img: {
-          width: "80%",
+          maxHeight: 80,
         },
       },
 
@@ -31,17 +26,12 @@ export const getManagerStyles = () => {
       },
 
       ".sidebar-subheading button": {
-        fontWeight: 900,
         fontSize: 12,
       },
     },
 
     "button[title='Apply outlines to the preview']": {
       display: "none",
-    },
-
-    ".sidebar-item.sidebar-item svg": {
-      color: "inherit",
     },
   };
 };

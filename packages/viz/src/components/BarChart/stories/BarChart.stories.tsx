@@ -4,7 +4,6 @@ import {
   HvDropdown,
   HvListValue,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 import { Meta, StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
@@ -14,6 +13,7 @@ import {
   HvBarChartProps,
   HvLineChartProps,
 } from "@hitachivantara/uikit-react-viz";
+import { vizDecorator } from "../../BaseChart/stories/utils";
 import { customChartData } from "./mockData";
 import { renderTooltip } from "./customTooltip";
 
@@ -21,18 +21,7 @@ const meta: Meta<typeof HvBarChart> = {
   title: "Visualizations/Bar Chart",
   component: HvBarChart,
   parameters: { eyes: { include: false } },
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          backgroundColor: theme.colors.atmo1,
-          padding: 20,
-        }}
-      >
-        {Story()}
-      </div>
-    ),
-  ],
+  decorators: [vizDecorator],
 };
 export default meta;
 
