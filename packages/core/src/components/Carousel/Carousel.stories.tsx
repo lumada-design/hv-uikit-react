@@ -145,8 +145,8 @@ export const Embedded: StoryObj<HvCarouselProps> = {
 
     return (
       <HvCard bgcolor="atmo1" style={{ width: 350 }}>
-        <HvCardHeader title="Image Carousel" aria-label="Compressor" />
-        <HvCardMedia>
+        <HvCardHeader title="Image Carousel" />
+        <HvCardMedia role="none">
           <HvCarousel xs height={400}>
             {images.map(({ src, name }) => (
               <HvCarouselSlide

@@ -133,14 +133,6 @@ export const LimitedBlocking: StoryObj<HvTextAreaProps> = {
     },
   },
   render: () => {
-    const [textLength, setTextLength] = useState<number>(0);
-
-    const setCounter = (_, data) => {
-      setTextLength(data.length);
-
-      return data;
-    };
-
     return (
       <HvTextArea
         id="limited-blocking"
@@ -150,10 +142,6 @@ export const LimitedBlocking: StoryObj<HvTextAreaProps> = {
         placeholder="Enter value"
         maxCharQuantity={10}
         blockMax
-        onChange={setCounter}
-        countCharProps={{
-          "aria-label": `You have inserted ${textLength} characters`,
-        }}
       />
     );
   },
