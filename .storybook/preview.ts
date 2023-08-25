@@ -2,7 +2,6 @@ import DocsContainer from "./blocks/DocsContainer";
 import withThemeProvider from "./decorators/withThemeProvider";
 
 export const parameters = {
-  viewMode: process.env.STORYBOOK_VIEW_MODE,
   layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },
   docs: { container: DocsContainer, source: { type: "dynamic" } },
@@ -20,10 +19,9 @@ export const parameters = {
           "Welcome",
           "Introduction",
           "Get Started",
-          "Change Logs",
           "Community",
           "Migration",
-          "Roadmap",
+          "Project Status",
         ],
         "Foundation",
         ["Typography", "Colors", "Icons"],
@@ -44,6 +42,10 @@ export const parameters = {
       ],
     },
   },
+};
+
+export const argTypes = {
+  classes: { control: { disable: true } },
 };
 
 export const decorators = [withThemeProvider];

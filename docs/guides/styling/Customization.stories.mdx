@@ -46,11 +46,9 @@ const MyComponent = () => (
 );
 ```
 
-<Canvas>
-  <Story name="Inline Styles">
-    <InlineStyles />
-  </Story>
-</Canvas>
+<Story name="Inline Styles">
+  <InlineStyles />
+</Story>
 
 ### Custom classes
 
@@ -108,11 +106,9 @@ const MyComponent = () => (
 );
 ```
 
-<Canvas>
-  <Story name="Override ClassName">
-    <OverrideClassName />
-  </Story>
-</Canvas>
+<Story name="Override ClassName">
+  <OverrideClassName />
+</Story>
 
 ##### Nested classes
 
@@ -163,11 +159,9 @@ const MyComponent = () => {
 };
 ```
 
-<Canvas>
-  <Story name="Nested Classes">
-    <NestedClasses />
-  </Story>
-</Canvas>
+<Story name="Nested Classes">
+  <NestedClasses />
+</Story>
 
 #### Using the `classes` property
 
@@ -195,11 +189,9 @@ const MyComponent = () => (
 );
 ```
 
-<Canvas>
-  <Story name="Override Classes">
-    <OverrideClasses />
-  </Story>
-</Canvas>
+<Story name="Override Classes">
+  <OverrideClasses />
+</Story>
 
 This way of styling components is very convenient since it allows you to easily access classes of internal components and style them. For example, UI Kit's `HvDropDownMenu` component internally uses a UI Kit `HvButton` with an icon that can be styled through the `icon` and `iconSelected` classes.
 
@@ -210,7 +202,6 @@ This way of styling components is very convenient since it allows you to easily 
     icon: classes.dropDownMenuButton,
     iconSelected: classes.dropDownMenuButtonSelected,
   }}
-  (...)
 />
 ```
 
@@ -239,11 +230,9 @@ Then, you can import the component and use it like so:
 <ReusableComponent>Click me!</ReusableComponent>
 ```
 
-<Canvas>
-  <Story name="Reusable Component">
-    <ReusableComponent id="reusable-button-id">Click me!</ReusableComponent>
-  </Story>
-</Canvas>
+<Story name="Reusable Component">
+  <ReusableComponent id="reusable-button-id">Click me!</ReusableComponent>
+</Story>
 
 ### Dynamic styles
 
@@ -277,22 +266,20 @@ Then, you can use the component the following way:
 <ReusableComponent variant="secondaryGhost">Secondary ghost!</ReusableComponent>
 ```
 
-<Canvas>
-  <Story name="Dynamic Reusable Component">
-    <DynamicReusableComponent
-      id="dynamic-reusable-button-sg-id"
-      variant="secondaryGhost"
-    >
-      Secondary ghost!
-    </DynamicReusableComponent>
-    <DynamicReusableComponent
-      id="dynamic-reusable-button-pg-id"
-      variant="primaryGhost"
-    >
-      Primary ghost!
-    </DynamicReusableComponent>
-  </Story>
-</Canvas>
+<Story name="Dynamic Reusable Component">
+  <DynamicReusableComponent
+    id="dynamic-reusable-button-sg-id"
+    variant="secondaryGhost"
+  >
+    Secondary ghost!
+  </DynamicReusableComponent>
+  <DynamicReusableComponent
+    id="dynamic-reusable-button-pg-id"
+    variant="primaryGhost"
+  >
+    Primary ghost!
+  </DynamicReusableComponent>
+</Story>
 
 ## Theme override <a id="theme-override" />
 
@@ -340,11 +327,9 @@ const MyApp = () => {
 };
 ```
 
-<Canvas>
-  <Story name="Theme Override">
-    <ThemeOverride />
-  </Story>
-</Canvas>
+<Story name="Theme Override">
+  <ThemeOverride />
+</Story>
 
 ## Global override <a id="global-override" />
 
@@ -390,10 +375,8 @@ const MyApp = () => {
 };
 ```
 
-<Canvas>
-  <Story name="Global Override">
-    <GlobalOverride />
-  </Story>
-</Canvas>
+<Story name="Global Override">
+  <GlobalOverride />
+</Story>
 
 Please report to the [theming](/docs/guides-theming-theming--main#theming) documentation for more information.

@@ -1,38 +1,39 @@
 import { colors } from "@hitachivantara/uikit-styles";
 
-import { create } from "@storybook/theming/create";
+import { create, ThemeVars } from "@storybook/theming";
 
-const common = {
+const getThemeVars = (base: "light" | "dark"): ThemeVars => ({
+  base,
+
+  appBg: colors[base].atmo1,
   appBorderRadius: 0,
-  fontBase: "'Open Sans',sans-serif",
+  appContentBg: colors[base].atmo1,
+  barBg: colors[base].atmo1,
+  barSelectedColor: colors[base].primary,
+  barTextColor: colors[base].secondary,
+  brandImage: `ui-kit-logo-${base}.png`,
   brandTitle: "NEXT UI Kit",
-};
+
+  colorPrimary: colors[base].primary,
+  colorSecondary: colors[base].secondary,
+  fontBase: "'Open Sans',sans-serif",
+  fontCode: "monospace",
+  textColor: colors[base].secondary,
+  textInverseColor: colors[base === "dark" ? "light" : "dark"].secondary,
+  textMutedColor: colors[base].secondary_80,
+
+  // controls styles
+  // booleanBg: colors[base].atmo2,
+  // booleanSelectedBg: colors[base].atmo1,
+  // buttonBg: colors[base].atmo1,
+  // buttonBorder: colors[base].secondary,
+  inputBg: colors[base].atmo1,
+  inputBorder: colors[base].secondary_60,
+  inputBorderRadius: 2,
+  inputTextColor: colors[base].secondary,
+});
 
 export const themes = {
-  wicked: create({
-    ...common,
-    base: "dark",
-    appBg: colors.dark.atmo1,
-    appContentBg: colors.dark.atmo1,
-    textColor: colors.dark.secondary,
-    textInverseColor: colors.light.secondary,
-    colorSecondary: colors.dark.primary,
-    barTextColor: colors.dark.secondary,
-    barSelectedColor: colors.dark.primary,
-    barBg: colors.dark.atmo1,
-    brandImage: "ui-kit-logo-dark.png",
-  }),
-  dawn: create({
-    ...common,
-    base: "light",
-    appBg: colors.light.atmo1,
-    appContentBg: colors.light.atmo1,
-    textColor: colors.light.secondary,
-    textInverseColor: colors.dark.secondary,
-    colorSecondary: colors.light.primary,
-    barTextColor: colors.light.secondary,
-    barSelectedColor: colors.light.primary,
-    barBg: colors.light.atmo1,
-    brandImage: "ui-kit-logo-light.png",
-  }),
+  wicked: create(getThemeVars("dark")),
+  dawn: create(getThemeVars("light")),
 };

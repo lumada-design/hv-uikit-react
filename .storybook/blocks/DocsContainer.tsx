@@ -8,6 +8,7 @@ import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { getDocsStyles } from "../theme/styles/docs";
 import { getInitialMode, Mode } from "../addons/mode-selector/utils";
 import { ADDON_EVENT } from "../addons/mode-selector/constants";
+import { themes } from ".storybook/theme";
 
 export default ({ context, children }) => {
   const initialMode = getInitialMode();
@@ -26,15 +27,7 @@ export default ({ context, children }) => {
     };
   }, []);
 
-  const docsContext = {
-    ...context,
-    parameters: {
-      ...context.parameters,
-      docs: { ...context.parameters.docs },
-    },
-  };
-
-  const docsStyles = useMemo(() => getDocsStyles(mode === "wicked"), [mode]);
+  const docsStyles = useMemo(() => getDocsStyles(), [mode]);
 
   return (
     <>
@@ -44,7 +37,9 @@ export default ({ context, children }) => {
         cssTheme="scoped"
         colorMode={mode}
       >
-        <DocsContainer context={docsContext}>{children}</DocsContainer>
+        <DocsContainer theme={themes[mode]} context={context}>
+          {children}
+        </DocsContainer>
       </HvProvider>
     </>
   );

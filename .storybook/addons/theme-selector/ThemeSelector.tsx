@@ -68,7 +68,12 @@ const ThemeSelector = ({ api }) => {
         trigger="click"
         tooltip={<TooltipLinkList links={links} />}
       >
-        <IconButton key={ADDON_ID} active={false} title={"Select theme"}>
+        <IconButton
+          key={ADDON_ID}
+          active={false}
+          title="Select theme"
+          style={{ width: 140 }}
+        >
           {`Theme: ${selectedTheme?.label}`}
         </IconButton>
       </WithTooltip>

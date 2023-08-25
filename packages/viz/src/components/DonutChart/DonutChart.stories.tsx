@@ -4,7 +4,6 @@ import {
   HvDropdown,
   HvListValue,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 import { Meta, StoryObj } from "@storybook/react";
 import { useMemo, useState } from "react";
@@ -14,23 +13,13 @@ import {
   HvDonutChartProps,
 } from "@hitachivantara/uikit-react-viz";
 import { Ticket } from "@hitachivantara/uikit-react-icons"; // eslint-disable-line
+import { vizDecorator } from "../BaseChart/stories/utils";
 
 const meta: Meta<typeof HvDonutChart> = {
   title: "Visualizations/Donut Chart",
   component: HvDonutChart,
   parameters: { eyes: { include: false } },
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          backgroundColor: theme.colors.atmo1,
-          padding: 20,
-        }}
-      >
-        {Story()}
-      </div>
-    ),
-  ],
+  decorators: [vizDecorator],
 };
 export default meta;
 

@@ -28,7 +28,7 @@ module.exports = {
   },
   features: {
     storyStoreV7: true,
-    uildStoriesJson: true,
+    buildStoriesJson: true,
   },
   staticDirs: [
     "./assets",
