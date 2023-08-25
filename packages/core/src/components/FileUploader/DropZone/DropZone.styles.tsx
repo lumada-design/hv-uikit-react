@@ -72,7 +72,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
   },
   dropZoneAreaLabels: {
     display: "flex",
-    width: 115,
+    maxWidth: 120,
     margin: "auto",
   },
   dropZoneAreaIcon: {
