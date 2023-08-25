@@ -39,9 +39,9 @@ describe("FileUploader", () => {
   it("should render the dropzone", () => {
     render(<Main {...baseProps} />);
 
-    const dropZone = screen.getByRole("button", { name: /Label/ });
+    const dropZone = screen.getByLabelText("Label", { selector: "input" });
 
-    expect(dropZone).toBeVisible();
+    expect(dropZone).toBeInTheDocument();
   });
 
   it("should call file upload callback", () => {
@@ -49,9 +49,9 @@ describe("FileUploader", () => {
 
     render(<Main {...baseProps} onFilesAdded={onFilesAddedMock} />);
 
-    const dropZone = screen.getByRole("button", { name: /Label/ });
+    const dropZone = screen.getByLabelText("Label", { selector: "input" });
 
-    fireEvent.change(dropZone.querySelector("input") as Element, {});
+    fireEvent.change(dropZone, {});
 
     expect(onFilesAddedMock).toHaveBeenCalled();
   });
