@@ -18,7 +18,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
       border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.secondary}`,
     },
 
-    "&:focus": {
+    "&:focus-within": {
       background: `${theme.colors.atmo1}`,
       border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.secondary}`,
       ...outlineStyles,
