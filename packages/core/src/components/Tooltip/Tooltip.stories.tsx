@@ -4,7 +4,6 @@ import {
   HvAvatar,
   HvBox,
   HvButton,
-  HvCheckBox,
   HvTooltip,
   HvTooltipProps,
   HvTypography,
@@ -114,17 +113,11 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
         </HvButton>
       </HvTooltip>
       <HvTooltip title="Wrapped HvAvatar">
-        <div>
-          <HvAvatar
-            alt="Ryan"
-            src="https://avatars.githubusercontent.com/u/80?v=4"
-          />
-        </div>
-      </HvTooltip>
-      <HvTooltip title="Wrapped HvCheckBox">
-        <div>
-          <HvCheckBox label="Value" />
-        </div>
+        <HvAvatar
+          role="img"
+          alt="Ryan"
+          src="https://avatars.githubusercontent.com/u/80?v=4"
+        />
       </HvTooltip>
       <HvTooltip placement="left" title="Left placement link">
         <HvTypography
@@ -204,13 +197,13 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
         }}
       >
         <HvTooltip open title={longTextTooltip}>
-          <HvTypography>Long text tooltip</HvTypography>
+          <HvButton variant="secondaryGhost">Long text tooltip</HvButton>
         </HvTooltip>
         <HvTooltip open title={multilineContent1} useSingle={false}>
-          <HvTypography>Multiline content 1</HvTypography>
+          <HvButton variant="secondaryGhost">Multiline content 1</HvButton>
         </HvTooltip>
         <HvTooltip open title={multilineContent2} useSingle={false}>
-          <HvTypography>Multiline content 2</HvTypography>
+          <HvButton variant="secondaryGhost">Multiline content 2</HvButton>
         </HvTooltip>
       </HvBox>
     );

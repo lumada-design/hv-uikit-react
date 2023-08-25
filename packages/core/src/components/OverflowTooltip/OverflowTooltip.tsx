@@ -97,7 +97,7 @@ export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
     ]
   );
 
-  return open || isOverflowing ? (
+  return (
     <HvTooltip
       id={id}
       disableHoverListener={!isOverflowing}
@@ -108,11 +108,12 @@ export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
           {data}
         </HvTypography>
       }
+      // unset since `content` *is* the label
+      aria-label={null as any}
+      aria-labelledby={null as any}
       {...tooltipsProps}
     >
       {content}
     </HvTooltip>
-  ) : (
-    content
   );
 };

@@ -112,7 +112,6 @@ export const HvButton: <C extends React.ElementType = "button">(
     return (
       <Component
         ref={ref}
-        type="button"
         className={cx(
           classes.root,
           css(getVariantStyles(variant)),
@@ -125,6 +124,7 @@ export const HvButton: <C extends React.ElementType = "button">(
           },
           className
         )}
+        {...(Component === "button" && { type: "button" })}
         {...(disabled && {
           disabled: true,
           tabIndex: -1,

@@ -36,6 +36,7 @@ export default meta;
 
 export const Main: StoryObj<HvOverflowTooltipProps> = {
   args: {
+    open: true,
     placement: "top-start",
     data: "This is a very long text that should be cut because it so long that it doesn't fit",
     paragraphOverflow: false,
@@ -44,10 +45,6 @@ export const Main: StoryObj<HvOverflowTooltipProps> = {
     classes: { control: { disable: true } },
   },
   render: (args) => {
-    return (
-      <HvOverflowTooltip open {...args}>
-        List
-      </HvOverflowTooltip>
-    );
+    return <HvOverflowTooltip {...args} />;
   },
 };
