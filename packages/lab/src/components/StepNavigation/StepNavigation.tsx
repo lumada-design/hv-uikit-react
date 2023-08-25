@@ -80,6 +80,7 @@ export const HvStepNavigation = ({
   stepSize,
   showTitles,
   type = "Default",
+  "aria-label": ariaLabel,
   ...others
 }: HvStepNavigationProps) => {
   const { classes, css, cx } = useClasses(classesProp);
@@ -136,7 +137,7 @@ export const HvStepNavigation = ({
           classes.separator
         )}
       >
-        <div aria-label={`separator-${title}`} className={separatorClassName} />
+        <div className={separatorClassName} />
       </li>
     );
   };
@@ -164,7 +165,7 @@ export const HvStepNavigation = ({
             {hasTitles ? (
               <StepComponent
                 key={`step-${title}`}
-                aria-label={`step-${title}`}
+                aria-label={`${title}`}
                 {...stepProps}
               />
             ) : (
@@ -172,12 +173,9 @@ export const HvStepNavigation = ({
                 placement="bottom"
                 title={<HvTypography>{`${index + 1}. ${title}`}</HvTypography>}
               >
-                <div aria-label={`step-container-${title}`}>
+                <div>
                   <Step className={classes.li}>
-                    <StepComponent
-                      aria-label={`step-${title}`}
-                      {...stepProps}
-                    />
+                    <StepComponent aria-label={`${title}`} {...stepProps} />
                   </Step>
                 </div>
               </HvTooltip>
@@ -290,6 +288,7 @@ export const HvStepNavigation = ({
             width: `${navWidth}px`,
             margin: 0,
           }}
+          aria-label={ariaLabel}
         >
           {drawItems(itemsProps)}
         </HvBox>

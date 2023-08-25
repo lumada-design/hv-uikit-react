@@ -54,7 +54,7 @@ export const HvDot = ({
         },
         className
       )}
-      aria-label={`step-${title}`}
+      aria-label={`${title}`}
       icon
       overrideIconColors={false}
       disabled={disabled ?? ["Current", "Disabled"].includes(state)}
