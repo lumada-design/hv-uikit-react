@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLAttributes } from "react";
+import { CSSProperties, HTMLAttributes, forwardRef } from "react";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { User } from "@hitachivantara/uikit-react-icons";
@@ -74,7 +74,7 @@ const getColor = (color: string, defaultColor: string): string =>
  * Avatars can be used to represent a user or a brand.
  * They can show an image, an icon or the initial letters of a name, for example.
  */
-export const HvAvatar = (props: HvAvatarProps) => {
+export const HvAvatar = forwardRef<any, HvAvatarProps>((props, ref) => {
   const {
     className,
     style,
@@ -157,7 +157,7 @@ export const HvAvatar = (props: HvAvatarProps) => {
   const badgeColor = getColor(badge || "", theme.colors.positive);
 
   return (
-    <div className={classes.container} {...others}>
+    <div ref={ref} className={classes.container} {...others}>
       <div
         className={cx(classes.status, classes[variant], classes[size])}
         style={statusInlineStyle}
@@ -182,4 +182,4 @@ export const HvAvatar = (props: HvAvatarProps) => {
       </div>
     </div>
   );
-};
+});

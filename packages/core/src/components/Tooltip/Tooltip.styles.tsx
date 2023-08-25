@@ -22,6 +22,7 @@ export const popperSx = (useSingle: boolean) => {
       opacity: 1,
     },
     [`& .${MuitooltipClasses.tooltip}`]: {
+      fontFamily: theme.fontFamily.body,
       ...theme.typography.body,
       display: "flex",
       width: "fit-content",
