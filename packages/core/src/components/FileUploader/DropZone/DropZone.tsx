@@ -4,7 +4,6 @@ import uniqueId from "lodash/uniqueId";
 
 import accept from "attr-accept";
 
-import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 
@@ -161,11 +160,7 @@ export const HvDropZone = ({
   return (
     <>
       {!hideLabels && (
-        <div
-          id={id}
-          className={classes.dropZoneLabelsGroup}
-          aria-label="File Dropzone"
-        >
+        <div id={id} className={classes.dropZoneLabelsGroup}>
           <HvLabel
             id={setId(id, "input-file-label")}
             htmlFor={setId(id, "input-file")}
@@ -183,48 +178,14 @@ export const HvDropZone = ({
         </div>
       )}
       <div
-        id={setId(id, "button")}
+        id={setId(id, "input-file-container")}
         className={cx(classes.dropZoneContainer, {
           [classes.dragAction]: dragState,
           [classes.dropZoneContainerDisabled]: disabled,
         })}
-        role="button"
-        tabIndex={0}
-        onDragEnter={(event) => {
-          if (!disabled) {
-            enterDropArea();
-            event.stopPropagation();
-            event.preventDefault();
-          }
-        }}
-        onDragLeave={leaveDropArea}
-        onDropCapture={leaveDropArea}
-        onDragOver={(event) => {
-          if (!disabled) {
-            enterDropArea();
-            event.stopPropagation();
-            event.preventDefault();
-          }
-        }}
-        onDrop={(event) => {
-          if (!disabled) {
-            const { files } = event.dataTransfer;
-            if (multiple === true || files.length === 1) {
-              event.stopPropagation();
-              event.preventDefault();
-              onChangeHandler(files);
-            }
-          }
-        }}
-        onKeyDown={(e) => {
-          if (isKey(e, "Enter") || isKey(e, "Space")) {
-            inputRef.current?.click();
-          }
-        }}
       >
         <input
           id={setId(id, "input-file")}
-          tabIndex={-1}
           className={classes.inputArea}
           type="file"
           multiple={multiple}
@@ -238,6 +199,32 @@ export const HvDropZone = ({
           onChange={() => {
             if (!disabled && inputRef.current?.files) {
               onChangeHandler(inputRef.current.files);
+            }
+          }}
+          onDragEnter={(event) => {
+            if (!disabled) {
+              enterDropArea();
+              event.stopPropagation();
+              event.preventDefault();
+            }
+          }}
+          onDragLeave={leaveDropArea}
+          onDropCapture={leaveDropArea}
+          onDragOver={(event) => {
+            if (!disabled) {
+              enterDropArea();
+              event.stopPropagation();
+              event.preventDefault();
+            }
+          }}
+          onDrop={(event) => {
+            if (!disabled) {
+              const { files } = event.dataTransfer;
+              if (multiple === true || files.length === 1) {
+                event.stopPropagation();
+                event.preventDefault();
+                onChangeHandler(files);
+              }
             }
           }}
           ref={inputRef}
