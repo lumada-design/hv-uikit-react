@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.4.0...@hitachivantara/uikit-react-viz@5.4.1) (2023-08-25)
+
+### Bug Fixes
+
+- **BaseChart:** chart width and height ([82ca485](https://github.com/lumada-design/hv-uikit-react/commit/82ca4856d370fa2bb49cbed67f316dbc8967ee0a))
+
 # [5.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.3.19...@hitachivantara/uikit-react-viz@5.4.0) (2023-08-24)
 
 ### Features

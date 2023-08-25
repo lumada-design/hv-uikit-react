@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.26.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.0...@hitachivantara/uikit-react-core@5.26.1) (2023-08-25)
+
+### Bug Fixes
+
+- **Card:** remove aria selected ([25106bf](https://github.com/lumada-design/hv-uikit-react/commit/25106bf2445007a7484460c548e6ea62787dc4a4))
+- **DropdownMenu:** pa11y issues ([f1a7b9d](https://github.com/lumada-design/hv-uikit-react/commit/f1a7b9dcab54c7c74a0063bf05187fc9090bfa01))
+
 # [5.26.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.25.3...@hitachivantara/uikit-react-core@5.26.0) (2023-08-24)
 
 ### Features
