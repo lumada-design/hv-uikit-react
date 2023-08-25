@@ -373,7 +373,7 @@ export const SearchAsYouType: StoryObj = {
           onChange={handleSearch}
           inputProps={{ autoComplete: "off" }}
         />
-        <HvPanel className={classes.panel}>
+        <HvPanel className={classes.panel} tabIndex={0}>
           <HvTypography variant="label">Countries of Europe</HvTypography>
           {results.map((element, i) => (
             <div key={i} className={classes.result}>

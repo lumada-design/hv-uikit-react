@@ -142,6 +142,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
           aria-expanded={open}
           disabled={disabled}
           aria-label="Dropdown menu"
+          aria-haspopup="menu"
         >
           {icon || (
             <MoreOptionsVertical
@@ -151,7 +152,6 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
           )}
         </HvButton>
       }
-      aria-haspopup="menu"
       placement={placement}
       variableWidth
       disablePortal={disablePortal}
