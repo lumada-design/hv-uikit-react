@@ -160,11 +160,7 @@ export const HvDropZone = ({
   return (
     <>
       {!hideLabels && (
-        <div
-          id={id}
-          className={classes.dropZoneLabelsGroup}
-          aria-label="File Dropzone"
-        >
+        <div id={id} className={classes.dropZoneLabelsGroup}>
           <HvLabel
             id={setId(id, "input-file-label")}
             htmlFor={setId(id, "input-file")}
