@@ -93,6 +93,7 @@ export const Main: StoryObj<HvFilterGroupProps> = {
       <div style={{ width: 180 }}>
         <HvFilterGroup
           id="filter-group-main"
+          aria-label="Main filter group"
           value={value}
           filters={filters}
           onChange={(_, values) => setValue(values)}
@@ -117,6 +118,7 @@ export const ResetToDefault: StoryObj<HvFilterGroupProps> = {
       <div style={{ width: 180 }}>
         <HvFilterGroup
           id="filter-group-reset-default"
+          aria-label="Reset to default filter group"
           value={value}
           defaultValue={[["category1"], [], []]}
           filters={filters}
@@ -137,7 +139,11 @@ export const Uncontrolled: StoryObj<HvFilterGroupProps> = {
   render: () => {
     return (
       <div style={{ width: 180 }}>
-        <HvFilterGroup id="filter-group-uncontrolled" filters={filters} />
+        <HvFilterGroup
+          id="filter-group-uncontrolled"
+          aria-label="Uncontrolled filter group"
+          filters={filters}
+        />
       </div>
     );
   },
@@ -174,6 +180,8 @@ const EmptyFiltersStory = () => {
     <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
       <div style={{ width: 180 }}>
         <HvFilterGroup
+          id="filter-group-empty"
+          aria-label="Empty filter group"
           filters={myFilters}
           filterContentProps={{ leftEmptyElement, rightEmptyElement }}
         />
@@ -181,6 +189,7 @@ const EmptyFiltersStory = () => {
       <HvSwitch
         checked={hasFilters}
         onChange={(_, checked) => setHasFilters(checked)}
+        aria-label="Loaded state"
       />
       <HvTypography>
         {hasFilters ? "Filters in loaded state" : "Filters in loading state"}
@@ -225,6 +234,8 @@ return (
     <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
     <div style={{ width: 180 }}>
         <HvFilterGroup
+        id="filter-group-empty"
+        aria-label="Empty filter group"
         filters={myFilters}
         filterContentProps={{ leftEmptyElement, rightEmptyElement }}
         />
@@ -232,6 +243,7 @@ return (
     <HvSwitch
         checked={hasFilters}
         onChange={(_, checked) => setHasFilters(checked)}
+        aria-label="Loaded state"
     />
     <HvTypography>
         {hasFilters ? "Filters in loaded state" : "Filters in loading state"}
