@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.26.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.1...@hitachivantara/uikit-react-core@5.26.2) (2023-08-26)
+
+### Bug Fixes
+
+- **BaseDropdown:** pa11y issues ([01edb27](https://github.com/lumada-design/hv-uikit-react/commit/01edb27cea383da9b61d0cae9df7d412b37288f3))
+- **ColorPicker:** pa11y issues ([dbaf3e0](https://github.com/lumada-design/hv-uikit-react/commit/dbaf3e0f7d7b420b586051d7c655775d298e5fad))
+- **FileUploader:** fix a11y issues ([#3643](https://github.com/lumada-design/hv-uikit-react/issues/3643)) ([9cab4b8](https://github.com/lumada-design/hv-uikit-react/commit/9cab4b8ca57dcb5a9bf990363b07a1b931a5b5c1))
+
 ## [5.26.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.0...@hitachivantara/uikit-react-core@5.26.1) (2023-08-25)
 
 ### Bug Fixes
