@@ -35,7 +35,7 @@
     "prepare": "npx husky install .config/husky"
   },
   "devDependencies": {
-    "@applitools/eyes-storybook": "^3.38.3",
+    "@applitools/eyes-storybook": "^3.39.0",
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
     "@emotion/core": "^11.0.0",
