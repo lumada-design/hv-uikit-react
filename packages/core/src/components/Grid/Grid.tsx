@@ -190,19 +190,19 @@ function getNumberOfColumns(columns: HvGridProps["columns"]) {
 
 /**
  * The grid creates visual consistency between layouts while allowing flexibility
- * across a wide variety of designs. This component is based in a 12-column grid layout.
+ * across a wide variety of designs. This component is based on a 12-column grid layout.
  *
- * It is is based in the [Material UI Grid](https://mui.com/material-ui/react-grid/).
+ * It's based on the [Material UI Grid](https://mui.com/material-ui/react-grid/).
  *
  * The definitions were set following the Design System directives:
  *
  * | Breakpoint | Width (in px) | Gutters (in px) | Number of columns |
  * | ---------- | ------------- | --------------- | ----------------- |
- * | xs         | [0-575[       | 16              | 4                 |
- * | sm         | [576-767[     | 16              | 8                 |
- * | md         | [768-991[     | 32              | 12                |
- * | lg         | [992-1199[    | 32              | 12                |
- * | xl         | [1200-...[    | 32              | 12                |
+ * | xs         | [0-600[       | 16              | 4                 |
+ * | sm         | [600-960[     | 16              | 8                 |
+ * | md         | [960-1270[     | 32              | 12                |
+ * | lg         | [1270-1920[    | 32              | 12                |
+ * | xl         | [1920-...[    | 32              | 12                |
  *
  * However, the number of columns is set to 12 for all breakpoints, as it serves most
  * of the use cases and simplifies the implementation.

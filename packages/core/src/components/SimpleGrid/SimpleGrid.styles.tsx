@@ -6,7 +6,9 @@ import { createClasses } from "@core/utils/classes";
 
 import { Spacing, Breakpoint } from "./types";
 
-export const { staticClasses, useClasses } = createClasses("HvSimpleGrid", {});
+export const { staticClasses, useClasses } = createClasses("HvSimpleGrid", {
+  root: {},
+});
 
 function size(props: { size: any; sizes: any }) {
   if (typeof props.size === "number") {
