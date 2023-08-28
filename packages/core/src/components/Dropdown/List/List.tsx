@@ -223,6 +223,7 @@ export const HvDropdownList = ({
         type="search"
         value={searchStr}
         placeholder={labels?.searchPlaceholder}
+        aria-label={labels?.searchPlaceholder}
         onChange={(event, str) => handleSearch(str)}
       />
     </div>
