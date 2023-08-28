@@ -573,6 +573,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
           notifyChangesOnFirstRender={notifyChangesOnFirstRender}
           hasTooltips={hasTooltips}
           singleSelectionToggle={singleSelectionToggle}
+          aria-label={ariaLabel}
           aria-labelledby={hasLabel ? setId(elementId, "label") : undefined}
           height={height}
           maxHeight={maxHeight}
