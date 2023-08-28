@@ -20,6 +20,7 @@ import {
 import { HvBaseProps } from "@core/types/generic";
 import { HvButton } from "@core/components/Button";
 import { useTheme } from "@core/hooks/useTheme";
+import { HvTooltip } from "@core/components/Tooltip";
 import { HvTypography } from "@core/components/Typography";
 import { HvContainer } from "@core/components/Container";
 import { ExtractNames } from "@core/utils/classes";
@@ -186,17 +187,15 @@ export const HvCarousel = (props: HvCarouselProps) => {
     >
       {actionsProp}
       {showFullscreen && (
-        <HvButton
-          icon
-          onClick={() => setIsFullscreen((curr) => !curr)}
-          className={classes.closeButton}
-        >
-          {isFullscreen ? (
-            <Close aria-label="Close" />
-          ) : (
-            <Fullscreen aria-label="Fullscreen" />
-          )}
-        </HvButton>
+        <HvTooltip title={isFullscreen ? "Close" : "Fullscreen"}>
+          <HvButton
+            icon
+            onClick={() => setIsFullscreen((curr) => !curr)}
+            className={classes.closeButton}
+          >
+            {isFullscreen ? <Close /> : <Fullscreen />}
+          </HvButton>
+        </HvTooltip>
       )}
     </div>
   );

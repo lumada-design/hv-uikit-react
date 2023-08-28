@@ -141,6 +141,7 @@ export const Controls = () => {
             },
           ]}
           sortProps={{
+            "aria-label": "Sort by",
             "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
           }}
         />
@@ -249,12 +250,13 @@ export const ControlsControlled = () => {
             },
           ]}
           sortProps={{
+            "aria-label": "Sort by",
             "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
           }}
         />
       </HvControls>
       {currentView === "card" && (
-        <HvSimpleGrid cols={3}>
+        <HvSimpleGrid id={idsToControl.cards} cols={3}>
           {rows?.map((row) => {
             return (
               <HvCard
@@ -270,7 +272,7 @@ export const ControlsControlled = () => {
         </HvSimpleGrid>
       )}
       {currentView === "list" && (
-        <HvPanel style={{ float: "left" }}>
+        <HvPanel id={idsToControl.list} style={{ float: "left" }}>
           <HvListContainer condensed>
             {rows?.map((row) => {
               return (

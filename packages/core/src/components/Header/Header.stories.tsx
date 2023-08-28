@@ -134,7 +134,7 @@ export const Main: StoryObj<HvHeaderProps> = {
             />
           )}
 
-          <HvHeaderActions aria-label="My-aria-label">
+          <HvHeaderActions>
             <HvButton
               icon
               onClick={() => console.log("alerts")}
