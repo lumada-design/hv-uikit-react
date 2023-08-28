@@ -36,10 +36,10 @@ export const Main: StoryObj<HvTooltipProps> = {
         }}
       >
         <HvTooltip title="Grid View">
-          <HvButton variant="ghost">Hover or focus here</HvButton>
+          <HvButton variant="secondaryGhost">Hover or focus here</HvButton>
         </HvTooltip>
         <HvTooltip title="Grid View" open={open}>
-          <HvTypography>Tooltip open</HvTypography>
+          <HvButton variant="secondaryGhost">Tooltip open</HvButton>
         </HvTooltip>
       </HvBox>
     );

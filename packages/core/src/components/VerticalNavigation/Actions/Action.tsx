@@ -80,6 +80,7 @@ export const HvVerticalNavigationAction = ({
         className
       )}
       tabIndex={0}
+      {...(!isOpen && { "aria-label": label })}
       onKeyDown={handleKeyDown}
       onClick={onClick}
       {...others}
