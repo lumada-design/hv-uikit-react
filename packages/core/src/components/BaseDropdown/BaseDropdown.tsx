@@ -3,6 +3,7 @@ import React, {
   useState,
   useCallback,
   KeyboardEventHandler,
+  AriaAttributes,
 } from "react";
 
 import { createPortal } from "react-dom";
@@ -130,7 +131,7 @@ export interface HvBaseDropdownProps
 
 export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
   const {
-    id,
+    id: idProp,
     className,
     classes: classesProp,
     children,
@@ -146,13 +147,15 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     required,
     disablePortal,
     variableWidth,
-    placement = "right",
+    placement: placementProp = "right",
+    "aria-expanded": ariaExpandedProp,
+    "aria-label": ariaLabelProp,
+    "aria-labelledby": ariaLabelledByProp,
     popperProps = {},
     dropdownHeaderRef: dropdownHeaderRefProp,
     onToggle,
     onClickOutside,
     onContainerCreation,
-    "aria-expanded": ariaExpandedProp,
     ...others
   } = useDefaultProps("HvBaseDropdown", props);
   const { classes, cx } = useClasses(classesProp);
@@ -183,10 +186,26 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
 
   const ariaExpanded = ariaExpandedProp ?? (ariaRole ? !!isOpen : undefined);
 
-  const elementId = useUniqueId(id, "hvbasedropdown");
+  const id = useUniqueId(idProp, "hvbasedropdown");
+  const containerId = setId(id, "children-container");
 
-  const bottom: PopperPlacementType =
-    placement && `bottom-${placement === "right" ? "start" : "end"}`;
+  const headerControlArias = {
+    "aria-required": required ?? undefined,
+    "aria-readonly": readOnly ?? undefined,
+
+    "aria-expanded": ariaExpanded,
+    "aria-owns": isOpen ? containerId : undefined,
+    "aria-controls": isOpen ? containerId : undefined,
+  } satisfies AriaAttributes;
+
+  const headerAriaLabels = {
+    "aria-label": ariaLabelProp,
+    "aria-labelledby": ariaLabelledByProp,
+  } satisfies AriaAttributes;
+
+  const placement: PopperPlacementType = `bottom-${
+    placementProp === "right" ? "start" : "end"
+  }`;
 
   const extensionWidth = referenceElement
     ? referenceElement?.offsetWidth
@@ -295,7 +314,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     referenceElement,
     popperElement,
     {
-      placement: bottom,
+      placement,
       modifiers,
       onFirstUpdate,
       ...otherPopperProps,
@@ -345,6 +364,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     if (component) {
       return React.cloneElement(component as React.ReactElement, {
         ref: handleDropdownHeaderRef,
+        ...headerControlArias,
       });
     }
 
@@ -361,12 +381,10 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
           [classes.headerOpenDown]:
             isOpen && popperPlacement.includes("bottom"),
         })}
+        // TODO: review "textbox" role
         role={ariaRole === "combobox" ? "textbox" : undefined}
+        {...headerAriaLabels}
         style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
-        aria-label={others["aria-label"] ?? undefined}
-        aria-labelledby={others["aria-labelledby"] ?? undefined}
-        aria-required={required ?? undefined}
-        aria-readonly={readOnly ?? undefined}
         // Removes the element from the navigation sequence for keyboard focus if disabled
         tabIndex={disabled ? -1 : 0}
         ref={handleDropdownHeaderRef}
@@ -427,7 +445,6 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
 
     const container = (
       <div
-        role="tooltip"
         ref={setPopperElement}
         className={classes.container}
         style={popperStyles.popper}
@@ -447,7 +464,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
             )}
             <BaseDropdownContext.Provider value={popperMaxSize}>
               <div
-                id={setId(elementId, "children-container")}
+                id={containerId}
                 className={cx(classes.panel, {
                   [classes.panelOpenedUp]: popperPlacement.includes("top"),
                   [classes.panelOpenedDown]: popperPlacement.includes("bottom"),
@@ -488,14 +505,6 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     <div className={classes.root}>
       <div
         id={id}
-        role={ariaRole}
-        aria-expanded={ariaExpanded}
-        aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
-        aria-controls={
-          isOpen ? setId(elementId, "children-container") : undefined
-        }
-        aria-required={required ?? undefined}
-        aria-readonly={readOnly ?? undefined}
         className={cx(
           classes.anchor,
           { [classes.rootDisabled]: disabled },
@@ -504,6 +513,11 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
         {...(!readOnly && {
           onKeyDown: handleToggle,
           onClick: handleToggle,
+        })}
+        {...(ariaRole && {
+          role: ariaRole,
+          ...headerAriaLabels,
+          ...headerControlArias,
         })}
         // Removes the element from the navigation sequence for keyboard focus
         tabIndex={-1}

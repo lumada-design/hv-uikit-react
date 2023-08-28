@@ -1,28 +1,11 @@
 import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { useState } from "react";
 import { describe, expect, it, vi } from "vitest";
-import { HvBulkActions } from "./BulkActions";
+import { HvBulkActions, HvBulkActionsProps } from "./BulkActions";
 
-const WithoutActions = () => {
-  const [numSelected, setNumSelected] = useState<number>(0);
-
-  const handleSelectAll = () => {
-    setNumSelected(8);
-  };
-
-  return (
-    <HvBulkActions
-      numTotal={8}
-      numSelected={numSelected}
-      onSelectAll={handleSelectAll}
-      maxVisibleActions={3}
-    />
-  );
-};
-
-const WithActions = () => {
-  const [numSelected, setNumSelected] = useState<number>(0);
+const Sample = (props: Partial<HvBulkActionsProps>) => {
+  const [numSelected, setNumSelected] = useState(0);
 
   const handleSelectAll = () => {
     setNumSelected(8);
@@ -40,6 +23,7 @@ const WithActions = () => {
         { id: "lock", label: "Lock", icon: <Lock /> },
         { id: "put", label: "Preview", icon: <Preview /> },
       ]}
+      {...props}
     />
   );
 };
@@ -47,24 +31,24 @@ const WithActions = () => {
 describe("BulkActions", () => {
   describe("Without actions", () => {
     it("should render select all component correctly", async () => {
-      const { getByRole, getByLabelText } = render(<WithoutActions />);
+      render(<Sample actions={undefined} />);
 
-      const checkbox = getByRole("checkbox");
+      const checkbox = screen.getByRole("checkbox");
 
       expect(checkbox).toBeInTheDocument();
-      expect(getByLabelText("All (8)")).toBeInTheDocument();
+      expect(screen.getByLabelText("All (8)")).toBeInTheDocument();
 
       // Select all
       fireEvent.click(checkbox);
 
       expect(checkbox).toBeChecked();
-      expect(getByLabelText("8 / 8")).toBeInTheDocument();
+      expect(screen.getByLabelText("8 / 8")).toBeInTheDocument();
     });
 
     it("should call select all correctly", async () => {
       const onSelectAllMock = vi.fn();
 
-      const { getAllByRole } = render(
+      render(
         <HvBulkActions
           numTotal={5}
           numSelected={0}
@@ -72,7 +56,7 @@ describe("BulkActions", () => {
         />
       );
 
-      const checkboxes = getAllByRole("checkbox");
+      const checkboxes = screen.getAllByRole("checkbox");
 
       const selectAll = checkboxes[0];
 
@@ -83,7 +67,7 @@ describe("BulkActions", () => {
     });
 
     it("should render the custom label", () => {
-      const { getByLabelText } = render(
+      render(
         <HvBulkActions
           numTotal={5}
           numSelected={0}
@@ -91,15 +75,15 @@ describe("BulkActions", () => {
         />
       );
 
-      expect(getByLabelText("MockLabel (5)")).toBeInTheDocument();
+      expect(screen.getByLabelText("MockLabel (5)")).toBeInTheDocument();
     });
   });
 
   describe("With actions", () => {
     it("should render the actions correctly", async () => {
-      const { getAllByRole, getByRole } = render(<WithActions />);
+      render(<Sample />);
 
-      const buttons = getAllByRole("button");
+      const buttons = screen.getAllByRole("button");
 
       expect(buttons.length).toBe(3);
 
@@ -111,7 +95,7 @@ describe("BulkActions", () => {
       expect(button2).toBeDisabled();
       expect(button3).toBeDisabled();
 
-      const checkbox = getByRole("checkbox");
+      const checkbox = screen.getByRole("checkbox");
 
       // Select all
       fireEvent.click(checkbox);
@@ -120,15 +104,10 @@ describe("BulkActions", () => {
       expect(button2).toBeEnabled();
       expect(button3).toBeEnabled();
 
-      // Open tooltip
+      // Open actions
       fireEvent.click(button3);
-
-      const tooltip = getByRole("tooltip");
-
-      expect(tooltip).toBeInTheDocument();
-
-      const menu = getByRole("menu");
-      const items = getAllByRole("menuitem");
+      const menu = screen.getByRole("menu");
+      const items = screen.getAllByRole("menuitem");
 
       expect(menu).toBeInTheDocument();
       expect(items.length).toBe(2);
