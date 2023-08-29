@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.26.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.2...@hitachivantara/uikit-react-core@5.26.3) (2023-08-29)
+
+### Bug Fixes
+
+- **a11y:** DropdownMenu & remove extra aria-label's ([30820f8](https://github.com/lumada-design/hv-uikit-react/commit/30820f87a94f1d91d40d103471322217f7839ee9))
+- **Tooltip:** a11y labels ([d59f693](https://github.com/lumada-design/hv-uikit-react/commit/d59f6934badb0d8d7e47b677d518e6f071612ce6))
+
 ## [5.26.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.1...@hitachivantara/uikit-react-core@5.26.2) (2023-08-26)
 
 ### Bug Fixes
