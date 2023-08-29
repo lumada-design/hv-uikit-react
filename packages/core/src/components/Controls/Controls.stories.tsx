@@ -97,6 +97,7 @@ export const Controls = () => {
           placeholder="Search"
           searchProps={{
             inputProps: {
+              "aria-label": "Search",
               "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
             },
           }}
@@ -221,6 +222,7 @@ export const ControlsControlled = () => {
           onSearch={(e, value) => setGlobalFilter?.(value)}
           searchProps={{
             inputProps: {
+              "aria-label": "Search",
               "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
             },
           }}
@@ -483,7 +485,16 @@ export const MixedControls = () => {
         hideViewSwitcher
         callbacks={{ setGlobalFilter }}
       >
-        <HvLeftControl id="MultibuttonFilter" placeholder="Search">
+        <HvLeftControl
+          id="MultibuttonFilter"
+          placeholder="Search"
+          searchProps={{
+            inputProps: {
+              "aria-label": "Search",
+              "aria-controls": cardsId,
+            },
+          }}
+        >
           <HvMultiButton style={{ width: "350px" }}>
             {buttons.map((button, i) => (
               <HvButton
