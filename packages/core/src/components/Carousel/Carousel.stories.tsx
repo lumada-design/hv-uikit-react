@@ -49,7 +49,6 @@ export const Main: StoryObj<HvCarouselProps> = {
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
-      "https://blog.nzibs.co.nz/wp-content/uploads/2020/02/Landscape-1280x640.jpg",
       "https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg",
       "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
       "https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w",
@@ -87,7 +86,6 @@ export const Actions: StoryObj<HvCarouselProps> = {
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
-      "https://blog.nzibs.co.nz/wp-content/uploads/2020/02/Landscape-1280x640.jpg",
       "https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg",
       "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
     ]);
@@ -189,7 +187,6 @@ export const Options: StoryObj<HvCarouselProps> = {
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
-      "https://blog.nzibs.co.nz/wp-content/uploads/2020/02/Landscape-1280x640.jpg",
       "https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg",
       "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
       "https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w",
@@ -231,7 +228,6 @@ export const CustomContent: StoryObj<HvCarouselProps> = {
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
-      "https://blog.nzibs.co.nz/wp-content/uploads/2020/02/Landscape-1280x640.jpg",
       "https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg",
       "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
       "https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w",
@@ -265,7 +261,7 @@ export const CustomContent: StoryObj<HvCarouselProps> = {
               </div>
               <img
                 src={src}
-                alt={`travel destination ${i}`}
+                alt={`travel destination ${i + 1}`}
                 style={{ width: 600, aspectRatio: "16/9" }}
               />
             </div>
