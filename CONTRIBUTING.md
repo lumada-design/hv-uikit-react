@@ -5,103 +5,70 @@ We welcome contributions to our project. Here are a few guidelines that will hel
 - [Getting started](#getting-started)
 - [Question or problem?](#question-or-problem)
 - [New components](#new-components)
-- [Bugs](#bugs)
-- [Feature requests](#feature-requests)
-- [Submission guidelines](#submission-guidelines)
+- [Submitting an issue](#submitting-an-issue)
+- [Submitting a pull request](#submitting-a-pull-request)
 - [Coding standards](#coding-standards)
 - [Commit message guidelines](#commit-message-guidelines)
 - [Testing](#testing)
 
-## Getting started
+<h2 id="getting-started">Getting started</h2>
 
-### Clone the hv-uikit-react and setup all the dependencies and packages
-
-```shell
+```sh
+# Clone the repository
 git clone git@github.com:lumada-design/hv-uikit-react.git
 cd hv-uikit-react
+# Install the dependencies
 npm ci
-```
-
-#### Start the storybook dev environment
-
-```shell
+# Start the storybook dev environment
 npm run doc
 ```
 
-By default it will run in [http://localhost:6006](http://localhost:6006).
-
-## Question or problem?
+<h2 id="question-or-problem">Question or problem?</h2>
 
 Use GitHub issues for bug reports and feature requests or one of our available communication channels for general support questions.
 
-## New components
+<h2 id="new-components">New components</h2>
 
-When contributing with a new component, please add it to the **lab** in `packages/lab/src/<YOUR_COMPONENT>`
+New components should be contributed to the `lab` package in `packages/lab/src/components/<COMPONENT_NAME>`.
 
-In order to make your component available in the Storybook you also need to add:
+Check out our [Component Guidelines](/docs/overview-community-component-guidelines--page) for a guide on how to structure components, and the [submitting a pull request](#submitting-a-pull-request) on how to contribute it.
 
-- A **story** in `packages/lab/src/<YOUR_COMPONENT>/<YOUR_STORY>.stories.js`
+<h2 id="submitting-an-issue">Submitting an issue</h2>
 
-### Running the generate utility tool
+You can file new issues by selecting from our [issue templates](https://github.com/lumada-design/hv-uikit-react/issues/new/choose) and filling out the issue template.
+Before submitting an issue, please search the repository, as your issue might have been already answered.
 
-```shell
-npm run generate <YOUR_COMPONENT>
-```
+### Bugs 🐛
 
-This will generate a basic component structure in the lab folder found at `packages/lab/src/<YOUR_COMPONENT>`.
+If your issue appears to be a bug, please report it by opening [a new bug report](https://github.com/lumada-design/hv-uikit-react/issues/new?template=1.bug_report.yml).
 
-### Symlinking packages
+Even better if you submit a Pull Request with the fix instead.
 
-If you need to work on a component and watch the changes reflected on your application at the same time, you can [link](https://docs.npmjs.com/cli/link.html) your packages globally:
-
-```shell
-npm run link
-```
-
-Alternatively you can use [yalc](https://github.com/wclr/yalc).
-
-## Bugs
-
-If you find a bug in the source code, you can help us by submitting an issue to this repo.
-Even better you can submit a Pull Request with a fix.
-
-## Feature requests
+### Feature requests ✨
 
 You can request a new feature by submitting an issue to this repo.
-Features can be **new components** or changes to **existing**.
+Features can be **new components** or changes to **existing components**.
 
 Please make sure your features are compliant with the [NEXT Design System](https://designsystem.hitachivantara.com/) guidelines.
 
-## Submission guidelines
-
-### Submitting an issue
-
-You can file new issues by selecting from our [new issue templates](https://github.com/lumada-design/hv-uikit-react/issues/new/choose) and filling out the issue template.
-Before you submit your issue, search the repository, maybe your question was already answered.
-
-If your issue appears to be a bug, and hasn't been reported, [open a new issue](https://github.com/lumada-design/hv-uikit-react/issues).
-Help us to maximize the effort we can spend fixing issues and adding new features, by not reporting duplicate issues.
-
-### Submitting a pull request
+<h2 id="submitting-a-pull-request">Submitting a pull request</h2>
 
 Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add.
 
-#### Branch structure
+All contributions should target the `master` branch or a previous major version (eg. `v4.x`). Maintainers will be responsible for reviewing and merging the Pull Request.
 
-All contributions should target the `master` branch (or a previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
-
-#### Setup
+### Setup
 
 1. Pull the latest `master` branch.
 2. Always work and submit pull requests from a branch:
-   ```
-   $ git checkout -b YOUR_BRANCH_NAME master
+   ```sh
+   git checkout -b YOUR_BRANCH_NAME master
    ```
 3. Make sure you follow our [coding standards](#coding-standards), and add new test cases where appropriate following the [testing guidelines](#testing).
 4. Commit your changes using a descriptive commit message that follows our [commit message guidelines](#commit-message-guidelines).
 5. Once ready for feedback from other contributors and maintainers, push your commits to your fork:
-   ```
-   $ git push YOUR_FORK_REMOTE YOUR_BRANCH_NAME
+   ```sh
+   git push YOUR_FORK_REMOTE YOUR_BRANCH_NAME
    ```
 6. Open a Pull Request. The title should follow the same [guidelines of the commit message](#commit-message-guidelines) (most of the times it can simply be the same than the first commit message).
 
@@ -110,23 +77,17 @@ Once all revisions to your merge request are complete, a maintainer will squash 
 
 **That's it! Thank you for your contribution!**
 
-## Coding standards
+<h2 id="coding-standards">Coding standards</h2>
 
-### Style guide
-
-For a set of basic rules and guidelines for developing React components, see [here](https://github.com/airbnb/javascript/tree/master/react#basic-rules).
-Feel free to edit/write components in your own style but be wary that we may ask you to make changes while reviewing your merge request.
-
-### Linting
-
-We enforce some style rules for code in this repository using [eslint](http://eslint.org/). You can install a linting addon to a lot of editors and IDEs that will follow our linting rules.
-If you decide to not install a linter addon, or cannot, you can run `npm run lint` to get a report of any style issues.
+We enforce some style and formatting rules for source code using [ESLint](http://eslint.org/) and [Prettier](https://prettier.io/).
+Most popular IDEs have plugins that will following our linting and formatting rules. Alternatively, you can run `npm run lint` and `npm run prettier` to get a report of the issues.
 
 Any issues not fixed will be caught during CI, and will prevent merging.
 
-## Commit message guidelines
+<h2 id="commit-message-guidelines">Commit message guidelines</h2>
 
-We enforce [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/) specs over how our git commit messages should be formatted. This leads to more readable messages that are easy to follow when looking through the project history. But also, we use the git commit messages to generate the change log.
+We enforce [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specs over how our git commit messages should be formatted.
+This leads to more readable messages that are easy to follow when looking through the project history. The git commit messages are also used to generate the change log.
 
 Commits must be prefixed with a `type` in order to communicate intent, an optional `scope` may be provided after a type.
 
@@ -141,21 +102,15 @@ Must be one of the following:
 - `refactor:` a change in production code focused on readability, style and/or performance.
 - Others commit types are allowed, for example: `style:`, `perf:`, `test:`.
 
-Samples:
+Examples:
 
 ```
 docs: correct spelling of CHANGELOG
-```
-
-```
 feat(lang): added polish language
+fix(button): minor typos in code, fixes #12
 ```
 
-```
-fix: minor typos in code, fixes issue #12
-```
-
-## Testing
+<h2 id="testing">Testing</h2>
 
 If you add any features to our code, make sure to add tests so that your changes are covered.
 
