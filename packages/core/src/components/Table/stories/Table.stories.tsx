@@ -124,7 +124,7 @@ const StyledResponsiveTableHeader = styled(HvTableHeader)({
 // #endregion Responsive table styled components
 
 export default {
-  title: "Guides/Table",
+  title: "Visualizations/Table",
   component: HvTable,
   subcomponents: {
     HvTableContainer,
