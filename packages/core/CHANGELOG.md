@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.26.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.3...@hitachivantara/uikit-react-core@5.26.4) (2023-08-30)
+
+### Bug Fixes
+
+- **basedropdown:** aria & role on header element ([d8d455b](https://github.com/lumada-design/hv-uikit-react/commit/d8d455bd1ea52cfa8be1b1553c02f0508d498726))
+- **dropdown:** pass missing a11y labels ([2e85bec](https://github.com/lumada-design/hv-uikit-react/commit/2e85bec2b862f252f86b03d01094700a1ef29e51))
+
 ## [5.26.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.2...@hitachivantara/uikit-react-core@5.26.3) (2023-08-29)
 
 ### Bug Fixes
