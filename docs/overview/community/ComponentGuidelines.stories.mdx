@@ -1,0 +1,191 @@
+import { Title, Meta } from "@storybook/addon-docs";
+
+<Meta title="Overview/Community/Component Guidelines" />
+
+<Title>Component Guidelines</Title>
+
+This guide aims to provide insights and recommendations for building and contributing
+robust and adaptable components that are consistent with the existing UI Kit library.
+
+## File Structure & Purpose
+
+The directory should contain the following files:
+
+```sh
+HvComp/
+├── index.ts            # entry file with the component's public exports
+├── HvComp.tsx          # component implementation and types
+├── HvComp.stories.tsx  # component documentation and examples
+├── HvComp.styles.ts    # component classes and styling utils
+└── HvComp.test.tsx     # component unit tests
+```
+
+## Guidelines
+
+- Ensure that components and their types:
+  - are _exported_ in `index.ts`
+  - are named in PascalCase and prefixed with `Hv*`.
+- Exports the components in the `index.ts` file.
+- Make boolean props opt-in (default is `false`).
+- Call Event handlers `on<Action>`.
+
+### Styles
+
+- Use `createClasses` utility to declare classes.
+- Class names in `createClasses` are exposed to users, so be mindful of naming:
+  - Ensure `classes.root` is on the root element.
+  - Make it clear what element the class targeting when it isn't the root element.
+  - If conditional, the class name should be based on the condition.
+- Leverage `theme` to style component. Don't hard-code colors or spacings.
+
+### Documentation
+
+- Add a `Component.stories.tsx` exporting multiple [CSF](https://storybook.js.org/docs/react/api/csf) stories.
+- Name the primary story `Main` and configure the [controls](https://storybook.js.org/docs/react/essentials/controls).
+- Avoid adding too many similar stories; each story should have a unique purpose.
+
+### Others
+
+- Use `@testing-library/react` for unit tests.
+- Prefer semantic HTML elements instead of custom logic whenever possible.
+- Follow [WCAG](https://www.w3.org/TR/WCAG21/) and [Using ARIA](https://www.w3.org/TR/using-aria/) guidelines.
+
+## Example
+
+Here's an example anatomy of a `HvComp` component:
+
+```ts
+// HvComp.styles.ts
+import { createClasses } from "@core/utils/classes";
+
+export const { staticClasses, useClasses } = createClasses("HvComp", {
+  /** Applied to the root element */
+  root: {
+    // leverage the 👇 `theme.` object
+    padding: theme.spacing("xs"),
+    backgroundColor: theme.colors.backgroundColor,
+  },
+  /** Applied to the root element when selected */
+  selected: {},
+  /** Applied to the root element when disabled */
+  disabled: {
+    // 👇 leverage global `disabled` instead of adding a `buttonDisabled`
+    "& $button": {
+      cursor: "not-allowed",
+    },
+  },
+  /** Applied to the button element */
+  button: {},
+});
+```
+
+```tsx
+// HvComp.tsx
+import { HvBaseProps } from "@core/types/generic";
+import { ExtractNames } from "@core/utils/classes";
+import { staticClasses, useClasses } from "./MyComp.styles";
+
+// export `staticClasses` 👇 as `compClasses` (camelCase, no `Hv`)
+export { staticClasses as compClasses };
+
+
+// export the classes 👇 inferred from `useClasses`
+export type HvCompClasses = ExtractNames<typeof useClasses>;
+
+// extend the types to where `...others` 👇 is being passed
+export interface HvCompProps extends HvBaseProps<HTMLDivElement> {
+  // 👇 name boolean props so its obvious they're boolean
+  selected?: boolean;
+  // 👇 add JSDoc to the props, especially if they're complex
+  /** Disables the component visually and its controls */
+  disabled?: boolean;
+  children?: ReactNode;
+  // Use permissive 👇 `ReactNode` for props that are rendered as-is
+  buttonContent?: ReactNode;
+  // re-use types 👇 when possible
+  onClick?: HvButtonProps["onClick"];
+  // 👇 call handlers `on<Action>` or `on<Element><Action>` for sub-elements
+  onButtonClick?: HvButtonProps["onClick"];
+  // 👇 ❌ don't add redundant types (included in the parent interface)
+  id?: string;
+}
+
+// 👇 Add a JSDoc block to the component explaining its purpose
+/** HvComp does some amazing stuff */
+export const HvComp = forwardRef<HTMLDivElement, HvCompProps>((props, ref) => {
+  const {
+    children,
+    // fix collisions 👇 by renaming to `xProp`
+    classes: classesProp,
+    className,
+    // 👇 make booleans be opt-in (default is false/undefined)
+    selected,
+    // 👇 don't  set defaults (ie `false`) unnecessarily
+    disabled,
+    buttonContent
+    onClick,
+    onButtonClick,
+    // 👇 call remaining props `others`
+    ...others,
+  // use the 👇 useDefaultProps utility
+  } = useDefaultProps("HvComp", props);
+  // use the useClasses utility 👇
+  const { classes, css, cx } = useClasses(classesProp);
+
+  // internal state variables.
+  const canSelect = !disabled && !selected;
+  // reserve `useMemo` for expensive 👇 computations
+  const hasElement = useMemo(() => expensiveSearch(children), [children]);
+
+  // AVOID useEffect...
+  useEffect(() => {
+    // 👇 ❌ ...especially when dealing with event handlers
+    onClick();
+  }, [onClick]);
+
+  // rename handlers 👇 (`handle<Action>`) and 👇 type them accordingly
+  const handleButtonClick: HvButtonProps["onClick"] = (evt) => {
+    evt.preventDefault();
+    // use the ?. 👇 operator for optional event handlers & forward the event
+    onButtonClick?.(evt);
+  }
+
+  // keep `render<Stuff>` as a `ReactNode` if possible
+  // if you 👇 need `(props) => ReactNode`, it should likely be a separate component
+  const renderContent = (
+    <div>
+      <span>{/* some content */}</span>
+    </div>
+  );
+
+  return (
+    <div
+      // 👇 don't forget forwarding the ref
+      ref={ref}
+      // 👇 merge class names with `cx` provided by `useClasses`
+      className={cx(
+        // 👇 pass internal styles first, using `css`
+        css(/* internal styles */),
+        // 👇 ensure `classes.root` is on the root element
+        classes.root,
+        {
+          // conditional classes 👇 are based on their *condition*
+          [classes.selected]: selected,
+          [classes.disabled]: disabled,
+        },
+        // 👇 pass user-defined `className` last
+        className,
+      )}
+      onClick={disabled ? undefined : onClick}
+      // 👇 forward others according to the types
+      {...others}
+    >
+      <HvButton className={classes.button} onClick={handleClick}>
+        {buttonContent}
+      </HvButton>
+      {selected && renderContent}
+      {children}
+    </div>
+  );
+}
+```

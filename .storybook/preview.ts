@@ -20,6 +20,7 @@ export const parameters = {
           "Introduction",
           "Get Started",
           "Community",
+          ["Releases", "Contributing", "Component Guidelines"],
           "Migration",
           "Project Status",
         ],
