@@ -45,6 +45,7 @@ export interface HvContainerProps
   classes?: HvContainerClasses;
 }
 
+/** The container enables you to center your content horizontally and bound it to a specific breakpoint. */
 export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
   (props, ref) => {
     const {

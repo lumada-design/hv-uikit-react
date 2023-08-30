@@ -1,9 +1,19 @@
 import { HvBaseProps } from "@core/types/generic";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "@core/utils/classes";
 
 import { Breakpoint, Spacing } from "./types";
-import { getContainerStyle, useClasses } from "./SimpleGrid.styles";
+import {
+  getContainerStyle,
+  staticClasses,
+  useClasses,
+} from "./SimpleGrid.styles";
 
+export { staticClasses as simpleGridClasses };
+
+export type HvSimpleGridClasses = ExtractNames<typeof useClasses>;
+
+/** Grid component that enables you to create columns of equal width and define your own breakpoints and responsive behavior. */
 export interface HvSimpleGridProps extends HvBaseProps {
   /**
    * Spacing with pre-defined values according the values defined in the theme
@@ -23,6 +33,8 @@ export interface HvSimpleGridProps extends HvBaseProps {
    * Number of how many columns the content will be displayed
    */
   cols?: number;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvSimpleGridClasses;
 }
 
 export const HvSimpleGrid = (props: HvSimpleGridProps) => {
@@ -32,15 +44,19 @@ export const HvSimpleGrid = (props: HvSimpleGridProps) => {
     spacing = "sm",
     cols,
     className,
+    classes: classesProp,
     ...others
   } = useDefaultProps("HvSimpleGrid", props);
 
-  const { cx, css } = useClasses();
+  const { classes, cx, css } = useClasses(classesProp);
 
   const containerStyle = getContainerStyle({ breakpoints, spacing, cols });
 
   return (
-    <div className={cx(css(containerStyle), className)} {...others}>
+    <div
+      className={cx(css(containerStyle), classes.root, className)}
+      {...others}
+    >
       {children}
     </div>
   );
