@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import { createClasses } from "@core/utils/classes";
 
-export const { staticClasses, useClasses } = createClasses("HvFooter", {
+export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   root: {
     display: "flex",
     height: 32,
