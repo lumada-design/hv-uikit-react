@@ -176,6 +176,8 @@ export function hvTagColumn<
   };
 }
 
+// TODO - Review accessibility on the next renderers because they all differ
+
 export function hvSwitchColumn<
   D extends object = Record<string, unknown>,
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
@@ -213,7 +215,7 @@ export function hvDropdownColumn<
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
 >(
   col: HvTableColumnConfig<D, H>,
-  id: string,
+  id: string | undefined,
   placeholder: string,
   disabledPlaceholder: string,
   onChange?: (identifier: string, value: HvListValue) => void
@@ -229,7 +231,7 @@ export function hvDropdownColumn<
           onChange={(val) => onChange?.(row.id, val)}
           disabled={dsbld}
           dropdownProps={{
-            "aria-labelledby": setId(id, column.id),
+            "aria-labelledby": setId(id, column.id) || column.id || id, // TODO - to be reviewed because it doesn't make much sense
           }}
         />
       );
@@ -253,13 +255,18 @@ export function hvProgressColumn<
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
-      const { row } = cellProps;
+      const { row, column } = cellProps;
       const partial = getPartial?.(row) || 0;
       const total = getTotal?.(row);
 
       if (total) {
         return (
-          <HvProgressColumnCell partial={partial} total={total} color={color} />
+          <HvProgressColumnCell
+            partial={partial}
+            total={total}
+            color={color}
+            aria-labelledby={column.id}
+          />
         );
       }
 

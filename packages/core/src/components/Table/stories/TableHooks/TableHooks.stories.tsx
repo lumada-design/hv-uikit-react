@@ -533,7 +533,7 @@ const UseHvBulkActions = () => {
         <HvTableCell colSpan={100} style={{ height: 96 }}>
           <HvEmptyState
             message="No data to display."
-            icon={<Ban role="presentation" />}
+            icon={<Ban role="none" />}
           />
         </HvTableCell>
       </HvTableRow>
@@ -655,7 +655,7 @@ const EmptyStateRow = useCallback(
       <HvTableCell colSpan={100} style={{ height: 96 }}>
         <HvEmptyState
           message="No data to display."
-          icon={<Ban role="presentation" />}
+          icon={<Ban role="none" />}
         />
       </HvTableCell>
     </HvTableRow>
@@ -1215,7 +1215,7 @@ const UseHvTableSticky = () => {
             </HvTableRow>
           ))}
         </HvTableHead>
-        <HvTableBody {...getTableBodyProps()}>
+        <HvTableBody tabIndex={0} {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
 
@@ -1300,7 +1300,7 @@ return (
           </HvTableRow>
         ))}
       </HvTableHead>
-      <HvTableBody {...getTableBodyProps()}>
+      <HvTableBody tabIndex={0} {...getTableBodyProps()}>
         {rows.map((row) => {
           prepareRow(row);
 

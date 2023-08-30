@@ -55,10 +55,7 @@ import LoadingContainer from "./LoadingContainer";
 const EmptyRow = ({ height }) => (
   <HvTableRow>
     <HvTableCell colSpan={100} style={{ height }}>
-      <HvEmptyState
-        message="No data to display"
-        icon={<Ban role="presentation" />}
-      />
+      <HvEmptyState message="No data to display" icon={<Ban role="none" />} />
     </HvTableCell>
   </HvTableRow>
 );
@@ -193,7 +190,7 @@ const Complete = () => {
       return (
         <HvTableRow
           {...row.getRowProps({
-            "aria-rowindex": index,
+            "aria-rowindex": index + 1,
           })}
         >
           {row.cells.map((cell) => (
@@ -382,7 +379,7 @@ const rowRenderer = (pageRows: HvRowInstance<AssetEvent, string>[]) => {
     return (
       <HvTableRow
         {...row.getRowProps({
-          "aria-rowindex": index,
+          "aria-rowindex": index + 1,
         })}
       >
         {row.cells.map((cell) => (

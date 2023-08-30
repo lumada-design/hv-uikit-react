@@ -40,10 +40,10 @@ export const HvSwitchColumnCell = ({
         </HvTypography>
       )}
       <HvBaseSwitch
-        aria-label={switchLabel}
         checked={checked}
         value={value}
         {...switchProps}
+        inputProps={{ "aria-label": switchLabel, ...switchProps?.inputProps }}
       />
       {trueLabel != null && (
         <HvTypography
