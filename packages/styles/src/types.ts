@@ -261,6 +261,7 @@ export type HvThemeComponents = {
     cellPaddingBottom: string;
     cellListBorder: string;
     cellBorder: string;
+    sortButtonHoverColor: string;
   };
   calendar: {
     border: string;
