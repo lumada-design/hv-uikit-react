@@ -407,6 +407,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     cellPaddingBottom: `calc(${theme.space.xs} - 3px )`,
     cellListBorder: "none",
     cellBorder: `solid 1px ${theme.colors.atmo4}`,
+    sortButtonHoverColor: theme.colors.primary_20,
   },
   calendar: {
     border: `1px solid ${theme.colors.secondary_80}`,
