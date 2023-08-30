@@ -26,7 +26,6 @@ const makeDecorator = (styles: CSSProperties) => (Story) =>
 export const Main: StoryObj<HvTimePickerProps> = {
   args: {
     label: "Time Picker",
-    "aria-label": "Time Picker",
     description: "",
     placeholder: "Select a date",
   },
@@ -74,7 +73,6 @@ export const Form: StoryObj<HvTimePickerProps> = {
         <HvTimePicker
           name="scheduleTime"
           label="Time Picker"
-          aria-label="Time Picker"
           defaultValue={{ hours: 5, minutes: 30, seconds: 14 }}
           onChange={console.log}
         />
@@ -110,27 +108,11 @@ export const Variants: StoryObj<HvTimePickerProps> = {
 
     return (
       <div className={css(styles.root)}>
-        <HvTimePicker
-          required
-          label="Required"
-          aria-label="Required"
-          defaultValue={value}
-        />
-        <HvTimePicker
-          disabled
-          label="Disabled"
-          aria-label="Disabled"
-          defaultValue={value}
-        />
-        <HvTimePicker
-          readOnly
-          label="Read-only"
-          aria-label="Read only"
-          defaultValue={value}
-        />
+        <HvTimePicker required label="Required" defaultValue={value} />
+        <HvTimePicker disabled label="Disabled" defaultValue={value} />
+        <HvTimePicker readOnly label="Read-only" defaultValue={value} />
         <HvTimePicker
           label="Invalid"
-          aria-label="Invalid"
           status="invalid"
           statusMessage="This is an invalid time"
           defaultValue={value}
@@ -166,7 +148,6 @@ export const Controlled: StoryObj<HvTimePickerProps> = {
         <br />
         <HvTimePicker
           label="Time Picker"
-          aria-label="Time Picker"
           defaultValue={value}
           onChange={setValue}
         />
@@ -197,7 +178,6 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
       <HvTimePicker
         timeFormat="12"
         label="Time Picker"
-        aria-label="Time Picker"
         defaultValue={{ hours: 19, minutes: 30, seconds: 14 }}
       />
     );

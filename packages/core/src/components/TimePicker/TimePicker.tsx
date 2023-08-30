@@ -189,7 +189,7 @@ export const HvTimePicker = (props: HvTimePickerProps) => {
     },
   };
   const state = useTimeFieldState(stateProps);
-  const { labelProps, fieldProps } = useTimeField(
+  const { labelProps, fieldProps, descriptionProps } = useTimeField(
     {
       ...stateProps,
       id,
@@ -246,7 +246,10 @@ export const HvTimePicker = (props: HvTimePickerProps) => {
             <HvLabel label={label} className={classes.label} {...labelProps} />
           )}
           {description && (
-            <HvInfoMessage className={classes.description}>
+            <HvInfoMessage
+              className={classes.description}
+              {...descriptionProps}
+            >
               {description}
             </HvInfoMessage>
           )}
@@ -299,6 +302,8 @@ export const HvTimePicker = (props: HvTimePickerProps) => {
         }}
         aria-haspopup="dialog"
         aria-label={ariaLabel}
+        aria-labelledby={fieldProps["aria-labelledby"]}
+        aria-describedby={fieldProps["aria-describedby"]}
         aria-invalid={isStateInvalid ? true : undefined}
         aria-errormessage={errorMessageId}
         disablePortal={disablePortal}
