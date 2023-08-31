@@ -35,7 +35,7 @@ const Button = ({
 }: {
   label: string;
   variant?: HvButtonProps["variant"];
-  color?: string;
+  color?: HvLoadingProps["color"];
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 

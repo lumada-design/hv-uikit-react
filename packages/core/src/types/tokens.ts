@@ -7,7 +7,6 @@ import type {
   HvCategoricalColor,
 } from "@hitachivantara/uikit-styles";
 
-// TODO: deprecate/remove this
 export type HvAccentColorKeys = HvAccentColor;
 export type HvAtmosphereColorKeys = HvAtmosphereColor;
 export type HvBaseColorKeys = HvBaseColor;
@@ -54,6 +53,7 @@ export type HvSemanticColors = Record<HvSemanticColorKeys, string>;
 
 export type HvSupportColors = Record<HvSupportColorKeys, string>;
 
+// TODO: unsused - remove this and associated types
 export interface HvThemePalette {
   accent: HvAccentColors;
   atmosphere: HvAtmosphereColors;

@@ -2,7 +2,7 @@ import { CSSProperties, HTMLAttributes, forwardRef } from "react";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { User } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
+import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
 
 import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 
@@ -28,14 +28,10 @@ export interface HvAvatarProps extends HvBaseProps {
   component?: React.ElementType;
   /** Sets one of the standard sizes of the icons */
   size?: HvAvatarSize;
-  /**
-   * A string representing the foreground color of the avatar's
-   * letters or the generic User icon fallback.
-   * You can use either an HEX or color name from the palette.
-   */
-  color?: string;
-  /** A String representing the background color of the avatar. You can use either an HEX or color name from the palette. */
-  backgroundColor?: string;
+  /** A color representing the foreground color of the avatar's letters or the generic User icon fallback. */
+  color?: HvColorAny;
+  /** A String representing the background color of the avatar. */
+  backgroundColor?: HvColorAny;
   /** The `src` attribute for the `img` element. */
   src?: string;
   /** The `srcSet` attribute for the `img` element. Use this attribute for responsive image display. */
@@ -60,15 +56,6 @@ export interface HvAvatarProps extends HvBaseProps {
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvAvatarClasses;
 }
-
-/**
- * Get a color from the theme palette
- * @param {object} theme The theme object
- * @param {string} color A color to use if none is found on the theme palette
- * @param {string} defaultColor The fallback color to use
- */
-const getColor = (color: string, defaultColor: string): string =>
-  theme.colors[color] || color || defaultColor;
 
 /**
  * Avatars can be used to represent a user or a brand.

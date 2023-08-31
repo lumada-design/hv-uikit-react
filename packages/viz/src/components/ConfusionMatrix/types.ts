@@ -1,6 +1,7 @@
+import type { HvColorAny } from "@hitachivantara/uikit-react-core";
+
 export interface HvConfusionMatrixColorScale {
-  /** You can use either an HEX or color name from the palette. */
-  color: string;
+  color: HvColorAny;
   label: string;
   max?: number;
   min?: number;
@@ -10,8 +11,8 @@ export interface HvConfusionMatrixColorScale {
 export interface HvConfusionMatrixValuesProps {
   /** Whether to show the prediction values inside the confusion matrix or not. Defaults to `true`. */
   show?: boolean;
-  /** Prediction values label color. You can use either an HEX or color name from the palette. */
-  color?: string;
+  /** Prediction values label color. */
+  color?: HvColorAny;
   /** Prediction values label font style. */
   fontStyle?: "normal" | "italic";
   /** Prediction values label font weight. */
