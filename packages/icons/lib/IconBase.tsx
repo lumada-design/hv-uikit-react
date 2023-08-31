@@ -1,9 +1,7 @@
 import styled from "@emotion/styled";
 import React, { HTMLAttributes, AllHTMLAttributes, useMemo } from "react";
-import { theme } from "@hitachivantara/uikit-styles";
+import { theme, getColor } from "@hitachivantara/uikit-styles";
 import { isSemantic, isXS } from "./utils";
-
-const getColor = (c: string): string => theme?.colors?.[c] || c;
 
 const getDims = (size: number) => ({ width: size, height: size });
 
@@ -47,10 +45,10 @@ export const getIconColors = (
   const colorArray = palette;
 
   if (typeof color === "string") {
-    colorArray[0] = getColor(color);
+    colorArray[0] = getColor(color) as string;
   } else if (Array.isArray(color)) {
     colorArray.forEach((_, i) => {
-      colorArray[i] = getColor(color[i]);
+      colorArray[i] = getColor(color[i]) as string;
     });
   }
 

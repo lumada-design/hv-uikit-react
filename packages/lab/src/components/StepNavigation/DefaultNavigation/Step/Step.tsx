@@ -11,7 +11,6 @@ import {
   HvAvatar,
   HvButton,
 } from "@hitachivantara/uikit-react-core";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { getColor, getSemantic } from "../utils";
 import { useClasses } from "./Step.styles";
@@ -81,7 +80,7 @@ export const HvStep = ({
     xl: squareL + 24,
   }[size];
 
-  const backgroundColor = getColor(state, theme);
+  const backgroundColor = getColor(state);
 
   const color = state === "Pending" ? "atmo2" : undefined;
   const semantic = state !== "Pending" ? getSemantic(state) : undefined;

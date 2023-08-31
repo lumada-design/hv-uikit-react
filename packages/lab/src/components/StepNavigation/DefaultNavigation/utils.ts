@@ -1,4 +1,7 @@
-const getColor = (state, theme) =>
+import { theme } from "@hitachivantara/uikit-styles";
+import type { HvStepProps } from "./Step";
+
+export const getColor = (state: HvStepProps["state"]) =>
   ({
     Pending: theme.colors.warning ?? "warning",
     Failed: theme.colors.negative ?? "negative",
@@ -8,7 +11,7 @@ const getColor = (state, theme) =>
     Enabled: theme.colors.secondary ?? "secondary",
   }[state]);
 
-const getSemantic = (state) =>
+export const getSemantic = (state: HvStepProps["state"]) =>
   ({
     Pending: "warning",
     Failed: "negative",
@@ -24,12 +27,10 @@ const MEDIUM = { container: 48, avatar: 40 };
 const LARGE = { container: 60, avatar: 52 };
 const EXTRA_LARGE = { container: 96, avatar: 88 };
 
-const stepSizes = {
+export const stepSizes = {
   xs: EXTRA_SMALL,
   sm: SMALL,
   md: MEDIUM,
   lg: LARGE,
   xl: EXTRA_LARGE,
 };
-
-export { getColor, getSemantic, stepSizes };

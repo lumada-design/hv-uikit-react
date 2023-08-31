@@ -1,4 +1,4 @@
-import { theme } from "@hitachivantara/uikit-styles";
+import { HvColorAny, getColor } from "@hitachivantara/uikit-styles";
 
 import range from "lodash/range";
 
@@ -21,7 +21,7 @@ export interface HvLoadingProps extends HvBaseProps {
   /** Whether the loading animation is hidden. */
   hidden?: boolean;
   /** Color applied to the bars. */
-  color?: string;
+  color?: HvColorAny;
   classes?: HvLoadingClasses;
 }
 
@@ -41,15 +41,13 @@ export const HvLoading = (props: HvLoadingProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const getColor = (colorName: string) => {
-    return color ? theme.colors[color] || color : theme.colors[colorName];
-  };
-
   const size = small ? "small" : "regular";
   const colorVariant = color ? "Color" : "";
-  const variant = `${size}${colorVariant}`;
+  const variant = `${size}${colorVariant}` as const;
 
-  const inline = { backgroundColor: getColor(small ? "secondary" : "brand") };
+  const inline = {
+    backgroundColor: getColor(color, small ? "secondary" : "brand"),
+  };
   return (
     <div
       hidden={!!hidden}

@@ -6,4 +6,4 @@ export const sizes = {
   xl: "44px",
 };
 
-export type HvSizeKey = keyof typeof sizes;
+export type HvSize = keyof typeof sizes;

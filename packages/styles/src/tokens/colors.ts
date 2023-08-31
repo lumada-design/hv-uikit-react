@@ -286,7 +286,11 @@ export type HvSemanticColor = keyof typeof semanticLight;
 export type HvSupportColor = keyof typeof supportLight;
 export type HvCategoricalColor = keyof typeof categorical;
 
+/** A type with all the accepted colors from the color palette */
 export type HvColor = keyof typeof colors.common | keyof typeof colors.light;
 
-/** `HvColor` from the palette or any other color string */
+/**
+ * A type representing an `HvColor` from the palette or any other color string
+ * @example "secondary" "brand" "atmo2" "#FF0000" "purple" "inherit"
+ * */
 export type HvColorAny = HvColor | (string & {});

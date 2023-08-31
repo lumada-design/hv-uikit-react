@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 
-import { theme } from "@hitachivantara/uikit-styles";
+import { theme, getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
 import { HvAvatar } from "@core/components/Avatar";
@@ -38,7 +38,7 @@ export interface HvAppSwitcherActionApplication {
   /** True when the application is selected, false otherwise. */
   isSelected?: boolean;
   /** The color of the application. */
-  color?: string;
+  color?: HvColorAny;
 }
 
 export interface HvAppSwitcherActionProps extends HvBaseProps {
@@ -54,9 +54,6 @@ export interface HvAppSwitcherActionProps extends HvBaseProps {
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvAppSwitcherActionClasses;
 }
-
-const getColor = (color: any, defaultColor: string) =>
-  theme.colors[color] || color || defaultColor;
 
 export const HvAppSwitcherAction = ({
   id,

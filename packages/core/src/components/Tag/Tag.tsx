@@ -1,11 +1,7 @@
 import { CSSProperties, useState } from "react";
-import { theme } from "@hitachivantara/uikit-styles";
+import { HvColorAny, theme } from "@hitachivantara/uikit-styles";
 import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
 import { HvBaseProps } from "@core/types/generic";
-import {
-  HvSemanticColorKeys,
-  HvCategoricalColorKeys,
-} from "@core/types/tokens";
 import { useTheme } from "@core/hooks/useTheme";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvButton, HvButtonProps } from "@core/components/Button";
@@ -31,7 +27,7 @@ export interface HvTagProps
   /** The type of the tag element. A tag can be of semantic or categoric type. */
   type?: "semantic" | "categorical";
   /** Background color to be applied to the tag */
-  color?: HvSemanticColorKeys | HvCategoricalColorKeys | string;
+  color?: HvColorAny;
   /** Icon used to customize the delete icon in the Chip element */
   deleteIcon?: React.ReactElement;
   /**
@@ -133,17 +129,14 @@ export const HvTag = (props: HvTagProps) => {
     ...style,
   };
 
-  let categoricalBackgroundColor;
+  const categoricalBackgroundColor =
+    type === "categorical"
+      ? getColor(color, type, activeTheme?.colors?.modes[selectedMode])
+      : undefined;
 
   if (type === "semantic") {
     inlineStyle.backgroundColor = getColor(color, type, {});
   } else if (type === "categorical") {
-    categoricalBackgroundColor = getColor(
-      color,
-      type,
-      activeTheme?.colors?.modes[selectedMode]
-    );
-
     inlineStyle.backgroundColor = `${categoricalBackgroundColor}30`;
   }
 

@@ -1,3 +1,5 @@
+import type { HvColorAny } from "@hitachivantara/uikit-react-core";
+
 /**
  * Axis types:
  * continuous: continuous data
@@ -27,8 +29,8 @@ export interface HvChartAxis {
     location?: HvChartAxisNameLocation;
     /** Padding. */
     padding?: number | number[];
-    /** Color. You can use either an HEX or color name from the palette. */
-    color?: string;
+    /** Color. */
+    color?: HvColorAny;
     /** Font size. */
     fontSize?: number;
     /** Font style. */

@@ -8,11 +8,11 @@ import MuiDivider, {
 import isString from "lodash/isString";
 import isBoolean from "lodash/isBoolean";
 
+import { HvBreakpoints } from "@hitachivantara/uikit-styles";
 import { useWidth } from "@core/hooks/useWidth";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { HvFocus } from "@core/components/Focus";
-import { HvBreakpoints } from "@core/types/tokens";
 import { ExtractNames } from "@core/utils/classes";
 
 import { useClasses, staticClasses } from "./Stack.styles";
