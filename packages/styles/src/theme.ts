@@ -8,6 +8,7 @@ import {
   HvThemeTypographyProps,
 } from "./types";
 import * as tokens from "./tokens";
+import type { HvColorAny } from "./tokens";
 import { mapCSSVars } from "./utils";
 
 const componentsSpec: DeepString<HvThemeComponents> = {
@@ -507,3 +508,13 @@ export const theme: HvTheme = {
   ...themeVars,
   spacing,
 };
+
+const getColorOrFallback = (color: HvColorAny | undefined) => {
+  return (color && (theme.colors[color] as string)) || color;
+};
+
+/** Get a `color` from the theme palette, or `fallbackColor` if not found */
+export const getColor = (
+  color: HvColorAny | undefined,
+  fallbackColor?: HvColorAny
+) => getColorOrFallback(color) || getColorOrFallback(fallbackColor);

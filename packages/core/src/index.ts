@@ -3,6 +3,19 @@ export type {
   HvThemeBreakpoint,
   HvThemeColorMode,
   HvBaseTheme,
+  // BREAKPOINTS
+  HvBreakpoints,
+  // COLORS
+  HvAccentColor,
+  HvAtmosphereColor,
+  HvBaseColor,
+  HvSemanticColor,
+  HvSupportColor,
+  HvCategoricalColor,
+  HvColor,
+  HvColorAny,
+  // SIZES
+  HvSize,
 } from "@hitachivantara/uikit-styles";
 export * from "./components";
 export * from "./hooks";

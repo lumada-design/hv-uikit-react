@@ -1,10 +1,9 @@
-const common = {
-  // #region Base
+const base = {
   base_light: "#FBFCFC",
   base_dark: "#414141",
-  // #endregion
+};
 
-  // #region Categorical
+const categorical = {
   cat1_180: "#2D4B87",
   cat1_160: "#4767A7",
   cat1_140: "#5C7CBB",
@@ -129,7 +128,11 @@ const common = {
   cat26: "#FF5252",
   cat27: "#EC3D57",
   cat28: "#D8265D",
-  // #endregion
+};
+
+const common = {
+  ...base,
+  ...categorical,
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -275,3 +278,15 @@ export const colors = {
     ...shadowDark,
   },
 };
+
+export type HvAccentColor = keyof typeof accentLight;
+export type HvAtmosphereColor = keyof typeof atmosphereLight;
+export type HvBaseColor = keyof typeof base;
+export type HvSemanticColor = keyof typeof semanticLight;
+export type HvSupportColor = keyof typeof supportLight;
+export type HvCategoricalColor = keyof typeof categorical;
+
+export type HvColor = keyof typeof colors.common | keyof typeof colors.light;
+
+/** `HvColor` from the palette or any other color string */
+export type HvColorAny = HvColor | (string & {});

@@ -9,3 +9,5 @@ export const breakpoints = {
     xl: 1920,
   },
 };
+
+export type HvBreakpoints = keyof typeof breakpoints.values;
