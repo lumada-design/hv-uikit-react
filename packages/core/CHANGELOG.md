@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.26.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.4...@hitachivantara/uikit-react-core@5.26.5) (2023-08-31)
+
+### Bug Fixes
+
+- **MultiButton:** correct create classes component name ([0b0540b](https://github.com/lumada-design/hv-uikit-react/commit/0b0540b1c6321a49e5e54ade12d8d5a767cc7be5))
+- **Table:** sort button hover color ([#3655](https://github.com/lumada-design/hv-uikit-react/issues/3655)) ([11f3575](https://github.com/lumada-design/hv-uikit-react/commit/11f357539b980e21500d68d64351077a77c1cdc5))
+- **TimePicker:** fix a11y issues ([5a062c7](https://github.com/lumada-design/hv-uikit-react/commit/5a062c76b592e1155f4c7481402707d679c34e0a))
+
 ## [5.26.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.3...@hitachivantara/uikit-react-core@5.26.4) (2023-08-30)
 
 ### Bug Fixes

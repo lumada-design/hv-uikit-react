@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.8 (2023-08-31)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-shared
+
 ## 5.1.7 (2023-08-24)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-shared

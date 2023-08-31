@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.11.1 (2023-08-31)
+
+### Bug Fixes
+
+- **Table:** sort button hover color ([#3655](https://github.com/lumada-design/hv-uikit-react/issues/3655)) ([11f3575](https://github.com/lumada-design/hv-uikit-react/commit/11f357539b980e21500d68d64351077a77c1cdc5))
+
 # 5.11.0 (2023-08-24)
 
 ### Features
