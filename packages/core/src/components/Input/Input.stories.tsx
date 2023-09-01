@@ -1,14 +1,14 @@
 import { useState } from "react";
-import styled from "@emotion/styled";
-import { CSSInterpolation, css } from "@emotion/css";
+import { css } from "@emotion/css";
 import { Map } from "@hitachivantara/uikit-react-icons";
-import { Meta, StoryObj } from "@storybook/react";
+import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
   HvFormStatus,
   HvInput,
   HvInputProps,
   HvInputSuggestion,
+  HvValidationMessages,
   HvGrid,
   HvLabel,
   HvInfoMessage,
@@ -17,6 +17,21 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 import countryNamesArray from "./countries";
+
+const showcaseDecorator: DecoratorFn = (Story) => (
+  <div
+    className={css({
+      display: "flex",
+      justifyContent: "space-around",
+      flexFlow: "row wrap",
+      "& > div": {
+        width: 200,
+      },
+    })}
+  >
+    {Story()}
+  </div>
+);
 
 const meta: Meta<typeof HvInput> = {
   title: "Components/Input",
@@ -60,65 +75,109 @@ export const Main: StoryObj<HvInputProps> = {
     labels: { control: { disable: true } },
   },
   render: (args) => {
-    return <HvInput id="input-simple-sample" {...args} />;
+    return <HvInput {...args} />;
   },
 };
 
 export const Variants: StoryObj<HvInputProps> = {
-  render: () => {
-    const styles: { root: CSSInterpolation } = {
-      root: {
-        display: "flex",
-        justifyContent: "space-around",
-        flexWrap: "wrap",
-        "& > div": {
-          width: 200,
-        },
+  parameters: {
+    docs: {
+      description: {
+        story: "Inputs in their various state variants",
       },
-    };
-
+    },
+  },
+  decorators: [showcaseDecorator],
+  args: {
+    description: "Enter your name",
+    placeholder: "Insert first name",
+  },
+  render: (args) => {
     return (
-      <div className={css(styles.root)}>
+      <>
+        <HvInput required label="Required" {...args} />
+        <HvInput disabled label="Disabled" {...args} />
+        <HvInput readOnly label="Readonly" {...args} />
         <HvInput
-          id="input-required-sample"
           required
-          label="Required"
-          description="Enter your name"
-          placeholder="Insert first name"
-        />
-        <HvInput
-          id="input-disabled-sample"
-          disabled
-          label="Disabled"
-          description="Enter your name"
-          placeholder="Insert first name"
-        />
-        <HvInput
-          id="input-readonly-sample"
-          readOnly
-          label="Readonly"
-          description="Enter your name"
-          placeholder="Insert first name"
-        />
-        <HvInput
-          id="input-invalid-sample"
+          label="Invalid"
           status="invalid"
           statusMessage="Oh no!"
-          label="Invalid"
-          description="Enter your name"
-          placeholder="Insert first name"
+          {...args}
         />
-      </div>
+      </>
     );
   },
 };
 
-export const WithoutLabel: StoryObj<HvInputProps> = {
+export const TypeVariants: StoryObj<HvInputProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          "Input without label. The accessible name is provided via the `aria-label` property.",
+          "`HvInput` has custom support for various `type` attributes, such as `email` and `password`.",
+      },
+    },
+  },
+  decorators: [showcaseDecorator],
+  args: {},
+  render: () => {
+    const validationMessages: HvValidationMessages = {
+      error: "Invalid value!",
+      maxCharError: "Value is too long!",
+      minCharError: "Value is too short!",
+      requiredError: "Value is required!",
+      typeMismatchError: "Type is incorrect!",
+    };
+
+    return (
+      <>
+        <HvInput
+          required
+          type="email"
+          label="Email"
+          description="Enter email"
+          placeholder="example@domain.com"
+          showValidationIcon
+          validationMessages={validationMessages}
+        />
+        <HvInput
+          type="password"
+          label="Password"
+          description="Enter password"
+          placeholder="Enter password"
+          validationMessages={validationMessages}
+        />
+        <HvInput
+          type="search"
+          label="Search"
+          description="Search for a value"
+          placeholder="Search..."
+          validationMessages={validationMessages}
+          onEnter={(event, value) => console.log("Searching", value)}
+        />
+        <HvInput
+          required
+          type="number"
+          label="Number"
+          description="With 2-3 digits"
+          placeholder="Pick a number"
+          showValidationIcon
+          minCharQuantity={2}
+          maxCharQuantity={3}
+          validationMessages={validationMessages}
+        />
+      </>
+    );
+  },
+};
+
+export const Accessibility: StoryObj<HvInputProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Inputs not using the visual `label` prop should instead provide an `aria-label` property.",
       },
     },
   },
@@ -127,7 +186,7 @@ export const WithoutLabel: StoryObj<HvInputProps> = {
   },
 };
 
-export const ControlledWithButtons: StoryObj<HvInputProps> = {
+export const Controlled: StoryObj<HvInputProps> = {
   parameters: {
     docs: {
       description: {
@@ -137,22 +196,16 @@ export const ControlledWithButtons: StoryObj<HvInputProps> = {
     eyes: { include: false },
   },
   render: () => {
-    const StyledContainer = styled("div")({
-      "& button": {
-        marginBottom: theme.spacing(4),
-      },
-    });
-    const StyledWrapper = styled("div")({
-      "& button": {
-        marginRight: theme.space.xs,
-      },
-    });
-
     const [value, setValue] = useState("Initial value");
 
     return (
-      <StyledContainer>
-        <StyledWrapper>
+      <>
+        <div
+          className={css({
+            marginBottom: theme.space.md,
+            "& button": { marginRight: theme.space.xs },
+          })}
+        >
           <HvButton
             variant="secondarySubtle"
             onClick={() => setValue("First value")}
@@ -174,7 +227,7 @@ export const ControlledWithButtons: StoryObj<HvInputProps> = {
           <HvButton variant="secondarySubtle" onClick={() => setValue("")}>
             Clear value
           </HvButton>
-        </StyledWrapper>
+        </div>
 
         <HvInput
           label="Label"
@@ -183,7 +236,7 @@ export const ControlledWithButtons: StoryObj<HvInputProps> = {
           // to be possible to change the input value by user action
           onChange={(event, newValue) => setValue(newValue)}
         />
-      </StyledContainer>
+      </>
     );
   },
 };
@@ -240,12 +293,11 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
     const [lastNameValidationState, setLastNameValidationState] =
       useState<HvFormStatus>("invalid");
 
-    const [firstNameErrorMessage, setFirstNameErrorMessage] = useState<
-      string | null
-    >(null);
-    const [lastNameErrorMessage, setLastNameErrorMessage] = useState<
-      string | null
-    >("The last name is invalid just because I said so.");
+    const [firstNameErrorMessage, setFirstNameErrorMessage] =
+      useState<string>();
+    const [lastNameErrorMessage, setLastNameErrorMessage] = useState(
+      "The last name is invalid just because I said so."
+    );
 
     return (
       <HvGrid container>
@@ -260,7 +312,7 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
               aria-errormessage="firstName-error"
               onBlur={(_e, _value, inputValidity) => {
                 if (inputValidity.valid) {
-                  setFirstNameErrorMessage(null);
+                  setFirstNameErrorMessage(undefined);
                 } else if (inputValidity.valueMissing) {
                   setFirstNameErrorMessage("You must provide a first name");
                 } else if (inputValidity.tooShort) {
@@ -298,8 +350,7 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
         <HvGrid item xs={7}>
           <div
             style={{
-              paddingTop: "20px",
-              paddingLeft: "30px",
+              padding: theme.spacing(["xs", "md"]),
               backgroundColor: theme.colors.negative_20,
               color: theme.colors.base_dark,
               height: "100%",
@@ -321,115 +372,6 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
           </div>
         </HvGrid>
       </HvGrid>
-    );
-  },
-};
-
-export const NumericRequired: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Required Input that only accepts numbers and limits the maximum length to 5.",
-      },
-    },
-    eyes: { include: false },
-  },
-  render: () => {
-    const validationMessages = {
-      requiredError: "The number is required",
-      maxCharError: "Number is too big",
-      typeMismatchError: "Value is not a number",
-    };
-
-    return (
-      <HvInput
-        id="numeric-required-input"
-        type="number"
-        label="Height"
-        description="Enter a numeric value"
-        placeholder="Insert a number"
-        validationMessages={validationMessages}
-        required
-        maxCharQuantity={5}
-        showValidationIcon
-      />
-    );
-  },
-};
-
-export const Email: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Required Input that only accepts valid emails.",
-      },
-    },
-    eyes: { include: false },
-  },
-  render: () => {
-    const validationMessages = {
-      typeMismatchError:
-        "Please add the right email format: your.name@hitachivantara.com",
-    };
-
-    return (
-      <HvInput
-        id="email-input"
-        type="email"
-        label="Email"
-        description="Enter your email"
-        placeholder="example@domain.com"
-        validationMessages={validationMessages}
-        showValidationIcon
-      />
-    );
-  },
-};
-
-export const Password: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Password required input that only accepts the value `password` and limits the value between 6 or 12 characters.",
-      },
-    },
-  },
-  render: () => {
-    const validationMessages = {
-      error: "Wrong password",
-      requiredError: "Your password is required",
-      minCharError: "Your password has less than 6 characters",
-      maxCharError: "Your password has more than 12 characters",
-    };
-
-    return (
-      <HvInput
-        id="password-input"
-        label="Password"
-        description="Enter your password"
-        placeholder="Must have at least 6 character"
-        type="password"
-        required
-        maxCharQuantity={12}
-        minCharQuantity={6}
-        validation={(value) => value === "password"}
-        validationMessages={validationMessages}
-      />
-    );
-  },
-};
-
-export const Search: StoryObj<HvInputProps> = {
-  render: () => {
-    return (
-      <HvInput
-        aria-label="Basic search"
-        placeholder="Search"
-        type="search"
-        onEnter={console.log}
-      />
     );
   },
 };
@@ -458,6 +400,9 @@ export const CustomValidation: StoryObj<HvInputProps> = {
         validationMessages={validationMessages}
         validation={(value) => value.includes("hello")}
         showValidationIcon
+        onBlur={(event, value, validationState) => {
+          console.log(value, validationState);
+        }}
       />
     );
   },
@@ -577,65 +522,47 @@ export const PrefixAndSuffix: StoryObj<HvInputProps> = {
     },
     eyes: { include: false },
   },
+  decorators: [(Story) => <div style={{ maxWidth: 400 }}>{Story()}</div>],
   render: () => {
     const validationMessages = {
       error: "Invalid subdomain",
     };
 
-    const validateSubdomain: HvInputProps["validation"] = (value) => {
-      const re = /[^a-zA-Z0-9-]/;
-
-      return !re.test(value);
-    };
-
-    const StyledControlContainer = styled("div")({
-      width: "100%",
-      maxWidth: 400,
-    });
-    const StyledLabelContainer = styled("div")({
-      display: "flex",
-      alignItems: "flex-start",
-    });
-    const StyledInputContainer = styled("div")({
-      width: "100%",
-      display: "flex",
-      alignItems: "baseline",
-
-      "& > *": {
-        marginLeft: theme.space.xs,
-      },
-      "& > p:first-of-type": {
-        marginLeft: 0,
-      },
-    });
-    const StyledLabel = styled(HvLabel)({
-      paddingBottom: "6px",
-    });
-    const StyledInput = styled(HvInput)({
-      flexGrow: 1,
-    });
-
     return (
-      <StyledControlContainer>
-        <StyledLabelContainer>
-          <StyledLabel label="Subdomain" htmlFor="subdomain-input" />
+      <>
+        <div className={css({ display: "flex", alignItems: "flex-start" })}>
+          <HvLabel label="Subdomain" htmlFor="subdomain-input" />
           <HvInfoMessage id="subdomain-description">
             Choose your application subdomain
           </HvInfoMessage>
-        </StyledLabelContainer>
-        <StyledInputContainer>
+        </div>
+        <div
+          className={css({
+            width: "100%",
+            display: "flex",
+            alignItems: "baseline",
+
+            "& > *": {
+              marginLeft: theme.space.xs,
+            },
+            "& > p:first-of-type": {
+              marginLeft: 0,
+            },
+          })}
+        >
           <HvTypography>https://</HvTypography>
-          <StyledInput
+          <HvInput
             id="subdomain"
             name="subdomain"
             aria-describedby="subdomain-description"
             placeholder="Enter sub-domain"
-            validation={validateSubdomain}
+            className={css({ flexGrow: 1 })}
+            validation={(value) => !/[^a-zA-Z0-9-]/.test(value)}
             validationMessages={validationMessages}
           />
           <HvTypography>.lumada.org</HvTypography>
-        </StyledInputContainer>
-      </StyledControlContainer>
+        </div>
+      </>
     );
   },
 };
