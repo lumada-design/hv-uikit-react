@@ -17,7 +17,6 @@ export const { useClasses, staticClasses } = createClasses("HvProgressBar", {
   },
   progressBar: {
     backgroundColor: "#000",
-    height: 4,
   },
   progressBarLabel: {
     backgroundColor: "transparent",

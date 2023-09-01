@@ -4,6 +4,7 @@ import { setId } from "@core/utils/setId";
 import { HvButton } from "@core/components/Button";
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
+import { HvProgressBar } from "@core/components/ProgressBar";
 import { convertUnits } from "../utils";
 import { staticClasses, useClasses } from "./File.styles";
 
@@ -138,15 +139,14 @@ export const HvFile = ({
 
   return (
     <li className={classes.root}>
-      {!hasError && inProgress && <span className={classes.progressbarBack} />}
-
       {!hasError && inProgress && (
-        <progress
-          className={classes.progressbar}
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-valuenow={currentProgress}
-          style={{ width: `${currentProgress}%` }}
+        <HvProgressBar
+          classes={{
+            root: classes.progressBar,
+            progressBarContainer: classes.progressBarContainer,
+          }}
+          value={currentProgress}
+          hideLabel
         />
       )}
 

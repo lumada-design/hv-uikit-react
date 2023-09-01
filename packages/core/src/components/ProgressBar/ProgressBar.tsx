@@ -32,6 +32,10 @@ export interface HvProgressBarProps extends HvBaseProps {
   labelProps?: HvTypographyProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvProgressBarClasses;
+  /**
+   * True if the text label should not be displayed.
+   */
+  hideLabel?: boolean;
 }
 
 export const HvProgressBar = (props: HvProgressBarProps) => {
@@ -41,6 +45,7 @@ export const HvProgressBar = (props: HvProgressBarProps) => {
     value = 0,
     status = "inProgress",
     labelProps,
+    hideLabel,
     ...others
   } = useDefaultProps("HvProgressBar", props);
 
@@ -58,14 +63,16 @@ export const HvProgressBar = (props: HvProgressBarProps) => {
       {...others}
     >
       <div className={classes.progressContainer}>
-        <HvTypography
-          className={classes.progressBarLabel}
-          variant="caption2"
-          style={{ width: `${clampedValue}%` }}
-          {...labelProps}
-        >
-          {`${clampedValue}%`}
-        </HvTypography>
+        {!hideLabel && (
+          <HvTypography
+            className={classes.progressBarLabel}
+            variant="caption2"
+            style={{ width: `${clampedValue}%` }}
+            {...labelProps}
+          >
+            {`${clampedValue}%`}
+          </HvTypography>
+        )}
         <div className={classes.progressBarContainer}>
           <div
             style={{ width: `${clampedValue}%` }}

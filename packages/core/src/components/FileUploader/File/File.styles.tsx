@@ -3,22 +3,12 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvFile", {
   root: {},
-  progressbar: {
+  progressBar: {
     position: "absolute",
     top: "-1px",
-    width: "80%",
-    height: theme.fileUploader.file.progressHeight,
-    border: `${theme.fileUploader.file.borderWidth} solid ${theme.colors.secondary}`,
-
-    "&::-moz-progress-bar": {
-      background: theme.colors.secondary,
-    },
   },
-  progressbarBack: {
-    position: "absolute",
-    top: "-1px",
-    width: "100%",
-    border: `${theme.fileUploader.file.borderWidth} solid ${theme.colors.atmo4}`,
+  progressBarContainer: {
+    height: theme.fileUploader.file.progressHeight,
   },
   nameText: {
     overflow: "hidden",
