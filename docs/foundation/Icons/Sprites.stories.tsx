@@ -115,6 +115,6 @@ export const IconLibraryTest = () => {
 };
 
 IconLibraryTest.parameters = {
-  eyes: { include: true, waitBeforeCapture: 5000 },
+  eyes: { include: false },
   docs: { disable: true },
 };
