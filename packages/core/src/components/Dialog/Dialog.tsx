@@ -74,7 +74,7 @@ export const HvDialog = (props: HvDialogProps) => {
   const { classes, css, cx } = useClasses(classesProp);
   delete (others as any).fullScreen;
 
-  const { rootId, activeTheme, selectedMode } = useTheme();
+  const { rootId, colors } = useTheme();
 
   // Because the `disableBackdropClick` property was deprecated in MUI5
   // and we want to maintain that functionality to the user we're wrapping
@@ -136,11 +136,7 @@ export const HvDialog = (props: HvDialogProps) => {
           classes: {
             root: cx(
               css({
-                background: hexToRgbA(
-                  activeTheme?.colors?.modes[selectedMode].atmo4 ||
-                    theme.colors.atmo4,
-                  0.8
-                ),
+                background: hexToRgbA(colors?.atmo4 || theme.colors.atmo4, 0.8),
               }),
               classes.background
             ),

@@ -108,7 +108,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
   ) => {
     const { classes, cx, css } = useClasses(classesProp);
 
-    const { activeTheme, selectedMode } = useTheme();
+    const { colors } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -146,10 +146,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
             css({
               [`&.${staticClasses.sorted}`]: {
                 backgroundColor: alpha(
-                  hexToRgb(
-                    activeTheme?.colors?.modes[selectedMode].atmo1 ||
-                      theme.colors.atmo1
-                  ),
+                  hexToRgb(colors?.atmo1 || theme.colors.atmo1),
                   0.4
                 ),
               },

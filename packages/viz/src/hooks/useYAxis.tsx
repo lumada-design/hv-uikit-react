@@ -21,7 +21,7 @@ export const useYAxis = ({
   axes,
   defaultType = "continuous",
 }: HvYAxisHookProps) => {
-  const { activeTheme, selectedMode } = useTheme();
+  const { colors } = useTheme();
 
   const createAxis = useCallback(
     ({
@@ -46,9 +46,7 @@ export const useYAxis = ({
                 ...acc,
                 [curr]:
                   curr === "color"
-                    ? activeTheme?.colors.modes[selectedMode][
-                        nameProps[curr] as string
-                      ] || nameProps[curr]
+                    ? colors?.[nameProps[curr] as string] || nameProps[curr]
                     : nameProps[curr],
               };
             }, {})
@@ -74,7 +72,7 @@ export const useYAxis = ({
         ...(position && { position }),
       };
     },
-    [activeTheme?.colors.modes, defaultType, selectedMode]
+    [colors, defaultType]
   );
 
   const option = useMemo<Pick<EChartsOption, "yAxis">>(() => {

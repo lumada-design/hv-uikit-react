@@ -91,7 +91,7 @@ export const HvDrawer = (props: HvDrawerProps) => {
   } = useDefaultProps("HvDrawer", props);
 
   const { classes, css, cx } = useClasses(classesProp);
-  const { activeTheme, rootId } = useTheme();
+  const { colors, activeTheme, rootId } = useTheme();
 
   const [backgroundColorValue, setBackgroundColorValue] = useState<string>(
     getVarValue(theme.drawer.backDropBackgroundColor, rootId) || ""
@@ -116,7 +116,7 @@ export const HvDrawer = (props: HvDrawerProps) => {
 
     setBackgroundColor(getBackgroundColor(backgroundColorValue));
   }, [
-    activeTheme?.colors.modes.selectedMode,
+    colors,
     backgroundColorValue,
     setBackgroundColor,
     rootId,

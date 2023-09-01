@@ -25,7 +25,7 @@ export const useXAxis = ({
   position,
   nameProps,
 }: HvXAxisHookProps) => {
-  const { activeTheme, selectedMode } = useTheme();
+  const { colors } = useTheme();
 
   const option = useMemo<Pick<EChartsOption, "xAxis">>(() => {
     const nameStyleKeys = nameProps
@@ -38,9 +38,7 @@ export const useXAxis = ({
               ...acc,
               [curr]:
                 curr === "color"
-                  ? activeTheme?.colors.modes[selectedMode][
-                      nameProps[curr] as string
-                    ] || nameProps[curr]
+                  ? colors?.[nameProps[curr] as string] || nameProps[curr]
                   : nameProps[curr],
             };
           }, {})
@@ -80,8 +78,7 @@ export const useXAxis = ({
     minValue,
     data,
     position,
-    activeTheme?.colors.modes,
-    selectedMode,
+    colors,
   ]);
 
   return option;

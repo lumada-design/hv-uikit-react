@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useMemo } from "react";
 import capitalize from "lodash/capitalize";
+import { HvThemeColorModeStructure } from "@hitachivantara/uikit-styles";
 import {
   HvProvider,
   HvTypography,
@@ -16,8 +17,8 @@ import {
 } from "./Colors.styles";
 import { themeColors } from "./themeColors";
 
-function groupColors(colorsJson) {
-  const colorsMap = new Map();
+function groupColors(colorsJson?: HvThemeColorModeStructure) {
+  const colorsMap = new Map<string, string>();
   for (const key in colorsJson) {
     if (Object.prototype.hasOwnProperty.call(colorsJson, key)) {
       colorsMap.set(key, colorsJson[key]);
@@ -91,12 +92,8 @@ const ColorsGroup = ({
 };
 
 const Colors = () => {
-  const [allColors, setAllColors] = useState<Map<string, string>>();
-  const { activeTheme, selectedTheme, selectedMode } = useTheme();
-
-  useEffect(() => {
-    setAllColors(groupColors(activeTheme?.colors.modes[selectedMode]));
-  }, [activeTheme, selectedTheme, selectedMode]);
+  const { selectedTheme, colors } = useTheme();
+  const allColors = useMemo(() => groupColors(colors), [colors]);
 
   return (
     allColors && (

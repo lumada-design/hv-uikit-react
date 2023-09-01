@@ -89,7 +89,7 @@ export const HvTag = (props: HvTagProps) => {
     deleteButtonProps = {},
     ...others
   } = useDefaultProps("HvTag", props);
-  const { activeTheme, selectedMode } = useTheme();
+  const { colors } = useTheme();
   const { classes, cx, css } = useClasses(classesProp);
 
   const getDeleteIcon = () => {
@@ -130,9 +130,7 @@ export const HvTag = (props: HvTagProps) => {
   };
 
   const categoricalBackgroundColor =
-    type === "categorical"
-      ? getColor(color, type, activeTheme?.colors?.modes[selectedMode])
-      : undefined;
+    type === "categorical" ? getColor(color, type, colors) : undefined;
 
   if (type === "semantic") {
     inlineStyle.backgroundColor = getColor(color, type, {});

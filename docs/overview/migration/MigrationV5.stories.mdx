@@ -250,9 +250,8 @@ those cases, you can access the theme context through the `useTheme` hook from t
 
   const Component = () => {
 -   const theme = useTheme();
-+   const { selectedMode, activeTheme } = useTheme();
 -   const backgroundColor = theme.hv.palette.atmosphere.atmo1;
-+   const backgroundColor = activeTheme?.colors.modes[selectedMode].atmo1;
++   const backgroundColor = theme.colors?.atmo1;
 
     return (...);
   };

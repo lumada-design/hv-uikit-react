@@ -103,7 +103,7 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
   const downSm = useMediaQuery(muiTheme.breakpoints.down("sm"));
   const upMd = useMediaQuery(muiTheme.breakpoints.up("md"));
 
-  const { activeTheme, selectedMode } = useTheme();
+  const { activeTheme, colors } = useTheme();
 
   const elementId = useUniqueId(id, "hvHorizontalScrollto");
 
@@ -202,7 +202,7 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
               ? theme.spacing(upMd ? 4 : 2)
               : 0,
           backgroundColor: hexToRgbA(
-            activeTheme?.colors.modes[selectedMode].atmo2,
+            colors?.atmo2,
             activeTheme?.scrollTo.backgroundColorOpacity
           ),
         }),

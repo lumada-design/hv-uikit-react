@@ -22,14 +22,10 @@ const newTheme = createTheme({
 });
 
 const Content = () => {
-  const { activeTheme, selectedMode } = useTheme();
+  const { colors } = useTheme();
 
   return (
-    <HvTypography
-      style={{
-        color: activeTheme?.colors.modes[selectedMode].green,
-      }}
-    >
+    <HvTypography style={{ color: colors?.green }}>
       Hello from the UI Kit team!
     </HvTypography>
   );

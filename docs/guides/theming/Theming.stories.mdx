@@ -247,17 +247,16 @@ To use the value from these new properties, you need to access the theme context
 
 ## Theme context <a id="theme-context" />
 
-The `uikit-react-core` package provides a React context named `HvThemeContext`. This context gives you access to all values related to the theme, namely:
+The `uikit-react-core` package exposes a `useTheme` that provides access to the properties of the theme context, namely:
 
 - `selectedTheme`: name of the active theme;
 - `selectedMode`: name of the active color mode;
 - `colorModes`: list of color modes available for the active theme;
 - `themes`: list of the available themes;
 - `rootId`: id of the root element where the theme styles are being applied if scoped;
+- `colors`: object with the active color mode's colors;
 - `activeTheme`: object with the active theme;
 - `changeTheme`: method to change the active theme and color mode.
-
-These values can be accessed by using the `useTheme` hook.
 
 ### Change the active theme and color mode
 
@@ -313,13 +312,11 @@ const newTheme = createTheme({
 });
 
 const MyComponent = () => {
-  const { selectedMode, activeTheme } = useTheme();
+  const { activeTheme, colors } = useTheme();
 
   return (
-    <HvTypography
-      style={{ color: activeTheme?.colors.modes[selectedMode].green }}
-    >
-      Hello from the UI Kit team!
+    <HvTypography style={{ color: colors?.green }}>
+      Hello from the UI Kit team! {activeTheme?.name}
     </HvTypography>
   );
 };
