@@ -50,7 +50,7 @@ export const Main: StoryObj<HvTagProps> = {
     icon: { control: { disable: true } },
     deleteIcon: { control: { disable: true } },
     deleteButtonProps: { control: { disable: true } },
-    type: { control: { type: "radio", options: ["semantic", "categorical"] } },
+    type: { control: { type: "radio" }, options: ["semantic", "categorical"] },
   },
   render: (args) => {
     return <HvTag {...args} />;
