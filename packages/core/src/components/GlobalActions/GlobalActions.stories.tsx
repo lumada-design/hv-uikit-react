@@ -9,9 +9,19 @@ import {
   HvGlobalActionsProps,
 } from "@hitachivantara/uikit-react-core";
 
+const lorem =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.";
+
 const meta: Meta<typeof HvGlobalActions> = {
   title: "Widgets/Global Actions",
   component: HvGlobalActions,
+  decorators: [
+    (Story) => (
+      <div style={{ maxHeight: 300 }}>
+        <HvContainer maxWidth="md">{Story()}</HvContainer>
+      </div>
+    ),
+  ],
 };
 export default meta;
 
@@ -26,16 +36,15 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
     classes: { control: { disable: true } },
     backButton: { control: { disable: true } },
   },
-  decorators: [(Story) => <div style={{ height: 300 }}>{Story()}</div>],
   render: (args) => {
     const backButton = (
-      <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
+      <HvButton aria-label="Back" icon>
         <Backwards />
       </HvButton>
     );
 
     return (
-      <HvContainer>
+      <>
         <HvGlobalActions backButton={backButton} {...args}>
           <HvButton variant="primary">Approve & Share</HvButton>
           <HvButton variant="secondarySubtle">Reset</HvButton>
@@ -49,153 +58,53 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
           />
         </HvGlobalActions>
 
-        <div style={{ paddingBottom: 60 }}>
-          <HvGlobalActions title="Section Title" variant="section">
-            <HvButton variant="secondarySubtle">Remove</HvButton>
-            <HvButton variant="secondarySubtle">Share</HvButton>
-            <HvDropDownMenu
-              placement="left"
-              dataList={[
-                { label: "Action 2" },
-                { label: "Action 3" },
-                { label: "Action 4" },
-              ]}
-            />
-          </HvGlobalActions>
+        <br />
 
-          <HvTypography
-            variant="body"
-            style={{ marginTop: 20, marginBottom: 30 }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus
-            faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus
-            viverra adipiscing at in tellus. Et netus et malesuada fames ac
-            turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio
-            ut sem nulla pharetra diam sit amet. Sagittis purus sit amet
-            volutpat consequat mauris nunc congue. Sed vulputate mi sit amet
-            mauris commodo quis imperdiet massa. Dictum varius duis at
-            consectetur. Lorem sed risus ultricies tristique nulla aliquet enim
-            tortor at. Turpis egestas maecenas pharetra convallis posuere morbi.
-            Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed
-            euismod nisi. Morbi tincidunt augue interdum velit euismod in
-            pellentesque massa. At augue eget arcu dictum varius duis at. Tellus
-            elementum sagittis vitae et. In est ante in nibh mauris cursus
-            mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus
-            aliquam eleifend mi in nulla posuere.
-          </HvTypography>
+        <HvTypography style={{ marginBottom: 60 }}>{lorem}</HvTypography>
 
-          <HvTypography variant="body" style={{ marginBottom: 60 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus
-            faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus
-            viverra adipiscing at in tellus. Et netus et malesuada fames ac
-            turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio
-            ut sem nulla pharetra diam sit amet. Sagittis purus sit amet
-            volutpat consequat mauris nunc congue. Sed vulputate mi sit amet
-            mauris commodo quis imperdiet massa. Dictum varius duis at
-            consectetur. Lorem sed risus ultricies tristique nulla aliquet enim
-            tortor at. Turpis egestas maecenas pharetra convallis posuere morbi.
-            Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed
-            euismod nisi. Morbi tincidunt augue interdum velit euismod in
-            pellentesque massa. At augue eget arcu dictum varius duis at. Tellus
-            elementum sagittis vitae et. In est ante in nibh mauris cursus
-            mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus
-            aliquam eleifend mi in nulla posuere.
-          </HvTypography>
+        <HvGlobalActions title="Section Title" variant="section">
+          <HvButton variant="secondarySubtle">Remove</HvButton>
+          <HvButton variant="secondarySubtle">Share</HvButton>
+          <HvDropDownMenu
+            placement="left"
+            dataList={[
+              { label: "Action 2" },
+              { label: "Action 3" },
+              { label: "Action 4" },
+            ]}
+          />
+        </HvGlobalActions>
 
-          <HvGlobalActions title="Section Title" variant="section">
-            <HvButton variant="secondarySubtle">Remove</HvButton>
-            <HvButton variant="secondarySubtle">Share</HvButton>
-            <HvDropDownMenu
-              placement="left"
-              dataList={[
-                { label: "Action 2" },
-                { label: "Action 3" },
-                { label: "Action 4" },
-              ]}
-            />
-          </HvGlobalActions>
+        <HvTypography style={{ marginTop: 20, marginBottom: 30 }}>
+          {lorem}
+        </HvTypography>
 
-          <HvTypography
-            variant="body"
-            style={{ marginTop: 20, marginBottom: 30 }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus
-            faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus
-            viverra adipiscing at in tellus. Et netus et malesuada fames ac
-            turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio
-            ut sem nulla pharetra diam sit amet. Sagittis purus sit amet
-            volutpat consequat mauris nunc congue. Sed vulputate mi sit amet
-            mauris commodo quis imperdiet massa. Dictum varius duis at
-            consectetur. Lorem sed risus ultricies tristique nulla aliquet enim
-            tortor at. Turpis egestas maecenas pharetra convallis posuere morbi.
-            Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed
-            euismod nisi.
-          </HvTypography>
+        <HvTypography style={{ marginBottom: 60 }}>{lorem}</HvTypography>
 
-          <HvTypography variant="body" style={{ marginBottom: 60 }}>
-            Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem
-            nulla pharetra diam sit amet. Sagittis purus sit amet volutpat
-            consequat mauris nunc congue. Sed vulputate mi sit amet mauris
-            commodo quis imperdiet massa. Dictum varius duis at consectetur.
-            Lorem sed risus ultricies tristique nulla aliquet enim tortor at.
-            Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit
-            amet tellus cras adipiscing. Egestas erat imperdiet sed euismod
-            nisi. Morbi tincidunt augue interdum velit euismod in pellentesque
-            massa. At augue eget arcu dictum varius duis at. Tellus elementum
-            sagittis vitae et. In est ante in nibh mauris cursus mattis.
-            Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam
-            eleifend mi in nulla posuere.
-          </HvTypography>
+        <HvGlobalActions title="Section Title" variant="section">
+          <HvButton variant="secondarySubtle">Remove</HvButton>
+          <HvButton variant="secondarySubtle">Share</HvButton>
+          <HvDropDownMenu
+            placement="left"
+            dataList={[
+              { label: "Action 2" },
+              { label: "Action 3" },
+              { label: "Action 4" },
+            ]}
+          />
+        </HvGlobalActions>
 
-          <HvGlobalActions title="Section Title" variant="section">
-            <HvButton variant="secondarySubtle">Remove</HvButton>
-            <HvButton variant="secondarySubtle">Share</HvButton>
-            <HvDropDownMenu
-              placement="left"
-              dataList={[
-                { label: "Action 2" },
-                { label: "Action 3" },
-                { label: "Action 4" },
-              ]}
-            />
-          </HvGlobalActions>
+        <HvTypography style={{ marginTop: 20, marginBottom: 30 }}>
+          {lorem}
+        </HvTypography>
 
-          <HvTypography
-            variant="body"
-            style={{ marginTop: 20, marginBottom: 30 }}
-          >
-            Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at
-            risus viverra adipiscing at in tellus. Et netus et malesuada fames
-            ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu
-            odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet
-            volutpat consequat mauris nunc congue. Sed vulputate mi sit amet
-            mauris commodo quis imperdiet massa. Dictum varius duis at
-            consectetur. Lorem sed risus ultricies tristique nulla aliquet enim
-            tortor at. Turpis egestas maecenas pharetra convallis posuere morbi.
-            Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed
-            euismod nisi. Morbi tincidunt augue interdum velit euismod in
-            pellentesque massa. At augue eget arcu dictum varius duis at. Tellus
-            elementum sagittis vitae et. In est ante in nibh mauris cursus
-            mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus
-            aliquam eleifend mi in nulla posuere.
-          </HvTypography>
-
-          <HvTypography variant="body" style={{ marginBottom: 30 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus
-            faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus
-            viverra adipiscing at in tellus.
-          </HvTypography>
-        </div>
-      </HvContainer>
+        <HvTypography style={{ paddingBottom: 60 }}>{lorem}</HvTypography>
+      </>
     );
   },
 };
 
-export const SampleWithAdditionalActions: StoryObj<HvGlobalActionsProps> = {
+export const GlobalVariant: StoryObj<HvGlobalActionsProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
@@ -203,41 +112,61 @@ export const SampleWithAdditionalActions: StoryObj<HvGlobalActionsProps> = {
     docs: {
       description: {
         story:
-          "When more than two secondary actions are in place, they should be grouped in a dropdown menu, ordered from the most to least used.",
+          "GlobalActions is of variant `global` by default, meaning that an `h1` element will be rendered and it will be sticky by default. Users sure ensure there aren't multiple in the page. <br /> \
+          When more than two secondary actions are in place, they should be grouped in a dropdown menu, ordered from the most to least used.",
       },
     },
   },
   render: () => {
+    const customTitle = (
+      <HvTypography variant="title3" component="h1">
+        Detail Page Title
+      </HvTypography>
+    );
+
     const backButton = (
-      <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
+      <HvButton aria-label="Back" icon>
         <Backwards />
       </HvButton>
     );
 
     return (
-      <HvGlobalActions title="Detail Page Title" backButton={backButton}>
-        <HvButton variant="secondaryGhost">Primary</HvButton>
-        <HvDropDownMenu
-          placement="left"
-          dataList={[
-            { label: "Action 2" },
-            { label: "Action 3" },
-            { label: "Action 4" },
-          ]}
-        />
-      </HvGlobalActions>
+      <>
+        <HvGlobalActions title={customTitle} backButton={backButton}>
+          <HvButton variant="primary">Primary</HvButton>
+          <HvButton variant="secondarySubtle">Secondary</HvButton>
+        </HvGlobalActions>
+        <br />
+        <HvTypography>{lorem}</HvTypography>
+        <br />
+        <HvTypography>{lorem}</HvTypography>
+      </>
     );
   },
 };
 
-export const SampleWithAdditionalActionsAndNoBackButton: StoryObj<HvGlobalActionsProps> =
-  {
-    argTypes: {
-      classes: { control: { disable: true } },
+export const SectionVariant: StoryObj<HvGlobalActionsProps> = {
+  argTypes: {
+    classes: { control: { disable: true } },
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "The `section` variant of Global Actions should be used to group related blocks of information. Use with parsimony, you might not need such a clear separator.",
+      },
     },
-    render: () => {
-      return (
-        <HvGlobalActions title="Detail Page Title" backButton={false}>
+  },
+  render: () => {
+    const customTitle = (
+      <HvTypography variant="title3" component="h2">
+        Detail Page Title
+      </HvTypography>
+    );
+
+    return (
+      <>
+        <HvGlobalActions variant="section" title={customTitle}>
           <HvButton variant="secondaryGhost">Primary</HvButton>
           <HvDropDownMenu
             placement="left"
@@ -248,85 +177,9 @@ export const SampleWithAdditionalActionsAndNoBackButton: StoryObj<HvGlobalAction
             ]}
           />
         </HvGlobalActions>
-      );
-    },
-  };
-
-export const SampleWithCustomTitleAndAdditionalActions: StoryObj<HvGlobalActionsProps> =
-  {
-    argTypes: {
-      classes: { control: { disable: true } },
-    },
-    parameters: {
-      docs: {
-        description: {
-          story:
-            "Global Actions section uses a Typography component to build the title.",
-        },
-      },
-    },
-    render: () => {
-      const customTitle = (
-        <HvTypography variant="title3" component="h1">
-          A Custom Title
-        </HvTypography>
-      );
-
-      const backButton = (
-        <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
-          <Backwards />
-        </HvButton>
-      );
-
-      return (
-        <HvGlobalActions title={customTitle} backButton={backButton}>
-          <HvButton variant="primary">Primary</HvButton>
-          <HvButton variant="secondarySubtle">Secondary</HvButton>
-          <HvButton variant="secondarySubtle">Secondary</HvButton>
-        </HvGlobalActions>
-      );
-    },
-  };
-
-export const SectionGlobalActions: StoryObj<HvGlobalActionsProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: "Section Global Actions.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvGlobalActions title="Section Title" variant="section">
-        <HvButton variant="secondaryGhost">Primary</HvButton>
-        <HvDropDownMenu
-          placement="left"
-          dataList={[
-            { label: "Action 2" },
-            { label: "Action 3" },
-            { label: "Action 4" },
-          ]}
-        />
-      </HvGlobalActions>
+        <br />
+        <HvGlobalActions variant="section" title="Section Title" />
+      </>
     );
   },
-};
-
-export const SampleWithNoChildren: StoryObj<HvGlobalActionsProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Global Actions section uses a Typography component to build the title.",
-      },
-    },
-  },
-  render: () => <HvGlobalActions title="Detail Page Title" />,
 };
