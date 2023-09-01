@@ -40,7 +40,6 @@ export const fields = {
     label: "date",
     placeholder: "Insert date",
   },
-
   time: {
     id: "time",
     label: "time",

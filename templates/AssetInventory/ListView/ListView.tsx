@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import {
   HvTable,
   HvTableContainer,
@@ -8,23 +7,20 @@ import {
   HvTableBody,
   HvTableCell,
   HvTableInstance,
+  HvTableColumnConfig,
 } from "@hitachivantara/uikit-react-core";
-import { getColumns, idsToControl } from "../utils";
+
+import { AssetInventoryEntry } from "../data";
 
 interface ListViewProps {
-  instance: HvTableInstance<AssetInventoryModel, string>;
+  id?: string;
+  columns: HvTableColumnConfig<AssetInventoryEntry, string>[];
+  instance: HvTableInstance<AssetInventoryEntry, string>;
 }
 
-/**
- * The list view of the Asset Inventory.
- *
- * @param {Object} instance - the instance returned by the `useHvData` data.
- */
-export const ListView = ({ instance }: ListViewProps) => {
-  const columns = useMemo(() => getColumns(), []);
-
+export const ListView = ({ id, instance, columns }: ListViewProps) => {
   return (
-    <HvTableContainer style={{ padding: "2px" }} id={idsToControl.list}>
+    <HvTableContainer style={{ padding: "2px" }} id={id}>
       <HvTable variant="listrow" {...instance.getTableProps()}>
         <HvTableHead>
           <HvTableRow>

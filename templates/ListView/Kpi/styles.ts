@@ -9,7 +9,7 @@ const styles = {
     cursor: "pointer",
   }),
   title: css({
-    margin: `${theme.space.xs}px 0`,
+    margin: `${theme.space.xs} 0`,
   }),
   content: css({
     display: "flex",
@@ -23,6 +23,9 @@ const styles = {
   }),
   selected: css({
     outline: `1px solid ${theme.colors.secondary_60}`,
+  }),
+  loading: css({
+    margin: `${theme.space.xs} 0`,
   }),
 };
 

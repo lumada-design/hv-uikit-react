@@ -1,4 +1,5 @@
 import DetailsView from "../../templates/DetailsView";
+import { templateDecorator } from "./templateDecorator";
 
 export default {
   title: "Templates/Details View",
@@ -9,6 +10,7 @@ export default {
       },
     },
   },
+  decorators: [templateDecorator],
 };
 
 export const Main = () => <DetailsView />;

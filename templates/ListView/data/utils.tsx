@@ -3,6 +3,7 @@ import {
   HvTypography,
   HvTableColumnConfig,
   HvCellProps,
+  HvBulkActionsProps,
 } from "@hitachivantara/uikit-react-core";
 import {
   Level0Good,
@@ -12,7 +13,19 @@ import {
   Refresh,
 } from "@hitachivantara/uikit-react-icons";
 
-export const getStatusIcon = (status: number) => {
+// --- Table data utils ---
+
+export interface ListViewEntry {
+  id?: string;
+  name?: string;
+  description?: string;
+  serverId?: number;
+  created?: string;
+  build?: string;
+  status?: number;
+}
+
+export const getStatusIcon = (status?: ListViewEntry["status"]) => {
   switch (status) {
     case 0:
       return <Level0Good color="positive" iconSize="XS" />;
@@ -25,12 +38,12 @@ export const getStatusIcon = (status: number) => {
   }
 };
 
-export const getColumns = (): HvTableColumnConfig<ListViewModel, string>[] => [
+export const getColumns = (): HvTableColumnConfig<ListViewEntry, string>[] => [
   {
     Header: "Status",
     accessor: "status",
     style: { width: 40 },
-    Cell: ({ row }: HvCellProps<ListViewModel, string>) => {
+    Cell: ({ row }: HvCellProps<ListViewEntry, string>) => {
       switch (row.original.status) {
         case 0:
           return (
@@ -66,9 +79,13 @@ export const getColumns = (): HvTableColumnConfig<ListViewModel, string>[] => [
   { Header: "Build", accessor: "build", style: { width: 120 } },
 ];
 
-export const actions = [{ id: "refresh", label: "Refresh", icon: <Refresh /> }];
+export const actions: HvBulkActionsProps["actions"] = [
+  { id: "refresh", label: "Refresh", icon: <Refresh /> },
+];
 
-// ---- Data Utils
+export const idsToControl = {
+  list: "itemList",
+};
 
 const entries = [
   { name: "Previous", description: "Clean Data Logs" },
@@ -108,8 +125,9 @@ const getBuild = (): string => {
 
 const getRandEntry = () => entries[Math.floor(Math.random() * entries.length)];
 
-const getNewEntry = (i: number): ListViewModel => {
+export const createEntry = (i: number): ListViewEntry => {
   const entry = getRandEntry();
+
   return {
     id: `${i + 1}`,
     name: entry.name,
@@ -121,10 +139,30 @@ const getNewEntry = (i: number): ListViewModel => {
   };
 };
 
-export const makeData = (len = 10): ListViewModel[] => {
-  const data: ListViewModel[] = [];
-  for (let i = 0; i <= len; i += 1) {
-    data.push(getNewEntry(i));
+// --- Trend data utils ---
+
+export type TrendData = (string | number)[][];
+
+const getRandom = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min) + min);
+};
+
+export const getTrendData = (variation: string): TrendData => {
+  if (variation === "up") {
+    return [
+      ["Count", "Requests"],
+      ["1", getRandom(200, 500)],
+      ["2", getRandom(500, 1000)],
+      ["3", getRandom(1000, 2000)],
+      ["4", getRandom(2000, 3000)],
+    ];
   }
-  return data;
+
+  return [
+    ["Count", "Requests"],
+    ["1", getRandom(2000, 3000)],
+    ["2", getRandom(1000, 2000)],
+    ["3", getRandom(500, 1000)],
+    ["4", getRandom(200, 500)],
+  ];
 };
