@@ -2,8 +2,6 @@ import React, { useCallback, useRef, useState } from "react";
 
 import range from "lodash/range";
 
-import { Random } from "@core/utils/Random";
-
 import { HvTableColumnConfig } from "../hooks/useTable";
 
 export interface NewRendererEntry {
@@ -46,8 +44,6 @@ export interface AssetEvent {
 // If a Cell gets a value, it has to return a react element
 const getCell = (value: string) => value as unknown as React.ReactElement;
 
-const rand = new Random();
-
 const formatDate = (date: Date) => date.toISOString().split("T")[0];
 
 const getOption = (opts: string[], i: number) => opts[i % opts.length];
@@ -81,32 +77,26 @@ const getDropdownOptions = (options: string[] = [], selected = "") => {
 };
 
 const makeEvent = (i: number): AssetEvent => {
-  const r = rand.next();
-  const [dateMax, dateMin] = [2018, 2023].map((y) => new Date(y, 0).getTime());
-
   return {
     id: `${i + 1}`,
     name: `Event ${i + 1}`,
-    createdDate: formatDate(new Date(rand.next(dateMax, dateMin))),
+    createdDate: formatDate(new Date("2020-03-20")),
     eventType: "Anomaly detection",
     status: getOption(["Closed", "Open"], i),
-    riskScore: rand.next(100, 10),
+    riskScore: (i % 100) + 1,
     severity: getOption(["Critical", "Major", "Average", "Minor"], i),
-    priority: (r > 0.66 && "High") || (r > 0.33 && "Medium") || "Low",
+    priority: getOption(["High", "Medium", "Low"], i),
   };
 };
 
 const newRendererEntry = (i: number): NewRendererEntry => {
-  const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
   let eventTypeText = generateEmptyString("Anomaly detection", i);
   eventTypeText = generateLongString(eventTypeText, i);
+
   return {
     id: `${i + 1}`,
     name: `Event ${i + 1}`,
-    createdDate: generateEmptyDate(
-      formatDate(new Date(rand.next(dateMax, dateMin))),
-      i
-    ),
+    createdDate: generateEmptyDate(formatDate(new Date("2020-03-20")), i),
     eventQuantity: generateLargeNumber(i),
     eventType: eventTypeText,
     status: {
@@ -114,7 +104,7 @@ const newRendererEntry = (i: number): NewRendererEntry => {
       status_color: getTagColor(getOption(["Closed", "Open"], i)),
       status_text_color: "black",
     },
-    riskScore: rand.next(100, 10),
+    riskScore: (i % 100) + 1,
     isDisabled: generateBooleanState(i),
     severity: getDropdownOptions(
       ["Critical", "Major", "Average", "Minor"],
@@ -124,18 +114,16 @@ const newRendererEntry = (i: number): NewRendererEntry => {
 };
 
 const controlledSelectedEntry = (i: number): AssetEvent => {
-  const r = rand.next();
-  const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
   return {
     id: `${i + 1}`,
     name: `Event ${i + 1}`,
-    createdDate: formatDate(new Date(rand.next(dateMax, dateMin))),
+    createdDate: formatDate(new Date("2020-03-20")),
     eventType: "Anomaly detection",
     status: getOption(["Closed", "Open"], i),
-    riskScore: rand.next(100, 10),
+    riskScore: (i % 100) + 1,
     severity: getOption(["Critical", "Major", "Average", "Minor"], i),
-    priority: (r > 0.66 && "High") || (r > 0.33 && "Medium") || "Low",
-    selected: r < 0.66,
+    priority: getOption(["High", "Medium", "Low"], i),
+    selected: i < 3,
   };
 };
 
