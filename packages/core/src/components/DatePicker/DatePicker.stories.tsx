@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-import styled from "@emotion/styled";
+import { Global } from "@emotion/react";
 
 import { waitFor, screen, fireEvent } from "@storybook/testing-library";
-import { Meta, StoryObj } from "@storybook/react";
+import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
 
-import { CSSInterpolation, css } from "@emotion/css";
+import { CSSInterpolation, css, cx } from "@emotion/css";
 import {
   HvButton,
   HvCalendar,
@@ -20,14 +20,40 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-const Decorator = ({ children }) => {
-  return <div style={{ width: 340, height: 600, padding: 10 }}>{children}</div>;
-};
+const overflowDecorator: DecoratorFn = (Story) => (
+  <>
+    <Global
+      styles={{
+        ".sbdocs.sbdocs-preview": {
+          overflow: "visible",
+          "& > div, & > div > div": {
+            overflow: "visible",
+          },
+        },
+      }}
+    />
+    {Story()}
+  </>
+);
+
+const containerDecorator: DecoratorFn = (Story) => (
+  <div className={cx("decorator", css({ width: 340, padding: 10 }))}>
+    {Story()}
+  </div>
+);
+
+const unsetDecorator: DecoratorFn = (Story) => (
+  <>
+    <Global styles={{ ".decorator:has(.unset)": { width: "unset" } }} />
+    <div className="unset">{Story()}</div>
+  </>
+);
 
 const meta: Meta<typeof HvDatePicker> = {
   title: "Components/Date Picker",
   subcomponents: { HvCalendar },
   component: HvDatePicker,
+  decorators: [overflowDecorator, containerDecorator],
 };
 export default meta;
 
@@ -46,16 +72,8 @@ export const Main: StoryObj<HvDatePickerProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: (args) => {
-    return (
-      <HvDatePicker
-        id="DatePicker"
-        placeholder="Select date"
-        aria-label="Date"
-        {...args}
-      />
-    );
+    return <HvDatePicker placeholder="Select date" label="Date" {...args} />;
   },
 };
 
@@ -68,15 +86,15 @@ export const Variants: StoryObj<HvDatePickerProps> = {
       },
     },
   },
+  decorators: [unsetDecorator],
   render: () => {
     const value = new Date("2023-01-01");
 
     const styles: { root: CSSInterpolation } = {
       root: {
         display: "flex",
-        height: 550,
         gap: 20,
-        flexWrap: "wrap",
+        flexFlow: "row",
         "& > div": {
           width: 200,
         },
@@ -99,28 +117,6 @@ export const Variants: StoryObj<HvDatePickerProps> = {
   },
 };
 
-export const DefaultValue: StoryObj<HvDatePickerProps> = {
-  parameters: {
-    eyes: { include: false },
-    docs: {
-      description: {
-        story: "Datepicker default value and limit selection range.",
-      },
-    },
-  },
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
-  render: () => {
-    return (
-      <HvDatePicker
-        id="DatePicker"
-        aria-label="Date"
-        placeholder="Select date"
-        value={new Date("2020-10-10")}
-      />
-    );
-  },
-};
-
 export const Localized: StoryObj<HvDatePickerProps> = {
   parameters: {
     eyes: { include: false },
@@ -130,7 +126,6 @@ export const Localized: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     // Locales must be imported beforehand:
     // import "dayjs/locale/pt";
@@ -172,7 +167,6 @@ export const WithActions: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     return (
       <HvDatePicker
@@ -196,7 +190,6 @@ export const WithCustomLabels: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     return (
       <HvDatePicker
@@ -225,7 +218,6 @@ export const RangeMode: StoryObj<HvDatePickerProps> = {
       },
     },
   },
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     return (
       <HvDatePicker
@@ -243,48 +235,31 @@ export const RangeMode: StoryObj<HvDatePickerProps> = {
   },
 };
 
-export const RangeModeWithNoValues: StoryObj<HvDatePickerProps> = {
-  parameters: {
-    eyes: { include: false },
-    docs: {
-      description: {
-        story:
-          "Datepicker in range mode allowing the selection of more than one value.",
-      },
-    },
-  },
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
-  render: () => {
-    return (
-      <HvDatePicker
-        aria-label="Date"
-        placeholder="Select a range"
-        rangeMode
-        labels={{
-          applyLabel: "Apply",
-          cancelLabel: "Cancel",
-        }}
-      />
-    );
-  },
-};
-
 export const NearInvalid: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("combobox"));
+
+        return waitFor(() => screen.getByText("January"));
+      },
+    },
     docs: {
       description: {
         story: "Datepicker in range mode with invalid near invalid dates.",
       },
     },
   },
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     return (
       <HvDatePicker
         aria-label="Date"
         placeholder="Select date"
-        value={new Date(1000, 0, 1)}
+        value={new Date(2020, 0, 15)}
+        calendarProps={{
+          minimumDate: new Date(2020, 0, 10),
+          maximumDate: new Date(2020, 0, 20),
+        }}
       />
     );
   },
@@ -292,15 +267,8 @@ export const NearInvalid: StoryObj<HvDatePickerProps> = {
 
 export const WithValueChange: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-
-        return waitFor(() => screen.getByRole("tooltip"));
-      },
-    },
+    eyes: { include: false },
   },
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     const [date, setDate] = useState<Date | undefined>(new Date(2020, 0, 1));
 
@@ -339,11 +307,10 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
       runBefore() {
         fireEvent.click(screen.getByRole("combobox"));
 
-        return waitFor(() => screen.getByRole("tooltip"));
+        return waitFor(() => screen.getByRole("button", { name: "Apply" }));
       },
     },
   },
-  decorators: [(Story) => <Decorator>{Story()}</Decorator>],
   render: () => {
     const [startDate, setStartDate] = useState<Date>(new Date(2020, 8, 5));
     const [endDate, setEndDate] = useState<Date>(new Date(2020, 8, 10));
@@ -447,98 +414,84 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
       },
     },
   },
+  decorators: [unsetDecorator],
   render: () => {
-    const [deathValidationState, setDeathValidationState] =
+    const [endValidationState, setEndValidationState] =
       useState<HvFormStatus>("invalid");
 
-    const [birthErrorMessage, setBirthErrorMessage] = useState<
-      string | undefined
-    >();
-    const [deathErrorMessage, setDeathErrorMessage] = useState(
-      "The death day will always be invalid."
+    const [startErrorMessage, setStartErrorMessage] = useState<string>();
+    const [endErrorMessage, setEndErrorMessage] = useState(
+      "The end date will always be invalid."
     );
-
-    const StyledList = styled("ul")({
-      margin: "16px 0px",
-      paddingLeft: "40px",
-    });
 
     return (
       <HvGrid container>
-        <HvGrid item xs={5} container>
-          <HvGrid item xs={12}>
+        <HvGrid container item xs={12}>
+          <HvGrid item xs={12} sm={6}>
             <HvDatePicker
-              label="Birth day"
-              description="Please enter when you're born"
+              label="Start date"
+              description="Enter a start date"
               placeholder="Choose a date"
               required
-              aria-errormessage="birth-error"
+              aria-errormessage="start-error"
               onChange={(value) => {
-                if (!value) {
-                  setBirthErrorMessage("You must provide a birth day.");
-                } else {
-                  setBirthErrorMessage(undefined);
-                }
+                setStartErrorMessage(
+                  value ? undefined : "Start date is required."
+                );
               }}
             />
           </HvGrid>
-          <HvGrid item xs={12}>
+          <HvGrid item xs={12} sm={6}>
             <HvDatePicker
-              label="Death day"
-              description="Please enter when you're dead"
+              label="End date"
+              description="Enter an end date"
               placeholder="Choose a date"
               required
-              status={deathValidationState}
-              aria-errormessage="death-error"
+              status={endValidationState}
+              aria-errormessage="end-error"
               onChange={(value) => {
-                setDeathValidationState("invalid");
+                setEndValidationState("invalid");
 
-                if (!value) {
-                  setDeathErrorMessage("You can try choosing a death day.");
-                } else {
-                  setDeathErrorMessage(
-                    "The death day will always be invalid. I know you're alive!"
-                  );
-                }
+                setEndErrorMessage(
+                  value
+                    ? "The end date will always be invalid."
+                    : "You can try choosing an end date."
+                );
               }}
             />
           </HvGrid>
         </HvGrid>
-        <HvGrid item xs={7}>
+        <HvGrid item xs={12}>
           <div
             style={{
-              paddingTop: "10px",
-              paddingLeft: "10px",
+              display: "inline-block",
+              padding: theme.space.md,
               backgroundColor: theme.colors.negative_20,
               color: theme.colors.base_dark,
               height: "100%",
             }}
           >
-            {" "}
             <h4>Form errors:</h4>
-            <StyledList>
-              {birthErrorMessage && (
-                <li id="birth-error" aria-live="polite">
-                  {birthErrorMessage}
+            <ul
+              className={css({
+                marginTop: theme.space.xs,
+                paddingLeft: theme.space.md,
+              })}
+            >
+              {startErrorMessage && (
+                <li id="start-error" aria-live="polite">
+                  {startErrorMessage}
                 </li>
               )}
-              {deathErrorMessage && (
-                <li id="death-error" aria-live="polite">
-                  {deathErrorMessage}
+              {endErrorMessage && (
+                <li id="end-error" aria-live="polite">
+                  {endErrorMessage}
                 </li>
               )}
-            </StyledList>
+            </ul>
           </div>
         </HvGrid>
       </HvGrid>
     );
   },
 };
-
-ExternalErrorMessage.decorators = [
-  (Story) => (
-    <div style={{ height: 650, width: "90vw" }}>
-      <Story />
-    </div>
-  ),
-];
