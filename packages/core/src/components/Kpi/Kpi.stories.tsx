@@ -55,16 +55,12 @@ export const Main: StoryObj<HvKpiProps> = {
     visualComparison: { control: { disable: true } },
     labels: { control: { disable: true } },
     indicatorTextVariant: {
-      control: {
-        type: "select",
-        options: ["display", "title1", "title2"],
-      },
+      control: { type: "select" },
+      options: ["display", "title1", "title2"],
     },
     indicatorUnitTextVariant: {
-      control: {
-        type: "select",
-        options: ["title2", "body"],
-      },
+      control: { type: "select" },
+      options: ["title2", "body"],
     },
     classes: { control: { disable: true } },
   },
