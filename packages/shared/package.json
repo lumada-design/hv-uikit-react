@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-shared",
-  "version": "5.1.8",
+  "version": "5.1.9",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Shared React contexts for the NEXT UI Kit.",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
-    "@hitachivantara/uikit-styles": "^5.11.1"
+    "@hitachivantara/uikit-styles": "^5.11.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.12",
