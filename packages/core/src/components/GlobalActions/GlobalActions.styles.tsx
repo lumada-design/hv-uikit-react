@@ -29,8 +29,7 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
     backdropFilter: "blur(1px)",
   },
   wrapper: {
-    height: 52,
-    paddingRight: theme.space.xs,
+    padding: theme.space.sm,
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
@@ -43,7 +42,6 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
     left: 0,
     background: theme.colors.atmo1,
     width: "100%",
-    padding: theme.space.xs,
     marginTop: theme.space.xs,
   },
   globalSectionArea: {
@@ -60,10 +58,7 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
   actions: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "flex-end",
     marginLeft: "auto",
-    "& > *:not(:first-child) ": {
-      marginLeft: theme.space.xs,
-    },
+    gap: theme.space.xs,
   },
 });
