@@ -368,14 +368,20 @@ const MyComponent = () => {
 The NEXT UI Kit provides a spacing helper function named `spacing`. This function helps generate the spacing values for the UI elements when required
 and is contained within the `theme` object provided by the `uikit-react-core` package.
 
-This helper function can receive one of the arguments below and returns the appropriate value in pixels to achieve the desired spacing.
+This helper function receives any number of arguments (or an array of arguments), where each argument is either:
 
-| Argument                                                                            | Result                                                      | Example                       |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------- |
-| Number                                                                              | The number is multiplied by the theme's spacing base.       | `theme.spacing(5)`            |
-| One of the theme's spacing breakpoints: `xs`, `sm`, `md`, `lg`, or `xl`             | The corresponding breakpoint's spacing value for the theme. | `theme.spacing("sm")`         |
-| Value in pixels                                                                     | The value in pixels.                                        | `theme.spacing("16px")`       |
-| Array of four values: numbers, pixel values, and/or the theme's spacing breakpoints | It will generate the shorthand form of the values.          | `theme.spacing(["sm","0px"])` |
+- A `number`, which is then multiplied by the `8px` base value;
+- A `string`, which is either converted to their breakpoint value (`xs`,`sm`,`md`,`lg`,`xl`) or left as-is.
+
+Examples:
+
+```tsx
+theme.spacing(2); // 16px (2*8px)
+theme.spacing(1, 0); // 8px 0px
+
+theme.spacing("sm"); // 16px
+theme.spacing("sm", "inherit", "42px"); // 16px inherit 42px
+```
 
 The spacing base and breakpoints for each default theme are shown below.
 
@@ -407,13 +413,13 @@ Find below an example on how to use the spacing helper function.
 import styled from "@emotion/styled";
 import { HvButton, theme } from "@hitachivantara/uikit-react-core";
 
-export const Spacing = () => {
-  const StyledContainer = styled("div")({
-    "& > *": {
-      margin: theme.spacing(["xs", "6px"]),
-    },
-  });
+const StyledContainer = styled("div")({
+  "& > *": {
+    margin: theme.spacing("xs", "6px"),
+  },
+});
 
+export const Spacing = () => {
   return (
     <StyledContainer>
       <HvButton variant="primary">Button 1</HvButton>

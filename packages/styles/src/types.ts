@@ -478,15 +478,18 @@ export type HvThemeTypography = {
 // Breakpoints
 export type HvThemeBreakpoint = Exclude<keyof typeof tokens.space, "base">;
 
+export type SpacingValue = number | HvThemeBreakpoint | (string & {});
+
 // Theme utils
 export type HvThemeUtils = {
-  spacing: (
-    value:
-      | string
-      | number
-      | HvThemeBreakpoint
-      | (string | number | HvThemeBreakpoint)[]
-  ) => string;
+  /**
+   * Utility function to generate spacing values from the theme.
+   *
+   * @example
+   * theme.spacing(2) // 16px (2*8px)
+   * theme.spacing("md", "inherit", "42px") // 24px inherit 42px
+   */
+  spacing: (...args: [SpacingValue[]] | SpacingValue[]) => string;
 };
 
 // Theme colors

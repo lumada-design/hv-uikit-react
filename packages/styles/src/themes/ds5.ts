@@ -1,8 +1,7 @@
 import { colors } from "../tokens/colors";
 import { makeTheme } from "../makeTheme";
-import { HvTheme } from "../types";
 
-const ds5 = makeTheme((theme: HvTheme) => ({
+const ds5 = makeTheme((theme) => ({
   name: "ds5",
   colors: {
     modes: {
@@ -186,7 +185,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   },
   button: {
     borderRadius: theme.radii.base,
-    padding: theme.spacing(["xs", "sm"]),
+    padding: theme.spacing("xs", "sm"),
     marginIconRight: "0px",
     marginIconLeft: "-8px",
     semanticColor: "rgba(251, 252, 252, 0.3)",

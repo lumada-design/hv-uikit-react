@@ -122,7 +122,7 @@ export const WhiteLabeling = () => {
             onClick={handleChange}
           />
         </HvHeader>
-        <HvContainer style={{ padding: theme.spacing(["md", "md"]) }}>
+        <HvContainer style={{ padding: theme.spacing("md") }}>
           <HvGlobalActions
             title={
               navigationData.find((p) => p.id === selected)?.label ||
