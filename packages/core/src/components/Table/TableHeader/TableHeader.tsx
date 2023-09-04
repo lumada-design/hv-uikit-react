@@ -15,7 +15,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography, HvTypographyProps } from "@core/components/Typography";
 import { useTheme } from "@core/hooks/useTheme";
 import { ExtractNames } from "@core/utils/classes";
-import { HvButton } from "@core/components/Button";
+import { HvButton, HvButtonProps } from "@core/components/Button";
 
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
@@ -71,6 +71,8 @@ export interface HvTableHeaderProps
   resizerProps?: HTMLAttributes<HTMLDivElement>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableHeaderClasses;
+  /** Extra props to be passed onto the sort button in the header. */
+  sortButtonProps?: HvButtonProps;
 }
 
 const defaultComponent = "th";
@@ -102,6 +104,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
       resizerProps = {},
       resizable = false,
       resizing = false,
+      sortButtonProps,
       ...others
     },
     externalRef
@@ -183,6 +186,8 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
               className={classes.sortButton}
               icon
               overrideIconColors={false}
+              aria-label="Sort"
+              {...sortButtonProps}
             >
               <Sort className={classes.sortIcon} />
             </HvButton>

@@ -124,7 +124,7 @@ const StyledResponsiveTableHeader = styled(HvTableHeader)({
 // #endregion Responsive table styled components
 
 export default {
-  title: "Guides/Table",
+  title: "Visualizations/Table",
   component: HvTable,
   subcomponents: {
     HvTableContainer,
@@ -203,7 +203,7 @@ export const NoData: StoryObj<HvTableProps> = {
               <HvTableCell colSpan={100} style={{ height: 96 }}>
                 <HvEmptyState
                   message="No data to display."
-                  icon={<Ban role="presentation" />}
+                  icon={<Ban role="none" />}
                 />
               </HvTableCell>
             </HvTableRow>
@@ -256,6 +256,7 @@ export const SimpleTable: StoryObj<HvTableProps> = {
               <HvTableRow key={el.id} hover selected={checkedIdx === idx}>
                 <HvTableCell variant="checkbox">
                   <HvCheckBox
+                    aria-label="Tick to select the row"
                     checked={checkedIdx === idx}
                     onClick={toggleChecked(idx)}
                   />
@@ -376,7 +377,7 @@ export const ResponsiveTable = () => {
             ))}
           </StyledResponsiveTableRow>
         </StyledResponsiveHead>
-        <StyledResponsiveBody $breakpoints={muiTheme.breakpoints}>
+        <StyledResponsiveBody tabIndex={0} $breakpoints={muiTheme.breakpoints}>
           {data.map((row) => {
             return (
               <StyledResponsiveTableRow
@@ -442,6 +443,7 @@ export const ListRow = () => {
                 <HvTableRow key={el.id} hover selected={checkedIdx === idx}>
                   <HvTableCell variant="listcheckbox">
                     <HvCheckBox
+                      aria-label="Tick to select the row"
                       checked={checkedIdx === idx}
                       onClick={toggleChecked(idx)}
                     />

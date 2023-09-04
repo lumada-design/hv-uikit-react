@@ -33,10 +33,7 @@ import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
 const EmptyRow = ({ height }) => (
   <HvTableRow>
     <HvTableCell colSpan={100} style={{ height }}>
-      <HvEmptyState
-        message="No data to display"
-        icon={<Ban role="presentation" />}
-      />
+      <HvEmptyState message="No data to display" icon={<Ban role="none" />} />
     </HvTableCell>
   </HvTableRow>
 );
@@ -48,6 +45,7 @@ const AllColumnRenderers = () => {
         Header: "isDisabled",
         accessor: "isDisabled",
         style: { minWidth: 130 },
+        id: "disabled-header",
       },
       "default",
       "yes",
@@ -57,27 +55,44 @@ const AllColumnRenderers = () => {
       }
     ),
     hvExpandColumn<NewRendererEntry, string>(
-      { Header: "Title", accessor: "name", style: { maxWidth: 100 } },
+      {
+        Header: "Title",
+        accessor: "name",
+        style: { maxWidth: 100 },
+        id: "title-header",
+      },
       "expand",
       "collapse",
       () => true
     ),
     hvDateColumn<NewRendererEntry, string>(
-      { Header: "Time", accessor: "createdDate", style: { minWidth: 50 } },
+      {
+        Header: "Time",
+        accessor: "createdDate",
+        style: { minWidth: 50 },
+        id: "time-header",
+      },
       "YYYY/MM/DD HH:mm"
     ),
     hvNumberColumn<NewRendererEntry, string>({
       Header: "Quantity",
       accessor: "eventQuantity",
       style: { minWidth: 20 },
+      id: "quantity-header",
     }),
     hvTextColumn<NewRendererEntry, string>({
       Header: "Event Type",
       accessor: "eventType",
       style: { maxWidth: 160 },
+      id: "event-type-header",
     }),
     hvTagColumn<NewRendererEntry, string, NewRendererEntry["status"]>(
-      { Header: "Status", accessor: "status", style: { width: 20 } },
+      {
+        Header: "Status",
+        accessor: "status",
+        style: { width: 20 },
+        id: "status-header",
+      },
       "status_name",
       "status_color",
       "status_text_color",
@@ -90,14 +105,15 @@ const AllColumnRenderers = () => {
         accessor: "riskScore",
         style: { width: 125 },
         disableSortBy: true,
+        id: "probability-header",
       },
       (row) => row.original.riskScore,
       () => 100,
       "secondary"
     ),
     hvDropdownColumn<NewRendererEntry, string>(
-      { Header: "Severity", accessor: "severity" },
-      "Severity-id-101",
+      { Header: "Severity", accessor: "severity", id: "severity-header" },
+      undefined,
       "Select severity...",
       "Select severity...",
       () => console.log("select me")
@@ -141,7 +157,7 @@ const AllColumnRenderers = () => {
         <React.Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
-              "aria-rowindex": index,
+              "aria-rowindex": index + 1,
             })}
           >
             {row.cells.map((cell) => (
@@ -183,7 +199,11 @@ const AllColumnRenderers = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()} key={col.Header}>
+                <HvTableHeader
+                  {...col.getHeaderProps()}
+                  key={col.Header}
+                  id={col.id}
+                >
                   {col.render("Header")}
                 </HvTableHeader>
               ))}
@@ -210,6 +230,7 @@ const getColumns = () => [
       Header: "isDisabled",
       accessor: "isDisabled",
       style: { minWidth: 130 },
+      id: "disabled-header"
     },
     "default",
     "yes",
@@ -219,27 +240,29 @@ const getColumns = () => [
     }
   ),
   hvExpandColumn<NewRendererEntry, string>(
-    { Header: "Title", accessor: "name", style: { maxWidth: 100 } },
+    { Header: "Title", accessor: "name", style: { maxWidth: 100 }, id: "title-header" },
     "expand",
     "collapse",
     () => true
   ),
   hvDateColumn<NewRendererEntry, string>(
-    { Header: "Time", accessor: "createdDate", style: { minWidth: 50 } },
+    { Header: "Time", accessor: "createdDate", style: { minWidth: 50 }, id: "time-header" },
     "YYYY/MM/DD HH:mm"
   ),
   hvNumberColumn<NewRendererEntry, string>({
     Header: "Quantity",
     accessor: "eventQuantity",
     style: { minWidth: 20 },
+    id: "quantity-header"
   }),
   hvTextColumn<NewRendererEntry, string>({
     Header: "Event Type",
     accessor: "eventType",
     style: { maxWidth: 160 },
+    id: "event-type-header"
   }),
   hvTagColumn<NewRendererEntry, string, NewRendererEntry["status"]>(
-    { Header: "Status", accessor: "status", style: { width: 20 } },
+    { Header: "Status", accessor: "status", style: { width: 20 }, id: "status-header" },
     "status_name",
     "status_color",
     "status_text_color",
@@ -252,14 +275,15 @@ const getColumns = () => [
       accessor: "riskScore",
       style: { width: 125 },
       disableSortBy: true,
+      id: "probability-header"
     },
     (row) => row.original.riskScore,
     () => 100,
     "secondary"
   ),
   hvDropdownColumn<NewRendererEntry, string>(
-    { Header: "Severity", accessor: "severity" },
-    "Severity-id-101",
+    { Header: "Severity", accessor: "severity", id: "severity-header" },
+    undefined,
     "Select severity...",
     "Select severity...",
     () => console.log("select me")
@@ -279,7 +303,7 @@ const EmptyRow = () => (
     <HvTableCell colSpan={100} style={{ height: 100 }}>
       <HvEmptyState
         message="No data to display"
-        icon={<Ban role="presentation" />}
+        icon={<Ban role="none" />}
       />
     </HvTableCell>
   </HvTableRow>
@@ -314,7 +338,7 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
       <React.Fragment key={row.id}>
         <HvTableRow
           {...row.getRowProps({
-            "aria-rowindex": index,
+            "aria-rowindex": index + 1,
           })}
         >
           {row.cells.map((cell) => (
@@ -356,7 +380,7 @@ return (
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()} key={col.Header}>
+              <HvTableHeader {...col.getHeaderProps()} key={col.Header} id={col.id}>
                 {col.render("Header")}
               </HvTableHeader>
             ))}
@@ -420,7 +444,7 @@ const TextColumnRenderer = () => {
         <React.Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
-              "aria-rowindex": index,
+              "aria-rowindex": index + 1,
             })}
           >
             {row.cells.map((cell) => (
@@ -490,7 +514,7 @@ const EmptyRow = () => (
     <HvTableCell colSpan={100} style={{ height: 100 }}>
       <HvEmptyState
         message="No data to display"
-        icon={<Ban role="presentation" />}
+        icon={<Ban role="none" />}
       />
     </HvTableCell>
   </HvTableRow>
@@ -523,7 +547,7 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
       <React.Fragment key={row.id}>
         <HvTableRow
           {...row.getRowProps({
-            "aria-rowindex": index,
+            "aria-rowindex": index + 1,
           })}
         >
           {row.cells.map((cell) => (
@@ -615,7 +639,7 @@ const NumberColumnRenderer = () => {
         <React.Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
-              "aria-rowindex": index,
+              "aria-rowindex": index + 1,
             })}
           >
             {row.cells.map((cell) => (
@@ -685,7 +709,7 @@ const EmptyRow = () => (
     <HvTableCell colSpan={100} style={{ height: 50 }}>
       <HvEmptyState
         message="No data to display"
-        icon={<Ban role="presentation" />}
+        icon={<Ban role="none" />}
       />
     </HvTableCell>
   </HvTableRow>
@@ -718,7 +742,7 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
       <React.Fragment key={row.id}>
         <HvTableRow
           {...row.getRowProps({
-            "aria-rowindex": index,
+            "aria-rowindex": index + 1,
           })}
         >
           {row.cells.map((cell) => (
@@ -809,7 +833,7 @@ const DateColumnRenderer = () => {
         <React.Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
-              "aria-rowindex": index,
+              "aria-rowindex": index + 1,
             })}
           >
             {row.cells.map((cell) => (
@@ -878,7 +902,7 @@ const EmptyRow = () => (
     <HvTableCell colSpan={100} style={{ height: 50 }}>
       <HvEmptyState
         message="No data to display"
-        icon={<Ban role="presentation" />}
+        icon={<Ban role="none" />}
       />
     </HvTableCell>
   </HvTableRow>
@@ -911,7 +935,7 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
       <React.Fragment key={row.id}>
         <HvTableRow
           {...row.getRowProps({
-            "aria-rowindex": index,
+            "aria-rowindex": index + 1,
           })}
         >
           {row.cells.map((cell) => (
@@ -1011,7 +1035,7 @@ const ExpandColumnRenderer = () => {
         <React.Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
-              "aria-rowindex": index,
+              "aria-rowindex": index + 1,
             })}
           >
             {row.cells.map((cell) => (
@@ -1105,7 +1129,7 @@ const EmptyRow = () => (
     <HvTableCell colSpan={100} style={{ height: 50 }}>
       <HvEmptyState
         message="No data to display"
-        icon={<Ban role="presentation" />}
+        icon={<Ban role="none" />}
       />
     </HvTableCell>
   </HvTableRow>
@@ -1140,7 +1164,7 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
       <React.Fragment key={row.id}>
         <HvTableRow
           {...row.getRowProps({
-            "aria-rowindex": index,
+            "aria-rowindex": index + 1,
           })}
         >
           {row.cells.map((cell) => (
@@ -1265,7 +1289,7 @@ const SwitchColumnRenderer = () => {
         <React.Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
-              "aria-rowindex": index,
+              "aria-rowindex": index + 1,
             })}
           >
             {row.cells.map((cell) => (
@@ -1351,7 +1375,7 @@ const EmptyRow = () => (
     <HvTableCell colSpan={100} style={{ height: 50 }}>
       <HvEmptyState
         message="No data to display"
-        icon={<Ban role="presentation" />}
+        icon={<Ban role="none" />}
       />
     </HvTableCell>
   </HvTableRow>
@@ -1384,7 +1408,7 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
       <React.Fragment key={row.id}>
         <HvTableRow
           {...row.getRowProps({
-            "aria-rowindex": index,
+            "aria-rowindex": index + 1,
           })}
         >
           {row.cells.map((cell) => (
@@ -1480,7 +1504,7 @@ const TagColumnRenderer = () => {
         <React.Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
-              "aria-rowindex": index,
+              "aria-rowindex": index + 1,
             })}
           >
             {row.cells.map((cell) => (
@@ -1554,7 +1578,7 @@ const EmptyRow = () => (
     <HvTableCell colSpan={100} style={{ height: 50 }}>
       <HvEmptyState
         message="No data to display"
-        icon={<Ban role="presentation" />}
+        icon={<Ban role="none" />}
       />
     </HvTableCell>
   </HvTableRow>
@@ -1587,7 +1611,7 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
       <React.Fragment key={row.id}>
         <HvTableRow
           {...row.getRowProps({
-            "aria-rowindex": index,
+            "aria-rowindex": index + 1,
           })}
         >
           {row.cells.map((cell) => (
@@ -1644,6 +1668,7 @@ const ProgressColumnRenderer = () => {
           accessor: "riskScore",
           style: { width: 125 },
           disableSortBy: true,
+          id: "probability-header",
         },
         (row) => row.original.riskScore,
         () => 100,
@@ -1683,7 +1708,7 @@ const ProgressColumnRenderer = () => {
         <React.Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
-              "aria-rowindex": index,
+              "aria-rowindex": index + 1,
             })}
           >
             {row.cells.map((cell) => (
@@ -1711,7 +1736,11 @@ const ProgressColumnRenderer = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()} key={col.Header}>
+                <HvTableHeader
+                  {...col.getHeaderProps()}
+                  key={col.Header}
+                  id={col.id}
+                >
                   {col.render("Header")}
                 </HvTableHeader>
               ))}
@@ -1740,6 +1769,7 @@ const columns = useMemo(() => {
         accessor: "riskScore",
         style: { width: 125 },
         disableSortBy: true,
+        id: "probability-header"
       },
       (row) => row.original.riskScore,
       () => 100,
@@ -1757,7 +1787,7 @@ const EmptyRow = () => (
     <HvTableCell colSpan={100} style={{ height: 100 }}>
       <HvEmptyState
         message="No data to display"
-        icon={<Ban role="presentation" />}
+        icon={<Ban role="none" />}
       />
     </HvTableCell>
   </HvTableRow>
@@ -1790,7 +1820,7 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
       <React.Fragment key={row.id}>
         <HvTableRow
           {...row.getRowProps({
-            "aria-rowindex": index,
+            "aria-rowindex": index + 1,
           })}
         >
           {row.cells.map((cell) => (
@@ -1818,7 +1848,7 @@ return (
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()} key={col.Header}>
+              <HvTableHeader {...col.getHeaderProps()} key={col.Header} id={col.id}>
                 {col.render("Header")}
               </HvTableHeader>
             ))}
@@ -1846,8 +1876,8 @@ const DropdownColumnRenderer = () => {
   const columns = useMemo(() => {
     return [
       hvDropdownColumn<NewRendererEntry, string>(
-        { Header: "Severity", accessor: "severity" },
-        "Severity-id-101",
+        { Header: "Severity", accessor: "severity", id: "severity-header" },
+        undefined,
         "Select severity...",
         "Select severity...",
         (id, value) => {
@@ -1897,7 +1927,7 @@ const DropdownColumnRenderer = () => {
         <React.Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
-              "aria-rowindex": index,
+              "aria-rowindex": index + 1,
             })}
           >
             {row.cells.map((cell) => (
@@ -1925,7 +1955,11 @@ const DropdownColumnRenderer = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()} key={col.Header}>
+                <HvTableHeader
+                  {...col.getHeaderProps()}
+                  key={col.Header}
+                  id={col.id}
+                >
                   {col.render("Header")}
                 </HvTableHeader>
               ))}
@@ -1953,8 +1987,8 @@ const [data, setData] = useState(initialData);
 const columns = useMemo(() => {
   return [
     hvDropdownColumn<NewRendererEntry, string>(
-      { Header: "Severity", accessor: "severity" },
-      "Severity-id-101",
+      { Header: "Severity", accessor: "severity", id: "severity-header" },
+      undefined,
       "Select severity...",
       "Select severity...",
       (id, value) => {
@@ -1982,7 +2016,7 @@ const EmptyRow = () => (
     <HvTableCell colSpan={100} style={{ height: 100 }}>
       <HvEmptyState
         message="No data to display"
-        icon={<Ban role="presentation" />}
+        icon={<Ban role="none" />}
       />
     </HvTableCell>
   </HvTableRow>
@@ -2015,7 +2049,7 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
       <React.Fragment key={row.id}>
         <HvTableRow
           {...row.getRowProps({
-            "aria-rowindex": index,
+            "aria-rowindex": index + 1,
           })}
         >
           {row.cells.map((cell) => (
@@ -2043,7 +2077,7 @@ return (
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()} key={col.Header}>
+              <HvTableHeader {...col.getHeaderProps()} key={col.Header} id={col.id}>
                 {col.render("Header")}
               </HvTableHeader>
             ))}

@@ -9,6 +9,7 @@ export interface HvProgressColumnCellProp {
   total: number;
   /** The color of the bar. */
   color?: "primary" | "secondary";
+  "aria-labelledby"?: string;
 }
 
 export const normalizeProgressBar = (value: number, max: number) => {
@@ -19,6 +20,7 @@ export const HvProgressColumnCell = ({
   partial,
   total,
   color = "primary",
+  "aria-labelledby": ariaLabelledBy,
 }: HvProgressColumnCellProp): JSX.Element => {
   const { classes } = useClasses();
 
@@ -38,6 +40,7 @@ export const HvProgressColumnCell = ({
           color={color}
           variant="determinate"
           value={percentage}
+          aria-labelledby={ariaLabelledBy}
         />
       </div>
     </div>
