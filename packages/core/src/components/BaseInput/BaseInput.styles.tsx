@@ -28,6 +28,11 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
       backgroundColor: theme.colors.atmo4,
     },
 
+    "&& $input": {
+      color: theme.baseInput.disabledTextColor,
+      WebkitTextFillColor: theme.baseInput.disabledTextColor,
+    },
+
     "& $inputRootMultiline": {
       "& $input": {
         backgroundColor: theme.baseInput.disabledBackgroundColor,
@@ -216,9 +221,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
       display: "none",
     },
   },
-  inputDisabled: {
-    color: theme.baseInput.disabledTextColor,
-  },
+  inputDisabled: {},
   inputReadOnly: {
     color: theme.baseInput.readOnlyTextColor,
   },
