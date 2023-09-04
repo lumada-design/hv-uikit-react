@@ -1,14 +1,13 @@
 import styled from "@emotion/styled";
 import { HvButton, theme } from "@hitachivantara/uikit-react-core";
 
-export const Spacing = () => {
-  const StyledContainer = styled("div")({
-    flexWrap: "wrap",
-    "& > *": {
-      margin: theme.spacing(["xs", "6px"]),
-    },
-  });
+const StyledContainer = styled("div")({
+  "& > *": {
+    margin: theme.spacing("xs", "6px"),
+  },
+});
 
+export const Spacing = () => {
   return (
     <StyledContainer>
       <HvButton variant="primary">Button 1</HvButton>

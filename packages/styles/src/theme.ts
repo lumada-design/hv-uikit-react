@@ -2,14 +2,19 @@ import {
   DeepString,
   HvTheme,
   HvThemeComponents,
-  HvThemeBreakpoint,
   HvThemeTypography,
   HvThemeVars,
   HvThemeTypographyProps,
+  HvThemeUtils,
 } from "./types";
 import * as tokens from "./tokens";
 import type { HvColorAny } from "./tokens";
-import { mapCSSVars } from "./utils";
+import {
+  hasMultipleArgs,
+  mapCSSVars,
+  spacingUtil,
+  spacingUtilOld,
+} from "./utils";
 
 const componentsSpec: DeepString<HvThemeComponents> = {
   actionBar: {
@@ -472,32 +477,21 @@ const themeVars: HvThemeVars = mapCSSVars({
   ...typographySpec,
 });
 
-const spacing = (
-  value:
-    | string
-    | number
-    | HvThemeBreakpoint
-    | (string | number | HvThemeBreakpoint)[]
-): string => {
+const spacing: HvThemeUtils["spacing"] = (...args) => {
+  if (hasMultipleArgs(args)) {
+    return args.map(spacingUtil).join(" ");
+  }
+
+  const [value] = args;
+
   switch (typeof value) {
     case "number":
-      return `calc(${themeVars.space.base} * ${value}px)`;
     case "string":
-      return themeVars.space[value] || value;
+      return spacingUtil(value);
+    // TODO: remove in v6
     case "object":
       return value && value.length > 0
-        ? value
-            .map((x) => {
-              switch (typeof x) {
-                case "number":
-                  return `${x}px`;
-                case "string":
-                  return themeVars.space[x] || x;
-                default:
-                  return "0px";
-              }
-            })
-            .join(" ")
+        ? value.map(spacingUtilOld).join(" ")
         : "0px";
     default:
       return "0px";

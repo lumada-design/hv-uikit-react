@@ -1,9 +1,8 @@
 import type { CSSProperties } from "react";
 import { colors } from "../tokens/colors";
 import { makeTheme } from "../makeTheme";
-import { HvTheme } from "../types";
 
-const ds3 = makeTheme((theme: HvTheme) => ({
+const ds3 = makeTheme((theme) => ({
   name: "ds3",
   colors: {
     modes: {
@@ -252,7 +251,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   },
   button: {
     borderRadius: theme.radii.base,
-    padding: theme.spacing(["0", "xs"]),
+    padding: theme.spacing("0", "xs"),
     marginIconRight: "0px",
     marginIconLeft: "-8px",
     semanticColor: "rgba(251, 252, 252, 0.3)",

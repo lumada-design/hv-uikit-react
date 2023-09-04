@@ -1,7 +1,7 @@
 import * as tokens from "./tokens";
 import { theme } from "./theme";
 import { mergeTheme } from "./utils";
-import { HvCustomTheme, HvTheme, HvThemeStructure } from "./types";
+import type { HvCustomTheme, HvTheme, HvThemeStructure } from "./types";
 
 /**
  * Generate a theme base on the options received.
@@ -13,10 +13,8 @@ import { HvCustomTheme, HvTheme, HvThemeStructure } from "./types";
 export const makeTheme = (
   options: HvCustomTheme | ((theme: HvTheme) => HvCustomTheme)
 ): HvThemeStructure => {
-  const opt: HvCustomTheme =
-    typeof options === "function" ? options(theme) : options;
-
-  const newTheme = mergeTheme(tokens, opt);
+  const customTheme = typeof options === "function" ? options(theme) : options;
+  const newTheme = mergeTheme(tokens, customTheme);
 
   return newTheme;
 };

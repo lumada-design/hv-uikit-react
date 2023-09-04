@@ -1,4 +1,28 @@
-import { DeepString, HvThemeStructure } from "./types";
+import type { DeepString, HvThemeStructure, SpacingValue } from "./types";
+import { space } from "./tokens/space";
+
+export const spacingUtil = (value: SpacingValue): string => {
+  switch (typeof value) {
+    case "number":
+      return `calc(${space.base} * ${value}px)`;
+    case "string":
+      return space[value] || value;
+    default:
+      return value;
+  }
+};
+
+// TODO: remove in favour or `spacingUtil` in v6
+export const spacingUtilOld = (value: SpacingValue): string => {
+  switch (typeof value) {
+    case "number":
+      return `${value}px`;
+    case "string":
+      return space[value] || value;
+    default:
+      return "0px";
+  }
+};
 
 const toCSSVars = (obj: object, prefix = "--uikit") => {
   const vars = {};
@@ -16,6 +40,12 @@ const toCSSVars = (obj: object, prefix = "--uikit") => {
   }
 
   return vars;
+};
+
+export const hasMultipleArgs = <T extends any>(
+  args: T[] | [T[]]
+): args is T[] => {
+  return args.length > 1;
 };
 
 export const mapCSSVars = <T extends object>(
