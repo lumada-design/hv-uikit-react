@@ -35,7 +35,7 @@ export interface HvGlobalActionsProps
   classes?: HvGlobalActionsClasses;
 }
 
-const getBreakpointStyles = (isUpMd, isSmDown) =>
+const getBreakpointStyles = (isUpMd: boolean, isSmDown: boolean) =>
   isUpMd
     ? {
         width: `calc(100% - 2 * ${theme.spacing(4)})`,
@@ -77,12 +77,6 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
 
   const headingLevelToApply = headingLevel || (variant === "global" ? 1 : 2);
 
-  const backButtonRenderer = () => {
-    if (backButton) {
-      return <div className={classes.backButton}>{backButton}</div>;
-    }
-  };
-
   const position =
     positionProp || (variant === "global" ? "sticky" : "relative");
 
@@ -106,7 +100,9 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
           [classes.globalSectionArea]: variant === "section",
         })}
       >
-        {variant === "global" && backButtonRenderer()}
+        {variant === "global" && backButton && (
+          <div className={classes.backButton}>{backButton}</div>
+        )}
         {!isString(title) ? (
           title
         ) : (

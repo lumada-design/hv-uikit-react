@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { colors } from "../tokens/colors";
 import { makeTheme } from "../makeTheme";
 import { HvTheme } from "../types";
@@ -227,7 +228,15 @@ const ds3 = makeTheme((theme: HvTheme) => ({
       textDecoration: "underline",
     },
   },
-  components: {},
+  components: {
+    HvGlobalActions: {
+      classes: {
+        wrapper: {
+          padding: theme.space.xs,
+        },
+      } satisfies Record<string, CSSProperties>,
+    },
+  },
   actionBar: {
     borderTop: `3px solid ${theme.colors.atmo2}`,
   },
