@@ -92,7 +92,7 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
   } = useDefaultProps("HvScrollToVertical", props);
 
   const { classes, css, cx } = useClasses(classesProp);
-  const { activeTheme, selectedMode } = useTheme();
+  const { activeTheme, colors } = useTheme();
 
   const elementId = useUniqueId(id, "hvVerticalScrollto");
 
@@ -154,7 +154,7 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
 
   const positionOffset = calculateOffset(options.length);
   const backgroundColor = hexToRgbA(
-    activeTheme?.colors.modes[selectedMode].atmo2,
+    colors?.atmo2,
     activeTheme?.scrollTo.backgroundColorOpacity
   );
 

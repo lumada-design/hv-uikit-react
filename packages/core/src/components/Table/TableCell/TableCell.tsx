@@ -97,16 +97,12 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
       ...others
     } = props;
     const { classes, cx, css } = useClasses(classesProp);
-    const { activeTheme, rootId } = useTheme();
+    const { colors, rootId } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
-    const [sortedColorValue, setSortedColorValue] = useState<
-      string | undefined
-    >();
-    const [sortedColorAlpha, setSortedColorAlpha] = useState<
-      string | undefined
-    >();
+    const [sortedColorValue, setSortedColorValue] = useState<string>();
+    const [sortedColorAlpha, setSortedColorAlpha] = useState<string>();
 
     const type = typeProp || tableSectionContext?.type || "body";
 
@@ -122,12 +118,7 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
       setSortedColorAlpha(getVarValue(theme.table.rowSortedColorAlpha, rootId));
 
       setSortedColor(getSortedColor(sortedColorValue, sortedColorAlpha));
-    }, [
-      activeTheme?.colors.modes.selectedMode,
-      sortedColorValue,
-      sortedColorAlpha,
-      rootId,
-    ]);
+    }, [colors, sortedColorValue, sortedColorAlpha, rootId]);
 
     return (
       <Component

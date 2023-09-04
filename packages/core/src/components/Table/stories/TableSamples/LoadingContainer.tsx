@@ -29,7 +29,7 @@ const styles = {
 const LoadingContainer = ({ children, loading, ...others }) => {
   const ref = useRef(null);
   const [overlayPosition, setOverlayPosition] = useState({});
-  const { activeTheme, selectedMode } = useTheme();
+  const { colors } = useTheme();
 
   useEffect(() => {
     if (children && ref.current) {
@@ -48,9 +48,7 @@ const LoadingContainer = ({ children, loading, ...others }) => {
       <div
         style={{
           ...overlayPosition,
-          backgroundColor: hexToRgbA(
-            activeTheme?.colors.modes[selectedMode].atmo2
-          ),
+          backgroundColor: hexToRgbA(colors?.atmo2),
         }}
         className={clsx(styles.overlay, loading && styles.blur)}
       >

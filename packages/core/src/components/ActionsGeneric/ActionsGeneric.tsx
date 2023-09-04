@@ -61,7 +61,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
 
   const { classes, cx, css } = useClasses(classesProp);
 
-  const { activeTheme, selectedMode } = useTheme();
+  const { colors } = useTheme();
 
   if (!Array.isArray(actions)) return isValidElement(actions) ? actions : null;
 
@@ -82,8 +82,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
           css({
             "&:hover": {
               backgroundColor: hexToRgbA(
-                activeTheme?.colors?.modes[selectedMode].base_light ||
-                  theme.colors.base_light,
+                colors?.base_light || theme.colors.base_light,
                 0.3
               ),
             },

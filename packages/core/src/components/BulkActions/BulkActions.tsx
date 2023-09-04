@@ -118,11 +118,9 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
 
   const { classes, cx, css } = useClasses(classesProp);
 
-  const { activeTheme, selectedMode } = useTheme();
+  const { activeTheme, colors } = useTheme();
 
-  const baseColor =
-    activeTheme?.colors?.modes[selectedMode].base_light ||
-    theme.colors.base_light;
+  const baseColor = colors?.base_light || theme.colors.base_light;
   const anySelected = numSelected > 0;
   const isSemantic = semantic && anySelected;
 

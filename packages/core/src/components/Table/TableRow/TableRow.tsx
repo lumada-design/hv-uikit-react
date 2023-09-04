@@ -57,7 +57,7 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
       ...others
     } = props;
     const { classes, cx, css } = useClasses(classesProp);
-    const { activeTheme, selectedMode, rootId } = useTheme();
+    const { colors, rootId } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -84,7 +84,7 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
 
       setStripedColorEven(getStripedColor(even));
       setStripedColorOdd(getStripedColor(odd));
-    }, [activeTheme?.colors?.modes[selectedMode], even, odd, rootId]);
+    }, [colors, even, odd, rootId]);
 
     return (
       <Component

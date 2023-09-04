@@ -23,7 +23,7 @@ export const useColorScale = ({
   filterKey: string;
   custom?: [string, string] | HvConfusionMatrixColorScale[];
 }) => {
-  const { activeTheme, selectedMode } = useTheme();
+  const { colors } = useTheme();
 
   const colorScale = useMemo(() => {
     if (custom == null && delta) {
@@ -36,9 +36,7 @@ export const useColorScale = ({
           (acc: HvConfusionMatrixColorScale[], curr) => {
             acc.push({
               ...curr,
-              color:
-                activeTheme?.colors.modes[selectedMode][curr.color] ||
-                curr.color,
+              color: colors?.[curr.color] || curr.color,
             });
             return acc;
           },
@@ -58,14 +56,11 @@ export const useColorScale = ({
     const min = Math.min(...flatData);
 
     return {
-      colorScale: custom || [
-        activeTheme?.colors.modes[selectedMode].base_light || "",
-        activeTheme?.colors.modes[selectedMode].cat3 || "",
-      ],
+      colorScale: custom || [colors?.base_light || "", colors?.cat3 || ""],
       max,
       min,
     };
-  }, [activeTheme?.colors.modes, custom, data, filterKey, delta, selectedMode]);
+  }, [colors, custom, data, filterKey, delta]);
 
   return colorScale;
 };
@@ -81,20 +76,20 @@ export const useSeries = ({
   delta: boolean;
   valuesProps?: HvConfusionMatrixValuesProps;
 }) => {
-  const { activeTheme, selectedMode } = useTheme();
+  const { colors } = useTheme();
 
   const getDeltaColor = useCallback(
     (value: number, diagonal: boolean) => {
       if ((diagonal && value > 0) || (!diagonal && value < 0)) {
-        return activeTheme?.colors.modes[selectedMode].positive;
+        return colors?.positive;
       }
       if ((diagonal && value < 0) || (!diagonal && value > 0)) {
-        return activeTheme?.colors.modes[selectedMode].negative;
+        return colors?.negative;
       }
 
-      return activeTheme?.colors.modes[selectedMode].base_light;
+      return colors?.base_light;
     },
-    [activeTheme?.colors.modes, selectedMode]
+    [colors]
   );
 
   const chartSeries = useMemo(() => {
@@ -106,9 +101,7 @@ export const useSeries = ({
           show: true,
           ...valuesProps,
           ...(valuesProps?.color && {
-            color:
-              activeTheme?.colors.modes[selectedMode][valuesProps.color] ||
-              valuesProps.color,
+            color: colors?.[valuesProps.color] || valuesProps.color,
           }),
         },
         emphasis: {
@@ -138,15 +131,7 @@ export const useSeries = ({
           }, []),
       },
     };
-  }, [
-    activeTheme?.colors.modes,
-    data,
-    delta,
-    filterKey,
-    getDeltaColor,
-    selectedMode,
-    valuesProps,
-  ]);
+  }, [colors, data, delta, filterKey, getDeltaColor, valuesProps]);
 
   return chartSeries;
 };
