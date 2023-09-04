@@ -11,7 +11,7 @@ export const { useClasses, staticClasses } = createClasses(
       zIndex: theme.zIndices.sticky,
     },
     tooltipContainer: {
-      padding: theme.spacing(["15px", "sm"]),
+      padding: theme.spacing("15px", "sm"),
       display: "flex",
       flexDirection: "column",
     },

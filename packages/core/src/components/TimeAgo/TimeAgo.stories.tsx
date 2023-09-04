@@ -30,7 +30,7 @@ const styles = {
     borderCollapse: "collapse",
     "& th, td": {
       border: `1px solid ${theme.colors.secondary}`,
-      padding: theme.spacing(["5px", "sm"]),
+      padding: theme.spacing("5px", "sm"),
     },
   }),
 };

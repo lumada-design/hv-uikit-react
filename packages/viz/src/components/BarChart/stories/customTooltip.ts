@@ -13,7 +13,7 @@ const styles: { [key: string]: CSSInterpolation } = {
     boxShadow: theme.colors.shadow,
   },
   container: {
-    padding: theme.spacing(["15px", "sm"]),
+    padding: theme.spacing("15px", "sm"),
     display: "flex",
     flexDirection: "column",
   },

@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses(
     navigationContainer: {
       display: "flex",
       justifyContent: "space-between",
-      padding: theme.spacing(["xs", 0]),
+      padding: theme.spacing("xs", 0),
     },
     navigationMonth: {
       minWidth: "160px",

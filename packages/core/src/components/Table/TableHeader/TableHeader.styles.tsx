@@ -9,7 +9,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     height: "var(--cell-height)",
     verticalAlign: "inherit",
     textAlign: "left",
-    padding: theme.spacing([0, "xs", 0, 32]),
+    padding: theme.spacing(0, 1, 0, 4),
     borderBottom: `1px solid ${theme.colors.atmo4}`,
   },
   head: {

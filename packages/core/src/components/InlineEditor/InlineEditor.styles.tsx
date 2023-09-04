@@ -28,7 +28,7 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
     color: theme.typography.placeholderText.color,
   },
   button: {
-    padding: theme.spacing(["6px", "8px", "5px", "8px"]),
+    padding: theme.spacing("6px", "8px", "5px", "8px"),
     minHeight: "32px",
 
     boxSizing: "border-box",
@@ -76,7 +76,7 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
     minWidth: "32px",
 
     "& svg": {
-      margin: theme.spacing([0, "8px"]),
+      margin: theme.spacing(0, "xs"),
     },
   },
   iconVisible: {

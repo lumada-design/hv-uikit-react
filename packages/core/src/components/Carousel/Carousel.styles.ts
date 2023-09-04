@@ -36,7 +36,7 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
     inset: 0,
     zIndex: theme.zIndices.modal,
     "&:not(._)": {
-      padding: theme.spacing(["xs", "xl"]),
+      padding: theme.spacing("xs", "xl"),
     },
   },
   title: {
@@ -93,14 +93,14 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
   counter: {
     color: theme.colors.base_light,
     backgroundColor: theme.colors.base_dark,
-    padding: theme.spacing([0, "sm"]),
+    padding: theme.spacing(0, "sm"),
   },
   slideControls: {
     position: "absolute",
     left: 0,
     right: 0,
     top: `calc(50% - (32px / 2))`,
-    padding: theme.spacing([0, "sm"]),
+    padding: theme.spacing(0, "sm"),
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -148,7 +148,7 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
     width: "100%",
     overflowX: "auto", // "hidden",
     overflowY: "hidden",
-    padding: theme.spacing(["xs", "2px", "2px"]),
+    padding: theme.spacing("xs", "2px", "2px"),
   },
   thumbnail: {
     height: "unset",

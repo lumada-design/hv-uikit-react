@@ -13,7 +13,7 @@ export const { staticClasses, useClasses } = createClasses("HvAppSwitcher", {
     // padding: `${theme.spacing(2) - 4}px 0 ${theme.spacing(2) - 4}px ${
     //   theme.spacing(2) - 4
     // }px`,
-    padding: `${theme.space.sm} 0 ${theme.space.sm} ${theme.space.sm}`,
+    padding: theme.spacing("sm", 0, "sm", "sm"),
   },
   item: {},
   itemSelected: {},
