@@ -40,9 +40,7 @@ const Header = (props: {
       border: `1px solid ${theme.colors.atmo4}`,
       borderBottom: "none",
       background: theme.colors.atmo1,
-      padding: `${theme.spacing("xs")} ${theme.spacing("xs")} ${theme.spacing(
-        "xs"
-      )} ${theme.spacing("sm")}`,
+      padding: theme.spacing("xs", "xs", "xs", "sm"),
       display: "flex",
       justifyContent: "space-between",
     }),

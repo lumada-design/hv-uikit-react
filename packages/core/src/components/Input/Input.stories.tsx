@@ -350,7 +350,7 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
         <HvGrid item xs={7}>
           <div
             style={{
-              padding: theme.spacing(["xs", "md"]),
+              padding: theme.spacing("xs", "md"),
               backgroundColor: theme.colors.negative_20,
               color: theme.colors.base_dark,
               height: "100%",

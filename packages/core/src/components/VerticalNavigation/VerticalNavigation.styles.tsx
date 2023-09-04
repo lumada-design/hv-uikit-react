@@ -20,12 +20,12 @@ export const { staticClasses, useClasses } = createClasses(
       },
       "& > :not(nav:first-of-type)": {
         borderTop: `3px solid ${theme.colors.atmo2}`,
-        padding: theme.spacing(["xs", "sm", "sm", "sm"]),
+        padding: theme.spacing("xs", "sm", "sm", "sm"),
       },
 
       "& > :first-of-type:not(:last-child)": {
         borderTop: "none",
-        padding: theme.spacing(["sm", "sm", "xs", "sm"]),
+        padding: theme.spacing("sm", "sm", "xs", "sm"),
       },
     },
     collapsed: {
@@ -34,11 +34,11 @@ export const { staticClasses, useClasses } = createClasses(
         width: "66px",
       },
       "& > :first-of-type:not(:last-child)": {
-        padding: theme.spacing(["sm", "xs", "xs", "xs"]),
+        padding: theme.spacing("sm", "xs", "xs", "xs"),
       },
 
       "& > :not(nav:first-of-type)": {
-        padding: theme.spacing(["xs", "xs", "sm", "xs"]),
+        padding: theme.spacing("xs", "xs", "sm", "xs"),
       },
     },
 

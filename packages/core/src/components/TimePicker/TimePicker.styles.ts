@@ -44,7 +44,7 @@ export const { useClasses, staticClasses } = createClasses("HvTimePicker", {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    padding: theme.spacing(["xs", 0]),
+    padding: theme.spacing("xs", 0),
     userSelect: "none",
     minWidth: "175px",
   },
