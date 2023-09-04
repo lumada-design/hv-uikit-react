@@ -142,8 +142,8 @@ export const HvFile = ({
       {!hasError && inProgress && (
         <HvProgressBar
           classes={{
-            root: classes.progressBar,
-            progressBarContainer: classes.progressBarContainer,
+            root: classes.progressbar,
+            progressBarContainer: classes.progressbarContainer,
           }}
           value={currentProgress}
           hideLabel

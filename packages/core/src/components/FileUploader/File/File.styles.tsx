@@ -3,11 +3,11 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvFile", {
   root: {},
-  progressBar: {
+  progressbar: {
     position: "absolute",
     top: "-1px",
   },
-  progressBarContainer: {
+  progressbarContainer: {
     height: theme.fileUploader.file.progressHeight,
   },
   nameText: {
