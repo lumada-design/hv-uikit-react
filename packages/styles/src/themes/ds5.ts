@@ -215,7 +215,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     secondLevelSelectedItemBorderTopThickness: "0px",
     secondLevelSelectedItemBorderBottomColor: theme.colors.secondary,
     secondLevelSelectedItemBorderBottomThickness: "4px",
-    shadow: "none",
+    shadow: theme.colors.shadow,
     secondLevelItemColor: theme.colors.secondary,
     secondLevelSelectedItemColor: theme.colors.secondary,
     secondLevelSelectedItemBackgroundColor: "transparent",
