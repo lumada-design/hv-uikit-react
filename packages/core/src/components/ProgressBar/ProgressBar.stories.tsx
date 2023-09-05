@@ -15,6 +15,7 @@ export default meta;
 export const Main: StoryObj<HvProgressBarProps> = {
   args: {
     value: 0,
+    hideLabel: false,
   },
   argTypes: {
     classes: { control: { disable: true } },

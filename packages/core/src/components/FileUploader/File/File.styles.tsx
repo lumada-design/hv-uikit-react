@@ -6,20 +6,11 @@ export const { staticClasses, useClasses } = createClasses("HvFile", {
   progressbar: {
     position: "absolute",
     top: "-1px",
-    width: "80%",
+  },
+  progressbarContainer: {
     height: theme.fileUploader.file.progressHeight,
-    border: `${theme.fileUploader.file.borderWidth} solid ${theme.colors.secondary}`,
-
-    "&::-moz-progress-bar": {
-      background: theme.colors.secondary,
-    },
   },
-  progressbarBack: {
-    position: "absolute",
-    top: "-1px",
-    width: "100%",
-    border: `${theme.fileUploader.file.borderWidth} solid ${theme.colors.atmo4}`,
-  },
+  progressbarBack: {},
   nameText: {
     overflow: "hidden",
     textOverflow: "ellipsis",
