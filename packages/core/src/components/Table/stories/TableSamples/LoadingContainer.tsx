@@ -1,66 +1,66 @@
-import { useEffect, useRef, useState } from "react";
+import { css, cx } from "@emotion/css";
+import {
+  HvLoading,
+  HvLoadingProps,
+  theme,
+  useTheme,
+  hexToRgbA,
+} from "@hitachivantara/uikit-react-core";
 
-import clsx from "clsx";
-
-import { css } from "@emotion/css";
-
-import { theme } from "@hitachivantara/uikit-styles";
-
-import { hexToRgbA } from "@core/utils/hexToRgbA";
-import { HvLoading } from "@core/components/Loading";
-import { useTheme } from "@core/hooks/useTheme";
-
-const styles = {
+const classes = {
+  root: css({
+    position: "relative",
+    height: "inherit",
+  }),
   loading: css({
-    width: "100%",
-    height: "100%",
-  }),
-  overlay: css({
     position: "absolute",
-    transition: "background-Color .2s ease",
-    zIndex: -1,
+    inset: 0,
+    zIndex: `calc(${theme.zIndices.banner} - 1)`,
   }),
-  blur: css({
-    backgroundColor: hexToRgbA("#EEEEEE"),
-    zIndex: theme.zIndices.popover,
+  opaque: css({
+    backgroundColor: theme.colors.atmo1,
+  }),
+  transparent: css({
+    backgroundColor: "transparent",
   }),
 };
 
-const LoadingContainer = ({ children, loading, ...others }) => {
-  const ref = useRef(null);
-  const [overlayPosition, setOverlayPosition] = useState({});
+export interface LoadingContainerProps extends HvLoadingProps {
+  label?: string;
+  loading?: boolean;
+  opaque?: boolean;
+  transparent?: boolean;
+}
+
+export const LoadingContainer = ({
+  children,
+  className,
+  label,
+  loading = false,
+  opaque = false,
+  transparent = false,
+  ...others
+}: LoadingContainerProps) => {
   const { colors } = useTheme();
 
-  useEffect(() => {
-    if (children && ref.current) {
-      const { clientHeight, clientWidth, offsetTop, offsetLeft } = ref.current;
-      setOverlayPosition({
-        top: offsetTop,
-        left: offsetLeft,
-        height: clientHeight,
-        width: clientWidth,
-      });
-    }
-  }, [children]);
-
   return (
-    <>
-      <div
-        style={{
-          ...overlayPosition,
-          backgroundColor: hexToRgbA(colors?.atmo2),
-        }}
-        className={clsx(styles.overlay, loading && styles.blur)}
-      >
-        <HvLoading
-          classes={{ root: styles.loading }}
-          hidden={!loading}
-          {...others}
-        />
-      </div>
-      <div ref={ref}>{children}</div>
-    </>
+    <div className={classes.root}>
+      <HvLoading
+        role="progressbar"
+        className={cx(
+          css({ backgroundColor: hexToRgbA(colors?.atmo1) }),
+          classes.loading,
+          className,
+          {
+            [classes.opaque]: opaque,
+            [classes.transparent]: transparent,
+          }
+        )}
+        label={label}
+        hidden={!loading}
+        {...others}
+      />
+      {children}
+    </div>
   );
 };
-
-export default LoadingContainer;

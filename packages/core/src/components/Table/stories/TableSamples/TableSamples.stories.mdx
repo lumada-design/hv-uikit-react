@@ -1,11 +1,24 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
 import { CompleteStory } from "./TableSamples.stories";
 
-<Meta title="Visualizations/Table/Table Samples" />
+<Meta title="Visualizations/Table" />
 
 # Complete Table
 
 Complete sample table that uses most of the features provided.
+
+The server-side pagination and row sorting is achieved by setting the `manualPagination` and `manualSortBy` properties.
+
+The data is provided by a mock `useServerData` hook that provides the `data`/`loading` values, and `fetchData`/`mutateData` utilities to emulate data fetching.
+A `LoadingContainer` indicator is included and visible whenever `loading` is `true`.
+In a real-world scenario the `loading` state and CRUD operations are done with network requests (ie. `fetch`),
+leveraging a data library such as [useSWR](https://swr.vercel.app/) or [react-query](https://tanstack.com/query/v3/).
+
+The absence of data within an individual cell is rendered with a `—` (em dash), according to Design System guidelines.
+Different use cases may require different solutions, like `N/A` or `0`. Empty cells should be avoided.
+In this example it's achieved by passing a custom `defaultColumn` to the `useHvTable` hook, but can be customized per-cell using the `Cell` property.
+
+This sample encapsulates the rendering, the hook setup, and the actions logic in a generic `TableComplete` component.
 
 <Canvas>
   <Story name="Complete Table" story={CompleteStory} />
