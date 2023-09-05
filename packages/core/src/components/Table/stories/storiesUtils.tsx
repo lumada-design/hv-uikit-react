@@ -1,8 +1,11 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import range from "lodash/range";
 
-import { HvTableColumnConfig } from "../hooks/useTable";
+import {
+  HvTableColumnConfig,
+  HvTableState,
+} from "@hitachivantara/uikit-react-core";
 
 export interface NewRendererEntry {
   id: string;
@@ -220,35 +223,87 @@ const simpleSortBy = (a: AssetEvent, b: AssetEvent, sortBy) => {
 
 const serverData = makeData(999);
 
+const delay = (ms: number) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+
+type FetchDataArgs = Pick<
+  HvTableState<AssetEvent>,
+  "pageSize" | "pageIndex" | "sortBy"
+>;
+
+type ChangeDataArgs =
+  | ["add", AssetEvent[]]
+  | ["remove", string[]]
+  | ["update", AssetEvent];
+
 export const useServerData = () => {
+  const [allData, setAllData] = useState(serverData);
   const [data, setData] = useState<AssetEvent[]>();
   const [loading, setLoading] = useState(false);
   const [pageCount, setPageCount] = useState(0);
   const fetchIdRef = useRef(0);
+  const tableState = useRef<FetchDataArgs>({
+    pageSize: 10,
+    pageIndex: 0,
+    sortBy: [],
+  });
 
-  const fetchData = useCallback(({ pageSize, pageIndex, sortBy }) => {
-    fetchIdRef.current += 1;
-    const fetchId = fetchIdRef.current;
+  const fetchData = useCallback(
+    async ({ pageSize = 10, pageIndex = 0, sortBy = [] }: FetchDataArgs) => {
+      tableState.current = { pageSize, pageIndex, sortBy };
+      fetchIdRef.current += 1;
+      const fetchId = fetchIdRef.current;
 
-    setLoading(true);
+      setLoading(true);
 
-    setTimeout(() => {
+      await delay(600);
+
       if (fetchId !== fetchIdRef.current) return;
 
       const startRow = pageSize * pageIndex;
       const endRow = startRow + pageSize;
 
-      const newData = [...serverData]
+      const newData = [...allData]
         .sort(sortBy[0] ? (a, b) => simpleSortBy(a, b, sortBy[0]) : undefined)
         .slice(startRow, endRow);
       setData(newData);
 
       // Static example . Set server-side page count here
-      setPageCount(Math.ceil(serverData.length / pageSize));
+      setPageCount(Math.ceil(allData.length / pageSize));
 
       setLoading(false);
-    }, 600);
+    },
+    [allData]
+  );
+
+  const mutateData = useCallback(async (...args: ChangeDataArgs) => {
+    const [method, params] = args;
+
+    await delay(600);
+
+    if (method === "add") {
+      setAllData((prev) => [...prev, ...params]);
+    } else if (method === "remove") {
+      setAllData((prev) => prev.filter((el) => !params.includes(el.id)));
+    } else if (method === "update") {
+      setAllData((prev) =>
+        prev.map((el) => (params.id === el.id ? { ...el, ...params } : el))
+      );
+    }
   }, []);
 
-  return { data, fetchData, loading, pageCount };
+  useEffect(() => {
+    fetchData(tableState.current);
+  }, [fetchData]);
+
+  return {
+    data,
+    fetchData,
+    mutateData,
+    loading,
+    pageCount,
+    totalRecords: allData.length,
+  } as const;
 };

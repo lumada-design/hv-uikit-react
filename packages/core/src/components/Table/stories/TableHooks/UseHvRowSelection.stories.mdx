@@ -3,6 +3,7 @@ import {
   UseHvSelectionStory,
   UseHvSelectionControlledStory,
 } from "./TableHooks.stories";
+import { LockedSelectionStory } from "../TableSamples/TableSamples.stories";
 
 <Meta title="Visualizations/Table/Table Hooks/Hooks/useHvRowSelection" />
 
@@ -30,5 +31,17 @@ A selection state can also be included in the data and toggled externally.
   <Story
     name="useHvRowSelection controlled"
     story={UseHvSelectionControlledStory}
+  />
+</Canvas>
+
+# Locked Selection
+
+Individual rows can have its selection state locked (becoming either not selectable or not unselectable), disabling the selection checkbox and also preventing
+the bulk actions to change the row state.
+
+<Canvas>
+  <Story
+    name="useHvRowSelection locked selection"
+    story={LockedSelectionStory}
   />
 </Canvas>
