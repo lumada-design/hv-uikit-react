@@ -221,6 +221,7 @@ const AllColumnRenderers = () => {
 
 export const AllColumnRenderersStory: StoryObj = {
   parameters: {
+    eyes: { include: true },
     docs: {
       source: {
         code: `
@@ -490,6 +491,7 @@ const TextColumnRenderer = () => {
 
 export const TextColumnRendererStory: StoryObj = {
   parameters: {
+    eyes: { include: false },
     docs: {
       source: {
         code: `
@@ -685,6 +687,7 @@ const NumberColumnRenderer = () => {
 
 export const NumberColumnRendererStory: StoryObj = {
   parameters: {
+    eyes: { include: false },
     docs: {
       source: {
         code: `
@@ -879,6 +882,7 @@ const DateColumnRenderer = () => {
 
 export const DateColumnRendererStory: StoryObj = {
   parameters: {
+    eyes: { include: false },
     docs: {
       source: {
         code: `
@@ -1099,6 +1103,7 @@ const ExpandColumnRenderer = () => {
 
 export const ExpandColumnRendererStory: StoryObj = {
   parameters: {
+    eyes: { include: false },
     docs: {
       source: {
         code: `
@@ -1335,6 +1340,7 @@ const SwitchColumnRenderer = () => {
 
 export const SwitchColumnRendererStory: StoryObj = {
   parameters: {
+    eyes: { include: false },
     docs: {
       source: {
         code: `
@@ -1550,6 +1556,7 @@ const TagColumnRenderer = () => {
 
 export const TagColumnRendererStory: StoryObj = {
   parameters: {
+    eyes: { include: false },
     docs: {
       source: {
         code: `
@@ -1758,6 +1765,7 @@ const ProgressColumnRenderer = () => {
 
 export const ProgressColumnRendererStory: StoryObj = {
   parameters: {
+    eyes: { include: false },
     docs: {
       source: {
         code: `
