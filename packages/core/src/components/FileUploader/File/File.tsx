@@ -5,6 +5,7 @@ import { HvButton } from "@core/components/Button";
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
 import { HvProgressBar } from "@core/components/ProgressBar";
+import { cx } from "@emotion/css";
 import { convertUnits } from "../utils";
 import { staticClasses, useClasses } from "./File.styles";
 
@@ -143,7 +144,10 @@ export const HvFile = ({
         <HvProgressBar
           classes={{
             root: classes.progressbar,
-            progressBarContainer: classes.progressbarContainer,
+            progressBarContainer: cx(
+              classes.progressbarContainer,
+              classes.progressbarBack
+            ),
           }}
           value={currentProgress}
           hideLabel

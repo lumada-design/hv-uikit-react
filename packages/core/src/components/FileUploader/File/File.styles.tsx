@@ -10,6 +10,7 @@ export const { staticClasses, useClasses } = createClasses("HvFile", {
   progressbarContainer: {
     height: theme.fileUploader.file.progressHeight,
   },
+  progressbarBack: {},
   nameText: {
     overflow: "hidden",
     textOverflow: "ellipsis",
