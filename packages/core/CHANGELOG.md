@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.27.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.6...@hitachivantara/uikit-react-core@5.27.0) (2023-09-05)
+
+### Bug Fixes
+
+- **Table:** a11y issues fixed ([#3658](https://github.com/lumada-design/hv-uikit-react/issues/3658)) ([68c73e1](https://github.com/lumada-design/hv-uikit-react/commit/68c73e1cd9b42ce93d68ef285ac4e411fda6378a))
+
+### Features
+
+- **theme:** add `colors` helper to `useTheme` ([09b829b](https://github.com/lumada-design/hv-uikit-react/commit/09b829b28d303e4cbb4d0fcd5598a3997a159374))
+
 ## [5.26.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.5...@hitachivantara/uikit-react-core@5.26.6) (2023-09-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.4.6...@hitachivantara/uikit-react-viz@5.5.0) (2023-09-05)
+
+### Features
+
+- **theme:** add `colors` helper to `useTheme` ([09b829b](https://github.com/lumada-design/hv-uikit-react/commit/09b829b28d303e4cbb4d0fcd5598a3997a159374))
+
 ## [5.4.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.4.5...@hitachivantara/uikit-react-viz@5.4.6) (2023-09-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz
