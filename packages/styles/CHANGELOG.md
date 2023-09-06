@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.12.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.11.2...@hitachivantara/uikit-styles@5.12.0) (2023-09-06)
+
+### Bug Fixes
+
+- **GlobalActions:** styles alignment ([f3e6b52](https://github.com/lumada-design/hv-uikit-react/commit/f3e6b526db91088f68f7c154a3e9ac9129fcb78c))
+
+### Features
+
+- **theme:** improve theme.spacing ([c4a55d3](https://github.com/lumada-design/hv-uikit-react/commit/c4a55d31a91ce730a975993c6df677fe44445007))
+
 ## [5.11.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.11.1...@hitachivantara/uikit-styles@5.11.2) (2023-09-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles

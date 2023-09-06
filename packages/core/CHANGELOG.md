@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.27.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.0...@hitachivantara/uikit-react-core@5.27.1) (2023-09-06)
+
+### Bug Fixes
+
+- **file:** add removed class to reduce breaking changes ([f6efcd6](https://github.com/lumada-design/hv-uikit-react/commit/f6efcd64b4270f6bbb0bead25d2c6ba2f2a017e5))
+- **file:** change classnames to remove breaking changes ([bf8563a](https://github.com/lumada-design/hv-uikit-react/commit/bf8563abd687ce7a8fe46df18a89d06f10d0a98d))
+- **GlobalActions:** styles alignment ([f3e6b52](https://github.com/lumada-design/hv-uikit-react/commit/f3e6b526db91088f68f7c154a3e9ac9129fcb78c))
+- **Input:** disabled text style ([cd57bf5](https://github.com/lumada-design/hv-uikit-react/commit/cd57bf56018f4bbaa4ac56f90f5ab482bcfa3308))
+- **progressBar:** apply the correct color to the bar ([739219c](https://github.com/lumada-design/hv-uikit-react/commit/739219c8cfa3aa0e10d57e5e3cdb43f220724313))
+
 # [5.27.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.26.6...@hitachivantara/uikit-react-core@5.27.0) (2023-09-05)
 
 ### Bug Fixes
