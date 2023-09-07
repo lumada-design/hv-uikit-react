@@ -15,6 +15,7 @@ const navigation = [
         label: "Asset Inventory",
         path: "/preview/asset-inventory",
       },
+      { id: "dashboard", label: "Dashboard", path: "/preview/dashboard" },
       { id: "list-view", label: "List View", path: "/preview/list-view" },
       { id: "form", label: "Form", path: "/preview/form" },
       {

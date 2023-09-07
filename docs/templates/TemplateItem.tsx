@@ -1,18 +1,19 @@
 import LinkTo from "@storybook/addon-links/react";
 import {
+  HvActionBar,
+  HvButton,
   HvCard,
   HvCardHeader,
   HvCardMedia,
-  HvActionBar,
-  HvButton,
 } from "@hitachivantara/uikit-react-core";
 
 import asset_inventory from "./assets/asset-inventory.png";
+import dashboard from "./assets/dashboard.png";
 import details_view from "./assets/details-view.png";
 import form from "./assets/form.png";
 import list_view from "./assets/list-view.png";
 
-const TemplateItem = ({ kind, story, image, title, code, disabled }) => {
+const TemplateItem = ({ kind, story, image, title, code }) => {
   return (
     <HvCard
       bgcolor="atmo1"
@@ -22,11 +23,14 @@ const TemplateItem = ({ kind, story, image, title, code, disabled }) => {
       }}
     >
       <HvCardHeader title={title} />
-      <HvCardMedia component="img" image={image} style={{ padding: 10 }} />
+      <HvCardMedia
+        component="img"
+        image={image}
+        style={{ padding: 10, height: 224 }}
+      />
       <HvActionBar>
         <HvButton
           variant="secondarySubtle"
-          disabled={disabled}
           component={LinkTo}
           kind={kind}
           story={story}
@@ -36,7 +40,6 @@ const TemplateItem = ({ kind, story, image, title, code, disabled }) => {
         <div style={{ flex: 1 }} />
         <HvButton
           variant="secondarySubtle"
-          disabled={disabled}
           component="a"
           href={code}
           target="_blank"
@@ -50,10 +53,11 @@ const TemplateItem = ({ kind, story, image, title, code, disabled }) => {
 };
 
 const templates = [
-  { id: "AssetInventory", title: "Asset Inventory", img: asset_inventory },
-  { id: "DetailsView", title: "Details View", img: details_view },
-  { id: "ListView", title: "List View", img: list_view },
-  { id: "Form", title: "Form", img: form },
+  { id: "Asset Inventory", img: asset_inventory },
+  { id: "Dashboard", img: dashboard },
+  { id: "Details View", img: details_view },
+  { id: "List View", img: list_view },
+  { id: "Form", img: form },
 ];
 
 export const TemplateItems = () => {
@@ -67,14 +71,13 @@ export const TemplateItems = () => {
           justifyContent: "center",
         }}
       >
-        {templates.map(({ id, title, img }) => (
+        {templates.map(({ id, img }) => (
           <TemplateItem
             key={id}
-            kind={`Templates/${title}`}
+            kind={`Templates/${id}`}
             story="Main"
             image={img}
-            disabled={false}
-            title={title}
+            title={id}
             code={`https://github.com/lumada-design/hv-uikit-react/tree/master/templates/${id}`}
           />
         ))}
