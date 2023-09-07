@@ -4,35 +4,28 @@ import {
   HvTypography,
   HvAtmosphereColorKeys,
   HvSemanticColorKeys,
+  HvLoading,
+  HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
 import { TopXS, BottomXS } from "@hitachivantara/uikit-react-icons";
+
 import { Indicator } from "../Indicator";
-import { getStatusIcon } from "../utils";
+import { ListViewEntry, TrendData, getStatusIcon } from "../data";
 import classes from "./styles";
 
 interface KpiProps {
   title: string;
-  count: number;
+  count?: number;
   color: HvAtmosphereColorKeys | HvSemanticColorKeys | "sema0" | undefined;
-  variation: string;
+  variation?: string;
   status: number;
-  instance: any;
+  instance: HvTableInstance<ListViewEntry, string>;
   kpiSelection: number | undefined;
   setKpiSelection: (value: number | undefined) => void;
+  trendData?: TrendData;
+  loading?: boolean;
 }
 
-/**
- * A KPI.
- *
- * @param {Object}   instance - Title of the KPI.
- * @param {Integer}  count - The count of the KPI.
- * @param {String}   color - The color used on the KPI header bar.
- * @param {String}   variation - The value for the variation field.
- * @param {Integer}  status - The status of the KPI.
- * @param {Integer}  kpiSelection - The current KPI selection.
- * @param {Function} setKpiSelection -  A function to set the KPI selection.
- * @param {Object}   classes - The CSS classes object.
- */
 export const Kpi = ({
   title,
   count,
@@ -41,17 +34,16 @@ export const Kpi = ({
   status,
   instance,
   kpiSelection,
+  trendData,
+  loading,
   setKpiSelection,
 }: KpiProps) => {
-  /**
-   * KPI click handler.
-   */
   const handleKpiClick = () => {
     setKpiSelection(status);
     if (status !== kpiSelection) {
-      instance.setFilter("status", `${status}`);
+      instance?.setFilter?.("status", `${status}`);
     } else {
-      instance.setFilter("status", "");
+      instance?.setFilter?.("status", "");
       setKpiSelection(undefined);
     }
   };
@@ -60,6 +52,7 @@ export const Kpi = ({
     <HvCard
       id={`kpi${status}`}
       selectable
+      selected={status === kpiSelection}
       bgcolor="atmo1"
       statusColor={color}
       onClick={() => handleKpiClick()}
@@ -71,22 +64,26 @@ export const Kpi = ({
     >
       <div className={classes.container}>
         <HvTypography variant="label">{title}</HvTypography>
-        <div className={classes.content}>
-          <HvTypography variant="lTitle" className={classes.title}>
-            {count}
-          </HvTypography>
-          <div className={classes.variation}>
-            <Indicator variation={variation} />
-            {variation === "up" ? (
-              <TopXS title="Up" color="positive" />
-            ) : (
-              <BottomXS title="Up" color="negative" />
-            )}
-            <div>
-              <HvTypography variant="caption1">vs last 24h.</HvTypography>
+        {loading ? (
+          <HvLoading className={classes.loading} small />
+        ) : (
+          <div className={classes.content}>
+            <HvTypography variant="lTitle" className={classes.title}>
+              {count}
+            </HvTypography>
+            <div className={classes.variation}>
+              <Indicator variation={variation} data={trendData} />
+              {variation === "up" ? (
+                <TopXS title="Up" color="positive" />
+              ) : (
+                <BottomXS title="Up" color="negative" />
+              )}
+              <div>
+                <HvTypography variant="caption1">vs last 24h.</HvTypography>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </HvCard>
   );

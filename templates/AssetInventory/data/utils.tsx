@@ -1,4 +1,10 @@
-import { HvTableColumnConfig } from "@hitachivantara/uikit-react-core";
+import {
+  HvBulkActionsProps,
+  HvControlsProps,
+  HvRightControlProps,
+  HvSemanticColorKeys,
+  HvTableColumnConfig,
+} from "@hitachivantara/uikit-react-core";
 import {
   Cards,
   List,
@@ -11,8 +17,22 @@ import {
   Preview,
 } from "@hitachivantara/uikit-react-icons";
 
+// --- Table data utils ---
+
+export interface AssetInventoryEntry {
+  id?: string;
+  name?: string;
+  eventType?: string;
+  status?: string;
+  severity?: string;
+  priority?: string;
+  time?: string;
+  temperature?: string;
+  statusColor?: HvSemanticColorKeys;
+}
+
 export const getColumns = (): HvTableColumnConfig<
-  AssetInventoryModel,
+  AssetInventoryEntry,
   string
 >[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
@@ -24,7 +44,7 @@ export const getColumns = (): HvTableColumnConfig<
   { Header: "Temperature", accessor: "temperature" },
 ];
 
-export const getStatusIcon = (color: string) => {
+export const getStatusIcon = (color?: AssetInventoryEntry["statusColor"]) => {
   switch (color) {
     case "positive":
       return <Level0Good color="positive" />;
@@ -39,15 +59,23 @@ export const getStatusIcon = (color: string) => {
   }
 };
 
-export const actions = [
+export const actions: HvBulkActionsProps["actions"] = [
   { id: "add", label: "Add", icon: <Add /> },
   { id: "delete", label: "Delete", icon: <Delete /> },
   { id: "put", label: "Preview", icon: <Preview /> },
 ];
 
-export const views = [
-  { id: "card", label: "Select card view", icon: <Cards /> },
-  { id: "list", label: "Select list view", icon: <List /> },
+export const views: HvControlsProps["views"] = [
+  {
+    id: "card",
+    "aria-label": "Select card view",
+    icon: <Cards />,
+  },
+  {
+    id: "list",
+    "aria-label": "Select list view",
+    icon: <List />,
+  },
 ];
 
 export const idsToControl = {
@@ -55,7 +83,7 @@ export const idsToControl = {
   list: "itemList",
 };
 
-export const rightControlValues = [
+export const rightControlValues: HvRightControlProps["values"] = [
   {
     id: "nameAsc",
     accessor: "name",
@@ -94,20 +122,25 @@ export const rightControlValues = [
   },
 ];
 
-// ---- Data Utils
-
 const getOption = (opts: string[], i: number) => opts[i % opts.length];
 
 const getTime = (priority: string, index: number) => {
   let i = priority === "High" ? index + 4 : index + 3;
   i = priority === "Medium" ? i + 30 : index + 20;
+
   return `${i % 12}:${i % 60}:${i % 60}`;
 };
 
 const getPriority = (i: number) =>
   (i % 2 > 0 && "High") || (i % 2 < 0 && "Medium") || "Low";
 
-const getNewEntry = (i: number): AssetInventoryModel => {
+const getRandomStatus = (): HvSemanticColorKeys => {
+  return ["neutral", "positive", "negative", "warning"][
+    Math.floor(Math.random() * 5)
+  ] as HvSemanticColorKeys;
+};
+
+export const createEntry = (i: number): AssetInventoryEntry => {
   return {
     id: `${i + 1}`,
     name: `Event ${i + 1}`,
@@ -117,13 +150,6 @@ const getNewEntry = (i: number): AssetInventoryModel => {
     priority: getPriority(i),
     time: getTime(getPriority(i), i),
     temperature: `${i + 35}`,
+    statusColor: getRandomStatus(),
   };
-};
-
-export const makeData = (len = 10): AssetInventoryModel[] => {
-  const data: AssetInventoryModel[] = [];
-  for (let i = 0; i <= len; i += 1) {
-    data.push(getNewEntry(i));
-  }
-  return data;
 };

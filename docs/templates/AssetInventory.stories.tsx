@@ -1,4 +1,5 @@
 import AssetInventory from "../../templates/AssetInventory";
+import { templateDecorator } from "./templateDecorator";
 
 export default {
   title: "Templates/Asset Inventory",
@@ -9,6 +10,7 @@ export default {
       },
     },
   },
+  decorators: [templateDecorator],
 };
 
 export const Main = () => <AssetInventory />;

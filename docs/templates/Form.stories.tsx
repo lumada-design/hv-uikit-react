@@ -1,4 +1,5 @@
 import Form from "../../templates/Form";
+import { templateDecorator } from "./templateDecorator";
 
 export default {
   title: "Templates/Form",
@@ -9,6 +10,7 @@ export default {
       },
     },
   },
+  decorators: [templateDecorator],
 };
 
 export const Main = () => <Form />;

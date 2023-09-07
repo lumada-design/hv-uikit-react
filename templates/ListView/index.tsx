@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   HvGrid,
   HvGridProps,
@@ -21,27 +21,49 @@ import {
 
 import { Kpi } from "./Kpi";
 import { Table } from "./Table";
-import { getColumns, actions, makeData } from "./utils";
 import classes from "./styles";
+import {
+  PaginationDataProps,
+  useSummaryData,
+  usePaginationData,
+  getColumns,
+  actions,
+  ListViewEntry,
+  idsToControl,
+} from "./data";
+import { LoadingContainer } from "../LoadingContainer";
 
-const idsToControl = {
-  cards: "cardsGrid",
-  list: "itemList",
-};
+const INIT_PAGE_SIZE = 5;
 
 const ListView = () => {
-  const originalData = useMemo(() => makeData(25), []);
-  const [data] = useState(originalData);
-  const columns = useMemo(() => getColumns(), []);
-  const [isLoading, setIsLoading] = useState(false);
-  const [kpiSelection, setKpiSelection] = useState<number | undefined>();
   const breakpoints = { xl: 3, lg: 3, md: 3, sm: 6, xs: 12 } as HvGridProps;
 
-  const instance = useHvData<ListViewModel, string>(
+  const [kpiSelection, setKpiSelection] = useState<number | undefined>();
+
+  const [params, setParams] = useState<PaginationDataProps>({
+    limit: INIT_PAGE_SIZE,
+    skip: 0,
+  });
+
+  const {
+    data: { pages, data },
+    loading,
+  } = usePaginationData(params);
+
+  const { data: indicatorData, loading: indicatorLoading } = useSummaryData();
+
+  const columns = useMemo(() => getColumns(), []);
+
+  const instance = useHvData<ListViewEntry, string>(
     {
       data,
       columns,
-      initialState: { pageSize: 5 },
+      manualPagination: true,
+      autoResetPage: false,
+      manualFilters: true,
+      autoResetFilters: true,
+      pageCount: pages,
+      initialState: { pageSize: INIT_PAGE_SIZE },
     },
     useHvGlobalFilter,
     useHvFilters,
@@ -51,13 +73,29 @@ const ListView = () => {
     useHvBulkActions
   );
 
-  const bulkActionProps = instance.getHvBulkActionsProps?.();
+  useEffect(() => {
+    const { pageSize = INIT_PAGE_SIZE, pageIndex = 0 } = instance.state;
 
-  const doRefresh = () => {
-    setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 2000);
-    instance.setFilter?.("status", "");
-  };
+    setParams((prev) => ({
+      ...prev,
+      limit: pageSize,
+      skip: pageSize * pageIndex,
+    }));
+  }, [instance.state]);
+
+  useEffect(() => {
+    instance.gotoPage?.(0);
+    setParams((prev) => ({
+      ...prev,
+      skip: 0,
+      filter:
+        instance.state.filters && instance.state.filters?.length > 0
+          ? instance.state.filters[0]
+          : undefined,
+    }));
+  }, [instance, instance.state.filters]);
+
+  const bulkActionProps = instance.getHvBulkActionsProps?.();
 
   const handleAction = (
     event: React.SyntheticEvent,
@@ -65,13 +103,23 @@ const ListView = () => {
     action: HvActionGeneric
   ) => {
     if (action.id === "refresh") {
-      doRefresh();
+      instance.gotoPage?.(0);
+      setKpiSelection(undefined);
+      setParams((prev) => ({
+        ...prev,
+        skip: 0,
+        filter: undefined,
+      }));
     }
   };
 
-  const getRequestCount = (status: number) => {
-    return instance.initialRows.filter((r) => r.original.status === status)
-      .length;
+  const handleSearch = (e, value: string) => {
+    instance.gotoPage?.(0);
+    setParams((prev) => ({
+      ...prev,
+      skip: 0,
+      search: value,
+    }));
   };
 
   return (
@@ -83,93 +131,104 @@ const ListView = () => {
       <HvGrid container className={classes.paddingTop}>
         <HvGrid item {...breakpoints}>
           <Kpi
-            title="Sucess Requests"
-            count={getRequestCount(0)}
+            title="Success Requests"
             color="positive"
-            variation="up"
             status={0}
             instance={instance}
             kpiSelection={kpiSelection}
             setKpiSelection={setKpiSelection}
+            loading={indicatorLoading}
+            count={indicatorData?.success.count}
+            variation={indicatorData?.success.variation}
+            trendData={indicatorData?.success.data}
           />
         </HvGrid>
         <HvGrid item {...breakpoints}>
           <Kpi
             title="Error Requests"
-            count={getRequestCount(1)}
             color="negative"
-            variation="down"
             status={1}
             instance={instance}
             kpiSelection={kpiSelection}
             setKpiSelection={setKpiSelection}
+            loading={indicatorLoading}
+            count={indicatorData?.error.count}
+            variation={indicatorData?.error.variation}
+            trendData={indicatorData?.error.data}
           />
         </HvGrid>
         <HvGrid item {...breakpoints}>
           <Kpi
             title="Open Requests"
-            count={getRequestCount(2)}
             color="warning"
-            variation="down"
             status={2}
             instance={instance}
             kpiSelection={kpiSelection}
             setKpiSelection={setKpiSelection}
+            loading={indicatorLoading}
+            count={indicatorData?.open.count}
+            variation={indicatorData?.open.variation}
+            trendData={indicatorData?.open.data}
           />
         </HvGrid>
         <HvGrid item {...breakpoints}>
           <Kpi
             title="Unassigned Requests"
-            count={getRequestCount(3)}
             color="neutral"
-            variation="up"
             status={3}
             instance={instance}
             kpiSelection={kpiSelection}
             setKpiSelection={setKpiSelection}
+            loading={indicatorLoading}
+            count={indicatorData?.unassign.count}
+            variation={indicatorData?.unassign.variation}
+            trendData={indicatorData?.unassign.data}
           />
         </HvGrid>
       </HvGrid>
 
-      <HvControls
-        className={classes.paddingTop}
-        views={[]}
-        defaultView="card"
-        callbacks={instance}
-      >
-        <HvLeftControl
-          placeholder="Search"
-          searchProps={{
-            inputProps: {
-              "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
-            },
+      <LoadingContainer loading={loading}>
+        <HvControls
+          className={classes.paddingTop}
+          defaultView="card"
+          callbacks={instance}
+        >
+          <HvLeftControl
+            placeholder="Search"
+            onSearch={handleSearch}
+            searchProps={{
+              inputProps: {
+                "aria-label": "Search",
+                "aria-controls": idsToControl.list,
+              },
+            }}
+          />
+          <HvRightControl hideSortBy />
+        </HvControls>
+
+        <HvBulkActions
+          className={classes.marginTop}
+          {...bulkActionProps}
+          numTotal={data.length}
+          numSelected={instance.selectedFlatRows.length}
+          maxVisibleActions={2}
+          onSelectAll={() => bulkActionProps?.onSelectAll()}
+          onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
+          actions={actions}
+          actionsDisabled={false}
+          actionsCallback={handleAction}
+          checkboxProps={{
+            "aria-controls": idsToControl.list,
           }}
         />
-        <HvRightControl hideSortBy />
-      </HvControls>
 
-      <HvBulkActions
-        className={classes.marginTop}
-        {...bulkActionProps}
-        numTotal={data.length}
-        numSelected={instance.selectedFlatRows.length}
-        maxVisibleActions={2}
-        onSelectAll={() => bulkActionProps?.onSelectAll()}
-        onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
-        actions={actions}
-        actionsDisabled={false}
-        actionsCallback={handleAction}
-        checkboxProps={{
-          "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
-        }}
-      />
-
-      <div className={classes.marginTop}>
-        <Table instance={instance} isLoading={isLoading} />
-        {instance.page?.length ? (
-          <HvPagination {...instance.getHvPaginationProps?.()} />
-        ) : undefined}
-      </div>
+        <div className={classes.marginTop}>
+          <Table instance={instance} id={idsToControl.list} />
+          {instance.page?.length ? (
+            <HvPagination {...instance.getHvPaginationProps?.()} />
+          ) : undefined}
+        </div>
+      </LoadingContainer>
     </>
   );
 };

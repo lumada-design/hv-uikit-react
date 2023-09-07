@@ -8,23 +8,20 @@ import {
   HvActionsGeneric,
   HvTypography,
   Breakpoint,
-  HvSemanticColorKeys,
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
-import { getStatusIcon } from "../utils";
+
+import { AssetInventoryEntry, getStatusIcon } from "../data";
 
 interface CarViewProps {
-  instance: HvTableInstance<AssetInventoryModel, string>;
+  id?: string;
+  instance: HvTableInstance<AssetInventoryEntry, string>;
 }
 
-/**
- * The card view of the Asset Inventory.
- *
- * @param {Object} instance - the instance returned by the `useHvData` data.
- */
-export const CardView = ({ instance }: CarViewProps) => {
+export const CardView = ({ id, instance }: CarViewProps) => {
   return (
     <HvSimpleGrid
+      id={id}
       breakpoints={
         [
           { minWidth: 1270, cols: 4, spacing: "md" },
@@ -41,9 +38,7 @@ export const CardView = ({ instance }: CarViewProps) => {
             key={`${row?.values?.name}-row`}
             style={{ width: "100%" }}
             statusColor={row?.original?.statusColor}
-            icon={getStatusIcon(
-              row?.original?.statusColor as HvSemanticColorKeys
-            )}
+            icon={getStatusIcon(row?.original?.statusColor)}
           >
             <HvCardHeader title={row?.values?.name} />
             <div
@@ -79,7 +74,7 @@ export const CardView = ({ instance }: CarViewProps) => {
                 onChange={() => instance.toggleRowSelected?.(row.id)}
                 checked={instance.selectedFlatRows.some((r) => r.id === row.id)}
                 value="value"
-                inputProps={{ "aria-label": "leaf input" }}
+                inputProps={{ "aria-label": "Tick to select the card" }}
               />
               <div style={{ flex: 1 }} />
               <HvActionsGeneric actions={[{ id: "view1", label: "View" }]} />

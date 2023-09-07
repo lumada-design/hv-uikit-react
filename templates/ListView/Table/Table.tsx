@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import {
-  HvLoading,
   HvTableContainer,
   HvTable,
   HvTableHead,
@@ -10,24 +9,19 @@ import {
   HvTableBody,
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
-import { getColumns } from "../utils";
+
+import { ListViewEntry, getColumns } from "../data";
 
 interface TableProps {
-  instance: HvTableInstance<ListViewModel, string>;
-  isLoading: boolean;
+  instance: HvTableInstance<ListViewEntry, string>;
+  id?: string;
 }
 
-/**
- * The requests table.
- *
- * @param {instance} Object the instance returned by the `useHvData` data.
- * @param {isLoading} boolean indicates whether or not the data is loading.
- */
-export const Table = ({ instance, isLoading }: TableProps) => {
+export const Table = ({ instance, id }: TableProps) => {
   const columns = useMemo(() => getColumns(), []);
 
   return (
-    <HvTableContainer style={{ padding: "2px" }}>
+    <HvTableContainer style={{ padding: "2px" }} id={id}>
       <HvTable variant="listrow" {...instance.getTableProps()}>
         <HvTableHead>
           <HvTableRow>
@@ -37,32 +31,20 @@ export const Table = ({ instance, isLoading }: TableProps) => {
             ))}
           </HvTableRow>
         </HvTableHead>
-        {isLoading ? (
-          <tbody>
-            <tr>
-              <td colSpan={7}>
-                <div style={{ marginTop: 40, marginBottom: 40 }}>
-                  <HvLoading label="Loading data..." />
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        ) : (
-          <HvTableBody withNavigation {...instance.getTableBodyProps()}>
-            {instance.page.map((row) => {
-              instance.prepareRow(row);
-              return (
-                <HvTableRow {...row.getRowProps()}>
-                  {row.cells.map((cell) => (
-                    <HvTableCell {...cell.getCellProps()}>
-                      {cell.render("Cell")}
-                    </HvTableCell>
-                  ))}
-                </HvTableRow>
-              );
-            })}
-          </HvTableBody>
-        )}
+        <HvTableBody withNavigation {...instance.getTableBodyProps()}>
+          {instance.page.map((row) => {
+            instance.prepareRow(row);
+            return (
+              <HvTableRow {...row.getRowProps()}>
+                {row.cells.map((cell) => (
+                  <HvTableCell {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </HvTableCell>
+                ))}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
       </HvTable>
     </HvTableContainer>
   );

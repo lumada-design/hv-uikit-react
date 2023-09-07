@@ -1,4 +1,5 @@
 import ListView from "../../templates/ListView";
+import { templateDecorator } from "./templateDecorator";
 
 export default {
   title: "Templates/List View",
@@ -9,6 +10,7 @@ export default {
       },
     },
   },
+  decorators: [templateDecorator],
 };
 
 export const Main = () => <ListView />;
