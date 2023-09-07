@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.12.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.12.0...@hitachivantara/uikit-styles@5.12.1) (2023-09-07)
+
+### Bug Fixes
+
+- **Theme:** link shadow constant to theme header shadow property ([c2c4bea](https://github.com/lumada-design/hv-uikit-react/commit/c2c4bea1bac09601c809f3952386b5053ba08a40))
+
 # [5.12.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.11.2...@hitachivantara/uikit-styles@5.12.0) (2023-09-06)
 
 ### Bug Fixes
