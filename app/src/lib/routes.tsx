@@ -3,12 +3,15 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 const Components = lazy(() => import("pages/Components"));
 const Instructions = lazy(() => import("pages/Instructions"));
-const AssetInventory = lazy(() => import("pages/AssetInventory"));
-const ListView = lazy(() => import("pages/ListView"));
-const Form = lazy(() => import("pages/Form"));
-const DetailsView = lazy(() => import("pages/DetailsView"));
-const Icons = lazy(() => import("pages/Icons"));
 const NotFound = lazy(() => import("pages/NotFound"));
+
+// Templates
+/* eslint-disable import/no-relative-packages */
+// @ts-nocheck
+const AssetInventory = lazy(() => import("../../../templates/AssetInventory"));
+const ListView = lazy(() => import("../../../templates/ListView"));
+const Form = lazy(() => import("../../../templates/Form"));
+const DetailsView = lazy(() => import("../../../templates/DetailsView"));
 
 const AppRoutes = () => (
   <Routes>
@@ -23,7 +26,6 @@ const AppRoutes = () => (
     <Route path="/preview/list-view" element={<ListView />} />
     <Route path="/preview/form" element={<Form />} />
     <Route path="/preview/details-view" element={<DetailsView />} />
-    <Route path="/icons" element={<Icons />} />
     <Route path="/*" element={<NotFound />} />
   </Routes>
 );
