@@ -44,7 +44,13 @@
     "@hitachivantara/uikit-react-core": "^5.27.4",
     "@hitachivantara/uikit-react-icons": "^5.6.6",
     "@hitachivantara/uikit-styles": "^5.12.1",
-    "usehooks-ts": "^2.9.1"
+    "@dnd-kit/core": "^6.0.8",
+    "@dnd-kit/modifiers": "^6.0.1",
+    "lodash": "^4.17.21",
+    "reactflow": "^11.8.3",
+    "uid": "^2.0.2",
+    "usehooks-ts": "^2.9.1",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
     "@storybook/react": "^6.5.16",
