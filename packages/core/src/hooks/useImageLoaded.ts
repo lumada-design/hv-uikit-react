@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useImageLoaded = (src, srcSet) => {
+export const useImageLoaded = (src?: string, srcSet?: string) => {
   const [imageLoaded, setImageLoaded] = useState<boolean | string>(false);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export const useImageLoaded = (src, srcSet) => {
 
     let active = true;
     const image = new Image();
-    image.src = src;
+    image.src = src || "";
     image.srcset = srcSet || "";
     image.onload = () => {
       if (!active) {

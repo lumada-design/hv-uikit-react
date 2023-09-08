@@ -26,7 +26,7 @@ export const HvMonthSelector = ({
   const { classes, cx } = useClasses(classesProp);
 
   const listMonthNamesShort = getMonthNamesList(locale, "short");
-  const onKeyDownHandler = (event, index) => {
+  const onKeyDownHandler = (event: any, index: number) => {
     if (isKey(event, "Enter")) {
       onChange?.(event, "month", index + 1);
       onViewModeChange("calendar");

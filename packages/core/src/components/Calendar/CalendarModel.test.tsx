@@ -1,7 +1,7 @@
 import CalendarModel from "./model";
 import { getMonthDays } from "./utils";
 
-let calendarModelInstance;
+let calendarModelInstance: CalendarModel;
 
 beforeEach(() => {
   calendarModelInstance = new CalendarModel(1, 2000);

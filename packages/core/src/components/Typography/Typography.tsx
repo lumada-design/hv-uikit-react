@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { ElementType, forwardRef } from "react";
 
 import { PolymorphicComponentRef, PolymorphicRef } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
@@ -29,18 +29,28 @@ const HvTypographyMap = {
   // LEGACY
   "5xlTitle": "h1",
   "4xlTitle": "h1",
+  "3xlTitle": "h1",
   xxlTitle: "h1",
+  xlTitle: "h1",
   lTitle: "h2",
+  mTitle: "h3",
   sTitle: "h4",
+  xsTitle: "h5",
   xxsTitle: "h6",
   sectionTitle: "p",
+  highlightText: "p",
+  normalText: "p",
   placeholderText: "p",
   link: "p",
   disabledText: "p",
   selectedNavText: "p",
+  vizText: "p",
   vizTextDisabled: "p",
   xsInlineLink: "p",
-} as const;
+} satisfies Record<
+  HvTypographyVariants | HvTypographyLegacyVariants,
+  ElementType
+>;
 
 export type HvTypographyProps<C extends React.ElementType = "p"> =
   PolymorphicComponentRef<

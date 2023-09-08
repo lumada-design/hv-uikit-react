@@ -6,12 +6,12 @@ import { useDefaultProps } from "@core/hooks";
 
 import { HvHeaderMenuItem } from "../MenuItem";
 import { HvHeaderNavigationItemProp } from "../useSelectionPath";
-import { Bar, HvHeaderMenuBarClasses } from "./Bar";
+import { Bar, BarProps, HvHeaderMenuBarClasses } from "./Bar";
 
 export interface HvHeaderMenuBarProps
   extends HvBaseProps<HTMLDivElement, "onClick"> {
   data: HvHeaderNavigationItemProp[];
-  type: string;
+  type?: BarProps["type"];
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
   levels: number;
   currentLevel: number;

@@ -28,9 +28,11 @@ export interface HvHeaderMenuItemProps
 }
 
 // Traverse the tree of items and return the first href it finds
-const traverseItem = (node: HvHeaderNavigationItemProp) => {
-  let href;
-  let target;
+const traverseItem = (
+  node: HvHeaderNavigationItemProp
+): { href?: string; target?: string } => {
+  let href: string | undefined;
+  let target: string | undefined;
 
   if (node?.href) {
     href = node?.href;

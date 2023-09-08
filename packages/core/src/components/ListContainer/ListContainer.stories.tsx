@@ -139,7 +139,10 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
       4: false,
     });
 
-    const handleListItemClick = (_evt: MouseEvent, index: number) => {
+    const handleListItemClick = (
+      _evt: MouseEvent,
+      index: keyof typeof selectedItems
+    ) => {
       setSelectedItems((previousSelection) => {
         return {
           ...previousSelection,
@@ -376,7 +379,7 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
         return [leftSet, rightSet];
       };
 
-      const handleShiftCLick = (index) => {
+      const handleShiftClick = (index: number): any => {
         let leftSet;
         let rightSet;
 
@@ -410,10 +413,10 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
         };
       };
 
-      const handleListItemClick = (_evt, index) => {
-        if (_evt.shiftKey) {
-          setSelectedItems(handleShiftCLick(index));
-        } else if (_evt.metaKey || _evt.ctrlKey) {
+      const handleListItemClick = (evt: any, index: number) => {
+        if (evt.shiftKey) {
+          setSelectedItems(handleShiftClick(index));
+        } else if (evt.metaKey || evt.ctrlKey) {
           setSelectionAnchor(index);
 
           selectedItems[index] = !selectedItems[index];

@@ -15,7 +15,7 @@ export type HvHeaderMenuBarClasses = ExtractNames<typeof useClasses>;
 
 export interface BarProps extends HvBaseProps {
   data: HvHeaderNavigationItemProp[];
-  type?: string;
+  type?: "menubar" | "menu";
   classes?: HvHeaderMenuBarClasses;
 }
 
