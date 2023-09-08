@@ -70,7 +70,7 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
     children,
     title,
     TransitionComponent = Fade,
-    TransitionProps = { timeout: 400, placement },
+    TransitionProps = { timeout: 400, placement: "top" },
     containerId,
     ...others
   } = useDefaultProps("HvTooltip", props);

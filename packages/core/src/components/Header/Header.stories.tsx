@@ -246,7 +246,9 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
       navigationDataCombined[0].data?.[0].id
     );
 
-    const traverseItem = (item: HvHeaderNavigationItemProp) => {
+    const traverseItem = (
+      item: HvHeaderNavigationItemProp
+    ): string | undefined => {
       if (item.data) {
         return traverseItem(item.data[0]);
       }

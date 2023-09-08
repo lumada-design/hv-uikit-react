@@ -12,17 +12,17 @@ export default class CalendarModel {
   dates: Date[] = [];
 
   constructor(month?: number, year?: number) {
-    this.updateModel(month, year);
+    this.updateModel(month!, year!);
   }
 
   /**
    * Updates the model with the received month and year
    *
-   * @param {number} month - Number of the month (1 to 12).
-   * @param {number} year - Number of the year.
+   * @param month - Number of the month (1 to 12).
+   * @param year - Number of the year.
    * @memberOf CalendarModel
    */
-  updateModel = (month, year) => {
+  updateModel = (month: number, year: number) => {
     let validMonth = month;
     let validYear = year;
     if (!Number.isInteger(validMonth)) {
@@ -62,7 +62,11 @@ const generateModelFromDate = (seedValue) => {
   return calendarModel;
 };
 
-export const generateCalendarModel = (seedValue, visibleMonth, visibleYear) => {
+export const generateCalendarModel = (
+  seedValue: any,
+  visibleMonth?: number,
+  visibleYear?: number
+) => {
   let calendarModel;
 
   if (visibleMonth && visibleYear) {

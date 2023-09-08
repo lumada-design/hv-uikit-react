@@ -77,7 +77,7 @@ export interface HvComposedNavigationProps {
   /**
    * Callback to define the input date.
    */
-  onChange?: (event, action: VisibilitySelectorActions) => void;
+  onChange?: (event: any, action: VisibilitySelectorActions) => void;
   /**
    * Callback to define the view mode.
    */

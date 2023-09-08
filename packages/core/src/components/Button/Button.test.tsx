@@ -204,7 +204,13 @@ describe("Button", () => {
   });
 
   describe("polymorphic button", () => {
-    it("link", () => {
+    const CustomLink = ({ to, children, ...others }: any) => (
+      <a href={to} {...others}>
+        {children}
+      </a>
+    );
+
+    it("has href", () => {
       const { getByRole } = render(
         <HvButton component="a" href="/path/to">
           Link
@@ -230,12 +236,6 @@ describe("Button", () => {
     });
 
     it("custom link", () => {
-      const CustomLink = ({ to, children, ...others }) => (
-        <a href={to} {...others}>
-          {children}
-        </a>
-      );
-
       const { getByRole } = render(
         <HvButton component={CustomLink} to="/path/to">
           Link
@@ -249,12 +249,6 @@ describe("Button", () => {
     });
 
     it("disabled custom link", () => {
-      const CustomLink = ({ to, children, ...others }) => (
-        <a href={to} {...others}>
-          {children}
-        </a>
-      );
-
       const { getByRole } = render(
         <HvButton component={CustomLink} to="/path/to" disabled>
           Link

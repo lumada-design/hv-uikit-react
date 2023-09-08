@@ -1,4 +1,5 @@
 import React, {
+  FocusEvent,
   HTMLInputTypeAttribute,
   forwardRef,
   isValidElement,
@@ -207,10 +208,13 @@ const DEFAULT_LABELS = {
 /**
  * Find the focused element onBlur.
  */
-const getFocusedElement = (event) =>
+const getFocusedElement = (event: FocusEvent) =>
   isBrowser("ie") ? document.activeElement : event.relatedTarget;
 
-function eventTargetIsInsideContainer(container, event) {
+function eventTargetIsInsideContainer(
+  container: HTMLElement | null,
+  event: FocusEvent<any>
+) {
   return container != null && container.contains(getFocusedElement(event));
 }
 
@@ -432,19 +436,20 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
   /**
    * Executes the user callback adds the selection to the state and clears the suggestions.
    */
-  const suggestionSelectedHandler = (event, item) => {
-    const newValue = item.value || item.label;
+  const suggestionSelectedHandler: HvSuggestionsProps["onSuggestionSelected"] =
+    (event, item) => {
+      const newValue = item.value || (item.label as any);
 
-    changeInputValue(inputRef.current, newValue);
+      changeInputValue(inputRef.current, newValue);
 
-    focusInput();
-    suggestionClearHandler();
+      focusInput();
+      suggestionClearHandler();
 
-    if (type === "search") {
-      // trigger the onEnter callback when the user selects an option in a search box
-      onEnter?.(event, newValue);
-    }
-  };
+      if (type === "search") {
+        // trigger the onEnter callback when the user selects an option in a search box
+        onEnter?.(event, newValue);
+      }
+    };
 
   const onChangeHandler: HvBaseInputProps["onChange"] = (event, newValue) => {
     isDirty.current = true;

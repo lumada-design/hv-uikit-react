@@ -69,7 +69,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
     inputValue.length === 0 || (!!inputValue && dayjs(localValue).isValid())
   );
 
-  const validateInput = (incomingValid) =>
+  const validateInput = (incomingValid: any) =>
     incomingValid === undefined || dayjs(incomingValid).isValid();
 
   useEffect(() => {
@@ -91,7 +91,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
     }
   }, [localValue, locale]);
 
-  const handleNewDate = (event, date) => {
+  const handleNewDate = (event: any, date: string) => {
     // attempt to format in locale data, or fallback to default
     const localeParsedDate = dayjs(date, localeFormat);
 
