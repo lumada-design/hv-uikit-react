@@ -13,7 +13,12 @@ import details_view from "./assets/details-view.png";
 import form from "./assets/form.png";
 import list_view from "./assets/list-view.png";
 
-const TemplateItem = ({ kind, story, image, title, code }) => {
+const getSourceUrl = (id: string) => {
+  const key = id.replace(" ", "");
+  return `https://github.com/lumada-design/hv-uikit-react/tree/master/templates/${key}`;
+};
+
+const TemplateItem = ({ storyId, story = "Main", kind, image }) => {
   return (
     <HvCard
       bgcolor="atmo1"
@@ -22,11 +27,12 @@ const TemplateItem = ({ kind, story, image, title, code }) => {
         width: "100%",
       }}
     >
-      <HvCardHeader title={title} />
+      <HvCardHeader title={storyId} />
       <HvCardMedia
         component="img"
         image={image}
-        style={{ padding: 10, height: 224 }}
+        height={220}
+        style={{ padding: 10 }}
       />
       <HvActionBar>
         <HvButton
@@ -41,7 +47,7 @@ const TemplateItem = ({ kind, story, image, title, code }) => {
         <HvButton
           variant="secondarySubtle"
           component="a"
-          href={code}
+          href={getSourceUrl(storyId)}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -74,11 +80,9 @@ export const TemplateItems = () => {
         {templates.map(({ id, img }) => (
           <TemplateItem
             key={id}
+            storyId={id}
             kind={`Templates/${id}`}
-            story="Main"
             image={img}
-            title={id}
-            code={`https://github.com/lumada-design/hv-uikit-react/tree/master/templates/${id}`}
           />
         ))}
       </div>
