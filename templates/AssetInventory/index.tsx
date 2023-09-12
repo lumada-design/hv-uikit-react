@@ -30,7 +30,7 @@ import {
 } from "./data";
 import { LoadingContainer } from "../LoadingContainer";
 
-const PAGE_OPTIONS = [8, 16, 32];
+const PAGE_OPTIONS = [12, 24, 36];
 
 const AssetInventory = () => {
   const [currentView, setCurrentView] = useState("card");
@@ -181,6 +181,9 @@ const AssetInventory = () => {
           <HvPagination
             {...instance.getHvPaginationProps?.()}
             pageSizeOptions={PAGE_OPTIONS}
+            labels={{
+              pageSizeEntryName: currentView === "card" ? "cards" : "rows",
+            }}
           />
         ) : undefined}
       </div>
