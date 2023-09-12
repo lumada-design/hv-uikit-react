@@ -9,6 +9,7 @@ import {
   HvTypography,
   Breakpoint,
   HvTableInstance,
+  HvCardMedia,
 } from "@hitachivantara/uikit-react-core";
 
 import { AssetInventoryEntry, getStatusIcon } from "../data";
@@ -19,12 +20,14 @@ interface CarViewProps {
 }
 
 export const CardView = ({ id, instance }: CarViewProps) => {
+  console.log(instance);
+  const selectedCardsIds = instance.selectedFlatRows.map((r) => r.id);
   return (
     <HvSimpleGrid
       id={id}
       breakpoints={
         [
-          { minWidth: 1270, cols: 4, spacing: "md" },
+          { minWidth: 1919, cols: 4, spacing: "md" },
           { minWidth: 960, cols: 3, spacing: "md" },
           { minWidth: 600, cols: 2, spacing: "sm" },
           { minWidth: 0, cols: 1, spacing: "sm" },
@@ -34,6 +37,8 @@ export const CardView = ({ id, instance }: CarViewProps) => {
       {instance.page.map((row) => {
         return (
           <HvCard
+            selectable
+            selected={selectedCardsIds.includes(row.id)}
             bgcolor="atmo1"
             key={`${row?.values?.name}-row`}
             style={{ width: "100%" }}
@@ -69,6 +74,12 @@ export const CardView = ({ id, instance }: CarViewProps) => {
                 </HvCardContent>
               </div>
             </div>
+            <HvCardMedia
+              component="img"
+              alt={row.original.name}
+              height={140}
+              image={row.original.image}
+            />
             <HvActionBar>
               <HvCheckBox
                 onChange={() => instance.toggleRowSelected?.(row.id)}

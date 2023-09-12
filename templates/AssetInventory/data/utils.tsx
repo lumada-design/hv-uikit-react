@@ -4,6 +4,9 @@ import {
   HvRightControlProps,
   HvSemanticColorKeys,
   HvTableColumnConfig,
+  HvCellProps,
+  HvTooltip,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import {
   Cards,
@@ -29,35 +32,102 @@ export interface AssetInventoryEntry {
   time?: string;
   temperature?: string;
   statusColor?: HvSemanticColorKeys;
+  image?: string;
 }
 
-export const getColumns = (): HvTableColumnConfig<
-  AssetInventoryEntry,
-  string
->[] => [
-  { Header: "Title", accessor: "name", style: { minWidth: 220 } },
-  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
-  { Header: "Status", accessor: "status", style: { width: 120 } },
-  { Header: "Severity", accessor: "severity" },
-  { Header: "Priority", accessor: "priority" },
-  { Header: "Time", accessor: "time" },
-  { Header: "Temperature", accessor: "temperature" },
+const images = [
+  "https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+  "https://images.unsplash.com/photo-1589320011103-48e428abcbae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+  "https://images.unsplash.com/photo-1567789884554-0b844b597180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+  "https://images.unsplash.com/photo-1647427060118-4911c9821b82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+  "https://images.unsplash.com/photo-1612685180313-bdfe1d6896cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1190&q=80",
+  "https://images.unsplash.com/photo-1566930665082-4ae9dbbb5b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=873&q=80",
+  "https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+  "https://images.unsplash.com/photo-1622534376374-fe4480328daa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+  "https://images.unsplash.com/photo-1618840626133-54463084a141?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80",
+  "https://images.unsplash.com/photo-1600715502630-c9300abe78a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
 ];
+
+const getRandomImage = () => images[Math.floor(Math.random() * images.length)];
 
 export const getStatusIcon = (color?: AssetInventoryEntry["statusColor"]) => {
   switch (color) {
     case "positive":
       return <Level0Good color="positive" />;
-    case "neutral":
-      return <Level1 color="neutral" />;
     case "warning":
       return <Level2Average color="warning" />;
     case "negative":
       return <Level3Bad color="negative" />;
+    case "neutral":
     default:
-      return undefined;
+      return <Level1 color="neutral" />;
   }
 };
+
+const getStatusMessage = (status?: AssetInventoryEntry["statusColor"]) => {
+  switch (status) {
+    case "positive":
+      return "Success";
+    case "warning":
+      return "Open";
+    case "negative":
+      return "Error";
+    case "neutral":
+    default:
+      return "Unassigned";
+  }
+};
+
+export const getColumns = (): HvTableColumnConfig<
+  AssetInventoryEntry,
+  string
+>[] => [
+  {
+    Header: "Status",
+    accessor: "status",
+    style: { width: 60 },
+    Cell: ({ row }: HvCellProps<AssetInventoryEntry, string>) => {
+      return (
+        <HvTooltip
+          title={
+            <HvTypography>
+              {getStatusMessage(row.original.statusColor)}
+            </HvTypography>
+          }
+        >
+          <div>{getStatusIcon(row.original.statusColor)}</div>
+        </HvTooltip>
+      );
+    },
+  },
+  {
+    Header: "Asset",
+    accessor: "image",
+    style: { maxWidth: 60 },
+    Cell: ({ row }: HvCellProps<AssetInventoryEntry, string>) => {
+      return (
+        <HvTooltip
+          placement="right"
+          title={
+            <div style={{ width: 400 }}>
+              <img alt={row.original.name} src={row.original.image} />
+            </div>
+          }
+        >
+          <div style={{ maxWidth: 60 }}>
+            <img alt={row.original.name} src={row.original.image} />
+          </div>
+        </HvTooltip>
+      );
+    },
+  },
+  { Header: "Title", accessor: "name", style: { minWidth: 140 } },
+  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
+  { Header: "Severity", accessor: "severity" },
+  { Header: "Priority", accessor: "priority" },
+  { Header: "Time", accessor: "time" },
+  { Header: "Temperature", accessor: "temperature" },
+];
 
 export const actions: HvBulkActionsProps["actions"] = [
   { id: "add", label: "Add", icon: <Add /> },
@@ -149,7 +219,8 @@ export const createEntry = (i: number): AssetInventoryEntry => {
     severity: getOption(["Critical", "Major", "Average", "Minor"], i),
     priority: getPriority(i),
     time: getTime(getPriority(i), i),
-    temperature: `${i + 35}`,
+    temperature: `${i + 35}º C`,
     statusColor: getRandomStatus(),
+    image: getRandomImage(),
   };
 };
