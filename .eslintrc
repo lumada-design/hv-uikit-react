@@ -113,7 +113,9 @@
       "rules": {
         "no-alert": "off",
         "no-console": "off",
-        "no-multi-str": "off"
+        "no-multi-str": "off",
+        "import/no-duplicates": "off",
+        "import/no-extraneous-dependencies": "off"
       }
     },
     {

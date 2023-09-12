@@ -33,12 +33,8 @@ export const LoadingContainer = ({
         classes={{
           root: css({
             position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
+            inset: -2, // cover borders/outlines
             backgroundColor: hexToRgbA(colors.atmo2, 0.8),
-            width: "100%",
-            height: "100%",
             zIndex: theme.zIndices.popover,
           }),
         }}

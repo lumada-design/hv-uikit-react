@@ -28,9 +28,7 @@ import {
 import { Delete, Lock, Unlock } from "@hitachivantara/uikit-react-icons";
 import { makeData, getColumns, AssetEvent } from "../storiesUtils";
 
-/* eslint-disable import/no-duplicates */
 import { TableComplete } from "./TableComplete.stories";
-// @ts-ignore
 import TableCompleteRaw from "./TableComplete.stories?raw";
 
 export const CompleteStory: StoryObj = {

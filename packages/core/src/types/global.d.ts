@@ -24,3 +24,7 @@ declare module "*.png" {
 declare module "*.jpg" {
   export default "" as string;
 }
+
+declare module "*?raw" {
+  export default "" as string;
+}
