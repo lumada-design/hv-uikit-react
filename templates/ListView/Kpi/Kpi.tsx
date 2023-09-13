@@ -61,6 +61,8 @@ export const Kpi = ({
         status === kpiSelection && classes.selected
       )}
       icon={getStatusIcon(status)}
+      tabIndex={0}
+      component="button"
     >
       <div className={classes.container}>
         <HvTypography variant="label">{title}</HvTypography>
