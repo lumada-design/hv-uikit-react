@@ -7,6 +7,9 @@ const styles = {
   }),
   card: css({
     cursor: "pointer",
+    width: "100%",
+    padding: 0,
+    textAlign: "left",
   }),
   title: css({
     margin: `${theme.space.xs} 0`,
