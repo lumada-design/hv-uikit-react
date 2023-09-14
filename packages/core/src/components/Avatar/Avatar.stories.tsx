@@ -5,18 +5,14 @@ import {
   LogIn,
   Search,
 } from "@hitachivantara/uikit-react-icons";
-import { Meta, StoryObj } from "@storybook/react";
+import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
 import {
   HvAvatar,
   HvAvatarProps,
   HvButton,
 } from "@hitachivantara/uikit-react-core";
-import man1 from "./resources/man-1.png";
-import man2 from "./resources/man-2.png";
-import woman1 from "./resources/woman-1.png";
-import woman2 from "./resources/woman-2.png";
 
-const flexDecorator = (Story) => (
+const flexDecorator: DecoratorFn = (Story) => (
   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
     {Story()}
   </div>
@@ -27,9 +23,7 @@ const meta: Meta<typeof HvAvatar> = {
   component: HvAvatar,
   decorators: [flexDecorator],
   parameters: {
-    eyes: {
-      waitBeforeCapture: 5000,
-    },
+    eyes: { disable: true },
   },
 };
 export default meta;
@@ -63,17 +57,17 @@ export const ImageAvatars: StoryObj<HvAvatarProps> = {
     docs: {
       description: {
         story:
-          "Image avatars can be created by passing standard img props src or srcSet to the component.",
+          "Image avatars can be created by passing the `src` or `srcSet` props to the component.",
       },
     },
   },
   render: () => {
     return (
       <>
-        <HvAvatar alt="Ben" src={man1} />
-        <HvAvatar alt="Beatrice" src={woman1} />
-        <HvAvatar alt="Wayne" src={man2} />
-        <HvAvatar alt="Clara Soul" src={woman2} />
+        <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
+        <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
+        <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+        <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
       </>
     );
   },
@@ -158,6 +152,7 @@ export const Variants: StoryObj<HvAvatarProps> = {
           "You can configure the `size` and `variant` of an avatar. When using an icon, set its `iconSize` to the size immediately below the avatar size.",
       },
     },
+    eyes: { disable: false, waitBeforeCapture: 5000 },
   },
   render: () => {
     return (
@@ -170,8 +165,17 @@ export const Variants: StoryObj<HvAvatarProps> = {
         <HvAvatar size="lg" backgroundColor="warning">
           <Bookmark iconSize="M" color={["base_light", "base_dark"]} />
         </HvAvatar>
-        <HvAvatar size="xl" alt="Beatrice" src={woman1} />
-        <HvAvatar size="xl" variant="square" alt="Beatrice" src={woman1} />
+        <HvAvatar
+          size="xl"
+          alt="Beatrice"
+          src="https://i.imgur.com/bE7vg3N.png"
+        />
+        <HvAvatar
+          size="xl"
+          variant="square"
+          alt="Beatrice"
+          src="https://i.imgur.com/bE7vg3N.png"
+        />
       </>
     );
   },
@@ -182,9 +186,10 @@ export const Status: StoryObj<HvAvatarProps> = {
     docs: {
       description: {
         story:
-          "An avatar can have a status that is represented by a colored border. The status color can be from the HV theme palette or custom.",
+          "An avatar can have a status, represented by either the `status` colored border or by the `badge` dot. The color can be from the theme palette or custom.",
       },
     },
+    eyes: { disable: false },
   },
   render: () => {
     return (
@@ -192,48 +197,16 @@ export const Status: StoryObj<HvAvatarProps> = {
         <HvAvatar size="xs" status="positive">
           AB
         </HvAvatar>
-        <HvAvatar size="sm" status="neutral">
+        <HvAvatar size="sm" badge="neutral">
           AB
         </HvAvatar>
         <HvAvatar size="md" status="negative">
           AB
         </HvAvatar>
-        <HvAvatar size="lg" status="atmo4">
+        <HvAvatar size="lg" status="atmo4" badge="atmo4">
           AB
         </HvAvatar>
-        <HvAvatar size="xl" status="#8CEB34">
-          AB
-        </HvAvatar>
-      </>
-    );
-  },
-};
-
-export const Badge: StoryObj<HvAvatarProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "An avatar can have a badge that is represented by a colored dot on the upper right corner. The badge color can be from the HV theme palette or custom.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <>
-        <HvAvatar size="xs" badge="positive">
-          AB
-        </HvAvatar>
-        <HvAvatar size="sm" badge="neutral">
-          AB
-        </HvAvatar>
-        <HvAvatar size="md" badge="negative">
-          AB
-        </HvAvatar>
-        <HvAvatar size="lg" badge="atmo4">
-          AB
-        </HvAvatar>
-        <HvAvatar size="xl" badge="#8CEB34">
+        <HvAvatar size="xl" status="#8CEB34" badge="#8CEB34">
           AB
         </HvAvatar>
       </>
@@ -249,6 +222,7 @@ export const Actions: StoryObj<HvAvatarProps> = {
           "An avatar should be interacted with by wrapping it in an _interactable_ element, such as an `HvButton` or a link. Make sure the elements are labelled accordingly.",
       },
     },
+    eyes: { disable: false },
   },
   render: () => {
     return (
@@ -291,7 +265,12 @@ export const Actions: StoryObj<HvAvatarProps> = {
           overrideIconColors={false}
           aria-label="Clara Soul profile"
         >
-          <HvAvatar alt="Clara Soul" src={woman2} size="lg" status="positive" />
+          <HvAvatar
+            alt="Clara Soul"
+            src="https://i.imgur.com/6sYhSb6.png"
+            size="lg"
+            status="positive"
+          />
         </HvButton>
         <HvButton
           icon
@@ -300,7 +279,7 @@ export const Actions: StoryObj<HvAvatarProps> = {
         >
           <HvAvatar
             alt="Clara Soul"
-            src={woman2}
+            src="https://i.imgur.com/6sYhSb6.png"
             size="lg"
             variant="square"
             status="positive"
