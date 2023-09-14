@@ -1,7 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 
 import {
-  HvGlobalActions,
   HvTable,
   HvTableContainer,
   HvTableRow,
@@ -14,7 +13,6 @@ import {
   HvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import classes from "./styles";
 import {
   PaginationDataProps,
   usePaginationData,
@@ -66,45 +64,38 @@ export const Table = ({ modelId }: TableProps) => {
   }, [instance.state]);
 
   return (
-    <>
-      <HvGlobalActions
-        title="Events"
-        variant="section"
-        className={classes.section}
-      />
-      <LoadingContainer loading={loading}>
-        <HvTableContainer style={{ padding: "2px" }}>
-          <HvTable {...instance.getTableProps()}>
-            <HvTableHead>
-              <HvTableRow>
-                {columns.map((col) => (
-                  <HvTableHeader key={col.Header}>{col.Header}</HvTableHeader>
-                ))}
-              </HvTableRow>
-            </HvTableHead>
-            <HvTableBody {...instance.getTableBodyProps()}>
-              {instance.page.map((row) => {
-                instance.prepareRow(row);
-                return (
-                  <HvTableRow {...row.getRowProps()}>
-                    {row.cells.map((cell) => (
-                      <HvTableCell {...cell.getCellProps()}>
-                        {cell.render("Cell")}
-                      </HvTableCell>
-                    ))}
-                  </HvTableRow>
-                );
-              })}
-            </HvTableBody>
-          </HvTable>
-        </HvTableContainer>
-        {instance.page?.length ? (
-          <HvPagination
-            {...instance.getHvPaginationProps?.()}
-            pageSizeOptions={PAGE_OPTIONS}
-          />
-        ) : undefined}
-      </LoadingContainer>
-    </>
+    <LoadingContainer loading={loading}>
+      <HvTableContainer style={{ padding: "2px" }}>
+        <HvTable {...instance.getTableProps()}>
+          <HvTableHead>
+            <HvTableRow>
+              {columns.map((col) => (
+                <HvTableHeader key={col.Header}>{col.Header}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          </HvTableHead>
+          <HvTableBody {...instance.getTableBodyProps()}>
+            {instance.page.map((row) => {
+              instance.prepareRow(row);
+              return (
+                <HvTableRow {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <HvTableCell {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </HvTableCell>
+                  ))}
+                </HvTableRow>
+              );
+            })}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
+      {instance.page?.length ? (
+        <HvPagination
+          {...instance.getHvPaginationProps?.()}
+          pageSizeOptions={PAGE_OPTIONS}
+        />
+      ) : undefined}
+    </LoadingContainer>
   );
 };

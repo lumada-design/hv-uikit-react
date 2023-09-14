@@ -1,7 +1,5 @@
 import useSWR from "swr";
 
-import { HvTagsInputProps } from "@hitachivantara/uikit-react-core";
-
 import { ServerPaginationProps, delay, useServerPagination } from "../../hooks";
 import { DetailsViewEntry, createEntry } from "./utils";
 
@@ -17,57 +15,33 @@ const db = Array.from({ length: TOTAL }).reduce(
   []
 );
 
-const model: ModelDetails = {
+const model = {
   description: "Model created from the example Jupyter Notebook",
-  status: "Ready",
-  tags: [{ label: "test" }, { label: "notebook" }],
+  status: "Critical",
+  severity: "Medium",
+  tags: ["test", "note"],
   project: "Wine Quality",
+  progress: 0.87,
+  risk: 0.2,
   asc: "Failure Prediction",
   createdAt: "2022-05-24 14:32:50",
-  createdBy: undefined,
   modifiedAt: "2022-05-24 14:32:50",
-  modifiedBy: undefined,
-  shortName: "LS",
+  imageUrl: "https://i.imgur.com/5EW6x5r.jpg",
   deploys: {
     summary: [
-      { id: 1, title: "Sucess Requests", count: 4, diff: 2.02 },
+      { id: 1, title: "Success Requests", count: 4, diff: 2.02 },
       { id: 2, title: "Error Requests", count: 2, diff: -1.63 },
       { id: 3, title: "Open Requests", count: 12, diff: 1.84 },
     ],
     data: [
-      {
-        id: 1,
-        title: "Review Log",
-        value: "2019/6/4",
-      },
-      {
-        id: 2,
-        title: "Update Build",
-        value: "2020/12/1",
-      },
-      {
-        id: 3,
-        title: "Clean Data Logs",
-        value: "2018/5/3",
-      },
-      {
-        id: 4,
-        title: "Deploy Cloud Run",
-        value: "Blone",
-      },
-      {
-        id: 5,
-        title: "Update Build",
-        value: "2020/12/1	",
-      },
-      {
-        id: 6,
-        title: "Build",
-        value: "46uYmU",
-      },
+      { id: 2, title: "Update Build", value: "2020/12/1" },
+      { id: 3, title: "Clean Data Logs", value: "2018/5/3" },
+      { id: 6, title: "Build", value: "46uYmU" },
     ],
   },
 };
+
+export type ModelDetails = typeof model;
 
 // --- Endpoints ---
 
@@ -87,30 +61,15 @@ export const usePaginationData = ({ limit, skip, id }: PaginationDataProps) => {
   return data;
 };
 
-export interface ModelDetails {
-  description?: string;
-  status?: string;
-  tags?: HvTagsInputProps["value"];
-  project?: string;
-  asc?: string;
-  shortName?: string;
-  createdAt?: string;
-  createdBy?: string;
-  modifiedAt?: string;
-  modifiedBy?: string;
-  deploys?: {
-    data: { id: number; title: string; value: string }[];
-    summary: { id: number; title: string; count: number; diff: number }[];
-  };
-}
+export const useModelData = () => {
+  return useSWR(
+    "model",
+    async () => {
+      // Loading
+      await delay(800);
 
-export const useModelData = ({ id }: { id: string }) => {
-  const { data, isLoading } = useSWR<ModelDetails>(`/model/${id}`, async () => {
-    // Loading
-    await delay(800);
-
-    return model;
-  });
-
-  return { data, loading: isLoading };
+      return model;
+    },
+    { suspense: true }
+  );
 };
