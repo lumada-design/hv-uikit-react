@@ -1,45 +1,62 @@
-import { HvGrid, HvAvatar, theme } from "@hitachivantara/uikit-react-core";
+import { css } from "@emotion/css";
+import { Bottom, Top } from "@hitachivantara/uikit-react-icons";
+import {
+  HvGrid,
+  HvAvatar,
+  theme,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 
-import { Kpi1 } from "../Kpi1";
-import { Kpi2 } from "../Kpi2";
-import { ModelDetails } from "../data";
-import { LoadingContainer } from "../../LoadingContainer";
+import { useModelData } from "../data";
+import { MetadataItem } from "../MetadataItem";
 
-interface KpiProps {
-  details?: ModelDetails;
-  loading: boolean;
-}
+const Kpi = ({ title, count, diff }) => {
+  const Icon = diff > 0 ? Top : Bottom;
 
-export const KPIs = ({ loading, details }: KpiProps) => {
   return (
-    <div style={{ paddingTop: theme.space.lg }}>
-      <LoadingContainer loading={loading}>
-        <HvGrid container>
-          {details?.shortName && (
-            <HvGrid item xs={12} md={3} lg={2}>
-              <HvGrid container justifyContent="center">
-                <HvAvatar id="status5" size="xl" status="atmo4">
-                  {details?.shortName}
-                </HvAvatar>
-              </HvGrid>
+    <MetadataItem title={title}>
+      <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+        <HvTypography variant="title2">{count}</HvTypography>
+        <Icon color={theme.colors[diff > 0 ? "positive" : "warning"]} />
+        <HvTypography variant="caption1">
+          {`${Math.abs(diff).toFixed(2)} ${diff > 0 ? "more" : "less"}`}
+        </HvTypography>
+      </div>
+    </MetadataItem>
+  );
+};
+
+export const KPIs = () => {
+  const { data } = useModelData();
+  const { deploys, imageUrl } = data;
+
+  return (
+    <>
+      <HvGrid item xs={12} md={2} lg={2}>
+        <HvAvatar
+          size="xl"
+          status="atmo4"
+          classes={{ status: css({ margin: "auto" }) }}
+          src={imageUrl}
+          alt="Asset image"
+        />
+      </HvGrid>
+      <HvGrid item xs={12} md={10} lg={10}>
+        <HvGrid container direction="row">
+          {deploys.summary.map((el) => (
+            <HvGrid key={el.id} item xs={12} sm={4}>
+              <Kpi title={el.title} count={el.count} diff={el.diff} />
             </HvGrid>
-          )}
-          <HvGrid item xs={12} md={9} lg={10}>
-            <HvGrid container direction="row">
-              {details?.deploys?.summary.map((el) => (
-                <HvGrid key={el.id} item xs={12} sm={4}>
-                  <Kpi1 title={el.title} count={el.count} diff={el.diff} />
-                </HvGrid>
-              ))}
-              {details?.deploys?.data.map((el) => (
-                <HvGrid key={el.id} item xs={12} sm={4}>
-                  <Kpi2 title={el.title} value={el.value} />
-                </HvGrid>
-              ))}
+          ))}
+          {deploys.data.map((el) => (
+            <HvGrid key={el.id} item xs={12} sm={4}>
+              <MetadataItem title={el.title}>
+                <HvTypography variant="caption1">{el.value}</HvTypography>
+              </MetadataItem>
             </HvGrid>
-          </HvGrid>
+          ))}
         </HvGrid>
-      </LoadingContainer>
-    </div>
+      </HvGrid>
+    </>
   );
 };

@@ -1,4 +1,4 @@
-import { ServerPaginationProps, useServerPagination } from "../../hooks";
+import { ServerPaginationProps, useServerPagination } from "../../utils";
 import { AssetInventoryEntry, createEntry } from "./utils";
 
 // --- Data ---

@@ -15,6 +15,7 @@ import {
   useHvSortBy,
 } from "@hitachivantara/uikit-react-core";
 
+import { LoadingContainer } from "../utils";
 import { ListView } from "./ListView";
 import { CardView } from "./CardView";
 import classes from "./styles";
@@ -28,7 +29,6 @@ import {
   getColumns,
   AssetInventoryEntry,
 } from "./data";
-import { LoadingContainer } from "../LoadingContainer";
 
 const PAGE_OPTIONS = [12, 24, 36];
 
