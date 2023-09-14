@@ -33,11 +33,19 @@ const ProgressBar = ({
   );
 };
 
-const entries = {
+const entries: Partial<
+  Record<
+    keyof ModelDetails,
+    HvGridProps & {
+      label: string;
+      Component?: ComponentType<any>;
+      EditComponent?: ComponentType<any>;
+    }
+  >
+> = {
   description: {
     label: "Description",
     sm: 6,
-    Component: ({ value }) => value,
     EditComponent: ({ value }) => (
       <HvTextArea name="description" rows={3} defaultValue={value} />
     ),
@@ -87,11 +95,9 @@ const entries = {
   },
   modifiedAt: {
     label: "Last Updated",
-    Component: ({ value }) => value,
   },
   createdAt: {
     label: "Created",
-    Component: ({ value }) => value,
   },
   risk: {
     label: "Risk",
@@ -99,16 +105,7 @@ const entries = {
       <ProgressBar color="catastrophic" value={value * 100} />
     ),
   },
-} satisfies Partial<
-  Record<
-    keyof ModelDetails,
-    HvGridProps & {
-      label: string;
-      Component?: ComponentType<any>;
-      EditComponent?: ComponentType<any>;
-    }
-  >
->;
+};
 
 export const Properties = ({ editMode }: { editMode?: boolean }) => {
   const { data } = useModelData();
@@ -119,13 +116,7 @@ export const Properties = ({ editMode }: { editMode?: boolean }) => {
     const ContentComponent = (editMode && EditComponent) || Component;
 
     return (
-      <MetadataItem
-        key={key}
-        xs={12}
-        sm={3}
-        title={editMode ? null : label}
-        {...others}
-      >
+      <MetadataItem key={key} xs={12} sm={3} title={label} {...others}>
         {(ContentComponent && <ContentComponent value={value} />) || value}
       </MetadataItem>
     );
