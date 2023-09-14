@@ -1,6 +1,6 @@
 import useSWR from "swr";
 
-import { ServerPaginationProps, useServerPagination, delay } from "../../hooks";
+import { ServerPaginationProps, useServerPagination, delay } from "../../utils";
 import { ListViewEntry, createEntry, getTrendData } from "./utils";
 
 // --- Data ---

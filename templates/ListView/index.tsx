@@ -19,6 +19,7 @@ import {
   useHvFilters,
 } from "@hitachivantara/uikit-react-core";
 
+import { LoadingContainer } from "../utils";
 import { Kpi } from "./Kpi";
 import { Table } from "./Table";
 import classes from "./styles";
@@ -31,7 +32,6 @@ import {
   ListViewEntry,
   idsToControl,
 } from "./data";
-import { LoadingContainer } from "../LoadingContainer";
 
 const INIT_PAGE_SIZE = 5;
 
@@ -187,46 +187,46 @@ const ListView = () => {
         </HvGrid>
       </HvGrid>
 
-      <LoadingContainer loading={loading}>
-        <HvControls
-          className={classes.paddingTop}
-          defaultView="card"
-          callbacks={instance}
-        >
-          <HvLeftControl
-            placeholder="Search"
-            onSearch={handleSearch}
-            searchProps={{
-              inputProps: {
-                "aria-label": "Search",
-                "aria-controls": idsToControl.list,
-              },
-            }}
-          />
-          <HvRightControl hideSortBy />
-        </HvControls>
-
-        <HvBulkActions
-          className={classes.marginTop}
-          {...bulkActionProps}
-          numTotal={data.length}
-          numSelected={instance.selectedFlatRows.length}
-          maxVisibleActions={2}
-          onSelectAll={() => bulkActionProps?.onSelectAll()}
-          onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
-          actions={actions}
-          actionsDisabled={false}
-          actionsCallback={handleAction}
-          checkboxProps={{
-            "aria-controls": idsToControl.list,
+      <HvControls
+        className={classes.paddingTop}
+        defaultView="card"
+        callbacks={instance}
+      >
+        <HvLeftControl
+          placeholder="Search"
+          onSearch={handleSearch}
+          searchProps={{
+            inputProps: {
+              "aria-label": "Search",
+              "aria-controls": idsToControl.list,
+            },
           }}
         />
+        <HvRightControl hideSortBy />
+      </HvControls>
 
+      <HvBulkActions
+        className={classes.marginTop}
+        {...bulkActionProps}
+        numTotal={data.length}
+        numSelected={instance.selectedFlatRows.length}
+        maxVisibleActions={2}
+        onSelectAll={() => bulkActionProps?.onSelectAll()}
+        onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
+        actions={actions}
+        actionsDisabled={false}
+        actionsCallback={handleAction}
+        checkboxProps={{
+          "aria-controls": idsToControl.list,
+        }}
+      />
+
+      <LoadingContainer loading={loading}>
         <div className={classes.marginTop}>
           <Table instance={instance} id={idsToControl.list} />
-          {instance.page?.length ? (
+          {instance.page?.length > 1 && (
             <HvPagination {...instance.getHvPaginationProps?.()} />
-          ) : undefined}
+          )}
         </div>
       </LoadingContainer>
     </>

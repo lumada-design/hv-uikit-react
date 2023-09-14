@@ -13,13 +13,13 @@ import {
   HvPagination,
 } from "@hitachivantara/uikit-react-core";
 
+import { LoadingContainer } from "../../utils";
 import {
   PaginationDataProps,
   usePaginationData,
   DetailsViewEntry,
   getColumns,
 } from "../data";
-import { LoadingContainer } from "../../LoadingContainer";
 
 const PAGE_OPTIONS = [8, 16, 32];
 
