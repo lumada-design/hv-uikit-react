@@ -8,6 +8,7 @@ import {
   HvBannerContentProps,
   HvButton,
   HvTypography,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 import { css } from "@emotion/css";
@@ -90,19 +91,14 @@ export const Variants: StoryObj<HvBannerProps> = {
         <br />
         <HvBanner
           open
-          id="actionStructure"
           offset={0}
           label="This is a banner."
           showIcon
           actions={[{ id: "post", label: "Action", disabled: false }]}
           actionsCallback={(e, id, action) =>
-            alert(`clicked ${id} with ${action.label}`)
+            console.log(`clicked ${id} with ${action.label}`)
           }
-          className={css({
-            position: "relative",
-            top: "0px",
-            marginBottom: 10,
-          })}
+          className={css({ position: "relative", top: 0 })}
         />
         <BannerContent
           content="This is a banner with two actions."
@@ -124,12 +120,10 @@ export const Variants: StoryObj<HvBannerProps> = {
         <BannerContent
           content="This is a banner with a custom icon."
           customIcon={<Info color="base_dark" />}
-          onClose={() => {}}
         />
         <BannerContent
           content="This could be a one-line message text string with no actions on a tablet or on a desktop. This could be a two-lines message text string with no actions on a tablet or on a desktop. However, this is actually a three-lines message text string with no actions on a tablet or on a desktop."
           customIcon={<Info color="base_dark" />}
-          onClose={() => {}}
         />
       </div>
     );
@@ -172,7 +166,14 @@ export const BannerController: StoryObj<HvBannerProps> = {
             offset={10}
             variant={variant}
             showIcon
-            actions={<HvButton variant="secondaryGhost">Action</HvButton>}
+            actions={
+              <HvButton
+                variant="secondaryGhost"
+                style={{ color: theme.colors.base_dark }}
+              >
+                Action
+              </HvButton>
+            }
             bannerContentProps={{
               actionProps: { "aria-label": "Close the banner" },
             }}
@@ -183,23 +184,11 @@ export const BannerController: StoryObj<HvBannerProps> = {
     };
 
     return (
-      <div>
-        <SimpleBanner
-          id="banner1"
-          variant="default"
-          label="This is a banner."
-        />
-        <SimpleBanner
-          id="banner2"
-          variant="success"
-          label="This is a success banner."
-        />
-        <SimpleBanner
-          id="banner3"
-          variant="error"
-          label="This is an error banner."
-        />
-      </div>
+      <>
+        <SimpleBanner variant="default" label="This is a banner." />
+        <SimpleBanner variant="success" label="This is a success banner." />
+        <SimpleBanner variant="error" label="This is an error banner." />
+      </>
     );
   },
 };
