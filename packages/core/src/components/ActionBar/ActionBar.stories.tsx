@@ -1,38 +1,32 @@
-import { Meta, StoryObj } from "@storybook/react";
-import styled from "@emotion/styled";
+import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
+import { css } from "@emotion/css";
 import {
   HvButton,
   HvActionBar,
   HvActionBarProps,
-  HvDropDownMenu,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-// Common styles
-const StyledContainer = styled("div")({
-  position: "relative",
-  margin: "auto",
-  backgroundColor: theme.colors.atmo1,
-  height: "150px",
-  width: "400px",
-});
-
-const StyledSpace = styled("div")({
-  flex: 1,
-});
-
-const StyledActionBar = styled(HvActionBar)({
-  position: "absolute",
-  bottom: "0",
-});
-
-const StyledButtonSeparator = styled(HvButton)({
-  marginRight: theme.space.xs,
-});
+const containerDecorator: DecoratorFn = (Story) => (
+  <div
+    className={css({
+      position: "relative",
+      margin: "auto",
+      backgroundColor: theme.colors.atmo1,
+      height: "150px",
+      width: "400px",
+      display: "flex",
+      alignItems: "flex-end",
+    })}
+  >
+    {Story()}
+  </div>
+);
 
 const meta: Meta<typeof HvActionBar> = {
   title: "Widgets/Action Bar",
   component: HvActionBar,
+  decorators: [containerDecorator],
 };
 
 export default meta;
@@ -44,29 +38,14 @@ export const Main: StoryObj<HvActionBarProps> = {
   },
   render: () => {
     return (
-      <StyledContainer>
-        <StyledActionBar>
-          <HvButton
-            variant="secondaryGhost"
-            onClick={() => console.log("Help action")}
-          >
-            Help
-          </HvButton>
-          <StyledSpace aria-hidden="true">&nbsp;</StyledSpace>
-          <StyledButtonSeparator
-            variant="secondaryGhost"
-            onClick={() => console.log("Save action")}
-          >
-            Save
-          </StyledButtonSeparator>
-          <HvButton
-            variant="secondaryGhost"
-            onClick={() => console.log("Cancel action")}
-          >
-            Cancel
-          </HvButton>
-        </StyledActionBar>
-      </StyledContainer>
+      <HvActionBar className={css({ gap: theme.space.xs })}>
+        <HvButton variant="secondaryGhost">Help</HvButton>
+        <div style={{ flex: 1 }} aria-hidden="true">
+          &nbsp;
+        </div>
+        <HvButton variant="secondaryGhost">Save</HvButton>
+        <HvButton variant="secondaryGhost">Cancel</HvButton>
+      </HvActionBar>
     );
   },
 };
@@ -85,61 +64,10 @@ export const DualAction: StoryObj<HvActionBarProps> = {
   },
   render: () => {
     return (
-      <StyledContainer>
-        <StyledActionBar>
-          <StyledButtonSeparator
-            variant="secondaryGhost"
-            onClick={() => console.log("Save action")}
-          >
-            Save
-          </StyledButtonSeparator>
-          <HvButton
-            variant="secondaryGhost"
-            onClick={() => console.log("Cancel action")}
-          >
-            Cancel
-          </HvButton>
-        </StyledActionBar>
-      </StyledContainer>
-    );
-  },
-};
-
-export const VariedActionBar: StoryObj<HvActionBarProps> = {
-  args: {},
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: "Showcasing the action bar pattern with only two actions.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <StyledContainer>
-        <StyledActionBar>
-          <HvButton
-            variant="secondaryGhost"
-            onClick={() => console.log("Help action")}
-          >
-            Help
-          </HvButton>
-          <StyledSpace aria-hidden="true">&nbsp;</StyledSpace>
-          <StyledButtonSeparator
-            variant="secondaryGhost"
-            onClick={() => console.log("Save action")}
-          >
-            Save
-          </StyledButtonSeparator>
-          <HvDropDownMenu
-            onClick={(e, item) => console.log(item.label)}
-            dataList={[{ label: "Delete" }, { label: "Update" }]}
-          />
-        </StyledActionBar>
-      </StyledContainer>
+      <HvActionBar className={css({ gap: theme.space.xs })}>
+        <HvButton variant="secondaryGhost">Save</HvButton>
+        <HvButton variant="secondaryGhost">Cancel</HvButton>
+      </HvActionBar>
     );
   },
 };
