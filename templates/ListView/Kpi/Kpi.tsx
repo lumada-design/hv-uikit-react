@@ -70,7 +70,7 @@ export const Kpi = ({
           <HvLoading className={classes.loading} small />
         ) : (
           <div className={classes.content}>
-            <HvTypography variant="lTitle" className={classes.title}>
+            <HvTypography variant="title2" className={classes.title}>
               {count}
             </HvTypography>
             <div className={classes.variation}>

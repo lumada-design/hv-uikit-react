@@ -354,7 +354,7 @@ export const KPICard: StoryObj<HvCardProps> = {
     return (
       <Grid container role="grid" aria-label="Select one card">
         <Grid container role="row">
-          <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
+          <Grid item xs={12} md={4}>
             <StyledCard
               statusColor="neutral"
               selectable
@@ -367,7 +367,7 @@ export const KPICard: StoryObj<HvCardProps> = {
               <CardFooter n={1} value="85" />
             </StyledCard>
           </Grid>
-          <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
+          <Grid item xs={12} md={4}>
             <StyledCard
               statusColor="warning"
               selectable
@@ -383,7 +383,7 @@ export const KPICard: StoryObj<HvCardProps> = {
               <CardFooter n={2} value="84" />
             </StyledCard>
           </Grid>
-          <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
+          <Grid item xs={12} md={4}>
             <StyledCard
               statusColor="negative"
               selectable
