@@ -1,9 +1,6 @@
-import { useState } from "react";
-
 import { css } from "@emotion/css";
 
 import { Meta, StoryObj } from "@storybook/react";
-import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 
 import {
   HvButton,
@@ -17,28 +14,19 @@ import {
 const meta: Meta<typeof HvDrawer> = {
   title: "Widgets/Drawer",
   component: HvDrawer,
+  decorators: [(Story) => <div style={{ minHeight: 600 }}>{Story()}</div>],
 };
 export default meta;
 
 export const Main: StoryObj<HvDrawerProps> = {
   args: {
     anchor: "right",
+    open: true,
   },
   argTypes: {
     classes: { control: { disable: true } },
   },
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button"));
-
-        return waitFor(() => screen.getByText("Lorem Ipsum"));
-      },
-    },
-  },
   render: (args) => {
-    const [open, setOpen] = useState(false);
-
     const drawerWidth = "60%";
 
     const classes = {
@@ -59,43 +47,32 @@ export const Main: StoryObj<HvDrawerProps> = {
     };
 
     return (
-      <div>
-        <HvButton onClick={() => setOpen(true)}>Open drawer</HvButton>
-        <HvDrawer
-          open={open}
-          disablePortal
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-          anchor={args.anchor}
-          onClose={() => setOpen(false)}
-        >
-          <HvDialogTitle classes={{ root: classes.drawerTitle }}>
-            Lorem Ipsum
-          </HvDialogTitle>
-          <HvDialogContent className={classes.drawerContent}>
-            {[...new Array(30)]
-              .map(
-                () => `Cras mattis consectetur purus sit amet fermentum. 
+      <HvDrawer
+        disablePortal
+        variant="persistent"
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+        {...args}
+      >
+        <HvDialogTitle classes={{ root: classes.drawerTitle }}>
+          Lorem Ipsum
+        </HvDialogTitle>
+        <HvDialogContent className={classes.drawerContent}>
+          {[...new Array(30)]
+            .map(
+              () => `Cras mattis consectetur purus sit amet fermentum. 
                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. 
                   Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
                   Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-              )
-              .join("\n")}
-          </HvDialogContent>
-          <HvDialogActions>
-            <HvButton
-              variant="primaryGhost"
-              onClick={() => console.log("Submit action")}
-            >
-              Submit
-            </HvButton>
-            <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
-              Cancel
-            </HvButton>
-          </HvDialogActions>
-        </HvDrawer>
-      </div>
+            )
+            .join("\n")}
+        </HvDialogContent>
+        <HvDialogActions>
+          <HvButton variant="primaryGhost">Submit</HvButton>
+          <HvButton variant="secondaryGhost">Cancel</HvButton>
+        </HvDialogActions>
+      </HvDrawer>
     );
   },
 };

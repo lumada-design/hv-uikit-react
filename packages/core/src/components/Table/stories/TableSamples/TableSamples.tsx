@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { StoryObj } from "@storybook/react";
 import { screen, waitFor } from "@storybook/testing-library";
 import { useFlexLayout, useBlockLayout, useAbsoluteLayout } from "react-table";
 import {
@@ -30,12 +30,6 @@ import { makeData, getColumns, AssetEvent } from "../storiesUtils";
 
 import { TableComplete } from "./TableCompleteSample";
 import TableCompleteRaw from "./TableCompleteSample?raw";
-
-export default {
-  component: HvTable,
-  title: "Guides/Table/Table Samples",
-  parameters: { docs: { disabled: true }, sidebar: { disabled: true } },
-} satisfies Meta<typeof HvTable>;
 
 export const CompleteStory: StoryObj = {
   parameters: {

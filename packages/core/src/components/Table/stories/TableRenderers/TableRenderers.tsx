@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { StoryObj } from "@storybook/react";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 import {
   HvTable,
@@ -29,12 +29,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
-
-export default {
-  component: HvTable,
-  title: "Guides/Table/Table Renderers/Samples",
-  parameters: { docs: { disabled: true }, sidebar: { disabled: true } },
-} satisfies Meta<typeof HvTable>;
 
 const EmptyRow = ({ height }) => (
   <HvTableRow>

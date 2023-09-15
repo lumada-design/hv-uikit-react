@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useMemo, useState } from "react";
 import range from "lodash/range";
-import { Meta, StoryObj } from "@storybook/react";
+import type { StoryObj } from "@storybook/react";
 import { useGroupBy } from "react-table";
 import {
   HvTable,
@@ -40,12 +40,6 @@ import {
   getGroupedColumns,
   AssetEvent,
 } from "../storiesUtils";
-
-export default {
-  component: HvTable,
-  title: "Guides/Table/Table Hooks/Samples",
-  parameters: { docs: { disabled: true }, sidebar: { disabled: true } },
-} satisfies Meta<typeof HvTable>;
 
 const UseHvHooks = () => {
   const data = useMemo(() => makeData(6), []);

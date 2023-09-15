@@ -5,8 +5,7 @@ export const templateDecorator: DecoratorFn = (Story) => (
   <>
     <Global
       styles={{
-        // Hide the args table
-        ".docblock-argstable, .docblock-emptyblock": {
+        ".sbdocs-content > div:last-of-type": {
           display: "none !important",
         },
       }}
