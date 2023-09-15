@@ -7,7 +7,10 @@ import { baseInputClasses } from "@core/components/BaseInput";
 import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
-  input: {},
+  input: {
+    width: "100%",
+    ...theme.typography.caption1,
+  },
   listItemGutters: { padding: "0 5px" },
   listItemRoot: {
     marginBottom: 2,
@@ -120,7 +123,7 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
 
     "&$singleLine": {
       display: "table-cell",
-      minWidth: 100,
+      minWidth: 60,
       width: "100%",
       paddingTop: "3px",
       verticalAlign: "middle",
@@ -138,7 +141,6 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
       marginLeft: 0,
       marginRight: 0,
       flex: "1 1 auto",
-      minWidth: 48,
       height: 24,
       lineHeight: "24px",
       padding: 0,
