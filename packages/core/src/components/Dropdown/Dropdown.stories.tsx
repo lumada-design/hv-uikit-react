@@ -1,5 +1,7 @@
-import styled from "@emotion/styled";
-import { Meta, StoryObj } from "@storybook/react";
+import { useEffect, useMemo, useState } from "react";
+import { css } from "@emotion/css";
+import { fireEvent, screen, waitFor } from "@storybook/testing-library";
+import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
 import {
   Priority1,
   Priority2,
@@ -15,14 +17,22 @@ import {
   HvListValue,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { useEffect, useMemo, useState } from "react";
+
+const widthDecorator: DecoratorFn = (Story) => (
+  <div style={{ minHeight: 120, width: 310 }}>{Story()}</div>
+);
 
 export default {
   title: "Components/Dropdown",
   component: HvDropdown,
-  decorators: [
-    (Story) => <div style={{ padding: 10, height: 600 }}>{Story()}</div>,
-  ],
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("combobox"));
+        return waitFor(() => screen.getByRole("listbox"));
+      },
+    },
+  },
 } as Meta<typeof HvDropdown>;
 
 export const Main: StoryObj<HvDropdownProps> = {
@@ -32,7 +42,7 @@ export const Main: StoryObj<HvDropdownProps> = {
     disabled: false,
     readOnly: false,
     required: false,
-    expanded: true,
+    defaultExpanded: true,
     notifyChangesOnFirstRender: false,
     hasTooltips: false,
     variableWidth: false,
@@ -45,29 +55,62 @@ export const Main: StoryObj<HvDropdownProps> = {
     label: { control: { disable: true } },
     popperProps: { control: { disable: true } },
   },
-  render: (args) => {
-    return (
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          aria-label="Main sample"
-          values={[
-            { label: "value 1" },
-            { label: "value 2", selected: true },
-            { label: "value 3" },
-            { label: "value 4" },
-          ]}
-          {...args}
-        />
-      </div>
-    );
+  parameters: {
+    eyes: {
+      runBefore() {},
+    },
   },
+  decorators: [
+    widthDecorator,
+    (Story) => <div style={{ minHeight: 400 }}>{Story()}</div>,
+  ],
+  render: (args) => (
+    <HvDropdown
+      label="Select values"
+      values={[
+        { label: "value 1" },
+        { label: "value 2", selected: true },
+        { label: "value 3" },
+        { label: "value 4" },
+      ]}
+      {...args}
+    />
+  ),
 };
 
-const StyledSpan = styled("span")({
-  lineHeight: "32px",
-  display: "flex",
-  alignItems: "center",
-});
+export const Variants: StoryObj<HvDropdownProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Dropdown in their various form state variants.",
+      },
+    },
+  },
+  decorators: [
+    (Story) => (
+      <div
+        className={css({
+          display: "flex",
+          flexFlow: "row wrap",
+          gap: 16,
+          "& > *": {
+            width: 200,
+          },
+        })}
+      >
+        {Story()}
+      </div>
+    ),
+  ],
+  render: () => (
+    <>
+      <HvDropdown required label="Required" />
+      <HvDropdown disabled label="Disabled" />
+      <HvDropdown readOnly label="Read-only" />
+      <HvDropdown status="invalid" label="Invalid" />
+    </>
+  ),
+};
 
 const PriorityIcon = ({
   Icon,
@@ -76,47 +119,46 @@ const PriorityIcon = ({
   Icon: React.ElementType;
   label: string;
 }) => (
-  <StyledSpan>
+  <span
+    className={css({
+      lineHeight: "32px",
+      display: "flex",
+      alignItems: "center",
+    })}
+  >
     <Icon
-      style={{ float: "left", width: 22, height: 22, margin: "5px 5px 5px 0" }}
+      iconSize={{ width: 22, height: 22 }}
+      className={css({ float: "left", margin: "5px 5px 5px 0" })}
     />
     <h3>{label}</h3>
-  </StyledSpan>
+  </span>
 );
 
 export const WithIcons: StoryObj<HvDropdownProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Dropdown with icons along with labels",
+        story: "Single selection Dropdown with icons along with labels",
       },
     },
   },
+  decorators: [widthDecorator],
   render: (args) => {
     const [values, setValues] = useState<HvListValue[]>([]);
 
     useEffect(() => {
-      setValues([
-        { label: <PriorityIcon Icon={Priority1} label="Priority P1" /> },
-        {
-          label: <PriorityIcon Icon={Priority2} label="Priority P2" />,
-          selected: true,
-        },
-        { label: <PriorityIcon Icon={Priority3} label="Priority P3" /> },
-        { label: <PriorityIcon Icon={Priority4} label="Priority P4" /> },
-        { label: <PriorityIcon Icon={Priority5} label="Priority P5" /> },
-      ]);
+      const icons = [Priority1, Priority2, Priority3, Priority4, Priority5];
+
+      setValues(
+        icons.map((Icon, i) => ({
+          id: `p${i + 1}`,
+          label: <PriorityIcon Icon={Icon} label={`Priority P${i + 1}`} />,
+        }))
+      );
     }, []);
 
     return (
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          expanded
-          aria-label="Dropdown With Icons"
-          values={values}
-          {...args}
-        />
-      </div>
+      <HvDropdown aria-label="Dropdown With Icons" values={values} {...args} />
     );
   },
 };
@@ -128,84 +170,27 @@ export const Empty: StoryObj<HvDropdownProps> = {
         story: "Dropdown with no values",
       },
     },
+    eyes: { include: false },
   },
-  render: () => {
-    return (
-      <div style={{ width: 310 }}>
-        <HvDropdown expanded id="dropdown1" aria-label="Empty" />
-      </div>
-    );
-  },
-};
-
-export const SingleSelection: StoryObj<HvDropdownProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Support ids to manage selection",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          id="dropdown7"
-          aria-label="Single selection"
-          expanded
-          onChange={(item) => console.log(item)}
-          values={[
-            { id: "id-1", label: "value 1", selected: true },
-            { id: "id-2", label: "value 2" },
-            { id: "id-3", label: "value 3" },
-            { id: "id-4", label: "value 4" },
-          ]}
-        />
-      </div>
-    );
-  },
+  decorators: [widthDecorator],
+  render: () => <HvDropdown aria-label="Empty" />,
 };
 
 export const MultiSelection: StoryObj<HvDropdownProps> = {
+  decorators: [widthDecorator],
   render: () => {
     return (
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          id="dropdown2"
-          multiSelect
-          showSearch
-          expanded
-          label="Dropdown Title"
-          values={[
-            { label: "value 1" },
-            { label: "value 2", selected: true },
-            { label: "value 3" },
-            { label: "value 4" },
-          ]}
-        />
-      </div>
-    );
-  },
-};
-
-export const MultiSelectionNoSearch: StoryObj<HvDropdownProps> = {
-  render: () => {
-    return (
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          id="dropdown5"
-          aria-label="No search"
-          onChange={(item) => console.log(item)}
-          expanded
-          multiSelect
-          values={[
-            { id: "id-1", label: "value 1" },
-            { id: "id-2", label: "value 1", selected: true },
-            { id: "id-3", label: "value 3" },
-            { id: "id-4", label: "value 4" },
-          ]}
-        />
-      </div>
+      <HvDropdown
+        multiSelect
+        showSearch
+        label="Dropdown Title"
+        values={[
+          { label: "value 1" },
+          { label: "value 2", selected: true },
+          { label: "value 3" },
+          { label: "value 4" },
+        ]}
+      />
     );
   },
 };
@@ -219,172 +204,19 @@ export const SingleSelectionWithSearch: StoryObj<HvDropdownProps> = {
       },
     },
   },
-  render: () => {
-    return (
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          id="dropdown6"
-          aria-label="With search"
-          showSearch
-          expanded
-          values={[
-            { label: "value 1" },
-            { label: "value 2", selected: true },
-            { label: "value 3" },
-            { label: "value 4" },
-          ]}
-        />
-      </div>
-    );
-  },
-};
-
-export const SingleSelectionNoSelection: StoryObj<HvDropdownProps> = {
-  render: () => {
-    return (
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          id="dropdown8"
-          aria-label="No default"
-          expanded
-          hasTooltips
-          disablePortal
-          values={[
-            { label: "value 1" },
-            { label: "value 2" },
-            { label: "value 3" },
-            { label: "value 4" },
-            {
-              label:
-                "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5",
-            },
-          ]}
-        />
-      </div>
-    );
-  },
-};
-
-const StyledDropdown = styled(HvDropdown)({
-  width: "180px",
-});
-
-export const DifferentSizeAndPlacements: StoryObj<HvDropdownProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Dropdown defined with a specific width and with different placements.",
-      },
-    },
-    eyes: { include: false },
-  },
-  render: () => {
-    const data = [
-      {
-        label: "value 1",
-        selected: false,
-      },
-      {
-        label: "value 2",
-        selected: false,
-      },
-    ];
-
-    return (
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div>
-          <StyledDropdown
-            id="dropdown1"
-            aria-label="Left"
-            values={data}
-            multiSelect
-            showSearch
-            disablePortal
-            placement="right"
-          />
-        </div>
-        <div>
-          <StyledDropdown
-            id="dropdown2"
-            aria-label="Right"
-            values={data}
-            multiSelect
-            showSearch
-            disablePortal
-            placement="left"
-          />
-        </div>
-      </div>
-    );
-  },
-};
-
-export const Disabled: StoryObj<HvDropdownProps> = {
-  render: () => {
-    return (
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          id="dropdown9"
-          disabled
-          multiSelect
-          aria-label="text"
-          disablePortal
-          values={[
-            { label: "value 1", selected: false },
-            { label: "value 2", selected: false },
-            { label: "value 3", selected: true },
-            { label: "value 4", selected: false },
-            {
-              label: "value 5 value 5 value 5 555555555555 value value 5",
-              selected: false,
-            },
-            { label: "value 6" },
-            { label: "value 7" },
-            { label: "value 8", selected: true },
-            { label: "value 9", selected: true },
-            { label: "value 10" },
-            { label: "value 11" },
-            { label: "value 12" },
-          ]}
-        />
-      </div>
-    );
-  },
-};
-
-export const Invalid: StoryObj<HvDropdownProps> = {
-  render: () => {
-    return (
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          id="dropdown9"
-          status="invalid"
-          statusMessage="The selection is invalid"
-          multiSelect
-          aria-label="text"
-          disablePortal
-          values={[
-            { label: "value 1", selected: false },
-            { label: "value 2", selected: false },
-            { label: "value 3", selected: true },
-            { label: "value 4", selected: false },
-            {
-              label: "value 5 value 5 value 5 555555555555 value value 5",
-              selected: false,
-            },
-            { label: "value 6" },
-            { label: "value 7" },
-            { label: "value 8", selected: true },
-            { label: "value 9", selected: true },
-            { label: "value 10" },
-            { label: "value 11" },
-            { label: "value 12" },
-          ]}
-        />
-      </div>
-    );
-  },
+  decorators: [widthDecorator],
+  render: () => (
+    <HvDropdown
+      aria-label="With search"
+      showSearch
+      values={[
+        { label: "value 1" },
+        { label: "value 2", selected: true },
+        { label: "value 3" },
+        { label: "value 4" },
+      ]}
+    />
+  ),
 };
 
 export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
@@ -429,54 +261,53 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={5} container>
-          <HvGrid item xs={12}>
-            <HvDropdown
-              label="Dropdown 1"
-              multiSelect
-              values={values1}
-              required
-              aria-errormessage="birth-error"
-              onChange={(value) => {
-                if ((value as HvListValue[]).length === 0) {
-                  setBirthErrorMessage(
-                    "Select at least one value from dropdown 1."
-                  );
-                } else {
-                  setBirthErrorMessage(null);
-                }
-              }}
-            />
-          </HvGrid>
-          <HvGrid item xs={12}>
-            <HvDropdown
-              label="Dropdown 2"
-              multiSelect
-              values={values2}
-              required
-              status={deathValidationState as HvDropdownStatus}
-              aria-errormessage="death-error"
-              onChange={(value) => {
-                setDeathValidationState("invalid");
-
-                if ((value as HvListValue[]).length === 0) {
-                  setDeathErrorMessage(
-                    "Select at least one value from dropdown 2."
-                  );
-                } else {
-                  setDeathErrorMessage(
-                    `Dropdown 2 is always invalid, even with ${
-                      (value as HvListValue[]).length
-                    } items selected.`
-                  );
-                }
-              }}
-            />
-          </HvGrid>
+        <HvGrid item xs={12} sm={6}>
+          <HvDropdown
+            label="Dropdown 1"
+            multiSelect
+            values={values1}
+            required
+            aria-errormessage="birth-error"
+            onChange={(value) => {
+              if ((value as HvListValue[]).length === 0) {
+                setBirthErrorMessage(
+                  "Select at least one value from dropdown 1."
+                );
+              } else {
+                setBirthErrorMessage(null);
+              }
+            }}
+          />
         </HvGrid>
-        <HvGrid item xs={7}>
+        <HvGrid item xs={12} sm={6}>
+          <HvDropdown
+            label="Dropdown 2"
+            multiSelect
+            values={values2}
+            required
+            status={deathValidationState as HvDropdownStatus}
+            aria-errormessage="death-error"
+            onChange={(value) => {
+              setDeathValidationState("invalid");
+
+              if ((value as HvListValue[]).length === 0) {
+                setDeathErrorMessage(
+                  "Select at least one value from dropdown 2."
+                );
+              } else {
+                setDeathErrorMessage(
+                  `Dropdown 2 is always invalid, even with ${
+                    (value as HvListValue[]).length
+                  } items selected.`
+                );
+              }
+            }}
+          />
+        </HvGrid>
+        <HvGrid item xs={12}>
           <div
             style={{
+              maxWidth: 600,
               paddingTop: "10px",
               paddingLeft: "20px",
               backgroundColor: theme.colors.negative_20,
@@ -509,76 +340,31 @@ export const WithDefinedHeight: StoryObj<HvDropdownProps> = {
     docs: {
       description: {
         story:
-          "Experimental Dropdown with height defined. Note: only validated in the single selection use-case.",
+          "Dropdown's height can be configured using `height` (or `maxHeight`). Note: only validated in the single selection use-case.",
       },
     },
     eyes: { include: false },
   },
+  decorators: [widthDecorator],
   render: () => {
-    const values1: any[] = [];
-    for (let i = 0; i < 100; i += 1) {
-      values1.push({
-        id: `${i}`,
-        label: `value  ${i}`,
-      });
-    }
+    const values = [...Array(100)].map((_, i) => ({
+      id: `${i}`,
+      label: `value  ${i}`,
+    }));
 
     return (
-      <HvGrid container>
-        <HvGrid item xs={5} container>
-          <HvGrid item xs={12}>
-            <HvDropdown
-              aria-label="With defined height"
-              values={values1}
-              height={350}
-              hasTooltips
-              showSearch
-            />
-          </HvGrid>
-        </HvGrid>
-      </HvGrid>
+      <HvDropdown
+        aria-label="With defined height"
+        values={values}
+        height={350}
+        hasTooltips
+        showSearch
+      />
     );
   },
 };
 
-export const WithMaxHeight: StoryObj<HvDropdownProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Experimental Dropdown with max height defined. Note: only validated in the single selection use-case.",
-      },
-    },
-    eyes: { include: false },
-  },
-  render: () => {
-    const values1: any[] = [];
-    for (let i = 0; i < 4; i += 1) {
-      values1.push({
-        id: `${i}`,
-        label: `value  ${i}`,
-      });
-    }
-
-    return (
-      <HvGrid container>
-        <HvGrid item xs={5} container>
-          <HvGrid item xs={12}>
-            <HvDropdown
-              aria-label="With max height"
-              values={values1}
-              maxHeight={350}
-              hasTooltips
-              showSearch
-            />
-          </HvGrid>
-        </HvGrid>
-      </HvGrid>
-    );
-  },
-};
-
-export const WithMoreThan1000Items: StoryObj<HvDropdownProps> = {
+export const Virtualized: StoryObj<HvDropdownProps> = {
   parameters: {
     docs: {
       description: {
@@ -588,31 +374,22 @@ export const WithMoreThan1000Items: StoryObj<HvDropdownProps> = {
     },
     eyes: { include: false },
   },
-
+  decorators: [widthDecorator],
   render: () => {
-    const values1: any[] = [];
-    for (let i = 0; i < 1500; i += 1) {
-      values1.push({
-        id: `${i}`,
-        label: `value  ${i}`,
-      });
-    }
+    const values = [...Array(1500)].map((_, i) => ({
+      id: `${i}`,
+      label: `value  ${i}`,
+    }));
 
     return (
-      <HvGrid container>
-        <HvGrid item xs={5} container>
-          <HvGrid item xs={12}>
-            <HvDropdown
-              aria-label="More than 1000 items"
-              values={values1}
-              virtualized
-              height={350}
-              hasTooltips
-              showSearch
-            />
-          </HvGrid>
-        </HvGrid>
-      </HvGrid>
+      <HvDropdown
+        aria-label="More than 1000 items"
+        values={values}
+        virtualized
+        height={350}
+        hasTooltips
+        showSearch
+      />
     );
   },
 };
