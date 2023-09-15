@@ -20,22 +20,6 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-const overflowDecorator: DecoratorFn = (Story) => (
-  <>
-    <Global
-      styles={{
-        ".sbdocs.sbdocs-preview": {
-          overflow: "visible",
-          "& > div, & > div > div": {
-            overflow: "visible",
-          },
-        },
-      }}
-    />
-    {Story()}
-  </>
-);
-
 const containerDecorator: DecoratorFn = (Story) => (
   <div className={cx("decorator", css({ width: 340, padding: 10 }))}>
     {Story()}
@@ -53,7 +37,7 @@ const meta: Meta<typeof HvDatePicker> = {
   title: "Components/Date Picker",
   subcomponents: { HvCalendar },
   component: HvDatePicker,
-  decorators: [overflowDecorator, containerDecorator],
+  decorators: [containerDecorator],
 };
 export default meta;
 

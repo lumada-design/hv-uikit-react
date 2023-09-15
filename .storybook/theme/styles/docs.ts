@@ -21,6 +21,11 @@ export const getDocsStyles = () => {
       },
 
       ".sbdocs-preview": {
+        overflow: "visible",
+        "& > div, & > div > div": {
+          overflow: "visible",
+        },
+
         borderColor: colors.atmo3,
 
         "& .os-content>pre": {
