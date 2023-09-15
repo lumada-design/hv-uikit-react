@@ -17,16 +17,17 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
     zIndex: `calc(${theme.zIndices.banner} - 2)`,
     top: 0,
     left: 0,
+    padding: theme.spacing(1, 0),
+    backdropFilter: "blur(1px)",
+
     "&:before": {
       content: "''",
       display: "flex",
-      width: "100%",
-      height: 72,
-      top: 0,
+      position: "absolute",
+      inset: 0,
       background: theme.colors.atmo2,
       opacity: "75%",
     },
-    backdropFilter: "blur(1px)",
   },
   wrapper: {
     padding: theme.space.sm,
@@ -37,12 +38,11 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
     borderRadius: theme.globalActions.borderRadius,
   },
   globalWrapperComplement: {
-    position: "absolute",
+    position: "relative",
     top: 0,
     left: 0,
     background: theme.colors.atmo1,
     width: "100%",
-    marginTop: theme.space.xs,
   },
   globalSectionArea: {
     backgroundColor: theme.globalActions.sectionBackgroundColor,

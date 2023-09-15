@@ -119,7 +119,7 @@ export const GlobalVariant: StoryObj<HvGlobalActionsProps> = {
   },
   render: () => {
     const customTitle = (
-      <HvTypography variant="title3" component="h1">
+      <HvTypography variant="title2" component="h1">
         Detail Page Title
       </HvTypography>
     );
