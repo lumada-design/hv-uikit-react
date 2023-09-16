@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.27.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.3...@hitachivantara/uikit-react-core@5.27.4) (2023-09-16)
+
+### Bug Fixes
+
+- **GlobalActions:** empty space same as container ([16b052a](https://github.com/lumada-design/hv-uikit-react/commit/16b052a8b7d28f2546edc22893e26946cdd9c9ce))
+- **TagsInput:** fix incorrect tags layout ([6c35a29](https://github.com/lumada-design/hv-uikit-react/commit/6c35a299436f9414b7357698bdf7bfaa54449b78))
+
 ## [5.27.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.2...@hitachivantara/uikit-react-core@5.27.3) (2023-09-13)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
