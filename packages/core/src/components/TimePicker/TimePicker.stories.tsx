@@ -18,7 +18,7 @@ import { CSSInterpolation, css } from "@emotion/css";
 export default {
   title: "Components/Time Picker",
   component: HvTimePicker,
-} as Meta<typeof HvTimePicker>;
+} satisfies Meta<typeof HvTimePicker>;
 
 const makeDecorator = (styles: CSSProperties) => (Story) =>
   <div style={styles}>{Story()}</div>;

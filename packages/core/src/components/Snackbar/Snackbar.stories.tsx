@@ -13,9 +13,8 @@ import { css } from "@emotion/css";
 const meta: Meta<typeof HvSnackbar> = {
   title: "Components/Snackbar",
   component: HvSnackbar,
-  subcomponents: {
-    HvSnackbarContent,
-  },
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
+  subcomponents: { HvSnackbarContent },
   decorators: [(Story) => <div style={{ minHeight: 60 }}>{Story()}</div>],
   args: {
     offset: 20,

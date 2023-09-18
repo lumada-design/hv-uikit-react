@@ -15,6 +15,7 @@ export interface HvIconSpriteProps
   iconName: string;
 }
 
+/** The HvIconSprite component is used to display SVG icons from a sprite sheet. */
 export const HvIconSprite = ({
   spriteUrl,
   iconName,

@@ -7,12 +7,8 @@ import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Foundation/Icons/Sprites",
-  parameters: {
-    componentSubtitle:
-      "The HvIconSprite component is used to display SVG icons from a sprite sheet.",
-  },
   component: HvIconSprite,
-} as Meta<typeof HvIconSprite>;
+} satisfies Meta<typeof HvIconSprite>;
 
 export const Main: StoryObj<HvIconSpriteProps> = {
   args: {

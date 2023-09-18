@@ -33,7 +33,7 @@ export default {
       },
     },
   },
-} as Meta<typeof HvDropdown>;
+} satisfies Meta<typeof HvDropdown>;
 
 export const Main: StoryObj<HvDropdownProps> = {
   args: {

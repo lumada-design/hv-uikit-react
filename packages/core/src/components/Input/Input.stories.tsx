@@ -36,6 +36,7 @@ const showcaseDecorator: DecoratorFn = (Story) => (
 const meta: Meta<typeof HvInput> = {
   title: "Components/Input",
   component: HvInput,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvBaseInput },
 };
 export default meta;

@@ -107,6 +107,7 @@ const SimpleDialog = ({
 const meta: Meta<typeof HvDialog> = {
   title: "Components/Dialog",
   component: HvDialog,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvDialogTitle, HvDialogContent, HvDialogActions },
   decorators: [(Story) => <div style={{ height: 250 }}>{Story()}</div>],
 };
