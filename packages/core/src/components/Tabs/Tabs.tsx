@@ -21,6 +21,10 @@ export interface HvTabsProps extends Omit<MuiTabsProps, "onChange"> {
    * A Jss Object used to override or extend the component styles.
    */
   classes?: HvTabsClasses;
+  /** @ignore */
+  ref?: MuiTabsProps["ref"];
+  /** @ignore */
+  component?: MuiTabsProps["component"];
 }
 
 /**

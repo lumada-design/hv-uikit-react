@@ -31,6 +31,17 @@ export default meta;
 
 export const Main: StoryObj<HvSliderProps> = {
   args: { label: "Failure Rate", defaultValues: [10] },
+  argTypes: {
+    classes: { control: { disable: true } },
+    sliderProps: { control: { disable: true } },
+    status: { control: { disable: true } },
+    statusMessage: { control: { disable: true } },
+    values: { control: { disable: true } },
+    knobProperties: { control: { disable: true } },
+    markProperties: { control: { disable: true } },
+    inputProps: { control: { disable: true } },
+    knobProps: { control: { disable: true } },
+  },
   render: (args) => {
     return <HvSlider id="Main" {...args} />;
   },

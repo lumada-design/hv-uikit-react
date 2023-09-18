@@ -41,7 +41,11 @@ export const Main: StoryObj<HvRadioProps> = {
     status: "standBy",
     statusMessage: "This is Invalid",
   },
-  argTypes: {},
+  argTypes: {
+    classes: { control: { disable: true } },
+    labelProps: { control: { disable: true } },
+    inputProps: { control: { disable: true } },
+  },
   render: (args) => {
     return <HvRadio {...args} />;
   },

@@ -18,6 +18,9 @@ const meta: Meta<typeof HvGrid> = {
 export default meta;
 
 export const Main: StoryObj<HvGridProps> = {
+  argTypes: {
+    classes: { control: { disable: true } },
+  },
   render: () => {
     const StyledItem = styled("div")({
       padding: theme.space.sm,

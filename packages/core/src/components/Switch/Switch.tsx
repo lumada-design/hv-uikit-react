@@ -28,17 +28,9 @@ export interface HvSwitchProps
   extends Omit<MuiSwitchProps, "onChange" | "classes">,
     HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
   /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
    * A Jss Object used to override or extend the styles applied to the switch.
    */
   classes?: HvSwitchClasses;
-  /**
-   * Id to be applied to the form element root node.
-   */
-  id?: string;
   /**
    * The form element name.
    */
@@ -59,18 +51,6 @@ export interface HvSwitchProps
    * If not provided, an aria-label or aria-labelledby must be inputted via inputProps.
    */
   label?: React.ReactNode;
-  /**
-   * @ignore
-   */
-  "aria-label"?: string;
-  /**
-   * @ignore
-   */
-  "aria-labelledby"?: string;
-  /**
-   * @ignore
-   */
-  "aria-describedby"?: string;
   /**
    * Properties passed on to the label element.
    */
@@ -126,6 +106,10 @@ export interface HvSwitchProps
    * Properties passed on to the input element.
    */
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  /** @ignore */
+  ref?: MuiSwitchProps["ref"];
+  /** @ignore */
+  component?: MuiSwitchProps["component"];
 }
 
 /**

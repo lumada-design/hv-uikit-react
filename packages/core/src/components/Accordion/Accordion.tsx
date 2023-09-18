@@ -24,19 +24,11 @@ export { staticClasses as accordionClasses };
 export type HvAccordionClasses = ExtractNames<typeof useClasses>;
 
 export interface HvAccordionProps
-  extends HvBaseProps<HTMLDivElement, "onChange"> {
+  extends HvBaseProps<HTMLDivElement, "onChange" | "children"> {
   /**
-   * Id to be applied to the root node of the accordion.
+   * Content to be rendered
    */
-  id?: string;
-  /**
-   * Class names to be applied to the accordion.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied.
-   */
-  classes?: HvAccordionClasses;
+  children: React.ReactNode;
   /**
    * The accordion label button.
    */
@@ -70,9 +62,9 @@ export interface HvAccordionProps
    */
   labelVariant?: HvTypographyVariants;
   /**
-   * Content to be rendered
+   * A Jss Object used to override or extend the styles applied.
    */
-  children: React.ReactNode;
+  classes?: HvAccordionClasses;
 }
 
 /**

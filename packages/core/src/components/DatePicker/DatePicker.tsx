@@ -53,19 +53,6 @@ export type HvDatePickerStatus = HvFormStatus;
 export interface HvDatePickerProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the component styles applied.
-   */
-  classes?: HvDatePickerClasses;
-  /**
-   * Id to be applied to the form element root node.
-   */
-  id?: string;
-
-  /**
    * The form element name.
    */
   name?: string;
@@ -77,26 +64,13 @@ export interface HvDatePickerProps
    */
   label?: React.ReactNode;
   /**
-   * @ignore
-   */
-  "aria-label"?: string;
-  /**
-   * @ignore
-   */
-  "aria-labelledby"?: string;
-  /**
    * Provide additional descriptive text for the form element.
    */
   description?: React.ReactNode;
   /**
-   * @ignore
-   */
-  "aria-describedby"?: string;
-  /**
    * The placeholder value when nothing is selected.
    */
   placeholder?: string;
-
   /**
    * Indicates that the form element is disabled.
    */
@@ -105,7 +79,6 @@ export interface HvDatePickerProps
    * Indicates that user input is required on the form element.
    */
   required?: boolean;
-
   /**
    * The status of the form element.
    *
@@ -127,7 +100,6 @@ export interface HvDatePickerProps
    * Will only be used when the validation status is invalid.
    */
   "aria-errormessage"?: string;
-
   /**
    * The callback fired when the value changes.
    */
@@ -161,7 +133,6 @@ export interface HvDatePickerProps
      */
     invalidDateLabel?: string;
   };
-
   /**
    * The initial value of the input when in single calendar mode.
    */
@@ -188,7 +159,6 @@ export interface HvDatePickerProps
    * The calendar locale. If undefined, it uses calendar default
    */
   locale?: string;
-
   /**
    * Controls if actions buttons are visible at the calendar.
    */
@@ -222,6 +192,10 @@ export interface HvDatePickerProps
    * Additional props passed to the HvCalendar component.
    */
   calendarProps?: Partial<HvCalendarProps>;
+  /**
+   * A Jss Object used to override or extend the component styles applied.
+   */
+  classes?: HvDatePickerClasses;
 }
 
 /**

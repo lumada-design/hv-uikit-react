@@ -24,8 +24,6 @@ export type HvDialogClasses = ExtractNames<typeof useClasses>;
 export interface HvDialogProps
   extends Omit<MuiDialogProps, "fullScreen" | "classes" | "open">,
     HvBaseProps {
-  /** Id to be applied to the root node. */
-  id?: string;
   /** Current state of the Dialog. */
   open?: boolean;
   /** Function executed on close. */
@@ -53,6 +51,10 @@ export interface HvDialogProps
   classes?: HvDialogClasses;
   /** Variant of the dialog. Adds a status bar to the top of the dialog. If not provided, no status bar is added. */
   variant?: "success" | "error" | "warning";
+  /** @ignore */
+  ref?: MuiDialogProps["ref"];
+  /** @ignore */
+  component?: MuiDialogProps["component"];
 }
 
 export const HvDialog = (props: HvDialogProps) => {

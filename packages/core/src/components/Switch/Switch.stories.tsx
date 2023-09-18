@@ -45,6 +45,8 @@ export const Main: StoryObj<HvSwitchProps> = {
   argTypes: {
     classes: { control: { disable: true } },
     labelProps: { control: { disable: true } },
+    status: { control: { disable: true } },
+    inputProps: { control: { disable: true } },
   },
   render: (args) => {
     return <HvSwitch {...args} />;

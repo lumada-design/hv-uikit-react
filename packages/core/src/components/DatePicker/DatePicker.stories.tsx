@@ -43,6 +43,8 @@ export default meta;
 
 export const Main: StoryObj<HvDatePickerProps> = {
   args: {
+    placeholder: "Select date",
+    label: "Date",
     disabled: false,
     required: false,
     status: "standBy",
@@ -55,9 +57,18 @@ export const Main: StoryObj<HvDatePickerProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+    statusMessage: { control: { disable: true } },
+    description: { control: { disable: true } },
+    labels: { control: { disable: true } },
+    value: { control: { disable: true } },
+    startValue: { control: { disable: true } },
+    endValue: { control: { disable: true } },
+    startAdornment: { control: { disable: true } },
+    calendarProps: { control: { disable: true } },
+    dropdownProps: { control: { disable: true } },
   },
   render: (args) => {
-    return <HvDatePicker placeholder="Select date" label="Date" {...args} />;
+    return <HvDatePicker {...args} />;
   },
 };
 

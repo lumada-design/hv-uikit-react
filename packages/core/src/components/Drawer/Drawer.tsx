@@ -66,6 +66,10 @@ export interface HvDrawerProps
    * Title for the button close.
    */
   buttonTitle?: string;
+  /** @ignore */
+  ref?: MuiDrawerProps["ref"];
+  /** @ignore */
+  component?: MuiDrawerProps["component"];
 }
 
 const getBackgroundColor = (color: string) => {

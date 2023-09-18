@@ -23,6 +23,10 @@ export const Main: StoryObj<HvRadioGroupProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+    value: { control: { disable: true } },
+    defaultValue: { control: { disable: true } },
+    status: { control: { disable: true } },
+    statusMessage: { control: { disable: true } },
   },
   render: (args) => {
     return (
