@@ -11,6 +11,9 @@ export default {
     "../docs/**/*.stories.@(tsx|mdx)",
     "../packages/**/src/**/*.stories.@(ts|tsx|mdx)",
   ],
+  core: {
+    disableTelemetry: true,
+  },
   addons: [
     // "@storybook/addon-actions",
     "@storybook/addon-controls",

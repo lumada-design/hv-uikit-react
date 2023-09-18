@@ -44,7 +44,7 @@
     "@emotion/css": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/react": "^2.3.0",
     "@mui/material": "^5.13.5",
     "@playwright/test": "^1.35.0",
     "@storybook/addon-a11y": "^7.4.1",
