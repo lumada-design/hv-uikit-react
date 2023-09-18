@@ -25,7 +25,7 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
   },
   largeText: {},
   textEmpty: {
-    color: theme.typography.placeholderText.color,
+    color: theme.colors.secondary_60,
   },
   button: {
     padding: theme.spacing("6px", "8px", "5px", "8px"),
