@@ -11,8 +11,11 @@ export { staticClasses as footerClasses };
 export type HvFooterClasses = ExtractNames<typeof useClasses>;
 
 export interface HvFooterProps extends HvBaseProps {
+  /** Footer name. */
   name?: React.ReactNode;
+  /** Footer copyright. */
   copyright?: React.ReactNode;
+  /** Footer links. */
   links?: React.ReactNode;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFooterClasses;
@@ -40,7 +43,7 @@ export const HvFooter = (props: HvFooterProps) => {
       className={cx(classes.root, { [classes.small]: isSmDown }, className)}
       {...others}
     >
-      <HvTypography variant="highlightText" className={classes.name}>
+      <HvTypography variant="label" className={classes.name}>
         {name}
       </HvTypography>
       <div className={classes.rightContainer}>
