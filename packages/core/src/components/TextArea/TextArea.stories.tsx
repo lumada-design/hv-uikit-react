@@ -20,7 +20,6 @@ export const Main: StoryObj<HvTextAreaProps> = {
     label: "Label",
     placeholder: "Enter value",
     rows: 5,
-    invalid: false,
     resizable: false,
     description: "Textarea description",
     hideCounter: false,
@@ -32,8 +31,159 @@ export const Main: StoryObj<HvTextAreaProps> = {
     statusMessage: "Oops, something's gone wrong!",
   },
   argTypes: {
-    countCharProps: { control: { disable: true } },
-    classes: { control: { disable: true } },
+    label: {
+      description:
+        "The label of the form element. The form element must be labeled for accessibility reasons. If not provided, an aria-label or aria-labelledby must be provided instead.",
+      table: {
+        type: { summary: "React.ReactNode" },
+      },
+    },
+    placeholder: {
+      description: "The placeholder value of the text area.",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    description: {
+      description: "Provide additional descriptive text for the form element.",
+      table: {
+        type: { summary: "React.ReactNode" },
+      },
+    },
+    status: {
+      description:
+        "The status of the form element. Valid is correct, invalid is incorrect and standBy means no validations have run. When uncontrolled and unspecified it will default to `standBy` and change to either `valid` or `invalid` after any change to the state.",
+      table: {
+        type: { summary: "HvFormStatus" },
+      },
+    },
+    statusMessage: {
+      description: "The error message to show when `status` is `invalid`.",
+      table: {
+        type: { summary: "React.ReactNode" },
+      },
+    },
+    middleCountLabel: {
+      description: "Text between the current char counter and max value.",
+      table: {
+        defaultValue: { summary: "/" },
+        type: { summary: "string" },
+      },
+    },
+    validationMessages: {
+      description:
+        "An Object containing the various texts associated with the input.",
+      table: {
+        type: { summary: "HvValidationMessages" },
+      },
+    },
+    validation: {
+      description:
+        "The custom validation function, it receives the value and must return either `true` for valid or `false` for invalid, default validations would only occur if this function is null or undefined.",
+      table: {
+        type: { summary: "(value: string) => boolean" },
+      },
+    },
+    maxCharQuantity: {
+      description:
+        "The maximum allowed length of the characters, if this value is null no check will be performed.",
+      table: {
+        type: { summary: "number" },
+      },
+    },
+    minCharQuantity: {
+      description:
+        "The minimum allowed length of the characters, if this value is null no check will be performed.",
+      table: {
+        type: { summary: "number" },
+      },
+    },
+    autoFocus: {
+      description: "If `true` it should autofocus.",
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" },
+      },
+    },
+    rows: {
+      description: "The number of rows of the text area.",
+      table: {
+        type: { summary: "number" },
+      },
+    },
+    resizable: {
+      description: "If `true` the component is resizable.",
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" },
+      },
+    },
+    autoScroll: {
+      description:
+        "Auto-scroll: automatically scroll to the end on value changes. Will stop if the user scrolls up and resume if scrolled to the bottom.",
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" },
+      },
+    },
+    blockMax: {
+      description: "If `true` it isn't possible to pass the `maxCharQuantity`.",
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" },
+      },
+    },
+    hideCounter: {
+      description:
+        "If `true` the character counter isn't shown even if `maxCharQuantity` is set.",
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" },
+      },
+    },
+    countCharProps: {
+      description: "Props passed to the char count.",
+      control: { disable: true },
+      table: {
+        type: { summary: "Partial<HvCharCounterProps>" },
+      },
+    },
+    onChange: {
+      description: "Called back when the value is changed.",
+      table: {
+        type: {
+          summary:
+            "(event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => void",
+        },
+      },
+    },
+    onBlur: {
+      description: "Called back when the value is changed.",
+      table: {
+        type: {
+          summary:
+            "(event: React.FocusEvent<HTMLTextAreaElement>, value: string, validationState: HvInputValidity) => void",
+        },
+      },
+    },
+    onFocus: {
+      description:
+        "The function that will be executed onBlur, allows checking the value state, it receives the value.",
+      table: {
+        type: {
+          summary:
+            "(event: React.FocusEvent<HTMLTextAreaElement>, value: string) => void",
+        },
+      },
+    },
+    classes: {
+      description:
+        "A Jss Object used to override or extend the styles applied to the component.",
+      table: {
+        type: { summary: "HvTextAreaClasses" },
+      },
+      control: { disable: true },
+    },
   },
   render: (args) => {
     return <HvTextArea id="main" {...args} />;
