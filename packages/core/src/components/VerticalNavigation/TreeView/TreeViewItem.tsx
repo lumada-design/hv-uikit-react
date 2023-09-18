@@ -463,7 +463,8 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                       : true
                     : undefined,
                 "aria-expanded": expandable ? expanded : undefined,
-                "aria-controls": expandable ? setId(id, "group") : undefined,
+                "aria-controls":
+                  isOpen && expandable ? setId(id, "group") : undefined,
                 "aria-label": payload?.label,
               })}
         >
