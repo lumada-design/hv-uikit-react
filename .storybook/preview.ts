@@ -45,8 +45,4 @@ export const parameters = {
   },
 };
 
-export const argTypes = {
-  classes: { control: { disable: true }, if: { arg: "classes" } },
-};
-
 export const decorators = [withThemeProvider];
