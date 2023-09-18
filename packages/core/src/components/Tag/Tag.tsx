@@ -1,4 +1,4 @@
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
 import { HvColorAny, theme } from "@hitachivantara/uikit-styles";
 import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
 import { HvBaseProps } from "@core/types/generic";
@@ -18,8 +18,6 @@ export type HvTagClasses = ExtractNames<typeof useClasses>;
 export interface HvTagProps
   extends Omit<MuiChipProps, "color" | "classes">,
     HvBaseProps<HTMLDivElement, "children"> {
-  /** Inline styles to be applied to the root element. */
-  style?: CSSProperties;
   /** The label of the tag element. */
   label?: React.ReactNode;
   /** Indicates that the form element is disabled. */
@@ -45,6 +43,10 @@ export interface HvTagProps
   deleteButtonProps?: HvButtonProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTagClasses;
+  /** @ignore */
+  ref?: MuiChipProps["ref"];
+  /** @ignore */
+  component?: MuiChipProps["component"];
 }
 
 const getColor = (customColor, type, colors) => {

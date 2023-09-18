@@ -16,6 +16,9 @@ const meta: Meta<typeof HvPanel> = {
 export default meta;
 
 export const Main: StoryObj<HvPanelProps> = {
+  argTypes: {
+    classes: { control: { disable: true } },
+  },
   render: () => {
     return (
       <HvPanel>

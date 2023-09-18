@@ -32,7 +32,9 @@ export const Main: StoryObj<HvTimePickerProps> = {
   argTypes: {
     classes: { control: { disable: true } },
     timeFormat: { control: { disable: true } },
-    onChange: { control: { disable: true } },
+    value: { control: { disable: true } },
+    defaultValue: { control: { disable: true } },
+    dropdownProps: { control: { disable: true } },
   },
   parameters: {
     eyes: {

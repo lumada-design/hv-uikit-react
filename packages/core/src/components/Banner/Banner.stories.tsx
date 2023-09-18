@@ -34,7 +34,6 @@ export const Main: StoryObj<HvBannerProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
-    ref: { control: { disable: true } },
     customIcon: { control: { disable: true } },
     bannerContentProps: { control: { disable: true } },
     actions: { control: { disable: true } },

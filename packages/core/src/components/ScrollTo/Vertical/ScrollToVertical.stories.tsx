@@ -19,6 +19,10 @@ export const Main: StoryObj<HvScrollToVerticalProps> = {
   args: {
     tooltipPosition: "left",
   },
+  argTypes: {
+    classes: { control: { disable: true } },
+    options: { control: { disable: true } },
+  },
   render: (args) => {
     const options = [
       { label: "Server status summary", value: "mainId1" },

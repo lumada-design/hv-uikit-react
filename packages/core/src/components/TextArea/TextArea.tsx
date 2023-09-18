@@ -160,356 +160,358 @@ export interface HvTextAreaProps
 /**
  * A text area is a multiline text input box, with an optional character counter when there is a length limit.
  */
-export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
-  const {
-    id,
-    className,
-    classes: classesProp,
-    name,
-    label,
-    description,
-    placeholder,
-    status,
-    statusMessage,
-    validationMessages,
-    maxCharQuantity,
-    minCharQuantity,
-    value: valueProp,
-    inputRef: inputRefProp,
-    rows = 1,
-    defaultValue = "",
-    middleCountLabel = "/",
-    countCharProps = {},
-    inputProps = {},
-    required = false,
-    readOnly = false,
-    disabled = false,
-    autoFocus = false,
-    resizable = false,
-    autoScroll = false,
-    hideCounter = false,
-    blockMax = false,
-    "aria-label": ariaLabel,
-    "aria-labelledby": ariaLabelledBy,
-    "aria-describedby": ariaDescribedBy,
-    "aria-errormessage": ariaErrorMessage,
-    validation,
-    onChange,
-    onBlur,
-    onFocus,
-    ...others
-  } = useDefaultProps("HvTextArea", props);
-
-  const { classes, cx } = useClasses(classesProp);
-
-  const elementId = useUniqueId(id, "hvtextarea");
-
-  // Signals that the user has manually edited the input value
-  const isDirty = useRef<boolean>(false);
-
-  const inputRef = useRef<HTMLTextAreaElement>(null);
-  const forkedRef = useForkRef(ref, inputRefProp, inputRef);
-
-  const [focused, setFocused] = useState<boolean>(false);
-
-  const [autoScrolling, setAutoScrolling] = useState(autoScroll);
-
-  const [validationState, setValidationState] = useControlled(
-    status,
-    validationStates.standBy
-  );
-
-  const [validationMessage, setValidationMessage] = useControlled(
-    statusMessage,
-    ""
-  );
-
-  const [value, setValue] = useControlled(valueProp, defaultValue);
-
-  const isStateInvalid = isInvalid(validationState);
-
-  const isEmptyValue = value == null || value === "";
-
-  const hasLabel = label != null;
-
-  const hasDescription = description != null;
-
-  const hasCounter = maxCharQuantity != null && !hideCounter;
-
-  // ValidationMessages reference tends to change, as users will not memorize/useState for it;
-  // Dependencies must be more explicit so we set
-  const errorMessages = useMemo(
-    () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
-    [validationMessages]
-  );
-
-  // Validates the input, sets the status and the statusMessage accordingly (if uncontrolled)
-  // and returns the validity state of the input.
-  const performValidation = useCallback(() => {
-    const inputValidity = validateInput(
-      inputRef.current,
-      value,
-      required,
-      minCharQuantity,
+export const HvTextArea = forwardRef<any, HvTextAreaProps>(
+  (props: HvTextAreaProps, ref) => {
+    const {
+      id,
+      className,
+      classes: classesProp,
+      name,
+      label,
+      description,
+      placeholder,
+      status,
+      statusMessage,
+      validationMessages,
       maxCharQuantity,
-      validationTypes.none,
-      validation
+      minCharQuantity,
+      value: valueProp,
+      inputRef: inputRefProp,
+      rows = 1,
+      defaultValue = "",
+      middleCountLabel = "/",
+      countCharProps = {},
+      inputProps = {},
+      required = false,
+      readOnly = false,
+      disabled = false,
+      autoFocus = false,
+      resizable = false,
+      autoScroll = false,
+      hideCounter = false,
+      blockMax = false,
+      "aria-label": ariaLabel,
+      "aria-labelledby": ariaLabelledBy,
+      "aria-describedby": ariaDescribedBy,
+      "aria-errormessage": ariaErrorMessage,
+      validation,
+      onChange,
+      onBlur,
+      onFocus,
+      ...others
+    } = useDefaultProps("HvTextArea", props);
+
+    const { classes, cx } = useClasses(classesProp);
+
+    const elementId = useUniqueId(id, "hvtextarea");
+
+    // Signals that the user has manually edited the input value
+    const isDirty = useRef<boolean>(false);
+
+    const inputRef = useRef<HTMLTextAreaElement>(null);
+    const forkedRef = useForkRef(ref, inputRefProp, inputRef);
+
+    const [focused, setFocused] = useState<boolean>(false);
+
+    const [autoScrolling, setAutoScrolling] = useState(autoScroll);
+
+    const [validationState, setValidationState] = useControlled(
+      status,
+      validationStates.standBy
     );
 
-    // This will only run if status is uncontrolled
-    setValidationState(computeValidationState(inputValidity, isEmptyValue));
-
-    // This will only run if statusMessage is uncontrolled
-    setValidationMessage(
-      computeValidationMessage(inputValidity, errorMessages)
+    const [validationMessage, setValidationMessage] = useControlled(
+      statusMessage,
+      ""
     );
 
-    return inputValidity;
-  }, [
-    errorMessages,
-    inputRef,
-    isEmptyValue,
-    maxCharQuantity,
-    minCharQuantity,
-    required,
-    setValidationMessage,
-    setValidationState,
-    validation,
-    value,
-  ]);
+    const [value, setValue] = useControlled(valueProp, defaultValue);
 
-  const isOverflow = (currentValue) =>
-    isNil(maxCharQuantity) ? false : currentValue.length > maxCharQuantity;
+    const isStateInvalid = isInvalid(validationState);
 
-  /**
-   * Limit the string to the maxCharQuantity length.
-   *
-   * @param value - string to evaluate
-   * @returns {string|*} - string according the limit
-   */
-  const limitValue = (currentValue) => {
-    if (currentValue === undefined || !blockMax) return currentValue;
-    return !isOverflow(currentValue)
-      ? currentValue
-      : currentValue.substring(0, maxCharQuantity);
-  };
+    const isEmptyValue = value == null || value === "";
 
-  /**
-   * Validates the text area updating the state and modifying the warning text, also executes
-   * the user provided onBlur passing the current validation status and value.
-   *
-   * @returns {undefined}
-   */
-  const onContainerBlurHandler = (event) => {
-    setFocused(false);
+    const hasLabel = label != null;
 
-    const inputValidity = performValidation();
+    const hasDescription = description != null;
 
-    onBlur?.(event, value, inputValidity);
-  };
+    const hasCounter = maxCharQuantity != null && !hideCounter;
 
-  /**
-   * Updates the length of the string while is being inputted, also executes the user onChange
-   * allowing the customization of the input if required.
-   *
-   * @param {String} value - The value provided by the HvInput
-   */
-  const onChangeHandler = (event, currentValue) => {
-    isDirty.current = true;
+    // ValidationMessages reference tends to change, as users will not memorize/useState for it;
+    // Dependencies must be more explicit so we set
+    const errorMessages = useMemo(
+      () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
+      [validationMessages]
+    );
 
-    const limitedValue = blockMax ? limitValue(currentValue) : currentValue;
+    // Validates the input, sets the status and the statusMessage accordingly (if uncontrolled)
+    // and returns the validity state of the input.
+    const performValidation = useCallback(() => {
+      const inputValidity = validateInput(
+        inputRef.current,
+        value,
+        required,
+        minCharQuantity,
+        maxCharQuantity,
+        validationTypes.none,
+        validation
+      );
 
-    // Set the input value (only when value is uncontrolled)
-    setValue(limitedValue);
+      // This will only run if status is uncontrolled
+      setValidationState(computeValidationState(inputValidity, isEmptyValue));
 
-    onChange?.(event, limitedValue);
-  };
+      // This will only run if statusMessage is uncontrolled
+      setValidationMessage(
+        computeValidationMessage(inputValidity, errorMessages)
+      );
 
-  /**
-   * Updates the state putting again the value from the state because the input value is
-   * not automatically manage, it also executes the onFocus function from the user passing the value
-   */
-  const onFocusHandler = (event) => {
-    setFocused(true);
+      return inputValidity;
+    }, [
+      errorMessages,
+      inputRef,
+      isEmptyValue,
+      maxCharQuantity,
+      minCharQuantity,
+      required,
+      setValidationMessage,
+      setValidationState,
+      validation,
+      value,
+    ]);
 
-    // Reset validation status to standBy (only when status is uncontrolled)
-    setValidationState(validationStates.standBy);
+    const isOverflow = (currentValue) =>
+      isNil(maxCharQuantity) ? false : currentValue.length > maxCharQuantity;
 
-    onFocus?.(event, value);
-  };
-
-  const isScrolledDown = useCallback(() => {
-    const el = inputRef.current;
-    return el == null || el.offsetHeight + el.scrollTop >= el.scrollHeight;
-  }, [inputRef]);
-
-  const scrollDown = useCallback(() => {
-    const el = inputRef.current;
-    if (el != null) {
-      el.scrollTop = el.scrollHeight - el.clientHeight;
-    }
-  }, [inputRef]);
-
-  const addScrollListener = useCallback(() => {
-    const scrollHandler = {
-      handleEvent: () => {
-        setAutoScrolling(isScrolledDown());
-      },
+    /**
+     * Limit the string to the maxCharQuantity length.
+     *
+     * @param value - string to evaluate
+     * @returns {string|*} - string according the limit
+     */
+    const limitValue = (currentValue) => {
+      if (currentValue === undefined || !blockMax) return currentValue;
+      return !isOverflow(currentValue)
+        ? currentValue
+        : currentValue.substring(0, maxCharQuantity);
     };
-    inputRef.current?.addEventListener("scroll", scrollHandler);
-  }, [inputRef, isScrolledDown]);
 
-  useEffect(() => {
-    if (autoScroll) {
-      addScrollListener();
-    }
-  }, [autoScroll, addScrollListener]);
+    /**
+     * Validates the text area updating the state and modifying the warning text, also executes
+     * the user provided onBlur passing the current validation status and value.
+     *
+     * @returns {undefined}
+     */
+    const onContainerBlurHandler = (event) => {
+      setFocused(false);
 
-  useEffect(() => {
-    if (autoScrolling) {
-      scrollDown();
-    }
-  }, [valueProp, autoScrolling, scrollDown]);
+      const inputValidity = performValidation();
 
-  // Run initial validation after first render
-  // and also when any validation condition changes
-  useEffect(() => {
-    if (focused || (!isDirty.current && isEmptyValue)) {
-      // Skip validation if currently focused or if empty and
-      // the user never manually edited the input value
-      return;
-    }
+      onBlur?.(event, value, inputValidity);
+    };
 
-    performValidation();
-  }, [focused, isEmptyValue, performValidation]);
+    /**
+     * Updates the length of the string while is being inputted, also executes the user onChange
+     * allowing the customization of the input if required.
+     *
+     * @param {String} value - The value provided by the HvInput
+     */
+    const onChangeHandler = (event, currentValue) => {
+      isDirty.current = true;
 
-  // The error message area will only be created if:
-  //   - an external element that provides an error message isn't identified via aria-errormessage AND
-  //   - both status and statusMessage properties are being controlled OR
-  //   - status is uncontrolled and any of the built-in validations are active
-  const canShowError =
-    ariaErrorMessage == null &&
-    ((status !== undefined && statusMessage !== undefined) ||
-      (status === undefined &&
-        hasBuiltInValidations(
-          required,
-          validationTypes.none,
-          minCharQuantity,
-          // If blockMax is true maxCharQuantity will never produce an error
-          // unless the value is controlled, so we can't prevent it to overflow maxCharQuantity
-          maxCharQuantity != null && (blockMax !== true || value != null)
-            ? maxCharQuantity
-            : null,
-          validation,
-          inputProps
-        )));
+      const limitedValue = blockMax ? limitValue(currentValue) : currentValue;
 
-  let errorMessageId;
-  if (isStateInvalid) {
-    errorMessageId = canShowError
-      ? setId(elementId, "error")
-      : ariaErrorMessage;
-  }
+      // Set the input value (only when value is uncontrolled)
+      setValue(limitedValue);
 
-  return (
-    <HvFormElement
-      id={id}
-      name={name}
-      status={validationState}
-      disabled={disabled}
-      required={required}
-      readOnly={readOnly}
-      className={cx(
-        classes.root,
-        {
-          [classes.resizable]: resizable,
-          [classes.disabled]: disabled,
-          [classes.invalid]: isStateInvalid,
+      onChange?.(event, limitedValue);
+    };
+
+    /**
+     * Updates the state putting again the value from the state because the input value is
+     * not automatically manage, it also executes the onFocus function from the user passing the value
+     */
+    const onFocusHandler = (event) => {
+      setFocused(true);
+
+      // Reset validation status to standBy (only when status is uncontrolled)
+      setValidationState(validationStates.standBy);
+
+      onFocus?.(event, value);
+    };
+
+    const isScrolledDown = useCallback(() => {
+      const el = inputRef.current;
+      return el == null || el.offsetHeight + el.scrollTop >= el.scrollHeight;
+    }, [inputRef]);
+
+    const scrollDown = useCallback(() => {
+      const el = inputRef.current;
+      if (el != null) {
+        el.scrollTop = el.scrollHeight - el.clientHeight;
+      }
+    }, [inputRef]);
+
+    const addScrollListener = useCallback(() => {
+      const scrollHandler = {
+        handleEvent: () => {
+          setAutoScrolling(isScrolledDown());
         },
-        className
-      )}
-      onBlur={onContainerBlurHandler}
-    >
-      {(hasLabel || hasDescription) && (
-        <div className={classes.labelContainer}>
-          {hasLabel && (
-            <HvLabel
-              className={classes.label}
-              id={setId(id, "label")}
-              htmlFor={setId(elementId, "input")}
-              label={label}
-            />
-          )}
+      };
+      inputRef.current?.addEventListener("scroll", scrollHandler);
+    }, [inputRef, isScrolledDown]);
 
-          {hasDescription && (
-            <HvInfoMessage
-              className={classes.description}
-              id={setId(elementId, "description")}
-            >
-              {description}
-            </HvInfoMessage>
-          )}
-        </div>
-      )}
+    useEffect(() => {
+      if (autoScroll) {
+        addScrollListener();
+      }
+    }, [autoScroll, addScrollListener]);
 
-      {hasCounter && (
-        <HvCharCounter
-          id={setId(elementId, "charCounter")}
-          className={classes.characterCounter}
-          separator={middleCountLabel}
-          currentCharQuantity={value.length}
-          maxCharQuantity={maxCharQuantity}
-          {...countCharProps}
-        />
-      )}
+    useEffect(() => {
+      if (autoScrolling) {
+        scrollDown();
+      }
+    }, [valueProp, autoScrolling, scrollDown]);
 
-      <HvBaseInput
-        classes={{
-          root: classes.baseInput,
-          input: classes.input,
-          inputResizable: classes.inputResizable,
-        }}
-        id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
+    // Run initial validation after first render
+    // and also when any validation condition changes
+    useEffect(() => {
+      if (focused || (!isDirty.current && isEmptyValue)) {
+        // Skip validation if currently focused or if empty and
+        // the user never manually edited the input value
+        return;
+      }
+
+      performValidation();
+    }, [focused, isEmptyValue, performValidation]);
+
+    // The error message area will only be created if:
+    //   - an external element that provides an error message isn't identified via aria-errormessage AND
+    //   - both status and statusMessage properties are being controlled OR
+    //   - status is uncontrolled and any of the built-in validations are active
+    const canShowError =
+      ariaErrorMessage == null &&
+      ((status !== undefined && statusMessage !== undefined) ||
+        (status === undefined &&
+          hasBuiltInValidations(
+            required,
+            validationTypes.none,
+            minCharQuantity,
+            // If blockMax is true maxCharQuantity will never produce an error
+            // unless the value is controlled, so we can't prevent it to overflow maxCharQuantity
+            maxCharQuantity != null && (blockMax !== true || value != null)
+              ? maxCharQuantity
+              : null,
+            validation,
+            inputProps
+          )));
+
+    let errorMessageId;
+    if (isStateInvalid) {
+      errorMessageId = canShowError
+        ? setId(elementId, "error")
+        : ariaErrorMessage;
+    }
+
+    return (
+      <HvFormElement
+        id={id}
         name={name}
-        value={value}
+        status={validationState}
+        disabled={disabled}
         required={required}
         readOnly={readOnly}
-        disabled={disabled}
-        onChange={onChangeHandler}
-        autoFocus={autoFocus}
-        onFocus={onFocusHandler}
-        placeholder={placeholder}
-        invalid={isStateInvalid}
-        resizable={resizable}
-        multiline
-        rows={rows}
-        inputProps={{
-          "aria-label": ariaLabel,
-          "aria-labelledby": ariaLabelledBy,
-          "aria-invalid": isStateInvalid ? true : undefined,
-          "aria-errormessage": errorMessageId,
-          "aria-describedby":
-            ariaDescribedBy != null
-              ? ariaDescribedBy
-              : (description && setId(elementId, "description")) || undefined,
-          "aria-controls": maxCharQuantity
-            ? setId(elementId, "charCounter")
-            : undefined,
-          ...inputProps,
-        }}
-        inputRef={forkedRef}
-        {...others}
-      />
+        className={cx(
+          classes.root,
+          {
+            [classes.resizable]: resizable,
+            [classes.disabled]: disabled,
+            [classes.invalid]: isStateInvalid,
+          },
+          className
+        )}
+        onBlur={onContainerBlurHandler}
+      >
+        {(hasLabel || hasDescription) && (
+          <div className={classes.labelContainer}>
+            {hasLabel && (
+              <HvLabel
+                className={classes.label}
+                id={setId(id, "label")}
+                htmlFor={setId(elementId, "input")}
+                label={label}
+              />
+            )}
 
-      {canShowError && (
-        <HvWarningText
-          id={setId(elementId, "error")}
-          className={classes.error}
-          disableBorder
-        >
-          {validationMessage}
-        </HvWarningText>
-      )}
-    </HvFormElement>
-  );
-});
+            {hasDescription && (
+              <HvInfoMessage
+                className={classes.description}
+                id={setId(elementId, "description")}
+              >
+                {description}
+              </HvInfoMessage>
+            )}
+          </div>
+        )}
+
+        {hasCounter && (
+          <HvCharCounter
+            id={setId(elementId, "charCounter")}
+            className={classes.characterCounter}
+            separator={middleCountLabel}
+            currentCharQuantity={value.length}
+            maxCharQuantity={maxCharQuantity}
+            {...countCharProps}
+          />
+        )}
+
+        <HvBaseInput
+          classes={{
+            root: classes.baseInput,
+            input: classes.input,
+            inputResizable: classes.inputResizable,
+          }}
+          id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
+          name={name}
+          value={value}
+          required={required}
+          readOnly={readOnly}
+          disabled={disabled}
+          onChange={onChangeHandler}
+          autoFocus={autoFocus}
+          onFocus={onFocusHandler}
+          placeholder={placeholder}
+          invalid={isStateInvalid}
+          resizable={resizable}
+          multiline
+          rows={rows}
+          inputProps={{
+            "aria-label": ariaLabel,
+            "aria-labelledby": ariaLabelledBy,
+            "aria-invalid": isStateInvalid ? true : undefined,
+            "aria-errormessage": errorMessageId,
+            "aria-describedby":
+              ariaDescribedBy != null
+                ? ariaDescribedBy
+                : (description && setId(elementId, "description")) || undefined,
+            "aria-controls": maxCharQuantity
+              ? setId(elementId, "charCounter")
+              : undefined,
+            ...inputProps,
+          }}
+          inputRef={forkedRef}
+          {...others}
+        />
+
+        {canShowError && (
+          <HvWarningText
+            id={setId(elementId, "error")}
+            className={classes.error}
+            disableBorder
+          >
+            {validationMessage}
+          </HvWarningText>
+        )}
+      </HvFormElement>
+    );
+  }
+);

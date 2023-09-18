@@ -28,6 +28,8 @@ const styles = {
 export const Main: StoryObj<HvDotPaginationProps> = {
   argTypes: {
     classes: { control: { disable: true } },
+    unselectedIcon: { control: { disable: true } },
+    selectedIcon: { control: { disable: true } },
   },
   render: () => {
     const [page, setPage] = useState<number>(0);

@@ -61,6 +61,8 @@ export interface HvBannerProps
   bannerContentProps?: HvBannerContentProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBannerClasses;
+  /** @ignore */
+  ref?: MuiSnackbarProps["ref"];
 }
 
 /**

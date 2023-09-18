@@ -32,7 +32,6 @@ const meta: Meta<typeof HvActionBar> = {
 export default meta;
 
 export const Main: StoryObj<HvActionBarProps> = {
-  args: {},
   argTypes: {
     classes: { control: { disable: true } },
   },
@@ -51,10 +50,6 @@ export const Main: StoryObj<HvActionBarProps> = {
 };
 
 export const DualAction: StoryObj<HvActionBarProps> = {
-  args: {},
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   parameters: {
     docs: {
       description: {

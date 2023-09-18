@@ -17,6 +17,10 @@ export default meta;
 
 export const Main: StoryObj<HvScrollToHorizontalProps> = {
   args: { tooltipPosition: "top" },
+  argTypes: {
+    classes: { control: { disable: true } },
+    options: { control: { disable: true } },
+  },
   render: (args) => {
     const options = [
       { label: "Server status summary", value: "mainId1" },

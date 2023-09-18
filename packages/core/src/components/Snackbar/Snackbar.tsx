@@ -65,6 +65,8 @@ export interface HvSnackbarProps
   snackbarContentProps?: HvSnackbarContentProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSnackbarClasses;
+  /** @ignore */
+  ref?: MuiSnackbarProps["ref"];
 }
 
 const transLeft = (props) => <Slide {...props} direction="left" />;

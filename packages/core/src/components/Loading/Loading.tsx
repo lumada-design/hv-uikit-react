@@ -22,6 +22,7 @@ export interface HvLoadingProps extends HvBaseProps {
   hidden?: boolean;
   /** Color applied to the bars. */
   color?: HvColorAny;
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvLoadingClasses;
 }
 

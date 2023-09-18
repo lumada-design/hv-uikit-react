@@ -35,17 +35,9 @@ export type HvDropdownClasses = ExtractNames<typeof useClasses>;
 export interface HvDropdownProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
    * A Jss Object used to override or extend the component styles applied.
    */
   classes?: HvDropdownClasses;
-  /**
-   * Id to be applied to the form element root node.
-   */
-  id?: string;
   /**
    * The form element name.
    */
@@ -58,26 +50,13 @@ export interface HvDropdownProps
    */
   label?: any;
   /**
-   * @ignore
-   */
-  "aria-label"?: string;
-  /**
-   * @ignore
-   */
-  "aria-labelledby"?: string;
-  /**
    * Provide additional descriptive text for the form element.
    */
   description?: any;
   /**
-   * @ignore
-   */
-  "aria-describedby"?: string;
-  /**
    * The placeholder value when nothing is selected.
    */
   placeholder?: string;
-
   /**
    * Indicates that the form element is disabled.
    */
@@ -111,12 +90,10 @@ export interface HvDropdownProps
    * Will only be used when the validation status is invalid.
    */
   "aria-errormessage"?: string;
-
   /**
    * The callback fired when the value changes.
    */
   onChange?: (selected: HvListValue | HvListValue[] | undefined) => void;
-
   /**
    * The list to be rendered by the dropdown.
    */
@@ -171,7 +148,6 @@ export interface HvDropdownProps
    * An object containing props to be wired to the popper component.
    */
   popperProps?: Partial<PopperProps>;
-
   /**
    * Callback called when the user cancels the changes.
    *

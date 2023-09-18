@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Meta, StoryObj } from "@storybook/react";
 import { BarChart, Ghost, Info } from "@hitachivantara/uikit-react-icons";
 import {
@@ -31,22 +30,13 @@ export const Main: StoryObj<HvEmptyStateProps> = {
 };
 
 export const WithAction: StoryObj<HvEmptyStateProps> = {
-  args: {
-    title: "No data routes",
-    message: "After you start adding Data Routes, they will appear here.",
-    icon: <BarChart />,
-  },
-  argTypes: {
-    icon: { control: { disable: true } },
-    classes: { control: { disable: true } },
-  },
-  render: ({ title, message, icon }) => {
+  render: () => {
     const CustomAction = <HvLink route="/">Create a new data route</HvLink>;
     return (
       <HvEmptyState
-        title={title}
-        message={message}
-        icon={icon}
+        title="No data routes"
+        message="After you start adding Data Routes, they will appear here."
+        icon={<BarChart />}
         action={CustomAction}
       />
     );
@@ -54,15 +44,7 @@ export const WithAction: StoryObj<HvEmptyStateProps> = {
 };
 
 export const CustomMessages: StoryObj<HvEmptyStateProps> = {
-  args: {
-    title: "This page can't be displayed",
-    icon: <Ghost />,
-  },
-  argTypes: {
-    icon: { control: { disable: true } },
-    classes: { control: { disable: true } },
-  },
-  render: ({ title, icon }) => {
+  render: () => {
     const CustomAction = (
       <>
         <HvTypography>Here are some helpful links instead:</HvTypography>
@@ -75,9 +57,9 @@ export const CustomMessages: StoryObj<HvEmptyStateProps> = {
     const CustomMessage = <HvTypography>404 Not Found</HvTypography>;
     return (
       <HvEmptyState
-        title={title}
+        title="This page can't be displayed"
         message={CustomMessage}
-        icon={icon}
+        icon={<Ghost />}
         action={CustomAction}
       />
     );
@@ -85,15 +67,7 @@ export const CustomMessages: StoryObj<HvEmptyStateProps> = {
 };
 
 export const Minimal: StoryObj<HvEmptyStateProps> = {
-  args: {
-    message: "No data to display",
-    icon: <Info />,
-  },
-  argTypes: {
-    icon: { control: { disable: true } },
-    classes: { control: { disable: true } },
-  },
-  render: ({ message, icon }) => {
-    return <HvEmptyState message={message} icon={icon} />;
+  render: () => {
+    return <HvEmptyState message="No data to display" icon={<Info />} />;
   },
 };

@@ -29,17 +29,9 @@ export interface HvRadioProps
   extends Omit<MuiRadioProps, "onChange" | "classes">,
     HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
   /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
    * A Jss Object used to override or extend the styles applied to the radio button.
    */
   classes?: HvRadioClasses;
-  /**
-   * Id to be applied to the form element root node.
-   */
-  id?: string;
   /**
    * The form element name.
    */
@@ -57,18 +49,6 @@ export interface HvRadioProps
    * If not provided, an aria-label or aria-labelledby must be provided.
    */
   label?: React.ReactNode;
-  /**
-   * @ignore
-   */
-  "aria-label"?: string;
-  /**
-   * @ignore
-   */
-  "aria-labelledby"?: string;
-  /**
-   * @ignore
-   */
-  "aria-describedby"?: string;
   /**
    * Properties passed on to the label element.
    */
@@ -138,10 +118,10 @@ export interface HvRadioProps
    * We trigger a `onFocus` callback too.
    */
   onFocusVisible?: (event: React.FocusEvent<any>) => void;
-  /**
-   * @ignore
-   */
-  onBlur?: (event: React.FocusEvent<any>) => void;
+  /** @ignore */
+  ref?: MuiRadioProps["ref"];
+  /** @ignore */
+  component?: MuiRadioProps["component"];
 }
 
 /**

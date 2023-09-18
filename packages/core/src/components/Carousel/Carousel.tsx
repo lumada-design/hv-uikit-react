@@ -62,11 +62,13 @@ export interface HvCarouselProps
   showFullscreen?: boolean;
   /** Whether to hide the thumbnails. Hidden by default in "xs" mode */
   hideThumbnails?: boolean;
+  /** Controls position. */
   controlsPosition?: "top" | "bottom";
+  /** Thumbnails position. */
   thumbnailsPosition?: "top" | "bottom";
   /** Carousel configuration options. @see https://www.embla-carousel.com/api/options/ */
   carouselOptions?: EmblaOptionsType;
-  /** */
+  /** Function that renders the thumbnail.  */
   renderThumbnail?: (index: number) => React.ReactNode;
   /** The callback fired when the active slide changes. */
   onChange?: (index: number) => void;

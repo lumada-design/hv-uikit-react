@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useMemo } from "react";
+import React, { useRef, useContext, useMemo, forwardRef } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useForkRef } from "@core/hooks/useForkRef";
@@ -31,7 +31,7 @@ export interface HvListContainerProps extends HvBaseProps<HTMLUListElement> {
  * The simple list is for continuous <b>vertical indexes of text or icons+text</b>. The content of these lists must be simple: ideally simples fields.
  * This pattern is ideal for <b>selections</b>. It should be used inside a HvPanel.
  */
-export const HvListContainer = React.forwardRef(
+export const HvListContainer = forwardRef(
   (props: HvListContainerProps, externalRef) => {
     const {
       id,

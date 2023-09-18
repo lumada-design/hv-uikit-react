@@ -123,11 +123,6 @@ export const Main: StoryObj<HvDialogProps> = {
   argTypes: {
     maxWidth: { control: "select", options: ["xs", "sm", "md", "lg", "xl"] },
     classes: { control: { disable: true } },
-    BackdropComponent: { control: { disable: true } },
-    BackdropProps: { control: { disable: true } },
-    slotProps: { control: { disable: true } },
-    components: { control: { disable: true } },
-    componentsProps: { control: { disable: true } },
   },
   parameters: {
     eyes: {

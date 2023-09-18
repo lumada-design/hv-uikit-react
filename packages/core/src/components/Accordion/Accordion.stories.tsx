@@ -57,6 +57,7 @@ export const Main: StoryObj<HvAccordionProps> = {
   argTypes: {
     classes: { control: { disable: true } },
     containerProps: { control: { disable: true } },
+    children: { control: { disable: true } },
   },
   render: (args) => {
     return (

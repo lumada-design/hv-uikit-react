@@ -77,8 +77,6 @@ export interface HvTimePickerProps
     HvFormElementProps,
     "classes" | "value" | "defaultValue" | "onChange" | "onFocus" | "onBlur"
   > {
-  /** Id to be applied to the form element root node. */
-  id?: string;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTimePickerClasses;
   /** Current value of the element when _controlled_. Follows the 24-hour format. */
@@ -104,24 +102,30 @@ export interface HvTimePickerProps
   locale?: string;
   /** Whether the dropdown is expandable. */
   disableExpand?: boolean;
-
   /**
    * Callback function to be triggered when the input value is changed.
    * It is invoked with a `{hours, minutes, seconds}` object, always in the 24h format
    */
   onChange?: (value: HvTimePickerValue) => void;
-
   /** Callback called when dropdown changes the expanded state. */
   onToggle?: (event: Event, isOpen: boolean) => void;
-
   /** Disable the portal behavior. The children stay within it's parent DOM hierarchy. */
   disablePortal?: boolean;
-
   /** Sets if the calendar container should follow the date picker input out of the screen or stay visible. */
   escapeWithReference?: boolean;
-
   /** Extra properties to be passed to the TimePicker's dropdown. */
   dropdownProps?: Partial<HvBaseDropdownProps>;
+  /**
+   * The label of the form element.
+   *
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be provided instead.
+   */
+  label?: React.ReactNode;
+  /**
+   * Provide additional descriptive text for the form element.
+   */
+  description?: React.ReactNode;
 }
 
 /**

@@ -25,7 +25,6 @@ export const Main: StoryObj<HvContainerProps> = {
   argTypes: {
     classes: { control: { disable: true } },
     component: { control: { disable: true } },
-    sx: { control: { disable: true } },
   },
   render: (args) => {
     const styles: { [key: string]: CSSInterpolation } = {
