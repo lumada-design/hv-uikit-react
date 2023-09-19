@@ -9,7 +9,7 @@ export const { staticClasses, useClasses } = createClasses("HvTimePickerUnit", {
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    ...theme.typography.sTitle,
+    ...theme.typography.title3,
   },
 
   separator: {
@@ -30,7 +30,7 @@ export const { staticClasses, useClasses } = createClasses("HvTimePickerUnit", {
   },
 
   input: {
-    ...theme.typography.sTitle,
+    ...theme.typography.title3,
     fontWeight: 600,
     textAlign: "center",
     height: 40,
