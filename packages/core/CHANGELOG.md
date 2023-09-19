@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.27.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.4...@hitachivantara/uikit-react-core@5.27.5) (2023-09-19)
+
+### Bug Fixes
+
+- **Footer:** deprecated typography variant replaced ([#3689](https://github.com/lumada-design/hv-uikit-react/issues/3689)) ([37aa23c](https://github.com/lumada-design/hv-uikit-react/commit/37aa23c4117c30d471644864d5db970d5a3c13bb))
+- **VerticalNavigation:** invalid 'aria-controls' attribute value ([#3693](https://github.com/lumada-design/hv-uikit-react/issues/3693)) ([eb5effc](https://github.com/lumada-design/hv-uikit-react/commit/eb5effc1554a86d101700c6c40a13240c8fbbb85))
+
 ## [5.27.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.3...@hitachivantara/uikit-react-core@5.27.4) (2023-09-16)
 
 ### Bug Fixes

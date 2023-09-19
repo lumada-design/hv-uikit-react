@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.50...@hitachivantara/uikit-react-lab@5.5.0) (2023-09-19)
+
+### Features
+
+- **Flow:** add Flow component ([7b3f1db](https://github.com/lumada-design/hv-uikit-react/commit/7b3f1db2efbe1d6ae47451d1f360f700937b0676))
+
 ## [5.4.50](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.4.49...@hitachivantara/uikit-react-lab@5.4.50) (2023-09-16)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
