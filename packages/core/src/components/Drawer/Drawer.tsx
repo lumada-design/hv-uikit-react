@@ -101,7 +101,7 @@ export const HvDrawer = (props: HvDrawerProps) => {
     getVarValue(theme.drawer.backDropBackgroundColor, rootId) || ""
   );
 
-  const closeButtonDisplay = () => <Close role="presentation" />;
+  const closeButtonDisplay = () => <Close role="none" />;
 
   const CloseButtonTooltipWrapper = buttonTitle
     ? withTooltip(closeButtonDisplay, buttonTitle, "top")
