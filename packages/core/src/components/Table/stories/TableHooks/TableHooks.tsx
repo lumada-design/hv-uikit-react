@@ -1,7 +1,13 @@
 import { Fragment, useCallback, useMemo, useState } from "react";
+
 import range from "lodash/range";
+
 import type { StoryObj } from "@storybook/react";
+
 import { useGroupBy } from "react-table";
+
+import { css } from "@emotion/css";
+
 import {
   HvTable,
   HvTableBody,
@@ -32,6 +38,7 @@ import {
   Lock,
   Preview,
 } from "@hitachivantara/uikit-react-icons";
+
 import {
   makeData,
   getColumns,
@@ -1343,11 +1350,27 @@ const UseHvHeaderGroups = () => {
         <HvTableHead>
           {headerGroups.map((headerGroup) => (
             <HvTableRow {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()}>
-                  {col.render("Header")}
-                </HvTableHeader>
-              ))}
+              {headerGroup.headers.map((col) => {
+                if (col.depth === 1 && !col.parent) {
+                  return undefined;
+                }
+
+                return (
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    id={col.originalId || col.id}
+                    classes={{
+                      groupColumnMostRight: css({
+                        ":last-child": {
+                          borderRight: `1px solid ${theme.colors.atmo4}`,
+                        },
+                      }),
+                    }}
+                  >
+                    {col.render("Header")}
+                  </HvTableHeader>
+                );
+              })}
             </HvTableRow>
           ))}
         </HvTableHead>
@@ -1357,11 +1380,16 @@ const UseHvHeaderGroups = () => {
 
             return (
               <HvTableRow {...row.getRowProps()}>
-                {row.cells.map((cell) => (
-                  <HvTableCell {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </HvTableCell>
-                ))}
+                {row.cells.map((cell) => {
+                  const { id, parent } = cell.column;
+                  const headers = [id, parent?.id].filter(Boolean).join(" ");
+
+                  return (
+                    <HvTableCell {...cell.getCellProps()} headers={headers}>
+                      {cell.render("Cell")}
+                    </HvTableCell>
+                  );
+                })}
               </HvTableRow>
             );
           })}
@@ -1390,35 +1418,56 @@ const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
 
 return (
   <HvTableContainer>
-    <HvTable {...getTableProps()}>
-      <HvTableHead>
-        {headerGroups.map((headerGroup) => (
-          <HvTableRow {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()}>
-                {col.render("Header")}
-              </HvTableHeader>
-            ))}
-          </HvTableRow>
-        ))}
-      </HvTableHead>
-      <HvTableBody {...getTableBodyProps()}>
-        {rows.map((row) => {
-          prepareRow(row);
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => {
+                if (col.depth === 1 && !col.parent) {
+                  return undefined;
+                }
 
-          return (
-            <HvTableRow {...row.getRowProps()}>
-              {row.cells.map((cell) => (
-                <HvTableCell {...cell.getCellProps()}>
-                  {cell.render("Cell")}
-                </HvTableCell>
-              ))}
+                return (
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    id={col.originalId || col.id}
+                    classes={{
+                      groupColumnMostRight: css({
+                        ":last-child": {
+                          borderRight: \`1px solid \${theme.colors.atmo4}\`,
+                        },
+                      }),
+                    }}
+                  >
+                    {col.render("Header")}
+                  </HvTableHeader>
+                );
+              })}
             </HvTableRow>
-          );
-        })}
-      </HvTableBody>
-    </HvTable>
-  </HvTableContainer>
+          ))}
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+
+            return (
+              <HvTableRow {...row.getRowProps()}>
+                {row.cells.map((cell) => {
+                  const { id, parent } = cell.column;
+                  const headers = [id, parent?.id].filter(Boolean).join(" ");
+
+                  return (
+                    <HvTableCell {...cell.getCellProps()} headers={headers}>
+                      {cell.render("Cell")}
+                    </HvTableCell>
+                  );
+                })}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
 );`,
       },
     },

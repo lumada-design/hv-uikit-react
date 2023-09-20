@@ -187,13 +187,30 @@ export const getGroupedColumns = (): HvTableColumnConfig<
   AssetEvent,
   string
 >[] => [
-  { Header: "Title", accessor: "name", style: { minWidth: 120 } },
-  { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
-  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   {
+    Header: "Title",
+    accessor: "name",
+    style: { minWidth: 120 },
+  },
+  {
+    Header: "Time",
+    accessor: "createdDate",
+    style: { minWidth: 100 },
+  },
+  {
+    Header: "Event Type",
+    accessor: "eventType",
+    style: { minWidth: 100 },
+  },
+  {
+    id: "eventInfo",
     Header: "Event Info",
     columns: [
-      { Header: "Status", accessor: "status", style: { width: 140 } },
+      {
+        Header: "Status",
+        accessor: "status",
+        style: { width: 140 },
+      },
       {
         Header: "Probability",
         accessor: "riskScore",
