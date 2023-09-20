@@ -7,13 +7,22 @@ export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
     boxShadow: theme.colors.shadow,
     minWidth: "250px",
   },
-  titleContainer: {
+  headerContainer: {
     padding: theme.spacing(0.5, 1),
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
-  title: {
+  groupContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  group: {
     color: theme.colors.base_dark,
   },
-  descriptionContainer: { padding: theme.space.sm },
+  titleContainer: { padding: theme.space.sm },
   inputsTitleContainer: {
     display: "flex",
     justifyContent: "center",
@@ -43,5 +52,29 @@ export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
     padding: theme.space.sm,
     gap: theme.space.xs,
     alignItems: "flex-end",
+  },
+  paramsContainer: {
+    borderTop: `1px solid ${theme.colors.atmo4}`,
+    display: "flex",
+    flexDirection: "column",
+    gap: theme.space.xs,
+    padding: theme.space.sm,
+  },
+  inputContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  outputContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  mandatory: {
+    width: 10,
+    height: 10,
+    margin: theme.spacing(0, theme.space.xs),
+    borderRadius: theme.radii.circle,
+    backgroundColor: theme.colors.negative_20,
   },
 });

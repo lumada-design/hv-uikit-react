@@ -8,8 +8,6 @@ import {
 import {
   Add,
   Backwards,
-  Connect,
-  Deploy,
   Favorite,
   Heart,
   Home,
@@ -21,14 +19,14 @@ import { css } from "@emotion/css";
 
 import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 
-import { HvFlowNode } from "./FlowNode";
-
 import { HvFlow, HvFlowProps } from "../Flow";
 import { HvFlowBackground } from "../Background";
 import { HvFlowControls } from "../Controls";
 import { HvFlowMinimap } from "../Minimap";
 import { HvFlowSidebar } from "../Sidebar";
-import { HvFlowNodeComponentType } from "../types";
+import { BoomArm } from "./BoomArm";
+import { ToyStory } from "./ToyStory";
+import { Insights } from "./Insights";
 
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",
@@ -57,12 +55,8 @@ const meta: Meta<typeof HvFlow> = {
 export default meta;
 
 // Node groups
-type NodeGroups =
-  | "asset"
-  | "digitalTwin"
-  | "simulator"
-  | "ml-models"
-  | "outputs";
+type NodeGroups = "asset" | "digitalTwin" | "outputs";
+
 const nodeGroups = {
   asset: {
     label: "Assets",
@@ -76,18 +70,6 @@ const nodeGroups = {
     description: "This is my description for digital twin.",
     icon: <Favorite />,
   },
-  simulator: {
-    label: "Simulator",
-    color: "cat4_80",
-    description: "This is my description for simulator.",
-    icon: <Deploy />,
-  },
-  "ml-models": {
-    label: "ML Models",
-    color: "cat5_80",
-    description: "This is my description for ML models.",
-    icon: <Connect />,
-  },
   outputs: {
     label: "Outputs",
     color: "cat6_80",
@@ -96,109 +78,53 @@ const nodeGroups = {
   },
 } satisfies HvFlowProps<any, NodeType, NodeGroups>["nodeGroups"];
 
-// Node types (Should use HvFlowNode when available)
-const BoomArm: HvFlowNodeComponentType<NodeGroups> = (props) => (
-  <HvFlowNode
-    title="Asset"
-    description="Boom Arm"
-    color={theme.colors.cat3_40}
-    {...props}
-  />
-);
-BoomArm.meta = {
-  label: "Boom Arm",
-  groupId: "asset", // HvFlowNode should have typing for the groupId
-};
-const ToyStory: HvFlowNodeComponentType<NodeGroups> = (props) => (
-  <HvFlowNode
-    title="Digital Twin"
-    description="Toy Story"
-    color={theme.colors.cat2_40}
-    {...props}
-  />
-);
-ToyStory.meta = {
-  label: "Toy Story",
-  groupId: "digitalTwin", // HvFlowNode should have typing for the groupId
-};
-const SpaceMountain: HvFlowNodeComponentType<NodeGroups> = (props) => (
-  <HvFlowNode
-    title="Asset"
-    description="Space Mountain"
-    color={theme.colors.cat3_40}
-    {...props}
-  />
-);
-SpaceMountain.meta = {
-  label: "Space Mountain",
-  groupId: "asset", // HvFlowNode should have typing for the groupId
-};
-const MagicMountain: HvFlowNodeComponentType<NodeGroups> = (props) => (
-  <HvFlowNode
-    title="ML Models"
-    description="Magic Mountain"
-    color={theme.colors.cat5_40}
-    {...props}
-  />
-);
-MagicMountain.meta = {
-  label: "Magic Mountain",
-  groupId: "ml-models", // HvFlowNode should have typing for the groupId
-};
-const Hollywood: HvFlowNodeComponentType<NodeGroups> = (props) => (
-  <HvFlowNode
-    title="Simulator"
-    description="Hollywood Tower of Terror"
-    color={theme.colors.cat4_40}
-    {...props}
-  />
-);
-Hollywood.meta = {
-  label: "Hollywood Tower of Terror",
-  groupId: "simulator", // HvFlowNode should have typing for the groupId
-};
-const Insights: HvFlowNodeComponentType<NodeGroups> = (props) => (
-  <HvFlowNode
-    title="Outputs"
-    description="Insights Dashboard"
-    color={theme.colors.cat6_40}
-    {...props}
-  />
-);
-Insights.meta = {
-  label: "Insights Dashboard",
-  groupId: "outputs", // HvFlowNode should have typing for the groupId
-};
 const nodeTypes = {
   boomArm: BoomArm,
   toyStory: ToyStory,
-  spaceMountain: SpaceMountain,
-  magicMountain: MagicMountain,
-  hollywood: Hollywood,
   insights: Insights,
 } satisfies HvFlowProps["nodeTypes"];
+
 type NodeType = keyof typeof nodeTypes;
 
 // Flow
 const nodes = [
   {
     id: "1",
-    position: { x: 41, y: 70 },
-    data: {},
+    position: { x: 20, y: 44 },
+    data: {
+      Threshold: "0.5",
+      "API Key": "my-initial-key",
+    },
     type: "boomArm",
   },
   {
     id: "2",
-    position: { x: 535, y: 44 },
+    position: { x: 360, y: 70 },
     data: {},
     type: "toyStory",
   },
+  {
+    id: "3",
+    position: { x: 680, y: 100 },
+    data: {},
+    type: "insights",
+  },
 ] satisfies HvFlowProps<any, NodeType, NodeGroups>["nodes"];
+
 const edges = [
   {
     id: "e1-2",
     source: "1",
+    sourceHandle: "0",
     target: "2",
+    targetHandle: "0",
+  },
+  {
+    id: "e2-3",
+    source: "2",
+    sourceHandle: "0",
+    target: "3",
+    targetHandle: "0",
   },
 ] satisfies HvFlowProps<any, NodeType, NodeGroups>["edges"];
 
@@ -255,7 +181,7 @@ export const Main: StoryObj<HvFlowProps> = {
           >
             <HvFlowBackground />
             <HvFlowControls />
-            <HvFlowMinimap />
+            {/* <HvFlowMinimap /> */}
           </HvFlow>
         </div>
       </div>
