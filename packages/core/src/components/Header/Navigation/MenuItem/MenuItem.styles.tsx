@@ -47,14 +47,11 @@ export const { staticClasses, useClasses } = createClasses(
   {
     root: {
       display: "inline",
-      "& span": {
-        color: theme.header.color,
-      },
       "&:hover": {
-        backgroundColor: theme.header.hoverColor,
+        backgroundColor: theme.colors.containerBackgroundHover,
       },
       "&:focus-within": {
-        backgroundColor: theme.header.hoverColor,
+        backgroundColor: theme.colors.containerBackgroundHover,
       },
     },
     menu: {
@@ -64,10 +61,6 @@ export const { staticClasses, useClasses } = createClasses(
       height: "100%",
       borderTop: `${theme.header.secondLevelSelectedItemBorderTopThickness} solid ${theme.header.secondLevelBackgroundColor}`,
       borderBottom: `${theme.header.secondLevelSelectedItemBorderBottomThickness} solid ${theme.header.secondLevelBackgroundColor}`,
-      "&& > * > span": {
-        color: theme.header.secondLevelItemColor,
-        padding: theme.header.secondLevelItemPadding,
-      },
     },
     menubar: {
       marginTop: theme.header.selectedItemBorderTopThickness,
@@ -76,9 +69,6 @@ export const { staticClasses, useClasses } = createClasses(
       height: "100%",
       borderTop: `${theme.header.selectedItemBorderTopThickness} solid ${theme.header.backgroundColor}`,
       borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.backgroundColor}`,
-      "& > * > span": {
-        padding: theme.header.itemPadding,
-      },
     },
     selected: {
       "&$menu": {
@@ -89,9 +79,7 @@ export const { staticClasses, useClasses } = createClasses(
         paddingTop: theme.header.secondLevelSelectedItemBorderBottomThickness,
         height: "100%",
         "& > * > span": {
-          color: theme.header.secondLevelSelectedItemColor,
-          backgroundColor: theme.header.secondLevelSelectedItemBackgroundColor,
-          borderRadius: theme.header.secondLevelSelectedItemBorderRadius,
+          color: theme.colors.secondary,
         },
       },
       "&$menubar": {
@@ -101,11 +89,6 @@ export const { staticClasses, useClasses } = createClasses(
         borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.selectedItemBorderBottomColor}`,
         paddingTop: theme.header.selectedItemBorderBottomThickness,
         height: "100%",
-        "& > * > span": {
-          color: theme.header.selectedItemColor,
-          backgroundColor: theme.header.selectedItemBackgroundColor,
-          borderRadius: theme.header.selectedItemBorderRadius,
-        },
       },
     },
     link: {

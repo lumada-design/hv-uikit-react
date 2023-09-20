@@ -29,7 +29,7 @@ export const { staticClasses, useClasses } = createClasses("HvHeader-MenuBar", {
   menu: {
     position: "absolute",
     zIndex: -2,
-    height: theme.header.secondLevelHeight,
+    height: "56px",
     backgroundColor: theme.header.secondLevelBackgroundColor,
     "& li > div": {
       marginTop: 0,

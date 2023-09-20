@@ -3,6 +3,7 @@ import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { HvTypographyProps } from "@core/components/Typography";
 
+import { useDefaultProps } from "@core/hooks";
 import { staticClasses, useClasses } from "./HorizontalScrollListItem.styles";
 
 export { staticClasses as horizontalScrollListItemClasses };
@@ -32,17 +33,20 @@ export interface HvVerticalScrollListItemProps extends HvBaseProps {
 /**
  * HvHorizontalScrollListItem a focusable item to be used as part of the horizontal scroll
  */
-export const HvHorizontalScrollListItem = ({
-  id,
-  className,
-  classes: classesProp,
-  selected,
-  children,
-  onClick,
-  onKeyDown,
-  tooltipWrapper,
-  ...others
-}: HvVerticalScrollListItemProps) => {
+export const HvHorizontalScrollListItem = (
+  props: HvVerticalScrollListItemProps
+) => {
+  const {
+    id,
+    className,
+    classes: classesProp,
+    selected,
+    children,
+    onClick,
+    onKeyDown,
+    tooltipWrapper,
+    ...others
+  } = useDefaultProps("HvHorizontalScrollListItem", props);
   const { classes, cx } = useClasses(classesProp);
   const variant = selected ? "label" : "body";
   const labelId = setId(id, "label");

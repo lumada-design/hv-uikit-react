@@ -46,7 +46,7 @@ export const { useClasses, staticClasses } = createClasses(
     action: {
       textAlign: "right",
       paddingLeft: theme.space.xs,
-      marginLeft: theme.snackbar.actionMarginLeft,
+      marginLeft: "auto",
       [`& .${actionsGenericClasses.button}`]: {
         borderColor: theme.colors.base_dark,
         color: theme.colors.base_dark,

@@ -8,11 +8,17 @@ import { HvGrid } from "@core/components/Grid";
 import { HvButton } from "@core/components/Button";
 import { withTooltip } from "@core/hocs/withTooltip";
 
+import { useDefaultProps } from "@core/hooks";
+import { ExtractNames } from "@core/utils";
 import { QueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";
 import { Value } from "./Value";
-import { useClasses } from "./Rule.styles";
+import { staticClasses, useClasses } from "./Rule.styles";
+
+export { staticClasses as queryBuilderRuleClasses };
+
+export type HvQueryBuilderRuleClasses = ExtractNames<typeof useClasses>;
 
 export interface RuleProps {
   id: number;
@@ -22,18 +28,21 @@ export interface RuleProps {
   value: any;
   disabled: boolean;
   isInvalid: boolean;
+  classes?: HvQueryBuilderRuleClasses;
 }
 
-export const Rule = ({
-  id,
-  combinator,
-  attribute,
-  operator,
-  value,
-  disabled,
-  isInvalid,
-}: RuleProps) => {
-  const { classes, cx } = useClasses();
+export const Rule = (props: RuleProps) => {
+  const {
+    id,
+    combinator,
+    attribute,
+    operator,
+    value,
+    disabled,
+    isInvalid,
+    classes: classesProp,
+  } = useDefaultProps("Rule", props);
+  const { classes, cx } = useClasses(classesProp);
 
   const context = useContext(QueryBuilderContext);
 

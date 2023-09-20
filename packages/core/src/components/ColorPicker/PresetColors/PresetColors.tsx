@@ -5,6 +5,7 @@ import { Swatch } from "react-color/lib/components/common";
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
 
+import { useDefaultProps } from "@core/hooks";
 import { staticClasses, useClasses } from "./PresetColors.styles";
 
 export { staticClasses as colorPickerPresetColorsClasses };
@@ -19,13 +20,14 @@ interface PresetColorsProps {
   classes?: HvColorPickerPresetColorsClasses;
 }
 
-export const PresetColors = ({
-  onClick,
-  colors,
-  title,
-  className,
-  classes: classesProp,
-}: PresetColorsProps) => {
+export const PresetColors = (props: PresetColorsProps) => {
+  const {
+    onClick,
+    colors,
+    title,
+    className,
+    classes: classesProp,
+  } = useDefaultProps("HvColorPickerPresetColors", props);
   const { classes, cx } = useClasses(classesProp);
 
   const handleClick = (hex: string) => {

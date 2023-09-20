@@ -5,6 +5,7 @@ import { HvBaseProps } from "@core/types/generic";
 import { isKey } from "@core/utils/keyboardUtils";
 import { ExtractNames } from "@core/utils/classes";
 
+import { useDefaultProps } from "@core/hooks";
 import { FocusContext } from "../utils/FocusContext";
 import { SelectionContext } from "../utils/SelectionContext";
 import { useClasses, staticClasses } from "./MenuItem.styles";
@@ -50,16 +51,17 @@ const traverseItem = (node: HvHeaderNavigationItemProp) => {
   return { href, target };
 };
 
-export const HvHeaderMenuItem = ({
-  id,
-  item,
-  type,
-  onClick,
-  levels,
-  currentLevel,
-  classes: classesProp,
-  className,
-}: HvHeaderMenuItemProps) => {
+export const HvHeaderMenuItem = (props: HvHeaderMenuItemProps) => {
+  const {
+    id,
+    item,
+    type,
+    onClick,
+    levels,
+    currentLevel,
+    classes: classesProp,
+    className,
+  } = useDefaultProps("HvHeaderMenuItem", props);
   const { classes, cx } = useClasses(classesProp);
 
   const selectionPath = useContext(SelectionContext);

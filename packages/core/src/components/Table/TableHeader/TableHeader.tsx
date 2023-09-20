@@ -17,6 +17,7 @@ import { useTheme } from "@core/hooks/useTheme";
 import { ExtractNames } from "@core/utils/classes";
 import { HvButton, HvButtonProps } from "@core/components/Button";
 
+import { useDefaultProps } from "@core/hooks";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { getSortIcon, isParagraph } from "./utils";
@@ -81,8 +82,8 @@ const defaultComponent = "th";
  * `HvTableHeader` acts as a `th` element and inherits styles from its context
  */
 export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
-  (
-    {
+  (props, externalRef) => {
+    const {
       children,
       component,
       className,
@@ -106,9 +107,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
       resizing = false,
       sortButtonProps,
       ...others
-    },
-    externalRef
-  ) => {
+    } = useDefaultProps("HvTableHeader", props);
     const { classes, cx, css } = useClasses(classesProp);
 
     const { colors } = useTheme();

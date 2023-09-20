@@ -40,10 +40,10 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
     alignItems: "center",
 
     backgroundColor: "transparent",
-    border: `${theme.inlineEditor.borderWidth} solid transparent`,
+    border: `1px solid transparent`,
 
     "&:hover, &:focus": {
-      border: `${theme.inlineEditor.borderWidth} solid ${theme.inlineEditor.hoverBorderColor}`,
+      border: `1px solid ${theme.colors.primary}`,
       backgroundColor: "transparent",
 
       "& $icon": {
@@ -52,7 +52,7 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
     },
 
     "&:active": {
-      border: `${theme.inlineEditor.borderWidth} solid ${theme.inlineEditor.activeBorderColor}`,
+      border: `1px solid ${theme.colors.secondary}`,
       backgroundColor: "transparent",
 
       "& $icon": {

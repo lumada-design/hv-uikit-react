@@ -7,6 +7,7 @@ import { Swatch } from "react-color/lib/components/common";
 import { HvButton } from "@core/components/Button";
 import { ExtractNames } from "@core/utils/classes";
 
+import { useDefaultProps } from "@core/hooks";
 import { staticClasses, useClasses } from "./SavedColors.styles";
 
 export { staticClasses as colorPickerSavedColorsClasses };
@@ -23,15 +24,16 @@ interface SavedColorsProps {
   classes?: HvColorPickerSavedColorsClasses;
 }
 
-export const SavedColors = ({
-  colors,
-  onClickColor,
-  onAddColor,
-  onRemoveColor,
-  deleteButtonAriaLabel,
-  addButtonAriaLabel,
-  classes: classesProp,
-}: SavedColorsProps) => {
+export const SavedColors = (props: SavedColorsProps) => {
+  const {
+    colors,
+    onClickColor,
+    onAddColor,
+    onRemoveColor,
+    deleteButtonAriaLabel,
+    addButtonAriaLabel,
+    classes: classesProp,
+  } = useDefaultProps("HvColorPickerSavedColors", props);
   const { classes } = useClasses(classesProp);
 
   const handleClick = (hex: string) => {

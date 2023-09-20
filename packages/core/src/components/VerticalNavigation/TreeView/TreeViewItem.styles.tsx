@@ -13,7 +13,7 @@ const selected = () => ({
 });
 
 const hover = () => ({
-  background: theme.verticalNavigation.hoverColor,
+  background: theme.colors.containerBackgroundHover,
 });
 
 export const { staticClasses, useClasses } = createClasses(

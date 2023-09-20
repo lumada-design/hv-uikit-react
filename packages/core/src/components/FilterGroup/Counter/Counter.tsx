@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import { ExtractNames } from "@core/utils/classes";
 
+import { useDefaultProps } from "@core/hooks";
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { staticClasses, useClasses } from "./Counter.styles";
 import { HvFilterGroupFilters, HvFilterGroupValue } from "../types";
@@ -30,11 +31,12 @@ const getExistingFiltersById = (
   return total;
 };
 
-export const HvFilterGroupCounter = ({
-  className,
-  id,
-  classes: classesProp,
-}: HvFilterGroupCounterProps) => {
+export const HvFilterGroupCounter = (props: HvFilterGroupCounterProps) => {
+  const {
+    className,
+    id,
+    classes: classesProp,
+  } = useDefaultProps("HvFilterGroupCounter", props);
   const { classes, cx } = useClasses(classesProp);
   const {
     filterOptions,

@@ -6,18 +6,18 @@ import { outlineStyles } from "@core/utils/focusUtils";
 export const { staticClasses, useClasses } = createClasses("HvTab", {
   root: {
     marginTop: "3px",
-    padding: theme.tab.padding,
+    padding: "0 16px",
     minWidth: 70,
     minHeight: 32,
     textTransform: "none",
     fontFamily: theme.fontFamily.body,
     ...(theme.typography.body as CSSProperties),
     "&:hover": {
-      backgroundColor: theme.tab.hoverBackgroundColor,
-      borderRadius: theme.tab.hoverBackgroundBorderRadius,
+      backgroundColor: theme.colors.containerBackgroundHover,
+      borderRadius: theme.radii.base,
       "&::after": {
         height: "1px",
-        backgroundColor: theme.tab.hoverUnderlineBackgroundColor,
+        backgroundColor: theme.colors.atmo4,
       },
     },
     "&$selected": {

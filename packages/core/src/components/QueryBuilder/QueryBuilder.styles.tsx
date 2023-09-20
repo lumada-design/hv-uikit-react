@@ -17,7 +17,7 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
     backgroundColor: "transparent",
     maxWidth: "100%",
     minWidth: 740,
-    paddingBottom: theme.queryBuilder.topGroupPaddingBottom,
+    paddingBottom: `calc(${theme.space.md} * 3)`,
   },
   /** Styles applied to the sub group containers. */
   subGroup: {
@@ -37,7 +37,7 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
       borderLeft: theme.queryBuilder.border,
 
       top: -38,
-      left: theme.queryBuilder.ruleSubGroupLeftConnectorPosition,
+      left: -38,
     },
     ":not($topRulesContainer)>&:last-child::after": {
       content: '""',
@@ -79,7 +79,7 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
     paddingLeft: theme.space.sm,
     paddingTop: 7,
     position: "relative",
-    left: theme.queryBuilder.ruleSubGroupContainerLeftConnectorPosition,
+    left: -33,
     width: "100%",
   },
   /** Styles applied to the action button container. */
@@ -93,8 +93,8 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
   /** Styles applied to the top action button container. */
   topActionButtonContainer: {
     position: "absolute",
-    bottom: theme.queryBuilder.topActionButtonContainerBottom,
-    right: theme.queryBuilder.topActionButtonContainerRight,
+    bottom: `calc(-1 * ${theme.space.md} * 0.5 - 3px)`,
+    right: `calc(${theme.space.sm} * 1.75 + 2px)`,
   },
   /** Styles applied to the top rules container. */
   topRulesContainer: {},

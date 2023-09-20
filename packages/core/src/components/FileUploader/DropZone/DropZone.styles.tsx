@@ -8,19 +8,19 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
     position: "relative",
     width: "100%",
     display: "flex",
-    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.fileUploader.dropZone.borderColor}`,
+    border: `1px dashed ${theme.colors.secondary_60}`,
     cursor: "pointer",
-    background: theme.fileUploader.dropZone.backgroundColor,
-    borderRadius: theme.fileUploader.dropZone.borderRadius,
+    background: theme.colors.atmo1,
+    borderRadius: theme.radii.round,
 
     "&:hover": {
       background: `${theme.colors.atmo1}`,
-      border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.secondary}`,
+      border: `1px dashed ${theme.colors.secondary}`,
     },
 
     "&:focus-within": {
       background: `${theme.colors.atmo1}`,
-      border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.secondary}`,
+      border: `1px dashed ${theme.colors.secondary}`,
       ...outlineStyles,
     },
   },
@@ -36,15 +36,15 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
   },
   dragAction: {
     background: `${theme.colors.atmo1}`,
-    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.fileUploader.dropZone.borderColorDrag}`,
+    border: `1px dashed ${theme.colors.primary}`,
   },
   dropZoneContainerDisabled: {
     background: `${theme.colors.atmo3}`,
-    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.fileUploader.dropZone.borderColorDisabled}`,
+    border: `1px dashed ${theme.colors.secondary_60}`,
     cursor: "not-allowed",
     "&:hover": {
       background: `${theme.colors.atmo3}`,
-      border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.fileUploader.dropZone.borderColorDisabled}`,
+      border: `1px dashed ${theme.colors.secondary_60}`,
     },
 
     "& $dragText": {

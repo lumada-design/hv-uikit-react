@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 
-import { theme } from "@hitachivantara/uikit-styles";
-
 import { PopperProps } from "@mui/material";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
@@ -265,7 +263,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
     ...others
   } = useDefaultProps("HvDropdown", props);
 
-  const { classes, cx, css } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
@@ -403,14 +401,10 @@ export const HvDropdown = (props: HvDropdownProps) => {
       <HvTypography
         component="div"
         variant="body"
-        className={cx(
-          classes.placeholder,
-          {
-            [classes.selectionDisabled]: disabled,
-          },
-          !(isOpen || hasSelection) &&
-            css({ color: theme.dropdown.placeholderColor })
-        )}
+        className={cx(classes.placeholder, {
+          [classes.selectionDisabled]: disabled,
+          [classes.placeholderClosed]: !(isOpen || hasSelection),
+        })}
       >
         {selectionLabel.selected}
       </HvTypography>
@@ -459,7 +453,9 @@ export const HvDropdown = (props: HvDropdownProps) => {
       required={required}
       className={cx(
         classes.root,
-        disabled && css({ color: theme.dropdown.disabledColor }),
+        {
+          [classes.disabled]: disabled,
+        },
         className
       )}
       {...others}
@@ -487,16 +483,9 @@ export const HvDropdown = (props: HvDropdownProps) => {
       <HvBaseDropdown
         id={setId(id, "dropdown")}
         classes={{
-          root: cx(
-            classes.dropdown,
-            readOnly &&
-              css({
-                [`& .${staticClasses.dropdownHeader}`]: {
-                  border: theme.dropdown.readOnlyBorder,
-                  backgroundColor: theme.dropdown.readOnlyBackgroundColor,
-                },
-              })
-          ),
+          root: cx(classes.dropdown, {
+            [classes.readOnly]: readOnly,
+          }),
           arrow: classes.arrow,
           header: cx(classes.dropdownHeader, {
             [classes.dropdownHeaderInvalid]: isStateInvalid,

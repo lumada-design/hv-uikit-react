@@ -26,7 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
       top: 0,
     },
     "& $controls": {
-      display: theme.carousel.xsControlsDisplay,
+      display: "flex",
     },
   },
   fullscreen: {
@@ -60,9 +60,9 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
     alignItems: "center",
     position: "relative",
     height: 32,
-    justifyContent: theme.carousel.controlsJustifyContent,
-    backgroundColor: theme.carousel.controlsBackgroundColor,
-    border: theme.carousel.controlsBorder,
+    justifyContent: "center",
+    backgroundColor: theme.colors.atmo2,
+    border: `1px solid ${theme.colors.atmo4}`,
     gap: theme.space.xs,
     "&:has($dots)": {
       justifyContent: "center",
@@ -88,7 +88,7 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
     top: theme.space.xs,
     right: theme.space.md,
     zIndex: 1,
-    display: theme.carousel.counterContainerDisplay,
+    display: "none",
   },
   counter: {
     color: theme.colors.base_light,
@@ -159,12 +159,12 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
       textAlign: "center",
       aspectRatio: "16/9",
       opacity: "50%",
-      borderRadius: theme.carousel.thumbnailBorderRadius,
+      borderRadius: theme.radii.round,
     },
   },
   thumbnailSelected: {
     "& img": {
-      border: theme.carousel.thumbnailSelectedBorder,
+      border: "none",
       opacity: "100%",
     },
   },

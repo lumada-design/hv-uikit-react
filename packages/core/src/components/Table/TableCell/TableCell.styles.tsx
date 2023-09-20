@@ -9,9 +9,9 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   root: {
     verticalAlign: "inherit",
     textAlign: "left",
-    padding: `${theme.table.cellPaddingTop} ${theme.space.xs} ${
-      theme.table.cellPaddingBottom
-    } ${theme.spacing(4)}`,
+    padding: `calc(${theme.space.xs} - 2px ) ${theme.space.xs} calc(${
+      theme.space.xs
+    } - 3px ) ${theme.spacing(4)}`,
     borderBottom: `1px solid ${theme.colors.atmo4}`,
   },
   /** Styles applied to the cell when it's in the table head. */

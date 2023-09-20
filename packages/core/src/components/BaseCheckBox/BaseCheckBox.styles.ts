@@ -6,10 +6,10 @@ import { createClasses } from "@core/utils/classes";
 export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
   root: {
     padding: 0,
-    borderRadius: theme.baseCheckBox.borderRadius,
+    borderRadius: theme.radii.base,
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: theme.baseCheckBox.hoverColor,
+      backgroundColor: theme.colors.containerBackgroundHover,
     },
   },
   disabled: {

@@ -17,7 +17,7 @@ export const { staticClasses, useClasses } = createClasses("HvFileList", {
     alignItems: "center",
     background: theme.colors.atmo1,
     padding: `${theme.space.xs} 0px`,
-    border: theme.fileUploader.fileList.itemBorder,
-    borderRadius: theme.fileUploader.fileList.itemBorderRadius,
+    border: `1px solid ${theme.colors.atmo4}`,
+    borderRadius: `0px 0px ${theme.radii.round} ${theme.radii.round}`,
   },
 });

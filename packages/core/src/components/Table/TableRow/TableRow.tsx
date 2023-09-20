@@ -97,15 +97,9 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
             css({
               "&:nth-of-type(even)": {
                 backgroundColor: stripedColorEven,
-                "&:hover": {
-                  backgroundColor: theme.table.rowHoverColor,
-                },
               },
               "&:nth-of-type(odd)": {
                 backgroundColor: stripedColorOdd,
-                "&:hover": {
-                  backgroundColor: theme.table.rowHoverColor,
-                },
               },
             }),
           {

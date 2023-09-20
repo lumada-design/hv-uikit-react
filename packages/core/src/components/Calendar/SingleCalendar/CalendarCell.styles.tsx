@@ -5,7 +5,7 @@ import { outlineStyles } from "@core/utils/focusUtils";
 import { createClasses } from "@core/utils/classes";
 
 const hover = {
-  backgroundColor: theme.calendar.cellHoverColor,
+  backgroundColor: theme.colors.containerBackgroundHover,
   cursor: "pointer",
 };
 

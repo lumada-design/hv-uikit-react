@@ -8,7 +8,7 @@ export const { staticClasses, useClasses } = createClasses(
     root: {
       display: "block",
       background: theme.colors.atmo1,
-      marginTop: theme.verticalNavigation.actionsMarginTop,
+      marginTop: "auto",
 
       "& :not(:last-child)": {
         marginBottom: "8px",

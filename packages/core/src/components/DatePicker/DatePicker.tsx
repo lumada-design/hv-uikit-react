@@ -1,7 +1,5 @@
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef } from "react";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import styled from "@emotion/styled";
 
 import { Calendar } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -425,27 +423,19 @@ export const HvDatePicker = (props: HvDatePickerProps) => {
     </HvActionBar>
   );
 
-  const styledTypography = (
-    dateString: string,
-    variant: any,
-    text: ReactNode
-  ) => {
-    const StyledTypography = styled(HvTypography)({
-      color: dateString
-        ? theme.colors.secondary
-        : theme.datePicker.dropdownPlaceholderColor,
-    });
-
-    return <StyledTypography variant={variant}>{text}</StyledTypography>;
-  };
-
-  const renderInput = (dateString: string) =>
-    styledTypography(
-      dateString,
-      activeTheme?.datePicker.placeholderVariant,
-      (dateString || placeholder) === undefined ? "" : dateString || placeholder
+  const renderInput = (dateString: string) => {
+    return (
+      <HvTypography
+        color={theme.colors.secondary}
+        className={cx(classes.inputText, { [classes.dateText]: dateString })}
+        variant={activeTheme?.datePicker.placeholderVariant}
+      >
+        {(dateString || placeholder) === undefined
+          ? ""
+          : dateString || placeholder}
+      </HvTypography>
     );
-
+  };
   const dateValue = rangeMode ? { startDate, endDate } : startDate;
 
   const hasLabel = label != null;

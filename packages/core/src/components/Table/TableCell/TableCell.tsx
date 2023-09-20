@@ -17,6 +17,7 @@ import { getVarValue } from "@core/utils/theme";
 import { hexToRgbA } from "@core/utils/hexToRgbA";
 import { useTheme } from "@core/hooks/useTheme";
 
+import { useDefaultProps } from "@core/hooks";
 import {
   HvTableCellAlign,
   HvTableCellType,
@@ -95,7 +96,7 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
       resizable = false,
       resizing = false,
       ...others
-    } = props;
+    } = useDefaultProps("HvTableCell", props);
     const { classes, cx, css } = useClasses(classesProp);
     const { colors, rootId } = useTheme();
     const tableContext = useContext(TableContext);

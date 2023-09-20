@@ -13,11 +13,11 @@ export const { staticClasses, useClasses } = createClasses(name, {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: theme.scrollTo.horizontal.buttonHeight,
+    height: "48px",
     cursor: "pointer",
-    borderBottom: theme.scrollTo.horizontal.buttonBottomBorder,
+    borderBottom: "none",
     "&:hover": {
-      backgroundColor: theme.scrollTo.horizontal.buttonHoverBackgroundColor,
+      backgroundColor: "transparent",
 
       "& $notSelected": {
         height: theme.scrollTo.dotHoverSize,
@@ -26,7 +26,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
       },
 
       "& $notSelectedRoot": {
-        backgroundColor: theme.scrollTo.dotHoverBackgroundColor,
+        backgroundColor: theme.colors.containerBackgroundHover,
       },
     },
     "&:focus": {
@@ -41,17 +41,17 @@ export const { staticClasses, useClasses } = createClasses(name, {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    height: theme.scrollTo.horizontal.buttonHeight,
-    borderBottom: theme.scrollTo.horizontal.buttonBottomBorder,
+    height: "48px",
+    borderBottom: "none",
 
     "& p": {
-      padding: theme.scrollTo.horizontal.textPadding,
-      maxWidth: theme.scrollTo.horizontal.textMaxWidth,
+      padding: "3px 10px",
+      maxWidth: "120px",
       textOverflow: "ellipsis",
       overflow: "hidden",
     },
   },
   selected: {
-    borderBottom: theme.scrollTo.horizontal.selectedButtonBottomBorder,
+    borderBottom: "none",
   },
 });

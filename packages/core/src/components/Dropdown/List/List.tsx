@@ -14,6 +14,7 @@ import { HvActionBar } from "@core/components/ActionBar";
 import BaseDropdownContext from "@core/components/BaseDropdown/BaseDropdownContext";
 import { ExtractNames } from "@core/utils/classes";
 
+import { useDefaultProps } from "@core/hooks";
 import { staticClasses, useClasses } from "./List.styles";
 import { getSelected } from "../utils";
 import { HvDropdownLabelsProps } from "../types";
@@ -110,23 +111,24 @@ const cleanHidden = (lst: HvListValue[]) =>
 const valuesExist = (values: HvListValue[]) =>
   !isNil(values) && values?.length > 0;
 
-export const HvDropdownList = ({
-  id,
-  classes: classesProp,
-  values = [],
-  multiSelect = false,
-  showSearch = false,
-  onChange,
-  onCancel,
-  labels,
-  notifyChangesOnFirstRender = false,
-  hasTooltips = false,
-  singleSelectionToggle,
-  height: dropdownHeight,
-  maxHeight,
-  virtualized = false,
-  ...others
-}: HvDropdownListProps) => {
+export const HvDropdownList = (props: HvDropdownListProps) => {
+  const {
+    id,
+    classes: classesProp,
+    values = [],
+    multiSelect = false,
+    showSearch = false,
+    onChange,
+    onCancel,
+    labels,
+    notifyChangesOnFirstRender = false,
+    hasTooltips = false,
+    singleSelectionToggle,
+    height: dropdownHeight,
+    maxHeight,
+    virtualized = false,
+    ...others
+  } = useDefaultProps("HvDropdownList", props);
   const { classes, cx, css } = useClasses(classesProp);
 
   const [searchStr, setSearchStr] = useState<string>("");

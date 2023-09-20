@@ -10,7 +10,6 @@ import {
   getOverrideColors,
   getRadiusStyles,
   getSizeStyles,
-  getVariantStyles,
   useClasses,
 } from "./Button.styles";
 import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./types";
@@ -114,7 +113,7 @@ export const HvButton: <C extends React.ElementType = "button">(
         ref={ref}
         className={cx(
           classes.root,
-          css(getVariantStyles(variant)),
+          classes[variant],
           size && css(getSizeStyles(size)),
           radius && css(getRadiusStyles(radius)),
           overrideIconColors && css(getOverrideColors()),

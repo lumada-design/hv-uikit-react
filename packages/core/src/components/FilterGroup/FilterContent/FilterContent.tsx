@@ -14,6 +14,7 @@ import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 
+import { useDefaultProps } from "@core/hooks";
 import {
   HvFilterGroupLabels,
   HvFilterGroupValue,
@@ -50,27 +51,28 @@ export interface HvFilterGroupContentProps
   classes?: HvFilterGroupContentClasses;
 }
 
-export const HvFilterGroupContent = ({
-  id,
-  status,
-  disabled = false,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  description,
-  "aria-describedby": ariaDescribedBy,
-  onChange,
-  onCancel,
-  onClear,
-  labels,
-  horizontalPlacement = "right",
-  disablePortal = true,
-  escapeWithReference = true,
-  height,
-  leftEmptyElement,
-  rightEmptyElement,
-  classes: classesProp,
-  ...others
-}: HvFilterGroupContentProps) => {
+export const HvFilterGroupContent = (props: HvFilterGroupContentProps) => {
+  const {
+    id,
+    status,
+    disabled = false,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
+    onChange,
+    onCancel,
+    onClear,
+    labels,
+    horizontalPlacement = "right",
+    disablePortal = true,
+    escapeWithReference = true,
+    height,
+    leftEmptyElement,
+    rightEmptyElement,
+    classes: classesProp,
+    ...others
+  } = useDefaultProps("HvFilterGroupContent", props);
   const { classes } = useClasses(classesProp);
   const { activeTheme } = useTheme();
 

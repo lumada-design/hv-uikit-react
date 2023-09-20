@@ -37,7 +37,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     borderRadius: theme.scrollTo.dotRootRadius,
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: theme.scrollTo.dotHoverBackgroundColor,
+      backgroundColor: theme.colors.containerBackgroundHover,
 
       "& $notSelected": {
         height: theme.scrollTo.dotHoverSize,

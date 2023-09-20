@@ -6,7 +6,7 @@ export const { staticClasses, useClasses } = createClasses("HvActionBar", {
   root: {
     width: "100%",
     padding: theme.space.sm,
-    borderTop: theme.actionBar.borderTop,
+    borderTop: `1px solid ${theme.colors.atmo3}`,
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",

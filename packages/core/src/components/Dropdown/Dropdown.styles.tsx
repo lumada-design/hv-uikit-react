@@ -17,18 +17,21 @@ export const { staticClasses, useClasses } = createClasses("HvDropdown", {
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
   },
+  placeholderClosed: {
+    color: theme.colors.secondary_80,
+  },
   selectionDisabled: {
     lineHeight: theme.space.md,
-    color: theme.dropdown.disabledColor,
+    color: theme.colors.secondary_60,
   },
   dropdown: {
     width: "100%",
     borderRadius: theme.radii.base,
 
     "& $dropdownHeaderInvalid": {
-      border: theme.dropdown.dropdownHeaderInvalidBorder,
+      border: `1px solid ${theme.colors.negative}`,
       "&:hover": {
-        border: theme.dropdown.dropdownHeaderInvalidBorder,
+        border: `1px solid ${theme.colors.negative}`,
       },
     },
   },
@@ -38,4 +41,13 @@ export const { staticClasses, useClasses } = createClasses("HvDropdown", {
   dropdownHeaderOpen: {},
   dropdownListContainer: {},
   rootList: {},
+  disabled: {
+    color: theme.colors.secondary_60,
+  },
+  readOnly: {
+    "& $dropdownHeader": {
+      border: `1px solid ${theme.colors.secondary_80}`,
+      backgroundColor: theme.colors.atmo1,
+    },
+  },
 });

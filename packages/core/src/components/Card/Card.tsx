@@ -61,8 +61,7 @@ export const HvCard = (props: HvCardProps) => {
         "HvIsCardGridElement",
         classes.root,
         css({
-          backgroundColor:
-            (bgcolor && theme.colors[bgcolor]) || theme.card.backgroundColor,
+          backgroundColor: bgcolor && theme.colors[bgcolor],
         }),
         {
           [classes.selectable]: selectable,

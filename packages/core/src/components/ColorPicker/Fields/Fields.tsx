@@ -7,6 +7,7 @@ import * as color from "react-color/lib/helpers/color";
 import { HvInput } from "@core/components/Input";
 import { ExtractNames } from "@core/utils/classes";
 
+import { useDefaultProps } from "@core/hooks";
 import { staticClasses, useClasses } from "./Fields.styles";
 
 export { staticClasses as colorPickerFieldsClasses };
@@ -31,13 +32,14 @@ interface FieldsProps {
   classes?: HvColorPickerFieldsClasses;
 }
 
-export const Fields = ({
-  className,
-  onChange,
-  rgb,
-  hex,
-  classes: classesProp,
-}: FieldsProps) => {
+export const Fields = (props: FieldsProps) => {
+  const {
+    className,
+    onChange,
+    rgb,
+    hex,
+    classes: classesProp,
+  } = useDefaultProps("HvColorPickerFields", props);
   const { classes, cx } = useClasses(classesProp);
   const [internalHex, setInternalHex] = useState(hex);
   const [internalRed, setInternalRed] = useState(rgb?.r);

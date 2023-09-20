@@ -15,6 +15,7 @@ import {
 import { HvButtonVariant } from "@core/components/Button";
 import { useTheme } from "@core/hooks/useTheme";
 
+import { useDefaultProps } from "@core/hooks";
 import { staticClasses, useClasses } from "./SnackbarContent.styles";
 import { HvSnackbarVariant } from "../types";
 
@@ -48,57 +49,54 @@ export interface HvSnackbarContentProps
 export const HvSnackbarContent = forwardRef<
   HTMLDivElement,
   HvSnackbarContentProps
->(
-  (
-    {
-      className,
-      id,
-      classes: classesProp,
-      label,
-      variant = "default",
-      showIcon,
-      customIcon,
-      action,
-      actionCallback,
-      ...others
-    },
-    ref
-  ) => {
-    const icon = customIcon || (showIcon && iconVariant(variant, "base_dark"));
-    const innerAction: any = isValidElement(action) ? action : [action];
+>((props: HvSnackbarContentProps, ref) => {
+  const {
+    className,
+    id,
+    classes: classesProp,
+    label,
+    variant = "default",
+    showIcon,
+    customIcon,
+    action,
+    actionCallback,
+    ...others
+  } = useDefaultProps("HvSnackbarContent", props);
 
-    const { classes, cx } = useClasses(classesProp);
-    const { activeTheme } = useTheme();
+  const icon = customIcon || (showIcon && iconVariant(variant, "base_dark"));
+  const innerAction: any = isValidElement(action) ? action : [action];
 
-    return (
-      <SnackbarContent
-        ref={ref}
-        id={id}
-        classes={{
-          root: classes.root,
-          message: classes.message,
-        }}
-        className={cx(classes?.[variant], className)}
-        message={
-          <div id={setId(id, "message")} className={classes.messageSpan}>
-            {icon && <div className={classes.iconVariant}>{icon}</div>}
-            <div className={classes.messageText}>{label}</div>
-            {action && (
-              <div id={setId(id, "action")} className={classes.action}>
-                <HvActionsGeneric
-                  id={id}
-                  category={
-                    activeTheme?.snackbar.actionButtonVariant as HvButtonVariant
-                  }
-                  actions={innerAction}
-                  actionsCallback={actionCallback}
-                />
-              </div>
-            )}
-          </div>
-        }
-        {...others}
-      />
-    );
-  }
-);
+  const { classes, cx } = useClasses(classesProp);
+  const { activeTheme } = useTheme();
+
+  return (
+    <SnackbarContent
+      ref={ref}
+      id={id}
+      classes={{
+        root: classes.root,
+        message: classes.message,
+      }}
+      className={cx(classes?.[variant], className)}
+      message={
+        <div id={setId(id, "message")} className={classes.messageSpan}>
+          {icon && <div className={classes.iconVariant}>{icon}</div>}
+          <div className={classes.messageText}>{label}</div>
+          {action && (
+            <div id={setId(id, "action")} className={classes.action}>
+              <HvActionsGeneric
+                id={id}
+                category={
+                  activeTheme?.snackbar.actionButtonVariant as HvButtonVariant
+                }
+                actions={innerAction}
+                actionsCallback={actionCallback}
+              />
+            </div>
+          )}
+        </div>
+      }
+      {...others}
+    />
+  );
+});

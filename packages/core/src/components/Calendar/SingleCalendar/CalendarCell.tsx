@@ -2,6 +2,7 @@ import { SyntheticEvent, useRef } from "react";
 
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "@core/hooks";
 import {
   isSameDay,
   isSameMonth,
@@ -18,21 +19,23 @@ export { staticClasses as calendarCellClasses };
 
 export type HvCalendarCellClasses = ExtractNames<typeof useClasses>;
 
-export const HvCalendarCell = ({
-  classes: classesProp,
-  onChange,
-  onKeyDown,
-  calendarValue,
-  firstDayOfCurrentMonth,
-  value,
-  isDateSelectionMode,
-  today,
-  locale,
-  minimumDate,
-  maximumDate,
-  rangeMode = false,
-  ...others
-}: HvCalendarCellProps) => {
+export const HvCalendarCell = (props: HvCalendarCellProps) => {
+  const {
+    classes: classesProp,
+    onChange,
+    onKeyDown,
+    calendarValue,
+    firstDayOfCurrentMonth,
+    value,
+    isDateSelectionMode,
+    today,
+    locale,
+    minimumDate,
+    maximumDate,
+    rangeMode = false,
+    ...others
+  } = useDefaultProps("HvCalendarCell", props);
+
   const { classes, cx } = useClasses(classesProp);
 
   const buttonEl = useRef<HTMLButtonElement>(null);

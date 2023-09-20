@@ -11,26 +11,26 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     height: theme.baseSwitch.height,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: theme.baseSwitch.borderRadius,
+    borderRadius: theme.radii.base,
 
     "&:hover": {
-      backgroundColor: theme.baseSwitch.hoverBackgroundColor,
+      backgroundColor: theme.colors.primary_20,
     },
 
     // Higher CSS specificity here
     "& $switchBase": {
       "&:hover": {
-        backgroundColor: theme.baseSwitch.hoverBaseBackgroundColor,
+        backgroundColor: "transparent",
       },
 
       "&$checked": {
         transform: "translateX(16px)",
         "& + $track": {
-          opacity: theme.baseSwitch.checkedOpacity,
-          backgroundColor: theme.baseSwitch.checkedTrackBackgroundColor,
+          opacity: 1,
+          backgroundColor: theme.colors.secondary,
         },
         "&:hover": {
-          backgroundColor: theme.baseSwitch.hoverBaseBackgroundColor,
+          backgroundColor: "transparent",
         },
       },
     },
@@ -39,9 +39,9 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     "&$disabled": {
       "& $switchBase": {
         "& + $track": {
-          opacity: theme.baseSwitch.disabled.trackOpacity,
-          backgroundColor: theme.baseSwitch.disabled.trackBackgroundColor,
-          border: theme.baseSwitch.disabled.trackBorder,
+          opacity: 1,
+          backgroundColor: theme.colors.atmo3,
+          border: `solid 1px ${theme.colors.secondary_60}`,
         },
       },
     },
@@ -61,23 +61,23 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     padding: theme.baseSwitch.padding,
   },
   track: {
-    opacity: theme.baseSwitch.track.opacity,
-    borderRadius: theme.baseSwitch.track.borderRadius,
-    height: theme.baseSwitch.track.height,
-    width: theme.baseSwitch.track.width,
-    border: theme.baseSwitch.track.border,
-    backgroundColor: theme.baseSwitch.track.backgroundColor,
+    opacity: 1,
+    borderRadius: "15px",
+    height: "16px",
+    width: "32px",
+    border: `solid 1px ${theme.colors.secondary}`,
+    backgroundColor: theme.colors.atmo1,
   },
   thumb: {
     position: "relative",
-    left: theme.baseSwitch.thumb.left,
-    width: theme.baseSwitch.thumb.width,
-    height: theme.baseSwitch.thumb.height,
-    border: theme.baseSwitch.thumb.border,
-    backgroundColor: theme.baseSwitch.thumb.backgroundColor,
-    marginLeft: theme.baseSwitch.thumb.marginLeft,
-    marginTop: theme.baseSwitch.thumb.marginTop,
-    boxShadow: theme.baseSwitch.thumb.boxShadow,
+    left: "-9px",
+    width: "12px",
+    height: "12px",
+    border: `solid 1px ${theme.colors.secondary}`,
+    backgroundColor: theme.colors.atmo1,
+    marginLeft: "2px",
+    marginTop: 0,
+    boxShadow: "none",
   },
   checked: {},
   disabled: {
@@ -88,13 +88,13 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     },
 
     "& $thumb": {
-      backgroundColor: theme.baseSwitch.disabled.thumbBackgroundColor,
-      border: theme.baseSwitch.disabled.thumbBorder,
+      backgroundColor: theme.colors.atmo3,
+      border: `solid 1px ${theme.colors.secondary_60}`,
     },
   },
   readOnly: {},
   focusVisible: {
-    borderRadius: theme.baseSwitch.focusBorderRadius,
+    borderRadius: "8px",
     ...outlineStyles,
   },
 });

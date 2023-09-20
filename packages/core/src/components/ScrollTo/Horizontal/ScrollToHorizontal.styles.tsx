@@ -25,7 +25,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     left: 0,
   },
   notSelectedRoot: {
-    display: theme.scrollTo.horizontal.dotDisplay,
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     height: theme.scrollTo.dotRootSize,
@@ -40,7 +40,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     backgroundColor: theme.scrollTo.dotNotSelectedColor,
   },
   selected: {
-    display: theme.scrollTo.horizontal.dotDisplay,
+    display: "flex",
     height: theme.scrollTo.dotRootSize,
     width: theme.scrollTo.dotRootSize,
   },

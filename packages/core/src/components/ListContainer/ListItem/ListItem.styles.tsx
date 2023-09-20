@@ -47,16 +47,16 @@ export const { staticClasses, useClasses } = createClasses("HvListItem", {
   interactive: {
     cursor: "pointer",
     "&:not($disabled):not($selected):hover": {
-      backgroundColor: theme.list.hoverColor,
+      backgroundColor: theme.colors.containerBackgroundHover,
     },
     "&$disabled": {
       cursor: "not-allowed",
     },
   },
-  selected: { backgroundColor: theme.list.hoverColor },
+  selected: { backgroundColor: theme.colors.containerBackgroundHover },
   disabled: {
     color: theme.colors.secondary_60,
-    backgroundColor: theme.list.disabledBackgroundColor,
+    backgroundColor: theme.colors.atmo3,
   },
   withStartAdornment: {
     "& > div": {

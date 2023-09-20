@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses(
     root: {
       display: "flex",
       flexDirection: "column",
-      justifyContent: theme.verticalNavigation.justifyContent,
+      justifyContent: "flex-start",
 
       width: "220px",
 

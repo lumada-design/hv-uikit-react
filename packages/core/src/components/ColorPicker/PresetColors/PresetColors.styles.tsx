@@ -5,13 +5,13 @@ import { createClasses } from "@core/utils/classes";
 const name = "HvColorPicker-PresetColors";
 
 export const { staticClasses, useClasses } = createClasses(name, {
-  root: { width: theme.colorPicker.recommendedColorsRootWidth },
+  root: { width: "232px" },
   colors: {
     display: "flex",
     flexWrap: "wrap",
     position: "relative",
-    width: theme.colorPicker.recommendedColorsWidth,
-    margin: theme.colorPicker.recommendedColorsMargin,
+    width: "calc(100% + 8px)",
+    margin: "-4px -4px",
     padding: 0,
   },
   title: {
@@ -19,12 +19,12 @@ export const { staticClasses, useClasses } = createClasses(name, {
     marginBottom: 8,
   },
   swatchWrap: {
-    width: theme.colorPicker.recommendedColorsSwatchWidth,
-    height: theme.colorPicker.recommendedColorsSwatchHeight,
-    margin: theme.colorPicker.recommendedColorsSwatchMargin,
+    width: "32px",
+    height: "32px",
+    margin: "4px",
 
     "& > span > div": {
-      borderRadius: theme.colorPicker.recommendedColorsSwatchBorderRadius,
+      borderRadius: theme.radii.base,
     },
   },
 });

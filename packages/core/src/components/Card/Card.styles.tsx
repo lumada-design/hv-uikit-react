@@ -7,8 +7,8 @@ export const { staticClasses, useClasses } = createClasses("HvCard", {
   root: {
     overflow: "visible",
     position: "relative",
-    outline: theme.card.outline,
-    borderRadius: theme.card.borderRadius,
+    outline: `1px solid ${theme.colors.atmo4}`,
+    borderRadius: `0px 0px ${theme.radii.round} ${theme.radii.round}`,
     "&:focus-visible": {
       ...outlineStyles,
     },
@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses("HvCard", {
   },
   selectable: {
     "&:hover": {
-      outline: `1px solid ${theme.card.hoverColor}`,
+      outline: `1px solid ${theme.colors.primary}`,
     },
   },
   semanticContainer: {
@@ -38,8 +38,8 @@ export const { staticClasses, useClasses } = createClasses("HvCard", {
     },
   },
   icon: {
-    top: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,
-    right: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,
+    top: theme.space.xs,
+    right: theme.space.xs,
   },
   semanticBar: {
     width: "100%",

@@ -11,6 +11,7 @@ import { HvTypography } from "@core/components/Typography";
 import { Doc } from "@hitachivantara/uikit-react-icons";
 import { HvInfoMessage, HvLabel } from "@core/components/Forms";
 import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "@core/hooks";
 import { convertUnits } from "../utils";
 import { HvFileData, HvFilesAddedEvent } from "../File";
 
@@ -98,18 +99,19 @@ export interface HvDropZoneProps {
   classes?: HvDropZoneClasses;
 }
 
-export const HvDropZone = ({
-  id: idProp,
-  classes: classesProp,
-  labels,
-  acceptedFiles,
-  maxFileSize,
-  inputProps,
-  hideLabels,
-  multiple = true,
-  disabled = false,
-  onFilesAdded,
-}: HvDropZoneProps) => {
+export const HvDropZone = (props: HvDropZoneProps) => {
+  const {
+    id: idProp,
+    classes: classesProp,
+    labels,
+    acceptedFiles,
+    maxFileSize,
+    inputProps,
+    hideLabels,
+    multiple = true,
+    disabled = false,
+    onFilesAdded,
+  } = useDefaultProps("HvDropZone", props);
   const id = useUniqueId(idProp, "dropzone");
 
   const { classes, cx } = useClasses(classesProp);

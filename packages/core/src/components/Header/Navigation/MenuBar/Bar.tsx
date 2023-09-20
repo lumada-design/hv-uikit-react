@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 
+import { useDefaultProps } from "@core/hooks";
 import { SelectionContext } from "../utils/SelectionContext";
 import { staticClasses, useClasses } from "./Bar.styles";
 import { HvHeaderNavigationItemProp } from "../useSelectionPath";
@@ -17,14 +18,15 @@ export interface BarProps extends HvBaseProps {
   classes?: HvHeaderMenuBarClasses;
 }
 
-export const Bar = ({
-  id,
-  data = [],
-  type = "menubar",
-  className,
-  children,
-  classes: classesProp,
-}: BarProps) => {
+export const Bar = (props: BarProps) => {
+  const {
+    id,
+    data = [],
+    type = "menubar",
+    className,
+    children,
+    classes: classesProp,
+  } = useDefaultProps("Bar", props);
   const { classes, cx } = useClasses(classesProp);
 
   const selectionPath = useContext(SelectionContext);

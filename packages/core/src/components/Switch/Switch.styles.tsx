@@ -18,7 +18,7 @@ export const { staticClasses, useClasses } = createClasses("HvSwitch", {
     borderBottom: "1px solid transparent",
   },
   invalidSwitch: {
-    paddingBottom: theme.switch.invalidPaddingBottom,
+    paddingBottom: "1px",
     borderBottom: `1px solid ${theme.colors.negative}`,
   },
 });

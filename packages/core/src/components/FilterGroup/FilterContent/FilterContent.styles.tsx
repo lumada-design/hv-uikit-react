@@ -31,8 +31,8 @@ export const { staticClasses, useClasses } = createClasses(name, {
     minHeight: "calc(370px - 75px)",
     verticalAlign: "top",
     overflow: "visible",
-    boxShadow: theme.filterGroup.rightPanelShadow,
-    borderLeft: theme.filterGroup.rightPanelBorderLeft,
+    boxShadow: "none",
+    borderLeft: `1px solid ${theme.colors.atmo3}`,
   },
   leftSidePanel: {
     display: "inline-block",
@@ -49,6 +49,6 @@ export const { staticClasses, useClasses } = createClasses(name, {
     flex: 1,
   },
   applyButton: {
-    marginRight: theme.filterGroup.applyButtonMarginRight,
+    marginRight: "8px",
   },
 });

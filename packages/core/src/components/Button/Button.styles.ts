@@ -5,7 +5,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { outlineStyles } from "@core/utils/focusUtils";
 import { createClasses } from "@core/utils/classes";
 
-import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./types";
+import { HvButtonRadius, HvButtonSize } from "./types";
 
 export const { staticClasses, useClasses } = createClasses("HvButton", {
   root: {
@@ -30,8 +30,8 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     lineHeight: "11px",
     letterSpacing: 0,
     height: "32px",
-    borderRadius: theme.button.borderRadius,
-    padding: theme.button.padding,
+    borderRadius: theme.radii.base,
+    padding: theme.spacing("xs", "sm"),
   },
   startIcon: {
     marginLeft: `calc(-1 * ${theme.space.xs})`,
@@ -55,69 +55,63 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     height: "fit-content",
     minWidth: "unset",
   },
+
+  primary: {
+    color: theme.colors.atmo1,
+    backgroundColor: theme.colors.primary,
+    "&:hover, &:focus-visible": {
+      backgroundColor: theme.colors.primary_80,
+    },
+  },
+  primarySubtle: {
+    color: theme.colors.primary,
+    backgroundColor: "transparent",
+    border: `1px solid ${theme.colors.primary}`,
+    "&:hover, &:focus-visible": {
+      backgroundColor: theme.colors.containerBackgroundHover,
+    },
+  },
+  primaryGhost: {
+    color: theme.colors.primary,
+    backgroundColor: "transparent",
+    "&:hover, &:focus-visible": {
+      backgroundColor: theme.colors.containerBackgroundHover,
+    },
+    "&:disabled": {
+      backgroundColor: "transparent",
+    },
+  },
+  secondarySubtle: {
+    color: theme.colors.secondary,
+    backgroundColor: "transparent",
+    border: `1px solid ${theme.colors.secondary}`,
+    "&:hover, &:focus-visible": {
+      backgroundColor: theme.colors.containerBackgroundHover,
+    },
+  },
+  secondaryGhost: {
+    color: theme.colors.secondary,
+    backgroundColor: "transparent",
+    "&:hover, &:focus-visible": {
+      backgroundColor: theme.colors.containerBackgroundHover,
+    },
+    "&:disabled": {
+      backgroundColor: "transparent",
+    },
+  },
+  semantic: {
+    color: theme.colors.base_dark,
+    backgroundColor: "transparent",
+    "&:hover, &:focus-visible": {
+      backgroundColor: "rgba(251, 252, 252, 0.3)",
+    },
+    "&:disabled": {
+      backgroundColor: "rgba(251, 252, 252, 0.1)",
+    },
+  },
+  secondary: {},
+  ghost: {},
 });
-
-export const getVariantStyles = (variant: HvButtonVariant) => {
-  const variantStyles: Record<HvButtonVariant, CSSInterpolation> = {
-    primary: {
-      color: theme.colors.atmo1,
-      backgroundColor: theme.colors.primary,
-      "&:hover, &:focus-visible": {
-        backgroundColor: theme.colors.primary_80,
-      },
-    },
-    primarySubtle: {
-      color: theme.colors.primary,
-      backgroundColor: "transparent",
-      border: `1px solid ${theme.colors.primary}`,
-      "&:hover, &:focus-visible": {
-        backgroundColor: theme.button.hoverColor,
-      },
-    },
-    primaryGhost: {
-      color: theme.colors.primary,
-      backgroundColor: "transparent",
-      "&:hover, &:focus-visible": {
-        backgroundColor: theme.button.hoverColor,
-      },
-      "&:disabled": {
-        backgroundColor: "transparent",
-      },
-    },
-    secondarySubtle: {
-      color: theme.colors.secondary,
-      backgroundColor: theme.button.secondaryBackgroundColor,
-      border: `1px solid ${theme.button.secondarySubtleBorderColor}`,
-      "&:hover, &:focus-visible": {
-        backgroundColor: theme.button.hoverColor,
-      },
-    },
-    secondaryGhost: {
-      color: theme.colors.secondary,
-      backgroundColor: "transparent",
-      "&:hover, &:focus-visible": {
-        backgroundColor: theme.button.hoverColor,
-      },
-      "&:disabled": {
-        backgroundColor: "transparent",
-      },
-    },
-    semantic: {
-      color: theme.colors.base_dark,
-      backgroundColor: "transparent",
-      "&:hover, &:focus-visible": {
-        backgroundColor: theme.button.semanticColor,
-      },
-      "&:disabled": {
-        backgroundColor: theme.button.semanticColorDisabled,
-      },
-    },
-    secondary: undefined,
-    ghost: undefined,
-  };
-
-  return variantStyles[variant];
-};
 
 export const getRadiusStyles = (radius: HvButtonRadius): CSSInterpolation => ({
   borderRadius: theme.radii[radius],
