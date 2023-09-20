@@ -342,7 +342,8 @@ export const HvDropdownList = ({
                     maxHeight ??
                     `calc(${height}px - 32px - ${theme.space.xs} - ${theme.space.sm})`,
                   overflow: "auto",
-                  padding: 5,
+                  padding: 4,
+                  margin: -4,
                 }),
                 dropdownHeight &&
                   css({

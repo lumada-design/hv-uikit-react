@@ -1,4 +1,11 @@
-import { forwardRef, isValidElement, useEffect, useMemo, useRef } from "react";
+import {
+  AriaRole,
+  forwardRef,
+  isValidElement,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
 
 import { FixedSizeList } from "react-window";
 
@@ -118,6 +125,14 @@ export const HvList = (props: HvListProps) => {
 
     setList(parsedList);
   }, [valuesProp, multiSelect, selectable, singleSelectionToggle, setList]);
+
+  const [role, itemRole] = useMemo<[AriaRole, AriaRole]>(() => {
+    // selectors are responsible for the role & selection state
+    if (selectable && useSelector) return ["list", "listitem"];
+
+    if (selectable) return ["listbox", "option"];
+    return ["menu", "menuitem"];
+  }, [selectable, useSelector]);
 
   const handleSelect = (evt, item) => {
     if (!item.path) evt.preventDefault();
@@ -262,7 +277,7 @@ export const HvList = (props: HvListProps) => {
       <HvListItem
         key={i}
         id={itemId}
-        role={selectable ? "option" : "menuitem"}
+        role={itemRole}
         disabled={item.disabled || undefined}
         className={classes.item}
         classes={{
@@ -299,7 +314,7 @@ export const HvList = (props: HvListProps) => {
     }
   }, [listRef, selectedItemIndex]);
 
-  const ListItem = ({ index, style }) => {
+  const renderVirtualizedListItem = ({ index, style }) => {
     const item = filteredList[index];
     const tabIndex =
       item.tabIndex ||
@@ -322,16 +337,18 @@ export const HvList = (props: HvListProps) => {
     });
   };
 
-  const renderFixedList = useMemo(() => {
+  const ariaMultiSelectable = (role === "listbox" && multiSelect) || undefined;
+
+  const ListContainer = useMemo(() => {
     return forwardRef(({ ...rest }, ref) => (
       <HvListContainer
         id={id}
         className={cx(classes.root, className)}
-        role={selectable ? "listbox" : "menu"}
+        role={role}
         interactive
         condensed={condensed}
         disableGutters={useSelector}
-        aria-multiselectable={(selectable && multiSelect) || undefined}
+        aria-multiselectable={ariaMultiSelectable}
         ref={ref}
         {...rest}
       />
@@ -341,31 +358,33 @@ export const HvList = (props: HvListProps) => {
     id,
     useSelector,
     className,
-    classes,
+    classes.root,
+    role,
     condensed,
-    selectable,
-    multiSelect,
+    ariaMultiSelectable,
   ]);
+
+  // Render nothing if there are no items
+  if (filteredList.length === 0) return null;
 
   return (
     <>
       {multiSelect && useSelector && showSelectAll && renderSelectAll()}
 
-      {filteredList.length > 0 && !virtualized && (
+      {!virtualized ? (
         <HvListContainer
           id={id}
           className={cx(classes.root, className)}
-          role={selectable ? "listbox" : "menu"}
+          role={role}
           interactive
           condensed={condensed}
           disableGutters={useSelector}
-          aria-multiselectable={(selectable && multiSelect) || undefined}
+          aria-multiselectable={ariaMultiSelectable}
           {...others}
         >
           {filteredList.map((item, i) => renderListItem(item, i))}
         </HvListContainer>
-      )}
-      {filteredList.length > 0 && virtualized && (
+      ) : (
         <FixedSizeList
           ref={listRef}
           className={classes.virtualizedRoot}
@@ -373,10 +392,10 @@ export const HvList = (props: HvListProps) => {
           width="100%"
           itemCount={filteredList.length}
           itemSize={condensed ? 32 : 40}
-          innerElementType={renderFixedList}
+          innerElementType={ListContainer}
           {...others}
         >
-          {ListItem}
+          {renderVirtualizedListItem}
         </FixedSizeList>
       )}
     </>

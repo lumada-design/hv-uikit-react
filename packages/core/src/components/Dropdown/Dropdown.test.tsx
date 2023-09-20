@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { HvDropdown } from "./Dropdown";
@@ -29,27 +29,25 @@ describe("Dropdown", () => {
   });
 
   it("should be disabled", async () => {
-    const { container, getByRole } = render(
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          aria-label="Main sample"
-          multiSelect
-          showSearch
-          disabled
-          values={[
-            { label: "value 1" },
-            { label: "value 2", selected: true },
-            { label: "value 3" },
-            { label: "value 4" },
-          ]}
-        />
-      </div>
+    const { container } = render(
+      <HvDropdown
+        aria-label="Main sample"
+        multiSelect
+        showSearch
+        disabled
+        values={[
+          { label: "value 1" },
+          { label: "value 2", selected: true },
+          { label: "value 3" },
+          { label: "value 4" },
+        ]}
+      />
     );
     expect(
       container.getElementsByClassName("HvBaseDropdown-rootDisabled")
     ).toHaveLength(1);
 
-    const DropdownHeader = getByRole("combobox");
+    const DropdownHeader = screen.getByRole("combobox");
 
     expect(DropdownHeader).toHaveAttribute("aria-expanded", "false");
 
@@ -57,46 +55,42 @@ describe("Dropdown", () => {
   });
 
   it("should be invalid", async () => {
-    const { getByRole } = render(
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          aria-label="Main sample"
-          multiSelect
-          showSearch
-          status="invalid"
-          values={[
-            { label: "value 1" },
-            { label: "value 2", selected: true },
-            { label: "value 3" },
-            { label: "value 4" },
-          ]}
-        />
-      </div>
+    render(
+      <HvDropdown
+        aria-label="Main sample"
+        multiSelect
+        showSearch
+        status="invalid"
+        values={[
+          { label: "value 1" },
+          { label: "value 2", selected: true },
+          { label: "value 3" },
+          { label: "value 4" },
+        ]}
+      />
     );
 
-    const DropdownHeader = getByRole("combobox");
+    const DropdownHeader = screen.getByRole("combobox");
 
     expect(DropdownHeader).toHaveAttribute("aria-invalid", "true");
   });
 
   it("should select one", async () => {
-    const { getByRole, getAllByRole } = render(
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          aria-label="Main sample"
-          multiSelect
-          showSearch
-          values={[
-            { label: "value 1" },
-            { label: "value 2" },
-            { label: "value 3" },
-            { label: "value 4" },
-          ]}
-        />
-      </div>
+    render(
+      <HvDropdown
+        aria-label="Main sample"
+        multiSelect
+        showSearch
+        values={[
+          { label: "value 1" },
+          { label: "value 2" },
+          { label: "value 3" },
+          { label: "value 4" },
+        ]}
+      />
     );
 
-    const DropdownHeader = getByRole("combobox");
+    const DropdownHeader = screen.getByRole("combobox");
 
     expect(DropdownHeader).toHaveAttribute("aria-expanded", "false");
 
@@ -104,36 +98,32 @@ describe("Dropdown", () => {
 
     expect(DropdownHeader).toHaveAttribute("aria-expanded", "true");
 
-    const options = getAllByRole("option");
+    const options = screen.getAllByRole("listitem");
 
     expect(options).toHaveLength(4);
-
-    expect(options[0]).toHaveAttribute("aria-selected", "false");
+    expect(within(options[0]).getByRole("checkbox")).not.toBeChecked();
 
     await userEvent.click(options[0]);
-
-    expect(options[0]).toHaveAttribute("aria-selected", "true");
+    expect(within(options[0]).getByRole("checkbox")).toBeChecked();
   });
 
   it("read Only", async () => {
-    const { getByRole } = render(
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          aria-label="Main sample"
-          multiSelect
-          showSearch
-          readOnly
-          values={[
-            { label: "value 1" },
-            { label: "value 2" },
-            { label: "value 3" },
-            { label: "value 4" },
-          ]}
-        />
-      </div>
+    render(
+      <HvDropdown
+        aria-label="Main sample"
+        multiSelect
+        showSearch
+        readOnly
+        values={[
+          { label: "value 1" },
+          { label: "value 2" },
+          { label: "value 3" },
+          { label: "value 4" },
+        ]}
+      />
     );
 
-    const DropdownHeader = getByRole("combobox");
+    const DropdownHeader = screen.getByRole("combobox");
 
     expect(DropdownHeader).toHaveAttribute("aria-expanded", "false");
 

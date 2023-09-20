@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { useState } from "react";
@@ -208,23 +208,23 @@ describe("FilterGroup", () => {
   });
 
   it("changes the right side elements", async () => {
-    const { getByRole, getAllByRole } = render(<Main />);
+    render(<Main />);
 
-    let dropdownElement = getByRole("combobox");
+    const dropdownElement = screen.getByRole("combobox");
 
     await userEvent.click(dropdownElement);
-
-    dropdownElement = getByRole("combobox");
-
     expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
 
-    const leftSizeOption = getAllByRole("listitem");
+    const [leftList, rightList] = screen.getAllByRole("list");
 
-    expect(getAllByRole("option").length).toEqual(4);
+    expect(within(rightList).getAllByRole("listitem").length).toEqual(4);
 
-    await userEvent.click(leftSizeOption[2]);
+    await userEvent.click(within(leftList).getAllByRole("listitem")[2]);
 
-    expect(getAllByRole("option").length).toEqual(12);
+    const rightItems = within(screen.getAllByRole("list")[1]).getAllByRole(
+      "listitem"
+    );
+    expect(rightItems.length).toEqual(12);
   });
 
   it("changes the counter in the expected locations", async () => {
