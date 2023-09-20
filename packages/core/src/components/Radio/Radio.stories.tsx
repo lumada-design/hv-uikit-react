@@ -20,12 +20,14 @@ const StyledDiv = styled("div")({
   },
 });
 
-export default {
+const meta: Meta<typeof HvRadio> = {
   title: "Components/Radio/Radio",
   component: HvRadio,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvBaseRadio },
   decorators: [(Story) => <StyledDiv>{Story()}</StyledDiv>],
-} as Meta<typeof HvRadio>;
+};
+export default meta;
 
 export const Main: StoryObj<HvRadioProps> = {
   args: {

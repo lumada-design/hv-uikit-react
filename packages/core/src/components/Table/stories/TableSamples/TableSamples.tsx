@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { StoryObj } from "@storybook/react";
+import type { StoryObj } from "@storybook/react";
 import { screen, waitFor } from "@storybook/testing-library";
 import { useFlexLayout, useBlockLayout, useAbsoluteLayout } from "react-table";
 import {
@@ -28,8 +28,8 @@ import {
 import { Delete, Lock, Unlock } from "@hitachivantara/uikit-react-icons";
 import { makeData, getColumns, AssetEvent } from "../storiesUtils";
 
-import { TableComplete } from "./TableComplete.stories";
-import TableCompleteRaw from "./TableComplete.stories?raw";
+import { TableComplete } from "./TableCompleteSample";
+import TableCompleteRaw from "./TableCompleteSample?raw";
 
 export const CompleteStory: StoryObj = {
   parameters: {

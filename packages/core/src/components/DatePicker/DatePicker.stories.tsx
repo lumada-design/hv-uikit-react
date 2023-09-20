@@ -35,6 +35,8 @@ const unsetDecorator: DecoratorFn = (Story) => (
 
 const meta: Meta<typeof HvDatePicker> = {
   title: "Components/Date Picker",
+  // TODO: HvCalendar should have its own docs
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvCalendar },
   component: HvDatePicker,
   decorators: [containerDecorator],

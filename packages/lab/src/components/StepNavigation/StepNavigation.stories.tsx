@@ -89,7 +89,13 @@ const steps: StepType[] = [
 const meta: Meta<typeof HvStepNavigation> = {
   title: "Lab/Step Navigation",
   component: HvStepNavigation,
-  subcomponents: { HvDefaultNavigation, HvStep, HvSimpleNavigation, HvDot },
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
+  subcomponents: {
+    HvDefaultNavigation,
+    HvStep,
+    HvSimpleNavigation,
+    HvDot,
+  } as unknown,
   decorators: [
     (Story) => (
       <FlexDecorator>

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { StoryObj } from "@storybook/react";
+import type { StoryObj } from "@storybook/react";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 import {
   HvTable,

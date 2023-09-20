@@ -19,12 +19,6 @@ export const getManagerStyles = (): GlobalProps["styles"] => {
         borderRadius: 2,
       },
 
-      ".sidebar-item.sidebar-item": {
-        fontSize: 14,
-        paddingBottom: 4,
-        paddingTop: 4,
-      },
-
       ".sidebar-subheading button": {
         fontSize: 12,
       },

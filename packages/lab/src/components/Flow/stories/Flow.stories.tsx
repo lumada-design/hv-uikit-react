@@ -33,12 +33,13 @@ import { HvFlowNodeComponentType } from "../types";
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",
   component: HvFlow,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: {
     HvFlowBackground,
     HvFlowControls,
     HvFlowMinimap,
     HvFlowSidebar,
-  },
+  } as unknown,
   parameters: {
     eyes: {
       runBefore() {

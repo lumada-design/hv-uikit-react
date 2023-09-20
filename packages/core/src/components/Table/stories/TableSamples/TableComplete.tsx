@@ -136,7 +136,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
     showPagination,
     hideSelectors,
     labels = {
-      loading: "Loading...",
+      loading: "",
       empty: "No data",
       selectAllPages: "Select all pages",
     },

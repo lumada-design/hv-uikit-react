@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useMemo, useState } from "react";
 import range from "lodash/range";
-import { StoryObj } from "@storybook/react";
+import type { StoryObj } from "@storybook/react";
 import { useGroupBy } from "react-table";
 import {
   HvTable,

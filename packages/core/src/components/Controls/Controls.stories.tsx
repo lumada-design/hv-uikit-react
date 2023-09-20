@@ -29,6 +29,7 @@ import { getColumns, makeData, NewEntry } from "./makedata";
 const meta: Meta<typeof HvControls> = {
   title: "Widgets/Controls",
   component: HvControls,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvLeftControl, HvRightControl },
   parameters: {
     eyes: { include: false },

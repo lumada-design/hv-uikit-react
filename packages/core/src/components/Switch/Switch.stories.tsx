@@ -26,6 +26,7 @@ const StyledDecorator = styled("div")({
 const meta: Meta<typeof HvSwitch> = {
   title: "Components/Switch",
   component: HvSwitch,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvBaseSwitch },
   decorators: [(Story) => <StyledDecorator>{Story()}</StyledDecorator>],
 };

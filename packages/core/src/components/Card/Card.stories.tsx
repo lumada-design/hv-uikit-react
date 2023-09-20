@@ -73,6 +73,7 @@ const StyledButton = styled("button")({
 const meta: Meta<typeof HvCard> = {
   title: "Components/Card",
   component: HvCard,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvCardHeader, HvCardContent, HvCardMedia },
   parameters: {
     eyes: {

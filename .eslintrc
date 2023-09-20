@@ -105,9 +105,9 @@
     {
       "files": [
         "**/*.stories.ts?(x)",
-        "**/stories/*",
+        "**/stories/**/*",
         "**/*.test.ts?(x)",
-        "**/test/*",
+        "**/test/**/*",
         "**/templates/**/*.ts?(x)"
       ],
       "rules": {
