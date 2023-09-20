@@ -1,6 +1,6 @@
-import { CSSProperties, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
-import { Meta, StoryObj } from "@storybook/react";
+import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
 import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
@@ -13,15 +13,27 @@ import {
   HvTimePickerValue,
 } from "@hitachivantara/uikit-react-core";
 
-import { CSSInterpolation, css } from "@emotion/css";
+import { CSSInterpolation, css, cx } from "@emotion/css";
+import { Global } from "@emotion/react";
+
+const containerDecorator: DecoratorFn = (Story) => (
+  <div className={cx("decorator", css({ width: 250, minHeight: 250 }))}>
+    {Story()}
+  </div>
+);
+
+const unsetDecorator: DecoratorFn = (Story) => (
+  <>
+    <Global styles={{ ".decorator:has(.unset)": { width: "unset" } }} />
+    <div className="unset">{Story()}</div>
+  </>
+);
 
 export default {
   title: "Components/Time Picker",
   component: HvTimePicker,
+  decorators: [containerDecorator],
 } as Meta<typeof HvTimePicker>;
-
-const makeDecorator = (styles: CSSProperties) => (Story) =>
-  <div style={styles}>{Story()}</div>;
 
 export const Main: StoryObj<HvTimePickerProps> = {
   args: {
@@ -45,7 +57,6 @@ export const Main: StoryObj<HvTimePickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ minHeight: 200, width: 200 })],
   render: (args) => {
     return <HvTimePicker {...args} />;
   },
@@ -61,7 +72,6 @@ export const Form: StoryObj<HvTimePickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ minHeight: 200, width: 200 })],
   render: () => {
     return (
       <form
@@ -94,6 +104,7 @@ export const Variants: StoryObj<HvTimePickerProps> = {
       },
     },
   },
+  decorators: [unsetDecorator],
   render: () => {
     const value: HvTimePickerValue = { hours: 5, minutes: 30, seconds: 14 };
 
@@ -134,7 +145,6 @@ export const Controlled: StoryObj<HvTimePickerProps> = {
     },
     eyes: { include: false },
   },
-  decorators: [makeDecorator({ minHeight: 200, width: 200 })],
   render: () => {
     const [value, setValue] = useState<HvTimePickerValue>({
       hours: 19,
@@ -174,7 +184,6 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ minHeight: 200, width: 220 })],
   render: () => {
     return (
       <HvTimePicker
@@ -197,7 +206,6 @@ export const Native: StoryObj<HvTimePickerProps> = {
     },
     eyes: { include: false },
   },
-  decorators: [makeDecorator({ minHeight: 200 })],
   render: () => {
     const ref = useRef<HTMLInputElement>(null);
     const [disabled, setDisabled] = useState(false);

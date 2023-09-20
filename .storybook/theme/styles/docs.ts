@@ -1,4 +1,3 @@
-import { CSSObject } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-react-core";
 
 const { colors } = theme;
@@ -21,11 +20,6 @@ export const getDocsStyles = () => {
       },
 
       ".sbdocs-preview": {
-        overflow: "visible",
-        "& > div, & > div > div": {
-          overflow: "visible",
-        },
-
         borderColor: colors.atmo3,
 
         "& .os-content>pre": {

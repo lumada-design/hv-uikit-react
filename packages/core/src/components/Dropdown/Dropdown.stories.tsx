@@ -18,8 +18,12 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
+const heightDecorator: DecoratorFn = (Story) => (
+  <div style={{ minHeight: 400 }}>{Story()}</div>
+);
+
 const widthDecorator: DecoratorFn = (Story) => (
-  <div style={{ minHeight: 120, width: 310 }}>{Story()}</div>
+  <div style={{ width: 310 }}>{Story()}</div>
 );
 
 export default {
@@ -60,10 +64,7 @@ export const Main: StoryObj<HvDropdownProps> = {
       runBefore() {},
     },
   },
-  decorators: [
-    widthDecorator,
-    (Story) => <div style={{ minHeight: 400 }}>{Story()}</div>,
-  ],
+  decorators: [widthDecorator, heightDecorator],
   render: (args) => (
     <HvDropdown
       label="Select values"
@@ -142,7 +143,7 @@ export const WithIcons: StoryObj<HvDropdownProps> = {
       },
     },
   },
-  decorators: [widthDecorator],
+  decorators: [widthDecorator, heightDecorator],
   render: (args) => {
     const [values, setValues] = useState<HvListValue[]>([]);
 
@@ -177,7 +178,7 @@ export const Empty: StoryObj<HvDropdownProps> = {
 };
 
 export const MultiSelection: StoryObj<HvDropdownProps> = {
-  decorators: [widthDecorator],
+  decorators: [widthDecorator, heightDecorator],
   render: () => {
     return (
       <HvDropdown
@@ -196,6 +197,7 @@ export const MultiSelection: StoryObj<HvDropdownProps> = {
 };
 
 export const SingleSelectionWithSearch: StoryObj<HvDropdownProps> = {
+  decorators: [widthDecorator, heightDecorator],
   parameters: {
     docs: {
       description: {
@@ -204,7 +206,6 @@ export const SingleSelectionWithSearch: StoryObj<HvDropdownProps> = {
       },
     },
   },
-  decorators: [widthDecorator],
   render: () => (
     <HvDropdown
       aria-label="With search"
@@ -220,6 +221,7 @@ export const SingleSelectionWithSearch: StoryObj<HvDropdownProps> = {
 };
 
 export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
+  decorators: [heightDecorator],
   parameters: {
     docs: {
       description: {
@@ -345,7 +347,7 @@ export const WithDefinedHeight: StoryObj<HvDropdownProps> = {
     },
     eyes: { include: false },
   },
-  decorators: [widthDecorator],
+  decorators: [widthDecorator, heightDecorator],
   render: () => {
     const values = [...Array(100)].map((_, i) => ({
       id: `${i}`,
@@ -374,7 +376,7 @@ export const Virtualized: StoryObj<HvDropdownProps> = {
     },
     eyes: { include: false },
   },
-  decorators: [widthDecorator],
+  decorators: [widthDecorator, heightDecorator],
   render: () => {
     const values = [...Array(1500)].map((_, i) => ({
       id: `${i}`,

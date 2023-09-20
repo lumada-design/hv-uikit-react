@@ -21,7 +21,12 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const containerDecorator: DecoratorFn = (Story) => (
-  <div className={cx("decorator", css({ width: 340, padding: 10 }))}>
+  <div
+    className={cx(
+      "decorator",
+      css({ width: 340, minHeight: 550, padding: 10 })
+    )}
+  >
     {Story()}
   </div>
 );
