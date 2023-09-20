@@ -6,11 +6,7 @@ export const getDocsStyles = () => {
       lineHeight: "24px",
 
       ".sbdocs-preview": {
-        overflow: "visible",
         zIndex: 1,
-        "& > div, & > div > div": {
-          overflow: "visible",
-        },
       },
     },
   };
