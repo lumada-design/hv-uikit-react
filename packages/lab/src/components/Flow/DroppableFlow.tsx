@@ -9,6 +9,9 @@ import ReactFlow, {
   applyEdgeChanges,
   applyNodeChanges,
   useReactFlow,
+  MarkerType,
+  Edge,
+  Node,
 } from "reactflow";
 import "reactflow/dist/style.css";
 
@@ -18,7 +21,7 @@ import { uid } from "uid";
 
 import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 
-import { HvFlowEdge, HvFlowNode } from "./types";
+import { HvFlowNodeTypes } from "./types";
 import { staticClasses, useClasses } from "./Flow.styles";
 import { useFlowContext } from "./FlowContext";
 
@@ -33,17 +36,65 @@ export interface HvDroppableFlowProps<
   /** Flow content: background, controls, and minimap. */
   children?: React.ReactNode;
   /** Flow nodes. */
-  nodes?: HvFlowNode<NodeData, NodeType>[];
+  nodes?: Node<NodeData, NodeType>[];
   /** Flow edges. */
-  edges?: HvFlowEdge[];
+  edges?: Edge[];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowClasses;
   /** Function called when the flow changes. Returns the updated nodes and edges. */
-  onFlowChange?: (
-    nodes: HvFlowNode<NodeData, NodeType>[],
-    edges: HvFlowEdge[]
-  ) => void;
+  onFlowChange?: (nodes: Node<NodeData, NodeType>[], edges: Edge[]) => void;
 }
+
+export const getNode = (nodes: Node[], nodeId: string) => {
+  return nodes.find((n) => n.id === nodeId);
+};
+
+const validateEdges = (
+  edges: Edge[],
+  nodes: Node[],
+  nodeTypes: HvFlowNodeTypes<string> | undefined
+) => {
+  if (edges) {
+    const validEdges: Edge[] = [];
+
+    edges.forEach((edge) => {
+      if (!edge.sourceHandle || !edge.targetHandle) return [];
+
+      const sourceNode = getNode(nodes, edge.source);
+      const targetNode = getNode(nodes, edge.target);
+
+      if (!sourceNode || !targetNode) return [];
+
+      const sourceType = sourceNode.type;
+      const targetType = targetNode.type;
+
+      if (!sourceType || !targetType) return [];
+
+      const output =
+        nodeTypes?.[sourceType]?.meta?.outputs?.[edge.sourceHandle];
+      const input = nodeTypes?.[targetType]?.meta?.inputs?.[edge.targetHandle];
+
+      const sourceProvides = output?.provides || [];
+      const targetAccepts = input?.accepts || [];
+
+      let isValid = false;
+      sourceProvides.forEach((s) => {
+        targetAccepts.forEach((t) => {
+          if (s === t) {
+            isValid = true;
+          }
+        });
+      });
+
+      if (isValid) {
+        validEdges.push(edge);
+      }
+    });
+
+    return validEdges;
+  }
+  return [];
+};
 
 export const HvDroppableFlow = ({
   id,
@@ -84,7 +135,7 @@ export const HvDroppableFlow = ({
           y: (event.active.data.current?.hvFlow?.y || 0) - event.over.rect.top,
         });
 
-        const newNode: HvFlowNode = {
+        const newNode: Node = {
           id: uid(),
           position,
           data: {},
@@ -149,6 +200,41 @@ export const HvDroppableFlow = ({
     [edges, handleFlowChange, nodes, onEdgesChangeProp]
   );
 
+  const isValidConnection = (connection) => {
+    const sourceNode = getNode(nodes, connection.source);
+    const targetNode = getNode(nodes, connection.target);
+
+    if (!sourceNode || !targetNode) {
+      return false;
+    }
+
+    const sourceType = sourceNode.type;
+    const targetType = targetNode.type;
+
+    if (!sourceType || !targetType) {
+      return false;
+    }
+
+    const inputs = nodeTypes?.[targetType]?.meta?.inputs || [];
+    const outputs = nodeTypes?.[sourceType]?.meta?.outputs || [];
+
+    const sourceProvides = outputs[connection.sourceHandle]?.provides || [];
+    const targetAccepts = inputs[connection.targetHandle]?.accepts || [];
+
+    let isValid = false;
+    sourceProvides.forEach((s) => {
+      targetAccepts.forEach((t) => {
+        if (s === t) {
+          isValid = true;
+        }
+      });
+    });
+
+    return isValid;
+  };
+
+  const validEdges = validateEdges(edges, nodes, nodeTypes);
+
   return (
     <div
       id={elementId}
@@ -157,11 +243,19 @@ export const HvDroppableFlow = ({
     >
       <ReactFlow
         nodes={nodes}
-        edges={edges}
+        edges={validEdges}
         nodeTypes={nodeTypes}
         onNodesChange={handleNodesChange}
         onEdgesChange={handleEdgesChange}
         onConnect={handleConnect}
+        isValidConnection={isValidConnection}
+        defaultEdgeOptions={{
+          markerEnd: {
+            type: MarkerType.ArrowClosed,
+            height: 20,
+            width: 20,
+          },
+        }}
         {...others}
       >
         {children}

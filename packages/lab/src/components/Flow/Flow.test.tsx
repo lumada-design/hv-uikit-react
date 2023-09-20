@@ -7,7 +7,7 @@ import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Favorite, Heart } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvFlowNode } from "./stories/FlowNode";
+import { HvFlowNode } from "./Node";
 import { HvFlow } from "./Flow";
 import { HvFlowSidebar } from "./Sidebar";
 import { HvFlowControls, HvFlowControlsProps } from "./Controls";
