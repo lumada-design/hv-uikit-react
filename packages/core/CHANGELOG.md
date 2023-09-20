@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.27.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.5...@hitachivantara/uikit-react-core@5.27.6) (2023-09-20)
+
+### Bug Fixes
+
+- **Drawer:** close icon role updated to none to fix a11y issue ([3d4704d](https://github.com/lumada-design/hv-uikit-react/commit/3d4704de6d23e69493c21575a1dd26a5eb496741))
+
 ## [5.27.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.4...@hitachivantara/uikit-react-core@5.27.5) (2023-09-19)
 
 ### Bug Fixes
