@@ -1,6 +1,8 @@
 import { StorybookConfig } from "@storybook/react-vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import remarkGfm from "remark-gfm";
+import unoCSS from "unocss/vite";
+import { presetHv } from "@hitachivantara/uikit-uno-preset";
 
 export default {
   framework: {
@@ -55,6 +57,7 @@ export default {
   ],
   async viteFinal(config, { configType }) {
     config.plugins?.push(tsconfigPaths({ loose: true }));
+    config.plugins?.push(unoCSS({ presets: [presetHv()] }));
 
     config.optimizeDeps = {
       ...config.optimizeDeps,

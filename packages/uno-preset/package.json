@@ -1,0 +1,61 @@
+{
+  "name": "@hitachivantara/uikit-uno-preset",
+  "version": "0.1.0",
+  "description": "UI Kit UnoCSS preset with the NEXT theme.",
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "author": "Hitachi Vantara UI Kit Team",
+  "keywords": [
+    "hitachi-vantara",
+    "design-system",
+    "ui-kit",
+    "typescript",
+    "unocss",
+    "tailwind"
+  ],
+  "license": "Apache-2.0",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "vite build",
+    "clean": "npx rimraf dist package",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "run-s clean build && npx clean-publish"
+  },
+  "peerDependencies": {
+    "@unocss/core": ">= 0.57.7",
+    "@unocss/preset-uno": ">= 0.57.7"
+  },
+  "dependencies": {
+    "@hitachivantara/uikit-styles": "^5.16.3"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "vite": "^4.3.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "directory": "package",
+    "main": "dist/cjs/index.cjs",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "exports": {
+      ".": {
+        "require": "./dist/cjs/index.cjs",
+        "import": "./dist/esm/index.js"
+      }
+    }
+  },
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package",
+    "fields": [
+      "main"
+    ],
+    "files": [
+      "tsconfig.json"
+    ]
+  }
+}
