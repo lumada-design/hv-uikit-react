@@ -35,8 +35,10 @@
     "@types/lodash": "^4.14.195",
     "@types/react": "^18.2.12",
     "@types/react-dom": "^18.2.5",
+    "@unocss/preset-rem-to-px": "^0.56.2",
     "@vitejs/plugin-react": "^3.1.0",
     "typescript": "^4.9.5",
+    "unocss": "^0.56.2",
     "vite": "^4.3.9",
     "vite-tsconfig-paths": "^4.2.0"
   }
