@@ -17,7 +17,7 @@ const meta: Meta<typeof HvGlobalActions> = {
   component: HvGlobalActions,
   decorators: [
     (Story) => (
-      <div style={{ maxHeight: 300 }}>
+      <div style={{ maxHeight: 350, overflow: "auto" }}>
         <HvContainer maxWidth="md">{Story()}</HvContainer>
       </div>
     ),

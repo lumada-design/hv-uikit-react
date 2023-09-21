@@ -1,10 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { CSSInterpolation, css } from "@emotion/css";
-import {
-  HvTextArea,
-  HvTextAreaProps,
-  HvTypography,
-} from "@hitachivantara/uikit-react-core";
+import { HvTextArea, HvTextAreaProps } from "@hitachivantara/uikit-react-core";
 import { useEffect, useState } from "react";
 
 const meta: Meta<typeof HvTextArea> = {
@@ -367,7 +363,8 @@ export const AutoScroll: StoryObj<HvTextAreaProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Text area with autoscroll.",
+        story:
+          "Text Area using `autoScroll` to automatically scroll down. Auto-scroll stops once the user scrolls up, and resumes once the user scrolls back to the bottom.",
       },
     },
     eyes: { include: false },
@@ -391,25 +388,13 @@ export const AutoScroll: StoryObj<HvTextAreaProps> = {
     }, []);
 
     return (
-      <>
-        <HvTypography variant="title4">Description:</HvTypography>
-        <HvTypography>
-          Autoscrolling textarea. It should be automatically scrolled down until
-          the user scrolls up at which point the automatic scrolling stops. It
-          will resume as soon as the user scrolls fully to the bottom again.
-        </HvTypography>
-        <br />
-        <HvTypography variant="title4">Example:</HvTypography>
-        <br />
-        <HvTextArea
-          id="custom-validation"
-          rows={5}
-          label="Logs"
-          placeholder="Enter value"
-          autoScroll
-          value={value}
-        />
-      </>
+      <HvTextArea
+        rows={5}
+        label="Logs"
+        placeholder="Enter value"
+        autoScroll
+        value={value}
+      />
     );
   },
 };

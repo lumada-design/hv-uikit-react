@@ -9,6 +9,7 @@ import { ProgressBarSimulator } from "./ProgressBarSimulator";
 const meta: Meta<typeof HvProgressBar> = {
   title: "Components/Loading/Progress Bar",
   component: HvProgressBar,
+  decorators: [(Story) => <div style={{ padding: 20 }}>{Story()}</div>],
 };
 export default meta;
 
@@ -40,12 +41,7 @@ export const Progressive: StoryObj<HvProgressBarProps> = {
   },
   render: () => {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <>
         <div
           style={{
             display: "flex",
@@ -82,7 +78,7 @@ export const Progressive: StoryObj<HvProgressBarProps> = {
             ariaLabel="Determinate Progress Bar"
           />
         </div>
-      </div>
+      </>
     );
   },
 };
@@ -97,12 +93,7 @@ export const Determinate: StoryObj<HvProgressBarProps> = {
   },
   render: () => {
     return (
-      <div
-        style={{
-          display: "flex:",
-          flexDirection: "column",
-        }}
-      >
+      <>
         <div
           style={{
             display: "flex",
@@ -157,7 +148,7 @@ export const Determinate: StoryObj<HvProgressBarProps> = {
             aria-label="Example Determined Error Progress Bar"
           />
         </div>
-      </div>
+      </>
     );
   },
 };

@@ -16,26 +16,21 @@ import {
   HvDialogActions,
   HvInput,
   HvTextArea,
+  HvTypography,
   HvGrid,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-type SimpleDialogProps = {
+type SimpleDialogProps = Pick<HvDialogProps, "classes" | "variant"> & {
   buttonMessage?: string;
   title?: React.ReactNode;
-  content?: React.ReactNode;
-  classes?: any;
-  indentContent?: boolean;
-  variant?: HvDialogProps["variant"];
 };
 
 const SimpleDialog = ({
   buttonMessage,
   title,
-  content,
   classes,
   variant,
-  indentContent = false,
 }: SimpleDialogProps) => {
   const [open, setOpen] = useState(false);
 
@@ -62,12 +57,8 @@ const SimpleDialog = ({
   };
 
   return (
-    <div>
-      <HvButton
-        id={buttonMessage}
-        style={{ width: "120px" }}
-        onClick={() => setOpen(true)}
-      >
+    <>
+      <HvButton style={{ width: 120 }} onClick={() => setOpen(true)}>
         {buttonMessage}
       </HvButton>
       <HvDialog
@@ -78,12 +69,10 @@ const SimpleDialog = ({
         variant={variant}
       >
         {title}
-        {content || (
-          <HvDialogContent indentContent={indentContent}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </HvDialogContent>
-        )}
+        <HvDialogContent indentContent>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </HvDialogContent>
         <HvDialogActions>
           <HvButton
             className={variant ? css(styles[variant]) : undefined}
@@ -100,7 +89,7 @@ const SimpleDialog = ({
           </HvButton>
         </HvDialogActions>
       </HvDialog>
-    </div>
+    </>
   );
 };
 
@@ -109,7 +98,7 @@ const meta: Meta<typeof HvDialog> = {
   component: HvDialog,
   // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvDialogTitle, HvDialogContent, HvDialogActions },
-  decorators: [(Story) => <div style={{ height: 250 }}>{Story()}</div>],
+  decorators: [(Story) => <div style={{ minHeight: 250 }}>{Story()}</div>],
 };
 export default meta;
 
@@ -176,41 +165,40 @@ export const SemanticVariants: StoryObj<HvDialogProps> = {
     },
     eyes: {
       runBefore() {
-        fireEvent.click(
-          screen.getByRole("button", {
-            name: "Success",
-          })
-        );
+        fireEvent.click(screen.getByRole("button", { name: "Success" }));
 
         return waitFor(() => screen.getByRole("dialog"));
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div className={css({ display: "flex", flexFlow: "column", gap: 20 })}>
+        {Story()}
+      </div>
+    ),
+  ],
   render: () => {
     return (
-      <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+      <>
         <SimpleDialog
           buttonMessage="Warning"
           variant="warning"
           title={<HvDialogTitle variant="error">Warning</HvDialogTitle>}
-          indentContent
         />
         <SimpleDialog
           buttonMessage="Success"
           variant="success"
           title={<HvDialogTitle variant="success">Success</HvDialogTitle>}
-          indentContent
         />
         <SimpleDialog
           buttonMessage="Error"
           variant="error"
           title={<HvDialogTitle variant="error">Error</HvDialogTitle>}
-          indentContent
         />
         <SimpleDialog
           buttonMessage="Info"
           title={<HvDialogTitle variant="info">Info</HvDialogTitle>}
-          indentContent
         />
         <SimpleDialog
           buttonMessage="Custom"
@@ -219,9 +207,8 @@ export const SemanticVariants: StoryObj<HvDialogProps> = {
               Custom
             </HvDialogTitle>
           }
-          indentContent
         />
-      </div>
+      </>
     );
   },
 };
@@ -238,6 +225,7 @@ export const Form: StoryObj<HvDialogProps> = {
     },
     eyes: { include: false },
   },
+  decorators: [(Story) => <div style={{ minHeight: 400 }}>{Story()}</div>],
   render: () => {
     const [open, setOpen] = useState(false);
     const [postData, setPostData] = useState({});
@@ -249,7 +237,8 @@ export const Form: StoryObj<HvDialogProps> = {
         </HvButton>
         <br />
         <br />
-        Post data: {JSON.stringify(postData, null, 2)}
+        <HvTypography variant="title4">Data:</HvTypography>
+        <pre>{JSON.stringify(postData, null, 2)}</pre>
         <HvDialog
           disableBackdropClick
           open={open}
@@ -273,7 +262,7 @@ export const Form: StoryObj<HvDialogProps> = {
                 setOpen(false);
               }}
             >
-              <HvGrid container>
+              <HvGrid container rowSpacing="xs">
                 <HvGrid item xs={12}>
                   <HvInput
                     required
@@ -320,6 +309,7 @@ export const LongContent: StoryObj<HvDialogProps> = {
     },
     eyes: { include: false },
   },
+  decorators: [(Story) => <div style={{ minHeight: 400 }}>{Story()}</div>],
   render: () => {
     const [open, setOpen] = useState(false);
 

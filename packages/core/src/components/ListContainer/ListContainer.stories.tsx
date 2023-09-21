@@ -1,13 +1,11 @@
-import { useState, useEffect, CSSProperties, MouseEvent } from "react";
+import { useState, useEffect, MouseEvent } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import styled from "@emotion/styled";
 import {
   HvListItem,
   HvListContainer,
   HvListContainerProps,
+  HvOverflowTooltip,
   HvTypography,
-  HvLink,
-  HvTooltip,
   HvPanel,
   theme,
 } from "@hitachivantara/uikit-react-core";
@@ -19,35 +17,6 @@ import {
   Plane,
   User,
 } from "@hitachivantara/uikit-react-icons";
-
-// #region Styled components
-
-const StyledPanel = styled(HvPanel)({
-  width: 200,
-});
-
-const StyledOverflowTypography = styled(HvTypography)({
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  whiteSpace: "nowrap",
-  lineHeight: "32px",
-});
-
-const StyledTitlePanel = styled(HvPanel)({
-  float: "left",
-  minWidth: 200,
-});
-
-const StyledLink = styled(HvLink)({
-  ...(theme.typography.body as CSSProperties),
-  textDecoration: "none",
-
-  "&:focus": {
-    boxShadow: "unset !important",
-  },
-});
-
-// #endregion
 
 const meta: Meta<typeof HvListContainer> = {
   title: "Components/List/List",
@@ -265,62 +234,29 @@ export const WithIcons: StoryObj<HvListContainerProps> = {
 export const WithNavigationIcons: StoryObj<HvListContainerProps> = {
   render: () => {
     return (
-      <div
-        style={{
-          backgroundColor: theme.colors.atmo1,
-          padding: 20,
-          overflow: "auto",
-          position: "relative",
-          maxWidth: 220,
-        }}
-      >
+      <HvPanel style={{ overflow: "auto", maxWidth: 220 }}>
         <HvListContainer
           condensed
           interactive
           aria-label="Simple List With Navigation Icons"
         >
           <HvListItem endAdornment={<DropRightXS />}>Today</HvListItem>
-          <HvListItem>Yesterday</HvListItem>
-          <HvListItem>Last week</HvListItem>
+          <HvListItem>
+            <HvTypography component="a" href="#yesterday">
+              Yesterday
+            </HvTypography>
+          </HvListItem>
+          <HvListItem>
+            <HvTypography component="a" href="#last-week">
+              Last week
+            </HvTypography>
+          </HvListItem>
           <HvListItem endAdornment={<DropRightXS />} disabled>
             Last month
           </HvListItem>
           <HvListItem endAdornment={<DropRightXS />}>Last year</HvListItem>
         </HvListContainer>
-      </div>
-    );
-  },
-};
-
-export const WithTextOverflow: StoryObj<HvListContainerProps> = {
-  render: () => {
-    return (
-      <StyledPanel>
-        <HvListContainer
-          condensed
-          interactive
-          aria-label="Single Selection List Title"
-        >
-          <HvListItem>Share</HvListItem>
-          <HvListItem>Edit</HvListItem>
-          <HvListItem>Remove</HvListItem>
-          <HvListItem>Delete</HvListItem>
-          <HvListItem>
-            <HvTooltip
-              title={
-                <HvTypography>
-                  The complete really big text that should be shown in the
-                  tooltip
-                </HvTypography>
-              }
-            >
-              <StyledOverflowTypography component="div">
-                Really big text that should be truncated
-              </StyledOverflowTypography>
-            </HvTooltip>
-          </HvListItem>
-        </HvListContainer>
-      </StyledPanel>
+      </HvPanel>
     );
   },
 };
@@ -328,8 +264,8 @@ export const WithTextOverflow: StoryObj<HvListContainerProps> = {
 export const WithTitle: StoryObj<HvListContainerProps> = {
   render: () => {
     return (
-      <StyledTitlePanel>
-        <HvTypography variant="label" style={{ margin: "0 10px 10px" }}>
+      <HvPanel style={{ width: 220 }}>
+        <HvTypography variant="label" style={{ marginLeft: theme.space.xs }}>
           Options
         </HvTypography>
         <HvListContainer
@@ -339,71 +275,13 @@ export const WithTitle: StoryObj<HvListContainerProps> = {
         >
           <HvListItem disabled>Share</HvListItem>
           <HvListItem>Edit</HvListItem>
-          <HvListItem>
-            <StyledLink route="https://www.hitachivantara.com">
-              Remove
-            </StyledLink>
-          </HvListItem>
+          <HvListItem>Remove</HvListItem>
           <HvListItem>Delete</HvListItem>
           <HvListItem>
-            <StyledLink route="https://www.hitachivantara.com">
-              Update
-            </StyledLink>
+            <HvOverflowTooltip data="The complete really big text that should be shown in the tooltip" />
           </HvListItem>
         </HvListContainer>
-      </StyledTitlePanel>
-    );
-  },
-};
-
-export const WithLink: StoryObj<HvListContainerProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
-  render: () => {
-    // Style link to prevent double-focus ring, bold, and underline
-    const StyledHvLink = styled(HvLink)({
-      color: theme.colors.secondary,
-      ...(theme.typography.body as CSSProperties),
-      textDecoration: "none",
-      "&:focus": {
-        boxShadow: "unset !important",
-      },
-    });
-
-    return (
-      <div
-        style={{
-          backgroundColor: theme.colors.atmo1,
-          padding: 20,
-          overflow: "auto",
-          position: "relative",
-          maxWidth: 220,
-        }}
-      >
-        <HvTypography variant="label" style={{ margin: "0 10px 10px" }}>
-          Options
-        </HvTypography>
-        <HvListContainer
-          condensed
-          interactive
-          aria-label="Simple List With Title"
-        >
-          <HvListItem disabled>Share</HvListItem>
-          <HvListItem>Edit</HvListItem>
-          <HvListItem>
-            <StyledHvLink route="https://www.hitachivantara.com">
-              Remove
-            </StyledHvLink>
-          </HvListItem>
-          <HvListItem>Delete</HvListItem>
-          <HvListItem>
-            <StyledHvLink route="https://www.hitachivantara.com">
-              Update
-            </StyledHvLink>
-          </HvListItem>
-        </HvListContainer>
-      </div>
+      </HvPanel>
     );
   },
 };

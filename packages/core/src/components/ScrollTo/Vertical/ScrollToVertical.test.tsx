@@ -3,9 +3,8 @@ import { describe, expect, it } from "vitest";
 import { HvProvider } from "@core/providers";
 import userEvent from "@testing-library/user-event";
 import { HvScrollToVertical } from "./ScrollToVertical";
-import { WithContent } from "./ScrollToVertical.stories";
 
-const Main = () => {
+const Sample = () => {
   const options = [
     { label: "Tab 1", value: "mainId1" },
     { label: "Tab 2", value: "mainId2" },
@@ -22,37 +21,16 @@ const Main = () => {
 
 describe("ScrollToVertical", () => {
   it("should render the buttons", () => {
-    render(<Main />);
+    render(<Sample />);
 
-    expect(screen.getAllByRole("button").length).toBe(4);
-  });
-
-  it("should render the component as expected", () => {
-    render(
-      <HvProvider>
-        <WithContent />
-      </HvProvider>
-    );
-
-    const tab1 = screen.getByText("Server status summary");
-    expect(tab1).toBeInTheDocument();
-
-    const tab2 = screen.getByText("Optimization");
-    expect(tab2).toBeInTheDocument();
-
-    const tab3 = screen.getByText("Performance analysis");
-    expect(tab3).toBeInTheDocument();
-
-    const tab4 = screen.getByText("Insights");
-    expect(tab4).toBeInTheDocument();
+    expect(screen.getByLabelText("Tab 1")).toBeInTheDocument();
+    expect(screen.getByLabelText("Tab 2")).toBeInTheDocument();
+    expect(screen.getByLabelText("Tab 3")).toBeInTheDocument();
+    expect(screen.getByLabelText("Tab 4")).toBeInTheDocument();
   });
 
   it("should have the correct tab selected", async () => {
-    render(
-      <HvProvider>
-        <WithContent />
-      </HvProvider>
-    );
+    render(<Sample />);
 
     const tabs = screen.getAllByRole("listitem");
     expect(tabs.length).toBe(4);

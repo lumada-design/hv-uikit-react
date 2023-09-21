@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryFn, StoryObj } from "@storybook/react";
 import {
   Tool,
   Favorite,
@@ -19,8 +19,9 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import styled from "@emotion/styled";
 
-const StyledBox = styled("div")({
+const Box = styled("div")({
   display: "flex",
+  color: theme.colors.base_dark,
   border: `1px solid ${theme.colors.sema15}`,
   backgroundColor: theme.colors.neutral_20,
   width: 150,
@@ -34,7 +35,7 @@ const StyledBox = styled("div")({
   },
 });
 
-const Box = ({ children }) => <StyledBox>{children}</StyledBox>;
+Box.displayName = "Box";
 
 const meta: Meta<typeof HvStack> = {
   title: "Components/Stack",
@@ -45,7 +46,7 @@ export default meta;
 export const Main: StoryObj<HvStackProps> = {
   args: {
     divider: true,
-    direction: "column",
+    direction: "row",
     spacing: "sm",
   },
   argTypes: {
@@ -77,24 +78,18 @@ export const Main: StoryObj<HvStackProps> = {
 };
 
 export const Spacing: StoryObj<HvStackProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "This example illustrates how to configure the Stack to display vertically or horizontally depending on the screen width. In this case, for `xs` and `sm` widths the Stack will be vertical and for `md`, `lg` and `xl` it will be organized horizontally in a row.",
+      },
+    },
+  },
   render: () => {
     const width = useWidth();
     return (
       <>
-        <div>
-          <HvTypography>
-            This example illustrates how to configure the Stack to display
-            vertically or horizontally depending on the screen width. In this
-            case, for `xs` and `sm` widths the Stack will be vertical and for
-            `md`, `lg` and `xl` it will be organized horizontally in a row.
-            <br />
-            Also, the spacing between the stack elements can be set according to
-            the Design System spacing guidelines:
-          </HvTypography>
-          <HvTypography variant="body" link>
-            https://lumada-design.github.io/uikit/master/?path=/docs/foundation-theming--main#spacing
-          </HvTypography>
-        </div>
         <br />
         <div style={{ display: "flex", flexDirection: "row" }}>
           <HvTypography variant="label">Current width:</HvTypography>
@@ -120,7 +115,7 @@ export const Spacing: StoryObj<HvStackProps> = {
 
 export const CustomDivider = () => {
   const StyledDivider = styled("div")({
-    width: "85%",
+    width: 150,
     height: 5,
     border: `1px solid ${theme.colors.secondary_60}`,
     borderRadius: 5,
@@ -129,157 +124,138 @@ export const CustomDivider = () => {
   });
 
   return (
-    <>
-      <HvTypography>
-        The divider property can be a boolean in which case it defines whether
-        or not to show the Material-UI Divider component. But it can also be a
-        React node which allows custom dividers to be used.
-      </HvTypography>
-      <br />
-      <div
-        style={{
-          width: 150,
-          display: "flex",
-          flexDirection: "column",
-          gap: 20,
-        }}
-      >
-        <HvStack spacing="xs" divider={<StyledDivider />}>
-          <Box>1</Box>
-          <Box>2</Box>
-          <Box>3</Box>
-          <Box>4</Box>
-        </HvStack>
-      </div>
-    </>
+    <HvStack
+      style={{ display: "inline-flex" }}
+      spacing="xs"
+      divider={<StyledDivider />}
+    >
+      <Box>1</Box>
+      <Box>2</Box>
+      <Box>3</Box>
+      <Box>4</Box>
+    </HvStack>
   );
 };
 
 CustomDivider.parameters = {
   eyes: { include: false },
+  docs: {
+    description: {
+      story:
+        "The `divider` property can be a boolean (rendering the MUI Divider), or a `ReactNode` which allows custom dividers to be used.",
+    },
+  },
 };
 
-export const WithNavigation = () => {
+export const WithNavigation: StoryFn<HvStackProps> = () => {
   return (
-    <>
-      <HvTypography>
-        When the stack elements are interactive navigation can be achieved by
-        tabbing into the first element of the stack and using the arrow keys to
-        jump between elements.
-      </HvTypography>
-      <br />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 20,
-          width: 275,
-        }}
-      >
-        <HvStack
-          withNavigation
-          direction={{ xs: "column", md: "row" }}
-          divider={false}
-          dividerProps={{ variant: "middle", light: true }}
-        >
-          <HvCard bgcolor="atmo1" statusColor="negative" style={{ width: 275 }}>
-            <HvCardHeader title="Card 1" icon={<Tool />} />
-            <HvCardContent>
-              <div style={{ marginTop: "20px" }}>
-                <HvTypography variant="label">Last connected</HvTypography>
-                <HvTypography>Aug 30, 2017 12:27:53 PM</HvTypography>
-              </div>
-            </HvCardContent>
-            <HvActionBar>
-              <div style={{ width: 32, height: 32 }}>
-                <HvToggleButton
-                  aria-label="Star"
-                  selectedIcon={<FavoriteSelected />}
-                  notSelectedIcon={<Favorite />}
-                />
-              </div>
-              <div
-                style={{
-                  width: 32,
-                  height: 32,
-                  display: "flex",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <HvButton variant="secondaryGhost">View</HvButton>
-              </div>
-              <div style={{ flex: 1 }} />
-            </HvActionBar>
-          </HvCard>
-          <HvCard bgcolor="atmo1" statusColor="positive" style={{ width: 275 }}>
-            <HvCardHeader title="Card 2" icon={<Tool />} />
-            <HvCardContent>
-              <div style={{ marginTop: "20px" }}>
-                <HvTypography variant="label">Last connected</HvTypography>
-                <HvTypography>Aug 30, 2017 12:27:53 PM</HvTypography>
-              </div>
-            </HvCardContent>
-            <HvActionBar>
-              <div style={{ width: 32, height: 32 }}>
-                <HvToggleButton
-                  aria-label="Star"
-                  selectedIcon={<FavoriteSelected />}
-                  notSelectedIcon={<Favorite />}
-                />
-              </div>
-              <div style={{ width: 32, height: 32 }}>
-                <HvButton variant="secondaryGhost">View</HvButton>
-              </div>
-              <div style={{ flex: 1 }} />
-            </HvActionBar>
-          </HvCard>
-          <HvCard bgcolor="atmo1" statusColor="sema15" style={{ width: 275 }}>
-            <HvCardHeader title="Card 3" icon={<Tool />} />
-            <HvCardContent>
-              <div style={{ marginTop: "20px" }}>
-                <HvTypography variant="label">Last connected</HvTypography>
-                <HvTypography>Aug 30, 2017 12:27:53 PM</HvTypography>
-              </div>
-            </HvCardContent>
-            <HvActionBar>
-              <div style={{ width: 32, height: 32 }}>
-                <HvToggleButton
-                  aria-label="Star"
-                  selectedIcon={<FavoriteSelected />}
-                  notSelectedIcon={<Favorite />}
-                />
-              </div>
-              <div style={{ width: 32, height: 32 }}>
-                <HvButton variant="secondaryGhost">View</HvButton>
-              </div>
-              <div style={{ flex: 1 }} />
-            </HvActionBar>
-          </HvCard>
-          <HvCard
-            bgcolor="atmo1"
-            statusColor="neutral_20"
-            style={{ width: 275 }}
+    <HvStack
+      withNavigation
+      direction={{ xs: "column", md: "row" }}
+      divider={false}
+      dividerProps={{ variant: "middle", light: true }}
+    >
+      <HvCard bgcolor="atmo1" statusColor="negative" style={{ width: 275 }}>
+        <HvCardHeader title="Card 1" icon={<Tool />} />
+        <HvCardContent>
+          <div style={{ marginTop: "20px" }}>
+            <HvTypography variant="label">Last connected</HvTypography>
+            <HvTypography>Aug 30, 2017 12:27:53 PM</HvTypography>
+          </div>
+        </HvCardContent>
+        <HvActionBar>
+          <div style={{ width: 32, height: 32 }}>
+            <HvToggleButton
+              aria-label="Star"
+              selectedIcon={<FavoriteSelected />}
+              notSelectedIcon={<Favorite />}
+            />
+          </div>
+          <div
+            style={{
+              width: 32,
+              height: 32,
+              display: "flex",
+              justifyContent: "flex-start",
+            }}
           >
-            <HvCardHeader title="Card 4" icon={<Tool />} />
-            <HvCardContent>
-              <div style={{ marginTop: "20px" }}>
-                <HvTypography variant="label">Last connected</HvTypography>
-                <HvTypography>Aug 30, 2017 12:27:53 PM</HvTypography>
-              </div>
-            </HvCardContent>
-            <HvActionBar>
-              <div style={{ width: 32, height: 32 }}>
-                <HvButton variant="secondaryGhost">View</HvButton>
-              </div>
-              <div style={{ flex: 1 }} />
-            </HvActionBar>
-          </HvCard>
-        </HvStack>
-      </div>
-    </>
+            <HvButton variant="secondaryGhost">View</HvButton>
+          </div>
+          <div style={{ flex: 1 }} />
+        </HvActionBar>
+      </HvCard>
+      <HvCard bgcolor="atmo1" statusColor="positive" style={{ width: 275 }}>
+        <HvCardHeader title="Card 2" icon={<Tool />} />
+        <HvCardContent>
+          <div style={{ marginTop: "20px" }}>
+            <HvTypography variant="label">Last connected</HvTypography>
+            <HvTypography>Aug 30, 2017 12:27:53 PM</HvTypography>
+          </div>
+        </HvCardContent>
+        <HvActionBar>
+          <div style={{ width: 32, height: 32 }}>
+            <HvToggleButton
+              aria-label="Star"
+              selectedIcon={<FavoriteSelected />}
+              notSelectedIcon={<Favorite />}
+            />
+          </div>
+          <div style={{ width: 32, height: 32 }}>
+            <HvButton variant="secondaryGhost">View</HvButton>
+          </div>
+          <div style={{ flex: 1 }} />
+        </HvActionBar>
+      </HvCard>
+      <HvCard bgcolor="atmo1" statusColor="sema15" style={{ width: 275 }}>
+        <HvCardHeader title="Card 3" icon={<Tool />} />
+        <HvCardContent>
+          <div style={{ marginTop: "20px" }}>
+            <HvTypography variant="label">Last connected</HvTypography>
+            <HvTypography>Aug 30, 2017 12:27:53 PM</HvTypography>
+          </div>
+        </HvCardContent>
+        <HvActionBar>
+          <div style={{ width: 32, height: 32 }}>
+            <HvToggleButton
+              aria-label="Star"
+              selectedIcon={<FavoriteSelected />}
+              notSelectedIcon={<Favorite />}
+            />
+          </div>
+          <div style={{ width: 32, height: 32 }}>
+            <HvButton variant="secondaryGhost">View</HvButton>
+          </div>
+          <div style={{ flex: 1 }} />
+        </HvActionBar>
+      </HvCard>
+      <HvCard bgcolor="atmo1" statusColor="neutral_20" style={{ width: 275 }}>
+        <HvCardHeader title="Card 4" icon={<Tool />} />
+        <HvCardContent>
+          <div style={{ marginTop: "20px" }}>
+            <HvTypography variant="label">Last connected</HvTypography>
+            <HvTypography>Aug 30, 2017 12:27:53 PM</HvTypography>
+          </div>
+        </HvCardContent>
+        <HvActionBar>
+          <div style={{ width: 32, height: 32 }}>
+            <HvButton variant="secondaryGhost">View</HvButton>
+          </div>
+          <div style={{ flex: 1 }} />
+        </HvActionBar>
+      </HvCard>
+    </HvStack>
   );
 };
 
+WithNavigation.decorators = [
+  (Story) => <div style={{ overflow: "auto" }}>{Story()}</div>,
+];
 WithNavigation.parameters = {
   eyes: { include: false },
+  docs: {
+    description: {
+      story:
+        "When the stack elements are interactive navigation can be achieved by tabbing into the first element of the stack and using the arrow keys to jump between elements.",
+    },
+  },
 };
