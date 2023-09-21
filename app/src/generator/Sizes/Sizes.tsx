@@ -3,7 +3,6 @@ import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 import { useRef, useState } from "react";
 import { useGeneratorContext } from "generator/GeneratorContext";
 import { UnitSlider } from "components/common";
-import { styles } from "./Sizes.styles";
 
 const Sizes = () => {
   const { activeTheme } = useTheme();
@@ -31,12 +30,12 @@ const Sizes = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className="flex flex-col w-full gap-xs mb-lg">
       <HvTypography variant="title4">Sizes</HvTypography>
       {activeTheme &&
         Object.keys(activeTheme.sizes).map((r) => {
           return (
-            <div key={r} className={styles.item}>
+            <div key={r} className="flex justify-between gap-xs mb-sm">
               <UnitSlider
                 defaultSize={parseInt(
                   currValues?.get(r)?.toString() ||

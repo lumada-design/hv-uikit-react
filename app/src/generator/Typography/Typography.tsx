@@ -1,6 +1,5 @@
 import {
   HvAccordion,
-  HvBox,
   HvTypography,
   HvDropdown,
   HvListValue,
@@ -15,7 +14,6 @@ import { useGeneratorContext } from "generator/GeneratorContext";
 import debounce from "lodash/debounce";
 import { css } from "@emotion/css";
 import { ScaleProps, UnitSlider } from "components/common";
-import { styles } from "./Typography.styles";
 
 const typographyToShow: (keyof HvThemeTypography["typography"])[] = [
   "display",
@@ -259,7 +257,7 @@ const Typography = () => {
   const debouncedColorChangedHandler = debounce(colorChangedHandler, 250);
 
   return (
-    <div className={styles.root}>
+    <div className="flex flex-col w-full">
       {typographyToShow.map((t) => {
         const typography = customTheme?.typography[t];
         const color =
@@ -275,7 +273,7 @@ const Typography = () => {
           <HvAccordion
             key={t}
             label={t}
-            className={styles.label}
+            className={css({ ...theme.typography.label })}
             classes={{
               label: css({
                 ...theme.typography[t],
@@ -283,32 +281,19 @@ const Typography = () => {
               }),
             }}
           >
-            <HvBox
-              css={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 10,
-                marginBottom: theme.space.md,
-                paddingLeft: 40,
-              }}
-            >
-              <HvBox
-                css={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
+            <div className="flex flex-col gap-xs mb-md pl-[40px]">
+              <div className="flex items-center">
                 <HvTypography variant="label">Color</HvTypography>
                 <input
                   key={t}
                   type="color"
-                  className={styles.color}
+                  className="w-[20px] h-[25px] p-0 ml-[5px] bg-transparent"
                   value={color}
                   onChange={(e) => {
                     debouncedColorChangedHandler(t, e.target.value);
                   }}
                 />
-              </HvBox>
+              </div>
               <UnitSlider
                 defaultSize={fontSize}
                 unit={fontUnit}
@@ -318,14 +303,7 @@ const Typography = () => {
                 label="Font Size"
                 scaleProps={scale}
               />
-              <HvBox
-                css={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  marginTop: theme.space.sm,
-                }}
-              >
+              <div className="flex items-center justify-between mt-sm">
                 <HvDropdown
                   label="Line height"
                   values={getLineHeights(t)}
@@ -346,8 +324,8 @@ const Typography = () => {
                     fontWeightChangedHandler(t, (item as HvListValue)?.value)
                   }
                 />
-              </HvBox>
-            </HvBox>
+              </div>
+            </div>
           </HvAccordion>
         );
       })}

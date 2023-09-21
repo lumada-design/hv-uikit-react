@@ -1,6 +1,5 @@
 import { SyntheticEvent, useState } from "react";
 import {
-  HvBox,
   HvButton,
   HvDropdown,
   HvInput,
@@ -9,10 +8,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { useGeneratorContext } from "generator/GeneratorContext";
 import { Add } from "@hitachivantara/uikit-react-icons";
-import { css } from "@emotion/css";
 import { SnackbarCloseReason } from "@mui/material";
 import { extractFontsNames } from "generator/utils";
-import { styles } from "./FontFamily.styles";
 
 const FontFamily = () => {
   const { updateCustomTheme } = useGeneratorContext();
@@ -65,7 +62,7 @@ const FontFamily = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className="w-full flex flex-col pl-xs mb-md">
       <HvSnackbar
         open={fontAdded}
         variant="success"
@@ -74,22 +71,15 @@ const FontFamily = () => {
         autoHideDuration={2000}
         offset={20}
       />
-      <HvBox
-        css={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "flex-end",
-          marginBottom: 10,
-        }}
-      >
-        <HvBox css={{ display: "flex", flexGrow: 1 }}>
+      <div className="flex flex-row items-end mb-xs">
+        <div className="flex grow-1">
           <HvInput
             value={fontName}
             onChange={(event, value) => setFontName(value)}
             label="Font name or Google font link"
-            classes={{ root: css({ width: "100%" }) }}
+            classes={{ root: "w-full" }}
           />
-        </HvBox>
+        </div>
         <HvButton
           icon
           variant="secondaryGhost"
@@ -98,7 +88,7 @@ const FontFamily = () => {
         >
           <Add />
         </HvButton>
-      </HvBox>
+      </div>
       <HvDropdown
         label="Font Family"
         values={fontValues}

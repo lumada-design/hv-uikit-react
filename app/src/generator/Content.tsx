@@ -20,11 +20,7 @@ const Content = () => {
   return (
     <div
       id="gen-root"
-      style={{
-        width: open ? "calc(100% - 390px)" : "100%",
-        backgroundColor:
-          customTheme?.colors?.modes?.[selectedMode]?.backgroundColor,
-      }}
+      className={`bg-default ${open ? "w-[calc(100%_-_390px)]" : "w-full"}`}
     >
       <Router basename={import.meta.env.BASE_URL}>
         <HvProvider

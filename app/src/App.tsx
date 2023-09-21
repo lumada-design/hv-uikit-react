@@ -1,4 +1,4 @@
-import { ds3, ds5, HvProvider, theme } from "@hitachivantara/uikit-react-core";
+import { ds3, ds5, HvProvider } from "@hitachivantara/uikit-react-core";
 import "lib/i18n";
 import Content from "generator/Content";
 import Sidebar from "generator/Sidebar";
@@ -6,13 +6,7 @@ import GeneratorProvider from "generator/GeneratorContext";
 
 const App = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        borderRadius: theme.radii.circle,
-      }}
-    >
+    <div className="flex flex-row rounded-circle">
       <HvProvider
         themes={[ds3, ds5]}
         theme="ds5"
@@ -20,12 +14,7 @@ const App = () => {
         cssTheme="scoped"
       >
         <GeneratorProvider>
-          <div
-            style={{
-              flex: 1,
-              overflowY: "auto",
-            }}
-          >
+          <div className="flex-1 overflow-y-auto">
             <Content />
           </div>
           <Sidebar />

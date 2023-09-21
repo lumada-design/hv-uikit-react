@@ -1,7 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { hexToRgbA, useTheme } from "@hitachivantara/uikit-react-core";
 import { Step } from "./Step";
-import classes from "./tutorialStyles";
 
 export const Tutorial = ({
   setTutorialOpen,
@@ -12,8 +10,6 @@ export const Tutorial = ({
   currentStep: number | undefined;
   setCurrentStep: Dispatch<SetStateAction<number>> | undefined;
 }) => {
-  const { activeTheme, selectedMode } = useTheme();
-
   const nextHandler = (close = false) => {
     if (close) {
       setTutorialOpen?.(false);
@@ -28,15 +24,7 @@ export const Tutorial = ({
   };
 
   return (
-    <div
-      className={classes.root}
-      style={{
-        backgroundColor: hexToRgbA(
-          activeTheme?.colors.modes[selectedMode].base_dark,
-          0.5
-        ),
-      }}
-    >
+    <div className="screen overflow-hidden position-fixed inset-0 z-modal bg-base_dark:50">
       <Step
         idx={currentStep}
         previousHandler={previousHandler}

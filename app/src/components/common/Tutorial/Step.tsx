@@ -69,11 +69,7 @@ export const Step = ({
       onClose={onCloseHandler}
     >
       <div
-        className={
-          classes[
-            `triangle_${stepData?.orientation || "up"}` as keyof typeof classes
-          ]
-        }
+        className={classes[`triangle_${stepData?.orientation || "up"}`]}
         style={{ ...stepData?.arrow }}
       />
       <HvDialogTitle>

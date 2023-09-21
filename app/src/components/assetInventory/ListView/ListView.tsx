@@ -24,7 +24,7 @@ export const ListView = ({ instance }: ListViewProps) => {
   const columns = useMemo(() => getColumns(), []);
 
   return (
-    <HvTableContainer style={{ padding: "2px" }} id={idsToControl.list}>
+    <HvTableContainer className="p-[2px]" id={idsToControl.list}>
       <HvTable variant="listrow" {...instance.getTableProps()}>
         <HvTableHead>
           <HvTableRow>

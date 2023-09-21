@@ -8,7 +8,6 @@ import { useRef, useState } from "react";
 import { useGeneratorContext } from "generator/GeneratorContext";
 import { UnitSlider } from "components/common";
 import { extractFontSizeUnit } from "generator/utils";
-import { styles } from "./Radii.styles";
 
 type Radius = keyof HvThemeTokens["radii"];
 
@@ -74,7 +73,7 @@ const Radii = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className="flex flex-col w-full gap-xs mb-lg">
       <HvTypography variant="title4">Radii</HvTypography>
       {activeTheme &&
         Object.keys(activeTheme.radii).map((radius: string) => {
@@ -82,7 +81,7 @@ const Radii = () => {
           const v = currValues?.get(r)?.toString() || customTheme.radii[r];
           const u = extractFontSizeUnit(v);
           return (
-            <div key={r} className={styles.item}>
+            <div key={r} className="flex justify-between gap-xs">
               <UnitSlider
                 defaultSize={parseInt(v, 10)}
                 unit={u || "px"}

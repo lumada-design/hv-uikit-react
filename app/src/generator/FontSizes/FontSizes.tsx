@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
 import {
-  theme,
   useTheme,
-  HvBox,
   HvDropdown,
   HvListValue,
 } from "@hitachivantara/uikit-react-core";
 import { useGeneratorContext } from "generator/GeneratorContext";
-import { css } from "@emotion/css";
 import { ScaleProps, UnitSlider } from "components/common";
 import { extractFontSizeUnit } from "generator/utils";
-import { styles } from "./FontSizes.styles";
 
 const FontSizes = () => {
   const { activeTheme } = useTheme();
@@ -101,11 +97,11 @@ const FontSizes = () => {
   };
 
   return (
-    <HvBox className={styles.root}>
-      <HvBox css={{ marginBottom: theme.space.sm }}>
+    <div className="w-full flex flex-col pl-xs">
+      <div className="mb-sm">
         <HvDropdown
           label="Font Sizes"
-          classes={{ root: css({ width: 120 }) }}
+          classes={{ root: "w-[120px]" }}
           values={fontSizes}
           onChange={(item) =>
             onSizeChangedHandler(
@@ -113,7 +109,7 @@ const FontSizes = () => {
             )
           }
         />
-      </HvBox>
+      </div>
       <UnitSlider
         disabled={fontSize === ""}
         defaultSize={fontValue}
@@ -124,7 +120,7 @@ const FontSizes = () => {
         scaleProps={scale}
         label="Font Size"
       />
-    </HvBox>
+    </div>
   );
 };
 

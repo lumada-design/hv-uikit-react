@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Global } from "@emotion/react";
 import {
-  HvBox,
   HvButton,
   HvCheckBox,
   HvCheckBoxGroup,
@@ -38,7 +37,14 @@ import {
   ProgressBar,
   Loading,
 } from "components/components";
-import { styles } from "./Components.styles";
+
+// const coreStories = import.meta.glob("../../../../packages/core/src/**/*.stories.tsx");
+/*
+const imports = Object.values(coreStories);
+const Stories = await imports[0]();
+// const componentsList = Promise.all(imports.map((import) => import()));
+console.log(Stories?.Main.render);
+*/
 
 const componentsList = [
   {
@@ -211,8 +217,8 @@ const Component = ({
   content: React.ReactElement;
 }) => {
   return (
-    <HvBox className={styles.component}>
-      <HvBox className={styles.header}>
+    <div className="p-sm mb-lg">
+      <div className="flex items-center justify-between mb-sm">
         <HvTypography variant="title2" component="a" href={`#${id}`}>
           {title}
         </HvTypography>
@@ -220,14 +226,14 @@ const Component = ({
           component="a"
           href={link}
           target="_blank"
-          className={styles.docs}
+          className="px-md py-xs"
           variant="secondarySubtle"
         >
           Docs
         </HvButton>
-      </HvBox>
-      <HvBox className={styles.content}>{content}</HvBox>
-    </HvBox>
+      </div>
+      <div className="pl-md flex flex-col gap-xs">{content}</div>
+    </div>
   );
 };
 
@@ -265,20 +271,14 @@ const Components = () => {
   return (
     <>
       <Global styles={{ html: { scrollBehavior: "smooth" } }} />
-      <HvBox
-        css={{
-          position: "fixed",
-          width: 200,
+      <div
+        className="fixed w-[200px] left-0 overflow-y-scroll py-sm px-xs bg-atmo1 z-overlay"
+        style={{
           height: `calc(100% - ${theme.header.height})`,
-          left: 0,
           top: theme.header.height,
-          overflowY: "scroll",
-          padding: `20px 10px`,
-          backgroundColor: theme.colors.atmo1,
-          zIndex: theme.zIndices.overlay,
         }}
       >
-        <HvBox css={{ display: "flex", flexDirection: "column" }}>
+        <div className="flex flex-col">
           <HvCheckBoxGroup
             showSelectAll
             value={selection}
@@ -302,8 +302,8 @@ const Components = () => {
               />
             ))}
           </HvCheckBoxGroup>
-        </HvBox>
-      </HvBox>
+        </div>
+      </div>
       <HvContainer maxWidth="md">
         {componentsToShow.map((c) => (
           <div key={c.id} id={c.id} style={{ scrollMarginTop: 64 + 10 }}>

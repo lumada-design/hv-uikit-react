@@ -1,5 +1,5 @@
+import { css } from "@emotion/css";
 import {
-  HvBox,
   HvButton,
   HvTooltip,
   HvTypography,
@@ -13,7 +13,21 @@ import { Download, Reset, Duplicate } from "@hitachivantara/uikit-react-icons";
 import { getThemeCode } from "generator/utils";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 import { IconButton } from "components/common/IconButton";
-import { styles } from "./CodeEditor.styles";
+
+const codeEditorStyles = css({
+  ".margin, .margin-view-overlays": {
+    paddingLeft: "4px!important",
+  },
+  ".visible.scrollbar.horizontal": {
+    height: "10px!important",
+    "& .slider": {
+      top: "2px!important",
+    },
+  },
+  ".suggest-widget": {
+    display: "none!important",
+  },
+});
 
 const CodeEditor = ({
   themeName,
@@ -83,8 +97,8 @@ const CodeEditor = ({
   const debouncedHandler = debounce(codeChangedHandler, 1000);
 
   return (
-    <HvBox css={{ position: "relative" }}>
-      <HvBox className={styles.codeEditorTools}>
+    <div className="relative">
+      <div className="flex items-center justify-between px-xs py-1 border border-b-0 border-atmo4">
         <HvTooltip
           enterDelay={500}
           title={<HvTypography>Download</HvTypography>}
@@ -99,7 +113,7 @@ const CodeEditor = ({
             {fileName}
           </HvButton>
         </HvTooltip>
-        <HvBox css={{ display: "flex" }}>
+        <div className="flex">
           <IconButton
             label="Reset"
             icon={<Reset />}
@@ -111,8 +125,8 @@ const CodeEditor = ({
             icon={<Duplicate />}
             onClick={onCopyHandler}
           />
-        </HvBox>
-      </HvBox>
+        </div>
+      </div>
       <HvCodeEditor
         options={{
           minimap: { enabled: false },
@@ -123,10 +137,10 @@ const CodeEditor = ({
         value={value}
         height={300}
         width="100%"
-        className={styles.codeEditor}
+        className={codeEditorStyles}
         onChange={debouncedHandler}
       />
-    </HvBox>
+    </div>
   );
 };
 

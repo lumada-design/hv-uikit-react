@@ -3,7 +3,6 @@ import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 import { useRef, useState } from "react";
 import { useGeneratorContext } from "generator/GeneratorContext";
 import { UnitSlider } from "components/common";
-import { styles } from "./Spacing.styles";
 
 const Spacing = () => {
   const { activeTheme } = useTheme();
@@ -39,12 +38,12 @@ const Spacing = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className="flex flex-col w-full gap-xs mb-lg">
       <HvTypography variant="title4">Spacing</HvTypography>
       {activeTheme &&
         Object.keys(activeTheme.space).map((s) => {
           return (
-            <div key={s} className={styles.item}>
+            <div key={s} className="flex justify-between gap-xs">
               <UnitSlider
                 defaultSize={parseInt(
                   currValues?.get(s)?.toString() ||

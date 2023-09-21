@@ -8,7 +8,6 @@ import {
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 import { useState } from "react";
 import { useGeneratorContext } from "generator/GeneratorContext";
-import { styles } from "./Zindices.styles";
 
 const Zindices = () => {
   const { activeTheme } = useTheme();
@@ -34,16 +33,16 @@ const Zindices = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className="flex flex-col w-full gap-xs mb-lg">
       <HvTypography variant="title4">zIndices</HvTypography>
       {activeTheme &&
         Object.keys(activeTheme.zIndices).map((r) => {
           return (
-            <div key={r} className={styles.item}>
-              <div className={styles.zIndices}>
+            <div key={r} className="flex justify-between gap-xs">
+              <div className="w-[60px]">
                 <HvTypography variant="label">{r}</HvTypography>
               </div>
-              <div className={styles.value}>
+              <div className="w-[140px]">
                 <HvInput
                   value={
                     currValues?.get(r)?.toString() ||

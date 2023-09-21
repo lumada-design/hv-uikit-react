@@ -38,7 +38,7 @@ export const CardView = ({ instance }: CarViewProps) => {
           <HvCard
             bgcolor="atmo1"
             key={`${row?.original?.name}-row`}
-            style={{ width: "100%" }}
+            className="w-full"
             statusColor={row?.original?.statusColor}
             icon={getStatusIcon(row?.original?.statusColor || "")}
             selected={instance.selectedFlatRows.some((r) => r.id === row.id)}
@@ -51,13 +51,7 @@ export const CardView = ({ instance }: CarViewProps) => {
                 </HvTypography>
               }
             />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                flexWrap: "wrap",
-              }}
-            >
+            <div className="flex flex-row flex-wrap">
               <div>
                 <HvCardContent>
                   <HvTypography variant="label">Event</HvTypography>
@@ -86,7 +80,7 @@ export const CardView = ({ instance }: CarViewProps) => {
                 value="value"
                 inputProps={{ "aria-label": "leaf input" }}
               />
-              <div style={{ flex: 1 }} />
+              <div className="flex-1" />
               <HvActionsGeneric
                 actions={[{ id: "view1", label: "View" }]}
                 category="secondarySubtle"

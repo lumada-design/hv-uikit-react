@@ -1,6 +1,5 @@
 import {
   HvBaseTheme,
-  HvBox,
   HvDropdown,
   HvListValue,
   HvLoading,
@@ -9,7 +8,6 @@ import {
   HvTab,
   HvTabs,
   HvTypography,
-  theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { lazy, Suspense, useState } from "react";
@@ -21,8 +19,6 @@ import {
   PaintBucket,
   Template,
 } from "@hitachivantara/uikit-react-icons";
-import { css } from "@emotion/css";
-import { styles } from "./Sidebar.styles";
 
 const Colors = lazy(() => import("generator/Colors"));
 const FontSizes = lazy(() => import("generator/FontSizes"));
@@ -54,9 +50,12 @@ const Sidebar = () => {
 
   return (
     <>
-      {!open && <div className={styles.closed} />}
+      {!open && <div className="hidden" />}
       {open && (
-        <div className={styles.root}>
+        <div
+          className="flex flex-col gap-sm p-sm z-overlay h-screen fixed right-0 bg-atmo1 w-[390px] overflow-y-scroll"
+          style={{ boxShadow: `-4px 0px 10px 1px rgba(125,125,125,0.12)` }}
+        >
           <HvSnackbar
             open={copied}
             variant="success"
@@ -65,10 +64,10 @@ const Sidebar = () => {
             autoHideDuration={2000}
             offset={20}
           />
-          <HvBox css={{ display: "flex", justifyContent: "center" }}>
+          <div className="flex justify-center">
             <HvTypography variant="title2">Theme Creator</HvTypography>
-          </HvBox>
-          <HvBox className={styles.themeBase}>
+          </div>
+          <div className="flex items-center justify-between gap-sm">
             <HvTypography variant="label">Base:</HvTypography>
             <HvDropdown
               values={themes.map((name) => ({
@@ -91,57 +90,45 @@ const Sidebar = () => {
                 changeTheme(selectedTheme, (mode as HvListValue)?.value)
               }
             />
-          </HvBox>
-          <HvBox>
+          </div>
+          <div>
             <CodeEditor themeName={customTheme.name} setCopied={setCopied} />
-          </HvBox>
-          <HvBox>
+          </div>
+          <div>
             <HvTabs
               value={tab}
               onChange={(e, val) => setTab(val)}
-              classes={{ flexContainer: styles.themeTools }}
+              classes={{ flexContainer: "justify-center" }}
               variant="scrollable"
             >
               <HvTab
                 icon={<PaintBucket />}
                 iconPosition="top"
                 label="Colors"
-                classes={{ root: css({ fontSize: 12 }) }}
+                classes={{ root: "text-[12px]" }}
               />
               <HvTab
                 icon={<FontSize />}
                 iconPosition="top"
                 label="Typography"
-                classes={{ root: css({ fontSize: 12 }) }}
+                classes={{ root: "text-[12px]" }}
               />
               <HvTab
                 icon={<Bold />}
                 iconPosition="top"
                 label="Fonts"
-                classes={{ root: css({ fontSize: 12 }) }}
+                classes={{ root: "text-[12px]" }}
               />
               <HvTab
                 icon={<Template />}
                 iconPosition="top"
                 label="Layout"
-                classes={{ root: css({ fontSize: 12 }) }}
+                classes={{ root: "text-[12px]" }}
               />
             </HvTabs>
-          </HvBox>
-          <HvBox
-            css={{
-              padding: theme.space.sm,
-              paddingTop: 0,
-              overflowY: "scroll",
-            }}
-          >
-            <Suspense
-              fallback={
-                <div>
-                  <HvLoading label="Loading..." />
-                </div>
-              }
-            >
+          </div>
+          <div className="p-sm pt-0 overflow-y-scroll">
+            <Suspense fallback={<HvLoading label="Loading..." />}>
               {tab === 0 && <Colors />}
               {tab === 1 && <Typography />}
               {tab === 2 && (
@@ -159,7 +146,7 @@ const Sidebar = () => {
                 </>
               )}
             </Suspense>
-          </HvBox>
+          </div>
         </div>
       )}
     </>
