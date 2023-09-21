@@ -1,6 +1,5 @@
 import { addons } from "@storybook/addons";
 
-import "./theme/fonts/font-faces.css";
 import { themes } from "./theme";
 import { getInitialMode } from "./addons/mode-selector/utils";
 
