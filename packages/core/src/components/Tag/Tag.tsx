@@ -1,23 +1,17 @@
-import { useState } from "react";
-import { HvColorAny, theme } from "@hitachivantara/uikit-styles";
+import { HTMLAttributes } from "react";
+import { HvColorAny, getColor } from "@hitachivantara/uikit-styles";
 import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
-import { HvBaseProps } from "@core/types/generic";
 import { useTheme } from "@core/hooks/useTheme";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvButton, HvButtonProps } from "@core/components/Button";
-
 import { ExtractNames } from "@core/utils/classes";
 import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import { staticClasses, useClasses } from "./Tag.styles";
-import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 
 export { staticClasses as tagClasses };
 
 export type HvTagClasses = ExtractNames<typeof useClasses>;
 
-export interface HvTagProps
-  extends Omit<MuiChipProps, "color" | "classes">,
-    HvBaseProps<HTMLDivElement, "children"> {
+export interface HvTagProps extends Omit<MuiChipProps, "color" | "classes"> {
   /** The label of the tag element. */
   label?: React.ReactNode;
   /** Indicates that the form element is disabled. */
@@ -35,12 +29,12 @@ export interface HvTagProps
   onDelete?: (event: React.MouseEvent<HTMLElement>) => void;
   /** Callback triggered when any item is clicked. */
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
-  /** The role of the element with an attributed event. */
-  role?: string;
-  /** Aria properties to apply to delete button in tag */
-  deleteButtonArialLabel?: string; // TODO: fix typo "ArialLabel" in next version
-  /** Props to apply to delete button */
-  deleteButtonProps?: HvButtonProps;
+  /** Aria properties to apply to delete button in tag
+   * @deprecated no longer used
+   */
+  deleteButtonArialLabel?: string;
+  /** Props to apply to delete icon */
+  deleteButtonProps?: HTMLAttributes<HTMLDivElement>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTagClasses;
   /** @ignore */
@@ -49,21 +43,8 @@ export interface HvTagProps
   component?: MuiChipProps["component"];
 }
 
-const getColor = (customColor, type, colors) => {
-  const defaultSemanticColor = theme.colors.neutral_20;
-  const defaultCategoricalColor = colors.cat1;
-
-  let backgroundColor;
-
-  if (type === "semantic") {
-    backgroundColor =
-      theme.colors[customColor] || customColor || defaultSemanticColor;
-  }
-  if (type === "categorical") {
-    backgroundColor =
-      colors[customColor] || customColor || defaultCategoricalColor;
-  }
-  return backgroundColor;
+const getCategoricalColor = (customColor, colors) => {
+  return (customColor && colors?.[customColor]) || customColor || colors?.cat1;
 };
 
 /**
@@ -86,7 +67,8 @@ export const HvTag = (props: HvTagProps) => {
     deleteIcon,
     onDelete,
     onClick,
-    role,
+    // TODO: remove from API
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     deleteButtonArialLabel = "Delete tag",
     deleteButtonProps = {},
     ...others
@@ -94,74 +76,45 @@ export const HvTag = (props: HvTagProps) => {
   const { colors } = useTheme();
   const { classes, cx, css } = useClasses(classesProp);
 
-  const getDeleteIcon = () => {
-    const disabledSemanticColor =
-      type === "semantic" ? "secondary_60" : "base_dark";
-    const { tabIndex = 0 } = deleteButtonProps;
-
-    const closeIconStyles = css({
-      ...(disabled ? { cursor: "not-allowed" } : undefined),
-      height: 16,
-      "& svg .color0": {
-        fill: theme.colors[disabled ? disabledSemanticColor : "base_dark"],
-      },
-    });
-    return (
-      <HvButton
-        classes={{
-          startIcon: classes.tagButton,
-          focusVisible: classes.focusVisible,
-          root: classes.button,
-        }}
-        aria-label={deleteButtonArialLabel}
-        tabIndex={tabIndex}
-        variant="secondaryGhost"
-        {...deleteButtonProps}
-      >
-        <CloseXS
-          iconSize="XS"
-          className={closeIconStyles}
-          color={disabled ? disabledSemanticColor : "base_dark"}
-        />
-      </HvButton>
-    );
-  };
-
-  const inlineStyle = {
-    ...style,
-  };
+  const defaultDeleteIcon = (
+    <CloseXS
+      role="none"
+      className={cx(classes.button, classes.tagButton)}
+      iconSize="XS"
+      color="base_dark"
+      {...deleteButtonProps}
+    />
+  );
 
   const categoricalBackgroundColor =
-    type === "categorical" ? getColor(color, type, colors) : undefined;
+    type === "categorical" ? getCategoricalColor(color, colors) : undefined;
 
-  if (type === "semantic") {
-    inlineStyle.backgroundColor = getColor(color, type, {});
-  } else if (type === "categorical") {
-    inlineStyle.backgroundColor = `${categoricalBackgroundColor}30`;
-  }
+  const backgroundColor =
+    (type === "semantic" && getColor(color, "neutral_20")) ||
+    (type === "categorical" && `${categoricalBackgroundColor}30`) ||
+    undefined;
 
-  const [hover, setHover] = useState(false);
+  const isClickable = !!onClick && !disabled;
+
+  const clickableClass = css({
+    "&:hover": {
+      boxShadow: `0 0 0 1pt ${categoricalBackgroundColor}`,
+    },
+  });
 
   return (
     <Chip
       label={label}
-      className={cx(classes.root, className)}
-      onMouseEnter={() => {
-        setHover(!!onClick);
-      }}
-      onMouseLeave={() => {
-        setHover(false);
-      }}
+      disabled={disabled}
+      className={cx({ [clickableClass]: isClickable }, className)}
       style={{
-        ...(disabled ? null : inlineStyle),
-        ...(hover && !disabled
-          ? { boxShadow: `0 0 0 1pt ${categoricalBackgroundColor}` }
-          : null),
+        ...(disabled ? null : { backgroundColor }),
+        ...style,
       }}
       classes={{
-        root: cx(classes.chipRoot, {
+        root: cx(classes.root, classes.chipRoot, {
           [classes.disabled]: disabled,
-          [classes.clickable]: !!onClick,
+          [classes.clickable]: isClickable,
           [classes.categorical]: type === "categorical",
           [classes.categoricalFocus]: type === "categorical" && !disabled,
           [classes.categoricalDisabled]: type === "categorical" && disabled,
@@ -171,11 +124,9 @@ export const HvTag = (props: HvTagProps) => {
           [classes.disabledDeleteIcon]: disabled,
         }),
       }}
-      deleteIcon={(hasDeleteAction(onDelete) && deleteIcon) || getDeleteIcon()}
-      onDelete={getOnDeleteCallback(disabled, onDelete)}
+      deleteIcon={deleteIcon || defaultDeleteIcon}
+      onDelete={disabled ? undefined : onDelete}
       onClick={disabled ? undefined : onClick}
-      role={role || (hasClickAction(onClick) ? "button" : undefined)}
-      tabIndex={hasDeleteAction(onDelete) ? undefined : 0}
       {...others}
     />
   );

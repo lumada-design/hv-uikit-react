@@ -37,6 +37,7 @@ export default meta;
 export const Main: StoryObj<HvTagProps> = {
   args: {
     label: "Tag Label",
+    onClick: () => console.log("click"),
     onDelete: () => console.log("delete"),
     type: "semantic",
     color: "neutral_20",
