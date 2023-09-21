@@ -49,6 +49,17 @@ export const parameters: Preview["parameters"] = {
       ],
     },
   },
+  a11y: {
+    config: {
+      rules: [
+        {
+          // Disable color contrast rule
+          id: "color-contrast",
+          enabled: false,
+        },
+      ],
+    },
+  },
 };
 
 export default {

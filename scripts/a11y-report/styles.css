@@ -1,0 +1,33 @@
+html {
+  background-color: #f4f5f5;
+  /* Font size base: 0.625 * 16px = 10px */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #414141;
+  font-size: 1.4rem;
+  margin: 3.2rem;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+ul:first-of-type {
+  display: none;
+}
