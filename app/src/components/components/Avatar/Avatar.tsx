@@ -1,4 +1,4 @@
-import { HvAvatar, theme } from "@hitachivantara/uikit-react-core";
+import { HvAvatar } from "@hitachivantara/uikit-react-core";
 import { LogIn } from "@hitachivantara/uikit-react-icons";
 
 import man1 from "./resources/man-1.png";
@@ -6,7 +6,7 @@ import woman1 from "./resources/woman-1.png";
 
 export const Avatar = () => {
   return (
-    <div style={{ display: "flex", gap: theme.space.md }}>
+    <div className="flex gap-md">
       <HvAvatar>
         <LogIn color="atmo1" iconSize="XS" />
       </HvAvatar>

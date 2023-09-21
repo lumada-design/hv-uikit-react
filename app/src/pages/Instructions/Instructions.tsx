@@ -1,5 +1,4 @@
 import {
-  HvBox,
   HvButton,
   HvCard,
   HvCardContent,
@@ -7,7 +6,6 @@ import {
   HvContainer,
   HvTypography,
   HvSimpleGrid,
-  Breakpoint,
 } from "@hitachivantara/uikit-react-core";
 import {
   Tool,
@@ -26,169 +24,116 @@ import {
 
 import { useGeneratorContext } from "~/generator/GeneratorContext";
 
-import classes from "./styles";
+const Entry = ({
+  title,
+  icon,
+  children,
+}: {
+  title: React.ReactNode;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) => (
+  <div className="flex align-start mb-xs">
+    <div className="flex items-center gap-xs mr-sm min-w-[140px]">
+      {icon}
+      <HvTypography variant="title4">{title}</HvTypography>
+    </div>
+    <HvTypography>{children}</HvTypography>
+  </div>
+);
 
 const Instructions = () => {
   const { setTutorialOpen } = useGeneratorContext();
 
-  const tutorialClickHandler = () => {
-    setTutorialOpen?.((prev) => !prev);
-  };
-
   return (
     <HvContainer maxWidth="lg">
-      <HvBox className={classes.tutorial}>
+      <div className="flex justify-center pb-sm">
         <HvButton
           variant="secondaryGhost"
-          onClick={tutorialClickHandler}
-          style={{ padding: 10 }}
+          onClick={() => setTutorialOpen?.((prev) => !prev)}
         >
           <HvTypography variant="title2">Check our tutorial!</HvTypography>
         </HvButton>
-      </HvBox>
+      </div>
       <HvSimpleGrid
-        breakpoints={
-          [
-            { minWidth: 600, cols: 2, spacing: "sm" },
-            { minWidth: 0, cols: 1, spacing: "sm" },
-          ] as Breakpoint[]
-        }
+        breakpoints={[
+          { minWidth: 600, cols: 2, spacing: "sm" },
+          { minWidth: 0, cols: 1, spacing: "sm" },
+        ]}
       >
         <HvCard statusColor="positive" bgcolor="atmo1">
           <HvCardHeader
             title={
-              <HvBox className={classes.title}>
+              <div className="flex flex-row items-center">
                 <Tool iconSize="M" />
                 <HvTypography variant="title1">Using the Editor</HvTypography>
-              </HvBox>
+              </div>
             }
           />
           <HvCardContent>
-            <HvTypography variant="title2" className={classes.subSection}>
+            <HvTypography variant="title2" className="mb-sm">
               Tools
             </HvTypography>
-            <HvBox className={classes.tool}>
-              <HvBox className={classes.toolTitle}>
-                <PaintBucket />
-                <HvTypography variant="title4">Colors</HvTypography>
-              </HvBox>
-              <HvTypography>
-                Configure the colors of your theme palette
-              </HvTypography>
-            </HvBox>
+            <Entry title="Colors" icon={<PaintBucket />}>
+              Configure the colors of your theme palette
+            </Entry>
 
-            <HvBox className={classes.tool}>
-              <HvBox className={classes.toolTitle}>
-                <FontSize />
-                <HvTypography variant="title4">Typography</HvTypography>
-              </HvBox>
-              <HvTypography>
-                Configure colors, font size, line height and font weight for the
-                various typographys
-              </HvTypography>
-            </HvBox>
+            <Entry title="Typography" icon={<FontSize />}>
+              Configure colors, font size, line height and font weight for the
+              various typographies
+            </Entry>
 
-            <HvBox className={classes.tool}>
-              <HvBox className={classes.toolTitle}>
-                <Bold />
-                <HvTypography variant="title4">Fonts</HvTypography>
-              </HvBox>
-              <HvTypography>
-                Add Google Fonts and configure generic font sizes on your theme
-              </HvTypography>
-            </HvBox>
+            <Entry title="Fonts" icon={<Bold />}>
+              Add Google Fonts and configure generic font sizes on your theme
+            </Entry>
+            <Entry title="Layout" icon={<Template />}>
+              Configure generic sizes, radii, spacing and zIndices on your theme
+            </Entry>
 
-            <HvBox className={classes.tool}>
-              <HvBox className={classes.toolTitle}>
-                <Template />
-                <HvTypography variant="title4">Layout</HvTypography>
-              </HvBox>
-              <HvTypography>
-                Configure generic sizes, radii, spacing and zIndices on your
-                theme
-              </HvTypography>
-            </HvBox>
-            <HvTypography variant="title2" className={classes.subSection}>
+            <HvTypography variant="title2" className="my-sm">
               Tabs
             </HvTypography>
-            <HvBox className={classes.tool}>
-              <HvBox className={classes.toolTitle}>
-                <Components />
-                <HvTypography variant="title4">Components</HvTypography>
-              </HvBox>
-              <HvTypography>
-                Test your customized theme on a list of UI Kit NEXT components
-              </HvTypography>
-            </HvBox>
-            <HvBox className={classes.tool}>
-              <HvBox className={classes.toolTitle}>
-                <Preview />
-                <HvTypography variant="title4">Preview</HvTypography>
-              </HvBox>
-              <HvTypography>
-                Test your customized theme on a variety of templates
-              </HvTypography>
-            </HvBox>
+            <Entry title="Components" icon={<Components />}>
+              Test your customized theme on a list of UI Kit NEXT components
+            </Entry>
+            <Entry title="Preview" icon={<Preview />}>
+              Test your customized theme on a variety of templates
+            </Entry>
           </HvCardContent>
         </HvCard>
         <HvCard statusColor="positive" bgcolor="atmo1">
           <HvCardHeader
             title={
-              <HvBox className={classes.title}>
+              <div className="flex flex-row items-center">
                 <Favorite iconSize="M" />
                 <HvTypography variant="title1">Features</HvTypography>
-              </HvBox>
+              </div>
             }
           />
           <HvCardContent>
-            <HvTypography variant="title2" className={classes.subSection}>
+            <HvTypography variant="title2" className="mb-sm">
               Design System versions
             </HvTypography>
-            <HvBox className={classes.tool}>
-              <HvBox className={classes.toolTitle}>
-                <ThemeSwitcher />
-                <HvTypography variant="title4">Theme</HvTypography>
-              </HvBox>
-              <HvTypography>
-                Choose between DS3 and DS5 as your base theme
-              </HvTypography>
-            </HvBox>
-            <HvBox className={classes.tool}>
-              <HvBox className={classes.toolTitle}>
-                <ColorPicker />
-                <HvTypography variant="title4">Color Mode</HvTypography>
-              </HvBox>
-              <HvTypography>
-                Select your prefered color mode between `dawn` and `wicked`
-              </HvTypography>
-            </HvBox>
-            <HvTypography variant="title2" className={classes.subSection}>
+            <Entry title="Theme" icon={<ThemeSwitcher />}>
+              Choose between DS3 and DS5 as your base theme
+            </Entry>
+            <Entry title="Color Mode" icon={<ColorPicker />}>
+              Select your preferred color mode between `dawn` and `wicked`
+            </Entry>
+            <HvTypography variant="title2" className="my-sm">
               Theme Code
             </HvTypography>
-            <HvBox className={classes.tool}>
-              <HvBox className={classes.toolTitle}>
-                <Code />
-                <HvTypography variant="title4">Theme Code</HvTypography>
-              </HvBox>
-              <HvTypography>
-                The Theme Code displays your custom theme code in a readonly
-                format (for now). You can copy the code and reset to the
-                default.
-              </HvTypography>
-            </HvBox>
-            <HvTypography variant="title2" className={classes.subSection}>
+            <Entry title="Theme Code" icon={<Code />}>
+              The Theme Code displays your custom theme code in a readonly
+              format (for now). You can copy the code and reset to the default.
+            </Entry>
+            <HvTypography variant="title2" className="my-sm">
               Google Fonts
             </HvTypography>
-            <HvBox className={classes.tool}>
-              <HvBox className={classes.toolTitle}>
-                <FontSizeBigger />
-                <HvTypography variant="title4">Google Fonts</HvTypography>
-              </HvBox>
-              <HvTypography>
-                Add a Google Font and have it dynamically added to the Theme
-                Creator to test your theme with your font
-              </HvTypography>
-            </HvBox>
+            <Entry title="Google Fonts" icon={<FontSizeBigger />}>
+              Add a Google Font and have it dynamically added to the Theme
+              Creator to test your theme with your font
+            </Entry>
           </HvCardContent>
         </HvCard>
       </HvSimpleGrid>

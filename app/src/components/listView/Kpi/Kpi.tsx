@@ -10,8 +10,6 @@ import { TopXS, BottomXS } from "@hitachivantara/uikit-react-icons";
 import { Indicator } from "~/components/listView/Indicator";
 import { getStatusIcon } from "~/lib/utils/listView";
 
-import classes from "./styles";
-
 interface KpiProps {
   title: string;
   count: number;
@@ -66,18 +64,18 @@ export const Kpi = ({
       statusColor={color}
       onClick={() => handleKpiClick()}
       className={clsx(
-        classes.card,
-        status === kpiSelection && classes.selected
+        "cursor-pointer",
+        status === kpiSelection && "outline-secondary_60"
       )}
       icon={getStatusIcon(status)}
     >
-      <div className={classes.container}>
+      <div className="p-sm">
         <HvTypography variant="label">{title}</HvTypography>
-        <div className={classes.content}>
-          <HvTypography variant="title2" className={classes.title}>
+        <div className="flex items-center">
+          <HvTypography variant="title2" className="my-xs">
             {count}
           </HvTypography>
-          <div className={classes.variation}>
+          <div className="flex flex-1 items-center justify-end">
             <Indicator variation={variation} />
             {variation === "up" ? (
               <TopXS title="Up" color="positive" />

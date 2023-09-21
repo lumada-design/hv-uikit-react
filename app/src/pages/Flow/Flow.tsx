@@ -5,6 +5,7 @@ import {
   HvGlobalActions,
   HvLoading,
   HvTypography,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 import { Add, Fail } from "@hitachivantara/uikit-react-icons";
 import {
@@ -16,7 +17,6 @@ import {
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
-import classes from "./styles";
 import {
   DASHBOARDS_STORAGE_KEY,
   DashboardSpecs,
@@ -153,7 +153,7 @@ const Content = () => {
   };
 
   return (
-    <div className={classes.root}>
+    <div className="h-full">
       <HvGlobalActions position="relative" title="Dashboard Flow">
         <HvButton
           variant="primary"
@@ -163,7 +163,7 @@ const Content = () => {
           Add Node
         </HvButton>
       </HvGlobalActions>
-      <div className={classes.flow}>
+      <div style={{ height: `calc(100% - ${theme.header.secondLevelHeight})` }}>
         <HvFlow
           nodes={nodes}
           edges={edges}
@@ -186,7 +186,7 @@ const Content = () => {
           <HvFlowEmpty
             title="Empty Flow"
             action={
-              <div className={classes.emptyFlow}>
+              <div className="flex flex-row">
                 <HvTypography
                   link
                   component="a"

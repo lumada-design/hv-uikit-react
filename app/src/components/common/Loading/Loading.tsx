@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 import { HvLoading, HvEmptyState } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
-import classes from "./styles";
-
 interface ErrorStateProps {
   errorTitle?: string | React.ReactNode;
   errorMessage?: string | React.ReactNode;
@@ -16,7 +14,7 @@ const ErrorState = (props: ErrorStateProps) => {
 
   return (
     <HvEmptyState
-      classes={{ root: classes.error }}
+      classes={{ root: "items-center" }}
       title={errorTitle}
       message={errorMessage}
       action={errorAction}
@@ -32,7 +30,9 @@ interface LoadingStateProps {
 const LoadingState = (props: LoadingStateProps) => {
   const { loadingLabel } = props;
 
-  return <HvLoading classes={{ root: classes.loading }} label={loadingLabel} />;
+  return (
+    <HvLoading classes={{ root: "h-full z-overlay" }} label={loadingLabel} />
+  );
 };
 
 export interface LoadingProps extends React.HTMLAttributes<HTMLDivElement> {

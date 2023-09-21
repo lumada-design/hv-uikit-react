@@ -67,20 +67,16 @@ export const UnitSlider = ({
         maxPointValue={scaleProps.minMax[1]}
         markDigits={scaleProps.markDigits}
         classes={{
-          sliderRoot: css({ zIndex: theme.zIndices.overlay }),
-          sliderContainer: css({ paddingLeft: 0, paddingRight: 10 }),
-          labelContainer: css({
-            marginLeft: 0,
-            marginRight: 0,
-            marginBottom: 12,
-          }),
+          sliderRoot: "z-overlay",
+          sliderContainer: "pl-0 pr-[10px]",
+          labelContainer: "mx-0 mb-[12px]",
         }}
         inputProps={[
           {
             readOnly: true,
             classes: {
-              inputRoot: css({ border: "none" }),
-              input: css({ textAlign: "end" }),
+              inputRoot: "border-none",
+              input: "text-right",
             },
           },
         ]}

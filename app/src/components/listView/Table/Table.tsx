@@ -28,7 +28,7 @@ export const Table = ({ instance, isLoading }: TableProps) => {
   const columns = useMemo(() => getColumns(), []);
 
   return (
-    <HvTableContainer style={{ padding: "2px" }}>
+    <HvTableContainer className="p-.5">
       <HvTable variant="listrow" {...instance.getTableProps()}>
         <HvTableHead>
           <HvTableRow>
@@ -42,7 +42,7 @@ export const Table = ({ instance, isLoading }: TableProps) => {
           <tbody>
             <tr>
               <td colSpan={7}>
-                <div style={{ marginTop: 40, marginBottom: 40 }}>
+                <div className="my-lg">
                   <HvLoading label="Loading data..." />
                 </div>
               </td>

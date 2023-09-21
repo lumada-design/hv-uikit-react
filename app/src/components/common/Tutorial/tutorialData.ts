@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 interface StepProps {
   title?: string;
   content?: string;
-  orientation?: string;
+  orientation?: "up" | "down" | "left" | "right";
   position?: {
     top?: number | string;
     bottom?: number | string;

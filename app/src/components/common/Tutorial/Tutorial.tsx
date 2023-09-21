@@ -1,8 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
-import { theme } from "@hitachivantara/uikit-react-core";
 
 import { Step } from "./Step";
-import classes from "./tutorialStyles";
 
 export const Tutorial = ({
   setTutorialOpen,
@@ -27,12 +25,7 @@ export const Tutorial = ({
   };
 
   return (
-    <div
-      className={classes.root}
-      style={{
-        backgroundColor: theme.alpha("base_dark", 0.5),
-      }}
-    >
+    <div className="screen overflow-hidden position-fixed inset-0 z-modal bg-base_dark:50">
       <Step
         idx={currentStep}
         previousHandler={previousHandler}
