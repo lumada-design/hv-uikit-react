@@ -20,9 +20,9 @@ jobs:
     secrets:
       APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
 
-  pa11y:
-    name: Pa11y Tests
-    uses: ./.github/workflows/tests-pa11y.yml
+  a11y:
+    name: a11y Tests
+    uses: ./.github/workflows/tests-a11y.yml
     secrets:
       ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
 
