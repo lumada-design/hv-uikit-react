@@ -56,10 +56,7 @@ export const Step = ({
       firstFocusable="next"
       disableBackdropClick
       classes={{
-        background: css({
-          display: "none",
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-        }),
+        background: "hidden bg-black:50",
         paper: clsx(
           css({
             ...stepData?.position,
@@ -71,11 +68,7 @@ export const Step = ({
       onClose={onCloseHandler}
     >
       <div
-        className={
-          classes[
-            `triangle_${stepData?.orientation || "up"}` as keyof typeof classes
-          ]
-        }
+        className={classes[`triangle_${stepData?.orientation || "up"}`]}
         style={{ ...stepData?.arrow }}
       />
       <HvDialogTitle>

@@ -3,8 +3,6 @@ import { HvContainer } from "@hitachivantara/uikit-react-core";
 
 import { Loading, LoadingProps } from "~/components/common/Loading";
 
-import classes from "./styles";
-
 interface ContainerProps {
   maxWidth?: "xs" | "sm" | "md" | "lg" | "xl" | false;
   children: NonNullable<React.ReactNode>;
@@ -17,7 +15,7 @@ export const Container = ({
   loadingProps,
 }: ContainerProps) => {
   return (
-    <div className={classes.root}>
+    <div className="flex pb-6 pt-11 min-h-screen">
       <HvContainer maxWidth={maxWidth} {...{ component: "main" }}>
         <Suspense fallback={<Loading {...loadingProps} />}>{children}</Suspense>
       </HvContainer>

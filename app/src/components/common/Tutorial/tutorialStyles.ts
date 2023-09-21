@@ -2,17 +2,6 @@ import { css } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
 
 const styles = {
-  root: css({
-    width: "100vw",
-    height: "100vh",
-    overflow: "hidden",
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    zIndex: theme.zIndices.modal,
-  }),
   buttons: css({
     display: "flex",
     flexDirection: "row",

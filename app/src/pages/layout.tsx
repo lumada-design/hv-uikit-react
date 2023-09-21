@@ -24,7 +24,7 @@ const Content = () => {
   return (
     <div
       id="gen-root"
-      className={`bg-default ${open ? "w-[calc(100%_-_390px)]" : "w-full"}}`}
+      className={`bg-default ${open ? "w-[calc(100%_-_390px)]" : "w-full"}`}
     >
       <div>
         <HvProvider
