@@ -1,4 +1,5 @@
-import { StoryObj } from "@storybook/react";
+import { StoryFn, StoryObj } from "@storybook/react";
+import { css } from "@emotion/css";
 import {
   Delete,
   Favorite,
@@ -14,6 +15,7 @@ import {
   HvBox,
   HvButton,
   HvButtonProps,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 import { buttonRadius, buttonSize, buttonVariant } from "./types";
 
@@ -28,6 +30,7 @@ export const Main: StoryObj<HvButtonProps> = {
     radius: undefined,
     overrideIconColors: false,
     selected: false,
+    onClick: () => console.log("clicked"),
   },
   argTypes: {
     children: {
@@ -125,81 +128,64 @@ export const Main: StoryObj<HvButtonProps> = {
   },
 };
 
-export const Variants = ({ onClick }) => {
+export const Variants: StoryFn<HvButtonProps> = () => {
   return (
-    <HvBox
-      sx={{ display: "grid", gap: 20, gridTemplateColumns: "repeat(3, 140px)" }}
-    >
-      <HvButton variant="primary" onClick={onClick}>
-        Primary
-      </HvButton>
-      <HvButton variant="primarySubtle" onClick={onClick}>
-        Primary Subtle
-      </HvButton>
-      <HvButton variant="primaryGhost" onClick={onClick}>
-        Primary Ghost
-      </HvButton>
+    <>
+      <HvButton variant="primary">Primary</HvButton>
+      <HvButton variant="primarySubtle">Primary Subtle</HvButton>
+      <HvButton variant="primaryGhost">Primary Ghost</HvButton>
       <div />
-      <HvButton variant="secondarySubtle" onClick={onClick}>
-        Secondary Subtle
-      </HvButton>
-      <HvButton variant="secondaryGhost" onClick={onClick}>
-        Secondary Ghost
-      </HvButton>
-      <HvButton disabled variant="primary" onClick={onClick}>
+      <HvButton variant="secondarySubtle">Secondary Subtle</HvButton>
+      <HvButton variant="secondaryGhost">Secondary Ghost</HvButton>
+      <HvButton disabled variant="primary">
         Disabled
       </HvButton>
-      <HvButton disabled variant="primarySubtle" onClick={onClick}>
+      <HvButton disabled variant="primarySubtle">
         Disabled Subtle
       </HvButton>
-      <HvButton disabled variant="primaryGhost" onClick={onClick}>
+      <HvButton disabled variant="primaryGhost">
         Disabled Ghost
       </HvButton>
-    </HvBox>
+    </>
   );
 };
 
-const clickAction = () => {
-  alert("This can be triggered");
-};
+Variants.decorators = [
+  (Story) => (
+    <HvBox
+      sx={{
+        display: "grid",
+        gap: 20,
+        gridTemplateColumns: "repeat(3, 140px)",
+      }}
+    >
+      {Story()}
+    </HvBox>
+  ),
+];
 
-Variants.args = {
-  onClick: clickAction,
-};
-
-export const Icons = ({ onClick }) => {
+export const Icons: StoryFn<HvButtonProps> = () => {
   return (
     <>
-      <HvBox sx={{ display: "flex", gap: 20 }}>
-        <HvButton
-          icon
-          aria-label="Play"
-          onClick={onClick}
-          variant="primaryGhost"
-        >
+      <div>
+        <HvButton icon aria-label="Play" variant="primaryGhost">
           <Play iconSize="M" />
         </HvButton>
-        <HvButton icon aria-label="Pause" onClick={onClick}>
+        <HvButton icon aria-label="Pause">
           <Pause iconSize="M" />
         </HvButton>
-        <HvButton icon disabled aria-label="Stop" onClick={onClick}>
+        <HvButton icon disabled aria-label="Stop">
           <Stop iconSize="M" />
         </HvButton>
-      </HvBox>
-      <HvBox sx={{ display: "flex", gap: 20, marginTop: 10 }}>
-        <HvButton
-          startIcon={<Play />}
-          variant="primaryGhost"
-          aria-label="Play"
-          onClick={onClick}
-        >
+      </div>
+      <div>
+        <HvButton startIcon={<Play />} variant="primaryGhost" aria-label="Play">
           Play
         </HvButton>
         <HvButton
           startIcon={<Pause />}
           variant="secondaryGhost"
           aria-label="Pause"
-          onClick={onClick}
         >
           Pause
         </HvButton>
@@ -208,25 +194,18 @@ export const Icons = ({ onClick }) => {
           startIcon={<Stop />}
           variant="secondaryGhost"
           aria-label="Stop"
-          onClick={onClick}
         >
           Stop
         </HvButton>
-      </HvBox>
-      <HvBox sx={{ display: "flex", gap: 20, marginTop: 10 }}>
-        <HvButton
-          endIcon={<Play />}
-          variant="primaryGhost"
-          aria-label="Play"
-          onClick={onClick}
-        >
+      </div>
+      <div>
+        <HvButton endIcon={<Play />} variant="primaryGhost" aria-label="Play">
           Play
         </HvButton>
         <HvButton
           endIcon={<Pause />}
           variant="secondaryGhost"
           aria-label="Pause"
-          onClick={onClick}
         >
           Pause
         </HvButton>
@@ -235,62 +214,60 @@ export const Icons = ({ onClick }) => {
           disabled
           variant="secondaryGhost"
           aria-label="Stop"
-          onClick={onClick}
         >
           Stop
         </HvButton>
-      </HvBox>
+      </div>
     </>
   );
 };
 
-Icons.args = {
-  onClick: clickAction,
-};
+Icons.decorators = [
+  (Story) => (
+    <div
+      className={css({
+        display: "flex",
+        flexFlow: "column",
+        gap: 10,
+        "& > div": {
+          display: "flex",
+          gap: 20,
+        },
+      })}
+    >
+      {Story()}
+    </div>
+  ),
+];
 
-export const Semantic = ({ onClick }) => {
+export const Semantic = () => {
   return (
     <HvBox
-      sx={{ display: "flex", gap: 20, backgroundColor: "#D3E3F6", padding: 20 }}
+      sx={{
+        display: "flex",
+        gap: 20,
+        backgroundColor: theme.colors.neutral_20,
+        padding: 20,
+      }}
     >
       <HvButton
         variant="semantic"
-        onClick={onClick}
         aria-label="Favorite"
         startIcon={<Favorite />}
       >
         Favorite
       </HvButton>
-      <HvButton
-        variant="semantic"
-        onClick={onClick}
-        startIcon={<Refresh />}
-        aria-label="Refresh"
-      >
+      <HvButton variant="semantic" startIcon={<Refresh />} aria-label="Refresh">
         Refresh
       </HvButton>
-      <HvButton
-        variant="semantic"
-        onClick={onClick}
-        startIcon={<Delete />}
-        aria-label="Delete"
-      >
+      <HvButton variant="semantic" startIcon={<Delete />} aria-label="Delete">
         Delete
       </HvButton>
-      <HvButton
-        variant="semantic"
-        onClick={onClick}
-        icon
-        aria-label="More options"
-      >
+      <HvButton variant="semantic" icon aria-label="More options">
         <MoreOptionsVertical />
       </HvButton>
     </HvBox>
   );
-};
-
-Semantic.args = {
-  onClick: clickAction,
 };
 
 interface CustomLinkProps extends HvButtonProps<"a"> {
@@ -327,10 +304,6 @@ export const CustomRootComponent = ({ onClick }) => {
       </HvButton>
     </HvBox>
   );
-};
-
-CustomRootComponent.args = {
-  onClick: clickAction,
 };
 
 CustomRootComponent.parameters = {

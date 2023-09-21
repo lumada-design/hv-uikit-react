@@ -25,25 +25,24 @@ const meta: Meta<typeof HvTabs> = {
 };
 export default meta;
 
-export const Main = () => {
-  const [value, setValue] = useState(0);
+export const Main: StoryObj<HvTabsProps> = {
+  args: {},
+  argTypes: {
+    onChange: { control: { disable: true } },
+    value: { control: { disable: true } },
+    classes: { control: { disable: true } },
+  },
+  render: () => {
+    const [value, setValue] = useState(0);
 
-  const handleChange = (_, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <HvTabs value={value} onChange={handleChange}>
-      <HvTab label="Clickable tab 1" />
-      <HvTab label="Clickable tab 2" />
-      <HvTab label="Clickable tab 3" />
-    </HvTabs>
-  );
-};
-Main.argTypes = {
-  onChange: { control: { disable: true } },
-  value: { control: { disable: true } },
-  classes: { control: { disable: true } },
+    return (
+      <HvTabs value={value} onChange={(_, newValue) => setValue(newValue)}>
+        <HvTab label="Clickable tab 1" />
+        <HvTab label="Clickable tab 2" />
+        <HvTab label="Clickable tab 3" />
+      </HvTabs>
+    );
+  },
 };
 
 export const FullWidth: StoryObj<HvTabsProps> = {
@@ -57,7 +56,7 @@ export const FullWidth: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange = (_, newValue) => {
+    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
       setValue(newValue);
     };
 
@@ -84,7 +83,7 @@ export const ContentChanging: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange = (_, newValue) => {
+    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
       setValue(newValue);
     };
 
@@ -109,7 +108,7 @@ export const TextSize: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange = (_, newValue) => {
+    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
       setValue(newValue);
     };
 
@@ -139,7 +138,7 @@ export const CenteredTabs: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange = (_, newValue) => {
+    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
       setValue(newValue);
     };
 
@@ -172,7 +171,7 @@ export const WithBadges: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange = (_, newValue) => {
+    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
       setValue(newValue);
     };
 
@@ -208,7 +207,7 @@ export const HorizontalIcons: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange = (_, newValue) => {
+    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
       setValue(newValue);
     };
 
@@ -238,7 +237,7 @@ export const VerticalIcons: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange = (_, newValue) => {
+    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
       setValue(newValue);
     };
 
@@ -268,7 +267,7 @@ export const OnlyIcons: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange = (_, newValue) => {
+    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
       setValue(newValue);
     };
 

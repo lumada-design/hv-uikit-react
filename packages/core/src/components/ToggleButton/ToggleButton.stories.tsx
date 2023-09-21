@@ -201,7 +201,7 @@ export const Animated: StoryObj<HvToggleButtonProps> = {
 
     return (
       <HvToggleButton selected={select} onClick={toggleState} aria-label="Eye">
-        <ToggleEye className={select ? "selected" : "notSelected"} />
+        <ToggleEye selected={select} />
       </HvToggleButton>
     );
   },
