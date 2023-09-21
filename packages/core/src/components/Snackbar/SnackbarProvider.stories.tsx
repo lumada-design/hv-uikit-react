@@ -19,7 +19,7 @@ export default {
 const Button = ({ onClick, variant }) => (
   <HvButton
     onClick={onClick}
-    variant="secondary"
+    variant="secondarySubtle"
     style={{ width: "150px", textTransform: "capitalize" }}
   >
     {variant}

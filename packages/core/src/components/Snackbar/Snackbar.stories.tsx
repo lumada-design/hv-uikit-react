@@ -141,7 +141,7 @@ export const Controller: StoryObj<HvSnackbarProps> = {
         <div style={{ marginBottom: 10 }}>
           <HvButton
             onClick={handleOpen}
-            variant="secondary"
+            variant="secondarySubtle"
             style={{ width: "150px", textTransform: "capitalize" }}
           >
             {variant}
