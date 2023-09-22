@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story } from "@storybook/addon-docs";
 import {
   ContainerSample,
   SimpleGridSample,
@@ -62,9 +62,9 @@ it doesn't grow beyond the specified width.
 
 If necessary, multiple nested containers can be used as shown in the example below.
 
-<Canvas>
-  <Story name="Container" story={ContainerSample} />
-</Canvas>
+<Story name="Container">
+  <ContainerSample />
+</Story>
 
 For more information, please go to the [container's API](/docs/components-container--main).
 
@@ -81,9 +81,9 @@ on your needs.
 
 Below is an example on how to use the grid component where the Design System directives were used and some grid items were spanned across multiple columns.
 
-<Canvas>
-  <Story name="Grid" story={GridSample} />
-</Canvas>
+<Story name="Grid">
+  <GridSample />
+</Story>
 
 Learn more about this component [here](/docs/components-grid-grid--main).
 
@@ -101,8 +101,8 @@ enabling you to create much simpler grids than the grid component.
 In the example below a grid with three columns was created to distribute the cards across them, and when the screen width goes under the Design System
 `sm` (600px) breakpoint the grid only has two columns.
 
-<Canvas>
-  <Story name="SimpleGrid" story={SimpleGridSample} />
-</Canvas>
+<Story name="SimpleGrid">
+  <SimpleGridSample />
+</Story>
 
 More information about can be found [here](/docs/components-grid-simple-grid--main).
