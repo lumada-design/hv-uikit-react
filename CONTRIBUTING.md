@@ -31,7 +31,7 @@ Use GitHub issues for bug reports and feature requests or one of our available c
 
 New components should be contributed to the `lab` package in `packages/lab/src/components/<COMPONENT_NAME>`.
 
-Check out our [Component Guidelines](/docs/overview-community-component-guidelines--page) for a guide on how to structure components, and the [submitting a pull request](#submitting-a-pull-request) on how to contribute it.
+Check out our [Component Guidelines](./?path=/docs/overview-community-component-guidelines--docs) for a guide on how to structure components, and the [submitting a pull request](#submitting-a-pull-request) on how to contribute it.
 
 <h2 id="submitting-an-issue">Submitting an issue</h2>
 
