@@ -416,6 +416,7 @@ export interface HvTableColumnOptions<
     Partial<UseHvTableStylesColumnOptions> {
   Header?: H;
   Footer?: Renderer<HvFooterProps<D>>;
+  originalId?: IdType<D>;
 }
 // #endregion
 

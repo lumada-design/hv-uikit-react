@@ -118,7 +118,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
     const type = typeProp || tableSectionContext?.type || "body";
     const isHeadCell = type === "head";
 
-    const scope = scopeProp ?? isHeadCell ? "col" : "row";
+    const scope = scopeProp ?? (isHeadCell ? "col" : "row");
 
     const Sort = useMemo(
       () => getSortIcon(sorted && sortDirection),
