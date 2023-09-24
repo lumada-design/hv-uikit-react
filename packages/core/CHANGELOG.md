@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.27.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.7...@hitachivantara/uikit-react-core@5.27.8) (2023-09-24)
+
+### Bug Fixes
+
+- **Dropdown:** role review & alignment ([#3690](https://github.com/lumada-design/hv-uikit-react/issues/3690)) ([2c1fc99](https://github.com/lumada-design/hv-uikit-react/commit/2c1fc99710e3fb0a41d36a312e7d2d9e5e99ee18))
+- **Table:** a11y issues in grouped headers ([e893086](https://github.com/lumada-design/hv-uikit-react/commit/e8930860d83d0799cb4f9ca82886fd2e204c0940))
+- **Table:** originalId added to types definition ([ec7de73](https://github.com/lumada-design/hv-uikit-react/commit/ec7de7354c4e77ab757120d6fe5c6c3429b59727))
+
 ## [5.27.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.6...@hitachivantara/uikit-react-core@5.27.7) (2023-09-22)
 
 ### Bug Fixes
