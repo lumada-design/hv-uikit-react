@@ -14,7 +14,7 @@ interface LeftPanel {
 
 interface Canvas {
   label: string;
-  mode?: string;
+  mode?: "desktop" | "mobile";
 }
 
 interface RightPanel {
@@ -31,4 +31,11 @@ interface EditorStore extends EditorState {
   setLeftPanelSelected: (panel?: string) => void;
   setLeftPanelPinned: (pined?: boolean) => void;
   setCanvasMode: (mode?: string) => void;
+}
+
+interface FieldProps {
+  id: string;
+  type: string;
+  name: string;
+  parent: string | undefined;
 }

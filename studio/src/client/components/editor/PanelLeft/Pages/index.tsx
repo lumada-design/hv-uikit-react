@@ -2,7 +2,6 @@ import { Add } from "@hitachivantara/uikit-react-icons";
 import {
   DndContext,
   closestCenter,
-  KeyboardSensor,
   PointerSensor,
   useSensor,
   useSensors,
@@ -10,7 +9,6 @@ import {
 import {
   arrayMove,
   SortableContext,
-  sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import {
@@ -23,7 +21,7 @@ import useAppStore from "lib/store/useAppStore";
 import useEditorStore from "lib/store/useEditorStore";
 import { PageItem } from "./PageItem";
 
-export const PanelPages = () => {
+export const Pages = () => {
   const { pages, selectedPage, setPages, addPage, setSelectedPage } =
     useAppStore();
   const {
@@ -35,9 +33,6 @@ export const PanelPages = () => {
       activationConstraint: {
         distance: 8,
       },
-    }),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates,
     })
   );
 

@@ -1,21 +1,11 @@
-import "./styles.css";
-
-import { Header, PanelLeft, PanelRight } from "components";
-
-import classes from "./styles";
-
 import { useRef, useState } from "react";
 import { useImmer } from "use-immer";
 import { DndContext, DragOverlay } from "@dnd-kit/core";
-import {
-  arrayMove,
-  SortableContext,
-  verticalListSortingStrategy
-} from "@dnd-kit/sortable";
+import { arrayMove } from "@dnd-kit/sortable";
 
-import Canvas, { Field } from "components/editor/Canvas";
-import Sidebar, { SidebarField } from "components/editor/Sidebar";
-
+import { Header } from "components/common";
+import { Canvas, PanelLeft, PanelRight } from "components/editor";
+import classes from "./styles";
 
 function getData(prop) {
   return prop?.data?.current ?? {};
@@ -25,26 +15,24 @@ function createSpacer({ id }) {
   return {
     id,
     type: "spacer",
-    title: "spacer"
+    title: "spacer",
   };
 }
 
 export default function App() {
-  const [sidebarFieldsRegenKey, setSidebarFieldsRegenKey] = useState(
-    Date.now()
-  );
-  const spacerInsertedRef = useRef();
-  const currentDragFieldRef = useRef();
-  const [activeSidebarField, setActiveSidebarField] = useState(); // only for fields from the sidebar
+  const [fieldsRegKey, setFielsdRegKey] = useState(Date.now());
+  const spacerInsertedRef = useRef<boolean>();
+  const currentDragFieldRef = useRef<FieldProps | undefined>();
+  const [activePanelField, setActivePanelField] = useState(); // only for fields from the sidebar
   const [activeField, setActiveField] = useState(); // only for fields that are in the form.
   const [data, updateData] = useImmer({
-    fields: []
+    fields: [],
   });
 
   const cleanUp = () => {
-    setActiveSidebarField(null);
-    setActiveField(null);
-    currentDragFieldRef.current = null;
+    setActivePanelField(undefined);
+    setActiveField(undefined);
+    currentDragFieldRef.current = undefined;
     spacerInsertedRef.current = false;
   };
 
@@ -59,14 +47,14 @@ export default function App() {
     if (activeData.fromSidebar) {
       const { field } = activeData;
       const { type } = field;
-      setActiveSidebarField(field);
+      setActivePanelField(field);
       // Create a new field that'll be added to the fields array
       // if we drag it over the canvas.
       currentDragFieldRef.current = {
         id: active.id,
         type,
         name: `${type}${fields.length + 1}`,
-        parent: null
+        parent: undefined,
       };
       return;
     }
@@ -78,7 +66,7 @@ export default function App() {
     setActiveField(field);
     currentDragFieldRef.current = field;
     updateData((draft) => {
-      draft.fields.splice(index, 1, createSpacer({ id: active.id }));
+      draft.fields.splice(index, 1, createSpacer({ id: active.id }) as never);
     });
   };
 
@@ -99,17 +87,17 @@ export default function App() {
 
       if (!spacerInsertedRef.current) {
         const spacer = createSpacer({
-          id: active.id + "-spacer"
+          id: active.id + "-spacer",
         });
 
         updateData((draft) => {
           if (!draft.fields.length) {
-            draft.fields.push(spacer);
+            draft.fields.push(spacer as never);
           } else {
             const nextIndex =
               overData.index > -1 ? overData.index : draft.fields.length;
 
-            draft.fields.splice(nextIndex, 0, spacer);
+            draft.fields.splice(nextIndex, 0, spacer as never);
           }
           spacerInsertedRef.current = true;
         });
@@ -117,7 +105,9 @@ export default function App() {
         // This solves the issue where you could have a spacer handing out in the canvas if you drug
         // a sidebar item on and then off
         updateData((draft) => {
-          draft.fields = draft.fields.filter((f) => f.type !== "spacer");
+          draft.fields = draft.fields.filter(
+            (f: FieldProps) => f.type !== "spacer"
+          );
         });
         spacerInsertedRef.current = false;
       } else {
@@ -126,7 +116,7 @@ export default function App() {
         // We find the spacer and then swap it with the over skipping the op if the two indexes are the same
         updateData((draft) => {
           const spacerIndex = draft.fields.findIndex(
-            (f) => f.id === active.id + "-spacer"
+            (f: FieldProps) => f.id === active.id + "-spacer"
           );
 
           const nextIndex =
@@ -149,7 +139,9 @@ export default function App() {
     if (!over) {
       cleanUp();
       updateData((draft) => {
-        draft.fields = draft.fields.filter((f) => f.type !== "spacer");
+        draft.fields = draft.fields.filter(
+          (f: FieldProps) => f.type !== "spacer"
+        );
       });
       return;
     }
@@ -164,8 +156,10 @@ export default function App() {
       const overData = getData(over);
 
       updateData((draft) => {
-        const spacerIndex = draft.fields.findIndex((f) => f.type === "spacer");
-        draft.fields.splice(spacerIndex, 1, nextField);
+        const spacerIndex = draft.fields.findIndex(
+          (f: FieldProps) => f.type === "spacer"
+        );
+        draft.fields.splice(spacerIndex, 1, nextField as never);
 
         draft.fields = arrayMove(
           draft.fields,
@@ -175,7 +169,7 @@ export default function App() {
       });
     }
 
-    setSidebarFieldsRegenKey(Date.now());
+    setFielsdRegKey(Date.now());
     cleanUp();
   };
 
@@ -190,19 +184,14 @@ export default function App() {
         onDragEnd={handleDragEnd}
         autoScroll
       >
-        <Sidebar fieldsRegKey={sidebarFieldsRegenKey} />
-        <SortableContext
-          strategy={verticalListSortingStrategy}
-          items={fields.map((f) => f.id)}
-        >
-          <Canvas fields={fields} />
-        </SortableContext>
+        <PanelLeft fieldsRegKey={fieldsRegKey} />
+        <Canvas fields={fields} />
         <PanelRight />
         <DragOverlay dropAnimation={null}>
-          {activeSidebarField ? (
-            <SidebarField overlay field={activeSidebarField} />
-          ) : null}
-          {activeField ? <Field overlay field={activeField} /> : null}
+          {/* {activePanelField ? (
+            <PanelLeftField overlay field={activePanelField} />
+          ) : null} */}
+          {/* {activeField ? <Field overlay field={activeField} /> : null} */}
         </DragOverlay>
       </DndContext>
     </div>

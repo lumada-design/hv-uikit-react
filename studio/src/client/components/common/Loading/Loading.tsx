@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { HvLoading, HvEmptyState } from "@hitachivantara/uikit-react-core";
+import {
+  HvLoading,
+  HvLoadingProps,
+  HvEmptyState,
+} from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
 import classes from "./styles";
 
-export interface LoadingProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface LoadingProps extends HvLoadingProps {
   delay?: number;
   hasError?: boolean;
   loadingLabel?: string;

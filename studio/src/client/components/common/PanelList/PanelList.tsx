@@ -9,7 +9,7 @@ import classes from "./styles";
 
 interface PanelListProps {
   items: any;
-  loading: boolean;
+  loading?: boolean;
   showSearch?: boolean;
   groupItems?: boolean;
   layout?: "grid" | "list";
@@ -22,7 +22,7 @@ export const PanelList = ({
   groupItems = true,
   layout = "grid",
 }: PanelListProps) => {
-  const [listItems, setListItems] = useState({});
+  const [listItems, setListItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState<string | undefined>(
     undefined
   );
@@ -65,9 +65,9 @@ export const PanelList = ({
         })}
       >
         {items?.map((item) => (
-          <Draggable key={item.name} id={item.name} data={item}>
+          <Draggable key={item.label} id={item.label} data={item}>
             <ListItem
-              label={item.name}
+              label={item.label}
               selected={selectedItem === item}
               layout={layout}
             />
@@ -78,7 +78,7 @@ export const PanelList = ({
   };
 
   return loading ? (
-    <Loading loadingLabel="Loading Components" />
+    <Loading loadingLabel="" small />
   ) : (
     <>
       {showSearch && (

@@ -8,12 +8,11 @@ interface Pages {
 }
 
 interface Component {
-  id: string;
-  parent: string;
+  id?: string;
+  parent?: string;
   type: string;
-  category: string;
-  component: string;
-  name: string;
+  label: string;
+  category?: string;
   src: string;
 }
 

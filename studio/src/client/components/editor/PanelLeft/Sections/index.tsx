@@ -1,20 +1,21 @@
 import { Panel, PanelList } from "components/common";
 import useEditorStore from "lib/store/useEditorStore";
-import { useComponents } from "lib/api/useComponents";
+import useAppStore from "lib/store/useAppStore";
+import { groupBy } from "lib/utils";
 
-export const PanelSections = () => {
+export const Sections = () => {
   const {
     leftPanel: { selected },
   } = useEditorStore();
 
-  const { data = {}, isLoading } = useComponents();
-  const { sections } = data;
+  const { components } = useAppStore();
+
+  const grouped = groupBy(components, "section");
 
   return (
     <Panel label={selected}>
       <PanelList
-        items={{ sections }}
-        loading={isLoading}
+        items={grouped}
         showSearch={false}
         groupItems={false}
         layout="list"

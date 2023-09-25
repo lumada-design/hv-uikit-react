@@ -2,14 +2,10 @@ import { css } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
 
 const styles = {
-  root: css({
-    display: "flex",
-    paddingTop: theme.header.height,
-    minHeight: "100vh",
-  }),
-  fullWidth: css({
+  container: css({
     padding: 0,
-    maxWidth: "100%",
+    paddingTop: `calc(${theme.header.height} + 3px)`,
+    height: "100vh",
   }),
 };
 

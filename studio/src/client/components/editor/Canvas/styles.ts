@@ -7,10 +7,12 @@ const styles = {
     justifyContent: "center",
     width: "100%",
     backgroundColor: "#f7fafd",
+    margin: "0 3px",
   }),
   canvas: css({
-    height: "100%",
-    background: theme.colors.backgroundColor,
+    maxHeight: "100%",
+    overflowY: "auto",
+    background: theme.colors.atmo1,
     transition: "0.5s ease",
     padding: theme.space.sm,
   }),
@@ -27,6 +29,22 @@ const styles = {
     height: "100%",
     width: "100%",
     whiteSpace: "pre-wrap",
+  }),
+  field: css({
+    padding: 15,
+    "& > *": {
+      width: "100%",
+      pointerEvents: "none",
+    },
+  }),
+  overlay: css({
+    padding: 15,
+  }),
+  spacer: css({
+    background: "black",
+    width: "100%",
+    opacity: 0.5,
+    height: 1,
   }),
 };
 

@@ -1,7 +1,7 @@
 import { Panel } from "components/common";
 import useEditorStore from "lib/store/useEditorStore";
 
-export const PanelTemplates = () => {
+export const Templates = () => {
   const {
     leftPanel: { selected },
   } = useEditorStore();

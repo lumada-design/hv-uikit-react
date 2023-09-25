@@ -2,7 +2,7 @@
   "title": "Studio",
 
   "loading": {
-    "label": "Loading Page",
+    "label": "Loading Editor",
     "errorTitle": "Unable to load page",
     "errorMessage": "If this problem persists, please contact administrator.",
     "errorAction": "Here has link to reload page."

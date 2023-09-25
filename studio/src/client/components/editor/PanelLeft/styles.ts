@@ -4,7 +4,6 @@ import { theme } from "@hitachivantara/uikit-styles";
 const styles = {
   panelLeft: css({
     display: "flex",
-    borderRight: `1px solid ${theme.colors.atmo3}`,
   }),
   navBar: css({
     display: "flex",
@@ -14,6 +13,24 @@ const styles = {
     padding: `${theme.space.sm} ${theme.space.xs}`,
     background: theme.colors.atmo1,
   }),
+  // panelLeft: css({
+  //   width: 250,
+  // }),
+  // panelLeftField: css({
+  //   all: "unset",
+  //   display: "flex",
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  //   height: 50,
+  //   width: 250,
+  //   borderBottom: "1px solid black",
+  //   cursor: "pointer",
+  //   userSelect: "none",
+  // }),
+  // overlay: css({
+  //   background: "black",
+  //   color: "white",
+  // }),
 };
 
 export default styles;

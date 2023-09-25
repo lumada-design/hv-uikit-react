@@ -15,7 +15,7 @@ export const Header = () => {
   const { canvas, setCanvasMode } = useEditorStore();
 
   return (
-    <HvHeader classes={{ root: classes.root }}>
+    <HvHeader>
       <HvHeaderBrand
         logo={<UIKitLogo style={{ height: 15 }} />}
         name="Studio"

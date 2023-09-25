@@ -1,6 +1,4 @@
-import {
-  DndContext,
-} from "@dnd-kit/core";
+import { DndContext } from "@dnd-kit/core";
 
 import { Header, PanelLeft, Canvas, PanelRight } from "components";
 

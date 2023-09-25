@@ -35,24 +35,19 @@ export function Field(props) {
 function SortableField(props) {
   const { id, index, field } = props;
 
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    transition
-  } = useSortable({
-    id,
-    data: {
-      index,
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({
       id,
-      field
-    }
-  });
+      data: {
+        index,
+        id,
+        field,
+      },
+    });
 
   const style = {
     transform: CSS.Transform.toString(transform),
-    transition
+    transition,
   };
 
   return (
@@ -65,31 +60,21 @@ function SortableField(props) {
 export default function Canvas(props) {
   const { fields } = props;
 
-  const {
-    listeners,
-    setNodeRef,
-    transform,
-    transition
-  } = useDroppable({
+  const { listeners, setNodeRef, transform, transition } = useDroppable({
     id: "canvas_droppable",
     data: {
       parent: null,
-      isContainer: true
-    }
+      isContainer: true,
+    },
   });
 
   const style = {
     transform: CSS.Transform.toString(transform),
-    transition
+    transition,
   };
 
   return (
-    <div
-      ref={setNodeRef}
-      className="canvas"
-      style={style}
-      {...listeners}
-    >
+    <div ref={setNodeRef} className="canvas" style={style} {...listeners}>
       <div className="canvas-fields">
         {fields?.map((f, i) => (
           <SortableField key={f.id} id={f.id} field={f} index={i} />
