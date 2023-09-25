@@ -16,7 +16,7 @@
     "dev": "npm run dev -w app",
     "doc": "storybook dev -p 6006",
     "build": "lerna run build",
-    "build:doc": "storybook build --docs -o dist --quiet",
+    "build:doc": "storybook build --docs -o dist --quiet && node scripts/storybook-title",
     "build:app": "vite build app",
     "test": "lerna run test",
     "test:a11y": "node scripts/a11y-report",
