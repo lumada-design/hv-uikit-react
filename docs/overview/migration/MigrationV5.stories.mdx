@@ -74,7 +74,7 @@ The following packages were **deprecated** in v5.x and are no longer needed:
 - `@hitachivantara/uikit-react-compat`
 - `@hitachivantara/uikit-common-themes`
 
-For more information about the project status access this [page](/story/overview-project-status--page).
+For more information about the project status access this [page](./?path=/docs/overview-project-status--docs).
 
 If you are able to upgrade your application despite the limitations discussed above, upgrade the UI Kit packages to the latest v5.x versions
 using the command below.
@@ -112,7 +112,7 @@ rely on MUI to access the `theme` object where all the theme's properties are st
 Thus, to access these properties, you now need to import the `theme` object from the `uikit-react-core` package. You can also access them through the `useTheme`
 hook also imported from the `core` package. While the values of the former are CSS variables and will be enough in most cases, the later are exact values that you
 can use in cases where the usage of CSS variables is not possible. Find more information about the `theme` object and the `useTheme` hook on the
-[theming](/docs/guides-theming-theming--theme-context#theming) documentation.
+[theming](./?path=/docs/guides-theming--docs#theming) documentation.
 
 **Note that there is currently an exception and you'll need to continue using the theme object from MUI for [CSS media queries](https://mui.com/material-ui/customization/breakpoints/#css-media-queries).**
 In future versions we expect these media queries to be added to our own theme but until then use the ones from MUI.
@@ -154,7 +154,7 @@ Since the theme has a different structure from the one provided on v4.x, find be
 #### Typography
 
 New variants where added to the typography and, when possible, the DS3 variants where mapped to the new DS5 variants as shown above. However, DS3 variants are
-still available in cases where mapping was not possible. Learn more about the new variants on the [typography page](/docs/foundation-typography-usage--usage).
+still available in cases where mapping was not possible. Learn more about the new variants on the [typography page](./?path=/docs/foundation-typography-usage--docs).
 
 #### zIndices
 
@@ -168,7 +168,7 @@ We expected to add these media queries to our own theme in future versions.
 #### Colors
 
 Changes were introduced to the colors in Design System v5.x. To have a better understanding of the changes between DS3 and DS5 report to the
-[colors page](/docs/foundation-colors--main) where you can switch between the design systems and to this [table](#colors) where the breaking changes are
+[colors page](./?path=/docs/foundation-colors--docs) where you can switch between the design systems and to this [table](#colors) where the breaking changes are
 highlighted.
 
 Regarding the shadows, you have to explicitly use the value `none` where you were previously using `theme.hv.shadows[0]`. Only the value for `theme.hv.shadows[1]` was
@@ -178,7 +178,7 @@ added to theme and you can access it through `theme.colors.shadow` as shown in t
 
 Regarding the spacing methods, we only have one in v5.x when there were previously two in v4.x, `theme.spacing()` and `theme.hvSpacing()`. We decided to combine
 both methods and create a `theme.spacing()` method in the new theme object. Note that while the previously base used for the `theme.spacing()` function was 7.5px,
-we now use different ones for the DS5 and DS3 themes. Read more about this on this [page](/docs/guides-theming-theming--main#spacing).
+we now use different ones for the DS5 and DS3 themes. Read more about this on this [page](./?path=/docs/guides-theming--docs#spacing).
 
 ### Update styling and theme utilities <a id="update-utilities" />
 
@@ -534,14 +534,14 @@ Furthermore, we also use [Arquero](https://uwdata.github.io/arquero/api/), which
 to manipulate and transform data points. Thus, in v5.x, the visualizations are able to manipulate your data if necessary by splitting, grouping, sorting,
 and aggregating data points.
 
-For more information about how to get started with the visualizations, please take a look at the [visualizations guide](/docs/guides-visualizations--page).
+For more information about how to get started with the visualizations, please take a look at the [visualizations guide](./?path=/docs/guides-visualizations--docs).
 
 ## Breaking changes and deprecated values in components <a id="breaking-changes-deprecated-components" />
 
 ### Provider <a id="provider" />
 
-Since we implemented our new theming system, the `HvProvider` API changed significantly. Because of this we recommend that you read the [provider](/docs/guides-provider--main)
-and [theming](/docs/guides-theming-theming--main) documentation where the new API is thoroughly explained.
+Since we implemented our new theming system, the `HvProvider` API changed significantly. Because of this we recommend that you read the [provider](./?path=/docs/guides-provider--docs)
+and [theming](./?path=/docs/guides-theming--docs) documentation where the new API is thoroughly explained.
 
 Briefly, the following properties where removed and/or updated:
 
@@ -556,7 +556,7 @@ Briefly, the following properties where removed and/or updated:
 ### Button <a id="button" />
 
 The `HvButton` API suffered various changes since we stopped using MUI's button under the hood. In this sense, it is expected you'll no longer be able to use
-MUI's specific properties since they were dropped. We recommend you take a look at the button's API available on this [page](/docs/components-button-button--main)
+MUI's specific properties since they were dropped. We recommend you take a look at the button's API available on this [page](./?path=/docs/components-button--docs)
 to have a better overview of the changes and properties you can use.
 
 In this sense, the `category` property was renamed to `variant`, and the variants `secondary` and `ghost` are now deprecated and should be updated
@@ -587,7 +587,7 @@ advise to update them to appropriate DS5 variants.
 
 The `link` and `disabled` properties were also added to the component.
 
-Learn more about the typography variants on this [page](/docs/foundation-typography-usage--usage).
+Learn more about the typography variants on this [page](./?path=/docs/foundation-typography-usage--docs).
 
 ### Card <a id="card" />
 
@@ -607,7 +607,7 @@ The `onToggleOpen` property was removed from the `HvDropdownMenu` and `onToggle`
 The `HvDotPagination` component has different specifications for DS3 and DS5. However, due to limitations, it was only possible to implement the component with
 the DS5 specifications. Thus, if you are using the DS3 theme on your application, the `HvDotPagination` component will be the one from DS5. However, the new properties
 `unselectedIcon` and `selectedIcon` were added to the component in order to easily customize it and meet the DS3 guidelines.
-Learn how to do this on this [page](/docs/components-pagination-dot-pagination--customized-dot-pagination).
+Learn how to do this on this [page](./?path=/docs/components-pagination-dot-pagination--docs).
 
 ### Avatar <a id="avatar" />
 
@@ -713,7 +713,7 @@ The locale must be passed as a prop as the component no longer reads the locale 
 ### Color picker <a id="color-picker" />
 
 The properties listed below were added to the color picker component to support the various use cases defined in the DS5 specifications. If you need to
-use the DS3 version, the component can easily be customized to meet the guidelines as shown in the example provided in this [story](/docs/lab-color-picker--main#customized-color-picker).
+use the DS3 version, the component can easily be customized to meet the guidelines as shown in the example provided in this [story](./?path=/docs/widgets-color-picker--docs#customized-color-picker).
 
 - `placeholder`
 - `recommendedColors`

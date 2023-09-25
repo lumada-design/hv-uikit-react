@@ -7,6 +7,7 @@ import { addons } from "@storybook/addons";
 import {
   HvProvider,
   HvTypography,
+  HvTypographyProps,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -16,11 +17,12 @@ import { ADDON_EVENT } from "../addons/mode-selector/constants";
 import { themes } from ".storybook/theme";
 
 const components: Record<string, ComponentType> = {
-  a: (props) => (
+  a: (props: HvTypographyProps<"a">) => (
     <HvTypography
       link
       component="a"
       style={{ color: theme.colors.primary }}
+      target={props.href?.includes("./?path=/docs/") ? undefined : "_self"}
       {...props}
     />
   ),

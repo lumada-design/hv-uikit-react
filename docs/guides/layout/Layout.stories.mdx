@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story } from "@storybook/addon-docs";
 import {
   ContainerSample,
   SimpleGridSample,
@@ -54,7 +54,7 @@ Whenever the screen resolution goes above or below a breakpoint, the layout shou
 
 ## Container <a id="container" />
 
-The [Container](/docs/components-container--main) is one of the most basic layout components we provide to our community, and it enables you to center content horizontally on the page.
+The [Container](./?path=/docs/components-container--docs) is one of the most basic layout components we provide to our community, and it enables you to center content horizontally on the page.
 
 This component is very useful when your content can't grow beyond a specific breakpoint. In this case, you can use `maxWidth` to specify the breakpoint
 to which the content is bounded. The content will automatically grow or shrink according with the size of the screen and breakpoint used ensuring that
@@ -62,15 +62,15 @@ it doesn't grow beyond the specified width.
 
 If necessary, multiple nested containers can be used as shown in the example below.
 
-<Canvas>
-  <Story name="Container" story={ContainerSample} />
-</Canvas>
+<Story name="Container">
+  <ContainerSample />
+</Story>
 
-For more information, please go to the [container's API](/docs/components-container--main).
+For more information, please go to the [container's API](./?path=/docs/components-container--docs).
 
 ## Grid <a id="grid" />
 
-The [Grid](/docs/components-grid-grid--main) component enables you to create responsive grid layouts with a variable amount of columns. The grid items will also adapt themselves
+The [Grid](./?path=/docs/components-grid-grid--docs) component enables you to create responsive grid layouts with a variable amount of columns. The grid items will also adapt themselves
 to suit the screen sizes.
 
 By default this component is based on a 12-column grid layout. This can be easily changed through the `columns` property. If this property is set to
@@ -81,15 +81,15 @@ on your needs.
 
 Below is an example on how to use the grid component where the Design System directives were used and some grid items were spanned across multiple columns.
 
-<Canvas>
-  <Story name="Grid" story={GridSample} />
-</Canvas>
+<Story name="Grid">
+  <GridSample />
+</Story>
 
-Learn more about this component [here](/docs/components-grid-grid--main).
+Learn more about this component [here](./?path=/docs/components-grid-grid--docs).
 
 ## Simple Grid <a id="simple-grid" />
 
-The [Simple Grid](/docs/components-grid-simple-grid--main) component is an alternative to the grid component mentioned above and it provides an easy way of creating responsive grids where each item takes an equal amount
+The [Simple Grid](./?path=/docs/components-grid-simple-grid--docs) component is an alternative to the grid component mentioned above and it provides an easy way of creating responsive grids where each item takes an equal amount
 of space. The items will grow or shrink whenever the screen size changes.
 
 This component should be used whenever you need to create grids where items should be distributed across a specific number of columns with the same width.
@@ -101,8 +101,8 @@ enabling you to create much simpler grids than the grid component.
 In the example below a grid with three columns was created to distribute the cards across them, and when the screen width goes under the Design System
 `sm` (600px) breakpoint the grid only has two columns.
 
-<Canvas>
-  <Story name="SimpleGrid" story={SimpleGridSample} />
-</Canvas>
+<Story name="SimpleGrid">
+  <SimpleGridSample />
+</Story>
 
-More information about can be found [here](/docs/components-grid-simple-grid--main).
+More information about can be found [here](./?path=/docs/components-grid-simple-grid--docs).
