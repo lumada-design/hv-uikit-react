@@ -103,12 +103,6 @@ export const Variants: StoryObj<HvSwitchProps> = {
   },
 };
 
-const StyledTypography = styled(HvTypography)(
-  ({ state }: { state: boolean }) => ({
-    color: state ? theme.colors.positive : theme.colors.sema14,
-  })
-);
-
 export const Controlled: StoryObj<HvSwitchProps> = {
   parameters: {
     docs: {
@@ -118,14 +112,6 @@ export const Controlled: StoryObj<HvSwitchProps> = {
   },
   render: () => {
     const [state, setState] = useState<boolean>(false);
-
-    const StateString = ({ stateProp }) => {
-      return (
-        <StyledTypography state={stateProp}>
-          {`The switch is ${state ? "On" : "Off"}`}
-        </StyledTypography>
-      );
-    };
 
     return (
       <>
@@ -137,7 +123,11 @@ export const Controlled: StoryObj<HvSwitchProps> = {
           onChange={(_evt, newChecked) => setState(newChecked)}
         />
         <p />
-        <StateString stateProp={state} />
+        <HvTypography
+          style={{ color: state ? theme.colors.positive : theme.colors.sema14 }}
+        >
+          The switch is {state ? "On" : "Off"}
+        </HvTypography>
       </>
     );
   },
@@ -235,49 +225,39 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
     eyes: { include: false },
   },
   render: () => {
-    const [firstSwitchErrorMessage, setFirstSwitchErrorMessage] = useState<
-      string | null
-    >(null);
+    const [firstSwitchErrorMessage, setFirstSwitchErrorMessage] = useState("");
     const [secondSwitchErrorMessage, setSecondSwitchErrorMessage] = useState(
       "No way for the second switch to be valid!"
     );
 
     return (
       <HvGrid container>
-        <HvGrid item xs={5} container>
-          <HvGrid item xs={12}>
-            <HvSwitch
-              required
-              defaultChecked
-              aria-errormessage="firstSwitch-error"
-              onChange={(_e, checked) => {
-                if (checked) {
-                  setFirstSwitchErrorMessage(null);
-                } else if (!checked) {
-                  setFirstSwitchErrorMessage(
-                    "You must turn on the first switch"
-                  );
-                }
-              }}
-              label="First Switch"
-            />
-          </HvGrid>
-          <HvGrid item xs={12}>
-            <HvSwitch
-              status="invalid"
-              aria-errormessage="secondSwitch-error"
-              onChange={() => {
-                setSecondSwitchErrorMessage(
-                  "No way for the second switch to be valid! I told you!"
-                );
-              }}
-              label="Second Switch"
-            />
-          </HvGrid>
+        <HvGrid item xs={6} display="flex" flexDirection="column">
+          <HvSwitch
+            required
+            defaultChecked
+            aria-errormessage="firstSwitch-error"
+            onChange={(_e, checked) => {
+              setFirstSwitchErrorMessage(
+                checked ? "" : "You must turn on the first switch"
+              );
+            }}
+            label="First Switch"
+          />
+          <HvSwitch
+            status="invalid"
+            aria-errormessage="secondSwitch-error"
+            onChange={() => {
+              setSecondSwitchErrorMessage(
+                "No way for the second switch to be valid! I told you!"
+              );
+            }}
+            label="Second Switch"
+          />
         </HvGrid>
         <HvGrid
           item
-          xs={7}
+          xs={6}
           style={{
             backgroundColor: theme.colors.negative_20,
             color: theme.colors.base_dark,

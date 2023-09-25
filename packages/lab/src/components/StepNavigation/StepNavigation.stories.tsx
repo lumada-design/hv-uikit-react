@@ -6,32 +6,29 @@ import { HvStepNavigation, HvStepNavigationProps } from "./StepNavigation";
 import { HvDefaultNavigation, HvStep, HvStepProps } from "./DefaultNavigation";
 import { HvDot, HvSimpleNavigation, dotClasses } from "./SimpleNavigation";
 
-const FlexDecorator = ({ children }) => {
-  const StyledDiv = styled("div")({
+const StyledDiv = styled("div")({
+  display: "flex",
+  alignItems: "center",
+  flexWrap: "wrap",
+  overflow: "auto",
+  "& > *": {
+    margin: "0 10px 5px 0",
+  },
+  "& .two-examples": {
     display: "flex",
-    alignItems: "center",
-    flexWrap: "wrap",
-    "& > *": {
-      margin: "0 10px 5px 0",
-    },
-    "& .two-examples": {
+    flexDirection: "column",
+    "& > div.steps": {
       display: "flex",
-      flexDirection: "column",
-      "& > div.steps": {
-        display: "flex",
-        alignItems: "center",
-        "& > div, > button": {
-          marginLeft: 10,
-        },
-      },
-      "& > div:first-of-type": {
-        marginBottom: 40,
+      alignItems: "center",
+      "& > div, > button": {
+        marginLeft: 10,
       },
     },
-  });
-
-  return <StyledDiv>{children}</StyledDiv>;
-};
+    "& > div:first-of-type": {
+      marginBottom: 40,
+    },
+  },
+});
 
 type StepType = Pick<
   HvStepProps,
@@ -98,9 +95,9 @@ const meta: Meta<typeof HvStepNavigation> = {
   } as unknown,
   decorators: [
     (Story) => (
-      <FlexDecorator>
+      <StyledDiv>
         <Story />
-      </FlexDecorator>
+      </StyledDiv>
     ),
   ],
 };
