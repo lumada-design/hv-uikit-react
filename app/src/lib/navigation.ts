@@ -11,6 +11,11 @@ const navigation = [
         path: "/preview/instructions",
       },
       {
+        id: "welcome",
+        label: "Welcome",
+        path: "/preview/welcome",
+      },
+      {
         id: "asset-inventory",
         label: "Asset Inventory",
         path: "/preview/asset-inventory",
