@@ -12,6 +12,7 @@ import dashboard from "./assets/dashboard.png";
 import details_view from "./assets/details-view.png";
 import form from "./assets/form.png";
 import list_view from "./assets/list-view.png";
+import welcome from "./assets/welcome.png";
 
 const getSourceUrl = (id: string) => {
   const key = id.replace(" ", "");
@@ -64,6 +65,7 @@ const templates = [
   { id: "Details View", img: details_view },
   { id: "List View", img: list_view },
   { id: "Form", img: form },
+  { id: "Welcome", img: welcome },
 ];
 
 export const TemplateItems = () => {
