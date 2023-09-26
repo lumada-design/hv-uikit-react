@@ -94,7 +94,7 @@ export const HvTag = (props: HvTagProps) => {
     (type === "categorical" && `${categoricalBackgroundColor}30`) ||
     undefined;
 
-  const isClickable = !!onClick && !disabled;
+  const isClickable = !!(onClick || onDelete) && !disabled;
 
   const clickableClass = css({
     "&:hover": {
