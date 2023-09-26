@@ -31,12 +31,16 @@ const StyledListItem = styled(HvListItem)({
 const meta: Meta<typeof HvTag> = {
   title: "Components/Tag/Tag",
   component: HvTag,
+  decorators: [
+    (Story) => <div style={{ display: "flex", gap: 20 }}>{Story()}</div>,
+  ],
 };
 export default meta;
 
 export const Main: StoryObj<HvTagProps> = {
   args: {
     label: "Tag Label",
+    onClick: () => console.log("click"),
     onDelete: () => console.log("delete"),
     type: "semantic",
     color: "neutral_20",
@@ -58,10 +62,10 @@ export const LongLabelText: StoryObj<HvTagProps> = {
     const longText = "This is an example of a very long tag";
 
     return (
-      <div style={{ display: "flex", gap: 20 }}>
+      <>
         <HvTag label={<HvOverflowTooltip data={longText} />} />
         <HvTag label={`${longText} with default overflow`} />
-      </div>
+      </>
     );
   },
 };
@@ -69,32 +73,20 @@ export const LongLabelText: StoryObj<HvTagProps> = {
 export const Semantical: StoryObj<HvTagProps> = {
   render: () => {
     return (
-      <div
-        style={{
-          width: "600px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <>
         <HvTag label="Informational" />
         <HvTag color="positive_20" label="Success" />
         <HvTag color="negative_20" label="Warning" />
         <HvTag color="warning_20" label="Error" />
-      </div>
+      </>
     );
   },
 };
 
-export const Categorial: StoryObj<HvTagProps> = {
+export const Categorical: StoryObj<HvTagProps> = {
   render: () => {
     return (
-      <div
-        style={{
-          width: "600px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <>
         <HvTag label="Feat" onClick={() => alert("Hello")} type="categorical" />
         <HvTag
           label="Docs"
@@ -121,7 +113,7 @@ export const Categorial: StoryObj<HvTagProps> = {
           color="cat5"
         />
         <HvTag label="No Click" type="categorical" color="#22FF45" />
-      </div>
+      </>
     );
   },
 };
@@ -129,27 +121,16 @@ export const Categorial: StoryObj<HvTagProps> = {
 export const DisabledTags: StoryObj<HvTagProps> = {
   render: () => {
     return (
-      <div
-        style={{
-          width: "350px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <HvTag
-          label="Informational"
-          disabled
-          deleteButtonProps={{ "aria-label": "Disabled tag" }}
-        />
+      <>
+        <HvTag label="Informational" disabled />
         <HvTag
           label="Success"
           disabled
           onDelete={() => {
             alert("On Delete Action");
           }}
-          deleteButtonProps={{ "aria-label": "Disabled tag" }}
         />
-      </div>
+      </>
     );
   },
 };
@@ -157,13 +138,7 @@ export const DisabledTags: StoryObj<HvTagProps> = {
 export const WithDeleteAction: StoryObj<HvTagProps> = {
   render: () => {
     return (
-      <div
-        style={{
-          width: "600px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <>
         <HvTag
           label="Informational"
           onDelete={() => {
@@ -176,18 +151,12 @@ export const WithDeleteAction: StoryObj<HvTagProps> = {
           onDelete={() => {
             alert("On Delete Action");
           }}
-          deleteButtonProps={{
-            tabIndex: -1, // tab navigation should skip this tag
-          }}
         />
         <HvTag
           label="Warning"
           color="negative_20"
           onDelete={() => {
             alert("On Delete Action");
-          }}
-          deleteButtonProps={{
-            tabIndex: -1, // tab navigation should skip this tag
           }}
         />
         <HvTag
@@ -197,7 +166,7 @@ export const WithDeleteAction: StoryObj<HvTagProps> = {
             alert("On Delete Action");
           }}
         />
-      </div>
+      </>
     );
   },
 };
@@ -205,13 +174,7 @@ export const WithDeleteAction: StoryObj<HvTagProps> = {
 export const CategoricalTagsDisabled: StoryObj<HvTagProps> = {
   render: () => {
     return (
-      <div
-        style={{
-          width: "350px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <>
         <HvTag
           label="Feat"
           onClick={() => alert("Hello")}
@@ -246,7 +209,7 @@ export const CategoricalTagsDisabled: StoryObj<HvTagProps> = {
           color="cat5"
           disabled
         />
-      </div>
+      </>
     );
   },
 };

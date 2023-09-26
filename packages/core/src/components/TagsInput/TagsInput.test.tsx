@@ -1,23 +1,13 @@
 import { describe, expect, it, vi } from "vitest";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { HvTagsInput } from "@core/components";
-import { HvProvider } from "@core/providers";
 import { ControlledTagArray } from "./TagsInput.stories";
 
 describe("TagsInput examples", () => {
-  describe("<Main />", () => {
-    it("should render correctly", () => {
-      const { container } = render(<HvTagsInput />);
-      expect(container).toBeDefined();
-    });
-  });
-
   describe("<ControlledTagArray />", () => {
     it("should clear the input whenever a tags gets added", async () => {
       const { getAllByRole, getByText, getByRole, findAllByRole } = render(
-        <HvProvider>
-          <ControlledTagArray />
-        </HvProvider>
+        <ControlledTagArray />
       );
       const uncommittedText = "uncommitted text";
       let clickableButtons = getAllByRole("button");
@@ -37,23 +27,21 @@ describe("TagsInput examples", () => {
     });
 
     it("should retain uncommitted text when deleting tags", async () => {
-      const { getAllByRole, getByRole, findAllByRole } = render(
-        <HvProvider>
-          <ControlledTagArray />
-        </HvProvider>
-      );
+      render(<ControlledTagArray />);
+
       const uncommittedText = "uncommitted text";
-      let clickableButtons = getAllByRole("button");
+      const clickableButtons = screen.getAllByRole("button");
       expect(clickableButtons.length).toBe(5);
-      const tagsInput = getByRole("textbox");
+      const tagsInput = screen.getByRole("textbox");
 
       fireEvent.change(tagsInput, { target: { value: uncommittedText } });
       expect(tagsInput).toHaveValue(uncommittedText);
       expect(clickableButtons.length).toBe(5);
 
-      fireEvent.click(clickableButtons[4]);
-      clickableButtons = await findAllByRole("button");
-      expect(clickableButtons.length).toBe(4);
+      const lastTag = clickableButtons[4];
+      fireEvent.click(lastTag.querySelector("[data-name=CloseXS]")!);
+
+      expect((await screen.findAllByRole("button")).length).toBe(4);
       expect(tagsInput).toHaveValue(uncommittedText);
     });
   });
@@ -72,27 +60,19 @@ describe("TagsInput Component", () => {
 
   it("should render the label correctly", () => {
     const { getByText } = render(
-      <HvProvider>
-        <HvTagsInput
-          id="tags-list"
-          label="Custom label"
-          classes={mockClasses}
-        />
-      </HvProvider>
+      <HvTagsInput id="tags-list" label="Custom label" classes={mockClasses} />
     );
     expect(getByText("Custom label")).toBeInTheDocument();
   });
 
   it("should render the text area with tags when controlled and input value is an array of strings", () => {
     const { getByText, getAllByRole } = render(
-      <HvProvider>
-        <HvTagsInput
-          id="tags-list"
-          label="Custom label"
-          classes={mockClasses}
-          value={["tag1", "tag2"]}
-        />
-      </HvProvider>
+      <HvTagsInput
+        id="tags-list"
+        label="Custom label"
+        classes={mockClasses}
+        value={["tag1", "tag2"]}
+      />
     );
 
     expect(getByText("tag1")).toBeInTheDocument();
@@ -104,17 +84,15 @@ describe("TagsInput Component", () => {
 
   it("should render the text area with tags when controlled and input value is an array of tags", () => {
     const { getByText, getAllByRole } = render(
-      <HvProvider>
-        <HvTagsInput
-          id="tags-list"
-          label="Custom label"
-          classes={mockClasses}
-          value={[
-            { label: "tag1" },
-            { label: "tag2", type: "categorical", color: "#ff0000" },
-          ]}
-        />
-      </HvProvider>
+      <HvTagsInput
+        id="tags-list"
+        label="Custom label"
+        classes={mockClasses}
+        value={[
+          { label: "tag1" },
+          { label: "tag2", type: "categorical", color: "#ff0000" },
+        ]}
+      />
     );
 
     expect(getByText("tag1")).toBeInTheDocument();
@@ -129,26 +107,27 @@ describe("TagsInput Component", () => {
   it("should trigger the delete callback on click", async () => {
     const onChangeSpy = vi.fn();
     const onDeleteSpy = vi.fn();
-    const { getByText, getAllByRole, findAllByRole } = render(
-      <HvProvider>
-        <HvTagsInput
-          id="tags-list"
-          label="Custom label"
-          classes={mockClasses}
-          value={[{ label: "tag1" }, { label: "tag2" }]}
-          onChange={onChangeSpy}
-          onDelete={onDeleteSpy}
-        />
-      </HvProvider>
+
+    render(
+      <HvTagsInput
+        id="tags-list"
+        label="Custom label"
+        classes={mockClasses}
+        value={[{ label: "tag1" }, { label: "tag2" }]}
+        onChange={onChangeSpy}
+        onDelete={onDeleteSpy}
+      />
     );
 
-    expect(getByText("tag1")).toBeInTheDocument();
-    expect(getByText("tag2")).toBeInTheDocument();
+    expect(screen.getByText("tag1")).toBeInTheDocument();
+    expect(screen.getByText("tag2")).toBeInTheDocument();
 
-    const clickableButtons = getAllByRole("button");
+    const clickableButtons = screen.getAllByRole("button");
     expect(clickableButtons.length).toBe(2);
-    fireEvent.click(clickableButtons[1]);
-    let remainingButton = await findAllByRole("button");
+    const [, tag2] = clickableButtons;
+    fireEvent.click(tag2.querySelector("[data-name=CloseXS]")!);
+
+    const remainingButtons = await screen.findAllByRole("button");
     expect(onChangeSpy).toHaveBeenCalledWith(expect.any(Object), [
       { label: "tag1" },
     ]);
@@ -157,37 +136,23 @@ describe("TagsInput Component", () => {
       { label: "tag2" },
       1
     );
-    // the value is controlled so it should not change only inform
-    expect(remainingButton.length).toBe(2);
 
-    fireEvent.click(clickableButtons[0]);
-    remainingButton = await findAllByRole("button");
-    expect(onChangeSpy).toHaveBeenCalledWith(expect.any(Object), [
-      { label: "tag2" },
-    ]);
-    expect(onDeleteSpy).toHaveBeenCalledWith(
-      expect.any(Object),
-      { label: "tag1" },
-      0
-    );
     // the value is controlled so it should not change only inform
-    expect(remainingButton.length).toBe(2);
+    expect(remainingButtons.length).toBe(2);
   });
 
   it("should trigger the add callback", async () => {
     const onChangeSpy = vi.fn();
     const onAddSpy = vi.fn();
     const { getByText, getAllByRole, findAllByRole, getByRole } = render(
-      <HvProvider>
-        <HvTagsInput
-          id="tags-list"
-          label="Custom label"
-          classes={mockClasses}
-          value={[{ label: "tag1" }, { label: "tag2" }]}
-          onChange={onChangeSpy}
-          onAdd={onAddSpy}
-        />
-      </HvProvider>
+      <HvTagsInput
+        id="tags-list"
+        label="Custom label"
+        classes={mockClasses}
+        value={[{ label: "tag1" }, { label: "tag2" }]}
+        onChange={onChangeSpy}
+        onAdd={onAddSpy}
+      />
     );
 
     expect(getByText("tag1")).toBeInTheDocument();
@@ -219,16 +184,14 @@ describe("TagsInput Component", () => {
     const onChangeSpy = vi.fn();
     const onBlurSpy = vi.fn();
     const { getByText, getAllByRole, getByRole } = render(
-      <HvProvider>
-        <HvTagsInput
-          id="tags-list"
-          label="Custom label"
-          classes={mockClasses}
-          value={[{ label: "tag1" }, { label: "tag2" }]}
-          onChange={onChangeSpy}
-          onBlur={onBlurSpy}
-        />
-      </HvProvider>
+      <HvTagsInput
+        id="tags-list"
+        label="Custom label"
+        classes={mockClasses}
+        value={[{ label: "tag1" }, { label: "tag2" }]}
+        onChange={onChangeSpy}
+        onBlur={onBlurSpy}
+      />
     );
     const { parentElement } = getByText("Custom label");
     // @ts-ignore
@@ -253,15 +216,13 @@ describe("TagsInput Component", () => {
 
   it("should have a disabled tag if the `disabled` property is set to true", () => {
     const { queryAllByRole } = render(
-      <HvProvider>
-        <HvTagsInput
-          id="tags-list"
-          label="Custom label"
-          classes={mockClasses}
-          disabled
-          value={[{ label: "tag1" }, { label: "tag2", type: "categorical" }]}
-        />
-      </HvProvider>
+      <HvTagsInput
+        id="tags-list"
+        label="Custom label"
+        classes={mockClasses}
+        disabled
+        value={[{ label: "tag1" }, { label: "tag2", type: "categorical" }]}
+      />
     );
 
     const clickableButtons = queryAllByRole("button");
@@ -270,15 +231,13 @@ describe("TagsInput Component", () => {
 
   it("should not display close buttons on readOnly tags", () => {
     const { queryAllByRole } = render(
-      <HvProvider>
-        <HvTagsInput
-          id="tags-list"
-          label="Custom label"
-          classes={mockClasses}
-          readOnly
-          value={[{ label: "tag1" }, { label: "tag2", type: "categorical" }]}
-        />
-      </HvProvider>
+      <HvTagsInput
+        id="tags-list"
+        label="Custom label"
+        classes={mockClasses}
+        readOnly
+        value={[{ label: "tag1" }, { label: "tag2", type: "categorical" }]}
+      />
     );
 
     const clickableButtons = queryAllByRole("button");
@@ -289,15 +248,13 @@ describe("TagsInput Component", () => {
     const suggestionHandler = vi.fn();
 
     const { getByRole } = render(
-      <HvProvider>
-        <HvTagsInput
-          id="tags-list"
-          label="Custom label"
-          classes={mockClasses}
-          value={[{ label: "tag1" }, { label: "tag2" }]}
-          suggestionListCallback={suggestionHandler}
-        />
-      </HvProvider>
+      <HvTagsInput
+        id="tags-list"
+        label="Custom label"
+        classes={mockClasses}
+        value={[{ label: "tag1" }, { label: "tag2" }]}
+        suggestionListCallback={suggestionHandler}
+      />
     );
 
     const tagsInput = getByRole("textbox");

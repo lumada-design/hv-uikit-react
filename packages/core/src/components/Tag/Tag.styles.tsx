@@ -14,25 +14,23 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
       maxWidth: 180,
       fontFamily: theme.fontFamily.body,
 
-      "& $focusVisible": {
+      "&:focus-visible": {
         backgroundColor: hexToRgbA(theme.colors.base_light, 0.3),
       },
 
       "&$categorical": {
         borderRadius: 8,
-        "&$clickable": {
-          cursor: "pointer",
-        },
-        "&:hover": {
-          borderRadius: 8,
-        },
         "& $label": {
           color: theme.colors.secondary,
         },
-        "&:focus:not(:focus-visible)": {
-          outline: "0 !important",
-          boxShadow: "none !important",
-        },
+      },
+    },
+
+    "&$disabled": {
+      opacity: 1,
+      backgroundColor: theme.colors.atmo3,
+      "& $label": {
+        color: theme.colors.secondary_60,
       },
     },
 
@@ -50,11 +48,9 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
       marginRight: 0,
       width: 16,
       height: 16,
-      minWidth: 16,
-      minHeight: 16,
       padding: 0,
       "&:hover": {
-        backgroundColor: hexToRgbA(theme.colors.base_light, 0.3),
+        backgroundColor: theme.button.hoverColor,
       },
       "&:focus": {
         ...outlineStyles,
@@ -67,65 +63,27 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     },
   },
 
-  focusVisible: {},
+  disabled: {},
 
-  button: {
-    background: "transparent",
-  },
-
-  label: {},
-
-  tagButton: {
-    width: 16,
-    height: 16,
-    minWidth: 16,
-    minHeight: 16,
-    padding: 0,
-    margin: 0,
-  },
-
-  deleteIcon: {},
-
-  disabledDeleteIcon: {
-    "&:hover": {
-      backgroundColor: theme.colors.atmo3,
-    },
-    "&:focus": {
-      backgroundColor: theme.colors.atmo3,
-      outline: "none",
-      boxShadow: "none",
-      outlineOffset: 0,
-    },
-  },
-
-  categorical: {},
-  clickable: {},
-
-  categoricalFocus: {
-    "&:focus": {
+  clickable: {
+    cursor: "pointer",
+    "&:focus-visible": {
       ...outlineStyles,
     },
   },
 
-  disabled: {
-    backgroundColor: theme.colors.atmo3,
-    cursor: "not-allowed",
-    "& $label": {
-      color: theme.colors.secondary_60,
-    },
-  },
+  categorical: {},
 
-  categoricalDisabled: {
-    backgroundColor: theme.colors.atmo3,
-    cursor: "not-allowed",
-    "& $label": {
-      color: theme.colors.secondary_60,
-    },
-    "&:hover": {
-      backgroundColor: theme.colors.atmo3,
-    },
-    "&:focus": {
-      outline: "none",
-    },
-  },
+  label: {},
+
+  deleteIcon: {},
+
+  // TODO: redundant - use deleteIcon. remove in v6
+  button: {},
+  tagButton: {},
+  // TODO: redundant - use $clickable or :not($disabled). remove in v6
+  focusVisible: {},
+  disabledDeleteIcon: {},
+  categoricalFocus: {},
+  categoricalDisabled: {},
 });
