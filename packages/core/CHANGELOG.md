@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.27.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.8...@hitachivantara/uikit-react-core@5.27.9) (2023-09-26)
+
+### Bug Fixes
+
+- layout page and links fixed in docs ([#3708](https://github.com/lumada-design/hv-uikit-react/issues/3708)) ([9e1784b](https://github.com/lumada-design/hv-uikit-react/commit/9e1784b23eff02e3089dfbf6924b41fd14ce36c3))
+
 ## [5.27.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.7...@hitachivantara/uikit-react-core@5.27.8) (2023-09-24)
 
 ### Bug Fixes
