@@ -1,14 +1,15 @@
 import { clsx } from "clsx";
 import { useDroppable } from "@dnd-kit/core";
-import { CSS } from "@dnd-kit/utilities";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 import {
-  useSortable,
   SortableContext,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 
+import useAppStore from "lib/store/useAppStore";
 import useEditorStore from "lib/store/useEditorStore";
+import { Sortable } from "components/common";
+
 import classes from "./styles";
 import { renderers } from "../fields";
 
@@ -30,11 +31,12 @@ const getRenderer = (type) => {
   return renderers[type] || (() => <div>No renderer found for {type}</div>);
 };
 
-const Field = (props) => {
-  const { field, overlay, ...rest } = props;
-  const { type } = field;
+const CanvasItem = (props) => {
+  const { component, overlay, ...rest } = props;
+  const { type, src } = component;
+  console.log('component: ', component);
 
-  const Component = getRenderer(type);
+  const Component = () => component.src;
 
   return (
     <div
@@ -47,33 +49,8 @@ const Field = (props) => {
   );
 };
 
-const SortableField = (props) => {
-  const { id, index, field } = props;
-
-  const { attributes, listeners, setNodeRef, transform, transition } =
-    useSortable({
-      id,
-      data: {
-        index,
-        id,
-        field,
-      },
-    });
-
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-  };
-
-  return (
-    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      <Field field={field} />
-    </div>
-  );
-};
-
-export const Canvas = (props) => {
-  const { fields } = props;
+export const Canvas = () => {
+  const { components } = useAppStore();
   const { canvas } = useEditorStore();
 
   const { setNodeRef } = useDroppable({
@@ -88,10 +65,12 @@ export const Canvas = (props) => {
     return (
       <SortableContext
         strategy={verticalListSortingStrategy}
-        items={fields.map((f: FieldProps) => f.id)}
+        items={components.map((component: Component) => component.id)}
       >
-        {fields?.map((f, i) => (
-          <SortableField key={f.id} id={f.id} field={f} index={i} />
+        {components?.map((component) => (
+          <Sortable key={component.id} id={component.id}>
+            <CanvasItem component={component} />
+          </Sortable>
         ))}
       </SortableContext>
     );
@@ -116,7 +95,7 @@ export const Canvas = (props) => {
           [classes.mobile]: canvas.mode === "mobile",
         })}
       >
-        {fields.length ? renderComponents() : renderEmpty()}
+        {components.length ? renderComponents() : renderEmpty()}
       </div>
     </section>
   );

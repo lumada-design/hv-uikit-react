@@ -182,17 +182,16 @@ export default function App() {
         onDragStart={handleDragStart}
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
-        autoScroll
       >
         <PanelLeft fieldsRegKey={fieldsRegKey} />
         <Canvas fields={fields} />
         <PanelRight />
-        <DragOverlay dropAnimation={null}>
-          {/* {activePanelField ? (
+        {/* <DragOverlay dropAnimation={null}>
+          {activePanelField ? (
             <PanelLeftField overlay field={activePanelField} />
-          ) : null} */}
-          {/* {activeField ? <Field overlay field={activeField} /> : null} */}
-        </DragOverlay>
+          ) : null}
+          {activeField ? <Field overlay field={activeField} /> : null}
+        </DragOverlay> */}
       </DndContext>
     </div>
   );

@@ -19,7 +19,6 @@ export const Container = ({
     maxWidth={maxWidth}
     {...{ component: "main" }}
     classes={{ root: classes.container }}
-    disableGutters
   >
     <Suspense fallback={<Loading {...loadingProps} />}>{children}</Suspense>
   </HvContainer>

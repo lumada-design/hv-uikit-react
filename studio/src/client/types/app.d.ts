@@ -8,7 +8,7 @@ interface Pages {
 }
 
 interface Component {
-  id?: string;
+  id?: UniqueIdentifier;
   parent?: string;
   type: string;
   label: string;
