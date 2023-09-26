@@ -28,7 +28,7 @@ jobs:
       - name: Run Tests
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-          "npx http-server dist --port 6006 --silent" \
+          "npx serve dist -l 6006 -L" \
           "npx wait-on tcp:6006 && npm run test:a11y" || true
 
       - name: Archive a11y report

@@ -29,7 +29,7 @@ const buildReport = () => {
 
     // Create report
     execSync(
-      `npx storybook-a11y-report --storybookUrl ${storybookUrl} --outputFormat html --outDir ${outputDir} -o ${excludeStories}`
+      `npx storybook-a11y-report --storybookUrl ${storybookUrl} --outputFormat html --outDir ${outputDir} ${excludeStories}`
     );
 
     console.log("⏳ Adding custom CSS to report...");
@@ -39,7 +39,8 @@ const buildReport = () => {
     const cssFile = path.resolve(__dirname, "styles.css");
 
     // Add CSS file to report directory
-    fs.copyFileSync(cssFile, [reportDir, "/styles.css"].join(""));
+    fs.mkdirSync([reportDir, "/styles"].join(""));
+    fs.copyFileSync(cssFile, [reportDir, "/styles/styles.css"].join(""));
 
     // Customize report
     const htmlData = fs.readFileSync(reportFile, "utf8");
@@ -47,7 +48,7 @@ const buildReport = () => {
       .replace(
         "<title>Accessibility report</title>",
         `<title>NEXT UI Kit Accessibility Report</title>
-        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" type="text/css" href="styles/styles.css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet"/>`
       )
       .replace(
