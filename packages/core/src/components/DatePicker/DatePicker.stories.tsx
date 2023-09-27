@@ -262,37 +262,41 @@ export const NearInvalid: StoryObj<HvDatePickerProps> = {
   },
 };
 
-export const WithValueChange: StoryObj<HvDatePickerProps> = {
+export const Controlled: StoryObj<HvDatePickerProps> = {
   parameters: {
     eyes: { include: false },
   },
+  decorators: [
+    (Story) => <div style={{ display: "flex", gap: 10 }}>{Story()}</div>,
+  ],
   render: () => {
     const [date, setDate] = useState<Date | undefined>(new Date(2020, 0, 1));
+    const [open, setOpen] = useState(false);
 
     const addDay = () => {
-      if (date)
-        setDate(
-          new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
-        );
+      if (!date) return;
+      setDate(new Date(date.setDate(date.getDate() + 1)));
     };
+
+    const toggleOpen = () => setOpen((o) => !o);
+
     return (
       <>
-        <HvButton
-          id="AddButton"
-          onClick={addDay}
-          style={{ marginBottom: "10px" }}
-        >
-          Add a day
-        </HvButton>
         <HvDatePicker
-          id="DatePicker"
+          style={{ flex: 1 }}
+          expanded={open}
           aria-label="Date"
           placeholder="Select date"
           value={date}
-          onChange={(d) => {
-            setDate(d);
-          }}
+          onChange={(d) => setDate(d)}
+          onToggle={toggleOpen}
         />
+        <HvButton variant="secondarySubtle" onClick={addDay}>
+          +1 Day
+        </HvButton>
+        <HvButton variant="secondarySubtle" onClick={toggleOpen}>
+          {open ? "Close" : "Open"}
+        </HvButton>
       </>
     );
   },
