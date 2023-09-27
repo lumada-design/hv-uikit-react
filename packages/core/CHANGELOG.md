@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.27.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.9...@hitachivantara/uikit-react-core@5.27.10) (2023-09-27)
+
+### Bug Fixes
+
+- **Tag:** a11y review ([6d9eaf9](https://github.com/lumada-design/hv-uikit-react/commit/6d9eaf98f58bae0fd260a65e076b5d063170b430))
+- **Tag:** hover & improve docs decorators/disable/delete ([9f3b225](https://github.com/lumada-design/hv-uikit-react/commit/9f3b225dc283f0d2b851a9f35bf0cfd4bfbef52c))
+
 ## [5.27.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.8...@hitachivantara/uikit-react-core@5.27.9) (2023-09-26)
 
 ### Bug Fixes
