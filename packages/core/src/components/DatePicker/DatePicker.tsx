@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef, ReactNode } from "react";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import styled from "@emotion/styled";
@@ -10,7 +10,6 @@ import { useControlled } from "@core/hooks/useControlled";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useLabels } from "@core/hooks/useLabels";
 import { useTheme } from "@core/hooks/useTheme";
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { useSavedState } from "@core/utils/useSavedState";
@@ -21,6 +20,7 @@ import {
   HvWarningText,
   HvFormElement,
   HvInfoMessage,
+  HvFormElementProps,
 } from "@core/components/Forms";
 import { isDate } from "@core/components/Calendar/utils";
 import { HvCalendar, HvCalendarProps } from "@core/components/Calendar";
@@ -51,49 +51,11 @@ const DEFAULT_LABELS = {
 export type HvDatePickerStatus = HvFormStatus;
 
 export interface HvDatePickerProps
-  extends HvBaseProps<HTMLDivElement, "onChange"> {
-  /**
-   * The form element name.
-   */
-  name?: string;
-  /**
-   * The label of the form element.
-   *
-   * The form element must be labeled for accessibility reasons.
-   * If not provided, an aria-label or aria-labelledby must be provided instead.
-   */
-  label?: React.ReactNode;
-  /**
-   * Provide additional descriptive text for the form element.
-   */
-  description?: React.ReactNode;
-  /**
-   * The placeholder value when nothing is selected.
-   */
-  placeholder?: string;
-  /**
-   * Indicates that the form element is disabled.
-   */
-  disabled?: boolean;
-  /**
-   * Indicates that user input is required on the form element.
-   */
-  required?: boolean;
-  /**
-   * The status of the form element.
-   *
-   * Valid is correct, invalid is incorrect and standBy means no validations have run.
-   *
-   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
-   * or "invalid" after any change to the state.
-   */
-  status?: HvFormStatus;
-  /**
-   * The error message to show when the validation status is "invalid".
-   *
-   * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
-   */
-  statusMessage?: React.ReactNode;
+  extends Omit<HvFormElementProps, "onChange">,
+    Pick<
+      HvBaseDropdownProps,
+      "disablePortal" | "expanded" | "defaultExpanded" | "onToggle"
+    > {
   /**
    * Identifies the element that provides an error message for the date picker.
    *
@@ -147,8 +109,8 @@ export interface HvDatePickerProps
   endValue?: Date;
   /**
    * Flag informing if the the component should be in range mode or in single mode.
-   * TODO: remove this in favour of discriminated union
    */
+  // TODO: remove this in favour of discriminated union
   rangeMode?: boolean;
   /**
    * The placement where the calendar should be placed according to the input. Options are `left` or `right`.
@@ -169,10 +131,6 @@ export interface HvDatePickerProps
    */
   showClear?: boolean;
   /**
-   * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
-   */
-  disablePortal?: boolean;
-  /**
    * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
    */
   escapeWithReference?: boolean;
@@ -183,11 +141,7 @@ export interface HvDatePickerProps
   /**
    * An object containing props to be passed onto the baseDropdown.
    */
-  dropdownProps?: Object;
-  /**
-   * If `true` the DatePicker will be in read only mode, unable to be interacted.
-   */
-  readOnly?: boolean;
+  dropdownProps?: Partial<HvBaseDropdownProps>;
   /**
    * Additional props passed to the HvCalendar component.
    */
@@ -235,6 +189,9 @@ export const HvDatePicker = (props: HvDatePickerProps) => {
     startValue,
     endValue,
 
+    expanded,
+    defaultExpanded,
+    onToggle,
     rangeMode = false,
     startAdornment,
     horizontalPlacement = "right",
@@ -262,7 +219,10 @@ export const HvDatePicker = (props: HvDatePickerProps) => {
 
   const locale = localeProp || "en-US";
 
-  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [calendarOpen, setCalendarOpen] = useControlled(
+    expanded,
+    Boolean(defaultExpanded)
+  );
 
   const [startDate, setStartDate, rollbackStartDate] = useSavedState(
     rangeMode ? startValue : value
@@ -363,6 +323,7 @@ export const HvDatePicker = (props: HvDatePickerProps) => {
      the datepicker changed the expanded value this baseDropdown behavior needs a review
     */
     if (evt === null) return;
+    onToggle?.(evt, open);
     setCalendarOpen(open);
     if (!open) handleCalendarClose();
   };
