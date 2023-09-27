@@ -13,6 +13,7 @@ const ListView = lazy(() => import("../../../templates/ListView"));
 const Form = lazy(() => import("../../../templates/Form"));
 const DetailsView = lazy(() => import("../../../templates/DetailsView"));
 const Dashboard = lazy(() => import("../../../templates/Dashboard"));
+const Welcome = lazy(() => import("../../../templates/Welcome"));
 
 const AppRoutes = () => (
   <Routes>
@@ -23,6 +24,7 @@ const AppRoutes = () => (
       element={<Navigate to="/preview/instructions" replace />}
     />
     <Route path="/preview/instructions" element={<Instructions />} />
+    <Route path="/preview/welcome" element={<Welcome />} />
     <Route path="/preview/dashboard" element={<Dashboard />} />
     <Route path="/preview/asset-inventory" element={<AssetInventory />} />
     <Route path="/preview/list-view" element={<ListView />} />
