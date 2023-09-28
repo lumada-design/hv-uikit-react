@@ -22,7 +22,22 @@ export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
   group: {
     color: theme.colors.base_dark,
   },
-  titleContainer: { padding: theme.space.sm },
+  titleContainer: {
+    padding: theme.spacing(
+      theme.space.xs,
+      theme.space.xs,
+      theme.space.xs,
+      theme.space.sm
+    ),
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  actions: {
+    display: "flex",
+    alignItems: "center",
+  },
   inputsTitleContainer: {
     display: "flex",
     justifyContent: "center",
