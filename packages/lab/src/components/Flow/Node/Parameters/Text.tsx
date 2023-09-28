@@ -4,7 +4,7 @@ import { useReactFlow } from "reactflow";
 
 const Text = ({ nodeId, param, data }) => {
   const reactFlowInstance = useReactFlow();
-  const [text, setText] = useState(data[param.label]);
+  const [text, setText] = useState(data[param.id]);
 
   const onTextChange = (val) => {
     const nodes = reactFlowInstance.getNodes();

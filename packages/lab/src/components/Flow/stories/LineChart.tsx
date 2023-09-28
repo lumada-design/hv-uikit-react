@@ -1,13 +1,17 @@
 import { HvFlowNode } from "../Node/Node";
 
-export const Table = (props) => {
+export const LineChart = (props) => {
   return (
-    <HvFlowNode title="Table" description="Table description" {...props} />
+    <HvFlowNode
+      title="LineChart"
+      description="LineChart description"
+      {...props}
+    />
   );
 };
 
-Table.meta = {
-  label: "Table",
+LineChart.meta = {
+  label: "LineChart",
   groupId: "insights",
   inputs: [
     {

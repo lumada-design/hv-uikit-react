@@ -4,7 +4,7 @@ import { useReactFlow } from "reactflow";
 
 const Select = ({ nodeId, param, data }) => {
   const reactFlowInstance = useReactFlow();
-  const [option, setOption] = useState(data[param.label]);
+  const [option, setOption] = useState(data[param.id]);
 
   const onSelectChange = (item) => {
     const nodes = reactFlowInstance.getNodes();

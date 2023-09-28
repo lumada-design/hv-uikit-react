@@ -1,13 +1,11 @@
 import { HvFlowNode } from "../Node/Node";
 
-export const Table = (props) => {
-  return (
-    <HvFlowNode title="Table" description="Table description" {...props} />
-  );
+export const KPI = (props) => {
+  return <HvFlowNode title="KPI" description="KPI description" {...props} />;
 };
 
-Table.meta = {
-  label: "Table",
+KPI.meta = {
+  label: "KPI",
   groupId: "insights",
   inputs: [
     {
