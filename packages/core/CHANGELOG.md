@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.28.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.10...@hitachivantara/uikit-react-core@5.28.0) (2023-09-28)
+
+### Features
+
+- **DatePicker:** add controllable expanded props ([#3713](https://github.com/lumada-design/hv-uikit-react/issues/3713)) ([703dbcb](https://github.com/lumada-design/hv-uikit-react/commit/703dbcbcd056349a631a855c11a7699a2d77144b))
+
 ## [5.27.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.9...@hitachivantara/uikit-react-core@5.27.10) (2023-09-27)
 
 ### Bug Fixes
