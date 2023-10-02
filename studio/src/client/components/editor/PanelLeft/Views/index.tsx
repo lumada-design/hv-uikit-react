@@ -17,13 +17,13 @@ import {
 } from "@dnd-kit/modifiers";
 
 import { IconButton, Panel } from "components/common";
-import useAppStore from "lib/store/useAppStore";
-import useEditorStore from "lib/store/useEditorStore";
+import { useViewsStore } from "lib/hooks/useViewsStore";
+import { useEditorStore } from "lib/hooks/useEditorStore";
 import { PageItem } from "./PageItem";
 
-export const Pages = () => {
-  const { pages, selectedPage, setPages, addPage, setSelectedPage } =
-    useAppStore();
+export const Views = () => {
+  const { views, selectedView, setViews, addView, setSelectedView } =
+    useViewsStore();
   const {
     leftPanel: { selected },
   } = useEditorStore();
@@ -40,15 +40,15 @@ export const Pages = () => {
     const { active, over } = event;
 
     if (active.id !== over.id) {
-      const oldIndex = pages.findIndex((item) => item.id === active.id);
-      const newIndex = pages.findIndex((item) => item.id === over.id);
+      const oldIndex = views.findIndex((item) => item.id === active.id);
+      const newIndex = views.findIndex((item) => item.id === over.id);
 
-      setPages(arrayMove(pages, oldIndex, newIndex));
+      setViews(arrayMove(views, oldIndex, newIndex));
     }
   };
 
   const handleNewPage = () => {
-    addPage({
+    addView({
       id: "new-page",
       label: "New page",
     });
@@ -58,7 +58,7 @@ export const Pages = () => {
     <Panel
       label={selected}
       actions={[
-        <IconButton key="addPage" title="Add page" onClick={handleNewPage}>
+        <IconButton key="addView" title="Add page" onClick={handleNewPage}>
           <Add iconSize="XS" />
         </IconButton>,
       ]}
@@ -69,14 +69,14 @@ export const Pages = () => {
         onDragEnd={handleDragEnd}
         modifiers={[restrictToVerticalAxis, restrictToWindowEdges]}
       >
-        <SortableContext items={pages} strategy={verticalListSortingStrategy}>
-          {pages.map(({ id, label }) => (
+        <SortableContext items={views} strategy={verticalListSortingStrategy}>
+          {views.map(({ id, label }) => (
             <PageItem
               key={id}
               id={id}
               label={label}
-              onClick={() => setSelectedPage(id)}
-              selected={selectedPage === id}
+              onClick={() => setSelectedView(id)}
+              selected={selectedView === id}
             />
           ))}
         </SortableContext>

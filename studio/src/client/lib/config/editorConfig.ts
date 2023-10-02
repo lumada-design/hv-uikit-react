@@ -1,32 +1,32 @@
-const editorState: EditorState = {
+export const editorConfig: EditorState = {
   leftPanel: {
     label: "Left Panel",
-    selected: "pages",
+    selected: "views",
     pined: true,
     panels: [
       {
-        id: "pages",
-        label: "Pages",
+        id: "views",
+        label: "Views",
         icon: "Doc",
-        component: "Pages",
+        panel: "Views",
       },
       {
         id: "components",
         label: "Components",
         icon: "Components",
-        component: "Components",
+        panel: "Components",
       },
       {
         id: "sections",
         label: "Sections",
         icon: "Column",
-        component: "Sections",
+        panel: "Sections",
       },
       {
         id: "templates",
         label: "Templates",
         icon: "Template",
-        component: "Templates",
+        panel: "Templates",
       },
     ],
   },
@@ -38,5 +38,3 @@ const editorState: EditorState = {
     label: "Right Panel",
   },
 };
-
-export default editorState;

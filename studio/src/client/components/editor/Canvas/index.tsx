@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import JsxParser from "react-jsx-parser";
 import { useDroppable } from "@dnd-kit/core";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 import {
@@ -6,37 +7,16 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 
-import useAppStore from "lib/store/useAppStore";
-import useEditorStore from "lib/store/useEditorStore";
+import { useEditorStore } from "lib/hooks/useEditorStore";
+import { useViewsStore } from "lib/hooks/useViewsStore";
 import { Sortable } from "components/common";
 
 import classes from "./styles";
-import { renderers } from "../fields";
 
-const getRenderer = (type) => {
-  const isSpacer = type === "spacer";
-
-  if (isSpacer) {
-    return () => (
-      <div
-        className={clsx({
-          [classes.spacer]: isSpacer,
-        })}
-      >
-        spacer
-      </div>
-    );
-  }
-
-  return renderers[type] || (() => <div>No renderer found for {type}</div>);
-};
+const Parser: any = JsxParser;
 
 const CanvasItem = (props) => {
   const { component, overlay, ...rest } = props;
-  const { type, src } = component;
-  console.log('component: ', component);
-
-  const Component = () => component.src;
 
   return (
     <div
@@ -44,30 +24,27 @@ const CanvasItem = (props) => {
         [classes.overlay]: overlay,
       })}
     >
-      <Component {...rest} />
+      <Parser jsx={component.src} />
     </div>
   );
 };
 
 export const Canvas = () => {
-  const { components } = useAppStore();
   const { canvas } = useEditorStore();
+  const { views, selectedView } = useViewsStore();
 
-  const { setNodeRef } = useDroppable({
-    id: "canvas-droppable",
-    data: {
-      parent: null,
-      isContainer: true,
-    },
-  });
+  const view = views.find((view) => view.id === selectedView);
+  const layout = view?.layout || [];
+
+  const { setNodeRef } = useDroppable({ id: "canvas" });
 
   const renderComponents = () => {
     return (
       <SortableContext
         strategy={verticalListSortingStrategy}
-        items={components.map((component: Component) => component.id)}
+        items={layout.map((component) => component.id)}
       >
-        {components?.map((component) => (
+        {layout.map((component) => (
           <Sortable key={component.id} id={component.id}>
             <CanvasItem component={component} />
           </Sortable>
@@ -79,7 +56,7 @@ export const Canvas = () => {
   const renderEmpty = () => {
     return (
       <HvTypography variant="caption1" className={classes.empty}>
-        You haven't added any components yet.
+        {`${view?.label} has no components yet.`}
         <br />
         Drag components from the sidebar and drop here.
       </HvTypography>
@@ -95,7 +72,7 @@ export const Canvas = () => {
           [classes.mobile]: canvas.mode === "mobile",
         })}
       >
-        {components.length ? renderComponents() : renderEmpty()}
+        {layout.length ? renderComponents() : renderEmpty()}
       </div>
     </section>
   );

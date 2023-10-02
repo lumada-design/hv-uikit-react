@@ -1,7 +1,7 @@
 import * as Icons from "@hitachivantara/uikit-react-icons";
 
 import { IconButton } from "components/common";
-import useEditorStore from "lib/store/useEditorStore";
+import { useEditorStore } from "lib/hooks/useEditorStore";
 
 import classes from "./styles";
 

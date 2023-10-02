@@ -1,6 +1,6 @@
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
-import useEditorStore from "lib/store/useEditorStore";
+import { useEditorStore } from "lib/hooks/useEditorStore";
 import classes from "./styles";
 
 export const PanelRight = () => {

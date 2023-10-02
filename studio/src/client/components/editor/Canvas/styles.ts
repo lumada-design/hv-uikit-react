@@ -23,12 +23,11 @@ const styles = {
     width: "500px",
   }),
   empty: css({
-    display: "inline-grid",
+    display: "grid",
     alignItems: "center",
     textAlign: "center",
     height: "100%",
     width: "100%",
-    whiteSpace: "pre-wrap",
   }),
   field: css({
     padding: 15,

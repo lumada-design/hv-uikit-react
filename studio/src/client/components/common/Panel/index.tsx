@@ -2,7 +2,7 @@ import { HvTypography } from "@hitachivantara/uikit-react-core";
 import { Pin, PinSelected } from "@hitachivantara/uikit-react-icons";
 
 import { IconButton } from "components/common";
-import useEditorStore from "lib/store/useEditorStore";
+import { useEditorStore } from "lib/hooks/useEditorStore";
 import classes from "./styles";
 
 interface PanelProps {
@@ -13,6 +13,7 @@ interface PanelProps {
 
 export const Panel = ({ label, actions, children }: PanelProps) => {
   const {
+    setLeftPanelSelected,
     setLeftPanelPinned,
     leftPanel: { pined },
   } = useEditorStore();
@@ -27,6 +28,7 @@ export const Panel = ({ label, actions, children }: PanelProps) => {
             title={pined ? "Unpin" : "Pin"}
             onClick={() => {
               setLeftPanelPinned(!pined);
+              pined && setLeftPanelSelected();
             }}
           >
             {pined ? <PinSelected iconSize="XS" /> : <Pin iconSize="XS" />}

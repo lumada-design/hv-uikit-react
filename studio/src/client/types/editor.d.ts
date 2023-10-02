@@ -1,8 +1,18 @@
-interface Panel {
-  id: string;
-  label: string;
-  icon: string;
-  component: string;
+type EditorStore = EditorState & EditorActions;
+
+type CanvasMode = "desktop" | "mobile";
+
+interface EditorState {
+  leftPanel: LeftPanel;
+  canvas: Canvas;
+  rightPanel: RightPanel;
+  components: Component[];
+}
+
+interface EditorActions {
+  setLeftPanelSelected: (panel?: string) => void;
+  setLeftPanelPinned: (pined?: boolean) => void;
+  setCanvasMode: (mode: CanvasMode) => void;
 }
 
 interface LeftPanel {
@@ -14,28 +24,24 @@ interface LeftPanel {
 
 interface Canvas {
   label: string;
-  mode?: "desktop" | "mobile";
+  mode: CanvasMode;
 }
 
 interface RightPanel {
   label: string;
 }
 
-interface EditorState {
-  leftPanel: LeftPanel;
-  canvas: Canvas;
-  rightPanel: RightPanel;
-}
-
-interface EditorStore extends EditorState {
-  setLeftPanelSelected: (panel?: string) => void;
-  setLeftPanelPinned: (pined?: boolean) => void;
-  setCanvasMode: (mode?: string) => void;
-}
-
-interface FieldProps {
+interface Panel {
   id: string;
+  label: string;
+  icon: string;
+  panel: string;
+}
+
+interface Component {
+  id?: UniqueIdentifier;
+  parent?: string;
   type: string;
-  name: string;
-  parent: string | undefined;
+  label: string;
+  src: string;
 }

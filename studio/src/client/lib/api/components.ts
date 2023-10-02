@@ -1,7 +1,6 @@
 import useSWR from "swr";
-import axios from "axios";
 
-const fetcher = (url) => axios.get(url).then((res) => res.data);
+import { fetcher } from "./fetcher";
 
 export const useComponents = () => {
   const { data, error, isLoading } = useSWR(`/api/components`, fetcher);

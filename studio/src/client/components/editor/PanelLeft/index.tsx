@@ -1,16 +1,21 @@
-export * from "./Components";
-export * from "./Pages";
-export * from "./Sections";
-export * from "./Templates";
-
 import { useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
-import useEditorStore from "lib/store/useEditorStore";
 
+import { useEditorStore } from "lib/hooks/useEditorStore";
+
+import { Components } from "./Components";
 import { Navbar } from "./Navbar";
-import * as Panels from ".";
-
+import { Sections } from "./Sections";
+import { Templates } from "./Templates";
+import { Views } from "./Views";
 import classes from "./styles";
+
+const Panels = {
+  Components,
+  Sections,
+  Templates,
+  Views,
+};
 
 export const PanelLeft = () => {
   const ref = useRef(null);
@@ -30,11 +35,11 @@ export const PanelLeft = () => {
     <section ref={ref} className={classes.panelLeft}>
       <Navbar />
 
-      {panels?.map(({ id, component }) => {
+      {panels?.map(({ id, panel }) => {
         const isActive = selected === id;
-        const Component = Panels[component];
+        const Panel = Panels[panel];
 
-        return isActive && <Component key={id} />;
+        return isActive && <Panel key={id} />;
       })}
     </section>
   );

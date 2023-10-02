@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import { nanoid } from "nanoid";
 import { useDraggable } from "@dnd-kit/core";
 
-import useEditorStore from "lib/store/useEditorStore";
+import useEditor from "lib/hooks/useEditorStore";
 import { fields } from "../fields";
 import classes from "./styles";
 

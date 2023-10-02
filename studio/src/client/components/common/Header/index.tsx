@@ -8,7 +8,7 @@ import { Alert, Desktop, Mobile } from "@hitachivantara/uikit-react-icons";
 
 import UIKitLogo from "assets/UIKitLogo";
 import { IconButton } from "components/common";
-import useEditorStore from "lib/store/useEditorStore";
+import { useEditorStore } from "lib/hooks/useEditorStore";
 import classes from "./styles";
 
 export const Header = () => {
