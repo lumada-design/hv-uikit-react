@@ -1,3 +1,4 @@
+import { HvActionGeneric } from "@hitachivantara/uikit-react-core";
 import {
   Dispatch,
   SetStateAction,
@@ -16,6 +17,8 @@ export interface HvFlowContextValue<NodeGroups extends keyof any = string> {
   nodeGroups?: HvFlowNodeGroups<NodeGroups>;
   /** Flow nodes groups expanded on sidebar. */
   expandedNodeGroups?: string[];
+  /** Flow default actions. */
+  defaultActions?: HvActionGeneric[];
   /** Function to set `expandedNodeGroups`. */
   setExpandedNodeGroups?: Dispatch<SetStateAction<string[]>>;
 }
@@ -27,6 +30,8 @@ export interface HvFlowProviderProps<NodeGroups extends keyof any = string> {
   nodeTypes?: HvFlowContextValue<NodeGroups>["nodeTypes"];
   /** Flow nodes groups. */
   nodeGroups?: HvFlowContextValue<NodeGroups>["nodeGroups"];
+  /** Flow default actions. */
+  defaultActions?: HvActionGeneric[];
   /** Children. */
   children?: React.ReactNode;
 }
@@ -34,6 +39,7 @@ export interface HvFlowProviderProps<NodeGroups extends keyof any = string> {
 export const HvFlowProvider = ({
   nodeGroups,
   nodeTypes,
+  defaultActions,
   children,
 }: HvFlowProviderProps) => {
   const [expandedNodeGroups, setExpandedNodeGroups] = useState<string[]>([]);
@@ -42,10 +48,11 @@ export const HvFlowProvider = ({
     () => ({
       nodeTypes,
       nodeGroups,
+      defaultActions,
       expandedNodeGroups,
       setExpandedNodeGroups,
     }),
-    [nodeGroups, nodeTypes, expandedNodeGroups]
+    [nodeTypes, nodeGroups, defaultActions, expandedNodeGroups]
   );
 
   return (

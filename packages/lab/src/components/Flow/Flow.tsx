@@ -13,6 +13,7 @@ import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 import { ReactFlowProvider } from "reactflow";
 
+import { HvActionGeneric } from "@hitachivantara/uikit-react-core";
 import { HvFlowNodeGroups, HvFlowNodeTypes } from "./types";
 import { HvFlowProvider } from "./FlowContext";
 import { HvDroppableFlow, HvDroppableFlowProps } from "./DroppableFlow";
@@ -29,6 +30,8 @@ export interface HvFlowProps<
   nodeTypes?: HvFlowNodeTypes<NodeGroups>;
   /** Flow sidebar. */
   sidebar?: React.ReactNode;
+  /** Flow default actions. */
+  defaultActions?: HvActionGeneric[];
   /**
    * Dnd Kit context props. This should be used for accessibility purposes.
    *
@@ -49,6 +52,7 @@ export const HvFlow = ({
   nodeTypes,
   nodeGroups,
   sidebar,
+  defaultActions,
   dndContextProps,
   ...others
 }: HvFlowProps) => {
@@ -73,7 +77,11 @@ export const HvFlow = ({
   // HvFlowContext is our custom internal context.
   return (
     <ReactFlowProvider>
-      <HvFlowProvider nodeGroups={nodeGroups} nodeTypes={nodeTypes}>
+      <HvFlowProvider
+        nodeGroups={nodeGroups}
+        nodeTypes={nodeTypes}
+        defaultActions={defaultActions}
+      >
         <DndContext
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}

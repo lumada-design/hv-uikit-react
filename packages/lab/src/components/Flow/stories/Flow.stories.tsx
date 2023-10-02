@@ -8,9 +8,12 @@ import {
 import {
   Add,
   Backwards,
+  Delete,
+  Duplicate,
   Favorite,
+  Group,
   Heart,
-  Home,
+  LineChartAlt,
 } from "@hitachivantara/uikit-react-icons";
 
 import { Meta, StoryObj } from "@storybook/react";
@@ -32,6 +35,11 @@ import { KPI } from "./KPI";
 import { LineChart } from "./LineChart";
 import { Table } from "./Table";
 import { Dashboard } from "./Dashboard";
+
+const defaultActions = [
+  { id: "delete", label: "Delete", icon: <Delete /> },
+  { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
+];
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const initialState = {
@@ -283,13 +291,13 @@ const nodeGroups = {
     label: "Insights",
     color: "cat6_80",
     description: "This is my description for insights.",
-    icon: <Home />,
+    icon: <Group />,
   },
   dashboard: {
     label: "Dashboard",
     color: "cat2_80",
     description: "This is my description for dashboard.",
-    icon: <Home />,
+    icon: <LineChartAlt />,
   },
 } satisfies HvFlowProps<any, NodeType, NodeGroups>["nodeGroups"];
 
@@ -348,7 +356,7 @@ export const Main: StoryObj<HvFlowProps> = {
             edges={edges}
             nodeTypes={nodeTypes}
             nodeGroups={nodeGroups}
-            // defaultViewport={initialState.viewport}
+            defaultActions={defaultActions}
             sidebar={
               <HvFlowSidebar
                 title="Add Node"
