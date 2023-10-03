@@ -1,4 +1,3 @@
-import { HvActionGeneric } from "@hitachivantara/uikit-react-core";
 import {
   Dispatch,
   SetStateAction,
@@ -8,7 +7,11 @@ import {
   useState,
 } from "react";
 
-import { HvFlowNodeGroups, HvFlowNodeTypes } from "../types";
+import {
+  HvFlowDefaultActions,
+  HvFlowNodeGroups,
+  HvFlowNodeTypes,
+} from "../types";
 
 export interface HvFlowContextValue<NodeGroups extends keyof any = string> {
   /** Flow nodes types. */
@@ -18,7 +21,7 @@ export interface HvFlowContextValue<NodeGroups extends keyof any = string> {
   /** Flow nodes groups expanded on sidebar. */
   expandedNodeGroups?: string[];
   /** Flow default actions. */
-  defaultActions?: HvActionGeneric[];
+  defaultActions?: HvFlowDefaultActions[];
   /** Function to set `expandedNodeGroups`. */
   setExpandedNodeGroups?: Dispatch<SetStateAction<string[]>>;
 }
@@ -31,7 +34,7 @@ export interface HvFlowProviderProps<NodeGroups extends keyof any = string> {
   /** Flow nodes groups. */
   nodeGroups?: HvFlowContextValue<NodeGroups>["nodeGroups"];
   /** Flow default actions. */
-  defaultActions?: HvActionGeneric[];
+  defaultActions?: HvFlowDefaultActions[];
   /** Children. */
   children?: React.ReactNode;
 }
