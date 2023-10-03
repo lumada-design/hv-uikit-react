@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.7.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.6.0...@hitachivantara/uikit-react-lab@5.7.0) (2023-10-03)
+
+### Features
+
+- **Flow:** add Node actions ([5a4a1bd](https://github.com/lumada-design/hv-uikit-react/commit/5a4a1bd808c708a1641523bf1122c569804e0012))
+
 # [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.5.5...@hitachivantara/uikit-react-lab@5.6.0) (2023-09-28)
 
 ### Features
