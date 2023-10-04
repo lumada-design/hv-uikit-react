@@ -14,22 +14,16 @@ export const { staticClasses, useClasses } = createClasses("HvFlow", {
       backgroundColor: theme.colors.negative_20,
       width: 12,
       height: 12,
-      "&.react-flow__handle-top": {
-        top: -6,
-      },
-      "&.react-flow__handle-bottom": {
-        bottom: -6,
+      "&.react-flow__handle-left": {
+        translate: "0 4px",
       },
     },
     "& .react-flow__handle-valid": {
       backgroundColor: theme.colors.positive_20,
       width: 12,
       height: 12,
-      "&.react-flow__handle-top": {
-        top: -6,
-      },
-      "&.react-flow__handle-bottom": {
-        bottom: -6,
+      "&.react-flow__handle-left": {
+        translate: "0 4px",
       },
     },
     [`& .selected > .${flowNodeClasses.root}`]: {
