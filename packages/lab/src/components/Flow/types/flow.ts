@@ -1,3 +1,4 @@
+import { HvActionGeneric } from "@hitachivantara/uikit-react-core";
 import { HvColorAny } from "@hitachivantara/uikit-styles";
 import { ComponentClass, FunctionComponent } from "react";
 import { NodeProps } from "reactflow";
@@ -58,4 +59,10 @@ export type HvFlowNodeParam = {
   label: string;
   options?: string[];
   value?: string;
+};
+
+export type HvFlowDefaultAction = "delete" | "duplicate";
+
+export type HvFlowDefaultActions = Omit<HvActionGeneric, "id"> & {
+  id: HvFlowDefaultAction;
 };

@@ -35,8 +35,9 @@ import { KPI } from "./KPI";
 import { LineChart } from "./LineChart";
 import { Table } from "./Table";
 import { Dashboard } from "./Dashboard";
+import { HvFlowDefaultActions } from "../types";
 
-const defaultActions = [
+const defaultActions: HvFlowDefaultActions[] = [
   { id: "delete", label: "Delete", icon: <Delete /> },
   { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
 ];

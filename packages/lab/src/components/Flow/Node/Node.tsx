@@ -21,7 +21,12 @@ import {
 } from "reactflow";
 import { useFlowContext } from "../FlowContext/FlowContext";
 
-import { HvFlowNodeInput, HvFlowNodeOutput, HvFlowNodeParam } from "../types";
+import {
+  HvFlowDefaultAction,
+  HvFlowNodeInput,
+  HvFlowNodeOutput,
+  HvFlowNodeParam,
+} from "../types";
 import { staticClasses, useClasses } from "./Node.styles";
 import ParamRenderer from "./Parameters/ParamRenderer";
 
@@ -74,6 +79,7 @@ export const HvFlowNode = ({
   maxVisibleActions = 1,
   classes: classesProp,
   className,
+  children,
 }: HvFlowNodeProps) => {
   const [showParams, setShowParams] = useState(expanded);
   const [showActions, setShowActions] = useState(false);
@@ -102,7 +108,7 @@ export const HvFlowNode = ({
       if (n.id === id) {
         if (Object.keys(n.data).length === 0) {
           params?.forEach((param) => {
-            n.data[param.label] = param.value;
+            n.data[param.id] = param.value;
           });
         }
       }
@@ -113,7 +119,7 @@ export const HvFlowNode = ({
   }, []);
 
   const handleDefaultAction = useCallback(
-    (action: string) => {
+    (action: HvFlowDefaultAction) => {
       if (!node) return;
 
       switch (action) {
@@ -230,58 +236,72 @@ export const HvFlowNode = ({
           )}
         </div>
       </div>
-      <div className={classes.inputsTitleContainer}>
-        <HvTypography>Inputs</HvTypography>
-      </div>
-      <div className={classes.inputsContainer}>
-        {inputs?.map((input, idx) => (
-          <div className={classes.inputContainer} key={idx}>
-            <Handle
-              type="target"
-              isConnectableStart={false}
-              id={`${idx}`}
-              position={Position.Left}
-              style={{
-                top: 160 + 29 * idx,
-              }}
-            />
-            <HvTypography>{input.label}</HvTypography>
-            {input.isMandatory &&
-              !isInputConnected(id, "target", idx, edges) && (
-                <div className={classes.mandatory} />
-              )}
-          </div>
-        ))}
-      </div>
+      {children && <div className={classes.contentContainer}>{children}</div>}
       {showParams && params && (
         <div className={classes.paramsContainer}>
           <ParamRenderer nodeId={id} params={params} data={node?.data} />
         </div>
       )}
-      <div className={classes.outputsTitleContainer}>
-        <HvTypography>Outputs</HvTypography>
-      </div>
-      <div className={classes.outputsContainer}>
-        {outputs?.map((output, idx) => (
-          <div className={classes.outputContainer} key={idx}>
-            <Handle
-              type="source"
-              isConnectableEnd={false}
-              id={`${idx}`}
-              position={Position.Right}
-              style={{
-                bottom: -8 + 29 * (outputs.length - idx),
-                top: "auto",
-              }}
-            />
-            {output.isMandatory &&
-              !isInputConnected(id, "source", idx, edges) && (
-                <div className={classes.mandatory} />
-              )}
-            <HvTypography>{output.label}</HvTypography>
+      {inputs && inputs.length > 0 && (
+        <>
+          <div className={classes.inputsTitleContainer}>
+            <HvTypography>Inputs</HvTypography>
           </div>
-        ))}
-      </div>
+
+          <div className={classes.inputsContainer}>
+            {inputs?.map((input, idx) => (
+              <div className={classes.inputContainer} key={idx}>
+                <Handle
+                  type="target"
+                  isConnectableStart={false}
+                  id={`${idx}`}
+                  position={Position.Left}
+                  style={{
+                    top: "auto",
+                    bottom:
+                      (outputs?.length ? 80 : 18) +
+                      (outputs?.length || 0) * 29 +
+                      29 * idx,
+                  }}
+                />
+                <HvTypography>{input.label}</HvTypography>
+                {input.isMandatory &&
+                  !isInputConnected(id, "target", idx, edges) && (
+                    <div className={classes.mandatory} />
+                  )}
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+      {outputs && outputs.length > 0 && (
+        <>
+          <div className={classes.outputsTitleContainer}>
+            <HvTypography>Outputs</HvTypography>
+          </div>
+          <div className={classes.outputsContainer}>
+            {outputs?.map((output, idx) => (
+              <div className={classes.outputContainer} key={idx}>
+                <Handle
+                  type="source"
+                  isConnectableEnd={false}
+                  id={`${idx}`}
+                  position={Position.Right}
+                  style={{
+                    bottom: -10 + 29 * (outputs.length - idx),
+                    top: "auto",
+                  }}
+                />
+                {output.isMandatory &&
+                  !isInputConnected(id, "source", idx, edges) && (
+                    <div className={classes.mandatory} />
+                  )}
+                <HvTypography>{output.label}</HvTypography>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

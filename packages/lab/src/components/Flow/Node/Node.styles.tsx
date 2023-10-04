@@ -23,6 +23,7 @@ export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
     color: theme.colors.base_dark,
   },
   titleContainer: {
+    minHeight: 48,
     padding: theme.spacing(
       theme.space.xs,
       theme.space.xs,
@@ -53,6 +54,9 @@ export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
     backgroundColor: theme.colors.atmo2,
     borderTop: `1px solid ${theme.colors.atmo4}`,
     borderBottom: `1px solid ${theme.colors.atmo4}`,
+  },
+  contentContainer: {
+    padding: theme.space.sm,
   },
   inputsContainer: {
     display: "flex",
