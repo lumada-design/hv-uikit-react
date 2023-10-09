@@ -24,7 +24,7 @@ const Header = () => {
               component="a"
               variant="primary"
               style={{ marginRight: 10 }}
-              href="https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--page"
+              href="https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--docs"
             >
               Get Started
             </HvButton>
