@@ -252,7 +252,6 @@ export const HvSlider = (props: HvSliderProps) => {
         stepValue,
         markDigits,
         !!disabled,
-        sliderStyles,
         formatMark
       ),
     [
@@ -330,9 +329,9 @@ export const HvSlider = (props: HvSliderProps) => {
 
   const rangesCount = knobProperties.length - 1;
 
-  const trackStyles = createTrackStyles(knobProperties, sliderStyles);
+  const trackStyles = createTrackStyles(knobProperties);
 
-  const knobStyles = createKnobStyles(knobProperties, sliderStyles);
+  const knobStyles = createKnobStyles(knobProperties);
 
   const performValidation = useCallback(() => {
     let invalid: boolean = false;

@@ -6,7 +6,7 @@ import validationStates from "@core/components/Forms/FormElement/validationState
 import { HvFormStatus } from "@core/components/Forms";
 
 import { HvKnobProperty, HvMarkProperty } from "./types";
-import { SliderStyles } from "./Slider.styles";
+import { sliderStyles as styles } from "./Slider.styles";
 
 /**
  * Transform the scaled values into knobs positions.
@@ -133,7 +133,6 @@ export const createMark = (
   stepValue: number,
   markDigits: number,
   disabled: boolean,
-  styles: SliderStyles,
   formatMark: (label: React.ReactNode) => React.ReactNode = (mark) => mark
 ): {
   [key: number]: {
@@ -207,8 +206,7 @@ export const createMark = (
  * @memberof HvSlider
  */
 export const createTrackStyles = (
-  knobProperties: HvKnobProperty[],
-  styles: SliderStyles
+  knobProperties: HvKnobProperty[]
 ): CSSProperties[] => {
   const trackStyles: CSSProperties[] = [];
 
@@ -234,8 +232,7 @@ export const createTrackStyles = (
  * @memberof HvSlider
  */
 export const createKnobStyles = (
-  knobProperties: HvKnobProperty[],
-  styles: SliderStyles
+  knobProperties: HvKnobProperty[]
 ): {
   knobInner: CSSProperties[];
   knobOuterStyle: CSSProperties[];

@@ -58,28 +58,15 @@ const border: CSSProperties = {
   left: "-4px",
 };
 
-export interface SliderStyles {
-  disabledMark: CSSProperties;
-  mark: CSSProperties;
-  dotDisabled: CSSProperties;
-  dot: CSSProperties;
-  knobInner: CSSProperties;
-  knobOuter: CSSProperties;
-  knobHidden: CSSProperties;
-  knobHiddenLast: CSSProperties;
-  track: CSSProperties;
-  rail: CSSProperties;
-}
-
-export const sliderStyles: SliderStyles = {
+export const sliderStyles = {
   mark: {
-    ...(theme.typography.caption1 as CSSProperties),
+    ...theme.typography.caption1,
     fontFamily: theme.fontFamily.body,
     top: "-2px",
     zIndex: -1,
   },
   disabledMark: {
-    ...(theme.typography.caption1 as CSSProperties),
+    ...theme.typography.caption1,
     fontFamily: theme.fontFamily.body,
     color: `${theme.colors.secondary_60}`,
     cursor: "not-allowed",
@@ -131,10 +118,10 @@ export const sliderStyles: SliderStyles = {
     marginTop: "-1px",
   },
   rail: { backgroundColor: theme.colors.atmo4, height: "1px", zIndex: "-3" },
-};
+} satisfies Record<string, CSSProperties>;
 
 export const { staticClasses, useClasses } = createClasses("HvSlider", {
-  sliderBase: { ...(base as CSSProperties) },
+  sliderBase: { ...base },
   rootDisabled: {
     cursor: "not-allowed",
     "&& .rc-slider-disabled": {
