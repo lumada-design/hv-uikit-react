@@ -29,7 +29,7 @@
 - **Accessible**: UI Kit follows WAI-ARIA standards for all components.
 - **Themeable**: Use Next Design System or customize it to match your design needs.
 
-Check the [project status](https://lumada-design.github.io/uikit/master/?path=/docs/overview-project-status--page) so you can stay up-to-date on the project development, available packages, components status and supported versions.
+Check the [project status](https://lumada-design.github.io/uikit/master/?path=/docs/overview-project-status--docs) so you can stay up-to-date on the project development, available packages, components status and supported versions.
 
 ## Installation 🚀
 
@@ -39,7 +39,7 @@ The fastest way to setup a new **NEXT UI Kit** project is by using [`hv-uikit-cl
 npx @hitachivantara/hv-uikit-cli@latest create
 ```
 
-If you're adding UI Kit to an existing project, please follow our [Get Started](https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--page) guide for more information. If you're migrating from an older UI Kit version, please follow the [Migration Guides](https://lumada-design.github.io/uikit/master/?path=/docs/overview-migration-from-v4-x--page).
+If you're adding UI Kit to an existing project, please follow our [Get Started](https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--docs) guide for more information. If you're migrating from an older UI Kit version, please follow the [Migration Guides](https://lumada-design.github.io/uikit/master/?path=/docs/overview-migration-from-v4-x--docs).
 
 ## Documentation
 
