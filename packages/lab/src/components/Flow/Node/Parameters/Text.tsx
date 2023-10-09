@@ -18,7 +18,13 @@ const Text = ({ nodeId, param, data }) => {
     setText(val);
   };
 
-  return <HvInput value={text} onChange={(evt, val) => onTextChange(val)} />;
+  return (
+    <HvInput
+      label={param.label}
+      value={text}
+      onChange={(evt, val) => onTextChange(val)}
+    />
+  );
 };
 
 export default Text;

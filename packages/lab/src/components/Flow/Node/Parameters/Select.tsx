@@ -20,6 +20,7 @@ const Select = ({ nodeId, param, data }) => {
 
   return (
     <HvDropdown
+      label={param.label}
       values={param.options?.map((o) => {
         return { id: o, label: o, selected: o === option };
       })}

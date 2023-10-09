@@ -21,7 +21,6 @@ const ParamRenderer = ({ nodeId, params, data }: ParamRendererProps) => {
         if (Renderer) {
           return (
             <div key={idx}>
-              <span>{param.label}</span>
               <Renderer nodeId={nodeId} param={param} data={data} />
             </div>
           );
