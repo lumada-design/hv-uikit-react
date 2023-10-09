@@ -1,3 +1,5 @@
+import type { CSSInterpolation } from "@emotion/serialize";
+
 export default {
   "& .rc-slider": {
     position: "relative",
@@ -7,11 +9,11 @@ export default {
     borderRadius: "6px",
     touchAction: "none",
     boxSizing: "border-box",
-    "-webkit-tap-highlight-color": "rgba(0, 0, 0, 0)",
+    WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
   },
   "& .rc-slider *": {
     boxSizing: "border-box",
-    "-webkit-tap-highlight-color": "rgba(0, 0, 0, 0)",
+    WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
   },
   "& .rc-slider-rail": {
     position: "absolute",
@@ -34,8 +36,6 @@ export default {
     backgroundColor: "#fff",
     border: "solid 2px #96dbfa",
     borderRadius: "50%",
-    // cursor: "pointer",
-    // cursor: "-webkit-grab",
     cursor: "grab",
     opacity: 0.8,
     touchAction: "pan-x",
@@ -63,7 +63,6 @@ export default {
   "& .rc-slider-handle:active": {
     borderColor: "#57c5f7",
     boxShadow: "0 0 5px #57c5f7",
-    // cursor: "-webkit-grabbing",
     cursor: "grabbing",
   },
   "& .rc-slider-mark": {
@@ -209,11 +208,11 @@ export default {
     left: "-9999px",
     visibility: "visible",
     boxSizing: "border-box",
-    "-webkit-tap-highlight-color": "rgba(0, 0, 0, 0)",
+    WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
   },
   "& .rc-slider-tooltip *": {
     boxSizing: "border-box",
-    "-webkit-tap-highlight-color": "rgba(0, 0, 0, 0)",
+    WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
   },
   "& .rc-slider-tooltip-hidden": {
     display: "none",
@@ -248,4 +247,4 @@ export default {
     borderWidth: "4px 4px 0",
     borderTopColor: "#6c6c6c",
   },
-};
+} satisfies CSSInterpolation;
