@@ -133,7 +133,7 @@ export type HvThemeComponents = {
     backgroundColorOpacity: number;
   };
   colorPicker: {
-    hueDirection: string;
+    hueDirection: "vertical" | "horizontal";
   };
   snackbar: {
     actionButtonVariant: string;
