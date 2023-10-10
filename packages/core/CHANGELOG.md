@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.28.1 (2023-10-10)
+
+### Bug Fixes
+
+- **Slider:** emotion styles prefix ([b6a6286](https://github.com/lumada-design/hv-uikit-react/commit/b6a62861f7d25b56e2010a33660a75ddd2eca5d6))
+
 # [5.28.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.27.10...@hitachivantara/uikit-react-core@5.28.0) (2023-09-28)
 
 ### Features
