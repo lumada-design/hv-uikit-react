@@ -51,6 +51,7 @@ export const { staticClasses, useClasses } = createClasses(
       display: "-webkit-box",
       "-webkit-line-clamp": "2",
       "-webkit-box-orient": "vertical",
+      textWrap: "balance",
 
       color: "inherit",
     },
