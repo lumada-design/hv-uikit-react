@@ -46,8 +46,11 @@ export const { staticClasses, useClasses } = createClasses(
       textAlign: "left",
 
       overflow: "hidden",
-      whiteSpace: "nowrap",
+      whiteSpace: "normal",
       textOverflow: "ellipsis",
+      display: "-webkit-box",
+      "-webkit-line-clamp": "2",
+      "-webkit-box-orient": "vertical",
 
       color: "inherit",
     },
