@@ -41,7 +41,7 @@ export const Rule = (props: RuleProps) => {
     disabled,
     isInvalid,
     classes: classesProp,
-  } = useDefaultProps("Rule", props);
+  } = useDefaultProps("HvQueryBuilderRule", props);
   const { classes, cx } = useClasses(classesProp);
 
   const context = useContext(QueryBuilderContext);

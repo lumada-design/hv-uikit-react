@@ -32,7 +32,11 @@ export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
     width: "232px",
   },
   colorPickerIcon: {},
-  recommendedColorsRoot: {},
+  recommendedColorsRoot: {
+    ":not(:only-child)": {
+      paddingBottom: "24px",
+    },
+  },
   dropdownRootIconOnly: {
     width: 32,
     height: 32,

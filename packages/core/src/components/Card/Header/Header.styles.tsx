@@ -9,10 +9,13 @@ export const { staticClasses, useClasses } = createClasses("HvCardHeader", {
     marginRight: "30px",
   },
   title: {
+    ...theme.typography.label,
     fontFamily: theme.fontFamily.body,
   },
   subheader: {
+    ...theme.typography.caption1,
     fontFamily: theme.fontFamily.body,
+    color: theme.colors.secondary,
   },
   content: {},
   action: {

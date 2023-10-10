@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import {
@@ -7,17 +6,12 @@ import {
 } from "@mui/material";
 
 import { Close } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvBaseProps } from "@core/types/generic";
 import { withTooltip } from "@core/hocs/withTooltip";
-import { hexToRgbA } from "@core/utils/hexToRgbA";
 import { setId } from "@core/utils/setId";
-import { checkValidHexColorValue } from "@core/utils/checkValidHexColorValue";
 import { ExtractNames } from "@core/utils/classes";
-import { getVarValue } from "@core/utils/theme";
 import { HvButton } from "@core/components/Button";
-import { useTheme } from "@core/hooks/useTheme";
 
 import { staticClasses, useClasses } from "./Drawer.styles";
 
@@ -72,10 +66,6 @@ export interface HvDrawerProps
   component?: MuiDrawerProps["component"];
 }
 
-const getBackgroundColor = (color: string) => {
-  return checkValidHexColorValue(color) ? hexToRgbA(color, 0.8) : color;
-};
-
 /**
  * The Drawer component provides a foundation to create a sliding pane.
  * It only provides the pane with a close button, the rest of the
@@ -94,38 +84,13 @@ export const HvDrawer = (props: HvDrawerProps) => {
     ...others
   } = useDefaultProps("HvDrawer", props);
 
-  const { classes, css, cx } = useClasses(classesProp);
-  const { colors, activeTheme, rootId } = useTheme();
-
-  const [backgroundColorValue, setBackgroundColorValue] = useState<string>(
-    getVarValue(theme.drawer.backDropBackgroundColor, rootId) || ""
-  );
+  const { classes, cx } = useClasses(classesProp);
 
   const closeButtonDisplay = () => <Close role="none" />;
 
   const CloseButtonTooltipWrapper = buttonTitle
     ? withTooltip(closeButtonDisplay, buttonTitle, "top")
     : closeButtonDisplay;
-
-  const [backgroundColor, setBackgroundColor] = useState(
-    getBackgroundColor(backgroundColorValue)
-  );
-
-  useEffect(() => {
-    setBackgroundColorValue(
-      getVarValue(theme.drawer.backDropBackgroundColor, rootId) ||
-        activeTheme?.drawer.backDropBackgroundColor ||
-        ""
-    );
-
-    setBackgroundColor(getBackgroundColor(backgroundColorValue));
-  }, [
-    colors,
-    backgroundColorValue,
-    setBackgroundColor,
-    rootId,
-    activeTheme?.drawer.backDropBackgroundColor,
-  ]);
 
   return (
     <MuiDrawer
@@ -136,11 +101,6 @@ export const HvDrawer = (props: HvDrawerProps) => {
       PaperProps={{
         classes: {
           root: classes.paper,
-        },
-      }}
-      BackdropProps={{
-        classes: {
-          root: cx(css({ backgroundColor }), classes.background),
         },
       }}
       onClose={onClose}

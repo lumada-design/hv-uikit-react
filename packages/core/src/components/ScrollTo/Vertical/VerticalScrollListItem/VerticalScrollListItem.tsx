@@ -6,6 +6,7 @@ import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { useTheme } from "@core/hooks/useTheme";
 
+import { useDefaultProps } from "@core/hooks";
 import { staticClasses, useClasses } from "./VerticalScrollListItem.styles";
 
 export { staticClasses as verticalScrollListItemClasses };
@@ -33,17 +34,20 @@ export interface HvVerticalScrollListItemProps extends HvBaseProps {
 /**
  * HvVerticalScrollListItem a focusable item to be used as part of the vertical scroll
  */
-export const HvVerticalScrollListItem = ({
-  id,
-  className,
-  classes: classesProp,
-  selected,
-  "aria-label": ariaLabel,
-  onClick,
-  onKeyDown,
-  tooltipWrapper,
-  ...others
-}: HvVerticalScrollListItemProps) => {
+export const HvVerticalScrollListItem = (
+  props: HvVerticalScrollListItemProps
+) => {
+  const {
+    id,
+    className,
+    classes: classesProp,
+    selected,
+    "aria-label": ariaLabel,
+    onClick,
+    onKeyDown,
+    tooltipWrapper,
+    ...others
+  } = useDefaultProps("HvVerticalScrollListItem", props);
   const { classes, cx } = useClasses(classesProp);
   const { activeTheme } = useTheme();
 

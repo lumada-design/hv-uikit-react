@@ -5,6 +5,7 @@ import { HvListContainer, HvListItem } from "@core/components/ListContainer";
 import { HvOverflowTooltip } from "@core/components/OverflowTooltip";
 
 import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "@core/hooks";
 import { NavigationData } from "../VerticalNavigationContext";
 
 import { staticClasses, useClasses } from "./NavigationSlider.styles";
@@ -55,15 +56,18 @@ export interface HvVerticalNavigationSliderProps {
   forwardButtonAriaLabel?: string;
 }
 
-export const HvVerticalNavigationSlider = ({
-  id,
-  classes: classesProp,
-  data,
-  selected,
-  onNavigateToTarget,
-  onNavigateToChild,
-  forwardButtonAriaLabel = "Navigate to submenu",
-}: HvVerticalNavigationSliderProps) => {
+export const HvVerticalNavigationSlider = (
+  props: HvVerticalNavigationSliderProps
+) => {
+  const {
+    id,
+    classes: classesProp,
+    data,
+    selected,
+    onNavigateToTarget,
+    onNavigateToChild,
+    forwardButtonAriaLabel = "Navigate to submenu",
+  } = useDefaultProps("HvVerticalNavigationSlider", props);
   const { classes } = useClasses(classesProp);
 
   return (

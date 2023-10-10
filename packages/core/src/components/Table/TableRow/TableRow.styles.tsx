@@ -53,39 +53,23 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
   variantList: {
     // only applied on custom `display`
     marginBottom: theme.space.xs,
-    borderRadius: theme.table.rowListBorderRadius,
+    borderRadius: theme.radii.round,
 
-    ...getBorderStyles(
-      "row",
-      theme.table.rowListBorderColor,
-      theme.table.rowListBorderRadius
-    ),
+    ...getBorderStyles(theme.colors.atmo4, theme.radii.round),
     backgroundColor: theme.colors.atmo1,
     "&$selected": {
-      ...getBorderStyles(
-        "row",
-        theme.colors.secondary,
-        theme.table.rowListBorderRadius
-      ),
+      ...getBorderStyles(theme.colors.secondary, theme.radii.round),
 
       "&:hover": {
-        ...getBorderStyles(
-          "row",
-          theme.table.rowHoverBorderColor,
-          theme.table.rowListBorderRadius
-        ),
+        ...getBorderStyles(theme.colors.atmo4, theme.radii.round),
       },
     },
 
     "&:hover": {
-      ...getBorderStyles(
-        "row",
-        theme.table.rowHoverBorderColor,
-        theme.table.rowListBorderRadius
-      ),
+      ...getBorderStyles(theme.colors.atmo4, theme.radii.round),
     },
     "&.HvIsFocused": {
-      borderRadius: theme.table.rowListBorderRadius,
+      borderRadius: theme.radii.round,
     },
   },
   /** Styles applied to the component root when its table variant is list. */

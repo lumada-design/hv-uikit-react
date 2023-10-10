@@ -11,4 +11,5 @@ export const { staticClasses, useClasses } = createClasses("HvDialog-Title", {
     // 32px is the icon width
     marginRight: `calc(32px + ${theme.space.xs})`,
   },
+  titleText: {},
 });

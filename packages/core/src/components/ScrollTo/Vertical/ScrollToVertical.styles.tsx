@@ -13,7 +13,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     listStyleType: "none",
     flexWrap: "wrap",
     flexDirection: "column",
-    backdropFilter: `blur(${theme.scrollTo.backgroundColorBlur})`,
+    backdropFilter: `blur(4px)`,
   },
   positionAbsolute: {
     width: "32px",

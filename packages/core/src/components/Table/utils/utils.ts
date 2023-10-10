@@ -1,10 +1,4 @@
-import { theme } from "@hitachivantara/uikit-styles";
-
-export const getBorderStyles = (
-  type: "row",
-  color = theme.table.rowBorderColor,
-  rowBorderRadius = theme.table.rowBorderRadius
-) => {
+export const getBorderStyles = (color: string, rowBorderRadius: string) => {
   return {
     "& td": {
       borderTop: `1px solid ${color}`,

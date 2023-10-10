@@ -6,7 +6,7 @@ import { createClasses } from "@core/utils/classes";
 
 const selected = () => ({
   background: theme.colors.atmo3,
-  borderLeft: theme.verticalNavigation.activeBorderLeft,
+  borderLeft: `4px solid ${theme.colors.secondary}`,
   "& *": {
     background: theme.colors.atmo3,
   },
@@ -48,7 +48,7 @@ export const { staticClasses, useClasses } = createClasses(
       justifyContent: "flex-start",
       alignItems: "center",
       height: "32px",
-      borderLeft: theme.verticalNavigation.inactiveBorderLeft,
+      borderLeft: `4px solid transparent`,
       paddingRight: theme.space.xs,
       "&$minimized": {
         justifyContent: "center",

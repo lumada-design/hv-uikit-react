@@ -20,9 +20,9 @@ export const { staticClasses, useClasses } = createClasses(name, {
       backgroundColor: "transparent",
 
       "& $notSelected": {
-        height: theme.scrollTo.dotHoverSize,
-        width: theme.scrollTo.dotHoverSize,
-        backgroundColor: theme.scrollTo.dotHoverColor,
+        height: "16px",
+        width: "16px",
+        backgroundColor: theme.colors.secondary,
       },
 
       "& $notSelectedRoot": {

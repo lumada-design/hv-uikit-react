@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import { colors } from "../tokens/colors";
 import { makeTheme } from "../makeTheme";
 
@@ -229,12 +228,6 @@ const ds3 = makeTheme((theme) => ({
       textDecoration: "underline",
     },
   },
-  border: {
-    // border: `1px solid ${theme.colors.atmo4}`,
-    width: "1px",
-    color: theme.colors.atmo4,
-    style: "solid",
-  },
   components: {
     HvActionBar: {
       classes: {
@@ -332,21 +325,21 @@ const ds3 = makeTheme((theme) => ({
           "& &.HvBaseInput-inputRootMultiline": {
             "& &.HvBaseInput-input": {
               border: `1px solid transparent`,
-              backgroundColor: theme.colors.atmo3,
+              backgroundColor: theme.colors.atmo1,
             },
           },
 
           "&:hover &.HvBaseInput-inputRootMultiline": {
             "& &.HvBaseInput-input": {
               border: `1px solid transparent`,
-              backgroundColor: theme.colors.atmo3,
+              backgroundColor: theme.colors.atmo1,
             },
           },
 
           "&:focus-within &.HvBaseInput-inputRootMultiline": {
             "& &.HvBaseInput-input": {
               border: `1px solid transparent`,
-              backgroundColor: theme.colors.atmo3,
+              backgroundColor: theme.colors.atmo1,
             },
           },
         },
@@ -407,15 +400,24 @@ const ds3 = makeTheme((theme) => ({
     HvBaseSwitch: {
       classes: {
         root: {
+          width: "32px",
+          height: "16px",
           borderRadius: "0px",
           "&:hover": {
             backgroundColor: "transparent",
           },
         },
+        switch: {
+          width: "32px",
+          height: "16px",
+        },
+        switchBase: {
+          width: "32px",
+          height: "16px",
+        },
         track: {
           backgroundColor: theme.colors.atmo2,
         },
-        thumb: {},
       },
     },
     HvBulkActions: {
@@ -427,7 +429,7 @@ const ds3 = makeTheme((theme) => ({
         },
         semantic: {
           backgroundColor: theme.colors.neutral_20,
-          "& HvBulkActions-selectAll div": {
+          "& .HvBulkActions-selectAll div": {
             color: theme.colors.base_dark,
 
             "& *": {
@@ -500,6 +502,16 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvCardHeader: {
+      classes: {
+        title: {
+          ...theme.typography.title3,
+        },
+        subheader: {
+          ...theme.typography.body,
+        },
+      },
+    },
     HvCarousel: {
       classes: {
         xs: {
@@ -544,6 +556,14 @@ const ds3 = makeTheme((theme) => ({
         },
         colorPicker: {
           width: "205px",
+        },
+        headerColorValue: {
+          ...theme.typography.body,
+        },
+        recommendedColorsRoot: {
+          ":not(:only-child)": {
+            paddingBottom: "20px",
+          },
         },
       },
     },
@@ -651,6 +671,7 @@ const ds3 = makeTheme((theme) => ({
     HvDatePicker: {
       classes: {
         inputText: {
+          ...theme.typography.body,
           color: theme.colors.secondary_60,
         },
       },
@@ -659,6 +680,13 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         paper: {
           borderRadius: "0",
+        },
+      },
+    },
+    HvDialogTitle: {
+      classes: {
+        titleText: {
+          ...theme.typography.xxsTitle,
         },
       },
     },
@@ -690,6 +718,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         titleContainer: {
           marginTop: "2px",
+          ...theme.typography.xxsTitle,
         },
       },
     },
@@ -782,33 +811,63 @@ const ds3 = makeTheme((theme) => ({
           backgroundColor: "transparent",
           paddingLeft: "0px",
         },
+        sectionName: {
+          ...theme.typography.sectionTitle,
+        },
       },
     },
     HvHeader: {
       classes: {
         root: {
+          backgroundColor: theme.colors.atmo1,
           borderTop: `4px solid ${theme.colors.brand}`,
         },
       },
     },
-    Bar: {
+    HvHeaderMenuBarBar: {
       classes: {
-        menu: {
-          height: "40px",
+        active: {
+          top: `calc(${theme.header.height} - 4px)`,
+        },
+        list: {
+          "& li:hover > .HvHeader-MenuBar-hidden": {
+            top: `calc(${theme.header.height} - 4px)`,
+          },
+          "& li:focus-within > .HvHeader-MenuBar-hidden": {
+            top: `calc(${theme.header.height} - 4px)`,
+          },
         },
       },
     },
     HvHeaderMenuItem: {
       classes: {
-        root: {},
-
+        menu: {
+          marginTop: "2px",
+          paddingBottom: "0px",
+          paddingTop: "0px",
+          borderTop: `2px solid ${theme.colors.atmo2}`,
+          borderBottom: "none",
+        },
+        menubar: {
+          marginTop: "2px",
+          paddingBottom: "0px",
+          paddingTop: "0px",
+          borderTop: `2px solid ${theme.colors.atmo1}`,
+          borderBottom: "none",
+        },
         selected: {
           "&.HvHeader-MenuItem-menu": {
+            borderTop: "2px solid transparent",
+            borderBottom: "none",
+            paddingTop: "0px",
             "& > * > span": {
               color: theme.colors.brand,
             },
           },
           "&.HvHeader-MenuItem-menubar": {
+            borderTop: `2px solid ${theme.colors.brand}`,
+            borderBottom: "none",
+            paddingTop: "0px",
             "& > * > span": {
               color: theme.colors.brand,
             },
@@ -823,25 +882,66 @@ const ds3 = makeTheme((theme) => ({
           borderBottom: "2px solid transparent",
           "&:hover": {
             backgroundColor: theme.colors.atmo3,
+
+            "& .HvHorizontalScrollListItem-notSelected": {
+              height: "10px",
+              width: "10px",
+              backgroundColor: theme.colors.atmo4,
+            },
           },
         },
-        text: css({
+        text: {
           height: "32px",
           borderBottom: "2px solid transparent",
           "& p": {
             padding: "8px 10px",
             maxWidth: "180px",
           },
-        }),
-        selected: css({
+        },
+        selected: {
           borderBottom: `2px solid ${theme.colors.secondary}`,
-        }),
+        },
+      },
+    },
+    HvVerticalScrollListItem: {
+      classes: {
+        notSelected: {
+          height: "6px",
+          width: "6px",
+          backgroundColor: theme.colors.atmo4,
+        },
+        text: {
+          height: "32px",
+          width: "32px",
+        },
+        button: {
+          height: "32px",
+          width: "32px",
+          borderRadius: "0%",
+          cursor: "pointer",
+          "&:hover": {
+            "& .HvVerticalScrollListItem-notSelected": {
+              height: "10px",
+              width: "10px",
+              backgroundColor: theme.colors.atmo4,
+            },
+          },
+        },
       },
     },
     HvInlineEditor: {
       classes: {
         button: {
           border: "none",
+          "&:hover": {
+            border: "none",
+          },
+          "&:focus": {
+            border: "none",
+          },
+          "&:active": {
+            border: "none",
+          },
         },
       },
     },
@@ -889,7 +989,9 @@ const ds3 = makeTheme((theme) => ({
           paddingBottom: `calc(${theme.space.sm} * 3)`,
         },
         subGroup: {
-          left: "-42px",
+          "&::before": {
+            left: "-42px",
+          },
         },
         subRulesContainer: {
           left: "-41px",
@@ -901,7 +1003,7 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
-    Rule: {
+    HvQueryBuilderRule: {
       classes: {
         root: {
           "&::before": {
@@ -934,9 +1036,58 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         notSelectedRoot: {
           display: "none",
+          height: "32px",
+          width: "32px",
+          borderRadius: "0%",
+        },
+        notSelected: {
+          height: "6px",
+          width: "6px",
+          backgroundColor: theme.colors.atmo4,
         },
         selected: {
           display: "none",
+          height: "32px",
+          width: "32px",
+        },
+      },
+    },
+    HvSlider: {
+      classes: {
+        trackDragging: {
+          "&& .rc-slider-track": {
+            "&::before": {
+              borderTop: `12px solid ${theme.colors.atmo3}`,
+              borderBottom: `12px solid ${theme.colors.atmo3}`,
+            },
+          },
+        },
+        trackStandBy: {
+          "&& .rc-slider-track": {
+            "&:hover": {
+              "&::before": {
+                borderTop: `12px solid ${theme.colors.atmo3}`,
+                borderBottom: `12px solid ${theme.colors.atmo3}`,
+              },
+            },
+          },
+        },
+        handleContainer: {
+          "&& .rc-slider-handle": {
+            "&:active": {
+              cursor: "grab",
+              "&::before": {
+                border: `9px solid ${theme.colors.secondary}`,
+                opacity: "20%",
+              },
+            },
+            "&:hover": {
+              "&::before": {
+                border: `9px solid ${theme.colors.secondary}`,
+                opacity: "20%",
+              },
+            },
+          },
         },
       },
     },
@@ -979,8 +1130,7 @@ const ds3 = makeTheme((theme) => ({
         readOnly: {
           "& .HvTagsInput-tagsList": {
             backgroundColor: theme.colors.atmo1,
-            border: `1px solid ${theme.colors.atmo1}`,
-
+            border: `1px solid transparent`,
             "&:hover": {
               border: `1px solid transparent`,
             },
@@ -1004,6 +1154,12 @@ const ds3 = makeTheme((theme) => ({
         head: {
           borderTop: `1px solid ${theme.colors.atmo4}`,
         },
+        variantListactions: {
+          borderLeft: `solid 2px ${theme.colors.atmo2}`,
+        },
+        variantListcheckbox: {
+          borderRight: `solid 2px ${theme.colors.atmo2}`,
+        },
       },
     },
     HvTableHeader: {
@@ -1025,6 +1181,9 @@ const ds3 = makeTheme((theme) => ({
               },
             },
           },
+          "*:first-of-type > &": {
+            borderTop: `1px solid ${theme.colors.atmo4}`,
+          },
         },
         sortButton: {
           ".HvTableHeader-root.HvTableHeader-sortable &": {
@@ -1043,9 +1202,79 @@ const ds3 = makeTheme((theme) => ({
         selected: {
           backgroundColor: theme.colors.atmo1,
         },
+        variantList: {
+          borderRadius: 0,
+          "& td": {
+            borderTop: "1px solid transparent",
+            borderBottom: "1px solid transparent",
+          },
+          "& td:first-of-type": {
+            borderLeft: "1px solid transparent",
+            borderRadius: 0,
+          },
+          "& td:last-of-type": {
+            borderRight: "1px solid transparent",
+            borderRadius: 0,
+          },
+          "&.HvTableRow-selected": {
+            "& td": {
+              borderTop: `1px solid ${theme.colors.secondary}`,
+              borderBottom: `1px solid ${theme.colors.secondary}`,
+            },
+            "& td:first-of-type": {
+              borderLeft: `1px solid ${theme.colors.secondary}`,
+              borderRadius: 0,
+            },
+            "& td:last-of-type": {
+              borderRight: `1px solid ${theme.colors.secondary}`,
+              borderRadius: 0,
+            },
+
+            "&:hover": {
+              "& td": {
+                borderTop: `1px solid ${theme.colors.atmo4}`,
+                borderBottom: `1px solid ${theme.colors.atmo4}`,
+              },
+              "& td:first-of-type": {
+                borderLeft: `1px solid ${theme.colors.atmo4}`,
+                borderRadius: 0,
+              },
+              "& td:last-of-type": {
+                borderRight: `1px solid ${theme.colors.atmo4}`,
+                borderRadius: 0,
+              },
+            },
+          },
+
+          "&:hover": {
+            "& td": {
+              borderTop: `1px solid ${theme.colors.atmo4}`,
+              borderBottom: `1px solid ${theme.colors.atmo4}`,
+            },
+            "& td:first-of-type": {
+              borderLeft: `1px solid ${theme.colors.atmo4}`,
+              borderRadius: 0,
+            },
+            "& td:last-of-type": {
+              borderRight: `1px solid ${theme.colors.atmo4}`,
+              borderRadius: 0,
+            },
+          },
+          "&.HvIsFocused": {
+            borderRadius: 0,
+          },
+        },
       },
     },
-    HvTooltip: {},
+    HvTooltip: {
+      classes: {
+        popper: {
+          "& .HvTooltip-tooltip": {
+            borderRadius: "0px",
+          },
+        },
+      },
+    },
     HvVerticalNavigation: {
       classes: {
         root: {
@@ -1060,6 +1289,26 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvVerticalNavigationSlider: {
+      classes: {
+        root: {
+          borderLeft: `2px solid transparent`,
+        },
+        listItemSelected: {
+          borderLeft: `2px solid ${theme.colors.brand}`,
+        },
+      },
+    },
+    HvVerticalNavigationTreeViewItem: {
+      classes: {
+        content: {
+          borderLeft: `2px solid transparent`,
+          ".HvVerticalNavigationTreeViewItem-selected>&": {
+            borderLeft: `2px solid ${theme.colors.brand}`,
+          },
+        },
+      },
+    },
     HvWizardContainer: {
       classes: {
         paper: {
@@ -1068,73 +1317,19 @@ const ds3 = makeTheme((theme) => ({
       },
     },
   },
-  dropdown: {
-    placeholderColor: theme.colors.secondary_60,
-  },
   header: {
     height: "44px",
-    backgroundColor: theme.colors.atmo1,
-    secondLevelBackgroundColor: theme.colors.atmo2,
-    borderTopThickness: "4px",
-    selectedItemBackgroundColor: "transparent",
-    selectedItemBorderTopColor: theme.colors.brand,
-    selectedItemBorderTopThickness: "2px",
-    selectedItemBorderBottomColor: "transparent",
-    selectedItemBorderBottomThickness: "0px",
-    secondLevelSelectedItemBorderTopColor: "transparent",
-    secondLevelSelectedItemBorderTopThickness: "2px",
-    secondLevelSelectedItemBorderBottomColor: "transparent",
-    secondLevelSelectedItemBorderBottomThickness: "0px",
-    shadow: theme.colors.shadow,
-  },
-  card: {
-    titleVariant: "title3",
-    subheaderVariant: "body",
-    subheaderColor: theme.colors.secondary,
-  },
-  dialog: {
-    titleVariant: "xxsTitle",
-  },
-  baseSwitch: {
-    padding: 0,
-    height: "16px",
-    width: "32px",
+    secondLevelHeight: "40px",
   },
   bulkActions: {
     actionButtonVariant: "semantic",
   },
   table: {
-    headerBorderTopColor: theme.colors.atmo4,
-    rowBorderColor: "transparent",
-    rowBorderRadius: "0px",
-    rowListBorderRadius: "0px",
-    rowListBorderColor: "transparent",
     rowStripedBackgroundColorEven: theme.colors.atmo1,
     rowStripedBackgroundColorOdd: "transparent",
     rowExpandBackgroundColor: theme.colors.atmo2,
-    rowHoverBorderColor: theme.colors.atmo4,
     rowSortedColor: theme.colors.atmo1,
     rowSortedColorAlpha: "0.4",
-    cellListBorder: `solid 2px ${theme.colors.atmo2}`,
-    cellBorder: `solid 1px ${theme.colors.atmo4}`,
-  },
-  globalActions: {
-    sectionVariant: "sectionTitle",
-  },
-  emptyState: {
-    titleVariant: "xxsTitle",
-  },
-  tooltip: {
-    borderRadius: "0px",
-  },
-  verticalNavigation: {
-    activeBorderLeft: `2px solid ${theme.colors.brand}`,
-    inactiveBorderLeft: `2px solid transparent`,
-  },
-  slider: {
-    dragBarColor: theme.colors.atmo3,
-    ringColor: theme.colors.secondary,
-    ringOpacity: "20%",
   },
   stepNavigation: {
     separatorMargin: "0px",
@@ -1145,38 +1340,12 @@ const ds3 = makeTheme((theme) => ({
     applyButtonVariant: "secondaryGhost",
     cancelButtonVariant: "secondaryGhost",
   },
-  datePicker: {
-    placeholderVariant: "body",
-  },
   scrollTo: {
-    dotRootSize: "32px",
-    dotRootRadius: "0%",
-    dotHoverBackgroundColor: theme.colors.atmo3,
-    dotHoverColor: theme.colors.atmo4,
-    dotHoverSize: "10px",
-    dotNotSelectedColor: theme.colors.atmo4,
-    dotNotSelectedSize: "6px",
     dotSelectedSize: 10,
     backgroundColorOpacity: 0.8,
-    backgroundColorBlur: "4px",
-  },
-  queryBuilder: {
-    border: `1px solid ${theme.colors.atmo4}`,
   },
   colorPicker: {
-    inputValueVariant: "body",
-    recommendedColorsBottomPadding: "20px",
-  },
-  drawer: {
-    backDropBackgroundColor: theme.colors.atmo4,
-  },
-  forms: {
-    infoMessage: {
-      textColor: theme.colors.secondary,
-    },
-    label: {
-      fontWeight: theme.fontWeights.semibold,
-    },
+    hueDirection: "vertical",
   },
   snackbar: {
     actionButtonVariant: "secondaryGhost",

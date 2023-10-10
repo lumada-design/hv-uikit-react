@@ -22,7 +22,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
 
     "*:first-of-type > &": {
       height: "var(--first-row-cell-height)",
-      borderTop: `1px solid ${theme.table.headerBorderTopColor}`,
+      borderTop: "1px solid transparent",
     },
 
     "&$variantList": {

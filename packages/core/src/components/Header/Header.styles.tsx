@@ -5,7 +5,7 @@ import { createClasses } from "@core/utils/classes";
 export const { staticClasses, useClasses } = createClasses("HvHeader", {
   root: {
     height: theme.header.height,
-    backgroundColor: theme.header.backgroundColor,
+    backgroundColor: theme.colors.atmo1,
     display: "flex",
     flexDirection: "column",
     width: "100%",
@@ -13,8 +13,8 @@ export const { staticClasses, useClasses } = createClasses("HvHeader", {
     flexShrink: 0,
     zIndex: theme.zIndices.banner,
     color: theme.colors.atmo1,
-    boxShadow: theme.header.shadow,
-    borderTop: `${theme.header.borderTopThickness} solid transparent`,
+    boxShadow: theme.colors.shadow,
+    borderTop: "none",
   },
   header: {
     display: "flex",
@@ -22,7 +22,7 @@ export const { staticClasses, useClasses } = createClasses("HvHeader", {
     width: "100%",
     height: "100%",
     padding: `0 ${theme.space.sm}`,
-    boxShadow: theme.header.shadow,
+    boxShadow: theme.colors.shadow,
     "& > *:not(nav)": {
       zIndex: 2,
     },

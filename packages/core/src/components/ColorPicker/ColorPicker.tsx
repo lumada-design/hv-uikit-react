@@ -6,7 +6,6 @@ import { ColorState } from "react-color";
 import { useControlled } from "@core/hooks/useControlled";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useLabels } from "@core/hooks/useLabels";
-import { useTheme } from "@core/hooks/useTheme";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { HvTypography } from "@core/components/Typography";
@@ -155,7 +154,6 @@ export const HvColorPicker = (props: HvColorPickerProps) => {
   } = useDefaultProps("HvColorPicker", props);
 
   const { classes, css, cx } = useClasses(classesProp);
-  const { activeTheme } = useTheme();
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
@@ -275,7 +273,7 @@ export const HvColorPicker = (props: HvColorPickerProps) => {
               />
               <HvTypography
                 className={classes.headerColorValue}
-                variant={activeTheme?.colorPicker.inputValueVariant}
+                variant="label"
               >
                 {color}
               </HvTypography>
@@ -300,14 +298,7 @@ export const HvColorPicker = (props: HvColorPickerProps) => {
           <div className={classes.colorPicker}>
             {recommendedColorsPosition === "top" && (
               <PresetColors
-                className={cx(
-                  (showCustomColors || showSavedColors) &&
-                    css({
-                      paddingBottom:
-                        activeTheme?.colorPicker.recommendedColorsBottomPadding,
-                    }),
-                  classes.recommendedColorsRoot
-                )}
+                className={classes.recommendedColorsRoot}
                 colors={recommendedColors}
                 onClick={handleSelect}
                 title={showLabels ? labels?.recommendedColorsLabel : undefined}

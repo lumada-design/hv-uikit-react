@@ -171,38 +171,10 @@ const ds5 = makeTheme((theme) => ({
       textDecoration: "underline",
     },
   },
-  border: {
-    // `1px solid ${theme.colors.atmo4}`,
-    width: "1px",
-    color: theme.colors.secondary_80,
-    style: "solid",
-  },
   components: {},
-  dropdown: {
-    placeholderColor: theme.colors.secondary_80,
-  },
   header: {
     height: "64px",
-    backgroundColor: theme.colors.atmo1,
-    secondLevelBackgroundColor: theme.colors.atmo2,
-    borderTopThickness: "0px",
-    selectedItemBorderTopColor: "transparent",
-    selectedItemBorderTopThickness: "0px",
-    selectedItemBorderBottomColor: theme.colors.secondary,
-    selectedItemBorderBottomThickness: "4px",
-    secondLevelSelectedItemBorderTopColor: "transparent",
-    secondLevelSelectedItemBorderTopThickness: "0px",
-    secondLevelSelectedItemBorderBottomColor: theme.colors.secondary,
-    secondLevelSelectedItemBorderBottomThickness: "4px",
-    shadow: theme.colors.shadow,
-  },
-  card: {
-    titleVariant: "label",
-    subheaderVariant: "caption1",
-    subheaderColor: theme.colors.secondary,
-  },
-  dialog: {
-    titleVariant: "title4",
+    secondLevelHeight: "56px",
   },
   baseSwitch: {
     padding: 0,
@@ -213,37 +185,11 @@ const ds5 = makeTheme((theme) => ({
     actionButtonVariant: "primaryGhost",
   },
   table: {
-    headerBorderTopColor: "transparent",
-    rowBorderColor: theme.colors.atmo4,
-    rowBorderRadius: theme.radii.base,
-    rowListBorderRadius: theme.radii.round,
-    rowListBorderColor: theme.colors.atmo4,
     rowStripedBackgroundColorEven: theme.colors.atmo1,
     rowStripedBackgroundColorOdd: "transparent",
     rowExpandBackgroundColor: theme.colors.atmo2,
-    rowHoverBorderColor: theme.colors.atmo4,
     rowSortedColor: theme.colors.primary,
     rowSortedColorAlpha: "0.1",
-    cellListBorder: "none",
-    cellBorder: `solid 1px ${theme.colors.atmo4}`,
-  },
-  globalActions: {
-    sectionVariant: "title4",
-  },
-  emptyState: {
-    titleVariant: "title4",
-  },
-  tooltip: {
-    borderRadius: theme.radii.round,
-  },
-  verticalNavigation: {
-    activeBorderLeft: `4px solid ${theme.colors.secondary}`,
-    inactiveBorderLeft: `4px solid transparent`,
-  },
-  slider: {
-    dragBarColor: theme.colors.primary_20,
-    ringColor: theme.colors.primary_20,
-    ringOpacity: "100%",
   },
   stepNavigation: {
     separatorMargin: "4px",
@@ -254,38 +200,12 @@ const ds5 = makeTheme((theme) => ({
     applyButtonVariant: "primary",
     cancelButtonVariant: "secondarySubtle",
   },
-  datePicker: {
-    placeholderVariant: "label",
-  },
   scrollTo: {
-    dotRootSize: "16px",
-    dotRootRadius: "50%",
-    dotHoverBackgroundColor: theme.colors.primary_20,
-    dotHoverColor: theme.colors.secondary,
-    dotHoverSize: "6px",
-    dotNotSelectedColor: theme.colors.secondary_60,
-    dotNotSelectedSize: "4px",
     dotSelectedSize: 6,
     backgroundColorOpacity: 0.9,
-    backgroundColorBlur: "4px",
-  },
-  queryBuilder: {
-    border: `1px solid ${theme.colors.atmo4}`,
   },
   colorPicker: {
-    inputValueVariant: "label",
-    recommendedColorsBottomPadding: "24px",
-  },
-  drawer: {
-    backDropBackgroundColor: theme.colors.atmo4,
-  },
-  forms: {
-    infoMessage: {
-      textColor: theme.colors.secondary_80,
-    },
-    label: {
-      fontWeight: theme.fontWeights.normal,
-    },
+    hueDirection: "horizontal",
   },
   snackbar: {
     actionButtonVariant: "secondarySubtle",

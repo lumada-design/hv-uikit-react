@@ -29,8 +29,8 @@ export const { useClasses, staticClasses } = createClasses(
         width: "17px",
         height: "39px",
 
-        borderBottom: theme.queryBuilder.border,
-        borderLeft: theme.queryBuilder.border,
+        borderBottom: `1px solid ${theme.colors.atmo4}`,
+        borderLeft: `1px solid ${theme.colors.atmo4}`,
 
         top: 0,
         left: `calc( -1 * 17px)`,
@@ -43,7 +43,7 @@ export const { useClasses, staticClasses } = createClasses(
         width: "17px",
         height: "100%",
 
-        borderLeft: theme.queryBuilder.border,
+        borderLeft: `1px solid ${theme.colors.atmo4}`,
 
         top: 0,
         left: `calc( -1 * 17px)`,

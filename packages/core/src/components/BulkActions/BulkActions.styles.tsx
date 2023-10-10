@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
     alignItems: "center",
     border: `1px solid ${theme.colors.atmo4}`,
     backgroundColor: theme.colors.atmo2,
-    padding: `${theme.space.xs} ${theme.space.md}`,
+    padding: theme.spacing("xs", "md"),
     marginBottom: theme.space.xs,
   },
   semantic: {

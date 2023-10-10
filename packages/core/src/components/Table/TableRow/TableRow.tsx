@@ -9,6 +9,7 @@ import { getVarValue } from "@core/utils/theme";
 import { HvBaseProps } from "@core/types/generic";
 import { useTheme } from "@core/hooks/useTheme";
 
+import { useDefaultProps } from "@core/hooks";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableRow.styles";
@@ -55,7 +56,7 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
       expanded = false,
       striped = false,
       ...others
-    } = props;
+    } = useDefaultProps("HvTableRow", props);
     const { classes, cx, css } = useClasses(classesProp);
     const { colors, rootId } = useTheme();
     const tableContext = useContext(TableContext);

@@ -7,7 +7,6 @@ import { HvTypography } from "@core/components/Typography";
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { iconVariant } from "@core/utils/iconVariant";
-import { useTheme } from "@core/hooks/useTheme";
 
 import { staticClasses, useClasses } from "./Title.styles";
 
@@ -48,8 +47,6 @@ export const HvDialogTitle = (props: HvDialogTitleProps) => {
 
   const { classes, css, cx } = useClasses(classesProp);
 
-  const { activeTheme } = useTheme();
-
   const isString = typeof children === "string";
 
   const { fullscreen } = others as any;
@@ -74,7 +71,7 @@ export const HvDialogTitle = (props: HvDialogTitleProps) => {
         <div className={cx({ [classes.textWithIcon]: !!icon })}>
           {!isString && children}
           {isString && (
-            <HvTypography variant={activeTheme?.dialog.titleVariant}>
+            <HvTypography variant="title4" className={classes.titleText}>
               {children}
             </HvTypography>
           )}

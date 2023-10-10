@@ -7,7 +7,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { useControlled } from "@core/hooks/useControlled";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useLabels } from "@core/hooks/useLabels";
-import { useTheme } from "@core/hooks/useTheme";
+import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { useSavedState } from "@core/utils/useSavedState";
@@ -231,8 +231,6 @@ export const HvDatePicker = (props: HvDatePickerProps) => {
 
   const focusTarget = useRef<HTMLDivElement>(null);
 
-  const { activeTheme } = useTheme();
-
   useEffect(() => {
     setStartDate(rangeMode ? startValue : value, true);
     setEndDate(endValue, true);
@@ -428,7 +426,7 @@ export const HvDatePicker = (props: HvDatePickerProps) => {
       <HvTypography
         color={theme.colors.secondary}
         className={cx(classes.inputText, { [classes.dateText]: dateString })}
-        variant={activeTheme?.datePicker.placeholderVariant}
+        variant="label"
       >
         {(dateString || placeholder) === undefined
           ? ""

@@ -26,7 +26,7 @@ export const Bar = (props: BarProps) => {
     className,
     children,
     classes: classesProp,
-  } = useDefaultProps("Bar", props);
+  } = useDefaultProps("HvHeaderMenuBarBar", props);
   const { classes, cx } = useClasses(classesProp);
 
   const selectionPath = useContext(SelectionContext);

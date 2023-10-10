@@ -55,6 +55,9 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
   name: {
     flexGrow: 1,
   },
+  sectionName: {
+    ...theme.typography.title4,
+  },
   actions: {
     display: "flex",
     alignItems: "center",

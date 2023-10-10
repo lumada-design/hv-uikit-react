@@ -30,8 +30,8 @@ const dragSquare: CSSProperties = {
   top: "-12px",
   content: "''",
   background: "transparent",
-  borderTop: `12px solid ${theme.slider.dragBarColor}`,
-  borderBottom: `12px solid ${theme.slider.dragBarColor}`,
+  borderTop: `12px solid ${theme.colors.primary_20}`,
+  borderBottom: `12px solid ${theme.colors.primary_20}`,
   zIndex: "-2",
 };
 
@@ -39,8 +39,8 @@ const ring: CSSProperties = {
   width: "32px",
   height: "32px",
   borderRadius: "50%",
-  border: `9px solid ${theme.slider.ringColor}`,
-  opacity: theme.slider.ringOpacity,
+  border: `9px solid ${theme.colors.primary_20}`,
+  opacity: "100%",
   content: "''",
   position: "absolute",
   top: "-10px",

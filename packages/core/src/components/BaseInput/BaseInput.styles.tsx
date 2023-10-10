@@ -93,21 +93,21 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     "& $inputRootMultiline": {
       "& $input": {
         border: `1px solid ${theme.colors.secondary_60}`,
-        backgroundColor: theme.colors.atmo2,
+        backgroundColor: "transparent",
       },
     },
 
     "&:hover $inputRootMultiline": {
       "& $input": {
         border: `1px solid ${theme.colors.secondary_60}`,
-        backgroundColor: theme.colors.atmo2,
+        backgroundColor: "transparent",
       },
     },
 
     "&:focus-within $inputRootMultiline": {
       "& $input": {
         border: `1px solid ${theme.colors.secondary_60}`,
-        backgroundColor: theme.colors.atmo2,
+        backgroundColor: "transparent",
       },
     },
   },

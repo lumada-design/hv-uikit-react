@@ -45,6 +45,7 @@ export type ComponentNames =
   | "HvControls"
   | "HvDatePicker"
   | "HvDialog"
+  | "HvDialogTitle"
   | "HvDotPagination"
   | "HvDropdown"
   | "HvDropdownList"
@@ -106,67 +107,17 @@ export type HvThemeComponentsProps = {
 export type HvThemeComponents = {
   header: {
     height: string;
-    backgroundColor: string;
-    secondLevelBackgroundColor: string;
-    borderTopThickness: string;
-    selectedItemBorderTopColor: string;
-    selectedItemBorderTopThickness: string;
-    selectedItemBorderBottomColor: string;
-    selectedItemBorderBottomThickness: string;
-    shadow: string;
-    secondLevelSelectedItemBorderTopColor: string;
-    secondLevelSelectedItemBorderTopThickness: string;
-    secondLevelSelectedItemBorderBottomColor: string;
-    secondLevelSelectedItemBorderBottomThickness: string;
-  };
-  card: {
-    titleVariant: keyof HvThemeTypography["typography"];
-    subheaderVariant: keyof HvThemeTypography["typography"];
-    subheaderColor: string;
-  };
-  dialog: {
-    titleVariant: keyof HvThemeTypography["typography"];
-  };
-  baseSwitch: {
-    padding: number;
-    height: string;
-    width: string;
+    secondLevelHeight: string;
   };
   bulkActions: {
     actionButtonVariant: string;
   };
   table: {
-    headerBorderTopColor: string;
-    rowBorderColor: string;
-    rowBorderRadius: string;
-    rowListBorderRadius: string;
-    rowListBorderColor: string;
     rowStripedBackgroundColorEven: string;
     rowStripedBackgroundColorOdd: string;
     rowExpandBackgroundColor: string;
-    rowHoverBorderColor: string;
     rowSortedColor: string;
     rowSortedColorAlpha: string;
-    cellListBorder: string;
-    cellBorder: string;
-  };
-  globalActions: {
-    sectionVariant: keyof HvThemeTypography["typography"];
-  };
-  emptyState: {
-    titleVariant: keyof HvThemeTypography["typography"];
-  };
-  tooltip: {
-    borderRadius: string;
-  };
-  verticalNavigation: {
-    activeBorderLeft: string;
-    inactiveBorderLeft: string;
-  };
-  slider: {
-    dragBarColor: string;
-    ringColor: string;
-    ringOpacity: string;
   };
   stepNavigation: {
     separatorMargin: string;
@@ -177,38 +128,12 @@ export type HvThemeComponents = {
     applyButtonVariant: string;
     cancelButtonVariant: string;
   };
-  datePicker: {
-    placeholderVariant: keyof HvThemeTypography["typography"];
-  };
   scrollTo: {
-    dotRootSize: string;
-    dotRootRadius: string;
-    dotHoverBackgroundColor: string;
-    dotHoverColor: string;
-    dotHoverSize: string;
-    dotNotSelectedColor: string;
-    dotNotSelectedSize: string;
     dotSelectedSize: number;
     backgroundColorOpacity: number;
-    backgroundColorBlur: string;
-  };
-  queryBuilder: {
-    border: string;
   };
   colorPicker: {
-    inputValueVariant: keyof HvThemeTypography["typography"];
-    recommendedColorsBottomPadding: string;
-  };
-  drawer: {
-    backDropBackgroundColor: CSSProperties["backgroundColor"];
-  };
-  forms: {
-    infoMessage: {
-      textColor: string;
-    };
-    label: {
-      fontWeight: string;
-    };
+    hueDirection: string;
   };
   snackbar: {
     actionButtonVariant: string;

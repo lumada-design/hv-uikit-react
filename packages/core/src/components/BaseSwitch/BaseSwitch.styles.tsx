@@ -5,10 +5,10 @@ import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
   root: {
-    padding: theme.baseSwitch.padding,
+    padding: 0,
     cursor: "pointer",
-    width: theme.baseSwitch.width,
-    height: theme.baseSwitch.height,
+    width: "40px",
+    height: "32px",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: theme.radii.base,
@@ -47,18 +47,18 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     },
   },
   switch: {
-    width: theme.baseSwitch.width,
-    height: theme.baseSwitch.height,
-    padding: theme.baseSwitch.padding,
+    width: "40px",
+    height: "32px",
+    padding: 0,
 
     "&$readOnly $switchBase": {
       cursor: "default",
     },
   },
   switchBase: {
-    width: theme.baseSwitch.width,
-    height: theme.baseSwitch.height,
-    padding: theme.baseSwitch.padding,
+    width: "40px",
+    height: "32px",
+    padding: 0,
   },
   track: {
     opacity: 1,

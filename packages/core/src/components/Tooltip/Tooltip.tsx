@@ -3,7 +3,7 @@ import { forwardRef, ReactElement } from "react";
 import { useTheme } from "@core/hooks/useTheme";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { ExtractNames } from "@core/utils/classes";
-import { popperSx, staticClasses, useClasses } from "./Tooltip.styles";
+import { staticClasses, useClasses } from "./Tooltip.styles";
 
 export { staticClasses as tooltipClasses };
 
@@ -90,7 +90,6 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
       }}
       title={title}
       PopperProps={{
-        sx: popperSx(useSingle),
         container:
           typeof window !== "undefined"
             ? document.getElementById(containerId || rootId || "") ||
