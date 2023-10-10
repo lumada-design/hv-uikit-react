@@ -1,0 +1,468 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+
+<Meta title="Lab/Flow/Usage" />
+
+# Creating flows <a id="creating-flows" />
+
+The NEXT UI Kit Flow component allows users to create dynamic and interactive flow diagrams to visualize, for example, business processes, data workflows or user journeys.
+It leverages the [ReactFlow](https://reactflow.dev/) library under the hood.
+
+This is a lab component, please keep in mind that it can be changed in the future.
+
+Summary:
+
+- [Creating flows](#creating-flows)
+
+  - [Sidebar](#sidebar)
+  - [Layout](#layout)
+    - [Background](#background)
+    - [Controls](#controls)
+    - [Minimap](#minimap)
+  - [Custom nodes and node types](#custom-nodes-and-node-types)
+  - [Inputs and Outputs](#inputs-and-outputs)
+  - [Parameters](#parameters)
+  - [Actions](#actions)
+    - [Default Actions](#default-actions)
+    - [Custom Actions](#custom-actions)
+  - [Advanced Use](#advanced-use)
+    - [Accessing the React Flow instance](#react-flow-instance)
+    - [Saving and exporting data](#saving-and-exporting-data)
+  - [Custom Content](#custom-content)
+
+- [Custom Node Example](#custom-node-example)
+
+To use the `HvFlow` component you'll need to define:
+
+- Node groups
+- Node types
+
+Optionally you can also define:
+
+- Initial nodes
+- Initial edges
+- Default actions that all nodes will have
+
+## Sidebar <a id="sidebar" />
+
+To create the groups of nodes in the sidebar you'll have to create node groups. These should have a set of basic properties:
+
+```typescript
+interface HvFlowNodeGroup {
+  label: string;
+  description?: string;
+  color?: HvColorAny;
+  icon?: React.ReactNode;
+}
+```
+
+Example:
+
+```typescript
+// Node groups
+type NodeGroups = "assets" | "models";
+
+const nodeGroups = {
+  assets: {
+    label: "Assets",
+    color: "cat3_80",
+    description: "This is my description for assets.",
+    icon: <Heart />,
+  },
+  models: {
+    label: "ML Model",
+    color: "cat1_80",
+    description: "This is my description for models.",
+    icon: <Favorite />,
+  },
+} satisfies HvFlowProps<any, NodeType, NodeGroups>["nodeGroups"];
+```
+
+You can then create the sidebar by using the `HvFlowSidebar` component as a prop of the `HvFlow` component:
+
+```tsx
+<HvFlow
+  nodeGroups={nodeGroups}
+  (...)
+  sidebar={
+    <HvFlowSidebar
+      title="Add Node"
+      description="Please choose within the options below"
+      open={open}
+      onClose={() => setOpen(false)}
+    />
+  }
+
+>
+  (...)
+</HvFlow>
+```
+
+## Layout <a id="layout" />
+
+There a few controls that you can add to your flow to control its layout and some functionality. All of these are components that you
+should pass as children of the `HvFlow` component.
+
+### Background <a id="background" />
+
+To add a background to the flow you should use the `<HvFlowBackground />` component. This is a wrapper around the
+[Background](https://reactflow.dev/docs/api/plugin-components/background/) component of `reactflow` and has the same API.
+
+### Controls <a id="controls" />
+
+To add the controls panel to the flow you should use the `<HvFlowControls />` component. This, again, uses the
+[Controls](https://reactflow.dev/docs/api/plugin-components/controls/) component from `reactflow` but you should check [our own
+documentation](./?path=/docs/lab-flow--docs) for the `HvFlowControls` component also.
+
+### Minimap <a id="minimap" />
+
+To add the minimap of the flow, just add the `<HvFlowMinimap />` component as a child of the `HvFlow` component.
+
+## Custom nodes and node types <a id="custom-nodes-and-node-types" />
+
+The `HvFlowNode` component allows you to create your own nodes. It provides a base for your own custom nodes and is not to be used directly as a node on the flow.
+There are a few properties that should be set on your node `meta` property: the label, the list of inputs and outputs and the id of the group it belongs to.
+The parameters are passed as a property of the `HvFlowNode` component.
+
+Example custom node:
+
+```tsx
+import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+
+export const CustomNode = (props) => {
+  return (
+    <HvFlowNode
+      description="CustomNode description"
+      expanded
+      params={[
+        {
+          id: "myParam",
+          label: "Parameter",
+          type: "select",
+          options: ["option 1", "option 2", "option 3"],
+        },
+      ]}
+      {...props}
+    >
+      <div>Node content</div>
+    </HvFlowNode>
+  );
+};
+
+CustomNode.meta = {
+  label: "CustomNode",
+  groupId: "someNodeGroup",
+  inputs: [
+    {
+      label: "Data",
+      isMandatory: true,
+      accepts: ["prediction", "detection"],
+    },
+  ],
+  outputs: [
+    {
+      label: "Insight",
+      isMandatory: true,
+      provides: ["insight"],
+    },
+  ],
+};
+```
+
+### Inputs and Outputs <a id="inputs-and-outputs" />
+
+Nodes need inputs and/or outputs to connect to other nodes. You define inputs and outputs on the `meta` property of the component and it
+follows a specific type:
+
+```typescript
+type HvFlowNodeInput = {
+  label: string;
+  isMandatory?: boolean;
+  accepts?: string[];
+};
+
+type HvFlowNodeOutput = {
+  label: string;
+  isMandatory?: boolean;
+  provides?: string[];
+};
+```
+
+You'll notice that input nodes will have an `accepts` property and the output nodes have a `provides` property. These are used to limit
+how nodes connect to other nodes. These properties can have any array of strings in it and it's used just as a descriptor of what the
+node provides or accepts. So, for example, if a node provides `["data", "config"]` only nodes that accept any of these strings will
+allow a connection from that node.
+
+### Parameters <a id="parameters" />
+
+A node can also have parameters of several types and will be rendered in the node as an element that corresponds to the parameter type.
+The parameters follow the type:
+
+```typescript
+type HvFlowNodeParam = {
+  id: string;
+  type: "text" | "select";
+  label: string;
+  options?: string[];
+  value?: string;
+};
+```
+
+Whenever a change is made on a parameter while using the flow, that change is saved on the node's `data` property in the `reactflow` instance.
+It's saved in the form of:
+
+```typescript
+data: {
+  [paramterId]: [parameterValue]
+}
+```
+
+Current parameter types supported by the `HvFlow` component:
+
+- `text`: renders an input box
+- `select`: renders a dropdown and uses the `options` array to create the dropdown options
+
+## Actions <a id="actions" />
+
+Nodes can have two types of actions: default actions that are a set of pre-defined actions that all nodes share (right now: delete and duplicate)
+and custom actions that are set at the (custom) node level.
+
+### Default actions <a id="default-actions" />
+
+The default actions are passed directly to the `HvFlow` component:
+
+```tsx
+const defaultActions: HvFlowDefaultActions[] = [
+  { id: "delete", label: "Delete", icon: <Delete /> },
+  { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
+];
+
+<HvFlow
+  (...)
+  defaultActions={defaultActions}
+  (...)
+>
+  (...)
+</HvFlow>
+```
+
+The `id` property will be typed to be one of the allowed default actions.
+
+### Custom actions <a id="custom-actions" />
+
+At the node level you can specify other actions. To achieve this you'll have to define:
+
+- a set of actions;
+- a callback to handle these actions;
+- optionally, specify a maximum number of visible actions (the others will be placed in a dropdown menu)
+
+```tsx
+const handleAction = (event: any, id: string, action: any) => {
+  const node: Node | undefined = reactFlowInstance.getNode(id);
+  if (!node) return;
+
+  switch (action.id) {
+    case "details": {
+      console.log("These are the details");
+      break;
+    }
+    case "favorite": {
+      console.log("Add as favorite");
+      break;
+    }
+    default:
+      break;
+  }
+};
+
+<HvFlowNode
+  title="Asset"
+  description="Asset description"
+  expanded
+  maxVisibleActions={1}
+  actions={[
+    {
+      id: "details",
+      label: "View Details",
+      icon: <Search />,
+    },
+
+    {
+      id: "favorite",
+      label: "Add Favorite",
+      icon: <Favorite />,
+    },
+  ]}
+  actionCallback={handleAction}
+  {...props}
+/>;
+```
+
+## Custom Content <a id="custom-content" />
+
+If any of the previous topics are not enough for your use case, you can also pass some custom content to the `HvFlowNode` component:
+
+```tsx
+<HvFlowNode
+  (...)
+>
+  <div>My custom content</div>
+</HvFlowNode>
+```
+
+# Advanced use <a id="advanced-use" />
+
+## Accessing the React Flow instance <a id="react-flow-instance" />
+
+While creating a custom node you might find you need to have access to the node instance to get some details about it and do some operations
+like knowing the parents of the node. We created a custom hook that you can use to get quick access to these properties:
+
+```tsx
+export const Asset = (props) => {
+  const { id } = props;
+  const { node, parentNodes } = useFlowNode(id);
+
+  (...)
+}
+```
+
+While this hook can be updated to include more useful information, we advise you to use the `reactflow` instance directly if you want to do more
+advanced operations:
+
+```tsx
+const instance = useReactFlow();
+```
+
+Alternatively you can directly access the underlying store that `reactflow` uses to access specific parts of the state through selectors:
+
+```tsx
+const nodes = useStore((state) => state.getNodes());
+```
+
+Please check the [React Flow documentation](https://reactflow.dev/docs/api/hooks/use-react-flow/) to get more information,
+specially on the hooks section.
+
+## Saving and exporting data <a id="saving-and-exporting-data" />
+
+Like we mentioned in the [Parameters](#parameters) section, data is saved in the `data` property of the node object in the `reactflow` instance.
+If you need to have more complex use cases for your nodes and need to store data, you should follow the same logic and use the `data` property.
+The `reactflow`instance provides the `setNodes` function to save and update the nodes list.
+
+If you need to export your data at any point you can use the `toObject` function on the `instance` object.
+
+# Custom Node Example <a id="custom-node-example" />
+
+Below you can find a full example of a custom Node that exercises the topics we talked about before:
+
+```tsx
+export const Asset = (props) => {
+  const { id } = props;
+  const [showDialog, setShowDialog] = useState(false);
+  const [details, setDetails] = useState<Node | undefined>();
+  const { node } = useFlowNode(id);
+
+  const classes = {
+    container: css({
+      width: "40%",
+      minHeight: 200,
+    }),
+  };
+
+  const handleAction = (event: any, nodeId: string, action: any) => {
+    if (!node) return;
+
+    switch (action.id) {
+      case "details": {
+        setDetails(node);
+        setShowDialog(true);
+        break;
+      }
+      default:
+        break;
+    }
+  };
+
+  return (
+    <>
+      <HvDialog
+        open={showDialog}
+        onClose={() => setShowDialog(false)}
+        classes={{ paper: classes.container }}
+      >
+        <HvDialogTitle>Asset</HvDialogTitle>
+        <HvDialogContent>{JSON.stringify(details?.data)}</HvDialogContent>
+        <HvDialogActions>
+          <HvButton
+            autoFocus
+            variant="secondaryGhost"
+            onClick={() => setShowDialog(false)}
+          >
+            Close
+          </HvButton>
+        </HvDialogActions>
+      </HvDialog>
+
+      <HvFlowNode
+        title="Asset"
+        description="Asset asset description"
+        expanded
+        maxVisibleActions={1}
+        actions={[
+          {
+            id: "details",
+            label: "View Details",
+            icon: <Search />,
+          },
+
+          {
+            id: "favorite",
+            label: "Add Favorite",
+            icon: <Favorite />,
+          },
+          {
+            id: "flag",
+            label: "Flag",
+            icon: <Flag />,
+          },
+        ]}
+        actionCallback={handleAction}
+        params={[
+          {
+            id: "asset",
+            label: "Asset",
+            type: "select",
+            options: ["Way Side", "Cars"],
+          },
+        ]}
+        {...props}
+      />
+    </>
+  );
+};
+
+Asset.meta = {
+  label: "Asset",
+  groupId: "someNodeGroup",
+  inputs: [
+    {
+      label: "Asset Config",
+      isMandatory: true,
+      accepts: ["assetConfig"],
+    },
+  ],
+  outputs: [
+    {
+      label: "Sensor Group 1",
+      isMandatory: true,
+      provides: ["sensorData"],
+    },
+    {
+      label: "Sensor Group 2",
+      isMandatory: true,
+      provides: ["sensorData"],
+    },
+  ],
+};
+```
+
+You can view other examples of custom nodes by checking
+[our repository](https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories).

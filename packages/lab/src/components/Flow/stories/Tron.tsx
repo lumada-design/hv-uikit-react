@@ -8,13 +8,15 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Favorite, Flag, Search } from "@hitachivantara/uikit-react-icons";
 import { useState } from "react";
-import { Node, useReactFlow } from "reactflow";
+import { Node } from "reactflow";
+import { useFlowNode } from "../hooks/useFlowNode";
 import { HvFlowNode } from "../Node/Node";
 
 export const Tron = (props) => {
+  const { id } = props;
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node | undefined>();
-  const reactFlowInstance = useReactFlow();
+  const { node } = useFlowNode(id);
 
   const classes = {
     container: css({
@@ -23,8 +25,7 @@ export const Tron = (props) => {
     }),
   };
 
-  const handleAction = (event: any, id: string, action: any) => {
-    const node: Node | undefined = reactFlowInstance.getNode(id);
+  const handleAction = (event: any, nodeId: string, action: any) => {
     if (!node) return;
 
     switch (action.id) {
