@@ -15,7 +15,6 @@ export const { staticClasses, useClasses } = createClasses("HvCardHeader", {
   subheader: {
     ...theme.typography.caption1,
     fontFamily: theme.fontFamily.body,
-    color: theme.colors.secondary,
   },
   content: {},
   action: {
