@@ -213,6 +213,7 @@ export const HvFlowNode = ({
                       onClick={(event) => {
                         actionCallback?.(event, node.id, action);
                       }}
+                      aria-label={action.label}
                     >
                       {renderedIcon(action.icon)}
                     </HvButton>
