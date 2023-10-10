@@ -7,7 +7,6 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { useControlled } from "@core/hooks/useControlled";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useLabels } from "@core/hooks/useLabels";
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { useSavedState } from "@core/utils/useSavedState";
