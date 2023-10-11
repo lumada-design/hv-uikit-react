@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.8.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.8.1...@hitachivantara/uikit-react-lab@5.8.2) (2023-10-11)
+
+### Bug Fixes
+
+- **Flow:** add proper label ([effbf77](https://github.com/lumada-design/hv-uikit-react/commit/effbf774c18fbcfbab8e5b63eb2db2ea5860065b))
+
 ## [5.8.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.8.0...@hitachivantara/uikit-react-lab@5.8.1) (2023-10-10)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
