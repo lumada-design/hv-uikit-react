@@ -20,8 +20,8 @@ export const { staticClasses, useClasses } = createClasses(name, {
       backgroundColor: "transparent",
 
       "& $notSelected": {
-        height: "16px",
-        width: "16px",
+        height: "6px",
+        width: "6px",
         backgroundColor: theme.colors.secondary,
       },
 

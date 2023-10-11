@@ -176,11 +176,6 @@ const ds5 = makeTheme((theme) => ({
     height: "64px",
     secondLevelHeight: "56px",
   },
-  baseSwitch: {
-    padding: 0,
-    height: "32px",
-    width: "40px",
-  },
   bulkActions: {
     actionButtonVariant: "primaryGhost",
   },
