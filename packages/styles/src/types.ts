@@ -18,89 +18,10 @@ interface CSSProperties extends CSS.Properties<string | number> {}
 
 export type HvThemeTokens = typeof flattenTokens;
 
-export type ComponentNames =
-  | "HvActionBar"
-  | "HvActionsGeneric"
-  | "HvAppSwitcher"
-  | "HvAppSwitcherAction"
-  | "HvAvatar"
-  | "HvBadge"
-  | "HvBanner"
-  | "HvBaseCheckBox"
-  | "HvBaseDropdown"
-  | "HvBaseInput"
-  | "HvBaseRadio"
-  | "HvBaseSwitch"
-  | "HvBreadCrumb"
-  | "HvBulkActions"
-  | "HvButton"
-  | "HvCalendar"
-  | "HvCalendarCell"
-  | "HvCalendarHeader"
-  | "HvCard"
-  | "HvCarousel"
-  | "HvCheckBox"
-  | "HvColorPicker"
-  | "HvContainer"
-  | "HvControls"
-  | "HvDatePicker"
-  | "HvDialog"
-  | "HvDialogTitle"
-  | "HvDotPagination"
-  | "HvDropdown"
-  | "HvDropdownList"
-  | "HvDropDownMenu"
-  | "HvDropZone"
-  | "HvEmptyState"
-  | "HvFile"
-  | "HvFileList"
-  | "HvFileUploader"
-  | "HvFileUploaderPreview"
-  | "HvFilterGroup"
-  | "HvFilterGroupCounter"
-  | "HvFilterGroupContent"
-  | "HvGlobalActions"
-  | "HvHeader"
-  | "HvHeaderMenuItem"
-  | "HvScrollToHorizontal"
-  | "HvHorizontalScrollListItem"
-  | "HvInfoMessage"
-  | "HvInlineEditor"
-  | "HvLabel"
-  | "HvList"
-  | "HvListItem"
-  | "HvMultiButton"
-  | "HvPaginationSelect"
-  | "HvQueryBuilder"
-  | "Rule"
-  | "HvRadio"
-  | "HvScrollToVertical"
-  | "HvVerticalScrollListItem"
-  | "HvSlider"
-  | "HvSnackbar"
-  | "HvSnackbarContent"
-  | "HvSnackbarProvider"
-  | "HvSwitch"
-  | "HvTab"
-  | "HvTable"
-  | "HvTableCell"
-  | "HvTableHeader"
-  | "HvTableRow"
-  | "HvTooltip"
-  | "HvTagsInput"
-  | "HvVerticalNavigation"
-  | "HvVerticalNavigationActions"
-  | "HvWizardContainer";
-
 /** Theme components props */
-export type HvThemeComponentsProps = {
+export type HvThemeComponentsProps<ComponentNames extends string = string> = {
   /** Component properties to override */
-  components?: Partial<
-    Record<
-      ComponentNames,
-      Record<string, any> | Record<"classes", Record<string, CSSProperties>>
-    >
-  >;
+  components?: Record<ComponentNames, Record<string, any>>;
 };
 
 /** Theme components */

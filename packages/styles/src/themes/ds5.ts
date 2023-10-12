@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { colors } from "../tokens/colors";
 import { makeTheme } from "../makeTheme";
 
@@ -8,14 +9,14 @@ const ds5 = makeTheme((theme) => ({
       dawn: {
         type: "light",
         backgroundColor: colors.light.atmo2,
-        containerBackgroundHover: theme.colors.primary_20,
+        containerBackgroundHover: colors.light.primary_20,
         ...colors.common,
         ...colors.light,
       },
       wicked: {
         type: "dark",
         backgroundColor: colors.dark.atmo2,
-        containerBackgroundHover: theme.colors.primary_20,
+        containerBackgroundHover: colors.dark.primary_20,
         ...colors.common,
         ...colors.dark,
       },
@@ -171,7 +172,10 @@ const ds5 = makeTheme((theme) => ({
       textDecoration: "underline",
     },
   },
-  components: {},
+  components: {} satisfies Record<
+    string,
+    Record<string, any> | { classes?: CSSProperties }
+  >,
   header: {
     height: "64px",
     secondLevelHeight: "56px",

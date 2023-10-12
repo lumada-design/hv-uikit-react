@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { colors } from "../tokens/colors";
 import { makeTheme } from "../makeTheme";
 
@@ -8,7 +9,7 @@ const ds3 = makeTheme((theme) => ({
       dawn: {
         type: "light",
         backgroundColor: "#F0F0F0",
-        containerBackgroundHover: theme.colors.atmo3,
+        containerBackgroundHover: colors.light.atmo3,
         ...colors.common,
         ...colors.light,
         primary_80: "#477DBD",
@@ -31,7 +32,7 @@ const ds3 = makeTheme((theme) => ({
       wicked: {
         type: "dark",
         backgroundColor: colors.dark.atmo2,
-        containerBackgroundHover: theme.colors.atmo3,
+        containerBackgroundHover: colors.dark.atmo3,
         ...colors.common,
         ...colors.dark,
         positive: "#63A621",
@@ -1316,7 +1317,7 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
-  },
+  } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "44px",
     secondLevelHeight: "40px",
