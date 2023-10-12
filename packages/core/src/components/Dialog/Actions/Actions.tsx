@@ -7,6 +7,7 @@ import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 
 import { staticClasses, useClasses } from "./Actions.styles";
+import { useDialogContext } from "../context";
 
 export { staticClasses as dialogActionClasses };
 
@@ -15,7 +16,7 @@ export type HvDialogActionClasses = ExtractNames<typeof useClasses>;
 export interface HvDialogActionsProps
   extends Omit<MuiDialogActionsProps, "classes">,
     HvBaseProps {
-  /** Set the dialog to fullscreen mode. */
+  /** Set the dialog to fullscreen mode. @deprecated set `fullscreen` in `HvDialog` */
   fullscreen?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvDialogActionClasses;
@@ -26,9 +27,11 @@ export const HvDialogActions = (props: HvDialogActionsProps) => {
     classes: classesProp,
     className,
     children,
-    fullscreen = false,
+    fullscreen: fullScreenProp,
     ...others
   } = useDefaultProps("HvDialogActions", props);
+  const context = useDialogContext();
+  const fullscreen = fullScreenProp ?? context.fullscreen;
 
   const { classes, cx } = useClasses(classesProp);
 

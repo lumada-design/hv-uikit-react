@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
@@ -15,6 +15,7 @@ import { useTheme } from "@core/hooks/useTheme";
 import { hexToRgbA } from "@core/utils/hexToRgbA";
 
 import { staticClasses, useClasses } from "./Dialog.styles";
+import { DialogContext } from "./context";
 
 export { staticClasses as dialogClasses };
 
@@ -79,6 +80,8 @@ export const HvDialog = (props: HvDialogProps) => {
     element?.focus();
   }, [firstFocusable]);
 
+  const contextValue = useMemo(() => ({ fullscreen }), [fullscreen]);
+
   return (
     <MuiDialog
       container={
@@ -138,13 +141,9 @@ export const HvDialog = (props: HvDialogProps) => {
           <Close role="none" />
         </HvButton>
       </HvTooltip>
-      {children && typeof children === "object"
-        ? React.Children.map(
-            children,
-            (c: React.ReactNode) =>
-              c && React.cloneElement(c as React.ReactElement, { fullscreen })
-          )
-        : children}
+      <DialogContext.Provider value={contextValue}>
+        {children}
+      </DialogContext.Provider>
     </MuiDialog>
   );
 };
