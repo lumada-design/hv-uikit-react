@@ -6,6 +6,8 @@ import {
   LineChart as LineChartIcon,
   Heart,
   Transformation,
+  Delete,
+  Duplicate,
 } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { useState } from "react";
@@ -16,6 +18,12 @@ import { JsonInput } from "./JsonInput";
 import { LineChart } from "./LineChart";
 import { BarChart } from "./BarChart";
 import { Filter } from "./Filter";
+import { HvFlowDefaultActions } from "../../types";
+
+const defaultActions: HvFlowDefaultActions[] = [
+  { id: "delete", label: "Delete", icon: <Delete /> },
+  { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
+];
 
 export const Visualizations = () => {
   const [open, setOpen] = useState(false);
@@ -180,11 +188,13 @@ export const Visualizations = () => {
           edges={edges}
           nodeTypes={nodeTypes}
           nodeGroups={nodeGroups}
+          defaultActions={defaultActions}
           defaultViewport={{
             zoom: 0.7,
             x: 0,
             y: 0,
           }}
+          defaultEdgeOptions={{ animated: true }}
           sidebar={
             <HvFlowSidebar
               title="Add Node"
