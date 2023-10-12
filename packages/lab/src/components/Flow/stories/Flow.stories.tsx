@@ -36,6 +36,7 @@ import { LineChart } from "./LineChart";
 import { Table } from "./Table";
 import { Dashboard } from "./Dashboard";
 import { HvFlowDefaultActions } from "../types";
+import { Visualizations as VisualizationsStory } from "./Visualizations/Visualizations";
 
 const defaultActions: HvFlowDefaultActions[] = [
   { id: "delete", label: "Delete", icon: <Delete /> },
@@ -385,7 +386,7 @@ export const InitialState: StoryObj<HvFlowProps> = {
   parameters: {
     docs: {
       description: {
-        story: "A Fow with an initial state",
+        story: "A Flow with an initial state",
       },
     },
     eyes: { include: false },
@@ -450,4 +451,17 @@ export const InitialState: StoryObj<HvFlowProps> = {
       </div>
     );
   },
+};
+
+export const Visualizations: StoryObj<HvFlowProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "A Flow with visualizations",
+      },
+    },
+    eyes: { include: false },
+  },
+
+  render: () => <VisualizationsStory />,
 };
