@@ -153,18 +153,10 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
         isSemantic &&
           css({
             [`& .${staticClasses.selectAll} div`]: {
-              color: theme.bulkActions.semanticColor,
-
               "&:hover:not(:disabled)": {
                 backgroundColor: hexToRgbA(baseColor, 0.3),
               },
-
-              "& *": {
-                color: theme.bulkActions.semanticColor,
-                backgroundColor: "transparent",
-              },
             },
-
             [`& .${staticClasses.selectAll}:focus-within div`]: {
               backgroundColor: hexToRgbA(baseColor, 0.3),
             },

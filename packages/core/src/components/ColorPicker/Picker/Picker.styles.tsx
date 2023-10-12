@@ -1,7 +1,5 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { CSSProperties } from "react";
-
 import { createClasses } from "@core/utils/classes";
 
 const name = "HvColorPicker-Picker";
@@ -9,55 +7,54 @@ const name = "HvColorPicker-Picker";
 export const { staticClasses, useClasses } = createClasses(name, {
   pickers: {
     display: "flex",
-    flexDirection: theme.colorPicker
-      .pickersFlexDirection as CSSProperties["flexDirection"],
+    flexDirection: "column",
   },
   saturation: {
-    width: theme.colorPicker.saturationWidth,
-    height: theme.colorPicker.saturationHeight,
-    marginRight: theme.colorPicker.saturationMarginRight,
+    width: "232px",
+    height: "140px",
+    marginRight: "0px",
     position: "relative",
     overflow: "visible",
 
     "& > div": {
-      borderRadius: theme.colorPicker.saturationBorderRadius,
+      borderRadius: theme.radii.base,
 
       "& .saturation-white": {
-        borderRadius: theme.colorPicker.saturationBorderRadius,
+        borderRadius: theme.radii.base,
 
         "& .saturation-black": {
-          borderRadius: theme.colorPicker.saturationBorderRadius,
+          borderRadius: theme.radii.base,
         },
       },
     },
   },
   saturationPointer: {
-    width: theme.colorPicker.saturationPointerWidth,
-    height: theme.colorPicker.saturationPointerHeight,
+    width: "8px",
+    height: "8px",
     boxShadow: `0 0 0 2px #fff, inset 0 0 1px 1px rgba(0,0,0,.3),
             0 0 1px 2px rgba(0,0,0,.4)`,
     borderRadius: "50%",
     transform: "translate(-3px, -3px)",
   },
   hue: {
-    height: theme.colorPicker.hueHeight,
-    width: theme.colorPicker.hueWidth,
+    height: "8px",
+    width: "232px",
     position: "relative",
     overflow: "visible",
-    marginTop: theme.colorPicker.hueMarginTop,
+    marginTop: "18px",
 
     "& .hue-horizontal": {
-      borderRadius: theme.colorPicker.hueBorderRadius,
+      borderRadius: `calc(2*${theme.radii.base})`,
     },
   },
   hueSlider: {
-    width: theme.colorPicker.hueSliderWidth,
-    height: theme.colorPicker.hueSliderHeight,
-    background: theme.colorPicker.hueSliderBackground,
+    width: "12px",
+    height: "12px",
+    background: "transparent",
     boxShadow: "0 0 2px rgb(0 0 0 / 60%)",
-    marginLeft: theme.colorPicker.hueSliderMarginLeft,
-    border: theme.colorPicker.hueSliderBorder,
-    borderRadius: theme.colorPicker.hueSliderBorderRadius,
+    marginLeft: "0px",
+    border: "2px solid #fff",
+    borderRadius: theme.radii.circle,
     transform: "translate(0, -2px)",
   },
   title: {

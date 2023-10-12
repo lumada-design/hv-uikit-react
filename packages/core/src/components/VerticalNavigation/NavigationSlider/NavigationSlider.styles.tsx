@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses(
     root: {
       display: "flex",
       alignItems: "center",
-      borderLeft: theme.verticalNavigation.inactiveBorderLeft,
+      borderLeft: `4px solid transparent`,
       minHeight: "48px",
       marginBottom: "8px",
       "& > button": {
@@ -16,7 +16,7 @@ export const { staticClasses, useClasses } = createClasses(
     },
     listItemSelected: {
       background: theme.colors.atmo3,
-      borderLeft: theme.verticalNavigation.activeBorderLeft,
+      borderLeft: `4px solid ${theme.colors.secondary}`,
       "& *": {
         background: theme.colors.atmo3,
       },

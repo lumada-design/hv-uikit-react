@@ -11,6 +11,6 @@ export const { staticClasses, useClasses } = createClasses(name, {
   },
   partialCounter: {
     display: "inline-block",
-    fontWeight: theme.filterGroup.partialCounterFontWeight,
+    fontWeight: theme.fontWeights.normal,
   },
 });

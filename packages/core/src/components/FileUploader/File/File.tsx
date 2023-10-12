@@ -6,6 +6,7 @@ import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
 import { HvProgressBar } from "@core/components/ProgressBar";
 import { cx } from "@emotion/css";
+import { useDefaultProps } from "@core/hooks";
 import { convertUnits } from "../utils";
 import { staticClasses, useClasses } from "./File.styles";
 
@@ -119,13 +120,14 @@ const getProgressBarWith = ({ size, progress }: HvFileData) => {
   return width;
 };
 
-export const HvFile = ({
-  id,
-  classes: classesProp,
-  data,
-  onFileRemoved,
-  removeFileButtonLabel,
-}: HvFileProps) => {
+export const HvFile = (props: HvFileProps) => {
+  const {
+    id,
+    classes: classesProp,
+    data,
+    onFileRemoved,
+    removeFileButtonLabel,
+  } = useDefaultProps("HvFile", props);
   const { classes } = useClasses(classesProp);
 
   const hasError = data.status === "fail";

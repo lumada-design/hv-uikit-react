@@ -22,7 +22,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
 
     "*:first-of-type > &": {
       height: "var(--first-row-cell-height)",
-      borderTop: `1px solid ${theme.table.headerBorderTopColor}`,
+      borderTop: "1px solid transparent",
     },
 
     "&$variantList": {
@@ -40,14 +40,14 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
       cursor: "pointer",
 
       "&:hover": {
-        backgroundColor: theme.table.headerHoverColor,
+        backgroundColor: "transparent",
 
         "& $sortIcon": {
           visibility: "visible",
         },
       },
       "&:focus-within": {
-        backgroundColor: theme.table.headerHoverColor,
+        backgroundColor: "transparent",
 
         "& $sortIcon": {
           visibility: "visible",
@@ -102,7 +102,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
       boxShadow: "none",
       backgroundColor: "transparent",
       "&:hover": {
-        backgroundColor: theme.table.sortButtonHoverColor,
+        backgroundColor: theme.colors.primary_20,
       },
     },
   },

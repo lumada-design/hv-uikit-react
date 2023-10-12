@@ -6,6 +6,7 @@ import { Preview } from "@hitachivantara/uikit-react-icons";
 
 import { ExtractNames } from "@core/utils/classes";
 
+import { useDefaultProps } from "@core/hooks";
 import { staticClasses, useClasses } from "./Preview.styles";
 
 export { staticClasses as fileUploaderPreviewClasses };
@@ -40,15 +41,16 @@ export interface HvFileUploaderPreviewProps
  * The `HvFileUploaderPreview` component is available to facilitate the styling
  * of the button (when clickable) and the detection of image unloading.
  */
-export const HvFileUploaderPreview = ({
-  className,
-  children,
-  classes: classesProp,
-  disableOverlay = false,
-  onUnload,
-  onClick,
-  ...others
-}: HvFileUploaderPreviewProps) => {
+export const HvFileUploaderPreview = (props: HvFileUploaderPreviewProps) => {
+  const {
+    className,
+    children,
+    classes: classesProp,
+    disableOverlay = false,
+    onUnload,
+    onClick,
+    ...others
+  } = useDefaultProps("HvFileUploaderPreview", props);
   const { classes, cx, css } = useClasses(classesProp);
 
   useEffect(() => {

@@ -1,7 +1,5 @@
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef } from "react";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import styled from "@emotion/styled";
 
 import { Calendar } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -9,7 +7,6 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { useControlled } from "@core/hooks/useControlled";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useLabels } from "@core/hooks/useLabels";
-import { useTheme } from "@core/hooks/useTheme";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { useSavedState } from "@core/utils/useSavedState";
@@ -233,8 +230,6 @@ export const HvDatePicker = (props: HvDatePickerProps) => {
 
   const focusTarget = useRef<HTMLDivElement>(null);
 
-  const { activeTheme } = useTheme();
-
   useEffect(() => {
     setStartDate(rangeMode ? startValue : value, true);
     setEndDate(endValue, true);
@@ -425,27 +420,19 @@ export const HvDatePicker = (props: HvDatePickerProps) => {
     </HvActionBar>
   );
 
-  const styledTypography = (
-    dateString: string,
-    variant: any,
-    text: ReactNode
-  ) => {
-    const StyledTypography = styled(HvTypography)({
-      color: dateString
-        ? theme.colors.secondary
-        : theme.datePicker.dropdownPlaceholderColor,
-    });
-
-    return <StyledTypography variant={variant}>{text}</StyledTypography>;
-  };
-
-  const renderInput = (dateString: string) =>
-    styledTypography(
-      dateString,
-      activeTheme?.datePicker.placeholderVariant,
-      (dateString || placeholder) === undefined ? "" : dateString || placeholder
+  const renderInput = (dateString: string) => {
+    return (
+      <HvTypography
+        color={theme.colors.secondary}
+        className={cx(classes.inputText, { [classes.dateText]: dateString })}
+        variant="label"
+      >
+        {(dateString || placeholder) === undefined
+          ? ""
+          : dateString || placeholder}
+      </HvTypography>
     );
-
+  };
   const dateValue = rangeMode ? { startDate, endDate } : startDate;
 
   const hasLabel = label != null;

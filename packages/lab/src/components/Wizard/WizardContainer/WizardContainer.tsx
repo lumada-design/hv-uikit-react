@@ -5,6 +5,7 @@ import {
   HvBaseProps,
   HvDialog,
   HvDialogProps,
+  useDefaultProps,
 } from "@hitachivantara/uikit-react-core";
 
 import { staticClasses, useClasses } from "./WizardContainer.styles";
@@ -27,14 +28,15 @@ export interface HvWizardContainerProps
   classes?: HvWizardContainerClasses;
 }
 
-export const HvWizardContainer = ({
-  classes: classesProp,
-  className,
-  children,
-  handleClose,
-  open,
-  ...others
-}: HvWizardContainerProps) => {
+export const HvWizardContainer = (props: HvWizardContainerProps) => {
+  const {
+    classes: classesProp,
+    className,
+    children,
+    handleClose,
+    open,
+    ...others
+  } = useDefaultProps("HvWizardContainer", props);
   const { classes } = useClasses(classesProp);
 
   return (

@@ -1,5 +1,3 @@
-import { theme } from "@hitachivantara/uikit-styles";
-
 import { createClasses } from "@core/utils/classes";
 
 const name = "HvColorPicker-Fields";
@@ -8,12 +6,12 @@ export const { staticClasses, useClasses } = createClasses(name, {
   fields: {
     width: "100%",
     display: "flex",
-    paddingTop: theme.colorPicker.fieldsPaddingTop,
-    marginRight: theme.colorPicker.fieldsMarginRight,
+    paddingTop: "18px",
+    marginRight: "0px",
   },
   single: {
-    maxWidth: theme.colorPicker.fieldsRgbWidth,
-    paddingLeft: theme.colorPicker.fieldsRgbPaddingLeft,
+    maxWidth: "50px",
+    paddingLeft: "4px",
     "& input": {
       marginLeft: 5,
       marginRight: 5,
@@ -23,8 +21,8 @@ export const { staticClasses, useClasses } = createClasses(name, {
     },
   },
   double: {
-    maxWidth: theme.colorPicker.fieldsHexWidth,
-    paddingRight: theme.colorPicker.fieldsHexPaddingRight,
+    maxWidth: "82px",
+    paddingRight: "4px",
     "& input": {
       textTransform: "uppercase",
       marginLeft: 5,

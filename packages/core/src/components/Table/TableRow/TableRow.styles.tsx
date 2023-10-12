@@ -8,7 +8,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
   /** Styles applied to the component root class. */
   root: {
     color: "inherit",
-    backgroundColor: theme.table.rowBackgroundColor,
+    backgroundColor: theme.colors.atmo1,
     verticalAlign: "middle",
     outline: 0,
   },
@@ -20,7 +20,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
   footer: {},
   /** Styles applied to the component root when selected. */
   selected: {
-    backgroundColor: theme.table.selectedRowBackgroundColor,
+    backgroundColor: theme.colors.atmo2,
   },
   /** Styles applied to the component root when expanded. */
   expanded: {
@@ -30,55 +30,50 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
     },
   },
   /** Styles applied to the component root when striped. */
-  striped: {},
+  striped: {
+    "&:nth-of-type(even)": {
+      "&:hover": {
+        backgroundColor: theme.colors.containerBackgroundHover,
+      },
+    },
+    "&:nth-of-type(odd)": {
+      "&:hover": {
+        backgroundColor: theme.colors.containerBackgroundHover,
+      },
+    },
+  },
   /** Styles applied to the component root on hover. */
   hover: {
     transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
     "&:hover": {
-      backgroundColor: theme.table.rowHoverColor,
+      backgroundColor: theme.colors.containerBackgroundHover,
     },
   },
   /** Styles applied to the component root when its table variant is list. */
   variantList: {
     // only applied on custom `display`
     marginBottom: theme.space.xs,
-    borderRadius: theme.table.rowListBorderRadius,
+    borderRadius: theme.radii.round,
 
-    ...getBorderStyles(
-      "row",
-      theme.table.rowListBorderColor,
-      theme.table.rowListBorderRadius
-    ),
+    ...getBorderStyles(theme.colors.atmo4, theme.radii.round),
     backgroundColor: theme.colors.atmo1,
     "&$selected": {
-      ...getBorderStyles(
-        "row",
-        theme.colors.secondary,
-        theme.table.rowListBorderRadius
-      ),
+      ...getBorderStyles(theme.colors.secondary, theme.radii.round),
 
       "&:hover": {
-        ...getBorderStyles(
-          "row",
-          theme.table.rowHoverBorderColor,
-          theme.table.rowListBorderRadius
-        ),
+        ...getBorderStyles(theme.colors.atmo4, theme.radii.round),
       },
     },
 
     "&:hover": {
-      ...getBorderStyles(
-        "row",
-        theme.table.rowHoverBorderColor,
-        theme.table.rowListBorderRadius
-      ),
+      ...getBorderStyles(theme.colors.atmo4, theme.radii.round),
     },
     "&.HvIsFocused": {
-      borderRadius: theme.table.rowListBorderRadius,
+      borderRadius: theme.radii.round,
     },
   },
   /** Styles applied to the component root when its table variant is list. */
   variantListHead: {
-    backgroundColor: theme.table.rowListBackgroundColor,
+    backgroundColor: "transparent",
   },
 });

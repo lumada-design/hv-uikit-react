@@ -10,4 +10,5 @@ export const { staticClasses, useClasses } = createClasses("HvHeader-Brand", {
     margin: theme.space.xs,
     backgroundColor: theme.colors.secondary,
   },
+  brandName: {},
 });

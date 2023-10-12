@@ -9,9 +9,9 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   root: {
     verticalAlign: "inherit",
     textAlign: "left",
-    padding: `${theme.table.cellPaddingTop} ${theme.space.xs} ${
-      theme.table.cellPaddingBottom
-    } ${theme.spacing(4)}`,
+    padding: `calc(${theme.space.xs} - 2px ) ${theme.space.xs} calc(${
+      theme.space.xs
+    } - 3px ) ${theme.spacing(4)}`,
     borderBottom: `1px solid ${theme.colors.atmo4}`,
   },
   /** Styles applied to the cell when it's in the table head. */
@@ -20,7 +20,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
     verticalAlign: "top",
 
     backgroundColor: theme.colors.atmo1,
-    borderTop: `1px solid ${theme.table.headerBorderTopColor}`,
+    borderTop: "1px solid transparent",
     borderBottom: `1px solid ${theme.colors.atmo4}`,
     ...(theme.typography.label as CSSProperties),
   },
@@ -66,7 +66,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
     padding: 0,
     width: 32,
     maxWidth: 32,
-    borderRight: theme.table.cellBorder,
+    borderRight: `solid 1px ${theme.colors.atmo4}`,
   },
   /** Styles applied to the component root when its variant is actions */
   variantActions: {
@@ -74,7 +74,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
     padding: 0,
     width: 32,
     maxWidth: 32,
-    borderLeft: theme.table.cellBorder,
+    borderLeft: `solid 1px ${theme.colors.atmo4}`,
   },
   /** Styles applied to the component root when its variant is expand */
   variantExpand: {
@@ -101,7 +101,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   /** Styles applied to the cell when its variant is list and actions. */
   variantListactions: {
     verticalAlign: "middle",
-    borderLeft: theme.table.cellListBorder,
+    borderLeft: "none",
     paddingLeft: "0",
     textAlign: "center",
     width: 130,
@@ -109,7 +109,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   },
   /** Styles applied to the cell when its variant is list and checkbox. */
   variantListcheckbox: {
-    borderRight: theme.table.cellListBorder,
+    borderRight: "none",
     padding: 0,
     textAlign: "center",
     width: 34,
@@ -127,16 +127,16 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   },
   /** Styles applied to the cell when it's part of the last sticky to the left column. */
   stickyColumnMostLeft: {
-    borderRight: theme.table.cellBorder,
+    borderRight: `solid 1px ${theme.colors.atmo4}`,
   },
   /** Styles applied to the cell when it's part of the first right sticky column. */
   stickyColumnLeastRight: {
-    borderLeft: theme.table.cellBorder,
+    borderLeft: `solid 1px ${theme.colors.atmo4}`,
   },
 
   /** Styles applied to the cell when it's part of the first column in the group. */
   groupColumnMostLeft: {
-    borderLeft: theme.table.cellBorder,
+    borderLeft: `solid 1px ${theme.colors.atmo4}`,
 
     "&:first-of-type": {
       borderLeft: 0,
@@ -144,7 +144,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   },
   /** Styles applied to the cell when it's part of the last column in the group. */
   groupColumnMostRight: {
-    borderRight: theme.table.cellBorder,
+    borderRight: `solid 1px ${theme.colors.atmo4}`,
 
     // due to the ":has()" selector not being supported in browsers,
     // this need to be managed with inline styles
@@ -161,7 +161,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
 
   /** Styles applied to the cell when it's part of a resizable column. */
   resizable: {
-    borderRight: theme.table.cellBorder,
+    borderRight: `solid 1px ${theme.colors.atmo4}`,
   },
   /** Styles applied to the cell when it's part of a resizing column. */
   resizing: {

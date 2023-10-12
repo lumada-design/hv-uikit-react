@@ -19,6 +19,7 @@ import { setId } from "@core/utils/setId";
 
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "@core/hooks";
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
 import { DateRangeProp } from "../types";
 import { staticClasses, useClasses } from "./CalendarHeader.styles";
@@ -31,18 +32,19 @@ dayjs.extend(localeData);
 dayjs.extend(localizedFormat);
 dayjs.extend(customParseFormat);
 
-export const HvCalendarHeader = ({
-  id,
-  value,
-  locale = "en-US",
-  classes: classesProp,
-  onChange,
-  showEndDate,
-  showDayOfWeek = false,
-  onFocus,
-  invalidDateLabel = "Invalid Date",
-  ...others
-}: HvCalendarHeaderProps) => {
+export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
+  const {
+    id,
+    value,
+    locale = "en-US",
+    classes: classesProp,
+    onChange,
+    showEndDate,
+    showDayOfWeek = false,
+    onFocus,
+    invalidDateLabel = "Invalid Date",
+    ...others
+  } = useDefaultProps("HvCalendarHeader", props);
   const { classes, cx } = useClasses(classesProp);
 
   const { elementId } = useContext(HvFormElementContext);

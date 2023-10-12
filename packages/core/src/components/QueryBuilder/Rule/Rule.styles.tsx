@@ -26,32 +26,32 @@ export const { useClasses, staticClasses } = createClasses(
         position: "absolute",
         zIndex: 2,
 
-        width: theme.queryBuilder.ruleConnectorHorizontalSize,
-        height: theme.queryBuilder.ruleConnectorHeight,
+        width: "17px",
+        height: "39px",
 
-        borderBottom: theme.queryBuilder.border,
-        borderLeft: theme.queryBuilder.border,
+        borderBottom: `1px solid ${theme.colors.atmo4}`,
+        borderLeft: `1px solid ${theme.colors.atmo4}`,
 
         top: 0,
-        left: theme.queryBuilder.ruleLeftConnectorPosition,
+        left: `calc( -1 * 17px)`,
       },
       [`:not(.${queryBuilderClasses.topRulesContainer})>&:last-child::after`]: {
         content: '""',
         position: "absolute",
         zIndex: 1,
 
-        width: theme.queryBuilder.ruleConnectorHorizontalSize,
+        width: "17px",
         height: "100%",
 
-        borderLeft: theme.queryBuilder.border,
+        borderLeft: `1px solid ${theme.colors.atmo4}`,
 
         top: 0,
-        left: theme.queryBuilder.ruleLeftConnectorPosition,
+        left: `calc( -1 * 17px)`,
       },
     },
     actionsContainer: {
       marginLeft: "auto",
-      marginTop: theme.queryBuilder.actionsContainerMarginTop,
+      marginTop: "24px",
 
       "&>:not(:last-child)": {
         marginRight: theme.space.xs,

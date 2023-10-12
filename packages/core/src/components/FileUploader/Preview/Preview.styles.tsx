@@ -6,8 +6,8 @@ export const { staticClasses, useClasses } = createClasses(
   {
     previewButton: {
       position: "relative",
-      width: theme.fileUploader.preview.buttonSize,
-      height: theme.fileUploader.preview.buttonSize,
+      width: "48px",
+      height: "48px",
       "&:hover *": {
         display: "flex",
       },
@@ -21,9 +21,9 @@ export const { staticClasses, useClasses } = createClasses(
       display: "none",
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: theme.fileUploader.preview.overlayColor,
-      opacity: theme.fileUploader.preview.overlayOpacity,
-      borderRadius: theme.fileUploader.preview.overlayBorderRadius,
+      backgroundColor: theme.colors.primary_20,
+      opacity: "1",
+      borderRadius: theme.radii.base,
     },
   }
 );

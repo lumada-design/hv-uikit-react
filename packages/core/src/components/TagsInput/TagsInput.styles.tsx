@@ -34,7 +34,7 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   },
   disabled: {
     "& $tagsList": {
-      backgroundColor: theme.tagsInput.disabledBackgroundColor,
+      backgroundColor: theme.colors.atmo2,
       border: `1px solid ${theme.colors.atmo4}`,
 
       "&:focus-within, &:hover": {
@@ -44,11 +44,11 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   },
   readOnly: {
     "& $tagsList": {
-      backgroundColor: theme.tagsInput.readOnlyBackgroundColor,
-      border: `1px solid ${theme.tagsInput.readOnlyBorderColor}`,
+      backgroundColor: theme.colors.atmo2,
+      border: `1px solid ${theme.colors.secondary_60}`,
 
       "&:hover": {
-        border: `1px solid ${theme.tagsInput.readOnlyBorderColor}`,
+        border: `1px solid ${theme.colors.secondary_60}`,
       },
     },
   },
@@ -79,12 +79,12 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     flexWrap: "wrap",
 
     backgroundColor: theme.colors.atmo1,
-    border: `1px solid ${theme.tagsInput.borderColor}`,
+    border: `1px solid ${theme.colors.secondary_80}`,
     borderRadius: theme.radii.base,
 
     "&:hover": {
       cursor: "text",
-      border: `1px solid ${theme.tagsInput.hoverColor}`,
+      border: `1px solid ${theme.colors.primary}`,
     },
 
     [`& .${baseInputClasses.inputRoot}`]: {

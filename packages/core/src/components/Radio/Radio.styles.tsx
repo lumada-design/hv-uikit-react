@@ -15,8 +15,8 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     transitionDelay: "0ms",
 
     "&:hover": {
-      backgroundColor: theme.radio.hoverColor,
-      borderRadius: theme.radio.borderRadius,
+      backgroundColor: theme.colors.containerBackgroundHover,
+      borderRadius: theme.radii.base,
     },
   },
   invalidContainer: {

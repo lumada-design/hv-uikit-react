@@ -8,8 +8,8 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
     padding: 0,
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: theme.baseRadio.hoverColor,
-      borderRadius: theme.baseRadio.hoverBorderRadius,
+      backgroundColor: theme.colors.containerBackgroundHover,
+      borderRadius: theme.radii.base,
     },
     borderRadius: 0,
   },

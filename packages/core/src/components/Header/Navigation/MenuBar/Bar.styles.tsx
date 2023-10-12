@@ -3,11 +3,11 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { createClasses } from "@core/utils/classes";
 
 const show = {
-  top: `calc(${theme.header.height} - ${theme.header.borderTopThickness})`,
+  top: theme.header.height,
   transition: ["top"],
-  boxShadow: theme.header.shadow,
+  boxShadow: theme.colors.shadow,
   transitionDuration: "500ms",
-  backgroundColor: theme.header.secondLevelBackgroundColor,
+  backgroundColor: theme.colors.atmo2,
 };
 
 const hide = {
@@ -30,14 +30,14 @@ export const { staticClasses, useClasses } = createClasses("HvHeader-MenuBar", {
     position: "absolute",
     zIndex: -2,
     height: theme.header.secondLevelHeight,
-    backgroundColor: theme.header.secondLevelBackgroundColor,
+    backgroundColor: theme.colors.atmo2,
     "& li > div": {
       marginTop: 0,
     },
   },
   menubar: {
     position: "relative",
-    backgroundColor: theme.header.backgroundColor,
+    backgroundColor: theme.colors.atmo1,
   },
   hidden: { ...hide },
   active: { ...show },

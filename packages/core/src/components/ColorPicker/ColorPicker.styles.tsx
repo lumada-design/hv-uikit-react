@@ -1,5 +1,3 @@
-import { theme } from "@hitachivantara/uikit-styles";
-
 import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
@@ -25,16 +23,20 @@ export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
   },
   panel: {
     width: "100%",
-    minWidth: theme.colorPicker.panelMinWidth,
+    minWidth: "266px",
     display: "flex",
     justifyContent: "center",
-    padding: theme.colorPicker.panelPadding,
+    padding: "16px",
   },
   colorPicker: {
-    width: theme.colorPicker.colorPickerWidth,
+    width: "232px",
   },
   colorPickerIcon: {},
-  recommendedColorsRoot: {},
+  recommendedColorsRoot: {
+    ":not(:only-child)": {
+      paddingBottom: "24px",
+    },
+  },
   dropdownRootIconOnly: {
     width: 32,
     height: 32,

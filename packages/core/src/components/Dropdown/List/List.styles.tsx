@@ -5,9 +5,9 @@ import { createClasses } from "@core/utils/classes";
 export const { staticClasses, useClasses } = createClasses("HvDropdownList", {
   rootList: {},
   dropdownListContainer: {},
-  searchContainer: { marginBottom: theme.dropdown.searchContainerMargin },
+  searchContainer: { marginBottom: theme.space.xs },
   listBorderDown: {},
-  listContainer: { padding: theme.dropdown.listContainerPadding },
+  listContainer: { padding: theme.space.sm },
   selectAllContainer: {},
   selection: {},
   selectAll: {},

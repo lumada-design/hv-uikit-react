@@ -8,7 +8,6 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { HvTypography, HvTypographyProps } from "@core/components/Typography";
-import { useTheme as useHvTheme } from "@core/hooks/useTheme";
 import { ExtractNames } from "@core/utils/classes";
 
 import { staticClasses, useClasses } from "./EmptyState.styles";
@@ -46,8 +45,6 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
   } = useDefaultProps("HvEmptyState", props);
 
   const { classes, cx, css } = useClasses(classesProp);
-
-  const { activeTheme } = useHvTheme();
 
   const muiTheme = useTheme();
 
@@ -91,11 +88,7 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
             upSm && css({ marginLeft: theme.space.xs })
           )}
         >
-          {renderNode(
-            activeTheme?.emptyState.titleVariant,
-            title,
-            classes.titleContainer
-          )}
+          {renderNode("title4", title, classes.titleContainer)}
           {renderNode("body", message, classes.messageContainer)}
           {renderNode("body", action, classes.actionContainer)}
         </div>

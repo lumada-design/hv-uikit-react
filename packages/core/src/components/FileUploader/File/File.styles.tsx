@@ -8,7 +8,7 @@ export const { staticClasses, useClasses } = createClasses("HvFile", {
     top: "-1px",
   },
   progressbarContainer: {
-    height: theme.fileUploader.file.progressHeight,
+    height: "4px",
   },
   progressbarBack: {},
   nameText: {
@@ -29,8 +29,8 @@ export const { staticClasses, useClasses } = createClasses("HvFile", {
   previewContainer: {
     display: "flex",
     margin: `0px ${theme.space.xs}`,
-    width: theme.fileUploader.file.previewContainerSize,
-    height: theme.fileUploader.file.previewContainerSize,
+    width: "48px",
+    height: "48px",
     justifyContent: "center",
     alignItems: "center",
 
@@ -43,8 +43,8 @@ export const { staticClasses, useClasses } = createClasses("HvFile", {
     },
 
     "& img": {
-      width: theme.fileUploader.file.imageSize,
-      height: theme.fileUploader.file.imageSize,
+      width: "40px",
+      height: "40px",
       objectFit: "cover",
       objectPosition: "center",
       alignSelf: "center",

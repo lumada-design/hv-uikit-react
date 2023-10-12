@@ -3,7 +3,7 @@ import { outlineStyles } from "@core/utils/focusUtils";
 import { createClasses } from "@core/utils/classes";
 
 const hover = () => ({
-  background: theme.verticalNavigation.hoverColor,
+  background: theme.colors.containerBackgroundHover,
 });
 
 export const { staticClasses, useClasses } = createClasses(

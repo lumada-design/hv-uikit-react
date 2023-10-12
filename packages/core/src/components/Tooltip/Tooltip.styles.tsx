@@ -6,18 +6,7 @@ export const { staticClasses, useClasses } = createClasses("HvTooltip", {
   root: {},
   tooltip: {},
   tooltipMulti: {},
-  popper: {},
-  title: {},
-  valuesContainer: {},
-  values: {},
-  color: {},
-  separatorColor: {},
-  separator: {},
-  valueWrapper: {},
-});
-
-export const popperSx = (useSingle: boolean) => {
-  return {
+  popper: {
     [`& .${MuitooltipClasses.popper}`]: {
       opacity: 1,
     },
@@ -30,10 +19,6 @@ export const popperSx = (useSingle: boolean) => {
       backgroundColor: theme.colors.atmo1,
       boxShadow: theme.colors.shadow,
       padding: 0,
-      ...(useSingle && {
-        padding: "15px 20px",
-        borderRadius: theme.tooltip.borderRadius,
-      }),
 
       "& p": {
         display: "-webkit-box",
@@ -41,17 +26,16 @@ export const popperSx = (useSingle: boolean) => {
         boxOrient: "vertical",
         textOverflow: "ellipsis",
         overflow: "hidden",
-        ...(useSingle && { wordBreak: "break-word" }),
       },
     },
-    [`& .${staticClasses.title}`]: {
+    "& $title": {
       padding: "15px 20px",
       borderBottom: `3px solid ${theme.colors.atmo2}`,
     },
-    [`& .${staticClasses.valuesContainer}`]: {
+    "& $valuesContainer": {
       padding: theme.space.sm,
     },
-    [`& .${staticClasses.values}`]: {
+    "& $values": {
       display: "flex",
       justifyContent: "space-between",
       paddingBottom: "10px",
@@ -59,17 +43,31 @@ export const popperSx = (useSingle: boolean) => {
         paddingBottom: 0,
       },
     },
-    [`& .${staticClasses.color}`]: {
+    "& $color": {
       width: theme.space.xs,
     },
-    [`& .${staticClasses.separator}`]: {
+    "& $separator": {
       width: theme.space.xs,
     },
-    [`& .${staticClasses.separatorColor}`]: {
+    "& $separatorColor": {
       width: "5px",
     },
-    [`& .${staticClasses.valueWrapper}`]: {
+    "& $valueWrapper": {
       padding: theme.space.sm,
     },
-  };
-};
+    "& $tooltip": {
+      padding: "15px 20px",
+      borderRadius: theme.radii.round,
+      "& p": {
+        wordBreak: "break-word",
+      },
+    },
+  },
+  title: {},
+  valuesContainer: {},
+  values: {},
+  color: {},
+  separatorColor: {},
+  separator: {},
+  valueWrapper: {},
+});

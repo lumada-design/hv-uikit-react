@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 
 import {
   HvBaseDropdown,
@@ -11,21 +11,29 @@ import {
 import { HvPanel } from "@core/components/Panel";
 import { HvListItem, HvListItemProps } from "@core/components/ListContainer";
 
+import { useDefaultProps } from "@core/hooks";
 import { useClasses } from "./Select.styles";
 
 export const Option = ({ ...props }: Partial<HvListItemProps>) => (
   <HvListItem {...props} />
 );
 
-const HvSelect = ({
-  className,
-  classes: classesProp,
-  onChange,
-  disabled,
-  value,
-  children,
-  ...others
-}: any) => {
+export interface HvPaginationSelectProps
+  extends Omit<HvBaseDropdownProps, "onChange"> {
+  onChange: (event: React.SyntheticEvent, val: number) => void;
+  value: number;
+}
+
+const HvSelect = (props: HvPaginationSelectProps) => {
+  const {
+    className,
+    classes: classesProp,
+    onChange,
+    disabled,
+    value,
+    children,
+    ...others
+  } = useDefaultProps("HvPaginationSelect", props);
   const { classes } = useClasses(classesProp);
   const [open, setOpen] = useState(false);
 

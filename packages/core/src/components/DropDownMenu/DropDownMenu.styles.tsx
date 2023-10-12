@@ -25,8 +25,8 @@ export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
     height: 32,
     boxSizing: "border-box",
     padding: 0,
-    borderRadius: theme.dropDownMenu.borderRadius,
-    border: theme.dropDownMenu.borderClosed,
+    borderRadius: theme.radii.base,
+    border: "1px solid transparent",
   },
   /** Styles applied to the icon when selected. */
   iconSelected: {
@@ -42,7 +42,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
     },
 
     borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
-    border: theme.dropDownMenu.borderOpened,
+    border: `1px solid ${theme.colors.secondary_80}`,
   },
   /** Styles applied to the list root. */
   menuListRoot: {},

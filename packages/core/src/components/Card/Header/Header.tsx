@@ -3,9 +3,9 @@ import MuiCardHeader, {
 } from "@mui/material/CardHeader";
 
 import { HvBaseProps } from "@core/types/generic";
-import { useTheme } from "@core/hooks/useTheme";
 import { ExtractNames } from "@core/utils/classes";
 
+import { useDefaultProps } from "@core/hooks";
 import { staticClasses, useClasses } from "./Header.styles";
 
 export { staticClasses as cardHeaderClasses };
@@ -27,17 +27,17 @@ export interface HvCardHeaderProps
   classes?: HvCardHeaderClasses;
 }
 
-export const HvCardHeader = ({
-  classes: classesProp,
-  className,
-  title,
-  subheader,
-  icon,
-  onClick,
-  ...others
-}: HvCardHeaderProps) => {
-  const { activeTheme } = useTheme();
-  const { classes, css, cx } = useClasses(classesProp);
+export const HvCardHeader = (props: HvCardHeaderProps) => {
+  const {
+    classes: classesProp,
+    className,
+    title,
+    subheader,
+    icon,
+    onClick,
+    ...others
+  } = useDefaultProps("HvCardHeader", props);
+  const { classes, cx } = useClasses(classesProp);
 
   return (
     <MuiCardHeader
@@ -47,22 +47,11 @@ export const HvCardHeader = ({
       onClick={onClick}
       className={cx(classes.root, className)}
       classes={{
-        title: cx(
-          css({
-            ...activeTheme?.typography[activeTheme?.card.titleVariant],
-          }),
-          {
-            [classes.titleShort]: icon,
-            [classes.title]: !icon,
-          }
-        ),
-        subheader: cx(
-          css({
-            ...activeTheme?.typography[activeTheme?.card.subheaderVariant],
-            color: activeTheme?.card.subheaderColor,
-          }),
-          classes.subheader
-        ),
+        title: cx({
+          [classes.titleShort]: icon,
+          [classes.title]: !icon,
+        }),
+        subheader: classes.subheader,
         action: classes.action,
         content: classes.content,
       }}

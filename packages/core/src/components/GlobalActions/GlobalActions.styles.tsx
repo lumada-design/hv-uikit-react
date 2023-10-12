@@ -34,8 +34,8 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
-    border: theme.globalActions.border,
-    borderRadius: theme.globalActions.borderRadius,
+    border: `1px solid ${theme.colors.atmo4}`,
+    borderRadius: theme.radii.round,
   },
   globalWrapperComplement: {
     position: "relative",
@@ -45,15 +45,18 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
     width: "100%",
   },
   globalSectionArea: {
-    backgroundColor: theme.globalActions.sectionBackgroundColor,
+    backgroundColor: theme.colors.atmo1,
     borderTop: `1px solid ${theme.colors.atmo4}`,
-    paddingLeft: theme.globalActions.sectionPaddingLeft,
+    paddingLeft: theme.space.sm,
   },
   backButton: {
     marginRight: theme.space.xs,
   },
   name: {
     flexGrow: 1,
+  },
+  sectionName: {
+    ...theme.typography.title4,
   },
   actions: {
     display: "flex",

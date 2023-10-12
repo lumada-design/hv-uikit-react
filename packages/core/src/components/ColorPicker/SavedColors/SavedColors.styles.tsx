@@ -6,9 +6,9 @@ const name = "HvColorPicker-SavedColors";
 
 export const { staticClasses, useClasses } = createClasses(name, {
   addButton: {
-    margin: theme.colorPicker.addSavedColorButtonMargin,
-    width: theme.colorPicker.addSavedColorButtonWidth,
-    height: theme.colorPicker.addSavedColorButtonHeight,
+    margin: "4px",
+    width: "32px",
+    height: "32px",
   },
   root: {
     display: "flex",
@@ -16,17 +16,17 @@ export const { staticClasses, useClasses } = createClasses(name, {
     position: "relative",
     alignItems: "center",
     padding: 0,
-    width: theme.colorPicker.savedColorsWidth,
-    margin: theme.colorPicker.savedColorsMargin,
+    width: "calc(100% + 8px)",
+    margin: "-4px -4px",
   },
   swatchRoot: { position: "relative" },
   swatchWrap: {
-    width: theme.colorPicker.savedColorsSwatchWidth,
-    height: theme.colorPicker.savedColorsSwatchHeight,
-    margin: theme.colorPicker.savedColorsSwatchMargin,
+    width: "32px",
+    height: "32px",
+    margin: "4px",
 
     "& > span > div": {
-      borderRadius: theme.colorPicker.savedColorsSwatchBorderRadius,
+      borderRadius: theme.radii.base,
     },
   },
   removeButtonRoot: {

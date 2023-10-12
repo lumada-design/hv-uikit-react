@@ -50,7 +50,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
       height: 16,
       padding: 0,
       "&:hover": {
-        backgroundColor: theme.button.hoverColor,
+        backgroundColor: theme.colors.containerBackgroundHover,
       },
       "&:focus": {
         ...outlineStyles,

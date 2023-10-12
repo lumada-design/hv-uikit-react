@@ -84,8 +84,9 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     maxDepth = 1,
     labels,
     readOnly = false,
-    classes,
+    classes: classesProp,
   } = useDefaultProps("HvQueryBuilder", props);
+  const { classes } = useClasses(classesProp);
 
   const [pendingAction, askAction] = useState<AskAction>();
   const currentAttributes = useRef<

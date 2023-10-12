@@ -3,7 +3,6 @@ import { useTheme as useMuiTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
 import isString from "lodash/isString";
 import { theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "@core/hooks/useTheme";
 import { HvBaseProps } from "@core/types/generic";
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
@@ -67,7 +66,6 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
     ...others
   } = useDefaultProps("HvGlobalActions", props);
   const muiTheme = useMuiTheme();
-  const { activeTheme } = useTheme();
   const { classes, cx, css } = useClasses(classesProp);
   const isSmDown = useMediaQuery(muiTheme.breakpoints.down("sm"));
   const isUpMd = useMediaQuery(muiTheme.breakpoints.up("md"));
@@ -107,13 +105,11 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
           title
         ) : (
           <HvTypography
-            variant={
-              variant === "global"
-                ? "title3"
-                : activeTheme?.globalActions.sectionVariant
-            }
+            variant="title3"
             component={`h${headingLevelToApply}`}
-            className={classes.name}
+            className={cx(classes.name, {
+              [classes.sectionName]: variant !== "global",
+            })}
           >
             {title}
           </HvTypography>

@@ -1,4 +1,3 @@
-import { theme } from "@hitachivantara/uikit-styles";
 import { createClasses } from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses(
@@ -8,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses(
     paper: {
       width: "80%",
       maxWidth: "80%",
-      maxHeight: `calc(100% - (2 * ${theme.dialog.margin}))`,
+      maxHeight: "calc(100% - (2 * 80px))",
     },
     closeButton: {
       display: "none",

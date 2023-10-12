@@ -9,7 +9,7 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
     padding: theme.space.sm,
     marginTop: 12,
     marginBottom: 32,
-    border: theme.queryBuilder.border,
+    border: `1px solid ${theme.colors.atmo4}`,
   },
   /** Styles applied to the top group container. */
   topGroup: {
@@ -17,7 +17,7 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
     backgroundColor: "transparent",
     maxWidth: "100%",
     minWidth: 740,
-    paddingBottom: theme.queryBuilder.topGroupPaddingBottom,
+    paddingBottom: `calc(${theme.space.md} * 3)`,
   },
   /** Styles applied to the sub group containers. */
   subGroup: {
@@ -33,11 +33,11 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
       width: 21,
       height: 36,
 
-      borderBottom: theme.queryBuilder.border,
-      borderLeft: theme.queryBuilder.border,
+      borderBottom: `1px solid ${theme.colors.atmo4}`,
+      borderLeft: `1px solid ${theme.colors.atmo4}`,
 
       top: -38,
-      left: theme.queryBuilder.ruleSubGroupLeftConnectorPosition,
+      left: -38,
     },
     ":not($topRulesContainer)>&:last-child::after": {
       content: '""',
@@ -47,7 +47,7 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
       width: 32,
       height: "100%",
 
-      borderLeft: theme.queryBuilder.border,
+      borderLeft: `1px solid ${theme.colors.atmo4}`,
 
       top: 0,
       left: `calc(${theme.space.sm} + 2)`,
@@ -73,13 +73,13 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
   rulesContainer: {},
   /** Styles applied to the sub rules container. */
   subRulesContainer: {
-    borderLeft: theme.queryBuilder.border,
+    borderLeft: `1px solid ${theme.colors.atmo4}`,
     marginLeft: theme.space.sm,
     marginBottom: theme.space.md,
     paddingLeft: theme.space.sm,
     paddingTop: 7,
     position: "relative",
-    left: theme.queryBuilder.ruleSubGroupContainerLeftConnectorPosition,
+    left: -33,
     width: "100%",
   },
   /** Styles applied to the action button container. */
@@ -93,8 +93,8 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
   /** Styles applied to the top action button container. */
   topActionButtonContainer: {
     position: "absolute",
-    bottom: theme.queryBuilder.topActionButtonContainerBottom,
-    right: theme.queryBuilder.topActionButtonContainerRight,
+    bottom: `calc(-1 * ${theme.space.md} * 0.5 - 3px)`,
+    right: `calc(${theme.space.sm} * 1.75 + 2px)`,
   },
   /** Styles applied to the top rules container. */
   topRulesContainer: {},

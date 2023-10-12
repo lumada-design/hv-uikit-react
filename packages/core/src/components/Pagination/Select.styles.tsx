@@ -5,9 +5,9 @@ import { createClasses } from "@core/utils/classes";
 export const { useClasses } = createClasses("HvPaginationSelect", {
   header: {
     backgroundColor: "transparent",
-    borderColor: theme.pagination.pageSizeBorderColor,
+    borderColor: theme.colors.secondary_80,
     "&:hover": {
-      borderColor: theme.pagination.pageSizeHoverBorderColor,
+      borderColor: theme.colors.secondary_80,
     },
   },
   selection: {

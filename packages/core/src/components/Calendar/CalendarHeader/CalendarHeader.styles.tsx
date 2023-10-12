@@ -6,18 +6,14 @@ export const { staticClasses, useClasses } = createClasses("HvCalendarHeader", {
   root: {
     marginTop: theme.spacing("xs"),
     backgroundColor: theme.colors.atmo1,
-    borderBottom: theme.calendar.headerInputBorderBottom,
-    borderTop: theme.calendar.headerInputBorderTop,
-    borderLeft: theme.calendar.headerInputBorderLeft,
-    borderRight: theme.calendar.headerInputBorderRight,
-    borderRadius: theme.calendar.borderRadius,
+    border: `1px solid ${theme.colors.secondary_80}`,
     "&:hover, &:focus": {
       borderBottom: `1px solid ${theme.colors.secondary}`,
     },
   },
   invalid: {},
   headerDayOfWeek: {
-    color: theme.calendar.headerInputFontColor,
+    color: theme.colors.secondary_80,
     paddingLeft: theme.spacing("xs"),
   },
   headerDate: {},
@@ -27,11 +23,10 @@ export const { staticClasses, useClasses } = createClasses("HvCalendarHeader", {
     padding: `5px ${theme.spacing("xs")}`,
     fontFamily: theme.fontFamily.body,
 
-    color: theme.calendar.headerInputFontColor,
-    fontSize: theme.calendar.headerInputFontSize,
-    letterSpacing: theme.calendar.headerInputFontLetterSpacing,
-    lineHeight: theme.calendar.headerInputFontLineHeight,
-    fontWeight: theme.calendar.headerInputFontWeight,
+    color: theme.colors.secondary_80,
+    fontSize: theme.fontSizes.base,
+    lineHeight: theme.lineHeights.base,
+    fontWeight: theme.fontWeights.normal,
     width: "100%",
     "&::placeholder": {
       color: theme.colors.secondary_60,

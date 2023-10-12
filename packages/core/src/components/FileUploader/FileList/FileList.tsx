@@ -2,6 +2,7 @@ import { useUniqueId } from "@core/hooks/useUniqueId";
 import { setId } from "@core/utils/setId";
 
 import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "@core/hooks";
 import { HvFile, HvFileData, HvFileRemovedEvent } from "../File";
 import { staticClasses, useClasses } from "./FileList.styles";
 
@@ -32,13 +33,14 @@ export interface HvFileListProps {
   classes?: HvFileListClasses;
 }
 
-export const HvFileList = ({
-  id,
-  classes: classesProp,
-  list = [],
-  removeFileButtonLabel,
-  onFileRemoved,
-}: HvFileListProps) => {
+export const HvFileList = (props: HvFileListProps) => {
+  const {
+    id,
+    classes: classesProp,
+    list = [],
+    removeFileButtonLabel,
+    onFileRemoved,
+  } = useDefaultProps("HvFileList", props);
   const { classes } = useClasses(classesProp);
 
   const elementId = useUniqueId(id, "hvfilelist");
