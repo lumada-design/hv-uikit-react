@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.13.0 (2023-10-13)
+
+### Features
+
+- **defaultProps:** replace theme variables with classes ([#3701](https://github.com/lumada-design/hv-uikit-react/issues/3701)) ([d84c30d](https://github.com/lumada-design/hv-uikit-react/commit/d84c30dcd97d20d400cdab50a74a3e2a75440e42))
+
 ## [5.12.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.12.0...@hitachivantara/uikit-styles@5.12.1) (2023-09-07)
 
 ### Bug Fixes

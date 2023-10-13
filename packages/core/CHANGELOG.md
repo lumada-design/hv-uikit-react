@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.29.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.28.1...@hitachivantara/uikit-react-core@5.29.0) (2023-10-13)
+
+### Features
+
+- **AppSwitcher:** add text-wrap prop to more readable and visually appealing ([dca5d0c](https://github.com/lumada-design/hv-uikit-react/commit/dca5d0ccf6d14654b09e367dff187859beb825f7))
+- **AppSwitcher:** applications title now displays in two lines before ellipsis ([b44e05a](https://github.com/lumada-design/hv-uikit-react/commit/b44e05a5877e79614962e9dd226c1d5c334d459e))
+- **defaultProps:** replace theme variables with classes ([#3701](https://github.com/lumada-design/hv-uikit-react/issues/3701)) ([d84c30d](https://github.com/lumada-design/hv-uikit-react/commit/d84c30dcd97d20d400cdab50a74a3e2a75440e42))
+
 ## 5.28.1 (2023-10-10)
 
 ### Bug Fixes
