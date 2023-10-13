@@ -3,6 +3,7 @@ import { useState } from "react";
 import {
   HvButton,
   HvGlobalActions,
+  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 import {
@@ -10,6 +11,7 @@ import {
   Backwards,
   Delete,
   Duplicate,
+  Fail,
   Favorite,
   Group,
   Heart,
@@ -28,6 +30,7 @@ import { HvFlowBackground } from "../Background";
 import { HvFlowControls } from "../Controls";
 import { HvFlowMinimap } from "../Minimap";
 import { HvFlowSidebar } from "../Sidebar";
+import { HvFlowEmpty } from "../Empty";
 import { Tron } from "./Tron";
 import { MLModelPrediction } from "./MLModelPrediction";
 import { MLModelDetection } from "./MLModelDetection";
@@ -332,6 +335,23 @@ export const Main: StoryObj<HvFlowProps> = {
       },
     };
 
+    const CustomAction = (
+      <div className={css({ display: "flex", flexDirection: "row" })}>
+        <HvTypography
+          link
+          component="a"
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            setOpen(true);
+          }}
+        >
+          Add nodes
+        </HvTypography>
+        <HvTypography>&nbsp;to start building your flow.</HvTypography>
+      </div>
+    );
+
     return (
       <div className={css(styles.root)}>
         <HvGlobalActions
@@ -372,9 +392,12 @@ export const Main: StoryObj<HvFlowProps> = {
               console.log("Flow updated: ", { nodes: nds, edges: eds })
             }
           >
-            {/* <HvFlowBackground /> */}
             <HvFlowControls />
-            {/* <HvFlowMinimap /> */}
+            <HvFlowEmpty
+              title="Empty Flow"
+              action={CustomAction}
+              icon={<Fail />}
+            />
           </HvFlow>
         </div>
       </div>
@@ -457,7 +480,9 @@ export const Visualizations: StoryObj<HvFlowProps> = {
   parameters: {
     docs: {
       description: {
-        story: "A Flow with visualizations",
+        story: `The HvFlowNode component can take any content as children. In this sample we create visualizations based on the JSON output of the first node.
+        <br /><br />Please refer to the code samples in our repository for more details: <br />
+          https://github.com/lumada-design/hv-uikit-react/blob/master/packages/lab/src/components/Flow/stories/Visualizations/Visualizations.tsx`,
       },
     },
     eyes: { include: false },
