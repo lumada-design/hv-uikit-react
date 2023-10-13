@@ -107,6 +107,7 @@ export const HvDroppableFlow = ({
   onConnect: onConnectProp,
   onNodesChange: onNodesChangeProp,
   onEdgesChange: onEdgesChangeProp,
+  defaultEdgeOptions: defaultEdgeOptionsProp,
   ...others
 }: HvDroppableFlowProps) => {
   const { classes, cx } = useClasses(classesProp);
@@ -235,6 +236,15 @@ export const HvDroppableFlow = ({
 
   const validEdges = validateEdges(edges, nodes, nodeTypes);
 
+  const defaultEdgeOptions = {
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      height: 20,
+      width: 20,
+    },
+    ...defaultEdgeOptionsProp,
+  };
+
   return (
     <div
       id={elementId}
@@ -249,13 +259,7 @@ export const HvDroppableFlow = ({
         onEdgesChange={handleEdgesChange}
         onConnect={handleConnect}
         isValidConnection={isValidConnection}
-        defaultEdgeOptions={{
-          markerEnd: {
-            type: MarkerType.ArrowClosed,
-            height: 20,
-            width: 20,
-          },
-        }}
+        defaultEdgeOptions={defaultEdgeOptions}
         {...others}
       >
         {children}
