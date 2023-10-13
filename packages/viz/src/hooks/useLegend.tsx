@@ -1,15 +1,14 @@
 import { useMemo } from "react";
 
-import type { EChartsOption } from "echarts-for-react/lib/types";
-
 import { getLegendIcon } from "@viz/utils";
 import { HvChartLegend, HvChartLegendIcon } from "@viz/types/legend";
+import { HvEChartsOption } from "@viz/types/common";
 
 interface HvLegendHookProps {
   show?: HvChartLegend["show"];
   direction?: HvChartLegend["direction"];
   position?: HvChartLegend["position"];
-  series?: Pick<EChartsOption, "series.series">;
+  series?: Pick<HvEChartsOption, "series.series">;
   icon?: HvChartLegendIcon;
   formatter?: string | ((value?: string) => string);
 }
@@ -22,7 +21,7 @@ export const useLegend = ({
   position: positionProp,
   direction = "horizontal",
 }: HvLegendHookProps) => {
-  const option = useMemo<Pick<EChartsOption, "legend">>(() => {
+  const option = useMemo<Pick<HvEChartsOption, "legend">>(() => {
     const position: Record<string, string> = { y: positionProp?.y ?? "top" };
     if (positionProp?.x != null && positionProp?.x !== "center") {
       position[positionProp.x] = positionProp.x;

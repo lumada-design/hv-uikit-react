@@ -10,7 +10,11 @@ import { HvChartAxis } from "./axis";
 
 // Note: These types should not be exported at the moment since they can change over time.
 
-/** Props common among all charts.  */
+// The "EChartsOption" type is set as "any" which is not very helpful.
+// This type was created to have something a little bit more specific.
+export type HvEChartsOption = Record<string, any>;
+
+/** Props common among all charts. */
 export interface HvChartCommonProps {
   /** Chart data. */
   data: HvChartData;
@@ -28,6 +32,12 @@ export interface HvChartCommonProps {
   width?: number;
   /** Chart height. */
   height?: number;
+  /**
+   * Callback called when the ECharts option changes.
+   * This prop can be used to customize the option before rendering the chart.
+   * For more information about the ECharts option and the available properties, take a look at their [documentation](https://echarts.apache.org/en/option.html).
+   */
+  onOptionChange?: (option: HvEChartsOption) => HvEChartsOption;
 }
 
 export interface HvChartXAxis extends HvChartAxis {

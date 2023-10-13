@@ -1,85 +1,78 @@
-import { useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
+
+import { useForkRef } from "@mui/material";
 
 import { AriaComponent } from "echarts/components";
 import { CanvasRenderer } from "echarts/renderers";
 import * as echarts from "echarts/core";
-
 import ReactECharts from "echarts-for-react/lib/core";
-import type { EChartsOption } from "echarts-for-react/lib/types";
 
 import { useVizTheme } from "@viz/hooks";
+import { HvEChartsOption } from "@viz/types/common";
 
 // Register chart components
 echarts.use([CanvasRenderer, AriaComponent]);
 
 export interface HvBaseChartProps {
-  options: EChartsOption;
+  /** ECharts option. */
+  option: HvEChartsOption;
+  /** Charts width. */
   width?: echarts.ResizeOpts["width"];
+  /** Charts height. */
   height?: echarts.ResizeOpts["height"];
 }
 
 /**
  * Base chart.
  */
-export const HvBaseChart = ({ options, width, height }: HvBaseChartProps) => {
-  const { theme } = useVizTheme();
+export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
+  (props, ref) => {
+    const { option, width, height } = props;
 
-  const currentTheme = useRef<string | undefined>(theme);
-  const chartRef = useRef<ReactECharts>(null);
-  const isMounted = useRef<boolean>(false);
+    const { theme } = useVizTheme();
 
-  const [initialOption, setInitialOption] = useState<EChartsOption>({
-    aria: {
-      enabled: true,
-    },
-    animation: false,
-    ...options,
-  });
+    const currentTheme = useRef<string | undefined>(theme);
+    const chartRef = useRef<ReactECharts>(null);
+    const isMounted = useRef<boolean>(false);
 
-  useEffect(() => {
-    if (!isMounted.current) {
-      isMounted.current = true;
-      return;
-    }
+    const forkedRef = useForkRef<ReactECharts>(ref, chartRef);
 
-    // when the theme changes echarts destroys the chart and mounts it again
-    // thus we need to reset the initial option
-    if (theme !== currentTheme.current) {
-      setInitialOption({
-        aria: {
-          enabled: true,
-        },
-        animation: false,
-        ...options,
-      });
-      currentTheme.current = theme;
-      return;
-    }
+    const [initialOption, setInitialOption] = useState<HvEChartsOption>(option);
 
-    const instance = chartRef.current?.getEchartsInstance();
-
-    if (!instance) return;
-
-    instance.setOption(
-      {
-        ...options,
-      },
-      {
-        replaceMerge: ["xAxis", "yAxis", "series", "dataset"],
+    useEffect(() => {
+      if (!isMounted.current) {
+        isMounted.current = true;
+        return;
       }
-    );
-  }, [theme, options]);
 
-  return (
-    <ReactECharts
-      ref={chartRef}
-      echarts={echarts}
-      option={initialOption}
-      theme={theme}
-      notMerge
-      {...((width || height) && {
-        style: { width, height },
-      })}
-    />
-  );
-};
+      // when the theme changes echarts destroys the chart and mounts it again
+      // thus we need to reset the initial option
+      if (theme !== currentTheme.current) {
+        setInitialOption(option);
+        currentTheme.current = theme;
+        return;
+      }
+
+      const instance = chartRef.current?.getEchartsInstance();
+
+      if (!instance) return;
+
+      instance.setOption(option, {
+        replaceMerge: ["xAxis", "yAxis", "series", "dataset"],
+      });
+    }, [theme, option]);
+
+    return (
+      <ReactECharts
+        ref={forkedRef}
+        echarts={echarts}
+        option={initialOption}
+        theme={theme}
+        notMerge
+        {...((width || height) && {
+          style: { width, height },
+        })}
+      />
+    );
+  }
+);

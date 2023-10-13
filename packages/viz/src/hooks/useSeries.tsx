@@ -2,7 +2,6 @@ import { useMemo } from "react";
 
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
-import type { EChartsOption } from "echarts-for-react/lib/types";
 import {
   BarSeriesOption,
   LineSeriesOption,
@@ -18,7 +17,11 @@ import {
   HvDonutChartMeasure,
   HvLineChartMeasures,
 } from "@viz/types";
-import { HvAxisChartCommonProps, HvChartCommonProps } from "@viz/types/common";
+import {
+  HvAxisChartCommonProps,
+  HvChartCommonProps,
+  HvEChartsOption,
+} from "@viz/types/common";
 import { BarFullMeasures, LineFullMeasures } from "@viz/types/measures";
 
 interface HvSeriesHookProps {
@@ -52,8 +55,8 @@ export const useSeries = ({
 }: HvSeriesHookProps) => {
   const groupByKey = getGroupKey(groupBy);
 
-  const option: Pick<EChartsOption, "series"> = useMemo<
-    Pick<EChartsOption, "series">
+  const option: Pick<HvEChartsOption, "series"> = useMemo<
+    Pick<HvEChartsOption, "series">
   >(() => {
     return {
       series: data

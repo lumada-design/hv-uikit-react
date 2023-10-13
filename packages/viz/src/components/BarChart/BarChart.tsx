@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-import { Arrayable } from "@hitachivantara/uikit-react-core";
+import { forwardRef } from "react";
 
 import * as echarts from "echarts/core";
 import { BarChart } from "echarts/charts";
@@ -12,6 +10,9 @@ import {
   DataZoomSliderComponent,
   DataZoomInsideComponent,
 } from "echarts/components";
+import ReactECharts from "echarts-for-react/lib/core";
+
+import { Arrayable } from "@hitachivantara/uikit-react-core";
 
 import {
   useXAxis,
@@ -23,6 +24,7 @@ import {
   useSeries,
   useLegend,
   useTooltip,
+  useOption,
   HvChartTooltipClasses,
 } from "@viz/hooks";
 
@@ -57,90 +59,89 @@ export interface HvBarChartProps
 /**
  * A bar chart is a chart or graph that presents categorical data with rectangular bars.
  */
-export const HvBarChart = ({
-  yAxis,
-  xAxis,
-  horizontal = false,
-  horizontalRangeSlider,
-  grid,
-  data,
-  groupBy,
-  splitBy,
-  sortBy,
-  stack,
-  seriesNameFormatter,
-  measures,
-  legend,
-  tooltip,
-  classes,
-  height,
-  width,
-}: HvBarChartProps) => {
-  const chartData = useData({ data, groupBy, sortBy, splitBy, measures });
+export const HvBarChart = forwardRef<ReactECharts, HvBarChartProps>(
+  (props, ref) => {
+    const {
+      yAxis,
+      xAxis,
+      horizontal = false,
+      horizontalRangeSlider,
+      grid,
+      data,
+      groupBy,
+      splitBy,
+      sortBy,
+      stack,
+      seriesNameFormatter,
+      measures,
+      legend,
+      tooltip,
+      classes,
+      height,
+      width,
+      onOptionChange,
+    } = props;
 
-  const chartDataset = useDataset(chartData);
+    const chartData = useData({ data, groupBy, sortBy, splitBy, measures });
 
-  const chartYAxis = useYAxis({
-    axes: Array.isArray(yAxis) || yAxis == null ? yAxis : [yAxis],
-    defaultType: horizontal ? "categorical" : "continuous",
-  });
+    const chartDataset = useDataset(chartData);
 
-  const chartXAxis = useXAxis({
-    type: horizontal ? "continuous" : "categorical",
-    ...xAxis,
-  });
+    const chartYAxis = useYAxis({
+      axes: Array.isArray(yAxis) || yAxis == null ? yAxis : [yAxis],
+      defaultType: horizontal ? "categorical" : "continuous",
+    });
 
-  const chartSlider = useDataZoom({
-    showHorizontal: horizontalRangeSlider?.show,
-  });
+    const chartXAxis = useXAxis({
+      type: horizontal ? "continuous" : "categorical",
+      ...xAxis,
+    });
 
-  const chartGrid = useGrid({ ...grid });
+    const chartSlider = useDataZoom({
+      showHorizontal: horizontalRangeSlider?.show,
+    });
 
-  const chartSeries = useSeries({
-    type: "bar",
-    data: chartData,
-    groupBy,
-    measures,
-    stack,
-    nameFormatter: seriesNameFormatter,
-    horizontal,
-  });
+    const chartGrid = useGrid({ ...grid });
 
-  const chartLegend = useLegend({
-    ...legend,
-    series: chartSeries.series,
-    icon: "square",
-  });
+    const chartSeries = useSeries({
+      type: "bar",
+      data: chartData,
+      groupBy,
+      measures,
+      stack,
+      nameFormatter: seriesNameFormatter,
+      horizontal,
+    });
 
-  const chartTooltip = useTooltip({
-    ...tooltip,
-    trigger: "axis",
-    measures,
-    classes,
-    horizontal,
-  });
+    const chartLegend = useLegend({
+      ...legend,
+      series: chartSeries.series,
+      icon: "square",
+    });
 
-  const options = useMemo(() => {
-    return {
-      ...chartYAxis,
-      ...chartXAxis,
-      ...chartSlider,
-      ...chartGrid,
-      ...chartDataset,
-      ...chartSeries,
-      ...chartLegend,
-      ...chartTooltip,
-    };
-  }, [
-    chartXAxis,
-    chartYAxis,
-    chartSlider,
-    chartGrid,
-    chartDataset,
-    chartSeries,
-    chartLegend,
-    chartTooltip,
-  ]);
+    const chartTooltip = useTooltip({
+      ...tooltip,
+      trigger: "axis",
+      measures,
+      classes,
+      horizontal,
+    });
 
-  return <HvBaseChart options={options} width={width} height={height} />;
-};
+    const option = useOption({
+      option: {
+        ...chartYAxis,
+        ...chartXAxis,
+        ...chartSlider,
+        ...chartGrid,
+        ...chartDataset,
+        ...chartSeries,
+        ...chartLegend,
+        ...chartTooltip,
+      },
+      onOptionChange,
+    });
+
+    return (
+      <HvBaseChart ref={ref} option={option} width={width} height={height} />
+    );
+  }
+);

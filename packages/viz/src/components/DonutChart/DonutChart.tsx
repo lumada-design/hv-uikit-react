@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { forwardRef } from "react";
 
 import * as echarts from "echarts/core";
 import { PieChart } from "echarts/charts";
@@ -8,6 +8,7 @@ import {
   TooltipComponent,
   LegendComponent,
 } from "echarts/components";
+import ReactECharts from "echarts-for-react/lib/core";
 
 import {
   HvChartTooltipClasses,
@@ -15,6 +16,7 @@ import {
   useDataset,
   useGrid,
   useLegend,
+  useOption,
   useSeries,
   useTooltip,
 } from "@viz/hooks";
@@ -49,58 +51,66 @@ export interface HvDonutChartProps extends HvChartCommonProps {
  * Donut charts nicely convey the part-whole relationship and they have become
  * the most recognizable chart types for representing proportions in business and data statistics.
  */
-export const HvDonutChart = ({
-  data,
-  groupBy,
-  classes,
-  legend,
-  tooltip,
-  measure: measures,
-  sortBy,
-  grid,
-  width,
-  height,
-  type = "regular",
-  slicesNameFormatter,
-}: HvDonutChartProps) => {
-  const chartData = useData({ data, groupBy, measures, sortBy });
+export const HvDonutChart = forwardRef<ReactECharts, HvDonutChartProps>(
+  (props, ref) => {
+    const {
+      data,
+      groupBy,
+      classes,
+      legend,
+      tooltip,
+      measure: measures,
+      sortBy,
+      grid,
+      width,
+      height,
+      type = "regular",
+      slicesNameFormatter,
+      onOptionChange,
+    } = props;
 
-  const chartDataset = useDataset(chartData);
+    const chartData = useData({ data, groupBy, measures, sortBy });
 
-  const chartSeries = useSeries({
-    type: "pie",
-    data: chartData,
-    groupBy,
-    measures,
-    radius: type === "thin" ? ["65%", "70%"] : ["55%", "70%"],
-  });
+    const chartDataset = useDataset(chartData);
 
-  const chartLegend = useLegend({
-    ...legend,
-    show: legend?.show ?? true,
-    icon: "square",
-    series: chartSeries.series,
-    formatter: slicesNameFormatter,
-  });
+    const chartSeries = useSeries({
+      type: "pie",
+      data: chartData,
+      groupBy,
+      measures,
+      radius: type === "thin" ? ["65%", "70%"] : ["55%", "70%"],
+    });
 
-  const chartTooltip = useTooltip({
-    ...tooltip,
-    measures,
-    classes,
-    nameFormatter: slicesNameFormatter,
-  });
+    const chartLegend = useLegend({
+      ...legend,
+      show: legend?.show ?? true,
+      icon: "square",
+      series: chartSeries.series,
+      formatter: slicesNameFormatter,
+    });
 
-  const chartGrid = useGrid({ ...grid });
+    const chartTooltip = useTooltip({
+      ...tooltip,
+      measures,
+      classes,
+      nameFormatter: slicesNameFormatter,
+    });
 
-  const options = useMemo(() => {
-    return {
-      ...chartSeries,
-      ...chartDataset,
-      ...chartLegend,
-      ...chartTooltip,
-      ...chartGrid,
-    };
-  }, [chartSeries, chartDataset, chartLegend, chartTooltip, chartGrid]);
+    const chartGrid = useGrid({ ...grid });
 
-  return <HvBaseChart options={options} width={width} height={height} />;
-};
+    const option = useOption({
+      option: {
+        ...chartSeries,
+        ...chartDataset,
+        ...chartLegend,
+        ...chartTooltip,
+        ...chartGrid,
+      },
+      onOptionChange,
+    });
+
+    return (
+      <HvBaseChart ref={ref} option={option} width={width} height={height} />
+    );
+  }
+);

@@ -1,12 +1,10 @@
 import { useMemo, useCallback } from "react";
 
-import type { EChartsOption } from "echarts-for-react/lib/types";
-
 import { useTheme } from "@hitachivantara/uikit-react-core";
 
 import { getAxisType } from "@viz/utils";
 import { HvChartAxisType } from "@viz/types";
-import { HvChartYAxis } from "@viz/types/common";
+import { HvChartYAxis, HvEChartsOption } from "@viz/types/common";
 
 interface YAxis extends HvChartYAxis {
   data?: string[];
@@ -75,11 +73,11 @@ export const useYAxis = ({
     [colors, defaultType]
   );
 
-  const option = useMemo<Pick<EChartsOption, "yAxis">>(() => {
+  const option = useMemo<Pick<HvEChartsOption, "yAxis">>(() => {
     return {
       yAxis: Array.isArray(axes)
         ? axes.map((axis) => createAxis(axis))
-        : createAxis({}),
+        : [createAxis({})],
     };
   }, [axes, createAxis]);
 

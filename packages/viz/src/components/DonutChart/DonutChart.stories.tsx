@@ -286,3 +286,38 @@ export const WithMultipleTransformations: StoryObj<HvDonutChartProps> = {
     );
   },
 };
+
+export const CustomEchartsOptions: StoryObj<HvDonutChartProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "If necessary, you can customize the chart's option and take advantage of the additional properties offered by ECharts.",
+      },
+    },
+  },
+  render: () => {
+    return (
+      <HvDonutChart
+        data={{
+          Type: ["Uploads", "Downloads"],
+          Music: [540, 1234],
+        }}
+        groupBy="Type"
+        measure="Music"
+        type="thin"
+        onOptionChange={(option) => {
+          if (
+            option.legend &&
+            typeof option.legend === "object" &&
+            !Array.isArray(option.legend)
+          ) {
+            option.legend.icon = "circle";
+          }
+
+          return option;
+        }}
+      />
+    );
+  },
+};

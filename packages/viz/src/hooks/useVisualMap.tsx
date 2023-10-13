@@ -1,9 +1,8 @@
 import { useMemo } from "react";
 
-import type { EChartsOption } from "echarts-for-react/lib/types";
-
 import { getLegendIcon } from "@viz/utils";
 import { HvChartLegend } from "@viz/types";
+import { HvEChartsOption } from "@viz/types/common";
 
 export interface HvVisualMapHookProps {
   show?: boolean;
@@ -27,7 +26,7 @@ export const useVisualMap = ({
   colorScale,
   position: positionProp,
 }: HvVisualMapHookProps) => {
-  const option = useMemo<Pick<EChartsOption, "visualMap">>(() => {
+  const option = useMemo<Pick<HvEChartsOption, "visualMap">>(() => {
     return {
       visualMap: {
         type,

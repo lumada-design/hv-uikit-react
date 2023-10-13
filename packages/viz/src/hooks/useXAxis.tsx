@@ -1,11 +1,9 @@
 import { useMemo } from "react";
 
-import type { EChartsOption } from "echarts-for-react/lib/types";
-
 import { useTheme } from "@hitachivantara/uikit-react-core";
 
 import { getAxisType } from "@viz/utils";
-import { HvChartXAxis } from "@viz/types/common";
+import { HvChartXAxis, HvEChartsOption } from "@viz/types/common";
 
 interface HvXAxisHookProps extends HvChartXAxis {
   scale?: boolean;
@@ -27,7 +25,7 @@ export const useXAxis = ({
 }: HvXAxisHookProps) => {
   const { colors } = useTheme();
 
-  const option = useMemo<Pick<EChartsOption, "xAxis">>(() => {
+  const option = useMemo<Pick<HvEChartsOption, "xAxis">>(() => {
     const nameStyleKeys = nameProps
       ? Object.keys(nameProps).filter((key) => key !== "location")
       : undefined;

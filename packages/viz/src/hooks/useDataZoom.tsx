@@ -1,13 +1,13 @@
 import { useMemo } from "react";
 
-import type { EChartsOption } from "echarts-for-react/lib/types";
+import { HvEChartsOption } from "@viz/types/common";
 
 interface HvDataZoomHookProps {
   showHorizontal?: boolean;
 }
 
 export const useDataZoom = ({ showHorizontal }: HvDataZoomHookProps) => {
-  const option = useMemo<Pick<EChartsOption, "dataZoom">>(() => {
+  const option = useMemo<Pick<HvEChartsOption, "dataZoom">>(() => {
     return {
       dataZoom: [
         {

@@ -1,3 +1,9 @@
+import { useMemo, useState } from "react";
+
+import { Meta, StoryObj } from "@storybook/react";
+
+import { css } from "@emotion/css";
+
 import {
   HvCheckBox,
   HvDropDownMenu,
@@ -5,14 +11,12 @@ import {
   HvListValue,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { Meta, StoryObj } from "@storybook/react";
-import { css } from "@emotion/css";
-import { useMemo, useState } from "react";
 import {
   HvBarChart,
   HvBarChartProps,
   HvLineChartProps,
 } from "@hitachivantara/uikit-react-viz";
+
 import { vizDecorator } from "../../BaseChart/stories/utils";
 import { customChartData } from "./mockData";
 import { renderTooltip } from "./customTooltip";
@@ -474,6 +478,39 @@ export const CustomTooltip: StoryObj<HvLineChartProps> = {
         measures="Sales Target"
         tooltip={{
           component: renderTooltip,
+        }}
+      />
+    );
+  },
+};
+
+export const CustomEchartsOptions: StoryObj<HvBarChartProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "If necessary, you can customize the chart's option and take advantage of the additional properties offered by ECharts.",
+      },
+    },
+  },
+  render: () => {
+    return (
+      <HvBarChart
+        data={{
+          Month: ["January", "February", "March"],
+          "Sales Target": [2000, 1000, 6000],
+        }}
+        groupBy="Month"
+        measures="Sales Target"
+        tooltip={{
+          type: "single",
+        }}
+        onOptionChange={(option) => {
+          if (Array.isArray(option.yAxis) && option.yAxis.length === 1) {
+            option.yAxis = [{ ...option.yAxis[0], splitNumber: 3 }];
+          }
+
+          return option;
         }}
       />
     );

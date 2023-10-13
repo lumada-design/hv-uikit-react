@@ -760,3 +760,49 @@ export const PartiallyStackedChart: StoryObj<HvLineChartProps> = {
     );
   },
 };
+
+export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "If necessary, you can customize the chart's option and take advantage of the additional properties offered by ECharts.",
+      },
+    },
+  },
+  render: () => {
+    return (
+      <HvLineChart
+        data={{
+          Month: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ],
+          "Sales Target": [
+            5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119,
+            2146,
+          ],
+        }}
+        groupBy="Month"
+        measures="Sales Target"
+        onOptionChange={(option) => {
+          if (Array.isArray(option.yAxis) && option.yAxis.length === 1) {
+            option.yAxis = [{ ...option.yAxis[0], splitNumber: 8 }];
+          }
+
+          return option;
+        }}
+      />
+    );
+  },
+};
