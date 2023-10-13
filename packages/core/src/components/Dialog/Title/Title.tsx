@@ -4,11 +4,11 @@ import MuiDialogTitle, {
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvTypography } from "@core/components/Typography";
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { iconVariant } from "@core/utils/iconVariant";
 
 import { staticClasses, useClasses } from "./Title.styles";
+import { useDialogContext } from "../context";
 
 export { staticClasses as dialogTitleClasses };
 
@@ -22,8 +22,7 @@ export type HvDialogTitleVariant =
   | "default";
 
 export interface HvDialogTitleProps
-  extends Omit<MuiDialogTitleProps, "variant" | "classes">,
-    HvBaseProps<HTMLSpanElement, "color"> {
+  extends Omit<MuiDialogTitleProps, "variant" | "classes"> {
   /** Variant of the dialog title. */
   variant?: HvDialogTitleVariant;
   /** Controls if the associated icon to the variant should be shown. */
@@ -46,11 +45,9 @@ export const HvDialogTitle = (props: HvDialogTitleProps) => {
   } = useDefaultProps("HvDialogTitle", props);
 
   const { classes, css, cx } = useClasses(classesProp);
+  const { fullscreen } = useDialogContext();
 
   const isString = typeof children === "string";
-
-  const { fullscreen } = others as any;
-  delete (others as any).fullscreen;
 
   const icon = customIcon || (showIcon && iconVariant(variant));
 
@@ -69,8 +66,9 @@ export const HvDialogTitle = (props: HvDialogTitleProps) => {
       <div className={classes.messageContainer}>
         {icon}
         <div className={cx({ [classes.textWithIcon]: !!icon })}>
-          {!isString && children}
-          {isString && (
+          {!isString ? (
+            children
+          ) : (
             <HvTypography variant="title4" className={classes.titleText}>
               {children}
             </HvTypography>

@@ -1,21 +1,21 @@
-import React, { useCallback, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
-import MuiBackdrop from "@mui/material/Backdrop";
 
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvButton } from "@core/components/Button";
+import { HvTooltip } from "@core/components/Tooltip";
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
-import { withTooltip } from "@core/hocs/withTooltip";
 import { useTheme } from "@core/hooks/useTheme";
 import { hexToRgbA } from "@core/utils/hexToRgbA";
 
 import { staticClasses, useClasses } from "./Dialog.styles";
+import { DialogContext } from "./context";
 
 export { staticClasses as dialogClasses };
 
@@ -26,11 +26,8 @@ export interface HvDialogProps
     HvBaseProps {
   /** Current state of the Dialog. */
   open?: boolean;
-  /** Function executed on close. */
-  onClose?: (
-    event: React.SyntheticEvent,
-    reason?: "escapeKeyDown" | "backdropClick"
-  ) => void;
+  /** Callback fired when the component requests to be closed. */
+  onClose?: (event: any, reason?: "escapeKeyDown" | "backdropClick") => void;
   /** @inheritdoc */
   maxWidth?: MuiDialogProps["maxWidth"];
   /** @inheritdoc */
@@ -74,25 +71,7 @@ export const HvDialog = (props: HvDialogProps) => {
   } = useDefaultProps("HvDialog", props);
 
   const { classes, css, cx } = useClasses(classesProp);
-  delete (others as any).fullScreen;
-
   const { rootId, colors } = useTheme();
-
-  // Because the `disableBackdropClick` property was deprecated in MUI5
-  // and we want to maintain that functionality to the user we're wrapping
-  // the onClose call here to make that check.
-  const wrappedClose = useCallback(
-    (
-      event: any,
-      bypassValidation: boolean = false,
-      reason?: "escapeKeyDown" | "backdropClick"
-    ) => {
-      if (bypassValidation || !disableBackdropClick) {
-        onClose?.(event, reason);
-      }
-    },
-    [onClose, disableBackdropClick]
-  );
 
   const measuredRef = useCallback(() => {
     if (!firstFocusable) return;
@@ -101,20 +80,7 @@ export const HvDialog = (props: HvDialogProps) => {
     element?.focus();
   }, [firstFocusable]);
 
-  const closeButtonDisplay = () => <Close role="presentation" />;
-
-  const CloseButtonTooltipWrapper = buttonTitle
-    ? withTooltip(closeButtonDisplay, buttonTitle, "top")
-    : closeButtonDisplay;
-
-  const slots = useMemo<MuiDialogProps["slots"]>(
-    () => ({
-      backdrop: (backdropProps) => (
-        <MuiBackdrop open={open} onClick={wrappedClose} {...backdropProps} />
-      ),
-    }),
-    [open, wrappedClose]
-  );
+  const contextValue = useMemo(() => ({ fullscreen }), [fullscreen]);
 
   return (
     <MuiDialog
@@ -131,8 +97,13 @@ export const HvDialog = (props: HvDialogProps) => {
       ref={measuredRef}
       open={open}
       fullScreen={fullscreen}
-      onClose={(event, reason) => wrappedClose(event, undefined, reason)}
-      slots={slots}
+      onClose={(event, reason) => {
+        // `disableBackdropClick` property was removed in MUI5
+        // and we want to maintain that functionality
+        if (disableBackdropClick) return;
+
+        onClose?.(event, reason);
+      }}
       slotProps={{
         backdrop: {
           classes: {
@@ -160,22 +131,19 @@ export const HvDialog = (props: HvDialogProps) => {
       aria-modal
       {...others}
     >
-      <HvButton
-        id={setId(id, "close")}
-        className={classes.closeButton}
-        variant="secondaryGhost"
-        onClick={(event) => wrappedClose(event, true, undefined)}
-        aria-label={buttonTitle}
-      >
-        <CloseButtonTooltipWrapper />
-      </HvButton>
-      {children && typeof children === "object"
-        ? React.Children.map(
-            children,
-            (c: React.ReactNode) =>
-              c && React.cloneElement(c as React.ReactElement, { fullscreen })
-          )
-        : children}
+      <HvTooltip placement="top" title={buttonTitle}>
+        <HvButton
+          id={setId(id, "close")}
+          className={classes.closeButton}
+          variant="secondaryGhost"
+          onClick={(event) => onClose?.(event, undefined)}
+        >
+          <Close role="none" />
+        </HvButton>
+      </HvTooltip>
+      <DialogContext.Provider value={contextValue}>
+        {children}
+      </DialogContext.Provider>
     </MuiDialog>
   );
 };
