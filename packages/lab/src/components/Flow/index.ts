@@ -2,6 +2,7 @@ export * from "./Background";
 export * from "./Controls";
 export * from "./Minimap";
 export * from "./Sidebar";
+export * from "./Empty";
 export * from "./Flow";
 export * from "./Node";
 export type { HvFlowClasses } from "./DroppableFlow";
