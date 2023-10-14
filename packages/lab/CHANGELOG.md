@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.9.0...@hitachivantara/uikit-react-lab@5.10.0) (2023-10-14)
+
+### Features
+
+- **Flow:** allow overriding default edge options ([#3732](https://github.com/lumada-design/hv-uikit-react/issues/3732)) ([3d7aa5f](https://github.com/lumada-design/hv-uikit-react/commit/3d7aa5f14ce7880e96f4378ce954fc26a01e0dc2))
+
 # [5.9.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.8.2...@hitachivantara/uikit-react-lab@5.9.0) (2023-10-13)
 
 ### Features
