@@ -1,13 +1,7 @@
 import { HvFlowNode } from "../Node/Node";
 
 export const MLModelDetection = (props) => {
-  return (
-    <HvFlowNode
-      title="Anomaly detection"
-      description="Anomaly detection description"
-      {...props}
-    />
-  );
+  return <HvFlowNode description="Anomaly detection description" {...props} />;
 };
 
 MLModelDetection.meta = {

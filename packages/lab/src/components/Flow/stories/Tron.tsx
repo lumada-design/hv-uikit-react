@@ -60,7 +60,6 @@ export const Tron = (props) => {
       </HvDialog>
 
       <HvFlowNode
-        title="Tron"
         description="Tron asset description"
         expanded
         maxVisibleActions={1}

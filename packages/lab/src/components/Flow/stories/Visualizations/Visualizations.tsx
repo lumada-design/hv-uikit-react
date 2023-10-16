@@ -25,147 +25,138 @@ const defaultActions: HvFlowDefaultActions[] = [
   { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
 ];
 
+const nodeTypes = {
+  jsonInput: JsonInput,
+  filter: Filter,
+  lineChart: LineChart,
+  barChart: BarChart,
+} satisfies HvFlowProps["nodeTypes"];
+
+type NodeType = keyof typeof nodeTypes;
+// Node groups
+type NodeGroups = "inputs" | "transformations" | "visualizations";
+
+const nodeGroups = {
+  inputs: {
+    label: "Inputs",
+    color: "cat3_80",
+    description: "This is my description for inputs.",
+    icon: <Heart />,
+  },
+  transformations: {
+    label: "Transformations",
+    color: "cat5_80",
+    description: "This is my description for transformations.",
+    icon: <Transformation />,
+  },
+  visualizations: {
+    label: "Visualizations",
+    color: "cat1_80",
+    description: "This is my description for visualizations.",
+    icon: <LineChartIcon />,
+  },
+} satisfies HvFlowProps<any, NodeType, NodeGroups>["nodeGroups"];
+
+// Flow
+const nodes = [
+  {
+    id: "jsonInput",
+    type: "jsonInput",
+    position: {
+      x: 20,
+      y: 500,
+    },
+    data: {
+      jsonData: [
+        { country: "portugal", year: "2020", population: 10030000 },
+        { country: "portugal", year: "2021", population: 10030000 },
+        { country: "portugal", year: "2022", population: 10030000 },
+        { country: "portugal", year: "2023", population: 10020000 },
+        { country: "usa", year: "2020", population: 336000000 },
+        { country: "usa", year: "2021", population: 337000000 },
+        { country: "usa", year: "2022", population: 338000000 },
+        { country: "usa", year: "2023", population: 340000000 },
+        { country: "japan", year: "2020", population: 126000000 },
+        { country: "japan", year: "2021", population: 125000000 },
+        { country: "japan", year: "2022", population: 125000000 },
+        { country: "japan", year: "2023", population: 124000000 },
+      ],
+    },
+  },
+  {
+    id: "lineChart",
+    type: "lineChart",
+    position: { x: 380, y: 20 },
+    data: {},
+  },
+  {
+    id: "barChart",
+    type: "barChart",
+    position: { x: 980, y: 20 },
+    data: {},
+  },
+  {
+    id: "filter",
+    type: "filter",
+    position: { x: 630, y: 600 },
+    data: {
+      jsonData: [],
+    },
+  },
+  {
+    id: "barChartFiltered",
+    type: "barChart",
+    position: { x: 980, y: 600 },
+    data: {},
+  },
+] satisfies HvFlowProps<any, NodeType, NodeGroups>["nodes"];
+
+const edges = [
+  {
+    id: "jsonInput-lineChart",
+    source: "jsonInput",
+    sourceHandle: "0",
+    target: "lineChart",
+    targetHandle: "0",
+  },
+  {
+    id: "jsonInput-barChart",
+    source: "jsonInput",
+    sourceHandle: "0",
+    target: "barChart",
+    targetHandle: "0",
+  },
+  {
+    id: "jsonInput-filter",
+    source: "jsonInput",
+    sourceHandle: "0",
+    target: "filter",
+    targetHandle: "0",
+  },
+  {
+    id: "filter-barChartFiltered",
+    source: "filter",
+    sourceHandle: "0",
+    target: "barChartFiltered",
+    targetHandle: "0",
+  },
+] satisfies HvFlowProps<any, NodeType, NodeGroups>["edges"];
+
+const classes = {
+  root: css({ height: "100vh" }),
+  globalActions: css({ paddingBottom: theme.space.md }),
+  flow: css({
+    height: "calc(100% - 90px)",
+  }),
+};
+
 export const Visualizations = () => {
   const [open, setOpen] = useState(false);
 
-  const nodeTypes = {
-    jsonInput: JsonInput,
-    filter: Filter,
-    lineChart: LineChart,
-    barChart: BarChart,
-  } satisfies HvFlowProps["nodeTypes"];
-
-  type NodeType = keyof typeof nodeTypes;
-  // Node groups
-  type NodeGroups = "inputs" | "transformations" | "visualizations";
-
-  const nodeGroups = {
-    inputs: {
-      label: "Inputs",
-      color: "cat3_80",
-      description: "This is my description for inputs.",
-      icon: <Heart />,
-    },
-    transformations: {
-      label: "Transformations",
-      color: "cat5_80",
-      description: "This is my description for transformations.",
-      icon: <Transformation />,
-    },
-    visualizations: {
-      label: "Visualizations",
-      color: "cat1_80",
-      description: "This is my description for visualizations.",
-      icon: <LineChartIcon />,
-    },
-  } satisfies HvFlowProps<any, NodeType, NodeGroups>["nodeGroups"];
-
-  // Flow
-  const nodes = [
-    {
-      id: "jsonInput",
-      type: "jsonInput",
-      position: {
-        x: 20,
-        y: 500,
-      },
-      data: {
-        jsonData: [
-          { country: "portugal", year: "2020", population: 10030000 },
-          { country: "portugal", year: "2021", population: 10030000 },
-          { country: "portugal", year: "2022", population: 10030000 },
-          { country: "portugal", year: "2023", population: 10020000 },
-          { country: "usa", year: "2020", population: 336000000 },
-          { country: "usa", year: "2021", population: 337000000 },
-          { country: "usa", year: "2022", population: 338000000 },
-          { country: "usa", year: "2023", population: 340000000 },
-          { country: "japan", year: "2020", population: 126000000 },
-          { country: "japan", year: "2021", population: 125000000 },
-          { country: "japan", year: "2022", population: 125000000 },
-          { country: "japan", year: "2023", population: 124000000 },
-        ],
-      },
-    },
-    {
-      id: "lineChart",
-      type: "lineChart",
-      position: { x: 380, y: 20 },
-      data: {},
-    },
-    {
-      id: "barChart",
-      type: "barChart",
-      position: { x: 980, y: 20 },
-      data: {},
-    },
-    {
-      id: "filter",
-      type: "filter",
-      position: { x: 630, y: 600 },
-      data: {
-        jsonData: [
-          // { country: "usa", year: "2020", population: 336000000 },
-          // { country: "usa", year: "2021", population: 337000000 },
-          // { country: "usa", year: "2022", population: 338000000 },
-          // { country: "usa", year: "2023", population: 340000000 },
-          // { country: "japan", year: "2020", population: 126000000 },
-          // { country: "japan", year: "2021", population: 125000000 },
-          // { country: "japan", year: "2022", population: 125000000 },
-          // { country: "japan", year: "2023", population: 124000000 },
-        ],
-      },
-    },
-    {
-      id: "barChartFiltered",
-      type: "barChart",
-      position: { x: 980, y: 600 },
-      data: {},
-    },
-  ] satisfies HvFlowProps<any, NodeType, NodeGroups>["nodes"];
-
-  const edges = [
-    {
-      id: "jsonInput-lineChart",
-      source: "jsonInput",
-      sourceHandle: "0",
-      target: "lineChart",
-      targetHandle: "0",
-    },
-    {
-      id: "jsonInput-barChart",
-      source: "jsonInput",
-      sourceHandle: "0",
-      target: "barChart",
-      targetHandle: "0",
-    },
-    {
-      id: "jsonInput-filter",
-      source: "jsonInput",
-      sourceHandle: "0",
-      target: "filter",
-      targetHandle: "0",
-    },
-    {
-      id: "filter-barChartFiltered",
-      source: "filter",
-      sourceHandle: "0",
-      target: "barChartFiltered",
-      targetHandle: "0",
-    },
-  ] satisfies HvFlowProps<any, NodeType, NodeGroups>["edges"];
-
-  const styles = {
-    root: { height: "100vh" },
-    globalActions: { paddingBottom: theme.space.md },
-    flow: {
-      height: "calc(100% - 90px)",
-    },
-  };
-
   return (
-    <div className={css(styles.root)}>
+    <div className={classes.root}>
       <HvGlobalActions
-        className={css(styles.globalActions)}
+        className={classes.globalActions}
         position="relative"
         backButton={
           <HvButton aria-label="Back" icon>
@@ -182,7 +173,7 @@ export const Visualizations = () => {
           Add Node
         </HvButton>
       </HvGlobalActions>
-      <div className={css(styles.flow)}>
+      <div className={classes.flow}>
         <HvFlow
           nodes={nodes}
           edges={edges}

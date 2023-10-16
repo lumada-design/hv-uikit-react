@@ -1,7 +1,7 @@
 import { HvFlowNode } from "../Node/Node";
 
 export const KPI = (props) => {
-  return <HvFlowNode title="KPI" description="KPI description" {...props} />;
+  return <HvFlowNode description="KPI description" {...props} />;
 };
 
 KPI.meta = {

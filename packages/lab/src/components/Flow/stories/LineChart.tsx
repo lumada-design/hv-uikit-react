@@ -1,13 +1,7 @@
 import { HvFlowNode } from "../Node/Node";
 
 export const LineChart = (props) => {
-  return (
-    <HvFlowNode
-      title="LineChart"
-      description="LineChart description"
-      {...props}
-    />
-  );
+  return <HvFlowNode description="LineChart description" {...props} />;
 };
 
 LineChart.meta = {

@@ -1,9 +1,7 @@
 import { HvFlowNode } from "../../Node/Node";
 
 export const JsonInput = (props) => {
-  return (
-    <HvFlowNode title="Tron" description="Population Datakky7" {...props} />
-  );
+  return <HvFlowNode description="Population Datakky7" {...props} />;
 };
 
 JsonInput.meta = {

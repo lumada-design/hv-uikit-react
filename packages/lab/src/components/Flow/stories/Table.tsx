@@ -1,9 +1,7 @@
 import { HvFlowNode } from "../Node/Node";
 
 export const Table = (props) => {
-  return (
-    <HvFlowNode title="Table" description="Table description" {...props} />
-  );
+  return <HvFlowNode description="Table description" {...props} />;
 };
 
 Table.meta = {
