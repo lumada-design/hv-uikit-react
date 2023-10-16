@@ -13,7 +13,8 @@ import ReactFlow, {
   Edge,
   Node,
 } from "reactflow";
-import "reactflow/dist/style.css";
+
+import { Global } from "@emotion/react";
 
 import { DragEndEvent, useDndMonitor, useDroppable } from "@dnd-kit/core";
 
@@ -24,6 +25,7 @@ import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 import { HvFlowNodeTypes } from "./types";
 import { staticClasses, useClasses } from "./Flow.styles";
 import { useFlowContext } from "./FlowContext";
+import { flowStyles } from "./base";
 
 export { staticClasses as flowClasses };
 
@@ -218,24 +220,27 @@ export const HvDroppableFlow = ({
   };
 
   return (
-    <div
-      id={elementId}
-      ref={setNodeRef}
-      className={cx(classes.root, className)}
-    >
-      <ReactFlow
-        nodes={nodes}
-        edges={validEdges}
-        nodeTypes={nodeTypes}
-        onNodesChange={handleNodesChange}
-        onEdgesChange={handleEdgesChange}
-        onConnect={handleConnect}
-        isValidConnection={isValidConnection}
-        defaultEdgeOptions={defaultEdgeOptions}
-        {...others}
+    <>
+      <Global styles={flowStyles} />
+      <div
+        id={elementId}
+        ref={setNodeRef}
+        className={cx(classes.root, className)}
       >
-        {children}
-      </ReactFlow>
-    </div>
+        <ReactFlow
+          nodes={nodes}
+          edges={validEdges}
+          nodeTypes={nodeTypes}
+          onNodesChange={handleNodesChange}
+          onEdgesChange={handleEdgesChange}
+          onConnect={handleConnect}
+          isValidConnection={isValidConnection}
+          defaultEdgeOptions={defaultEdgeOptions}
+          {...others}
+        >
+          {children}
+        </ReactFlow>
+      </div>
+    </>
   );
 };
