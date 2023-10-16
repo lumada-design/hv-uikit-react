@@ -15,7 +15,6 @@ import {
   PopperProps,
 } from "@mui/material";
 
-import { theme } from "@hitachivantara/uikit-styles";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
 import { usePopper } from "react-popper";
@@ -52,7 +51,7 @@ export interface HvBaseDropdownProps
   /**
    * Header placeholder.
    */
-  placeholder?: string | React.ReactNode;
+  placeholder?: React.ReactNode;
   /**
    * If `true` the dropdown is disabled unable to be interacted, if `false` it is enabled.
    */
@@ -215,7 +214,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     popperProps;
 
   const onFirstUpdate = useCallback(() => {
-    if (onContainerCreation) onContainerCreation(popperElement);
+    onContainerCreation?.(popperElement);
   }, [onContainerCreation, popperElement]);
 
   const widthCalculator = useCallback(
@@ -274,7 +273,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
     []
   );
 
-  const modifiers: PopperProps["modifiers"] = useMemo(
+  const modifiers = useMemo<PopperProps["modifiers"]>(
     () => [
       {
         name: "variableWidth",
@@ -344,7 +343,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
       const newOpen = !isOpen;
 
       /* If about to close focus on the header component. */
-      const focusHeader = () => {
+      setIsOpen(() => {
         if (!newOpen) {
           // Focus-ring won't be visible even if using the keyboard:
           // https://github.com/WICG/focus-visible/issues/88
@@ -352,70 +351,67 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
         }
 
         return newOpen;
-      };
-      setIsOpen(focusHeader());
+      });
 
       onToggle?.(event, newOpen);
     },
     [isOpen, disabled, setIsOpen, onToggle, referenceElement]
   );
 
-  const headerComponent = (() => {
-    if (component) {
-      return React.cloneElement(component as React.ReactElement, {
-        ref: handleDropdownHeaderRef,
-        ...headerControlArias,
-      });
-    }
+  const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
 
-    const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
-
-    return (
-      <div
-        id={setId(id, "header")}
-        className={cx(classes.header, {
-          [classes.headerDisabled]: disabled,
-          [classes.headerReadOnly]: readOnly,
-          [classes.headerOpen]: isOpen,
-          [classes.headerOpenUp]: isOpen && popperPlacement.includes("top"),
-          [classes.headerOpenDown]:
-            isOpen && popperPlacement.includes("bottom"),
-        })}
-        // TODO: review "textbox" role
-        role={ariaRole === "combobox" ? "textbox" : undefined}
-        {...headerAriaLabels}
-        style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
-        // Removes the element from the navigation sequence for keyboard focus if disabled
-        tabIndex={disabled ? -1 : 0}
-        ref={handleDropdownHeaderRef}
-        {...dropdownHeaderProps}
-      >
-        <div className={classes.selection}>
-          {placeholder && typeof placeholder === "string" ? (
-            <HvTypography
-              className={cx(classes.placeholder, {
-                [classes.selectionDisabled]: disabled,
-              })}
-              variant="body"
-            >
-              {placeholder}
-            </HvTypography>
-          ) : (
-            placeholder
-          )}
-        </div>
-        <div className={classes.arrowContainer}>
-          {adornment || (
-            <ExpanderComponent
-              iconSize="XS"
-              color={disabled ? theme.colors.secondary_60 : undefined}
-              className={classes.arrow}
-            />
-          )}
-        </div>
+  const defaultHeaderElement = (
+    <div
+      id={setId(id, "header")}
+      className={cx(classes.header, {
+        [classes.headerDisabled]: disabled,
+        [classes.headerReadOnly]: readOnly,
+        [classes.headerOpen]: isOpen,
+        [classes.headerOpenUp]: isOpen && popperPlacement.includes("top"),
+        [classes.headerOpenDown]: isOpen && popperPlacement.includes("bottom"),
+      })}
+      // TODO: review "textbox" role
+      role={ariaRole === "combobox" ? "textbox" : undefined}
+      {...headerAriaLabels}
+      style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
+      // Removes the element from the navigation sequence for keyboard focus if disabled
+      tabIndex={disabled ? -1 : 0}
+      ref={handleDropdownHeaderRef}
+      {...dropdownHeaderProps}
+    >
+      <div className={classes.selection}>
+        {placeholder && typeof placeholder === "string" ? (
+          <HvTypography
+            className={cx(classes.placeholder, {
+              [classes.selectionDisabled]: disabled,
+            })}
+            variant="body"
+          >
+            {placeholder}
+          </HvTypography>
+        ) : (
+          placeholder
+        )}
       </div>
-    );
-  })();
+      <div className={classes.arrowContainer}>
+        {adornment || (
+          <ExpanderComponent
+            iconSize="XS"
+            color={disabled ? "secondary_60" : undefined}
+            className={classes.arrow}
+          />
+        )}
+      </div>
+    </div>
+  );
+
+  const headerElement =
+    component && React.isValidElement(component)
+      ? React.cloneElement(component as React.ReactElement, {
+          ref: handleDropdownHeaderRef,
+          ...headerControlArias,
+        })
+      : defaultHeaderElement;
 
   const containerComponent = (() => {
     /**
@@ -523,7 +519,7 @@ export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
         tabIndex={-1}
         {...others}
       >
-        {headerComponent}
+        {headerElement}
       </div>
       {isOpen && containerComponent}
     </div>

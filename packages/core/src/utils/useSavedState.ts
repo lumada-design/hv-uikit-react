@@ -1,8 +1,6 @@
 import { useCallback, useState } from "react";
 
-export function useSavedState<T>(
-  defaultState: T
-): [T | undefined, (v?: T, s?: boolean) => void, () => void, T | undefined, T] {
+export function useSavedState<T>(defaultState: T) {
   const [initialState] = useState<T>(defaultState);
 
   const [state, setState] = useState<T | undefined>(initialState);
@@ -19,5 +17,5 @@ export function useSavedState<T>(
     setState(submittedState);
   };
 
-  return [state, changeState, rollback, submittedState, initialState];
+  return [state, changeState, rollback, submittedState, initialState] as const;
 }

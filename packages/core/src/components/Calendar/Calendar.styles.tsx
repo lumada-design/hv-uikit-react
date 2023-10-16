@@ -14,7 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvCalendar", {
       "& ~ $singleCalendar": {
         // target the next calendar when the former is hovered
         "& > div": {
-          "& > div:nth-child(3)": {
+          "& > div:nth-of-type(3)": {
             "& > div": {
               "& > div[data-calendar-cell='calendarCell']": {
                 backgroundColor: theme.colors.atmo1,
