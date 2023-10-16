@@ -20,7 +20,7 @@ Table.meta = {
     {
       label: "Insight",
       isMandatory: true,
-      provides: ["insight"],
+      provides: "insight",
     },
   ],
 };

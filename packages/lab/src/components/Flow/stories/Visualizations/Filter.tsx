@@ -94,7 +94,7 @@ Filter.meta = {
     {
       label: "Filtered Data",
       isMandatory: false,
-      provides: ["jsonData"],
+      provides: "jsonData",
     },
   ],
 };

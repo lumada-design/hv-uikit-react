@@ -13,7 +13,7 @@ JsonInput.meta = {
     {
       label: "Json Data",
       isMandatory: true,
-      provides: ["jsonData"],
+      provides: "jsonData",
     },
   ],
 };

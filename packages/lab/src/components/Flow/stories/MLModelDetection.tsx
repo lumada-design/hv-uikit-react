@@ -24,7 +24,7 @@ MLModelDetection.meta = {
     {
       label: "Detection",
       isMandatory: true,
-      provides: ["detection"],
+      provides: "detection",
     },
   ],
 };

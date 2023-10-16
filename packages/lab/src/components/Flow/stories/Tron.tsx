@@ -104,12 +104,12 @@ Tron.meta = {
     {
       label: "Sensor Group 1",
       isMandatory: true,
-      provides: ["sensorData"],
+      provides: "sensorData",
     },
     {
       label: "Sensor Group 2",
       isMandatory: true,
-      provides: ["sensorData"],
+      provides: "sensorData",
     },
   ],
 };

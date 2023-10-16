@@ -24,7 +24,7 @@ MLModelPrediction.meta = {
     {
       label: "Prediction",
       isMandatory: true,
-      provides: ["prediction"],
+      provides: "prediction",
     },
   ],
 };
