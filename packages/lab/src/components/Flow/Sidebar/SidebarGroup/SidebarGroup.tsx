@@ -24,6 +24,7 @@ export type HvFlowSidebarGroupClasses = ExtractNames<typeof useClasses>;
 export type HvFlowSidebarGroupNodes = {
   type: string;
   label: string;
+  data?: unknown;
 }[];
 
 export interface HvFlowSidebarGroupProps extends HvFlowNodeGroup {

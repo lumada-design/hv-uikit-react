@@ -143,10 +143,13 @@ export const HvDroppableFlow = ({
               (event.active.data.current?.hvFlow?.y || 0) - event.over.rect.top,
           });
 
+          // Node data
+          const data = event.active.data.current?.hvFlow?.data || {};
+
           const newNode: Node = {
             id: uid(),
             position,
-            data: {},
+            data,
             type,
           };
 
