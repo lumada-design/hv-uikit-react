@@ -21,11 +21,11 @@ export interface HvEmptyStateProps
   /** Icon to be presented. */
   icon: React.ReactNode;
   /** The title to be shown. */
-  title?: string | React.ReactNode;
+  title?: React.ReactNode;
   /** The message to be shown. */
-  message?: string | React.ReactNode;
+  message?: React.ReactNode;
   /** The action message to be shown. */
-  action?: string | React.ReactNode;
+  action?: React.ReactNode;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: HvEmptyStateClasses;
 }
@@ -59,7 +59,7 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
     style?: string
   ) =>
     node && (
-      <HvTypography variant={variant} className={style}>
+      <HvTypography component="div" variant={variant} className={style}>
         {node}
       </HvTypography>
     );
