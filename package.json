@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@applitools/eyes-storybook": "^3.41.2",
+    "@babel/plugin-transform-runtime": "^7.23.2",
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
     "@dnd-kit/core": "^6.0.8",
@@ -48,6 +49,7 @@
     "@mdx-js/react": "^2.3.0",
     "@mui/material": "^5.13.5",
     "@playwright/test": "^1.35.0",
+    "@rollup/plugin-babel": "^6.0.4",
     "@storybook/addon-a11y": "^7.4.1",
     "@storybook/addon-essentials": "^7.4.1",
     "@storybook/addon-links": "^7.4.1",
