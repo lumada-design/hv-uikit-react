@@ -128,10 +128,10 @@ export const HvDroppableFlow = ({
   const handleDragEnd = useCallback(
     (event: DragEndEvent) => {
       if (event.over && event.over.id === elementId) {
-        const type = event.active.id.toString();
+        const type = event.active.data.current?.hvFlow?.type;
 
         // Only known node types can be dropped in the canvas
-        if (nodeTypes?.[type]) {
+        if (type && nodeTypes?.[type]) {
           // Converts the coordinates to the react flow coordinate system
           const position = reactFlowInstance.project({
             x:
