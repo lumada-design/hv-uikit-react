@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { Calendar } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { useControlled } from "@core/hooks/useControlled";
 import { useUniqueId } from "@core/hooks/useUniqueId";
@@ -423,13 +422,10 @@ export const HvDatePicker = (props: HvDatePickerProps) => {
   const renderInput = (dateString: string) => {
     return (
       <HvTypography
-        color={theme.colors.secondary}
         className={cx(classes.inputText, { [classes.dateText]: dateString })}
         variant="label"
       >
-        {(dateString || placeholder) === undefined
-          ? ""
-          : dateString || placeholder}
+        {dateString || placeholder || ""}
       </HvTypography>
     );
   };

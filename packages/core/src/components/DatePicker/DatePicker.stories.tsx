@@ -313,12 +313,10 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
     },
   },
   render: () => {
-    const [startDate, setStartDate] = useState<Date>(new Date(2020, 8, 5));
-    const [endDate, setEndDate] = useState<Date>(new Date(2020, 8, 10));
-    const [trueStartDate, setTrueStartDate] = useState<Date>(
-      new Date(2020, 8, 5)
-    );
-    const [trueEndDate, setTrueEndDate] = useState<Date>(new Date(2020, 8, 10));
+    const [startDate, setStartDate] = useState(new Date(2020, 8, 5));
+    const [endDate, setEndDate] = useState(new Date(2020, 8, 10));
+    const [trueStartDate, setTrueStartDate] = useState(new Date(2020, 8, 5));
+    const [trueEndDate, setTrueEndDate] = useState(new Date(2020, 8, 10));
 
     useEffect(() => {
       setStartDate(trueStartDate);
