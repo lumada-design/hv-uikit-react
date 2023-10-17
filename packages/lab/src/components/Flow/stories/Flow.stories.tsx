@@ -41,6 +41,32 @@ import { Dashboard } from "./Dashboard";
 import { HvFlowDefaultActions } from "../types";
 import { Visualizations as VisualizationsStory } from "./Visualizations/Visualizations";
 
+const meta: Meta<typeof HvFlow> = {
+  title: "Lab/Flow",
+  component: HvFlow,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
+  subcomponents: {
+    HvFlowBackground,
+    HvFlowControls,
+    HvFlowMinimap,
+    HvFlowSidebar,
+  } as unknown,
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(
+          screen.getByRole("button", {
+            name: "Add Node",
+          })
+        );
+
+        return waitFor(() => screen.getByText("Search node..."));
+      },
+    },
+  },
+};
+export default meta;
+
 const defaultActions: HvFlowDefaultActions[] = [
   { id: "delete", label: "Delete", icon: <Delete /> },
   { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
@@ -250,35 +276,8 @@ const initialState = {
   viewport: { x: 50, y: 300, zoom: 0.53 },
 };
 
-const meta: Meta<typeof HvFlow> = {
-  title: "Lab/Flow",
-  component: HvFlow,
-  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
-  subcomponents: {
-    HvFlowBackground,
-    HvFlowControls,
-    HvFlowMinimap,
-    HvFlowSidebar,
-  } as unknown,
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(
-          screen.getByRole("button", {
-            name: "Add Node",
-          })
-        );
-
-        return waitFor(() => screen.getByText("Search node..."));
-      },
-    },
-  },
-};
-export default meta;
-
 // Node groups
 type NodeGroups = "assets" | "models" | "insights" | "dashboard";
-
 const nodeGroups = {
   assets: {
     label: "Assets",
@@ -306,6 +305,7 @@ const nodeGroups = {
   },
 } satisfies HvFlowProps<NodeGroups>["nodeGroups"];
 
+// Node types
 const nodeTypes = {
   tron: Tron,
   mlModelPrediction: MLModelPrediction,
@@ -315,25 +315,24 @@ const nodeTypes = {
   table: Table,
   dashboard: Dashboard,
 } satisfies HvFlowProps["nodeTypes"];
-
 type NodeType = keyof typeof nodeTypes;
 
 // Flow
 const nodes = [] satisfies HvFlowProps<NodeGroups, NodeType>["nodes"];
-
 const edges = [] satisfies HvFlowProps<NodeGroups, NodeType>["edges"];
+
+// Styles
+const styles = {
+  root: css({ height: "100vh" }),
+  globalActions: css({ paddingBottom: theme.space.md }),
+  flow: css({
+    height: "calc(100% - 90px)",
+  }),
+};
 
 export const Main: StoryObj<HvFlowProps> = {
   render: () => {
     const [open, setOpen] = useState(false);
-
-    const styles = {
-      root: { height: "100vh" },
-      globalActions: { paddingBottom: theme.space.md },
-      flow: {
-        height: "calc(100% - 90px)",
-      },
-    };
 
     const CustomAction = (
       <div className={css({ display: "flex", flexDirection: "row" })}>
@@ -353,9 +352,9 @@ export const Main: StoryObj<HvFlowProps> = {
     );
 
     return (
-      <div className={css(styles.root)}>
+      <div className={styles.root}>
         <HvGlobalActions
-          className={css(styles.globalActions)}
+          className={styles.globalActions}
           position="relative"
           backButton={
             <HvButton aria-label="Back" icon>
@@ -372,7 +371,7 @@ export const Main: StoryObj<HvFlowProps> = {
             Add Node
           </HvButton>
         </HvGlobalActions>
-        <div className={css(styles.flow)}>
+        <div className={styles.flow}>
           <HvFlow
             nodes={nodes}
             edges={edges}
@@ -418,18 +417,10 @@ export const InitialState: StoryObj<HvFlowProps> = {
   render: () => {
     const [open, setOpen] = useState(false);
 
-    const styles = {
-      root: { height: "100vh" },
-      globalActions: { paddingBottom: theme.space.md },
-      flow: {
-        height: "calc(100% - 90px)",
-      },
-    };
-
     return (
-      <div className={css(styles.root)}>
+      <div className={styles.root}>
         <HvGlobalActions
-          className={css(styles.globalActions)}
+          className={styles.globalActions}
           position="relative"
           backButton={
             <HvButton aria-label="Back" icon>
@@ -446,7 +437,7 @@ export const InitialState: StoryObj<HvFlowProps> = {
             Add Node
           </HvButton>
         </HvGlobalActions>
-        <div className={css(styles.flow)}>
+        <div className={styles.flow}>
           <HvFlow
             nodes={initialState.nodes}
             edges={initialState.edges}
