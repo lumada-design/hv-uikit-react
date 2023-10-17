@@ -130,23 +130,34 @@ export const HvDroppableFlow = ({
       if (event.over && event.over.id === elementId) {
         const type = event.active.id.toString();
 
-        // Converts the coordinates to the react flow coordinate system
-        const position = reactFlowInstance.project({
-          x: (event.active.data.current?.hvFlow?.x || 0) - event.over.rect.left,
-          y: (event.active.data.current?.hvFlow?.y || 0) - event.over.rect.top,
-        });
+        // Only known node types can be dropped in the canvas
+        if (nodeTypes?.[type]) {
+          // Converts the coordinates to the react flow coordinate system
+          const position = reactFlowInstance.project({
+            x:
+              (event.active.data.current?.hvFlow?.x || 0) -
+              event.over.rect.left,
+            y:
+              (event.active.data.current?.hvFlow?.y || 0) - event.over.rect.top,
+          });
 
-        const newNode: Node = {
-          id: uid(),
-          position,
-          data: {},
-          type,
-        };
+          const newNode: Node = {
+            id: uid(),
+            position,
+            data: {},
+            type,
+          };
 
-        setNodes((nds) => nds.concat(newNode));
+          setNodes((nds) => nds.concat(newNode));
+        } else {
+          // eslint-disable-next-line no-console
+          console.error(
+            `Could not add node to the flow because of unknown type ${type}. Use nodeTypes to define all the node types.`
+          );
+        }
       }
     },
-    [elementId, reactFlowInstance, setNodes]
+    [elementId, nodeTypes, reactFlowInstance]
   );
 
   useDndMonitor({
