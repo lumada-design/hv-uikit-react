@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "target": "ES2015",
-    "lib": ["DOM", "ESNext", "dom.iterable"],
+    "lib": ["DOM", "ES2021", "dom.iterable"],
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "esModuleInterop": true,
