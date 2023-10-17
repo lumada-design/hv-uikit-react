@@ -60,7 +60,6 @@ export const Tron = (props) => {
       </HvDialog>
 
       <HvFlowNode
-        title="Tron"
         description="Tron asset description"
         expanded
         maxVisibleActions={1}
@@ -104,12 +103,12 @@ Tron.meta = {
     {
       label: "Sensor Group 1",
       isMandatory: true,
-      provides: ["sensorData"],
+      provides: "sensorData",
     },
     {
       label: "Sensor Group 2",
       isMandatory: true,
-      provides: ["sensorData"],
+      provides: "sensorData",
     },
   ],
 };

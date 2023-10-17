@@ -50,7 +50,7 @@ export type HvFlowNodeInput = {
 export type HvFlowNodeOutput = {
   label: string;
   isMandatory?: boolean;
-  provides?: string[];
+  provides?: string;
 };
 
 export type HvFlowNodeParam = {

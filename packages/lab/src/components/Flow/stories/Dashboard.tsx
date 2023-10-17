@@ -3,7 +3,6 @@ import { HvFlowNode } from "../Node/Node";
 export const Dashboard = (props) => {
   return (
     <HvFlowNode
-      title="Dashboard"
       description="Dashboard description"
       expanded
       params={[

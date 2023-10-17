@@ -169,7 +169,11 @@ export const HvFlowNode = ({
     >
       <NodeToolbar isVisible={showActions} offset={0}>
         {defaultActions?.map((action) => (
-          <HvButton icon onClick={() => handleDefaultAction(action.id)}>
+          <HvButton
+            key={action.id}
+            icon
+            onClick={() => handleDefaultAction(action.id)}
+          >
             {renderedIcon(action.icon)}
           </HvButton>
         ))}
@@ -206,7 +210,10 @@ export const HvFlowNode = ({
           {actions?.length && actions?.length > 0 && (
             <>
               {actsVisible?.map((action) => (
-                <HvTooltip title={<HvTypography>{action.label}</HvTypography>}>
+                <HvTooltip
+                  key={action.id}
+                  title={<HvTypography>{action.label}</HvTypography>}
+                >
                   <div>
                     <HvButton
                       icon

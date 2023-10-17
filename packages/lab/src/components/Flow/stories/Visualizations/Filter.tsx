@@ -1,5 +1,4 @@
 import { HvCheckBox, HvCheckBoxGroup } from "@hitachivantara/uikit-react-core";
-import { theme } from "@hitachivantara/uikit-styles";
 import { useEffect, useState } from "react";
 import { useReactFlow, useStore } from "reactflow";
 import { useFlowNode } from "../../hooks/useFlowNode";
@@ -58,13 +57,7 @@ export const Filter = (props) => {
   };
 
   return (
-    <HvFlowNode
-      title="Filter"
-      description="Filtering data"
-      color={theme.colors.cat2_40}
-      expanded
-      {...props}
-    >
+    <HvFlowNode description="Filtering data" expanded {...props}>
       <HvCheckBoxGroup onChange={handleCheck}>
         {options.map((o) => {
           return (
@@ -94,7 +87,7 @@ Filter.meta = {
     {
       label: "Filtered Data",
       isMandatory: false,
-      provides: ["jsonData"],
+      provides: "jsonData",
     },
   ],
 };

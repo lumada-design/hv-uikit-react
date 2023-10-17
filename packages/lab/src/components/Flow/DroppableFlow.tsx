@@ -49,6 +49,33 @@ export const getNode = (nodes: Node[], nodeId: string) => {
   return nodes.find((n) => n.id === nodeId);
 };
 
+const validateEdge = (
+  nodes: Node[],
+  edge: Edge,
+  nodeTypes: HvFlowNodeTypes<string> | undefined
+) => {
+  if (!edge.sourceHandle || !edge.targetHandle) return false;
+
+  const sourceNode = getNode(nodes, edge.source);
+  const targetNode = getNode(nodes, edge.target);
+
+  if (!sourceNode || !targetNode) return false;
+
+  const sourceType = sourceNode.type;
+  const targetType = targetNode.type;
+
+  if (!sourceType || !targetType) return false;
+
+  const inputs = nodeTypes?.[targetType]?.meta?.inputs || [];
+  const outputs = nodeTypes?.[sourceType]?.meta?.outputs || [];
+
+  const sourceProvides = outputs[edge.sourceHandle]?.provides || "";
+  const targetAccepts = inputs[edge.targetHandle]?.accepts || [];
+
+  const isValid = targetAccepts.includes(sourceProvides);
+  return isValid;
+};
+
 const validateEdges = (
   edges: Edge[],
   nodes: Node[],
@@ -58,35 +85,8 @@ const validateEdges = (
     const validEdges: Edge[] = [];
 
     edges.forEach((edge) => {
-      if (!edge.sourceHandle || !edge.targetHandle) return [];
-
-      const sourceNode = getNode(nodes, edge.source);
-      const targetNode = getNode(nodes, edge.target);
-
-      if (!sourceNode || !targetNode) return [];
-
-      const sourceType = sourceNode.type;
-      const targetType = targetNode.type;
-
-      if (!sourceType || !targetType) return [];
-
-      const output =
-        nodeTypes?.[sourceType]?.meta?.outputs?.[edge.sourceHandle];
-      const input = nodeTypes?.[targetType]?.meta?.inputs?.[edge.targetHandle];
-
-      const sourceProvides = output?.provides || [];
-      const targetAccepts = input?.accepts || [];
-
-      let isValid = false;
-      sourceProvides.forEach((s) => {
-        targetAccepts.forEach((t) => {
-          if (s === t) {
-            isValid = true;
-          }
-        });
-      });
-
-      if (isValid) {
+      const isValidEdge = validateEdge(nodes, edge, nodeTypes);
+      if (isValidEdge) {
         validEdges.push(edge);
       }
     });
@@ -202,35 +202,7 @@ export const HvDroppableFlow = ({
   );
 
   const isValidConnection = (connection) => {
-    const sourceNode = getNode(nodes, connection.source);
-    const targetNode = getNode(nodes, connection.target);
-
-    if (!sourceNode || !targetNode) {
-      return false;
-    }
-
-    const sourceType = sourceNode.type;
-    const targetType = targetNode.type;
-
-    if (!sourceType || !targetType) {
-      return false;
-    }
-
-    const inputs = nodeTypes?.[targetType]?.meta?.inputs || [];
-    const outputs = nodeTypes?.[sourceType]?.meta?.outputs || [];
-
-    const sourceProvides = outputs[connection.sourceHandle]?.provides || [];
-    const targetAccepts = inputs[connection.targetHandle]?.accepts || [];
-
-    let isValid = false;
-    sourceProvides.forEach((s) => {
-      targetAccepts.forEach((t) => {
-        if (s === t) {
-          isValid = true;
-        }
-      });
-    });
-
+    const isValid = validateEdge(nodes, connection, nodeTypes);
     return isValid;
   };
 

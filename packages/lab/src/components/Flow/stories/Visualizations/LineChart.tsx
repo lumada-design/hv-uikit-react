@@ -13,7 +13,6 @@ export const LineChart = (props) => {
 
   return (
     <HvFlowNode
-      title="Line Chart"
       description="Line Chart description"
       expanded
       classes={{ root: css({ width: 500 }) }}

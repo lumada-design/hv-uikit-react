@@ -11,11 +11,8 @@ export const BarChart = (props) => {
 
   const dataNode = nodes.find((n) => n.id === dataNodeId);
 
-  console.log(dataNode?.data.jsonData);
-
   return (
     <HvFlowNode
-      title="Line Chart"
       description="Line Chart description"
       expanded
       classes={{ root: css({ width: 500 }) }}
