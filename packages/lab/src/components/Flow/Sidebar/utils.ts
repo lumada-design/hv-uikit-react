@@ -15,7 +15,7 @@ export const buildGroups = (
             (accN: HvFlowSidebarGroupNodes, currN) => {
               if (currN[1].meta?.groupId === curr[0]) {
                 accN.push({
-                  id: currN[0],
+                  type: currN[0],
                   label: currN[1].meta?.label,
                 });
               }

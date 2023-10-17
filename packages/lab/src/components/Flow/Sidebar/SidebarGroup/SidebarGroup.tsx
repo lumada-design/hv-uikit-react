@@ -22,7 +22,7 @@ export { staticClasses as flowSidebarGroupClasses };
 export type HvFlowSidebarGroupClasses = ExtractNames<typeof useClasses>;
 
 export type HvFlowSidebarGroupNodes = {
-  id: string;
+  type: string;
   label: string;
 }[];
 
@@ -94,7 +94,7 @@ export const HvFlowSidebarGroup = ({
         <div className={classes.itemsContainer}>
           {nodes.map((obj) => (
             <HvFlowDraggableSidebarGroupItem
-              key={obj.id}
+              key={obj.type}
               {...itemProps}
               {...obj}
             />

@@ -1,3 +1,14 @@
+import { isValidElement, useCallback, useEffect, useState } from "react";
+
+import {
+  Handle,
+  NodeProps,
+  NodeToolbar,
+  Position,
+  useReactFlow,
+  useStore,
+} from "reactflow";
+
 import {
   ExtractNames,
   HvActionGeneric,
@@ -10,23 +21,9 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
 import { getColor, theme } from "@hitachivantara/uikit-styles";
-import { isValidElement, useCallback, useEffect, useState } from "react";
-import {
-  Handle,
-  NodeProps,
-  NodeToolbar,
-  Position,
-  useReactFlow,
-  useStore,
-} from "reactflow";
-import { useFlowContext } from "../FlowContext/FlowContext";
 
-import {
-  HvFlowDefaultAction,
-  HvFlowNodeInput,
-  HvFlowNodeOutput,
-  HvFlowNodeParam,
-} from "../types";
+import { useFlowContext } from "../FlowContext/FlowContext";
+import { HvFlowDefaultAction, HvFlowNodeParam } from "../types";
 import { staticClasses, useClasses } from "./Node.styles";
 import ParamRenderer from "./Parameters/ParamRenderer";
 
@@ -39,10 +36,6 @@ export interface HvFlowNodeProps extends Omit<HvBaseProps, "id">, NodeProps {
   description: string;
   /** Node expanded */
   expanded?: boolean;
-  /** Node inputs */
-  inputs?: HvFlowNodeInput[];
-  /** Node outputs */
-  outputs?: HvFlowNodeOutput[];
   /** Node parameters */
   params?: HvFlowNodeParam[];
   /** Node actions */

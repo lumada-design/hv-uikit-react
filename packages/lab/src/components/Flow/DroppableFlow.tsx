@@ -32,8 +32,8 @@ export { staticClasses as flowClasses };
 export type HvFlowClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDroppableFlowProps<
-  NodeData = any,
-  NodeType extends string | undefined = string | undefined
+  NodeType extends string | undefined = string | undefined,
+  NodeData = any
 > extends Omit<ReactFlowProps, "nodes" | "edges" | "nodeTypes"> {
   /** Flow content: background, controls, and minimap. */
   children?: React.ReactNode;
@@ -130,25 +130,36 @@ export const HvDroppableFlow = ({
   const handleDragEnd = useCallback(
     (event: DragEndEvent) => {
       if (event.over && event.over.id === elementId) {
-        const type = event.active.id.toString();
+        const type = event.active.data.current?.hvFlow?.type;
 
-        // Converts the coordinates to the react flow coordinate system
-        const position = reactFlowInstance.project({
-          x: (event.active.data.current?.hvFlow?.x || 0) - event.over.rect.left,
-          y: (event.active.data.current?.hvFlow?.y || 0) - event.over.rect.top,
-        });
+        // Only known node types can be dropped in the canvas
+        if (type && nodeTypes?.[type]) {
+          // Converts the coordinates to the react flow coordinate system
+          const position = reactFlowInstance.project({
+            x:
+              (event.active.data.current?.hvFlow?.x || 0) -
+              event.over.rect.left,
+            y:
+              (event.active.data.current?.hvFlow?.y || 0) - event.over.rect.top,
+          });
 
-        const newNode: Node = {
-          id: uid(),
-          position,
-          data: {},
-          type,
-        };
+          const newNode: Node = {
+            id: uid(),
+            position,
+            data: {},
+            type,
+          };
 
-        setNodes((nds) => nds.concat(newNode));
+          setNodes((nds) => nds.concat(newNode));
+        } else {
+          // eslint-disable-next-line no-console
+          console.error(
+            `Could not add node to the flow because of unknown type ${type}. Use nodeTypes to define all the node types.`
+          );
+        }
       }
     },
-    [elementId, reactFlowInstance, setNodes]
+    [elementId, nodeTypes, reactFlowInstance]
   );
 
   useDndMonitor({

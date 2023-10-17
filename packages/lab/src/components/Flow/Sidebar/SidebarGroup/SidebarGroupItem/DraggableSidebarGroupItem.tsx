@@ -1,8 +1,10 @@
-import { useForkRef } from "@mui/material";
-
 import { useRef } from "react";
 
+import { useForkRef } from "@mui/material";
+
 import { useDraggable } from "@dnd-kit/core";
+
+import { useUniqueId } from "@hitachivantara/uikit-react-core";
 
 import {
   HvFlowSidebarGroupItem,
@@ -11,22 +13,27 @@ import {
 
 export interface HvFlowDraggableSidebarGroupItemProps
   extends HvFlowSidebarGroupItemProps {
-  /** Item id: the item type. */
-  id: string;
+  /** Item type. */
+  type: string;
 }
 
 export const HvFlowDraggableSidebarGroupItem = ({
-  label,
   id,
+  label,
+  type,
   ...others
 }: HvFlowDraggableSidebarGroupItemProps) => {
   const itemRef = useRef<HTMLElement>(null);
 
+  const elementId = useUniqueId(id, `hvFlowDraggableItem-${type}`);
+
   const { attributes, listeners, setNodeRef, isDragging, transform } =
     useDraggable({
-      id,
+      id: elementId,
       data: {
         hvFlow: {
+          // Needed to know which item is being dragged and dropped
+          type,
           // Needed for the drag overlay: otherwise the item is cut by the drawer because of overflow
           label,
           // Item position: used to position the item when dropped

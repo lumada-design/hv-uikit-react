@@ -2,7 +2,13 @@ import { useMemo, useState } from "react";
 
 import debounce from "lodash/debounce";
 
-import { useDroppable } from "@dnd-kit/core";
+import {
+  DndContextProps,
+  DragOverlay,
+  useDndMonitor,
+  useDroppable,
+} from "@dnd-kit/core";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 import {
   ExtractNames,
@@ -20,6 +26,7 @@ import { staticClasses, useClasses } from "./Sidebar.styles";
 import { HvFlowSidebarGroup } from "./SidebarGroup";
 import { useFlowContext } from "../FlowContext";
 import { buildGroups } from "./utils";
+import { HvFlowSidebarGroupItem } from "./SidebarGroup/SidebarGroupItem";
 
 export { staticClasses as flowSidebarClasses };
 
@@ -69,6 +76,7 @@ export const HvFlowSidebar = ({
   );
 
   const [groups, setGroups] = useState(unfilteredGroups);
+  const [draggingLabel, setDraggingLabel] = useState(undefined);
 
   const labels = useLabels(DEFAULT_LABELS, labelsProps);
 
@@ -79,6 +87,21 @@ export const HvFlowSidebar = ({
   // Otherwise items dropped inside the sidebar will be added to the canvas
   const { setNodeRef } = useDroppable({
     id: drawerElementId,
+  });
+
+  const handleDragStart: DndContextProps["onDragStart"] = (event) => {
+    if (event.active.data.current?.hvFlow) {
+      setDraggingLabel(event.active.data.current.hvFlow?.label);
+    }
+  };
+
+  const handleDragEnd: DndContextProps["onDragEnd"] = () => {
+    setDraggingLabel(undefined);
+  };
+
+  useDndMonitor({
+    onDragEnd: handleDragEnd,
+    onDragStart: handleDragStart,
   });
 
   const handleSearch: HvInputProps["onChange"] = (event, value) => {
@@ -109,52 +132,59 @@ export const HvFlowSidebar = ({
   const handleDebouncedSearch = debounce(handleSearch, 500);
 
   return (
-    <HvDrawer
-      BackdropComponent={undefined}
-      variant="persistent"
-      classes={{
-        paper: classes.drawerPaper,
-      }}
-      anchor={anchor}
-      buttonTitle={buttonTitle}
-      {...others}
-    >
-      <div id={drawerElementId} ref={setNodeRef}>
-        <div className={classes.titleContainer}>
-          <Add role="none" />
-          <HvTypography variant="title3">{title}</HvTypography>
+    <>
+      <HvDrawer
+        BackdropComponent={undefined}
+        variant="persistent"
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+        anchor={anchor}
+        buttonTitle={buttonTitle}
+        {...others}
+      >
+        <div id={drawerElementId} ref={setNodeRef}>
+          <div className={classes.titleContainer}>
+            <Add role="none" />
+            <HvTypography variant="title3">{title}</HvTypography>
+          </div>
+          <div className={classes.contentContainer}>
+            <HvTypography className={classes.description}>
+              {description}
+            </HvTypography>
+            <HvInput
+              className={classes.searchRoot}
+              type="search"
+              placeholder={labels?.searchPlaceholder}
+              aria-label={labels?.searchAriaLabel}
+              aria-controls={groupsElementId}
+              aria-owns={groupsElementId}
+              onChange={handleDebouncedSearch}
+              inputProps={{ autoComplete: "off" }}
+            />
+            <ul id={groupsElementId} className={classes.groupsContainer}>
+              {Object.entries(groups).map((obj) => (
+                <HvFlowSidebarGroup
+                  key={obj[0]}
+                  id={obj[0]}
+                  expandButtonProps={{
+                    "aria-label": labels?.expandGroupButtonAriaLabel,
+                  }}
+                  itemProps={{
+                    "aria-roledescription": labels?.itemAriaRoleDescription,
+                  }}
+                  {...obj[1]}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className={classes.contentContainer}>
-          <HvTypography className={classes.description}>
-            {description}
-          </HvTypography>
-          <HvInput
-            className={classes.searchRoot}
-            type="search"
-            placeholder={labels?.searchPlaceholder}
-            aria-label={labels?.searchAriaLabel}
-            aria-controls={groupsElementId}
-            aria-owns={groupsElementId}
-            onChange={handleDebouncedSearch}
-            inputProps={{ autoComplete: "off" }}
-          />
-          <ul id={groupsElementId} className={classes.groupsContainer}>
-            {Object.entries(groups).map((obj) => (
-              <HvFlowSidebarGroup
-                key={obj[0]}
-                id={obj[0]}
-                expandButtonProps={{
-                  "aria-label": labels?.expandGroupButtonAriaLabel,
-                }}
-                itemProps={{
-                  "aria-roledescription": labels?.itemAriaRoleDescription,
-                }}
-                {...obj[1]}
-              />
-            ))}
-          </ul>
-        </div>
-      </div>
-    </HvDrawer>
+      </HvDrawer>
+      <DragOverlay modifiers={[restrictToWindowEdges]}>
+        {draggingLabel ? (
+          <HvFlowSidebarGroupItem label={draggingLabel} isDragging />
+        ) : null}
+      </DragOverlay>
+    </>
   );
 };

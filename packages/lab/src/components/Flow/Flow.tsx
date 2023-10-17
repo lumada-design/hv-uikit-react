@@ -1,9 +1,6 @@
-import { useState } from "react";
-
 import {
   DndContext,
   DndContextProps,
-  DragOverlay,
   KeyboardSensor,
   PointerSensor,
   useSensor,
@@ -20,13 +17,12 @@ import {
 } from "./types";
 import { HvFlowProvider } from "./FlowContext";
 import { HvDroppableFlow, HvDroppableFlowProps } from "./DroppableFlow";
-import { HvFlowSidebarGroupItem } from "./Sidebar/SidebarGroup/SidebarGroupItem";
 
 export interface HvFlowProps<
-  NodeData = any,
+  NodeGroups extends keyof any = string,
   NodeType extends string | undefined = string | undefined,
-  NodeGroups extends keyof any = string
-> extends HvDroppableFlowProps<NodeData, NodeType> {
+  NodeData = any
+> extends HvDroppableFlowProps<NodeType, NodeData> {
   /** Flow nodes groups. */
   nodeGroups?: HvFlowNodeGroups<NodeGroups>;
   /** Flow nodes types. */
@@ -59,22 +55,10 @@ export const HvFlow = ({
   dndContextProps,
   ...others
 }: HvFlowProps) => {
-  const [draggingLabel, setDraggingLabel] = useState(undefined);
-
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor)
   );
-
-  const handleDragStart: DndContextProps["onDragStart"] = (event) => {
-    if (event.active.data.current?.hvFlow) {
-      setDraggingLabel(event.active.data.current.hvFlow?.label);
-    }
-  };
-
-  const handleDragEnd: DndContextProps["onDragEnd"] = () => {
-    setDraggingLabel(undefined);
-  };
 
   // We're wrapping the main Flow component with the ReactFlowProvider to access the react flow instance.
   // HvFlowContext is our custom internal context.
@@ -86,19 +70,12 @@ export const HvFlow = ({
         defaultActions={defaultActions}
       >
         <DndContext
-          onDragStart={handleDragStart}
-          onDragEnd={handleDragEnd}
           sensors={sensors}
           modifiers={[restrictToWindowEdges]}
           {...dndContextProps}
         >
           <HvDroppableFlow {...others} />
           {sidebar}
-          <DragOverlay modifiers={[restrictToWindowEdges]}>
-            {draggingLabel ? (
-              <HvFlowSidebarGroupItem label={draggingLabel} isDragging />
-            ) : null}
-          </DragOverlay>
         </DndContext>
       </HvFlowProvider>
     </ReactFlowProvider>
