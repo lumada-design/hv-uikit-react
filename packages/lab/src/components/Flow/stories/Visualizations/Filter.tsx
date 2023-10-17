@@ -62,6 +62,7 @@ export const Filter = (props) => {
         {options.map((o) => {
           return (
             <HvCheckBox
+              key={o}
               label={o}
               value={o}
               checked={self?.data?.checked?.includes(o)}
