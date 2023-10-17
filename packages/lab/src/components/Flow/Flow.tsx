@@ -19,10 +19,10 @@ import { HvFlowProvider } from "./FlowContext";
 import { HvDroppableFlow, HvDroppableFlowProps } from "./DroppableFlow";
 
 export interface HvFlowProps<
-  NodeData = any,
+  NodeGroups extends keyof any = string,
   NodeType extends string | undefined = string | undefined,
-  NodeGroups extends keyof any = string
-> extends HvDroppableFlowProps<NodeData, NodeType> {
+  NodeData = any
+> extends HvDroppableFlowProps<NodeType, NodeData> {
   /** Flow nodes groups. */
   nodeGroups?: HvFlowNodeGroups<NodeGroups>;
   /** Flow nodes types. */

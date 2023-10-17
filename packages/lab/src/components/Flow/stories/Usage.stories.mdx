@@ -75,7 +75,7 @@ const nodeGroups = {
     description: "This is my description for models.",
     icon: <Favorite />,
   },
-} satisfies HvFlowProps<any, NodeType, NodeGroups>["nodeGroups"];
+} satisfies HvFlowProps<NodeGroups>["nodeGroups"];
 ```
 
 You can then create the sidebar by using the `HvFlowSidebar` component as a prop of the `HvFlow` component:

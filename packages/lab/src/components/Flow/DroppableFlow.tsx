@@ -30,8 +30,8 @@ export { staticClasses as flowClasses };
 export type HvFlowClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDroppableFlowProps<
-  NodeData = any,
-  NodeType extends string | undefined = string | undefined
+  NodeType extends string | undefined = string | undefined,
+  NodeData = any
 > extends Omit<ReactFlowProps, "nodes" | "edges" | "nodeTypes"> {
   /** Flow content: background, controls, and minimap. */
   children?: React.ReactNode;

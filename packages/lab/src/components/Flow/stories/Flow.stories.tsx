@@ -304,7 +304,7 @@ const nodeGroups = {
     description: "This is my description for dashboard.",
     icon: <LineChartAlt />,
   },
-} satisfies HvFlowProps<any, NodeType, NodeGroups>["nodeGroups"];
+} satisfies HvFlowProps<NodeGroups>["nodeGroups"];
 
 const nodeTypes = {
   tron: Tron,
@@ -319,9 +319,9 @@ const nodeTypes = {
 type NodeType = keyof typeof nodeTypes;
 
 // Flow
-const nodes = [] satisfies HvFlowProps<any, NodeType, NodeGroups>["nodes"];
+const nodes = [] satisfies HvFlowProps<NodeGroups, NodeType>["nodes"];
 
-const edges = [] satisfies HvFlowProps<any, NodeType, NodeGroups>["edges"];
+const edges = [] satisfies HvFlowProps<NodeGroups, NodeType>["edges"];
 
 export const Main: StoryObj<HvFlowProps> = {
   render: () => {
@@ -466,9 +466,7 @@ export const InitialState: StoryObj<HvFlowProps> = {
               console.log("Flow updated: ", { nodes: nds, edges: eds })
             }
           >
-            {/* <HvFlowBackground /> */}
             <HvFlowControls />
-            {/* <HvFlowMinimap /> */}
           </HvFlow>
         </div>
       </div>

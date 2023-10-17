@@ -33,6 +33,7 @@ const nodeTypes = {
 } satisfies HvFlowProps["nodeTypes"];
 
 type NodeType = keyof typeof nodeTypes;
+
 // Node groups
 type NodeGroups = "inputs" | "transformations" | "visualizations";
 
@@ -55,7 +56,7 @@ const nodeGroups = {
     description: "This is my description for visualizations.",
     icon: <LineChartIcon />,
   },
-} satisfies HvFlowProps<any, NodeType, NodeGroups>["nodeGroups"];
+} satisfies HvFlowProps<NodeGroups>["nodeGroups"];
 
 // Flow
 const nodes = [
@@ -109,7 +110,7 @@ const nodes = [
     position: { x: 980, y: 600 },
     data: {},
   },
-] satisfies HvFlowProps<any, NodeType, NodeGroups>["nodes"];
+] satisfies HvFlowProps<NodeGroups, NodeType>["nodes"];
 
 const edges = [
   {
@@ -140,7 +141,7 @@ const edges = [
     target: "barChartFiltered",
     targetHandle: "0",
   },
-] satisfies HvFlowProps<any, NodeType, NodeGroups>["edges"];
+] satisfies HvFlowProps<NodeGroups, NodeType>["edges"];
 
 const classes = {
   root: css({ height: "100vh" }),
