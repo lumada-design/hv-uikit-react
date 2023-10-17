@@ -92,7 +92,7 @@
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.0",
     "react-leaflet": "^4.2.1",
-    "reactflow": "^11.8.3",
+    "reactflow": "^11.9.4",
     "remark-gfm": "^3.0.1",
     "storybook": "^7.4.1",
     "storybook-a11y-report": "^0.0.20",
