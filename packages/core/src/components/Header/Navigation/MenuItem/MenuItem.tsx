@@ -146,6 +146,7 @@ export const HvHeaderMenuItem = (props: HvHeaderMenuItemProps) => {
           target={itemTarget}
           {...itemProps}
           aria-current={isCurrent}
+          aria-label={item.label}
         >
           {label}
         </a>
