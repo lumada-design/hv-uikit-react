@@ -23,7 +23,7 @@ const baseline = {
   },
 
   /* Headings are unstyled. */
-  "h1, h2, h3, h4, h5, h6": {
+  ":where(h1, h2, h3, h4, h5, h6)": {
     fontSize: "inherit",
     fontWeight: "inherit",
   },
@@ -65,7 +65,7 @@ const baseline = {
   },
 
   /* List have no margin and padding. */
-  "ol, ul": {
+  ":where(ol, ul)": {
     margin: 0,
     padding: 0,
   },
@@ -94,8 +94,7 @@ export const CssBaseline = {
   },
 
   html: {
-    fontFamily:
-      "'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+    fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",
   },
 
   body: {
