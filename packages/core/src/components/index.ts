@@ -81,3 +81,4 @@ export * from "./QueryBuilder";
 export * from "./ColorPicker";
 export * from "./Carousel";
 export * from "./TimePicker";
+export * from "./Section";
