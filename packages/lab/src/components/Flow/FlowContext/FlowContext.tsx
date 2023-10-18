@@ -2,7 +2,6 @@ import {
   Dispatch,
   SetStateAction,
   createContext,
-  useContext,
   useMemo,
   useState,
 } from "react";
@@ -62,5 +61,3 @@ export const HvFlowProvider = ({
     <HvFlowContext.Provider value={value}>{children}</HvFlowContext.Provider>
   );
 };
-
-export const useFlowContext = () => useContext(HvFlowContext);

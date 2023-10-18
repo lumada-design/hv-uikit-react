@@ -24,7 +24,7 @@ import { Add } from "@hitachivantara/uikit-react-icons";
 
 import { staticClasses, useClasses } from "./Sidebar.styles";
 import { HvFlowSidebarGroup } from "./SidebarGroup";
-import { useFlowContext } from "../FlowContext";
+import { useFlowContext } from "../hooks";
 import { buildGroups } from "./utils";
 import { HvFlowSidebarGroupItem } from "./SidebarGroup/SidebarGroupItem";
 

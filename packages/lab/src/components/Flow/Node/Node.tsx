@@ -22,7 +22,7 @@ import {
 import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
 import { getColor, theme } from "@hitachivantara/uikit-styles";
 
-import { useFlowContext } from "../FlowContext/FlowContext";
+import { useFlowContext } from "../hooks";
 import { HvFlowDefaultAction, HvFlowNodeParam } from "../types";
 import { staticClasses, useClasses } from "./Node.styles";
 import ParamRenderer from "./Parameters/ParamRenderer";

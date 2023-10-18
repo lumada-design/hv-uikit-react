@@ -15,7 +15,7 @@ import {
   HvFlowDraggableSidebarGroupItem,
   HvFlowDraggableSidebarGroupItemProps,
 } from "./SidebarGroupItem";
-import { useFlowContext } from "../../FlowContext";
+import { useFlowContext } from "../../hooks";
 
 export { staticClasses as flowSidebarGroupClasses };
 

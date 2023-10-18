@@ -24,7 +24,7 @@ import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 
 import { HvFlowNodeTypes } from "./types";
 import { staticClasses, useClasses } from "./Flow.styles";
-import { useFlowContext } from "./FlowContext";
+import { useFlowContext } from "./hooks";
 import { flowStyles } from "./base";
 
 export { staticClasses as flowClasses };
