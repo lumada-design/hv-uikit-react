@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
 import { Global } from "@emotion/react";
+import { CSSInterpolation, css, cx } from "@emotion/css";
 
 import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
 
-import { CSSInterpolation, css, cx } from "@emotion/css";
 import {
   HvButton,
   HvCalendar,
@@ -425,39 +425,41 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid container item xs={12}>
-          <HvGrid item xs={12} sm={6}>
-            <HvDatePicker
-              label="Start date"
-              description="Enter a start date"
-              placeholder="Choose a date"
-              required
-              aria-errormessage="start-error"
-              onChange={(value) => {
-                setStartErrorMessage(
-                  value ? undefined : "Start date is required."
-                );
-              }}
-            />
-          </HvGrid>
-          <HvGrid item xs={12} sm={6}>
-            <HvDatePicker
-              label="End date"
-              description="Enter an end date"
-              placeholder="Choose a date"
-              required
-              status={endValidationState}
-              aria-errormessage="end-error"
-              onChange={(value) => {
-                setEndValidationState("invalid");
+        <HvGrid item xs={12}>
+          <HvGrid container>
+            <HvGrid item xs={12} sm={6}>
+              <HvDatePicker
+                label="Start date"
+                description="Enter a start date"
+                placeholder="Choose a date"
+                required
+                aria-errormessage="start-error"
+                onChange={(value) => {
+                  setStartErrorMessage(
+                    value ? undefined : "Start date is required."
+                  );
+                }}
+              />
+            </HvGrid>
+            <HvGrid item xs={12} sm={6}>
+              <HvDatePicker
+                label="End date"
+                description="Enter an end date"
+                placeholder="Choose a date"
+                required
+                status={endValidationState}
+                aria-errormessage="end-error"
+                onChange={(value) => {
+                  setEndValidationState("invalid");
 
-                setEndErrorMessage(
-                  value
-                    ? "The end date will always be invalid."
-                    : "You can try choosing an end date."
-                );
-              }}
-            />
+                  setEndErrorMessage(
+                    value
+                      ? "The end date will always be invalid."
+                      : "You can try choosing an end date."
+                  );
+                }}
+              />
+            </HvGrid>
           </HvGrid>
         </HvGrid>
         <HvGrid item xs={12}>
