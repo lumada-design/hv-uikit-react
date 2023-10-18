@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { forwardRef, useCallback, useState } from "react";
 
 import { RadioProps as MuiRadioProps } from "@mui/material";
 
@@ -133,149 +133,154 @@ export interface HvRadioProps
  * Individual use of radio buttons, at least uncontrolled, is unadvised as React state management doesn't
  * respond to the browser's native management of radio inputs checked state.
  */
-export const HvRadio = (props: HvRadioProps) => {
-  const {
-    classes: classesProp,
-    className,
-    id,
-    name,
-    value = "on",
-    required = false,
-    readOnly = false,
-    disabled = false,
-    label,
-    "aria-label": ariaLabel,
-    "aria-labelledby": ariaLabelledBy,
-    "aria-describedby": ariaDescribedBy,
-    labelProps,
-    checked,
-    defaultChecked = false,
-    onChange,
-    status = "standBy",
-    statusMessage,
-    "aria-errormessage": ariaErrorMessage,
-    semantic = false,
-    inputProps,
-    onFocusVisible,
-    onBlur,
-    ...others
-  } = useDefaultProps("HvRadio", props);
+export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
+  (props, ref) => {
+    const {
+      classes: classesProp,
+      className,
+      id,
+      name,
+      value = "on",
+      required = false,
+      readOnly = false,
+      disabled = false,
+      label,
+      "aria-label": ariaLabel,
+      "aria-labelledby": ariaLabelledBy,
+      "aria-describedby": ariaDescribedBy,
+      labelProps,
+      checked,
+      defaultChecked = false,
+      onChange,
+      status = "standBy",
+      statusMessage,
+      "aria-errormessage": ariaErrorMessage,
+      semantic = false,
+      inputProps,
+      onFocusVisible,
+      onBlur,
+      ...others
+    } = useDefaultProps("HvRadio", props);
 
-  const { classes, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id, "hvradio");
+    const elementId = useUniqueId(id, "hvradio");
 
-  const [focusVisible, setFocusVisible] = useState(false);
+    const [focusVisible, setFocusVisible] = useState(false);
 
-  const onFocusVisibleCallback = useCallback(
-    (evt: React.FocusEvent<any>) => {
-      setFocusVisible(true);
-      onFocusVisible?.(evt);
-    },
-    [onFocusVisible]
-  );
+    const onFocusVisibleCallback = useCallback(
+      (evt: React.FocusEvent<any>) => {
+        setFocusVisible(true);
+        onFocusVisible?.(evt);
+      },
+      [onFocusVisible]
+    );
 
-  const onBlurCallback = useCallback(
-    (evt: React.FocusEvent<any>) => {
-      setFocusVisible(false);
-      onBlur?.(evt);
-    },
-    [onBlur]
-  );
+    const onBlurCallback = useCallback(
+      (evt: React.FocusEvent<any>) => {
+        setFocusVisible(false);
+        onBlur?.(evt);
+      },
+      [onBlur]
+    );
 
-  const [isChecked, setIsChecked] = useControlled(
-    checked,
-    Boolean(defaultChecked)
-  );
+    const [isChecked, setIsChecked] = useControlled(
+      checked,
+      Boolean(defaultChecked)
+    );
 
-  const onLocalChange = useCallback(
-    (evt: React.ChangeEvent<HTMLInputElement>, newChecked: boolean) => {
-      setIsChecked(newChecked);
+    const onLocalChange = useCallback(
+      (evt: React.ChangeEvent<HTMLInputElement>, newChecked: boolean) => {
+        setIsChecked(newChecked);
 
-      onChange?.(evt, newChecked, value);
-    },
-    [onChange, setIsChecked, value]
-  );
+        onChange?.(evt, newChecked, value);
+      },
+      [onChange, setIsChecked, value]
+    );
 
-  // the error message area will only be created if:
-  // - an external element that provides an error message isn't identified via aria-errormessage AND
-  //   - both status and statusMessage properties are being controlled
-  const canShowError =
-    ariaErrorMessage == null &&
-    status !== undefined &&
-    statusMessage !== undefined;
+    // the error message area will only be created if:
+    // - an external element that provides an error message isn't identified via aria-errormessage AND
+    //   - both status and statusMessage properties are being controlled
+    const canShowError =
+      ariaErrorMessage == null &&
+      status !== undefined &&
+      statusMessage !== undefined;
 
-  const hasLabel = label != null;
+    const hasLabel = label != null;
 
-  const isStateInvalid = isInvalid(status);
+    const isStateInvalid = isInvalid(status);
 
-  let errorMessageId: string | undefined;
-  if (isStateInvalid) {
-    errorMessageId = canShowError
-      ? setId(elementId, "error")
-      : ariaErrorMessage;
+    let errorMessageId: string | undefined;
+    if (isStateInvalid) {
+      errorMessageId = canShowError
+        ? setId(elementId, "error")
+        : ariaErrorMessage;
+    }
+
+    const radio = (
+      <HvBaseRadio
+        ref={ref}
+        id={label ? setId(elementId, "input") : setId(id, "input")}
+        name={name}
+        className={cx(classes.radio, {
+          [classes.invalidRadio]: isStateInvalid,
+        })}
+        disabled={disabled}
+        readOnly={readOnly}
+        onChange={onLocalChange}
+        value={value}
+        checked={isChecked}
+        semantic={semantic}
+        inputProps={{
+          "aria-invalid": isStateInvalid ? true : undefined,
+          "aria-errormessage": errorMessageId,
+          "aria-label": ariaLabel,
+          "aria-labelledby": ariaLabelledBy,
+          "aria-describedby": ariaDescribedBy,
+          ...inputProps,
+        }}
+        onFocusVisible={onFocusVisibleCallback}
+        onBlur={onBlurCallback}
+        {...others}
+      />
+    );
+
+    return (
+      <HvFormElement
+        id={id}
+        name={name}
+        status={status || "standBy"}
+        disabled={disabled}
+        required={required}
+        readOnly={readOnly}
+        className={cx(classes.root, className)}
+      >
+        {hasLabel ? (
+          <div
+            className={cx(classes.container, {
+              [classes.disabled]: disabled,
+              [classes.focusVisible]: !!(focusVisible && label),
+              [classes.invalidContainer]: isStateInvalid,
+            })}
+          >
+            {radio}
+            <HvLabel
+              id={setId(elementId, "label")}
+              htmlFor={setId(elementId, "input")}
+              label={label}
+              className={classes.label}
+              {...labelProps}
+            />
+          </div>
+        ) : (
+          radio
+        )}
+        {canShowError && (
+          <HvWarningText id={setId(elementId, "error")} disableBorder>
+            {statusMessage}
+          </HvWarningText>
+        )}
+      </HvFormElement>
+    );
   }
-
-  const radio = (
-    <HvBaseRadio
-      id={label ? setId(elementId, "input") : setId(id, "input")}
-      name={name}
-      className={cx(classes.radio, { [classes.invalidRadio]: isStateInvalid })}
-      disabled={disabled}
-      readOnly={readOnly}
-      onChange={onLocalChange}
-      value={value}
-      checked={isChecked}
-      semantic={semantic}
-      inputProps={{
-        "aria-invalid": isStateInvalid ? true : undefined,
-        "aria-errormessage": errorMessageId,
-        "aria-label": ariaLabel,
-        "aria-labelledby": ariaLabelledBy,
-        "aria-describedby": ariaDescribedBy,
-        ...inputProps,
-      }}
-      onFocusVisible={onFocusVisibleCallback}
-      onBlur={onBlurCallback}
-      {...others}
-    />
-  );
-
-  return (
-    <HvFormElement
-      id={id}
-      name={name}
-      status={status || "standBy"}
-      disabled={disabled}
-      required={required}
-      readOnly={readOnly}
-      className={cx(classes.root, className)}
-    >
-      {hasLabel ? (
-        <div
-          className={cx(classes.container, {
-            [classes.disabled]: disabled,
-            [classes.focusVisible]: !!(focusVisible && label),
-            [classes.invalidContainer]: isStateInvalid,
-          })}
-        >
-          {radio}
-          <HvLabel
-            id={setId(elementId, "label")}
-            htmlFor={setId(elementId, "input")}
-            label={label}
-            className={classes.label}
-            {...labelProps}
-          />
-        </div>
-      ) : (
-        radio
-      )}
-      {canShowError && (
-        <HvWarningText id={setId(elementId, "error")} disableBorder>
-          {statusMessage}
-        </HvWarningText>
-      )}
-    </HvFormElement>
-  );
-};
+);

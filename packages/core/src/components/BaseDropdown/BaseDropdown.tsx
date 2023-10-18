@@ -4,6 +4,7 @@ import React, {
   useCallback,
   KeyboardEventHandler,
   AriaAttributes,
+  forwardRef,
 } from "react";
 
 import { createPortal } from "react-dom";
@@ -121,407 +122,421 @@ export interface HvBaseDropdownProps
   /**
    * Pass a ref to the dropdown header element.
    */
-  dropdownHeaderRef?: React.Ref<any>;
+  dropdownHeaderRef?: React.Ref<HTMLDivElement>;
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
   classes?: HvBaseDropdownClasses;
+  /** @ignore */
+  ref?: React.Ref<HTMLDivElement>;
 }
 
-export const HvBaseDropdown = (props: HvBaseDropdownProps) => {
-  const {
-    id: idProp,
-    className,
-    classes: classesProp,
-    children,
-    role,
-    placeholder,
-    component,
-    adornment,
-    expanded,
-    dropdownHeaderProps,
-    defaultExpanded,
-    disabled,
-    readOnly,
-    required,
-    disablePortal,
-    variableWidth,
-    placement: placementProp = "right",
-    "aria-expanded": ariaExpandedProp,
-    "aria-label": ariaLabelProp,
-    "aria-labelledby": ariaLabelledByProp,
-    popperProps = {},
-    dropdownHeaderRef: dropdownHeaderRefProp,
-    onToggle,
-    onClickOutside,
-    onContainerCreation,
-    ...others
-  } = useDefaultProps("HvBaseDropdown", props);
-  const { classes, cx } = useClasses(classesProp);
-
-  const { rootId } = useTheme();
-
-  const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
-
-  const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
-    null
-  );
-  const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
-  const [popperMaxSize, setPopperMaxSize] = useState<{
-    width?: number;
-    height?: number;
-  }>({});
-
-  const handleDropdownHeaderRefProp = useForkRef(
-    dropdownHeaderRefProp,
-    dropdownHeaderProps?.ref
-  );
-  const handleDropdownHeaderRef = useForkRef(
-    setReferenceElement,
-    handleDropdownHeaderRefProp
-  );
-
-  const ariaRole = role || (component == null ? "combobox" : undefined);
-
-  const ariaExpanded = ariaExpandedProp ?? (ariaRole ? !!isOpen : undefined);
-
-  const id = useUniqueId(idProp, "hvbasedropdown");
-  const containerId = setId(id, "children-container");
-
-  const headerControlArias = {
-    "aria-required": required ?? undefined,
-    "aria-readonly": readOnly ?? undefined,
-
-    "aria-expanded": ariaExpanded,
-    "aria-owns": isOpen ? containerId : undefined,
-    "aria-controls": isOpen ? containerId : undefined,
-  } satisfies AriaAttributes;
-
-  const headerAriaLabels = {
-    "aria-label": ariaLabelProp,
-    "aria-labelledby": ariaLabelledByProp,
-  } satisfies AriaAttributes;
-
-  const placement: PopperPlacementType = `bottom-${
-    placementProp === "right" ? "start" : "end"
-  }`;
-
-  const extensionWidth = referenceElement
-    ? referenceElement?.offsetWidth
-    : "inherit";
-
-  const { modifiers: popperPropsModifiers = [], ...otherPopperProps } =
-    popperProps;
-
-  const onFirstUpdate = useCallback(() => {
-    onContainerCreation?.(popperElement);
-  }, [onContainerCreation, popperElement]);
-
-  const widthCalculator = useCallback(
-    ({ state }: ModifierArguments<Options>) => {
-      state.styles.popper.width = `${state.rects.reference.width}px`;
-    },
-    []
-  );
-
-  const widthCalculatorEffect = useCallback(
-    ({ state }: ModifierArguments<Options>) => {
-      state.elements.popper.style.width = `${
-        (state.elements.reference as any).offsetWidth
-      }px`;
-    },
-    []
-  );
-
-  const applyMaxSizeCalculator = useCallback(
-    ({ state }: ModifierArguments<Options>) => {
-      // The `maxSize` modifier provides this data
-      const { width, height } = state.modifiersData.maxSize;
-      if (width !== popperMaxSize?.width || height !== popperMaxSize?.height) {
-        setPopperMaxSize({ width, height });
-      }
-
-      state.styles.popper = {
-        ...state.styles.popper,
-        maxWidth: `${width}px`,
-        maxHeight: `${height}px`,
-      };
-    },
-    [popperMaxSize]
-  );
-
-  const maxSizeCalculator = useCallback(
-    ({ state, name, options }: ModifierArguments<Options>) => {
-      const overflow = detectOverflow(state, options);
-
-      const x = state.modifiersData.preventOverflow?.x || 0;
-      const y = state.modifiersData.preventOverflow?.y || 0;
-
-      const popperWidth = state.rects.popper.width;
-      const popperHeight = state.rects.popper.height;
-
-      const basePlacement = state.placement.split("-")[0];
-
-      const widthProp = basePlacement === "left" ? "left" : "right";
-      const heightProp = basePlacement === "top" ? "top" : "bottom";
-
-      state.modifiersData[name] = {
-        width: popperWidth - overflow[widthProp] - x,
-        height: popperHeight - overflow[heightProp] - y,
-      };
-    },
-    []
-  );
-
-  const modifiers = useMemo<PopperProps["modifiers"]>(
-    () => [
-      {
-        name: "variableWidth",
-        enabled: !variableWidth,
-        phase: "beforeWrite",
-        requires: ["computeStyles"],
-        fn: widthCalculator,
-        effect: widthCalculatorEffect,
-      },
-      {
-        name: "maxSize",
-        enabled: true,
-        phase: "main",
-        requiresIfExists: ["offset", "preventOverflow", "flip"],
-        fn: maxSizeCalculator,
-      },
-      {
-        name: "applyMaxSize",
-        enabled: true,
-        phase: "beforeWrite",
-        requires: ["maxSize"],
-        fn: applyMaxSizeCalculator,
-      },
-      ...popperPropsModifiers,
-    ],
-    [
-      maxSizeCalculator,
-      applyMaxSizeCalculator,
-      popperPropsModifiers,
+export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
+  (props, ref) => {
+    const {
+      id: idProp,
+      className,
+      classes: classesProp,
+      children,
+      role,
+      placeholder,
+      component,
+      adornment,
+      expanded,
+      dropdownHeaderProps,
+      defaultExpanded,
+      disabled,
+      readOnly,
+      required,
+      disablePortal,
       variableWidth,
-      widthCalculator,
-      widthCalculatorEffect,
-    ]
-  );
+      placement: placementProp = "right",
+      "aria-expanded": ariaExpandedProp,
+      "aria-label": ariaLabelProp,
+      "aria-labelledby": ariaLabelledByProp,
+      popperProps = {},
+      dropdownHeaderRef: dropdownHeaderRefProp,
+      onToggle,
+      onClickOutside,
+      onContainerCreation,
+      ...others
+    } = useDefaultProps("HvBaseDropdown", props);
+    const { classes, cx } = useClasses(classesProp);
 
-  const { styles: popperStyles, attributes } = usePopper(
-    referenceElement,
-    popperElement,
-    {
-      placement,
-      modifiers,
-      onFirstUpdate,
-      ...otherPopperProps,
-    }
-  );
+    const { rootId } = useTheme();
 
-  const popperPlacement =
-    attributes.popper?.["data-popper-placement"] ?? "bottom";
+    const [isOpen, setIsOpen] = useControlled(
+      expanded,
+      Boolean(defaultExpanded)
+    );
 
-  const handleToggle = useCallback(
-    (event) => {
-      if (event && !isKey(event, "Tab")) {
-        event.preventDefault();
-      }
+    const [referenceElement, setReferenceElement] =
+      useState<HTMLElement | null>(null);
+    const [popperElement, setPopperElement] = useState<HTMLElement | null>(
+      null
+    );
+    const [popperMaxSize, setPopperMaxSize] = useState<{
+      width?: number;
+      height?: number;
+    }>({});
 
-      const notControlKey =
-        !!event?.code &&
-        !isOneOfKeys(event, ["Tab", "Enter", "Esc", "ArrowDown", "Space"]);
+    const handleDropdownHeaderRefProp = useForkRef(
+      dropdownHeaderRefProp,
+      dropdownHeaderProps?.ref
+    );
+    const handleDropdownHeaderRef = useForkRef(
+      setReferenceElement,
+      handleDropdownHeaderRefProp
+    );
 
-      const ignoredCombinations =
-        (isKey(event, "Esc") && !isOpen) ||
-        (isKey(event, "ArrowDown") && isOpen) ||
-        (isKey(event, "Tab") && !isOpen);
+    const ariaRole = role || (component == null ? "combobox" : undefined);
 
-      if (disabled || notControlKey || ignoredCombinations) return;
+    const ariaExpanded = ariaExpandedProp ?? (ariaRole ? !!isOpen : undefined);
 
-      const newOpen = !isOpen;
+    const id = useUniqueId(idProp, "hvbasedropdown");
+    const containerId = setId(id, "children-container");
 
-      /* If about to close focus on the header component. */
-      setIsOpen(() => {
-        if (!newOpen) {
-          // Focus-ring won't be visible even if using the keyboard:
-          // https://github.com/WICG/focus-visible/issues/88
-          referenceElement?.focus({ preventScroll: true });
+    const headerControlArias = {
+      "aria-required": required ?? undefined,
+      "aria-readonly": readOnly ?? undefined,
+
+      "aria-expanded": ariaExpanded,
+      "aria-owns": isOpen ? containerId : undefined,
+      "aria-controls": isOpen ? containerId : undefined,
+    } satisfies AriaAttributes;
+
+    const headerAriaLabels = {
+      "aria-label": ariaLabelProp,
+      "aria-labelledby": ariaLabelledByProp,
+    } satisfies AriaAttributes;
+
+    const placement: PopperPlacementType = `bottom-${
+      placementProp === "right" ? "start" : "end"
+    }`;
+
+    const extensionWidth = referenceElement
+      ? referenceElement?.offsetWidth
+      : "inherit";
+
+    const { modifiers: popperPropsModifiers = [], ...otherPopperProps } =
+      popperProps;
+
+    const onFirstUpdate = useCallback(() => {
+      onContainerCreation?.(popperElement);
+    }, [onContainerCreation, popperElement]);
+
+    const widthCalculator = useCallback(
+      ({ state }: ModifierArguments<Options>) => {
+        state.styles.popper.width = `${state.rects.reference.width}px`;
+      },
+      []
+    );
+
+    const widthCalculatorEffect = useCallback(
+      ({ state }: ModifierArguments<Options>) => {
+        state.elements.popper.style.width = `${
+          (state.elements.reference as any).offsetWidth
+        }px`;
+      },
+      []
+    );
+
+    const applyMaxSizeCalculator = useCallback(
+      ({ state }: ModifierArguments<Options>) => {
+        // The `maxSize` modifier provides this data
+        const { width, height } = state.modifiersData.maxSize;
+        if (
+          width !== popperMaxSize?.width ||
+          height !== popperMaxSize?.height
+        ) {
+          setPopperMaxSize({ width, height });
         }
 
-        return newOpen;
-      });
+        state.styles.popper = {
+          ...state.styles.popper,
+          maxWidth: `${width}px`,
+          maxHeight: `${height}px`,
+        };
+      },
+      [popperMaxSize]
+    );
 
-      onToggle?.(event, newOpen);
-    },
-    [isOpen, disabled, setIsOpen, onToggle, referenceElement]
-  );
+    const maxSizeCalculator = useCallback(
+      ({ state, name, options }: ModifierArguments<Options>) => {
+        const overflow = detectOverflow(state, options);
 
-  const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
+        const x = state.modifiersData.preventOverflow?.x || 0;
+        const y = state.modifiersData.preventOverflow?.y || 0;
 
-  const defaultHeaderElement = (
-    <div
-      id={setId(id, "header")}
-      className={cx(classes.header, {
-        [classes.headerDisabled]: disabled,
-        [classes.headerReadOnly]: readOnly,
-        [classes.headerOpen]: isOpen,
-        [classes.headerOpenUp]: isOpen && popperPlacement.includes("top"),
-        [classes.headerOpenDown]: isOpen && popperPlacement.includes("bottom"),
-      })}
-      // TODO: review "textbox" role
-      role={ariaRole === "combobox" ? "textbox" : undefined}
-      {...headerAriaLabels}
-      style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
-      // Removes the element from the navigation sequence for keyboard focus if disabled
-      tabIndex={disabled ? -1 : 0}
-      ref={handleDropdownHeaderRef}
-      {...dropdownHeaderProps}
-    >
-      <div className={classes.selection}>
-        {placeholder && typeof placeholder === "string" ? (
-          <HvTypography
-            className={cx(classes.placeholder, {
-              [classes.selectionDisabled]: disabled,
-            })}
-            variant="body"
-          >
-            {placeholder}
-          </HvTypography>
-        ) : (
-          placeholder
-        )}
-      </div>
-      <div className={classes.arrowContainer}>
-        {adornment || (
-          <ExpanderComponent
-            iconSize="XS"
-            color={disabled ? "secondary_60" : undefined}
-            className={classes.arrow}
-          />
-        )}
-      </div>
-    </div>
-  );
+        const popperWidth = state.rects.popper.width;
+        const popperHeight = state.rects.popper.height;
 
-  const headerElement =
-    component && React.isValidElement(component)
-      ? React.cloneElement(component as React.ReactElement, {
-          ref: handleDropdownHeaderRef,
-          ...headerControlArias,
-        })
-      : defaultHeaderElement;
+        const basePlacement = state.placement.split("-")[0];
 
-  const containerComponent = (() => {
-    /**
-     *  Handle keyboard inside children container.
-     */
-    const handleContainerKeyDown: KeyboardEventHandler = (event) => {
-      if (isKey(event, "Esc")) {
-        handleToggle(event);
+        const widthProp = basePlacement === "left" ? "left" : "right";
+        const heightProp = basePlacement === "top" ? "top" : "bottom";
+
+        state.modifiersData[name] = {
+          width: popperWidth - overflow[widthProp] - x,
+          height: popperHeight - overflow[heightProp] - y,
+        };
+      },
+      []
+    );
+
+    const modifiers = useMemo<PopperProps["modifiers"]>(
+      () => [
+        {
+          name: "variableWidth",
+          enabled: !variableWidth,
+          phase: "beforeWrite",
+          requires: ["computeStyles"],
+          fn: widthCalculator,
+          effect: widthCalculatorEffect,
+        },
+        {
+          name: "maxSize",
+          enabled: true,
+          phase: "main",
+          requiresIfExists: ["offset", "preventOverflow", "flip"],
+          fn: maxSizeCalculator,
+        },
+        {
+          name: "applyMaxSize",
+          enabled: true,
+          phase: "beforeWrite",
+          requires: ["maxSize"],
+          fn: applyMaxSizeCalculator,
+        },
+        ...popperPropsModifiers,
+      ],
+      [
+        maxSizeCalculator,
+        applyMaxSizeCalculator,
+        popperPropsModifiers,
+        variableWidth,
+        widthCalculator,
+        widthCalculatorEffect,
+      ]
+    );
+
+    const { styles: popperStyles, attributes } = usePopper(
+      referenceElement,
+      popperElement,
+      {
+        placement,
+        modifiers,
+        onFirstUpdate,
+        ...otherPopperProps,
       }
-      if (isKey(event, "Tab") && !event.shiftKey) {
-        const focusList = getFirstAndLastFocus(popperElement);
-        if (document.activeElement === focusList?.last) {
+    );
+
+    const popperPlacement =
+      attributes.popper?.["data-popper-placement"] ?? "bottom";
+
+    const handleToggle = useCallback(
+      (event) => {
+        if (event && !isKey(event, "Tab")) {
           event.preventDefault();
-          focusList?.first?.focus();
         }
-      }
-    };
 
-    const handleOutside: ClickAwayListenerProps["onClickAway"] = (event) => {
-      const isButtonClick = referenceElement?.contains(event.target as any);
-      if (!isButtonClick) {
-        onClickOutside?.(event);
-        setIsOpen(false);
-        onToggle?.(event, false);
-      }
-    };
+        const notControlKey =
+          !!event?.code &&
+          !isOneOfKeys(event, ["Tab", "Enter", "Esc", "ArrowDown", "Space"]);
 
-    const container = (
+        const ignoredCombinations =
+          (isKey(event, "Esc") && !isOpen) ||
+          (isKey(event, "ArrowDown") && isOpen) ||
+          (isKey(event, "Tab") && !isOpen);
+
+        if (disabled || notControlKey || ignoredCombinations) return;
+
+        const newOpen = !isOpen;
+
+        /* If about to close focus on the header component. */
+        setIsOpen(() => {
+          if (!newOpen) {
+            // Focus-ring won't be visible even if using the keyboard:
+            // https://github.com/WICG/focus-visible/issues/88
+            referenceElement?.focus({ preventScroll: true });
+          }
+
+          return newOpen;
+        });
+
+        onToggle?.(event, newOpen);
+      },
+      [isOpen, disabled, setIsOpen, onToggle, referenceElement]
+    );
+
+    const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
+
+    const defaultHeaderElement = (
       <div
-        ref={setPopperElement}
-        className={classes.container}
-        style={popperStyles.popper}
-        {...attributes.popper}
+        id={setId(id, "header")}
+        className={cx(classes.header, {
+          [classes.headerDisabled]: disabled,
+          [classes.headerReadOnly]: readOnly,
+          [classes.headerOpen]: isOpen,
+          [classes.headerOpenUp]: isOpen && popperPlacement.includes("top"),
+          [classes.headerOpenDown]:
+            isOpen && popperPlacement.includes("bottom"),
+        })}
+        // TODO: review "textbox" role
+        role={ariaRole === "combobox" ? "textbox" : undefined}
+        {...headerAriaLabels}
+        style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
+        // Removes the element from the navigation sequence for keyboard focus if disabled
+        tabIndex={disabled ? -1 : 0}
+        ref={handleDropdownHeaderRef}
+        {...dropdownHeaderProps}
       >
-        <ClickAwayListener onClickAway={handleOutside}>
-          {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-          <div onKeyDown={handleContainerKeyDown}>
-            {popperPlacement.includes("bottom") && (
-              <div
-                style={{ width: extensionWidth }}
-                className={cx(classes.inputExtensionOpen, {
-                  [classes.inputExtensionLeftPosition]:
-                    popperPlacement.includes("end"),
-                })}
-              />
-            )}
-            <BaseDropdownContext.Provider value={popperMaxSize}>
-              <div
-                id={containerId}
-                className={cx(classes.panel, {
-                  [classes.panelOpenedUp]: popperPlacement.includes("top"),
-                  [classes.panelOpenedDown]: popperPlacement.includes("bottom"),
-                })}
-              >
-                {children}
-              </div>
-            </BaseDropdownContext.Provider>
-            {popperPlacement.includes("top") && (
-              <div
-                style={{ width: extensionWidth }}
-                className={cx(
-                  classes.inputExtensionOpen,
-                  classes.inputExtensionOpenShadow,
-                  {
-                    [classes.inputExtensionFloatRight]:
+        <div className={classes.selection}>
+          {placeholder && typeof placeholder === "string" ? (
+            <HvTypography
+              className={cx(classes.placeholder, {
+                [classes.selectionDisabled]: disabled,
+              })}
+              variant="body"
+            >
+              {placeholder}
+            </HvTypography>
+          ) : (
+            placeholder
+          )}
+        </div>
+        <div className={classes.arrowContainer}>
+          {adornment || (
+            <ExpanderComponent
+              iconSize="XS"
+              color={disabled ? "secondary_60" : undefined}
+              className={classes.arrow}
+            />
+          )}
+        </div>
+      </div>
+    );
+
+    const headerElement =
+      component && React.isValidElement(component)
+        ? React.cloneElement(component as React.ReactElement, {
+            ref: handleDropdownHeaderRef,
+            ...headerControlArias,
+          })
+        : defaultHeaderElement;
+
+    const containerComponent = (() => {
+      /**
+       *  Handle keyboard inside children container.
+       */
+      const handleContainerKeyDown: KeyboardEventHandler = (event) => {
+        if (isKey(event, "Esc")) {
+          handleToggle(event);
+        }
+        if (isKey(event, "Tab") && !event.shiftKey) {
+          const focusList = getFirstAndLastFocus(popperElement);
+          if (document.activeElement === focusList?.last) {
+            event.preventDefault();
+            focusList?.first?.focus();
+          }
+        }
+      };
+
+      const handleOutside: ClickAwayListenerProps["onClickAway"] = (event) => {
+        const isButtonClick = referenceElement?.contains(event.target as any);
+        if (!isButtonClick) {
+          onClickOutside?.(event);
+          setIsOpen(false);
+          onToggle?.(event, false);
+        }
+      };
+
+      const container = (
+        <div
+          ref={setPopperElement}
+          className={classes.container}
+          style={popperStyles.popper}
+          {...attributes.popper}
+        >
+          <ClickAwayListener onClickAway={handleOutside}>
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+            <div onKeyDown={handleContainerKeyDown}>
+              {popperPlacement.includes("bottom") && (
+                <div
+                  style={{ width: extensionWidth }}
+                  className={cx(classes.inputExtensionOpen, {
+                    [classes.inputExtensionLeftPosition]:
                       popperPlacement.includes("end"),
-                    [classes.inputExtensionFloatLeft]:
-                      popperPlacement.includes("start"),
-                  }
-                )}
-              />
-            )}
-          </div>
-        </ClickAwayListener>
+                  })}
+                />
+              )}
+              <BaseDropdownContext.Provider value={popperMaxSize}>
+                <div
+                  id={containerId}
+                  className={cx(classes.panel, {
+                    [classes.panelOpenedUp]: popperPlacement.includes("top"),
+                    [classes.panelOpenedDown]:
+                      popperPlacement.includes("bottom"),
+                  })}
+                >
+                  {children}
+                </div>
+              </BaseDropdownContext.Provider>
+              {popperPlacement.includes("top") && (
+                <div
+                  style={{ width: extensionWidth }}
+                  className={cx(
+                    classes.inputExtensionOpen,
+                    classes.inputExtensionOpenShadow,
+                    {
+                      [classes.inputExtensionFloatRight]:
+                        popperPlacement.includes("end"),
+                      [classes.inputExtensionFloatLeft]:
+                        popperPlacement.includes("start"),
+                    }
+                  )}
+                />
+              )}
+            </div>
+          </ClickAwayListener>
+        </div>
+      );
+
+      if (disablePortal) return container;
+
+      return createPortal(
+        container,
+        document.getElementById(rootId || "") || document.body
+      );
+    })();
+
+    return (
+      <div className={classes.root}>
+        <div
+          ref={ref}
+          id={id}
+          className={cx(
+            classes.anchor,
+            { [classes.rootDisabled]: disabled },
+            className
+          )}
+          {...(!readOnly && {
+            onKeyDown: handleToggle,
+            onClick: handleToggle,
+          })}
+          {...(ariaRole && {
+            role: ariaRole,
+            ...headerAriaLabels,
+            ...headerControlArias,
+          })}
+          // Removes the element from the navigation sequence for keyboard focus
+          tabIndex={-1}
+          {...others}
+        >
+          {headerElement}
+        </div>
+        {isOpen && containerComponent}
       </div>
     );
-
-    if (disablePortal) return container;
-
-    return createPortal(
-      container,
-      document.getElementById(rootId || "") || document.body
-    );
-  })();
-
-  return (
-    <div className={classes.root}>
-      <div
-        id={id}
-        className={cx(
-          classes.anchor,
-          { [classes.rootDisabled]: disabled },
-          className
-        )}
-        {...(!readOnly && {
-          onKeyDown: handleToggle,
-          onClick: handleToggle,
-        })}
-        {...(ariaRole && {
-          role: ariaRole,
-          ...headerAriaLabels,
-          ...headerControlArias,
-        })}
-        // Removes the element from the navigation sequence for keyboard focus
-        tabIndex={-1}
-        {...others}
-      >
-        {headerElement}
-      </div>
-      {isOpen && containerComponent}
-    </div>
-  );
-};
+  }
+);

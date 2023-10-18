@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { forwardRef, useCallback } from "react";
 
 import { SwitchProps as MuiSwitchProps } from "@mui/material";
 
@@ -118,145 +118,148 @@ export interface HvSwitchProps
  * Use when two states are <b>opposite</b> and to trigger immediate
  * changes in the system.
  */
-export const HvSwitch = (props: HvSwitchProps) => {
-  const {
-    classes: classesProp,
-    className,
+export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
+  (props, ref) => {
+    const {
+      classes: classesProp,
+      className,
 
-    id,
-    name,
-    value = "on",
-    required = false,
-    readOnly = false,
-    disabled = false,
+      id,
+      name,
+      value = "on",
+      required = false,
+      readOnly = false,
+      disabled = false,
 
-    label,
-    "aria-label": ariaLabel,
-    "aria-labelledby": ariaLabelledBy,
-    "aria-describedby": ariaDescribedBy,
-    labelProps,
+      label,
+      "aria-label": ariaLabel,
+      "aria-labelledby": ariaLabelledBy,
+      "aria-describedby": ariaDescribedBy,
+      labelProps,
 
-    checked,
-    defaultChecked = false,
+      checked,
+      defaultChecked = false,
 
-    onChange,
+      onChange,
 
-    status,
-    statusMessage,
-    "aria-errormessage": ariaErrorMessage,
+      status,
+      statusMessage,
+      "aria-errormessage": ariaErrorMessage,
 
-    inputProps,
+      inputProps,
 
-    ...others
-  } = useDefaultProps("HvSwitch", props);
+      ...others
+    } = useDefaultProps("HvSwitch", props);
 
-  const { classes, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id, "hvswitch");
+    const elementId = useUniqueId(id, "hvswitch");
 
-  const [isChecked, setIsChecked] = useControlled(
-    checked,
-    Boolean(defaultChecked)
-  );
+    const [isChecked, setIsChecked] = useControlled(
+      checked,
+      Boolean(defaultChecked)
+    );
 
-  const [validationState, setValidationState] = useControlled(
-    status,
-    "standBy"
-  );
+    const [validationState, setValidationState] = useControlled(
+      status,
+      "standBy"
+    );
 
-  const [validationMessage] = useControlled(statusMessage, "Required");
+    const [validationMessage] = useControlled(statusMessage, "Required");
 
-  const onLocalChange = useCallback(
-    (evt, newChecked) => {
-      setIsChecked(() => {
-        // this will only run if uncontrolled
-        if (required && !newChecked) {
-          setValidationState("invalid");
-        } else {
-          setValidationState("valid");
-        }
+    const onLocalChange = useCallback(
+      (evt, newChecked) => {
+        setIsChecked(() => {
+          // this will only run if uncontrolled
+          if (required && !newChecked) {
+            setValidationState("invalid");
+          } else {
+            setValidationState("valid");
+          }
 
-        return newChecked;
-      });
+          return newChecked;
+        });
 
-      onChange?.(evt, newChecked, value);
-    },
-    [onChange, required, setIsChecked, setValidationState, value]
-  );
+        onChange?.(evt, newChecked, value);
+      },
+      [onChange, required, setIsChecked, setValidationState, value]
+    );
 
-  // the error message area will only be created if:
-  // - an external element that provides an error message isn't identified via aria-errormessage AND
-  //   - both status and statusMessage properties are being controlled OR
-  //   - status is uncontrolled and required is true
-  const canShowError =
-    ariaErrorMessage == null &&
-    ((status !== undefined && statusMessage !== undefined) ||
-      (status === undefined && required));
+    // the error message area will only be created if:
+    // - an external element that provides an error message isn't identified via aria-errormessage AND
+    //   - both status and statusMessage properties are being controlled OR
+    //   - status is uncontrolled and required is true
+    const canShowError =
+      ariaErrorMessage == null &&
+      ((status !== undefined && statusMessage !== undefined) ||
+        (status === undefined && required));
 
-  const isStateInvalid = isInvalid(validationState);
+    const isStateInvalid = isInvalid(validationState);
 
-  let errorMessageId: string | undefined;
-  if (isStateInvalid) {
-    errorMessageId = canShowError
-      ? setId(elementId, "error")
-      : ariaErrorMessage;
-  }
+    let errorMessageId: string | undefined;
+    if (isStateInvalid) {
+      errorMessageId = canShowError
+        ? setId(elementId, "error")
+        : ariaErrorMessage;
+    }
 
-  return (
-    <HvFormElement
-      id={id}
-      name={name}
-      status={validationState}
-      disabled={disabled}
-      required={required}
-      readOnly={readOnly}
-      className={cx(classes.root, className)}
-    >
-      {label && (
-        <HvLabel
-          id={setId(elementId, "label")}
-          htmlFor={setId(elementId, "input")}
-          label={label}
-          className={classes.label}
-          {...labelProps}
-        />
-      )}
-      <div
-        className={cx(classes.switchContainer, {
-          [classes.invalidSwitch]: isStateInvalid,
-        })}
+    return (
+      <HvFormElement
+        id={id}
+        name={name}
+        status={validationState}
+        disabled={disabled}
+        required={required}
+        readOnly={readOnly}
+        className={cx(classes.root, className)}
       >
-        <HvBaseSwitch
-          id={label ? setId(elementId, "input") : setId(id, "input")}
-          name={name}
-          disabled={disabled}
-          readOnly={readOnly}
-          required={required}
-          onChange={onLocalChange}
-          value={value}
-          checked={isChecked}
-          inputProps={{
-            "aria-invalid": isStateInvalid ? true : undefined,
-            "aria-errormessage": errorMessageId,
-            "aria-label": ariaLabel,
-            "aria-labelledby": ariaLabelledBy,
-            "aria-describedby": ariaDescribedBy,
-            ...inputProps,
-          }}
-          {...others}
-        />
-      </div>
-      {canShowError && (
-        <HvWarningText
-          id={setId(elementId, "error")}
-          className={classes.error}
-          disableBorder
-          disableAdornment
-          hideText
+        {label && (
+          <HvLabel
+            id={setId(elementId, "label")}
+            htmlFor={setId(elementId, "input")}
+            label={label}
+            className={classes.label}
+            {...labelProps}
+          />
+        )}
+        <div
+          className={cx(classes.switchContainer, {
+            [classes.invalidSwitch]: isStateInvalid,
+          })}
         >
-          {validationMessage}
-        </HvWarningText>
-      )}
-    </HvFormElement>
-  );
-};
+          <HvBaseSwitch
+            ref={ref}
+            id={label ? setId(elementId, "input") : setId(id, "input")}
+            name={name}
+            disabled={disabled}
+            readOnly={readOnly}
+            required={required}
+            onChange={onLocalChange}
+            value={value}
+            checked={isChecked}
+            inputProps={{
+              "aria-invalid": isStateInvalid ? true : undefined,
+              "aria-errormessage": errorMessageId,
+              "aria-label": ariaLabel,
+              "aria-labelledby": ariaLabelledBy,
+              "aria-describedby": ariaDescribedBy,
+              ...inputProps,
+            }}
+            {...others}
+          />
+        </div>
+        {canShowError && (
+          <HvWarningText
+            id={setId(elementId, "error")}
+            className={classes.error}
+            disableBorder
+            disableAdornment
+            hideText
+          >
+            {validationMessage}
+          </HvWarningText>
+        )}
+      </HvFormElement>
+    );
+  }
+);

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, forwardRef } from "react";
 
 import MuiSwitch, { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
 
@@ -87,97 +87,100 @@ export interface HvBaseSwitchProps
  * The Base Switch is a building block of the Switch form element. Don't use unless
  * implementing a custom use case not covered by the Switch form element.
  */
-export const HvBaseSwitch = (props: HvBaseSwitchProps) => {
-  const {
-    classes: classesProp,
-    className,
+export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
+  (props, ref) => {
+    const {
+      classes: classesProp,
+      className,
 
-    id,
-    name,
-    value = "on",
+      id,
+      name,
+      value = "on",
 
-    required = false,
-    readOnly = false,
-    disabled = false,
+      required = false,
+      readOnly = false,
+      disabled = false,
 
-    checked,
-    defaultChecked,
+      checked,
+      defaultChecked,
 
-    onChange,
+      onChange,
 
-    inputProps,
+      inputProps,
 
-    onFocusVisible,
-    onBlur,
+      onFocusVisible,
+      onBlur,
 
-    ...others
-  } = useDefaultProps("HvBaseSwitch", props);
+      ...others
+    } = useDefaultProps("HvBaseSwitch", props);
 
-  const { classes, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-  const [focusVisible, setFocusVisible] = useState(false);
+    const [focusVisible, setFocusVisible] = useState(false);
 
-  const onFocusVisibleCallback = useCallback(
-    (evt: React.FocusEvent<any, Element>) => {
-      setFocusVisible(true);
-      onFocusVisible?.(evt);
-    },
-    [onFocusVisible]
-  );
+    const onFocusVisibleCallback = useCallback(
+      (evt: React.FocusEvent<any, Element>) => {
+        setFocusVisible(true);
+        onFocusVisible?.(evt);
+      },
+      [onFocusVisible]
+    );
 
-  const onBlurCallback = useCallback(
-    (evt: React.FocusEvent<any, Element>) => {
-      setFocusVisible(false);
-      onBlur?.(evt);
-    },
-    [onBlur]
-  );
+    const onBlurCallback = useCallback(
+      (evt: React.FocusEvent<any, Element>) => {
+        setFocusVisible(false);
+        onBlur?.(evt);
+      },
+      [onBlur]
+    );
 
-  const onLocalChange = useCallback(
-    (evt: React.ChangeEvent<HTMLInputElement>) => {
-      if (readOnly) {
-        return;
-      }
+    const onLocalChange = useCallback(
+      (evt: React.ChangeEvent<HTMLInputElement>) => {
+        if (readOnly) {
+          return;
+        }
 
-      onChange?.(evt, evt.target.checked, value);
-    },
-    [onChange, readOnly, value]
-  );
+        onChange?.(evt, evt.target.checked, value);
+      },
+      [onChange, readOnly, value]
+    );
 
-  return (
-    <MuiSwitch
-      id={id}
-      name={name}
-      className={cx(
-        classes.root,
-        {
-          [classes.disabled]: disabled,
-          [classes.readOnly]: readOnly,
-          [classes.focusVisible]: focusVisible,
-        },
-        className
-      )}
-      color="default"
-      disabled={disabled}
-      required={required}
-      readOnly={readOnly}
-      disableRipple
-      onChange={onLocalChange}
-      value={value}
-      checked={checked}
-      defaultChecked={defaultChecked}
-      classes={{
-        root: classes.switch,
-        switchBase: classes.switchBase,
-        checked: classes.checked,
-        track: classes.track,
-        thumb: classes.thumb,
-        disabled: classes.disabled,
-      }}
-      inputProps={inputProps}
-      onFocusVisible={onFocusVisibleCallback}
-      onBlur={onBlurCallback}
-      {...others}
-    />
-  );
-};
+    return (
+      <MuiSwitch
+        ref={ref}
+        id={id}
+        name={name}
+        className={cx(
+          classes.root,
+          {
+            [classes.disabled]: disabled,
+            [classes.readOnly]: readOnly,
+            [classes.focusVisible]: focusVisible,
+          },
+          className
+        )}
+        color="default"
+        disabled={disabled}
+        required={required}
+        readOnly={readOnly}
+        disableRipple
+        onChange={onLocalChange}
+        value={value}
+        checked={checked}
+        defaultChecked={defaultChecked}
+        classes={{
+          root: classes.switch,
+          switchBase: classes.switchBase,
+          checked: classes.checked,
+          track: classes.track,
+          thumb: classes.thumb,
+          disabled: classes.disabled,
+        }}
+        inputProps={inputProps}
+        onFocusVisible={onFocusVisibleCallback}
+        onBlur={onBlurCallback}
+        {...others}
+      />
+    );
+  }
+);

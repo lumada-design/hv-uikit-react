@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, forwardRef } from "react";
 
 import MuiRadio, { RadioProps as MuiRadioProps } from "@mui/material/Radio";
 
@@ -119,86 +119,89 @@ export const getSelectorIcons = (
  * The Base Radio Button is a building block of the Radio Button form element. Don't
  * use unless implementing a custom use case not covered by the Radio Button form element.
  */
-export const HvBaseRadio = (props: HvBaseRadioProps) => {
-  const {
-    classes: classesProp,
-    className,
-    id,
-    name,
-    value = "on",
-    required = false,
-    readOnly = false,
-    disabled = false,
-    checked,
-    defaultChecked,
-    onChange,
-    semantic = false,
-    inputProps,
-    onFocusVisible,
-    onBlur,
-    ...others
-  } = useDefaultProps("HvBaseRadio", props);
+export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
+  (props, ref) => {
+    const {
+      classes: classesProp,
+      className,
+      id,
+      name,
+      value = "on",
+      required = false,
+      readOnly = false,
+      disabled = false,
+      checked,
+      defaultChecked,
+      onChange,
+      semantic = false,
+      inputProps,
+      onFocusVisible,
+      onBlur,
+      ...others
+    } = useDefaultProps("HvBaseRadio", props);
 
-  const { classes, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-  const [focusVisible, setFocusVisible] = useState(false);
+    const [focusVisible, setFocusVisible] = useState(false);
 
-  const onFocusVisibleCallback = useCallback(
-    (evt: React.FocusEvent<any>) => {
-      setFocusVisible(true);
-      onFocusVisible?.(evt);
-    },
-    [onFocusVisible]
-  );
+    const onFocusVisibleCallback = useCallback(
+      (evt: React.FocusEvent<any>) => {
+        setFocusVisible(true);
+        onFocusVisible?.(evt);
+      },
+      [onFocusVisible]
+    );
 
-  const onBlurCallback = useCallback(
-    (evt: React.FocusEvent<any>) => {
-      setFocusVisible(false);
-      onBlur?.(evt);
-    },
-    [onBlur]
-  );
+    const onBlurCallback = useCallback(
+      (evt: React.FocusEvent<any>) => {
+        setFocusVisible(false);
+        onBlur?.(evt);
+      },
+      [onBlur]
+    );
 
-  const icons = getSelectorIcons({ disabled, semantic }, classes);
+    const icons = getSelectorIcons({ disabled, semantic }, classes);
 
-  const onLocalChange = useCallback(
-    (evt: React.ChangeEvent<HTMLInputElement>) => {
-      if (readOnly) {
-        return;
-      }
+    const onLocalChange = useCallback(
+      (evt: React.ChangeEvent<HTMLInputElement>) => {
+        if (readOnly) {
+          return;
+        }
 
-      onChange?.(evt, evt.target.checked, value);
-    },
-    [onChange, readOnly, value]
-  );
+        onChange?.(evt, evt.target.checked, value);
+      },
+      [onChange, readOnly, value]
+    );
 
-  return (
-    <MuiRadio
-      id={id}
-      name={name}
-      className={cx(
-        classes.root,
-        {
-          [classes.disabled]: disabled,
-          [classes.focusVisible]: focusVisible,
-        },
-        className
-      )}
-      icon={icons.radio}
-      checkedIcon={icons.radioChecked}
-      color="default"
-      disabled={disabled}
-      required={required}
-      readOnly={readOnly}
-      disableRipple
-      onChange={onLocalChange}
-      value={value}
-      checked={checked}
-      defaultChecked={defaultChecked}
-      inputProps={inputProps}
-      onFocusVisible={onFocusVisibleCallback}
-      onBlur={onBlurCallback}
-      {...others}
-    />
-  );
-};
+    return (
+      <MuiRadio
+        ref={ref}
+        id={id}
+        name={name}
+        className={cx(
+          classes.root,
+          {
+            [classes.disabled]: disabled,
+            [classes.focusVisible]: focusVisible,
+          },
+          className
+        )}
+        icon={icons.radio}
+        checkedIcon={icons.radioChecked}
+        color="default"
+        disabled={disabled}
+        required={required}
+        readOnly={readOnly}
+        disableRipple
+        onChange={onLocalChange}
+        value={value}
+        checked={checked}
+        defaultChecked={defaultChecked}
+        inputProps={inputProps}
+        onFocusVisible={onFocusVisibleCallback}
+        onBlur={onBlurCallback}
+        {...others}
+      />
+    );
+  }
+);

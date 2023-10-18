@@ -1,4 +1,4 @@
-import { useContext, useMemo, useRef, useState } from "react";
+import { forwardRef, useContext, useMemo, useRef, useState } from "react";
 
 import { Filters } from "@hitachivantara/uikit-react-icons";
 
@@ -51,7 +51,10 @@ export interface HvFilterGroupContentProps
   classes?: HvFilterGroupContentClasses;
 }
 
-export const HvFilterGroupContent = (props: HvFilterGroupContentProps) => {
+export const HvFilterGroupContent = forwardRef<
+  HTMLDivElement,
+  HvFilterGroupContentProps
+>((props, ref) => {
   const {
     id,
     status,
@@ -73,6 +76,7 @@ export const HvFilterGroupContent = (props: HvFilterGroupContentProps) => {
     classes: classesProp,
     ...others
   } = useDefaultProps("HvFilterGroupContent", props);
+
   const { classes } = useClasses(classesProp);
   const { activeTheme } = useTheme();
 
@@ -135,6 +139,7 @@ export const HvFilterGroupContent = (props: HvFilterGroupContentProps) => {
 
   return (
     <HvBaseDropdown
+      ref={ref}
       id={setId(id, "dropdown")}
       role="combobox"
       classes={{
@@ -221,4 +226,4 @@ export const HvFilterGroupContent = (props: HvFilterGroupContentProps) => {
       </HvActionBar>
     </HvBaseDropdown>
   );
-};
+});

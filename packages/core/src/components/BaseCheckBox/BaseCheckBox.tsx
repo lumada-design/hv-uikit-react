@@ -1,18 +1,18 @@
-import React, { useCallback, useState } from "react";
+import React, { forwardRef, useCallback, useState } from "react";
+
+import MuiCheckbox, {
+  CheckboxProps as MuiCheckboxProps,
+} from "@mui/material/Checkbox";
 
 import {
   CheckboxCheck as CheckboxCheckIcon,
   CheckboxPartial as CheckboxPartialIcon,
   Checkbox as CheckboxIcon,
 } from "@hitachivantara/uikit-react-icons";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import MuiCheckbox, {
-  CheckboxProps as MuiCheckboxProps,
-} from "@mui/material/Checkbox";
 
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./BaseCheckBox.styles";
 
@@ -128,7 +128,10 @@ const getSelectorIcons = (
  * The Base Checkbox is a building block of the Checkbox form element. Don't use unless
  * implementing a custom use case not covered by the Checkbox form element.
  */
-export const HvBaseCheckBox = (props: HvBaseCheckBoxProps) => {
+export const HvBaseCheckBox = forwardRef<
+  HTMLButtonElement,
+  HvBaseCheckBoxProps
+>((props, ref) => {
   const {
     id,
     classes: classesProp,
@@ -184,6 +187,7 @@ export const HvBaseCheckBox = (props: HvBaseCheckBoxProps) => {
 
   return (
     <MuiCheckbox
+      ref={ref}
       id={id}
       name={name}
       value={value}
@@ -210,4 +214,4 @@ export const HvBaseCheckBox = (props: HvBaseCheckBoxProps) => {
       {...others}
     />
   );
-};
+});
