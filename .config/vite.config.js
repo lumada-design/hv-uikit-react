@@ -27,7 +27,7 @@ export default defineConfig({
     tsconfigPaths({ loose: true }),
   ],
   build: {
-    target: "ES6",
+    target: "ES2017",
     minify: false,
     emptyOutDir: true,
     lib: {
