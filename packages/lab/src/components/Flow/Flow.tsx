@@ -26,7 +26,7 @@ export interface HvFlowProps<
   /** Flow nodes groups. */
   nodeGroups?: HvFlowNodeGroups<NodeGroups>;
   /** Flow nodes types. */
-  nodeTypes?: HvFlowNodeTypes<NodeGroups>;
+  nodeTypes?: HvFlowNodeTypes<NodeGroups, NodeData>;
   /** Flow sidebar. */
   sidebar?: React.ReactNode;
   /** Flow default actions. */

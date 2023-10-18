@@ -15,12 +15,15 @@ export interface HvFlowDraggableSidebarGroupItemProps
   extends HvFlowSidebarGroupItemProps {
   /** Item type. */
   type: string;
+  /** Item data. */
+  data?: unknown;
 }
 
 export const HvFlowDraggableSidebarGroupItem = ({
   id,
   label,
   type,
+  data,
   ...others
 }: HvFlowDraggableSidebarGroupItemProps) => {
   const itemRef = useRef<HTMLElement>(null);
@@ -39,6 +42,8 @@ export const HvFlowDraggableSidebarGroupItem = ({
           // Item position: used to position the item when dropped
           x: itemRef.current?.getBoundingClientRect().x,
           y: itemRef.current?.getBoundingClientRect().y,
+          // Data
+          data,
         },
       },
     });

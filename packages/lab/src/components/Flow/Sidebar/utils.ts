@@ -17,6 +17,7 @@ export const buildGroups = (
                 accN.push({
                   type: currN[0],
                   label: currN[1].meta?.label,
+                  data: currN[1].meta?.data,
                 });
               }
               return accN;

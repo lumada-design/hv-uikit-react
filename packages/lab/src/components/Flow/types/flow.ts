@@ -4,22 +4,32 @@ import { ComponentClass, FunctionComponent } from "react";
 import { NodeProps } from "reactflow";
 
 /** Node types */
-export interface HvFlowNodeFunctionComponent<GroupId extends keyof any = string>
-  extends FunctionComponent<NodeProps> {
+export interface HvFlowNodeFunctionComponent<
+  GroupId extends keyof any = string,
+  NodeData = any
+> extends FunctionComponent<NodeProps> {
   /** Metadata used on the HvFlowSidebar component to group the node */
-  meta?: HvFlowNodeMeta<GroupId>;
+  meta?: HvFlowNodeMeta<GroupId, NodeData>;
 }
-export interface HvFlowNodeComponentClass<GroupId extends keyof any = string>
-  extends ComponentClass<NodeProps> {
+export interface HvFlowNodeComponentClass<
+  GroupId extends keyof any = string,
+  NodeData = any
+> extends ComponentClass<NodeProps> {
   /** Metadata used on the HvFlowSidebar component to group the node */
-  meta?: HvFlowNodeMeta<GroupId>;
+  meta?: HvFlowNodeMeta<GroupId, NodeData>;
 }
-export type HvFlowNodeComponentType<GroupId extends keyof any = string> =
-  | HvFlowNodeComponentClass<GroupId>
-  | HvFlowNodeFunctionComponent<GroupId>;
+export type HvFlowNodeComponentType<
+  GroupId extends keyof any = string,
+  NodeData = any
+> =
+  | HvFlowNodeComponentClass<GroupId, NodeData>
+  | HvFlowNodeFunctionComponent<GroupId, NodeData>;
 
-export type HvFlowNodeTypes<GroupId extends keyof any = string> = {
-  [key: string]: HvFlowNodeComponentType<GroupId>;
+export type HvFlowNodeTypes<
+  GroupId extends keyof any = string,
+  NodeData = any
+> = {
+  [key: string]: HvFlowNodeComponentType<GroupId, NodeData>;
 };
 
 /** Node groups */
@@ -34,11 +44,15 @@ export type HvFlowNodeGroups<GroupId extends keyof any = string> = Record<
   HvFlowNodeGroup
 >;
 
-export type HvFlowNodeMeta<GroupId extends keyof any = string> = {
+export type HvFlowNodeMeta<
+  GroupId extends keyof any = string,
+  NodeData = any
+> = {
   label: string;
   groupId: GroupId;
   inputs?: HvFlowNodeInput[];
   outputs?: HvFlowNodeOutput[];
+  data?: NodeData;
 };
 
 export type HvFlowNodeInput = {
