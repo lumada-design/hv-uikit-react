@@ -1,11 +1,11 @@
 import { createContext } from "react";
 import {
-  AskAction,
-  Attribute,
-  QueryAction,
+  HvQueryBuilderAskAction,
+  HvQueryBuilderAttribute,
+  HvQueryBuilderQueryAction,
   QueryBuilderLabels,
-  QueryCombinator,
-  QueryOperator,
+  HvQueryBuilderQueryCombinator,
+  HvQueryBuilderQueryOperator,
 } from "./types";
 
 export const defaultOperators = {
@@ -311,12 +311,14 @@ export const defaultLabels = {
 };
 
 interface QueryBuilderContextValue {
-  dispatchAction: React.Dispatch<QueryAction>;
-  askAction: React.Dispatch<React.SetStateAction<AskAction | undefined>>;
+  dispatchAction: React.Dispatch<HvQueryBuilderQueryAction>;
+  askAction: React.Dispatch<
+    React.SetStateAction<HvQueryBuilderAskAction | undefined>
+  >;
   selectLocation?: React.Dispatch<unknown>;
-  attributes?: Record<string, Attribute>;
-  operators: Record<string, QueryOperator[]>;
-  combinators: QueryCombinator[];
+  attributes?: Record<string, HvQueryBuilderAttribute>;
+  operators: Record<string, HvQueryBuilderQueryOperator[]>;
+  combinators: HvQueryBuilderQueryCombinator[];
   maxDepth: number;
   labels: QueryBuilderLabels;
   initialTouched: boolean;

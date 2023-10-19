@@ -47,6 +47,7 @@ Here's what there is to know about this migration:
   - [Time Picker](#time-picker)
   - [Table Renderer - Expand Column](#table-renderer-expand-column)
   - [Drawer](#drawer)
+  - [Query Builder](#query-builder)
 
 ## React packages <a id="react-packages" />
 
@@ -785,3 +786,8 @@ this prop was deprecated by the underlining component from material ui and you s
 - The deprecated props `hours`, `minutes`, and `seconds` were removed.
   - Users should now use either `defaultValue` or `value` to set the time, in an uncontrolled or controlled way respectively (which follows the `HvTimePickerValue` type).
 - The `HvTimePickerValue` no longer has the `period` property, as it uses the 24-hour format for consistency
+
+### Query Builder <a id="query-builder" />
+
+- All of the types exported from this component now have the `HvQueryBuilder` prefix. (e.g. the type: `Attribute` is now `HvQueryBuilderAttribute`).
+- The default values from this component have also change to have a `hvQueryBuilder` prefix. (e.g. `defaultLabels` is now `hvQuerybuilderDefaultLabels`)

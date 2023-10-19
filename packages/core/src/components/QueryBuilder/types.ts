@@ -1,4 +1,4 @@
-export interface Attribute extends Record<string, unknown> {
+export interface HvQueryBuilderAttribute extends Record<string, unknown> {
   id?: string;
   label: string;
   type: string;
@@ -6,54 +6,54 @@ export interface Attribute extends Record<string, unknown> {
   order?: number;
 }
 
-export interface NumericRange {
+export interface HvQueryBuilderNumericRange {
   from: number | string;
   to: number | string;
 }
 
-export interface DateTimeStrings {
+export interface HvQueryBuilderDateTimeStrings {
   date?: string;
   time?: string;
 }
 
-export interface DateTimeRange {
-  start?: DateTimeStrings;
-  end?: DateTimeStrings;
+export interface HvQueryBuilderDateTimeRange {
+  start?: HvQueryBuilderDateTimeStrings;
+  end?: HvQueryBuilderDateTimeStrings;
 }
 
-export type QueryRuleValue =
+export type HvQueryBuilderQueryRuleValue =
   | string
   | number
   | boolean
-  | NumericRange
-  | DateTimeStrings
-  | DateTimeRange;
+  | HvQueryBuilderNumericRange
+  | HvQueryBuilderDateTimeStrings
+  | HvQueryBuilderDateTimeRange;
 
-export interface QueryRule {
+export interface HvQueryBuilderQueryRule {
   id?: number | string;
   attribute?: string;
   operator?: string;
-  value?: QueryRuleValue;
+  value?: HvQueryBuilderQueryRuleValue;
 }
 
-export interface Query {
+export interface HvQueryBuilderQuery {
   id?: number;
   combinator: string;
-  rules: Array<QueryRule>;
+  rules: Array<HvQueryBuilderQueryRule>;
 }
 
-export interface QueryCombinator {
+export interface HvQueryBuilderQueryCombinator {
   operand: string;
   label: string;
 }
 
-export interface QueryOperator {
+export interface HvQueryBuilderQueryOperator {
   operator: string;
   label: string;
   combinators: string[];
 }
 
-interface DialogLabels {
+interface HvQueryBuilderDialogLabels {
   dialogTitle: string;
   dialogMessage: string;
   dialogConfirm: string;
@@ -61,63 +61,63 @@ interface DialogLabels {
   dialogCloseTooltip: string;
 }
 
-interface ResetQueryAction {
+interface HvQueryBuilderResetQueryAction {
   type: "reset-query";
 }
 
-interface ResetGroupAction {
+interface HvQueryBuilderResetGroupAction {
   type: "reset-group";
   id?: number;
 }
 
-interface AddRemoveAction {
+interface HvQueryBuilderAddRemoveAction {
   type: "add-rule" | "add-group" | "remove-node";
   id?: number;
 }
 
-interface SetCombinatorAction {
+interface HvQueryBuilderSetCombinatorAction {
   type: "set-combinator";
   id?: number;
 
   combinator: string;
 }
 
-interface SetAttributeAction {
+interface HvQueryBuilderSetAttributeAction {
   type: "set-attribute";
   id?: number;
 
   attribute?: string | null;
   operator?: string | null;
-  value?: QueryRuleValue | null;
+  value?: HvQueryBuilderQueryRuleValue | null;
 }
 
-interface SetOperatorAction {
+interface HvQueryBuilderSetOperatorAction {
   type: "set-operator";
   id?: number;
 
   operator: string | null;
-  value?: QueryRuleValue | null;
+  value?: HvQueryBuilderQueryRuleValue | null;
 }
 
-interface SetValueAction {
+interface HvQueryBuilderSetValueAction {
   type: "set-value";
   id?: number;
 
-  value: QueryRuleValue | null;
+  value: HvQueryBuilderQueryRuleValue | null;
 }
 
-export type QueryAction =
-  | ResetQueryAction
-  | ResetGroupAction
-  | AddRemoveAction
-  | SetCombinatorAction
-  | SetAttributeAction
-  | SetOperatorAction
-  | SetValueAction;
+export type HvQueryBuilderQueryAction =
+  | HvQueryBuilderResetQueryAction
+  | HvQueryBuilderResetGroupAction
+  | HvQueryBuilderAddRemoveAction
+  | HvQueryBuilderSetCombinatorAction
+  | HvQueryBuilderSetAttributeAction
+  | HvQueryBuilderSetOperatorAction
+  | HvQueryBuilderSetValueAction;
 
-export interface AskAction {
-  actions: QueryAction[];
-  dialog: DialogLabels;
+export interface HvQueryBuilderAskAction {
+  actions: HvQueryBuilderQueryAction[];
+  dialog: HvQueryBuilderDialogLabels;
 }
 
 export interface ValueComponentProps {
@@ -126,12 +126,12 @@ export interface ValueComponentProps {
   value?: unknown;
 }
 
-export interface QueryBuilderLabels {
+export interface HvQueryBuilderLabels {
   query?: {
     delete?: {
       ariaLabel: string;
       tooltip?: string;
-    } & DialogLabels;
+    } & HvQueryBuilderDialogLabels;
     addRule?: {
       label: string;
     };
@@ -208,17 +208,17 @@ export interface QueryBuilderLabels {
     delete: {
       ariaLabel: string;
       tooltip?: string;
-    } & DialogLabels;
+    } & HvQueryBuilderDialogLabels;
   };
   group: {
     delete: {
       ariaLabel: string;
       tooltip?: string;
-    } & DialogLabels;
+    } & HvQueryBuilderDialogLabels;
     reset: {
       ariaLabel: string;
       tooltip?: string;
-    } & DialogLabels;
+    } & HvQueryBuilderDialogLabels;
     addRule: {
       label: string;
     };
