@@ -461,31 +461,44 @@ In order to use them, you'll need to update the necessary imports. Please find a
 
 In v5.x some components and types were renamed as detailed in the table below.
 
-| Type or component | v4.x                   | v5.x                       |
-| ----------------- | ---------------------- | -------------------------- |
-| Component         | HvBreadcrumb           | HvBreadCrumb               |
-| Component         | HvImageCarousel        | HvCarousel                 |
-| Type              | NavigationItemProp     | HvHeaderNavigationItemProp |
-| Type              | ListValueProp          | HvListValue                |
-| Type              | ListLabelsProp         | HvListLabels               |
-| Type              | BreadCrumbPathElement  | HvBreadCrumbPathElement    |
-| Type              | HvActionContainerProps | HvActionBarProps           |
-| Type              | ActionGeneric          | HvActionGeneric            |
-| Type              | FileUploaderProps      | HvFileUploaderProps        |
-| Type              | FileUploaderLabelsProp | HvFileUploaderLabels       |
-| Type              | FilesAddedEvent        | HvFilesAddedEvent          |
-| Type              | FilesRemovedEvent      | HvFilesRemovedEvent        |
-| Type              | File                   | HvFileData                 |
-| Type              | FileProps              | HvFileProps                |
-| Type              | PaginationLabelsProp   | HvPaginationLabels         |
-| Type              | SimpleGridProps        | HvSimpleGridProps          |
-| Type              | StackDirection         | HvStackDirection           |
-| Type              | InputSuggestion        | HvInputSuggestion          |
-| Type              | TagSuggestion          | HvTagSuggestion            |
-| Type              | HvUiKitThemeNames      | HvThemeColorMode           |
-| Type              | KnobProperty           | HvKnobProperty             |
-| Type              | MarkProperty           | HvMarkProperty             |
-| Type              | FilterValue            | HvFilterGroupValue         |
+| Type or component | v4.x                   | v5.x                             |
+| ----------------- | ---------------------- | -------------------------------- |
+| Component         | HvBreadcrumb           | HvBreadCrumb                     |
+| Component         | HvImageCarousel        | HvCarousel                       |
+| Type              | NavigationItemProp     | HvHeaderNavigationItemProp       |
+| Type              | ListValueProp          | HvListValue                      |
+| Type              | ListLabelsProp         | HvListLabels                     |
+| Type              | BreadCrumbPathElement  | HvBreadCrumbPathElement          |
+| Type              | HvActionContainerProps | HvActionBarProps                 |
+| Type              | ActionGeneric          | HvActionGeneric                  |
+| Type              | FileUploaderProps      | HvFileUploaderProps              |
+| Type              | FileUploaderLabelsProp | HvFileUploaderLabels             |
+| Type              | FilesAddedEvent        | HvFilesAddedEvent                |
+| Type              | File                   | HvFileData                       |
+| Type              | FilesRemovedEvent      | HvFilesRemovedEvent              |
+| Type              | FileProps              | HvFileProps                      |
+| Type              | PaginationLabelsProp   | HvPaginationLabels               |
+| Type              | SimpleGridProps        | HvSimpleGridProps                |
+| Type              | StackDirection         | HvStackDirection                 |
+| Type              | InputSuggestion        | HvInputSuggestion                |
+| Type              | TagSuggestion          | HvTagSuggestion                  |
+| Type              | HvUiKitThemeNames      | HvThemeColorMode                 |
+| Type              | KnobProperty           | HvKnobProperty                   |
+| Type              | MarkProperty           | HvMarkProperty                   |
+| Type              | FilterValue            | HvFilterGroupValue               |
+| Default values    | defaultCombinators     | hvQueryBuilderDefaultCombinators |
+| Default values    | defaultLabels          | hvQueryBuilderDefaultLabels      |
+| Default values    | defaultOperators       | hvQueryBuilderDefaultOperators   |
+| Type              | BuilderAttribute       | HvQueryBuilderAttribute          |
+| Type              | NumericRange           | HvQueryBuilderNumericRange       |
+| Type              | DateTimeStrings        | HvQueryBuilderDateTimeStrings    |
+| Type              | DateTimeRange          | HvQueryBuilderDateTimeRange      |
+| Type              | QueryRuleValue         | HvQueryBuilderQueryRuleValue     |
+| Type              | Query                  | HvQueryBuilderQuery              |
+| Type              | QueryRule              | HvQueryBuilderQueryRule          |
+| Type              | QueryCombinator        | HvQueryBuilderQueryCombinator    |
+| Type              | QueryOperator          | HvQueryBuilderQueryOperator      |
+| Type              | Labels                 | HvQueryBuilderLabels             |
 
 ## Colors <a id="colors" />
 
@@ -790,4 +803,4 @@ this prop was deprecated by the underlining component from material ui and you s
 ### Query Builder <a id="query-builder" />
 
 - All of the types exported from this component now have the `HvQueryBuilder` prefix. (e.g. the type: `Attribute` is now `HvQueryBuilderAttribute`).
-- The default values from this component have also change to have a `hvQueryBuilder` prefix. (e.g. `defaultLabels` is now `hvQuerybuilderDefaultLabels`)
+- The default values from this component have also changed to have a `hvQueryBuilder` prefix. (e.g. `defaultLabels` is now `hvQuerybuilderDefaultLabels`)
