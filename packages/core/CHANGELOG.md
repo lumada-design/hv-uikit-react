@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.30.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.30.0...@hitachivantara/uikit-react-core@5.30.1) (2023-10-19)
+
+### Bug Fixes
+
+- **EmptyState:** node rendered as div ([2d6a9c3](https://github.com/lumada-design/hv-uikit-react/commit/2d6a9c3785655f7a3a7e4d495bf0d24aa19243ff))
+
 # [5.30.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.29.0...@hitachivantara/uikit-react-core@5.30.0) (2023-10-14)
 
 ### Features

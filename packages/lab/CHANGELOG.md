@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.11.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.10.0...@hitachivantara/uikit-react-lab@5.11.0) (2023-10-19)
+
+### Bug Fixes
+
+- **Flow:** add keys to mapped components ([d8d5615](https://github.com/lumada-design/hv-uikit-react/commit/d8d56155898f525e04eed9480ee27adf8b82d0f7))
+- **Flow:** drag overlay moved to sidebar ([fca9ee3](https://github.com/lumada-design/hv-uikit-react/commit/fca9ee344af7e3e6e84686392e3d89fbd9f2e796))
+- **Flow:** Flow node should not provide an array as output ([c4b1ef5](https://github.com/lumada-design/hv-uikit-react/commit/c4b1ef530b62c1ab43f599872b654b0b968fdf23))
+- **Flow:** get node type on drag end from data and not id ([1c3013a](https://github.com/lumada-design/hv-uikit-react/commit/1c3013aceee530119ed998a02b1de1a4ab0c3deb))
+- **Flow:** missing useFlowContext export added ([e315bc2](https://github.com/lumada-design/hv-uikit-react/commit/e315bc2a9eca6a39ff161e30ede940a54b1d8810))
+- **Flow:** missing useFlowNode export added ([ede85b3](https://github.com/lumada-design/hv-uikit-react/commit/ede85b35781e7c60222edfd1105e4f56c41f32be))
+- **FlowNode:** unnecessary props removed ([e0ca8c9](https://github.com/lumada-design/hv-uikit-react/commit/e0ca8c9a438009b0157a3801994ea11d3588183c))
+- **Flow:** react flow styles import ([637db33](https://github.com/lumada-design/hv-uikit-react/commit/637db330e37a4e87d7e980390ea2be9a35706d5f))
+- **Flow:** types order inverted ([b398c6b](https://github.com/lumada-design/hv-uikit-react/commit/b398c6b0c3b82948c80e8cfd9dbceec329cd1b22))
+- **Flow:** unknown node types not added to flow ([0015abb](https://github.com/lumada-design/hv-uikit-react/commit/0015abb7378c50e24cc5c6b9cec514962bc3c0d9))
+
+### Features
+
+- **Flow:** add empty state support ([99074cf](https://github.com/lumada-design/hv-uikit-react/commit/99074cf8df888632738faa5a8555edd9fa23c12e))
+- **Flow:** data added to flow node metadata ([8e80e70](https://github.com/lumada-design/hv-uikit-react/commit/8e80e70a527a453cf95a816a43b8797cf8216c70))
+
 # [5.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.9.0...@hitachivantara/uikit-react-lab@5.10.0) (2023-10-14)
 
 ### Features
