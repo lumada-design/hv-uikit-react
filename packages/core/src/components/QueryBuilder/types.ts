@@ -1,4 +1,4 @@
-export interface Attribute extends Record<string, unknown> {
+export interface HvQueryBuilderAttribute extends Record<string, unknown> {
   id?: string;
   label: string;
   type: string;
@@ -6,48 +6,48 @@ export interface Attribute extends Record<string, unknown> {
   order?: number;
 }
 
-export interface NumericRange {
+export interface HvQueryBuilderNumericRange {
   from: number | string;
   to: number | string;
 }
 
-export interface DateTimeStrings {
+export interface HvQueryBuilderDateTimeStrings {
   date?: string;
   time?: string;
 }
 
-export interface DateTimeRange {
-  start?: DateTimeStrings;
-  end?: DateTimeStrings;
+export interface HvQueryBuilderDateTimeRange {
+  start?: HvQueryBuilderDateTimeStrings;
+  end?: HvQueryBuilderDateTimeStrings;
 }
 
-export type QueryRuleValue =
+export type HvQueryBuilderQueryRuleValue =
   | string
   | number
   | boolean
-  | NumericRange
-  | DateTimeStrings
-  | DateTimeRange;
+  | HvQueryBuilderNumericRange
+  | HvQueryBuilderDateTimeStrings
+  | HvQueryBuilderDateTimeRange;
 
-export interface QueryRule {
+export interface HvQueryBuilderQueryRule {
   id?: number | string;
   attribute?: string;
   operator?: string;
-  value?: QueryRuleValue;
+  value?: HvQueryBuilderQueryRuleValue;
 }
 
-export interface Query {
+export interface HvQueryBuilderQuery {
   id?: number;
   combinator: string;
-  rules: Array<QueryRule>;
+  rules: Array<HvQueryBuilderQueryRule>;
 }
 
-export interface QueryCombinator {
+export interface HvQueryBuilderQueryCombinator {
   operand: string;
   label: string;
 }
 
-export interface QueryOperator {
+export interface HvQueryBuilderQueryOperator {
   operator: string;
   label: string;
   combinators: string[];
@@ -88,7 +88,7 @@ interface SetAttributeAction {
 
   attribute?: string | null;
   operator?: string | null;
-  value?: QueryRuleValue | null;
+  value?: HvQueryBuilderQueryRuleValue | null;
 }
 
 interface SetOperatorAction {
@@ -96,14 +96,14 @@ interface SetOperatorAction {
   id?: number;
 
   operator: string | null;
-  value?: QueryRuleValue | null;
+  value?: HvQueryBuilderQueryRuleValue | null;
 }
 
 interface SetValueAction {
   type: "set-value";
   id?: number;
 
-  value: QueryRuleValue | null;
+  value: HvQueryBuilderQueryRuleValue | null;
 }
 
 export type QueryAction =
@@ -126,7 +126,7 @@ export interface ValueComponentProps {
   value?: unknown;
 }
 
-export interface QueryBuilderLabels {
+export interface HvQueryBuilderLabels {
   query?: {
     delete?: {
       ariaLabel: string;

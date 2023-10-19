@@ -18,11 +18,11 @@ import { QueryBuilderContext } from "./Context";
 import { RuleGroup } from "./RuleGroup";
 import {
   AskAction,
-  Attribute,
-  Query,
-  QueryBuilderLabels,
-  QueryCombinator,
-  QueryOperator,
+  HvQueryBuilderAttribute,
+  HvQueryBuilderQuery,
+  HvQueryBuilderLabels,
+  HvQueryBuilderQueryCombinator,
+  HvQueryBuilderQueryOperator,
 } from "./types";
 import { clearNodeIds, emptyGroup } from "./utils";
 import reducer from "./utils/reducer";
@@ -33,24 +33,24 @@ export { staticClasses as queryBuilderClasses };
 export type HvQueryBuilderClasses = ExtractNames<typeof useClasses>;
 
 export interface HvQueryBuilderProps {
-  attributes?: Record<string, Attribute>;
+  attributes?: Record<string, HvQueryBuilderAttribute>;
   /**
    * The query rules operators by attribute type and combinator.
    */
-  operators?: Record<string, QueryOperator[]>;
+  operators?: Record<string, HvQueryBuilderQueryOperator[]>;
   /**
    * The query combinators operands.
    */
-  combinators?: QueryCombinator[];
+  combinators?: HvQueryBuilderQueryCombinator[];
   /**
    * The initial query representation.
    */
-  query?: Query;
+  query?: HvQueryBuilderQuery;
   /**
    * Callback fired when query changes.
-   * @param {Query} value - the query representation.
+   * @param  value - the query representation.
    */
-  onChange?: (value: Query) => void;
+  onChange?: (value: HvQueryBuilderQuery) => void;
   /**
    * Max depth of nested query groups.
    */
@@ -58,7 +58,7 @@ export interface HvQueryBuilderProps {
   /**
    * An object containing all the labels.
    */
-  labels?: QueryBuilderLabels;
+  labels?: HvQueryBuilderLabels;
   /**
    * A flag indicating if the Query Builder is in read only mode.
    */
@@ -90,7 +90,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
 
   const [pendingAction, askAction] = useState<AskAction>();
   const currentAttributes = useRef<
-    Record<string, Attribute> | undefined | null
+    Record<string, HvQueryBuilderAttribute> | undefined | null
   >(null);
   const [state, dispatchAction] = useReducer(
     reducer,

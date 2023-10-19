@@ -1,10 +1,10 @@
 import {
   HvQueryBuilder,
   HvQueryBuilderProps,
+  hvQueryBuilderDefaultOperators,
 } from "@hitachivantara/uikit-react-core";
 import { Meta, StoryObj } from "@storybook/react";
 import { useMemo, useState } from "react";
-import { defaultOperators } from "./Context";
 
 import queryToMongo from "./queryToMongo";
 
@@ -43,8 +43,8 @@ export const Main: StoryObj<HvQueryBuilderProps> = {
       },
     },
     operators: {
-      ...defaultOperators,
-      customType: [...defaultOperators.text],
+      ...hvQueryBuilderDefaultOperators,
+      customType: [...hvQueryBuilderDefaultOperators.text],
     },
     readOnly: false,
   },
