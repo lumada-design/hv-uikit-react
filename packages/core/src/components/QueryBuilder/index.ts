@@ -1,7 +1,7 @@
 export * from "./QueryBuilder";
 export {
-  defaultCombinators as hvQuerybuilderDefaultCombinators,
-  defaultLabels as hvQuerybuilderDefaultLabels,
-  defaultOperators as hvQuerybuilderDefaultOperators,
+  defaultCombinators as hvQueryBuilderDefaultCombinators,
+  defaultLabels as hvQueryBuilderDefaultLabels,
+  defaultOperators as hvQueryBuilderDefaultOperators,
 } from "./Context";
 export * from "./types";

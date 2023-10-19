@@ -17,7 +17,7 @@ import { ConfirmationDialog } from "./ConfirmationDialog";
 import { QueryBuilderContext } from "./Context";
 import { RuleGroup } from "./RuleGroup";
 import {
-  HvQueryBuilderAskAction,
+  AskAction,
   HvQueryBuilderAttribute,
   HvQueryBuilderQuery,
   HvQueryBuilderLabels,
@@ -48,7 +48,7 @@ export interface HvQueryBuilderProps {
   query?: HvQueryBuilderQuery;
   /**
    * Callback fired when query changes.
-   * @param {HvQueryBuilderQuery} value - the query representation.
+   * @param  value - the query representation.
    */
   onChange?: (value: HvQueryBuilderQuery) => void;
   /**
@@ -88,7 +88,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   } = useDefaultProps("HvQueryBuilder", props);
   const { classes } = useClasses(classesProp);
 
-  const [pendingAction, askAction] = useState<HvQueryBuilderAskAction>();
+  const [pendingAction, askAction] = useState<AskAction>();
   const currentAttributes = useRef<
     Record<string, HvQueryBuilderAttribute> | undefined | null
   >(null);

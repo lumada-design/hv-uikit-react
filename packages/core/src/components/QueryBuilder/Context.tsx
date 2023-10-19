@@ -1,8 +1,8 @@
 import { createContext } from "react";
 import {
-  HvQueryBuilderAskAction,
+  AskAction,
   HvQueryBuilderAttribute,
-  HvQueryBuilderQueryAction,
+  QueryAction,
   HvQueryBuilderLabels,
   HvQueryBuilderQueryCombinator,
   HvQueryBuilderQueryOperator,
@@ -311,10 +311,8 @@ export const defaultLabels = {
 };
 
 interface QueryBuilderContextValue {
-  dispatchAction: React.Dispatch<HvQueryBuilderQueryAction>;
-  askAction: React.Dispatch<
-    React.SetStateAction<HvQueryBuilderAskAction | undefined>
-  >;
+  dispatchAction: React.Dispatch<QueryAction>;
+  askAction: React.Dispatch<React.SetStateAction<AskAction | undefined>>;
   selectLocation?: React.Dispatch<unknown>;
   attributes?: Record<string, HvQueryBuilderAttribute>;
   operators: Record<string, HvQueryBuilderQueryOperator[]>;
