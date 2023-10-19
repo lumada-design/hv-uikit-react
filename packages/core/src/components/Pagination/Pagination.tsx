@@ -215,6 +215,7 @@ export const HvPagination = (props: HvPaginationProps) => {
               aria-label={labels?.pageSizeSelectorDescription}
               onChange={(_: any, val: number) => onPageSizeChange?.(val)}
               value={pageSize}
+              classes={{ header: classes.pageSizeHeader }}
             >
               {pageSizeOptions.map((option) => (
                 <Option key={option} value={option}>
@@ -242,7 +243,11 @@ export const HvPagination = (props: HvPaginationProps) => {
           onClick={() => changePage(0)}
           tooltip={labels?.paginationFirstPageTitle}
         >
-          <Start className={classes.icon} color={setColor(!canPrevious)} />
+          <Start
+            className={classes.icon}
+            color={setColor(!canPrevious)}
+            iconSize="XS"
+          />
         </ButtonIconTooltip>
         <ButtonIconTooltip
           id={setId(id, "previousPage-button")}
@@ -252,16 +257,26 @@ export const HvPagination = (props: HvPaginationProps) => {
           onClick={() => changePage(page - 1)}
           tooltip={labels?.paginationPreviousPageTitle}
         >
-          <Backwards className={classes.icon} color={setColor(!canPrevious)} />
+          <Backwards
+            className={classes.icon}
+            color={setColor(!canPrevious)}
+            iconSize="XS"
+          />
         </ButtonIconTooltip>
         <div className={classes.pageInfo}>
           {showPageJump ? (
             renderPageJump()
           ) : (
-            <HvTypography component="span">{`${page + 1}`}</HvTypography>
+            <HvTypography variant="caption2" component="span">{`${
+              page + 1
+            }`}</HvTypography>
           )}
           <HvTypography component="span">{`${labels?.pagesSeparator} `}</HvTypography>
-          <HvTypography component="span" id={setId(id, "totalPages")}>
+          <HvTypography
+            component="span"
+            id={setId(id, "totalPages")}
+            className={classes.totalPagesTextContainer}
+          >
             {pages}
           </HvTypography>
         </div>
@@ -273,7 +288,11 @@ export const HvPagination = (props: HvPaginationProps) => {
           onClick={() => changePage(page + 1)}
           tooltip={labels?.paginationNextPageTitle}
         >
-          <Forwards className={classes.icon} color={setColor(!canNext)} />
+          <Forwards
+            className={classes.icon}
+            color={setColor(!canNext)}
+            iconSize="XS"
+          />
         </ButtonIconTooltip>
         <ButtonIconTooltip
           id={setId(id, "lastPage-button")}
@@ -283,7 +302,11 @@ export const HvPagination = (props: HvPaginationProps) => {
           onClick={() => changePage(pages - 1)}
           tooltip={labels?.paginationLastPageTitle}
         >
-          <End className={classes.icon} color={setColor(!canNext)} />
+          <End
+            className={classes.icon}
+            color={setColor(!canNext)}
+            iconSize="XS"
+          />
         </ButtonIconTooltip>
       </div>
     </div>
