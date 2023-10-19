@@ -1,7 +1,5 @@
 import { useCallback, useMemo } from "react";
 
-import type { EChartsOption } from "echarts-for-react/lib/types";
-
 import { Arrayable, ExtractNames } from "@hitachivantara/uikit-react-core";
 
 import {
@@ -12,6 +10,7 @@ import {
   HvLineChartMeasures,
 } from "@viz/types";
 import { getMeasure } from "@viz/utils";
+import { HvEChartsOption } from "@viz/types/common";
 
 import { useClasses } from "./styles";
 
@@ -204,7 +203,7 @@ export const useTooltip = ({
     [component, horizontal]
   );
 
-  const option = useMemo<Pick<EChartsOption, "tooltip">>(() => {
+  const option = useMemo<Pick<HvEChartsOption, "tooltip">>(() => {
     return {
       tooltip: {
         confine: false,

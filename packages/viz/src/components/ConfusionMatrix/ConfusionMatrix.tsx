@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-import { Arrayable, ExtractNames } from "@hitachivantara/uikit-react-core";
+import { forwardRef, useMemo } from "react";
 
 import * as echarts from "echarts/core";
 import { HeatmapChart } from "echarts/charts";
@@ -9,11 +7,15 @@ import {
   GridComponent,
   TooltipComponent,
 } from "echarts/components";
+import ReactECharts from "echarts-for-react/lib/core";
+
+import { Arrayable, ExtractNames } from "@hitachivantara/uikit-react-core";
 
 import {
   HvVisualMapHookProps,
   useData,
   useGrid,
+  useOption,
   useTooltip,
   useVisualMap,
   useXAxis,
@@ -86,25 +88,31 @@ export interface HvConfusionMatrixProps
  * Typically the columns show the predicted class and the rows the expected class.
  * The main diagonal counts the positive matches while the cells outside it count the mismatches between predicted and expected.
  */
-export const HvConfusionMatrix = ({
-  legend,
-  groupBy,
-  measure,
-  sortBy,
-  splitBy,
-  grid,
-  data: dataProp,
-  tooltip,
-  xAxis,
-  yAxis,
-  colorScale: colorScaleProp,
-  delta,
-  valuesProps,
-  width,
-  height,
-  format = "square",
-  classes: classesProp,
-}: HvConfusionMatrixProps) => {
+export const HvConfusionMatrix = forwardRef<
+  ReactECharts,
+  HvConfusionMatrixProps
+>((props, ref) => {
+  const {
+    legend,
+    groupBy,
+    measure,
+    sortBy,
+    splitBy,
+    grid,
+    data: dataProp,
+    tooltip,
+    xAxis,
+    yAxis,
+    colorScale: colorScaleProp,
+    delta,
+    valuesProps,
+    width,
+    height,
+    format = "square",
+    classes: classesProp,
+    onOptionChange,
+  } = props;
+
   const { classes } = useClasses(classesProp);
 
   const groupByKey = getGroupKey(groupBy);
@@ -249,23 +257,17 @@ export const HvConfusionMatrix = ({
     width,
   ]);
 
-  const options = useMemo(() => {
-    return {
+  const option = useOption({
+    option: {
       ...chartVisualMap,
       ...chartTooltip,
       ...chartGrid,
       ...chartXAxis,
       ...chartYAxis,
       ...chartSeries,
-    };
-  }, [
-    chartVisualMap,
-    chartTooltip,
-    chartGrid,
-    chartYAxis,
-    chartSeries,
-    chartXAxis,
-  ]);
+    },
+    onOptionChange,
+  });
 
-  return <HvBaseChart options={options} {...size} />;
-};
+  return <HvBaseChart ref={ref} option={option} {...size} />;
+});

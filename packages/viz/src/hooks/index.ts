@@ -9,3 +9,4 @@ export * from "./useSeries";
 export * from "./useLegend";
 export * from "./useVisualMap";
 export * from "./tooltip";
+export * from "./useOption";

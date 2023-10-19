@@ -1,8 +1,7 @@
 import { useMemo } from "react";
 
-import type { EChartsOption } from "echarts-for-react/lib/types";
-
 import { HvChartGrid } from "@viz/types";
+import { HvEChartsOption } from "@viz/types/common";
 
 interface HvGridHookProps {
   top?: HvChartGrid["top"];
@@ -21,7 +20,7 @@ export const useGrid = ({
   width,
   height,
 }: HvGridHookProps) => {
-  const option = useMemo<Pick<EChartsOption, "grid">>(() => {
+  const option = useMemo<Pick<HvEChartsOption, "grid">>(() => {
     return {
       // if no value is defined we shouldn't pass anything because echarts doesn't behave well otherwise
       grid: {
