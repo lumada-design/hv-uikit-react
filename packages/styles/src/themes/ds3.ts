@@ -989,6 +989,51 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvPagination: {
+      classes: {
+        root: {
+          [`& .HvPagination-pageSizeInput`]: {
+            ...(theme.typography.label as CSSProperties),
+            "&:focus": {
+              padding: "unset",
+            },
+          },
+          [`& .HvPagination-pageSizeInputContainer`]: {
+            width: 40,
+            minWidth: 40,
+          },
+          [`&& .HvPagination-pageSizeInputRoot`]: {
+            height: 32,
+          },
+          [`& .HvPagination-icon > svg`]: {
+            width: 16,
+            height: 16,
+          },
+        },
+        pageSizeOptions: {
+          height: 32,
+        },
+        pageSizeHeader: {
+          height: "unset",
+          [`& .HvBaseDropdown-arrowContainer`]: {
+            marginTop: 0,
+          },
+        },
+        pageSizeTextContainer: {
+          height: 32,
+          ...(theme.typography.body as CSSProperties),
+        },
+        pageSizeOptionsSelect: {
+          ...(theme.typography.body as CSSProperties),
+        },
+        totalPagesTextContainer: {
+          ...(theme.typography.body as CSSProperties),
+        },
+        pageNavigator: {
+          alignItems: "stretch",
+        },
+      },
+    },
     HvPaginationSelect: {
       classes: {
         header: {

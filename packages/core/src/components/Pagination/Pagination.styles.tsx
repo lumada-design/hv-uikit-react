@@ -4,6 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import { inputClasses } from "@core/components/Input";
 import { createClasses } from "@core/utils/classes";
+import { baseDropdownClasses } from "@core/components/BaseDropdown";
 
 const hoverColor = theme.colors.atmo3;
 
@@ -18,15 +19,19 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
     flexWrap: "wrap",
     marginTop: theme.space.sm,
     [`& $pageSizeInput`]: {
-      ...(theme.typography.label as CSSProperties),
+      ...(theme.typography.caption2 as CSSProperties),
+      "&:focus": {
+        padding: 0,
+      },
     },
     [`& $pageSizeInputContainer`]: {
-      width: 40,
-      minWidth: 40,
+      width: 24,
+      minWidth: 24,
       maxWidth: theme.spacing(8),
     },
     [`&& $pageSizeInputRoot`]: {
       backgroundColor: "transparent",
+      height: "24px",
       "&:focus, &:focus-within, &:hover": {
         backgroundColor: hoverColor,
       },
@@ -36,29 +41,43 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
   pageSizeOptions: {
     display: "flex",
     position: "absolute",
-    height: 32,
+    height: 24,
     top: "50%",
     transform: "translateY(-50%)",
     left: "0",
+  },
+  pageSizeHeader: {
+    height: 24,
+    display: "flex",
+    alignItems: "center",
+    [`& .${baseDropdownClasses.arrowContainer}`]: {
+      marginTop: -2,
+    },
   },
   /** Styles applied to the element that holds the labels for the page size selector */
   pageSizeTextContainer: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: "32px",
+    height: "24px",
     padding: "8px 0",
+    ...(theme.typography.caption2 as CSSProperties),
+  },
+  totalPagesTextContainer: {
+    ...(theme.typography.caption2 as CSSProperties),
   },
   /** Styles applied to the page size selector dropdown element. */
   pageSizeOptionsSelect: {
     display: "inline-block",
     margin: `0px ${theme.space.xs}`,
     width: "auto",
+
+    ...(theme.typography.caption2 as CSSProperties),
   },
   /** Styles applied to the page navigation container. */
   pageNavigator: {
     display: "flex",
-    alignItems: "stretch",
+    alignItems: "center",
     height: "32px",
     gap: 8,
   },
