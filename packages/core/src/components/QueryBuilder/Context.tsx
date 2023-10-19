@@ -3,7 +3,7 @@ import {
   HvQueryBuilderAskAction,
   HvQueryBuilderAttribute,
   HvQueryBuilderQueryAction,
-  QueryBuilderLabels,
+  HvQueryBuilderLabels,
   HvQueryBuilderQueryCombinator,
   HvQueryBuilderQueryOperator,
 } from "./types";
@@ -320,7 +320,7 @@ interface QueryBuilderContextValue {
   operators: Record<string, HvQueryBuilderQueryOperator[]>;
   combinators: HvQueryBuilderQueryCombinator[];
   maxDepth: number;
-  labels: QueryBuilderLabels;
+  labels: HvQueryBuilderLabels;
   initialTouched: boolean;
   readOnly: boolean;
 }
