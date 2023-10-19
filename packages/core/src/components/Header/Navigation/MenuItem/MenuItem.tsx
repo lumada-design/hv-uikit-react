@@ -146,6 +146,9 @@ export const HvHeaderMenuItem = (props: HvHeaderMenuItemProps) => {
           target={itemTarget}
           {...itemProps}
           aria-current={isCurrent}
+          // Fix for a possible bug in playwright where, even though hidden from screen readers and not appearing in the accessibility
+          // tree, due to the styling duplication (span::after - using 'data-text'), locators have to double the name.
+          aria-label={item.label}
         >
           {label}
         </a>

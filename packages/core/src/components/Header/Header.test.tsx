@@ -52,7 +52,7 @@ describe("Header", () => {
       },
     ];
 
-    const { getAllByText, getAllByRole } = render(
+    const { getAllByText, getAllByRole, getByRole } = render(
       <HvProvider cssBaseline="none">
         <HvHeader>
           <HvHeaderNavigation data={navigationData} />
@@ -60,6 +60,7 @@ describe("Header", () => {
       </HvProvider>
     );
     expect(getAllByRole("link")).toHaveLength(1);
+    expect(getByRole("link", { name: "text" })).toBeInTheDocument();
     expect(getAllByText("text")).toHaveLength(3);
   });
 
