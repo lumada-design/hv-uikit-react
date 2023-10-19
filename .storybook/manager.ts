@@ -11,4 +11,11 @@ addons.setConfig({
   enableShortcuts: true,
   showNav: true,
   showPanel: true,
+  sidebar: {
+    filters: {
+      patters: (item) => {
+        return !item.tags.includes("test");
+      },
+    },
+  },
 });
