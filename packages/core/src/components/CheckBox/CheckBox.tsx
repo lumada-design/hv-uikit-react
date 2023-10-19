@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { forwardRef, useCallback, useState } from "react";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { useUniqueId } from "@core/hooks/useUniqueId";
@@ -66,189 +66,192 @@ export interface HvCheckBoxProps extends Omit<HvBaseCheckBoxProps, "classes"> {
  * It can also be used individually to represent the toggle of a single option, when
  * the Toggle Switch and Toggle Button aren't more appropriate.
  */
-export const HvCheckBox = (props: HvCheckBoxProps) => {
-  const {
-    id,
-    classes: classesProp,
-    className,
-    name,
-    checked,
-    status,
-    indeterminate,
-    statusMessage,
-    label,
-    labelProps,
-    inputProps,
-    value = "on",
-    required = false,
-    readOnly = false,
-    disabled = false,
-    semantic = false,
-    defaultChecked = false,
-    "aria-label": ariaLabel,
-    "aria-labelledby": ariaLabelledBy,
-    "aria-describedby": ariaDescribedBy,
-    "aria-errormessage": ariaErrorMessage,
-    onChange,
-    onFocusVisible,
-    onBlur,
-    ...others
-  } = useDefaultProps("HvCheckBox", props);
-
-  const { classes, cx } = useClasses(classesProp);
-
-  const elementId = useUniqueId(id, "hvcheckbox");
-
-  const [focusVisible, setFocusVisible] = useState<boolean>(false);
-
-  const [validationState, setValidationState] = useControlled(
-    status,
-    "standBy"
-  );
-
-  const [validationMessage] = useControlled(statusMessage, "Required");
-
-  const [isChecked, setIsChecked] = useControlled(
-    checked,
-    Boolean(defaultChecked)
-  );
-
-  const [isIndeterminate, setIsIndeterminate] = useControlled(
-    checked !== undefined ? indeterminate : undefined,
-    Boolean(indeterminate)
-  );
-
-  const isStateInvalid = isInvalid(validationState);
-
-  const onChangeCallback = useCallback<
-    NonNullable<HvBaseCheckBoxProps["onChange"]>
-  >(
-    (event, newChecked) => {
-      setIsChecked(() => {
-        // This will only run if uncontrolled
-        setIsIndeterminate(false);
-
-        if (required && !newChecked) {
-          setValidationState("invalid");
-        } else {
-          setValidationState("valid");
-        }
-
-        return newChecked;
-      });
-
-      onChange?.(event, newChecked, value);
-    },
-    [
+export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
+  (props, ref) => {
+    const {
+      id,
+      classes: classesProp,
+      className,
+      name,
+      checked,
+      status,
+      indeterminate,
+      statusMessage,
+      label,
+      labelProps,
+      inputProps,
+      value = "on",
+      required = false,
+      readOnly = false,
+      disabled = false,
+      semantic = false,
+      defaultChecked = false,
+      "aria-label": ariaLabel,
+      "aria-labelledby": ariaLabelledBy,
+      "aria-describedby": ariaDescribedBy,
+      "aria-errormessage": ariaErrorMessage,
       onChange,
-      required,
-      setIsChecked,
-      setIsIndeterminate,
-      setValidationState,
-      value,
-    ]
-  );
+      onFocusVisible,
+      onBlur,
+      ...others
+    } = useDefaultProps("HvCheckBox", props);
 
-  const onFocusVisibleCallback: HvBaseCheckBoxProps["onBlur"] = (event) => {
-    setFocusVisible(true);
-    onFocusVisible?.(event);
-  };
+    const { classes, cx } = useClasses(classesProp);
 
-  const onBlurCallback: HvBaseCheckBoxProps["onBlur"] = (event) => {
-    setFocusVisible(false);
-    onBlur?.(event);
-  };
+    const elementId = useUniqueId(id, "hvcheckbox");
 
-  // The error message area will only be created if:
-  //   - an external element that provides an error message isn't identified via aria-errormessage AND
-  //   - both status and statusMessage properties are being controlled OR
-  //   - status is uncontrolled and required is true
-  const canShowError =
-    ariaErrorMessage == null &&
-    ((status !== undefined && statusMessage !== undefined) ||
-      (status === undefined && required));
+    const [focusVisible, setFocusVisible] = useState<boolean>(false);
 
-  const hasLabel = label != null;
+    const [validationState, setValidationState] = useControlled(
+      status,
+      "standBy"
+    );
 
-  let errorMessageId;
-  if (isStateInvalid) {
-    errorMessageId = canShowError
-      ? setId(elementId, "error")
-      : ariaErrorMessage;
+    const [validationMessage] = useControlled(statusMessage, "Required");
+
+    const [isChecked, setIsChecked] = useControlled(
+      checked,
+      Boolean(defaultChecked)
+    );
+
+    const [isIndeterminate, setIsIndeterminate] = useControlled(
+      checked !== undefined ? indeterminate : undefined,
+      Boolean(indeterminate)
+    );
+
+    const isStateInvalid = isInvalid(validationState);
+
+    const onChangeCallback = useCallback<
+      NonNullable<HvBaseCheckBoxProps["onChange"]>
+    >(
+      (event, newChecked) => {
+        setIsChecked(() => {
+          // This will only run if uncontrolled
+          setIsIndeterminate(false);
+
+          if (required && !newChecked) {
+            setValidationState("invalid");
+          } else {
+            setValidationState("valid");
+          }
+
+          return newChecked;
+        });
+
+        onChange?.(event, newChecked, value);
+      },
+      [
+        onChange,
+        required,
+        setIsChecked,
+        setIsIndeterminate,
+        setValidationState,
+        value,
+      ]
+    );
+
+    const onFocusVisibleCallback: HvBaseCheckBoxProps["onBlur"] = (event) => {
+      setFocusVisible(true);
+      onFocusVisible?.(event);
+    };
+
+    const onBlurCallback: HvBaseCheckBoxProps["onBlur"] = (event) => {
+      setFocusVisible(false);
+      onBlur?.(event);
+    };
+
+    // The error message area will only be created if:
+    //   - an external element that provides an error message isn't identified via aria-errormessage AND
+    //   - both status and statusMessage properties are being controlled OR
+    //   - status is uncontrolled and required is true
+    const canShowError =
+      ariaErrorMessage == null &&
+      ((status !== undefined && statusMessage !== undefined) ||
+        (status === undefined && required));
+
+    const hasLabel = label != null;
+
+    let errorMessageId;
+    if (isStateInvalid) {
+      errorMessageId = canShowError
+        ? setId(elementId, "error")
+        : ariaErrorMessage;
+    }
+
+    const checkbox = (
+      <HvBaseCheckBox
+        ref={ref}
+        id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
+        name={name}
+        className={cx(classes.checkbox, {
+          [classes.invalidCheckbox]: isStateInvalid,
+        })}
+        disabled={disabled}
+        readOnly={readOnly}
+        required={required}
+        onChange={onChangeCallback}
+        value={value}
+        checked={isChecked}
+        indeterminate={isIndeterminate}
+        semantic={semantic}
+        inputProps={{
+          "aria-invalid": isStateInvalid ? true : undefined,
+          "aria-errormessage": errorMessageId,
+          "aria-label": ariaLabel,
+          "aria-labelledby": ariaLabelledBy,
+          "aria-describedby": ariaDescribedBy,
+          ...inputProps,
+        }}
+        onFocusVisible={onFocusVisibleCallback}
+        onBlur={onBlurCallback}
+        {...others}
+      />
+    );
+
+    return (
+      <HvFormElement
+        id={id}
+        name={name}
+        status={validationState}
+        disabled={disabled}
+        required={required}
+        readOnly={readOnly}
+        className={cx(
+          classes.root,
+          { [classes.focusVisible]: !!(focusVisible && label) },
+          className
+        )}
+      >
+        {hasLabel ? (
+          <div
+            className={cx(classes.container, {
+              [classes.disabled]: disabled,
+              [classes.invalidContainer]: isStateInvalid,
+            })}
+          >
+            {checkbox}
+            <HvLabel
+              id={setId(elementId, "label")}
+              htmlFor={setId(elementId, "input")}
+              label={label}
+              className={classes.label}
+              {...labelProps}
+            />
+          </div>
+        ) : (
+          checkbox
+        )}
+        {canShowError && (
+          <HvWarningText
+            id={setId(elementId, "error")}
+            disableAdornment={!hasLabel}
+            hideText={!hasLabel}
+            disableBorder
+          >
+            {validationMessage}
+          </HvWarningText>
+        )}
+      </HvFormElement>
+    );
   }
-
-  const checkbox = (
-    <HvBaseCheckBox
-      id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
-      name={name}
-      className={cx(classes.checkbox, {
-        [classes.invalidCheckbox]: isStateInvalid,
-      })}
-      disabled={disabled}
-      readOnly={readOnly}
-      required={required}
-      onChange={onChangeCallback}
-      value={value}
-      checked={isChecked}
-      indeterminate={isIndeterminate}
-      semantic={semantic}
-      inputProps={{
-        "aria-invalid": isStateInvalid ? true : undefined,
-        "aria-errormessage": errorMessageId,
-        "aria-label": ariaLabel,
-        "aria-labelledby": ariaLabelledBy,
-        "aria-describedby": ariaDescribedBy,
-        ...inputProps,
-      }}
-      onFocusVisible={onFocusVisibleCallback}
-      onBlur={onBlurCallback}
-      {...others}
-    />
-  );
-
-  return (
-    <HvFormElement
-      id={id}
-      name={name}
-      status={validationState}
-      disabled={disabled}
-      required={required}
-      readOnly={readOnly}
-      className={cx(
-        classes.root,
-        { [classes.focusVisible]: !!(focusVisible && label) },
-        className
-      )}
-    >
-      {hasLabel ? (
-        <div
-          className={cx(classes.container, {
-            [classes.disabled]: disabled,
-            [classes.invalidContainer]: isStateInvalid,
-          })}
-        >
-          {checkbox}
-          <HvLabel
-            id={setId(elementId, "label")}
-            htmlFor={setId(elementId, "input")}
-            label={label}
-            className={classes.label}
-            {...labelProps}
-          />
-        </div>
-      ) : (
-        checkbox
-      )}
-      {canShowError && (
-        <HvWarningText
-          id={setId(elementId, "error")}
-          disableAdornment={!hasLabel}
-          hideText={!hasLabel}
-          disableBorder
-        >
-          {validationMessage}
-        </HvWarningText>
-      )}
-    </HvFormElement>
-  );
-};
+);

@@ -1,4 +1,11 @@
-import { Children, cloneElement, useCallback, useMemo, useRef } from "react";
+import {
+  Children,
+  cloneElement,
+  forwardRef,
+  useCallback,
+  useMemo,
+  useRef,
+} from "react";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
@@ -138,107 +145,172 @@ export interface HvCheckBoxGroupProps
 /**
  * A checkbox group is a type of selection list that allows the user to select multiple options through the use of checkboxes.
  */
-export const HvCheckBoxGroup = (props: HvCheckBoxGroupProps) => {
-  const {
-    id,
-    classes: classesProp,
-    className,
-    children,
-    name,
-    label,
-    description,
-    status,
-    statusMessage,
-    defaultValue,
-    value: valueProp,
-    required = false,
-    readOnly = false,
-    disabled = false,
-    showSelectAll = false,
-    orientation = "vertical",
-    selectAllLabel = "All",
-    selectAllConjunctionLabel = "/",
-    "aria-label": ariaLabel,
-    "aria-labelledby": ariaLabelledBy,
-    "aria-describedby": ariaDescribedBy,
-    "aria-errormessage": ariaErrorMessage,
-    onChange,
-    ...others
-  } = useDefaultProps("HvCheckBoxGroup", props);
+export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
+  (props, ref) => {
+    const {
+      id,
+      classes: classesProp,
+      className,
+      children,
+      name,
+      label,
+      description,
+      status,
+      statusMessage,
+      defaultValue,
+      value: valueProp,
+      required = false,
+      readOnly = false,
+      disabled = false,
+      showSelectAll = false,
+      orientation = "vertical",
+      selectAllLabel = "All",
+      selectAllConjunctionLabel = "/",
+      "aria-label": ariaLabel,
+      "aria-labelledby": ariaLabelledBy,
+      "aria-describedby": ariaDescribedBy,
+      "aria-errormessage": ariaErrorMessage,
+      onChange,
+      ...others
+    } = useDefaultProps("HvCheckBoxGroup", props);
 
-  const { classes, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-  const [value, setValue] = useControlled(
-    valueProp,
-    defaultValue !== undefined
-      ? defaultValue
-      : // When uncontrolled and no default value is given,
-        // extract the initial selected values from the children own state
-        () => getValueFromSelectedChildren(children)
-  );
+    const [value, setValue] = useControlled(
+      valueProp,
+      defaultValue !== undefined
+        ? defaultValue
+        : // When uncontrolled and no default value is given,
+          // extract the initial selected values from the children own state
+          () => getValueFromSelectedChildren(children)
+    );
 
-  const [validationState, setValidationState] = useControlled(
-    status,
-    "standBy"
-  );
+    const [validationState, setValidationState] = useControlled(
+      status,
+      "standBy"
+    );
 
-  const [validationMessage] = useControlled(statusMessage, "Required");
+    const [validationMessage] = useControlled(statusMessage, "Required");
 
-  const elementId = useUniqueId(id, "hvcheckboxgroup");
+    const elementId = useUniqueId(id, "hvcheckboxgroup");
 
-  const selectionAnchor = useRef(undefined);
+    const selectionAnchor = useRef(undefined);
 
-  const [allValues, selectedState, selectedCount] = useMemo(() => {
-    const childValues: any[] = [];
-    const childSelectedState: boolean[] = [];
-    let childSelectedCounter = 0;
+    const [allValues, selectedState, selectedCount] = useMemo(() => {
+      const childValues: any[] = [];
+      const childSelectedState: boolean[] = [];
+      let childSelectedCounter = 0;
 
-    Children.toArray(children).forEach((child: any, i: number) => {
-      const childValue = child?.props?.value;
-      const childIsSelected = value.indexOf(childValue) !== -1;
+      Children.toArray(children).forEach((child: any, i: number) => {
+        const childValue = child?.props?.value;
+        const childIsSelected = value.indexOf(childValue) !== -1;
 
-      childValues[i] = childValue;
-      childSelectedState[i] = childIsSelected;
+        childValues[i] = childValue;
+        childSelectedState[i] = childIsSelected;
 
-      if (childIsSelected) {
-        childSelectedCounter += 1;
-      }
-    });
+        if (childIsSelected) {
+          childSelectedCounter += 1;
+        }
+      });
 
-    return [childValues, childSelectedState, childSelectedCounter];
-  }, [children, value]);
+      return [childValues, childSelectedState, childSelectedCounter];
+    }, [children, value]);
 
-  const selectAllState = computeSelectAllState(
-    value.length,
-    selectedState.length
-  );
+    const selectAllState = computeSelectAllState(
+      value.length,
+      selectedState.length
+    );
 
-  const onChildChangeInterceptor = useCallback(
-    (
-      index: number,
-      childOnChange: (
+    const onChildChangeInterceptor = useCallback(
+      (
+        index: number,
+        childOnChange: (
+          event: React.ChangeEvent<HTMLInputElement>,
+          isChecked: boolean
+        ) => void,
         event: React.ChangeEvent<HTMLInputElement>,
         isChecked: boolean
-      ) => void,
-      event: React.ChangeEvent<HTMLInputElement>,
-      isChecked: boolean
-    ) => {
-      const newValue = multiSelectionEventHandler(
-        event,
-        index,
-        selectionAnchor,
-        allValues,
-        selectedState,
-        isChecked
-      );
+      ) => {
+        const newValue = multiSelectionEventHandler(
+          event,
+          index,
+          selectionAnchor,
+          allValues,
+          selectedState,
+          isChecked
+        );
 
-      childOnChange?.(event, isChecked);
+        childOnChange?.(event, isChecked);
+
+        onChange?.(event, newValue);
+
+        setValue(() => {
+          // This will only run if uncontrolled
+
+          if (required && newValue.length === 0) {
+            setValidationState("invalid");
+          } else {
+            setValidationState("valid");
+          }
+
+          return newValue;
+        });
+      },
+      [
+        allValues,
+        onChange,
+        required,
+        selectedState,
+        setValidationState,
+        setValue,
+      ]
+    );
+
+    const modifiedChildren = useMemo(() => {
+      return Children.map(children, (child: any, i: number) => {
+        const childIsSelected = selectedState[i];
+
+        return cloneElement(child, {
+          checked: childIsSelected,
+          name: child?.props?.name || name,
+          onChange: (
+            event: React.ChangeEvent<HTMLInputElement>,
+            isChecked: boolean
+          ) =>
+            onChildChangeInterceptor(
+              i,
+              child?.props?.onChange,
+              event,
+              isChecked
+            ),
+          disabled: disabled || child?.props?.disabled,
+          readOnly: readOnly || child?.props?.readOnly,
+        });
+      });
+    }, [
+      children,
+      disabled,
+      name,
+      onChildChangeInterceptor,
+      readOnly,
+      selectedState,
+    ]);
+
+    const handleSelectAll = (
+      event: React.ChangeEvent<HTMLInputElement>,
+      selectAllChecked: boolean
+    ) => {
+      let newValue: any[];
+      if (selectAllChecked) {
+        newValue = [...allValues];
+      } else {
+        newValue = [];
+      }
 
       onChange?.(event, newValue);
 
       setValue(() => {
         // This will only run if uncontrolled
-
         if (required && newValue.length === 0) {
           setValidationState("invalid");
         } else {
@@ -247,156 +319,106 @@ export const HvCheckBoxGroup = (props: HvCheckBoxGroupProps) => {
 
         return newValue;
       });
-    },
-    [allValues, onChange, required, selectedState, setValidationState, setValue]
-  );
+    };
 
-  const modifiedChildren = useMemo(() => {
-    return Children.map(children, (child: any, i: number) => {
-      const childIsSelected = selectedState[i];
+    const selectAllLabelComponent =
+      selectedCount === 0 ? (
+        <>
+          <b>{selectAllLabel}</b>
+          {` (${Children.toArray(children).length})`}
+        </>
+      ) : (
+        <>
+          <b>{selectedCount}</b>
+          {` ${selectAllConjunctionLabel} ${Children.toArray(children).length}`}
+        </>
+      );
 
-      return cloneElement(child, {
-        checked: childIsSelected,
-        name: child?.props?.name || name,
-        onChange: (
-          event: React.ChangeEvent<HTMLInputElement>,
-          isChecked: boolean
-        ) =>
-          onChildChangeInterceptor(i, child?.props?.onChange, event, isChecked),
-        disabled: disabled || child?.props?.disabled,
-        readOnly: readOnly || child?.props?.readOnly,
-      });
-    });
-  }, [
-    children,
-    disabled,
-    name,
-    onChildChangeInterceptor,
-    readOnly,
-    selectedState,
-  ]);
+    // The error message area will only be created if:
+    //   - an external element that provides an error message isn't identified via aria-errormessage AND
+    //   - both status and statusMessage properties are being controlled OR
+    //   - status is uncontrolled and required is true
+    const canShowError =
+      ariaErrorMessage == null &&
+      ((status !== undefined && statusMessage !== undefined) ||
+        (status === undefined && required));
 
-  const handleSelectAll = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    selectAllChecked: boolean
-  ) => {
-    let newValue: any[];
-    if (selectAllChecked) {
-      newValue = [...allValues];
-    } else {
-      newValue = [];
-    }
+    const errorMessageId = canShowError
+      ? setId(elementId, "error")
+      : ariaErrorMessage;
 
-    onChange?.(event, newValue);
-
-    setValue(() => {
-      // This will only run if uncontrolled
-      if (required && newValue.length === 0) {
-        setValidationState("invalid");
-      } else {
-        setValidationState("valid");
-      }
-
-      return newValue;
-    });
-  };
-
-  const selectAllLabelComponent =
-    selectedCount === 0 ? (
-      <>
-        <b>{selectAllLabel}</b>
-        {` (${Children.toArray(children).length})`}
-      </>
-    ) : (
-      <>
-        <b>{selectedCount}</b>
-        {` ${selectAllConjunctionLabel} ${Children.toArray(children).length}`}
-      </>
-    );
-
-  // The error message area will only be created if:
-  //   - an external element that provides an error message isn't identified via aria-errormessage AND
-  //   - both status and statusMessage properties are being controlled OR
-  //   - status is uncontrolled and required is true
-  const canShowError =
-    ariaErrorMessage == null &&
-    ((status !== undefined && statusMessage !== undefined) ||
-      (status === undefined && required));
-
-  const errorMessageId = canShowError
-    ? setId(elementId, "error")
-    : ariaErrorMessage;
-
-  return (
-    <HvFormElement
-      id={id}
-      name={name}
-      status={validationState}
-      disabled={disabled}
-      required={required}
-      readOnly={readOnly}
-      className={cx(classes.root, className)}
-    >
-      {label && (
-        <HvLabel
-          id={setId(elementId, "label")}
-          label={label}
-          className={classes.label}
-        />
-      )}
-
-      {description && (
-        <HvInfoMessage id={setId(elementId, "description")}>
-          {description}
-        </HvInfoMessage>
-      )}
-
-      <div
-        role="group"
-        aria-label={ariaLabel}
-        aria-labelledby={
-          ariaLabelledBy || (label && setId(elementId, "label")) || undefined
-        }
-        aria-disabled={disabled ? true : undefined}
-        aria-invalid={validationState === "invalid" ? true : undefined}
-        aria-errormessage={
-          validationState === "invalid" ? errorMessageId : undefined
-        }
-        aria-describedby={
-          [description && setId(elementId, "description"), ariaDescribedBy]
-            .join(" ")
-            .trim() || undefined
-        }
-        className={cx(classes.group, {
-          [classes.vertical]: orientation === "vertical",
-          [classes.horizontal]: orientation === "horizontal",
-          [classes.invalid]: validationState === "invalid",
-        })}
-        {...others}
+    return (
+      <HvFormElement
+        id={id}
+        name={name}
+        status={validationState}
+        disabled={disabled}
+        required={required}
+        readOnly={readOnly}
+        className={cx(classes.root, className)}
       >
-        {showSelectAll && (
-          <HvCheckBox
-            checked={selectAllState === "all"}
-            indeterminate={selectAllState === "some"}
-            label={selectAllLabelComponent}
-            disabled={disabled}
-            readOnly={readOnly}
-            className={classes.selectAll}
-            onChange={handleSelectAll}
+        {label && (
+          <HvLabel
+            id={setId(elementId, "label")}
+            label={label}
+            className={classes.label}
           />
         )}
-        {modifiedChildren}
-      </div>
 
-      {canShowError && (
-        <HvWarningText
-          id={setId(elementId, "error")}
-          disableBorder
-          className={classes.error}
+        {description && (
+          <HvInfoMessage id={setId(elementId, "description")}>
+            {description}
+          </HvInfoMessage>
+        )}
+
+        <div
+          ref={ref}
+          role="group"
+          aria-label={ariaLabel}
+          aria-labelledby={
+            ariaLabelledBy || (label && setId(elementId, "label")) || undefined
+          }
+          aria-disabled={disabled ? true : undefined}
+          aria-invalid={validationState === "invalid" ? true : undefined}
+          aria-errormessage={
+            validationState === "invalid" ? errorMessageId : undefined
+          }
+          aria-describedby={
+            [description && setId(elementId, "description"), ariaDescribedBy]
+              .join(" ")
+              .trim() || undefined
+          }
+          className={cx(classes.group, {
+            [classes.vertical]: orientation === "vertical",
+            [classes.horizontal]: orientation === "horizontal",
+            [classes.invalid]: validationState === "invalid",
+          })}
+          {...others}
         >
-          {validationMessage}
-        </HvWarningText>
-      )}
-    </HvFormElement>
-  );
-};
+          {showSelectAll && (
+            <HvCheckBox
+              checked={selectAllState === "all"}
+              indeterminate={selectAllState === "some"}
+              label={selectAllLabelComponent}
+              disabled={disabled}
+              readOnly={readOnly}
+              className={classes.selectAll}
+              onChange={handleSelectAll}
+            />
+          )}
+          {modifiedChildren}
+        </div>
+
+        {canShowError && (
+          <HvWarningText
+            id={setId(elementId, "error")}
+            disableBorder
+            className={classes.error}
+          >
+            {validationMessage}
+          </HvWarningText>
+        )}
+      </HvFormElement>
+    );
+  }
+);

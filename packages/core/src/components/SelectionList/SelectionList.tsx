@@ -4,7 +4,10 @@ import React, {
   useRef,
   useEffect,
   ReactNode,
+  forwardRef,
 } from "react";
+
+import { useForkRef } from "@mui/material";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
@@ -111,7 +114,10 @@ const getValueFromSelectedChildren = (
  * Although it supports multi-selection, DS recommends the use of a selection list
  * when it’s clear that the user can only select just one option from the range provided.
  */
-export const HvSelectionList = (props: HvSelectionListProps) => {
+export const HvSelectionList = forwardRef<
+  HTMLUListElement,
+  HvSelectionListProps
+>((props, ref) => {
   const {
     id,
     classes: classesProp,
@@ -177,7 +183,8 @@ export const HvSelectionList = (props: HvSelectionListProps) => {
 
   const selectionAnchor = useRef(undefined);
 
-  const listContainer = useRef<any>(null);
+  const listRef = useRef<any>(null);
+  const listForkedRef = useForkRef(ref, listRef);
 
   useEffect(() => {
     const handleMeta = (event: KeyboardEvent) => {
@@ -185,10 +192,10 @@ export const HvSelectionList = (props: HvSelectionListProps) => {
       if (
         (isKey(event, "ArrowUp") &&
           event.shiftKey &&
-          listContainer.current.contains(event.target)) ||
+          listRef.current.contains(event.target)) ||
         (isKey(event, "ArrowDown") &&
           event.shiftKey &&
-          listContainer.current.contains(event.target))
+          listRef.current.contains(event.target))
       ) {
         selectedState.forEach((isSelected, i) => {
           if (i === (event.target as any).value - 1) {
@@ -346,7 +353,7 @@ export const HvSelectionList = (props: HvSelectionListProps) => {
           [classes.horizontal]: orientation === "horizontal",
           [classes.invalid]: validationState === "invalid",
         })}
-        ref={listContainer}
+        ref={listForkedRef}
         {...others}
       >
         {modifiedChildren}
@@ -363,4 +370,4 @@ export const HvSelectionList = (props: HvSelectionListProps) => {
       )}
     </HvFormElement>
   );
-};
+});

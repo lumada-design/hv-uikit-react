@@ -1,12 +1,13 @@
-import Slider, { SliderProps } from "rc-slider";
-
 import React, {
+  forwardRef,
   useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
+
+import Slider, { SliderProps, SliderRef } from "rc-slider";
 
 import Tooltip from "rc-tooltip";
 
@@ -186,7 +187,7 @@ export interface HvSliderProps
 /**
  * Sliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters.
  */
-export const HvSlider = (props: HvSliderProps) => {
+export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
   const {
     id,
     className,
@@ -664,6 +665,7 @@ export const HvSlider = (props: HvSliderProps) => {
       <div className={cx(classes.sliderBase, classes.sliderContainer)}>
         {isSingle && (
           <Slider
+            ref={ref}
             handleRender={createKnob}
             className={classes.sliderRoot}
             min={0}
@@ -698,6 +700,7 @@ export const HvSlider = (props: HvSliderProps) => {
         )}
         {!isSingle && (
           <Slider
+            ref={ref}
             range
             handleRender={createKnob}
             className={cx(classes.sliderRoot, {
@@ -747,4 +750,4 @@ export const HvSlider = (props: HvSliderProps) => {
       )}
     </HvFormElement>
   );
-};
+});

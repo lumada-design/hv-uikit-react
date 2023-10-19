@@ -13,7 +13,11 @@ import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
-import { HvListContainer, HvListItem } from "@core/components/ListContainer";
+import {
+  HvListContainer,
+  HvListContainerProps,
+  HvListItem,
+} from "@core/components/ListContainer";
 import { HvTypography } from "@core/components/Typography";
 import { setId } from "@core/utils/setId";
 import { wrapperTooltip } from "@core/utils/wrapperTooltip";
@@ -340,19 +344,21 @@ export const HvList = (props: HvListProps) => {
   const ariaMultiSelectable = (role === "listbox" && multiSelect) || undefined;
 
   const ListContainer = useMemo(() => {
-    return forwardRef(({ ...rest }, ref) => (
-      <HvListContainer
-        id={id}
-        className={cx(classes.root, className)}
-        role={role}
-        interactive
-        condensed={condensed}
-        disableGutters={useSelector}
-        aria-multiselectable={ariaMultiSelectable}
-        ref={ref}
-        {...rest}
-      />
-    ));
+    return forwardRef<HTMLUListElement, HvListContainerProps>(
+      ({ ...rest }, ref) => (
+        <HvListContainer
+          id={id}
+          className={cx(classes.root, className)}
+          role={role}
+          interactive
+          condensed={condensed}
+          disableGutters={useSelector}
+          aria-multiselectable={ariaMultiSelectable}
+          ref={ref}
+          {...rest}
+        />
+      )
+    );
   }, [
     cx,
     id,

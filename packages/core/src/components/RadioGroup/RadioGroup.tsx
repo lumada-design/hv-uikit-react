@@ -1,4 +1,10 @@
-import { Children, useMemo, useCallback, cloneElement } from "react";
+import {
+  Children,
+  useMemo,
+  useCallback,
+  cloneElement,
+  forwardRef,
+} from "react";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
@@ -117,175 +123,178 @@ const getValueFromSelectedChildren = (children: React.ReactNode) => {
  *
  * A radio group is a type of selection list that can only have a single entry checked at any one time.
  */
-export const HvRadioGroup = (props: HvRadioGroupProps) => {
-  const {
-    id,
-    classes: classesProp,
-    className,
-    children,
-    name,
-    value: valueProp,
-    defaultValue,
-    label,
-    description,
-    status,
-    statusMessage,
-    required = false,
-    readOnly = false,
-    disabled = false,
-    orientation = "vertical",
-    "aria-label": ariaLabel,
-    "aria-labelledby": ariaLabelledBy,
-    "aria-describedby": ariaDescribedBy,
-    "aria-errormessage": ariaErrorMessage,
-    onChange,
-    ...others
-  } = useDefaultProps("HvRadioGroup", props);
+export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(
+  (props, ref) => {
+    const {
+      id,
+      classes: classesProp,
+      className,
+      children,
+      name,
+      value: valueProp,
+      defaultValue,
+      label,
+      description,
+      status,
+      statusMessage,
+      required = false,
+      readOnly = false,
+      disabled = false,
+      orientation = "vertical",
+      "aria-label": ariaLabel,
+      "aria-labelledby": ariaLabelledBy,
+      "aria-describedby": ariaDescribedBy,
+      "aria-errormessage": ariaErrorMessage,
+      onChange,
+      ...others
+    } = useDefaultProps("HvRadioGroup", props);
 
-  const { classes, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id, "hvradiogroup");
+    const elementId = useUniqueId(id, "hvradiogroup");
 
-  const [value, setValue] = useControlled(
-    valueProp,
-    defaultValue !== undefined
-      ? defaultValue
-      : // When uncontrolled and no default value is given,
-        // extract the initial selected values from the children own state
-        () => getValueFromSelectedChildren(children)
-  );
+    const [value, setValue] = useControlled(
+      valueProp,
+      defaultValue !== undefined
+        ? defaultValue
+        : // When uncontrolled and no default value is given,
+          // extract the initial selected values from the children own state
+          () => getValueFromSelectedChildren(children)
+    );
 
-  const onChildChangeInterceptor = useCallback(
-    (
-      childOnChange: (
-        event: React.ChangeEvent<HTMLInputElement>,
-        checked: boolean,
-        value: any
-      ) => void,
-      event: React.ChangeEvent<HTMLInputElement>,
-      isChecked: boolean,
-      newValue: any
-    ) => {
-      childOnChange?.(event, isChecked, newValue);
-
-      onChange?.(event, newValue);
-
-      setValue(newValue);
-    },
-    [onChange, setValue]
-  );
-
-  const modifiedChildren = useMemo(() => {
-    return Children.map(children, (child: any) => {
-      const childValue = child?.props?.value ?? "on";
-
-      const childIsSelected = childValue === value;
-
-      return cloneElement(child, {
-        checked: childIsSelected,
-        name: child?.props?.name || name || elementId,
-        onChange: (
+    const onChildChangeInterceptor = useCallback(
+      (
+        childOnChange: (
           event: React.ChangeEvent<HTMLInputElement>,
-          isChecked: boolean,
-          newValue: any
-        ) =>
-          onChildChangeInterceptor(
-            child?.props?.onChange,
-            event,
-            isChecked,
-            newValue
-          ),
-        inputProps: {
-          ...child?.props?.inputProps,
-          // Set the required attribute directly in the input
-          // the radio form element context shouldn't be aware so the
-          // label doesn't show redundant asterisk
-          required,
-        },
-        disabled: disabled || child?.props?.disabled,
-        readOnly: readOnly || child?.props?.readOnly,
+          checked: boolean,
+          value: any
+        ) => void,
+        event: React.ChangeEvent<HTMLInputElement>,
+        isChecked: boolean,
+        newValue: any
+      ) => {
+        childOnChange?.(event, isChecked, newValue);
+
+        onChange?.(event, newValue);
+
+        setValue(newValue);
+      },
+      [onChange, setValue]
+    );
+
+    const modifiedChildren = useMemo(() => {
+      return Children.map(children, (child: any) => {
+        const childValue = child?.props?.value ?? "on";
+
+        const childIsSelected = childValue === value;
+
+        return cloneElement(child, {
+          checked: childIsSelected,
+          name: child?.props?.name || name || elementId,
+          onChange: (
+            event: React.ChangeEvent<HTMLInputElement>,
+            isChecked: boolean,
+            newValue: any
+          ) =>
+            onChildChangeInterceptor(
+              child?.props?.onChange,
+              event,
+              isChecked,
+              newValue
+            ),
+          inputProps: {
+            ...child?.props?.inputProps,
+            // Set the required attribute directly in the input
+            // the radio form element context shouldn't be aware so the
+            // label doesn't show redundant asterisk
+            required,
+          },
+          disabled: disabled || child?.props?.disabled,
+          readOnly: readOnly || child?.props?.readOnly,
+        });
       });
-    });
-  }, [
-    children,
-    disabled,
-    elementId,
-    name,
-    onChildChangeInterceptor,
-    readOnly,
-    required,
-    value,
-  ]);
+    }, [
+      children,
+      disabled,
+      elementId,
+      name,
+      onChildChangeInterceptor,
+      readOnly,
+      required,
+      value,
+    ]);
 
-  // The error message area will only be created if:
-  //   - an external element that provides an error message isn't identified via aria-errormessage AND
-  //   - both status and statusMessage properties are being controlled OR
-  //   - status is uncontrolled and required is true
-  const canShowError =
-    ariaErrorMessage == null &&
-    ((status !== undefined && statusMessage !== undefined) ||
-      (status === undefined && required));
+    // The error message area will only be created if:
+    //   - an external element that provides an error message isn't identified via aria-errormessage AND
+    //   - both status and statusMessage properties are being controlled OR
+    //   - status is uncontrolled and required is true
+    const canShowError =
+      ariaErrorMessage == null &&
+      ((status !== undefined && statusMessage !== undefined) ||
+        (status === undefined && required));
 
-  const errorMessageId = canShowError
-    ? setId(elementId, "error")
-    : ariaErrorMessage;
+    const errorMessageId = canShowError
+      ? setId(elementId, "error")
+      : ariaErrorMessage;
 
-  return (
-    <HvFormElement
-      id={id}
-      name={name}
-      status={status || "standBy"}
-      disabled={disabled}
-      required={required}
-      readOnly={readOnly}
-      className={cx(classes.root, className)}
-    >
-      {label && (
-        <HvLabel
-          id={setId(elementId, "label")}
-          label={label}
-          className={classes.label}
-        />
-      )}
-
-      {description && (
-        <HvInfoMessage id={setId(elementId, "description")}>
-          {description}
-        </HvInfoMessage>
-      )}
-
-      <div
-        role="radiogroup"
-        aria-label={ariaLabel}
-        aria-labelledby={
-          ariaLabelledBy || (label && setId(elementId, "label")) || undefined
-        }
-        aria-invalid={status === "invalid" ? true : undefined}
-        aria-errormessage={status === "invalid" ? errorMessageId : undefined}
-        aria-describedby={
-          [description && setId(elementId, "description"), ariaDescribedBy]
-            .join(" ")
-            .trim() || undefined
-        }
-        className={cx(classes.group, {
-          [classes.vertical]: orientation === "vertical",
-          [classes.horizontal]: orientation === "horizontal",
-          [classes.invalid]: status === "invalid",
-        })}
-        {...others}
+    return (
+      <HvFormElement
+        id={id}
+        name={name}
+        status={status || "standBy"}
+        disabled={disabled}
+        required={required}
+        readOnly={readOnly}
+        className={cx(classes.root, className)}
       >
-        {modifiedChildren}
-      </div>
+        {label && (
+          <HvLabel
+            id={setId(elementId, "label")}
+            label={label}
+            className={classes.label}
+          />
+        )}
 
-      {canShowError && (
-        <HvWarningText
-          id={setId(elementId, "error")}
-          disableBorder
-          className={classes.error}
+        {description && (
+          <HvInfoMessage id={setId(elementId, "description")}>
+            {description}
+          </HvInfoMessage>
+        )}
+
+        <div
+          ref={ref}
+          role="radiogroup"
+          aria-label={ariaLabel}
+          aria-labelledby={
+            ariaLabelledBy || (label && setId(elementId, "label")) || undefined
+          }
+          aria-invalid={status === "invalid" ? true : undefined}
+          aria-errormessage={status === "invalid" ? errorMessageId : undefined}
+          aria-describedby={
+            [description && setId(elementId, "description"), ariaDescribedBy]
+              .join(" ")
+              .trim() || undefined
+          }
+          className={cx(classes.group, {
+            [classes.vertical]: orientation === "vertical",
+            [classes.horizontal]: orientation === "horizontal",
+            [classes.invalid]: status === "invalid",
+          })}
+          {...others}
         >
-          {statusMessage}
-        </HvWarningText>
-      )}
-    </HvFormElement>
-  );
-};
+          {modifiedChildren}
+        </div>
+
+        {canShowError && (
+          <HvWarningText
+            id={setId(elementId, "error")}
+            disableBorder
+            className={classes.error}
+          >
+            {statusMessage}
+          </HvWarningText>
+        )}
+      </HvFormElement>
+    );
+  }
+);
