@@ -9,7 +9,7 @@ import { ExtractNames } from "@core/utils/classes";
 import { HvTypography } from "@core/components/Typography";
 
 import { HvPathElement } from "./PathElement";
-import { HvPage } from "./Page";
+import { HvBreadCrumbPage } from "./Page";
 import { staticClasses, useClasses } from "./BreadCrumb.styles";
 import { pathWithSubMenu, removeExtension } from "./utils";
 import { HvBreadCrumbPathElement } from "./types";
@@ -111,7 +111,7 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
                     {removeExtension(elem.label)}
                   </HvTypography>
                 )) || (
-                  <HvPage
+                  <HvBreadCrumbPage
                     elem={elem}
                     classes={{
                       a: classes.a,

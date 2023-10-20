@@ -1317,6 +1317,18 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvBreadCrumbPage: {
+      classes: {
+        link: {
+          "&:hover": {
+            backgroundColor: theme.colors.atmo3,
+          },
+          "&:focus": {
+            backgroundColor: theme.colors.atmo3,
+          },
+        },
+      },
+    },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "44px",
