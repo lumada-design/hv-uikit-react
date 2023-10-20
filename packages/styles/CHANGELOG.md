@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.13.1 (2023-10-20)
+
+### Bug Fixes
+
+- reduce specifity on baseline styles ([#3747](https://github.com/lumada-design/hv-uikit-react/issues/3747)) ([f9360cb](https://github.com/lumada-design/hv-uikit-react/commit/f9360cb868deec6afeab24bfda21134d173429b9))
+
 # 5.13.0 (2023-10-13)
 
 ### Features

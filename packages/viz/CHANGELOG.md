@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.5.15...@hitachivantara/uikit-react-viz@5.6.0) (2023-10-20)
+
+### Features
+
+- **viz:** customize echarts option ([aca13ae](https://github.com/lumada-design/hv-uikit-react/commit/aca13ae8874c0f88cd05c970fe5697c7aee0c772))
+
 ## [5.5.15](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.5.14...@hitachivantara/uikit-react-viz@5.5.15) (2023-10-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz

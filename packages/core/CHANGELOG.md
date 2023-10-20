@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.31.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.30.1...@hitachivantara/uikit-react-core@5.31.0) (2023-10-20)
+
+### Bug Fixes
+
+- **EmptyState:** node rendered as div ([2d6a9c3](https://github.com/lumada-design/hv-uikit-react/commit/2d6a9c3785655f7a3a7e4d495bf0d24aa19243ff))
+- forwardRef added to form elements ([734244f](https://github.com/lumada-design/hv-uikit-react/commit/734244fec373ce402aa2b2f0b3487b7c04a1ad3e))
+- **QueryBuilder:** change default operators import to the core package in story ([2ef4bd9](https://github.com/lumada-design/hv-uikit-react/commit/2ef4bd9689c26838e13878b28170cd400f3bff12))
+- **QueryBuilder:** export subcomponents ([146af80](https://github.com/lumada-design/hv-uikit-react/commit/146af8078852773deb7c472ddf96c498235ad7da))
+- **QueryBuilder:** export types and defaults ([29cb9fa](https://github.com/lumada-design/hv-uikit-react/commit/29cb9fada2838e3165ebdf1de7ab5591095a9a40))
+
+### Features
+
+- **ActionBar:** align with DS 5.7 ([#3753](https://github.com/lumada-design/hv-uikit-react/issues/3753)) ([61c555f](https://github.com/lumada-design/hv-uikit-react/commit/61c555f2e87da8287926191c6128928adbf6e176))
+
 ## [5.30.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.30.0...@hitachivantara/uikit-react-core@5.30.1) (2023-10-19)
 
 ### Bug Fixes
