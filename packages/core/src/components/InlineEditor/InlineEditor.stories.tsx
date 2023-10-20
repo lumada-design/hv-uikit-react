@@ -31,6 +31,16 @@ export const Main: StoryObj<HvInlineEditorProps> = {
   },
 };
 
+export const Disabled: StoryObj<HvInlineEditorProps> = {
+  render: () => {
+    return (
+      <div style={{ width: 300 }}>
+        <HvInlineEditor disabled />
+      </div>
+    );
+  },
+};
+
 export const LargeVariants = () => {
   const [value, setValue] = useState(
     "Very very very long text that is likely to be truncated"

@@ -934,8 +934,10 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         button: {
           border: "none",
+          backgroundColor: "transparent",
           "&:hover": {
             border: "none",
+            backgroundColor: "transparent",
           },
           "&:focus": {
             border: "none",
