@@ -1,5 +1,11 @@
+import { useState } from "react";
+
 import { Meta, StoryObj } from "@storybook/react";
+
 import { css } from "@emotion/css";
+
+import { Modal } from "@mui/material";
+
 import {
   HvButton,
   HvTooltip,
@@ -11,8 +17,6 @@ import {
   PopUp,
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
-import { useState } from "react";
-import { Modal } from "@mui/material";
 import {
   HvCodeEditor,
   HvCodeEditorProps,
