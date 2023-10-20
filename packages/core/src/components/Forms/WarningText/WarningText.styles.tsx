@@ -4,16 +4,13 @@ import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvWarningText", {
   root: { display: "none" },
-  defaultIcon: { minWidth: "32px" },
+  defaultIcon: { minWidth: "24px", width: "24px", height: "24px" },
   warningText: {
-    color: theme.colors.negative,
+    color: theme.colors.negative_120,
     paddingRight: theme.space.xs,
-    "&:first-of-type": {
-      paddingLeft: theme.space.xs,
-    },
   },
   show: { display: "flex" },
-  topGutter: { paddingTop: 6 },
+  topGutter: { paddingTop: "3px" },
   hideText: {
     // display none or visibility hidden prevents
     // browser to trigger the aria-alert

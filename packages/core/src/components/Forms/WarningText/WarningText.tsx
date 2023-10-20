@@ -67,7 +67,7 @@ export const HvWarningText = (props: HvWarningTextProps) => {
   const showWarning = localVisible && !localDisabled;
   const content = showWarning ? children : "";
   const localAdornment = adornment || (
-    <Fail className={classes.defaultIcon} color="negative" />
+    <Fail iconSize="XS" className={classes.defaultIcon} color="negative" />
   );
 
   return (
@@ -88,6 +88,7 @@ export const HvWarningText = (props: HvWarningTextProps) => {
           [classes.topGutter]: !disableGutter,
           [classes.hideText]: hideText,
         })}
+        variant="caption1"
         role="status"
         aria-live="polite"
         aria-relevant="additions text"

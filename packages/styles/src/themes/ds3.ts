@@ -421,6 +421,18 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvBreadCrumbPage: {
+      classes: {
+        link: {
+          "&:hover": {
+            backgroundColor: theme.colors.atmo3,
+          },
+          "&:focus": {
+            backgroundColor: theme.colors.atmo3,
+          },
+        },
+      },
+    },
     HvBulkActions: {
       classes: {
         root: {
@@ -1312,22 +1324,28 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvWarningText: {
+      classes: {
+        warningText: {
+          ...theme.typography.body,
+          color: theme.colors.negative,
+        },
+        topGutter: { paddingTop: "8px" },
+        defaultIcon: {
+          minWidth: "32px",
+          width: "32px",
+          height: "32px",
+          "& svg": {
+            height: "16px",
+            width: "16px",
+          },
+        },
+      },
+    },
     HvWizardContainer: {
       classes: {
         paper: {
           maxHeight: "calc(100% - (2 * 100px))",
-        },
-      },
-    },
-    HvBreadCrumbPage: {
-      classes: {
-        link: {
-          "&:hover": {
-            backgroundColor: theme.colors.atmo3,
-          },
-          "&:focus": {
-            backgroundColor: theme.colors.atmo3,
-          },
         },
       },
     },
