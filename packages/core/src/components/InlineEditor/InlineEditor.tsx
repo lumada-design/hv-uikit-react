@@ -43,6 +43,8 @@ export interface HvInlineEditorProps
   buttonProps?: HvButtonProps;
   /** Props passed to the HvTypography text component */
   typographyProps?: HvTypographyProps;
+  /** Whether the editor is disabled or not. */
+  disabled?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: HvInlineEditorClasses;
 }
@@ -66,6 +68,7 @@ export const HvInlineEditor = (props: HvInlineEditorProps) => {
     onKeyDown,
     buttonProps,
     typographyProps,
+    disabled,
     ...others
   } = useDefaultProps("HvInlineEditor", props);
 
@@ -115,7 +118,7 @@ export const HvInlineEditor = (props: HvInlineEditorProps) => {
 
   return (
     <div className={cx(classes.root, className)}>
-      {editMode ? (
+      {editMode && !disabled ? (
         <InputComponent
           inputRef={inputRef}
           classes={{
@@ -143,13 +146,16 @@ export const HvInlineEditor = (props: HvInlineEditorProps) => {
             <Edit
               color="secondary_60"
               role="none"
-              className={cx(classes.icon, { [classes.iconVisible]: showIcon })}
+              className={cx(classes.icon, {
+                [classes.iconVisible]: showIcon,
+              })}
             />
           }
           className={cx(classes.button, {
             [classes.largeText]: parseInt(lineHeight as string, 10) >= 28,
           })}
           onClick={handleClick}
+          disabled={disabled}
           {...buttonProps}
         >
           <HvTypography
