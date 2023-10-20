@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { createClasses } from "@core/utils/classes";
 import { outlineStyles } from "@core/utils/focusUtils";
 
-export const { staticClasses, useClasses } = createClasses("HvPage", {
+export const { staticClasses, useClasses } = createClasses("HvBreadCrumbPage", {
   link: {
     padding: `8px ${theme.space.xs}`,
     borderRadius: theme.radii.base,
@@ -11,10 +11,10 @@ export const { staticClasses, useClasses } = createClasses("HvPage", {
     textTransform: "capitalize",
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.primary_20,
     },
     "&:focus": {
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.primary_20,
     },
     "&:focus-visible": {
       ...outlineStyles,
