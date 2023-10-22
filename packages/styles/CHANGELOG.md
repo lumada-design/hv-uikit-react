@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.14.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.13.1...@hitachivantara/uikit-styles@5.14.0) (2023-10-22)
+
+### Features
+
+- **BreadCrumb:** align with DS 5.7 ([#3758](https://github.com/lumada-design/hv-uikit-react/issues/3758)) ([758458e](https://github.com/lumada-design/hv-uikit-react/commit/758458e806f7a3877c20f9821a7541df4c21e174))
+- **InlineEditor:** align default background with DS 5.7 ([#3757](https://github.com/lumada-design/hv-uikit-react/issues/3757)) ([4cc2796](https://github.com/lumada-design/hv-uikit-react/commit/4cc27968dfbac83d376bd69ebae9675afdef3ad4))
+
 ## 5.13.1 (2023-10-20)
 
 ### Bug Fixes

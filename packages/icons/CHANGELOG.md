@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.6.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.6.9...@hitachivantara/uikit-react-icons@5.6.10) (2023-10-22)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-icons
+
 ## 5.6.9 (2023-10-20)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

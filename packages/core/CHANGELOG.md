@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.32.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.31.0...@hitachivantara/uikit-react-core@5.32.0) (2023-10-22)
+
+### Bug Fixes
+
+- **EmptyState:** node rendered as div ([2d6a9c3](https://github.com/lumada-design/hv-uikit-react/commit/2d6a9c3785655f7a3a7e4d495bf0d24aa19243ff))
+
+### Features
+
+- **BreadCrumb:** align with DS 5.7 ([#3758](https://github.com/lumada-design/hv-uikit-react/issues/3758)) ([758458e](https://github.com/lumada-design/hv-uikit-react/commit/758458e806f7a3877c20f9821a7541df4c21e174))
+- **InlineEditor:** align default background with DS 5.7 ([#3757](https://github.com/lumada-design/hv-uikit-react/issues/3757)) ([4cc2796](https://github.com/lumada-design/hv-uikit-react/commit/4cc27968dfbac83d376bd69ebae9675afdef3ad4))
+- **Section:** add Section component ([1b0ea65](https://github.com/lumada-design/hv-uikit-react/commit/1b0ea65b97bdb7b305945e7c2a2cc110efdffcc3))
+
 # [5.31.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.30.1...@hitachivantara/uikit-react-core@5.31.0) (2023-10-20)
 
 ### Bug Fixes
