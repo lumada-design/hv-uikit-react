@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 
-import { useGeneratorContext } from "generator/GeneratorContext";
-import { UnitSlider } from "components/common";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
+import { UnitSlider } from "~/components/common/UnitSlider";
 
 import { styles } from "./Sizes.styles";
 

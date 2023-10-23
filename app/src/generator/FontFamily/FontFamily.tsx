@@ -1,4 +1,6 @@
 import { SyntheticEvent, useState } from "react";
+import { css } from "@emotion/css";
+import { SnackbarCloseReason } from "@mui/material";
 import {
   HvBox,
   HvButton,
@@ -7,13 +9,10 @@ import {
   HvListValue,
   HvSnackbar,
 } from "@hitachivantara/uikit-react-core";
-
 import { Add } from "@hitachivantara/uikit-react-icons";
-import { css } from "@emotion/css";
-import { SnackbarCloseReason } from "@mui/material";
 
-import { useGeneratorContext } from "generator/GeneratorContext";
-import { extractFontsNames } from "generator/utils";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
+import { extractFontsNames } from "~/generator/utils";
 
 import { styles } from "./FontFamily.styles";
 

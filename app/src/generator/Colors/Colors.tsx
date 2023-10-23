@@ -5,11 +5,10 @@ import {
   useTheme,
   baseDropdownClasses,
 } from "@hitachivantara/uikit-react-core";
-
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 import { css } from "@emotion/css";
 
-import { useGeneratorContext } from "generator/GeneratorContext";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
 
 import { styles } from "./Colors.styles";
 import { getColorGroupName, getColors, groupsToShow } from "./utils";

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { getActivePath } from "lib/utils/navigation";
+import { getActivePath } from "~/lib/utils/navigation";
 
 const useNavigation = (
   navigationData: NavigationData[] = []

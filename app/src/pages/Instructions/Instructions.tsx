@@ -24,7 +24,7 @@ import {
   FontSizeBigger,
 } from "@hitachivantara/uikit-react-icons";
 
-import { useGeneratorContext } from "generator/GeneratorContext";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
 
 import classes from "./styles";
 

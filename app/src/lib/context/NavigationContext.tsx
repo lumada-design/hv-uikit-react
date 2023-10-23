@@ -1,7 +1,7 @@
 import { useMemo, createContext } from "react";
 
-import { Header } from "components/common";
-import useNavigation from "lib/hooks/useNavigation";
+import { Header } from "~/components/common/Header";
+import useNavigation from "~/lib/hooks/useNavigation";
 
 interface NavigationProviderProps {
   children: React.ReactNode;

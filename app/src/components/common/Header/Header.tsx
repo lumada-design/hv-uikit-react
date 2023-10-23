@@ -12,10 +12,10 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-import logo from "assets/logo.png";
-import { NavigationContext } from "lib/context/NavigationContext";
-import navigation from "lib/navigation";
-import { useGeneratorContext } from "generator/GeneratorContext";
+import logo from "~/assets/logo.png";
+import { NavigationContext } from "~/lib/context/NavigationContext";
+import navigation from "~/lib/navigation";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
 
 export const Header = () => {
   const navigate = useNavigate();

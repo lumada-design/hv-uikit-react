@@ -11,7 +11,7 @@ import {
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
 
-import { getStatusIcon } from "lib/utils/assetInventory";
+import { getStatusIcon } from "~/lib/utils/assetInventory";
 
 interface CarViewProps {
   instance: HvTableInstance<AssetInventoryModel, string>;

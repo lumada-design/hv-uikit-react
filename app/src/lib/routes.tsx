@@ -1,9 +1,9 @@
 import { lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-const Components = lazy(() => import("pages/Components"));
-const Instructions = lazy(() => import("pages/Instructions"));
-const NotFound = lazy(() => import("pages/NotFound"));
+const Components = lazy(() => import("~/pages/Components"));
+const Instructions = lazy(() => import("~/pages/Instructions"));
+const NotFound = lazy(() => import("~/pages/NotFound"));
 
 // Templates
 /* eslint-disable import/no-relative-packages */

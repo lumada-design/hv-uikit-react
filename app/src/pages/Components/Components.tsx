@@ -38,7 +38,7 @@ import {
   Avatar,
   ProgressBar,
   Loading,
-} from "components/components";
+} from "~/components/components";
 
 import { styles } from "./Components.styles";
 
