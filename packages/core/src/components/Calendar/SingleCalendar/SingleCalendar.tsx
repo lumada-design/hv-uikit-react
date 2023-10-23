@@ -6,6 +6,7 @@ import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 
 import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "@core/components/Typography";
 
 import { ViewMode } from "../enums";
 import { isRange, isDate, getWeekdayNamesList } from "../utils";
@@ -14,7 +15,6 @@ import { HvComposedNavigation, HvMonthSelector } from "../CalendarNavigation";
 import { DateRangeProp, VisibilitySelectorActions } from "../types";
 
 import { HvCalendarCell } from "./CalendarCell";
-import { HvCalendarWeekLabel } from "../CalendarWeekLabels";
 import { HvCalendarHeader } from "../CalendarHeader/CalendarHeader";
 
 import { staticClasses, useClasses } from "./SingleCalendar.styles";
@@ -60,10 +60,7 @@ export const HvSingleCalendar = ({
   const firstDayOfCurrentMonth = new Date(calModel.year, calModel.month - 1, 1);
   const firstDayOfCurrentMonthTime = firstDayOfCurrentMonth.getTime();
 
-  const listWeekdayNames = useMemo(
-    () => getWeekdayNamesList(locale, "narrow"),
-    [locale]
-  );
+  const listWeekdayNames = useMemo(() => getWeekdayNamesList(locale), [locale]);
 
   const handleChange = (event, date: Date | DateRangeProp) => {
     event?.preventDefault();
@@ -111,17 +108,18 @@ export const HvSingleCalendar = ({
     }
   };
 
-  /**
-   * Renders the element representing the received date.
-   *
-   * @param currentDate - The array representing the date [YYYY, MM, DD].
-   * @memberOf Calendar
-   */
-  const renderCalendarDate = (currentDate) => {
+  const renderWeekLabel = (dayName: string, index: number) => (
+    <HvTypography key={index} variant="label" className={classes.calendarDay}>
+      {dayName}
+    </HvTypography>
+  );
+
+  /** Renders the element representing the received date. */
+  const renderCalendarDate = (currentDate: Date) => {
     return (
       <HvCalendarCell
         classes={classes}
-        key={currentDate}
+        key={currentDate.toString()}
         tabIndex={currentDate.getTime() === firstDayOfCurrentMonthTime ? 0 : -1}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
@@ -163,7 +161,7 @@ export const HvSingleCalendar = ({
               className={classes.calendarGrid}
               aria-controls={HvCalendarHeader?.[0]?.id}
             >
-              <HvCalendarWeekLabel labels={listWeekdayNames} />
+              {listWeekdayNames.map(renderWeekLabel)}
               {calModel.dates.map(renderCalendarDate)}
             </div>
           </div>

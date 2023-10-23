@@ -3,9 +3,8 @@ import {
   DropRightXS as DropRightIcon,
 } from "@hitachivantara/uikit-react-icons";
 
-import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
-import { HvTypography } from "@core/components/Typography";
+import { HvButton } from "@core/components/Button";
 import { HvBaseProps } from "@core/types/generic";
 
 import { ExtractNames } from "@core/utils/classes";
@@ -28,70 +27,50 @@ export const Navigation = ({
 }: NavigationProps) => {
   const { classes, cx } = useClasses(classesProp);
 
-  const onkeyDownHandler = (event, funcAction) => {
-    if (isKey(event, "Enter") || isKey(event, "Space")) {
-      event.preventDefault();
-      funcAction(event);
-    }
-  };
-
-  const onTextClickIsFunction = typeof onTextClick === "function";
-
   return (
     <div className={classes.root}>
-      <DropLeftIcon
+      <HvButton
+        icon
+        disabled={!isPreviousEnabled}
+        aria-label="Previous"
         id={setId(id, "left")}
         className={cx(classes.icon, {
           [classes.disabled]: !isPreviousEnabled,
         })}
-        onClick={
-          isPreviousEnabled ? (event) => onNavigatePrevious(event) : undefined
-        }
-        onKeyDown={(event) =>
-          isNextEnabled
-            ? onkeyDownHandler(event, onNavigatePrevious)
-            : undefined
-        }
-        tabIndex={0}
-      />
-
-      <div
-        id={id}
-        className={cx({
-          [classes.text]: onTextClickIsFunction,
-          [classes.textWithoutHover]: !onTextClickIsFunction,
-        })}
-        role="presentation"
-        onClick={onTextClick}
-        onKeyDown={
-          onTextClick && ((event) => onkeyDownHandler(event, onTextClick))
-        }
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-        tabIndex={onTextClick ? 0 : -1}
+        onClick={onNavigatePrevious}
       >
-        <HvTypography variant="body">{navigationText}</HvTypography>
-      </div>
+        <DropLeftIcon role="none" />
+      </HvButton>
 
-      <DropRightIcon
+      <HvButton
+        id={id}
+        variant="secondaryGhost"
+        onClick={onTextClick}
+        component={onTextClick ? "button" : "div"}
+        className={cx(classes.text, {
+          [classes.textWithoutHover]: !onTextClick,
+        })}
+      >
+        {navigationText}
+      </HvButton>
+
+      <HvButton
+        icon
+        disabled={!isNextEnabled}
+        aria-label="Next"
         id={setId(id, "right")}
         className={cx(classes.icon, {
           [classes.disabled]: !isNextEnabled,
         })}
-        onClick={isNextEnabled ? (event) => onNavigateNext(event) : undefined}
-        onKeyDown={(event) =>
-          isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined
-        }
-        tabIndex={0}
-      />
+        onClick={onNavigateNext}
+      >
+        <DropRightIcon role="none" />
+      </HvButton>
     </div>
   );
 };
 
 export interface NavigationProps extends HvBaseProps {
-  /**
-   * Identifier.
-   */
-  id?: string;
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -99,11 +78,11 @@ export interface NavigationProps extends HvBaseProps {
   /**
    * A function to be executed whenever the navigate previous action is triggered.
    */
-  onNavigatePrevious: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onNavigatePrevious: (event: React.MouseEvent<HTMLElement>) => void;
   /**
    * A function to be executed whenever the navigate next action is triggered.
    */
-  onNavigateNext: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onNavigateNext: (event: React.MouseEvent<HTMLElement>) => void;
   /**
    * A function to be executed whenever the text is clicked.
    */

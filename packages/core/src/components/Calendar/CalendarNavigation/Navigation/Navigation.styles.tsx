@@ -1,7 +1,5 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "@core/utils/focusUtils";
-
 import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvNavigation", {
@@ -9,47 +7,18 @@ export const { staticClasses, useClasses } = createClasses("HvNavigation", {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    gap: theme.space.xs,
   },
-  icon: {
-    userSelect: "none",
-    width: "32px",
-    height: "32px",
-    "&:hover": {
-      backgroundColor: theme.colors.atmo3,
-      cursor: "pointer",
-    },
-    "&:focus": {
-      outline: "none",
-    },
-    "&:focus-visible": {
-      backgroundColor: theme.colors.atmo3,
-      cursor: "pointer",
-      ...outlineStyles,
-    },
-  },
+  icon: {},
   disabled: {},
   text: {
-    width: "calc(100% - 64px)",
-    textAlign: "center",
-    height: "32px",
-    padding: "8px 0",
-    "&:hover": {
-      backgroundColor: theme.colors.atmo3,
-      cursor: "pointer",
-    },
-    "&:focus": {
-      outline: "none",
-    },
-    "&:focus-visible": {
-      backgroundColor: theme.colors.atmo3,
-      cursor: "pointer",
-      ...outlineStyles,
-    },
+    minWidth: "unset",
+    flex: 1,
+    color: theme.colors.secondary,
+    fontWeight: theme.typography.body.fontWeight,
+    padding: 0,
   },
   textWithoutHover: {
-    width: "calc(100% - 64px)",
-    textAlign: "center",
-    padding: "0 5px",
-    outline: "none",
+    pointerEvents: "none",
   },
 });

@@ -41,7 +41,7 @@ describe("HvDatePicker", () => {
 
       calendarButtons = await screen.findAllByRole("button");
       firstDayOfTheMonth = await screen.findAllByText("1");
-      expect(calendarButtons.length).toBe(42);
+      expect(calendarButtons.length).toBe(42 + 5);
       expect(firstDayOfTheMonth.length).toBe(2);
     });
   });
@@ -85,7 +85,7 @@ describe("HvDatePicker", () => {
       firstDayOfTheMonth = await screen.findAllByText("1");
       datePickerDropdownValue = await screen.findAllByText("1 Jan 2019");
       const dateInput = screen.getByDisplayValue("Jan 1, 2019");
-      expect(calendarButtons.length).toBe(42);
+      expect(calendarButtons.length).toBe(42 + 5);
       expect(firstDayOfTheMonth.length).toBe(2);
       expect(datePickerDropdownValue.length).toBe(1);
       expect(dateInput).toBeInTheDocument();
@@ -144,7 +144,7 @@ describe("HvDatePicker", () => {
       datePickerDropdownValue = await screen.findAllByText("5 - 10 Jan 2019");
       const dateInputLeft = screen.getByDisplayValue("Jan 5, 2019");
       const dateInputRight = screen.getByDisplayValue("Jan 10, 2019");
-      expect(calendarButtons.length).toBe(86);
+      expect(calendarButtons.length).toBe(86 + 10);
       expect(firstDayOfTheMonth.length).toBe(4);
       expect(datePickerDropdownValue.length).toBe(1);
       expect(dateInputLeft).toBeInTheDocument();
@@ -239,7 +239,7 @@ describe("HvDatePicker", () => {
       dateInput = await findByPlaceholderText("MM/DD/YYYY");
       applyButton = await findByText(labels.applyLabel);
       cancelButton = await findByText(labels.cancelLabel);
-      expect(calendarButtons.length).toBe(44);
+      expect(calendarButtons.length).toBe(44 + 5);
       expect(firstDayOfTheMonth.length).toBe(2);
       expect(dateInput).toBeInTheDocument();
       expect(applyButton).toBeInTheDocument();

@@ -48,6 +48,14 @@ export const { staticClasses, useClasses } = createClasses("HvSingleCalendar", {
       backgroundColor: theme.colors.atmo1, // control the right side when hovering outside of the range
     },
   },
+  calendarDay: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    textAlign: "center",
+    height: "40px",
+    width: "40px",
+  },
   navigationContainer: {},
   focusSelection: {},
   navigationMonth: {},
