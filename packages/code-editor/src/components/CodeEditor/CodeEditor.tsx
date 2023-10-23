@@ -1,9 +1,18 @@
-import { HvTheme, useTheme } from "@hitachivantara/uikit-react-core";
-import { Editor, EditorProps, useMonaco } from "@monaco-editor/react";
-import { clsx } from "clsx";
 import { useCallback, useEffect } from "react";
-import { StyledContainer } from "./CodeEditor.styles";
-import codeEditorClasses, { HvCodeEditorClasses } from "./codeEditorClasses";
+
+import { Editor, EditorProps, useMonaco } from "@monaco-editor/react";
+
+import {
+  ExtractNames,
+  HvTheme,
+  useTheme,
+} from "@hitachivantara/uikit-react-core";
+
+import { staticClasses, useClasses } from "./CodeEditor.styles";
+
+export { staticClasses as codeEditorClasses };
+
+export type HvCodeEditorClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCodeEditorProps extends EditorProps {
   /** The properties of the Monaco editor. */
@@ -39,13 +48,16 @@ const defaultCodeEditorOptions: EditorProps["options"] = {
  * Additional information regarding Tab trapping in Monaco, can be found here: https://github.com/microsoft/monaco-editor/wiki/Monaco-Editor-Accessibility-Guide#tab-trapping.
  */
 export const HvCodeEditor = ({
-  classes,
+  classes: classesProp,
   defaultValue,
   options,
   editorProps,
   ...others
 }: HvCodeEditorProps) => {
+  const { classes } = useClasses(classesProp);
+
   const { activeTheme, selectedMode, selectedTheme, colorModes } = useTheme();
+
   const monaco = useMonaco();
 
   // Merges the 2 objects together, overriding defaults with passed in options
@@ -79,7 +91,7 @@ export const HvCodeEditor = ({
   }, [selectedTheme, colorModes, activeTheme, defineActiveThemes]);
 
   return (
-    <StyledContainer className={clsx(classes?.root, codeEditorClasses.root)}>
+    <div className={classes.root}>
       <Editor
         options={mergedOptions}
         beforeMount={() =>
@@ -89,6 +101,6 @@ export const HvCodeEditor = ({
         {...editorProps}
         {...others}
       />
-    </StyledContainer>
+    </div>
   );
 };
