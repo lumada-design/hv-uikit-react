@@ -1,30 +1,34 @@
+import { useState } from "react";
+
 import { css } from "@emotion/css";
-import { HvButton, HvGlobalActions } from "@hitachivantara/uikit-react-core";
+import {
+  HvButton,
+  HvGlobalActions,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import {
   Add,
   Backwards,
-  LineChart as LineChartIcon,
-  Heart,
-  Transformation,
-  Delete,
-  Duplicate,
+  LineChartAlt,
+  Operation,
+  DataSource,
 } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
-import { useState } from "react";
-import { HvFlowSidebar } from "../../Sidebar";
-import { HvFlow, HvFlowProps } from "../../Flow";
-import { HvFlowControls } from "../../Controls";
-import { JsonInput } from "./JsonInput";
-import { LineChart } from "./LineChart";
+import {
+  HvFlowSidebar,
+  HvFlow,
+  HvFlowProps,
+  HvFlowControls,
+} from "@hitachivantara/uikit-react-lab";
+
+// The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Visualizations
 import { BarChart } from "./BarChart";
 import { Filter } from "./Filter";
-import { HvFlowDefaultActions } from "../../types";
+import { JsonInput } from "./JsonInput";
+import { LineChart } from "./LineChart";
+// The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
+import { defaultActions } from "../Base";
 
-const defaultActions: HvFlowDefaultActions[] = [
-  { id: "delete", label: "Delete", icon: <Delete /> },
-  { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
-];
-
+// Note types
 const nodeTypes = {
   jsonInput: JsonInput,
   filter: Filter,
@@ -39,22 +43,22 @@ type NodeGroups = "inputs" | "transformations" | "visualizations";
 
 const nodeGroups = {
   inputs: {
-    label: "Inputs",
+    label: "Input",
     color: "cat3_80",
-    description: "This is my description for inputs.",
-    icon: <Heart />,
+    description: "Find here all the available inputs.",
+    icon: <DataSource />,
   },
   transformations: {
-    label: "Transformations",
+    label: "Transformation",
     color: "cat5_80",
-    description: "This is my description for transformations.",
-    icon: <Transformation />,
+    description: "Find here all the available transformations.",
+    icon: <Operation />,
   },
   visualizations: {
-    label: "Visualizations",
+    label: "Visualization",
     color: "cat1_80",
-    description: "This is my description for visualizations.",
-    icon: <LineChartIcon />,
+    description: "Find here all the available visualizations.",
+    icon: <LineChartAlt />,
   },
 } satisfies HvFlowProps<NodeGroups>["nodeGroups"];
 
@@ -143,7 +147,8 @@ const edges = [
   },
 ] satisfies HvFlowProps<NodeGroups, NodeType>["edges"];
 
-const classes = {
+// Classes
+export const classes = {
   root: css({ height: "100vh" }),
   globalActions: css({ paddingBottom: theme.space.md }),
   flow: css({
@@ -194,10 +199,6 @@ export const Visualizations = () => {
               open={open}
               onClose={() => setOpen(false)}
             />
-          }
-          // Keeping track of flow updates
-          onFlowChange={(nds, eds) =>
-            console.log("Flow updated: ", { nodes: nds, edges: eds })
           }
         >
           <HvFlowControls />

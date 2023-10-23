@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
+import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 import { HvBarChart } from "@hitachivantara/uikit-react-viz";
 import { useStore } from "reactflow";
-import { HvFlowNode } from "../../Node/Node";
 
 export const BarChart = (props) => {
   const { id } = props;
