@@ -2,8 +2,8 @@ import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { HvButton, HvButtonProps } from "@core/components/Button";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { useControlled } from "@core/hooks/useControlled";
 import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useExpandable } from "@core/hooks/useExpandable";
 import { Down, Up } from "@hitachivantara/uikit-react-icons";
 import { setId } from "@core/utils/setId";
 import { staticClasses, useClasses } from "./Section.styles";
@@ -57,11 +57,15 @@ export const HvSection = (props: HvSectionProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
-
   const elementId = useUniqueId(id, "hvSection");
   const contentId = setId(elementId, "content");
 
+  const { isOpen, toggle, ariaProps } = useExpandable(
+    expanded,
+    defaultExpanded,
+    onToggle,
+    contentId
+  );
   const showContent = expandable ? !!isOpen : true;
 
   return (
@@ -71,12 +75,9 @@ export const HvSection = (props: HvSectionProps) => {
           <HvButton
             icon
             onClick={(event) => {
-              setIsOpen((o) => !o);
-              onToggle?.(event, !isOpen);
+              toggle(event);
             }}
-            aria-expanded={isOpen}
-            aria-controls={contentId}
-            aria-label={isOpen ? "Collapse" : "Expand"}
+            {...ariaProps}
             {...expandButtonProps}
           >
             {isOpen ? <Up /> : <Down />}

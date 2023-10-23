@@ -11,3 +11,4 @@ export * from "./useIsMounted";
 export * from "./useComputation";
 export * from "./useTheme";
 export * from "./useEnhancedEffect";
+export * from "./useExpandable";
