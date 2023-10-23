@@ -1,8 +1,8 @@
-import { HvCheckBox, HvCheckBoxGroup } from "@hitachivantara/uikit-react-core";
 import { useEffect, useState } from "react";
+
+import { HvCheckBox, HvCheckBoxGroup } from "@hitachivantara/uikit-react-core";
+import { useFlowNode, HvFlowNode } from "@hitachivantara/uikit-react-lab";
 import { useReactFlow, useStore } from "reactflow";
-import { useFlowNode } from "../../hooks/useFlowNode";
-import { HvFlowNode } from "../../Node/Node";
 
 function filterDataByCountries(data, countriesToFilter: string[]) {
   return data.filter((item) => countriesToFilter.includes(item.country));
@@ -12,12 +12,14 @@ export const Filter = (props) => {
   const { id } = props;
 
   const [checked, setChecked] = useState<string[]>([]);
+
   const reactFlowInstance = useReactFlow();
+
   const nodes = useStore((state) => state.getNodes());
   const edges = useStore((state) => state.edges);
-  // const filter = useStore((state) => state.getNodes().find((n) => n.id === id))
-  //   ?.data.filter;
+
   let options: string[] = [];
+
   const { node: self } = useFlowNode(id);
 
   useEffect(() => {

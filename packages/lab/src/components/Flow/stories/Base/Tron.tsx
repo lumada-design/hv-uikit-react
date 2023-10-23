@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { css } from "@emotion/css";
 import {
   HvButton,
@@ -7,10 +9,8 @@ import {
   HvDialogTitle,
 } from "@hitachivantara/uikit-react-core";
 import { Favorite, Flag, Search } from "@hitachivantara/uikit-react-icons";
-import { useState } from "react";
+import { HvFlowNode, useFlowNode } from "@hitachivantara/uikit-react-lab";
 import { Node } from "reactflow";
-import { useFlowNode } from "../hooks/useFlowNode";
-import { HvFlowNode } from "../Node/Node";
 
 export const Tron = (props) => {
   const { id } = props;

@@ -1,11 +1,11 @@
-import { HvFlowNode } from "../Node/Node";
+import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 
-export const LineChart = (props) => {
-  return <HvFlowNode description="LineChart description" {...props} />;
+export const KPI = (props) => {
+  return <HvFlowNode description="KPI description" {...props} />;
 };
 
-LineChart.meta = {
-  label: "LineChart",
+KPI.meta = {
+  label: "KPI",
   groupId: "insights",
   inputs: [
     {
