@@ -11,7 +11,7 @@ import {
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
 
-import { getColumns } from "lib/utils/listView";
+import { getColumns } from "~/lib/utils/listView";
 
 interface TableProps {
   instance: HvTableInstance<ListViewModel, string>;

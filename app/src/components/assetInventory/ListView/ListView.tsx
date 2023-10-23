@@ -10,7 +10,7 @@ import {
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
 
-import { getColumns, idsToControl } from "lib/utils/assetInventory";
+import { getColumns, idsToControl } from "~/lib/utils/assetInventory";
 
 interface ListViewProps {
   instance: HvTableInstance<AssetInventoryModel, string>;

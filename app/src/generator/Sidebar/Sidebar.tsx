@@ -13,7 +13,6 @@ import {
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-
 import {
   Bold,
   FontSize,
@@ -23,19 +22,19 @@ import {
 
 import { css } from "@emotion/css";
 
-import { useGeneratorContext } from "generator/GeneratorContext";
-import CodeEditor from "generator/CodeEditor";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
+import CodeEditor from "~/generator/CodeEditor";
 
 import { styles } from "./Sidebar.styles";
 
-const Colors = lazy(() => import("generator/Colors"));
-const FontSizes = lazy(() => import("generator/FontSizes"));
-const FontFamily = lazy(() => import("generator/FontFamily"));
-const Radii = lazy(() => import("generator/Radii"));
-const Spacing = lazy(() => import("generator/Spacing"));
-const Typography = lazy(() => import("generator/Typography"));
-const Zindices = lazy(() => import("generator/Zindices"));
-const Sizes = lazy(() => import("generator/Sizes"));
+const Colors = lazy(() => import("~/generator/Colors"));
+const FontSizes = lazy(() => import("~/generator/FontSizes"));
+const FontFamily = lazy(() => import("~/generator/FontFamily"));
+const Radii = lazy(() => import("~/generator/Radii"));
+const Spacing = lazy(() => import("~/generator/Spacing"));
+const Typography = lazy(() => import("~/generator/Typography"));
+const Zindices = lazy(() => import("~/generator/Zindices"));
+const Sizes = lazy(() => import("~/generator/Sizes"));
 
 const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, changeTheme, themes } =

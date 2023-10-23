@@ -15,10 +15,9 @@ import debounce from "lodash/debounce";
 
 import { css } from "@emotion/css";
 
-import { extractFontSizeUnit } from "generator/utils";
-import { useGeneratorContext } from "generator/GeneratorContext";
-
-import { ScaleProps, UnitSlider } from "components/common";
+import { extractFontSizeUnit } from "~/generator/utils";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
+import { ScaleProps, UnitSlider } from "~/components/common/UnitSlider";
 
 import { styles } from "./Typography.styles";
 

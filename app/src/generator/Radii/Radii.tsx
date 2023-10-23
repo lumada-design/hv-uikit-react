@@ -6,9 +6,9 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 
-import { useGeneratorContext } from "generator/GeneratorContext";
-import { UnitSlider } from "components/common";
-import { extractFontSizeUnit } from "generator/utils";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
+import { UnitSlider } from "~/components/common/UnitSlider";
+import { extractFontSizeUnit } from "~/generator/utils";
 
 import { styles } from "./Radii.styles";
 

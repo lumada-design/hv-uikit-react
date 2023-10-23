@@ -2,6 +2,7 @@
   "rules": {
     "no-alert": "off",
     "no-console": "off",
+    "import/extensions": "off",
     "import/order": [
       "error",
       {
@@ -18,27 +19,7 @@
             "position": "before"
           },
           {
-            "pattern": "assets/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "components/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "generator/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "lib/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "pages/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "types/**",
+            "pattern": "~/**",
             "group": "internal"
           }
         ],
