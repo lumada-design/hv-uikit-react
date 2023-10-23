@@ -179,21 +179,17 @@ export const getMonthNamesList = (
  * Returns a list with the names of all the weekdays localized in the received locale and representation value.
  *
  * @param locale - The locale to be applied.
- * @param dateTimeFormatValue - The representation value for the weekday.
  * @returns An array with all the weekday names.
  */
-export const getWeekdayNamesList = (
-  locale: string,
-  dateTimeFormatValue: Intl.DateTimeFormatOptions["weekday"] = "long"
-) => {
-  const options = { weekday: dateTimeFormatValue, timeZone: "UTC" };
-  const weekdayNames: string[] = [];
+export const getWeekdayNamesList = (locale: string) => {
+  const formatter = new Intl.DateTimeFormat(locale, {
+    weekday: "narrow",
+    timeZone: "UTC",
+  });
 
-  for (let day = 4; day <= 10; day += 1) {
-    const auxDate = makeUTCDate(1970, 0, day);
-    weekdayNames.push(Intl.DateTimeFormat(locale, options).format(auxDate));
-  }
-  return weekdayNames;
+  return [...new Array(7)].map((n, index) => {
+    return formatter.format(makeUTCDate(1970, 0, 4 + index));
+  });
 };
 
 /**

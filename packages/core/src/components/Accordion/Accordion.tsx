@@ -146,7 +146,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
   const accordionHeaderId = setId(id, "button");
   const accordionContainer = setId(id, "container");
   const accordionHeader = useMemo(() => {
-    const color = (disabled && ["secondary_60"]) || undefined;
+    const color = disabled ? "secondary_60" : undefined;
 
     const accordionButton = (
       <HvTypography
@@ -166,15 +166,14 @@ export const HvAccordion = (props: HvAccordionProps) => {
         {label}
       </HvTypography>
     );
-    const result =
-      headingLevel === undefined ? (
-        accordionButton
-      ) : (
-        <HvTypography component={`h${headingLevel}`} variant={labelVariant}>
-          {accordionButton}
-        </HvTypography>
-      );
-    return result;
+
+    return headingLevel === undefined ? (
+      accordionButton
+    ) : (
+      <HvTypography component={`h${headingLevel}`} variant={labelVariant}>
+        {accordionButton}
+      </HvTypography>
+    );
   }, [
     cx,
     classes,
