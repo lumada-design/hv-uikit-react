@@ -1,11 +1,12 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import clamp from "lodash/clamp";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 import { HvTypography, HvTypographyProps } from "@core/components/Typography";
 
 import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./ProgressBar.styles";
 
 export { staticClasses as progressBarClasses };

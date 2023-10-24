@@ -1,4 +1,5 @@
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { HvStepProps } from "../DefaultNavigation";
 
 export const dotSizes = {

@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
 import {
   HvDialog,
@@ -10,6 +10,7 @@ import {
   HvFileUploaderProps,
   HvFileUploaderPreview,
 } from "@hitachivantara/uikit-react-core";
+
 import { cancelUpload, simulateUpload } from "./simulators";
 import rainbow from "./assets/rainbow.jpg";
 

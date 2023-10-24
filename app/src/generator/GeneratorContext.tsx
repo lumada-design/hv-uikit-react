@@ -1,9 +1,3 @@
-import {
-  createTheme,
-  DeepPartial,
-  HvTheme,
-} from "@hitachivantara/uikit-react-core";
-import { HvBaseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
 import React, {
   createContext,
   useMemo,
@@ -13,7 +7,14 @@ import React, {
   useCallback,
   useContext,
 } from "react";
+import {
+  createTheme,
+  DeepPartial,
+  HvTheme,
+} from "@hitachivantara/uikit-react-core";
+import { HvBaseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
 import merge from "lodash/merge";
+
 import { themeDiff } from "./utils";
 
 type GeneratorContextOptions = {

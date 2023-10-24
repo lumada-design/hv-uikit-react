@@ -1,6 +1,8 @@
 import { CSSProperties } from "react";
-import { createClasses } from "@core/utils/classes";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { createClasses } from "@core/utils/classes";
 import { outlineStyles } from "@core/utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvTab", {

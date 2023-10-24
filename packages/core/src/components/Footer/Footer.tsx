@@ -1,9 +1,11 @@
 import { useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvTypography } from "@core/components/Typography";
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./Footer.styles";
 
 export { staticClasses as footerClasses };

@@ -8,6 +8,7 @@ import { useControlled } from "@core/hooks/useControlled";
 import { HvBaseProps } from "@core/types/generic";
 
 import { ExtractNames } from "@core/utils/classes";
+
 import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,

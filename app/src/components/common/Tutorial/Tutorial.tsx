@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import { hexToRgbA, useTheme } from "@hitachivantara/uikit-react-core";
+
 import { Step } from "./Step";
 import classes from "./tutorialStyles";
 

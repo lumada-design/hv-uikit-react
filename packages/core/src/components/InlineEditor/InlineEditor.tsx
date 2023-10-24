@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { Edit } from "@hitachivantara/uikit-react-icons";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useControlled } from "@core/hooks/useControlled";

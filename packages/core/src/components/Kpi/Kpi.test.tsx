@@ -1,7 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { HvKpi } from "@core/components";
+
 import { TopXS } from "@hitachivantara/uikit-react-icons";
+
+import { HvKpi } from "@core/components";
 
 describe("Kpi", () => {
   it("should render all components", () => {

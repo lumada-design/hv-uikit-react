@@ -4,6 +4,7 @@ import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 
 import { useDefaultProps } from "@core/hooks";
+
 import { SelectionContext } from "../utils/SelectionContext";
 import { staticClasses, useClasses } from "./Bar.styles";
 import { HvHeaderNavigationItemProp } from "../useSelectionPath";

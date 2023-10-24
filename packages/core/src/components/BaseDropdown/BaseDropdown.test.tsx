@@ -1,6 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+
 import { HvBaseDropdown } from "./BaseDropdown";
 
 const Main = () => (

@@ -16,6 +16,7 @@ import { setId } from "@core/utils/setId";
 import { ExtractNames } from "@core/utils/classes";
 import { HvTypography } from "@core/components/Typography";
 import { useDefaultProps } from "@core/hooks";
+
 import { staticClasses, useClasses } from "./TreeViewItem.styles";
 import { DescendantProvider, useDescendant } from "./descendants";
 import {

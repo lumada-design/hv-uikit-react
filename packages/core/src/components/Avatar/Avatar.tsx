@@ -1,10 +1,11 @@
 import { CSSProperties, HTMLAttributes, forwardRef } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { User } from "@hitachivantara/uikit-react-icons";
 import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
 
 import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useImageLoaded } from "@core/hooks/useImageLoaded";

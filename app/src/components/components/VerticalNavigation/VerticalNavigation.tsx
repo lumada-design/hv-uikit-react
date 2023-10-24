@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   HvVerticalNavigation,
   HvVerticalNavigationAction,
@@ -12,7 +13,6 @@ import {
   Open,
   User,
 } from "@hitachivantara/uikit-react-icons";
-import { useEffect, useState } from "react";
 
 export const VerticalNavigation = () => {
   const [navigationDataState, setNavigationDataState] = useState<any[]>([]);

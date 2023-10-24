@@ -1,5 +1,5 @@
-import { HvDropdown } from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
+import { HvDropdown } from "@hitachivantara/uikit-react-core";
 import { useReactFlow } from "reactflow";
 
 const Select = ({ nodeId, param, data }) => {

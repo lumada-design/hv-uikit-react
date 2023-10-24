@@ -5,6 +5,7 @@ import { setId } from "@core/utils/setId";
 
 import { ExtractNames } from "@core/utils/classes";
 import { HvTypography } from "@core/components/Typography";
+
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { staticClasses, useClasses } from "./Action.styles";
 

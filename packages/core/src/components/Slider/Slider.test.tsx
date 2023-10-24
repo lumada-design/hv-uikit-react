@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { fireEvent, render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import userEvent from "@testing-library/user-event";
-import { useState } from "react";
+
 import { HvSlider } from "./Slider";
 
 const Main = () => <HvSlider label="Failure Rate" defaultValues={[10]} />;

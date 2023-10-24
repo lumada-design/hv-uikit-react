@@ -4,14 +4,16 @@ import uniqueId from "lodash/uniqueId";
 
 import accept from "attr-accept";
 
+import { Doc } from "@hitachivantara/uikit-react-icons";
+
 import { setId } from "@core/utils/setId";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 
 import { HvTypography } from "@core/components/Typography";
-import { Doc } from "@hitachivantara/uikit-react-icons";
 import { HvInfoMessage, HvLabel } from "@core/components/Forms";
 import { ExtractNames } from "@core/utils/classes";
 import { useDefaultProps } from "@core/hooks";
+
 import { convertUnits } from "../utils";
 import { HvFileData, HvFilesAddedEvent } from "../File";
 

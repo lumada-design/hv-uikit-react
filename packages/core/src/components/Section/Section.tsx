@@ -1,11 +1,13 @@
+import { Down, Up } from "@hitachivantara/uikit-react-icons";
+
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { HvButton, HvButtonProps } from "@core/components/Button";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { useControlled } from "@core/hooks/useControlled";
 import { useUniqueId } from "@core/hooks/useUniqueId";
-import { Down, Up } from "@hitachivantara/uikit-react-icons";
 import { setId } from "@core/utils/setId";
+
 import { staticClasses, useClasses } from "./Section.styles";
 
 export { staticClasses as sectionClasses };

@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+
 import { HvCalendar } from "./Calendar";
 
 describe("<Calendar /> with minimum configuration", () => {

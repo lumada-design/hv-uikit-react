@@ -2,6 +2,7 @@ import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
+
 import { HvAdornment } from "@core/components";
 
 describe("Adornment", () => {

@@ -6,6 +6,7 @@ import { HvOverflowTooltip } from "@core/components/OverflowTooltip";
 
 import { ExtractNames } from "@core/utils/classes";
 import { useDefaultProps } from "@core/hooks";
+
 import { NavigationData } from "../VerticalNavigationContext";
 
 import { staticClasses, useClasses } from "./NavigationSlider.styles";

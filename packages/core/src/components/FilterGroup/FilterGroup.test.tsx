@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import userEvent from "@testing-library/user-event";
-import { useState } from "react";
+
 import { HvFilterGroup, HvFilterGroupProps } from "./FilterGroup";
 import { HvFilterGroupValue } from "./types";
 

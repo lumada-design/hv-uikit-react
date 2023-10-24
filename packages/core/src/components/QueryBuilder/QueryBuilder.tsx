@@ -1,7 +1,3 @@
-import cloneDeep from "lodash/cloneDeep";
-import isEqual from "lodash/isEqual";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import {
   useContext,
   useEffect,
@@ -10,6 +6,10 @@ import {
   useRef,
   useState,
 } from "react";
+import cloneDeep from "lodash/cloneDeep";
+import isEqual from "lodash/isEqual";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { ExtractNames } from "@core/utils/classes";
 

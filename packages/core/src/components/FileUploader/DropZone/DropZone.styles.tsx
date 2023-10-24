@@ -1,7 +1,8 @@
+import { CSSProperties } from "react";
+import { theme } from "@hitachivantara/uikit-styles";
+
 import { createClasses } from "@core/utils/classes";
 import { outlineStyles } from "@core/utils/focusUtils";
-import { theme } from "@hitachivantara/uikit-styles";
-import { CSSProperties } from "react";
 
 export const { staticClasses, useClasses } = createClasses("HvDropZone", {
   dropZoneContainer: {

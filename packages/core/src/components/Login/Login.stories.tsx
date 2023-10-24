@@ -1,3 +1,4 @@
+import { FormEventHandler, forwardRef } from "react";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
@@ -14,7 +15,7 @@ import {
   HvButtonProps,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { FormEventHandler, forwardRef } from "react";
+
 import background from "./resources/background.png";
 import customBackground from "./resources/background-custom.jpg";
 

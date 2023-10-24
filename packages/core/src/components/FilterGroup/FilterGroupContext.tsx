@@ -7,9 +7,10 @@ import {
   useMemo,
   useState,
 } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import isEqual from "lodash/isEqual";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useSavedState } from "@core/utils/useSavedState";
 

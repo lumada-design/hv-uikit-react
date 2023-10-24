@@ -6,6 +6,7 @@ import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
 
 import { useDefaultProps } from "@core/hooks";
+
 import { staticClasses, useClasses } from "./PresetColors.styles";
 
 export { staticClasses as colorPickerPresetColorsClasses };

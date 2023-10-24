@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { HvTypography } from "@core/components";
-import { useState } from "react";
+
 import { describe, expect, it } from "vitest";
+
+import { HvTypography } from "@core/components";
+
 import { HvDotPagination } from "./DotPagination";
 
 const Pagination = ({ page }: { page: number }) => (

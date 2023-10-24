@@ -1,6 +1,6 @@
+import { ComponentClass, FunctionComponent } from "react";
 import { HvActionGeneric } from "@hitachivantara/uikit-react-core";
 import { HvColorAny } from "@hitachivantara/uikit-styles";
-import { ComponentClass, FunctionComponent } from "react";
 import { NodeProps } from "reactflow";
 
 /** Node types */

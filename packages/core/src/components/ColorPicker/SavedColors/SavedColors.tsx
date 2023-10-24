@@ -8,6 +8,7 @@ import { HvButton } from "@core/components/Button";
 import { ExtractNames } from "@core/utils/classes";
 
 import { useDefaultProps } from "@core/hooks";
+
 import { staticClasses, useClasses } from "./SavedColors.styles";
 
 export { staticClasses as colorPickerSavedColorsClasses };

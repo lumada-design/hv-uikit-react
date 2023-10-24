@@ -1,6 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import { HvProvider } from "@core/providers";
+
 import { describe, expect, it } from "vitest";
+
+import { HvProvider } from "@core/providers";
+
 import { HvBreadCrumb } from "./BreadCrumb";
 
 const data = [

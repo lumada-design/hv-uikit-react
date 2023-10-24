@@ -6,10 +6,13 @@ import {
   HvDropdown,
   HvListValue,
 } from "@hitachivantara/uikit-react-core";
-import { useGeneratorContext } from "generator/GeneratorContext";
+
 import { css } from "@emotion/css";
+
+import { useGeneratorContext } from "generator/GeneratorContext";
 import { ScaleProps, UnitSlider } from "components/common";
 import { extractFontSizeUnit } from "generator/utils";
+
 import { styles } from "./FontSizes.styles";
 
 const FontSizes = () => {

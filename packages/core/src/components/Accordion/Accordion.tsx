@@ -4,9 +4,10 @@ import React, {
   useMemo,
   HTMLAttributes,
 } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useControlled } from "@core/hooks/useControlled";
 import { HvBaseProps } from "@core/types/generic";

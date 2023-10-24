@@ -1,8 +1,9 @@
+import { CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { outlineStyles } from "@core/utils/focusUtils";
 import { createClasses } from "@core/utils/classes";
 import { hexToRgbA } from "@core/utils/hexToRgbA";
-import { CSSProperties } from "react";
 
 export const { staticClasses, useClasses } = createClasses("HvTag", {
   root: {},

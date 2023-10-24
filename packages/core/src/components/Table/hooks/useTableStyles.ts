@@ -1,5 +1,5 @@
-import { clsx } from "clsx";
 import { CSSProperties } from "react";
+import { clsx } from "clsx";
 import { Hooks } from "react-table";
 
 // #region ##### TYPES #####

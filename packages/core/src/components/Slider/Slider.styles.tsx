@@ -1,6 +1,5 @@
-import { theme } from "@hitachivantara/uikit-styles";
-
 import { CSSProperties } from "react";
+import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "@core/utils/focusUtils";
 import { createClasses } from "@core/utils/classes";

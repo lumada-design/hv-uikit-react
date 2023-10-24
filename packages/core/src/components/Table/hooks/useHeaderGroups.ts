@@ -1,5 +1,5 @@
-import { Hooks } from "react-table";
 import { CSSProperties } from "react";
+import { Hooks } from "react-table";
 
 // #region ##### TYPES #####
 

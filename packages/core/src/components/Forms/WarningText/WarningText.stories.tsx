@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
@@ -6,7 +7,6 @@ import {
   HvWarningText,
   HvWarningTextProps,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
 
 const meta: Meta<typeof HvWarningText> = {
   title: "Guides/Forms/Form Element Blocks/Warning Text",

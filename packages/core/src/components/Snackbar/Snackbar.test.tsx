@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { Alert } from "@hitachivantara/uikit-react-icons";
 import { describe, expect, it } from "vitest";
+
 import { HvSnackbar, HvSnackbarProps } from "./Snackbar";
 
 const setup = (props?: Partial<HvSnackbarProps>) =>

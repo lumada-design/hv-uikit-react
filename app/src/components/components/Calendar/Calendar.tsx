@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   DateRangeProp,
   HvCalendar,
@@ -5,7 +6,6 @@ import {
   HvFormElement,
   HvLabel,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
 
 export const Calendar = () => {
   const [selectionDate, setSelectionDate] = useState<DateRangeProp>({

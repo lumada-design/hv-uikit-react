@@ -1,6 +1,5 @@
-import { HvTheme, theme } from "@hitachivantara/uikit-styles";
-
 import { forwardRef } from "react";
+import { HvTheme, theme } from "@hitachivantara/uikit-styles";
 
 import { PolymorphicComponentRef, PolymorphicRef } from "@core/types/generic";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";

@@ -9,6 +9,7 @@ import isString from "lodash/isString";
 import isBoolean from "lodash/isBoolean";
 
 import { HvBreakpoints } from "@hitachivantara/uikit-styles";
+
 import { useWidth } from "@core/hooks/useWidth";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";

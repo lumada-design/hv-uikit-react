@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Deploy, Info } from "@hitachivantara/uikit-react-icons";
 import {
@@ -7,7 +8,6 @@ import {
   HvSnackbarContent,
   HvOverflowTooltip,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
 import { css } from "@emotion/css";
 
 const meta: Meta<typeof HvSnackbar> = {

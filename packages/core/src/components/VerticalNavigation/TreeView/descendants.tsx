@@ -6,7 +6,6 @@
  * - Use local copy of useEnhancedEffect.
  */
 
-import { useEnhancedEffect } from "@core/hooks";
 import {
   createContext,
   useCallback,
@@ -16,6 +15,8 @@ import {
   useRef,
   useState,
 } from "react";
+
+import { useEnhancedEffect } from "@core/hooks";
 
 type Item = {
   element?;

@@ -1,10 +1,11 @@
 import { useCallback, useMemo } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvButton } from "@core/components/Button";
 import { HvTooltip } from "@core/components/Tooltip";

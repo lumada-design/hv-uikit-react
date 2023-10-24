@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { useState } from "react";
 import { describe, expect, it, vi } from "vitest";
+
 import { HvBulkActions, HvBulkActionsProps } from "./BulkActions";
 
 const Sample = (props: Partial<HvBulkActionsProps>) => {

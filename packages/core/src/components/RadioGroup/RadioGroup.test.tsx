@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { HvFormStatus, HvRadio } from "@core/components";
-import { useState } from "react";
+
 import { describe, expect, it, vi } from "vitest";
+
+import { HvFormStatus, HvRadio } from "@core/components";
+
 import { HvRadioGroup } from "./RadioGroup";
 
 const Main = () => (

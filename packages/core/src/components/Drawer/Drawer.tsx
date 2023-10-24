@@ -1,11 +1,11 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import {
   Drawer as MuiDrawer,
   DrawerProps as MuiDrawerProps,
 } from "@mui/material";
 
 import { Close } from "@hitachivantara/uikit-react-icons";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 import { withTooltip } from "@core/hocs/withTooltip";

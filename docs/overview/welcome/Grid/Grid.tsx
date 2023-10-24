@@ -7,6 +7,7 @@ import {
   Code,
   Heart,
 } from "@hitachivantara/uikit-react-icons";
+
 import { Wrapper, GridElement, GridGroup, Separator } from "./styles";
 
 const elements = [

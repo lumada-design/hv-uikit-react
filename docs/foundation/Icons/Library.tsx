@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import {
   HvAccordion,
   HvBox,
@@ -11,8 +12,8 @@ import {
   icons as iconComponentList,
   pictograms as pictogramComponentList,
 } from "@hitachivantara/uikit-react-icons";
-import { useMemo, useState } from "react";
 import { css } from "@emotion/css";
+
 import { iconCategories } from "./IconCategories";
 
 type IconCategory = keyof typeof iconCategories;

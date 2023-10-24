@@ -1,3 +1,4 @@
+import { CSSProperties } from "react";
 import {
   makePropGetter,
   useGetLatest,
@@ -5,7 +6,6 @@ import {
   PropGetter,
   TableCommonProps,
 } from "react-table";
-import { CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 
 // #region ##### TYPES #####

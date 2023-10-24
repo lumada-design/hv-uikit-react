@@ -1,6 +1,7 @@
 import MuiDialogActions, {
   DialogActionsProps as MuiDialogActionsProps,
 } from "@mui/material/DialogActions";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";

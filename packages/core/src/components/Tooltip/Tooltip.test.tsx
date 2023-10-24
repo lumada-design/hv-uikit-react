@@ -1,6 +1,8 @@
-import { HvTypography } from "@core/components";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+
+import { HvTypography } from "@core/components";
+
 import { HvTooltip } from "./Tooltip";
 
 const smallTitle = <HvTypography>Grid View</HvTypography>;

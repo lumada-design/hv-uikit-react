@@ -16,6 +16,7 @@ import { HvButtonVariant } from "@core/components/Button";
 import { useTheme } from "@core/hooks/useTheme";
 
 import { useDefaultProps } from "@core/hooks";
+
 import { staticClasses, useClasses } from "./SnackbarContent.styles";
 import { HvSnackbarVariant } from "../types";
 

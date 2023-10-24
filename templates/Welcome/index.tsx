@@ -4,6 +4,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Heart, Palette } from "@hitachivantara/uikit-react-icons";
+
 import styles from "./styles";
 import welcome from "./assets/welcome.png";
 

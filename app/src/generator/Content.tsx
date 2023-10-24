@@ -1,9 +1,11 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
+
 import { Container, Tutorial } from "components/common";
 import { NavigationProvider } from "lib/context/NavigationContext";
 import navigation from "lib/navigation";
 import Routes from "lib/routes";
+
 import { useGeneratorContext } from "./GeneratorContext";
 
 const Content = () => {
