@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+
 import { colors } from "../tokens/colors";
 import { makeTheme } from "../makeTheme";
 

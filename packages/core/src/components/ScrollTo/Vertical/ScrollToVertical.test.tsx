@@ -1,7 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { HvProvider } from "@core/providers";
+
 import userEvent from "@testing-library/user-event";
+
+import { HvProvider } from "@core/providers";
+
 import { HvScrollToVertical } from "./ScrollToVertical";
 
 const Sample = () => {

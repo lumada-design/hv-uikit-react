@@ -1,4 +1,5 @@
 import { theme } from "@hitachivantara/uikit-styles";
+
 import type { HvStepProps } from "./Step";
 
 export const getColor = (state: HvStepProps["state"]) =>

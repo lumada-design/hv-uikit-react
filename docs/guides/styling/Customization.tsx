@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   HvButton,
   HvSwitch,
@@ -15,7 +16,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 import styled from "@emotion/styled";
-import { useState } from "react";
 
 // ----- Inline styles -----
 

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { CSSInterpolation, css } from "@emotion/css";
 import {
@@ -6,7 +7,6 @@ import {
   HvSelectionList,
   HvSelectionListProps,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
 
 const meta: Meta<typeof HvSelectionList> = {
   title: "Components/List/Selection List",

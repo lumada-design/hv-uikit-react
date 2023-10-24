@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import {
   HvCard,
   HvCardContent,
@@ -16,7 +17,7 @@ import {
   useHvData,
 } from "@hitachivantara/uikit-react-core";
 import { Cards, List } from "@hitachivantara/uikit-react-icons";
-import { useMemo, useState } from "react";
+
 import { getColumns, makeData, NewEntry } from "./makedata";
 
 export const Controls = () => {

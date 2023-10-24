@@ -11,6 +11,7 @@ import {
   PopupProps,
   TileLayer,
 } from "react-leaflet";
+
 import { mapStyles } from "./styles";
 
 const IconDefault = new Icon({

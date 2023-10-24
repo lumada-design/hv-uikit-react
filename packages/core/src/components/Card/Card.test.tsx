@@ -1,6 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import { HvTypography } from "@core/components";
+
 import { describe, expect, it } from "vitest";
+
+import { HvTypography } from "@core/components";
+
 import { HvCard, HvCardContent, HvCardHeader, HvCardMedia } from ".";
 
 describe("Card", () => {

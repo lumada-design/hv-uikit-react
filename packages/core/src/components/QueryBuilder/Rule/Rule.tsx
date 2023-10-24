@@ -1,8 +1,7 @@
+import { useContext, useMemo } from "react";
 import { Delete } from "@hitachivantara/uikit-react-icons";
 
 import { useMediaQuery, useTheme } from "@mui/material";
-
-import { useContext, useMemo } from "react";
 
 import { HvGrid } from "@core/components/Grid";
 import { HvButton } from "@core/components/Button";
@@ -10,6 +9,7 @@ import { withTooltip } from "@core/hocs/withTooltip";
 
 import { useDefaultProps } from "@core/hooks";
 import { ExtractNames } from "@core/utils";
+
 import { QueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";

@@ -1,6 +1,6 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import React, { useContext } from "react";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { setId } from "@core/utils/setId";
 import {
@@ -9,6 +9,7 @@ import {
 } from "@core/components/Forms";
 
 import { ExtractNames } from "@core/utils/classes";
+
 import { isRange } from "./utils";
 import { HvSingleCalendar } from "./SingleCalendar";
 import { DateRangeProp, VisibilitySelectorActions } from "./types";

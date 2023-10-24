@@ -1,8 +1,9 @@
 import { ChangeEvent, useMemo } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { theme } from "@hitachivantara/uikit-styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";

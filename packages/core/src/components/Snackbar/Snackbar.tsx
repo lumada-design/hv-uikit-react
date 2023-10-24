@@ -1,3 +1,4 @@
+import { SyntheticEvent } from "react";
 import Slide from "@mui/material/Slide";
 import {
   SnackbarCloseReason,
@@ -7,8 +8,6 @@ import {
 import { Snackbar as MuiSnackbar } from "@mui/material";
 
 import capitalize from "lodash/capitalize";
-
-import { SyntheticEvent } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";

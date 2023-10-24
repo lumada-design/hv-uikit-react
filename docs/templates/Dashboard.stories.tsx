@@ -1,4 +1,5 @@
 import { StoryObj } from "@storybook/react";
+
 import Dashboard from "../../templates/Dashboard";
 import DashboardRaw from "../../templates/Dashboard?raw";
 import { templateDecorator } from "./templateDecorator";

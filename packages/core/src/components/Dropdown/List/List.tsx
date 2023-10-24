@@ -15,6 +15,7 @@ import BaseDropdownContext from "@core/components/BaseDropdown/BaseDropdownConte
 import { ExtractNames } from "@core/utils/classes";
 
 import { useDefaultProps } from "@core/hooks";
+
 import { staticClasses, useClasses } from "./List.styles";
 import { getSelected } from "../utils";
 import { HvDropdownLabelsProps } from "../types";

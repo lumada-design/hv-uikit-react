@@ -7,11 +7,14 @@ import {
   HvListValue,
   HvSnackbar,
 } from "@hitachivantara/uikit-react-core";
-import { useGeneratorContext } from "generator/GeneratorContext";
+
 import { Add } from "@hitachivantara/uikit-react-icons";
 import { css } from "@emotion/css";
 import { SnackbarCloseReason } from "@mui/material";
+
+import { useGeneratorContext } from "generator/GeneratorContext";
 import { extractFontsNames } from "generator/utils";
+
 import { styles } from "./FontFamily.styles";
 
 const FontFamily = () => {

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
@@ -6,7 +7,6 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
 
 const StyledBox = styled(HvTypography)({
   display: "flex",

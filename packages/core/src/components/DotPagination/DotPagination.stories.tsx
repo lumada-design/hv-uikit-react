@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   CurrentStep,
   RadioButtonUnselected,
@@ -10,7 +11,6 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
 import { css } from "@emotion/css";
 
 const meta: Meta<typeof HvDotPagination> = {

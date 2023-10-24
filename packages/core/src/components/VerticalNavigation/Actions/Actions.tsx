@@ -1,6 +1,6 @@
-import { ExtractNames } from "@core/utils/classes";
-
 import { useContext } from "react";
+
+import { ExtractNames } from "@core/utils/classes";
 
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { staticClasses, useClasses } from "./Actions.styles";

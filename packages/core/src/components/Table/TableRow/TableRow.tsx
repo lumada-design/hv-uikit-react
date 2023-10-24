@@ -10,6 +10,7 @@ import { HvBaseProps } from "@core/types/generic";
 import { useTheme } from "@core/hooks/useTheme";
 
 import { useDefaultProps } from "@core/hooks";
+
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableRow.styles";

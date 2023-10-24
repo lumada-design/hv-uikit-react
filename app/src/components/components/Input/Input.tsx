@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { HvBox, HvInput } from "@hitachivantara/uikit-react-core";
 import { Map } from "@hitachivantara/uikit-react-icons";
-import { useState } from "react";
+
 import countryNamesArray from "./countries";
 
 export const Input = () => {

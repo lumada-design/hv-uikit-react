@@ -7,6 +7,7 @@ import {
   theme,
   HvBox,
 } from "@hitachivantara/uikit-react-core";
+
 import compressor from "./assets/compressor.png";
 
 export const Cards = () => {

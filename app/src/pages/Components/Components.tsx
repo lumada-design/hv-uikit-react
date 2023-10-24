@@ -10,6 +10,7 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
+
 import {
   Badge,
   BreadCrumb,
@@ -38,6 +39,7 @@ import {
   ProgressBar,
   Loading,
 } from "components/components";
+
 import { styles } from "./Components.styles";
 
 const componentsList = [

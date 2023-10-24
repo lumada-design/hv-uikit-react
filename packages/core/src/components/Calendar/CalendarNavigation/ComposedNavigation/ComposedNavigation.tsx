@@ -1,6 +1,7 @@
 import { setId } from "@core/utils/setId";
 
 import { ExtractNames } from "@core/utils/classes";
+
 import { getMonthNamesList } from "../../utils";
 import { ViewMode } from "../../enums";
 import { Navigation } from "../Navigation";

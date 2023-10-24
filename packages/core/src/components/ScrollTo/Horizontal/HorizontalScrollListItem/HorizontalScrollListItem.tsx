@@ -4,6 +4,7 @@ import { setId } from "@core/utils/setId";
 import { HvTypographyProps } from "@core/components/Typography";
 
 import { useDefaultProps } from "@core/hooks";
+
 import { staticClasses, useClasses } from "./HorizontalScrollListItem.styles";
 
 export { staticClasses as horizontalScrollListItemClasses };

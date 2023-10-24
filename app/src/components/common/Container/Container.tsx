@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { HvContainer } from "@hitachivantara/uikit-react-core";
 
 import { Loading, LoadingProps } from "components/common/Loading";
+
 import classes from "./styles";
 
 interface ContainerProps {

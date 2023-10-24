@@ -1,5 +1,6 @@
 import { fireEvent, render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+
 import { SnackbarProvider } from "./SnackbarProvider.stories";
 
 describe("HvSnackbarProvider", () => {

@@ -1,11 +1,13 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
 import isString from "lodash/isString";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./GlobalActions.styles";
 
 export { staticClasses as globalActionsClasses };

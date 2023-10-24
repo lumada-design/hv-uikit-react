@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "@emotion/styled";
 import { Info } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
@@ -10,7 +11,6 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
 import { css } from "@emotion/css";
 
 const StyledBanner = styled(HvBanner)({

@@ -1,8 +1,7 @@
+import { ImgHTMLAttributes } from "react";
 import MuiCardMedia, {
   CardMediaProps as MuiCardMediaProps,
 } from "@mui/material/CardMedia";
-
-import { ImgHTMLAttributes } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";

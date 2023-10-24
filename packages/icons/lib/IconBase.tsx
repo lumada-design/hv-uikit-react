@@ -1,6 +1,7 @@
-import styled from "@emotion/styled";
 import React, { HTMLAttributes, AllHTMLAttributes, useMemo } from "react";
+import styled from "@emotion/styled";
 import { theme, getColor } from "@hitachivantara/uikit-styles";
+
 import { isSemantic, isXS } from "./utils";
 
 const getDims = (size: number) => ({ width: size, height: size });

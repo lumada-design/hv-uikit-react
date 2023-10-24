@@ -1,3 +1,4 @@
+import { lazy, Suspense, useState } from "react";
 import {
   HvBaseTheme,
   HvBox,
@@ -12,16 +13,19 @@ import {
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { lazy, Suspense, useState } from "react";
-import { useGeneratorContext } from "generator/GeneratorContext";
-import CodeEditor from "generator/CodeEditor";
+
 import {
   Bold,
   FontSize,
   PaintBucket,
   Template,
 } from "@hitachivantara/uikit-react-icons";
+
 import { css } from "@emotion/css";
+
+import { useGeneratorContext } from "generator/GeneratorContext";
+import CodeEditor from "generator/CodeEditor";
+
 import { styles } from "./Sidebar.styles";
 
 const Colors = lazy(() => import("generator/Colors"));

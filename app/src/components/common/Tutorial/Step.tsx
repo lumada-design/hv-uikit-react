@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { clsx } from "clsx";
 import { css } from "@emotion/css";
 import {
@@ -8,9 +9,11 @@ import {
   HvDialogTitle,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { useGeneratorContext } from "generator/GeneratorContext";
-import { Dispatch, SetStateAction, useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
+
+import { useGeneratorContext } from "generator/GeneratorContext";
+
 import { tutorialData } from "./tutorialData";
 import classes from "./tutorialStyles";
 

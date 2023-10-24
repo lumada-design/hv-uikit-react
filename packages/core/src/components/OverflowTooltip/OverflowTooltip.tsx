@@ -1,10 +1,12 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { useMemo } from "react";
 import { useResizeDetector } from "react-resize-detector";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { HvTooltip, HvTooltipProps } from "@core/components/Tooltip";
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./OverflowTooltip.styles";
 
 export { staticClasses as overflowTooltipClasses };

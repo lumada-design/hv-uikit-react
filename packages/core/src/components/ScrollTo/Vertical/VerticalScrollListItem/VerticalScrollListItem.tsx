@@ -7,6 +7,7 @@ import { setId } from "@core/utils/setId";
 import { useTheme } from "@core/hooks/useTheme";
 
 import { useDefaultProps } from "@core/hooks";
+
 import { staticClasses, useClasses } from "./VerticalScrollListItem.styles";
 
 export { staticClasses as verticalScrollListItemClasses };

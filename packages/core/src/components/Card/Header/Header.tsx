@@ -6,6 +6,7 @@ import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 
 import { useDefaultProps } from "@core/hooks";
+
 import { staticClasses, useClasses } from "./Header.styles";
 
 export { staticClasses as cardHeaderClasses };

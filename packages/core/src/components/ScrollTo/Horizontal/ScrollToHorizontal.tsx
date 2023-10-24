@@ -1,11 +1,12 @@
 import { useCallback, useMemo } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
 
 import { theme } from "@hitachivantara/uikit-styles";
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useUniqueId } from "@core/hooks/useUniqueId";

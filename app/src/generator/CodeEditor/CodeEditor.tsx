@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import {
   HvBox,
   HvButton,
@@ -5,14 +6,16 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { useGeneratorContext } from "generator/GeneratorContext";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import debounce from "lodash/debounce";
 import JSON5 from "json5";
 import { Download, Reset, Duplicate } from "@hitachivantara/uikit-react-icons";
-import { getThemeCode } from "generator/utils";
+
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
+
+import { useGeneratorContext } from "generator/GeneratorContext";
+import { getThemeCode } from "generator/utils";
 import { IconButton } from "components/common/IconButton";
+
 import { styles } from "./CodeEditor.styles";
 
 const CodeEditor = ({

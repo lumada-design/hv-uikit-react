@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvContainer,
@@ -6,7 +7,6 @@ import {
   HvInlineEditorProps,
   HvTypographyVariants,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
 
 const meta: Meta<typeof HvInlineEditor> = {
   title: "Components/Inline Editor",

@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { LogIn } from "@hitachivantara/uikit-react-icons";
+
 import { HvAvatar } from "./Avatar";
 
 describe("Avatar", () => {

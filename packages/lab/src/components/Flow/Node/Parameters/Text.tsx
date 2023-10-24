@@ -1,5 +1,5 @@
-import { HvInput } from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
+import { HvInput } from "@hitachivantara/uikit-react-core";
 import { useReactFlow } from "reactflow";
 
 const Text = ({ nodeId, param, data }) => {

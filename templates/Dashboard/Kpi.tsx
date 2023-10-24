@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { css } from "@emotion/css";
 import {
   HvCard,
@@ -8,7 +9,6 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 import { Level0Good } from "@hitachivantara/uikit-react-icons";
-import { ReactNode } from "react";
 
 const styles = {
   root: css({}),

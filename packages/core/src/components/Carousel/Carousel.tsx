@@ -6,7 +6,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import useCarousel, { EmblaOptionsType } from "embla-carousel-react";
 
@@ -16,6 +15,8 @@ import {
   Close,
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 import { HvButton } from "@core/components/Button";

@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe } from "vitest";
+
 import { HvComposedNavigation } from "./ComposedNavigation";
 
 describe("<Navigation />", () => {

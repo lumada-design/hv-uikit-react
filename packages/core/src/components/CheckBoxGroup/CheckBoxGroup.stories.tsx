@@ -1,10 +1,10 @@
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvCheckBox,
   HvCheckBoxGroup,
   HvCheckBoxGroupProps,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
 import { CSSInterpolation, css } from "@emotion/css";
 
 const meta: Meta<typeof HvCheckBoxGroup> = {

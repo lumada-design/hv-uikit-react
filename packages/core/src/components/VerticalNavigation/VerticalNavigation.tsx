@@ -1,8 +1,9 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { useCallback, useEffect, useMemo, useState } from "react";
 
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
+
 import { ExtractNames } from "@core/utils/classes";
+
 import {
   VerticalNavigationContext,
   NavigationData,

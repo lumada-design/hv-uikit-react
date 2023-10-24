@@ -20,6 +20,7 @@ import { setId } from "@core/utils/setId";
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
 import { useDefaultProps } from "@core/hooks";
+
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
 import { DateRangeProp } from "../types";
 import { staticClasses, useClasses } from "./CalendarHeader.styles";

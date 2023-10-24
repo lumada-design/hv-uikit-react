@@ -1,7 +1,8 @@
 import { MouseEventHandler, ReactNode } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
 import { HvButton } from "@core/components/Button";

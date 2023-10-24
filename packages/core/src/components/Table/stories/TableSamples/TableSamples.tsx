@@ -26,6 +26,7 @@ import {
   HvTableColumnConfig,
 } from "@hitachivantara/uikit-react-core";
 import { Delete, Lock, Unlock } from "@hitachivantara/uikit-react-icons";
+
 import { makeData, getColumns, AssetEvent } from "../storiesUtils";
 
 import { TableComplete } from "./TableCompleteSample";

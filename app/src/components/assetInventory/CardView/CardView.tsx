@@ -10,6 +10,7 @@ import {
   Breakpoint,
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
+
 import { getStatusIcon } from "lib/utils/assetInventory";
 
 interface CarViewProps {

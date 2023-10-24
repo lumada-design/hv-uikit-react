@@ -1,5 +1,3 @@
-import capitalize from "lodash/capitalize";
-
 import {
   CSSProperties,
   forwardRef,
@@ -8,6 +6,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import capitalize from "lodash/capitalize";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
@@ -18,6 +17,7 @@ import { hexToRgbA } from "@core/utils/hexToRgbA";
 import { useTheme } from "@core/hooks/useTheme";
 
 import { useDefaultProps } from "@core/hooks";
+
 import {
   HvTableCellAlign,
   HvTableCellType,

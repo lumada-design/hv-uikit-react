@@ -8,6 +8,7 @@ import { HvInput } from "@core/components/Input";
 import { ExtractNames } from "@core/utils/classes";
 
 import { useDefaultProps } from "@core/hooks";
+
 import { staticClasses, useClasses } from "./Fields.styles";
 
 export { staticClasses as colorPickerFieldsClasses };

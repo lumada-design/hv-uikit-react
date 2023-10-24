@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   HvAccordion,
   HvBox,
@@ -9,12 +10,16 @@ import {
   getVarValue,
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens, HvThemeTypography } from "@hitachivantara/uikit-styles";
-import { extractFontSizeUnit } from "generator/utils";
-import { useEffect, useState } from "react";
-import { useGeneratorContext } from "generator/GeneratorContext";
+
 import debounce from "lodash/debounce";
+
 import { css } from "@emotion/css";
+
+import { extractFontSizeUnit } from "generator/utils";
+import { useGeneratorContext } from "generator/GeneratorContext";
+
 import { ScaleProps, UnitSlider } from "components/common";
+
 import { styles } from "./Typography.styles";
 
 const typographyToShow: (keyof HvThemeTypography["typography"])[] = [

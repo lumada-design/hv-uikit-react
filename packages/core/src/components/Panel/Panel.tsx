@@ -3,6 +3,7 @@ import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 
 import { ExtractNames } from "@core/utils/classes";
+
 import { staticClasses, useClasses } from "./Panel.styles";
 
 export { staticClasses as panelClasses };

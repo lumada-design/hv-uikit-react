@@ -1,10 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
+
+import { Play, Stop } from "@hitachivantara/uikit-react-icons";
+
 import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
 } from "@core/components";
-import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 
 const Sample = () => (
   <HvVerticalNavigationTreeView selected="4" mode="navigation">

@@ -1,10 +1,12 @@
-import isNil from "lodash/isNil";
 import React, { RefObject, useState } from "react";
+import isNil from "lodash/isNil";
+
 import { HvBaseProps } from "@core/types/generic";
 import { isKey, isOneOfKeys } from "@core/utils/keyboardUtils";
 import { isBrowser } from "@core/utils/browser";
 import { ConditionalWrapper } from "@core/utils/ConditionalWrapper";
 import { ExtractNames } from "@core/utils/classes";
+
 import { getFocusableChildren, setFocusTo } from "./utils";
 import { staticClasses, useClasses } from "./Focus.styles";
 

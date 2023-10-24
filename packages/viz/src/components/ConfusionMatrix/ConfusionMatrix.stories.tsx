@@ -3,6 +3,7 @@ import {
   HvConfusionMatrixProps,
 } from "@hitachivantara/uikit-react-viz";
 import { Meta, StoryObj } from "@storybook/react";
+
 import { vizDecorator } from "../BaseChart/stories/utils";
 
 const meta: Meta<typeof HvConfusionMatrix> = {

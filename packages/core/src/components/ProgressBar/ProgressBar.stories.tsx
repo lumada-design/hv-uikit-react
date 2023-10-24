@@ -4,6 +4,7 @@ import {
   HvProgressBar,
   HvProgressBarProps,
 } from "@hitachivantara/uikit-react-core";
+
 import { ProgressBarSimulator } from "./ProgressBarSimulator";
 
 const meta: Meta<typeof HvProgressBar> = {

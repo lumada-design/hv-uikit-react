@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   HvBox,
   HvCheckBox,
@@ -5,7 +6,6 @@ import {
   HvTypographyVariants,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
 
 const variants = [
   "display",

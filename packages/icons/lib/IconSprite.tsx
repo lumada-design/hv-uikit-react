@@ -1,4 +1,5 @@
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { IconBase, IconBaseProps, getIconSize } from "./IconBase";
 import { isSelector, isSemantic, isSort, isXS } from "./utils";
 

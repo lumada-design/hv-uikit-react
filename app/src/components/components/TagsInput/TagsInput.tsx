@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { css } from "@emotion/css";
 import {
   HvBox,
   HvTagProps,
   HvTagsInput,
 } from "@hitachivantara/uikit-react-core";
-import { useState } from "react";
+
 import countryNamesArray from "./countries";
 
 export const TagsInput = () => {

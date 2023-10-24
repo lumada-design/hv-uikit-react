@@ -1,6 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+
 import { HvButton } from "@core/components";
+
 import { HvSection } from "./Section";
 
 describe("Section", () => {

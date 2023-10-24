@@ -18,6 +18,7 @@ import { ExtractNames } from "@core/utils/classes";
 import { HvButton, HvButtonProps } from "@core/components/Button";
 
 import { useDefaultProps } from "@core/hooks";
+
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { getSortIcon, isParagraph } from "./utils";

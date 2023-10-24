@@ -1,5 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import { tooltipClasses as MuitooltipClasses } from "@mui/material";
+
 import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvTooltip", {

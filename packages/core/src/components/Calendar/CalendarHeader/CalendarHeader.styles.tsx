@@ -1,6 +1,7 @@
+import { theme } from "@hitachivantara/uikit-styles";
+
 import { createClasses } from "@core/utils/classes";
 import { outlineStyles } from "@core/utils/focusUtils";
-import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvCalendarHeader", {
   root: {

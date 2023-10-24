@@ -66,6 +66,7 @@ import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useLabels } from "@core/hooks/useLabels";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
+
 import { staticClasses, useClasses } from "./Input.styles";
 
 export { staticClasses as inputClasses };

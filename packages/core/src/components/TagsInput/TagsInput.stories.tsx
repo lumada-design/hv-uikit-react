@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "@emotion/styled";
 import { CSSInterpolation, css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
@@ -12,7 +13,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 import isEmpty from "lodash/isEmpty";
-import { useState } from "react";
+
 import countryNamesArray from "./countries";
 
 const StyledMultilineTagsInput = styled(HvTagsInput)({

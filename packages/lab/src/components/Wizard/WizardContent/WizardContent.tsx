@@ -1,12 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {
-  ExtractNames,
-  HvBaseProps,
-  HvDialogContent,
-} from "@hitachivantara/uikit-react-core";
-
-import { useElementSize } from "usehooks-ts";
-
 import React, {
   useCallback,
   useContext,
@@ -14,6 +6,13 @@ import React, {
   useRef,
   useState,
 } from "react";
+import {
+  ExtractNames,
+  HvBaseProps,
+  HvDialogContent,
+} from "@hitachivantara/uikit-react-core";
+
+import { useElementSize } from "usehooks-ts";
 
 import { HvWizardContext, HvWizardTabs } from "../WizardContext";
 import { staticClasses, useClasses } from "./WizardContent.styles";

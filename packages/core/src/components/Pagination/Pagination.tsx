@@ -1,5 +1,4 @@
 import { HTMLAttributes, useCallback, useEffect } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { Hidden } from "@mui/material";
 
@@ -9,6 +8,8 @@ import {
   Backwards,
   Forwards,
 } from "@hitachivantara/uikit-react-icons";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvInput, HvInputProps } from "@core/components/Input";
 import { HvTypography } from "@core/components/Typography";

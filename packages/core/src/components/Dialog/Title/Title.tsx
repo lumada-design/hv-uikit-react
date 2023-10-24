@@ -1,6 +1,7 @@
 import MuiDialogTitle, {
   DialogTitleProps as MuiDialogTitleProps,
 } from "@mui/material/DialogTitle";
+
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvTypography } from "@core/components/Typography";

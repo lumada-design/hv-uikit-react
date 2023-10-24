@@ -1,4 +1,5 @@
 import { ds3, ds5, HvProvider, theme } from "@hitachivantara/uikit-react-core";
+
 import "lib/i18n";
 import Content from "generator/Content";
 import Sidebar from "generator/Sidebar";

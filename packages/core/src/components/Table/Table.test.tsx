@@ -1,6 +1,7 @@
 import range from "lodash/range";
 import { describe, expect, it } from "vitest";
 import { render, within } from "@testing-library/react";
+
 import {
   HvTable,
   HvTableBody,
@@ -10,6 +11,7 @@ import {
   HvTableHeader,
   HvTableRow,
 } from "@core/components";
+
 import { ResponsiveTable } from "./stories/Table.stories";
 
 describe("Table", () => {

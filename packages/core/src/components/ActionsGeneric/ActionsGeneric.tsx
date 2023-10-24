@@ -1,8 +1,9 @@
 import React, { isValidElement } from "react";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { hexToRgbA } from "@core/utils/hexToRgbA";
 import { HvButton, HvButtonVariant } from "@core/components/Button";

@@ -1,8 +1,7 @@
+import { forwardRef } from "react";
 import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
 
 import isString from "lodash/isString";
-
-import { forwardRef } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";

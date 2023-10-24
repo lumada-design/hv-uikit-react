@@ -1,10 +1,13 @@
 import { HTMLAttributes } from "react";
 import { HvColorAny, getColor } from "@hitachivantara/uikit-styles";
 import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
+
+import { CloseXS } from "@hitachivantara/uikit-react-icons";
+
 import { useTheme } from "@core/hooks/useTheme";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { ExtractNames } from "@core/utils/classes";
-import { CloseXS } from "@hitachivantara/uikit-react-icons";
+
 import { staticClasses, useClasses } from "./Tag.styles";
 
 export { staticClasses as tagClasses };
