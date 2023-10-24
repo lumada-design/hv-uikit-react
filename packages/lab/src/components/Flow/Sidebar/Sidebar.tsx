@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import debounce from "lodash/debounce";
 
@@ -77,6 +77,10 @@ export const HvFlowSidebar = ({
 
   const [groups, setGroups] = useState(unfilteredGroups);
   const [draggingLabel, setDraggingLabel] = useState(undefined);
+
+  useEffect(() => {
+    setGroups(unfilteredGroups);
+  }, [unfilteredGroups]);
 
   const labels = useLabels(DEFAULT_LABELS, labelsProps);
 
@@ -163,19 +167,21 @@ export const HvFlowSidebar = ({
               inputProps={{ autoComplete: "off" }}
             />
             <ul id={groupsElementId} className={classes.groupsContainer}>
-              {Object.entries(groups).map((obj) => (
-                <HvFlowSidebarGroup
-                  key={obj[0]}
-                  id={obj[0]}
-                  expandButtonProps={{
-                    "aria-label": labels?.expandGroupButtonAriaLabel,
-                  }}
-                  itemProps={{
-                    "aria-roledescription": labels?.itemAriaRoleDescription,
-                  }}
-                  {...obj[1]}
-                />
-              ))}
+              {Object.entries(groups).map((obj) => {
+                return (
+                  <HvFlowSidebarGroup
+                    key={obj[0]}
+                    id={obj[0]}
+                    expandButtonProps={{
+                      "aria-label": labels?.expandGroupButtonAriaLabel,
+                    }}
+                    itemProps={{
+                      "aria-roledescription": labels?.itemAriaRoleDescription,
+                    }}
+                    {...obj[1]}
+                  />
+                );
+              })}
             </ul>
           </div>
         </div>
