@@ -3,7 +3,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { getBabelOutputPlugin } from "@rollup/plugin-babel";
 
 const pkg = require(path.resolve(process.cwd(), "package.json"));
 
@@ -27,7 +26,7 @@ export default defineConfig({
     tsconfigPaths({ loose: true }),
   ],
   build: {
-    target: "ES2017",
+    target: "ES2021",
     minify: false,
     emptyOutDir: true,
     lib: {
@@ -35,19 +34,6 @@ export default defineConfig({
       entry: path.resolve(process.cwd(), "src/index.ts"),
     },
     rollupOptions: {
-      plugins: [
-        getBabelOutputPlugin({
-          plugins: [
-            [
-              "@babel/plugin-transform-runtime",
-              {
-                usebuiltIns: "usage",
-                corejs: 3,
-              },
-            ],
-          ],
-        }),
-      ],
       output: [
         {
           format: "esm",
