@@ -15,6 +15,8 @@ import { Main as MainStory } from "./Main";
 import MainRaw from "./Main?raw";
 import { Visualizations as VisualizationsStory } from "./Visualizations";
 import VisualizationsRaw from "./Visualizations?raw";
+import { Dynamic as DynamicStory } from "./Dynamic";
+import DynamicRaw from "./Dynamic?raw";
 
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",
@@ -82,4 +84,19 @@ export const Visualizations: StoryObj<HvFlowProps> = {
     eyes: { include: false },
   },
   render: () => <VisualizationsStory />,
+};
+
+export const DynamicNodes: StoryObj<HvFlowProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: ``,
+      },
+      source: {
+        code: DynamicRaw,
+      },
+    },
+    eyes: { include: false },
+  },
+  render: () => <DynamicStory />,
 };
