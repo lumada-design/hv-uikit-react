@@ -1,7 +1,5 @@
 import { useContext } from "react";
 
-import isNil from "lodash/isNil";
-
 import { Fail } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
@@ -60,9 +58,8 @@ export const HvWarningText = (props: HvWarningTextProps) => {
   const { elementId, elementStatus, elementDisabled } =
     useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;
-  const localVisible = !isNil(isVisible)
-    ? isVisible
-    : elementStatus === "invalid";
+  const localVisible =
+    isVisible != null ? isVisible : elementStatus === "invalid";
   const localId = id ?? setId(elementId, "error");
   const showWarning = localVisible && !localDisabled;
   const content = showWarning ? children : "";

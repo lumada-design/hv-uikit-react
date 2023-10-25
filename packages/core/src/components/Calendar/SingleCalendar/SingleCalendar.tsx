@@ -1,7 +1,5 @@
 import { useState, useMemo } from "react";
 
-import isNil from "lodash/isNil";
-
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 
@@ -48,7 +46,7 @@ export const HvSingleCalendar = ({
   const { classes, cx } = useClasses(classesProp);
 
   const today = new Date();
-  const localValue = isNil(value) ? today : value;
+  const localValue = value == null ? today : value;
 
   const [calViewMode, setCalViewMode] = useState<ViewMode>("calendar");
 

@@ -7,8 +7,6 @@ import React, {
   useState,
 } from "react";
 
-import isNil from "lodash/isNil";
-
 import {
   InputBaseComponentProps as MuiInputBaseComponentProps,
   useForkRef,
@@ -322,7 +320,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         // with setting the scrollLeft value.
         setTimeout(() => {
           const container = containerRef.current;
-          if (isNil(container)) return;
+          if (container == null) return;
           container.scrollLeft = element
             ? element.offsetLeft -
               container.getBoundingClientRect().width / 2 +

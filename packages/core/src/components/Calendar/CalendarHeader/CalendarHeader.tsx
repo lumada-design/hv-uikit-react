@@ -7,8 +7,6 @@ import localeData from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 
-import isNil from "lodash/isNil";
-
 import {
   HvFormElementContext,
   HvFormElementValueContext,
@@ -115,7 +113,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   };
 
   const onBlurHandler = (event) => {
-    if (isNil(editedValue)) return;
+    if (editedValue == null) return;
     if (editedValue === "") {
       setIsValidValue(true);
       setEditedValue(null);
@@ -125,7 +123,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   };
 
   const keyDownHandler = (event) => {
-    if (!isKey(event, "Enter") || isNil(editedValue) || editedValue === "")
+    if (!isKey(event, "Enter") || editedValue == null || editedValue === "")
       return;
     event.preventDefault();
 
