@@ -73,10 +73,8 @@ export const WithIconsAndActions: StoryObj<HvDropDownMenuProps> = {
     return (
       <HvDropDownMenu
         expanded
-        id="dropdownmenu-with-icons-and-actions"
         placement="right"
         onClick={(e, item) => console.log(item.label)}
-        aria-label="dropdownMenu-3"
         dataList={[
           { label: "Label 1", icon: iconSelectedColor(User) },
           { label: "Label 2", icon: iconSelectedColor(Calendar) },
@@ -98,9 +96,7 @@ export const DisabledItems: StoryObj<HvDropDownMenuProps> = {
   render: () => {
     return (
       <HvDropDownMenu
-        id="dpmDisabledItems"
         expanded
-        aria-label="dropdownMenu-DisabledItems"
         dataList={[
           { label: "Label 1" },
           { label: "Label 2", disabled: true },
@@ -118,6 +114,7 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
         story: "DropDownMenu toggle opening controlled by an external button.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [open, setOpen] = useState(true);
@@ -135,11 +132,9 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
           {!open ? "Open" : "Close"}
         </HvButton>
         <HvDropDownMenu
-          id="dropMenu"
           expanded={open}
           onClick={(e, item) => console.log(item.label)}
           disablePortal={false}
-          aria-label="dropdownMenu-1"
           keepOpened={false}
           dataList={[
             { label: "Label 1" },
@@ -153,8 +148,4 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
       </>
     );
   },
-};
-
-Controlled.parameters = {
-  eyes: { include: false },
 };
