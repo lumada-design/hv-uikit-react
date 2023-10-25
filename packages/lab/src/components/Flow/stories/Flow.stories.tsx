@@ -17,6 +17,8 @@ import { Visualizations as VisualizationsStory } from "./Visualizations";
 import VisualizationsRaw from "./Visualizations?raw";
 import { Dynamic as DynamicStory } from "./Dynamic";
 import DynamicRaw from "./Dynamic?raw";
+import { CustomDrop as CustomDropStory } from "./CustomDrop";
+import CustomDropRaw from "./CustomDrop?raw";
 
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",
@@ -75,7 +77,7 @@ export const Visualizations: StoryObj<HvFlowProps> = {
     docs: {
       description: {
         story: `The HvFlowNode component can take any content as children. In this sample, we created visualizations based on the JSON output of the first node.
-        <br /><br />Please refer to the <b><a target="_blank" href="https://github.com/lumada-design/hv-uikit-react/blob/master/packages/lab/src/components/Flow/stories/Visualizations/Visualizations.tsx">code samples</a> </b> in our repository for more details.`,
+        <br /><br />Please refer to the [code samples](https://github.com/lumada-design/hv-uikit-react/blob/master/packages/lab/src/components/Flow/stories/Visualizations/Visualizations.tsx) in our repository for more details.`,
       },
       source: {
         code: VisualizationsRaw,
@@ -89,9 +91,6 @@ export const Visualizations: StoryObj<HvFlowProps> = {
 export const DynamicNodes: StoryObj<HvFlowProps> = {
   parameters: {
     docs: {
-      description: {
-        story: ``,
-      },
       source: {
         code: DynamicRaw,
       },
@@ -99,4 +98,20 @@ export const DynamicNodes: StoryObj<HvFlowProps> = {
     eyes: { include: false },
   },
   render: () => <DynamicStory />,
+};
+
+export const CustomDrop: StoryObj<HvFlowProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "If necessary, the drop event can be customized through the `onDndDrop` property. This callback is used to override the custom UI Kit drop event. Thus, when defined, you are responsible for adding nodes to the flow. In this sample, the drop event was overridden to show a dialog to configure the node.",
+      },
+      source: {
+        code: CustomDropRaw,
+      },
+    },
+    eyes: { include: false },
+  },
+  render: () => <CustomDropStory />,
 };

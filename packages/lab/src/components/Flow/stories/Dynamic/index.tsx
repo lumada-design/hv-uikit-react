@@ -1,15 +1,11 @@
 import { useMemo, useState } from "react";
-
 import { css } from "@emotion/css";
-
 import {
   HvButton,
   HvGlobalActions,
   theme,
 } from "@hitachivantara/uikit-react-core";
-
 import { Add, Backwards, DataSource } from "@hitachivantara/uikit-react-icons";
-
 import {
   HvFlowSidebar,
   HvFlow,
@@ -17,6 +13,7 @@ import {
   HvFlowControls,
 } from "@hitachivantara/uikit-react-lab";
 
+// The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Dynamic
 import { createAsset } from "./utils";
 
 // Node groups
