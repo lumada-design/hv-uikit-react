@@ -1,4 +1,4 @@
-import { ElementType, HTMLAttributes, forwardRef, useState } from "react";
+import { HTMLAttributes, forwardRef, useState } from "react";
 
 import { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { SourceProps } from "@storybook/blocks";
@@ -17,24 +17,19 @@ import {
   Add,
   Doc,
   Drag,
-  DropDownXS,
-  DropRightXS,
   Folders,
   Remove,
 } from "@hitachivantara/uikit-react-icons";
 import {
   HvButton,
-  HvDropDownMenu,
   HvLoading,
   HvPanel,
-  HvRadio,
   HvOverflowTooltip,
   HvTypography,
   HvTreeView,
   HvTreeViewProps,
   HvTreeItem,
   HvTreeItemProps,
-  HvColorAny,
   useHvTreeItem,
 } from "@hitachivantara/uikit-react-core";
 
@@ -183,20 +178,15 @@ const CustomTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
   }
 );
 
-const IconContainer = ({ icon: Icon }: { icon: ElementType }) => {
-  return <Icon role="none" />;
-};
-
 interface CustomTreeItemProps extends HvTreeItemProps {
   /** Triggered when the tree item is expanded */
   onOpen?: HvTreeItemProps["onClick"];
 }
 
-const CustomItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
+const LoadingItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
   (props, ref) => {
     const { children, nodeId, label, onOpen, onClick, ...others } = props;
-    const { selected, expanded, disabled, handleSelection } =
-      useHvTreeItem(nodeId);
+    const { expanded, disabled } = useHvTreeItem(nodeId);
     const Icon = children ? Folders : Doc;
 
     const [isLoading, setIsLoading] = useState(false);
@@ -220,26 +210,8 @@ const CustomItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
         }}
         label={
           <div className={css({ display: "flex", alignItems: "center" })}>
-            <HvRadio
-              checked={selected}
-              onClick={(evt) => {
-                evt.stopPropagation();
-                handleSelection(evt as any);
-              }}
-            />
             <Icon />
             <span style={{ flex: 1 }}>{label}</span>
-            <HvDropDownMenu
-              aria-label="Options"
-              dataList={["Delete", "Copy"].map((id) => ({ id, label: id }))}
-              onToggle={(evt) => {
-                evt.stopPropagation();
-              }}
-              onClick={(evt, value) => {
-                evt.stopPropagation();
-                console.log(value);
-              }}
-            />
           </div>
         }
         {...others}
@@ -252,13 +224,42 @@ const CustomItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
 
 type MyTreeData = { id: string; label: string; children?: MyTreeData[] };
 
-interface MyCustomTreeData
-  extends Omit<HvTreeItemProps, "id" | "nodeId" | "label" | "children"> {
-  color?: HvColorAny;
-  id: string;
-  label: string;
-  children?: MyCustomTreeData[];
-}
+const dataObject = {
+  id: "user",
+  label: "User",
+  children: [
+    {
+      id: "Applications",
+      label: "Applications",
+      children: [
+        { id: "Code", label: "Code.app" },
+        { id: "Chrome", label: "Chrome.app" },
+        { id: "Firefox", label: "Firefox.app" },
+      ],
+    },
+    {
+      id: "Documents",
+      label: "Documents",
+      children: [{ id: "secret", label: "secret.txt" }],
+    },
+    {
+      id: "git",
+      label: "git",
+      children: [
+        {
+          id: "uikit-react",
+          label: "uikit-react",
+          children: [{ id: "uikit-pkg", label: "package.json" }],
+        },
+        {
+          id: "app-shell",
+          label: "app-shell",
+          children: [{ id: "as-pkg", label: "package.json" }],
+        },
+      ],
+    },
+  ],
+} satisfies MyTreeData;
 
 export const Main: StoryObj<HvTreeViewProps<false>> = {
   argTypes: {
@@ -272,11 +273,7 @@ export const Main: StoryObj<HvTreeViewProps<false>> = {
   render: () => {
     return (
       <HvPanel style={{ width: 300 }}>
-        <HvTreeView
-          aria-label="file system navigator"
-          defaultCollapseIcon={<DropDownXS />}
-          defaultExpandIcon={<DropRightXS />}
-        >
+        <HvTreeView aria-label="file system navigator">
           <HvTreeItem nodeId="1" label="Applications">
             <HvTreeItem nodeId="10" label="Calendar.app" />
             <HvTreeItem nodeId="11" label="Code.app" />
@@ -337,8 +334,6 @@ export const Controlled: StoryFn<HvTreeViewProps<true>> = () => {
         <HvTreeView
           multiSelect
           aria-label="file system navigator"
-          defaultCollapseIcon={<DropDownXS />}
-          defaultExpandIcon={<DropRightXS />}
           expanded={expanded}
           selected={selected}
           onNodeSelect={(evt, nodeIds) => setSelected(nodeIds)}
@@ -358,43 +353,6 @@ export const Controlled: StoryFn<HvTreeViewProps<true>> = () => {
 };
 
 export const DataObject: StoryFn<HvTreeViewProps<false>> = () => {
-  const data = {
-    id: "user",
-    label: "User",
-    children: [
-      {
-        id: "Applications",
-        label: "Applications",
-        children: [
-          { id: "Code", label: "Code.app" },
-          { id: "Chrome", label: "Chrome.app" },
-          { id: "Firefox", label: "Firefox.app" },
-        ],
-      },
-      {
-        id: "Documents",
-        label: "Documents",
-        children: [{ id: "secret", label: "secret.txt" }],
-      },
-      {
-        id: "git",
-        label: "git",
-        children: [
-          {
-            id: "uikit-react",
-            label: "uikit-react",
-            children: [{ id: "uikit-pkg", label: "package.json" }],
-          },
-          {
-            id: "app-shell",
-            label: "app-shell",
-            children: [{ id: "as-pkg", label: "package.json" }],
-          },
-        ],
-      },
-    ],
-  } satisfies MyTreeData;
-
   /** Render tree view items */
   const renderItem = ({ id, label, children }: MyTreeData) => (
     <SimpleTreeItem key={id} nodeId={id} label={label}>
@@ -404,12 +362,8 @@ export const DataObject: StoryFn<HvTreeViewProps<false>> = () => {
 
   return (
     <HvPanel style={{ width: 400 }}>
-      <HvTreeView
-        aria-label="file system navigator"
-        defaultCollapseIcon={<DropDownXS />}
-        defaultExpandIcon={<DropRightXS />}
-      >
-        {renderItem(data)}
+      <HvTreeView aria-label="file system navigator">
+        {renderItem(dataObject)}
       </HvTreeView>
     </HvPanel>
   );
@@ -431,36 +385,17 @@ DataObject.parameters = {
 };
 
 export const AsyncLoading: StoryFn<HvTreeViewProps<true>> = () => {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleLoadData = async () => {
-    setIsLoading(true);
-    await delay(2000);
-    setIsLoading(false);
-  };
+  /** Render tree view items */
+  const renderItem = ({ id, label, children }: MyTreeData) => (
+    <LoadingItem key={id} nodeId={id} label={label}>
+      {children?.map(renderItem)}
+    </LoadingItem>
+  );
 
   return (
     <HvPanel style={{ width: 400 }}>
-      <HvTreeView
-        aria-label="file system navigator"
-        defaultCollapseIcon={<DropDownXS />}
-        defaultExpandIcon={<DropRightXS />}
-      >
-        <CustomItem
-          nodeId="1"
-          label="Applications"
-          disabled={isLoading}
-          onOpen={handleLoadData}
-        >
-          <CustomItem nodeId="11" label="Calendar" />
-        </CustomItem>
-        <CustomItem nodeId="2" label="Documents" onOpen={handleLoadData}>
-          <CustomItem nodeId="20" label="secrets">
-            <CustomItem disabled nodeId="201" label="secret.txt" />
-          </CustomItem>
-          <CustomItem nodeId="21" label="code.js" />
-          <CustomItem nodeId="22" label="index.js" />
-        </CustomItem>
+      <HvTreeView aria-label="file system navigator">
+        {renderItem(dataObject)}
       </HvTreeView>
     </HvPanel>
   );
@@ -474,70 +409,27 @@ AsyncLoading.parameters = {
 
 export const Custom: StoryFn<HvTreeViewProps<false>> = () => {
   /** Render tree view items */
-  const renderItem = ({ id, label, children }: MyTreeData) => {
-    const childIds = children?.map((child) => child.id) ?? [];
-
-    return (
-      <CustomTreeItem key={id} nodeId={id} label={label}>
-        {Array.isArray(children) && (
-          <SortableContext
-            items={childIds}
-            strategy={verticalListSortingStrategy}
-          >
-            {children.map(renderItem)}
-          </SortableContext>
-        )}
-      </CustomTreeItem>
-    );
-  };
-
-  const data = {
-    id: "0",
-    label: "Files",
-    children: [
-      {
-        id: "1",
-        label: "Applications",
-        children: [
-          { id: "10", label: "Calendar.app" },
-          { id: "11", label: "Code.app" },
-          { id: "12", label: "Firefox.app" },
-        ],
-      },
-      {
-        id: "2",
-        label: "Documents",
-        children: [{ id: "20", label: "secret.txt" }],
-      },
-      {
-        id: "3",
-        label: "git",
-        children: [
-          {
-            id: "30",
-            label: "uikit-react",
-            children: [{ id: "300", label: "package.json" }],
-          },
-          {
-            id: "31",
-            label: "app-shell",
-            children: [{ id: "310", label: "package.json" }],
-          },
-        ],
-      },
-    ],
-  } satisfies MyCustomTreeData;
+  const renderItem = ({ id, label, children }: MyTreeData) => (
+    <CustomTreeItem key={id} nodeId={id} label={label}>
+      {Array.isArray(children) && (
+        <SortableContext
+          items={children?.map((child) => child.id) ?? []}
+          strategy={verticalListSortingStrategy}
+        >
+          {children.map(renderItem)}
+        </SortableContext>
+      )}
+    </CustomTreeItem>
+  );
 
   return (
     <div style={{ width: 400 }}>
       <DndContext>
         <HvTreeView
           aria-label="file system navigator"
-          defaultCollapseIcon={<IconContainer icon={DropDownXS} />}
-          defaultExpandIcon={<IconContainer icon={DropRightXS} />}
           defaultExpanded={["0", "2"]}
         >
-          {renderItem(data)}
+          {renderItem(dataObject)}
         </HvTreeView>
       </DndContext>
     </div>
