@@ -9,8 +9,6 @@ import {
 
 import { useForkRef } from "@mui/material";
 
-import isNil from "lodash/isNil";
-
 import { setId } from "@core/utils/setId";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useControlled } from "@core/hooks/useControlled";
@@ -281,7 +279,7 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
   ]);
 
   const isOverflow = (currentValue) =>
-    isNil(maxCharQuantity) ? false : currentValue.length > maxCharQuantity;
+    maxCharQuantity == null ? false : currentValue.length > maxCharQuantity;
 
   /**
    * Limit the string to the maxCharQuantity length.

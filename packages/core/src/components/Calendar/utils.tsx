@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 
-import isNil from "lodash/isNil";
 import capitalize from "lodash/capitalize";
 
 import { DateRangeProp } from "./types";
@@ -309,7 +308,7 @@ export const dateInProvidedValueRange = (
 ) => {
   const { startDate, endDate } = providedValueRange;
 
-  if (!isRange(providedValueRange) || isNil(endDate)) return false;
+  if (!isRange(providedValueRange) || endDate == null) return false;
   const localEndDate = endDate;
 
   const modStartDate = dayjs(startDate).format("YYYY-MM-DD");

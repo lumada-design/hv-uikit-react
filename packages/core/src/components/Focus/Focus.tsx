@@ -1,5 +1,4 @@
 import React, { RefObject, useState } from "react";
-import isNil from "lodash/isNil";
 
 import { HvBaseProps } from "@core/types/generic";
 import { isKey, isOneOfKeys } from "@core/utils/keyboardUtils";
@@ -140,7 +139,7 @@ export const HvFocus = ({
       setChildFocus(focusableChildren[0]);
     }
 
-    if (!isNil(tabIndex)) setTabIndex(el, tabIndex);
+    if (tabIndex != null) setTabIndex(el, tabIndex);
     setHasRunConfig(true);
   };
 

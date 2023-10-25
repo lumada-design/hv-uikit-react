@@ -2,8 +2,6 @@ import { MouseEvent, useContext, useEffect, useState } from "react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import isNil from "lodash/isNil";
-
 import { setId } from "@core/utils/setId";
 import { HvTypography } from "@core/components/Typography";
 import { HvButton } from "@core/components/Button";
@@ -110,7 +108,7 @@ const cleanHidden = (lst: HvListValue[]) =>
   lst.map((item) => ({ ...item, isHidden: false }));
 
 const valuesExist = (values: HvListValue[]) =>
-  !isNil(values) && values?.length > 0;
+  values != null && values?.length > 0;
 
 export const HvDropdownList = (props: HvDropdownListProps) => {
   const {
@@ -202,7 +200,7 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
         )
       : null;
 
-    if (!isNil(results)) {
+    if (results != null) {
       const newList = list.map((elem) => {
         const isResult = results.find((result) => result.label === elem.label);
         return { ...elem, isHidden: !isResult };

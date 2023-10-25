@@ -1,7 +1,5 @@
 import { isValidElement, MouseEvent } from "react";
 
-import isNil from "lodash/isNil";
-
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";
 import { HvDropDownMenuProps } from "@core/components/DropDownMenu";
@@ -59,7 +57,7 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
   let listPath = listRoute.slice();
 
   // build the listPath object list
-  if (!isNil(url)) {
+  if (url != null) {
     listPath = [];
 
     // get the domain
