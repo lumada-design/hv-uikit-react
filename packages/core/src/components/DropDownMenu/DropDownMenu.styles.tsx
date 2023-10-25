@@ -42,7 +42,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
     },
 
     borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
-    border: `1px solid ${theme.colors.secondary_80}`,
+    border: `1px solid ${theme.colors.secondary}`,
   },
   /** Styles applied to the list root. */
   menuListRoot: {},
