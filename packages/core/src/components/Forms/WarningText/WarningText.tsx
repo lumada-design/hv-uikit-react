@@ -58,8 +58,7 @@ export const HvWarningText = (props: HvWarningTextProps) => {
   const { elementId, elementStatus, elementDisabled } =
     useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;
-  const localVisible =
-    isVisible != null ? isVisible : elementStatus === "invalid";
+  const localVisible = isVisible ?? elementStatus === "invalid";
   const localId = id ?? setId(elementId, "error");
   const showWarning = localVisible && !localDisabled;
   const content = showWarning ? children : "";

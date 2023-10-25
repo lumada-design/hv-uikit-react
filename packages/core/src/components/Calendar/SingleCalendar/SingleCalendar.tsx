@@ -46,7 +46,7 @@ export const HvSingleCalendar = ({
   const { classes, cx } = useClasses(classesProp);
 
   const today = new Date();
-  const localValue = value == null ? today : value;
+  const localValue = value ?? today;
 
   const [calViewMode, setCalViewMode] = useState<ViewMode>("calendar");
 
