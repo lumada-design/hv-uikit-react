@@ -43,8 +43,20 @@ export interface HvDroppableFlowProps<
   edges?: Edge[];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowClasses;
-  /** Function called when the flow changes. Returns the updated nodes and edges. */
+  /** Callback called when the flow changes. Returns the updated nodes and edges. */
   onFlowChange?: (nodes: Node<NodeData, NodeType>[], edges: Edge[]) => void;
+  /**
+   * Callback called when a node is dropped in the flow.
+   *
+   * This callback should be used to override the custom UI Kit drop event.
+   * Thus, when defined, the user is responsible for adding nodes to the flow.
+   *
+   * This callback is called when `HvFlowSidebar` is used or a custom sidebar was created using Dnd Kit.
+   * When a custom sidebar was created using the native HTML drag and drop API, refer to the `onDrop` callback.
+   *
+   * Returns the event and the node to be added to the flow.
+   */
+  onDndDrop?: (event: DragEndEvent, node: Node) => void;
 }
 
 export const getNode = (nodes: Node[], nodeId: string) => {
@@ -103,6 +115,7 @@ export const HvDroppableFlow = ({
   className,
   children,
   onFlowChange,
+  onDndDrop,
   classes: classesProp,
   nodes: initialNodes = [],
   edges: initialEdges = [],
@@ -146,12 +159,19 @@ export const HvDroppableFlow = ({
           // Node data
           const data = event.active.data.current?.hvFlow?.data || {};
 
+          // Node to add
           const newNode: Node = {
             id: uid(),
             position,
             data,
             type,
           };
+
+          // Drop override
+          if (onDndDrop) {
+            onDndDrop(event, newNode);
+            return;
+          }
 
           setNodes((nds) => nds.concat(newNode));
         } else {
@@ -162,7 +182,7 @@ export const HvDroppableFlow = ({
         }
       }
     },
-    [elementId, nodeTypes, reactFlowInstance]
+    [elementId, nodeTypes, onDndDrop, reactFlowInstance]
   );
 
   useDndMonitor({
