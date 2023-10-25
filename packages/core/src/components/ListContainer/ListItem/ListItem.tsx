@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useMemo } from "react";
+import React, { forwardRef, useCallback, useContext, useMemo } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
@@ -16,7 +16,7 @@ export interface HvListItemProps extends HvBaseProps<HTMLLIElement> {
   /**
    * Overrides the implicit list item role.
    */
-  role?: string;
+  role?: HvBaseProps<HTMLLIElement>["role"];
   /** Indicates if the list item is selected. */
   selected?: boolean;
   /** If true, the list item will be disabled. */
@@ -91,7 +91,7 @@ const applyClassNameToElement = (element, className) => {
 /**
  * ListItem description/documentation paragraph
  */
-export const HvListItem = (props: HvListItemProps) => {
+export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
   const {
     id,
     classes: classesProp,
@@ -188,6 +188,7 @@ export const HvListItem = (props: HvListItemProps) => {
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <li
       id={id}
+      ref={ref}
       role={role}
       value={value}
       className={cx(
@@ -230,4 +231,4 @@ export const HvListItem = (props: HvListItemProps) => {
   ) : (
     listItem
   );
-};
+});

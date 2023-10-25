@@ -88,7 +88,6 @@ import { staticClasses, useClasses } from "./MyComp.styles";
 // export `staticClasses` 👇 as `compClasses` (camelCase, no `Hv`)
 export { staticClasses as compClasses };
 
-
 // export the classes 👇 inferred from `useClasses`
 export type HvCompClasses = ExtractNames<typeof useClasses>;
 
@@ -122,12 +121,12 @@ export const HvComp = forwardRef<HTMLDivElement, HvCompProps>((props, ref) => {
     selected,
     // 👇 don't  set defaults (ie `false`) unnecessarily
     disabled,
-    buttonContent
+    buttonContent,
     onClick,
     onButtonClick,
     // 👇 call remaining props `others`
     ...others,
-  // use the 👇 useDefaultProps utility
+    // use the 👇 useDefaultProps utility
   } = useDefaultProps("HvComp", props);
   // use the useClasses utility 👇
   const { classes, css, cx } = useClasses(classesProp);
@@ -148,7 +147,7 @@ export const HvComp = forwardRef<HTMLDivElement, HvCompProps>((props, ref) => {
     evt.preventDefault();
     // use the ?. 👇 operator for optional event handlers & forward the event
     onButtonClick?.(evt);
-  }
+  };
 
   // keep `render<Stuff>` as a `ReactNode` if possible
   // if you 👇 need `(props) => ReactNode`, it should likely be a separate component
@@ -187,5 +186,5 @@ export const HvComp = forwardRef<HTMLDivElement, HvCompProps>((props, ref) => {
       {children}
     </div>
   );
-}
+});
 ```
