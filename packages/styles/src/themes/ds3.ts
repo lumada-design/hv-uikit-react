@@ -478,17 +478,23 @@ const ds3 = makeTheme((theme) => ({
     HvCalendarHeader: {
       classes: {
         root: {
-          borderBottom: `1px solid ${theme.colors.atmo4}`,
-          borderTop: "1px solid transparent",
-          borderLeft: "1px solid transparent",
-          borderRight: "1px solid transparent",
-          borderRadius: "0",
+          marginTop: theme.spacing("xs"),
+          paddingBottom: "32px",
+
+          "&.HvCalendarHeader-invalid": {
+            paddingBottom: 0,
+          },
+        },
+        headerDate: {
+          "& .HvBaseInput-inputBorderContainer": {
+            top: 33,
+          },
         },
         headerDayOfWeek: {
           color: theme.colors.secondary,
         },
         input: {
-          color: theme.colors.secondary,
+          height: "27px",
           fontSize: "18px",
           letterSpacing: "0.02em",
           lineHeight: "28px",

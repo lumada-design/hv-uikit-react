@@ -262,7 +262,6 @@ export const InvalidState: StoryObj<HvInputProps> = {
 
     return (
       <HvInput
-        id="invalid-state-input"
         label="Last name"
         description="Please enter your last name"
         placeholder="Insert last name"
@@ -397,7 +396,6 @@ export const CustomValidation: StoryObj<HvInputProps> = {
 
     return (
       <HvInput
-        id="custom-validation-input"
         label="Compliment me"
         description="You must input the text 'hello'"
         placeholder="Insert 'hello'"
@@ -426,7 +424,6 @@ export const EventDemonstration: StoryObj<HvInputProps> = {
 
     return (
       <HvInput
-        id="event-demonstration-input"
         label="Text I will modify"
         description="Look at the browser's developer console to see the event handlers output"
         placeholder="Insert text"
@@ -459,7 +456,6 @@ export const CustomProps: StoryObj<HvInputProps> = {
   render: () => {
     return (
       <HvInput
-        id="extraProps-input"
         label="Short story of your life"
         description="Try to write more than 25 characters"
         placeholder="Insert text"
@@ -503,7 +499,6 @@ export const Suggestion: StoryObj<HvInputProps> = {
 
     return (
       <HvInput
-        id="suggestions"
         label="Select a country"
         placeholder="Country"
         value={value}
