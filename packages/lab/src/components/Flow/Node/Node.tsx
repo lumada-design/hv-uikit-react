@@ -1,4 +1,4 @@
-import { isValidElement, useCallback, useState } from "react";
+import { isValidElement, useCallback, useEffect, useState } from "react";
 
 import {
   Edge,
@@ -21,6 +21,7 @@ import { Delete, Duplicate } from "@hitachivantara/uikit-react-icons";
 import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
 
 import { HvFlowNodeAction, HvFlowNodeInput, HvFlowNodeOutput } from "../types";
+import { useNodeMetaRegistry } from "../FlowContext/NodeMetaContext";
 import { staticClasses, useClasses } from "./Node.styles";
 
 export { staticClasses as flowNodeClasses };
@@ -88,6 +89,12 @@ export const HvFlowNode = ({
   className,
   children,
 }: HvFlowNodeProps<unknown>) => {
+  const { registerNode, unregisterNode } = useNodeMetaRegistry();
+  useEffect(() => {
+    registerNode(id, { title, inputs, outputs });
+    return () => unregisterNode(id);
+  }, [id, title, inputs, outputs, registerNode, unregisterNode]);
+
   const [showActions, setShowActions] = useState(false);
   const reactFlowInstance = useReactFlow();
 
