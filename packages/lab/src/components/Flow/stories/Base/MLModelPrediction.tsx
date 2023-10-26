@@ -1,7 +1,9 @@
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvDaFlowNode } from "@hitachivantara/uikit-react-lab";
 
 export const MLModelPrediction = (props) => {
-  return <HvFlowNode description="Anomaly Prediction description" {...props} />;
+  return (
+    <HvDaFlowNode description="Anomaly Prediction description" {...props} />
+  );
 };
 
 MLModelPrediction.meta = {

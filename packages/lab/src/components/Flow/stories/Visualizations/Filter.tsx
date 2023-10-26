@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 
-import { HvCheckBox, HvCheckBoxGroup } from "@hitachivantara/uikit-react-core";
-import { useFlowNode, HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import {
+  HvCheckBox,
+  HvCheckBoxGroup,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+import { useFlowNode, HvDaFlowNode } from "@hitachivantara/uikit-react-lab";
 import { useReactFlow, useStore } from "reactflow";
 
 function filterDataByCountries(data, countriesToFilter: string[]) {
@@ -59,8 +63,18 @@ export const Filter = (props) => {
   };
 
   return (
-    <HvFlowNode description="Filtering data" expanded {...props}>
-      <HvCheckBoxGroup onChange={handleCheck}>
+    <HvDaFlowNode description="Filtering data" expanded {...props}>
+      <HvCheckBoxGroup
+        onChange={handleCheck}
+        style={{
+          padding: theme.spacing(
+            theme.space.xs,
+            theme.space.xs,
+            theme.space.xs,
+            theme.space.sm
+          ),
+        }}
+      >
         {options.map((o) => {
           return (
             <HvCheckBox
@@ -72,7 +86,7 @@ export const Filter = (props) => {
           );
         })}
       </HvCheckBoxGroup>
-    </HvFlowNode>
+    </HvDaFlowNode>
   );
 };
 

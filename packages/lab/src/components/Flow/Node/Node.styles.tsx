@@ -16,30 +16,13 @@ export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
     borderTopLeftRadius: theme.radii.round,
     borderTopRightRadius: theme.radii.round,
   },
-  groupContainer: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  group: {
-    color: theme.colors.base_dark,
-  },
   titleContainer: {
-    minHeight: 48,
-    padding: theme.spacing(
-      theme.space.xs,
-      theme.space.xs,
-      theme.space.xs,
-      theme.space.sm
-    ),
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
   },
-  actions: {
-    display: "flex",
-    alignItems: "center",
+  title: {
+    color: theme.colors.base_dark,
   },
   inputsTitleContainer: {
     display: "flex",
@@ -57,9 +40,7 @@ export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
     borderTop: `1px solid ${theme.colors.atmo4}`,
     borderBottom: `1px solid ${theme.colors.atmo4}`,
   },
-  contentContainer: {
-    padding: theme.space.sm,
-  },
+  contentContainer: {},
   inputsContainer: {
     display: "flex",
     flexDirection: "column",
@@ -73,13 +54,6 @@ export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
     padding: theme.space.sm,
     gap: theme.space.xs,
     alignItems: "flex-end",
-  },
-  paramsContainer: {
-    borderTop: `1px solid ${theme.colors.atmo4}`,
-    display: "flex",
-    flexDirection: "column",
-    gap: theme.space.xs,
-    padding: theme.space.sm,
   },
   inputContainer: {
     display: "flex",
