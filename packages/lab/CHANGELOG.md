@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.12.0 (2023-10-26)
+
+### Bug Fixes
+
+- **Flow:** disable portal to have dropdown match zoom level of the flow ([e23649d](https://github.com/lumada-design/hv-uikit-react/commit/e23649dc6608221ecc927ad667edf5f89a8b3647))
+- **FlowNode:** header container radius ([f6fd8f9](https://github.com/lumada-design/hv-uikit-react/commit/f6fd8f91037c7db21a70cf3b8e1ecc54f8acee2f))
+
+### Features
+
+- **Flow:** custom drop event ([b55af56](https://github.com/lumada-design/hv-uikit-react/commit/b55af56ba1c48ac59d92a81eae8808c4e4fe1175))
+
 ## [5.11.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.11.1...@hitachivantara/uikit-react-lab@5.11.2) (2023-10-22)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

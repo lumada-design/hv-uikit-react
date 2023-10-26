@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.33.0 (2023-10-26)
+
+### Bug Fixes
+
+- **DatePicker:** Navigation alignment & a11y ([bf1407d](https://github.com/lumada-design/hv-uikit-react/commit/bf1407d6748452caa133e1d923c2f4ea202b7c4c))
+
+### Features
+
+- **Pagination:** align with DS 5.7 ([1b10d1c](https://github.com/lumada-design/hv-uikit-react/commit/1b10d1c5afab2315b9f72fe8675e4849eb5192f7))
+- **WarningText:** align with DS 5.7 ([ba2ed38](https://github.com/lumada-design/hv-uikit-react/commit/ba2ed38586c5d5fb5cc213405421e9a80782e9c5))
+
 # [5.32.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.31.0...@hitachivantara/uikit-react-core@5.32.0) (2023-10-22)
 
 ### Bug Fixes
