@@ -22,10 +22,11 @@ import { uid } from "uid";
 
 import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 
-import { HvFlowNodeTypes } from "./types";
+import { HvFlowNodeMeta } from "./types";
 import { staticClasses, useClasses } from "./Flow.styles";
 import { useFlowContext } from "./hooks";
 import { flowStyles } from "./base";
+import { useNodeMetaRegistry } from "./FlowContext/NodeMetaContext";
 
 export { staticClasses as flowClasses };
 
@@ -66,7 +67,7 @@ export const getNode = (nodes: Node[], nodeId: string) => {
 const validateEdge = (
   nodes: Node[],
   edge: Edge,
-  nodeTypes: HvFlowNodeTypes<string> | undefined
+  nodeMetaRegistry: Record<string, HvFlowNodeMeta>
 ) => {
   if (!edge.sourceHandle || !edge.targetHandle) return false;
 
@@ -80,34 +81,14 @@ const validateEdge = (
 
   if (!sourceType || !targetType) return false;
 
-  const inputs = nodeTypes?.[targetType]?.meta?.inputs || [];
-  const outputs = nodeTypes?.[sourceType]?.meta?.outputs || [];
+  const inputs = nodeMetaRegistry[edge.target]?.inputs || [];
+  const outputs = nodeMetaRegistry[edge.source]?.outputs || [];
 
   const sourceProvides = outputs[edge.sourceHandle]?.provides || "";
   const targetAccepts = inputs[edge.targetHandle]?.accepts || [];
 
   const isValid = targetAccepts.includes(sourceProvides);
   return isValid;
-};
-
-const validateEdges = (
-  edges: Edge[],
-  nodes: Node[],
-  nodeTypes: HvFlowNodeTypes<string> | undefined
-) => {
-  if (edges) {
-    const validEdges: Edge[] = [];
-
-    edges.forEach((edge) => {
-      const isValidEdge = validateEdge(nodes, edge, nodeTypes);
-      if (isValidEdge) {
-        validEdges.push(edge);
-      }
-    });
-
-    return validEdges;
-  }
-  return [];
 };
 
 export const HvDroppableFlow = ({
@@ -237,12 +218,9 @@ export const HvDroppableFlow = ({
     [edges, handleFlowChange, nodes, onEdgesChangeProp]
   );
 
-  const isValidConnection = (connection) => {
-    const isValid = validateEdge(nodes, connection, nodeTypes);
-    return isValid;
-  };
-
-  const validEdges = validateEdges(edges, nodes, nodeTypes);
+  const { registry } = useNodeMetaRegistry();
+  const isValidConnection = (connection) =>
+    validateEdge(nodes, connection, registry);
 
   const defaultEdgeOptions = {
     markerEnd: {
@@ -263,7 +241,7 @@ export const HvDroppableFlow = ({
       >
         <ReactFlow
           nodes={nodes}
-          edges={validEdges}
+          edges={edges}
           nodeTypes={nodeTypes}
           onNodesChange={handleNodesChange}
           onEdgesChange={handleEdgesChange}

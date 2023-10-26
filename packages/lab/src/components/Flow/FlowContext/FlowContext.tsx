@@ -6,11 +6,8 @@ import {
   useState,
 } from "react";
 
-import {
-  HvFlowDefaultActions,
-  HvFlowNodeGroups,
-  HvFlowNodeTypes,
-} from "../types";
+import { HvFlowNodeAction, HvFlowNodeGroups, HvFlowNodeTypes } from "../types";
+import { HvFlowNodeMetaProvider } from "./NodeMetaContext";
 
 export interface HvFlowContextValue<NodeGroups extends keyof any = string> {
   /** Flow nodes types. */
@@ -20,7 +17,7 @@ export interface HvFlowContextValue<NodeGroups extends keyof any = string> {
   /** Flow nodes groups expanded on sidebar. */
   expandedNodeGroups?: string[];
   /** Flow default actions. */
-  defaultActions?: HvFlowDefaultActions[];
+  defaultActions?: HvFlowNodeAction[];
   /** Function to set `expandedNodeGroups`. */
   setExpandedNodeGroups?: Dispatch<SetStateAction<string[]>>;
 }
@@ -33,7 +30,7 @@ export interface HvFlowProviderProps<NodeGroups extends keyof any = string> {
   /** Flow nodes groups. */
   nodeGroups?: HvFlowContextValue<NodeGroups>["nodeGroups"];
   /** Flow default actions. */
-  defaultActions?: HvFlowDefaultActions[];
+  defaultActions?: HvFlowNodeAction[];
   /** Children. */
   children?: React.ReactNode;
 }
@@ -58,6 +55,8 @@ export const HvFlowProvider = ({
   );
 
   return (
-    <HvFlowContext.Provider value={value}>{children}</HvFlowContext.Provider>
+    <HvFlowNodeMetaProvider>
+      <HvFlowContext.Provider value={value}>{children}</HvFlowContext.Provider>
+    </HvFlowNodeMetaProvider>
   );
 };
