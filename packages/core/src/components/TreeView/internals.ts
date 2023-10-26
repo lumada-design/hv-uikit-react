@@ -13,13 +13,14 @@ import {
 import { useTreeView } from "@mui/x-tree-view/internals/useTreeView";
 
 export type {
-  DefaultTreeViewPlugins,
-  DefaultTreeViewPluginParameters,
+  DefaultTreeViewPlugins as HvTreeViewPlugins,
+  DefaultTreeViewPluginParameters as HvTreeViewPluginParameters,
   TreeItemDescendant,
 };
 
+export const HV_TREE_VIEW_PLUGINS = [...DEFAULT_TREE_VIEW_PLUGINS] as const;
+
 export {
-  DEFAULT_TREE_VIEW_PLUGINS,
   DescendantProvider,
   TreeViewProvider,
   useDescendant,

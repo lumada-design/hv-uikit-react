@@ -1,4 +1,4 @@
-import { HTMLAttributes, forwardRef, useState } from "react";
+import { HTMLAttributes, forwardRef, useMemo, useState } from "react";
 
 import { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { SourceProps } from "@storybook/blocks";
@@ -17,6 +17,7 @@ import {
   Add,
   Doc,
   Drag,
+  DropDownXS,
   Folders,
   Remove,
 } from "@hitachivantara/uikit-react-icons";
@@ -24,13 +25,13 @@ import {
   HvButton,
   HvLoading,
   HvPanel,
-  HvOverflowTooltip,
   HvTypography,
   HvTreeView,
   HvTreeViewProps,
   HvTreeItem,
   HvTreeItemProps,
   useHvTreeItem,
+  NavigationData,
 } from "@hitachivantara/uikit-react-core";
 
 const sourceTransform: SourceProps["transform"] = (code, storyContext) => {
@@ -42,7 +43,7 @@ const delay = (ms: number) =>
     setTimeout(resolve, ms);
   });
 
-const meta: Meta<HvTreeViewProps<false>> = {
+const meta: Meta<HvTreeViewProps<any>> = {
   title: "Components/Tree View",
   component: HvTreeView,
   // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
@@ -104,13 +105,16 @@ const CustomTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
         style={{ transition, transform: CSS.Transform.toString(transform) }}
         classes={{
           group: css({
-            borderLeft: border,
+            // borderLeft: border,
             // marginLeft: theme.space.md,
           }),
           content: css({
             height,
             paddingRight: 0,
             marginBottom: theme.space.xs,
+            "&:hover": {
+              backgroundColor: "unset",
+            },
           }),
           label: css({
             height,
@@ -122,6 +126,9 @@ const CustomTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
             "&&": {
               paddingLeft: 0,
             },
+          }),
+          focused: css({
+            backgroundColor: "unset",
           }),
           iconContainer: css({
             marginLeft: -6,
@@ -222,6 +229,48 @@ const LoadingItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
   }
 );
 
+const NavItem = forwardRef<HTMLLIElement, CustomTreeItemProps>((props, ref) => {
+  const { children, nodeId, label, onOpen, onClick, ...others } = props;
+  const { disabled, expanded } = useHvTreeItem(nodeId);
+
+  const level = nodeId.split("-").length - 1;
+
+  return (
+    <HvTreeItem
+      ref={ref}
+      nodeId={nodeId}
+      style={{ pointerEvents: disabled ? "none" : undefined }}
+      classes={{
+        group: css({ marginLeft: 0 }),
+        content: css({ paddingLeft: 16 * level }),
+        selected: css({
+          borderLeft: `4px solid ${theme.colors.secondary}`,
+          backgroundColor: theme.colors.atmo3,
+        }),
+      }}
+      icon="" // remove left nav icon
+      label={
+        <div className={css({ display: "flex", alignItems: "center" })}>
+          <HvTypography
+            variant={children ? "label" : "body"}
+            style={{ flex: 1 }}
+          >
+            {label}
+          </HvTypography>
+          {children && (
+            <DropDownXS
+              style={{ transform: `rotate(${expanded ? 180 : 0}deg)` }}
+            />
+          )}
+        </div>
+      }
+      {...others}
+    >
+      {children}
+    </HvTreeItem>
+  );
+});
+
 type MyTreeData = { id: string; label: string; children?: MyTreeData[] };
 
 const dataObject = {
@@ -281,10 +330,7 @@ export const Main: StoryObj<HvTreeViewProps<false>> = {
           </HvTreeItem>
           <HvTreeItem nodeId="2" label="Documents">
             <HvTreeItem nodeId="20" label="private">
-              <HvTreeItem
-                nodeId="200"
-                label={<HvOverflowTooltip data="very_long_secret_value.txt" />}
-              />
+              <HvTreeItem nodeId="200" disabled label="secret.txt" />
             </HvTreeItem>
             <HvTreeItem nodeId="21" label="index.js" />
           </HvTreeItem>
@@ -405,6 +451,63 @@ AsyncLoading.parameters = {
   docs: {
     source: { transform: sourceTransform },
   },
+};
+
+export const VerticalNavigation: StoryFn<HvTreeViewProps<false>> = () => {
+  const [selected, setSelected] = useState("-1");
+
+  const navData = useMemo<NavigationData[]>(
+    () => [
+      { id: "00", label: "Overview" },
+      { id: "01", label: "Analytics" },
+      {
+        id: "02",
+        label: "Storage",
+        data: [
+          {
+            id: "02-01",
+            label: "Cloud",
+            data: [
+              { id: "02-01-01", label: "Servers" },
+              { id: "02-01-02", label: "HCP Anywhere" },
+              { id: "02-01-03", label: "This Computer", disabled: true },
+            ],
+          },
+        ],
+      },
+      {
+        id: "03",
+        label: "Administration",
+        data: [
+          {
+            id: "03-01",
+            label: "Rest API",
+            data: [{ id: "03-01-01", label: "Log Bundle" }],
+          },
+        ],
+      },
+    ],
+    []
+  );
+
+  /** Render tree view items */
+  const renderItem = ({ id, label, data }: NavigationData) => (
+    <NavItem key={id} nodeId={id} label={label}>
+      {data?.map(renderItem)}
+    </NavItem>
+  );
+
+  return (
+    <HvPanel style={{ width: 300 }}>
+      <HvTreeView
+        aria-label="site navigation"
+        selected={selected}
+        onNodeSelect={(evt, nodeId) => setSelected(nodeId)}
+      >
+        {navData.map(renderItem)}
+      </HvTreeView>
+    </HvPanel>
+  );
 };
 
 export const Custom: StoryFn<HvTreeViewProps<false>> = () => {

@@ -1,15 +1,15 @@
 import { forwardRef } from "react";
-import type { TreeItemContentProps } from "@mui/x-tree-view";
 
 import { useCss } from "@core/hooks/useCss";
 
+import type { HvTreeContentProps } from "./TreeItem";
 import { useHvTreeItem } from "./useHvTreeItem";
 
 /**
  * Internal default TreeItem `component`.
  * Use this as a basis to create a custom component.
  */
-export const DefaultContent = forwardRef<HTMLDivElement, TreeItemContentProps>(
+export const DefaultContent = forwardRef<HTMLDivElement, HvTreeContentProps>(
   (props, ref) => {
     const {
       classes,
@@ -36,7 +36,7 @@ export const DefaultContent = forwardRef<HTMLDivElement, TreeItemContentProps>(
       preventSelection,
     } = useHvTreeItem(nodeId);
 
-    const icon = iconProp || expansionIcon || displayIcon;
+    const icon = iconProp ?? expansionIcon ?? displayIcon;
 
     return (
       /* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions -- Key event is handled by the TreeView */

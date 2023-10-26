@@ -1,4 +1,4 @@
-import { Ref, forwardRef } from "react";
+import { ReactNode, Ref, forwardRef } from "react";
 import { useSlotProps } from "@mui/base/utils";
 import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
 
@@ -7,52 +7,70 @@ import { ExtractNames } from "@core/utils/classes";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import {
-  DEFAULT_TREE_VIEW_PLUGINS,
-  DefaultTreeViewPluginParameters,
+  HV_TREE_VIEW_PLUGINS,
+  HvTreeViewPluginParameters,
   TreeViewProvider,
   useTreeView,
 } from "./internals";
 import { staticClasses, useClasses } from "./TreeView.styles";
 
-export { staticClasses as treeViewClasses };
-
-const TREE_VIEW_PLUGINS = [...DEFAULT_TREE_VIEW_PLUGINS] as const;
+export { staticClasses as treeView2Classes }; // TODO: remove old `treeViewClasses`
 
 export type HvTreeViewClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTreeViewProps<Multiple extends boolean | undefined>
   extends HvBaseProps<HTMLUListElement>,
-    DefaultTreeViewPluginParameters<Multiple> {
+    HvTreeViewPluginParameters<Multiple> {
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvTreeViewClasses;
+  /** Tree View children. Usually a `HvTreeItem` instance, or a custom variation of it */
+  children?: ReactNode;
 }
 
-/* eslint-disable prefer-arrow-callback */
+type HvTreeViewComponent = <Multiple extends boolean | undefined = undefined>(
+  props: HvTreeViewProps<Multiple>
+) => React.JSX.Element;
 
-/** HvTreeView does some amazing stuff */
-export const HvTreeView = forwardRef(function HvTreeView<
+/* eslint-disable prefer-arrow-callback */
+/**
+ * A Tree View displays hierarchical structures.
+ * It also facilitates the exploration of categorical levels and their content.
+ *
+ * Tree structures are built through composing the `HvTreeItem` component,
+ * or a custom variation of it.
+ *
+ * It is based on MUI's [TreeView](https://mui.com/x/react-tree-view) component.
+ *
+ * @example
+ * ```tsx
+ * <HvTreeView>
+ *   <HvTreeItem nodeId="1" label="File1" />
+ * </HvTreeView>
+ * ```
+ */
+const HvTreeView = forwardRef(function HvTreeView<
   Multiple extends boolean | undefined
 >(props: HvTreeViewProps<Multiple>, ref: Ref<HTMLUListElement>) {
   const {
-    disabledItemsFocusable,
-    expanded,
-    defaultExpanded,
-    onNodeToggle,
-    onNodeFocus,
-    disableSelection,
-    defaultSelected,
-    selected,
-    multiSelect,
-    onNodeSelect,
-    defaultCollapseIcon = <DropDownXS role="none" />,
-    defaultExpandIcon = <DropRightXS role="none" />,
-    defaultEndIcon,
-    defaultParentIcon,
-
     id,
     children,
     classes: classesProp,
     className,
+
+    disabledItemsFocusable,
+    multiSelect,
+    expanded,
+    defaultExpanded,
+    selected,
+    defaultSelected,
+    disableSelection,
+    defaultCollapseIcon = <DropDownXS role="none" />,
+    defaultExpandIcon = <DropRightXS role="none" />,
+    defaultEndIcon,
+    defaultParentIcon,
+    onNodeSelect,
+    onNodeToggle,
+    onNodeFocus,
     ...others
   } = useDefaultProps("HvTreeView", props);
   const { classes, cx } = useClasses(classesProp);
@@ -73,7 +91,7 @@ export const HvTreeView = forwardRef(function HvTreeView<
     defaultEndIcon,
     defaultExpandIcon,
     defaultParentIcon,
-    plugins: TREE_VIEW_PLUGINS,
+    plugins: HV_TREE_VIEW_PLUGINS,
     rootRef: ref,
   });
 
@@ -93,4 +111,6 @@ export const HvTreeView = forwardRef(function HvTreeView<
       </ul>
     </TreeViewProvider>
   );
-});
+}) as HvTreeViewComponent;
+
+export { HvTreeView };

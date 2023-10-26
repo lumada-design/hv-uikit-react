@@ -1,6 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "@core/utils/classes";
+import { outlineStyles } from "@core/utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvTreeItem", {
   /** Applied to the root element */
@@ -26,20 +27,26 @@ export const { staticClasses, useClasses } = createClasses("HvTreeItem", {
     alignItems: "center",
     cursor: "pointer",
     WebkitTapHighlightColor: "transparent",
-    "&:hover": {
+    "&:hover:not($disabled)": {
       backgroundColor: theme.colors.containerBackgroundHover,
     },
   },
   expanded: {},
   selected: {
-    backgroundColor: theme.colors.containerBackgroundHover,
+    backgroundColor: theme.colors.atmo3,
   },
   focused: {
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.containerBackgroundHover,
+    "&:focus-visible": {
+      ...outlineStyles,
+    },
   },
   disabled: {
+    cursor: "not-allowed",
     color: theme.colors.secondary_60,
-    backgroundColor: theme.colors.atmo3,
+    "& $label": {
+      color: theme.colors.secondary_60,
+    },
   },
   label: {
     paddingLeft: 4,

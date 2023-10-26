@@ -8,14 +8,14 @@ import {
   useState,
 } from "react";
 import { Collapse } from "@mui/material";
-import type { TreeItemProps } from "@mui/x-tree-view";
+import type { TreeItemContentProps, TreeItemProps } from "@mui/x-tree-view";
 
 import { ExtractNames } from "@core/utils/classes";
 import { useForkRef } from "@core/hooks/useForkRef";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import {
-  DefaultTreeViewPlugins,
+  HvTreeViewPlugins,
   DescendantProvider,
   TreeItemDescendant,
   useDescendant,
@@ -28,13 +28,15 @@ export { staticClasses as treeItemClasses };
 
 export type HvTreeItemClasses = ExtractNames<typeof useClasses>;
 
+export interface HvTreeContentProps extends TreeItemContentProps {}
+
 export interface HvTreeItemProps extends TreeItemProps {
   classes?: HvTreeItemClasses;
   disabled?: boolean;
   icon?: ReactNode;
+  ContentComponent?: React.JSXElementConstructor<HvTreeContentProps>;
 }
 
-/** HvTreeItem does some amazing stuff */
 export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
   (props, ref) => {
     const {
@@ -62,7 +64,7 @@ export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
       disabledItemsFocusable,
       treeId,
       icons: contextIcons,
-    } = useTreeViewContext<DefaultTreeViewPlugins>();
+    } = useTreeViewContext<HvTreeViewPlugins>();
 
     const id =
       idProp || (treeId && nodeId && `${treeId}-${nodeId}`) || undefined;
