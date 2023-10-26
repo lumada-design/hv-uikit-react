@@ -1,7 +1,9 @@
 import { ComponentClass, FunctionComponent } from "react";
+
+import { Node, NodeProps } from "reactflow";
+
 import { HvActionGeneric } from "@hitachivantara/uikit-react-core";
 import { HvColorAny } from "@hitachivantara/uikit-styles";
-import { NodeProps } from "reactflow";
 
 /** Node types */
 export interface HvFlowNodeFunctionComponent<
@@ -75,8 +77,12 @@ export type HvFlowNodeParam = {
   value?: string;
 };
 
-export type HvFlowDefaultAction = "delete" | "duplicate";
+export interface HvFlowNodeAction extends HvActionGeneric {
+  callback?: (node: Node) => void;
+}
 
-export type HvFlowDefaultActions = Omit<HvActionGeneric, "id"> & {
-  id: HvFlowDefaultAction;
+export type HvFlowBuiltInAction = "delete" | "duplicate";
+
+export type HvFlowBuiltInActions = Omit<HvFlowNodeAction, "id" | "callback"> & {
+  id: HvFlowBuiltInAction;
 };

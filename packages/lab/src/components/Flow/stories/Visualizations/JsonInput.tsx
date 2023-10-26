@@ -1,7 +1,7 @@
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvDaFlowNode } from "@hitachivantara/uikit-react-lab";
 
 export const JsonInput = (props) => {
-  return <HvFlowNode description="Population Datakky7" {...props} />;
+  return <HvDaFlowNode description="Population Datakky7" {...props} />;
 };
 
 JsonInput.meta = {

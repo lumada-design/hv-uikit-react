@@ -76,7 +76,7 @@ export const Visualizations: StoryObj<HvFlowProps> = {
   parameters: {
     docs: {
       description: {
-        story: `The HvFlowNode component can take any content as children. In this sample, we created visualizations based on the JSON output of the first node.
+        story: `The HvDaFlowNode component can take any content as children. In this sample, we created visualizations based on the JSON output of the first node.
         <br /><br />Please refer to the [code samples](https://github.com/lumada-design/hv-uikit-react/blob/master/packages/lab/src/components/Flow/stories/Visualizations/Visualizations.tsx) in our repository for more details.`,
       },
       source: {

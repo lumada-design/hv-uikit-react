@@ -1,5 +1,6 @@
 import { css } from "@emotion/css";
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { theme } from "@hitachivantara/uikit-react-core";
+import { HvDaFlowNode } from "@hitachivantara/uikit-react-lab";
 import { HvBarChart } from "@hitachivantara/uikit-react-viz";
 import { useStore } from "reactflow";
 
@@ -12,7 +13,7 @@ export const BarChart = (props) => {
   const dataNode = nodes.find((n) => n.id === dataNodeId);
 
   return (
-    <HvFlowNode
+    <HvDaFlowNode
       description="Bar Chart description"
       expanded
       classes={{ root: css({ width: 500 }) }}
@@ -22,7 +23,16 @@ export const BarChart = (props) => {
         dataNode.data &&
         dataNode.data.jsonData &&
         dataNode.data.jsonData.length > 0 && (
-          <div>
+          <div
+            style={{
+              padding: theme.spacing(
+                theme.space.xs,
+                theme.space.xs,
+                theme.space.xs,
+                theme.space.sm
+              ),
+            }}
+          >
             <HvBarChart
               data={dataNode.data.jsonData}
               splitBy="country"
@@ -31,7 +41,7 @@ export const BarChart = (props) => {
             />
           </div>
         )}
-    </HvFlowNode>
+    </HvDaFlowNode>
   );
 };
 

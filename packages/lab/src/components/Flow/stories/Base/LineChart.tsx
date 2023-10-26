@@ -1,7 +1,7 @@
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvDaFlowNode } from "@hitachivantara/uikit-react-lab";
 
 export const LineChart = (props) => {
-  return <HvFlowNode description="LineChart description" {...props} />;
+  return <HvDaFlowNode description="LineChart description" {...props} />;
 };
 
 LineChart.meta = {
