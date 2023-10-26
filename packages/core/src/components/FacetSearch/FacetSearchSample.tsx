@@ -1,4 +1,7 @@
 import { useState } from "react";
+
+import { css } from "@emotion/css";
+
 import {
   HvAccordion,
   HvCheckBoxGroup,
@@ -7,35 +10,35 @@ import {
   HvTypography,
   HvInput,
 } from "@hitachivantara/uikit-react-core";
-import { css } from "@emotion/css";
+
 import { theme } from "@hitachivantara/uikit-styles";
+
+// used to fill option with mock data
+const optionFiller = (size: number) => {
+  return new Array(size).fill(`Option`);
+};
+
+const data = {
+  Fridge: {
+    "Dairy Products": optionFiller(5),
+    Fish: optionFiller(3),
+    Vegetables: optionFiller(4),
+    Meat: optionFiller(3),
+    Fruits: optionFiller(6),
+    Drinks: optionFiller(3),
+  },
+  Closet: {
+    Shirts: optionFiller(10),
+    Coats: optionFiller(3),
+    Sweatshirts: optionFiller(4),
+  },
+};
 
 export const FacetSearch = () => {
   const [showMore, setShowMore] = useState(false);
   const showLimit = 3;
 
   const [searchStr, setSearchStr] = useState("");
-
-  // used to fill option with mock data
-  const optionFiller = (size: number) => {
-    return new Array(size).fill(`Option`);
-  };
-
-  const data = {
-    Fridge: {
-      "Dairy Products": optionFiller(5),
-      Fish: optionFiller(3),
-      Vegetables: optionFiller(4),
-      Meat: optionFiller(3),
-      Fruits: optionFiller(6),
-      Drinks: optionFiller(3),
-    },
-    Closet: {
-      Shirts: optionFiller(10),
-      Coats: optionFiller(3),
-      Sweatshirts: optionFiller(4),
-    },
-  };
 
   return (
     <div style={{ maxWidth: 228 }}>
