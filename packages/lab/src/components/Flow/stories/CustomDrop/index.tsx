@@ -10,6 +10,7 @@ import {
   HvDropdownProps,
   HvGlobalActions,
   theme,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import {
   Add,
@@ -24,12 +25,15 @@ import {
   HvFlowControls,
 } from "@hitachivantara/uikit-react-lab";
 import { Node, ReactFlowInstance } from "reactflow";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these components and values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/CustomDrop
 import { Precipitation } from "./Precipitation";
 import { data } from "./data";
 import { LineChart } from "./LineChart";
 import { BarChart } from "./BarChart";
+// The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
+import { restrictToSample } from "../Base";
 
 // Node groups
 export type NodeGroups = "sources" | "visualizations";
@@ -72,6 +76,8 @@ const classes = {
 };
 
 export const CustomDrop = () => {
+  const { rootId } = useTheme();
+
   const [reactFlowInstance, setReactFlowInstance] =
     useState<ReactFlowInstance>();
 
@@ -150,6 +156,13 @@ export const CustomDrop = () => {
               description="Please choose within the options below"
               open={open}
               onClose={() => setOpen(false)}
+              // Needed to fix storybook
+              dragOverlayProps={{
+                modifiers: [
+                  restrictToWindowEdges,
+                  (args) => restrictToSample(rootId || "", args),
+                ],
+              }}
             />
           }
           onInit={setReactFlowInstance}

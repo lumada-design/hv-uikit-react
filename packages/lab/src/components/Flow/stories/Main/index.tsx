@@ -1,11 +1,11 @@
 import { useState } from "react";
-
 import { css } from "@emotion/css";
 import {
   HvButton,
   HvGlobalActions,
   HvTypography,
   theme,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { Add, Backwards, Fail } from "@hitachivantara/uikit-react-icons";
 import {
@@ -15,6 +15,7 @@ import {
   HvFlow,
   HvFlowProps,
 } from "@hitachivantara/uikit-react-lab";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
 import {
@@ -23,6 +24,7 @@ import {
   defaultActions,
   nodeGroups,
   nodeTypes,
+  restrictToSample,
 } from "../Base";
 
 // Flow
@@ -39,6 +41,8 @@ export const classes = {
 };
 
 export const Main = () => {
+  const { rootId } = useTheme();
+
   const [open, setOpen] = useState(false);
 
   const CustomAction = (
@@ -91,6 +95,13 @@ export const Main = () => {
               description="Please choose within the options below"
               open={open}
               onClose={() => setOpen(false)}
+              // Needed to fix storybook
+              dragOverlayProps={{
+                modifiers: [
+                  restrictToWindowEdges,
+                  (args) => restrictToSample(rootId || "", args),
+                ],
+              }}
             />
           }
           // Keeping track of flow updates

@@ -10,6 +10,7 @@ import {
   HvFlowProps,
   HvFlowDefaultActions,
 } from "@hitachivantara/uikit-react-lab";
+import { Modifier } from "@dnd-kit/core";
 
 // The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
 import { Dashboard } from "./Dashboard";
@@ -68,3 +69,23 @@ export const nodeTypes = {
 } satisfies HvFlowProps["nodeTypes"];
 
 export type NodeType = keyof typeof nodeTypes;
+
+// Fixes a problem we have while dragging node types from the sidebar to the flow in storybook docs mode
+type RestrictToSampleModifier = Modifier extends (...args: infer A) => infer R
+  ? (rootId: string, ...args: A) => R
+  : unknown;
+
+export const restrictToSample: RestrictToSampleModifier = (
+  rootId,
+  { transform }
+) => {
+  const rect = document.getElementById(rootId)?.getBoundingClientRect();
+
+  const docsMode = window.location.search.includes("?viewMode=docs");
+
+  return {
+    ...transform,
+    x: docsMode && rect?.x ? -rect.x + transform.x : transform.x,
+    y: docsMode && rect?.y ? -rect.y + transform.y : transform.y,
+  };
+};
