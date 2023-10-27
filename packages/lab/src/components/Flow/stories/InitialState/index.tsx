@@ -1,10 +1,10 @@
 import { useState } from "react";
-
 import { css } from "@emotion/css";
 import {
   HvButton,
   HvGlobalActions,
   theme,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { Add, Backwards } from "@hitachivantara/uikit-react-icons";
 import {
@@ -12,9 +12,10 @@ import {
   HvFlow,
   HvFlowControls,
 } from "@hitachivantara/uikit-react-lab";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
-import { nodeGroups, nodeTypes } from "../Base";
+import { nodeGroups, nodeTypes, restrictToSample } from "../Base";
 
 const initialState = {
   nodes: [
@@ -172,6 +173,8 @@ export const classes = {
 };
 
 export const InitialState = () => {
+  const { rootId } = useTheme();
+
   const [open, setOpen] = useState(false);
 
   return (
@@ -207,6 +210,13 @@ export const InitialState = () => {
               description="Please choose within the options below"
               open={open}
               onClose={() => setOpen(false)}
+              // Needed to fix storybook
+              dragOverlayProps={{
+                modifiers: [
+                  restrictToWindowEdges,
+                  (args) => restrictToSample(rootId || "", args),
+                ],
+              }}
             />
           }
         >

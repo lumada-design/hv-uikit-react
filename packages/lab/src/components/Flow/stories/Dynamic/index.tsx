@@ -4,6 +4,7 @@ import {
   HvButton,
   HvGlobalActions,
   theme,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { Add, Backwards, DataSource } from "@hitachivantara/uikit-react-icons";
 import {
@@ -12,9 +13,12 @@ import {
   HvFlowProps,
   HvFlowControls,
 } from "@hitachivantara/uikit-react-lab";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Dynamic
 import { createAsset } from "./utils";
+// The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
+import { restrictToSample } from "../Base";
 
 // Node groups
 type NodeGroups = "assets";
@@ -52,6 +56,8 @@ const getRandomOption = () => {
 };
 
 export const Dynamic = () => {
+  const { rootId } = useTheme();
+
   const [open, setOpen] = useState(false);
 
   const nodeTypes = useMemo(() => {
@@ -112,6 +118,13 @@ export const Dynamic = () => {
               description="Please choose within the options below"
               open={open}
               onClose={() => setOpen(false)}
+              // Needed to fix storybook
+              dragOverlayProps={{
+                modifiers: [
+                  restrictToWindowEdges,
+                  (args) => restrictToSample(rootId || "", args),
+                ],
+              }}
             />
           }
         >

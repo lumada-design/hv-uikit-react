@@ -1,10 +1,10 @@
 import { useState } from "react";
-
 import { css } from "@emotion/css";
 import {
   HvButton,
   HvGlobalActions,
   theme,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import {
   Add,
@@ -19,6 +19,7 @@ import {
   HvFlowProps,
   HvFlowControls,
 } from "@hitachivantara/uikit-react-lab";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Visualizations
 import { BarChart } from "./BarChart";
@@ -26,7 +27,7 @@ import { Filter } from "./Filter";
 import { JsonInput } from "./JsonInput";
 import { LineChart } from "./LineChart";
 // The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
-import { defaultActions } from "../Base";
+import { defaultActions, restrictToSample } from "../Base";
 
 // Note types
 const nodeTypes = {
@@ -157,6 +158,8 @@ export const classes = {
 };
 
 export const Visualizations = () => {
+  const { rootId } = useTheme();
+
   const [open, setOpen] = useState(false);
 
   return (
@@ -198,6 +201,13 @@ export const Visualizations = () => {
               description="Please choose within the options below"
               open={open}
               onClose={() => setOpen(false)}
+              // Needed to fix storybook
+              dragOverlayProps={{
+                modifiers: [
+                  restrictToWindowEdges,
+                  (args) => restrictToSample(rootId || "", args),
+                ],
+              }}
             />
           }
         >
