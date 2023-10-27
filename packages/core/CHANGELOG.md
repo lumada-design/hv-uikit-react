@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.34.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.33.0...@hitachivantara/uikit-react-core@5.34.0) (2023-10-27)
+
+### Features
+
+- **DropdownMenu:** align with DS 5.7 ([e8f8baa](https://github.com/lumada-design/hv-uikit-react/commit/e8f8baa3fc0bcb917debbd7275450c3933b4070c))
+
 # 5.33.0 (2023-10-26)
 
 ### Bug Fixes
