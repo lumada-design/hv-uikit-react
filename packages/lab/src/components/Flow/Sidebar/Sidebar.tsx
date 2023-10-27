@@ -1,15 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
-
 import debounce from "lodash/debounce";
-
 import {
   DndContextProps,
   DragOverlay,
+  DragOverlayProps,
   useDndMonitor,
   useDroppable,
 } from "@dnd-kit/core";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
-
 import {
   ExtractNames,
   HvDrawer,
@@ -47,6 +45,12 @@ export interface HvFlowSidebarProps
     searchPlaceholder?: string;
     searchAriaLabel?: string;
   };
+  /**
+   * Dnd Kit drag overlay props for customization.
+   *
+   * More information can be found in the [Dnd Kit documentation](https://docs.dndkit.com/api-documentation/draggable/drag-overlay).
+   */
+  dragOverlayProps?: DragOverlayProps;
 }
 
 const DEFAULT_LABELS: HvFlowSidebarProps["labels"] = {
@@ -64,6 +68,7 @@ export const HvFlowSidebar = ({
   buttonTitle = "Close",
   classes: classesProp,
   labels: labelsProps,
+  dragOverlayProps,
   ...others
 }: HvFlowSidebarProps) => {
   const { classes } = useClasses(classesProp);
@@ -186,7 +191,7 @@ export const HvFlowSidebar = ({
           </div>
         </div>
       </HvDrawer>
-      <DragOverlay modifiers={[restrictToWindowEdges]}>
+      <DragOverlay modifiers={[restrictToWindowEdges]} {...dragOverlayProps}>
         {draggingLabel ? (
           <HvFlowSidebarGroupItem label={draggingLabel} isDragging />
         ) : null}
