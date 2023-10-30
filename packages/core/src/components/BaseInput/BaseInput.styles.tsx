@@ -1,5 +1,4 @@
 import { CSSProperties } from "react";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "@core/utils/focusUtils";
@@ -20,6 +19,11 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     },
   },
   disabled: {
+    "& $inputRoot": {
+      backgroundColor: theme.colors.atmo2,
+      borderColor: theme.colors.secondary_60,
+    },
+
     "& $inputBorderContainer": {
       backgroundColor: theme.colors.atmo4,
     },
@@ -93,21 +97,21 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     "& $inputRootMultiline": {
       "& $input": {
         border: `1px solid ${theme.colors.secondary_60}`,
-        backgroundColor: "transparent",
+        backgroundColor: theme.colors.atmo2,
       },
     },
 
     "&:hover $inputRootMultiline": {
       "& $input": {
         border: `1px solid ${theme.colors.secondary_60}`,
-        backgroundColor: "transparent",
+        backgroundColor: theme.colors.atmo2,
       },
     },
 
     "&:focus-within $inputRootMultiline": {
       "& $input": {
         border: `1px solid ${theme.colors.secondary_60}`,
-        backgroundColor: "transparent",
+        backgroundColor: theme.colors.atmo2,
       },
     },
   },
@@ -122,14 +126,14 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
   inputRootInvalid: { borderColor: theme.colors.negative },
   inputRootReadOnly: {
     borderColor: theme.colors.secondary_60,
-    backgroundColor: "transparent",
+    backgroundColor: theme.colors.atmo2,
   },
   inputRoot: {
     margin: 0,
     width: "100%",
     borderRadius: theme.radii.base,
     height: "32px",
-    border: `1px solid ${theme.colors.secondary_80}`,
+    border: `1px solid ${theme.colors.secondary}`,
     boxSizing: "border-box",
     backgroundColor: theme.colors.atmo1,
     fontFamily: theme.fontFamily.body,
@@ -152,26 +156,19 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     },
   },
   inputRootFocused: {
-    background: theme.colors.atmo1,
+    backgroundColor: theme.colors.atmo1,
     ...outlineStyles,
 
     "&:hover": {
-      background: theme.colors.atmo1,
+      backgroundColor: theme.colors.atmo1,
     },
 
-    "& $inputRootReadOnly": {
-      backgroundColor: "transparent",
+    "&$inputRootReadOnly": {
+      backgroundColor: theme.colors.atmo2,
     },
   },
   inputRootDisabled: {
-    background: theme.colors.atmo2,
-    borderColor: theme.colors.secondary_60,
     cursor: "not-allowed",
-
-    "&:hover": {
-      background: theme.colors.atmo2,
-      cursor: "not-allowed",
-    },
 
     "&&::before": {
       borderBottomStyle: "none",
@@ -185,7 +182,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     height: "auto",
 
     "& $input": {
-      border: `1px solid ${theme.colors.secondary_80}`,
+      border: `1px solid ${theme.colors.secondary}`,
       borderRadius: theme.radii.base,
       backgroundColor: theme.colors.atmo1,
       height: "auto",

@@ -262,7 +262,6 @@ export const InvalidState: StoryObj<HvInputProps> = {
 
     return (
       <HvInput
-        id="invalid-state-input"
         label="Last name"
         description="Please enter your last name"
         placeholder="Insert last name"
@@ -303,53 +302,55 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={5} container>
-          <HvGrid item xs={12}>
-            <HvInput
-              label="First name"
-              description="Please enter your first name"
-              placeholder="Insert first name"
-              required
-              minCharQuantity={2}
-              aria-errormessage="firstName-error"
-              onBlur={(_e, _value, inputValidity) => {
-                if (inputValidity.valid) {
-                  setFirstNameErrorMessage(undefined);
-                } else if (inputValidity.valueMissing) {
-                  setFirstNameErrorMessage("You must provide a first name");
-                } else if (inputValidity.tooShort) {
-                  setFirstNameErrorMessage("The first name is too short");
-                }
-              }}
-            />
-          </HvGrid>
-          <HvGrid item xs={12}>
-            <HvInput
-              label="Last name"
-              description="Please enter your last name"
-              placeholder="Insert last name"
-              defaultValue="Not a name!"
-              required
-              status={lastNameValidationState}
-              aria-errormessage="lastName-error"
-              onFocus={(_, value) => {
-                setLastNameValidationState(value ? "standBy" : "empty");
-              }}
-              onBlur={(_e, _value, inputValidity) => {
-                setLastNameValidationState("invalid");
+        <HvGrid item xs={12}>
+          <HvGrid container>
+            <HvGrid item xs={12} sm={6}>
+              <HvInput
+                label="First name"
+                description="Please enter your first name"
+                placeholder="Insert first name"
+                required
+                minCharQuantity={2}
+                aria-errormessage="firstName-error"
+                onBlur={(_e, _value, inputValidity) => {
+                  if (inputValidity.valid) {
+                    setFirstNameErrorMessage(undefined);
+                  } else if (inputValidity.valueMissing) {
+                    setFirstNameErrorMessage("You must provide a first name");
+                  } else if (inputValidity.tooShort) {
+                    setFirstNameErrorMessage("The first name is too short");
+                  }
+                }}
+              />
+            </HvGrid>
+            <HvGrid item xs={12} sm={6}>
+              <HvInput
+                label="Last name"
+                description="Please enter your last name"
+                placeholder="Insert last name"
+                defaultValue="Not a name!"
+                required
+                status={lastNameValidationState}
+                aria-errormessage="lastName-error"
+                onFocus={(_, value) => {
+                  setLastNameValidationState(value ? "standBy" : "empty");
+                }}
+                onBlur={(_e, _value, inputValidity) => {
+                  setLastNameValidationState("invalid");
 
-                if (inputValidity.valueMissing) {
-                  setLastNameErrorMessage("You must provide a last name");
-                } else {
-                  setLastNameErrorMessage(
-                    "Nice try, but the last name will always be invalid. I told you!"
-                  );
-                }
-              }}
-            />
+                  if (inputValidity.valueMissing) {
+                    setLastNameErrorMessage("You must provide a last name");
+                  } else {
+                    setLastNameErrorMessage(
+                      "Nice try, but the last name will always be invalid. I told you!"
+                    );
+                  }
+                }}
+              />
+            </HvGrid>
           </HvGrid>
         </HvGrid>
-        <HvGrid item xs={7}>
+        <HvGrid item xs={12}>
           <div
             style={{
               padding: theme.spacing("xs", "md"),
@@ -395,7 +396,6 @@ export const CustomValidation: StoryObj<HvInputProps> = {
 
     return (
       <HvInput
-        id="custom-validation-input"
         label="Compliment me"
         description="You must input the text 'hello'"
         placeholder="Insert 'hello'"
@@ -424,7 +424,6 @@ export const EventDemonstration: StoryObj<HvInputProps> = {
 
     return (
       <HvInput
-        id="event-demonstration-input"
         label="Text I will modify"
         description="Look at the browser's developer console to see the event handlers output"
         placeholder="Insert text"
@@ -457,7 +456,6 @@ export const CustomProps: StoryObj<HvInputProps> = {
   render: () => {
     return (
       <HvInput
-        id="extraProps-input"
         label="Short story of your life"
         description="Try to write more than 25 characters"
         placeholder="Insert text"
@@ -501,7 +499,6 @@ export const Suggestion: StoryObj<HvInputProps> = {
 
     return (
       <HvInput
-        id="suggestions"
         label="Select a country"
         placeholder="Country"
         value={value}

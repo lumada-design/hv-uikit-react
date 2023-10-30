@@ -1,7 +1,4 @@
 import { useState, useEffect, useContext } from "react";
-
-import { Info } from "@hitachivantara/uikit-react-icons";
-
 import dayjs from "dayjs";
 import localeData from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -14,10 +11,10 @@ import {
 } from "@core/components/Forms";
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
-
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
 import { useDefaultProps } from "@core/hooks";
+import { HvInput, HvInputProps } from "@core/components/Input";
 
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
 import { DateRangeProp } from "../types";
@@ -42,8 +39,8 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
     showDayOfWeek = false,
     onFocus,
     invalidDateLabel = "Invalid Date",
-    ...others
   } = useDefaultProps("HvCalendarHeader", props);
+
   const { classes, cx } = useClasses(classesProp);
 
   const { elementId } = useContext(HvFormElementContext);
@@ -55,6 +52,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   if (isRange(localValue)) {
     localValue = showEndDate ? localValue.endDate : localValue.startDate;
   }
+
   const [dateValue, setDateValue] = useState<
     string | Date | DateRangeProp | undefined
   >(localValue);
@@ -73,6 +71,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
 
   const validateInput = (incomingValid) =>
     incomingValid === undefined || dayjs(incomingValid).isValid();
+
   useEffect(() => {
     const valid = validateInput(localValue);
     setIsValidValue(valid);
@@ -112,7 +111,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
     }
   };
 
-  const onBlurHandler = (event) => {
+  const onBlurHandler: HvInputProps["onBlur"] = (event) => {
     if (editedValue == null) return;
     if (editedValue === "") {
       setIsValidValue(true);
@@ -122,7 +121,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
     handleNewDate(event, editedValue);
   };
 
-  const keyDownHandler = (event) => {
+  const keyDownHandler: HvInputProps["onKeyDown"] = (event) => {
     if (!isKey(event, "Enter") || editedValue == null || editedValue === "")
       return;
     event.preventDefault();
@@ -130,7 +129,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
     handleNewDate(event, editedValue);
   };
 
-  const onFocusHandler = (event) => {
+  const onFocusHandler: HvInputProps["onFocus"] = (event) => {
     if (!localValue) return;
     const formattedDate =
       isValidValue && isDate(localValue)
@@ -140,55 +139,47 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
     onFocus?.(event, formattedDate);
   };
 
-  const onChangeHandler = (event) => {
-    setEditedValue(event.target.value);
+  const onChangeHandler: HvInputProps["onChange"] = (event, val) => {
+    setEditedValue(val);
   };
-  return (
-    <>
-      <div
-        id={localId}
-        className={cx(classes.root, {
-          [classes.invalid]: !isValidValue && inputValue !== "",
-        })}
-      >
-        {showDayOfWeek && (
-          <HvTypography className={classes.headerDayOfWeek}>
-            {weekdayDisplay || "\u00A0"}
-          </HvTypography>
-        )}
 
-        <div className={classes.headerDate}>
-          <input
-            type="text"
-            id={setId(localId, "header-input")}
-            placeholder={localeFormat}
-            value={inputValue}
-            className={classes.input}
-            onBlur={onBlurHandler}
-            onFocus={onFocusHandler}
-            onChange={onChangeHandler}
-            onKeyDown={keyDownHandler}
-            aria-labelledby={label?.[0]?.id}
-            {...others}
-          />
-        </div>
-      </div>
-      {!isValidValue && inputValue !== "" && (
-        <div role="presentation" className={classes.inputBorderContainer} />
+  const isInvalid = !isValidValue && inputValue !== "";
+
+  // This component needs to be further refactored
+  // It's not possible to clear the date
+  // In a new major there's no need for all these classes
+  return (
+    <div
+      id={localId}
+      className={cx(classes.root, {
+        [classes.invalid]: isInvalid,
+      })}
+    >
+      {showDayOfWeek && (
+        <HvTypography className={classes.headerDayOfWeek}>
+          {weekdayDisplay || "\u00A0"}
+        </HvTypography>
       )}
-      <div style={{ height: 32 }}>
-        {!isValidValue && inputValue !== "" && (
-          <HvTypography
-            component="span"
-            variant="body"
-            className={classes?.invalidMessageStyling}
-          >
-            <Info color="brand" iconSize="S" />
-            {invalidDateLabel}
-          </HvTypography>
-        )}
-      </div>
-    </>
+      <HvInput
+        type="text"
+        id={setId(localId, "header-input")}
+        className={classes.headerDate}
+        classes={{
+          input: classes.input,
+          inputBorderContainer: classes.inputBorderContainer,
+          error: classes.invalidMessageStyling,
+        }}
+        placeholder={localeFormat}
+        value={inputValue}
+        aria-labelledby={label?.[0]?.id}
+        onBlur={onBlurHandler}
+        onFocus={onFocusHandler}
+        onChange={onChangeHandler}
+        onKeyDown={keyDownHandler}
+        status={isInvalid ? "invalid" : "valid"}
+        statusMessage={invalidDateLabel}
+      />
+    </div>
   );
 };
 
@@ -225,7 +216,7 @@ export interface HvCalendarHeaderProps {
    * Callback to handle input onFocus.
    */
   onFocus?: (
-    event: React.FocusEventHandler<any>,
+    event: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>,
     formattedDate: string | null
   ) => void;
   /**

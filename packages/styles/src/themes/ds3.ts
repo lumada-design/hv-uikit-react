@@ -295,51 +295,56 @@ const ds3 = makeTheme((theme) => ({
     HvBaseInput: {
       classes: {
         root: {
-          "&:hover &.HvBaseInput-inputBorderContainer": {
+          "&:hover .HvBaseInput-inputBorderContainer": {
             backgroundColor: theme.colors.secondary,
           },
 
-          "&:focus-within &.HvBaseInput-inputBorderContainer": {
+          "&:focus-within .HvBaseInput-inputBorderContainer": {
             backgroundColor: theme.colors.secondary,
           },
         },
         disabled: {
-          "&& &.HvBaseInput-input": {
+          "& .HvBaseInput-inputRoot": {
+            backgroundColor: theme.colors.atmo3,
+            borderColor: "transparent",
+          },
+
+          "&& .HvBaseInput-input": {
             color: theme.colors.secondary_60,
             WebkitTextFillColor: theme.colors.secondary_60,
           },
 
-          "& &.HvBaseInput-inputRootMultiline": {
-            "& &.HvBaseInput-input": {
+          "& .HvBaseInput-inputRootMultiline": {
+            "& .HvBaseInput-input": {
               backgroundColor: theme.colors.atmo3,
               border: `1px solid ${theme.colors.atmo4}`,
             },
           },
 
-          "&:hover &.HvBaseInput-inputRootMultiline": {
-            "& &.HvBaseInput-input": {
+          "&:hover .HvBaseInput-inputRootMultiline": {
+            "& .HvBaseInput-input": {
               backgroundColor: theme.colors.atmo3,
               border: `1px solid ${theme.colors.atmo4}`,
             },
           },
         },
         readOnly: {
-          "& &.HvBaseInput-inputRootMultiline": {
-            "& &.HvBaseInput-input": {
+          "& .HvBaseInput-inputRootMultiline": {
+            "& .HvBaseInput-input": {
               border: `1px solid transparent`,
               backgroundColor: theme.colors.atmo1,
             },
           },
 
-          "&:hover &.HvBaseInput-inputRootMultiline": {
-            "& &.HvBaseInput-input": {
+          "&:hover .HvBaseInput-inputRootMultiline": {
+            "& .HvBaseInput-input": {
               border: `1px solid transparent`,
               backgroundColor: theme.colors.atmo1,
             },
           },
 
-          "&:focus-within &.HvBaseInput-inputRootMultiline": {
-            "& &.HvBaseInput-input": {
+          "&:focus-within .HvBaseInput-inputRootMultiline": {
+            "& .HvBaseInput-input": {
               border: `1px solid transparent`,
               backgroundColor: theme.colors.atmo1,
             },
@@ -354,22 +359,14 @@ const ds3 = makeTheme((theme) => ({
         },
         inputRoot: {
           border: "none",
-          "&:hover:not(&.HvBaseInput-inputRootDisabled):not(&.HvBaseInput-inputRootInvalid):not(&.HvBaseInput-inputRootReadOnly)":
+          "&:hover:not(.HvBaseInput-inputRootDisabled):not(.HvBaseInput-inputRootInvalid):not(.HvBaseInput-inputRootReadOnly)":
             {
               borderColor: theme.colors.secondary,
             },
         },
         inputRootFocused: {
-          "& .HvBaseInput-inputRootReadOnly": {
+          "&.HvBaseInput-inputRootReadOnly": {
             backgroundColor: theme.colors.atmo1,
-          },
-        },
-        inputRootDisabled: {
-          background: theme.colors.atmo3,
-          borderColor: "transparent",
-
-          "&:hover": {
-            background: theme.colors.atmo3,
           },
         },
         inputRootMultiline: {
@@ -481,17 +478,23 @@ const ds3 = makeTheme((theme) => ({
     HvCalendarHeader: {
       classes: {
         root: {
-          borderBottom: `1px solid ${theme.colors.atmo4}`,
-          borderTop: "1px solid transparent",
-          borderLeft: "1px solid transparent",
-          borderRight: "1px solid transparent",
-          borderRadius: "0",
+          marginTop: theme.spacing("xs"),
+          paddingBottom: "32px",
+
+          "&.HvCalendarHeader-invalid": {
+            paddingBottom: 0,
+          },
+        },
+        headerDate: {
+          "& .HvBaseInput-inputBorderContainer": {
+            top: 33,
+          },
         },
         headerDayOfWeek: {
           color: theme.colors.secondary,
         },
         input: {
-          color: theme.colors.secondary,
+          height: "27px",
           fontSize: "18px",
           letterSpacing: "0.02em",
           lineHeight: "28px",
