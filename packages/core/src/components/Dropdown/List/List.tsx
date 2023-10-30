@@ -1,4 +1,4 @@
-import { MouseEvent, useContext, useEffect, useState } from "react";
+import { MouseEvent, useContext, useEffect, useMemo, useState } from "react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
@@ -110,6 +110,10 @@ const cleanHidden = (lst: HvListValue[]) =>
 const valuesExist = (values: HvListValue[]) =>
   values != null && values?.length > 0;
 
+/** Filter selected ordered element `id`s (or `label`) */
+const getSelectedIds = (list: HvListValue[]) =>
+  getSelected(list).map((item) => item.id || item.label);
+
 export const HvDropdownList = (props: HvDropdownListProps) => {
   const {
     id,
@@ -135,6 +139,10 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
   const [allSelected, setAllSelected] = useState<boolean>(false);
   const [anySelected, setAnySelected] = useState<boolean>(false);
   const { width, height } = useContext(BaseDropdownContext);
+
+  const hasChanges = useMemo(() => {
+    return String(getSelectedIds(values)) !== String(getSelectedIds(list));
+  }, [list, values]);
 
   const newLabels = {
     selectAll: labels?.selectAll,
@@ -307,6 +315,7 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
       <HvActionBar id={setId(id, "actions")}>
         <HvButton
           id={setId(id, "actions-apply")}
+          disabled={!hasChanges}
           onClick={() => onChange(cleanHidden(list), true, true, true)}
           variant="primaryGhost"
         >

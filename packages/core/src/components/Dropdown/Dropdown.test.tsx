@@ -51,8 +51,6 @@ describe("Dropdown", () => {
     const DropdownHeader = screen.getByRole("combobox");
 
     expect(DropdownHeader).toHaveAttribute("aria-expanded", "false");
-
-    expect(DropdownHeader).toHaveAttribute("aria-expanded", "false");
   });
 
   it("should be invalid", async () => {
@@ -131,5 +129,34 @@ describe("Dropdown", () => {
     await userEvent.click(DropdownHeader);
 
     expect(DropdownHeader).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("has Apply button disabled when no changes are made", async () => {
+    render(
+      <HvDropdown
+        aria-label="Main sample"
+        multiSelect
+        values={[
+          { label: "value 1" },
+          { label: "value 2", selected: true },
+          { label: "value 3" },
+          { label: "value 4" },
+        ]}
+      />
+    );
+
+    await userEvent.click(screen.getByRole("combobox"));
+
+    const getApplyButton = () => screen.getByRole("button", { name: "Apply" });
+    const getCheckBox = () => screen.getByRole("checkbox", { name: "value 1" });
+
+    expect(getApplyButton()).toBeDisabled();
+
+    await userEvent.click(getCheckBox());
+    expect(getCheckBox()).toBeChecked();
+    expect(getApplyButton()).toBeEnabled();
+
+    await userEvent.click(getCheckBox());
+    expect(getApplyButton()).toBeDisabled();
   });
 });
