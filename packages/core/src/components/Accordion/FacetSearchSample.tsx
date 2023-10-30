@@ -81,17 +81,18 @@ export const FacetSearch = () => {
           showSelectAll
           selectAllLabel="Select All"
         >
-          {Object.entries(data.Closet)
-            .filter((entry) =>
-              entry[0].toLowerCase().includes(searchStr.toLowerCase())
-            )
-            .map(([word, options], index) => (
-              <HvCheckBox
-                label={`${word} (${options.length})`}
-                value={options}
-                key={index}
-              />
-            ))}
+          {Object.entries(data.Closet).map(([word, options], index) => (
+            <HvCheckBox
+              label={`${word} (${options.length})`}
+              value={options}
+              key={index}
+              className={css({
+                display: word.toLowerCase().includes(searchStr.toLowerCase())
+                  ? "flex"
+                  : "none",
+              })}
+            />
+          ))}
         </HvCheckBoxGroup>
       </HvAccordion>
     </div>
