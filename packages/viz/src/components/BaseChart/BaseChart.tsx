@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 
-import { useForkRef } from "@mui/material";
+import { useForkRef } from "@mui/material/utils";
 
 import { AriaComponent } from "echarts/components";
 import { CanvasRenderer } from "echarts/renderers";

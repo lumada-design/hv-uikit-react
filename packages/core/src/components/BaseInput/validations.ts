@@ -1,6 +1,6 @@
 import { HTMLInputTypeAttribute } from "react";
 
-import { InputBaseComponentProps } from "@mui/material";
+import { InputBaseComponentProps } from "@mui/material/InputBase";
 
 import validationStates from "@core/components/Forms/FormElement/validationStates";
 

@@ -1,6 +1,6 @@
 import { HTMLAttributes, useCallback, useEffect } from "react";
 
-import { Hidden } from "@mui/material";
+import Hidden from "@mui/material/Hidden";
 
 import {
   Start,

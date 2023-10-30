@@ -1,6 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { snackbarClasses } from "@mui/material";
+import { snackbarClasses } from "@mui/material/Snackbar";
 
 import { createClasses } from "@core/utils/classes";
 

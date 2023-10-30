@@ -7,7 +7,7 @@ import React, {
   forwardRef,
 } from "react";
 
-import { useForkRef } from "@mui/material";
+import { useForkRef } from "@mui/material/utils";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseProps } from "@core/types/generic";

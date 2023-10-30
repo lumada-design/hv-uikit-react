@@ -10,7 +10,7 @@ import {
 } from "notistack";
 
 import { SnackbarOrigin } from "@mui/material/Snackbar";
-import { ClassNameMap } from "@mui/material";
+import { ClassNameMap } from "@mui/material/styles";
 
 import { ExtractNames } from "@core/utils/classes";
 

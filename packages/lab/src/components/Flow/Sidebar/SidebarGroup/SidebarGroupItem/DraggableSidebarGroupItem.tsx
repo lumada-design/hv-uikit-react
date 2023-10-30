@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import { useForkRef } from "@mui/material";
+import { useForkRef } from "@mui/material/utils";
 
 import { useDraggable } from "@dnd-kit/core";
 

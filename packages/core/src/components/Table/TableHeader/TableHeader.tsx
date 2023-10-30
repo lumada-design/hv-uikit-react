@@ -8,7 +8,7 @@ import {
 
 import capitalize from "lodash/capitalize";
 
-import { hexToRgb, alpha } from "@mui/material";
+import { hexToRgb, alpha } from "@mui/material/styles";
 
 import { theme } from "@hitachivantara/uikit-styles";
 

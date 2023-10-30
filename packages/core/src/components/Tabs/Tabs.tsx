@@ -1,4 +1,4 @@
-import { Tabs, TabsProps as MuiTabsProps } from "@mui/material";
+import Tabs, { TabsProps as MuiTabsProps } from "@mui/material/Tabs";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { ExtractNames } from "@core/utils/classes";

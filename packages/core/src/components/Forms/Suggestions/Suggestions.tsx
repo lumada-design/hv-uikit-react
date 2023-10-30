@@ -6,7 +6,8 @@ import React, {
   useState,
 } from "react";
 
-import { useForkRef, Popper as MuiPopper } from "@mui/material";
+import MuiPopper from "@mui/material/Popper";
+import { useForkRef } from "@mui/material/utils";
 
 import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
