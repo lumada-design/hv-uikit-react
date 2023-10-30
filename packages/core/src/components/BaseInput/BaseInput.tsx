@@ -2,10 +2,9 @@ import { useContext } from "react";
 
 import {
   InputBaseComponentProps as MuiInputBaseComponentProps,
-  InputProps as MuiInputProps,
-  Input as MuiInput,
   InputBaseProps,
-} from "@mui/material";
+} from "@mui/material/InputBase";
+import MuiInput, { InputProps as MuiInputProps } from "@mui/material/Input";
 
 import { css as emotionCss, Global } from "@emotion/react";
 

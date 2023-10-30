@@ -1,5 +1,5 @@
 import { useTheme as useMuiTheme } from "@mui/material/styles";
-import { useMediaQuery } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import isString from "lodash/isString";
 import { theme } from "@hitachivantara/uikit-styles";
 

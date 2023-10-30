@@ -7,7 +7,7 @@ import {
   forwardRef,
 } from "react";
 
-import { useForkRef } from "@mui/material";
+import { useForkRef } from "@mui/material/utils";
 
 import { setId } from "@core/utils/setId";
 import { useUniqueId } from "@core/hooks/useUniqueId";

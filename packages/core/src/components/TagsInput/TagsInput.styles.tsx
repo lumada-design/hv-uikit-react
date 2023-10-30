@@ -1,4 +1,4 @@
-import { chipClasses } from "@mui/material";
+import { chipClasses } from "@mui/material/Chip";
 
 import { theme } from "@hitachivantara/uikit-styles";
 

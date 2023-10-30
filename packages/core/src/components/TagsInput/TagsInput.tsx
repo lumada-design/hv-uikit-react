@@ -7,10 +7,8 @@ import React, {
   useState,
 } from "react";
 
-import {
-  InputBaseComponentProps as MuiInputBaseComponentProps,
-  useForkRef,
-} from "@mui/material";
+import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material/InputBase";
+import { useForkRef } from "@mui/material/utils";
 
 import { theme } from "@hitachivantara/uikit-styles";
 

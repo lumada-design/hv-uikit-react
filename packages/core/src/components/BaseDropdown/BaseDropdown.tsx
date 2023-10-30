@@ -9,12 +9,10 @@ import React, {
 
 import { createPortal } from "react-dom";
 
-import {
-  ClickAwayListener,
+import ClickAwayListener, {
   ClickAwayListenerProps,
-  PopperPlacementType,
-  PopperProps,
-} from "@mui/material";
+} from "@mui/material/ClickAwayListener";
+import { PopperPlacementType, PopperProps } from "@mui/material/Popper";
 
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 

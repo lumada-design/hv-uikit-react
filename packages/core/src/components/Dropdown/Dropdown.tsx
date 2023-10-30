@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 
-import { PopperProps, useForkRef } from "@mui/material";
+import { PopperProps } from "@mui/material/Popper";
+import { useForkRef } from "@mui/material/utils";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { setId } from "@core/utils/setId";

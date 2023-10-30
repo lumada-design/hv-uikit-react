@@ -1,6 +1,6 @@
 import React, { forwardRef, useCallback } from "react";
 
-import { SwitchProps as MuiSwitchProps } from "@mui/material";
+import { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { useUniqueId } from "@core/hooks/useUniqueId";

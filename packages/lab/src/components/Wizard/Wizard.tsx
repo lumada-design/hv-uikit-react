@@ -6,7 +6,7 @@ import {
   HvDialogProps,
 } from "@hitachivantara/uikit-react-core";
 
-import { ModalProps } from "@mui/material";
+import { ModalProps } from "@mui/material/Modal";
 
 import { HvStepNavigationProps } from "../StepNavigation";
 import { HvWizardContent } from "./WizardContent";

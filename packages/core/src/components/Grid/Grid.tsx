@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
+import MuiGrid, { GridProps as MuiGridProps } from "@mui/material/Grid";
 
 import isString from "lodash/isString";
 

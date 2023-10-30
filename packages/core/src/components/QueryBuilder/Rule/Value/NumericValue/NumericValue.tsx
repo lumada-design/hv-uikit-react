@@ -1,7 +1,8 @@
 import { memo, useCallback, useState } from "react";
 import uniqueId from "lodash/uniqueId";
 import isEmpty from "lodash/isEmpty";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { HvInput } from "@core/components/Input";
 

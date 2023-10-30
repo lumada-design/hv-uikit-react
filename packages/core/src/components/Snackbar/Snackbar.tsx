@@ -1,11 +1,10 @@
 import { SyntheticEvent } from "react";
 import Slide from "@mui/material/Slide";
-import {
+import MuiSnackbar, {
   SnackbarCloseReason,
   SnackbarOrigin,
   SnackbarProps as MuiSnackbarProps,
 } from "@mui/material/Snackbar";
-import { Snackbar as MuiSnackbar } from "@mui/material";
 
 import capitalize from "lodash/capitalize";
 

@@ -2,7 +2,7 @@ import { useState, useRef, useMemo, forwardRef } from "react";
 
 import { Time } from "@internationalized/date";
 
-import { useForkRef } from "@mui/material";
+import { useForkRef } from "@mui/material/utils";
 
 import { useTimeField } from "@react-aria/datepicker";
 import {

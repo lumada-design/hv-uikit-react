@@ -1,6 +1,6 @@
 import React, { forwardRef, useCallback, useState } from "react";
 
-import { RadioProps as MuiRadioProps } from "@mui/material";
+import { RadioProps as MuiRadioProps } from "@mui/material/Radio";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvBaseRadio } from "@core/components/BaseRadio";
