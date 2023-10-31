@@ -1,9 +1,12 @@
 import {
   Drawer as MuiDrawer,
   DrawerProps as MuiDrawerProps,
+  Backdrop as MuiBackdrop,
 } from "@mui/material";
 
 import { Close } from "@hitachivantara/uikit-react-icons";
+
+import { theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
@@ -12,6 +15,8 @@ import { withTooltip } from "@core/hocs/withTooltip";
 import { setId } from "@core/utils/setId";
 import { ExtractNames } from "@core/utils/classes";
 import { HvButton } from "@core/components/Button";
+import { useTheme } from "@core/hooks/useTheme";
+import { hexToRgbA } from "@core/utils/hexToRgbA";
 
 import { staticClasses, useClasses } from "./Drawer.styles";
 
@@ -60,6 +65,14 @@ export interface HvDrawerProps
    * Title for the button close.
    */
   buttonTitle?: string;
+  /**
+   * Show backdrop when drawer ix open.
+   */
+  showBackdrop?: boolean;
+  /**
+   * Prevent closing the dialog when clicking on the backdrop.
+   */
+  disableBackdropClick?: boolean;
   /** @ignore */
   ref?: MuiDrawerProps["ref"];
   /** @ignore */
@@ -81,10 +94,13 @@ export const HvDrawer = (props: HvDrawerProps) => {
     onClose,
     anchor = "right",
     buttonTitle = "Close",
+    showBackdrop = true,
+    disableBackdropClick = false,
     ...others
   } = useDefaultProps("HvDrawer", props);
 
-  const { classes, cx } = useClasses(classesProp);
+  const { classes, cx, css } = useClasses(classesProp);
+  const { colors } = useTheme();
 
   const closeButtonDisplay = () => <Close role="none" />;
 
@@ -93,29 +109,46 @@ export const HvDrawer = (props: HvDrawerProps) => {
     : closeButtonDisplay;
 
   return (
-    <MuiDrawer
-      className={cx(classes.root, className)}
-      id={id}
-      anchor={anchor}
-      open={open}
-      PaperProps={{
-        classes: {
-          root: classes.paper,
-        },
-      }}
-      onClose={onClose}
-      {...others}
-    >
-      <HvButton
-        id={setId(id, "close")}
-        className={classes.closeButton}
-        variant="secondaryGhost"
-        onClick={onClose}
-        aria-label={buttonTitle}
+    <>
+      <MuiDrawer
+        className={cx(classes.root, className)}
+        id={id}
+        anchor={anchor}
+        open={open}
+        PaperProps={{
+          classes: {
+            root: classes.paper,
+          },
+        }}
+        onClose={onClose}
+        {...others}
       >
-        <CloseButtonTooltipWrapper />
-      </HvButton>
-      {children}
-    </MuiDrawer>
+        <HvButton
+          id={setId(id, "close")}
+          className={classes.closeButton}
+          variant="secondaryGhost"
+          onClick={onClose}
+          aria-label={buttonTitle}
+        >
+          <CloseButtonTooltipWrapper />
+        </HvButton>
+        {children}
+      </MuiDrawer>
+      {showBackdrop && (
+        <MuiBackdrop
+          open={!!open}
+          onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+            if (disableBackdropClick) return;
+            onClose?.(event, "backdropClick");
+          }}
+          className={cx(
+            css({
+              background: hexToRgbA(colors?.atmo4 || theme.colors.atmo4),
+            }),
+            classes.background
+          )}
+        />
+      )}
+    </>
   );
 };
