@@ -1,26 +1,11 @@
-import { HTMLAttributes, forwardRef, useMemo, useState } from "react";
+import { forwardRef, useMemo, useState } from "react";
 
 import { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { SourceProps } from "@storybook/blocks";
 import { css } from "@emotion/css";
-import { DndContext } from "@dnd-kit/core";
-import {
-  SortableContext,
-  useSortable,
-  verticalListSortingStrategy,
-} from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
-import { useForkRef } from "@mui/material";
 
 import { theme } from "@hitachivantara/uikit-styles";
-import {
-  Add,
-  Doc,
-  Drag,
-  DropDownXS,
-  Folders,
-  Remove,
-} from "@hitachivantara/uikit-react-icons";
+import { Doc, DropDownXS, Folders } from "@hitachivantara/uikit-react-icons";
 import {
   HvButton,
   HvLoading,
@@ -43,13 +28,60 @@ const delay = (ms: number) =>
     setTimeout(resolve, ms);
   });
 
-const meta: Meta<HvTreeViewProps<any>> = {
+export default {
   title: "Components/Tree View",
-  component: HvTreeView,
-  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
+  subtitle: "Blah",
+  // @ts-expect-error
+  component: "HvTreeView",
+  argTypes: {
+    children: {
+      description: "HvTreeView content. Typically `HvTreeItem` elements.",
+      table: {
+        type: { summary: "ReactNode", disable: true },
+      },
+    },
+    classes: {
+      description:
+        "A Jss Object used to override or extend the styles applied.",
+      table: {
+        type: { summary: "HvTreeViewClasses" },
+      },
+      control: { disable: true },
+    },
+    multiSelect: {
+      description: "Whether the tree view allows multiple selection.",
+      defaultValue: { summary: false },
+      table: {
+        type: { summary: "boolean" },
+      },
+    },
+    expanded: {
+      description: "Expanded node ids, when expansion is controlled.",
+    },
+    defaultExpanded: {
+      description: "Expanded node ids, when expansion is uncontrolled.",
+    },
+    selected: {
+      description:
+        "Selected node ids when controlled. Array of ids when multiSelect, else just the id string",
+    },
+    defaultSelected: {
+      description:
+        "Selected node ids when uncontrolled. Array of ids when multiSelect, else just the id string",
+    },
+    onNodeSelect: {
+      description: "Callback fired when tree items are selected/unselected.",
+    },
+    onNodeToggle: {
+      description: "Callback fired when tree items are expanded/collapsed.",
+    },
+    onNodeFocus: {
+      description: "Callback fired when tree items are focused.",
+    },
+  },
+  // @ts-expect-error
   subcomponents: { HvTreeItem },
-};
-export default meta;
+} satisfies Meta<typeof HvTreeView>;
 
 const SimpleTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
   (props, ref) => {
@@ -65,117 +97,6 @@ const SimpleTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
             <Icon />
             <span style={{ flex: 1 }}>{label}</span>
           </div>
-        }
-        {...others}
-      >
-        {children}
-      </HvTreeItem>
-    );
-  }
-);
-
-const Separator = (props: HTMLAttributes<HTMLDivElement>) => (
-  <div
-    role="separator"
-    className={css({
-      width: 1,
-      height: "100%",
-      borderLeft: `1px solid ${theme.colors.atmo4}`,
-      margin: theme.spacing(0, 1),
-    })}
-    {...props}
-  />
-);
-
-/** Complex custom tree item */
-const CustomTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
-  (props, ref) => {
-    const { children, nodeId, label, ...others } = props;
-    const { attributes, listeners, setNodeRef, transform, transition } =
-      useSortable({ id: nodeId });
-    const forkedRef = useForkRef(ref, setNodeRef);
-
-    const border = `1px solid ${theme.colors.atmo4}`;
-    const height = 8 * 7;
-
-    return (
-      <HvTreeItem
-        ref={forkedRef}
-        nodeId={nodeId}
-        style={{ transition, transform: CSS.Transform.toString(transform) }}
-        classes={{
-          group: css({
-            // borderLeft: border,
-            // marginLeft: theme.space.md,
-          }),
-          content: css({
-            height,
-            paddingRight: 0,
-            marginBottom: theme.space.xs,
-            "&:hover": {
-              backgroundColor: "unset",
-            },
-          }),
-          label: css({
-            height,
-            backgroundColor: theme.colors.atmo1,
-            display: "flex",
-            alignItems: "center",
-            border,
-            borderRadius: theme.radii.round,
-            "&&": {
-              paddingLeft: 0,
-            },
-          }),
-          focused: css({
-            backgroundColor: "unset",
-          }),
-          iconContainer: css({
-            marginLeft: -6,
-            width: "32px !important",
-            border,
-            borderRadius: "50%",
-            "&:empty": {
-              border: "none",
-            },
-          }),
-        }}
-        label={
-          <>
-            <Drag {...attributes} {...listeners} />
-            <Separator style={{ marginLeft: 0 }} />
-            <div
-              className={css({
-                display: "flex",
-                flexDirection: "column",
-                flex: 1,
-              })}
-            >
-              <HvTypography variant="label">{label}</HvTypography>
-              <HvTypography variant="caption2">
-                This is a description
-              </HvTypography>
-            </div>
-            <HvTypography variant="caption2">Optional Info</HvTypography>
-            <Separator style={{ marginRight: 0 }} />
-            <div
-              className={css({
-                display: "flex",
-                height: "100%",
-                alignItems: "center",
-                borderTopRightRadius: theme.radii.round,
-                borderBottomRightRadius: theme.radii.round,
-                backgroundColor: theme.colors.atmo2,
-              })}
-            >
-              <HvButton icon>
-                <Add iconSize="XS" role="none" />
-              </HvButton>
-              <HvButton icon>
-                <Remove iconSize="XS" role="none" />
-              </HvButton>
-            </div>
-          </>
         }
         {...others}
       >
@@ -398,9 +319,58 @@ export const Controlled: StoryFn<HvTreeViewProps<true>> = () => {
   );
 };
 
+Controlled.parameters = {
+  docs: {
+    source: { transform: sourceTransform },
+    description: {
+      story:
+        "The tree view can be controlled by passing in `expanded`/`onNodeToggle` and `selected`/`onNodeSelect` props to control expansion and selection state respectively. <br /> When using `multiSelect`, the values and callbacks are of type `string[]`, and `string` otherwise.",
+    },
+  },
+};
+
 export const DataObject: StoryFn<HvTreeViewProps<false>> = () => {
+  type TreeData = { id: string; label: string; children?: TreeData[] };
+
+  const treeDataObject = {
+    id: "user",
+    label: "User",
+    children: [
+      {
+        id: "Applications",
+        label: "Applications",
+        children: [
+          { id: "Code", label: "Code.app" },
+          { id: "Chrome", label: "Chrome.app" },
+          { id: "Firefox", label: "Firefox.app" },
+        ],
+      },
+      {
+        id: "Documents",
+        label: "Documents",
+        children: [{ id: "secret", label: "secret.txt" }],
+      },
+      {
+        id: "git",
+        label: "git",
+        children: [
+          {
+            id: "uikit-react",
+            label: "uikit-react",
+            children: [{ id: "uikit-pkg", label: "package.json" }],
+          },
+          {
+            id: "app-shell",
+            label: "app-shell",
+            children: [{ id: "as-pkg", label: "package.json" }],
+          },
+        ],
+      },
+    ],
+  } satisfies TreeData;
+
   /** Render tree view items */
-  const renderItem = ({ id, label, children }: MyTreeData) => (
+  const renderItem = ({ id, label, children }: TreeData) => (
     <SimpleTreeItem key={id} nodeId={id} label={label}>
       {children?.map(renderItem)}
     </SimpleTreeItem>
@@ -409,7 +379,7 @@ export const DataObject: StoryFn<HvTreeViewProps<false>> = () => {
   return (
     <HvPanel style={{ width: 400 }}>
       <HvTreeView aria-label="file system navigator">
-        {renderItem(dataObject)}
+        {renderItem(treeDataObject)}
       </HvTreeView>
     </HvPanel>
   );
@@ -417,16 +387,11 @@ export const DataObject: StoryFn<HvTreeViewProps<false>> = () => {
 
 DataObject.parameters = {
   docs: {
+    source: { transform: sourceTransform },
     description: {
       story:
         "Sometimes the tree data is in an object shape. These can be easily converted to `HvTreeItem` nodes using a recursive `renderItem` function.",
     },
-  },
-};
-
-DataObject.parameters = {
-  docs: {
-    source: { transform: sourceTransform },
   },
 };
 
@@ -450,6 +415,10 @@ export const AsyncLoading: StoryFn<HvTreeViewProps<true>> = () => {
 AsyncLoading.parameters = {
   docs: {
     source: { transform: sourceTransform },
+    description: {
+      story:
+        "Sometimes the full tree data is unknown or paginated. This sample showcases how a custom `LoadingItem` can be used to handle server-side tree data.",
+    },
   },
 };
 
@@ -508,43 +477,4 @@ export const VerticalNavigation: StoryFn<HvTreeViewProps<false>> = () => {
       </HvTreeView>
     </HvPanel>
   );
-};
-
-export const Custom: StoryFn<HvTreeViewProps<false>> = () => {
-  /** Render tree view items */
-  const renderItem = ({ id, label, children }: MyTreeData) => (
-    <CustomTreeItem key={id} nodeId={id} label={label}>
-      {Array.isArray(children) && (
-        <SortableContext
-          items={children?.map((child) => child.id) ?? []}
-          strategy={verticalListSortingStrategy}
-        >
-          {children.map(renderItem)}
-        </SortableContext>
-      )}
-    </CustomTreeItem>
-  );
-
-  return (
-    <div style={{ width: 400 }}>
-      <DndContext>
-        <HvTreeView
-          aria-label="file system navigator"
-          defaultExpanded={["0", "2"]}
-        >
-          {renderItem(dataObject)}
-        </HvTreeView>
-      </DndContext>
-    </div>
-  );
-};
-
-Custom.parameters = {
-  docs: {
-    source: { transform: sourceTransform },
-    description: {
-      story:
-        "A sample with a custom `HvTreeItem` styles that includes sibling drag & drop  using [`dnd-kit`](https://docs.dndkit.com/presets/sortable).",
-    },
-  },
 };
