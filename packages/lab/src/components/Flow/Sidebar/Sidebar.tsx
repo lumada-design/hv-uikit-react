@@ -148,6 +148,7 @@ export const HvFlowSidebar = ({
         classes={{
           paper: classes.drawerPaper,
         }}
+        showBackdrop={false}
         anchor={anchor}
         buttonTitle={buttonTitle}
         {...others}
