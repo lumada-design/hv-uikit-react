@@ -755,6 +755,11 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
   };
 
 export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
+  parameters: {
+    eyes: {
+      waitBeforeCapture: 5000,
+    },
+  },
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<
       NavigationData[]
