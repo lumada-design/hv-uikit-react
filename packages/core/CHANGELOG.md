@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.35.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.34.0...@hitachivantara/uikit-react-core@5.35.0) (2023-11-02)
+
+### Bug Fixes
+
+- **Dropdown:** disable Apply button when no changes are made ([43bad71](https://github.com/lumada-design/hv-uikit-react/commit/43bad71bab5ecf603bd331b342d817f6be66dfb2))
+
+### Features
+
+- **Input:** align with DS 5.7 ([9b7753a](https://github.com/lumada-design/hv-uikit-react/commit/9b7753a7c1d77649ae2baad967b07f0a4447151e))
+
 # [5.34.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.33.0...@hitachivantara/uikit-react-core@5.34.0) (2023-10-27)
 
 ### Features

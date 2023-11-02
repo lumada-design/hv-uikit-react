@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.16.0 (2023-11-02)
+
+### Features
+
+- **Input:** align with DS 5.7 ([9b7753a](https://github.com/lumada-design/hv-uikit-react/commit/9b7753a7c1d77649ae2baad967b07f0a4447151e))
+
 # 5.15.0 (2023-10-26)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.13.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.12.1...@hitachivantara/uikit-react-lab@5.13.0) (2023-11-02)
+
+### Features
+
+- **FlowSidebar:** drag overlay customization ([f2d0be7](https://github.com/lumada-design/hv-uikit-react/commit/f2d0be7ef05942dd01a2a22d5eb42c57e4442474))
+
 ## [5.12.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.12.0...@hitachivantara/uikit-react-lab@5.12.1) (2023-10-27)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
