@@ -24,6 +24,9 @@ import {
   useHvTableSticky,
 } from "@hitachivantara/uikit-react-core";
 
+import FacetSearchRaw from "./FacetSearchSample?raw";
+import { FacetSearch } from "./FacetSearchSample";
+
 const styles: { [key: string]: CSSInterpolation } = {
   listContainer: {
     "& > li": {
@@ -428,4 +431,17 @@ export const Typography: StoryObj<HvAccordionProps> = {
       </HvBox>
     );
   },
+};
+
+export const FacetSearchSample: StoryObj = {
+  parameters: {
+    docs: {
+      source: { code: FacetSearchRaw },
+      description: {
+        story:
+          "A Sample of an example implementation of the Facet Search design pattern.",
+      },
+    },
+  },
+  render: () => <FacetSearch />,
 };

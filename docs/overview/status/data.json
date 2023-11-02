@@ -311,6 +311,12 @@
       "notes": ""
     },
     {
+      "name": "Facet Search",
+      "features": "",
+      "status": "Supported",
+      "notes": "See the Facet Search Sample located in the Accordion section"
+    },
+    {
       "name": "File Uploader",
       "features": "",
       "status": "✅",
