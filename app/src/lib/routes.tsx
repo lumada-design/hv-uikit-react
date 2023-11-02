@@ -17,19 +17,19 @@ const Welcome = lazy(() => import("../../../templates/Welcome"));
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<Navigate to="/preview" replace />} />
+    <Route path="/" element={<Navigate to="/home" replace />} />
     <Route path="/components" element={<Components />} />
+    <Route path="/home" element={<Instructions />} />
     <Route
-      path="/preview"
-      element={<Navigate to="/preview/instructions" replace />}
+      path="/templates"
+      element={<Navigate to="/templates/welcome" replace />}
     />
-    <Route path="/preview/instructions" element={<Instructions />} />
-    <Route path="/preview/welcome" element={<Welcome />} />
-    <Route path="/preview/dashboard" element={<Dashboard />} />
-    <Route path="/preview/asset-inventory" element={<AssetInventory />} />
-    <Route path="/preview/list-view" element={<ListView />} />
-    <Route path="/preview/form" element={<Form />} />
-    <Route path="/preview/details-view" element={<DetailsView />} />
+    <Route path="/templates/welcome" element={<Welcome />} />
+    <Route path="/templates/dashboard" element={<Dashboard />} />
+    <Route path="/templates/asset-inventory" element={<AssetInventory />} />
+    <Route path="/templates/list-view" element={<ListView />} />
+    <Route path="/templates/form" element={<Form />} />
+    <Route path="/templates/details-view" element={<DetailsView />} />
     <Route path="/*" element={<NotFound />} />
   </Routes>
 );
