@@ -75,8 +75,8 @@ export const tutorialData: StepProps[] = [
     },
   },
   {
-    title: "Preview",
-    content: "This is the preview tab.",
+    title: "Templates",
+    content: "This is the templates tab.",
     orientation: "up",
     size: {
       width: 350,
@@ -89,7 +89,7 @@ export const tutorialData: StepProps[] = [
   {
     title: "Templates",
     content:
-      "In the Preview section you can view your theme in several different templates.",
+      "In this section you can view your theme in several different templates.",
     orientation: "up",
     size: {
       width: 350,
