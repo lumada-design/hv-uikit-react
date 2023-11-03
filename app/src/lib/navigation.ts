@@ -26,6 +26,7 @@ const navigation = [
       },
     ],
   },
+  { id: "flow", label: "Flow", path: "/flow" },
 ];
 
 export default navigation;
