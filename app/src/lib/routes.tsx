@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 const Components = lazy(() => import("~/pages/Components"));
 const Instructions = lazy(() => import("~/pages/Instructions"));
+const Flow = lazy(() => import("~/pages/Flow"));
+const DashboardPreview = lazy(() => import("~/pages/Flow/DashboardPreview"));
 const NotFound = lazy(() => import("~/pages/NotFound"));
 
 // Templates
@@ -20,6 +22,8 @@ const AppRoutes = () => (
     <Route path="/" element={<Navigate to="/home" replace />} />
     <Route path="/components" element={<Components />} />
     <Route path="/home" element={<Instructions />} />
+    <Route path="/flow" element={<Flow />} />
+    <Route path="/dashboard-preview" element={<DashboardPreview />} />
     <Route
       path="/templates"
       element={<Navigate to="/templates/welcome" replace />}
