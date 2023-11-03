@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Down, Up } from "@hitachivantara/uikit-react-icons";
 
 import { HvBaseProps } from "@core/types/generic";
@@ -40,59 +41,69 @@ export interface HvSectionProps
 /**
  * Sections allow grouping information on a page under the same topic.
  */
-export const HvSection = (props: HvSectionProps) => {
-  const {
-    id,
-    classes: classesProp,
-    className,
-    title,
-    expandable,
-    expanded,
-    defaultExpanded = true,
-    actions,
-    onToggle,
-    expandButtonProps,
-    children,
-    ...others
-  } = useDefaultProps("HvSection", props);
+export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
+  (props, ref) => {
+    const {
+      id,
+      classes: classesProp,
+      className,
+      title,
+      expandable,
+      expanded,
+      defaultExpanded = true,
+      actions,
+      onToggle,
+      expandButtonProps,
+      children,
+      ...others
+    } = useDefaultProps("HvSection", props);
 
-  const { classes, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-  const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
+    const [isOpen, setIsOpen] = useControlled(
+      expanded,
+      Boolean(defaultExpanded)
+    );
 
-  const elementId = useUniqueId(id, "hvSection");
-  const contentId = setId(elementId, "content");
+    const elementId = useUniqueId(id, "hvSection");
+    const contentId = setId(elementId, "content");
 
-  const showContent = expandable ? !!isOpen : true;
+    const showContent = expandable ? !!isOpen : true;
 
-  return (
-    <div id={elementId} className={cx(classes.root, className)} {...others}>
-      <div className={classes.header}>
-        {expandable && (
-          <HvButton
-            icon
-            onClick={(event) => {
-              setIsOpen((o) => !o);
-              onToggle?.(event, !isOpen);
-            }}
-            aria-expanded={isOpen}
-            aria-controls={contentId}
-            aria-label={isOpen ? "Collapse" : "Expand"}
-            {...expandButtonProps}
-          >
-            {isOpen ? <Up /> : <Down />}
-          </HvButton>
-        )}
-        {title}
-        <div className={classes.actions}>{actions}</div>
-      </div>
+    return (
       <div
-        id={contentId}
-        hidden={!isOpen}
-        className={cx(classes.content, { [classes.hidden]: !showContent })}
+        ref={ref}
+        id={elementId}
+        className={cx(classes.root, className)}
+        {...others}
       >
-        {children}
+        <div className={classes.header}>
+          {expandable && (
+            <HvButton
+              icon
+              onClick={(event) => {
+                setIsOpen((o) => !o);
+                onToggle?.(event, !isOpen);
+              }}
+              aria-expanded={isOpen}
+              aria-controls={contentId}
+              aria-label={isOpen ? "Collapse" : "Expand"}
+              {...expandButtonProps}
+            >
+              {isOpen ? <Up /> : <Down />}
+            </HvButton>
+          )}
+          {title}
+          <div className={classes.actions}>{actions}</div>
+        </div>
+        <div
+          id={contentId}
+          hidden={!isOpen}
+          className={cx(classes.content, { [classes.hidden]: !showContent })}
+        >
+          {children}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
