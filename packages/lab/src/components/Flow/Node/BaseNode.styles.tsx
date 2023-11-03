@@ -1,6 +1,6 @@
 import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
-export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
+export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
   root: {
     borderRadius: theme.radii.round,
     backgroundColor: theme.colors.atmo1,

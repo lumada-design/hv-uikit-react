@@ -8,21 +8,21 @@ import { Down, Up } from "@hitachivantara/uikit-react-icons";
 import { HvFlowNodeParam } from "../types";
 import { staticClasses, useClasses } from "./ParamsNode.styles";
 import ParamRenderer from "./Parameters/ParamRenderer";
-import { HvFlowNode, HvFlowNodeProps } from "./Node";
+import { HvFlowBaseNode, HvFlowBaseNodeProps } from "./BaseNode";
 
 export { staticClasses as flowParamsNodeClasses };
 // TODO How to include here the types from the parent component?
 export type HvFlowPramsNodeClasses = ExtractNames<typeof useClasses>;
 
 export interface HvFlowParamsNodeProps<T>
-  extends Omit<HvFlowNodeProps<T>, "classes">,
+  extends Omit<HvFlowBaseNodeProps<T>, "classes">,
     NodeProps<T> {
   /** Node expanded */
   expanded?: boolean;
   /** Node parameters */
   params?: HvFlowNodeParam[];
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvFlowPramsNodeClasses | HvFlowNodeProps<T>["classes"];
+  classes?: HvFlowPramsNodeClasses | HvFlowBaseNodeProps<T>["classes"];
 }
 
 export const HvFlowParamsNode = ({
@@ -47,9 +47,9 @@ export const HvFlowParamsNode = ({
   if (!node) return null;
 
   return (
-    <HvFlowNode
+    <HvFlowBaseNode
       id={id}
-      classes={classesProp as HvFlowNodeProps<unknown>["classes"]}
+      classes={classesProp as HvFlowBaseNodeProps<unknown>["classes"]}
       headerItems={
         <>
           {headerItems}
@@ -68,6 +68,6 @@ export const HvFlowParamsNode = ({
           <ParamRenderer nodeId={id} params={params} data={node?.data} />
         </div>
       )}
-    </HvFlowNode>
+    </HvFlowBaseNode>
   );
 };

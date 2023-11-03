@@ -20,15 +20,19 @@ import {
 import { Delete, Duplicate } from "@hitachivantara/uikit-react-icons";
 import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
 
-import { HvFlowNodeAction, HvFlowNodeInput, HvFlowNodeOutput } from "../types";
+import {
+  HvFlowNodeAction,
+  HvFlowNodeInput,
+  HvFlowNodeOutput,
+} from "../types/index";
 import { useNodeMetaRegistry } from "../FlowContext/NodeMetaContext";
-import { staticClasses, useClasses } from "./Node.styles";
+import { staticClasses, useClasses } from "./BaseNode.styles";
 
-export { staticClasses as flowNodeClasses };
+export { staticClasses as flowBaseNodeClasses };
 
-export type HvFlowNodeClasses = ExtractNames<typeof useClasses>;
+export type HvFlowBaseNodeClasses = ExtractNames<typeof useClasses>;
 
-export interface HvFlowNodeProps<T>
+export interface HvFlowBaseNodeProps<T>
   extends Omit<HvBaseProps, "id">,
     NodeProps<T> {
   /** Header title */
@@ -43,9 +47,10 @@ export interface HvFlowNodeProps<T>
   inputs?: HvFlowNodeInput[];
   /** Node outputs */
   outputs?: HvFlowNodeOutput[];
+  /** Node actions */
   nodeActions?: HvFlowNodeAction[];
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvFlowNodeClasses;
+  classes?: HvFlowBaseNodeClasses;
 }
 
 const isInputConnected = (
@@ -76,7 +81,7 @@ const defaultActions: HvFlowNodeAction[] = [
 const renderedIcon = (actionIcon: HvActionGeneric["icon"]) =>
   isValidElement(actionIcon) ? actionIcon : (actionIcon as Function)?.();
 
-export const HvFlowNode = ({
+export const HvFlowBaseNode = ({
   id,
   title,
   headerItems,
@@ -88,10 +93,10 @@ export const HvFlowNode = ({
   classes: classesProp,
   className,
   children,
-}: HvFlowNodeProps<unknown>) => {
+}: HvFlowBaseNodeProps<unknown>) => {
   const { registerNode, unregisterNode } = useNodeMetaRegistry();
   useEffect(() => {
-    registerNode(id, { title, inputs, outputs });
+    registerNode(id, { label: title || "", inputs, outputs });
     return () => unregisterNode(id);
   }, [id, title, inputs, outputs, registerNode, unregisterNode]);
 
