@@ -1,4 +1,5 @@
 import { ds3, ds5, HvProvider, theme } from "@hitachivantara/uikit-react-core";
+import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
 import "~/lib/i18n";
 import Content from "~/generator/Content";
@@ -20,17 +21,19 @@ const App = () => {
         rootElementId="hv-root"
         cssTheme="scoped"
       >
-        <GeneratorProvider>
-          <div
-            style={{
-              flex: 1,
-              overflowY: "auto",
-            }}
-          >
-            <Content />
-          </div>
-          <Sidebar />
-        </GeneratorProvider>
+        <HvVizProvider>
+          <GeneratorProvider>
+            <div
+              style={{
+                flex: 1,
+                overflowY: "auto",
+              }}
+            >
+              <Content />
+            </div>
+            <Sidebar />
+          </GeneratorProvider>
+        </HvVizProvider>
       </HvProvider>
     </div>
   );
