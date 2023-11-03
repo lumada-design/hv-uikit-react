@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.13.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.13.0...@hitachivantara/uikit-react-lab@5.13.1) (2023-11-03)
+
+### Bug Fixes
+
+- **Drawer:** add missing backdrop ([f1e2e7d](https://github.com/lumada-design/hv-uikit-react/commit/f1e2e7dec4ad01ee294fdf79ffe081ee47493704))
+
 # [5.13.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.12.1...@hitachivantara/uikit-react-lab@5.13.0) (2023-11-02)
 
 ### Features

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.36.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.35.0...@hitachivantara/uikit-react-core@5.36.0) (2023-11-03)
+
+### Bug Fixes
+
+- **Drawer:** add missing backdrop ([f1e2e7d](https://github.com/lumada-design/hv-uikit-react/commit/f1e2e7dec4ad01ee294fdf79ffe081ee47493704))
+
+### Features
+
+- **facetSearch:** add facet search sample ([d890cbb](https://github.com/lumada-design/hv-uikit-react/commit/d890cbb7a0e2a7e602f3cc6b5190ce22ffb57b74))
+- **Input:** align with DS 5.7 ([9b7753a](https://github.com/lumada-design/hv-uikit-react/commit/9b7753a7c1d77649ae2baad967b07f0a4447151e))
+- **TreeView:** add component ([#3773](https://github.com/lumada-design/hv-uikit-react/issues/3773)) ([7925f62](https://github.com/lumada-design/hv-uikit-react/commit/7925f6201d47a1219ad7834974d7f20493249479))
+
 # [5.35.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.34.0...@hitachivantara/uikit-react-core@5.35.0) (2023-11-02)
 
 ### Bug Fixes
