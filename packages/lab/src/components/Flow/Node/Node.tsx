@@ -1,4 +1,4 @@
-import { SyntheticEvent, isValidElement } from "react";
+import { SyntheticEvent, isValidElement, useState } from "react";
 
 import {
   ExtractNames,
@@ -10,18 +10,20 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { getColor } from "@hitachivantara/uikit-styles";
-import { Info } from "@hitachivantara/uikit-react-icons";
+import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
 
-import { useFlowContext } from "../hooks";
-import { staticClasses, useClasses } from "./DaNode.styles";
-import { HvFlowParamsNode, HvFlowParamsNodeProps } from "./ParamsNode";
+import { useFlowContext, useFlowNode } from "../hooks/index";
+import { HvFlowNodeParam } from "../types/index";
+import { staticClasses, useClasses } from "./Node.styles";
+import ParamRenderer from "./Parameters/ParamRenderer";
+import { HvFlowBaseNode, HvFlowBaseNodeProps } from "./BaseNode";
 
-export { staticClasses as flowDaNodeClasses };
+export { staticClasses as flowNodeClasses };
 // TODO How to include here the types from the parent component?
-export type HvFlowDaNodeClasses = ExtractNames<typeof useClasses>;
+export type HvFlowNodeClasses = ExtractNames<typeof useClasses>;
 
-export interface HvFlowDaNodeProps<T>
-  extends Omit<HvFlowParamsNodeProps<T>, "classes"> {
+export interface HvFlowNodeProps<T>
+  extends Omit<HvFlowBaseNodeProps<T>, "classes"> {
   /** Node description */
   description?: string;
   /** Node actions */
@@ -30,14 +32,18 @@ export interface HvFlowDaNodeProps<T>
   actionCallback?: HvActionsGenericProps["actionsCallback"];
   /** Node maximum number of actions visible */
   maxVisibleActions?: number;
+  /** Node expanded */
+  expanded?: boolean;
+  /** Node parameters */
+  params?: HvFlowNodeParam[];
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvFlowDaNodeClasses | HvFlowParamsNodeProps<T>["classes"];
+  classes?: HvFlowNodeClasses | HvFlowBaseNodeProps<T>["classes"];
 }
 
 const renderedIcon = (actionIcon: HvActionGeneric["icon"]) =>
   isValidElement(actionIcon) ? actionIcon : (actionIcon as Function)?.();
 
-export const HvDaFlowNode = ({
+export const HvFlowNode = ({
   id,
   type,
   headerItems,
@@ -45,11 +51,15 @@ export const HvDaFlowNode = ({
   actions,
   actionCallback,
   maxVisibleActions = 1,
+  expanded = false,
+  params,
   classes: classesProp,
   children,
   ...props
-}: HvFlowDaNodeProps<unknown>) => {
-  const { classes } = useClasses(classesProp as HvFlowDaNodeClasses);
+}: HvFlowNodeProps<unknown>) => {
+  const { classes } = useClasses(classesProp as HvFlowNodeClasses);
+  const [showParams, setShowParams] = useState(expanded);
+  const { node } = useFlowNode(id);
 
   const { nodeGroups, nodeTypes, defaultActions } = useFlowContext();
   const groupId = nodeTypes?.[type].meta?.groupId;
@@ -65,8 +75,10 @@ export const HvDaFlowNode = ({
   const actsVisible = actions?.slice(0, maxVisibleActions);
   const actsDropdown = actions?.slice(maxVisibleActions);
 
+  const hasParams = !!(params && params.length > 0);
+
   return (
-    <HvFlowParamsNode
+    <HvFlowBaseNode
       id={id}
       type={type}
       title={groupLabel}
@@ -75,7 +87,7 @@ export const HvDaFlowNode = ({
       inputs={inputs}
       outputs={outputs}
       nodeActions={defaultActions}
-      classes={classesProp as HvFlowParamsNodeProps<unknown>["classes"]}
+      classes={classesProp as HvFlowBaseNodeProps<unknown>["classes"]}
       headerItems={
         <>
           {headerItems}
@@ -85,6 +97,11 @@ export const HvDaFlowNode = ({
                 <Info />
               </div>
             </HvTooltip>
+          )}
+          {hasParams && (
+            <HvButton icon onClick={() => setShowParams((p) => !p)}>
+              {showParams ? <Up /> : <Down />}
+            </HvButton>
           )}
         </>
       }
@@ -137,6 +154,11 @@ export const HvDaFlowNode = ({
         </div>
       )}
       {children}
-    </HvFlowParamsNode>
+      {showParams && params && (
+        <div className={classes.paramsContainer}>
+          <ParamRenderer nodeId={id} params={params} data={node?.data} />
+        </div>
+      )}
+    </HvFlowBaseNode>
   );
 };

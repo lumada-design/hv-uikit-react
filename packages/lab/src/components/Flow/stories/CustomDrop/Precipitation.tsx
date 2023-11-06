@@ -1,10 +1,10 @@
-import { HvDaFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 
 import { data } from "./data";
 
 export const Precipitation = (props) => {
   return (
-    <HvDaFlowNode
+    <HvFlowNode
       description="Precipitation data"
       expanded
       params={[

@@ -9,7 +9,7 @@ import {
   HvDialogTitle,
 } from "@hitachivantara/uikit-react-core";
 import { Favorite, Flag, Search } from "@hitachivantara/uikit-react-icons";
-import { HvDaFlowNode, useFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode, useFlowNode } from "@hitachivantara/uikit-react-lab";
 import { Node } from "reactflow";
 
 export const Tron = (props) => {
@@ -59,7 +59,7 @@ export const Tron = (props) => {
         </HvDialogActions>
       </HvDialog>
 
-      <HvDaFlowNode
+      <HvFlowNode
         description="Tron asset description"
         expanded
         maxVisibleActions={1}

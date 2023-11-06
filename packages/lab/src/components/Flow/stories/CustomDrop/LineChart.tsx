@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { HvDaFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 import { HvLineChart } from "@hitachivantara/uikit-react-viz";
 import { useStore } from "reactflow";
 
@@ -13,7 +13,7 @@ export const LineChart = (props) => {
   const dataNode = nodes.find((n) => n.id === dataNodeId);
 
   return (
-    <HvDaFlowNode
+    <HvFlowNode
       description="Line Chart"
       expanded
       classes={{ root: css({ width: 500 }) }}
@@ -29,7 +29,7 @@ export const LineChart = (props) => {
           />
         </div>
       )}
-    </HvDaFlowNode>
+    </HvFlowNode>
   );
 };
 

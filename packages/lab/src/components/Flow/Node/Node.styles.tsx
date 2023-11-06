@@ -1,6 +1,6 @@
 import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
-export const { staticClasses, useClasses } = createClasses("HvFlowDaNode", {
+export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
   subtitleContainer: {
     minHeight: 48,
     padding: theme.spacing(
@@ -17,5 +17,12 @@ export const { staticClasses, useClasses } = createClasses("HvFlowDaNode", {
   actions: {
     display: "flex",
     alignItems: "center",
+  },
+  paramsContainer: {
+    borderTop: `1px solid ${theme.colors.atmo4}`,
+    display: "flex",
+    flexDirection: "column",
+    gap: theme.space.xs,
+    padding: theme.space.sm,
   },
 });

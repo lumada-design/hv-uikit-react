@@ -22,6 +22,7 @@ import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
 
 import {
   HvFlowNodeAction,
+  HvFlowBuiltInActions,
   HvFlowNodeInput,
   HvFlowNodeOutput,
 } from "../types/index";
@@ -73,7 +74,7 @@ const isInputConnected = (
   return false;
 };
 
-const defaultActions: HvFlowNodeAction[] = [
+const defaultActions: HvFlowBuiltInActions[] = [
   { id: "delete", label: "Delete", icon: <Delete /> },
   { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
 ];

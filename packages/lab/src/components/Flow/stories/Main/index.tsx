@@ -21,7 +21,6 @@ import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import {
   NodeGroups,
   NodeType,
-  defaultActions,
   nodeGroups,
   nodeTypes,
   restrictToSample,
@@ -88,7 +87,6 @@ export const Main = () => {
           edges={edges}
           nodeTypes={nodeTypes}
           nodeGroups={nodeGroups}
-          defaultActions={defaultActions}
           sidebar={
             <HvFlowSidebar
               title="Add Node"

@@ -92,3 +92,5 @@ export type HvFlowBuiltInAction = "delete" | "duplicate";
 export type HvFlowBuiltInActions = Omit<HvFlowNodeAction, "id" | "callback"> & {
   id: HvFlowBuiltInAction;
 };
+
+export type HvFlowNodeMetaRegistry = Record<string, HvFlowNodeMeta>;

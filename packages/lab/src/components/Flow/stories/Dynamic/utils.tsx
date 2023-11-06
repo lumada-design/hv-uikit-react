@@ -1,9 +1,9 @@
-import { HvDaFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 
 export const createAsset = ({ label, description, params, data }) => {
   const Asset = (props) => {
     return (
-      <HvDaFlowNode
+      <HvFlowNode
         description={description}
         expanded
         params={params}

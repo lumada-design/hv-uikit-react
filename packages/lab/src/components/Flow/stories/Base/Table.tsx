@@ -1,7 +1,7 @@
-import { HvDaFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 
 export const Table = (props) => {
-  return <HvDaFlowNode description="Table description" {...props} />;
+  return <HvFlowNode description="Table description" {...props} />;
 };
 
 Table.meta = {

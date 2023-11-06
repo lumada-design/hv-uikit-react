@@ -22,7 +22,7 @@ import { uid } from "uid";
 
 import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 
-import { HvFlowNodeMeta } from "./types";
+import { HvFlowNodeMetaRegistry } from "./types";
 import { staticClasses, useClasses } from "./Flow.styles";
 import { useFlowContext } from "./hooks";
 import { flowStyles } from "./base";
@@ -67,7 +67,7 @@ export const getNode = (nodes: Node[], nodeId: string) => {
 const validateEdge = (
   nodes: Node[],
   edge: Edge,
-  nodeMetaRegistry: Record<string, HvFlowNodeMeta>
+  nodeMetaRegistry: HvFlowNodeMetaRegistry
 ) => {
   if (!edge.sourceHandle || !edge.targetHandle) return false;
 

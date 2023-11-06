@@ -1,7 +1,7 @@
-import { HvDaFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 
 export const KPI = (props) => {
-  return <HvDaFlowNode description="KPI description" {...props} />;
+  return <HvFlowNode description="KPI description" {...props} />;
 };
 
 KPI.meta = {
