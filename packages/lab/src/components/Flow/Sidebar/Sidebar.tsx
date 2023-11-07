@@ -24,7 +24,11 @@ import { staticClasses, useClasses } from "./Sidebar.styles";
 import { HvFlowSidebarGroup } from "./SidebarGroup";
 import { useFlowContext } from "../hooks";
 import { buildGroups } from "./utils";
-import { HvFlowSidebarGroupItem } from "./SidebarGroup/SidebarGroupItem";
+import {
+  HvFlowDraggableSidebarGroupItem,
+  HvFlowSidebarGroupItem,
+} from "./SidebarGroup/SidebarGroupItem";
+import { HvFlowNodeGroup } from "../types";
 
 export { staticClasses as flowSidebarClasses };
 
@@ -51,6 +55,8 @@ export interface HvFlowSidebarProps
    * More information can be found in the [Dnd Kit documentation](https://docs.dndkit.com/api-documentation/draggable/drag-overlay).
    */
   dragOverlayProps?: DragOverlayProps;
+  /** Props to be applied to the default nodes group. */
+  defaultGroupProps?: HvFlowNodeGroup;
 }
 
 const DEFAULT_LABELS: HvFlowSidebarProps["labels"] = {
@@ -69,6 +75,7 @@ export const HvFlowSidebar = ({
   classes: classesProp,
   labels: labelsProps,
   dragOverlayProps,
+  defaultGroupProps,
   ...others
 }: HvFlowSidebarProps) => {
   const { classes } = useClasses(classesProp);
@@ -76,11 +83,12 @@ export const HvFlowSidebar = ({
   const { nodeGroups, nodeTypes, setExpandedNodeGroups } = useFlowContext();
 
   const unfilteredGroups = useMemo(
-    () => buildGroups(nodeGroups, nodeTypes),
-    [nodeGroups, nodeTypes]
+    () => buildGroups(nodeGroups, nodeTypes, defaultGroupProps),
+    [nodeGroups, nodeTypes, defaultGroupProps]
   );
 
   const [groups, setGroups] = useState(unfilteredGroups);
+  const [ndTypes, setNdTypes] = useState(nodeTypes);
   const [draggingLabel, setDraggingLabel] = useState(undefined);
 
   useEffect(() => {
@@ -114,28 +122,42 @@ export const HvFlowSidebar = ({
   });
 
   const handleSearch: HvInputProps["onChange"] = (event, value) => {
-    const gps = value
-      ? Object.entries(unfilteredGroups).reduce((acc, curr) => {
-          // Filter nodes by search
-          const filteredNodes = curr[1].nodes.filter((obj) =>
-            obj.label.toLocaleLowerCase().includes(value.toLocaleLowerCase())
-          );
-          const nodesCount = filteredNodes.length;
+    if (nodeGroups) {
+      const gps = value
+        ? Object.entries(unfilteredGroups).reduce((acc, curr) => {
+            // Filter nodes by search
+            const filteredNodes = curr[1].nodes.filter((obj) =>
+              obj.label.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+            );
+            const nodesCount = filteredNodes.length;
 
-          // Only show groups with nodes
-          if (nodesCount > 0) {
-            acc[curr[0]] = {
-              ...curr[1],
-              nodes: filteredNodes,
-            };
-          }
+            // Only show groups with nodes
+            if (nodesCount > 0) {
+              acc[curr[0]] = {
+                ...curr[1],
+                nodes: filteredNodes,
+              };
+            }
 
-          return acc;
-        }, {})
-      : unfilteredGroups;
+            return acc;
+          }, {})
+        : unfilteredGroups;
 
-    setGroups(gps);
-    setExpandedNodeGroups?.(value ? Object.keys(gps) : []);
+      setGroups(gps);
+      setExpandedNodeGroups?.(value ? Object.keys(gps) : []);
+    } else if (nodeTypes) {
+      const filteredNodeTypes = {};
+      for (const [key, node] of Object.entries(nodeTypes)) {
+        if (
+          node.meta?.label
+            .toLocaleLowerCase()
+            .includes(value.toLocaleLowerCase())
+        ) {
+          filteredNodeTypes[key] = node;
+        }
+      }
+      setNdTypes(value ? filteredNodeTypes : nodeTypes);
+    }
   };
 
   const handleDebouncedSearch = debounce(handleSearch, 500);
@@ -172,23 +194,40 @@ export const HvFlowSidebar = ({
               onChange={handleDebouncedSearch}
               inputProps={{ autoComplete: "off" }}
             />
-            <ul id={groupsElementId} className={classes.groupsContainer}>
-              {Object.entries(groups).map((obj) => {
+            {nodeGroups ? (
+              <ul id={groupsElementId} className={classes.groupsContainer}>
+                {Object.entries(groups).map((obj) => {
+                  return (
+                    <HvFlowSidebarGroup
+                      key={obj[0]}
+                      id={obj[0]}
+                      expandButtonProps={{
+                        "aria-label": labels?.expandGroupButtonAriaLabel,
+                      }}
+                      itemProps={{
+                        "aria-roledescription": labels?.itemAriaRoleDescription,
+                      }}
+                      {...obj[1]}
+                    />
+                  );
+                })}
+              </ul>
+            ) : (
+              ndTypes &&
+              Object.entries(ndTypes).map((obj) => {
                 return (
-                  <HvFlowSidebarGroup
+                  <HvFlowDraggableSidebarGroupItem
                     key={obj[0]}
                     id={obj[0]}
-                    expandButtonProps={{
-                      "aria-label": labels?.expandGroupButtonAriaLabel,
-                    }}
-                    itemProps={{
-                      "aria-roledescription": labels?.itemAriaRoleDescription,
-                    }}
-                    {...obj[1]}
+                    type={obj[0]}
+                    label={obj[1]?.meta?.label || ""}
+                    data={obj[1]?.meta?.data}
+                    aria-roledescription={labels?.itemAriaRoleDescription}
+                    className={classes.nodeType}
                   />
                 );
-              })}
-            </ul>
+              })
+            )}
           </div>
         </div>
       </HvDrawer>

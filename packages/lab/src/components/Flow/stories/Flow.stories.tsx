@@ -19,6 +19,8 @@ import { Dynamic as DynamicStory } from "./Dynamic";
 import DynamicRaw from "./Dynamic?raw";
 import { CustomDrop as CustomDropStory } from "./CustomDrop";
 import CustomDropRaw from "./CustomDrop?raw";
+import { NoGroups as NoGroupStory } from "./NoGroups";
+import NoGroupsRaw from "./NoGroups?raw";
 
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",
@@ -114,4 +116,20 @@ export const CustomDrop: StoryObj<HvFlowProps> = {
     eyes: { include: false },
   },
   render: () => <CustomDropStory />,
+};
+
+export const NoGroups: StoryObj<HvFlowProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "You don't need to use groups. If you don't use them, the sidebar will show a list of nodes.",
+      },
+      source: {
+        code: NoGroupsRaw,
+      },
+    },
+    eyes: { include: false },
+  },
+  render: () => <NoGroupStory />,
 };

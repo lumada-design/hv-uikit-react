@@ -1,35 +1,55 @@
 import { HvFlowContextValue } from "../FlowContext";
 import { HvFlowNodeGroup } from "../types";
-import { HvFlowSidebarGroupNodes } from "./SidebarGroup";
+import {
+  HvFlowSidebarGroupNodes,
+  HvFlowSidebarGroupNode,
+} from "./SidebarGroup";
 
 export const buildGroups = (
   nodeGroups: HvFlowContextValue["nodeGroups"],
-  nodeTypes: HvFlowContextValue["nodeTypes"]
+  nodeTypes: HvFlowContextValue["nodeTypes"],
+  defaultGroupProps?: HvFlowNodeGroup
 ): {
   [key: string]: HvFlowNodeGroup & { nodes: HvFlowSidebarGroupNodes };
 } => {
   if (nodeGroups) {
     const groups = Object.entries(nodeGroups).reduce((acc, curr) => {
-      const nodes = nodeTypes
-        ? Object.entries(nodeTypes).reduce(
-            (accN: HvFlowSidebarGroupNodes, currN) => {
-              if (currN[1].meta?.groupId === curr[0]) {
-                accN.push({
-                  type: currN[0],
-                  label: currN[1].meta?.label,
-                  data: currN[1].meta?.data,
-                });
-              }
-              return accN;
-            },
-            []
-          )
-        : [];
+      const nodesWithGroupId: HvFlowSidebarGroupNode[] = [];
+      const nodesWithoutGroupId: HvFlowSidebarGroupNode[] = [];
+
+      if (nodeTypes) {
+        for (const [nodeType, node] of Object.entries(nodeTypes)) {
+          if (node.meta?.groupId === curr[0]) {
+            nodesWithGroupId.push({
+              type: nodeType,
+              label: node.meta?.label,
+              data: node.meta?.data,
+            });
+          } else if (!node.meta?.groupId) {
+            nodesWithoutGroupId.push({
+              type: nodeType,
+              label: node.meta?.label || "",
+              data: node.meta?.data,
+            });
+          }
+        }
+      }
 
       acc[curr[0]] = {
         ...curr[1],
-        nodes,
-      };
+        nodes: nodesWithGroupId,
+      } as HvFlowNodeGroup & { nodes: HvFlowSidebarGroupNodes };
+
+      // Create a "Default" group for nodes without a groupId
+      if (nodesWithoutGroupId.length > 0) {
+        // @ts-ignore
+        acc.Default = {
+          name: "Default",
+          label: "Default",
+          nodes: nodesWithoutGroupId,
+          ...defaultGroupProps,
+        } as HvFlowNodeGroup & { nodes: HvFlowSidebarGroupNodes };
+      }
 
       return acc;
     }, {});
