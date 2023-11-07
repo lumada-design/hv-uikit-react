@@ -1,15 +1,10 @@
 import {
   Cards,
   Cluster,
-  Delete,
-  Duplicate,
   MachineLearning,
   LineChartAlt,
 } from "@hitachivantara/uikit-react-icons";
-import {
-  HvFlowProps,
-  HvFlowDefaultActions,
-} from "@hitachivantara/uikit-react-lab";
+import { HvFlowProps } from "@hitachivantara/uikit-react-lab";
 import { Modifier } from "@dnd-kit/core";
 
 // The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
@@ -20,12 +15,6 @@ import { MLModelDetection } from "./MLModelDetection";
 import { MLModelPrediction } from "./MLModelPrediction";
 import { Table } from "./Table";
 import { Tron } from "./Tron";
-
-// Default actions
-export const defaultActions: HvFlowDefaultActions[] = [
-  { id: "delete", label: "Delete", icon: <Delete /> },
-  { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
-];
 
 // Node groups
 export type NodeGroups = "assets" | "models" | "insights" | "dashboard";

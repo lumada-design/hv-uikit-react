@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import { theme } from "@hitachivantara/uikit-react-core";
 import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 import { HvLineChart } from "@hitachivantara/uikit-react-viz";
 import { useStore } from "reactflow";
@@ -22,7 +23,11 @@ export const LineChart = (props) => {
         dataNode.data &&
         dataNode.data.jsonData &&
         dataNode.data.jsonData.length > 0 && (
-          <div>
+          <div
+            style={{
+              padding: theme.spacing("xs", "xs", "xs", "sm"),
+            }}
+          >
             <HvLineChart
               data={dataNode.data.jsonData}
               splitBy="country"

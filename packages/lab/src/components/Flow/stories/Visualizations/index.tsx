@@ -27,7 +27,7 @@ import { Filter } from "./Filter";
 import { JsonInput } from "./JsonInput";
 import { LineChart } from "./LineChart";
 // The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
-import { defaultActions, restrictToSample } from "../Base";
+import { restrictToSample } from "../Base";
 
 // Note types
 const nodeTypes = {
@@ -188,7 +188,6 @@ export const Visualizations = () => {
           edges={edges}
           nodeTypes={nodeTypes}
           nodeGroups={nodeGroups}
-          defaultActions={defaultActions}
           defaultViewport={{
             zoom: 0.7,
             x: 0,

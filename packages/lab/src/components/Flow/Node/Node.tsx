@@ -1,93 +1,69 @@
-import { isValidElement, useCallback, useEffect, useState } from "react";
-
-import {
-  Handle,
-  NodeProps,
-  NodeToolbar,
-  Position,
-  useReactFlow,
-  useStore,
-} from "reactflow";
+import { SyntheticEvent, isValidElement, useState } from "react";
 
 import {
   ExtractNames,
   HvActionGeneric,
   HvActionsGenericProps,
-  HvBaseProps,
   HvButton,
   HvDropDownMenu,
   HvTooltip,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
+import { getColor } from "@hitachivantara/uikit-styles";
 import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
-import { getColor, theme } from "@hitachivantara/uikit-styles";
 
-import { useFlowContext } from "../hooks";
-import { HvFlowDefaultAction, HvFlowNodeParam } from "../types";
+import { useFlowContext, useFlowNode } from "../hooks/index";
+import { HvFlowNodeParam } from "../types/index";
 import { staticClasses, useClasses } from "./Node.styles";
 import ParamRenderer from "./Parameters/ParamRenderer";
+import { HvFlowBaseNode, HvFlowBaseNodeProps } from "./BaseNode";
 
 export { staticClasses as flowNodeClasses };
-
+// TODO How to include here the types from the parent component?
 export type HvFlowNodeClasses = ExtractNames<typeof useClasses>;
 
-export interface HvFlowNodeProps extends Omit<HvBaseProps, "id">, NodeProps {
+export interface HvFlowNodeProps<T>
+  extends Omit<HvFlowBaseNodeProps<T>, "classes"> {
   /** Node description */
-  description: string;
-  /** Node expanded */
-  expanded?: boolean;
-  /** Node parameters */
-  params?: HvFlowNodeParam[];
+  description?: string;
   /** Node actions */
   actions?: HvActionGeneric[]; // HvFlowNodeActions[];
   /** Node action callback */
   actionCallback?: HvActionsGenericProps["actionsCallback"];
   /** Node maximum number of actions visible */
   maxVisibleActions?: number;
+  /** Node expanded */
+  expanded?: boolean;
+  /** Node parameters */
+  params?: HvFlowNodeParam[];
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvFlowNodeClasses;
+  classes?: HvFlowNodeClasses | HvFlowBaseNodeProps<T>["classes"];
 }
 
-const isInputConnected = (id, type, idx, edges) => {
-  if (type === "target") {
-    return edges.some(
-      (e) => e.target === id && e.targetHandle === idx.toString()
-    );
-  }
-  if (type === "source") {
-    return edges.some(
-      (e) => e.source === id && e.sourceHandle === idx.toString()
-    );
-  }
-};
+const renderedIcon = (actionIcon: HvActionGeneric["icon"]) =>
+  isValidElement(actionIcon) ? actionIcon : (actionIcon as Function)?.();
 
 export const HvFlowNode = ({
   id,
   type,
+  headerItems,
   description,
-  expanded = false,
-  params,
   actions,
   actionCallback,
   maxVisibleActions = 1,
+  expanded = false,
+  params,
   classes: classesProp,
-  className,
   children,
-}: HvFlowNodeProps) => {
+  ...props
+}: HvFlowNodeProps<unknown>) => {
+  const { classes } = useClasses(classesProp as HvFlowNodeClasses);
   const [showParams, setShowParams] = useState(expanded);
-  const [showActions, setShowActions] = useState(false);
-  const reactFlowInstance = useReactFlow();
-
-  const { classes, cx, css } = useClasses(classesProp);
+  const { node } = useFlowNode(id);
 
   const { nodeGroups, nodeTypes, defaultActions } = useFlowContext();
-  const edges = useStore((s) => s.edges);
-  const nodes = useStore((s) => s.getNodes());
-
-  const node = nodes.find((n) => n.id === id);
-
   const groupId = nodeTypes?.[type].meta?.groupId;
-  const title = nodeTypes?.[type].meta?.label;
+  const subtitle = nodeTypes?.[type].meta?.label;
   const groupLabel = groupId && nodeGroups && nodeGroups[groupId].label;
 
   const inputs = nodeTypes?.[type]?.meta?.inputs;
@@ -96,213 +72,93 @@ export const HvFlowNode = ({
   const colorProp = groupId && nodeGroups && nodeGroups[groupId].color;
   const color = getColor(colorProp);
 
-  useEffect(() => {
-    const newNodes = nodes.map((n) => {
-      if (n.id === id) {
-        if (Object.keys(n.data).length === 0) {
-          params?.forEach((param) => {
-            n.data[param.id] = param.value;
-          });
-        }
-      }
-      return n;
-    });
-    reactFlowInstance.setNodes(newNodes);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const handleDefaultAction = useCallback(
-    (action: HvFlowDefaultAction) => {
-      if (!node) return;
-
-      switch (action) {
-        case "delete":
-          reactFlowInstance.deleteElements({ nodes: [node] });
-          break;
-        case "duplicate":
-          reactFlowInstance.addNodes([
-            {
-              ...node,
-              id: `${reactFlowInstance.getNodes().length + 1}`,
-              position: {
-                x: node.position.x,
-                y: node.position.y + (node.height || 0) + 20,
-              },
-              selected: false,
-              zIndex: Number(theme.zIndices.overlay),
-            },
-          ]);
-          break;
-        default:
-          break;
-      }
-    },
-    [node, reactFlowInstance]
-  );
-
-  const hasParams = !!(params && params.length > 0);
-
-  if (!node) return null;
-
   const actsVisible = actions?.slice(0, maxVisibleActions);
   const actsDropdown = actions?.slice(maxVisibleActions);
 
-  const renderedIcon = (actionIcon: HvActionGeneric["icon"]) =>
-    isValidElement(actionIcon) ? actionIcon : (actionIcon as Function)?.();
+  const hasParams = !!(params && params.length > 0);
 
   return (
-    <div
-      className={cx(
-        css({ border: `1px solid ${color}` }),
-        classes.root,
-        className
-      )}
-      onMouseEnter={() => setShowActions(true)}
-      onMouseLeave={() => setShowActions(false)}
-    >
-      <NodeToolbar isVisible={showActions} offset={0}>
-        {defaultActions?.map((action) => (
-          <HvButton
-            key={action.id}
-            icon
-            onClick={() => handleDefaultAction(action.id)}
-          >
-            {renderedIcon(action.icon)}
-          </HvButton>
-        ))}
-      </NodeToolbar>
-      <div
-        className={cx(css({ backgroundColor: color }), classes.headerContainer)}
-      >
-        <div className={classes.groupContainer}>
-          {icon}
-          <HvTypography variant="title4" className={classes.group}>
-            {groupLabel}
-          </HvTypography>
-        </div>
-        <div style={{ display: "flex" }}>
-          <HvTooltip title={<HvTypography>{description}</HvTypography>}>
-            <div>
-              <Info />
-            </div>
-          </HvTooltip>
-          <HvButton
-            icon
-            disabled={!hasParams}
-            onClick={() => setShowParams((p) => !p)}
-          >
-            {showParams ? <Up /> : <Down />}
-          </HvButton>
-        </div>
-      </div>
-      <div className={classes.titleContainer}>
-        <div>
-          <HvTypography>{title}</HvTypography>
-        </div>
-        <div className={classes.actions}>
-          {actions?.length && actions?.length > 0 && (
-            <>
-              {actsVisible?.map((action) => (
-                <HvTooltip
-                  key={action.id}
-                  title={<HvTypography>{action.label}</HvTypography>}
-                >
-                  <div>
-                    <HvButton
-                      icon
-                      onClick={(event) => {
-                        actionCallback?.(event, node.id, action);
-                      }}
-                      aria-label={action.label}
-                    >
-                      {renderedIcon(action.icon)}
-                    </HvButton>
-                  </div>
-                </HvTooltip>
-              ))}
-
-              {actsDropdown && actsDropdown.length > 0 && (
-                <HvDropDownMenu
-                  keepOpened={false}
-                  dataList={actsDropdown?.map((action) => ({
-                    id: action.id,
-                    label: action.label,
-                  }))}
-                  onClick={(event, action) => {
-                    actionCallback?.(event, node.id, action as HvActionGeneric);
-                  }}
-                />
-              )}
-            </>
+    <HvFlowBaseNode
+      id={id}
+      type={type}
+      title={groupLabel}
+      icon={icon}
+      color={color}
+      inputs={inputs}
+      outputs={outputs}
+      nodeActions={defaultActions}
+      classes={classesProp as HvFlowBaseNodeProps<unknown>["classes"]}
+      headerItems={
+        <>
+          {headerItems}
+          {description && (
+            <HvTooltip title={<HvTypography>{description}</HvTypography>}>
+              <div>
+                <Info />
+              </div>
+            </HvTooltip>
           )}
+          {hasParams && (
+            <HvButton icon onClick={() => setShowParams((p) => !p)}>
+              {showParams ? <Up /> : <Down />}
+            </HvButton>
+          )}
+        </>
+      }
+      {...props}
+    >
+      {(subtitle || actsVisible?.length || actsDropdown?.length) && (
+        <div className={classes.subtitleContainer}>
+          {subtitle && (
+            <div>
+              <HvTypography>{subtitle}</HvTypography>
+            </div>
+          )}
+          <div className={classes.actions}>
+            {actions?.length && actions?.length > 0 && (
+              <>
+                {actsVisible?.map((action) => (
+                  <HvTooltip
+                    key={action.id}
+                    title={<HvTypography>{action.label}</HvTypography>}
+                  >
+                    <div>
+                      <HvButton
+                        icon
+                        onClick={(event: SyntheticEvent<Element, Event>) => {
+                          actionCallback?.(event, id, action);
+                        }}
+                        aria-label={action.label}
+                      >
+                        {renderedIcon(action.icon)}
+                      </HvButton>
+                    </div>
+                  </HvTooltip>
+                ))}
+
+                {actsDropdown && actsDropdown.length > 0 && (
+                  <HvDropDownMenu
+                    keepOpened={false}
+                    dataList={actsDropdown?.map((action) => ({
+                      id: action.id,
+                      label: action.label,
+                    }))}
+                    onClick={(event, action) => {
+                      actionCallback?.(event, id, action as HvActionGeneric);
+                    }}
+                  />
+                )}
+              </>
+            )}
+          </div>
         </div>
-      </div>
-      {children && <div className={classes.contentContainer}>{children}</div>}
+      )}
+      {children}
       {showParams && params && (
         <div className={classes.paramsContainer}>
           <ParamRenderer nodeId={id} params={params} data={node?.data} />
         </div>
       )}
-      {inputs && inputs.length > 0 && (
-        <>
-          <div className={classes.inputsTitleContainer}>
-            <HvTypography>Inputs</HvTypography>
-          </div>
-
-          <div className={classes.inputsContainer}>
-            {inputs?.map((input, idx) => (
-              <div className={classes.inputContainer} key={idx}>
-                <Handle
-                  type="target"
-                  isConnectableStart={false}
-                  id={`${idx}`}
-                  position={Position.Left}
-                  style={{
-                    top: "auto",
-                    bottom:
-                      (outputs?.length ? 80 : 18) +
-                      (outputs?.length || 0) * 29 +
-                      29 * idx,
-                  }}
-                />
-                <HvTypography>{input.label}</HvTypography>
-                {input.isMandatory &&
-                  !isInputConnected(id, "target", idx, edges) && (
-                    <div className={classes.mandatory} />
-                  )}
-              </div>
-            ))}
-          </div>
-        </>
-      )}
-      {outputs && outputs.length > 0 && (
-        <>
-          <div className={classes.outputsTitleContainer}>
-            <HvTypography>Outputs</HvTypography>
-          </div>
-          <div className={classes.outputsContainer}>
-            {outputs?.map((output, idx) => (
-              <div className={classes.outputContainer} key={idx}>
-                <Handle
-                  type="source"
-                  isConnectableEnd={false}
-                  id={`${idx}`}
-                  position={Position.Right}
-                  style={{
-                    bottom: -10 + 29 * (outputs.length - idx),
-                    top: "auto",
-                  }}
-                />
-                {output.isMandatory &&
-                  !isInputConnected(id, "source", idx, edges) && (
-                    <div className={classes.mandatory} />
-                  )}
-                <HvTypography>{output.label}</HvTypography>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
-    </div>
+    </HvFlowBaseNode>
   );
 };

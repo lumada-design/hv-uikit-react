@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
-import { HvCheckBox, HvCheckBoxGroup } from "@hitachivantara/uikit-react-core";
+import {
+  HvCheckBox,
+  HvCheckBoxGroup,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 import { useFlowNode, HvFlowNode } from "@hitachivantara/uikit-react-lab";
 import { useReactFlow, useStore } from "reactflow";
 
@@ -60,7 +64,12 @@ export const Filter = (props) => {
 
   return (
     <HvFlowNode description="Filtering data" expanded {...props}>
-      <HvCheckBoxGroup onChange={handleCheck}>
+      <HvCheckBoxGroup
+        onChange={handleCheck}
+        style={{
+          padding: theme.spacing("xs", "xs", "xs", "sm"),
+        }}
+      >
         {options.map((o) => {
           return (
             <HvCheckBox

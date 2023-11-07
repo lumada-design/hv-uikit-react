@@ -7,7 +7,7 @@ import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Favorite, Heart } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvFlowNode } from "./Node";
+import { HvFlowBaseNode } from "./Node";
 import { HvFlow } from "./Flow";
 import { HvFlowSidebar } from "./Sidebar";
 import { HvFlowControls, HvFlowControlsProps } from "./Controls";
@@ -29,7 +29,7 @@ const nodeGroups = {
   },
 };
 const BoomArm = (props) => (
-  <HvFlowNode
+  <HvFlowBaseNode
     title="Asset"
     description="Boom Arm"
     color={theme.colors.cat3_40}
@@ -41,7 +41,7 @@ BoomArm.meta = {
   groupId: "asset",
 };
 const ToyStory = (props) => (
-  <HvFlowNode
+  <HvFlowBaseNode
     title="Digital Twin"
     description="Toy Story"
     color={theme.colors.cat2_40}
@@ -53,7 +53,7 @@ ToyStory.meta = {
   groupId: "digitalTwin",
 };
 const SpaceMountain = (props) => (
-  <HvFlowNode
+  <HvFlowBaseNode
     title="Asset"
     description="Space Mountain"
     color={theme.colors.cat3_40}
