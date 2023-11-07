@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.7.0 (2023-11-07)
+
+### Features
+
+- **icons:** align icons with ds 5.7.1 ([#3782](https://github.com/lumada-design/hv-uikit-react/issues/3782)) ([bf56ea6](https://github.com/lumada-design/hv-uikit-react/commit/bf56ea6806ac27cbee2b33ec36b265df438896f8))
+
 ## 5.6.12 (2023-11-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons
