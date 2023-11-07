@@ -21,11 +21,13 @@ export { staticClasses as flowSidebarGroupClasses };
 
 export type HvFlowSidebarGroupClasses = ExtractNames<typeof useClasses>;
 
-export type HvFlowSidebarGroupNodes = {
+export type HvFlowSidebarGroupNode = {
   type: string;
   label: string;
   data?: unknown;
-}[];
+};
+
+export type HvFlowSidebarGroupNodes = HvFlowSidebarGroupNode[];
 
 export interface HvFlowSidebarGroupProps extends HvFlowNodeGroup {
   /** Group id. */

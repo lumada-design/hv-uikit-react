@@ -1,6 +1,6 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
 
-<Meta title="Lab/Flow/Usage" />
+<Meta title="Guides/Flow" />
 
 # Creating flows <a id="creating-flows" />
 
@@ -34,11 +34,11 @@ Summary:
 
 To use the `HvFlow` component you'll need to define:
 
-- Node groups
 - Node types
 
 Optionally you can also define:
 
+- Node groups
 - Initial nodes
 - Initial edges
 - Default actions that all nodes will have
@@ -98,6 +98,9 @@ You can then create the sidebar by using the `HvFlowSidebar` component as a prop
 </HvFlow>
 ```
 
+But node groups are not mandatory. If you don't pass a `nodeGroups` prop to the `HvFlow` component, then all node types will be listed
+in the sidebar in a simple list of nodes.
+
 ## Layout <a id="layout" />
 
 There a few controls that you can add to your flow to control its layout and some functionality. All of these are components that you
@@ -126,7 +129,7 @@ component and shares the same interface.
 ## Custom nodes and node types <a id="custom-nodes-and-node-types" />
 
 The `HvFlowNode` component allows you to create your own nodes. It provides a base for your own custom nodes and is not to be used directly as a node on the flow.
-There are a few properties that should be set on your node `meta` property: the label, the list of inputs and outputs and the id of the group it belongs to.
+There are a few properties that should be set on your node `meta` property: the label, the list of inputs and outputs and, optionally, the id of the group it belongs to.
 The parameters are passed as a property of the `HvFlowNode` component.
 
 Example custom node:
@@ -172,6 +175,28 @@ CustomNode.meta = {
     },
   ],
 };
+```
+
+If you don't set a group id for any given node, then it will be added to a `Default` group that will serve as a repository to all nodes
+that are not in a group. The `Default` group is customizable via the `defaultGroupProps` on the `HvFlowSidebar` component. Example:
+
+```tsx
+<HvFlow
+  (...)
+  sidebar={
+    <HvFlowSidebar
+      (...)
+      defaultGroupProps={{
+        label: "All",
+        color: "cat11_80",
+        description:
+          "This is for all the nodes that don't have groupId",
+      }}
+    />
+  }
+>
+  (...)
+</HvFlow>
 ```
 
 ### Inputs and Outputs <a id="inputs-and-outputs" />

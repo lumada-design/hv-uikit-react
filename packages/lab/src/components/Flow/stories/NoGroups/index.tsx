@@ -3,63 +3,50 @@ import { css } from "@emotion/css";
 import {
   HvButton,
   HvGlobalActions,
-  HvTypography,
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { Add, Backwards, Fail } from "@hitachivantara/uikit-react-icons";
+import { Add, Backwards } from "@hitachivantara/uikit-react-icons";
 import {
-  HvFlowControls,
   HvFlowSidebar,
-  HvFlowEmpty,
   HvFlow,
+  HvFlowControls,
   HvFlowProps,
 } from "@hitachivantara/uikit-react-lab";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
-// The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
-import {
-  NodeGroups,
-  NodeType,
-  nodeGroups,
-  nodeTypes,
-  restrictToSample,
-} from "../Base";
-
-// Flow
-const nodes = [] satisfies HvFlowProps<NodeGroups, NodeType>["nodes"];
-const edges = [] satisfies HvFlowProps<NodeGroups, NodeType>["edges"];
+// The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
+import { restrictToSample } from "../Base";
+import { Tron } from "../Base/NoGroup/Tron";
+import { LineChart } from "../Base/NoGroup/LineChart";
+import { MLModelPrediction } from "../Base/NoGroup/MLModelPrediction";
 
 // Classes
 export const classes = {
-  root: css({ height: "100vh" }),
+  root: css({
+    height: "100vh",
+    [`& .HvFlowSidebarGroup-itemsContainer`]: {
+      maxHeight: 300,
+      overflow: "scroll",
+    },
+  }),
   globalActions: css({ paddingBottom: theme.space.md }),
   flow: css({
     height: "calc(100% - 90px)",
   }),
 };
 
-export const Main = () => {
+// Node types
+export const nodeTypes = {
+  tron: Tron,
+  mlModelPrediction: MLModelPrediction,
+  lineChart: LineChart,
+} satisfies HvFlowProps["nodeTypes"];
+
+export const NoGroups = () => {
   const { rootId } = useTheme();
 
   const [open, setOpen] = useState(false);
-
-  const CustomAction = (
-    <div className={css({ display: "flex", flexDirection: "row" })}>
-      <HvTypography
-        link
-        component="a"
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          setOpen(true);
-        }}
-      >
-        Add nodes
-      </HvTypography>
-      <HvTypography>&nbsp;to start building your flow.</HvTypography>
-    </div>
-  );
 
   return (
     <div className={classes.root}>
@@ -83,10 +70,14 @@ export const Main = () => {
       </HvGlobalActions>
       <div className={classes.flow}>
         <HvFlow
-          nodes={nodes}
-          edges={edges}
+          nodes={[]}
+          edges={[]}
           nodeTypes={nodeTypes}
-          nodeGroups={nodeGroups}
+          defaultViewport={{
+            zoom: 0.7,
+            x: 0,
+            y: 0,
+          }}
           sidebar={
             <HvFlowSidebar
               title="Add Node"
@@ -100,25 +91,10 @@ export const Main = () => {
                   (args) => restrictToSample(rootId || "", args),
                 ],
               }}
-              defaultGroupProps={{
-                label: "All",
-                color: "cat11_80",
-                description:
-                  "This is for all the nodes that don't have groupId",
-              }}
             />
-          }
-          // Keeping track of flow updates
-          onFlowChange={(nds, eds) =>
-            console.log("Flow updated: ", { nodes: nds, edges: eds })
           }
         >
           <HvFlowControls />
-          <HvFlowEmpty
-            title="Empty Flow"
-            action={CustomAction}
-            icon={<Fail />}
-          />
         </HvFlow>
       </div>
     </div>

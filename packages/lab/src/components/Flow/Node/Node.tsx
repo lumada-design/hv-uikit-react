@@ -1,4 +1,4 @@
-import { SyntheticEvent, isValidElement, useState } from "react";
+import React, { SyntheticEvent, isValidElement, useState } from "react";
 
 import {
   ExtractNames,
@@ -22,6 +22,13 @@ export { staticClasses as flowNodeClasses };
 // TODO How to include here the types from the parent component?
 export type HvFlowNodeClasses = ExtractNames<typeof useClasses>;
 
+export type HvFlowNodeDefaults = {
+  title?: string;
+  subTitle?: string;
+  color?: string;
+  icon?: React.ReactNode;
+};
+
 export interface HvFlowNodeProps<T = any>
   extends Omit<HvFlowBaseNodeProps<T>, "classes"> {
   /** Node description */
@@ -36,6 +43,8 @@ export interface HvFlowNodeProps<T = any>
   expanded?: boolean;
   /** Node parameters */
   params?: HvFlowNodeParam[];
+  /** A set of node default values for when there are no groups to fetch this data from. */
+  nodeDefaults?: HvFlowNodeDefaults;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowNodeClasses | HvFlowBaseNodeProps<T>["classes"];
 }
@@ -53,6 +62,7 @@ export const HvFlowNode = ({
   maxVisibleActions = 1,
   expanded = false,
   params,
+  nodeDefaults,
   classes: classesProp,
   children,
   ...props
@@ -63,13 +73,16 @@ export const HvFlowNode = ({
 
   const { nodeGroups, nodeTypes, defaultActions } = useFlowContext();
   const groupId = nodeTypes?.[type].meta?.groupId;
-  const subtitle = nodeTypes?.[type].meta?.label;
-  const groupLabel = groupId && nodeGroups && nodeGroups[groupId].label;
+  const subtitle = nodeTypes?.[type].meta?.label || nodeDefaults?.subTitle;
+  const groupLabel =
+    (groupId && nodeGroups && nodeGroups[groupId].label) || nodeDefaults?.title;
 
   const inputs = nodeTypes?.[type]?.meta?.inputs;
   const outputs = nodeTypes?.[type]?.meta?.outputs;
-  const icon = groupId && nodeGroups && nodeGroups[groupId].icon;
-  const colorProp = groupId && nodeGroups && nodeGroups[groupId].color;
+  const icon =
+    (groupId && nodeGroups && nodeGroups[groupId].icon) || nodeDefaults?.icon;
+  const colorProp =
+    (groupId && nodeGroups && nodeGroups[groupId].color) || nodeDefaults?.color;
   const color = getColor(colorProp);
 
   const actsVisible = actions?.slice(0, maxVisibleActions);
