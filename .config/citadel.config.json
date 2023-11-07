@@ -1,0 +1,75 @@
+{
+  "Citadel": [
+    {
+      "version": "1.4"
+    }
+  ],
+  "project-info": [
+    {
+      "name": "uikit",
+      "project-id": "120",
+      "branch": "master",
+      "email": "francisco.guilherme@hitachivantara.com",
+      "repotype": "github",
+      "org": "lumada-design",
+      "repoPathsandBranch": "hv-uikit-react,master",
+      "artifactURL": ""
+    }
+  ],
+  "SCA-scan": [
+    {
+      "enable": "false"
+    }
+  ],
+  "OSS-scan": [
+    {
+      "enable": "false",
+      "scantype": "CI",
+      "docker_registry": "docker.repo.orl.eng.hitachivantara.com",
+      "OSS_serverURL": "https://venus.wal.eng.hitachivantara.com/",
+      "project": "Sandbox_Project",
+      "version": "test",
+      "imagespec": "com.hitachi.aspen/metadata.gateway:2.6.0"
+    }
+  ],
+  "DAST-scan": [
+    {
+      "enable": "false",
+      "url": "https://cluster124x-vm.lab.archivas.com:8000",
+      "multiple-scans": "true",
+      "user": "admin devuser",
+      "encoded": "false",
+      "password": "Start123! Passw0rd!",
+      "network": "Waltham"
+    }
+  ],
+  "SAST-scan": [
+    {
+      "enable": "true"
+    }
+  ],
+  "host-based-scan": [
+    {
+      "enable": "false",
+      "ip": "172.25.94.141-172.25.94.145",
+      "encoded": "false",
+      "user": "ucpadmin",
+      "SSH": "false",
+      "password": "Passw0rd!",
+      "SSH-key": "Target's Private SSH key",
+      "SSH_PassphraseProtected": "false",
+      "SSH_Passphrase": "",
+      "os": "unix",
+      "network": "Santa Clara",
+      "agent-based": "false"
+    }
+  ],
+  "container-scan": [
+    {
+      "enable": "false",
+      "ip": "172.16.11.226",
+      "container-scan": "true",
+      "image-scan": "false"
+    }
+  ]
+}

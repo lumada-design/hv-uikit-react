@@ -14,7 +14,7 @@ on:
         required: true
 
 jobs:
-  codedx-scans:
+  dependency-check-scans:
     name: Run CodeDx Scans
     runs-on: [self-hosted, Linux]
 
@@ -56,9 +56,23 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run Detect Scans
+      - name: Run Black Duck Scans
         run: .github/scripts/blackduck-detect.sh
         env:
           BLACKDUCK_URL: "${{ secrets.BLACKDUCK_URL }}"
           BLACKDUCK_TOKEN: "${{ secrets.BLACKDUCK_TOKEN }}"
           DETECT_VERSION: 8
+
+  citadel-scans:
+    name: Run Citadel Scans
+    runs-on: [self-hosted, Linux]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run Citadel Scans
+        run: .github/scripts/citadel-scans.sh
+        env:
+          CITADEL_URL: "https://citadel.orl.eng.hitachivantara.com/citadel"
+          CITADEL_CONFIG: ".config/citadel_config.json"
