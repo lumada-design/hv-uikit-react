@@ -1,9 +1,11 @@
 import * as React from "react";
 
-import { useTreeViewContext, HvTreeViewPlugins } from "../internals";
+import { useTreeViewContext } from "../internals/TreeViewProvider";
+import { DefaultTreeViewPlugins } from "../internals/hooks/plugins";
 
 export function useHvTreeItem(nodeId: string) {
-  const { instance, multiSelect } = useTreeViewContext<HvTreeViewPlugins>();
+  const { instance, multiSelect } =
+    useTreeViewContext<DefaultTreeViewPlugins>();
 
   const expandable = instance ? instance.isNodeExpandable(nodeId) : false;
   const expanded = instance ? instance.isNodeExpanded(nodeId) : false;
