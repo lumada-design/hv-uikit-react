@@ -20,11 +20,7 @@ export const Dashboard = (props: NodeProps) => {
           padding: theme.spacing("xs", "xs", "sm", "xs"),
         })}
       >
-        <HvButton
-          component="a"
-          href={`./dashboard-preview?id=${id}`}
-          target="_blank"
-        >
+        <HvButton component="a" href={`./?dashboard=${id}`} target="_blank">
           Preview
         </HvButton>
       </div>

@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
+const Root = lazy(() => import("~/pages/Root"));
 const Components = lazy(() => import("~/pages/Components"));
 const Instructions = lazy(() => import("~/pages/Instructions"));
 const Flow = lazy(() => import("~/pages/Flow"));
@@ -19,7 +20,7 @@ const Welcome = lazy(() => import("../../../templates/Welcome"));
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<Navigate to="/home" replace />} />
+    <Route path="/" element={<Root />} />
     <Route path="/components" element={<Components />} />
     <Route path="/home" element={<Instructions />} />
     <Route path="/flow" element={<Flow />} />
