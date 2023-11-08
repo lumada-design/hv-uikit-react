@@ -7,11 +7,11 @@ import { ExtractNames } from "@core/utils/classes";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import {
-  HV_TREE_VIEW_PLUGINS,
-  HvTreeViewPluginParameters,
-  TreeViewProvider,
-  useTreeView,
-} from "./internals";
+  DEFAULT_TREE_VIEW_PLUGINS,
+  DefaultTreeViewPluginParameters,
+} from "./internals/hooks/plugins";
+import { useTreeView } from "./internals/hooks/useTreeView";
+import { TreeViewProvider } from "./internals/TreeViewProvider";
 import { staticClasses, useClasses } from "./TreeView.styles";
 
 export { staticClasses as treeView2Classes }; // TODO: remove old `treeViewClasses`
@@ -20,7 +20,7 @@ export type HvTreeViewClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTreeViewProps<Multiple extends boolean | undefined>
   extends HvBaseProps<HTMLUListElement>,
-    HvTreeViewPluginParameters<Multiple> {
+    DefaultTreeViewPluginParameters<Multiple> {
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvTreeViewClasses;
   /** Tree View children. Usually a `HvTreeItem` instance, or a custom variation of it */
@@ -91,7 +91,7 @@ const HvTreeView = forwardRef(function HvTreeView<
     defaultEndIcon,
     defaultExpandIcon,
     defaultParentIcon,
-    plugins: HV_TREE_VIEW_PLUGINS,
+    plugins: DEFAULT_TREE_VIEW_PLUGINS,
     rootRef: ref,
   });
 

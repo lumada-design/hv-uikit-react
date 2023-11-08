@@ -1,5 +1,7 @@
 import {
   FocusEvent,
+  HTMLAttributes,
+  JSXElementConstructor,
   ReactNode,
   forwardRef,
   useEffect,
@@ -7,34 +9,75 @@ import {
   useRef,
   useState,
 } from "react";
-import { Collapse } from "@mui/material";
-import type { TreeItemContentProps, TreeItemProps } from "@mui/x-tree-view";
+import Collapse from "@mui/material/Collapse";
+import { TransitionProps } from "@mui/material/transitions";
 
 import { ExtractNames } from "@core/utils/classes";
 import { useForkRef } from "@core/hooks/useForkRef";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
+import { useTreeViewContext } from "../internals/TreeViewProvider";
+import { DefaultTreeViewPlugins } from "../internals/hooks/plugins";
 import {
-  HvTreeViewPlugins,
   DescendantProvider,
   TreeItemDescendant,
   useDescendant,
-  useTreeViewContext,
-} from "../internals";
+} from "../internals/DescendantProvider";
 import { staticClasses, useClasses } from "./TreeItem.styles";
-import { DefaultContent } from "./DefaultContent";
+import { DefaultContent, HvTreeContentClasses } from "./DefaultContent";
 
 export { staticClasses as treeItemClasses };
 
 export type HvTreeItemClasses = ExtractNames<typeof useClasses>;
 
-export interface HvTreeContentProps extends TreeItemContentProps {}
-
-export interface HvTreeItemProps extends TreeItemProps {
-  classes?: HvTreeItemClasses;
-  disabled?: boolean;
+export interface HvTreeContentProps extends HTMLAttributes<HTMLElement> {
+  /** className applied to the root element. */
+  className?: string;
+  /** Override or extend the styles applied to the component. */
+  classes?: HvTreeContentClasses;
+  /** The tree node label. */
+  label?: ReactNode;
+  /** The id of the node. */
+  nodeId: string;
+  /** The icon to display next to the tree node's label. */
   icon?: ReactNode;
-  ContentComponent?: React.JSXElementConstructor<HvTreeContentProps>;
+  /** The icon to display next to the tree node's label. Either an expansion or collapse icon. */
+  expansionIcon?: ReactNode;
+  /** The icon to display next to the tree node's label. Either a parent or end icon. */
+  displayIcon?: ReactNode;
+}
+
+export interface HvTreeItemProps extends HTMLAttributes<HTMLElement> {
+  /** The element id */
+  id?: string;
+  /** The id of the node. */
+  nodeId: string;
+  /** The tree node label. */
+  label?: ReactNode;
+  /** Override or extend the styles applied to the component. */
+  classes?: HvTreeItemClasses;
+  /** If `true`, the node is disabled. */
+  disabled?: boolean;
+  /** The icon to display next to the tree node's label. */
+  icon?: ReactNode;
+  /** The component used for the content node. */
+  ContentComponent?: JSXElementConstructor<HvTreeContentProps>;
+  /** Props applied to the content component */
+  ContentProps?: HvTreeContentProps;
+  /** The content of the component. */
+  children?: ReactNode;
+  /** className applied to the root element. */
+  className?: string;
+  /** The icon used to collapse the node. */
+  collapseIcon?: ReactNode;
+  /** The icon displayed next to an end node. */
+  endIcon?: ReactNode;
+  /** The icon used to expand the node. */
+  expandIcon?: ReactNode;
+  /** The component used for the transition. */
+  TransitionComponent?: JSXElementConstructor<TransitionProps>;
+  /** Props applied to the transition component */
+  TransitionProps?: TransitionProps;
 }
 
 export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
@@ -64,7 +107,7 @@ export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
       disabledItemsFocusable,
       treeId,
       icons: contextIcons,
-    } = useTreeViewContext<HvTreeViewPlugins>();
+    } = useTreeViewContext<DefaultTreeViewPlugins>();
 
     const id =
       idProp || (treeId && nodeId && `${treeId}-${nodeId}`) || undefined;
