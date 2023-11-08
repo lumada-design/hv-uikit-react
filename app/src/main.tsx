@@ -7,7 +7,6 @@ const root = ReactDOM.createRoot(
   document.getElementById("hv-root") as HTMLElement
 );
 
-//
 root.render(
   <Suspense fallback>
     <App />
