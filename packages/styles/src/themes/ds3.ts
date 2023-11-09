@@ -521,7 +521,13 @@ const ds3 = makeTheme((theme) => ({
     },
     HvCardHeader: {
       classes: {
+        root: {
+          padding: theme.spacing("15px", "sm"),
+        },
         title: {
+          ...theme.typography.title3,
+        },
+        titleShort: {
           ...theme.typography.title3,
         },
         subheader: {

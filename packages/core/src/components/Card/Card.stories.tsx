@@ -105,7 +105,11 @@ export const Main: StoryObj<HvCardProps> = {
         selectable={selectable}
         selected={selected}
       >
-        <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
+        <HvCardHeader
+          title="Asset Avatar L90"
+          subheader="Compressor"
+          icon={<Level2Average color={statusColor} />}
+        />
         <HvCardMedia
           component="img"
           alt="Compressor"
