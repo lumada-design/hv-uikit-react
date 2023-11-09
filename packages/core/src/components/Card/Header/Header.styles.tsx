@@ -3,10 +3,13 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { createClasses } from "@core/utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvCardHeader", {
-  root: { padding: `15px ${theme.space.sm}`, position: "relative" },
+  root: {
+    position: "relative",
+    padding: theme.spacing("12px", "xs", "sm", "sm"),
+  },
   titleShort: {
+    ...theme.typography.label,
     fontFamily: theme.fontFamily.body,
-    marginRight: "30px",
   },
   title: {
     ...theme.typography.label,
@@ -18,11 +21,7 @@ export const { staticClasses, useClasses } = createClasses("HvCardHeader", {
   },
   content: {},
   action: {
-    position: "absolute",
-    right: 20,
-    marginTop: 0,
-    marginRight: "0px",
+    margin: 0,
     paddingLeft: theme.space.xs,
-    top: "15px",
   },
 });

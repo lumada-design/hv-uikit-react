@@ -49,6 +49,7 @@ export const HvCardHeader = (props: HvCardHeaderProps) => {
       className={cx(classes.root, className)}
       classes={{
         title: cx({
+          // TODO: review conditional in v6
           [classes.titleShort]: icon,
           [classes.title]: !icon,
         }),
