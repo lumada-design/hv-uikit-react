@@ -67,6 +67,7 @@ export type HvFlowNodeInput = {
   label: string;
   isMandatory?: boolean;
   accepts?: string[];
+  maxConnections?: number;
 };
 
 export type HvFlowNodeOutput = {
