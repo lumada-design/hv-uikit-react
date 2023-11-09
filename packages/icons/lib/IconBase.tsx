@@ -83,7 +83,7 @@ export const splitIconProps = (iconName: string, props: IconBaseProps) => {
   const iconSize = iconSizeProp ?? (isXS(iconName) ? "XS" : "S");
   const size = getIconSize(iconSize, isSemantic(iconName), width, height);
 
-  const newSvgProps = {
+  const newSvgProps: HTMLAttributes<SVGElement> = {
     focusable: false,
     // pass size props
     ...size,
@@ -95,12 +95,12 @@ export const splitIconProps = (iconName: string, props: IconBaseProps) => {
     "aria-describedby": ariaDescribedBy,
     // pass all other `svgProps`
     ...svgProps,
-  } satisfies HTMLAttributes<SVGElement>;
+  };
 
-  const newOtherProps = {
+  const newOtherProps: IconBaseProps = {
     iconSize,
     ...rest,
-  } satisfies IconBaseProps;
+  };
 
   return [newSvgProps, newOtherProps] as const;
 };
@@ -189,6 +189,8 @@ export const StyledIconBase = styled("div")(
     ...(iconSize === "L" && getDims(112)),
   })
 );
+
+export type IconType = React.FC<IconBaseProps>;
 
 export const IconBase = ({
   children,
