@@ -6,7 +6,6 @@ import {
 import { Heart, Palette } from "@hitachivantara/uikit-react-icons";
 
 import styles from "./styles";
-import welcome from "./assets/welcome.png";
 
 const Welcome = () => {
   return (
@@ -59,7 +58,7 @@ const Welcome = () => {
           <div className={styles.imageContainer}>
             <img
               alt="Monitor showing a dashboard built with UI Kit components"
-              src={welcome}
+              src="https://i.imgur.com/BPIEkD7.png"
             />
           </div>
         </HvGrid>

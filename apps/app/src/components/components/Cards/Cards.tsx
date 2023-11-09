@@ -8,8 +8,6 @@ import {
   HvBox,
 } from "@hitachivantara/uikit-react-core";
 
-import compressor from "./assets/compressor.png";
-
 export const Cards = () => {
   return (
     <HvBox sx={{ display: "flex", flexDirection: "row", gap: theme.space.md }}>
@@ -28,7 +26,7 @@ export const Cards = () => {
           component="img"
           alt="Compressor"
           height={140}
-          image={compressor}
+          image="https://i.imgur.com/bxPPTD3.png"
         />
         <HvCardContent>
           <div style={{ paddingTop: "20px" }}>
