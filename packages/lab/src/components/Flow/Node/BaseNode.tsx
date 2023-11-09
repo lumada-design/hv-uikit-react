@@ -33,7 +33,7 @@ export { staticClasses as flowBaseNodeClasses };
 
 export type HvFlowBaseNodeClasses = ExtractNames<typeof useClasses>;
 
-export interface HvFlowBaseNodeProps<T>
+export interface HvFlowBaseNodeProps<T = any>
   extends Omit<HvBaseProps, "id">,
     NodeProps<T> {
   /** Header title */

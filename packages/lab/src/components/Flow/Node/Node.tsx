@@ -22,7 +22,7 @@ export { staticClasses as flowNodeClasses };
 // TODO How to include here the types from the parent component?
 export type HvFlowNodeClasses = ExtractNames<typeof useClasses>;
 
-export interface HvFlowNodeProps<T>
+export interface HvFlowNodeProps<T = any>
   extends Omit<HvFlowBaseNodeProps<T>, "classes"> {
   /** Node description */
   description?: string;
