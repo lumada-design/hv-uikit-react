@@ -87,6 +87,7 @@ const validateEdge = (
 
   const sourceProvides = outputs[edge.sourceHandle]?.provides || "";
   const targetAccepts = inputs[edge.targetHandle]?.accepts || [];
+  const sourceMaxConnections = outputs[edge.sourceHandle]?.maxConnections;
   const targetMaxConnections = inputs[edge.targetHandle]?.maxConnections;
 
   let isValid = targetAccepts.includes(sourceProvides);
@@ -98,6 +99,15 @@ const validateEdge = (
     ).length;
 
     isValid = targetConnections < targetMaxConnections;
+  }
+
+  if (isValid && sourceMaxConnections != null) {
+    const sourceConnections = edges.filter(
+      (edg) =>
+        edg.source === edge.source && edg.sourceHandle === edge.sourceHandle
+    ).length;
+
+    isValid = sourceConnections < sourceMaxConnections;
   }
 
   return isValid;

@@ -74,6 +74,7 @@ export type HvFlowNodeOutput = {
   label: string;
   isMandatory?: boolean;
   provides?: string;
+  maxConnections?: number;
 };
 
 export type HvFlowNodeParam = {
