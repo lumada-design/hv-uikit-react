@@ -12,7 +12,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { cancelUpload, simulateUpload } from "./simulators";
-import rainbow from "./assets/rainbow.jpg";
 
 const meta: Meta<typeof HvFileUploader> = {
   title: "Widgets/File Uploader",
@@ -195,9 +194,17 @@ export const WithPreviewThumbnails: StoryObj<HvFileUploaderProps> = {
           preview: (
             <HvFileUploaderPreview
               aria-label="Open the bigger preview"
-              onClick={() => openDialog(rainbow, "already_here.jpg")}
+              onClick={() =>
+                openDialog(
+                  "https://i.imgur.com/YcVYmM0.jpg",
+                  "already_here.jpg"
+                )
+              }
             >
-              <img alt="Small preview of the uploaded file" src={rainbow} />
+              <img
+                alt="Small preview of the uploaded file"
+                src="https://i.imgur.com/YcVYmM0.jpg"
+              />
             </HvFileUploaderPreview>
           ),
         },

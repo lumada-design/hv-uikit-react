@@ -11,7 +11,11 @@ const Header = () => {
   const mode = selectedMode === "wicked" ? "dark" : "light";
 
   return (
-    <BackgroundWrapper style={{ backgroundImage: `url(welcome-${mode}.png)` }}>
+    <BackgroundWrapper
+      style={{
+        backgroundImage: `url(https://lumada-design.github.io/assets/welcome-${mode}.png)`,
+      }}
+    >
       <Wrapper>
         <ContentWrapper>
           <HvTypography variant="title1">NEXT UI Kit</HvTypography>

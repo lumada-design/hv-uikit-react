@@ -16,9 +16,6 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-import background from "./resources/background.png";
-import customBackground from "./resources/background-custom.jpg";
-
 // #region Styled components
 
 const StyledRoot = styled("div")({
@@ -86,7 +83,7 @@ export const Main: StoryObj<HvLoginProps> = {
     };
 
     return (
-      <HvLogin background={background}>
+      <HvLogin background="https://lumada-design.github.io/assets/login-bg1.png">
         <StyledRoot>
           <HvTypography variant="title2">Welcome</HvTypography>
 
@@ -131,7 +128,7 @@ export const CustomBackground: StoryObj<HvLoginProps> = {
     };
 
     return (
-      <HvLogin background={customBackground}>
+      <HvLogin background="https://lumada-design.github.io/assets/login-bg2.jpg">
         <StyledRoot>
           <HvTypography variant="title2">Welcome</HvTypography>
 

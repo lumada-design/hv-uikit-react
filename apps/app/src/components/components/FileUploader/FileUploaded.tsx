@@ -9,8 +9,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
 
-import rainbow from "./assets/rainbow.jpg";
-
 const uploadHandlers = new Map();
 
 function clearUploadSimulationHandler(file: HvFileData) {
@@ -76,9 +74,14 @@ export const FileUploader = () => {
       preview: (
         <HvFileUploaderPreview
           aria-label="Open the bigger preview"
-          onClick={() => openDialog(rainbow, "already_here.jpg")}
+          onClick={() =>
+            openDialog("https://i.imgur.com/YcVYmM0.jpg", "already_here.jpg")
+          }
         >
-          <img alt="Small preview of the uploaded file" src={rainbow} />
+          <img
+            alt="Small preview of the uploaded file"
+            src="https://i.imgur.com/YcVYmM0.jpg"
+          />
         </HvFileUploaderPreview>
       ),
     },

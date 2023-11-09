@@ -29,9 +29,6 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-import compressor from "./assets/compressor.png";
-import leaf from "./assets/leaf.png";
-
 // #region Styled Components
 
 const StyledSubtitleLeft = styled("span")({
@@ -114,7 +111,7 @@ export const Main: StoryObj<HvCardProps> = {
           component="img"
           alt="Compressor"
           height={140}
-          image={compressor}
+          image="https://i.imgur.com/bxPPTD3.png"
         />
         <HvCardContent>
           <div style={{ paddingTop: "20px" }}>
@@ -207,7 +204,12 @@ export const AllComponents: StoryObj<HvCardProps> = {
             </StyledBottomItem>
           </Grid>
         </HvCardContent>
-        <HvCardMedia component="img" alt="Leaves" height={160} image={leaf} />
+        <HvCardMedia
+          component="img"
+          alt="Leaves"
+          height={160}
+          image="https://i.imgur.com/qv0dKdf.png"
+        />
         <HvActionBar>
           <HvCheckBox
             onChange={() => setChecked(!checked)}
@@ -457,7 +459,7 @@ export const Selectable: StoryObj<HvCardProps> = {
           <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
           <HvCardMedia
             component="img"
-            image={compressor}
+            image="https://i.imgur.com/bxPPTD3.png"
             height={140}
             alt="Compressor"
           />
