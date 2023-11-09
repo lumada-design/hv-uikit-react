@@ -4,13 +4,7 @@
     "composite": true,
     "baseUrl": "bin",
     "rootDir": "bin",
-    "outDir": "dist",
-    "allowJs": true
+    "outDir": "dist"
   },
-  "include": ["bin"],
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  }
+  "include": ["bin"]
 }

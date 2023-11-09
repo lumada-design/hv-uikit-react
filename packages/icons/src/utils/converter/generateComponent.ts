@@ -36,15 +36,13 @@ export const generateComponent = (
     .replace(/"#f0f0f0"/g, "theme.colors.atmo2")
     .replace(/"#ccced0"/g, "theme.colors.atmo4");
   const palette = replaceColorsWithTheme(themedPalette, lightPalette);
+  const defaultViewBox = defaultSizes.viewBoxRegexp.join(" ");
 
   return `
 import { theme } from "@hitachivantara/uikit-styles";
-import { IconBase, IconBaseProps, splitIconProps } from "${basePath}/IconBase";
+import { IconBase, IconType, splitIconProps } from "${basePath}/IconBase";
 
-export const ${iconName} = ({
-  viewbox = "${defaultSizes.viewBoxRegexp.join(" ")}",
-  ...others
-}: IconBaseProps) => {
+export const ${iconName}: IconType = ({ viewbox = "${defaultViewBox}", ...others }) => {
   const [svgProps, rest] = splitIconProps("${iconName}", others);
 
   return (
