@@ -44,7 +44,7 @@ export const Header = () => {
     >
       <HvHeaderBrand
         logo={<img src={logo} style={{ height: 20 }} alt="logo" />}
-        name={!isXs ? "Theme Creator" : undefined}
+        name={!isXs ? "Showroom" : undefined}
       />
 
       <HvHeaderNavigation
