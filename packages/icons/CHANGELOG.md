@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.7.1 (2023-11-10)
+
+### Bug Fixes
+
+- **icons:** fix custom color behaviour ([c5a19b8](https://github.com/lumada-design/hv-uikit-react/commit/c5a19b85b434d729517a5b706661344b80c7aba7))
+
 # 5.7.0 (2023-11-07)
 
 ### Features
