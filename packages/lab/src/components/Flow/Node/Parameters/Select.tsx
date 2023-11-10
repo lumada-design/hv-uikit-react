@@ -20,6 +20,7 @@ const Select = ({ nodeId, param, data }) => {
 
   return (
     <HvDropdown
+      className="nodrag" // Prevents dragging within the select field
       disablePortal
       label={param.label}
       values={param.options?.map((o) => {

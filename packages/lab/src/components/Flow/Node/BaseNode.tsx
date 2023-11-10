@@ -153,6 +153,7 @@ export const HvFlowBaseNode = ({
   return (
     <div
       className={cx(
+        "nowheel", // Disables the default canvas pan behaviour when scrolling inside the node
         css({ border: `1px solid ${color}` }),
         classes.root,
         className
