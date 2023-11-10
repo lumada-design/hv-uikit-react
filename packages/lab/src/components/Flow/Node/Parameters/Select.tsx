@@ -27,6 +27,7 @@ const Select = ({ nodeId, param, data }) => {
         return { id: o, label: o, selected: o === option };
       })}
       onChange={(item) => onSelectChange(item)}
+      maxHeight={100}
     />
   );
 };
