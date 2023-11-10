@@ -4,13 +4,13 @@ import {
 } from "@hitachivantara/uikit-react-viz";
 import { Meta, StoryObj } from "@storybook/react";
 
-import { vizDecorator } from "../BaseChart/stories/utils";
+import { confusionMatrixDecorator } from "../BaseChart/stories/utils";
 
 const meta: Meta<typeof HvConfusionMatrix> = {
   title: "Visualizations/Confusion Matrix",
   component: HvConfusionMatrix,
   parameters: { eyes: { include: false } },
-  decorators: [vizDecorator],
+  decorators: [confusionMatrixDecorator],
 };
 export default meta;
 

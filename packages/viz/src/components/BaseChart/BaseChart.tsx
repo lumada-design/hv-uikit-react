@@ -69,9 +69,10 @@ export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
         option={initialOption}
         theme={theme}
         notMerge
-        {...((width || height) && {
-          style: { width, height },
-        })}
+        style={{
+          width: width || "100%",
+          height: height || "100%",
+        }}
       />
     );
   }

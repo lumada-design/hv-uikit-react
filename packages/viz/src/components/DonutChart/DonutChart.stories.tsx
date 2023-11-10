@@ -122,7 +122,7 @@ export const Total: StoryObj<HvDonutChartProps> = {
   },
   render: () => {
     const styles: { [key: string]: CSSInterpolation } = {
-      root: { position: "relative" },
+      root: { position: "relative", height: "100%" },
       content: {
         display: "flex",
         flexDirection: "column",
