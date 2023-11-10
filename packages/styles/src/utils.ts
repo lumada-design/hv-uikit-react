@@ -1,24 +1,31 @@
-import type { DeepString, HvThemeStructure, SpacingValue } from "./types";
-import { space } from "./tokens/space";
+import type {
+  DeepString,
+  HvThemeStructure,
+  HvThemeVars,
+  SpacingValue,
+} from "./types";
 
-export const spacingUtil = (value: SpacingValue): string => {
+export const spacingUtil = (value: SpacingValue, vars: HvThemeVars): string => {
   switch (typeof value) {
     case "number":
-      return `calc(${space.base} * ${value}px)`;
+      return `calc(${vars.space.base} * ${value}px)`;
     case "string":
-      return space[value] || value;
+      return vars.space[value] || value;
     default:
       return value;
   }
 };
 
 // TODO: remove in favour or `spacingUtil` in v6
-export const spacingUtilOld = (value: SpacingValue): string => {
+export const spacingUtilOld = (
+  value: SpacingValue,
+  vars: HvThemeVars
+): string => {
   switch (typeof value) {
     case "number":
       return `${value}px`;
     case "string":
-      return space[value] || value;
+      return vars.space[value] || value;
     default:
       return "0px";
   }

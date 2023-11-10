@@ -105,7 +105,7 @@ const themeVars: HvThemeVars = mapCSSVars({
 
 const spacing: HvThemeUtils["spacing"] = (...args) => {
   if (hasMultipleArgs(args)) {
-    return args.map(spacingUtil).join(" ");
+    return args.map((arg) => spacingUtil(arg, themeVars)).join(" ");
   }
 
   const [value] = args;
@@ -113,11 +113,11 @@ const spacing: HvThemeUtils["spacing"] = (...args) => {
   switch (typeof value) {
     case "number":
     case "string":
-      return spacingUtil(value);
+      return spacingUtil(value, themeVars);
     // TODO: remove in v6
     case "object":
       return value && value.length > 0
-        ? value.map(spacingUtilOld).join(" ")
+        ? value.map((val) => spacingUtilOld(val, themeVars)).join(" ")
         : "0px";
     default:
       return "0px";
