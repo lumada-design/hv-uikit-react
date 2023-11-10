@@ -66,6 +66,7 @@ export const getNode = (nodes: Node[], nodeId: string) => {
 
 const validateEdge = (
   nodes: Node[],
+  edges: Edge[],
   edge: Edge,
   nodeMetaRegistry: HvFlowNodeMetaRegistry
 ) => {
@@ -86,8 +87,29 @@ const validateEdge = (
 
   const sourceProvides = outputs[edge.sourceHandle]?.provides || "";
   const targetAccepts = inputs[edge.targetHandle]?.accepts || [];
+  const sourceMaxConnections = outputs[edge.sourceHandle]?.maxConnections;
+  const targetMaxConnections = inputs[edge.targetHandle]?.maxConnections;
 
-  const isValid = targetAccepts.includes(sourceProvides);
+  let isValid = targetAccepts.includes(sourceProvides);
+
+  if (isValid && targetMaxConnections != null) {
+    const targetConnections = edges.filter(
+      (edg) =>
+        edg.target === edge.target && edg.targetHandle === edge.targetHandle
+    ).length;
+
+    isValid = targetConnections < targetMaxConnections;
+  }
+
+  if (isValid && sourceMaxConnections != null) {
+    const sourceConnections = edges.filter(
+      (edg) =>
+        edg.source === edge.source && edg.sourceHandle === edge.sourceHandle
+    ).length;
+
+    isValid = sourceConnections < sourceMaxConnections;
+  }
+
   return isValid;
 };
 
@@ -220,7 +242,7 @@ export const HvDroppableFlow = ({
 
   const { registry } = useNodeMetaRegistry();
   const isValidConnection = (connection) =>
-    validateEdge(nodes, connection, registry);
+    validateEdge(nodes, edges, connection, registry);
 
   const defaultEdgeOptions = {
     markerEnd: {
