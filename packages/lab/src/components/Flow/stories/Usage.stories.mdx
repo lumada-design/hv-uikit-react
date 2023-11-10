@@ -176,27 +176,32 @@ CustomNode.meta = {
 
 ### Inputs and Outputs <a id="inputs-and-outputs" />
 
-Nodes need inputs and/or outputs to connect to other nodes. You define inputs and outputs on the `meta` property of the component and it
-follows a specific type:
+Nodes need inputs and/or outputs to connect to other nodes. Inputs and outputs can be defined on the `meta` property of the component and they
+follow specific types:
 
 ```typescript
 type HvFlowNodeInput = {
   label: string;
   isMandatory?: boolean;
   accepts?: string[];
+  maxConnections?: number;
 };
 
 type HvFlowNodeOutput = {
   label: string;
   isMandatory?: boolean;
-  provides?: string[];
+  provides?: string;
+  maxConnections?: number;
 };
 ```
 
-You'll notice that input nodes will have an `accepts` property and the output nodes have a `provides` property. These are used to limit
-how nodes connect to other nodes. These properties can have any array of strings in it and it's used just as a descriptor of what the
-node provides or accepts. So, for example, if a node provides `["data", "config"]` only nodes that accept any of these strings will
-allow a connection from that node.
+You'll notice that input nodes have an `accepts` property and the output nodes have a `provides` property. These are used to limit
+how nodes connect to other nodes and as a descriptor of what a node provides or accepts. Thus, for example, if a node
+provides `"config"`, only nodes that accept this string will allow a connection from that node. While inputs can accept an array of strings,
+an output only provides one.
+
+Furthermore, it's also possible to define the maximum number of connections allowed for a particular input and output. This enables you to limit
+the number of connections an input accepts as well as the number of connections an output can establish.
 
 ### Parameters <a id="parameters" />
 
@@ -218,7 +223,7 @@ It's saved in the form of:
 
 ```typescript
 data: {
-  [paramterId]: [parameterValue]
+  [parameterId]: [parameterValue]
 }
 ```
 
