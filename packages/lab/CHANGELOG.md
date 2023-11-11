@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.14.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.13.4...@hitachivantara/uikit-react-lab@5.14.0) (2023-11-11)
+
+### Features
+
+- **Flow:** decouple flow from node groups ([8a5ca52](https://github.com/lumada-design/hv-uikit-react/commit/8a5ca523681f845c0e6dc3bbb77b61a8c07ad687))
+- **Flow:** max connections ([#3793](https://github.com/lumada-design/hv-uikit-react/issues/3793)) ([cdfaca5](https://github.com/lumada-design/hv-uikit-react/commit/cdfaca5afb53d0272923f9a73f6a23d92dfe9461))
+
 ## [5.13.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.13.3...@hitachivantara/uikit-react-lab@5.13.4) (2023-11-10)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

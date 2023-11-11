@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.6.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.6.7...@hitachivantara/uikit-react-viz@5.6.8) (2023-11-11)
+
+### Bug Fixes
+
+- **BaseChart:** allow for dynamic height on the BaseChart ([6c4c853](https://github.com/lumada-design/hv-uikit-react/commit/6c4c853734bc2c12c251ace65931c8d046320002))
+
 ## 5.6.7 (2023-11-10)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz
