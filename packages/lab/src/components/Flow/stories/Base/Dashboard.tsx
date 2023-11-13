@@ -1,6 +1,7 @@
 import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { NodeProps } from "reactflow";
 
-export const Dashboard = (props) => {
+export const Dashboard = (props: NodeProps) => {
   return (
     <HvFlowNode
       description="Dashboard description"

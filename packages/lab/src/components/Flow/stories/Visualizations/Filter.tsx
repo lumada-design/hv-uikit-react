@@ -6,13 +6,13 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 import { useFlowNode, HvFlowNode } from "@hitachivantara/uikit-react-lab";
-import { useReactFlow, useStore } from "reactflow";
+import { NodeProps, useReactFlow, useStore } from "reactflow";
 
 function filterDataByCountries(data, countriesToFilter: string[]) {
   return data.filter((item) => countriesToFilter.includes(item.country));
 }
 
-export const Filter = (props) => {
+export const Filter = (props: NodeProps) => {
   const { id } = props;
 
   const [checked, setChecked] = useState<string[]>([]);

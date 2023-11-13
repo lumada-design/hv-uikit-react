@@ -1,7 +1,8 @@
 import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { NodeProps } from "reactflow";
 
 export const createAsset = ({ label, description, params, data }) => {
-  const Asset = (props) => {
+  const Asset = (props: NodeProps) => {
     return (
       <HvFlowNode
         description={description}

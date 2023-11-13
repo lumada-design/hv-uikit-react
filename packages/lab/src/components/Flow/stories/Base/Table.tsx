@@ -1,6 +1,7 @@
 import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { NodeProps } from "reactflow";
 
-export const Table = (props) => {
+export const Table = (props: NodeProps) => {
   return <HvFlowNode description="Table description" {...props} />;
 };
 

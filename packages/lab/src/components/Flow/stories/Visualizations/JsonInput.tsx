@@ -1,6 +1,7 @@
 import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { NodeProps } from "reactflow";
 
-export const JsonInput = (props) => {
+export const JsonInput = (props: NodeProps) => {
   return <HvFlowNode description="Population Datakky7" {...props} />;
 };
 

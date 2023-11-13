@@ -10,9 +10,9 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Favorite, Flag, Search } from "@hitachivantara/uikit-react-icons";
 import { HvFlowNode, useFlowNode } from "@hitachivantara/uikit-react-lab";
-import { Node } from "reactflow";
+import { Node, NodeProps } from "reactflow";
 
-export const Tron = (props) => {
+export const Tron = (props: NodeProps) => {
   const { id } = props;
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node | undefined>();

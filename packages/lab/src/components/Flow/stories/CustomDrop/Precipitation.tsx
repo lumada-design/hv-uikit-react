@@ -1,8 +1,9 @@
 import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { NodeProps } from "reactflow";
 
 import { data } from "./data";
 
-export const Precipitation = (props) => {
+export const Precipitation = (props: NodeProps) => {
   return (
     <HvFlowNode
       description="Precipitation data"
