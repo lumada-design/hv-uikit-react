@@ -1,13 +1,11 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 
 import { Container } from "~/components/common/Container";
 import { Tutorial } from "~/components/common/Tutorial";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { NavigationProvider } from "~/lib/context/NavigationContext";
 import navigation from "~/lib/navigation";
-import Routes from "~/lib/routes";
-
-import { useGeneratorContext } from "./GeneratorContext";
 
 const Content = () => {
   const { selectedMode } = useTheme();
@@ -29,7 +27,7 @@ const Content = () => {
           customTheme?.colors?.modes?.[selectedMode]?.backgroundColor,
       }}
     >
-      <Router basename={import.meta.env.BASE_URL}>
+      <div>
         <HvProvider
           classNameKey="gen-root"
           rootElementId="gen-root"
@@ -47,11 +45,11 @@ const Content = () => {
               />
             )}
             <Container maxWidth="xl">
-              <Routes />
+              <Outlet />
             </Container>
           </NavigationProvider>
         </HvProvider>
-      </Router>
+      </div>
     </div>
   );
 };

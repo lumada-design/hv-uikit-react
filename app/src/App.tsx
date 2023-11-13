@@ -1,7 +1,8 @@
+import { RouterProvider } from "react-router-dom";
 import { ds3, ds5, HvProvider, theme } from "@hitachivantara/uikit-react-core";
 
 import "~/lib/i18n";
-import Content from "~/generator/Content";
+import { router } from "~/lib/routes";
 import Sidebar from "~/generator/Sidebar";
 import GeneratorProvider from "~/generator/GeneratorContext";
 
@@ -21,13 +22,8 @@ const App = () => {
         cssTheme="scoped"
       >
         <GeneratorProvider>
-          <div
-            style={{
-              flex: 1,
-              overflowY: "auto",
-            }}
-          >
-            <Content />
+          <div style={{ flex: 1, overflowY: "auto" }}>
+            <RouterProvider router={router} />
           </div>
           <Sidebar />
         </GeneratorProvider>
