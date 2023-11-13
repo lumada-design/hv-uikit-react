@@ -1,5 +1,4 @@
 import { css } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-react-core";
 import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 import { HvBarChart } from "@hitachivantara/uikit-react-viz";
 import { NodeProps, useStore } from "reactflow";
@@ -24,15 +23,20 @@ export const BarChart = (props: NodeProps) => {
         dataNode.data.jsonData &&
         dataNode.data.jsonData.length > 0 && (
           <div
-            style={{
-              padding: theme.spacing("xs", "xs", "xs", "sm"),
-            }}
+            className={css({
+              height: 300,
+            })}
           >
             <HvBarChart
               data={dataNode.data.jsonData}
               splitBy="country"
               groupBy="year"
               measures="population"
+              yAxis={{
+                name: "Millions",
+                labelFormatter: (value) => `${Number(value) / 1000000}`,
+              }}
+              grid={{ bottom: 40 }}
             />
           </div>
         )}
