@@ -20,12 +20,19 @@ export const LineChart = (props: NodeProps) => {
       {...props}
     >
       {dataNode && dataNode.data && dataNode.data.country && (
-        <div>
+        <div
+          className={css({
+            height: 300,
+          })}
+        >
           <HvLineChart
             data={data[dataNode.data.country]}
             groupBy="Month"
             measures="Precipitation"
-            grid={{ top: 10, bottom: 40, right: 10, left: 40 }}
+            yAxis={{
+              name: "mm",
+            }}
+            grid={{ bottom: 40, top: 40 }}
           />
         </div>
       )}
