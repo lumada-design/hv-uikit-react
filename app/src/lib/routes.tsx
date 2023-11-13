@@ -1,6 +1,12 @@
 import { lazy } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import {
+  Route,
+  Navigate,
+  createRoutesFromElements,
+  createBrowserRouter,
+} from "react-router-dom";
 
+const Layout = lazy(() => import("~/pages/layout"));
 const Root = lazy(() => import("~/pages/Root"));
 const Components = lazy(() => import("~/pages/Components"));
 const Instructions = lazy(() => import("~/pages/Instructions"));
@@ -17,9 +23,10 @@ const Form = lazy(() => import("../../../templates/Form"));
 const DetailsView = lazy(() => import("../../../templates/DetailsView"));
 const Dashboard = lazy(() => import("../../../templates/Dashboard"));
 const Welcome = lazy(() => import("../../../templates/Welcome"));
+// @ts-check
 
-const AppRoutes = () => (
-  <Routes>
+const routes = createRoutesFromElements(
+  <Route element={<Layout />}>
     <Route path="/" element={<Root />} />
     <Route path="/components" element={<Components />} />
     <Route path="/home" element={<Instructions />} />
@@ -36,7 +43,9 @@ const AppRoutes = () => (
     <Route path="/templates/form" element={<Form />} />
     <Route path="/templates/details-view" element={<DetailsView />} />
     <Route path="/*" element={<NotFound />} />
-  </Routes>
+  </Route>
 );
 
-export default AppRoutes;
+export const router = createBrowserRouter(routes, {
+  basename: import.meta.env.BASE_URL,
+});
