@@ -77,13 +77,22 @@ export type HvFlowNodeOutput = {
   maxConnections?: number;
 };
 
-export type HvFlowNodeParam = {
+export interface HvFlowNodeSharedParam {
   id: string;
-  type: "text" | "select";
   label: string;
+}
+
+export interface HvFlowNodeTextParam extends HvFlowNodeSharedParam {
+  type: "text";
+}
+
+export interface HvFlowNodeSelectParam extends HvFlowNodeSharedParam {
+  type: "select";
+  multiple?: boolean;
   options?: string[];
-  value?: string;
-};
+}
+
+export type HvFlowNodeParam = HvFlowNodeSelectParam | HvFlowNodeTextParam;
 
 export interface HvFlowNodeAction extends HvActionGeneric {
   callback?: (node: Node) => void;

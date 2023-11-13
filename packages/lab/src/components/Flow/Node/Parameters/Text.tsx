@@ -1,19 +1,32 @@
 import { useState } from "react";
-import { HvInput } from "@hitachivantara/uikit-react-core";
+import { HvInput, HvInputProps } from "@hitachivantara/uikit-react-core";
 import { useReactFlow } from "reactflow";
 
-const Text = ({ nodeId, param, data }) => {
-  const reactFlowInstance = useReactFlow();
-  const [text, setText] = useState(data[param.id]);
+import { HvFlowNodeTextParam } from "../../types";
 
-  const onTextChange = (val) => {
+interface TextProps {
+  nodeId: string;
+  param: Omit<HvFlowNodeTextParam, "type">;
+  data: any;
+}
+
+const Text = ({ nodeId, param, data }: TextProps) => {
+  const { id, label } = param;
+
+  const reactFlowInstance = useReactFlow();
+
+  const [text, setText] = useState(data[id]);
+
+  const onTextChange: HvInputProps["onChange"] = (event, val) => {
     const nodes = reactFlowInstance.getNodes();
+
     const newNodes = nodes.map((node) => {
       if (node.id === nodeId) {
-        node.data = { ...node.data, [param.id]: val };
+        node.data = { ...node.data, [id]: val };
       }
       return node;
     });
+
     reactFlowInstance.setNodes(newNodes);
     setText(val);
   };
@@ -21,9 +34,9 @@ const Text = ({ nodeId, param, data }) => {
   return (
     <HvInput
       className="nodrag" // Prevents dragging within the input field
-      label={param.label}
+      label={label}
       value={text}
-      onChange={(evt, val) => onTextChange(val)}
+      onChange={onTextChange}
     />
   );
 };

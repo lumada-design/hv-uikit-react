@@ -1,33 +1,58 @@
 import { useState } from "react";
-import { HvDropdown } from "@hitachivantara/uikit-react-core";
+import { HvDropdown, HvDropdownProps } from "@hitachivantara/uikit-react-core";
 import { useReactFlow } from "reactflow";
 
-const Select = ({ nodeId, param, data }) => {
-  const reactFlowInstance = useReactFlow();
-  const [option, setOption] = useState(data[param.id]);
+import { HvFlowNodeSelectParam } from "../../types";
 
-  const onSelectChange = (item) => {
+interface SelectProps {
+  nodeId: string;
+  param: Omit<HvFlowNodeSelectParam, "type">;
+  data: any;
+}
+
+const Select = ({ nodeId, param, data }: SelectProps) => {
+  const { id, label, multiple = false, options } = param;
+
+  const reactFlowInstance = useReactFlow();
+
+  const [opts, setOpts] = useState<string[] | undefined>(
+    data[id] ? (Array.isArray(data[id]) ? data[id] : [data[id]]) : undefined
+  );
+
+  const onSelectChange: HvDropdownProps["onChange"] = (item) => {
     const nodes = reactFlowInstance.getNodes();
+
+    const newOpts = Array.isArray(item)
+      ? item.map((x) => x.label as string)
+      : item?.label
+      ? [item.label as string]
+      : undefined;
+
     const newNodes = nodes.map((node) => {
       if (node.id === nodeId) {
-        node.data = { ...node.data, [param.id]: item.label };
+        node.data = {
+          ...node.data,
+          [id]: newOpts,
+        };
       }
       return node;
     });
+
     reactFlowInstance.setNodes(newNodes);
-    setOption(item.label);
+    setOpts(newOpts);
   };
 
   return (
     <HvDropdown
       className="nodrag" // Prevents dragging within the select field
       disablePortal
-      label={param.label}
-      values={param.options?.map((o) => {
-        return { id: o, label: o, selected: o === option };
+      label={label}
+      values={options?.map((o) => {
+        return { id: o, label: o, selected: !!opts?.find((opt) => opt === o) };
       })}
-      onChange={(item) => onSelectChange(item)}
+      onChange={onSelectChange}
       maxHeight={100}
+      multiSelect={multiple}
     />
   );
 };
