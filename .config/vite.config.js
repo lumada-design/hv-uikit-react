@@ -14,7 +14,7 @@ const external = [
 export default defineConfig({
   plugins: [
     dts({
-      outputDir: "dist/types",
+      outDir: "dist/types",
       rollupTypes: true,
     }),
     react({
@@ -62,13 +62,13 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: path.resolve(__dirname, "test.setup.tsx"),
     include: ["**/*.test.{ts,tsx}"],
-    exclude: ["**/package/**"],
+    exclude: ["node_modules", "dist", "package"],
     silent: true,
     testTimeout: 10000,
     reporters: "default",
     coverage: {
       enabled: false,
-      provider: "c8",
+      provider: "v8",
       reporter: "lcov",
       include: ["src/**/*.ts?(x)"],
       exclude: ["src/**/stories/*", "src/**/*{test,stories,spec}.ts?(x)"],
