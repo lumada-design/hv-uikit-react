@@ -24,12 +24,14 @@ export const LineChart = (props: NodeProps) => {
           id: "measure",
           type: "select",
           options: columns,
+          multiple: true,
         },
         {
           label: "Group by",
           id: "groupBy",
           type: "select",
           options: columns,
+          multiple: true,
         },
       ]
     : undefined;

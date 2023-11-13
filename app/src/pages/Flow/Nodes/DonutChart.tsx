@@ -30,6 +30,7 @@ export const DonutChart = (props: NodeProps) => {
           id: "groupBy",
           type: "select",
           options: columns,
+          multiple: true,
         },
       ]
     : undefined;
