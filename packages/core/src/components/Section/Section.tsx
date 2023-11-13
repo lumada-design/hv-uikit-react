@@ -25,7 +25,6 @@ export interface HvSectionProps
   /** When uncontrolled, defines the initial expanded state. */
   defaultExpanded?: boolean;
   /** Section actions */
-  // actions?: HvActionGeneric[];
   actions?: React.ReactNode;
   /** Section onExpand callback */
   onToggle?: (

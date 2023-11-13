@@ -70,7 +70,7 @@ export const WithActions: StoryObj<HvSectionProps> = {
         gridTemplateColumns: "repeat(2, 1fr)",
         gap: theme.space.sm,
       }),
-      root: css({ position: "relative" }),
+      root: css({ position: "relative", height: "100%" }),
       content: css({
         display: "flex",
         flexDirection: "column",

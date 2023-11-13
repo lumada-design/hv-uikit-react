@@ -94,7 +94,7 @@ const Dashboard = () => {
         />
       </GridPanel>
       <GridPanel xs={12} md={4} isLoading={isLoading}>
-        <div className={css({ position: "relative" })}>
+        <div className={css({ position: "relative", height: "100%" })}>
           <HvDonutChart
             data={data.donutData}
             groupBy="Category"
