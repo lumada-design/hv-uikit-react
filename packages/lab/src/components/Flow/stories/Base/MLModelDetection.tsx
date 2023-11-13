@@ -1,6 +1,7 @@
 import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { NodeProps } from "reactflow";
 
-export const MLModelDetection = (props) => {
+export const MLModelDetection = (props: NodeProps) => {
   return <HvFlowNode description="Anomaly detection description" {...props} />;
 };
 

@@ -1,6 +1,7 @@
 import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { NodeProps } from "reactflow";
 
-export const KPI = (props) => {
+export const KPI = (props: NodeProps) => {
   return <HvFlowNode description="KPI description" {...props} />;
 };
 
