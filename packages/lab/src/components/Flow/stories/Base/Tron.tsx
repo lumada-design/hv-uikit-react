@@ -87,7 +87,7 @@ export const Tron = (props) => {
             id: "asset",
             label: "Asset",
             type: "select",
-            options: ["Way Side", "Cars"],
+            options: ["Way Side", "Cars", "Helix", "Launch Track"],
           },
         ]}
         {...props}

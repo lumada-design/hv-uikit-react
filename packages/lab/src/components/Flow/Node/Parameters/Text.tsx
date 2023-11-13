@@ -20,6 +20,7 @@ const Text = ({ nodeId, param, data }) => {
 
   return (
     <HvInput
+      className="nodrag" // Prevents dragging within the input field
       label={param.label}
       value={text}
       onChange={(evt, val) => onTextChange(val)}
