@@ -90,7 +90,8 @@ const validateEdge = (
   const sourceMaxConnections = outputs[edge.sourceHandle]?.maxConnections;
   const targetMaxConnections = inputs[edge.targetHandle]?.maxConnections;
 
-  let isValid = targetAccepts.includes(sourceProvides);
+  let isValid =
+    targetAccepts.length === 0 || targetAccepts.includes(sourceProvides);
 
   if (isValid && targetMaxConnections != null) {
     const targetConnections = edges.filter(
