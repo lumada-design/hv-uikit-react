@@ -6,8 +6,9 @@ import {
   NodeProps,
   NodeToolbar,
   Position,
+  useEdges,
+  useNodes,
   useReactFlow,
-  useStore,
 } from "reactflow";
 
 import {
@@ -106,8 +107,8 @@ export const HvFlowBaseNode = ({
 
   const { classes, cx, css } = useClasses(classesProp);
 
-  const edges = useStore((s) => s.edges);
-  const nodes = useStore((s) => s.getNodes());
+  const edges = useEdges();
+  const nodes = useNodes();
 
   const node = nodes.find((n) => n.id === id);
 

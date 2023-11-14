@@ -1,4 +1,4 @@
-import { useStore } from "reactflow";
+import { useNodes } from "reactflow";
 import {
   HvEmptyState,
   HvEmptyStateProps,
@@ -10,7 +10,7 @@ export interface HvFlowEmptyProps extends HvEmptyStateProps {}
 
 export const HvFlowEmpty = ({ className, ...others }: HvFlowEmptyProps) => {
   const { classes, cx } = useClasses();
-  const nodes = useStore((state) => state.getNodes());
+  const nodes = useNodes();
   return (
     !nodes ||
     (nodes.length === 0 ? (

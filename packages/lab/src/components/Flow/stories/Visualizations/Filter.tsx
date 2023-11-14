@@ -6,7 +6,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 import { useFlowNode, HvFlowNode } from "@hitachivantara/uikit-react-lab";
-import { NodeProps, useReactFlow, useStore } from "reactflow";
+import { NodeProps, useEdges, useNodes, useReactFlow } from "reactflow";
 
 function filterDataByCountries(data, countriesToFilter: string[]) {
   return data.filter((item) => countriesToFilter.includes(item.country));
@@ -19,8 +19,8 @@ export const Filter = (props: NodeProps) => {
 
   const reactFlowInstance = useReactFlow();
 
-  const nodes = useStore((state) => state.getNodes());
-  const edges = useStore((state) => state.edges);
+  const nodes = useNodes<any>();
+  const edges = useEdges();
 
   let options: string[] = [];
 
