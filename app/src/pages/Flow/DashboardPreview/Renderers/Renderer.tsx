@@ -31,7 +31,7 @@ export const Renderer = ({
   title,
   unit,
   aggregation,
-  endpoint = "",
+  endpoint,
 }: RendererProps) => {
   const { data, loading } = useData(endpoint);
 

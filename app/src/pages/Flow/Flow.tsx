@@ -22,9 +22,15 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 
 import classes from "./styles";
-import { DashboardNode, Dashboards, NodeGroup } from "./types";
+import {
+  DASHBOARDS_STORAGE_KEY,
+  DashboardSpecs,
+  DashboardsStorage,
+  LAYOUT_COLS,
+  NodeGroup,
+} from "./types";
 import { BarChart, Dashboard, DonutChart, Kpi, LineChart } from "./Nodes";
-import { createDataset, useDatasets } from "./utils";
+import { buildLayout, createDataset, useDatasets } from "./utils";
 
 // Node groups
 const nodeGroups = {
@@ -71,37 +77,47 @@ const Content = () => {
   useEffect(() => {
     return () => {
       // Unmount and remove dashboards from local storage
-      localStorage.removeItem("dashboards");
+      localStorage.removeItem(DASHBOARDS_STORAGE_KEY);
     };
   }, []);
 
   const handleFlowChange: HvFlowProps["onFlowChange"] = (nds, egs) => {
-    const dashboards = nds.reduce((acc: Dashboards, cur) => {
+    const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
+    const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
+
+    const dashboards = nds.reduce((acc: DashboardsStorage, cur) => {
       if (cur.type === "dashboard") {
-        acc[cur.id] = egs
+        const vizNodes = egs
           .filter((edge) => edge.target === cur.id)
-          .reduce((accN: DashboardNode[], curEdg) => {
+          .reduce((accN: NonNullable<DashboardSpecs["nodes"]>, curEdg) => {
             const vizNode = nds.find((node) => node.id === curEdg.source);
             const datasetNodeId = egs.find(
               (edge) => edge.target === vizNode?.id
             )?.source;
             const datasetNode = nds.find((node) => node.id === datasetNodeId);
 
-            if (vizNode && datasetNode) {
+            if (vizNode) {
               accN.push({
-                endpoint: datasetNode.data.endpoint,
+                endpoint: datasetNode?.data.endpoint,
                 node: vizNode,
               });
             }
-
             return accN;
           }, []);
+
+        const curLayout = specs?.[cur.id]?.layout;
+
+        acc[cur.id] = {
+          nodes: vizNodes,
+          layout: buildLayout(vizNodes, curLayout),
+          layoutCols: LAYOUT_COLS,
+        };
       }
       return acc;
     }, {});
 
     // Save dashboards in local storage
-    localStorage.setItem("dashboards", JSON.stringify(dashboards));
+    localStorage.setItem(DASHBOARDS_STORAGE_KEY, JSON.stringify(dashboards));
   };
 
   const nodeTypes = useMemo(() => {

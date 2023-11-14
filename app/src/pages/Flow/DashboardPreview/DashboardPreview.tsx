@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { useSearchParams } from "react-router-dom";
-import { theme } from "@hitachivantara/uikit-react-core";
+import { HvGlobalActions, theme } from "@hitachivantara/uikit-react-core";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
-import { Dashboard, DashboardLayout, DashboardProps } from "./Dashboard";
-import { Dashboards } from "../types";
-import { buildContent, buildLayout } from "./utils";
+import { Dashboard, DashboardProps } from "../Dashboard";
+import { buildContent } from "./utils";
+import { DASHBOARDS_STORAGE_KEY, DashboardsStorage } from "../types";
 
 const DashboardPreview = () => {
   const [searchParams] = useSearchParams();
@@ -14,32 +14,41 @@ const DashboardPreview = () => {
 
   const isMounted = useRef<boolean>(false);
 
-  const [content, setContent] = useState<DashboardProps["content"]>();
-  const [layout, setLayout] = useState<DashboardLayout[]>();
+  const [config, setConfig] = useState<{
+    content?: DashboardProps["content"];
+    layout?: DashboardProps["layout"];
+    cols?: number;
+  }>();
 
   const buildDashboard = useCallback(
     (value: string | null) => {
       if (id) {
-        const dashboards: Dashboards = value ? JSON.parse(value) : undefined;
+        const dashboards: DashboardsStorage = value
+          ? JSON.parse(value)
+          : undefined;
         const dashboard = dashboards?.[id];
 
         if (dashboard) {
-          const cnt = buildContent(dashboard);
-          const ly = buildLayout(cnt, layout);
+          const { layout, nodes, layoutCols } = dashboard;
 
-          setContent(cnt);
-          setLayout(ly);
+          const content = buildContent(nodes);
+
+          setConfig({
+            layout,
+            content,
+            cols: layoutCols,
+          });
         }
       }
     },
-    [id, layout]
+    [id]
   );
 
   const onStorageUpdate = useCallback(
     (e: StorageEvent) => {
       const { key, newValue } = e;
 
-      if (key === "dashboards") {
+      if (key === DASHBOARDS_STORAGE_KEY) {
         buildDashboard(newValue);
       }
     },
@@ -48,13 +57,11 @@ const DashboardPreview = () => {
 
   useEffect(() => {
     if (!isMounted.current) {
-      const value = localStorage.getItem("dashboards");
+      isMounted.current = true;
+
+      const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
 
       buildDashboard(value);
-    }
-
-    if (!isMounted.current) {
-      isMounted.current = true;
     }
 
     // Listen for updates
@@ -66,10 +73,6 @@ const DashboardPreview = () => {
     };
   }, [buildDashboard, onStorageUpdate]);
 
-  const handleLayoutChange: DashboardProps["onLayoutChange"] = (ly) => {
-    setLayout(ly);
-  };
-
   return (
     <HvVizProvider>
       <div
@@ -78,15 +81,16 @@ const DashboardPreview = () => {
           marginTop: `calc(-1 * (2 * ${theme.header.height} + ${theme.space.xs}))`,
         })}
       >
+        <HvGlobalActions position="relative" title="Dashboard Preview" />
         <Dashboard
-          content={content}
-          layout={layout}
+          content={config?.content}
+          layout={config?.layout}
           compactType={null}
           rowHeight={120}
-          cols={12}
+          cols={config?.cols}
           margin={[16, 16]}
-          preventCollision
-          onLayoutChange={handleLayoutChange}
+          isDraggable={false}
+          isResizable={false}
         />
       </div>
     </HvVizProvider>
