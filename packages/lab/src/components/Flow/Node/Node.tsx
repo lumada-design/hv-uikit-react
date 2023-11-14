@@ -107,13 +107,21 @@ export const HvFlowNode = ({
           {description && (
             <HvTooltip title={<HvTypography>{description}</HvTypography>}>
               <div>
-                <Info />
+                <Info color="base_dark" />
               </div>
             </HvTooltip>
           )}
           {hasParams && (
-            <HvButton icon onClick={() => setShowParams((p) => !p)}>
-              {showParams ? <Up /> : <Down />}
+            <HvButton
+              icon
+              overrideIconColors={false}
+              onClick={() => setShowParams((p) => !p)}
+            >
+              {showParams ? (
+                <Up color="base_dark" />
+              ) : (
+                <Down color="base_dark" />
+              )}
             </HvButton>
           )}
         </>

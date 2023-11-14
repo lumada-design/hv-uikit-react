@@ -149,6 +149,9 @@ export const HvFlowBaseNode = ({
   if (!node) return null;
 
   const color = getColor(colorProp);
+  const iconColor = isValidElement(icon)
+    ? getColor(icon.props.color || "base_dark")
+    : getColor("base_dark");
 
   return (
     <div
@@ -175,7 +178,12 @@ export const HvFlowBaseNode = ({
       <div
         className={cx(css({ backgroundColor: color }), classes.headerContainer)}
       >
-        <div className={classes.titleContainer}>
+        <div
+          className={cx(
+            classes.titleContainer,
+            css({ "& svg *.color0": { fill: iconColor } })
+          )}
+        >
           {icon}
           <HvTypography variant="title4" className={classes.title}>
             {title}
