@@ -41,8 +41,6 @@ const nodeTypes = {
 type NodeType = keyof typeof nodeTypes;
 
 // Node groups
-type NodeGroups = "inputs" | "transformations" | "visualizations";
-
 const nodeGroups = {
   inputs: {
     label: "Input",
@@ -62,7 +60,9 @@ const nodeGroups = {
     description: "Find here all the available visualizations.",
     icon: <LineChartAlt />,
   },
-} satisfies HvFlowProps<NodeGroups>["nodeGroups"];
+} satisfies HvFlowProps["nodeGroups"];
+
+export type NodeGroups = keyof typeof nodeGroups;
 
 // Flow
 const nodes = [

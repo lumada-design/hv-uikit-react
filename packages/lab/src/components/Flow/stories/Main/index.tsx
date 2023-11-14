@@ -27,8 +27,8 @@ import {
 } from "../Base";
 
 // Flow
-const nodes = [] satisfies HvFlowProps<NodeGroups, NodeType>["nodes"];
-const edges = [] satisfies HvFlowProps<NodeGroups, NodeType>["edges"];
+const nodes: HvFlowProps<NodeGroups, NodeType>["nodes"] = [];
+const edges: HvFlowProps<NodeGroups, NodeType>["edges"] = [];
 
 // Classes
 export const classes = {

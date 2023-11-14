@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { NodeProps } from "reactflow";
 import { css } from "@emotion/css";
 import {
   HvFlowNode,
+  HvFlowNodeFC,
   HvFlowNodeTypeMeta,
   useFlowContext,
 } from "@hitachivantara/uikit-react-lab";
@@ -31,7 +31,7 @@ interface Configuration {
   config?: DashboardSpecs;
 }
 
-export const Dashboard = (props: NodeProps) => {
+export const Dashboard: HvFlowNodeFC = (props) => {
   const { id } = props;
 
   const { nodeTypes } = useFlowContext();

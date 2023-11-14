@@ -1,7 +1,8 @@
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
-import { NodeProps } from "reactflow";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
-export const Dashboard = (props: NodeProps) => {
+import type { NodeGroups } from ".";
+
+export const Dashboard: HvFlowNodeFC<NodeGroups> = (props) => {
   return (
     <HvFlowNode
       description="Dashboard description"

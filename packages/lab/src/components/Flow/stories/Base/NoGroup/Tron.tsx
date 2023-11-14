@@ -1,7 +1,6 @@
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
-import { NodeProps } from "reactflow";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
-export const Tron = (props: NodeProps) => {
+export const Tron: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="Tron asset description"

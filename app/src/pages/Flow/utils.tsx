@@ -1,7 +1,6 @@
 import { useCallback } from "react";
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 import useSWR from "swr";
-import { NodeProps } from "reactflow";
 import { loadArrow } from "arquero";
 
 import { DashboardLayout } from "./Dashboard";
@@ -73,7 +72,7 @@ export const createDataset = ({
   description: string;
   data: any;
 }) => {
-  const Dataset = (props: NodeProps) => {
+  const Dataset: HvFlowNodeFC = (props) => {
     return <HvFlowNode description={description} {...props} />;
   };
 

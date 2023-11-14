@@ -9,10 +9,16 @@ import {
   HvDialogTitle,
 } from "@hitachivantara/uikit-react-core";
 import { Favorite, Flag, Search } from "@hitachivantara/uikit-react-icons";
-import { HvFlowNode, useFlowNode } from "@hitachivantara/uikit-react-lab";
-import { Node, NodeProps } from "reactflow";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  useFlowNode,
+} from "@hitachivantara/uikit-react-lab";
+import { Node } from "reactflow";
 
-export const Tron = (props: NodeProps) => {
+import type { NodeGroups } from ".";
+
+export const Tron: HvFlowNodeFC<NodeGroups> = (props) => {
   const { id } = props;
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node | undefined>();

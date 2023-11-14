@@ -17,8 +17,6 @@ import { Table } from "./Table";
 import { Tron } from "./Tron";
 
 // Node groups
-export type NodeGroups = "assets" | "models" | "insights" | "dashboard";
-
 export const nodeGroups = {
   assets: {
     label: "Asset",
@@ -44,7 +42,9 @@ export const nodeGroups = {
     description: "Find here all the available dashboards.",
     icon: <Cards />,
   },
-} satisfies HvFlowProps<NodeGroups>["nodeGroups"];
+} satisfies HvFlowProps["nodeGroups"];
+
+export type NodeGroups = keyof typeof nodeGroups;
 
 // Node types
 export const nodeTypes = {

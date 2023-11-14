@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { css } from "@emotion/css";
 import {
   HvButton,
@@ -10,18 +10,15 @@ import { Add, Backwards, DataSource } from "@hitachivantara/uikit-react-icons";
 import {
   HvFlowSidebar,
   HvFlow,
+  HvFlowNode,
+  HvFlowNodeProps,
+  HvFlowNodeFC,
   HvFlowProps,
   HvFlowControls,
 } from "@hitachivantara/uikit-react-lab";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
-// The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Dynamic
-import { createAsset } from "./utils";
-// The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
 import { restrictToSample } from "../Base";
-
-// Node groups
-type NodeGroups = "assets";
 
 const nodeGroups = {
   assets: {
@@ -31,10 +28,33 @@ const nodeGroups = {
       "Find here all the available assets. Scroll to see all the options.",
     icon: <DataSource />,
   },
-} satisfies HvFlowProps<NodeGroups>["nodeGroups"];
+} satisfies HvFlowProps["nodeGroups"];
+
+type NodeGroups = keyof typeof nodeGroups;
+
+/** Create a generic node programmatically */
+const createNode = (
+  nodeProps: Partial<HvFlowNodeProps>,
+  nodeMeta: HvFlowNodeFC<NodeGroups>["meta"]
+) => {
+  const Asset: HvFlowNodeFC<NodeGroups> = (props) => (
+    <HvFlowNode {...nodeProps} {...props} />
+  );
+
+  Asset.meta = nodeMeta;
+  return Asset;
+};
+
+/** Create an Asset node programmatically */
+const createAssetNode = ({ label, description, params, data }) => {
+  return createNode(
+    { expanded: true, description, params },
+    { label, groupId: "assets", data }
+  );
+};
 
 // Classes
-export const classes = {
+const classes = {
   root: css({
     height: "100vh",
     [`& .HvFlowSidebarGroup-itemsContainer`]: {
@@ -51,35 +71,23 @@ export const classes = {
 const numberOfAssets = 40;
 const options = ["Way Side", "Track", "Segment", "Light Cycle", "Zone"];
 
-const getRandomOption = () => {
-  return options[Math.floor(Math.random() * options.length)];
-};
+const nodeTypes = Object.fromEntries(
+  [...Array(numberOfAssets)].map((el, j) => {
+    const i = j + 1;
+    const NewAsset = createAssetNode({
+      label: `Asset ${i}`,
+      description: `Asset ${i} description`,
+      params: [{ id: "asset", label: "Asset", type: "select", options }],
+      data: { asset: options[i % options.length] },
+    });
+
+    return [`asset${i}`, NewAsset] as const;
+  })
+);
 
 export const Dynamic = () => {
   const { rootId } = useTheme();
-
   const [open, setOpen] = useState(false);
-
-  const nodeTypes = useMemo(() => {
-    const nt = {};
-    for (let i = 1; i <= numberOfAssets; i++) {
-      const NewAsset = createAsset({
-        label: `Asset ${i}`,
-        description: `Asset ${i} description`,
-        params: [
-          {
-            id: "asset",
-            label: "Asset",
-            type: "select",
-            options: ["Way Side", "Track", "Segment", "Light Cycle", "Zone"],
-          },
-        ],
-        data: { asset: getRandomOption() },
-      });
-      nt[`asset${i}`] = NewAsset;
-    }
-    return nt;
-  }, []);
 
   return (
     <div className={classes.root}>
