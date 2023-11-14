@@ -1,4 +1,4 @@
-import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { Meta } from "@storybook/addon-docs";
 
 <Meta title="Lab/Flow/Usage" />
 
@@ -11,25 +11,22 @@ This is a lab component, please keep in mind that it can be changed in the futur
 
 Summary:
 
-- [Creating flows](#creating-flows)
-
-  - [Sidebar](#sidebar)
-  - [Layout](#layout)
-    - [Background](#background)
-    - [Controls](#controls)
-    - [Minimap](#minimap)
-    - [Empty State](#empty-state)
-  - [Custom nodes and node types](#custom-nodes-and-node-types)
-  - [Inputs and Outputs](#inputs-and-outputs)
-  - [Parameters](#parameters)
-  - [Actions](#actions)
-    - [Default Actions](#default-actions)
-    - [Custom Actions](#custom-actions)
-  - [Advanced Use](#advanced-use)
-    - [Accessing the React Flow instance](#react-flow-instance)
-    - [Saving and exporting data](#saving-and-exporting-data)
-  - [Custom Content](#custom-content)
-
+- [Sidebar](#sidebar)
+- [Layout](#layout)
+  - [Background](#background)
+  - [Controls](#controls)
+  - [Minimap](#minimap)
+  - [Empty State](#empty-state)
+- [Custom nodes and node types](#custom-nodes-and-node-types)
+- [Inputs and Outputs](#inputs-and-outputs)
+- [Parameters](#parameters)
+- [Actions](#actions)
+  - [Default Actions](#default-actions)
+  - [Custom Actions](#custom-actions)
+- [Advanced Use](#advanced-use)
+  - [Accessing the React Flow instance](#react-flow-instance)
+  - [Saving and exporting data](#saving-and-exporting-data)
+- [Custom Content](#custom-content)
 - [Custom Node Example](#custom-node-example)
 
 To use the `HvFlow` component you'll need to define:
@@ -83,7 +80,7 @@ You can then create the sidebar by using the `HvFlowSidebar` component as a prop
 ```tsx
 <HvFlow
   nodeGroups={nodeGroups}
-  (...)
+  // ...
   sidebar={
     <HvFlowSidebar
       title="Add Node"
@@ -92,7 +89,6 @@ You can then create the sidebar by using the `HvFlowSidebar` component as a prop
       onClose={() => setOpen(false)}
     />
   }
-
 >
   (...)
 </HvFlow>
@@ -182,15 +178,12 @@ that are not in a group. The `Default` group is customizable via the `defaultGro
 
 ```tsx
 <HvFlow
-  (...)
   sidebar={
     <HvFlowSidebar
-      (...)
       defaultGroupProps={{
         label: "All",
         color: "cat11_80",
-        description:
-          "This is for all the nodes that don't have groupId",
+        description: "This is for all the nodes that don't have groupId",
       }}
     />
   }
@@ -199,7 +192,7 @@ that are not in a group. The `Default` group is customizable via the `defaultGro
 </HvFlow>
 ```
 
-### Inputs and Outputs <a id="inputs-and-outputs" />
+## Inputs and Outputs <a id="inputs-and-outputs" />
 
 Nodes need inputs and/or outputs to connect to other nodes. Inputs and outputs can be defined on the `meta` property of the component and they
 follow specific types:
@@ -229,7 +222,7 @@ you only need to set the `accepts` property to an empty array or, alternatively,
 Furthermore, it's also possible to define the maximum number of connections allowed for a particular input and output. This enables you to limit
 the number of connections an input accepts as well as the number of connections an output can establish.
 
-### Parameters <a id="parameters" />
+## Parameters <a id="parameters" />
 
 A node can also have parameters of several types and will be rendered in the node as an element that corresponds to the parameter type.
 The parameters follow the type:
@@ -274,12 +267,11 @@ const defaultActions: HvFlowDefaultActions[] = [
 ];
 
 <HvFlow
-  (...)
+  // ...
   defaultActions={defaultActions}
-  (...)
 >
   (...)
-</HvFlow>
+</HvFlow>;
 ```
 
 The `id` property will be typed to be one of the allowed default actions.
@@ -339,16 +331,14 @@ const handleAction = (event: any, id: string, action: any) => {
 If any of the previous topics are not enough for your use case, you can also pass some custom content to the `HvFlowNode` component:
 
 ```tsx
-<HvFlowNode
-  (...)
->
+<HvFlowNode>
   <div>My custom content</div>
 </HvFlowNode>
 ```
 
-# Advanced use <a id="advanced-use" />
+## Advanced use <a id="advanced-use" />
 
-## Accessing the React Flow instance <a id="react-flow-instance" />
+### Accessing the React Flow instance <a id="react-flow-instance" />
 
 While creating a custom node you might find you need to have access to the node instance to get some details about it and do some operations
 like knowing the parents of the node. We created a custom hook that you can use to get quick access to these properties:
@@ -380,7 +370,7 @@ const edges = useEdges();
 Please check the [React Flow documentation](https://reactflow.dev/docs/api/hooks/use-react-flow/) to get more information,
 specially on the hooks section.
 
-## Saving and exporting data <a id="saving-and-exporting-data" />
+### Saving and exporting data <a id="saving-and-exporting-data" />
 
 Like we mentioned in the [Parameters](#parameters) section, data is saved in the `data` property of the node object in the `reactflow` instance.
 If you need to have more complex use cases for your nodes and need to store data, you should follow the same logic and use the `data` property.
@@ -388,7 +378,7 @@ The `reactflow`instance provides the `setNodes` function to save and update the 
 
 If you need to export your data at any point you can use the `toObject` function on the `instance` object.
 
-# Custom Node Example <a id="custom-node-example" />
+## Custom Node Example <a id="custom-node-example" />
 
 Below you can find a full example of a custom Node that exercises the topics we talked about before:
 

@@ -1,7 +1,6 @@
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
-import { NodeProps } from "reactflow";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
-export const LineChart = (props: NodeProps) => {
+export const LineChart: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="LineChart description"

@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, isValidElement, useState } from "react";
+import React, { isValidElement, useState } from "react";
 
 import {
   ExtractNames,
@@ -139,21 +139,16 @@ export const HvFlowNode = ({
             {actions?.length && actions?.length > 0 && (
               <>
                 {actsVisible?.map((action) => (
-                  <HvTooltip
-                    key={action.id}
-                    title={<HvTypography>{action.label}</HvTypography>}
-                  >
-                    <div>
-                      <HvButton
-                        icon
-                        onClick={(event: SyntheticEvent<Element, Event>) => {
-                          actionCallback?.(event, id, action);
-                        }}
-                        aria-label={action.label}
-                      >
-                        {renderedIcon(action.icon)}
-                      </HvButton>
-                    </div>
+                  <HvTooltip key={action.id} title={action.label}>
+                    <HvButton
+                      icon
+                      onClick={(event) => {
+                        actionCallback?.(event, id, action);
+                      }}
+                      aria-label={action.label}
+                    >
+                      {renderedIcon(action.icon)}
+                    </HvButton>
                   </HvTooltip>
                 ))}
 

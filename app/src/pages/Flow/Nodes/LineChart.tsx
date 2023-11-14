@@ -1,14 +1,15 @@
 import { useMemo } from "react";
-import { NodeProps, useEdges, useNodes } from "reactflow";
+import { useEdges, useNodes } from "reactflow";
 import {
   HvFlowNode,
   HvFlowNodeTypeMeta,
   HvFlowNodeProps,
+  HvFlowNodeFC,
 } from "@hitachivantara/uikit-react-lab";
 
 import { NodeData, NodeGroup } from "../types";
 
-export const LineChart = (props: NodeProps) => {
+export const LineChart: HvFlowNodeFC = (props) => {
   const { id } = props;
 
   const nodes = useNodes<NodeData>();

@@ -36,8 +36,6 @@ import { BarChart } from "./BarChart";
 import { restrictToSample } from "../Base";
 
 // Node groups
-export type NodeGroups = "sources" | "visualizations";
-
 export const nodeGroups = {
   sources: {
     label: "Data Source",
@@ -51,7 +49,9 @@ export const nodeGroups = {
     description: "Find here all the available visualizations.",
     icon: <LineChartAlt />,
   },
-} satisfies HvFlowProps<NodeGroups>["nodeGroups"];
+} satisfies HvFlowProps["nodeGroups"];
+
+export type NodeGroups = keyof typeof nodeGroups;
 
 // Node types
 export const nodeTypes = {
@@ -63,8 +63,8 @@ export const nodeTypes = {
 export type NodeType = keyof typeof nodeTypes;
 
 // Flow
-const nodes = [] satisfies HvFlowProps<NodeGroups, NodeType>["nodes"];
-const edges = [] satisfies HvFlowProps<NodeGroups, NodeType>["edges"];
+const nodes: HvFlowProps<NodeGroups, NodeType>["nodes"] = [];
+const edges: HvFlowProps<NodeGroups, NodeType>["edges"] = [];
 
 // Classes
 const classes = {

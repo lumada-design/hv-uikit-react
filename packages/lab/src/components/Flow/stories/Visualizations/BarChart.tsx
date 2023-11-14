@@ -1,11 +1,12 @@
 import { css } from "@emotion/css";
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 import { HvBarChart } from "@hitachivantara/uikit-react-viz";
-import { NodeProps, useEdges, useNodes } from "reactflow";
+import { useEdges, useNodes } from "reactflow";
 
-import { NodeData } from "./data";
+import type { NodeData } from "./data";
+import type { NodeGroups } from ".";
 
-export const BarChart = (props: NodeProps) => {
+export const BarChart: HvFlowNodeFC<NodeGroups> = (props) => {
   const { id } = props;
   const nodes = useNodes<NodeData>();
   const edges = useEdges();
@@ -20,28 +21,21 @@ export const BarChart = (props: NodeProps) => {
       classes={{ root: css({ width: 500 }) }}
       {...props}
     >
-      {dataNode &&
-        dataNode.data &&
-        dataNode.data.jsonData &&
-        dataNode.data.jsonData.length > 0 && (
-          <div
-            className={css({
-              height: 300,
-            })}
-          >
-            <HvBarChart
-              data={dataNode.data.jsonData}
-              splitBy="country"
-              groupBy="year"
-              measures="population"
-              yAxis={{
-                name: "Millions",
-                labelFormatter: (value) => `${Number(value) / 1000000}`,
-              }}
-              grid={{ bottom: 40 }}
-            />
-          </div>
-        )}
+      {dataNode?.data?.jsonData && dataNode.data.jsonData.length > 0 && (
+        <div className={css({ height: 300 })}>
+          <HvBarChart
+            data={dataNode.data.jsonData}
+            splitBy="country"
+            groupBy="year"
+            measures="population"
+            yAxis={{
+              name: "Millions",
+              labelFormatter: (value) => `${Number(value) / 1000000}`,
+            }}
+            grid={{ bottom: 40 }}
+          />
+        </div>
+      )}
     </HvFlowNode>
   );
 };

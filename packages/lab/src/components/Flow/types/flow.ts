@@ -1,38 +1,40 @@
-import { ComponentClass, FunctionComponent } from "react";
+import { ComponentClass, FC } from "react";
 
 import { Node, NodeProps } from "reactflow";
 
 import { HvActionGeneric } from "@hitachivantara/uikit-react-core";
 import { HvColorAny } from "@hitachivantara/uikit-styles";
 
-/** Node types */
-export interface HvFlowNodeFunctionComponent<
+// Node types
+
+type NodeExtras<GroupId extends keyof any = string, NodeData = any> = {
+  meta?: HvFlowNodeTypeMeta<GroupId, NodeData>;
+};
+
+/** HvFlowNode component type. @extends React.FC */
+export interface HvFlowNodeFC<
   GroupId extends keyof any = string,
   NodeData = any
-> extends FunctionComponent<NodeProps> {
-  /** Metadata used on the HvFlowSidebar component to group the node */
-  meta?: HvFlowNodeTypeMeta<GroupId, NodeData>;
-}
+> extends FC<NodeProps>,
+    NodeExtras<GroupId, NodeData> {}
+
 export interface HvFlowNodeComponentClass<
   GroupId extends keyof any = string,
   NodeData = any
-> extends ComponentClass<NodeProps> {
-  /** Metadata used on the HvFlowSidebar component to group the node */
-  meta?: HvFlowNodeTypeMeta<GroupId, NodeData>;
-}
+> extends ComponentClass<NodeProps>,
+    NodeExtras<GroupId, NodeData> {}
+
 export type HvFlowNodeComponentType<
   GroupId extends keyof any = string,
   NodeData = any
 > =
   | HvFlowNodeComponentClass<GroupId, NodeData>
-  | HvFlowNodeFunctionComponent<GroupId, NodeData>;
+  | HvFlowNodeFC<GroupId, NodeData>;
 
 export type HvFlowNodeTypes<
   GroupId extends keyof any = string,
   NodeData = any
-> = {
-  [key: string]: HvFlowNodeComponentType<GroupId, NodeData>;
-};
+> = Record<string, HvFlowNodeComponentType<GroupId, NodeData>>;
 
 /** Node groups */
 export interface HvFlowNodeGroup {
@@ -46,6 +48,7 @@ export type HvFlowNodeGroups<GroupId extends keyof any = string> = Record<
   HvFlowNodeGroup
 >;
 
+/** Metadata used on the `HvFlowSidebar` component to group the node */
 export type HvFlowNodeTypeMeta<
   GroupId extends keyof any = string,
   NodeData = any

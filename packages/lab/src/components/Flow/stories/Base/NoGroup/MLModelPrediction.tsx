@@ -1,7 +1,6 @@
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
-import { NodeProps } from "reactflow";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
-export const MLModelPrediction = (props: NodeProps) => {
+export const MLModelPrediction: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="Anomaly Prediction description"
