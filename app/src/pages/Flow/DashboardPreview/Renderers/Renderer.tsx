@@ -22,6 +22,7 @@ interface RendererProps {
   title?: string;
   unit?: string;
   aggregation?: string;
+  splitBy?: string;
 }
 
 export const Renderer = ({
@@ -32,6 +33,7 @@ export const Renderer = ({
   unit,
   aggregation,
   endpoint,
+  splitBy,
 }: RendererProps) => {
   const { data, loading } = useData(endpoint);
 
@@ -43,11 +45,7 @@ export const Renderer = ({
             data={data}
             measures={measure}
             groupBy={groupBy}
-            grid={{
-              top: 40,
-              right: 10,
-              bottom: 40,
-            }}
+            splitBy={splitBy}
           />
         )}
       </ChartContainer>
@@ -62,11 +60,7 @@ export const Renderer = ({
             data={data}
             measures={measure}
             groupBy={groupBy}
-            grid={{
-              top: 40,
-              right: 10,
-              bottom: 40,
-            }}
+            splitBy={splitBy}
           />
         )}
       </ChartContainer>

@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useMemo, useState } from "react";
-import { ReactFlowInstance } from "reactflow";
+import { Edge, ReactFlowInstance, Node } from "reactflow";
 import {
   HvButton,
   HvGlobalActions,
@@ -31,6 +31,7 @@ import {
 } from "./types";
 import { BarChart, Dashboard, DonutChart, Kpi, LineChart } from "./Nodes";
 import { buildLayout, createDataset, useDatasets } from "./utils";
+import { DashboardProps } from "./Dashboard";
 
 // Node groups
 const nodeGroups = {
@@ -63,9 +64,206 @@ const baseNodeTypes = {
   donutChart: DonutChart,
 } satisfies HvFlowProps["nodeTypes"];
 
-// Flow
-const nodes = [] satisfies HvFlowProps["nodes"];
-const edges = [] satisfies HvFlowProps["edges"];
+// Initial Flow
+const nodes = [
+  {
+    id: "6",
+    position: { x: -183.21149999999977, y: 191.35275000000001 },
+    data: {
+      title: "Number of customers",
+      unit: "",
+      measure: ["Customer"],
+      aggregation: ["distinct"],
+    },
+    type: "kpi",
+  },
+  {
+    id: "4",
+    position: { x: 144.78850000000023, y: -446.6472500000001 },
+    data: {
+      title: "Number of products",
+      unit: "",
+      measure: ["Product"],
+      aggregation: ["distinct"],
+    },
+    type: "kpi",
+  },
+  {
+    id: "e5ffe4f454c",
+    position: { x: 727.37559375, y: 210.74056249999978 },
+    data: {},
+    type: "dashboard",
+  },
+  {
+    id: "5ffe4f454c9",
+    position: { x: -702.928, y: 173.7365000000001 },
+    data: {
+      endpoint: "/steelwheels",
+      columns: [
+        "Territory",
+        "Country",
+        "State Province",
+        "City",
+        "Type",
+        "Line",
+        "Vendor",
+        "Product",
+        "Years",
+        "Quarters",
+        "Months",
+        "Credit Limit",
+        "Customer",
+        "Quantity",
+        "Sales",
+      ],
+    },
+    type: "datasetsteelwheels",
+  },
+  {
+    id: "ffe4f454c94",
+    position: { x: -183.21149999999977, y: -448.6472500000001 },
+    data: {
+      title: "Total of sales",
+      unit: "$",
+      measure: ["Sales"],
+      aggregation: ["sum"],
+    },
+    type: "kpi",
+  },
+  {
+    id: "fe4f454c946",
+    position: { x: 4.7733747459412825, y: 786.979108359152 },
+    data: {
+      title: "Sales per territory over the years",
+      measure: ["Quantity"],
+      groupBy: ["Territory"],
+      splitBy: ["Years"],
+    },
+    type: "barChart",
+  },
+  {
+    id: "e4f454c9469",
+    position: { x: 182.2801875, y: 191.44487500000002 },
+    data: {
+      title: "Sales per country over the years",
+      measure: ["Sales"],
+      groupBy: ["Country"],
+      splitBy: ["Years"],
+    },
+    type: "lineChart",
+  },
+] satisfies HvFlowProps["nodes"];
+const edges = [
+  {
+    source: "5ffe4f454c9",
+    sourceHandle: "0",
+    target: "ffe4f454c94",
+    targetHandle: "0",
+    id: "reactflow__edge-5ffe4f454c90-ffe4f454c940",
+  },
+  {
+    source: "ffe4f454c94",
+    sourceHandle: "0",
+    target: "e5ffe4f454c",
+    targetHandle: "0",
+    id: "reactflow__edge-ffe4f454c940-e5ffe4f454c0",
+  },
+  {
+    source: "5ffe4f454c9",
+    sourceHandle: "0",
+    target: "4",
+    targetHandle: "0",
+    id: "reactflow__edge-5ffe4f454c90-40",
+  },
+  {
+    source: "4",
+    sourceHandle: "0",
+    target: "e5ffe4f454c",
+    targetHandle: "0",
+    id: "reactflow__edge-40-e5ffe4f454c0",
+  },
+  {
+    source: "5ffe4f454c9",
+    sourceHandle: "0",
+    target: "6",
+    targetHandle: "0",
+    id: "reactflow__edge-5ffe4f454c90-60",
+  },
+  {
+    source: "6",
+    sourceHandle: "0",
+    target: "e5ffe4f454c",
+    targetHandle: "0",
+    id: "reactflow__edge-60-e5ffe4f454c0",
+  },
+  {
+    source: "5ffe4f454c9",
+    sourceHandle: "0",
+    target: "e4f454c9469",
+    targetHandle: "0",
+    id: "reactflow__edge-5ffe4f454c90-e4f454c94690",
+  },
+  {
+    source: "e4f454c9469",
+    sourceHandle: "0",
+    target: "e5ffe4f454c",
+    targetHandle: "0",
+    id: "reactflow__edge-e4f454c94690-e5ffe4f454c0",
+  },
+  {
+    source: "5ffe4f454c9",
+    sourceHandle: "0",
+    target: "fe4f454c946",
+    targetHandle: "0",
+    id: "reactflow__edge-5ffe4f454c90-fe4f454c9460",
+  },
+  {
+    source: "fe4f454c946",
+    sourceHandle: "0",
+    target: "e5ffe4f454c",
+    targetHandle: "0",
+    id: "reactflow__edge-fe4f454c9460-e5ffe4f454c0",
+  },
+] satisfies HvFlowProps["edges"];
+
+// Initial Layout
+const layout = [
+  {
+    w: 4,
+    h: 1,
+    x: 0,
+    y: 0,
+    i: "4",
+  },
+  {
+    w: 4,
+    h: 1,
+    x: 4,
+    y: 0,
+    i: "6",
+  },
+  {
+    w: 4,
+    h: 1,
+    x: 8,
+    y: 0,
+    i: "ffe4f454c94",
+  },
+  {
+    w: 12,
+    h: 3,
+    x: 0,
+    y: 1,
+    i: "e4f454c9469",
+  },
+  {
+    w: 12,
+    h: 3,
+    x: 0,
+    y: 4,
+    i: "fe4f454c946",
+  },
+] satisfies DashboardProps["layout"];
 
 const Content = () => {
   const { data } = useDatasets();
@@ -74,14 +272,11 @@ const Content = () => {
     useState<ReactFlowInstance>();
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    return () => {
-      // Unmount and remove dashboards from local storage
-      localStorage.removeItem(DASHBOARDS_STORAGE_KEY);
-    };
-  }, []);
-
-  const handleFlowChange: HvFlowProps["onFlowChange"] = (nds, egs) => {
+  const persistDashboards = (
+    nds: Node[],
+    egs: Edge[],
+    ly?: DashboardProps["layout"]
+  ) => {
     const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
 
@@ -109,7 +304,7 @@ const Content = () => {
 
         acc[cur.id] = {
           nodes: vizNodes,
-          layout: buildLayout(vizNodes, curLayout),
+          layout: ly ?? buildLayout(vizNodes, curLayout),
           layoutCols: LAYOUT_COLS,
         };
       }
@@ -119,6 +314,15 @@ const Content = () => {
     // Save dashboards in local storage
     localStorage.setItem(DASHBOARDS_STORAGE_KEY, JSON.stringify(dashboards));
   };
+
+  useEffect(() => {
+    persistDashboards(nodes, edges, layout);
+
+    return () => {
+      // Unmount and remove dashboards from local storage
+      localStorage.removeItem(DASHBOARDS_STORAGE_KEY);
+    };
+  }, []);
 
   const nodeTypes = useMemo(() => {
     const nt: HvFlowProps["nodeTypes"] = { ...baseNodeTypes };
@@ -161,6 +365,7 @@ const Content = () => {
                   aggregation: undefined,
                   measure: undefined,
                   groupBy: undefined,
+                  splitBy: undefined,
                 };
               }
               return node;
@@ -197,9 +402,10 @@ const Content = () => {
               onClose={() => setOpen(false)}
             />
           }
-          onFlowChange={handleFlowChange}
+          onFlowChange={persistDashboards}
           onInit={setReactFlowInstance}
           onEdgesChange={handleEdgesChange}
+          fitView
         >
           <HvFlowControls />
           <HvFlowEmpty

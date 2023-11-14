@@ -36,6 +36,7 @@ export const buildContent = (
               title={cur.node.data.title}
               unit={cur.node.data.unit}
               aggregation={cur.node.data.aggregation}
+              splitBy={cur.node.data.splitBy}
             />
           ),
         });
