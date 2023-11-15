@@ -85,7 +85,6 @@ const DashboardPreview = () => {
         <Dashboard
           content={config?.content}
           layout={config?.layout}
-          compactType={null}
           rowHeight={120}
           cols={config?.cols}
           margin={[16, 16]}
