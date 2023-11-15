@@ -3,11 +3,9 @@ import {
   forwardRef,
   TdHTMLAttributes,
   useContext,
-  useEffect,
-  useState,
+  useMemo,
 } from "react";
 import capitalize from "lodash/capitalize";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { checkValidHexColorValue } from "@core/utils/checkValidHexColorValue";
@@ -15,7 +13,6 @@ import { ExtractNames } from "@core/utils/classes";
 import { getVarValue } from "@core/utils/theme";
 import { hexToRgbA } from "@core/utils/hexToRgbA";
 import { useTheme } from "@core/hooks/useTheme";
-
 import { useDefaultProps } from "@core/hooks";
 
 import {
@@ -102,24 +99,20 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
-    const [sortedColorValue, setSortedColorValue] = useState<string>();
-    const [sortedColorAlpha, setSortedColorAlpha] = useState<string>();
-
     const type = typeProp || tableSectionContext?.type || "body";
 
     const Component =
       component || tableContext?.components?.Td || defaultComponent;
 
-    const [sortedColor, setSortedColor] = useState(
-      getSortedColor(sortedColorValue, sortedColorAlpha)
-    );
+    const sortedColor = useMemo(() => {
+      // "colors" makes the "sortedColor" change with the color mode and theme
+      const color =
+        getVarValue(theme.table.rowSortedColor, rootId) || colors?.primary_20;
+      const alpha =
+        getVarValue(theme.table.rowSortedColorAlpha, rootId) || "0.1";
 
-    useEffect(() => {
-      setSortedColorValue(getVarValue(theme.table.rowSortedColor, rootId));
-      setSortedColorAlpha(getVarValue(theme.table.rowSortedColorAlpha, rootId));
-
-      setSortedColor(getSortedColor(sortedColorValue, sortedColorAlpha));
-    }, [colors, sortedColorValue, sortedColorAlpha, rootId]);
+      return getSortedColor(color, alpha);
+    }, [colors, rootId]);
 
     return (
       <Component
