@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { css } from "@emotion/css";
 import {
   HvButton,
+  HvDialog,
+  HvDialogTitle,
+  HvDialogContent,
   HvGlobalActions,
+  HvTypography,
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
@@ -176,9 +180,33 @@ export const InitialState = () => {
   const { rootId } = useTheme();
 
   const [open, setOpen] = useState(false);
+  const [dirty, setDirty] = useState(false);
+  const [details, setDetails] = useState({});
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const firstRender = useRef(true);
+
+  const handleSave = useCallback(() => {
+    setDialogOpen(true);
+  }, []);
+
+  const makeDirty = (nds, eds) => {
+    if (firstRender.current) return;
+    setDirty(true);
+    setDetails({ nodes: nds, edges: eds });
+  };
+
+  const onInit = () => {
+    firstRender.current = false;
+  };
 
   return (
     <div className={classes.root}>
+      <HvDialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
+        <HvDialogTitle>Flow Details</HvDialogTitle>
+        <HvDialogContent>
+          <HvTypography>{JSON.stringify(details)}</HvTypography>
+        </HvDialogContent>
+      </HvDialog>
       <HvGlobalActions
         className={classes.globalActions}
         position="relative"
@@ -196,6 +224,13 @@ export const InitialState = () => {
         >
           Add Node
         </HvButton>
+        <HvButton
+          variant="primarySubtle"
+          disabled={!dirty}
+          onClick={handleSave}
+        >
+          Save
+        </HvButton>
       </HvGlobalActions>
       <div className={classes.flow}>
         <HvFlow
@@ -204,6 +239,8 @@ export const InitialState = () => {
           nodeTypes={nodeTypes}
           nodeGroups={nodeGroups}
           defaultViewport={initialState.viewport}
+          onFlowChange={makeDirty}
+          onInit={onInit}
           sidebar={
             <HvFlowSidebar
               title="Add Node"
