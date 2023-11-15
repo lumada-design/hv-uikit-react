@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.36.3 (2023-11-15)
+
+### Bug Fixes
+
+- **Card:** header alignment ([14b85a5](https://github.com/lumada-design/hv-uikit-react/commit/14b85a5fd9c0619e0a0ac99c507c6f83a4bce320))
+- **Section:** forward ref added ([e0043f4](https://github.com/lumada-design/hv-uikit-react/commit/e0043f4e465fead3cb012557f9a76fee3d3087f6))
+- **TreeView:** remove MUI internal dependency ([6beb486](https://github.com/lumada-design/hv-uikit-react/commit/6beb486ea93df4dc9f12bf0f84ba0a87ef46e594))
+
 ## 5.36.2 (2023-11-10)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

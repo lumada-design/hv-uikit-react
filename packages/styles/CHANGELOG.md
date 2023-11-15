@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.16.1 (2023-11-15)
+
+### Bug Fixes
+
+- **Card:** header alignment ([14b85a5](https://github.com/lumada-design/hv-uikit-react/commit/14b85a5fd9c0619e0a0ac99c507c6f83a4bce320))
+- **theme:** spacing ([839c876](https://github.com/lumada-design/hv-uikit-react/commit/839c87616f9de56654f94d3b73c93e37664c1131))
+
 # 5.16.0 (2023-11-02)
 
 ### Features

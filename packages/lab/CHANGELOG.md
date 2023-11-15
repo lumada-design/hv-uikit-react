@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.15.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.14.0...@hitachivantara/uikit-react-lab@5.15.0) (2023-11-15)
+
+### Bug Fixes
+
+- **Flow:** prevent drag and zoom on nodes ([#3799](https://github.com/lumada-design/hv-uikit-react/issues/3799)) ([3ca8808](https://github.com/lumada-design/hv-uikit-react/commit/3ca8808b6ac4d65801beae9d6a70579e93e17f90))
+
+### Features
+
+- **Flow:** allow nodes to accept inputs from all other nodes ([8e1663b](https://github.com/lumada-design/hv-uikit-react/commit/8e1663b7435dcbe58a409222812898ffe4923a0f))
+- **Flow:** multiple select param ([670e4b0](https://github.com/lumada-design/hv-uikit-react/commit/670e4b01eb1bcb7cd49419e446d90281aae2d516))
+
 # [5.14.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.13.4...@hitachivantara/uikit-react-lab@5.14.0) (2023-11-11)
 
 ### Features
