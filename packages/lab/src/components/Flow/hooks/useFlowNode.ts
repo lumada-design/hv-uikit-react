@@ -1,7 +1,7 @@
 import { Edge, Node, useEdges, useNodes } from "reactflow";
 
-export const useFlowNode = (id: string) => {
-  const nodes = useNodes<any>();
+export function useFlowNode<T = any>(id: string) {
+  const nodes = useNodes<T>();
   const edges = useEdges();
 
   return {
@@ -21,4 +21,4 @@ export const useFlowNode = (id: string) => {
       return parentNodeArray;
     },
   };
-};
+}
