@@ -1,14 +1,9 @@
-import { forwardRef, useContext, useEffect, useState } from "react";
-
-import { theme } from "@hitachivantara/uikit-styles";
+import { forwardRef, useContext } from "react";
 
 import { ExtractNames } from "@core/utils/classes";
-import { checkValidHexColorValue } from "@core/utils/checkValidHexColorValue";
 import { hexToRgbA } from "@core/utils/hexToRgbA";
-import { getVarValue } from "@core/utils/theme";
 import { HvBaseProps } from "@core/types/generic";
 import { useTheme } from "@core/hooks/useTheme";
-
 import { useDefaultProps } from "@core/hooks";
 
 import TableContext from "../TableContext";
@@ -39,10 +34,6 @@ export interface HvTableRowProps
 
 const defaultComponent = "tr";
 
-const getStripedColor = (color?: string, opacity: number = 0.6) => {
-  return checkValidHexColorValue(color) ? hexToRgbA(color, opacity) : color;
-};
-
 /**
  * `HvTableRow` acts as a `tr` element and inherits styles from its context
  */
@@ -59,12 +50,9 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
       ...others
     } = useDefaultProps("HvTableRow", props);
     const { classes, cx, css } = useClasses(classesProp);
-    const { colors, rootId } = useTheme();
+    const { colors } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
-
-    const [even, setEven] = useState<string | undefined>();
-    const [odd, setOdd] = useState<string | undefined>();
 
     const type = tableSectionContext?.type || "body";
 
@@ -72,21 +60,6 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
 
     const Component =
       component || tableContext?.components?.Tr || defaultComponent;
-
-    const [stripedColorEven, setStripedColorEven] = useState(
-      getStripedColor(even)
-    );
-    const [stripedColorOdd, setStripedColorOdd] = useState(
-      getStripedColor(odd)
-    );
-
-    useEffect(() => {
-      setEven(getVarValue(theme.table.rowStripedBackgroundColorEven, rootId));
-      setOdd(getVarValue(theme.table.rowStripedBackgroundColorOdd, rootId));
-
-      setStripedColorEven(getStripedColor(even));
-      setStripedColorOdd(getStripedColor(odd));
-    }, [colors, even, odd, rootId]);
 
     return (
       <Component
@@ -98,10 +71,10 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
           striped &&
             css({
               "&:nth-of-type(even)": {
-                backgroundColor: stripedColorEven,
+                backgroundColor: hexToRgbA(colors?.atmo1, 0.6),
               },
               "&:nth-of-type(odd)": {
-                backgroundColor: stripedColorOdd,
+                backgroundColor: "transparent",
               },
             }),
           {
