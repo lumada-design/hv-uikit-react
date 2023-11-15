@@ -143,9 +143,8 @@ export const Dashboard = (props: NodeProps) => {
         </div>
       </HvFlowNode>
       <HvDialog
-        classes={{
-          paper: css({ maxWidth: "750px", width: "750px" }),
-        }}
+        maxWidth="lg"
+        fullWidth
         open={configuration.opened}
         onClose={handleClose}
       >
@@ -159,12 +158,11 @@ export const Dashboard = (props: NodeProps) => {
             <Layout
               content={content}
               layout={configuration.config.layout}
-              compactType={null}
+              compactType="vertical"
               rowHeight={80}
               cols={12}
               margin={[16, 16]}
               onLayoutChange={handleLayoutChange}
-              preventCollision
             />
           ) : (
             <HvEmptyState
