@@ -1,10 +1,19 @@
 import { Node } from "reactflow";
 
+import { DashboardLayout } from "./Dashboard";
+
 export type NodeGroup = "dashboard" | "visualization" | "dataset";
 
-export interface DashboardNode {
-  endpoint: string;
-  node: Node;
+// ### Local storage ###
+export const DASHBOARDS_STORAGE_KEY = "dashboards";
+
+export const LAYOUT_COLS = 12;
+
+export interface DashboardSpecs {
+  nodes?: { node: Node; endpoint?: string }[];
+  layout?: DashboardLayout[];
+  layoutCols?: number;
 }
 
-export type Dashboards = Record<string, DashboardNode[]>;
+export type DashboardsStorage = Record<string, DashboardSpecs | undefined>;
+// ### Local storage ###

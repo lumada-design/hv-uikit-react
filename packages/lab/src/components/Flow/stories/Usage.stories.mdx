@@ -369,10 +369,12 @@ advanced operations:
 const instance = useReactFlow();
 ```
 
-Alternatively you can directly access the underlying store that `reactflow` uses to access specific parts of the state through selectors:
+Alternatively you can directly access the underlying store that `reactflow` uses to access specific parts of the state using the
+`useStore` hook. More hooks are also available depending on your needs. For instance, if you need to access the nodes and edges, you can use:
 
 ```tsx
-const nodes = useStore((state) => state.getNodes());
+const nodes = useNodes();
+const edges = useEdges();
 ```
 
 Please check the [React Flow documentation](https://reactflow.dev/docs/api/hooks/use-react-flow/) to get more information,

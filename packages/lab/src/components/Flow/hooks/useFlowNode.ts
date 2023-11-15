@@ -1,8 +1,8 @@
-import { Edge, Node, useStore } from "reactflow";
+import { Edge, Node, useEdges, useNodes } from "reactflow";
 
 export const useFlowNode = (id: string) => {
-  const nodes = useStore((state) => state.getNodes());
-  const edges = useStore((state) => state.edges);
+  const nodes = useNodes<any>();
+  const edges = useEdges();
 
   return {
     // self node

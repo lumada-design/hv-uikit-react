@@ -1,4 +1,5 @@
-import { NodeProps, useStore } from "reactflow";
+import { useMemo } from "react";
+import { NodeProps, useEdges, useNodes } from "reactflow";
 import {
   HvFlowNode,
   HvFlowNodeTypeMeta,
@@ -10,30 +11,33 @@ import { NodeGroup } from "../types";
 export const Kpi = (props: NodeProps) => {
   const { id } = props;
 
-  const nodes = useStore((state) => state.getNodes());
-  const edges = useStore((state) => state.edges);
-  const datasetNodeId = edges.find((e) => e.target === id)?.source;
-  const datasetNode = nodes.find((n) => n.id === datasetNodeId);
-  const columns = datasetNode?.data.columns;
+  const nodes = useNodes<any>();
+  const edges = useEdges();
 
-  const params: HvFlowNodeProps["params"] = columns
-    ? [
-        { label: "Title", id: "title", type: "text" },
-        { label: "Unit", id: "unit", type: "text" },
-        {
-          label: "Aggregation",
-          id: "aggregation",
-          type: "select",
-          options: ["sum", "distinct"],
-        },
-        {
-          label: "Measure",
-          id: "measure",
-          type: "select",
-          options: columns,
-        },
-      ]
-    : undefined;
+  const params: HvFlowNodeProps["params"] = useMemo(() => {
+    const datasetNodeId = edges.find((e) => e.target === id)?.source;
+    const datasetNode = nodes.find((n) => n.id === datasetNodeId);
+    const columns = datasetNode?.data.columns;
+
+    return columns
+      ? [
+          { label: "Title", id: "title", type: "text" },
+          { label: "Unit", id: "unit", type: "text" },
+          {
+            label: "Aggregation",
+            id: "aggregation",
+            type: "select",
+            options: ["sum", "distinct"],
+          },
+          {
+            label: "Measure",
+            id: "measure",
+            type: "select",
+            options: columns,
+          },
+        ]
+      : undefined;
+  }, [edges, id, nodes]);
 
   return <HvFlowNode params={params} description="KPI" expanded {...props} />;
 };

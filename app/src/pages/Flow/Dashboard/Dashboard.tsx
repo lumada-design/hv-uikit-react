@@ -12,14 +12,13 @@ const GridLayout = WidthProvider(ReactGridLayout);
 
 export type DashboardLayout = Layout;
 
-export interface DashboardContent {
+export interface DashboardItem {
   id: string;
   component: React.ReactNode;
-  type?: string;
 }
 
 export interface DashboardProps extends ReactGridLayoutProps {
-  content?: DashboardContent[];
+  content?: DashboardItem[];
 }
 
 export const Dashboard = ({ content, ...others }: DashboardProps) => {

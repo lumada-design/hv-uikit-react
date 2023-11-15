@@ -1,4 +1,5 @@
-import { NodeProps, useStore } from "reactflow";
+import { useMemo } from "react";
+import { NodeProps, useEdges, useNodes } from "reactflow";
 import {
   HvFlowNode,
   HvFlowNodeTypeMeta,
@@ -10,29 +11,33 @@ import { NodeGroup } from "../types";
 export const DonutChart = (props: NodeProps) => {
   const { id } = props;
 
-  const nodes = useStore((state) => state.getNodes());
-  const edges = useStore((state) => state.edges);
-  const datasetNodeId = edges.find((e) => e.target === id)?.source;
-  const datasetNode = nodes.find((n) => n.id === datasetNodeId);
-  const columns = datasetNode?.data.columns;
+  const nodes = useNodes<any>();
+  const edges = useEdges();
 
-  const params: HvFlowNodeProps["params"] = columns
-    ? [
-        { label: "Title", id: "title", type: "text" },
-        {
-          label: "Measure",
-          id: "measure",
-          type: "select",
-          options: columns,
-        },
-        {
-          label: "Group by",
-          id: "groupBy",
-          type: "select",
-          options: columns,
-        },
-      ]
-    : undefined;
+  const params: HvFlowNodeProps["params"] = useMemo(() => {
+    const datasetNodeId = edges.find((e) => e.target === id)?.source;
+    const datasetNode = nodes.find((n) => n.id === datasetNodeId);
+    const columns = datasetNode?.data.columns;
+
+    return columns
+      ? [
+          { label: "Title", id: "title", type: "text" },
+          {
+            label: "Measure",
+            id: "measure",
+            type: "select",
+            options: columns,
+          },
+          {
+            label: "Group by",
+            id: "groupBy",
+            type: "select",
+            options: columns,
+            multiple: true,
+          },
+        ]
+      : undefined;
+  }, [edges, id, nodes]);
 
   return (
     <HvFlowNode params={params} description="Donut Chart" expanded {...props} />

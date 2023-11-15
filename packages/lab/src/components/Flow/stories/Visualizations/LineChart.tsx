@@ -1,12 +1,12 @@
 import { css } from "@emotion/css";
 import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 import { HvLineChart } from "@hitachivantara/uikit-react-viz";
-import { NodeProps, useStore } from "reactflow";
+import { NodeProps, useEdges, useNodes } from "reactflow";
 
 export const LineChart = (props: NodeProps) => {
   const { id } = props;
-  const nodes = useStore((state) => state.getNodes());
-  const edges = useStore((state) => state.edges);
+  const nodes = useNodes<any>();
+  const edges = useEdges();
   const dataNodeId = edges.find((e) => e.target === id)?.source;
 
   const dataNode = nodes.find((n) => n.id === dataNodeId);
