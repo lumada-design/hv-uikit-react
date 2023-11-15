@@ -1,3 +1,7 @@
+export interface NodeData {
+  country?: string;
+}
+
 const months = [
   "January",
   "February",

@@ -6,12 +6,12 @@ import {
   HvFlowNodeProps,
 } from "@hitachivantara/uikit-react-lab";
 
-import { NodeGroup } from "../types";
+import { NodeData, NodeGroup } from "../types";
 
 export const BarChart = (props: NodeProps) => {
   const { id } = props;
 
-  const nodes = useNodes<any>();
+  const nodes = useNodes<NodeData>();
   const edges = useEdges();
 
   const params: HvFlowNodeProps["params"] = useMemo(() => {

@@ -17,12 +17,12 @@ export type DashboardContentType =
 interface RendererProps {
   type: DashboardContentType;
   endpoint?: string;
-  measure?: string | string[];
-  groupBy?: string | string[];
   title?: string;
   unit?: string;
   aggregation?: string;
-  splitBy?: string;
+  measure?: string | string[];
+  groupBy?: string | string[];
+  splitBy?: string | string[];
 }
 
 export const Renderer = ({

@@ -8,6 +8,8 @@ import {
 import { useFlowNode, HvFlowNode } from "@hitachivantara/uikit-react-lab";
 import { NodeProps, useEdges, useNodes, useReactFlow } from "reactflow";
 
+import { NodeData } from "./data";
+
 function filterDataByCountries(data, countriesToFilter: string[]) {
   return data.filter((item) => countriesToFilter.includes(item.country));
 }
@@ -19,7 +21,7 @@ export const Filter = (props: NodeProps) => {
 
   const reactFlowInstance = useReactFlow();
 
-  const nodes = useNodes<any>();
+  const nodes = useNodes<NodeData>();
   const edges = useEdges();
 
   let options: string[] = [];

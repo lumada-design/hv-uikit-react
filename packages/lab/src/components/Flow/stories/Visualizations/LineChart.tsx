@@ -3,9 +3,11 @@ import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
 import { HvLineChart } from "@hitachivantara/uikit-react-viz";
 import { NodeProps, useEdges, useNodes } from "reactflow";
 
+import { NodeData } from "./data";
+
 export const LineChart = (props: NodeProps) => {
   const { id } = props;
-  const nodes = useNodes<any>();
+  const nodes = useNodes<NodeData>();
   const edges = useEdges();
   const dataNodeId = edges.find((e) => e.target === id)?.source;
 
