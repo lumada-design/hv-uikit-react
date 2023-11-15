@@ -17,3 +17,14 @@ export interface DashboardSpecs {
 
 export type DashboardsStorage = Record<string, DashboardSpecs | undefined>;
 // ### Local storage ###
+
+export interface NodeData {
+  endpoint?: string;
+  columns?: string[];
+  title?: string;
+  unit?: string;
+  aggregation?: string;
+  measure?: string | string[];
+  groupBy?: string | string[];
+  splitBy?: string | string[];
+}

@@ -26,6 +26,7 @@ import { BarChart } from "./BarChart";
 import { Filter } from "./Filter";
 import { JsonInput } from "./JsonInput";
 import { LineChart } from "./LineChart";
+import { data } from "./data";
 // The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
 import { restrictToSample } from "../Base";
 
@@ -73,20 +74,7 @@ const nodes = [
       y: 500,
     },
     data: {
-      jsonData: [
-        { country: "portugal", year: "2020", population: 10030000 },
-        { country: "portugal", year: "2021", population: 10030000 },
-        { country: "portugal", year: "2022", population: 10030000 },
-        { country: "portugal", year: "2023", population: 10020000 },
-        { country: "usa", year: "2020", population: 336000000 },
-        { country: "usa", year: "2021", population: 337000000 },
-        { country: "usa", year: "2022", population: 338000000 },
-        { country: "usa", year: "2023", population: 340000000 },
-        { country: "japan", year: "2020", population: 126000000 },
-        { country: "japan", year: "2021", population: 125000000 },
-        { country: "japan", year: "2022", population: 125000000 },
-        { country: "japan", year: "2023", population: 124000000 },
-      ],
+      jsonData: data,
     },
   },
   {
