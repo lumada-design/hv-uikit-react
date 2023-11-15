@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 import {
@@ -13,8 +14,6 @@ const validationSchema = yup.object({
   dropdown: yup.array().required("Dropdown is required").min(1),
 });
 
-const onSubmit = (data) => alert(`Data: ${JSON.stringify(data)}`);
-
 export default () => (
   <Formik
     initialValues={{
@@ -23,7 +22,7 @@ export default () => (
       checkboxes: [],
     }}
     validationSchema={validationSchema}
-    onSubmit={onSubmit}
+    onSubmit={(data) => alert(JSON.stringify(data, null, 2))}
   >
     {(props) => {
       const {
@@ -43,6 +42,15 @@ export default () => (
         return errors[name] && touched[name] ? errors[name] : "";
       };
 
+      const dropdownValues = useMemo(
+        () =>
+          [...Array(4)].map((el, i) => ({
+            id: `v${i + 1}`,
+            label: `Value ${i + 1}`,
+          })),
+        []
+      );
+
       return (
         <div style={{ width: 310 }}>
           <form onSubmit={handleSubmit}>
@@ -59,12 +67,7 @@ export default () => (
             <br />
             <HvDropdown
               label="Dropdown"
-              values={[
-                { label: "Value 1" },
-                { label: "Value 2" },
-                { label: "Value 3" },
-                { label: "Value 4" },
-              ]}
+              values={dropdownValues}
               status={parseStatus("dropdown")}
               statusMessage={parseStatusMessage("dropdown")}
               onChange={(selection) => {
@@ -77,7 +80,7 @@ export default () => (
             <br />
             <HvCheckBoxGroup
               label="Checkboxes"
-              orientation="horizontal"
+              orientation="vertical"
               onChange={(evt, value) => {
                 setFieldTouched("checkboxes");
                 setFieldValue("checkboxes", value);
@@ -90,9 +93,7 @@ export default () => (
             </HvCheckBoxGroup>
             <br />
             <br />
-            <HvButton type="submit" category="secondary">
-              Submit
-            </HvButton>
+            <HvButton type="submit">Submit</HvButton>
           </form>
         </div>
       );

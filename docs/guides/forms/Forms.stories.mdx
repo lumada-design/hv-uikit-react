@@ -6,7 +6,7 @@ import * as FormSamples from "./FormsSamples";
 # Forms
 
 Web forms play a crucial role in web applications, as they are the primary form to collect user information.
-By providing a standardised way to capture user input and validat it, we can ensure a consistent user experience across the different applications.
+By providing a standardised way to capture user input and validate it, we can ensure a consistent user experience across the different applications.
 
 ## Form Components
 
@@ -33,10 +33,24 @@ The UI Kit library currently offers the following form components:
 
 ## Building forms
 
-In React, form data is usually handled by the components because form elements naturally keep some internal state.  
-When doing custom validation or need to access form data you should handle the state with controlled components and control changes by adding event handlers in the onChange attribute.
+There are multiple ways to build forms in React, and each one has its pros and cons. In the following section we will cover the most common ways to build forms in React with UI Kit.
+
+### Native form
+
+The simplest way to build a form is by using a native `form`, using the [built-in form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation)
+and reading the results from `FormData`.
+It's a good option for **simple forms** using form components based on native form controls (eg. `input`) where **custom validation is not needed**.
+
+**Note:** Not all UI Kit form components integrate with the native form data or validation.
+
+<Canvas>
+  <Story name="Native Form" story={FormSamples.NativeFormStory} />
+</Canvas>
 
 ### React form
+
+Whenever control of internal form values or a custom validation is required, controlling the form with React state is a good option.
+When doing so, you should handle the state with controlled components and control changes by adding event handlers in the onChange attribute.
 
 <Canvas>
   <Story name="React Form" story={FormSamples.ReactFormStory} />
@@ -49,8 +63,8 @@ When working with React and forms there are a lot of complexities and intricacie
 There are libraries like **[Formik](https://formik.org/)** and **[React Hook Form](https://react-hook-form.com/)** that can help you build forms with less pain.  
 Both are solving the same problems, and we don't enforce the use of any of them.
 
-Our **Form Components** are compatible with these libraries, but we recommend the use of **imperative set value functions** on each library when handling the onChange event of our components.  
-While our APIs are nof fully aligned, this will be the most consistent way of managing the state of the forms and its components.
+Our **Form Components** are compatible with these libraries, but we recommend the use of **imperative set value functions** on each library when handling the onChange event of our components.
+While our APIs are not fully aligned, this will be the most consistent way of managing the state of the forms and its components.
 
 #### React Hook Form
 

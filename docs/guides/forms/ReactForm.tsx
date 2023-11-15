@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
   HvInput,
   HvButton,
@@ -6,32 +6,43 @@ import {
   HvCheckBox,
   HvDropdown,
 } from "@hitachivantara/uikit-react-core";
+import { z } from "zod";
 
-const validate = (data: Record<string, any>) =>
+const formSchema = z.object({
+  textField: z.string({ required_error: "Text Field is required" }),
+  dropdown: z.string({ required_error: "Dropdown is required" }),
+  checkboxes: z.array(z.string()).optional(),
+});
+
+type FormSchema = z.infer<typeof formSchema>;
+
+const validate = (data: Partial<FormSchema>) =>
   new Promise((resolve, reject) => {
-    const err: Record<string, any> = {};
+    const err: Record<string, string> = {};
 
-    if (!data?.textField.length) err.textField = "Text Field is required";
+    if (data.textField && !data.textField.length)
+      err.textField = "Text Field is required";
 
-    if (!data?.dropdown.length) err.dropdown = "Dropdown is required";
+    if (data.dropdown && !data.dropdown.length)
+      err.dropdown = "Dropdown is required";
 
     if (Object.keys(err).length > 0) {
       reject(err);
     } else {
-      resolve(null);
+      resolve(data);
     }
   });
 
 export default () => {
-  const [data, setData] = useState({
+  const [data, setData] = useState<FormSchema>({
     textField: "",
-    dropdown: [],
+    dropdown: "",
     checkboxes: [],
   });
 
   const [errors, setErrors] = useState<any>(null);
 
-  const setValue = (name: keyof typeof data, value: any) => {
+  const setValue = (name: keyof FormSchema, value: any) => {
     const newData = { [name]: value };
 
     validate(newData)
@@ -45,65 +56,69 @@ export default () => {
       });
   };
 
-  const onSubmit = (evt) => {
-    evt.preventDefault();
-
-    validate(data)
-      .then(() => {
-        setErrors(null);
-        alert(`Data: ${JSON.stringify(data)}`);
-      })
-      .catch((err) => {
-        setErrors((prevErr) => ({ ...prevErr, ...err }));
-      });
-  };
+  const dropdownValues = useMemo(
+    () =>
+      [...Array(4)].map((el, i) => ({
+        id: `v${i + 1}`,
+        label: `Value ${i + 1}`,
+      })),
+    []
+  );
 
   return (
-    <div style={{ width: 310 }}>
-      <form onSubmit={onSubmit}>
-        <HvInput
-          name="textField"
-          label="TextField"
-          status={errors?.textField ? "invalid" : "valid"}
-          statusMessage={errors?.textField || ""}
-          onChange={(evt, value) => setValue("textField", value)}
-        />
-        <br />
-        <HvDropdown
-          name="dropdown"
-          label="Dropdown"
-          values={[
-            { label: "Value 1" },
-            { label: "Value 2" },
-            { label: "Value 3" },
-            { label: "Value 4" },
-          ]}
-          status={errors?.dropdown ? "invalid" : "valid"}
-          statusMessage={errors?.dropdown || ""}
-          onChange={(selection) => {
-            const value = [].concat(selection || []);
-            setValue("dropdown", value);
-          }}
-        />
-        <br />
-        <br />
-        <HvCheckBoxGroup
-          name="checkboxes"
-          label="Checkboxes"
-          orientation="horizontal"
-          onChange={(evt, value) => setValue("checkboxes", value)}
-        >
-          <HvCheckBox label="Option 1" value="1" />
-          <HvCheckBox label="Option 2" value="2" />
-          <HvCheckBox label="Option 3" value="3" />
-          <HvCheckBox label="Option 4" value="4" />
-        </HvCheckBoxGroup>
-        <br />
-        <br />
-        <HvButton type="submit" category="secondary">
-          Submit
-        </HvButton>
-      </form>
-    </div>
+    <form
+      style={{ width: 310 }}
+      onSubmit={(evt) => {
+        evt.preventDefault();
+
+        console.log("submitting");
+
+        validate(data)
+          .then((formData) => {
+            console.log("success", formData);
+            setErrors(null);
+            alert(JSON.stringify(formData, null, 2));
+          })
+          .catch((err) => {
+            console.log("error", err);
+            setErrors((prevErr) => ({ ...prevErr, ...err }));
+          });
+      }}
+    >
+      <HvInput
+        name="textField"
+        label="Text Field"
+        status={errors?.textField ? "invalid" : "valid"}
+        statusMessage={errors?.textField || ""}
+        onChange={(evt, value) => setValue("textField", value)}
+      />
+      <br />
+      <HvDropdown
+        name="dropdown"
+        label="Dropdown"
+        values={dropdownValues}
+        status={errors?.dropdown ? "invalid" : "valid"}
+        statusMessage={errors?.dropdown || ""}
+        onChange={(selection) => {
+          setValue("dropdown", selection?.id || "");
+        }}
+      />
+      <br />
+      <br />
+      <HvCheckBoxGroup
+        name="checkboxes"
+        label="Checkboxes"
+        orientation="vertical"
+        onChange={(evt, value) => setValue("checkboxes", value)}
+      >
+        <HvCheckBox label="Option 1" value="1" />
+        <HvCheckBox label="Option 2" value="2" />
+        <HvCheckBox label="Option 3" value="3" />
+        <HvCheckBox label="Option 4" value="4" />
+      </HvCheckBoxGroup>
+      <br />
+      <br />
+      <HvButton type="submit">Submit</HvButton>
+    </form>
   );
 };
