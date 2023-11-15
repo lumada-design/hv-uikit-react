@@ -185,8 +185,8 @@ const ds5 = makeTheme((theme) => ({
     actionButtonVariant: "primaryGhost",
   },
   table: {
-    rowStripedBackgroundColorEven: theme.colors.atmo1,
-    rowStripedBackgroundColorOdd: "transparent",
+    rowStripedBackgroundColorEven: theme.colors.atmo1, // TODO - remove in v6
+    rowStripedBackgroundColorOdd: "transparent", // TODO - remove in v6
     rowExpandBackgroundColor: theme.colors.atmo2,
     rowSortedColor: theme.colors.primary,
     rowSortedColorAlpha: "0.1",

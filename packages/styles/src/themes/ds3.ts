@@ -1413,8 +1413,8 @@ const ds3 = makeTheme((theme) => ({
     actionButtonVariant: "semantic",
   },
   table: {
-    rowStripedBackgroundColorEven: theme.colors.atmo1,
-    rowStripedBackgroundColorOdd: "transparent",
+    rowStripedBackgroundColorEven: theme.colors.atmo1, // TODO - remove in v6
+    rowStripedBackgroundColorOdd: "transparent", // TODO - remove in v6
     rowExpandBackgroundColor: theme.colors.atmo2,
     rowSortedColor: theme.colors.atmo1,
     rowSortedColorAlpha: "0.4",
