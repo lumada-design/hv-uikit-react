@@ -1,5 +1,65 @@
-import { Meta } from "@storybook/addon-docs";
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import * as FormSamples from "./FormsSamples";
 
-<Meta title="Guides/Forms/Main" />
+<Meta title="Guides/Forms/Guide" />
 
 # Forms
+
+Web forms play a crucial role in web applications, as they are the primary form to collect user information.
+By providing a standardised way to capture user input and validat it, we can ensure a consistent user experience across the different applications.
+
+## Form Components
+
+UI Kit provides a set of **Form Components** to build forms. These components have the goals of providing a **consistent React API** to build forms **following the HV Design spec** and
+**ease of use and integration with** native HTML form, React forms and form libraries.
+
+The base API of all the form components is established by the **[Form Element](https://lumada-design.github.io/uikit/master/?path=/docs/guides-forms-form-element--docs)** component.
+It provides the necessary props to listen to the events, manage the component `status` as well as a `value` prop to make each component **controlled**.
+
+The UI Kit library currently offers the following form components:
+
+- [Checkbox](./?path=/docs/components-checkbox-checkbox--docs) & [Checkbox Group](./?path=/docs/components-checkbox-checkbox-group--docs)
+- [Date Picker](./?path=/docs/components-date-picker--docs)
+- [Dropdown](./?path=/docs/components-dropdown--docs)
+- [Input](./?path=/docs/components-input--docs)
+- [Radio Button](./?path=/docs/components-radio-radio--docs) & [Radio Button Group](./?path=/docs/components-radio-radio-group--docs)
+- [Search Box](./?path=/docs/components-input-search-box--docs)
+- [Selection List](./?path=/docs/components-list-selection-list--docs)
+- [Slider](./?path=/docs/components-slider--docs)
+- [Switch](./?path=/docs/components-switch--docs)
+- [Tags Input](./?path=/docs/components-tag-tags-input--docs)
+- [Text Area](./?path=/docs/components-text-area--docs)
+- [Time Picker](./?path=/docs/components-time-picker--docs)
+
+## Building forms
+
+In React, form data is usually handled by the components because form elements naturally keep some internal state.  
+When doing custom validation or need to access form data you should handle the state with controlled components and control changes by adding event handlers in the onChange attribute.
+
+### React form
+
+<Canvas>
+  <Story name="React Form" story={FormSamples.ReactFormStory} />
+</Canvas>
+
+### Form libraries
+
+When working with React and forms there are a lot of complexities and intricacies that we all struggle with: form verbosity, form validations, and managing the state of the forms and its components.
+
+There are libraries like **[Formik](https://formik.org/)** and **[React Hook Form](https://react-hook-form.com/)** that can help you build forms with less pain.  
+Both are solving the same problems, and we don't enforce the use of any of them.
+
+Our **Form Components** are compatible with these libraries, but we recommend the use of **imperative set value functions** on each library when handling the onChange event of our components.  
+While our APIs are nof fully aligned, this will be the most consistent way of managing the state of the forms and its components.
+
+#### React Hook Form
+
+<Canvas>
+  <Story name="React Hook Form" story={FormSamples.ReactHookFormStory} />
+</Canvas>
+
+#### Formik
+
+<Canvas>
+  <Story name="Formik" story={FormSamples.FormikStory} />
+</Canvas>

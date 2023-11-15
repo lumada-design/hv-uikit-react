@@ -140,6 +140,7 @@
         "**/*.stories.ts?(x)",
         "**/stories/**/*",
         "**/*.test.ts?(x)",
+        "docs/**/*",
         "**/test/**/*",
         "**/templates/**/*.ts?(x)"
       ],
