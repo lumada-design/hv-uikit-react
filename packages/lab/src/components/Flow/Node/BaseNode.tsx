@@ -1,5 +1,4 @@
 import { isValidElement, useCallback, useEffect, useState } from "react";
-
 import {
   Edge,
   Handle,
@@ -9,7 +8,7 @@ import {
   useReactFlow,
   useStore,
 } from "reactflow";
-
+import { uid } from "uid";
 import {
   ExtractNames,
   HvActionGeneric,
@@ -25,7 +24,7 @@ import {
   HvFlowBuiltInActions,
   HvFlowNodeInput,
   HvFlowNodeOutput,
-} from "../types/index";
+} from "../types";
 import { useNodeMetaRegistry } from "../FlowContext/NodeMetaContext";
 import { staticClasses, useClasses } from "./BaseNode.styles";
 
@@ -129,7 +128,7 @@ export const HvFlowBaseNode = ({
           reactFlowInstance.addNodes([
             {
               ...node,
-              id: `${reactFlowInstance.getNodes().length + 1}`,
+              id: uid(),
               position: {
                 x: node.position.x,
                 y: node.position.y + (node.height || 0) + 20,
