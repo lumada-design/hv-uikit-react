@@ -42,7 +42,18 @@ export type UsePaginationProps = (<D extends object = Record<string, unknown>>(
 // #endregion ##### TYPES #####
 
 const useInstanceHook = (instance) => {
-  ensurePluginOrder(instance.plugins, ["usePagination"], "useHvPagination");
+  ensurePluginOrder(
+    instance.plugins,
+    [
+      "usePagination",
+      "useHvGlobalFilter",
+      "useHvFilters",
+      "useGroupBy",
+      "useHvSortBy",
+      "useHvRowExpand",
+    ],
+    "useHvPagination"
+  );
 
   const getInstance = useGetLatest(instance);
   const getHvPaginationProps = makePropGetter(
