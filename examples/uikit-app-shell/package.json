@@ -5,54 +5,28 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "check": "npm-run-all --parallel check:*",
-    "check:types": "tsc --noEmit",
-    "check:lint": "eslint --color --cache src",
-    "check:format": "prettier --check .",
-    "lint": "eslint --color --cache src --fix",
-    "format": "prettier --write .",
-    "test": "vitest run --coverage --passWithNoTests",
-    "test:watch": "vitest watch"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@hitachivantara/app-shell": "^0.33.4",
-    "@hitachivantara/uikit-react-core": "^5.24.2",
-    "@hitachivantara/uikit-react-icons": "^5.5.3",
+    "@hitachivantara/app-shell": "latest",
+    "@hitachivantara/uikit-react-core": "latest",
+    "@hitachivantara/uikit-react-icons": "latest",
     "@mui/material": "^5.12.2",
-    "i18next": "^22.4.10",
-    "i18next-browser-languagedetector": "^7.0.1",
-    "i18next-http-backend": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^12.2.0",
-    "react-router-dom": "^6.14.2",
-    "swr": "^2.2.0"
+    "react-router-dom": "^6.14.2"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.6",
-    "@hitachivantara/app-shell-vite-plugin": "^0.17.4",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/user-event": "^14.4.3",
+    "@hitachivantara/app-shell-vite-plugin": "latest",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.59.2",
-    "@typescript-eslint/parser": "^5.59.2",
-    "@vitejs/plugin-react": "^3.1.0",
-    "@vitest/coverage-c8": "^0.31.0",
-    "eslint": "^8.39.0",
-    "happy-dom": "^9.10.9",
-    "jsdom": "^22.0.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.8",
+    "@vitejs/plugin-react": "^4.1.1",
     "typescript": "^4.9.5",
     "vite": "^4.1.4",
-    "vite-tsconfig-paths": "^4.0.5",
-    "vitest": "^0.31.0",
-    "whatwg-fetch": "^3.6.2"
+    "vite-tsconfig-paths": "^4.0.5"
   }
 }

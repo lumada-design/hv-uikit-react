@@ -7,16 +7,19 @@ export default (): HvAppShellConfig => ({
     {
       id: "@self",
       baseUrl: "/",
-      views: [{ bundle: "src/pages/Project", route: "/project" }],
+      views: [{ bundle: "src/pages/Home", route: "/" }],
+      modules: [],
+    },
+    {
+      id: "@self",
+      baseUrl: "/",
+      views: [{ bundle: "src/pages/Page2", route: "/page2" }],
       modules: [],
     },
   ],
 
-  menu: [{ label: "key_Project", target: "/project" }],
-
-  translations: {
-    en: {
-      key_Project: "Project",
-    },
-  },
+  menu: [
+    { label: "Home", target: "/" },
+    { label: "Page 2", target: "/page2" },
+  ],
 });
