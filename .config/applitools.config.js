@@ -15,6 +15,7 @@ module.exports = {
   puppeteerOptions: {
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
     ignoreHTTPSErrors: true,
+    protocolTimeout: 300000,
   },
 
   appName: process.env.APPLITOOLS_APP_NAME,
