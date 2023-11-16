@@ -1,124 +1,234 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
+import { z, typeToFlattenedError } from "zod";
+import { Map } from "@hitachivantara/uikit-react-icons";
 import {
   HvInput,
   HvButton,
-  HvCheckBoxGroup,
   HvCheckBox,
-  HvDropdown,
+  HvGrid,
+  HvDatePicker,
+  HvTimePicker,
+  HvTextArea,
+  HvRadioGroup,
+  HvRadio,
 } from "@hitachivantara/uikit-react-core";
-import { z } from "zod";
 
-const formSchema = z.object({
-  textField: z.string({ required_error: "Text Field is required" }),
-  dropdown: z.string({ required_error: "Dropdown is required" }),
-  checkboxes: z.array(z.string()).optional(),
-});
+const passwordSchema = z
+  .string()
+  .min(6, "Password is too short")
+  .max(32, "Password is too long")
+  .refine((pwd) => /[!@#$&*]/.test(pwd), "Must include special characters.");
+
+const formSchema = z
+  .object({
+    name: z
+      .string({ required_error: "Name is required" })
+      .min(3, "Name is too short")
+      .refine((n) => !/\d/.test(n), "Name must not contain numbers"),
+    email: z
+      .string({ required_error: "Email is required" })
+      .email("Invalid email")
+      .refine(
+        (email) => email.endsWith("@hitachivantara.com"),
+        "Email must be from @hitachivantara.com"
+      ),
+    address: z.string().optional(),
+    country: z
+      .enum(["Portugal", "Spain", "France", "Germany", "United States"], {
+        errorMap: (issue) => ({
+          message:
+            issue.code === "invalid_enum_value"
+              ? `Invalid country. Must be: ${issue.options}`
+              : "Invalid country.",
+        }),
+      })
+      .optional(),
+    tel: z.string().optional(),
+    password: passwordSchema,
+    repeatPassword: passwordSchema,
+    bday: z
+      .date()
+      .min(new Date("1900-01-01"), "Too old!")
+      .max(new Date("2000-12-31"), "Too young!")
+      .optional(),
+    startTime: z
+      .object({ hours: z.number(), minutes: z.number(), seconds: z.number() })
+      .optional(),
+    description: z
+      .string()
+      .min(16, "Description is too short")
+      .max(128, "Description is too long"),
+    sex: z.enum(["male", "female", "other"]),
+    subscribe: z.boolean().optional(),
+  })
+  .refine((data) => data.password === data.repeatPassword, {
+    message: "Passwords do not match",
+    path: ["repeatPassword"],
+  });
 
 type FormSchema = z.infer<typeof formSchema>;
 
-const validate = (data: Partial<FormSchema>) =>
-  new Promise((resolve, reject) => {
-    const err: Record<string, string> = {};
-
-    if (data.textField && !data.textField.length)
-      err.textField = "Text Field is required";
-
-    if (data.dropdown && !data.dropdown.length)
-      err.dropdown = "Dropdown is required";
-
-    if (Object.keys(err).length > 0) {
-      reject(err);
-    } else {
-      resolve(data);
-    }
-  });
-
 export default () => {
-  const [data, setData] = useState<FormSchema>({
-    textField: "",
-    dropdown: "",
-    checkboxes: [],
-  });
+  const [data, setData] = useState<Partial<FormSchema>>({});
 
-  const [errors, setErrors] = useState<any>(null);
+  const setValue = <K extends keyof FormSchema>(
+    name: K,
+    value: FormSchema[K]
+  ) => setData((prev) => ({ ...prev, [name]: value }));
 
-  const setValue = (name: keyof FormSchema, value: any) => {
-    const newData = { [name]: value };
-
-    validate(newData)
-      .then(() => {
-        setErrors((prevErr) => ({ ...prevErr, [name]: null }));
-        setData((prevData) => ({ ...prevData, ...newData }));
-      })
-      .catch((err) => {
-        setErrors((prevErr) => ({ ...prevErr, ...err }));
-        setData((prevData) => ({ ...prevData, [name]: null }));
-      });
-  };
-
-  const dropdownValues = useMemo(
-    () =>
-      [...Array(4)].map((el, i) => ({
-        id: `v${i + 1}`,
-        label: `Value ${i + 1}`,
-      })),
-    []
-  );
+  const [errors, setErrors] = useState<
+    typeToFlattenedError<FormSchema>["fieldErrors"]
+  >({});
 
   return (
     <form
-      style={{ width: 310 }}
-      onSubmit={(evt) => {
-        evt.preventDefault();
+      autoComplete="on"
+      onSubmit={(event) => {
+        event.preventDefault();
+        const parsedData = formSchema.safeParse(data);
 
-        console.log("submitting");
-
-        validate(data)
-          .then((formData) => {
-            console.log("success", formData);
-            setErrors(null);
-            alert(JSON.stringify(formData, null, 2));
-          })
-          .catch((err) => {
-            console.log("error", err);
-            setErrors((prevErr) => ({ ...prevErr, ...err }));
-          });
+        if (parsedData.success) {
+          const { data: formData } = parsedData;
+          alert(JSON.stringify(formData, null, 2));
+        } else {
+          const formErrors = parsedData.error.formErrors.fieldErrors;
+          console.log(formErrors);
+          setErrors(formErrors);
+        }
       }}
     >
-      <HvInput
-        name="textField"
-        label="Text Field"
-        status={errors?.textField ? "invalid" : "valid"}
-        statusMessage={errors?.textField || ""}
-        onChange={(evt, value) => setValue("textField", value)}
-      />
-      <br />
-      <HvDropdown
-        name="dropdown"
-        label="Dropdown"
-        values={dropdownValues}
-        status={errors?.dropdown ? "invalid" : "valid"}
-        statusMessage={errors?.dropdown || ""}
-        onChange={(selection) => {
-          setValue("dropdown", selection?.id || "");
-        }}
-      />
-      <br />
-      <br />
-      <HvCheckBoxGroup
-        name="checkboxes"
-        label="Checkboxes"
-        orientation="vertical"
-        onChange={(evt, value) => setValue("checkboxes", value)}
-      >
-        <HvCheckBox label="Option 1" value="1" />
-        <HvCheckBox label="Option 2" value="2" />
-        <HvCheckBox label="Option 3" value="3" />
-        <HvCheckBox label="Option 4" value="4" />
-      </HvCheckBoxGroup>
-      <br />
-      <br />
-      <HvButton type="submit">Submit</HvButton>
+      <HvGrid container maxWidth="md" rowSpacing="xs">
+        <HvGrid item xs={12} sm={6}>
+          <HvInput
+            required
+            inputProps={{ required: false }} // disable default browser behavior
+            name="name"
+            label="Full Name"
+            status={errors.name ? "invalid" : "valid"}
+            statusMessage={errors.name?.[0] || ""}
+            onChange={(evt, val) => setValue("name", val)}
+          />
+        </HvGrid>
+        <HvGrid item xs={12} sm={6}>
+          <HvInput
+            required
+            inputProps={{ required: false }} // disable default browser behavior
+            type="email"
+            name="email"
+            label="Email"
+            status={errors.email ? "invalid" : "valid"}
+            statusMessage={errors.email?.[0] || ""}
+            onChange={(evt, val) => setValue("email", val)}
+          />
+        </HvGrid>
+        <HvGrid item xs={12} sm={6}>
+          <HvInput
+            name="address"
+            label="Address"
+            status={errors.address ? "invalid" : "valid"}
+            statusMessage={errors.address?.[0] || ""}
+            onChange={(evt, val) => setValue("address", val)}
+          />
+        </HvGrid>
+        <HvGrid item xs={12} sm={6}>
+          <HvInput
+            name="country"
+            label="Country"
+            inputProps={{ autoComplete: "off" }}
+            status={errors.country ? "invalid" : "valid"}
+            statusMessage={errors.country?.[0] || ""}
+            onChange={(evt, val) => setValue("country", val)}
+            endAdornment={<Map />}
+          />
+        </HvGrid>
+        <HvGrid item xs={12} sm={6}>
+          <HvInput
+            required
+            inputProps={{ required: false }} // disable default browser behavior
+            type="password"
+            name="password"
+            label="Password"
+            status={errors.password ? "invalid" : "valid"}
+            statusMessage={errors.password?.[0] || ""}
+            onChange={(evt, val) => setValue("password", val)}
+          />
+        </HvGrid>
+        <HvGrid item xs={12} sm={6}>
+          <HvInput
+            required
+            inputProps={{ required: false }} // disable default browser behavior
+            type="password"
+            name="repeatPassword"
+            label="Repeat password"
+            status={errors.repeatPassword ? "invalid" : "valid"}
+            statusMessage={errors.repeatPassword?.[0] || ""}
+            onChange={(evt, val) => setValue("repeatPassword", val)}
+          />
+        </HvGrid>
+        <HvGrid item xs={12} component="hr" />
+        <HvGrid item xs={12} sm={6}>
+          <HvDatePicker
+            name="bday"
+            label="Birthday"
+            placeholder="Select date"
+            onChange={(val) => {
+              setValue("bday", val);
+            }}
+          />
+        </HvGrid>
+        <HvGrid item xs={12} sm={6}>
+          <HvTimePicker
+            name="startTime"
+            label="Start time"
+            onChange={(evt, val) => {
+              setValue("startTime", val);
+            }}
+          />
+        </HvGrid>
+        <HvGrid item xs={12} component="hr" />
+        <HvGrid item xs={12}>
+          <HvTextArea
+            required
+            inputProps={{ required: false }} // disable default browser behavior
+            name="description"
+            description="Write a short description"
+            label="Description"
+            rows={3}
+            minCharQuantity={16}
+            maxCharQuantity={128}
+            status={errors.description ? "invalid" : "valid"}
+            statusMessage={errors.description?.[0] || ""}
+            onChange={(evt, val) => setValue("description", val)}
+          />
+        </HvGrid>
+        <HvGrid item xs={12}>
+          <HvRadioGroup
+            required
+            name="sex"
+            label="Sex"
+            orientation="horizontal"
+            status={errors.sex ? "invalid" : "valid"}
+            statusMessage={errors.sex?.[0] || ""}
+            onChange={(evt, val) => setValue("sex", val)}
+          >
+            <HvRadio value="male" label="Male" />
+            <HvRadio value="female" label="Female" />
+            <HvRadio value="other" label="Other" />
+          </HvRadioGroup>
+        </HvGrid>
+        <HvGrid item xs={12}>
+          <HvCheckBox
+            defaultChecked
+            name="subscribe"
+            label="Subscribe to newsletter"
+            value="yes"
+            onChange={(evt, val) => setValue("subscribe", val)}
+          />
+        </HvGrid>
+        <HvGrid item xs={12}>
+          <HvButton type="submit">Submit</HvButton>
+        </HvGrid>
+      </HvGrid>
     </form>
   );
 };
