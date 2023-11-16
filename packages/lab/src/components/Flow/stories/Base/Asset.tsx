@@ -16,9 +16,9 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 import { Node } from "reactflow";
 
-import type { NodeGroups } from ".";
+import type { NodeGroups } from "./index";
 
-export const Tron: HvFlowNodeFC<NodeGroups> = (props) => {
+export const Asset: HvFlowNodeFC<NodeGroups> = (props) => {
   const { id } = props;
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node | undefined>();
@@ -52,7 +52,7 @@ export const Tron: HvFlowNodeFC<NodeGroups> = (props) => {
         onClose={() => setShowDialog(false)}
         classes={{ paper: classes.container }}
       >
-        <HvDialogTitle>Tron</HvDialogTitle>
+        <HvDialogTitle>Asset</HvDialogTitle>
         <HvDialogContent>{JSON.stringify(details?.data)}</HvDialogContent>
         <HvDialogActions>
           <HvButton
@@ -66,7 +66,7 @@ export const Tron: HvFlowNodeFC<NodeGroups> = (props) => {
       </HvDialog>
 
       <HvFlowNode
-        description="Tron asset description"
+        description="Asset description"
         expanded
         maxVisibleActions={1}
         actions={[
@@ -91,9 +91,9 @@ export const Tron: HvFlowNodeFC<NodeGroups> = (props) => {
         params={[
           {
             id: "asset",
-            label: "Asset",
+            label: "Asset Option",
             type: "select",
-            options: ["Way Side", "Cars", "Helix", "Launch Track"],
+            options: ["Option 1", "Option 2", "Option 3"],
           },
         ]}
         {...props}
@@ -102,8 +102,8 @@ export const Tron: HvFlowNodeFC<NodeGroups> = (props) => {
   );
 };
 
-Tron.meta = {
-  label: "Tron",
+Asset.meta = {
+  label: "My Asset",
   groupId: "assets",
   outputs: [
     {

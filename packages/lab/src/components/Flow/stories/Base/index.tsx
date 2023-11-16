@@ -14,7 +14,7 @@ import { LineChart } from "./LineChart";
 import { MLModelDetection } from "./MLModelDetection";
 import { MLModelPrediction } from "./MLModelPrediction";
 import { Table } from "./Table";
-import { Tron } from "./Tron";
+import { Asset } from "./Asset";
 
 // Node groups
 export const nodeGroups = {
@@ -48,7 +48,7 @@ export type NodeGroups = keyof typeof nodeGroups;
 
 // Node types
 export const nodeTypes = {
-  tron: Tron,
+  Asset,
   mlModelPrediction: MLModelPrediction,
   mlModelDetection: MLModelDetection,
   kpi: KPI,
