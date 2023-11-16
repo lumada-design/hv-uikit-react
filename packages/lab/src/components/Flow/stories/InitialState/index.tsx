@@ -23,7 +23,7 @@ const initialState = {
       id: "b1831327e65",
       position: { x: 230.5967160116935, y: -97.14041347943862 },
       data: {},
-      type: "tron",
+      type: "Asset",
     },
     {
       id: "1831327e654",

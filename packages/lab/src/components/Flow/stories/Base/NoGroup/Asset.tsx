@@ -1,21 +1,21 @@
 import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
-export const Tron: HvFlowNodeFC = (props) => {
+export const Asset: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      description="Tron asset description"
+      description="Asset description"
       expanded
       maxVisibleActions={1}
       params={[
         {
           id: "asset",
-          label: "Asset",
+          label: "Asset option",
           type: "select",
-          options: ["Way Side", "Cars"],
+          options: ["Option 1", "Option 2"],
         },
       ]}
       nodeDefaults={{
-        title: "Tron",
+        title: "My Asset",
         subTitle: "Asset",
         color: "cat11_80",
       }}
@@ -24,8 +24,8 @@ export const Tron: HvFlowNodeFC = (props) => {
   );
 };
 
-Tron.meta = {
-  label: "Tron",
+Asset.meta = {
+  label: "My Asset",
   outputs: [
     {
       label: "Sensor Group 1",

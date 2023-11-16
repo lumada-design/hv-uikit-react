@@ -17,7 +17,7 @@ import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
 import { restrictToSample } from "../Base";
-import { Tron } from "../Base/NoGroup/Tron";
+import { Asset } from "../Base/NoGroup/Asset";
 import { LineChart } from "../Base/NoGroup/LineChart";
 import { MLModelPrediction } from "../Base/NoGroup/MLModelPrediction";
 
@@ -38,7 +38,7 @@ export const classes = {
 
 // Node types
 export const nodeTypes = {
-  tron: Tron,
+  Asset,
   mlModelPrediction: MLModelPrediction,
   lineChart: LineChart,
 } satisfies HvFlowProps["nodeTypes"];
