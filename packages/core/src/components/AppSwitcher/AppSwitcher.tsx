@@ -5,10 +5,10 @@ import { ExtractNames } from "@core/utils/classes";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvListContainer } from "@core/components/ListContainer";
 import { HvTypography } from "@core/components/Typography";
+import { HvOverflowTooltip } from "@core/components/OverflowTooltip";
 
 import { HvAppSwitcherAction, HvAppSwitcherActionApplication } from "./Action";
 import { useClasses, staticClasses } from "./AppSwitcher.styles";
-import TitleWithTooltip from "./TitleWithTooltip";
 
 export { staticClasses as appSwitcherClasses };
 
@@ -104,7 +104,16 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
           {header}
         </HvTypography>
       )) ||
-        (title && <TitleWithTooltip className={classes.title} title={title} />)}
+        (title && (
+          <HvOverflowTooltip
+            className={classes.title}
+            data={title}
+            placement="top-start"
+            classes={{
+              tooltipAnchorParagraph: classes.titleAnchor,
+            }}
+          />
+        ))}
       <HvListContainer disableGutters className={classes.actionsContainer}>
         {panelActions}
       </HvListContainer>

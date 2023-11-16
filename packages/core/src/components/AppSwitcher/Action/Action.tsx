@@ -7,11 +7,11 @@ import { HvAvatar } from "@core/components/Avatar";
 import { HvListItem } from "@core/components/ListContainer";
 import { HvTypography } from "@core/components/Typography";
 import { HvTooltip } from "@core/components/Tooltip";
+import { HvOverflowTooltip } from "@core/components/OverflowTooltip";
 import { HvBaseProps } from "@core/types/generic";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { ExtractNames } from "@core/utils/classes";
 
-import TitleWithTooltip from "../TitleWithTooltip";
 import { useClasses, staticClasses } from "./Action.styles";
 
 export { staticClasses as appSwitcherActionClasses };
@@ -185,7 +185,15 @@ export const HvAppSwitcherAction = ({
         <>
           <div className={classes.icon}>{renderApplicationIcon()}</div>
 
-          <TitleWithTooltip title={name} className={classes.title} />
+          <HvOverflowTooltip
+            paragraphOverflow
+            className={classes.title}
+            placement="top-start"
+            data={name}
+            classes={{
+              tooltipAnchorParagraph: classes.titleAnchor,
+            }}
+          />
 
           {description && (
             <HvTooltip
