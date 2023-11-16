@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
-import range from "lodash/range";
-
 import {
   HvTableColumnConfig,
   HvTableState,
@@ -43,6 +41,8 @@ export interface AssetEvent {
   link?: string;
   selected?: boolean;
 }
+
+export const range = (n: number) => Array.from({ length: n }, (_, i) => i);
 
 // If a Cell gets a value, it has to return a react element
 const getCell = (value: string) => value as unknown as React.ReactElement;

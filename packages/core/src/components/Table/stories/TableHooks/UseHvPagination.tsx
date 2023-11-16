@@ -35,6 +35,24 @@ export const UseHvPagination = () => {
     getHvPaginationProps,
   } = useHvData<AssetEvent, string>({ columns, data }, useHvPagination);
 
+  const renderTableRow = (i: number) => {
+    const row = page[i];
+
+    if (!row) return <EmptyRow key={i} />;
+
+    prepareRow(row);
+
+    return (
+      <HvTableRow {...row.getRowProps()}>
+        {row.cells.map((cell) => (
+          <HvTableCell {...cell.getCellProps()}>
+            {cell.render("Cell")}
+          </HvTableCell>
+        ))}
+      </HvTableRow>
+    );
+  };
+
   return (
     <>
       <HvTableContainer>
@@ -51,26 +69,7 @@ export const UseHvPagination = () => {
             ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {pageSize &&
-              range(pageSize).map((i) => {
-                const row = page[i];
-
-                if (!row) return <EmptyRow key={i} />;
-
-                prepareRow(row);
-
-                return (
-                  <HvTableRow {...row.getRowProps()}>
-                    {row.cells.map((cell) => {
-                      return (
-                        <HvTableCell {...cell.getCellProps()}>
-                          {cell.render("Cell")}
-                        </HvTableCell>
-                      );
-                    })}
-                  </HvTableRow>
-                );
-              })}
+            {pageSize && range(pageSize).map(renderTableRow)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>

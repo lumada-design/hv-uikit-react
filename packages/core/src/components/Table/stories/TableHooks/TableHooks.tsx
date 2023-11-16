@@ -17,6 +17,8 @@ import { UseHvHeaderGroups } from "./UseHvHeaderGroups";
 import UseHvHeaderGroupsRaw from "./UseHvHeaderGroups?raw";
 import { UseHvPagination } from "./UseHvPagination";
 import UseHvPaginationRaw from "./UseHvPagination?raw";
+import { UseHvFilters } from "./UseHvFilters";
+import UseHvFiltersRaw from "./UseHvFilters?raw";
 import { UseHvRowExpand } from "./UseHvRowExpand";
 import UseHvRowExpandRaw from "./UseHvRowExpand?raw";
 import { UseHvSelection } from "./UseHvRowSelection";
@@ -63,6 +65,11 @@ export const UseHvSelectionControlledStory: StoryObj = {
 export const LockedSelectionStory: StoryObj = {
   parameters: { docs: { source: { code: LockedSelectionRaw } } },
   render: () => <LockedSelection />,
+};
+
+export const UseHvFiltersStory: StoryObj = {
+  parameters: { docs: { source: { code: UseHvFiltersRaw } } },
+  render: () => <UseHvFilters />,
 };
 
 export const UseHvBulkActionsStory: StoryObj = {

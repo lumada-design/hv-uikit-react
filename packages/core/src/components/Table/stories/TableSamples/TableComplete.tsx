@@ -58,12 +58,13 @@ const DEFAULT_PAGE_SIZE = 10;
 const getPageCount = (totalRecords = 0, pageSize = DEFAULT_PAGE_SIZE) =>
   Math.max(Math.ceil(totalRecords / pageSize), 1);
 
-interface NoDataRowProps {
+const NoDataRow = ({
+  message,
+  height = 96,
+}: {
   message: ReactNode;
   height?: number;
-}
-
-const NoDataRow = ({ message, height = 96 }: NoDataRowProps) => (
+}) => (
   <HvTableRow>
     <HvTableCell colSpan={100} style={{ height }}>
       <HvEmptyState message={message} icon={<Ban role="none" />} />
