@@ -109,7 +109,16 @@ export const Variants: StoryObj<HvSnackbarProps> = {
         <HvSnackbar
           {...props}
           label={
-            <HvOverflowTooltip data="This message uses HvOverflowTooltip to display ellipsis + tooltip." />
+            <HvOverflowTooltip data="This message uses HvOverflowTooltip to display ellipsis and a tooltip." />
+          }
+        />
+        <HvSnackbar
+          {...props}
+          label={
+            <HvOverflowTooltip
+              paragraphOverflow
+              data="This message uses HvOverflowTooltip with paragraphOverflow to display ellipsis and a tooltip because it has a very very very very very very very very very very long text that takes more than 3 lines."
+            />
           }
         />
       </>
