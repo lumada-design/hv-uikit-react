@@ -17,7 +17,7 @@ export interface HvOverflowTooltipProps extends HvBaseProps {
   data: React.ReactNode;
   /** If true, the tooltip is shown. */
   open?: boolean;
-  /** If `true` the overflow tooltip will always use the paragraph overflow style. */
+  /** If `true`, the overflow tooltip will always use the paragraph overflow style. */
   paragraphOverflow?: boolean;
   /** Tooltip placement. */
   placement?:
@@ -55,23 +55,38 @@ export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
     placement = "top-start",
     tooltipsProps,
   } = useDefaultProps("HvOverflowTooltip", props);
+
   const { classes, cx } = useClasses(classesProp);
 
-  const { width = 0, ref } = useResizeDetector({
+  const {
+    height = 0,
+    width = 0,
+    ref,
+  } = useResizeDetector({
     refreshMode: "debounce",
     refreshOptions: {
       trailing: true,
     },
     handleHeight: false,
   });
-  const scrollWidth = ref.current?.scrollWidth || 0;
-  // The difference should be higher than a pixel to be considered as overflowing
-  const isOverflowing = scrollWidth - width >= 1;
 
   const isParag = useMemo(
     () => paragraphOverflow && isParagraph(data?.toString()),
     [data, paragraphOverflow]
   );
+
+  // The difference should be higher than a pixel to be considered as overflowing
+  const isOverflowing = useMemo(() => {
+    if (isParag) {
+      const scrollHeight = ref.current?.scrollHeight || 0;
+
+      return scrollHeight - height >= 1;
+    }
+
+    const scrollWidth = ref.current?.scrollWidth || 0;
+
+    return scrollWidth - width >= 1;
+  }, [height, isParag, ref, width]);
 
   const content = useMemo(
     () => (
