@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.36.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.3...@hitachivantara/uikit-react-core@5.36.4) (2023-11-16)
+
+### Bug Fixes
+
+- **useHvPagination:** add missing pluginOrder restrictions ([d80b19f](https://github.com/lumada-design/hv-uikit-react/commit/d80b19feebdccfedb176f15edd45adae06c4083c))
+
 ## 5.36.3 (2023-11-15)
 
 ### Bug Fixes

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.16.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.15.0...@hitachivantara/uikit-react-lab@5.16.0) (2023-11-16)
+
+### Bug Fixes
+
+- **Flow:** duplicate node id ([414f799](https://github.com/lumada-design/hv-uikit-react/commit/414f799d241cf4e5405057da1868057416a395d2))
+- **Flow:** improve performance by removing useStore ([47ad802](https://github.com/lumada-design/hv-uikit-react/commit/47ad802a25e427b5b173c86cf8d4724fb0def707))
+- **Flow:** prevent drag and zoom on nodes ([#3799](https://github.com/lumada-design/hv-uikit-react/issues/3799)) ([3ca8808](https://github.com/lumada-design/hv-uikit-react/commit/3ca8808b6ac4d65801beae9d6a70579e93e17f90))
+
+### Features
+
+- **Flow:** allow nodes to accept inputs from all other nodes ([8e1663b](https://github.com/lumada-design/hv-uikit-react/commit/8e1663b7435dcbe58a409222812898ffe4923a0f))
+- **Flow:** multiple select param ([670e4b0](https://github.com/lumada-design/hv-uikit-react/commit/670e4b01eb1bcb7cd49419e446d90281aae2d516))
+
+### Performance Improvements
+
+- **Flow:** enable passing data type to useFlowNode ([afb78be](https://github.com/lumada-design/hv-uikit-react/commit/afb78be51102c09361ea0ff2b5a1e6f903bffbb4))
+
 # [5.15.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.14.0...@hitachivantara/uikit-react-lab@5.15.0) (2023-11-15)
 
 ### Bug Fixes
