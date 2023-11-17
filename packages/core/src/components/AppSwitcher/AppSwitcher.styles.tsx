@@ -56,10 +56,10 @@ export const { staticClasses, useClasses } = createClasses("HvAppSwitcher", {
     // we need to play with the 4px because of the focus ring
     // padding: `4px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm - 4}px 4px`,
     padding: `4px ${theme.space.sm} ${theme.space.sm} 4px`,
-
-    overflow: "hidden",
-    whiteSpace: "nowrap",
-    textOverflow: "ellipsis",
+    ...theme.typography.label,
+  },
+  titleAnchor: {
+    WebkitLineClamp: 2,
   },
   single: { width: 320 },
   dual: { width: 640 },

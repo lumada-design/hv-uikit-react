@@ -41,19 +41,14 @@ export const { staticClasses, useClasses } = createClasses(
     },
     title: {
       flexGrow: 1,
-      margin: `0 ${theme.space.xs}`,
-
-      textAlign: "left",
-
-      overflow: "hidden",
       whiteSpace: "normal",
-      textOverflow: "ellipsis",
-      display: "-webkit-box",
-      "-webkit-line-clamp": "2",
-      "-webkit-box-orient": "vertical",
+      textAlign: "left",
+      margin: `0 ${theme.space.xs}`,
       textWrap: "balance",
-
-      color: "inherit",
+      ...theme.typography.label,
+    },
+    titleAnchor: {
+      WebkitLineClamp: 2,
     },
   }
 );
