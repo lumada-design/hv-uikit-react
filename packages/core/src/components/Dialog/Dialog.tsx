@@ -10,6 +10,7 @@ import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvButton } from "@core/components/Button";
 import { HvTooltip } from "@core/components/Tooltip";
 import { HvBaseProps } from "@core/types/generic";
+import { getElementById } from "@core/utils/document";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { useTheme } from "@core/hooks/useTheme";
@@ -85,13 +86,7 @@ export const HvDialog = (props: HvDialogProps) => {
 
   return (
     <MuiDialog
-      container={
-        typeof window !== "undefined"
-          ? // TODO: review
-            // eslint-disable-next-line ssr-friendly/no-dom-globals-in-react-fc
-            document.getElementById(rootId || "") || document.body
-          : undefined
-      }
+      container={getElementById(rootId)}
       className={cx(classes.root, className)}
       classes={{ container: css({ position: "relative" }) }}
       id={id}
