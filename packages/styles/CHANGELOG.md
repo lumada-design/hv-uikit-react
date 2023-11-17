@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.16.2 (2023-11-17)
+
+### Bug Fixes
+
+- **TableRow:** even and odd colors ([ecd3580](https://github.com/lumada-design/hv-uikit-react/commit/ecd35803de3425966f2cde5e5f4a3550c6e56064))
+
 ## 5.16.1 (2023-11-15)
 
 ### Bug Fixes

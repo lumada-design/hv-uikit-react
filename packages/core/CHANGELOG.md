@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.36.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.4...@hitachivantara/uikit-react-core@5.36.5) (2023-11-17)
+
+### Bug Fixes
+
+- **TableCell:** sorted color ([f036a7f](https://github.com/lumada-design/hv-uikit-react/commit/f036a7f122ee237158d30b7281a938cfe5f9cd15))
+- **TableRow:** even and odd colors ([ecd3580](https://github.com/lumada-design/hv-uikit-react/commit/ecd35803de3425966f2cde5e5f4a3550c6e56064))
+
 ## [5.36.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.3...@hitachivantara/uikit-react-core@5.36.4) (2023-11-16)
 
 ### Bug Fixes
