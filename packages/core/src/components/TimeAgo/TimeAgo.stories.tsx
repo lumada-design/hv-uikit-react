@@ -151,7 +151,7 @@ export const Samples = () => {
         {dates.map((dateTs, idx) => (
           <tr key={`${dateTs}-${idx}`}>
             <td>{new Date(dateTs).toISOString()}</td>
-            <td>
+            <td aria-label="Time ago">
               <HvTimeAgo timestamp={dateTs} />
             </td>
           </tr>

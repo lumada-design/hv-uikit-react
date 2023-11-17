@@ -15,6 +15,7 @@ import {
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
+import { getElementById } from "@core/utils/document";
 import { processThemes } from "@core/utils/theme";
 import { HvTheme } from "@core/types/theme";
 import { useUniqueId } from "@core/hooks/useUniqueId";
@@ -129,12 +130,8 @@ export const HvProvider = ({
       >
         <ClassNames>
           {({ css }) => {
-            if (
-              typeof window !== "undefined" &&
-              cssBaseline === "scoped" &&
-              rootElementId
-            ) {
-              const rootElement = document.getElementById(rootElementId);
+            if (cssBaseline === "scoped") {
+              const rootElement = getElementById(rootElementId);
 
               if (rootElement) {
                 rootElement.classList.add(

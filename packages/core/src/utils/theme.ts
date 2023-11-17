@@ -1,4 +1,3 @@
-/* eslint import/namespace: [2, { allowComputed: true }] */
 import { CSSProperties } from "react";
 
 import {
@@ -9,6 +8,8 @@ import {
 } from "@hitachivantara/uikit-styles";
 
 import { HvTheme, HvCreateThemeProps } from "@core/types/theme";
+
+import { getElementById } from "./document";
 
 /**
  * Sets the element style properties.
@@ -164,15 +165,10 @@ export const processThemes = (
 };
 
 export const getVarValue = (cssVar: string, rootElementId?: string) => {
-  if (typeof window !== "undefined") {
-    const root = document.getElementById(rootElementId || "hv-root");
+  const root = getElementById(rootElementId || "hv-root");
+  if (!root) return undefined;
 
-    if (root) {
-      const computedValue = getComputedStyle(root)
-        .getPropertyValue(cssVar.replace("var(", "").replace(")", ""))
-        .trim();
-
-      return computedValue;
-    }
-  }
+  return getComputedStyle(root)
+    .getPropertyValue(cssVar.replace("var(", "").replace(")", ""))
+    .trim();
 };
