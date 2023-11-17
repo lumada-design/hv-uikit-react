@@ -257,41 +257,6 @@ export const createDatesArray = (month: number, year: number) => {
   return [...prevMonthDates, ...currentMonthDates, ...nextMonthDates];
 };
 
-/**
- * Checks if the received locale is valid according to Intl.
- *
- * @param locale - The locale to be checked
- * @returns True if the locale is valid, false otherwise.
- */
-export const isValidLocale = (locale: string) => {
-  try {
-    if (Intl.DateTimeFormat.supportedLocalesOf(locale).length > 0) {
-      return true;
-    }
-    // eslint-disable-next-line no-console
-    console.warn(`${locale} is not supported. Falling back to a known locale.`);
-    return false;
-  } catch (error) {
-    if (
-      error != null &&
-      typeof error === "object" &&
-      "name" in error &&
-      error?.name === "RangeError"
-    ) {
-      // eslint-disable-next-line no-console
-      console.error(`Invalid locale: ${locale}`);
-      return false;
-    }
-    if (error != null && typeof error === "object" && "message" in error) {
-      // eslint-disable-next-line no-console
-      console.error(error?.message);
-      return false;
-    }
-
-    return false;
-  }
-};
-
 export const isRange = (date): date is DateRangeProp =>
   date != null && typeof date === "object" && "startDate" in date;
 

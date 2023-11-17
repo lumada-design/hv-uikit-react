@@ -38,10 +38,6 @@ export const TreeViewContext = createContext<TreeViewContextValue<any>>(
   DEFAULT_TREE_VIEW_CONTEXT_VALUE
 );
 
-if (process.env.NODE_ENV !== "production") {
-  TreeViewContext.displayName = "TreeViewContext";
-}
-
 export interface TreeViewProviderProps<
   TPlugins extends readonly TreeViewAnyPluginSignature[]
 > {

@@ -58,10 +58,6 @@ interface DescendantContextValue {
 
 const DescendantContext = React.createContext<DescendantContextValue>({});
 
-if (process.env.NODE_ENV !== "production") {
-  DescendantContext.displayName = "DescendantContext";
-}
-
 function usePrevious<T>(value: T) {
   const ref = React.useRef<T | null>(null);
   React.useEffect(() => {

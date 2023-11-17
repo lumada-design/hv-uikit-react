@@ -296,7 +296,7 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
       );
     }, [labels, multiSelect, placeholder, values]);
 
-    if (virtualized && !height && process.env.NODE_ENV !== "production") {
+    if (import.meta.env.DEV && virtualized && !height) {
       // eslint-disable-next-line no-console
       console.error(
         "Dropdown/List in virtualized mode requires a height. Please define it."

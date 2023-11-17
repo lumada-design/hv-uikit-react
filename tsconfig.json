@@ -26,7 +26,14 @@
       "@hitachivantara/uikit-styles": ["packages/styles/src"]
     },
     "preserveSymlinks": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "types": [
+      "node",
+      "jest",
+      "@testing-library/jest-dom",
+      "vite/client",
+      "vitest"
+    ]
   },
   "exclude": ["node_modules", "dist"]
 }

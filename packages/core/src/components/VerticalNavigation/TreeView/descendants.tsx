@@ -61,10 +61,6 @@ interface DescendantContextValue {
   parentId?;
 }
 
-if (process.env.NODE_ENV !== "production") {
-  DescendantContext.displayName = "DescendantContext";
-}
-
 function usePrevious(value) {
   const ref = useRef(null);
   useEffect(() => {

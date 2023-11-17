@@ -15,16 +15,3 @@ declare global {
     }
   }
 }
-
-// To import .png files on stories
-declare module "*.png" {
-  export default "" as string;
-}
-
-declare module "*.jpg" {
-  export default "" as string;
-}
-
-declare module "*?raw" {
-  export default "" as string;
-}

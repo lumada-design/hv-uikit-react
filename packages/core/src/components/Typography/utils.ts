@@ -73,21 +73,19 @@ const isLegacyVariant = (variant: string) => {
 };
 
 export const mapVariant = (variant: Variant, theme?: string) => {
+  if (theme === "ds3") return variant;
   const mappedVariant = mappableVariants.get(variant);
 
-  if (theme !== "ds3") {
+  if (import.meta.env.DEV) {
+    /* eslint-disable no-console */
+    const msg = `The typography variant ${variant} is deprecated.`;
     if (mappedVariant) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        `The typography variant ${variant} is deprecated. You should use ${mappedVariant} instead.`
-      );
-      return mappedVariant;
+      console.warn(`${msg} Use ${mappedVariant} instead.`);
     }
     if (isLegacyVariant(variant)) {
-      // eslint-disable-next-line no-console
-      console.warn(`The typography variant ${variant} is deprecated.`);
+      console.warn(msg);
     }
   }
 
-  return variant;
+  return mappedVariant || variant;
 };
