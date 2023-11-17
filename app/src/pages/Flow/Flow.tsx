@@ -29,7 +29,14 @@ import {
   LAYOUT_COLS,
   NodeGroup,
 } from "./types";
-import { BarChart, Dashboard, DonutChart, Kpi, LineChart } from "./Nodes";
+import {
+  BarChart,
+  Dashboard,
+  DonutChart,
+  Kpi,
+  LineChart,
+  Table,
+} from "./Nodes";
 import { buildLayout, createDataset, useDatasets } from "./utils";
 import { DashboardProps } from "./Dashboard";
 
@@ -62,6 +69,7 @@ const baseNodeTypes = {
   barChart: BarChart,
   kpi: Kpi,
   donutChart: DonutChart,
+  table: Table,
 } satisfies HvFlowProps["nodeTypes"];
 
 // Initial Flow
@@ -132,7 +140,7 @@ const nodes = [
   },
   {
     id: "fe4f454c946",
-    position: { x: 4.7733747459412825, y: 786.979108359152 },
+    position: { x: -183.21149999999977, y: 786.979108359152 },
     data: {
       title: "Sales per territory over the years",
       measure: ["Quantity"],
@@ -151,6 +159,15 @@ const nodes = [
       splitBy: ["Years"],
     },
     type: "lineChart",
+  },
+  {
+    id: "7",
+    position: { x: 182.2801875, y: 786.979108359152 },
+    data: {
+      title: "Sales per territory",
+      measure: ["EMEA"],
+    },
+    type: "table",
   },
 ] satisfies HvFlowProps["nodes"];
 const edges = [
@@ -224,6 +241,20 @@ const edges = [
     targetHandle: "0",
     id: "reactflow__edge-fe4f454c9460-e5ffe4f454c0",
   },
+  {
+    source: "5ffe4f454c9",
+    sourceHandle: "0",
+    target: "7",
+    targetHandle: "0",
+    id: "reactflow__edge-5ffe4f454c90-60",
+  },
+  {
+    source: "7",
+    sourceHandle: "0",
+    target: "e5ffe4f454c",
+    targetHandle: "0",
+    id: "reactflow__edge-5ffe4f454c90-70",
+  },
 ] satisfies HvFlowProps["edges"];
 
 // Initial Layout
@@ -250,18 +281,25 @@ const layout = [
     i: "ffe4f454c94",
   },
   {
-    w: 12,
+    w: 6,
     h: 3,
     x: 0,
     y: 1,
     i: "e4f454c9469",
   },
   {
-    w: 12,
+    w: 6,
     h: 3,
+    x: 7,
+    y: 1,
+    i: "fe4f454c946",
+  },
+  {
+    w: 12,
+    h: 4,
     x: 0,
     y: 4,
-    i: "fe4f454c946",
+    i: "7",
   },
 ] satisfies DashboardProps["layout"];
 
