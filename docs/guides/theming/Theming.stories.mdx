@@ -6,6 +6,7 @@ import { ThemeStructure } from "./ThemeStructure";
 import { CssVariables } from "./CssVariables";
 import { CreateTheme } from "./CreateTheme";
 import { ThemeContext } from "./ThemeContext";
+import { DefaultProps, DefaultPropsClassOverwrite } from "./DefaultProps";
 
 <Meta title="Guides/Theming" />
 
@@ -18,6 +19,7 @@ Here's what there is to know about the NEXT UI Kit theming:
 - [Theme configuration](#theme-configuration)
 - [Theme context](#theme-context)
 - [CSS variable](#css-variables)
+- [Default props](#default-props)
 - [Spacing](#spacing)
 
 ## Default themes <a id="default-themes" />
@@ -361,6 +363,83 @@ const MyComponent = () => {
 
 <Story name="Css Variables">
   <CssVariables />
+</Story>
+
+## Default Props <a id="default-props" />
+
+Through our theme it is also possible to change the default props of a component. Let's say for example that the theme you want only uses squared
+shape avatars, you can use this feature to make your life easier by pre defining the default value of the prop `variant` to `square` in the `theme` `components` section like so:
+
+```tsx
+const newTheme = createTheme({
+  name: "myTheme",
+  base: "ds5",
+  components: {
+    HvAvatar: {
+      variant: "square",
+    },
+  },
+});
+
+export const DefaultProps = () => {
+  const id = "hv-root-create-theme-default-props-mode";
+  return (
+    <div id={id}>
+      <HvProvider
+        classNameKey={id}
+        rootElementId={id}
+        cssTheme="scoped"
+        themes={[newTheme]}
+      >
+        <HvAvatar />
+      </HvProvider>
+    </div>
+  );
+};
+```
+
+<Story name="Default Props">
+  <DefaultProps />
+</Story>
+
+This allows us to not have to declare that property every time we use the component.
+One of the big benefits of this is that most of all of our components have a `classes` prop. This means that we can now customize all
+of the components by overwriting their classes through the theme object.
+
+```tsx
+const newThemeClassOverwrite = createTheme({
+  name: "myTheme",
+  base: "ds5",
+  components: {
+    HvButton: {
+      classes: {
+        primary: {
+          backgroundColor: theme.colors.brand,
+        },
+      },
+    },
+  },
+});
+
+export const DefaultPropsClassOverwrite = () => {
+  const id = "hv-root-create-theme-default-props-class-overwrite";
+  return (
+    <div id={id}>
+      <HvProvider
+        classNameKey={id}
+        rootElementId={id}
+        cssTheme="scoped"
+        themes={[newThemeClassOverwrite]}
+      >
+        <HvButton>Hey</HvButton>
+      </HvProvider>
+    </div>
+  );
+};
+```
+
+<Story name="Default Props Class Overwrite">
+  <DefaultPropsClassOverwrite />
 </Story>
 
 ## Spacing <a id="spacing" />

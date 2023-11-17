@@ -9,10 +9,6 @@ A major feature of the NEXT UI Kit is white labeling. This feature enhances the 
 using the UI Kit in a multitude of design scenarios when there's a need to meet different UI guidelines from the NEXT Design System. Thus, it's possible to
 customize the current Design System patterns in order to meet specific client's needs.
 
-This feature has some limitations since it doesn't allow to change the chore structure of a component. What you are able to do is customize
-specific properties of a component as well as global properties of the theme. This will be enough in most cases and is on its own very powerful since
-one small change can drastically change an entire application.
-
 The white labeling customizations can be implemented at the theme level with the `createTheme` utility. With this utility you are able to create a new theme based on
 one of the default Design System themes (DS3 or DS5) by customizing its global properties, such as font family, colors, shadows, among others, and specific properties
 of the components.
@@ -35,27 +31,70 @@ const turquoiseTheme = createTheme({
   inheritColorModes: true,
   colors: {
     modes: {
-      dawn: { secondary: "#484349", primary: "#18A999" },
+      dawn: {
+        secondary: "#484349",
+        primary: "#18A999",
+        containerBackgroundHover: "#ecfcfa",
+      },
     },
   },
   fontFamily: {
     body: "Gill Sans",
   },
-  button: { hoverColor: "#ecfcfa" },
   header: {
-    backgroundColor: theme.colors.primary,
-    color: "#F6F8FF",
-    brandColor: "#F6F8FF",
     height: "60px",
-    hoverColor: "transparent",
-    selectedItemColor: "#F6F8FF",
-    selectedItemBackgroundColor: theme.colors.secondary,
-    selectedItemBorderTopColor: "transparent",
-    selectedItemBorderTopThickness: "0px",
-    selectedItemBorderBottomColor: "transparent",
-    selectedItemBorderBottomThickness: "0px",
-    selectedItemBorderRadius: theme.radii.full,
-    itemPadding: theme.space.xs,
+  },
+  components: {
+    HvButton: {
+      size: "lg",
+      radius: "full",
+    },
+    HvHeaderMenuBarBar: {
+      classes: {
+        menubar: {
+          backgroundColor: theme.colors.primary,
+        },
+      },
+    },
+    HvHeaderMenuItem: {
+      classes: {
+        root: {
+          "& span": {
+            color: "#F6F8FF",
+          },
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
+          "&:focus-within": {
+            backgroundColor: "transparent",
+          },
+        },
+        menubar: {
+          borderBottom: 0,
+          "& > * > span": {
+            padding: theme.space.xs,
+          },
+        },
+        selected: {
+          "&.HvHeader-MenuItem-menubar": {
+            borderTop: 0,
+            borderBottom: 0,
+            "& > * > span": {
+              color: "#F6F8FF",
+              backgroundColor: theme.colors.secondary,
+              borderRadius: theme.radii.full,
+            },
+          },
+        },
+      },
+    },
+    HvHeaderBrand: {
+      classes: {
+        brandName: {
+          color: "#F6F8FF",
+        },
+      },
+    },
   },
 });
 
@@ -64,12 +103,12 @@ const MyApp = ({ children }) => {
 };
 ```
 
-Only by customizing the theme, the `HvHeader`, `HvButton`, `HvHeaderBrand`, `HvHeaderNavigation`, `HvGlobalActions`, `HvTypography`, and `HvContainer`
-components were able change their default styling.
+By customizing the theme variables, the `HvHeader`, `HvButton`, `HvHeaderBrand`, `HvHeaderNavigation`, `HvHeaderMenuIte` and `HvHeaderMenuBarBar`
+components we are able change their default styling to meet the desired UI guidelines.
 
 <Unstyled>
   <WhiteLabeling />
 </Unstyled>
 
-Implementing deeper customizations to an element than the ones presented above requires you to use others types of customization.
+These customizations are applied to all the elements encapsulated by the theme, for more specific customizations we offer and recommend other methods.
 For more information on how you can customize components, report to the [customization](./?path=/docs/guides-styling--docs#customization) documentation.
