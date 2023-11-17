@@ -1,7 +1,7 @@
-import { Canvas, Meta, Story } from "@storybook/addon-docs";
-import * as FormSamples from "./FormsSamples";
+import { Canvas, Meta } from "@storybook/blocks";
+import * as FormSamples from "./FormsSamples.stories";
 
-<Meta title="Guides/Forms/Forms Guide" />
+<Meta of={FormSamples} name="Docs" />
 
 # Forms Guide
 
@@ -43,18 +43,14 @@ It's a good option for **simple forms** using form components based on native fo
 
 **Note:** Not all UI Kit form components integrate with the native form data or validation.
 
-<Canvas>
-  <Story name="Native Form" story={FormSamples.NativeFormStory} />
-</Canvas>
+<Canvas of={FormSamples.NativeForm} />
 
 ### React form
 
 Whenever control of internal form values or a custom validation is required, controlling the form with React state is a good option.
 When doing so, you should handle the state with controlled components and control changes by adding event handlers in the onChange attribute.
 
-<Canvas>
-  <Story name="React Form" story={FormSamples.ReactFormStory} />
-</Canvas>
+<Canvas of={FormSamples.ReactForm} />
 
 ### Form libraries
 
@@ -68,12 +64,8 @@ While our APIs are not fully aligned, this will be the most consistent way of ma
 
 #### React Hook Form
 
-<Canvas>
-  <Story name="React Hook Form" story={FormSamples.ReactHookFormStory} />
-</Canvas>
+<Canvas of={FormSamples.ReactHookForm} />
 
 #### Formik
 
-<Canvas>
-  <Story name="Formik" story={FormSamples.FormikStory} />
-</Canvas>
+<Canvas of={FormSamples.Formik} />

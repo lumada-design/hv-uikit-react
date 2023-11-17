@@ -8,11 +8,15 @@ export default {
     options: {},
   },
   stories: [
+    "../docs/**/*.mdx",
     "../docs/**/*.stories.@(tsx|mdx)",
     "../packages/**/src/**/*.stories.@(ts|tsx|mdx)",
   ],
   core: {
     disableTelemetry: true,
+  },
+  docs: {
+    autodocs: true,
   },
   addons: [
     // "@storybook/addon-actions",
@@ -80,8 +84,5 @@ export default {
       shouldExtractLiteralValuesFromEnum: true,
       shouldRemoveUndefinedFromOptional: true,
     },
-  },
-  docs: {
-    autodocs: true,
   },
 } as StorybookConfig;
