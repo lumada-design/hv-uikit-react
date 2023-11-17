@@ -7,12 +7,14 @@ import {
 import { useData } from "../../utils";
 import { ChartContainer } from "./ChartContainer";
 import { Kpi } from "./Kpi";
+import { Table } from "./Table";
 
 export type DashboardContentType =
   | "line-chart"
   | "bar-chart"
   | "donut-chart"
-  | "kpi";
+  | "kpi"
+  | "table";
 
 interface RendererProps {
   type: DashboardContentType;
@@ -90,6 +92,17 @@ export const Renderer = ({
         data={data}
         unit={unit}
         aggregation={aggregation}
+      />
+    );
+  }
+
+  if (type === "table") {
+    return (
+      <Table
+        loading={loading}
+        title={title || ""}
+        data={data}
+        measure={measure as string}
       />
     );
   }

@@ -11,6 +11,7 @@ const getType = (type?: string): DashboardContentType | undefined => {
     case "lineChart":
       return "line-chart";
     case "kpi":
+    case "table":
       return type;
     default:
       break;
