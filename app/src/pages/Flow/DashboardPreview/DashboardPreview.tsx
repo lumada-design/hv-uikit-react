@@ -82,15 +82,19 @@ const DashboardPreview = () => {
         })}
       >
         <HvGlobalActions position="relative" title="Dashboard Preview" />
-        <Dashboard
-          content={config?.content}
-          layout={config?.layout}
-          rowHeight={120}
-          cols={config?.cols}
-          margin={[16, 16]}
-          isDraggable={false}
-          isResizable={false}
-        />
+        {config?.content && config?.layout && (
+          <Dashboard
+            content={config.content}
+            layout={config.layout}
+            rowHeight={120}
+            cols={config?.cols}
+            margin={[16, 16]}
+            containerPadding={[16, 16]}
+            isDraggable={false}
+            isResizable={false}
+            useCSSTransforms={false}
+          />
+        )}
       </div>
     </HvVizProvider>
   );

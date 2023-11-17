@@ -162,6 +162,7 @@ export const Dashboard: HvFlowNodeFC = (props) => {
               rowHeight={80}
               cols={12}
               margin={[16, 16]}
+              containerPadding={[0, 16]}
               onLayoutChange={handleLayoutChange}
             />
           ) : (
