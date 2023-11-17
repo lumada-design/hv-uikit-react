@@ -103,7 +103,6 @@ export const TableComplete = () => {
       onAction={handleAction}
       onBulkAction={handleBulkAction}
       onUpdate={({ pageIndex, pageSize, sortBy }) => {
-        console.log("update", { pageIndex, pageSize, sortBy });
         fetchData({ pageIndex, pageSize, sortBy });
       }}
       options={{

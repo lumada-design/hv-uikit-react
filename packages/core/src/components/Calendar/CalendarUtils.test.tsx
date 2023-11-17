@@ -1,5 +1,3 @@
-import { vi } from "vitest";
-
 import {
   createDatesArray,
   getDateISO,
@@ -14,7 +12,6 @@ import {
   isDate,
   isSameDay,
   isSameMonth,
-  isValidLocale,
   zeroPad,
   makeUTCDate,
 } from "./utils";
@@ -229,21 +226,5 @@ describe("Calendar utils - createDatesArray", () => {
       currentMonthDates.length +
       nextMonthDates.length;
     expect(totalAmountOfDates).toBe(42);
-  });
-});
-
-describe("Calendar utils - isValidLocale", () => {
-  it("should return true for American locale `en-US`", () => {
-    expect(isValidLocale("en-US")).toBe(true);
-  });
-  it("should return false for a locale with the incorrect format `something wrong`", () => {
-    const originalError = console.error;
-
-    // Waiting error "Invalid locale: something wrong"
-    console.error = vi.fn();
-
-    expect(isValidLocale("something wrong")).toBe(false);
-
-    console.error = originalError;
   });
 });

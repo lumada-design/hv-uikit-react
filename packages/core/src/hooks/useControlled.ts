@@ -13,10 +13,7 @@ export const useControlled = (controlledProp, initialState) => {
   const [valueState, setValue] = useState(initialState);
   const value = isControlled ? controlledProp : valueState;
 
-  if (
-    process.env.NODE_ENV !== "production" &&
-    isControlled !== (controlledProp !== undefined)
-  ) {
+  if (import.meta.env.DEV && isControlled !== (controlledProp !== undefined)) {
     // eslint-disable-next-line no-console
     console.error(
       [

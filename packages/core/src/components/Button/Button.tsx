@@ -65,7 +65,7 @@ const mapVariant = (
 
   const mappedVariant = deprecatedVariantMap[variant];
 
-  if (mappedVariant) {
+  if (import.meta.env.DEV && mappedVariant) {
     // eslint-disable-next-line no-console
     console.warn(
       `Button variant '${variant}' is deprecated. Please use '${mappedVariant}'.`

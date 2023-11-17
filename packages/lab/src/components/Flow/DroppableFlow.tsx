@@ -146,45 +146,46 @@ export const HvDroppableFlow = ({
 
   const handleDragEnd = useCallback(
     (event: DragEndEvent) => {
-      if (event.over && event.over.id === elementId) {
-        const type = event.active.data.current?.hvFlow?.type;
+      if (event.over?.id !== elementId) return;
 
-        // Only known node types can be dropped in the canvas
-        if (type && nodeTypes?.[type]) {
-          // Converts the coordinates to the react flow coordinate system
-          const position = reactFlowInstance.project({
-            x:
-              (event.active.data.current?.hvFlow?.x || 0) -
-              event.over.rect.left,
-            y:
-              (event.active.data.current?.hvFlow?.y || 0) - event.over.rect.top,
-          });
+      const hvFlow = event.active.data.current?.hvFlow;
+      const type = hvFlow?.type;
 
-          // Node data
-          const data = event.active.data.current?.hvFlow?.data || {};
-
-          // Node to add
-          const newNode: Node = {
-            id: uid(),
-            position,
-            data,
-            type,
-          };
-
-          // Drop override
-          if (onDndDrop) {
-            onDndDrop(event, newNode);
-            return;
-          }
-
-          setNodes((nds) => nds.concat(newNode));
-        } else {
+      // Only known node types can be dropped in the canvas
+      if (!type || !nodeTypes?.[type]) {
+        if (import.meta.env.DEV) {
           // eslint-disable-next-line no-console
           console.error(
             `Could not add node to the flow because of unknown type ${type}. Use nodeTypes to define all the node types.`
           );
         }
+        return;
       }
+
+      // Converts the coordinates to the react flow coordinate system
+      const position = reactFlowInstance.project({
+        x: (hvFlow?.x || 0) - event.over.rect.left,
+        y: (hvFlow?.y || 0) - event.over.rect.top,
+      });
+
+      // Node data
+      const data = hvFlow?.data || {};
+
+      // Node to add
+      const newNode: Node = {
+        id: uid(),
+        position,
+        data,
+        type,
+      };
+
+      // Drop override
+      if (onDndDrop) {
+        onDndDrop(event, newNode);
+        return;
+      }
+
+      setNodes((nds) => nds.concat(newNode));
     },
     [elementId, nodeTypes, onDndDrop, reactFlowInstance]
   );
