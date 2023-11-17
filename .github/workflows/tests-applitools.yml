@@ -27,6 +27,12 @@ jobs:
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
 
+      - name: Build Storybook
+        run: npm run build:doc
+        env:
+          NODE_OPTIONS: "--max_old_space_size=8192"
+        shell: bash
+
       - name: Set Applitools App Name
         id: set-app-name
         run: |
@@ -37,7 +43,10 @@ jobs:
           fi
 
       - name: Eyes Storybook
-        run: npm run test:eyes
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+          "npx http-server dist --port 6006 --silent" \
+          "npx wait-on tcp:6006 && npm run test:eyes -- -u http://localhost:6006"
         timeout-minutes: 30
 
       - name: Archive Logs
