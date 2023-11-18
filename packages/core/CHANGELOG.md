@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.36.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.5...@hitachivantara/uikit-react-core@5.36.6) (2023-11-18)
+
+### Bug Fixes
+
+- **OverflowTooltip:** paragraph overflow ([#3820](https://github.com/lumada-design/hv-uikit-react/issues/3820)) ([a2e2e9b](https://github.com/lumada-design/hv-uikit-react/commit/a2e2e9be6c2efc854a1d3ad485f1a07039e8f67f))
+
 ## [5.36.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.4...@hitachivantara/uikit-react-core@5.36.5) (2023-11-17)
 
 ### Bug Fixes

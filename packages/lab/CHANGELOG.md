@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.16.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.16.1...@hitachivantara/uikit-react-lab@5.16.2) (2023-11-18)
+
+### Bug Fixes
+
+- **Flow:** prevent calling onFlowChange on initial render ([bf8e9a5](https://github.com/lumada-design/hv-uikit-react/commit/bf8e9a5bb7aa5ed1bc1f9d9e4e775c306ecb09c6))
+
 ## [5.16.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.16.0...@hitachivantara/uikit-react-lab@5.16.1) (2023-11-17)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
