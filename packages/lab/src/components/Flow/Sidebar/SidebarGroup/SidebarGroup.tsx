@@ -75,7 +75,7 @@ export const HvFlowSidebarGroup = ({
           <div className={classes.icon} role="none">
             {icon}
           </div>
-          <HvTypography variant="title4">
+          <HvTypography component="p" variant="title4">
             {nodes.length > 1 ? `${label} (${nodes.length})` : label}
           </HvTypography>
         </div>
