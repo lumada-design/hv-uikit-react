@@ -123,6 +123,7 @@ export const Main: StoryObj<HvHeaderProps> = {
               style={{ width: 32, height: 32 }}
               icon
               onClick={() => console.log("menu")}
+              aria-label="Menu"
             >
               <Menu />
             </HvButton>
@@ -268,6 +269,7 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
               icon
               onClick={() => console.log("menu")}
               style={{ width: 32, height: 32 }}
+              aria-label="Menu"
             >
               <Menu />
             </HvButton>
