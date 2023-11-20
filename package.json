@@ -70,7 +70,7 @@
     "@vitest/coverage-v8": "^0.34.6",
     "arquero": "^5.2.0",
     "clean-publish": "^4.2.0",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "echarts": "^5.4.2",
     "echarts-for-react": "^3.0.2",
     "eslint": "^8.42.0",

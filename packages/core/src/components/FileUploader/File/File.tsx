@@ -1,7 +1,5 @@
 import { Close, Fail, Success } from "@hitachivantara/uikit-react-icons";
 
-import { cx } from "@emotion/css";
-
 import { setId } from "@core/utils/setId";
 import { HvButton } from "@core/components/Button";
 import { HvTypography } from "@core/components/Typography";
@@ -130,7 +128,7 @@ export const HvFile = (props: HvFileProps) => {
     onFileRemoved,
     removeFileButtonLabel,
   } = useDefaultProps("HvFile", props);
-  const { classes } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   const hasError = data.status === "fail";
 
