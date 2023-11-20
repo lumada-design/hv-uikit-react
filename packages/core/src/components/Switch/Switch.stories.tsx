@@ -232,50 +232,70 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={6} display="flex" flexDirection="column">
-          <HvSwitch
-            required
-            defaultChecked
-            aria-errormessage="firstSwitch-error"
-            onChange={(_e, checked) => {
-              setFirstSwitchErrorMessage(
-                checked ? "" : "You must turn on the first switch"
-              );
-            }}
-            label="First Switch"
-          />
-          <HvSwitch
-            status="invalid"
-            aria-errormessage="secondSwitch-error"
-            onChange={() => {
-              setSecondSwitchErrorMessage(
-                "No way for the second switch to be valid! I told you!"
-              );
-            }}
-            label="Second Switch"
-          />
+        <HvGrid item xs={12} md={6}>
+          <HvGrid container>
+            <HvGrid item xs={12}>
+              <HvSwitch
+                required
+                defaultChecked
+                aria-errormessage="firstSwitch-error"
+                onChange={(_e, checked) => {
+                  setFirstSwitchErrorMessage(
+                    checked ? "" : "You must turn on the first switch"
+                  );
+                }}
+                label="First Switch"
+              />
+            </HvGrid>
+            <HvGrid item xs={12}>
+              <HvSwitch
+                status="invalid"
+                aria-errormessage="secondSwitch-error"
+                onChange={() => {
+                  setSecondSwitchErrorMessage(
+                    "No way for the second switch to be valid! I told you!"
+                  );
+                }}
+                label="Second Switch"
+              />
+            </HvGrid>
+          </HvGrid>
         </HvGrid>
-        <HvGrid
-          item
-          xs={6}
-          style={{
-            backgroundColor: theme.colors.negative_20,
-            color: theme.colors.base_dark,
-          }}
-        >
-          <h4>Form errors:</h4>
-          <ul>
-            {firstSwitchErrorMessage && (
-              <li id="firstSwitch-error" aria-live="polite">
-                {firstSwitchErrorMessage}
-              </li>
-            )}
-            {secondSwitchErrorMessage && (
-              <li id="secondSwitch-error" aria-live="polite">
-                {secondSwitchErrorMessage}
-              </li>
-            )}
-          </ul>
+        <HvGrid item xs={12} md={6}>
+          <div
+            className={css({
+              backgroundColor: theme.colors.negative_20,
+              color: theme.colors.base_dark,
+              padding: theme.space.md,
+            })}
+          >
+            <HvTypography
+              component="h4"
+              variant="title4"
+              style={{
+                color: theme.colors.base_dark,
+              }}
+            >
+              Form errors:
+            </HvTypography>
+            <ul
+              className={css({
+                margin: theme.spacing("sm", 0),
+                paddingLeft: theme.space.md,
+              })}
+            >
+              {firstSwitchErrorMessage && (
+                <li id="firstSwitch-error" aria-live="polite">
+                  {firstSwitchErrorMessage}
+                </li>
+              )}
+              {secondSwitchErrorMessage && (
+                <li id="secondSwitch-error" aria-live="polite">
+                  {secondSwitchErrorMessage}
+                </li>
+              )}
+            </ul>
+          </div>
         </HvGrid>
       </HvGrid>
     );

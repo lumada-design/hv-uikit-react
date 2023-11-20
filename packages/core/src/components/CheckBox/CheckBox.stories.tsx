@@ -160,62 +160,64 @@ export const ExternalErrorMessage: StoryObj<HvCheckBoxProps> = {
     const [secondCheckboxErrorMessage, setSecondCheckboxErrorMessage] =
       useState<string | null>("No way for the second checkbox to be valid!");
 
-    const StyledList = styled("ul")({
-      margin: "16px 0px",
-      paddingLeft: "40px",
-    });
-
-    const StyledTitle = styled(HvTypography)({
-      color: theme.colors.base_dark,
-    });
-
     return (
       <HvGrid container>
-        <HvGrid item xs={5} container>
-          <HvGrid item xs={12}>
-            <HvCheckBox
-              required
-              defaultChecked
-              aria-errormessage="firstCheckbox-error"
-              onChange={(_, checked) => {
-                if (checked) {
-                  setFirstCheckboxErrorMessage(null);
-                } else if (!checked) {
-                  setFirstCheckboxErrorMessage(
-                    "You must check the first checkbox"
+        <HvGrid item xs={12} md={6}>
+          <HvGrid container>
+            <HvGrid item xs={12}>
+              <HvCheckBox
+                required
+                defaultChecked
+                aria-errormessage="firstCheckbox-error"
+                onChange={(_, checked) => {
+                  if (checked) {
+                    setFirstCheckboxErrorMessage(null);
+                  } else if (!checked) {
+                    setFirstCheckboxErrorMessage(
+                      "You must check the first checkbox"
+                    );
+                  }
+                }}
+                label="First Checkbox"
+              />
+            </HvGrid>
+            <HvGrid item xs={12}>
+              <HvCheckBox
+                status="invalid"
+                aria-errormessage="secondCheckbox-error"
+                onChange={() => {
+                  setSecondCheckboxErrorMessage(
+                    "No way for the second checkbox to be valid! I told you!"
                   );
-                }
-              }}
-              label="First Checkbox"
-            />
-          </HvGrid>
-          <HvGrid item xs={12}>
-            <HvCheckBox
-              status="invalid"
-              aria-errormessage="secondCheckbox-error"
-              onChange={() => {
-                setSecondCheckboxErrorMessage(
-                  "No way for the second checkbox to be valid! I told you!"
-                );
-              }}
-              label="Second Checkbox"
-            />
+                }}
+                label="Second Checkbox"
+              />
+            </HvGrid>
           </HvGrid>
         </HvGrid>
-        <HvGrid item xs={7} container>
-          <HvGrid
-            style={{
+        <HvGrid item xs={12} md={6}>
+          <div
+            className={css({
               backgroundColor: theme.colors.negative_20,
               color: theme.colors.base_dark,
-            }}
-            item
-            xs={12}
-            alignItems="center"
+              padding: theme.space.md,
+            })}
           >
-            <StyledTitle component="h4" variant="title4">
+            <HvTypography
+              component="h4"
+              variant="title4"
+              style={{
+                color: theme.colors.base_dark,
+              }}
+            >
               Form errors:
-            </StyledTitle>
-            <StyledList>
+            </HvTypography>
+            <ul
+              className={css({
+                margin: theme.spacing("sm", 0),
+                paddingLeft: theme.space.md,
+              })}
+            >
               {firstCheckboxErrorMessage && (
                 <li id="firstCheckbox-error" aria-live="polite">
                   {firstCheckboxErrorMessage}
@@ -226,8 +228,8 @@ export const ExternalErrorMessage: StoryObj<HvCheckBoxProps> = {
                   {secondCheckboxErrorMessage}
                 </li>
               )}
-            </StyledList>
-          </HvGrid>
+            </ul>
+          </div>
         </HvGrid>
       </HvGrid>
     );

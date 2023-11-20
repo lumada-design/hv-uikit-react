@@ -5,6 +5,7 @@ import {
   HvRadio,
   HvRadioProps,
   HvRadioStatus,
+  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
@@ -133,45 +134,61 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={12} sm={3}>
-          <HvRadio
-            status={secondRadioStatus}
-            aria-errormessage="firstRadio-error"
-            onChange={(_e, checked) => {
-              if (checked) {
-                setSecondRadioStatus("invalid");
-                setFirstRadioErrorMessage("Don't choose the first radio.");
-              } else if (!checked) {
-                setSecondRadioStatus("valid");
-                setFirstRadioErrorMessage(null);
-              }
-            }}
-            label="First Radio"
-          />
+        <HvGrid item xs={12} md={6}>
+          <HvGrid container>
+            <HvGrid item xs={12}>
+              <HvRadio
+                status={secondRadioStatus}
+                aria-errormessage="firstRadio-error"
+                onChange={(_e, checked) => {
+                  if (checked) {
+                    setSecondRadioStatus("invalid");
+                    setFirstRadioErrorMessage("Don't choose the first radio.");
+                  } else if (!checked) {
+                    setSecondRadioStatus("valid");
+                    setFirstRadioErrorMessage(null);
+                  }
+                }}
+                label="First Radio"
+              />
+            </HvGrid>
+            <HvGrid item xs={12}>
+              <HvRadio
+                status="invalid"
+                aria-errormessage="secondRadio-error"
+                onChange={() => {
+                  setSecondRadioErrorMessage(
+                    "No way for the second radio to be valid! I told you!"
+                  );
+                }}
+                label="Second Radio"
+              />
+            </HvGrid>
+          </HvGrid>
         </HvGrid>
-        <HvGrid item xs={12} sm={3}>
-          <HvRadio
-            status="invalid"
-            aria-errormessage="secondRadio-error"
-            onChange={() => {
-              setSecondRadioErrorMessage(
-                "No way for the second radio to be valid! I told you!"
-              );
-            }}
-            label="Second Radio"
-          />
-        </HvGrid>
-        <HvGrid item xs={12} alignItems="center">
+        <HvGrid item xs={12} md={6}>
           <div
-            style={{
+            className={css({
               backgroundColor: theme.colors.negative_20,
               color: theme.colors.base_dark,
-              paddingBottom: theme.space.xs,
-              maxWidth: 400,
-            }}
+              padding: theme.space.md,
+            })}
           >
-            <h4>Form errors:</h4>
-            <ul style={{ listStyle: "none" }}>
+            <HvTypography
+              component="h4"
+              variant="title4"
+              style={{
+                color: theme.colors.base_dark,
+              }}
+            >
+              Form errors:
+            </HvTypography>
+            <ul
+              className={css({
+                margin: theme.spacing("sm", 0),
+                paddingLeft: theme.space.md,
+              })}
+            >
               {firstRadioErrorMessage && (
                 <li id="firstRadio-error" aria-live="polite">
                   {firstRadioErrorMessage}

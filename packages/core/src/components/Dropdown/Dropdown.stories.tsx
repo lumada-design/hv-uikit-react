@@ -15,6 +15,7 @@ import {
   HvDropdownStatus,
   HvGrid,
   HvListValue,
+  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -261,62 +262,76 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={12} sm={6}>
-          <HvDropdown
-            label="Dropdown 1"
-            multiSelect
-            values={values1}
-            required
-            aria-errormessage="birth-error"
-            onChange={(value) => {
-              if ((value as HvListValue[]).length === 0) {
-                setBirthErrorMessage(
-                  "Select at least one value from dropdown 1."
-                );
-              } else {
-                setBirthErrorMessage(null);
-              }
-            }}
-          />
-        </HvGrid>
-        <HvGrid item xs={12} sm={6}>
-          <HvDropdown
-            label="Dropdown 2"
-            multiSelect
-            values={values2}
-            required
-            status={deathValidationState as HvDropdownStatus}
-            aria-errormessage="death-error"
-            onChange={(value) => {
-              setDeathValidationState("invalid");
+        <HvGrid item xs={12} md={6}>
+          <HvGrid container>
+            <HvGrid item xs={12}>
+              <HvDropdown
+                label="Dropdown 1"
+                multiSelect
+                values={values1}
+                required
+                aria-errormessage="birth-error"
+                onChange={(value) => {
+                  if ((value as HvListValue[]).length === 0) {
+                    setBirthErrorMessage(
+                      "Select at least one value from dropdown 1."
+                    );
+                  } else {
+                    setBirthErrorMessage(null);
+                  }
+                }}
+              />
+            </HvGrid>
+            <HvGrid item xs={12}>
+              <HvDropdown
+                label="Dropdown 2"
+                multiSelect
+                values={values2}
+                required
+                status={deathValidationState as HvDropdownStatus}
+                aria-errormessage="death-error"
+                onChange={(value) => {
+                  setDeathValidationState("invalid");
 
-              if ((value as HvListValue[]).length === 0) {
-                setDeathErrorMessage(
-                  "Select at least one value from dropdown 2."
-                );
-              } else {
-                setDeathErrorMessage(
-                  `Dropdown 2 is always invalid, even with ${
-                    (value as HvListValue[]).length
-                  } items selected.`
-                );
-              }
-            }}
-          />
+                  if ((value as HvListValue[]).length === 0) {
+                    setDeathErrorMessage(
+                      "Select at least one value from dropdown 2."
+                    );
+                  } else {
+                    setDeathErrorMessage(
+                      `Dropdown 2 is always invalid, even with ${
+                        (value as HvListValue[]).length
+                      } items selected.`
+                    );
+                  }
+                }}
+              />
+            </HvGrid>
+          </HvGrid>
         </HvGrid>
-        <HvGrid item xs={12}>
+        <HvGrid item xs={12} md={6}>
           <div
             style={{
-              maxWidth: 600,
-              paddingTop: "10px",
-              paddingLeft: "20px",
               backgroundColor: theme.colors.negative_20,
               color: theme.colors.base_dark,
-              height: "100%",
+              padding: theme.space.md,
             }}
           >
-            <h4>Form errors:</h4>
-            <ul>
+            <HvTypography
+              component="h4"
+              variant="title4"
+              style={{
+                color: theme.colors.base_dark,
+              }}
+            >
+              Form errors:
+            </HvTypography>
+            <ul
+              className={css({
+                margin: theme.spacing("sm", 0),
+                paddingLeft: theme.space.md,
+              })}
+            >
               {birthErrorMessage && (
                 <li id="birth-error" aria-live="polite">
                   {birthErrorMessage}
