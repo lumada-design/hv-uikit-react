@@ -302,9 +302,9 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={12}>
+        <HvGrid item xs={12} md={6}>
           <HvGrid container>
-            <HvGrid item xs={12} sm={6}>
+            <HvGrid item xs={12}>
               <HvInput
                 label="First name"
                 description="Please enter your first name"
@@ -323,7 +323,7 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
                 }}
               />
             </HvGrid>
-            <HvGrid item xs={12} sm={6}>
+            <HvGrid item xs={12}>
               <HvInput
                 label="Last name"
                 description="Please enter your last name"
@@ -350,17 +350,29 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
             </HvGrid>
           </HvGrid>
         </HvGrid>
-        <HvGrid item xs={12}>
+        <HvGrid item xs={12} md={6}>
           <div
             style={{
-              padding: theme.spacing("xs", "md"),
               backgroundColor: theme.colors.negative_20,
               color: theme.colors.base_dark,
-              height: "100%",
+              padding: theme.space.md,
             }}
           >
-            <h4>Form errors:</h4>
-            <ul>
+            <HvTypography
+              component="h4"
+              variant="title4"
+              style={{
+                color: theme.colors.base_dark,
+              }}
+            >
+              Form errors:
+            </HvTypography>
+            <ul
+              className={css({
+                margin: theme.spacing("sm", 0),
+                paddingLeft: theme.space.md,
+              })}
+            >
               {firstNameErrorMessage && (
                 <li id="firstName-error" aria-live="polite">
                   {firstNameErrorMessage}

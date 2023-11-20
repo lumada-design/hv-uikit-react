@@ -17,6 +17,7 @@ import {
   HvListItem,
   HvRadio,
   HvRadioGroup,
+  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -425,9 +426,9 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={12}>
+        <HvGrid item xs={12} md={6}>
           <HvGrid container>
-            <HvGrid item xs={12} sm={6}>
+            <HvGrid item xs={12}>
               <HvDatePicker
                 label="Start date"
                 description="Enter a start date"
@@ -441,7 +442,7 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
                 }}
               />
             </HvGrid>
-            <HvGrid item xs={12} sm={6}>
+            <HvGrid item xs={12}>
               <HvDatePicker
                 label="End date"
                 description="Enter an end date"
@@ -462,20 +463,26 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
             </HvGrid>
           </HvGrid>
         </HvGrid>
-        <HvGrid item xs={12}>
+        <HvGrid item xs={12} md={6}>
           <div
-            style={{
-              display: "inline-block",
-              padding: theme.space.md,
+            className={css({
               backgroundColor: theme.colors.negative_20,
               color: theme.colors.base_dark,
-              height: "100%",
-            }}
+              padding: theme.space.md,
+            })}
           >
-            <h4>Form errors:</h4>
+            <HvTypography
+              component="h4"
+              variant="title4"
+              style={{
+                color: theme.colors.base_dark,
+              }}
+            >
+              Form errors:
+            </HvTypography>
             <ul
               className={css({
-                marginTop: theme.space.xs,
+                margin: theme.spacing("sm", 0),
                 paddingLeft: theme.space.md,
               })}
             >
