@@ -139,6 +139,7 @@ export const ThemeStructure = () => {
           height={420}
           language="json"
           value={JSON.stringify(value, null, "\t")}
+          options={{ readOnly: true }}
         />
       </HvAccordion>
     );

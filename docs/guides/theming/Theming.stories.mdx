@@ -287,7 +287,7 @@ const MyComponent = () => {
 
 ### Access the active theme
 
-If you want to access a property from the theme, you can use the `activeTheme` as shown below.
+If you want to access the theme's colors, you can do as shown below.
 
 ```tsx
 import {
@@ -314,11 +314,11 @@ const newTheme = createTheme({
 });
 
 const MyComponent = () => {
-  const { activeTheme, colors } = useTheme();
+  const { colors } = useTheme();
 
   return (
     <HvTypography style={{ color: colors?.green }}>
-      Hello from the UI Kit team! {activeTheme?.name}
+      Hello from the UI Kit team!
     </HvTypography>
   );
 };
@@ -381,19 +381,11 @@ const newTheme = createTheme({
   },
 });
 
-export const DefaultProps = () => {
-  const id = "hv-root-create-theme-default-props-mode";
+export const MyApp = () => {
   return (
-    <div id={id}>
-      <HvProvider
-        classNameKey={id}
-        rootElementId={id}
-        cssTheme="scoped"
-        themes={[newTheme]}
-      >
-        <HvAvatar />
-      </HvProvider>
-    </div>
+    <HvProvider themes={[newTheme]}>
+      <HvAvatar />
+    </HvProvider>
   );
 };
 ```
@@ -421,19 +413,11 @@ const newThemeClassOverwrite = createTheme({
   },
 });
 
-export const DefaultPropsClassOverwrite = () => {
-  const id = "hv-root-create-theme-default-props-class-overwrite";
+export const MyApp = () => {
   return (
-    <div id={id}>
-      <HvProvider
-        classNameKey={id}
-        rootElementId={id}
-        cssTheme="scoped"
-        themes={[newThemeClassOverwrite]}
-      >
-        <HvButton>Hey</HvButton>
-      </HvProvider>
-    </div>
+    <HvProvider themes={[newTheme]}>
+      <HvButton>Hey</HvButton>
+    </HvProvider>
   );
 };
 ```
