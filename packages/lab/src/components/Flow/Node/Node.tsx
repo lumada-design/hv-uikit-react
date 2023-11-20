@@ -5,6 +5,7 @@ import {
   HvActionGeneric,
   HvActionsGenericProps,
   HvButton,
+  HvButtonProps,
   HvDropDownMenu,
   HvTooltip,
   HvTypography,
@@ -45,6 +46,8 @@ export interface HvFlowNodeProps<T = any>
   params?: HvFlowNodeParam[];
   /** A set of node default values for when there are no groups to fetch this data from. */
   nodeDefaults?: HvFlowNodeDefaults;
+  /** Props to be passed to the expand parameters button. */
+  expandParamsButtonProps?: HvButtonProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowNodeClasses | HvFlowBaseNodeProps<T>["classes"];
 }
@@ -65,6 +68,7 @@ export const HvFlowNode = ({
   nodeDefaults,
   classes: classesProp,
   children,
+  expandParamsButtonProps,
   ...props
 }: HvFlowNodeProps<unknown>) => {
   const { classes } = useClasses(classesProp as HvFlowNodeClasses);
@@ -116,11 +120,13 @@ export const HvFlowNode = ({
               icon
               overrideIconColors={false}
               onClick={() => setShowParams((p) => !p)}
+              aria-label={showParams ? "Collapse" : "Expand"}
+              {...expandParamsButtonProps}
             >
               {showParams ? (
-                <Up color="base_dark" />
+                <Up role="none" color="base_dark" />
               ) : (
-                <Down color="base_dark" />
+                <Down role="none" color="base_dark" />
               )}
             </HvButton>
           )}
