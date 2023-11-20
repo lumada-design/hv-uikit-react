@@ -24,8 +24,8 @@ import {
   useHvTableSticky,
 } from "@hitachivantara/uikit-react-core";
 
-import FacetSearchRaw from "./FacetSearchSample?raw";
-import { FacetSearch } from "./FacetSearchSample";
+import FacetSearchRaw from "./stories/FacetSearchSample?raw";
+import { FacetSearch } from "./stories/FacetSearchSample";
 
 const styles: { [key: string]: CSSInterpolation } = {
   listContainer: {

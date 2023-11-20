@@ -9,12 +9,8 @@ import {
   useSnackbar,
 } from "notistack";
 
-import { clsx } from "clsx";
-
 import { SnackbarOrigin } from "@mui/material/Snackbar";
 import { ClassNameMap } from "@mui/material";
-
-import { css } from "@emotion/css";
 
 import { ExtractNames } from "@core/utils/classes";
 
@@ -96,7 +92,7 @@ export const useHvSnackbar = () => {
           variant={variant}
           snackbarContentProps={snackbarContentProps}
         />,
-        { ...otherOptions, className: clsx(className) }
+        { ...otherOptions, className }
       );
     },
     [enqueueNotistackSnackbar]
@@ -123,7 +119,7 @@ export const HvSnackbarProvider = ({
   className,
   ...others
 }: HvSnackbarProviderProps) => {
-  const { classes, cx } = useClasses(classesProp);
+  const { classes, css, cx } = useClasses(classesProp);
 
   const notistackClasses: SnackbarProviderProps["classes"] = {
     containerRoot: css({

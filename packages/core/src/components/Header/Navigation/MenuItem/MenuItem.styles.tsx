@@ -1,6 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { CSSInterpolation } from "@emotion/css";
+import type { CSSInterpolation } from "@emotion/serialize";
 
 import { outlineStyles } from "@core/utils/focusUtils";
 import { createClasses } from "@core/utils/classes";

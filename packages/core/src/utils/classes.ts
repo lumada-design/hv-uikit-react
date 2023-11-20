@@ -1,4 +1,4 @@
-import { CSSInterpolation } from "@emotion/css";
+import type { CSSInterpolation } from "@emotion/serialize";
 
 import { useCss } from "@core/hooks/useCss";
 
