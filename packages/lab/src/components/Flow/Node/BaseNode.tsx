@@ -185,7 +185,11 @@ export const HvFlowBaseNode = ({
           )}
         >
           {icon}
-          <HvTypography variant="title4" className={classes.title}>
+          <HvTypography
+            component="p"
+            variant="title4"
+            className={classes.title}
+          >
             {title}
           </HvTypography>
         </div>
