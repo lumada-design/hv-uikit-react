@@ -371,6 +371,12 @@ Through our theme it is also possible to change the default props of a component
 shape avatars, you can use this feature to make your life easier by pre defining the default value of the prop `variant` to `square` in the `theme` `components` section like so:
 
 ```tsx
+import {
+  createTheme,
+  HvProvider,
+  HvAvatar,
+} from "@hitachivantara/uikit-react-core";
+
 const newTheme = createTheme({
   name: "myTheme",
   base: "ds5",
@@ -399,7 +405,13 @@ One of the big benefits of this is that most of all of our components have a `cl
 of the components by overwriting their classes through the theme object.
 
 ```tsx
-const newThemeClassOverwrite = createTheme({
+import {
+  createTheme,
+  HvProvider,
+  HvButton,
+} from "@hitachivantara/uikit-react-core";
+
+const newTheme = createTheme({
   name: "myTheme",
   base: "ds5",
   components: {
