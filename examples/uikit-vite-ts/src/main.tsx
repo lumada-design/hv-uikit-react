@@ -2,12 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 
-import App from "./App";
+import { Container } from "./Container";
+import { App } from "./App";
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <HvProvider>
-      <App />
+      <Container>
+        <App />
+      </Container>
     </HvProvider>
   </React.StrictMode>
 );
