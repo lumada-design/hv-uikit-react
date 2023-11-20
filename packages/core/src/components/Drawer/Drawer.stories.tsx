@@ -55,7 +55,7 @@ export const Main: StoryObj<HvDrawerProps> = {
         }}
         {...args}
       >
-        <HvDialogTitle classes={{ root: classes.drawerTitle }}>
+        <HvDialogTitle component="div" classes={{ root: classes.drawerTitle }}>
           Lorem Ipsum
         </HvDialogTitle>
         <HvDialogContent className={classes.drawerContent}>
