@@ -1,6 +1,5 @@
 import { Node } from "reactflow";
-
-import { DashboardLayout } from "./Dashboard";
+import { HvDashboardProps } from "@hitachivantara/uikit-react-lab";
 
 export type NodeGroup = "dashboard" | "visualization" | "dataset";
 
@@ -11,8 +10,8 @@ export const LAYOUT_COLS = 12;
 
 export interface DashboardSpecs {
   nodes?: { node: Node; endpoint?: string }[];
-  layout?: DashboardLayout[];
-  layoutCols?: number;
+  layout?: HvDashboardProps["layout"];
+  layoutCols?: HvDashboardProps["cols"];
 }
 
 export type DashboardsStorage = Record<string, DashboardSpecs | undefined>;

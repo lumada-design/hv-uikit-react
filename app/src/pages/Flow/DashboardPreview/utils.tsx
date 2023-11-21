@@ -1,4 +1,5 @@
-import { DashboardProps } from "../Dashboard";
+import { HvDashboardItem } from "@hitachivantara/uikit-react-lab";
+
 import { DashboardContentType, Renderer } from "./Renderers";
 import { DashboardSpecs } from "../types";
 
@@ -18,31 +19,30 @@ const getType = (type?: string): DashboardContentType | undefined => {
   }
 };
 
-export const buildContent = (
-  nodes?: DashboardSpecs["nodes"]
-): DashboardProps["content"] => {
-  if (nodes) {
-    return nodes.reduce((acc: NonNullable<DashboardProps["content"]>, cur) => {
-      const type = getType(cur.node.type);
+export const buildContent = (nodes?: DashboardSpecs["nodes"]) => {
+  if (!nodes) return;
 
-      if (type) {
-        acc.push({
-          id: cur.node.id,
-          component: (
-            <Renderer
-              type={type}
-              endpoint={cur.endpoint}
-              measure={cur.node.data.measure}
-              groupBy={cur.node.data.groupBy}
-              title={cur.node.data.title}
-              unit={cur.node.data.unit}
-              aggregation={cur.node.data.aggregation}
-              splitBy={cur.node.data.splitBy}
-            />
-          ),
-        });
-      }
-      return acc;
-    }, []);
-  }
+  return nodes.reduce((acc, cur) => {
+    const type = getType(cur.node.type);
+
+    if (type) {
+      acc.push({
+        id: cur.node.id,
+        type,
+        element: (
+          <Renderer
+            type={type}
+            endpoint={cur.endpoint}
+            measure={cur.node.data.measure}
+            groupBy={cur.node.data.groupBy}
+            title={cur.node.data.title}
+            unit={cur.node.data.unit}
+            aggregation={cur.node.data.aggregation}
+            splitBy={cur.node.data.splitBy}
+          />
+        ),
+      });
+    }
+    return acc;
+  }, [] as HvDashboardItem[]);
 };

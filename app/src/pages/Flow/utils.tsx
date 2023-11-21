@@ -3,7 +3,6 @@ import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 import useSWR from "swr";
 import { loadArrow } from "arquero";
 
-import { DashboardLayout } from "./Dashboard";
 import { DashboardSpecs, LAYOUT_COLS } from "./types";
 
 const datasets = [
@@ -85,7 +84,7 @@ export const createDataset = ({
 
 export const buildLayout = (
   nodes: NonNullable<DashboardSpecs["nodes"]>,
-  layout?: DashboardLayout[]
+  layout?: DashboardSpecs["layout"]
 ) => {
   return nodes.map(({ node }, idx) => {
     const item = layout?.find((x) => x.i === node.id);

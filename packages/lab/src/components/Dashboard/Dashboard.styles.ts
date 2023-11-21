@@ -1,5 +1,12 @@
 import { css } from "@emotion/react";
-import { theme } from "@hitachivantara/uikit-react-core";
+import { createClasses, theme } from "@hitachivantara/uikit-react-core";
+
+export const { staticClasses, useClasses } = createClasses("HvDashboard", {
+  root: {},
+  item: {
+    display: "flex",
+  },
+});
 
 export const gridStyles = css`
   .react-grid-layout {

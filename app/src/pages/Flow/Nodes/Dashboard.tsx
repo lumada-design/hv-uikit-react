@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
 import {
+  HvDashboard as Layout,
+  HvDashboardProps,
   HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeTypeMeta,
@@ -24,7 +26,6 @@ import {
   DashboardsStorage,
   NodeGroup,
 } from "../types";
-import { DashboardProps, Dashboard as Layout } from "../Dashboard";
 
 interface Configuration {
   opened: boolean;
@@ -39,7 +40,7 @@ export const Dashboard: HvFlowNodeFC = (props) => {
   const [configuration, setConfiguration] = useState<Configuration>({
     opened: false,
   });
-  const [content, setContent] = useState<DashboardProps["content"]>();
+  const [content, setContent] = useState<HvDashboardProps["items"]>();
 
   const handleOpenConfig = () => {
     // Get from local storage
@@ -53,7 +54,8 @@ export const Dashboard: HvFlowNodeFC = (props) => {
 
           return {
             id: node.id,
-            component: (
+            type: node.type!,
+            element: (
               <div
                 className={css({
                   display: "flex",
@@ -110,7 +112,7 @@ export const Dashboard: HvFlowNodeFC = (props) => {
     setContent(undefined);
   };
 
-  const handleLayoutChange: DashboardProps["onLayoutChange"] = (ly) => {
+  const handleLayoutChange: HvDashboardProps["onLayoutChange"] = (ly) => {
     setConfiguration({
       ...configuration,
       config: {
@@ -156,7 +158,7 @@ export const Dashboard: HvFlowNodeFC = (props) => {
           {configuration.config?.layout &&
           configuration.config.layout.length > 0 ? (
             <Layout
-              content={content}
+              items={content}
               layout={configuration.config.layout}
               compactType="vertical"
               rowHeight={80}
