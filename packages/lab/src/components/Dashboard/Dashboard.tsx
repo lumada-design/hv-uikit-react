@@ -16,24 +16,24 @@ export { staticClasses as dashboardClasses };
 
 export type HvDashboardClasses = ExtractNames<typeof useClasses>;
 
-export interface HvDashboardItem<Key extends string = string>
-  extends Record<string, any> {
+export interface HvDashboardItem {
   id: string;
-  type: Key;
+  type: string;
 }
 
-export interface HvDashboardProps<Key extends string = string>
-  extends ReactGridLayoutProps {
+export interface HvDashboardProps<
+  Item extends HvDashboardItem = HvDashboardItem
+> extends ReactGridLayoutProps {
   classes?: HvDashboardClasses;
-  items?: HvDashboardItem<Key>[];
-  renderItem: (item: HvDashboardItem<Key>) => React.ReactNode;
+  items?: Item[];
+  renderItem: (item: Item) => React.ReactNode;
 }
 
 /**
  * A Dashboard grid layout component, based on `react-grid-layout`.
  */
-export const HvDashboard = <Key extends string = string>(
-  props: HvDashboardProps<Key>
+export const HvDashboard = <Item extends HvDashboardItem = HvDashboardItem>(
+  props: HvDashboardProps<Item>
 ) => {
   const {
     className,
