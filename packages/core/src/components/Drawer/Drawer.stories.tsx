@@ -1,7 +1,5 @@
 import { css } from "@emotion/css";
-
 import { Meta, StoryObj } from "@storybook/react";
-
 import {
   HvButton,
   HvDialogActions,
@@ -9,6 +7,7 @@ import {
   HvDialogTitle,
   HvDrawer,
   HvDrawerProps,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvDrawer> = {
@@ -59,14 +58,16 @@ export const Main: StoryObj<HvDrawerProps> = {
           Lorem Ipsum
         </HvDialogTitle>
         <HvDialogContent className={classes.drawerContent}>
-          {[...new Array(30)]
-            .map(
-              () => `Cras mattis consectetur purus sit amet fermentum. 
+          <HvTypography tabIndex={0}>
+            {[...new Array(30)]
+              .map(
+                () => `Cras mattis consectetur purus sit amet fermentum. 
                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. 
                   Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
                   Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-            )
-            .join("\n")}
+              )
+              .join("\n")}
+          </HvTypography>
         </HvDialogContent>
         <HvDialogActions>
           <HvButton variant="primaryGhost">Submit</HvButton>
