@@ -2,11 +2,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { useSearchParams } from "react-router-dom";
 import { HvGlobalActions, theme } from "@hitachivantara/uikit-react-core";
+import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
-import { Dashboard, DashboardProps } from "../Dashboard";
 import { buildContent } from "./utils";
 import { DASHBOARDS_STORAGE_KEY, DashboardsStorage } from "../types";
+
+type DashboardConfig = Pick<HvDashboardProps, "items" | "layout" | "cols">;
 
 const DashboardPreview = () => {
   const [searchParams] = useSearchParams();
@@ -14,32 +16,26 @@ const DashboardPreview = () => {
 
   const isMounted = useRef<boolean>(false);
 
-  const [config, setConfig] = useState<{
-    content?: DashboardProps["content"];
-    layout?: DashboardProps["layout"];
-    cols?: number;
-  }>();
+  const [config, setConfig] = useState<DashboardConfig>();
 
   const buildDashboard = useCallback(
     (value: string | null) => {
-      if (id) {
-        const dashboards: DashboardsStorage = value
-          ? JSON.parse(value)
-          : undefined;
-        const dashboard = dashboards?.[id];
+      if (!id) return;
 
-        if (dashboard) {
-          const { layout, nodes, layoutCols } = dashboard;
+      const dashboards: DashboardsStorage = value
+        ? JSON.parse(value)
+        : undefined;
+      const dashboard = dashboards?.[id];
 
-          const content = buildContent(nodes);
+      if (!dashboard) return;
 
-          setConfig({
-            layout,
-            content,
-            cols: layoutCols,
-          });
-        }
-      }
+      const { layout, nodes, layoutCols } = dashboard;
+
+      setConfig({
+        layout,
+        items: buildContent(nodes),
+        cols: layoutCols,
+      });
     },
     [id]
   );
@@ -82,12 +78,10 @@ const DashboardPreview = () => {
         })}
       >
         <HvGlobalActions position="relative" title="Dashboard Preview" />
-        {config?.content && config?.layout && (
-          <Dashboard
-            content={config.content}
-            layout={config.layout}
+        {config?.items && config?.layout && (
+          <HvDashboard
+            {...config}
             rowHeight={120}
-            cols={config?.cols}
             margin={[16, 16]}
             containerPadding={[16, 16]}
             isDraggable={false}

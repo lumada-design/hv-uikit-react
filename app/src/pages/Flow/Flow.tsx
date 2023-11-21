@@ -8,6 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Add, Fail } from "@hitachivantara/uikit-react-icons";
 import {
+  HvDashboardProps,
   HvFlow,
   HvFlowControls,
   HvFlowEmpty,
@@ -24,7 +25,6 @@ import {
 } from "./types";
 
 import { buildLayout, createDataset, useDatasets } from "./utils";
-import { DashboardProps } from "./Dashboard";
 import { baseNodeTypes, edges, nodeGroups, nodes } from "./config";
 
 // Initial Layout
@@ -35,7 +35,7 @@ const layout = [
   { w: 6, h: 3, x: 0, y: 1, i: "e4f454c9469" },
   { w: 6, h: 3, x: 7, y: 1, i: "fe4f454c946" },
   { w: 12, h: 4, x: 0, y: 4, i: "7" },
-] satisfies DashboardProps["layout"];
+] satisfies HvDashboardProps["layout"];
 
 const Content = () => {
   const { data } = useDatasets();
@@ -47,7 +47,7 @@ const Content = () => {
   const persistDashboards = (
     nds: Node[],
     egs: Edge[],
-    ly?: DashboardProps["layout"]
+    ly?: HvDashboardProps["layout"]
   ) => {
     const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
