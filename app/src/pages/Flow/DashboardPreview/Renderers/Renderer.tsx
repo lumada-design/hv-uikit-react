@@ -5,14 +5,10 @@ import {
   HvDonutChart,
   HvLineChart,
 } from "@hitachivantara/uikit-react-viz";
-import {
-  HvDashboardItem,
-  HvDashboardProps,
-} from "@hitachivantara/uikit-react-lab";
+import { HvDashboardItem } from "@hitachivantara/uikit-react-lab";
 
 import { NodeData } from "../../types";
 import { datasets } from "../../utils";
-import { NodeTypes } from "../../Flow";
 
 import { ChartContainer } from "./ChartContainer";
 import { Kpi } from "./Kpi";
@@ -25,23 +21,21 @@ const useData = (endpointId?: string) => {
   return useSWR(url, loadArrow);
 };
 
-interface RendererProps extends HvDashboardItem<NodeTypes> {
+export interface RendererProps extends HvDashboardItem {
   data: NodeData;
 }
 
-const Renderer = (props: RendererProps) => {
+export const Renderer = (props: RendererProps) => {
+  const { type, data: nodeData = {} } = props;
   const {
-    type,
-    data: {
-      endpoint,
-      measure,
-      groupBy,
-      splitBy,
-      aggregation,
-      unit,
-      title = "",
-    },
-  } = props;
+    endpoint,
+    measure,
+    groupBy,
+    splitBy,
+    aggregation,
+    unit,
+    title = "",
+  } = nodeData;
   const { data, isLoading } = useData(endpoint);
 
   if (type === "lineChart") {
@@ -113,9 +107,4 @@ const Renderer = (props: RendererProps) => {
   }
 
   return null;
-};
-
-/** Common renderers to be used in Dashboard and Flow preview */
-export const renderItem: HvDashboardProps<NodeTypes>["renderItem"] = (item) => {
-  return <Renderer {...(item as RendererProps)} />;
 };

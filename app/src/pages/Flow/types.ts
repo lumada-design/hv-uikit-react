@@ -10,7 +10,7 @@ export const LAYOUT_COLS = 12;
 
 export interface DashboardSpecs
   extends Pick<HvDashboardProps, "layout" | "cols"> {
-  nodes?: Node<NodeData>[];
+  items: Node<NodeData>[];
 }
 
 export type DashboardsStorage = Record<string, DashboardSpecs | undefined>;

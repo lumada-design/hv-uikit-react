@@ -1,9 +1,5 @@
 import { useCallback } from "react";
-import {
-  HvDashboardProps,
-  HvFlowNode,
-  HvFlowNodeFC,
-} from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 import useSWR from "swr";
 import { loadArrow } from "arquero";
 
@@ -69,10 +65,10 @@ export const createDataset = ({
 };
 
 export const buildLayout = (
-  nodes: NonNullable<DashboardSpecs["nodes"]>,
-  layout?: HvDashboardProps["layout"]
+  items: DashboardSpecs["items"],
+  layout?: DashboardSpecs["layout"]
 ) => {
-  return nodes.map((node, idx) => {
+  return items.map((node, idx) => {
     const item = layout?.find((x) => x.i === node.id);
 
     if (item) {
