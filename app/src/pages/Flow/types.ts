@@ -8,10 +8,9 @@ export const DASHBOARDS_STORAGE_KEY = "dashboards";
 
 export const LAYOUT_COLS = 12;
 
-export interface DashboardSpecs {
-  nodes?: { node: Node; endpoint?: string }[];
-  layout?: HvDashboardProps["layout"];
-  layoutCols?: HvDashboardProps["cols"];
+export interface DashboardSpecs
+  extends Pick<HvDashboardProps, "layout" | "cols"> {
+  nodes?: Node<NodeData>[];
 }
 
 export type DashboardsStorage = Record<string, DashboardSpecs | undefined>;

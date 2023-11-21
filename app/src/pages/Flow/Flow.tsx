@@ -27,7 +27,7 @@ import {
 import { buildLayout, createDataset, useDatasets } from "./utils";
 import { baseNodeTypes, edges, nodeGroups, nodes } from "./config";
 
-// Initial Layout
+/** Initial Layout */
 const layout = [
   { w: 4, h: 1, x: 0, y: 0, i: "4" },
   { w: 4, h: 1, x: 4, y: 0, i: "6" },
@@ -52,11 +52,11 @@ const Content = () => {
     const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
 
-    const dashboards = nds.reduce((acc: DashboardsStorage, cur) => {
+    const dashboards = nds.reduce<DashboardsStorage>((acc, cur) => {
       if (cur.type === "dashboard") {
         const vizNodes = egs
           .filter((edge) => edge.target === cur.id)
-          .reduce((accN: NonNullable<DashboardSpecs["nodes"]>, curEdg) => {
+          .reduce<NonNullable<DashboardSpecs["nodes"]>>((accN, curEdg) => {
             const vizNode = nds.find((node) => node.id === curEdg.source);
             const datasetNodeId = egs.find(
               (edge) => edge.target === vizNode?.id
@@ -65,8 +65,11 @@ const Content = () => {
 
             if (vizNode) {
               accN.push({
-                endpoint: datasetNode?.data.endpoint,
-                node: vizNode,
+                ...vizNode,
+                data: {
+                  ...vizNode.data,
+                  endpoint: datasetNode?.data.endpoint,
+                },
               });
             }
             return accN;
@@ -77,7 +80,7 @@ const Content = () => {
         acc[cur.id] = {
           nodes: vizNodes,
           layout: ly ?? buildLayout(vizNodes, curLayout),
-          layoutCols: LAYOUT_COLS,
+          cols: LAYOUT_COLS,
         };
       }
       return acc;

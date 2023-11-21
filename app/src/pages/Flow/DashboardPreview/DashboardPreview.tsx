@@ -2,13 +2,33 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { useSearchParams } from "react-router-dom";
 import { HvGlobalActions, theme } from "@hitachivantara/uikit-react-core";
-import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
+import {
+  HvDashboard,
+  HvDashboardItem,
+  HvDashboardProps,
+} from "@hitachivantara/uikit-react-lab";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
-import { buildContent } from "./utils";
-import { DASHBOARDS_STORAGE_KEY, DashboardsStorage } from "../types";
+import {
+  DASHBOARDS_STORAGE_KEY,
+  DashboardSpecs,
+  DashboardsStorage,
+} from "../types";
+import { renderers } from "./Renderers";
 
 type DashboardConfig = Pick<HvDashboardProps, "items" | "layout" | "cols">;
+
+const buildContent = (nodes?: DashboardSpecs["nodes"]) => {
+  if (!nodes) return;
+
+  return nodes.reduce((acc, node) => {
+    if (node.type) {
+      acc.push({ type: node.type, ...node });
+    }
+
+    return acc;
+  }, [] as HvDashboardItem[]);
+};
 
 const DashboardPreview = () => {
   const [searchParams] = useSearchParams();
@@ -29,13 +49,10 @@ const DashboardPreview = () => {
 
       if (!dashboard) return;
 
-      const { layout, nodes, layoutCols } = dashboard;
+      const { layout, nodes, cols } = dashboard;
+      const items = buildContent(nodes);
 
-      setConfig({
-        layout,
-        items: buildContent(nodes),
-        cols: layoutCols,
-      });
+      setConfig({ cols, layout, items });
     },
     [id]
   );
@@ -81,9 +98,10 @@ const DashboardPreview = () => {
         {config?.items && config?.layout && (
           <HvDashboard
             {...config}
+            renderers={renderers}
             rowHeight={120}
             margin={[16, 16]}
-            containerPadding={[16, 16]}
+            containerPadding={[0, 16]}
             isDraggable={false}
             isResizable={false}
             useCSSTransforms={false}

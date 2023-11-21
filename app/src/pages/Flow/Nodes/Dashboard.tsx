@@ -26,6 +26,7 @@ import {
   DashboardsStorage,
   NodeGroup,
 } from "../types";
+import { renderers } from "../DashboardPreview/Renderers";
 
 interface Configuration {
   opened: boolean;
@@ -47,45 +48,43 @@ export const Dashboard: HvFlowNodeFC = (props) => {
     const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
     const config = specs?.[id];
-    const ct = config?.nodes
-      ? config.nodes.map(({ node }) => {
-          const label =
-            (node.type && nodeTypes?.[node.type].meta?.label) ?? node.type;
+    const ct = config?.nodes?.map((node) => {
+      const nodeType = node.type;
+      const label = nodeType && nodeTypes?.[nodeType].meta?.label;
 
-          return {
-            id: node.id,
-            type: node.type!,
-            element: (
-              <div
-                className={css({
-                  display: "flex",
-                  flexDirection: "column",
-                  flexWrap: "wrap",
-                  width: "100%",
-                  padding: theme.space.xs,
-                  border: `1px solid ${theme.colors.atmo4}`,
-                  borderRadius: theme.radii.round,
-                  backgroundColor: theme.colors.atmo1,
-                })}
-              >
-                <HvTypography
-                  variant="title4"
-                  className={css({ marginBottom: theme.space.xs })}
-                >
-                  {label}
-                </HvTypography>
-                <HvTypography
-                  className={css({
-                    color: theme.colors.secondary_60,
-                  })}
-                >
-                  {node.data.title}
-                </HvTypography>
-              </div>
-            ),
-          };
-        })
-      : undefined;
+      return {
+        id: node.id,
+        type: nodeType!,
+        element: (
+          <div
+            className={css({
+              display: "flex",
+              flexDirection: "column",
+              flexWrap: "wrap",
+              width: "100%",
+              padding: theme.space.xs,
+              border: `1px solid ${theme.colors.atmo4}`,
+              borderRadius: theme.radii.round,
+              backgroundColor: theme.colors.atmo1,
+            })}
+          >
+            <HvTypography
+              variant="title4"
+              className={css({ marginBottom: theme.space.xs })}
+            >
+              {label}
+            </HvTypography>
+            <HvTypography
+              className={css({
+                color: theme.colors.secondary_60,
+              })}
+            >
+              {node.data.title}
+            </HvTypography>
+          </div>
+        ),
+      };
+    });
 
     // Open
     setConfiguration({
@@ -160,6 +159,7 @@ export const Dashboard: HvFlowNodeFC = (props) => {
             <Layout
               items={content}
               layout={configuration.config.layout}
+              renderers={renderers}
               compactType="vertical"
               rowHeight={80}
               cols={12}

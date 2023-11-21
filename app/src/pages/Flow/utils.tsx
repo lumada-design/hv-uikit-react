@@ -1,11 +1,15 @@
 import { useCallback } from "react";
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
+import {
+  HvDashboardProps,
+  HvFlowNode,
+  HvFlowNodeFC,
+} from "@hitachivantara/uikit-react-lab";
 import useSWR from "swr";
 import { loadArrow } from "arquero";
 
 import { DashboardSpecs, LAYOUT_COLS } from "./types";
 
-const datasets = [
+export const datasets = [
   {
     id: "steelwheels",
     url: "https://lumada-design.github.io/assets/steelwheels.arrow",
@@ -15,10 +19,10 @@ const datasets = [
 
 export const useDatasets = () => {
   const fetcher = useCallback(async () => {
-    const promises = datasets.map((dataset) =>
+    const promises = datasets.map(async (dataset) => {
       // @ts-ignore
-      loadArrow(dataset.url)
-    );
+      return loadArrow(dataset.url);
+    });
 
     const tables = await Promise.all(promises);
 
@@ -37,24 +41,6 @@ export const useDatasets = () => {
   const { data } = useSWR("/datasets", fetcher, { suspense: true });
 
   return {
-    data,
-  };
-};
-
-export const useData = (endpoint?: string) => {
-  const fetcher = useCallback(async (url: string) => {
-    const datasetUrl = datasets.find((dataset) => dataset.id === url)?.url;
-
-    // @ts-ignore
-    const data = await loadArrow(datasetUrl);
-
-    return data;
-  }, []);
-
-  const { data, isLoading } = useSWR(endpoint, fetcher);
-
-  return {
-    loading: isLoading,
     data,
   };
 };
@@ -84,9 +70,9 @@ export const createDataset = ({
 
 export const buildLayout = (
   nodes: NonNullable<DashboardSpecs["nodes"]>,
-  layout?: DashboardSpecs["layout"]
+  layout?: HvDashboardProps["layout"]
 ) => {
-  return nodes.map(({ node }, idx) => {
+  return nodes.map((node, idx) => {
     const item = layout?.find((x) => x.i === node.id);
 
     if (item) {
