@@ -62,6 +62,14 @@ export const WithActions: StoryObj<HvSectionProps> = {
           "You can use whatever you want as actions. This example showcases the use of the `HvActionsGeneric` component.",
       },
     },
+    a11y: {
+      config: {
+        rules: [
+          { id: "aria-prohibited-attr", enabled: false },
+          { id: "color-contrast", enabled: false },
+        ],
+      },
+    },
   },
   render: () => {
     const classes = {

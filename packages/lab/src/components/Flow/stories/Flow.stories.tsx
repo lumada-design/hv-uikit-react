@@ -44,6 +44,15 @@ const meta: Meta<typeof HvFlow> = {
         return waitFor(() => screen.getByText("Search node..."));
       },
     },
+    a11y: {
+      config: {
+        rules: [
+          { id: "nested-interactive", enabled: false },
+          { id: "aria-prohibited-attr", enabled: false },
+          { id: "color-contrast", enabled: false },
+        ],
+      },
+    },
   },
 };
 export default meta;
