@@ -57,6 +57,13 @@ export const Main: StoryObj<HvQueryBuilderProps> = {
 };
 
 export const InitialQuery: StoryObj<HvQueryBuilderProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Query Builder that parses the query to Mongo",
+      },
+    },
+  },
   render: () => {
     const attributes = useMemo(
       () => ({
@@ -156,15 +163,14 @@ export const InitialQuery: StoryObj<HvQueryBuilderProps> = {
   },
 };
 
-InitialQuery.parameters = {
-  docs: {
-    description: {
-      story: "With query parsed to Mongo",
+export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Query Builder in read only mode.",
+      },
     },
   },
-};
-
-export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
   render: () => {
     const attributes = useMemo(
       () => ({
@@ -226,6 +232,7 @@ export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
     );
 
     const [, setMongoQuery] = useState(queryToMongo(initialQuery));
+
     return (
       <HvQueryBuilder
         readOnly
@@ -240,13 +247,5 @@ export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
         }}
       />
     );
-  },
-};
-
-ReadOnly.parameters = {
-  docs: {
-    description: {
-      story: "A Query Builder in read only mode.",
-    },
   },
 };

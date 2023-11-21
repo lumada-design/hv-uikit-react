@@ -2,8 +2,6 @@ export interface HvQueryBuilderAttribute extends Record<string, unknown> {
   id?: string;
   label: string;
   type: string;
-  value?: unknown;
-  order?: number;
 }
 
 export interface HvQueryBuilderNumericRange {
@@ -30,16 +28,25 @@ export type HvQueryBuilderQueryRuleValue =
   | HvQueryBuilderDateTimeRange;
 
 export interface HvQueryBuilderQueryRule {
-  id?: number | string;
+  id: React.Key;
   attribute?: string;
   operator?: string;
   value?: HvQueryBuilderQueryRuleValue;
 }
 
-export interface HvQueryBuilderQuery {
-  id?: number;
+export interface HvQueryBuilderQueryGroup {
+  id: React.Key;
   combinator: string;
-  rules: Array<HvQueryBuilderQueryRule>;
+  rules: Array<HvQueryBuilderQueryRule | HvQueryBuilderQueryGroup>;
+}
+
+export type HvQueryBuilderQuery = HvQueryBuilderQueryGroup;
+
+export interface HvQueryBuilderChangedQuery
+  extends Omit<HvQueryBuilderQuery, "id" | "rules"> {
+  rules: Array<
+    Omit<HvQueryBuilderQueryRule, "id"> | Omit<HvQueryBuilderQueryGroup, "id">
+  >;
 }
 
 export interface HvQueryBuilderQueryCombinator {
@@ -67,25 +74,23 @@ interface ResetQueryAction {
 
 interface ResetGroupAction {
   type: "reset-group";
-  id?: number;
+  id: React.Key;
 }
 
 interface AddRemoveAction {
   type: "add-rule" | "add-group" | "remove-node";
-  id?: number;
+  id: React.Key;
 }
 
 interface SetCombinatorAction {
   type: "set-combinator";
-  id?: number;
-
+  id: React.Key;
   combinator: string;
 }
 
 interface SetAttributeAction {
   type: "set-attribute";
-  id?: number;
-
+  id: React.Key;
   attribute?: string | null;
   operator?: string | null;
   value?: HvQueryBuilderQueryRuleValue | null;
@@ -93,16 +98,14 @@ interface SetAttributeAction {
 
 interface SetOperatorAction {
   type: "set-operator";
-  id?: number;
-
+  id: React.Key;
   operator: string | null;
   value?: HvQueryBuilderQueryRuleValue | null;
 }
 
 interface SetValueAction {
   type: "set-value";
-  id?: number;
-
+  id: React.Key;
   value: HvQueryBuilderQueryRuleValue | null;
 }
 
@@ -118,12 +121,6 @@ export type QueryAction =
 export interface AskAction {
   actions: QueryAction[];
   dialog: DialogLabels;
-}
-
-export interface ValueComponentProps {
-  id: number;
-  initialTouched?: boolean;
-  value?: unknown;
 }
 
 export interface HvQueryBuilderLabels {

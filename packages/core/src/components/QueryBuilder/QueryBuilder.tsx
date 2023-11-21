@@ -22,6 +22,7 @@ import {
   HvQueryBuilderLabels,
   HvQueryBuilderQueryCombinator,
   HvQueryBuilderQueryOperator,
+  HvQueryBuilderChangedQuery,
 } from "./types";
 import { clearNodeIds, emptyGroup } from "./utils";
 import reducer from "./utils/reducer";
@@ -41,7 +42,7 @@ export interface HvQueryBuilderProps {
   /** The initial query representation. */
   query?: HvQueryBuilderQuery;
   /** Callback fired when query changes. */
-  onChange?: (value: HvQueryBuilderQuery) => void;
+  onChange?: (value: HvQueryBuilderChangedQuery) => void;
   /** Max depth of nested query groups. */
   maxDepth?: number;
   /** Object containing all the labels. */
@@ -51,6 +52,11 @@ export interface HvQueryBuilderProps {
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvQueryBuilderClasses;
 }
+
+// TODO - v6
+// - uncontrolled vs controlled: users should be able to control the state
+// - "query" renamed to "initialQuery" and "query" used to control the state
+// - "query" provided with ids by the user but removed through "onChange"
 
 /**
  * This component allows you to create conditions and group them using logical operators.
@@ -135,7 +141,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
         setInitialState(false);
       }
 
-      onChange?.(clearNodeIds(state) as HvQueryBuilderQuery);
+      onChange?.(clearNodeIds(state) as HvQueryBuilderChangedQuery);
       setPrevState(cloneDeep(state));
     }
   }, [initialState, onChange, prevState, state]);

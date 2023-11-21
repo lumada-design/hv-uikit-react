@@ -1,13 +1,10 @@
 import { memo, useCallback, useContext, useMemo, useState } from "react";
-
 import uniqueId from "lodash/uniqueId";
-
 import dayjs from "dayjs";
-
 import { useMediaQuery, useTheme } from "@mui/material";
 
 import { HvWarningText } from "@core/components/Forms";
-import { HvTimePicker } from "@core/components/TimePicker";
+import { HvTimePicker, HvTimePickerValue } from "@core/components/TimePicker";
 import { HvDatePicker } from "@core/components/DatePicker";
 
 import { QueryBuilderContext } from "../../../Context";
@@ -19,10 +16,10 @@ function valueIsRange(operator) {
 }
 
 export interface DateTimeValueProps {
-  id: number;
-  operator: string;
-  value: any;
-  initialTouched: boolean;
+  id: React.Key;
+  operator?: string;
+  value?: any;
+  initialTouched?: boolean;
 }
 
 export const DateTimeValue = ({
@@ -49,7 +46,7 @@ export const DateTimeValue = ({
   const [touchedEndTime, setTouchedEndTime] = useState(initialTouched);
 
   const onDateChange = useCallback(
-    (data) => {
+    (data?: Date) => {
       setTouchedDate(true);
 
       let date;
@@ -87,7 +84,7 @@ export const DateTimeValue = ({
   );
 
   const onTimeChange = useCallback(
-    (data) => {
+    (data: HvTimePickerValue) => {
       setTouchedTime(true);
 
       let time;
@@ -127,7 +124,7 @@ export const DateTimeValue = ({
   );
 
   const onEndDateChange = useCallback(
-    (data) => {
+    (data?: Date) => {
       setTouchedEndDate(true);
 
       let date;
@@ -155,7 +152,7 @@ export const DateTimeValue = ({
   );
 
   const onEndTimeChange = useCallback(
-    (data) => {
+    (data: HvTimePickerValue) => {
       setTouchedEndTime(true);
 
       let time;

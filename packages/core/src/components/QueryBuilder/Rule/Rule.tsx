@@ -1,12 +1,10 @@
 import { useContext, useMemo } from "react";
 import { Delete } from "@hitachivantara/uikit-react-icons";
-
 import { useMediaQuery, useTheme } from "@mui/material";
 
 import { HvGrid } from "@core/components/Grid";
 import { HvButton } from "@core/components/Button";
 import { withTooltip } from "@core/hocs/withTooltip";
-
 import { useDefaultProps } from "@core/hooks";
 import { ExtractNames } from "@core/utils";
 
@@ -21,12 +19,12 @@ export { staticClasses as queryBuilderRuleClasses };
 export type HvQueryBuilderRuleClasses = ExtractNames<typeof useClasses>;
 
 export interface RuleProps {
-  id: number;
+  id: React.Key;
   combinator: string;
-  attribute: string;
-  operator: string;
-  value: any;
-  disabled: boolean;
+  attribute?: string;
+  operator?: string;
+  value?: any;
+  disabled?: boolean;
   isInvalid: boolean;
   classes?: HvQueryBuilderRuleClasses;
 }

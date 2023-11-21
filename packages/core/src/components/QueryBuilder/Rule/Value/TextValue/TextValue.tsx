@@ -7,7 +7,7 @@ import { QueryBuilderContext } from "../../../Context";
 import { useClasses } from "./TextValue.styles";
 
 export interface TextValueProps {
-  id?: number;
+  id: React.Key;
   value?: any;
   initialTouched?: boolean;
 }

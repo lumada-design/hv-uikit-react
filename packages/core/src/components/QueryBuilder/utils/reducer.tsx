@@ -1,6 +1,7 @@
 import { emptyRule, emptyGroup, findNodeById, findParentById } from "./index";
+import { HvQueryBuilderQuery, QueryAction } from "../types";
 
-const reducer = (state, action) => {
+const reducer = (state: HvQueryBuilderQuery, action: QueryAction) => {
   const query = { ...state };
 
   switch (action.type) {

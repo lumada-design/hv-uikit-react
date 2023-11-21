@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 
 import { HvQueryBuilder } from ".";
 import { defaultOperators } from "./Context";
-import queryToMongo from "./queryToMongo";
+import queryToMongo from "./stories/queryToMongo";
 
 export const Main = () => {
   const attributes = {
