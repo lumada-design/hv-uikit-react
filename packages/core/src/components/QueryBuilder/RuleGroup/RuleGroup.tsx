@@ -202,12 +202,12 @@ export const RuleGroup = ({
           message={
             <>
               <HvTypography
-                variant="link"
-                component="a"
+                link
+                component="button"
                 onClick={() => {
                   dispatchAction({ type: "add-rule", id });
                 }}
-                style={{ cursor: "pointer", textDecoration: "underline" }}
+                className={classes.createConditionButton}
               >
                 {`${labels.empty?.createCondition}`}
               </HvTypography>
@@ -215,15 +215,12 @@ export const RuleGroup = ({
                 <>
                   {`${labels.empty?.spacer}`}
                   <HvTypography
-                    variant="link"
-                    component="a"
+                    link
+                    component="button"
                     onClick={() => {
                       dispatchAction({ type: "add-group", id });
                     }}
-                    style={{
-                      cursor: "pointer",
-                      textDecoration: "underline",
-                    }}
+                    className={classes.createGroupButton}
                   >
                     {`${labels.empty?.createGroup}`}
                   </HvTypography>

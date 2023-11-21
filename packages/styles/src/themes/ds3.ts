@@ -1071,6 +1071,14 @@ const ds3 = makeTheme((theme) => ({
           bottom: `calc(-1 * ${theme.space.md} * 0.5)`,
           right: `calc(${theme.space.sm} * 1.75)`,
         },
+        createConditionButton: {
+          ...theme.typography.link,
+          textDecoration: "underline",
+        },
+        createGroupButton: {
+          ...theme.typography.link,
+          textDecoration: "underline",
+        },
       },
     },
     HvQueryBuilderRule: {
