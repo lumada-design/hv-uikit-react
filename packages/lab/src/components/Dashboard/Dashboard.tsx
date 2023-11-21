@@ -16,25 +16,30 @@ export { staticClasses as dashboardClasses };
 
 export type HvDashboardClasses = ExtractNames<typeof useClasses>;
 
-export interface HvDashboardItem {
+export interface HvDashboardItem<Key extends string = string>
+  extends Record<string, any> {
   id: string;
-  type: string;
-  element: React.ReactNode;
+  type: Key;
 }
 
-export interface HvDashboardProps extends ReactGridLayoutProps {
+export interface HvDashboardProps<Key extends string = string>
+  extends ReactGridLayoutProps {
   classes?: HvDashboardClasses;
-  items?: HvDashboardItem[];
+  items?: HvDashboardItem<Key>[];
+  renderers: Record<Key, React.ElementType<any>>;
 }
 
 /**
  * A Dashboard grid layout component, based on `react-grid-layout`.
  */
-export const HvDashboard = (props: HvDashboardProps) => {
+export const HvDashboard = <Key extends string = string>(
+  props: HvDashboardProps<Key>
+) => {
   const {
-    items,
     className,
     classes: classesProp,
+    items,
+    renderers,
     ...others
   } = useDefaultProps("HvDashboard", props);
   const { classes, cx } = useClasses(classesProp);
@@ -43,11 +48,24 @@ export const HvDashboard = (props: HvDashboardProps) => {
     <>
       <Global styles={gridStyles} />
       <GridLayout className={cx(classes.root, className)} {...others}>
-        {items?.map((item) => (
-          <div key={item.id} className={classes.item}>
-            {item.element}
-          </div>
-        ))}
+        {items?.map((item) => {
+          const { id, type, ...itemProps } = item;
+          const GridItem = renderers?.[type];
+
+          if (!GridItem) {
+            if (import.meta.env.DEV) {
+              // eslint-disable-next-line no-console
+              console.error("No renderer found for type:", type);
+            }
+            return null;
+          }
+
+          return (
+            <div key={id} className={classes.item}>
+              <GridItem {...itemProps} />
+            </div>
+          );
+        })}
       </GridLayout>
     </>
   );
