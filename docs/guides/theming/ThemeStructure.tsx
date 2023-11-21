@@ -12,6 +12,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 import { clsx } from "clsx";
+import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 
 const tokens: string[] = [
   "breakpoints",
@@ -115,6 +116,35 @@ export const ThemeStructure = () => {
 
   const { rootId } = useTheme();
 
+  const renderClasses = (
+    value: object | string | number,
+    label: string,
+    level: number
+  ): ReactElement => {
+    return (
+      <HvAccordion
+        key={`${label}-${level}`}
+        classes={{
+          root: clsx(
+            css({ paddingLeft: levelSpacing(level) }),
+            styles.accordionRoot
+          ),
+          container: styles.accordionContainer,
+          label: styles.accordionLabel,
+        }}
+        headingLevel={1}
+        label={label}
+      >
+        <HvCodeEditor
+          height={420}
+          language="json"
+          value={JSON.stringify(value, null, "\t")}
+          options={{ readOnly: true }}
+        />
+      </HvAccordion>
+    );
+  };
+
   const renderLevel = (
     value: object | string | number,
     label: string,
@@ -136,9 +166,12 @@ export const ThemeStructure = () => {
           headingLevel={1}
           label={label}
         >
-          {Object.keys(value).map((key) =>
-            renderLevel(value[key], key, level + 1)
-          )}
+          {Object.keys(value).map((key) => {
+            if (key === "classes") {
+              return renderClasses(value[key], key, level);
+            }
+            return renderLevel(value[key], key, level + 1);
+          })}
         </HvAccordion>
       );
     }

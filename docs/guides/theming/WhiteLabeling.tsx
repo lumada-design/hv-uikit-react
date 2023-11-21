@@ -49,27 +49,70 @@ const turquoiseTheme = createTheme({
   inheritColorModes: true,
   colors: {
     modes: {
-      dawn: { secondary: "#484349", primary: "#18A999" },
+      dawn: {
+        secondary: "#484349",
+        primary: "#18A999",
+        containerBackgroundHover: "#ecfcfa",
+      },
     },
   },
   fontFamily: {
     body: "Gill Sans",
   },
-  button: { hoverColor: "#ecfcfa" },
   header: {
-    backgroundColor: theme.colors.primary,
-    color: "#F6F8FF",
-    brandColor: "#F6F8FF",
     height: "60px",
-    hoverColor: "transparent",
-    selectedItemColor: "#F6F8FF",
-    selectedItemBackgroundColor: theme.colors.secondary,
-    selectedItemBorderTopColor: "transparent",
-    selectedItemBorderTopThickness: "0px",
-    selectedItemBorderBottomColor: "transparent",
-    selectedItemBorderBottomThickness: "0px",
-    selectedItemBorderRadius: theme.radii.full,
-    itemPadding: theme.space.xs,
+  },
+  components: {
+    HvButton: {
+      size: "lg",
+      radius: "full",
+    },
+    HvHeaderMenuBarBar: {
+      classes: {
+        menubar: {
+          backgroundColor: theme.colors.primary,
+        },
+      },
+    },
+    HvHeaderMenuItem: {
+      classes: {
+        root: {
+          "& span": {
+            color: "#F6F8FF",
+          },
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
+          "&:focus-within": {
+            backgroundColor: "transparent",
+          },
+        },
+        menubar: {
+          borderBottom: 0,
+          "& > * > span": {
+            padding: theme.space.xs,
+          },
+        },
+        selected: {
+          "&.HvHeader-MenuItem-menubar": {
+            borderTop: 0,
+            borderBottom: 0,
+            "& > * > span": {
+              color: "#F6F8FF",
+              backgroundColor: theme.colors.secondary,
+              borderRadius: theme.radii.full,
+            },
+          },
+        },
+      },
+    },
+    HvHeaderBrand: {
+      classes: {
+        brandName: {
+          color: "#F6F8FF",
+        },
+      },
+    },
   },
 });
 
