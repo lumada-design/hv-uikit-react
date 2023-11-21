@@ -103,4 +103,14 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
     backgroundColor: theme.colors.atmo2,
     display: "inline-flex",
   },
+  createConditionButton: {
+    cursor: "pointer",
+    backgroundColor: "transparent",
+    padding: 0,
+  },
+  createGroupButton: {
+    cursor: "pointer",
+    backgroundColor: "transparent",
+    padding: 0,
+  },
 });
