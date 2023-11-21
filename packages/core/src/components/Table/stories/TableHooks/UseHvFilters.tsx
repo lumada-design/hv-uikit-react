@@ -96,7 +96,7 @@ export const UseHvFilters = () => {
         />
       </HvGrid>
       <HvGrid item xs={12}>
-        <HvTableContainer>
+        <HvTableContainer tabIndex={0}>
           <HvTable {...getTableProps()}>
             <HvTableHead>
               {headerGroups.map((headerGroup) => (
