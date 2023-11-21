@@ -7,6 +7,7 @@ import {
   HvFlowNodeFC,
   HvFlowNodeTypeMeta,
   useFlowContext,
+  HvDashboardItem,
 } from "@hitachivantara/uikit-react-lab";
 import {
   HvButton,
@@ -26,7 +27,8 @@ import {
   DashboardsStorage,
   NodeGroup,
 } from "../types";
-import { renderers } from "../DashboardPreview/Renderers";
+import type { NodeTypes } from "../Flow";
+import { renderItem } from "../DashboardPreview/Renderers";
 
 interface Configuration {
   opened: boolean;
@@ -41,20 +43,20 @@ export const Dashboard: HvFlowNodeFC = (props) => {
   const [configuration, setConfiguration] = useState<Configuration>({
     opened: false,
   });
-  const [content, setContent] = useState<HvDashboardProps["items"]>();
+  const [content, setContent] = useState<HvDashboardItem<NodeTypes>[]>();
 
   const handleOpenConfig = () => {
     // Get from local storage
     const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
     const config = specs?.[id];
-    const ct = config?.nodes?.map((node) => {
+    const ct = config?.nodes?.map<HvDashboardItem<NodeTypes>>((node) => {
       const nodeType = node.type;
       const label = nodeType && nodeTypes?.[nodeType].meta?.label;
 
       return {
         id: node.id,
-        type: nodeType!,
+        type: nodeType as NodeTypes,
         element: (
           <div
             className={css({
@@ -159,7 +161,7 @@ export const Dashboard: HvFlowNodeFC = (props) => {
             <Layout
               items={content}
               layout={configuration.config.layout}
-              renderers={renderers}
+              renderItem={renderItem}
               compactType="vertical"
               rowHeight={80}
               cols={12}

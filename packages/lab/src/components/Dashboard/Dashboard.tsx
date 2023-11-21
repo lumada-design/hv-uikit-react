@@ -26,7 +26,7 @@ export interface HvDashboardProps<Key extends string = string>
   extends ReactGridLayoutProps {
   classes?: HvDashboardClasses;
   items?: HvDashboardItem<Key>[];
-  renderers: Record<Key, React.ElementType<any>>;
+  renderItem: (item: HvDashboardItem<Key>) => React.ReactNode;
 }
 
 /**
@@ -39,7 +39,7 @@ export const HvDashboard = <Key extends string = string>(
     className,
     classes: classesProp,
     items,
-    renderers,
+    renderItem,
     ...others
   } = useDefaultProps("HvDashboard", props);
   const { classes, cx } = useClasses(classesProp);
@@ -48,24 +48,11 @@ export const HvDashboard = <Key extends string = string>(
     <>
       <Global styles={gridStyles} />
       <GridLayout className={cx(classes.root, className)} {...others}>
-        {items?.map((item) => {
-          const { id, type, ...itemProps } = item;
-          const GridItem = renderers?.[type];
-
-          if (!GridItem) {
-            if (import.meta.env.DEV) {
-              // eslint-disable-next-line no-console
-              console.error("No renderer found for type:", type);
-            }
-            return null;
-          }
-
-          return (
-            <div key={id} className={classes.item}>
-              <GridItem {...itemProps} />
-            </div>
-          );
-        })}
+        {items?.map((item) => (
+          <div key={item.id} className={classes.item}>
+            {renderItem(item)}
+          </div>
+        ))}
       </GridLayout>
     </>
   );
