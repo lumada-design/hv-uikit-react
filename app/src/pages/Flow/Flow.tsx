@@ -56,7 +56,7 @@ const Content = () => {
       if (cur.type === "dashboard") {
         const vizNodes = egs
           .filter((edge) => edge.target === cur.id)
-          .reduce<NonNullable<DashboardSpecs["nodes"]>>((accN, curEdg) => {
+          .reduce<DashboardSpecs["items"]>((accN, curEdg) => {
             const vizNode = nds.find((node) => node.id === curEdg.source);
             const datasetNodeId = egs.find(
               (edge) => edge.target === vizNode?.id
@@ -78,7 +78,7 @@ const Content = () => {
         const curLayout = specs?.[cur.id]?.layout;
 
         acc[cur.id] = {
-          nodes: vizNodes,
+          items: vizNodes,
           layout: ly ?? buildLayout(vizNodes, curLayout),
           cols: LAYOUT_COLS,
         };

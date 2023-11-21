@@ -28,7 +28,7 @@ import {
   NodeGroup,
 } from "../types";
 import type { NodeTypes } from "../Flow";
-import { renderItem } from "../DashboardPreview/Renderers";
+import { Renderer, RendererProps } from "../DashboardPreview/Renderers";
 
 interface Configuration {
   opened: boolean;
@@ -43,14 +43,14 @@ export const Dashboard: HvFlowNodeFC = (props) => {
   const [configuration, setConfiguration] = useState<Configuration>({
     opened: false,
   });
-  const [content, setContent] = useState<HvDashboardItem<NodeTypes>[]>();
+  const [content, setContent] = useState<HvDashboardItem[]>();
 
   const handleOpenConfig = () => {
     // Get from local storage
     const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
     const config = specs?.[id];
-    const ct = config?.nodes?.map<HvDashboardItem<NodeTypes>>((node) => {
+    const ct = config?.items?.map<HvDashboardItem>((node) => {
       const nodeType = node.type;
       const label = nodeType && nodeTypes?.[nodeType].meta?.label;
 
@@ -117,7 +117,7 @@ export const Dashboard: HvFlowNodeFC = (props) => {
     setConfiguration({
       ...configuration,
       config: {
-        ...configuration.config,
+        ...configuration.config!,
         layout: ly,
       },
     });
@@ -161,7 +161,7 @@ export const Dashboard: HvFlowNodeFC = (props) => {
             <Layout
               items={content}
               layout={configuration.config.layout}
-              renderItem={renderItem}
+              renderItem={(item) => <Renderer {...(item as RendererProps)} />}
               compactType="vertical"
               rowHeight={80}
               cols={12}

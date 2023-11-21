@@ -2,11 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { useSearchParams } from "react-router-dom";
 import { HvGlobalActions, theme } from "@hitachivantara/uikit-react-core";
-import {
-  HvDashboard,
-  HvDashboardItem,
-  HvDashboardProps,
-} from "@hitachivantara/uikit-react-lab";
+import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
 import {
@@ -14,20 +10,17 @@ import {
   DashboardSpecs,
   DashboardsStorage,
 } from "../types";
-import { renderItem } from "./Renderers";
-import { NodeTypes } from "../Flow";
+import { Renderer, RendererProps } from "./Renderers";
 
-type DashboardConfig = Pick<
-  HvDashboardProps<NodeTypes>,
-  "items" | "layout" | "cols"
->;
+interface DashboardConfig
+  extends Pick<HvDashboardProps<RendererProps>, "items" | "layout" | "cols"> {}
 
-const buildContent = (nodes?: DashboardSpecs["nodes"]) => {
-  if (!nodes) return;
+const buildContent = (items?: DashboardSpecs["items"]) => {
+  if (!items) return;
 
-  return nodes.reduce<HvDashboardItem<NodeTypes>[]>((acc, node) => {
+  return items.reduce<RendererProps[]>((acc, node) => {
     if (node.type) {
-      acc.push({ ...node, type: node.type as NodeTypes });
+      acc.push({ ...node, type: node.type });
     }
 
     return acc;
@@ -53,10 +46,9 @@ const DashboardPreview = () => {
 
       if (!dashboard) return;
 
-      const { layout, nodes, cols } = dashboard;
-      const items = buildContent(nodes);
+      const { layout, items, cols } = dashboard;
 
-      setConfig({ cols, layout, items });
+      setConfig({ cols, layout, items: buildContent(items) });
     },
     [id]
   );
@@ -102,7 +94,7 @@ const DashboardPreview = () => {
         {config?.items && config?.layout && (
           <HvDashboard
             {...config}
-            renderItem={renderItem}
+            renderItem={(item) => <Renderer {...item} />}
             rowHeight={120}
             margin={[16, 16]}
             containerPadding={[0, 16]}
