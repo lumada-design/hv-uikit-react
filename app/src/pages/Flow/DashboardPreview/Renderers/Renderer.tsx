@@ -5,9 +5,14 @@ import {
   HvDonutChart,
   HvLineChart,
 } from "@hitachivantara/uikit-react-viz";
+import {
+  HvDashboardItem,
+  HvDashboardProps,
+} from "@hitachivantara/uikit-react-lab";
 
 import { NodeData } from "../../types";
 import { datasets } from "../../utils";
+import { NodeTypes } from "../../Flow";
 
 import { ChartContainer } from "./ChartContainer";
 import { Kpi } from "./Kpi";
@@ -20,103 +25,97 @@ const useData = (endpointId?: string) => {
   return useSWR(url, loadArrow);
 };
 
-interface RendererProps {
+interface RendererProps extends HvDashboardItem<NodeTypes> {
   data: NodeData;
 }
 
-const LineChartRenderer: React.FC<RendererProps> = (props) => {
-  const { data: nodeData = {} } = props;
-  const { measure, groupBy, title, splitBy, endpoint } = nodeData;
+const Renderer = (props: RendererProps) => {
+  const {
+    type,
+    data: {
+      endpoint,
+      measure,
+      groupBy,
+      splitBy,
+      aggregation,
+      unit,
+      title = "",
+    },
+  } = props;
   const { data, isLoading } = useData(endpoint);
 
-  return (
-    <ChartContainer title={title} loading={isLoading}>
-      {measure && groupBy && data && (
-        <HvLineChart
-          data={data}
-          measures={measure}
-          groupBy={groupBy}
-          splitBy={splitBy}
-        />
-      )}
-    </ChartContainer>
-  );
-};
+  if (type === "lineChart") {
+    return (
+      <ChartContainer title={title} loading={isLoading}>
+        {measure && groupBy && data && (
+          <HvLineChart
+            data={data}
+            measures={measure}
+            groupBy={groupBy}
+            splitBy={splitBy}
+          />
+        )}
+      </ChartContainer>
+    );
+  }
 
-const BarChartRenderer: React.FC<RendererProps> = (props) => {
-  const { data: nodeData = {} } = props;
-  const { measure, groupBy, title, splitBy, endpoint } = nodeData;
-  const { data, isLoading } = useData(endpoint);
+  if (type === "barChart") {
+    return (
+      <ChartContainer title={title} loading={isLoading}>
+        {measure && groupBy && data && (
+          <HvBarChart
+            data={data}
+            measures={measure}
+            groupBy={groupBy}
+            splitBy={splitBy}
+          />
+        )}
+      </ChartContainer>
+    );
+  }
 
-  return (
-    <ChartContainer title={title} loading={isLoading}>
-      {measure && groupBy && data && (
-        <HvBarChart
-          data={data}
-          measures={measure}
-          groupBy={groupBy}
-          splitBy={splitBy}
-        />
-      )}
-    </ChartContainer>
-  );
-};
+  if (type === "donutChart") {
+    return (
+      <ChartContainer title={title} loading={isLoading}>
+        {measure && groupBy && data && (
+          <HvDonutChart
+            data={data}
+            measure={measure as string}
+            groupBy={groupBy}
+          />
+        )}
+      </ChartContainer>
+    );
+  }
 
-const DonutChartRenderer: React.FC<RendererProps> = (props) => {
-  const { data: nodeData = {} } = props;
-  const { measure, groupBy, title, endpoint } = nodeData;
-  const { data, isLoading } = useData(endpoint);
+  if (type === "kpi") {
+    return (
+      <Kpi
+        loading={isLoading}
+        title={title}
+        measure={measure as string}
+        data={data}
+        unit={unit}
+        aggregation={aggregation}
+      />
+    );
+  }
 
-  return (
-    <ChartContainer title={title} loading={isLoading}>
-      {measure && groupBy && data && (
-        <HvDonutChart
-          data={data}
-          measure={measure as string}
-          groupBy={groupBy}
-        />
-      )}
-    </ChartContainer>
-  );
-};
+  if (type === "table") {
+    return (
+      <Table
+        loading={isLoading}
+        title={title}
+        data={data}
+        measure={measure as string}
+      />
+    );
+  }
 
-const KpiRenderer: React.FC<RendererProps> = (props) => {
-  const { data: nodeData = {} } = props;
-  const { aggregation, unit, measure, title, endpoint } = nodeData;
-  const { data, isLoading } = useData(endpoint);
-
-  return (
-    <Kpi
-      loading={isLoading}
-      title={title}
-      measure={measure as string}
-      data={data}
-      unit={unit}
-      aggregation={aggregation}
-    />
-  );
-};
-
-const TableRenderer: React.FC<RendererProps> = (props) => {
-  const { data: nodeData = {} } = props;
-  const { measure, title = "", endpoint } = nodeData;
-  const { data, isLoading } = useData(endpoint);
-
-  return (
-    <Table
-      loading={isLoading}
-      title={title}
-      data={data}
-      measure={measure as string}
-    />
-  );
+  return null;
 };
 
 /** Common renderers to be used in Dashboard and Flow preview */
-export const renderers = {
-  barChart: BarChartRenderer,
-  donutChart: DonutChartRenderer,
-  lineChart: LineChartRenderer,
-  kpi: KpiRenderer,
-  table: TableRenderer,
-} satisfies Record<string, React.FC<RendererProps> | undefined>;
+export const renderItem: HvDashboardProps<NodeTypes>["renderItem"] = (item) => {
+  return <Renderer {...(item as RendererProps)} />;
+};

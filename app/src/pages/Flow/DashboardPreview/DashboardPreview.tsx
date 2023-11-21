@@ -14,20 +14,24 @@ import {
   DashboardSpecs,
   DashboardsStorage,
 } from "../types";
-import { renderers } from "./Renderers";
+import { renderItem } from "./Renderers";
+import { NodeTypes } from "../Flow";
 
-type DashboardConfig = Pick<HvDashboardProps, "items" | "layout" | "cols">;
+type DashboardConfig = Pick<
+  HvDashboardProps<NodeTypes>,
+  "items" | "layout" | "cols"
+>;
 
 const buildContent = (nodes?: DashboardSpecs["nodes"]) => {
   if (!nodes) return;
 
-  return nodes.reduce((acc, node) => {
+  return nodes.reduce<HvDashboardItem<NodeTypes>[]>((acc, node) => {
     if (node.type) {
-      acc.push({ type: node.type, ...node });
+      acc.push({ ...node, type: node.type as NodeTypes });
     }
 
     return acc;
-  }, [] as HvDashboardItem[]);
+  }, []);
 };
 
 const DashboardPreview = () => {
@@ -98,7 +102,7 @@ const DashboardPreview = () => {
         {config?.items && config?.layout && (
           <HvDashboard
             {...config}
-            renderers={renderers}
+            renderItem={renderItem}
             rowHeight={120}
             margin={[16, 16]}
             containerPadding={[0, 16]}
