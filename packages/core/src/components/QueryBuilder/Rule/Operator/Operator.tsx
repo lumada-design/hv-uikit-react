@@ -6,13 +6,18 @@ import { QueryBuilderContext } from "../../Context";
 import { isBigList } from "../../utils";
 
 export interface OperatorProps {
-  id: number;
+  id: React.Key;
   combinator: string;
   attribute: string;
-  operator: string;
+  operator?: string;
 }
 
-export const Operator = ({ id, combinator, attribute, operator }) => {
+export const Operator = ({
+  id,
+  combinator,
+  attribute,
+  operator,
+}: OperatorProps) => {
   const context = useContext(QueryBuilderContext);
 
   const { dispatchAction, attributes, operators, labels, readOnly } = context;

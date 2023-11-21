@@ -6,8 +6,8 @@ import { QueryBuilderContext } from "../../../Context";
 import { isBigList } from "../../../utils";
 
 export interface BooleanValueProps {
-  id: number;
-  value: boolean;
+  id: React.Key;
+  value?: boolean;
 }
 
 export const BooleanValue = ({ id, value = true }: BooleanValueProps) => {

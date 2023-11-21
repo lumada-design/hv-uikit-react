@@ -5,7 +5,7 @@ import dayjs from "dayjs";
  * @param {Number} value - unit time value
  * @returns The unit time value with two digits
  */
-export const padTime = (value) => {
+export const padTime = (value: number) => {
   if (!value || value < 0) {
     return "00";
   }
@@ -16,7 +16,7 @@ export const padTime = (value) => {
   return value.toString();
 };
 
-export const parseDate = (date) => {
+export const parseDate = (date: string) => {
   if (date != null) {
     return dayjs(date).toDate();
   }
@@ -24,7 +24,7 @@ export const parseDate = (date) => {
   return undefined;
 };
 
-export const parseTime = (time) => {
+export const parseTime = (time: string) => {
   if (time != null) {
     const parts = time.split(":");
 

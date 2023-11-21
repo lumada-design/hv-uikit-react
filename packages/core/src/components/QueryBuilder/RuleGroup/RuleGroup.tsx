@@ -1,5 +1,4 @@
 import { useCallback, useContext } from "react";
-
 import { Add, Delete, Info } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "@core/components/Button";
@@ -13,17 +12,14 @@ import { ExtractNames } from "@core/utils/classes";
 import { Rule } from "../Rule";
 import { QueryBuilderContext } from "../Context";
 import { useClasses } from "../QueryBuilder.styles";
+import { HvQueryBuilderQuery, HvQueryBuilderQueryCombinator } from "../types";
 
 export interface RuleGroupProps {
-  /**
-   * Override or extend the styles applied to the component.
-   * See CSS API tab for more details.
-   */
-  classes?: ExtractNames<typeof useClasses>;
-  id?: number;
+  id: React.Key;
   level?: number;
   combinator?: string;
-  rules?: any[];
+  rules?: HvQueryBuilderQuery["rules"];
+  classes?: ExtractNames<typeof useClasses>;
 }
 
 export const RuleGroup = ({
@@ -87,7 +83,7 @@ export const RuleGroup = ({
   );
 
   const onClickCombinator = useCallback(
-    (item) => {
+    (item: HvQueryBuilderQueryCombinator) => {
       dispatchAction({
         type: "set-combinator",
         id,
@@ -164,7 +160,7 @@ export const RuleGroup = ({
             if ("combinator" in rule) {
               return (
                 <RuleGroup
-                  key={rule.id ?? index}
+                  key={rule.id}
                   level={level + 1}
                   {...rule}
                   id={rule.id}
@@ -190,7 +186,7 @@ export const RuleGroup = ({
 
             return (
               <Rule
-                key={rule.id ?? index}
+                key={rule.id}
                 {...rule}
                 isInvalid={isInvalid}
                 id={rule.id}

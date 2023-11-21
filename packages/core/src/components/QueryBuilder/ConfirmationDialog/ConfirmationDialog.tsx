@@ -1,8 +1,9 @@
-import { HvButton } from "@core/components/Button";
+import { HvButton, HvButtonProps } from "@core/components/Button";
 import {
   HvDialog,
   HvDialogActions,
   HvDialogContent,
+  HvDialogProps,
   HvDialogTitle,
 } from "@core/components/Dialog";
 
@@ -12,7 +13,7 @@ export interface ConfirmationDialogProps {
   title?: string;
   message?: string;
   isOpen?: boolean;
-  onConfirm?: (event: React.MouseEvent<HTMLButtonElement> | Event) => void;
+  onConfirm?: HvButtonProps["onClick"];
   onCancel?: () => void;
   confirmButtonLabel?: string;
   cancelButtonLabel?: string;
@@ -31,7 +32,7 @@ export const ConfirmationDialog = ({
 }: ConfirmationDialogProps) => {
   const { classes } = useClasses();
 
-  const handleClose = (_, reason) => {
+  const handleClose: HvDialogProps["onClose"] = (_, reason) => {
     if (reason !== "backdropClick") {
       onCancel?.();
     }

@@ -7,10 +7,10 @@ import { TextValue } from "./TextValue";
 import { DateTimeValue } from "./DateTimeValue";
 
 export interface ValueProps {
-  id: number;
+  id: React.Key;
   attribute: string;
-  operator: string;
-  value: any;
+  operator?: string;
+  value?: any;
 }
 
 export const Value = ({

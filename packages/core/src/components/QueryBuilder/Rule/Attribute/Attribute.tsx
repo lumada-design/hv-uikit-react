@@ -6,10 +6,10 @@ import { QueryBuilderContext } from "../../Context";
 import { isBigList } from "../../utils";
 
 export interface AttributeProps {
-  id: number;
-  attribute: string;
-  disabled: boolean;
-  isInvalid: boolean;
+  id: React.Key;
+  attribute?: string;
+  disabled?: boolean;
+  isInvalid?: boolean;
 }
 
 export const Attribute = ({

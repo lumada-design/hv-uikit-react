@@ -1,4 +1,7 @@
-export const isBigList = (values) => values != null && values?.length > 10;
+import { HvQueryBuilderQueryGroup, HvQueryBuilderQueryRule } from "../types";
+
+export const isBigList = (values: unknown[]) =>
+  values != null && values?.length > 10;
 
 export const emptyRule = () => ({
   id: Math.random(),
@@ -10,9 +13,12 @@ export const emptyGroup = (createEmptyRule = false) => ({
   rules: createEmptyRule ? [emptyRule()] : [],
 });
 
-export const clearNodeIds = (original) => {
+export const clearNodeIds = (
+  original: HvQueryBuilderQueryGroup | HvQueryBuilderQueryRule
+) => {
   const rule = { ...original };
 
+  // @ts-ignore
   delete rule.id;
 
   if ("rules" in rule) {
@@ -22,7 +28,10 @@ export const clearNodeIds = (original) => {
   return rule;
 };
 
-export const findNodeById = (id, node) => {
+export const findNodeById = (
+  id: React.Key,
+  node: HvQueryBuilderQueryGroup | HvQueryBuilderQueryRule
+) => {
   if (node.id === id) {
     return node;
   }
@@ -40,7 +49,11 @@ export const findNodeById = (id, node) => {
   return null;
 };
 
-export const findParentById = (id, node, parent?) => {
+export const findParentById = (
+  id: React.Key,
+  node: HvQueryBuilderQueryGroup | HvQueryBuilderQueryRule,
+  parent?: HvQueryBuilderQueryGroup
+) => {
   if (node.id === id) {
     return parent ?? null;
   }

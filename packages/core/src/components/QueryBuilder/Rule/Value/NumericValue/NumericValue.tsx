@@ -1,19 +1,18 @@
 import { memo, useCallback, useContext, useState } from "react";
-
 import uniqueId from "lodash/uniqueId";
 import isEmpty from "lodash/isEmpty";
-
 import { useMediaQuery, useTheme } from "@mui/material";
 
 import { HvInput } from "@core/components/Input";
 
 import { QueryBuilderContext } from "../../../Context";
 import { useClasses } from "./Numeric.styles";
+import { HvQueryBuilderNumericRange } from "../../../types";
 
 export interface NumericValueProps {
-  id: number;
-  value: any;
-  operator: string;
+  id: React.Key;
+  value?: any;
+  operator?: string;
   initialTouched?: boolean;
 }
 
@@ -34,7 +33,7 @@ export const NumericValue = ({
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
   const onSingleValueChange = useCallback(
-    (evt, data) => {
+    (_, data: string) => {
       const numericData = isEmpty(data) ? null : Number(data);
       dispatchAction({
         type: "set-value",
@@ -46,7 +45,7 @@ export const NumericValue = ({
   );
 
   const onRangeValueChange = useCallback(
-    (evt, data, from = true) => {
+    (_, data: string, from = true) => {
       const numericData = isEmpty(data) ? null : Number(data);
       const currentValue = value;
       const numericRange = {
@@ -114,7 +113,7 @@ export const NumericValue = ({
   const numericStatus = numericValidation != null ? "invalid" : "valid";
   const rightStatus = rightValidation != null ? "invalid" : "valid";
 
-  const renderRangeInputs = (rangeValue) => (
+  const renderRangeInputs = (rangeValue: HvQueryBuilderNumericRange) => (
     <div
       className={cx(classes.rangeContainer, { [classes.isMdDown]: isMdDown })}
     >

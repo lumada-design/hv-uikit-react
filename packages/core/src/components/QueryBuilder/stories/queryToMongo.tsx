@@ -4,7 +4,7 @@ import dayjs, {
   isDateTimeStrings,
   isNumericRange,
   validateDateTimeValues,
-} from "./utils/date";
+} from "./utils";
 
 function isOr(rule) {
   return rule.$or !== undefined;
