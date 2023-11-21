@@ -10,7 +10,6 @@ import cloneDeep from "lodash/cloneDeep";
 import isEqual from "lodash/isEqual";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { ExtractNames } from "@core/utils/classes";
 
 import { ConfirmationDialog } from "./ConfirmationDialog";
@@ -33,45 +32,28 @@ export { staticClasses as queryBuilderClasses };
 export type HvQueryBuilderClasses = ExtractNames<typeof useClasses>;
 
 export interface HvQueryBuilderProps {
+  /** The query attribute types. */
   attributes?: Record<string, HvQueryBuilderAttribute>;
-  /**
-   * The query rules operators by attribute type and combinator.
-   */
+  /** The query rules operators by attribute type and combinator. */
   operators?: Record<string, HvQueryBuilderQueryOperator[]>;
-  /**
-   * The query combinators operands.
-   */
+  /** The query combinators operands. */
   combinators?: HvQueryBuilderQueryCombinator[];
-  /**
-   * The initial query representation.
-   */
+  /** The initial query representation. */
   query?: HvQueryBuilderQuery;
-  /**
-   * Callback fired when query changes.
-   * @param  value - the query representation.
-   */
+  /** Callback fired when query changes. */
   onChange?: (value: HvQueryBuilderQuery) => void;
-  /**
-   * Max depth of nested query groups.
-   */
+  /** Max depth of nested query groups. */
   maxDepth?: number;
-  /**
-   * An object containing all the labels.
-   */
+  /** Object containing all the labels. */
   labels?: HvQueryBuilderLabels;
-  /**
-   * A flag indicating if the Query Builder is in read only mode.
-   */
+  /** Whether the query builder is in read-only mode. */
   readOnly?: boolean;
-  /**
-   * Override or extend the styles applied to the component.
-   * See CSS API tab for more details.
-   */
+  /** A Jss Object used to override or extend the styles applied. */
   classes?: HvQueryBuilderClasses;
 }
 
 /**
- * **HvQueryBuilder** component allows you to create conditions and group them using logical operators.
+ * This component allows you to create conditions and group them using logical operators.
  * It outputs a structured set of rules which can be easily parsed to create SQL/NoSQL/whatever queries.
  */
 export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
@@ -86,29 +68,32 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     readOnly = false,
     classes: classesProp,
   } = useDefaultProps("HvQueryBuilder", props);
+
   const { classes } = useClasses(classesProp);
 
-  const [pendingAction, askAction] = useState<AskAction>();
-  const currentAttributes = useRef<
-    Record<string, HvQueryBuilderAttribute> | undefined | null
-  >(null);
-  const [state, dispatchAction] = useReducer(
-    reducer,
-    query,
-    (initialState) => initialState || emptyGroup()
+  const defaultContext = useContext(QueryBuilderContext);
+
+  const currentAttributes = useRef<HvQueryBuilderProps["attributes"] | null>(
+    null
   );
 
-  const initialState = query === state;
-  const [prevState, setPrevState] = useState();
+  const initialQuery = useRef(query ?? emptyGroup());
 
-  const defaultContext = useContext(QueryBuilderContext);
+  const [pendingAction, setPendingAction] = useState<AskAction>();
+  const [prevState, setPrevState] = useState(initialQuery.current);
+  const [initialState, setInitialState] = useState(true);
+
+  const [state, dispatchAction] = useReducer(
+    reducer,
+    // Deep clone is needed to make sure that the "query" prop and "initialQuery" are not mutated
+    cloneDeep(initialQuery.current)
+  );
 
   const context = useMemo(
     () => ({
       dispatchAction,
-      askAction,
+      askAction: setPendingAction,
       attributes,
-      /* eslint-disable react/destructuring-assignment */
       operators: operators ?? defaultContext.operators,
       combinators: combinators ?? defaultContext.combinators,
       maxDepth: maxDepth ?? defaultContext.maxDepth,
@@ -131,34 +116,39 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     ]
   );
 
+  // Keep track of attributes
   useEffect(() => {
     if (currentAttributes.current == null) {
-      // first run, nothing to do
+      // First run, nothing to do
       currentAttributes.current = attributes;
     } else if (currentAttributes.current !== attributes) {
-      // attributes changed, the existing query is almost certain invalid, so reset it
+      // Attributes changed. The existing query is almost certainly invalid, so reset it
       currentAttributes.current = attributes;
       dispatchAction({ type: "reset-query" });
     }
   }, [attributes]);
 
-  // Propagate the change if the query is modified.
+  // Propagate the change if the query is modified
   useEffect(() => {
-    if (!initialState && !isEqual(state, prevState)) {
-      onChange?.(clearNodeIds(state));
+    if (!isEqual(state, prevState)) {
+      if (initialState) {
+        setInitialState(false);
+      }
+
+      onChange?.(clearNodeIds(state) as HvQueryBuilderQuery);
       setPrevState(cloneDeep(state));
     }
-  }, [state, prevState, initialState, onChange]);
+  }, [initialState, onChange, prevState, state]);
 
-  const onConfirmHandler = () => {
+  const handleConfirm = () => {
     if (pendingAction) {
-      askAction(undefined);
+      setPendingAction(undefined);
       pendingAction.actions.forEach((action) => dispatchAction(action));
     }
   };
 
-  const onCancelHandler = () => {
-    askAction(undefined);
+  const handleCancel = () => {
+    setPendingAction(undefined);
   };
 
   return (
@@ -172,8 +162,8 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       />
       <ConfirmationDialog
         isOpen={pendingAction != null}
-        onConfirm={onConfirmHandler}
-        onCancel={onCancelHandler}
+        onConfirm={handleConfirm}
+        onCancel={handleCancel}
         title={pendingAction?.dialog.dialogTitle || ""}
         message={pendingAction?.dialog.dialogMessage || ""}
         confirmButtonLabel={pendingAction?.dialog.dialogConfirm || ""}

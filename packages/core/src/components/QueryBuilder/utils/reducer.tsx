@@ -100,8 +100,8 @@ const reducer = (state, action) => {
     default:
   }
 
-  // just return existing state if nothing changed
-  return state;
+  // Return existing state if nothing changed
+  return query;
 };
 
 export default reducer;
