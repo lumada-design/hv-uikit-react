@@ -55,7 +55,7 @@ export const UseHvPagination = () => {
 
   return (
     <>
-      <HvTableContainer>
+      <HvTableContainer tabIndex={0}>
         <HvTable {...getTableProps()}>
           <HvTableHead>
             {headerGroups.map((headerGroup) => (
