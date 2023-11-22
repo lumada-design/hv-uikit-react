@@ -120,6 +120,8 @@ const DEFAULT_LABELS = {
   selectRowCheckBoxAriaLabel: "Select this row",
 };
 
+const hideHeaderVariants = ["checkbox", "actions"];
+
 export const CellWithCheckBox = ({ row, labels: labelsProp }) => {
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
@@ -157,7 +159,7 @@ const visibleColumnsHook = (columns) => {
 const getHeaderPropsHook = (props, { column }) => {
   const nextProps: UseHvRowSelectionTableColumnProps = {};
 
-  if (column.id === "_hv_selection") {
+  if (hideHeaderVariants.includes(column.variant)) {
     nextProps["aria-hidden"] = true;
   }
   return [props, nextProps];
