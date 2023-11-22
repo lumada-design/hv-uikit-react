@@ -57,18 +57,14 @@ export interface HvFlowBaseNodeProps<T = any>
 const isInputConnected = (
   id: string,
   type: "target" | "source",
-  idx: number,
+  handleId: string,
   edges: Edge[]
 ) => {
   if (type === "target") {
-    return edges.some(
-      (e) => e.target === id && e.targetHandle === idx.toString()
-    );
+    return edges.some((e) => e.target === id && e.targetHandle === handleId);
   }
   if (type === "source") {
-    return edges.some(
-      (e) => e.source === id && e.sourceHandle === idx.toString()
-    );
+    return edges.some((e) => e.source === id && e.sourceHandle === handleId);
   }
 
   return false;
@@ -203,28 +199,31 @@ export const HvFlowBaseNode = ({
           </div>
 
           <div className={classes.inputsContainer}>
-            {inputs?.map((input, idx) => (
-              <div className={classes.inputContainer} key={idx}>
-                <Handle
-                  type="target"
-                  isConnectableStart={false}
-                  id={`${idx}`}
-                  position={Position.Left}
-                  style={{
-                    top: "auto",
-                    bottom:
-                      (outputs?.length ? 80 : 18) +
-                      (outputs?.length || 0) * 29 +
-                      29 * idx,
-                  }}
-                />
-                <HvTypography>{input.label}</HvTypography>
-                {input.isMandatory &&
-                  !isInputConnected(id, "target", idx, edges) && (
-                    <div className={classes.mandatory} />
-                  )}
-              </div>
-            ))}
+            {inputs?.map((input, idx) => {
+              const handleId = input.id ?? idx.toString();
+              return (
+                <div className={classes.inputContainer} key={idx}>
+                  <Handle
+                    type="target"
+                    isConnectableStart={false}
+                    id={handleId}
+                    position={Position.Left}
+                    style={{
+                      top: "auto",
+                      bottom:
+                        (outputs?.length ? 80 : 18) +
+                        (outputs?.length || 0) * 29 +
+                        29 * idx,
+                    }}
+                  />
+                  <HvTypography>{input.label}</HvTypography>
+                  {input.isMandatory &&
+                    !isInputConnected(id, "target", handleId, edges) && (
+                      <div className={classes.mandatory} />
+                    )}
+                </div>
+              );
+            })}
           </div>
         </>
       )}
@@ -234,25 +233,28 @@ export const HvFlowBaseNode = ({
             <HvTypography>Outputs</HvTypography>
           </div>
           <div className={classes.outputsContainer}>
-            {outputs?.map((output, idx) => (
-              <div className={classes.outputContainer} key={idx}>
-                <Handle
-                  type="source"
-                  isConnectableEnd={false}
-                  id={`${idx}`}
-                  position={Position.Right}
-                  style={{
-                    bottom: -10 + 29 * (outputs.length - idx),
-                    top: "auto",
-                  }}
-                />
-                {output.isMandatory &&
-                  !isInputConnected(id, "source", idx, edges) && (
-                    <div className={classes.mandatory} />
-                  )}
-                <HvTypography>{output.label}</HvTypography>
-              </div>
-            ))}
+            {outputs?.map((output, idx) => {
+              const handleId = output.id ?? idx.toString();
+              return (
+                <div className={classes.outputContainer} key={idx}>
+                  <Handle
+                    type="source"
+                    isConnectableEnd={false}
+                    id={handleId}
+                    position={Position.Right}
+                    style={{
+                      bottom: -10 + 29 * (outputs.length - idx),
+                      top: "auto",
+                    }}
+                  />
+                  {output.isMandatory &&
+                    !isInputConnected(id, "source", handleId, edges) && (
+                      <div className={classes.mandatory} />
+                    )}
+                  <HvTypography>{output.label}</HvTypography>
+                </div>
+              );
+            })}
           </div>
         </>
       )}
