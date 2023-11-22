@@ -22,6 +22,11 @@ export interface UseHvRowSelectionTableRowProps {
   selected?: boolean;
 }
 
+// getRowProps:
+export interface UseHvRowSelectionTableColumnProps {
+  "aria-hidden"?: boolean;
+}
+
 export interface UseHvRowSelectionRowCheckboxProps {
   onChange?: (e: ChangeEvent, checked?: boolean) => void;
   checked?: boolean;
@@ -147,6 +152,15 @@ const visibleColumnsHook = (columns) => {
   };
 
   return [selectionColumn, ...columns];
+};
+
+const getHeaderPropsHook = (props, { column }) => {
+  const nextProps: UseHvRowSelectionTableColumnProps = {};
+
+  if (column.id === "_hv_selection") {
+    nextProps["aria-hidden"] = true;
+  }
+  return [props, nextProps];
 };
 
 const getRowPropsHook = (props, { row }) => {
@@ -683,6 +697,9 @@ const useRowSelection: UseRowSelectionProps = (hooks) => {
   hooks.visibleColumns.push(visibleColumnsHook);
 
   hooks.getRowProps.push(getRowPropsHook);
+
+  // props target: <table><thead><tr><th>
+  hooks.getHeaderProps.push(getHeaderPropsHook);
 
   hooks.getToggleRowSelectedProps = [defaultGetToggleRowSelectedProps];
   hooks.getToggleAllRowsSelectedProps = [defaultGetToggleAllRowsSelectedProps];
