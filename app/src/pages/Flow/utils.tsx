@@ -9,9 +9,8 @@ import { DashboardSpecs, LAYOUT_COLS } from "./types";
 const datasets = [
   {
     id: "steelwheels",
-    url: "/steelwheels",
+    url: "https://lumada-design.github.io/assets/steelwheels.arrow",
     label: "Steelwheels",
-    file: "steelwheels.arrow",
   },
 ];
 
@@ -19,7 +18,7 @@ export const useDatasets = () => {
   const fetcher = useCallback(async () => {
     const promises = datasets.map((dataset) =>
       // @ts-ignore
-      loadArrow(`${import.meta.env.BASE_URL}datasets/${dataset.file}`)
+      loadArrow(dataset.url)
     );
 
     const tables = await Promise.all(promises);
@@ -45,12 +44,10 @@ export const useDatasets = () => {
 
 export const useData = (endpoint?: string) => {
   const fetcher = useCallback(async (url: string) => {
-    const filePath = datasets.find((dataset) => dataset.url === url)?.file;
+    const datasetUrl = datasets.find((dataset) => dataset.id === url)?.url;
 
     // @ts-ignore
-    const data = await loadArrow(
-      `${import.meta.env.BASE_URL}datasets/${filePath}`
-    );
+    const data = await loadArrow(datasetUrl);
 
     return data;
   }, []);

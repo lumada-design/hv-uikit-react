@@ -590,7 +590,9 @@ export const ArrowData: StoryObj<HvLineChartProps> = {
   loaders: [
     async () => ({
       // @ts-ignore
-      data: await loadArrow(import.meta.resolve("./steelwheels.arrow")),
+      data: await loadArrow(
+        "https://lumada-design.github.io/assets/steelwheels.arrow"
+      ),
     }),
   ],
   render: (args, { loaded: { data } }) => {

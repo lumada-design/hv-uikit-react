@@ -106,7 +106,7 @@ const nodes = [
     id: "5ffe4f454c9",
     position: { x: -702.928, y: 173.7365000000001 },
     data: {
-      endpoint: "/steelwheels",
+      endpoint: "steelwheels",
       columns: [
         "Territory",
         "Country",
