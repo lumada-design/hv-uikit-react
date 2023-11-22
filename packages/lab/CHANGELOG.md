@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.16.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.16.3...@hitachivantara/uikit-react-lab@5.16.4) (2023-11-22)
+
+### Bug Fixes
+
+- **Flow:** unnecessary headings removed ([8b77530](https://github.com/lumada-design/hv-uikit-react/commit/8b7753050ed5120a4ecccba6ec56e2c4322583ee))
+- **Node:** missing expand params button aria label and customisation added ([2171028](https://github.com/lumada-design/hv-uikit-react/commit/217102822292ac37dff6f213516fb5a31d262f39))
+
 ## [5.16.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.16.2...@hitachivantara/uikit-react-lab@5.16.3) (2023-11-21)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
