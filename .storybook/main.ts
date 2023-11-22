@@ -45,10 +45,6 @@ export default {
   staticDirs: [
     "./assets",
     {
-      from: "../packages/viz/src/components/LineChart/steelwheels.arrow",
-      to: "assets/steelwheels.arrow",
-    },
-    {
       from: "../packages/icons/sprites/icons.svg",
       to: "assets/icons.svg",
     },
