@@ -1,24 +1,49 @@
-import { Edge, Node, useEdges, useNodes } from "reactflow";
+import { useCallback } from "react";
+import { Node, Edge, ReactFlowState, useStore } from "reactflow";
 
-export function useFlowNode<T = any>(id: string) {
-  const nodes = useNodes<T>();
-  const edges = useEdges();
+export function useFlowNode<T extends Node = Node>(id: string) {
+  const nodeSelector = useCallback(
+    (state: ReactFlowState) =>
+      state.getNodes().find((n: Node): n is T => n.id === id),
+    [id]
+  );
+  return useStore<T | undefined>(nodeSelector);
+}
 
-  return {
-    // self node
-    get node() {
-      const self = nodes.find((n: Node) => n.id === id);
-      return self;
+export function useFlowNodeInputEdges(id: string) {
+  const inputEdgesSelector = useCallback(
+    (state: ReactFlowState) => state.edges.filter((e: Edge) => e.target === id),
+    [id]
+  );
+  return useStore(inputEdgesSelector);
+}
+
+export function useFlowNodeOutputEdges(id: string) {
+  const outputEdgesSelector = useCallback(
+    (state: ReactFlowState) => state.edges.filter((e: Edge) => e.source === id),
+    [id]
+  );
+  return useStore(outputEdgesSelector);
+}
+
+export function useFlowNodeEdges(id: string) {
+  const edgesSelector = useCallback(
+    (state: ReactFlowState) =>
+      state.edges.filter((e: Edge) => e.source === id || e.target === id),
+    [id]
+  );
+  return useStore(edgesSelector);
+}
+
+export function useFlowNodeParents(id: string) {
+  const inputEdges = useFlowNodeInputEdges(id);
+  const parentNodesSelector = useCallback(
+    (state: ReactFlowState) => {
+      return inputEdges
+        .map((e) => state.getNodes().find((n: Node) => n.id === e.source))
+        .filter((n): n is Node => n !== null);
     },
-
-    // parent nodes
-    get parentNodes() {
-      const connectedEdges = edges.filter((e: Edge) => e.target === id);
-      const parentNodeArray = connectedEdges.map((e) => {
-        const parentNode = nodes.find((n: Node) => n.id === e.source) as Node;
-        return parentNode;
-      });
-      return parentNodeArray;
-    },
-  };
+    [inputEdges]
+  );
+  return useStore(parentNodesSelector);
 }

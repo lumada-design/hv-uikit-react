@@ -5,8 +5,6 @@ import {
   NodeProps,
   NodeToolbar,
   Position,
-  useEdges,
-  useNodes,
   useReactFlow,
 } from "reactflow";
 import { uid } from "uid";
@@ -26,6 +24,11 @@ import {
   HvFlowNodeInput,
   HvFlowNodeOutput,
 } from "../types";
+import {
+  useFlowNode,
+  useFlowNodeInputEdges,
+  useFlowNodeOutputEdges,
+} from "../hooks/useFlowNode";
 import { useNodeMetaRegistry } from "../FlowContext/NodeMetaContext";
 import { staticClasses, useClasses } from "./BaseNode.styles";
 
@@ -102,10 +105,9 @@ export const HvFlowBaseNode = ({
 
   const { classes, cx, css } = useClasses(classesProp);
 
-  const edges = useEdges();
-  const nodes = useNodes();
-
-  const node = nodes.find((n) => n.id === id);
+  const node = useFlowNode(id);
+  const inputEdges = useFlowNodeInputEdges(id);
+  const outputEdges = useFlowNodeOutputEdges(id);
 
   const handleDefaultAction = useCallback(
     (action: HvFlowNodeAction) => {
@@ -218,7 +220,7 @@ export const HvFlowBaseNode = ({
                   />
                   <HvTypography>{input.label}</HvTypography>
                   {input.isMandatory &&
-                    !isInputConnected(id, "target", handleId, edges) && (
+                    !isInputConnected(id, "target", handleId, inputEdges) && (
                       <div className={classes.mandatory} />
                     )}
                 </div>
@@ -248,7 +250,7 @@ export const HvFlowBaseNode = ({
                     }}
                   />
                   {output.isMandatory &&
-                    !isInputConnected(id, "source", handleId, edges) && (
+                    !isInputConnected(id, "source", handleId, outputEdges) && (
                       <div className={classes.mandatory} />
                     )}
                   <HvTypography>{output.label}</HvTypography>

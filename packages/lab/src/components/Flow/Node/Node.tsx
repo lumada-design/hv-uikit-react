@@ -73,7 +73,7 @@ export const HvFlowNode = ({
 }: HvFlowNodeProps<unknown>) => {
   const { classes } = useClasses(classesProp as HvFlowNodeClasses);
   const [showParams, setShowParams] = useState(expanded);
-  const { node } = useFlowNode(id);
+  const node = useFlowNode(id);
 
   const { nodeGroups, nodeTypes, defaultActions } = useFlowContext();
   const groupId = nodeTypes?.[type].meta?.groupId;
