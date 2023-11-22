@@ -61,7 +61,6 @@ export const HvWarningText = (props: HvWarningTextProps) => {
   const localVisible = isVisible ?? elementStatus === "invalid";
   const localId = id ?? setId(elementId, "error");
   const showWarning = localVisible && !localDisabled;
-  const content = showWarning ? children : "";
   const localAdornment = adornment || (
     <Fail iconSize="XS" className={classes.defaultIcon} color="negative" />
   );
@@ -90,7 +89,7 @@ export const HvWarningText = (props: HvWarningTextProps) => {
         aria-relevant="additions text"
         {...others}
       >
-        {showWarning && content}
+        {children}
       </HvTypography>
     </div>
   );
