@@ -1422,7 +1422,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         warningText: {
           ...theme.typography.body,
-          color: theme.colors.negative,
+          color: "inherit",
         },
         topGutter: { paddingTop: "8px" },
         defaultIcon: {

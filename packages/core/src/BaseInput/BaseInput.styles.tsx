@@ -53,28 +53,28 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
   invalid: {
     "&:not(.disabled)": {
       "& $inputBorderContainer": {
-        backgroundColor: theme.colors.negative,
+        backgroundColor: theme.colors.negative_120,
       },
 
       "&:hover $inputBorderContainer": {
-        backgroundColor: theme.colors.negative,
+        backgroundColor: theme.colors.negative_120,
       },
 
       "& $inputRootMultiline": {
         "& $input": {
-          border: `1px solid ${theme.colors.negative}`,
+          border: `1px solid ${theme.colors.negative_120}`,
         },
       },
 
       "&:hover $inputRootMultiline": {
         "& $input": {
-          border: `1px solid ${theme.colors.negative}`,
+          border: `1px solid ${theme.colors.negative_120}`,
         },
       },
 
       "&:focus-within $inputRootMultiline": {
         "& $input": {
-          border: `1px solid ${theme.colors.negative}`,
+          border: `1px solid ${theme.colors.negative_120}`,
         },
       },
     },
@@ -122,7 +122,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     left: "2px",
     backgroundColor: theme.colors.atmo4,
   },
-  inputRootInvalid: { borderColor: theme.colors.negative },
+  inputRootInvalid: { borderColor: theme.colors.negative_120 },
   inputRootReadOnly: {
     borderColor: theme.colors.secondary_60,
     backgroundColor: theme.colors.atmo2,
