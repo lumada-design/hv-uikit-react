@@ -67,7 +67,7 @@ export const Kpi = ({
           </HvTypography>
           {count != null && (
             <HvTypography variant="title2">
-              {count} {unit}
+              {unit} {count}
             </HvTypography>
           )}
         </div>
