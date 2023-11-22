@@ -67,6 +67,7 @@ export interface HvFlowNodeMeta {
 }
 
 export type HvFlowNodeInput = {
+  id?: string;
   label: string;
   isMandatory?: boolean;
   accepts?: string[];
@@ -74,6 +75,7 @@ export type HvFlowNodeInput = {
 };
 
 export type HvFlowNodeOutput = {
+  id?: string;
   label: string;
   isMandatory?: boolean;
   provides?: string;
