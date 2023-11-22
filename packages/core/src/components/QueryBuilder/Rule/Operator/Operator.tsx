@@ -56,7 +56,12 @@ export const Operator = ({
             id,
             operator: selected.id.toString(),
             value:
-              value === "range" || selected.id === "range" ? null : undefined,
+              value === "range" ||
+              selected.id === "range" ||
+              selected.id === "IsNotEmpty" ||
+              selected.id === "Empty"
+                ? null
+                : undefined,
           });
         } else {
           dispatchAction({
