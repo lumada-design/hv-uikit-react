@@ -190,7 +190,7 @@ export const NumericValue = ({
             className={classes.input}
             id={`${elementId}-numeric`}
             name={`${elementId}-numeric`}
-            value={value ? value.toString() : ""}
+            value={value?.toString() || ""}
             onChange={onSingleValueChange}
             onBlur={() => {
               setTouchedNumeric(true);
