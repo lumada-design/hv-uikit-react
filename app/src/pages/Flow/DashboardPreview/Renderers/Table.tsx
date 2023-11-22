@@ -1,5 +1,6 @@
 import { useMemo, useState, useEffect } from "react";
 import { css } from "@emotion/css";
+import { Ban } from "@hitachivantara/uikit-react-icons";
 import {
   HvSection,
   HvTypography,
@@ -16,6 +17,7 @@ import {
   HvTableCell,
   HvPagination,
   useHvFilters,
+  HvEmptyState,
 } from "@hitachivantara/uikit-react-core";
 import { table } from "arquero";
 import type ColumnTable from "arquero/dist/types/table/column-table";
@@ -41,6 +43,20 @@ export const getColumns = (): HvTableColumnConfig<any, string>[] => [
   { Header: "Sales", accessor: "Sales" },
 ];
 
+const NoDataRow = ({
+  message,
+  height = 96,
+}: {
+  message: React.ReactNode;
+  height?: number;
+}) => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} style={{ height }}>
+      <HvEmptyState message={message} icon={<Ban role="none" />} />
+    </HvTableCell>
+  </HvTableRow>
+);
+
 export const Table = ({
   loading,
   title,
@@ -48,7 +64,7 @@ export const Table = ({
   data: dataProp,
 }: TableProps) => {
   const columns = useMemo(() => getColumns(), []);
-  const [data, setData] = useState<object[]>([]);
+  const [data, setData] = useState<any[]>([]);
 
   const {
     getTableProps,
@@ -124,7 +140,7 @@ export const Table = ({
             ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page?.length ? (
+            {page.length > 0 ? (
               page.map((row) => {
                 prepareRow(row);
 
@@ -139,7 +155,7 @@ export const Table = ({
                 );
               })
             ) : (
-              <span>Nothing to show</span>
+              <NoDataRow message="Nothing to show" />
             )}
           </HvTableBody>
         </HvTable>
