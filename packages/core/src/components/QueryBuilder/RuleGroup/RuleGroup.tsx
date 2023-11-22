@@ -10,7 +10,7 @@ import { withTooltip } from "@core/hocs/withTooltip";
 import { ExtractNames } from "@core/utils/classes";
 
 import { Rule } from "../Rule";
-import { QueryBuilderContext } from "../Context";
+import { HvQueryBuilderContext } from "../Context";
 import { useClasses } from "../QueryBuilder.styles";
 import { HvQueryBuilderQuery, HvQueryBuilderQueryCombinator } from "../types";
 
@@ -31,7 +31,7 @@ export const RuleGroup = ({
 }: RuleGroupProps) => {
   const { classes, cx } = useClasses(classesProp);
 
-  const context = useContext(QueryBuilderContext);
+  const context = useContext(HvQueryBuilderContext);
 
   const { dispatchAction, askAction, maxDepth, combinators, labels, readOnly } =
     context;

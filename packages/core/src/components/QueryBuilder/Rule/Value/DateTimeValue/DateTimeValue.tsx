@@ -7,7 +7,7 @@ import { HvWarningText } from "@core/components/Forms";
 import { HvTimePicker, HvTimePickerValue } from "@core/components/TimePicker";
 import { HvDatePicker } from "@core/components/DatePicker";
 
-import { QueryBuilderContext } from "../../../Context";
+import { HvQueryBuilderContext } from "../../../Context";
 import { padTime, parseDate, parseTime } from "./utils";
 import { useClasses } from "./DateTimeValue.styles";
 
@@ -35,7 +35,7 @@ export const DateTimeValue = ({
 
   const isRange = valueIsRange(operator);
 
-  const context = useContext(QueryBuilderContext);
+  const context = useContext(HvQueryBuilderContext);
   const { labels, dispatchAction, readOnly } = context;
 
   const elementId = uniqueId(`datetime${id}`);

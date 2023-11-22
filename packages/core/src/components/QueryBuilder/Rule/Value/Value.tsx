@@ -1,6 +1,6 @@
 import { memo, useContext } from "react";
 
-import { QueryBuilderContext } from "../../Context";
+import { HvQueryBuilderContext } from "../../Context";
 import { BooleanValue } from "./BooleanValue";
 import { NumericValue } from "./NumericValue";
 import { TextValue } from "./TextValue";
@@ -19,7 +19,7 @@ export const Value = ({
   operator,
   value: valueProp,
 }: ValueProps) => {
-  const context = useContext(QueryBuilderContext);
+  const context = useContext(HvQueryBuilderContext);
   const { attributes, initialTouched } = context;
   const value =
     attribute && attributes ? { ...attributes[attribute] } : { type: null };

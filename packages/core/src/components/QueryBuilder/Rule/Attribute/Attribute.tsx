@@ -2,7 +2,7 @@ import { useMemo, useContext, memo } from "react";
 
 import { HvDropdown } from "@core/components/Dropdown";
 
-import { QueryBuilderContext } from "../../Context";
+import { HvQueryBuilderContext } from "../../Context";
 import { isBigList } from "../../utils";
 
 export interface AttributeProps {
@@ -18,7 +18,7 @@ export const Attribute = ({
   disabled,
   isInvalid,
 }: AttributeProps) => {
-  const context = useContext(QueryBuilderContext);
+  const context = useContext(HvQueryBuilderContext);
   const { dispatchAction, attributes, operators, labels, readOnly } = context;
 
   const values = useMemo(() => {

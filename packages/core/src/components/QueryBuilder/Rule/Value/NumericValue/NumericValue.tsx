@@ -5,7 +5,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 
 import { HvInput } from "@core/components/Input";
 
-import { QueryBuilderContext } from "../../../Context";
+import { HvQueryBuilderContext } from "../../../Context";
 import { useClasses } from "./Numeric.styles";
 import { HvQueryBuilderNumericRange } from "../../../types";
 
@@ -25,7 +25,7 @@ export const NumericValue = ({
   const { classes, cx } = useClasses();
 
   const isRange = operator === "range";
-  const context = useContext(QueryBuilderContext);
+  const context = useContext(HvQueryBuilderContext);
   const { labels, dispatchAction, readOnly } = context;
 
   const theme = useTheme();

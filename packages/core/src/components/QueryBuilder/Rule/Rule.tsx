@@ -8,7 +8,7 @@ import { withTooltip } from "@core/hocs/withTooltip";
 import { useDefaultProps } from "@core/hooks";
 import { ExtractNames } from "@core/utils";
 
-import { QueryBuilderContext } from "../Context";
+import { HvQueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";
 import { Value } from "./Value";
@@ -42,7 +42,7 @@ export const Rule = (props: RuleProps) => {
   } = useDefaultProps("HvQueryBuilderRule", props);
   const { classes, cx } = useClasses(classesProp);
 
-  const context = useContext(QueryBuilderContext);
+  const context = useContext(HvQueryBuilderContext);
 
   const theme = useTheme();
 
