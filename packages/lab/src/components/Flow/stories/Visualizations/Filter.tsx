@@ -30,7 +30,7 @@ export const Filter: HvFlowNodeFC = (props) => {
 
   let options: string[] = [];
 
-  const { node: self } = useFlowNode(id);
+  const self = useFlowNode(id);
 
   useEffect(() => {
     const dataNodeId = edges.find((e) => e.target === id)?.source;

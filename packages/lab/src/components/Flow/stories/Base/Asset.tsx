@@ -22,7 +22,7 @@ export const Asset: HvFlowNodeFC<NodeGroups> = (props) => {
   const { id } = props;
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node | undefined>();
-  const { node } = useFlowNode(id);
+  const node = useFlowNode(id);
 
   const classes = {
     container: css({

@@ -341,31 +341,56 @@ If any of the previous topics are not enough for your use case, you can also pas
 ### Accessing the React Flow instance <a id="react-flow-instance" />
 
 While creating a custom node you might find you need to have access to the node instance to get some details about it and do some operations
-like knowing the parents of the node. We created a custom hook that you can use to get quick access to these properties:
+like knowing the parents of the node.
+
+To facilitate this, we provide a set of specialized hooks:
+
+- `useFlowNode(id: string)`: Retrieves the node instance based on the given ID.
+- `useFlowNodeParents(id: string)`: Gets the parent nodes of a specified node (nodes that have an output connected to one of the inputs of the node).
+- `useFlowNodeInputEdges(id: string)`: Provides the input edges connected to the node.
+- `useFlowNodeOutputEdges(id: string)`: Gives the output edges connected from the node.
+- `useFlowNodeEdges(id: string)`: Offers both input and output edges of the node.
+
+Example usage in a custom node component:
 
 ```tsx
 export const Asset = (props) => {
   const { id } = props;
-  const { node, parentNodes } = useFlowNode(id);
+  const node = useFlowNode(id);
+  const parentNodes = useFlowNodeParents(id);
 
-  (...)
-}
+  // ...
+};
 ```
 
-While this hook can be updated to include more useful information, we advise you to use the `reactflow` instance directly if you want to do more
-advanced operations:
+For more advanced operations, consider using the `reactflow` instance directly:
 
 ```tsx
 const instance = useReactFlow();
 ```
 
 Alternatively you can directly access the underlying store that `reactflow` uses to access specific parts of the state using the
-`useStore` hook. More hooks are also available depending on your needs. For instance, if you need to access the nodes and edges, you can use:
+`useStore` hook.
+
+To access specific parts of the React Flow state with minimal impact on performance, use the `useStore` hook. This hook is re-exported from the Zustand state management library and allows for creating finely-tuned selectors:
 
 ```tsx
-const nodes = useNodes();
-const edges = useEdges();
+const selectedNodesSelector = (state) => {
+  return state.nodes.filter((node) => node.selected);
+};
+
+export const Asset = (props) => {
+  const { id } = props;
+
+  const selectedNodes = useStore(selectedNodesSelector);
+
+  // ...
+};
 ```
+
+Other hooks are also available depending on your needs, like the `useNodes` and `useEdges` hooks. However it's important to note that components using `useNodes` and `useEdges` will re-render whenever any node or edge changes. This includes selections and movements of nodes, which can affect performance in complex flows.
+
+Prefer using `useStore` with specific selectors to reduce the number of re-renders, ensuring that components only update when necessary.
 
 Please check the [React Flow documentation](https://reactflow.dev/docs/api/hooks/use-react-flow/) to get more information,
 specially on the hooks section.
@@ -387,7 +412,7 @@ export const Asset = (props) => {
   const { id } = props;
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node | undefined>();
-  const { node } = useFlowNode(id);
+  const node = useFlowNode(id);
 
   const classes = {
     container: css({
