@@ -1,11 +1,4 @@
-import {
-  useContext,
-  useEffect,
-  useMemo,
-  useReducer,
-  useRef,
-  useState,
-} from "react";
+import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import cloneDeep from "lodash/cloneDeep";
 import isEqual from "lodash/isEqual";
 
@@ -13,7 +6,12 @@ import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { ExtractNames } from "@core/utils/classes";
 
 import { ConfirmationDialog } from "./ConfirmationDialog";
-import { QueryBuilderContext } from "./Context";
+import {
+  HvQueryBuilderProvider,
+  defaultCombinators,
+  defaultLabels,
+  defaultOperators,
+} from "./Context";
 import { RuleGroup } from "./RuleGroup";
 import {
   AskAction,
@@ -67,17 +65,15 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     attributes,
     query,
     onChange,
-    operators,
-    combinators,
+    operators = defaultOperators,
+    combinators = defaultCombinators,
     maxDepth = 1,
-    labels,
+    labels = defaultLabels,
     readOnly = false,
     classes: classesProp,
   } = useDefaultProps("HvQueryBuilder", props);
 
   const { classes } = useClasses(classesProp);
-
-  const defaultContext = useContext(QueryBuilderContext);
 
   const currentAttributes = useRef<HvQueryBuilderProps["attributes"] | null>(
     null
@@ -95,25 +91,21 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     cloneDeep(initialQuery.current)
   );
 
-  const context = useMemo(
+  const value = useMemo(
     () => ({
       dispatchAction,
       askAction: setPendingAction,
       attributes,
-      operators: operators ?? defaultContext.operators,
-      combinators: combinators ?? defaultContext.combinators,
-      maxDepth: maxDepth ?? defaultContext.maxDepth,
-      labels: labels ?? defaultContext.labels,
+      operators,
+      combinators,
+      maxDepth,
+      labels,
       initialTouched: initialState,
       readOnly,
     }),
     [
       attributes,
       operators,
-      defaultContext.operators,
-      defaultContext.combinators,
-      defaultContext.maxDepth,
-      defaultContext.labels,
       combinators,
       maxDepth,
       labels,
@@ -158,7 +150,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   };
 
   return (
-    <QueryBuilderContext.Provider value={context}>
+    <HvQueryBuilderProvider value={value}>
       <RuleGroup
         level={0}
         id={state.id}
@@ -176,6 +168,6 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
         cancelButtonLabel={pendingAction?.dialog.dialogCancel || ""}
         closeButtonTooltip={pendingAction?.dialog.dialogCloseTooltip || ""}
       />
-    </QueryBuilderContext.Provider>
+    </HvQueryBuilderProvider>
   );
 };

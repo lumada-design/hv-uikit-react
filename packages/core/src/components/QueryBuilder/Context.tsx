@@ -311,7 +311,7 @@ export const defaultLabels = {
   },
 };
 
-interface QueryBuilderContextValue {
+export interface HvQueryBuilderContextValue {
   dispatchAction: React.Dispatch<QueryAction>;
   askAction: React.Dispatch<React.SetStateAction<AskAction | undefined>>;
   selectLocation?: React.Dispatch<unknown>;
@@ -324,7 +324,7 @@ interface QueryBuilderContextValue {
   readOnly: boolean;
 }
 
-export const QueryBuilderContext = createContext<QueryBuilderContextValue>({
+export const HvQueryBuilderContext = createContext<HvQueryBuilderContextValue>({
   dispatchAction: () => ({}),
   askAction: () => ({}),
   selectLocation: () => ({}),
@@ -336,3 +336,19 @@ export const QueryBuilderContext = createContext<QueryBuilderContextValue>({
   initialTouched: false,
   readOnly: false,
 });
+
+export interface HvQueryBuilderProviderProps {
+  value: HvQueryBuilderContextValue;
+  children: React.ReactNode;
+}
+
+export const HvQueryBuilderProvider = ({
+  children,
+  value,
+}: HvQueryBuilderProviderProps) => {
+  return (
+    <HvQueryBuilderContext.Provider value={value}>
+      {children}
+    </HvQueryBuilderContext.Provider>
+  );
+};
