@@ -284,10 +284,15 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
     const [selectionLabel, setSelectionLabel] = useState(
       getSelectionLabel(labels, placeholder, multiSelect, values)
     );
+
     const [internalValues, setInternalValues] = useState(values);
+
+    // Hack - Keeping track of internal values for validation purposes since useState is async
+    const internalValuesRef = useRef(values);
 
     useEffect(() => {
       setInternalValues(values);
+      internalValuesRef.current = values;
     }, [values]);
 
     useEffect(() => {
@@ -328,7 +333,8 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
         setValidationState(() => {
           // this will only run if status is uncontrolled
           if (required) {
-            const hasSelection = getSelected(internalValues).length > 0;
+            const hasSelection =
+              getSelected(internalValuesRef.current).length > 0;
 
             if (!hasSelection) {
               return "invalid";
@@ -351,6 +357,8 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
 
       if (commitChanges) {
         setInternalValues(listValues);
+        internalValuesRef.current = listValues;
+
         setSelectionLabel(
           getSelectionLabel(labels, placeholder, multiSelect, listValues)
         );
