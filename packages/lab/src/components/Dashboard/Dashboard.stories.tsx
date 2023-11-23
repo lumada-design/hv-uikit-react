@@ -1,18 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvBarChart,
   HvLineChart,
   HvDonutChart,
-  HvChartData,
   HvConfusionMatrix,
 } from "@hitachivantara/uikit-react-viz";
-import {
-  HvDashboard,
-  HvDashboardProps,
-  HvDashboardItem,
-} from "@hitachivantara/uikit-react-lab";
+import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
+import { HvSection, HvTypography } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvDashboard> = {
   title: "Lab/Dashboard",
@@ -21,12 +16,7 @@ const meta: Meta<typeof HvDashboard> = {
 
 export default meta;
 
-interface Item extends HvDashboardItem {
-  type: "txt";
-  label: string;
-}
-
-const items = ["1", "2", "3", "4"].map<Item>((id) => ({
+const items = ["1", "2", "3", "4"].map((id) => ({
   id,
   type: "txt",
   label: `Item ${id}`,
@@ -39,40 +29,27 @@ export const Main: StoryObj<HvDashboardProps> = {
   render: () => {
     return (
       <HvDashboard
-        items={items}
         layout={[
           { i: "1", x: 0, y: 0, w: 6, h: 2, isDraggable: false },
           { i: "2", x: 6, y: 0, w: 4, h: 1, isResizable: false },
           { i: "3", x: 6, y: 1, w: 2, h: 1, resizeHandles: ["e", "w"] },
           { i: "4", x: 10, y: 0, w: 2, h: 1, static: true },
         ]}
-        renderItem={(item) => (
-          <div
-            className={css({
-              width: "100%",
-              backgroundColor: theme.colors.atmo1,
-              padding: theme.space.sm,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            })}
-          >
-            {item.label}
-          </div>
-        )}
-      />
+      >
+        {items.map((item) => (
+          <HvSection
+            key={item.id}
+            title={<HvTypography variant="title3">{item.label}</HvTypography>}
+          />
+        ))}
+      </HvDashboard>
     );
   },
 };
 
-const itemIds = ["bar", "line", "conf", "donut", "bar", "txt", "null"] as const;
+const itemIds = ["bar", "line", "conf", "donut", "bar", "txt"] as const;
 
-interface ItemType extends HvDashboardItem {
-  type: (typeof itemIds)[number];
-  data: HvChartData;
-}
-
-const dataDrivenItems = itemIds.map<ItemType>((type, i) => ({
+const dataDrivenItems = itemIds.map((type, i) => ({
   id: `${type}-${i}`,
   type,
   data: new Map<string, (string | number)[]>()
@@ -93,14 +70,27 @@ const TxtRenderer = ({ data }) => (
   </pre>
 );
 
+const componentMap: Record<(typeof itemIds)[number], any> = {
+  bar: HvBarChart,
+  line: HvLineChart,
+  donut: HvDonutChart,
+  conf: HvConfusionMatrix,
+  txt: TxtRenderer,
+};
+
 export const DataDriven: StoryObj<HvDashboardProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "This story demonstrates how to use the `HvDashboard` component to render",
+      },
+    },
   },
   render: () => {
     return (
       <HvDashboard
-        items={dataDrivenItems}
+        margin={[16, 16]}
         layout={dataDrivenItems.map(({ id }, i) => ({
           i: id,
           x: (i % 2) * (12 / 2),
@@ -109,26 +99,22 @@ export const DataDriven: StoryObj<HvDashboardProps> = {
           h: 3,
           isDraggable: false,
         }))}
-        renderItem={(item) => {
+      >
+        {dataDrivenItems.map((item) => {
           const { id, type, ...props } = item;
-          const componentMap: Record<typeof type, any> = {
-            bar: HvBarChart,
-            line: HvLineChart,
-            donut: HvDonutChart,
-            conf: HvConfusionMatrix,
-            txt: TxtRenderer,
-            null: null,
-          };
-
           const Component = componentMap[type];
 
           if (!Component) {
             return <div>❌ Cannot render {type} dashboard item</div>;
           }
 
-          return <Component {...props} />;
-        }}
-      />
+          return (
+            <div key={item.id} className={css({ display: "flex" })}>
+              <Component {...props} />
+            </div>
+          );
+        })}
+      </HvDashboard>
     );
   },
 };

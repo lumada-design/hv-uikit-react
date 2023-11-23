@@ -3,9 +3,6 @@ import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses("HvDashboard", {
   root: {},
-  item: {
-    display: "flex",
-  },
 });
 
 export const gridStyles = css`

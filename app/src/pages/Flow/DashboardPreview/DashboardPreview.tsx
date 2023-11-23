@@ -12,8 +12,9 @@ import {
 } from "../types";
 import { Renderer, RendererProps } from "./Renderers";
 
-interface DashboardConfig
-  extends Pick<HvDashboardProps<RendererProps>, "items" | "layout" | "cols"> {}
+interface DashboardConfig extends Pick<HvDashboardProps, "layout" | "cols"> {
+  items?: RendererProps[] & Record<string, any>;
+}
 
 const buildContent = (items?: DashboardSpecs["items"]) => {
   if (!items) return;
@@ -94,14 +95,19 @@ const DashboardPreview = () => {
         {config?.items && config?.layout && (
           <HvDashboard
             {...config}
-            renderItem={(item) => <Renderer {...item} />}
             rowHeight={120}
             margin={[16, 16]}
             containerPadding={[0, 16]}
             isDraggable={false}
             isResizable={false}
             useCSSTransforms={false}
-          />
+          >
+            {config.items.map((item) => (
+              <div key={item.id} className={css({ display: "flex" })}>
+                <Renderer key={item.id} {...item} />
+              </div>
+            ))}
+          </HvDashboard>
         )}
       </div>
     </HvVizProvider>
