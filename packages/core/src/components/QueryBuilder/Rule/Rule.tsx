@@ -1,4 +1,4 @@
-import { useContext, useMemo } from "react";
+import { useMemo } from "react";
 import { Delete } from "@hitachivantara/uikit-react-icons";
 import { useMediaQuery, useTheme } from "@mui/material";
 
@@ -8,7 +8,7 @@ import { withTooltip } from "@core/hocs/withTooltip";
 import { useDefaultProps } from "@core/hooks";
 import { ExtractNames } from "@core/utils";
 
-import { HvQueryBuilderContext } from "../Context";
+import { useQueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";
 import { Value } from "./Value";
@@ -42,7 +42,7 @@ export const Rule = (props: RuleProps) => {
   } = useDefaultProps("HvQueryBuilderRule", props);
   const { classes, cx } = useClasses(classesProp);
 
-  const context = useContext(HvQueryBuilderContext);
+  const context = useQueryBuilderContext();
 
   const theme = useTheme();
 

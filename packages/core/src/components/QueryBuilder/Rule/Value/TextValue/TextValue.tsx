@@ -1,9 +1,9 @@
-import { memo, useContext, useState } from "react";
+import { memo, useState } from "react";
 
 import { HvFormStatus } from "@core/components/Forms";
 import { HvInput } from "@core/components/Input";
 
-import { HvQueryBuilderContext } from "../../../Context";
+import { useQueryBuilderContext } from "../../../Context";
 import { useClasses } from "./TextValue.styles";
 
 export interface TextValueProps {
@@ -19,7 +19,7 @@ export const TextValue = ({
 }: TextValueProps) => {
   const { classes } = useClasses();
 
-  const context = useContext(HvQueryBuilderContext);
+  const context = useQueryBuilderContext();
   const { labels, dispatchAction, readOnly } = context;
   const [touched, setTouched] = useState(initialTouched);
   const isValid = value != null && value.toString().trim() !== "";

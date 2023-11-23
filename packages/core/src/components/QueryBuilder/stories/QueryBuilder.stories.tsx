@@ -1,12 +1,17 @@
-import { useMemo, useState } from "react";
 import {
   HvQueryBuilder,
   HvQueryBuilderProps,
-  hvQueryBuilderDefaultOperators,
 } from "@hitachivantara/uikit-react-core";
 import { Meta, StoryObj } from "@storybook/react";
 
-import queryToMongo from "./queryToMongo";
+import { CustomRenderers as CustomRenderersStory } from "./CustomRenderers";
+import CustomRenderersRaw from "./CustomRenderers?raw";
+import { ReadOnly as ReadOnlyStory } from "./ReadOnly";
+import ReadOnlyRaw from "./ReadOnly?raw";
+import { InitialQuery as InitialQueryStory } from "./InitialQuery";
+import InitialQueryRaw from "./InitialQuery?raw";
+import { Main as MainStory } from "./Main";
+import MainRaw from "./Main?raw";
 
 const meta: Meta<typeof HvQueryBuilder> = {
   title: "Widgets/Query Builder",
@@ -15,44 +20,25 @@ const meta: Meta<typeof HvQueryBuilder> = {
 export default meta;
 
 export const Main: StoryObj<HvQueryBuilderProps> = {
-  args: {
-    attributes: {
-      key1: {
-        label: "Numeric",
-        type: "numeric",
-      },
-      key2: {
-        label: "Text",
-        type: "text",
-      },
-      key3: {
-        label: "Text Area",
-        type: "textarea",
-      },
-      key4: {
-        label: "Boolean",
-        type: "boolean",
-      },
-      key5: {
-        label: "Date & Time",
-        type: "dateandtime",
-      },
-      key6: {
-        label: "Custom",
-        type: "customType",
-      },
-    },
-    operators: {
-      ...hvQueryBuilderDefaultOperators,
-      customType: [...hvQueryBuilderDefaultOperators.text],
-    },
-    readOnly: false,
-  },
   argTypes: {
     classes: { control: { disable: true } },
+    attributes: { control: { disable: true } },
+    combinators: { control: { disable: true } },
+    labels: { control: { disable: true } },
+    onChange: { control: { disable: true } },
+    renderers: { control: { disable: true } },
+    operators: { control: { disable: true } },
+    query: { control: { disable: true } },
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: MainRaw,
+      },
+    },
   },
   render: (args) => {
-    return <HvQueryBuilder {...args} />;
+    return <MainStory {...args} />;
   },
 };
 
@@ -62,105 +48,12 @@ export const InitialQuery: StoryObj<HvQueryBuilderProps> = {
       description: {
         story: "Query Builder that parses the query to Mongo",
       },
+      source: {
+        code: InitialQueryRaw,
+      },
     },
   },
-  render: () => {
-    const attributes = useMemo(
-      () => ({
-        price: {
-          label: "Price",
-          type: "numeric",
-        },
-        category: {
-          label: "Category",
-          type: "text",
-        },
-        in_stock: {
-          label: "In stock",
-          type: "boolean",
-        },
-        release: {
-          label: "Release",
-          type: "dateandtime",
-        },
-      }),
-      []
-    );
-
-    const initialQuery = useMemo(
-      () => ({
-        id: 1,
-        combinator: "and",
-        rules: [
-          {
-            id: 2,
-            attribute: "price",
-            operator: "lessThan",
-            value: 10,
-          },
-          {
-            id: 3,
-            attribute: "category",
-            operator: "equals",
-            value: "Movies",
-          },
-          {
-            id: 4,
-            combinator: "and",
-            rules: [
-              {
-                id: 5,
-                attribute: "in_stock",
-                operator: "equalsTo",
-                value: true,
-              },
-              {
-                id: 6,
-                attribute: "release",
-                operator: "greaterThan",
-                value: {
-                  date: "2021-01-01",
-                  time: "00:00:00",
-                },
-              },
-            ],
-          },
-          {
-            id: 7,
-            combinator: "or",
-            rules: [
-              {
-                id: 8,
-                attribute: "in_stock",
-                operator: "equalsTo",
-                value: false,
-              },
-            ],
-          },
-        ],
-      }),
-      []
-    );
-
-    const [mongoQuery, setMongoQuery] = useState(queryToMongo(initialQuery));
-
-    return (
-      <>
-        <HvQueryBuilder
-          attributes={attributes}
-          query={initialQuery}
-          onChange={(query) => {
-            try {
-              setMongoQuery(queryToMongo(query));
-            } catch (error: any) {
-              console.log("error: ", error.toString());
-            }
-          }}
-        />
-        <pre>{JSON.stringify(mongoQuery, null, 2)}</pre>
-      </>
-    );
-  },
+  render: () => <InitialQueryStory />,
 };
 
 export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
@@ -169,83 +62,25 @@ export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
       description: {
         story: "Query Builder in read only mode.",
       },
+      source: {
+        code: ReadOnlyRaw,
+      },
     },
   },
-  render: () => {
-    const attributes = useMemo(
-      () => ({
-        price: {
-          label: "Price",
-          type: "numeric",
-        },
-        category: {
-          label: "Category",
-          type: "text",
-        },
-        in_stock: {
-          label: "In stock",
-          type: "boolean",
-        },
-        release: {
-          label: "Release",
-          type: "dateandtime",
-        },
-      }),
-      []
-    );
+  render: () => <ReadOnlyStory />,
+};
 
-    const initialQuery = useMemo(
-      () => ({
-        id: 1,
-        combinator: "and",
-        rules: [
-          {
-            id: 2,
-            attribute: "price",
-            operator: "lessThan",
-            value: 10,
-          },
-          {
-            id: 4,
-            combinator: "and",
-            rules: [
-              {
-                id: 5,
-                attribute: "in_stock",
-                operator: "equalsTo",
-                value: true,
-              },
-              {
-                id: 6,
-                attribute: "release",
-                operator: "greaterThan",
-                value: {
-                  date: "2021-01-01",
-                  time: "00:00:00",
-                },
-              },
-            ],
-          },
-        ],
-      }),
-      []
-    );
-
-    const [, setMongoQuery] = useState(queryToMongo(initialQuery));
-
-    return (
-      <HvQueryBuilder
-        readOnly
-        attributes={attributes}
-        query={initialQuery}
-        onChange={(query) => {
-          try {
-            setMongoQuery(queryToMongo(query));
-          } catch (error: any) {
-            console.log("error: ", error.toString());
-          }
-        }}
-      />
-    );
+export const CustomRenderers: StoryObj<HvQueryBuilderProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "If the default attributes types (`boolean`, `numeric`, `text`, `textarea`, and `dateandtime`) are not enough to cover your use case, custom ones can be used. For these custom types, if no corresponding renderer is provided through the `renderers` property, a text input will be rendered.",
+      },
+      source: {
+        code: CustomRenderersRaw,
+      },
+    },
   },
+  render: () => <CustomRenderersStory />,
 };

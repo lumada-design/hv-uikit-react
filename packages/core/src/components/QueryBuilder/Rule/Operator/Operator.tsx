@@ -1,8 +1,8 @@
-import { memo, useContext, useMemo } from "react";
+import { memo, useMemo } from "react";
 
 import { HvDropdown } from "@core/components/Dropdown";
 
-import { HvQueryBuilderContext } from "../../Context";
+import { useQueryBuilderContext } from "../../Context";
 import { isBigList } from "../../utils";
 
 export interface OperatorProps {
@@ -18,7 +18,7 @@ export const Operator = ({
   attribute,
   operator,
 }: OperatorProps) => {
-  const context = useContext(HvQueryBuilderContext);
+  const context = useQueryBuilderContext();
 
   const { dispatchAction, attributes, operators, labels, readOnly } = context;
 

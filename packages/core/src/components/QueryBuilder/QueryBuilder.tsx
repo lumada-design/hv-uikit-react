@@ -21,6 +21,7 @@ import {
   HvQueryBuilderQueryCombinator,
   HvQueryBuilderQueryOperator,
   HvQueryBuilderChangedQuery,
+  HvQueryBuilderRenderers,
 } from "./types";
 import { clearNodeIds, emptyGroup } from "./utils";
 import reducer from "./utils/reducer";
@@ -47,6 +48,8 @@ export interface HvQueryBuilderProps {
   labels?: HvQueryBuilderLabels;
   /** Whether the query builder is in read-only mode. */
   readOnly?: boolean;
+  /** Renderers for custom attribute types. */
+  renderers?: HvQueryBuilderRenderers;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvQueryBuilderClasses;
 }
@@ -63,6 +66,7 @@ export interface HvQueryBuilderProps {
 export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   const {
     attributes,
+    renderers,
     query,
     onChange,
     operators = defaultOperators,
@@ -102,6 +106,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       labels,
       initialTouched: initialState,
       readOnly,
+      renderers,
     }),
     [
       attributes,
@@ -111,6 +116,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       labels,
       readOnly,
       initialState,
+      renderers,
     ]
   );
 

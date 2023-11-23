@@ -1,4 +1,4 @@
-import { memo, useCallback, useContext, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import uniqueId from "lodash/uniqueId";
 import dayjs from "dayjs";
 import { useMediaQuery, useTheme } from "@mui/material";
@@ -7,7 +7,7 @@ import { HvWarningText } from "@core/components/Forms";
 import { HvTimePicker, HvTimePickerValue } from "@core/components/TimePicker";
 import { HvDatePicker } from "@core/components/DatePicker";
 
-import { HvQueryBuilderContext } from "../../../Context";
+import { useQueryBuilderContext } from "../../../Context";
 import { padTime, parseDate, parseTime } from "./utils";
 import { useClasses } from "./DateTimeValue.styles";
 
@@ -35,7 +35,7 @@ export const DateTimeValue = ({
 
   const isRange = valueIsRange(operator);
 
-  const context = useContext(HvQueryBuilderContext);
+  const context = useQueryBuilderContext();
   const { labels, dispatchAction, readOnly } = context;
 
   const elementId = uniqueId(`datetime${id}`);

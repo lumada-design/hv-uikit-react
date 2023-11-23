@@ -3,6 +3,7 @@ export {
   defaultCombinators as hvQueryBuilderDefaultCombinators,
   defaultLabels as hvQueryBuilderDefaultLabels,
   defaultOperators as hvQueryBuilderDefaultOperators,
+  useQueryBuilderContext,
 } from "./Context";
 export type {
   HvQueryBuilderAttribute,
@@ -15,4 +16,6 @@ export type {
   HvQueryBuilderQueryCombinator,
   HvQueryBuilderQueryOperator,
   HvQueryBuilderLabels,
+  HvQueryBuilderRendererProps,
+  HvQueryBuilderRenderers,
 } from "./types";

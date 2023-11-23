@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 import {
   AskAction,
@@ -7,6 +7,7 @@ import {
   HvQueryBuilderLabels,
   HvQueryBuilderQueryCombinator,
   HvQueryBuilderQueryOperator,
+  HvQueryBuilderRenderers,
 } from "./types";
 
 export const defaultOperators = {
@@ -322,6 +323,7 @@ export interface HvQueryBuilderContextValue {
   labels: HvQueryBuilderLabels;
   initialTouched: boolean;
   readOnly: boolean;
+  renderers?: HvQueryBuilderRenderers;
 }
 
 export const HvQueryBuilderContext = createContext<HvQueryBuilderContextValue>({
@@ -351,4 +353,8 @@ export const HvQueryBuilderProvider = ({
       {children}
     </HvQueryBuilderContext.Provider>
   );
+};
+
+export const useQueryBuilderContext = () => {
+  return useContext(HvQueryBuilderContext);
 };
