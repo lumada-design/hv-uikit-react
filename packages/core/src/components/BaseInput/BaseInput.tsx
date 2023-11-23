@@ -2,10 +2,13 @@ import { useContext } from "react";
 
 import {
   InputBaseComponentProps as MuiInputBaseComponentProps,
-  InputProps as MuiInputProps,
-  Input as MuiInput,
   InputBaseProps,
 } from "@mui/material";
+
+import {
+  Input as MuiBaseInput,
+  InputProps as MuiBaseInputProps,
+} from "@mui/base/Input";
 
 import { css as emotionCss, Global } from "@emotion/react";
 
@@ -56,7 +59,7 @@ const baseInputStyles = emotionCss({
 });
 
 export interface HvBaseInputProps
-  extends Omit<MuiInputProps, "onChange" | "classes">,
+  extends Omit<MuiBaseInputProps, "onChange">,
     HvBaseProps<
       HTMLDivElement,
       | "onChange"
@@ -66,6 +69,7 @@ export interface HvBaseInputProps
       | "onInvalid"
       | "onKeyDown"
       | "onKeyUp"
+      | "onClick"
     > {
   /** The input name. */
   name?: string;
@@ -86,7 +90,7 @@ export interface HvBaseInputProps
     value: string
   ) => void;
   /** The input type. */
-  type?: string;
+  type?: React.HTMLInputTypeAttribute;
   /** Label inside the input used to help user. */
   placeholder?: string;
   /** If true, a textarea element will be rendered. */
@@ -101,6 +105,12 @@ export interface HvBaseInputProps
   inputRef?: InputBaseProps["inputRef"];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBaseInputClasses;
+
+  rows?: number;
+
+  minRoes?: number;
+
+  maxRows?: number;
 }
 
 /**
@@ -126,7 +136,10 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
     invalid = false,
     inputRef,
     inputProps = {},
-    ...others
+    rows = 10,
+    minRows,
+    maxRows,
+    // ...others
   } = useDefaultProps("HvBaseInput", props);
   const { classes, cx } = useClasses(classesProp);
   const formElementContext = useContext(HvFormElementContext);
@@ -150,7 +163,7 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
     id
   );
 
-  const onChangeHandler: MuiInputProps["onChange"] = (event) => {
+  const onChangeHandler: MuiBaseInputProps["onChange"] = (event) => {
     onChange?.(event, event.target.value);
   };
 
@@ -165,41 +178,42 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
           [classes.readOnly]: formElementProps.readOnly,
         })}
       >
-        <MuiInput
+        <MuiBaseInput
           id={id}
           name={formElementProps.name}
           value={value}
           defaultValue={defaultValue}
-          type={type}
           placeholder={placeholder}
           readOnly={!!formElementProps.readOnly}
           disabled={formElementProps.disabled}
           onChange={onChangeHandler}
-          className={cx({
-            [classes.inputRootInvalid]: localInvalid,
-            [classes.inputRootReadOnly]: formElementProps.readOnly,
-          })}
-          classes={{
-            root: classes.inputRoot,
-            focused: classes.inputRootFocused,
-            disabled: classes.inputRootDisabled,
-            multiline: classes.inputRootMultiline,
-            input: cx(classes.input, {
-              [classes.inputResizable]: !formElementProps.disabled && resizable,
-              [classes.inputDisabled]: formElementProps.disabled,
-              [classes.inputReadOnly]: formElementProps.readOnly,
-            }),
-          }}
-          inputProps={{
-            // Avoid the required attribute at the root node
-            required: formElementProps.required,
-            ...inputProps,
-            ...ariaProps,
+          slotProps={{
+            root: {
+              className: cx(classes.inputRoot, {
+                [classes.inputRootInvalid]: localInvalid,
+                [classes.inputRootReadOnly]: formElementProps.readOnly,
+              }),
+            },
+            input: {
+              className: cx(classes.input, {
+                [classes.inputResizable]:
+                  !formElementProps.disabled && resizable,
+                [classes.inputDisabled]: formElementProps.disabled,
+                [classes.inputReadOnly]: formElementProps.readOnly,
+              }),
+              // Avoid the required attribute at the root node
+              required: formElementProps.required,
+              ...inputProps,
+              ...ariaProps,
+            },
           }}
           inputRef={inputRef}
-          multiline={multiline}
-          rows={10}
-          {...others}
+          {...(multiline
+            ? { type: undefined, multiline: true, rows, minRows, maxRows }
+            : { type, multiline: false })}
+          // work around because material multiline type definition 'or'
+          // rows={10}
+          // {...others}
         />
         {!multiline && (
           <div role="presentation" className={classes.inputBorderContainer} />
