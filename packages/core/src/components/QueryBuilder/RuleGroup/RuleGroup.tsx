@@ -1,4 +1,4 @@
-import { useCallback, useContext } from "react";
+import { useCallback } from "react";
 import { Add, Delete, Info } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "@core/components/Button";
@@ -10,7 +10,7 @@ import { withTooltip } from "@core/hocs/withTooltip";
 import { ExtractNames } from "@core/utils/classes";
 
 import { Rule } from "../Rule";
-import { HvQueryBuilderContext } from "../Context";
+import { useQueryBuilderContext } from "../Context";
 import { useClasses } from "../QueryBuilder.styles";
 import { HvQueryBuilderQuery, HvQueryBuilderQueryCombinator } from "../types";
 
@@ -31,7 +31,7 @@ export const RuleGroup = ({
 }: RuleGroupProps) => {
   const { classes, cx } = useClasses(classesProp);
 
-  const context = useContext(HvQueryBuilderContext);
+  const context = useQueryBuilderContext();
 
   const { dispatchAction, askAction, maxDepth, combinators, labels, readOnly } =
     context;

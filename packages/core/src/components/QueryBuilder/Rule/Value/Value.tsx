@@ -1,6 +1,6 @@
-import { memo, useContext } from "react";
+import { memo } from "react";
 
-import { HvQueryBuilderContext } from "../../Context";
+import { useQueryBuilderContext } from "../../Context";
 import { BooleanValue } from "./BooleanValue";
 import { NumericValue } from "./NumericValue";
 import { TextValue } from "./TextValue";
@@ -19,8 +19,9 @@ export const Value = ({
   operator,
   value: valueProp,
 }: ValueProps) => {
-  const context = useContext(HvQueryBuilderContext);
-  const { attributes, initialTouched } = context;
+  const context = useQueryBuilderContext();
+  const { attributes, initialTouched, renderers } = context;
+
   const value =
     attribute && attributes ? { ...attributes[attribute] } : { type: null };
   const { type } = value;
@@ -51,7 +52,23 @@ export const Value = ({
     }
     case "text":
     case "textarea":
+      return (
+        <TextValue id={id} value={valueProp} initialTouched={initialTouched} />
+      );
     default: {
+      if (type && renderers?.[type]) {
+        const Renderer = renderers[type];
+
+        return (
+          <Renderer
+            id={id}
+            attribute={attribute}
+            operator={operator}
+            value={valueProp}
+          />
+        );
+      }
+
       return (
         <TextValue id={id} value={valueProp} initialTouched={initialTouched} />
       );

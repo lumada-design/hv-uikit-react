@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 export interface HvQueryBuilderAttribute extends Record<string, unknown> {
   id?: string;
   label: string;
@@ -68,55 +70,41 @@ interface DialogLabels {
   dialogCloseTooltip: string;
 }
 
-interface ResetQueryAction {
-  type: "reset-query";
-}
-
-interface ResetGroupAction {
-  type: "reset-group";
-  id: React.Key;
-}
-
-interface AddRemoveAction {
-  type: "add-rule" | "add-group" | "remove-node";
-  id: React.Key;
-}
-
-interface SetCombinatorAction {
-  type: "set-combinator";
-  id: React.Key;
-  combinator: string;
-}
-
-interface SetAttributeAction {
-  type: "set-attribute";
-  id: React.Key;
-  attribute?: string | null;
-  operator?: string | null;
-  value?: HvQueryBuilderQueryRuleValue | null;
-}
-
-interface SetOperatorAction {
-  type: "set-operator";
-  id: React.Key;
-  operator: string | null;
-  value?: HvQueryBuilderQueryRuleValue | null;
-}
-
-interface SetValueAction {
-  type: "set-value";
-  id: React.Key;
-  value: HvQueryBuilderQueryRuleValue | null;
-}
-
 export type QueryAction =
-  | ResetQueryAction
-  | ResetGroupAction
-  | AddRemoveAction
-  | SetCombinatorAction
-  | SetAttributeAction
-  | SetOperatorAction
-  | SetValueAction;
+  | {
+      type: "reset-query";
+    }
+  | {
+      type: "reset-group";
+      id: React.Key;
+    }
+  | {
+      type: "add-rule" | "add-group" | "remove-node";
+      id: React.Key;
+    }
+  | {
+      type: "set-combinator";
+      id: React.Key;
+      combinator: string;
+    }
+  | {
+      type: "set-attribute";
+      id: React.Key;
+      attribute?: string | null;
+      operator?: string | null;
+      value?: HvQueryBuilderQueryRuleValue | null;
+    }
+  | {
+      type: "set-operator";
+      id: React.Key;
+      operator: string | null;
+      value?: HvQueryBuilderQueryRuleValue | null;
+    }
+  | {
+      type: "set-value";
+      id: React.Key;
+      value: HvQueryBuilderQueryRuleValue | null | any;
+    };
 
 export interface AskAction {
   actions: QueryAction[];
@@ -230,3 +218,15 @@ export interface HvQueryBuilderLabels {
     spacer: string;
   };
 }
+
+export interface HvQueryBuilderRendererProps<V = any> {
+  id: React.Key;
+  attribute: string;
+  operator?: string;
+  value?: V;
+}
+
+export type HvQueryBuilderRenderers = Record<
+  string,
+  FC<HvQueryBuilderRendererProps>
+>;

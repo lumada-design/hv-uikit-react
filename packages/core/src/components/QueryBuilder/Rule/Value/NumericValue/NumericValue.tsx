@@ -1,11 +1,11 @@
-import { memo, useCallback, useContext, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import uniqueId from "lodash/uniqueId";
 import isEmpty from "lodash/isEmpty";
 import { useMediaQuery, useTheme } from "@mui/material";
 
 import { HvInput } from "@core/components/Input";
 
-import { HvQueryBuilderContext } from "../../../Context";
+import { useQueryBuilderContext } from "../../../Context";
 import { useClasses } from "./Numeric.styles";
 import { HvQueryBuilderNumericRange } from "../../../types";
 
@@ -25,7 +25,7 @@ export const NumericValue = ({
   const { classes, cx } = useClasses();
 
   const isRange = operator === "range";
-  const context = useContext(HvQueryBuilderContext);
+  const context = useQueryBuilderContext();
   const { labels, dispatchAction, readOnly } = context;
 
   const theme = useTheme();

@@ -1,8 +1,8 @@
-import { memo, useContext } from "react";
+import { memo } from "react";
 
 import { HvDropdown } from "@core/components/Dropdown";
 
-import { HvQueryBuilderContext } from "../../../Context";
+import { useQueryBuilderContext } from "../../../Context";
 import { isBigList } from "../../../utils";
 
 export interface BooleanValueProps {
@@ -11,7 +11,7 @@ export interface BooleanValueProps {
 }
 
 export const BooleanValue = ({ id, value = true }: BooleanValueProps) => {
-  const context = useContext(HvQueryBuilderContext);
+  const context = useQueryBuilderContext();
   const { labels, dispatchAction, readOnly } = context;
 
   const values = ["true", "false"].map((v) => ({
