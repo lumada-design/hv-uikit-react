@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
 import {
-  HvDashboard as Layout,
+  HvDashboard,
   HvDashboardProps,
   HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeTypeMeta,
   useFlowContext,
-  HvDashboardItem,
 } from "@hitachivantara/uikit-react-lab";
 import {
   HvButton,
@@ -27,13 +26,43 @@ import {
   DashboardsStorage,
   NodeGroup,
 } from "../types";
-import type { NodeTypes } from "../Flow";
-import { Renderer, RendererProps } from "../DashboardPreview/Renderers";
 
 interface Configuration {
   opened: boolean;
   config?: DashboardSpecs;
 }
+
+type PreviewProps = {
+  id: string;
+  type: string;
+  label: React.ReactNode;
+  node: any;
+};
+
+const PreviewRenderer = ({ label, node }: PreviewProps) => (
+  <div
+    className={css({
+      display: "flex",
+      flexDirection: "column",
+      flexWrap: "wrap",
+      width: "100%",
+      padding: theme.space.xs,
+      border: `1px solid ${theme.colors.atmo4}`,
+      borderRadius: theme.radii.round,
+      backgroundColor: theme.colors.atmo1,
+    })}
+  >
+    <HvTypography
+      variant="title4"
+      className={css({ marginBottom: theme.space.xs })}
+    >
+      {label}
+    </HvTypography>
+    <HvTypography className={css({ color: theme.colors.secondary_60 })}>
+      {node.data.title}
+    </HvTypography>
+  </div>
+);
 
 export const Dashboard: HvFlowNodeFC = (props) => {
   const { id } = props;
@@ -43,49 +72,19 @@ export const Dashboard: HvFlowNodeFC = (props) => {
   const [configuration, setConfiguration] = useState<Configuration>({
     opened: false,
   });
-  const [content, setContent] = useState<HvDashboardItem[]>();
+  const [content, setContent] = useState<PreviewProps[]>();
 
   const handleOpenConfig = () => {
     // Get from local storage
     const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
     const config = specs?.[id];
-    const ct = config?.items?.map<HvDashboardItem>((node) => {
-      const nodeType = node.type;
+
+    const ct = config?.items?.map<PreviewProps>((node) => {
+      const nodeType = node.type!;
       const label = nodeType && nodeTypes?.[nodeType].meta?.label;
 
-      return {
-        id: node.id,
-        type: nodeType as NodeTypes,
-        element: (
-          <div
-            className={css({
-              display: "flex",
-              flexDirection: "column",
-              flexWrap: "wrap",
-              width: "100%",
-              padding: theme.space.xs,
-              border: `1px solid ${theme.colors.atmo4}`,
-              borderRadius: theme.radii.round,
-              backgroundColor: theme.colors.atmo1,
-            })}
-          >
-            <HvTypography
-              variant="title4"
-              className={css({ marginBottom: theme.space.xs })}
-            >
-              {label}
-            </HvTypography>
-            <HvTypography
-              className={css({
-                color: theme.colors.secondary_60,
-              })}
-            >
-              {node.data.title}
-            </HvTypography>
-          </div>
-        ),
-      };
+      return { id: node.id, type: nodeType, label, node };
     });
 
     // Open
@@ -158,17 +157,20 @@ export const Dashboard: HvFlowNodeFC = (props) => {
           </HvTypography>
           {configuration.config?.layout &&
           configuration.config.layout.length > 0 ? (
-            <Layout
-              items={content}
+            <HvDashboard
               layout={configuration.config.layout}
-              renderItem={(item) => <Renderer {...(item as RendererProps)} />}
               compactType="vertical"
               rowHeight={80}
-              cols={12}
               margin={[16, 16]}
               containerPadding={[0, 16]}
               onLayoutChange={handleLayoutChange}
-            />
+            >
+              {content?.map((item) => (
+                <div key={item.id} className={css({ display: "flex" })}>
+                  <PreviewRenderer {...item} />
+                </div>
+              ))}
+            </HvDashboard>
           ) : (
             <HvEmptyState
               className={css({

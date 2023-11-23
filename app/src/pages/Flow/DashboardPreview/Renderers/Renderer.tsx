@@ -5,7 +5,6 @@ import {
   HvDonutChart,
   HvLineChart,
 } from "@hitachivantara/uikit-react-viz";
-import { HvDashboardItem } from "@hitachivantara/uikit-react-lab";
 
 import { NodeData } from "../../types";
 import { datasets } from "../../utils";
@@ -21,7 +20,9 @@ const useData = (endpointId?: string) => {
   return useSWR(url, loadArrow);
 };
 
-export interface RendererProps extends HvDashboardItem {
+export interface RendererProps<T extends string = string> {
+  id: string;
+  type: T;
   data: NodeData;
 }
 
