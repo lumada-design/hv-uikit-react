@@ -57,8 +57,8 @@ export const nodes = [
     data: {
       title: "Number of customers",
       unit: "",
-      measure: ["Customer"],
-      aggregation: ["distinct"],
+      measure: "Customer",
+      aggregation: "distinct",
     },
     type: "kpi",
   },
@@ -68,8 +68,8 @@ export const nodes = [
     data: {
       title: "Number of products",
       unit: "",
-      measure: ["Product"],
-      aggregation: ["distinct"],
+      measure: "Product",
+      aggregation: "distinct",
     },
     type: "kpi",
   },
@@ -110,8 +110,8 @@ export const nodes = [
     data: {
       title: "Total of sales",
       unit: "$",
-      measure: ["Sales"],
-      aggregation: ["sum"],
+      measure: "Sales",
+      aggregation: "sum",
     },
     type: "kpi",
   },
@@ -142,7 +142,7 @@ export const nodes = [
     position: { x: 182, y: 786 },
     data: {
       title: "Sales per territory",
-      measure: ["EMEA"],
+      measure: "EMEA",
     },
     type: "table",
   },

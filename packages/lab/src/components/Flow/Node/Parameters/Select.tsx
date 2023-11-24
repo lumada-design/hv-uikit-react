@@ -24,9 +24,7 @@ const Select = ({ nodeId, param, data }: SelectProps) => {
 
     const newOpts = Array.isArray(item)
       ? item.map((x) => x.label as string)
-      : item?.label
-      ? [item.label as string]
-      : undefined;
+      : (item?.label as string) ?? undefined;
 
     const newNodes = nodes.map((node) => {
       if (node.id === nodeId) {
@@ -39,7 +37,9 @@ const Select = ({ nodeId, param, data }: SelectProps) => {
     });
 
     reactFlowInstance.setNodes(newNodes);
-    setOpts(newOpts);
+    setOpts(
+      newOpts ? (Array.isArray(newOpts) ? newOpts : [newOpts]) : undefined
+    );
   };
 
   return (
