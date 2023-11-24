@@ -124,7 +124,17 @@ export const Dashboard: HvFlowNodeFC = (props) => {
 
   return (
     <>
-      <HvFlowNode description="Dashboard" {...props}>
+      <HvFlowNode
+        description="Dashboard"
+        inputs={[
+          {
+            label: "Visualizations",
+            isMandatory: true,
+            accepts: ["visualizations"],
+          },
+        ]}
+        {...props}
+      >
         <div
           className={css({
             display: "flex",
@@ -197,11 +207,4 @@ export const Dashboard: HvFlowNodeFC = (props) => {
 Dashboard.meta = {
   label: "Dashboard",
   groupId: "dashboard",
-  inputs: [
-    {
-      label: "Visualizations",
-      isMandatory: true,
-      accepts: ["visualizations"],
-    },
-  ],
 } satisfies HvFlowNodeTypeMeta<NodeGroup>;

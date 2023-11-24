@@ -16,6 +16,13 @@ export const Precipitation: HvFlowNodeFC<NodeGroups> = (props) => {
           options: Object.keys(data),
         },
       ]}
+      outputs={[
+        {
+          label: "Data",
+          isMandatory: true,
+          provides: "data",
+        },
+      ]}
       {...props}
     />
   );
@@ -24,11 +31,4 @@ export const Precipitation: HvFlowNodeFC<NodeGroups> = (props) => {
 Precipitation.meta = {
   label: "Precipitation",
   groupId: "sources",
-  outputs: [
-    {
-      label: "Data",
-      isMandatory: true,
-      provides: "data",
-    },
-  ],
 };

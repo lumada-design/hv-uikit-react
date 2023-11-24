@@ -55,8 +55,6 @@ export type HvFlowNodeTypeMeta<
 > = {
   label: string;
   groupId?: GroupId;
-  inputs?: HvFlowNodeInput[];
-  outputs?: HvFlowNodeOutput[];
   data?: NodeData;
 };
 

@@ -69,7 +69,25 @@ export const Filter: HvFlowNodeFC = (props) => {
   };
 
   return (
-    <HvFlowNode description="Filtering data" expanded {...props}>
+    <HvFlowNode
+      description="Filtering data"
+      expanded
+      inputs={[
+        {
+          label: "Data",
+          isMandatory: true,
+          accepts: ["jsonData"],
+        },
+      ]}
+      outputs={[
+        {
+          label: "Filtered Data",
+          isMandatory: false,
+          provides: "jsonData",
+        },
+      ]}
+      {...props}
+    >
       <HvCheckBoxGroup
         onChange={handleCheck}
         style={{
@@ -94,18 +112,4 @@ export const Filter: HvFlowNodeFC = (props) => {
 Filter.meta = {
   label: "Filter",
   groupId: "transformations",
-  inputs: [
-    {
-      label: "Data",
-      isMandatory: true,
-      accepts: ["jsonData"],
-    },
-  ],
-  outputs: [
-    {
-      label: "Filtered Data",
-      isMandatory: false,
-      provides: "jsonData",
-    },
-  ],
 };

@@ -21,27 +21,34 @@ export const Table: HvFlowNodeFC = (props) => {
     ];
   }, []);
 
-  return <HvFlowNode params={params} description="Table" expanded {...props} />;
+  return (
+    <HvFlowNode
+      params={params}
+      description="Table"
+      expanded
+      inputs={[
+        {
+          label: "Dataset",
+          isMandatory: true,
+          accepts: ["dataset"],
+          maxConnections: 1,
+        },
+      ]}
+      outputs={[
+        {
+          label: "Visualization",
+          isMandatory: true,
+          provides: "visualizations",
+        },
+      ]}
+      {...props}
+    />
+  );
 };
 
 Table.meta = {
   label: "Table",
   groupId: "visualization",
-  inputs: [
-    {
-      label: "Dataset",
-      isMandatory: true,
-      accepts: ["dataset"],
-      maxConnections: 1,
-    },
-  ],
-  outputs: [
-    {
-      label: "Visualization",
-      isMandatory: true,
-      provides: "visualizations",
-    },
-  ],
   data: {
     title: "",
     columns: undefined,

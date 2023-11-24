@@ -51,13 +51,18 @@ export const createDataset = ({
   data: any;
 }) => {
   const Dataset: HvFlowNodeFC = (props) => {
-    return <HvFlowNode description={description} {...props} />;
+    return (
+      <HvFlowNode
+        outputs={[{ label: "Dataset", isMandatory: true, provides: "dataset" }]}
+        description={description}
+        {...props}
+      />
+    );
   };
 
   Dataset.meta = {
     label,
     groupId: "dataset",
-    outputs: [{ label: "Dataset", isMandatory: true, provides: "dataset" }],
     data,
   };
 

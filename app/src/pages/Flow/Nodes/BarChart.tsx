@@ -49,28 +49,33 @@ export const BarChart: HvFlowNodeFC = (props) => {
   }, [edges, id, nodes]);
 
   return (
-    <HvFlowNode params={params} description="Bar Chart" expanded {...props} />
+    <HvFlowNode
+      params={params}
+      description="Bar Chart"
+      expanded
+      inputs={[
+        {
+          label: "Dataset",
+          isMandatory: true,
+          accepts: ["dataset"],
+          maxConnections: 1,
+        },
+      ]}
+      outputs={[
+        {
+          label: "Visualization",
+          isMandatory: true,
+          provides: "visualizations",
+        },
+      ]}
+      {...props}
+    />
   );
 };
 
 BarChart.meta = {
   label: "Bar Chart",
   groupId: "visualization",
-  inputs: [
-    {
-      label: "Dataset",
-      isMandatory: true,
-      accepts: ["dataset"],
-      maxConnections: 1,
-    },
-  ],
-  outputs: [
-    {
-      label: "Visualization",
-      isMandatory: true,
-      provides: "visualizations",
-    },
-  ],
   data: {
     title: "",
     measure: undefined,

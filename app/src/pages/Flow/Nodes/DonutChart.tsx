@@ -41,28 +41,33 @@ export const DonutChart: HvFlowNodeFC = (props) => {
   }, [edges, id, nodes]);
 
   return (
-    <HvFlowNode params={params} description="Donut Chart" expanded {...props} />
+    <HvFlowNode
+      params={params}
+      description="Donut Chart"
+      expanded
+      inputs={[
+        {
+          label: "Dataset",
+          isMandatory: true,
+          accepts: ["dataset"],
+          maxConnections: 1,
+        },
+      ]}
+      outputs={[
+        {
+          label: "Visualization",
+          isMandatory: true,
+          provides: "visualizations",
+        },
+      ]}
+      {...props}
+    />
   );
 };
 
 DonutChart.meta = {
   label: "Donut Chart",
   groupId: "visualization",
-  inputs: [
-    {
-      label: "Dataset",
-      isMandatory: true,
-      accepts: ["dataset"],
-      maxConnections: 1,
-    },
-  ],
-  outputs: [
-    {
-      label: "Visualization",
-      isMandatory: true,
-      provides: "visualizations",
-    },
-  ],
   data: {
     title: "",
     measure: undefined,

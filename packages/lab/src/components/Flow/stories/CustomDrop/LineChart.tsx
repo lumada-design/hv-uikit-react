@@ -18,6 +18,13 @@ export const LineChart: HvFlowNodeFC<NodeGroups> = (props) => {
       description="Line Chart"
       expanded
       classes={{ root: css({ width: 500 }) }}
+      inputs={[
+        {
+          label: "Data",
+          isMandatory: true,
+          accepts: ["data"],
+        },
+      ]}
       {...props}
     >
       {dataNode && dataNode.data && dataNode.data.country && (
@@ -44,11 +51,4 @@ export const LineChart: HvFlowNodeFC<NodeGroups> = (props) => {
 LineChart.meta = {
   label: "Line Chart",
   groupId: "visualizations",
-  inputs: [
-    {
-      label: "Data",
-      isMandatory: true,
-      accepts: ["data"],
-    },
-  ],
 };
