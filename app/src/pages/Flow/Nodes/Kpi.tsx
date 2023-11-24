@@ -40,27 +40,35 @@ export const Kpi: HvFlowNodeFC = (props) => {
       : undefined;
   }, [edges, id, nodes]);
 
-  return <HvFlowNode params={params} description="KPI" expanded {...props} />;
+  return (
+    <HvFlowNode
+      params={params}
+      description="KPI"
+      expanded
+      inputs={[
+        {
+          label: "Dataset",
+          isMandatory: true,
+          accepts: ["dataset"],
+          maxConnections: 1,
+        },
+      ]}
+      outputs={[
+        {
+          label: "Visualization",
+          isMandatory: true,
+          provides: "visualizations",
+        },
+      ]}
+      {...props}
+    />
+  );
 };
 
 Kpi.meta = {
   label: "KPI",
   groupId: "visualization",
-  inputs: [
-    {
-      label: "Dataset",
-      isMandatory: true,
-      accepts: ["dataset"],
-      maxConnections: 1,
-    },
-  ],
-  outputs: [
-    {
-      label: "Visualization",
-      isMandatory: true,
-      provides: "visualizations",
-    },
-  ],
+
   data: {
     title: "",
     unit: "",

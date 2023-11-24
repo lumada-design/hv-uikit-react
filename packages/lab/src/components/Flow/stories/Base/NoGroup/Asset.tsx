@@ -19,6 +19,18 @@ export const Asset: HvFlowNodeFC = (props) => {
         subTitle: "Asset",
         color: "cat11_80",
       }}
+      outputs={[
+        {
+          label: "Sensor Group 1",
+          isMandatory: true,
+          provides: "sensorData",
+        },
+        {
+          label: "Sensor Group 2",
+          isMandatory: true,
+          provides: "sensorData",
+        },
+      ]}
       {...props}
     />
   );
@@ -26,16 +38,4 @@ export const Asset: HvFlowNodeFC = (props) => {
 
 Asset.meta = {
   label: "My Asset",
-  outputs: [
-    {
-      label: "Sensor Group 1",
-      isMandatory: true,
-      provides: "sensorData",
-    },
-    {
-      label: "Sensor Group 2",
-      isMandatory: true,
-      provides: "sensorData",
-    },
-  ],
 };

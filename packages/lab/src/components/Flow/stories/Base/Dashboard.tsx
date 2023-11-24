@@ -15,6 +15,13 @@ export const Dashboard: HvFlowNodeFC<NodeGroups> = (props) => {
           options: ["Time Series", "KPI", "Table"],
         },
       ]}
+      inputs={[
+        {
+          label: "Insights",
+          isMandatory: true,
+          accepts: ["insight"],
+        },
+      ]}
       {...props}
     />
   );
@@ -23,12 +30,4 @@ export const Dashboard: HvFlowNodeFC<NodeGroups> = (props) => {
 Dashboard.meta = {
   label: "Dashboard",
   groupId: "dashboard",
-  inputs: [
-    {
-      label: "Insights",
-      isMandatory: true,
-      accepts: ["insight"],
-    },
-  ],
-  outputs: [],
 };

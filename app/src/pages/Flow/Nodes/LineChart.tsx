@@ -49,28 +49,33 @@ export const LineChart: HvFlowNodeFC = (props) => {
   }, [edges, id, nodes]);
 
   return (
-    <HvFlowNode params={params} description="Line Chart" expanded {...props} />
+    <HvFlowNode
+      params={params}
+      description="Line Chart"
+      expanded
+      inputs={[
+        {
+          label: "Dataset",
+          isMandatory: true,
+          accepts: ["dataset"],
+          maxConnections: 1,
+        },
+      ]}
+      outputs={[
+        {
+          label: "Visualization",
+          isMandatory: true,
+          provides: "visualizations",
+        },
+      ]}
+      {...props}
+    />
   );
 };
 
 LineChart.meta = {
   label: "Line Chart",
   groupId: "visualization",
-  inputs: [
-    {
-      label: "Dataset",
-      isMandatory: true,
-      accepts: ["dataset"],
-      maxConnections: 1,
-    },
-  ],
-  outputs: [
-    {
-      label: "Visualization",
-      isMandatory: true,
-      provides: "visualizations",
-    },
-  ],
   data: {
     title: "",
     measure: undefined,

@@ -19,6 +19,13 @@ export const BarChart: HvFlowNodeFC<NodeGroups> = (props) => {
       description="Bar Chart description"
       expanded
       classes={{ root: css({ width: 500 }) }}
+      inputs={[
+        {
+          label: "Data",
+          isMandatory: true,
+          accepts: ["jsonData"],
+        },
+      ]}
       {...props}
     >
       {dataNode?.data?.jsonData && dataNode.data.jsonData.length > 0 && (
@@ -43,12 +50,4 @@ export const BarChart: HvFlowNodeFC<NodeGroups> = (props) => {
 BarChart.meta = {
   label: "Bar Chart",
   groupId: "visualizations",
-  inputs: [
-    {
-      label: "Data",
-      isMandatory: true,
-      accepts: ["jsonData"],
-    },
-  ],
-  outputs: [],
 };

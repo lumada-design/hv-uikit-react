@@ -13,13 +13,14 @@ import {
 import { getColor } from "@hitachivantara/uikit-styles";
 import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
 
-import { useFlowContext, useFlowNode } from "../hooks/index";
-import { HvFlowNodeParam } from "../types/index";
+import { useFlowContext, useFlowNode } from "../hooks";
+import { HvFlowNodeInput, HvFlowNodeOutput, HvFlowNodeParam } from "../types";
 import { staticClasses, useClasses } from "./Node.styles";
 import ParamRenderer from "./Parameters/ParamRenderer";
 import { HvFlowBaseNode, HvFlowBaseNodeProps } from "./BaseNode";
 
 export { staticClasses as flowNodeClasses };
+
 // TODO How to include here the types from the parent component?
 export type HvFlowNodeClasses = ExtractNames<typeof useClasses>;
 
@@ -48,6 +49,10 @@ export interface HvFlowNodeProps<T = any>
   nodeDefaults?: HvFlowNodeDefaults;
   /** Props to be passed to the expand parameters button. */
   expandParamsButtonProps?: HvButtonProps;
+  /** Node outputs. */
+  outputs?: HvFlowNodeOutput[];
+  /** Node inputs. */
+  inputs?: HvFlowNodeInput[];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowNodeClasses | HvFlowBaseNodeProps<T>["classes"];
 }
@@ -61,6 +66,8 @@ export const HvFlowNode = ({
   headerItems,
   description,
   actions,
+  outputs,
+  inputs,
   actionCallback,
   maxVisibleActions = 1,
   expanded = false,
@@ -72,17 +79,18 @@ export const HvFlowNode = ({
   ...props
 }: HvFlowNodeProps<unknown>) => {
   const { classes } = useClasses(classesProp as HvFlowNodeClasses);
+
   const [showParams, setShowParams] = useState(expanded);
+
   const node = useFlowNode(id);
 
   const { nodeGroups, nodeTypes, defaultActions } = useFlowContext();
-  const groupId = nodeTypes?.[type].meta?.groupId;
+
   const subtitle = nodeTypes?.[type].meta?.label || nodeDefaults?.subTitle;
+  const groupId = nodeTypes?.[type].meta?.groupId;
+
   const groupLabel =
     (groupId && nodeGroups && nodeGroups[groupId].label) || nodeDefaults?.title;
-
-  const inputs = nodeTypes?.[type]?.meta?.inputs;
-  const outputs = nodeTypes?.[type]?.meta?.outputs;
   const icon =
     (groupId && nodeGroups && nodeGroups[groupId].icon) || nodeDefaults?.icon;
   const colorProp =

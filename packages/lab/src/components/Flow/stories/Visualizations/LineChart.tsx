@@ -18,6 +18,13 @@ export const LineChart: HvFlowNodeFC = (props) => {
       description="Line Chart description"
       expanded
       classes={{ root: css({ width: 500 }) }}
+      inputs={[
+        {
+          label: "Data",
+          isMandatory: true,
+          accepts: ["jsonData"],
+        },
+      ]}
       {...props}
     >
       {dataNode?.data?.jsonData && dataNode.data.jsonData.length > 0 && (
@@ -42,12 +49,4 @@ export const LineChart: HvFlowNodeFC = (props) => {
 LineChart.meta = {
   label: "Line Chart",
   groupId: "visualizations",
-  inputs: [
-    {
-      label: "Data",
-      isMandatory: true,
-      accepts: ["jsonData"],
-    },
-  ],
-  outputs: [],
 };

@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { css } from "@emotion/css";
 import {
   HvButton,
@@ -16,7 +15,7 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 import { Node } from "reactflow";
 
-import type { NodeGroups } from "./index";
+import type { NodeGroups } from ".";
 
 export const Asset: HvFlowNodeFC<NodeGroups> = (props) => {
   const { id } = props;
@@ -96,6 +95,18 @@ export const Asset: HvFlowNodeFC<NodeGroups> = (props) => {
             options: ["Option 1", "Option 2", "Option 3"],
           },
         ]}
+        outputs={[
+          {
+            label: "Sensor Group 1",
+            isMandatory: true,
+            provides: "sensorData",
+          },
+          {
+            label: "Sensor Group 2",
+            isMandatory: true,
+            provides: "sensorData",
+          },
+        ]}
         {...props}
       />
     </>
@@ -105,16 +116,4 @@ export const Asset: HvFlowNodeFC<NodeGroups> = (props) => {
 Asset.meta = {
   label: "My Asset",
   groupId: "assets",
-  outputs: [
-    {
-      label: "Sensor Group 1",
-      isMandatory: true,
-      provides: "sensorData",
-    },
-    {
-      label: "Sensor Group 2",
-      isMandatory: true,
-      provides: "sensorData",
-    },
-  ],
 };

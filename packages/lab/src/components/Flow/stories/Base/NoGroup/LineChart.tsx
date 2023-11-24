@@ -9,6 +9,13 @@ export const LineChart: HvFlowNodeFC = (props) => {
         subTitle: "Visualization",
         color: "cat12_80",
       }}
+      inputs={[
+        {
+          label: "Data",
+          isMandatory: true,
+          accepts: ["prediction", "detection"],
+        },
+      ]}
       {...props}
     />
   );
@@ -16,11 +23,4 @@ export const LineChart: HvFlowNodeFC = (props) => {
 
 LineChart.meta = {
   label: "LineChart",
-  inputs: [
-    {
-      label: "Data",
-      isMandatory: true,
-      accepts: ["prediction", "detection"],
-    },
-  ],
 };
