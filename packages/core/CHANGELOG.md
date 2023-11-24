@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.36.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.9...@hitachivantara/uikit-react-core@5.36.10) (2023-11-24)
+
+### Bug Fixes
+
+- **Table:** mark empty header on the table with `aria-hidden` when using the `useRowSelection` hook ([16d03d9](https://github.com/lumada-design/hv-uikit-react/commit/16d03d9127b520ab0da9252a9298d34e0d4def4a))
+
 ## [5.36.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.8...@hitachivantara/uikit-react-core@5.36.9) (2023-11-23)
 
 ### Bug Fixes

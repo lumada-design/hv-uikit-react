@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.17.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.16.5...@hitachivantara/uikit-react-lab@5.17.0) (2023-11-24)
+
+### Features
+
+- **Flow:** allow to specify input and output id ([6b4b8fc](https://github.com/lumada-design/hv-uikit-react/commit/6b4b8fc1bdfade77995a21a2e54824d2163c2742))
+- **Flow:** provide hook for retrieving node meta information ([8e2bdc0](https://github.com/lumada-design/hv-uikit-react/commit/8e2bdc0015e98f84f361cd59c74d1de044cee723))
+- **Flow:** refactor auxiliary hooks to use useStore hook ([8e0eac1](https://github.com/lumada-design/hv-uikit-react/commit/8e0eac1801f60d18fd67ce6c8f7dc130353dc612))
+
 ## [5.16.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.16.4...@hitachivantara/uikit-react-lab@5.16.5) (2023-11-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
