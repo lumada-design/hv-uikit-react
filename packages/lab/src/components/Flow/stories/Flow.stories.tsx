@@ -21,6 +21,8 @@ import { CustomDrop as CustomDropStory } from "./CustomDrop";
 import CustomDropRaw from "./CustomDrop?raw";
 import { NoGroups as NoGroupStory } from "./NoGroups";
 import NoGroupsRaw from "./NoGroups?raw";
+import { DynamicHandles as DynamicHandlesStory } from "./DynamicHandles";
+import DynamicHandlesRaw from "./DynamicHandles?raw";
 
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",
@@ -141,4 +143,20 @@ export const NoGroups: StoryObj<HvFlowProps> = {
     eyes: { include: false },
   },
   render: () => <NoGroupStory />,
+};
+
+export const DynamicHandles: StoryObj<HvFlowProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "In this sample nodes' inputs and outputs are dynamically generated.",
+      },
+      source: {
+        code: DynamicHandlesRaw,
+      },
+    },
+    eyes: { include: false },
+  },
+  render: () => <DynamicHandlesStory />,
 };
