@@ -210,7 +210,6 @@ export const AllComponents: StoryObj<HvCardProps> = {
         <HvCardMedia component="img" alt="Leaves" height={160} image={leaf} />
         <HvActionBar>
           <HvCheckBox
-            id="controller"
             onChange={() => setChecked(!checked)}
             checked={checked}
             value="value"

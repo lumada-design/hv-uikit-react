@@ -52,7 +52,6 @@ export const Main: StoryObj<HvPaginationProps> = {
         </StyledBox>
         <p />
         <HvPagination
-          id="pagination"
           pages={numPages}
           page={page}
           canPrevious={page > 0}

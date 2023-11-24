@@ -64,7 +64,7 @@ export const Main: StoryObj<HvAccordionProps> = {
   render: (args) => {
     return (
       <HvBox sx={{ maxWidth: 300 }}>
-        <HvAccordion id="item1" {...args}>
+        <HvAccordion id="main" {...args}>
           <HvListContainer
             className={css(styles.listContainer)}
             interactive
@@ -194,112 +194,46 @@ export const Controlled: StoryObj<HvAccordionProps> = {
         </HvSimpleGrid>
         <HvBox sx={{ maxWidth: 300 }}>
           <HvAccordion
-            id="controlled-item1"
             label="Personal Information"
             onChange={() => handleToggle("personalInformation")}
             expanded={expandedState.personalInformation}
           >
             <div className={css(styles.formContainer)}>
+              <HvInput label="Name" placeholder="Insert first name" required />
+              <HvInput label="Email" placeholder="Insert your email" required />
+              <HvInput label="Phone" placeholder="Insert your phone number" />
+              <HvInput label="Extension" placeholder="Insert phone extension" />
+              <HvInput label="Country" placeholder="Insert country name" />
               <HvInput
-                id="input-name"
-                label="Name"
-                placeholder="Insert first name"
-                required
-              />
-              <HvInput
-                id="input-email"
-                label="Email"
-                placeholder="Insert your email"
-                required
-              />
-              <HvInput
-                id="input-phone"
-                label="Phone"
-                placeholder="Insert your phone number"
-              />
-              <HvInput
-                id="input-extension"
-                label="Extension"
-                placeholder="Insert phone extension"
-              />
-              <HvInput
-                id="input-country"
-                label="Country"
-                placeholder="Insert country name"
-              />
-              <HvInput
-                id="input-province"
                 label="City/Province"
                 placeholder="Insert province name"
               />
             </div>
           </HvAccordion>
           <HvAccordion
-            id="controlled-item2"
             label="Billing Address"
             onChange={() => handleToggle("billingAddress")}
             expanded={expandedState.billingAddress}
           >
             <div className={css(styles.formContainer)}>
-              <HvInput
-                id="input-address"
-                label="Address 1"
-                placeholder="Insert first name"
-              />
-              <HvInput
-                id="input-address2"
-                label="Address 2"
-                placeholder="Insert address"
-              />
-              <HvInput
-                id="input-city"
-                label="City"
-                placeholder="Insert city name"
-              />
-              <HvInput
-                id="input-state"
-                label="State"
-                placeholder="Insert state"
-              />
-              <HvInput
-                id="input-code"
-                label="Zip Code"
-                placeholder="Insert code"
-              />
+              <HvInput label="Address 1" placeholder="Insert first name" />
+              <HvInput label="Address 2" placeholder="Insert address" />
+              <HvInput label="City" placeholder="Insert city name" />
+              <HvInput label="State" placeholder="Insert state" />
+              <HvInput label="Zip Code" placeholder="Insert code" />
             </div>
           </HvAccordion>
           <HvAccordion
-            id="controlled-item3"
             label="Shipping Address"
             onChange={() => handleToggle("shippingAddress")}
             expanded={expandedState.shippingAddress}
           >
             <div className={css(styles.formContainer)}>
-              <HvInput
-                id="input-address-bill"
-                label="Address 1"
-                placeholder="Insert first name"
-              />
-              <HvInput
-                id="input-address2-bill"
-                label="Address 2"
-                placeholder="Insert address"
-              />
-              <HvInput
-                id="input-city-bill"
-                label="City"
-                placeholder="Insert city name"
-              />
-              <HvInput
-                id="input-state-bill"
-                label="State"
-                placeholder="Insert state"
-              />
-              <HvInput
-                id="input-code-bill"
-                label="Zip Code"
-                placeholder="Insert code"
-              />
+              <HvInput label="Address 1" placeholder="Insert first name" />
+              <HvInput label="Address 2" placeholder="Insert address" />
+              <HvInput label="City" placeholder="Insert city name" />
+              <HvInput label="State" placeholder="Insert state" />
+              <HvInput label="Zip Code" placeholder="Insert code" />
             </div>
           </HvAccordion>
         </HvBox>
@@ -393,13 +327,12 @@ export const Typography: StoryObj<HvAccordionProps> = {
     return (
       <HvBox sx={{ width: "100%" }}>
         <HvAccordion
-          id="item1"
           label="Films"
           labelVariant="title4"
           headingLevel={2}
           expanded
         >
-          <HvTable id="accordion-table" {...getTableProps()}>
+          <HvTable {...getTableProps()}>
             <HvTableHead {...getTableHeadProps?.()}>
               {headerGroups.map((headerGroup) => (
                 <HvTableRow {...headerGroup.getHeaderGroupProps()}>

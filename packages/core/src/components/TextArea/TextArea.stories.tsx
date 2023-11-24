@@ -203,7 +203,6 @@ export const Variants: StoryObj<HvTextAreaProps> = {
     return (
       <div className={css(styles.root)}>
         <HvTextArea
-          id="required"
           rows={5}
           label="Required"
           placeholder="Enter value"
@@ -211,7 +210,6 @@ export const Variants: StoryObj<HvTextAreaProps> = {
           required
         />
         <HvTextArea
-          id="disabled"
           rows={5}
           label="Disabled"
           placeholder="Enter value"
@@ -219,7 +217,6 @@ export const Variants: StoryObj<HvTextAreaProps> = {
           disabled
         />
         <HvTextArea
-          id="readonly"
           rows={5}
           label="Readonly"
           placeholder="Enter value"
@@ -227,7 +224,6 @@ export const Variants: StoryObj<HvTextAreaProps> = {
           readOnly
         />
         <HvTextArea
-          id="invalid"
           rows={5}
           label="Invalid"
           placeholder="Enter value"
@@ -255,7 +251,6 @@ export const LimitedWithCustomLabels: StoryObj<HvTextAreaProps> = {
 
     return (
       <HvTextArea
-        id="limited-custom-label"
         rows={5}
         label="Label"
         description="You can write past the limit"
@@ -281,7 +276,6 @@ export const LimitedBlocking: StoryObj<HvTextAreaProps> = {
   render: () => {
     return (
       <HvTextArea
-        id="limited-blocking"
         defaultValue="Some text"
         rows={5}
         label="Label"
@@ -303,7 +297,6 @@ export const Resizable: StoryObj<HvTextAreaProps> = {
   render: () => {
     return (
       <HvTextArea
-        id="resize"
         label="Label"
         placeholder="Enter value"
         rows={5}
@@ -348,7 +341,6 @@ export const CustomValidation: StoryObj<HvTextAreaProps> = {
 
     return (
       <HvTextArea
-        id="custom-validation"
         rows={5}
         label="Label"
         placeholder="Enter value"

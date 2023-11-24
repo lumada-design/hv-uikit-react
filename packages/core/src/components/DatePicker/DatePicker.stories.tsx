@@ -148,7 +148,6 @@ export const Localized: StoryObj<HvDatePickerProps> = {
         <HvDatePicker
           placeholder={`Select a date in ${locale}`}
           locale={locale}
-          id="DatePicker"
           aria-label="Date"
         />
       </>
@@ -170,7 +169,6 @@ export const WithActions: StoryObj<HvDatePickerProps> = {
       <HvDatePicker
         showActions
         value={new Date(1970, 1, 2)}
-        id="DatePicker"
         placeholder="Select date"
         aria-label="Date"
       />
@@ -383,7 +381,6 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
 
     return (
       <HvDatePicker
-        id="DatePicker"
         aria-label="Date"
         startAdornment={options}
         rangeMode

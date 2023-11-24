@@ -33,7 +33,7 @@ export const Main: StoryObj<HvCheckBoxGroupProps> = {
   },
   render: (args) => {
     return (
-      <HvCheckBoxGroup id="main" {...args}>
+      <HvCheckBoxGroup {...args}>
         <HvCheckBox label="Checkbox 1" value="1" />
         <HvCheckBox label="Checkbox 2" value="2" checked />
         <HvCheckBox label="Checkbox 3" value="3" />

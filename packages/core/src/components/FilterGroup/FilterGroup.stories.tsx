@@ -92,7 +92,6 @@ export const Main: StoryObj<HvFilterGroupProps> = {
     return (
       <div style={{ width: 180 }}>
         <HvFilterGroup
-          id="filter-group-main"
           aria-label="Main filter group"
           value={value}
           filters={filters}
@@ -117,7 +116,6 @@ export const ResetToDefault: StoryObj<HvFilterGroupProps> = {
     return (
       <div style={{ width: 180 }}>
         <HvFilterGroup
-          id="filter-group-reset-default"
           aria-label="Reset to default filter group"
           value={value}
           defaultValue={[["category1"], [], []]}
@@ -140,7 +138,6 @@ export const Uncontrolled: StoryObj<HvFilterGroupProps> = {
     return (
       <div style={{ width: 180 }}>
         <HvFilterGroup
-          id="filter-group-uncontrolled"
           aria-label="Uncontrolled filter group"
           filters={filters}
         />
@@ -180,7 +177,6 @@ const EmptyFiltersStory = () => {
     <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
       <div style={{ width: 180 }}>
         <HvFilterGroup
-          id="filter-group-empty"
           aria-label="Empty filter group"
           filters={myFilters}
           filterContentProps={{ leftEmptyElement, rightEmptyElement }}
@@ -234,7 +230,6 @@ return (
     <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
     <div style={{ width: 180 }}>
         <HvFilterGroup
-        id="filter-group-empty"
         aria-label="Empty filter group"
         filters={myFilters}
         filterContentProps={{ leftEmptyElement, rightEmptyElement }}
