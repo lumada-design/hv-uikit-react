@@ -301,7 +301,9 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
       selectAllChecked: boolean
     ) => {
       let newValue: any[];
-      if (selectAllChecked) {
+      if (selectAllState === "some") {
+        newValue = [];
+      } else if (selectAllChecked) {
         newValue = [...allValues];
       } else {
         newValue = [];

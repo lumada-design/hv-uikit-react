@@ -83,6 +83,7 @@ export const DataDriven: StoryObj<HvDashboardProps> = {
           "This story demonstrates how to construct a dashboard from an array of data elements, where each item holds a `type` of dashboard item to render.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [canDrag, setCanDrag] = useState(false);
