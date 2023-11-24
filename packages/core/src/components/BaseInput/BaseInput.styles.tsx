@@ -215,10 +215,9 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
   input: {
     backgroundColor: "transparent",
     // height: "19px",
-    // marginLeft: theme.space.xs,
-    // marginRight: theme.space.xs,
-    padding: theme.spacing("6px", theme.space.xs, "5px"),
-    // padding: "6px 0 5px",
+    marginLeft: theme.space.xs,
+    marginRight: theme.space.xs,
+    padding: "6px 0 5px",
     overflow: "hidden",
     textOverflow: "ellipsis",
     outline: "none",
