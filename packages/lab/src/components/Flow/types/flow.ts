@@ -15,7 +15,7 @@ type NodeExtras<GroupId extends keyof any = string, NodeData = any> = {
 export interface HvFlowNodeFC<
   GroupId extends keyof any = string,
   NodeData = any
-> extends FC<NodeProps>,
+> extends FC<NodeProps<NodeData>>,
     NodeExtras<GroupId, NodeData> {}
 
 export interface HvFlowNodeComponentClass<
