@@ -115,7 +115,13 @@ export const HvProvider = ({
     <CacheProvider value={emotionCache}>
       <Global
         styles={cssReact`
-          ${cssBaseline === "global" && CssBaseline}
+          ${
+            cssBaseline === "global" && {
+              [`@layer hv-uikit-baseline`]: {
+                ...CssBaseline,
+              },
+            }
+          }
           ${getThemesVars(themesList)}
         `}
       />
@@ -136,7 +142,9 @@ export const HvProvider = ({
               if (rootElement) {
                 rootElement.classList.add(
                   css({
-                    ...CssScopedBaseline,
+                    [`@layer ${rootElementId}-baseline`]: {
+                      ...CssScopedBaseline,
+                    },
                   })
                 );
               }
@@ -148,7 +156,11 @@ export const HvProvider = ({
                 id={scopedRootId}
                 className={
                   cssBaseline === "scoped"
-                    ? css({ ...CssScopedBaseline })
+                    ? css({
+                        [`@layer ${rootElementId}-baseline`]: {
+                          ...CssScopedBaseline,
+                        },
+                      })
                     : undefined
                 }
               >
