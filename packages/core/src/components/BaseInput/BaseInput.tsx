@@ -139,7 +139,7 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
     rows = 10,
     minRows,
     maxRows,
-    // ...others
+    ...others
   } = useDefaultProps("HvBaseInput", props);
   const { classes, cx } = useClasses(classesProp);
   const formElementContext = useContext(HvFormElementContext);
@@ -192,6 +192,8 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
               className: cx(classes.inputRoot, {
                 [classes.inputRootInvalid]: localInvalid,
                 [classes.inputRootReadOnly]: formElementProps.readOnly,
+                [classes.inputDisabled]: disabled,
+                [classes.inputRootMultiline]: multiline,
               }),
             },
             input: {
@@ -212,8 +214,7 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
             ? { type: undefined, multiline: true, rows, minRows, maxRows }
             : { type, multiline: false })}
           // work around because material multiline type definition 'or'
-          // rows={10}
-          // {...others}
+          {...others}
         />
         {!multiline && (
           <div role="presentation" className={classes.inputBorderContainer} />

@@ -1,6 +1,8 @@
 import { CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 
+import { inputClasses } from "@mui/base";
+
 import { outlineStyles } from "@core/utils/focusUtils";
 import { createClasses } from "@core/utils/classes";
 
@@ -154,6 +156,18 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
 
     "&::after": {
       borderBottom: "none",
+    },
+    [`&.${inputClasses.focused}`]: {
+      backgroundColor: theme.colors.atmo1,
+      ...outlineStyles,
+
+      "&:hover": {
+        backgroundColor: theme.colors.atmo1,
+      },
+
+      "&$inputRootReadOnly": {
+        backgroundColor: theme.colors.atmo2,
+      },
     },
   },
   inputRootFocused: {
