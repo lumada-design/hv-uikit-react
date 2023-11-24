@@ -1,13 +1,18 @@
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
 import {
   HvBarChart,
   HvLineChart,
   HvDonutChart,
-  HvConfusionMatrix,
 } from "@hitachivantara/uikit-react-viz";
 import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
-import { HvSection, HvTypography } from "@hitachivantara/uikit-react-core";
+import {
+  HvButton,
+  HvSection,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
+import { Tool } from "@hitachivantara/uikit-react-icons";
 
 const meta: Meta<typeof HvDashboard> = {
   title: "Lab/Dashboard",
@@ -47,7 +52,7 @@ export const Main: StoryObj<HvDashboardProps> = {
   },
 };
 
-const itemIds = ["bar", "line", "conf", "donut", "bar", "txt"] as const;
+const itemIds = ["bar", "line", "donut", "bar"] as const;
 
 const dataDrivenItems = itemIds.map((type, i) => ({
   id: `${type}-${i}`,
@@ -64,18 +69,10 @@ const dataDrivenItems = itemIds.map((type, i) => ({
   measure: "Sales Target",
 }));
 
-const TxtRenderer = ({ data }) => (
-  <pre className={css({ width: "100%", overflow: "auto", textWrap: "wrap" })}>
-    <code>{JSON.stringify(Object.fromEntries(data))}</code>
-  </pre>
-);
-
 const componentMap: Record<(typeof itemIds)[number], any> = {
   bar: HvBarChart,
   line: HvLineChart,
   donut: HvDonutChart,
-  conf: HvConfusionMatrix,
-  txt: TxtRenderer,
 };
 
 export const DataDriven: StoryObj<HvDashboardProps> = {
@@ -83,38 +80,69 @@ export const DataDriven: StoryObj<HvDashboardProps> = {
     docs: {
       description: {
         story:
-          "This story demonstrates how to use the `HvDashboard` component to render",
+          "This story demonstrates how to construct a dashboard from an array of data elements, where each item holds a `type` of dashboard item to render.",
       },
     },
   },
   render: () => {
+    const [canDrag, setCanDrag] = useState(false);
+    const [canResize, setCanResize] = useState(true);
+
     return (
-      <HvDashboard
-        margin={[16, 16]}
-        layout={dataDrivenItems.map(({ id }, i) => ({
-          i: id,
-          x: (i % 2) * (12 / 2),
-          y: i * 4,
-          w: 12 / 2,
-          h: 3,
-          isDraggable: false,
-        }))}
-      >
-        {dataDrivenItems.map((item) => {
-          const { id, type, ...props } = item;
-          const Component = componentMap[type];
+      <>
+        <HvButton
+          variant="secondaryGhost"
+          startIcon={<Tool />}
+          onClick={() => setCanDrag((prev) => !prev)}
+        >
+          {`Drag is ${canDrag ? "enabled" : "disabled"}`}
+        </HvButton>
+        <HvButton
+          variant="secondaryGhost"
+          startIcon={<Tool />}
+          onClick={() => setCanResize((prev) => !prev)}
+        >
+          {`Resize is ${canResize ? "enabled" : "disabled"}`}
+        </HvButton>
+        <br />
+        <HvDashboard
+          margin={[16, 16]}
+          isDraggable={canDrag}
+          isResizable={canResize}
+          layout={dataDrivenItems.map(({ id }, i) => ({
+            i: id,
+            x: (i % 2) * (12 / 2),
+            y: i * 4,
+            w: 12 / 2,
+            h: 3,
+          }))}
+        >
+          {dataDrivenItems.map((item) => {
+            const { id, type, ...props } = item;
+            const Component = componentMap[type];
 
-          if (!Component) {
-            return <div>❌ Cannot render {type} dashboard item</div>;
-          }
+            if (!Component) {
+              return <div>❌ Cannot render {type} dashboard item</div>;
+            }
 
-          return (
-            <div key={item.id} className={css({ display: "flex" })}>
-              <Component {...props} />
-            </div>
-          );
-        })}
-      </HvDashboard>
+            return (
+              <div key={item.id} className={css({ display: "flex" })}>
+                <HvSection
+                  classes={{ content: css({ height: "100%" }) }}
+                  title={
+                    <HvTypography
+                      variant="title3"
+                      className={css({ textTransform: "capitalize" })}
+                    >{`${item.type} chart`}</HvTypography>
+                  }
+                >
+                  <Component {...props} />
+                </HvSection>
+              </div>
+            );
+          })}
+        </HvDashboard>
+      </>
     );
   },
 };

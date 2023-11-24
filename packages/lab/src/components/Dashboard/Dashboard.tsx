@@ -35,9 +35,15 @@ export interface HvDashboardProps extends Omit<ResponsiveProps, "cols"> {
   children: React.ReactNode;
   /** An object used to override or extend the styles applied. */
   classes?: HvDashboardClasses;
-  /** @inheritdoc */
+  /**
+   * Layout is an array of object with the format:
+   *
+   * `{i: string, x: number, y: number, w: number, h: number}`
+   *
+   * The `i` must match the key used on each item component.
+   */
   layout?: ReactGridLayoutProps["layout"];
-  /** @inheritdoc */
+  /** Number of grid columns or an object of breakpoint -> #columns */
   cols?: number | ResponsiveProps["cols"];
 }
 
@@ -46,6 +52,8 @@ export interface HvDashboardProps extends Omit<ResponsiveProps, "cols"> {
  * The children elements are grid items and must be `key`ed.
  *
  * @see https://github.com/react-grid-layout/react-grid-layout?tab=readme-ov-file#grid-layout-props
+ *
+ * DISCLAIMER: This component is a work in progress and there might be breaking changes.
  */
 export const HvDashboard = (props: HvDashboardProps) => {
   const {
