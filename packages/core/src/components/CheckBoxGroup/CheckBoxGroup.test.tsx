@@ -820,7 +820,7 @@ describe("CheckBoxGroup", () => {
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
 
-    it("should select all child checkboxes by clicking an indeterminate select all box", async () => {
+    it("should unselect all child checkboxes by clicking an indeterminate select all box", async () => {
       const { getAllByRole } = render(
         <HvCheckBoxGroup showSelectAll label="Favorite Pet">
           <HvCheckBox value="dogs" label="Dogs" checked />
@@ -839,11 +839,11 @@ describe("CheckBoxGroup", () => {
       // Check all
       await userEvent.click(selectAll);
 
-      expect(checkboxes[1]).toBeChecked();
-      expect(checkboxes[2]).toBeChecked();
-      expect(checkboxes[3]).toBeChecked();
+      expect(checkboxes[1]).not.toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
+      expect(checkboxes[3]).not.toBeChecked();
 
-      expect(selectAll).toBeChecked();
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
 
