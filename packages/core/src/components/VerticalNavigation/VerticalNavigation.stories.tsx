@@ -285,7 +285,7 @@ export const WithoutActions: StoryObj<HvVerticalNavigationProps> = {
 
     return (
       <div style={{ display: "flex", width: 220 }}>
-        <HvVerticalNavigation id="sample2">
+        <HvVerticalNavigation>
           <HvVerticalNavigationTree
             aria-label="Example 1 navigation"
             selected={value}

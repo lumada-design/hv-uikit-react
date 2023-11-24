@@ -157,7 +157,6 @@ export const DynamicSearch: StoryObj = {
     return (
       <>
         <HvInput
-          id="dynamic"
           type="search"
           label="Search country data"
           placeholder="Search"
@@ -367,7 +366,6 @@ export const SearchAsYouType: StoryObj = {
     return (
       <>
         <HvInput
-          id="dynamic"
           type="search"
           label="Filter countries"
           placeholder="Search"

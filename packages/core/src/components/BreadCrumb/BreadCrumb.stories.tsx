@@ -38,12 +38,7 @@ export const Main: StoryObj<HvBreadCrumbProps> = {
   },
   render: (args) => {
     return (
-      <HvBreadCrumb
-        listRoute={data}
-        id="breadcrumb1"
-        aria-label="Breadcrumb"
-        {...args}
-      >
+      <HvBreadCrumb listRoute={data} aria-label="Breadcrumb" {...args}>
         List
       </HvBreadCrumb>
     );
@@ -62,7 +57,6 @@ export const WithURL: StoryObj<HvBreadCrumbProps> = {
     return (
       <HvBreadCrumb
         url="https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx"
-        id="breadcrumb4"
         aria-label="Breadcrumb"
         {...args}
       />
@@ -83,7 +77,6 @@ export const WithURLLimited: StoryObj<HvBreadCrumbProps> = {
     return (
       <HvBreadCrumb
         url="https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx"
-        id="breadcrumb5"
         maxVisible={2}
         aria-label="Breadcrumb"
         {...args}
@@ -122,7 +115,6 @@ export const WithCustomComponent: StoryObj<HvBreadCrumbProps> = {
           to: `#${path}`,
           ariaLabel: label,
         }))}
-        id="breadcrumb6"
         aria-label="Breadcrumb"
         component={CustomNavLink}
       />
@@ -148,12 +140,7 @@ export const WithLongLabels: StoryObj<HvBreadCrumbProps> = {
     ];
 
     return (
-      <HvBreadCrumb
-        listRoute={longData}
-        id="breadcrumb7"
-        aria-label="Breadcrumb"
-        {...args}
-      />
+      <HvBreadCrumb listRoute={longData} aria-label="Breadcrumb" {...args} />
     );
   },
 };

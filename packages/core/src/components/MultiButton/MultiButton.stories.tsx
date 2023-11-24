@@ -63,7 +63,6 @@ export const OnlyLabels: StoryObj<HvMultiButtonProps> = {
       <HvMultiButton style={{ width: "210px" }}>
         {buttons.map((button, i) => (
           <HvButton
-            id={button.toLowerCase()}
             key={`${buttons[i]}`}
             selected={selection === i}
             onClick={() => setSelection(i)}
@@ -95,7 +94,6 @@ export const OnlyIcons: StoryObj<HvMultiButtonProps> = {
       <HvMultiButton style={{ width: "64px" }}>
         {buttons.map(({ name, icon }, i) => (
           <HvButton
-            id={name.toLowerCase()}
             key={`${buttons[i].name}`}
             icon
             aria-label={name}
@@ -259,7 +257,6 @@ export const EnforcedSelection: StoryObj<HvMultiButtonProps> = {
         <HvMultiButton>
           {range(5).map((i) => (
             <HvButton
-              id={`location${i + 1 || ""}`}
               key={`ef-${i}`}
               startIcon={<LocationPin />}
               selected={selection.includes(i)}
@@ -299,7 +296,6 @@ export const MinimumSelection: StoryObj<HvMultiButtonProps> = {
         <HvMultiButton>
           {range(5).map((i) => (
             <HvButton
-              id={`location${i + 1}`}
               key={`ms-${i}`}
               startIcon={<LocationPin />}
               selected={selection.includes(i)}
@@ -339,7 +335,6 @@ export const MaximumSelection: StoryObj<HvMultiButtonProps> = {
         <HvMultiButton>
           {range(5).map((i) => (
             <HvButton
-              id={`location${i + 1}`}
               key={`maxse-${i}`}
               startIcon={<LocationPin />}
               selected={selection.includes(i)}

@@ -78,7 +78,6 @@ export const Variants: StoryObj<HvTagsInputProps> = {
     return (
       <div className={css(styles.root)}>
         <HvTagsInput
-          id="tags-list-variants-1"
           label="Required"
           aria-label="Required"
           placeholder="Enter value"
@@ -86,7 +85,6 @@ export const Variants: StoryObj<HvTagsInputProps> = {
           value={[{ label: "tag 1" }, { label: "tag 2" }, { label: "tag 3" }]}
         />
         <HvTagsInput
-          id="tags-list-variants-2"
           label="Disabled"
           aria-label="Disabled"
           placeholder="Enter value"
@@ -98,7 +96,6 @@ export const Variants: StoryObj<HvTagsInputProps> = {
           ]}
         />
         <HvTagsInput
-          id="tags-list-variants-3"
           label="Readonly"
           aria-label="Readonly"
           placeholder="Enter value"
@@ -106,7 +103,6 @@ export const Variants: StoryObj<HvTagsInputProps> = {
           value={[{ label: "tag 7" }, { label: "tag 8" }, { label: "tag 9" }]}
         />
         <HvTagsInput
-          id="tags-list-variants-4"
           label="Invalid"
           aria-label="Invalid"
           placeholder="Enter value"
@@ -141,7 +137,6 @@ export const ControlledStringArray: StoryObj<HvTagsInputProps> = {
     return (
       <>
         <HvTagsInput
-          id="tags-list-2"
           label="Controlled with array of strings"
           aria-label="Controlled with array of string"
           description="A list of strings will result in semantic tags"
@@ -199,7 +194,6 @@ export const ControlledTagArray = () => {
       </StyledButtonWrapper>
 
       <HvTagsInput
-        id="tags-list-4"
         label="Controlled with array of tags"
         aria-label="Controlled with array of tags"
         placeholder="Enter value"
@@ -245,7 +239,6 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
     return (
       <>
         <HvTagsInput
-          id="tags-list-10"
           label="Controlled with validation"
           aria-label="Controlled with validation"
           description="A tag with a dash (-) will be invalid"
@@ -298,7 +291,6 @@ export const AddTagOnBlur: StoryObj<HvTagsInputProps> = {
 
     return (
       <HvTagsInput
-        id="tags-list-4"
         label="Adding tags on blur"
         aria-label="Adding tags on blur"
         placeholder="Enter value"
@@ -326,7 +318,6 @@ export const Multiline: StoryObj<HvTagsInputProps> = {
   render: () => {
     return (
       <StyledMultilineTagsInput
-        id="tags-list-9"
         label="MultiLine"
         aria-label="The label"
         placeholder="Enter value"
@@ -348,7 +339,6 @@ export const NotResizable: StoryObj<HvTagsInputProps> = {
   render: () => {
     return (
       <HvTagsInput
-        id="tags-list-7"
         label="Fixed size not resizable"
         aria-label="The label"
         placeholder="Enter value"
@@ -381,7 +371,6 @@ export const TagsCounterValidation: StoryObj<HvTagsInputProps> = {
 
     return (
       <HvTagsInput
-        id="tags-list-8"
         label="Tags"
         description="Maximum 3 tags"
         aria-label="The label"
@@ -410,7 +399,6 @@ export const CustomCommitCharacter: StoryObj<HvTagsInputProps> = {
   render: () => {
     return (
       <HvTagsInput
-        id="tags-list-11"
         label="Custom commit character"
         description="Will only add a tag when a space or comma is entered or when the user clicks outside the input box and there's text that's not been commited"
         aria-label="Custom commit character"
@@ -451,7 +439,6 @@ export const Suggestions: StoryObj<HvTagsInputProps> = {
 
     return (
       <StyledSuggestionsTagsInput
-        id="tags-list-12"
         label="Suggestions"
         description="A list of suggestions is presented when text is entered."
         aria-label="Suggestions"

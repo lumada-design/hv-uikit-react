@@ -210,7 +210,6 @@ export const WithControls: StoryObj<HvDonutChartProps> = {
           </HvTypography>
           <div className={css(styles.controllerGroup)}>
             <HvDropdown
-              id="dropdown1"
               aria-label="Time Period"
               placement="left"
               classes={{

@@ -61,7 +61,6 @@ const SampleComponent = ({ data, onChange }: SampleComponentProps) => (
     {data.map((el, i) => (
       <div key={el.id}>
         <HvCheckBox
-          id={el.id.toString()}
           label={el.value}
           checked={el.checked}
           onChange={(e, checked) => onChange(e, i, checked)}
@@ -173,7 +172,6 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
       actions && (
         <div>
           <HvBulkActions
-            id="bulkActions"
             numTotal={data.length}
             numSelected={data.filter((el) => el.checked).length}
             onSelectAll={handleSelectAll}
@@ -268,7 +266,6 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
     return (
       <>
         <HvBulkActions
-          id="bulkActions"
           numTotal={data.length}
           numSelected={data.filter((el) => el.checked).length}
           onSelectAll={handleSelectAll}
@@ -284,7 +281,6 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
         />
         <p />
         <HvPagination
-          id="pagination"
           pages={numPages}
           page={page}
           canPrevious={page > 0}

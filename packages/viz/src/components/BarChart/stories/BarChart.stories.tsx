@@ -207,7 +207,6 @@ export const CustomStackedBarChart: StoryObj<HvBarChartProps> = {
           </HvTypography>
           <div className={css(styles.controllerGroup)}>
             <HvDropdown
-              id="dropdown1"
               label="Time Period"
               placement="left"
               classes={{

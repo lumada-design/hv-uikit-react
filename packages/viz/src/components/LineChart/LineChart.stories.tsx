@@ -280,7 +280,6 @@ export const CustomMultipleLinesChart: StoryObj<HvLineChartProps> = {
           <div className={css(styles.controllerGroup)}>
             <HvDropdown
               className={css(styles.selectorPadding)}
-              id="dropdown1"
               classes={{
                 root: css(styles.root),
                 dropdown: css(styles.root),
@@ -292,7 +291,6 @@ export const CustomMultipleLinesChart: StoryObj<HvLineChartProps> = {
               onChange={(item) => setCountry((item as HvListValue).value)}
             />
             <HvDropdown
-              id="dropdown2"
               aria-label="Time Period"
               placement="left"
               classes={{

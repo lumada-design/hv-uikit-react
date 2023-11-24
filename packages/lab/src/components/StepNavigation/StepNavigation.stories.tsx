@@ -124,14 +124,12 @@ export const WithTooltip = () => (
     <HvStepNavigation
       type="Simple"
       steps={steps}
-      id="Simple-WithTooltip"
       showTitles={false}
       aria-label="Simple step navigation with tooltip"
     />
     <HvStepNavigation
       type="Default"
       steps={steps}
-      id="Default-WithTooltip"
       showTitles={false}
       aria-label="Default step navigation with tooltip"
     />
@@ -149,7 +147,6 @@ WithTooltip.parameters = {
 export const Width = () => (
   <HvStepNavigation
     steps={steps}
-    id="Width"
     width={{
       xs: 200,
       sm: 400,
@@ -196,7 +193,6 @@ export const Customized = () => {
         separatorClassName: separator,
         titleClassName: title,
       }))}
-      id="SeparatorWidth"
     />
   );
 };
