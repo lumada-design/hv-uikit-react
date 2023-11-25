@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.16.3 (2023-11-25)
+
+### Bug Fixes
+
+- **QueryBuilder:** deprecated typography removed and links replaced by buttons in empty state ([f41d9b9](https://github.com/lumada-design/hv-uikit-react/commit/f41d9b9cd888e8898d4d58e1b2366dc694085c9e))
+
 ## 5.16.2 (2023-11-17)
 
 ### Bug Fixes

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.36.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.10...@hitachivantara/uikit-react-core@5.36.11) (2023-11-25)
+
+### Bug Fixes
+
+- **CheckboxGroup:** fix incorrect select all or none behavior ([ad92d03](https://github.com/lumada-design/hv-uikit-react/commit/ad92d0372f42857c7ebf3803543e9d6798be42a8))
+- **QueryBuilder:** clear value when empty and is not empty operator is selected ([0191899](https://github.com/lumada-design/hv-uikit-react/commit/0191899ddd2d0f81b70f657a8547dc0a11971305))
+- **QueryBuilder:** deprecated typography removed and links replaced by buttons in empty state ([f41d9b9](https://github.com/lumada-design/hv-uikit-react/commit/f41d9b9cd888e8898d4d58e1b2366dc694085c9e))
+- **QueryBuilder:** onChange and query not mutated ([f00592d](https://github.com/lumada-design/hv-uikit-react/commit/f00592d1cbb3bab29f727d5c1ac54dd530951050))
+- **QueryBuilder:** types ([5321d09](https://github.com/lumada-design/hv-uikit-react/commit/5321d090488e35c78778deac3cd5c685dc1a06db))
+- **QueryBuilder:** zero not showing on numeric value ([c2ab0e3](https://github.com/lumada-design/hv-uikit-react/commit/c2ab0e3941198f3df41b4f67d5398d851e8d1843))
+
 ## [5.36.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.9...@hitachivantara/uikit-react-core@5.36.10) (2023-11-24)
 
 ### Bug Fixes

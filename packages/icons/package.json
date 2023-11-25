@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-icons",
-  "version": "5.7.4",
+  "version": "5.7.5",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "NEXT Design System icons packaged as a set of React components.",
@@ -42,7 +42,7 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@hitachivantara/uikit-styles": "^5.16.2"
+    "@hitachivantara/uikit-styles": "^5.16.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.12",

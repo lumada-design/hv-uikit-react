@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.18.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.17.0...@hitachivantara/uikit-react-lab@5.18.0) (2023-11-25)
+
+### Bug Fixes
+
+- **CheckboxGroup:** fix incorrect select all or none behavior ([ad92d03](https://github.com/lumada-design/hv-uikit-react/commit/ad92d0372f42857c7ebf3803543e9d6798be42a8))
+- **Flow:** set value as string if select is not multiple ([4df263e](https://github.com/lumada-design/hv-uikit-react/commit/4df263ea0a8eab7328bf58470ff663e1a1c3c119))
+
+### Features
+
+- **Dashboard:** add component to lab ([2aa404c](https://github.com/lumada-design/hv-uikit-react/commit/2aa404cceb2e9e764f50532a39b50b1f80fc76c1))
+- **Dashboard:** use children instead of render prop ([a5d27f8](https://github.com/lumada-design/hv-uikit-react/commit/a5d27f8d1c5a2d9d55ddfc6193d79b6d8ddf8ddc))
+
 # [5.17.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.16.5...@hitachivantara/uikit-react-lab@5.17.0) (2023-11-24)
 
 ### Features
