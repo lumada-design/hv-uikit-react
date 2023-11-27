@@ -177,18 +177,6 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
       },
     },
   },
-  inputRootFocused: {
-    backgroundColor: theme.colors.atmo1,
-    ...outlineStyles,
-
-    "&:hover": {
-      backgroundColor: theme.colors.atmo1,
-    },
-
-    "&$inputRootReadOnly": {
-      backgroundColor: theme.colors.atmo2,
-    },
-  },
   inputRootDisabled: {
     cursor: "not-allowed",
 
@@ -222,7 +210,6 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
   },
   input: {
     backgroundColor: "transparent",
-    // height: "19px",
     marginLeft: theme.space.xs,
     marginRight: theme.space.xs,
     padding: "6px 0 5px",
