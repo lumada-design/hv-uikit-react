@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, AllHTMLAttributes, useMemo } from "react";
 import styled from "@emotion/styled";
-import { theme, getColor } from "@hitachivantara/uikit-styles";
+import { theme, getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { isSemantic, isXS } from "./utils";
 
@@ -39,17 +39,17 @@ export const getIconSize = (
 
 export const getIconColors = (
   palette: string[] = [],
-  color?: string | string[],
+  color?: HvColorAny | HvColorAny[],
   semantic?: string,
   inverted = false
 ) => {
   const colorArray = palette;
 
   if (typeof color === "string") {
-    colorArray[0] = getColor(color) as string;
+    colorArray[0] = getColor(color)!;
   } else if (Array.isArray(color)) {
     colorArray.forEach((_, i) => {
-      colorArray[i] = getColor(color[i]) as string;
+      colorArray[i] = getColor(color[i])!;
     });
   }
 
@@ -153,7 +153,7 @@ export interface IconBaseProps extends HTMLDivProps {
    * Each element inside the array will override a different color.
    * You can use either an HEX or color name from the palette.
    */
-  color?: string | string[];
+  color?: HvColorAny | HvColorAny[];
   /** Sets one of the standard sizes of the icons */
   iconSize?: IconSize;
   /** A string that will override the viewbox of the svg */
