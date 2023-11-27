@@ -82,7 +82,14 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
       },
     },
   },
-  resizable: { width: "auto" },
+  resizable: {
+    width: "auto",
+    "& $inputRootMultiline": {
+      "& $input": {
+        resize: "vertical",
+      },
+    },
+  },
   readOnly: {
     "& $inputBorderContainer": {
       backgroundColor: "transparent",
@@ -206,6 +213,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
       overflow: "auto",
       marginLeft: "0px",
       marginRight: "0px",
+      resize: "none",
 
       "&:hover": {
         border: `1px solid ${theme.colors.primary}`,
