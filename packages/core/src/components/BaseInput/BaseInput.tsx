@@ -205,15 +205,15 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
               }),
               // Avoid the required attribute at the root node
               required: formElementProps.required,
+              ref: inputRef,
               ...inputProps,
               ...ariaProps,
             },
           }}
-          inputRef={inputRef}
           {...(multiline
             ? { type: undefined, multiline: true, rows, minRows, maxRows }
             : { type, multiline: false })}
-          // work around because material multiline type definition 'or'
+          // work around because of material multiline type definition 'or'
           {...others}
         />
         {!multiline && (
