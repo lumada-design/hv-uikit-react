@@ -35,8 +35,7 @@ export const DateTimeValue = ({
 
   const isRange = valueIsRange(operator);
 
-  const context = useQueryBuilderContext();
-  const { labels, dispatchAction, readOnly } = context;
+  const { labels, dispatchAction, readOnly } = useQueryBuilderContext();
 
   const elementId = uniqueId(`datetime${id}`);
 

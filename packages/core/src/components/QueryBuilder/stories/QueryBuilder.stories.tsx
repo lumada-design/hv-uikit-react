@@ -20,6 +20,7 @@ const meta: Meta<typeof HvQueryBuilder> = {
 export default meta;
 
 export const Main: StoryObj<HvQueryBuilderProps> = {
+  args: { disableConfirmation: false },
   argTypes: {
     classes: { control: { disable: true } },
     attributes: { control: { disable: true } },
@@ -46,7 +47,8 @@ export const InitialQuery: StoryObj<HvQueryBuilderProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Query Builder that parses the query to Mongo",
+        story:
+          "Query Builder that parses the query to Mongo. You can also control whether you want the confirmation dialogs, which are shown before removing rules and rule groups, to appear or not by clicking on the button. This button controls the `disableConfirmation` property of the query builder.",
       },
       source: {
         code: InitialQueryRaw,

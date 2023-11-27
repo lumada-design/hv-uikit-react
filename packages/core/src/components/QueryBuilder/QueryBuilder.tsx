@@ -50,6 +50,8 @@ export interface HvQueryBuilderProps {
   readOnly?: boolean;
   /** Renderers for custom attribute types. */
   renderers?: HvQueryBuilderRenderers;
+  /** Whether to opt-out of the confirmation dialogs shown before removing rules and rule groups. Default to `false`. */
+  disableConfirmation?: boolean;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvQueryBuilderClasses;
 }
@@ -69,6 +71,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     renderers,
     query,
     onChange,
+    disableConfirmation = false,
     operators = defaultOperators,
     combinators = defaultCombinators,
     maxDepth = 1,
@@ -107,6 +110,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       initialTouched: initialState,
       readOnly,
       renderers,
+      disableConfirmation,
     }),
     [
       attributes,
@@ -117,6 +121,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       readOnly,
       initialState,
       renderers,
+      disableConfirmation,
     ]
   );
 

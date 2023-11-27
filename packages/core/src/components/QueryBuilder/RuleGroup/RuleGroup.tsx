@@ -31,10 +31,16 @@ export const RuleGroup = ({
 }: RuleGroupProps) => {
   const { classes, cx } = useClasses(classesProp);
 
-  const context = useQueryBuilderContext();
+  const {
+    dispatchAction,
+    askAction,
+    maxDepth,
+    combinators,
+    labels,
+    readOnly,
+    disableConfirmation,
+  } = useQueryBuilderContext();
 
-  const { dispatchAction, askAction, maxDepth, combinators, labels, readOnly } =
-    context;
   const normalizedMaxDepth = maxDepth - 1;
 
   const actionButtons = (
@@ -128,15 +134,17 @@ export const RuleGroup = ({
             <HvButton
               icon
               className={classes.removeButton}
-              onClick={() => {
-                askAction({
-                  actions: [{ type: "remove-node", id }],
-                  dialog:
-                    level === 0 && labels.query?.delete != null
-                      ? labels.query.delete
-                      : labels.group.delete,
-                });
-              }}
+              onClick={() =>
+                disableConfirmation
+                  ? dispatchAction({ type: "remove-node", id })
+                  : askAction({
+                      actions: [{ type: "remove-node", id }],
+                      dialog:
+                        level === 0 && labels.query?.delete != null
+                          ? labels.query.delete
+                          : labels.group.delete,
+                    })
+              }
               aria-label={
                 level === 0 && labels.query?.delete?.ariaLabel
                   ? labels.query?.delete?.ariaLabel

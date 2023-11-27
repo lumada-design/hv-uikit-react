@@ -11,8 +11,7 @@ export interface BooleanValueProps {
 }
 
 export const BooleanValue = ({ id, value = true }: BooleanValueProps) => {
-  const context = useQueryBuilderContext();
-  const { labels, dispatchAction, readOnly } = context;
+  const { labels, dispatchAction, readOnly } = useQueryBuilderContext();
 
   const values = ["true", "false"].map((v) => ({
     id: v,

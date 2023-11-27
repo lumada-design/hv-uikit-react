@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { HvQueryBuilder } from "@hitachivantara/uikit-react-core";
+import { css } from "@emotion/css";
+import {
+  HvQueryBuilder,
+  HvButton,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+import { Topics } from "@hitachivantara/uikit-react-icons";
 
 import queryToMongo from "./queryToMongo";
 
@@ -76,9 +82,19 @@ const initialQuery = {
 
 export const InitialQuery = () => {
   const [mongoQuery, setMongoQuery] = useState(queryToMongo(initialQuery));
+  const [disable, setDisable] = useState(false);
 
   return (
     <>
+      <HvButton
+        variant="secondarySubtle"
+        startIcon={<Topics />}
+        onClick={() => setDisable(!disable)}
+        className={css({ marginBottom: theme.space.sm })}
+      >
+        {disable ? "Show" : "Hide"} confirmation dialogs
+      </HvButton>
+
       <HvQueryBuilder
         attributes={attributes}
         query={initialQuery}
@@ -89,6 +105,7 @@ export const InitialQuery = () => {
             console.log("error: ", error.toString());
           }
         }}
+        disableConfirmation={disable}
       />
       <pre>{JSON.stringify(mongoQuery, null, 2)}</pre>
     </>
