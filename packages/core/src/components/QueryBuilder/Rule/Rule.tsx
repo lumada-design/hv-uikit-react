@@ -40,15 +40,22 @@ export const Rule = (props: RuleProps) => {
     isInvalid,
     classes: classesProp,
   } = useDefaultProps("HvQueryBuilderRule", props);
+
   const { classes, cx } = useClasses(classesProp);
 
-  const context = useQueryBuilderContext();
+  const {
+    askAction,
+    dispatchAction,
+    attributes,
+    operators,
+    labels,
+    readOnly,
+    disableConfirmation,
+  } = useQueryBuilderContext();
 
   const theme = useTheme();
 
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
-
-  const { askAction, attributes, operators, labels, readOnly } = context;
 
   const availableOperators = useMemo(() => {
     const attributeSpec =
@@ -117,12 +124,14 @@ export const Rule = (props: RuleProps) => {
         <HvButton
           icon
           aria-label={labels.rule.delete.ariaLabel}
-          onClick={() => {
-            askAction({
-              actions: [{ type: "remove-node", id }],
-              dialog: labels.rule.delete,
-            });
-          }}
+          onClick={() =>
+            disableConfirmation
+              ? dispatchAction({ type: "remove-node", id })
+              : askAction({
+                  actions: [{ type: "remove-node", id }],
+                  dialog: labels.rule.delete,
+                })
+          }
           disabled={readOnly}
         >
           <DeleteIcon />

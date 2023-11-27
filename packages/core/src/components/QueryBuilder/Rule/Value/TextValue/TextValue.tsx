@@ -19,9 +19,10 @@ export const TextValue = ({
 }: TextValueProps) => {
   const { classes } = useClasses();
 
-  const context = useQueryBuilderContext();
-  const { labels, dispatchAction, readOnly } = context;
+  const { labels, dispatchAction, readOnly } = useQueryBuilderContext();
+
   const [touched, setTouched] = useState(initialTouched);
+
   const isValid = value != null && value.toString().trim() !== "";
 
   let status: HvFormStatus = isValid ? "valid" : "invalid";

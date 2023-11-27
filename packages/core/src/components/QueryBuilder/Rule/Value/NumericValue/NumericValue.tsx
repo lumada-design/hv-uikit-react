@@ -25,8 +25,7 @@ export const NumericValue = ({
   const { classes, cx } = useClasses();
 
   const isRange = operator === "range";
-  const context = useQueryBuilderContext();
-  const { labels, dispatchAction, readOnly } = context;
+  const { labels, dispatchAction, readOnly } = useQueryBuilderContext();
 
   const theme = useTheme();
 

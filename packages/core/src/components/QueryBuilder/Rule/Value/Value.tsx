@@ -19,8 +19,7 @@ export const Value = ({
   operator,
   value: valueProp,
 }: ValueProps) => {
-  const context = useQueryBuilderContext();
-  const { attributes, initialTouched, renderers } = context;
+  const { attributes, initialTouched, renderers } = useQueryBuilderContext();
 
   const value =
     attribute && attributes ? { ...attributes[attribute] } : { type: null };

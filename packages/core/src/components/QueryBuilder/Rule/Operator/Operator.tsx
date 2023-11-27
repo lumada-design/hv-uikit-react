@@ -18,9 +18,8 @@ export const Operator = ({
   attribute,
   operator,
 }: OperatorProps) => {
-  const context = useQueryBuilderContext();
-
-  const { dispatchAction, attributes, operators, labels, readOnly } = context;
+  const { dispatchAction, attributes, operators, labels, readOnly } =
+    useQueryBuilderContext();
 
   const value = operator ?? null;
 

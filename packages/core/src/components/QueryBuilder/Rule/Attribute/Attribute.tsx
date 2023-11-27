@@ -18,9 +18,8 @@ export const Attribute = ({
   disabled,
   isInvalid,
 }: AttributeProps) => {
-  const context = useQueryBuilderContext();
-
-  const { dispatchAction, attributes, operators, labels, readOnly } = context;
+  const { dispatchAction, attributes, operators, labels, readOnly } =
+    useQueryBuilderContext();
 
   const values = useMemo(() => {
     if (!attributes) return [];
