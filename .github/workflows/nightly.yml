@@ -13,18 +13,16 @@ jobs:
   static-checks:
     name: Static Checks
     uses: ./.github/workflows/static-checks.yml
+    secrets:
+      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+    with:
+      a11y-publish: true
 
   applitools:
     name: Applitools Tests
     uses: ./.github/workflows/tests-applitools.yml
     secrets:
       APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
-
-  a11y:
-    name: a11y Tests
-    uses: ./.github/workflows/tests-a11y.yml
-    secrets:
-      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
 
   security-scans:
     name: Security Scans
