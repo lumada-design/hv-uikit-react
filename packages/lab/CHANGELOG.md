@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.18.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.18.1...@hitachivantara/uikit-react-lab@5.18.2) (2023-11-28)
+
+### Bug Fixes
+
+- **Flow:** add missing data type ([6d4cb82](https://github.com/lumada-design/hv-uikit-react/commit/6d4cb825f3c8360b7c98194442cfc61220de163f))
+- **Flow:** transfer node inputs/outputs to props and not metadata ([2002f46](https://github.com/lumada-design/hv-uikit-react/commit/2002f466d949928d4889e63d12640bec1b69d13a))
+
 ## [5.18.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.18.0...@hitachivantara/uikit-react-lab@5.18.1) (2023-11-28)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
