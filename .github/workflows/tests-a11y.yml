@@ -9,7 +9,7 @@ on:
     inputs:
       publish:
         type: boolean
-        default: false
+        required: true
 
 jobs:
   run-tests:

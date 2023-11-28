@@ -14,6 +14,8 @@ jobs:
   a11y:
     name: A11y Tests
     uses: ./.github/workflows/tests-a11y.yml
+    with:
+      publish: false
 
   applitools:
     name: Applitools
