@@ -84,14 +84,6 @@ export const DataDriven: StoryObj<HvDashboardProps> = {
       },
     },
     eyes: { include: false },
-    a11y: {
-      config: {
-        rules: [
-          { id: "aria-prohibited-attr", enabled: false },
-          { id: "color-contrast", enabled: false },
-        ],
-      },
-    },
   },
   render: () => {
     const [canDrag, setCanDrag] = useState(false);
