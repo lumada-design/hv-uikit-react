@@ -1,18 +1,17 @@
-import { useContext } from "react";
-
-import {
-  InputBaseComponentProps as MuiInputBaseComponentProps,
-  InputBaseProps,
-} from "@mui/material";
+import { Ref, useContext } from "react";
 
 import {
   Input as MuiBaseInput,
+  InputInputSlotPropsOverrides as MuiBaseInputInputSlotPropsOverrides,
+  InputOwnerState as MuiBaseInputOwnerState,
   InputProps as MuiBaseInputProps,
 } from "@mui/base/Input";
 
 import { css as emotionCss, Global } from "@emotion/react";
 
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { SlotComponentProps } from "@mui/base/utils/types";
 
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
@@ -71,46 +70,28 @@ export interface HvBaseInputProps
       | "onKeyUp"
       | "onClick"
     > {
-  /** The input name. */
-  name?: string;
-  /** The value of the input, when controlled. */
-  value?: string;
   /** The initial value of the input, when uncontrolled. */
   defaultValue?: string;
-  /** If `true` the input is disabled. */
-  disabled?: boolean;
-  /** Indicates that the input is not editable. */
-  readOnly?: boolean;
-  /** If true, the input element will be required. */
-  required?: boolean;
   /** The function that will be executed onChange, allows modification of the input,
    * it receives the value. If a new value should be presented it must returned it. */
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     value: string
   ) => void;
-  /** The input type. */
-  type?: React.HTMLInputTypeAttribute;
-  /** Label inside the input used to help user. */
-  placeholder?: string;
   /** If true, a textarea element will be rendered. */
-  multiline?: boolean;
-  /** If true and multiline is also true the textarea element will be resizable. */
   resizable?: boolean;
   /** Denotes if the input is in an invalid state. */
   invalid?: boolean;
   /** Attributes applied to the input element. */
-  inputProps?: MuiInputBaseComponentProps;
+  inputProps?: SlotComponentProps<
+    "input",
+    MuiBaseInputInputSlotPropsOverrides,
+    MuiBaseInputOwnerState
+  >;
   /** Allows passing a ref to the underlying input */
-  inputRef?: InputBaseProps["inputRef"];
+  inputRef?: Ref<HTMLInputElement | HTMLTextAreaElement>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBaseInputClasses;
-
-  rows?: number;
-
-  minRoes?: number;
-
-  maxRows?: number;
 }
 
 /**
@@ -129,7 +110,7 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
     readOnly,
     disabled,
     onChange,
-    type = "text",
+    type,
     placeholder,
     multiline = false,
     resizable = false,
@@ -205,15 +186,15 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
               }),
               // Avoid the required attribute at the root node
               required: formElementProps.required,
-              ref: inputRef,
               ...inputProps,
               ...ariaProps,
             },
           }}
+          inputRef={inputRef}
           {...(multiline
-            ? { type: undefined, multiline: true, rows, minRows, maxRows }
-            : { type, multiline: false })}
-          // work around because of material multiline type definition 'or'
+            ? { type: undefined, multiline, rows, minRows, maxRows }
+            : { type, multiline })}
+          // work around because material multiline type definition 'or'
           {...others}
         />
         {!multiline && (

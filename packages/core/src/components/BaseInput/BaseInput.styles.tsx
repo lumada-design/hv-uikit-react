@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { inputClasses } from "@mui/base";
+import { inputClasses } from "@mui/base/Input";
 
 import { outlineStyles } from "@core/utils/focusUtils";
 import { createClasses } from "@core/utils/classes";
