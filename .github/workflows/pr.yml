@@ -11,6 +11,10 @@ jobs:
     name: Static Checks
     uses: ./.github/workflows/static-checks.yml
 
+  a11y:
+    name: A11y Tests
+    uses: ./.github/workflows/tests-a11y.yml
+
   applitools:
     name: Applitools
     uses: ./.github/workflows/tests-applitools.yml

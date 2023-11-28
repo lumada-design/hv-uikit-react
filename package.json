@@ -19,7 +19,7 @@
     "build:doc": "storybook build -o dist --quiet && node scripts/storybook-title",
     "build:app": "vite build app",
     "test": "lerna run test",
-    "test:a11y": "node scripts/a11y-report",
+    "test:a11y": "node scripts/a11y/report.js",
     "test:eyes": "npx eyes-storybook -f .config/applitools.config.js",
     "coverage": "lerna run coverage",
     "prettier": "prettier --check .",

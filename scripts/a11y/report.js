@@ -1,36 +1,16 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-console */
-const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
-const storybookUrl = process.env.STORYBOOK_URL || "http://localhost:6006";
+const { createReport, outputDir, storybookUrl } = require("./base");
 
-const outputDir = process.env.A11Y_OUTPUT_DIR || "a11y-report";
-
-// stories to exclude
-const excludeStories = [
-  "Overview/**",
-  "Foundation/**",
-  "Guides/**",
-  "Templates/**",
-  "Visualizations/Bar Chart/**",
-  "Visualizations/Line Chart/**",
-  "Visualizations/Donut Chart/**",
-  "Visualizations/Confusion Matrix/**",
-  "Widgets/Code Editor/**",
-]
-  .map((s) => `-e "${s}"`)
-  .join(" ");
-
-const buildReport = () => {
+const init = () => {
   try {
     console.log("⏳ Creating report...");
 
     // Create report
-    execSync(
-      `npx storybook-a11y-report --storybookUrl ${storybookUrl} --outputFormat html --outDir ${outputDir} ${excludeStories}`
-    );
+    createReport();
 
     console.log("⏳ Adding custom CSS to report...");
 
@@ -82,4 +62,4 @@ const buildReport = () => {
   }
 };
 
-buildReport();
+init();

@@ -5,7 +5,11 @@ on:
   workflow_call:
     secrets:
       ORG_GHPAGES_DEPLOY_KEY:
-        required: true
+        required: false
+    inputs:
+      publish:
+        type: boolean
+        default: false
 
 jobs:
   run-tests:
@@ -25,11 +29,19 @@ jobs:
           NODE_OPTIONS: "--max_old_space_size=8192"
         shell: bash
 
-      - name: Run Tests
+      - name: Run tests for publication
+        if: ${{ inputs.publish == 'true' }}
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
           "npx serve dist -l 6006 -L" \
-          "npx wait-on tcp:6006 && npm run test:a11y" || true
+          "npx wait-on tcp:6006 && npm run test:a11y"
+
+      - name: Run tests for basic reporting
+        if: ${{ inputs.publish == 'false' }}
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+          "npx serve dist -l 6006 -L" \
+          "npx wait-on tcp:6006 && node scripts/a11y/cli.js"
 
       - name: Archive a11y report
         if: always()
@@ -40,7 +52,7 @@ jobs:
           retention-days: 2
 
       - name: Deploy Artifacts
-        if: always()
+        if: ${{ inputs.publish == 'true' }}
         uses: ./.github/actions/deploy-artifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

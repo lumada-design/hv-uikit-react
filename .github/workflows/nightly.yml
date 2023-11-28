@@ -25,6 +25,8 @@ jobs:
     uses: ./.github/workflows/tests-a11y.yml
     secrets:
       ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+    with:
+      publish: true
 
   security-scans:
     name: Security Scans
