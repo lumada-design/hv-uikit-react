@@ -39,11 +39,3 @@ jobs:
       - name: Eyes Storybook
         run: npm run test:eyes
         timeout-minutes: 30
-
-      - name: Archive Logs
-        uses: actions/upload-artifact@v3
-        if: failure()
-        with:
-          name: applitools-logs
-          path: ${{ github.workspace }}/applitools-logs.txt
-          retention-days: 2
