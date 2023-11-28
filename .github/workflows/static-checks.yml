@@ -3,6 +3,18 @@ name: Checks
 on:
   workflow_dispatch:
   workflow_call:
+    secrets:
+      ORG_GHPAGES_DEPLOY_KEY:
+        required: false
+    inputs:
+      a11y-publish:
+        type: boolean
+        default: false
+        required: false
+      a11y-exit:
+        type: boolean
+        default: false
+        required: false
 
 env:
   LICENSES_WHITELIST: Apache-2.0\;ISC\;BSD-2-Clause\;BSD-3-Clause\;MIT\;W3C\;Zlib\;CC-BY-4.0
@@ -42,6 +54,15 @@ jobs:
 
       - name: Run Test
         run: npm run test
+
+  a11y:
+    name: A11y Tests
+    uses: ./.github/workflows/tests-a11y.yml
+    secrets:
+      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+    with:
+      publish: ${{ inputs.a11y-publish }}
+      exit: ${{ inputs.a11y-exit }}
 
   build:
     name: Build
