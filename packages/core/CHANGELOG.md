@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.37.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.11...@hitachivantara/uikit-react-core@5.37.0) (2023-11-28)
+
+### Bug Fixes
+
+- **Dropdown:** wrong validation due to async state ([8058cf0](https://github.com/lumada-design/hv-uikit-react/commit/8058cf0a5c2feb63fb9788e779c29878041bce57))
+- **Theme:** added [@layer](https://github.com/layer) rule to set priority on css baselines ([8c92d6b](https://github.com/lumada-design/hv-uikit-react/commit/8c92d6b7b699f1464d09229bb0a11a2c7f19aa81))
+
+### Features
+
+- **QueryBuilder:** custom renderers ([ffe4ba1](https://github.com/lumada-design/hv-uikit-react/commit/ffe4ba120e094c776734a9c44403cb6f53bee3bc))
+- **QueryBuilder:** opt-out of confirmation dialogs ([e2c8c5d](https://github.com/lumada-design/hv-uikit-react/commit/e2c8c5d977831a00aef5b41df7739680e7171717))
+
 ## [5.36.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.36.10...@hitachivantara/uikit-react-core@5.36.11) (2023-11-25)
 
 ### Bug Fixes
