@@ -8,7 +8,7 @@ const storybookUrl = process.env.STORYBOOK_URL || "http://localhost:6006";
 
 const outputDir = process.env.A11Y_OUTPUT_DIR || "a11y-report";
 
-// stories to exclude
+// Stories to exclude
 const excludeStories = [
   "Overview/**",
   "Foundation/**",
@@ -23,27 +23,26 @@ const excludeStories = [
   .map((s) => `-e "${s}"`)
   .join(" ");
 
-const buildReport = () => {
+const init = () => {
   try {
-    console.log("⏳ Creating report...");
+    console.log("⏳ Testing a11y...");
 
-    // Create report
+    // Run a11y and create a report
     execSync(
       `npx storybook-a11y-report --storybookUrl ${storybookUrl} --outputFormat html --outDir ${outputDir} ${excludeStories}`
     );
 
-    console.log("⏳ Adding custom CSS to report...");
-
+    // File paths
     const reportDir = path.resolve(__dirname, `../../${outputDir}`);
     const reportFile = [reportDir, "/a11y_report.html"].join("");
     const cssFile = path.resolve(__dirname, "styles.css");
+    const htmlData = fs.readFileSync(reportFile, "utf8");
 
     // Add CSS file to report directory
     fs.mkdirSync([reportDir, "/styles"].join(""));
     fs.copyFileSync(cssFile, [reportDir, "/styles/styles.css"].join(""));
 
     // Customize report
-    const htmlData = fs.readFileSync(reportFile, "utf8");
     let updatedHtml = htmlData
       .replace(
         "<title>Accessibility report</title>",
@@ -84,10 +83,31 @@ const buildReport = () => {
     fs.renameSync(reportFile, [reportDir, "/index.html"].join(""));
 
     console.log("Report created 🚀");
+
+    // Look for violations
+    const regex = /<h2>.* violations have been found/g;
+    const violations = htmlData.match(regex);
+
+    if (violations) {
+      // Violations were found
+      const countStr = violations[0].replace("<h2>", "").trim();
+      console.log(`❌ ${countStr}`);
+
+      // Exit
+      if (
+        process.argv[2] === "--exit" &&
+        process.argv[3]?.toString() === "true"
+      ) {
+        process.exit(1);
+      }
+    } else {
+      // No violations found
+      console.log("✅ No a11y issues found");
+    }
   } catch (error) {
-    console.error("❌ Error creating the report:", error);
+    console.error("❌ A11y error:", error);
     process.exit(1);
   }
 };
 
-buildReport();
+init();
