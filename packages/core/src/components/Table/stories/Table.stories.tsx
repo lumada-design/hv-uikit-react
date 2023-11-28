@@ -30,6 +30,8 @@ import { ResponsiveTable as ResponsiveTableStory } from "./TableSamples/Responsi
 import ResponsiveTableRaw from "./TableSamples/ResponsiveTable?raw";
 import { ListRow as ListRowStory } from "./TableSamples/ListRow";
 import ListRowRaw from "./TableSamples/ListRow?raw";
+import { Section as SectionStory } from "./TableSamples/Section";
+import SectionRaw from "./TableSamples/Section?raw";
 
 export default {
   title: "Visualizations/Table",
@@ -237,6 +239,18 @@ ListRow.parameters = {
     source: { code: ListRowRaw },
     description: {
       story: "List row variant of the table.",
+    },
+  },
+};
+
+export const Section = () => <SectionStory />;
+
+Section.parameters = {
+  docs: {
+    source: { code: SectionRaw },
+    description: {
+      story:
+        "Latest versions of Hitachi Vantara's Design System include a table layout inside a section component. This sample illustrates how to achieve this layout with HV UI Kit's table.",
     },
   },
 };
