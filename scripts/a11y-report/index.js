@@ -44,7 +44,7 @@ const buildReport = () => {
 
     // Customize report
     const htmlData = fs.readFileSync(reportFile, "utf8");
-    const updatedHtml = htmlData
+    let updatedHtml = htmlData
       .replace(
         "<title>Accessibility report</title>",
         `<title>NEXT UI Kit Accessibility Report</title>
@@ -70,6 +70,14 @@ const buildReport = () => {
       )
       .replace("violations have been found", "A11y issues")
       .replaceAll(storybookUrl, "https://lumada-design.github.io/uikit/master");
+
+    if (updatedHtml.search("A11y issues") === -1) {
+      updatedHtml = updatedHtml.replace(
+        "</body>",
+        "<h3>No Accessibility Issues Found</h3><img src='../scripts/a11y-report/404.svg'><h4>Wow, such empty</h4></body>"
+      );
+    }
+
     fs.writeFileSync(reportFile, updatedHtml, "utf8");
 
     // Rename report file to "index.html"
