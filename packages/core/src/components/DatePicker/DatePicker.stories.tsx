@@ -423,41 +423,39 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={12} md={6}>
-          <HvGrid container>
-            <HvGrid item xs={12}>
-              <HvDatePicker
-                label="Start date"
-                description="Enter a start date"
-                placeholder="Choose a date"
-                required
-                aria-errormessage="start-error"
-                onChange={(value) => {
-                  setStartErrorMessage(
-                    value ? undefined : "Start date is required."
-                  );
-                }}
-              />
-            </HvGrid>
-            <HvGrid item xs={12}>
-              <HvDatePicker
-                label="End date"
-                description="Enter an end date"
-                placeholder="Choose a date"
-                required
-                status={endValidationState}
-                aria-errormessage="end-error"
-                onChange={(value) => {
-                  setEndValidationState("invalid");
+        <HvGrid container item xs={12} md={6}>
+          <HvGrid item xs={12}>
+            <HvDatePicker
+              label="Start date"
+              description="Enter a start date"
+              placeholder="Choose a date"
+              required
+              aria-errormessage="start-error"
+              onChange={(value) => {
+                setStartErrorMessage(
+                  value ? undefined : "Start date is required."
+                );
+              }}
+            />
+          </HvGrid>
+          <HvGrid item xs={12}>
+            <HvDatePicker
+              label="End date"
+              description="Enter an end date"
+              placeholder="Choose a date"
+              required
+              status={endValidationState}
+              aria-errormessage="end-error"
+              onChange={(value) => {
+                setEndValidationState("invalid");
 
-                  setEndErrorMessage(
-                    value
-                      ? "The end date will always be invalid."
-                      : "You can try choosing an end date."
-                  );
-                }}
-              />
-            </HvGrid>
+                setEndErrorMessage(
+                  value
+                    ? "The end date will always be invalid."
+                    : "You can try choosing an end date."
+                );
+              }}
+            />
           </HvGrid>
         </HvGrid>
         <HvGrid item xs={12} md={6}>

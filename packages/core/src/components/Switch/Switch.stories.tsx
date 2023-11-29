@@ -232,33 +232,31 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={12} md={6}>
-          <HvGrid container>
-            <HvGrid item xs={12}>
-              <HvSwitch
-                required
-                defaultChecked
-                aria-errormessage="firstSwitch-error"
-                onChange={(_e, checked) => {
-                  setFirstSwitchErrorMessage(
-                    checked ? "" : "You must turn on the first switch"
-                  );
-                }}
-                label="First Switch"
-              />
-            </HvGrid>
-            <HvGrid item xs={12}>
-              <HvSwitch
-                status="invalid"
-                aria-errormessage="secondSwitch-error"
-                onChange={() => {
-                  setSecondSwitchErrorMessage(
-                    "No way for the second switch to be valid! I told you!"
-                  );
-                }}
-                label="Second Switch"
-              />
-            </HvGrid>
+        <HvGrid container item xs={12} md={6}>
+          <HvGrid item xs={12}>
+            <HvSwitch
+              required
+              defaultChecked
+              aria-errormessage="firstSwitch-error"
+              onChange={(_e, checked) => {
+                setFirstSwitchErrorMessage(
+                  checked ? "" : "You must turn on the first switch"
+                );
+              }}
+              label="First Switch"
+            />
+          </HvGrid>
+          <HvGrid item xs={12}>
+            <HvSwitch
+              status="invalid"
+              aria-errormessage="secondSwitch-error"
+              onChange={() => {
+                setSecondSwitchErrorMessage(
+                  "No way for the second switch to be valid! I told you!"
+                );
+              }}
+              label="Second Switch"
+            />
           </HvGrid>
         </HvGrid>
         <HvGrid item xs={12} md={6}>
