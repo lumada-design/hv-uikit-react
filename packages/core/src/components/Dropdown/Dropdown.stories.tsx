@@ -262,51 +262,49 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={12} md={6}>
-          <HvGrid container>
-            <HvGrid item xs={12}>
-              <HvDropdown
-                label="Dropdown 1"
-                multiSelect
-                values={values1}
-                required
-                aria-errormessage="birth-error"
-                onChange={(value) => {
-                  if ((value as HvListValue[]).length === 0) {
-                    setBirthErrorMessage(
-                      "Select at least one value from dropdown 1."
-                    );
-                  } else {
-                    setBirthErrorMessage(null);
-                  }
-                }}
-              />
-            </HvGrid>
-            <HvGrid item xs={12}>
-              <HvDropdown
-                label="Dropdown 2"
-                multiSelect
-                values={values2}
-                required
-                status={deathValidationState as HvDropdownStatus}
-                aria-errormessage="death-error"
-                onChange={(value) => {
-                  setDeathValidationState("invalid");
+        <HvGrid container item xs={12} md={6}>
+          <HvGrid item xs={12}>
+            <HvDropdown
+              label="Dropdown 1"
+              multiSelect
+              values={values1}
+              required
+              aria-errormessage="birth-error"
+              onChange={(value) => {
+                if ((value as HvListValue[]).length === 0) {
+                  setBirthErrorMessage(
+                    "Select at least one value from dropdown 1."
+                  );
+                } else {
+                  setBirthErrorMessage(null);
+                }
+              }}
+            />
+          </HvGrid>
+          <HvGrid item xs={12}>
+            <HvDropdown
+              label="Dropdown 2"
+              multiSelect
+              values={values2}
+              required
+              status={deathValidationState as HvDropdownStatus}
+              aria-errormessage="death-error"
+              onChange={(value) => {
+                setDeathValidationState("invalid");
 
-                  if ((value as HvListValue[]).length === 0) {
-                    setDeathErrorMessage(
-                      "Select at least one value from dropdown 2."
-                    );
-                  } else {
-                    setDeathErrorMessage(
-                      `Dropdown 2 is always invalid, even with ${
-                        (value as HvListValue[]).length
-                      } items selected.`
-                    );
-                  }
-                }}
-              />
-            </HvGrid>
+                if ((value as HvListValue[]).length === 0) {
+                  setDeathErrorMessage(
+                    "Select at least one value from dropdown 2."
+                  );
+                } else {
+                  setDeathErrorMessage(
+                    `Dropdown 2 is always invalid, even with ${
+                      (value as HvListValue[]).length
+                    } items selected.`
+                  );
+                }
+              }}
+            />
           </HvGrid>
         </HvGrid>
         <HvGrid item xs={12} md={6}>

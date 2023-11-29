@@ -134,36 +134,34 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={12} md={6}>
-          <HvGrid container>
-            <HvGrid item xs={12}>
-              <HvRadio
-                status={secondRadioStatus}
-                aria-errormessage="firstRadio-error"
-                onChange={(_e, checked) => {
-                  if (checked) {
-                    setSecondRadioStatus("invalid");
-                    setFirstRadioErrorMessage("Don't choose the first radio.");
-                  } else if (!checked) {
-                    setSecondRadioStatus("valid");
-                    setFirstRadioErrorMessage(null);
-                  }
-                }}
-                label="First Radio"
-              />
-            </HvGrid>
-            <HvGrid item xs={12}>
-              <HvRadio
-                status="invalid"
-                aria-errormessage="secondRadio-error"
-                onChange={() => {
-                  setSecondRadioErrorMessage(
-                    "No way for the second radio to be valid! I told you!"
-                  );
-                }}
-                label="Second Radio"
-              />
-            </HvGrid>
+        <HvGrid container item xs={12} md={6}>
+          <HvGrid item xs={12}>
+            <HvRadio
+              status={secondRadioStatus}
+              aria-errormessage="firstRadio-error"
+              onChange={(_e, checked) => {
+                if (checked) {
+                  setSecondRadioStatus("invalid");
+                  setFirstRadioErrorMessage("Don't choose the first radio.");
+                } else if (!checked) {
+                  setSecondRadioStatus("valid");
+                  setFirstRadioErrorMessage(null);
+                }
+              }}
+              label="First Radio"
+            />
+          </HvGrid>
+          <HvGrid item xs={12}>
+            <HvRadio
+              status="invalid"
+              aria-errormessage="secondRadio-error"
+              onChange={() => {
+                setSecondRadioErrorMessage(
+                  "No way for the second radio to be valid! I told you!"
+                );
+              }}
+              label="Second Radio"
+            />
           </HvGrid>
         </HvGrid>
         <HvGrid item xs={12} md={6}>

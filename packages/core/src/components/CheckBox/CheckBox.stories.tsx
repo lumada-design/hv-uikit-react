@@ -162,39 +162,38 @@ export const ExternalErrorMessage: StoryObj<HvCheckBoxProps> = {
 
     return (
       <HvGrid container>
-        <HvGrid item xs={12} md={6}>
-          <HvGrid container>
-            <HvGrid item xs={12}>
-              <HvCheckBox
-                required
-                defaultChecked
-                aria-errormessage="firstCheckbox-error"
-                onChange={(_, checked) => {
-                  if (checked) {
-                    setFirstCheckboxErrorMessage(null);
-                  } else if (!checked) {
-                    setFirstCheckboxErrorMessage(
-                      "You must check the first checkbox"
-                    );
-                  }
-                }}
-                label="First Checkbox"
-              />
-            </HvGrid>
-            <HvGrid item xs={12}>
-              <HvCheckBox
-                status="invalid"
-                aria-errormessage="secondCheckbox-error"
-                onChange={() => {
-                  setSecondCheckboxErrorMessage(
-                    "No way for the second checkbox to be valid! I told you!"
+        <HvGrid container item xs={12} md={6}>
+          <HvGrid item xs={12}>
+            <HvCheckBox
+              required
+              defaultChecked
+              aria-errormessage="firstCheckbox-error"
+              onChange={(_, checked) => {
+                if (checked) {
+                  setFirstCheckboxErrorMessage(null);
+                } else if (!checked) {
+                  setFirstCheckboxErrorMessage(
+                    "You must check the first checkbox"
                   );
-                }}
-                label="Second Checkbox"
-              />
-            </HvGrid>
+                }
+              }}
+              label="First Checkbox"
+            />
+          </HvGrid>
+          <HvGrid item xs={12}>
+            <HvCheckBox
+              status="invalid"
+              aria-errormessage="secondCheckbox-error"
+              onChange={() => {
+                setSecondCheckboxErrorMessage(
+                  "No way for the second checkbox to be valid! I told you!"
+                );
+              }}
+              label="Second Checkbox"
+            />
           </HvGrid>
         </HvGrid>
+
         <HvGrid item xs={12} md={6}>
           <div
             className={css({
