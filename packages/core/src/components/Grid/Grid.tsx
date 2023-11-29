@@ -4,7 +4,7 @@ import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
 import isString from "lodash/isString";
 
 import { HvBaseProps } from "@core/types/generic";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps, useWidth } from "@core/hooks";
 import { ExtractNames } from "@core/utils/classes";
 
 import { staticClasses, useClasses } from "./Grid.styles";
@@ -187,6 +187,51 @@ function getNumberOfColumns(columns: HvGridProps["columns"]) {
   return numberOfColumns;
 }
 
+function getContainerProps(
+  spacing: HvGridProps["spacing"],
+  rowSpacing: HvGridProps["rowSpacing"],
+  columnSpacing: HvGridProps["columnSpacing"],
+  columns: HvGridProps["columns"]
+) {
+  const containerProps: Pick<
+    MuiGridProps,
+    "container" | "spacing" | "rowSpacing" | "columnSpacing" | "columns"
+  > = { container: true };
+
+  if (spacing != null) {
+    containerProps.spacing = getGridSpacing(spacing);
+  }
+  if (rowSpacing != null) {
+    containerProps.rowSpacing = getGridSpacing(rowSpacing);
+  }
+  if (columnSpacing != null) {
+    containerProps.columnSpacing = getGridSpacing(columnSpacing);
+  }
+  if (columns != null) {
+    containerProps.columns = getNumberOfColumns(columns);
+  }
+
+  return containerProps;
+}
+
+const WidthGrid = forwardRef<HTMLDivElement, HvGridProps>((props, ref) => {
+  const { container, spacing, rowSpacing, columnSpacing, columns, ...others } =
+    props;
+
+  const width = useWidth();
+
+  const containerProps = container
+    ? getContainerProps(
+        spacing === "auto" ? width : spacing,
+        rowSpacing === "auto" ? width : rowSpacing,
+        columnSpacing === "auto" ? width : columnSpacing,
+        columns
+      )
+    : {};
+
+  return <MuiGrid ref={ref} {...containerProps} {...others} />;
+});
+
 /**
  * The grid creates visual consistency between layouts while allowing flexibility
  * across a wide variety of designs. This component is based on a 12-column grid layout.
@@ -213,6 +258,7 @@ function getNumberOfColumns(columns: HvGridProps["columns"]) {
  */
 export const HvGrid = forwardRef<HTMLDivElement, HvGridProps>((props, ref) => {
   const {
+    item,
     container,
     spacing = "auto",
     rowSpacing,
@@ -224,29 +270,40 @@ export const HvGrid = forwardRef<HTMLDivElement, HvGridProps>((props, ref) => {
 
   const { classes } = useClasses(classesProp);
 
-  const containerProps: Pick<
-    MuiGridProps,
-    "container" | "spacing" | "rowSpacing" | "columnSpacing" | "columns"
-  > = {};
-
-  if (container) {
-    containerProps.container = true;
-
-    if (spacing != null) {
-      containerProps.spacing = getGridSpacing(spacing);
-    }
-    if (rowSpacing != null) {
-      containerProps.rowSpacing = getGridSpacing(rowSpacing);
-    }
-    if (columnSpacing != null) {
-      containerProps.columnSpacing = getGridSpacing(columnSpacing);
-    }
-    if (columns != null) {
-      containerProps.columns = getNumberOfColumns(columns);
-    }
+  // Fixes MUI error when using spacings as objects and the grid is an item and container
+  // When set to "auto", the spacing changes depending on the screen's breakpoint
+  // The condition avoids using useWidth and re-rendering the component unnecessarily
+  if (
+    container &&
+    item &&
+    (spacing === "auto" || rowSpacing === "auto" || columnSpacing === "auto")
+  ) {
+    return (
+      <WidthGrid
+        ref={ref}
+        classes={classes}
+        item={item}
+        container={container}
+        spacing={spacing}
+        rowSpacing={rowSpacing}
+        columnSpacing={columnSpacing}
+        columns={columns}
+        {...others}
+      />
+    );
   }
 
+  const containerProps = container
+    ? getContainerProps(spacing, rowSpacing, columnSpacing, columns)
+    : {};
+
   return (
-    <MuiGrid ref={ref} classes={classes} {...containerProps} {...others} />
+    <MuiGrid
+      ref={ref}
+      classes={classes}
+      item={item}
+      {...containerProps}
+      {...others}
+    />
   );
 });
