@@ -1,13 +1,6 @@
 name: Artifacts
 description: Build UI Kit Documentation and App
 
-inputs:
-  build-app:
-    description: "Whether the app should be built or not."
-    required: false
-    type: boolean
-    default: true
-
 runs:
   using: "composite"
   steps:
@@ -31,13 +24,11 @@ runs:
         retention-days: 2
 
     - name: Build App
-      if: ${{ inputs.build-app == 'true' }}
       run: npm run build:app -- --base=${{ env.APP_BASE_PATH }}
       shell: bash
 
     - name: Archive App
       uses: actions/upload-artifact@v3
-      if: ${{ inputs.build-app == 'true' }}
       with:
         name: app
         path: ${{ github.workspace }}/app/dist
