@@ -16,7 +16,7 @@ const hvBreakpoints = Object.entries(hvTheme.breakpoints.values).map(
 // #endregion
 
 const borderRadius = {
-  DEFAULT: hvTheme.radii.base,
+  DEFAULT: hvTheme.radii.round,
   ...hvTheme.radii,
 };
 

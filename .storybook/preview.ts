@@ -3,6 +3,8 @@ import DocsContainer from "./blocks/DocsContainer";
 import { DocsPage } from "./blocks/DocsPage";
 import withThemeProvider from "./decorators/withThemeProvider";
 
+import "uno.css";
+
 export const parameters: Preview["parameters"] = {
   layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },
