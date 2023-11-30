@@ -1,49 +1,39 @@
 import type { Theme } from "@unocss/preset-uno";
 import { ThemeExtender } from "@unocss/core";
 
-import {
-  ds5 as hvTheme,
-  theme as hvThemeCssVars,
-} from "@hitachivantara/uikit-styles";
+import { ds5 as hvTheme } from "@hitachivantara/uikit-styles";
 
-// #region HV utils
-const { colors: colorVars } = hvThemeCssVars;
+// #region theme conversion utils
+const { dawn: defaultColors } = hvTheme.colors.modes;
+const { base, ...hvSpacing } = hvTheme.space;
 
 /** HV breakpoints with added `px` suffix */
 const hvBreakpoints = Object.entries(hvTheme.breakpoints.values).map(
   ([key, value]) => [key, `${value}px`] as const
 );
-// #endregion
-
-const borderRadius = {
-  DEFAULT: hvTheme.radii.round,
-  ...hvTheme.radii,
-};
-
-const breakpoints = Object.fromEntries(hvBreakpoints);
-const containers = Object.fromEntries(
-  hvBreakpoints.map(([k, v]) => [k, `(min-width: ${v})`])
-);
-
-const { base, ...hvSpacing } = hvTheme.space;
-const spacing = {
-  DEFAULT: hvSpacing.sm,
-  ...hvSpacing,
-};
 
 const hvZIndex = Object.entries(hvTheme.zIndices).map(
   ([key, value]) => [key, `${value}`] as const
 );
-const zIndex = Object.fromEntries(hvZIndex);
+// #endregion
 
 /** Extends the current theme with the NEXT Design System utilities */
 export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
   ...baseTheme,
-  borderRadius,
-  breakpoints,
-  containers,
-  spacing,
-  zIndex,
+
+  borderRadius: {
+    DEFAULT: hvTheme.radii.round,
+    ...hvTheme.radii,
+  },
+  breakpoints: Object.fromEntries(hvBreakpoints),
+  containers: Object.fromEntries(
+    hvBreakpoints.map(([k, v]) => [k, `(min-width: ${v})`])
+  ),
+  spacing: {
+    DEFAULT: hvSpacing.sm,
+    ...hvSpacing,
+  },
+  zIndex: Object.fromEntries(hvZIndex),
 
   // colors
   colors: {
@@ -53,11 +43,11 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
     black: "#000000",
     white: "#ffffff",
     // using `theme` CSS vars for automatic theme switching, losing alpha + no HvProvider support
-    ...colorVars,
+    ...defaultColors,
   },
-  accentColor: { DEFAULT: colorVars.primary },
-  textColor: { DEFAULT: colorVars.secondary },
-  backgroundColor: { DEFAULT: colorVars.backgroundColor },
+  accentColor: { DEFAULT: defaultColors.primary },
+  textColor: { DEFAULT: defaultColors.secondary },
+  backgroundColor: { DEFAULT: defaultColors.backgroundColor },
 
   // typography
   fontFamily: {
@@ -70,3 +60,17 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
   fontSize: { DEFAULT: hvTheme.fontSizes.base, ...hvTheme.fontSizes },
   fontWeight: { DEFAULT: hvTheme.fontWeights.normal, ...hvTheme.fontWeights },
 });
+
+/** UI Kit theme mode variants */
+export const themeModes = {
+  light: {
+    colors: {
+      ...hvTheme.colors.modes.dawn,
+    },
+  },
+  dark: {
+    colors: {
+      ...hvTheme.colors.modes.wicked,
+    },
+  },
+};

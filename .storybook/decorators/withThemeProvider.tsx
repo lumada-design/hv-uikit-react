@@ -1,7 +1,8 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { addons } from "@storybook/addons";
 import { Global } from "@storybook/theming";
+import { Decorator } from "@storybook/react";
 
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
@@ -11,13 +12,30 @@ import { getStoryStyles } from "../theme/styles/story";
 import { ADDON_EVENT } from "../addons/theme-selector/constants";
 import { getLocalTheme } from "../addons/theme-selector/utils";
 
-const withThemeProvider = (story) => {
+/** Return a `ref` that adds/removes `dark` class variant depending on `mode` */
+const useDarkClass = <T extends HTMLElement = HTMLDivElement>(mode: string) => {
+  const ref = useRef<T>(null);
+
+  useEffect(() => {
+    if (mode === "wicked") {
+      ref.current?.classList.add("dark");
+    } else {
+      ref.current?.classList.remove("dark");
+    }
+  }, [mode]);
+
+  return ref;
+};
+
+const ThemeDecorator: Decorator = (story) => {
   const initialTheme = getLocalTheme();
 
   const [selectedTheme, setSelectedTheme] = useState(initialTheme);
 
   const [theme, mode] = selectedTheme?.split("-") || ["ds5", "dawn"];
   const base = theme === "ds3" ? ds3 : ds5;
+
+  const containerRef = useDarkClass(mode);
 
   const storyStyles = getStoryStyles(base.colors.modes[mode].atmo2);
 
@@ -45,7 +63,11 @@ const withThemeProvider = (story) => {
         colorMode={mode}
       >
         <HvVizProvider>
-          <div className="hv-story-sample" style={{ padding: 20 }}>
+          <div
+            ref={containerRef}
+            className="hv-story-sample"
+            style={{ padding: 20 }}
+          >
             {story()}
           </div>
         </HvVizProvider>
@@ -54,4 +76,4 @@ const withThemeProvider = (story) => {
   );
 };
 
-export default withThemeProvider;
+export default ThemeDecorator;

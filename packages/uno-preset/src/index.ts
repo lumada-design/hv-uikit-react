@@ -1,22 +1,32 @@
-import { definePreset } from "@unocss/core";
+import { UserConfig, definePreset, mergeConfigs } from "@unocss/core";
 import { Theme, presetUno, PresetUnoOptions } from "@unocss/preset-uno";
+import { presetRemToPx } from "@unocss/preset-rem-to-px";
+// @ts-expect-error ignore CJS import ES module
+import { presetTheme } from "unocss-preset-theme";
 
-import { extendTheme } from "./theme";
+import { extendTheme, themeModes } from "./theme";
 import { rules } from "./rules";
-import { remToPx } from "./utils";
 
-export { remToPx, rules, extendTheme };
+export { rules, extendTheme, themeModes };
 
 export interface HvUnoOptions extends PresetUnoOptions {}
 
 export const presetHv = definePreset<HvUnoOptions, Theme>((options) => {
-  const basePreset = presetUno(options);
+  const hvConfig: UserConfig<Theme> = {
+    extendTheme,
+    rules,
+  };
 
   return {
-    ...basePreset,
     name: "@hitachivantara/uikit-uno-preset",
-    postprocess: [remToPx()],
-    extendTheme,
-    rules: [...basePreset.rules!, ...rules],
+    ...mergeConfigs([
+      // base uno config
+      presetUno(options),
+      // convert rem to px & make 1 unit 8px (32px = 1rem => 1/4rem = 8px)
+      presetRemToPx({ baseFontSize: 32 }),
+      hvConfig,
+      // allows theme variants (light/dark) via CSS vars - aligned with UI Kit's
+      presetTheme<Theme>({ prefix: "--hv", theme: themeModes }),
+    ]),
   };
 });
