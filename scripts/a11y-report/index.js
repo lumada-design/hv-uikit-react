@@ -36,11 +36,15 @@ const init = () => {
     const reportDir = path.resolve(__dirname, `../../${outputDir}`);
     const reportFile = [reportDir, "/a11y_report.html"].join("");
     const cssFile = path.resolve(__dirname, "styles.css");
+    const svgFile = path.resolve(__dirname, "404.svg");
     const htmlData = fs.readFileSync(reportFile, "utf8");
 
     // Add CSS file to report directory
     fs.mkdirSync([reportDir, "/styles"].join(""));
     fs.copyFileSync(cssFile, [reportDir, "/styles/styles.css"].join(""));
+
+    // Add svg to report directory
+    fs.copyFileSync(svgFile, [reportDir, "/404.svg"].join(""));
 
     // Customize report
     let updatedHtml = htmlData
@@ -73,7 +77,7 @@ const init = () => {
     if (updatedHtml.search("A11y issues") === -1) {
       updatedHtml = updatedHtml.replace(
         "</body>",
-        "<h3>No Accessibility Issues Found</h3><img src='../scripts/a11y-report/404.svg'><h4>Wow, such empty</h4></body>"
+        "<h3>No Accessibility Issues Found</h3><img src='./404.svg'><h4>Wow, such empty</h4></body>"
       );
     }
 
