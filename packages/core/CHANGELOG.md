@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.37.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.37.1...@hitachivantara/uikit-react-core@5.37.2) (2023-12-01)
+
+### Bug Fixes
+
+- **Grid:** item container spacing ([4721cc5](https://github.com/lumada-design/hv-uikit-react/commit/4721cc52267dd946f3fb259c2810087dbd602260))
+
 ## 5.37.1 (2023-11-30)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
