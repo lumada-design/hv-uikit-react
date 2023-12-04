@@ -37,21 +37,35 @@ const HvOverflowTooltip = ({
   placement = "top-start",
   tooltipsProps,
 }) => {
-  const { width = 0, ref } = useResizeDetector({
+  const {
+    height = 0,
+    width = 0,
+    ref,
+  } = useResizeDetector({
     refreshMode: "debounce",
     refreshOptions: {
       trailing: true,
     },
     handleHeight: false,
   });
-  const scrollWidth = ref.current?.scrollWidth || 0;
-  // The difference should be higher than a pixel to be considered as overflowing
-  const isOverflowing = scrollWidth - width >= 1;
 
   const isParag = useMemo(
     () => paragraphOverflow && isParagraph(data.toString()),
     [data, paragraphOverflow]
   );
+
+  // The difference should be higher than a pixel to be considered as overflowing
+  const isOverflowing = useMemo(() => {
+    if (isParag) {
+      const scrollHeight = ref.current?.scrollHeight || 0;
+
+      return scrollHeight - height >= 1;
+    }
+
+    const scrollWidth = ref.current?.scrollWidth || 0;
+
+    return scrollWidth - width >= 1;
+  }, [height, isParag, ref, width]);
 
   const content = useMemo(
     () => (
