@@ -16,14 +16,13 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
     margin: theme.space.sm,
     backgroundColor: "transparent",
     maxWidth: "100%",
-    minWidth: 740,
-    paddingBottom: `calc(${theme.space.md} * 3)`,
+    paddingBottom: theme.space.lg,
   },
   /** Styles applied to the sub group containers. */
   subGroup: {
     margin: "40px 14px 32px 20px",
     minHeight: 120,
-    paddingBottom: 60,
+    paddingBottom: theme.space.md,
 
     "&::before": {
       content: '""',
@@ -58,8 +57,8 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
   /** Styles applied to the multi-button combinator container on the top group. */
   topCombinator: {
     position: "absolute",
-    top: `calc( -1 * ${theme.space.sm})`,
-    left: `calc( -1 * ${theme.space.sm})`,
+    top: `calc(-1 * ${theme.space.sm})`,
+    left: `calc(-1 * ${theme.space.sm})`,
   },
   /** Styles applied to each combinator button. */
   combinatorButton: {},

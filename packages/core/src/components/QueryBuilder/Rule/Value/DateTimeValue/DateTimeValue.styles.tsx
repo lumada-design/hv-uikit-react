@@ -9,9 +9,7 @@ export const { useClasses, staticClasses } = createClasses(
       display: "flex",
       flexDirection: "column",
     },
-    row: {
-      minHeight: 94,
-    },
+    row: {},
     vertical: {
       display: "flex",
       flexDirection: "column",
@@ -29,10 +27,10 @@ export const { useClasses, staticClasses } = createClasses(
       },
     },
     datePicker: {
-      flex: "0 1 300px",
+      flex: 1,
     },
     timePicker: {
-      flex: "0 1 220px",
+      flex: 1,
     },
   }
 );

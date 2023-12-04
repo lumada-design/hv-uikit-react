@@ -88,9 +88,8 @@ export const Rule = (props: RuleProps) => {
       container
       className={cx(classes.root, { [classes.isMdDown]: isMdDown })}
       spacing={0}
-      wrap="nowrap"
     >
-      <HvGrid item xs={2} lg={3}>
+      <HvGrid item xs={12} md={3}>
         <Attribute
           attribute={attribute}
           id={id}
@@ -99,7 +98,7 @@ export const Rule = (props: RuleProps) => {
         />
       </HvGrid>
       {attribute != null && availableOperators > 0 && (
-        <HvGrid item xs={2} lg={3}>
+        <HvGrid item xs={12} md={3}>
           <Operator
             id={id}
             combinator={combinator}
@@ -109,7 +108,7 @@ export const Rule = (props: RuleProps) => {
         </HvGrid>
       )}
       {attribute != null && (operator != null || availableOperators === 0) && (
-        <HvGrid item xs>
+        <HvGrid item xs={12} md>
           {shouldShowValueInput && (
             <Value
               attribute={attribute}

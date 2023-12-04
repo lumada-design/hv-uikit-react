@@ -5,21 +5,18 @@ import { createClasses } from "@core/utils/classes";
 export const { useClasses, staticClasses } = createClasses(
   "HvQueryBuilder-NumericValue",
   {
-    root: {
-      display: "flex",
-      flexGrow: 1,
-    },
+    root: {},
     label: {
       paddingBottom: "6px",
     },
-    inputContainer: {
-      display: "flex",
-      alignItems: "baseline",
-      flexGrow: 1,
-    },
+    inputContainer: {},
     rangeContainer: {
       display: "flex",
-      flexGrow: 1,
+
+      "& $inputContainer": {
+        flexGrow: 1,
+        overflow: "auto",
+      },
 
       "& > $inputContainer:not(:last-child)": {
         marginRight: theme.space.md,
