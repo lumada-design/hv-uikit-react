@@ -20,13 +20,10 @@ export const Main = () => {
     },
     textContainer: {
       display: "flex",
-      textAlign: "center",
-      justifyContent: "space-between",
-      maxWidth: 200,
-      overflow: "hidden",
-      textOverflow: "ellipsis",
+      alignItems: "center",
       margin: "0 auto",
       paddingTop: 80,
+      maxWidth: 200,
     },
   };
 
@@ -40,6 +37,9 @@ export const Main = () => {
       </div>
       <div style={styling.textContainer}>
         <HvOverflowTooltip data={shortText} />
+      </div>
+      <div style={styling.textContainer}>
+        <HvOverflowTooltip data={longText} paragraphOverflow />
       </div>
       <div style={styling.textContainer}>
         <HvOverflowTooltip data={longText} placement="top" open />
