@@ -49,8 +49,13 @@ export const HvFilterGroupRightPanel = ({
   } = useContext(HvFilterGroupContext);
 
   const activeGroupOptions = useMemo(
-    () => filterOptions[activeGroup]?.data.map((option) => option.id) || [],
-    [filterOptions, activeGroup]
+    () =>
+      filterOptions[activeGroup]?.data
+        .filter((option) =>
+          option.name.toLowerCase().includes(searchStr.toLowerCase())
+        )
+        .map((option) => option.id) || [],
+    [filterOptions, activeGroup, searchStr]
   );
 
   const activeFilterValues = useMemo(
@@ -99,7 +104,21 @@ export const HvFilterGroupRightPanel = ({
 
   const handleSelectAll = useCallback(() => {
     const newFilterValues = cloneDeep(filterValues);
-    newFilterValues[activeGroup] = anySelected ? [] : activeGroupOptions;
+
+    if (anySelected) {
+      if (searchStr !== "") {
+        newFilterValues[activeGroup] = filterValues[activeGroup]?.filter(
+          (value) => !activeGroupOptions.includes(value)
+        );
+      } else {
+        newFilterValues[activeGroup] = [];
+      }
+    } else {
+      newFilterValues[activeGroup] = [
+        ...filterValues[activeGroup],
+        ...activeGroupOptions,
+      ];
+    }
 
     setFilterValues(newFilterValues);
   }, [
@@ -108,6 +127,7 @@ export const HvFilterGroupRightPanel = ({
     anySelected,
     filterValues,
     setFilterValues,
+    searchStr,
   ]);
 
   /**
