@@ -1,4 +1,5 @@
 name: Applitools
+run-name: v4.x Applitools
 on:
   workflow_dispatch:
 

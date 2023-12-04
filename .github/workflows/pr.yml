@@ -2,7 +2,7 @@ name: Pull Request
 on:
   pull_request:
     branches:
-      - master
+      - v4.x
 
 # flow:
 # +------------------------------------+     +---------------------------------+
@@ -427,15 +427,7 @@ jobs:
   Notify-End:
     name: Notify End
     if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' && always()
-    needs:
-      [
-        Static-Checks,
-        Github-Deployment,
-        Applitools,
-        A11Y-Tests,
-        Robot,
-        Playwright,
-      ]
+    needs: [Static-Checks, Github-Deployment, Applitools, A11Y-Tests, Robot, Playwright]
     runs-on: ubuntu-latest
 
     steps:
