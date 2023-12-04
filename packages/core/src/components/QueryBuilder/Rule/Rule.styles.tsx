@@ -10,17 +10,17 @@ export const { useClasses, staticClasses } = createClasses(
     root: {
       position: "relative",
       marginTop: theme.space.xs,
-
       minHeight: 94,
 
       "&>div:not(:last-child)": {
-        marginRight: theme.space.md,
+        paddingRight: theme.space.md,
       },
 
       // hide required * as all fields are required
       "& label>span[aria-hidden]": {
         visibility: "hidden",
       },
+
       "&::before": {
         content: '""',
         position: "absolute",
@@ -33,8 +33,9 @@ export const { useClasses, staticClasses } = createClasses(
         borderLeft: `1px solid ${theme.colors.atmo4}`,
 
         top: 0,
-        left: `calc( -1 * 17px)`,
+        left: `calc(-1 * 17px)`,
       },
+
       [`:not(.${queryBuilderClasses.topRulesContainer})>&:last-child::after`]: {
         content: '""',
         position: "absolute",
@@ -46,7 +47,7 @@ export const { useClasses, staticClasses } = createClasses(
         borderLeft: `1px solid ${theme.colors.atmo4}`,
 
         top: 0,
-        left: `calc( -1 * 17px)`,
+        left: `calc(-1 * 17px)`,
       },
     },
     actionsContainer: {
@@ -59,7 +60,10 @@ export const { useClasses, staticClasses } = createClasses(
     },
     isMdDown: {
       "&>div:not(:last-child)": {
-        marginRight: `calc(${theme.space.md} / 2)`,
+        paddingRight: 0,
+      },
+      "&>div:not(:first-child)": {
+        marginTop: theme.space.xs,
       },
     },
   }

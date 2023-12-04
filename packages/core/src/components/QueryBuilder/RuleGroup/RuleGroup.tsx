@@ -3,7 +3,6 @@ import { Add, Delete, Info } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "@core/components/Button";
 import { HvEmptyState } from "@core/components/EmptyState";
-import { HvGrid } from "@core/components/Grid";
 import { HvMultiButton } from "@core/components/MultiButton";
 import { HvTypography } from "@core/components/Typography";
 import { withTooltip } from "@core/hocs/withTooltip";
@@ -106,57 +105,49 @@ export const RuleGroup = ({
         [classes.subGroup]: level > 0,
       })}
     >
-      <HvGrid container>
-        <HvGrid item>
-          <HvMultiButton
-            className={cx(classes.combinator, classes.topCombinator)}
-            disabled={readOnly}
-          >
-            {combinators &&
-              combinators.map((item) => (
-                <HvButton
-                  key={item.operand}
-                  className={classes.combinatorButton}
-                  selected={item.operand === combinator}
-                  onClick={() => item.operand && onClickCombinator(item)}
-                  disabled={readOnly}
-                  size="xs"
-                >
-                  {item.label}
-                </HvButton>
-              ))}
-          </HvMultiButton>
-        </HvGrid>
-        <HvGrid item>
-          <div
-            className={cx(classes.buttonBackground, classes.topRemoveButton)}
-          >
+      <HvMultiButton
+        className={cx(classes.combinator, classes.topCombinator)}
+        disabled={readOnly}
+      >
+        {combinators &&
+          combinators.map((item) => (
             <HvButton
-              icon
-              className={classes.removeButton}
-              onClick={() =>
-                disableConfirmation
-                  ? dispatchAction({ type: "remove-node", id })
-                  : askAction({
-                      actions: [{ type: "remove-node", id }],
-                      dialog:
-                        level === 0 && labels.query?.delete != null
-                          ? labels.query.delete
-                          : labels.group.delete,
-                    })
-              }
-              aria-label={
-                level === 0 && labels.query?.delete?.ariaLabel
-                  ? labels.query?.delete?.ariaLabel
-                  : labels.group.delete.ariaLabel
-              }
+              key={item.operand}
+              className={classes.combinatorButton}
+              selected={item.operand === combinator}
+              onClick={() => item.operand && onClickCombinator(item)}
               disabled={readOnly}
+              size="xs"
             >
-              <DeleteIcon />
+              {item.label}
             </HvButton>
-          </div>
-        </HvGrid>
-      </HvGrid>
+          ))}
+      </HvMultiButton>
+      <div className={cx(classes.buttonBackground, classes.topRemoveButton)}>
+        <HvButton
+          icon
+          className={classes.removeButton}
+          onClick={() =>
+            disableConfirmation
+              ? dispatchAction({ type: "remove-node", id })
+              : askAction({
+                  actions: [{ type: "remove-node", id }],
+                  dialog:
+                    level === 0 && labels.query?.delete != null
+                      ? labels.query.delete
+                      : labels.group.delete,
+                })
+          }
+          aria-label={
+            level === 0 && labels.query?.delete?.ariaLabel
+              ? labels.query?.delete?.ariaLabel
+              : labels.group.delete.ariaLabel
+          }
+          disabled={readOnly}
+        >
+          <DeleteIcon />
+        </HvButton>
+      </div>
       {rules?.length > 0 && (
         <div
           className={cx(classes.rulesContainer, {
@@ -239,17 +230,14 @@ export const RuleGroup = ({
           icon={<Info />}
         />
       )}
-      <HvGrid container>
-        <HvGrid
-          item
-          className={cx(
-            classes.actionButtonContainer,
-            classes.topActionButtonContainer
-          )}
-        >
-          {actionButtons}
-        </HvGrid>
-      </HvGrid>
+      <div
+        className={cx(
+          classes.actionButtonContainer,
+          classes.topActionButtonContainer
+        )}
+      >
+        {actionButtons}
+      </div>
     </div>
   );
 };
