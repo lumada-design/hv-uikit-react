@@ -1,9 +1,10 @@
 name: Nightly
+run-name: v4.x Nightly
 on:
   schedule:
     - cron: "0 5 * * *" # daily at 05:00
   repository_dispatch:
-    types: [master]
+    types: [v4]
   workflow_dispatch:
 
 env:
@@ -379,4 +380,4 @@ jobs:
           curl -X POST \
             https://api.github.com/repos/${{ github.repository }}/dispatches \
             -H 'Authorization: token ${{ secrets.BUILD_TOKEN }}' \
-            -d '{"event_type": "release"}'
+            -d '{"event_type": "v4-release"}'

@@ -1,15 +1,16 @@
 name: Release
+run-name: v4.x Release
 on:
   repository_dispatch:
-    types: [release]
+    types: [v4-release]
   workflow_dispatch:
 
 env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
-  DOCUMENTATION_PUBLISH_FOLDER: uikit/master
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for master of ${{ github.repository }}"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/master/
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/v4.x
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for v4.x of ${{ github.repository }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/v4.x/
 
 jobs:
   Release:
@@ -68,7 +69,7 @@ jobs:
             const branch = await github.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: "master"
+              branch: "v4.x"
             })
 
             const commitMessage = branch.data.commit.commit.message
