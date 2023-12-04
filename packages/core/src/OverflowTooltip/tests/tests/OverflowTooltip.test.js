@@ -28,7 +28,7 @@ describe("Overflow tooltip", () => {
         "This is a very long text that should be cut because it so long that it doesn't fit";
       const shortText = "This text is short";
       const text = await findAllByText(longText);
-      expect(text.length).toBe(3);
+      expect(text.length).toBe(4);
       expect(getByText(shortText)).toBeInTheDocument();
     });
   });
