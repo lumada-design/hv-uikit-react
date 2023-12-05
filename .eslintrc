@@ -131,6 +131,7 @@
     },
     {
       "files": ["**/*.stories.ts?(x)"],
+      "extends": ["plugin:storybook/recommended"],
       "rules": {
         "react-hooks/rules-of-hooks": "off"
       }
