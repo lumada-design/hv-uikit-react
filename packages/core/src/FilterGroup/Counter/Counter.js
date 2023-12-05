@@ -23,7 +23,6 @@ const Counter = ({ className, id }) => {
 
   let groupsCounter = 0;
   appliedFilters
-    ?.flat()
     ?.filter((elem) => elem !== undefined)
     .forEach((fg, i) => {
       groupsCounter += getExistingFiltersById(i, filterValues, filterOptions);
