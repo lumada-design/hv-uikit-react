@@ -16,15 +16,15 @@ import {
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
-import classes from "./styles";
 import {
   DASHBOARDS_STORAGE_KEY,
-  DashboardSpecs,
-  DashboardsStorage,
   LAYOUT_COLS,
-} from "./types";
+  buildLayout,
+  createDataset,
+  useDatasets,
+} from "~/lib/utils/dashboard";
 
-import { buildLayout, createDataset, useDatasets } from "./utils";
+import classes from "./styles";
 import { baseNodeTypes, edges, nodeGroups, nodes } from "./config";
 
 /** Initial Layout */

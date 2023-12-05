@@ -1,25 +1,43 @@
 {
   "name": "@hitachivantara/uikit-uno-preset",
   "version": "0.2.0",
+  "private": false,
   "description": "UI Kit UnoCSS preset with the NEXT theme.",
-  "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "author": "Hitachi Vantara UI Kit Team",
   "keywords": [
     "hitachi-vantara",
     "design-system",
     "ui-kit",
-    "typescript",
-    "unocss",
-    "tailwind"
+    "react",
+    "typescript"
   ],
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "bugs": {
+    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lumada-design/hv-uikit-react.git"
+  },
   "license": "Apache-2.0",
-  "main": "src/index.ts",
+  "author": "Hitachi Vantara UI Kit Team",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.cjs",
+      "import": "./dist/esm/index.js"
+    }
+  },
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "vite build",
-    "clean": "npx rimraf dist package",
+    "build": "npm run clean && vite build",
+    "clean": "rimraf dist",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "run-s clean build && npx clean-publish"
+    "prepare": "npm run build"
   },
   "peerDependencies": {
     "@unocss/core": ">= 0.57.7",
@@ -31,33 +49,7 @@
     "unocss-preset-theme": "^0.11.0"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "vite": "^4.3.9"
-  },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public",
-    "directory": "package",
-    "main": "dist/cjs/index.cjs",
-    "module": "dist/esm/index.js",
-    "types": "dist/types/index.d.ts",
-    "exports": {
-      ".": {
-        "require": "./dist/cjs/index.cjs",
-        "import": "./dist/esm/index.js"
-      }
-    }
-  },
-  "clean-publish": {
-    "withoutPublish": true,
-    "tempDir": "package",
-    "fields": [
-      "main"
-    ],
-    "files": [
-      "tsconfig.json"
-    ]
+    "rimraf": "^5.0.5",
+    "vite": "^4.5.0"
   }
 }

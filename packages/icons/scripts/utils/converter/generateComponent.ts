@@ -40,6 +40,7 @@ export const generateComponent = (
 
   return `
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { IconBase, IconType, splitIconProps } from "${basePath}/IconBase";
 
 export const ${iconName}: IconType = ({ viewbox = "${defaultViewBox}", ...others }) => {

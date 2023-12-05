@@ -7,6 +7,7 @@ import {
   HvInput,
   HvSimpleGrid,
   HvTypography,
+  HvListValue,
 } from "@hitachivantara/uikit-react-core";
 import {
   icons as iconComponentList,
@@ -46,7 +47,7 @@ const classes = {
   }),
 };
 
-const dropdownSizes = [
+const dropdownSizes: HvListValue[] = [
   { id: "0", label: "XS" },
   { id: "1", label: "S", selected: true },
   { id: "2", label: "M" },
@@ -80,7 +81,7 @@ const Group = ({ iconSize, iconsLibrary }) => {
 
 const Library = () => {
   const [search, setSearch] = useState("");
-  const [iconSize, setIconSize] = useState<(typeof dropdownSizes)[0]>();
+  const [iconSize, setIconSize] = useState<HvListValue>();
   const [expandedCategories, setExpandedCategories] = useState(iconKeys);
 
   const isAnyExpanded = expandedCategories.length > 0;
@@ -129,7 +130,7 @@ const Library = () => {
           label="Select icon size"
           values={dropdownSizes}
           multiSelect={false}
-          onChange={(item) => setIconSize(item)}
+          onChange={(item) => setIconSize(item as HvListValue)}
           notifyChangesOnFirstRender
         />
         <HvInput

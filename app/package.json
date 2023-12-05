@@ -2,10 +2,10 @@
   "name": "uikit-app",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "check": "tsc --noEmit",
     "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vite",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/css": "^11.11.0",
@@ -35,6 +35,7 @@
     "react-router-dom": "^6.13.0",
     "reactflow": "^11.9.4",
     "swr": "^2.2.2",
+    "unocss": "^0.57.7",
     "yup": "^1.2.0"
   },
   "devDependencies": {
@@ -45,7 +46,6 @@
     "@types/react-dom": "^18.2.5",
     "@vitejs/plugin-react": "^4.1.1",
     "typescript": "^4.9.5",
-    "unocss": "^0.57.7",
     "vite": "^4.3.9",
     "vite-tsconfig-paths": "^4.2.0"
   }

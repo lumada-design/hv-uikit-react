@@ -219,7 +219,10 @@ export const ThemeStructure = () => {
       <div className={styles.controls}>
         <HvDropdown
           classes={{ root: styles.dropdown }}
-          onChange={(v) => setSelectedTheme(v.id)}
+          onChange={(selected) => {
+            const value = Array.isArray(selected) ? selected[0] : selected;
+            setSelectedTheme(value?.id?.toString());
+          }}
           values={defaultThemes}
         />
         <div className={styles.switchContainer}>

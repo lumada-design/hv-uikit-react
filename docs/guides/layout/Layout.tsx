@@ -71,7 +71,7 @@ export const SimpleGridSample = () => {
       cols={3}
       breakpoints={[
         {
-          maxWidth: activeTheme.breakpoints.values.sm,
+          maxWidth: activeTheme?.breakpoints.values.sm,
           cols: 2,
         },
       ]}

@@ -6,8 +6,6 @@ import {
   HvFlowNodeFC,
 } from "@hitachivantara/uikit-react-lab";
 
-import { NodeGroup } from "../types";
-
 export const Table: HvFlowNodeFC = (props) => {
   const params: HvFlowNodeProps["params"] = useMemo(() => {
     return [

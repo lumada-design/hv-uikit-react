@@ -6,42 +6,42 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 
-const Layout = lazy(() => import("~/pages/layout"));
-const Root = lazy(() => import("~/pages/Root"));
+const Layout = lazy(() => import("~/pages/Layout"));
 const Components = lazy(() => import("~/pages/Components"));
 const Instructions = lazy(() => import("~/pages/Instructions"));
 const Flow = lazy(() => import("~/pages/Flow"));
-const DashboardPreview = lazy(() => import("~/pages/Flow/DashboardPreview"));
+const Dashboard = lazy(() => import("~/pages/Dashboard"));
 const NotFound = lazy(() => import("~/pages/NotFound"));
 
-// Templates
 /* eslint-disable import/no-relative-packages */
 // @ts-nocheck
-const AssetInventory = lazy(() => import("../../../templates/AssetInventory"));
-const ListView = lazy(() => import("../../../templates/ListView"));
-const Form = lazy(() => import("../../../templates/Form"));
-const DetailsView = lazy(() => import("../../../templates/DetailsView"));
-const Dashboard = lazy(() => import("../../../templates/Dashboard"));
-const Welcome = lazy(() => import("../../../templates/Welcome"));
+const AssetInventoryTmpl = lazy(
+  () => import("../../../templates/AssetInventory")
+);
+const ListViewTmpl = lazy(() => import("../../../templates/ListView"));
+const FormTmpl = lazy(() => import("../../../templates/Form"));
+const DetailsViewTmpl = lazy(() => import("../../../templates/DetailsView"));
+const DashboardTmpl = lazy(() => import("../../../templates/Dashboard"));
+const WelcomeTmpl = lazy(() => import("../../../templates/Welcome"));
 // @ts-check
 
 const routes = createRoutesFromElements(
   <Route element={<Layout />}>
-    <Route path="/" element={<Root />} />
-    <Route path="/components" element={<Components />} />
+    <Route path="/" element={<Navigate to="/home" replace />} />
     <Route path="/home" element={<Instructions />} />
+    <Route path="/components" element={<Components />} />
     <Route path="/flow" element={<Flow />} />
-    <Route path="/dashboard-preview" element={<DashboardPreview />} />
+    <Route path="/dashboard/:id" element={<Dashboard />} />
     <Route
       path="/templates"
       element={<Navigate to="/templates/welcome" replace />}
     />
-    <Route path="/templates/welcome" element={<Welcome />} />
-    <Route path="/templates/dashboard" element={<Dashboard />} />
-    <Route path="/templates/asset-inventory" element={<AssetInventory />} />
-    <Route path="/templates/list-view" element={<ListView />} />
-    <Route path="/templates/form" element={<Form />} />
-    <Route path="/templates/details-view" element={<DetailsView />} />
+    <Route path="/templates/welcome" element={<WelcomeTmpl />} />
+    <Route path="/templates/dashboard" element={<DashboardTmpl />} />
+    <Route path="/templates/asset-inventory" element={<AssetInventoryTmpl />} />
+    <Route path="/templates/list-view" element={<ListViewTmpl />} />
+    <Route path="/templates/form" element={<FormTmpl />} />
+    <Route path="/templates/details-view" element={<DetailsViewTmpl />} />
     <Route path="/*" element={<NotFound />} />
   </Route>
 );

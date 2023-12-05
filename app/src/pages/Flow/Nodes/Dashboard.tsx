@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
+import { Link } from "react-router-dom";
 import {
   HvDashboard,
   HvDashboardProps,
@@ -20,12 +21,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
-import {
-  DASHBOARDS_STORAGE_KEY,
-  DashboardSpecs,
-  DashboardsStorage,
-  NodeGroup,
-} from "../types";
+import { DASHBOARDS_STORAGE_KEY } from "~/lib/utils/dashboard";
 
 interface Configuration {
   opened: boolean;
@@ -144,13 +140,10 @@ export const Dashboard: HvFlowNodeFC = (props) => {
           })}
         >
           <HvButton onClick={handleOpenConfig}>Configure</HvButton>
-          <HvButton
-            variant="primarySubtle"
-            component="a"
-            href={`./?dashboard=${id}`}
-            target="_blank"
-          >
-            Preview
+          <HvButton variant="primarySubtle">
+            <Link to={`/dashboard/${id}`} target="_blank">
+              Preview
+            </Link>
           </HvButton>
         </div>
       </HvFlowNode>

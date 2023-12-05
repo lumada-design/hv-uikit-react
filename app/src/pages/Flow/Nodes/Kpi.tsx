@@ -7,8 +7,6 @@ import {
   HvFlowNodeFC,
 } from "@hitachivantara/uikit-react-lab";
 
-import { NodeData, NodeGroup } from "../types";
-
 export const Kpi: HvFlowNodeFC = (props) => {
   const { id } = props;
 

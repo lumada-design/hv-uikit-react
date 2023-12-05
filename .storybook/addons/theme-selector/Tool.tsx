@@ -14,6 +14,7 @@ import {
   getInitialTheme,
   setLocalTheme,
   getLocalTheme,
+  Theme,
 } from "./utils";
 import { ADDON_EVENT, ADDON_ID } from "./constants";
 

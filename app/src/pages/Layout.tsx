@@ -1,14 +1,18 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 
+import { Header } from "~/components/common/Header";
 import { Container } from "~/components/common/Container";
 import { Tutorial } from "~/components/common/Tutorial";
 import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { NavigationProvider } from "~/lib/context/NavigationContext";
 import navigation from "~/lib/navigation";
 
-const Content = () => {
+const Layout = () => {
   const { selectedMode } = useTheme();
+  const { pathname } = useLocation();
+  const isDashboard = pathname.includes("/dashboard/");
+
   const {
     customTheme,
     open,
@@ -41,6 +45,7 @@ const Content = () => {
               />
             )}
             <Container maxWidth="xl">
+              {!isDashboard && <Header />}
               <Outlet />
             </Container>
           </NavigationProvider>
@@ -50,4 +55,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default Layout;

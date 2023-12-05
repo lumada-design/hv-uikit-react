@@ -1,15 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/css";
-import { useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { HvGlobalActions, theme } from "@hitachivantara/uikit-react-core";
 import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
-import {
-  DASHBOARDS_STORAGE_KEY,
-  DashboardSpecs,
-  DashboardsStorage,
-} from "../types";
+import { DASHBOARDS_STORAGE_KEY } from "~/lib/utils/dashboard";
+
 import { Renderer, RendererProps } from "./Renderers";
 
 interface DashboardConfig extends Pick<HvDashboardProps, "layout" | "cols"> {
@@ -28,9 +25,8 @@ const buildContent = (items?: DashboardSpecs["items"]) => {
   }, []);
 };
 
-const DashboardPreview = () => {
-  const [searchParams] = useSearchParams();
-  const id = searchParams.get("id");
+const Dashboard = () => {
+  const { id } = useParams();
 
   const isMounted = useRef<boolean>(false);
 
@@ -114,4 +110,4 @@ const DashboardPreview = () => {
   );
 };
 
-export default DashboardPreview;
+export default Dashboard;

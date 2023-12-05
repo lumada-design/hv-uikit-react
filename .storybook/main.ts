@@ -1,8 +1,10 @@
+import { mergeConfig } from "vite";
 import { StorybookConfig } from "@storybook/react-vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 import remarkGfm from "remark-gfm";
 import unoCSS from "unocss/vite";
 import { presetHv } from "@hitachivantara/uikit-uno-preset";
+
+import viteConfig from "../.config/vite.config.app";
 
 export default {
   framework: {
@@ -21,7 +23,6 @@ export default {
     autodocs: true,
   },
   addons: [
-    // "@storybook/addon-actions",
     "@storybook/addon-controls",
     "@storybook/addon-toolbars",
     {
@@ -55,31 +56,15 @@ export default {
       to: "assets/pictograms.svg",
     },
   ],
-  async viteFinal(config, { configType }) {
-    config.plugins?.push(tsconfigPaths({ loose: true }));
+  async viteFinal(config) {
     config.plugins?.push(unoCSS({ presets: [presetHv()] }));
 
-    config.optimizeDeps = {
-      ...config.optimizeDeps,
-      include: [
-        "@mdx-js/react",
-        "@storybook/theming",
-        "@storybook/addon-docs",
-        "@storybook/addon-links/react",
-        "@storybook/addon-links",
-      ],
-    };
-
-    if (configType === "PRODUCTION") {
-      config.base = "./";
-    }
-
-    return config;
+    return mergeConfig(config, viteConfig);
   },
   typescript: {
     reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
-      tsconfigPath: "../tsconfig.json",
+      tsconfigPath: "./tsconfig.json",
       shouldExtractLiteralValuesFromEnum: true,
       shouldRemoveUndefinedFromOptional: true,
     },

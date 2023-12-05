@@ -591,7 +591,7 @@ export type UseHvTableProps = <
   ...plugins: Array<PluginHook<D>>
 ) => HvTableInstance<D, H>;
 
-export { PluginHook as HvTablePluginHook };
+export type { PluginHook as HvTablePluginHook };
 
 // #endregion ##### TYPES #####
 

@@ -6,8 +6,7 @@ import {
   HvLineChart,
 } from "@hitachivantara/uikit-react-viz";
 
-import { NodeData } from "../../types";
-import { datasets } from "../../utils";
+import { datasets } from "~/lib/utils/dashboard";
 
 import { ChartContainer } from "./ChartContainer";
 import { Kpi } from "./Kpi";

@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-
 import { IconButton } from "@storybook/components";
 
-import { colors } from "@hitachivantara/uikit-styles";
-
+import { colors } from "../../../packages/styles/src";
+import { themes } from "../../theme";
 import { Mode, getInitialMode, setLocalMode } from "./utils";
 import { ADDON_EVENT, ADDON_ID } from "./constants";
-import { themes } from "../../theme";
 
-const ModeSelector = ({ api }) => {
+const Tool = ({ api }) => {
   const initialMode: Mode = getInitialMode();
 
   const [selectedMode, setSelectedMode] = useState<Mode>(initialMode);
@@ -48,4 +46,4 @@ const ModeSelector = ({ api }) => {
   );
 };
 
-export default ModeSelector;
+export default Tool;

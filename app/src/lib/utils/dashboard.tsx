@@ -3,7 +3,10 @@ import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 import useSWR from "swr";
 import { loadArrow } from "arquero";
 
-import { DashboardSpecs, LAYOUT_COLS } from "./types";
+// ### Local storage ###
+export const DASHBOARDS_STORAGE_KEY = "dashboards";
+
+export const LAYOUT_COLS = 12;
 
 export const datasets = [
   {

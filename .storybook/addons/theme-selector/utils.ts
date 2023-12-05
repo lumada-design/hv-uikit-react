@@ -1,3 +1,9 @@
+export interface Theme {
+  name: string;
+  label: string;
+  mode: string;
+}
+
 const STORAGE_KEY = "sb-uikit-theme";
 const DEFAULT_THEME = "ds5";
 

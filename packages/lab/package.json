@@ -2,11 +2,7 @@
   "name": "@hitachivantara/uikit-react-lab",
   "version": "5.18.5",
   "private": false,
-  "author": "Hitachi Vantara UI Kit Team",
   "description": "Contributed React components for the NEXT UI Kit.",
-  "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "main": "src/index.ts",
-  "sideEffects": false,
   "keywords": [
     "hitachi-vantara",
     "design-system",
@@ -14,23 +10,63 @@
     "react",
     "typescript"
   ],
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "bugs": {
+    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
   },
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+  "author": "Hitachi Vantara UI Kit Team",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.cjs",
+      "import": "./dist/esm/index.js"
+    }
   },
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "vite build",
-    "test": "vitest run",
-    "test:update": "vitest -u",
-    "test:ui": "vitest --ui",
+    "build": "npm run clean && vite build",
+    "clean": "rimraf dist",
     "coverage": "vitest run --coverage",
-    "clean": "npx rimraf dist package",
-    "typecheck": "tsc --noEmit",
-    "prepublishOnly": "run-s clean build && npx clean-publish"
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:update": "vitest -u",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.1.0",
+    "@dnd-kit/modifiers": "^6.0.1",
+    "@emotion/css": "^11.11.2",
+    "@hitachivantara/uikit-react-core": "^5.37.1",
+    "@hitachivantara/uikit-react-icons": "^5.7.6",
+    "@hitachivantara/uikit-styles": "^5.16.3",
+    "lodash": "^4.17.21",
+    "react-grid-layout": "^1.4.4",
+    "reactflow": "^11.10.1",
+    "uid": "^2.0.2",
+    "usehooks-ts": "^2.9.1",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@storybook/react": "^7.6.1",
+    "@storybook/testing-library": "^0.2.2",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/react": "^18.2.39",
+    "@types/react-dom": "^18.2.17",
+    "@types/react-grid-layout": "^1.3.5",
+    "rimraf": "^5.0.5",
+    "vite": "^4.5.0",
+    "vitest": "^0.34.6"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",
@@ -39,56 +75,7 @@
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
-  "dependencies": {
-    "@dnd-kit/core": "^6.0.8",
-    "@dnd-kit/modifiers": "^6.0.1",
-    "@emotion/css": "^11.11.0",
-    "@hitachivantara/uikit-react-core": "^5.38.0",
-    "@hitachivantara/uikit-react-icons": "^5.7.7",
-    "@hitachivantara/uikit-styles": "^5.16.4",
-    "lodash": "^4.17.21",
-    "react-grid-layout": "^1.4.3",
-    "reactflow": "^11.9.4",
-    "uid": "^2.0.2",
-    "usehooks-ts": "^2.9.1",
-    "zustand": "^4.4.1"
-  },
-  "devDependencies": {
-    "@storybook/react": "^7.4.1",
-    "@storybook/testing-library": "^0.2.0",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/user-event": "^14.4.3",
-    "@types/react": "^18.2.12",
-    "@types/react-dom": "^18.2.5",
-    "@types/react-grid-layout": "^1.3.5",
-    "npm-run-all": "^4.1.5",
-    "vite": "^4.3.9",
-    "vitest": "^0.32.0"
-  },
-  "files": [
-    "dist"
-  ],
   "publishConfig": {
-    "access": "public",
-    "directory": "package",
-    "main": "dist/cjs/index.cjs",
-    "module": "dist/esm/index.js",
-    "types": "dist/types/index.d.ts",
-    "exports": {
-      ".": {
-        "require": "./dist/cjs/index.cjs",
-        "import": "./dist/esm/index.js"
-      }
-    }
-  },
-  "clean-publish": {
-    "withoutPublish": true,
-    "tempDir": "package",
-    "fields": [
-      "main"
-    ],
-    "files": [
-      "tsconfig.json"
-    ]
+    "access": "public"
   }
 }

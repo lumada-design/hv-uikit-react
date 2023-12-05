@@ -2,11 +2,7 @@
   "name": "@hitachivantara/uikit-react-icons",
   "version": "5.7.7",
   "private": false,
-  "author": "Hitachi Vantara UI Kit Team",
   "description": "NEXT Design System icons packaged as a set of React components.",
-  "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "main": "./bin/index.ts",
-  "sideEffects": false,
   "keywords": [
     "hitachi-vantara",
     "design-system",
@@ -14,74 +10,66 @@
     "react",
     "typescript"
   ],
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "bugs": {
+    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
   },
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+  "author": "Hitachi Vantara UI Kit Team",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.cjs",
+      "import": "./dist/esm/index.js"
+    }
   },
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "prebuild": "npm run convert",
+    "prebuild": "run-s clean convert",
     "build": "vite build",
-    "postbuild": "npx cpy \"sprites\" \"dist\"",
+    "postbuild": "cpy \"sprites\" \"dist\"",
     "optimize": "svgo -r -f assets assets",
-    "preconvert": "npx rimraf bin",
+    "preconvert": "rimraf src",
     "convert": "run-s convert:*",
-    "convert:svg": "tsx src/svgToReact.ts dir --input assets --output bin --force",
-    "convert:sprites": "tsx src/svgToSprite.ts dir --input assets --output sprites --force",
-    "convert:copy": "npx cpy \"lib/*\" \"bin\"",
-    "clean": "npx rimraf dist bin sprites package",
-    "prepare": "npm run convert",
-    "prepublishOnly": "run-s clean build && npx clean-publish"
+    "convert:svg": "tsx scripts/svgToReact.ts dir --input assets --output src --force",
+    "convert:sprites": "tsx scripts/svgToSprite.ts dir --input assets --output sprites --force",
+    "convert:copy": "cpy \"lib/*\" \"src\"",
+    "clean": "rimraf dist src sprites",
+    "prepare": "npm run convert"
+  },
+  "dependencies": {
+    "@hitachivantara/uikit-styles": "^5.16.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.39",
+    "@types/react-dom": "^18.2.17",
+    "by-node-env": "^2.0.1",
+    "cpy-cli": "^4.2.0",
+    "html-to-react": "^1.7.0",
+    "jsdom-no-contextify": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "recursive-readdir": "^2.2.3",
+    "rimraf": "^5.0.5",
+    "svgo": "^3.0.4",
+    "tsx": "^3.14.0",
+    "vite": "^4.5.0",
+    "yargs": "^17.7.2"
   },
   "peerDependencies": {
     "@emotion/styled": "^11.10.6",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
-  "dependencies": {
-    "@hitachivantara/uikit-styles": "^5.16.4"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.12",
-    "@types/react-dom": "^18.2.5",
-    "by-node-env": "^2.0.1",
-    "cpy-cli": "^4.2.0",
-    "html-to-react": "^1.6.0",
-    "jsdom-no-contextify": "^3.1.0",
-    "npm-run-all": "^4.1.5",
-    "recursive-readdir": "^2.2.3",
-    "svgo": "^3.0.2",
-    "tsx": "^3.12.7",
-    "vite": "^4.3.9",
-    "yargs": "^17.7.2"
-  },
-  "files": [
-    "dist"
-  ],
   "publishConfig": {
-    "access": "public",
-    "directory": "package",
-    "main": "dist/cjs/index.cjs",
-    "module": "dist/esm/index.js",
-    "types": "dist/types/index.d.ts",
-    "exports": {
-      ".": {
-        "require": "./dist/cjs/index.cjs",
-        "import": "./dist/esm/index.js"
-      }
-    }
-  },
-  "clean-publish": {
-    "withoutPublish": true,
-    "tempDir": "package",
-    "fields": [
-      "main"
-    ],
-    "files": [
-      "tsconfig.json"
-    ]
+    "access": "public"
   }
 }
