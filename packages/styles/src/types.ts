@@ -139,31 +139,29 @@ export type HvThemeColorModeStructure = HvThemeColors & {
 };
 
 // Theme structure
-export type HvThemeStructure = {
+export interface HvThemeStructure<Mode extends string = string>
+  extends HvThemeComponents,
+    HvThemeComponentsProps,
+    HvThemeTypography,
+    Omit<HvThemeTokens, "colors"> {
   name: string;
   base?: HvBaseTheme;
-} & HvThemeComponents &
-  HvThemeComponentsProps &
-  HvThemeTypography &
-  Omit<HvThemeTokens, "colors"> & {
-    colors: {
-      modes: {
-        [key: string]: HvThemeColorModeStructure;
-      };
-    };
+  colors: {
+    modes: Record<Mode, HvThemeColorModeStructure>;
   };
+}
 
 // Custom theme
-export type HvCustomTheme = { name: string } & HvThemeComponents &
-  HvThemeComponentsProps &
-  HvThemeTypography &
-  Partial<Omit<HvThemeTokens, "colors">> & {
-    colors: {
-      modes: {
-        [key: string]: Partial<HvThemeColorModeStructure>;
-      };
-    };
+export interface HvCustomTheme<Mode extends string = string>
+  extends HvThemeComponents,
+    HvThemeComponentsProps,
+    HvThemeTypography,
+    Partial<Omit<HvThemeTokens, "colors">> {
+  name: string;
+  colors: {
+    modes: Record<Mode, Partial<HvThemeColorModeStructure>>;
   };
+}
 
 // Deep string: set all props to strings
 export type DeepString<T> = {

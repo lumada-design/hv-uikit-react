@@ -10,9 +10,9 @@ import type { HvCustomTheme, HvTheme, HvThemeStructure } from "./types";
  * @param options The options to generate the theme
  * @returns The generated theme
  */
-export const makeTheme = (
-  options: HvCustomTheme | ((theme: HvTheme) => HvCustomTheme)
-): HvThemeStructure => {
+export const makeTheme = <Mode extends string = string>(
+  options: HvCustomTheme<Mode> | ((theme: HvTheme) => HvCustomTheme<Mode>)
+): HvThemeStructure<Mode> => {
   const customTheme = typeof options === "function" ? options(theme) : options;
   const newTheme = mergeTheme(tokens, customTheme);
 
