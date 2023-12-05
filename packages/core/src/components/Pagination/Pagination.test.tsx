@@ -9,14 +9,17 @@ describe("Pagination", () => {
     expect(screen.getByRole("textbox")).toHaveTextContent("10");
     expect(screen.getByRole("spinbutton")).toBeInTheDocument();
 
-    const firstButton = screen.getByRole("button", { name: "First Page" });
+    const [firstButton, prevButton, nextButton, lastButton] =
+      screen.getAllByRole("button");
+
+    expect(firstButton).toHaveAttribute("aria-label", "First Page");
     expect(firstButton).toBeDisabled();
-    const prevButton = screen.getByRole("button", { name: "Previous Page" });
+    expect(prevButton).toHaveAttribute("aria-label", "Previous Page");
     expect(prevButton).toBeDisabled();
 
-    const nextButton = screen.getByRole("button", { name: "Next Page" });
+    expect(nextButton).toHaveAccessibleName("Next Page");
     expect(nextButton).toBeDisabled();
-    const lastButton = screen.getByRole("button", { name: "Last Page" });
+    expect(lastButton).toHaveAccessibleName("Last Page");
     expect(lastButton).toBeDisabled();
   });
 
@@ -40,14 +43,17 @@ describe("Pagination", () => {
       <HvPagination canNext page={0} pages={100} onPageChange={changeMock} />
     );
 
-    const firstButton = screen.getByRole("button", { name: "First Page" });
+    const [firstButton, prevButton, nextButton, lastButton] =
+      screen.getAllByRole("button");
+
+    expect(firstButton).toHaveAttribute("aria-label", "First Page");
     expect(firstButton).toBeDisabled();
-    const prevButton = screen.getByRole("button", { name: "Previous Page" });
+    expect(prevButton).toHaveAttribute("aria-label", "Previous Page");
     expect(prevButton).toBeDisabled();
 
-    const nextButton = screen.getByRole("button", { name: "Next Page" });
+    expect(nextButton).toHaveAccessibleName("Next Page");
     expect(nextButton).toBeEnabled();
-    const lastButton = screen.getByRole("button", { name: "Last Page" });
+    expect(lastButton).toHaveAccessibleName("Last Page");
     expect(lastButton).toBeEnabled();
 
     fireEvent.click(firstButton);

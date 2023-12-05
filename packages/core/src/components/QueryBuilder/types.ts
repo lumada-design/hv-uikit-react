@@ -70,6 +70,14 @@ interface DialogLabels {
   dialogCloseTooltip: string;
 }
 
+/** @private label structure action icon buttons */
+interface ActionIconLabels extends DialogLabels {
+  // TODO: remove in v6 - duplicated labels - `tooltip` *is* the aria-label
+  /** @deprecated use `tooltip` label instead */
+  ariaLabel: string;
+  tooltip?: string;
+}
+
 export type QueryAction =
   | {
       type: "reset-query";
@@ -113,10 +121,7 @@ export interface AskAction {
 
 export interface HvQueryBuilderLabels {
   query?: {
-    delete?: {
-      ariaLabel: string;
-      tooltip?: string;
-    } & DialogLabels;
+    delete?: ActionIconLabels;
     addRule?: {
       label: string;
     };
@@ -190,20 +195,11 @@ export interface HvQueryBuilderLabels {
         };
       };
     };
-    delete: {
-      ariaLabel: string;
-      tooltip?: string;
-    } & DialogLabels;
+    delete: ActionIconLabels;
   };
   group: {
-    delete: {
-      ariaLabel: string;
-      tooltip?: string;
-    } & DialogLabels;
-    reset: {
-      ariaLabel: string;
-      tooltip?: string;
-    } & DialogLabels;
+    delete: ActionIconLabels;
+    reset: ActionIconLabels;
     addRule: {
       label: string;
     };

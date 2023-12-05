@@ -3,8 +3,7 @@ import { Delete } from "@hitachivantara/uikit-react-icons";
 import { useMediaQuery, useTheme } from "@mui/material";
 
 import { HvGrid } from "@core/components/Grid";
-import { HvButton } from "@core/components/Button";
-import { withTooltip } from "@core/hocs/withTooltip";
+import { IconButton } from "@core/utils/IconButton";
 import { useDefaultProps } from "@core/hooks";
 import { ExtractNames } from "@core/utils";
 
@@ -77,12 +76,6 @@ export const Rule = (props: RuleProps) => {
   const shouldShowValueInput =
     operator !== "Empty" && operator !== "IsNotEmpty";
 
-  const DeleteIcon = withTooltip(
-    () => <Delete />,
-    labels.rule.delete.tooltip,
-    "bottom"
-  );
-
   return (
     <HvGrid
       container
@@ -120,9 +113,9 @@ export const Rule = (props: RuleProps) => {
         </HvGrid>
       )}
       <HvGrid item className={classes.actionsContainer}>
-        <HvButton
-          icon
-          aria-label={labels.rule.delete.ariaLabel}
+        <IconButton
+          placement="bottom"
+          title={labels.rule.delete.tooltip || labels.rule.delete.ariaLabel}
           onClick={() =>
             disableConfirmation
               ? dispatchAction({ type: "remove-node", id })
@@ -133,8 +126,8 @@ export const Rule = (props: RuleProps) => {
           }
           disabled={readOnly}
         >
-          <DeleteIcon />
-        </HvButton>
+          <Delete role="none" />
+        </IconButton>
       </HvGrid>
     </HvGrid>
   );

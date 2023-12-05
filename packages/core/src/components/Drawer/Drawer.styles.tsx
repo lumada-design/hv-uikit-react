@@ -12,8 +12,6 @@ export const { staticClasses, useClasses } = createClasses("HvDrawer", {
   },
   background: {},
   closeButton: {
-    padding: 0,
-    minWidth: "inherit",
     position: "absolute",
     top: theme.spacing("sm"),
     right: theme.spacing("sm"),
