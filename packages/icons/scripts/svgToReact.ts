@@ -7,22 +7,18 @@ import ReactDOMServer from "react-dom/server";
 import recursive from "recursive-readdir";
 import yargs from "yargs";
 import jsdom from "jsdom-no-contextify";
-import { colors } from "@hitachivantara/uikit-styles";
 
 import { extractColors, replaceFill } from "./utils/colors";
 import { formatSVG, generateComponent, removeStyle } from "./utils/converter";
 import { createComponentName } from "./utils/createComponentName";
 import { extractSize, replaceSize } from "./utils/size";
 
-const printErrors = console.warn;
-
 // Argument setup
 const args = yargs // reading arguments from the command line
   .option("format", { default: true })
   .option("output", { alias: "o" })
   .option("input", { alias: "i" })
-  .option("rm-style", { default: false })
-  .option("force", { alias: "f", default: false }).argv as any;
+  .option("rm-style", { default: false }).argv as any;
 
 // Resolve arguments
 const firstArg = args._[0];
@@ -53,15 +49,9 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
     `${fileName}.tsx`
   );
 
-  fs.writeFile(file, processedSVG, { flag: args.force ? "w" : "wx" }, (err) => {
+  fs.writeFile(file, processedSVG, { flag: "w" }, (err) => {
     if (err) {
-      if (err.code === "EEXIST") {
-        printErrors(
-          `Output file ${file} already exists. Use the force (--force) flag to overwrite the existing files`
-        );
-      } else {
-        printErrors(`Output file ${file} not writable ${err.code}`);
-      }
+      console.error(`Output file ${file} not writable ${err.code}`);
     }
   });
 
@@ -88,19 +78,27 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
     if (subFolder === ".") {
       fs.appendFile(
         path.resolve(componentOutputFolder, `index.ts`),
-        `\nexport * from "./icons";\nimport * as icons from "./icons";\nexport { icons };\n`,
-        () => {}
-      );
-      fs.appendFile(
-        path.resolve(componentOutputFolder, `index.ts`),
-        `\nexport * from "./IconBase";\nexport * from "./IconSprite";\n`,
+        [
+          `export * from "./IconBase";`,
+          `export * from "./IconSprite";`,
+          "\n",
+          `export * from "./icons";`,
+          `import * as icons from "./icons";`,
+          `export { icons };`,
+          "\n",
+        ].join("\n"),
         () => {}
       );
     } else {
       const subFolderName = subFolder.replace("./", "");
       fs.appendFile(
         path.resolve(componentOutputFolder, subFolder, "..", `index.ts`),
-        `\nexport * from "${subFolder}";\nimport * as ${subFolderName} from "${subFolder}";\nexport { ${subFolderName} };\n`,
+        [
+          `export * from "${subFolder}";`,
+          `import * as ${subFolderName} from "${subFolder}";`,
+          `export { ${subFolderName} };`,
+          "\n",
+        ].join("\n"),
         () => {}
       );
     }
@@ -110,7 +108,7 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
 const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
   fs.readFile(fileToRead, "utf8", (err, file) => {
     if (err) {
-      printErrors(err);
+      console.error(err);
       return;
     } // exit early
 
@@ -199,7 +197,7 @@ const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
         basePath: `${".".repeat(depth + 1)}`,
       };
 
-      output = generateComponent(params, colors.light);
+      output = generateComponent(params);
       writeFile(output, fileToWrite, subFolder);
     });
   });

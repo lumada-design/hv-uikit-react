@@ -1,3 +1,5 @@
+import { colors as hvColors } from "@hitachivantara/uikit-styles";
+
 import { isSelector } from "../../../lib/utils";
 
 const replaceColorsWithTheme = (defaultPalette, themePalette) => {
@@ -24,10 +26,13 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
  * Creates a full component string based upon provided svg data and a component name
  * @return The parsed component string
  */
-export const generateComponent = (
-  { svgOutput, iconName, colors, defaultSizes, basePath = ".." },
-  lightPalette
-) => {
+export const generateComponent = ({
+  svgOutput,
+  iconName,
+  colors,
+  defaultSizes,
+  basePath = "..",
+}) => {
   const whiteColor = isSelector(iconName) ? "atmo1" : "acce0";
 
   const themedPalette = colors
@@ -35,7 +40,7 @@ export const generateComponent = (
     .replace(/"#fff"/g, `theme.colors.${whiteColor}`)
     .replace(/"#f0f0f0"/g, "theme.colors.atmo2")
     .replace(/"#ccced0"/g, "theme.colors.atmo4");
-  const palette = replaceColorsWithTheme(themedPalette, lightPalette);
+  const palette = replaceColorsWithTheme(themedPalette, hvColors.light);
   const defaultViewBox = defaultSizes.viewBoxRegexp.join(" ");
 
   return `

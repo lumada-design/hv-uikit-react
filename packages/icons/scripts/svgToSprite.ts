@@ -71,17 +71,9 @@ fs.mkdir(outputFolder, { recursive: true }, (err) => {
         outputPath,
         `${groupName}.svg`
       );
-      const spriteStream = fs.createWriteStream(symbolsSvgPath, {
-        flags: args.force ? "w" : "wx",
-      });
+      const spriteStream = fs.createWriteStream(symbolsSvgPath, { flags: "w" });
       spriteStream.on("error", (err) => {
-        if (err.message.includes("EEXIST")) {
-          console.error(
-            `Output file ${symbolsSvgPath} already exists. Use the force (--force) flag to overwrite the existing files`
-          );
-        } else {
-          console.error(err);
-        }
+        console.error(err);
       });
       spriteStream.on("open", () => {
         spriteStream.write(
