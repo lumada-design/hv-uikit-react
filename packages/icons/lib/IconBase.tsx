@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, AllHTMLAttributes, useMemo } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import { theme, getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
@@ -83,7 +83,7 @@ export const splitIconProps = (iconName: string, props: IconBaseProps) => {
   const iconSize = iconSizeProp ?? (isXS(iconName) ? "XS" : "S");
   const size = getIconSize(iconSize, isSemantic(iconName), width, height);
 
-  const newSvgProps: HTMLAttributes<SVGElement> = {
+  const newSvgProps: React.HTMLAttributes<SVGElement> = {
     focusable: false,
     // pass size props
     ...size,
@@ -105,49 +105,10 @@ export const splitIconProps = (iconName: string, props: IconBaseProps) => {
   return [newSvgProps, newOtherProps] as const;
 };
 
-export function useIconColor(
-  palette: string[] = [],
-  color?: string | string[],
-  semantic?: string,
-  inverted = false
-) {
-  return useMemo(() => {
-    return getIconColors(palette, color, semantic, inverted);
-  }, [color, inverted, palette, semantic]);
-}
-
-export function useIconSize(
-  iconSize?: IconSize,
-  height?: number,
-  width?: number,
-  hasSpecialSize = false
-) {
-  return useMemo(() => {
-    return getIconSize(iconSize, hasSpecialSize, width, height);
-  }, [hasSpecialSize, height, iconSize, width]);
-}
-
-export function useIcon(
-  props: IconBaseProps,
-  palette: string[] = [],
-  hasSpecialSize = false
-) {
-  const { color, iconSize, width, height, semantic, inverted } = props;
-  const colorArray = useIconColor(palette, color, semantic, inverted);
-  const size = useIconSize(iconSize, height, width, hasSpecialSize);
-
-  return { size, colorArray };
-}
-
 export type IconSize = "XS" | "S" | "M" | "L";
 
-type HTMLDivProps = Pick<AllHTMLAttributes<HTMLDivElement>, "name"> &
-  Pick<
-    HTMLAttributes<HTMLDivElement>,
-    Exclude<keyof HTMLAttributes<HTMLDivElement>, "color" | "height" | "width">
-  >;
-
-export interface IconBaseProps extends HTMLDivProps {
+export interface IconBaseProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
   /**
    * A String or Array of strings representing the colors to override in the icon.
    * Each element inside the array will override a different color.

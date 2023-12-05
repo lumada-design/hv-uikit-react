@@ -14,15 +14,16 @@ npm install @hitachivantara/uikit-react-icons
 
 1. Copy the `.svg` to the `assets` directory.
 2. Run `npm run optimize` to optimize the icons (using `svgo`).
-3. Run `npm run build` to convert the SVGs to React components & build the package.
+3. Run `npm run convert` to convert the SVGs to React components.
+4. Run `npm run build` to build the package.
 
 ## File structure
 
 ```sh
 icons/
-├── assets # optimized `.svg` assets
-├── bin    # `.tsx` icon components
-├── dist   # built artifacts (by `vite build`)
-└── src    # .svg to React component generator scripts
-└── lib    # library code to be moved to `./bin`
+├── assets  # optimized `.svg` assets
+├── dist    # built artifacts (by `vite build`)
+├── lib     # library code to be moved to `./src`
+├── scripts # .svg to React component generator scripts
+└── src     # generated `.tsx` React icon components
 ```
