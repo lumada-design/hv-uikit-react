@@ -11,10 +11,9 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBaseProps } from "@core/types/generic";
-import { withTooltip } from "@core/hocs/withTooltip";
+import { IconButton } from "@core/utils/IconButton";
 import { setId } from "@core/utils/setId";
 import { ExtractNames } from "@core/utils/classes";
-import { HvButton } from "@core/components/Button";
 import { useTheme } from "@core/hooks/useTheme";
 import { hexToRgbA } from "@core/utils/hexToRgbA";
 
@@ -102,12 +101,6 @@ export const HvDrawer = (props: HvDrawerProps) => {
   const { classes, cx, css } = useClasses(classesProp);
   const { colors } = useTheme();
 
-  const closeButtonDisplay = () => <Close role="none" />;
-
-  const CloseButtonTooltipWrapper = buttonTitle
-    ? withTooltip(closeButtonDisplay, buttonTitle, "top")
-    : closeButtonDisplay;
-
   return (
     <>
       <MuiDrawer
@@ -123,15 +116,15 @@ export const HvDrawer = (props: HvDrawerProps) => {
         onClose={onClose}
         {...others}
       >
-        <HvButton
+        <IconButton
           id={setId(id, "close")}
           className={classes.closeButton}
           variant="secondaryGhost"
           onClick={onClose}
-          aria-label={buttonTitle}
+          title={buttonTitle}
         >
-          <CloseButtonTooltipWrapper />
-        </HvButton>
+          <Close role="none" />
+        </IconButton>
         {children}
       </MuiDrawer>
       {showBackdrop && (

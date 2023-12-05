@@ -17,12 +17,12 @@ import { HvBaseProps } from "@core/types/generic";
 import { setId } from "@core/utils/setId";
 import { isKey } from "@core/utils/keyboardUtils";
 import { ExtractNames } from "@core/utils/classes";
+import { IconButton } from "@core/utils/IconButton";
 import { useLabels } from "@core/hooks/useLabels";
 
 import HvSelect, { Option } from "./Select";
 import { staticClasses, useClasses } from "./Pagination.styles";
 import { usePageInput, getSafePage, setColor } from "./utils";
-import ButtonIconTooltip from "./ButtonIconTooltip";
 
 export { staticClasses as paginationClasses };
 
@@ -37,23 +37,23 @@ export interface HvPaginationLabels {
   pageSizeSelectorDescription?: string;
   /** Separator of current page and total pages. */
   pagesSeparator?: string;
-  /** Title of button `firstPage`. */
+  /** Title of button `firstPage`. @deprecated Use `firstPage` instead. */
   paginationFirstPageTitle?: string;
-  /** Title of button `previousPage`. */
+  /** Title of button `previousPage`. @deprecated Use `previousPage` instead. */
   paginationPreviousPageTitle?: string;
-  /** Title of button `nextPage`. */
+  /** Title of button `nextPage`. @deprecated Use `nextPage` instead. */
   paginationNextPageTitle?: string;
-  /** Title of button `lastPage`. */
+  /** Title of button `lastPage`. @deprecated Use `lastPage` instead. */
   paginationLastPageTitle?: string;
   /** Aria-label passed to the page input. */
   paginationInputLabel?: string;
-  /** Aria-label of the first page button */
+  /** Label of the first page button */
   firstPage?: string;
-  /** Aria-label of the previous page button */
+  /** Label of the previous page button */
   previousPage?: string;
-  /** Aria-label of the next page button */
+  /** Label of the next page button */
   nextPage?: string;
-  /** Aria-label of the last page button */
+  /** Label of the last page button */
   lastPage?: string;
 }
 
@@ -90,7 +90,7 @@ export interface HvPaginationProps extends HvBaseProps {
   classes?: HvPaginationClasses;
 }
 
-const DEFAULT_LABELS = {
+const DEFAULT_LABELS: HvPaginationLabels = {
   pageSizePrev: "Show",
   pageSizeEntryName: "rows",
   pageSizeSelectorDescription: "Select how many to display",
@@ -236,34 +236,34 @@ export const HvPagination = (props: HvPaginationProps) => {
         )}
       </div>
       <div className={classes.pageNavigator} {...navigationProps}>
-        <ButtonIconTooltip
+        <IconButton
           id={setId(id, "firstPage-button")}
-          aria-label={labels?.firstPage}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
-          tooltip={labels?.paginationFirstPageTitle}
+          title={labels?.firstPage || labels?.paginationFirstPageTitle}
         >
           <Start
+            role="none"
             className={classes.icon}
             color={setColor(!canPrevious)}
             iconSize="XS"
           />
-        </ButtonIconTooltip>
-        <ButtonIconTooltip
+        </IconButton>
+        <IconButton
           id={setId(id, "previousPage-button")}
-          aria-label={labels?.previousPage}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(page - 1)}
-          tooltip={labels?.paginationPreviousPageTitle}
+          title={labels?.previousPage || labels?.paginationPreviousPageTitle}
         >
           <Backwards
+            role="none"
             className={classes.icon}
             color={setColor(!canPrevious)}
             iconSize="XS"
           />
-        </ButtonIconTooltip>
+        </IconButton>
         <div className={classes.pageInfo}>
           {showPageJump ? (
             renderPageJump()
@@ -281,34 +281,33 @@ export const HvPagination = (props: HvPaginationProps) => {
             {pages}
           </HvTypography>
         </div>
-        <ButtonIconTooltip
+        <IconButton
           id={setId(id, "nextPage-button")}
-          aria-label={labels?.nextPage}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(page + 1)}
-          tooltip={labels?.paginationNextPageTitle}
+          title={labels?.nextPage || labels?.paginationNextPageTitle}
         >
           <Forwards
+            role="none"
             className={classes.icon}
             color={setColor(!canNext)}
             iconSize="XS"
           />
-        </ButtonIconTooltip>
-        <ButtonIconTooltip
+        </IconButton>
+        <IconButton
           id={setId(id, "lastPage-button")}
-          aria-label={labels?.lastPage}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
-          tooltip={labels?.paginationLastPageTitle}
+          title={labels?.lastPage || labels?.paginationLastPageTitle}
         >
           <End
             className={classes.icon}
             color={setColor(!canNext)}
             iconSize="XS"
           />
-        </ButtonIconTooltip>
+        </IconButton>
       </div>
     </div>
   );

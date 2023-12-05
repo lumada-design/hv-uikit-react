@@ -5,7 +5,7 @@ import { HvButton } from "@core/components/Button";
 import { HvEmptyState } from "@core/components/EmptyState";
 import { HvMultiButton } from "@core/components/MultiButton";
 import { HvTypography } from "@core/components/Typography";
-import { withTooltip } from "@core/hocs/withTooltip";
+import { IconButton } from "@core/utils/IconButton";
 import { ExtractNames } from "@core/utils/classes";
 
 import { Rule } from "../Rule";
@@ -77,16 +77,6 @@ export const RuleGroup = ({
     </>
   );
 
-  const DeleteIcon = withTooltip(
-    () => (
-      <Delete className={cx({ [classes.topRemoveButtonDisabled]: readOnly })} />
-    ),
-    level === 0 && labels.query?.delete?.tooltip
-      ? labels.query?.delete?.tooltip
-      : labels.group.delete.tooltip,
-    "top"
-  );
-
   const onClickCombinator = useCallback(
     (item: HvQueryBuilderQueryCombinator) => {
       dispatchAction({
@@ -109,23 +99,21 @@ export const RuleGroup = ({
         className={cx(classes.combinator, classes.topCombinator)}
         disabled={readOnly}
       >
-        {combinators &&
-          combinators.map((item) => (
-            <HvButton
-              key={item.operand}
-              className={classes.combinatorButton}
-              selected={item.operand === combinator}
-              onClick={() => item.operand && onClickCombinator(item)}
-              disabled={readOnly}
-              size="xs"
-            >
-              {item.label}
-            </HvButton>
-          ))}
+        {combinators?.map((item) => (
+          <HvButton
+            key={item.operand}
+            className={classes.combinatorButton}
+            selected={item.operand === combinator}
+            onClick={() => item.operand && onClickCombinator(item)}
+            disabled={readOnly}
+            size="xs"
+          >
+            {item.label}
+          </HvButton>
+        ))}
       </HvMultiButton>
       <div className={cx(classes.buttonBackground, classes.topRemoveButton)}>
-        <HvButton
-          icon
+        <IconButton
           className={classes.removeButton}
           onClick={() =>
             disableConfirmation
@@ -138,15 +126,19 @@ export const RuleGroup = ({
                       : labels.group.delete,
                 })
           }
-          aria-label={
-            level === 0 && labels.query?.delete?.ariaLabel
-              ? labels.query?.delete?.ariaLabel
-              : labels.group.delete.ariaLabel
+          title={
+            (level === 0 && labels.query?.delete?.tooltip) ||
+            labels.group.delete.tooltip ||
+            (level === 0 && labels.query?.delete?.ariaLabel) ||
+            labels.group.delete.ariaLabel
           }
           disabled={readOnly}
         >
-          <DeleteIcon />
-        </HvButton>
+          <Delete
+            role="none"
+            className={cx({ [classes.topRemoveButtonDisabled]: readOnly })}
+          />
+        </IconButton>
       </div>
       {rules?.length > 0 && (
         <div
