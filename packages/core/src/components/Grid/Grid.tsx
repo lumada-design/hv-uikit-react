@@ -3,7 +3,6 @@ import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
 
 import isString from "lodash/isString";
 
-import { HvBaseProps } from "@core/types/generic";
 import { useDefaultProps, useWidth } from "@core/hooks";
 import { ExtractNames } from "@core/utils/classes";
 

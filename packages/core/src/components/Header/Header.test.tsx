@@ -2,7 +2,6 @@ import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
 
 import { HvButton } from "@core/components";
-import { HvProvider } from "@core/providers";
 
 import { HvHeader } from "./Header";
 import { HvHeaderNavigation } from "./Navigation";
@@ -12,24 +11,18 @@ import { HitachiLogo } from "./assets/HitachiLogo";
 
 describe("Header", () => {
   it("should render correctly with no data", () => {
-    const { container } = render(
-      <HvProvider cssBaseline="none">
-        <HvHeader />
-      </HvProvider>
-    );
+    const { container } = render(<HvHeader />);
     expect(container).toBeDefined();
   });
 
   it("should render correctly the brand data", () => {
     const { getByText, getByTestId } = render(
-      <HvProvider cssBaseline="none">
-        <HvHeader>
-          <HvHeaderBrand
-            logo={<HitachiLogo data-testid="logo" />}
-            name="Lumada App"
-          />
-        </HvHeader>
-      </HvProvider>
+      <HvHeader>
+        <HvHeaderBrand
+          logo={<HitachiLogo data-testid="logo" />}
+          name="Lumada App"
+        />
+      </HvHeader>
     );
     expect(getByText("Lumada App")).toBeInTheDocument();
     expect(getByTestId("logo")).toBeInTheDocument();
@@ -55,11 +48,9 @@ describe("Header", () => {
     ];
 
     const { getAllByText, getAllByRole, getByRole } = render(
-      <HvProvider cssBaseline="none">
-        <HvHeader>
-          <HvHeaderNavigation data={navigationData} />
-        </HvHeader>
-      </HvProvider>
+      <HvHeader>
+        <HvHeaderNavigation data={navigationData} />
+      </HvHeader>
     );
     expect(getAllByRole("link")).toHaveLength(1);
     expect(getByRole("link", { name: "text" })).toBeInTheDocument();
@@ -68,26 +59,24 @@ describe("Header", () => {
 
   it("should render correctly the actions elements", () => {
     const { getAllByRole } = render(
-      <HvProvider cssBaseline="none">
-        <HvHeader>
-          <HvHeaderActions aria-label="My-aria-label">
-            <HvButton
-              onClick={() => {}}
-              aria-label="Open Notifications panel"
-              variant="primaryGhost"
-            >
-              Badge
-            </HvButton>
-            <HvButton
-              onClick={() => {}}
-              aria-label="Open User panel"
-              variant="primaryGhost"
-            >
-              User
-            </HvButton>
-          </HvHeaderActions>
-        </HvHeader>
-      </HvProvider>
+      <HvHeader>
+        <HvHeaderActions aria-label="My-aria-label">
+          <HvButton
+            onClick={() => {}}
+            aria-label="Open Notifications panel"
+            variant="primaryGhost"
+          >
+            Badge
+          </HvButton>
+          <HvButton
+            onClick={() => {}}
+            aria-label="Open User panel"
+            variant="primaryGhost"
+          >
+            User
+          </HvButton>
+        </HvHeaderActions>
+      </HvHeader>
     );
     expect(getAllByRole("button")).toHaveLength(2);
   });
