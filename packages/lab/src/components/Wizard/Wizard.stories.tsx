@@ -202,7 +202,7 @@ export const Skippable = () => {
       >
         {/* @ts-ignore */}
         <div name="Review Model">
-          <HvTypography variant="mTitle" component="h2">
+          <HvTypography variant="title3" component="h2">
             1. API details
           </HvTypography>
           <HvTypography>
@@ -214,7 +214,7 @@ export const Skippable = () => {
         <RandomFormComponent name="randomForm" mustValidate />
         {/* @ts-ignore */}
         <div name="Review Parameters">
-          <HvTypography variant="mTitle" component="h2">
+          <HvTypography variant="title3" component="h2">
             2. Deployment details
           </HvTypography>
           <br />
