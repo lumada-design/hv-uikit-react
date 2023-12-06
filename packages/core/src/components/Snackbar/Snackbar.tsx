@@ -9,7 +9,6 @@ import { Snackbar as MuiSnackbar } from "@mui/material";
 
 import capitalize from "lodash/capitalize";
 
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { HvActionGeneric } from "@core/components/ActionsGeneric";
@@ -23,8 +22,7 @@ export { staticClasses as snackbarClasses };
 export type HvSnackbarClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSnackbarProps
-  extends Omit<MuiSnackbarProps, "action" | "classes">,
-    Omit<HvBaseProps, "children"> {
+  extends Omit<MuiSnackbarProps, "action" | "classes" | "children"> {
   /** If true, Snackbar is open. */
   open?: boolean;
   /** Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway. */

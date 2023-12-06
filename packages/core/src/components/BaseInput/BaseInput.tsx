@@ -11,7 +11,6 @@ import { css as emotionCss, Global } from "@emotion/react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import {
   HvFormElementContext,
@@ -56,17 +55,7 @@ const baseInputStyles = emotionCss({
 });
 
 export interface HvBaseInputProps
-  extends Omit<MuiInputProps, "onChange" | "classes">,
-    HvBaseProps<
-      HTMLDivElement,
-      | "onChange"
-      | "color"
-      | "onBlur"
-      | "onFocus"
-      | "onInvalid"
-      | "onKeyDown"
-      | "onKeyUp"
-    > {
+  extends Omit<MuiInputProps, "onChange" | "classes"> {
   /** The input name. */
   name?: string;
   /** The value of the input, when controlled. */

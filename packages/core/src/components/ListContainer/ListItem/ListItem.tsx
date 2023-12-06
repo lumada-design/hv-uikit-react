@@ -13,10 +13,6 @@ export { staticClasses as listItemClasses };
 export type HvListItemClasses = ExtractNames<typeof useClasses>;
 
 export interface HvListItemProps extends HvBaseProps<HTMLLIElement> {
-  /**
-   * Overrides the implicit list item role.
-   */
-  role?: HvBaseProps<HTMLLIElement>["role"];
   /** Indicates if the list item is selected. */
   selected?: boolean;
   /** If true, the list item will be disabled. */

@@ -7,7 +7,6 @@ import SnackbarContent, {
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { iconVariant } from "@core/utils/iconVariant";
-import { HvBaseProps } from "@core/types/generic";
 import {
   HvActionsGeneric,
   HvActionGeneric,
@@ -25,8 +24,7 @@ export { staticClasses as snackbarContentClasses };
 export type HvSnackbarContentClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSnackbarContentProps
-  extends Omit<MuiSnackbarContentProps, "variant" | "action" | "classes">,
-    HvBaseProps {
+  extends Omit<MuiSnackbarContentProps, "variant" | "action" | "classes"> {
   /** The message to display. */
   label?: React.ReactNode;
   /** Variant of the snackbar. */

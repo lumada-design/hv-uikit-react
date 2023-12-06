@@ -4,7 +4,6 @@ import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
 
-import { HvBaseProps } from "@core/types/generic";
 import { iconVariant } from "@core/utils/iconVariant";
 import { ExtractNames } from "@core/utils/classes";
 import { HvActionGeneric } from "@core/components/ActionsGeneric";
@@ -19,8 +18,7 @@ export { staticClasses as bannerContentClasses };
 export type HvBannerContentClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBannerContentProps
-  extends Omit<MuiSnackbarContentProps, "variant" | "classes" | "onClose">,
-    HvBaseProps {
+  extends Omit<MuiSnackbarContentProps, "variant" | "classes" | "onClose"> {
   /** The message to display. */
   content?: string;
   /** Variant of the snackbar. */

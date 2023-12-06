@@ -2,7 +2,6 @@ import React, { useState, useCallback, forwardRef } from "react";
 
 import MuiSwitch, { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
 
-import { HvBaseProps } from "@core/types/generic";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { ExtractNames } from "@core/utils/classes";
 
@@ -13,8 +12,7 @@ export { staticClasses as baseSwitchClasses };
 export type HvBaseSwitchClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBaseSwitchProps
-  extends Omit<MuiSwitchProps, "onChange" | "classes">,
-    HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
+  extends Omit<MuiSwitchProps, "onChange" | "classes"> {
   /**
    * Class names to be applied.
    */

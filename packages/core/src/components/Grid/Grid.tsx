@@ -53,9 +53,7 @@ export type HvGridSpacing =
   | 9
   | 10;
 
-export interface HvGridProps
-  extends Omit<MuiGridProps, "classes" | "columns">,
-    HvBaseProps<HTMLDivElement, "color"> {
+export interface HvGridProps extends Omit<MuiGridProps, "classes" | "columns"> {
   /**
    * If `true`, the component will have the flex *container* behavior.
    * You should be wrapping *items* with a *container*.

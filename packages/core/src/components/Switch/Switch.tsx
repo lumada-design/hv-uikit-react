@@ -14,7 +14,6 @@ import {
   HvLabel,
 } from "@core/components/Forms";
 import { HvBaseSwitch } from "@core/components/BaseSwitch";
-import { HvBaseProps } from "@core/types/generic";
 import { isInvalid } from "@core/components/Forms/FormElement/validationStates";
 import { ExtractNames } from "@core/utils/classes";
 
@@ -25,8 +24,7 @@ export { staticClasses as switchClasses };
 export type HvSwitchClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSwitchProps
-  extends Omit<MuiSwitchProps, "onChange" | "classes">,
-    HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
+  extends Omit<MuiSwitchProps, "onChange" | "classes"> {
   /**
    * A Jss Object used to override or extend the styles applied to the switch.
    */

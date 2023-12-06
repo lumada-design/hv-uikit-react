@@ -1,7 +1,6 @@
 import { Tab, TabProps as MuiTabProps } from "@mui/material";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 
 import { staticClasses, useClasses } from "./Tab.styles";
@@ -11,9 +10,7 @@ export { staticClasses as tabClasses };
 export type HvTabClasses = ExtractNames<typeof useClasses>;
 
 // Mui Tab props: https://mui.com/material-ui/api/tab/#props
-export interface HvTabProps
-  extends Omit<MuiTabProps, "children">,
-    HvBaseProps<HTMLDivElement, "children"> {
+export interface HvTabProps extends Omit<MuiTabProps, "children"> {
   /** If `true`, the tab will be disabled. */
   disabled?: boolean;
   /** The icon element. */

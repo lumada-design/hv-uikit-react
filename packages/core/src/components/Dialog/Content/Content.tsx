@@ -4,7 +4,6 @@ import MuiDialogContent, {
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { HvTypography } from "@core/components/Typography";
 
@@ -15,8 +14,7 @@ export { staticClasses as dialogContentClasses };
 export type HvDialogContentClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDialogContentProps
-  extends Omit<MuiDialogContentProps, "classes">,
-    HvBaseProps {
+  extends Omit<MuiDialogContentProps, "classes"> {
   /** Content should be indented in relationship to the Dialog title. */
   indentContent?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */

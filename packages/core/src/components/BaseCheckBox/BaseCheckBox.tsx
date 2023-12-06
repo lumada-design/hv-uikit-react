@@ -10,7 +10,6 @@ import {
   Checkbox as CheckboxIcon,
 } from "@hitachivantara/uikit-react-icons";
 
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
@@ -21,8 +20,7 @@ export { staticClasses as baseCheckBoxClasses };
 export type HvBaseCheckBoxClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBaseCheckBoxProps
-  extends Omit<MuiCheckboxProps, "onChange" | "classes">,
-    HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
+  extends Omit<MuiCheckboxProps, "onChange" | "classes"> {
   /**
    * The input name.
    */
