@@ -18,10 +18,13 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
 
     whiteSpace: "nowrap",
 
-    "&:hover": {},
-    "&:focus": {},
-    "&:focus-visible": { ...outlineStyles },
-    "&:active": {},
+    "&:hover": {
+      backgroundColor: theme.colors.containerBackgroundHover,
+    },
+    "&:focus-visible": {
+      ...outlineStyles,
+      backgroundColor: theme.colors.containerBackgroundHover,
+    },
 
     // default button - no size specified
     fontFamily: theme.fontFamily.body,
@@ -66,17 +69,11 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   primarySubtle: {
     color: theme.colors.primary,
     backgroundColor: "transparent",
-    border: `1px solid ${theme.colors.primary}`,
-    "&:hover, &:focus-visible": {
-      backgroundColor: theme.colors.containerBackgroundHover,
-    },
+    border: "1px solid currentColor",
   },
   primaryGhost: {
     color: theme.colors.primary,
     backgroundColor: "transparent",
-    "&:hover, &:focus-visible": {
-      backgroundColor: theme.colors.containerBackgroundHover,
-    },
     "&:disabled": {
       backgroundColor: "transparent",
     },
@@ -84,17 +81,11 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   secondarySubtle: {
     color: theme.colors.secondary,
     backgroundColor: "transparent",
-    border: `1px solid ${theme.colors.secondary}`,
-    "&:hover, &:focus-visible": {
-      backgroundColor: theme.colors.containerBackgroundHover,
-    },
+    border: "1px solid currentColor",
   },
   secondaryGhost: {
     color: theme.colors.secondary,
     backgroundColor: "transparent",
-    "&:hover, &:focus-visible": {
-      backgroundColor: theme.colors.containerBackgroundHover,
-    },
     "&:disabled": {
       backgroundColor: "transparent",
     },
