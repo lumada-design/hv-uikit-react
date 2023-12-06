@@ -82,7 +82,7 @@ jobs:
 
       - name: Load blackduck project properties
         shell: bash
-        run: echo "BLACKDUCK_ARGS=$(.github/scripts/getBlackduckArgs ${{ matrix.PACKAGE }})" >> $GITHUB_ENV
+        run: echo "BLACKDUCK_ARGS=$(.github/scripts/getBlackduckArgs.js ${{ matrix.PACKAGE }})" >> $GITHUB_ENV
 
       - name: Blackduck Scan
         uses: lumada-common-services/gh-composite-actions@1.9.0

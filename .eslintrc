@@ -86,31 +86,7 @@
       }
     ],
     "import/no-cycle": "error",
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          ["parent", "sibling", "index"]
-        ],
-        "pathGroups": [
-          {
-            "pattern": "react",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "@hitachivantara/**",
-            "group": "external"
-          }
-        ],
-        "distinctGroup": false,
-        "pathGroupsExcludedImportTypes": ["builtin", "object"],
-        "newlines-between": "always-and-inside-groups"
-      }
-    ],
+    "import/order": "off",
     // TODO: review this
     "react/no-array-index-key": "off",
     "no-restricted-syntax": "off", // loops are fine?
