@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.94](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.2.93...@hitachivantara/uikit-react-code-editor@5.2.94) (2023-12-06)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-code-editor
+
 ## [5.2.93](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.2.92...@hitachivantara/uikit-react-code-editor@5.2.93) (2023-12-01)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-code-editor

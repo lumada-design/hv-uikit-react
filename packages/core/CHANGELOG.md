@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.38.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.37.2...@hitachivantara/uikit-react-core@5.38.0) (2023-12-06)
+
+### Bug Fixes
+
+- **FilterGroup:** right panel total items when searching ([#3869](https://github.com/lumada-design/hv-uikit-react/issues/3869)) ([21beac4](https://github.com/lumada-design/hv-uikit-react/commit/21beac44c1c4c952a60213c713c55dfc3df476b0))
+
+### Features
+
+- **styles:** add CSS var colors ([6d7444f](https://github.com/lumada-design/hv-uikit-react/commit/6d7444ffe39588d99f85d6ae9426ccc30cb450f4))
+
+### Performance Improvements
+
+- **QueryBuilder:** responsive layout ([222ccb1](https://github.com/lumada-design/hv-uikit-react/commit/222ccb1a3b5313171dd59d9a2fc4b16a4b41fe99))
+
 ## [5.37.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.37.1...@hitachivantara/uikit-react-core@5.37.2) (2023-12-01)
 
 ### Bug Fixes
