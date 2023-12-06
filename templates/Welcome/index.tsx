@@ -65,9 +65,9 @@ const Welcome = () => {
         </HvGrid>
         <HvGrid item xs={12}>
           <HvTypography
-            href="https://lumada-design.github.io/uikit/master/"
-            variant="link"
+            link
             component="a"
+            href="https://lumada-design.github.io/uikit/master/"
           >
             More details
           </HvTypography>
