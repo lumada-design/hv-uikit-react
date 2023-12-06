@@ -8,7 +8,6 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 
 import { staticClasses, useClasses } from "./BaseRadio.styles";
@@ -18,8 +17,7 @@ export { staticClasses as baseRadioClasses };
 export type HvBaseRadioClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBaseRadioProps
-  extends Omit<MuiRadioProps, "onChange" | "classes">,
-    HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
+  extends Omit<MuiRadioProps, "onChange" | "classes"> {
   /**
    * Class names to be applied.
    */

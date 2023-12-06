@@ -8,7 +8,6 @@ import MuiContainer, {
 } from "@mui/material/Container";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { HvBaseProps } from "@core/types/generic";
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { ExtractNames } from "@core/utils/classes";
 
@@ -18,9 +17,7 @@ export { staticClasses as containerClasses };
 
 export type HvContainerClasses = ExtractNames<typeof useClasses>;
 
-export interface HvContainerProps
-  extends Omit<MuiContainerProps, "classes">,
-    HvBaseProps {
+export interface HvContainerProps extends Omit<MuiContainerProps, "classes"> {
   /**
    * The component used for the root node.
    * Either a string to use a DOM element or a component.

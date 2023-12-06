@@ -10,7 +10,6 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
-import { HvBaseProps } from "@core/types/generic";
 import { IconButton } from "@core/utils/IconButton";
 import { setId } from "@core/utils/setId";
 import { ExtractNames } from "@core/utils/classes";
@@ -23,10 +22,7 @@ export { staticClasses as drawerClasses };
 
 export type HvDrawerClasses = ExtractNames<typeof useClasses>;
 
-export interface HvDrawerProps
-  extends MuiDrawerProps,
-    Omit<MuiDrawerProps, "classes">,
-    HvBaseProps<HTMLDivElement> {
+export interface HvDrawerProps extends Omit<MuiDrawerProps, "classes"> {
   /**
    * Class names to be applied.
    */

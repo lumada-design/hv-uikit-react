@@ -3,7 +3,6 @@ import React, { forwardRef, useCallback, useState } from "react";
 import { RadioProps as MuiRadioProps } from "@mui/material";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
 import { HvBaseRadio } from "@core/components/BaseRadio";
 import {
   HvWarningText,
@@ -26,8 +25,7 @@ export type HvRadioClasses = ExtractNames<typeof useClasses>;
 export type HvRadioStatus = "standBy" | "valid" | "invalid";
 
 export interface HvRadioProps
-  extends Omit<MuiRadioProps, "onChange" | "classes">,
-    HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
+  extends Omit<MuiRadioProps, "onChange" | "classes"> {
   /**
    * A Jss Object used to override or extend the styles applied to the radio button.
    */

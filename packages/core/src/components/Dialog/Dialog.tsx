@@ -9,7 +9,6 @@ import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvButton } from "@core/components/Button";
 import { HvTooltip } from "@core/components/Tooltip";
-import { HvBaseProps } from "@core/types/generic";
 import { getElementById } from "@core/utils/document";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
@@ -24,8 +23,7 @@ export { staticClasses as dialogClasses };
 export type HvDialogClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDialogProps
-  extends Omit<MuiDialogProps, "fullScreen" | "classes" | "open">,
-    HvBaseProps {
+  extends Omit<MuiDialogProps, "fullScreen" | "classes" | "open"> {
   /** Current state of the Dialog. */
   open?: boolean;
   /** Callback fired when the component requests to be closed. */
