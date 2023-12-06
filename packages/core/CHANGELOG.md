@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.75.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.75.1...@hitachivantara/uikit-react-core@3.75.2) (2023-12-06)
+
+
+### Bug Fixes
+
+* **FilterGroup:** right panel total items when searching ([#3874](https://github.com/lumada-design/hv-uikit-react/issues/3874)) ([000a8f1](https://github.com/lumada-design/hv-uikit-react/commit/000a8f12722ab71a84b36c89efc3d12fc9965089))
+* **FilterGroup:** wrong count ([3153fe6](https://github.com/lumada-design/hv-uikit-react/commit/3153fe602092472952073803375a89bed06167d1))
+* **OverflowTooltip:** paragraph overflow ([6bcd4c2](https://github.com/lumada-design/hv-uikit-react/commit/6bcd4c2492b3427d28ec7d31e00e1a4ae65a92f2))
+
+
+
+
+
 ## 3.75.1 (2023-06-06)
 
 
