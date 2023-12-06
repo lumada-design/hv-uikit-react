@@ -2,8 +2,6 @@ import { render, screen } from "@testing-library/react";
 
 import { describe, expect, it } from "vitest";
 
-import { HvProvider } from "@core/providers";
-
 import { HvBreadCrumb } from "./BreadCrumb";
 
 const data = [
@@ -25,11 +23,7 @@ describe("BreadCrumb", () => {
   });
 
   it("should render the correct number of items if maxVisible is specified", () => {
-    render(
-      <HvProvider>
-        <HvBreadCrumb listRoute={data} maxVisible={3} />
-      </HvProvider>
-    );
+    render(<HvBreadCrumb listRoute={data} maxVisible={3} />);
     expect(screen.queryAllByRole("listitem").length).toBe(4);
     expect(screen.getByText("Label 1")).toBeInTheDocument();
     expect(screen.queryByText("Label 2")).toBeNull();
