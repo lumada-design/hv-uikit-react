@@ -47,6 +47,7 @@ export const LoadingContainer = ({
     <div className={classes.root}>
       <HvLoading
         role="progressbar"
+        aria-label="Loading items..."
         className={cx(
           css({ backgroundColor: hexToRgbA(colors?.atmo1) }),
           classes.loading,
