@@ -135,8 +135,12 @@ export interface HvTagsInputProps
   commitTagOn?: string[];
   /** If `true` the tag will be committed when the blur event occurs. */
   commitOnBlur?: boolean;
-  /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
+  /** The function that will be executed to received an array of objects that has a label and id to create list of suggestions. */
   suggestionListCallback?: (value: string) => HvTagSuggestion[] | null;
+  /** The validation function that will be executed when adding tags in the suggestions mode. */
+  suggestionValidation?: (value: string) => boolean;
+  /** When in suggestions mode, this property indicates that tags that are not present on the suggestions list can also be added. */
+  suggestionsLoose?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTagsInputClasses;
 }
@@ -181,6 +185,8 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       commitTagOn = ["Enter"],
       commitOnBlur = false,
       suggestionListCallback,
+      suggestionValidation,
+      suggestionsLoose = false,
       ...others
     } = useDefaultProps("HvTagsInput", props);
 
@@ -476,15 +482,35 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
             case "ArrowDown":
               getSuggestions(0)?.focus();
               break;
+            case "Enter":
+              if (
+                canShowSuggestions &&
+                suggestionsLoose &&
+                (suggestionValidation?.(tagInput) || !suggestionValidation)
+              ) {
+                addTag(event, tagInput);
+
+                // set the input value (only when value is uncontrolled)
+                setTagInput(tagInput);
+
+                focusInput();
+                suggestionClearHandler();
+              }
+              break;
             default:
               break;
           }
         }
       },
       [
+        addTag,
+        canShowSuggestions,
         deleteTag,
         getSuggestions,
         isTagSelected,
+        suggestionClearHandler,
+        suggestionValidation,
+        suggestionsLoose,
         tagCursorPos,
         tagInput,
         value.length,

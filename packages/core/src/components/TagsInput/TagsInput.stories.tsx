@@ -452,3 +452,80 @@ export const Suggestions: StoryObj<HvTagsInputProps> = {
     );
   },
 };
+
+export const UnrestrictedSuggestions: StoryObj<HvTagsInputProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: `Typically when using a suggestions list the goal is to have the tags
+        being selected from amongst the options in the list. But sometimes it
+        might be useful to allow the user to enter a tag that is not in the
+        list. In this case you can use the \`suggestionValidation\` callback to
+        validate the tag. You should also set the \`suggestionsLoose\` property
+        to \`true\`.`,
+      },
+    },
+    eyes: { include: false },
+  },
+  render: () => {
+    const [options, setOptions] = useState([
+      "Option 1.1",
+      "Option 1.2",
+      "Option 1.3",
+      "Option 2.1",
+      "Option 2.2",
+      "Option 2.3",
+    ]);
+    const [currValueStr, setCurrValueStr] = useState<HvTagProps[]>([]);
+    const [status, setStatus] = useState<HvFormStatus>("valid");
+    const [statusMsg, setStatusMsg] = useState("");
+
+    const suggestionHandler = (val) => {
+      if (typeof val !== "string" || isEmpty(val)) return null;
+      const foundOptions = options.filter((option) =>
+        option.toUpperCase().startsWith(val.toUpperCase())
+      );
+
+      if (isEmpty(foundOptions)) return null;
+
+      return foundOptions.map((option, idx) => ({
+        id: `c_${idx}`,
+        label: option,
+      }));
+    };
+
+    const suggestionValidation = (val: string) => {
+      if (typeof val !== "string" || isEmpty(val)) return false;
+
+      if (!val.startsWith("Option")) {
+        setStatus("invalid");
+        setStatusMsg(
+          "Oops, that's not an option. Your tag must start with 'Option'"
+        );
+        return false;
+      }
+      setOptions((prev) => [...prev, val]);
+      setStatus("valid");
+      setStatusMsg("");
+      return true;
+    };
+
+    return (
+      <StyledSuggestionsTagsInput
+        label="Suggestions"
+        description="Enter a tag starting with 'Option'."
+        aria-label="Suggestions"
+        placeholder="Enter value"
+        onChange={(event, value) => {
+          setCurrValueStr(value);
+        }}
+        value={currValueStr}
+        suggestionListCallback={suggestionHandler}
+        suggestionValidation={suggestionValidation}
+        suggestionsLoose
+        status={status}
+        statusMessage={statusMsg}
+      />
+    );
+  },
+};
