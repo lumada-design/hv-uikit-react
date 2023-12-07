@@ -11,6 +11,7 @@ type HvBoxBaseProps<C extends React.ElementType> = PolymorphicComponentRef<
   { style?: React.CSSProperties; sx?: SxProps }
 >;
 
+// v6 - This shouldn't be named HvBoxProps
 export type HvBoxProps = <C extends React.ElementType = "div">(
   props: HvBoxBaseProps<C>
 ) => React.ReactElement | null;

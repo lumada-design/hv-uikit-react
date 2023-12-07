@@ -13,11 +13,17 @@ type AsProp<C extends React.ElementType> = {
 
 type PropsToOmit<C extends React.ElementType, P> = keyof (AsProp<C> & P);
 
+// Workaround to fix the use of Omit with ComponentPropsWithoutRef
+// Without this the event handlers return any instead of the type for the chosen element
+type FixComponentProps<T> = T extends any ? T : never;
+
 type PolymorphicComponent<
   C extends React.ElementType,
   Props = {}
 > = React.PropsWithChildren<Props & AsProp<C>> &
-  Omit<React.ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>;
+  FixComponentProps<
+    Omit<React.ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>
+  >;
 
 export type PolymorphicRef<C extends React.ElementType> =
   React.ComponentPropsWithRef<C>["ref"];
