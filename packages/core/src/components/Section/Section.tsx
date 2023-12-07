@@ -29,7 +29,7 @@ export interface HvSectionProps
   actions?: React.ReactNode;
   /** Section onExpand callback */
   onToggle?: (
-    event: React.MouseEventHandler<HTMLButtonElement>,
+    event: React.MouseEvent<HTMLButtonElement>,
     open: boolean
   ) => void;
   /** Props to be passed to the expand button */
