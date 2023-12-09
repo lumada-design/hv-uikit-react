@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.38.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.38.2...@hitachivantara/uikit-react-core@5.38.3) (2023-12-09)
+
+### Bug Fixes
+
+- **types:** polymorphic components ([41e023e](https://github.com/lumada-design/hv-uikit-react/commit/41e023eede93fc320d71ae105e0ce3ba18710298))
+
 ## [5.38.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.38.1...@hitachivantara/uikit-react-core@5.38.2) (2023-12-08)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
