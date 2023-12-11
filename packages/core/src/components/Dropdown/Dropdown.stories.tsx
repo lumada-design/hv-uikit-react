@@ -151,15 +151,25 @@ export const WithIcons: StoryObj<HvDropdownProps> = {
       const icons = [Priority1, Priority2, Priority3, Priority4, Priority5];
 
       setValues(
-        icons.map((Icon, i) => ({
-          id: `p${i + 1}`,
-          label: <PriorityIcon Icon={Icon} label={`Priority P${i + 1}`} />,
-        }))
+        icons.map((Icon, i) => {
+          const label = `Priority P${i + 1}`;
+
+          return {
+            id: `p${i + 1}`,
+            label: <PriorityIcon Icon={Icon} label={label} />,
+            value: label,
+          };
+        })
       );
     }, []);
 
     return (
-      <HvDropdown aria-label="Dropdown With Icons" values={values} {...args} />
+      <HvDropdown
+        aria-label="Dropdown With Icons"
+        values={values}
+        showSearch
+        {...args}
+      />
     );
   },
 };
