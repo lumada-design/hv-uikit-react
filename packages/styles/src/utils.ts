@@ -154,7 +154,8 @@ export const getThemesVars = (themes: HvThemeStructure[]) => {
     colorModes.forEach((colorMode) => {
       const styleName = `[data-theme="${theme.name}"][data-color-mode="${colorMode}"]`;
 
-      const { name, ...rest } = theme;
+      // Extracting "components" and "name" because they shouldn't be mapped to CSS vars
+      const { components, name, ...rest } = theme;
 
       vars[styleName] = toCSSVars({
         ...rest,
