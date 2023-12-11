@@ -55,7 +55,7 @@ export const nodeTypes = {
 const nodes: HvFlowProps["nodes"] = [
   {
     id: "22b4a205d16",
-    position: { x: 539, y: 142 },
+    position: { x: 539, y: 146 },
     data: {
       type: "Type 1",
       inputs: [
