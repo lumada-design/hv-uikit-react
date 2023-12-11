@@ -1,8 +1,4 @@
-import {
-  Drawer as MuiDrawer,
-  DrawerProps as MuiDrawerProps,
-  Backdrop as MuiBackdrop,
-} from "@mui/material";
+import MuiDrawer, { DrawerProps as MuiDrawerProps } from "@mui/material/Drawer";
 
 import { Close } from "@hitachivantara/uikit-react-icons";
 
@@ -61,7 +57,8 @@ export interface HvDrawerProps extends Omit<MuiDrawerProps, "classes"> {
    */
   buttonTitle?: string;
   /**
-   * Show backdrop when drawer ix open.
+   * Show backdrop when drawer is open.
+   * @deprecated Use `hideBackdrop` instead.
    */
   showBackdrop?: boolean;
   /**
@@ -97,47 +94,56 @@ export const HvDrawer = (props: HvDrawerProps) => {
   const { classes, cx, css } = useClasses(classesProp);
   const { colors } = useTheme();
 
+  const handleOnClose: MuiDrawerProps["onClose"] = (
+    event: React.SyntheticEvent,
+    reason
+  ) => {
+    if (reason === "backdropClick" && disableBackdropClick) return;
+
+    onClose?.(event, reason);
+  };
+
   return (
-    <>
-      <MuiDrawer
-        className={cx(classes.root, className)}
-        id={id}
-        anchor={anchor}
-        open={open}
-        PaperProps={{
+    <MuiDrawer
+      className={cx(classes.root, className)}
+      id={id}
+      anchor={anchor}
+      open={open}
+      PaperProps={{
+        classes: {
+          root: classes.paper,
+        },
+      }}
+      hideBackdrop={!showBackdrop}
+      slotProps={{
+        backdrop: {
           classes: {
-            root: classes.paper,
+            root: cx(
+              css({
+                background: hexToRgbA(colors?.atmo4 || theme.colors.atmo4),
+              }),
+              classes.background
+            ),
           },
-        }}
-        onClose={onClose}
-        {...others}
-      >
-        <IconButton
-          id={setId(id, "close")}
-          className={classes.closeButton}
-          variant="secondaryGhost"
-          onClick={onClose}
-          title={buttonTitle}
-        >
-          <Close role="none" />
-        </IconButton>
-        {children}
-      </MuiDrawer>
-      {showBackdrop && (
-        <MuiBackdrop
-          open={!!open}
-          onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+          onClick: (event) => {
             if (disableBackdropClick) return;
             onClose?.(event, "backdropClick");
-          }}
-          className={cx(
-            css({
-              background: hexToRgbA(colors?.atmo4 || theme.colors.atmo4),
-            }),
-            classes.background
-          )}
-        />
-      )}
-    </>
+          },
+        },
+      }}
+      onClose={handleOnClose}
+      {...others}
+    >
+      <IconButton
+        id={setId(id, "close")}
+        className={classes.closeButton}
+        variant="secondaryGhost"
+        onClick={onClose}
+        title={buttonTitle}
+      >
+        <Close role="none" />
+      </IconButton>
+      {children}
+    </MuiDrawer>
   );
 };
