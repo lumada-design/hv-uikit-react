@@ -252,6 +252,10 @@ export const HvDroppableFlow = ({
       height: 20,
       width: 20,
     },
+    type: "smoothstep",
+    pathOptions: {
+      borderRadius: 40,
+    },
     ...defaultEdgeOptionsProp,
   };
 
@@ -272,6 +276,8 @@ export const HvDroppableFlow = ({
           onConnect={handleConnect}
           isValidConnection={isValidConnection}
           defaultEdgeOptions={defaultEdgeOptions}
+          snapGrid={[1, 1]}
+          snapToGrid
           {...others}
         >
           {children}
