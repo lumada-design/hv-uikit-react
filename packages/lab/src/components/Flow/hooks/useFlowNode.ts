@@ -1,5 +1,12 @@
-import { useCallback } from "react";
-import { Node, Edge, ReactFlowState, useStore } from "reactflow";
+import { useCallback, useMemo } from "react";
+import {
+  Node,
+  Edge,
+  ReactFlowState,
+  useStore,
+  useNodes,
+  useEdges,
+} from "reactflow";
 
 export function useFlowNode<T extends Node = Node>(id: string) {
   const nodeSelector = useCallback(
@@ -46,4 +53,28 @@ export function useFlowNodeParents(id: string) {
     [inputEdges]
   );
   return useStore(parentNodesSelector);
+}
+
+export function useFlowInputNodes<T = any>(id: string) {
+  const nodes = useNodes();
+  const edges = useEdges();
+
+  return useMemo(() => {
+    return edges
+      .filter((e) => e.target === id)
+      .map((e) => nodes.find((n) => n.id === e.source))
+      .filter((n): n is Node<T> => n !== null);
+  }, [edges, id, nodes]);
+}
+
+export function useFlowOutputNodes<T = any>(id: string) {
+  const nodes = useNodes();
+  const edges = useEdges();
+
+  return useMemo(() => {
+    return edges
+      .filter((e) => e.source === id)
+      .map((e) => nodes.find((n) => n.id === e.target))
+      .filter((n): n is Node<T> => n !== null);
+  }, [edges, id, nodes]);
 }

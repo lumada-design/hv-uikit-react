@@ -10,19 +10,23 @@ import {
   HvTooltip,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { getColor } from "@hitachivantara/uikit-styles";
 import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
 
 import { useFlowContext, useFlowNode } from "../hooks";
 import { HvFlowNodeInput, HvFlowNodeOutput, HvFlowNodeParam } from "../types";
 import { staticClasses, useClasses } from "./Node.styles";
 import ParamRenderer from "./Parameters/ParamRenderer";
-import { HvFlowBaseNode, HvFlowBaseNodeProps } from "./BaseNode";
+import {
+  HvFlowBaseNode,
+  HvFlowBaseNodeProps,
+  HvFlowBaseNodeClasses,
+} from "./BaseNode";
 
 export { staticClasses as flowNodeClasses };
 
-// TODO How to include here the types from the parent component?
-export type HvFlowNodeClasses = ExtractNames<typeof useClasses>;
+export interface HvFlowNodeClasses
+  extends ExtractNames<typeof useClasses>,
+    HvFlowBaseNodeClasses {}
 
 export type HvFlowNodeDefaults = {
   title?: string;
@@ -31,8 +35,7 @@ export type HvFlowNodeDefaults = {
   icon?: React.ReactNode;
 };
 
-export interface HvFlowNodeProps<T = any>
-  extends Omit<HvFlowBaseNodeProps<T>, "classes"> {
+export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   /** Node description */
   description?: string;
   /** Node actions */
@@ -54,7 +57,7 @@ export interface HvFlowNodeProps<T = any>
   /** Node inputs. */
   inputs?: HvFlowNodeInput[];
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvFlowNodeClasses | HvFlowBaseNodeProps<T>["classes"];
+  classes?: HvFlowNodeClasses;
 }
 
 const renderedIcon = (actionIcon: HvActionGeneric["icon"]) =>
@@ -89,13 +92,10 @@ export const HvFlowNode = ({
   const subtitle = nodeTypes?.[type].meta?.label || nodeDefaults?.subTitle;
   const groupId = nodeTypes?.[type].meta?.groupId;
 
-  const groupLabel =
-    (groupId && nodeGroups && nodeGroups[groupId].label) || nodeDefaults?.title;
-  const icon =
-    (groupId && nodeGroups && nodeGroups[groupId].icon) || nodeDefaults?.icon;
-  const colorProp =
-    (groupId && nodeGroups && nodeGroups[groupId].color) || nodeDefaults?.color;
-  const color = getColor(colorProp);
+  const group = (groupId && nodeGroups && nodeGroups[groupId]) || undefined;
+  const groupLabel = group?.label || nodeDefaults?.title;
+  const icon = group?.icon || nodeDefaults?.icon;
+  const color = group?.color || nodeDefaults?.color;
 
   const actsVisible = actions?.slice(0, maxVisibleActions);
   const actsDropdown = actions?.slice(maxVisibleActions);
@@ -112,12 +112,12 @@ export const HvFlowNode = ({
       inputs={inputs}
       outputs={outputs}
       nodeActions={defaultActions}
-      classes={classesProp as HvFlowBaseNodeProps<unknown>["classes"]}
+      classes={classesProp as HvFlowBaseNodeClasses}
       headerItems={
         <>
           {headerItems}
           {description && (
-            <HvTooltip title={<HvTypography>{description}</HvTypography>}>
+            <HvTooltip title={description}>
               <div>
                 <Info color="base_dark" />
               </div>

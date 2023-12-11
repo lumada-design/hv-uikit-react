@@ -47,17 +47,6 @@ export const HvFlowNodeMetaProvider = ({
   );
 };
 
-export function useNodeMeta(nodeId: string): HvFlowNodeMeta | undefined {
-  const context = useContext(HvFlowNodeMetaContext);
-
-  if (context === undefined) {
-    throw new Error("useNodeMeta must be used within a HvFlowNodeMetaProvider");
-  }
-
-  const registry = context.getRegistry();
-  return registry[nodeId];
-}
-
 export function useNodeMetaRegistry() {
   const context = useContext(HvFlowNodeMetaContext);
 

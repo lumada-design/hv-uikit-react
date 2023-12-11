@@ -18,13 +18,9 @@ const ParamRenderer = ({ nodeId, params, data }: ParamRendererProps) => {
     <>
       {params.map((param, idx) => {
         const Renderer = renderers[param.type];
-        if (Renderer) {
-          return (
-            <div key={idx}>
-              <Renderer nodeId={nodeId} param={param} data={data} />
-            </div>
-          );
-        }
+        if (!Renderer) return null;
+
+        return <Renderer key={idx} nodeId={nodeId} param={param} data={data} />;
         return null;
       })}
     </>

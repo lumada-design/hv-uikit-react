@@ -5,6 +5,7 @@ import {
   HvDashboardProps,
   HvFlowNode,
   HvFlowNodeFC,
+  HvFlowNodeInput,
   HvFlowNodeTypeMeta,
   useFlowContext,
 } from "@hitachivantara/uikit-react-lab";
@@ -26,11 +27,6 @@ import {
   DashboardsStorage,
   NodeGroup,
 } from "../types";
-
-interface Configuration {
-  opened: boolean;
-  config?: DashboardSpecs;
-}
 
 type PreviewProps = {
   id: string;
@@ -64,23 +60,30 @@ const PreviewRenderer = ({ label, node }: PreviewProps) => (
   </div>
 );
 
+const nodeInputs: HvFlowNodeInput[] = [
+  {
+    label: "Visualizations",
+    isMandatory: true,
+    accepts: ["visualizations"],
+  },
+];
+
 export const Dashboard: HvFlowNodeFC = (props) => {
   const { id } = props;
 
   const { nodeTypes } = useFlowContext();
 
-  const [configuration, setConfiguration] = useState<Configuration>({
-    opened: false,
-  });
+  const [open, setOpen] = useState(false);
+  const [config, setConfig] = useState<DashboardSpecs>();
   const [content, setContent] = useState<PreviewProps[]>();
 
   const handleOpenConfig = () => {
     // Get from local storage
     const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
-    const config = specs?.[id];
+    const newConfig = specs?.[id];
 
-    const ct = config?.items?.map<PreviewProps>((node) => {
+    const ct = newConfig?.items?.map<PreviewProps>((node) => {
       const nodeType = node.type!;
       const label = nodeType && nodeTypes?.[nodeType].meta?.label;
 
@@ -88,15 +91,14 @@ export const Dashboard: HvFlowNodeFC = (props) => {
     });
 
     // Open
-    setConfiguration({
-      opened: true,
-      config,
-    });
+    setOpen(true);
+    setConfig(newConfig);
     setContent(ct);
   };
 
   const handleClose = () => {
-    setConfiguration({ opened: false });
+    setOpen(false);
+    setConfig(undefined);
     setContent(undefined);
   };
 
@@ -104,37 +106,20 @@ export const Dashboard: HvFlowNodeFC = (props) => {
     // Save to local storage
     const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
-    specs[id] = configuration.config;
+    specs[id] = config;
     localStorage.setItem(DASHBOARDS_STORAGE_KEY, JSON.stringify(specs));
 
     // Close
-    setConfiguration({ opened: false });
-    setContent(undefined);
+    handleClose();
   };
 
   const handleLayoutChange: HvDashboardProps["onLayoutChange"] = (ly) => {
-    setConfiguration({
-      ...configuration,
-      config: {
-        ...configuration.config!,
-        layout: ly,
-      },
-    });
+    setConfig((conf) => ({ ...conf!, layout: ly }));
   };
 
   return (
     <>
-      <HvFlowNode
-        description="Dashboard"
-        inputs={[
-          {
-            label: "Visualizations",
-            isMandatory: true,
-            accepts: ["visualizations"],
-          },
-        ]}
-        {...props}
-      >
+      <HvFlowNode description="Dashboard" inputs={nodeInputs} {...props}>
         <div
           className={css({
             display: "flex",
@@ -154,21 +139,15 @@ export const Dashboard: HvFlowNodeFC = (props) => {
           </HvButton>
         </div>
       </HvFlowNode>
-      <HvDialog
-        maxWidth="lg"
-        fullWidth
-        open={configuration.opened}
-        onClose={handleClose}
-      >
+      <HvDialog maxWidth="lg" fullWidth open={open} onClose={handleClose}>
         <HvDialogTitle variant="info">Configure Dashboard</HvDialogTitle>
         <HvDialogContent indentContent>
           <HvTypography>
             Please configure the layout of your dashboard as needed.
           </HvTypography>
-          {configuration.config?.layout &&
-          configuration.config.layout.length > 0 ? (
+          {config?.layout && config.layout.length > 0 ? (
             <HvDashboard
-              layout={configuration.config.layout}
+              layout={config.layout}
               compactType="vertical"
               rowHeight={80}
               margin={[16, 16]}
