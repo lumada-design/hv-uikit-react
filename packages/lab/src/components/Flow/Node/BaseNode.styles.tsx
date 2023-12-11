@@ -13,8 +13,8 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    borderTopLeftRadius: theme.radii.round,
-    borderTopRightRadius: theme.radii.round,
+    borderTopLeftRadius: "inherit",
+    borderTopRightRadius: "inherit",
   },
   titleContainer: {
     display: "flex",

@@ -1,7 +1,7 @@
 import { GetMiniMapNodeAttribute, MiniMap, MiniMapProps } from "reactflow";
 
 import { ExtractNames } from "@hitachivantara/uikit-react-core";
-import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
+import { HvColorAny, getColor } from "@hitachivantara/uikit-styles";
 
 import { staticClasses, useClasses } from "./Minimap.styles";
 
@@ -41,17 +41,15 @@ export const HvFlowMinimap = ({
     <MiniMap
       className={cx(classes.root, className)}
       nodeColor={
-        typeof nodeColor === "string"
-          ? getColor(nodeColor, theme.colors.atmo4)
-          : nodeColor
+        typeof nodeColor === "string" ? getColor(nodeColor, "atmo4") : nodeColor
       }
       nodeStrokeColor={
         typeof nodeStrokeColor === "string"
-          ? getColor(nodeStrokeColor, theme.colors.atmo4)
+          ? getColor(nodeStrokeColor, "atmo4")
           : nodeStrokeColor
       }
-      maskColor={getColor(maskColor, theme.colors.atmo3)}
-      maskStrokeColor={getColor(maskStrokeColor, theme.colors.atmo3)}
+      maskColor={getColor(maskColor, "atmo3")}
+      maskStrokeColor={getColor(maskStrokeColor, "atmo3")}
       {...others}
     />
   );
