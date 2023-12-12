@@ -1,7 +1,5 @@
 import { useMemo, createContext } from "react";
-import { useLocation } from "react-router-dom";
 
-import { Header } from "~/components/common/Header";
 import useNavigation from "~/lib/hooks/useNavigation";
 
 interface NavigationProviderProps {
@@ -20,8 +18,6 @@ export const NavigationProvider = ({
 }: NavigationProviderProps) => {
   const { activePath } = useNavigation(navigation);
 
-  const { pathname } = useLocation();
-
   const value = useMemo(
     () => ({
       navigation,
@@ -32,7 +28,6 @@ export const NavigationProvider = ({
 
   return (
     <NavigationContext.Provider value={value}>
-      {pathname !== "/dashboard-preview" && <Header />}
       {children}
     </NavigationContext.Provider>
   );

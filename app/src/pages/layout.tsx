@@ -1,6 +1,7 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 
+import { Header } from "~/components/common/Header";
 import { Container } from "~/components/common/Container";
 import { Tutorial } from "~/components/common/Tutorial";
 import { useGeneratorContext } from "~/generator/GeneratorContext";
@@ -9,6 +10,8 @@ import navigation from "~/lib/navigation";
 
 const Content = () => {
   const { selectedMode } = useTheme();
+  const { pathname } = useLocation();
+
   const {
     customTheme,
     open,
@@ -41,6 +44,7 @@ const Content = () => {
               />
             )}
             <Container maxWidth="xl">
+              {pathname !== "/dashboard-preview" && <Header />}
               <Outlet />
             </Container>
           </NavigationProvider>
