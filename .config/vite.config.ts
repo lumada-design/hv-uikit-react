@@ -1,11 +1,12 @@
-import path from "path";
+import { resolve } from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-const pkg = require(path.resolve(process.cwd(), "package.json"));
+const pkg = require(resolve(process.cwd(), "package.json"));
 
+// dependecies that should not be bundled.
 const external = [
   ...Object.keys(pkg.dependencies || {}),
   ...Object.keys(pkg.peerDependencies || {}),
@@ -16,14 +17,10 @@ export default defineConfig({
     dts({
       outDir: "dist/types",
       rollupTypes: true,
+      tsconfigPath: resolve(__dirname, "../tsconfig.build.json"),
     }),
-    react({
-      jsxImportSource: "@emotion/react",
-      babel: {
-        plugins: ["@emotion/babel-plugin"],
-      },
-    }),
-    tsconfigPaths({ loose: true }),
+    react(),
+    tsconfigPaths(),
   ],
   build: {
     target: "ES2021",
@@ -31,7 +28,7 @@ export default defineConfig({
     emptyOutDir: true,
     lib: {
       name: pkg.name,
-      entry: path.resolve(process.cwd(), "src/index.ts"),
+      entry: resolve(process.cwd(), "src/index.ts"),
     },
     rollupOptions: {
       output: [
@@ -60,9 +57,9 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
-    setupFiles: path.resolve(__dirname, "test.setup.tsx"),
+    setupFiles: resolve(__dirname, "test.setup.tsx"),
     include: ["**/*.test.{ts,tsx}"],
-    exclude: ["node_modules", "dist", "package"],
+    exclude: ["node_modules", "dist"],
     silent: true,
     testTimeout: 10000,
     reporters: "default",
