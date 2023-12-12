@@ -12,7 +12,7 @@ import { extractColors, replaceFill } from "./utils/colors";
 const args = yargs // reading arguments from the command line
   .option("format", { default: true })
   .option("output", { alias: "o" })
-  .option("input", { alias: "i" }).argv;
+  .option("input", { alias: "i" }).argv as any;
 
 // Resolve arguments
 const firstArg = args._[0];

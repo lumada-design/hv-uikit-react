@@ -24,6 +24,7 @@ lerna-debug.log*
 # Build
 dist
 bin
+packages/icons/src
 packages/icons/sprites
 *.tgz
 

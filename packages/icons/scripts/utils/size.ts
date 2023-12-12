@@ -1,3 +1,9 @@
+type ResultProps = {
+  width?: number;
+  height?: number;
+  viewBoxRegexp: number[];
+};
+
 /**
  * Creates a standardized component name from a given file and filename
  */
@@ -8,7 +14,7 @@ export const extractSize = (fileData: string) => {
 
   let matcher;
 
-  const result = {
+  const result: ResultProps = {
     width: undefined,
     height: undefined,
     viewBoxRegexp: [],
