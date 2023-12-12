@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.16.5 (2023-12-12)
+
+### Bug Fixes
+
+- remove components props from css vars ([aaeecd7](https://github.com/lumada-design/hv-uikit-react/commit/aaeecd7f8e5483a3d1f8c86380aef812ed49a2ab))
+
 ## 5.16.4 (2023-12-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles

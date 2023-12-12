@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.38.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.38.3...@hitachivantara/uikit-react-core@5.38.4) (2023-12-12)
+
+### Bug Fixes
+
+- **Drawer:** incorrect usage of the backdrop ([#3883](https://github.com/lumada-design/hv-uikit-react/issues/3883)) ([23ccffe](https://github.com/lumada-design/hv-uikit-react/commit/23ccffe1d67df4d545b23e1309d0bf7f537e7aeb))
+- **types:** loop in DeepPartial type ([c55b109](https://github.com/lumada-design/hv-uikit-react/commit/c55b1095d24a12b50489269bb19650b32e2aae8f))
+
 ## [5.38.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.38.2...@hitachivantara/uikit-react-core@5.38.3) (2023-12-09)
 
 ### Bug Fixes
