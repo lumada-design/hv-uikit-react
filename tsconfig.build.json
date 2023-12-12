@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES2021",
+    "lib": ["DOM", "ES2021", "dom.iterable"],
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "baseUrl": ".",
+    "paths": {
+      "@core/*": ["packages/core/src/*"],
+      "@viz/*": ["packages/viz/src/*"]
+    },
+    "noImplicitAny": false,
+    "types": [
+      "node",
+      "jest",
+      "@testing-library/jest-dom",
+      "vite/client",
+      "vitest"
+    ]
+  },
+  "include": ["packages/**/src"],
+  "exclude": ["node_modules"]
+}
