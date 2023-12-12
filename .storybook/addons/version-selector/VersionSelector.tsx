@@ -30,7 +30,12 @@ const VersionSelector = () => {
       trigger="click"
       tooltip={<TooltipLinkList links={links} />}
     >
-      <IconButton key={ADDON_ID} active={false} title={"Select theme"}>
+      <IconButton
+        key={ADDON_ID}
+        active={false}
+        title={"Select theme"}
+        placeholder="Select theme"
+      >
         {`Version: ${selectedVersion}`}
       </IconButton>
     </WithTooltip>

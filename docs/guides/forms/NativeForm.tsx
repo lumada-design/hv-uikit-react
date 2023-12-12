@@ -11,7 +11,28 @@ import {
   HvTextArea,
 } from "@hitachivantara/uikit-react-core";
 
-const countries = ["Portugal", "Spain", "France", "United States"];
+const countries = [
+  {
+    id: "Portugal",
+    label: "Portugal",
+  },
+  {
+    id: "Spain",
+    label: "Spain",
+  },
+  {
+    id: "France",
+    label: "France",
+  },
+  {
+    id: "Germany",
+    label: "Germany",
+  },
+  {
+    id: "United States",
+    label: "United States",
+  },
+];
 
 export default () => (
   <form
@@ -38,10 +59,10 @@ export default () => (
           label="Country"
           inputProps={{ autoComplete: "off" }}
           endAdornment={<Map />}
-          validation={(val) => countries.includes(val)}
+          validation={(val) => !!countries.find((c) => c.label === val)}
           validationMessages={{ error: "Invalid country" }}
           suggestionListCallback={(val) =>
-            countries.filter((c) => c.includes(val))
+            countries.filter((c) => c.label === val)
           }
         />
       </HvGrid>

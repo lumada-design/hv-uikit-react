@@ -125,7 +125,7 @@ export const HvComp = forwardRef<HTMLDivElement, HvCompProps>((props, ref) => {
     onClick,
     onButtonClick,
     // 👇 call remaining props `others`
-    ...others,
+    ...others
     // use the 👇 useDefaultProps utility
   } = useDefaultProps("HvComp", props);
   // use the useClasses utility 👇
@@ -173,7 +173,7 @@ export const HvComp = forwardRef<HTMLDivElement, HvCompProps>((props, ref) => {
           [classes.disabled]: disabled,
         },
         // 👇 pass user-defined `className` last
-        className,
+        className
       )}
       onClick={disabled ? undefined : onClick}
       // 👇 forward others according to the types

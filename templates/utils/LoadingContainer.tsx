@@ -34,7 +34,7 @@ export const LoadingContainer = ({
           root: css({
             position: "absolute",
             inset: -2, // cover borders/outlines
-            backgroundColor: hexToRgbA(colors.atmo2, 0.8),
+            backgroundColor: hexToRgbA(colors?.atmo2, 0.8),
             zIndex: theme.zIndices.popover,
           }),
         }}

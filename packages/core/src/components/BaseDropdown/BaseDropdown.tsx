@@ -40,8 +40,7 @@ export { staticClasses as baseDropdownClasses };
 
 export type HvBaseDropdownClasses = ExtractNames<typeof useClasses>;
 
-export interface HvBaseDropdownProps
-  extends HvBaseProps<HTMLDivElement, "placeholder"> {
+export interface HvBaseDropdownProps extends HvBaseProps {
   /**
    * The role of the element that triggers the popup.
    *

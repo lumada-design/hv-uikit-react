@@ -48,6 +48,8 @@ export interface HvInlineEditorProps
   disabled?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: HvInlineEditorClasses;
+  /** The placeholder value of the input. */
+  placeholder?: string;
 }
 
 /**

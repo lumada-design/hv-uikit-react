@@ -110,7 +110,7 @@ const entries: Partial<
 export const Properties = ({ editMode }: { editMode?: boolean }) => {
   const { data } = useModelData();
 
-  return Object.entries(entries).map(([key, entry]) => {
+  const elements = Object.entries(entries).map(([key, entry]) => {
     const { label, Component, EditComponent, ...others } = entry;
     const value = data[key];
     const ContentComponent = (editMode && EditComponent) || Component;
@@ -121,4 +121,7 @@ export const Properties = ({ editMode }: { editMode?: boolean }) => {
       </MetadataItem>
     );
   });
+
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  return <>{elements}</>;
 };

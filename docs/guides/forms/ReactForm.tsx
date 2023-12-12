@@ -13,6 +13,8 @@ import {
   HvRadio,
 } from "@hitachivantara/uikit-react-core";
 
+type Country = "Portugal" | "Spain" | "France" | "Germany" | "United States";
+
 const passwordSchema = z
   .string()
   .min(6, "Password is too short")
@@ -92,7 +94,6 @@ export default () => {
           alert(JSON.stringify(formData, null, 2));
         } else {
           const formErrors = parsedData.error.formErrors.fieldErrors;
-          console.log(formErrors);
           setErrors(formErrors);
         }
       }}
@@ -137,7 +138,7 @@ export default () => {
             inputProps={{ autoComplete: "off" }}
             status={errors.country ? "invalid" : "valid"}
             statusMessage={errors.country?.[0] || ""}
-            onChange={(evt, val) => setValue("country", val)}
+            onChange={(evt, val) => setValue("country", val as Country)}
             endAdornment={<Map />}
           />
         </HvGrid>
@@ -180,7 +181,7 @@ export default () => {
           <HvTimePicker
             name="startTime"
             label="Start time"
-            onChange={(evt, val) => {
+            onChange={(val) => {
               setValue("startTime", val);
             }}
           />

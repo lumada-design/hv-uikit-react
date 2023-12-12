@@ -94,10 +94,10 @@ export const { staticClasses, useClasses } = createClasses(
     link: {
       textDecoration: "none",
       ...item,
-    },
+    } as CSSInterpolation,
     button: {
       color: "inherit",
       ...item,
-    },
+    } as CSSInterpolation,
   }
 );

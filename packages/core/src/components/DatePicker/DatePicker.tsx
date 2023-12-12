@@ -50,10 +50,10 @@ export type HvDatePickerStatus = HvFormStatus;
 
 export interface HvDatePickerProps
   extends Omit<HvFormElementProps, "onChange">,
-    Pick<
-      HvBaseDropdownProps,
-      "disablePortal" | "expanded" | "defaultExpanded" | "onToggle"
-    > {
+  Pick<
+    HvBaseDropdownProps,
+    "disablePortal" | "expanded" | "defaultExpanded" | "onToggle" | "placeholder"
+  > {
   /**
    * Identifies the element that provides an error message for the date picker.
    *
