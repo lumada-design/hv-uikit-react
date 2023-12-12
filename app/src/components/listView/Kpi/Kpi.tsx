@@ -7,7 +7,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { TopXS, BottomXS } from "@hitachivantara/uikit-react-icons";
 
-import { Indicator } from "~/components/listView";
+import { Indicator } from "~/components/listView/Indicator";
 import { getStatusIcon } from "~/lib/utils/listView";
 
 import classes from "./styles";
