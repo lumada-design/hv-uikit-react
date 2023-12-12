@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { theme } from "@hitachivantara/uikit-react-core";
 
 export const flowStyles = css`
   /* this gets exported as style.css and can be used for the default theming */
@@ -43,7 +44,7 @@ export const flowStyles = css`
   }
   .react-flow__edge-path,
   .react-flow__connection-path {
-    stroke: #b1b1b7;
+    stroke: ${theme.colors.secondary};
     stroke-width: 1;
     fill: none;
   }
@@ -231,16 +232,17 @@ export const flowStyles = css`
   .react-flow__node-input,
   .react-flow__node-output,
   .react-flow__node-group {
-    padding: 10px;
-    border-radius: 3px;
+    padding: ${theme.space.sm};
+    border-radius: ${theme.radii.round};
     width: 150px;
-    font-size: 12px;
-    color: #222;
+    color: ${theme.colors.secondary};
     text-align: center;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #1a192b;
-    background-color: white;
+    border: 1px solid ${theme.colors.negative};
+    background-color: ${theme.colors.negative_20};
+  }
+  .react-flow__node-default::before {
+    content: "Unknown node type";
+    display: block;
   }
   .react-flow__node-default.selectable:hover,
   .react-flow__node-input.selectable:hover,
@@ -277,7 +279,7 @@ export const flowStyles = css`
     outline: none;
   }
   .react-flow__controls {
-    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.08);
+    box-shadow: ${theme.colors.shadow};
   }
   .react-flow__controls-button {
     border: none;
@@ -337,7 +339,7 @@ export const flowStyles = css`
     height: 4px;
     border: 1px solid #fff;
     border-radius: 1px;
-    background-color: #3367d9;
+    background-color: ${theme.colors.primary};
     transform: translate(-50%, -50%);
   }
   .react-flow__resize-control.handle.left {
@@ -370,7 +372,7 @@ export const flowStyles = css`
   }
   /* line styles */
   .react-flow__resize-control.line {
-    border-color: #3367d9;
+    border-color: ${theme.colors.primary};
     border-width: 0;
     border-style: solid;
   }

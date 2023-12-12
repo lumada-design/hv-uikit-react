@@ -278,6 +278,12 @@ export const HvDroppableFlow = ({
           defaultEdgeOptions={defaultEdgeOptions}
           snapGrid={[1, 1]}
           snapToGrid
+          onError={(code, message) => {
+            if (import.meta.env.DEV) {
+              // eslint-disable-next-line no-console
+              console.error(message);
+            }
+          }}
           {...others}
         >
           {children}
