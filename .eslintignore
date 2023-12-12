@@ -6,3 +6,5 @@ bin
 dist
 coverage
 examples
+packages/icons/src
+packages/icons/sprites

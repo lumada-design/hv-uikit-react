@@ -22,7 +22,7 @@ const args = yargs // reading arguments from the command line
   .option("output", { alias: "o" })
   .option("input", { alias: "i" })
   .option("rm-style", { default: false })
-  .option("force", { alias: "f", default: false }).argv;
+  .option("force", { alias: "f", default: false }).argv as any;
 
 // Resolve arguments
 const firstArg = args._[0];
