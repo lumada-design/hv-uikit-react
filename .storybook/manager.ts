@@ -14,7 +14,7 @@ addons.setConfig({
   sidebar: {
     filters: {
       patters: (item) => {
-        return !item.tags.includes("test");
+        return !item.tags?.includes("test");
       },
     },
   },

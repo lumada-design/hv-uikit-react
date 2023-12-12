@@ -1,7 +1,7 @@
 import { UserConfig, definePreset, mergeConfigs } from "@unocss/core";
 import { Theme, presetUno, PresetUnoOptions } from "@unocss/preset-uno";
 import { presetRemToPx } from "@unocss/preset-rem-to-px";
-// @ts-expect-error ignore CJS import ES module
+
 import { presetTheme } from "unocss-preset-theme";
 
 import { extendTheme, themeModes } from "./theme";

@@ -4,7 +4,6 @@ import {
   HvCard,
   HvCardContent,
   HvCardProps,
-  HvColorAny,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
@@ -88,7 +87,7 @@ interface KpiProps extends HvCardProps {
   title: string;
   value: ReactNode;
   unit?: ReactNode;
-  color: HvColorAny;
+  color: HvCardProps["statusColor"];
 }
 
 export const Kpi = ({ title, value, color, unit = "t/h" }: KpiProps) => {

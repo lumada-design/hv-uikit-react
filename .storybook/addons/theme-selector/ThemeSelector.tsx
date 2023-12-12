@@ -73,6 +73,7 @@ const ThemeSelector = ({ api }) => {
           active={false}
           title="Select theme"
           style={{ width: 140 }}
+          placeholder="Select theme"
         >
           {`Theme: ${selectedTheme?.label}`}
         </IconButton>

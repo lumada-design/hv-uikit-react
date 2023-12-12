@@ -71,7 +71,7 @@ export default () => (
               status={parseStatus("dropdown")}
               statusMessage={parseStatusMessage("dropdown")}
               onChange={(selection) => {
-                const value = [].concat(selection || []);
+                const value = [].concat((selection as any) || []);
                 setFieldTouched("dropdown");
                 setFieldValue("dropdown", value);
               }}

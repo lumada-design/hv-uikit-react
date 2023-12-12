@@ -1,6 +1,4 @@
-import { GlobalProps } from "@emotion/react";
-
-export const getManagerStyles = (): GlobalProps["styles"] => {
+export const getManagerStyles = () => {
   return {
     ".sidebar-container": {
       ".sidebar-header": {

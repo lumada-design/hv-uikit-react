@@ -13,7 +13,6 @@ import { LoadingContainer } from "../utils";
 /** A `HvGrid` item + styled `HvPanel` container with a loading `Suspense` boundary */
 export const GridPanel = ({
   children,
-  width,
   height = 300,
   isLoading,
   ...others
@@ -22,7 +21,7 @@ export const GridPanel = ({
     <LoadingContainer loading={isLoading}>
       <HvPanel
         role="region"
-        style={{ width, height }}
+        style={{ height: height as number }}
         className={css({
           overflow: "visible",
           position: "relative",
