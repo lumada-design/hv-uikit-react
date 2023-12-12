@@ -18,4 +18,6 @@ export type {
   HvQueryBuilderLabels,
   HvQueryBuilderRendererProps,
   HvQueryBuilderRenderers,
+  HvQueryBuilderChangedQuery,
+  HvQueryBuilderQueryGroup,
 } from "./types";
