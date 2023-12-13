@@ -23,6 +23,8 @@ import { NoGroups as NoGroupStory } from "./NoGroups";
 import NoGroupsRaw from "./NoGroups?raw";
 import { DynamicHandles as DynamicHandlesStory } from "./DynamicHandles";
 import DynamicHandlesRaw from "./DynamicHandles?raw";
+import { Invalid as InvalidStory } from "./Invalid";
+import InvalidRaw from "./Invalid?raw";
 
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",
@@ -159,4 +161,20 @@ export const DynamicHandles: StoryObj<HvFlowProps> = {
     eyes: { include: false },
   },
   render: () => <DynamicHandlesStory />,
+};
+
+export const InvalidFlow: StoryObj<HvFlowProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "This sample illustrates how to handle an invalid flow and show an error message.",
+      },
+      source: {
+        code: InvalidRaw,
+      },
+    },
+    eyes: { include: false },
+  },
+  render: () => <InvalidStory />,
 };
