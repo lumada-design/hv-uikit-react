@@ -32,11 +32,15 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
   /** Styles applied to the component root when striped. */
   striped: {
     "&:nth-of-type(even)": {
+      backgroundColor: theme.alpha("atmo1", 0.6),
+
       "&:hover": {
         backgroundColor: theme.colors.containerBackgroundHover,
       },
     },
     "&:nth-of-type(odd)": {
+      backgroundColor: "transparent",
+
       "&:hover": {
         backgroundColor: theme.colors.containerBackgroundHover,
       },

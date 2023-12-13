@@ -1,5 +1,3 @@
-import { theme } from "@hitachivantara/uikit-styles";
-
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { setId } from "@core/utils/setId";
 import { useTheme } from "@core/hooks/useTheme";
@@ -17,7 +15,6 @@ import {
 } from "@core/components/ActionsGeneric";
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
-import { hexToRgbA } from "@core/utils/hexToRgbA";
 
 import { staticClasses, useClasses } from "./BulkActions.styles";
 
@@ -116,11 +113,10 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
     ...others
   } = useDefaultProps("HvBulkActions", props);
 
-  const { classes, cx, css } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
-  const { activeTheme, colors } = useTheme();
+  const { activeTheme } = useTheme();
 
-  const baseColor = colors?.base_light || theme.colors.base_light;
   const anySelected = numSelected > 0;
   const isSemantic = semantic && anySelected;
 
@@ -150,17 +146,6 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
       className={cx(
         classes.root,
         { [classes.semantic]: isSemantic },
-        isSemantic &&
-          css({
-            [`& .${staticClasses.selectAll} div`]: {
-              "&:hover:not(:disabled)": {
-                backgroundColor: hexToRgbA(baseColor, 0.3),
-              },
-            },
-            [`& .${staticClasses.selectAll}:focus-within div`]: {
-              backgroundColor: hexToRgbA(baseColor, 0.3),
-            },
-          }),
         className
       )}
       {...others}

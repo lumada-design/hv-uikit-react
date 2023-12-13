@@ -4,6 +4,8 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "@core/utils/classes";
 
+const sortedColor = theme.alpha("primary", 0.1);
+
 export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   /** Styles applied to the component root class. */
   root: {
@@ -33,6 +35,10 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
     backgroundColor: "inherit",
     ...(theme.typography.body as CSSProperties),
     fontFamily: theme.fontFamily.body,
+
+    "&$sorted": {
+      backgroundColor: sortedColor,
+    },
   },
   /** Styles applied to the cell when it's in the table footer. */
   footer: {},
@@ -123,6 +129,10 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
 
     "&$groupColumnMostRight+$stickyColumn": {
       borderLeft: 0,
+    },
+
+    "&$sorted": {
+      backgroundImage: `linear-gradient(to right, ${sortedColor}, ${sortedColor})`,
     },
   },
   /** Styles applied to the cell when it's part of the last sticky to the left column. */

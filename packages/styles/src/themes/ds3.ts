@@ -1112,6 +1112,9 @@ const ds3 = makeTheme((theme) => ({
     },
     HvScrollToHorizontal: {
       classes: {
+        root: {
+          backgroundColor: theme.alpha("atmo2", 0.8),
+        },
         notSelectedRoot: {
           display: "none",
           height: "32px",
@@ -1127,6 +1130,13 @@ const ds3 = makeTheme((theme) => ({
           display: "none",
           height: "32px",
           width: "32px",
+        },
+      },
+    },
+    HvScrollToVertical: {
+      classes: {
+        root: {
+          backgroundColor: theme.alpha("atmo2", 0.8),
         },
       },
     },
@@ -1232,11 +1242,24 @@ const ds3 = makeTheme((theme) => ({
         head: {
           borderTop: `1px solid ${theme.colors.atmo4}`,
         },
+        body: {
+          "&.HvTableCell-sorted": {
+            backgroundColor: theme.alpha("atmo1", 0.4),
+          },
+        },
         variantListactions: {
           borderLeft: `solid 2px ${theme.colors.atmo2}`,
         },
         variantListcheckbox: {
           borderRight: `solid 2px ${theme.colors.atmo2}`,
+        },
+        stickyColumn: {
+          "&.HvTableCell-sorted": {
+            backgroundImage: `linear-gradient(to right, ${theme.alpha(
+              "atmo1",
+              0.4
+            )}, ${theme.alpha("atmo1", 0.4)})`,
+          },
         },
       },
     },
@@ -1424,8 +1447,8 @@ const ds3 = makeTheme((theme) => ({
     rowStripedBackgroundColorEven: theme.colors.atmo1, // TODO - remove in v6
     rowStripedBackgroundColorOdd: "transparent", // TODO - remove in v6
     rowExpandBackgroundColor: theme.colors.atmo2,
-    rowSortedColor: theme.colors.atmo1,
-    rowSortedColorAlpha: "0.4",
+    rowSortedColor: theme.colors.atmo1, // TODO - remove in v6
+    rowSortedColorAlpha: "0.4", // TODO - remove in v6
   },
   stepNavigation: {
     separatorMargin: "0px",
@@ -1438,7 +1461,7 @@ const ds3 = makeTheme((theme) => ({
   },
   scrollTo: {
     dotSelectedSize: 10,
-    backgroundColorOpacity: 0.8,
+    backgroundColorOpacity: 0.8, // TODO - remove in v6
   },
   colorPicker: {
     hueDirection: "vertical",

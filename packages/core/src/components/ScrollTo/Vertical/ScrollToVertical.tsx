@@ -1,14 +1,11 @@
 import { useMemo } from "react";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { HvBaseProps } from "@core/types/generic";
-import { useTheme } from "@core/hooks/useTheme";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { ExtractNames } from "@core/utils/classes";
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
-import { hexToRgbA } from "@core/utils/hexToRgbA";
 
 import {
   staticClasses,
@@ -92,8 +89,7 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
     ...others
   } = useDefaultProps("HvScrollToVertical", props);
 
-  const { classes, css, cx } = useClasses(classesProp);
-  const { activeTheme, colors } = useTheme();
+  const { classes, cx } = useClasses(classesProp);
 
   const elementId = useUniqueId(id, "hvVerticalScrollto");
 
@@ -154,15 +150,10 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
   });
 
   const positionOffset = calculateOffset(options.length);
-  const backgroundColor = hexToRgbA(
-    colors?.atmo2,
-    activeTheme?.scrollTo.backgroundColorOpacity
-  );
 
   return (
     <ol
       className={cx(
-        css({ backgroundColor }),
         classes.root,
         {
           [classes.positionFixed]: position === "fixed",

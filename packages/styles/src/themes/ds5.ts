@@ -188,8 +188,8 @@ const ds5 = makeTheme((theme) => ({
     rowStripedBackgroundColorEven: theme.colors.atmo1, // TODO - remove in v6
     rowStripedBackgroundColorOdd: "transparent", // TODO - remove in v6
     rowExpandBackgroundColor: theme.colors.atmo2,
-    rowSortedColor: theme.colors.primary,
-    rowSortedColorAlpha: "0.1",
+    rowSortedColor: theme.colors.primary, // TODO - remove in v6
+    rowSortedColorAlpha: "0.1", // TODO - remove in v6
   },
   stepNavigation: {
     separatorMargin: "4px",
@@ -202,7 +202,7 @@ const ds5 = makeTheme((theme) => ({
   },
   scrollTo: {
     dotSelectedSize: 6,
-    backgroundColorOpacity: 0.9,
+    backgroundColorOpacity: 0.9, // TODO - remove in v6
   },
   colorPicker: {
     hueDirection: "horizontal",

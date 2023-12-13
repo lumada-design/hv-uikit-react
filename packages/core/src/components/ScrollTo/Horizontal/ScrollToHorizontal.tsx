@@ -1,20 +1,16 @@
 import { useCallback, useMemo } from "react";
-
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
-
 import { theme } from "@hitachivantara/uikit-styles";
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { HvBaseProps } from "@core/types/generic";
 import { useUniqueId } from "@core/hooks/useUniqueId";
 import { useTheme } from "@core/hooks/useTheme";
 import { ExtractNames } from "@core/utils/classes";
 import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
-import { hexToRgbA } from "@core/utils/hexToRgbA";
 
 import { HvScrollToTooltipPositions } from "../types";
 import { withTooltip } from "../withTooltip";
@@ -104,7 +100,7 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
   const downSm = useMediaQuery(muiTheme.breakpoints.down("sm"));
   const upMd = useMediaQuery(muiTheme.breakpoints.up("md"));
 
-  const { activeTheme, colors } = useTheme();
+  const { activeTheme } = useTheme();
 
   const elementId = useUniqueId(id, "hvHorizontalScrollto");
 
@@ -202,10 +198,6 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
             position === "fixed" && (upMd || downSm)
               ? theme.spacing(upMd ? 4 : 2)
               : 0,
-          backgroundColor: hexToRgbA(
-            colors?.atmo2,
-            activeTheme?.scrollTo.backgroundColorOpacity
-          ),
         }),
         classes.root,
         {

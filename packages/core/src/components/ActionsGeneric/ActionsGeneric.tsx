@@ -1,17 +1,12 @@
 import React, { isValidElement } from "react";
-
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
-import { hexToRgbA } from "@core/utils/hexToRgbA";
 import { HvButton, HvButtonVariant } from "@core/components/Button";
 import { HvDropDownMenu } from "@core/components/DropDownMenu";
 import { setId } from "@core/utils/setId";
 import { ExtractNames } from "@core/utils/classes";
 import { HvBaseProps } from "@core/types/generic";
-import { useTheme } from "@core/hooks/useTheme";
 
 import { staticClasses, useClasses } from "./ActionsGeneric.styles";
 
@@ -60,9 +55,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
     ...others
   } = useDefaultProps("HvActionsGeneric", props);
 
-  const { classes, cx, css } = useClasses(classesProp);
-
-  const { colors } = useTheme();
+  const { classes, cx } = useClasses(classesProp);
 
   if (!Array.isArray(actions)) return isValidElement(actions) ? actions : null;
 
@@ -79,17 +72,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
         id={actionId}
         key={actionId || idx}
         variant={category}
-        className={cx(
-          css({
-            "&:hover": {
-              backgroundColor: hexToRgbA(
-                colors?.base_light || theme.colors.base_light,
-                0.3
-              ),
-            },
-          }),
-          classes.button
-        )}
+        className={classes.button}
         disabled={actDisabled ?? disabled}
         onClick={(event) => actionsCallback?.(event, id || "", action)}
         startIcon={renderedIcon}

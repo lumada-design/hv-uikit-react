@@ -1,14 +1,7 @@
 import React from "react";
-
 import { css } from "@emotion/css";
-
 import { theme } from "@hitachivantara/uikit-styles";
-import {
-  HvLoading,
-  HvLoadingProps,
-  hexToRgbA,
-  useTheme,
-} from "@hitachivantara/uikit-react-core";
+import { HvLoading, HvLoadingProps } from "@hitachivantara/uikit-react-core";
 
 interface LoadingContainerProps extends HvLoadingProps {
   children: React.ReactNode;
@@ -20,8 +13,6 @@ export const LoadingContainer = ({
   loading,
   ...others
 }: LoadingContainerProps) => {
-  const { colors } = useTheme();
-
   return (
     <div
       className={css({
@@ -34,7 +25,7 @@ export const LoadingContainer = ({
           root: css({
             position: "absolute",
             inset: -2, // cover borders/outlines
-            backgroundColor: hexToRgbA(colors?.atmo2, 0.8),
+            backgroundColor: theme.alpha("atmo2", 0.8),
             zIndex: theme.zIndices.popover,
           }),
         }}

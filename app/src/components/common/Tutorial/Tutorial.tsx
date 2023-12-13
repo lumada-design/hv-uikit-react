@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { hexToRgbA, useTheme } from "@hitachivantara/uikit-react-core";
+import { theme } from "@hitachivantara/uikit-react-core";
 
 import { Step } from "./Step";
 import classes from "./tutorialStyles";
@@ -13,8 +13,6 @@ export const Tutorial = ({
   currentStep: number | undefined;
   setCurrentStep: Dispatch<SetStateAction<number>> | undefined;
 }) => {
-  const { activeTheme, selectedMode } = useTheme();
-
   const nextHandler = (close = false) => {
     if (close) {
       setTutorialOpen?.(false);
@@ -32,10 +30,7 @@ export const Tutorial = ({
     <div
       className={classes.root}
       style={{
-        backgroundColor: hexToRgbA(
-          activeTheme?.colors.modes[selectedMode].base_dark,
-          0.5
-        ),
+        backgroundColor: theme.alpha("base_dark", 0.5),
       }}
     >
       <Step

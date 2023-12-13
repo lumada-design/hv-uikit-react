@@ -10,7 +10,9 @@ export const { staticClasses, useClasses } = createClasses("HvDrawer", {
     overflow: "auto",
     boxShadow: theme.colors.shadow,
   },
-  background: {},
+  background: {
+    background: theme.alpha("atmo4", 0.8),
+  },
   closeButton: {
     position: "absolute",
     top: theme.spacing("sm"),

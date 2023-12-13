@@ -16,10 +16,18 @@ export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
     "& $selectAll div": {
       color: "inherit",
 
+      "&:hover:not(:disabled)": {
+        backgroundColor: theme.alpha("base_light", 0.3),
+      },
+
       "& *": {
         color: "inherit",
         backgroundColor: "transparent",
       },
+    },
+
+    "& $selectAll:focus-within div": {
+      backgroundColor: theme.alpha("base_light", 0.3),
     },
   },
   actions: { display: "inline-flex", marginLeft: "auto" },

@@ -3,8 +3,6 @@ import {
   HvLoading,
   HvLoadingProps,
   theme,
-  useTheme,
-  hexToRgbA,
 } from "@hitachivantara/uikit-react-core";
 
 const classes = {
@@ -16,6 +14,7 @@ const classes = {
     position: "absolute",
     inset: 0,
     zIndex: `calc(${theme.zIndices.banner} - 1)`,
+    backgroundColor: theme.alpha("atmo1", 0.8),
   }),
   opaque: css({
     backgroundColor: theme.colors.atmo1,
@@ -40,28 +39,19 @@ export const LoadingContainer = ({
   opaque = false,
   transparent = false,
   ...others
-}: LoadingContainerProps) => {
-  const { colors } = useTheme();
-
-  return (
-    <div className={classes.root}>
-      <HvLoading
-        role="progressbar"
-        aria-label="Loading items..."
-        className={cx(
-          css({ backgroundColor: hexToRgbA(colors?.atmo1) }),
-          classes.loading,
-          className,
-          {
-            [classes.opaque]: opaque,
-            [classes.transparent]: transparent,
-          }
-        )}
-        label={label}
-        hidden={!loading}
-        {...others}
-      />
-      {children}
-    </div>
-  );
-};
+}: LoadingContainerProps) => (
+  <div className={classes.root}>
+    <HvLoading
+      role="progressbar"
+      aria-label="Loading items..."
+      className={cx(classes.loading, className, {
+        [classes.opaque]: opaque,
+        [classes.transparent]: transparent,
+      })}
+      label={label}
+      hidden={!loading}
+      {...others}
+    />
+    {children}
+  </div>
+);
