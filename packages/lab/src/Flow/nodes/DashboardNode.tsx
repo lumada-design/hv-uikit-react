@@ -1,0 +1,123 @@
+import {
+  ExtractNames,
+  HvButton,
+  HvDialog,
+  HvDialogActions,
+  HvDialogContent,
+  HvDialogProps,
+  HvDialogTitle,
+  HvEmptyState,
+  createClasses,
+  theme,
+  useLabels,
+} from "@hitachivantara/uikit-react-core";
+import { Info } from "@hitachivantara/uikit-react-icons";
+
+import { HvDashboard, HvDashboardProps } from "../../Dashboard";
+import { HvFlowNode, HvFlowNodeProps, HvFlowNodeClasses } from "../Node";
+
+const { staticClasses, useClasses } = createClasses("HvDashboardNode", {
+  actions: {
+    display: "flex",
+    justifyContent: "space-around",
+    padding: theme.space.xs,
+  },
+  empty: {
+    padding: theme.spacing("sm", 0, 0, 0),
+  },
+});
+
+export { staticClasses as hvDashboardNodeClasses };
+
+const DEFAULT_LABELS = {
+  title: "Dashboard",
+  description: "Dashboard",
+  emptyMessage: "No visualizations connected to the dashboard.",
+  dialogTitle: "Configure dashboard",
+  dialogSubtitle: "Please configure the layout of your dashboard as needed.",
+  dialogApply: "Apply",
+  dialogCancel: "Cancel",
+};
+
+export interface HvDashboardNodeClasses
+  extends ExtractNames<typeof useClasses>,
+    HvFlowNodeClasses {}
+
+export interface HvDashboardNodeProps
+  extends HvFlowNodeProps,
+    Pick<HvDialogProps, "open" | "onClose">,
+    Pick<HvDashboardProps, "layout"> {
+  classes?: HvDashboardNodeClasses;
+  labels?: typeof DEFAULT_LABELS;
+  previewItems?: React.ReactNode;
+  onApply?: () => void;
+  onCancel?: () => void;
+
+  dashboardProps?: Omit<HvDashboardProps, "children">;
+  dialogProps?: HvDialogProps;
+}
+
+export const HvDashboardNode = (props: HvDashboardNodeProps) => {
+  const {
+    id,
+    open,
+    layout,
+    labels: labelsProp,
+    classes: classesProp,
+    previewItems,
+    children,
+    dialogProps,
+    dashboardProps,
+    onApply,
+    onCancel,
+    onClose,
+    ...others
+  } = props;
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
+  const { classes } = useClasses(classesProp);
+
+  return (
+    <HvFlowNode id={id} classes={classes as any} {...others}>
+      <div className={classes.actions}>{children}</div>
+      <HvDialog
+        open={open}
+        maxWidth="lg"
+        fullWidth
+        onClose={onClose}
+        {...dialogProps}
+      >
+        <HvDialogTitle variant="info">{labels?.dialogTitle}</HvDialogTitle>
+        <HvDialogContent indentContent>
+          {labels?.dialogSubtitle}
+          {layout && layout?.length > 0 ? (
+            <HvDashboard
+              cols={12}
+              layout={layout}
+              compactType="vertical"
+              rowHeight={80}
+              margin={[16, 16]}
+              containerPadding={[0, 16]}
+              {...dashboardProps}
+            >
+              {previewItems}
+            </HvDashboard>
+          ) : (
+            <HvEmptyState
+              className={classes.empty}
+              icon={<Info role="none" />}
+              message={labels?.emptyMessage}
+            />
+          )}
+        </HvDialogContent>
+        <HvDialogActions>
+          <HvButton variant="primary" onClick={onApply}>
+            {labels?.dialogApply}
+          </HvButton>
+          <HvButton variant="secondarySubtle" onClick={onCancel}>
+            {labels?.dialogCancel}
+          </HvButton>
+        </HvDialogActions>
+      </HvDialog>
+    </HvFlowNode>
+  );
+};

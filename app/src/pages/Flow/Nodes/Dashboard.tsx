@@ -1,9 +1,6 @@
-import { useState } from "react";
-import { css } from "@emotion/css";
+import { useMemo, useState } from "react";
 import {
-  HvDashboard,
-  HvDashboardProps,
-  HvFlowNode,
+  HvDashboardNode,
   HvFlowNodeFC,
   HvFlowNodeInput,
   HvFlowNodeTypeMeta,
@@ -11,15 +8,9 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 import {
   HvButton,
-  HvDialog,
-  HvDialogActions,
-  HvDialogContent,
-  HvDialogTitle,
-  HvEmptyState,
+  HvSection,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
-import { Info } from "@hitachivantara/uikit-react-icons";
 
 import {
   DASHBOARDS_STORAGE_KEY,
@@ -36,28 +27,12 @@ type PreviewProps = {
 };
 
 const PreviewRenderer = ({ label, node }: PreviewProps) => (
-  <div
-    className={css({
-      display: "flex",
-      flexDirection: "column",
-      flexWrap: "wrap",
-      width: "100%",
-      padding: theme.space.xs,
-      border: `1px solid ${theme.colors.atmo4}`,
-      borderRadius: theme.radii.round,
-      backgroundColor: theme.colors.atmo1,
-    })}
+  <HvSection
+    title={<HvTypography variant="title4">{label}</HvTypography>}
+    classes={{ content: "mt-0" }}
   >
-    <HvTypography
-      variant="title4"
-      className={css({ marginBottom: theme.space.xs })}
-    >
-      {label}
-    </HvTypography>
-    <HvTypography className={css({ color: theme.colors.secondary_60 })}>
-      {node.data.title}
-    </HvTypography>
-  </div>
+    <HvTypography className="text-secondary_60">{node.data.title}</HvTypography>
+  </HvSection>
 );
 
 const nodeInputs: HvFlowNodeInput[] = [
@@ -75,7 +50,17 @@ export const Dashboard: HvFlowNodeFC = (props) => {
 
   const [open, setOpen] = useState(false);
   const [config, setConfig] = useState<DashboardSpecs>();
-  const [content, setContent] = useState<PreviewProps[]>();
+
+  const content = useMemo(() => {
+    if (!config) return undefined;
+
+    return config.items.map<PreviewProps>((node) => {
+      const nodeType = node.type!;
+      const label = nodeType && nodeTypes?.[nodeType].meta?.label;
+
+      return { id: node.id, type: nodeType, label, node };
+    });
+  }, [config, nodeTypes]);
 
   const handleOpenConfig = () => {
     // Get from local storage
@@ -83,23 +68,14 @@ export const Dashboard: HvFlowNodeFC = (props) => {
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
     const newConfig = specs?.[id];
 
-    const ct = newConfig?.items?.map<PreviewProps>((node) => {
-      const nodeType = node.type!;
-      const label = nodeType && nodeTypes?.[nodeType].meta?.label;
-
-      return { id: node.id, type: nodeType, label, node };
-    });
-
     // Open
     setOpen(true);
     setConfig(newConfig);
-    setContent(ct);
   };
 
   const handleClose = () => {
     setOpen(false);
     setConfig(undefined);
-    setContent(undefined);
   };
 
   const handleApply = () => {
@@ -113,73 +89,48 @@ export const Dashboard: HvFlowNodeFC = (props) => {
     handleClose();
   };
 
-  const handleLayoutChange: HvDashboardProps["onLayoutChange"] = (ly) => {
-    setConfig((conf) => ({ ...conf!, layout: ly }));
-  };
-
   return (
-    <>
-      <HvFlowNode description="Dashboard" inputs={nodeInputs} {...props}>
-        <div
-          className={css({
-            display: "flex",
-            justifyContent: "center",
-            padding: theme.spacing("xs", "xs", "sm", "xs"),
-            gap: theme.space.xs,
-          })}
-        >
-          <HvButton onClick={handleOpenConfig}>Configure</HvButton>
-          <HvButton
-            variant="primarySubtle"
-            component="a"
-            href={`./?dashboard=${id}`}
-            target="_blank"
-          >
-            Preview
-          </HvButton>
+    <HvDashboardNode
+      description="Dashboard"
+      inputs={nodeInputs}
+      open={open}
+      layout={config?.layout}
+      labels={{
+        title: "Dashboard",
+        description: "Dashboard",
+        emptyMessage: "No visualizations connected to the dashboard.",
+        dialogTitle: "Configure dashboard",
+        dialogSubtitle:
+          "Please configure the layout of your dashboard as needed.",
+        dialogApply: "Apply",
+        dialogCancel: "Cancel",
+      }}
+      onClose={handleClose}
+      onApply={handleApply}
+      onCancel={handleClose}
+      dashboardProps={{
+        cols: config?.cols,
+        onLayoutChange: (ly) => {
+          setConfig((conf) => ({ ...conf!, layout: ly }));
+        },
+      }}
+      previewItems={content?.map((item) => (
+        <div key={item.id} className="flex">
+          <PreviewRenderer {...item} />
         </div>
-      </HvFlowNode>
-      <HvDialog maxWidth="lg" fullWidth open={open} onClose={handleClose}>
-        <HvDialogTitle variant="info">Configure Dashboard</HvDialogTitle>
-        <HvDialogContent indentContent>
-          <HvTypography>
-            Please configure the layout of your dashboard as needed.
-          </HvTypography>
-          {config?.layout && config.layout.length > 0 ? (
-            <HvDashboard
-              layout={config.layout}
-              compactType="vertical"
-              rowHeight={80}
-              margin={[16, 16]}
-              containerPadding={[0, 16]}
-              onLayoutChange={handleLayoutChange}
-            >
-              {content?.map((item) => (
-                <div key={item.id} className={css({ display: "flex" })}>
-                  <PreviewRenderer {...item} />
-                </div>
-              ))}
-            </HvDashboard>
-          ) : (
-            <HvEmptyState
-              className={css({
-                padding: theme.spacing("sm", 0, 0, 0),
-              })}
-              icon={<Info />}
-              message="No visualizations connected to the dashboard."
-            />
-          )}
-        </HvDialogContent>
-        <HvDialogActions>
-          <HvButton variant="primary" onClick={handleApply}>
-            Apply
-          </HvButton>
-          <HvButton variant="secondarySubtle" onClick={handleClose}>
-            Cancel
-          </HvButton>
-        </HvDialogActions>
-      </HvDialog>
-    </>
+      ))}
+      {...props}
+    >
+      <HvButton onClick={handleOpenConfig}>Configure</HvButton>
+      <HvButton
+        variant="primarySubtle"
+        component="a"
+        href={`./?dashboard=${id}`}
+        target="_blank"
+      >
+        Preview
+      </HvButton>
+    </HvDashboardNode>
   );
 };
 

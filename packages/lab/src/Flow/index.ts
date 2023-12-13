@@ -8,4 +8,5 @@ export * from "./Node";
 export type { HvFlowClasses } from "./DroppableFlow";
 export { flowClasses } from "./DroppableFlow";
 export * from "./types";
+export * from "./nodes";
 export * from "./hooks";
