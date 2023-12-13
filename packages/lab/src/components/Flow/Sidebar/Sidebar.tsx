@@ -163,81 +163,79 @@ export const HvFlowSidebar = ({
   const handleDebouncedSearch = debounce(handleSearch, 500);
 
   return (
-    <>
-      <HvDrawer
-        BackdropComponent={undefined}
-        variant="persistent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-        showBackdrop={false}
-        anchor={anchor}
-        buttonTitle={buttonTitle}
-        {...others}
-      >
-        <div id={drawerElementId} ref={setNodeRef}>
-          <div className={classes.titleContainer}>
-            <Add role="none" />
-            <HvTypography component="p" variant="title3">
-              {title}
-            </HvTypography>
-          </div>
-          <div className={classes.contentContainer}>
-            <HvTypography className={classes.description}>
-              {description}
-            </HvTypography>
-            <HvInput
-              className={classes.searchRoot}
-              type="search"
-              placeholder={labels?.searchPlaceholder}
-              aria-label={labels?.searchAriaLabel}
-              aria-controls={groupsElementId}
-              aria-owns={groupsElementId}
-              onChange={handleDebouncedSearch}
-              inputProps={{ autoComplete: "off" }}
-            />
-            {nodeGroups ? (
-              <ul id={groupsElementId} className={classes.groupsContainer}>
-                {Object.entries(groups).map((obj) => {
-                  return (
-                    <HvFlowSidebarGroup
-                      key={obj[0]}
-                      id={obj[0]}
-                      expandButtonProps={{
-                        "aria-label": labels?.expandGroupButtonAriaLabel,
-                      }}
-                      itemProps={{
-                        "aria-roledescription": labels?.itemAriaRoleDescription,
-                      }}
-                      {...obj[1]}
-                    />
-                  );
-                })}
-              </ul>
-            ) : (
-              ndTypes &&
-              Object.entries(ndTypes).map((obj) => {
+    <HvDrawer
+      BackdropComponent={undefined}
+      variant="persistent"
+      classes={{
+        paper: classes.drawerPaper,
+      }}
+      showBackdrop={false}
+      anchor={anchor}
+      buttonTitle={buttonTitle}
+      {...others}
+    >
+      <div id={drawerElementId} ref={setNodeRef}>
+        <div className={classes.titleContainer}>
+          <Add role="none" />
+          <HvTypography component="p" variant="title3">
+            {title}
+          </HvTypography>
+        </div>
+        <div className={classes.contentContainer}>
+          <HvTypography className={classes.description}>
+            {description}
+          </HvTypography>
+          <HvInput
+            className={classes.searchRoot}
+            type="search"
+            placeholder={labels?.searchPlaceholder}
+            aria-label={labels?.searchAriaLabel}
+            aria-controls={groupsElementId}
+            aria-owns={groupsElementId}
+            onChange={handleDebouncedSearch}
+            inputProps={{ autoComplete: "off" }}
+          />
+          {nodeGroups ? (
+            <ul id={groupsElementId} className={classes.groupsContainer}>
+              {Object.entries(groups).map((obj) => {
                 return (
-                  <HvFlowDraggableSidebarGroupItem
+                  <HvFlowSidebarGroup
                     key={obj[0]}
                     id={obj[0]}
-                    type={obj[0]}
-                    label={obj[1]?.meta?.label || ""}
-                    data={obj[1]?.meta?.data}
-                    aria-roledescription={labels?.itemAriaRoleDescription}
-                    className={classes.nodeType}
+                    expandButtonProps={{
+                      "aria-label": labels?.expandGroupButtonAriaLabel,
+                    }}
+                    itemProps={{
+                      "aria-roledescription": labels?.itemAriaRoleDescription,
+                    }}
+                    {...obj[1]}
                   />
                 );
-              })
-            )}
-          </div>
+              })}
+            </ul>
+          ) : (
+            ndTypes &&
+            Object.entries(ndTypes).map((obj) => {
+              return (
+                <HvFlowDraggableSidebarGroupItem
+                  key={obj[0]}
+                  id={obj[0]}
+                  type={obj[0]}
+                  label={obj[1]?.meta?.label || ""}
+                  data={obj[1]?.meta?.data}
+                  aria-roledescription={labels?.itemAriaRoleDescription}
+                  className={classes.nodeType}
+                />
+              );
+            })
+          )}
         </div>
-      </HvDrawer>
+      </div>
       <DragOverlay modifiers={[restrictToWindowEdges]} {...dragOverlayProps}>
         {draggingLabel ? (
           <HvFlowSidebarGroupItem label={draggingLabel} isDragging />
         ) : null}
       </DragOverlay>
-    </>
+    </HvDrawer>
   );
 };
