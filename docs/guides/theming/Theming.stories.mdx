@@ -2,6 +2,7 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { HvProvider, ds3 } from "@hitachivantara/uikit-react-core";
 import { ThemeSample } from "./ThemeSample";
 import { Spacing } from "./Spacing";
+import { Alpha } from "./Alpha";
 import { ThemeStructure } from "./ThemeStructure";
 import { CssVariables } from "./CssVariables";
 import { CreateTheme } from "./CreateTheme";
@@ -18,9 +19,11 @@ Here's what there is to know about the NEXT UI Kit theming:
 - [Theme structure](#theme-structure)
 - [Theme configuration](#theme-configuration)
 - [Theme context](#theme-context)
-- [CSS variable](#css-variables)
+- [CSS variables](#css-variables)
 - [Default props](#default-props)
-- [Spacing](#spacing)
+- [Theme utilities](#theme-utils)
+  - [Spacing](#spacing)
+  - [Alpha colors](#alpha-colors)
 
 ## Default themes <a id="default-themes" />
 
@@ -350,9 +353,9 @@ const MyComponent = () => {
   return (
     <HvTypography
       style={{
-        color: theme.colors.neutral, // Same as var(--uikit-colors-neutral)
-        fontWeight: theme.fontWeights.semibold, // Same as var(--uikit-fontWeights-semibold)
-        fontSize: theme.fontSizes.lg, // Same as var(--uikit-fontSizes-lg)
+        color: theme.colors.neutral,
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.lg,
       }}
     >
       CSS variables!
@@ -438,7 +441,9 @@ export const MyApp = () => {
   <DefaultPropsClassOverwrite />
 </Story>
 
-## Spacing <a id="spacing" />
+## Theme utilities <a id="theme-utils" />
+
+### Spacing <a id="spacing" />
 
 The NEXT UI Kit provides a spacing helper function named `spacing`. This function helps generate the spacing values for the UI elements when required
 and is contained within the `theme` object provided by the `uikit-react-core` package.
@@ -485,26 +490,59 @@ const ds3Spaces = {
 Find below an example on how to use the spacing helper function.
 
 ```tsx
-import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import { HvButton, theme } from "@hitachivantara/uikit-react-core";
 
-const StyledContainer = styled("div")({
-  "& > *": {
-    margin: theme.spacing("xs", "6px"),
-  },
-});
-
-export const Spacing = () => {
-  return (
-    <StyledContainer>
-      <HvButton variant="primary">Button 1</HvButton>
-      <HvButton variant="primarySubtle">Button 2</HvButton>
-      <HvButton variant="primaryGhost">Button 3</HvButton>
-    </StyledContainer>
-  );
+const classes = {
+  root: css({
+    "& > *": {
+      margin: theme.spacing("xs", "6px"),
+    },
+  }),
 };
+
+export const Spacing = () => (
+  <div className={classes.root}>
+    <HvButton variant="primary">Button 1</HvButton>
+    <HvButton variant="primarySubtle">Button 2</HvButton>
+    <HvButton variant="primaryGhost">Button 3</HvButton>
+  </div>
+);
 ```
 
 <Story name="Spacing">
   <Spacing />
+</Story>
+
+### Alpha colors <a id="alpha-colors" />
+
+An alpha helper function named `alpha` is also provided and contained within the `theme` object exported by the `uikit-react-core` package.
+This utility function accepts a color name from the theme and an alpha value and applies the transparency to the color.
+
+Example:
+
+```tsx
+theme.alpha("primary", 0.5); // applies a transparency of 50% to the primary color
+```
+
+Find an example below.
+
+```tsx
+import { css } from "@emotion/css";
+import { HvButton, theme } from "@hitachivantara/uikit-react-core";
+
+const styles = {
+  button: css({
+    backgroundColor: theme.colors.brand,
+    ":hover": { backgroundColor: theme.alpha("brand", 0.6) },
+  }),
+};
+
+export const Alpha = () => (
+  <HvButton className={styles.button}>Click me</HvButton>
+);
+```
+
+<Story name="Alpha">
+  <Alpha />
 </Story>

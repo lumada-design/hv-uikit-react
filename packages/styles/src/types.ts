@@ -117,6 +117,16 @@ export type HvThemeUtils = {
    * theme.spacing("md", "inherit", "42px") // 24px inherit 42px
    */
   spacing: (...args: [SpacingValue[]] | SpacingValue[]) => string;
+  /**
+   * Utility function to apply an alpha channel to a color from the theme.
+   *
+   * @example
+   * theme.alpha("atmo1", 0.5) // rgb( R G B / 0.5)
+   * */
+  alpha: (
+    color: Exclude<keyof HvThemeTokens["colors"], "type" | "shadow">, // "type" and "shadow" are not actual colors
+    alpha: number | string
+  ) => string;
 };
 
 // Theme colors

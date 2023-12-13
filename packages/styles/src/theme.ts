@@ -90,17 +90,27 @@ const typographySpec: DeepString<HvThemeTypography> = {
   },
 };
 
+const colorTokens = {
+  containerBackgroundHover: tokens.colors.light.primary_20,
+  backgroundColor: tokens.colors.light.atmo2,
+  ...tokens.colors.common,
+  ...tokens.colors.light,
+};
+
 const themeVars: HvThemeVars = mapCSSVars({
   ...tokens,
   colors: {
     type: "light",
-    containerBackgroundHover: tokens.colors.light.primary_20,
-    backgroundColor: tokens.colors.light.atmo2,
-    ...tokens.colors.common,
-    ...tokens.colors.light,
+    ...colorTokens,
   }, // Flatten colors and add background color
   ...componentsSpec,
   ...typographySpec,
+});
+
+const rgbVars = mapCSSVars({
+  rgb: {
+    ...colorTokens,
+  },
 });
 
 const spacing: HvThemeUtils["spacing"] = (...args) => {
@@ -124,9 +134,13 @@ const spacing: HvThemeUtils["spacing"] = (...args) => {
   }
 };
 
+const alpha: HvThemeUtils["alpha"] = (color, factor) =>
+  `rgb(${rgbVars.rgb[color]} / ${factor})`;
+
 export const theme: HvTheme = {
   ...themeVars,
   spacing,
+  alpha,
 };
 
 const getColorOrFallback = (color: HvColorAny | undefined) => {
