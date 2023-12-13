@@ -1,12 +1,18 @@
-import { HTMLAttributes } from "react";
+import React, { HTMLAttributes } from "react";
 import { HvColorAny, getColor } from "@hitachivantara/uikit-styles";
 import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
 
-import { CloseXS } from "@hitachivantara/uikit-react-icons";
+import {
+  Checkbox,
+  CheckboxCheck,
+  CloseXS,
+} from "@hitachivantara/uikit-react-icons";
 
 import { useTheme } from "../hooks/useTheme";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
+
+import { useControlled } from "../hooks/useControlled";
 
 import { staticClasses, useClasses } from "./Tag.styles";
 
@@ -14,7 +20,8 @@ export { staticClasses as tagClasses };
 
 export type HvTagClasses = ExtractNames<typeof useClasses>;
 
-export interface HvTagProps extends Omit<MuiChipProps, "color" | "classes"> {
+export interface HvTagProps
+  extends Omit<MuiChipProps, "color" | "classes" | "onSelect"> {
   /** The label of the tag element. */
   label?: React.ReactNode;
   /** Indicates that the form element is disabled. */
@@ -31,7 +38,7 @@ export interface HvTagProps extends Omit<MuiChipProps, "color" | "classes"> {
    * */
   onDelete?: (event: React.MouseEvent<HTMLElement>) => void;
   /** Callback triggered when any item is clicked. */
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>, selected?: boolean) => void;
   /** Aria properties to apply to delete button in tag
    * @deprecated no longer used
    */
@@ -44,6 +51,12 @@ export interface HvTagProps extends Omit<MuiChipProps, "color" | "classes"> {
   ref?: MuiChipProps["ref"];
   /** @ignore */
   component?: MuiChipProps["component"];
+  /** Determines whether or not the tag is selectable. */
+  selectable?: boolean;
+  /** Defines if the tag is selected. When defined the tag state becomes controlled. */
+  selected?: boolean;
+  /** When uncontrolled, defines the initial selected state. */
+  defaultSelected?: boolean;
 }
 
 const getCategoricalColor = (customColor, colors) => {
@@ -66,6 +79,9 @@ export const HvTag = (props: HvTagProps) => {
     label,
     disabled,
     type = "semantic",
+    selectable,
+    selected,
+    defaultSelected = false,
     color,
     deleteIcon,
     onDelete,
@@ -79,12 +95,16 @@ export const HvTag = (props: HvTagProps) => {
   const { colors } = useTheme();
   const { classes, cx, css } = useClasses(classesProp);
 
+  const [isSelected, setIsSelected] = useControlled(
+    selected,
+    Boolean(defaultSelected)
+  );
+
   const defaultDeleteIcon = (
     <CloseXS
       role="none"
       className={cx(classes.button, classes.tagButton)}
       iconSize="XS"
-      color="base_dark"
       {...deleteButtonProps}
     />
   );
@@ -104,6 +124,20 @@ export const HvTag = (props: HvTagProps) => {
       boxShadow: `0 0 0 1pt ${categoricalBackgroundColor}`,
     },
   });
+
+  const onClickHandler = (event) => {
+    if (disabled) return;
+    if (selectable) setIsSelected(!isSelected);
+    onClick?.(event, !isSelected);
+  };
+
+  const colorOverride = (disabled && ["atmo3", "secondary_60"]) || undefined;
+
+  const avatarIcon = isSelected ? (
+    <CheckboxCheck color={colorOverride} iconSize="XS" />
+  ) : (
+    <Checkbox color={colorOverride} iconSize="XS" />
+  );
 
   return (
     <Chip
@@ -129,7 +163,12 @@ export const HvTag = (props: HvTagProps) => {
       }}
       deleteIcon={deleteIcon || defaultDeleteIcon}
       onDelete={disabled ? undefined : onDelete}
-      onClick={disabled ? undefined : onClick}
+      onClick={onClickHandler}
+      aria-pressed={isSelected}
+      {...(selectable &&
+        type === "semantic" && {
+          avatar: avatarIcon,
+        })}
       {...others}
     />
   );

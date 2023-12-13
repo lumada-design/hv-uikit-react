@@ -1,19 +1,31 @@
 import { CSSProperties } from "react";
+
 import { theme } from "@hitachivantara/uikit-styles";
 
+import { chipClasses } from "@mui/material/Chip";
+
 import { outlineStyles } from "../utils/focusUtils";
+
 import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvTag", {
-  root: {},
+  root: {
+    color: theme.colors.base_dark,
+
+    [`& .${chipClasses.avatar}`]: {
+      width: 12,
+      height: 12,
+      marginLeft: 2,
+      marginRight: 0,
+    },
+  },
 
   chipRoot: {
-    "&.MuiChip-root": {
+    [`&.${chipClasses.root}`]: {
       height: 16,
       borderRadius: 0,
       maxWidth: 180,
       fontFamily: theme.fontFamily.body,
-
       "&:focus-visible": {
         backgroundColor: theme.alpha("base_light", 0.3),
       },
@@ -34,23 +46,25 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
       },
     },
 
-    "& .MuiChip-label": {
-      paddingLeft: theme.space.xs,
-      paddingRight: theme.space.xs,
-      ...(theme.typography.caption1 as CSSProperties),
-      color: theme.colors.base_dark,
-      "& p": {
-        color: theme.colors.base_dark,
-      },
+    [`& .${chipClasses.label}`]: {
+      paddingLeft: 4,
+      paddingRight: 4,
+      ...(theme.typography.caption2 as CSSProperties),
+      color: "currentcolor",
     },
 
-    "& .MuiChip-deleteIcon": {
-      marginRight: 0,
+    [`& .${chipClasses.deleteIcon}`]: {
+      margin: 0,
       width: 16,
       height: 16,
       padding: 0,
+      color: "currentColor",
+      "& svg .color0": {
+        fill: "currentcolor",
+      },
       "&:hover": {
         backgroundColor: theme.colors.containerBackgroundHover,
+        color: "unset",
       },
       "&:focus": {
         ...outlineStyles,

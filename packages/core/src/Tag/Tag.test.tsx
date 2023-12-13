@@ -21,6 +21,16 @@ describe("Tag", () => {
     expect(clickMock).toHaveBeenCalledOnce();
   });
 
+  it("triggers onClick when pressing enter or space key", async () => {
+    const clickMock = vi.fn();
+    render(<HvTag label="TAG" onClick={clickMock} selectable />);
+
+    const tag = screen.getByRole("button", { name: "TAG" });
+    await userEvent.type(tag, "{space}");
+    await userEvent.type(tag, "{enter}");
+    expect(clickMock).toHaveBeenCalledTimes(3);
+  });
+
   it("triggers onDelete when pressing delete key", async () => {
     const clickMock = vi.fn();
     const deleteMock = vi.fn();
