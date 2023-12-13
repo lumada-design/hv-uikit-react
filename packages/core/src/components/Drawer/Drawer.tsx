@@ -87,6 +87,7 @@ export const HvDrawer = (props: HvDrawerProps) => {
     anchor = "right",
     buttonTitle = "Close",
     showBackdrop = true,
+    hideBackdrop,
     disableBackdropClick = false,
     ...others
   } = useDefaultProps("HvDrawer", props);
@@ -103,6 +104,8 @@ export const HvDrawer = (props: HvDrawerProps) => {
     onClose?.(event, reason);
   };
 
+  const shouldHideBackdrop = hideBackdrop ?? !showBackdrop;
+
   return (
     <MuiDrawer
       className={cx(classes.root, className)}
@@ -114,23 +117,25 @@ export const HvDrawer = (props: HvDrawerProps) => {
           root: classes.paper,
         },
       }}
-      hideBackdrop={!showBackdrop}
-      slotProps={{
-        backdrop: {
-          classes: {
-            root: cx(
-              css({
-                background: hexToRgbA(colors?.atmo4 || theme.colors.atmo4),
-              }),
-              classes.background
-            ),
-          },
-          onClick: (event) => {
-            if (disableBackdropClick) return;
-            onClose?.(event, "backdropClick");
+      hideBackdrop={shouldHideBackdrop}
+      {...(!shouldHideBackdrop && {
+        slotProps: {
+          backdrop: {
+            classes: {
+              root: cx(
+                css({
+                  background: hexToRgbA(colors?.atmo4 || theme.colors.atmo4),
+                }),
+                classes.background
+              ),
+            },
+            onClick: (event) => {
+              if (disableBackdropClick) return;
+              onClose?.(event, "backdropClick");
+            },
           },
         },
-      }}
+      })}
       onClose={handleOnClose}
       {...others}
     >
