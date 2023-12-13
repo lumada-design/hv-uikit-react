@@ -1,32 +1,18 @@
-import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
+
 import {
-  HvListContainer,
-  HvListItem,
   HvOverflowTooltip,
   HvTag,
   HvTagProps,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
-// #region styled components
+import { Selectable as SelectableStory } from "./Selectable";
 
-const StyledListContainer = styled(HvListContainer)({
-  display: "flex",
-  flexWrap: "wrap",
-  alignContent: "flex-start",
-  maxWidth: 350,
-});
+import SelectableRaw from "./Selectable?raw";
 
-const StyledListItem = styled(HvListItem)({
-  padding: 0,
-  paddingRight: theme.space.xs,
-  paddingBottom: theme.space.xs,
-  height: "auto",
-  lineHeight: "16px",
-});
+import { SelectableControlled as SelectableControlledStory } from "./SelectableControlled";
 
-// #endregion
+import SelectableControlledRaw from "./SelectableControlled?raw";
 
 const meta: Meta<typeof HvTag> = {
   title: "Components/Tag/Tag",
@@ -214,32 +200,32 @@ export const CategoricalTagsDisabled: StoryObj<HvTagProps> = {
   },
 };
 
-export const TagArray: StoryObj<HvTagProps> = {
+export const Selectable: StoryObj<HvTagProps> = {
   parameters: {
+    docs: {
+      description: {
+        story: "To have selectable `tags` set the `selectable` prop to `true`",
+      },
+      source: {
+        code: SelectableRaw,
+      },
+    },
+  },
+  render: () => <SelectableStory />,
+};
+
+export const SelectableControlled: StoryObj<HvTagProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "To use the selectable tags in a controlled way, set the `selected` prop to `true` of `false",
+      },
+      source: {
+        code: SelectableControlledRaw,
+      },
+    },
     eyes: { include: false },
   },
-  render: () => {
-    return (
-      <StyledListContainer condensed role="list">
-        <StyledListItem>
-          <HvTag label="In progress" />
-        </StyledListItem>
-        <StyledListItem>
-          <HvTag label="To Do" />
-        </StyledListItem>
-        <StyledListItem>
-          <HvTag label="New" />
-        </StyledListItem>
-        <StyledListItem>
-          <HvTag label="Success" />
-        </StyledListItem>
-        <StyledListItem>
-          <HvTag label="Fixed" />
-        </StyledListItem>
-        <StyledListItem>
-          <HvTag label="Completed" />
-        </StyledListItem>
-      </StyledListContainer>
-    );
-  },
+  render: () => <SelectableControlledStory />,
 };

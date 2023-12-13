@@ -7,22 +7,20 @@ import { HvTagsInput } from ".";
 describe("TagsInput examples", () => {
   describe("<ControlledTagArray />", () => {
     it("should clear the input whenever a tags gets added", async () => {
-      const { getAllByRole, getByText, getByRole, findAllByRole } = render(
-        <ControlledTagArray />
-      );
+      render(<ControlledTagArray />);
       const uncommittedText = "uncommitted text";
-      let clickableButtons = getAllByRole("button");
+      let clickableButtons = screen.getAllByRole("button");
 
       expect(clickableButtons.length).toBe(5);
-      const addTagButton = getByText("Add tags");
-      const tagsInput = getByRole("textbox");
+      const addTagButton = screen.getByText("Add tags");
+      const tagsInput = screen.getByRole("textbox");
 
       fireEvent.change(tagsInput, { target: { value: uncommittedText } });
       expect(tagsInput).toHaveValue(uncommittedText);
       expect(clickableButtons.length).toBe(5);
 
       fireEvent.click(addTagButton);
-      clickableButtons = await findAllByRole("button");
+      clickableButtons = await screen.findAllByRole("button");
       expect(clickableButtons.length).toBe(6);
       expect(tagsInput).not.toHaveValue(uncommittedText);
     });
@@ -60,14 +58,14 @@ describe("TagsInput Component", () => {
   Element.prototype.scrollTo = () => {};
 
   it("should render the label correctly", () => {
-    const { getByText } = render(
+    render(
       <HvTagsInput id="tags-list" label="Custom label" classes={mockClasses} />
     );
-    expect(getByText("Custom label")).toBeInTheDocument();
+    expect(screen.getByText("Custom label")).toBeInTheDocument();
   });
 
   it("should render the text area with tags when controlled and input value is an array of strings", () => {
-    const { getByText, getAllByRole } = render(
+    render(
       <HvTagsInput
         id="tags-list"
         label="Custom label"
@@ -76,33 +74,28 @@ describe("TagsInput Component", () => {
       />
     );
 
-    expect(getByText("tag1")).toBeInTheDocument();
-    expect(getByText("tag2")).toBeInTheDocument();
+    expect(screen.getByText("tag1")).toBeInTheDocument();
+    expect(screen.getByText("tag2")).toBeInTheDocument();
 
-    const clickableButtons = getAllByRole("button");
+    const clickableButtons = screen.getAllByRole("button");
     expect(clickableButtons.length).toBe(2);
   });
 
   it("should render the text area with tags when controlled and input value is an array of tags", () => {
-    const { getByText, getAllByRole } = render(
+    render(
       <HvTagsInput
         id="tags-list"
         label="Custom label"
         classes={mockClasses}
-        value={[
-          { label: "tag1" },
-          { label: "tag2", type: "categorical", color: "#ff0000" },
-        ]}
+        value={[{ label: "tag1" }, { label: "tag2" }]}
       />
     );
 
-    expect(getByText("tag1")).toBeInTheDocument();
-    expect(getByText("tag2")).toBeInTheDocument();
+    expect(screen.getByText("tag1")).toBeInTheDocument();
+    expect(screen.getByText("tag2")).toBeInTheDocument();
 
-    const clickableButtons = getAllByRole("button");
-    // categorical tags don't have close buttons - not trying to test the Tag's internal behavior here,
-    // just that this component will render the tags correctly.
-    expect(clickableButtons.length).toBe(1);
+    const clickableButtons = screen.getAllByRole("button");
+    expect(clickableButtons.length).toBe(2);
   });
 
   it("should trigger the delete callback on click", async () => {
@@ -145,7 +138,7 @@ describe("TagsInput Component", () => {
   it("should trigger the add callback", async () => {
     const onChangeSpy = vi.fn();
     const onAddSpy = vi.fn();
-    const { getByText, getAllByRole, findAllByRole, getByRole } = render(
+    render(
       <HvTagsInput
         id="tags-list"
         label="Custom label"
@@ -156,16 +149,16 @@ describe("TagsInput Component", () => {
       />
     );
 
-    expect(getByText("tag1")).toBeInTheDocument();
-    expect(getByText("tag2")).toBeInTheDocument();
+    expect(screen.getByText("tag1")).toBeInTheDocument();
+    expect(screen.getByText("tag2")).toBeInTheDocument();
 
-    const clickableButtons = getAllByRole("button");
-    const tagsInput = getByRole("textbox");
+    const clickableButtons = screen.getAllByRole("button");
+    const tagsInput = screen.getByRole("textbox");
     fireEvent.change(tagsInput, { target: { value: "tag3" } });
     expect(tagsInput).toHaveValue("tag3");
     expect(clickableButtons.length).toBe(2);
     fireEvent.keyDown(tagsInput, { code: "Enter", keyCode: 13 });
-    const remainingButton = await findAllByRole("button");
+    const remainingButton = await screen.findAllByRole("button");
     expect(onChangeSpy).toHaveBeenCalledWith(expect.any(Object), [
       { label: "tag1" },
       { label: "tag2" },
@@ -184,7 +177,7 @@ describe("TagsInput Component", () => {
     vi.useFakeTimers();
     const onChangeSpy = vi.fn();
     const onBlurSpy = vi.fn();
-    const { getByText, getAllByRole, getByRole } = render(
+    render(
       <HvTagsInput
         id="tags-list"
         label="Custom label"
@@ -194,14 +187,14 @@ describe("TagsInput Component", () => {
         onBlur={onBlurSpy}
       />
     );
-    const { parentElement } = getByText("Custom label");
+    const { parentElement } = screen.getByText("Custom label");
     // @ts-ignore
     const { parentElement: formContainer } = parentElement;
-    expect(getByText("tag1")).toBeInTheDocument();
-    expect(getByText("tag2")).toBeInTheDocument();
+    expect(screen.getByText("tag1")).toBeInTheDocument();
+    expect(screen.getByText("tag2")).toBeInTheDocument();
 
-    const clickableButtons = getAllByRole("button");
-    const tagsInput = getByRole("textbox");
+    const clickableButtons = screen.getAllByRole("button");
+    const tagsInput = screen.getByRole("textbox");
     fireEvent.change(tagsInput, { target: { value: "tag3" } });
     expect(tagsInput).toHaveValue("tag3");
     expect(clickableButtons.length).toBe(2);
@@ -216,39 +209,49 @@ describe("TagsInput Component", () => {
   });
 
   it("should have a disabled tag if the `disabled` property is set to true", () => {
-    const { queryAllByRole } = render(
+    render(
       <HvTagsInput
         id="tags-list"
         label="Custom label"
         classes={mockClasses}
         disabled
-        value={[{ label: "tag1" }, { label: "tag2", type: "categorical" }]}
+        value={[
+          { label: "tag1", disabled: true },
+          { label: "tag2", type: "categorical", disabled: true },
+        ]}
       />
     );
 
-    const clickableButtons = queryAllByRole("button");
-    expect(clickableButtons.length).toBe(0);
+    const input = screen.queryByRole("textbox");
+    expect(input).toBeNull();
   });
 
   it("should not display close buttons on readOnly tags", () => {
-    const { queryAllByRole } = render(
+    render(
       <HvTagsInput
         id="tags-list"
         label="Custom label"
         classes={mockClasses}
         readOnly
-        value={[{ label: "tag1" }, { label: "tag2", type: "categorical" }]}
+        value={[{ label: "tag1" }]}
       />
     );
 
-    const clickableButtons = queryAllByRole("button");
-    expect(clickableButtons.length).toBe(0);
+    const input = screen.queryByRole("textbox");
+    expect(input).toBeNull();
+
+    const clickableButtons = screen.queryAllByRole("button");
+    expect(clickableButtons.length).toBe(1);
+
+    // in readonly mode the button shouldn't have the close icon
+    const button = clickableButtons[0];
+    expect(button.querySelector("[data-name=CloseXS]")).toBeNull();
   });
 
   it("should call the suggestions callback when the input is changed", () => {
     const suggestionHandler = vi.fn();
 
-    const { getByRole } = render(
+    render(
       <HvTagsInput
         id="tags-list"
         label="Custom label"
@@ -258,7 +261,7 @@ describe("TagsInput Component", () => {
       />
     );
 
-    const tagsInput = getByRole("textbox");
+    const tagsInput = screen.getByRole("textbox");
 
     fireEvent.change(tagsInput, { target: { value: "a" } });
     expect(suggestionHandler).toHaveBeenCalled();
