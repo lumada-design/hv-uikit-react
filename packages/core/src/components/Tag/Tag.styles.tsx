@@ -3,7 +3,6 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "@core/utils/focusUtils";
 import { createClasses } from "@core/utils/classes";
-import { hexToRgbA } from "@core/utils/hexToRgbA";
 
 export const { staticClasses, useClasses } = createClasses("HvTag", {
   root: {},
@@ -16,7 +15,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
       fontFamily: theme.fontFamily.body,
 
       "&:focus-visible": {
-        backgroundColor: hexToRgbA(theme.colors.base_light, 0.3),
+        backgroundColor: theme.alpha("base_light", 0.3),
       },
 
       "&$categorical": {

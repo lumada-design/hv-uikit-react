@@ -1,16 +1,10 @@
 import MuiDrawer, { DrawerProps as MuiDrawerProps } from "@mui/material/Drawer";
-
 import { Close } from "@hitachivantara/uikit-react-icons";
 
-import { theme } from "@hitachivantara/uikit-styles";
-
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { IconButton } from "@core/utils/IconButton";
 import { setId } from "@core/utils/setId";
 import { ExtractNames } from "@core/utils/classes";
-import { useTheme } from "@core/hooks/useTheme";
-import { hexToRgbA } from "@core/utils/hexToRgbA";
 
 import { staticClasses, useClasses } from "./Drawer.styles";
 
@@ -92,8 +86,7 @@ export const HvDrawer = (props: HvDrawerProps) => {
     ...others
   } = useDefaultProps("HvDrawer", props);
 
-  const { classes, cx, css } = useClasses(classesProp);
-  const { colors } = useTheme();
+  const { classes, cx } = useClasses(classesProp);
 
   const handleOnClose: MuiDrawerProps["onClose"] = (
     event: React.SyntheticEvent,
@@ -122,12 +115,7 @@ export const HvDrawer = (props: HvDrawerProps) => {
         slotProps: {
           backdrop: {
             classes: {
-              root: cx(
-                css({
-                  background: hexToRgbA(colors?.atmo4 || theme.colors.atmo4),
-                }),
-                classes.background
-              ),
+              root: classes.background,
             },
             onClick: (event) => {
               if (disableBackdropClick) return;

@@ -1,18 +1,7 @@
-import {
-  CSSProperties,
-  forwardRef,
-  TdHTMLAttributes,
-  useContext,
-  useMemo,
-} from "react";
+import { CSSProperties, forwardRef, TdHTMLAttributes, useContext } from "react";
 import capitalize from "lodash/capitalize";
-import { theme } from "@hitachivantara/uikit-styles";
 
-import { checkValidHexColorValue } from "@core/utils/checkValidHexColorValue";
 import { ExtractNames } from "@core/utils/classes";
-import { getVarValue } from "@core/utils/theme";
-import { hexToRgbA } from "@core/utils/hexToRgbA";
-import { useTheme } from "@core/hooks/useTheme";
 import { useDefaultProps } from "@core/hooks";
 
 import {
@@ -64,12 +53,6 @@ export interface HvTableCellProps
 
 const defaultComponent = "td";
 
-const getSortedColor = (color?: string, alpha?: string) => {
-  return checkValidHexColorValue(color) && alpha
-    ? hexToRgbA(color, parseFloat(alpha))
-    : color;
-};
-
 /**
  * `HvTableCell` acts as a `td` element and inherits styles from its context
  */
@@ -94,8 +77,9 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
       resizing = false,
       ...others
     } = useDefaultProps("HvTableCell", props);
-    const { classes, cx, css } = useClasses(classesProp);
-    const { colors, rootId } = useTheme();
+
+    const { classes, cx } = useClasses(classesProp);
+
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -103,16 +87,6 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
 
     const Component =
       component || tableContext?.components?.Td || defaultComponent;
-
-    const sortedColor = useMemo(() => {
-      // "colors" makes the "sortedColor" change with the color mode and theme
-      const color =
-        getVarValue(theme.table.rowSortedColor, rootId) || colors?.primary_20;
-      const alpha =
-        getVarValue(theme.table.rowSortedColorAlpha, rootId) || "0.1";
-
-      return getSortedColor(color, alpha);
-    }, [colors, rootId]);
 
     return (
       <Component
@@ -122,18 +96,6 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
         className={cx(
           classes.root,
           classes[type],
-          type === "body" &&
-            css({
-              [`&.${staticClasses.sorted}`]: {
-                backgroundColor: sortedColor,
-              },
-            }),
-          stickyColumn &&
-            css({
-              [`&.${staticClasses.sorted}`]: {
-                backgroundImage: `linear-gradient(to right, ${sortedColor}, ${sortedColor})`,
-              },
-            }),
           {
             [classes[`align${capitalize(align)}`]]: align !== "inherit",
             [classes.variantList]: tableContext.variant === "listrow",

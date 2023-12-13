@@ -1,9 +1,7 @@
 import { forwardRef, useContext } from "react";
 
 import { ExtractNames } from "@core/utils/classes";
-import { hexToRgbA } from "@core/utils/hexToRgbA";
 import { HvBaseProps } from "@core/types/generic";
-import { useTheme } from "@core/hooks/useTheme";
 import { useDefaultProps } from "@core/hooks";
 
 import TableContext from "../TableContext";
@@ -49,8 +47,9 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
       striped = false,
       ...others
     } = useDefaultProps("HvTableRow", props);
-    const { classes, cx, css } = useClasses(classesProp);
-    const { colors } = useTheme();
+
+    const { classes, cx } = useClasses(classesProp);
+
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -68,15 +67,6 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
           tableSectionContext.filterClassName,
           classes.root,
           classes[type],
-          striped &&
-            css({
-              "&:nth-of-type(even)": {
-                backgroundColor: hexToRgbA(colors?.atmo1, 0.6),
-              },
-              "&:nth-of-type(odd)": {
-                backgroundColor: "transparent",
-              },
-            }),
           {
             [classes.hover]: hover,
             [classes.selected]: selected,

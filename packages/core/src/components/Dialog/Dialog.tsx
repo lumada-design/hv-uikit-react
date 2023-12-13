@@ -1,19 +1,14 @@
 import { useCallback, useMemo } from "react";
-
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
-
 import { Close } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
-
 import { HvButton } from "@core/components/Button";
 import { HvTooltip } from "@core/components/Tooltip";
 import { getElementById } from "@core/utils/document";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { useTheme } from "@core/hooks/useTheme";
-import { hexToRgbA } from "@core/utils/hexToRgbA";
 
 import { staticClasses, useClasses } from "./Dialog.styles";
 import { DialogContext } from "./context";
@@ -71,7 +66,7 @@ export const HvDialog = (props: HvDialogProps) => {
   } = useDefaultProps("HvDialog", props);
 
   const { classes, css, cx } = useClasses(classesProp);
-  const { rootId, colors } = useTheme();
+  const { rootId } = useTheme();
 
   const measuredRef = useCallback(() => {
     if (!firstFocusable) return;
@@ -101,12 +96,7 @@ export const HvDialog = (props: HvDialogProps) => {
       slotProps={{
         backdrop: {
           classes: {
-            root: cx(
-              css({
-                background: hexToRgbA(colors?.atmo4 || theme.colors.atmo4, 0.8),
-              }),
-              classes.background
-            ),
+            root: classes.background,
           },
         },
       }}

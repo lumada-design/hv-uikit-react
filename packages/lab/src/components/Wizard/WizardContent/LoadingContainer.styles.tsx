@@ -1,10 +1,4 @@
-import {
-  createClasses,
-  hexToRgbA,
-  theme,
-} from "@hitachivantara/uikit-react-core";
-
-import { alpha } from "@mui/material";
+import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses(
   "HvWizard-LoadingContainer",
@@ -19,7 +13,7 @@ export const { staticClasses, useClasses } = createClasses(
       zIndex: -1,
     },
     blur: {
-      backgroundColor: alpha(hexToRgbA(theme.colors.atmo2), 0.8),
+      backgroundColor: theme.alpha("atmo2", 0.8),
       zIndex: theme.zIndices.modal,
     },
   }

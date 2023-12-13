@@ -8,6 +8,9 @@ export const { staticClasses, useClasses } = createClasses("HvActionsGeneric", {
     "&:not(:last-child)": {
       marginRight: theme.space.xs,
     },
+    "&:hover": {
+      backgroundColor: theme.alpha("base_light", 0.3),
+    },
   },
   actionContainer: { display: "flex", alignItems: "center", float: "right" },
   dropDownMenu: {},
