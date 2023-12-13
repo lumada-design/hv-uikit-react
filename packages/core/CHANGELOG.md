@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.39.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.38.4...@hitachivantara/uikit-react-core@5.39.0) (2023-12-13)
+
+### Bug Fixes
+
+- **QueryBuilder:** export missing types ([a1672d2](https://github.com/lumada-design/hv-uikit-react/commit/a1672d29b6cc80ffa7f2f3a79a9046e9985afb90))
+
+### Features
+
+- **TagsInput:** allow entering custom tags when in suggestions mode ([5147161](https://github.com/lumada-design/hv-uikit-react/commit/514716106128502dac9fd9eaa3ec554b36c5c9b2))
+
 ## [5.38.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.38.3...@hitachivantara/uikit-react-core@5.38.4) (2023-12-12)
 
 ### Bug Fixes
