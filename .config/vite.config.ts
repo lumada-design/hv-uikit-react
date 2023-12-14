@@ -19,7 +19,12 @@ export default defineConfig({
       rollupTypes: true,
       tsconfigPath: resolve(__dirname, "../tsconfig.build.json"),
     }),
-    react(),
+    react({
+      jsxImportSource: "@emotion/react",
+      babel: {
+        plugins: ["@emotion/babel-plugin"],
+      },
+    }),
     tsconfigPaths(),
   ],
   build: {
