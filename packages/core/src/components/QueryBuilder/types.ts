@@ -54,7 +54,7 @@ export type HvQueryBuilderQuery = HvQueryBuilderQueryGroup;
 export interface HvQueryBuilderChangedQuery
   extends Omit<HvQueryBuilderQuery, "id" | "rules"> {
   rules: Array<
-    Omit<HvQueryBuilderQueryRule, "id"> | Omit<HvQueryBuilderQueryGroup, "id">
+    Omit<HvQueryBuilderQueryRule, "id"> | HvQueryBuilderChangedQuery
   >;
 }
 
