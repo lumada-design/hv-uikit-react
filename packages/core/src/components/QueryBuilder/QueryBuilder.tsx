@@ -64,6 +64,23 @@ export interface HvQueryBuilderProps {
 /**
  * This component allows you to create conditions and group them using logical operators.
  * It outputs a structured set of rules which can be easily parsed to create SQL/NoSQL/whatever queries.
+ *
+ * To use this component, you'll need to define your `attributes`. The query builder already has 5 built-in
+ * attribute types, `boolean`, `numeric`, `text`, `textarea`, and `dateandtime`, but custom ones can be created.
+ *
+ * Then, you'll need to define the `operators` for each attribute. This component already has some built-in operators
+ * with specific behaviors you should be aware of.
+ * For instance, when the `Empty` or `IsNotEmpty` operators are selected, the value renderer is not shown in the
+ * query builder.
+ * Furthermore, when the `range` operator is selected for the `numeric` or `dateandtime` attributes, the value
+ * renderer automatically updates to range inputs.
+ *
+ * As mentioned, custom attributes can be created if the built-in ones are not enough to cover your use case.
+ * In this case, the `renderers` property can be used to define how the values should be rendered.
+ * If not defined, a generic text input will be rendered as default for the custom attributes.
+ * The `renderers` property can also be used to customize the value renderers for specific operators of an attribute.
+ *
+ * Please, report to the API table and code samples for more details on how to implement this component.
  */
 export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   const {

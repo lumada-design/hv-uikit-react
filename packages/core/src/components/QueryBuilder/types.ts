@@ -1,9 +1,16 @@
-import { FC } from "react";
+const defaultAttributes = [
+  "boolean",
+  "numeric",
+  "dateandtime",
+  "text",
+  "textarea",
+] as const;
+type DefaultAttributes = (typeof defaultAttributes)[number];
 
 export interface HvQueryBuilderAttribute extends Record<string, unknown> {
   id?: string;
   label: string;
-  type: string;
+  type: DefaultAttributes | (string & {});
 }
 
 export interface HvQueryBuilderNumericRange {
@@ -223,6 +230,9 @@ export interface HvQueryBuilderRendererProps<V = any> {
 }
 
 export type HvQueryBuilderRenderers = Record<
+  // attribute id
   string,
-  FC<HvQueryBuilderRendererProps>
+  | React.FC<HvQueryBuilderRendererProps>
+  // operator id
+  | Record<string, React.FC<HvQueryBuilderRendererProps>>
 >;

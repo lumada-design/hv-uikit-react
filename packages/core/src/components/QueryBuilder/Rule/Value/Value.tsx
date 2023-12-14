@@ -1,6 +1,7 @@
 import { memo } from "react";
 
 import { useQueryBuilderContext } from "../../Context";
+import { HvQueryBuilderRendererProps } from "../../types";
 import { BooleanValue } from "./BooleanValue";
 import { NumericValue } from "./NumericValue";
 import { TextValue } from "./TextValue";
@@ -21,9 +22,28 @@ export const Value = ({
 }: ValueProps) => {
   const { attributes, initialTouched, renderers } = useQueryBuilderContext();
 
-  const value =
-    attribute && attributes ? { ...attributes[attribute] } : { type: null };
-  const { type } = value;
+  const type = attribute && attributes ? attributes[attribute].type : undefined;
+
+  // Custom renderer
+  if (type && renderers?.[type]) {
+    const Renderer: React.FC<HvQueryBuilderRendererProps> | undefined =
+      (typeof renderers[type] === "object" &&
+        operator &&
+        renderers[type][operator]) ||
+      (typeof renderers[type] === "function" && renderers[type]) ||
+      undefined;
+
+    if (Renderer) {
+      return (
+        <Renderer
+          id={id}
+          attribute={attribute}
+          operator={operator}
+          value={valueProp}
+        />
+      );
+    }
+  }
 
   switch (type) {
     case "boolean": {
@@ -51,27 +71,10 @@ export const Value = ({
     }
     case "text":
     case "textarea":
+    default:
       return (
         <TextValue id={id} value={valueProp} initialTouched={initialTouched} />
       );
-    default: {
-      if (type && renderers?.[type]) {
-        const Renderer = renderers[type];
-
-        return (
-          <Renderer
-            id={id}
-            attribute={attribute}
-            operator={operator}
-            value={valueProp}
-          />
-        );
-      }
-
-      return (
-        <TextValue id={id} value={valueProp} initialTouched={initialTouched} />
-      );
-    }
   }
 };
 

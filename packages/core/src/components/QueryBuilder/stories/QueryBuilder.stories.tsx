@@ -48,7 +48,7 @@ export const InitialQuery: StoryObj<HvQueryBuilderProps> = {
     docs: {
       description: {
         story:
-          "Query Builder that parses the query to Mongo. You can also control whether you want the confirmation dialogs, which are shown before removing rules and rule groups, to appear or not by clicking on the button. This button controls the `disableConfirmation` property of the query builder.",
+          "Query builder that parses the query to Mongo. You can also control whether you want the confirmation dialogs, which are shown before removing rules and rule groups, to appear or not by clicking on the button at the top of the sample. This button controls the query builder's `disableConfirmation` property.",
       },
       source: {
         code: InitialQueryRaw,
@@ -62,7 +62,7 @@ export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Query Builder in read only mode.",
+        story: "Query builder in read only mode.",
       },
       source: {
         code: ReadOnlyRaw,
@@ -77,7 +77,7 @@ export const CustomRenderers: StoryObj<HvQueryBuilderProps> = {
     docs: {
       description: {
         story:
-          "If the default attributes types (`boolean`, `numeric`, `text`, `textarea`, and `dateandtime`) are not enough to cover your use case, custom ones can be used. For these custom types, if no corresponding renderer is provided through the `renderers` property, a text input will be rendered.",
+          "If the default attributes types (`boolean`, `numeric`, `text`, `textarea`, and `dateandtime`) are not enough to cover your use case, custom ones can be used. For these custom types, if no corresponding renderer is provided through the `renderers` property, a text input will be rendered. The `renderers` property can also be used to customize the value renderers for specific operators of an attribute.",
       },
       source: {
         code: CustomRenderersRaw,
