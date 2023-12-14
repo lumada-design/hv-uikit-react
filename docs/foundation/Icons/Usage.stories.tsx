@@ -5,7 +5,6 @@ import {
   Machine,
   IconBase,
   IconBaseProps,
-  icons,
 } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 
@@ -86,21 +85,4 @@ CustomSize.parameters = {
   docs: {
     description: { story: "Overrides Icon size using non standard sizes" },
   },
-};
-
-export const IconLibraryTest = () => {
-  const colors = ["secondary", "negative", "positive"];
-
-  return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {Object.entries(icons).map(([name, Icon]) => (
-        <Icon key={name} iconSize="M" color={colors} />
-      ))}
-    </div>
-  );
-};
-
-IconLibraryTest.parameters = {
-  eyes: { include: true },
-  docs: { disable: true },
 };

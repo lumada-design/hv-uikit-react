@@ -1,7 +1,6 @@
 import {
   HvIconSprite,
   HvIconSpriteProps,
-  icons,
 } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 
@@ -90,27 +89,4 @@ CustomSize.parameters = {
   docs: {
     description: { story: "Overrides Icon size using non standard sizes" },
   },
-};
-
-export const IconLibraryTest = () => {
-  const colors = ["secondary", "negative", "positive"];
-
-  return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {Object.entries(icons).map(([name]) => (
-        <HvIconSprite
-          key={name}
-          spriteUrl="./assets/icons.svg"
-          iconName={name}
-          iconSize="M"
-          color={colors}
-        />
-      ))}
-    </div>
-  );
-};
-
-IconLibraryTest.parameters = {
-  eyes: { include: false },
-  docs: { disable: true },
 };
