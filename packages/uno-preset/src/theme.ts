@@ -22,7 +22,7 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
   ...baseTheme,
 
   borderRadius: {
-    DEFAULT: hvTheme.radii.round,
+    DEFAULT: hvTheme.radii.base,
     ...hvTheme.radii,
   },
   breakpoints: Object.fromEntries(hvBreakpoints),
@@ -30,7 +30,7 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
     hvBreakpoints.map(([k, v]) => [k, `(min-width: ${v})`])
   ),
   spacing: {
-    DEFAULT: hvSpacing.sm,
+    DEFAULT: hvSpacing.xs,
     ...hvSpacing,
   },
   zIndex: Object.fromEntries(hvZIndex),
