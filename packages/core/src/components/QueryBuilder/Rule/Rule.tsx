@@ -73,9 +73,6 @@ export const Rule = (props: RuleProps) => {
     return -1;
   }, [attribute, attributes, combinator, operators]);
 
-  const shouldShowValueInput =
-    operator !== "Empty" && operator !== "IsNotEmpty";
-
   return (
     <HvGrid
       container
@@ -102,14 +99,12 @@ export const Rule = (props: RuleProps) => {
       )}
       {attribute != null && (operator != null || availableOperators === 0) && (
         <HvGrid item xs={12} md>
-          {shouldShowValueInput && (
-            <Value
-              attribute={attribute}
-              id={id}
-              operator={operator}
-              value={value}
-            />
-          )}
+          <Value
+            attribute={attribute}
+            id={id}
+            operator={operator}
+            value={value}
+          />
         </HvGrid>
       )}
       <HvGrid item className={classes.actionsContainer}>

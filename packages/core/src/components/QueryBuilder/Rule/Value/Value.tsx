@@ -6,6 +6,7 @@ import { BooleanValue } from "./BooleanValue";
 import { NumericValue } from "./NumericValue";
 import { TextValue } from "./TextValue";
 import { DateTimeValue } from "./DateTimeValue";
+import { NoValue } from "./NoValue";
 
 export interface ValueProps {
   id: React.Key;
@@ -22,15 +23,16 @@ export const Value = ({
 }: ValueProps) => {
   const { attributes, initialTouched, renderers } = useQueryBuilderContext();
 
-  const type = attribute && attributes ? attributes[attribute].type : undefined;
+  const attrType =
+    attribute && attributes ? attributes[attribute].type : undefined;
 
   // Custom renderer
-  if (type && renderers?.[type]) {
+  if (attrType && renderers?.[attrType]) {
     const Renderer: React.FC<HvQueryBuilderRendererProps> | undefined =
-      (typeof renderers[type] === "object" &&
+      (typeof renderers[attrType] === "object" &&
         operator &&
-        renderers[type][operator]) ||
-      (typeof renderers[type] === "function" && renderers[type]) ||
+        renderers[attrType][operator]) ||
+      (typeof renderers[attrType] === "function" && renderers[attrType]) ||
       undefined;
 
     if (Renderer) {
@@ -45,7 +47,13 @@ export const Value = ({
     }
   }
 
-  switch (type) {
+  // Built-in behavior for "Empty" and "IsNotEmpty" operators
+  if (operator === "Empty" || operator === "IsNotEmpty") {
+    return <NoValue id={id} />;
+  }
+
+  // Built-in attributes
+  switch (attrType) {
     case "boolean": {
       return <BooleanValue id={id} value={!!valueProp} />;
     }
