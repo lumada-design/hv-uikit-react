@@ -60,6 +60,7 @@ export interface HvQueryBuilderProps {
 // - uncontrolled vs controlled: users should be able to control the state
 // - "query" renamed to "initialQuery" and "query" used to control the state
 // - "query" provided with ids by the user but removed through "onChange"
+// - "range", "Empty", and "IsNotEmpty" operators with internal/built-in logic
 
 /**
  * This component allows you to create conditions and group them using logical operators.
@@ -69,16 +70,20 @@ export interface HvQueryBuilderProps {
  * attribute types, `boolean`, `numeric`, `text`, `textarea`, and `dateandtime`, but custom ones can be created.
  *
  * Then, you'll need to define the `operators` for each attribute. This component already has some built-in operators
- * with specific behaviors you should be aware of.
- * For instance, when the `Empty` or `IsNotEmpty` operators are selected, the value renderer is not shown in the
- * query builder.
- * Furthermore, when the `range` operator is selected for the `numeric` or `dateandtime` attributes, the value
- * renderer automatically updates to range inputs.
+ * with specific behaviors you should be aware of when using them.
  *
- * As mentioned, custom attributes can be created if the built-in ones are not enough to cover your use case.
- * In this case, the `renderers` property can be used to define how the values should be rendered.
- * If not defined, a generic text input will be rendered as default for the custom attributes.
- * The `renderers` property can also be used to customize the value renderers for specific operators of an attribute.
+ * For instance, when the `Empty` or `IsNotEmpty` operators are selected, the value of the rule is reset.
+ * The value renderer is also not shown in the query builder unless a custom renderer is provided to override this behavior.
+ *
+ * Furthermore, when the `range` operator is selected, the rule's value is also reset.
+ * Moreover, for the `numeric` or `dateandtime` attribute types, the value renderer automatically updates to range inputs
+ * unless a custom renderer is defined.
+ *
+ * As mentioned, custom attribute types can be created if the built-in ones are not enough to cover your use case.
+ * In this case, the `renderers` property can be used to define how the values should be rendered if you don't want
+ * to rely on the default behavior provided by the query builder.
+ * The `renderers` property can be used to customize the value renderers for specific operators of an attribute type or
+ * for all operators.
  *
  * Please, report to the API table and code samples for more details on how to implement this component.
  */

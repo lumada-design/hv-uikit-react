@@ -139,6 +139,8 @@ const SelectRenderer = ({
     }
   };
 
+  if (operator === "Empty") return null;
+
   if (operator === "range") {
     return (
       <div
@@ -210,8 +212,11 @@ const sliderRenderers = {
 const SliderRenderer = ({
   id,
   attribute,
+  operator,
 }: HvQueryBuilderRendererProps<SelectValue>) => {
   const { dispatchAction } = useQueryBuilderContext();
+
+  if (operator === "Empty") return null;
 
   return (
     <HvSlider

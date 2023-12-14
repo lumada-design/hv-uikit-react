@@ -77,7 +77,7 @@ export const CustomRenderers: StoryObj<HvQueryBuilderProps> = {
     docs: {
       description: {
         story:
-          "If the default attributes types (`boolean`, `numeric`, `text`, `textarea`, and `dateandtime`) are not enough to cover your use case, custom ones can be used. For these custom types, if no corresponding renderer is provided through the `renderers` property, a text input will be rendered. The `renderers` property can also be used to customize the value renderers for specific operators of an attribute.",
+          "If the default attribute types (`boolean`, `numeric`, `text`, `textarea`, and `dateandtime`) are not enough to cover your use case, custom ones can be used. For these custom types, if no corresponding renderer is provided through the `renderers` property, a text input will be rendered. The `renderers` property can also be used to customize the value renderers for specific operators of an attribute type.",
       },
       source: {
         code: CustomRenderersRaw,

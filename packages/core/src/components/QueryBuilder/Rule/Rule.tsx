@@ -50,6 +50,7 @@ export const Rule = (props: RuleProps) => {
     labels,
     readOnly,
     disableConfirmation,
+    renderers,
   } = useQueryBuilderContext();
 
   const theme = useTheme();
@@ -73,8 +74,14 @@ export const Rule = (props: RuleProps) => {
     return -1;
   }, [attribute, attributes, combinator, operators]);
 
+  const type = attribute && attributes ? attributes[attribute].type : undefined;
+
   const shouldShowValueInput =
-    operator !== "Empty" && operator !== "IsNotEmpty";
+    operator === "Empty" || operator === "IsNotEmpty"
+      ? type &&
+        renderers?.[type] &&
+        (typeof renderers[type] === "function" || renderers[type][operator])
+      : true;
 
   return (
     <HvGrid
