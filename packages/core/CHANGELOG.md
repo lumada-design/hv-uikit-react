@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.39.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.39.0...@hitachivantara/uikit-react-core@5.39.1) (2023-12-14)
+
+### Bug Fixes
+
+- **Drawer:** use `hideBackdrop` prop and prevent backdrop slotProps when hidden ([#3893](https://github.com/lumada-design/hv-uikit-react/issues/3893)) ([62c629a](https://github.com/lumada-design/hv-uikit-react/commit/62c629a29e24c0abc748b5c2fc05e8ebba8b175f))
+
 # [5.39.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.38.4...@hitachivantara/uikit-react-core@5.39.0) (2023-12-13)
 
 ### Bug Fixes

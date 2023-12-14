@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.19.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.18.10...@hitachivantara/uikit-react-lab@5.19.0) (2023-12-14)
+
+### Bug Fixes
+
+- **Flow:** drag overlay inside sidebar drawer ([8fa2a9c](https://github.com/lumada-design/hv-uikit-react/commit/8fa2a9c7030e60ea9ffd70842bba3e0dd8909635))
+
+### Features
+
+- **Flow:** update default node styles ([ee37df4](https://github.com/lumada-design/hv-uikit-react/commit/ee37df49517df70d869d834802bd5ba1e795ec3d))
+
 ## [5.18.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.18.9...@hitachivantara/uikit-react-lab@5.18.10) (2023-12-13)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
