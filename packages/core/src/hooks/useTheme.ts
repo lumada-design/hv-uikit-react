@@ -1,5 +1,5 @@
 import { useContext, useMemo } from "react";
-import { HvThemeColorModeStructure } from "@hitachivantara/uikit-styles";
+import { HvTheme } from "@hitachivantara/uikit-react-shared";
 
 import {
   HvThemeContext,
@@ -8,7 +8,7 @@ import {
 
 export const useTheme = (): HvThemeContextValue & {
   /** Colors of the currently active theme and mode */
-  colors?: HvThemeColorModeStructure;
+  colors?: HvTheme["colors"]["modes"]["mode"];
 } => {
   const context = useContext(HvThemeContext);
 

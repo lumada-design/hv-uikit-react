@@ -25,7 +25,7 @@ const Content = () => {
   const { colors } = useTheme();
 
   return (
-    <HvTypography style={{ color: colors?.positive }}>
+    <HvTypography style={{ color: colors?.green }}>
       Hello from the UI Kit team!
     </HvTypography>
   );
