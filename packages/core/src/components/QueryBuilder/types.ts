@@ -232,6 +232,7 @@ export interface HvQueryBuilderRendererProps<V = any> {
 }
 
 export type HvQueryBuilderRenderers = Record<
+  // attribute id
   string,
   | React.FC<HvQueryBuilderRendererProps>
   | Record<string, React.FC<HvQueryBuilderRendererProps>>
