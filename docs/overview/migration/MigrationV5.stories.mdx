@@ -51,8 +51,11 @@ Here's what there is to know about this migration:
 
 ## React packages <a id="react-packages" />
 
-UI Kit v5.x supports versions 17.x and 18.x of `react` and `react-dom`. Thus, if you are using older versions, you should upgrade
-them to avoid errors while using this new UI Kit version.
+UI Kit v5.x supports React `17.x` and `18.x`. If you are using an older version, you'll need to upgrade the `react` and `react-dom` packages.
+
+```sh
+npm i react@18 react-dom@18
+```
 
 ## UI Kit packages <a id="ui-kit-packages" />
 
@@ -75,14 +78,18 @@ The following packages were **deprecated** in v5.x and are no longer needed:
 - `@hitachivantara/uikit-react-compat`
 - `@hitachivantara/uikit-common-themes`
 
-For more information about the project status access this [page](./?path=/docs/overview-project-status--docs).
+```sh
+npm un @hitachivantara/uikit-react-compat @hitachivantara/uikit-common-themes
+```
 
 If you are able to upgrade your application despite the limitations discussed above, upgrade the UI Kit packages to the latest v5.x versions
 using the command below.
 
+```sh
+npm i @hitachivantara/uikit-react-core@5.x @hitachivantara/uikit-react-icons@5.x
 ```
-npm install @hitachivantara/uikit-react-core@latest
-```
+
+For more information about the project status access this [page](./?path=/docs/overview-project-status--docs).
 
 ## Emotion packages <a id="emotion-packages" />
 
@@ -461,44 +468,45 @@ In order to use them, you'll need to update the necessary imports. Please find a
 
 In v5.x some components and types were renamed as detailed in the table below.
 
-| Type or component | v4.x                   | v5.x                             |
-| ----------------- | ---------------------- | -------------------------------- |
-| Component         | HvBreadcrumb           | HvBreadCrumb                     |
-| Component         | HvImageCarousel        | HvCarousel                       |
-| Type              | NavigationItemProp     | HvHeaderNavigationItemProp       |
-| Type              | ListValueProp          | HvListValue                      |
-| Type              | ListLabelsProp         | HvListLabels                     |
-| Type              | BreadCrumbPathElement  | HvBreadCrumbPathElement          |
-| Type              | HvActionContainerProps | HvActionBarProps                 |
-| Type              | ActionGeneric          | HvActionGeneric                  |
-| Type              | FileUploaderProps      | HvFileUploaderProps              |
-| Type              | FileUploaderLabelsProp | HvFileUploaderLabels             |
-| Type              | FilesAddedEvent        | HvFilesAddedEvent                |
-| Type              | File                   | HvFileData                       |
-| Type              | FilesRemovedEvent      | HvFilesRemovedEvent              |
-| Type              | FileProps              | HvFileProps                      |
-| Type              | PaginationLabelsProp   | HvPaginationLabels               |
-| Type              | SimpleGridProps        | HvSimpleGridProps                |
-| Type              | StackDirection         | HvStackDirection                 |
-| Type              | InputSuggestion        | HvInputSuggestion                |
-| Type              | TagSuggestion          | HvTagSuggestion                  |
-| Type              | HvUiKitThemeNames      | HvThemeColorMode                 |
-| Type              | KnobProperty           | HvKnobProperty                   |
-| Type              | MarkProperty           | HvMarkProperty                   |
-| Type              | FilterValue            | HvFilterGroupValue               |
-| Default values    | defaultCombinators     | hvQueryBuilderDefaultCombinators |
-| Default values    | defaultLabels          | hvQueryBuilderDefaultLabels      |
-| Default values    | defaultOperators       | hvQueryBuilderDefaultOperators   |
-| Type              | BuilderAttribute       | HvQueryBuilderAttribute          |
-| Type              | NumericRange           | HvQueryBuilderNumericRange       |
-| Type              | DateTimeStrings        | HvQueryBuilderDateTimeStrings    |
-| Type              | DateTimeRange          | HvQueryBuilderDateTimeRange      |
-| Type              | QueryRuleValue         | HvQueryBuilderQueryRuleValue     |
-| Type              | Query                  | HvQueryBuilderQuery              |
-| Type              | QueryRule              | HvQueryBuilderQueryRule          |
-| Type              | QueryCombinator        | HvQueryBuilderQueryCombinator    |
-| Type              | QueryOperator          | HvQueryBuilderQueryOperator      |
-| Type              | Labels                 | HvQueryBuilderLabels             |
+| Type or component | v4.x                   | v5.x                                  |
+| ----------------- | ---------------------- | ------------------------------------- |
+| Component         | HvBreadcrumb           | HvBreadCrumb                          |
+| Component         | HvImageCarousel        | HvCarousel                            |
+| Values            | defaultCombinators     | hvQueryBuilderDefaultCombinators      |
+| Values            | defaultLabels          | hvQueryBuilderDefaultLabels           |
+| Values            | defaultOperators       | hvQueryBuilderDefaultOperators        |
+| Type              | ActionGeneric          | HvActionGeneric                       |
+| Type              | BreadCrumbPathElement  | HvBreadCrumbPathElement               |
+| Type              | BuilderAttribute       | HvQueryBuilderAttribute               |
+| Type              | DateTimeRange          | HvQueryBuilderDateTimeRange           |
+| Type              | DateTimeStrings        | HvQueryBuilderDateTimeStrings         |
+| Type              | File                   | HvFileData                            |
+| Type              | FileProps              | HvFileProps                           |
+| Type              | FilesAddedEvent        | HvFilesAddedEvent                     |
+| Type              | FilesRemovedEvent      | HvFilesRemovedEvent                   |
+| Type              | FileUploaderLabelsProp | HvFileUploaderLabels                  |
+| Type              | FileUploaderProps      | HvFileUploaderProps                   |
+| Type              | FilterValue            | HvFilterGroupValue                    |
+| Type              | HvActionContainerProps | HvActionBarProps                      |
+| Type              | HvUiKitThemeNames      | HvThemeColorMode                      |
+| Type              | InputSuggestion        | HvInputSuggestion                     |
+| Type              | KnobProperty           | HvKnobProperty                        |
+| Type              | Labels                 | HvQueryBuilderLabels                  |
+| Type              | ListLabelsProp         | HvListLabels                          |
+| Type              | ListValueProp          | HvListValue                           |
+| Type              | MarkProperty           | HvMarkProperty                        |
+| Type              | NavigationItemProp     | HvHeaderNavigationItemProp            |
+| Type              | NumericRange           | HvQueryBuilderNumericRange            |
+| Type              | PaginationLabelsProp   | HvPaginationLabels                    |
+| Type              | Query                  | HvQueryBuilderQuery                   |
+| Type              | QueryCombinator        | HvQueryBuilderQueryCombinator         |
+| Type              | QueryOperator          | HvQueryBuilderQueryOperator           |
+| Type              | QueryRule              | HvQueryBuilderQueryRule               |
+| Type              | QueryRuleValue         | HvQueryBuilderQueryRuleValue          |
+| Type              | SemanticVariantTypes   | HvBannerVariant<br/>HvSnackbarVariant |
+| Type              | SimpleGridProps        | HvSimpleGridProps                     |
+| Type              | StackDirection         | HvStackDirection                      |
+| Type              | TagSuggestion          | HvTagSuggestion                       |
 
 ## Colors <a id="colors" />
 
