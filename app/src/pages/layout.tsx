@@ -5,7 +5,7 @@ import { Header } from "~/components/common/Header";
 import { Container } from "~/components/common/Container";
 import { Tutorial } from "~/components/common/Tutorial";
 import { useGeneratorContext } from "~/generator/GeneratorContext";
-import { NavigationProvider } from "~/lib/context/NavigationContext";
+import { NavigationProvider } from "~/lib/context/navigation";
 import navigation from "~/lib/navigation";
 
 const Content = () => {

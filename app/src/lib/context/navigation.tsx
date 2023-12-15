@@ -1,6 +1,6 @@
-import { useMemo, createContext } from "react";
+import { useMemo, createContext, useContext } from "react";
 
-import useNavigation from "~/lib/hooks/useNavigation";
+import { useNavigation } from "~/lib/hooks/useNavigation";
 
 interface NavigationProviderProps {
   children: React.ReactNode;
@@ -32,3 +32,13 @@ export const NavigationProvider = ({
     </NavigationContext.Provider>
   );
 };
+
+export function useNavigationContext() {
+  const context = useContext(NavigationContext);
+  if (!context) {
+    throw new Error(
+      "useNavigationContext must be used within a NavigationProvider"
+    );
+  }
+  return context;
+}

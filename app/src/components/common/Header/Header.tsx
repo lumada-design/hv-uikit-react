@@ -1,4 +1,3 @@
-import { useContext, MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { Menu } from "@hitachivantara/uikit-react-icons";
@@ -13,19 +12,19 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import logo from "~/assets/logo.png";
-import { NavigationContext } from "~/lib/context/NavigationContext";
+import { useNavigationContext } from "~/lib/context/navigation";
 import navigation from "~/lib/navigation";
 import { useGeneratorContext } from "~/generator/GeneratorContext";
 
 export const Header = () => {
   const navigate = useNavigate();
   const theme = useTheme();
-  const { activePath } = useContext(NavigationContext);
+  const { activePath } = useNavigationContext();
   const { setOpen, open, setTutorialOpen } = useGeneratorContext();
 
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
 
-  const handleChange = (event: MouseEvent, selection: any): void => {
+  const handleChange = (event: React.MouseEvent, selection: any): void => {
     if (selection.path) navigate(selection.path);
   };
 
