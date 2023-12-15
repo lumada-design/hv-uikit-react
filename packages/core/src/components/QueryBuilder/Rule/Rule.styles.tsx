@@ -62,7 +62,7 @@ export const { useClasses, staticClasses } = createClasses(
       "&>div:not(:last-child)": {
         paddingRight: 0,
       },
-      "&>div:not(:first-child)": {
+      "&>div:not(:first-of-type)": {
         marginTop: theme.space.xs,
       },
     },
