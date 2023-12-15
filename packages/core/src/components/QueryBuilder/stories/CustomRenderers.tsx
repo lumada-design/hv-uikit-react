@@ -140,19 +140,6 @@ const SelectRenderer = ({
     }
   };
 
-  // Clear value when the "Empty" operator is selected
-  useEffect(() => {
-    if (operator === "Empty") {
-      dispatchAction({
-        type: "set-value",
-        id,
-        value: null, // Clear
-      });
-    }
-  }, [dispatchAction, id, operator]);
-
-  if (operator === "Empty") return null;
-
   if (operator === "range") {
     return (
       <div
@@ -224,22 +211,8 @@ const sliderRenderers = {
 const SliderRenderer = ({
   id,
   attribute,
-  operator,
 }: HvQueryBuilderRendererProps<SelectValue>) => {
   const { dispatchAction } = useQueryBuilderContext();
-
-  // Clear value when the "Empty" operator is selected
-  useEffect(() => {
-    if (operator === "Empty") {
-      dispatchAction({
-        type: "set-value",
-        id,
-        value: null, // Clear
-      });
-    }
-  }, [dispatchAction, id, operator]);
-
-  if (operator === "Empty") return null;
 
   return (
     <HvSlider

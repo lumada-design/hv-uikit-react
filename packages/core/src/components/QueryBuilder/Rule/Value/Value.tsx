@@ -6,7 +6,7 @@ import { BooleanValue } from "./BooleanValue";
 import { NumericValue } from "./NumericValue";
 import { TextValue } from "./TextValue";
 import { DateTimeValue } from "./DateTimeValue";
-import { NoValue } from "./NoValue";
+import { ClearValue } from "./ClearValue";
 
 export interface ValueProps {
   id: React.Key;
@@ -21,10 +21,16 @@ export const Value = ({
   operator,
   value: valueProp,
 }: ValueProps) => {
-  const { attributes, initialTouched, renderers } = useQueryBuilderContext();
+  const { attributes, initialTouched, renderers, clearRenderer } =
+    useQueryBuilderContext();
 
   const attrType =
     attribute && attributes ? attributes[attribute].type : undefined;
+
+  // Clear value renderer
+  if (clearRenderer?.find((op) => op === operator)) {
+    return <ClearValue id={id} />;
+  }
 
   // Custom renderer
   if (attrType && renderers?.[attrType]) {
@@ -61,11 +67,6 @@ export const Value = ({
         />
       );
     }
-  }
-
-  // Built-in behavior for "Empty" and "IsNotEmpty" operators
-  if (operator === "Empty" || operator === "IsNotEmpty") {
-    return <NoValue id={id} />;
   }
 
   // Built-in attributes
