@@ -86,7 +86,6 @@ export const HvButton: <C extends React.ElementType = "button">(
     ref: PolymorphicRef<C>
   ) => {
     const {
-      id,
       classes: classesProp,
       children,
       variant: variantProp,
