@@ -1,3 +1,5 @@
+export const defaultRendererKey = "DEFAULT";
+
 const defaultAttributes = [
   "boolean",
   "numeric",
@@ -230,9 +232,7 @@ export interface HvQueryBuilderRendererProps<V = any> {
 }
 
 export type HvQueryBuilderRenderers = Record<
-  // attribute id
   string,
   | React.FC<HvQueryBuilderRendererProps>
-  // operator id
   | Record<string, React.FC<HvQueryBuilderRendererProps>>
 >;

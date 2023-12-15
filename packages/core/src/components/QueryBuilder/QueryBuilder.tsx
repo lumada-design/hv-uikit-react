@@ -22,6 +22,7 @@ import {
   HvQueryBuilderQueryOperator,
   HvQueryBuilderChangedQuery,
   HvQueryBuilderRenderers,
+  defaultRendererKey,
 } from "./types";
 import { clearNodeIds, emptyGroup } from "./utils";
 import reducer from "./utils/reducer";
@@ -97,6 +98,23 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     readOnly = false,
     classes: classesProp,
   } = useDefaultProps("HvQueryBuilder", props);
+
+  if (
+    import.meta.env.DEV &&
+    [
+      Object.values(attributes || {}).map(({ type }) => type),
+      Object.values(operators || {})
+        .map((ops) => ops.map(({ operator }) => operator))
+        .flat(),
+    ]
+      .flat()
+      ?.find((key) => key === defaultRendererKey)
+  ) {
+    // eslint-disable-next-line no-console
+    console.error(
+      `${defaultRendererKey} is a restricted key and shouldn't be used as an attribute or operator type. Update the key to avoid unexpected behaviors.`
+    );
+  }
 
   const { classes } = useClasses(classesProp);
 

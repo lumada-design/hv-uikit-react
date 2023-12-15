@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 import { useQueryBuilderContext } from "../../Context";
-import { HvQueryBuilderRendererProps } from "../../types";
+import { HvQueryBuilderRendererProps, defaultRendererKey } from "../../types";
 import { BooleanValue } from "./BooleanValue";
 import { NumericValue } from "./NumericValue";
 import { TextValue } from "./TextValue";
@@ -28,11 +28,27 @@ export const Value = ({
 
   // Custom renderer
   if (attrType && renderers?.[attrType]) {
+    // Renderer to be used by order:
+    // 1. Custom attribute renderer
+    // 2. Custom attribute-operator renderer
+    // 3. Custom attribute-DEFAULT renderer
+    // 4. Custom master DEFAULT renderer
+    // 5. Custom master DEFAULT-operator renderer
+    // 6. Custom master DEFAULT-DEFAULT renderer
     const Renderer: React.FC<HvQueryBuilderRendererProps> | undefined =
+      (typeof renderers[attrType] === "function" && renderers[attrType]) ||
       (typeof renderers[attrType] === "object" &&
         operator &&
         renderers[attrType][operator]) ||
-      (typeof renderers[attrType] === "function" && renderers[attrType]) ||
+      (typeof renderers[attrType] === "object" &&
+        renderers[attrType][defaultRendererKey]) ||
+      (typeof renderers[defaultRendererKey] === "function" &&
+        renderers[defaultRendererKey]) ||
+      (typeof renderers[defaultRendererKey] === "object" &&
+        operator &&
+        renderers[defaultRendererKey][operator]) ||
+      (typeof renderers[defaultRendererKey] === "object" &&
+        renderers[defaultRendererKey][defaultRendererKey]) ||
       undefined;
 
     if (Renderer) {

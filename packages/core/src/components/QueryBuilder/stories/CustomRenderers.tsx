@@ -32,7 +32,7 @@ const attributes: HvQueryBuilderProps["attributes"] = {
   },
 };
 
-const operators: HvQueryBuilderProps["operators"] = {
+const operators = {
   text: [...hvQueryBuilderDefaultOperators.text],
   select: [
     {
