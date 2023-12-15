@@ -30,7 +30,7 @@ export const Header = () => {
   };
 
   const handleOpenTutorial = () => {
-    navigate("/preview/instructions");
+    navigate("/home");
     setTutorialOpen?.(true);
   };
 

@@ -53,7 +53,6 @@ export const Step = ({
   return (
     <HvDialog
       open
-      firstFocusable="next"
       disableBackdropClick
       classes={{
         background: css({
@@ -85,7 +84,6 @@ export const Step = ({
       <HvDialogActions>
         {!isLastStep && (
           <HvButton
-            id="previous"
             variant="secondaryGhost"
             onClick={previousHandler}
             disabled={idx === 1}
@@ -94,7 +92,7 @@ export const Step = ({
           </HvButton>
         )}
         <HvButton
-          id="next"
+          autoFocus
           variant="secondaryGhost"
           onClick={() => nextHandler(isLastStep)}
         >
