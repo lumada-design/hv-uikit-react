@@ -16,14 +16,12 @@ const NotFound = lazy(() => import("~/pages/NotFound"));
 
 // Templates
 /* eslint-disable import/no-relative-packages */
-// @ts-nocheck
 const AssetInventory = lazy(() => import("../../../templates/AssetInventory"));
 const ListView = lazy(() => import("../../../templates/ListView"));
 const Form = lazy(() => import("../../../templates/Form"));
 const DetailsView = lazy(() => import("../../../templates/DetailsView"));
 const Dashboard = lazy(() => import("../../../templates/Dashboard"));
 const Welcome = lazy(() => import("../../../templates/Welcome"));
-// @ts-check
 
 const routes = createRoutesFromElements(
   <Route element={<Layout />}>

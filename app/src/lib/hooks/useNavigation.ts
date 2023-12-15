@@ -1,9 +1,34 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { getActivePath } from "~/lib/utils/navigation";
+export const getActivePath = (
+  pathname: string,
+  navigation?: NavigationData[]
+) => {
+  let activePath: NavigationData | undefined;
 
-const useNavigation = (
+  if (!navigation) return undefined;
+
+  for (let i = 0; i < navigation.length; i += 1) {
+    if (activePath) break;
+
+    const hasPath = pathname?.includes(navigation[i].path || "");
+
+    if (hasPath) {
+      if (pathname === navigation[i].path) {
+        activePath = { ...navigation[i] };
+      } else {
+        activePath = navigation[i].data
+          ? getActivePath(pathname, navigation[i].data)
+          : { ...navigation[i] };
+      }
+    }
+  }
+
+  return activePath;
+};
+
+export const useNavigation = (
   navigationData: NavigationData[] = []
 ): NavigationContextValue => {
   const { pathname } = useLocation();
@@ -19,5 +44,3 @@ const useNavigation = (
     activePath,
   };
 };
-
-export default useNavigation;
