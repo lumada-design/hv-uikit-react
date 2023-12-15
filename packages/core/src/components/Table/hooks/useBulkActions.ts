@@ -86,7 +86,7 @@ const useInstanceHook = (instance) => {
 
     if (additivePageBulkSelection && !subtractivePageBulkDeselection) {
       if (!isAllSelectablePageRowsSelected) {
-        return toggleAllPageRowsSelected();
+        return toggleAllPageRowsSelected(true);
       }
 
       return toggleAllRowsSelected(false);
@@ -94,7 +94,7 @@ const useInstanceHook = (instance) => {
 
     if (!additivePageBulkSelection && !subtractivePageBulkDeselection) {
       if (isNoRowsSelected) {
-        return toggleAllPageRowsSelected();
+        return toggleAllPageRowsSelected(true);
       }
 
       return toggleAllRowsSelected(false);
@@ -102,7 +102,7 @@ const useInstanceHook = (instance) => {
 
     if (!additivePageBulkSelection && subtractivePageBulkDeselection) {
       if (isNoRowsSelected) {
-        return toggleAllPageRowsSelected();
+        return toggleAllPageRowsSelected(true);
       }
       if (!isAllSelectablePageRowsUnselected) {
         return toggleAllPageRowsSelected(false);
