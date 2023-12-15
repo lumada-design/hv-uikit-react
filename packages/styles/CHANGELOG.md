@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.17.0 (2023-12-15)
+
+### Features
+
+- **styles:** theme alpha util ([9f4c339](https://github.com/lumada-design/hv-uikit-react/commit/9f4c33956848901788518f5155f9a285d91213e2))
+
 ## 5.16.5 (2023-12-12)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-uno-preset",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "UI Kit UnoCSS preset with the NEXT theme.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "author": "Hitachi Vantara UI Kit Team",
@@ -26,7 +26,7 @@
     "@unocss/preset-uno": ">= 0.57.7"
   },
   "dependencies": {
-    "@hitachivantara/uikit-styles": "^5.16.5",
+    "@hitachivantara/uikit-styles": "^5.17.0",
     "@unocss/preset-rem-to-px": "^0.57.7",
     "unocss-preset-theme": "^0.11.0"
   },

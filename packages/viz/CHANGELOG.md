@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.6.28](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.6.27...@hitachivantara/uikit-react-viz@5.6.28) (2023-12-15)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-viz
+
 ## [5.6.27](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.6.26...@hitachivantara/uikit-react-viz@5.6.27) (2023-12-14)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz
