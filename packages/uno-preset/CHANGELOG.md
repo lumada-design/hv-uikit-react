@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-uno-preset@0.2.2...@hitachivantara/uikit-uno-preset@0.2.3) (2023-12-16)
+
+### Bug Fixes
+
+- **uno:** fix spacing units ([98d1411](https://github.com/lumada-design/hv-uikit-react/commit/98d1411cc4c3ab89a851d1703934c608036566cf))
+
 ## 0.2.2 (2023-12-15)
 
 **Note:** Version bump only for package @hitachivantara/uikit-uno-preset
