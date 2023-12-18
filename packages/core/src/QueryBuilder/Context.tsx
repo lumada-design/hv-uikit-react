@@ -325,6 +325,7 @@ export interface HvQueryBuilderContextValue {
   readOnly: boolean;
   disableConfirmation: boolean;
   renderers?: HvQueryBuilderRenderers;
+  emptyRenderer?: string[];
 }
 
 export const HvQueryBuilderContext = createContext<HvQueryBuilderContextValue>({
