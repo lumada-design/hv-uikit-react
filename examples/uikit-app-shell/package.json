@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.6",
-    "@hitachivantara/app-shell-vite-plugin": "latest",
+    "@hitachivantara/app-shell-vite-plugin": "0.17.11",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.1.1",
