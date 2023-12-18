@@ -10,19 +10,19 @@ import {
 
 import { internal } from "arquero";
 
-import { getGroupKey, getMeasure } from "@viz/utils";
+import { getGroupKey, getMeasure } from "../utils";
 import {
   HvBarChartMeasures,
   HvChartEmptyCellMode,
   HvDonutChartMeasure,
   HvLineChartMeasures,
-} from "@viz/types";
+} from "../types";
 import {
   HvAxisChartCommonProps,
   HvChartCommonProps,
   HvEChartsOption,
-} from "@viz/types/common";
-import { BarFullMeasures, LineFullMeasures } from "@viz/types/measures";
+} from "../types/common";
+import { BarFullMeasures, LineFullMeasures } from "../types/measures";
 
 interface HvSeriesHookProps {
   type: "line" | "bar" | "pie";

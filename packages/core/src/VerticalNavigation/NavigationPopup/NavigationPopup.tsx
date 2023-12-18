@@ -1,5 +1,5 @@
-import { HvBaseProps } from "@core/types/generic";
-import { setId } from "@core/utils/setId";
+import { HvBaseProps } from "../../types/generic";
+import { setId } from "../../utils/setId";
 
 import { HvVerticalNavigationTree } from "../Navigation";
 import { NavigationData } from "../VerticalNavigationContext";

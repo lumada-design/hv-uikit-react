@@ -2,7 +2,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import { snackbarClasses } from "@mui/material/Snackbar";
 
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../utils/classes";
 
 export const { useClasses, staticClasses } = createClasses("HvSnackbar", {
   root: {},

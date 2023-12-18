@@ -1,5 +1,5 @@
-import { HvTypography, HvTypographyProps } from "@core/Typography";
-import { withTooltip as withTooltipUtil } from "@core/hocs/withTooltip";
+import { HvTypography, HvTypographyProps } from "../Typography";
+import { withTooltip as withTooltipUtil } from "../hocs/withTooltip";
 
 import { HvScrollToTooltipPositions } from "./types";
 

@@ -56,7 +56,7 @@ Here's an example anatomy of a `HvComp` component:
 
 ```ts
 // HvComp.styles.ts
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvComp", {
   /** Applied to the root element */
@@ -81,8 +81,8 @@ export const { staticClasses, useClasses } = createClasses("HvComp", {
 
 ```tsx
 // HvComp.tsx
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./MyComp.styles";
 
 // export `staticClasses` 👇 as `compClasses` (camelCase, no `Hv`)

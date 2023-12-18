@@ -1,10 +1,10 @@
 import React, { RefObject, useState } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
-import { isKey, isOneOfKeys } from "@core/utils/keyboardUtils";
-import { isBrowser } from "@core/utils/browser";
-import { ConditionalWrapper } from "@core/utils/ConditionalWrapper";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../types/generic";
+import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
+import { isBrowser } from "../utils/browser";
+import { ConditionalWrapper } from "../utils/ConditionalWrapper";
+import { ExtractNames } from "../utils/classes";
 
 import { getFocusableChildren, setFocusTo } from "./utils";
 import { staticClasses, useClasses } from "./Focus.styles";

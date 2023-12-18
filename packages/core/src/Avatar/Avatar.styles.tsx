@@ -1,5 +1,5 @@
-import { outlineStyles } from "@core/utils/focusUtils";
-import { createClasses } from "@core/utils/classes";
+import { outlineStyles } from "../utils/focusUtils";
+import { createClasses } from "../utils/classes";
 
 const EXTRA_SMALL = { container: "32px", avatar: "24px" };
 const SMALL = { container: "40px", avatar: "32px" };

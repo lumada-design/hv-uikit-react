@@ -4,9 +4,9 @@ import dayjs from "dayjs";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { HvWarningText } from "@core/Forms";
-import { HvTimePicker, HvTimePickerValue } from "@core/TimePicker";
-import { HvDatePicker } from "@core/DatePicker";
+import { HvWarningText } from "../../../../Forms";
+import { HvTimePicker, HvTimePickerValue } from "../../../../TimePicker";
+import { HvDatePicker } from "../../../../DatePicker";
 
 import { useQueryBuilderContext } from "../../../Context";
 import { padTime, parseDate, parseTime } from "./utils";

@@ -20,8 +20,8 @@ import {
   useVisualMap,
   useXAxis,
   useYAxis,
-} from "@viz/hooks";
-import { getGroupKey } from "@viz/utils";
+} from "../hooks";
+import { getGroupKey } from "../utils";
 
 import { HvBaseChart } from "../BaseChart";
 import { useClasses } from "./ConfusionMatrix.styles";

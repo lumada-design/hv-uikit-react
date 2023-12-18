@@ -2,16 +2,16 @@ import { ClassNames } from "@emotion/react";
 
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { setId } from "@core/utils/setId";
-import { HvTag, HvTagProps } from "@core/Tag";
-import { HvButton } from "@core/Button";
-import { HvTypography } from "@core/Typography";
+import { setId } from "../../utils/setId";
+import { HvTag, HvTagProps } from "../../Tag";
+import { HvButton } from "../../Button";
+import { HvTypography } from "../../Typography";
 import {
   HvOverflowTooltip,
   HvOverflowTooltipProps,
-} from "@core/OverflowTooltip";
-import { HvBaseSwitchProps } from "@core/BaseSwitch";
-import { HvListValue } from "@core/List";
+} from "../../OverflowTooltip";
+import { HvBaseSwitchProps } from "../../BaseSwitch";
+import { HvListValue } from "../../List";
 
 import {
   HvTableHeaderRenderer,

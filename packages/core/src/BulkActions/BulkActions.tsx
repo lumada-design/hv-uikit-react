@@ -1,16 +1,16 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { setId } from "@core/utils/setId";
-import { useTheme } from "@core/hooks/useTheme";
-import { HvBaseProps } from "@core/types/generic";
-import { HvButton, HvButtonProps, HvButtonVariant } from "@core/Button";
-import { HvCheckBox, HvCheckBoxProps } from "@core/CheckBox";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { setId } from "../utils/setId";
+import { useTheme } from "../hooks/useTheme";
+import { HvBaseProps } from "../types/generic";
+import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
+import { HvCheckBox, HvCheckBoxProps } from "../CheckBox";
 import {
   HvActionGeneric,
   HvActionsGeneric,
   HvActionsGenericProps,
-} from "@core/ActionsGeneric";
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
+} from "../ActionsGeneric";
+import { HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./BulkActions.styles";
 

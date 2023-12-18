@@ -3,23 +3,23 @@ import { forwardRef, useEffect, useRef, useState } from "react";
 import { PopperProps } from "@mui/material/Popper";
 import { useForkRef } from "@mui/material/utils";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { setId } from "@core/utils/setId";
-import { useLabels } from "@core/hooks/useLabels";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import { HvBaseProps } from "@core/types/generic";
-import { HvBaseDropdown, HvBaseDropdownProps } from "@core/BaseDropdown";
-import { HvListValue } from "@core/List";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { setId } from "../utils/setId";
+import { useLabels } from "../hooks/useLabels";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import { HvBaseProps } from "../types/generic";
+import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
+import { HvListValue } from "../List";
 import {
   isInvalid,
   HvInfoMessage,
   HvWarningText,
   HvFormElement,
   HvLabel,
-} from "@core/Forms";
-import { ExtractNames } from "@core/utils/classes";
-import { HvTypography } from "@core/Typography";
+} from "../Forms";
+import { ExtractNames } from "../utils/classes";
+import { HvTypography } from "../Typography";
 
 import { getSelected, getSelectionLabel } from "./utils";
 import { HvDropdownList, HvDropdownListProps } from "./List";

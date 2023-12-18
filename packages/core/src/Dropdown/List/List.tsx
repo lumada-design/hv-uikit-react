@@ -2,17 +2,17 @@ import { MouseEvent, useContext, useEffect, useMemo, useState } from "react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { setId } from "@core/utils/setId";
-import { HvTypography } from "@core/Typography";
-import { HvButton } from "@core/Button";
-import { HvCheckBox } from "@core/CheckBox";
-import { HvInput } from "@core/Input";
-import { HvList, HvListProps, HvListValue } from "@core/List";
-import { HvActionBar } from "@core/ActionBar";
-import BaseDropdownContext from "@core/BaseDropdown/BaseDropdownContext";
-import { ExtractNames } from "@core/utils/classes";
+import { setId } from "../../utils/setId";
+import { HvTypography } from "../../Typography";
+import { HvButton } from "../../Button";
+import { HvCheckBox } from "../../CheckBox";
+import { HvInput } from "../../Input";
+import { HvList, HvListProps, HvListValue } from "../../List";
+import { HvActionBar } from "../../ActionBar";
+import BaseDropdownContext from "../../BaseDropdown/BaseDropdownContext";
+import { ExtractNames } from "../../utils/classes";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./List.styles";
 import { getSelected } from "../utils";

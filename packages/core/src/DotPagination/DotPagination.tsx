@@ -1,11 +1,11 @@
 import { cloneElement } from "react";
 import { CurrentStep, OtherStep } from "@hitachivantara/uikit-react-icons";
 
-import { HvRadio } from "@core/Radio";
-import { HvRadioGroup, HvRadioGroupProps } from "@core/RadioGroup";
-import { ExtractNames } from "@core/utils/classes";
+import { HvRadio } from "../Radio";
+import { HvRadioGroup, HvRadioGroupProps } from "../RadioGroup";
+import { ExtractNames } from "../utils/classes";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./DotPagination.styles";
 

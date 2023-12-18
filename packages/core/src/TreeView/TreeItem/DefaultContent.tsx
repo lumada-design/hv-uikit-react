@@ -1,7 +1,7 @@
 import { HTMLAttributes, ReactNode, forwardRef } from "react";
 
-import { useCss } from "@core/hooks/useCss";
-import { ExtractNames, createClasses } from "@core/utils/classes";
+import { useCss } from "../../hooks/useCss";
+import { ExtractNames, createClasses } from "../../utils/classes";
 
 import { useHvTreeItem } from "./useHvTreeItem";
 

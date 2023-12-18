@@ -2,9 +2,9 @@ import { chipClasses } from "@mui/material/Chip";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { suggestionsClasses } from "@core/Forms";
-import { baseInputClasses } from "@core/BaseInput";
-import { createClasses } from "@core/utils/classes";
+import { suggestionsClasses } from "../Forms";
+import { baseInputClasses } from "../BaseInput";
+import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   input: {

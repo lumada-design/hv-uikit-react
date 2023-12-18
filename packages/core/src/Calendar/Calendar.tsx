@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
-import { setId } from "@core/utils/setId";
-import { HvFormElementContext, HvFormElementValueContext } from "@core/Forms";
+import { setId } from "../utils/setId";
+import { HvFormElementContext, HvFormElementValueContext } from "../Forms";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../utils/classes";
 
 import { isRange } from "./utils";
 import { HvSingleCalendar } from "./SingleCalendar";

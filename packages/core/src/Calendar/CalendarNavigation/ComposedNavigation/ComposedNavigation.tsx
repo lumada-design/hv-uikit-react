@@ -1,6 +1,6 @@
-import { setId } from "@core/utils/setId";
+import { setId } from "../../../utils/setId";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../../../utils/classes";
 
 import { getMonthNamesList } from "../../utils";
 import { ViewMode } from "../../enums";

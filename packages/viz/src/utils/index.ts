@@ -1,7 +1,7 @@
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
-import { HvChartCommonProps } from "@viz/types/common";
-import { HvChartLegendIcon } from "@viz/types/legend";
+import { HvChartCommonProps } from "../types/common";
+import { HvChartLegendIcon } from "../types/legend";
 
 import type {
   HvBarChartMeasures,

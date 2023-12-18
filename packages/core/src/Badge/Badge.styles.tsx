@@ -2,7 +2,7 @@ import { CSSProperties } from "react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../utils/classes";
 
 const labelBaseStyle: CSSProperties = {
   ...theme.typography.label,

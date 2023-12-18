@@ -2,12 +2,12 @@ import { useCallback, useMemo, useContext, useEffect, useState } from "react";
 
 import uniqueId from "lodash/uniqueId";
 
-import { wrapperTooltip } from "@core/utils/wrapperTooltip";
-import { setId } from "@core/utils/setId";
-import { useControlled } from "@core/hooks/useControlled";
-import { HvBaseProps } from "@core/types/generic";
+import { wrapperTooltip } from "../../utils/wrapperTooltip";
+import { setId } from "../../utils/setId";
+import { useControlled } from "../../hooks/useControlled";
+import { HvBaseProps } from "../../types/generic";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../../utils/classes";
 
 import {
   HvVerticalNavigationTreeView,

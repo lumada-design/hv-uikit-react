@@ -9,16 +9,16 @@ import {
   Forwards,
 } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
-import { HvInput, HvInputProps } from "@core/Input";
-import { HvTypography } from "@core/Typography";
-import { HvBaseProps } from "@core/types/generic";
-import { setId } from "@core/utils/setId";
-import { isKey } from "@core/utils/keyboardUtils";
-import { ExtractNames } from "@core/utils/classes";
-import { IconButton } from "@core/utils/IconButton";
-import { useLabels } from "@core/hooks/useLabels";
+import { HvInput, HvInputProps } from "../Input";
+import { HvTypography } from "../Typography";
+import { HvBaseProps } from "../types/generic";
+import { setId } from "../utils/setId";
+import { isKey } from "../utils/keyboardUtils";
+import { ExtractNames } from "../utils/classes";
+import { IconButton } from "../utils/IconButton";
+import { useLabels } from "../hooks/useLabels";
 
 import HvSelect, { Option } from "./Select";
 import { staticClasses, useClasses } from "./Pagination.styles";

@@ -2,7 +2,7 @@ import { keyframes } from "@emotion/react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../utils/classes";
 
 const interval = 0.11;
 

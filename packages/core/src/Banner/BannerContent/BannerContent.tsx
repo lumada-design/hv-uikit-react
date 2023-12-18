@@ -4,9 +4,9 @@ import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
 
-import { iconVariant } from "@core/utils/iconVariant";
-import { ExtractNames } from "@core/utils/classes";
-import { HvActionGeneric } from "@core/ActionsGeneric";
+import { iconVariant } from "../../utils/iconVariant";
+import { ExtractNames } from "../../utils/classes";
+import { HvActionGeneric } from "../../ActionsGeneric";
 
 import { HvBannerActionPosition, HvBannerVariant } from "../types";
 import { HvActionContainer, HvActionContainerProps } from "./ActionContainer";

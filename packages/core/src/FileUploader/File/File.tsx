@@ -1,11 +1,11 @@
 import { Close, Fail, Success } from "@hitachivantara/uikit-react-icons";
 
-import { setId } from "@core/utils/setId";
-import { HvButton } from "@core/Button";
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
-import { HvProgressBar } from "@core/ProgressBar";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { setId } from "../../utils/setId";
+import { HvButton } from "../../Button";
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
+import { HvProgressBar } from "../../ProgressBar";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { convertUnits } from "../utils";
 import { staticClasses, useClasses } from "./File.styles";

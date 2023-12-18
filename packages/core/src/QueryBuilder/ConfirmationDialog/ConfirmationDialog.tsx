@@ -1,11 +1,11 @@
-import { HvButton, HvButtonProps } from "@core/Button";
+import { HvButton, HvButtonProps } from "../../Button";
 import {
   HvDialog,
   HvDialogActions,
   HvDialogContent,
   HvDialogProps,
   HvDialogTitle,
-} from "@core/Dialog";
+} from "../../Dialog";
 
 import { useClasses } from "./ConfirmationDialog.styles";
 

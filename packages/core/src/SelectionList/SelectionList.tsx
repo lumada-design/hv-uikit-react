@@ -9,19 +9,19 @@ import React, {
 
 import { useForkRef } from "@mui/material/utils";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import { multiSelectionEventHandler } from "@core/utils/multiSelectionEventHandler";
-import { isKey } from "@core/utils/keyboardUtils";
-import { setId } from "@core/utils/setId";
-import { HvFormElement, HvFormStatus } from "@core/Forms/FormElement";
-import { ExtractNames } from "@core/utils/classes";
-import { HvLabel } from "@core/Forms/Label";
-import { HvInfoMessage } from "@core/Forms/InfoMessage";
-import { HvWarningText } from "@core/Forms/WarningText";
-import { HvListContainer } from "@core/ListContainer";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import { multiSelectionEventHandler } from "../utils/multiSelectionEventHandler";
+import { isKey } from "../utils/keyboardUtils";
+import { setId } from "../utils/setId";
+import { HvFormElement, HvFormStatus } from "../Forms/FormElement";
+import { ExtractNames } from "../utils/classes";
+import { HvLabel } from "../Forms/Label";
+import { HvInfoMessage } from "../Forms/InfoMessage";
+import { HvWarningText } from "../Forms/WarningText";
+import { HvListContainer } from "../ListContainer";
 
 import { staticClasses, useClasses } from "./SelectionList.styles";
 

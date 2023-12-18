@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 
-import { getLegendIcon } from "@viz/utils";
-import { HvChartLegend, HvChartLegendIcon } from "@viz/types/legend";
-import { HvEChartsOption } from "@viz/types/common";
+import { getLegendIcon } from "../utils";
+import { HvChartLegend, HvChartLegendIcon } from "../types/legend";
+import { HvEChartsOption } from "../types/common";
 
 interface HvLegendHookProps {
   show?: HvChartLegend["show"];

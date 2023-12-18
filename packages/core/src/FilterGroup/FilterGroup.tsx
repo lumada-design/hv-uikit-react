@@ -7,13 +7,13 @@ import {
   HvInfoMessage,
   HvLabel,
   HvWarningText,
-} from "@core/Forms";
-import { useLabels } from "@core/hooks/useLabels";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import { ExtractNames } from "@core/utils/classes";
-import { setId } from "@core/utils/setId";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+} from "../Forms";
+import { useLabels } from "../hooks/useLabels";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import {
   HvFilterGroupContent,

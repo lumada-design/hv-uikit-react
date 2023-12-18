@@ -1,7 +1,7 @@
-import { isKey } from "@core/utils/keyboardUtils";
+import { isKey } from "../../../utils/keyboardUtils";
 
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "../../../Typography";
+import { ExtractNames } from "../../../utils/classes";
 
 import { getMonthNamesList } from "../../utils";
 import { ViewMode } from "../../enums";

@@ -19,7 +19,7 @@ import {
   useOption,
   useSeries,
   useTooltip,
-} from "@viz/hooks";
+} from "../hooks";
 
 import { HvBaseChart } from "../BaseChart";
 import { HvChartCommonProps } from "../types/common";

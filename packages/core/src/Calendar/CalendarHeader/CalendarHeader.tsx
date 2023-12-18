@@ -8,13 +8,13 @@ import {
   HvFormElementContext,
   HvFormElementValueContext,
   HvFormElementDescriptorsContext,
-} from "@core/Forms";
-import { isKey } from "@core/utils/keyboardUtils";
-import { setId } from "@core/utils/setId";
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvInput, HvInputProps } from "@core/Input";
+} from "../../Forms";
+import { isKey } from "../../utils/keyboardUtils";
+import { setId } from "../../utils/setId";
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvInput, HvInputProps } from "../../Input";
 
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
 import { DateRangeProp } from "../types";

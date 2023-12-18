@@ -8,8 +8,8 @@ import MuiContainer, {
 } from "@mui/material/Container";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Container.styles";
 

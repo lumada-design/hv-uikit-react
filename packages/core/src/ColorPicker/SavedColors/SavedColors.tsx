@@ -4,10 +4,10 @@ import { CloseXS, Add } from "@hitachivantara/uikit-react-icons";
 // @ts-ignore
 import { Swatch } from "react-color/lib/components/common";
 
-import { HvButton } from "@core/Button";
-import { ExtractNames } from "@core/utils/classes";
+import { HvButton } from "../../Button";
+import { ExtractNames } from "../../utils/classes";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./SavedColors.styles";
 

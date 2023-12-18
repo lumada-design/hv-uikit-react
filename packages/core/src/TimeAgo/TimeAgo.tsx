@@ -2,10 +2,10 @@ import { forwardRef } from "react";
 
 import isEmpty from "lodash/isEmpty";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { ExtractNames } from "@core/utils/classes";
-import { HvTypography } from "@core/Typography";
-import { PolymorphicComponentRef, PolymorphicRef } from "@core/types/generic";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { ExtractNames } from "../utils/classes";
+import { HvTypography } from "../Typography";
+import { PolymorphicComponentRef, PolymorphicRef } from "../types/generic";
 
 import { staticClasses, useClasses } from "./TimeAgo.styles";
 import useTimeAgo from "./useTimeAgo";

@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { suggestionsClasses } from "@core/Forms";
-import { createClasses } from "@core/utils/classes";
+import { suggestionsClasses } from "../Forms";
+import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvInput", {
   root: { display: "block" },

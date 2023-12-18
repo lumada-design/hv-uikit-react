@@ -1,8 +1,8 @@
 import { SyntheticEvent, useRef } from "react";
 
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import {
   isSameDay,

@@ -1,9 +1,9 @@
 import { MouseEvent } from "react";
 
-import { HvTypography } from "@core/Typography";
-import { HvOverflowTooltip } from "@core/OverflowTooltip";
-import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { HvTypography } from "../../Typography";
+import { HvOverflowTooltip } from "../../OverflowTooltip";
+import { ExtractNames } from "../../utils/classes";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { HvBreadCrumbPathElement } from "../types";
 import { staticClasses, useClasses } from "./Page.styles";

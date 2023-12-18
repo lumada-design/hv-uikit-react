@@ -2,10 +2,10 @@
 // @ts-ignore
 import { Swatch } from "react-color/lib/components/common";
 
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./PresetColors.styles";
 

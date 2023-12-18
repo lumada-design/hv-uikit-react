@@ -1,7 +1,7 @@
 import { forwardRef, TableHTMLAttributes, useMemo, useRef } from "react";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { ExtractNames } from "../utils/classes";
 
 import TableContext from "./TableContext";
 import { staticClasses, useClasses } from "./Table.styles";

@@ -1,8 +1,8 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { useLabels } from "@core/hooks/useLabels";
-import { HvBaseProps } from "@core/types/generic";
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useLabels } from "../hooks/useLabels";
+import { HvBaseProps } from "../types/generic";
+import { HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Kpi.styles";
 

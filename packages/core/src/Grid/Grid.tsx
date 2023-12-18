@@ -3,9 +3,9 @@ import MuiGrid, { GridProps as MuiGridProps } from "@mui/material/Grid";
 
 import isString from "lodash/isString";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { useWidth } from "@core/hooks/useWidth";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useWidth } from "../hooks/useWidth";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Grid.styles";
 

@@ -1,9 +1,9 @@
 import { useContext } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
-import { setId } from "@core/utils/setId";
-import { HvInput, HvInputProps } from "@core/Input";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../../types/generic";
+import { setId } from "../../utils/setId";
+import { HvInput, HvInputProps } from "../../Input";
+import { ExtractNames } from "../../utils/classes";
 
 import { useClasses, staticClasses } from "./LeftControl.styles";
 import { HvControlsContext } from "../context/ControlsContext";

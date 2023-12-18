@@ -2,7 +2,7 @@ import MuiCardContent, {
   CardContentProps as MuiCardContentProps,
 } from "@mui/material/CardContent";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../../utils/classes";
 
 import { staticClasses, useClasses } from "./Content.styles";
 

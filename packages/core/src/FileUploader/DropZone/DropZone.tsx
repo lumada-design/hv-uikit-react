@@ -6,13 +6,13 @@ import accept from "attr-accept";
 
 import { Doc } from "@hitachivantara/uikit-react-icons";
 
-import { setId } from "@core/utils/setId";
-import { useUniqueId } from "@core/hooks/useUniqueId";
+import { setId } from "../../utils/setId";
+import { useUniqueId } from "../../hooks/useUniqueId";
 
-import { HvTypography } from "@core/Typography";
-import { HvInfoMessage, HvLabel } from "@core/Forms";
-import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { HvTypography } from "../../Typography";
+import { HvInfoMessage, HvLabel } from "../../Forms";
+import { ExtractNames } from "../../utils/classes";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { convertUnits } from "../utils";
 import { HvFileData, HvFilesAddedEvent } from "../File";

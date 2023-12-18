@@ -1,6 +1,6 @@
 import type { CSSInterpolation } from "@emotion/serialize";
 
-import { useCss } from "@core/hooks/useCss";
+import { useCss } from "../hooks/useCss";
 
 export type ExtractNames<
   T extends (...args: any) => { classes: Record<string, any>; cx: any }

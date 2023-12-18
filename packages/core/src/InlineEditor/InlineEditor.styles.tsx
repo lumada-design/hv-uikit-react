@@ -1,8 +1,8 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "@core/utils/classes";
-import { inputClasses } from "@core/Input";
-import { baseInputClasses } from "@core/BaseInput";
+import { createClasses } from "../utils/classes";
+import { inputClasses } from "../Input";
+import { baseInputClasses } from "../BaseInput";
 
 export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
   root: {

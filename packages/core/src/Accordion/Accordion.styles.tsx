@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "@core/utils/focusUtils";
-import { createClasses } from "@core/utils/classes";
+import { outlineStyles } from "../utils/focusUtils";
+import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvAccordion", {
   root: {

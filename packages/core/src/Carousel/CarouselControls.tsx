@@ -2,12 +2,12 @@ import { MouseEventHandler, ReactNode } from "react";
 
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
-import { HvBaseProps } from "@core/types/generic";
-import { HvButton } from "@core/Button";
-import { HvPaginationProps } from "@core/Pagination";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../types/generic";
+import { HvButton } from "../Button";
+import { HvPaginationProps } from "../Pagination";
+import { ExtractNames } from "../utils/classes";
 
 import { useClasses } from "./Carousel.styles";
 

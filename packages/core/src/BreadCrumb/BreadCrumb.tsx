@@ -1,10 +1,10 @@
 import { isValidElement, MouseEvent } from "react";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { HvDropDownMenuProps } from "@core/DropDownMenu";
-import { ExtractNames } from "@core/utils/classes";
-import { HvTypography } from "@core/Typography";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { HvDropDownMenuProps } from "../DropDownMenu";
+import { ExtractNames } from "../utils/classes";
+import { HvTypography } from "../Typography";
 
 import { HvPathElement } from "./PathElement";
 import { HvBreadCrumbPage } from "./Page";

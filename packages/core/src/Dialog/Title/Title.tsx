@@ -2,11 +2,11 @@ import MuiDialogTitle, {
   DialogTitleProps as MuiDialogTitleProps,
 } from "@mui/material/DialogTitle";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
-import { iconVariant } from "@core/utils/iconVariant";
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
+import { iconVariant } from "../../utils/iconVariant";
 
 import { staticClasses, useClasses } from "./Title.styles";
 import { useDialogContext } from "../context";

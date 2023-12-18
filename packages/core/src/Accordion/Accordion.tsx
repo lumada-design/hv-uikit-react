@@ -7,13 +7,13 @@ import React, {
 
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
-import { useControlled } from "@core/hooks/useControlled";
-import { HvBaseProps } from "@core/types/generic";
-import { setId } from "@core/utils/setId";
-import { HvTypographyVariants, HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
+import { useControlled } from "../hooks/useControlled";
+import { HvBaseProps } from "../types/generic";
+import { setId } from "../utils/setId";
+import { HvTypographyVariants, HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Accordion.styles";
 

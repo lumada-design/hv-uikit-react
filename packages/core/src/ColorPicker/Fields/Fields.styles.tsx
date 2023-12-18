@@ -1,4 +1,4 @@
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../../utils/classes";
 
 const name = "HvColorPicker-Fields";
 

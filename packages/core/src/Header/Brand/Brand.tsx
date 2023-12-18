@@ -1,7 +1,7 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { ExtractNames } from "@core/utils/classes";
-import { HvBaseProps } from "@core/types/generic";
-import { HvTypography } from "@core/Typography";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { ExtractNames } from "../../utils/classes";
+import { HvBaseProps } from "../../types/generic";
+import { HvTypography } from "../../Typography";
 
 import { staticClasses, useClasses } from "./Brand.styles";
 

@@ -12,12 +12,12 @@ import { hexToRgb, alpha } from "@mui/material/styles";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvTypography, HvTypographyProps } from "@core/Typography";
-import { useTheme } from "@core/hooks/useTheme";
-import { ExtractNames } from "@core/utils/classes";
-import { HvButton, HvButtonProps } from "@core/Button";
+import { HvTypography, HvTypographyProps } from "../../Typography";
+import { useTheme } from "../../hooks/useTheme";
+import { ExtractNames } from "../../utils/classes";
+import { HvButton, HvButtonProps } from "../../Button";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";

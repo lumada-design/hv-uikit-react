@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvBaseProps } from "../../types/generic";
+import { useUniqueId } from "../../hooks/useUniqueId";
+import { ExtractNames } from "../../utils/classes";
 
 import { findDescriptors } from "./utils/FormUtils";
 import { HvFormElementContextProvider } from "./context/FormElementContext";

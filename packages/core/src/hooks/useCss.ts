@@ -4,7 +4,7 @@ import { css as emotionCss, EmotionCache } from "@emotion/css";
 import { serializeStyles, RegisteredCache } from "@emotion/serialize";
 import { insertStyles, getRegisteredStyles } from "@emotion/utils";
 
-import { useEmotionCache } from "@core/hooks/useEmotionCache";
+import { useEmotionCache } from "./useEmotionCache";
 
 type CSS = typeof emotionCss;
 

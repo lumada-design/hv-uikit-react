@@ -16,8 +16,8 @@ import {
 
 import { EmotionCache } from "@emotion/cache";
 
-import { setElementAttrs } from "@core/utils/theme";
-import { HvTheme } from "@core/types/theme";
+import { setElementAttrs } from "../utils/theme";
+import { HvTheme } from "../types/theme";
 
 export { HvThemeContext };
 export type { HvThemeContextValue };

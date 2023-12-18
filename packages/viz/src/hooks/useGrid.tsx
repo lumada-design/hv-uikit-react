@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
-import { HvChartGrid } from "@viz/types";
-import { HvEChartsOption } from "@viz/types/common";
+import { HvChartGrid } from "../types";
+import { HvEChartsOption } from "../types/common";
 
 interface HvGridHookProps {
   top?: HvChartGrid["top"];

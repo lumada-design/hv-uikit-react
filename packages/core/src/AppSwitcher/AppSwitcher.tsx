@@ -1,11 +1,11 @@
 import { useMemo } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvListContainer } from "@core/ListContainer";
-import { HvTypography } from "@core/Typography";
-import { HvOverflowTooltip } from "@core/OverflowTooltip";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvListContainer } from "../ListContainer";
+import { HvTypography } from "../Typography";
+import { HvOverflowTooltip } from "../OverflowTooltip";
 
 import { HvAppSwitcherAction, HvAppSwitcherActionApplication } from "./Action";
 import { useClasses, staticClasses } from "./AppSwitcher.styles";

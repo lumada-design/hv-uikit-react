@@ -1,10 +1,10 @@
 import { CSSProperties, MouseEvent, forwardRef } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
-import { HvPaginationProps } from "@core/Pagination";
-import { HvStack } from "@core/Stack";
-import { HvButton, HvButtonProps } from "@core/Button";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../types/generic";
+import { HvPaginationProps } from "../Pagination";
+import { HvStack } from "../Stack";
+import { HvButton, HvButtonProps } from "../Button";
+import { ExtractNames } from "../utils/classes";
 
 import { useClasses } from "./Carousel.styles";
 

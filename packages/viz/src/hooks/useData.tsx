@@ -12,9 +12,9 @@ import {
   HvLineChartMeasures,
   HvChartData,
   HvDonutChartMeasure,
-} from "@viz/types";
-import { getGroupKey } from "@viz/utils";
-import { HvAxisChartCommonProps, HvChartCommonProps } from "@viz/types/common";
+} from "../types";
+import { getGroupKey } from "../utils";
+import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
 
 const getAgFunc = (func: HvChartAggregation, field: string) =>
   func === "count" ? "count()" : `${func}(d["${field}"])`;

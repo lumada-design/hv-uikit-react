@@ -16,15 +16,15 @@ import {
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
-import { HvBaseProps } from "@core/types/generic";
-import { HvButton } from "@core/Button";
-import { useTheme } from "@core/hooks/useTheme";
-import { HvTooltip } from "@core/Tooltip";
-import { HvTypography } from "@core/Typography";
-import { HvContainer } from "@core/Container";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../types/generic";
+import { HvButton } from "../Button";
+import { useTheme } from "../hooks/useTheme";
+import { HvTooltip } from "../Tooltip";
+import { HvTypography } from "../Typography";
+import { HvContainer } from "../Container";
+import { ExtractNames } from "../utils/classes";
 
 import { HvCarouselControls } from "./CarouselControls";
 import { HvCarouselThumbnails } from "./CarouselThumbnails";

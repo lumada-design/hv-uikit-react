@@ -1,12 +1,12 @@
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
 
-import { HvBaseProps } from "@core/types/generic";
-import { HvTypographyProps } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
-import { setId } from "@core/utils/setId";
-import { useTheme } from "@core/hooks/useTheme";
+import { HvBaseProps } from "../../../types/generic";
+import { HvTypographyProps } from "../../../Typography";
+import { ExtractNames } from "../../../utils/classes";
+import { setId } from "../../../utils/setId";
+import { useTheme } from "../../../hooks/useTheme";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./VerticalScrollListItem.styles";
 

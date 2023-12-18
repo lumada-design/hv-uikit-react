@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { buttonClasses } from "@core/Button";
-import { createClasses } from "@core/utils/classes";
+import { buttonClasses } from "../../Button";
+import { createClasses } from "../../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvHeader-Actions", {
   root: {

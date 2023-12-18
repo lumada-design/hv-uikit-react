@@ -3,10 +3,10 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import isString from "lodash/isString";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./GlobalActions.styles";
 

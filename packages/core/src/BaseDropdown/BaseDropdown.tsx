@@ -19,17 +19,17 @@ import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { usePopper } from "react-popper";
 import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
 
-import { HvTypography } from "@core/Typography";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useTheme } from "@core/hooks/useTheme";
-import { useForkRef } from "@core/hooks/useForkRef";
-import { useControlled } from "@core/hooks/useControlled";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { isKey, isOneOfKeys } from "@core/utils/keyboardUtils";
-import { setId } from "@core/utils/setId";
-import { getFirstAndLastFocus } from "@core/utils/focusableElementFinder";
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "../Typography";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useTheme } from "../hooks/useTheme";
+import { useForkRef } from "../hooks/useForkRef";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
+import { setId } from "../utils/setId";
+import { getFirstAndLastFocus } from "../utils/focusableElementFinder";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./BaseDropdown.styles";
 import BaseDropdownContext from "./BaseDropdownContext";

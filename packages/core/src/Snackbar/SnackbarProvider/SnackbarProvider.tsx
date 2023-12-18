@@ -12,7 +12,7 @@ import {
 import { SnackbarOrigin } from "@mui/material/Snackbar";
 import { ClassNameMap } from "@mui/material/styles";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../../utils/classes";
 
 import { HvSnackbarContent, HvSnackbarContentProps } from "../SnackbarContent";
 import { staticClasses, useClasses } from "./SnackbarProvider.styles";

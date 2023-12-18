@@ -1,9 +1,9 @@
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
-import { setId } from "@core/utils/setId";
-import { HvTypographyProps } from "@core/Typography";
+import { HvBaseProps } from "../../../types/generic";
+import { ExtractNames } from "../../../utils/classes";
+import { setId } from "../../../utils/setId";
+import { HvTypographyProps } from "../../../Typography";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./HorizontalScrollListItem.styles";
 

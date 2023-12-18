@@ -1,4 +1,4 @@
-import { HvListValue } from "@core/List";
+import { HvListValue } from "../List";
 
 import { HvDropdownLabelsProps } from "./types";
 

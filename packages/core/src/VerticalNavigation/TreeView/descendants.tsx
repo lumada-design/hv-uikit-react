@@ -16,7 +16,7 @@ import {
   useState,
 } from "react";
 
-import { useEnhancedEffect } from "@core/hooks/useEnhancedEffect";
+import { useEnhancedEffect } from "../../hooks/useEnhancedEffect";
 
 type Item = {
   element?;

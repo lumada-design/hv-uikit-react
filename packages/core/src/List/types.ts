@@ -1,4 +1,4 @@
-import { HvExtraProps } from "@core/types/generic";
+import { HvExtraProps } from "../types/generic";
 
 export interface HvListValue extends HvExtraProps {
   id?: string | number;

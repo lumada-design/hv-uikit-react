@@ -6,19 +6,19 @@ import {
   forwardRef,
 } from "react";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import { setId } from "@core/utils/setId";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import { setId } from "../utils/setId";
 import {
   HvFormElement,
   HvFormStatus,
   HvInfoMessage,
   HvLabel,
   HvWarningText,
-} from "@core/Forms";
-import { ExtractNames } from "@core/utils/classes";
+} from "../Forms";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./RadioGroup.styles";
 

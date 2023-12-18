@@ -4,13 +4,13 @@ import { useForkRef } from "@mui/material/utils";
 
 import { Calendar } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { useControlled } from "@core/hooks/useControlled";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useLabels } from "@core/hooks/useLabels";
-import { ExtractNames } from "@core/utils/classes";
-import { setId } from "@core/utils/setId";
-import { useSavedState } from "@core/utils/useSavedState";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useControlled } from "../hooks/useControlled";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useLabels } from "../hooks/useLabels";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
+import { useSavedState } from "../utils/useSavedState";
 import {
   isInvalid,
   HvLabel,
@@ -19,13 +19,13 @@ import {
   HvFormElement,
   HvInfoMessage,
   HvFormElementProps,
-} from "@core/Forms";
-import { isDate } from "@core/Calendar/utils";
-import { HvCalendar, HvCalendarProps } from "@core/Calendar";
-import { HvBaseDropdown, HvBaseDropdownProps } from "@core/BaseDropdown";
-import { HvTypography } from "@core/Typography";
-import { HvActionBar } from "@core/ActionBar";
-import { HvButton } from "@core/Button";
+} from "../Forms";
+import { isDate } from "../Calendar/utils";
+import { HvCalendar, HvCalendarProps } from "../Calendar";
+import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
+import { HvTypography } from "../Typography";
+import { HvActionBar } from "../ActionBar";
+import { HvButton } from "../Button";
 
 import { getDateLabel } from "./utils";
 import useVisibleDate from "./useVisibleDate";

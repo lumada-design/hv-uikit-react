@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 import { Remove } from "@hitachivantara/uikit-react-icons";
 
-import { setId } from "@core/utils/setId";
-import { HvFormStatus } from "@core/Forms";
-import { HvInput, HvInputProps } from "@core/Input";
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
+import { setId } from "../../utils/setId";
+import { HvFormStatus } from "../../Forms";
+import { HvInput, HvInputProps } from "../../Input";
+import { HvBaseProps } from "../../types/generic";
+import { ExtractNames } from "../../utils/classes";
 
 import { knobsValuesToString, stringValuesToKnobs } from "../utils";
 import { staticClasses, useClasses } from "./SliderInput.styles";

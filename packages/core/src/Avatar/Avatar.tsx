@@ -5,12 +5,12 @@ import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
 
 import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
-import { HvBaseProps } from "@core/types/generic";
-import { useImageLoaded } from "@core/hooks/useImageLoaded";
-import { decreaseSize } from "@core/utils/sizes";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../types/generic";
+import { useImageLoaded } from "../hooks/useImageLoaded";
+import { decreaseSize } from "../utils/sizes";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Avatar.styles";
 

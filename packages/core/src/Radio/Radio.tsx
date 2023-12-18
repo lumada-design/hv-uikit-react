@@ -2,19 +2,19 @@ import React, { forwardRef, useCallback, useState } from "react";
 
 import { RadioProps as MuiRadioProps } from "@mui/material/Radio";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseRadio } from "@core/BaseRadio";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseRadio } from "../BaseRadio";
 import {
   HvWarningText,
   HvLabelProps,
   isInvalid,
   HvFormElement,
   HvLabel,
-} from "@core/Forms";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import { setId } from "@core/utils/setId";
-import { ExtractNames } from "@core/utils/classes";
+} from "../Forms";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import { setId } from "../utils/setId";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Radio.styles";
 

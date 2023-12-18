@@ -1,11 +1,11 @@
 import { useMemo } from "react";
 import { useResizeDetector } from "react-resize-detector";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { HvTooltip, HvTooltipProps } from "@core/Tooltip";
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { HvTooltip, HvTooltipProps } from "../Tooltip";
+import { HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./OverflowTooltip.styles";
 

@@ -3,18 +3,18 @@ import { ChangeEvent, useMemo } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import { HvBaseProps } from "@core/types/generic";
-import { isKey } from "@core/utils/keyboardUtils";
-import { setId } from "@core/utils/setId";
-import { getPrevNextFocus } from "@core/utils/focusableElementFinder";
-import { ExtractNames } from "@core/utils/classes";
-import { HvBaseDropdown, HvBaseDropdownProps } from "@core/BaseDropdown";
-import { HvButton, HvButtonVariant } from "@core/Button";
-import { HvList, HvListProps, HvListValue } from "@core/List";
-import { HvPanel } from "@core/Panel";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import { HvBaseProps } from "../types/generic";
+import { isKey } from "../utils/keyboardUtils";
+import { setId } from "../utils/setId";
+import { getPrevNextFocus } from "../utils/focusableElementFinder";
+import { ExtractNames } from "../utils/classes";
+import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
+import { HvButton, HvButtonVariant } from "../Button";
+import { HvList, HvListProps, HvListValue } from "../List";
+import { HvPanel } from "../Panel";
 
 import { staticClasses, useClasses } from "./DropDownMenu.styles";
 

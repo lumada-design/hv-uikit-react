@@ -1,10 +1,10 @@
 import { useContext } from "react";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { setId } from "@core/utils/setId";
-import { ExtractNames } from "@core/utils/classes";
-import { HvTypography } from "@core/Typography";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvBaseProps } from "../../types/generic";
+import { setId } from "../../utils/setId";
+import { ExtractNames } from "../../utils/classes";
+import { HvTypography } from "../../Typography";
 
 import { staticClasses, useClasses } from "./CharCounter.styles";
 import { HvFormElementContext } from "../FormElement";

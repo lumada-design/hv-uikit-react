@@ -4,7 +4,7 @@ import { HvTheme } from "@hitachivantara/uikit-react-shared";
 import {
   HvThemeContext,
   HvThemeContextValue,
-} from "@core/providers/ThemeProvider";
+} from "../providers/ThemeProvider";
 
 export const useTheme = (): HvThemeContextValue & {
   /** Colors of the currently active theme and mode */

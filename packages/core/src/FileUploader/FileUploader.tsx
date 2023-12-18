@@ -1,8 +1,8 @@
-import { useLabels } from "@core/hooks/useLabels";
-import { setId } from "@core/utils/setId";
-import { HvBaseProps } from "@core/types/generic";
+import { useLabels } from "../hooks/useLabels";
+import { setId } from "../utils/setId";
+import { HvBaseProps } from "../types/generic";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { HvDropZone, HvDropZoneLabels } from "./DropZone";
 import { HvFileData, HvFileRemovedEvent, HvFilesAddedEvent } from "./File";

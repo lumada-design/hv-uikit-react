@@ -1,11 +1,11 @@
 import { SyntheticEvent, useState } from "react";
 
-import { HvBaseDropdown, HvBaseDropdownProps } from "@core/BaseDropdown";
-import { HvSelectionList, HvSelectionListProps } from "@core/SelectionList";
-import { HvPanel } from "@core/Panel";
-import { HvListItem, HvListItemProps } from "@core/ListContainer";
+import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
+import { HvSelectionList, HvSelectionListProps } from "../SelectionList";
+import { HvPanel } from "../Panel";
+import { HvListItem, HvListItemProps } from "../ListContainer";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { useClasses } from "./Select.styles";
 

@@ -1,8 +1,8 @@
-import { HvBaseProps } from "@core/types/generic";
-import { HvActionGeneric, HvActionsGeneric } from "@core/ActionsGeneric";
-import { HvTypography } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
-import { setId } from "@core/utils/setId";
+import { HvBaseProps } from "../../../types/generic";
+import { HvActionGeneric, HvActionsGeneric } from "../../../ActionsGeneric";
+import { HvTypography } from "../../../Typography";
+import { ExtractNames } from "../../../utils/classes";
+import { setId } from "../../../utils/setId";
 
 import { staticClasses, useClasses } from "./MessageContainer.styles";
 

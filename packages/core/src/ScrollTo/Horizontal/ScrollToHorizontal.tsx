@@ -4,13 +4,13 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { theme } from "@hitachivantara/uikit-styles";
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useTheme } from "@core/hooks/useTheme";
-import { ExtractNames } from "@core/utils/classes";
-import { isKey } from "@core/utils/keyboardUtils";
-import { setId } from "@core/utils/setId";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvBaseProps } from "../../types/generic";
+import { useUniqueId } from "../../hooks/useUniqueId";
+import { useTheme } from "../../hooks/useTheme";
+import { ExtractNames } from "../../utils/classes";
+import { isKey } from "../../utils/keyboardUtils";
+import { setId } from "../../utils/setId";
 
 import { HvScrollToTooltipPositions } from "../types";
 import { withTooltip } from "../withTooltip";

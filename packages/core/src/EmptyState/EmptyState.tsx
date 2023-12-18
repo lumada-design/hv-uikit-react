@@ -5,10 +5,10 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { HvTypography, HvTypographyProps } from "@core/Typography";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { HvTypography, HvTypographyProps } from "../Typography";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./EmptyState.styles";
 

@@ -16,10 +16,6 @@
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "baseUrl": ".",
-    "paths": {
-      "@core/*": ["packages/core/src/*"],
-      "@viz/*": ["packages/viz/src/*"]
-    },
     "noImplicitAny": false,
     "types": [
       "node",

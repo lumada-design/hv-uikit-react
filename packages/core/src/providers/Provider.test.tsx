@@ -4,8 +4,8 @@ import userEvent from "@testing-library/user-event";
 
 import { describe, expect, it } from "vitest";
 
-import { useTheme } from "@core/hooks/useTheme";
-import { createTheme } from "@core/utils/theme";
+import { useTheme } from "../hooks/useTheme";
+import { createTheme } from "../utils/theme";
 
 import { HvProvider } from "./Provider";
 

@@ -1,6 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvCharCounter", {
   root: { display: "inline-block", float: "right" },

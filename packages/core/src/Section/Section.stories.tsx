@@ -9,8 +9,8 @@ import { HvDonutChart } from "@hitachivantara/uikit-react-viz";
 import { Duplicate, Ticket } from "@hitachivantara/uikit-react-icons";
 import { css } from "@emotion/css";
 
-import { HvActionsGeneric } from "@core/ActionsGeneric";
-import { HvButton } from "@core/Button";
+import { HvActionsGeneric } from "../ActionsGeneric";
+import { HvButton } from "../Button";
 
 import { HvSection, HvSectionProps } from "./Section";
 

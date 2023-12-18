@@ -9,14 +9,14 @@ import {
 
 import { useForkRef } from "@mui/material/utils";
 
-import { setId } from "@core/utils/setId";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { setId } from "../utils/setId";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import validationStates, {
   isInvalid,
-} from "@core/Forms/FormElement/validationStates";
-import { HvValidationMessages } from "@core/types/forms";
+} from "../Forms/FormElement/validationStates";
+import { HvValidationMessages } from "../types/forms";
 import {
   computeValidationMessage,
   computeValidationState,
@@ -25,8 +25,8 @@ import {
   HvInputValidity,
   validateInput,
   validationTypes,
-} from "@core/BaseInput/validations";
-import { HvBaseInput, HvBaseInputProps } from "@core/BaseInput";
+} from "../BaseInput/validations";
+import { HvBaseInput, HvBaseInputProps } from "../BaseInput";
 import {
   HvCharCounter,
   HvCharCounterProps,
@@ -35,8 +35,8 @@ import {
   HvInfoMessage,
   HvLabel,
   HvWarningText,
-} from "@core/Forms";
-import { ExtractNames } from "@core/utils/classes";
+} from "../Forms";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./TextArea.styles";
 
