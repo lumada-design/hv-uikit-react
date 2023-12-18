@@ -1,7 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { useSearchParams } from "react-router-dom";
-import { HvGlobalActions, theme } from "@hitachivantara/uikit-react-core";
+import {
+  HvContainer,
+  HvGlobalActions,
+  HvLoading,
+} from "@hitachivantara/uikit-react-core";
 import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
@@ -85,12 +89,7 @@ const DashboardPreview = () => {
 
   return (
     <HvVizProvider>
-      <div
-        className={css({
-          paddingTop: theme.space.lg,
-          marginTop: `calc(-1 * (2 * ${theme.header.height} + ${theme.space.xs}))`,
-        })}
-      >
+      <div className="pt-md">
         <HvGlobalActions position="relative" title="Dashboard Preview" />
         {config?.items && config?.layout && (
           <HvDashboard
@@ -114,4 +113,10 @@ const DashboardPreview = () => {
   );
 };
 
-export default DashboardPreview;
+export default () => (
+  <Suspense fallback={<HvLoading />}>
+    <HvContainer component="main" maxWidth="xl" className="w-full">
+      <DashboardPreview />
+    </HvContainer>
+  </Suspense>
+);

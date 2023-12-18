@@ -1,16 +1,19 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 
 import { Header } from "~/components/common/Header";
 import { Container } from "~/components/common/Container";
 import { Tutorial } from "~/components/common/Tutorial";
-import { useGeneratorContext } from "~/generator/GeneratorContext";
+import GeneratorProvider, {
+  useGeneratorContext,
+} from "~/generator/GeneratorContext";
+import Sidebar from "~/generator/Sidebar";
 import { NavigationProvider } from "~/lib/context/navigation";
 import navigation from "~/lib/navigation";
 
-const Content = () => {
+/** Navigation layout & provider */
+const Navigation = () => {
   const { selectedMode } = useTheme();
-  const { pathname } = useLocation();
 
   const {
     customTheme,
@@ -44,7 +47,7 @@ const Content = () => {
               />
             )}
             <Container maxWidth="xl">
-              {pathname !== "/dashboard-preview" && <Header />}
+              <Header />
               <Outlet />
             </Container>
           </NavigationProvider>
@@ -54,4 +57,14 @@ const Content = () => {
   );
 };
 
-export default Content;
+/** Navigation + Theme Generator layout & providers */
+export default () => (
+  <div className="flex flex-row rounded-circle">
+    <GeneratorProvider>
+      <div className="flex-1 overflow-y-auto">
+        <Navigation />
+      </div>
+      <Sidebar />
+    </GeneratorProvider>
+  </div>
+);
