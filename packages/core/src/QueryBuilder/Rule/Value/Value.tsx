@@ -6,6 +6,7 @@ import { NumericValue } from "./NumericValue";
 import { TextValue } from "./TextValue";
 import { DateTimeValue } from "./DateTimeValue";
 import { HvQueryBuilderRendererProps } from "../../types";
+import { EmptyValue } from "./EmptyValue";
 
 export interface ValueProps {
   id: React.Key;
@@ -44,6 +45,11 @@ export const Value = ({
         />
       );
     }
+  }
+
+  // Built-in behavior for "Empty" and "IsNotEmpty" operators
+  if (operator === "Empty" || operator === "IsNotEmpty") {
+    return <EmptyValue id={id} />;
   }
 
   // Built-in attributes
