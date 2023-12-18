@@ -5,7 +5,7 @@ import { HvListContainer, HvListItem } from "@core/components/ListContainer";
 import { HvOverflowTooltip } from "@core/components/OverflowTooltip";
 
 import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { NavigationData } from "../VerticalNavigationContext";
 

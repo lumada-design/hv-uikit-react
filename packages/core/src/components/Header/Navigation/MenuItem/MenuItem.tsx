@@ -5,7 +5,7 @@ import { HvBaseProps } from "@core/types/generic";
 import { isKey } from "@core/utils/keyboardUtils";
 import { ExtractNames } from "@core/utils/classes";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { FocusContext } from "../utils/FocusContext";
 import { SelectionContext } from "../utils/SelectionContext";

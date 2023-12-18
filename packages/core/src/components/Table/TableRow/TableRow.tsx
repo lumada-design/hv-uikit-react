@@ -2,7 +2,7 @@ import { forwardRef, useContext } from "react";
 
 import { ExtractNames } from "@core/utils/classes";
 import { HvBaseProps } from "@core/types/generic";
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";

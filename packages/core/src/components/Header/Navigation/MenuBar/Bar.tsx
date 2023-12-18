@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { HvBaseProps } from "@core/types/generic";
 import { ExtractNames } from "@core/utils/classes";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { SelectionContext } from "../utils/SelectionContext";
 import { staticClasses, useClasses } from "./Bar.styles";

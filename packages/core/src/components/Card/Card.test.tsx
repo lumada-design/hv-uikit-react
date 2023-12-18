@@ -2,8 +2,6 @@ import { render, screen } from "@testing-library/react";
 
 import { describe, expect, it } from "vitest";
 
-import { HvTypography } from "@core/components";
-
 import { HvCard, HvCardContent, HvCardHeader, HvCardMedia } from ".";
 
 describe("Card", () => {
@@ -31,7 +29,7 @@ describe("Card", () => {
     render(
       <HvCard>
         <HvCardContent>
-          <HvTypography variant="label">mockCardContent</HvTypography>
+          <div>mockCardContent</div>
         </HvCardContent>
       </HvCard>
     );
@@ -45,7 +43,7 @@ describe("Card", () => {
         <HvCardHeader title="mockTitle" subheader="mockSubtitle" />
         <HvCardMedia component="img" alt="mockImg" image={mockImg} />
         <HvCardContent>
-          <HvTypography variant="label">mockCardContent</HvTypography>
+          <div>mockCardContent</div>
         </HvCardContent>
       </HvCard>
     );

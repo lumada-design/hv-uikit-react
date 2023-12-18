@@ -6,7 +6,7 @@ import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { useTheme } from "@core/hooks/useTheme";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./VerticalScrollListItem.styles";
 

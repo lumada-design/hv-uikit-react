@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import { TopXS } from "@hitachivantara/uikit-react-icons";
 
-import { HvKpi } from "@core/components";
+import { HvKpi } from ".";
 
 describe("Kpi", () => {
   it("should render all components", () => {

@@ -2,7 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
-import { HvDropDownMenu, HvListValue } from "@core/components";
+import { HvListValue } from "../List";
+import { HvDropDownMenu } from ".";
 
 const dataList: HvListValue[] = [
   { id: "item1", label: "item1" },

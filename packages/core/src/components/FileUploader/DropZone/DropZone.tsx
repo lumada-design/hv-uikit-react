@@ -12,7 +12,7 @@ import { useUniqueId } from "@core/hooks/useUniqueId";
 import { HvTypography } from "@core/components/Typography";
 import { HvInfoMessage, HvLabel } from "@core/components/Forms";
 import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { convertUnits } from "../utils";
 import { HvFileData, HvFilesAddedEvent } from "../File";

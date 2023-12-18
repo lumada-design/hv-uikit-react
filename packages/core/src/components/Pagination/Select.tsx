@@ -11,7 +11,7 @@ import {
 import { HvPanel } from "@core/components/Panel";
 import { HvListItem, HvListItemProps } from "@core/components/ListContainer";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { useClasses } from "./Select.styles";
 

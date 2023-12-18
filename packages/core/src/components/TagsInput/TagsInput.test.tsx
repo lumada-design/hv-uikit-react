@@ -1,9 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 
-import { HvTagsInput } from "@core/components";
-
 import { ControlledTagArray } from "./TagsInput.stories";
+import { HvTagsInput } from ".";
 
 describe("TagsInput examples", () => {
   describe("<ControlledTagArray />", () => {

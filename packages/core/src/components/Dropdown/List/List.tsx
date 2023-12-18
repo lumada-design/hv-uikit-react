@@ -12,7 +12,7 @@ import { HvActionBar } from "@core/components/ActionBar";
 import BaseDropdownContext from "@core/components/BaseDropdown/BaseDropdownContext";
 import { ExtractNames } from "@core/utils/classes";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./List.styles";
 import { getSelected } from "../utils";

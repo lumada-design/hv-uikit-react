@@ -14,7 +14,7 @@ import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import {
   HvFilterGroupLabels,

@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-import { HvTheme } from "../types";
+import { HvTheme } from "../types/theme";
 
 export interface HvThemeContextValue {
   themes: string[];

@@ -2,8 +2,7 @@ import { fireEvent, render } from "@testing-library/react";
 
 import { describe, expect, it } from "vitest";
 
-import { HvListItem } from "@core/components";
-
+import { HvListItem } from "../ListContainer";
 import { HvSelectionList } from "./SelectionList";
 
 const Main = () => (

@@ -13,7 +13,7 @@ import { isKey } from "@core/utils/keyboardUtils";
 import { setId } from "@core/utils/setId";
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { HvInput, HvInputProps } from "@core/components/Input";
 
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";

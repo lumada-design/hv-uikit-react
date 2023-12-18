@@ -7,7 +7,7 @@ import * as color from "react-color/lib/helpers/color";
 import { HvInput } from "@core/components/Input";
 import { ExtractNames } from "@core/utils/classes";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./Fields.styles";
 

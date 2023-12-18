@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
 
-import { HvButton } from "@core/components";
+import { HvButton } from "@core/components/Button";
 
 import { HvHeader } from "./Header";
 import { HvHeaderNavigation } from "./Navigation";
