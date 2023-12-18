@@ -11,20 +11,15 @@ import Slider, { SliderProps, SliderRef } from "rc-slider";
 
 import Tooltip from "rc-tooltip";
 
-import { HvBaseProps } from "@core/types/generic";
-import { setId } from "@core/utils/setId";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import validationStates from "@core/Forms/FormElement/validationStates";
-import { HvInputProps } from "@core/Input";
-import {
-  HvFormElement,
-  HvFormStatus,
-  HvLabel,
-  HvWarningText,
-} from "@core/Forms";
-import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { setId } from "../utils/setId";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import validationStates from "../Forms/FormElement/validationStates";
+import { HvInputProps } from "../Input";
+import { HvFormElement, HvFormStatus, HvLabel, HvWarningText } from "../Forms";
+import { ExtractNames } from "../utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { sliderStyles, staticClasses, useClasses } from "./Slider.styles";
 import {

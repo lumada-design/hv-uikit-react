@@ -10,11 +10,11 @@ import isBoolean from "lodash/isBoolean";
 
 import { HvBreakpoints } from "@hitachivantara/uikit-styles";
 
-import { useWidth } from "@core/hooks/useWidth";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { HvFocus } from "@core/Focus";
-import { ExtractNames } from "@core/utils/classes";
+import { useWidth } from "../hooks/useWidth";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { HvFocus } from "../Focus";
+import { ExtractNames } from "../utils/classes";
 
 import { useClasses, staticClasses } from "./Stack.styles";
 

@@ -2,20 +2,20 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 
 import { Edit } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
-import { HvBaseProps } from "@core/types/generic";
-import { useControlled } from "@core/hooks/useControlled";
-import { useTheme } from "@core/hooks/useTheme";
-import { ExtractNames } from "@core/utils/classes";
-import { isKey } from "@core/utils/keyboardUtils";
-import { HvButtonProps, HvButton } from "@core/Button";
+import { HvBaseProps } from "../types/generic";
+import { useControlled } from "../hooks/useControlled";
+import { useTheme } from "../hooks/useTheme";
+import { ExtractNames } from "../utils/classes";
+import { isKey } from "../utils/keyboardUtils";
+import { HvButtonProps, HvButton } from "../Button";
 import {
   HvTypographyVariants,
   HvTypographyProps,
   HvTypography,
-} from "@core/Typography";
-import { HvInput, HvInputProps } from "@core/Input";
+} from "../Typography";
+import { HvInput, HvInputProps } from "../Input";
 
 import { staticClasses, useClasses } from "./InlineEditor.styles";
 

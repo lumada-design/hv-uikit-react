@@ -7,10 +7,10 @@ import {
 
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { HvTypography } from "@core/Typography";
-import { HvButton } from "@core/Button";
+import { HvTypography } from "../../Typography";
+import { HvButton } from "../../Button";
 
-import { useLabels } from "@core/hooks/useLabels";
+import { useLabels } from "../../hooks/useLabels";
 
 // #region ##### TYPES #####
 

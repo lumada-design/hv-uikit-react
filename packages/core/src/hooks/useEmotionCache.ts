@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { EmotionContext } from "@core/providers/ThemeProvider";
+import { EmotionContext } from "../providers/ThemeProvider";
 
 export function useEmotionCache() {
   return useContext(EmotionContext).cache;

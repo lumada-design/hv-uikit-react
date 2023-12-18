@@ -1,9 +1,9 @@
 import React, { forwardRef, useCallback, useContext, useMemo } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { ExtractNames } from "@core/utils/classes";
-import { HvFocus } from "@core/Focus";
+import { HvBaseProps } from "../../types/generic";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { ExtractNames } from "../../utils/classes";
+import { HvFocus } from "../../Focus";
 
 import HvListContext from "../ListContext";
 import { staticClasses, useClasses } from "./ListItem.styles";

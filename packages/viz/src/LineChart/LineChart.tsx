@@ -26,7 +26,7 @@ import {
   useTooltip,
   HvChartTooltipClasses,
   useOption,
-} from "@viz/hooks";
+} from "../hooks";
 
 import { HvChartEmptyCellMode, HvLineChartMeasures } from "../types";
 import { HvBaseChart } from "../BaseChart";

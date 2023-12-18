@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { HvChartCommonProps, HvEChartsOption } from "@viz/types/common";
+import { HvChartCommonProps, HvEChartsOption } from "../types/common";
 
 interface HvOptionHookProps {
   option: HvEChartsOption;

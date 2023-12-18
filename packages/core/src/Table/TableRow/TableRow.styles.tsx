@@ -1,6 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../../utils/classes";
 
 import { getBorderStyles } from "../utils/utils";
 

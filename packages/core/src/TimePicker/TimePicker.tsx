@@ -18,13 +18,13 @@ import {
   HvWarningText,
   HvInfoMessage,
   HvFormElementProps,
-} from "@core/Forms";
-import { HvBaseDropdown, HvBaseDropdownProps } from "@core/BaseDropdown";
-import { useControlled } from "@core/hooks/useControlled";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { ExtractNames } from "@core/utils/classes";
-import { setId } from "@core/utils/setId";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+} from "../Forms";
+import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
+import { useControlled } from "../hooks/useControlled";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { Unit } from "./Unit";
 import { Placeholder } from "./Placeholder";

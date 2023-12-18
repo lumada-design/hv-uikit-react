@@ -1,9 +1,9 @@
 import { ElementType, forwardRef } from "react";
 
-import { PolymorphicComponentRef, PolymorphicRef } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
-import { useTheme } from "@core/hooks/useTheme";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { PolymorphicComponentRef, PolymorphicRef } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { useTheme } from "../hooks/useTheme";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import {
   HvTypographyLegacyVariants,

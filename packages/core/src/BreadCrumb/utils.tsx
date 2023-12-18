@@ -2,8 +2,8 @@ import { MouseEvent } from "react";
 
 import { MoreOptionsHorizontal } from "@hitachivantara/uikit-react-icons";
 
-import { HvDropDownMenu, HvDropDownMenuProps } from "@core/DropDownMenu";
-import { setId } from "@core/utils/setId";
+import { HvDropDownMenu, HvDropDownMenuProps } from "../DropDownMenu";
+import { setId } from "../utils/setId";
 
 export const removeExtension = (label: string) =>
   label.includes(".") ? label.substring(0, label.lastIndexOf(".")) : label;

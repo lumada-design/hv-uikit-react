@@ -7,21 +7,21 @@ import {
   useRef,
 } from "react";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import { setId } from "@core/utils/setId";
-import { multiSelectionEventHandler } from "@core/utils/multiSelectionEventHandler";
-import { HvCheckBox } from "@core/CheckBox";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import { setId } from "../utils/setId";
+import { multiSelectionEventHandler } from "../utils/multiSelectionEventHandler";
+import { HvCheckBox } from "../CheckBox";
 import {
   HvFormElement,
   HvFormStatus,
   HvInfoMessage,
   HvLabel,
   HvWarningText,
-} from "@core/Forms";
-import { ExtractNames } from "@core/utils/classes";
+} from "../Forms";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./CheckBoxGroup.styles";
 

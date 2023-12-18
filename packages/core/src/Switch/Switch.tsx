@@ -2,20 +2,20 @@ import React, { forwardRef, useCallback } from "react";
 
 import { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import { setId } from "@core/utils/setId";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import { setId } from "../utils/setId";
 import {
   HvWarningText,
   HvLabelProps,
   HvFormStatus,
   HvFormElement,
   HvLabel,
-} from "@core/Forms";
-import { HvBaseSwitch } from "@core/BaseSwitch";
-import { isInvalid } from "@core/Forms/FormElement/validationStates";
-import { ExtractNames } from "@core/utils/classes";
+} from "../Forms";
+import { HvBaseSwitch } from "../BaseSwitch";
+import { isInvalid } from "../Forms/FormElement/validationStates";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Switch.styles";
 

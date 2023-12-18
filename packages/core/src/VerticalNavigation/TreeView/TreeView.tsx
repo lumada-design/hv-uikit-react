@@ -1,10 +1,10 @@
 import { forwardRef, useCallback, useMemo, useRef, useState } from "react";
 
-import { useControlled } from "@core/hooks/useControlled";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useForkRef } from "@core/hooks/useForkRef";
+import { useControlled } from "../../hooks/useControlled";
+import { useUniqueId } from "../../hooks/useUniqueId";
+import { useForkRef } from "../../hooks/useForkRef";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../../utils/classes";
 
 import {
   NavigationMode,

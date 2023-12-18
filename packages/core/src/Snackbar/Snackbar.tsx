@@ -8,9 +8,9 @@ import MuiSnackbar, {
 
 import capitalize from "lodash/capitalize";
 
-import { ExtractNames } from "@core/utils/classes";
-import { setId } from "@core/utils/setId";
-import { HvActionGeneric } from "@core/ActionsGeneric";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
+import { HvActionGeneric } from "../ActionsGeneric";
 
 import { HvSnackbarContentProps, HvSnackbarContent } from "./SnackbarContent";
 import { staticClasses, useClasses } from "./Snackbar.styles";

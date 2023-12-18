@@ -2,7 +2,7 @@ import { CSSObject } from "@emotion/serialize";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../utils/classes";
 
 import { Spacing, Breakpoint } from "./types";
 

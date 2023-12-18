@@ -1,7 +1,7 @@
 import Tabs, { TabsProps as MuiTabsProps } from "@mui/material/Tabs";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Tabs.styles";
 

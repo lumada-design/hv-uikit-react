@@ -21,16 +21,16 @@ import {
   Success,
 } from "@hitachivantara/uikit-react-icons";
 
-import { ExtractNames } from "@core/utils/classes";
-import { isBrowser } from "@core/utils/browser";
-import { isKey } from "@core/utils/keyboardUtils";
-import { setId } from "@core/utils/setId";
+import { ExtractNames } from "../utils/classes";
+import { isBrowser } from "../utils/browser";
+import { isKey } from "../utils/keyboardUtils";
+import { setId } from "../utils/setId";
 import {
   HvInputLabels,
   HvInputSuggestion,
   HvValidationMessages,
-} from "@core/types/forms";
-import { HvBaseProps, HvExtraProps } from "@core/types/generic";
+} from "../types/forms";
+import { HvBaseProps, HvExtraProps } from "../types/generic";
 import {
   HvAdornment,
   HvAdornmentProps,
@@ -45,9 +45,9 @@ import {
   HvWarningText,
   isValid,
   isInvalid,
-} from "@core/Forms";
-import validationStates from "@core/Forms/FormElement/validationStates";
-import { HvBaseInput, HvBaseInputProps } from "@core/BaseInput";
+} from "../Forms";
+import validationStates from "../Forms/FormElement/validationStates";
+import { HvBaseInput, HvBaseInputProps } from "../BaseInput";
 import {
   DEFAULT_ERROR_MESSAGES,
   computeValidationType,
@@ -56,15 +56,15 @@ import {
   computeValidationState,
   computeValidationMessage,
   HvInputValidity,
-} from "@core/BaseInput/validations";
-import { HvTypography } from "@core/Typography";
-import { HvTooltip } from "@core/Tooltip";
-import { useControlled } from "@core/hooks/useControlled";
-import { useIsMounted } from "@core/hooks/useIsMounted";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useLabels } from "@core/hooks/useLabels";
+} from "../BaseInput/validations";
+import { HvTypography } from "../Typography";
+import { HvTooltip } from "../Tooltip";
+import { useControlled } from "../hooks/useControlled";
+import { useIsMounted } from "../hooks/useIsMounted";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useLabels } from "../hooks/useLabels";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./Input.styles";
 

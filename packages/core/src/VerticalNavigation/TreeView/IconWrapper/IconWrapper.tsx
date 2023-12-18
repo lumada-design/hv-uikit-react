@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Forwards } from "@hitachivantara/uikit-react-icons";
 
-import { HvAvatar } from "@core/Avatar";
+import { HvAvatar } from "../../../Avatar";
 
 import { VerticalNavigationContext } from "../../VerticalNavigationContext";
 import { TooltipWrapper } from "../TooltipWrapper";

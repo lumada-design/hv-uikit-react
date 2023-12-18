@@ -1,8 +1,8 @@
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 
-import { HvBaseProps } from "@core/types/generic";
+import { HvBaseProps } from "../../types/generic";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../../utils/classes";
 
 import { HvVerticalNavigation } from "../VerticalNavigation";
 

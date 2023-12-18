@@ -1,6 +1,6 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
 
 import { useClasses, staticClasses } from "./Header.styles";
 

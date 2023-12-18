@@ -1,6 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../utils/classes";
 
 export const { useClasses, staticClasses } = createClasses("HvBanner", {
   /** Styles applied to the component root class when the component is closed. */

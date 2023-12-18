@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { HvEChartsOption } from "@viz/types/common";
+import { HvEChartsOption } from "../types/common";
 
 interface HvDataZoomHookProps {
   showHorizontal?: boolean;

@@ -2,9 +2,9 @@ import { ReactNode, Ref, forwardRef } from "react";
 import { useSlotProps } from "@mui/base/utils";
 import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
 
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import {
   DEFAULT_TREE_VIEW_PLUGINS,

@@ -10,8 +10,8 @@ import {
   Checkbox as CheckboxIcon,
 } from "@hitachivantara/uikit-react-icons";
 
-import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "../utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./BaseCheckBox.styles";
 

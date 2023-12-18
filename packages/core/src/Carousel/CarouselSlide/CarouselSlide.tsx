@@ -1,6 +1,6 @@
 import { ImgHTMLAttributes } from "react";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../../utils/classes";
 
 import { useClasses } from "./CarouselSlide.styles";
 

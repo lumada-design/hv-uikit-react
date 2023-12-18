@@ -10,9 +10,9 @@ import {
 
 import isEqual from "lodash/isEqual";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
-import { useSavedState } from "@core/utils/useSavedState";
+import { useSavedState } from "../utils/useSavedState";
 
 import { HvFilterGroupFilters, HvFilterGroupValue } from "./types";
 

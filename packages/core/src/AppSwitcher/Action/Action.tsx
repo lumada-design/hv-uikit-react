@@ -3,14 +3,14 @@ import { useCallback, useState } from "react";
 import { theme, getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
-import { HvAvatar } from "@core/Avatar";
-import { HvListItem } from "@core/ListContainer";
-import { HvTypography } from "@core/Typography";
-import { HvTooltip } from "@core/Tooltip";
-import { HvOverflowTooltip } from "@core/OverflowTooltip";
-import { HvBaseProps } from "@core/types/generic";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { ExtractNames } from "@core/utils/classes";
+import { HvAvatar } from "../../Avatar";
+import { HvListItem } from "../../ListContainer";
+import { HvTypography } from "../../Typography";
+import { HvTooltip } from "../../Tooltip";
+import { HvOverflowTooltip } from "../../OverflowTooltip";
+import { HvBaseProps } from "../../types/generic";
+import { useUniqueId } from "../../hooks/useUniqueId";
+import { ExtractNames } from "../../utils/classes";
 
 import { useClasses, staticClasses } from "./Action.styles";
 

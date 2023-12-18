@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import userEvent from "@testing-library/user-event";
 
-import { HvProvider } from "@core/providers/Provider";
+import { HvProvider } from "../../providers/Provider";
 
 import { HvScrollToVertical } from "./ScrollToVertical";
 

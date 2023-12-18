@@ -4,7 +4,7 @@ import isEmpty from "lodash/isEmpty";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { HvInput } from "@core/Input";
+import { HvInput } from "../../../../Input";
 
 import { useQueryBuilderContext } from "../../../Context";
 import { useClasses } from "./Numeric.styles";

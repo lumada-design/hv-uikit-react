@@ -4,8 +4,6 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["app/src/*"],
-      "@core/*": ["packages/core/src/*"],
-      "@viz/*": ["packages/viz/src/*"],
       "@hitachivantara/uikit-react-code-editor": ["packages/code-editor/src"],
       "@hitachivantara/uikit-react-core": ["packages/core/src"],
       "@hitachivantara/uikit-react-icons": ["packages/icons/src"],

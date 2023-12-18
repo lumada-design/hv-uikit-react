@@ -2,9 +2,9 @@ import { useMemo, useCallback } from "react";
 
 import { useTheme } from "@hitachivantara/uikit-react-core";
 
-import { getAxisType } from "@viz/utils";
-import { HvChartAxisType } from "@viz/types";
-import { HvChartYAxis, HvEChartsOption } from "@viz/types/common";
+import { getAxisType } from "../utils";
+import { HvChartAxisType } from "../types";
+import { HvChartYAxis, HvEChartsOption } from "../types/common";
 
 interface YAxis extends HvChartYAxis {
   data?: string[];

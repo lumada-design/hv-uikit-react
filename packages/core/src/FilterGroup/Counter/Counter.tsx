@@ -1,8 +1,8 @@
 import { useContext } from "react";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../../utils/classes";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { staticClasses, useClasses } from "./Counter.styles";

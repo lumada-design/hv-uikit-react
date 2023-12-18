@@ -3,10 +3,10 @@ import { Delete } from "@hitachivantara/uikit-react-icons";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { HvGrid } from "@core/Grid";
-import { IconButton } from "@core/utils/IconButton";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { ExtractNames } from "@core/utils/classes";
+import { HvGrid } from "../../Grid";
+import { IconButton } from "../../utils/IconButton";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { ExtractNames } from "../../utils/classes";
 
 import { useQueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";

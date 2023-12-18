@@ -2,9 +2,9 @@ import { CSSProperties } from "react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { inputClasses } from "@core/Input";
-import { createClasses } from "@core/utils/classes";
-import { baseDropdownClasses } from "@core/BaseDropdown";
+import { inputClasses } from "../Input";
+import { createClasses } from "../utils/classes";
+import { baseDropdownClasses } from "../BaseDropdown";
 
 const hoverColor = theme.colors.atmo3;
 

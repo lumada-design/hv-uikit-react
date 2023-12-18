@@ -1,10 +1,10 @@
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvTypography } from "@core/Typography";
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvTypography } from "../Typography";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Footer.styles";
 

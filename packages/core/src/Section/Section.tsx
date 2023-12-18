@@ -1,13 +1,13 @@
 import { forwardRef } from "react";
 import { Down, Up } from "@hitachivantara/uikit-react-icons";
 
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
-import { HvButton, HvButtonProps } from "@core/Button";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { useControlled } from "@core/hooks/useControlled";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { setId } from "@core/utils/setId";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { HvButton, HvButtonProps } from "../Button";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useControlled } from "../hooks/useControlled";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { setId } from "../utils/setId";
 
 import { staticClasses, useClasses } from "./Section.styles";
 

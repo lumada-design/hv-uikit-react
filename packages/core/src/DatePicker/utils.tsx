@@ -1,10 +1,10 @@
-import { DateRangeProp } from "@core/Calendar";
+import { DateRangeProp } from "../Calendar";
 import {
   getFormattedDate,
   getMonthName,
   isDate,
   isSameMonth,
-} from "@core/Calendar/utils";
+} from "../Calendar/utils";
 
 export const validateDate = (date: any) => (isDate(date) && date) || new Date();
 

@@ -12,9 +12,9 @@ import {
 import Collapse from "@mui/material/Collapse";
 import { TransitionProps } from "@mui/material/transitions";
 
-import { ExtractNames } from "@core/utils/classes";
-import { useForkRef } from "@core/hooks/useForkRef";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "../../utils/classes";
+import { useForkRef } from "../../hooks/useForkRef";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { useTreeViewContext } from "../internals/TreeViewProvider";
 import { DefaultTreeViewPlugins } from "../internals/hooks/plugins";

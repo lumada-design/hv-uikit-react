@@ -1,10 +1,10 @@
 import { MouseEventHandler, useCallback, useContext } from "react";
 
-import { isKey } from "@core/utils/keyboardUtils";
-import { setId } from "@core/utils/setId";
+import { isKey } from "../../utils/keyboardUtils";
+import { setId } from "../../utils/setId";
 
-import { ExtractNames } from "@core/utils/classes";
-import { HvTypography } from "@core/Typography";
+import { ExtractNames } from "../../utils/classes";
+import { HvTypography } from "../../Typography";
 
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { staticClasses, useClasses } from "./Action.styles";

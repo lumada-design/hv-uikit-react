@@ -2,11 +2,11 @@ import { useEffect } from "react";
 
 import { Preview } from "@hitachivantara/uikit-react-icons";
 
-import { HvButton, HvButtonProps } from "@core/Button";
+import { HvButton, HvButtonProps } from "../../Button";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../../utils/classes";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./Preview.styles";
 

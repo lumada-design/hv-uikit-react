@@ -1,11 +1,11 @@
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 
-import { HvButton } from "@core/Button";
-import { HvListContainer, HvListItem } from "@core/ListContainer";
-import { HvOverflowTooltip } from "@core/OverflowTooltip";
+import { HvButton } from "../../Button";
+import { HvListContainer, HvListItem } from "../../ListContainer";
+import { HvOverflowTooltip } from "../../OverflowTooltip";
 
-import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "../../utils/classes";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { NavigationData } from "../VerticalNavigationContext";
 

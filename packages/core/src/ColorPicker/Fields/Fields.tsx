@@ -4,10 +4,10 @@ import { HSLColor, HSVColor, RGBColor } from "react-color";
 
 import * as color from "react-color/lib/helpers/color";
 
-import { HvInput } from "@core/Input";
-import { ExtractNames } from "@core/utils/classes";
+import { HvInput } from "../../Input";
+import { ExtractNames } from "../../utils/classes";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./Fields.styles";
 

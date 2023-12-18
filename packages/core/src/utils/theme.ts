@@ -7,7 +7,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
-import { HvTheme, HvCreateThemeProps } from "@core/types/theme";
+import { HvTheme, HvCreateThemeProps } from "../types/theme";
 
 import { getElementById } from "./document";
 

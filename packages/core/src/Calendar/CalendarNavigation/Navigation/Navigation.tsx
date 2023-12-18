@@ -3,11 +3,11 @@ import {
   DropRightXS as DropRightIcon,
 } from "@hitachivantara/uikit-react-icons";
 
-import { setId } from "@core/utils/setId";
-import { HvButton } from "@core/Button";
-import { HvBaseProps } from "@core/types/generic";
+import { setId } from "../../../utils/setId";
+import { HvButton } from "../../../Button";
+import { HvBaseProps } from "../../../types/generic";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../../../utils/classes";
 
 import { staticClasses, useClasses } from "./Navigation.styles";
 

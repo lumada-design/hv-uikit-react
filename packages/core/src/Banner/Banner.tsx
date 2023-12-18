@@ -7,10 +7,10 @@ import Snackbar, {
   SnackbarOrigin,
 } from "@mui/material/Snackbar";
 
-import { HvActionGeneric } from "@core/ActionsGeneric";
-import { ExtractNames } from "@core/utils/classes";
-import { setId } from "@core/utils/setId";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { HvActionGeneric } from "../ActionsGeneric";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { useClasses, staticClasses } from "./Banner.styles";
 import {

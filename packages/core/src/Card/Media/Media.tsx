@@ -3,8 +3,8 @@ import MuiCardMedia, {
   CardMediaProps as MuiCardMediaProps,
 } from "@mui/material/CardMedia";
 
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../../types/generic";
+import { ExtractNames } from "../../utils/classes";
 
 import { staticClasses, useClasses } from "./Media.styles";
 

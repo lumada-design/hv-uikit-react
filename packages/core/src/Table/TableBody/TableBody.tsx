@@ -6,10 +6,10 @@ import React, {
   useRef,
 } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
-import { useForkRef } from "@core/hooks/useForkRef";
-import { HvFocus } from "@core/Focus";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../../types/generic";
+import { useForkRef } from "../../hooks/useForkRef";
+import { HvFocus } from "../../Focus";
+import { ExtractNames } from "../../utils/classes";
 
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";

@@ -1,13 +1,13 @@
 import { Children, MouseEvent } from "react";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps, HvExtraProps } from "@core/types/generic";
-import { HvButton } from "@core/Button";
-import { HvMultiButton } from "@core/MultiButton";
-import { setId } from "@core/utils/setId";
-import { useControlled } from "@core/hooks/useControlled";
-import { HvTableInstance } from "@core/Table/hooks/useTable";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps, HvExtraProps } from "../types/generic";
+import { HvButton } from "../Button";
+import { HvMultiButton } from "../MultiButton";
+import { setId } from "../utils/setId";
+import { useControlled } from "../hooks/useControlled";
+import { HvTableInstance } from "../Table/hooks/useTable";
+import { ExtractNames } from "../utils/classes";
 
 import { HvControlsContextProvider } from "./context/ControlsContext";
 import { staticClasses, useClasses } from "./Controls.styles";

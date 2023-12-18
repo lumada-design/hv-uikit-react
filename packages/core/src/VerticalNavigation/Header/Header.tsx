@@ -1,9 +1,9 @@
 import { MouseEventHandler, useContext, useMemo } from "react";
 import { Backwards, Forwards, Menu } from "@hitachivantara/uikit-react-icons";
 
-import { ExtractNames } from "@core/utils/classes";
-import { HvTypography } from "@core/Typography";
-import { HvButton, HvButtonProps } from "@core/Button";
+import { ExtractNames } from "../../utils/classes";
+import { HvTypography } from "../../Typography";
+import { HvButton, HvButtonProps } from "../../Button";
 
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { staticClasses, useClasses } from "./Header.styles";

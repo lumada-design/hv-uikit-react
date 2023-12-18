@@ -2,10 +2,10 @@ import { HvColorAny, getColor } from "@hitachivantara/uikit-styles";
 
 import range from "lodash/range";
 
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvTypography } from "@core/Typography";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvTypography } from "../Typography";
 
 import { staticClasses, useClasses } from "./Loading.styles";
 

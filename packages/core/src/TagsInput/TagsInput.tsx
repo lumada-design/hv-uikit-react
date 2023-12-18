@@ -12,20 +12,20 @@ import { useForkRef } from "@mui/material/utils";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvListContainer, HvListItem } from "@core/ListContainer";
-import { baseInputClasses } from "@core/BaseInput";
-import { HvInput } from "@core/Input";
-import { HvTagSuggestion, HvValidationMessages } from "@core/types/forms";
-import { HvBaseProps } from "@core/types/generic";
-import { useControlled } from "@core/hooks/useControlled";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useIsMounted } from "@core/hooks/useIsMounted";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { isKey } from "@core/utils/keyboardUtils";
-import { setId } from "@core/utils/setId";
-import validationStates from "@core/Forms/FormElement/validationStates";
-import { DEFAULT_ERROR_MESSAGES } from "@core/BaseInput/validations";
-import { HvTag, HvTagProps } from "@core/Tag";
+import { HvListContainer, HvListItem } from "../ListContainer";
+import { baseInputClasses } from "../BaseInput";
+import { HvInput } from "../Input";
+import { HvTagSuggestion, HvValidationMessages } from "../types/forms";
+import { HvBaseProps } from "../types/generic";
+import { useControlled } from "../hooks/useControlled";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useIsMounted } from "../hooks/useIsMounted";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { isKey } from "../utils/keyboardUtils";
+import { setId } from "../utils/setId";
+import validationStates from "../Forms/FormElement/validationStates";
+import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
+import { HvTag, HvTagProps } from "../Tag";
 import {
   HvCharCounter,
   HvCharCounterProps,
@@ -35,8 +35,8 @@ import {
   HvLabel,
   HvSuggestions,
   HvWarningText,
-} from "@core/Forms";
-import { ExtractNames } from "@core/utils/classes";
+} from "../Forms";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./TagsInput.styles";
 

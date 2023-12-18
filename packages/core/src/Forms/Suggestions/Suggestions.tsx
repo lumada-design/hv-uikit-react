@@ -9,15 +9,15 @@ import React, {
 import MuiPopper from "@mui/material/Popper";
 import { useForkRef } from "@mui/material/utils";
 
-import { HvBaseProps } from "@core/types/generic";
-import { setId } from "@core/utils/setId";
-import { HvListItem } from "@core/ListContainer";
+import { HvBaseProps } from "../../types/generic";
+import { setId } from "../../utils/setId";
+import { HvListItem } from "../../ListContainer";
 import {
   HvClickOutsideEvent,
   useClickOutside,
-} from "@core/hooks/useClickOutside";
-import { ExtractNames } from "@core/utils/classes";
-import { HvSelectionList } from "@core/SelectionList";
+} from "../../hooks/useClickOutside";
+import { ExtractNames } from "../../utils/classes";
+import { HvSelectionList } from "../../SelectionList";
 
 import { staticClasses, useClasses } from "./Suggestions.styles";
 import { HvFormElementContext } from "../FormElement";

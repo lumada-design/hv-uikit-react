@@ -1,4 +1,4 @@
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvTreeView", {
   /** Applied to the root element */

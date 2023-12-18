@@ -11,9 +11,9 @@ import {
   makePropGetter,
 } from "react-table";
 
-import { useLabels } from "@core/hooks/useLabels";
+import { useLabels } from "../../hooks/useLabels";
 
-import { HvCheckBox } from "@core/CheckBox";
+import { HvCheckBox } from "../../CheckBox";
 
 // #region ##### TYPES #####
 

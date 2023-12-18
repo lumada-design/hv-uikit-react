@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
-import { setId } from "@core/utils/setId";
-import { HvDropdown, HvDropdownProps } from "@core/Dropdown";
-import { HvListValue } from "@core/List";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../../types/generic";
+import { setId } from "../../utils/setId";
+import { HvDropdown, HvDropdownProps } from "../../Dropdown";
+import { HvListValue } from "../../List";
+import { ExtractNames } from "../../utils/classes";
 
 import { useClasses, staticClasses } from "./RightControl.styles";
 import { HvControlsContext } from "../context/ControlsContext";

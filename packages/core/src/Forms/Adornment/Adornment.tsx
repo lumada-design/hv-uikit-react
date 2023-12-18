@@ -1,7 +1,7 @@
 import { useContext, forwardRef, MouseEventHandler, ForwardedRef } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../../types/generic";
+import { ExtractNames } from "../../utils/classes";
 
 import { staticClasses, useClasses } from "./Adornment.styles";
 import {

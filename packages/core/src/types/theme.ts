@@ -6,7 +6,7 @@ import {
 
 import type { HvTheme } from "@hitachivantara/uikit-react-shared";
 
-import { HvExtraDeepPartialProps } from "@core/types/generic";
+import { HvExtraDeepPartialProps } from "./generic";
 
 export type { HvTheme };
 

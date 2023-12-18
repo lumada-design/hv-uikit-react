@@ -1,8 +1,8 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "@core/utils/focusUtils";
+import { outlineStyles } from "../../utils/focusUtils";
 
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../../utils/classes";
 
 const hover = {
   backgroundColor: theme.colors.containerBackgroundHover,

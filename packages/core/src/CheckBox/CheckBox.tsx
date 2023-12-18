@@ -1,10 +1,10 @@
 import { forwardRef, useCallback, useState } from "react";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { useUniqueId } from "@core/hooks/useUniqueId";
-import { useControlled } from "@core/hooks/useControlled";
-import { setId } from "@core/utils/setId";
-import { HvBaseCheckBox, HvBaseCheckBoxProps } from "@core/BaseCheckBox";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { useControlled } from "../hooks/useControlled";
+import { setId } from "../utils/setId";
+import { HvBaseCheckBox, HvBaseCheckBoxProps } from "../BaseCheckBox";
 import {
   HvLabelProps,
   HvFormStatus,
@@ -12,8 +12,8 @@ import {
   isInvalid,
   HvFormElement,
   HvLabel,
-} from "@core/Forms";
-import { ExtractNames } from "@core/utils/classes";
+} from "../Forms";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./CheckBox.styles";
 

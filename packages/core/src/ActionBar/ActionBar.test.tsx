@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 
-import { HvButton } from "@core/Button";
+import { HvButton } from "../Button";
 
 import { HvActionBar } from "./ActionBar";
 

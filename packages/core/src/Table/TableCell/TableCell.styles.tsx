@@ -2,7 +2,7 @@ import { CSSProperties } from "react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "@core/utils/classes";
+import { createClasses } from "../../utils/classes";
 
 const sortedColor = theme.alpha("primary", 0.1);
 

@@ -1,5 +1,5 @@
-import { HvTooltip, HvTooltipPlacementType } from "@core/Tooltip";
-import { HvTypography } from "@core/Typography";
+import { HvTooltip, HvTooltipPlacementType } from "../../../Tooltip";
+import { HvTypography } from "../../../Typography";
 
 interface TooltipWrapperProps {
   showTooltip: boolean;

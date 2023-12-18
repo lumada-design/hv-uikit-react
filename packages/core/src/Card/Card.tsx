@@ -1,11 +1,11 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
-import { HvBox } from "@core/Box";
-import { ExtractNames } from "@core/utils/classes";
-import { HvBaseProps } from "@core/types/generic";
-import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "@core/types/tokens";
+import { HvBox } from "../Box";
+import { ExtractNames } from "../utils/classes";
+import { HvBaseProps } from "../types/generic";
+import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "../types/tokens";
 
 import { staticClasses, useClasses } from "./Card.styles";
 

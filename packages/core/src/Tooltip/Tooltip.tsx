@@ -4,10 +4,10 @@ import Tooltip, {
 } from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
 
-import { useTheme } from "@core/hooks/useTheme";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { getElementById } from "@core/utils/document";
-import { ExtractNames } from "@core/utils/classes";
+import { useTheme } from "../hooks/useTheme";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { getElementById } from "../utils/document";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Tooltip.styles";
 

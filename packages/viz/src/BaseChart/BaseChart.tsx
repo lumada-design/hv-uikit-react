@@ -7,8 +7,8 @@ import { CanvasRenderer } from "echarts/renderers";
 import * as echarts from "echarts/core";
 import ReactECharts from "echarts-for-react/lib/core";
 
-import { useVizTheme } from "@viz/hooks";
-import { HvEChartsOption } from "@viz/types/common";
+import { useVizTheme } from "../hooks";
+import { HvEChartsOption } from "../types/common";
 
 // Register chart components
 echarts.use([CanvasRenderer, AriaComponent]);

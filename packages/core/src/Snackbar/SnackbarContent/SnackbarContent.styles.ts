@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "@core/utils/classes";
-import { actionsGenericClasses } from "@core/ActionsGeneric";
+import { createClasses } from "../../utils/classes";
+import { actionsGenericClasses } from "../../ActionsGeneric";
 
 export const { useClasses, staticClasses } = createClasses(
   "HvSnackbar-Content",

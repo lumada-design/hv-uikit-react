@@ -2,7 +2,7 @@ import { HTMLInputTypeAttribute } from "react";
 
 import { InputBaseComponentProps } from "@mui/material/InputBase";
 
-import validationStates from "@core/Forms/FormElement/validationStates";
+import validationStates from "../Forms/FormElement/validationStates";
 
 /** Checks if the value is a number. */
 const isNumeric = (num: string) =>

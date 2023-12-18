@@ -1,7 +1,7 @@
 import { memo, useState } from "react";
 
-import { HvFormStatus } from "@core/Forms";
-import { HvInput } from "@core/Input";
+import { HvFormStatus } from "../../../../Forms";
+import { HvInput } from "../../../../Input";
 
 import { useQueryBuilderContext } from "../../../Context";
 import { useClasses } from "./TextValue.styles";

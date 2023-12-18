@@ -1,8 +1,8 @@
 import { MouseEvent } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../../types/generic";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { ExtractNames } from "../../utils/classes";
 
 import { HvHeaderMenuBar, HvHeaderMenuBarProps } from "./MenuBar";
 import { staticClasses, useClasses } from "./Navigation.styles";

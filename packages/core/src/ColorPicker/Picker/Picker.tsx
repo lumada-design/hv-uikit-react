@@ -9,11 +9,11 @@ import {
   RGBColor,
 } from "react-color";
 
-import { HvTypography } from "@core/Typography";
-import { useTheme } from "@core/hooks/useTheme";
-import { ExtractNames } from "@core/utils/classes";
+import { HvTypography } from "../../Typography";
+import { useTheme } from "../../hooks/useTheme";
+import { ExtractNames } from "../../utils/classes";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./Picker.styles";
 import { Fields } from "../Fields";

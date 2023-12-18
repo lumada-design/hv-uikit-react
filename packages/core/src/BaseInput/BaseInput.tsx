@@ -10,14 +10,14 @@ import { css as emotionCss, Global } from "@emotion/react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../utils/classes";
 import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
   buildFormElementPropsFromContext,
   buildAriaPropsFromContext,
-} from "@core/Forms";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+} from "../Forms";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./BaseInput.styles";
 

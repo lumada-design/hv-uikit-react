@@ -4,7 +4,7 @@ import type ColumnTable from "arquero/dist/types/table/column-table";
 
 import { useTheme } from "@hitachivantara/uikit-react-core";
 
-import { HvChartXAxis } from "@viz/types/common";
+import { HvChartXAxis } from "../types/common";
 
 import {
   HvConfusionMatrixColorScale,

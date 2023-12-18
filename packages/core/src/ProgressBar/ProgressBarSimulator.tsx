@@ -1,6 +1,6 @@
 import { AriaAttributes, useEffect, useState } from "react";
 
-import { HvButton } from "@core/Button";
+import { HvButton } from "../Button";
 
 import { HvProgressBar, HvProgressBarStatus } from "./ProgressBar";
 

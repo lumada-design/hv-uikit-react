@@ -8,8 +8,8 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvInput, HvInputProps } from "@core/Input";
-import { HvToggleButton } from "@core/ToggleButton";
+import { HvInput, HvInputProps } from "../../Input";
+import { HvToggleButton } from "../../ToggleButton";
 
 import { useClasses } from "./Unit.styles";
 

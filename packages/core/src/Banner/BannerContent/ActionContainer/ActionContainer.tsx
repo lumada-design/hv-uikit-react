@@ -1,9 +1,9 @@
 import { Close } from "@hitachivantara/uikit-react-icons";
 
-import { HvBaseProps } from "@core/types/generic";
-import { HvActionGeneric, HvActionsGeneric } from "@core/ActionsGeneric";
-import { HvButton } from "@core/Button";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../../../types/generic";
+import { HvActionGeneric, HvActionsGeneric } from "../../../ActionsGeneric";
+import { HvButton } from "../../../Button";
+import { ExtractNames } from "../../../utils/classes";
 
 import { staticClasses, useClasses } from "./ActionContainer.styles";
 

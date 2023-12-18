@@ -1,7 +1,6 @@
 import { CSSInterpolation, css, cx } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-react-core";
-
-import { HvChartTooltipParams } from "@viz/types";
+import { HvChartTooltipParams } from "@hitachivantara/uikit-react-viz";
 
 import { customTooltipData } from "./mockData";
 

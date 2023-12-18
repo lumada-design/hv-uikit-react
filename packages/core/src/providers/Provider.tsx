@@ -15,10 +15,10 @@ import {
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
-import { getElementById } from "@core/utils/document";
-import { processThemes } from "@core/utils/theme";
-import { HvTheme } from "@core/types/theme";
-import { useUniqueId } from "@core/hooks/useUniqueId";
+import { getElementById } from "../utils/document";
+import { processThemes } from "../utils/theme";
+import { HvTheme } from "../types/theme";
+import { useUniqueId } from "../hooks/useUniqueId";
 
 import {
   HvThemeProvider,

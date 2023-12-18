@@ -10,12 +10,12 @@ import {
 
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { useForkRef } from "@core/hooks/useForkRef";
-import { setId } from "@core/utils/setId";
+import { useForkRef } from "../../hooks/useForkRef";
+import { setId } from "../../utils/setId";
 
-import { ExtractNames } from "@core/utils/classes";
-import { HvTypography } from "@core/Typography";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "../../utils/classes";
+import { HvTypography } from "../../Typography";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./TreeViewItem.styles";
 import { DescendantProvider, useDescendant } from "./descendants";

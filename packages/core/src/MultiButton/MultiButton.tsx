@@ -1,9 +1,9 @@
 import React, { cloneElement } from "react";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvButtonVariant } from "@core/Button";
-import { HvBaseProps } from "@core/types/generic";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvButtonVariant } from "../Button";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./MultiButton.styles";
 

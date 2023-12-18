@@ -103,14 +103,6 @@
           {
             "pattern": "@hitachivantara/**",
             "group": "external"
-          },
-          {
-            "pattern": "@core/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "@viz/**",
-            "group": "internal"
           }
         ],
         "distinctGroup": false,

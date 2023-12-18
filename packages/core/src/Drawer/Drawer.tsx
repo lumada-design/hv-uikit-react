@@ -1,10 +1,10 @@
 import MuiDrawer, { DrawerProps as MuiDrawerProps } from "@mui/material/Drawer";
 import { Close } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { IconButton } from "@core/utils/IconButton";
-import { setId } from "@core/utils/setId";
-import { ExtractNames } from "@core/utils/classes";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { IconButton } from "../utils/IconButton";
+import { setId } from "../utils/setId";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Drawer.styles";
 

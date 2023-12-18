@@ -11,7 +11,7 @@ import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import { loadArrow } from "arquero";
 
-import { emptyCellMode } from "@viz/types/generic";
+import { emptyCellMode } from "../types/generic";
 
 import { vizDecorator } from "../BaseChart/stories/utils";
 import { HvLineChart, HvLineChartProps } from "./LineChart";

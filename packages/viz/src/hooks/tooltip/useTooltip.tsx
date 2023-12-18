@@ -8,9 +8,9 @@ import {
   HvChartTooltipParams,
   HvDonutChartMeasure,
   HvLineChartMeasures,
-} from "@viz/types";
-import { getMeasure } from "@viz/utils";
-import { HvEChartsOption } from "@viz/types/common";
+} from "../../types";
+import { getMeasure } from "../../utils";
+import { HvEChartsOption } from "../../types/common";
 
 import { useClasses } from "./styles";
 

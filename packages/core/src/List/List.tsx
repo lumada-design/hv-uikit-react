@@ -11,20 +11,20 @@ import { FixedSizeList } from "react-window";
 
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { HvBaseProps } from "@core/types/generic";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
 import {
   HvListContainer,
   HvListContainerProps,
   HvListItem,
-} from "@core/ListContainer";
-import { HvTypography } from "@core/Typography";
-import { setId } from "@core/utils/setId";
-import { wrapperTooltip } from "@core/utils/wrapperTooltip";
-import { ExtractNames } from "@core/utils/classes";
-import { HvCheckBox } from "@core/CheckBox";
-import { HvLink } from "@core/Link";
-import { HvRadio } from "@core/Radio";
+} from "../ListContainer";
+import { HvTypography } from "../Typography";
+import { setId } from "../utils/setId";
+import { wrapperTooltip } from "../utils/wrapperTooltip";
+import { ExtractNames } from "../utils/classes";
+import { HvCheckBox } from "../CheckBox";
+import { HvLink } from "../Link";
+import { HvRadio } from "../Radio";
 
 import { staticClasses, useClasses } from "./List.styles";
 import { useSelectableList } from "./useSelectableList";

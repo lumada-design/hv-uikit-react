@@ -4,9 +4,9 @@ import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
 
 import { CloseXS } from "@hitachivantara/uikit-react-icons";
 
-import { useTheme } from "@core/hooks/useTheme";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { ExtractNames } from "@core/utils/classes";
+import { useTheme } from "../hooks/useTheme";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Tag.styles";
 

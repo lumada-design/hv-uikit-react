@@ -1,9 +1,9 @@
 import React, { useRef, useContext, useMemo, forwardRef } from "react";
 
-import { HvBaseProps } from "@core/types/generic";
-import { useForkRef } from "@core/hooks/useForkRef";
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
-import { ExtractNames } from "@core/utils/classes";
+import { HvBaseProps } from "../types/generic";
+import { useForkRef } from "../hooks/useForkRef";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./ListContainer.styles";
 import HvListContext from "./ListContext";

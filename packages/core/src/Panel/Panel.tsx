@@ -1,8 +1,8 @@
-import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
-import { HvBaseProps } from "@core/types/generic";
+import { HvBaseProps } from "../types/generic";
 
-import { ExtractNames } from "@core/utils/classes";
+import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./Panel.styles";
 

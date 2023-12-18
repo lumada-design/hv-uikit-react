@@ -1,6 +1,6 @@
 import { Reducer, useReducer } from "react";
 
-import { VisibilitySelectorActions } from "@core/Calendar";
+import { VisibilitySelectorActions } from "../Calendar";
 
 import { validateDate } from "./utils";
 
