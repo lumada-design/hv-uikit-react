@@ -1,1 +1,1 @@
-export * from "./components/CodeEditor";
+export * from "./CodeEditor";

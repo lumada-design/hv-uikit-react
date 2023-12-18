@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import { HvTypography } from "@core/components/Typography";
+import { HvTypography } from "@core/Typography";
 import {
   HvTooltip,
   HvTooltipPlacementType,
   HvTooltipProps,
-} from "@core/components/Tooltip";
+} from "@core/Tooltip";
 import { HvBaseProps } from "@core/types/generic";
 
 const styles: { truncate: React.CSSProperties } = {

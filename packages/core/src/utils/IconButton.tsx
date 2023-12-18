@@ -1,5 +1,5 @@
-import { HvButton, HvButtonProps } from "@core/components/Button";
-import { HvTooltip, HvTooltipProps } from "@core/components/Tooltip";
+import { HvButton, HvButtonProps } from "@core/Button";
+import { HvTooltip, HvTooltipProps } from "@core/Tooltip";
 
 export interface IconButtonProps extends Omit<HvButtonProps, "icon" | "title"> {
   title: React.ReactNode;
