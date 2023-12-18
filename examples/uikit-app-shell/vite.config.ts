@@ -17,6 +17,10 @@ export default defineConfig(({ mode }) => ({
       },
     }),
     tsconfigPaths(),
-    HvAppShellVitePlugin({ mode }),
+    HvAppShellVitePlugin({
+      mode,
+      autoMenu: true,
+      autoViewsAndRoutes: true,
+    }),
   ],
 }));
