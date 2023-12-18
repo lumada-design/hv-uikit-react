@@ -3,8 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import { describe, expect, it, vi } from "vitest";
 
-import { HvCheckBox } from "@core/components";
-
+import { HvCheckBox } from "../CheckBox";
 import { HvCheckBoxGroup } from "./CheckBoxGroup";
 
 const Main = () => (

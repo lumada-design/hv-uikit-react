@@ -4,7 +4,9 @@ import { PopperProps, useForkRef } from "@mui/material";
 
 import { useDefaultProps } from "@core/hooks/useDefaultProps";
 import { setId } from "@core/utils/setId";
-import { useLabels, useUniqueId, useControlled } from "@core/hooks";
+import { useLabels } from "@core/hooks/useLabels";
+import { useUniqueId } from "@core/hooks/useUniqueId";
+import { useControlled } from "@core/hooks/useControlled";
 import { HvBaseProps } from "@core/types/generic";
 import {
   HvBaseDropdown,

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { HvLabel } from "@core/components";
+import { HvLabel } from ".";
 
 describe("Label", () => {
   it("should render the label", () => {

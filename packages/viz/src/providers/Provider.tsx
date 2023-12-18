@@ -2,7 +2,7 @@ import { createContext, useMemo } from "react";
 
 import { useTheme } from "@hitachivantara/uikit-react-core";
 
-import { registerTheme } from "@viz/utils";
+import { registerTheme } from "@viz/utils/registerTheme";
 
 export interface HvVizContextValue {
   /**

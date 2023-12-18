@@ -3,7 +3,7 @@ import { MouseEvent } from "react";
 import { HvTypography } from "@core/components/Typography";
 import { HvOverflowTooltip } from "@core/components/OverflowTooltip";
 import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvBreadCrumbPathElement } from "../types";
 import { staticClasses, useClasses } from "./Page.styles";

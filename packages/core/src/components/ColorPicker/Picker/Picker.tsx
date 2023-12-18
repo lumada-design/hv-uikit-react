@@ -13,7 +13,7 @@ import { HvTypography } from "@core/components/Typography";
 import { useTheme } from "@core/hooks/useTheme";
 import { ExtractNames } from "@core/utils/classes";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./Picker.styles";
 import { Fields } from "../Fields";

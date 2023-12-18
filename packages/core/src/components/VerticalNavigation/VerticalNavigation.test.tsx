@@ -11,7 +11,7 @@ import {
   HvVerticalNavigationHeader,
   HvVerticalNavigationTree,
   NavigationData,
-} from "@core/components";
+} from ".";
 
 const Sample = ({
   useIcons,

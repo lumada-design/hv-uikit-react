@@ -5,7 +5,7 @@ import { HvButton } from "@core/components/Button";
 import { HvTypography } from "@core/components/Typography";
 import { ExtractNames } from "@core/utils/classes";
 import { HvProgressBar } from "@core/components/ProgressBar";
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { convertUnits } from "../utils";
 import { staticClasses, useClasses } from "./File.styles";

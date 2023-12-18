@@ -17,7 +17,7 @@ import { useTheme } from "@core/hooks/useTheme";
 import { ExtractNames } from "@core/utils/classes";
 import { HvButton, HvButtonProps } from "@core/components/Button";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";

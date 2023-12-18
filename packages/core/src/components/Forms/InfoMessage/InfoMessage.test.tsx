@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { HvInfoMessage } from "@core/components";
+import { HvInfoMessage } from ".";
 
 describe("InfoMessage", () => {
   it("should render the content", () => {

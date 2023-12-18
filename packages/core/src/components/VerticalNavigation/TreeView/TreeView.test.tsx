@@ -6,7 +6,7 @@ import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
-} from "@core/components";
+} from ".";
 
 const Sample = () => (
   <HvVerticalNavigationTreeView selected="4" mode="navigation">

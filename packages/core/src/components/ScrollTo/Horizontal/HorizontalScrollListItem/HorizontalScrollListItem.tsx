@@ -3,7 +3,7 @@ import { ExtractNames } from "@core/utils/classes";
 import { setId } from "@core/utils/setId";
 import { HvTypographyProps } from "@core/components/Typography";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./HorizontalScrollListItem.styles";
 

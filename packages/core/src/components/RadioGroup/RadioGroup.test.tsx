@@ -4,8 +4,8 @@ import userEvent from "@testing-library/user-event";
 
 import { describe, expect, it, vi } from "vitest";
 
-import { HvFormStatus, HvRadio } from "@core/components";
-
+import { HvRadio } from "../Radio";
+import { HvFormStatus } from "../Forms";
 import { HvRadioGroup } from "./RadioGroup";
 
 const Main = () => (

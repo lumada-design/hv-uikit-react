@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { HvAccordion, HvTypography } from "@core/components";
+import { HvTypography } from "../Typography";
+import { HvAccordion } from "./Accordion";
 
 const testAttributes = (component: HTMLElement) => {
   expect(component).toBeInTheDocument();

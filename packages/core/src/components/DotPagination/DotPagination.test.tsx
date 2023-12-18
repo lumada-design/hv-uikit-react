@@ -4,8 +4,6 @@ import userEvent from "@testing-library/user-event";
 
 import { describe, expect, it } from "vitest";
 
-import { HvTypography } from "@core/components";
-
 import { HvDotPagination } from "./DotPagination";
 
 const Pagination = ({ page }: { page: number }) => (
@@ -33,7 +31,7 @@ const PaginationWithState = () => {
   return (
     <div>
       <div>
-        <HvTypography>{pages[page]}</HvTypography>
+        <span>{pages[page]}</span>
       </div>
       <br />
       <HvDotPagination

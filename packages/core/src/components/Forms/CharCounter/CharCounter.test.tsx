@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { HvCharCounter } from "@core/components";
+import { HvCharCounter } from ".";
 
 describe("CharCounter", () => {
   it("should renders the current and max quantity", () => {

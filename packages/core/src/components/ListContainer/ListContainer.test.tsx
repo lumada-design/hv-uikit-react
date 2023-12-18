@@ -1,8 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { HvListItem } from "@core/components";
-
+import { HvListItem } from "./ListItem";
 import { HvListContainer } from "./ListContainer";
 
 describe("ListContainer", () => {

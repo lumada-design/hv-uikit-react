@@ -2,7 +2,7 @@ import { MouseEvent } from "react";
 
 import { HvBaseProps } from "@core/types/generic";
 
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import { HvHeaderMenuItem } from "../MenuItem";
 import { HvHeaderNavigationItemProp } from "../useSelectionPath";

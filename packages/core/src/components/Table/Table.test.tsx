@@ -10,7 +10,7 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-} from "@core/components";
+} from ".";
 
 import { ResponsiveTable } from "./stories/Table.stories";
 

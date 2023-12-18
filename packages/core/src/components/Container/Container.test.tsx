@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
+import { HvTypography } from "../Typography";
 import { HvContainer } from "./Container";
-import { HvTypography } from "..";
 
 describe("Container", () => {
   it("renders the content", () => {

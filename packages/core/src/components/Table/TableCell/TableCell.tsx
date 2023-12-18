@@ -2,7 +2,7 @@ import { CSSProperties, forwardRef, TdHTMLAttributes, useContext } from "react";
 import capitalize from "lodash/capitalize";
 
 import { ExtractNames } from "@core/utils/classes";
-import { useDefaultProps } from "@core/hooks";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
 
 import {
   HvTableCellAlign,

@@ -4,8 +4,8 @@ import { useMediaQuery, useTheme } from "@mui/material";
 
 import { HvGrid } from "@core/components/Grid";
 import { IconButton } from "@core/utils/IconButton";
-import { useDefaultProps } from "@core/hooks";
-import { ExtractNames } from "@core/utils";
+import { useDefaultProps } from "@core/hooks/useDefaultProps";
+import { ExtractNames } from "@core/utils/classes";
 
 import { useQueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
