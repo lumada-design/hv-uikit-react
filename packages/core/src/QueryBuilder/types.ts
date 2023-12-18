@@ -1,9 +1,16 @@
-import { FC } from "react";
+const defaultAttributes = [
+  "boolean",
+  "numeric",
+  "dateandtime",
+  "text",
+  "textarea",
+] as const;
+type DefaultAttributes = (typeof defaultAttributes)[number];
 
 export interface HvQueryBuilderAttribute extends Record<string, unknown> {
   id?: string;
   label: string;
-  type: string;
+  type: DefaultAttributes | (string & {});
 }
 
 export interface HvQueryBuilderNumericRange {
@@ -47,7 +54,7 @@ export type HvQueryBuilderQuery = HvQueryBuilderQueryGroup;
 export interface HvQueryBuilderChangedQuery
   extends Omit<HvQueryBuilderQuery, "id" | "rules"> {
   rules: Array<
-    Omit<HvQueryBuilderQueryRule, "id"> | Omit<HvQueryBuilderQueryGroup, "id">
+    Omit<HvQueryBuilderQueryRule, "id"> | HvQueryBuilderChangedQuery
   >;
 }
 
@@ -224,5 +231,5 @@ export interface HvQueryBuilderRendererProps<V = any> {
 
 export type HvQueryBuilderRenderers = Record<
   string,
-  FC<HvQueryBuilderRendererProps>
+  React.FC<HvQueryBuilderRendererProps>
 >;
