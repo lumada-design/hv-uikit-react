@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import {
   HvDropdown,
   HvQueryBuilder,
@@ -7,10 +7,13 @@ import {
   theme,
   hvQueryBuilderDefaultOperators,
   HvSlider,
+  HvQueryBuilderProps,
+  HvTagsInputProps,
+  HvTagsInput,
 } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 
-const attributes = {
+const attributes: HvQueryBuilderProps["attributes"] = {
   month: {
     label: "Month",
     type: "select",
@@ -30,7 +33,7 @@ const attributes = {
 };
 
 const operators = {
-  ...hvQueryBuilderDefaultOperators,
+  text: [...hvQueryBuilderDefaultOperators.text],
   select: [
     {
       operator: "equalsTo",
@@ -226,9 +229,56 @@ const SliderRenderer = ({
   );
 };
 
+const textContainsRenderers = {
+  name: {
+    label: "Value",
+  },
+};
+
+const TextContainsRenderer = ({
+  id,
+  attribute,
+  value,
+}: HvQueryBuilderRendererProps<HvTagsInputProps["value"] | string>) => {
+  const { dispatchAction } = useQueryBuilderContext();
+
+  // Clear value when "Contains" is unselected and the renderer unmounts
+  useEffect(() => {
+    return () => {
+      dispatchAction({
+        type: "set-value",
+        id,
+        value: null,
+      });
+    };
+  }, [dispatchAction, id]);
+
+  return (
+    <HvTagsInput
+      label={textContainsRenderers[attribute].label}
+      defaultValue={
+        typeof value === "string" ? [{ label: value, type: "semantic" }] : value
+      }
+      onChange={(event, tags) => {
+        dispatchAction({
+          type: "set-value",
+          id,
+          value: tags.length > 0 ? tags : null,
+        });
+      }}
+    />
+  );
+};
+
 const renderers = {
+  // Renderers for the custom attribute types "select" and "slider"
   select: SelectRenderer,
   slider: SliderRenderer,
+
+  // Renderer to customize the "Contains" operator of the "text" attribute type
+  text: {
+    Contains: TextContainsRenderer,
+  },
 };
 
 export const CustomRenderers = () => (

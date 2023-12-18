@@ -5,6 +5,7 @@ import { BooleanValue } from "./BooleanValue";
 import { NumericValue } from "./NumericValue";
 import { TextValue } from "./TextValue";
 import { DateTimeValue } from "./DateTimeValue";
+import { HvQueryBuilderRendererProps } from "../../types";
 
 export interface ValueProps {
   id: React.Key;
@@ -21,11 +22,32 @@ export const Value = ({
 }: ValueProps) => {
   const { attributes, initialTouched, renderers } = useQueryBuilderContext();
 
-  const value =
-    attribute && attributes ? { ...attributes[attribute] } : { type: null };
-  const { type } = value;
+  const attrType =
+    attribute && attributes ? attributes[attribute].type : undefined;
 
-  switch (type) {
+  // Custom renderer
+  if (attrType && renderers?.[attrType]) {
+    const Renderer: React.FC<HvQueryBuilderRendererProps> | undefined =
+      (typeof renderers[attrType] === "object" &&
+        operator &&
+        renderers[attrType][operator]) ||
+      (typeof renderers[attrType] === "function" && renderers[attrType]) ||
+      undefined;
+
+    if (Renderer) {
+      return (
+        <Renderer
+          id={id}
+          attribute={attribute}
+          operator={operator}
+          value={valueProp}
+        />
+      );
+    }
+  }
+
+  // Built-in attributes
+  switch (attrType) {
     case "boolean": {
       return <BooleanValue id={id} value={!!valueProp} />;
     }
@@ -51,27 +73,10 @@ export const Value = ({
     }
     case "text":
     case "textarea":
+    default:
       return (
         <TextValue id={id} value={valueProp} initialTouched={initialTouched} />
       );
-    default: {
-      if (type && renderers?.[type]) {
-        const Renderer = renderers[type];
-
-        return (
-          <Renderer
-            id={id}
-            attribute={attribute}
-            operator={operator}
-            value={valueProp}
-          />
-        );
-      }
-
-      return (
-        <TextValue id={id} value={valueProp} initialTouched={initialTouched} />
-      );
-    }
   }
 };
 
