@@ -11,7 +11,6 @@
     "@emotion/css": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@hitachivantara/app-shell": "latest",
     "@hitachivantara/uikit-react-core": "latest",
     "@hitachivantara/uikit-react-icons": "latest",
     "@mui/material": "^5.12.2",
@@ -21,7 +20,7 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.6",
-    "@hitachivantara/app-shell-vite-plugin": "0.17.11",
+    "@hitachivantara/app-shell-vite-plugin": "latest",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.1.1",
