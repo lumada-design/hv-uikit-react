@@ -49,7 +49,16 @@ export interface HvQueryBuilderProps {
   labels?: HvQueryBuilderLabels;
   /** Whether the query builder is in read-only mode. */
   readOnly?: boolean;
-  /** Renderers for custom attribute types. */
+  /**
+   * Operators that should use the empty value renderer when selected.
+   *
+   * When one of the listed operators is selected, the rule value is reset and an empty component is rendered.
+   * This property takes priority to the `renderers` property.
+   *
+   * Defaults to `["Empty", "IsNotEmpty"]`.
+   * */
+  emptyRenderer?: string[];
+  /** Custom renderers for the values. */
   renderers?: HvQueryBuilderRenderers;
   /** Whether to opt-out of the confirmation dialogs shown before removing rules and rule groups. Default to `false`. */
   disableConfirmation?: boolean;
@@ -61,6 +70,7 @@ export interface HvQueryBuilderProps {
 // - uncontrolled vs controlled: users should be able to control the state
 // - "query" renamed to "initialQuery" and "query" used to control the state
 // - "query" provided with ids by the user but removed through "onChange"
+// - "range", "Empty", and "IsNotEmpty" operators with internal/built-in logic
 
 /**
  * This component allows you to create conditions and group them using logical operators.
@@ -78,6 +88,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     maxDepth = 1,
     labels = defaultLabels,
     readOnly = false,
+    emptyRenderer = ["Empty", "IsNotEmpty"],
     classes: classesProp,
   } = useDefaultProps("HvQueryBuilder", props);
 
@@ -129,6 +140,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       readOnly,
       renderers,
       disableConfirmation,
+      emptyRenderer,
     }),
     [
       attributes,
@@ -140,6 +152,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       initialState,
       renderers,
       disableConfirmation,
+      emptyRenderer,
     ]
   );
 

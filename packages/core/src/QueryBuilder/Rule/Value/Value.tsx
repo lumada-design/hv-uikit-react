@@ -21,10 +21,16 @@ export const Value = ({
   operator,
   value: valueProp,
 }: ValueProps) => {
-  const { attributes, initialTouched, renderers } = useQueryBuilderContext();
+  const { attributes, initialTouched, renderers, emptyRenderer } =
+    useQueryBuilderContext();
 
   const attrType =
     attribute && attributes ? attributes[attribute].type : undefined;
+
+  // Empty value renderer
+  if (emptyRenderer?.find((op) => op === operator)) {
+    return <EmptyValue id={id} />;
+  }
 
   // Custom renderer
   if (attrType && renderers?.[attrType]) {
@@ -61,11 +67,6 @@ export const Value = ({
         />
       );
     }
-  }
-
-  // Built-in behavior for "Empty" and "IsNotEmpty" operators
-  if (operator === "Empty" || operator === "IsNotEmpty") {
-    return <EmptyValue id={id} />;
   }
 
   // Built-in attributes
