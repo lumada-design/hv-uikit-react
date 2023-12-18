@@ -6,7 +6,9 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 
-const Layout = lazy(() => import("~/pages/layout"));
+const RootLayout = lazy(() => import("~/pages/layout/root"));
+const NavigationLayout = lazy(() => import("~/pages/layout/navigation"));
+
 const Root = lazy(() => import("~/pages/Root"));
 const Components = lazy(() => import("~/pages/Components"));
 const Instructions = lazy(() => import("~/pages/Instructions"));
@@ -24,23 +26,25 @@ const Dashboard = lazy(() => import("../../../templates/Dashboard"));
 const Welcome = lazy(() => import("../../../templates/Welcome"));
 
 const routes = createRoutesFromElements(
-  <Route element={<Layout />}>
-    <Route path="/" element={<Root />} />
-    <Route path="/components" element={<Components />} />
-    <Route path="/home" element={<Instructions />} />
-    <Route path="/flow" element={<Flow />} />
+  <Route element={<RootLayout />}>
+    <Route element={<NavigationLayout />}>
+      <Route path="/" element={<Root />} />
+      <Route path="/components" element={<Components />} />
+      <Route path="/home" element={<Instructions />} />
+      <Route path="/flow" element={<Flow />} />
+      <Route
+        path="/templates"
+        element={<Navigate to="/templates/welcome" replace />}
+      />
+      <Route path="/templates/welcome" element={<Welcome />} />
+      <Route path="/templates/dashboard" element={<Dashboard />} />
+      <Route path="/templates/asset-inventory" element={<AssetInventory />} />
+      <Route path="/templates/list-view" element={<ListView />} />
+      <Route path="/templates/form" element={<Form />} />
+      <Route path="/templates/details-view" element={<DetailsView />} />
+      <Route path="/*" element={<NotFound />} />
+    </Route>
     <Route path="/dashboard-preview" element={<DashboardPreview />} />
-    <Route
-      path="/templates"
-      element={<Navigate to="/templates/welcome" replace />}
-    />
-    <Route path="/templates/welcome" element={<Welcome />} />
-    <Route path="/templates/dashboard" element={<Dashboard />} />
-    <Route path="/templates/asset-inventory" element={<AssetInventory />} />
-    <Route path="/templates/list-view" element={<ListView />} />
-    <Route path="/templates/form" element={<Form />} />
-    <Route path="/templates/details-view" element={<DetailsView />} />
-    <Route path="/*" element={<NotFound />} />
   </Route>
 );
 
