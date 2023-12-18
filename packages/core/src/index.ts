@@ -40,6 +40,7 @@ export * from "./ActionBar";
 export * from "./ActionsGeneric";
 export * from "./AppSwitcher";
 export * from "./Avatar";
+export * from "./AvatarGroup";
 export * from "./Badge";
 export * from "./Banner";
 export * from "./BaseCheckBox";

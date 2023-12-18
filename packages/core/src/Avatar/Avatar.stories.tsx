@@ -19,7 +19,7 @@ const flexDecorator: DecoratorFn = (Story) => (
 );
 
 const meta: Meta<typeof HvAvatar> = {
-  title: "Components/Avatar",
+  title: "Components/Avatar/Avatar",
   component: HvAvatar,
   decorators: [flexDecorator],
   parameters: {
