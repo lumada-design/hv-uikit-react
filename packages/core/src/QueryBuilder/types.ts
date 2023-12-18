@@ -1,3 +1,5 @@
+export const defaultRendererKey = "DEFAULT";
+
 const defaultAttributes = [
   "boolean",
   "numeric",
