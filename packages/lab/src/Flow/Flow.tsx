@@ -41,6 +41,8 @@ export interface HvFlowProps<
  * This implementation leverages [React Flow](https://reactflow.dev).
  * The drag and drop functionality leverages [Dnd Kit](https://docs.dndkit.com)
  *
+ * Take a look at the [usage page](https://lumada-design.github.io/uikit/master/?path=/docs/lab-flow-usage--docs) to learn more about this component.
+ *
  * DISCLAIMER: This component is a work in progress and there might be breaking changes.
  */
 export const HvFlow = ({

@@ -53,14 +53,14 @@ export interface HvQueryBuilderProps {
    * Operators that should use the empty value renderer when selected.
    *
    * When one of the listed operators is selected, the rule value is reset and an empty component is rendered.
-   * This property takes priority to the `renderers` property.
+   * This property takes priority over `renderers`.
    *
-   * Defaults to `["Empty", "IsNotEmpty"]`.
+   * @default ["Empty", "IsNotEmpty"]
    * */
   emptyRenderer?: string[];
-  /** Custom renderers for the values. */
+  /** Custom renderers for the rules' value. */
   renderers?: HvQueryBuilderRenderers;
-  /** Whether to opt-out of the confirmation dialogs shown before removing rules and rule groups. Default to `false`. */
+  /** Whether to opt-out of the confirmation dialogs shown before removing rules and rule groups. @default false. */
   disableConfirmation?: boolean;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvQueryBuilderClasses;
@@ -75,6 +75,8 @@ export interface HvQueryBuilderProps {
 /**
  * This component allows you to create conditions and group them using logical operators.
  * It outputs a structured set of rules which can be easily parsed to create SQL/NoSQL/whatever queries.
+ *
+ * Take a look at the [usage page](https://lumada-design.github.io/uikit/master/?path=/docs/widgets-query-builder-usage--docs) to learn more about this component.
  */
 export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   const {
