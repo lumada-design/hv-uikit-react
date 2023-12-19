@@ -74,7 +74,7 @@ export type HvTimePickerValue = {
 export interface HvTimePickerProps
   extends Omit<
     HvFormElementProps,
-    "classes" | "value" | "defaultValue" | "onChange" | "onFocus" | "onBlur"
+    "classes" | "value" | "defaultValue" | "onChange"
   > {
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTimePickerClasses;
