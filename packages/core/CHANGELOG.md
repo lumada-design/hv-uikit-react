@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.39.3 (2023-12-19)
+
+### Bug Fixes
+
+- **button:** allow passing id ([46c99bb](https://github.com/lumada-design/hv-uikit-react/commit/46c99bb0374c0b0b49f989dd2b49be065e6f4991))
+
 ## [5.39.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.39.1...@hitachivantara/uikit-react-core@5.39.2) (2023-12-15)
 
 ### Bug Fixes
