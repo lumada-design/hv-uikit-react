@@ -29,30 +29,28 @@ const Navigation = () => {
       id="gen-root"
       className={`bg-default ${open ? "w-[calc(100%_-_390px)]" : "w-full"}`}
     >
-      <div>
-        <HvProvider
-          classNameKey="gen-root"
-          rootElementId="gen-root"
-          cssTheme="scoped"
-          themes={[customTheme]}
-          colorMode={selectedMode}
-          cssBaseline="none" // the main provider already applies the baseline styles globally
-        >
-          <NavigationProvider navigation={navigation}>
-            {tutorialOpen && (
-              <Tutorial
-                setTutorialOpen={setTutorialOpen}
-                currentStep={currentStep}
-                setCurrentStep={setCurrentStep}
-              />
-            )}
-            <Container maxWidth="xl">
-              <Header />
-              <Outlet />
-            </Container>
-          </NavigationProvider>
-        </HvProvider>
-      </div>
+      <HvProvider
+        classNameKey="gen-root"
+        rootElementId="gen-root"
+        cssTheme="scoped"
+        themes={[customTheme]}
+        colorMode={selectedMode}
+        cssBaseline="none" // the main provider already applies the baseline styles globally
+      >
+        <NavigationProvider navigation={navigation}>
+          {tutorialOpen && (
+            <Tutorial
+              setTutorialOpen={setTutorialOpen}
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+            />
+          )}
+          <Header />
+          <Container maxWidth="xl" component="main">
+            <Outlet />
+          </Container>
+        </NavigationProvider>
+      </HvProvider>
     </div>
   );
 };
