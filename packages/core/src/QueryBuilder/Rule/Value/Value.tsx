@@ -5,7 +5,11 @@ import { BooleanValue } from "./BooleanValue";
 import { NumericValue } from "./NumericValue";
 import { TextValue } from "./TextValue";
 import { DateTimeValue } from "./DateTimeValue";
-import { HvQueryBuilderRendererProps, defaultRendererKey } from "../../types";
+import {
+  HvQueryBuilderRendererProps,
+  ValueRenderer,
+  defaultRendererKey,
+} from "../../types";
 import { EmptyValue } from "./EmptyValue";
 
 export interface ValueProps {
@@ -14,6 +18,14 @@ export interface ValueProps {
   operator?: string;
   value?: any;
 }
+
+const getRenderer = (renderer: ValueRenderer, operator?: string) =>
+  // 1. Custom renderer
+  (typeof renderer === "function" && renderer) ||
+  // 2. Custom operator renderer
+  (typeof renderer === "object" && operator && renderer[operator]) ||
+  // 3. Custom DEFAULT renderer
+  (typeof renderer === "object" && renderer[defaultRendererKey]);
 
 export const Value = ({
   id,
@@ -42,19 +54,8 @@ export const Value = ({
     // 5. Custom master DEFAULT-operator renderer
     // 6. Custom master DEFAULT-DEFAULT renderer
     const Renderer: React.FC<HvQueryBuilderRendererProps> | undefined =
-      (typeof renderers[attrType] === "function" && renderers[attrType]) ||
-      (typeof renderers[attrType] === "object" &&
-        operator &&
-        renderers[attrType][operator]) ||
-      (typeof renderers[attrType] === "object" &&
-        renderers[attrType][defaultRendererKey]) ||
-      (typeof renderers[defaultRendererKey] === "function" &&
-        renderers[defaultRendererKey]) ||
-      (typeof renderers[defaultRendererKey] === "object" &&
-        operator &&
-        renderers[defaultRendererKey][operator]) ||
-      (typeof renderers[defaultRendererKey] === "object" &&
-        renderers[defaultRendererKey][defaultRendererKey]) ||
+      getRenderer(renderers[attrType], operator) ||
+      getRenderer(renderers[defaultRendererKey], operator) ||
       undefined;
 
     if (Renderer) {
