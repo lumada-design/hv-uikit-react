@@ -2,7 +2,11 @@ import { useMemo } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { HvQueryBuilder, HvQueryBuilderProps } from ".";
+import {
+  HvQueryBuilder,
+  HvQueryBuilderProps,
+  hvQueryBuilderDefaultOperators,
+} from ".";
 
 const QueryBuilder = (props: HvQueryBuilderProps) => {
   const attributes = useMemo(
@@ -23,11 +27,25 @@ const QueryBuilder = (props: HvQueryBuilderProps) => {
         label: "Release",
         type: "dateandtime",
       },
+      custom: {
+        label: "Custom",
+        type: "custom",
+      },
     }),
     []
   );
 
-  return <HvQueryBuilder attributes={attributes} {...props} />;
+  const operators = useMemo(
+    () => ({
+      ...hvQueryBuilderDefaultOperators,
+      custom: [...hvQueryBuilderDefaultOperators.text],
+    }),
+    []
+  );
+
+  return (
+    <HvQueryBuilder operators={operators} attributes={attributes} {...props} />
+  );
 };
 
 const initialQuery = {
@@ -45,6 +63,17 @@ const initialQuery = {
       attribute: "category",
       operator: "equals",
       value: "Movies",
+    },
+    {
+      id: 9,
+      attribute: "custom",
+      operator: "equals",
+      value: "1234",
+    },
+    {
+      id: 10,
+      attribute: "category",
+      operator: "Empty",
     },
     {
       id: 4,
@@ -264,15 +293,15 @@ describe("QueryBuilder", () => {
   });
 
   describe("initial query", () => {
-    it("renders the query ", () => {
+    it("renders the query", () => {
       render(<QueryBuilder query={initialQuery} />);
 
       expect(() => screen.getByText("No conditions created yet")).toThrow();
 
-      const attrDropdowns = screen.getAllByRole("combobox", {
+      const attrs = screen.getAllByRole("combobox", {
         name: /Attribute/i,
       });
-      expect(attrDropdowns).toHaveLength(5);
+      expect(attrs).toHaveLength(7);
     });
   });
 
@@ -282,6 +311,118 @@ describe("QueryBuilder", () => {
 
       const buttons = screen.getAllByRole("button");
       buttons.map((b) => expect(b).toBeDisabled());
+    });
+  });
+
+  describe("custom renderers", () => {
+    it("should render the right custom renders", async () => {
+      render(
+        <QueryBuilder
+          query={initialQuery}
+          renderers={{
+            custom: {
+              equals: () => <input data-testid="equals-renderer" />,
+            },
+            numeric: () => <input data-testid="numeric-renderer" />,
+            text: {
+              DEFAULT: () => <input data-testid="text-renderer" />,
+              Contains: () => <input data-testid="contains-renderer" />,
+              Empty: () => <input data-testid="empty-renderer" />,
+            },
+          }}
+        />
+      );
+
+      const numericRenderer = screen.getByTestId("numeric-renderer");
+      expect(numericRenderer).toBeInTheDocument();
+
+      const textRenderer = screen.getByTestId("text-renderer");
+      expect(textRenderer).toBeInTheDocument();
+
+      const equalsRenderer = screen.getByTestId("equals-renderer");
+      expect(equalsRenderer).toBeInTheDocument();
+
+      const containsRenderer = screen.queryByTestId("contains-renderer");
+      expect(containsRenderer).not.toBeInTheDocument();
+
+      const emptyRenderer = screen.queryByTestId("empty-renderer");
+      expect(emptyRenderer).not.toBeInTheDocument();
+    });
+
+    it("should render the custom render for the Empty operator", async () => {
+      render(
+        <QueryBuilder
+          query={initialQuery}
+          renderers={{
+            text: {
+              Empty: () => <input data-testid="empty-renderer" />,
+            },
+          }}
+          emptyRenderer={[]}
+        />
+      );
+
+      const emptyRenderer = screen.queryByTestId("empty-renderer");
+      expect(emptyRenderer).toBeInTheDocument();
+    });
+  });
+
+  describe("disableConfirmation", () => {
+    it("should show confirmation dialog", async () => {
+      render(
+        <QueryBuilder
+          query={{
+            id: 1,
+            combinator: "and",
+            rules: [
+              {
+                id: 2,
+                attribute: "price",
+                operator: "lessThan",
+                value: 10,
+              },
+            ],
+          }}
+        />
+      );
+
+      const removeBtn = screen.getByRole("button", {
+        name: /Remove condition/i,
+      });
+
+      userEvent.click(removeBtn);
+
+      const dialog = await screen.findByRole("dialog");
+      expect(dialog).toBeInTheDocument();
+    });
+
+    it("should remove immediately", async () => {
+      render(
+        <QueryBuilder
+          query={{
+            id: 1,
+            combinator: "and",
+            rules: [
+              {
+                id: 2,
+                attribute: "price",
+                operator: "lessThan",
+                value: 10,
+              },
+            ],
+          }}
+          disableConfirmation
+        />
+      );
+
+      const removeBtn = screen.getByRole("button", {
+        name: /Remove condition/i,
+      });
+
+      userEvent.click(removeBtn);
+
+      const noConditions = await screen.findByText("No conditions created yet");
+      expect(noConditions).toBeInTheDocument();
     });
   });
 });
