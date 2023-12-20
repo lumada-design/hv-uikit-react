@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-core",
-  "version": "5.39.3",
+  "version": "5.39.4",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Core React components for the NEXT Design System.",
@@ -45,7 +45,7 @@
     "@emotion/serialize": "^1.1.2",
     "@emotion/utils": "^1.2.1",
     "@hitachivantara/uikit-react-icons": "^5.7.10",
-    "@hitachivantara/uikit-react-shared": "^5.1.22",
+    "@hitachivantara/uikit-react-shared": "^5.1.23",
     "@hitachivantara/uikit-styles": "^5.17.0",
     "@internationalized/date": "^3.2.0",
     "@mui/base": "^5.0.0-beta.4",
