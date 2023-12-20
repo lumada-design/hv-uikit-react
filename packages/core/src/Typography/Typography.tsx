@@ -4,7 +4,6 @@ import { PolymorphicComponentRef, PolymorphicRef } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 import { useTheme } from "../hooks/useTheme";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import {
   HvTypographyLegacyVariants,
   HvTypographyVariants,
@@ -92,9 +91,9 @@ export const HvTypography: <C extends React.ElementType = "p">(
       classes: classesProp,
       variant: variantProp = "body",
       link = false,
-      disabled = false,
       noWrap = false,
       paragraph = false,
+      disabled = false,
       ...others
     } = useDefaultProps("HvTypography", props);
     const { classes, cx } = useClasses(classesProp);
@@ -118,6 +117,7 @@ export const HvTypography: <C extends React.ElementType = "p">(
           },
           className
         )}
+        disabled={disabled}
         {...others}
       />
     );
