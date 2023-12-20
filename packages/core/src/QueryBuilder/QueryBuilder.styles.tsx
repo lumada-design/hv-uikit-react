@@ -106,10 +106,14 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
     cursor: "pointer",
     backgroundColor: "transparent",
     padding: 0,
+
+    "&:disabled": { cursor: "not-allowed", pointerEvents: "none" },
   },
   createGroupButton: {
     cursor: "pointer",
     backgroundColor: "transparent",
     padding: 0,
+
+    "&:disabled": { cursor: "not-allowed", pointerEvents: "none" },
   },
 });

@@ -7,7 +7,6 @@ import { HvMultiButton } from "../../MultiButton";
 import { HvTypography } from "../../Typography";
 import { IconButton } from "../../utils/IconButton";
 import { ExtractNames } from "../../utils/classes";
-
 import { Rule } from "../Rule";
 import { useQueryBuilderContext } from "../Context";
 import { useClasses } from "../QueryBuilder.styles";
@@ -199,6 +198,7 @@ export const RuleGroup = ({
                   dispatchAction({ type: "add-rule", id });
                 }}
                 className={classes.createConditionButton}
+                disabled={readOnly}
               >
                 {`${labels.empty?.createCondition}`}
               </HvTypography>
@@ -212,6 +212,7 @@ export const RuleGroup = ({
                       dispatchAction({ type: "add-group", id });
                     }}
                     className={classes.createGroupButton}
+                    disabled={readOnly}
                   >
                     {`${labels.empty?.createGroup}`}
                   </HvTypography>
