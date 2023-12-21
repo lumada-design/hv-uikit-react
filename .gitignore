@@ -5,6 +5,7 @@
 .idea
 .vscode
 .nova
+.next
 
 # node
 node_modules

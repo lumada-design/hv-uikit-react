@@ -1,0 +1,31 @@
+{
+  "*": {
+    "type": "page"
+  },
+  "index": {
+    "display": "hidden"
+  },
+  "docs": "Documentation",
+  "about": "About",
+  "company": {
+    "title": "Storybook",
+    "type": "menu",
+    "items": {
+      "v5": {
+        "title": "5.x",
+        "href": "https://lumada-design.github.io/uikit/master",
+        "newWindow": true
+      },
+      "v4": {
+        "title": "4.x",
+        "href": "https://lumada-design.github.io/uikit/v4.x",
+        "newWindow": true
+      },
+      "v3": {
+        "title": "3.x",
+        "href": "https://lumada-design.github.io/uikit/v3.x",
+        "newWindow": true
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "overview": {
+    "title": "Overview"
+  },
+  "components": {
+    "title": "Components"
+  },
+  "-- More": {
+    "type": "separator",
+    "title": "More"
+  },
+  "showroom": {
+    "title": "Showroom ↗",
+    "href": "https://lumada-design.github.io/uikit-app/master",
+    "newWindow": true
+  }
+}
