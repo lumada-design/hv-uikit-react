@@ -1,0 +1,28 @@
+{
+  "rules": {
+    "no-alert": "off",
+    "no-console": "off",
+    "import/extensions": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index"]
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "distinctGroup": false,
+        "pathGroupsExcludedImportTypes": ["builtin", "object"],
+        "newlines-between": "always-and-inside-groups"
+      }
+    ]
+  }
+}
