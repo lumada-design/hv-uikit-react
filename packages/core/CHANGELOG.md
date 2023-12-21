@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.40.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.39.4...@hitachivantara/uikit-react-core@5.40.0) (2023-12-21)
+
+### Bug Fixes
+
+- **QueryBuilder:** changed query type ([3ffa9af](https://github.com/lumada-design/hv-uikit-react/commit/3ffa9aff295b9c251515846f3034824745596290))
+- **QueryBuilder:** first-child replaced by first-of-type ([9cae147](https://github.com/lumada-design/hv-uikit-react/commit/9cae1479693860e5835a3107b4549f6e54fed158))
+
+### Features
+
+- **AvatarGroup:** add avatar group component ([0cc6f76](https://github.com/lumada-design/hv-uikit-react/commit/0cc6f76cd37aff2d49cfb29856ac53bf8714804e))
+- **QueryBuilder:** custom value renderer per operator ([b3285f0](https://github.com/lumada-design/hv-uikit-react/commit/b3285f02bbc8090bd66e91d0386d0d4c6f45073a))
+- **QueryBuilder:** default custom renderers ([583b454](https://github.com/lumada-design/hv-uikit-react/commit/583b45426840744552d833653e0fd2c00f007ae6))
+- **QueryBuilder:** empty and is not empty operators as value renderers ([f90ca70](https://github.com/lumada-design/hv-uikit-react/commit/f90ca70433278fd0afec9ff8f0977d2a752b75a7))
+- **QueryBuilder:** empty value renderer ([5b5d81d](https://github.com/lumada-design/hv-uikit-react/commit/5b5d81d60dc7df4fc11daa886957ca9dc39eb7ab))
+
 ## [5.39.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.39.3...@hitachivantara/uikit-react-core@5.39.4) (2023-12-20)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.20.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.19.3...@hitachivantara/uikit-react-lab@5.20.0) (2023-12-21)
+
+### Features
+
+- **DashboardNode:** add node & config button ([787bf3f](https://github.com/lumada-design/hv-uikit-react/commit/787bf3ff894885cb7979626b6f20082da86caa3f))
+
 ## [5.19.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.19.2...@hitachivantara/uikit-react-lab@5.19.3) (2023-12-20)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
