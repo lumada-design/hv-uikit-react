@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": ["app/src/*"],
+      "~/*": ["apps/app/src/*"],
       "@hitachivantara/uikit-react-code-editor": ["packages/code-editor/src"],
       "@hitachivantara/uikit-react-core": ["packages/core/src"],
       "@hitachivantara/uikit-react-icons": ["packages/icons/src"],
@@ -13,6 +13,6 @@
       "@hitachivantara/uikit-react-viz": ["packages/viz/src"]
     }
   },
-  "include": [".config", ".storybook/**/*", "app", "docs", "packages"],
+  "include": [".config", ".storybook/**/*", "apps/app", "docs", "packages"],
   "exclude": ["node_modules", "packages/*/dist"]
 }

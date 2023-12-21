@@ -13,12 +13,12 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "npm run dev -w app",
+    "dev": "npm run dev -w apps/app",
     "doc": "storybook dev -p 6006",
     "clean": "lerna run clean",
     "build": "lerna run build",
     "build:doc": "storybook build -o dist --quiet && node scripts/storybook-title",
-    "build:app": "vite build app",
+    "build:app": "vite build apps/app",
     "test": "lerna run test",
     "test:a11y": "node scripts/a11y-report",
     "test:eyes": "npx eyes-storybook -f .config/applitools.config.js",
@@ -137,6 +137,6 @@
   },
   "workspaces": [
     "packages/*",
-    "app/"
+    "apps/app/"
   ]
 }

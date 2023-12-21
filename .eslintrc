@@ -72,7 +72,7 @@
       "error",
       {
         "devDependencies": [
-          "app/**",
+          "apps/app/**",
           "docs/**",
           "templates/**",
           "packages/icons/**",
