@@ -1,10 +1,10 @@
 import { useMemo } from "react";
-import { useEdges, useNodes } from "reactflow";
 import {
   HvFlowNode,
   HvFlowNodeTypeMeta,
   HvFlowNodeProps,
   HvFlowNodeFC,
+  useFlowInputNodes,
 } from "@hitachivantara/uikit-react-lab";
 
 import { NodeData, NodeGroup } from "../types";
@@ -12,13 +12,10 @@ import { NodeData, NodeGroup } from "../types";
 export const DonutChart: HvFlowNodeFC = (props) => {
   const { id } = props;
 
-  const nodes = useNodes<NodeData>();
-  const edges = useEdges();
+  const inputNodes = useFlowInputNodes<NodeData>(id);
 
   const params: HvFlowNodeProps["params"] = useMemo(() => {
-    const datasetNodeId = edges.find((e) => e.target === id)?.source;
-    const datasetNode = nodes.find((n) => n.id === datasetNodeId);
-    const columns = datasetNode?.data.columns;
+    const columns = inputNodes[0]?.data.columns;
 
     return columns
       ? [
@@ -38,7 +35,7 @@ export const DonutChart: HvFlowNodeFC = (props) => {
           },
         ]
       : undefined;
-  }, [edges, id, nodes]);
+  }, [inputNodes]);
 
   return (
     <HvFlowNode

@@ -21,7 +21,7 @@ const flexDecorator: DecoratorFn = (Story) => (
 );
 
 const meta: Meta<typeof HvAvatarGroup> = {
-  title: "Components/Avatar/AvatarGroup",
+  title: "Components/Avatar/Avatar Group",
   component: HvAvatarGroup,
   decorators: [flexDecorator],
   parameters: {
