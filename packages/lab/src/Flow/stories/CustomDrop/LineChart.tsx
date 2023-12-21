@@ -1,17 +1,18 @@
 import { css } from "@emotion/css";
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  useFlowInputNodes,
+} from "@hitachivantara/uikit-react-lab";
 import { HvLineChart } from "@hitachivantara/uikit-react-viz";
-import { useEdges, useNodes } from "reactflow";
 
 import { NodeData, data } from "./data";
 import type { NodeGroups } from ".";
 
 export const LineChart: HvFlowNodeFC<NodeGroups> = (props) => {
   const { id } = props;
-  const nodes = useNodes<NodeData>();
-  const edges = useEdges();
-  const dataNodeId = edges.find((e) => e.target === id)?.source;
-  const dataNode = nodes.find((n) => n.id === dataNodeId);
+  const inputNodes = useFlowInputNodes<NodeData>(id);
+  const country = inputNodes[0]?.data.country;
 
   return (
     <HvFlowNode
@@ -23,18 +24,19 @@ export const LineChart: HvFlowNodeFC<NodeGroups> = (props) => {
           label: "Data",
           isMandatory: true,
           accepts: ["data"],
+          maxConnections: 1,
         },
       ]}
       {...props}
     >
-      {dataNode && dataNode.data && dataNode.data.country && (
+      {country && (
         <div
           className={css({
             height: 300,
           })}
         >
           <HvLineChart
-            data={data[dataNode.data.country]}
+            data={data[country]}
             groupBy="Month"
             measures="Precipitation"
             yAxis={{
