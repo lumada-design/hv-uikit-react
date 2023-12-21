@@ -1,18 +1,18 @@
 import { css } from "@emotion/css";
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  useFlowInputNodes,
+} from "@hitachivantara/uikit-react-lab";
 import { HvBarChart } from "@hitachivantara/uikit-react-viz";
-import { useEdges, useNodes } from "reactflow";
 
 import type { NodeData } from "./data";
 import type { NodeGroups } from ".";
 
 export const BarChart: HvFlowNodeFC<NodeGroups> = (props) => {
   const { id } = props;
-  const nodes = useNodes<NodeData>();
-  const edges = useEdges();
-  const dataNodeId = edges.find((e) => e.target === id)?.source;
-
-  const dataNode = nodes.find((n) => n.id === dataNodeId);
+  const inputNodes = useFlowInputNodes<NodeData>(id);
+  const jsonData = inputNodes[0]?.data.jsonData;
 
   return (
     <HvFlowNode
@@ -24,14 +24,15 @@ export const BarChart: HvFlowNodeFC<NodeGroups> = (props) => {
           label: "Data",
           isMandatory: true,
           accepts: ["jsonData"],
+          maxConnections: 1,
         },
       ]}
       {...props}
     >
-      {dataNode?.data?.jsonData && dataNode.data.jsonData.length > 0 && (
+      {jsonData && jsonData.length > 0 && (
         <div className={css({ height: 300 })}>
           <HvBarChart
-            data={dataNode.data.jsonData}
+            data={jsonData}
             splitBy="country"
             groupBy="year"
             measures="population"

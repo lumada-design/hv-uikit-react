@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import { useEdges, useNodes, useReactFlow } from "reactflow";
-
+import { useEffect, useMemo, useState } from "react";
+import { useReactFlow } from "reactflow";
 import {
   HvCheckBox,
   HvCheckBoxGroup,
+  HvCheckBoxGroupProps,
   theme,
 } from "@hitachivantara/uikit-react-core";
 import {
-  useFlowNode,
   HvFlowNode,
   HvFlowNodeFC,
+  useFlowInputNodes,
 } from "@hitachivantara/uikit-react-lab";
 
 import { NodeData } from "./data";
@@ -19,52 +19,36 @@ function filterDataByCountries(data, countriesToFilter: string[]) {
 }
 
 export const Filter: HvFlowNodeFC = (props) => {
-  const { id } = props;
+  const { data, id } = props;
 
   const [checked, setChecked] = useState<string[]>([]);
 
   const reactFlowInstance = useReactFlow();
 
-  const nodes = useNodes<NodeData>();
-  const edges = useEdges();
+  const inputNodes = useFlowInputNodes<NodeData>(id);
+  const jsonData = inputNodes[0]?.data.jsonData;
 
-  let options: string[] = [];
-
-  const self = useFlowNode(id);
+  const options = useMemo(() => {
+    return jsonData ? [...new Set(jsonData.map((item) => item.country))] : [];
+  }, [jsonData]);
 
   useEffect(() => {
-    const dataNodeId = edges.find((e) => e.target === id)?.source;
-    if (dataNodeId) {
-      const dataNode = nodes.find((n) => n.id === dataNodeId);
-
-      const data = dataNode?.data.jsonData;
-
-      if (data) {
-        const newNodes = nodes.map((node) => {
+    if (jsonData) {
+      reactFlowInstance.setNodes((nds) =>
+        nds.map((node) => {
           if (node.id === id) {
-            const filteredData = filterDataByCountries(data, checked);
+            const filteredData = filterDataByCountries(jsonData, checked);
             node.data = { checked, jsonData: filteredData };
           }
           return node;
-        });
-        reactFlowInstance.setNodes(newNodes);
-      }
+        })
+      );
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checked]);
 
-  const dataNodeId = edges.find((e) => e.target === id)?.source;
-  if (dataNodeId) {
-    const dataNode = nodes.find((n) => n.id === dataNodeId);
-    const data = dataNode?.data.jsonData;
-
-    if (data) {
-      const distinctCountries = [...new Set(data.map((item) => item.country))];
-      options = distinctCountries as string[];
-    }
-  }
-
-  const handleCheck = (event, val) => {
+  const handleCheck: HvCheckBoxGroupProps["onChange"] = (event, val) => {
     setChecked(val);
   };
 
@@ -77,6 +61,7 @@ export const Filter: HvFlowNodeFC = (props) => {
           label: "Data",
           isMandatory: true,
           accepts: ["jsonData"],
+          maxConnections: 1,
         },
       ]}
       outputs={[
@@ -100,7 +85,7 @@ export const Filter: HvFlowNodeFC = (props) => {
               key={o}
               label={o}
               value={o}
-              checked={self?.data?.checked?.includes(o)}
+              checked={data.checked?.includes(o)}
             />
           );
         })}
