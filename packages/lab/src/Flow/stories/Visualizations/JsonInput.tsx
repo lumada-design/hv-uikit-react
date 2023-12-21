@@ -1,5 +1,7 @@
 import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
+import { data } from "./data";
+
 export const JsonInput: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
@@ -19,4 +21,7 @@ export const JsonInput: HvFlowNodeFC = (props) => {
 JsonInput.meta = {
   label: "Json Input",
   groupId: "inputs",
+  data: {
+    jsonData: data,
+  },
 };
