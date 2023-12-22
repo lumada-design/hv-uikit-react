@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.40.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.40.0...@hitachivantara/uikit-react-core@5.40.1) (2023-12-22)
+
+### Bug Fixes
+
+- **QueryBuilder:** link buttons not disabled in read only mode ([ecac2cc](https://github.com/lumada-design/hv-uikit-react/commit/ecac2cca05fa2f5827b065edb221474c8a41aff5))
+- **Typography:** disabled prop not passed down ([5181889](https://github.com/lumada-design/hv-uikit-react/commit/5181889f69e18d4d39d70a8c1301af69035bd142))
+
 # [5.40.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.39.4...@hitachivantara/uikit-react-core@5.40.0) (2023-12-21)
 
 ### Bug Fixes
