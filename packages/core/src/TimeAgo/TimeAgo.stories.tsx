@@ -165,29 +165,18 @@ export const LocaleOverride = () => {
   const [locale, setLocale] = useState("en");
   const [time /* , setTime */] = useState(Date.now());
 
-  // const handleTimeChange = ({ hours, minutes, seconds }) => {
-  //   const newDate = new Date();
-  //   newDate.setHours(hours);
-  //   newDate.setMinutes(minutes);
-  //   newDate.setSeconds(seconds);
-  //   setTime(newDate.getTime());
-  // };
-
-  // dynamically import locales
-  // if the supported locales are known beforehand, its preferable
-  // to import them statically, to avoid bundling unnecessary locales
-  const handleLocaleChange = async (event, newLocale) => {
-    setLocale(newLocale);
-    dayjs.updateLocale("fr", {});
-  };
-
   return (
     <div className={css(styles.container)}>
       <div>
         <HvRadioGroup
           orientation="horizontal"
           value={locale}
-          onChange={handleLocaleChange}
+          onChange={async (event, newLocale) => {
+            // dynamically import locales. if the supported locales are known beforehand,
+            // its preferable to import them statically, to avoid bundling unnecessary locales
+            setLocale(newLocale);
+            dayjs.updateLocale("fr", {});
+          }}
         >
           <HvRadio label="🇬🇧 English" value="en" />
           <HvRadio label="🇫🇷 French" value="fr" />
@@ -201,13 +190,6 @@ export const LocaleOverride = () => {
         </HvTypography>
         <span>{new Date(time).toISOString()}</span>
       </div>
-      {/* <div style={{ width: 300, minHeight: 300 }}>
-        <HvTimePicker
-          label="Time"
-          description="Pick a time"
-          onChange={handleTimeChange}
-        />
-      </div> */}
     </div>
   );
 };

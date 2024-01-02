@@ -60,17 +60,17 @@ export const HvSingleCalendar = ({
 
   const listWeekdayNames = useMemo(() => getWeekdayNamesList(locale), [locale]);
 
-  const handleChange = (event, date: Date | DateRangeProp) => {
+  const handleChange = (event: any, date: Date | DateRangeProp) => {
     event?.preventDefault();
     onChange?.(event, date);
   };
 
-  const handleInputChange = (event, date) => {
+  const handleInputChange = (event: any, date: any) => {
     event?.preventDefault();
     onInputChange?.(event, date);
   };
 
-  const getNavChild = (event: KeyboardEvent, siblings, i: number) => {
+  const getNavChild = (event: KeyboardEvent, siblings: any, i: number) => {
     if (isKey(event, "ArrowLeft")) return siblings[i - 1];
     if (isKey(event, "ArrowRight")) return siblings[i + 1];
     if (isKey(event, "ArrowUp")) return siblings[i - 7];
@@ -78,7 +78,7 @@ export const HvSingleCalendar = ({
     return undefined;
   };
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: any) => {
     // This code is very brittle and should be managed with the focus wrapper
     const el = document?.activeElement;
     const parent = el?.parentElement?.parentElement;
@@ -157,6 +157,7 @@ export const HvSingleCalendar = ({
             />
             <div
               className={classes.calendarGrid}
+              // @ts-ignore TODO: review
               aria-controls={HvCalendarHeader?.[0]?.id}
             >
               {listWeekdayNames.map(renderWeekLabel)}

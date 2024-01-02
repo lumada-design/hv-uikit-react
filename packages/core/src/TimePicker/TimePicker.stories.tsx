@@ -1,6 +1,6 @@
-import { CSSProperties, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
-import { Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
@@ -20,8 +20,10 @@ export default {
   component: HvTimePicker,
 } satisfies Meta<typeof HvTimePicker>;
 
-const makeDecorator = (styles: CSSProperties) => (Story) =>
-  <div style={styles}>{Story()}</div>;
+const makeDecorator =
+  (style: CSSInterpolation): Decorator =>
+  (Story) =>
+    <div className={css(style)}>{Story()}</div>;
 
 export const Main: StoryObj<HvTimePickerProps> = {
   args: {

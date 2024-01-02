@@ -28,19 +28,7 @@ const tags = [
 ];
 
 export const Selectable = () => {
-  const [selectedTags, setSelectedTags] = useState<any>([]);
-
-  const handleSelect = (
-    event: React.MouseEvent<HTMLElement>,
-    selected?: boolean,
-    label?: string
-  ) => {
-    if (selected) {
-      setSelectedTags((prev) => [...prev, label]);
-    } else {
-      setSelectedTags((prev) => prev.filter((item: any) => item !== label));
-    }
-  };
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   return (
     <div
@@ -59,9 +47,13 @@ export const Selectable = () => {
             onDelete={() => {
               alert("On Delete Action");
             }}
-            onClick={(event, selected) =>
-              handleSelect(event, selected, tag.label)
-            }
+            onClick={(event, selected) => {
+              setSelectedTags((prev) =>
+                selected
+                  ? prev.concat(tag.label)
+                  : prev.filter((item) => item !== tag.label)
+              );
+            }}
             classes={{ root: css({ color: tag.color || "unset" }) }}
           />
         ))}

@@ -17,6 +17,7 @@ import {
   useHvBulkActions,
   useHvPagination,
   useHvFilters,
+  HvLeftControlProps,
 } from "@hitachivantara/uikit-react-core";
 
 import { LoadingContainer } from "../utils";
@@ -113,7 +114,7 @@ const ListView = () => {
     }
   };
 
-  const handleSearch = (e, value: string) => {
+  const handleSearch: HvLeftControlProps["onSearch"] = (e, value) => {
     instance.gotoPage?.(0);
     setParams((prev) => ({
       ...prev,

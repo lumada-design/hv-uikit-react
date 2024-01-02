@@ -332,7 +332,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       attributes.popper?.["data-popper-placement"] ?? "bottom";
 
     const handleToggle = useCallback(
-      (event) => {
+      (event: any) => {
         if (event && !isKey(event, "Tab")) {
           event.preventDefault();
         }

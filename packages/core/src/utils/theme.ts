@@ -55,7 +55,7 @@ export const setElementAttrs = (
 /**
  * Applies customizations to a theme.
  */
-const applyThemeCustomizations = (obj: object, customizations: object) => {
+const applyThemeCustomizations = (obj: any, customizations: any) => {
   const isObject = (val: any) =>
     val && typeof val === "object" && !Array.isArray(val);
 

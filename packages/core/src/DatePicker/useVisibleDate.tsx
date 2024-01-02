@@ -9,14 +9,14 @@ function stateToLeftRight({
   visibleMonth,
   rightVisibleYear,
   rightVisibleMonth,
-}) {
+}: any) {
   return {
     left: { year: visibleYear, month: visibleMonth },
     right: { year: rightVisibleYear, month: rightVisibleMonth },
   };
 }
 
-function leftRightToState(left, right) {
+function leftRightToState(left: any, right: any) {
   return {
     visibleYear: left.year,
     visibleMonth: left.month,
@@ -25,15 +25,15 @@ function leftRightToState(left, right) {
   };
 }
 
-function subtractYear({ year, month }) {
+function subtractYear({ year, month }: any) {
   return { year: year - 1, month };
 }
 
-function addYear({ year, month }) {
+function addYear({ year, month }: any) {
   return { year: year + 1, month };
 }
 
-function subtractMonth({ year, month }) {
+function subtractMonth({ year, month }: any) {
   let y = year;
   let m = month;
 
@@ -46,7 +46,7 @@ function subtractMonth({ year, month }) {
   return { year: y, month: m };
 }
 
-function addMonth({ year, month }) {
+function addMonth({ year, month }: any) {
   let y = year;
   let m = month;
 
@@ -59,7 +59,7 @@ function addMonth({ year, month }) {
   return { year: y, month: m };
 }
 
-function ensureNoOverlap(left, right, keepRight = false) {
+function ensureNoOverlap(left: any, right: any, keepRight = false) {
   let l = left;
   let r = right;
   if (
@@ -76,7 +76,7 @@ function ensureNoOverlap(left, right, keepRight = false) {
   return leftRightToState(l, r);
 }
 
-export function isSameYearMonth(d1, d2) {
+export function isSameYearMonth(d1: any, d2: any) {
   return d1.year === d2.year && d1.month === d2.month;
 }
 
@@ -169,7 +169,7 @@ const visibleDateReducer: Reducer<State, Action> = (state, action) => {
   return state;
 };
 
-function stateFromRange(startDate, endDate) {
+function stateFromRange(startDate: any, endDate: any) {
   const initialStartDate = validateDate(startDate);
   const initialEndDate =
     endDate != null ? validateDate(endDate) : initialStartDate;

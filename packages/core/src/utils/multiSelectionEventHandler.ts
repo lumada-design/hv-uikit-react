@@ -1,8 +1,8 @@
 const cycleThroughSelection = (
-  selectedState,
-  index,
-  allValues,
-  selectionCheck
+  selectedState: boolean[],
+  index: number,
+  allValues: any[],
+  selectionCheck: any
 ) => {
   const newValue: any[] = [];
   selectedState.forEach((isSelected, i) => {
@@ -19,12 +19,12 @@ const cycleThroughSelection = (
 };
 
 export const multiSelectionEventHandler = (
-  evt,
-  index,
-  selectionAnchor,
-  allValues,
-  selectedState,
-  selectionCheck
+  evt: any,
+  index: number,
+  selectionAnchor: any,
+  allValues: any[],
+  selectedState: boolean[],
+  selectionCheck: any
 ) => {
   let newValue: any[] = [];
 

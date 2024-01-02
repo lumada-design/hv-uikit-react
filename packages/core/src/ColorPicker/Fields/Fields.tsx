@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { HSLColor, HSVColor, RGBColor } from "react-color";
 
+// @ts-ignore
 import * as color from "react-color/lib/helpers/color";
 
 import { HvInput } from "../../Input";

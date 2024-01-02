@@ -38,7 +38,7 @@ export default class CalendarModel {
   };
 }
 
-const generateModelFromDate = (seedValue) => {
+const generateModelFromDate = (seedValue: any) => {
   let calendarModel;
 
   if (typeof seedValue === "string") {

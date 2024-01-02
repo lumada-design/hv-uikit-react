@@ -10,7 +10,15 @@ import {
 import { useModelData } from "../data";
 import { MetadataItem } from "../MetadataItem";
 
-const Kpi = ({ title, count, diff }) => {
+const Kpi = ({
+  title,
+  count,
+  diff,
+}: {
+  title: string;
+  count: number;
+  diff: number;
+}) => {
   const Icon = diff > 0 ? Top : Bottom;
 
   return (

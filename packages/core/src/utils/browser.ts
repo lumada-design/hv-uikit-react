@@ -1,6 +1,6 @@
 import { detect } from "detect-browser";
 
-export const isBrowser = (browsers) => {
+export const isBrowser = (browsers: string | string[]) => {
   const browser = detect();
   return (
     browser &&

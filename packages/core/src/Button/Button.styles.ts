@@ -112,6 +112,7 @@ export const getSizeStyles = (size: HvButtonSize): CSSInterpolation => ({
   height: theme.sizes[size],
   paddingLeft: theme.space[size],
   paddingRight: theme.space[size],
+  // @ts-ignore TODO: align font<-> button sizes
   fontSize: theme.fontSizes[size],
 });
 

@@ -72,7 +72,7 @@ const entries: Partial<
     label: "Tags",
     Component: ({ value }) => (
       <div className={css({ display: "flex", gap: theme.space.xs })}>
-        {value.map((tag) => (
+        {value.map((tag: string) => (
           <HvTag key={tag} label={tag} />
         ))}
       </div>

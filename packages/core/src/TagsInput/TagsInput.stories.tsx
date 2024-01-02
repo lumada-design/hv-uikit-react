@@ -234,7 +234,7 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
     const [status, setStatus] = useState<HvFormStatus>("valid");
     const [statusMsg, setStatusMsg] = useState("");
 
-    const isInvalidTag = (tag) => tag?.includes("-");
+    const isInvalidTag = (tag: any) => tag?.includes("-");
 
     return (
       <>
@@ -360,23 +360,20 @@ export const TagsCounterValidation: StoryObj<HvTagsInputProps> = {
   render: () => {
     const [tagsLength, setTagsLength] = useState(0);
 
-    const setCounter = (data) => {
-      console.log("in onChange callback. data: ", data);
-      setTagsLength(data.length);
-      return data;
-    };
-    const validationMessages = {
-      maxCharError: "Too many tags",
-    };
-
     return (
       <HvTagsInput
         label="Tags"
         description="Maximum 3 tags"
         aria-label="The label"
         placeholder="Enter value"
-        onChange={(event, value) => setCounter(value)}
-        validationMessages={validationMessages}
+        onChange={(event, value) => {
+          console.log("in onChange callback. data: ", value);
+          setTagsLength(value.length);
+          return value;
+        }}
+        validationMessages={{
+          maxCharError: "Too many tags",
+        }}
         maxTagsQuantity={3}
         countCharProps={{
           "aria-label": `You have inserted ${tagsLength} tags`,
@@ -423,7 +420,7 @@ export const Suggestions: StoryObj<HvTagsInputProps> = {
     const [currValueStr, setCurrValueStr] = useState<HvTagProps[]>([]);
     const countries = countryNamesArray;
 
-    const suggestionHandler = (val) => {
+    const suggestionHandler = (val: string) => {
       if (typeof val !== "string" || isEmpty(val)) return null;
       const foundCountries = countries.filter((country) =>
         country.toUpperCase().startsWith(val.toUpperCase())
@@ -480,7 +477,7 @@ export const UnrestrictedSuggestions: StoryObj<HvTagsInputProps> = {
     const [status, setStatus] = useState<HvFormStatus>("valid");
     const [statusMsg, setStatusMsg] = useState("");
 
-    const suggestionHandler = (val) => {
+    const suggestionHandler = (val: string) => {
       if (typeof val !== "string" || isEmpty(val)) return null;
       const foundOptions = options.filter((option) =>
         option.toUpperCase().startsWith(val.toUpperCase())

@@ -69,7 +69,11 @@ const styles = {
   }),
 };
 
-const GaugeChart = ({ indicator, unit, percentage }) => (
+const GaugeChart = ({
+  indicator,
+  unit,
+  percentage,
+}: Record<string, React.ReactNode>) => (
   <div className={styles.gaugeOuterSemiCircle}>
     <div
       className={styles.gaugeMask}

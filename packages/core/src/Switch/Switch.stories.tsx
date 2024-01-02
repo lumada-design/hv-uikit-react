@@ -174,7 +174,7 @@ export const WithLabels: StoryObj<HvSwitchProps> = {
     const [deactivatedSwitch, setActivatedSwitch] = useState(false);
     const [state, setState] = useState(false);
 
-    const SwitchLabel = ({ label }) => {
+    const SwitchLabel = ({ label }: { label: string }) => {
       const clickCallback = deactivatedSwitch
         ? undefined
         : () => setState(!state);

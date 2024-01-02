@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   BackwardsEmpty,
   BackwardsSelected,
@@ -29,18 +29,16 @@ import {
 
 import { ToggleEye } from "./ToggleEye";
 
-const FlexDecorator = ({ children }) => {
-  return (
-    <div style={{ display: "flex", alignItems: "end", flexWrap: "wrap" }}>
-      {children}
-    </div>
-  );
-};
+const flexDecorator: Decorator = (Story) => (
+  <div style={{ display: "flex", alignItems: "end", flexWrap: "wrap" }}>
+    {Story()}
+  </div>
+);
 
 const meta: Meta<typeof HvToggleButton> = {
   title: "Components/Toggle Button",
   component: HvToggleButton,
-  decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
+  decorators: [flexDecorator],
 };
 export default meta;
 
@@ -56,7 +54,6 @@ export const Main: StoryObj<HvToggleButtonProps> = {
     selectedIcon: { control: { disable: true } },
     notSelectedIcon: { control: { disable: true } },
   },
-  decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
   render: (args) => {
     return <HvToggleButton aria-label="Favorite" {...args} />;
   },

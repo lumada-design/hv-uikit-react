@@ -88,7 +88,7 @@ const buildFormElementPropsFromContext = (
 };
 
 const buildAriaPropsFromContext = (props, context, isInvalid, inputId) => {
-  const arias = {
+  const arias: React.AriaAttributes = {
     "aria-labelledby":
       props?.["aria-labelledby"] !== undefined
         ? props?.["aria-labelledby"]

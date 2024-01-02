@@ -6,7 +6,7 @@ const isItemSelected = (item: HvListValue, newItem: HvListValue) => {
   return newItem[selectionKey] === selectionElement;
 };
 
-const checkIcons = (list) => list?.some((elem) => elem?.icon);
+const checkIcons = (list: any[]) => list?.some((elem) => elem?.icon);
 
 const parseState = (list = []) => {
   const hasLeftIcons = checkIcons(list);

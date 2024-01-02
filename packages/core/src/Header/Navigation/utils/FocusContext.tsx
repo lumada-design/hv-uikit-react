@@ -1,11 +1,8 @@
 import React, { createContext, useMemo, useReducer } from "react";
 
-interface SetItemFocused {
-  type: "setItemFocused";
-  itemFocused: EventTarget & Element;
-}
+type Action = { type: "setItemFocused"; itemFocused: EventTarget & Element };
 
-const reducer = (state, action) => {
+const reducer: React.Reducer<FocusContextType, Action> = (state, action) => {
   switch (action.type) {
     case "setItemFocused":
       return { itemFocused: action.itemFocused };
@@ -16,18 +13,19 @@ const reducer = (state, action) => {
 
 const initialState = { itemFocused: undefined, dispatch: undefined };
 
-export const FocusContext = createContext<{
+type FocusContextType = {
   itemFocused?: EventTarget & Element;
-  dispatch?: React.Dispatch<SetItemFocused>;
-}>(initialState);
+  dispatch?: React.Dispatch<Action>;
+};
 
-export const FocusProvider = (props) => {
+export const FocusContext = createContext<FocusContextType>(initialState);
+
+export const FocusProvider = ({ children }: { children?: React.ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const contextValue = useMemo(
     () => ({ ...state, dispatch }),
     [state, dispatch]
   );
-  const { children } = props;
 
   return (
     <FocusContext.Provider value={contextValue}>

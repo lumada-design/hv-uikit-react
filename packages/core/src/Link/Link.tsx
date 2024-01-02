@@ -1,5 +1,3 @@
-import { MouseEventHandler } from "react";
-
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
@@ -12,7 +10,7 @@ export type HvLinkClasses = ExtractNames<typeof useClasses>;
 
 export interface HvLinkProps extends HvBaseProps<HTMLAnchorElement, "onClick"> {
   onClick?: (
-    event: MouseEventHandler<HTMLAnchorElement>,
+    event: React.MouseEvent<HTMLAnchorElement>,
     data: any
   ) => void | undefined;
   route?: string;
@@ -35,16 +33,15 @@ export const HvLink = (props: HvLinkProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const handleClick = (event) => {
-    event.preventDefault();
-
-    onClick?.(event, data);
-  };
-
   return (
     <a
       href={route}
-      onClick={onClick != null ? handleClick : undefined}
+      onClick={(event) => {
+        if (!onClick) return;
+
+        event.preventDefault();
+        onClick?.(event, data);
+      }}
       className={cx(classes.a, className)}
       {...others}
     >
