@@ -53,8 +53,8 @@ export interface HvVerticalNavigationHeaderProps {
 
 export const HvVerticalNavigationHeader = ({
   title,
-  openIcon = <Forwards />,
-  closeIcon = <Backwards />,
+  openIcon: openIconProp,
+  closeIcon: closeIconProp,
   collapseButtonProps,
   backButtonProps,
   className,
@@ -73,7 +73,8 @@ export const HvVerticalNavigationHeader = ({
 
   const { classes, cx } = useClasses(classesProp);
 
-  openIcon = !useIcons ? <Menu /> : openIcon;
+  const openIcon = openIconProp ?? (!useIcons ? <Menu /> : <Forwards />);
+  const closeIcon = closeIconProp ?? <Backwards />;
 
   const backButtonClickHandler = () => {
     if (navigateToParentHandler) navigateToParentHandler();
