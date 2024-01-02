@@ -1,6 +1,3 @@
-/// <reference types="vite/client" />
-/* eslint-disable import/no-duplicates */
-
 import { StoryObj } from "@storybook/react";
 
 import { AlternativeLayout } from "./AlternativeLayout";

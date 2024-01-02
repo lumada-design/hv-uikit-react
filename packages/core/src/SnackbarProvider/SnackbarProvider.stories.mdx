@@ -1,5 +1,5 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
-import { SnackbarProvider } from "./SnackbarProvider.stories.tsx";
+import { SnackbarProviderButtonsStory } from "./stories/SnackbarProviderStories.tsx";
 
 <Meta
   title="Components/Snackbar/Provider"
@@ -29,25 +29,18 @@ import { HvSnackbarProvider } from "@hitachivantara/uikit-react-core";
 
 After adding the provider at the root of your app, you can call the `useHvSnackbar` at any
 component inside your app. This hook will allow you to request the rendering of a snackbar through the use
-of the `enqueueSnackbar` function which follows the API bellow:
-
-parameters:
-
-- `message: ReactNode`: The message to render inside the snackbar.
-- `options: HvEnqueueOptions`: The options to configure the snackbar.
-  - `HvEnqueueOptions`:
-    - `id?: string`: The id to pass to the snackbar
-    - `variant: "success" | "default" | "warning"`: The color of the snackbar
-    - `snackbarContentProps?: HvSnackbarContentProps`: Extra properties to be passed onto the snackbar
-
-output:
-
-- `SnackbarKey: string | number`: How many snackbars to render.
+of the `enqueueSnackbar` function or close one with `closeSnackbar`.
 
 ```tsx
 import { useHvSnackbar } from "@hitachivantara/uikit-react-core";
+
+// inside a component
+const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
+
+const id = enqueueSnackbar("This is a warning!", { variant: "warning" });
+closeSnackbar(id);
 ```
 
-<Canvas withToolbar>
-  <Story inline story={SnackbarProvider} />
+<Canvas>
+  <Story name="Snackbar Provider" story={SnackbarProviderButtonsStory} />
 </Canvas>
