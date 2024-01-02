@@ -90,6 +90,7 @@ export * from "./Section";
 export * from "./SimpleGrid";
 export * from "./Slider";
 export * from "./Snackbar";
+export * from "./SnackbarProvider";
 export * from "./Stack";
 export * from "./Switch";
 export * from "./Tab";

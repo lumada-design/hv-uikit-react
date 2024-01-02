@@ -12,11 +12,13 @@ import {
 import { SnackbarOrigin } from "@mui/material/Snackbar";
 import { ClassNameMap } from "@mui/material/styles";
 
-import { ExtractNames } from "../../utils/classes";
-
-import { HvSnackbarContent, HvSnackbarContentProps } from "../SnackbarContent";
+import { ExtractNames } from "../utils/classes";
+import {
+  HvSnackbarContent,
+  HvSnackbarContentProps,
+} from "../Snackbar/SnackbarContent";
+import { HvSnackbarVariant } from "../Snackbar/types";
 import { staticClasses, useClasses } from "./SnackbarProvider.styles";
-import { HvSnackbarVariant } from "../types";
 
 export { staticClasses as snackbarProviderClasses };
 
@@ -41,7 +43,7 @@ export interface HvSnackbarProviderProps {
 export interface HvNotistackSnackMessageProps extends OptionsObject {
   /** Id to be applied to the root node. */
   id?: string;
-  /** Classname to apply on the root node */
+  /** class name to apply on the root node */
   className?: string;
   /** Your component tree. */
   message?: ReactNode;
@@ -72,8 +74,14 @@ const HvNotistackSnackMessage = forwardRef<
 
 // We override notistack hook to be able to customize the snackbar that should be called.
 export const useHvSnackbar = () => {
+  const snackbarContext = useSnackbar();
+
+  if (!snackbarContext) {
+    throw new Error("useHvSnackbar must be used within an HvSnackbarProvider");
+  }
+
   const { enqueueSnackbar: enqueueNotistackSnackbar, closeSnackbar } =
-    useSnackbar();
+    snackbarContext;
 
   const enqueueSnackbar = useCallback(
     (message: ReactNode, options: HvNotistackSnackMessageProps = {}) => {
