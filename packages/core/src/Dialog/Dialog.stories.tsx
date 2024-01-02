@@ -249,7 +249,7 @@ export const Form: StoryObj<HvDialogProps> = {
           <HvDialogTitle id="hv-dialog-title" variant="warning">
             Create a new post
           </HvDialogTitle>
-          <HvDialogContent id="hv-dialog-description" indentContent>
+          <HvDialogContent indentContent>
             <div id="hv-dialog-description" style={{ marginBottom: 10 }}>
               Fill the following form to create a post.
             </div>

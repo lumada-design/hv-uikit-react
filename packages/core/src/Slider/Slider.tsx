@@ -622,7 +622,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
             <HvLabel
               id={setId(elementId, "label")}
               className={classes.label}
-              htmlFor={setId(elementId, "slider")}
+              htmlFor={elementId}
               label={label}
             />
           )}

@@ -27,6 +27,7 @@ export const HvDialogContent = (props: HvDialogContentProps) => {
     className,
     children,
     indentContent = false,
+    ...others
   } = useDefaultProps("HvDialogContent", props);
 
   const { classes, cx } = useClasses(classesProp);
@@ -39,6 +40,7 @@ export const HvDialogContent = (props: HvDialogContentProps) => {
         { [classes.textContent]: !!indentContent },
         className
       )}
+      {...others}
     >
       {children}
     </HvTypography>

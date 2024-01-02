@@ -82,7 +82,7 @@ const Sample = ({
   };
   return (
     <div style={{ display: "flex", width: 220, height: 530 }}>
-      <HvVerticalNavigation id="sample1" useIcons={useIcons} slider={slider}>
+      <HvVerticalNavigation useIcons={useIcons} slider={slider}>
         <HvVerticalNavigationHeader
           title="Menu"
           onCollapseButtonClick={handleExpand}

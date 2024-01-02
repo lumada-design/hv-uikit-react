@@ -147,7 +147,6 @@ export const CleanMultiSelection: StoryObj<HvSelectionListProps> = {
   render: () => {
     return (
       <HvSelectionList
-        id="main"
         label="Choose your favorite items"
         name="favorite"
         multiple
