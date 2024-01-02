@@ -18,9 +18,15 @@ describe("<Calendar /> with minimum configuration", () => {
 describe("<Calendar /> with configurations", () => {
   it("renders the month and year", () => {
     const selectedDate = new Date("2020-01-10");
-    render(<HvCalendar value={selectedDate} />);
+    render(
+      <HvCalendar
+        visibleMonth={selectedDate.getMonth() + 1}
+        visibleYear={selectedDate.getFullYear()}
+        value={selectedDate}
+      />
+    );
 
     expect(screen.getByText("January")).toBeInTheDocument();
-    expect(screen.getByText("2023")).toBeInTheDocument();
+    expect(screen.getByText("2020")).toBeInTheDocument();
   });
 });
