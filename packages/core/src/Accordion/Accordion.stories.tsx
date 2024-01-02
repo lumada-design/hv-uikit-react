@@ -64,7 +64,7 @@ export const Main: StoryObj<HvAccordionProps> = {
   render: (args) => {
     return (
       <HvBox sx={{ maxWidth: 300 }}>
-        <HvAccordion id="main" {...args}>
+        <HvAccordion {...args}>
           <HvListContainer
             className={css(styles.listContainer)}
             interactive
@@ -83,7 +83,7 @@ export const Disabled: StoryObj<HvAccordionProps> = {
   render: () => {
     return (
       <HvBox sx={{ maxWidth: 300 }}>
-        <HvAccordion id="item1" label="Analytics" headingLevel={3} disabled>
+        <HvAccordion label="Analytics" headingLevel={3} disabled>
           <HvListContainer
             className={css(styles.listContainer)}
             interactive
@@ -93,7 +93,7 @@ export const Disabled: StoryObj<HvAccordionProps> = {
             <HvListItem>Parameters</HvListItem>
           </HvListContainer>
         </HvAccordion>
-        <HvAccordion id="item2" label="System" headingLevel={3}>
+        <HvAccordion label="System" headingLevel={3}>
           <HvListContainer
             className={css(styles.listContainer)}
             interactive
@@ -103,7 +103,7 @@ export const Disabled: StoryObj<HvAccordionProps> = {
             <HvListItem>Network</HvListItem>
           </HvListContainer>
         </HvAccordion>
-        <HvAccordion id="item3" label="Data" headingLevel={3} disabled>
+        <HvAccordion label="Data" headingLevel={3} disabled>
           <HvListContainer
             className={css(styles.listContainer)}
             interactive

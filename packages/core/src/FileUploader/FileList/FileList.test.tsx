@@ -6,7 +6,6 @@ import { HvFileList } from "./FileList";
 
 const Main = () => (
   <HvFileList
-    id="list"
     list={
       [
         {

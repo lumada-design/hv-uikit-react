@@ -46,7 +46,6 @@ export interface HvAppSwitcherProps extends HvBaseProps {
 
 export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
   const {
-    id,
     className,
     classes: classesProp,
     layout = "single",
@@ -57,6 +56,7 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
     header,
     footer,
     isOpen,
+    ...others
   } = useDefaultProps("HvAppSwitcher", props);
   const { classes, cx } = useClasses(classesProp);
 
@@ -91,13 +91,13 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
 
   return (
     <div
-      id={id}
       className={cx(
         classes.root,
         classes[layout],
         { [classes.open]: !!isOpen, [classes.closed]: isOpen === false },
         className
       )}
+      {...others}
     >
       {(header && (
         <HvTypography component="div" variant="label" className={classes.title}>

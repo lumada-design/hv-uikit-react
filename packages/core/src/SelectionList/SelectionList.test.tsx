@@ -16,12 +16,7 @@ const Main = () => (
 );
 
 const MultiSelection = () => (
-  <HvSelectionList
-    id="main"
-    label="Choose your favorite items"
-    name="favorite"
-    multiple
-  >
+  <HvSelectionList label="Choose your favorite items" name="favorite" multiple>
     <HvListItem value="1">ListItem 1</HvListItem>
     <HvListItem value="2" selected>
       ListItem 2
@@ -34,12 +29,7 @@ const MultiSelection = () => (
 );
 
 const CleanMultiSelection = () => (
-  <HvSelectionList
-    id="main"
-    label="Choose your favorite items"
-    name="favorite"
-    multiple
-  >
+  <HvSelectionList label="Choose your favorite items" name="favorite" multiple>
     <HvListItem value="1">ListItem 1</HvListItem>
     <HvListItem value="2">ListItem 2</HvListItem>
     <HvListItem value="3">ListItem 3</HvListItem>

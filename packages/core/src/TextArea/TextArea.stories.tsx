@@ -182,7 +182,7 @@ export const Main: StoryObj<HvTextAreaProps> = {
     },
   },
   render: (args) => {
-    return <HvTextArea id="main" {...args} />;
+    return <HvTextArea {...args} />;
   },
 };
 

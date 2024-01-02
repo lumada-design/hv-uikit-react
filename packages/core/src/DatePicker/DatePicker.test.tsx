@@ -6,7 +6,7 @@ import { HvDatePicker } from "./DatePicker";
 import { makeUTCDate } from "../Calendar/utils";
 
 export const Main = () => (
-  <HvDatePicker id="DatePicker" placeholder="Select date" aria-label="Date" />
+  <HvDatePicker placeholder="Select date" aria-label="Date" />
 );
 
 describe("HvDatePicker", () => {
@@ -175,7 +175,6 @@ describe("HvDatePicker", () => {
           placeholder={labels.placeholder}
           horizontalPlacement="left"
           showActions
-          id="testingDatePicker"
         />
       );
       const calendarButtons = queryAllByRole("button");
@@ -213,7 +212,6 @@ describe("HvDatePicker", () => {
           placeholder={labels.placeholder}
           horizontalPlacement="left"
           showActions
-          id="testingDatePicker"
         />
       );
       let calendarButtons = queryAllByRole("button");
@@ -251,7 +249,6 @@ describe("HvDatePicker", () => {
     it("When in read only mode it shouldn't open the calendar", async () => {
       const { getByRole, queryByRole } = render(
         <HvDatePicker
-          id="DatePicker"
           placeholder="Can't select a date now"
           aria-label="Read only date picker"
           readOnly

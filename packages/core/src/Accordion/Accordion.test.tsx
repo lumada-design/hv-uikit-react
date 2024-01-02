@@ -16,14 +16,14 @@ describe("Accordion", () => {
     it("renders the component as expected", () => {
       render(
         <>
-          <HvAccordion id="item1" label="Analytics" headingLevel={1}>
+          <HvAccordion label="Analytics" headingLevel={1}>
             <HvTypography>item 1</HvTypography>
           </HvAccordion>
-          <HvAccordion id="item2" label="System" headingLevel={2}>
+          <HvAccordion label="System" headingLevel={2}>
             <HvTypography>item 2</HvTypography>
           </HvAccordion>
-          <HvAccordion id="item3" label="Data" headingLevel={2}>
-            <HvTypography>item 2</HvTypography>
+          <HvAccordion label="Data" headingLevel={2}>
+            <HvTypography>item 3</HvTypography>
           </HvAccordion>
         </>
       );
@@ -40,14 +40,14 @@ describe("Accordion", () => {
     it("opens and closes the content", async () => {
       const { getByRole, getByText } = render(
         <>
-          <HvAccordion id="item1" label="Analytics" headingLevel={1}>
+          <HvAccordion label="Analytics" headingLevel={1}>
             <HvTypography>Views</HvTypography>
           </HvAccordion>
-          <HvAccordion id="item2" label="System" headingLevel={2}>
+          <HvAccordion label="System" headingLevel={2}>
             <HvTypography>item 2</HvTypography>
           </HvAccordion>
-          <HvAccordion id="item3" label="Data" headingLevel={2}>
-            <HvTypography>item 2</HvTypography>
+          <HvAccordion label="Data" headingLevel={2}>
+            <HvTypography>item 3</HvTypography>
           </HvAccordion>
         </>
       );
@@ -69,14 +69,14 @@ describe("Accordion", () => {
     it("opens and closes the content using the keyboard", async () => {
       const { getByRole, getByText } = render(
         <>
-          <HvAccordion id="item1" label="Analytics" headingLevel={1}>
+          <HvAccordion label="Analytics" headingLevel={1}>
             <HvTypography>Views</HvTypography>
           </HvAccordion>
-          <HvAccordion id="item2" label="System" headingLevel={2}>
+          <HvAccordion label="System" headingLevel={2}>
             <HvTypography>item 2</HvTypography>
           </HvAccordion>
-          <HvAccordion id="item3" label="Data" headingLevel={2}>
-            <HvTypography>item 2</HvTypography>
+          <HvAccordion label="Data" headingLevel={2}>
+            <HvTypography>item 3</HvTypography>
           </HvAccordion>
         </>
       );
@@ -104,14 +104,14 @@ describe("Accordion", () => {
     it("cannot open a disabled accordion", async () => {
       const { getByRole, getByText } = render(
         <>
-          <HvAccordion id="item1" label="Analytics" headingLevel={1} disabled>
+          <HvAccordion label="Analytics" headingLevel={1} disabled>
             <HvTypography>Views</HvTypography>
           </HvAccordion>
-          <HvAccordion id="item2" label="System" headingLevel={2}>
+          <HvAccordion label="System" headingLevel={2}>
             <HvTypography>item 2</HvTypography>
           </HvAccordion>
-          <HvAccordion id="item3" label="Data" headingLevel={2} disabled>
-            <HvTypography>item 2</HvTypography>
+          <HvAccordion label="Data" headingLevel={2} disabled>
+            <HvTypography>item 3</HvTypography>
           </HvAccordion>
         </>
       );
@@ -134,14 +134,14 @@ describe("Accordion", () => {
     it("cannot open a disabled accordion with keyboard", async () => {
       const { getByRole, getByText } = render(
         <>
-          <HvAccordion id="item1" label="Analytics" headingLevel={1} disabled>
+          <HvAccordion label="Analytics" headingLevel={1} disabled>
             <HvTypography>Views</HvTypography>
           </HvAccordion>
-          <HvAccordion id="item2" label="System" headingLevel={2}>
+          <HvAccordion label="System" headingLevel={2}>
             <HvTypography>item 2</HvTypography>
           </HvAccordion>
-          <HvAccordion id="item3" label="Data" headingLevel={2} disabled>
-            <HvTypography>item 2</HvTypography>
+          <HvAccordion label="Data" headingLevel={2} disabled>
+            <HvTypography>item 3</HvTypography>
           </HvAccordion>
         </>
       );

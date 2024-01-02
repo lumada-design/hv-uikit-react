@@ -8,8 +8,9 @@ import React, {
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import { useControlled } from "../hooks/useControlled";
+import { useUniqueId } from "../hooks/useUniqueId";
+
 import { HvBaseProps } from "../types/generic";
 import { setId } from "../utils/setId";
 import { HvTypographyVariants, HvTypography } from "../Typography";
@@ -70,7 +71,7 @@ export interface HvAccordionProps
  */
 export const HvAccordion = (props: HvAccordionProps) => {
   const {
-    id,
+    id: idProp,
     className,
     classes: classesProp,
     disabled = false,
@@ -84,6 +85,8 @@ export const HvAccordion = (props: HvAccordionProps) => {
     labelVariant = "label",
     ...others
   } = useDefaultProps("HvAccordion", props);
+
+  const id = useUniqueId(idProp, "hvaccordion");
 
   const { classes, cx } = useClasses(classesProp);
 

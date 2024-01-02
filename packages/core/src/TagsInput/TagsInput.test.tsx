@@ -58,16 +58,13 @@ describe("TagsInput Component", () => {
   Element.prototype.scrollTo = () => {};
 
   it("should render the label correctly", () => {
-    render(
-      <HvTagsInput id="tags-list" label="Custom label" classes={mockClasses} />
-    );
+    render(<HvTagsInput label="Custom label" classes={mockClasses} />);
     expect(screen.getByText("Custom label")).toBeInTheDocument();
   });
 
   it("should render the text area with tags when controlled and input value is an array of strings", () => {
     render(
       <HvTagsInput
-        id="tags-list"
         label="Custom label"
         classes={mockClasses}
         value={["tag1", "tag2"]}
@@ -84,7 +81,6 @@ describe("TagsInput Component", () => {
   it("should render the text area with tags when controlled and input value is an array of tags", () => {
     render(
       <HvTagsInput
-        id="tags-list"
         label="Custom label"
         classes={mockClasses}
         value={[{ label: "tag1" }, { label: "tag2" }]}
@@ -104,7 +100,6 @@ describe("TagsInput Component", () => {
 
     render(
       <HvTagsInput
-        id="tags-list"
         label="Custom label"
         classes={mockClasses}
         value={[{ label: "tag1" }, { label: "tag2" }]}
@@ -140,7 +135,6 @@ describe("TagsInput Component", () => {
     const onAddSpy = vi.fn();
     render(
       <HvTagsInput
-        id="tags-list"
         label="Custom label"
         classes={mockClasses}
         value={[{ label: "tag1" }, { label: "tag2" }]}
@@ -179,7 +173,6 @@ describe("TagsInput Component", () => {
     const onBlurSpy = vi.fn();
     render(
       <HvTagsInput
-        id="tags-list"
         label="Custom label"
         classes={mockClasses}
         value={[{ label: "tag1" }, { label: "tag2" }]}
@@ -211,7 +204,6 @@ describe("TagsInput Component", () => {
   it("should have a disabled tag if the `disabled` property is set to true", () => {
     render(
       <HvTagsInput
-        id="tags-list"
         label="Custom label"
         classes={mockClasses}
         disabled
@@ -229,7 +221,6 @@ describe("TagsInput Component", () => {
   it("should not display close buttons on readOnly tags", () => {
     render(
       <HvTagsInput
-        id="tags-list"
         label="Custom label"
         classes={mockClasses}
         readOnly
@@ -253,7 +244,6 @@ describe("TagsInput Component", () => {
 
     render(
       <HvTagsInput
-        id="tags-list"
         label="Custom label"
         classes={mockClasses}
         value={[{ label: "tag1" }, { label: "tag2" }]}

@@ -5,6 +5,8 @@ import { setId } from "../../utils/setId";
 import { HvInput, HvInputProps } from "../../Input";
 import { ExtractNames } from "../../utils/classes";
 
+import { useUniqueId } from "../../hooks/useUniqueId";
+
 import { useClasses, staticClasses } from "./LeftControl.styles";
 import { HvControlsContext } from "../context/ControlsContext";
 
@@ -29,7 +31,7 @@ export interface HvLeftControlProps extends HvBaseProps {
 }
 
 export const HvLeftControl = ({
-  id,
+  id: idProp,
   classes: classesProp,
   className,
   children,
@@ -40,6 +42,8 @@ export const HvLeftControl = ({
   ...others
 }: HvLeftControlProps) => {
   const { classes, cx } = useClasses(classesProp);
+
+  const id = useUniqueId(idProp, "hvleftcontrol");
 
   const { onSearch: onSearchHandler } = useContext(HvControlsContext);
 

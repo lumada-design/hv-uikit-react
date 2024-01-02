@@ -66,7 +66,6 @@ const Main = () => {
   return (
     <div style={{ width: 180 }}>
       <HvFilterGroup
-        id="filter-group-main"
         value={value}
         filters={filters}
         onChange={(_, values) => setValue(values)}
@@ -85,7 +84,6 @@ const ResetToDefault = () => {
   return (
     <div style={{ width: 180 }}>
       <HvFilterGroup
-        id="filter-group-reset-default"
         value={value}
         defaultValue={[["category1"], [], []]}
         filters={filters}

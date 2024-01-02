@@ -260,7 +260,7 @@ export const ComponentBreakDown = () => {
 
   const summaryContent = (
     <div className={classes.summaryContainer}>
-      <HvAccordion id="item1" label="Basics" headingLevel={3}>
+      <HvAccordion label="Basics" headingLevel={3}>
         <HvListContainer
           className={classes.accordionSpacing}
           interactive
@@ -270,7 +270,7 @@ export const ComponentBreakDown = () => {
           <HvListItem>Parameters</HvListItem>
         </HvListContainer>
       </HvAccordion>
-      <HvAccordion id="item1" label="Code Base" headingLevel={3}>
+      <HvAccordion label="Code Base" headingLevel={3}>
         <HvListContainer
           className={classes.accordionSpacing}
           interactive
@@ -280,7 +280,7 @@ export const ComponentBreakDown = () => {
           <HvListItem>Network</HvListItem>
         </HvListContainer>
       </HvAccordion>
-      <HvAccordion id="item1" label="Execution" headingLevel={3}>
+      <HvAccordion label="Execution" headingLevel={3}>
         <HvListContainer
           className={classes.accordionSpacing}
           interactive

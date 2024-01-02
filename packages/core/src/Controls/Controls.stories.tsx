@@ -360,7 +360,7 @@ export const CustomControls = () => {
       }}
     >
       <HvControls views={singleView} defaultView="card" hideViewSwitcher>
-        <HvLeftControl id="MultibuttonFilter" hideSearch>
+        <HvLeftControl hideSearch>
           <HvMultiButton style={{ width: "350px" }}>
             {buttons.map((button, i) => (
               <HvButton
@@ -488,7 +488,6 @@ export const MixedControls = () => {
         callbacks={{ setGlobalFilter }}
       >
         <HvLeftControl
-          id="MultibuttonFilter"
           placeholder="Search"
           searchProps={{
             inputProps: {
