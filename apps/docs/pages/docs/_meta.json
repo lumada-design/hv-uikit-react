@@ -1,10 +1,8 @@
 {
-  "overview": {
-    "title": "Overview"
-  },
-  "components": {
-    "title": "Components"
-  },
+  "overview": "Overview",
+  "foundation": "Foundation",
+  "guides": "Guides",
+  "components": "Components",
   "-- More": {
     "type": "separator",
     "title": "More"
