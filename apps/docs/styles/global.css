@@ -2,3 +2,22 @@ html,
 body {
   font-family: "Open Sans", sans-serif;
 }
+
+/* Overriding some HV values set by the root provider for now to use Nextra's styling
+ ------------------------ */
+
+body {
+  line-height: inherit !important;
+  font-size: inherit !important;
+  letter-spacing: inherit !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+}
+
+html[class~="dark"] body {
+  background-color: rgba(17, 17, 17, var(--tw-bg-opacity)) !important;
+}
+
+html[class~="light"] body {
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity)) !important;
+}
