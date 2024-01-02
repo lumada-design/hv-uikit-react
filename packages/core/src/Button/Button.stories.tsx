@@ -281,12 +281,10 @@ const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
   </a>
 );
 
-export const CustomRootComponent = ({ onClick }) => {
+export const CustomRootComponent = () => {
   return (
     <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
-      <HvButton onClick={onClick} startIcon={<Point />}>
-        Button
-      </HvButton>
+      <HvButton startIcon={<Point />}>Button</HvButton>
       <HvButton
         variant="secondaryGhost"
         component="a"

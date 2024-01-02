@@ -137,7 +137,7 @@ export const useScrollTo = (
 
   // Waits for the elements to be rendered and scrolls to the one referenced in the URL hash, if any
   useEffect(() => {
-    let checkRenderedInterval;
+    let checkRenderedInterval: any;
 
     if (href) {
       const hashValue = document.location.hash.split("#")[1] || "";

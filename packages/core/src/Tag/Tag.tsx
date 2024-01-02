@@ -59,7 +59,7 @@ export interface HvTagProps
   defaultSelected?: boolean;
 }
 
-const getCategoricalColor = (customColor, colors) => {
+const getCategoricalColor = (customColor?: HvColorAny, colors?: any) => {
   return (customColor && colors?.[customColor]) || customColor || colors?.cat1;
 };
 
@@ -125,12 +125,6 @@ export const HvTag = (props: HvTagProps) => {
     },
   });
 
-  const onClickHandler = (event) => {
-    if (disabled) return;
-    if (selectable) setIsSelected(!isSelected);
-    onClick?.(event, !isSelected);
-  };
-
   const colorOverride = (disabled && ["atmo3", "secondary_60"]) || undefined;
 
   const avatarIcon = isSelected ? (
@@ -163,7 +157,11 @@ export const HvTag = (props: HvTagProps) => {
       }}
       deleteIcon={deleteIcon || defaultDeleteIcon}
       onDelete={disabled ? undefined : onDelete}
-      onClick={onClickHandler}
+      onClick={(event) => {
+        if (disabled) return;
+        if (selectable) setIsSelected(!isSelected);
+        onClick?.(event, !isSelected);
+      }}
       aria-pressed={isSelected}
       {...(selectable &&
         type === "semantic" && {

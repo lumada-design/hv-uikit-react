@@ -28,19 +28,7 @@ const tags = [
 ];
 
 export const SelectableControlled = () => {
-  const [selectedTags, setSelectedTags] = useState<any>(["Asset 1", "Asset 3"]);
-
-  const handleSelect = (
-    event: React.MouseEvent<HTMLElement>,
-    selected?: boolean,
-    tag?: React.ReactNode
-  ) => {
-    if (selected) {
-      setSelectedTags((prev) => [...prev, tag]);
-    } else {
-      setSelectedTags((prev) => prev.filter((item: any) => item !== tag));
-    }
-  };
+  const [selectedTags, setSelectedTags] = useState(["Asset 1", "Asset 3"]);
 
   return (
     <div
@@ -60,9 +48,13 @@ export const SelectableControlled = () => {
             onDelete={() => {
               alert("On Delete Action");
             }}
-            onClick={(event, selected) =>
-              handleSelect(event, selected, tag.label)
-            }
+            onClick={(event, selected) => {
+              setSelectedTags((prev) =>
+                selected
+                  ? prev.concat(tag.label)
+                  : prev.filter((item) => item !== tag.label)
+              );
+            }}
             classes={{ root: css({ color: tag.color || "unset" }) }}
           />
         ))}

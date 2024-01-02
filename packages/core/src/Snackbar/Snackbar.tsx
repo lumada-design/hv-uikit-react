@@ -65,22 +65,22 @@ export interface HvSnackbarProps
   ref?: MuiSnackbarProps["ref"];
 }
 
-const transLeft = (props) => <Slide {...props} direction="left" />;
-const transRight = (props) => <Slide {...props} direction="right" />;
-const transUp = (props) => <Slide {...props} direction="up" />;
-const transDown = (props) => <Slide {...props} direction="down" />;
+const TransLeft = (props: any) => <Slide {...props} direction="left" />;
+const TransRight = (props: any) => <Slide {...props} direction="right" />;
+const TransUp = (props: any) => <Slide {...props} direction="up" />;
+const TransDown = (props: any) => <Slide {...props} direction="down" />;
 
-const snackBarDirComponent = (direction) => {
+const snackBarDirComponent = (direction: string) => {
   switch (direction) {
     case "right":
-      return transRight;
+      return TransRight;
     case "up":
-      return transUp;
+      return TransUp;
     case "down":
-      return transDown;
+      return TransDown;
     case "left":
     default:
-      return transLeft;
+      return TransLeft;
   }
 };
 

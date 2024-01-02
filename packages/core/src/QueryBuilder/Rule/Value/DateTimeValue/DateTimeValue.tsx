@@ -12,7 +12,7 @@ import { useQueryBuilderContext } from "../../../Context";
 import { padTime, parseDate, parseTime } from "./utils";
 import { useClasses } from "./DateTimeValue.styles";
 
-function valueIsRange(operator) {
+function valueIsRange(operator?: string) {
   return operator === "range";
 }
 

@@ -6,7 +6,7 @@ import { useDateSegment } from "@react-aria/datepicker";
 import { HvBaseProps } from "../types/generic";
 
 /** Convert `Date` into `hh:mm:ss` format */
-const getDateValue = (date) => {
+const getDateValue = (date: any) => {
   if (!date) return "";
   const { hour, minute, second } = date;
 

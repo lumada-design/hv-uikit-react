@@ -4,7 +4,7 @@ import {
   SortDescendingXS,
 } from "@hitachivantara/uikit-react-icons";
 
-export const getSortIcon = (dir) => {
+export const getSortIcon = (dir?: string | false) => {
   switch (dir) {
     case "ascending":
       return SortAscendingXS;
@@ -15,18 +15,6 @@ export const getSortIcon = (dir) => {
   }
 };
 
-export const getSortDir = (sortDirection) => {
-  switch (sortDirection) {
-    case "asc":
-      return "ascending";
-    case "desc":
-      return "descending";
-    default:
-      return null;
-  }
-};
-
-export const isParagraph = (children) => {
-  if (typeof children === "string" && /\s/.test(children)) return true;
-  return false;
+export const isParagraph = (children: React.ReactNode) => {
+  return typeof children === "string" && /\s/.test(children);
 };

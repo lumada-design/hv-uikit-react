@@ -1,6 +1,6 @@
 import { withTooltip } from "../hocs/withTooltip";
 
-const hideTooltip = (evt) => {
+const hideTooltip = (evt: any) => {
   const isOverFlow =
     evt.target.children.length > 1
       ? Array.of(...evt.target.children).some(
@@ -11,7 +11,11 @@ const hideTooltip = (evt) => {
   return !isOverFlow;
 };
 
-export const wrapperTooltip = (hasTooltips, Component, label) => {
+export const wrapperTooltip = (
+  hasTooltips: boolean,
+  Component: any,
+  label: any
+) => {
   const ComponentFunction = () => Component;
   return hasTooltips
     ? withTooltip(ComponentFunction, label, "top", hideTooltip)

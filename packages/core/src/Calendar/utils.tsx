@@ -257,7 +257,7 @@ export const createDatesArray = (month: number, year: number) => {
   return [...prevMonthDates, ...currentMonthDates, ...nextMonthDates];
 };
 
-export const isRange = (date): date is DateRangeProp =>
+export const isRange = (date: any): date is DateRangeProp =>
   date != null && typeof date === "object" && "startDate" in date;
 
 /**
@@ -305,7 +305,7 @@ export const checkIfDateIsDisabled = (
   );
 };
 
-export const formatToLocale = (date, locale) => {
+export const formatToLocale = (date: any, locale: any) => {
   return new Intl.DateTimeFormat(locale, {
     day: "numeric",
     month: "short",

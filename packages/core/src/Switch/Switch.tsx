@@ -166,7 +166,7 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
     const [validationMessage] = useControlled(statusMessage, "Required");
 
     const onLocalChange = useCallback(
-      (evt, newChecked) => {
+      (evt: React.ChangeEvent, newChecked: boolean) => {
         setIsChecked(() => {
           // this will only run if uncontrolled
           if (required && !newChecked) {

@@ -69,7 +69,7 @@ export const HvCalendarCell = (props: HvCalendarCellProps) => {
     }
   };
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: any) => {
     onKeyDown?.(event);
   };
 

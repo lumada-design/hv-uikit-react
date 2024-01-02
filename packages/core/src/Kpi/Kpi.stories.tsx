@@ -552,7 +552,11 @@ export const Gauge: StoryObj<HvKpiProps> = {
       },
     };
 
-    const GaugeChart = ({ indicator, unit, percentage }) => (
+    const GaugeChart = ({
+      indicator,
+      unit,
+      percentage,
+    }: Record<string, React.ReactNode>) => (
       <div className={css(styles.gaugeContainer)}>
         <div className={css(styles.gaugeOuterSemiCircle)}>
           <div

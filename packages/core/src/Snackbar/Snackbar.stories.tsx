@@ -136,20 +136,13 @@ export const Controller: StoryObj<HvSnackbarProps> = {
     eyes: { include: false },
   },
   render: () => {
-    const SimpleSnackbar = ({ variant, ...others }) => {
+    const SimpleSnackbar = ({ variant, ...others }: HvSnackbarProps) => {
       const [open, setOpen] = useState(false);
-
-      const handleOpen = () => setOpen(true);
-
-      const handleClose = (event, reason) => {
-        if (reason === "clickaway") return;
-        setOpen(false);
-      };
 
       return (
         <div style={{ marginBottom: 10 }}>
           <HvButton
-            onClick={handleOpen}
+            onClick={() => setOpen(true)}
             variant="secondarySubtle"
             style={{ width: "150px", textTransform: "capitalize" }}
           >
@@ -157,7 +150,10 @@ export const Controller: StoryObj<HvSnackbarProps> = {
           </HvButton>
           <HvSnackbar
             open={open}
-            onClose={handleClose}
+            onClose={(event, reason) => {
+              if (reason === "clickaway") return;
+              setOpen(false);
+            }}
             offset={0}
             variant={variant}
             {...others}

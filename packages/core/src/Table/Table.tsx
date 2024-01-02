@@ -47,7 +47,7 @@ export interface HvTableProps extends TableHTMLAttributes<HTMLTableElement> {
 
 const defaultComponent = "table";
 
-const computeTablePartComponents = (rootComponent) => {
+const computeTablePartComponents = (rootComponent: React.ElementType<any>) => {
   if (rootComponent === "table") {
     return {
       Table: "table",

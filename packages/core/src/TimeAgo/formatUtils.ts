@@ -77,8 +77,8 @@ const secondsUntilNextWeek = (date = new Date()) => {
  * @return {TimeAgo} the formatted date using the "time ago format" and the time until it needs to be updated
  */
 export const formatTimeAgo = (
-  date,
-  locale,
+  date: Date,
+  locale: string,
   showSeconds = false,
   referenceDate = new Date()
 ) => {

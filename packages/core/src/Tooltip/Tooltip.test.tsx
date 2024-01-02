@@ -7,10 +7,10 @@ import { HvTooltip } from "./Tooltip";
 
 const smallTitle = <HvTypography>Grid View</HvTypography>;
 
-const createTitle = (data) => (
+const createTitle = (data: any) => (
   <div>
     <HvTypography variant="label">{data.title || ""}</HvTypography>
-    {data.elements.map((element) => (
+    {data.elements.map((element: any) => (
       <div key={element.name}>
         <HvTypography variant="label">{element.name}</HvTypography>
         <div />

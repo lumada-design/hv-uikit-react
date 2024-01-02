@@ -13,6 +13,7 @@ import {
   useHvBulkActions,
   useHvPagination,
   useHvSortBy,
+  HvLeftControlProps,
 } from "@hitachivantara/uikit-react-core";
 
 import { LoadingContainer } from "../utils";
@@ -82,7 +83,7 @@ const AssetInventory = () => {
 
   const bulkActionProps = instance.getHvBulkActionsProps?.();
 
-  const handleSearch = (e, value: string) => {
+  const handleSearch: HvLeftControlProps["onSearch"] = (e, value) => {
     instance.gotoPage?.(0);
     setParams((prev) => ({
       ...prev,

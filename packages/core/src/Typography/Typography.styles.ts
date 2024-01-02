@@ -31,6 +31,7 @@ export const { useClasses, staticClasses } = createClasses("HvTypography", {
   // legacy variants
   "5xlTitle": { ...theme.typography["5xlTitle"] },
   "4xlTitle": { ...theme.typography["4xlTitle"] },
+  // @ts-ignore non-existent variant
   "3xlTitle": { ...theme.typography["3xlTitle"] },
   xxlTitle: { ...theme.typography.xxlTitle },
   xlTitle: {},

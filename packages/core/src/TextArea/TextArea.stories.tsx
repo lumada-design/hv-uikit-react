@@ -366,7 +366,7 @@ export const AutoScroll: StoryObj<HvTextAreaProps> = {
 
     useEffect(() => {
       let idx = 1;
-      let newline;
+      let newline: string;
 
       const id = setInterval(() => {
         newline = idx === 1 ? "" : "\n";

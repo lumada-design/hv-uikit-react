@@ -131,11 +131,9 @@ export const HvDropZone = (props: HvDropZoneProps) => {
   };
 
   const onChangeHandler = (filesList: FileList) => {
-    const filesToProcess = Object.keys(filesList).map((e) => filesList[e]);
+    const filesToProcess = Object.values(filesList);
 
-    const newFiles: HvFileData[] = [];
-
-    filesToProcess.forEach((file: File) => {
+    const newFiles = filesToProcess.map((file) => {
       const newFile: HvFileData = file;
 
       const isSizeAllowed = file.size <= maxFileSize;
@@ -155,7 +153,7 @@ export const HvDropZone = (props: HvDropZoneProps) => {
       }
 
       newFile.id = uniqueId("uploaded-file-data-");
-      newFiles.push(newFile);
+      return newFile;
     });
 
     onFilesAdded?.(newFiles);

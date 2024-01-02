@@ -87,7 +87,7 @@ export const ContentChanging: StoryObj<HvTabsProps> = {
       setValue(newValue);
     };
 
-    const renderContent = (page) => (
+    const renderContent = (page: number) => (
       <HvTypography style={{ padding: 8 * 3 }}>{`Page ${page}`}</HvTypography>
     );
 

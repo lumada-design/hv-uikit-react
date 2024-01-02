@@ -50,7 +50,7 @@ export interface HvStackProps extends HvBaseProps {
  *                     we use the appropriate one or search for the nearest breakpoint
  *                     smaller than the current one to use.
  */
-const getDirection = (direction, width, breakpoints) => {
+const getDirection = (direction: any, width: any, breakpoints: any) => {
   if (isString(direction)) return direction;
 
   for (let i = breakpoints.indexOf(width); i >= 0; i -= 1) {

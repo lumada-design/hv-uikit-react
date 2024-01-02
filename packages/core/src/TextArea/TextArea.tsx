@@ -31,6 +31,7 @@ import {
   HvCharCounter,
   HvCharCounterProps,
   HvFormElement,
+  HvFormElementProps,
   HvFormStatus,
   HvInfoMessage,
   HvLabel,
@@ -278,18 +279,15 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
     value,
   ]);
 
-  const isOverflow = (currentValue) =>
-    maxCharQuantity == null ? false : currentValue.length > maxCharQuantity;
-
   /**
    * Limit the string to the maxCharQuantity length.
-   *
-   * @param value - string to evaluate
-   * @returns {string|*} - string according the limit
    */
-  const limitValue = (currentValue) => {
+  const limitValue = (currentValue: string) => {
     if (currentValue === undefined || !blockMax) return currentValue;
-    return !isOverflow(currentValue)
+    const isOverflow =
+      maxCharQuantity == null ? false : currentValue.length > maxCharQuantity;
+
+    return !isOverflow
       ? currentValue
       : currentValue.substring(0, maxCharQuantity);
   };
@@ -297,24 +295,23 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
   /**
    * Validates the text area updating the state and modifying the warning text, also executes
    * the user provided onBlur passing the current validation status and value.
-   *
-   * @returns {undefined}
    */
-  const onContainerBlurHandler = (event) => {
+  const onContainerBlurHandler: HvFormElementProps["onBlur"] = (event) => {
     setFocused(false);
 
     const inputValidity = performValidation();
 
-    onBlur?.(event, value, inputValidity);
+    onBlur?.(event as any, value, inputValidity);
   };
 
   /**
    * Updates the length of the string while is being inputted, also executes the user onChange
    * allowing the customization of the input if required.
-   *
-   * @param {String} value - The value provided by the HvInput
    */
-  const onChangeHandler = (event, currentValue) => {
+  const onChangeHandler: HvBaseInputProps["onChange"] = (
+    event,
+    currentValue
+  ) => {
     isDirty.current = true;
 
     const limitedValue = blockMax ? limitValue(currentValue) : currentValue;
@@ -322,20 +319,20 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
     // Set the input value (only when value is uncontrolled)
     setValue(limitedValue);
 
-    onChange?.(event, limitedValue);
+    onChange?.(event as any, limitedValue);
   };
 
   /**
    * Updates the state putting again the value from the state because the input value is
    * not automatically manage, it also executes the onFocus function from the user passing the value
    */
-  const onFocusHandler = (event) => {
+  const onFocusHandler: HvBaseInputProps["onFocus"] = (event) => {
     setFocused(true);
 
     // Reset validation status to standBy (only when status is uncontrolled)
     setValidationState(validationStates.standBy);
 
-    onFocus?.(event, value);
+    onFocus?.(event as any, value);
   };
 
   const isScrolledDown = useCallback(() => {

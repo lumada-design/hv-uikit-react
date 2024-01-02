@@ -1,5 +1,5 @@
 import { CSSProperties, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { fireEvent, screen } from "@storybook/testing-library";
 import {
   HvColorPicker,
@@ -9,8 +9,10 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 
-const makeDecorator = (styles: CSSProperties) => (Story) =>
-  <div style={styles}>{Story()}</div>;
+const makeDecorator =
+  (styles: CSSProperties): Decorator =>
+  (Story) =>
+    <div style={styles}>{Story()}</div>;
 
 const meta: Meta<typeof HvColorPicker> = {
   title: "Widgets/Color Picker",

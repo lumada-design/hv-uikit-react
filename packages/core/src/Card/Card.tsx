@@ -1,4 +1,4 @@
-import { theme } from "@hitachivantara/uikit-styles";
+import { getColor, theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 
@@ -62,7 +62,7 @@ export const HvCard = (props: HvCardProps) => {
         "HvIsCardGridElement",
         classes.root,
         css({
-          backgroundColor: bgcolor && theme.colors[bgcolor],
+          backgroundColor: getColor(bgcolor),
         }),
         {
           [classes.selectable]: selectable,
