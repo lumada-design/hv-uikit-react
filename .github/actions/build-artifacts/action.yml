@@ -33,3 +33,15 @@ runs:
         name: app
         path: ${{ github.workspace }}/apps/app/dist
         retention-days: 2
+
+    # Bypassing Jekyll processing on GitHub Pages by adding .nojekyll to read folders that start with an underscore
+    - name: Build Nextra Docs
+      run: npm run build:nextra && touch ${{ github.workspace }}/apps/docs/out/.nojekyll
+      shell: bash
+
+    - name: Archive Nextra Docs
+      uses: actions/upload-artifact@v3
+      with:
+        name: nextra-docs
+        path: ${{ github.workspace }}/apps/docs/out
+        retention-days: 2

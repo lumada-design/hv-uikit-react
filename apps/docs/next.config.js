@@ -7,6 +7,9 @@ const withNextra = require("nextra")({
 // If you have other Next.js configurations, you can pass them as the parameter:
 // module.exports = withNextra({ /* other next.js config */ })
 module.exports = withNextra({
+  output: "export",
+  images: { unoptimized: true },
+  basePath: process.env.NEXTRA_BASE_PATH || "",
   transpilePackages: [
     "@hitachivantara/uikit-react-core",
     "@hitachivantara/uikit-react-code-editor",
