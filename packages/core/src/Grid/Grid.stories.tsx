@@ -17,25 +17,20 @@ const meta: Meta<typeof HvGrid> = {
 };
 export default meta;
 
+const StyledItem = styled("div", { label: "StyledItem" })({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  height: 100,
+  color: theme.colors.base_dark,
+  backgroundColor: theme.colors.neutral_20,
+});
+
 export const Main: StoryObj<HvGridProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
   render: () => {
-    const StyledItem = styled("div")({
-      padding: theme.space.sm,
-      height: 150,
-      textAlign: "center",
-      backgroundColor: theme.colors.neutral_20,
-      fontSize: "12px",
-      letterSpacing: "0.02em",
-      lineHeight: "16px",
-      fontWeight: 400,
-      color: theme.colors.base_dark,
-      display: "flex",
-      alignItems: "center",
-    });
-
     const width = useWidth();
     return (
       <>
@@ -55,19 +50,19 @@ export const Main: StoryObj<HvGridProps> = {
             <StyledItem>xl=2 lg=3 md=4 sm=6 xs=1</StyledItem>
           </HvGrid>
           <HvGrid item xl={1} lg={2} md={3} xs={12}>
-            <StyledItem>xl:6 lg:4 md:3 sm:2 xs:1</StyledItem>
+            <StyledItem>xl=6 lg=4 md=3 sm=2 xs=1</StyledItem>
           </HvGrid>
           <HvGrid item xl={1} lg={2} md={3} xs={12}>
-            <StyledItem>xl:6 lg:4 md:3 sm:2 xs:1</StyledItem>
+            <StyledItem>xl=6 lg=4 md=3 sm=2 xs=1</StyledItem>
           </HvGrid>
           <HvGrid item xl={1} lg={2} md={3} xs={12}>
-            <StyledItem>xl:6 lg:4 md:3 sm:2 xs:1</StyledItem>
+            <StyledItem>xl=6 lg=4 md=3 sm=2 xs=1</StyledItem>
           </HvGrid>
           <HvGrid item xl={3} lg={3} md={6} sm={12} xs={12}>
-            <StyledItem>xl:6 lg:6 md:3 sm:2 xs:1</StyledItem>
+            <StyledItem>xl=6 lg=6 md=3 sm=2 xs=1</StyledItem>
           </HvGrid>
           <HvGrid item xl={3} lg={3} md={6} sm={12} xs={12}>
-            <StyledItem>xl:6 lg:4 md:3 sm:2 xs:1</StyledItem>
+            <StyledItem>xl=6 lg=4 md=3 sm=2 xs=1</StyledItem>
           </HvGrid>
         </HvGrid>
       </>
@@ -95,15 +90,6 @@ export const The12Columns: StoryObj<HvGridProps> = {
   render: () => {
     const width = useWidth();
 
-    const StyledBox = styled("div")({
-      backgroundColor: theme.colors.neutral_20,
-      display: "flex",
-      height: "100px",
-      width: "100%",
-      justifyContent: "center",
-      alignItems: "center",
-    });
-
     const columns = Array.from({ length: 24 }, (_, index) => index + 1);
 
     return (
@@ -112,7 +98,7 @@ export const The12Columns: StoryObj<HvGridProps> = {
         <HvGrid container>
           {columns.map((value) => (
             <HvGrid key={value} item xs={1}>
-              <StyledBox>{value.toString()}</StyledBox>
+              <StyledItem>{value.toString()}</StyledItem>
             </HvGrid>
           ))}
         </HvGrid>
@@ -141,15 +127,6 @@ export const TheDesignSystemColumns: StoryObj<HvGridProps> = {
   render: () => {
     const width = useWidth();
 
-    const StyledBox = styled("div")({
-      backgroundColor: theme.colors.neutral_20,
-      display: "flex",
-      height: "100px",
-      width: "100%",
-      justifyContent: "center",
-      alignItems: "center",
-    });
-
     const columns = Array.from({ length: 24 }, (_, index) => index + 1);
 
     return (
@@ -158,7 +135,7 @@ export const TheDesignSystemColumns: StoryObj<HvGridProps> = {
         <HvGrid container columns="auto">
           {columns.map((value) => (
             <HvGrid key={value} item xs={1}>
-              <StyledBox>{value.toString()}</StyledBox>
+              <StyledItem>{value.toString()}</StyledItem>
             </HvGrid>
           ))}
         </HvGrid>

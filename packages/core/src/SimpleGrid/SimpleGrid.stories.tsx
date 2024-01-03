@@ -1,14 +1,19 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { css } from "@emotion/css";
 import {
   HvSimpleGrid,
   HvSimpleGridProps,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
+const range = (max: number, min = 1) =>
+  Array.from(Array(max), (v, i) => i + min);
+
 const style = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  color: theme.colors.base_dark,
   backgroundColor: theme.colors.neutral_20,
   minHeight: 80,
 };
@@ -29,12 +34,10 @@ export const Main: StoryObj<HvSimpleGridProps> = {
   },
   render: (args) => {
     return (
-      <HvSimpleGrid {...args}>
-        <div style={style}>1</div>
-        <div style={style}>2</div>
-        <div style={style}>3</div>
-        <div style={style}>4</div>
-        <div style={style}>5</div>
+      <HvSimpleGrid className={css({ "& > div": style })} {...args}>
+        {range(5).map((i) => (
+          <div key={i}>{i}</div>
+        ))}
       </HvSimpleGrid>
     );
   },
@@ -52,12 +55,15 @@ export const BreakpointsGrid: StoryObj<HvSimpleGridProps> = {
   },
   render: ({ spacing, cols, breakpoints }) => {
     return (
-      <HvSimpleGrid spacing={spacing} breakpoints={breakpoints} cols={cols}>
-        <div style={style}>1</div>
-        <div style={style}>2</div>
-        <div style={style}>3</div>
-        <div style={style}>4</div>
-        <div style={style}>5</div>
+      <HvSimpleGrid
+        spacing={spacing}
+        breakpoints={breakpoints}
+        cols={cols}
+        className={css({ "& > div": style })}
+      >
+        {range(5).map((i) => (
+          <div key={i}>{i}</div>
+        ))}
       </HvSimpleGrid>
     );
   },
