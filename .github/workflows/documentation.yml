@@ -26,18 +26,22 @@ jobs:
         uses: ./.github/actions/build-artifacts
         env:
           APP_BASE_PATH: /uikit-app/${{ env.PUBLISH_FOLDER }}/
+          NEXTRA_BASE_PATH: /uikit-docs/${{ env.PUBLISH_FOLDER }}
 
   deploy-artifacts:
     name: Deploy
     runs-on: ubuntu-latest
     needs: build-artifacts
     strategy:
+      max-parallel: 1
       matrix:
         include:
           - folder: "uikit"
             artifact: "documentation"
           - folder: "uikit-app"
             artifact: "app"
+          - folder: "uikit-docs"
+            artifact: "nextra-docs"
 
     steps:
       - name: Checkout

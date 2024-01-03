@@ -19,6 +19,7 @@
     "build": "lerna run build",
     "build:doc": "storybook build -o dist --quiet && node scripts/storybook-title",
     "build:app": "vite build apps/app",
+    "build:nextra": "cd apps/docs && next build",
     "test": "lerna run test",
     "test:a11y": "node scripts/a11y-report",
     "test:eyes": "npx eyes-storybook -f .config/applitools.config.js",
