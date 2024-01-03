@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
   HvSlider,
@@ -8,20 +8,30 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
+const variantsDecorator: Decorator = (Story) => (
+  <div
+    className={css({
+      display: "flex",
+      flexDirection: "column",
+      gap: theme.spacing("md"),
+    })}
+  >
+    {Story()}
+  </div>
+);
+
 const meta: Meta<typeof HvSlider> = {
   title: "Components/Slider",
   component: HvSlider,
   decorators: [
     (Story) => (
       <div
-        style={{
-          minHeight: "145px",
-          display: "flex",
-          justifyContent: "center",
-          paddingTop: "30px",
-        }}
+        className={css({
+          paddingTop: theme.spacing("md"),
+          paddingBottom: theme.spacing("md"),
+        })}
       >
-        <div style={{ width: "100%" }}>{Story()}</div>
+        {Story()}
       </div>
     ),
   ],
@@ -43,7 +53,7 @@ export const Main: StoryObj<HvSliderProps> = {
     knobProps: { control: { disable: true } },
   },
   render: (args) => {
-    return <HvSlider id="Main" {...args} />;
+    return <HvSlider {...args} />;
   },
 };
 
@@ -52,74 +62,103 @@ export const RangeSlider: StoryObj<HvSliderProps> = {
     docs: {
       description: {
         story:
-          "A range slider can be achieved by adding an array with two values.",
+          "A controlled range slider where the values are set from outside.",
       },
     },
   },
   render: () => {
-    return (
-      <HvSlider id="Range" label="Failure Rate" defaultValues={[10, 40]} />
-    );
-  },
-};
-
-export const RangeSliderControlled: StoryObj<HvSliderProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "A controlled slider where the values are set from outside.",
-      },
-    },
-  },
-  render: () => {
-    const [values, setValues] = useState<number[]>([0, 2]);
-
-    const onChangeHandler = (knobs: number[]) => {
-      setValues(knobs);
-    };
-
-    const classes = {
-      buttonWrapper: css({
-        marginTop: theme.spacing("lg"),
-        "& button": {
-          marginRight: theme.spacing("xs"),
-        },
-      }),
-    };
+    const [values, setValues] = useState([0, 2]);
 
     return (
-      <div>
+      <>
+        <div
+          className={css({
+            display: "flex",
+            gap: theme.spacing("xs"),
+            marginBottom: theme.spacing("sm"),
+          })}
+        >
+          <HvButton
+            variant="secondarySubtle"
+            onClick={() => setValues(values.map((v) => v - 0.2))}
+          >
+            Decrement
+          </HvButton>
+          <HvButton
+            variant="secondarySubtle"
+            onClick={() => setValues(values.map((v) => v + 0.2))}
+          >
+            Increment
+          </HvButton>
+        </div>
         <HvSlider
-          id="RangeSliderControlled"
           label="Failure Rate"
           values={values}
-          onChange={onChangeHandler}
+          onChange={setValues}
           maxPointValue={10}
           minPointValue={-10}
           markStep={10}
           markDigits={1}
         />
-        <div className={classes.buttonWrapper}>
-          <HvButton
-            onClick={() => {
-              const newValues: number[] = values.map((value) => value - 0.2);
+      </>
+    );
+  },
+};
 
-              setValues(newValues);
-            }}
-          >
-            Decrement
-          </HvButton>
-          <HvButton
-            onClick={() => {
-              const newValues: number[] = values.map((value) => value + 0.2);
+export const Variants: StoryObj<HvSliderProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Sliders in their various state variants.",
+      },
+    },
+  },
+  decorators: [variantsDecorator],
+  render: () => {
+    const values = [10];
 
-              setValues(newValues);
-            }}
-          >
-            Increment
-          </HvButton>
-        </div>
-      </div>
+    return (
+      <>
+        <HvSlider label="Default" defaultValues={values} />
+        <HvSlider required label="Required" defaultValues={values} />
+        <HvSlider disabled label="Disabled" defaultValues={values} />
+        <HvSlider readOnly label="Read-only" defaultValues={values} />
+        <HvSlider
+          label="Invalid"
+          status="invalid"
+          statusMessage="Invalid because I said so"
+          defaultValues={values}
+        />
+      </>
+    );
+  },
+};
+
+export const RangeVariants: StoryObj<HvSliderProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Range sliders in their various state variants.",
+      },
+    },
+  },
+  decorators: [variantsDecorator],
+  render: () => {
+    const values = [10, 40];
+
+    return (
+      <>
+        <HvSlider label="Default" defaultValues={values} />
+        <HvSlider required label="Required" defaultValues={values} />
+        <HvSlider disabled label="Disabled" defaultValues={values} />
+        <HvSlider readOnly label="Read-only" defaultValues={values} />
+        <HvSlider
+          label="Invalid"
+          status="invalid"
+          statusMessage="Invalid because I said so"
+          defaultValues={values}
+        />
+      </>
     );
   },
 };
@@ -133,31 +172,13 @@ export const FormattedMark: StoryObj<HvSliderProps> = {
     },
   },
   render: () => {
-    const defaultValues: number[] = [10];
-
-    const formatMark = (mark: string | React.ReactNode) => `${mark} Cº`;
-
     return (
       <HvSlider
-        id="format"
         label="Temperature"
-        formatMark={formatMark}
-        defaultValues={defaultValues}
+        formatMark={(mark) => `${mark} Cº`}
+        defaultValues={[10]}
       />
     );
-  },
-};
-
-export const BlankSlider: StoryObj<HvSliderProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "A single slider without any value.",
-      },
-    },
-  },
-  render: () => {
-    return <HvSlider id="BlankSlider" label="Failure Rate" required />;
   },
 };
 
@@ -173,51 +194,9 @@ export const RangeBlankSlider: StoryObj<HvSliderProps> = {
   render: () => {
     return (
       <HvSlider
-        id="RangeBlankSlider"
+        required
         label="Failure Rate"
         defaultValues={[undefined, undefined]}
-        required
-      />
-    );
-  },
-};
-
-export const ErrorSingleSlider: StoryObj<HvSliderProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "An invalid single slider.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvSlider
-        id="ErrorSingleSlider"
-        label="Failure Rate"
-        status="invalid"
-        statusMessage="Invalid because I said so"
-      />
-    );
-  },
-};
-
-export const ErrorRangeSlider: StoryObj<HvSliderProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "An invalid range slider.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvSlider
-        id="ErrorRangeSlider"
-        label="Failure Rate"
-        status="invalid"
-        statusMessage="Invalid because I said so"
-        defaultValues={[undefined, 53]}
       />
     );
   },
@@ -227,7 +206,7 @@ export const RangeSpecificErrorSlider: StoryObj<HvSliderProps> = {
   parameters: {
     docs: {
       description: {
-        story: "A single slider without any value.",
+        story: "A range slider with an empty and invalid values.",
       },
     },
     eyes: { include: false },
@@ -235,72 +214,10 @@ export const RangeSpecificErrorSlider: StoryObj<HvSliderProps> = {
   render: () => {
     return (
       <HvSlider
-        id="RangeSpecificErrorSlider"
         label="Failure Rate"
         status={["valid", "invalid"]}
         statusMessage="Invalid because I said so"
         defaultValues={[undefined, 53]}
-      />
-    );
-  },
-};
-
-export const SingleDisabled: StoryObj<HvSliderProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "A disabled single slider.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvSlider
-        id="SingleDisabled"
-        label="Failure Rate"
-        defaultValues={[10]}
-        disabled
-      />
-    );
-  },
-};
-
-export const RangeSliderDisabled: StoryObj<HvSliderProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "A disabled range slider.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvSlider
-        id="RangeSliderDisabled"
-        label="Failure Rate"
-        defaultValues={[10, 40]}
-        disabled
-      />
-    );
-  },
-};
-
-export const NoInput: StoryObj<HvSliderProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "A slider without an input.",
-      },
-    },
-    eyes: { include: false },
-  },
-  render: () => {
-    return (
-      <HvSlider
-        id="NoInput"
-        label="Failure Rate"
-        defaultValues={[10]}
-        hideInput
       />
     );
   },
@@ -317,30 +234,9 @@ export const NoLabelNoInput: StoryObj<HvSliderProps> = {
   render: () => {
     return (
       <HvSlider
-        id="NoLabelNoInput"
-        knobProps={[{ "aria-label": "no-label-knob" }]}
+        knobProps={[{ "aria-label": "First knob" }]}
         hideInput
         defaultValues={[10]}
-      />
-    );
-  },
-};
-
-export const ReadOnly: StoryObj<HvSliderProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "A read only slider.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvSlider
-        id="ReadOnly"
-        label="Failure Rate"
-        defaultValues={[10, 40]}
-        readOnly
       />
     );
   },

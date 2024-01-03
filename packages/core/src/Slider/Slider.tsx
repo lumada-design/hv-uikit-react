@@ -112,6 +112,7 @@ export interface HvSliderProps
   markProperties?: HvMarkProperty[];
   /**
    * The function executed before a change will occur in the slider.
+   * @deprecated It's always better to use onChange instead
    */
   onBeforeChange?: (value: number[]) => void;
   /**
@@ -120,6 +121,7 @@ export interface HvSliderProps
   onChange?: (value: number[]) => void;
   /**
    * The function executed after a change ocurred in the slider.
+   * @deprecated It's always better to use onChange instead
    */
   onAfterChange?: (value: number[]) => void;
   /**
@@ -231,12 +233,12 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
 
   const sliderInputId = setId(elementId, "input");
 
-  const stepValue: number = useMemo(
+  const stepValue = useMemo(
     () => calculateStepValue(maxPointValue, minPointValue, divisionQuantity),
     [divisionQuantity, maxPointValue, minPointValue]
   );
 
-  const inverseStepValue: number = 1 / stepValue;
+  const inverseStepValue = 1 / stepValue;
 
   const marks = useMemo(
     () =>
@@ -315,9 +317,9 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     ""
   );
 
-  const [isDraggingTrack, setIsDraggingTrack] = useState<boolean>(false);
+  const [isDraggingTrack, setIsDraggingTrack] = useState(false);
 
-  const knobProperties: HvKnobProperty[] = generateDefaultKnobProperties(
+  const knobProperties = generateDefaultKnobProperties(
     knobsPositions.length,
     disabled,
     knobPropertiesProp
@@ -330,7 +332,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
   const knobStyles = createKnobStyles(knobProperties);
 
   const performValidation = useCallback(() => {
-    let invalid: boolean = false;
+    let invalid = false;
 
     const newValidationState = knobsPositions.map((position) => {
       if (position == null || Number.isNaN(position)) {
@@ -463,9 +465,6 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
    *
    * executes the callback provided by the user with the values and position of the knobs,
    * also lock the value of the knob in case one is fixed.
-   *
-   * @param {Array} knobsPosition - An array containing the current positions of the knobs.
-   * @memberof HvSlider
    */
   const onChangeHandler = (knobsPosition: number[]) => {
     isDirty.current = true;
@@ -505,9 +504,6 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
    * Function executed before a change.
    *
    * executes the callback provided by the user with the values and position of the knobs
-   *
-   * @param {Array} knobsPosition - An array containing the current positions of the knobs.
-   * @memberof HvSlider
    */
   const onBeforeChangeHandler = (knobsPosition: number[]) => {
     const knobs = generateKnobsPositionAndValues(knobsPosition);
@@ -519,9 +515,6 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
    * Function executed after a change.
    *
    * executes the callback provided by the user with the values and position of the knobs
-   *
-   * @param {Array} knobsPosition - An array containing the current positions of the knobs.
-   * @memberof HvSlider
    */
   const onAfterChangeHandler = (knobsPosition: number[]) => {
     const knobs = generateKnobsPositionAndValues(knobsPosition);
@@ -535,13 +528,10 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
    * TODO: This should be isolated because is creating a sub component,
    * but there were some problems regarding the underlying component losing
    * references of the handlers disabling the focus.
-   *
-   * @param {Object} props - An object containing the properties of the knobs.
-   * @memberof HvSlider
    */
-  const createKnob = (knobNode, params) => {
+  const createKnob: SliderProps["handleRender"] = (knobNode, params) => {
     const { value: knobValue, dragging, index } = params;
-    const { className: knobClassName, style, ...restProps } = knobNode.props;
+    const { style = {}, ...restProps } = knobNode.props;
     const scaledKnobValue = knobsPositionToScaledValue(
       knobValue,
       minPointValue,
@@ -580,7 +570,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
           <div
             id={indexedHandleId}
             style={style}
-            className={cx(knobClassName, classes.handle)}
+            className={classes.handle}
             {...restProps}
             aria-label={`${label}-knob-${index}`}
             aria-valuenow={knobsPositionToScaledValue(
@@ -658,80 +648,43 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
       )}
 
       <div className={cx(classes.sliderBase, classes.sliderContainer)}>
-        {isSingle && (
-          <Slider
-            ref={ref}
-            handleRender={createKnob}
-            className={classes.sliderRoot}
-            min={0}
-            max={divisionQuantity}
-            step={1}
-            marks={marks}
-            dotStyle={disabled ? sliderStyles.dotDisabled : sliderStyles.dot}
-            onChange={(singleValue) =>
-              onChangeHandler(
-                Array.isArray(singleValue) ? singleValue : [singleValue]
-              )
-            }
-            onBeforeChange={(singleValue) =>
-              onBeforeChangeHandler(
-                Array.isArray(singleValue) ? singleValue : [singleValue]
-              )
-            }
-            onAfterChange={(singleValue) =>
-              onAfterChangeHandler(
-                Array.isArray(singleValue) ? singleValue : [singleValue]
-              )
-            }
-            value={knobsPositions.length > 0 ? knobsPositions[0] : undefined}
-            allowCross={false}
-            disabled={disabled}
-            count={rangesCount}
-            railStyle={sliderStyles.rail}
-            handleStyle={knobStyles.knobInner}
-            trackStyle={trackStyles}
-            {...sliderProps}
-          />
-        )}
-        {!isSingle && (
-          <Slider
-            ref={ref}
-            range
-            handleRender={createKnob}
-            className={cx(classes.sliderRoot, {
-              [classes.rootRange]: !isSingle,
-            })}
-            min={0}
-            max={divisionQuantity}
-            step={1}
-            marks={marks}
-            disabled={disabled}
-            dotStyle={disabled ? sliderStyles.dotDisabled : sliderStyles.dot}
-            onChange={(singleValue) =>
-              onChangeHandler(
-                Array.isArray(singleValue) ? singleValue : [singleValue]
-              )
-            }
-            onBeforeChange={(singleValue) =>
-              onBeforeChangeHandler(
-                Array.isArray(singleValue) ? singleValue : [singleValue]
-              )
-            }
-            onAfterChange={(singleValue) =>
-              onAfterChangeHandler(
-                Array.isArray(singleValue) ? singleValue : [singleValue]
-              )
-            }
-            value={knobsPositions.length > 0 ? [...knobsPositions] : undefined}
-            allowCross={false}
-            count={rangesCount}
-            railStyle={sliderStyles.rail}
-            handleStyle={knobStyles.knobInner}
-            trackStyle={trackStyles}
-            draggableTrack={!readOnly && !isSingle}
-            {...sliderProps}
-          />
-        )}
+        <Slider
+          ref={ref}
+          range={!isSingle}
+          handleRender={createKnob}
+          className={cx(classes.sliderRoot, {
+            [classes.rootRange]: !isSingle,
+          })}
+          min={0}
+          max={divisionQuantity}
+          step={1}
+          marks={marks}
+          dotStyle={disabled ? sliderStyles.dotDisabled : sliderStyles.dot}
+          onChange={(singleValue) =>
+            onChangeHandler(Array<number>().concat(singleValue))
+          }
+          onBeforeChange={(singleValue) =>
+            onBeforeChangeHandler(Array<number>().concat(singleValue))
+          }
+          onAfterChange={(singleValue) =>
+            onAfterChangeHandler(Array<number>().concat(singleValue))
+          }
+          value={
+            knobsPositions.length === 0
+              ? undefined
+              : isSingle
+              ? knobsPositions[0]
+              : [...knobsPositions]
+          }
+          allowCross={false}
+          disabled={disabled}
+          count={rangesCount}
+          railStyle={sliderStyles.rail}
+          handleStyle={knobStyles.knobInner}
+          trackStyle={trackStyles}
+          draggableTrack={!readOnly && !isSingle}
+          {...sliderProps}
+        />
       </div>
 
       {canShowError && (
