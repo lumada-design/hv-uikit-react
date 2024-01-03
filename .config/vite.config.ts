@@ -6,7 +6,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 const pkg = require(resolve(process.cwd(), "package.json"));
 
-// dependecies that should not be bundled.
+// dependencies that should not be bundled.
 const external = [
   ...Object.keys(pkg.dependencies || {}),
   ...Object.keys(pkg.peerDependencies || {}),
@@ -36,7 +36,7 @@ export default defineConfig({
           format: "esm",
           preserveModules: true,
           dir: "dist/esm",
-          entryFileNames: "[name].js",
+          entryFileNames: "[name].mjs",
           sourcemap: true,
           exports: "named",
           interop: "auto",
