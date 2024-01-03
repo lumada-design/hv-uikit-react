@@ -7,7 +7,7 @@ UI Kit UnoCSS preset with the NEXT theme.
 Install the package in your project directory with:
 
 ```sh
-npm install @hitachivantara/uikit-uno-preset
+npm install -D unocss @hitachivantara/uikit-uno-preset
 ```
 
 Add the `presetHv` to the array of presets in your `vite.config.ts` or `uno.config.ts` files:
