@@ -15,6 +15,7 @@
   "scripts": {
     "dev": "npm run dev -w app",
     "doc": "storybook dev -p 6006",
+    "clean": "lerna run clean",
     "build": "lerna run build",
     "build:doc": "storybook build -o dist --quiet && node scripts/storybook-title",
     "build:app": "vite build app",
