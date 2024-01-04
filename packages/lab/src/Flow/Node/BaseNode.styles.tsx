@@ -29,16 +29,16 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     justifyContent: "center",
     padding: theme.space.xs,
     backgroundColor: theme.colors.atmo2,
-    borderTop: `1px solid ${theme.colors.atmo4}`,
-    borderBottom: `1px solid ${theme.colors.atmo4}`,
+    borderTop: `1px solid ${theme.colors.atmo3}`,
+    borderBottom: `1px solid ${theme.colors.atmo3}`,
   },
   outputsTitleContainer: {
     display: "flex",
     justifyContent: "center",
     padding: theme.space.xs,
     backgroundColor: theme.colors.atmo2,
-    borderTop: `1px solid ${theme.colors.atmo4}`,
-    borderBottom: `1px solid ${theme.colors.atmo4}`,
+    borderTop: `1px solid ${theme.colors.atmo3}`,
+    borderBottom: `1px solid ${theme.colors.atmo3}`,
   },
   contentContainer: {},
   inputsContainer: {
@@ -59,11 +59,19 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    position: "relative",
+    "& .react-flow__handle-left": {
+      left: -20,
+    },
   },
   outputContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    position: "relative",
+    "& .react-flow__handle-right": {
+      right: -20,
+    },
   },
   mandatory: {
     width: 10,
@@ -71,5 +79,9 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     margin: theme.spacing(0, theme.space.xs),
     borderRadius: theme.radii.circle,
     backgroundColor: theme.colors.negative_20,
+  },
+  footerContainer: {
+    padding: theme.space.sm,
+    borderTop: `1px solid ${theme.colors.atmo3}`,
   },
 });

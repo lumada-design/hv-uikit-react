@@ -24,6 +24,7 @@ Summary:
   - [Default actions](#default-actions)
   - [Custom actions](#custom-actions)
 - [Custom content](#custom-content)
+- [Footer](#footer)
 - [Advanced use](#advanced-use)
   - [Accessing the React Flow instance](#react-flow-instance)
   - [Saving and exporting data](#saving-and-exporting-data)
@@ -334,6 +335,17 @@ const handleAction = (event: any, id: string, action: any) => {
   actionCallback={handleAction}
   {...props}
 />;
+```
+
+## Footer <a id="footer" />
+
+You can pass any content to the footer of the Node through the `footer` property:
+
+```tsx
+<HvFlowNode
+  (...)
+  footer={<div>My footer content</div>}
+/>
 ```
 
 ## Custom content <a id="custom-content" />
