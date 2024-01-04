@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.42.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.41.1...@hitachivantara/uikit-react-core@5.42.0) (2024-01-04)
+
+### Features
+
+- **VerticalNavigation:** allow passing icons to use when in collapsible mode ([3cd0e65](https://github.com/lumada-design/hv-uikit-react/commit/3cd0e659f7e0f261eac8cb2979f32264e9869b63))
+
 ## [5.41.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.41.0...@hitachivantara/uikit-react-core@5.41.1) (2024-01-03)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
