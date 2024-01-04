@@ -162,10 +162,10 @@ export const HvDroppableFlow = ({
         return;
       }
 
-      // Converts the coordinates to the react flow coordinate system
-      const position = reactFlowInstance.project({
-        x: (hvFlow?.x || 0) - event.over.rect.left,
-        y: (hvFlow?.y || 0) - event.over.rect.top,
+      // Position node in the flow
+      const position = reactFlowInstance.screenToFlowPosition({
+        x: hvFlow?.x || 0,
+        y: hvFlow?.y || 0,
       });
 
       // Node data
