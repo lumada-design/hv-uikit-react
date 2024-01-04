@@ -1,4 +1,4 @@
-import { isValidElement, useCallback, useEffect, useState } from "react";
+import React, { isValidElement, useCallback, useEffect, useState } from "react";
 import {
   Edge,
   Handle,
@@ -53,6 +53,8 @@ export interface HvFlowBaseNodeProps<T = any>
   outputs?: HvFlowNodeOutput[];
   /** Node actions */
   nodeActions?: HvFlowNodeAction[];
+  /** The content of the Node footer */
+  footer?: React.ReactNode;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowBaseNodeClasses;
 }
@@ -90,6 +92,7 @@ export const HvFlowBaseNode = ({
   inputs,
   outputs,
   nodeActions = defaultActions,
+  footer,
   classes: classesProp,
   className,
   children,
@@ -210,13 +213,6 @@ export const HvFlowBaseNode = ({
                     isConnectableStart={false}
                     id={handleId}
                     position={Position.Left}
-                    style={{
-                      top: "auto",
-                      bottom:
-                        (outputs?.length ? 80 : 18) +
-                        (outputs?.length || 0) * 29 +
-                        29 * idx,
-                    }}
                   />
                   <HvTypography>{input.label}</HvTypography>
                   {input.isMandatory &&
@@ -244,10 +240,6 @@ export const HvFlowBaseNode = ({
                     isConnectableEnd={false}
                     id={handleId}
                     position={Position.Right}
-                    style={{
-                      bottom: -10 + 29 * (outputs.length - idx),
-                      top: "auto",
-                    }}
                   />
                   {output.isMandatory &&
                     !isInputConnected(id, "source", handleId, outputEdges) && (
@@ -260,6 +252,7 @@ export const HvFlowBaseNode = ({
           </div>
         </>
       )}
+      {footer && <div className={classes.footerContainer}>{footer}</div>}
     </div>
   );
 };
