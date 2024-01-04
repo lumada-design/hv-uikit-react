@@ -2,7 +2,10 @@ import { ComponentClass, FC } from "react";
 
 import { Node, NodeProps } from "reactflow";
 
-import { HvActionGeneric } from "@hitachivantara/uikit-react-core";
+import {
+  HvActionGeneric,
+  HvSliderProps,
+} from "@hitachivantara/uikit-react-core";
 import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 // Node types
@@ -95,7 +98,16 @@ export interface HvFlowNodeSelectParam extends HvFlowNodeSharedParam {
   options?: string[];
 }
 
-export type HvFlowNodeParam = HvFlowNodeSelectParam | HvFlowNodeTextParam;
+export interface HvFlowNodeSliderParam
+  extends HvFlowNodeSharedParam,
+    Omit<HvSliderProps, keyof HvFlowNodeSharedParam> {
+  type: "slider";
+}
+
+export type HvFlowNodeParam =
+  | HvFlowNodeSelectParam
+  | HvFlowNodeTextParam
+  | HvFlowNodeSliderParam;
 
 export interface HvFlowNodeAction extends HvActionGeneric {
   callback?: (node: Node) => void;

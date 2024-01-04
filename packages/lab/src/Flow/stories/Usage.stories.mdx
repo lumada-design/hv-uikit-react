@@ -243,7 +243,16 @@ interface HvFlowNodeSelectParam {
   options?: string[];
 }
 
-type HvFlowNodeParam = HvFlowNodeSelectParam | HvFlowNodeTextParam;
+export interface HvFlowNodeSliderParam
+  extends HvFlowNodeSharedParam,
+    Omit<HvSliderProps, keyof HvFlowNodeSharedParam> {
+  type: "slider";
+}
+
+type HvFlowNodeParam =
+  | HvFlowNodeSelectParam
+  | HvFlowNodeTextParam
+  | HvFlowNodeSliderParam;
 ```
 
 Whenever a change is made on a parameter while using the flow, that change is saved on the node's `data` property in the `reactflow` instance.
@@ -259,6 +268,7 @@ Current parameter types supported by the `HvFlow` component:
 
 - `text`: renders an input box;
 - `select`: renders a dropdown and uses the `options` array to create the dropdown options. If `multiple` is set to `true`, a multiple select dropdown is used.
+- `slider`: renders a slider and uses the `minPointValue`, `maxPointValue`, `markStep` and `divisionQuantity` to create the slider options and build the slider axis.
 
 ## Actions <a id="actions" />
 
