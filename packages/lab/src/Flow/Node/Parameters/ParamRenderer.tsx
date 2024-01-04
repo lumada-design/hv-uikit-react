@@ -1,6 +1,7 @@
 import { HvFlowNodeParam } from "../../types";
 import Text from "./Text";
 import Select from "./Select";
+import Slider from "./Slider";
 
 export type ParamRendererProps = {
   nodeId: string;
@@ -11,6 +12,7 @@ export type ParamRendererProps = {
 const renderers = {
   text: Text,
   select: Select,
+  slider: Slider,
 };
 
 const ParamRenderer = ({ nodeId, params, data }: ParamRendererProps) => {
@@ -21,7 +23,6 @@ const ParamRenderer = ({ nodeId, params, data }: ParamRendererProps) => {
         if (!Renderer) return null;
 
         return <Renderer key={idx} nodeId={nodeId} param={param} data={data} />;
-        return null;
       })}
     </>
   );

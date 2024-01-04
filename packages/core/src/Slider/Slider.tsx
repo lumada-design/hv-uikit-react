@@ -220,7 +220,6 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     formatTooltip,
     ...others
   } = useDefaultProps("HvSlider", props);
-
   const { classes, cx } = useClasses(classesProp);
 
   // Miscellaneous state
