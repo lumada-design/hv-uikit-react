@@ -37,7 +37,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
     fontFamily: theme.fontFamily.body,
 
     "&$sorted": {
-      backgroundColor: sortedColor,
+      backgroundImage: `linear-gradient(to right, ${sortedColor}, ${sortedColor})`,
     },
   },
   /** Styles applied to the cell when it's in the table footer. */
@@ -125,14 +125,10 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   stickyColumn: {
     position: "sticky",
     zIndex: 2,
-    background: theme.colors.atmo2,
+    backgroundColor: theme.colors.atmo2,
 
     "&$groupColumnMostRight+$stickyColumn": {
       borderLeft: 0,
-    },
-
-    "&$sorted": {
-      backgroundImage: `linear-gradient(to right, ${sortedColor}, ${sortedColor})`,
     },
   },
   /** Styles applied to the cell when it's part of the last sticky to the left column. */
