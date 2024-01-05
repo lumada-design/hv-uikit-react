@@ -105,10 +105,8 @@ export const HvDrawer = (props: HvDrawerProps) => {
       id={id}
       anchor={anchor}
       open={open}
-      PaperProps={{
-        classes: {
-          root: classes.paper,
-        },
+      classes={{
+        paper: classes.paper,
       }}
       hideBackdrop={shouldHideBackdrop}
       {...(!shouldHideBackdrop && {

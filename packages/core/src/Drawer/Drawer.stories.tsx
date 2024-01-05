@@ -33,9 +33,7 @@ const classes = {
     overflow: "auto",
   }),
   drawerTitle: css({
-    flexGrow: 0,
-    flexShrink: 0,
-    flexBasis: "auto",
+    flex: 0,
   }),
 };
 
@@ -64,19 +62,13 @@ export const Main: StoryObj<HvDrawerProps> = {
         <HvButton onClick={() => setOpen(true)}>Open Drawer</HvButton>
         <HvDrawer
           disablePortal
-          classes={{
-            paper: classes.drawerPaper,
-          }}
+          PaperProps={{ component: "aside", className: classes.drawerPaper }}
           ModalProps={{ disableScrollLock: true }}
           onClose={() => setOpen(false)}
           open={open}
-          data-testid="drawer"
           {...args}
         >
-          <HvDialogTitle
-            component="div"
-            classes={{ root: classes.drawerTitle }}
-          >
+          <HvDialogTitle component="div" className={classes.drawerTitle}>
             Lorem Ipsum
           </HvDialogTitle>
           <HvDialogContent className={classes.drawerContent}>
