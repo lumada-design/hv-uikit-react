@@ -26,7 +26,7 @@ const styles = {
   }),
 };
 
-const Resources = () => (
+export const Resources = () => (
   <HvSimpleGrid
     breakpoints={[
       {
@@ -67,5 +67,3 @@ const Resources = () => (
     </div>
   </HvSimpleGrid>
 );
-
-export default Resources;

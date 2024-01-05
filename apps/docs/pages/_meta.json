@@ -5,8 +5,9 @@
   "index": {
     "display": "hidden"
   },
-  "docs": "Documentation",
-  "about": "About",
+  "docs": "Docs",
+  "components": "Components",
+  "templates": "Templates",
   "company": {
     "title": "Storybook",
     "type": "menu",
