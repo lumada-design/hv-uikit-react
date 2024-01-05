@@ -3,9 +3,11 @@ import { CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import validationStates from "../Forms/FormElement/validationStates";
+
 import { HvFormStatus } from "../Forms";
 
 import { HvKnobProperty, HvMarkProperty } from "./types";
+
 import { sliderStyles as styles } from "./Slider.styles";
 
 /**
@@ -18,8 +20,11 @@ import { sliderStyles as styles } from "./Slider.styles";
 export const knobsPositionToScaledValue = (
   sliderValue: number,
   minPointValue: number,
-  stepValue: number
-): number => minPointValue + stepValue * sliderValue;
+  stepValue: number,
+  isMark?: boolean
+): number => {
+  return isMark ? sliderValue : minPointValue + stepValue * sliderValue;
+};
 
 /**
  * Transform the scaled values into knobs positions.
@@ -128,8 +133,8 @@ export const calculateStepValue = (
 export const createMark = (
   markProperties: HvMarkProperty[],
   markstep: number,
-  divisionQuantity: number,
   minPointValue: number,
+  maxPointValue: number,
   stepValue: number,
   markDigits: number,
   disabled: boolean,
@@ -168,11 +173,12 @@ export const createMark = (
   } else {
     const roundedMarkStep = Math.floor(markstep);
 
-    for (let index = 0; index <= divisionQuantity; index += roundedMarkStep) {
+    for (let index = 0; index <= maxPointValue; index += roundedMarkStep) {
       let labelValue: React.ReactNode = knobsPositionToScaledValue(
         index,
         minPointValue,
-        stepValue
+        stepValue,
+        true
       ).toFixed(markDigits);
 
       labelValue = formatMark?.(labelValue) || labelValue;
@@ -187,6 +193,7 @@ export const createMark = (
         : {
             label: `${labelValue}`,
             style: {
+              left: `${labelValue}%`,
               ...styles.mark,
             },
           };

@@ -135,6 +135,31 @@ describe("Slider", () => {
       const text = queryByRole("Failure Rate");
       expect(text).not.toBeInTheDocument();
     });
+
+    it("renders the slider with the correct marks", () => {
+      const { getByText } = render(
+        <HvSlider
+          knobProps={[{ "aria-label": "no-label-knob" }]}
+          hideInput
+          minPointValue={0}
+          maxPointValue={100}
+          divisionQuantity={100}
+          markStep={25}
+        />
+      );
+
+      const zeroMark = getByText("0");
+      const twentyFiveMark = getByText("25");
+      const fiftyMark = getByText("50");
+      const seventyFiveMark = getByText("75");
+      const oneHundredMark = getByText("100");
+
+      expect(zeroMark).toBeInTheDocument();
+      expect(twentyFiveMark).toBeInTheDocument();
+      expect(fiftyMark).toBeInTheDocument();
+      expect(seventyFiveMark).toBeInTheDocument();
+      expect(oneHundredMark).toBeInTheDocument();
+    });
   });
 
   describe("interactions", () => {

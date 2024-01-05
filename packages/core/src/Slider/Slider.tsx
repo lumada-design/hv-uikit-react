@@ -245,8 +245,8 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
       createMark(
         markProperties,
         markStep,
-        divisionQuantity,
         minPointValue,
+        maxPointValue,
         stepValue,
         markDigits,
         !!disabled,
@@ -254,12 +254,12 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
       ),
     [
       disabled,
-      divisionQuantity,
       formatMark,
       markDigits,
       markProperties,
       markStep,
       minPointValue,
+      maxPointValue,
       stepValue,
     ]
   );
