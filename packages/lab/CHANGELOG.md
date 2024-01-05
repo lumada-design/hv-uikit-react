@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.21.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.20.4...@hitachivantara/uikit-react-lab@5.21.0) (2024-01-05)
+
+### Features
+
+- **Flow:** add footer section to the `BaseNode` component ([1d5317a](https://github.com/lumada-design/hv-uikit-react/commit/1d5317a8c9eb57e3b935dde8ed0141bcff5cb442))
+
 ## [5.20.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.20.3...@hitachivantara/uikit-react-lab@5.20.4) (2024-01-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
