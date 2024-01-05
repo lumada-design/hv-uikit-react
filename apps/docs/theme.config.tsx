@@ -1,6 +1,8 @@
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { useTheme } from "nextra-theme-docs";
 
+import { Logo } from "./components/Logo";
+
 const MainContainer = ({ children }: { children: React.ReactNode }) => {
   const { resolvedTheme } = useTheme();
 
@@ -16,7 +18,7 @@ const MainContainer = ({ children }: { children: React.ReactNode }) => {
 
 // More configs here: https://nextra.site/docs/docs-theme/theme-configuration
 export default {
-  logo: <span>NEXT UI Kit</span>, // TODO - Use svg icon to change the "fill" property with "currentColor"
+  logo: <Logo />,
   docsRepositoryBase:
     "https://github.com/lumada-design/hv-uikit-react/tree/master/apps/docs",
   project: {
@@ -24,15 +26,13 @@ export default {
   },
   useNextSeoProps() {
     return {
-      titleTemplate: "%s – NEXT UI Kit",
+      titleTemplate: "%s – NEXT UI",
     };
   },
   footer: {
-    text: (
-      <span>© Hitachi Vantara Corporation {new Date().getFullYear()}.</span>
-    ),
+    text: null,
+    component: null,
   },
-  sidebar: { toggleButton: true },
   main: ({ children }) => <MainContainer>{children}</MainContainer>,
   primaryHue: 212,
   primarySaturation: 70,
