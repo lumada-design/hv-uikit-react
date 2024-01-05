@@ -1244,7 +1244,10 @@ const ds3 = makeTheme((theme) => ({
         },
         body: {
           "&.HvTableCell-sorted": {
-            backgroundColor: theme.alpha("atmo1", 0.4),
+            backgroundImage: `linear-gradient(to right, ${theme.alpha(
+              "atmo1",
+              0.4
+            )}, ${theme.alpha("atmo1", 0.4)})`,
           },
         },
         variantListactions: {
@@ -1252,14 +1255,6 @@ const ds3 = makeTheme((theme) => ({
         },
         variantListcheckbox: {
           borderRight: `solid 2px ${theme.colors.atmo2}`,
-        },
-        stickyColumn: {
-          "&.HvTableCell-sorted": {
-            backgroundImage: `linear-gradient(to right, ${theme.alpha(
-              "atmo1",
-              0.4
-            )}, ${theme.alpha("atmo1", 0.4)})`,
-          },
         },
       },
     },
