@@ -196,6 +196,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
     const headerControlArias = {
       "aria-required": required ?? undefined,
       "aria-readonly": readOnly ?? undefined,
+      "aria-disabled": disabled ?? undefined,
 
       "aria-expanded": ariaExpanded,
       "aria-owns": isOpen ? containerId : undefined,

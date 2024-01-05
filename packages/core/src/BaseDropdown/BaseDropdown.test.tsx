@@ -5,9 +5,7 @@ import { describe, expect, it } from "vitest";
 import { HvBaseDropdown } from "./BaseDropdown";
 
 const Main = () => (
-  <div style={{ width: 121 }}>
-    <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" />
-  </div>
+  <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" />
 );
 
 describe("BaseDropDown", () => {
@@ -22,6 +20,25 @@ describe("BaseDropDown", () => {
     await userEvent.click(baseDropdownHeader);
 
     expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "true");
+  });
+
+  it("should not open when disabled", async () => {
+    render(
+      <HvBaseDropdown
+        disabled
+        placeholder="Placeholder..."
+        aria-label="Main sample"
+      />
+    );
+
+    const baseDropdownHeader = screen.getByRole("combobox");
+
+    expect(baseDropdownHeader).toHaveAttribute("aria-disabled", "true");
+    expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+
+    // Open
+    await userEvent.click(baseDropdownHeader);
+    expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
   });
 
   it("should close on double click", async () => {
