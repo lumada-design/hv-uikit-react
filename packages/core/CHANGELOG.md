@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.43.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.42.1...@hitachivantara/uikit-react-core@5.43.0) (2024-01-06)
+
+### Bug Fixes
+
+- **BaseDropdown:** add aria-disabled when disabled ([fdcf211](https://github.com/lumada-design/hv-uikit-react/commit/fdcf211213b5f1cbf5c03c7a4921ec28a7182821))
+- **Drawer:** pass PaperProps without losing styles ([f18f1b5](https://github.com/lumada-design/hv-uikit-react/commit/f18f1b58177d4a562608312fd3c0939184c7422a))
+- **TableCell:** transparent background for sorted sticky columns ([24ef93d](https://github.com/lumada-design/hv-uikit-react/commit/24ef93de2ff2ce9c3b8dfc4af62afa8a31cd677a))
+
+### Features
+
+- **useid:** add react useid to useuniqueid hook ([7dfd00e](https://github.com/lumada-design/hv-uikit-react/commit/7dfd00e6215b5d3e6ca3df3f78bc77b2206c3abb))
+
 ## [5.42.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.42.0...@hitachivantara/uikit-react-core@5.42.1) (2024-01-05)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.17.2 (2024-01-06)
+
+### Bug Fixes
+
+- **TableCell:** transparent background for sorted sticky columns ([24ef93d](https://github.com/lumada-design/hv-uikit-react/commit/24ef93de2ff2ce9c3b8dfc4af62afa8a31cd677a))
+
 ## 5.17.1 (2024-01-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles
