@@ -312,10 +312,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
     };
 
     const handleCalendarClose = () => {
-      const shouldSave = !(rangeMode || showActions);
-      if (shouldSave) {
-        handleApply();
-      } else {
+      if (rangeMode || showActions) {
         handleCancel();
       }
     };
