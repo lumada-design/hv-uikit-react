@@ -1,3 +1,4 @@
+import { HTMLAttributes } from "react";
 import { ensurePluginOrder, Hooks } from "react-table";
 
 // #region ##### TYPES #####
@@ -6,6 +7,7 @@ import { ensurePluginOrder, Hooks } from "react-table";
 export interface UseHvResizeColumnProps {
   resizable?: boolean;
   resizing?: boolean;
+  resizerProps?: HTMLAttributes<HTMLDivElement>;
 }
 
 // getCellProps:
@@ -24,7 +26,13 @@ export type UseHvResizeColumnsProps = (<
 
 // props target: <table><thead><tr><th>
 const getHeaderPropsHook = (props, { column }) => {
-  const resizerProps: UseHvResizeColumnProps = column.getResizerProps?.() || {};
+  const resizerProps: NonNullable<UseHvResizeColumnProps["resizerProps"]> =
+    column.getResizerProps?.() || {};
+
+  resizerProps.onClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
 
   const nextProps = {
     resizable: column.canResize,
