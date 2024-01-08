@@ -2,8 +2,6 @@ import React, { useRef, useState } from "react";
 
 import uniqueId from "lodash/uniqueId";
 
-import validateAccept from "attr-accept";
-
 import { Doc } from "@hitachivantara/uikit-react-icons";
 
 import { setId } from "../../utils/setId";
@@ -99,6 +97,28 @@ export interface HvDropZoneProps {
    * A Jss Object used to override or extend the styles applied to the component.
    */
   classes?: HvDropZoneClasses;
+}
+
+// TODO: remove/review in `v6`: delegate to HTML `accept` and/or add custom validation
+function validateAccept(file?: File, acceptAttr?: string) {
+  if (!file || !acceptAttr) return true;
+
+  const acceptEntries = acceptAttr.split(",");
+  const fileName = file.name || "";
+  const mimeType = (file.type || "").toLowerCase();
+  const baseMimeType = mimeType.replace(/\/.*$/, "");
+
+  return acceptEntries.some((type) => {
+    const validType = type.trim().toLowerCase();
+    if (validType.charAt(0) === ".") {
+      return fileName.toLowerCase().endsWith(validType);
+    }
+    // This is something like a image/* mime type
+    if (validType.endsWith("/*")) {
+      return baseMimeType === validType.replace(/\/.*$/, "");
+    }
+    return mimeType === validType;
+  });
 }
 
 export const HvDropZone = (props: HvDropZoneProps) => {
