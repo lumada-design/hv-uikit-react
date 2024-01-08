@@ -141,7 +141,7 @@ export const Basic: StoryObj<HvFileUploaderProps> = {
 
     return (
       <HvFileUploader
-        acceptedFiles={["jpg", "jpeg", "png"]}
+        acceptedFiles={[".jpg", ".jpeg", ".png"]}
         labels={{ sizeWarning: "Maximum file size:" }}
         maxFileSize={1 * 1000 ** 2}
         fileList={list}
@@ -372,7 +372,7 @@ export const SingleUpload: StoryObj<HvFileUploaderProps> = {
         onFileRemoved={(removedFile) => {
           removeFile(removedFile);
         }}
-        acceptedFiles={["jpg", "jpeg", "png"]}
+        acceptedFiles={[".jpg", ".jpeg", ".png"]}
         maxFileSize={1 * 1000 ** 2}
         multiple={false}
         disabled={list.length === 1}

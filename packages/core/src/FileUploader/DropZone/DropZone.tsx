@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 
 import uniqueId from "lodash/uniqueId";
 
-import accept from "attr-accept";
+import validateAccept from "attr-accept";
 
 import { Doc } from "@hitachivantara/uikit-react-icons";
 
@@ -78,7 +78,7 @@ export interface HvDropZoneProps {
   /**
    * Files extensions accepted for upload.
    */
-  acceptedFiles: string[];
+  accept?: React.InputHTMLAttributes<HTMLInputElement>["accept"];
   /**
    * Max upload size
    * */
@@ -106,7 +106,7 @@ export const HvDropZone = (props: HvDropZoneProps) => {
     id: idProp,
     classes: classesProp,
     labels,
-    acceptedFiles,
+    accept,
     maxFileSize,
     inputProps,
     hideLabels,
@@ -138,11 +138,9 @@ export const HvDropZone = (props: HvDropZoneProps) => {
 
       const isSizeAllowed = file.size <= maxFileSize;
       const isFileAccepted =
-        !acceptedFiles.length ||
-        acceptedFiles.indexOf(file.type.split("/")[1]) > -1 ||
-        acceptedFiles.some((acceptExtension) =>
-          accept({ name: file.name, type: file.type }, acceptExtension)
-        );
+        !accept ||
+        accept.includes(file.type.split("/")[1]) ||
+        validateAccept(file, accept);
 
       if (!isFileAccepted) {
         newFile.errorMessage = labels?.fileTypeError;
@@ -172,10 +170,9 @@ export const HvDropZone = (props: HvDropZoneProps) => {
           <HvInfoMessage id={setId(id, "description")}>
             {Number.isInteger(maxFileSize) &&
               `${labels?.sizeWarning} ${convertUnits(maxFileSize)}`}
-            {labels?.acceptedFiles && labels.acceptedFiles}
-            {!labels?.acceptedFiles &&
-              acceptedFiles.length > 0 &&
-              `\u00A0(${acceptedFiles.join(", ")})`}
+            {labels?.acceptedFiles
+              ? labels.acceptedFiles
+              : accept && `\u00A0(${accept?.replaceAll(",", ", ")})`}
           </HvInfoMessage>
         </div>
       )}
@@ -230,7 +227,7 @@ export const HvDropZone = (props: HvDropZoneProps) => {
             }
           }}
           ref={inputRef}
-          accept={acceptedFiles.join(",")}
+          accept={accept}
           {...inputProps}
         />
         <div className={classes?.dropArea}>
