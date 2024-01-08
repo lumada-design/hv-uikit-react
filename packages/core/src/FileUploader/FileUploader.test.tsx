@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { fireEvent, render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
 import { HvFileUploader, HvFileUploaderProps } from "./FileUploader";
@@ -29,6 +31,27 @@ const Main = (props: HvFileUploaderProps) => (
   <HvFileUploader onFilesAdded={() => {}} onFileRemoved={() => {}} {...props} />
 );
 
+const FullSample = (props?: HvFileUploaderProps) => {
+  const [files, setFiles] = useState(props?.fileList || []);
+
+  return (
+    <HvFileUploader
+      fileList={files}
+      acceptedFiles={[".png", ".jpg"]}
+      maxFileSize={12}
+      onFilesAdded={(newFiles) => {
+        setFiles((prev) => [...prev, ...newFiles]);
+        props?.onFilesAdded?.(newFiles);
+      }}
+      onFileRemoved={(file) => {
+        setFiles((prev) => prev.filter((f) => f !== file));
+        props?.onFileRemoved?.(file);
+      }}
+      {...props}
+    />
+  );
+};
+
 describe("FileUploader", () => {
   it("should render the file list", () => {
     render(<Main {...baseProps} />);
@@ -55,6 +78,22 @@ describe("FileUploader", () => {
     fireEvent.change(dropZone, {});
 
     expect(onFilesAddedMock).toHaveBeenCalled();
+  });
+
+  it("should add files on upload", async () => {
+    const addMock = vi.fn();
+    const rmMock = vi.fn();
+    render(<FullSample onFilesAdded={addMock} onFileRemoved={rmMock} />);
+
+    const dropZone = screen.getByLabelText("Label", { selector: "input" });
+    const file1 = new File(["data"], "hello1.png", { type: "image/png" });
+    const file2 = new File(["data"], "hello2.png", { type: "image/png" });
+
+    await userEvent.upload(dropZone, file1);
+    expect(addMock).toHaveBeenCalledTimes(1);
+
+    await userEvent.upload(dropZone, file2);
+    expect(addMock).toHaveBeenCalledTimes(2);
   });
 
   it("should display incorrect file type warning", () => {

@@ -118,28 +118,35 @@ export const HvDropZone = (props: HvDropZoneProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const [dragState, setDrag] = useState<boolean>(false);
+  const [dragState, setDragState] = useState(false);
 
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const leaveDropArea = () => {
-    setDrag(false);
+  const handleDragLeave = () => {
+    setDragState(false);
   };
 
-  const enterDropArea = () => {
-    setDrag(true);
+  const handleDragEnter: React.DragEventHandler = (event) => {
+    if (disabled) return;
+    event.stopPropagation();
+    event.preventDefault();
+    setDragState(true);
   };
 
   const onChangeHandler = (filesList: FileList) => {
     const filesToProcess = Object.values(filesList);
 
     const newFiles = filesToProcess.map((file) => {
-      const newFile: HvFileData = file;
+      const newFile: HvFileData = new File([file], file.name, {
+        type: file.type,
+        lastModified: file.lastModified,
+      });
+      newFile.id = uniqueId("uploaded-file-data-");
 
       const isSizeAllowed = file.size <= maxFileSize;
       const isFileAccepted =
         !accept ||
-        accept.includes(file.type.split("/")[1]) ||
+        accept.includes(file.type?.split("/")[1]) || // TODO: remove in v6
         validateAccept(file, accept);
 
       if (!isFileAccepted) {
@@ -150,7 +157,6 @@ export const HvDropZone = (props: HvDropZoneProps) => {
         newFile.status = "fail";
       }
 
-      newFile.id = uniqueId("uploaded-file-data-");
       return newFile;
     });
 
@@ -200,30 +206,18 @@ export const HvDropZone = (props: HvDropZoneProps) => {
               onChangeHandler(inputRef.current.files);
             }
           }}
-          onDragEnter={(event) => {
-            if (!disabled) {
-              enterDropArea();
-              event.stopPropagation();
-              event.preventDefault();
-            }
-          }}
-          onDragLeave={leaveDropArea}
-          onDropCapture={leaveDropArea}
-          onDragOver={(event) => {
-            if (!disabled) {
-              enterDropArea();
-              event.stopPropagation();
-              event.preventDefault();
-            }
-          }}
+          onDragEnter={handleDragEnter}
+          onDragOver={handleDragEnter}
+          onDragLeave={handleDragLeave}
+          onDropCapture={handleDragLeave}
           onDrop={(event) => {
-            if (!disabled) {
-              const { files } = event.dataTransfer;
-              if (multiple === true || files.length === 1) {
-                event.stopPropagation();
-                event.preventDefault();
-                onChangeHandler(files);
-              }
+            if (disabled) return;
+
+            const { files } = event.dataTransfer;
+            if (multiple === true || files.length === 1) {
+              event.stopPropagation();
+              event.preventDefault();
+              onChangeHandler(files);
             }
           }}
           ref={inputRef}
