@@ -88,7 +88,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
       children,
       component,
       className,
-      style,
+      style: styleProp,
       classes: classesProp,
       scope: scopeProp,
       align = "inherit",
@@ -135,6 +135,11 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
         ? "columnheader"
         : "rowheader";
     const paragraph = isParagraph(children);
+
+    // Keep the header sticky
+    const style = stickyColumn
+      ? { ...styleProp, position: "sticky" }
+      : styleProp;
 
     return (
       <Component
