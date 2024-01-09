@@ -23,5 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# do not lock versinos (let latest be used)
-package-lock.json
