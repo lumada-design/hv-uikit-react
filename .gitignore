@@ -46,3 +46,6 @@ detect.sh
 output
 reports
 dependency-check-bin
+
+# examples
+examples/*/package-lock.json
