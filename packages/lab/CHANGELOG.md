@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.22.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.21.1...@hitachivantara/uikit-react-lab@5.22.0) (2024-01-10)
+
+### Features
+
+- **Flow:** add Slider parameter renderer ([61261ff](https://github.com/lumada-design/hv-uikit-react/commit/61261ffd0c78e30350dd997a736918a43806dd82))
+
 ## [5.21.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.21.0...@hitachivantara/uikit-react-lab@5.21.1) (2024-01-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

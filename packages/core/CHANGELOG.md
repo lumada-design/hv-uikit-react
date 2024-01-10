@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.44.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.43.0...@hitachivantara/uikit-react-core@5.44.0) (2024-01-10)
+
+### Bug Fixes
+
+- **DatePicker:** input text overflowing ([89a38d3](https://github.com/lumada-design/hv-uikit-react/commit/89a38d3fbbf8955f2c1c8f09c1560f9df2a7bff6))
+- **TableHeader:** keep header sticky when sticky and resizable ([75f5589](https://github.com/lumada-design/hv-uikit-react/commit/75f5589f7ede50bf79e7cdb10d5e7ada6b407852))
+- **Table:** stop propagation for resizer ([9b76b5f](https://github.com/lumada-design/hv-uikit-react/commit/9b76b5feb322643daef099c3d803bc602e552e7a))
+
+### Features
+
+- **Flow:** add Slider parameter renderer ([61261ff](https://github.com/lumada-design/hv-uikit-react/commit/61261ffd0c78e30350dd997a736918a43806dd82))
+
 # [5.43.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.42.1...@hitachivantara/uikit-react-core@5.43.0) (2024-01-06)
 
 ### Bug Fixes
