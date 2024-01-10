@@ -32,20 +32,20 @@ const Slider = ({ nodeId, param, data }: SliderProps) => {
   const [value, setValue] = useState(data[id]);
 
   const onSliderChange: HvSliderProps["onChange"] = (val) => {
-    const nodes = reactFlowInstance.getNodes();
-    const newNodes = nodes.map((node) => {
-      if (node.id === nodeId) {
-        node.data = { ...node.data, [id]: val };
-      }
-      return node;
-    });
-    reactFlowInstance.setNodes(newNodes);
+    reactFlowInstance.setNodes((nodes) =>
+      nodes.map((node) => {
+        if (node.id === nodeId) {
+          node.data = { ...node.data, [id]: val };
+        }
+        return node;
+      })
+    );
     setValue(val);
   };
 
   return (
     <HvSlider
-      className="nodrag"
+      className="nodrag" // Prevents dragging within the input field
       defaultValues={value}
       onChange={onSliderChange}
       classes={{
