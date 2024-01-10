@@ -136,7 +136,7 @@ export const ThemeOverride = () => {
         cssTheme="scoped"
         themes={[themeOverride]}
       >
-        <HvCard id={id} selectable>
+        <HvCard selectable>
           <HvCardHeader title="NEXT UI Kit" subheader="React UI library" />
           <HvCardContent>
             <HvTypography>Hello from the team!</HvTypography>

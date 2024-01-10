@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Outlet } from "react-router-dom";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 
@@ -14,6 +15,7 @@ import navigation from "~/lib/navigation";
 /** Navigation layout & provider */
 const Navigation = () => {
   const { selectedMode } = useTheme();
+  const rootRef = useRef<HTMLDivElement>(null);
 
   const {
     customTheme,
@@ -26,12 +28,12 @@ const Navigation = () => {
 
   return (
     <div
-      id="gen-root"
+      ref={rootRef}
       className={`bg-default ${open ? "w-[calc(100%_-_390px)]" : "w-full"}`}
     >
       <HvProvider
-        classNameKey="gen-root"
-        rootElementId="gen-root"
+        cacheOptions={{ key: "gen-root" }}
+        rootElement={rootRef.current}
         cssTheme="scoped"
         themes={[customTheme]}
         colorMode={selectedMode}

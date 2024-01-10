@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useRef } from "react";
 
-import createCache from "@emotion/cache";
+import createCache, { Options } from "@emotion/cache";
 import {
   css as cssReact,
   Global,
@@ -15,10 +15,8 @@ import {
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
-import { getElementById } from "../utils/document";
 import { processThemes } from "../utils/theme";
 import { HvTheme } from "../types/theme";
-import { useUniqueId } from "../hooks/useUniqueId";
 
 import {
   HvThemeProvider,
@@ -34,28 +32,38 @@ export interface HvProviderProps {
   children?: React.ReactNode;
   /**
    * Id of your root element.
+   * @deprecated Use `rootElement` instead.
    */
   rootElementId?: string;
   /**
+   * Root element where styles will be injected into.
+   */
+  rootElement?: HTMLElement | null;
+  /**
+   * Cache container where styles will be injected into.
+   */
+  cacheOptions?: Partial<Options>;
+  /**
    * By default the baseline styles are applied globally, `global`, to the application for the UI Kit components to work properly.
    * If you need to scope the baseline styles to avoid styling conflicts, you can set this property to `scoped`.
-   * To scope the baseline to your root, you need to add the `rootElementId` property.
-   * If the `rootElementId` property is not set, the baseline will be scoped to a new container, `hv-uikit-scoped-root*`, created around your content.
+   * To scope the baseline to your root, you need to add the `rootElement` property.
+   * If the `rootElement` property is not set, the baseline will be scoped to a new container created around your content.
    * If you are providing your own baseline styles, you can set this property to `none` to disable the baseline styles.
    */
   cssBaseline?: "global" | "scoped" | "none";
   /**
    * By default the theme styles are applied globally, `global`, to the application.
    * If you need to scope the theme styles to avoid styling conflicts, you can set this property to `scoped`.
-   * To scope the theme to your root, you need to add the `rootElementId` property.
-   * If the `rootElementId` property is not set, the theme will be scoped to a new container, `hv-uikit-scoped-root*`, created around your content.
+   * To scope the theme to your root, you need to add the `rootElement` property.
+   * If the `rootElement` property is not set, the theme will be scoped to a new container created around your content.
    */
   cssTheme?: "global" | "scoped";
   /**
    * The string used to prefix the class names and uniquely identify them. The key can only contain lower case alphabetical characters.
    * This is useful to avoid class name collisions.
    *
-   * If no value is provided, the default is `hv`.
+   * @default "hv"
+   * @deprecated Use `cacheOptions.key` instead.
    */
   classNameKey?: string;
   /**
@@ -80,14 +88,14 @@ export interface HvProviderProps {
   colorMode?: string;
 }
 
-const scopedRootPrefix = "hv-uikit-scoped-root" as const;
-
 /**
  * Enables theming capabilities and makes cross-component theme properties available down the tree.
  */
 export const HvProvider = ({
   children,
   rootElementId,
+  rootElement,
+  cacheOptions,
   cssBaseline = "global",
   cssTheme = "global",
   themes,
@@ -95,7 +103,7 @@ export const HvProvider = ({
   colorMode,
   classNameKey = defaultCacheKey,
 }: HvProviderProps) => {
-  const scopedRootId = useUniqueId(undefined, scopedRootPrefix);
+  const scopedRootRef = useRef<HTMLDivElement>(null);
 
   // Themes
   const themesList: (HvTheme | HvThemeStructure)[] = processThemes(themes);
@@ -105,10 +113,10 @@ export const HvProvider = ({
   // This enables users to override the UI Kit styles if necessary
   const emotionCache = useMemo(
     () =>
-      classNameKey === defaultCacheKey
+      classNameKey === defaultCacheKey && !cacheOptions
         ? defaultEmotionCache
-        : createCache({ key: classNameKey, prepend: true }),
-    [classNameKey]
+        : createCache({ key: classNameKey, prepend: true, ...cacheOptions }),
+    [classNameKey, cacheOptions]
   );
 
   return (
@@ -130,39 +138,27 @@ export const HvProvider = ({
         theme={theme || themesList[0].name}
         emotionCache={emotionCache}
         colorMode={colorMode || Object.keys(themesList[0].colors.modes)[0]}
-        themeRootId={
-          cssTheme === "scoped" ? rootElementId || scopedRootId : undefined
+        themeRootElement={
+          (cssTheme === "scoped" && (rootElement || scopedRootRef.current)) ||
+          undefined
         }
       >
         <ClassNames>
-          {({ css }) => {
-            if (cssBaseline === "scoped") {
-              const rootElement = getElementById(rootElementId);
+          {({ css, cx }) => {
+            const scopedBaselineClass = css({
+              [`@layer ${rootElementId}-baseline`]: CssScopedBaseline,
+            });
 
-              if (rootElement) {
-                rootElement.classList.add(
-                  css({
-                    [`@layer ${rootElementId}-baseline`]: {
-                      ...CssScopedBaseline,
-                    },
-                  })
-                );
-              }
+            if (cssBaseline === "scoped") {
+              rootElement?.classList.add(scopedBaselineClass);
             }
 
             return (cssTheme === "scoped" || cssBaseline === "scoped") &&
-              !rootElementId ? (
+              !(rootElementId || rootElement) ? (
               <div
-                id={scopedRootId}
-                className={
-                  cssBaseline === "scoped"
-                    ? css({
-                        [`@layer ${rootElementId}-baseline`]: {
-                          ...CssScopedBaseline,
-                        },
-                      })
-                    : undefined
-                }
+                id={rootElementId}
+                ref={scopedRootRef}
+                className={cx(cssBaseline === "scoped" && scopedBaselineClass)}
               >
                 {children}
               </div>

@@ -9,7 +9,7 @@ const App = () => {
     <HvProvider
       themes={[ds3, ds5]}
       theme="ds5"
-      rootElementId="hv-root"
+      rootElement={document.getElementById("hv-root")}
       cssTheme="scoped"
     >
       <RouterProvider router={router} />

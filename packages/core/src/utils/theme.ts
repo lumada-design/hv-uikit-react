@@ -27,11 +27,9 @@ export const setElementAttrs = (
   themeName: string,
   modeName: string,
   colorScheme: string,
-  themeRootId?: string
+  rootElement?: HTMLElement
 ) => {
-  const element = themeRootId
-    ? document.getElementById(themeRootId)
-    : document.body;
+  const element = rootElement || document.body;
 
   if (element) {
     element.setAttribute(`data-theme`, themeName);
