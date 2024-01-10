@@ -54,6 +54,7 @@ See our documentation site [here](https://lumada-design.github.io/uikit/master/)
     <td align="center"><a href="https://github.com/HQFOX"><img src="https://avatars.githubusercontent.com/u/19229133?v=4" width="64px;" alt=""/><br /><sub><b>Henrique Raposo</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/MEsteves22"><img src="https://avatars.githubusercontent.com/u/43220251?v=4" width="64px;" alt=""/><br /><sub><b>Márcia Esteves</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/plagoa"><img src="https://avatars.githubusercontent.com/u/7498785?v=4" width="64px;" alt=""/><br /><sub><b>Paulo Lagoá</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/VGervasio"><img src="https://avatars.githubusercontent.com/u/14977550?v=4" width="64px;" alt=""/><br /><sub><b>Vasco Gervásio</b></sub></a><br /></td>
   </tr>
 </table>
 
