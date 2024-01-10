@@ -30,8 +30,6 @@ const { staticClasses, useClasses } = createClasses("HvDashboardNode", {
 export { staticClasses as hvDashboardNodeClasses };
 
 const DEFAULT_LABELS = {
-  title: "Dashboard",
-  description: "Dashboard",
   emptyMessage: "No visualizations connected to the dashboard.",
   dialogTitle: "Configure dashboard",
   dialogSubtitle: "Please configure the layout of your dashboard as needed.",
@@ -48,7 +46,7 @@ export interface HvDashboardNodeProps
     Pick<HvDialogProps, "open" | "onClose">,
     Pick<HvDashboardProps, "layout"> {
   classes?: HvDashboardNodeClasses;
-  labels?: typeof DEFAULT_LABELS;
+  labels?: Partial<typeof DEFAULT_LABELS>;
   previewItems?: React.ReactNode;
   onApply?: () => void;
   onCancel?: () => void;

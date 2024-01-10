@@ -96,8 +96,6 @@ export const Dashboard: HvFlowNodeFC = (props) => {
       open={open}
       layout={config?.layout}
       labels={{
-        title: "Dashboard",
-        description: "Dashboard",
         emptyMessage: "No visualizations connected to the dashboard.",
         dialogTitle: "Configure dashboard",
         dialogSubtitle:
