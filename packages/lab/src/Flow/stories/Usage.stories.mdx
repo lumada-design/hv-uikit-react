@@ -243,10 +243,10 @@ interface HvFlowNodeSelectParam {
   options?: string[];
 }
 
-export interface HvFlowNodeSliderParam
-  extends HvFlowNodeSharedParam,
-    Omit<HvSliderProps, keyof HvFlowNodeSharedParam> {
+interface HvFlowNodeSharedParam extends Omit<HvSliderProps, "id" | "label"> {
   type: "slider";
+  id: string;
+  label: string;
 }
 
 type HvFlowNodeParam =
