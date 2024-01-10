@@ -20,23 +20,21 @@ const Select = ({ nodeId, param, data }: SelectProps) => {
   );
 
   const onSelectChange: HvDropdownProps["onChange"] = (item) => {
-    const nodes = reactFlowInstance.getNodes();
-
     const newOpts = Array.isArray(item)
       ? item.map((x) => x.label as string)
       : (item?.label as string) ?? undefined;
 
-    const newNodes = nodes.map((node) => {
-      if (node.id === nodeId) {
-        node.data = {
-          ...node.data,
-          [id]: newOpts,
-        };
-      }
-      return node;
-    });
-
-    reactFlowInstance.setNodes(newNodes);
+    reactFlowInstance.setNodes((nodes) =>
+      nodes.map((node) => {
+        if (node.id === nodeId) {
+          node.data = {
+            ...node.data,
+            [id]: newOpts,
+          };
+        }
+        return node;
+      })
+    );
     setOpts(
       newOpts ? (Array.isArray(newOpts) ? newOpts : [newOpts]) : undefined
     );

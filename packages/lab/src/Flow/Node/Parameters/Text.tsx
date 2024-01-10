@@ -18,16 +18,14 @@ const Text = ({ nodeId, param, data }: TextProps) => {
   const [text, setText] = useState(data[id]);
 
   const onTextChange: HvInputProps["onChange"] = (event, val) => {
-    const nodes = reactFlowInstance.getNodes();
-
-    const newNodes = nodes.map((node) => {
-      if (node.id === nodeId) {
-        node.data = { ...node.data, [id]: val };
-      }
-      return node;
-    });
-
-    reactFlowInstance.setNodes(newNodes);
+    reactFlowInstance.setNodes((nodes) =>
+      nodes.map((node) => {
+        if (node.id === nodeId) {
+          node.data = { ...node.data, [id]: val };
+        }
+        return node;
+      })
+    );
     setText(val);
   };
 
