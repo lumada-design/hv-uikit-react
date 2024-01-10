@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
@@ -89,6 +89,22 @@ describe("HvDatePicker", () => {
       expect(firstDayOfTheMonth.length).toBe(2);
       expect(datePickerDropdownValue.length).toBe(1);
       expect(dateInput).toBeInTheDocument();
+    });
+    it("should not call onChange when closing", async () => {
+      const onChangeSpy = vi.fn();
+      render(<HvDatePicker onChange={onChangeSpy} />);
+
+      let picker = screen.getByRole("combobox");
+
+      await userEvent.click(picker);
+
+      expect(picker).toHaveAttribute("aria-expanded", "true");
+
+      await userEvent.click(document.body);
+
+      picker = screen.getByRole("combobox");
+      expect(picker).toHaveAttribute("aria-expanded", "false");
+      expect(onChangeSpy).not.toHaveBeenCalled();
     });
   });
 
