@@ -26,6 +26,18 @@ NEXT UI Kit follows [Semantic Versioning Guidelines](https://semver.org/). Versi
 - **Minor releases** contain important new features. Minor releases are fully backward-compatible, you can modify your apps and libraries to begin using new APIs, features, and capabilities that were added in the release.
 - **Patch releases** are low risk, contain bug fixes and small new features.
 
+## Breaking changes exceptions
+
+We consider "breaking changes" to be modifications to APIS that will require apps to change their codebase.
+
+The following cases are exceptions to this rule:
+
+- **Changes to _unstable_ APIs**: documented as WIP/experimental, or prefixed with `unstable_`.
+- **Changes _private_ APIs**; that are not exported and/or are not documented.
+- **CSS changes** are minor, or to align with the latest design system specification.
+- **Bugs in typings**, whenever the TS declarations are missaligned with the real values.
+- **Reverts in breaking changes** that were recently introduced.
+
 ## Long-term support (LTS)
 
 NEXT UI Kit will continue to provide security updates and support for regressions for two versions prior to the current major version, for example regressions caused by external factors such as browser updates, or changes to upstream dependencies.
