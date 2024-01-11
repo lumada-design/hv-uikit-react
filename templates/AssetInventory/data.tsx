@@ -19,6 +19,8 @@ import {
   Preview,
 } from "@hitachivantara/uikit-react-icons";
 
+import { ServerPaginationProps, useServerPagination } from "../utils";
+
 // --- Table data utils ---
 
 export interface AssetInventoryEntry {
@@ -181,11 +183,6 @@ export const views: HvControlsProps["views"] = [
   },
 ];
 
-export const idsToControl = {
-  cards: "cardsGrid",
-  list: "itemList",
-};
-
 export const rightControlValues: HvRightControlProps["values"] = [
   {
     id: "nameAsc",
@@ -256,4 +253,14 @@ export const createEntry = (i: number): AssetInventoryEntry => {
     statusColor: getRandomStatus(),
     image: getRandomImage(),
   };
+};
+
+// --- Data & Endpoint ---
+const db = [...Array(50).keys()].map(createEntry);
+
+export interface PaginationDataProps
+  extends Omit<ServerPaginationProps<AssetInventoryEntry>, "endpoint" | "db"> {}
+
+export const usePaginationData = (props: PaginationDataProps) => {
+  return useServerPagination({ endpoint: "/events", db, ...props });
 };

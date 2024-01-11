@@ -1,16 +1,47 @@
-import { cx } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import {
   HvCard,
   HvTypography,
   HvLoading,
   HvTableInstance,
   HvCardProps,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 import { TopXS, BottomXS } from "@hitachivantara/uikit-react-icons";
 
-import { Indicator } from "../Indicator";
-import { ListViewEntry, TrendData, getStatusIcon } from "../data";
-import classes from "./styles";
+import { Indicator } from "./Indicator";
+import { ListViewEntry, TrendData, getStatusIcon } from "./data";
+
+const classes = {
+  container: css({
+    padding: theme.space.sm,
+  }),
+  card: css({
+    cursor: "pointer",
+    width: "100%",
+    padding: 0,
+    textAlign: "left",
+  }),
+  title: css({
+    margin: `${theme.space.xs} 0`,
+  }),
+  content: css({
+    display: "flex",
+    alignItems: "center",
+  }),
+  variation: css({
+    display: "flex",
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  }),
+  selected: css({
+    outline: `1px solid ${theme.colors.secondary_60}`,
+  }),
+  loading: css({
+    margin: `${theme.space.xs} 0`,
+  }),
+};
 
 interface KpiProps {
   title: string;

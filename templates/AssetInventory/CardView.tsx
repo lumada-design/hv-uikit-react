@@ -12,7 +12,7 @@ import {
   HvSkeleton,
 } from "@hitachivantara/uikit-react-core";
 
-import { AssetInventoryEntry, getStatusIcon } from "../data";
+import { AssetInventoryEntry, getStatusIcon } from "./data";
 
 interface CardViewProps {
   id?: string;

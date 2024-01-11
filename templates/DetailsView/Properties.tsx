@@ -12,8 +12,8 @@ import {
   HvTagsInput,
 } from "@hitachivantara/uikit-react-core";
 
-import { ModelDetails, useModelData } from "../data";
-import { MetadataItem } from "../MetadataItem";
+import { ModelDetails, useModelData } from "./data";
+import { MetadataItem } from "./MetadataItem";
 
 const ProgressBar = ({
   color = "secondary",

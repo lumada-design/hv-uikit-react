@@ -10,7 +10,7 @@ import {
   HvTableColumnConfig,
 } from "@hitachivantara/uikit-react-core";
 
-import { AssetInventoryEntry } from "../data";
+import { AssetInventoryEntry } from "./data";
 
 interface ListViewProps {
   id?: string;

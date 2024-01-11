@@ -1,3 +1,4 @@
+import useSWR from "swr";
 import {
   HvTooltip,
   HvTableColumnConfig,
@@ -12,6 +13,8 @@ import {
   Level3Bad,
   Refresh,
 } from "@hitachivantara/uikit-react-icons";
+
+import { ServerPaginationProps, useServerPagination, delay } from "../utils";
 
 // --- Table data utils ---
 
@@ -150,4 +153,49 @@ export const getTrendData = (variation: string): TrendData => {
     ["3", getRandom(500, 1000)],
     ["4", getRandom(200, 500)],
   ];
+};
+
+// --- Data & Endpoints ---
+const db = [...Array(20).keys()].map(createEntry);
+
+const countByStatus = (status: number) =>
+  db.filter((entry) => entry.status === status).length || 0;
+
+const requestsSummary = {
+  success: {
+    count: countByStatus(0),
+    data: getTrendData("up"),
+    variation: "up",
+  },
+  error: {
+    count: countByStatus(1),
+    data: getTrendData("down"),
+    variation: "down",
+  },
+  open: {
+    count: countByStatus(2),
+    data: getTrendData("down"),
+    variation: "down",
+  },
+  unassign: {
+    count: countByStatus(3),
+    data: getTrendData("up"),
+    variation: "up",
+  },
+};
+
+export interface PaginationDataProps
+  extends Omit<ServerPaginationProps<ListViewEntry>, "endpoint" | "db"> {}
+
+export const usePaginationData = (props: PaginationDataProps) => {
+  return useServerPagination({ endpoint: "/requests", db, ...props });
+};
+
+export const useSummaryData = () => {
+  return useSWR("/requests/summary", async () => {
+    // Loading
+    await delay(800);
+
+    return requestsSummary;
+  });
 };

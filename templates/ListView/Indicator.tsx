@@ -1,6 +1,6 @@
 import ReactChart from "react-google-charts";
 
-import { TrendData } from "../data";
+import { TrendData } from "./data";
 
 interface IndicatorProps {
   data?: TrendData;

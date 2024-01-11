@@ -17,7 +17,9 @@ export interface ServerPaginationProps<
   search?: string;
 }
 
-interface PaginationData<T extends object = Record<string, string | number>> {
+export interface PaginationData<
+  T extends object = Record<string, string | number>
+> {
   data: T[];
   total: number;
   pages: number;

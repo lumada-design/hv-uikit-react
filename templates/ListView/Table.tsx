@@ -10,7 +10,7 @@ import {
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
 
-import { ListViewEntry, getColumns } from "../data";
+import { ListViewEntry, getColumns } from "./data";
 
 interface TableProps {
   instance: HvTableInstance<ListViewEntry, string>;
