@@ -33,7 +33,7 @@ export interface HvBladeProps
   /**
    * The content of the blade's button.
    */
-  label?: string | React.ReactNode;
+  label?: React.ReactNode;
   /**
    * Typography variant for the blade's button label.
    */

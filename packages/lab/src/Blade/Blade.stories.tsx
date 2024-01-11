@@ -82,7 +82,7 @@ export const Controlled: StoryObj<HvBladeProps> = {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-evenly",
+            gap: 8,
             marginBottom: 10,
           }}
         >

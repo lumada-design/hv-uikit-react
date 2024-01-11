@@ -35,7 +35,7 @@ export interface HvBladesProps
   defaultExpanded?: number[];
 
   /**
-   * If true, ensures that at only one blade can be expanded at a time.
+   * If true, ensures that only one blade can be expanded at a time.
    */
   atMostOneExpanded?: boolean;
   /**
