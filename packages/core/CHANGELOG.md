@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.44.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.0...@hitachivantara/uikit-react-core@5.44.1) (2024-01-11)
+
+### Bug Fixes
+
+- **DatePicker:** unnecessary onChange removed when closing picker ([#3943](https://github.com/lumada-design/hv-uikit-react/issues/3943)) ([77bd8f3](https://github.com/lumada-design/hv-uikit-react/commit/77bd8f3b9a8d5f33a9b989e5af0c73c97c7ca385))
+
 # [5.44.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.43.0...@hitachivantara/uikit-react-core@5.44.0) (2024-01-10)
 
 ### Bug Fixes
