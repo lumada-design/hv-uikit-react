@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect, useId } from "react";
+import { css } from "@emotion/css";
 import {
   HvGrid,
   HvGridProps,
@@ -19,19 +20,28 @@ import {
   HvLeftControlProps,
   HvActionsGenericProps,
   HvLoadingContainer,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import { Kpi } from "./Kpi";
 import { Table } from "./Table";
-import classes from "./styles";
 import {
-  PaginationDataProps,
-  useSummaryData,
-  usePaginationData,
-  getColumns,
-  actions,
   ListViewEntry,
+  PaginationDataProps,
+  actions,
+  getColumns,
+  usePaginationData,
+  useSummaryData,
 } from "./data";
+
+const classes = {
+  paddingTop: css({
+    paddingTop: theme.space.md,
+  }),
+  marginTop: css({
+    marginTop: theme.space.md,
+  }),
+};
 
 const INIT_PAGE_SIZE = 5;
 
@@ -51,7 +61,7 @@ const ListView = () => {
     loading,
   } = usePaginationData(params);
 
-  const { data: indicatorData, loading: indicatorLoading } = useSummaryData();
+  const { data: indicatorData, isLoading: indicatorLoading } = useSummaryData();
 
   const columns = useMemo(() => getColumns(), []);
 

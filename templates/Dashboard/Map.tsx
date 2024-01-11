@@ -12,7 +12,7 @@ import {
   TileLayer,
 } from "react-leaflet";
 
-import { mapStyles } from "./styles";
+import { mapStyles } from "./Map.styles";
 
 const IconDefault = new Icon({
   iconUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png",

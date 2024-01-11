@@ -7,8 +7,8 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-import { useModelData } from "../data";
-import { MetadataItem } from "../MetadataItem";
+import { useModelData } from "./data";
+import { MetadataItem } from "./MetadataItem";
 
 const Kpi = ({
   title,

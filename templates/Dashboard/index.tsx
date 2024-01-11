@@ -21,13 +21,14 @@ import {
 import { GridPanel } from "./GridPanel";
 import { Map as MapComponent } from "./Map";
 import { Kpi } from "./Kpi";
-import { formatter } from "./utils";
 import { useServerData } from "./data";
 
 interface ButtonsProps extends HvMultiButtonProps {
   labels: string[];
   onButtonChange?: (index: number) => void;
 }
+
+const formatter = (value?: number | string) => `${Number(value) / 1000}k`;
 
 const Buttons = ({ labels, onButtonChange, ...others }: ButtonsProps) => {
   const [selected, setSelected] = useState(0);

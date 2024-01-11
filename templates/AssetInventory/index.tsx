@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useId } from "react";
-
+import { css } from "@emotion/css";
 import {
   HvBulkActions,
   HvPagination,
@@ -14,11 +14,11 @@ import {
   useHvSortBy,
   HvLeftControlProps,
   HvActionsGenericProps,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import { ListView } from "./ListView";
 import { CardView } from "./CardView";
-import classes from "./styles";
 import {
   PaginationDataProps,
   usePaginationData,
@@ -28,6 +28,13 @@ import {
   getColumns,
   AssetInventoryEntry,
 } from "./data";
+
+const classes = {
+  root: css({
+    display: "grid",
+    gap: theme.space.sm,
+  }),
+};
 
 const PAGE_OPTIONS = [6, 12, 18];
 

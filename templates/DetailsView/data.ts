@@ -1,19 +1,13 @@
 import useSWR from "swr";
 
-import { ServerPaginationProps, delay, useServerPagination } from "../../utils";
+import { ServerPaginationProps, delay, useServerPagination } from "../utils";
 import { DetailsViewEntry, createEntry } from "./utils";
 
 // --- Data ---
 
 const TOTAL = 10;
 
-const db = Array.from({ length: TOTAL }).reduce(
-  (acc: DetailsViewEntry[], curr, i) => {
-    acc.push(createEntry(i));
-    return acc;
-  },
-  []
-);
+const db = [...Array(TOTAL).keys()].map(createEntry);
 
 const model = {
   description: "Model created from the example Jupyter Notebook",
@@ -43,22 +37,15 @@ const model = {
 
 export type ModelDetails = typeof model;
 
-// --- Endpoints ---
-
+// #region Endpoints
 export interface PaginationDataProps
   extends Omit<ServerPaginationProps<DetailsViewEntry>, "endpoint" | "db"> {
   id: string;
 }
 
-export const usePaginationData = ({ limit, skip, id }: PaginationDataProps) => {
-  const data = useServerPagination<DetailsViewEntry>({
-    endpoint: `/model/${id}/events`,
-    db,
-    limit,
-    skip,
-  });
-
-  return data;
+export const usePaginationData = (props: PaginationDataProps) => {
+  const endpoint = `/model/${props.id}/events`;
+  return useServerPagination({ endpoint, db, ...props });
 };
 
 export const useModelData = () => {
@@ -73,3 +60,4 @@ export const useModelData = () => {
     { suspense: true }
   );
 };
+// #endregion

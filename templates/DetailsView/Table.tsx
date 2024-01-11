@@ -14,12 +14,8 @@ import {
   HvLoadingContainer,
 } from "@hitachivantara/uikit-react-core";
 
-import {
-  PaginationDataProps,
-  usePaginationData,
-  DetailsViewEntry,
-  getColumns,
-} from "../data";
+import { DetailsViewEntry, getColumns } from "./utils";
+import { PaginationDataProps, usePaginationData } from "./data";
 
 const PAGE_OPTIONS = [8, 16, 32];
 
