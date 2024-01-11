@@ -90,6 +90,7 @@
     "eslint-plugin-storybook": "^0.6.15",
     "formik": "^2.4.5",
     "html-react-parser": "^3.0.16",
+    "husky": "^8.0.3",
     "jsdom": "^21.1.2",
     "leaflet": "^1.9.4",
     "lerna": "^7.4.2",
