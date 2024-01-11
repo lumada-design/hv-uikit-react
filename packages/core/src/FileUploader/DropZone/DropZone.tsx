@@ -2,8 +2,6 @@ import React, { useRef, useState } from "react";
 
 import uniqueId from "lodash/uniqueId";
 
-import accept from "attr-accept";
-
 import { Doc } from "@hitachivantara/uikit-react-icons";
 
 import { setId } from "../../utils/setId";
@@ -78,7 +76,7 @@ export interface HvDropZoneProps {
   /**
    * Files extensions accepted for upload.
    */
-  acceptedFiles: string[];
+  accept?: React.InputHTMLAttributes<HTMLInputElement>["accept"];
   /**
    * Max upload size
    * */
@@ -101,12 +99,34 @@ export interface HvDropZoneProps {
   classes?: HvDropZoneClasses;
 }
 
+// TODO: remove/review in `v6`: delegate to HTML `accept` and/or add custom validation
+function validateAccept(file?: File, acceptAttr?: string) {
+  if (!file || !acceptAttr) return true;
+
+  const acceptEntries = acceptAttr.split(",");
+  const fileName = file.name || "";
+  const mimeType = (file.type || "").toLowerCase();
+  const baseMimeType = mimeType.replace(/\/.*$/, "");
+
+  return acceptEntries.some((type) => {
+    const validType = type.trim().toLowerCase();
+    if (validType.charAt(0) === ".") {
+      return fileName.toLowerCase().endsWith(validType);
+    }
+    // This is something like a image/* mime type
+    if (validType.endsWith("/*")) {
+      return baseMimeType === validType.replace(/\/.*$/, "");
+    }
+    return mimeType === validType;
+  });
+}
+
 export const HvDropZone = (props: HvDropZoneProps) => {
   const {
     id: idProp,
     classes: classesProp,
     labels,
-    acceptedFiles,
+    accept,
     maxFileSize,
     inputProps,
     hideLabels,
@@ -118,31 +138,36 @@ export const HvDropZone = (props: HvDropZoneProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const [dragState, setDrag] = useState<boolean>(false);
+  const [dragState, setDragState] = useState(false);
 
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const leaveDropArea = () => {
-    setDrag(false);
+  const handleDragLeave = () => {
+    setDragState(false);
   };
 
-  const enterDropArea = () => {
-    setDrag(true);
+  const handleDragEnter: React.DragEventHandler = (event) => {
+    if (disabled) return;
+    event.stopPropagation();
+    event.preventDefault();
+    setDragState(true);
   };
 
   const onChangeHandler = (filesList: FileList) => {
     const filesToProcess = Object.values(filesList);
 
     const newFiles = filesToProcess.map((file) => {
-      const newFile: HvFileData = file;
+      const newFile: HvFileData = new File([file], file.name, {
+        type: file.type,
+        lastModified: file.lastModified,
+      });
+      newFile.id = uniqueId("uploaded-file-data-");
 
       const isSizeAllowed = file.size <= maxFileSize;
       const isFileAccepted =
-        !acceptedFiles.length ||
-        acceptedFiles.indexOf(file.type.split("/")[1]) > -1 ||
-        acceptedFiles.some((acceptExtension) =>
-          accept({ name: file.name, type: file.type }, acceptExtension)
-        );
+        !accept ||
+        accept.includes(file.type?.split("/")[1]) || // TODO: remove in v6
+        validateAccept(file, accept);
 
       if (!isFileAccepted) {
         newFile.errorMessage = labels?.fileTypeError;
@@ -152,7 +177,6 @@ export const HvDropZone = (props: HvDropZoneProps) => {
         newFile.status = "fail";
       }
 
-      newFile.id = uniqueId("uploaded-file-data-");
       return newFile;
     });
 
@@ -172,10 +196,9 @@ export const HvDropZone = (props: HvDropZoneProps) => {
           <HvInfoMessage id={setId(id, "description")}>
             {Number.isInteger(maxFileSize) &&
               `${labels?.sizeWarning} ${convertUnits(maxFileSize)}`}
-            {labels?.acceptedFiles && labels.acceptedFiles}
-            {!labels?.acceptedFiles &&
-              acceptedFiles.length > 0 &&
-              `\u00A0(${acceptedFiles.join(", ")})`}
+            {labels?.acceptedFiles
+              ? labels.acceptedFiles
+              : accept && `\u00A0(${accept?.replaceAll(",", ", ")})`}
           </HvInfoMessage>
         </div>
       )}
@@ -203,34 +226,22 @@ export const HvDropZone = (props: HvDropZoneProps) => {
               onChangeHandler(inputRef.current.files);
             }
           }}
-          onDragEnter={(event) => {
-            if (!disabled) {
-              enterDropArea();
-              event.stopPropagation();
-              event.preventDefault();
-            }
-          }}
-          onDragLeave={leaveDropArea}
-          onDropCapture={leaveDropArea}
-          onDragOver={(event) => {
-            if (!disabled) {
-              enterDropArea();
-              event.stopPropagation();
-              event.preventDefault();
-            }
-          }}
+          onDragEnter={handleDragEnter}
+          onDragOver={handleDragEnter}
+          onDragLeave={handleDragLeave}
+          onDropCapture={handleDragLeave}
           onDrop={(event) => {
-            if (!disabled) {
-              const { files } = event.dataTransfer;
-              if (multiple === true || files.length === 1) {
-                event.stopPropagation();
-                event.preventDefault();
-                onChangeHandler(files);
-              }
+            if (disabled) return;
+
+            const { files } = event.dataTransfer;
+            if (multiple === true || files.length === 1) {
+              event.stopPropagation();
+              event.preventDefault();
+              onChangeHandler(files);
             }
           }}
           ref={inputRef}
-          accept={acceptedFiles.join(",")}
+          accept={accept}
           {...inputProps}
         />
         <div className={classes?.dropArea}>

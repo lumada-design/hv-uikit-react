@@ -102,7 +102,7 @@ export const HvFileUploader = (props: HvFileUploaderProps) => {
         labels={labels}
         multiple={multiple}
         disabled={disabled}
-        acceptedFiles={acceptedFiles}
+        accept={acceptedFiles.join(",")}
         maxFileSize={maxFileSize}
         onFilesAdded={onFilesAdded}
         inputProps={inputProps}

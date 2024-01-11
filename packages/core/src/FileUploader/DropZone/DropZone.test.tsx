@@ -14,7 +14,7 @@ const props: HvDropZoneProps = {
     fileSizeError: "The file exceeds the maximum upload size",
     fileTypeError: "File type not allowed for upload",
   },
-  acceptedFiles: ["jpg"],
+  accept: ".jpg",
   maxFileSize: 1,
 };
 
@@ -24,7 +24,7 @@ describe("DropZone", () => {
 
     expect(screen.getByText("Label", { selector: "label" })).toBeVisible();
     expect(
-      screen.getByText("Max. file size: 1.00B (jpg)", { selector: "label" })
+      screen.getByText("Max. file size: 1.00B (.jpg)", { selector: "label" })
     ).toBeVisible();
     expect(screen.getByText("Drag and drop or")).toBeVisible();
     expect(screen.getByText("Select files")).toBeVisible();
