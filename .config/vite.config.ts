@@ -36,7 +36,10 @@ export default defineConfig({
           format: "esm",
           preserveModules: true,
           dir: "dist/esm",
-          entryFileNames: "[name].mjs",
+          // keep react-based packages as `.js` for backwards compatibility
+          entryFileNames: pkg.name.includes("react")
+            ? "[name].js"
+            : "[name].mjs",
           sourcemap: true,
           exports: "named",
           interop: "auto",
