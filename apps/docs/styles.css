@@ -8,7 +8,7 @@ body {
 
 body {
   line-height: inherit !important;
-  font-size: inherit !important;
+  font-size: 0.95rem !important;
   letter-spacing: inherit !important;
   color: inherit !important;
   font-weight: inherit !important;
@@ -20,4 +20,14 @@ html[class~="dark"] body {
 
 html[class~="light"] body {
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity)) !important;
+}
+
+main p {
+  margin-top: 0.8rem !important;
+}
+
+main h2 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.8rem !important;
+  border-bottom: none !important;
 }

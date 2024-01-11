@@ -18,5 +18,5 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["**/*.tsx", "**/*.ts"]
+  "include": ["**/*.tsx", "**/*.ts", "next.config.mjs"]
 }

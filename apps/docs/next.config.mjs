@@ -1,12 +1,17 @@
-const withNextra = require("nextra")({
+import nextra from "nextra";
+import UnoCSS from "@unocss/webpack";
+import rehypeMdxCodeProps from "rehype-mdx-code-props";
+
+const withNextra = nextra({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.tsx",
   defaultShowCopyCode: true,
+  mdxOptions: {
+    rehypePlugins: [rehypeMdxCodeProps],
+  },
 });
 
-// If you have other Next.js configurations, you can pass them as the parameter:
-// module.exports = withNextra({ /* other next.js config */ })
-module.exports = withNextra({
+export default withNextra({
   output: "export",
   images: { unoptimized: true },
   basePath: process.env.NEXTRA_BASE_PATH || "",
@@ -20,6 +25,9 @@ module.exports = withNextra({
     "@hitachivantara/uikit-react-viz",
   ],
   webpack: (config) => {
+    config.cache = false;
+    config.plugins.push(UnoCSS());
+
     config.module.rules.push({
       test: /\.(tsx|ts)$/,
       use: [
