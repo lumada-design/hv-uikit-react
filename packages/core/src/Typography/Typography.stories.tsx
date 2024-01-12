@@ -1,4 +1,4 @@
-import { StoryObj } from "@storybook/react";
+import { StoryFn, StoryObj } from "@storybook/react";
 import {
   HvBox,
   HvTypography,
@@ -42,13 +42,6 @@ export const Main: StoryObj<HvTypographyProps> = {
         type: { summary: "boolean" },
       },
     },
-    paragraph: {
-      description: "If `true`, the text will have a bottom margin.",
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" },
-      },
-    },
     noWrap: {
       description:
         "If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis. Note that text overflow can only happen with block or inline-block level elements (the element needs to have a width in order to overflow).",
@@ -81,17 +74,19 @@ export const Main: StoryObj<HvTypographyProps> = {
 
 export const Variants = () => {
   return (
-    <HvBox sx={{ marginBottom: theme.spacing(7) }}>
+    <div
+      style={{ display: "flex", flexDirection: "column", gap: theme.space.sm }}
+    >
       {typographyVariants.map((variant) => (
-        <HvBox key={variant} sx={{ marginBottom: theme.space.sm }}>
+        <div key={variant}>
           <HvTypography variant="label">{variant}</HvTypography>
           <br />
           <HvTypography variant={variant}>
             Welcome to NEXT Design System!
           </HvTypography>
-        </HvBox>
+        </div>
       ))}
-    </HvBox>
+    </div>
   );
 };
 
@@ -105,17 +100,19 @@ const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
   </a>
 );
 
-export const CustomRootComponent = () => {
+export const CustomRootComponent: StoryFn = () => {
   return (
     <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
-      <HvTypography>Typography</HvTypography>
+      <HvTypography component="span">Typography</HvTypography>
       <HvTypography
+        link
         component="a"
         href="https://lumada-design.github.io/uikit/master"
       >
         Link
       </HvTypography>
       <HvTypography
+        link
         component={CustomLink}
         to="https://lumada-design.github.io/uikit/master"
       >
@@ -123,4 +120,13 @@ export const CustomRootComponent = () => {
       </HvTypography>
     </HvBox>
   );
+};
+
+CustomRootComponent.parameters = {
+  docs: {
+    description: {
+      story:
+        "The `component` prop can be used to change the root element, like an `a` element or a `CustomLink` component.",
+    },
+  },
 };

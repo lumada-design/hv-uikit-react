@@ -61,7 +61,10 @@ export type HvTypographyProps<C extends React.ElementType = "p"> =
       link?: boolean;
       /** If `true` the typography will display the look of a disabled state. */
       disabled?: boolean;
-      /** If `true`, the text will have a bottom margin. */
+      /**
+       * If `true`, the typography will render a "p" element
+       * @deprecated use `component="p"` instead
+       * */
       paragraph?: boolean;
       /**
        * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
