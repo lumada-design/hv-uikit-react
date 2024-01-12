@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import React, { HTMLAttributes, forwardRef } from "react";
 import { HvColorAny, getColor } from "@hitachivantara/uikit-styles";
 import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
 
@@ -71,7 +71,7 @@ const getCategoricalColor = (customColor?: HvColorAny, colors?: any) => {
  *
  * It leverages the Chip component from Material UI
  */
-export const HvTag = (props: HvTagProps) => {
+export const HvTag = forwardRef<HTMLDivElement, HvTagProps>((props, ref) => {
   const {
     classes: classesProp,
     className,
@@ -135,6 +135,7 @@ export const HvTag = (props: HvTagProps) => {
 
   return (
     <Chip
+      ref={ref}
       label={label}
       disabled={disabled}
       className={cx({ [clickableClass]: isClickable }, className)}
@@ -170,4 +171,4 @@ export const HvTag = (props: HvTagProps) => {
       {...others}
     />
   );
-};
+});
