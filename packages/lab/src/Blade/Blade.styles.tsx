@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvBlade", {
       marginLeft: theme.spacing("sm"),
     },
 
-    transition: "flex-grow 800ms linear",
+    transition: "flex-grow 600ms linear",
 
     zIndex: 0,
 
@@ -57,7 +57,7 @@ export const { staticClasses, useClasses } = createClasses("HvBlade", {
 
     cursor: "pointer",
   },
-  buttonDefaultPadding: {
+  textOnlyLabel: {
     padding: theme.spacing("xs", "sm"),
   },
 
@@ -71,7 +71,7 @@ export const { staticClasses, useClasses } = createClasses("HvBlade", {
     overflowX: "hidden",
 
     maxWidth: 0,
-    transition: "max-width 800ms linear",
+    transition: "max-width 600ms linear",
   },
 
   disabled: {

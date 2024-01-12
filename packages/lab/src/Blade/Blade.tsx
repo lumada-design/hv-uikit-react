@@ -32,8 +32,10 @@ export interface HvBladeProps
 
   /**
    * The content of the blade's button.
+   *
+   * If a render function is provided, it will be called with the expanded state as an argument.
    */
-  label?: React.ReactNode;
+  label?: React.ReactNode | ((expanded: boolean) => React.ReactNode);
   /**
    * Typography variant for the blade's button label.
    */
@@ -44,21 +46,6 @@ export interface HvBladeProps
    * If 'undefined', the button will not have a header wrapper.
    */
   headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
-
-  /**
-   * A render function to customize the blade's button content.
-   *
-   * Useful for reflecting the blade's state in the button,
-   * e.g. disabled style, expanded indicator, etc..
-   *
-   * @returns
-   */
-  renderLabel?: (
-    props: Pick<
-      HvBladeProps,
-      "label" | "labelVariant" | "headingLevel" | "disabled" | "expanded"
-    >
-  ) => React.ReactNode;
 
   /**
    * Indicates whether the blade is expanded or not.
@@ -129,7 +116,6 @@ export const HvBlade = (props: HvBladeProps) => {
     label,
     labelVariant = "label",
     headingLevel,
-    renderLabel,
     onChange,
     disabled = false,
     children,
@@ -204,14 +190,7 @@ export const HvBlade = (props: HvBladeProps) => {
   const bladeHeaderId = setId(id, "button");
   const bladeContainerId = setId(id, "container");
   const bladeHeader = useMemo(() => {
-    const buttonLabel =
-      renderLabel?.({
-        label,
-        labelVariant,
-        headingLevel,
-        disabled,
-        expanded: isExpanded,
-      }) ?? label;
+    const buttonLabel = typeof label === "function" ? label(isExpanded) : label;
 
     const bladeButton = (
       <HvTypography
@@ -220,7 +199,7 @@ export const HvBlade = (props: HvBladeProps) => {
         role="button"
         className={cx(classes.button, {
           [classes.disabled]: disabled,
-          [classes.buttonDefaultPadding]: typeof buttonLabel === "string",
+          [classes.textOnlyLabel]: typeof buttonLabel === "string",
         })}
         style={{ flexShrink: headingLevel === undefined ? 0 : undefined }}
         disabled={disabled}
@@ -248,22 +227,21 @@ export const HvBlade = (props: HvBladeProps) => {
       </HvTypography>
     );
   }, [
-    renderLabel,
-    label,
-    labelVariant,
-    headingLevel,
-    disabled,
-    isExpanded,
-    bladeHeaderId,
     bladeContainerId,
-    cx,
+    bladeHeaderId,
+    buttonProps,
     classes.button,
     classes.disabled,
-    classes.buttonDefaultPadding,
     classes.heading,
-    handleKeyDown,
+    classes.textOnlyLabel,
+    cx,
+    disabled,
     handleClick,
-    buttonProps,
+    handleKeyDown,
+    headingLevel,
+    isExpanded,
+    label,
+    labelVariant,
   ]);
 
   const bladeRef = React.useRef<HTMLDivElement>(null);

@@ -32,7 +32,6 @@ export const Main: StoryObj<HvBladeProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
-    renderLabel: { control: { disable: true } },
     buttonProps: { control: { disable: true } },
     containerProps: { control: { disable: true } },
     children: { control: { disable: true } },
