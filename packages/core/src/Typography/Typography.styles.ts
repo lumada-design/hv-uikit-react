@@ -10,6 +10,7 @@ export const { useClasses, staticClasses } = createClasses("HvTypography", {
     color: theme.colors.secondary_60,
   },
   isLink: {
+    cursor: "pointer",
     color: theme.colors.primary,
     textDecoration: "underline",
   },
