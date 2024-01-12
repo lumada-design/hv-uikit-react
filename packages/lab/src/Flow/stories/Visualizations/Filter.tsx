@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
-import { useReactFlow } from "reactflow";
+import { useMemo } from "react";
 import {
   HvCheckBox,
   HvCheckBoxGroup,
@@ -10,6 +9,7 @@ import {
   HvFlowNode,
   HvFlowNodeFC,
   useFlowInputNodes,
+  useFlowNodeUtils,
 } from "@hitachivantara/uikit-react-lab";
 
 import { NodeData } from "./data";
@@ -20,10 +20,7 @@ function filterDataByCountries(data, countriesToFilter: string[]) {
 
 export const Filter: HvFlowNodeFC = (props) => {
   const { data, id } = props;
-
-  const [checked, setChecked] = useState<string[]>([]);
-
-  const reactFlowInstance = useReactFlow();
+  const { setNodeData } = useFlowNodeUtils();
 
   const inputNodes = useFlowInputNodes<NodeData>(id);
   const jsonData = inputNodes[0]?.data.jsonData;
@@ -32,24 +29,13 @@ export const Filter: HvFlowNodeFC = (props) => {
     return jsonData ? [...new Set(jsonData.map((item) => item.country))] : [];
   }, [jsonData]);
 
-  useEffect(() => {
-    if (jsonData) {
-      reactFlowInstance.setNodes((nds) =>
-        nds.map((node) => {
-          if (node.id === id) {
-            const filteredData = filterDataByCountries(jsonData, checked);
-            node.data = { checked, jsonData: filteredData };
-          }
-          return node;
-        })
-      );
-    }
+  const handleCheck: HvCheckBoxGroupProps["onChange"] = (event, checked) => {
+    if (!jsonData) return;
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [checked]);
-
-  const handleCheck: HvCheckBoxGroupProps["onChange"] = (event, val) => {
-    setChecked(val);
+    setNodeData(() => ({
+      checked,
+      jsonData: filterDataByCountries(jsonData, checked),
+    }));
   };
 
   return (
@@ -74,21 +60,15 @@ export const Filter: HvFlowNodeFC = (props) => {
       {...props}
     >
       <HvCheckBoxGroup
+        defaultChecked={data.checked}
         onChange={handleCheck}
         style={{
           padding: theme.spacing("xs", "xs", "xs", "sm"),
         }}
       >
-        {options.map((o) => {
-          return (
-            <HvCheckBox
-              key={o}
-              label={o}
-              value={o}
-              checked={data.checked?.includes(o)}
-            />
-          );
-        })}
+        {options.map((o) => (
+          <HvCheckBox key={o} label={o} value={o} />
+        ))}
       </HvCheckBoxGroup>
     </HvFlowNode>
   );

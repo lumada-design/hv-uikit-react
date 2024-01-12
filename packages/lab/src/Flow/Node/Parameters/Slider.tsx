@@ -1,12 +1,8 @@
-import { useState } from "react";
-
 import { css } from "@emotion/css";
-
-import { useNodeId, useReactFlow } from "reactflow";
-
-import { HvSlider, HvSliderProps } from "@hitachivantara/uikit-react-core";
+import { HvSlider } from "@hitachivantara/uikit-react-core";
 
 import { HvFlowNodeSliderParam } from "../../types";
+import { useFlowNodeUtils } from "../../hooks";
 
 interface SliderProps {
   param: Omit<HvFlowNodeSliderParam, "type">;
@@ -25,29 +21,13 @@ const classes = {
 
 const Slider = ({ param, data }: SliderProps) => {
   const { id } = param;
-  const nodeId = useNodeId();
-
-  const reactFlowInstance = useReactFlow();
-
-  const [value, setValue] = useState(data[id]);
-
-  const onSliderChange: HvSliderProps["onChange"] = (val) => {
-    reactFlowInstance.setNodes((nodes) =>
-      nodes.map((node) => {
-        if (node.id === nodeId) {
-          node.data = { ...node.data, [id]: val };
-        }
-        return node;
-      })
-    );
-    setValue(val);
-  };
+  const { setNodeData } = useFlowNodeUtils();
 
   return (
     <HvSlider
       className="nodrag" // Prevents dragging within the input field
-      defaultValues={value}
-      onChange={onSliderChange}
+      defaultValues={data[id]}
+      onChange={(val) => setNodeData((prev) => ({ ...prev, [id]: val }))}
       classes={{
         labelContainer: classes.labelContainer,
         sliderBase: classes.sliderBase,
