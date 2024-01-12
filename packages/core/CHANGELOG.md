@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.44.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.1...@hitachivantara/uikit-react-core@5.44.2) (2024-01-12)
+
+### Bug Fixes
+
+- **FileUploader:** validate function ESM import ([#3942](https://github.com/lumada-design/hv-uikit-react/issues/3942)) ([9835410](https://github.com/lumada-design/hv-uikit-react/commit/98354100863644840d8d1b8568d37a5e5f7e0e63))
+
 ## [5.44.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.0...@hitachivantara/uikit-react-core@5.44.1) (2024-01-11)
 
 ### Bug Fixes
