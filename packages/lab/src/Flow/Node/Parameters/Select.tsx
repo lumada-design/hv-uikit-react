@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { HvDropdown, HvDropdownProps } from "@hitachivantara/uikit-react-core";
-import { useReactFlow } from "reactflow";
+import { useNodeId, useReactFlow } from "reactflow";
 
 import { HvFlowNodeSelectParam } from "../../types";
 
 interface SelectProps {
-  nodeId: string;
   param: Omit<HvFlowNodeSelectParam, "type">;
   data: any;
 }
 
-const Select = ({ nodeId, param, data }: SelectProps) => {
+const Select = ({ param, data }: SelectProps) => {
   const { id, label, multiple = false, options } = param;
+  const nodeId = useNodeId();
 
   const reactFlowInstance = useReactFlow();
 

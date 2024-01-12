@@ -2,14 +2,13 @@ import { useState } from "react";
 
 import { css } from "@emotion/css";
 
-import { useReactFlow } from "reactflow";
+import { useNodeId, useReactFlow } from "reactflow";
 
 import { HvSlider, HvSliderProps } from "@hitachivantara/uikit-react-core";
 
 import { HvFlowNodeSliderParam } from "../../types";
 
 interface SliderProps {
-  nodeId: string;
   param: Omit<HvFlowNodeSliderParam, "type">;
   data: any;
 }
@@ -24,8 +23,9 @@ const classes = {
   }),
 };
 
-const Slider = ({ nodeId, param, data }: SliderProps) => {
+const Slider = ({ param, data }: SliderProps) => {
   const { id } = param;
+  const nodeId = useNodeId();
 
   const reactFlowInstance = useReactFlow();
 

@@ -186,7 +186,7 @@ export const HvFlowNode = ({
       {children}
       {showParams && params && (
         <div className={classes.paramsContainer}>
-          <ParamRenderer nodeId={id} params={params} data={node?.data} />
+          <ParamRenderer params={params} data={node?.data} />
         </div>
       )}
     </HvFlowBaseNode>
