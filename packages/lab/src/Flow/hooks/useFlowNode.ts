@@ -6,6 +6,8 @@ import {
   useStore,
   useNodes,
   useEdges,
+  useReactFlow,
+  useNodeId,
 } from "reactflow";
 
 export function useFlowNode<T extends Node = Node>(id: string) {
@@ -77,4 +79,34 @@ export function useFlowOutputNodes<T = any>(id: string) {
       .map((e) => nodes.find((n) => n.id === e.target))
       .filter((n): n is Node<T> => n !== null);
   }, [edges, id, nodes]);
+}
+
+/** Utilities to manipulate a node in the flow */
+export function useFlowNodeUtils() {
+  const nodeId = useNodeId();
+  const reactFlowInstance = useReactFlow();
+
+  /** Mutate the node's `.data` object */
+  const setNodeData = useCallback(
+    (setNewData: (newData?: any) => any) => {
+      if (!nodeId) return;
+
+      reactFlowInstance.setNodes((nodes) => {
+        return nodes.map((n) => {
+          if (n.id === nodeId) {
+            return { ...n, data: setNewData(n.data) };
+          }
+          return n;
+        });
+      });
+    },
+    [nodeId, reactFlowInstance]
+  );
+
+  return useMemo(
+    () => ({
+      setNodeData,
+    }),
+    [setNodeData]
+  );
 }
