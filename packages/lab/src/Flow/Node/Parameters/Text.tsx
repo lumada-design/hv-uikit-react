@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { HvInput, HvInputProps } from "@hitachivantara/uikit-react-core";
-import { useReactFlow } from "reactflow";
+import { useNodeId, useReactFlow } from "reactflow";
 
 import { HvFlowNodeTextParam } from "../../types";
 
 interface TextProps {
-  nodeId: string;
   param: Omit<HvFlowNodeTextParam, "type">;
   data: any;
 }
 
-const Text = ({ nodeId, param, data }: TextProps) => {
+const Text = ({ param, data }: TextProps) => {
   const { id, label } = param;
+  const nodeId = useNodeId();
 
   const reactFlowInstance = useReactFlow();
 
