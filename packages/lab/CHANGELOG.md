@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.23.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.22.2...@hitachivantara/uikit-react-lab@5.23.0) (2024-01-13)
+
+### Features
+
+- **blade:** adds HvBlade and HvBlades components ([#3946](https://github.com/lumada-design/hv-uikit-react/issues/3946)) ([83d77a7](https://github.com/lumada-design/hv-uikit-react/commit/83d77a77aabfed26630a3e4573a52cfc44342164))
+
 ## [5.22.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.22.1...@hitachivantara/uikit-react-lab@5.22.2) (2024-01-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

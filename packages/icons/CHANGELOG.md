@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.8.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.7.14...@hitachivantara/uikit-react-icons@5.8.0) (2024-01-13)
+
+### Features
+
+- **icons:** add enter icon from ds 5.9 ([#3959](https://github.com/lumada-design/hv-uikit-react/issues/3959)) ([f714de7](https://github.com/lumada-design/hv-uikit-react/commit/f714de7f2ea6bbd363697521ff498be2a719e74a))
+
 ## 5.7.14 (2024-01-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

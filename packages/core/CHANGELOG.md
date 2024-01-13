@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.44.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.2...@hitachivantara/uikit-react-core@5.44.3) (2024-01-13)
+
+### Bug Fixes
+
+- **Tag:** add forwardRef ([d2a47c7](https://github.com/lumada-design/hv-uikit-react/commit/d2a47c7cb01253b47b1ecb950932bd60beeb5d44))
+
 ## [5.44.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.1...@hitachivantara/uikit-react-core@5.44.2) (2024-01-12)
 
 ### Bug Fixes
