@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import uniqueId from "lodash/uniqueId";
 import { withStyles } from "@material-ui/core";
-import { Add, Delete, Lock, Preview, Upload } from "@hv/uikit-react-icons";
+import { Add, Delete, Lock, Preview, Upload } from "@hitachivantara/uikit-react-icons";
 
 import { HvBulkActions, HvCheckBox } from "../..";
 
@@ -9,7 +9,7 @@ export default {
   title: "Components/Bulk Actions",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvBulkActions } from "@hv/uikit-react-core";',
+    usage: 'import { HvBulkActions } from "@hitachivantara/uikit-react-core";',
   },
   component: HvBulkActions,
   decorators: [

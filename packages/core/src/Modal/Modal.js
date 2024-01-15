@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { Dialog, withStyles } from "@material-ui/core";
-import { Close } from "@hv/uikit-react-icons";
+import { Close } from "@hitachivantara/uikit-react-icons";
 import isNil from "lodash/isNil";
 import Button from "../Button";
 import { isKeypress, KeyboardCodes, setId } from "../utils";

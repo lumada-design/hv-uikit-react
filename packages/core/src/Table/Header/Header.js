@@ -6,7 +6,7 @@ import {
   SortXS as Sort,
   SortAscendingXS as SortAsc,
   SortDescendingXS as SortDesc,
-} from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-icons";
 import { HvTypography } from "../..";
 import { KeyboardCodes, isKeypress, setId } from "../../utils";
 import styles from "./styles";

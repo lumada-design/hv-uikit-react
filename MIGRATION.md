@@ -36,8 +36,8 @@
 
 - Packages `@hv/uikit-common-icons` and `@hv/uikit-common-utils` are now deprecated, are will no longer receive updates. You can still use the other releases if you need them. As for their contents:
 
-  - `@hv/uikit-common-icons` was integrated in `@hv/uikit-react-icons` package. SVG files can be found in `assets/` folder.
-  - `@hv/uikit-common-utils` was integrated in `@hv/uikit-react-core` package, under `/dist/utils`.
+  - `@hv/uikit-common-icons` was integrated in `@hitachivantara/uikit-react-icons` package. SVG files can be found in `assets/` folder.
+  - `@hv/uikit-common-utils` was integrated in `@hitachivantara/uikit-react-core` package, under `/dist/utils`.
 
 ## Material-UI v4
 
@@ -61,7 +61,7 @@ To import an icon you should use (using `Checkbox` as an example):
 
 ```diff
 -import { Checkbox } from "@hv/uikit-react-icons/dist/Generic";
-+import { Checkbox } from "@hv/uikit-react-icons";
++import { Checkbox } from "@hitachivantara/uikit-react-icons";
 ```
 
 - Icon box dimensions are now according to Design System specifications by default.

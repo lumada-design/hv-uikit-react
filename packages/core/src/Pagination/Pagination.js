@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { IconButton, withStyles } from "@material-ui/core";
-import { DropDownXS, Start, End, Backwards, Forwards } from "@hv/uikit-react-icons";
+import { DropDownXS, Start, End, Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 import { isKeypress, KeyboardCodes as Codes } from "../utils/KeyboardUtils";
 import { HvInput, HvTypography } from "..";
 import withTooltip from "../withTooltip";

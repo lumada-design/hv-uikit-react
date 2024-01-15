@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HvSnackbar } from "@hv/uikit-react-core";
+import { HvSnackbar } from "@hitachivantara/uikit-react-core";
 
 const SnackbarController = () => {
   const [open, setOpen] = useState(false);

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { addDecorator, addParameters } from "@storybook/react";
 import addons from "@storybook/addons";
 
-import { HvProvider } from "@hv/uikit-react-core";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 import storySort from "./story_store/storySort";
 

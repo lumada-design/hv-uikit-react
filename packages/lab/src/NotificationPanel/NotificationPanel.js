@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import map from "lodash/map";
 import { withStyles } from "@material-ui/core";
-import { HvBadge } from "@hv/uikit-react-core";
+import { HvBadge } from "@hitachivantara/uikit-react-core";
 import Panel from "./Panel";
 import Notification from "./Notification";
 import styles from "./styles";

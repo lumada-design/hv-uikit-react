@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core";
 import {
   DropRightXS as Separator,
   MoreOptionsHorizontal as MoreOptions,
-} from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-icons";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
 import HvTypography from "../Typography";

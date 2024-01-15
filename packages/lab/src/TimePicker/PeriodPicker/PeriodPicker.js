@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { HvTypography } from "@hv/uikit-react-core";
-import { DropUpXS as UpIcon, DropDownXS as DownIcon } from "@hv/uikit-react-icons";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
+import { DropUpXS as UpIcon, DropDownXS as DownIcon } from "@hitachivantara/uikit-react-icons";
 import { getPeriodForDate } from "../timePickerUtils";
 import { PeriodPickerOptions } from "../enums";
 

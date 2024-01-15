@@ -3,7 +3,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { DropLeftXS as DropLeftIcon, DropRightXS as DropRightIcon } from "@hv/uikit-react-icons";
+import {
+  DropLeftXS as DropLeftIcon,
+  DropRightXS as DropRightIcon,
+} from "@hitachivantara/uikit-react-icons";
 import { isKeypress, KeyboardCodes, setId } from "../../../utils";
 import HvTypography from "../../../Typography";
 import styles from "./styles";

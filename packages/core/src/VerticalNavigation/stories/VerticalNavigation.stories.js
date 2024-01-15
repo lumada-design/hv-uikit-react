@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 
-import { LogOut, OpenBook, Operation, Tool, User, Stop, Play } from "@hv/uikit-react-icons";
+import {
+  LogOut,
+  OpenBook,
+  Operation,
+  Tool,
+  User,
+  Stop,
+  Play,
+} from "@hitachivantara/uikit-react-icons";
 
 import {
   HvVerticalNavigation,
@@ -14,7 +22,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      'import {\n  HvVerticalNavigation,\n  HvVerticalNavigationTree,\n  HvVerticalNavigationActions,\n  HvVerticalNavigationAction,\n} from "@hv/uikit-react-core";',
+      'import {\n  HvVerticalNavigation,\n  HvVerticalNavigationTree,\n  HvVerticalNavigationActions,\n  HvVerticalNavigationAction,\n} from "@hitachivantara/uikit-react-core";',
     subcomponents: {
       HvVerticalNavigationTree,
       HvVerticalNavigationActions,

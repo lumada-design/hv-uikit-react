@@ -1,4 +1,4 @@
-# @hv/uikit-common-themes
+# @hitachivantara/uikit-common-themes
 
 A collection of themes for use with Hitachi Vantara Components.
 
@@ -7,7 +7,7 @@ A collection of themes for use with Hitachi Vantara Components.
 Install the package in your project directory with:
 
 ```sh
-npm install @hv/uikit-common-themes
+npm install @hitachivantara/uikit-common-themes
 ```
 
 ## JSON to SCSS

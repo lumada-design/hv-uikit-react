@@ -17,7 +17,7 @@ import {
   HvCardContent,
   HvCardFooter,
   HvCardMedia,
-} from "@hv/uikit-react-core";
+} from "@hitachivantara/uikit-react-core";
 
 /*
 This file is used to present a index of the existing templates in the Storybook. It doesn't represent a template 

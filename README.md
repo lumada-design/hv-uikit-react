@@ -39,38 +39,38 @@ You can check if your `~/.npmrc` is already configured by running `npm config ls
 
 ### Package installation
 
-Install the `@hv/uikit-react-core` package and its peer dependencies:
+Install the `@hitachivantara/uikit-react-core` package and its peer dependencies:
 
 ```shell
-npm install @hv/uikit-react-core@2.* @material-ui/core@~4.8.0 plotly.js@>1.34.0
+npm install @hitachivantara/uikit-react-core@2.* @material-ui/core@~4.8.0 plotly.js@>1.34.0
 ```
 
 #### Other packages available
 
-If you need to use any non-core community contributed package, install the `@hv/uikit-react-lab` package.
+If you need to use any non-core community contributed package, install the `@hitachivantara/uikit-react-lab` package.
 
 ```shell
-npm install @hv/uikit-react-lab@2.*
+npm install @hitachivantara/uikit-react-lab@2.*
 ```
 
 Also available:
 
-- icons - `npm install @hv/uikit-react-icons@2.*`
-- themes - `npm install @hv/uikit-common-themes@2.*`
+- icons - `npm install @hitachivantara/uikit-react-icons@2.*`
+- themes - `npm install @hitachivantara/uikit-common-themes@2.*`
 
-The `@hv/uikit-react-icons` is installed as a dependency of `@hv/uikit-react-core` and the `@hv/uikit-common-themes` shouldn't be necessary out of a very specific use case.
+The `@hitachivantara/uikit-react-icons` is installed as a dependency of `@hitachivantara/uikit-react-core` and the `@hitachivantara/uikit-common-themes` shouldn't be necessary out of a very specific use case.
 
 ## Usage
 
 1. Wrap your application with the `HvProvider` provided by
-   `@hv/uikit-react-core`.
+   `@hitachivantara/uikit-react-core`.
 
 ```jsx
-import { HvProvider } from "@hv/uikit-react-core"
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 // Do this at the root of your application
 function App({ children }) {
-  return <HvProvider>{children}</HvProvider>
+  return <HvProvider>{children}</HvProvider>;
 }
 ```
 
@@ -80,10 +80,10 @@ Check [the Provider's API documentation](https://lumada-design.github.io/uikit/v
 2. Now you can start using components:
 
 ```jsx
-import { HvButton } from "@hv/uikit-react-core"
+import { HvButton } from "@hitachivantara/uikit-react-core";
 
 function Example() {
-  return <HvButton>Hello from UI Kit!</HvButton>
+  return <HvButton>Hello from UI Kit!</HvButton>;
 }
 ```
 

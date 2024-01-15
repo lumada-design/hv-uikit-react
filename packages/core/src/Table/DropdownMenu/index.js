@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { MoreOptionsVertical as MoreVert } from "@hv/uikit-react-icons";
+import { MoreOptionsVertical as MoreVert } from "@hitachivantara/uikit-react-icons";
 import HvDropDownMenu from "../../DropDownMenu";
 
 // eslint-disable-next-line react/prop-types

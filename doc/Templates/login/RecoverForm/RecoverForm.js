@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { HvButton, HvTypography, HvLabel, HvBaseInput } from "@hv/uikit-react-core";
+import { HvButton, HvTypography, HvLabel, HvBaseInput } from "@hitachivantara/uikit-react-core";
 import Message from "../Message";
 
 const RecoverForm = ({ classes, onSubmit, onCancel, status }) => {

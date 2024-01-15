@@ -7,7 +7,7 @@ export default {
   title: "Components/Login",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvLogin } from "@hv/uikit-react-core";',
+    usage: 'import { HvLogin } from "@hitachivantara/uikit-react-core";',
     deprecated: true,
     compNameToUse: "HvLoginContainer component.",
   },

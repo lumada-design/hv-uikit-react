@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import { DropUpXS as ArrowUp, DropDownXS as ArrowDown } from "@hv/uikit-react-icons";
+import { DropUpXS as ArrowUp, DropDownXS as ArrowDown } from "@hitachivantara/uikit-react-icons";
 import { setId, isKeypress, KeyboardCodes } from "../utils";
 import HvTypography from "../Typography";
 import withLabels from "../withLabels";

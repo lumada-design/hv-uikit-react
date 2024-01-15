@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
-import { HvProvider } from "@hv/uikit-react-core";
-import { Time as TimeIcon } from "@hv/uikit-react-icons";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 import { ClickAwayListener, Popper } from "@material-ui/core";
 import TimePicker from "..";
 import { PeriodPickerOptions, TimeFormat } from "../enums";

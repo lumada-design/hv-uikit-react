@@ -6,7 +6,7 @@ import {
   CheckboxPartial,
   RadioButtonSelected,
   RadioButtonUnselected,
-} from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-icons";
 
 export const labelPositions = Object.freeze({
   start: "start",

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { CloseXS as Close } from "@hv/uikit-react-icons";
+import { CloseXS as Close } from "@hitachivantara/uikit-react-icons";
 import Actions from "../../../Actions";
 import styles from "./styles";
 

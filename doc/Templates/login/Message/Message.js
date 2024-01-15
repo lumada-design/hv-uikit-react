@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { HvTypography } from "@hv/uikit-react-core";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
 
 const Message = ({ classes, message, status }) => (
   <div className={clsx(classes.root, classes[status])}>

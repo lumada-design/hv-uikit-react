@@ -11,7 +11,7 @@ import {
   Preview,
   Upload,
   MoreOptionsVertical,
-} from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-icons";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { HvButton, HvCard, HvKpi, HvTypography, HvContainer } from "../..";
 import { HvCardMedia, HvCardFooter, HvCardHeader, HvCardContent } from "..";
@@ -23,7 +23,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      'import { HvCard, HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent } from "@hv/uikit-react-core";',
+      'import { HvCard, HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent } from "@hitachivantara/uikit-react-core";',
   },
   component: HvCard,
   subcomponents: { HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent },

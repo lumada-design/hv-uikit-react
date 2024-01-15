@@ -1,5 +1,5 @@
 {
-  "name": "@hv/uikit-common-themes",
+  "name": "@hitachivantara/uikit-common-themes",
   "version": "2.0.13",
   "description": "A collection of themes for use with Hitachi Vantara Components.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",

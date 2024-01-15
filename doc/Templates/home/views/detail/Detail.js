@@ -5,8 +5,8 @@ import {
   HvKpi,
   HvLinechart as Linechart,
   HvBarchart as Barchart,
-} from "@hv/uikit-react-core";
-import { Level0Good as Good } from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Level0Good as Good } from "@hitachivantara/uikit-react-icons";
 import Table from "./table/Table";
 import data from "../../data/tableInventoryData";
 import getColumns from "../../configuration/tableConfiguration";

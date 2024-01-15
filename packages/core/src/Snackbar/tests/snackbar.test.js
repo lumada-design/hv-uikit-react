@@ -5,7 +5,7 @@ import { mount } from "enzyme";
 import "jest-canvas-mock";
 import { Snackbar as MaterialSnackbar } from "@material-ui/core";
 
-import { Add } from "@hv/uikit-react-icons";
+import { Add } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvProvider, HvSnackbar, HvSnackbarContent } from "../..";
 
 describe("Snackbar ", () => {

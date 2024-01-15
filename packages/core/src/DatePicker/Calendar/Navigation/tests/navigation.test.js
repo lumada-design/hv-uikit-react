@@ -3,7 +3,7 @@ import { mount } from "enzyme";
 import {
   DropLeftXS as HvDropLeftIcon,
   DropRightXS as HvDropRightIcon,
-} from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-icons";
 import HvProvider from "../../../../Provider";
 
 import Navigation from "..";

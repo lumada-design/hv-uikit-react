@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { IconButton, Popper, withStyles } from "@material-ui/core";
 import OutsideClickHandler from "react-outside-click-handler";
-import { MoreOptionsVertical as MoreVert } from "@hv/uikit-react-icons";
+import { MoreOptionsVertical as MoreVert } from "@hitachivantara/uikit-react-icons";
 import { isKeypress, KeyboardCodes } from "../utils";
 import List from "../List";
 import { getPrevNextFocus, setId } from "..";

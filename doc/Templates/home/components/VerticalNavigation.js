@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { useMediaQuery, useTheme, withStyles } from "@material-ui/core";
-import { Settings, User } from "@hv/uikit-react-icons";
+import { Settings, User } from "@hitachivantara/uikit-react-icons";
 import {
   HvVerticalNavigation,
   HvVerticalNavigationTree,
   HvVerticalNavigationActions,
   HvVerticalNavigationAction,
-} from "@hv/uikit-react-core";
+} from "@hitachivantara/uikit-react-core";
 import styles from "../views/detail/styles";
 import NavContext from "../hoc/NavContext";
 

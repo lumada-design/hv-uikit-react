@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Calendar, Plane, User } from "@hv/uikit-react-icons";
+import { Calendar, Plane, User } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton, HvDropDownMenu } from "../..";
 
@@ -7,7 +7,7 @@ export default {
   title: "Components/Dropdown Menu",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvDropDownMenu } from "@hv/uikit-react-core";',
+    usage: 'import { HvDropDownMenu } from "@hitachivantara/uikit-react-core";',
   },
   component: HvDropDownMenu,
   decorators: [

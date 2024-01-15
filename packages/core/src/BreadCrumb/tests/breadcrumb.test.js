@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { DropRightXS } from "@hv/uikit-react-icons";
+import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 import { HvBreadcrumb, HvProvider } from "../..";
 import {
   Main,

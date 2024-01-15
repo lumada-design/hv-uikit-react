@@ -4,7 +4,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { Checkbox } from "@hv/uikit-react-icons";
+import { Checkbox } from "@hitachivantara/uikit-react-icons";
 
 import { HvCheckBox, HvProvider } from "../../..";
 import labelPositions from "../../labelPositions";

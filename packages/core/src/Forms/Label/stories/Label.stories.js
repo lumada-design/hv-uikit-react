@@ -5,7 +5,7 @@ export default {
   title: "Components/Forms/Label",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvLabel } from "@hv/uikit-react-core";',
+    usage: 'import { HvLabel } from "@hitachivantara/uikit-react-core";',
   },
   component: HvLabel,
 };

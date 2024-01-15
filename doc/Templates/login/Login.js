@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HvLoginContainer, HvHeader, HvHeaderBrand } from "@hv/uikit-react-core";
+import { HvLoginContainer, HvHeader, HvHeaderBrand } from "@hitachivantara/uikit-react-core";
 import LoginForm from "./LoginForm";
 import RecoverForm from "./RecoverForm";
 import { authenticate, recoverPassword } from "./utils";

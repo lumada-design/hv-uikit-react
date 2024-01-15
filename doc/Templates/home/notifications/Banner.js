@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HvBanner } from "@hv/uikit-react-core";
+import { HvBanner } from "@hitachivantara/uikit-react-core";
 
 const BannerController = () => {
   const [open, setOpen] = useState(false);

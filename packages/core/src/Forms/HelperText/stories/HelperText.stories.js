@@ -5,7 +5,7 @@ export default {
   title: "Components/Forms/Helper Text",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvHelperText } from "@hv/uikit-react-core";',
+    usage: 'import { HvHelperText } from "@hitachivantara/uikit-react-core";',
   },
   component: HvHelperText,
 };

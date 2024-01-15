@@ -8,7 +8,7 @@ export default {
   title: "Components/Button",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvButton } from "@hv/uikit-react-core";',
+    usage: 'import { HvButton } from "@hitachivantara/uikit-react-core";',
   },
   component: HvButton,
 };

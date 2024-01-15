@@ -1,7 +1,10 @@
 import React from "react";
 import { mount } from "enzyme";
-import { DropUpXS as AddTimeIcon, DropDownXS as SubtractTimeIcon } from "@hv/uikit-react-icons";
-import { HvProvider, HvInput } from "@hv/uikit-react-core";
+import {
+  DropUpXS as AddTimeIcon,
+  DropDownXS as SubtractTimeIcon,
+} from "@hitachivantara/uikit-react-icons";
+import { HvProvider, HvInput } from "@hitachivantara/uikit-react-core";
 import UnitTimePicker from "..";
 import { TimePickerUnits } from "../../enums";
 

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isEmpty from "lodash/isEmpty";
 import { withStyles } from "@material-ui/core";
-import { HvTypography, withDeprecated } from "@hv/uikit-react-core";
+import { HvTypography, withDeprecated } from "@hitachivantara/uikit-react-core";
 import styles from "./styles";
 
 /**

@@ -5,7 +5,7 @@ export default {
   title: "Components/Selectors/Radio",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvRadio } from "@hv/uikit-react-core";',
+    usage: 'import { HvRadio } from "@hitachivantara/uikit-react-core";',
   },
   component: HvRadio,
 };

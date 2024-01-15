@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme/build";
 import moment from "moment-timezone";
-import { HvProvider } from "@hv/uikit-react-core";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 import HvNotificationPanel from "..";
 import Notification from "../Notification";
 

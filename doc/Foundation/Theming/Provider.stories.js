@@ -1,6 +1,6 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvProvider, HvButton } from "@hv/uikit-react-core";
+import { HvProvider, HvButton } from "@hitachivantara/uikit-react-core";
 
 const HvButtonWithMargin = withStyles({
   root: {
@@ -12,7 +12,7 @@ export default {
   title: "Foundation/Provider",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvProvider } from "@hv/uikit-react-core";',
+    usage: 'import { HvProvider } from "@hitachivantara/uikit-react-core";',
   },
   component: HvProvider,
 };

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { Alert, Menu, User } from "@hv/uikit-react-icons";
+import { Alert, Menu, User } from "@hitachivantara/uikit-react-icons";
 import {
   HvBadge,
   HvButton,
@@ -18,7 +18,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      'import {\n  HvHeader,\n  HvHeaderBrand,\n  HvHeaderNavigation,\n  HvHeaderActions,\n} from "@hv/uikit-react-core";',
+      'import {\n  HvHeader,\n  HvHeaderBrand,\n  HvHeaderNavigation,\n  HvHeaderActions,\n} from "@hitachivantara/uikit-react-core";',
     subcomponents: { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation },
   },
   component: HvHeader,

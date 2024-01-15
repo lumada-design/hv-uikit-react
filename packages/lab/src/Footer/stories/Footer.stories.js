@@ -7,7 +7,7 @@ export default {
   title: "Lab/Footer",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvFooter } from "@hv/uikit-react-lab";',
+    usage: 'import { HvFooter } from "@hitachivantara/uikit-react-lab";',
     deprecated: true,
     compNameToUse: "Footer component in Core package.",
   },

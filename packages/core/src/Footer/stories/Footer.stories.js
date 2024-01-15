@@ -5,7 +5,7 @@ export default {
   title: "Components/Footer",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvFooter } from "@hv/uikit-react-core";',
+    usage: 'import { HvFooter } from "@hitachivantara/uikit-react-core";',
   },
   component: HvFooter,
   decorators: [
