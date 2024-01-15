@@ -85,10 +85,13 @@ const validateEdge = (
   const inputs = nodeMetaRegistry[edge.target]?.inputs || [];
   const outputs = nodeMetaRegistry[edge.source]?.outputs || [];
 
-  const sourceProvides = outputs[edge.sourceHandle]?.provides || "";
-  const targetAccepts = inputs[edge.targetHandle]?.accepts || [];
-  const sourceMaxConnections = outputs[edge.sourceHandle]?.maxConnections;
-  const targetMaxConnections = inputs[edge.targetHandle]?.maxConnections;
+  const source = outputs.find((out) => out.id === edge.sourceHandle);
+  const target = inputs.find((inp) => inp.id === edge.targetHandle);
+
+  const sourceProvides = source?.provides || "";
+  const targetAccepts = target?.accepts || [];
+  const sourceMaxConnections = source?.maxConnections;
+  const targetMaxConnections = target?.maxConnections;
 
   let isValid =
     targetAccepts.length === 0 || targetAccepts.includes(sourceProvides);
