@@ -3,9 +3,6 @@ run-name: v2.x Applitools
 on:
   workflow_dispatch:
 
-env:
-  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  
 jobs:
   Build-Storybook:
     name: Build Storybook
@@ -20,9 +17,7 @@ jobs:
           node-version: 14
 
       - name: Install
-        run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
-          npm ci
+        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
@@ -81,7 +76,6 @@ jobs:
       - name: Install automation/Applitools
         run: |
           cd ${{ github.workspace }}/automation/applitools
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Run Applitools Storybook Visual Testing
@@ -90,7 +84,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}/automation/applitools
           APPLITOOLS_SHOW_LOGS=true npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
-          
+
       - name: Archive Logs
         if: always()
         uses: actions/upload-artifact@v2
