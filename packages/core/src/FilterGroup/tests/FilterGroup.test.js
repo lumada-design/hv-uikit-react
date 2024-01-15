@@ -9,7 +9,7 @@ import userEvent from "@testing-library/user-event";
 
 import { screen, render, within } from "testing-utils";
 
-import { Main, ResetToDefault } from "../stories/FilterGroup.stories.test";
+import { Main, ResetToDefault, EmptyState } from "../stories/FilterGroup.stories.test";
 
 describe("<FilterGroup />", () => {
   jest.setTimeout(30000);
@@ -234,5 +234,34 @@ describe("Changes are", () => {
     userEvent.click(cancelButton);
     dropdownElement = await screen.findByRole("combobox");
     expect(dropdownElement).toMatchSnapshot();
+  });
+
+  it("Committed when the initial state is empty and the select all options is checked", async () => {
+    render(<EmptyState />);
+
+    const dropdownElement = screen.getByRole("combobox");
+
+    userEvent.click(dropdownElement);
+
+    expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
+
+    const [leftList] = screen.getAllByRole("list");
+
+    // Select second category
+    userEvent.click(within(leftList).getAllByRole("listitem")[1]);
+
+    expect(within(leftList).getAllByRole("listitem")[1]).toHaveFocus();
+
+    const checkboxes = screen.getAllByRole("checkbox");
+
+    // Click on "All" checkbox
+    userEvent.click(checkboxes[0]);
+
+    const applyButton = screen.getByRole("button", { name: /Apply/i });
+
+    // Apply changes
+    userEvent.click(applyButton);
+
+    expect(screen.getAllByText("4").length).toBe(1);
   });
 });

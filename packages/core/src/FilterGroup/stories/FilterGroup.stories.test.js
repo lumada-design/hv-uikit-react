@@ -1,6 +1,10 @@
 import React from "react";
 import { screen, fireEvent } from "@storybook/testing-library";
-import { Main as MainSample, ResetToDefault as ResetSample } from "./FilterGroup.stories";
+import {
+  Main as MainSample,
+  ResetToDefault as ResetSample,
+  Uncontrolled as EmptySample,
+} from "./FilterGroup.stories";
 
 export default {
   title: "Tests/Filter Group",
@@ -21,6 +25,7 @@ export default {
 
 export const Main = () => <MainSample />;
 export const ResetToDefault = () => <ResetSample />;
+export const EmptyState = () => <EmptySample />;
 
 Main.parameters = {
   docs: {
