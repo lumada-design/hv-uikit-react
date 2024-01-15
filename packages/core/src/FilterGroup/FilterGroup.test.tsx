@@ -335,10 +335,8 @@ describe("FilterGroup", () => {
 
     expect(within(leftList).getAllByRole("listitem")[1]).toHaveFocus();
 
-    const checkboxes = screen.getAllByRole("checkbox");
-
     // Click on "All" checkbox
-    await userEvent.click(checkboxes[0]);
+    await userEvent.click(screen.getByRole("checkbox", { name: /All \(4\)/i }));
 
     const applyButton = screen.getByRole("button", { name: /Apply/i });
 
