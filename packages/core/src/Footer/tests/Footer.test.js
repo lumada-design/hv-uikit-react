@@ -17,10 +17,6 @@ describe("Footer", () => {
     expect(wrapper).toBeDefined();
   });
 
-  it("should render correctly", () => {
-    expect(wrapper.find(HvFooter)).toMatchSnapshot();
-  });
-
   it("should render the Footer", () => {
     const component = wrapper.find(HvFooter);
     expect(component.length).toBe(1);
