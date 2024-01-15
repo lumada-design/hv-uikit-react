@@ -79,7 +79,7 @@ const RightPanel = ({ id, className, labels, emptyElement }) => {
         newFilterValues[activeGroup] = [];
       }
     } else {
-      newFilterValues[activeGroup] = [...filterValues[activeGroup], ...activeGroupOptions];
+      newFilterValues[activeGroup] = [...activeGroupOptions];
     }
 
     setFilterValues(newFilterValues);

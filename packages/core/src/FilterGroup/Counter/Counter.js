@@ -22,11 +22,9 @@ const Counter = ({ className, id }) => {
   const optionIdx = filterOptions.findIndex((option) => option.id === id);
 
   let groupsCounter = 0;
-  appliedFilters
-    ?.filter((elem) => elem !== undefined)
-    .forEach((fg, i) => {
-      groupsCounter += getExistingFiltersById(i, filterValues, filterOptions);
-    });
+  appliedFilters?.forEach((fg, i) => {
+    groupsCounter += getExistingFiltersById(i, filterValues, filterOptions);
+  });
 
   const partialCounter = id
     ? getExistingFiltersById(optionIdx, filterValues, filterOptions) || 0
