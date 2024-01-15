@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Alert } from "@hv/uikit-react-icons";
+import { Alert } from "@hitachivantara/uikit-react-icons";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { HvBadge, HvButton, HvTab, HvTabs } from "../..";
 
@@ -13,7 +13,7 @@ export default {
   title: "Components/Badge",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvBadge } from "@hv/uikit-react-core";',
+    usage: 'import { HvBadge } from "@hitachivantara/uikit-react-core";',
   },
   component: HvBadge,
 };

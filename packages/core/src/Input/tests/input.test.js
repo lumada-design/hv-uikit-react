@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { Info, Map } from "@hv/uikit-react-icons";
+import { Info, Map } from "@hitachivantara/uikit-react-icons";
 import { HvInput, HvProvider } from "../..";
 
 /* eslint-disable no-console */

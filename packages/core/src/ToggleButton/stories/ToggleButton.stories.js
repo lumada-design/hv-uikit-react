@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Lock, Unlock, LightOff, LightOn } from "@hv/uikit-react-icons";
+import { Lock, Unlock, LightOff, LightOn } from "@hitachivantara/uikit-react-icons";
 import { HvToggleButton, HvButton } from "../..";
 import Eye from "./Eye";
 
@@ -7,7 +7,7 @@ export default {
   title: "Components/Selectors/Toggle Button",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvToggleButton } from "@hv/uikit-react-core";',
+    usage: 'import { HvToggleButton } from "@hitachivantara/uikit-react-core";',
   },
   component: HvToggleButton,
 };

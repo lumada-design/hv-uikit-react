@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HvTable } from "@hv/uikit-react-core";
+import { HvTable } from "@hitachivantara/uikit-react-core";
 
 const Table = ({ data, columns, title }) => {
   const [pageSize, setPageSize] = useState(10);

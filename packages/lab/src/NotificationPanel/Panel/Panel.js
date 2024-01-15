@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
-import { HvBadge } from "@hv/uikit-react-core";
+import { HvBadge } from "@hitachivantara/uikit-react-core";
 
 const EnterKeyCode = 13;
 

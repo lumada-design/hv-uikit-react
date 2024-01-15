@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { HvTypography, withDeprecated } from "@hv/uikit-react-core";
+import { HvTypography, withDeprecated } from "@hitachivantara/uikit-react-core";
 import styles from "./styles";
 
 /**

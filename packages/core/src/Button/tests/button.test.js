@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { Download } from "@hv/uikit-react-icons";
+import { Download } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvProvider } from "../..";
 import materialButtonConfiguration from "../materialButtonConfiguration";
 

@@ -9,7 +9,7 @@ export default {
   title: "Components/Selectors/Switch",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvSwitch } from "@hv/uikit-react-core";',
+    usage: 'import { HvSwitch } from "@hitachivantara/uikit-react-core";',
   },
   component: HvSwitch,
 };

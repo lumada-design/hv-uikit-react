@@ -1,7 +1,13 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvTypography, HvListViewRow, HvListViewCell } from "@hv/uikit-react-core";
-import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons";
+import { HvTypography, HvListViewRow, HvListViewCell } from "@hitachivantara/uikit-react-core";
+import {
+  Level1,
+  Level2Average,
+  Level3Bad,
+  Level4,
+  Level5,
+} from "@hitachivantara/uikit-react-icons";
 import styles from "./styles";
 
 const Row = ({ classes, status, value, id }) => {

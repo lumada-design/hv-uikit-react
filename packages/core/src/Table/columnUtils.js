@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 
-import { Down, Up } from "@hv/uikit-react-icons";
+import { Down, Up } from "@hitachivantara/uikit-react-icons";
 import { isKeypress, KeyboardCodes } from "../utils";
 import CellWithTooltip from "./CellWithTooltip";
 

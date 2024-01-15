@@ -1,5 +1,5 @@
 import React from "react";
-import { Operation, Tool } from "@hv/uikit-react-icons";
+import { Operation, Tool } from "@hitachivantara/uikit-react-icons";
 
 const headerConfiguration = [
   {

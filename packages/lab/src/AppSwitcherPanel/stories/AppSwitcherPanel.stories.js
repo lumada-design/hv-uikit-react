@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 import React from "react";
 
-import { Tool, PingPong, GameController, Champion } from "@hv/uikit-react-icons";
+import { Tool, PingPong, GameController, Champion } from "@hitachivantara/uikit-react-icons";
 
 import HvAppSwitcherPanel from "..";
 
@@ -9,7 +9,7 @@ export default {
   title: "Lab/AppSwitcherPanel",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvAppSwitcherPanel } from "@hv/uikit-react-lab";',
+    usage: 'import { HvAppSwitcherPanel } from "@hitachivantara/uikit-react-lab";',
   },
   component: HvAppSwitcherPanel,
 };

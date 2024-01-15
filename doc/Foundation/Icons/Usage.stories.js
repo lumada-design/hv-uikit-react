@@ -1,11 +1,17 @@
 import React from "react";
-import { Bookmark, CheckboxCheck, Level4, Level5, Machine } from "@hv/uikit-react-icons";
+import {
+  Bookmark,
+  CheckboxCheck,
+  Level4,
+  Level5,
+  Machine,
+} from "@hitachivantara/uikit-react-icons";
 
 export default {
   title: "Foundation/Icons/Usage",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { Bookmark, CheckboxCheck } from "@hv/uikit-react-icons";',
+    usage: 'import { Bookmark, CheckboxCheck } from "@hitachivantara/uikit-react-icons";',
   },
   component: Bookmark,
 };

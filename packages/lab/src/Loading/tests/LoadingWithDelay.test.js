@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
-import { HvProvider } from "@hv/uikit-react-core";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 import LoadingWithDelay from "../LoadingWithDelay";
 
 jest.useFakeTimers();

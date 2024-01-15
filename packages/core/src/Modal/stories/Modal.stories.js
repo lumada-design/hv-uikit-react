@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/";
-import { Ungroup } from "@hv/uikit-react-icons";
+import { Ungroup } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvButton,
@@ -20,7 +20,7 @@ export default {
   title: "Components/Modal",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvModal } from "@hv/uikit-react-core";',
+    usage: 'import { HvModal } from "@hitachivantara/uikit-react-core";',
   },
   component: HvModal,
   subcomponents: { HvModalTitle, HvModalContent, HvModalActions },

@@ -4,7 +4,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import ListItem from "@material-ui/core/ListItem";
-import { HvProvider } from "@hv/uikit-react-core";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 import NavigationAnchors from "..";
 

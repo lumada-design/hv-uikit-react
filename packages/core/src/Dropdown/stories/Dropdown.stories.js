@@ -7,7 +7,7 @@ export default {
   title: "Components/Dropdown",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvDropdown } from "@hv/uikit-react-core";',
+    usage: 'import { HvDropdown } from "@hitachivantara/uikit-react-core";',
   },
   component: HvDropdown,
 };

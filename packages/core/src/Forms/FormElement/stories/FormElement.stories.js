@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { CloseXS, Success, Fail } from "@hv/uikit-react-icons";
+import { CloseXS, Success, Fail } from "@hitachivantara/uikit-react-icons";
 
 import { HvFormElement, HvBaseInput, HvHelperText, HvLabel, HvAdornment, setId } from "../../..";
 
@@ -8,7 +8,7 @@ export default {
   title: "Components/Forms/Form Element",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvFormElement } from "@hv/uikit-react-core";',
+    usage: 'import { HvFormElement } from "@hitachivantara/uikit-react-core";',
   },
   component: HvFormElement,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],

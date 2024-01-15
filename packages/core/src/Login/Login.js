@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { Fail, Success } from "@hv/uikit-react-icons";
+import { Fail, Success } from "@hitachivantara/uikit-react-icons";
 import withLabels from "../withLabels";
 import withDeprecate from "../withDeprecated";
 import HvGrid from "../Grid";

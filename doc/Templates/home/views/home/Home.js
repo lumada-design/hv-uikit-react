@@ -2,8 +2,13 @@ import React from "react";
 // Used only in Storybook context.
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { linkTo } from "@storybook/addon-links";
-import { HvTypography, HvAssetInventory, HvCardView, HvListView } from "@hv/uikit-react-core";
-import { Cards, List } from "@hv/uikit-react-icons";
+import {
+  HvTypography,
+  HvAssetInventory,
+  HvCardView,
+  HvListView,
+} from "@hitachivantara/uikit-react-core";
+import { Cards, List } from "@hitachivantara/uikit-react-icons";
 import getData from "../../data/assetInventoryData";
 import cardRenderer from "./assetViews/card/Card";
 import rowRenderer from "./assetViews/list/List";

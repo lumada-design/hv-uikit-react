@@ -1,6 +1,6 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons";
+import { Calendar, LineChart, Machine, Plane, User } from "@hitachivantara/uikit-react-icons";
 import { HvList, HvTypography } from "../..";
 
 const styles = (theme) => ({
@@ -21,7 +21,7 @@ export default {
   title: "Components/List",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvList } from "@hv/uikit-react-core";',
+    usage: 'import { HvList } from "@hitachivantara/uikit-react-core";',
   },
   component: HvList,
   decorators: [(storyFn) => <ListContainer>{storyFn()}</ListContainer>],

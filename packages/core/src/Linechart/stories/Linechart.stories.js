@@ -6,7 +6,7 @@ export default {
   title: "Visualizations/Line Chart",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvLinechart } from "@hv/uikit-react-core";',
+    usage: 'import { HvLinechart } from "@hitachivantara/uikit-react-core";',
   },
   component: HvLinechart,
 };

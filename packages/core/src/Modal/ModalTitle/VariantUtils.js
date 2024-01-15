@@ -1,5 +1,5 @@
 import React from "react";
-import { Fail, Info, Success, Caution } from "@hv/uikit-react-icons";
+import { Fail, Info, Success, Caution } from "@hitachivantara/uikit-react-icons";
 
 /**
  * Icon mapping.

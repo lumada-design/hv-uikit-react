@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { HvProvider } from "@hv/uikit-react-core";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 import { HvComponentName } from "../..";
 

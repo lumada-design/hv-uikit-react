@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { LineChart as LineChartIcon } from "@hv/uikit-react-icons";
+import { LineChart as LineChartIcon } from "@hitachivantara/uikit-react-icons";
 import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox";
 import List from "..";

@@ -2,8 +2,8 @@ import React from "react";
 import { useTheme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { HvButton, HvPanel } from "@hv/uikit-react-core";
-import { Level0Good, Level1 } from "@hv/uikit-react-icons";
+import { HvButton, HvPanel } from "@hitachivantara/uikit-react-core";
+import { Level0Good, Level1 } from "@hitachivantara/uikit-react-icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {

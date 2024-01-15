@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons";
+import { Add, Upload, Delete, Preview } from "@hitachivantara/uikit-react-icons";
 
 import HvProvider from "../../Provider";
 import HvButton from "../../Button";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/";
-import { Tool } from "@hv/uikit-react-icons";
+import { Tool } from "@hitachivantara/uikit-react-icons";
 import { HvCardView, HvPagination, HvTypography } from "../..";
 import compressorImage from "../../Card/stories/resources/compressor.png";
 import leafImage from "../../Card/stories/resources/leaf.png";
@@ -9,7 +9,7 @@ export default {
   title: "Components/Pagination",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvPagination } from "@hv/uikit-react-core";',
+    usage: 'import { HvPagination } from "@hitachivantara/uikit-react-core";',
   },
   component: HvPagination,
 };

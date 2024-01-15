@@ -7,7 +7,7 @@ export default {
   title: "Lab/Navigation Anchors",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvNavigationAnchors } from "@hv/uikit-react-lab";',
+    usage: 'import { HvNavigationAnchors } from "@hitachivantara/uikit-react-lab";',
   },
   component: HvNavigationAnchors,
 };

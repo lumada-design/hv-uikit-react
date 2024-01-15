@@ -3,7 +3,7 @@ import moment from "moment";
 import Chart from "react-google-charts";
 import orderBy from "lodash/orderBy";
 import { makeStyles } from "@material-ui/core/styles";
-import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
+import { Delete, Fail, Lock, Preview } from "@hitachivantara/uikit-react-icons";
 
 import { HvEmptyState, HvTable, HvButton } from "../..";
 
@@ -13,7 +13,7 @@ export default {
   title: "Visualizations/Table",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvTable } from "@hv/uikit-react-core";',
+    usage: 'import { HvTable } from "@hitachivantara/uikit-react-core";',
   },
   component: HvTable,
 };

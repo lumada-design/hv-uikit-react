@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 import * as React from "react";
 
-import { Caution } from "@hv/uikit-react-icons";
+import { Caution } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvGrid } from "../..";
 
 export default {

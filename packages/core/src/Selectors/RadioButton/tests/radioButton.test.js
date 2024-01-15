@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { RadioButtonUnselected } from "@hv/uikit-react-icons";
+import { RadioButtonUnselected } from "@hitachivantara/uikit-react-icons";
 import { HvProvider, HvRadio } from "../../..";
 import labelPositions from "../../labelPositions";
 import theme from "../../../theme";

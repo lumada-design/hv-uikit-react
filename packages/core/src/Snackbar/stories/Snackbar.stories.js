@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Info } from "@hv/uikit-react-icons";
+import { Info } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvSnackbar, HvSnackbarContent, HvTypography } from "../..";
 
 /* eslint-disable react/prop-types */
@@ -8,7 +8,7 @@ export default {
   title: "Components/Notification/Snackbar",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvSnackbar } from "@hv/uikit-react-core";',
+    usage: 'import { HvSnackbar } from "@hitachivantara/uikit-react-core";',
   },
   component: HvSnackbar,
 };

@@ -1,6 +1,13 @@
 import React from "react";
 import { withStyles } from "@material-ui/core";
-import { Add, Upload, Delete, MoreOptionsVertical, Preview, Tool } from "@hv/uikit-react-icons";
+import {
+  Add,
+  Upload,
+  Delete,
+  MoreOptionsVertical,
+  Preview,
+  Tool,
+} from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvCard, HvCardFooter, HvCardMedia, HvCardView, HvTypography } from "../../..";
 import compressor from "../../../Card/stories/resources/compressor.png";
 import leaf from "../../../Card/stories/resources/leaf.png";
@@ -11,7 +18,7 @@ export default {
   title: "Components/Asset Inventory/Card View",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvCardView } from "@hv/uikit-react-core";',
+    usage: 'import { HvCardView } from "@hitachivantara/uikit-react-core";',
   },
   component: HvCardView,
 };

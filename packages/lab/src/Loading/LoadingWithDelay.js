@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { withStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
-import { withDeprecated } from "@hv/uikit-react-core";
+import { withDeprecated } from "@hitachivantara/uikit-react-core";
 import Loading from "./Loading";
 import styles from "./styles";
 

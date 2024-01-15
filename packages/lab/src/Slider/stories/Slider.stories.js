@@ -2,7 +2,7 @@
 import * as React from "react";
 import { useState } from "react";
 
-import { HvButton } from "@hv/uikit-react-core";
+import { HvButton } from "@hitachivantara/uikit-react-core";
 
 import HvSlider from "../index";
 
@@ -10,7 +10,7 @@ export default {
   title: "Lab/Slider",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvSlider } from "@hv/uikit-react-lab";',
+    usage: 'import { HvSlider } from "@hitachivantara/uikit-react-lab";',
   },
   component: HvSlider,
   decorators: [(storyFn) => <div style={{ height: "45px" }}>{storyFn()}</div>],

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMediaQuery, useTheme } from "@material-ui/core";
-import { Alert, BarChart, Menu, Settings, User } from "@hv/uikit-react-icons";
+import { Alert, BarChart, Menu, Settings, User } from "@hitachivantara/uikit-react-icons";
 import {
   HvBadge,
   HvButton,
@@ -13,7 +13,7 @@ import {
   HvHeaderActions,
   HvHeaderBrand,
   HvHeaderNavigation,
-} from "@hv/uikit-react-core";
+} from "@hitachivantara/uikit-react-core";
 import HitachiLogo from "../home/components/HitachiLogo";
 import navigationData from "./data";
 

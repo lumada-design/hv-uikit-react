@@ -9,7 +9,7 @@ export default {
   title: "Components/Tooltip",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvTooltip } from "@hv/uikit-react-core";',
+    usage: 'import { HvTooltip } from "@hitachivantara/uikit-react-core";',
   },
   component: HvTooltip,
 };

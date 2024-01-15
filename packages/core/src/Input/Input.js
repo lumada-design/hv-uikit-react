@@ -2,7 +2,7 @@ import React, { isValidElement, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { CloseXS, Info } from "@hv/uikit-react-icons";
+import { CloseXS, Info } from "@hitachivantara/uikit-react-icons";
 import { HvAdornment, HvBaseInput, HvFormElement, HvHelperText, HvLabel, HvSuggestions } from "..";
 import withId from "../withId";
 import withLabels from "../withLabels";

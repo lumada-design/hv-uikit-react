@@ -7,7 +7,7 @@ export default {
   title: "Lab/CodeEditor",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvCodeEditor } from "@hv/uikit-react-lab";',
+    usage: 'import { HvCodeEditor } from "@hitachivantara/uikit-react-lab";',
   },
   component: HvCodeEditor,
   decorators: [(storyFn) => <div style={{ height: "270px" }}>{storyFn()}</div>],
