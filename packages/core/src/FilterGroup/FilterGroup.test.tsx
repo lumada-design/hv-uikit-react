@@ -56,12 +56,12 @@ const filters: HvFilterGroupProps["filters"] = [
   },
 ];
 
-const Main = () => {
-  const [value, setValue] = useState<HvFilterGroupValue | undefined>([
-    ["category1", 2],
-    [],
-    [1, "subsubcategory2", "subsubcategory8"],
-  ]);
+const Main = ({ emptyValue }: { emptyValue?: boolean }) => {
+  const [value, setValue] = useState<HvFilterGroupValue | undefined>(
+    emptyValue
+      ? undefined
+      : [["category1", 2], [], [1, "subsubcategory2", "subsubcategory8"]]
+  );
 
   return (
     <div style={{ width: 180 }}>
@@ -317,5 +317,34 @@ describe("FilterGroup", () => {
     await userEvent.click(cancelButton);
 
     expect(getAllByText("4").length).toBe(1);
+  });
+
+  it("with an initial empty state, can select all options and counter is updated when changes are applied", async () => {
+    render(<Main emptyValue />);
+
+    const dropdownElement = screen.getByRole("combobox");
+
+    await userEvent.click(dropdownElement);
+
+    expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
+
+    const [leftList] = screen.getAllByRole("list");
+
+    // Select second category
+    await userEvent.click(within(leftList).getAllByRole("listitem")[1]);
+
+    expect(within(leftList).getAllByRole("listitem")[1]).toHaveFocus();
+
+    const checkboxes = screen.getAllByRole("checkbox");
+
+    // Click on "All" checkbox
+    await userEvent.click(checkboxes[0]);
+
+    const applyButton = screen.getByRole("button", { name: /Apply/i });
+
+    // Apply changes
+    await userEvent.click(applyButton);
+
+    expect(screen.getAllByText("4").length).toBe(1);
   });
 });

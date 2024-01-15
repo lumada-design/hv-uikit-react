@@ -114,10 +114,7 @@ export const HvFilterGroupRightPanel = ({
         newFilterValues[activeGroup] = [];
       }
     } else {
-      newFilterValues[activeGroup] = [
-        ...filterValues[activeGroup],
-        ...activeGroupOptions,
-      ];
+      newFilterValues[activeGroup] = [...activeGroupOptions];
     }
 
     setFilterValues(newFilterValues);
