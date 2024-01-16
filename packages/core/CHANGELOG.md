@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.4.5...@hitachivantara/uikit-react-core@4.4.6) (2024-01-16)
+
+### Bug Fixes
+
+- **FilterGroup:** error when initial state is empty and all is selected & wrong counter ([#3963](https://github.com/lumada-design/hv-uikit-react/issues/3963)) ([2c9dda0](https://github.com/lumada-design/hv-uikit-react/commit/2c9dda01ab7ee0b2b8f2aa321b4d6402f2166098))
+
 ## [4.4.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.4.4...@hitachivantara/uikit-react-core@4.4.5) (2023-12-06)
 
 ### Bug Fixes
