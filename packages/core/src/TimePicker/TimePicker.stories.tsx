@@ -11,6 +11,7 @@ import {
   HvTimePicker,
   HvTimePickerProps,
   HvTimePickerValue,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 import { CSSInterpolation, css } from "@emotion/css";
@@ -131,30 +132,39 @@ export const Controlled: StoryObj<HvTimePickerProps> = {
     docs: {
       description: {
         story:
-          "Using `HvTimePicker` with _controlled_ state, using the `value` property.",
+          "Using `HvTimePicker` with _controlled_ state, using the `value` with initial `null` state to render the placeholder.",
       },
     },
     eyes: { include: false },
   },
   decorators: [makeDecorator({ minHeight: 200, width: 200 })],
   render: () => {
-    const [value, setValue] = useState<HvTimePickerValue>({
-      hours: 19,
-      minutes: 30,
-      seconds: 14,
-    });
+    const [value, setValue] = useState<HvTimePickerProps["value"]>(null);
 
-    const prettyValue = `${value.hours}:${value.minutes}:${value.seconds}`;
+    const prettyValue = value
+      ? `${value.hours}h ${value.minutes}'${value.seconds}"`
+      : "—";
 
     return (
       <>
-        <div>{prettyValue}</div>
+        <HvTypography variant="title4">Date: {prettyValue}</HvTypography>
         <br />
         <HvTimePicker
           label="Time Picker"
-          defaultValue={value}
+          placeholder="Select a time"
+          value={value}
           onChange={setValue}
         />
+        <br />
+        <HvButton
+          variant="secondarySubtle"
+          disabled={!value}
+          onClick={() => {
+            setValue((d) => d && { ...d, minutes: (d.minutes + 1) % 60 });
+          }}
+        >
+          +1 minute
+        </HvButton>
       </>
     );
   },
