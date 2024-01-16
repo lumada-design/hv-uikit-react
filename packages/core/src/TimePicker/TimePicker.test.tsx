@@ -46,6 +46,11 @@ describe("TimePicker", () => {
     assertTime(inputs, defaultValue);
   });
 
+  it("renders the placeholder when value is null", () => {
+    setup({ value: null });
+    expect(screen.getByText(defaultProps.placeholder)).toBeInTheDocument();
+  });
+
   it("renders selectors when clicking on the dropdown", async () => {
     const defaultValue = { hours: 19, minutes: 30, seconds: 14 };
     setup({ timeFormat: "12", defaultValue });

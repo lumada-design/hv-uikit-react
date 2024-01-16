@@ -30,8 +30,8 @@ import { Unit } from "./Unit";
 import { Placeholder } from "./Placeholder";
 import { staticClasses, useClasses } from "./TimePicker.styles";
 
-const toTime = (value?: HvTimePickerValue) => {
-  if (!value) return undefined;
+const toTime = (value?: HvTimePickerValue | null) => {
+  if (!value) return value;
   const { hours, minutes, seconds } = value;
   return new Time(hours, minutes, seconds);
 };
@@ -79,9 +79,9 @@ export interface HvTimePickerProps
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTimePickerClasses;
   /** Current value of the element when _controlled_. Follows the 24-hour format. */
-  value?: HvTimePickerValue;
+  value?: HvTimePickerValue | null;
   /** Initial value of the element when _uncontrolled_. Follows the 24-hour format. */
-  defaultValue?: HvTimePickerValue;
+  defaultValue?: HvTimePickerValue | null;
   /** The placeholder value when no time is selected. */
   placeholder?: string;
   /** The placeholder of the hours input. */
