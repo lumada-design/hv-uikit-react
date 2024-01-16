@@ -75,6 +75,7 @@
           "apps/**",
           "docs/**",
           "templates/**",
+          "samples/**",
           "packages/icons/**",
           "**/*.config.ts",
           "**/*.stories.ts?(x)",
@@ -135,6 +136,8 @@
         "**/*.test.ts?(x)",
         "docs/**/*",
         "**/test/**/*",
+        "**/samples/**/*.ts?(x)",
+        "**\\samples**\\*.ts?(x)",
         "**/templates/**/*.ts?(x)"
       ],
       "rules": {
