@@ -1,0 +1,37 @@
+import { parse } from 'react-docgen';
+
+import { promises as fs } from "fs";
+
+import { Layout } from "../../components/Layout"
+
+import { Demo } from "../../components/Demo"
+
+import { Disabled } from "../../../../samples/Accordion/Disabled"  
+
+import { getComponentData } from "../../utils.tsx"
+
+export const getStaticProps = async ({ params }) => {
+
+const meta = await getComponentData("Accordion")
+
+return fs.readFile(`./../../samples/Accordion/Disabled.tsx`, "utf8").then((values) => {
+return {
+props: {
+ssg: {
+meta: meta,
+demo: values
+},
+},
+}
+});
+
+}
+
+<Layout>
+
+### Disabled
+
+<Disabled />
+<Demo />
+
+</Layout>

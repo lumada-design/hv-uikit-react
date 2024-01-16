@@ -1,6 +1,32 @@
-import { Button } from "@hitachivantara/uikit-react-core";
+import { promises as fs } from "fs";
 
-# Button
+import { Layout } from "../../components/Layout"
+
+import { Demo } from "../../components/Demo"
+
+import { Variants } from "../../../../samples/Button/Variants"
+
+import { Icons } from "../../../../samples/Button/Icons"
+
+import { getComponentData } from "apps/docs/utils";
+export const getStaticProps = async ({ params }) => {
+
+const meta = await getComponentData("Accordion")
+
+return fs.readFile(`./../../samples/Button/Variants.tsx`, "utf8").then((values) => {
+return {
+props: {
+ssg: {
+meta: meta,
+demo: values
+},
+},
+}
+});
+
+}
+
+<Layout>
 
 ```jsx live
 <>
@@ -8,3 +34,14 @@ import { Button } from "@hitachivantara/uikit-react-core";
   <Button variant="secondary">Secondary</Button>
 </>
 ```
+
+### Variants
+
+<Variants />
+<Demo />
+
+### Icons
+
+<Icons />
+
+</Layout>

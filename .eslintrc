@@ -137,7 +137,6 @@
         "docs/**/*",
         "**/test/**/*",
         "**/samples/**/*.ts?(x)",
-        "**\\samples**\\*.ts?(x)",
         "**/templates/**/*.ts?(x)"
       ],
       "rules": {
