@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.44.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.3...@hitachivantara/uikit-react-core@5.44.4) (2024-01-16)
+
+### Bug Fixes
+
+- **FilerGroup:** error when all option is selected & wrong counter ([#3958](https://github.com/lumada-design/hv-uikit-react/issues/3958)) ([c600d65](https://github.com/lumada-design/hv-uikit-react/commit/c600d6587726074e615d950062f490002b1e7365))
+
 ## [5.44.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.2...@hitachivantara/uikit-react-core@5.44.3) (2024-01-13)
 
 ### Bug Fixes

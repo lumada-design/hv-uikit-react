@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.24.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.23.0...@hitachivantara/uikit-react-lab@5.24.0) (2024-01-16)
+
+### Features
+
+- **Flow:** add useFlowNodeUtils ([23a014f](https://github.com/lumada-design/hv-uikit-react/commit/23a014ffb21e6f167e00f8beb2a8de54c3d23802))
+
 # [5.23.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.22.2...@hitachivantara/uikit-react-lab@5.23.0) (2024-01-13)
 
 ### Features
