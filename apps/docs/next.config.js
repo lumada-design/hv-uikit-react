@@ -7,7 +7,7 @@ const withNextra = require("nextra")({
 // If you have other Next.js configurations, you can pass them as the parameter:
 // module.exports = withNextra({ /* other next.js config */ })
 module.exports = withNextra({
-  output: "export",
+  // output: "export",
   images: { unoptimized: true },
   basePath: process.env.NEXTRA_BASE_PATH || "",
   transpilePackages: [
@@ -35,6 +35,11 @@ module.exports = withNextra({
         },
       ],
     });
+    if (!config.resolve.fallback) config.resolve.fallback = {};
+
+    config.resolve.fallback.fs = false;
+
+    config.resolve.aliasFields = ["browser"];
 
     return config;
   },

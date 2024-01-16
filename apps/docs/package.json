@@ -18,6 +18,7 @@
     "nextra": "^2.13.2",
     "nextra-theme-docs": "^2.13.2",
     "react": "^18.2.0",
+    "react-docgen": "^7.0.3",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
