@@ -82,13 +82,13 @@ export function useFlowOutputNodes<T = any>(id: string) {
 }
 
 /** Utilities to manipulate a node in the flow */
-export function useFlowNodeUtils() {
+export function useFlowNodeUtils<NodeData = any>() {
   const nodeId = useNodeId();
-  const reactFlowInstance = useReactFlow();
+  const reactFlowInstance = useReactFlow<NodeData>();
 
   /** Mutate the node's `.data` object */
   const setNodeData = useCallback(
-    (setNewData: (newData?: any) => any) => {
+    (setNewData: (newData?: NodeData) => NodeData) => {
       if (!nodeId) return;
 
       reactFlowInstance.setNodes((nodes) => {
