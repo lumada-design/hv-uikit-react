@@ -199,7 +199,7 @@ export const HvAppSwitcherAction = ({
             <HvTooltip
               disableFocusListener
               disableTouchListener
-              title={<HvTypography>{description}</HvTypography>}
+              title={description}
             >
               <div>
                 <Info

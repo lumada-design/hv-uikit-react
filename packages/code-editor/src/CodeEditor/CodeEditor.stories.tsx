@@ -76,7 +76,7 @@ const Header = (props: {
         >
           {fileName}
         </HvTypography>
-        <HvTooltip title={<HvTypography>Open in new window</HvTypography>}>
+        <HvTooltip title="Open in new window">
           <HvButton
             className={styles.buttonMargin}
             icon
@@ -91,7 +91,7 @@ const Header = (props: {
         </HvTooltip>
       </div>
       <div className={styles.headerItemsWrapper}>
-        <HvTooltip title={<HvTypography>Fullscreen</HvTypography>}>
+        <HvTooltip title="Fullscreen">
           <HvButton
             icon
             aria-label="Fullscreen"
@@ -102,7 +102,7 @@ const Header = (props: {
             <Fullscreen />
           </HvButton>
         </HvTooltip>
-        <HvTooltip title={<HvTypography>Duplicate</HvTypography>}>
+        <HvTooltip title="Duplicate">
           <HvButton className={styles.buttonMargin} icon aria-label="Duplicate">
             <Duplicate />
           </HvButton>

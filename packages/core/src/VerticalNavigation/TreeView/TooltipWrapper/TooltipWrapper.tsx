@@ -1,5 +1,4 @@
 import { HvTooltip, HvTooltipPlacementType } from "../../../Tooltip";
-import { HvTypography } from "../../../Typography";
 
 interface TooltipWrapperProps {
   showTooltip: boolean;
@@ -16,10 +15,7 @@ export const TooltipWrapper = ({
 }: TooltipWrapperProps) => {
   if (showTooltip) {
     return (
-      <HvTooltip
-        title={<HvTypography>{label}</HvTypography>}
-        placement={placement}
-      >
+      <HvTooltip title={label} placement={placement}>
         {children}
       </HvTooltip>
     );

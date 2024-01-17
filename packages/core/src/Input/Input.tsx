@@ -57,7 +57,6 @@ import {
   computeValidationMessage,
   HvInputValidity,
 } from "../BaseInput/validations";
-import { HvTypography } from "../Typography";
 import { HvTooltip } from "../Tooltip";
 import { useControlled } from "../hooks/useControlled";
 import { useIsMounted } from "../hooks/useIsMounted";
@@ -651,11 +650,9 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
         disableFocusListener
         disableTouchListener
         title={
-          <HvTypography>
-            {revealPassword
-              ? labels?.revealPasswordButtonClickToHideTooltip
-              : labels?.revealPasswordButtonClickToShowTooltip}
-          </HvTypography>
+          revealPassword
+            ? labels?.revealPasswordButtonClickToHideTooltip
+            : labels?.revealPasswordButtonClickToShowTooltip
         }
       >
         <HvAdornment

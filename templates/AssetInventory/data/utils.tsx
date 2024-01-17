@@ -4,9 +4,7 @@ import {
   HvRightControlProps,
   HvSemanticColorKeys,
   HvTableColumnConfig,
-  HvCellProps,
   HvTooltip,
-  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import {
   Cards,
@@ -86,15 +84,9 @@ export const getColumns = (): HvTableColumnConfig<
     Header: "Status",
     accessor: "status",
     style: { width: 60 },
-    Cell: ({ row }: HvCellProps<AssetInventoryEntry, string>) => {
+    Cell: ({ row }) => {
       return (
-        <HvTooltip
-          title={
-            <HvTypography>
-              {getStatusMessage(row.original.statusColor)}
-            </HvTypography>
-          }
-        >
+        <HvTooltip title={getStatusMessage(row.original.statusColor)}>
           <div>{getStatusIcon(row.original.statusColor)}</div>
         </HvTooltip>
       );
@@ -104,7 +96,7 @@ export const getColumns = (): HvTableColumnConfig<
     Header: "Asset",
     accessor: "image",
     style: { maxWidth: 60 },
-    Cell: ({ row }: HvCellProps<AssetInventoryEntry, string>) => {
+    Cell: ({ row }) => {
       return (
         <HvTooltip
           placement="right"

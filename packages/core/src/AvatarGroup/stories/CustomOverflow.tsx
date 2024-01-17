@@ -1,13 +1,12 @@
 import {
   HvTooltip,
-  HvTypography,
   HvAvatarGroup,
   HvAvatar,
 } from "@hitachivantara/uikit-react-core";
 
 export const CustomOverflow = () => {
   const overflowComponent = (overflowCount: number) => (
-    <HvTooltip title={<HvTypography>+{overflowCount}</HvTypography>}>
+    <HvTooltip title={`+${overflowCount}`}>
       <HvAvatar backgroundColor="brand" color="atmo1" />
     </HvTooltip>
   );
