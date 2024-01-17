@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.24.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.24.0...@hitachivantara/uikit-react-lab@5.24.1) (2024-01-17)
+
+### Bug Fixes
+
+- **Flow:** set node handle id to correctly validate connections ([fdcf253](https://github.com/lumada-design/hv-uikit-react/commit/fdcf253413f781eca6be4cb86126b9bc23780a68))
+
 # [5.24.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.23.0...@hitachivantara/uikit-react-lab@5.24.0) (2024-01-16)
 
 ### Features
