@@ -22,13 +22,8 @@ export const { staticClasses, useClasses } = createClasses(name, {
     display: "inline-block",
     backgroundColor: theme.colors.secondary_60,
   },
-  text: {
-    height: "16px",
-    width: "16px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
+  // TODO: remove in v6 (use classes.button)
+  text: {},
   button: {
     display: "flex",
     justifyContent: "center",

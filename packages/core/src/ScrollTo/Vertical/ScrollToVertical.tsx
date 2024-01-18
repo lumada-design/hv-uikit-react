@@ -1,5 +1,3 @@
-import { useMemo } from "react";
-
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../types/generic";
 import { useUniqueId } from "../../hooks/useUniqueId";
@@ -14,7 +12,6 @@ import {
 } from "./ScrollToVertical.styles";
 import { HvVerticalScrollListItem } from "./VerticalScrollListItem";
 import { useScrollTo } from "../useScrollTo";
-import { withTooltip } from "../withTooltip";
 import {
   HvScrollToTooltipPositions,
   HvScrollToVerticalOption,
@@ -118,36 +115,25 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
     setScrollTo(event, value, index, wrappedOnChange);
   };
 
-  const tooltipWrappers = useMemo(() => {
-    return options.map((option) => {
-      return withTooltip(option.label, "div", tooltipPosition, false);
-    });
-  }, [options, tooltipPosition]);
-
-  const tabs = options.map((option, index) => {
-    const selected = selectedIndex === index;
-    const tooltipWrapper = tooltipWrappers[index];
-
-    return (
-      <HvVerticalScrollListItem
-        id={setId(elementId, `item-${index}`)}
-        onClick={(event) => {
+  const tabs = options.map((option, index) => (
+    <HvVerticalScrollListItem
+      id={setId(elementId, `item-${index}`)}
+      onClick={(event) => {
+        handleSelection(event, option.value, index);
+        onClick?.(event, index);
+      }}
+      onKeyDown={(event) => {
+        if (isKey(event, "Enter") === true) {
           handleSelection(event, option.value, index);
-          onClick?.(event, index);
-        }}
-        onKeyDown={(event) => {
-          if (isKey(event, "Enter") === true) {
-            handleSelection(event, option.value, index);
-            onEnter?.(event, index);
-          }
-        }}
-        tooltipWrapper={tooltipWrapper}
-        selected={selected}
-        key={option.key || option.label}
-        aria-label={option.label}
-      />
-    );
-  });
+          onEnter?.(event, index);
+        }
+      }}
+      tooltipPlacement={tooltipPosition}
+      selected={selectedIndex === index}
+      key={option.key || option.label}
+      label={option.label}
+    />
+  ));
 
   const positionOffset = calculateOffset(options.length);
 

@@ -1,11 +1,9 @@
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
 
 import { HvBaseProps } from "../../../types/generic";
-import { HvTypographyProps } from "../../../Typography";
+import { HvTooltip, HvTooltipProps } from "../../../Tooltip";
 import { ExtractNames } from "../../../utils/classes";
-import { setId } from "../../../utils/setId";
 import { useTheme } from "../../../hooks/useTheme";
-
 import { useDefaultProps } from "../../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./VerticalScrollListItem.styles";
@@ -14,22 +12,14 @@ export { staticClasses as verticalScrollListItemClasses };
 
 export type HvVerticalScrollListItemClasses = ExtractNames<typeof useClasses>;
 
-export interface HvVerticalScrollListItemProps extends HvBaseProps {
-  /** A function component that renders a typography wrapped with a tooltip. */
-  tooltipWrapper: React.FunctionComponent<{
-    id?: string;
-    className?: string;
-    variant?: HvTypographyProps["variant"];
-    children?: React.ReactNode;
-  }>;
+export interface HvVerticalScrollListItemProps
+  extends HvBaseProps<HTMLDivElement> {
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvVerticalScrollListItemClasses;
   /** Whether the element is selected. */
   selected?: boolean;
-  /** The function to be executed when the element is clicked. */
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  /** The function to be executed when the element is clicked. */
-  onKeyDown?: (event: React.KeyboardEvent<HTMLDivElement>) => void;
+  label?: React.ReactNode;
+  tooltipPlacement?: HvTooltipProps["placement"];
 }
 
 /**
@@ -43,22 +33,14 @@ export const HvVerticalScrollListItem = (
     className,
     classes: classesProp,
     selected,
-    "aria-label": ariaLabel,
+    label,
     onClick,
     onKeyDown,
-    tooltipWrapper,
+    tooltipPlacement = "left",
     ...others
   } = useDefaultProps("HvVerticalScrollListItem", props);
   const { classes, cx } = useClasses(classesProp);
   const { activeTheme } = useTheme();
-
-  const variant: HvTypographyProps["variant"] = selected ? "label" : "body";
-
-  const labelId = setId(id, "label");
-
-  const buttonId = setId(id, "button");
-
-  const Tooltip = tooltipWrapper;
 
   const icon = selected ? (
     <CurrentStep
@@ -66,26 +48,23 @@ export const HvVerticalScrollListItem = (
       width={activeTheme?.scrollTo.dotSelectedSize}
     />
   ) : (
-    <div className={cx(classes.notSelected)} />
+    <div className={classes.notSelected} />
   );
 
   return (
     <li id={id} className={cx(classes.root, className)} aria-current={selected}>
-      <div
-        id={buttonId}
-        role="button"
-        tabIndex={0}
-        onClick={onClick}
-        onKeyDown={onKeyDown}
-        className={classes.button}
-        aria-label={ariaLabel}
-        aria-labelledby={labelId}
-        {...others}
-      >
-        <Tooltip id={labelId} className={classes.text} variant={variant}>
+      <HvTooltip title={label} placement={tooltipPlacement}>
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={onClick}
+          onKeyDown={onKeyDown}
+          className={cx(classes.button, classes.text)}
+          {...others}
+        >
           {icon}
-        </Tooltip>
-      </div>
+        </div>
+      </HvTooltip>
     </li>
   );
 };
