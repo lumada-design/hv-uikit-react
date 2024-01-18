@@ -17,6 +17,9 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import styled from "@emotion/styled";
 
+import { FullWidth as FullWidthStory } from "docs/samples/Tabs/FullWidth";
+import FullWidthRaw from "docs/samples/Tabs/FullWidth?raw";
+
 const meta: Meta<typeof HvTabs> = {
   title: "Components/Tabs",
   component: HvTabs,
@@ -48,26 +51,13 @@ export const Main: StoryObj<HvTabsProps> = {
 export const FullWidth: StoryObj<HvTabsProps> = {
   parameters: {
     docs: {
+      source: { code: FullWidthRaw },
       description: {
         story: "Tabs occupying the full width of the available space.",
       },
     },
   },
-  render: () => {
-    const [value, setValue] = useState(0);
-
-    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
-      setValue(newValue);
-    };
-
-    return (
-      <HvTabs variant="fullWidth" value={value} onChange={handleChange}>
-        <HvTab label="Clickable tab 1" />
-        <HvTab label="Clickable tab 2" />
-        <HvTab label="Clickable tab 3" />
-      </HvTabs>
-    );
-  },
+  render: () => <FullWidthStory />,
 };
 
 export const ContentChanging: StoryObj<HvTabsProps> = {

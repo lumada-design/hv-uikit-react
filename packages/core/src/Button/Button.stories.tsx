@@ -1,15 +1,12 @@
-import { StoryFn, StoryObj } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
 import {
   Delete,
   Favorite,
   Link as LinkIcon,
   MoreOptionsVertical,
-  Pause,
-  Play,
   Point,
   Refresh,
-  Stop,
 } from "@hitachivantara/uikit-react-icons";
 import {
   HvBox,
@@ -17,6 +14,12 @@ import {
   HvButtonProps,
   theme,
 } from "@hitachivantara/uikit-react-core";
+
+import { Variants as VariantsStory } from "docs/samples/Button/Variants";
+import VariantsRaw from "docs/samples/Button/Variants?raw";
+
+import { Icons as IconsStory } from "docs/samples/Button/Icons";
+import IconsRaw from "docs/samples/Button/Variants?raw";
 
 import { buttonRadius, buttonSize, buttonVariant } from "./types";
 
@@ -129,26 +132,22 @@ export const Main: StoryObj<HvButtonProps> = {
   },
 };
 
-export const Variants: StoryFn<HvButtonProps> = () => {
-  return (
-    <>
-      <HvButton variant="primary">Primary</HvButton>
-      <HvButton variant="primarySubtle">Primary Subtle</HvButton>
-      <HvButton variant="primaryGhost">Primary Ghost</HvButton>
-      <div />
-      <HvButton variant="secondarySubtle">Secondary Subtle</HvButton>
-      <HvButton variant="secondaryGhost">Secondary Ghost</HvButton>
-      <HvButton disabled variant="primary">
-        Disabled
-      </HvButton>
-      <HvButton disabled variant="primarySubtle">
-        Disabled Subtle
-      </HvButton>
-      <HvButton disabled variant="primaryGhost">
-        Disabled Ghost
-      </HvButton>
-    </>
-  );
+export const Variants: StoryObj = {
+  parameters: {
+    docs: {
+      source: { code: VariantsRaw },
+    },
+  },
+  render: () => <VariantsStory />,
+};
+
+export const Icons: StoryObj = {
+  parameters: {
+    docs: {
+      source: { code: IconsRaw },
+    },
+  },
+  render: () => <IconsStory />,
 };
 
 Variants.decorators = [
@@ -164,64 +163,6 @@ Variants.decorators = [
     </HvBox>
   ),
 ];
-
-export const Icons: StoryFn<HvButtonProps> = () => {
-  return (
-    <>
-      <div>
-        <HvButton icon aria-label="Play" variant="primaryGhost">
-          <Play iconSize="M" />
-        </HvButton>
-        <HvButton icon aria-label="Pause">
-          <Pause iconSize="M" />
-        </HvButton>
-        <HvButton icon disabled aria-label="Stop">
-          <Stop iconSize="M" />
-        </HvButton>
-      </div>
-      <div>
-        <HvButton startIcon={<Play />} variant="primaryGhost" aria-label="Play">
-          Play
-        </HvButton>
-        <HvButton
-          startIcon={<Pause />}
-          variant="secondaryGhost"
-          aria-label="Pause"
-        >
-          Pause
-        </HvButton>
-        <HvButton
-          disabled
-          startIcon={<Stop />}
-          variant="secondaryGhost"
-          aria-label="Stop"
-        >
-          Stop
-        </HvButton>
-      </div>
-      <div>
-        <HvButton endIcon={<Play />} variant="primaryGhost" aria-label="Play">
-          Play
-        </HvButton>
-        <HvButton
-          endIcon={<Pause />}
-          variant="secondaryGhost"
-          aria-label="Pause"
-        >
-          Pause
-        </HvButton>
-        <HvButton
-          endIcon={<Stop />}
-          disabled
-          variant="secondaryGhost"
-          aria-label="Stop"
-        >
-          Stop
-        </HvButton>
-      </div>
-    </>
-  );
-};
 
 Icons.decorators = [
   (Story) => (

@@ -1,27 +1,25 @@
-import { parse } from 'react-docgen';
-
 import { promises as fs } from "fs";
 
 import { Layout } from "../../components/Layout"
 
-import { AllComponents } from "../../../../samples/Card/Card"  
+import { AllComponents } from "../../../../docs/samples/Card/AllComponents"  
 
 import { getComponentData } from "../../utils.tsx"
 
 export const getStaticProps = async ({ params }) => {
 
-const meta = await getComponentData("Card")
+    const meta = await getComponentData("Card")
 
-return fs.readFile(`./../../samples/Button/Variants.tsx`, "utf8").then((values) => {
-return {
-props: {
-ssg: {
-meta: meta,
-demo: values
-},
-},
-}
-});
+    return fs.readFile(`./../../docs/samples/Card/AllComponents.tsx`, "utf8").then((values) => {
+        return {
+            props: {
+                ssg: {
+                    meta: meta,
+                    demo: values
+                },
+            },
+        }
+    });
 
 }
 

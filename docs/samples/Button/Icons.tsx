@@ -1,5 +1,3 @@
-import React from "react";
-
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Pause, Play, Stop } from "@hitachivantara/uikit-react-icons";
 

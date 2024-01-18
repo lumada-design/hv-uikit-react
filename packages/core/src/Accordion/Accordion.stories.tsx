@@ -24,6 +24,9 @@ import {
   useHvTableSticky,
 } from "@hitachivantara/uikit-react-core";
 
+import { Disabled as DisabledStory } from "docs/samples/Accordion/Disabled";
+import DisabledRaw from "docs/samples/Accordion/Disabled?raw";
+
 import FacetSearchRaw from "./stories/FacetSearchSample?raw";
 import { FacetSearch } from "./stories/FacetSearchSample";
 
@@ -79,44 +82,57 @@ export const Main: StoryObj<HvAccordionProps> = {
   },
 };
 
-export const Disabled: StoryObj<HvAccordionProps> = {
-  render: () => {
-    return (
-      <HvBox sx={{ maxWidth: 300 }}>
-        <HvAccordion label="Analytics" headingLevel={3} disabled>
-          <HvListContainer
-            className={css(styles.listContainer)}
-            interactive
-            condensed
-          >
-            <HvListItem>Views</HvListItem>
-            <HvListItem>Parameters</HvListItem>
-          </HvListContainer>
-        </HvAccordion>
-        <HvAccordion label="System" headingLevel={3}>
-          <HvListContainer
-            className={css(styles.listContainer)}
-            interactive
-            condensed
-          >
-            <HvListItem>Settings</HvListItem>
-            <HvListItem>Network</HvListItem>
-          </HvListContainer>
-        </HvAccordion>
-        <HvAccordion label="Data" headingLevel={3} disabled>
-          <HvListContainer
-            className={css(styles.listContainer)}
-            interactive
-            condensed
-          >
-            <HvListItem>Storage</HvListItem>
-            <HvListItem>Memory</HvListItem>
-          </HvListContainer>
-        </HvAccordion>
-      </HvBox>
-    );
+export const Disabled: StoryObj = {
+  parameters: {
+    docs: {
+      source: { code: DisabledRaw },
+      description: {
+        story:
+          "A Sample of an example implementation of the Facet Search design pattern.",
+      },
+    },
   },
+  render: () => <DisabledStory />,
 };
+
+// export const Disabled: StoryObj<HvAccordionProps> = {
+//   render: () => {
+//     return (
+//       <HvBox sx={{ maxWidth: 300 }}>
+//         <HvAccordion label="Analytics" headingLevel={3} disabled>
+//           <HvListContainer
+//             className={css(styles.listContainer)}
+//             interactive
+//             condensed
+//           >
+//             <HvListItem>Views</HvListItem>
+//             <HvListItem>Parameters</HvListItem>
+//           </HvListContainer>
+//         </HvAccordion>
+//         <HvAccordion label="System" headingLevel={3}>
+//           <HvListContainer
+//             className={css(styles.listContainer)}
+//             interactive
+//             condensed
+//           >
+//             <HvListItem>Settings</HvListItem>
+//             <HvListItem>Network</HvListItem>
+//           </HvListContainer>
+//         </HvAccordion>
+//         <HvAccordion label="Data" headingLevel={3} disabled>
+//           <HvListContainer
+//             className={css(styles.listContainer)}
+//             interactive
+//             condensed
+//           >
+//             <HvListItem>Storage</HvListItem>
+//             <HvListItem>Memory</HvListItem>
+//           </HvListContainer>
+//         </HvAccordion>
+//       </HvBox>
+//     );
+//   },
+// };
 
 export const Controlled: StoryObj<HvAccordionProps> = {
   parameters: {

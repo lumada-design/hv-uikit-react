@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import {
   Add,
@@ -11,7 +11,6 @@ import { Grid } from "@mui/material";
 import {
   HvTypography,
   HvCard,
-  HvCardProps,
   HvCardContent,
   HvCardHeader,
   HvCardMedia,
