@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.44.5 (2024-01-18)
+
+### Bug Fixes
+
+- **TimePicker:** allow empty controlled value with null ([0502a3d](https://github.com/lumada-design/hv-uikit-react/commit/0502a3d4104cbd904c6561d92563c42c3edbd1be))
+
 ## [5.44.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.3...@hitachivantara/uikit-react-core@5.44.4) (2024-01-16)
 
 ### Bug Fixes
