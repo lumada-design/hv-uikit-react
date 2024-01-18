@@ -62,7 +62,7 @@ export const HvDashboardNode = (props: HvDashboardNodeProps) => {
 
   return (
     <HvFlowNode id={id} classes={classes} {...others}>
-      {children && <div className={classes.content}>{children}</div>}
+      {children}
       <HvDialog
         open={open}
         maxWidth="lg"

@@ -7,11 +7,6 @@ const baseClasses = Object.fromEntries(
 ) as Record<keyof typeof nodeClasses, {}>;
 
 export const { staticClasses, useClasses } = createClasses("HvDashboardNode", {
-  content: {
-    display: "flex",
-    justifyContent: "space-around",
-    padding: theme.space.xs,
-  },
   empty: {
     padding: theme.spacing("sm", 0, 0, 0),
   },
