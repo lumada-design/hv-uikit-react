@@ -25,7 +25,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { Disabled as DisabledStory } from "samples/Accordion/Disabled";
-import DisabledRaw from "docs/samples/Accordion/Disabled?raw";
+import DisabledRaw from "samples/Accordion/Disabled?raw";
 
 import FacetSearchRaw from "./stories/FacetSearchSample?raw";
 import { FacetSearch } from "./stories/FacetSearchSample";
