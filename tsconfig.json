@@ -13,6 +13,13 @@
       "@hitachivantara/uikit-react-viz": ["packages/viz/src"]
     }
   },
-  "include": [".config", ".storybook/**/*", "apps", "docs", "packages"],
+  "include": [
+    ".config",
+    ".storybook/**/*",
+    "apps",
+    "docs",
+    "packages",
+    "samples"
+  ],
   "exclude": ["node_modules", "packages/*/dist"]
 }

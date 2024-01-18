@@ -15,11 +15,10 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-import { Variants as VariantsStory } from "docs/samples/Button/Variants";
-import VariantsRaw from "docs/samples/Button/Variants?raw";
+import { Variants as VariantsStory, Icons as IconsStory } from "samples/Button";
 
-import { Icons as IconsStory } from "docs/samples/Button/Icons";
-import IconsRaw from "docs/samples/Button/Variants?raw";
+import VariantsRaw from "samples/Button/Variants?raw";
+import IconsRaw from "samples/Button/Variants?raw";
 
 import { buttonRadius, buttonSize, buttonVariant } from "./types";
 

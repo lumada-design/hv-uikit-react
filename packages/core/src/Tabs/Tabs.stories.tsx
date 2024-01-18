@@ -17,8 +17,8 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import styled from "@emotion/styled";
 
-import { FullWidth as FullWidthStory } from "docs/samples/Tabs/FullWidth";
-import FullWidthRaw from "docs/samples/Tabs/FullWidth?raw";
+import { FullWidth as FullWidthStory } from "samples/Tabs/FullWidth";
+import FullWidthRaw from "samples/Tabs/FullWidth?raw";
 
 const meta: Meta<typeof HvTabs> = {
   title: "Components/Tabs",

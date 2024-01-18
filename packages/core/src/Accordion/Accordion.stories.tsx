@@ -24,7 +24,7 @@ import {
   useHvTableSticky,
 } from "@hitachivantara/uikit-react-core";
 
-import { Disabled as DisabledStory } from "docs/samples/Accordion/Disabled";
+import { Disabled as DisabledStory } from "samples/Accordion/Disabled";
 import DisabledRaw from "docs/samples/Accordion/Disabled?raw";
 
 import FacetSearchRaw from "./stories/FacetSearchSample?raw";

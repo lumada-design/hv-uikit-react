@@ -8,7 +8,7 @@ export const getStaticProps = async ({ params }) => {
 
     const meta = await getComponentData("Tabs")
 
-    return fs.readFile(`./../../docs/samples/Tabs/FullWidth.tsx`, "utf8").then((values) => {
+    return fs.readFile(`./../../samples/Tabs/FullWidth.tsx`, "utf8").then((values) => {
         return {
             props: {
                 ssg: {

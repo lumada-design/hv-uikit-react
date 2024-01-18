@@ -1,6 +1,7 @@
 import { promises as fs } from "fs";
 
 import { parse } from "react-docgen";
+import { PropDescriptor } from "react-docgen/dist/Documentation";
 
 export interface Meta {
   component: string;
@@ -23,7 +24,7 @@ export interface DocgenProp {
 export interface Docgen {
   description: string;
   displayName: string;
-  props: Record<string, string>;
+  props: Record<string, PropDescriptor>;
 }
 
 export const getComponentData = async (componentName: string) => {

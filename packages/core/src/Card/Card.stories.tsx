@@ -25,8 +25,8 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-import { AllComponents as AllComponentsStory } from "docs/samples/Card/AllComponents";
-import AllComponentsRaw from "docs/samples/Card/AllComponents?raw";
+import { AllComponents as AllComponentsStory } from "samples/Card/AllComponents";
+import AllComponentsRaw from "samples/Card/AllComponents?raw";
 
 // #region Styled Components
 

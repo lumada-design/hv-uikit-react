@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 
 import { Layout } from "../../components/Layout"
 
-import { AllComponents } from "../../../../docs/samples/Card/AllComponents"  
+import { AllComponents } from "../../../../samples/Card/AllComponents"  
 
 import { getComponentData } from "../../utils.tsx"
 
@@ -10,7 +10,7 @@ export const getStaticProps = async ({ params }) => {
 
     const meta = await getComponentData("Card")
 
-    return fs.readFile(`./../../docs/samples/Card/AllComponents.tsx`, "utf8").then((values) => {
+    return fs.readFile(`./../../samples/Card/AllComponents.tsx`, "utf8").then((values) => {
         return {
             props: {
                 ssg: {

@@ -1,12 +1,8 @@
 import { useState } from "react";
 import { HvContainer, HvTab, HvTabs } from "@hitachivantara/uikit-react-core";
 
-// import reactElementToJSXString from "react-element-to-jsx-string";
-
 import { PropsTable } from "./PropsTable";
 import { Meta } from "../utils";
-
-// console.log(reactElementToJSXString(<HvContainer />));
 
 export const Page = ({
   meta,
