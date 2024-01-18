@@ -20,17 +20,15 @@ export const Tooltip = () => {
     },
   };
 
-  const data = <HvTypography>Tooltip content</HvTypography>;
-
   return (
     <HvBox sx={styling.placeholder}>
-      <HvTooltip title={data} useSingle>
+      <HvTooltip title="Tooltip content" useSingle>
         <HvTypography>Hover here</HvTypography>
       </HvTooltip>
-      <HvTooltip title={data} open>
+      <HvTooltip title="Tooltip content" open>
         <p>{`I'm always showing a tooltip`}</p>
       </HvTooltip>
-      <HvTooltip title={data}>
+      <HvTooltip title="Tooltip content">
         <HvButton icon variant="secondaryGhost">
           <Add />
         </HvButton>

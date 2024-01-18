@@ -1,6 +1,5 @@
 import {
   HvTooltip,
-  HvTypography,
   HvTableColumnConfig,
   HvCellProps,
   HvBulkActionsProps,
@@ -47,25 +46,25 @@ export const getColumns = (): HvTableColumnConfig<ListViewEntry, string>[] => [
       switch (row.original.status) {
         case 0:
           return (
-            <HvTooltip title={<HvTypography>Success</HvTypography>}>
+            <HvTooltip title="Success">
               <div>{getStatusIcon(0)}</div>
             </HvTooltip>
           );
         case 1:
           return (
-            <HvTooltip title={<HvTypography>Error</HvTypography>}>
+            <HvTooltip title="Error">
               <div>{getStatusIcon(1)}</div>
             </HvTooltip>
           );
         case 2:
           return (
-            <HvTooltip title={<HvTypography>Open</HvTypography>}>
+            <HvTooltip title="Open">
               <div>{getStatusIcon(2)}</div>
             </HvTooltip>
           );
         default:
           return (
-            <HvTooltip title={<HvTypography>Unassigned</HvTypography>}>
+            <HvTooltip title="Unassigned">
               <div>{getStatusIcon(3)}</div>
             </HvTooltip>
           );

@@ -33,13 +33,13 @@ In the following example, the Typography component is passed as a property to th
 as its content, allowing the styling of the text inside with the help of the typography component.
 
 ```tsx
-<HvTooltip title={<HvTypography>Open in new window</HvTypography>}>
+<HvTooltip title="Open in new window">
 ```
 
 <Canvas>
   <Story name="Usage">
-    <HvTooltip title={<HvTypography>Open in new window</HvTypography>}>
-      <HvButton icon aria-label="Popup" component="a" href="#">
+    <HvTooltip title="Open in new window">
+      <HvButton icon component="a" href="#">
         <PopUp />
       </HvButton>
     </HvTooltip>

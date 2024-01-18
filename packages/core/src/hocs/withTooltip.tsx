@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import { HvTypography } from "../Typography";
 import { HvTooltip, HvTooltipPlacementType, HvTooltipProps } from "../Tooltip";
 import { HvBaseProps } from "../types/generic";
 
@@ -28,8 +27,6 @@ export const withTooltip =
     );
     const [open, setOpen] = useState<boolean>(false);
 
-    const title = <HvTypography>{label}</HvTypography>;
-
     const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
       const isHidden = hideTooltip?.(event);
       setIsHoverDisabled(isHidden);
@@ -47,7 +44,7 @@ export const withTooltip =
         disableHoverListener={isHoverDisabled}
         disableFocusListener
         disableTouchListener
-        title={title}
+        title={label}
         open={open}
         placement={placement}
         {...tooltipProps}

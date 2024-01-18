@@ -5,7 +5,6 @@ import JSON5 from "json5";
 import {
   HvButton,
   HvTooltip,
-  HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { Download, Reset, Duplicate } from "@hitachivantara/uikit-react-icons";
@@ -100,10 +99,7 @@ const CodeEditor = ({
   return (
     <div className="relative">
       <div className="flex items-center justify-between px-xs py-1 border border-b-0 border-atmo4">
-        <HvTooltip
-          enterDelay={500}
-          title={<HvTypography>Download</HvTypography>}
-        >
+        <HvTooltip enterDelay={500} title="Download">
           <HvButton
             variant="secondaryGhost"
             component="a"

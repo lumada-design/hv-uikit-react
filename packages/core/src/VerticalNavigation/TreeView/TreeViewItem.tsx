@@ -15,6 +15,7 @@ import { setId } from "../../utils/setId";
 
 import { ExtractNames } from "../../utils/classes";
 import { HvTypography } from "../../Typography";
+import { HvTooltip } from "../../Tooltip";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./TreeViewItem.styles";
@@ -430,68 +431,73 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         target,
       };
 
+      const hasChildren = !!children;
+      const showTooltip = !hasChildren && !isOpen && !disableTooltip;
+
       return (
-        <HvTypography
-          id={setId(id, "button")}
-          component={href ? "a" : "div"}
-          {...(href ? buttonLinkProps : null)}
-          ref={contentRef}
-          className={cx(classes.content, {
-            [classes.link]: href != null,
-            [classes.minimized]: !isOpen,
-          })}
-          variant="body"
-          disabled={disabled}
-          onClick={handleClick}
-          onMouseDown={handleMouseDown}
-          style={{
-            paddingLeft:
-              (useIcons || !isOpen ? 0 : 10) + level * (collapsible ? 16 : 10),
-          }}
-          role={href ? undefined : "button"}
-          {...(treeviewMode
-            ? {
-                tabIndex: -1,
-                onFocus: handleFocus,
-              }
-            : {
-                tabIndex: selectable || expandable ? 0 : -1,
-                onKeyDown: handleKeyDown,
-                "aria-current":
-                  (selectable && selected) ||
-                  (!isOpen && isChildSelected?.(nodeId))
-                    ? href
-                      ? "page"
-                      : true
-                    : undefined,
-                "aria-expanded": expandable ? expanded : undefined,
-                "aria-controls":
-                  isOpen && expandable ? setId(id, "group") : undefined,
-                "aria-label": payload?.label,
-              })}
-        >
-          <IconWrapper
-            icon={useIcons && icon}
-            label={payload?.label}
-            hasChildren={Boolean(children)}
-            showAvatar={!icon && useIcons}
-            isOpen={isOpen}
-            disableTooltip={disableTooltip}
-          />
+        <HvTooltip placement="right" title={showTooltip && label}>
+          <HvTypography
+            id={setId(id, "button")}
+            component={href ? "a" : "div"}
+            {...(href ? buttonLinkProps : null)}
+            ref={contentRef}
+            className={cx(classes.content, {
+              [classes.link]: href != null,
+              [classes.minimized]: !isOpen,
+            })}
+            variant="body"
+            disabled={disabled}
+            onClick={handleClick}
+            onMouseDown={handleMouseDown}
+            style={{
+              paddingLeft:
+                (useIcons || !isOpen ? 0 : 10) +
+                level * (collapsible ? 16 : 10),
+            }}
+            role={href ? undefined : "button"}
+            {...(treeviewMode
+              ? {
+                  tabIndex: -1,
+                  onFocus: handleFocus,
+                }
+              : {
+                  tabIndex: selectable || expandable ? 0 : -1,
+                  onKeyDown: handleKeyDown,
+                  "aria-current":
+                    (selectable && selected) ||
+                    (!isOpen && isChildSelected?.(nodeId))
+                      ? href
+                        ? "page"
+                        : true
+                      : undefined,
+                  "aria-expanded": expandable ? expanded : undefined,
+                  "aria-controls":
+                    isOpen && expandable ? setId(id, "group") : undefined,
+                  "aria-label": payload?.label,
+                })}
+          >
+            <IconWrapper
+              icon={useIcons && icon}
+              label={payload?.label}
+              hasChildren={hasChildren}
+              showAvatar={!icon && useIcons}
+              isOpen={isOpen}
+            />
 
-          {isOpen && (
-            <div
-              className={cx(classes.label, {
-                [classes.labelIcon]: useIcons,
-                [classes.labelExpandable]: !!expandable,
-              })}
-            >
-              {label}
-            </div>
-          )}
+            {isOpen && (
+              <div
+                className={cx(classes.label, {
+                  [classes.labelIcon]: useIcons,
+                  [classes.labelExpandable]: !!expandable,
+                })}
+              >
+                {label}
+              </div>
+            )}
 
-          {isOpen && expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
-        </HvTypography>
+            {isOpen && expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
+          </HvTypography>
+        </HvTooltip>
       );
     }, [
       id,

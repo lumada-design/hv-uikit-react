@@ -1,20 +1,18 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { HvTypography } from "../Typography";
-
 import { HvTooltip } from "./Tooltip";
 
-const smallTitle = <HvTypography>Grid View</HvTypography>;
+const smallTitle = <div>Grid View</div>;
 
 const createTitle = (data: any) => (
   <div>
-    <HvTypography variant="label">{data.title || ""}</HvTypography>
+    <div>{data.title || ""}</div>
     {data.elements.map((element: any) => (
       <div key={element.name}>
-        <HvTypography variant="label">{element.name}</HvTypography>
+        <div>{element.name}</div>
         <div />
-        <HvTypography>{element.value}</HvTypography>
+        <div>{element.value}</div>
       </div>
     ))}
   </div>

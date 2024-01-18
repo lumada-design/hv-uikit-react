@@ -24,7 +24,6 @@ import {
   HvToggleButton,
   HvToggleButtonProps,
   HvTooltip,
-  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 import { ToggleEye } from "./ToggleEye";
@@ -142,7 +141,7 @@ export const Disabled: StoryObj<HvToggleButtonProps> = {
   },
   render: () => {
     return (
-      <HvTooltip title={<HvTypography>Can not turn the light on</HvTypography>}>
+      <HvTooltip title="Can not turn the light on">
         <span>
           <HvToggleButton disabled aria-label="Light">
             <LightOff />
@@ -166,11 +165,8 @@ export const Tooltip: StoryObj<HvToggleButtonProps> = {
   render: () => {
     const [selected, setSelected] = useState(false);
 
-    const tooltip = (
-      <HvTypography>{selected ? "Turn off" : "Turn on"}</HvTypography>
-    );
     return (
-      <HvTooltip title={tooltip}>
+      <HvTooltip title={selected ? "Turn off" : "Turn on"}>
         <HvToggleButton
           aria-label="Light"
           onClick={() => setSelected(!selected)}
