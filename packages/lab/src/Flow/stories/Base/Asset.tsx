@@ -7,7 +7,12 @@ import {
   HvDialogContent,
   HvDialogTitle,
 } from "@hitachivantara/uikit-react-core";
-import { Favorite, Flag, Search } from "@hitachivantara/uikit-react-icons";
+import {
+  Edit,
+  Favorite,
+  Flag,
+  Search,
+} from "@hitachivantara/uikit-react-icons";
 import {
   HvFlowNode,
   HvFlowNodeFC,
@@ -27,6 +32,11 @@ export const Asset: HvFlowNodeFC<NodeGroups> = (props) => {
     container: css({
       width: "40%",
       minHeight: 200,
+    }),
+    outputLabel: css({
+      display: "flex",
+      alignItems: "center",
+      gap: 2,
     }),
   };
 
@@ -97,14 +107,40 @@ export const Asset: HvFlowNodeFC<NodeGroups> = (props) => {
         ]}
         outputs={[
           {
-            label: "Sensor Group 1",
-            isMandatory: true,
-            provides: "sensorData",
-          },
-          {
-            label: "Sensor Group 2",
-            isMandatory: true,
-            provides: "sensorData",
+            label: (
+              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                Sensors
+                <HvButton size="sm" variant="primarySubtle">
+                  Configure
+                </HvButton>
+              </div>
+            ),
+            outputs: [
+              {
+                label: (
+                  <div className={classes.outputLabel}>
+                    <HvButton icon variant="primaryGhost" aria-label="Edit">
+                      <Edit />
+                    </HvButton>
+                    Sensor Group 1
+                  </div>
+                ),
+                isMandatory: true,
+                provides: "sensorData",
+              },
+              {
+                label: (
+                  <div className={classes.outputLabel}>
+                    <HvButton icon variant="primaryGhost" aria-label="Edit">
+                      <Edit />
+                    </HvButton>
+                    Sensor Group 2
+                  </div>
+                ),
+                isMandatory: true,
+                provides: "sensorData",
+              },
+            ],
           },
         ]}
         {...props}

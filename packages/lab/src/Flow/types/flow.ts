@@ -63,25 +63,35 @@ export type HvFlowNodeTypeMeta<
 
 export interface HvFlowNodeMeta {
   label: string;
-  inputs?: HvFlowNodeInput[];
-  outputs?: HvFlowNodeOutput[];
+  inputs?: (HvFlowNodeInput | HvFlowNodeInputGroup)[];
+  outputs?: (HvFlowNodeOutput | HvFlowNodeOutputGroup)[];
 }
 
-export type HvFlowNodeInput = {
+export interface HvFlowNodeInput {
   id?: string;
-  label: string;
+  label: React.ReactNode;
   isMandatory?: boolean;
   accepts?: string[];
   maxConnections?: number;
-};
+}
 
-export type HvFlowNodeOutput = {
+export interface HvFlowNodeInputGroup {
+  label: React.ReactNode;
+  inputs: HvFlowNodeInput[];
+}
+
+export interface HvFlowNodeOutput {
   id?: string;
-  label: string;
+  label: React.ReactNode;
   isMandatory?: boolean;
   provides?: string;
   maxConnections?: number;
-};
+}
+
+export interface HvFlowNodeOutputGroup {
+  label: React.ReactNode;
+  outputs: HvFlowNodeOutput[];
+}
 
 export interface HvFlowNodeSharedParam {
   id: string;

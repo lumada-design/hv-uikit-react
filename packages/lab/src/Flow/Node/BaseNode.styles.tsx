@@ -55,6 +55,18 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     gap: theme.space.xs,
     alignItems: "flex-end",
   },
+  inputGroupContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: theme.space.xs,
+    alignItems: "flex-start",
+  },
+  outputGroupContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: theme.space.xs,
+    alignItems: "flex-end",
+  },
   inputContainer: {
     display: "flex",
     flexDirection: "row",
