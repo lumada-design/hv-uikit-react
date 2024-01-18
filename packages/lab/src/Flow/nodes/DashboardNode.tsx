@@ -7,25 +7,13 @@ import {
   HvDialogProps,
   HvDialogTitle,
   HvEmptyState,
-  createClasses,
-  theme,
   useLabels,
 } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
 import { HvDashboard, HvDashboardProps } from "../../Dashboard";
-import { HvFlowNode, HvFlowNodeProps, HvFlowNodeClasses } from "../Node";
-
-const { staticClasses, useClasses } = createClasses("HvDashboardNode", {
-  actions: {
-    display: "flex",
-    justifyContent: "space-around",
-    padding: theme.space.xs,
-  },
-  empty: {
-    padding: theme.spacing("sm", 0, 0, 0),
-  },
-});
+import { HvFlowNode, HvFlowNodeProps } from "../Node";
+import { staticClasses, useClasses } from "./DashboardNode.styles";
 
 export { staticClasses as hvDashboardNodeClasses };
 
@@ -37,9 +25,7 @@ const DEFAULT_LABELS = {
   dialogCancel: "Cancel",
 };
 
-export interface HvDashboardNodeClasses
-  extends ExtractNames<typeof useClasses>,
-    HvFlowNodeClasses {}
+export type HvDashboardNodeClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDashboardNodeProps
   extends HvFlowNodeProps,
@@ -75,8 +61,8 @@ export const HvDashboardNode = (props: HvDashboardNodeProps) => {
   const { classes } = useClasses(classesProp);
 
   return (
-    <HvFlowNode id={id} classes={classes as any} {...others}>
-      {children && <div className={classes.actions}>{children}</div>}
+    <HvFlowNode id={id} classes={classes} {...others}>
+      {children && <div className={classes.content}>{children}</div>}
       <HvDialog
         open={open}
         maxWidth="lg"

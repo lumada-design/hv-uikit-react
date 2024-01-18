@@ -1,5 +1,4 @@
 import React, { isValidElement, useState } from "react";
-
 import {
   ExtractNames,
   HvActionGeneric,
@@ -13,20 +12,14 @@ import {
 import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
 
 import { useFlowContext, useFlowNode } from "../hooks";
-import { HvFlowNodeInput, HvFlowNodeOutput, HvFlowNodeParam } from "../types";
+import { HvFlowNodeParam } from "../types";
 import { staticClasses, useClasses } from "./Node.styles";
 import ParamRenderer from "./Parameters/ParamRenderer";
-import {
-  HvFlowBaseNode,
-  HvFlowBaseNodeProps,
-  HvFlowBaseNodeClasses,
-} from "./BaseNode";
+import { HvFlowBaseNode, HvFlowBaseNodeProps } from "./BaseNode";
 
 export { staticClasses as flowNodeClasses };
 
-export interface HvFlowNodeClasses
-  extends ExtractNames<typeof useClasses>,
-    HvFlowBaseNodeClasses {}
+export type HvFlowNodeClasses = ExtractNames<typeof useClasses>;
 
 export type HvFlowNodeDefaults = {
   title?: string;
@@ -39,7 +32,7 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   /** Node description */
   description?: string;
   /** Node actions */
-  actions?: HvActionGeneric[]; // HvFlowNodeActions[];
+  actions?: HvActionGeneric[];
   /** Node action callback */
   actionCallback?: HvActionsGenericProps["actionsCallback"];
   /** Node maximum number of actions visible */
@@ -52,10 +45,6 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   nodeDefaults?: HvFlowNodeDefaults;
   /** Props to be passed to the expand parameters button. */
   expandParamsButtonProps?: HvButtonProps;
-  /** Node outputs. */
-  outputs?: HvFlowNodeOutput[];
-  /** Node inputs. */
-  inputs?: HvFlowNodeInput[];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowNodeClasses;
 }
@@ -69,8 +58,6 @@ export const HvFlowNode = ({
   headerItems,
   description,
   actions,
-  outputs,
-  inputs,
   actionCallback,
   maxVisibleActions = 1,
   expanded = false,
@@ -81,7 +68,7 @@ export const HvFlowNode = ({
   expandParamsButtonProps,
   ...props
 }: HvFlowNodeProps<unknown>) => {
-  const { classes } = useClasses(classesProp as HvFlowNodeClasses);
+  const { classes } = useClasses(classesProp);
 
   const [showParams, setShowParams] = useState(expanded);
 
@@ -109,10 +96,8 @@ export const HvFlowNode = ({
       title={groupLabel}
       icon={icon}
       color={color}
-      inputs={inputs}
-      outputs={outputs}
       nodeActions={defaultActions}
-      classes={classesProp as HvFlowBaseNodeClasses}
+      classes={classes}
       headerItems={
         <>
           {headerItems}
