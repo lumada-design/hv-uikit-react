@@ -7,7 +7,9 @@ import {
   HvTableRow,
 } from "@hitachivantara/uikit-react-core";
 
-export const PropsTable = ({ props }) => {
+import { DocgenProp } from "../utils";
+
+export const PropsTable = ({ props }: { props: DocgenProp }) => {
   const columns = [
     { Header: "Name", accessor: "name", style: { minWidth: 120 } },
     { Header: "Type", accessor: "type", style: { minWidth: 100 } },
@@ -17,8 +19,6 @@ export const PropsTable = ({ props }) => {
       style: { minWidth: 100 },
     },
   ];
-
-  console.log(props);
 
   return (
     <HvTableContainer>
