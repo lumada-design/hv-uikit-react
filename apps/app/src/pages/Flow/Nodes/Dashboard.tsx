@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { css } from "@emotion/css";
 import {
   HvDashboardNode,
   HvFlowNodeFC,
@@ -10,6 +11,7 @@ import {
   HvButton,
   HvSection,
   HvTypography,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import {
@@ -42,6 +44,14 @@ const nodeInputs: HvFlowNodeInput[] = [
     accepts: ["visualizations"],
   },
 ];
+
+const classes = {
+  footer: css({
+    display: "flex",
+    gap: theme.space.sm,
+    justifyContent: "center",
+  }),
+};
 
 export const Dashboard: HvFlowNodeFC = (props) => {
   const { id } = props;
@@ -117,18 +127,27 @@ export const Dashboard: HvFlowNodeFC = (props) => {
           <PreviewRenderer {...item} />
         </div>
       ))}
+      classes={{
+        footerContainer: classes.footer,
+      }}
+      footer={
+        <>
+          <HvButton size="sm" onClick={handleOpenConfig}>
+            Configure
+          </HvButton>
+          <HvButton
+            size="sm"
+            variant="primarySubtle"
+            component="a"
+            href={`./?dashboard=${id}`}
+            target="_blank"
+          >
+            Preview
+          </HvButton>
+        </>
+      }
       {...props}
-    >
-      <HvButton onClick={handleOpenConfig}>Configure</HvButton>
-      <HvButton
-        variant="primarySubtle"
-        component="a"
-        href={`./?dashboard=${id}`}
-        target="_blank"
-      >
-        Preview
-      </HvButton>
-    </HvDashboardNode>
+    />
   );
 };
 
