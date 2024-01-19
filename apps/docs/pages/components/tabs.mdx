@@ -4,9 +4,11 @@ import { Layout } from "../../components/Layout"
 
 import { getComponentData } from "../../utils.tsx"
 
+import { tabClasses } from "@hitachivantara/uikit-react-core";
+
 export const getStaticProps = async ({ params }) => {
 
-    const meta = await getComponentData("Tabs")
+    const meta = await getComponentData("Tabs", tabClasses)
 
     return fs.readFile(`./../../samples/Tabs/FullWidth.tsx`, "utf8").then((values) => {
         return {

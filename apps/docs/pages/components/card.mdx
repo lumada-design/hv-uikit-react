@@ -1,5 +1,7 @@
 import { promises as fs } from "fs";
 
+import { cardClasses } from "@hitachivantara/uikit-react-core";
+
 import { Layout } from "../../components/Layout"
 
 import { AllComponents } from "../../../../samples/Card/AllComponents"  
@@ -8,7 +10,7 @@ import { getComponentData } from "../../utils.tsx"
 
 export const getStaticProps = async ({ params }) => {
 
-    const meta = await getComponentData("Card")
+    const meta = await getComponentData("Card", cardClasses)
 
     return fs.readFile(`./../../samples/Card/AllComponents.tsx`, "utf8").then((values) => {
         return {

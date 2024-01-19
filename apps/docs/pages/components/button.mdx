@@ -1,5 +1,7 @@
 import { promises as fs } from "fs";
 
+import { buttonClasses } from "@hitachivantara/uikit-react-core";
+
 import { Layout } from "../../components/Layout"
 
 import { Demo } from "../../components/Demo"
@@ -10,7 +12,7 @@ import { getComponentData } from "apps/docs/utils";
 
 export const getStaticProps = async ({ params }) => {
 
-const meta = await getComponentData("Accordion")
+const meta = await getComponentData("Accordion", buttonClasses)
 
 return fs.readFile(`./../../samples/Button/Variants.tsx`, "utf8").then((values) => {
 return {

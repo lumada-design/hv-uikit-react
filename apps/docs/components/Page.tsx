@@ -3,6 +3,7 @@ import { HvContainer, HvTab, HvTabs } from "@hitachivantara/uikit-react-core";
 
 import { PropsTable } from "./PropsTable";
 import { Meta } from "../utils";
+import { ClassesTable } from "./ClassesTable";
 
 export const Page = ({
   meta,
@@ -22,7 +23,7 @@ export const Page = ({
       case 1:
         return <PropsTable props={meta.docgen.props} />;
       case 2:
-        return <>styles api</>;
+        return <ClassesTable classes={meta.classes} />;
       default:
         return children;
     }

@@ -1,5 +1,7 @@
 import { promises as fs } from "fs";
 
+import { accordionClasses } from "@hitachivantara/uikit-react-core";
+
 import { Layout } from "../../components/Layout"
 
 import { Demo } from "../../components/Demo"
@@ -10,7 +12,7 @@ import { getComponentData } from "../../utils.tsx"
 
 export const getStaticProps = async ({ params }) => {
 
-    const meta = await getComponentData("Accordion")
+    const meta = await getComponentData("Accordion",accordionClasses)
 
     return fs.readFile(`./../../samples/Accordion/Disabled.tsx`, "utf8").then((values) => {
         return {

@@ -7,6 +7,9 @@ export interface Meta {
   component: string;
   source: string;
   docgen: Docgen;
+  classes: {
+    [selector: string]: string;
+  };
 }
 
 export interface DocgenProp {
@@ -27,7 +30,10 @@ export interface Docgen {
   props: Record<string, PropDescriptor>;
 }
 
-export const getComponentData = async (componentName: string) => {
+export const getComponentData = async (
+  componentName: string,
+  classes: { [selector: string]: string }
+) => {
   const path = `/packages/core/src/${componentName}/${componentName}.tsx`;
 
   const res = await fs.readFile(`./../..${path}`, "utf8");
@@ -35,5 +41,6 @@ export const getComponentData = async (componentName: string) => {
     component: componentName,
     source: `https://github.com/lumada-design/hv-uikit-react/blob/master${path}`,
     docgen: parse(res)[0] as Docgen,
+    classes,
   } as Meta;
 };
