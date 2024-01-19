@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.44.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.5...@hitachivantara/uikit-react-core@5.44.6) (2024-01-19)
+
+### Bug Fixes
+
+- **a11y:** ensure role on tooltip'ed elements & use strings on labels ([#3974](https://github.com/lumada-design/hv-uikit-react/issues/3974)) ([edf0730](https://github.com/lumada-design/hv-uikit-react/commit/edf0730f54974c58f9f23c2e6375dbb2b8ebe60d))
+
 ## 5.44.5 (2024-01-18)
 
 ### Bug Fixes
