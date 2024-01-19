@@ -72,18 +72,38 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     flexDirection: "row",
     alignItems: "center",
     position: "relative",
-    "& .react-flow__handle-left": {
-      left: -20,
-    },
   },
   outputContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     position: "relative",
-    "& .react-flow__handle-right": {
-      right: -20,
+  },
+  handle: {
+    zIndex: theme.zIndices.overlay,
+    marginLeft: 2,
+    backgroundColor: theme.colors.atmo1,
+    height: 10,
+    width: 10,
+    border: `1px solid ${theme.colors.secondary_60}`,
+    "&.react-flow__handle-left": {
+      left: -23,
     },
+    "&.react-flow__handle-right": {
+      right: -21,
+    },
+    "::before": {
+      fontSize: 14,
+      color: theme.colors.secondary_60,
+      content: '"+"',
+      marginTop: -7,
+      position: "absolute",
+    },
+  },
+  handleConnected: {
+    backgroundColor: theme.colors.secondary_60,
+    width: 8,
+    height: 8,
   },
   mandatory: {
     width: 10,

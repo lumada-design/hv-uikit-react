@@ -21,7 +21,7 @@ export const isOutputGroup = (
   return "outputs" in output;
 };
 
-export const isInputConnected = (
+export const isConnected = (
   id: string,
   type: "target" | "source",
   handleId: string,
