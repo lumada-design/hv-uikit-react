@@ -195,33 +195,49 @@ that are not in a group. This default group is customizable via the `defaultGrou
 
 ## Inputs and outputs <a id="inputs-and-outputs" />
 
-Nodes need inputs and/or outputs to connect to other nodes. Inputs and outputs can be defined as properties of the component and they
-follow specific types as shown below.
+Nodes need inputs and/or outputs to connect to other nodes and they can be defined as properties of the component.
+Below are the specifications for a single input and output.
 
 ```typescript
-type HvFlowNodeInput = {
-  label: string;
+interface HvFlowNodeInput {
+  id?: string;
+  label: React.ReactNode;
   isMandatory?: boolean;
   accepts?: string[];
   maxConnections?: number;
-};
+}
 
-type HvFlowNodeOutput = {
-  label: string;
+interface HvFlowNodeOutput {
+  id?: string;
+  label: React.ReactNode;
   isMandatory?: boolean;
   provides?: string;
   maxConnections?: number;
-};
+}
 ```
 
-You'll notice that input nodes have an `accepts` property and the output nodes have a `provides` property. These are used to limit
-how nodes connect to other nodes and as a descriptor of what a node provides or accepts. Thus, for example, if a node
-provides `"config"`, only nodes that accept this string will allow a connection from that node. While inputs can accept an array of strings,
+You'll notice that an input have an `accepts` property and an output have a `provides` property. These are used to limit
+how nodes connect to other nodes and as a descriptor of what a node provides or accepts. Thus, for example, if an output of a node
+provides `"config"`, only nodes with inputs that accept this string will allow a connection from that output. While inputs can accept an array of strings,
 an output only provides one. If, instead, you want a node input to accept outputs from any other node without restrictions,
 you only need to set the `accepts` property to an empty array or, alternatively, not setting the `accepts` at all.
 
 Furthermore, it's also possible to define the maximum number of connections allowed for a particular input and output. This enables you to limit
 the number of connections an input accepts as well as the number of connections an output can establish.
+
+Nodes can also accept groups of inputs and outputs. These groups are defined by the types below.
+
+```typescript
+interface HvFlowNodeInputGroup {
+  label: React.ReactNode;
+  inputs: HvFlowNodeInput[];
+}
+
+interface HvFlowNodeOutputGroup {
+  label: React.ReactNode;
+  outputs: HvFlowNodeOutput[];
+}
+```
 
 ## Parameters <a id="parameters" />
 

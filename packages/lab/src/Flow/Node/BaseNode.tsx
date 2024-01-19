@@ -6,7 +6,6 @@ import React, {
   useState,
 } from "react";
 import {
-  Edge,
   Handle,
   NodeProps,
   NodeToolbar,
@@ -16,7 +15,6 @@ import {
 import { uid } from "uid";
 import {
   ExtractNames,
-  HvActionGeneric,
   HvBaseProps,
   HvButton,
   HvTypography,
@@ -29,6 +27,8 @@ import {
   HvFlowBuiltInActions,
   HvFlowNodeInput,
   HvFlowNodeOutput,
+  HvFlowNodeOutputGroup,
+  HvFlowNodeInputGroup,
 } from "../types";
 import {
   useFlowNode,
@@ -37,6 +37,13 @@ import {
 } from "../hooks/useFlowNode";
 import { useNodeMetaRegistry } from "../FlowContext/NodeMetaContext";
 import { staticClasses, useClasses } from "./BaseNode.styles";
+import {
+  identifyHandles,
+  isInputConnected,
+  isInputGroup,
+  isOutputGroup,
+  renderedIcon,
+} from "./utils";
 
 export { staticClasses as flowBaseNodeClasses };
 
@@ -54,9 +61,9 @@ export interface HvFlowBaseNodeProps<T = any>
   /** Header items */
   headerItems?: React.ReactNode;
   /** Node inputs */
-  inputs?: HvFlowNodeInput[];
+  inputs?: (HvFlowNodeInput | HvFlowNodeInputGroup)[];
   /** Node outputs */
-  outputs?: HvFlowNodeOutput[];
+  outputs?: (HvFlowNodeOutput | HvFlowNodeOutputGroup)[];
   /** Node actions */
   nodeActions?: HvFlowNodeAction[];
   /** The content of the Node footer */
@@ -65,29 +72,10 @@ export interface HvFlowBaseNodeProps<T = any>
   classes?: HvFlowBaseNodeClasses;
 }
 
-const isInputConnected = (
-  id: string,
-  type: "target" | "source",
-  handleId: string,
-  edges: Edge[]
-) => {
-  if (type === "target") {
-    return edges.some((e) => e.target === id && e.targetHandle === handleId);
-  }
-  if (type === "source") {
-    return edges.some((e) => e.source === id && e.sourceHandle === handleId);
-  }
-
-  return false;
-};
-
 const defaultActions: HvFlowBuiltInActions[] = [
   { id: "delete", label: "Delete", icon: <Delete /> },
   { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
 ];
-
-const renderedIcon = (actionIcon: HvActionGeneric["icon"]) =>
-  isValidElement(actionIcon) ? actionIcon : (actionIcon as Function)?.();
 
 export const HvFlowBaseNode = ({
   id,
@@ -105,21 +93,9 @@ export const HvFlowBaseNode = ({
 }: HvFlowBaseNodeProps<unknown>) => {
   const { registerNode, unregisterNode } = useNodeMetaRegistry();
 
-  const inputs = useMemo(
-    () =>
-      inputsProp?.map((input, idx) =>
-        input.id != null ? input : { ...input, id: String(idx) }
-      ),
-    [inputsProp]
-  );
+  const inputs = useMemo(() => identifyHandles(inputsProp), [inputsProp]);
 
-  const outputs = useMemo(
-    () =>
-      outputsProp?.map((output, idx) =>
-        output.id != null ? output : { ...output, id: String(idx) }
-      ),
-    [outputsProp]
-  );
+  const outputs = useMemo(() => identifyHandles(outputsProp), [outputsProp]);
 
   useEffect(() => {
     registerNode(id, {
@@ -172,6 +148,38 @@ export const HvFlowBaseNode = ({
       }
     },
     [node, reactFlowInstance]
+  );
+
+  const renderOutput = (output: HvFlowNodeOutput) => (
+    <div className={classes.outputContainer} key={output.id}>
+      <Handle
+        type="source"
+        isConnectableEnd={false}
+        id={output.id}
+        position={Position.Right}
+      />
+      {output.isMandatory &&
+        !isInputConnected(id, "source", output.id!, outputEdges) && (
+          <div className={classes.mandatory} />
+        )}
+      <HvTypography component="div">{output.label}</HvTypography>
+    </div>
+  );
+
+  const renderInput = (input: HvFlowNodeInput) => (
+    <div className={classes.inputContainer} key={input.id}>
+      <Handle
+        type="target"
+        isConnectableStart={false}
+        id={input.id}
+        position={Position.Left}
+      />
+      <HvTypography component="div">{input.label}</HvTypography>
+      {input.isMandatory &&
+        !isInputConnected(id, "target", input.id!, inputEdges) && (
+          <div className={classes.mandatory} />
+        )}
+    </div>
   );
 
   if (!node) return null;
@@ -229,23 +237,24 @@ export const HvFlowBaseNode = ({
           <div className={classes.inputsTitleContainer}>
             <HvTypography>Inputs</HvTypography>
           </div>
-
           <div className={classes.inputsContainer}>
-            {inputs?.map((input) => (
-              <div className={classes.inputContainer} key={input.id}>
-                <Handle
-                  type="target"
-                  isConnectableStart={false}
-                  id={input.id}
-                  position={Position.Left}
-                />
-                <HvTypography>{input.label}</HvTypography>
-                {input.isMandatory &&
-                  !isInputConnected(id, "target", input.id!, inputEdges) && (
-                    <div className={classes.mandatory} />
+            {inputs?.map((input, idx) => {
+              if (!isInputGroup(input)) return renderInput(input);
+
+              return (
+                <div
+                  className={classes.inputGroupContainer}
+                  key={`group${idx}`}
+                >
+                  <HvTypography component="div" variant="label">
+                    {input.label}
+                  </HvTypography>
+                  {(input as HvFlowNodeInputGroup).inputs.map((inp) =>
+                    renderInput(inp)
                   )}
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </>
       )}
@@ -255,21 +264,23 @@ export const HvFlowBaseNode = ({
             <HvTypography>Outputs</HvTypography>
           </div>
           <div className={classes.outputsContainer}>
-            {outputs?.map((output) => (
-              <div className={classes.outputContainer} key={output.id}>
-                <Handle
-                  type="source"
-                  isConnectableEnd={false}
-                  id={output.id}
-                  position={Position.Right}
-                />
-                {output.isMandatory &&
-                  !isInputConnected(id, "source", output.id!, outputEdges) && (
-                    <div className={classes.mandatory} />
+            {outputs?.map((output, idx) => {
+              if (!isOutputGroup(output)) return renderOutput(output);
+
+              return (
+                <div
+                  className={classes.outputGroupContainer}
+                  key={`group${idx}`}
+                >
+                  <HvTypography component="div" variant="label">
+                    {output.label}
+                  </HvTypography>
+                  {(output as HvFlowNodeOutputGroup).outputs.map((out) =>
+                    renderOutput(out)
                   )}
-                <HvTypography>{output.label}</HvTypography>
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </>
       )}

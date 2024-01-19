@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { css } from "@emotion/css";
 import { Layout } from "react-grid-layout";
 import {
   HvButton,
@@ -12,6 +13,10 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 
 import type { NodeGroups } from ".";
+
+const classes = {
+  footer: css({ display: "flex", justifyContent: "center" }),
+};
 
 export const Dashboard: HvFlowNodeFC<NodeGroups> = (props) => {
   const { id: idProp } = props;
@@ -63,12 +68,20 @@ export const Dashboard: HvFlowNodeFC<NodeGroups> = (props) => {
         },
       ]}
       previewItems={previewItems}
+      classes={{
+        footerContainer: classes.footer,
+      }}
+      footer={
+        <HvButton
+          size="sm"
+          variant="secondarySubtle"
+          onClick={() => setOpen(true)}
+        >
+          Preview Dashboard
+        </HvButton>
+      }
       {...props}
-    >
-      <HvButton variant="secondarySubtle" onClick={() => setOpen(true)}>
-        Preview Dashboard
-      </HvButton>
-    </HvDashboardNode>
+    />
   );
 };
 

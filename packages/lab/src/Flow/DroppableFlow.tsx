@@ -22,7 +22,11 @@ import { uid } from "uid";
 
 import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 
-import { HvFlowNodeMetaRegistry } from "./types";
+import {
+  HvFlowNodeInputGroup,
+  HvFlowNodeMetaRegistry,
+  HvFlowNodeOutputGroup,
+} from "./types";
 import { staticClasses, useClasses } from "./Flow.styles";
 import { useFlowContext } from "./hooks";
 import { flowStyles } from "./base";
@@ -85,8 +89,14 @@ const validateEdge = (
   const inputs = nodeMetaRegistry[edge.target]?.inputs || [];
   const outputs = nodeMetaRegistry[edge.source]?.outputs || [];
 
-  const source = outputs.find((out) => out.id === edge.sourceHandle);
-  const target = inputs.find((inp) => inp.id === edge.targetHandle);
+  const source = outputs
+    .map((out) => (out as HvFlowNodeOutputGroup).outputs || out)
+    .flat()
+    .find((out) => out.id === edge.sourceHandle);
+  const target = inputs
+    .map((inp) => (inp as HvFlowNodeInputGroup).inputs || inp)
+    .flat()
+    .find((inp) => inp.id === edge.targetHandle);
 
   const sourceProvides = source?.provides || "";
   const targetAccepts = target?.accepts || [];
