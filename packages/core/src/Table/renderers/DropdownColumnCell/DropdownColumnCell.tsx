@@ -3,11 +3,11 @@ import { HvListValue } from "../../../List";
 
 export interface HvDropdownColumnCellProp {
   /** Values to render in the dropdown. */
-  values: HvListValue[];
+  values?: HvListValue[];
   /** Placeholder text for when the dropdown is empty. */
-  placeholder: string;
-  /** The whether the dropdown is disabled. */
-  disabled: boolean;
+  placeholder?: string;
+  /** Whether the dropdown is disabled. */
+  disabled?: boolean;
   /** Function called when there is change on the dropdown. */
   onChange?: (value: HvListValue) => void;
   /** Extra props to be passed onto the dropdown. */
