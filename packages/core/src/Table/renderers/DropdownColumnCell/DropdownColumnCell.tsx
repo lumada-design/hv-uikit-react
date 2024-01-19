@@ -29,7 +29,6 @@ export const HvDropdownColumnCell = ({
       placeholder={placeholder}
       disabled={disabled}
       values={values}
-      disablePortal
       {...dropdownProps}
     />
   );
