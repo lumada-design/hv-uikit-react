@@ -39,7 +39,7 @@ import { useNodeMetaRegistry } from "../FlowContext/NodeMetaContext";
 import { staticClasses, useClasses } from "./BaseNode.styles";
 import {
   identifyHandles,
-  isInputConnected,
+  isConnected,
   isInputGroup,
   isOutputGroup,
   renderedIcon,
@@ -150,37 +150,51 @@ export const HvFlowBaseNode = ({
     [node, reactFlowInstance]
   );
 
-  const renderOutput = (output: HvFlowNodeOutput) => (
-    <div className={classes.outputContainer} key={output.id}>
-      <Handle
-        type="source"
-        isConnectableEnd={false}
-        id={output.id}
-        position={Position.Right}
-      />
-      {output.isMandatory &&
-        !isInputConnected(id, "source", output.id!, outputEdges) && (
-          <div className={classes.mandatory} />
-        )}
-      <HvTypography component="div">{output.label}</HvTypography>
-    </div>
-  );
+  const renderOutput = (output: HvFlowNodeOutput) => {
+    const edgeConnected = isConnected(id, "source", output.id!, outputEdges);
 
-  const renderInput = (input: HvFlowNodeInput) => (
-    <div className={classes.inputContainer} key={input.id}>
-      <Handle
-        type="target"
-        isConnectableStart={false}
-        id={input.id}
-        position={Position.Left}
-      />
-      <HvTypography component="div">{input.label}</HvTypography>
-      {input.isMandatory &&
-        !isInputConnected(id, "target", input.id!, inputEdges) && (
+    return (
+      <div className={classes.outputContainer} key={output.id}>
+        <Handle
+          type="source"
+          isConnectableEnd={false}
+          id={output.id}
+          position={Position.Right}
+          className={cx(
+            classes.handle,
+            edgeConnected && classes.handleConnected
+          )}
+        />
+        {output.isMandatory && !edgeConnected && (
           <div className={classes.mandatory} />
         )}
-    </div>
-  );
+        <HvTypography component="div">{output.label}</HvTypography>
+      </div>
+    );
+  };
+
+  const renderInput = (input: HvFlowNodeInput) => {
+    const edgeConnected = isConnected(id, "target", input.id!, inputEdges);
+
+    return (
+      <div className={classes.inputContainer} key={input.id}>
+        <Handle
+          type="target"
+          isConnectableStart={false}
+          id={input.id}
+          position={Position.Left}
+          className={cx(
+            classes.handle,
+            edgeConnected && classes.handleConnected
+          )}
+        />
+        <HvTypography component="div">{input.label}</HvTypography>
+        {input.isMandatory && !edgeConnected && (
+          <div className={classes.mandatory} />
+        )}
+      </div>
+    );
+  };
 
   if (!node) return null;
 
@@ -265,7 +279,9 @@ export const HvFlowBaseNode = ({
           </div>
           <div className={classes.outputsContainer}>
             {outputs?.map((output, idx) => {
-              if (!isOutputGroup(output)) return renderOutput(output);
+              if (!isOutputGroup(output)) {
+                return renderOutput(output);
+              }
 
               return (
                 <div
@@ -275,9 +291,9 @@ export const HvFlowBaseNode = ({
                   <HvTypography component="div" variant="label">
                     {output.label}
                   </HvTypography>
-                  {(output as HvFlowNodeOutputGroup).outputs.map((out) =>
-                    renderOutput(out)
-                  )}
+                  {(output as HvFlowNodeOutputGroup).outputs.map((out) => {
+                    return renderOutput(out);
+                  })}
                 </div>
               );
             })}
