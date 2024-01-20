@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.25.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.24.3...@hitachivantara/uikit-react-lab@5.25.0) (2024-01-20)
+
+### Features
+
+- **Flow:** input and output groups ([#3976](https://github.com/lumada-design/hv-uikit-react/issues/3976)) ([d497ce1](https://github.com/lumada-design/hv-uikit-react/commit/d497ce158cd9270962f5ec6d2d5942af45468adb))
+
 ## [5.24.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.24.2...@hitachivantara/uikit-react-lab@5.24.3) (2024-01-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
