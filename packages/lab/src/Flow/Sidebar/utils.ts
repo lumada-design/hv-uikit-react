@@ -44,8 +44,6 @@ export const buildGroups = (
     // Create a "Default" group for nodes without a groupId
     if (nodesWithoutGroupId.length > 0) {
       acc.Default = {
-        // @ts-ignore
-        name: "Default",
         label: "Default",
         nodes: nodesWithoutGroupId,
         ...defaultGroupProps,
