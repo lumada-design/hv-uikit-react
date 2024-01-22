@@ -32,11 +32,10 @@ export interface HvDashboardNodeProps
     Pick<HvDialogProps, "open" | "onClose">,
     Pick<HvDashboardProps, "layout"> {
   classes?: HvDashboardNodeClasses;
-  labels?: Partial<typeof DEFAULT_LABELS>;
+  labels?: HvFlowNodeProps["labels"] & Partial<typeof DEFAULT_LABELS>;
   previewItems?: React.ReactNode;
   onApply?: () => void;
   onCancel?: () => void;
-
   dashboardProps?: Omit<HvDashboardProps, "children">;
   dialogProps?: HvDialogProps;
 }
@@ -61,7 +60,7 @@ export const HvDashboardNode = (props: HvDashboardNodeProps) => {
   const { classes } = useClasses(classesProp);
 
   return (
-    <HvFlowNode id={id} classes={classes} {...others}>
+    <HvFlowNode id={id} classes={classes} labels={labels} {...others}>
       {children}
       <HvDialog
         open={open}

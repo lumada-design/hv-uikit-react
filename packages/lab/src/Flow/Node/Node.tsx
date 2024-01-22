@@ -8,6 +8,7 @@ import {
   HvDropDownMenu,
   HvTooltip,
   HvTypography,
+  useLabels,
 } from "@hitachivantara/uikit-react-core";
 import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
 
@@ -28,6 +29,11 @@ export type HvFlowNodeDefaults = {
   icon?: React.ReactNode;
 };
 
+const DEFAULT_LABELS = {
+  collapseLabel: "Collapse",
+  expandLabel: "Expand",
+};
+
 export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   /** Node description */
   description?: string;
@@ -45,6 +51,8 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   nodeDefaults?: HvFlowNodeDefaults;
   /** Props to be passed to the expand parameters button. */
   expandParamsButtonProps?: HvButtonProps;
+  /** Labels used on the node. */
+  labels?: HvFlowBaseNodeProps["labels"] & Partial<typeof DEFAULT_LABELS>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowNodeClasses;
 }
@@ -64,11 +72,14 @@ export const HvFlowNode = ({
   params,
   nodeDefaults,
   classes: classesProp,
+  labels: labelsProps,
   children,
   expandParamsButtonProps,
   ...props
 }: HvFlowNodeProps<unknown>) => {
   const { classes } = useClasses(classesProp);
+
+  const labels = useLabels(DEFAULT_LABELS, labelsProps);
 
   const [showParams, setShowParams] = useState(expanded);
 
@@ -104,7 +115,7 @@ export const HvFlowNode = ({
           {description && (
             <HvTooltip title={description}>
               <div>
-                <Info color="base_dark" />
+                <Info role="none" color="base_dark" />
               </div>
             </HvTooltip>
           )}
@@ -113,7 +124,9 @@ export const HvFlowNode = ({
               icon
               overrideIconColors={false}
               onClick={() => setShowParams((p) => !p)}
-              aria-label={showParams ? "Collapse" : "Expand"}
+              aria-label={
+                showParams ? labels?.collapseLabel : labels?.expandLabel
+              }
               {...expandParamsButtonProps}
             >
               {showParams ? (
@@ -125,6 +138,7 @@ export const HvFlowNode = ({
           )}
         </>
       }
+      labels={labels}
       {...props}
     >
       {(subtitle || actsVisible?.length || actsDropdown?.length) && (
@@ -150,7 +164,6 @@ export const HvFlowNode = ({
                     </HvButton>
                   </HvTooltip>
                 ))}
-
                 {actsDropdown && actsDropdown.length > 0 && (
                   <HvDropDownMenu
                     keepOpened={false}
