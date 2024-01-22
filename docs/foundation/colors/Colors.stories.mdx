@@ -9,10 +9,12 @@ The **Color Palette** was curated by the Design System team, providing a chromat
 
 It produces positive and minimalistic work environments, leveraging an array of empathic gray shades. Each theme is able to produce high contrast when critical messaging is needed by combining light grays with contrasting status colors.
 
-Example of a color variable:
+Example usage of a color variable:
 
 ```tsx
-theme.colors.atmo5;
+import { theme } from "@hitachivantara/uikit-react-core";
+
+const MyComponent = () => <div style={{ color: theme.colors.atmo2 }} />;
 ```
 
 **Note:** Colors names have changed in UI Kit v5.x. Please be sure to check the [colors mapping table](./?path=/docs/overview-migration-from-v4-x--docs#colors) on the migration guide.

@@ -56,5 +56,6 @@ export const ${iconName}: IconType = ({ viewbox = "${defaultViewBox}", ...others
     ${svgOutput.replace("{...other}", "{...svgProps}")}
     </IconBase>
 )};
+${iconName}.displayName = "${iconName}";
 `;
 };
