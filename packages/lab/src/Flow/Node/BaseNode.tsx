@@ -17,14 +17,15 @@ import {
   ExtractNames,
   HvBaseProps,
   HvButton,
+  HvTooltip,
   HvTypography,
+  useLabels,
 } from "@hitachivantara/uikit-react-core";
 import { Delete, Duplicate } from "@hitachivantara/uikit-react-icons";
 import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
 
 import {
   HvFlowNodeAction,
-  HvFlowBuiltInActions,
   HvFlowNodeInput,
   HvFlowNodeOutput,
   HvFlowNodeOutputGroup,
@@ -49,6 +50,13 @@ export { staticClasses as flowBaseNodeClasses };
 
 export type HvFlowBaseNodeClasses = ExtractNames<typeof useClasses>;
 
+const DEFAULT_LABELS = {
+  outputsTitle: "Outputs",
+  inputsTitle: "Inputs",
+  deleteActionLabel: "Delete",
+  duplicateActionLabel: "Duplicate",
+};
+
 export interface HvFlowBaseNodeProps<T = any>
   extends Omit<HvBaseProps, "id">,
     NodeProps<T> {
@@ -66,16 +74,13 @@ export interface HvFlowBaseNodeProps<T = any>
   outputs?: (HvFlowNodeOutput | HvFlowNodeOutputGroup)[];
   /** Node actions */
   nodeActions?: HvFlowNodeAction[];
-  /** The content of the Node footer */
+  /** The content of the node footer */
   footer?: React.ReactNode;
+  /** Labels used on the node. */
+  labels?: Partial<typeof DEFAULT_LABELS>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowBaseNodeClasses;
 }
-
-const defaultActions: HvFlowBuiltInActions[] = [
-  { id: "delete", label: "Delete", icon: <Delete /> },
-  { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
-];
 
 export const HvFlowBaseNode = ({
   id,
@@ -85,17 +90,33 @@ export const HvFlowBaseNode = ({
   color: colorProp,
   inputs: inputsProp,
   outputs: outputsProp,
-  nodeActions = defaultActions,
+  nodeActions: nodeActionsProp,
   footer,
   classes: classesProp,
+  labels: labelsProps,
   className,
   children,
 }: HvFlowBaseNodeProps<unknown>) => {
   const { registerNode, unregisterNode } = useNodeMetaRegistry();
 
+  const labels = useLabels(DEFAULT_LABELS, labelsProps);
+
   const inputs = useMemo(() => identifyHandles(inputsProp), [inputsProp]);
 
   const outputs = useMemo(() => identifyHandles(outputsProp), [outputsProp]);
+
+  const nodeActions = useMemo(
+    () =>
+      nodeActionsProp || [
+        { id: "delete", label: labels?.deleteActionLabel, icon: <Delete /> },
+        {
+          id: "duplicate",
+          label: labels?.duplicateActionLabel,
+          icon: <Duplicate />,
+        },
+      ],
+    [labels?.deleteActionLabel, labels?.duplicateActionLabel, nodeActionsProp]
+  );
 
   useEffect(() => {
     registerNode(id, {
@@ -216,13 +237,11 @@ export const HvFlowBaseNode = ({
     >
       <NodeToolbar isVisible={showActions} offset={0}>
         {nodeActions?.map((action) => (
-          <HvButton
-            key={action.id}
-            icon
-            onClick={() => handleDefaultAction(action)}
-          >
-            {renderedIcon(action.icon)}
-          </HvButton>
+          <HvTooltip key={action.id} enterDelay={500} title={action.label}>
+            <HvButton icon onClick={() => handleDefaultAction(action)}>
+              {renderedIcon(action.icon)}
+            </HvButton>
+          </HvTooltip>
         ))}
       </NodeToolbar>
       <div
@@ -249,7 +268,7 @@ export const HvFlowBaseNode = ({
       {inputs && inputs.length > 0 && (
         <>
           <div className={classes.inputsTitleContainer}>
-            <HvTypography>Inputs</HvTypography>
+            <HvTypography>{labels?.inputsTitle}</HvTypography>
           </div>
           <div className={classes.inputsContainer}>
             {inputs?.map((input, idx) => {
@@ -275,7 +294,7 @@ export const HvFlowBaseNode = ({
       {outputs && outputs.length > 0 && (
         <>
           <div className={classes.outputsTitleContainer}>
-            <HvTypography>Outputs</HvTypography>
+            <HvTypography>{labels?.outputsTitle}</HvTypography>
           </div>
           <div className={classes.outputsContainer}>
             {outputs?.map((output, idx) => {
