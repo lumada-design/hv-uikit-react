@@ -76,6 +76,16 @@ const baseline = {
     color: "inherit",
     textDecoration: "inherit",
   },
+
+  ".uikit-root-element": {
+    backgroundColor: "var(--uikit-colors-backgroundColor)",
+    accentColor: "var(--uikit-colors-secondary)",
+    color: "var(--uikit-colors-secondary)",
+    fontSize: "var(--uikit-typography-body-fontSize)",
+    fontWeight: "var(--uikit-typography-body-fontWeight)",
+    lineHeight: "var(--uikit-typography-body-lineHeight)",
+    letterSpacing: "var(--uikit-typography-body-letterSpacing)",
+  },
 } as const;
 
 export const CssScopedBaseline = {
