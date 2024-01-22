@@ -29,22 +29,16 @@ export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
   (props, ref) => {
     const { option, width, height } = props;
 
-    const { theme } = useVizTheme();
+    const { theme, activeTheme } = useVizTheme();
 
     const currentTheme = useRef<string | undefined>(theme);
     const chartRef = useRef<ReactECharts>(null);
-    const isMounted = useRef<boolean>(false);
 
     const forkedRef = useForkRef<ReactECharts>(ref, chartRef);
 
     const [initialOption, setInitialOption] = useState<HvEChartsOption>(option);
 
     useEffect(() => {
-      if (!isMounted.current) {
-        isMounted.current = true;
-        return;
-      }
-
       // when the theme changes echarts destroys the chart and mounts it again
       // thus we need to reset the initial option
       if (theme !== currentTheme.current) {
@@ -60,7 +54,13 @@ export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
       instance.setOption(option, {
         replaceMerge: ["xAxis", "yAxis", "series", "dataset"],
       });
-    }, [theme, option]);
+
+      return () => {
+        // Dispose the instance of the chart when the component unmounts. This ensures that
+        // the chart theme will update when the theme changes.
+        instance.dispose();
+      };
+    }, [theme, option, activeTheme]);
 
     return (
       <ReactECharts
