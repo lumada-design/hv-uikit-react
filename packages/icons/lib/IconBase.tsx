@@ -110,9 +110,9 @@ export type IconSize = "XS" | "S" | "M" | "L";
 export interface IconBaseProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
   /**
-   * A String or Array of strings representing the colors to override in the icon.
-   * Each element inside the array will override a different color.
-   * You can use either an HEX or color name from the palette.
+   * A color or array of colors to override the default icon colors.
+   * Accepts any valid CSS color or color from the UI Kit palette.
+   * @example ["brand", "inherit"]
    */
   color?: HvColorAny | HvColorAny[];
   /** Sets one of the standard sizes of the icons */

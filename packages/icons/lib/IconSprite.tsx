@@ -12,7 +12,12 @@ const getSecondaryColor = (iconName: string) => {
 
 export interface HvIconSpriteProps
   extends Omit<IconBaseProps, "viewbox" | "inverted" | "semantic"> {
+  /**
+   * The URL to the SVG icon sprite, served statically by the application.
+   * @example "/public/icons.svg"
+   * */
   spriteUrl: string;
+  /** The icon `id` to use. Must be present within the sprite sheet. */
   iconName: string;
 }
 

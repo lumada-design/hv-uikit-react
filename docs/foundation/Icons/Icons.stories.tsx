@@ -4,12 +4,13 @@ import {
   Level4,
   Machine,
   IconBase,
-  IconBaseProps,
+  HvIconSpriteProps,
+  HvIconSprite,
 } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof IconBase> = {
-  title: "Foundation/Icons/Usage",
+  title: "Foundation/Icons",
   parameters: {
     componentSubtitle: null,
   },
@@ -17,12 +18,23 @@ const meta: Meta<typeof IconBase> = {
 };
 export default meta;
 
-export const Main: StoryObj<IconBaseProps> = {
+/** internal or deprecated props that shouldn't be used */
+const disabledArgs = {
+  svgProps: { table: { disable: true } },
+  palette: { table: { disable: true } },
+  semantic: { table: { disable: true } },
+  inverted: { table: { disable: true } },
+  viewbox: { table: { disable: true } },
+};
+
+export const Main: StoryObj<typeof IconBase> = {
   args: {
     iconSize: "S",
+    color: "secondary",
   },
   argTypes: {
-    svgProps: { table: { disable: true } },
+    ...disabledArgs,
+    iconName: { table: { disable: true } },
   },
   render: (args) => {
     return <CheckboxCheck {...args} />;
@@ -66,5 +78,26 @@ export const CustomSize = () => (
 CustomSize.parameters = {
   docs: {
     description: { story: "Overrides Icon size using non standard sizes" },
+  },
+};
+
+export const IconSprites: StoryObj<HvIconSpriteProps> = {
+  args: {
+    iconName: "CheckboxCheck",
+    spriteUrl: "./assets/icons.svg",
+    color: "secondary",
+    iconSize: "S",
+  },
+  argTypes: {
+    ...disabledArgs,
+    spriteUrl: {
+      description:
+        "The URL to the SVG icon sprite, served statically served by the application.",
+      control: { type: "radio" },
+      options: ["./assets/icons.svg", "./assets/pictograms.svg"],
+    },
+  },
+  render: (args) => {
+    return <HvIconSprite {...args} />;
   },
 };
