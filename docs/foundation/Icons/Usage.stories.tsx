@@ -29,14 +29,6 @@ export const Main: StoryObj<IconBaseProps> = {
   },
 };
 
-export const IconSize = () => <CheckboxCheck iconSize="M" />;
-
-IconSize.parameters = {
-  docs: {
-    description: { story: "Overrides Generic Icon size using standard sizes" },
-  },
-};
-
 export const CustomColors = () => (
   <Bookmark
     color={["brand", "secondary"]}
@@ -51,28 +43,18 @@ CustomColors.parameters = {
   },
 };
 
-export const DecorativeIcon = () => (
-  <Machine role="presentation" iconSize="M" />
+export const Accessibility = () => (
+  <>
+    <Machine role="none" iconSize="M" />
+    <Level4 role="img" title="Warning!" iconSize="M" color="negative" />
+  </>
 );
 
-DecorativeIcon.parameters = {
+Accessibility.parameters = {
   docs: {
     description: {
       story:
-        "Icon with decorative meaning using the hidden attribute for accessibility",
-    },
-  },
-};
-
-export const SemanticIcon = () => (
-  <Level4 role="img" title="Warning!" iconSize="M" color="negative" />
-);
-
-SemanticIcon.parameters = {
-  docs: {
-    description: {
-      story:
-        "Icon with semantic meaning using the title and role attributes for accessibility",
+        'Decorative icons should have `role="none"` or equivalent, hiding them from the accessibility tree. <br /> Semantic icons should be given a role and label associated with their meaning, such as `role="img"`',
     },
   },
 };
