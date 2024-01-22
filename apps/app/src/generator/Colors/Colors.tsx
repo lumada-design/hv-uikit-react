@@ -61,8 +61,14 @@ const Colors = (): JSX.Element => {
                   colorChangedHandler("backgroundColor", color)
                 }
                 classes={{
-                  root: css({ width: 24, height: 24 }),
-                  headerColorIconOnly: css({ width: 24, height: 24 }),
+                  root: css({
+                    width: 24,
+                    height: 24,
+                  }),
+                  headerColorIconOnly: css({
+                    width: 24,
+                    height: 24,
+                  }),
                   dropdownRootIconOnly: css({
                     width: 24,
                     height: 24,
@@ -71,6 +77,11 @@ const Colors = (): JSX.Element => {
                     },
                     [`& .${baseDropdownClasses.header}`]: {
                       height: 24,
+                      border: "none",
+                      backgroundColor: "transparent",
+                      "& svg": {
+                        border: `1px solid ${colors?.secondary}`,
+                      },
                     },
                   }),
                 }}
@@ -122,7 +133,10 @@ const Colors = (): JSX.Element => {
                           colorChangedHandler(c, color)
                         }
                         classes={{
-                          root: css({ width: 24, height: 24 }),
+                          root: css({
+                            width: 24,
+                            height: 24,
+                          }),
                           headerColorIconOnly: css({ width: 24, height: 24 }),
                           dropdownRootIconOnly: css({
                             width: 24,
@@ -132,6 +146,11 @@ const Colors = (): JSX.Element => {
                             },
                             [`& .${baseDropdownClasses.header}`]: {
                               height: 24,
+                              border: "none",
+                              backgroundColor: "transparent",
+                              "& svg": {
+                                border: `1px solid ${colors?.secondary}`,
+                              },
                             },
                           }),
                         }}
