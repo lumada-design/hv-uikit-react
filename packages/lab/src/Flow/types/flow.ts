@@ -105,7 +105,7 @@ export interface HvFlowNodeTextParam extends HvFlowNodeSharedParam {
 export interface HvFlowNodeSelectParam extends HvFlowNodeSharedParam {
   type: "select";
   multiple?: boolean;
-  options?: string[];
+  options?: string[] | { id: string; label: string }[]; // v6 - only allow objects
 }
 
 export interface HvFlowNodeSliderParam

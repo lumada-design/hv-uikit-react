@@ -9,11 +9,9 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 
 // Inputs and outputs info
-export const types: Record<
-  string,
-  { inputs: HvFlowNodeInput[]; outputs: HvFlowNodeOutput[] }
-> = {
-  "Type 1": {
+export const types = {
+  type1: {
+    label: "Type 1",
     inputs: [
       {
         label: "Data",
@@ -24,7 +22,8 @@ export const types: Record<
     ],
     outputs: [],
   },
-  "Type 2": {
+  type2: {
+    label: "Type 2",
     outputs: [
       {
         label: "Data 3",
@@ -33,7 +32,8 @@ export const types: Record<
     ],
     inputs: [],
   },
-  "Type 3": {
+  type3: {
+    label: "Type 3",
     outputs: [
       {
         label: "Data 1",
@@ -98,7 +98,10 @@ export const Asset: HvFlowNodeFC<string, NodeData> = (props) => {
           id: "type",
           label: "Type",
           type: "select",
-          options: Object.keys(types),
+          options: Object.entries(types).map(([key, { label }]) => ({
+            id: key,
+            label,
+          })),
         },
       ]}
       inputs={inputs}

@@ -25,7 +25,13 @@ export const Kpi: HvFlowNodeFC = (props) => {
             label: "Aggregation",
             id: "aggregation",
             type: "select",
-            options: ["sum", "distinct"],
+            options: [
+              {
+                id: "sum",
+                label: "Sum",
+              },
+              { id: "distinct", label: "Distinct" },
+            ],
           },
           {
             label: "Measure",
@@ -65,7 +71,6 @@ export const Kpi: HvFlowNodeFC = (props) => {
 Kpi.meta = {
   label: "KPI",
   groupId: "visualization",
-
   data: {
     title: "",
     unit: "",

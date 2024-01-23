@@ -109,7 +109,13 @@ const Content = () => {
         const Dataset = createDataset({
           label: data[i].label,
           description: data[i].label,
-          data: { endpoint: data[i].url, columns: data[i].columns },
+          data: {
+            endpoint: data[i].url,
+            columns: data[i].columns.map((column) => ({
+              id: column,
+              label: column,
+            })),
+          },
         });
 
         nt[key] = Dataset;

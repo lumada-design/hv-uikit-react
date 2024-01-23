@@ -17,10 +17,10 @@ const Select = ({ param, data }: SelectProps) => {
     data[id] ? (Array.isArray(data[id]) ? data[id] : [data[id]]) : undefined
   );
 
-  const onSelectChange: HvDropdownProps["onChange"] = (item) => {
+  const handleChange: HvDropdownProps["onChange"] = (item) => {
     const newOpts = Array.isArray(item)
-      ? item.map((x) => x.label as string)
-      : (item?.label as string) ?? undefined;
+      ? item.map((x) => x.id as string)
+      : (item?.id as string) ?? undefined;
 
     setNodeData((prev) => ({ ...prev, [id]: newOpts }));
     setOpts(
@@ -33,10 +33,17 @@ const Select = ({ param, data }: SelectProps) => {
       className="nodrag" // Prevents dragging within the select field
       disablePortal
       label={label}
-      values={options?.map((o) => {
-        return { id: o, label: o, selected: !!opts?.find((opt) => opt === o) };
+      values={options?.map((option) => {
+        const optionId = typeof option === "string" ? option : option.id;
+        const optionLabel = typeof option === "string" ? option : option.label;
+
+        return {
+          id: optionId,
+          label: optionLabel,
+          selected: !!opts?.find((opt) => opt === optionId),
+        };
       })}
-      onChange={onSelectChange}
+      onChange={handleChange}
       maxHeight={100}
       multiSelect={multiple}
     />

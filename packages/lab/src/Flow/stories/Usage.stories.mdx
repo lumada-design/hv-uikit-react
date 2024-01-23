@@ -158,7 +158,11 @@ export const CustomNode = (props) => {
           id: "myParam",
           label: "Parameter",
           type: "select",
-          options: ["option 1", "option 2", "option 3"],
+          options: [
+            { id: "option1", label: "Option 1" },
+            { id: "option2", label: "Option 2" },
+            { id: "option3", label: "Option 3" },
+          ],
         },
       ]}
       {...props}
@@ -256,7 +260,7 @@ interface HvFlowNodeSelectParam {
   id: string;
   label: string;
   multiple?: boolean;
-  options?: string[];
+  options?: string[] | { id: string; label: string }[];
 }
 
 interface HvFlowNodeSharedParam extends Omit<HvSliderProps, "id" | "label"> {
@@ -531,7 +535,11 @@ export const Asset = (props) => {
             id: "asset",
             label: "Asset",
             type: "select",
-            options: ["Way Side", "Cars"],
+            options: [
+              { id: "asset1", label: "Asset 1" },
+              { id: "asset2", label: "Asset 2" },
+              { id: "asset3", label: "Asset 3" },
+            ],
           },
         ]}
         inputs={[

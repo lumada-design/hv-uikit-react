@@ -57,7 +57,7 @@ const nodes: HvFlowProps["nodes"] = [
     id: "22b4a205d16",
     position: { x: 539, y: 146 },
     data: {
-      type: "Type 1",
+      type: "type1",
       inputs: [
         {
           label: "Data",
@@ -74,7 +74,7 @@ const nodes: HvFlowProps["nodes"] = [
     id: "2b4a205d16b",
     position: { x: 117, y: 147 },
     data: {
-      type: "Type 2",
+      type: "type2",
       outputs: [{ label: "Data 3", provides: "data3" }],
       inputs: [],
     },

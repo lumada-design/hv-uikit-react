@@ -13,7 +13,10 @@ export const Precipitation: HvFlowNodeFC<NodeGroups> = (props) => {
           id: "country",
           label: "Country",
           type: "select",
-          options: Object.keys(data),
+          options: Object.keys(data).map((key) => ({
+            id: key,
+            label: key,
+          })),
         },
       ]}
       outputs={[

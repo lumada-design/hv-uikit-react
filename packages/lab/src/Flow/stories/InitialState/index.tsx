@@ -32,7 +32,7 @@ const initialState = {
     {
       id: "1831327e654",
       position: { x: 1790, y: -76 },
-      data: { dashboardType: "Time Series" },
+      data: { dashboardType: "time-series" },
       type: "dashboard",
     },
     {
