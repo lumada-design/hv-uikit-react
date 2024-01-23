@@ -1,3 +1,5 @@
+import { theme } from "./theme";
+
 const baseline = {
   /* Clears input's clear and reveal buttons from IE */
   "input[type=search]::-ms-clear": { display: "none", width: 0, height: 0 },
@@ -78,13 +80,14 @@ const baseline = {
   },
 
   ".uikit-root-element": {
-    backgroundColor: "var(--uikit-colors-backgroundColor)",
-    accentColor: "var(--uikit-colors-secondary)",
-    color: "var(--uikit-colors-secondary)",
-    fontSize: "var(--uikit-typography-body-fontSize)",
-    fontWeight: "var(--uikit-typography-body-fontWeight)",
-    lineHeight: "var(--uikit-typography-body-lineHeight)",
-    letterSpacing: "var(--uikit-typography-body-letterSpacing)",
+    backgroundColor: theme.colors.backgroundColor,
+    accentColor: theme.colors.secondary,
+    color: theme.colors.secondary,
+    fontSize: theme.typography.body.fontSize,
+    fontWeight: theme.typography.body.fontWeight,
+    lineHeight: theme.typography.body.lineHeight,
+    letterSpacing: theme.typography.body.letterSpacing,
+    fontFamily: theme.fontFamily.body,
   },
 } as const;
 
