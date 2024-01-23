@@ -24,6 +24,7 @@ import { HvSwitchColumnCell } from "./SwitchColumnCell";
 import { HvProgressColumnCell } from "./ProgressColumnCell";
 import { HvDropdownColumnCell } from "./DropdownColumnCell";
 import { hvStringFallback, hvNumberFallback } from "../utils";
+import { HvDropdownProps } from "../../Dropdown";
 
 export function hvTextColumn<
   D extends object = Record<string, unknown>,
@@ -218,7 +219,8 @@ export function hvDropdownColumn<
   id: string | undefined,
   placeholder: string,
   disabledPlaceholder: string,
-  onChange?: (identifier: string, value: HvListValue) => void
+  onChange?: (identifier: string, value: HvListValue) => void,
+  dropdownProps?: HvDropdownProps
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
@@ -233,6 +235,7 @@ export function hvDropdownColumn<
           disabled={disabled}
           dropdownProps={{
             "aria-labelledby": setId(id, column.id) || column.id || id, // TODO - to be reviewed because it doesn't make much sense
+            ...dropdownProps,
           }}
         />
       );

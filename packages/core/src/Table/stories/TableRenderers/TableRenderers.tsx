@@ -1906,6 +1906,11 @@ const DropdownColumnRenderer = () => {
             return newVal;
           });
           setData(newData);
+        },
+        {
+          popperProps: {
+            disablePortal: true,
+          },
         }
       ),
     ];
@@ -2026,6 +2031,11 @@ const columns = useMemo(() => {
           return newVal;
         });
         setData(newData);
+      }
+      {
+        popperProps: {
+          disablePortal: true,
+        },
       }
     ),
   ];
