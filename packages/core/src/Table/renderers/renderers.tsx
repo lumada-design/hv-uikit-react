@@ -223,13 +223,14 @@ export function hvDropdownColumn<
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
       const { value, row, column } = cellProps;
-      const dsbld = value.length < 1;
+      const disabled =
+        !Array.isArray(value) || (Array.isArray(value) && value.length < 1);
       return (
         <HvDropdownColumnCell
           values={value}
-          placeholder={dsbld ? disabledPlaceholder : placeholder}
+          placeholder={disabled ? disabledPlaceholder : placeholder}
           onChange={(val) => onChange?.(row.id, val)}
-          disabled={dsbld}
+          disabled={disabled}
           dropdownProps={{
             "aria-labelledby": setId(id, column.id) || column.id || id, // TODO - to be reviewed because it doesn't make much sense
           }}

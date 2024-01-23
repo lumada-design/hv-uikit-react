@@ -16,7 +16,7 @@ export interface NewRendererEntry {
     status_color?: string;
     status_text_color?: string;
   };
-  severity: {
+  severity?: {
     id?: string;
     label?: string;
     selected?: boolean;

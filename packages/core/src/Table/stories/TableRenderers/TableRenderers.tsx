@@ -27,6 +27,7 @@ import {
   hvProgressColumn,
   theme,
 } from "@hitachivantara/uikit-react-core";
+import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 
 import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
@@ -1893,12 +1894,14 @@ const DropdownColumnRenderer = () => {
           newData = newData.map((val, index) => {
             const newVal = { ...val };
             if (index.toString() === id) {
-              newVal.severity = newVal.severity.map((sev) => {
-                const newSev = { ...sev };
-                newSev.selected = false;
-                if (newSev.id === value.id) newSev.selected = !!value.selected;
-                return newSev;
-              });
+              if (newVal.severity) {
+                newVal.severity = newVal.severity.map((sev) => {
+                  const newSev = { ...sev };
+                  newSev.selected = false;
+                  if (newSev.id === value.id) newSev.selected = value.selected;
+                  return newSev;
+                });
+              }
             }
             return newVal;
           });
@@ -1917,6 +1920,7 @@ const DropdownColumnRenderer = () => {
     getHvPaginationProps,
   } = useHvData<NewRendererEntry, string>(
     {
+      initialState: { pageSize: 5 },
       columns,
       data,
       defaultColumn: {
@@ -1985,6 +1989,14 @@ const DropdownColumnRenderer = () => {
 
 export const DropdownColumnRendererStory: StoryObj = {
   parameters: {
+    eyes: {
+      include: true,
+      runBefore() {
+        fireEvent.click(screen.getByText("Major"));
+
+        return waitFor(() => screen.getByRole("listbox"));
+      },
+    },
     docs: {
       source: {
         code: `
