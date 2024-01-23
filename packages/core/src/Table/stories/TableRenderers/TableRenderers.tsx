@@ -27,7 +27,7 @@ import {
   hvProgressColumn,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { fireEvent, screen, waitFor, within } from "@storybook/testing-library";
+import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 
 import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
@@ -1882,8 +1882,6 @@ const DropdownColumnRenderer = () => {
 
   const [data, setData] = useState(initialData);
 
-  // initialData[0].severity = undefined;
-
   const columns = useMemo(() => {
     return [
       hvDropdownColumn<NewRendererEntry, string>(
@@ -1922,6 +1920,7 @@ const DropdownColumnRenderer = () => {
     getHvPaginationProps,
   } = useHvData<NewRendererEntry, string>(
     {
+      initialState: { pageSize: 5 },
       columns,
       data,
       defaultColumn: {
@@ -1993,16 +1992,7 @@ export const DropdownColumnRendererStory: StoryObj = {
     eyes: {
       include: true,
       runBefore() {
-        // reduce the number of visible rows
-        fireEvent.click(
-          screen.getByRole("combobox", { name: "Select how many to display" })
-        );
-        fireEvent.click(screen.getByRole("option", { name: "5" }));
-
-        const tableElement = screen.getByRole("table", {
-          name: "Severity",
-        });
-        fireEvent.click(within(tableElement).getByText("Major"));
+        fireEvent.click(screen.getByText("Major"));
 
         return waitFor(() => screen.getByRole("listbox"));
       },
