@@ -46,7 +46,7 @@ const DropdownColumnRenderer = () => {
                 newVal.severity = newVal.severity.map((sev) => {
                   const newSev = { ...sev };
                   newSev.selected = false;
-                  if (newSev.id === value.id) newSev.selected = value.selected;
+                  if (newSev.id === value?.id) newSev.selected = value.selected;
                   return newSev;
                 });
               }
@@ -134,8 +134,8 @@ describe("DropDownColumnRenderer", () => {
     expect(screen.getAllByText("Select severity...")).toHaveLength(1);
   });
 
-  /* Test can be uncommented after https://hv-eng.atlassian.net/browse/HVUIKIT-7017 is fixed
   it("should be possible to unselect an element without errors", async () => {
+    expect(screen.getAllByText("Select severity...")).toHaveLength(1);
     await userEvent.click(screen.getByText("Major"));
 
     await userEvent.selectOptions(
@@ -144,8 +144,8 @@ describe("DropDownColumnRenderer", () => {
     );
 
     expect(consoleMock).not.toHaveBeenCalled();
-    expect(screen.getAllByText("Select severity...")).toHaveLength(1);
-  }); */
+    expect(screen.getAllByText("Select severity...")).toHaveLength(2);
+  });
 
   it("should allow to change value", async () => {
     expect(screen.getAllByText("Average")).toHaveLength(1);
