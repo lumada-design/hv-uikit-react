@@ -15,7 +15,7 @@ import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
 import { useFlowContext, useFlowNode } from "../hooks";
 import { HvFlowNodeParam } from "../types";
 import { staticClasses, useClasses } from "./Node.styles";
-import ParamRenderer from "./Parameters/ParamRenderer";
+import { ParamRenderer } from "./Parameters";
 import { HvFlowBaseNode, HvFlowBaseNodeProps } from "./BaseNode";
 
 export { staticClasses as flowNodeClasses };

@@ -69,7 +69,13 @@ const classes = {
 };
 
 const numberOfAssets = 40;
-const options = ["Way Side", "Track", "Segment", "Light Cycle", "Zone"];
+const options = [
+  { id: "way-side", label: "Way Side" },
+  { id: "track", label: "Track" },
+  { id: "segment", label: "Segment" },
+  { id: "light-cycle", label: "Light Cycle" },
+  { id: "zone", label: "Zone" },
+];
 
 const nodeTypes = Object.fromEntries(
   [...Array(numberOfAssets)].map((el, j) => {
@@ -78,7 +84,7 @@ const nodeTypes = Object.fromEntries(
       label: `Asset ${i}`,
       description: `Asset ${i} description`,
       params: [{ id: "asset", label: "Asset", type: "select", options }],
-      data: { asset: options[i % options.length] },
+      data: { asset: options[i % options.length].id },
     });
 
     return [`asset${i}`, NewAsset] as const;

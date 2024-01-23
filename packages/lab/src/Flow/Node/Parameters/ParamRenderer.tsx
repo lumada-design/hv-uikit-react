@@ -14,7 +14,7 @@ const renderers = {
   slider: Slider,
 };
 
-const ParamRenderer = ({ params, data }: ParamRendererProps) => {
+export const ParamRenderer = ({ params, data }: ParamRendererProps) => {
   return (
     <>
       {params.map((param, idx) => {
@@ -26,5 +26,3 @@ const ParamRenderer = ({ params, data }: ParamRendererProps) => {
     </>
   );
 };
-
-export default ParamRenderer;

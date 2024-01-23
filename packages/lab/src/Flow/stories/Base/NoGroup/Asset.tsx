@@ -11,7 +11,10 @@ export const Asset: HvFlowNodeFC = (props) => {
           id: "asset",
           label: "Asset option",
           type: "select",
-          options: ["Option 1", "Option 2"],
+          options: [
+            { id: "option1", label: "Option 1" },
+            { id: "option2", label: "Option 2" },
+          ],
         },
       ]}
       nodeDefaults={{

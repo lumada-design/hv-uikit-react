@@ -16,7 +16,12 @@ export const Table: HvFlowNodeFC = (props) => {
         label: "Territory",
         id: "measure",
         type: "select",
-        options: ["APAC", "EMEA", "NA", "Japan"],
+        options: [
+          { id: "APAC", label: "APAC" },
+          { id: "EMEA", label: "EMEA" },
+          { id: "NA", label: "NA" },
+          { id: "Japan", label: "Japan" },
+        ],
       },
     ];
   }, []);

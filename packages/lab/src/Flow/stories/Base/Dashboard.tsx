@@ -57,7 +57,11 @@ export const Dashboard: HvFlowNodeFC<NodeGroups> = (props) => {
           id: "dashboardType",
           label: "Dashboard",
           type: "select",
-          options: ["Time Series", "KPI", "Table"],
+          options: [
+            { id: "time-series", label: "Time Series" },
+            { id: "kpi", label: "KPI" },
+            { id: "table", label: "Table" },
+          ],
         },
       ]}
       inputs={[
