@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.26.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.25.0...@hitachivantara/uikit-react-lab@5.26.0) (2024-01-23)
+
+### Features
+
+- update handles layout ([2310454](https://github.com/lumada-design/hv-uikit-react/commit/23104549990510c755eecc5282ebbd5c48f585da))
+
 # [5.25.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.24.3...@hitachivantara/uikit-react-lab@5.25.0) (2024-01-20)
 
 ### Features
