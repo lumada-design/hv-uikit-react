@@ -9,6 +9,7 @@ import {
   HvTab,
   HvTabs,
   HvTypography,
+  theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import {
@@ -55,7 +56,10 @@ const Sidebar = () => {
       {open && (
         <div
           className="flex flex-col gap-sm p-sm z-overlay h-screen fixed right-0 bg-atmo1 w-[390px] overflow-y-scroll"
-          style={{ boxShadow: `-4px 0px 10px 1px rgba(125,125,125,0.12)` }}
+          style={{
+            boxShadow: `-4px 0px 10px 1px rgba(125,125,125,0.12)`,
+            backgroundColor: theme.colors.backgroundColor,
+          }}
         >
           <HvSnackbar
             open={copied}
