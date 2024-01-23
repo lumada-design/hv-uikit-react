@@ -1,7 +1,8 @@
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { useTheme } from "nextra-theme-docs";
 
-import { Logo } from "./components/Logo";
+import Logo from "./components/Logo";
+import Pre from "./components/Pre";
 
 const MainContainer = ({ children }: { children: React.ReactNode }) => {
   const { resolvedTheme } = useTheme();
@@ -18,22 +19,23 @@ const MainContainer = ({ children }: { children: React.ReactNode }) => {
 
 // More configs here: https://nextra.site/docs/docs-theme/theme-configuration
 export default {
-  logo: <Logo />,
-  docsRepositoryBase:
-    "https://github.com/lumada-design/hv-uikit-react/tree/master/apps/docs",
   project: {
     link: "https://github.com/lumada-design/hv-uikit-react",
   },
+  docsRepositoryBase:
+    "https://github.com/lumada-design/hv-uikit-react/tree/master/apps/docs",
+  logo: <Logo />,
+  footer: {
+    text: null,
+    component: null,
+  },
+  components: {
+    pre: Pre,
+  },
+  main: ({ children }) => <MainContainer>{children}</MainContainer>,
   useNextSeoProps() {
     return {
       titleTemplate: "%s – NEXT UI",
     };
   },
-  footer: {
-    text: null,
-    component: null,
-  },
-  main: ({ children }) => <MainContainer>{children}</MainContainer>,
-  primaryHue: 212,
-  primarySaturation: 70,
 };

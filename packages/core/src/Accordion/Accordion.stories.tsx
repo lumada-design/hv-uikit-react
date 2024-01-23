@@ -1,18 +1,14 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
 import { css, CSSInterpolation } from "@emotion/css";
 
 import {
-  Breakpoint,
   HvAccordionProps,
   HvAccordion,
   HvBox,
-  HvButton,
-  HvInput,
   HvListContainer,
   HvListItem,
-  HvSimpleGrid,
   HvTable,
   HvTableBody,
   HvTableCell,
@@ -24,8 +20,13 @@ import {
   useHvTableSticky,
 } from "@hitachivantara/uikit-react-core";
 
-import { Disabled as DisabledStory } from "samples/Accordion/Disabled";
+import {
+  Disabled as DisabledStory,
+  Controlled as ControlledStory,
+} from "samples/Accordion";
 import DisabledRaw from "samples/Accordion/Disabled?raw";
+
+import ControlledRaw from "samples/Accordion/Controlled?raw";
 
 import FacetSearchRaw from "./stories/FacetSearchSample?raw";
 import { FacetSearch } from "./stories/FacetSearchSample";
@@ -86,176 +87,19 @@ export const Disabled: StoryObj = {
   parameters: {
     docs: {
       source: { code: DisabledRaw },
-      description: {
-        story:
-          "A Sample of an example implementation of the Facet Search design pattern.",
-      },
     },
   },
   render: () => <DisabledStory />,
 };
 
-// export const Disabled: StoryObj<HvAccordionProps> = {
-//   render: () => {
-//     return (
-//       <HvBox sx={{ maxWidth: 300 }}>
-//         <HvAccordion label="Analytics" headingLevel={3} disabled>
-//           <HvListContainer
-//             className={css(styles.listContainer)}
-//             interactive
-//             condensed
-//           >
-//             <HvListItem>Views</HvListItem>
-//             <HvListItem>Parameters</HvListItem>
-//           </HvListContainer>
-//         </HvAccordion>
-//         <HvAccordion label="System" headingLevel={3}>
-//           <HvListContainer
-//             className={css(styles.listContainer)}
-//             interactive
-//             condensed
-//           >
-//             <HvListItem>Settings</HvListItem>
-//             <HvListItem>Network</HvListItem>
-//           </HvListContainer>
-//         </HvAccordion>
-//         <HvAccordion label="Data" headingLevel={3} disabled>
-//           <HvListContainer
-//             className={css(styles.listContainer)}
-//             interactive
-//             condensed
-//           >
-//             <HvListItem>Storage</HvListItem>
-//             <HvListItem>Memory</HvListItem>
-//           </HvListContainer>
-//         </HvAccordion>
-//       </HvBox>
-//     );
-//   },
-// };
-
-export const Controlled: StoryObj<HvAccordionProps> = {
+export const Controlled: StoryObj = {
   parameters: {
     eyes: { include: false },
+    docs: {
+      source: { code: ControlledRaw },
+    },
   },
-  render: () => {
-    const [expandedState, setExpandedState] = useState({
-      personalInformation: true,
-      billingAddress: false,
-      shippingAddress: false,
-    });
-    const handleToggle = (key: keyof typeof expandedState) => {
-      const newValue = { ...expandedState };
-      newValue[key] = !newValue[key];
-      setExpandedState(newValue);
-    };
-    const handleAll = (option: boolean) => {
-      setExpandedState({
-        personalInformation: option,
-        billingAddress: option,
-        shippingAddress: option,
-      });
-    };
-
-    const brk: Breakpoint[] = [
-      {
-        cols: 5,
-        minWidth: 680,
-        spacing: "sm",
-      },
-      {
-        cols: 3,
-        minWidth: 500,
-        spacing: "sm",
-      },
-      {
-        cols: 2,
-        minWidth: 450,
-        spacing: "sm",
-      },
-      {
-        cols: 1,
-        minWidth: 100,
-        spacing: "sm",
-      },
-    ];
-
-    return (
-      <>
-        <HvSimpleGrid spacing="sm" style={{ maxWidth: 1050 }} breakpoints={brk}>
-          <HvButton
-            variant="secondarySubtle"
-            onClick={() => handleToggle("personalInformation")}
-          >
-            Personal Information
-          </HvButton>
-          <HvButton
-            variant="secondarySubtle"
-            onClick={() => handleToggle("billingAddress")}
-          >
-            Billing Address
-          </HvButton>
-          <HvButton
-            variant="secondarySubtle"
-            onClick={() => handleToggle("shippingAddress")}
-          >
-            Shipping Address
-          </HvButton>
-          <HvButton variant="secondarySubtle" onClick={() => handleAll(false)}>
-            Close all
-          </HvButton>
-          <HvButton variant="secondarySubtle" onClick={() => handleAll(true)}>
-            Expand all
-          </HvButton>
-        </HvSimpleGrid>
-        <HvBox sx={{ maxWidth: 300 }}>
-          <HvAccordion
-            label="Personal Information"
-            onChange={() => handleToggle("personalInformation")}
-            expanded={expandedState.personalInformation}
-          >
-            <div className={css(styles.formContainer)}>
-              <HvInput label="Name" placeholder="Insert first name" required />
-              <HvInput label="Email" placeholder="Insert your email" required />
-              <HvInput label="Phone" placeholder="Insert your phone number" />
-              <HvInput label="Extension" placeholder="Insert phone extension" />
-              <HvInput label="Country" placeholder="Insert country name" />
-              <HvInput
-                label="City/Province"
-                placeholder="Insert province name"
-              />
-            </div>
-          </HvAccordion>
-          <HvAccordion
-            label="Billing Address"
-            onChange={() => handleToggle("billingAddress")}
-            expanded={expandedState.billingAddress}
-          >
-            <div className={css(styles.formContainer)}>
-              <HvInput label="Address 1" placeholder="Insert first name" />
-              <HvInput label="Address 2" placeholder="Insert address" />
-              <HvInput label="City" placeholder="Insert city name" />
-              <HvInput label="State" placeholder="Insert state" />
-              <HvInput label="Zip Code" placeholder="Insert code" />
-            </div>
-          </HvAccordion>
-          <HvAccordion
-            label="Shipping Address"
-            onChange={() => handleToggle("shippingAddress")}
-            expanded={expandedState.shippingAddress}
-          >
-            <div className={css(styles.formContainer)}>
-              <HvInput label="Address 1" placeholder="Insert first name" />
-              <HvInput label="Address 2" placeholder="Insert address" />
-              <HvInput label="City" placeholder="Insert city name" />
-              <HvInput label="State" placeholder="Insert state" />
-              <HvInput label="Zip Code" placeholder="Insert code" />
-            </div>
-          </HvAccordion>
-        </HvBox>
-      </>
-    );
-  },
+  render: () => <ControlledStory />,
 };
 
 interface SampleDataProps {

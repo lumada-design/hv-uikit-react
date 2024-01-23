@@ -1,6 +1,7 @@
 {
   "name": "uikit-docs",
   "private": true,
+  "description": "NEXT UI documentation website.",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -8,23 +9,32 @@
   },
   "dependencies": {
     "@emotion/css": "^11.11.0",
+    "@emotion/react": "^11.11.3",
     "@hitachivantara/uikit-react-code-editor": "*",
     "@hitachivantara/uikit-react-core": "*",
     "@hitachivantara/uikit-react-icons": "*",
     "@hitachivantara/uikit-react-lab": "*",
     "@hitachivantara/uikit-react-viz": "*",
     "@hitachivantara/uikit-styles": "*",
+    "@hitachivantara/uikit-uno-preset": "*",
+    "@mui/material": "^5.15.6",
+    "@unocss/webpack": "^0.58.3",
     "next": "^14.0.4",
     "nextra": "^2.13.2",
     "nextra-theme-docs": "^2.13.2",
+    "prism-react-renderer": "^2.3.1",
     "react": "^18.2.0",
     "react-docgen": "^7.0.3",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-live-runner": "^1.0.5",
+    "react-runner": "^1.0.3",
+    "rehype-mdx-code-props": "^2.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "string-replace-loader": "^3.1.0",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "unocss": "^0.58.3"
   }
 }

@@ -1,7 +1,9 @@
 import { useData } from "nextra/data";
 
-export const Demo = () => {
-  const { demo } = useData();
+import CodeBlock from "./CodeBlock";
 
-  return demo;
+export const Demo = ({ name }: { name: string }) => {
+  const { samples } = useData();
+
+  return <CodeBlock live>{samples[name]}</CodeBlock>;
 };

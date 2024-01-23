@@ -6,6 +6,7 @@ import {
   HvTableHead,
   HvTableRow,
 } from "@hitachivantara/uikit-react-core";
+
 import { PropDescriptor } from "react-docgen/dist/Documentation";
 
 export const PropsTable = ({ props }: { props: PropDescriptor }) => {
@@ -18,8 +19,6 @@ export const PropsTable = ({ props }: { props: PropDescriptor }) => {
       style: { minWidth: 100 },
     },
   ];
-
-  console.log(props);
 
   return (
     <HvTableContainer>

@@ -1,27 +1,26 @@
-import { promises as fs } from "fs";
-
 import { cardClasses } from "@hitachivantara/uikit-react-core";
 
-import { Layout } from "../../components/Layout"
+import { Layout,  Demo } from "../../components"
 
-import { AllComponents } from "../../../../samples/Card/AllComponents"  
-
-import { getComponentData } from "../../utils.tsx"
+import { getComponentData, getComponentSamples } from "apps/docs/utils";
 
 export const getStaticProps = async ({ params }) => {
 
     const meta = await getComponentData("Card", cardClasses)
 
-    return fs.readFile(`./../../samples/Card/AllComponents.tsx`, "utf8").then((values) => {
-        return {
-            props: {
-                ssg: {
-                    meta: meta,
-                    demo: values
-                },
-            },
-        }
-    });
+return getComponentSamples("Card",[]).then((samples) => {
+
+    console.log(samples)
+    return {
+      props: {
+        ssg: {
+          meta: meta,
+          samples: samples,
+        },
+      },
+    }
+
+});
 
 }
 
@@ -29,6 +28,6 @@ export const getStaticProps = async ({ params }) => {
 
 ### All Components
 
-<AllComponents />
+{/* <Demo name="AllComponets" /> */}
 
 </Layout>

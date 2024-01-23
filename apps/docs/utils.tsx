@@ -44,3 +44,23 @@ export const getComponentData = async (
     classes,
   } as Meta;
 };
+
+export const getComponentSamples = async (
+  componentName: string,
+  sampleNames: string[]
+) => {
+  const teste = {};
+  await Promise.all(
+    sampleNames.map(async (sample) => {
+      const res = await fs.readFile(
+        `./../../samples/${componentName}/${sample}.tsx`,
+        "utf8"
+      );
+      teste[sample] = `${res}\nexport default function App() {
+          return <${sample} />;
+      }`;
+    })
+  );
+
+  return teste;
+};

@@ -1,28 +1,37 @@
-import { promises as fs } from "fs";
+import { tabClasses } from "@hitachivantara/uikit-react-core";
+
+import { Demo } from "../../components/Demo"
 
 import { Layout } from "../../components/Layout"
 
-import { getComponentData } from "../../utils.tsx"
-
-import { tabClasses } from "@hitachivantara/uikit-react-core";
+import { getComponentData, getComponentSamples } from "apps/docs/utils";
 
 export const getStaticProps = async ({ params }) => {
 
     const meta = await getComponentData("Tabs", tabClasses)
 
-    return fs.readFile(`./../../samples/Tabs/FullWidth.tsx`, "utf8").then((values) => {
-        return {
-            props: {
-                ssg: {
-                    meta: meta,
-                    demo: values
-                },
-            },
-        }
-    });
+    return getComponentSamples("Tabs",["FullWidth", "ContentChanging"]).then((samples) => {
+    return {
+      props: {
+        ssg: {
+          meta: meta,
+          samples: samples,
+        },
+      },
+    }
+
+});
 
 }
 
 <Layout>
+
+### Full Width
+
+<Demo name="FullWidth" />
+
+### Content Changing
+
+<Demo name="ContentChanging" />
 
 </Layout>

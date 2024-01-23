@@ -1,48 +1,45 @@
-import { promises as fs } from "fs";
-
 import { buttonClasses } from "@hitachivantara/uikit-react-core";
 
-import { Layout } from "../../components/Layout"
+import { Layout,  Demo } from "../../components"
 
-import { Demo } from "../../components/Demo"
-
-import { Variants, Icons } from "../../../../samples/Button"
-
-import { getComponentData } from "apps/docs/utils";
+import { getComponentData, getComponentSamples } from "apps/docs/utils";
 
 export const getStaticProps = async ({ params }) => {
 
 const meta = await getComponentData("Accordion", buttonClasses)
 
-return fs.readFile(`./../../samples/Button/Variants.tsx`, "utf8").then((values) => {
-return {
-props: {
-ssg: {
-meta: meta,
-demo: values
-},
-},
-}
+return getComponentSamples("Button",["Variants", "Icons"]).then((samples) => {
+
+    return {
+      props: {
+        ssg: {
+          meta: meta,
+          samples: samples,
+        },
+      },
+    }
+
 });
 
 }
 
 <Layout>
 
+### Usage
+
 ```jsx live
 <>
-  <Button>Primary</Button>
-  <Button variant="secondary">Secondary</Button>
+  <HvButton variant="primarySubtle">Primary</HvButton>
+  <HvButton variant="secondarySubtle">Secondary</HvButton>
 </>
 ```
 
 ### Variants
 
-<Variants />
-<Demo />
+<Demo name="Variants" />
 
 ### Icons
 
-<Icons />
+<Demo name="Icons" />
 
 </Layout>

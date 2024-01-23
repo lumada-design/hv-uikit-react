@@ -1,6 +1,6 @@
 import { useTheme } from "nextra-theme-docs";
 
-export const Logo = () => {
+const Logo = () => {
   const { resolvedTheme } = useTheme();
   const color = resolvedTheme === "dark" ? "#FFF" : "#000";
 
@@ -39,3 +39,5 @@ export const Logo = () => {
     </svg>
   );
 };
+
+export default Logo;
