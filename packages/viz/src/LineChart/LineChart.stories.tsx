@@ -798,9 +798,28 @@ export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
         groupBy="Month"
         measures="Sales Target"
         onOptionChange={(option) => {
+          console.log(option);
           if (Array.isArray(option.yAxis) && option.yAxis.length === 1) {
             option.yAxis = [{ ...option.yAxis[0], splitNumber: 8 }];
           }
+          option.series[0].markLine = {
+            data: [{ yAxis: 3000, name: "Average" }],
+            symbol: "none",
+            itemStyle: {
+              color: "#F27C27",
+            },
+          };
+          option.series[0].smooth = true;
+          option.series[0].lineStyle = {
+            color: "#999999",
+          };
+          option.series[0].itemStyle = {
+            color(params) {
+              return params.data[1] > 3000 ? "#00CC00" : "#CC0000";
+            },
+          };
+
+          option.series[0].symbolSize = 8;
 
           return option;
         }}

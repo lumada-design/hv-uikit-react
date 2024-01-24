@@ -9,6 +9,7 @@ import {
   LegendComponent,
   DataZoomSliderComponent,
   DataZoomInsideComponent,
+  MarkLineComponent,
 } from "echarts/components";
 import ReactECharts from "echarts-for-react/lib/core";
 
@@ -41,6 +42,7 @@ echarts.use([
   LegendComponent,
   DataZoomSliderComponent,
   DataZoomInsideComponent,
+  MarkLineComponent,
 ]);
 
 export interface HvBarChartClasses extends HvChartTooltipClasses {}
