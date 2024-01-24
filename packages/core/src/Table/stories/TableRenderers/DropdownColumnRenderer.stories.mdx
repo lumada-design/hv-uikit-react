@@ -13,7 +13,8 @@ Parameters:
 - `id: string`: The dropdown id.
 - `placeholder: string`: The dropdown placeholder when nothing is selected.
 - `disabledPlaceholder: string`: The dropdown placeholder when is disabled.
-- `onChange: (identifier: string, value: ListValueProp) => void`: The function called when the dropdown value is changed.
+- `onChange?: (identifier: string, value: ListValueProp) => void`: The function called when the dropdown value is changed.
+- `dropdownProps?: HvDropdownProps;`: Extra props to be passed onto the dropdown.
 
 Output:
 
