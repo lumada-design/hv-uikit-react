@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.44.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.7...@hitachivantara/uikit-react-core@5.44.8) (2024-01-24)
+
+### Bug Fixes
+
+- **dropdownRenderer:** unselecting causing error log ([#3988](https://github.com/lumada-design/hv-uikit-react/issues/3988)) ([ee2fa8b](https://github.com/lumada-design/hv-uikit-react/commit/ee2fa8ba937aec11adea3c5bc2cffdbd8f2c96bd))
+- **Table:** dropdown renderer crashing & cut-off ([#3978](https://github.com/lumada-design/hv-uikit-react/issues/3978)) ([53693d6](https://github.com/lumada-design/hv-uikit-react/commit/53693d68761cbf34a25d486f69fa130f54ba0a63))
+
 ## 5.44.7 (2024-01-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
