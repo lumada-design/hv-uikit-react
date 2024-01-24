@@ -9,6 +9,7 @@ import {
   useReactFlow,
   useNodeId,
 } from "reactflow";
+import { shallow } from "zustand/shallow";
 
 export function useFlowNode<T extends Node = Node>(id: string) {
   const nodeSelector = useCallback(
@@ -16,7 +17,7 @@ export function useFlowNode<T extends Node = Node>(id: string) {
       state.getNodes().find((n: Node): n is T => n.id === id),
     [id]
   );
-  return useStore<T | undefined>(nodeSelector);
+  return useStore<T | undefined>(nodeSelector, shallow);
 }
 
 export function useFlowNodeInputEdges(id: string) {
@@ -24,7 +25,7 @@ export function useFlowNodeInputEdges(id: string) {
     (state: ReactFlowState) => state.edges.filter((e: Edge) => e.target === id),
     [id]
   );
-  return useStore(inputEdgesSelector);
+  return useStore(inputEdgesSelector, shallow);
 }
 
 export function useFlowNodeOutputEdges(id: string) {
@@ -32,7 +33,7 @@ export function useFlowNodeOutputEdges(id: string) {
     (state: ReactFlowState) => state.edges.filter((e: Edge) => e.source === id),
     [id]
   );
-  return useStore(outputEdgesSelector);
+  return useStore(outputEdgesSelector, shallow);
 }
 
 export function useFlowNodeEdges(id: string) {
@@ -41,7 +42,7 @@ export function useFlowNodeEdges(id: string) {
       state.edges.filter((e: Edge) => e.source === id || e.target === id),
     [id]
   );
-  return useStore(edgesSelector);
+  return useStore(edgesSelector, shallow);
 }
 
 export function useFlowNodeParents(id: string) {
@@ -54,7 +55,7 @@ export function useFlowNodeParents(id: string) {
     },
     [inputEdges]
   );
-  return useStore(parentNodesSelector);
+  return useStore(parentNodesSelector, shallow);
 }
 
 export function useFlowInputNodes<T = any>(id: string) {
