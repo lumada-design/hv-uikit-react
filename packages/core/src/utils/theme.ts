@@ -1,24 +1,12 @@
-import { CSSProperties } from "react";
-
 import {
   themes,
   HvThemeColorModeStructure,
   HvThemeStructure,
-  theme,
 } from "@hitachivantara/uikit-styles";
 
 import { HvTheme, HvCreateThemeProps } from "../types/theme";
 
 import { getElementById } from "./document";
-
-/**
- * Sets the element style properties.
- */
-const setElementStyle = (element: HTMLElement, style: CSSProperties) => {
-  Object.entries(style).forEach(([property, value]) => {
-    element.style[property] = value;
-  });
-};
 
 /**
  * Sets the element attributes and style for a theme and color mode.
@@ -37,18 +25,9 @@ export const setElementAttrs = (
     element.setAttribute(`data-theme`, themeName);
     element.setAttribute(`data-color-mode`, modeName);
 
-    // Set default properties for all components to inherit
-    setElementStyle(element, {
-      colorScheme,
-      backgroundColor: theme.colors.backgroundColor,
-      accentColor: theme.colors.secondary,
-      color: theme.colors.secondary,
-      fontSize: theme.typography.body.fontSize,
-      fontWeight: theme.typography.body.fontWeight,
-      lineHeight: theme.typography.body.lineHeight,
-      letterSpacing: theme.typography.body.letterSpacing,
-      fontFamily: theme.fontFamily.body,
-    });
+    // set default styles for child components to inherit
+    element.classList.add(`uikit-root-element`);
+    element.style.colorScheme = colorScheme;
   }
 };
 
