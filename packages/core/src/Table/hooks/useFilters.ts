@@ -1,4 +1,4 @@
-import { useFilters as useHvFilters, Hooks } from "react-table";
+import { useFilters, Hooks } from "react-table";
 
 export type UseFiltersProps = (<D extends object = Record<string, unknown>>(
   hooks: Hooks<D>
@@ -6,6 +6,7 @@ export type UseFiltersProps = (<D extends object = Record<string, unknown>>(
 
 // #endregion ##### TYPES #####
 
+const useHvFilters = useFilters.bind({});
 (useHvFilters.pluginName as string) = "useHvFilters";
 
 export default useHvFilters as UseFiltersProps;

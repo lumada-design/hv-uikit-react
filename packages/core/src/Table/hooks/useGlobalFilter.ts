@@ -1,4 +1,4 @@
-import { useGlobalFilter as useHvGlobalFilter, Hooks } from "react-table";
+import { useGlobalFilter, Hooks } from "react-table";
 
 export type UseGlobalFilterProps = (<
   D extends object = Record<string, unknown>
@@ -8,6 +8,7 @@ export type UseGlobalFilterProps = (<
 
 // #endregion ##### TYPES #####
 
+const useHvGlobalFilter = useGlobalFilter.bind({});
 (useHvGlobalFilter.pluginName as string) = "useHvGlobalFilter";
 
 export default useHvGlobalFilter as UseGlobalFilterProps;
