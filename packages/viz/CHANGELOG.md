@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.6.47](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.6.46...@hitachivantara/uikit-react-viz@5.6.47) (2024-01-25)
+
+### Bug Fixes
+
+- ensure the charts change when the theme changes ([e061589](https://github.com/lumada-design/hv-uikit-react/commit/e0615896bf9151a4eb8fec578f8c30eabd0e4b8d))
+
 ## [5.6.46](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.6.45...@hitachivantara/uikit-react-viz@5.6.46) (2024-01-24)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz

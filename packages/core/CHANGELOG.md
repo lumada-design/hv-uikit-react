@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.45.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.8...@hitachivantara/uikit-react-core@5.45.0) (2024-01-25)
+
+### Features
+
+- apply root element styles via class for easier overrides ([#3983](https://github.com/lumada-design/hv-uikit-react/issues/3983)) ([1b8eb7f](https://github.com/lumada-design/hv-uikit-react/commit/1b8eb7f78fa70e1fd007c512c03dd3cf63c59165))
+
 ## [5.44.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.7...@hitachivantara/uikit-react-core@5.44.8) (2024-01-24)
 
 ### Bug Fixes
