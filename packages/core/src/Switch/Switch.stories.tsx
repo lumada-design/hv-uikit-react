@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import styled from "@emotion/styled";
-import { CSSInterpolation, css } from "@emotion/css";
+import { LabelHTMLAttributes, useState } from "react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
+import { css } from "@emotion/css";
 import {
   HvBaseSwitch,
   HvButton,
@@ -14,21 +13,24 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-const StyledDecorator = styled("div")({
-  display: "flex",
-  alignItems: "center",
-  flexWrap: "wrap",
-  "& > *": {
-    margin: "0 10px 5px 0",
-  },
-});
+const decorator: Decorator = (Story) => (
+  <div
+    className={css({
+      display: "flex",
+      alignItems: "center",
+      flexWrap: "wrap",
+      gap: theme.space.md,
+    })}
+  >
+    {Story()}
+  </div>
+);
 
 const meta: Meta<typeof HvSwitch> = {
   title: "Components/Switch",
   component: HvSwitch,
   // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvBaseSwitch },
-  decorators: [(Story) => <StyledDecorator>{Story()}</StyledDecorator>],
 };
 
 export default meta;
@@ -40,7 +42,7 @@ export const Main: StoryObj<HvSwitchProps> = {
     required: false,
     readOnly: false,
     disabled: false,
-    checked: false,
+    checked: undefined,
     defaultChecked: false,
   },
   argTypes: {
@@ -55,36 +57,31 @@ export const Main: StoryObj<HvSwitchProps> = {
 };
 
 export const Variants: StoryObj<HvSwitchProps> = {
+  decorators: [decorator],
   render: () => {
-    const styles: { root: CSSInterpolation; group: CSSInterpolation } = {
-      root: {
-        display: "flex",
-        justifyContent: "space-around",
-        flexWrap: "wrap",
-        gap: 40,
-      },
-      group: {
+    const styles = {
+      group: css({
         display: "flex",
         flexDirection: "row",
         alignItems: "flex-end",
-      },
+      }),
     };
 
     return (
-      <div className={css(styles.root)}>
-        <div className={css(styles.group)}>
+      <>
+        <div className={styles.group}>
           <HvSwitch required aria-label="Engine 1" label="Required" />
           <HvSwitch defaultChecked required aria-label="Engine 2" />
         </div>
-        <div className={css(styles.group)}>
+        <div className={styles.group}>
           <HvSwitch disabled aria-label="Engine 1" label="Disabled" />
           <HvSwitch defaultChecked disabled aria-label="Engine 2" />
         </div>
-        <div className={css(styles.group)}>
+        <div className={styles.group}>
           <HvSwitch readOnly aria-label="Engine 1" label="Readonly" />
           <HvSwitch defaultChecked readOnly aria-label="Engine 2" />
         </div>
-        <div className={css(styles.group)}>
+        <div className={styles.group}>
           <HvSwitch
             status="invalid"
             statusMessage="On no!"
@@ -98,7 +95,7 @@ export const Variants: StoryObj<HvSwitchProps> = {
             aria-label="Engine 2"
           />
         </div>
-      </div>
+      </>
     );
   },
 };
@@ -110,19 +107,18 @@ export const Controlled: StoryObj<HvSwitchProps> = {
     },
     eyes: { include: false },
   },
+  decorators: [decorator],
   render: () => {
-    const [state, setState] = useState<boolean>(false);
+    const [state, setState] = useState(false);
 
     return (
       <>
         <HvButton onClick={() => setState((prev) => !prev)}>Toggle</HvButton>
-        <p />
         <HvSwitch
           checked={state}
           aria-label="Engine Control"
           onChange={(_evt, newChecked) => setState(newChecked)}
         />
-        <p />
         <HvTypography
           style={{ color: state ? theme.colors.positive : theme.colors.sema14 }}
         >
@@ -133,83 +129,46 @@ export const Controlled: StoryObj<HvSwitchProps> = {
   },
 };
 
-const StyledControlContainer = styled("div")({
-  width: "100%",
-  maxWidth: 400,
-});
-
-const StyledLabelContainer = styled("div")({
-  display: "flex",
-  alignItems: "flex-start",
-});
-
-const StyledLabel = styled(HvLabel)({
-  paddingBottom: "6px",
-});
-
-const StyledSwitchContainer = styled("div")({
-  width: "100%",
-  display: "flex",
-  alignItems: "center",
-
-  "& > *": {
-    marginLeft: theme.space.xs,
-  },
-  "& > *:first-of-type": {
-    marginLeft: 0,
-  },
-});
-
 export const WithLabels: StoryObj<HvSwitchProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          "Sample showing usage of auxiliary labels to denote switch state. The labels can also be clicked to trigger the switch",
+          "Sample showing usage of custom switch labels and description, built using `HvBaseSwitch`. The labels can also be clicked to trigger the switch",
       },
     },
     eyes: { include: false },
   },
   render: () => {
-    const [deactivatedSwitch, setActivatedSwitch] = useState(false);
-    const [state, setState] = useState(false);
-
-    const SwitchLabel = ({ label }: { label: string }) => {
-      const clickCallback = deactivatedSwitch
-        ? undefined
-        : () => setState(!state);
-      const style = deactivatedSwitch ? undefined : { cursor: "pointer" };
-      return (
-        <HvTypography aria-hidden="true" style={style} onClick={clickCallback}>
-          {label}
-        </HvTypography>
-      );
-    };
+    const Label: React.FC<LabelHTMLAttributes<HTMLLabelElement>> = (props) => (
+      // eslint-disable-next-line jsx-a11y/label-has-associated-control
+      <label style={{ cursor: "pointer" }} {...props} />
+    );
+    Label.displayName = "Label";
 
     return (
-      <StyledControlContainer>
-        <StyledLabelContainer>
-          <StyledLabel label="Toggle switch" htmlFor="engine-control-input" />
-          <HvInfoMessage id="engine-control-description">
-            {deactivatedSwitch ? "Switch is inactive" : "Switch is active"}
-          </HvInfoMessage>
-        </StyledLabelContainer>
-        <StyledSwitchContainer>
-          <HvButton onClick={() => setActivatedSwitch((prev) => !prev)}>
-            Toggle
-          </HvButton>
-
-          <SwitchLabel label="Off" />
-          <HvSwitch
-            id="engine-control"
-            disabled={deactivatedSwitch}
-            checked={state}
-            aria-label="Engine Control"
-            onChange={(_evt, newChecked) => setState(newChecked)}
+      <>
+        <div className={css({ display: "flex", alignItems: "flex-start" })}>
+          <HvLabel
+            id="switch-label"
+            label="Engine Control"
+            htmlFor="switch-input"
           />
-          <SwitchLabel label="On" />
-        </StyledSwitchContainer>
-      </StyledControlContainer>
+          <HvInfoMessage id="switch-description">
+            This is a custom description
+          </HvInfoMessage>
+        </div>
+        <div className={css({ display: "flex", alignItems: "center", gap: 8 })}>
+          <Label htmlFor="switch-input">Off</Label>
+          <HvBaseSwitch
+            id="switch-input"
+            aria-labelledby="switch-label"
+            aria-describedby="switch-description"
+            defaultChecked
+          />
+          <Label htmlFor="switch-input">On</Label>
+        </div>
+      </>
     );
   },
 };
