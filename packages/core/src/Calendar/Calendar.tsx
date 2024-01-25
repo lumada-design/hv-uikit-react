@@ -37,6 +37,10 @@ export interface HvCalendarProps {
    */
   value?: DateRangeProp | Date;
   /**
+   * Controls the visibility of time selector
+   */
+  showTime?: boolean;
+  /**
    * Controls the visible month of the Calendar
    */
   visibleMonth?: number;
@@ -114,6 +118,7 @@ export const HvCalendar = (props: HvCalendarProps) => {
     id,
     locale = "en-US",
     value,
+    showTime = true,
     visibleMonth,
     visibleYear,
     rightVisibleMonth,
@@ -147,6 +152,8 @@ export const HvCalendar = (props: HvCalendarProps) => {
       visibleYear={visibleYear}
       minimumDate={minimumDate}
       maximumDate={maximumDate}
+      showTime={showTime}
+      rangeSide="start"
       onChange={onChange}
       onInputChange={(evt, date) =>
         onInputChange && onInputChange(evt, date, "left")
@@ -168,6 +175,8 @@ export const HvCalendar = (props: HvCalendarProps) => {
         visibleYear={visibleYear}
         minimumDate={minimumDate}
         maximumDate={maximumDate}
+        showTime={showTime}
+        rangeSide="start"
         onChange={onChange}
         onInputChange={(evt, date) =>
           onInputChange && onInputChange(evt, date, "left")
@@ -188,6 +197,8 @@ export const HvCalendar = (props: HvCalendarProps) => {
         visibleYear={rightVisibleYear}
         minimumDate={minimumDate}
         maximumDate={maximumDate}
+        showTime={showTime}
+        rangeSide="end"
         onChange={onChange}
         onInputChange={(evt, date) =>
           onInputChange && onInputChange(evt, date, "right")

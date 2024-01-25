@@ -10,6 +10,9 @@ export const { staticClasses, useClasses } = createClasses("HvCalendarHeader", {
       paddingBottom: 0,
     },
   },
+  timeSelector: {
+    marginTop: theme.space.xs,
+  },
   invalid: {},
   headerDayOfWeek: {
     color: theme.colors.secondary_80,

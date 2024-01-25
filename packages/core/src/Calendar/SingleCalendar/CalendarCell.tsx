@@ -9,22 +9,18 @@ import {
   isSameMonth,
   dateInProvidedValueRange,
   checkIfDateIsDisabled,
-  isDateRangeProp,
+  isRange,
 } from "../utils";
 import { DateRangeProp } from "../types";
 import CalendarModel from "../model";
 
-import { staticClasses, useClasses } from "./CalendarCell.styles";
-
-export { staticClasses as calendarCellClasses };
+import { useClasses } from "./CalendarCell.styles";
 
 export type HvCalendarCellClasses = ExtractNames<typeof useClasses>;
 
 export const HvCalendarCell = (props: HvCalendarCellProps) => {
   const {
     classes: classesProp,
-    onChange,
-    onKeyDown,
     calendarValue,
     firstDayOfCurrentMonth,
     value,
@@ -34,6 +30,8 @@ export const HvCalendarCell = (props: HvCalendarCellProps) => {
     minimumDate,
     maximumDate,
     rangeMode = false,
+    onChange,
+    onKeyDown,
     ...others
   } = useDefaultProps("HvCalendarCell", props);
 
@@ -41,12 +39,10 @@ export const HvCalendarCell = (props: HvCalendarCellProps) => {
 
   const buttonEl = useRef<HTMLButtonElement>(null);
 
-  const startDate = isDateRangeProp(calendarValue)
+  const startDate = isRange(calendarValue)
     ? calendarValue.startDate
     : undefined;
-  const endDate = isDateRangeProp(calendarValue)
-    ? calendarValue.endDate
-    : undefined;
+  const endDate = isRange(calendarValue) ? calendarValue.endDate : undefined;
   const isCellToday = isSameDay(value, today);
   const isCellSelected = isSameDay(calendarValue, value);
   const inMonth = isSameMonth(value, firstDayOfCurrentMonth);
@@ -131,7 +127,7 @@ export interface HvCalendarCellProps {
   /**
    * The text to be shown on the main part of the header.
    */
-  calendarValue?: string | Date | DateRangeProp;
+  calendarValue?: Date | DateRangeProp;
   /**
    * The text to be shown on the main part of the header.
    */

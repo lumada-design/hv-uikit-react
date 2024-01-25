@@ -31,13 +31,15 @@ export const HvSingleCalendar = ({
   visibleYear,
   minimumDate,
   maximumDate,
+  showEndDate,
+  showDayOfWeek,
+  showTime = false,
+  rangeSide = "start",
+  invalidDateLabel,
+  children,
   onChange,
   onInputChange,
   onVisibleDateChange,
-  showEndDate,
-  showDayOfWeek,
-  invalidDateLabel,
-  children,
   ...others
 }: HvSingleCalendarProps) => {
   // TODO: refactor this out
@@ -63,11 +65,6 @@ export const HvSingleCalendar = ({
   const handleChange = (event: any, date: Date | DateRangeProp) => {
     event?.preventDefault();
     onChange?.(event, date);
-  };
-
-  const handleInputChange = (event: any, date: any) => {
-    event?.preventDefault();
-    onInputChange?.(event, date);
   };
 
   const getNavChild = (event: KeyboardEvent, siblings: any, i: number) => {
@@ -119,8 +116,6 @@ export const HvSingleCalendar = ({
         classes={classes}
         key={currentDate.toString()}
         tabIndex={currentDate.getTime() === firstDayOfCurrentMonthTime ? 0 : -1}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
         value={currentDate}
         today={today}
         calendarValue={localValue}
@@ -130,9 +125,19 @@ export const HvSingleCalendar = ({
         firstDayOfCurrentMonth={firstDayOfCurrentMonth}
         maximumDate={maximumDate}
         minimumDate={minimumDate}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
       />
     );
   };
+
+  const headerValue = useMemo(() => {
+    return new Date(
+      isRange(value)
+        ? value[rangeSide === "start" ? "startDate" : "endDate"] ?? ""
+        : value ?? ""
+    );
+  }, [rangeSide, value]);
 
   return (
     <div className={cx(classes.calendarContainer, className)} {...others}>
@@ -140,10 +145,12 @@ export const HvSingleCalendar = ({
         <HvCalendarHeader
           id={setId(id, "header")}
           locale={locale}
-          onChange={handleInputChange}
+          value={headerValue}
+          showTime={showTime}
           showEndDate={showEndDate && !isDateSelectionMode}
           showDayOfWeek={showDayOfWeek}
           invalidDateLabel={invalidDateLabel}
+          onChange={handleChange}
         />
         {calViewMode === "calendar" && (
           <div>
@@ -201,7 +208,7 @@ export interface HvSingleCalendarProps {
   /**
    * Date that the calendar would show.
    */
-  value?: string | Date | DateRangeProp;
+  value?: Date | DateRangeProp;
   /**
    * Date that will be used to know which month and year should be displayed on the calendar. The value of the day is
    * irrelevant.
@@ -233,7 +240,7 @@ export interface HvSingleCalendarProps {
           HTMLTextAreaElement | HTMLInputElement | HTMLButtonElement
         >
       | undefined,
-    value: Date | DateRangeProp,
+    value: Date,
     position?: "left" | "right"
   ) => void;
   /**
@@ -262,6 +269,14 @@ export interface HvSingleCalendarProps {
    * Indicates if header should display the day of week.
    */
   showDayOfWeek?: boolean;
+  /**
+   * Info about range side
+   */
+  rangeSide?: "start" | "end";
+  /**
+   * Indicates if header should display time selector.
+   */
+  showTime?: boolean;
   /**
    * Content on the upper part of the calendar.
    */

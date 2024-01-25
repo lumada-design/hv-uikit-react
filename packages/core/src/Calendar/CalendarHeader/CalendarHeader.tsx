@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useMemo } from "react";
 import dayjs from "dayjs";
 import localeData from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -18,9 +18,8 @@ import { HvInput, HvInputProps } from "../../Input";
 
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
 import { DateRangeProp } from "../types";
-import { staticClasses, useClasses } from "./CalendarHeader.styles";
-
-export { staticClasses as calendarHeaderClasses };
+import { useClasses } from "./CalendarHeader.styles";
+import { HvTimePicker, HvTimePickerValue } from "../../TimePicker";
 
 export type HvCalendarHeaderClasses = ExtractNames<typeof useClasses>;
 
@@ -34,17 +33,20 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
     value,
     locale = "en-US",
     classes: classesProp,
-    onChange,
     showEndDate,
     showDayOfWeek = false,
-    onFocus,
+    showTime = false,
     invalidDateLabel = "Invalid Date",
+    onFocus,
+    onChange,
   } = useDefaultProps("HvCalendarHeader", props);
 
   const { classes, cx } = useClasses(classesProp);
 
   const { elementId } = useContext(HvFormElementContext);
-  const elementValue = useContext(HvFormElementValueContext);
+  const elementValue: Date | DateRangeProp | undefined = useContext(
+    HvFormElementValueContext
+  );
   const { label } = useContext(HvFormElementDescriptorsContext);
 
   let localValue: string | Date | DateRangeProp | undefined =
@@ -145,6 +147,21 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
 
   const isInvalid = !isValidValue && inputValue !== "";
 
+  const handleTimeChange = ({ hours, minutes, seconds }) => {
+    const singleDateToModify = new Date(value);
+    singleDateToModify.setHours(hours, minutes, seconds, 0);
+
+    onChange?.(undefined, singleDateToModify);
+  };
+
+  const timeValue: HvTimePickerValue = useMemo(() => {
+    return {
+      hours: value.getHours(),
+      minutes: value.getMinutes(),
+      seconds: value.getSeconds(),
+    };
+  }, [value]);
+
   // This component needs to be further refactored
   // It's not possible to clear the date
   // In a new major there's no need for all these classes
@@ -179,6 +196,15 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
         status={isInvalid ? "invalid" : "valid"}
         statusMessage={invalidDateLabel}
       />
+      {showTime && (
+        <HvTimePicker
+          classes={{
+            root: classes.timeSelector,
+          }}
+          value={timeValue}
+          onChange={handleTimeChange}
+        />
+      )}
     </div>
   );
 };
@@ -196,13 +222,21 @@ export interface HvCalendarHeaderProps {
    */
   id?: string;
   /**
-   * The text to be shown on the main part of the header.
+   * Date value
    */
-  value?: string | Date | DateRangeProp;
+  value: Date;
   /**
    * Locale to be used by the calendar.
    */
   locale?: string;
+  /**
+   * Show time selector
+   */
+  showTime?: boolean;
+  /**
+   * Time value
+   */
+  timeValue?: HvTimePickerValue;
   /**
    * Callback to define the input date.
    */
@@ -210,7 +244,7 @@ export interface HvCalendarHeaderProps {
     event:
       | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
       | undefined,
-    value: Date | DateRangeProp
+    value: Date
   ) => void;
   /**
    * Callback to handle input onFocus.

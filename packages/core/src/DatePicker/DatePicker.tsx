@@ -20,7 +20,7 @@ import {
   HvInfoMessage,
   HvFormElementProps,
 } from "../Forms";
-import { isDate } from "../Calendar/utils";
+import { isDate, isRange } from "../Calendar/utils";
 import { HvCalendar, HvCalendarProps } from "../Calendar";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import { HvTypography } from "../Typography";
@@ -318,7 +318,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
     };
 
     const handleToggle: HvBaseDropdownProps["onToggle"] = (evt, open) => {
-      /* 
+      /*
      If evt is null this toggle wasn't triggered by the user.
      instead it was triggered by the baseDropdown useEffect after
      the datepicker changed the expanded value this baseDropdown behavior needs a review
@@ -334,23 +334,33 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
     };
 
     const handleDateChange: HvCalendarProps["onChange"] = (event, newDate) => {
-      if (!isDate(newDate)) return;
-
       const autoSave = !showActions && !rangeMode;
 
       if (rangeMode) {
-        if (!startDate || (startDate && endDate) || newDate < startDate) {
-          setStartDate(newDate);
+        const startIsSelected = !!startDate;
+        const endIsSelected = !!endDate;
+        const bothEndsSelected = startIsSelected && endIsSelected;
+
+        if (bothEndsSelected) {
+          setStartDate(isRange(newDate) ? newDate.startDate : newDate);
           setEndDate(undefined);
-        } else {
-          setEndDate(newDate);
+        } else if (startIsSelected && !endIsSelected) {
+          const newValue = isRange(newDate) ? newDate.endDate : newDate;
+
+          if (newValue >= startDate) {
+            setEndDate(newValue);
+          } else {
+            // reverse range
+            setEndDate(startDate);
+            setStartDate(newValue);
+          }
         }
       } else {
-        setStartDate(newDate, autoSave);
+        setStartDate(isRange(newDate) ? newDate.startDate : newDate, autoSave);
       }
 
       if (autoSave) {
-        onChange?.(newDate);
+        onChange?.(isRange(newDate) ? newDate.startDate : newDate);
 
         setValidationState(() => {
           // this will only run if status is uncontrolled
@@ -436,7 +446,9 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
         </HvTypography>
       );
     };
-    const dateValue = rangeMode ? { startDate, endDate } : startDate;
+    const dateValue = rangeMode
+      ? { startDate: startDate ?? new Date(), endDate }
+      : startDate ?? new Date();
 
     const hasLabel = label != null;
     const hasDescription = description != null;
