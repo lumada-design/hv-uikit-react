@@ -6,6 +6,7 @@ import {
   HvTypography,
   HvCheckBox,
   Random,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
@@ -773,6 +774,7 @@ export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
     },
   },
   render: () => {
+    const { colors } = useTheme();
     return (
       <HvLineChart
         data={{
@@ -798,9 +800,33 @@ export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
         groupBy="Month"
         measures="Sales Target"
         onOptionChange={(option) => {
+          console.log(option);
           if (Array.isArray(option.yAxis) && option.yAxis.length === 1) {
             option.yAxis = [{ ...option.yAxis[0], splitNumber: 8 }];
           }
+          option.series[0].markLine = {
+            data: [{ yAxis: 3000, name: "Average" }],
+            symbol: "none",
+            itemStyle: {
+              color: colors?.secondary,
+            },
+            label: {
+              color: colors?.secondary,
+            },
+          };
+          option.series[0].smooth = true;
+          option.series[0].lineStyle = {
+            color: colors?.secondary_60,
+          };
+          option.series[0].itemStyle = {
+            color(params) {
+              return params.data[1] > 3000
+                ? colors?.positive
+                : colors?.negative;
+            },
+          };
+
+          option.series[0].symbolSize = 8;
 
           return option;
         }}

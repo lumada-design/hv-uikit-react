@@ -27,7 +27,7 @@ const useDarkClass = <T extends HTMLElement = HTMLDivElement>(mode: string) => {
   return ref;
 };
 
-const ThemeDecorator: Decorator = (story) => {
+const ThemeDecorator: Decorator = (Story) => {
   const initialTheme = getLocalTheme();
 
   const [selectedTheme, setSelectedTheme] = useState(initialTheme);
@@ -68,7 +68,7 @@ const ThemeDecorator: Decorator = (story) => {
             className="hv-story-sample"
             style={{ padding: 20 }}
           >
-            {story()}
+            <Story />
           </div>
         </HvVizProvider>
       </HvProvider>

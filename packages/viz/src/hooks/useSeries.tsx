@@ -174,15 +174,15 @@ export const useSeries = ({
   }, [
     data,
     groupByKey,
-    area,
-    stack,
-    nameFormatter,
-    emptyCellMode,
-    areaOpacity,
     measures,
     type,
-    horizontal,
+    nameFormatter,
     radius,
+    stack,
+    horizontal,
+    emptyCellMode,
+    area,
+    areaOpacity,
   ]);
 
   return option;
