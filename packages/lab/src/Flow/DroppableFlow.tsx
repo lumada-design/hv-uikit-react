@@ -1,5 +1,4 @@
 import { useCallback, useState } from "react";
-
 import ReactFlow, {
   Connection,
   EdgeChange,
@@ -13,13 +12,9 @@ import ReactFlow, {
   Edge,
   Node,
 } from "reactflow";
-
 import { Global } from "@emotion/react";
-
 import { DragEndEvent, useDndMonitor, useDroppable } from "@dnd-kit/core";
-
 import { uid } from "uid";
-
 import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 
 import {
@@ -71,13 +66,20 @@ export const getNode = (nodes: Node[], nodeId: string) => {
 const validateEdge = (
   nodes: Node[],
   edges: Edge[],
-  edge: Edge,
+  connection: Connection,
   nodeMetaRegistry: HvFlowNodeMetaRegistry
 ) => {
-  if (!edge.sourceHandle || !edge.targetHandle) return false;
+  const {
+    source: sourceId,
+    sourceHandle,
+    target: targetId,
+    targetHandle,
+  } = connection;
 
-  const sourceNode = getNode(nodes, edge.source);
-  const targetNode = getNode(nodes, edge.target);
+  if (!sourceHandle || !targetHandle || !sourceId || !targetId) return false;
+
+  const sourceNode = getNode(nodes, sourceId);
+  const targetNode = getNode(nodes, targetId);
 
   if (!sourceNode || !targetNode) return false;
 
@@ -86,17 +88,17 @@ const validateEdge = (
 
   if (!sourceType || !targetType) return false;
 
-  const inputs = nodeMetaRegistry[edge.target]?.inputs || [];
-  const outputs = nodeMetaRegistry[edge.source]?.outputs || [];
+  const inputs = nodeMetaRegistry[targetId]?.inputs || [];
+  const outputs = nodeMetaRegistry[sourceId]?.outputs || [];
 
   const source = outputs
     .map((out) => (out as HvFlowNodeOutputGroup).outputs || out)
     .flat()
-    .find((out) => out.id === edge.sourceHandle);
+    .find((out) => out.id === sourceHandle);
   const target = inputs
     .map((inp) => (inp as HvFlowNodeInputGroup).inputs || inp)
     .flat()
-    .find((inp) => inp.id === edge.targetHandle);
+    .find((inp) => inp.id === targetHandle);
 
   const sourceProvides = source?.provides || "";
   const targetAccepts = target?.accepts || [];
@@ -108,8 +110,7 @@ const validateEdge = (
 
   if (isValid && targetMaxConnections != null) {
     const targetConnections = edges.filter(
-      (edg) =>
-        edg.target === edge.target && edg.targetHandle === edge.targetHandle
+      (edg) => edg.target === targetId && edg.targetHandle === targetHandle
     ).length;
 
     isValid = targetConnections < targetMaxConnections;
@@ -117,8 +118,7 @@ const validateEdge = (
 
   if (isValid && sourceMaxConnections != null) {
     const sourceConnections = edges.filter(
-      (edg) =>
-        edg.source === edge.source && edg.sourceHandle === edge.sourceHandle
+      (edg) => edg.source === sourceId && edg.sourceHandle === sourceHandle
     ).length;
 
     isValid = sourceConnections < sourceMaxConnections;
@@ -256,7 +256,8 @@ export const HvDroppableFlow = ({
   );
 
   const { registry } = useNodeMetaRegistry();
-  const isValidConnection = (connection) =>
+
+  const isValidConnection: ReactFlowProps["isValidConnection"] = (connection) =>
     validateEdge(nodes, edges, connection, registry);
 
   const defaultEdgeOptions = {
