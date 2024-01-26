@@ -35,7 +35,7 @@ export const Main: StoryObj<HvDropDownMenuProps> = {
     disabled: false,
     expanded: true,
     defaultExpanded: false,
-    category: "secondaryGhost",
+    variant: "secondaryGhost",
   },
   argTypes: {
     classes: { control: { disable: true } },
