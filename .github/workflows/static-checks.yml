@@ -35,6 +35,9 @@ jobs:
         run: |
           npm exec npx license-checker --onlyAllow ${{ env.LICENSES_WHITELIST }} --workspaces
 
+      - name: Security Audit
+        run: npm audit --workspaces --omit dev
+
       - name: Run Lint
         run: npm run lint
 
