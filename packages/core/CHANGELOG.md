@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.46.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.45.0...@hitachivantara/uikit-react-core@5.46.0) (2024-01-26)
+
+### Features
+
+- **hvDropdownColumn:** add dropdown props ([59bb0bc](https://github.com/lumada-design/hv-uikit-react/commit/59bb0bc957cedd9b458cf4aa14e7bf5c10a0486c))
+
 # [5.45.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.44.8...@hitachivantara/uikit-react-core@5.45.0) (2024-01-25)
 
 ### Features
