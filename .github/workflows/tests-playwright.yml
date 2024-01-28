@@ -1,0 +1,35 @@
+name: Playwright tests
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      publish-folder:
+        type: string
+
+env:
+  PUBLISH_FOLDER: ${{ inputs.publish-folder || github.ref_name }}
+
+jobs:
+  run-playwright-tests:
+    name: Playwright Tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        PROJECT: ["chromium", "firefox", "webkit"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npx playwright test --project=${{ matrix.PROJECT }}
+        env:
+          URL: https://${{ github.repository_owner }}.github.io/uikit/${{ env.PUBLISH_FOLDER }}/
