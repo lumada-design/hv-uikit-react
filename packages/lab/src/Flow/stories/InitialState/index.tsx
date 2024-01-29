@@ -15,156 +15,211 @@ import {
   HvFlowSidebar,
   HvFlow,
   HvFlowControls,
+  HvFlowProps,
+  HvFlowInstance,
 } from "@hitachivantara/uikit-react-lab";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
 import { nodeGroups, nodeTypes, restrictToSample } from "../Base";
+import {
+  Layouts,
+  LayoutsProvider,
+  useLayoutsContext,
+} from "../Base/LayoutsContext";
 
+// Initial state
 const initialState = {
   nodes: [
     {
-      id: "b1831327e65",
-      position: { x: 230, y: -97 },
-      data: {},
+      width: 250,
+      height: 365,
+      id: "1caf2381eaf",
+      position: { x: 194, y: -160 },
+      data: { asset: "option1" },
       type: "Asset",
     },
     {
-      id: "1831327e654",
-      position: { x: 1790, y: -76 },
-      data: { dashboardType: "time-series" },
-      type: "dashboard",
-    },
-    {
-      id: "831327e6549",
-      position: { x: 1170, y: -568 },
-      data: {},
-      type: "kpi",
-    },
-    {
-      id: "31327e65496",
-      position: { x: 1170, y: 39 },
-      data: {},
-      type: "kpi",
-    },
-    {
-      id: "1327e654964",
-      position: { x: 1170, y: -263 },
-      data: {},
-      type: "kpi",
-    },
-    {
-      id: "327e654964e",
-      position: { x: 1170, y: 336 },
-      data: {},
-      type: "lineChart",
-    },
-    {
-      id: "27e654964ea",
-      position: { x: 1170, y: 634 },
-      data: {},
-      type: "table",
-    },
-    {
-      id: "7e654964ea3",
-      position: { x: 700, y: -276 },
+      width: 250,
+      height: 274,
+      id: "caf2381eaf3",
+      position: { x: 637, y: -367 },
       data: {},
       type: "mlModelPrediction",
     },
     {
-      id: "e654964ea39",
-      position: { x: 700, y: 88 },
+      width: 250,
+      height: 274,
+      id: "af2381eaf37",
+      position: { x: 643, y: 314 },
       data: {},
       type: "mlModelDetection",
+    },
+    {
+      width: 250,
+      height: 274,
+      id: "f2381eaf379",
+      position: { x: 1146, y: -444 },
+      data: {},
+      type: "kpi",
+    },
+    {
+      width: 250,
+      height: 274,
+      id: "2381eaf3791",
+      position: { x: 1144, y: -133 },
+      data: {},
+      type: "kpi",
+    },
+    {
+      width: 250,
+      height: 274,
+      id: "381eaf37916",
+      position: { x: 1142, y: 246 },
+      data: {},
+      type: "lineChart",
+    },
+    {
+      width: 250,
+      height: 274,
+      id: "81eaf379163",
+      position: { x: 1146, y: 552 },
+      data: {},
+      type: "table",
+    },
+    {
+      width: 250,
+      height: 479,
+      id: "1eaf3791634",
+      position: { x: 1716, y: -129 },
+      data: {
+        config: {
+          items: [
+            {
+              id: "kpi1",
+              type: "kpi",
+              label: "KPI 1",
+              predefined: true,
+              connected: true,
+            },
+            {
+              id: "kpi2",
+              type: "kpi",
+              label: "KPI 2",
+              predefined: true,
+              connected: true,
+            },
+            { id: "kpi3", type: "kpi", label: "KPI 3", predefined: true },
+            {
+              id: "lineChart1",
+              type: "lineChart",
+              label: "Line Chart 1",
+              predefined: true,
+              connected: true,
+            },
+            {
+              id: "lineChart2",
+              type: "lineChart",
+              label: "Line Chart 2",
+              predefined: true,
+            },
+            { id: "table1", type: "table", label: "Table 1", predefined: true },
+            {
+              id: "table2",
+              type: "table",
+              label: "Table 2",
+              predefined: true,
+              connected: true,
+            },
+          ],
+          layout: [
+            { w: 4, h: 1, x: 0, y: 0, i: "kpi1" },
+            { w: 4, h: 1, x: 4, y: 0, i: "kpi2" },
+            { w: 4, h: 1, x: 8, y: 0, i: "kpi3" },
+            { w: 6, h: 2, x: 0, y: 1, i: "lineChart1" },
+            { w: 6, h: 2, x: 6, y: 1, i: "lineChart2" },
+            { w: 6, h: 2, x: 0, y: 3, i: "table1" },
+            { w: 6, h: 2, x: 6, y: 3, i: "table2" },
+          ],
+          cols: 12,
+        },
+      },
+      type: "dashboard",
     },
   ],
   edges: [
     {
-      source: "831327e6549",
+      source: "1caf2381eaf",
       sourceHandle: "0",
-      target: "1831327e654",
+      target: "caf2381eaf3",
       targetHandle: "0",
-      id: "reactflow__edge-831327e65490-1831327e6540",
+      id: "reactflow__edge-1caf2381eaf0-caf2381eaf30",
     },
     {
-      source: "31327e65496",
-      sourceHandle: "0",
-      target: "1831327e654",
-      targetHandle: "0",
-      id: "reactflow__edge-31327e654960-1831327e6540",
-    },
-    {
-      source: "1327e654964",
-      sourceHandle: "0",
-      target: "1831327e654",
-      targetHandle: "0",
-      id: "reactflow__edge-1327e6549640-1831327e6540",
-    },
-    {
-      source: "327e654964e",
-      sourceHandle: "0",
-      target: "1831327e654",
-      targetHandle: "0",
-      id: "reactflow__edge-327e654964e0-1831327e6540",
-    },
-    {
-      source: "27e654964ea",
-      sourceHandle: "0",
-      target: "1831327e654",
-      targetHandle: "0",
-      id: "reactflow__edge-27e654964ea0-1831327e6540",
-    },
-    {
-      source: "7e654964ea3",
-      sourceHandle: "0",
-      target: "831327e6549",
-      targetHandle: "0",
-      id: "reactflow__edge-7e654964ea30-831327e65490",
-    },
-    {
-      source: "e654964ea39",
-      sourceHandle: "0",
-      target: "27e654964ea",
-      targetHandle: "0",
-      id: "reactflow__edge-e654964ea390-27e654964ea0",
-    },
-    {
-      source: "e654964ea39",
-      sourceHandle: "0",
-      target: "327e654964e",
-      targetHandle: "0",
-      id: "reactflow__edge-e654964ea390-327e654964e0",
-    },
-    {
-      source: "e654964ea39",
-      sourceHandle: "0",
-      target: "31327e65496",
-      targetHandle: "0",
-      id: "reactflow__edge-e654964ea390-31327e654960",
-    },
-    {
-      source: "e654964ea39",
-      sourceHandle: "0",
-      target: "1327e654964",
-      targetHandle: "0",
-      id: "reactflow__edge-e654964ea390-1327e6549640",
-    },
-    {
-      source: "b1831327e65",
-      sourceHandle: "0",
-      target: "7e654964ea3",
-      targetHandle: "0",
-      id: "reactflow__edge-b1831327e650-7e654964ea30",
-    },
-    {
-      source: "b1831327e65",
+      source: "1caf2381eaf",
       sourceHandle: "1",
-      target: "e654964ea39",
+      target: "af2381eaf37",
       targetHandle: "0",
-      id: "reactflow__edge-b1831327e651-e654964ea390",
+      id: "reactflow__edge-1caf2381eaf1-af2381eaf370",
+    },
+    {
+      source: "caf2381eaf3",
+      sourceHandle: "0",
+      target: "f2381eaf379",
+      targetHandle: "0",
+      id: "reactflow__edge-caf2381eaf30-f2381eaf3790",
+    },
+    {
+      source: "caf2381eaf3",
+      sourceHandle: "0",
+      target: "2381eaf3791",
+      targetHandle: "0",
+      id: "reactflow__edge-caf2381eaf30-2381eaf37910",
+    },
+    {
+      source: "af2381eaf37",
+      sourceHandle: "0",
+      target: "381eaf37916",
+      targetHandle: "0",
+      id: "reactflow__edge-af2381eaf370-381eaf379160",
+    },
+    {
+      source: "af2381eaf37",
+      sourceHandle: "0",
+      target: "81eaf379163",
+      targetHandle: "0",
+      id: "reactflow__edge-af2381eaf370-81eaf3791630",
+    },
+    {
+      source: "2381eaf3791",
+      sourceHandle: "0",
+      target: "1eaf3791634",
+      targetHandle: "kpi2",
+      id: "reactflow__edge-2381eaf37910-1eaf3791634kpi2",
+    },
+    {
+      source: "381eaf37916",
+      sourceHandle: "0",
+      target: "1eaf3791634",
+      targetHandle: "lineChart1",
+      id: "reactflow__edge-381eaf379160-1eaf3791634lineChart1",
+    },
+    {
+      source: "81eaf379163",
+      sourceHandle: "0",
+      target: "1eaf3791634",
+      targetHandle: "table2",
+      id: "reactflow__edge-81eaf3791630-1eaf3791634table2",
+    },
+    {
+      source: "f2381eaf379",
+      sourceHandle: "0",
+      target: "1eaf3791634",
+      targetHandle: "kpi1",
+      id: "reactflow__edge-f2381eaf3790-1eaf3791634kpi1",
     },
   ],
-  viewport: { x: 50, y: 300, zoom: 0.53 },
+  viewport: { x: 150, y: 300, zoom: 0.6 },
 };
 
 // Classes
@@ -176,26 +231,45 @@ export const classes = {
   }),
 };
 
-export const InitialState = () => {
+const Flow = () => {
   const { rootId } = useTheme();
 
+  const [instance, setInstance] = useState<HvFlowInstance>();
   const [open, setOpen] = useState(false);
   const [dirty, setDirty] = useState(false);
   const [details, setDetails] = useState({});
   const [dialogOpen, setDialogOpen] = useState(false);
   const firstRender = useRef(true);
 
-  const handleSave = useCallback(() => {
-    setDialogOpen(true);
-  }, []);
+  const { layouts } = useLayoutsContext();
 
-  const makeDirty = (nds, eds) => {
+  const handleSave = useCallback(() => {
+    // Update dashboard nodes to add layout to dashboard nodes data
+    instance?.setNodes((nodes) => {
+      return nodes.map((n) => {
+        if (layouts?.[n.id]) {
+          return {
+            ...n,
+            data: {
+              ...n.data,
+              config: layouts[n.id],
+            },
+          };
+        }
+        return n;
+      });
+    });
+    setDialogOpen(true);
+  }, [instance, layouts]);
+
+  const makeDirty: HvFlowProps["onFlowChange"] = (nds, eds) => {
     if (firstRender.current) return;
     setDirty(true);
     setDetails({ nodes: nds, edges: eds });
   };
 
-  const onInit = () => {
+  const onInit: HvFlowProps["onInit"] = (inst) => {
+    setInstance(inst);
     firstRender.current = false;
   };
 
@@ -261,5 +335,21 @@ export const InitialState = () => {
         </HvFlow>
       </div>
     </div>
+  );
+};
+
+export const InitialState = () => {
+  // Set up layouts
+  const init = initialState.nodes.reduce<Layouts>((acc, cur) => {
+    if (cur.type === "dashboard") {
+      acc[cur.id] = cur.data.config;
+    }
+    return acc;
+  }, {});
+
+  return (
+    <LayoutsProvider layouts={init}>
+      <Flow />
+    </LayoutsProvider>
   );
 };

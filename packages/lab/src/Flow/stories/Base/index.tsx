@@ -47,7 +47,7 @@ export const nodeGroups = {
 export type NodeGroup = keyof typeof nodeGroups;
 
 // Node types
-export const nodeTypes = {
+export const nodeTypes: HvFlowProps["nodeTypes"] = {
   Asset,
   mlModelPrediction: MLModelPrediction,
   mlModelDetection: MLModelDetection,
@@ -55,7 +55,7 @@ export const nodeTypes = {
   lineChart: LineChart,
   table: Table,
   dashboard: Dashboard,
-} satisfies HvFlowProps["nodeTypes"];
+};
 
 export type NodeType = keyof typeof nodeTypes;
 

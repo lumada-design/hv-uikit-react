@@ -15,6 +15,7 @@ export const MLModelDetection: HvFlowNodeFC<NodeGroup> = (props) => {
           label: "Sensor Data",
           isMandatory: true,
           accepts: ["sensorData"],
+          maxConnections: 1,
         },
       ]}
       outputs={[

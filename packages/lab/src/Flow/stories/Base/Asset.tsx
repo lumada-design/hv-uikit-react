@@ -25,7 +25,11 @@ import type { NodeGroup } from ".";
 
 type Node = ReturnType<HvFlowInstance["getNode"]>;
 
-export const Asset: HvFlowNodeFC<NodeGroup> = (props) => {
+interface AssetData {
+  asset?: string;
+}
+
+export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node>();
   const node = useFlowNode();
@@ -157,4 +161,7 @@ export const Asset: HvFlowNodeFC<NodeGroup> = (props) => {
 Asset.meta = {
   label: "My Asset",
   groupId: "assets",
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;
+  data: {
+    asset: "option1",
+  },
+} satisfies HvFlowNodeTypeMeta<NodeGroup, AssetData>;

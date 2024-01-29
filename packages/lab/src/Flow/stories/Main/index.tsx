@@ -25,6 +25,7 @@ import {
   nodeTypes,
   restrictToSample,
 } from "../Base";
+import { LayoutsProvider } from "../Base/LayoutsContext";
 
 // Flow
 const nodes: HvFlowProps<NodeGroup, NodeType>["nodes"] = [];
@@ -39,7 +40,7 @@ export const classes = {
   }),
 };
 
-export const Main = () => {
+export const Flow = () => {
   const { rootId } = useTheme();
 
   const [open, setOpen] = useState(false);
@@ -124,3 +125,9 @@ export const Main = () => {
     </div>
   );
 };
+
+export const Main = () => (
+  <LayoutsProvider>
+    <Flow />
+  </LayoutsProvider>
+);
