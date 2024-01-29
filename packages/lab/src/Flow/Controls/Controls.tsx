@@ -3,13 +3,10 @@ import {
   Panel,
   PanelPosition,
   ReactFlowState,
-  useReactFlow,
   useStore,
   useStoreApi,
 } from "reactflow";
-
 import { shallow } from "zustand/shallow";
-
 import {
   HvButton,
   HvMultiButton,
@@ -22,6 +19,8 @@ import {
   ZoomIn,
   ZoomOut,
 } from "@hitachivantara/uikit-react-icons";
+
+import { useFlowInstance } from "../hooks";
 
 export type HvFlowControlsPosition = PanelPosition;
 
@@ -83,7 +82,7 @@ export const HvFlowControls = ({
     shallow
   );
   const store = useStoreApi();
-  const { zoomIn, zoomOut, fitView } = useReactFlow();
+  const { zoomIn, zoomOut, fitView } = useFlowInstance();
 
   const labels = useLabels(DEFAULT_LABELS, labelsProps);
 

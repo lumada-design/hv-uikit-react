@@ -1,5 +1,4 @@
 import { Suspense, useEffect, useMemo, useState } from "react";
-import { Edge, ReactFlowInstance, Node } from "reactflow";
 import {
   HvButton,
   HvGlobalActions,
@@ -13,6 +12,7 @@ import {
   HvFlow,
   HvFlowControls,
   HvFlowEmpty,
+  HvFlowInstance,
   HvFlowProps,
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
@@ -23,7 +23,6 @@ import {
   DashboardsStorage,
   LAYOUT_COLS,
 } from "./types";
-
 import { buildLayout, createDataset, useDatasets } from "./utils";
 import { baseNodeTypes, edges, nodeGroups, nodes } from "./config";
 
@@ -37,11 +36,13 @@ const layout = [
   { w: 12, h: 4, x: 0, y: 4, i: "7" },
 ] satisfies HvDashboardProps["layout"];
 
+type Node = NonNullable<ReturnType<HvFlowInstance["getNode"]>>;
+type Edge = NonNullable<ReturnType<HvFlowInstance["getEdge"]>>;
+
 const Content = () => {
   const { data } = useDatasets();
 
-  const [reactFlowInstance, setReactFlowInstance] =
-    useState<ReactFlowInstance>();
+  const [reactFlowInstance, setReactFlowInstance] = useState<HvFlowInstance>();
   const [open, setOpen] = useState(false);
 
   const persistDashboards = (

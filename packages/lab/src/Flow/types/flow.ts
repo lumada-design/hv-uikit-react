@@ -1,7 +1,5 @@
 import { ComponentClass, FC } from "react";
-
-import { Node, NodeProps } from "reactflow";
-
+import { Node, NodeProps, ReactFlowInstance } from "reactflow";
 import {
   HvActionGeneric,
   HvSliderProps,
@@ -130,3 +128,8 @@ export type HvFlowBuiltInActions = Omit<HvFlowNodeAction, "id" | "callback"> & {
 };
 
 export type HvFlowNodeMetaRegistry = Record<string, HvFlowNodeMeta>;
+
+export type HvFlowInstance<NodeData = any, EdgeData = any> = ReactFlowInstance<
+  NodeData,
+  EdgeData
+>;

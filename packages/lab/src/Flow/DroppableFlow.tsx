@@ -7,7 +7,6 @@ import ReactFlow, {
   addEdge,
   applyEdgeChanges,
   applyNodeChanges,
-  useReactFlow,
   MarkerType,
   Edge,
   Node,
@@ -23,7 +22,7 @@ import {
   HvFlowNodeOutputGroup,
 } from "./types";
 import { staticClasses, useClasses } from "./Flow.styles";
-import { useFlowContext } from "./hooks";
+import { useFlowContext, useFlowInstance } from "./hooks";
 import { flowStyles } from "./base";
 import { useNodeMetaRegistry } from "./FlowContext/NodeMetaContext";
 
@@ -146,7 +145,7 @@ export const HvDroppableFlow = ({
 
   const elementId = useUniqueId(id, "hvFlow");
 
-  const reactFlowInstance = useReactFlow();
+  const reactFlowInstance = useFlowInstance();
 
   const { nodeTypes } = useFlowContext();
 
