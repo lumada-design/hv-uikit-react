@@ -1,4 +1,8 @@
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  HvFlowNodeTypeMeta,
+} from "@hitachivantara/uikit-react-lab";
 
 export const Asset: HvFlowNodeFC = (props) => {
   return (
@@ -41,4 +45,4 @@ export const Asset: HvFlowNodeFC = (props) => {
 
 Asset.meta = {
   label: "My Asset",
-};
+} satisfies HvFlowNodeTypeMeta;

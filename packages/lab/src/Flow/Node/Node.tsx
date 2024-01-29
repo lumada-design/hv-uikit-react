@@ -83,7 +83,7 @@ export const HvFlowNode = ({
 
   const [showParams, setShowParams] = useState(expanded);
 
-  const node = useFlowNode(id);
+  const node = useFlowNode();
 
   const { nodeGroups, nodeTypes, defaultActions } = useFlowContext();
 

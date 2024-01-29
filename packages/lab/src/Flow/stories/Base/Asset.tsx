@@ -16,17 +16,17 @@ import {
 import {
   HvFlowNode,
   HvFlowNodeFC,
+  HvFlowNodeTypeMeta,
   useFlowNode,
 } from "@hitachivantara/uikit-react-lab";
 import { Node } from "reactflow";
 
-import type { NodeGroups } from ".";
+import type { NodeGroup } from ".";
 
-export const Asset: HvFlowNodeFC<NodeGroups> = (props) => {
-  const { id } = props;
+export const Asset: HvFlowNodeFC<NodeGroup> = (props) => {
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node | undefined>();
-  const node = useFlowNode(id);
+  const node = useFlowNode();
 
   const classes = {
     container: css({
@@ -156,4 +156,4 @@ export const Asset: HvFlowNodeFC<NodeGroups> = (props) => {
 Asset.meta = {
   label: "My Asset",
   groupId: "assets",
-};
+} satisfies HvFlowNodeTypeMeta<NodeGroup>;

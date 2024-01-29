@@ -46,6 +46,8 @@ export const nodeGroups = {
   },
 } satisfies HvFlowProps["nodeGroups"];
 
+export type NodeGroup = keyof typeof nodeGroups;
+
 // Node types
 export const nodeTypes = {
   asset: Asset,

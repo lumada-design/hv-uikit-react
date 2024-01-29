@@ -30,14 +30,14 @@ const nodeGroups = {
   },
 } satisfies HvFlowProps["nodeGroups"];
 
-type NodeGroups = keyof typeof nodeGroups;
+type NodeGroup = keyof typeof nodeGroups;
 
 /** Create a generic node programmatically */
 const createNode = (
   nodeProps: Partial<HvFlowNodeProps>,
-  nodeMeta: HvFlowNodeFC<NodeGroups>["meta"]
+  nodeMeta: HvFlowNodeFC<NodeGroup>["meta"]
 ) => {
-  const Asset: HvFlowNodeFC<NodeGroups> = (props) => (
+  const Asset: HvFlowNodeFC<NodeGroup> = (props) => (
     <HvFlowNode {...nodeProps} {...props} />
   );
 

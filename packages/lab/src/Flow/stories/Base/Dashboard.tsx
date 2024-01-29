@@ -10,19 +10,19 @@ import {
   HvFlowNodeFC,
   HvDashboardNode,
   useFlowInputNodes,
+  HvFlowNodeTypeMeta,
 } from "@hitachivantara/uikit-react-lab";
 
-import type { NodeGroups } from ".";
+import type { NodeGroup } from ".";
 
 const classes = {
   footer: css({ display: "flex", justifyContent: "center" }),
 };
 
-export const Dashboard: HvFlowNodeFC<NodeGroups> = (props) => {
-  const { id: idProp } = props;
+export const Dashboard: HvFlowNodeFC<NodeGroup> = (props) => {
   const [open, setOpen] = useState(false);
 
-  const inputNodes = useFlowInputNodes(idProp);
+  const inputNodes = useFlowInputNodes();
 
   const nodeLayout = inputNodes.map<Layout>((node, i) => {
     const { type, data } = node;
@@ -92,4 +92,4 @@ export const Dashboard: HvFlowNodeFC<NodeGroups> = (props) => {
 Dashboard.meta = {
   label: "Dashboard",
   groupId: "dashboard",
-};
+} satisfies HvFlowNodeTypeMeta<NodeGroup>;

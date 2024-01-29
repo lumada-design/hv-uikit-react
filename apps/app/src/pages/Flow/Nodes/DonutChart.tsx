@@ -9,10 +9,8 @@ import {
 
 import { NodeData, NodeGroup } from "../types";
 
-export const DonutChart: HvFlowNodeFC = (props) => {
-  const { id } = props;
-
-  const inputNodes = useFlowInputNodes<NodeData>(id);
+export const DonutChart: HvFlowNodeFC<NodeGroup> = (props) => {
+  const inputNodes = useFlowInputNodes<NodeData>();
 
   const params: HvFlowNodeProps["params"] = useMemo(() => {
     const columns = inputNodes[0]?.data.columns;

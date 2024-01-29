@@ -1,4 +1,8 @@
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  HvFlowNodeTypeMeta,
+} from "@hitachivantara/uikit-react-lab";
 
 export const LineChart: HvFlowNodeFC = (props) => {
   return (
@@ -23,4 +27,4 @@ export const LineChart: HvFlowNodeFC = (props) => {
 
 LineChart.meta = {
   label: "LineChart",
-};
+} satisfies HvFlowNodeTypeMeta;

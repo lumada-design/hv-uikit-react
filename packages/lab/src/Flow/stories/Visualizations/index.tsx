@@ -62,7 +62,7 @@ const nodeGroups = {
   },
 } satisfies HvFlowProps["nodeGroups"];
 
-export type NodeGroups = keyof typeof nodeGroups;
+export type NodeGroup = keyof typeof nodeGroups;
 
 // Flow
 const nodes = [
@@ -103,7 +103,7 @@ const nodes = [
     position: { x: 980, y: 600 },
     data: {},
   },
-] satisfies HvFlowProps<NodeGroups, NodeType>["nodes"];
+] satisfies HvFlowProps<NodeGroup, NodeType>["nodes"];
 
 const edges = [
   {
@@ -134,7 +134,7 @@ const edges = [
     target: "barChartFiltered",
     targetHandle: "0",
   },
-] satisfies HvFlowProps<NodeGroups, NodeType>["edges"];
+] satisfies HvFlowProps<NodeGroup, NodeType>["edges"];
 
 // Classes
 export const classes = {

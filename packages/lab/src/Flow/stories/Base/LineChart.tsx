@@ -1,8 +1,12 @@
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  HvFlowNodeTypeMeta,
+} from "@hitachivantara/uikit-react-lab";
 
-import type { NodeGroups } from ".";
+import type { NodeGroup } from ".";
 
-export const LineChart: HvFlowNodeFC<NodeGroups> = (props) => {
+export const LineChart: HvFlowNodeFC<NodeGroup> = (props) => {
   return (
     <HvFlowNode
       description="LineChart description"
@@ -28,4 +32,4 @@ export const LineChart: HvFlowNodeFC<NodeGroups> = (props) => {
 LineChart.meta = {
   label: "LineChart",
   groupId: "insights",
-};
+} satisfies HvFlowNodeTypeMeta<NodeGroup>;
