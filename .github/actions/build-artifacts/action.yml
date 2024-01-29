@@ -5,7 +5,7 @@ runs:
   using: "composite"
   steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Install Dependencies
       uses: ./.github/actions/install-dependencies
@@ -17,7 +17,7 @@ runs:
       shell: bash
 
     - name: Archive Documentation
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: documentation
         path: ${{ github.workspace }}/dist
@@ -28,7 +28,7 @@ runs:
       shell: bash
 
     - name: Archive App
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: app
         path: ${{ github.workspace }}/apps/app/dist
@@ -40,7 +40,7 @@ runs:
       shell: bash
 
     - name: Archive Nextra Docs
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: nextra-docs
         path: ${{ github.workspace }}/apps/docs/out
