@@ -20,7 +20,6 @@ interface CarViewProps {
 }
 
 export const CardView = ({ id, instance }: CarViewProps) => {
-  console.log(instance);
   const selectedCardsIds = instance.selectedFlatRows.map((r) => r.id);
   return (
     <HvSimpleGrid
