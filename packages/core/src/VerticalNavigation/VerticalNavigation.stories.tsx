@@ -105,7 +105,6 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
             aria-label="Example 1 navigation"
             selected={value}
             onChange={(event, data) => {
-              console.log(data);
               if (data.id === "02-01-01") {
                 event.preventDefault();
                 event.stopPropagation();
@@ -196,10 +195,7 @@ export const TreeViewMode: StoryObj<HvVerticalNavigationProps> = {
             defaultExpanded
             aria-label="Example 3 navigation"
             selected={value}
-            onChange={(event, data) => {
-              console.log(data);
-              setValue(data.id);
-            }}
+            onChange={(event, data) => setValue(data.id)}
             data={navigationData}
           />
           <HvVerticalNavigationActions>
@@ -379,10 +375,7 @@ export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
             defaultExpanded
             aria-label="Example 3 navigation"
             selected={value}
-            onChange={(event, data) => {
-              console.log(data);
-              setValue(data.id);
-            }}
+            onChange={(event, data) => setValue(data.id)}
             data={navigationDataState}
           />
           <HvVerticalNavigationActions>
@@ -515,10 +508,7 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
             defaultExpanded
             aria-label="Example 3 navigation"
             selected={value}
-            onChange={(event, data) => {
-              console.log(data);
-              setValue(data.id);
-            }}
+            onChange={(event, data) => setValue(data.id)}
             data={navigationDataState}
           />
           <HvVerticalNavigationActions>
@@ -592,10 +582,7 @@ export const CollapsibleIconsWithoutSubItems: StoryObj<HvVerticalNavigationProps
               defaultExpanded
               aria-label="Example 3 navigation"
               selected={value}
-              onChange={(event, data) => {
-                console.log(data);
-                setValue(data.id);
-              }}
+              onChange={(event, data) => setValue(data.id)}
               data={navigationDataState}
             />
             <HvVerticalNavigationActions>
@@ -737,10 +724,7 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
               defaultExpanded
               aria-label="Example 3 navigation"
               selected={value}
-              onChange={(event, data) => {
-                console.log(data);
-                setValue(data.id);
-              }}
+              onChange={(event, data) => setValue(data.id)}
               data={navigationDataState}
               classes={{ navigationPopup: popupStyles }}
             />
@@ -849,10 +833,7 @@ export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
               defaultExpanded
               aria-label="Example 4 Slider Mode"
               selected={value}
-              onChange={(event, data) => {
-                console.log(data);
-                setValue(data.id);
-              }}
+              onChange={(event, data) => setValue(data.id)}
               data={navigationDataState}
             />
           </HvVerticalNavigation>
@@ -977,10 +958,7 @@ export const MobileNavigation: StoryObj<HvVerticalNavigationProps> = {
               defaultExpanded
               aria-label="Example 4 navigation slider"
               selected={value}
-              onChange={(event, data) => {
-                console.log(data);
-                setValue(data.id);
-              }}
+              onChange={(event, data) => setValue(data.id)}
               data={navigationDataState}
             />
             <HvVerticalNavigationActions>

@@ -800,7 +800,6 @@ export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
         groupBy="Month"
         measures="Sales Target"
         onOptionChange={(option) => {
-          console.log(option);
           if (Array.isArray(option.yAxis) && option.yAxis.length === 1) {
             option.yAxis = [{ ...option.yAxis[0], splitNumber: 8 }];
           }

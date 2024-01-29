@@ -117,8 +117,7 @@ export const Main: StoryObj<HvWizardProps> = {
       previous: "Go Back",
       next: "Go Forward",
     };
-    const mockSubmit = useCallback((context) => {
-      console.log("MainStory::mockSubmit", { context });
+    const mockSubmit = useCallback(() => {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
@@ -178,8 +177,7 @@ export const Skippable = () => {
     previous: "Previous Step",
     next: "Next Step",
   };
-  const mockSubmit = useCallback((context) => {
-    console.log("MainStory::mockSubmit", { context });
+  const mockSubmit = useCallback(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -242,8 +240,7 @@ export const ComponentBreakDown = () => {
     }
   }, []);
 
-  const handleSubmit = useCallback((newContext) => {
-    console.log(newContext);
+  const handleSubmit = useCallback(() => {
     setOpen(false);
   }, []);
 
