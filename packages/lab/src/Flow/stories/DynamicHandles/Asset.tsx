@@ -6,6 +6,7 @@ import {
   HvFlowNodeOutput,
   HvFlowNode,
   HvFlowNodeTypeMeta,
+  useFlowNodeUtils,
 } from "@hitachivantara/uikit-react-lab";
 
 // Inputs and outputs info
@@ -62,30 +63,22 @@ export const Asset: HvFlowNodeFC<string, NodeData> = (props) => {
 
   const reactFlowInstance = useReactFlow();
 
+  const { setNodeData } = useFlowNodeUtils();
+
   useEffect(() => {
     if (data.type !== curType.current) {
       // Update type
       curType.current = data.type;
 
       // Update inputs and outputs for the node
-      reactFlowInstance?.setNodes((nds) =>
-        nds.map((nd) => {
-          if (nd.id === id) {
-            nd.data = {
-              ...nd.data,
-              ...types[nd.data.type],
-            };
-          }
-          return nd;
-        })
-      );
+      setNodeData((prev) => ({ ...prev, ...types[prev.type] }));
 
       // Clean up the edges for this node since the inputs and outputs changed
       reactFlowInstance?.setEdges((eds) =>
         eds.filter((ed) => ed.source !== id && ed.target !== id)
       );
     }
-  }, [data.type, id, reactFlowInstance]);
+  }, [data.type, id, reactFlowInstance, setNodeData]);
 
   const inputs = useMemo(() => data.inputs, [data.inputs]);
 
