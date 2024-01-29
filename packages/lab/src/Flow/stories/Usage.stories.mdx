@@ -58,7 +58,7 @@ Example:
 
 ```typescript
 // Node groups
-type NodeGroups = "assets" | "models";
+type NodeGroup = "assets" | "models";
 
 const nodeGroups = {
   assets: {
@@ -73,7 +73,7 @@ const nodeGroups = {
     description: "Find here all the available models.",
     icon: <Favorite />,
   },
-} satisfies HvFlowProps<NodeGroups>["nodeGroups"];
+} satisfies HvFlowProps<NodeGroup>["nodeGroups"];
 ```
 
 You can then create the sidebar by using the `HvFlowSidebar` component as a prop of the `HvFlow` component:
@@ -132,9 +132,13 @@ The parameters and the list of inputs and outputs are passed as a property of th
 Find an example of a custom node below.
 
 ```tsx
-import { HvFlowNode } from "@hitachivantara/uikit-react-lab";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  HvFlowNodeTypeMeta,
+} from "@hitachivantara/uikit-react-lab";
 
-export const CustomNode = (props) => {
+export const CustomNode: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="CustomNode description"
@@ -175,7 +179,7 @@ export const CustomNode = (props) => {
 CustomNode.meta = {
   label: "CustomNode",
   groupId: "someNodeGroup",
-};
+} satisfies HvFlowNodeTypeMeta;
 ```
 
 If you don't set a group id for any given node, then it will be added to a `Default` group that will serve as a repository to all nodes
@@ -395,50 +399,57 @@ like knowing the parents of the node.
 
 To facilitate this, we provide a set of specialized hooks:
 
-- `useFlowNode(id: string)`: Retrieves the node instance based on the given ID.
-- `useFlowNodeParents(id: string)`: Gets the parent nodes of a specified node (nodes that have an output connected to one of the inputs of the node).
-- `useFlowNodeInputEdges(id: string)`: Provides the input edges connected to the node.
-- `useFlowNodeOutputEdges(id: string)`: Gives the output edges connected from the node.
-- `useFlowNodeEdges(id: string)`: Offers both input and output edges of the node.
+- `useFlowNode(id?: string)`: Retrieves the node instance.
+- `useFlowNodeParents(id?: string)`: Gets the parent nodes of a specified node (nodes that have an output connected to one of the inputs of the node).
+- `useFlowNodeInputEdges(id?: string)`: Provides the input edges connected to the node.
+- `useFlowNodeOutputEdges(id?: string)`: Gives the output edges connected from the node.
+- `useFlowNodeEdges(id?: string)`: Offers both input and output edges of the node.
+- `useFlowInputNodes(id?: string)`: Retrieves the nodes connected to the inputs of the node.
+- `useFlowOutputNodes(id?: string)`: Gets the nodes connected to the outputs of the node.
+- `useFlowNodeUtils(id?: string)`: Offers utilities to manipulate the node in the flow.
+
+A node id can be passed to the hooks mentioned above to retrieve the data for a particular node.
+If no id is provided, the hooks will automatically assume the id of the node it is used inside to avoid manually passing down the id as a prop.
 
 Find below an example usage in a custom node component.
 
 ```tsx
-export const Asset = (props) => {
-  const { id } = props;
-  const node = useFlowNode(id);
-  const parentNodes = useFlowNodeParents(id);
+export const Asset: HvFlowNodeFC = (props) => {
+  // The hooks automatically assume the id (props.id) of the Asset node
+  const node = useFlowNode();
+  const parentNodes = useFlowNodeParents();
 
   // ...
 };
 ```
 
-For more advanced operations, consider using the `reactflow` instance directly:
+We also offer a hook that retrieves the `reactflow` instance directly:
 
 ```tsx
-const instance = useReactFlow();
+const instance = useFlowInstance();
 ```
 
-Alternatively you can directly access the underlying store that `reactflow` uses to access specific parts of the state using the
-`useStore` hook.
+For more advanced operations, you can directly access the underlying store that `reactflow` uses to access specific parts of the state using the
+`useStore` hook provided by the React Flow library.
 
-To access specific parts of the React Flow state with minimal impact on performance, use the `useStore` hook. This hook is re-exported from the Zustand state management library and allows for creating finely-tuned selectors:
+To access specific parts of the React Flow state with minimal impact on performance, use the `useStore` hook.
+This hook is re-exported from the Zustand state management library and allows for creating finely-tuned selectors:
 
 ```tsx
 const selectedNodesSelector = (state) => {
   return state.nodes.filter((node) => node.selected);
 };
 
-export const Asset = (props) => {
-  const { id } = props;
-
+export const Asset: HvFlowNodeFC = (props) => {
   const selectedNodes = useStore(selectedNodesSelector);
 
   // ...
 };
 ```
 
-Other hooks are also available depending on your needs, like the `useNodes` and `useEdges` hooks. However, it's important to note that components using `useNodes` and `useEdges` will re-render whenever any node or edge changes. This includes selections and movements of nodes, which can affect performance in complex flows.
+Other hooks, provided by the React Flow, are also available depending on your needs, like the `useNodes` and `useEdges` hooks.
+However, it's important to note that components using `useNodes` and `useEdges` will re-render whenever any node or edge changes.
+This includes selections and movements of nodes, which can affect performance in complex flows.
 
 Prefer using `useStore` with specific selectors to reduce the number of re-renders, ensuring that components only update when necessary.
 
@@ -449,7 +460,8 @@ specially on the hooks section.
 
 Like mentioned in the [Parameters](#parameters) section, data is saved in the `data` property of the node object in the `reactflow` instance.
 If you need to have more complex use cases for your nodes and need to store data, you should follow the same logic and use the `data` property.
-The `reactflow`instance provides the `setNodes` function to save and update the nodes list.
+The `reactflow` instance provides the `setNodes` function to save and update the nodes list. Alternatively, the `useFlowNodeUtils` hook provides
+an utility function called `setNodeData` to update the data of the node the hook was used on.
 
 If you need to export your data at any point you can use the `toObject` function on the `instance` object.
 
@@ -458,11 +470,11 @@ If you need to export your data at any point you can use the `toObject` function
 Below you can find a full example of a custom Node that exercises the topics approached in this page.
 
 ```tsx
-export const Asset = (props) => {
-  const { id } = props;
+export const Asset: HvFlowNodeFC = (props) => {
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node | undefined>();
-  const node = useFlowNode(id);
+
+  const node = useFlowNode();
 
   const classes = {
     container: css({
@@ -568,7 +580,7 @@ export const Asset = (props) => {
 Asset.meta = {
   label: "Asset",
   groupId: "someNodeGroup",
-};
+} satisfies HvFlowNodeTypeMeta;
 ```
 
 Other examples of custom nodes can be found on
