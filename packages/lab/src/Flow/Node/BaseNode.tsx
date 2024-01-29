@@ -181,10 +181,9 @@ export const HvFlowBaseNode = ({
           isConnectableEnd={false}
           id={output.id}
           position={Position.Right}
-          className={cx(
-            classes.handle,
-            edgeConnected && classes.handleConnected
-          )}
+          className={cx(classes.handle, {
+            [classes.handleConnected]: edgeConnected,
+          })}
         />
         {output.isMandatory && !edgeConnected && (
           <div className={classes.mandatory} />
@@ -204,10 +203,9 @@ export const HvFlowBaseNode = ({
           isConnectableStart={false}
           id={input.id}
           position={Position.Left}
-          className={cx(
-            classes.handle,
-            edgeConnected && classes.handleConnected
-          )}
+          className={cx(classes.handle, {
+            [classes.handleConnected]: edgeConnected,
+          })}
         />
         <HvTypography component="div">{input.label}</HvTypography>
         {input.isMandatory && !edgeConnected && (
