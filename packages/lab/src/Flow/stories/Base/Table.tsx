@@ -15,13 +15,14 @@ export const Table: HvFlowNodeFC<NodeGroup> = (props) => {
           label: "Data",
           isMandatory: true,
           accepts: ["prediction", "detection"],
+          maxConnections: 1,
         },
       ]}
       outputs={[
         {
           label: "Insight",
           isMandatory: true,
-          provides: "insight",
+          provides: "table",
         },
       ]}
       {...props}

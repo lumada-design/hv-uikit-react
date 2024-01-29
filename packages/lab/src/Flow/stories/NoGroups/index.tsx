@@ -17,9 +17,10 @@ import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
 import { restrictToSample } from "../Base";
-import { Asset } from "../Base/NoGroup/Asset";
-import { LineChart } from "../Base/NoGroup/LineChart";
-import { MLModelPrediction } from "../Base/NoGroup/MLModelPrediction";
+// The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/NoGroups
+import { Asset } from "./Asset";
+import { LineChart } from "./LineChart";
+import { MLModelPrediction } from "./MLModelPrediction";
 
 // Classes
 export const classes = {
