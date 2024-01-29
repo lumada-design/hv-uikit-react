@@ -1,8 +1,12 @@
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  HvFlowNodeTypeMeta,
+} from "@hitachivantara/uikit-react-lab";
 
-import type { NodeGroups } from ".";
+import type { NodeGroup } from ".";
 
-export const KPI: HvFlowNodeFC<NodeGroups> = (props) => {
+export const KPI: HvFlowNodeFC<NodeGroup> = (props) => {
   return (
     <HvFlowNode
       description="KPI description"
@@ -28,4 +32,4 @@ export const KPI: HvFlowNodeFC<NodeGroups> = (props) => {
 KPI.meta = {
   label: "KPI",
   groupId: "insights",
-};
+} satisfies HvFlowNodeTypeMeta<NodeGroup>;

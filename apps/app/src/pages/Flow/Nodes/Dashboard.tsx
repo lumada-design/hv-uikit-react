@@ -53,7 +53,7 @@ const classes = {
   }),
 };
 
-export const Dashboard: HvFlowNodeFC = (props) => {
+export const Dashboard: HvFlowNodeFC<NodeGroup> = (props) => {
   const { id } = props;
 
   const { nodeTypes } = useFlowContext();

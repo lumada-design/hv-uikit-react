@@ -19,7 +19,7 @@ import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
 import {
-  NodeGroups,
+  NodeGroup,
   NodeType,
   nodeGroups,
   nodeTypes,
@@ -27,8 +27,8 @@ import {
 } from "../Base";
 
 // Flow
-const nodes: HvFlowProps<NodeGroups, NodeType>["nodes"] = [];
-const edges: HvFlowProps<NodeGroups, NodeType>["edges"] = [];
+const nodes: HvFlowProps<NodeGroup, NodeType>["nodes"] = [];
+const edges: HvFlowProps<NodeGroup, NodeType>["edges"] = [];
 
 // Classes
 export const classes = {

@@ -1,8 +1,13 @@
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  HvFlowNodeTypeMeta,
+} from "@hitachivantara/uikit-react-lab";
 
 import { data } from "./data";
+import type { NodeGroup } from ".";
 
-export const JsonInput: HvFlowNodeFC = (props) => {
+export const JsonInput: HvFlowNodeFC<NodeGroup> = (props) => {
   return (
     <HvFlowNode
       description="Population Datakky7"
@@ -24,4 +29,4 @@ JsonInput.meta = {
   data: {
     jsonData: data,
   },
-};
+} satisfies HvFlowNodeTypeMeta<NodeGroup>;

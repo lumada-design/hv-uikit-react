@@ -8,7 +8,7 @@ import {
 
 import { NodeGroup } from "../types";
 
-export const Table: HvFlowNodeFC = (props) => {
+export const Table: HvFlowNodeFC<NodeGroup> = (props) => {
   const params: HvFlowNodeProps["params"] = useMemo(() => {
     return [
       { label: "Title", id: "title", type: "text" },

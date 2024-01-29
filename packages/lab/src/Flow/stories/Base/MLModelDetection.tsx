@@ -1,8 +1,12 @@
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  HvFlowNodeTypeMeta,
+} from "@hitachivantara/uikit-react-lab";
 
-import type { NodeGroups } from ".";
+import type { NodeGroup } from ".";
 
-export const MLModelDetection: HvFlowNodeFC<NodeGroups> = (props) => {
+export const MLModelDetection: HvFlowNodeFC<NodeGroup> = (props) => {
   return (
     <HvFlowNode
       description="Anomaly detection description"
@@ -28,4 +32,4 @@ export const MLModelDetection: HvFlowNodeFC<NodeGroups> = (props) => {
 MLModelDetection.meta = {
   label: "ML Model Detection",
   groupId: "models",
-};
+} satisfies HvFlowNodeTypeMeta<NodeGroup>;

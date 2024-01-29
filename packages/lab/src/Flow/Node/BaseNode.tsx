@@ -132,9 +132,9 @@ export const HvFlowBaseNode = ({
 
   const { classes, cx, css } = useClasses(classesProp);
 
-  const node = useFlowNode(id);
-  const inputEdges = useFlowNodeInputEdges(id);
-  const outputEdges = useFlowNodeOutputEdges(id);
+  const node = useFlowNode();
+  const inputEdges = useFlowNodeInputEdges();
+  const outputEdges = useFlowNodeOutputEdges();
 
   const handleDefaultAction = useCallback(
     (action: HvFlowNodeAction) => {

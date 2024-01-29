@@ -1,8 +1,12 @@
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
+import {
+  HvFlowNode,
+  HvFlowNodeFC,
+  HvFlowNodeTypeMeta,
+} from "@hitachivantara/uikit-react-lab";
 
-import type { NodeGroups } from ".";
+import type { NodeGroup } from ".";
 
-export const Table: HvFlowNodeFC<NodeGroups> = (props) => {
+export const Table: HvFlowNodeFC<NodeGroup> = (props) => {
   return (
     <HvFlowNode
       description="Table description"
@@ -28,4 +32,4 @@ export const Table: HvFlowNodeFC<NodeGroups> = (props) => {
 Table.meta = {
   label: "Table",
   groupId: "insights",
-};
+} satisfies HvFlowNodeTypeMeta<NodeGroup>;

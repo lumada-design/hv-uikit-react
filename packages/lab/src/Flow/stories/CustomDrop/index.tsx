@@ -51,7 +51,7 @@ export const nodeGroups = {
   },
 } satisfies HvFlowProps["nodeGroups"];
 
-export type NodeGroups = keyof typeof nodeGroups;
+export type NodeGroup = keyof typeof nodeGroups;
 
 // Node types
 export const nodeTypes = {
@@ -63,8 +63,8 @@ export const nodeTypes = {
 export type NodeType = keyof typeof nodeTypes;
 
 // Flow
-const nodes: HvFlowProps<NodeGroups, NodeType>["nodes"] = [];
-const edges: HvFlowProps<NodeGroups, NodeType>["edges"] = [];
+const nodes: HvFlowProps<NodeGroup, NodeType>["nodes"] = [];
+const edges: HvFlowProps<NodeGroup, NodeType>["edges"] = [];
 
 // Classes
 const classes = {
