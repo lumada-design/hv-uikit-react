@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
-import { Node, ReactFlowInstance } from "reactflow";
 import {
   HvButton,
   HvDialog,
@@ -20,6 +19,7 @@ import {
   HvFlowProps,
   HvFlowSidebar,
   HvFlowControls,
+  HvFlowInstance,
 } from "@hitachivantara/uikit-react-lab";
 
 // The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
@@ -93,14 +93,15 @@ const edges: HvFlowProps["edges"] = [
   },
 ];
 
+type Node = ReturnType<HvFlowInstance<NodeData>["getNode"]>;
+
 export const DynamicHandles = () => {
   const { rootId } = useTheme();
 
-  const [reactFlowInstance, setReactFlowInstance] =
-    useState<ReactFlowInstance>();
+  const [reactFlowInstance, setReactFlowInstance] = useState<HvFlowInstance>();
 
   const [open, setOpen] = useState(false);
-  const [nodeConfig, setNodeConfig] = useState<Node<NodeData>>();
+  const [nodeConfig, setNodeConfig] = useState<Node>();
 
   const options = useMemo(
     () =>

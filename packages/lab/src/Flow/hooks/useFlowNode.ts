@@ -6,10 +6,10 @@ import {
   useStore,
   useNodes,
   useEdges,
-  useReactFlow,
 } from "reactflow";
 import { shallow } from "zustand/shallow";
 
+import { useFlowInstance } from "./useFlowInstance";
 import { useNodeId } from "./useNodeId";
 
 /** Retrieves the node instance */
@@ -107,7 +107,7 @@ export function useFlowOutputNodes<T = any>(id?: string) {
 /** Utilities to manipulate a node in the flow */
 export function useFlowNodeUtils<NodeData = any>(id?: string) {
   const nodeId = useNodeId(id);
-  const reactFlowInstance = useReactFlow<NodeData>();
+  const reactFlowInstance = useFlowInstance<NodeData>();
 
   /** Mutate the node's `.data` object */
   const setNodeData = useCallback(

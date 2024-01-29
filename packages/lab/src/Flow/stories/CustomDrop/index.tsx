@@ -23,8 +23,8 @@ import {
   HvFlow,
   HvFlowProps,
   HvFlowControls,
+  HvFlowInstance,
 } from "@hitachivantara/uikit-react-lab";
-import { Node, ReactFlowInstance } from "reactflow";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these components and values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/CustomDrop
@@ -75,11 +75,12 @@ const classes = {
   }),
 };
 
+type Node = ReturnType<HvFlowInstance["getNode"]>;
+
 export const CustomDrop = () => {
   const { rootId } = useTheme();
 
-  const [reactFlowInstance, setReactFlowInstance] =
-    useState<ReactFlowInstance>();
+  const [reactFlowInstance, setReactFlowInstance] = useState<HvFlowInstance>();
 
   const [open, setOpen] = useState(false);
   const [precipitationConfig, setPrecipitationConfig] = useState<Node>();

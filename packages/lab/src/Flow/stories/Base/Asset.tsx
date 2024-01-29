@@ -14,18 +14,20 @@ import {
   Search,
 } from "@hitachivantara/uikit-react-icons";
 import {
+  HvFlowInstance,
   HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeTypeMeta,
   useFlowNode,
 } from "@hitachivantara/uikit-react-lab";
-import { Node } from "reactflow";
 
 import type { NodeGroup } from ".";
 
+type Node = ReturnType<HvFlowInstance["getNode"]>;
+
 export const Asset: HvFlowNodeFC<NodeGroup> = (props) => {
   const [showDialog, setShowDialog] = useState(false);
-  const [details, setDetails] = useState<Node | undefined>();
+  const [details, setDetails] = useState<Node>();
   const node = useFlowNode();
 
   const classes = {
@@ -73,7 +75,6 @@ export const Asset: HvFlowNodeFC<NodeGroup> = (props) => {
           </HvButton>
         </HvDialogActions>
       </HvDialog>
-
       <HvFlowNode
         description="Asset description"
         expanded

@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef } from "react";
-import { useReactFlow } from "reactflow";
 import {
   HvFlowNodeFC,
   HvFlowNodeInput,
@@ -7,6 +6,7 @@ import {
   HvFlowNode,
   HvFlowNodeTypeMeta,
   useFlowNodeUtils,
+  useFlowInstance,
 } from "@hitachivantara/uikit-react-lab";
 
 import type { NodeGroup } from ".";
@@ -63,7 +63,7 @@ export const Asset: HvFlowNodeFC<NodeGroup, NodeData> = (props) => {
 
   const curType = useRef(data.type);
 
-  const reactFlowInstance = useReactFlow();
+  const reactFlowInstance = useFlowInstance();
 
   const { setNodeData } = useFlowNodeUtils();
 

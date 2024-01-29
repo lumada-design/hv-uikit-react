@@ -5,13 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import {
-  Handle,
-  NodeProps,
-  NodeToolbar,
-  Position,
-  useReactFlow,
-} from "reactflow";
+import { Handle, NodeProps, NodeToolbar, Position } from "reactflow";
 import { uid } from "uid";
 import {
   ExtractNames,
@@ -45,6 +39,7 @@ import {
   isOutputGroup,
   renderedIcon,
 } from "./utils";
+import { useFlowInstance } from "../hooks";
 
 export { staticClasses as flowBaseNodeClasses };
 
@@ -128,7 +123,7 @@ export const HvFlowBaseNode = ({
   }, [id, title, inputs, outputs, registerNode, unregisterNode]);
 
   const [showActions, setShowActions] = useState(false);
-  const reactFlowInstance = useReactFlow();
+  const reactFlowInstance = useFlowInstance();
 
   const { classes, cx, css } = useClasses(classesProp);
 
