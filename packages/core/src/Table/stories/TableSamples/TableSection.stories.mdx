@@ -1,0 +1,50 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import {
+  SimpleTableSectionStory,
+  CompleteTableSectionStory,
+  PropsTableSectionStory,
+} from "./TableSectionStories";
+
+<Meta title="Visualizations/Table/Table Section" />
+
+# Table Section
+
+In recent minor versions updates of the Design System specification, several visual changes were introduced
+that substantially change the look of the `Table` component. While UI Kit v5.x tries to keep up with the latest
+Design System specification, adapting to these changes in a minor version update of the library would lead to breaking
+changes that might not be wanted by our users as they may want to stick to the old layout, efectively locking the users
+to a specific UI Kit version.
+
+Recognizing the challenges posed by immediate adaptation and breaking changes on a minor version, we've introduced
+the `HvTableSection` component. This component is designed to serve as a temporary solution allowing developers to benefit
+from the updated visuals of the `Table` component if they wish to.
+
+## How to use
+
+If you want to use the new `Table` visuals on the tables in your application you just need to wrap your table code
+with the `HvTableSection` component:
+
+```tsx
+<HvTableSection>{/* old table code */}</HvTableSection>
+```
+
+This will result in the table adapting to the new visuals:
+
+<Canvas>
+  <Story name="Simple Table" story={SimpleTableSectionStory} />
+</Canvas>
+
+If your table includes more complex controls, like bulk actions or pagination, these are adapted just the same:
+
+<Canvas>
+  <Story name="Complete Table" story={CompleteTableSectionStory} />
+</Canvas>
+
+The way the `HvTableSection` component works is by wrapping your table with the `HvSection` component. As such,
+you can pass a set of section properties to the underlying `HvSection` component through the `sectionProps` property
+and configure the section as you please. The sample below illustrates how you can have an expandable section
+with a table inside and a set of actions.
+
+<Canvas>
+  <Story name="Section Props" story={PropsTableSectionStory} />
+</Canvas>

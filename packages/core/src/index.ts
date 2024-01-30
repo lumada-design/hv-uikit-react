@@ -105,6 +105,7 @@ export * from "./ToggleButton";
 export * from "./Tooltip";
 export * from "./TreeView";
 export * from "./VerticalNavigation";
+export * from "./TableSection";
 
 export * from "./hooks/useClickOutside";
 export * from "./hooks/useComputation";

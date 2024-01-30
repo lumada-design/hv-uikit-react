@@ -159,12 +159,41 @@ export const WithActions: StoryObj<HvSectionProps> = {
   },
 };
 
+export const NoHeader: StoryObj<HvSectionProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "This sample showcases an example of a Section with just the content.",
+      },
+    },
+  },
+  render: () => {
+    return (
+      <HvSection>
+        <HvTypography>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor
+          blandit ipsum quis sollicitudin. Aliquam erat volutpat. Praesent nisi
+          nisl, sodales vitae blandit tincidunt, malesuada id sapien. Nulla
+          dapibus accumsan est, a pharetra velit consequat et. Nullam iaculis
+          justo sed urna condimentum ultricies. Integer nec interdum tortor.
+          Nulla molestie nibh in elit congue malesuada. Donec fringilla volutpat
+          sapien id maximus. Vestibulum faucibus pellentesque ex, non gravida
+          dui pharetra quis. Nulla facilisi. Suspendisse erat nisl, mollis ut
+          est nec, malesuada feugiat orci. Vivamus dignissim nibh id lacinia
+          vehicula.
+        </HvTypography>
+      </HvSection>
+    );
+  },
+};
+
 export const Multiple: StoryObj<HvSectionProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          "This sample showcases as example where multiple sections are used together.",
+          "This sample showcases an example where multiple sections are used together.",
       },
     },
   },
