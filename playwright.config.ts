@@ -43,7 +43,28 @@ export default defineConfig({
         },
       },
     },
-
+    {
+      name: "chrome",
+      use: {
+        ...devices["Desktop Chrome"],
+        channel: "chrome",
+        viewport: {
+          width: 1920,
+          height: 1080,
+        },
+      },
+    },
+    {
+      name: "msedge",
+      use: {
+        ...devices["Desktop Chrome"],
+        channel: "msedge",
+        viewport: {
+          width: 1920,
+          height: 1080,
+        },
+      },
+    },
     {
       name: "firefox",
       use: {
@@ -54,7 +75,6 @@ export default defineConfig({
         },
       },
     },
-
     {
       name: "webkit",
       use: {
@@ -65,7 +85,6 @@ export default defineConfig({
         },
       },
     },
-
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
@@ -75,7 +94,6 @@ export default defineConfig({
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },
     // },
-
     /* Test against branded browsers. */
     // {
     //   name: 'Microsoft Edge',

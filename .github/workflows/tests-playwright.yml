@@ -17,14 +17,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        PROJECT: ["chromium", "firefox", "webkit"]
+        PROJECT: ["chromium", "chrome", "msedge", "firefox", "webkit"]
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
 
       - name: Install Playwright
         run: npx playwright install --with-deps

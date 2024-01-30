@@ -121,7 +121,7 @@ test.describe("Node", () => {
     expect(nodeInCanvasBox?.y).toBeLessThanOrEqual(dragDestinationBox!.y + 40);
   });
 
-  test("should be able to copy a flow", async ({ page }) => {
+  test("should be able to duplicate a node", async ({ page }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
     await page.getByRole("button", { name: "Add Node" }).click();
 
@@ -143,7 +143,7 @@ test.describe("Node", () => {
     expect(await createdNode.all()).toHaveLength(2);
   });
 
-  test("should be able to delete a flow", async ({ page }) => {
+  test("should be able to delete a node", async ({ page }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
     await page.getByRole("button", { name: "Add Node" }).click();
 
@@ -166,7 +166,7 @@ test.describe("Node", () => {
 });
 
 test.describe("Connections", () => {
-  test("should be able to connect two flows", async ({ page }) => {
+  test("should be able to connect two nodes", async ({ page }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
     await page.getByRole("button", { name: "Add Node" }).click();
 
@@ -222,7 +222,7 @@ test.describe("Connections", () => {
     ).not.toBeVisible();
   });
 
-  test("should not be able to connect incompatible flows", async ({ page }) => {
+  test("should not be able to connect incompatible nodes", async ({ page }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
     await page.getByRole("button", { name: "Add Node" }).click();
 
@@ -335,7 +335,7 @@ test.describe("Interactive button", () => {
     );
   });
 
-  test("should not be able to duplicate/delete flows after interactive button is locked", async ({
+  test("should not be able to duplicate/delete nodes after interactive button is locked", async ({
     page,
   }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
