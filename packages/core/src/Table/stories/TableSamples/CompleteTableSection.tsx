@@ -8,19 +8,13 @@ import {
   HvTableHeader,
   HvTableRow,
   HvTableCell,
+  HvTableSection,
   HvPagination,
-  HvTypography,
   HvBulkActions,
-  HvActionsGeneric,
-  HvSection,
   useHvPagination,
   useHvRowSelection,
   useHvBulkActions,
   useHvData,
-  theme,
-  tableContainerClasses,
-  tableCellClasses,
-  tableHeaderClasses,
 } from "@hitachivantara/uikit-react-core";
 import {
   Delete,
@@ -29,56 +23,7 @@ import {
   Preview,
 } from "@hitachivantara/uikit-react-icons";
 
-import { css } from "@emotion/css";
-
 import { AssetEvent, getColumns, makeData } from "../storiesUtils";
-
-const classes = {
-  section: css({
-    padding: 0,
-  }),
-  sectionHeader: css({
-    padding: theme.spacing("xs", "xs", "xs", "sm"),
-    borderBottom: `1px solid ${theme.colors.atmo3}`,
-  }),
-  sectionActions: css({
-    right: theme.space.sm,
-  }),
-  pagination: css({
-    margin: 0,
-    backgroundColor: theme.colors.atmo2,
-    padding: theme.space.xs,
-    borderRadius: `0 0 ${theme.radii.round} ${theme.radii.round}`,
-  }),
-  pageSizeOptions: css({
-    left: theme.space.sm,
-  }),
-  content: css({
-    marginTop: 0,
-    [`& .${tableContainerClasses.root}`]: {
-      paddingBottom: 0,
-    },
-    [`& .${tableHeaderClasses.head}`]: {
-      backgroundColor: theme.colors.atmo2,
-      borderBottomColor: theme.colors.atmo3,
-      [`&.${tableHeaderClasses.variantCheckbox}`]: {
-        borderRight: "none",
-      },
-    },
-    [`& .${tableCellClasses.root}`]: {
-      borderBottomColor: theme.colors.atmo3,
-    },
-    [`& .${tableCellClasses.variantCheckbox}`]: {
-      borderRight: "none",
-    },
-  }),
-  bulkActions: css({
-    marginBottom: 0,
-    border: "none",
-    borderBottom: `1px solid ${theme.colors.atmo3}`,
-    padding: theme.spacing("xs", "sm"),
-  }),
-};
 
 const EmptyRow = () => (
   <HvTableRow>
@@ -86,7 +31,7 @@ const EmptyRow = () => (
   </HvTableRow>
 );
 
-export const Section = () => {
+export const CompleteTableSection = () => {
   const columns = useMemo(() => getColumns(), []);
   const [data, setData] = useState(makeData(64));
 
@@ -106,29 +51,6 @@ export const Section = () => {
     useHvPagination,
     useHvRowSelection,
     useHvBulkActions
-  );
-
-  const actions = useMemo(
-    () => (
-      <HvActionsGeneric
-        actions={[
-          { id: "action1", label: "Action 1" },
-          {
-            id: "action2",
-            label: "Action 2",
-          },
-          {
-            id: "action3",
-            label: "Action 3",
-          },
-        ]}
-        actionsCallback={(_, __, action) => {
-          console.log(action.label);
-        }}
-        maxVisibleActions={1}
-      />
-    ),
-    []
   );
 
   const handleAction = useCallback(
@@ -179,16 +101,7 @@ export const Section = () => {
   };
 
   return (
-    <HvSection
-      title={<HvTypography variant="title3">Sample Table</HvTypography>}
-      actions={actions}
-      classes={{
-        root: classes.section,
-        header: classes.sectionHeader,
-        actions: classes.sectionActions,
-        content: classes.content,
-      }}
-    >
+    <HvTableSection>
       <HvBulkActions
         {...getHvBulkActionsProps?.()}
         maxVisibleActions={1}
@@ -199,9 +112,6 @@ export const Section = () => {
           { id: "lock", label: "Lock", icon: <Lock /> },
           { id: "preview", label: "Preview", icon: <Preview /> },
         ]}
-        classes={{
-          root: classes.bulkActions,
-        }}
       />
       <HvTableContainer tabIndex={0}>
         <HvTable {...getTableProps()}>
@@ -222,14 +132,8 @@ export const Section = () => {
         </HvTable>
       </HvTableContainer>
       {page?.length ? (
-        <HvPagination
-          classes={{
-            root: classes.pagination,
-            pageSizeOptions: classes.pageSizeOptions,
-          }}
-          {...getHvPaginationProps?.()}
-        />
+        <HvPagination {...getHvPaginationProps?.()} />
       ) : undefined}
-    </HvSection>
+    </HvTableSection>
   );
 };

@@ -34,6 +34,8 @@ export interface HvSectionProps
   ) => void;
   /** Props to be passed to the expand button */
   expandButtonProps?: HvButtonProps;
+  /** Determines whether or not the header has a shadow on the bottom border. */
+  raisedHeader?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: HvSectionClasses;
 }
@@ -54,6 +56,7 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
       actions,
       onToggle,
       expandButtonProps,
+      raisedHeader,
       children,
       ...others
     } = useDefaultProps("HvSection", props);
@@ -77,29 +80,38 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
         className={cx(classes.root, className)}
         {...others}
       >
-        <div className={classes.header}>
-          {expandable && (
-            <HvButton
-              icon
-              onClick={(event) => {
-                setIsOpen((o) => !o);
-                onToggle?.(event, !isOpen);
-              }}
-              aria-expanded={isOpen}
-              aria-controls={contentId}
-              aria-label={isOpen ? "Collapse" : "Expand"}
-              {...expandButtonProps}
-            >
-              {isOpen ? <Up /> : <Down />}
-            </HvButton>
-          )}
-          {title}
-          <div className={classes.actions}>{actions}</div>
-        </div>
+        {(title || actions || expandable) && (
+          <div
+            className={cx(classes.header, {
+              [classes.raisedHeader]: raisedHeader && isOpen,
+            })}
+          >
+            {expandable && (
+              <HvButton
+                icon
+                onClick={(event) => {
+                  setIsOpen((o) => !o);
+                  onToggle?.(event, !isOpen);
+                }}
+                aria-expanded={isOpen}
+                aria-controls={contentId}
+                aria-label={isOpen ? "Collapse" : "Expand"}
+                {...expandButtonProps}
+              >
+                {isOpen ? <Up /> : <Down />}
+              </HvButton>
+            )}
+            {title}
+            <div className={classes.actions}>{actions}</div>
+          </div>
+        )}
         <div
           id={contentId}
           hidden={!isOpen}
-          className={cx(classes.content, { [classes.hidden]: !showContent })}
+          className={cx(classes.content, {
+            [classes.hidden]: !showContent,
+            [classes.spaceTop]: !(title || actions || expandable),
+          })}
         >
           {children}
         </div>

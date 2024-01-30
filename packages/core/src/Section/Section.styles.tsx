@@ -7,7 +7,6 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    padding: theme.space.sm,
     backgroundColor: theme.colors.atmo1,
     borderRadius: theme.radii.round,
     border: `1px solid ${theme.colors.atmo4}`,
@@ -18,14 +17,25 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
     alignItems: "center",
     position: "relative",
     minHeight: theme.sizes.sm,
+    padding: theme.space.sm,
   },
   content: {
-    marginTop: theme.space.sm,
+    padding: theme.spacing(0, "sm", "sm", "sm"),
+  },
+  spaceTop: {
+    paddingTop: theme.space.sm,
   },
   actions: {
     display: "flex",
     gap: theme.space.xs,
     position: "absolute",
     right: 0,
+  },
+  raisedHeader: {
+    zIndex: 1,
+    boxShadow: theme.colors.shadow,
+    "+ div": {
+      paddingTop: theme.space.sm,
+    },
   },
 });
