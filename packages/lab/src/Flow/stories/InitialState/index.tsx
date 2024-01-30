@@ -15,6 +15,7 @@ import {
   HvFlowSidebar,
   HvFlow,
   HvFlowControls,
+  HvFlowProps,
 } from "@hitachivantara/uikit-react-lab";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
@@ -189,7 +190,7 @@ export const InitialState = () => {
     setDialogOpen(true);
   }, []);
 
-  const makeDirty = (nds, eds) => {
+  const makeDirty: HvFlowProps["onFlowChange"] = (nds, eds) => {
     if (firstRender.current) return;
     setDirty(true);
     setDetails({ nodes: nds, edges: eds });
