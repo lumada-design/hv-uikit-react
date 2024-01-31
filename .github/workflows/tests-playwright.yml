@@ -28,3 +28,12 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test --project=${{ matrix.PROJECT }}
+
+      - name: Archive tests report
+        if: ${{ success() || failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: Playwright report-[${{ matrix.PROJECT }}]
+          path: |
+            playwright-report/
+          retention-days: 5
