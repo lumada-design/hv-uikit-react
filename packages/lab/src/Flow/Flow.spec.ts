@@ -241,21 +241,25 @@ test.describe("Connections", () => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
     await page.getByRole("button", { name: "Add Node" }).click();
 
-    const mlNode1 = await selectNode("ML Model", "ML Model Detection", true);
+    const mlNode1 = await selectNode("Insight", "Table", true);
     await dragToPosition1(mlNode1);
-    const mlNode2 = await selectNode("ML Model", "ML Model Prediction", false);
+    const mlNode2 = await selectNode("Insight", "KPI", false);
     await dragToPosition2(mlNode2);
-    const tableNode = await selectNode("Insight", "Table", true);
+    const tableNode = await selectNode("Dashboard", "Dashboard", true);
     await dragToPosition3(tableNode);
 
-    await connectNodes("ML Model Prediction", "Prediction", "Table", "Data");
+    await connectNodes("KPI", "Insight", "Dashboard", "Insights");
     await expect(
       flowCanvasLocator.getByRole("button", { name: "Edge" })
     ).toBeVisible();
-    await connectNodes("ML Model Detection", "Detection", "Table", "Data");
+    await connectNodes("Table", "Insight", "Dashboard", "Insights");
     expect(
       await flowCanvasLocator.getByRole("button", { name: "Edge" }).all()
     ).toHaveLength(2);
+    await connectNodes("Table", "Insight", "Dashboard", "Table 1");
+    expect(
+      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all()
+    ).toHaveLength(3);
   });
 
   test("connector should respect the maximum number of connections allowed", async ({
