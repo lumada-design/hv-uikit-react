@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.27.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.26.3...@hitachivantara/uikit-react-lab@5.27.0) (2024-01-31)
+
+### Bug Fixes
+
+- **FlowNode:** handle content when already connected ([cbb231c](https://github.com/lumada-design/hv-uikit-react/commit/cbb231cc670b4758c5bba64ac96a247c667f2076))
+
+### Features
+
+- **Flow:** re-exporting useReactFlow ([b1ad7bb](https://github.com/lumada-design/hv-uikit-react/commit/b1ad7bbef7ac06b690d112e4d6942b32b8918c3c))
+
 ## [5.26.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.26.2...@hitachivantara/uikit-react-lab@5.26.3) (2024-01-26)
 
 ### Performance Improvements
