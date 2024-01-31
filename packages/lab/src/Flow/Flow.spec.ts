@@ -34,8 +34,8 @@ async function dragToPosition3(node: Locator) {
 async function connectNodes(
   sourceNode: string,
   sourceConnection: string,
-  destinyNode: string,
-  destinyConnection
+  targetNode: string,
+  targetConnection: string
 ) {
   const source = flowCanvasLocator
     .getByRole("button", { name: sourceNode })
@@ -45,15 +45,15 @@ async function connectNodes(
         .locator("../div")
         .getByText(sourceConnection, { exact: true }),
     });
-  const destiny = flowCanvasLocator
-    .getByRole("button", { name: destinyNode })
+  const target = flowCanvasLocator
+    .getByRole("button", { name: targetNode })
     .locator(".react-flow__handle-left")
     .filter({
       has: referencePage
         .locator("../div")
-        .getByText(destinyConnection, { exact: true }),
+        .getByText(targetConnection, { exact: true }),
     });
-  await source.dragTo(destiny, { force: true });
+  await source.dragTo(target, { force: true });
 }
 
 async function deleteConnection(connectionName: string) {
@@ -76,7 +76,7 @@ async function moveUp(renderedNode: Locator, verticalMovement: number) {
 
 test.beforeEach(async ({ page }) => {
   referencePage = page;
-  flowCanvasLocator = page.locator("id=hvFlow:r1:");
+  flowCanvasLocator = page.locator(".HvFlow-root");
 });
 
 test.describe("Node", () => {

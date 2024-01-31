@@ -31,7 +31,4 @@ jobs:
 
   playwright:
     name: Playwright
-    needs: artifacts
     uses: ./.github/workflows/tests-playwright.yml
-    with:
-      publish-folder: pr-${{ github.event.number }}
