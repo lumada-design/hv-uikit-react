@@ -1,7 +1,8 @@
-import { HvButton, HvButtonProps } from "../Button";
-import { HvTooltip, HvTooltipProps } from "../Tooltip";
+import { HvButton, HvButtonProps } from "../../Button";
+import { HvTooltip, HvTooltipProps } from "../../Tooltip";
 
-export interface IconButtonProps extends Omit<HvButtonProps, "icon" | "title"> {
+export interface IconButtonProps
+  extends Omit<HvButtonProps, "icon" | "title" | "component"> {
   title: React.ReactNode;
   placement?: HvTooltipProps["placement"];
   onClick?: HvButtonProps["onClick"];
@@ -14,6 +15,6 @@ export const IconButton = ({
   ...others
 }: IconButtonProps) => (
   <HvTooltip enterDelay={500} title={title} placement={placement}>
-    <HvButton icon {...others} />
+    <HvButton focusableWhenDisabled icon {...others} />
   </HvTooltip>
 );

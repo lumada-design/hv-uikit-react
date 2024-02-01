@@ -1,10 +1,8 @@
 import { CSSInterpolation } from "@emotion/serialize";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "../utils/focusUtils";
 import { createClasses } from "../utils/classes";
-
 import { HvButtonRadius, HvButtonSize } from "./types";
 
 export const { staticClasses, useClasses } = createClasses("HvButton", {
@@ -15,18 +13,21 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     textTransform: "none",
     cursor: "pointer",
     minWidth: "70px",
-
     whiteSpace: "nowrap",
 
-    "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
-    },
-    "&:focus-visible": {
-      ...outlineStyles,
+    "&:hover:not($disabled)": {
       backgroundColor: theme.colors.containerBackgroundHover,
     },
 
-    // default button - no size specified
+    "&:focus-visible": {
+      ...outlineStyles,
+
+      "&:not($disabled)": {
+        backgroundColor: theme.colors.containerBackgroundHover,
+      },
+    },
+
+    // Default button - no size specified
     fontFamily: theme.fontFamily.body,
     fontSize: theme.fontSizes.base,
     fontWeight: theme.fontWeights.semibold,
@@ -43,27 +44,25 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     marginRight: `calc(-1 * ${theme.space.xs})`,
   },
   focusVisible: {},
-
   disabled: {
     color: theme.colors.secondary_60,
     borderColor: theme.colors.atmo4,
     backgroundColor: theme.colors.atmo3,
     cursor: "not-allowed",
-    pointerEvents: "none",
   },
-
   icon: {
     margin: 0,
     padding: 0,
     height: "fit-content",
     minWidth: "unset",
   },
-
   primary: {
     color: theme.colors.atmo1,
     backgroundColor: theme.colors.primary,
-    "&:hover, &:focus-visible": {
-      backgroundColor: theme.colors.primary_80,
+    "&:not($disabled)": {
+      "&:hover, &:focus-visible": {
+        backgroundColor: theme.colors.primary_80,
+      },
     },
   },
   primarySubtle: {
@@ -74,7 +73,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   primaryGhost: {
     color: theme.colors.primary,
     backgroundColor: "transparent",
-    "&:disabled": {
+    "&$disabled": {
       backgroundColor: "transparent",
     },
   },
@@ -86,17 +85,19 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   secondaryGhost: {
     color: theme.colors.secondary,
     backgroundColor: "transparent",
-    "&:disabled": {
+    "&$disabled": {
       backgroundColor: "transparent",
     },
   },
   semantic: {
     color: theme.colors.base_dark,
     backgroundColor: "transparent",
-    "&:hover, &:focus-visible": {
-      backgroundColor: "rgba(251, 252, 252, 0.3)",
+    "&:not($disabled)": {
+      "&:hover, &:focus-visible": {
+        backgroundColor: "rgba(251, 252, 252, 0.3)",
+      },
     },
-    "&:disabled": {
+    "&$disabled": {
       backgroundColor: "rgba(251, 252, 252, 0.1)",
     },
   },

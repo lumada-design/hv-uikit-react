@@ -24,11 +24,11 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
   PolymorphicComponentRef<
     C,
     {
-      /** Use the variant prop to change the visual style of the Button. */
+      /** Use the variant prop to change the visual style of the button. */
       variant?: HvButtonVariant;
-      /** Whether the Button is an icon-only button. */
+      /** Whether the button is an icon-only button. */
       icon?: boolean;
-      /** Whether the Button is disabled or not. */
+      /** Whether the button is disabled or not. */
       disabled?: boolean;
       /** Class names to be applied. */
       className?: string;
@@ -44,8 +44,14 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
       overrideIconColors?: boolean;
       /** A Jss Object used to override or extend the styles applied. */
       classes?: HvButtonClasses;
-      /** Whether the Button is selected or not. */
+      /** Whether the button is selected or not. */
       selected?: boolean;
+      /**
+       * Whether the button is focusable when disabled.
+       * Without this property, the accessibility of the button decreases when disabled since it's not read by screen readers.
+       * Set this property to `true` when you need the button to still be focusable when disabled for accessibility purposes.
+       */
+      focusableWhenDisabled?: boolean;
     }
   >;
 
@@ -96,6 +102,9 @@ export const HvButton = fixedForwardRef(function HvButton<
     radius,
     overrideIconColors = true,
     component: Component = "button",
+    focusableWhenDisabled,
+    onClick: onClickProp,
+    onMouseDown: onMouseDownProp,
     ...others
   } = useDefaultProps("HvButton", props);
   const { classes, css, cx } = useClasses(classesProp);
@@ -104,6 +113,16 @@ export const HvButton = fixedForwardRef(function HvButton<
     variantProp ?? (icon ? "secondaryGhost" : "primary"),
     activeTheme?.name
   );
+
+  const handleClick: HvButtonProps["onClick"] = (e) => {
+    if (disabled) return;
+    onClickProp?.(e);
+  };
+
+  const handleMouseDown: HvButtonProps["onMouseDown"] = (e) => {
+    if (disabled) return;
+    onMouseDownProp?.(e);
+  };
 
   return (
     <Component
@@ -120,10 +139,12 @@ export const HvButton = fixedForwardRef(function HvButton<
         },
         className
       )}
+      onClick={handleClick}
+      onMouseDown={handleMouseDown}
       {...(Component === "button" && { type: "button" })}
       {...(disabled && {
-        disabled: true,
-        tabIndex: -1,
+        disabled: !focusableWhenDisabled,
+        tabIndex: focusableWhenDisabled ? 0 : -1,
         "aria-disabled": true,
       })}
       {...others}
