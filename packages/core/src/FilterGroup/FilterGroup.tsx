@@ -24,7 +24,6 @@ import { HvFilterGroupProvider } from "./FilterGroupContext";
 import {
   HvFilterGroupFilters,
   HvFilterGroupHorizontalPlacement,
-  HvFilterGroupLabels,
   HvFilterGroupValue,
 } from "./types";
 
@@ -96,15 +95,24 @@ export interface HvFilterGroupProps
   classes?: HvFilterGroupClasses;
 }
 
-const DEFAULT_LABELS: HvFilterGroupLabels = {
+const DEFAULT_LABELS = {
+  /** Apply button label. */
   applyLabel: "Apply",
+  /** Cancel button label. */
   cancelLabel: "Cancel",
+  /** Clear button label. */
   clearLabel: "Clear Filters",
+  /** Placeholder label. */
   placeholder: "Filters",
+  /** SearchBox placeholder label. */
   searchBoxPlaceholder: "Search",
+  /** Select All placeholder label. */
   selectAll: "All",
+  /** Multi selection conjunction placeholder label. */
   multiSelectionConjunction: "/",
 };
+
+export type HvFilterGroupLabels = Partial<typeof DEFAULT_LABELS>;
 
 /**
  * This component implements one potential use-case of the Filter Group pattern Design System Specifies.

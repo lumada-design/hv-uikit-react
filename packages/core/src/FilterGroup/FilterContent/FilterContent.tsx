@@ -13,16 +13,13 @@ import { setId } from "../../utils/setId";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 
-import {
-  HvFilterGroupLabels,
-  HvFilterGroupValue,
-  HvFilterGroupHorizontalPlacement,
-} from "../types";
+import { HvFilterGroupValue, HvFilterGroupHorizontalPlacement } from "../types";
 import { staticClasses, useClasses } from "./FilterContent.styles";
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { HvFilterGroupCounter } from "../Counter";
 import { HvFilterGroupLeftPanel } from "../LeftPanel";
 import { HvFilterGroupRightPanel } from "../RightPanel";
+import type { HvFilterGroupLabels } from "../FilterGroup";
 
 export { staticClasses as filterGroupContentClasses };
 

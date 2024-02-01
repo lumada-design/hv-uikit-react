@@ -45,7 +45,7 @@ export { staticClasses as flowBaseNodeClasses };
 
 export type HvFlowBaseNodeClasses = ExtractNames<typeof useClasses>;
 
-const DEFAULT_LABELS = {
+export const DEFAULT_LABELS = {
   outputsTitle: "Outputs",
   inputsTitle: "Inputs",
   deleteActionLabel: "Delete",

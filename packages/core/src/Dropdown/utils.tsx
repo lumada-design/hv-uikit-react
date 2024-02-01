@@ -1,6 +1,6 @@
 import { HvListValue } from "../List";
 
-import { HvDropdownLabelsProps } from "./types";
+import type { HvDropdownLabels } from "./Dropdown";
 
 /** Filter selected elements. */
 const getSelected = (list: HvListValue[] = []) =>
@@ -11,7 +11,7 @@ const hasSelected = (list: HvListValue[]) => getSelected(list).length > 0;
 
 /** Gets the selection label according to selection. */
 const getSelectionLabel = (
-  labels: HvDropdownLabelsProps | undefined,
+  labels: HvDropdownLabels | undefined,
   placeholder: string,
   multiSelect: boolean,
   list: HvListValue[] = []

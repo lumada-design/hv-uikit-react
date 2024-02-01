@@ -60,7 +60,12 @@ export const HvDashboardNode = (props: HvDashboardNodeProps) => {
   const { classes } = useClasses(classesProp);
 
   return (
-    <HvFlowNode id={id} classes={classes} labels={labels} {...others}>
+    <HvFlowNode
+      id={id}
+      classes={classes}
+      labels={labels as HvDashboardNodeProps["labels"]}
+      {...others}
+    >
       {children}
       <HvDialog
         open={open}

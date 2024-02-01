@@ -16,7 +16,7 @@ import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./List.styles";
 import { getSelected } from "../utils";
-import { HvDropdownLabelsProps } from "../types";
+import type { HvDropdownLabels } from "../Dropdown";
 
 export { staticClasses as dropdownListClasses };
 
@@ -64,7 +64,7 @@ export interface HvDropdownListProps {
   /**
    * An object containing all the labels for the dropdown.
    */
-  labels?: HvDropdownLabelsProps;
+  labels?: HvDropdownLabels;
   /**
    * If 'true' the dropdown will notify on the first render.
    */

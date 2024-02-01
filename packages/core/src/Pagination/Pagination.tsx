@@ -28,34 +28,38 @@ export { staticClasses as paginationClasses };
 
 export type HvPaginationClasses = ExtractNames<typeof useClasses>;
 
-export interface HvPaginationLabels {
+const defaultPageSizeOptions = [5, 10, 20, 25, 50, 100];
+
+const DEFAULT_LABELS = {
   /** The show label. */
-  pageSizePrev?: string;
+  pageSizePrev: "Show",
   /** Indicate the units of the page size selection. */
-  pageSizeEntryName?: string;
+  pageSizeEntryName: "rows",
   /** Used for the aria-label of the selection of number of unit.s */
-  pageSizeSelectorDescription?: string;
+  pageSizeSelectorDescription: "Select how many to display",
   /** Separator of current page and total pages. */
-  pagesSeparator?: string;
+  pagesSeparator: "/",
   /** Title of button `firstPage`. @deprecated Use `firstPage` instead. */
-  paginationFirstPageTitle?: string;
+  paginationFirstPageTitle: "First page",
   /** Title of button `previousPage`. @deprecated Use `previousPage` instead. */
-  paginationPreviousPageTitle?: string;
+  paginationPreviousPageTitle: "Previous page",
   /** Title of button `nextPage`. @deprecated Use `nextPage` instead. */
-  paginationNextPageTitle?: string;
+  paginationNextPageTitle: "Next page",
   /** Title of button `lastPage`. @deprecated Use `lastPage` instead. */
-  paginationLastPageTitle?: string;
+  paginationLastPageTitle: "Last page",
   /** Aria-label passed to the page input. */
-  paginationInputLabel?: string;
+  paginationInputLabel: "Current page",
   /** Label of the first page button */
-  firstPage?: string;
+  firstPage: "First Page",
   /** Label of the previous page button */
-  previousPage?: string;
+  previousPage: "Previous Page",
   /** Label of the next page button */
-  nextPage?: string;
+  nextPage: "Next Page",
   /** Label of the last page button */
-  lastPage?: string;
-}
+  lastPage: "Last Page",
+};
+
+export type HvPaginationLabels = Partial<typeof DEFAULT_LABELS>;
 
 export interface HvPaginationProps extends HvBaseProps {
   /** The number of pages the component has. */
@@ -89,24 +93,6 @@ export interface HvPaginationProps extends HvBaseProps {
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvPaginationClasses;
 }
-
-const DEFAULT_LABELS: HvPaginationLabels = {
-  pageSizePrev: "Show",
-  pageSizeEntryName: "rows",
-  pageSizeSelectorDescription: "Select how many to display",
-  pagesSeparator: "/",
-  paginationFirstPageTitle: "First page",
-  paginationPreviousPageTitle: "Previous page",
-  paginationNextPageTitle: "Next page",
-  paginationLastPageTitle: "Last page",
-  paginationInputLabel: "Current page",
-  firstPage: "First Page",
-  previousPage: "Previous Page",
-  nextPage: "Next Page",
-  lastPage: "Last Page",
-};
-
-const defaultPageSizeOptions = [5, 10, 20, 25, 50, 100];
 
 /**
  * Pagination is the process of dividing a document into discrete pages. It relates to how users interact

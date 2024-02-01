@@ -34,12 +34,7 @@ export interface HvFlowControlsProps
   /** Controls orientation. Defaults to `horizontal`. */
   orientation?: "vertical" | "horizontal";
   /** Labels used on the controls buttons. */
-  labels?: {
-    zoomIn?: string;
-    zoomOut?: string;
-    fitView?: string;
-    interactive?: string;
-  };
+  labels?: Partial<typeof DEFAULT_LABELS>;
   /** Whether to hide the zoom controls. */
   hideZoom?: boolean;
   /** Whether to hide the fit view controls. */
@@ -48,7 +43,7 @@ export interface HvFlowControlsProps
   hideInteractive?: boolean;
 }
 
-const DEFAULT_LABELS: HvFlowControlsProps["labels"] = {
+const DEFAULT_LABELS = {
   fitView: "Fit view",
   zoomIn: "Zoom in",
   zoomOut: "Zoom out",
