@@ -8,10 +8,22 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 
-export const EmptyRow = ({ height }) => (
+export const EmptyRow = () => (
   <HvTableRow>
-    <HvTableCell colSpan={100} style={{ height }}>
-      <HvEmptyState message="No data to display" icon={<Ban role="none" />} />
+    <HvTableCell style={{ borderBottom: 0 }} colSpan={100}>
+      &nbsp;
+    </HvTableCell>
+  </HvTableRow>
+);
+
+export const NoDataRow = ({
+  message = "No data to display",
+}: {
+  message?: string;
+}) => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} style={{ height: 100 }}>
+      <HvEmptyState message={message} icon={<Ban role="none" />} />
     </HvTableCell>
   </HvTableRow>
 );
