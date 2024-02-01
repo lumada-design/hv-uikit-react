@@ -1,4 +1,4 @@
-import { useState, useEffect, MouseEvent } from "react";
+import { useState, useEffect } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvListItem,
@@ -37,15 +37,7 @@ export const Main: StoryObj<HvListContainerProps> = {
   },
   render: ({ interactive, condensed, disableGutters }) => {
     return (
-      <div
-        style={{
-          backgroundColor: theme.colors.atmo1,
-          padding: 20,
-          overflow: "auto",
-          position: "relative",
-          maxWidth: 220,
-        }}
-      >
+      <HvPanel style={{ padding: 20, maxWidth: 220 }}>
         <HvListContainer
           interactive={interactive}
           condensed={condensed}
@@ -60,7 +52,7 @@ export const Main: StoryObj<HvListContainerProps> = {
           <HvListItem>98002, Store Manager</HvListItem>
           <HvListItem>98003, Store Manager</HvListItem>
         </HvListContainer>
-      </div>
+      </HvPanel>
     );
   },
 };
@@ -70,15 +62,7 @@ export const SingleSelection: StoryObj<HvListContainerProps> = {
     const [selectedItem, setSelectedItem] = useState(-1);
 
     return (
-      <div
-        style={{
-          backgroundColor: theme.colors.atmo1,
-          padding: 20,
-          overflow: "auto",
-          position: "relative",
-          maxWidth: 220,
-        }}
-      >
+      <HvPanel style={{ padding: 20, maxWidth: 220 }}>
         <HvListContainer interactive condensed aria-label="Stores">
           <HvListItem
             onClick={() => setSelectedItem(0)}
@@ -124,7 +108,7 @@ export const SingleSelection: StoryObj<HvListContainerProps> = {
             98003, Store Manager
           </HvListItem>
         </HvListContainer>
-      </div>
+      </HvPanel>
     );
   },
 };
@@ -140,26 +124,17 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
     });
 
     const handleListItemClick = (
-      _evt: MouseEvent,
+      event: React.MouseEvent,
       index: keyof typeof selectedItems
     ) => {
-      setSelectedItems((previousSelection) => {
-        return {
-          ...previousSelection,
-          [index]: !previousSelection[index],
-        };
-      });
+      setSelectedItems((previousSelection) => ({
+        ...previousSelection,
+        [index]: !previousSelection[index],
+      }));
     };
+
     return (
-      <div
-        style={{
-          backgroundColor: theme.colors.atmo1,
-          padding: 20,
-          overflow: "auto",
-          position: "relative",
-          maxWidth: 220,
-        }}
-      >
+      <HvPanel style={{ padding: 20, maxWidth: 220 }}>
         <HvListContainer interactive condensed aria-label="Stores">
           <HvListItem
             onClick={(event) => handleListItemClick(event, 0)}
@@ -192,7 +167,7 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
             98005, Store Manager
           </HvListItem>
         </HvListContainer>
-      </div>
+      </HvPanel>
     );
   },
 };
@@ -200,15 +175,7 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
 export const WithIcons: StoryObj<HvListContainerProps> = {
   render: () => {
     return (
-      <div
-        style={{
-          backgroundColor: theme.colors.atmo1,
-          padding: 20,
-          overflow: "auto",
-          position: "relative",
-          maxWidth: 220,
-        }}
-      >
+      <HvPanel style={{ padding: 20, maxWidth: 220 }}>
         <HvListContainer
           interactive
           aria-label="Single Selection List with Left Icons Title"
@@ -229,7 +196,7 @@ export const WithIcons: StoryObj<HvListContainerProps> = {
             Advanced server DS555
           </HvListItem>
         </HvListContainer>
-      </div>
+      </HvPanel>
     );
   },
 };
@@ -463,15 +430,7 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
       const { selectedItems, handleListItemClick } = useKeyboardSelection();
 
       return (
-        <div
-          style={{
-            backgroundColor: theme.colors.atmo1,
-            padding: 20,
-            overflow: "auto",
-            position: "relative",
-            maxWidth: 220,
-          }}
-        >
+        <HvPanel style={{ padding: 20, maxWidth: 220 }}>
           <HvListContainer
             interactive
             condensed
@@ -519,7 +478,7 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
               98005, Store Manager
             </HvListItem>
           </HvListContainer>
-        </div>
+        </HvPanel>
       );
     };
 

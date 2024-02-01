@@ -56,32 +56,28 @@ export interface HvListItemProps extends HvBaseProps<HTMLLIElement> {
 }
 
 const applyClassNameAndStateToElement = (
-  element,
-  selected,
-  disabled,
-  onClick,
-  className
+  element: any,
+  selected: boolean | undefined,
+  disabled: boolean | undefined,
+  onClick: React.MouseEventHandler<HTMLLIElement>,
+  className?: string
 ) => {
-  if (element != null) {
-    return React.cloneElement(element, {
-      className,
-      checked: !!selected,
-      disabled,
-      onChange: (evt) => onClick?.(evt),
-    });
-  }
+  if (element == null) return null;
 
-  return null;
+  return React.cloneElement(element, {
+    className,
+    checked: !!selected,
+    disabled,
+    onChange: onClick,
+  });
 };
 
-const applyClassNameToElement = (element, className) => {
-  if (element != null) {
-    return React.cloneElement(element, {
-      className,
-    });
-  }
+const applyClassNameToElement = (element, className?: string) => {
+  if (element == null) return null;
 
-  return null;
+  return React.cloneElement(element, {
+    className,
+  });
 };
 
 /**
@@ -89,7 +85,6 @@ const applyClassNameToElement = (element, className) => {
  */
 export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
   const {
-    id,
     classes: classesProp,
     className,
     role,
@@ -116,17 +111,14 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
     interactive: interactiveContext,
   } = useContext(HvListContext);
 
-  const condensed = condensedProp != null ? condensedProp : condensedContext;
-  const disableGutters =
-    disableGuttersProp != null ? disableGuttersProp : disableGuttersContext;
-  const interactive =
-    interactiveProp != null ? interactiveProp : interactiveContext;
+  const condensed = condensedProp ?? condensedContext;
+  const disableGutters = disableGuttersProp ?? disableGuttersContext;
+  const interactive = interactiveProp ?? interactiveContext;
 
-  const handleOnClick = useCallback(
+  const handleClick = useCallback<React.MouseEventHandler<HTMLLIElement>>(
     (evt) => {
-      if (!disabled) {
-        onClick?.(evt);
-      }
+      if (disabled) return;
+      onClick?.(evt);
     },
     [disabled, onClick]
   );
@@ -137,7 +129,7 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
         startAdornment,
         selected,
         disabled,
-        handleOnClick,
+        handleClick,
         cx(
           classes.startAdornment,
           { [classes.disabled]: disabled },
@@ -151,7 +143,7 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
       classes?.startAdornment,
       classes?.disabled,
       disabled,
-      handleOnClick,
+      handleClick,
       selected,
       startAdornment,
     ]
@@ -181,9 +173,8 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
 
   const listItem = (
     // For later: this should only have an onClick event if interactive and has the appropriate role.
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
     <li
-      id={id}
       ref={ref}
       role={role}
       value={value}
@@ -193,15 +184,15 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
           [classes.gutters]: !disableGutters,
           [classes.condensed]: condensed,
           [classes.interactive]: interactive,
-          [classes.selected]: !!selected,
-          [classes.disabled]: !!disabled,
+          [classes.selected]: selected || props["aria-selected"],
+          [classes.disabled]: disabled || props["aria-disabled"],
           [classes.withStartAdornment]: startAdornment != null,
           [classes.withEndAdornment]: endAdornment != null,
         },
         className
       )}
-      onClick={handleOnClick}
-      onKeyDown={() => {}} // Needed because of jsx-a11yclick-events-have-key-events
+      tabIndex={interactive ? undefined : tabIndex}
+      onClick={handleClick}
       {...roleOptionAriaProps}
       {...others}
     >
