@@ -178,6 +178,16 @@ export const getColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
   { Header: "Priority", accessor: "priority" },
 ];
 
+export const getEditableColumns = (): HvTableColumnConfig<
+  AssetEvent,
+  string
+>[] => [
+  { Header: "Title", accessor: "name", style: { width: "100%" } },
+  { Header: "Status", accessor: "status", style: { width: "100%" } },
+  { Header: "Severity", accessor: "severity", style: { width: "100%" } },
+  { Header: "Priority", accessor: "priority", style: { width: "100%" } },
+];
+
 export const getGroupedRowsColumns = (): HvTableColumnConfig<
   AssetEvent,
   string
@@ -324,7 +334,7 @@ export const useServerData = () => {
     await delay(600);
 
     if (method === "add") {
-      setAllData((prev) => [...prev, ...params]);
+      setAllData((prev) => [...params, ...prev]);
     } else if (method === "remove") {
       setAllData((prev) => prev.filter((el) => !params.includes(el.id)));
     } else if (method === "update") {
