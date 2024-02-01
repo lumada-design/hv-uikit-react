@@ -11,7 +11,7 @@ import {
   HvTableHeader,
   HvTableRow,
 } from ".";
-import { ResponsiveTable } from "./stories/Table.stories";
+import { ResponsiveTable } from "./stories/TableSamples/ResponsiveTable";
 
 describe("Table", () => {
   it("can render a different component and sets roles", () => {
