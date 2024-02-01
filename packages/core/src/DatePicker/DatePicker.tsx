@@ -36,10 +36,14 @@ export { staticClasses as datePickerClasses };
 export type HvDatePickerClasses = ExtractNames<typeof useClasses>;
 
 const DEFAULT_LABELS = {
+  /** Apply button label. */
   applyLabel: "Apply",
+  /** Cancel button label. */
   cancelLabel: "Cancel",
+  /** Clear button label. */
   clearLabel: "Clear",
-  invalidLabel: "Invalid date",
+  /** Invalid Date label. */
+  invalidDateLabel: "Invalid date",
 };
 
 /** @deprecated use `HvFormStatus` instead */
@@ -76,24 +80,7 @@ export interface HvDatePickerProps
   /**
    * An object containing all the labels for the datepicker.
    */
-  labels?: {
-    /**
-     * Apply button label.
-     */
-    applyLabel?: string;
-    /**
-     * Cancel button label.
-     */
-    cancelLabel?: string;
-    /**
-     * Clear button label.
-     */
-    clearLabel?: string;
-    /**
-     * Invalid Date label.
-     */
-    invalidDateLabel?: string;
-  };
+  labels?: Partial<typeof DEFAULT_LABELS>;
   /**
    * The initial value of the input when in single calendar mode.
    */

@@ -71,10 +71,7 @@ export interface HvColorPickerProps {
   /** If `true`, the labels are shown. If `false`, they are not shown. */
   showLabels?: boolean;
   /** An object containing all the labels. */
-  labels?: {
-    recommendedColorsLabel?: string;
-    customColorsLabel?: string;
-  };
+  labels?: Partial<typeof DEFAULT_LABELS>;
   /** Icon type for the input's end adornment. */
   dropdownIcon?: "arrow" | "colorPicker";
   /** If `true`, the input only shows an icon. If `false`, the input shows text and icons. */
@@ -97,7 +94,7 @@ export interface HvColorPickerProps {
   addSavedColorButtonAriaLabel?: string;
 }
 
-const DEFAULT_LABELS: HvColorPickerProps["labels"] = {
+const DEFAULT_LABELS = {
   recommendedColorsLabel: "Recommended colors:",
   customColorsLabel: "Custom colors:",
 };
@@ -310,9 +307,7 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
                   className={classes.recommendedColorsRoot}
                   colors={recommendedColors}
                   onClick={handleSelect}
-                  title={
-                    showLabels ? labels?.recommendedColorsLabel : undefined
-                  }
+                  title={showLabels ? labels.recommendedColorsLabel : undefined}
                 />
               )}
               {showCustomColors && (
@@ -324,7 +319,7 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
                         showSavedColors,
                     }),
                   }}
-                  title={showLabels ? labels?.customColorsLabel : undefined}
+                  title={showLabels ? labels.customColorsLabel : undefined}
                   color={color}
                   onChange={handleOnChange}
                   onChangeComplete={handleOnChangeComplete}
@@ -344,9 +339,7 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
                 <PresetColors
                   colors={recommendedColors}
                   onClick={handleSelect}
-                  title={
-                    showLabels ? labels?.recommendedColorsLabel : undefined
-                  }
+                  title={showLabels ? labels.recommendedColorsLabel : undefined}
                 />
               )}
             </div>

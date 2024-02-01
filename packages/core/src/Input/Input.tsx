@@ -25,12 +25,8 @@ import { ExtractNames } from "../utils/classes";
 import { isBrowser } from "../utils/browser";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
-import {
-  HvInputLabels,
-  HvInputSuggestion,
-  HvValidationMessages,
-} from "../types/forms";
-import { HvBaseProps, HvExtraProps } from "../types/generic";
+import { HvInputSuggestion, HvValidationMessages } from "../types/forms";
+import { HvBaseProps } from "../types/generic";
 import {
   HvAdornment,
   HvAdornmentProps,
@@ -151,7 +147,7 @@ export interface HvInputProps
   /** The placeholder value of the input. */
   placeholder?: string;
   /** Internal labels?. */
-  labels?: HvInputLabels & HvExtraProps;
+  labels?: HvInputLabels & Record<string, any>;
   /** An Object containing the various texts associated with the input. */
   validationMessages?: HvValidationMessages;
   /** Attributes applied to the input element. */
@@ -195,12 +191,19 @@ export interface HvInputProps
 }
 
 const DEFAULT_LABELS = {
+  /** The label of the clear button. */
   clearButtonLabel: "Clear the text",
+  /** The label of the reveal password button. */
   revealPasswordButtonLabel: "Reveal password",
+  /** The tooltip of the reveal password button when the password is hidden. */
   revealPasswordButtonClickToShowTooltip: "Click to show password.",
+  /** The tooltip of the reveal password button when the password is revealed. */
   revealPasswordButtonClickToHideTooltip: "Click to hide password.",
+  /** The label of the search button. */
   searchButtonLabel: "Search",
 };
+
+export type HvInputLabels = Partial<typeof DEFAULT_LABELS>;
 
 /**
  * Find the focused element onBlur.

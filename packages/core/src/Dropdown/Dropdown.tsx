@@ -24,11 +24,12 @@ import { HvTypography } from "../Typography";
 import { getSelected, getSelectionLabel } from "./utils";
 import { HvDropdownList, HvDropdownListProps } from "./List";
 import { staticClasses, useClasses } from "./Dropdown.styles";
-import { HvDropdownLabelsProps, HvDropdownStatus } from "./types";
 
 export { staticClasses as dropdownClasses };
 
 export type HvDropdownClasses = ExtractNames<typeof useClasses>;
+
+export type HvDropdownStatus = "standBy" | "valid" | "invalid";
 
 export interface HvDropdownProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
@@ -119,7 +120,7 @@ export interface HvDropdownProps
   /**
    * An object containing all the labels for the dropdown.
    */
-  labels?: HvDropdownLabelsProps;
+  labels?: HvDropdownLabels;
   /**
    * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
@@ -197,14 +198,24 @@ export interface HvDropdownProps
   listProps?: HvDropdownListProps;
 }
 
-const DEFAULT_LABELS: HvDropdownLabelsProps = {
-  select: undefined,
+const DEFAULT_LABELS = {
+  /** Label for overwrite the default header behavior. */
+  select: undefined as string | undefined,
+  /** Label used for the All checkbox action. */
   selectAll: "All",
+  /** Cancel button label. */
   cancelLabel: "Cancel",
+  /** Apply button label. */
   applyLabel: "Apply",
+  /** The label used in the middle of the multiSelection count. */
   searchPlaceholder: "Search",
+  /** The label used in search. */
   multiSelectionConjunction: "/",
 };
+
+export type HvDropdownLabels = Partial<typeof DEFAULT_LABELS>;
+/** @deprecated use `HvDropdownLabels` instead */
+export type HvDropdownLabelsProps = HvDropdownLabels;
 
 /**
  * A dropdown list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.

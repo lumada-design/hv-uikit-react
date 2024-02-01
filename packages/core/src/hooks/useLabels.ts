@@ -1,9 +1,7 @@
-import React from "react";
+import { useMemo } from "react";
 
-export function useLabels<T>(defaultLabels: Partial<T>, labels: T): T {
-  const merged = React.useMemo(() => {
+export function useLabels<T>(defaultLabels: T, labels?: Partial<T>): T {
+  return useMemo(() => {
     return { ...defaultLabels, ...labels };
   }, [defaultLabels, labels]);
-
-  return merged;
 }

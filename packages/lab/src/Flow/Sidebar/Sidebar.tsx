@@ -43,12 +43,7 @@ export interface HvFlowSidebarProps
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowSidebarClasses;
   /** Labels used on the sidebar. */
-  labels?: {
-    itemAriaRoleDescription?: string;
-    expandGroupButtonAriaLabel?: string;
-    searchPlaceholder?: string;
-    searchAriaLabel?: string;
-  };
+  labels?: Partial<typeof DEFAULT_LABELS>;
   /**
    * Dnd Kit drag overlay props for customization.
    *
@@ -59,7 +54,7 @@ export interface HvFlowSidebarProps
   defaultGroupProps?: HvFlowNodeGroup;
 }
 
-const DEFAULT_LABELS: HvFlowSidebarProps["labels"] = {
+const DEFAULT_LABELS = {
   itemAriaRoleDescription: "Draggable",
   expandGroupButtonAriaLabel: "Expand group",
   searchPlaceholder: "Search node...",

@@ -10,24 +10,18 @@ export { staticClasses as kpiClasses };
 
 export type HvKpiClasses = ExtractNames<typeof useClasses>;
 
-export interface HvKpiLabelProps {
-  /**
-   * The text at the top of the kpi.
-   */
-  title?: string;
-  /**
-   * The text in the middle of the kpi.
-   */
-  indicator?: string;
-  /**
-   * The text to the right of the indicator.
-   */
-  unit?: string;
-  /**
-   * The text to the right of the visual comparison.
-   */
-  comparisonIndicatorInfo?: string;
-}
+const DEFAULT_LABELS = {
+  /** The text at the top of the kpi. */
+  title: "",
+  /** The text in the middle of the kpi. */
+  indicator: undefined as string | undefined,
+  /** The text to the right of the indicator. */
+  unit: undefined as string | undefined,
+  /** The text to the right of the visual comparison. */
+  comparisonIndicatorInfo: undefined as string | undefined,
+};
+
+export type HvKpiLabelProps = Partial<typeof DEFAULT_LABELS>;
 
 export interface HvKpiProps extends HvBaseProps<HTMLDivElement, "children"> {
   /**
@@ -60,13 +54,6 @@ export interface HvKpiProps extends HvBaseProps<HTMLDivElement, "children"> {
   classes?: HvKpiClasses;
 }
 
-const DEFAULT_LABELS = {
-  title: "",
-  indicator: undefined,
-  unit: undefined,
-  comparisonIndicatorInfo: undefined,
-};
-
 /**
  * Key Performance Indicator is a type of performance measurement. It monitors a business indicator
  * and its success/failure against a given target. KPIs are the first item read on a dashboard.
@@ -79,7 +66,7 @@ export const HvKpi = (props: HvKpiProps) => {
     visualComparison = null,
     indicatorUnitTextVariant = "title2",
     indicatorTextVariant = "title1",
-    labels,
+    labels: labelsProp,
     classes: classesProp,
     className,
     ...others
@@ -87,7 +74,7 @@ export const HvKpi = (props: HvKpiProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const mergedLabels = useLabels(DEFAULT_LABELS, labels);
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   const InternalVisualComparison =
     typeof visualComparison === "string" ? HvTypography : "div";
@@ -95,7 +82,7 @@ export const HvKpi = (props: HvKpiProps) => {
   return (
     <div className={cx(classes.root, className)} {...others}>
       <div>
-        <HvTypography variant="label">{mergedLabels?.title}</HvTypography>
+        <HvTypography variant="label">{labels.title}</HvTypography>
       </div>
       <div className={classes.indicatorsContainer}>
         {visualIndicator && (
@@ -108,20 +95,20 @@ export const HvKpi = (props: HvKpiProps) => {
             {visualIndicator}
           </div>
         )}
-        {mergedLabels?.indicator && (
+        {labels.indicator && (
           <HvTypography
             className={cx(classes.spacingToTheRight, classes.indicatorText)}
             variant={indicatorTextVariant}
           >
-            {mergedLabels.indicator}
+            {labels.indicator}
           </HvTypography>
         )}
-        {mergedLabels?.unit && (
+        {labels.unit && (
           <HvTypography
             className={classes.indicatorUnit}
             variant={indicatorUnitTextVariant}
           >
-            {mergedLabels.unit}
+            {labels.unit}
           </HvTypography>
         )}
       </div>
@@ -143,7 +130,7 @@ export const HvKpi = (props: HvKpiProps) => {
             </div>
             <div className={classes.comparisonContainer}>
               <HvTypography className={classes.comparisons} variant="caption2">
-                {mergedLabels?.comparisonIndicatorInfo}
+                {labels.comparisonIndicatorInfo}
               </HvTypography>
             </div>
           </div>

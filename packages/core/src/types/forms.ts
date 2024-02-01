@@ -11,19 +11,6 @@ export interface HvValidationMessages {
   typeMismatchError?: string;
 }
 
-export interface HvInputLabels {
-  /** The label of the clear button. */
-  clearButtonLabel?: string;
-  /** The label of the reveal password button. */
-  revealPasswordButtonLabel?: string;
-  /** The tooltip of the reveal password button when the password is hidden. */
-  revealPasswordButtonClickToShowTooltip?: string;
-  /** The tooltip of the reveal password button when the password is revealed. */
-  revealPasswordButtonClickToHideTooltip?: string;
-  /** The label of the search button. */
-  searchButtonLabel?: string;
-}
-
 export interface HvInputSuggestion {
   id: string;
   label: string;

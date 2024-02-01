@@ -138,7 +138,7 @@ export const HvFlowNode = ({
           )}
         </>
       }
-      labels={labels}
+      labels={labels as HvFlowNodeProps["labels"]}
       {...props}
     >
       {(subtitle || actsVisible?.length || actsDropdown?.length) && (
