@@ -1,5 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-console */
+/* eslint-disable import/no-extraneous-dependencies, no-console */
 const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
@@ -94,8 +93,11 @@ const init = () => {
 
     if (violations) {
       // Violations were found
+      const urlRegex = /https?:\/\/[^\s]+/g;
+      const errorUrls = updatedHtml.match(urlRegex);
       const countStr = violations[0].replace("<h2>", "").trim();
-      console.log(`❌ ${countStr}`);
+      console.log(`Found ${countStr} violations. Stories with issues:`);
+      console.log(errorUrls.slice(1).join("\n"));
 
       // Exit
       if (
