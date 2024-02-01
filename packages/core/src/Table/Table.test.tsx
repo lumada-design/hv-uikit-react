@@ -11,7 +11,6 @@ import {
   HvTableHeader,
   HvTableRow,
 } from ".";
-
 import { ResponsiveTable } from "./stories/Table.stories";
 
 describe("Table", () => {

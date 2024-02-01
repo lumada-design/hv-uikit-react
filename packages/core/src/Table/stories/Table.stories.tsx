@@ -23,7 +23,6 @@ import {
   makeData,
   useToggleIndex,
 } from "./storiesUtils";
-
 import { GroupedRows as GroupedRowsStory } from "./TableSamples/GroupedRows";
 import GroupedRowsRaw from "./TableSamples/GroupedRows?raw";
 import { ResponsiveTable as ResponsiveTableStory } from "./TableSamples/ResponsiveTable";
