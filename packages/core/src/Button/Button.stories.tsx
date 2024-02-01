@@ -1,4 +1,4 @@
-import { StoryFn, StoryObj } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
 import {
   Delete,
@@ -40,8 +40,21 @@ export const Main: StoryObj<HvButtonProps> = {
   },
 };
 
-export const Variants: StoryFn<HvButtonProps> = () => {
-  return (
+export const Variants: StoryObj<HvButtonProps> = {
+  decorators: [
+    (Story) => (
+      <HvBox
+        sx={{
+          display: "grid",
+          gap: 20,
+          gridTemplateColumns: "repeat(3, 140px)",
+        }}
+      >
+        {Story()}
+      </HvBox>
+    ),
+  ],
+  render: () => (
     <>
       <HvButton variant="primary">Primary</HvButton>
       <HvButton variant="primarySubtle">Primary Subtle</HvButton>
@@ -59,25 +72,72 @@ export const Variants: StoryFn<HvButtonProps> = () => {
         Disabled Ghost
       </HvButton>
     </>
-  );
+  ),
 };
 
-Variants.decorators = [
-  (Story) => (
-    <HvBox
-      sx={{
-        display: "grid",
-        gap: 20,
-        gridTemplateColumns: "repeat(3, 140px)",
-      }}
-    >
-      {Story()}
-    </HvBox>
+export const FocusableWhenDisabled: StoryObj<HvButtonProps> = {
+  decorators: [
+    (Story) => (
+      <HvBox
+        sx={{
+          display: "grid",
+          gap: 20,
+          gridTemplateColumns: "repeat(3, 140px)",
+        }}
+      >
+        {Story()}
+      </HvBox>
+    ),
+  ],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "If you still need the button to be focusable when disabled for accessibility purposes, you can set the `focusableWhenDisabled` property to `true`. When using this property, the buttons will continue be read by screen readers when disabled.",
+      },
+    },
+  },
+  render: () => (
+    <>
+      <HvButton variant="primary" disabled focusableWhenDisabled>
+        Primary
+      </HvButton>
+      <HvButton variant="primarySubtle" disabled focusableWhenDisabled>
+        Primary Subtle
+      </HvButton>
+      <HvButton variant="primaryGhost" disabled focusableWhenDisabled>
+        Primary Ghost
+      </HvButton>
+      <div />
+      <HvButton variant="secondarySubtle" disabled focusableWhenDisabled>
+        Secondary Subtle
+      </HvButton>
+      <HvButton variant="secondaryGhost" disabled focusableWhenDisabled>
+        Secondary Ghost
+      </HvButton>
+    </>
   ),
-];
+};
 
-export const Icons: StoryFn<HvButtonProps> = () => {
-  return (
+export const Icons: StoryObj<HvButtonProps> = {
+  decorators: [
+    (Story) => (
+      <div
+        className={css({
+          display: "flex",
+          flexFlow: "column",
+          gap: 10,
+          "& > div": {
+            display: "flex",
+            gap: 20,
+          },
+        })}
+      >
+        {Story()}
+      </div>
+    ),
+  ],
+  render: () => (
     <>
       <div>
         <HvButton icon aria-label="Play" variant="primaryGhost">
@@ -131,37 +191,26 @@ export const Icons: StoryFn<HvButtonProps> = () => {
         </HvButton>
       </div>
     </>
-  );
+  ),
 };
 
-Icons.decorators = [
-  (Story) => (
-    <div
-      className={css({
-        display: "flex",
-        flexFlow: "column",
-        gap: 10,
-        "& > div": {
+export const Semantic: StoryObj<HvButtonProps> = {
+  decorators: [
+    (Story) => (
+      <HvBox
+        sx={{
           display: "flex",
           gap: 20,
-        },
-      })}
-    >
-      {Story()}
-    </div>
-  ),
-];
-
-export const Semantic = () => {
-  return (
-    <HvBox
-      sx={{
-        display: "flex",
-        gap: 20,
-        backgroundColor: theme.colors.neutral_20,
-        padding: 20,
-      }}
-    >
+          backgroundColor: theme.colors.neutral_20,
+          padding: 20,
+        }}
+      >
+        {Story()}
+      </HvBox>
+    ),
+  ],
+  render: () => (
+    <>
       <HvButton
         variant="semantic"
         aria-label="Favorite"
@@ -178,8 +227,8 @@ export const Semantic = () => {
       <HvButton variant="semantic" icon aria-label="More options">
         <MoreOptionsVertical />
       </HvButton>
-    </HvBox>
-  );
+    </>
+  ),
 };
 
 interface CustomLinkProps extends HvButtonProps<"a"> {
@@ -192,9 +241,22 @@ const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
   </a>
 );
 
-export const CustomRootComponent = () => {
-  return (
-    <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
+export const CustomRootComponent: StoryObj<HvButtonProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "If necessary the button's root component can be changed by setting the `component` property.",
+      },
+    },
+  },
+  decorators: [
+    (Story) => (
+      <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>{Story()}</HvBox>
+    ),
+  ],
+  render: () => (
+    <>
       <HvButton startIcon={<Point />}>Button</HvButton>
       <HvButton
         variant="secondaryGhost"
@@ -212,15 +274,6 @@ export const CustomRootComponent = () => {
       >
         Custom link
       </HvButton>
-    </HvBox>
-  );
-};
-
-CustomRootComponent.parameters = {
-  docs: {
-    description: {
-      story:
-        "If necessary the button's root component can be changed by setting the `component` property.",
-    },
-  },
+    </>
+  ),
 };

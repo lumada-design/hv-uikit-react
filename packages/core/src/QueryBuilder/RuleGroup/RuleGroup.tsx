@@ -97,6 +97,7 @@ export const RuleGroup = ({
       <HvMultiButton
         className={cx(classes.combinator, classes.topCombinator)}
         disabled={readOnly}
+        aria-disabled={readOnly}
       >
         {combinators?.map((item) => (
           <HvButton
@@ -199,6 +200,7 @@ export const RuleGroup = ({
                 }}
                 className={classes.createConditionButton}
                 disabled={readOnly}
+                aria-disabled={readOnly}
               >
                 {`${labels.empty?.createCondition}`}
               </HvTypography>
@@ -213,6 +215,7 @@ export const RuleGroup = ({
                     }}
                     className={classes.createGroupButton}
                     disabled={readOnly}
+                    aria-disabled={readOnly}
                   >
                     {`${labels.empty?.createGroup}`}
                   </HvTypography>

@@ -1,6 +1,7 @@
 import { useMemo } from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { vi } from "vitest";
 
 import {
   HvQueryBuilder,
@@ -306,11 +307,20 @@ describe("QueryBuilder", () => {
   });
 
   describe("read only", () => {
-    it("should not be interactable", () => {
-      render(<QueryBuilder readOnly />);
+    it("should not be interactable", async () => {
+      const querySpy = vi.fn();
+      render(<QueryBuilder onChange={querySpy} readOnly />);
 
       const buttons = screen.getAllByRole("button");
-      buttons.map((b) => expect(b).toBeDisabled());
+
+      // toHaveAttribute("aria-disabled", "true") is used instead of toBeDisabled() since some buttons (IconButton) are still focusable when disabled
+      const assertButton = async (b: HTMLElement) => {
+        fireEvent.click(b);
+        expect(querySpy).not.toHaveBeenCalled();
+        expect(b).toHaveAttribute("aria-disabled", "true");
+      };
+
+      await Promise.all(buttons.map(assertButton));
     });
   });
 

@@ -1,10 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Alert } from "@hitachivantara/uikit-react-icons";
 
 import { HvLoading } from "../Loading";
-
 import { HvButton } from "./Button";
 import { buttonVariant } from "./types";
 
@@ -33,6 +32,7 @@ describe("Button", () => {
   });
 
   it("calls onClick when clicked", async () => {
+    const user = userEvent.setup();
     const clickMock = vi.fn();
     render(<HvButton onClick={clickMock}>content</HvButton>);
 
@@ -40,13 +40,15 @@ describe("Button", () => {
 
     expect(button).toBeInTheDocument();
     expect(clickMock).not.toHaveBeenCalled();
-    await userEvent.click(button);
+
+    await user.click(button);
     expect(clickMock).toHaveBeenCalledTimes(1);
-    await userEvent.click(button);
+
+    await user.click(button);
     expect(clickMock).toHaveBeenCalledTimes(2);
   });
 
-  it("disables for all variants", () => {
+  it("disabled for all variants", () => {
     render(
       <div>
         {buttonVariant.map((variant) => (
@@ -74,67 +76,69 @@ describe("Button", () => {
   });
 
   it(`submits form when type="submit"`, async () => {
+    const user = userEvent.setup();
     const submitFn = vi.fn();
     render(
       <form onSubmit={submitFn}>
         <HvButton type="submit">Button</HvButton>
       </form>
     );
+
     const button = screen.getByRole("button", { name: "Button" });
     expect(button).toHaveAttribute("type", "submit");
 
-    await userEvent.click(button);
+    await user.click(button);
     expect(submitFn).toHaveBeenCalled();
   });
 
   describe("interactions", () => {
-    it("executes passed function on a click", () => {
+    it("executes passed function on a click", async () => {
+      const user = userEvent.setup();
       const buttonSpy = vi.fn();
       const buttonText = "click me";
-      const { getByRole } = render(
-        <HvButton onClick={buttonSpy}>{buttonText}</HvButton>
-      );
+      render(<HvButton onClick={buttonSpy}>{buttonText}</HvButton>);
 
-      const buttonToTest = getByRole("button", { name: buttonText });
+      const buttonToTest = screen.getByRole("button", { name: buttonText });
       expect(buttonToTest).toBeInTheDocument();
-      fireEvent.click(buttonToTest);
+
+      await user.click(buttonToTest);
       expect(buttonSpy).toHaveBeenCalled();
     });
 
     it("executes the passed function on keydown", async () => {
+      const user = userEvent.setup();
       const buttonSpy = vi.fn();
       const buttonText = "click me";
-      const { getByRole } = render(
-        <HvButton onClick={buttonSpy}>{buttonText}</HvButton>
-      );
+      render(<HvButton onClick={buttonSpy}>{buttonText}</HvButton>);
 
-      const buttonToTest = getByRole("button", { name: buttonText });
+      const buttonToTest = screen.getByRole("button", { name: buttonText });
       expect(buttonToTest).toBeInTheDocument();
 
       buttonToTest.focus();
 
-      userEvent.keyboard("{enter}");
-      await waitFor(() => {
-        expect(buttonSpy).toHaveBeenCalledOnce();
-      });
+      await user.keyboard("{enter}");
+      expect(buttonSpy).toHaveBeenCalledOnce();
     });
 
-    it("does not executes the passed function on click", () => {
+    it("does not executes the passed function on click", async () => {
+      const user = userEvent.setup();
       const buttonSpy = vi.fn();
       const buttonText = "click me";
-      const { getByRole } = render(
+      render(
         <HvButton disabled onClick={buttonSpy}>
           {buttonText}
         </HvButton>
       );
 
-      const buttonToTest = getByRole("button", { name: buttonText });
+      const buttonToTest = screen.getByRole("button", { name: buttonText });
       expect(buttonToTest).toBeInTheDocument();
-      fireEvent.click(buttonToTest);
+
+      await user.click(buttonToTest);
       expect(buttonSpy).not.toHaveBeenCalled();
     });
 
     it("focus the button", async () => {
+      const user = userEvent.setup();
       const buttonSpy = vi.fn();
       const buttonSpyDismiss = vi.fn();
       const buttonDismissText = "don't focus me";
@@ -148,6 +152,7 @@ describe("Button", () => {
 
       const div = screen.getByTestId("outer-div");
       expect(div).toBeInTheDocument();
+
       const buttonToDismissTest = screen.getByRole("button", {
         name: buttonDismissText,
       });
@@ -157,23 +162,26 @@ describe("Button", () => {
       expect(buttonToTest).toBeInTheDocument();
       expect(buttonToDismissTest).toBeInTheDocument();
 
-      userEvent.keyboard("{tab}");
-      userEvent.keyboard("{tab}");
-      userEvent.keyboard("{enter}");
-      await waitFor(() => {
-        expect(buttonSpy).toHaveBeenCalledOnce();
-        expect(buttonSpyDismiss).toBeCalledTimes(0);
-      });
+      await user.keyboard("{tab}");
+      await user.keyboard("{tab}");
+      await user.keyboard("{enter}");
+      expect(buttonSpy).toHaveBeenCalledOnce();
+      expect(buttonSpyDismiss).toBeCalledTimes(0);
     });
 
     it("does not focus the button", async () => {
+      const user = userEvent.setup();
       const buttonSpy = vi.fn();
       const buttonSpyDismiss = vi.fn();
       const buttonDismissText = "don't focus me";
       const buttonText = "focus me";
       render(
         <div data-testid="outer-div">
-          <HvButton onClick={buttonSpyDismiss} onKeyDown={buttonSpyDismiss}>
+          <HvButton
+            disabled
+            onClick={buttonSpyDismiss}
+            onKeyDown={buttonSpyDismiss}
+          >
             {buttonDismissText}
           </HvButton>
           <HvButton disabled onClick={buttonSpy} onKeyDown={buttonSpy}>
@@ -184,6 +192,7 @@ describe("Button", () => {
 
       const div = screen.getByTestId("outer-div");
       expect(div).toBeInTheDocument();
+
       const buttonToDismissTest = screen.getByRole("button", {
         name: buttonDismissText,
       });
@@ -193,13 +202,12 @@ describe("Button", () => {
       expect(buttonToTest).toBeInTheDocument();
       expect(buttonToDismissTest).toBeInTheDocument();
 
-      userEvent.keyboard("{tab}");
-      userEvent.keyboard("{tab}");
-      userEvent.keyboard("{enter}");
-      await waitFor(() => {
-        expect(buttonSpy).toBeCalledTimes(0);
-        expect(buttonSpyDismiss).toBeCalledTimes(0);
-      });
+      await user.keyboard("{tab}");
+      await user.keyboard("{enter}");
+      await user.keyboard("{tab}");
+      await user.keyboard("{enter}");
+      expect(buttonSpy).toBeCalledTimes(0);
+      expect(buttonSpyDismiss).toBeCalledTimes(0);
     });
   });
 
@@ -210,54 +218,71 @@ describe("Button", () => {
       </a>
     );
 
-    it("has href", () => {
-      const { getByRole } = render(
-        <HvButton component="a" href="/path/to">
+    it("has href", async () => {
+      const user = userEvent.setup();
+      const buttonSpy = vi.fn();
+      render(
+        <HvButton component="a" href="/path/to" onClick={buttonSpy}>
           Link
         </HvButton>
       );
 
-      const button = getByRole("link", { name: "Link" });
-
+      const button = screen.getByRole("link", { name: "Link" });
       expect(button).toBeInTheDocument();
       expect(button).toHaveAttribute("href", "/path/to");
-    });
 
-    it("disabled link", () => {
-      const { getByRole } = render(
-        <HvButton component="a" href="/path/to" disabled>
-          Link
-        </HvButton>
-      );
-
-      const button = getByRole("link", { name: "Link" });
-
-      expect(button).toHaveAttribute("aria-disabled", "true");
+      await user.click(button);
+      expect(buttonSpy).toHaveBeenCalledOnce();
     });
 
     it("custom link", () => {
-      const { getByRole } = render(
+      render(
         <HvButton component={CustomLink} to="/path/to">
           Link
         </HvButton>
       );
 
-      const button = getByRole("link", { name: "Link" });
-
+      const button = screen.getByRole("link", { name: "Link" });
       expect(button).toBeInTheDocument();
       expect(button).toHaveAttribute("href", "/path/to");
     });
+  });
 
-    it("disabled custom link", () => {
-      const { getByRole } = render(
-        <HvButton component={CustomLink} to="/path/to" disabled>
-          Link
-        </HvButton>
+  describe("focusableWhenDisabled", () => {
+    it("not disabled, aria-disabled, focusable, and not clickable on click and key down for all variants", () => {
+      const user = userEvent.setup();
+      const buttonSpy = vi.fn();
+      render(
+        <div>
+          {buttonVariant.map((variant) => (
+            <HvButton
+              onClick={buttonSpy}
+              key={variant}
+              variant={variant}
+              focusableWhenDisabled
+              disabled
+            >
+              {variant}
+            </HvButton>
+          ))}
+        </div>
       );
 
-      const button = getByRole("link", { name: "Link" });
+      buttonVariant.forEach(async (variant) => {
+        const button = screen.getByRole("button", { name: variant });
 
-      expect(button).toHaveAttribute("aria-disabled", "true");
+        expect(button).not.toBeDisabled();
+        expect(button).toHaveAttribute("aria-disabled", "true");
+
+        await user.click(button);
+        expect(buttonSpy).not.toHaveBeenCalled();
+
+        await user.keyboard("{tab}");
+        expect(button).toHaveFocus();
+
+        await user.keyboard("{enter}");
+        expect(buttonSpy).not.toHaveBeenCalled();
+      });
     });
   });
 });
