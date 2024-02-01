@@ -11,9 +11,18 @@ export interface IconButtonProps extends Omit<HvButtonProps, "icon" | "title"> {
 export const IconButton = ({
   title,
   placement = "top",
+  disabled,
   ...others
-}: IconButtonProps) => (
-  <HvTooltip enterDelay={500} title={title} placement={placement}>
-    <HvButton icon {...others} />
-  </HvTooltip>
-);
+}: IconButtonProps) => {
+  const button = <HvButton icon disabled={disabled} {...others} />;
+
+  if (disabled) {
+    return button;
+  }
+
+  return (
+    <HvTooltip enterDelay={500} title={title} placement={placement}>
+      {button}
+    </HvTooltip>
+  );
+};
