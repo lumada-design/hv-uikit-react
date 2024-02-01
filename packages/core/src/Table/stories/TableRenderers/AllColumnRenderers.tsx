@@ -199,7 +199,7 @@ export const AllColumnRenderers = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow height={100} /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>

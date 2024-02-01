@@ -1,12 +1,10 @@
-import { ReactNode, SyntheticEvent, useEffect, useMemo, useState } from "react";
+import { SyntheticEvent, useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
-import { Ban } from "@hitachivantara/uikit-react-icons";
 import {
   HvActionGeneric,
   HvActionsGeneric,
   HvBulkActions,
   HvCellProps,
-  HvEmptyState,
   HvPagination,
   HvRowInstance,
   HvTable,
@@ -30,6 +28,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { LoadingContainer } from "../TableSamples/LoadingContainer";
+import { EmptyRow, NoDataRow } from "../storiesUtils";
 
 const range = (n: number) => [...Array(n).keys()];
 
@@ -57,28 +56,6 @@ const DEFAULT_PAGE_SIZE = 10;
 
 const getPageCount = (totalRecords = 0, pageSize = DEFAULT_PAGE_SIZE) =>
   Math.max(Math.ceil(totalRecords / pageSize), 1);
-
-const NoDataRow = ({
-  message,
-  height = 96,
-}: {
-  message: ReactNode;
-  height?: number;
-}) => (
-  <HvTableRow>
-    <HvTableCell colSpan={100} style={{ height }}>
-      <HvEmptyState message={message} icon={<Ban role="none" />} />
-    </HvTableCell>
-  </HvTableRow>
-);
-
-const EmptyRow = () => (
-  <HvTableRow>
-    <HvTableCell style={{ borderBottom: 0 }} colSpan={100}>
-      &nbsp;
-    </HvTableCell>
-  </HvTableRow>
-);
 
 export interface TableAction<T extends object = Record<string, unknown>>
   extends HvActionGeneric {

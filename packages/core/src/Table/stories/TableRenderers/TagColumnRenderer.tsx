@@ -100,7 +100,7 @@ export const TagColumnRenderer = () => {
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.length === 0 ? <EmptyRow height={50} /> : rowRenderer(page)}
+            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
