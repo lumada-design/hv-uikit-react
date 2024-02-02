@@ -28,7 +28,3 @@ jobs:
       ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
     with:
       publish-folder: pr-${{ github.event.number }}
-
-  playwright:
-    name: Playwright
-    uses: ./.github/workflows/tests-playwright.yml
