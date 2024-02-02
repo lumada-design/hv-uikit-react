@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import ReactFlow, {
   Connection,
   EdgeChange,
@@ -151,6 +151,19 @@ export const HvDroppableFlow = ({
 
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
+  // Keeping track of nodes and edges for onFlowChange since useState is async
+  const nodesRef = useRef(initialNodes);
+  const edgesRef = useRef(initialEdges);
+
+  const updateNodes = (nds: Node[]) => {
+    setNodes(nds);
+    nodesRef.current = nds;
+  };
+
+  const updateEdges = (eds: Edge[]) => {
+    setEdges(eds);
+    edgesRef.current = eds;
+  };
 
   const { setNodeRef } = useDroppable({
     id: elementId,
@@ -197,9 +210,9 @@ export const HvDroppableFlow = ({
         return;
       }
 
-      setNodes((nds) => nds.concat(newNode));
+      updateNodes(nodes.concat(newNode));
     },
-    [elementId, nodeTypes, onDndDrop, reactFlowInstance]
+    [elementId, nodeTypes, nodes, onDndDrop, reactFlowInstance]
   );
 
   useDndMonitor({
@@ -207,10 +220,7 @@ export const HvDroppableFlow = ({
   });
 
   const handleFlowChange = useCallback(
-    (
-      nds: NonNullable<HvDroppableFlowProps["nodes"]>,
-      eds: NonNullable<HvDroppableFlowProps["edges"]>
-    ) => {
+    (nds: Node[], eds: Edge[]) => {
       // The new flow is returned if the user is not dragging nodes
       // This avoids triggering this handler too many times
       const isDragging = nds.find((node) => node.dragging);
@@ -223,35 +233,35 @@ export const HvDroppableFlow = ({
 
   const handleConnect = useCallback(
     (connection: Connection) => {
-      const eds = addEdge(connection, edges);
-      setEdges(eds);
+      const eds = addEdge(connection, edgesRef.current);
+      updateEdges(eds);
 
-      handleFlowChange(nodes, eds);
+      handleFlowChange(nodesRef.current, eds);
       onConnectProp?.(connection);
     },
-    [edges, handleFlowChange, nodes, onConnectProp]
+    [handleFlowChange, onConnectProp]
   );
 
   const handleNodesChange = useCallback(
     (changes: NodeChange[]) => {
-      const nds = applyNodeChanges(changes, nodes);
-      setNodes(nds);
+      const nds = applyNodeChanges(changes, nodesRef.current);
+      updateNodes(nds);
 
-      handleFlowChange(nds, edges);
+      handleFlowChange(nds, edgesRef.current);
       onNodesChangeProp?.(changes);
     },
-    [edges, handleFlowChange, nodes, onNodesChangeProp]
+    [handleFlowChange, onNodesChangeProp]
   );
 
   const handleEdgesChange = useCallback(
     (changes: EdgeChange[]) => {
-      const eds = applyEdgeChanges(changes, edges);
-      setEdges(eds);
+      const eds = applyEdgeChanges(changes, edgesRef.current);
+      updateEdges(eds);
 
-      handleFlowChange(nodes, eds);
+      handleFlowChange(nodesRef.current, eds);
       onEdgesChangeProp?.(changes);
     },
-    [edges, handleFlowChange, nodes, onEdgesChangeProp]
+    [handleFlowChange, onEdgesChangeProp]
   );
 
   const { registry } = useNodeMetaRegistry();
