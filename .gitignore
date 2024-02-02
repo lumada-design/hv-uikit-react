@@ -31,6 +31,11 @@ packages/icons/sprites
 
 # tests
 coverage
+/a11y-report
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
 
 # lint
 .eslintcache
@@ -49,7 +54,3 @@ dependency-check-bin
 
 # examples
 examples/*/package-lock.json
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
