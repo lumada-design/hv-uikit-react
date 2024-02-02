@@ -29,6 +29,7 @@ export * from "./Forms/FormElement";
 export * from "./Forms/Label";
 export * from "./Forms/InfoMessage";
 export * from "./Forms/WarningText";
+export * from "./Select";
 export * from "./SelectionList";
 export * from "./Forms/Suggestions";
 export * from "./BaseInput";
