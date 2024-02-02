@@ -58,6 +58,10 @@ jobs:
       - name: Run Test
         run: npm run test
 
+  playwright:
+    name: Playwright Tests
+    uses: ./.github/workflows/tests-playwright.yml
+
   a11y:
     name: A11y Tests
     uses: ./.github/workflows/tests-a11y.yml
