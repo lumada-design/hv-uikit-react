@@ -7,13 +7,7 @@ import React, {
   forwardRef,
 } from "react";
 
-import { createPortal } from "react-dom";
-
-import ClickAwayListener, {
-  ClickAwayListenerProps,
-} from "@mui/material/ClickAwayListener";
-import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-
+import { ClickAwayListenerProps } from "@mui/material/ClickAwayListener";
 import { PopperProps, usePopper } from "react-popper";
 import {
   detectOverflow,
@@ -22,9 +16,7 @@ import {
   Placement,
 } from "@popperjs/core";
 
-import { HvTypography } from "../Typography";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { useTheme } from "../hooks/useTheme";
 import { useForkRef } from "../hooks/useForkRef";
 import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -36,6 +28,9 @@ import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./BaseDropdown.styles";
 import BaseDropdownContext from "./BaseDropdownContext";
+import { HvDropdownButton, HvDropdownButtonProps } from "./DropdownButton";
+import { HvDropdownContainer } from "./DropdownContainer";
+import { HvDropdownPanel } from "./DropdownPanel";
 
 export { staticClasses as baseDropdownClasses };
 
@@ -116,7 +111,7 @@ export interface HvBaseDropdownProps extends HvBaseProps {
    * Attributes applied to the dropdown header element.
    */
   dropdownHeaderProps?: React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
+    HvDropdownButtonProps,
     HTMLDivElement
   >;
   /**
@@ -163,8 +158,6 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
     } = useDefaultProps("HvBaseDropdown", props);
     const { classes, cx } = useClasses(classesProp);
 
-    const { rootId } = useTheme();
-
     const [isOpen, setIsOpen] = useControlled(
       expanded,
       Boolean(defaultExpanded)
@@ -184,7 +177,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       dropdownHeaderRefProp,
       dropdownHeaderProps?.ref
     );
-    const handleDropdownHeaderRef = useForkRef(
+    const handleDropdownHeaderRef: any = useForkRef(
       setReferenceElement,
       handleDropdownHeaderRefProp
     );
@@ -214,10 +207,6 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
     const placement: Placement = `bottom-${
       placementProp === "right" ? "start" : "end"
     }`;
-
-    const extensionWidth = referenceElement
-      ? referenceElement?.offsetWidth
-      : "inherit";
 
     const { modifiers: popperPropsModifiers = [], ...otherPopperProps } =
       popperProps;
@@ -370,52 +359,36 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       [isOpen, disabled, setIsOpen, onToggle, referenceElement]
     );
 
-    const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
-
     const defaultHeaderElement = (
-      <div
+      <HvDropdownButton
+        ref={handleDropdownHeaderRef}
         id={setId(id, "header")}
-        className={cx(classes.header, {
-          [classes.headerDisabled]: disabled,
-          [classes.headerReadOnly]: readOnly,
-          [classes.headerOpen]: isOpen,
-          [classes.headerOpenUp]: isOpen && popperPlacement.includes("top"),
-          [classes.headerOpenDown]:
-            isOpen && popperPlacement.includes("bottom"),
-        })}
+        open={isOpen}
+        placement={popperPlacement}
+        disabled={disabled}
+        classes={{
+          root: classes.header,
+          disabled: classes.headerDisabled,
+          readOnly: classes.headerReadOnly,
+          open: classes.headerOpen,
+          openUp: classes.headerOpenUp,
+          openDown: classes.headerOpenDown,
+          placeholder: classes.placeholder,
+          selection: classes.selection,
+          arrowContainer: classes.arrowContainer,
+          arrow: classes.arrow,
+        }}
+        adornment={adornment}
         // TODO: review "textbox" role
         role={ariaRole === "combobox" ? "textbox" : undefined}
         {...headerAriaLabels}
         style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
         // Removes the element from the navigation sequence for keyboard focus if disabled
         tabIndex={disabled ? -1 : 0}
-        ref={handleDropdownHeaderRef}
         {...dropdownHeaderProps}
       >
-        <div className={classes.selection}>
-          {placeholder && typeof placeholder === "string" ? (
-            <HvTypography
-              className={cx(classes.placeholder, {
-                [classes.selectionDisabled]: disabled,
-              })}
-              variant="body"
-            >
-              {placeholder}
-            </HvTypography>
-          ) : (
-            placeholder
-          )}
-        </div>
-        <div className={classes.arrowContainer}>
-          {adornment || (
-            <ExpanderComponent
-              iconSize="XS"
-              color={disabled ? "secondary_60" : undefined}
-              className={classes.arrow}
-            />
-          )}
-        </div>
-      </div>
+        {placeholder}
+      </HvDropdownButton>
     );
 
     const headerElement =
@@ -426,90 +399,56 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
           })
         : defaultHeaderElement;
 
-    const containerComponent = (() => {
-      /**
-       *  Handle keyboard inside children container.
-       */
-      const handleContainerKeyDown: KeyboardEventHandler = (event) => {
-        if (isKey(event, "Esc")) {
-          handleToggle(event);
+    const handleContainerKeyDown: KeyboardEventHandler = (event) => {
+      if (isKey(event, "Esc")) {
+        handleToggle(event);
+      }
+      if (isKey(event, "Tab") && !event.shiftKey) {
+        const focusList = getFirstAndLastFocus(popperElement);
+        if (document.activeElement === focusList?.last) {
+          event.preventDefault();
+          focusList?.first?.focus();
         }
-        if (isKey(event, "Tab") && !event.shiftKey) {
-          const focusList = getFirstAndLastFocus(popperElement);
-          if (document.activeElement === focusList?.last) {
-            event.preventDefault();
-            focusList?.first?.focus();
-          }
-        }
-      };
+      }
+    };
 
-      const handleOutside: ClickAwayListenerProps["onClickAway"] = (event) => {
-        const isButtonClick = referenceElement?.contains(event.target as any);
-        if (!isButtonClick) {
-          onClickOutside?.(event);
-          setIsOpen(false);
-          onToggle?.(event, false);
-        }
-      };
+    const handleClickAway: ClickAwayListenerProps["onClickAway"] = (event) => {
+      const isButtonClick = referenceElement?.contains(event.target as any);
+      if (!isButtonClick) {
+        onClickOutside?.(event);
+        setIsOpen(false);
+        onToggle?.(event, false);
+      }
+    };
 
-      const container = (
-        <div
-          ref={setPopperElement}
-          className={classes.container}
-          style={popperStyles.popper}
-          {...attributes.popper}
+    const containerElement = (
+      <HvDropdownContainer
+        onClickAway={handleClickAway}
+        onContainerKeyDown={handleContainerKeyDown}
+        ref={setPopperElement}
+        className={classes.container}
+        style={popperStyles.popper}
+        {...attributes.popper}
+      >
+        <HvDropdownPanel
+          id={containerId}
+          placement={popperPlacement}
+          classes={{
+            panel: classes.panel,
+            extensionFloatLeft: classes.inputExtensionFloatLeft,
+            extensionFloatRight: classes.inputExtensionFloatRight,
+            extensionLeftPosition: classes.inputExtensionLeftPosition,
+            extensionOpen: classes.inputExtensionOpen,
+            panelOpenedUp: classes.panelOpenedUp,
+            panelOpenedDown: classes.panelOpenedDown,
+          }}
         >
-          <ClickAwayListener onClickAway={handleOutside}>
-            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-            <div onKeyDown={handleContainerKeyDown}>
-              {popperPlacement.includes("bottom") && (
-                <div
-                  style={{ width: extensionWidth }}
-                  className={cx(classes.inputExtensionOpen, {
-                    [classes.inputExtensionLeftPosition]:
-                      popperPlacement.includes("end"),
-                  })}
-                />
-              )}
-              <BaseDropdownContext.Provider value={popperMaxSize}>
-                <div
-                  id={containerId}
-                  className={cx(classes.panel, {
-                    [classes.panelOpenedUp]: popperPlacement.includes("top"),
-                    [classes.panelOpenedDown]:
-                      popperPlacement.includes("bottom"),
-                  })}
-                >
-                  {children}
-                </div>
-              </BaseDropdownContext.Provider>
-              {popperPlacement.includes("top") && (
-                <div
-                  style={{ width: extensionWidth }}
-                  className={cx(
-                    classes.inputExtensionOpen,
-                    classes.inputExtensionOpenShadow,
-                    {
-                      [classes.inputExtensionFloatRight]:
-                        popperPlacement.includes("end"),
-                      [classes.inputExtensionFloatLeft]:
-                        popperPlacement.includes("start"),
-                    }
-                  )}
-                />
-              )}
-            </div>
-          </ClickAwayListener>
-        </div>
-      );
-
-      if (disablePortal) return container;
-
-      return createPortal(
-        container,
-        document.getElementById(rootId || "") || document.body
-      );
-    })();
+          <BaseDropdownContext.Provider value={popperMaxSize}>
+            {children}
+          </BaseDropdownContext.Provider>
+        </HvDropdownPanel>
+      </HvDropdownContainer>
+    );
 
     return (
       <div className={classes.root}>
@@ -536,7 +475,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
         >
           {headerElement}
         </div>
-        {isOpen && containerComponent}
+        {isOpen && containerElement}
       </div>
     );
   }
