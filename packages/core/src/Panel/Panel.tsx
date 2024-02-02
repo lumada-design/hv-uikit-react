@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { HvBaseProps } from "../types/generic";
@@ -20,19 +22,20 @@ export interface HvPanelProps extends HvBaseProps {
  * It can be horizontal or vertical and its size is defined by its content and how it relates to surrounding patterns.
  * Regardless of its content, a panel look and feel should be consistent.
  */
-export const HvPanel = (props: HvPanelProps) => {
-  const {
-    id,
-    className,
-    classes: classesProp,
-    children,
-    ...others
-  } = useDefaultProps("HvPanel", props);
-  const { classes, cx } = useClasses(classesProp);
+export const HvPanel = forwardRef<HTMLDivElement, HvPanelProps>(
+  (props, ref) => {
+    const {
+      className,
+      classes: classesProp,
+      children,
+      ...others
+    } = useDefaultProps("HvPanel", props);
+    const { classes, cx } = useClasses(classesProp);
 
-  return (
-    <div id={id} className={cx(classes.root, className)} {...others}>
-      {children}
-    </div>
-  );
-};
+    return (
+      <div ref={ref} className={cx(classes.root, className)} {...others}>
+        {children}
+      </div>
+    );
+  }
+);
