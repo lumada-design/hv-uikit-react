@@ -29,7 +29,7 @@ import {
   useHvTableSticky,
 } from "@hitachivantara/uikit-react-core";
 
-import { LoadingContainer } from "./LoadingContainer";
+import { LoadingContainer } from "../TableSamples/LoadingContainer";
 
 const range = (n: number) => [...Array(n).keys()];
 
