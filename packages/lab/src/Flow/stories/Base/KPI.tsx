@@ -15,13 +15,14 @@ export const KPI: HvFlowNodeFC<NodeGroup> = (props) => {
           label: "Data",
           isMandatory: true,
           accepts: ["prediction", "detection"],
+          maxConnections: 1,
         },
       ]}
       outputs={[
         {
           label: "Insight",
           isMandatory: true,
-          provides: "insight",
+          provides: "kpi",
         },
       ]}
       {...props}

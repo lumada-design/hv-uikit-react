@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-lab",
-  "version": "5.26.3",
+  "version": "5.27.2",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Contributed React components for the NEXT UI Kit.",
@@ -43,7 +43,7 @@
     "@dnd-kit/core": "^6.1.0",
     "@dnd-kit/modifiers": "^6.0.1",
     "@emotion/css": "^11.11.0",
-    "@hitachivantara/uikit-react-core": "^5.46.0",
+    "@hitachivantara/uikit-react-core": "^5.46.2",
     "@hitachivantara/uikit-react-icons": "^5.8.2",
     "@hitachivantara/uikit-styles": "^5.18.0",
     "@types/react-grid-layout": "^1.3.5",
@@ -55,6 +55,7 @@
     "zustand": "^4.4.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.41.1",
     "@storybook/react": "^7.6.4",
     "@storybook/testing-library": "^0.2.2",
     "@testing-library/react": "^14.1.2",

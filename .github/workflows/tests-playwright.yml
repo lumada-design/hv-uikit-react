@@ -1,0 +1,39 @@
+name: Playwright tests
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+env:
+  PUBLISH_FOLDER: ${{ inputs.publish-folder || github.ref_name }}
+
+jobs:
+  run-playwright-tests:
+    name: Playwright Tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        PROJECT: ["chromium", "chrome", "msedge", "firefox", "webkit"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npx playwright test --project=${{ matrix.PROJECT }}
+
+      - name: Archive Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Playwright report-[${{ matrix.PROJECT }}]
+          path: |
+            playwright-report/
+          retention-days: 5

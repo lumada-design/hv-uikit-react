@@ -49,3 +49,7 @@ dependency-check-bin
 
 # examples
 examples/*/package-lock.json
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

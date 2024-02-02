@@ -1,9 +1,20 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-
 import {
+  HvEmptyState,
+  HvTableCell,
   HvTableColumnConfig,
+  HvTableRow,
   HvTableState,
 } from "@hitachivantara/uikit-react-core";
+import { Ban } from "@hitachivantara/uikit-react-icons";
+
+export const EmptyRow = ({ height }) => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} style={{ height }}>
+      <HvEmptyState message="No data to display" icon={<Ban role="none" />} />
+    </HvTableCell>
+  </HvTableRow>
+);
 
 export interface NewRendererEntry {
   id: string;

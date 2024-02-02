@@ -20,7 +20,7 @@
     "browser": true,
     "node": true
   },
-  "ignorePatterns": ["*.d.ts", "dist", "node_modules"],
+  "ignorePatterns": ["*.d.ts", "dist", "node_modules", "playwright.config.ts"],
   "rules": {
     "arrow-body-style": "off",
     "react/prop-types": "off",
