@@ -37,7 +37,7 @@ export const Main: StoryObj<HvListContainerProps> = {
   },
   render: ({ interactive, condensed, disableGutters }) => {
     return (
-      <HvPanel style={{ padding: 20, maxWidth: 220 }}>
+      <HvPanel style={{ maxWidth: 220 }}>
         <HvListContainer
           interactive={interactive}
           condensed={condensed}
@@ -62,7 +62,7 @@ export const SingleSelection: StoryObj<HvListContainerProps> = {
     const [selectedItem, setSelectedItem] = useState(-1);
 
     return (
-      <HvPanel style={{ padding: 20, maxWidth: 220 }}>
+      <HvPanel style={{ maxWidth: 220 }}>
         <HvListContainer interactive condensed aria-label="Stores">
           <HvListItem
             onClick={() => setSelectedItem(0)}
@@ -134,7 +134,7 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
     };
 
     return (
-      <HvPanel style={{ padding: 20, maxWidth: 220 }}>
+      <HvPanel style={{ maxWidth: 220 }}>
         <HvListContainer interactive condensed aria-label="Stores">
           <HvListItem
             onClick={(event) => handleListItemClick(event, 0)}
@@ -175,7 +175,7 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
 export const WithIcons: StoryObj<HvListContainerProps> = {
   render: () => {
     return (
-      <HvPanel style={{ padding: 20, maxWidth: 220 }}>
+      <HvPanel style={{ maxWidth: 220 }}>
         <HvListContainer
           interactive
           aria-label="Single Selection List with Left Icons Title"
@@ -430,7 +430,7 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
       const { selectedItems, handleListItemClick } = useKeyboardSelection();
 
       return (
-        <HvPanel style={{ padding: 20, maxWidth: 220 }}>
+        <HvPanel style={{ maxWidth: 220 }}>
           <HvListContainer
             interactive
             condensed
