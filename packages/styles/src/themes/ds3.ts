@@ -930,6 +930,18 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvSelect: {
+      classes: {
+        select: {
+          ".HvButton-endIcon": {
+            marginRight: theme.spacing(-1),
+          },
+        },
+        panel: {
+          borderColor: theme.colors.atmo4,
+        },
+      },
+    },
     HvVerticalScrollListItem: {
       classes: {
         notSelected: {
