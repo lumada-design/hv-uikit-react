@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.27.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.27.2...@hitachivantara/uikit-react-lab@5.27.3) (2024-02-03)
+
+### Bug Fixes
+
+- **Flow:** keep nodes and edges in ref to fix async updates in onFlowChange ([#4001](https://github.com/lumada-design/hv-uikit-react/issues/4001)) ([ab12a59](https://github.com/lumada-design/hv-uikit-react/commit/ab12a59b0fed2623f7bcbd1e72845d6f7824aa0b))
+
 ## [5.27.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.27.1...@hitachivantara/uikit-react-lab@5.27.2) (2024-02-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

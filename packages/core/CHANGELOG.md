@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.47.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.46.2...@hitachivantara/uikit-react-core@5.47.0) (2024-02-03)
+
+### Bug Fixes
+
+- **ListItem:** allow tabIndex & onKeyDown to be used ([#4006](https://github.com/lumada-design/hv-uikit-react/issues/4006)) ([2d578ef](https://github.com/lumada-design/hv-uikit-react/commit/2d578ef8692195e0810f483e5b981c589cdbcad0))
+
+### Features
+
+- **TableSection:** add TableSection component ([dae3caf](https://github.com/lumada-design/hv-uikit-react/commit/dae3caf00b0b3c4020110816a2d5ae0718be9960))
+
 ## 5.46.2 (2024-02-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
