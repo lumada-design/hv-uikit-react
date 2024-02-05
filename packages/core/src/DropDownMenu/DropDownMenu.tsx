@@ -85,7 +85,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
     expanded,
     defaultExpanded = false,
     category = "secondaryGhost",
-    variant = "secondaryGhost",
+    variant,
     ...others
   } = useDefaultProps("HvDropDownMenu", props);
 
