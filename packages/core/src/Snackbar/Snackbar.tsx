@@ -1,17 +1,15 @@
-import { SyntheticEvent } from "react";
-import Slide from "@mui/material/Slide";
+import { SyntheticEvent, useCallback } from "react";
+import Slide, { SlideProps } from "@mui/material/Slide";
 import MuiSnackbar, {
   SnackbarCloseReason,
   SnackbarOrigin,
   SnackbarProps as MuiSnackbarProps,
 } from "@mui/material/Snackbar";
-
 import capitalize from "lodash/capitalize";
 
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { HvActionGeneric } from "../ActionsGeneric";
-
 import { HvSnackbarContentProps, HvSnackbarContent } from "./SnackbarContent";
 import { staticClasses, useClasses } from "./Snackbar.styles";
 import { HvSnackbarVariant } from "./types";
@@ -55,6 +53,8 @@ export interface HvSnackbarProps
   transitionDuration?: number;
   /** Direction of slide transition. */
   transitionDirection?: "up" | "down" | "left" | "right";
+  /** The container the snackbar should slide from. */
+  container?: SlideProps["container"];
   /** Custom offset from top/bottom of the page, in px. */
   offset?: number;
   /** Others applied to the content of the snackbar. */
@@ -64,25 +64,6 @@ export interface HvSnackbarProps
   /** @ignore */
   ref?: MuiSnackbarProps["ref"];
 }
-
-const TransLeft = (props: any) => <Slide {...props} direction="left" />;
-const TransRight = (props: any) => <Slide {...props} direction="right" />;
-const TransUp = (props: any) => <Slide {...props} direction="up" />;
-const TransDown = (props: any) => <Slide {...props} direction="down" />;
-
-const snackBarDirComponent = (direction: string) => {
-  switch (direction) {
-    case "right":
-      return TransRight;
-    case "up":
-      return TransUp;
-    case "down":
-      return TransDown;
-    case "left":
-    default:
-      return TransLeft;
-  }
-};
 
 /**
  * A Snackbar provides brief messages about app processes.
@@ -108,6 +89,7 @@ export const HvSnackbar = ({
   actionCallback,
   transitionDuration = 300,
   transitionDirection = "left",
+  container,
   offset = 60,
   snackbarContentProps,
   ...others
@@ -123,6 +105,19 @@ export const HvSnackbar = ({
     },
   };
 
+  const SlideTransition = useCallback<
+    NonNullable<MuiSnackbarProps["TransitionComponent"]>
+  >(
+    (properties) => (
+      <Slide
+        {...properties}
+        container={container}
+        direction={transitionDirection}
+      />
+    ),
+    [container, transitionDirection]
+  );
+
   return (
     <MuiSnackbar
       style={
@@ -136,7 +131,7 @@ export const HvSnackbar = ({
       onClose={onClose}
       autoHideDuration={autoHideDuration}
       transitionDuration={transitionDuration}
-      TransitionComponent={snackBarDirComponent(transitionDirection)}
+      TransitionComponent={SlideTransition}
       {...others}
     >
       <HvSnackbarContent
