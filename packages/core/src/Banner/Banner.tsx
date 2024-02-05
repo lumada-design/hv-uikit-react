@@ -1,7 +1,5 @@
 import { useCallback } from "react";
-
-import Slide from "@mui/material/Slide";
-
+import Slide, { SlideProps } from "@mui/material/Slide";
 import Snackbar, {
   SnackbarProps as MuiSnackbarProps,
   SnackbarOrigin,
@@ -11,7 +9,6 @@ import { HvActionGeneric } from "../ActionsGeneric";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import { useClasses, staticClasses } from "./Banner.styles";
 import {
   HvBannerContent,
@@ -53,9 +50,11 @@ export interface HvBannerProps
   transitionDuration?: number;
   /** Direction of slide transition. */
   transitionDirection?: "up" | "down" | "left" | "right";
+  /** The container the banner should slide from. */
+  container?: SlideProps["container"];
   /** Offset from top/bottom of the page, in px. Defaults to 60px. */
   offset?: number;
-  /** Props to pass down to the Banner Wrapper. An object `actionProps` can be included to be passed as others to actions. */
+  /** Props to pass down to the banner Wrapper. An object `actionProps` can be included to be passed as others to actions. */
   bannerContentProps?: HvBannerContentProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBannerClasses;
@@ -78,6 +77,7 @@ export const HvBanner = (props: HvBannerProps) => {
     variant = "default",
     transitionDuration = 300,
     transitionDirection = "down",
+    container,
     showIcon = false,
     customIcon,
     actions,
@@ -98,8 +98,14 @@ export const HvBanner = (props: HvBannerProps) => {
   const SlideTransition = useCallback<
     NonNullable<MuiSnackbarProps["TransitionComponent"]>
   >(
-    (properties) => <Slide {...properties} direction={transitionDirection} />,
-    [transitionDirection]
+    (properties) => (
+      <Slide
+        {...properties}
+        container={container}
+        direction={transitionDirection}
+      />
+    ),
+    [container, transitionDirection]
   );
 
   return (
