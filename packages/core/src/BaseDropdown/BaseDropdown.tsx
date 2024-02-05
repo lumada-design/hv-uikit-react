@@ -12,12 +12,15 @@ import { createPortal } from "react-dom";
 import ClickAwayListener, {
   ClickAwayListenerProps,
 } from "@mui/material/ClickAwayListener";
-import { PopperPlacementType, PopperProps } from "@mui/material/Popper";
-
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { usePopper } from "react-popper";
-import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
+import { PopperProps, usePopper } from "react-popper";
+import {
+  detectOverflow,
+  ModifierArguments,
+  Options,
+  Placement,
+} from "@popperjs/core";
 
 import { HvTypography } from "../Typography";
 import { useUniqueId } from "../hooks/useUniqueId";
@@ -83,7 +86,7 @@ export interface HvBaseDropdownProps extends HvBaseProps {
   /**
    * An object containing props to be wired to the popper component.
    */
-  popperProps?: Partial<PopperProps>;
+  popperProps?: Partial<PopperProps<any>>;
   /**
    * Placement of the dropdown.
    */
@@ -208,7 +211,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       "aria-labelledby": ariaLabelledByProp,
     } satisfies AriaAttributes;
 
-    const placement: PopperPlacementType = `bottom-${
+    const placement: Placement = `bottom-${
       placementProp === "right" ? "start" : "end"
     }`;
 
@@ -282,7 +285,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       []
     );
 
-    const modifiers = useMemo<PopperProps["modifiers"]>(
+    const modifiers = useMemo<Options["modifiers"]>(
       () => [
         {
           name: "variableWidth",
@@ -330,7 +333,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
     );
 
     const popperPlacement =
-      attributes.popper?.["data-popper-placement"] ?? "bottom";
+      (attributes.popper?.["data-popper-placement"] as Placement) ?? "bottom";
 
     const handleToggle = useCallback(
       (event: any) => {

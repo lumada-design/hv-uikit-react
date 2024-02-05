@@ -1,6 +1,4 @@
 import { ChangeEvent, useMemo } from "react";
-
-import { theme } from "@hitachivantara/uikit-styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -113,13 +111,6 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
   };
 
   const condensed = useMemo(() => dataList.every((el) => !el.icon), [dataList]);
-  const popperStyle: HvBaseDropdownProps["popperProps"] = {
-    style: {
-      zIndex: theme.zIndices.tooltip,
-      width: "auto",
-      position: "relative",
-    },
-  };
 
   return (
     <HvBaseDropdown
@@ -159,7 +150,6 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
       }}
       disabled={disabled}
       onContainerCreation={setFocusToContent}
-      popperProps={popperStyle}
       {...others}
     >
       <HvPanel className={classes.menuListRoot}>

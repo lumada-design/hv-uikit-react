@@ -30,9 +30,6 @@ export const { staticClasses, useClasses } = createClasses("HvDropdown", {
 
     "& $dropdownHeaderInvalid": {
       border: `1px solid ${theme.colors.negative}`,
-      "&:hover": {
-        border: `1px solid ${theme.colors.negative}`,
-      },
     },
   },
   arrow: {},

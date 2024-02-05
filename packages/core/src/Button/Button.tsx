@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactElement } from "react";
+import React, { forwardRef } from "react";
 
 import { useTheme } from "../hooks/useTheme";
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -31,9 +31,9 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
       /** Class names to be applied. */
       className?: string;
       /** Element placed before the children. */
-      startIcon?: ReactElement;
+      startIcon?: React.ReactNode;
       /** Element placed after the children. */
-      endIcon?: ReactElement;
+      endIcon?: React.ReactNode;
       /** Button size. */
       size?: HvButtonSize;
       /** Button border radius. */
