@@ -38,6 +38,8 @@ export interface HvSectionProps
   raisedHeader?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: HvSectionClasses;
+  /** Content container ref. */
+  contentRef?: React.Ref<HTMLDivElement>;
 }
 
 /**
@@ -57,6 +59,7 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
       onToggle,
       expandButtonProps,
       raisedHeader,
+      contentRef,
       children,
       ...others
     } = useDefaultProps("HvSection", props);
@@ -106,6 +109,7 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
           </div>
         )}
         <div
+          ref={contentRef}
           id={contentId}
           hidden={!isOpen}
           className={cx(classes.content, {
