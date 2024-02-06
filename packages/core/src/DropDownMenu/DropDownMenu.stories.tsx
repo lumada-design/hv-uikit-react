@@ -1,26 +1,20 @@
 import { useState } from "react";
 import { Calendar, Plane, User } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
+import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvButton,
   HvDropDownMenu,
   HvDropDownMenuProps,
-  HvListValue,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvDropDownMenu> = {
   title: "Components/Dropdown Menu",
   component: HvDropDownMenu,
   decorators: [
-    (storyFn) => (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          height: 175,
-        }}
-      >
-        {storyFn()}
+    (Story) => (
+      <div style={{ display: "flex", justifyContent: "center", height: 175 }}>
+        {Story()}
       </div>
     ),
   ],
@@ -33,8 +27,8 @@ export const Main: StoryObj<HvDropDownMenuProps> = {
     placement: "left",
     keepOpened: false,
     disabled: false,
-    expanded: true,
-    defaultExpanded: false,
+    expanded: undefined,
+    defaultExpanded: true,
     variant: "secondaryGhost",
   },
   argTypes: {
@@ -42,65 +36,39 @@ export const Main: StoryObj<HvDropDownMenuProps> = {
     onToggle: { control: { disable: true } },
     onClick: { control: { disable: true } },
   },
-  render: ({ expanded, onToggle, ...rest }) => {
-    const [open, setOpen] = useState<boolean>(!!expanded);
-
-    return (
-      <HvDropDownMenu
-        expanded={open}
-        onToggle={() => setOpen((o) => !o)}
-        {...rest}
-      />
-    );
+  render: (args) => {
+    return <HvDropDownMenu {...args} />;
   },
 };
 
-export const WithIconsAndActions: StoryObj<HvDropDownMenuProps> = {
+/** wrapper needed for Storybook not to crash */
+const renderIcon = (Icon: React.ElementType) => () => <Icon />;
+
+export const WithIcons: StoryObj<HvDropDownMenuProps> = {
   parameters: {
     docs: {
       description: {
-        story:
-          "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected.",
+        story: "DropDownMenu with icons and disabled actions",
+      },
+    },
+    parameters: {
+      eyes: {
+        runBefore() {
+          fireEvent.click(screen.getByRole("button"));
+          return waitFor(() => screen.getByRole("menuitem"));
+        },
       },
     },
   },
   render: () => {
-    const iconSelectedColor =
-      (Icon: React.ElementType): HvListValue["icon"] =>
-      ({ isSelected }) =>
-        <Icon color={isSelected ? "atmo1" : undefined} />;
-
     return (
       <HvDropDownMenu
-        expanded
         placement="right"
         onClick={(e, item) => console.log(item.label)}
         dataList={[
-          { label: "Label 1", icon: iconSelectedColor(User) },
-          { label: "Label 2", icon: iconSelectedColor(Calendar) },
-          { label: "Label 3", icon: iconSelectedColor(Plane) },
-        ]}
-      />
-    );
-  },
-};
-
-export const DisabledItems: StoryObj<HvDropDownMenuProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "DropDownMenu with disabled items.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvDropDownMenu
-        expanded
-        dataList={[
-          { label: "Label 1" },
-          { label: "Label 2", disabled: true },
-          { label: "Label 3" },
+          { label: "Label 1", icon: renderIcon(User) },
+          { label: "Label 2", icon: renderIcon(Calendar), disabled: true },
+          { label: "Label 3", icon: renderIcon(Plane) },
         ]}
       />
     );
@@ -117,19 +85,12 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
     eyes: { include: false },
   },
   render: () => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     return (
       <>
-        <HvButton
-          variant="secondaryGhost"
-          onClick={() => {
-            setOpen(!open);
-          }}
-          style={{ width: 125 }}
-        >
-          Click to&nbsp;
-          {!open ? "Open" : "Close"}
+        <HvButton variant="secondaryGhost" onClick={() => setOpen(!open)}>
+          {`Click to ${!open ? "Open" : "Close"}`}
         </HvButton>
         <HvDropDownMenu
           expanded={open}

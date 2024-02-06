@@ -5,6 +5,7 @@ import {
   HvButton,
   HvPanel,
   HvPanelProps,
+  HvTooltip,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
@@ -31,21 +32,17 @@ export const Main: StoryObj<HvPanelProps> = {
 export const WithScroll: StoryObj<HvPanelProps> = {
   render: () => {
     return (
-      <HvPanel style={{ width: "400px", height: "400px" }}>
-        <div style={{ height: 600, backgroundColor: theme.colors.atmo4 }}>
-          &nbsp;
-        </div>
+      <HvPanel style={{ width: 400, height: 400 }}>
+        <div style={{ height: 600, backgroundColor: theme.colors.atmo4 }} />
       </HvPanel>
     );
   },
 };
 
-const StyledButton = styled(HvButton)({
+const CornerButton = styled(HvButton)({
   position: "absolute",
   top: theme.space.sm,
   right: theme.space.sm,
-  width: "32px",
-  height: "32px",
 });
 
 export const FullWidth: StoryObj<HvPanelProps> = {
@@ -53,21 +50,15 @@ export const FullWidth: StoryObj<HvPanelProps> = {
     return (
       <HvPanel style={{ width: "100%", height: "200px" }}>
         <HvTypography>Panel Content</HvTypography>
-        <StyledButton icon aria-label="Edit" variant="secondaryGhost">
-          <Edit />
-        </StyledButton>
+        <HvTooltip title="Edit">
+          <CornerButton icon>
+            <Edit />
+          </CornerButton>
+        </HvTooltip>
       </HvPanel>
     );
   },
 };
-
-const CloseButton = styled(HvButton)({
-  position: "absolute",
-  top: theme.space.sm,
-  right: theme.space.sm,
-  width: "32px",
-  height: "32px",
-});
 
 const Overlay = styled("div")({
   backgroundColor: theme.colors.atmo3,
@@ -88,9 +79,11 @@ export const Modal: StoryObj<HvPanelProps> = {
           }}
         >
           <HvTypography>Panel Content</HvTypography>
-          <CloseButton icon aria-label="Close" variant="secondaryGhost">
-            <Close />
-          </CloseButton>
+          <HvTooltip title="Close">
+            <CornerButton icon>
+              <Close />
+            </CornerButton>
+          </HvTooltip>
         </HvPanel>
       </Overlay>
     );
