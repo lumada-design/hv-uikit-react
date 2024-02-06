@@ -55,8 +55,13 @@ export interface HvDropDownMenuProps
   expanded?: boolean;
   /** When uncontrolled, defines the initial expanded state. */
   defaultExpanded?: boolean;
-  /** The variant to be used in the header. */
+  /**
+   * The variant to be used in the header.
+   * @deprecated Use `variant` instead
+   */
   category?: HvButtonVariant;
+  /** The variant to be used in the header. */
+  variant?: HvButtonVariant;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvDropDownMenuClasses;
 }
@@ -80,6 +85,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
     expanded,
     defaultExpanded = false,
     category = "secondaryGhost",
+    variant,
     ...others
   } = useDefaultProps("HvDropDownMenu", props);
 
@@ -133,7 +139,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
       component={
         <HvButton
           icon
-          variant={category}
+          variant={variant ?? category}
           id={setId(id, "icon-button")}
           className={cx(classes.icon, { [classes.iconSelected]: open })}
           aria-expanded={open}
