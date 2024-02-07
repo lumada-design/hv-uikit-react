@@ -19,55 +19,8 @@ import VerticalNavigationStoryRaw from "./stories/VerticalNavigation?raw";
 
 export default {
   title: "Components/Tree View",
-  subtitle: "Blah",
-  // @ts-expect-error
-  component: "HvTreeView",
-  argTypes: {
-    children: {
-      description: "HvTreeView content. Typically `HvTreeItem` elements.",
-      table: {
-        type: { summary: "ReactNode", disable: true },
-      },
-    },
-    classes: {
-      description:
-        "A Jss Object used to override or extend the styles applied.",
-      table: {
-        type: { summary: "HvTreeViewClasses" },
-      },
-      control: { disable: true },
-    },
-    multiSelect: {
-      description: "Whether the tree view allows multiple selection.",
-      defaultValue: { summary: false },
-      table: {
-        type: { summary: "boolean" },
-      },
-    },
-    expanded: {
-      description: "Expanded node ids, when expansion is controlled.",
-    },
-    defaultExpanded: {
-      description: "Expanded node ids, when expansion is uncontrolled.",
-    },
-    selected: {
-      description:
-        "Selected node ids when controlled. Array of ids when multiSelect, else just the id string",
-    },
-    defaultSelected: {
-      description:
-        "Selected node ids when uncontrolled. Array of ids when multiSelect, else just the id string",
-    },
-    onNodeSelect: {
-      description: "Callback fired when tree items are selected/unselected.",
-    },
-    onNodeToggle: {
-      description: "Callback fired when tree items are expanded/collapsed.",
-    },
-    onNodeFocus: {
-      description: "Callback fired when tree items are focused.",
-    },
-  },
+  component: HvTreeView,
+  argTypes: {},
   // @ts-expect-error
   subcomponents: { HvTreeItem },
 } satisfies Meta<typeof HvTreeView>;

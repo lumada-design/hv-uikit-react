@@ -1,11 +1,11 @@
-import { forwardRef } from "react";
-
-import isEmpty from "lodash/isEmpty";
-
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
 import { HvTypography } from "../Typography";
-import { PolymorphicComponentRef, PolymorphicRef } from "../types/generic";
+import {
+  fixedForwardRef,
+  PolymorphicComponentRef,
+  PolymorphicRef,
+} from "../types/generic";
 
 import { staticClasses, useClasses } from "./TimeAgo.styles";
 import useTimeAgo from "./useTimeAgo";
@@ -50,41 +50,36 @@ export type HvTimeAgoProps<C extends React.ElementType = "p"> =
 /**
  * The HvTimeAgo component implements the Design System relative time format guidelines.
  */
-export const HvTimeAgo: <C extends React.ElementType = "p">(
-  props: HvTimeAgoProps<C>
-) => React.ReactElement | null = forwardRef(
-  <C extends React.ElementType = "p">(
-    props: HvTimeAgoProps<C>,
-    ref: PolymorphicRef<C>
-  ) => {
-    const {
-      classes: classesProp,
-      className,
-      timestamp,
-      locale: localeProp = "en",
-      component: Component = HvTypography,
-      emptyElement = "—",
-      disableRefresh = false,
-      showSeconds = false,
-      justText = false,
-      ...others
-    } = useDefaultProps("HvTimeAgo", props);
+export const HvTimeAgo = fixedForwardRef(function HvTimeAgo<
+  C extends React.ElementType = "p"
+>(props: HvTimeAgoProps<C>, ref: PolymorphicRef<C>) {
+  const {
+    classes: classesProp,
+    className,
+    timestamp,
+    locale: localeProp = "en",
+    component: Component = HvTypography,
+    emptyElement = "—",
+    disableRefresh = false,
+    showSeconds = false,
+    justText = false,
+    ...others
+  } = useDefaultProps("HvTimeAgo", props);
 
-    const { classes, cx } = useClasses(classesProp);
-    const locale = isEmpty(localeProp) ? "en" : localeProp;
-    const timeAgo = useTimeAgo(timestamp, {
-      locale,
-      disableRefresh,
-      showSeconds,
-    });
+  const { classes, cx } = useClasses(classesProp);
+  const locale = localeProp || "en";
+  const timeAgo = useTimeAgo(timestamp, {
+    locale,
+    disableRefresh,
+    showSeconds,
+  });
 
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    if (justText && timestamp) return <>{timeAgo}</>;
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  if (justText && timestamp) return <>{timeAgo}</>;
 
-    return (
-      <Component ref={ref} className={cx(classes.root, className)} {...others}>
-        {!timestamp ? emptyElement : timeAgo}
-      </Component>
-    );
-  }
-);
+  return (
+    <Component ref={ref} className={cx(classes.root, className)} {...others}>
+      {!timestamp ? emptyElement : timeAgo}
+    </Component>
+  );
+});

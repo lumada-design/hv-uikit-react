@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { forwardRef } from "react";
 
 import type {
   HvExtraProps,
@@ -8,6 +8,7 @@ import type {
 export type { HvExtraProps, HvExtraDeepProps };
 
 type AsProp<C extends React.ElementType> = {
+  /** Custom element type to override the root component */
   component?: C;
 };
 
@@ -33,11 +34,11 @@ export type PolymorphicComponentRef<
   Props = {}
 > = PolymorphicComponent<C, Props> & { ref?: PolymorphicRef<C> };
 
-/** HV Base Props. Extends `HTMLAttributes` of an element `E`, and filters `K` keys. */
+/** HV Base Props. Extends `React.HTMLAttributes` of an element `E`, and filters `K` keys. */
 export type HvBaseProps<
   E extends HTMLElement = HTMLDivElement,
-  K extends keyof HTMLAttributes<E> = never
-> = Omit<HTMLAttributes<E>, K>;
+  K extends keyof React.HTMLAttributes<E> = never
+> = Omit<React.HTMLAttributes<E>, K>;
 
 /** This type allows to do a deep partial by applying the Partial type to each key recursively */
 export type DeepPartial<T> = T extends Object
@@ -53,3 +54,11 @@ export type HvExtraDeepPartialProps<T> = Partial<{
   HvExtraProps;
 
 export type Arrayable<T> = T | T[];
+
+/** React.forwardRef with fixed type declarations */
+export function fixedForwardRef<T, P = {}>(
+  // TODO: change `React.ReactElement | null` to `React.ReactNode` in typescript@5
+  render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+): (props: P & React.RefAttributes<T>) => React.ReactElement | null {
+  return forwardRef(render) as any;
+}

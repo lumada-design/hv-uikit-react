@@ -1,6 +1,8 @@
-import { ElementType, forwardRef } from "react";
-
-import { PolymorphicComponentRef, PolymorphicRef } from "../types/generic";
+import {
+  fixedForwardRef,
+  PolymorphicComponentRef,
+  PolymorphicRef,
+} from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 import { useTheme } from "../hooks/useTheme";
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -48,7 +50,7 @@ const HvTypographyMap = {
   xsInlineLink: "p",
 } satisfies Record<
   HvTypographyVariants | HvTypographyLegacyVariants,
-  ElementType
+  React.ElementType
 >;
 
 export type HvTypographyProps<C extends React.ElementType = "p"> =
@@ -81,48 +83,43 @@ export type HvTypographyProps<C extends React.ElementType = "p"> =
 /**
  * Typography component is used to render text and paragraphs within an interface.
  */
-export const HvTypography: <C extends React.ElementType = "p">(
-  props: HvTypographyProps<C>
-) => React.ReactElement | null = forwardRef(
-  <C extends React.ElementType = "p">(
-    props: HvTypographyProps<C>,
-    ref: PolymorphicRef<C>
-  ) => {
-    const {
-      className,
-      component: ComponentProp,
-      classes: classesProp,
-      variant: variantProp = "body",
-      link = false,
-      noWrap = false,
-      paragraph = false,
-      disabled = false,
-      ...others
-    } = useDefaultProps("HvTypography", props);
-    const { classes, cx } = useClasses(classesProp);
-    const { activeTheme } = useTheme();
+export const HvTypography = fixedForwardRef(function HvTypography<
+  C extends React.ElementType = "p"
+>(props: HvTypographyProps<C>, ref: PolymorphicRef<C>) {
+  const {
+    className,
+    component: ComponentProp,
+    classes: classesProp,
+    variant: variantProp = "body",
+    link = false,
+    noWrap = false,
+    paragraph = false,
+    disabled = false,
+    ...others
+  } = useDefaultProps("HvTypography", props);
+  const { classes, cx } = useClasses(classesProp);
+  const { activeTheme } = useTheme();
 
-    const variant = mapVariant(variantProp, activeTheme?.name);
+  const variant = mapVariant(variantProp, activeTheme?.name);
 
-    const Component =
-      ComponentProp || (paragraph && "p") || HvTypographyMap[variant] || "span";
+  const Component =
+    ComponentProp || (paragraph && "p") || HvTypographyMap[variant] || "span";
 
-    return (
-      <Component
-        ref={ref}
-        className={cx(
-          classes.root,
-          classes[variant],
-          {
-            [classes.isLink]: link,
-            [classes.noWrap]: noWrap,
-            [classes.disabled]: disabled,
-          },
-          className
-        )}
-        disabled={disabled}
-        {...others}
-      />
-    );
-  }
-);
+  return (
+    <Component
+      ref={ref}
+      className={cx(
+        classes.root,
+        classes[variant],
+        {
+          [classes.isLink]: link,
+          [classes.noWrap]: noWrap,
+          [classes.disabled]: disabled,
+        },
+        className
+      )}
+      disabled={disabled}
+      {...others}
+    />
+  );
+});

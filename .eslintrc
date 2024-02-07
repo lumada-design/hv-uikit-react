@@ -23,6 +23,7 @@
   "ignorePatterns": ["*.d.ts", "dist", "node_modules", "playwright.config.ts"],
   "rules": {
     "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
     "react/prop-types": "off",
     "react/no-unused-prop-types": "off",
     "react/require-default-props": "off",

@@ -51,71 +51,9 @@ export const Main: StoryObj<HvTimeAgoProps> = {
     justText: false,
   },
   argTypes: {
-    timestamp: {
-      description:
-        "The timestamp to format, in seconds or milliseconds. Defaults to `emptyElement` if value is null or 0.",
-      table: {
-        type: { summary: "number" },
-      },
-    },
-    locale: {
-      description:
-        "The locale to be used. Should be on of the dayjs supported locales and explicitly imported. See https://day.js.org/docs/en/i18n/i18n.",
-      control: "select",
-      options: ["en", "fr", "de", "pt"],
-      table: {
-        defaultValue: { summary: "en" },
-        type: { summary: "string" },
-      },
-    },
-    disableRefresh: {
-      description: "Disables periodic date refreshes.",
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" },
-      },
-    },
-    showSeconds: {
-      description: "Whether to show seconds in the rendered time.",
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" },
-      },
-    },
-    justText: {
-      description:
-        "Whether the component should render just the string. Consider using `useTimeAgo` instead.",
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" },
-      },
-    },
-    classes: {
-      description:
-        "A Jss Object used to override or extend the styles applied to the component.",
-      table: {
-        type: { summary: "HvTimeAgoClasses" },
-      },
-      control: { disable: true },
-    },
-    component: {
-      description:
-        "Element to use for the root node. Defaults to `HvTypography`.",
-      table: {
-        defaultValue: { summary: "HvTypography" },
-        type: { summary: "React.ElementType" },
-      },
-      control: { disable: true },
-    },
-    emptyElement: {
-      description:
-        "The element to render when the timestamp is null or 0. Defaults to `—` (Em Dash).",
-      control: { disable: true },
-      table: {
-        defaultValue: { summary: "-" },
-        type: { summary: "string" },
-      },
-    },
+    classes: { control: { disable: true } },
+    component: { control: { disable: true } },
+    ref: { control: { disable: true } },
   },
   render: (args) => {
     return <HvTimeAgo {...args} />;
