@@ -108,6 +108,7 @@ export const VerticalNavigation = () => {
   return (
     <HvPanel style={{ width: 300 }}>
       <HvTreeView
+        multiSelect={false}
         aria-label="site navigation"
         selected={selected}
         onNodeSelect={(evt, nodeId) => setSelected(nodeId)}

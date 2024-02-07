@@ -1,8 +1,10 @@
-import React, { forwardRef } from "react";
-
 import { useTheme } from "../hooks/useTheme";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { PolymorphicComponentRef, PolymorphicRef } from "../types/generic";
+import {
+  fixedForwardRef,
+  PolymorphicComponentRef,
+  PolymorphicRef,
+} from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 
 import {
@@ -78,62 +80,57 @@ const mapVariant = (
 /**
  * Button component is used to trigger an action or event.
  */
-export const HvButton: <C extends React.ElementType = "button">(
-  props: HvButtonProps<C>
-) => React.ReactElement | null = forwardRef(
-  <C extends React.ElementType = "button">(
-    props: HvButtonProps<C>,
-    ref: PolymorphicRef<C>
-  ) => {
-    const {
-      classes: classesProp,
-      children,
-      variant: variantProp,
-      disabled = false,
-      className,
-      startIcon,
-      endIcon,
-      icon = false,
-      size,
-      radius,
-      overrideIconColors = true,
-      component: Component = "button",
-      ...others
-    } = useDefaultProps("HvButton", props);
-    const { classes, css, cx } = useClasses(classesProp);
-    const { activeTheme } = useTheme();
-    const variant = mapVariant(
-      variantProp ?? (icon ? "secondaryGhost" : "primary"),
-      activeTheme?.name
-    );
+export const HvButton = fixedForwardRef(function HvButton<
+  C extends React.ElementType = "button"
+>(props: HvButtonProps<C>, ref: PolymorphicRef<C>) {
+  const {
+    classes: classesProp,
+    children,
+    variant: variantProp,
+    disabled = false,
+    className,
+    startIcon,
+    endIcon,
+    icon = false,
+    size,
+    radius,
+    overrideIconColors = true,
+    component: Component = "button",
+    ...others
+  } = useDefaultProps("HvButton", props);
+  const { classes, css, cx } = useClasses(classesProp);
+  const { activeTheme } = useTheme();
+  const variant = mapVariant(
+    variantProp ?? (icon ? "secondaryGhost" : "primary"),
+    activeTheme?.name
+  );
 
-    return (
-      <Component
-        ref={ref}
-        className={cx(
-          classes.root,
-          classes[variant],
-          size && css(getSizeStyles(size)),
-          radius && css(getRadiusStyles(radius)),
-          overrideIconColors && css(getOverrideColors()),
-          {
-            [classes.icon]: icon,
-            [classes.disabled]: disabled,
-          },
-          className
-        )}
-        {...(Component === "button" && { type: "button" })}
-        {...(disabled && {
-          disabled: true,
-          tabIndex: -1,
-          "aria-disabled": true,
-        })}
-        {...others}
-      >
-        {startIcon && <span className={classes.startIcon}>{startIcon}</span>}
-        {children}
-        {endIcon && <span className={classes.endIcon}>{endIcon}</span>}
-      </Component>
-    );
-  }
-);
+  return (
+    <Component
+      ref={ref}
+      className={cx(
+        classes.root,
+        classes[variant],
+        size && css(getSizeStyles(size)),
+        radius && css(getRadiusStyles(radius)),
+        overrideIconColors && css(getOverrideColors()),
+        {
+          [classes.icon]: icon,
+          [classes.disabled]: disabled,
+        },
+        className
+      )}
+      {...(Component === "button" && { type: "button" })}
+      {...(disabled && {
+        disabled: true,
+        tabIndex: -1,
+        "aria-disabled": true,
+      })}
+      {...others}
+    >
+      {startIcon && <span className={classes.startIcon}>{startIcon}</span>}
+      {children}
+      {endIcon && <span className={classes.endIcon}>{endIcon}</span>}
+    </Component>
+  );
+});

@@ -1,8 +1,7 @@
-import { ReactNode, Ref, forwardRef } from "react";
 import { useSlotProps } from "@mui/base/utils";
 import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
 
-import { HvBaseProps } from "../types/generic";
+import { HvBaseProps, fixedForwardRef } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 
@@ -24,14 +23,9 @@ export interface HvTreeViewProps<Multiple extends boolean | undefined>
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvTreeViewClasses;
   /** Tree View children. Usually a `HvTreeItem` instance, or a custom variation of it */
-  children?: ReactNode;
+  children?: React.ReactNode;
 }
 
-type HvTreeViewComponent = <Multiple extends boolean | undefined = undefined>(
-  props: HvTreeViewProps<Multiple>
-) => React.JSX.Element;
-
-/* eslint-disable prefer-arrow-callback */
 /**
  * A Tree View displays hierarchical structures.
  * It also facilitates the exploration of categorical levels and their content.
@@ -48,9 +42,9 @@ type HvTreeViewComponent = <Multiple extends boolean | undefined = undefined>(
  * </HvTreeView>
  * ```
  */
-const HvTreeView = forwardRef(function HvTreeView<
+export const HvTreeView = fixedForwardRef(function HvTreeView<
   Multiple extends boolean | undefined
->(props: HvTreeViewProps<Multiple>, ref: Ref<HTMLUListElement>) {
+>(props: HvTreeViewProps<Multiple>, ref: React.Ref<HTMLUListElement>) {
   const {
     id,
     children,
@@ -111,6 +105,4 @@ const HvTreeView = forwardRef(function HvTreeView<
       </ul>
     </TreeViewProvider>
   );
-}) as HvTreeViewComponent;
-
-export { HvTreeView };
+});

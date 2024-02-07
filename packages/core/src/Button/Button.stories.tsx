@@ -18,8 +18,6 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-import { buttonRadius, buttonSize, buttonVariant } from "./types";
-
 export default { title: "Components/Button", component: HvButton };
 
 export const Main: StoryObj<HvButtonProps> = {
@@ -34,98 +32,11 @@ export const Main: StoryObj<HvButtonProps> = {
     onClick: () => console.log("clicked"),
   },
   argTypes: {
-    children: {
-      description: "Button children.",
-      table: {
-        type: { summary: "React.ReactNode" },
-      },
-    },
-    selected: {
-      description: "Whether the Button is selected or not.",
-      table: {
-        type: { summary: "boolean" },
-      },
-    },
-    variant: {
-      description:
-        "Use the variant prop to change the visual style of the Button.",
-      options: buttonVariant,
-      control: { type: "select" },
-      table: {
-        defaultValue: { summary: "primary" },
-        type: { summary: "HvButtonVariant" },
-      },
-    },
-    disabled: {
-      description: "Whether the Button is disabled or not.",
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" },
-      },
-    },
-    size: {
-      description: "Button size.",
-      options: buttonSize,
-      control: { type: "select" },
-      table: {
-        type: { summary: "HvButtonSize" },
-      },
-    },
-    radius: {
-      description: "Button border radius.",
-      options: buttonRadius,
-      control: { type: "select" },
-      table: {
-        defaultValue: { summary: "base" },
-        type: { summary: "HvButtonRadius" },
-      },
-    },
-    overrideIconColors: {
-      description:
-        "Defines the default colors of the button are forced into the icon.",
-      table: {
-        defaultValue: { summary: "true" },
-        type: { summary: "boolean" },
-      },
-    },
-    classes: {
-      description:
-        "A Jss Object used to override or extend the styles applied.",
-      table: {
-        type: { summary: "HvButtonClasses" },
-      },
-      control: { disable: true },
-    },
-    icon: {
-      description: "Whether the Button is an icon-only button.",
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" },
-      },
-      control: { disable: true },
-    },
-    startIcon: {
-      description: "Element placed before the children.",
-      table: {
-        type: { summary: "React.ReactElement" },
-      },
-      control: { disable: true },
-    },
-    endIcon: {
-      description: "Element placed after the children.",
-      table: {
-        type: { summary: "React.ReactElement" },
-      },
-      control: { disable: true },
-    },
-    component: {
-      description: "Element to use for the root node. Defaults to `button`.",
-      table: {
-        defaultValue: { summary: "button" },
-        type: { summary: "React.ElementType" },
-      },
-      control: { disable: true },
-    },
+    classes: { control: { disable: true } },
+    component: { control: { disable: true } },
+    ref: { control: { disable: true } },
+    size: { control: { type: "select" } },
+    radius: { control: { type: "select" } },
   },
 };
 

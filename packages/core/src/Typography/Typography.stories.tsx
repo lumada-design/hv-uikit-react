@@ -18,53 +18,9 @@ export const Main: StoryObj<HvTypographyProps> = {
     paragraph: false,
   },
   argTypes: {
-    variant: {
-      description:
-        "Use the variant prop to change the visual style of the Typography.",
-      table: {
-        defaultValue: { summary: "body" },
-        type: { summary: "HvTypographyVariants | HvTypographyLegacyVariants" },
-      },
-      options: typographyVariants,
-    },
-    link: {
-      description: "If `true` the typography will display the look of a link.",
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" },
-      },
-    },
-    disabled: {
-      description:
-        "If `true` the typography will display the look of a disabled state.",
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" },
-      },
-    },
-    noWrap: {
-      description:
-        "If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis. Note that text overflow can only happen with block or inline-block level elements (the element needs to have a width in order to overflow).",
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" },
-      },
-    },
-    component: {
-      description: "Element to use for the root node.",
-      table: {
-        type: { summary: "React.ElementType" },
-      },
-      control: { disable: true },
-    },
-    classes: {
-      description:
-        "A Jss Object used to override or extend the styles applied to the component.",
-      table: {
-        type: { summary: "HvTypographyClasses" },
-      },
-      control: { disable: true },
-    },
+    classes: { control: { disable: true } },
+    component: { control: { disable: true } },
+    ref: { control: { disable: true } },
   },
   decorators: [(Story) => <div style={{ width: 400 }}>{Story()}</div>],
   render: (args) => (
