@@ -35,14 +35,10 @@ export const Main: StoryObj<HvListContainerProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
-  render: ({ interactive, condensed, disableGutters }) => {
+  render: (args) => {
     return (
       <HvPanel style={{ maxWidth: 220 }}>
-        <HvListContainer
-          interactive={interactive}
-          condensed={condensed}
-          disableGutters={disableGutters}
-        >
+        <HvListContainer {...args}>
           <HvListItem>98001, Store Manager</HvListItem>
           <HvListItem>98002, Store Manager</HvListItem>
           <HvListItem>98003, Store Manager</HvListItem>

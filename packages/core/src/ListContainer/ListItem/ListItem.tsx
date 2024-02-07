@@ -15,6 +15,8 @@ export type HvListItemClasses = ExtractNames<typeof useClasses>;
 export interface HvListItemProps extends HvBaseProps<HTMLLIElement> {
   /** Indicates if the list item is selected. */
   selected?: boolean;
+  /** Indicated if the list item is _visually_ selectable */
+  selectable?: boolean;
   /** If true, the list item will be disabled. */
   disabled?: boolean;
   /**
@@ -91,6 +93,7 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
     value,
     selected,
     disabled,
+    selectable: selectableProp,
     interactive: interactiveProp,
     condensed: condensedProp,
     disableGutters: disableGuttersProp,
@@ -109,11 +112,13 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
     condensed: condensedContext,
     disableGutters: disableGuttersContext,
     interactive: interactiveContext,
+    selectable: selectableContext,
   } = useContext(HvListContext);
 
   const condensed = condensedProp ?? condensedContext;
   const disableGutters = disableGuttersProp ?? disableGuttersContext;
   const interactive = interactiveProp ?? interactiveContext;
+  const selectable = selectableProp ?? selectableContext;
 
   const handleClick = useCallback<React.MouseEventHandler<HTMLLIElement>>(
     (evt) => {
@@ -183,7 +188,7 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
         {
           [classes.gutters]: !disableGutters,
           [classes.condensed]: condensed,
-          [classes.interactive]: interactive,
+          [classes.interactive]: interactive || selectable,
           [classes.selected]: selected || props["aria-selected"],
           [classes.disabled]: disabled || props["aria-disabled"],
           [classes.withStartAdornment]: startAdornment != null,
