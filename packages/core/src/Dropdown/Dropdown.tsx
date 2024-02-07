@@ -1,6 +1,5 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 
-import { PopperProps } from "@mui/material/Popper";
 import { useForkRef } from "@mui/material/utils";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -8,7 +7,6 @@ import { setId } from "../utils/setId";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { useControlled } from "../hooks/useControlled";
-import { HvBaseProps } from "../types/generic";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import { HvListValue } from "../List";
 import {
@@ -17,6 +15,7 @@ import {
   HvWarningText,
   HvFormElement,
   HvLabel,
+  HvFormElementProps,
 } from "../Forms";
 import { ExtractNames } from "../utils/classes";
 import { HvTypography } from "../Typography";
@@ -32,42 +31,24 @@ export type HvDropdownClasses = ExtractNames<typeof useClasses>;
 export type HvDropdownStatus = "standBy" | "valid" | "invalid";
 
 export interface HvDropdownProps
-  extends HvBaseProps<HTMLDivElement, "onChange"> {
+  extends Omit<HvFormElementProps, "value" | "onChange">,
+    Pick<
+      HvBaseDropdownProps,
+      | "placement"
+      | "popperProps"
+      | "disablePortal"
+      | "variableWidth"
+      | "expanded"
+      | "defaultExpanded"
+    > {
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
   classes?: HvDropdownClasses;
   /**
-   * The form element name.
-   */
-  name?: string;
-  /**
-   * The label of the form element.
-   *
-   * The form element must be labeled for accessibility reasons.
-   * If not provided, an aria-label or aria-labelledby must be provided instead.
-   */
-  label?: any;
-  /**
-   * Provide additional descriptive text for the form element.
-   */
-  description?: any;
-  /**
    * The placeholder value when nothing is selected.
    */
   placeholder?: string;
-  /**
-   * Indicates that the form element is disabled.
-   */
-  disabled?: boolean;
-  /**
-   * Indicates that the form element is in read only mode.
-   */
-  readOnly?: boolean;
-  /**
-   * Indicates that user input is required on the form element.
-   */
-  required?: boolean;
   /**
    * The status of the form element.
    *
@@ -106,14 +87,6 @@ export interface HvDropdownProps
    */
   showSearch?: boolean;
   /**
-   * If `true` the dropdown starts opened if `false` it starts closed.
-   */
-  expanded?: boolean;
-  /**
-   * When uncontrolled, defines the initial expanded state.
-   */
-  defaultExpanded?: boolean;
-  /**
    * If 'true' the dropdown will notify on the first render.
    */
   notifyChangesOnFirstRender?: boolean;
@@ -126,27 +99,9 @@ export interface HvDropdownProps
    */
   hasTooltips?: boolean;
   /**
-   * Disable the portal behavior.
-   * The children stay within it's parent DOM hierarchy.
-   */
-  disablePortal?: boolean;
-  /**
-   * If `true` the dropdown width depends size of content if `false` the width depends on the header size.
-   * Defaults to `false`.
-   */
-  variableWidth?: boolean;
-  /**
    * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle?: boolean;
-  /**
-   * Placement of the dropdown.
-   */
-  placement?: "left" | "right";
-  /**
-   * An object containing props to be wired to the popper component.
-   */
-  popperProps?: Partial<PopperProps>;
   /**
    * Callback called when the user cancels the changes.
    *
@@ -195,7 +150,7 @@ export interface HvDropdownProps
   /**
    * Extra props passed to the list.
    */
-  listProps?: HvDropdownListProps;
+  listProps?: Partial<HvDropdownListProps>;
 }
 
 const DEFAULT_LABELS = {
