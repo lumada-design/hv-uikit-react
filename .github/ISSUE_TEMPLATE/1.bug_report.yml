@@ -15,6 +15,8 @@ body:
         - v3.x
         - v4.x
         - v5.x
+    validations:
+      required: true
   - type: checkboxes
     attributes:
       label: Latest version
