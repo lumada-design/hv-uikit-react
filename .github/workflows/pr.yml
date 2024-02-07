@@ -72,7 +72,7 @@ jobs:
       - name: Archive Storybook
         uses: actions/upload-artifact@v2
         with:
-          name: storybook
+          name: storybook-v2
           path: ${{ github.workspace }}/dist
 
       - name: Clean Folders
@@ -182,7 +182,7 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
         with:
-          name: storybook
+          name: storybook-v2
           path: ${{ github.workspace }}/gh-docs/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
       - name: Push Documentation
@@ -234,7 +234,7 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
         with:
-          name: storybook
+          name: storybook-v2
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
@@ -337,7 +337,7 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
         with:
-          name: storybook
+          name: storybook-v2
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
