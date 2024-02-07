@@ -1,4 +1,10 @@
-import React, { useRef, useContext, useMemo, forwardRef } from "react";
+import React, {
+  useRef,
+  useContext,
+  useMemo,
+  forwardRef,
+  isValidElement,
+} from "react";
 
 import { HvBaseProps } from "../types/generic";
 import { useForkRef } from "../hooks/useForkRef";
@@ -20,6 +26,8 @@ export interface HvListContainerProps extends HvBaseProps<HTMLUListElement> {
   interactive?: boolean;
   /** If `true` compact the vertical spacing between list items. */
   condensed?: boolean;
+  /** If `true`, the list items are _visually_ selectable. To enable selection, use `HvSelectionList` */
+  selectable?: boolean;
   /** If `true`, the list items' left and right padding is removed. */
   disableGutters?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
@@ -40,9 +48,10 @@ export const HvListContainer = forwardRef<
     classes: classesProp,
     className,
     interactive = false,
+    selectable,
     condensed,
     disableGutters,
-    children,
+    children: childrenProp,
     ...others
   } = useDefaultProps("HvListContainer", props);
 
@@ -56,23 +65,30 @@ export const HvListContainer = forwardRef<
     () => ({
       topContainerRef: topContainerRef || containerRef,
       condensed,
+      selectable,
       disableGutters,
       interactive,
       nesting: nesting + 1,
     }),
-    [condensed, disableGutters, interactive, nesting, topContainerRef]
+    [
+      condensed,
+      selectable,
+      disableGutters,
+      interactive,
+      nesting,
+      topContainerRef,
+    ]
   );
 
-  const renderChildren = () => {
-    if (!interactive) {
-      return children;
-    }
+  const children = useMemo(() => {
+    if (!interactive) return childrenProp;
 
-    const anySelected = React.Children.toArray(children)
-      .map((child: any) => child.props.selected && !child.props.disabled)
-      .reduce((result, selected) => result || selected, false);
+    const anySelected = React.Children.toArray(childrenProp).some(
+      (child) =>
+        isValidElement(child) && child.props.selected && !child.props.disabled
+    );
 
-    return React.Children.map(children, (child: any, i) => {
+    return React.Children.map(childrenProp, (child: any, i) => {
       const tabIndex =
         child.props.tabIndex ||
         (!anySelected && i === 0) ||
@@ -85,7 +101,7 @@ export const HvListContainer = forwardRef<
         interactive,
       });
     });
-  };
+  }, [childrenProp, interactive]);
 
   const handleRef = useForkRef(ref, containerRef);
 
@@ -97,7 +113,7 @@ export const HvListContainer = forwardRef<
         className={cx(classes.root, className)}
         {...others}
       >
-        {renderChildren()}
+        {children}
       </ul>
     </HvListContext.Provider>
   );
