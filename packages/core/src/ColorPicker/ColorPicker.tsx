@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 
 import { ColorState } from "react-color";
 
-import { Checkbox, ColorPicker } from "@hitachivantara/uikit-react-icons";
+import { ColorPicker } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useControlled } from "../hooks/useControlled";
@@ -262,9 +262,9 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
           }}
           adornment={
             iconOnly && color ? (
-              <Checkbox
+              <div
                 className={classes.headerColorIconOnly}
-                color={[color, "transparent"]}
+                style={{ backgroundColor: color }}
               />
             ) : dropdownIcon === "colorPicker" ? (
               <ColorPicker className={classes.colorPickerIcon} />
@@ -273,9 +273,9 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
           placeholder={
             iconOnly ? undefined : color ? (
               <>
-                <Checkbox
+                <div
                   className={classes.headerColorIcon}
-                  color={[color, "transparent"]}
+                  style={{ backgroundColor: color }}
                 />
                 <HvTypography
                   className={classes.headerColorValue}

@@ -138,12 +138,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
           aria-label="Dropdown menu"
           aria-haspopup="menu"
         >
-          {icon || (
-            <MoreOptionsVertical
-              aria-hidden
-              color={disabled ? "secondary_60" : undefined}
-            />
-          )}
+          {icon || <MoreOptionsVertical aria-hidden />}
         </HvButton>
       }
       placement={placement}

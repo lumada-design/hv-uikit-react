@@ -84,6 +84,10 @@ export const { staticClasses, useClasses } = createClasses("HvDropdownButton", {
     pointerEvents: "none",
     top: -1,
     right: -1,
+    // TODO: make this the default for icons in v6
+    "& svg .color0": {
+      fill: "currentcolor",
+    },
   },
   arrow: {
     transition: "rotate 0.2s ease",

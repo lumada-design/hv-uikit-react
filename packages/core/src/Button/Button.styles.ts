@@ -117,6 +117,7 @@ export const getSizeStyles = (size: HvButtonSize): CSSInterpolation => ({
 });
 
 export const getOverrideColors = (): CSSInterpolation => ({
+  // TODO: make this the default for icons in v6
   "& svg .color0": {
     fill: "currentcolor",
   },

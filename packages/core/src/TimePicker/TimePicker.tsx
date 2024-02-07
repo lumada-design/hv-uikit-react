@@ -273,7 +273,6 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
         <HvBaseDropdown
           ref={dropdownForkedRef}
           role="combobox"
-          variableWidth
           disabled={disabled}
           readOnly={readOnly}
           placeholder={
@@ -300,12 +299,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
             headerOpen: classes.dropdownHeaderOpen,
           }}
           placement="right"
-          adornment={
-            <TimeIcon
-              color={disabled ? "secondary_60" : undefined}
-              className={classes.icon}
-            />
-          }
+          adornment={<TimeIcon className={classes.icon} />}
           expanded={open}
           onToggle={(evt, newOpen) => {
             if (disableExpand) return;
