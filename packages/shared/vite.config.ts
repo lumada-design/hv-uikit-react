@@ -9,7 +9,6 @@ export default mergeConfig(viteConfig, {
         {
           format: "esm",
           dir: "dist/bundles",
-          sourcemap: true,
         },
       ],
     },

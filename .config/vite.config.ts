@@ -1,4 +1,4 @@
-import { resolve } from "path";
+import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
@@ -30,6 +30,7 @@ export default defineConfig({
       name: pkg.name,
       entry: resolve(process.cwd(), "src/index.ts"),
     },
+    sourcemap: "hidden",
     rollupOptions: {
       output: [
         {
@@ -40,7 +41,6 @@ export default defineConfig({
           entryFileNames: pkg.name.includes("react")
             ? "[name].js"
             : "[name].mjs",
-          sourcemap: true,
           exports: "named",
           interop: "auto",
         },
@@ -49,7 +49,6 @@ export default defineConfig({
           preserveModules: true,
           dir: "dist/cjs",
           entryFileNames: "[name].cjs",
-          sourcemap: true,
           exports: "named",
           interop: "auto",
         },
