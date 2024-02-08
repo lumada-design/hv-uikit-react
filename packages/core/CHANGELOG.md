@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.48.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.47.2...@hitachivantara/uikit-react-core@5.48.0) (2024-02-08)
+
+### Bug Fixes
+
+- **basedropdown:** popper types ([#4014](https://github.com/lumada-design/hv-uikit-react/issues/4014)) ([498bab0](https://github.com/lumada-design/hv-uikit-react/commit/498bab02c71fe0c8c399294cd1cd280a2d844b20))
+
+### Features
+
+- **List:** add visually selectable prop ([#4019](https://github.com/lumada-design/hv-uikit-react/issues/4019)) ([1c127e0](https://github.com/lumada-design/hv-uikit-react/commit/1c127e09caec9e5622293c99024ce70e64178dda))
+
 ## [5.47.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.47.1...@hitachivantara/uikit-react-core@5.47.2) (2024-02-07)
 
 ### Bug Fixes
