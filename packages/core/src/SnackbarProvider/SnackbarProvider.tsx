@@ -1,16 +1,12 @@
 import { forwardRef, ReactNode, useCallback, useMemo } from "react";
-
 import {
-  CombinedClassKey,
   OptionsObject,
   SnackbarContent,
   SnackbarProvider,
   SnackbarProviderProps,
   useSnackbar,
 } from "notistack";
-
 import { SnackbarOrigin } from "@mui/material/Snackbar";
-import { ClassNameMap } from "@mui/material/styles";
 
 import { ExtractNames } from "../utils/classes";
 import {
@@ -34,10 +30,13 @@ export interface HvSnackbarProviderProps {
   /** Where is the snackbar placed. */
   anchorOrigin?: SnackbarOrigin;
   /** Class object used to override notistack classes. */
-  notistackClassesOverride?: Partial<ClassNameMap<CombinedClassKey>>;
+  notistackClassesOverride?: SnackbarProviderProps["classes"];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSnackbarProviderClasses;
+  /** Class names to be applied. */
   className?: string;
+  /** The container the snackbar should slide from. */
+  container?: SnackbarProviderProps["domRoot"];
 }
 
 export interface HvNotistackSnackMessageProps extends OptionsObject {
@@ -58,6 +57,7 @@ const HvNotistackSnackMessage = forwardRef<
   HvNotistackSnackMessageProps
 >((props, ref) => {
   const { id, message, variant = "success", snackbarContentProps } = props;
+
   return (
     <SnackbarContent ref={ref}>
       <HvSnackbarContent
@@ -125,20 +125,27 @@ export const HvSnackbarProvider = ({
   },
   classes: classesProp,
   className,
+  container,
   ...others
 }: HvSnackbarProviderProps) => {
   const { classes, css, cx } = useClasses(classesProp);
 
+  const { containerRoot, ...otherNotistackClasses } =
+    notistackClassesOverride || {};
+
   const notistackClasses: SnackbarProviderProps["classes"] = {
-    containerRoot: css({
-      pointerEvents: "all",
-      "& > div > div": {
-        // Overrides notistack extra padding
-        padding: "0 !important",
-        transition: "all 0s ease 0s !important",
-      },
-    }),
-    ...notistackClassesOverride,
+    containerRoot: cx(
+      css({
+        pointerEvents: "all",
+        "& > div > div": {
+          // Overrides notistack extra padding
+          padding: "0 !important",
+          transition: "all 0s ease 0s !important",
+        },
+      }),
+      containerRoot
+    ),
+    ...otherNotistackClasses,
   };
 
   return (
@@ -146,8 +153,9 @@ export const HvSnackbarProvider = ({
       classes={notistackClasses}
       maxSnack={maxSnack}
       autoHideDuration={autoHideDuration}
-      anchorOrigin={anchorOrigin as SnackbarOrigin}
+      anchorOrigin={anchorOrigin}
       className={cx(classes.snackItemRoot, className)}
+      domRoot={container}
       {...others}
     >
       {children}
