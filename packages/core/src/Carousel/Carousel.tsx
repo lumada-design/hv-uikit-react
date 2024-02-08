@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 
-import useCarousel, { EmblaOptionsType } from "embla-carousel-react";
+import useCarousel from "embla-carousel-react";
 
 import {
   Backwards,
@@ -68,7 +68,7 @@ export interface HvCarouselProps
   /** Thumbnails position. */
   thumbnailsPosition?: "top" | "bottom";
   /** Carousel configuration options. @see https://www.embla-carousel.com/api/options/ */
-  carouselOptions?: EmblaOptionsType;
+  carouselOptions?: Parameters<typeof useCarousel>[0];
   /** Function that renders the thumbnail.  */
   renderThumbnail?: (index: number) => React.ReactNode;
   /** The callback fired when the active slide changes. */
