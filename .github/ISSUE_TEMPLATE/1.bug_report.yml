@@ -10,11 +10,12 @@ body:
         Thanks for contributing by creating an issue! ❤️
   - type: dropdown
     attributes:
-      label: Which version of NEXT UI Kit are you opening this bug for?
+      label: Which UI Kit version is this bug for?
       options:
+        - v5.x
         - v3.x
         - v4.x
-        - v5.x
+      default: 0
     validations:
       required: true
   - type: checkboxes
@@ -43,16 +44,18 @@ body:
     attributes:
       label: Steps to reproduce 🕹
       description: |
-        Provide a link to a live example (you can use stackblitz.com) and an unambiguous set of steps to reproduce this bug.
+        Please provide a link to a live example and an unambiguous set of steps to reproduce this bug.
         Include code to reproduce, if relevant (which it most likely is).
 
-        You can use the official stackblitz template as a starting point: https://stackblitz.com/github/lumada-design/hv-uikit-react/tree/master/examples/uikit-vite-ts
+        Please use one of our StackBlitz templates as a starting point:
 
-        Issues that we can't reproduce will be closed.
+        https://stackblitz.com/github/lumada-design/hv-uikit-react/tree/master/examples/uikit-vite-ts
+
+        **Issues that we can't reproduce will be closed.**
       value: |
-        Enter sandbox link: 
+        Sandbox link: 
 
-        And/or the steps to reproduce:
+        Steps to reproduce:
 
         1.
         2.
@@ -61,14 +64,15 @@ body:
   - type: textarea
     attributes:
       label: Context 🔦
-      description: What are you trying to accomplish? How has this issue affected you? Providing context helps us come up with a solution that is more useful in the real world.
+      description: |
+        What are you trying to accomplish? How has this issue affected you?
+        Providing context helps us come up with a solution that is more useful in the real world.
   - type: textarea
     attributes:
       label: Your Environment 🌎
       description: Please complete the following information. If you encounter issues with TypeScript please include the used tsconfig.
       value: |
-        Device: [e.g. Laptop, Mobile, ....]
-        OS: [e.g. iOS8.1]
-        Browser [e.g. stock browser, safari, chrome]
-        Version [e.g. 22]
-        Other details [e.g. screen resolution 1920x1080, ...]
+        Build tool: (e.g. Vite 4, Webpack 5)
+        Device & OS: (e.g. Windows 11 laptop, iPhone 13 iOS15)
+        Browser: (e.g. Chrome 112, Safari 15.4)
+        Other details (e.g. 4K resolution, ...)
