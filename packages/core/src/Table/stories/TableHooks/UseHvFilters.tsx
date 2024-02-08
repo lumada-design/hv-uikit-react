@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { ReactNode, useMemo } from "react";
+import { Ban } from "@hitachivantara/uikit-react-icons";
 import {
   HvTable,
   HvTableBody,
@@ -7,6 +8,7 @@ import {
   HvTableHeader,
   HvTableRow,
   HvTableCell,
+  HvEmptyState,
   HvGrid,
   HvInput,
   HvPagination,
@@ -16,14 +18,27 @@ import {
   useHvFilters,
 } from "@hitachivantara/uikit-react-core";
 
-import {
-  makeData,
-  getColumns,
-  AssetEvent,
-  range,
-  EmptyRow,
-  NoDataRow,
-} from "../storiesUtils";
+import { makeData, getColumns, AssetEvent, range } from "../storiesUtils";
+
+const NoDataRow = ({
+  message,
+  height = 96,
+}: {
+  message: ReactNode;
+  height?: number;
+}) => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} style={{ height }}>
+      <HvEmptyState message={message} icon={<Ban role="none" />} />
+    </HvTableCell>
+  </HvTableRow>
+);
+
+const EmptyRow = () => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} />
+  </HvTableRow>
+);
 
 export const UseHvFilters = () => {
   const columns = useMemo(() => getColumns(), []);

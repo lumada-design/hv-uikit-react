@@ -8,22 +8,10 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 
-export const EmptyRow = () => (
+export const EmptyRow = ({ height }) => (
   <HvTableRow>
-    <HvTableCell style={{ borderBottom: 0 }} colSpan={100}>
-      &nbsp;
-    </HvTableCell>
-  </HvTableRow>
-);
-
-export const NoDataRow = ({
-  message = "No data to display",
-}: {
-  message?: string;
-}) => (
-  <HvTableRow>
-    <HvTableCell colSpan={100} style={{ height: 100 }}>
-      <HvEmptyState message={message} icon={<Ban role="none" />} />
+    <HvTableCell colSpan={100} style={{ height }}>
+      <HvEmptyState message="No data to display" icon={<Ban role="none" />} />
     </HvTableCell>
   </HvTableRow>
 );
@@ -52,7 +40,7 @@ export interface NewRendererEntry {
  * `AssetEvent` is a dummy data type for HvTable samples
  * In a real-world scenario, this would probably come from the API
  * */
-export interface AssetEvent {
+export type AssetEvent = {
   id: string;
   name: string;
   createdDate: string;
@@ -63,7 +51,7 @@ export interface AssetEvent {
   priority: string;
   link?: string;
   selected?: boolean;
-}
+};
 
 export const range = (n: number) => Array.from({ length: n }, (_, i) => i);
 
@@ -271,7 +259,7 @@ const simpleSortBy = (a: AssetEvent, b: AssetEvent, sortBy) => {
   return desc ? b[id] - a[id] : a[id] - b[id];
 };
 
-const serverData = makeData(999);
+const serverData: Data[] = makeData(999).map((x) => ({ ...x, hidden: false }));
 
 const delay = (ms: number) =>
   new Promise((resolve) => {
@@ -286,11 +274,16 @@ type FetchDataArgs = Pick<
 type ChangeDataArgs =
   | ["add", AssetEvent[]]
   | ["remove", string[]]
-  | ["update", AssetEvent];
+  | ["update", AssetEvent]
+  | ["restore", string[]];
+
+interface Data extends AssetEvent {
+  hidden: boolean;
+}
 
 export const useServerData = () => {
   const [allData, setAllData] = useState(serverData);
-  const [data, setData] = useState<AssetEvent[]>();
+  const [data, setData] = useState<Data[]>();
   const [loading, setLoading] = useState(false);
   const [pageCount, setPageCount] = useState(0);
   const fetchIdRef = useRef(0);
@@ -315,13 +308,14 @@ export const useServerData = () => {
       const startRow = pageSize * pageIndex;
       const endRow = startRow + pageSize;
 
-      const newData = [...allData]
+      const visibleData = allData.filter((x) => !x.hidden);
+      const newData = [...visibleData]
         .sort(sortBy[0] ? (a, b) => simpleSortBy(a, b, sortBy[0]) : undefined)
         .slice(startRow, endRow);
       setData(newData);
 
       // Static example . Set server-side page count here
-      setPageCount(Math.ceil(allData.length / pageSize));
+      setPageCount(Math.ceil(visibleData.length / pageSize));
 
       setLoading(false);
     },
@@ -334,12 +328,27 @@ export const useServerData = () => {
     await delay(600);
 
     if (method === "add") {
-      setAllData((prev) => [...params, ...prev]);
+      setAllData((prev) => [
+        ...params.map((el) => ({ ...el, hidden: false })),
+        ...prev,
+      ]);
     } else if (method === "remove") {
-      setAllData((prev) => prev.filter((el) => !params.includes(el.id)));
+      setAllData((prev) =>
+        prev.map((el) => ({
+          ...el,
+          hidden: params.includes(el.id) ? true : el.hidden,
+        }))
+      );
     } else if (method === "update") {
       setAllData((prev) =>
         prev.map((el) => (params.id === el.id ? { ...el, ...params } : el))
+      );
+    } else if (method === "restore") {
+      setAllData((prev) =>
+        prev.map((el) => ({
+          ...el,
+          hidden: params.includes(el.id) ? false : el.hidden,
+        }))
       );
     }
   }, []);
@@ -354,6 +363,6 @@ export const useServerData = () => {
     mutateData,
     loading,
     pageCount,
-    totalRecords: allData.length,
+    totalRecords: allData.filter((x) => !x.hidden).length,
   } as const;
 };

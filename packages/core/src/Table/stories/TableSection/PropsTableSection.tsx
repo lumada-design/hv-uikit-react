@@ -17,7 +17,13 @@ import {
   useHvData,
 } from "@hitachivantara/uikit-react-core";
 
-import { AssetEvent, EmptyRow, getColumns, makeData } from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
+
+const EmptyRow = () => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} />
+  </HvTableRow>
+);
 
 export const PropsTableSection = () => {
   const columns = useMemo(() => getColumns(), []);

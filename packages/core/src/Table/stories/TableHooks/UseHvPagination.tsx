@@ -13,7 +13,13 @@ import {
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { makeData, getColumns, AssetEvent, EmptyRow } from "../storiesUtils";
+import { makeData, getColumns, AssetEvent } from "../storiesUtils";
+
+const EmptyRow = () => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} />
+  </HvTableRow>
+);
 
 export const UseHvPagination = () => {
   const columns = useMemo(() => getColumns(), []);
