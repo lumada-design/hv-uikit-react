@@ -23,7 +23,13 @@ import {
   Preview,
 } from "@hitachivantara/uikit-react-icons";
 
-import { AssetEvent, EmptyRow, getColumns, makeData } from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
+
+const EmptyRow = () => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} />
+  </HvTableRow>
+);
 
 export const CompleteTableSection = () => {
   const columns = useMemo(() => getColumns(), []);

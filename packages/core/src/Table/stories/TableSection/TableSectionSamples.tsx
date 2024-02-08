@@ -6,6 +6,8 @@ import { CompleteTableSection } from "./CompleteTableSection";
 import CompleteTableSectionRaw from "./CompleteTableSection?raw";
 import { PropsTableSection } from "./PropsTableSection";
 import PropsTableSectionRaw from "./PropsTableSection?raw";
+import { TableEditable } from "./TableEditable";
+import TableEditableRaw from "./TableEditable?raw";
 
 export const SimpleTableSectionStory: StoryObj = {
   parameters: {
@@ -26,4 +28,11 @@ export const PropsTableSectionStory: StoryObj = {
     docs: { source: { code: PropsTableSectionRaw } },
   },
   render: () => <PropsTableSection />,
+};
+
+export const EditableStory: StoryObj = {
+  parameters: {
+    docs: { source: { code: TableEditableRaw } },
+  },
+  render: () => <TableEditable />,
 };

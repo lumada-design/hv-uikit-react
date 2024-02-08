@@ -3,6 +3,7 @@ import {
   SimpleTableSectionStory,
   CompleteTableSectionStory,
   PropsTableSectionStory,
+  EditableStory,
 } from "./TableSectionSamples";
 
 <Meta title="Visualizations/Table/Table Section" />
@@ -47,4 +48,22 @@ with a table inside and a set of actions.
 
 <Canvas>
   <Story name="Section Props" story={PropsTableSectionStory} />
+</Canvas>
+
+## Samples
+
+In the context of these visual changes, Design System introduced new table samples.
+You can find examples on how to implement some of these samples in this section.
+
+### Editable Table
+
+This sample showcases an editable table where new rows can be added and rows can be edited and deleted.
+To emulate a scenario closer to real-life, server-side pagination was used with loading states.
+Our [Complete Table sample](./?path=/docs/visualizations-table-complete-table--docs) explains in more detail how you can achieve this server-side pagination.
+In order to show the snackbar inside the table section, the `HvSnackbarProvider` component was used.
+Setting the `container` property of this component to the section content `ref` and changing the snackbar position to `absolute` enables the snackbar to slide from
+the section content.
+
+<Canvas>
+  <Story name="Editable Table" story={EditableStory} />
 </Canvas>

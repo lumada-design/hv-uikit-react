@@ -16,7 +16,13 @@ import {
   useHvSortBy,
 } from "@hitachivantara/uikit-react-core";
 
-import { AssetEvent, EmptyRow, getColumns, makeData } from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
+
+const EmptyRow = () => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} />
+  </HvTableRow>
+);
 
 export const SimpleTableSection = () => {
   const columns = useMemo(() => getColumns(), []);
