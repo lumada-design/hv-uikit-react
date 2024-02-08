@@ -30,7 +30,8 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       borderLeft: "solid 1px transparent",
       borderRight: "solid 1px transparent",
       borderRadius: 0,
-      ...theme.typography.body,
+      fontWeight: theme.typography.body.fontWeight,
+      fontSize: theme.typography.body.fontSize,
       "&:active": {
         backgroundColor: `${theme.colors.atmo3}`,
       },
@@ -80,7 +81,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     },
     "& button$button$selected": {
       background: theme.colors.atmo1,
-      height: 34,
       ...theme.typography.label,
       borderRadius: theme.radii.base,
       border: `solid 1px ${theme.colors.secondary}`,

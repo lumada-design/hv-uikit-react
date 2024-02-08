@@ -1378,6 +1378,15 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvMultiButton: {
+      classes: {
+        root: {
+          "& button&.HvMultiButton-button&.HvMultiButton-selected": {
+            height: 32,
+          },
+        },
+      },
+    },
     HvTooltip: {
       classes: {
         popper: {
