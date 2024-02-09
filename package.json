@@ -23,7 +23,7 @@
     "build:nextra": "npm run build -w apps/docs",
     "test": "lerna run test",
     "test:a11y": "node scripts/a11y-report",
-    "test:eyes": "npx eyes-storybook -f .config/applitools.config.js",
+    "test:eyes": "npx eyes-storybook -f .config/applitools.config.js -u http://127.0.0.1:6006",
     "coverage": "lerna run coverage",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",

@@ -27,6 +27,20 @@ jobs:
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
 
+      - name: Start storybook
+        run: npm run build:doc && npx -y http-server dist -p 6006 &
+
+      - name: Wait for storybook to be ready
+        shell: bash
+        run: |
+          count=300
+          until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:6006); do
+              if [ $count -eq 0 ]; then exit 1; fi
+              printf '.'
+              sleep 1
+              let "count--"
+          done
+
       - name: Set Applitools App Name
         id: set-app-name
         run: |
