@@ -8,6 +8,8 @@ import { PropsTableSection } from "./PropsTableSection";
 import PropsTableSectionRaw from "./PropsTableSection?raw";
 import { TableEditable } from "./TableEditable";
 import TableEditableRaw from "./TableEditable?raw";
+import { TableFilter } from "./TableFilter";
+import TableFilterRaw from "./TableFilter?raw";
 
 export const SimpleTableSectionStory: StoryObj = {
   parameters: {
@@ -35,4 +37,11 @@ export const EditableStory: StoryObj = {
     docs: { source: { code: TableEditableRaw } },
   },
   render: () => <TableEditable />,
+};
+
+export const FilterStory: StoryObj = {
+  parameters: {
+    docs: { source: { code: TableFilterRaw } },
+  },
+  render: () => <TableFilter />,
 };
