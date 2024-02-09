@@ -7,6 +7,10 @@ import DndKitMultipleRaw from "./DndKitMultiple/DndKitMultiple?raw";
 import { Vanilla } from "./Vanilla/Vanilla";
 import VanillaRaw from "./Vanilla/Vanilla?raw";
 
+export default {
+  title: "Guides/Drag And Drop",
+};
+
 export const DndKitSingleStory: StoryObj = {
   parameters: {
     eyes: { include: false },
