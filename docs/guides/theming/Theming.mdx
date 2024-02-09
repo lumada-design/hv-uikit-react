@@ -1,15 +1,10 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas, Unstyled } from "@storybook/addon-docs";
 import { HvProvider, ds3 } from "@hitachivantara/uikit-react-core";
 import { ThemeSample } from "./ThemeSample";
-import { Spacing } from "./Spacing";
-import { Alpha } from "./Alpha";
 import { ThemeStructure } from "./ThemeStructure";
-import { CssVariables } from "./CssVariables";
-import { CreateTheme } from "./CreateTheme";
-import { ThemeContext } from "./ThemeContext";
-import { DefaultProps, DefaultPropsClassOverwrite } from "./DefaultProps";
+import * as ThemingStories from "./Theming.stories";
 
-<Meta title="Guides/Theming" />
+<Meta of={ThemingStories} />
 
 # Theming <a id="theming" />
 
@@ -33,32 +28,32 @@ among others.
 The NEXT UI Kit provides two default themes compliant with the Design System. In this sense, the components are supported for the **Design System 3 and 5**.
 Each one of these versions has a specific theme with two different color modes: **Dawn**, a light theme, and **Wicked**, a dark theme.
 
-<Story name="Main">
+<Unstyled>
   <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-    <div id="hv-root-ds5-dawn-docs-default-themes">
+    <div id="hv-ds5-dawn">
       <HvProvider
-        classNameKey="hv-root-ds-five-dawn-docs-default-themes"
-        rootElementId="hv-root-ds5-dawn-docs-default-themes"
+        classNameKey="hv-ds-five-dawn"
+        rootElementId="hv-ds5-dawn"
         cssTheme="scoped"
         colorMode="dawn"
       >
         <ThemeSample title="Design System 5 - Dawn" />
       </HvProvider>
     </div>
-    <div id="hv-root-ds5-wicked-docs-default-themes">
+    <div id="hv-ds5-wicked">
       <HvProvider
-        classNameKey="hv-root-ds-five-wicked-docs-default-themes"
-        rootElementId="hv-root-ds5-wicked-docs-default-themes"
+        classNameKey="hv-ds-five-wicked"
+        rootElementId="hv-ds5-wicked"
         cssTheme="scoped"
         colorMode="wicked"
       >
         <ThemeSample title="Design System 5 - Wicked" />
       </HvProvider>
     </div>
-    <div id="hv-root-ds3-dawn-docs-default-themes">
+    <div id="hv-ds3-dawn">
       <HvProvider
-        classNameKey="hv-root-ds-three-dawn-docs-default-themes"
-        rootElementId="hv-root-ds3-dawn-docs-default-themes"
+        classNameKey="hv-ds-three-dawn"
+        rootElementId="hv-ds3-dawn"
         cssTheme="scoped"
         themes={[ds3]}
         colorMode="dawn"
@@ -66,10 +61,10 @@ Each one of these versions has a specific theme with two different color modes: 
         <ThemeSample title="Design System 3 - Dawn" />
       </HvProvider>
     </div>
-    <div id="hv-root-ds3-wicked-docs-default-themes">
+    <div id="hv-ds3-wicked">
       <HvProvider
-        classNameKey="hv-root-ds-three-wicked-docs-default-themes"
-        rootElementId="hv-root-ds3-wicked-docs-default-themes"
+        classNameKey="hv-ds-three-wicked"
+        rootElementId="hv-ds3-wicked"
         cssTheme="scoped"
         themes={[ds3]}
         colorMode="wicked"
@@ -78,7 +73,7 @@ Each one of these versions has a specific theme with two different color modes: 
       </HvProvider>
     </div>
   </div>
-</Story>
+</Unstyled>
 
 Although these two themes are provided out of the box and will most likely be sufficient in most cases, you have the complete freedom to customize these themes by
 creating your own ones depending on your design needs and requirements.
@@ -87,9 +82,9 @@ creating your own ones depending on your design needs and requirements.
 
 Find below the structure and values for each one of the default themes. Both themes have the same structure and only the values differ.
 
-<Story name="Theme Structure">
+<Unstyled>
   <ThemeStructure />
-</Story>
+</Unstyled>
 
 ## Theme configuration <a id="theme-configuration" />
 
@@ -218,9 +213,7 @@ const MyApp = () => (
 );
 ```
 
-<Story name="Create Theme">
-  <CreateTheme />
-</Story>
+<Story of={ThemingStories.CreateTheme} />
 
 There is not a limit to the number of themes you can pass to the `themes` property and you can use new themes as well as the default ones. Just make sure they all
 have different names. If a name is used more than once, only the one that appears last in the `themes` list will remain.
@@ -292,52 +285,7 @@ const MyComponent = () => {
 
 If you want to access the theme's colors, you can do as shown below.
 
-```tsx
-import {
-  createTheme,
-  HvProvider,
-  HvTypography,
-  useTheme,
-} from "@hitachivantara/uikit-react-core";
-
-const newTheme = createTheme({
-  name: "myTheme",
-  base: "ds5",
-  inheritColorModes: true,
-  colors: {
-    modes: {
-      dawn: {
-        green: "#738f54",
-      },
-      wicked: {
-        green: "#738f54",
-      },
-    },
-  },
-});
-
-const MyComponent = () => {
-  const { colors } = useTheme();
-
-  return (
-    <HvTypography style={{ color: colors?.green }}>
-      Hello from the UI Kit team!
-    </HvTypography>
-  );
-};
-
-const MyApp = () => {
-  return (
-    <HvProvider themes={[newTheme]}>
-      <MyComponent />
-    </HvProvider>
-  );
-};
-```
-
-<Story name="Theme Context">
-  <ThemeContext />
-</Story>
+<Canvas of={ThemingStories.ThemeContext} />
 
 ## CSS variables <a id="css-variables" />
 
@@ -346,100 +294,18 @@ accessed through the `theme` object that can be imported from the `uikit-react-c
 
 Find below an example on how this `theme` object can be used to style your application.
 
-```tsx
-import { theme, HvTypography } from "@hitachivantara/uikit-react-core";
-
-const MyComponent = () => {
-  return (
-    <HvTypography
-      style={{
-        color: theme.colors.neutral,
-        fontWeight: theme.fontWeights.semibold,
-        fontSize: theme.fontSizes.lg,
-      }}
-    >
-      CSS variables!
-    </HvTypography>
-  );
-};
-```
-
-<Story name="Css Variables">
-  <CssVariables />
-</Story>
+<Canvas of={ThemingStories.CssVariables} />
 
 ## Default Props <a id="default-props" />
 
 Through our theme it is also possible to change the default props of a component. Let's say for example that the theme you want only uses squared
 shape avatars, you can use this feature to make your life easier by pre defining the default value of the prop `variant` to `square` in the `theme` `components` section like so:
 
-```tsx
-import {
-  createTheme,
-  HvProvider,
-  HvAvatar,
-} from "@hitachivantara/uikit-react-core";
-
-const newTheme = createTheme({
-  name: "myTheme",
-  base: "ds5",
-  components: {
-    HvAvatar: {
-      variant: "square",
-    },
-  },
-});
-
-export const MyApp = () => {
-  return (
-    <HvProvider themes={[newTheme]}>
-      <HvAvatar />
-    </HvProvider>
-  );
-};
-```
-
-<Story name="Default Props">
-  <DefaultProps />
-</Story>
-
 This allows us to not have to declare that property every time we use the component.
 One of the big benefits of this is that most of all of our components have a `classes` prop. This means that we can now customize all
 of the components by overwriting their classes through the theme object.
 
-```tsx
-import {
-  createTheme,
-  HvProvider,
-  HvButton,
-} from "@hitachivantara/uikit-react-core";
-
-const newTheme = createTheme({
-  name: "myTheme",
-  base: "ds5",
-  components: {
-    HvButton: {
-      classes: {
-        primary: {
-          backgroundColor: theme.colors.brand,
-        },
-      },
-    },
-  },
-});
-
-export const MyApp = () => {
-  return (
-    <HvProvider themes={[newTheme]}>
-      <HvButton>Hey</HvButton>
-    </HvProvider>
-  );
-};
-```
-
-<Story name="Default Props Class Overwrite">
-  <DefaultPropsClassOverwrite />
-</Story>
+<Canvas of={ThemingStories.DefaultProps} />
 
 ## Theme utilities <a id="theme-utils" />
 
@@ -489,30 +355,7 @@ const ds3Spaces = {
 
 Find below an example on how to use the spacing helper function.
 
-```tsx
-import { css } from "@emotion/css";
-import { HvButton, theme } from "@hitachivantara/uikit-react-core";
-
-const classes = {
-  root: css({
-    "& > *": {
-      margin: theme.spacing("xs", "6px"),
-    },
-  }),
-};
-
-export const Spacing = () => (
-  <div className={classes.root}>
-    <HvButton variant="primary">Button 1</HvButton>
-    <HvButton variant="primarySubtle">Button 2</HvButton>
-    <HvButton variant="primaryGhost">Button 3</HvButton>
-  </div>
-);
-```
-
-<Story name="Spacing">
-  <Spacing />
-</Story>
+<Canvas of={ThemingStories.Spacing} />
 
 ### Alpha colors <a id="alpha-colors" />
 
@@ -527,22 +370,4 @@ theme.alpha("primary", 0.5); // applies a transparency of 50% to the primary col
 
 Find an example below.
 
-```tsx
-import { css } from "@emotion/css";
-import { HvButton, theme } from "@hitachivantara/uikit-react-core";
-
-const styles = {
-  button: css({
-    backgroundColor: theme.colors.brand,
-    ":hover": { backgroundColor: theme.alpha("brand", 0.6) },
-  }),
-};
-
-export const Alpha = () => (
-  <HvButton className={styles.button}>Click me</HvButton>
-);
-```
-
-<Story name="Alpha">
-  <Alpha />
-</Story>
+<Canvas of={ThemingStories.Alpha} />

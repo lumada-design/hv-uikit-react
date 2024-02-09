@@ -20,6 +20,10 @@ import ProgressColumnRendererRaw from "./ProgressColumnRenderer?raw";
 import { DropdownColumnRenderer } from "./DropdownColumnRenderer";
 import DropdownColumnRendererRaw from "./DropdownColumnRenderer?raw";
 
+export default {
+  title: "Visualizations/Table/Table Renderers",
+};
+
 export const AllColumnRenderersStory: StoryObj = {
   parameters: { docs: { source: { code: AllColumnRenderersRaw } } },
   render: () => <AllColumnRenderers />,

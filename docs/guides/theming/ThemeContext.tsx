@@ -32,17 +32,9 @@ const Content = () => {
 };
 
 export const ThemeContext = () => {
-  const id = "hv-root-theme-context-use-theme-hook";
   return (
-    <div id={id}>
-      <HvProvider
-        classNameKey={id}
-        rootElementId={id}
-        cssTheme="scoped"
-        themes={[newTheme]}
-      >
-        <Content />
-      </HvProvider>
-    </div>
+    <HvProvider cssTheme="scoped" themes={[newTheme]}>
+      <Content />
+    </HvProvider>
   );
 };

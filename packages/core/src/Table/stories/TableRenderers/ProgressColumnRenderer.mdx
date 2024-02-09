@@ -1,7 +1,10 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { ProgressColumnRendererStory } from "./TableRenderers";
+import * as TableRenderersStories from "./TableRenderers.stories";
 
-<Meta title="Visualizations/Table/Table Renderers/Progress Column Renderer" />
+<Meta
+  of={TableRenderersStories}
+  title="Visualizations/Table/Table Renderers/Progress Column Renderer"
+/>
 
 # Progress Column Renderer
 
@@ -18,6 +21,4 @@ Output:
 
 - `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
 
-<Canvas>
-  <Story name="Progress Column Renderer" story={ProgressColumnRendererStory} />
-</Canvas>
+<Canvas of={TableRenderersStories.ProgressColumnRendererStory} />

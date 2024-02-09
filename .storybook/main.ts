@@ -11,8 +11,9 @@ export default {
   },
   stories: [
     "../docs/**/*.mdx",
-    "../docs/**/*.stories.@(tsx|mdx)",
-    "../packages/**/src/**/*.stories.@(ts|tsx|mdx)",
+    "../docs/**/*.stories.tsx",
+    "../packages/**/src/**/*.mdx",
+    "../packages/**/src/**/*.stories.@(ts|tsx)",
   ],
   core: {
     disableTelemetry: true,

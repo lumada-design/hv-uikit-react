@@ -17,6 +17,10 @@ import {
 import { css } from "@emotion/css";
 import styled from "@emotion/styled";
 
+export default {
+  title: "Guides/Styling",
+};
+
 // ----- Inline styles -----
 
 export const InlineStyles = () => (
@@ -91,21 +95,7 @@ const StyledHvButton = styled(HvButton)({
 });
 
 export const ReusableComponent = (props: HvButtonProps) => (
-  <StyledHvButton {...props} />
-);
-
-const StyledDynamicHvButton = styled(HvButton)(
-  ({ variant }: HvButtonProps) => ({
-    color:
-      variant === "secondaryGhost"
-        ? theme.colors.positive
-        : theme.colors.negative,
-    marginLeft: theme.space.xs,
-  })
-);
-
-export const DynamicReusableComponent = (props: HvButtonProps) => (
-  <StyledDynamicHvButton {...props} />
+  <StyledHvButton {...props}>Click me!</StyledHvButton>
 );
 
 // ----- Theme override -----

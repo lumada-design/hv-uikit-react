@@ -1,7 +1,10 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { UseHvPaginationStory } from "./TableHooks";
+import * as TableHooksStories from "./TableHooks.stories";
 
-<Meta title="Visualizations/Table/Table Hooks/useHvPagination" />
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/useHvPagination"
+/>
 
 # useHvPagination
 
@@ -12,6 +15,4 @@ Check [React Table's `usePagination` documentation](https://react-table.tanstack
 The useHvPagination hook makes the `getHvPaginationProps` function available on the table instance returned that can be used to setup a
 `HvPagination` component.
 
-<Canvas>
-  <Story name="useHvPagination" story={UseHvPaginationStory} />
-</Canvas>
+<Canvas of={TableHooksStories.UseHvPaginationStory} />

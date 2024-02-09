@@ -1,17 +1,7 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import {
-  Alert,
-  DropRightXS,
-  InProgress,
-} from "@hitachivantara/uikit-react-icons";
-import {
-  HvBadge,
-  HvButton,
-  HvDropdown,
-  HvTypography,
-} from "@hitachivantara/uikit-react-core";
+import * as UtilityClassesStories from "./UtilityClasses.stories";
 
-<Meta title="Guides/Styling/Utility Classes" />
+<Meta of={UtilityClassesStories} />
 
 # Utility Classes
 
@@ -75,59 +65,16 @@ The utility classes integrate with the Design System theme for colors and sizing
 "bg-atmo3"; // background color of `atmo3`
 ```
 
-<Canvas>
-  <Story name="Layout and theme">
-    <section className="flex flex-row w-500px justify-center gap-sm p-sm">
-      <div className="w-10 h-10 rounded bg-positive" />
-      <div className="w-11 h-11 rounded bg-warning" />
-      <div className="w-12 h-12 rounded bg-negative" />
-      <div className="w-12 h-12 rounded bg-primary_20" />
-    </section>
-  </Story>
-</Canvas>
+<Canvas of={UtilityClassesStories.LayoutAndTheme} />
 
 #### Breakpoints
 
-<Canvas>
-  <Story name="Breakpoints">
-    <section className="grid gap-xs grid-cols-4 md:grid-cols-6 lg:grid-cols-12">
-      {[...Array(12).keys()].map((i) => (
-        <div key={i} className="h-10 bg-atmo3 flex items-center justify-center">
-          <HvTypography variant="title3">{i + 1}</HvTypography>
-        </div>
-      ))}
-    </section>
-  </Story>
-</Canvas>
+<Canvas of={UtilityClassesStories.Breakpoints} />
 
 #### Overriding `classes` object in UI Kit components
 
-<Canvas>
-  <Story name="Overriding classes">
-    <HvDropdown
-      label="Label"
-      values={[{ label: "Val1" }, { label: "Val2" }]}
-      classes={{
-        root: "w-200px",
-        label: "color-primary",
-        placeholder: "color-primary",
-      }}
-    />
-  </Story>
-</Canvas>
+<Canvas of={UtilityClassesStories.OverridingClasses} />
 
 #### Animations
 
-<Canvas>
-  <Story name="Animations">
-    <div className="flex gap-xs">
-      <HvButton icon>
-        <DropRightXS className="transition-transform hover:rotate-90" />
-      </HvButton>
-      <HvButton icon>
-        <Alert className="hover:animate-swing" />
-      </HvButton>
-      <InProgress className="animate-spin" />
-    </div>
-  </Story>
-</Canvas>
+<Canvas of={UtilityClassesStories.Animations} />

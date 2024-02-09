@@ -1,7 +1,10 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { UseHvHeaderGroupsStory } from "./TableHooks";
+import * as TableHooksStories from "./TableHooks.stories";
 
-<Meta title="Visualizations/Table/Table Hooks/useHvHeaderGroups" />
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/useHvHeaderGroups"
+/>
 
 # useHvHeaderGroups
 
@@ -24,6 +27,4 @@ The following options are supported on any `Column` object passed to the `column
 The `getTableProps`, `getHeaderGroupProps`, `getHeaderProps`, `getTableBodyProps`, `getRowProps`, and `getCellProps` prop getters must be called
 and the properties injected into the corresponding elements.
 
-<Canvas>
-  <Story name="useHvHeaderGroups" story={UseHvHeaderGroupsStory} />
-</Canvas>
+<Canvas of={TableHooksStories.UseHvHeaderGroupsStory} />

@@ -11,6 +11,10 @@ import TableEditableRaw from "./TableEditable?raw";
 import { TableFilter } from "./TableFilter";
 import TableFilterRaw from "./TableFilter?raw";
 
+export default {
+  title: "Visualizations/Table/Table Section",
+};
+
 export const SimpleTableSectionStory: StoryObj = {
   parameters: {
     docs: { source: { code: SimpleTableSectionRaw } },

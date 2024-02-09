@@ -1,7 +1,7 @@
-import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { CompleteStory } from "./TableCompleteSamples";
+import { Meta, Canvas } from "@storybook/addon-docs";
+import * as TableCompleteStories from "./TableComplete.stories";
 
-<Meta title="Visualizations/Table/Complete Table" />
+<Meta of={TableCompleteStories} />
 
 # Complete Table
 
@@ -20,6 +20,4 @@ In this example it's achieved by passing a custom `defaultColumn` to the `useHvT
 
 This sample encapsulates the rendering, the hook setup, and the actions logic in a generic `TableComplete` component.
 
-<Canvas>
-  <Story name="Complete Table" story={CompleteStory} />
-</Canvas>
+<Canvas of={TableCompleteStories.CompleteStory} />

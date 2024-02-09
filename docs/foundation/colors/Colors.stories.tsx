@@ -1,8 +1,7 @@
 import React, { useMemo } from "react";
-import capitalize from "lodash/capitalize";
+import { Meta } from "@storybook/react";
 import { HvThemeColorModeStructure } from "@hitachivantara/uikit-styles";
 import {
-  HvProvider,
   HvTypography,
   theme,
   useTheme,
@@ -46,9 +45,7 @@ const ColorsGroup = ({
         <div key={group}>
           <StyledGroup>
             <div>
-              <StyledGroupName variant="title2">
-                {capitalize(group)}
-              </StyledGroupName>
+              <StyledGroupName variant="title2">{group}</StyledGroupName>
               <StyledColors>
                 {Object.values(themeColors[selectedTheme][group]).map(
                   (color, idx) => (
@@ -92,17 +89,17 @@ const ColorsGroup = ({
   );
 };
 
-const Colors = () => {
+export default {
+  title: "Foundation/Colors",
+} satisfies Meta;
+
+export const Colors = () => {
   const { selectedTheme, colors } = useTheme();
   const allColors = useMemo(() => groupColors(colors), [colors]);
 
   return (
     allColors && (
-      <HvProvider>
-        <ColorsGroup selectedTheme={selectedTheme} colors={allColors} />
-      </HvProvider>
+      <ColorsGroup selectedTheme={selectedTheme} colors={allColors} />
     )
   );
 };
-
-export default Colors;

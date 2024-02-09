@@ -1,12 +1,8 @@
 import { Meta, Story } from "@storybook/addon-docs";
-import {
-  ContainerSample,
-  SimpleGridSample,
-  GridSample,
-  getBreakpoints,
-} from "./Layout";
+import * as LayoutStories from "./Layout.stories";
+import { getBreakpoints } from "./utils";
 
-<Meta title="Guides/Layout" />
+<Meta of={LayoutStories} />
 
 # Layout <a id="layout" />
 
@@ -62,9 +58,7 @@ it doesn't grow beyond the specified width.
 
 If necessary, multiple nested containers can be used as shown in the example below.
 
-<Story name="Container">
-  <ContainerSample />
-</Story>
+<Story of={LayoutStories.Container} />
 
 For more information, please go to the [container's API](./?path=/docs/components-container--docs).
 
@@ -81,9 +75,7 @@ on your needs.
 
 Below is an example on how to use the grid component where the Design System directives were used and some grid items were spanned across multiple columns.
 
-<Story name="Grid">
-  <GridSample />
-</Story>
+<Story of={LayoutStories.Grid} />
 
 Learn more about this component [here](./?path=/docs/components-grid-grid--docs).
 
@@ -101,8 +93,6 @@ enabling you to create much simpler grids than the grid component.
 In the example below a grid with three columns was created to distribute the cards across them, and when the screen width goes under the Design System
 `sm` (600px) breakpoint the grid only has two columns.
 
-<Story name="SimpleGrid">
-  <SimpleGridSample />
-</Story>
+<Story of={LayoutStories.SimpleGrid} />
 
 More information about can be found [here](./?path=/docs/components-grid-simple-grid--docs).

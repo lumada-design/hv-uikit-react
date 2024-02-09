@@ -1,7 +1,7 @@
 import { Meta, Story } from "@storybook/addon-docs";
-import Colors from "./Colors";
+import * as ColorStories from "./Colors.stories";
 
-<Meta title="Foundation/Colors" />
+<Meta of={ColorStories} />
 
 # Colors
 
@@ -19,4 +19,4 @@ const MyComponent = () => <div style={{ color: theme.colors.atmo2 }} />;
 
 **Note:** Colors names have changed in UI Kit v5.x. Please be sure to check the [colors mapping table](./?path=/docs/overview-migration-from-v4-x--docs#colors) on the migration guide.
 
-<Colors />
+<Story of={ColorStories.Colors} />

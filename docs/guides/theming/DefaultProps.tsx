@@ -12,52 +12,24 @@ const newTheme = createTheme({
   components: {
     HvAvatar: {
       variant: "square",
+      // 👆 override "normal" props
     },
-  },
-});
-
-export const DefaultProps = () => {
-  const id = "hv-root-create-theme-default-props-mode";
-  return (
-    <div id={id}>
-      <HvProvider
-        classNameKey={id}
-        rootElementId={id}
-        cssTheme="scoped"
-        themes={[newTheme]}
-      >
-        <HvAvatar />
-      </HvProvider>
-    </div>
-  );
-};
-
-const newThemeClassOverwrite = createTheme({
-  name: "myTheme",
-  base: "ds5",
-  components: {
     HvButton: {
       classes: {
-        primary: {
-          backgroundColor: theme.colors.brand,
+        // 👇 override classes styles
+        primarySubtle: {
+          color: theme.colors.brand,
         },
       },
     },
   },
 });
 
-export const DefaultPropsClassOverwrite = () => {
-  const id = "hv-root-create-theme-default-props-class-overwrite";
+export const DefaultProps = () => {
   return (
-    <div id={id}>
-      <HvProvider
-        classNameKey={id}
-        rootElementId={id}
-        cssTheme="scoped"
-        themes={[newThemeClassOverwrite]}
-      >
-        <HvButton>Hey!</HvButton>
-      </HvProvider>
-    </div>
+    <HvProvider cssTheme="scoped" themes={[newTheme]}>
+      <HvButton variant="primarySubtle">Hey!</HvButton>
+      <HvAvatar />
+    </HvProvider>
   );
 };

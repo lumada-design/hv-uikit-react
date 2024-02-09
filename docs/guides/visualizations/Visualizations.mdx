@@ -1,7 +1,7 @@
-import { Meta, Story } from "@storybook/addon-docs";
-import { HvLineChart } from "@hitachivantara/uikit-react-viz";
+import { Meta, Canvas } from "@storybook/addon-docs";
+import * as VisualizationsStories from "./Visualizations.stories";
 
-<Meta title="Guides/Visualizations" />
+<Meta of={VisualizationsStories} />
 
 # Visualizations <a id="visualizations" />
 
@@ -167,68 +167,4 @@ In this case, no aggregation function was specified for the `measures` since the
 the `Country` column was used in order to split the data by country and showcase one line for each country. The `sortBy` visual role was also needed since the data
 didn't have the years sorted by ascending order originally.
 
-```tsx
-<HvLineChart
-  data={{
-    Country: [
-      "Portugal",
-      "Portugal",
-      "Spain",
-      "Spain",
-      "Portugal",
-      "Portugal",
-      "Spain",
-      "Spain",
-    ],
-    Year: [2019, 2019, 2019, 2019, 2018, 2018, 2018, 2018],
-    Medal: [
-      "gold",
-      "silver",
-      "gold",
-      "silver",
-      "gold",
-      "silver",
-      "gold",
-      "silver",
-    ],
-    Total: [3, 2, 1, 0, 4, 11, 8, 3],
-  }}
-  groupBy="Year"
-  measures="Total"
-  splitBy="Country"
-  sortBy="Year"
-/>
-```
-
-<Story name="Main">
-  <HvLineChart
-    data={{
-      Country: [
-        "Portugal",
-        "Portugal",
-        "Spain",
-        "Spain",
-        "Portugal",
-        "Portugal",
-        "Spain",
-        "Spain",
-      ],
-      Year: [2019, 2019, 2019, 2019, 2018, 2018, 2018, 2018],
-      Medal: [
-        "gold",
-        "silver",
-        "gold",
-        "silver",
-        "gold",
-        "silver",
-        "gold",
-        "silver",
-      ],
-      Total: [3, 2, 1, 0, 4, 11, 8, 3],
-    }}
-    groupBy="Year"
-    measures="Total"
-    splitBy="Country"
-    sortBy="Year"
-  />
-</Story>
+<Canvas of={VisualizationsStories.Chart} />

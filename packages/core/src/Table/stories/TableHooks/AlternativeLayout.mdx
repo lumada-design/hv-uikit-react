@@ -1,7 +1,10 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { AlternativeLayoutStory } from "./TableHooks";
+import * as TableHooksStories from "./TableHooks.stories";
 
-<Meta title="Visualizations/Table/Table Hooks/Alternative Layout" />
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/Alternative Layout"
+/>
 
 # Alternative Layout
 
@@ -21,6 +24,4 @@ Most layouts work well with the default html table elements, keeping the semanti
 
 `useGridLayout` implies a totally different dom structure and is currently not supported by the `HvTable` components.
 
-<Canvas>
-  <Story name="Alternative Layout" story={AlternativeLayoutStory} />
-</Canvas>
+<Canvas of={TableHooksStories.AlternativeLayoutStory} />
