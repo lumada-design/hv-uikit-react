@@ -1,7 +1,10 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { UseHvGroupByStory } from "./TableHooks";
+import * as TableHooksStories from "./TableHooks.stories";
 
-<Meta title="Visualizations/Table/Table Hooks/useHvGroupBy" />
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/useHvGroupBy"
+/>
 
 # useHvGroupBy
 
@@ -11,6 +14,4 @@ Check [React Table's `useGroupBy` documentation](https://react-table.tanstack.co
 
 This example requires `useHvRowExpand` to show the grouped rows.
 
-<Canvas>
-  <Story name="useHvGroupBy" story={UseHvGroupByStory} />
-</Canvas>
+<Canvas of={TableHooksStories.UseHvGroupByStory} />

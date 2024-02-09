@@ -1,7 +1,10 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { UseHvBulkActionsStory } from "./TableHooks";
+import * as TableHooksStories from "./TableHooks.stories";
 
-<Meta title="Visualizations/Table/Table Hooks/useHvBulkActions" />
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/useHvBulkActions"
+/>
 
 # useHvBulkActions
 
@@ -11,6 +14,4 @@ The `useHvBulkActions` hook makes the `getHvBulkActionsProps` function available
 
 _Note: This hook depends on the `useRowSelect` hook from `react-table`, but when using `useHvData` only `useHvBulkActions` needs to be installed._
 
-<Canvas>
-  <Story name="useHvBulkActions" story={UseHvBulkActionsStory} />
-</Canvas>
+<Canvas of={TableHooksStories.UseHvBulkActionsStory} />

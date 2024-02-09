@@ -29,6 +29,10 @@ import UseHvSortByRaw from "./UseHvSortBy?raw";
 import { UseHvTableSticky } from "./UseHvTableSticky";
 import UseHvTableStickyRaw from "./UseHvTableSticky?raw";
 
+export default {
+  title: "Visualizations/Table/Table Hooks",
+};
+
 export const UseHvHooksStory: StoryObj = {
   parameters: { docs: { source: { code: UseHvHooksRaw } } },
   render: () => <UseHvHooks />,

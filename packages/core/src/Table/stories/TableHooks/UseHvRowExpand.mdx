@@ -1,7 +1,10 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { UseHvRowExpandStory } from "./TableHooks";
+import * as TableHooksStories from "./TableHooks.stories";
 
-<Meta title="Visualizations/Table/Table Hooks/useHvRowExpand" />
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/useHvRowExpand"
+/>
 
 # useHvRowExpand
 
@@ -14,6 +17,4 @@ extra column is created instead.
 
 _Note: This hook depends on the `useExpanded` hook from `react-table`, but when using `useHvData` only `useHvRowExpand` needs to be installed._
 
-<Canvas>
-  <Story name="useHvRowExpand" story={UseHvRowExpandStory} />
-</Canvas>
+<Canvas of={TableHooksStories.UseHvRowExpandStory} />

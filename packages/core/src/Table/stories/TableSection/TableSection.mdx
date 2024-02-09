@@ -1,13 +1,7 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import {
-  SimpleTableSectionStory,
-  CompleteTableSectionStory,
-  PropsTableSectionStory,
-  EditableStory,
-  FilterStory,
-} from "./TableSectionSamples";
+import * as TableSectionStories from "./TableSection.stories";
 
-<Meta title="Visualizations/Table/Table Section" />
+<Meta of={TableSectionStories} />
 
 # Table Section
 
@@ -32,24 +26,18 @@ with the `HvTableSection` component:
 
 This will result in the table adapting to the new visuals:
 
-<Canvas>
-  <Story name="Simple Table" story={SimpleTableSectionStory} />
-</Canvas>
+<Canvas of={TableSectionStories.SimpleTableSectionStory} />
+If your table includes more complex controls, like bulk actions or pagination, these
+are adapted just the same:
 
-If your table includes more complex controls, like bulk actions or pagination, these are adapted just the same:
-
-<Canvas>
-  <Story name="Complete Table" story={CompleteTableSectionStory} />
-</Canvas>
+<Canvas of={TableSectionStories.CompleteTableSectionStory} />
 
 The way the `HvTableSection` component works is by wrapping your table with the `HvSection` component. As such,
 you can pass a set of section properties to the underlying `HvSection` component through the `sectionProps` property
 and configure the section as you please. The sample below illustrates how you can have an expandable section
 with a table inside and a set of actions.
 
-<Canvas>
-  <Story name="Section Props" story={PropsTableSectionStory} />
-</Canvas>
+<Canvas of={TableSectionStories.PropsTableSectionStory} />
 
 ## Samples
 
@@ -65,9 +53,7 @@ In order to show the snackbar inside the table section, the `HvSnackbarProvider`
 Setting the `container` property of this component to the section content `ref` and changing the snackbar position to `absolute` enables the snackbar to slide from
 the section content.
 
-<Canvas>
-  <Story name="Editable Table" story={EditableStory} />
-</Canvas>
+<Canvas of={TableSectionStories.EditableStory} />
 
 ### Table Filter
 
@@ -81,6 +67,4 @@ Use the "Multiple column filters" checkbox to switch between these two behaviors
 
 In this sample the `useHvGlobalFilter` hook was also used to apply a search filter to all columns at the same time.
 
-<Canvas>
-  <Story name="Table Filter" story={FilterStory} />
-</Canvas>
+<Canvas of={TableSectionStories.FilterStory} />

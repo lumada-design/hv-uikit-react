@@ -1,13 +1,14 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { ColumnResizeStory } from "./TableHooks";
+import * as TableHooksStories from "./TableHooks.stories";
 
-<Meta title="Visualizations/Table/Table Hooks/useHvResizeColumn" />
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/useHvResizeColumn"
+/>
 
 # useHvResizeColumn
 
 Columns can be resized using the `useHvResizeColumn` hook, which leverages the react-table capabilities. Resize, although not an accessible functionality,
 it allows columns to be resizable via dragging column right border.
 
-<Canvas>
-  <Story name="useHvResizeColumn" story={ColumnResizeStory} />
-</Canvas>
+<Canvas of={TableHooksStories.ColumnResizeStory} />

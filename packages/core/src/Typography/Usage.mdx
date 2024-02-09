@@ -1,12 +1,7 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import {
-  HvButton,
-  HvTypography,
-  HvTooltip,
-} from "@hitachivantara/uikit-react-core";
-import { PopUp } from "@hitachivantara/uikit-react-icons";
+import * as UsageStories from "./Usage.stories";
 
-<Meta title="Foundation/Typography/Usage" />
+<Meta of={UsageStories} />
 
 # Usage
 
@@ -36,15 +31,7 @@ as its content, allowing the styling of the text inside with the help of the typ
 <HvTooltip title="Open in new window">
 ```
 
-<Canvas>
-  <Story name="Usage">
-    <HvTooltip title="Open in new window">
-      <HvButton icon component="a" href="#">
-        <PopUp />
-      </HvButton>
-    </HvTooltip>
-  </Story>
-</Canvas>
+<Canvas of={UsageStories.Usage} />
 
 ## Variants
 
@@ -108,34 +95,10 @@ This is useful in situations where you want to have the same style applied to va
 In the following example, the style used for a ` display` typography is applied by default to an `h1` element.
 The typography can be applied to the same page, specifying a different variant, in this case an `h3`.
 
-<Canvas>
-  <Story name="Semantic">
-    <HvTypography variant="display">
-      The quick brown fox jumps over the lazy dog.
-    </HvTypography>
-    <HvTypography variant="display" component="h3">
-      The quick brown fox jumps over the lazy dog.
-    </HvTypography>
-  </Story>
-</Canvas>
+<Canvas of={UsageStories.Semantic} />
 
 ### Properties
 
 Any Typography variant can be complemented with styles for `link` and `disabled` states.
 
-<Canvas>
-  <Story name="Properties">
-    <HvTypography variant="display" link>
-      The quick brown fox jumps over the lazy dog.
-    </HvTypography>
-    <HvTypography variant="body" link>
-      The quick brown fox jumps over the lazy dog.
-    </HvTypography>
-    <HvTypography variant="display" disabled>
-      The quick brown fox jumps over the lazy dog.
-    </HvTypography>
-    <HvTypography variant="body" disabled>
-      The quick brown fox jumps over the lazy dog.
-    </HvTypography>
-  </Story>
-</Canvas>
+<Canvas of={UsageStories.Properties} />

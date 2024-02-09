@@ -1,7 +1,10 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { UseHvFiltersStory } from "./TableHooks";
+import * as TableHooksStories from "./TableHooks.stories";
 
-<Meta title="Visualizations/Table/Table Hooks/useHvFilters" />
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/useHvFilters"
+/>
 
 # useHvFilters
 
@@ -13,6 +16,4 @@ documentation for configuration details.
 Another example using these hooks can be found in the [table section page](./?path=/docs/visualizations-table-table-section--docs) under the
 Table Filter section.
 
-<Canvas>
-  <Story name="useHvFilters" story={UseHvFiltersStory} />
-</Canvas>
+<Canvas of={TableHooksStories.UseHvFiltersStory} />

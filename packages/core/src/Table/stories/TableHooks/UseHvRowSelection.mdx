@@ -1,11 +1,10 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import {
-  UseHvSelectionStory,
-  UseHvSelectionControlledStory,
-  LockedSelectionStory,
-} from "./TableHooks";
+import * as TableHooksStories from "./TableHooks.stories";
 
-<Meta title="Visualizations/Table/Table Hooks/useHvRowSelection" />
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/useHvRowSelection"
+/>
 
 # useHvRowSelection
 
@@ -19,29 +18,17 @@ The `useHvRowSelection` hook injects a new column with a `HvCheckBox` to select 
 This hook is originally based on the code `useRowSelect` hook from react-table and implements its API, but extends it with support for locking the selection
 state of individual rows.
 
-<Canvas>
-  <Story name="useHvSelection" story={UseHvSelectionStory} />
-</Canvas>
+<Canvas of={TableHooksStories.UseHvSelectionStory} />
 
 ## Controlled
 
 A selection state can also be included in the data and toggled externally.
 
-<Canvas>
-  <Story
-    name="useHvRowSelection controlled"
-    story={UseHvSelectionControlledStory}
-  />
-</Canvas>
+<Canvas of={TableHooksStories.UseHvSelectionControlledStory} />
 
 # Locked Selection
 
 Individual rows can have its selection state locked (becoming either not selectable or not unselectable), disabling the selection checkbox and also preventing
 the bulk actions to change the row state.
 
-<Canvas>
-  <Story
-    name="useHvRowSelection locked selection"
-    story={LockedSelectionStory}
-  />
-</Canvas>
+<Canvas of={TableHooksStories.LockedSelectionStory} />

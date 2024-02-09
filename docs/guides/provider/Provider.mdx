@@ -1,8 +1,8 @@
 import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
 import { HvProvider, ds3 } from "@hitachivantara/uikit-react-core";
-import { ProviderSample } from "./ProviderSample";
+import * as ProviderStories from "./Provider.stories";
 
-<Meta title="Guides/Provider" component={HvProvider} />
+<Meta of={ProviderStories} />
 
 # Provider <a id="provider" />
 
@@ -21,8 +21,6 @@ const MyApp = ({ children }) => {
 };
 ```
 
-<ArgsTable of={HvProvider} />
-
 The `HvProvider` enables you to define your themes through the `themes` property which accepts a list of themes. Then, the `theme` and `colorMode` properties
 are used to specify the active theme and color mode. For more information, please read the [**theming**](./?path=/docs/guides-theming--docs#theming) documentation.
 
@@ -30,62 +28,7 @@ If several `HvProvider`'s are used, you'll need to create different root element
 theme styles to the root element with the `cssTheme` property.
 Otherwise, the styling will not work properly. Please, find an example below.
 
-<Canvas>
-  <Story name="Main">
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "start",
-        alignItems: "center",
-        gap: "20px",
-        flexWrap: "wrap",
-      }}
-    >
-      <div id="hv-root-ds5-dawn-docs-provider">
-        <HvProvider
-          classNameKey="hv-root-ds-five-dawn-docs-provider"
-          rootElementId="hv-root-ds5-dawn-docs-provider"
-          cssTheme="scoped"
-          colorMode="dawn"
-        >
-          <ProviderSample label="DS5 Dawn" />
-        </HvProvider>
-      </div>
-      <div id="hv-root-ds5-wicked-docs-provider">
-        <HvProvider
-          classNameKey="hv-root-ds-five-wicked-docs-provider"
-          rootElementId="hv-root-ds5-wicked-docs-provider"
-          cssTheme="scoped"
-          colorMode="wicked"
-        >
-          <ProviderSample label="DS5 Wicked" />
-        </HvProvider>
-      </div>
-      <div id="hv-root-ds3-dawn-docs-provider">
-        <HvProvider
-          classNameKey="hv-root-ds-three-dawn-docs-provider"
-          rootElementId="hv-root-ds3-dawn-docs-provider"
-          cssTheme="scoped"
-          themes={[ds3]}
-          colorMode="dawn"
-        >
-          <ProviderSample label="DS3 Dawn" />
-        </HvProvider>
-      </div>
-      <div id="hv-root-ds3-wicked-docs-provider">
-        <HvProvider
-          classNameKey="hv-root-ds-three-wicked-docs-provider"
-          rootElementId="hv-root-ds3-wicked-docs-provider"
-          cssTheme="scoped"
-          themes={[ds3]}
-          colorMode="wicked"
-        >
-          <ProviderSample label="DS3 Wicked" />
-        </HvProvider>
-      </div>
-    </div>
-  </Story>
-</Canvas>
-
 **UI Kit components will not work properly if the `HvProvider` is not configured correctly** since they will not be able to access the properties of the active theme.
+
+<Canvas of={ProviderStories.Main} />
+<ArgsTable of={HvProvider} />

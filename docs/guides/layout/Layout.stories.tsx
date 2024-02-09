@@ -8,40 +8,16 @@ import {
   HvGrid,
   HvSimpleGrid,
   HvTypography,
-  ds5,
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { HvBarChart } from "@hitachivantara/uikit-react-viz";
 
-export const getBreakpoints = () => {
-  const gutters = {
-    xs: 16,
-    sm: 16,
-    md: 32,
-    lg: 32,
-    xl: 32,
-  };
-  const columns = {
-    xs: 4,
-    sm: 8,
-    md: 12,
-    lg: 12,
-    xl: 12,
-  };
-
-  return Object.entries(ds5.breakpoints.values).reduce((acc, curr) => {
-    const [key, value] = curr;
-    acc[key] = {
-      value,
-      gutter: gutters[key],
-      column: columns[key],
-    };
-    return acc;
-  }, {});
+export default {
+  title: "Guides/Layout",
 };
 
-export const ContainerSample = () => {
+export const Container = () => {
   return (
     <HvContainer maxWidth="lg">
       <HvGlobalActions title="Details" />
@@ -63,7 +39,7 @@ export const ContainerSample = () => {
   );
 };
 
-export const SimpleGridSample = () => {
+export const SimpleGrid = () => {
   const { activeTheme } = useTheme();
 
   return (
@@ -78,7 +54,7 @@ export const SimpleGridSample = () => {
     >
       {Array.from({ length: 9 }).map((v, i) => {
         return (
-          <HvCard key={`simple-grid-card-${i}`} bgcolor="atmo1">
+          <HvCard key={i} bgcolor="atmo1">
             <HvCardHeader title={`Card ${i}`} />
             <HvCardContent>
               <HvTypography>
@@ -92,7 +68,7 @@ export const SimpleGridSample = () => {
   );
 };
 
-export const GridSample = () => {
+export const Grid = () => {
   return (
     <HvGrid columns="auto" container>
       <HvGrid item xs={4} sm={8} md={12}>
@@ -100,7 +76,7 @@ export const GridSample = () => {
       </HvGrid>
       {Array.from({ length: 4 }).map((v, i) => {
         return (
-          <HvGrid item xs={4} sm={4} md={3} lg={3} key={`grid-card-${i}`}>
+          <HvGrid item xs={4} sm={4} md={3} lg={3} key={i}>
             <HvCard bgcolor="atmo1">
               <HvCardHeader title={`KPI ${i}`} />
               <HvCardContent>
@@ -129,6 +105,7 @@ export const GridSample = () => {
             }}
           >
             <HvBarChart
+              height={300}
               data={{
                 Group: ["Group 1", "Group 2", "Group 3"],
                 "Sales Target": [2300, 1000, 7800],

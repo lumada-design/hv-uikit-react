@@ -1,17 +1,8 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
 import { HvButton, theme } from "@hitachivantara/uikit-react-core";
-import {
-  OverrideClassName,
-  OverrideClasses,
-  ReusableComponent,
-  DynamicReusableComponent,
-  NestedClasses,
-  InlineStyles,
-  ThemeOverride,
-  GlobalOverride,
-} from "./Customization";
+import * as StylingStories from "./Styling.stories";
 
-<Meta title="Guides/Styling" />
+<Meta of={StylingStories} />
 
 # Customization <a id="customization" />
 
@@ -46,9 +37,7 @@ const MyComponent = () => (
 );
 ```
 
-<Story name="Inline Styles">
-  <InlineStyles />
-</Story>
+<Story of={StylingStories.InlineStyles} />
 
 ### Custom classes
 
@@ -106,9 +95,7 @@ const MyComponent = () => (
 );
 ```
 
-<Story name="Override ClassName">
-  <OverrideClassName />
-</Story>
+<Story of={StylingStories.OverrideClassName} />
 
 ##### Nested classes
 
@@ -159,9 +146,7 @@ const MyComponent = () => {
 };
 ```
 
-<Story name="Nested Classes">
-  <NestedClasses />
-</Story>
+<Story of={StylingStories.NestedClasses} />
 
 #### Using the `classes` property
 
@@ -189,9 +174,7 @@ const MyComponent = () => (
 );
 ```
 
-<Story name="Override Classes">
-  <OverrideClasses />
-</Story>
+<Story of={StylingStories.OverrideClasses} />
 
 This way of styling components is very convenient since it allows you to easily access classes of internal components and style them. For example, UI Kit's `HvDropDownMenu` component internally uses a UI Kit `HvButton` with an icon that can be styled through the `icon` and `iconSelected` classes.
 
@@ -226,60 +209,7 @@ export const ReusableComponent = (props: HvButtonProps) => (
 
 Then, you can import the component and use it like so:
 
-```tsx
-<ReusableComponent>Click me!</ReusableComponent>
-```
-
-<Story name="Reusable Component">
-  <ReusableComponent id="reusable-button-id">Click me!</ReusableComponent>
-</Story>
-
-### Dynamic styles
-
-The Emotion's `styled` utility also enables you to override a component's style based on its properties.
-
-To achieve this, take a look at the example below where the `HvButton`'s label changes color based on the `variant` property.
-
-```tsx
-import {
-  HvButton,
-  HvButtonProps,
-  theme,
-} from "@hitachivantara/uikit-react-core";
-import styled from "@emotion/styled";
-
-const StyledHvButton = styled(HvButton)(({ variant }: HvButtonProps) => ({
-  color:
-    variant === "secondaryGhost"
-      ? theme.colors.positive
-      : theme.colors.negative,
-}));
-
-const ReusableComponent = (props: HvButtonProps) => (
-  <StyledHvButton {...props} />
-);
-```
-
-Then, you can use the component the following way:
-
-```tsx
-<ReusableComponent variant="secondaryGhost">Secondary ghost!</ReusableComponent>
-```
-
-<Story name="Dynamic Reusable Component">
-  <DynamicReusableComponent
-    id="dynamic-reusable-button-sg-id"
-    variant="secondaryGhost"
-  >
-    Secondary ghost!
-  </DynamicReusableComponent>
-  <DynamicReusableComponent
-    id="dynamic-reusable-button-pg-id"
-    variant="primaryGhost"
-  >
-    Primary ghost!
-  </DynamicReusableComponent>
-</Story>
+<Canvas of={StylingStories.ReusableComponent} />
 
 ## Theme override <a id="theme-override" />
 
@@ -327,9 +257,7 @@ const MyApp = () => {
 };
 ```
 
-<Story name="Theme Override">
-  <ThemeOverride />
-</Story>
+<Story of={StylingStories.ThemeOverride} />
 
 ## Global override <a id="global-override" />
 
@@ -375,8 +303,6 @@ const MyApp = () => {
 };
 ```
 
-<Story name="Global Override">
-  <GlobalOverride />
-</Story>
+<Story of={StylingStories.GlobalOverride} />
 
 Please report to the [theming](./?path=/docs/guides-theming--docs#theming) documentation for more information.

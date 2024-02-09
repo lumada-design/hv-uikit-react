@@ -1,7 +1,10 @@
 import { Meta, Canvas, Story } from "@storybook/addon-docs";
-import { UseHvSortByStory } from "./TableHooks";
+import * as TableHooksStories from "./TableHooks.stories";
 
-<Meta title="Visualizations/Table/Table Hooks/useHvSortBy" />
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/useHvSortBy"
+/>
 
 # useHvSortBy
 
@@ -14,6 +17,4 @@ The `useHvSortBy` hook ensures that the proper properties are injected in the `H
 
 _Note: This hook depends on the `useSortBy` hook from `react-table`, but when using `useHvData` only `useHvSortBy` needs to be installed._
 
-<Canvas>
-  <Story name="useHvSortBy" story={UseHvSortByStory} />
-</Canvas>
+<Canvas of={TableHooksStories.UseHvSortByStory} />

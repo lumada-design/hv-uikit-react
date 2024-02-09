@@ -30,17 +30,9 @@ const newTheme = createTheme({
 });
 
 export const CreateTheme = () => {
-  const id = "hv-root-create-theme-my-theme-sand-color-mode";
   return (
-    <div id={id}>
-      <HvProvider
-        classNameKey={id}
-        rootElementId={id}
-        cssTheme="scoped"
-        themes={[newTheme]}
-      >
-        <HvTypography>Hello from the UI Kit team!</HvTypography>
-      </HvProvider>
-    </div>
+    <HvProvider cssTheme="scoped" themes={[newTheme]}>
+      <HvTypography>Hello from the UI Kit team!</HvTypography>
+    </HvProvider>
   );
 };
