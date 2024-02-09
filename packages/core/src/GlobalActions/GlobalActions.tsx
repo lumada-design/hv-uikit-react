@@ -1,14 +1,16 @@
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import isString from "lodash/isString";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
 
-import { staticClasses, useClasses } from "./GlobalActions.styles";
+import {
+  getBreakpointStyles,
+  staticClasses,
+  useClasses,
+} from "./GlobalActions.styles";
 
 export { staticClasses as globalActionsClasses };
 export type HvGlobalActionsClasses = ExtractNames<typeof useClasses>;
@@ -29,27 +31,12 @@ export interface HvGlobalActionsProps
   headingLevel?: HvGlobalActionsHeadingLevel;
   /**
    * Position of the Global Actions.
-   * Defaults to `sticky` when it is a global title and `relative` when it's a section title.
+   * @default variant === "global" ? "sticky" : "relative"
    */
   position?: HvGlobalActionsPosition;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvGlobalActionsClasses;
 }
-
-const getBreakpointStyles = (isUpMd: boolean, isSmDown: boolean) =>
-  isUpMd
-    ? {
-        width: `calc(100% - 2 * ${theme.spacing(4)})`,
-        marginLeft: `${theme.spacing(4)}`,
-        marginRight: `${theme.spacing(4)}`,
-      }
-    : isSmDown
-    ? {
-        width: `calc(100% - 2 * ${theme.spacing(2)})`,
-        marginLeft: `${theme.spacing(2)}`,
-        marginRight: `${theme.spacing(2)}`,
-      }
-    : {};
 
 /**
  * Global Actions are actions that affect the entire page they live in.
@@ -72,9 +59,6 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
   const isSmDown = useMediaQuery(muiTheme.breakpoints.down("sm"));
   const isUpMd = useMediaQuery(muiTheme.breakpoints.up("md"));
 
-  const fixedPositionCss =
-    positionProp === "fixed" && getBreakpointStyles(isUpMd, isSmDown);
-
   const headingLevelToApply = headingLevel || (variant === "global" ? 1 : 2);
 
   const position =
@@ -88,8 +72,9 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
           [classes.positionSticky]: position === "sticky",
           [classes.positionFixed]: position === "fixed",
           [classes.global]: variant === "global",
+          [classes.section]: variant === "section",
         },
-        css(fixedPositionCss),
+        position === "fixed" && css(getBreakpointStyles(isUpMd, isSmDown)),
         className
       )}
       {...others}
@@ -103,11 +88,11 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
         {variant === "global" && backButton && (
           <div className={classes.backButton}>{backButton}</div>
         )}
-        {!isString(title) ? (
+        {typeof title !== "string" ? (
           title
         ) : (
           <HvTypography
-            variant="title3"
+            variant={variant === "global" ? "title3" : "title4"}
             component={`h${headingLevelToApply}`}
             className={cx(classes.name, {
               [classes.sectionName]: variant !== "global",

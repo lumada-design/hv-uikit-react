@@ -825,14 +825,18 @@ const ds3 = makeTheme((theme) => ({
     },
     HvGlobalActions: {
       classes: {
-        wrapper: {
-          padding: theme.space.xs,
-          border: "transparent",
-          borderRadius: theme.radii.none,
+        section: {
+          "& .HvGlobalActions-wrapper": {
+            backgroundColor: "transparent",
+            paddingLeft: "0px",
+          },
         },
-        globalSectionArea: {
-          backgroundColor: "transparent",
-          paddingLeft: "0px",
+        wrapper: {
+          "&&": {
+            padding: theme.space.xs,
+            borderWidth: 0,
+            borderRadius: 0,
+          },
         },
         sectionName: {
           ...theme.typography.sectionTitle,

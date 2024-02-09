@@ -208,7 +208,6 @@ export const CustomContent: StoryObj<HvGlobalActionsProps> = {
       wrapper: css({
         display: "flex",
         justifyContent: "space-between",
-        padding: theme.spacing(0, "xs"),
         height: 48,
       }),
       actions: css({ marginLeft: "unset" }),

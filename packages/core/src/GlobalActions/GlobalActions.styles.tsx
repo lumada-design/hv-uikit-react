@@ -1,3 +1,4 @@
+import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../utils/classes";
@@ -29,40 +30,62 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
       background: theme.colors.atmo2,
       opacity: "75%",
     },
+
+    "& $wrapper": {
+      top: 0,
+      left: 0,
+      backgroundColor: theme.colors.atmo1,
+      width: "100%",
+      borderWidth: 1,
+      borderRadius: theme.radii.round,
+    },
+  },
+  section: {
+    "& $wrapper": {
+      borderTopWidth: 1,
+      paddingLeft: 0,
+    },
   },
   wrapper: {
-    padding: theme.space.sm,
+    padding: theme.space.xs,
+    position: "relative",
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
-    border: `1px solid ${theme.colors.atmo4}`,
-    borderRadius: theme.radii.round,
-  },
-  globalWrapperComplement: {
-    position: "relative",
-    top: 0,
-    left: 0,
-    background: theme.colors.atmo1,
-    width: "100%",
-  },
-  globalSectionArea: {
-    backgroundColor: theme.colors.atmo1,
-    borderTop: `1px solid ${theme.colors.atmo4}`,
+    gap: theme.space.xs,
+    borderColor: theme.colors.atmo4,
     paddingLeft: theme.space.sm,
   },
-  backButton: {
-    marginRight: theme.space.xs,
-  },
+
+  /** @deprecated use classes.global $wrapper */
+  globalSectionArea: {},
+  /** @deprecated use classes.section $wrapper */
+  globalWrapperComplement: {},
+  backButton: {},
   name: {
     flexGrow: 1,
   },
-  sectionName: {
-    ...theme.typography.title4,
-  },
+  /** @deprecated use classes.name */
+  sectionName: {},
   actions: {
     display: "flex",
     alignItems: "center",
-    marginLeft: "auto",
     gap: theme.space.xs,
+    // TODO: remove in v6 in favour of consistently setting `flexGrow: 1` in a title "wrapper"
+    marginLeft: "auto",
   },
 });
+
+export const getBreakpointStyles = (
+  isUpMd: boolean,
+  isSmDown: boolean
+): CSSInterpolation => {
+  const unit = isUpMd ? 4 : isSmDown ? 2 : 0;
+  if (!unit) return {};
+
+  return {
+    width: `calc(100% - 2 * ${theme.spacing(unit)})`,
+    marginLeft: theme.spacing(unit),
+    marginRight: theme.spacing(unit),
+  };
+};
