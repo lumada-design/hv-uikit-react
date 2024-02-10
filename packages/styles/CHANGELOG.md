@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.19.0 (2024-02-10)
+
+### Features
+
+- **GlobalActions:** align with new DS styles ([f31c9a2](https://github.com/lumada-design/hv-uikit-react/commit/f31c9a29456db07561d8ffe9fa6bda1416bb0a2c))
+
 # 5.18.0 (2024-01-25)
 
 ### Features

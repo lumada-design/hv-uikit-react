@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.49.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.48.1...@hitachivantara/uikit-react-core@5.49.0) (2024-02-10)
+
+### Bug Fixes
+
+- **TableSection:** styles ([0b5c0d7](https://github.com/lumada-design/hv-uikit-react/commit/0b5c0d76ab0df47ae45513b2081f49a18c198467))
+
+### Features
+
+- **Button:** focusableWhenDisabled added & fix icon button when disabled ([61d1eba](https://github.com/lumada-design/hv-uikit-react/commit/61d1ebaf3f6d30d4bd47c931b4ae436069ae2e33))
+- **GlobalActions:** align with new DS styles ([f31c9a2](https://github.com/lumada-design/hv-uikit-react/commit/f31c9a29456db07561d8ffe9fa6bda1416bb0a2c))
+- **Section:** content container ref added ([935fe24](https://github.com/lumada-design/hv-uikit-react/commit/935fe242d7de29d31d2237fa26d9f51d21aa2478))
+- transition container added to banner and snackbar ([466478b](https://github.com/lumada-design/hv-uikit-react/commit/466478b66f0bf3a0dd9f24793c7a205af8a9de27))
+- transition container added to snackbar provider ([14bfa03](https://github.com/lumada-design/hv-uikit-react/commit/14bfa037ed8b521ebde84be7b5788c6e93cc7b93))
+
 ## [5.48.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.48.0...@hitachivantara/uikit-react-core@5.48.1) (2024-02-09)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
