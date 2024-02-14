@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   findFirstVisibleElement,
@@ -7,20 +7,25 @@ import {
   scrollElement,
   verticalScrollOffset,
 } from "./utils";
-import { HvScrollToVerticalOption } from "./types";
+import { HvScrollToOption } from "./types";
+
+interface HvScrollToOptionWithLink extends HvScrollToOption {
+  link: string;
+}
 
 export const useScrollTo = (
   selectedIndexProp: number = 0,
   scrollElementId: string | undefined = undefined,
-  href: boolean = false,
+  navigationMode: "push" | "replace" | "none" = "push",
+  relativeLinks: boolean = false,
   offset: number = 0,
-  options: HvScrollToVerticalOption[] = [],
+  options: HvScrollToOption[] = [],
   onChange:
     | ((
         event:
           | Event
-          | React.MouseEvent<HTMLDivElement>
-          | React.KeyboardEvent<HTMLDivElement>,
+          | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
+          | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
         index: number
       ) => void)
     | undefined = undefined,
@@ -29,12 +34,13 @@ export const useScrollTo = (
   number,
   (
     event:
-      | React.MouseEvent<HTMLDivElement>
-      | React.KeyboardEvent<HTMLDivElement>,
+      | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
+      | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
     id: string,
     index: number,
     wrappedOnChange?: (index: number) => void
-  ) => void
+  ) => void,
+  HvScrollToOptionWithLink[]
 ] => {
   const RETRY_MAX: number = 5;
   const [selectedIndex, setSelectedIndex] = useState<number>(selectedIndexProp);
@@ -139,7 +145,7 @@ export const useScrollTo = (
   useEffect(() => {
     let checkRenderedInterval: any;
 
-    if (href) {
+    if (navigationMode !== "none") {
       const hashValue = document.location.hash.split("#")[1] || "";
 
       const option = options.find((o) => o.value === hashValue);
@@ -171,39 +177,55 @@ export const useScrollTo = (
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const setScrollTo = (
-    event:
-      | React.MouseEvent<HTMLDivElement>
-      | React.KeyboardEvent<HTMLDivElement>,
-    id: string,
-    index: number,
-    wrappedOnChange?: (index: number) => void
-  ) => {
-    const option = options.find((o) => o.value === id);
+  const baseUrl = relativeLinks ? "" : window.location.href.split("#")[0];
 
-    if (option) {
-      const ele = document.getElementById(id);
-      if (ele) {
-        scrollElement(
-          ele,
-          scrollEle.current,
-          option.offset || offset,
-          direction
-        );
+  const elements = useMemo(
+    () =>
+      options.map((o) => ({
+        ...o,
+        link: `${baseUrl}#${o.value}`,
+      })),
+    [options, baseUrl]
+  );
+
+  const setScrollTo = useCallback(
+    (
+      event:
+        | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
+        | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
+      id: string,
+      index: number,
+      wrappedOnChange?: (index: number) => void
+    ) => {
+      const option = elements.find((o) => o.value === id);
+
+      if (option) {
+        const ele = document.getElementById(id);
+        if (ele) {
+          scrollElement(
+            ele,
+            scrollEle.current,
+            option.offset || offset,
+            direction
+          );
+        }
+
+        if (navigationMode === "push") {
+          window.history.pushState({}, "", option.link);
+        } else if (navigationMode === "replace") {
+          window.history.replaceState({}, "", option.link);
+        }
+
+        setSelectedIndex(index);
+        wrappedOnChange?.(index);
+
+        // Safari scrolls immediately (no smooth scroll support),
+        // so this ref value must be updated asap
+        selectedIndexRef.current = index;
       }
+    },
+    [elements, navigationMode, direction, offset]
+  );
 
-      if (href) {
-        window.history.pushState({}, "", `#${options[index].value}`);
-      }
-
-      setSelectedIndex(index);
-      wrappedOnChange?.(index);
-
-      // Safari scrolls immediately (no smooth scroll support),
-      // so this ref value must be updated asap
-      selectedIndexRef.current = index;
-    }
-  };
-
-  return [selectedIndex, setScrollTo];
+  return [selectedIndex, setScrollTo, elements];
 };

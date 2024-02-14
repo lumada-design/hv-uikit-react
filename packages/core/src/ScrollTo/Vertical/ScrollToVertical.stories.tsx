@@ -18,7 +18,7 @@ export default meta;
 
 export const Main: StoryObj<HvScrollToVerticalProps> = {
   args: {
-    href: true,
+    navigationMode: "push",
     position: "absolute",
     tooltipPosition: "left",
     offset: 20,

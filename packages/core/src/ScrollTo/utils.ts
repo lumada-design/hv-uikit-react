@@ -1,4 +1,4 @@
-import { HvScrollToVerticalOption } from "./types";
+import { HvScrollToOption } from "./types";
 
 type ExtendedWindow = Window & typeof globalThis & HTMLElement;
 
@@ -95,7 +95,7 @@ export const isScrolledToTheBottom = (
 
 export const findFirstVisibleElement = (
   container: HTMLElement | (Window & typeof globalThis),
-  options: HvScrollToVerticalOption[],
+  options: HvScrollToOption[],
   offset: number
 ) => {
   const boundsTop = verticalScrollOffset(container);

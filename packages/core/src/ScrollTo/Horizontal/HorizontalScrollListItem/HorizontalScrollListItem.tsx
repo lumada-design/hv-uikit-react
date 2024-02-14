@@ -11,7 +11,8 @@ export { staticClasses as horizontalScrollListItemClasses };
 
 export type HvHorizontalScrollListItemClasses = ExtractNames<typeof useClasses>;
 
-export interface HvVerticalScrollListItemProps extends HvBaseProps {
+export interface HvHorizontalScrollListItemProps
+  extends HvBaseProps<HTMLDivElement | HTMLAnchorElement> {
   /** The text to render.  */
   children: React.ReactNode;
   /** A function component that renders a typography wrapped with a tooltip. */
@@ -24,18 +25,29 @@ export interface HvVerticalScrollListItemProps extends HvBaseProps {
   /** Whether the element is selected. */
   selected?: boolean;
   /** The function to be executed when the element is clicked. */
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onClick?: (
+    event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
+  ) => void;
   /** The function to be executed when the element is clicked. */
-  onKeyDown?: (event: React.KeyboardEvent<HTMLDivElement>) => void;
+  onKeyDown?: (
+    event: React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>
+  ) => void;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvHorizontalScrollListItemClasses;
+
+  /**
+   * The link to be set in the href attribute of the anchor element.
+   *
+   * If this is not set, the element will be rendered as a div with a button role.
+   */
+  link?: string;
 }
 
 /**
  * HvHorizontalScrollListItem a focusable item to be used as part of the horizontal scroll
  */
 export const HvHorizontalScrollListItem = (
-  props: HvVerticalScrollListItemProps
+  props: HvHorizontalScrollListItemProps
 ) => {
   const {
     id,
@@ -46,6 +58,7 @@ export const HvHorizontalScrollListItem = (
     onClick,
     onKeyDown,
     tooltipWrapper,
+    link,
     ...others
   } = useDefaultProps("HvHorizontalScrollListItem", props);
   const { classes, cx } = useClasses(classesProp);
@@ -54,16 +67,19 @@ export const HvHorizontalScrollListItem = (
   const buttonId = setId(id, "button");
   const Tooltip = tooltipWrapper;
 
+  const Component = link != null ? "a" : "div";
+
   return (
     <li id={id} className={cx(classes.root, className)} aria-current={selected}>
-      <div
+      <Component
         id={buttonId}
-        role="button"
+        role={link == null ? "button" : undefined}
         tabIndex={0}
         onClick={onClick}
         onKeyDown={onKeyDown}
         className={classes.button}
         aria-labelledby={labelId}
+        href={link}
         {...others}
       >
         <Tooltip
@@ -73,7 +89,7 @@ export const HvHorizontalScrollListItem = (
         >
           {children}
         </Tooltip>
-      </div>
+      </Component>
     </li>
   );
 };
