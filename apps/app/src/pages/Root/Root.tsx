@@ -1,6 +1,6 @@
 import { Navigate, useSearchParams } from "react-router-dom";
 
-const Root = () => {
+export const Component = () => {
   const [searchParams] = useSearchParams();
 
   if (searchParams.get("dashboard") != null) {
@@ -14,5 +14,3 @@ const Root = () => {
 
   return <Navigate to="/home" replace />;
 };
-
-export default Root;

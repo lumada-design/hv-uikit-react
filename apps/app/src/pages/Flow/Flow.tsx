@@ -216,10 +216,8 @@ const Content = () => {
   );
 };
 
-const Flow = () => (
+export const Component = () => (
   <Suspense fallback={<HvLoading />}>
     <Content />
   </Suspense>
 );
-
-export default Flow;

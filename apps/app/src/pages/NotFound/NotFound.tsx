@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { HvButton, HvEmptyState } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
-const NotFound = () => {
+export const Component = () => {
   const { t } = useTranslation("common");
 
   return (
@@ -23,5 +23,3 @@ const NotFound = () => {
     />
   );
 };
-
-export default NotFound;
