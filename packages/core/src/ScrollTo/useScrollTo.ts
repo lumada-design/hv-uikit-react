@@ -177,7 +177,8 @@ export const useScrollTo = (
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const baseUrl = relativeLinks ? "" : window.location.href.split("#")[0];
+  const baseUrl =
+    relativeLinks || window == null ? "" : window.location.href.split("#")[0];
 
   const elements = useMemo(
     () =>

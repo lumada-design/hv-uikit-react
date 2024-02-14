@@ -42,7 +42,7 @@ export interface HvScrollToVerticalProps
    *
    * Defaults to `push`, unless the deprecated `href` prop is set to `false`, in which case it defaults to `none`.
    *
-   * When set to `none`, the each element will render a button instead of a link.
+   * When set to `none`, then each element will render a button instead of a link.
    */
   navigationMode?: "push" | "replace" | "none";
   /**
