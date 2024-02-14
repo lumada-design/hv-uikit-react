@@ -52,7 +52,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
     // Remove border for the last table row
     [`& .${tableRowClasses.root}`]: {
       "&:last-child": {
-        [`& .${tableCellClasses.root}`]: { border: "none" },
+        [`& .${tableCellClasses.root}`]: { borderBottom: "none" },
       },
     },
 
