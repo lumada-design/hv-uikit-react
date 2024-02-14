@@ -10,6 +10,8 @@ import { TableEditable } from "./TableEditable";
 import TableEditableRaw from "./TableEditable?raw";
 import { TableFilter } from "./TableFilter";
 import TableFilterRaw from "./TableFilter?raw";
+import { TableSettings } from "./TableSettings";
+import TableSettingsRaw from "./TableSettings?raw";
 
 export default {
   title: "Visualizations/Table/Table Section",
@@ -48,4 +50,11 @@ export const FilterStory: StoryObj = {
     docs: { source: { code: TableFilterRaw } },
   },
   render: () => <TableFilter />,
+};
+
+export const TableSettingsStory: StoryObj = {
+  parameters: {
+    docs: { source: { code: TableSettingsRaw } },
+  },
+  render: () => <TableSettings />,
 };

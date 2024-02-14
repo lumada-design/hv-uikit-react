@@ -152,10 +152,26 @@ export const makeSelectedData = (len: number = 10) =>
 // https://react-table.tanstack.com/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps
 export const getColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
-  { Header: "Title", accessor: "name", style: { minWidth: 120 } },
-  { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
-  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
-  { Header: "Status", accessor: "status", style: { width: 140 } },
+  {
+    Header: "Title",
+    accessor: "name",
+    style: { minWidth: 120 },
+  },
+  {
+    Header: "Time",
+    accessor: "createdDate",
+    style: { minWidth: 100 },
+  },
+  {
+    Header: "Event Type",
+    accessor: "eventType",
+    style: { minWidth: 100 },
+  },
+  {
+    Header: "Status",
+    accessor: "status",
+    style: { minWidth: 100 },
+  },
   {
     Header: "Probability",
     accessor: "riskScore",
