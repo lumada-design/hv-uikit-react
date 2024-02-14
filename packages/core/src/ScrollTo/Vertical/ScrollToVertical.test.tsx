@@ -39,7 +39,7 @@ describe("ScrollToVertical", () => {
     expect(tabs.length).toBe(4);
     expect(tabs[0]).toHaveAttribute("aria-current", "true");
 
-    const tabButtons = screen.getAllByRole("button");
+    const tabButtons = screen.getAllByRole("link");
     expect(tabButtons.length).toBe(4);
 
     await userEvent.click(tabButtons[3]);
