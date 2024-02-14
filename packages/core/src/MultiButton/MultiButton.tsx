@@ -1,7 +1,7 @@
 import React, { cloneElement } from "react";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvButtonVariant } from "../Button";
+import { HvButtonSize, HvButtonVariant } from "../Button";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 
@@ -19,6 +19,9 @@ export interface HvMultiButtonProps extends HvBaseProps {
   variant?: HvButtonVariant;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvMultiButtonClasses;
+  /** Button size. */
+  size?: HvButtonSize;
+  split?: boolean;
 }
 
 export const HvMultiButton = (props: HvMultiButtonProps) => {
@@ -29,6 +32,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
     disabled = false,
     vertical = false,
     variant = "secondarySubtle",
+    size,
     ...others
   } = useDefaultProps("HvMultiButton", props);
   const { classes, cx } = useClasses(classesProp);
@@ -39,6 +43,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
         classes.root,
         {
           [classes.vertical]: vertical,
+          [classes[variant]]: variant,
         },
         className
       )}
@@ -51,6 +56,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
           return cloneElement(child as React.ReactElement, {
             variant,
             disabled: disabled || child.props.disabled,
+            size,
             className: cx(child.props.className, classes.button, {
               [classes.selected]: childIsSelected,
             }),
