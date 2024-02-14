@@ -5,7 +5,6 @@ import { createClasses } from "../utils/classes";
 export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   root: {
     display: "flex",
-    height: 32,
     alignItems: "center",
     transition: "none",
     background: theme.colors.atmo2,
@@ -18,7 +17,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     },
 
     "& button$button": {
-      height: 32,
       width: "100%",
       minWidth: 32,
       maxWidth: 200,
