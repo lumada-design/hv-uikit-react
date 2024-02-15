@@ -9,7 +9,6 @@ export const Asset: HvFlowNodeFC = (props) => {
     <HvFlowNode
       description="Asset description"
       expanded
-      maxVisibleActions={1}
       params={[
         {
           id: "asset",
