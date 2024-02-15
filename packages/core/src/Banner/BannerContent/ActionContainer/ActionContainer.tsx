@@ -53,7 +53,7 @@ export const HvActionContainer = (props: HvActionContainerProps) => {
         <div className={classes.actionsInnerContainer}>
           <HvActionsGeneric
             id={id}
-            category="semantic"
+            variant="semantic"
             actions={action}
             actionsCallback={actionCallback}
           />
