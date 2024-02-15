@@ -38,7 +38,7 @@ export interface HvScrollToHorizontalProps
   /**
    * Should the active element be reflected in the URL.
    *
-   * Defaults to `true`.
+   * @default true
    *
    * @deprecated Use `navigationMode` instead.
    * */
@@ -52,6 +52,8 @@ export interface HvScrollToHorizontalProps
    * Defaults to `push`, unless the deprecated `href` prop is set to `false`, in which case it defaults to `none`.
    *
    * When set to `none`, then each element will render a button instead of a link.
+   *
+   * @default "push"
    */
   navigationMode?: "push" | "replace" | "none";
   /**
@@ -61,7 +63,7 @@ export interface HvScrollToHorizontalProps
    *
    * When set to `false`, the links will be generated from the current location's full URL (e.g. `http://example.com/hello/world?value=123#section`).
    *
-   * Defaults to `false`.
+   * @default false
    */
   relativeLinks?: boolean;
   /** Default selected index passed from the parent. */
@@ -214,7 +216,7 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
             onEnter?.(event, index);
           }
         }}
-        link={navigationMode !== "none" ? option.link : undefined}
+        href={navigationMode !== "none" ? option.href : undefined}
         tooltipWrapper={tooltipWrapper}
         selected={selected}
         key={option.key || option.label}

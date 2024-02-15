@@ -34,7 +34,7 @@ export interface HvVerticalScrollListItemProps
    *
    * If this is not set, the element will be rendered as a div with a button role.
    */
-  link?: string;
+  href?: string;
 }
 
 /**
@@ -52,7 +52,7 @@ export const HvVerticalScrollListItem = (
     onClick,
     onKeyDown,
     tooltipPlacement = "left",
-    link,
+    href,
     ...others
   } = useDefaultProps("HvVerticalScrollListItem", props);
   const { classes, cx } = useClasses(classesProp);
@@ -67,18 +67,18 @@ export const HvVerticalScrollListItem = (
     <div className={classes.notSelected} />
   );
 
-  const Component = link != null ? "a" : "div";
+  const Component = href != null ? "a" : "div";
 
   return (
     <li id={id} className={cx(classes.root, className)} aria-current={selected}>
       <HvTooltip title={label} placement={tooltipPlacement}>
         <Component
-          role={link == null ? "button" : undefined}
+          role={href == null ? "button" : undefined}
           tabIndex={0}
           onClick={onClick}
           onKeyDown={onKeyDown}
           className={cx(classes.button, classes.text)}
-          href={link}
+          href={href}
           {...others}
         >
           {icon}

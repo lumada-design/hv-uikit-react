@@ -40,7 +40,7 @@ export interface HvHorizontalScrollListItemProps
    *
    * If this is not set, the element will be rendered as a div with a button role.
    */
-  link?: string;
+  href?: string;
 }
 
 /**
@@ -58,7 +58,7 @@ export const HvHorizontalScrollListItem = (
     onClick,
     onKeyDown,
     tooltipWrapper,
-    link,
+    href,
     ...others
   } = useDefaultProps("HvHorizontalScrollListItem", props);
   const { classes, cx } = useClasses(classesProp);
@@ -67,19 +67,19 @@ export const HvHorizontalScrollListItem = (
   const buttonId = setId(id, "button");
   const Tooltip = tooltipWrapper;
 
-  const Component = link != null ? "a" : "div";
+  const Component = href != null ? "a" : "div";
 
   return (
     <li id={id} className={cx(classes.root, className)} aria-current={selected}>
       <Component
         id={buttonId}
-        role={link == null ? "button" : undefined}
+        role={href == null ? "button" : undefined}
         tabIndex={0}
         onClick={onClick}
         onKeyDown={onKeyDown}
         className={classes.button}
         aria-labelledby={labelId}
-        href={link}
+        href={href}
         {...others}
       >
         <Tooltip

@@ -10,7 +10,7 @@ import {
 import { HvScrollToOption } from "./types";
 
 interface HvScrollToOptionWithLink extends HvScrollToOption {
-  link: string;
+  href: string;
 }
 
 export const useScrollTo = (
@@ -184,7 +184,7 @@ export const useScrollTo = (
     () =>
       options.map((o) => ({
         ...o,
-        link: `${baseUrl}#${o.value}`,
+        href: `${baseUrl}#${o.value}`,
       })),
     [options, baseUrl]
   );
@@ -212,9 +212,9 @@ export const useScrollTo = (
         }
 
         if (navigationMode === "push") {
-          window.history.pushState({}, "", option.link);
+          window.history.pushState({}, "", option.href);
         } else if (navigationMode === "replace") {
-          window.history.replaceState({}, "", option.link);
+          window.history.replaceState({}, "", option.href);
         }
 
         setSelectedIndex(index);
