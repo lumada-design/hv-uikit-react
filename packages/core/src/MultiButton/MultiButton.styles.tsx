@@ -44,12 +44,12 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
           borderRight: "solid 1px transparent",
         },
       },
-      "&:first-of-type": {
+      "&$firstButton": {
         borderLeft: `solid 1px ${theme.colors.atmo4}`,
         borderTopLeftRadius: theme.radii.base,
         borderBottomLeftRadius: theme.radii.base,
       },
-      "&:last-of-type": {
+      "&$lastButton": {
         borderRight: `solid 1px ${theme.colors.atmo4}`,
         borderTopRightRadius: theme.radii.base,
         borderBottomRightRadius: theme.radii.base,
@@ -57,7 +57,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
           borderRight: `solid 1px ${theme.colors.atmo4} !important`,
         },
       },
-      "&:not(:first-of-type)": {
+      "&:not($firstButton)": {
         marginLeft: "-1px",
       },
       "&$selected": {
@@ -86,7 +86,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       "&:hover": {
         background: theme.colors.atmo3,
       },
-      "&:first-of-type, &:last-of-type": {
+      "&$firstButton, &$lastButton": {
         border: `solid 1px ${theme.colors.secondary}`,
       },
 
@@ -125,12 +125,12 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
           borderBottom: "solid 1px transparent",
         },
       },
-      "&:first-of-type": {
+      "&$firstButton": {
         borderTop: `solid 1px ${theme.colors.atmo4}`,
         borderTopLeftRadius: theme.radii.base,
         borderTopRightRadius: theme.radii.base,
       },
-      "&:last-of-type": {
+      "&$lastButton": {
         borderBottom: `solid 1px ${theme.colors.atmo4}`,
         borderBottomLeftRadius: theme.radii.base,
         borderBottomRightRadius: theme.radii.base,
@@ -138,7 +138,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
           borderBottom: `solid 1px ${theme.colors.atmo4} !important`,
         },
       },
-      "&:not(:first-of-type)": {
+      "&:not($firstButton)": {
         marginLeft: 0,
         marginTop: -1,
       },
@@ -167,10 +167,10 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       borderTop: "unset",
       borderBottom: "unset",
 
-      "&:first-of-type": {
+      "&$firstButton": {
         borderLeft: `solid 1px ${theme.colors.primary}`,
       },
-      "&:last-of-type": {
+      "&$lastButton": {
         borderRight: `solid 1px ${theme.colors.primary}`,
       },
     },
@@ -179,10 +179,10 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     "& button$button": {
       borderTop: `solid 1px ${theme.colors.primary}`,
       borderBottom: `solid 1px ${theme.colors.primary}`,
-      "&:first-of-type": {
+      "&$firstButton": {
         borderLeft: `solid 1px ${theme.colors.primary}`,
       },
-      "&:last-of-type": {
+      "&$lastButton": {
         borderRight: `solid 1px ${theme.colors.primary}`,
       },
     },
@@ -191,4 +191,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   secondary: {},
   secondarySubtle: {},
   secondaryGhost: {},
+  firstButton: {},
+  lastButton: {},
 });
