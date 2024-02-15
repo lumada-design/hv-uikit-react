@@ -49,7 +49,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
       )}
       {...others}
     >
-      {React.Children.map(children, (child) => {
+      {React.Children.map(children, (child, index) => {
         if (React.isValidElement(child)) {
           const childIsSelected = !!child.props.selected;
 
@@ -58,6 +58,9 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
             disabled: disabled || child.props.disabled,
             size,
             className: cx(child.props.className, classes.button, {
+              [classes.firstButton]: index === 0,
+              [classes.lastButton]:
+                index === React.Children.count(children) - 1,
               [classes.selected]: childIsSelected,
             }),
             "aria-pressed": childIsSelected,
