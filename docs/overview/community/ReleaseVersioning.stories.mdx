@@ -32,9 +32,10 @@ We consider "breaking changes" to be modifications to APIS that will require app
 
 The following cases are exceptions to this rule:
 
-- **Changes to _unstable_ APIs**: documented as WIP/experimental, or prefixed with `unstable_`.
-- **Changes _private_ APIs**; that are not exported and/or are not documented.
-- **CSS changes** are minor, or to align with the latest design system specification.
+- **Changes to _unstable_ APIs** documented as WIP/experimental, or prefixed with `unstable_`.
+- **Changes to _private_ APIs** that are not exported and/or are not documented.
+- **CSS changes** that are minor, or to align with the latest design system specification.
+- **Accessibility fixes** that do not alter the functionality or appearance of components but modify DOM semantics and may impact tests.
 - **Bugs in typings**, whenever the TS declarations are missaligned with the real values.
 - **Reverts in breaking changes** that were recently introduced.
 

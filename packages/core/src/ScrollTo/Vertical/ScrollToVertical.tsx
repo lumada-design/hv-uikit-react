@@ -14,7 +14,7 @@ import { HvVerticalScrollListItem } from "./VerticalScrollListItem";
 import { useScrollTo } from "../useScrollTo";
 import {
   HvScrollToTooltipPositions,
-  HvScrollToVerticalOption,
+  HvScrollToOption,
   HvScrollToVerticalPositions,
 } from "../types";
 
@@ -25,9 +25,38 @@ export type HvScrollToVerticalClasses = ExtractNames<typeof useClasses>;
 export interface HvScrollToVerticalProps
   extends HvBaseProps<HTMLOListElement, "onChange" | "onClick"> {
   /** An Array of Objects with Label and Value. Label is the displayed Element and Value is the local navigation location applied */
-  options: HvScrollToVerticalOption[];
-  /** True if the href location link should be applied. It will create an a element around every list item */
+  options: HvScrollToOption[];
+  /**
+   * Should the active element be reflected in the URL.
+   *
+   * @default true
+   *
+   * @deprecated Use `navigationMode` instead.
+   * */
   href?: boolean;
+  /**
+   * The navigation mode to be used when the user clicks on a tab element.
+   * - `push` will add a new entry to the history stack.
+   * - `replace` will replace the current entry on the history stack.
+   * - `none` will not add any entry to the history stack.
+   *
+   * Defaults to `push`, unless the deprecated `href` prop is set to `false`, in which case it defaults to `none`.
+   *
+   * When set to `none`, then each element will render a button instead of a link.
+   *
+   * @default "push"
+   */
+  navigationMode?: "push" | "replace" | "none";
+  /**
+   * When set to `true`, the generated links will be relative (e.g. `#section`).
+   * Relative URLs take into account not only the current location, but also the base URL if it is set (i.e. a `<base>` tag).
+   * This can lead to unexpected behavior.
+   *
+   * When set to `false`, the links will be generated from the current location's full URL (e.g. `http://example.com/hello/world?value=123#section`).
+   *
+   * @default false
+   */
+  relativeLinks?: boolean;
   /** Default selected index passed from the parent. */
   defaultSelectedIndex?: number;
   /**
@@ -52,14 +81,20 @@ export interface HvScrollToVerticalProps
   onChange?: (
     event:
       | Event
-      | React.MouseEvent<HTMLDivElement>
-      | React.KeyboardEvent<HTMLDivElement>,
+      | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
+      | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
     index: number
   ) => void;
   /** A function called each time an user clicks on a tab element. */
-  onClick?: (event: React.MouseEvent<HTMLDivElement>, index: number) => void;
+  onClick?: (
+    event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>,
+    index: number
+  ) => void;
   /** A function called each time an user press enter on a tab element. */
-  onEnter?: (event: React.KeyboardEvent<HTMLDivElement>, index: number) => void;
+  onEnter?: (
+    event: React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
+    index: number
+  ) => void;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvScrollToVerticalClasses;
 }
@@ -73,6 +108,8 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
     defaultSelectedIndex = 0,
     scrollElementId,
     href = true,
+    navigationMode = href ? "push" : "none",
+    relativeLinks = false,
     onChange,
     onClick,
     onEnter,
@@ -90,10 +127,11 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
 
   const elementId = useUniqueId(id, "hvVerticalScrollto");
 
-  const [selectedIndex, setScrollTo] = useScrollTo(
+  const [selectedIndex, setScrollTo, elements] = useScrollTo(
     defaultSelectedIndex,
     scrollElementId,
-    href,
+    navigationMode,
+    relativeLinks,
     offset,
     options,
     onChange
@@ -101,8 +139,8 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
 
   const handleSelection = (
     event:
-      | React.MouseEvent<HTMLDivElement>
-      | React.KeyboardEvent<HTMLDivElement>,
+      | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
+      | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
     value: string,
     index: number
   ) => {
@@ -115,19 +153,28 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
     setScrollTo(event, value, index, wrappedOnChange);
   };
 
-  const tabs = options.map((option, index) => (
+  const tabs = elements.map((option, index) => (
     <HvVerticalScrollListItem
       id={setId(elementId, `item-${index}`)}
       onClick={(event) => {
+        if (navigationMode !== "none") {
+          event.preventDefault();
+        }
+
         handleSelection(event, option.value, index);
         onClick?.(event, index);
       }}
       onKeyDown={(event) => {
         if (isKey(event, "Enter") === true) {
+          if (navigationMode !== "none") {
+            event.preventDefault();
+          }
+
           handleSelection(event, option.value, index);
           onEnter?.(event, index);
         }
       }}
+      href={navigationMode !== "none" ? option.href : undefined}
       tooltipPlacement={tooltipPosition}
       selected={selectedIndex === index}
       key={option.key || option.label}

@@ -18,7 +18,7 @@ export default meta;
 
 export const Main: StoryObj<HvScrollToHorizontalProps> = {
   args: {
-    href: true,
+    navigationMode: "push",
     position: "sticky",
     tooltipPosition: "top",
     offset: 20,
@@ -103,6 +103,6 @@ export const Overflow: StoryObj<HvScrollToHorizontalProps> = {
       { label: "Markers", value: "Id10" },
     ];
 
-    return <HvScrollToHorizontal options={options} />;
+    return <HvScrollToHorizontal options={options} navigationMode="none" />;
   },
 };

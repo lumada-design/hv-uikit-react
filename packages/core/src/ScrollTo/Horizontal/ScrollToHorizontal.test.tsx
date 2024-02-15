@@ -21,19 +21,19 @@ const Sample = () => (
 );
 
 describe("ScrollToHorizontal", () => {
-  it("renders the section buttons", () => {
+  it("renders the section links", () => {
     render(<Sample />);
 
-    const tab1 = screen.getByRole("button", { name: "Server status summary" });
+    const tab1 = screen.getByRole("link", { name: "Server status summary" });
     expect(tab1).toBeInTheDocument();
 
-    const tab2 = screen.getByRole("button", { name: "Optimization" });
+    const tab2 = screen.getByRole("link", { name: "Optimization" });
     expect(tab2).toBeInTheDocument();
 
-    const tab3 = screen.getByRole("button", { name: "Performance analysis" });
+    const tab3 = screen.getByRole("link", { name: "Performance analysis" });
     expect(tab3).toBeInTheDocument();
 
-    const tab4 = screen.getByRole("button", { name: "Insights" });
+    const tab4 = screen.getByRole("link", { name: "Insights" });
     expect(tab4).toBeInTheDocument();
   });
 
@@ -44,7 +44,7 @@ describe("ScrollToHorizontal", () => {
     expect(tabs.length).toBe(4);
     expect(tabs[0]).toHaveAttribute("aria-current", "true");
 
-    const tabButtons = screen.getAllByRole("button");
+    const tabButtons = screen.getAllByRole("link");
     expect(tabButtons.length).toBe(4);
 
     await userEvent.click(tabButtons[3]);
