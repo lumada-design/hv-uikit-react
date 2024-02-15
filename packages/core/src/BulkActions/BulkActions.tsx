@@ -179,7 +179,7 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
       <HvActionsGeneric
         id={setId(id, "actions")}
         classes={{ root: classes.actions }}
-        category={
+        variant={
           isSemantic
             ? (activeTheme?.bulkActions.actionButtonVariant as HvButtonVariant)
             : "secondaryGhost"
