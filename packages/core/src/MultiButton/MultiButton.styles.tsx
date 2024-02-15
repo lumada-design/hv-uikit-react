@@ -162,4 +162,33 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       },
     },
   },
+  primary: {
+    "& button$button": {
+      borderTop: "unset",
+      borderBottom: "unset",
+
+      "&:first-of-type": {
+        borderLeft: `solid 1px ${theme.colors.primary}`,
+      },
+      "&:last-of-type": {
+        borderRight: `solid 1px ${theme.colors.primary}`,
+      },
+    },
+  },
+  primarySubtle: {
+    "& button$button": {
+      borderTop: `solid 1px ${theme.colors.primary}`,
+      borderBottom: `solid 1px ${theme.colors.primary}`,
+      "&:first-of-type": {
+        borderLeft: `solid 1px ${theme.colors.primary}`,
+      },
+      "&:last-of-type": {
+        borderRight: `solid 1px ${theme.colors.primary}`,
+      },
+    },
+  },
+  primaryGhost: {},
+  secondary: {},
+  secondarySubtle: {},
+  secondaryGhost: {},
 });
