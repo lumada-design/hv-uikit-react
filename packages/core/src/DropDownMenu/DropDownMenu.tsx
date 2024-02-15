@@ -13,7 +13,6 @@ import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import { HvButton, HvButtonSize, HvButtonVariant } from "../Button";
 import { HvList, HvListProps, HvListValue } from "../List";
 import { HvPanel } from "../Panel";
-
 import { staticClasses, useClasses } from "./DropDownMenu.styles";
 import { getIconSizeStyles } from "../Button/Button.styles";
 
@@ -85,7 +84,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
     disabled = false,
     expanded,
     defaultExpanded = false,
-    category = "secondaryGhost",
+    category = "secondaryGhost", // TODO - remove and update variant default in v6
     variant,
     size,
     ...others

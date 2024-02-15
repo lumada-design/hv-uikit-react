@@ -50,7 +50,7 @@ export const HvMessageContainer = ({
         >
           <HvActionsGeneric
             id={id}
-            category="semantic"
+            variant="semantic"
             actions={actionsOnMessage}
             actionsCallback={actionsOnMessageCallback}
           />

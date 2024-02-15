@@ -82,7 +82,7 @@ export const HvSnackbarContent = forwardRef<
             <div id={setId(id, "action")} className={classes.action}>
               <HvActionsGeneric
                 id={id}
-                category={
+                variant={
                   activeTheme?.snackbar.actionButtonVariant as HvButtonVariant
                 }
                 actions={innerAction}
