@@ -325,9 +325,10 @@ The `id` property will be typed to be one of the allowed default actions.
 
 At the node level you can specify other actions. To achieve this you'll have to define:
 
-- A set of actions;
-- A callback to handle these actions;
-- Optionally, a maximum number of visible actions and the others will be placed in a dropdown menu.
+- A set of actions (`actions`);
+- A callback to handle these actions (`actionCallback`);
+- A maximum number of visible actions (`maxVisibleActions`). All the other actions will be placed in a dropdown menu. By default, only one action is visible;
+- And whether the actions should be all icon buttons when visible (`actionsIconButton`). By default, this is set to `true`.
 
 ```tsx
 const handleAction = (event: any, id: string, action: any) => {
@@ -357,7 +358,6 @@ const handleAction = (event: any, id: string, action: any) => {
       label: "View Details",
       icon: <Search />,
     },
-
     {
       id: "favorite",
       label: "Add Favorite",
@@ -470,18 +470,18 @@ If you need to export your data at any point you can use the `toObject` function
 Below you can find a full example of a custom Node that exercises the topics approached in this page.
 
 ```tsx
+const classes = {
+  container: css({
+    width: "40%",
+    minHeight: 200,
+  }),
+};
+
 export const Asset: HvFlowNodeFC = (props) => {
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node | undefined>();
 
   const node = useFlowNode();
-
-  const classes = {
-    container: css({
-      width: "40%",
-      minHeight: 200,
-    }),
-  };
 
   const handleAction = (event: any, nodeId: string, action: any) => {
     if (!node) return;
