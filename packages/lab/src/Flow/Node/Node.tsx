@@ -1,11 +1,10 @@
-import React, { isValidElement, useState } from "react";
+import React, { useState } from "react";
 import {
   ExtractNames,
-  HvActionGeneric,
+  HvActionsGeneric,
   HvActionsGenericProps,
   HvButton,
   HvButtonProps,
-  HvDropDownMenu,
   HvTooltip,
   HvTypography,
   useLabels,
@@ -38,11 +37,13 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   /** Node description */
   description?: string;
   /** Node actions */
-  actions?: HvActionGeneric[];
+  actions?: HvActionsGenericProps["actions"];
   /** Node action callback */
   actionCallback?: HvActionsGenericProps["actionsCallback"];
+  /** Whether the actions should be all icon buttons when visible. @default true */
+  actionsIconOnly?: HvActionsGenericProps["iconOnly"];
   /** Node maximum number of actions visible */
-  maxVisibleActions?: number;
+  maxVisibleActions?: HvActionsGenericProps["maxVisibleActions"];
   /** Node expanded */
   expanded?: boolean;
   /** Node parameters */
@@ -57,9 +58,6 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   classes?: HvFlowNodeClasses;
 }
 
-const renderedIcon = (actionIcon: HvActionGeneric["icon"]) =>
-  isValidElement(actionIcon) ? actionIcon : (actionIcon as Function)?.();
-
 export const HvFlowNode = ({
   id,
   type,
@@ -69,6 +67,7 @@ export const HvFlowNode = ({
   actionCallback,
   maxVisibleActions = 1,
   expanded = false,
+  actionsIconOnly = true,
   params,
   nodeDefaults,
   classes: classesProp,
@@ -94,9 +93,6 @@ export const HvFlowNode = ({
   const groupLabel = group?.label || nodeDefaults?.title;
   const icon = group?.icon || nodeDefaults?.icon;
   const color = group?.color || nodeDefaults?.color;
-
-  const actsVisible = actions?.slice(0, maxVisibleActions);
-  const actsDropdown = actions?.slice(maxVisibleActions);
 
   const hasParams = !!(params && params.length > 0);
 
@@ -141,44 +137,23 @@ export const HvFlowNode = ({
       labels={labels as HvFlowNodeProps["labels"]}
       {...props}
     >
-      {(subtitle || actsVisible?.length || actsDropdown?.length) && (
+      {(subtitle || actions) && (
         <div className={classes.subtitleContainer}>
           {subtitle && (
             <div>
               <HvTypography>{subtitle}</HvTypography>
             </div>
           )}
-          <div className={classes.actions}>
-            {actions?.length && actions?.length > 0 && (
-              <>
-                {actsVisible?.map((action) => (
-                  <HvTooltip key={action.id} title={action.label}>
-                    <HvButton
-                      icon
-                      onClick={(event) => {
-                        actionCallback?.(event, id, action);
-                      }}
-                      aria-label={action.label}
-                    >
-                      {renderedIcon(action.icon)}
-                    </HvButton>
-                  </HvTooltip>
-                ))}
-                {actsDropdown && actsDropdown.length > 0 && (
-                  <HvDropDownMenu
-                    keepOpened={false}
-                    dataList={actsDropdown?.map((action) => ({
-                      id: action.id,
-                      label: action.label,
-                    }))}
-                    onClick={(event, action) => {
-                      actionCallback?.(event, id, action as HvActionGeneric);
-                    }}
-                  />
-                )}
-              </>
-            )}
-          </div>
+          {actions && (
+            <HvActionsGeneric
+              className={classes.actions}
+              classes={{ button: classes.actionsButton }}
+              actions={actions}
+              actionsCallback={actionCallback}
+              maxVisibleActions={maxVisibleActions}
+              iconOnly={actionsIconOnly}
+            />
+          )}
         </div>
       )}
       {children}

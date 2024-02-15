@@ -20,9 +20,11 @@ export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
     justifyContent: "space-between",
     alignItems: "center",
   },
-  actions: {
-    display: "flex",
-    alignItems: "center",
+  actions: {},
+  actionsButton: {
+    "&:not(:last-child)": {
+      marginRight: 0,
+    },
   },
   paramsContainer: {
     borderTop: `1px solid ${theme.colors.atmo4}`,
