@@ -207,7 +207,7 @@ Nodes need inputs and/or outputs to connect to other nodes and they can be defin
 Below are the specifications for a single input and output.
 
 ```typescript
-interface HvFlowNodeInput {
+interface HvFlowNodeInput extends HvFlowNodeLabelActions {
   id?: string;
   label: React.ReactNode;
   isMandatory?: boolean;
@@ -215,7 +215,7 @@ interface HvFlowNodeInput {
   maxConnections?: number;
 }
 
-interface HvFlowNodeOutput {
+interface HvFlowNodeOutput extends HvFlowNodeLabelActions {
   id?: string;
   label: React.ReactNode;
   isMandatory?: boolean;
@@ -236,15 +236,131 @@ the number of connections an input accepts as well as the number of connections 
 Nodes can also accept groups of inputs and outputs. These groups are defined by the types below.
 
 ```typescript
-interface HvFlowNodeInputGroup {
+interface HvFlowNodeInputGroup extends HvFlowNodeLabelActions {
+  id?: string;
   label: React.ReactNode;
   inputs: HvFlowNodeInput[];
+  defaultInputsActions?: HvFlowNodeLabelActions;
 }
 
-interface HvFlowNodeOutputGroup {
+interface HvFlowNodeOutputGroup extends HvFlowNodeLabelActions {
+  id?: string;
   label: React.ReactNode;
   outputs: HvFlowNodeOutput[];
+  defaultOutputsActions?: HvFlowNodeLabelActions;
 }
+```
+
+You might have noticed that all the types mentioned above in this section extend `HvFlowNodeLabelActions`. This type has the following properties:
+
+```typescript
+interface HvFlowNodeLabelActions {
+  actions?: HvActionsGeneric[];
+  actionsCallback?: (
+    event: React.SyntheticEvent,
+    id: string,
+    action: HvActionGeneric,
+    item:
+      | HvFlowNodeInput
+      | HvFlowNodeInputGroup
+      | HvFlowNodeOutput
+      | HvFlowNodeOutputGroup
+  ) => void;
+  actionsIconOnly?: boolean;
+  maxVisibleActions?: number;
+  actionsPlacement?: "left" | "right";
+  actionsButtonVariant?: HvButtonVariant;
+}
+```
+
+These properties enable you to easily position actions to the left or right of the label. However, if you need more flexibility or to implement
+a more complex design, you should opt to customise the label since you can provide a `React.ReactNode`.
+
+Please find an example below on how to use actions on the labels.
+
+```typescript
+<HvFlowNode
+  (...)
+  outputs={[
+    {
+      id: "sensors",
+      label: "Sensors",
+      actions: [
+        {
+          id: "config",
+          label: "Configure",
+        },
+      ],
+      actionsButtonVariant: "primarySubtle",
+      actionsPlacement: "right",
+      outputs: [
+        {
+          id: "sensor1"
+          label: "Sensor 1",
+          actions: [
+            {
+              id: "edit",
+              label: "Edit",
+              icon: <Edit />,
+            },
+          ],
+          actionsButtonVariant: "primaryGhost",
+          actionsIconOnly: true,
+          provides: "sensorData",
+        },
+      ],
+    },
+  ]}
+/>
+```
+
+Sometimes inputs/outputs inside a group have the same actions. Instead of repeating the same properties for all the inputs/outputs, the
+`defaultInputsActions` and `defaultOutputsActions` properties are provided.
+These default actions will be used in case none are defined at the input/output level.
+Please find an example below.
+
+```typescript
+<HvFlowNode
+  (...)
+  outputs={[
+    {
+      id: "sensors",
+      label: "Sensors",
+      actions: [
+        {
+          id: "config",
+          label: "Configure",
+        },
+      ],
+      actionsButtonVariant: "primarySubtle",
+      actionsPlacement: "right",
+      // Actions shared by all outputs in the group
+      defaultOutputsActions: {
+        actions: [
+          {
+            id: "edit",
+            label: "Edit",
+            icon: <Edit />,
+          },
+        ],
+        actionsButtonVariant: "primaryGhost",
+        actionsIconOnly: true,
+      },
+      outputs: [
+        {
+          id: "sensor1",
+          label: "Sensor Group 1",
+          provides: "sensorData",
+        },
+        {
+          id: "sensor2",
+          label: "Sensor Group 2",
+          provides: "sensorData",
+        },
+      ],
+    },
+  ]}
+/>
 ```
 
 ## Parameters <a id="parameters" />
@@ -328,7 +444,7 @@ At the node level you can specify other actions. To achieve this you'll have to 
 - A set of actions (`actions`);
 - A callback to handle these actions (`actionCallback`);
 - A maximum number of visible actions (`maxVisibleActions`). All the other actions will be placed in a dropdown menu. By default, only one action is visible;
-- And whether the actions should be all icon buttons when visible (`actionsIconButton`). By default, this is set to `true`.
+- And whether the actions should be all icon buttons when visible (`actionsIconOnly`). By default, this is set to `true`.
 
 ```tsx
 const handleAction = (event: any, id: string, action: any) => {

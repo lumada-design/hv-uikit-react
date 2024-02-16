@@ -150,14 +150,14 @@ const initialState = {
   edges: [
     {
       source: "1caf2381eaf",
-      sourceHandle: "0",
+      sourceHandle: "sensor1",
       target: "caf2381eaf3",
       targetHandle: "0",
       id: "reactflow__edge-1caf2381eaf0-caf2381eaf30",
     },
     {
       source: "1caf2381eaf",
-      sourceHandle: "1",
+      sourceHandle: "sensor2",
       target: "af2381eaf37",
       targetHandle: "0",
       id: "reactflow__edge-1caf2381eaf1-af2381eaf370",

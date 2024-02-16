@@ -39,7 +39,7 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   /** Node actions */
   actions?: HvActionsGenericProps["actions"];
   /** Node action callback */
-  actionCallback?: HvActionsGenericProps["actionsCallback"];
+  actionCallback?: HvActionsGenericProps["actionsCallback"]; // TODO - v6 rename to actionsCallback
   /** Whether the actions should be all icon buttons when visible. @default true */
   actionsIconOnly?: HvActionsGenericProps["iconOnly"];
   /** Node maximum number of actions visible */

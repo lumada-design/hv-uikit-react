@@ -17,6 +17,7 @@ import {
   HvFlowInstance,
   HvFlowNode,
   HvFlowNodeFC,
+  HvFlowNodeOutput,
   HvFlowNodeTypeMeta,
   useFlowNode,
 } from "@hitachivantara/uikit-react-lab";
@@ -29,22 +30,17 @@ interface AssetData {
   asset?: string;
 }
 
+const classes = {
+  container: css({
+    width: "40%",
+    minHeight: 200,
+  }),
+};
+
 export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node>();
   const node = useFlowNode();
-
-  const classes = {
-    container: css({
-      width: "40%",
-      minHeight: 200,
-    }),
-    outputLabel: css({
-      display: "flex",
-      alignItems: "center",
-      gap: 2,
-    }),
-  };
 
   const handleAction = (event: any, nodeId: string, action: any) => {
     if (!node) return;
@@ -58,6 +54,15 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
       default:
         break;
     }
+  };
+
+  const handleActionCallback: HvFlowNodeOutput["actionsCallback"] = (
+    event,
+    id,
+    action,
+    item
+  ) => {
+    console.log("Action called:", action.id, item);
   };
 
   return (
@@ -89,7 +94,6 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
             label: "View Details",
             icon: <Search />,
           },
-
           {
             id: "favorite",
             label: "Add Favorite",
@@ -116,36 +120,40 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
         ]}
         outputs={[
           {
-            label: (
-              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                Sensors
-                <HvButton size="sm" variant="primarySubtle">
-                  Configure
-                </HvButton>
-              </div>
-            ),
+            id: "sensors",
+            label: "Sensors",
+            actions: [
+              {
+                id: "config",
+                label: "Configure",
+              },
+            ],
+            actionsCallback: handleActionCallback,
+            actionsButtonVariant: "primarySubtle",
+            actionsPlacement: "right",
+            // Actions shared by all outputs in the group
+            defaultOutputsActions: {
+              actions: [
+                {
+                  id: "edit",
+                  label: "Edit",
+                  icon: <Edit />,
+                },
+              ],
+              actionsCallback: handleActionCallback,
+              actionsButtonVariant: "primaryGhost",
+              actionsIconOnly: true,
+            },
             outputs: [
               {
-                label: (
-                  <div className={classes.outputLabel}>
-                    <HvButton icon variant="primaryGhost" aria-label="Edit">
-                      <Edit />
-                    </HvButton>
-                    Sensor Group 1
-                  </div>
-                ),
+                id: "sensor1",
+                label: "Sensor Group 1",
                 isMandatory: true,
                 provides: "sensorData",
               },
               {
-                label: (
-                  <div className={classes.outputLabel}>
-                    <HvButton icon variant="primaryGhost" aria-label="Edit">
-                      <Edit />
-                    </HvButton>
-                    Sensor Group 2
-                  </div>
-                ),
+                id: "sensor2",
+                label: "Sensor Group 2",
                 isMandatory: true,
                 provides: "sensorData",
               },

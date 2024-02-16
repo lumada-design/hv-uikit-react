@@ -127,4 +127,9 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     padding: theme.space.sm,
     borderTop: `1px solid ${theme.colors.atmo3}`,
   },
+  handleLabelContainer: {
+    display: "flex",
+    alignItems: "center",
+    gap: theme.space.xs,
+  },
 });

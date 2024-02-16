@@ -5,9 +5,39 @@ import { HvActionGeneric } from "@hitachivantara/uikit-react-core";
 import {
   HvFlowNodeInput,
   HvFlowNodeInputGroup,
+  HvFlowNodeLabelActions,
   HvFlowNodeOutput,
   HvFlowNodeOutputGroup,
 } from "../types";
+
+export const returnActions = (
+  handleProps:
+    | HvFlowNodeInput
+    | HvFlowNodeInputGroup
+    | HvFlowNodeOutput
+    | HvFlowNodeOutputGroup,
+  defaultActions?: HvFlowNodeLabelActions
+): HvFlowNodeLabelActions | undefined => {
+  const {
+    actions,
+    actionsButtonVariant,
+    actionsCallback,
+    actionsIconOnly,
+    actionsPlacement,
+    maxVisibleActions,
+  } = handleProps;
+
+  return actions
+    ? {
+        actions,
+        actionsButtonVariant,
+        actionsCallback,
+        actionsIconOnly,
+        actionsPlacement,
+        maxVisibleActions,
+      }
+    : defaultActions;
+};
 
 export const isInputGroup = (
   input: HvFlowNodeInput | HvFlowNodeInputGroup

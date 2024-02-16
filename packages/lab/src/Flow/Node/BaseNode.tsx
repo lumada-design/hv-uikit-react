@@ -9,10 +9,12 @@ import { Handle, NodeProps, NodeToolbar, Position } from "reactflow";
 import { uid } from "uid";
 import {
   ExtractNames,
+  HvActionsGeneric,
   HvBaseProps,
   HvButton,
   HvTooltip,
   HvTypography,
+  HvTypographyProps,
   useLabels,
 } from "@hitachivantara/uikit-react-core";
 import { Delete, Duplicate } from "@hitachivantara/uikit-react-icons";
@@ -24,6 +26,7 @@ import {
   HvFlowNodeOutput,
   HvFlowNodeOutputGroup,
   HvFlowNodeInputGroup,
+  HvFlowNodeLabelActions,
 } from "../types";
 import {
   useFlowNode,
@@ -38,6 +41,7 @@ import {
   isInputGroup,
   isOutputGroup,
   renderedIcon,
+  returnActions,
 } from "./utils";
 import { useFlowInstance } from "../hooks";
 
@@ -166,7 +170,55 @@ export const HvFlowBaseNode = ({
     [node, reactFlowInstance]
   );
 
-  const renderOutput = (output: HvFlowNodeOutput) => {
+  const renderLabel = (
+    item:
+      | HvFlowNodeInput
+      | HvFlowNodeInputGroup
+      | HvFlowNodeOutput
+      | HvFlowNodeOutputGroup,
+    defaultActions?: HvFlowNodeLabelActions,
+    typographyProps?: HvTypographyProps
+  ) => {
+    const { label } = item;
+    const result = returnActions(item, defaultActions);
+    const placement = result?.actionsPlacement ?? "left";
+
+    let labelActions: React.ReactNode = null;
+    if (result) {
+      const {
+        actions,
+        actionsButtonVariant,
+        actionsCallback,
+        actionsIconOnly,
+        maxVisibleActions,
+      } = result;
+
+      labelActions = (
+        <HvActionsGeneric
+          actions={actions}
+          maxVisibleActions={maxVisibleActions}
+          actionsCallback={(e, i, a) => actionsCallback?.(e, i, a, item)}
+          iconOnly={actionsIconOnly}
+          variant={actionsButtonVariant}
+        />
+      );
+    }
+
+    return (
+      <div className={classes.handleLabelContainer}>
+        {placement === "left" && labelActions}
+        <HvTypography component="div" {...typographyProps}>
+          {label}
+        </HvTypography>
+        {placement === "right" && labelActions}
+      </div>
+    );
+  };
+
+  const renderOutput = (
+    output: HvFlowNodeOutput,
+    defaultActions?: HvFlowNodeLabelActions
+  ) => {
     const edgeConnected = isConnected(id, "source", output.id!, outputEdges);
 
     return (
@@ -183,12 +235,15 @@ export const HvFlowBaseNode = ({
         {output.isMandatory && !edgeConnected && (
           <div className={classes.mandatory} />
         )}
-        <HvTypography component="div">{output.label}</HvTypography>
+        {renderLabel(output, defaultActions)}
       </div>
     );
   };
 
-  const renderInput = (input: HvFlowNodeInput) => {
+  const renderInput = (
+    input: HvFlowNodeInput,
+    defaultActions?: HvFlowNodeLabelActions
+  ) => {
     const edgeConnected = isConnected(id, "target", input.id!, inputEdges);
 
     return (
@@ -202,7 +257,7 @@ export const HvFlowBaseNode = ({
             [classes.handleConnected]: edgeConnected,
           })}
         />
-        <HvTypography component="div">{input.label}</HvTypography>
+        {renderLabel(input, defaultActions)}
         {input.isMandatory && !edgeConnected && (
           <div className={classes.mandatory} />
         )}
@@ -270,13 +325,13 @@ export const HvFlowBaseNode = ({
               return (
                 <div
                   className={classes.inputGroupContainer}
-                  key={`group${idx}`}
+                  key={`group${input.id ?? idx}`}
                 >
-                  <HvTypography component="div" variant="label">
-                    {input.label}
-                  </HvTypography>
+                  {renderLabel(input, undefined, {
+                    variant: "label",
+                  })}
                   {(input as HvFlowNodeInputGroup).inputs.map((inp) =>
-                    renderInput(inp)
+                    renderInput(inp, input.defaultInputsActions)
                   )}
                 </div>
               );
@@ -291,20 +346,18 @@ export const HvFlowBaseNode = ({
           </div>
           <div className={classes.outputsContainer}>
             {outputs?.map((output, idx) => {
-              if (!isOutputGroup(output)) {
-                return renderOutput(output);
-              }
+              if (!isOutputGroup(output)) return renderOutput(output);
 
               return (
                 <div
                   className={classes.outputGroupContainer}
-                  key={`group${idx}`}
+                  key={`group${output.id ?? idx}`}
                 >
-                  <HvTypography component="div" variant="label">
-                    {output.label}
-                  </HvTypography>
+                  {renderLabel(output, undefined, {
+                    variant: "label",
+                  })}
                   {(output as HvFlowNodeOutputGroup).outputs.map((out) => {
-                    return renderOutput(out);
+                    return renderOutput(out, output.defaultOutputsActions);
                   })}
                 </div>
               );

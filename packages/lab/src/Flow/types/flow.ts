@@ -1,7 +1,8 @@
-import { ComponentClass, FC } from "react";
+import React, { ComponentClass, FC } from "react";
 import { Node, NodeProps, ReactFlowInstance } from "reactflow";
 import {
   HvActionGeneric,
+  HvActionsGenericProps,
   HvSliderProps,
 } from "@hitachivantara/uikit-react-core";
 import { HvColorAny } from "@hitachivantara/uikit-styles";
@@ -65,7 +66,31 @@ export interface HvFlowNodeMeta {
   outputs?: (HvFlowNodeOutput | HvFlowNodeOutputGroup)[];
 }
 
-export interface HvFlowNodeInput {
+export interface HvFlowNodeLabelActions
+  extends Pick<
+    Partial<HvActionsGenericProps>,
+    "actions" | "maxVisibleActions"
+  > {
+  /** Where to place the actions relatively to the label. @default left */
+  actionsPlacement?: "left" | "right";
+  /** The button variant for all actions. @default secondaryGhost */
+  actionsButtonVariant?: HvActionsGenericProps["variant"];
+  /** Whether the actions should be all icon buttons when visible. */
+  actionsIconOnly?: boolean;
+  /** The callback called when an action is triggered. */
+  actionsCallback?: (
+    event: React.SyntheticEvent,
+    id: string,
+    action: HvActionGeneric,
+    item:
+      | HvFlowNodeInput
+      | HvFlowNodeInputGroup
+      | HvFlowNodeOutput
+      | HvFlowNodeOutputGroup
+  ) => void;
+}
+
+export interface HvFlowNodeInput extends HvFlowNodeLabelActions {
   id?: string;
   label: React.ReactNode;
   isMandatory?: boolean;
@@ -73,12 +98,14 @@ export interface HvFlowNodeInput {
   maxConnections?: number;
 }
 
-export interface HvFlowNodeInputGroup {
+export interface HvFlowNodeInputGroup extends HvFlowNodeLabelActions {
+  id?: string;
   label: React.ReactNode;
   inputs: HvFlowNodeInput[];
+  defaultInputsActions?: HvFlowNodeLabelActions;
 }
 
-export interface HvFlowNodeOutput {
+export interface HvFlowNodeOutput extends HvFlowNodeLabelActions {
   id?: string;
   label: React.ReactNode;
   isMandatory?: boolean;
@@ -86,9 +113,11 @@ export interface HvFlowNodeOutput {
   maxConnections?: number;
 }
 
-export interface HvFlowNodeOutputGroup {
+export interface HvFlowNodeOutputGroup extends HvFlowNodeLabelActions {
+  id?: string;
   label: React.ReactNode;
   outputs: HvFlowNodeOutput[];
+  defaultOutputsActions?: HvFlowNodeLabelActions;
 }
 
 export interface HvFlowNodeSharedParam {
@@ -117,7 +146,7 @@ export type HvFlowNodeParam =
   | HvFlowNodeTextParam
   | HvFlowNodeSliderParam;
 
-export interface HvFlowNodeAction extends HvActionGeneric {
+export interface HvFlowNodeAction extends Omit<HvActionGeneric, "iconOnly"> {
   callback?: (node: Node) => void;
 }
 
