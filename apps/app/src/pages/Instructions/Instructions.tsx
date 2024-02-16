@@ -42,7 +42,7 @@ const Entry = ({
   </div>
 );
 
-const Instructions = () => {
+export const Component = () => {
   const { setTutorialOpen } = useGeneratorContext();
 
   return (
@@ -140,5 +140,3 @@ const Instructions = () => {
     </HvContainer>
   );
 };
-
-export default Instructions;

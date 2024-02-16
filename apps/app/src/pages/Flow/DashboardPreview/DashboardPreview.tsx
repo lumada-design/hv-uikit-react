@@ -113,7 +113,7 @@ const DashboardPreview = () => {
   );
 };
 
-export default () => (
+export const Component = () => (
   <Suspense fallback={<HvLoading />}>
     <HvContainer component="main" maxWidth="xl" className="w-full">
       <DashboardPreview />

@@ -316,4 +316,4 @@ const Components = () => {
   );
 };
 
-export default Components;
+export { Components as Component };

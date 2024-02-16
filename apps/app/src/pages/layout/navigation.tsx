@@ -56,7 +56,7 @@ const Navigation = () => {
 };
 
 /** Navigation + Theme Generator layout & providers */
-export default () => (
+export const Component = () => (
   <div className="flex flex-row rounded-circle">
     <GeneratorProvider>
       <div className="flex-1 overflow-y-auto">
