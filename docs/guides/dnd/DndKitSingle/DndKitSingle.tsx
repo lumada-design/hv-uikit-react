@@ -33,6 +33,7 @@ import { sampleItems } from "./sampleData";
 import { Item } from "../types";
 import classes from "./styles";
 
+// #region Fixes a problem we have while dragging items in storybook docs mode
 type RestrictToSampleModifier = Modifier extends (...args: infer A) => infer R
   ? (rootId: string, ...args: A) => R
   : unknown;
@@ -51,6 +52,7 @@ export const restrictToSample: RestrictToSampleModifier = (
     y: docsMode && rect?.y ? -rect.y + transform.y : transform.y,
   };
 };
+// #endregion
 
 interface ItemProps extends HTMLAttributes<HTMLLIElement> {
   item: Item;
@@ -153,44 +155,40 @@ export const DndKitSingle = () => {
   };
 
   return (
-    <div className={classes.root}>
-      <DndContext
-        sensors={sensors}
-        onDragStart={onDragStart}
-        onDragEnd={onDragEnd}
-        onDragOver={onDragOver}
-      >
-        <div className={classes.columnsContainer}>
-          <div className={classes.column}>
-            <div className={classes.columnHeader}>
-              <HvTypography variant="title4">To Do</HvTypography>
-            </div>
-            <HvListContainer selectable>
-              <SortableContext items={itemsIds}>
-                {items &&
-                  items?.map((item) => <ItemCard key={item.id} item={item} />)}
-              </SortableContext>
-            </HvListContainer>
-          </div>
+    <DndContext
+      sensors={sensors}
+      onDragStart={onDragStart}
+      onDragEnd={onDragEnd}
+      onDragOver={onDragOver}
+    >
+      <div className={classes.column}>
+        <div className={classes.columnHeader}>
+          <HvTypography variant="title4">To Do</HvTypography>
         </div>
+        <HvListContainer selectable>
+          <SortableContext items={itemsIds}>
+            {items &&
+              items?.map((item) => <ItemCard key={item.id} item={item} />)}
+          </SortableContext>
+        </HvListContainer>
+      </div>
 
-        <DragOverlay
-          modifiers={[
-            restrictToWindowEdges,
-            (args) => restrictToSample(rootId || "", args),
-          ]}
-        >
-          {activeItem && (
-            <ItemCard
-              item={activeItem}
-              className={css({
-                border: `2px solid ${theme.colors.primary}`,
-                backgroundColor: theme.colors.atmo1,
-              })}
-            />
-          )}
-        </DragOverlay>
-      </DndContext>
-    </div>
+      <DragOverlay
+        modifiers={[
+          restrictToWindowEdges,
+          (args) => restrictToSample(rootId || "", args),
+        ]}
+      >
+        {activeItem && (
+          <ItemCard
+            item={activeItem}
+            className={css({
+              border: `2px solid ${theme.colors.primary}`,
+              backgroundColor: theme.colors.atmo1,
+            })}
+          />
+        )}
+      </DragOverlay>
+    </DndContext>
   );
 };

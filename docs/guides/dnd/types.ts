@@ -7,7 +7,7 @@ export type Column = {
 
 export type Item = {
   id: string;
-  columnId: Column["id"];
+  columnId?: Column["id"];
   title?: string;
   icon?: React.ReactNode;
 };

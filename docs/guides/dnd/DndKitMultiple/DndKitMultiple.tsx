@@ -29,6 +29,7 @@ import { sampleColumns, sampleItems } from "./sampleData";
 import { Column, Item } from "../types";
 import classes from "./styles";
 
+// #region Fixes a problem we have while dragging items in storybook docs mode
 type RestrictToSampleModifier = Modifier extends (...args: infer A) => infer R
   ? (rootId: string, ...args: A) => R
   : unknown;
@@ -47,6 +48,7 @@ export const restrictToSample: RestrictToSampleModifier = (
     y: docsMode && rect?.y ? -rect.y + transform.y : transform.y,
   };
 };
+// #endregion
 
 interface ColumnContainerProps {
   column: Column;

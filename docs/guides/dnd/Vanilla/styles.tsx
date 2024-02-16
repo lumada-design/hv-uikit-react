@@ -2,15 +2,8 @@ import { css } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-react-core";
 
 const styles = {
-  root: css({}),
-  columnsContainer: css({
-    display: "flex",
-    gap: theme.space.sm,
-  }),
   column: css({
-    flex: 1,
-    minWidth: 100,
-    maxWidth: 250,
+    width: 250,
     padding: theme.space.md,
     borderRadius: theme.radii.round,
   }),
