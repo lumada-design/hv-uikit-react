@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.50.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.49.0...@hitachivantara/uikit-react-core@5.50.0) (2024-02-16)
+
+### Features
+
+- **ScrollTo:** use fulls URLs, allow replace and render anchor links ([#4030](https://github.com/lumada-design/hv-uikit-react/issues/4030)) ([42299a4](https://github.com/lumada-design/hv-uikit-react/commit/42299a46c590550009d5d94fbc0f3340b11c0a5f))
+
 # [5.49.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.48.1...@hitachivantara/uikit-react-core@5.49.0) (2024-02-10)
 
 ### Bug Fixes
