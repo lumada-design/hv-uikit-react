@@ -57,7 +57,7 @@ export const PropsTableSection = () => {
             label: "Action 3",
           },
         ]}
-        actionsCallback={(_, __, action) => {
+        onAction={(event, action) => {
           console.log(action.label);
         }}
         maxVisibleActions={1}

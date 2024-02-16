@@ -1,8 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import { Alert } from "@hitachivantara/uikit-react-icons";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+import userEvent from "@testing-library/user-event";
 
 import { HvSnackbar, HvSnackbarProps } from "./Snackbar";
+
+const snackbarLabel = "My snackbar";
 
 const setup = (props?: Partial<HvSnackbarProps>) =>
   render(
@@ -10,7 +13,8 @@ const setup = (props?: Partial<HvSnackbarProps>) =>
       open
       showIcon
       variant="success"
-      label="My snackbar"
+      label={snackbarLabel}
+      action={{ id: "action", label: "Action" }}
       {...props}
     />
   );
@@ -18,25 +22,40 @@ const setup = (props?: Partial<HvSnackbarProps>) =>
 describe("Snackbar", () => {
   it("renders the label text", () => {
     setup();
-    expect(screen.getByRole("alert")).toBeInTheDocument();
-    expect(screen.getByText("My snackbar")).toBeInTheDocument();
+    const snackbar = screen.getByRole("alert");
+    expect(snackbar).toBeInTheDocument();
+    expect(snackbar).toHaveTextContent(snackbarLabel);
   });
 
   it("doesn't render when closed", () => {
     setup({ open: false });
-    expect(screen.queryByRole("alert")).toBeNull();
-    expect(screen.queryByText("My snackbar")).toBeNull();
+    const snackbar = screen.queryByRole("alert");
+    expect(snackbar).toBeNull();
   });
 
   it("renders the label custom content", () => {
     setup({ label: <div>Custom content</div> });
-    expect(screen.getByText("Custom content")).toBeInTheDocument();
+    const snackbar = screen.getByRole("alert");
+    expect(snackbar).toHaveTextContent("Custom content");
   });
 
   it("renders the custom icon icon", () => {
     setup({ customIcon: <Alert data-testid="iconId" /> });
+    const icon = screen.getByTestId("iconId");
+    expect(icon).toBeInTheDocument();
+  });
 
-    expect(screen.getByText("My snackbar")).toBeInTheDocument();
-    expect(screen.getByTestId("iconId")).toBeInTheDocument();
+  // TODO - only test onAction is v6
+  it("renders action and triggers onAction and actionCallback when clicked", async () => {
+    const user = userEvent.setup();
+    const callbackSpy = vi.fn();
+
+    setup({ onAction: callbackSpy, actionCallback: callbackSpy });
+
+    const action = screen.getByRole("button", { name: "Action" });
+    await user.click(action);
+
+    expect(action).toBeInTheDocument();
+    expect(callbackSpy).toHaveBeenCalledTimes(2);
   });
 });

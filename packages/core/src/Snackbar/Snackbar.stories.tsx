@@ -39,6 +39,7 @@ export const Main: StoryObj<HvSnackbarProps> = {
     customIcon: { control: { disable: true } },
     action: { control: { disable: true } },
     actionCallback: { control: { disable: true } },
+    onAction: { control: { disable: true } },
     snackbarContentProps: { control: { disable: true } },
   },
 };
@@ -98,8 +99,8 @@ export const Variants: StoryObj<HvSnackbarProps> = {
           label="This is a snackbar with a custom action."
           customIcon={<Info color="base_dark" />}
           action={{ id: "post", label: "Action", disabled: false }}
-          actionCallback={(evt, id, action) => {
-            alert(`clicked ${id} with ${action.label}`);
+          onAction={(evt, action) => {
+            alert(`Clicked ${action}`);
           }}
         />
         <HvSnackbar

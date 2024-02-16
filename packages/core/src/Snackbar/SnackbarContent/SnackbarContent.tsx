@@ -1,5 +1,4 @@
 import { forwardRef, isValidElement } from "react";
-
 import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
@@ -7,12 +6,14 @@ import SnackbarContent, {
 import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import { iconVariant } from "../../utils/iconVariant";
-import { HvActionsGeneric, HvActionGeneric } from "../../ActionsGeneric";
+import {
+  HvActionsGeneric,
+  HvActionGeneric,
+  HvActionsGenericProps,
+} from "../../ActionsGeneric";
 import { HvButtonVariant } from "../../Button";
 import { useTheme } from "../../hooks/useTheme";
-
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
 import { staticClasses, useClasses } from "./SnackbarContent.styles";
 import { HvSnackbarVariant } from "../types";
 
@@ -32,12 +33,14 @@ export interface HvSnackbarContentProps
   customIcon?: React.ReactNode;
   /** Action to display. */
   action?: React.ReactNode | HvActionGeneric;
-  /** The callback function ran when an action is triggered, receiving `action` as param */
-  actionCallback?: (
-    event: React.SyntheticEvent,
-    id: string,
-    action: HvActionGeneric
-  ) => void;
+  /**
+   * The callback function called when an action is triggered, receiving `action` as parameter.
+   *
+   * @deprecated Use `onAction` instead.
+   * */
+  actionCallback?: HvActionsGenericProps["actionsCallback"];
+  /** The callback function called when an action is triggered, receiving `action` as parameter. */
+  onAction?: HvActionsGenericProps["onAction"];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSnackbarContentClasses;
 }
@@ -55,7 +58,8 @@ export const HvSnackbarContent = forwardRef<
     showIcon,
     customIcon,
     action,
-    actionCallback,
+    actionCallback, // TODO - remove in v6
+    onAction,
     ...others
   } = useDefaultProps("HvSnackbarContent", props);
 
@@ -87,6 +91,7 @@ export const HvSnackbarContent = forwardRef<
                 }
                 actions={innerAction}
                 actionsCallback={actionCallback}
+                onAction={onAction}
               />
             </div>
           )}

@@ -1,13 +1,11 @@
 import { forwardRef } from "react";
-
 import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
 
 import { iconVariant } from "../../utils/iconVariant";
 import { ExtractNames } from "../../utils/classes";
-import { HvActionGeneric } from "../../ActionsGeneric";
-
+import { HvActionsGenericProps } from "../../ActionsGeneric";
 import { HvBannerActionPosition, HvBannerVariant } from "../types";
 import { HvActionContainer, HvActionContainerProps } from "./ActionContainer";
 import { HvMessageContainer } from "./MessageContainer";
@@ -27,16 +25,18 @@ export interface HvBannerContentProps
   showIcon?: boolean;
   /** Custom icon to replace the variant default. */
   customIcon?: React.ReactNode;
-  /** onClose function. */
+  /** Function called when clicking on the close button. */
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Actions to display on the right side. */
-  actions?: React.ReactNode | HvActionGeneric[];
-  /**  The callback function ran when an action is triggered, receiving `action` as param */
-  actionsCallback?: (
-    event: React.SyntheticEvent,
-    id: string,
-    action: HvActionGeneric
-  ) => void;
+  actions?: HvActionsGenericProps["actions"];
+  /**
+   * The callback function called when an action is triggered, receiving `action` as parameter.
+   *
+   * @deprecated Use `onAction` instead.
+   * */
+  actionsCallback?: HvActionsGenericProps["actionsCallback"];
+  /** The callback function called when an action is triggered, receiving `action` as parameter. */
+  onAction?: HvActionsGenericProps["onAction"];
   /** The position property of the header. */
   actionsPosition?: HvBannerActionPosition;
   /** The props to pass down to the Action Container. */
@@ -55,7 +55,8 @@ export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
       variant = "default",
       onClose,
       actions,
-      actionsCallback,
+      actionsCallback, // TODO - remove in v6
+      onAction,
       actionsPosition = "auto",
       content,
       actionProps,
@@ -87,8 +88,9 @@ export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
               id={id}
               icon={icon}
               {...(effectiveActionsPosition === "inline" && {
-                actionsOnMessage: actions,
+                actions,
                 actionsOnMessageCallback: actionsCallback,
+                onAction,
               })}
               message={content}
             />
@@ -100,6 +102,7 @@ export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
               {...(effectiveActionsPosition === "bottom-right" && {
                 action: actions,
                 actionCallback: actionsCallback,
+                onAction,
               })}
               {...actionProps}
             />

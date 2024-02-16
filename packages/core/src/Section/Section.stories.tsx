@@ -110,7 +110,7 @@ export const WithActions: StoryObj<HvSectionProps> = {
               label: "Action 3",
             },
           ]}
-          actionsCallback={(_, __, action) => {
+          onAction={(event, action) => {
             console.log(action.label);
           }}
           maxVisibleActions={1}

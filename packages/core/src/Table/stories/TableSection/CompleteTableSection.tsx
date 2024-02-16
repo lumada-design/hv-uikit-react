@@ -54,7 +54,7 @@ export const CompleteTableSection = () => {
   );
 
   const handleAction = useCallback(
-    (evt, id, action) => {
+    (evt, action) => {
       const selected = selectedFlatRows.map((el) => el.original);
 
       switch (action.id) {
@@ -105,7 +105,7 @@ export const CompleteTableSection = () => {
       <HvBulkActions
         {...getHvBulkActionsProps?.()}
         maxVisibleActions={1}
-        actionsCallback={handleAction}
+        onAction={handleAction}
         actions={[
           { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
           { id: "delete", label: "Delete", icon: <Delete /> },

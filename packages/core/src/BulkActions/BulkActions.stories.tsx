@@ -142,11 +142,7 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
       setData(newData);
     };
 
-    const handleAction: HvBulkActionsProps["actionsCallback"] = (
-      _,
-      __,
-      action
-    ) => {
+    const handleAction: HvBulkActionsProps["onAction"] = (event, action) => {
       const selected = data.filter((el) => el.checked);
 
       switch (action.id) {
@@ -176,7 +172,7 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
             numSelected={data.filter((el) => el.checked).length}
             onSelectAll={handleSelectAll}
             actions={actions}
-            actionsCallback={handleAction}
+            onAction={handleAction}
             maxVisibleActions={2}
           />
           <SampleComponent data={data} onChange={handleChange} />
@@ -235,11 +231,7 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
       setData(newData);
     };
 
-    const handleAction: HvBulkActionsProps["actionsCallback"] = (
-      _,
-      __,
-      action
-    ) => {
+    const handleAction: HvBulkActionsProps["onAction"] = (event, action) => {
       const selected = data.filter((el) => el.checked);
 
       switch (action.id) {
@@ -271,7 +263,7 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
           onSelectAll={handleSelectAll}
           onSelectAllPages={() => handleSelectAllPages()}
           actions={actions}
-          actionsCallback={handleAction}
+          onAction={handleAction}
           maxVisibleActions={2}
           showSelectAllPages
         />

@@ -6,7 +6,6 @@ import {
   HvButton,
   HvBulkActions,
   HvPagination,
-  HvActionGeneric,
   HvControls,
   HvLeftControl,
   HvRightControl,
@@ -18,6 +17,7 @@ import {
   useHvPagination,
   useHvFilters,
   HvLeftControlProps,
+  HvActionsGenericProps,
 } from "@hitachivantara/uikit-react-core";
 
 import { LoadingContainer } from "../utils";
@@ -98,11 +98,7 @@ const ListView = () => {
 
   const bulkActionProps = instance.getHvBulkActionsProps?.();
 
-  const handleAction = (
-    event: React.SyntheticEvent,
-    id: string,
-    action: HvActionGeneric
-  ) => {
+  const handleAction: HvActionsGenericProps["onAction"] = (event, action) => {
     if (action.id === "refresh") {
       instance.gotoPage?.(0);
       setKpiSelection(undefined);
@@ -216,7 +212,7 @@ const ListView = () => {
         onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
         actions={actions}
         actionsDisabled={false}
-        actionsCallback={handleAction}
+        onAction={handleAction}
         checkboxProps={{
           "aria-controls": idsToControl.list,
         }}

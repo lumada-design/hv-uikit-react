@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
+import userEvent from "@testing-library/user-event";
 
 import { HvBulkActions, HvBulkActionsProps } from "./BulkActions";
 
@@ -30,88 +31,82 @@ const Sample = (props: Partial<HvBulkActionsProps>) => {
 };
 
 describe("BulkActions", () => {
-  describe("Without actions", () => {
-    it("should render select all component correctly", async () => {
-      render(<Sample actions={undefined} />);
+  it("should render select all component correctly", async () => {
+    const user = userEvent.setup();
+    render(<Sample />);
 
-      const checkbox = screen.getByRole("checkbox");
+    const checkbox = screen.getByRole("checkbox");
 
-      expect(checkbox).toBeInTheDocument();
-      expect(screen.getByLabelText("All (8)")).toBeInTheDocument();
+    expect(checkbox).toBeInTheDocument();
+    expect(checkbox).toHaveAccessibleName("All (8)");
 
-      // Select all
-      fireEvent.click(checkbox);
+    // Select all
+    await user.click(checkbox);
 
-      expect(checkbox).toBeChecked();
-      expect(screen.getByLabelText("8 / 8")).toBeInTheDocument();
-    });
-
-    it("should call select all correctly", async () => {
-      const onSelectAllMock = vi.fn();
-
-      render(
-        <HvBulkActions
-          numTotal={5}
-          numSelected={0}
-          onSelectAll={onSelectAllMock}
-        />
-      );
-
-      const checkboxes = screen.getAllByRole("checkbox");
-
-      const selectAll = checkboxes[0];
-
-      // Select all
-      fireEvent.click(selectAll);
-
-      expect(onSelectAllMock).toBeCalledTimes(1);
-    });
-
-    it("should render the custom label", () => {
-      render(
-        <HvBulkActions
-          numTotal={5}
-          numSelected={0}
-          selectAllLabel="MockLabel"
-        />
-      );
-
-      expect(screen.getByLabelText("MockLabel (5)")).toBeInTheDocument();
-    });
+    expect(checkbox).toBeChecked();
+    expect(checkbox).toHaveAccessibleName("8 / 8");
   });
 
-  describe("With actions", () => {
-    it("should render the actions correctly", async () => {
-      render(<Sample />);
+  it("should call select all correctly", async () => {
+    const user = userEvent.setup();
+    const callbackSpy = vi.fn();
 
-      const buttons = screen.getAllByRole("button");
+    render(<Sample onSelectAll={callbackSpy} />);
 
-      expect(buttons.length).toBe(3);
+    const checkbox = screen.getByRole("checkbox");
 
-      const button1 = buttons[0];
-      const button2 = buttons[1];
-      const button3 = buttons[2];
+    // Select all
+    await user.click(checkbox);
 
-      expect(button1).toBeDisabled();
-      expect(button2).toBeDisabled();
-      expect(button3).toBeDisabled();
+    expect(callbackSpy).toHaveBeenCalledOnce();
+  });
 
-      const checkbox = screen.getByRole("checkbox");
+  it("should render the custom label for the select all checkbox", () => {
+    render(<Sample selectAllLabel="MockLabel" />);
 
-      // Select all
-      fireEvent.click(checkbox);
+    const checkbox = screen.getByRole("checkbox", { name: "MockLabel (8)" });
 
-      expect(button1).toBeEnabled();
-      expect(button2).toBeEnabled();
-      expect(button3).toBeEnabled();
+    expect(checkbox).toBeInTheDocument();
+  });
 
-      // Open actions
-      fireEvent.click(button3);
-      const menu = screen.getByRole("menu");
-      const items = screen.getAllByRole("menuitem");
+  // TODO - only test onAction in v6
+  it("should render the actions correctly and call onAction and actionsCallback when clicked", async () => {
+    const user = userEvent.setup();
+    const callbackSpy = vi.fn();
 
-      expect(menu).toBeInTheDocument();
-      expect(items.length).toBe(2);
-    });
+    render(<Sample onAction={callbackSpy} actionsCallback={callbackSpy} />);
+
+    const buttons = screen.getAllByRole("button");
+    const button1 = buttons[0];
+    const button2 = buttons[1];
+    const button3 = buttons[2];
+
+    expect(buttons).toHaveLength(3);
+    expect(button1).toBeDisabled();
+    expect(button2).toBeDisabled();
+    expect(button3).toBeDisabled();
+
+    const checkbox = screen.getByRole("checkbox");
+
+    // Select all
+    await user.click(checkbox);
+
+    expect(button1).toBeEnabled();
+    expect(button2).toBeEnabled();
+    expect(button3).toBeEnabled();
+
+    // Click action
+    await user.click(button1);
+
+    expect(callbackSpy).toHaveBeenCalledTimes(2);
+
+    // Open actions
+    await user.click(button3);
+
+    const menu = screen.getByRole("menu");
+    const items = screen.getAllByRole("menuitem");
+
+    expect(menu).toBeInTheDocument();
+    expect(items).toHaveLength(2);
   });
 });

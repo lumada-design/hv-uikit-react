@@ -4,14 +4,9 @@ import { useTheme } from "../hooks/useTheme";
 import { HvBaseProps } from "../types/generic";
 import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
 import { HvCheckBox, HvCheckBoxProps } from "../CheckBox";
-import {
-  HvActionGeneric,
-  HvActionsGeneric,
-  HvActionsGenericProps,
-} from "../ActionsGeneric";
+import { HvActionsGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./BulkActions.styles";
 
 export { staticClasses as bulkActionsClasses };
@@ -19,67 +14,41 @@ export { staticClasses as bulkActionsClasses };
 export type HvBulkActionsClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBulkActionsProps extends HvBaseProps {
-  /**
-   * Custom label for select all checkbox
-   */
+  /** Custom label for select all checkbox */
   selectAllLabel?: React.ReactNode;
-  /**
-   * Custom label for select all checkbox conjunction
-   */
+  /** Custom label for select all checkbox conjunction */
   selectAllConjunctionLabel?: string;
-  /**
-   * Custom label for select all pages button
-   */
+  /** Custom label for select all pages button */
   selectAllPagesLabel?: React.ReactNode;
-  /**
-   * Whether select all pages element should be visible
-   */
+  /** Whether select all pages element should be visible */
   showSelectAllPages?: boolean;
-  /**
-   * The total number of elements
-   */
+  /** The total number of elements */
   numTotal?: number;
-  /**
-   * The number of elements currently selected
-   */
+  /** The number of elements currently selected */
   numSelected?: number;
-  /**
-   * Function called when the "select all" Checkbox is toggled.
-   */
+  /** Function called when the "select all" Checkbox is toggled. */
   onSelectAll?: HvCheckBoxProps["onChange"];
-  /**
-   * Function called when the "select all pages" button is clicked toggled.
-   */
+  /** Function called when the "select all pages" button is clicked toggled. */
   onSelectAllPages?: HvButtonProps["onClick"];
-  /**
-   * Whether the bulk actions should use the semantic styles when there are selected elements.
-   */
+  /** Whether the bulk actions should use the semantic styles when there are selected elements. */
   semantic?: boolean;
-  /**
-   * The renderable content inside the right actions slot,
-   * or an Array of actions `{ id, label, icon, disabled, ... }`
-   */
-  actions?: React.ReactNode | HvActionGeneric[];
-  /**
-   *  Whether actions should be all disabled
-   */
+  /** The renderable content inside the right actions slot, or an array of actions `{ id, label, icon, disabled, ... }` */
+  actions?: HvActionsGenericProps["actions"];
+  /** Whether actions should be all disabled */
   actionsDisabled?: boolean;
   /**
-   *  The callback function ran when an action is triggered, receiving `action` as param
-   */
+   * The callback function called when an action is triggered, receiving `action` as parameter.
+   *
+   * @deprecated Use `onAction` instead.
+   * */
   actionsCallback?: HvActionsGenericProps["actionsCallback"];
-  /**
-   *  The number of maximum visible actions before they're collapsed into a `DropDownMenu`.
-   */
+  /** The callback function called when an action is triggered, receiving `action` as parameter. */
+  onAction?: HvActionsGenericProps["onAction"];
+  /** The number of maximum visible actions before they're collapsed into a `DropDownMenu`. */
   maxVisibleActions?: number;
-  /**
-   * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
-   * HvCheckbox API.
-   */
+  /** Properties to be passed onto the checkbox component, the values of the object are equivalent to the HvCheckbox API. */
   checkboxProps?: HvCheckBoxProps;
-  /**
-   * A Jss Object used to override or extend the styles applied.
-   */
+  /** A Jss Object used to override or extend the styles applied. */
   classes?: HvBulkActionsClasses;
 }
 
@@ -103,7 +72,8 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
     selectAllConjunctionLabel = "/",
     showSelectAllPages = false,
     semantic = true,
-    actionsCallback,
+    actionsCallback, // TODO - remove in v6
+    onAction,
     onSelectAll,
     onSelectAllPages,
     ...others
@@ -187,6 +157,7 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
         actions={actions}
         disabled={actionsDisabled ?? numSelected === 0}
         actionsCallback={actionsCallback}
+        onAction={onAction}
         maxVisibleActions={maxVisibleActions}
       />
     </div>

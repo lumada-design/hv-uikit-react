@@ -50,7 +50,7 @@ const SnackbarButtons = () => {
             persist: true,
             snackbarContentProps: {
               action: { id: "action", label: "Dismiss" },
-              actionCallback: (evt, id, action) => {
+              onAction: (evt, action) => {
                 console.log("Clicked action", action);
                 closeSnackbar(snackbarId);
               },
