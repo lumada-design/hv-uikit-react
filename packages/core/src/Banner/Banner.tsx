@@ -5,7 +5,7 @@ import Snackbar, {
   SnackbarOrigin,
 } from "@mui/material/Snackbar";
 
-import { HvActionGeneric } from "../ActionsGeneric";
+import { HvActionsGenericProps } from "../ActionsGeneric";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -24,7 +24,11 @@ export interface HvBannerProps
   extends Omit<MuiSnackbarProps, "anchorOrigin" | "classes" | "onClose"> {
   /** If true, the snackbar is open. */
   open: boolean;
-  /** Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway. */
+  /**
+   * Callback fired when the component requests to be closed.
+   * Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop.
+   * The reason parameter can optionally be used to control the response to onClose, for example ignoring click away.
+   * */
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** The message to display. */
   label?: string;
@@ -37,13 +41,15 @@ export interface HvBannerProps
   /** Controls if the associated icon to the variant should be shown. */
   showIcon?: boolean;
   /** Actions to display on the right side. */
-  actions?: React.ReactNode | HvActionGeneric[];
-  /** The callback function ran when an action is triggered, receiving `action` as param */
-  actionsCallback?: (
-    event: React.SyntheticEvent,
-    id: string,
-    action: HvActionGeneric
-  ) => void;
+  actions?: HvActionsGenericProps["actions"];
+  /**
+   * The callback function called when an action is triggered, receiving `action` as parameter.
+   *
+   * @deprecated Use `onAction` instead.
+   * */
+  actionsCallback?: HvActionsGenericProps["actionsCallback"];
+  /** The callback function called when an action is triggered, receiving `action` as parameter. */
+  onAction?: HvActionsGenericProps["onAction"];
   /** The position property of the header. */
   actionsPosition?: HvBannerActionPosition;
   /** How much the transition animation last in milliseconds, if 0 no animation is played. */
@@ -81,7 +87,8 @@ export const HvBanner = (props: HvBannerProps) => {
     showIcon = false,
     customIcon,
     actions,
-    actionsCallback,
+    actionsCallback, // TODO - remove in v6
+    onAction,
     actionsPosition = "auto",
     label,
     offset = 60,
@@ -132,6 +139,7 @@ export const HvBanner = (props: HvBannerProps) => {
         showIcon={showIcon}
         actions={actions}
         actionsCallback={actionsCallback}
+        onAction={onAction}
         actionsPosition={actionsPosition}
         onClose={onClose}
         {...bannerContentProps}

@@ -9,7 +9,7 @@ import capitalize from "lodash/capitalize";
 
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
-import { HvActionGeneric } from "../ActionsGeneric";
+import { HvActionGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { HvSnackbarContentProps, HvSnackbarContent } from "./SnackbarContent";
 import { staticClasses, useClasses } from "./Snackbar.styles";
 import { HvSnackbarVariant } from "./types";
@@ -22,7 +22,11 @@ export interface HvSnackbarProps
   extends Omit<MuiSnackbarProps, "action" | "classes" | "children"> {
   /** If true, Snackbar is open. */
   open?: boolean;
-  /** Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway. */
+  /**
+   * Callback fired when the component requests to be closed.
+   * Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop.
+   * The reason parameter can optionally be used to control the response to onClose, for example ignoring click away.
+   * */
   onClose?:
     | ((
         event: Event | SyntheticEvent<any, Event>,
@@ -31,7 +35,9 @@ export interface HvSnackbarProps
     | undefined;
   /** The message to display. */
   label?: React.ReactNode;
-  /** The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left","center","right. It defines where the snackbar will end his animation */
+  /**
+   * The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left", "center", "right".
+   * It defines where the snackbar will end his animation */
   anchorOrigin?: SnackbarOrigin;
   /** The number of milliseconds to wait before automatically calling the onClose function. onClose should then set the state of the open prop to hide the Snackbar */
   autoHideDuration?: number;
@@ -43,12 +49,14 @@ export interface HvSnackbarProps
   showIcon?: boolean;
   /** Action to display. */
   action?: React.ReactNode | HvActionGeneric;
-  /** The callback function ran when an action is triggered, receiving `action` as param */
-  actionCallback?: (
-    event: React.SyntheticEvent,
-    id: string,
-    action: HvActionGeneric
-  ) => void;
+  /**
+   * The callback function called when an action is triggered, receiving `action` as parameter.
+   *
+   * @deprecated Use `onAction` instead.
+   * */
+  actionCallback?: HvActionsGenericProps["actionsCallback"];
+  /** The callback function called when an action is triggered, receiving `action` as parameter. */
+  onAction?: HvActionsGenericProps["onAction"];
   /** Duration of transition in milliseconds. */
   transitionDuration?: number;
   /** Direction of slide transition. */
@@ -86,7 +94,8 @@ export const HvSnackbar = ({
   showIcon = false,
   customIcon = null,
   action = null,
-  actionCallback,
+  actionCallback, // TODO - remove in v6
+  onAction,
   transitionDuration = 300,
   transitionDirection = "left",
   container,
@@ -142,6 +151,7 @@ export const HvSnackbar = ({
         showIcon={showIcon}
         action={action}
         actionCallback={actionCallback}
+        onAction={onAction}
         {...snackbarContentProps}
       />
     </MuiSnackbar>

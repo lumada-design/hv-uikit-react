@@ -163,7 +163,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
           actions={actions}
           disabled={actions.every((a) => a.disabled)}
           maxVisibleActions={0}
-          actionsCallback={(evt, id, action) => onAction?.(evt, action, row)}
+          onAction={(evt, action) => onAction?.(evt, action, row)}
         />
       ),
     };
@@ -280,7 +280,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
           actions={bulkActions}
           classes={{ selectAllPages: classes.selectAllPages }}
           selectAllPagesLabel={labels.selectAllPages}
-          actionsCallback={(evt, id, action) =>
+          onAction={(evt, action) =>
             onBulkAction?.(evt, action, selectedFlatRows)
           }
           {...getHvBulkActionsProps?.()}

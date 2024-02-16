@@ -17,6 +17,7 @@ import {
   HvFlowInstance,
   HvFlowNode,
   HvFlowNodeFC,
+  HvFlowNodeProps,
   HvFlowNodeTypeMeta,
   useFlowNode,
 } from "@hitachivantara/uikit-react-lab";
@@ -29,24 +30,24 @@ interface AssetData {
   asset?: string;
 }
 
+const classes = {
+  container: css({
+    width: "40%",
+    minHeight: 200,
+  }),
+  outputLabel: css({
+    display: "flex",
+    alignItems: "center",
+    gap: 2,
+  }),
+};
+
 export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node>();
   const node = useFlowNode();
 
-  const classes = {
-    container: css({
-      width: "40%",
-      minHeight: 200,
-    }),
-    outputLabel: css({
-      display: "flex",
-      alignItems: "center",
-      gap: 2,
-    }),
-  };
-
-  const handleAction = (event: any, nodeId: string, action: any) => {
+  const handleAction: HvFlowNodeProps["onAction"] = (event, action) => {
     if (!node) return;
 
     switch (action.id) {
@@ -101,7 +102,7 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
             icon: <Flag />,
           },
         ]}
-        actionCallback={handleAction}
+        onAction={handleAction}
         params={[
           {
             id: "asset",

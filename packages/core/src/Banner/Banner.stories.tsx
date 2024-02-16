@@ -1,7 +1,8 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
-import { Info } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
+import { css } from "@emotion/css";
+import { Info } from "@hitachivantara/uikit-react-icons";
 import {
   HvBanner,
   HvBannerProps,
@@ -11,7 +12,6 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { css } from "@emotion/css";
 
 const StyledBanner = styled(HvBanner)({
   position: "relative",
@@ -94,9 +94,7 @@ export const Variants: StoryObj<HvBannerProps> = {
           label="This is a banner."
           showIcon
           actions={[{ id: "post", label: "Action", disabled: false }]}
-          actionsCallback={(e, id, action) =>
-            console.log(`clicked ${id} with ${action.label}`)
-          }
+          onAction={(event, action) => console.log("Clicked", action)}
           className={css({ position: "relative", top: 0 })}
         />
         <BannerContent

@@ -39,7 +39,6 @@ export const Snackbars = () => {
           id: "post",
           label: "Action",
         }}
-        actionCallback={() => {}}
         id="actionStructure"
         label="This is a snackbar."
         offset={0}

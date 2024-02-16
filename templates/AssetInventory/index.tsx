@@ -3,7 +3,6 @@ import { useState, useMemo, useEffect } from "react";
 import {
   HvBulkActions,
   HvPagination,
-  HvActionGeneric,
   HvControls,
   HvLeftControl,
   HvRightControl,
@@ -14,6 +13,7 @@ import {
   useHvPagination,
   useHvSortBy,
   HvLeftControlProps,
+  HvActionsGenericProps,
 } from "@hitachivantara/uikit-react-core";
 
 import { LoadingContainer } from "../utils";
@@ -92,10 +92,9 @@ const AssetInventory = () => {
     }));
   };
 
-  const handleAction = async (
-    event: React.SyntheticEvent,
-    id: string,
-    action: HvActionGeneric
+  const handleAction: HvActionsGenericProps["onAction"] = async (
+    event,
+    action
   ) => {
     if (action.id === "put" || action.id === "add") {
       alert(
@@ -160,7 +159,7 @@ const AssetInventory = () => {
           onSelectAll={() => bulkActionProps?.onSelectAll()}
           onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
           actions={actions}
-          actionsCallback={handleAction}
+          onAction={handleAction}
           checkboxProps={{
             "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
           }}

@@ -113,11 +113,7 @@ export const BulkActions = () => {
     setData(newData);
   };
 
-  const handleAction: HvBulkActionsProps["actionsCallback"] = (
-    event,
-    id,
-    action
-  ) => {
+  const handleAction: HvBulkActionsProps["onAction"] = (event, action) => {
     const selected = data.filter((el) => el.checked);
 
     switch (action.id) {
@@ -156,7 +152,7 @@ export const BulkActions = () => {
         onSelectAll={handleSelectAll}
         onSelectAllPages={() => handleSelectAllPages()}
         actions={actions}
-        actionsCallback={handleAction}
+        onAction={handleAction}
         maxVisibleActions={2}
         showSelectAllPages
       />
