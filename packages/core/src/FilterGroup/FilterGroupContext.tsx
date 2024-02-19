@@ -7,13 +7,10 @@ import {
   useMemo,
   useState,
 } from "react";
-
 import isEqual from "lodash/isEqual";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import { useSavedState } from "../utils/useSavedState";
-
 import { HvFilterGroupFilters, HvFilterGroupValue } from "./types";
 
 interface HvFilterGroupContextValue {

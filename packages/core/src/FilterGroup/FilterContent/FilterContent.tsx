@@ -1,5 +1,4 @@
 import { forwardRef, useContext, useMemo, useRef, useState } from "react";
-
 import { Filters } from "@hitachivantara/uikit-react-icons";
 
 import { useTheme } from "../../hooks/useTheme";
@@ -10,9 +9,7 @@ import { HvFormStatus } from "../../Forms";
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
-
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
 import { HvFilterGroupValue, HvFilterGroupHorizontalPlacement } from "../types";
 import { staticClasses, useClasses } from "./FilterContent.styles";
 import { HvFilterGroupContext } from "../FilterGroupContext";

@@ -14,7 +14,6 @@ import { useControlled } from "../hooks/useControlled";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import {
   HvFilterGroupContent,
   HvFilterGroupContentProps,

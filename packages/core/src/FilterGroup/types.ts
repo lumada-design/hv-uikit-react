@@ -4,6 +4,7 @@ export type HvFilterGroupFilters = {
   data: {
     id: string | number;
     name: string;
+    disabled?: boolean;
   }[];
 }[];
 
