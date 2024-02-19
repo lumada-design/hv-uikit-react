@@ -85,6 +85,12 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
     [`& .${paginationClasses.pageSizeOptions}`]: {
       left: theme.space.sm,
     },
+    [`& .${paginationClasses.pageSizeHeader}`]: {
+      border: "none",
+      "&:hover": {
+        border: "none",
+      },
+    },
   },
   hidden: {},
   raisedHeader: {

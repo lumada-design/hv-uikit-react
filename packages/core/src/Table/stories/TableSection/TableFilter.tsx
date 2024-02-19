@@ -321,7 +321,13 @@ export const TableFilter = () => {
           </HvTable>
         </HvTableContainer>
         {page.length > 0 ? (
-          <HvPagination {...getHvPaginationProps?.()} />
+          <HvPagination
+            {...getHvPaginationProps?.()}
+            labels={{
+              pageSizePrev: "",
+              pageSizeEntryName: `of ${data.length}`,
+            }}
+          />
         ) : undefined}
       </HvTableSection>
     </>

@@ -129,6 +129,7 @@ interface TableProps<T extends Data> {
   loading?: boolean;
   pageCount: number;
   columns: HvTableColumnConfig<T, string>[];
+  totalRecords?: number;
   onRowRestore?: (id: string) => Promise<void>;
   onRowDelete?: (id: string) => Promise<void>;
   onRowAdd?: (row: Partial<T>) => Promise<void>;
@@ -142,6 +143,7 @@ const Table = <T extends Data>({
   loading,
   pageCount,
   columns: columnsProp,
+  totalRecords,
   onUpdate,
   onRowRestore,
   onRowDelete,
@@ -585,14 +587,21 @@ const Table = <T extends Data>({
         </HvTableContainer>
       </LoadingContainer>
       {page.length > 0 ? (
-        <HvPagination {...getHvPaginationProps?.()} />
+        <HvPagination
+          {...getHvPaginationProps?.()}
+          labels={{
+            pageSizePrev: "",
+            pageSizeEntryName: `of ${totalRecords}`,
+          }}
+        />
       ) : undefined}
     </>
   );
 };
 
 export const TableEditable = () => {
-  const { data, loading, fetchData, pageCount, mutateData } = useServerData();
+  const { data, loading, fetchData, pageCount, mutateData, totalRecords } =
+    useServerData();
 
   const [add, setAdd] = useState(false);
   const [contentRef, setContentRef] = useState<HTMLDivElement | null>(null);
@@ -634,6 +643,7 @@ export const TableEditable = () => {
           pageCount={pageCount}
           loading={loading}
           columns={columns}
+          totalRecords={totalRecords}
           onUpdate={({ pageIndex, pageSize, sortBy }) => {
             fetchData({ pageIndex, pageSize, sortBy });
           }}

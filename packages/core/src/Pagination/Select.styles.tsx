@@ -3,6 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { createClasses } from "../utils/classes";
 
 export const { useClasses } = createClasses("HvPaginationSelect", {
+  root: {},
   header: {
     backgroundColor: "transparent",
     borderColor: theme.colors.secondary_80,

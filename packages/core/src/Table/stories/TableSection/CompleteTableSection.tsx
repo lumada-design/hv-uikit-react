@@ -132,7 +132,10 @@ export const CompleteTableSection = () => {
         </HvTable>
       </HvTableContainer>
       {page?.length ? (
-        <HvPagination {...getHvPaginationProps?.()} />
+        <HvPagination
+          {...getHvPaginationProps?.()}
+          labels={{ pageSizePrev: "", pageSizeEntryName: `of ${data.length}` }}
+        />
       ) : undefined}
     </HvTableSection>
   );
