@@ -1,5 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
+import { dropDownMenuClasses } from "../DropDownMenu";
+
 import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
@@ -48,11 +50,17 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
         borderLeft: `solid 1px ${theme.colors.atmo4}`,
         borderTopLeftRadius: theme.radii.base,
         borderBottomLeftRadius: theme.radii.base,
+        "&:disabled": {
+          borderLeft: `solid 1px ${theme.colors.atmo4}`,
+        },
       },
       "&$lastButton": {
         borderRight: `solid 1px ${theme.colors.atmo4}`,
         borderTopRightRadius: theme.radii.base,
         borderBottomRightRadius: theme.radii.base,
+        "&:disabled": {
+          borderRight: `solid 1px ${theme.colors.atmo4}`,
+        },
         "&:disabled:hover": {
           borderRight: `solid 1px ${theme.colors.atmo4} !important`,
         },
@@ -61,7 +69,13 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
         marginLeft: "-1px",
       },
       "&$selected": {
+        background: theme.colors.atmo1,
+        ...theme.typography.label,
+        borderRadius: theme.radii.base,
+        border: `solid 1px ${theme.colors.secondary}`,
+        zIndex: 2,
         "&:hover": {
+          background: theme.colors.atmo3,
           "&:not(:disabled)": {
             border: `solid 1px ${theme.colors.secondary}`,
           },
@@ -69,31 +83,72 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
             border: `solid 1px ${theme.colors.atmo4}`,
           },
         },
+        // prevent the focus ring to be hidden by sibling hover background
+        // even when selected
+        "&.HvIsFocusVisible": {
+          zIndex: 5,
+        },
         "&:disabled": {
           zIndex: 1,
           color: theme.colors.secondary_60,
           background: theme.colors.atmo1,
-          border: `solid 1px ${theme.colors.atmo4}`,
+          border: `solid 1px ${theme.colors.secondary}`,
         },
       },
     },
-    "& button$button$selected": {
-      background: theme.colors.atmo1,
-      ...theme.typography.label,
-      borderRadius: theme.radii.base,
-      border: `solid 1px ${theme.colors.secondary}`,
-      zIndex: 2,
-      "&:hover": {
-        background: theme.colors.atmo3,
+    // dropdown menu styles
+    "& $button": {
+      [`& .${dropDownMenuClasses.icon}`]: {
+        borderTop: `solid 1px ${theme.colors.atmo4}`,
+        borderBottom: `solid 1px ${theme.colors.atmo4}`,
+        borderLeft: "solid 1px transparent",
+        borderRight: "solid 1px transparent",
+        borderRadius: 0,
+        "&:disabled": {
+          borderTop: `solid 1px ${theme.colors.atmo4}`,
+          borderBottom: `solid 1px ${theme.colors.atmo4}`,
+          "&:hover": {
+            borderTop: `solid 1px ${theme.colors.atmo4}`,
+            borderBottom: `solid 1px ${theme.colors.atmo4}`,
+            borderLeft: "solid 1px transparent",
+            borderRight: "solid 1px transparent",
+          },
+        },
       },
-      "&$firstButton, &$lastButton": {
+      [`& .${dropDownMenuClasses.iconSelected}`]: {
         border: `solid 1px ${theme.colors.secondary}`,
       },
-
-      // prevent the focus ring to be hidden by sibling hover background
-      // even when selected
-      "&.HvIsFocusVisible": {
-        zIndex: 5,
+      "&$firstButton": {
+        [`& .${dropDownMenuClasses.icon}`]: {
+          borderLeft: `solid 1px ${theme.colors.atmo4}`,
+          borderTopLeftRadius: theme.radii.base,
+          borderBottomLeftRadius: theme.radii.base,
+          "&:disabled": {
+            borderLeft: `solid 1px ${theme.colors.atmo4}`,
+          },
+        },
+        [`& .${dropDownMenuClasses.iconSelected}`]: {
+          border: `solid 1px ${theme.colors.secondary}`,
+        },
+      },
+      "&$lastButton": {
+        [`& .${dropDownMenuClasses.icon}`]: {
+          borderRight: `solid 1px ${theme.colors.atmo4}`,
+          borderTopRightRadius: theme.radii.base,
+          borderBottomRightRadius: theme.radii.base,
+          "&:disabled": {
+            borderRight: `solid 1px ${theme.colors.atmo4}`,
+          },
+          "&:disabled:hover": {
+            borderRight: `solid 1px ${theme.colors.atmo4} !important`,
+          },
+        },
+        [`& .${dropDownMenuClasses.iconSelected}`]: {
+          border: `solid 1px ${theme.colors.secondary}`,
+        },
+      },
+      "&:not($firstButton) > button": {
+        marginLeft: "-1px",
       },
     },
   },
@@ -164,14 +219,41 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   },
   primary: {
     "& button$button": {
-      borderTop: "unset",
-      borderBottom: "unset",
+      borderTop: "none",
+      borderBottom: "none",
 
       "&$firstButton": {
-        borderLeft: `solid 1px ${theme.colors.primary}`,
+        borderLeft: "none",
       },
       "&$lastButton": {
-        borderRight: `solid 1px ${theme.colors.primary}`,
+        borderRight: "none",
+      },
+      "&$selected": {
+        border: `solid 1px ${theme.colors.secondary}`,
+      },
+    },
+
+    // dropdown menu styles
+    "& $button": {
+      [`& .${dropDownMenuClasses.icon}`]: {
+        borderTop: "none",
+        borderBottom: "none",
+      },
+      "&$firstButton": {
+        [`& .${dropDownMenuClasses.icon}`]: {
+          borderLeft: "none",
+        },
+        [`& .${dropDownMenuClasses.iconSelected}`]: {
+          border: `solid 1px ${theme.colors.secondary}`,
+        },
+      },
+      "&$lastButton": {
+        [`& .${dropDownMenuClasses.icon}`]: {
+          borderRight: "none",
+        },
+        [`& .${dropDownMenuClasses.iconSelected}`]: {
+          border: `solid 1px ${theme.colors.secondary}`,
+        },
       },
     },
   },
@@ -184,6 +266,29 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       },
       "&$lastButton": {
         borderRight: `solid 1px ${theme.colors.primary}`,
+      },
+    },
+    // dropdown menu styles
+    "& $button": {
+      [`& .${dropDownMenuClasses.icon}`]: {
+        borderTop: `solid 1px ${theme.colors.primary}`,
+        borderBottom: `solid 1px ${theme.colors.primary}`,
+      },
+      "&$firstButton": {
+        [`& .${dropDownMenuClasses.icon}`]: {
+          borderLeft: `solid 1px ${theme.colors.primary}`,
+        },
+        [`& .${dropDownMenuClasses.iconSelected}`]: {
+          border: `solid 1px ${theme.colors.secondary}`,
+        },
+      },
+      "&$lastButton": {
+        [`& .${dropDownMenuClasses.icon}`]: {
+          borderRight: `solid 1px ${theme.colors.primary}`,
+        },
+        [`& .${dropDownMenuClasses.iconSelected}`]: {
+          border: `solid 1px ${theme.colors.secondary}`,
+        },
       },
     },
   },
