@@ -73,7 +73,7 @@ const FilterGroup = ({ emptyValue }: { emptyValue?: boolean }) => {
   );
 };
 
-const assetOpened = () => {
+const assertOpened = () => {
   const dropdown = screen.getByRole("combobox");
   const applyButton = screen.getByRole("button", {
     name: /apply/i,
@@ -82,7 +82,7 @@ const assetOpened = () => {
   expect(applyButton).toBeInTheDocument();
 };
 
-const assetClosed = () => {
+const assertClosed = () => {
   const dropdown = screen.getByRole("combobox");
   const applyButton = screen.queryByRole("button", {
     name: /apply/i,
@@ -99,50 +99,50 @@ describe("FilterGroup", () => {
     const dropdown = screen.getByRole("combobox");
 
     await user.click(dropdown);
-    assetOpened();
+    assertOpened();
   });
 
-  it("can be closed by clicking the combobox again", async () => {
+  it("can be closed by clicking the combobox", async () => {
     const user = userEvent.setup();
     render(<FilterGroup />);
 
     const dropdown = screen.getByRole("combobox");
 
     await user.click(dropdown);
-    assetOpened();
+    assertOpened();
 
     await user.click(dropdown);
-    assetClosed();
+    assertClosed();
   });
 
-  it("can be closed by clicking the cancel button", async () => {
+  it("can be closed by clicking on the cancel button", async () => {
     const user = userEvent.setup();
     render(<FilterGroup />);
 
     const dropdown = screen.getByRole("combobox");
 
     await user.click(dropdown);
-    assetOpened();
+    assertOpened();
 
     const cancelButton = screen.getByRole("button", {
       name: /cancel/i,
     });
 
     await user.click(cancelButton);
-    assetClosed();
+    assertClosed();
   });
 
-  it("can be closed by clicking outside", async () => {
+  it("can be closed by clicking outside the combobox", async () => {
     const user = userEvent.setup();
     render(<FilterGroup />);
 
     const dropdown = screen.getByRole("combobox");
 
     await user.click(dropdown);
-    assetOpened();
+    assertOpened();
 
     await user.click(document.body);
-    assetClosed();
+    assertClosed();
   });
 
   it("the apply button is disabled in the beginning", async () => {
@@ -156,6 +156,23 @@ describe("FilterGroup", () => {
     const applyButton = screen.getByRole("button", { name: /apply/i });
 
     expect(applyButton).toBeDisabled();
+  });
+
+  it("the apply button gets enabled after selecting an option", async () => {
+    const user = userEvent.setup();
+    render(<FilterGroup />);
+
+    const dropdown = screen.getByRole("combobox");
+
+    await user.click(dropdown);
+
+    const applyButton = screen.getByRole("button", { name: /apply/i });
+    expect(applyButton).toBeDisabled();
+
+    const checkBox1 = screen.getByRole("checkbox", { name: /category 2/i });
+
+    await user.click(checkBox1);
+    expect(applyButton).toBeEnabled();
   });
 
   it("the clear button clears all selected options and resets counter", async () => {
@@ -197,7 +214,7 @@ describe("FilterGroup", () => {
     expect(rightItems).toHaveLength(12);
   });
 
-  it("the counter changes in the expected locations when an option is checked", async () => {
+  it("the counter changes when an option is checked", async () => {
     const user = userEvent.setup();
     render(<FilterGroup />);
 
@@ -208,28 +225,11 @@ describe("FilterGroup", () => {
     expect(screen.getAllByText("2")).toHaveLength(3);
 
     const checkBox1 = screen.getByRole("checkbox", { name: /category 3/i });
-    expect(checkBox1).not.toBeChecked();
 
     await user.click(checkBox1);
     expect(screen.getAllByText("5")).toHaveLength(1);
     expect(screen.getAllByText("2")).toHaveLength(1);
     expect(screen.getAllByText("3")).toHaveLength(2);
-  });
-
-  it("the apply button gets enabled after selecting an option", async () => {
-    const user = userEvent.setup();
-    render(<FilterGroup />);
-
-    const dropdown = screen.getByRole("combobox");
-
-    await user.click(dropdown);
-
-    const checkBox1 = screen.getByRole("checkbox", { name: /category 2/i });
-
-    await user.click(checkBox1);
-
-    const applyButton = screen.getByRole("button", { name: /apply/i });
-    expect(applyButton).toBeEnabled();
   });
 
   it("changes are committed on apply", async () => {
@@ -268,7 +268,7 @@ describe("FilterGroup", () => {
     expect(screen.getAllByText("4")).toHaveLength(1);
   });
 
-  it("with an initial empty state, can select all options and counter is updated when changes are applied", async () => {
+  it("with an initial empty state, clicking select all updates the counter and the changes are applied", async () => {
     const user = userEvent.setup();
     render(<FilterGroup emptyValue />);
 
@@ -292,7 +292,7 @@ describe("FilterGroup", () => {
     expect(screen.getAllByText("4")).toHaveLength(1);
   });
 
-  it("can't check a disabled option", async () => {
+  it("it's not possible to check a disabled option", async () => {
     const user = userEvent.setup();
     render(<FilterGroup />);
 
@@ -356,6 +356,67 @@ describe("FilterGroup", () => {
     const selectAllAfter = screen.getByRole("checkbox", { name: /All \(4\)/i });
 
     await user.click(selectAllAfter);
+    expect(screen.getAllByText("5")).toHaveLength(1);
+  });
+
+  it("the search input filters the options and the counter updates when an option is checked/unchecked", async () => {
+    const user = userEvent.setup();
+    render(<FilterGroup />);
+
+    const dropdown = screen.getByRole("combobox");
+
+    await user.click(dropdown);
+    expect(screen.getAllByText("4")).toHaveLength(1);
+
+    const [, rightList] = screen.getAllByRole("list");
+    expect(within(rightList).getAllByRole("listitem")).toHaveLength(4);
+
+    const searchInput = screen.getByRole("searchbox");
+    await user.type(searchInput, "3");
+
+    const options = within(rightList).getAllByRole("listitem");
+    expect(options).toHaveLength(1);
+
+    await user.click(options[0]);
+    expect(screen.getAllByText("5")).toHaveLength(1);
+
+    await user.click(options[0]);
+    expect(screen.getAllByText("4")).toHaveLength(1);
+  });
+
+  it("the counter updates when the search input is on and select all is clicked to unselect an option", async () => {
+    const user = userEvent.setup();
+    render(<FilterGroup />);
+
+    const dropdown = screen.getByRole("combobox");
+
+    await user.click(dropdown);
+    expect(screen.getAllByText("4")).toHaveLength(1);
+
+    const searchInput = screen.getByRole("searchbox");
+    await user.type(searchInput, "2");
+
+    const selectAll = screen.getByRole("checkbox", { name: /1 \/ 1/i });
+
+    await user.click(selectAll);
+    expect(screen.getAllByText("3")).toHaveLength(1);
+  });
+
+  it("the counter updates when the search input is on and select all is clicked to select an option", async () => {
+    const user = userEvent.setup();
+    render(<FilterGroup />);
+
+    const dropdown = screen.getByRole("combobox");
+
+    await user.click(dropdown);
+    expect(screen.getAllByText("4")).toHaveLength(1);
+
+    const searchInput = screen.getByRole("searchbox");
+    await user.type(searchInput, "3");
+
+    const selectAll = screen.getByRole("checkbox", { name: /All \(1\)/i });
+
+    await user.click(selectAll);
     expect(screen.getAllByText("5")).toHaveLength(1);
   });
 });
