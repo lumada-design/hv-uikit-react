@@ -4,6 +4,7 @@ import {
   CompleteTableSectionStory,
   PropsTableSectionStory,
   EditableStory,
+  FilterStory,
 } from "./TableSectionSamples";
 
 <Meta title="Visualizations/Table/Table Section" />
@@ -66,4 +67,20 @@ the section content.
 
 <Canvas>
   <Story name="Editable Table" story={EditableStory} />
+</Canvas>
+
+### Table Filter
+
+The sample below showcases a table where you can easily apply, remove, and configure filters using a filter group.
+In this sense, the `useHvFilters` hook was used. When using this hook, the `setAllFilters` utility is enabled allowing you to apply filters to various columns of the table
+at the same time.
+
+By default, `setAllFilters` will only show the rows resulting from the intersection of all filters. This means that if you provide various filters for
+the same column, no rows are returned. If you need an union behavior and filter a column by various values, you can override the default table behavior.
+Use the "Multiple column filters" checkbox to switch between these two behaviors.
+
+In this sample the `useHvGlobalFilter` hook was also used to apply a search filter to all columns at the same time.
+
+<Canvas>
+  <Story name="Table Filter" story={FilterStory} />
 </Canvas>
