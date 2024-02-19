@@ -1,5 +1,4 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
-
 import cloneDeep from "lodash/cloneDeep";
 
 import { HvCheckBox } from "../../CheckBox";
@@ -9,7 +8,6 @@ import { HvPanel } from "../../Panel";
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
-
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { staticClasses, useClasses } from "./RightPanel.styles";
 
@@ -48,22 +46,27 @@ export const HvFilterGroupRightPanel = ({
     activeGroup,
   } = useContext(HvFilterGroupContext);
 
-  const activeGroupOptions = useMemo(
-    () =>
-      filterOptions[activeGroup]?.data
-        .filter((option) =>
-          option.name.toLowerCase().includes(searchStr.toLowerCase())
-        )
-        .map((option) => option.id) || [],
-    [filterOptions, activeGroup, searchStr]
-  );
+  const { all: allActiveGroupOptions, enabled: enabledActiveGroupOptions } =
+    useMemo(() => {
+      const filteredOptions = filterOptions[activeGroup]?.data.filter(
+        (option) => option.name.toLowerCase().includes(searchStr.toLowerCase())
+      );
+
+      return {
+        all: filteredOptions.map((option) => option.id) || [],
+        enabled:
+          filteredOptions
+            .filter((option) => !option.disabled)
+            .map((option) => option.id) || [],
+      };
+    }, [filterOptions, activeGroup, searchStr]);
 
   const activeFilterValues = useMemo(
     () =>
       filterValues[activeGroup]?.filter((value) =>
-        activeGroupOptions.includes(value)
+        allActiveGroupOptions.includes(value)
       ) || [],
-    [filterValues, activeGroupOptions, activeGroup]
+    [filterValues, allActiveGroupOptions, activeGroup]
   );
 
   const listValues = useMemo(
@@ -81,11 +84,11 @@ export const HvFilterGroupRightPanel = ({
   const updateSelectAll = useCallback(() => {
     const nbrSelected = activeFilterValues?.length;
     const hasSelection = nbrSelected > 0;
-    const allSelect = nbrSelected === activeGroupOptions.length;
+    const allSelect = nbrSelected === allActiveGroupOptions.length;
 
     setAnySelected(hasSelection);
     setAllSelected(hasSelection && allSelect);
-  }, [activeFilterValues, activeGroupOptions]);
+  }, [activeFilterValues, allActiveGroupOptions]);
 
   useEffect(() => {
     updateSelectAll();
@@ -108,30 +111,25 @@ export const HvFilterGroupRightPanel = ({
     if (anySelected) {
       if (searchStr !== "") {
         newFilterValues[activeGroup] = filterValues[activeGroup]?.filter(
-          (value) => !activeGroupOptions.includes(value)
+          (value) => !enabledActiveGroupOptions.includes(value)
         );
       } else {
         newFilterValues[activeGroup] = [];
       }
     } else {
-      newFilterValues[activeGroup] = [...activeGroupOptions];
+      newFilterValues[activeGroup] = [...enabledActiveGroupOptions];
     }
 
     setFilterValues(newFilterValues);
   }, [
     activeGroup,
-    activeGroupOptions,
+    enabledActiveGroupOptions,
     anySelected,
     filterValues,
     setFilterValues,
     searchStr,
   ]);
 
-  /**
-   * Create selectAll component.
-   *
-   * @returns {*}
-   */
   const SelectAll = useCallback(() => {
     const nbrSelected = activeFilterValues?.length;
 
@@ -140,12 +138,12 @@ export const HvFilterGroupRightPanel = ({
         {nbrSelected > 0 ? (
           <>
             <b>{nbrSelected}</b>
-            {` ${labels?.multiSelectionConjunction} ${activeGroupOptions.length}`}
+            {` ${labels?.multiSelectionConjunction} ${allActiveGroupOptions.length}`}
           </>
         ) : (
           <>
             <b>{labels?.selectAll}</b>
-            {` (${activeGroupOptions.length})`}
+            {` (${allActiveGroupOptions.length})`}
           </>
         )}
       </HvTypography>
@@ -165,7 +163,7 @@ export const HvFilterGroupRightPanel = ({
     );
   }, [
     activeFilterValues?.length,
-    activeGroupOptions.length,
+    allActiveGroupOptions.length,
     allSelected,
     anySelected,
     handleSelectAll,
