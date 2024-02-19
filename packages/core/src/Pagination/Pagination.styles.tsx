@@ -54,6 +54,9 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
       marginTop: -2,
     },
   },
+  pageSizeRoot: {
+    width: "auto",
+  },
   /** Styles applied to the element that holds the labels for the page size selector */
   pageSizeTextContainer: {
     display: "flex",

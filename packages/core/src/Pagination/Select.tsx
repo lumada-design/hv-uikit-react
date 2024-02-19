@@ -62,6 +62,7 @@ const HvSelect = (props: HvPaginationSelectProps) => {
         selection: classes.selection,
         header: classes.header,
         headerOpen: classes.headerOpen,
+        root: classes.root,
       }}
       expanded={open}
       onToggle={handleToggle}
