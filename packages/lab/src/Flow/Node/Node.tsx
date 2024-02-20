@@ -33,17 +33,22 @@ const DEFAULT_LABELS = {
   expandLabel: "Expand",
 };
 
-export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
+export interface HvFlowNodeProps<T = any>
+  extends HvFlowBaseNodeProps<T>,
+    Pick<
+      Partial<HvActionsGenericProps>,
+      "actions" | "maxVisibleActions" | "onAction"
+    > {
   /** Node description */
   description?: string;
-  /** Node actions */
-  actions?: HvActionsGenericProps["actions"];
-  /** Node action callback */
-  actionCallback?: HvActionsGenericProps["actionsCallback"]; // TODO - v6 rename to actionsCallback
+  /**
+   * Node action callback
+   *
+   * @deprecated Use `onAction` instead.
+   * */
+  actionCallback?: HvActionsGenericProps["actionsCallback"]; // TODO - remove in v6
   /** Whether the actions should be all icon buttons when visible. @default true */
   actionsIconOnly?: HvActionsGenericProps["iconOnly"];
-  /** Node maximum number of actions visible */
-  maxVisibleActions?: HvActionsGenericProps["maxVisibleActions"];
   /** Node expanded */
   expanded?: boolean;
   /** Node parameters */
@@ -64,7 +69,8 @@ export const HvFlowNode = ({
   headerItems,
   description,
   actions,
-  actionCallback,
+  actionCallback, // TODO - remove in v6
+  onAction,
   maxVisibleActions = 1,
   expanded = false,
   actionsIconOnly = true,
@@ -149,7 +155,11 @@ export const HvFlowNode = ({
               className={classes.actions}
               classes={{ button: classes.actionsButton }}
               actions={actions}
-              actionsCallback={actionCallback}
+              // TODO - use onAction in v6
+              actionsCallback={(event, acId, action) => {
+                actionCallback?.(event, acId, action);
+                onAction?.(event, action);
+              }}
               maxVisibleActions={maxVisibleActions}
               iconOnly={actionsIconOnly}
             />

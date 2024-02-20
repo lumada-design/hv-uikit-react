@@ -21,7 +21,7 @@ export const returnActions = (
   const {
     actions,
     actionsButtonVariant,
-    actionsCallback,
+    onAction,
     actionsIconOnly,
     actionsPlacement,
     maxVisibleActions,
@@ -31,7 +31,7 @@ export const returnActions = (
     ? {
         actions,
         actionsButtonVariant,
-        actionsCallback,
+        onAction,
         actionsIconOnly,
         actionsPlacement,
         maxVisibleActions,

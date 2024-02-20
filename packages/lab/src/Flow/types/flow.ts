@@ -78,9 +78,8 @@ export interface HvFlowNodeLabelActions
   /** Whether the actions should be all icon buttons when visible. */
   actionsIconOnly?: boolean;
   /** The callback called when an action is triggered. */
-  actionsCallback?: (
+  onAction?: (
     event: React.SyntheticEvent,
-    id: string,
     action: HvActionGeneric,
     item:
       | HvFlowNodeInput

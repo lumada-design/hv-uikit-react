@@ -188,7 +188,7 @@ export const HvFlowBaseNode = ({
       const {
         actions,
         actionsButtonVariant,
-        actionsCallback,
+        onAction,
         actionsIconOnly,
         maxVisibleActions,
       } = result;
@@ -197,7 +197,7 @@ export const HvFlowBaseNode = ({
         <HvActionsGeneric
           actions={actions}
           maxVisibleActions={maxVisibleActions}
-          actionsCallback={(e, i, a) => actionsCallback?.(e, i, a, item)}
+          onAction={(e, a) => onAction?.(e, a, item)}
           iconOnly={actionsIconOnly}
           variant={actionsButtonVariant}
         />

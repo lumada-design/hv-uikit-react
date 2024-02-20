@@ -44,12 +44,18 @@ export interface HvActionsGenericProps extends HvBaseProps {
   iconOnly?: boolean;
   /** The renderable content inside the actions slot of the footer, or an array of actions. */
   actions: React.ReactNode | HvActionGeneric[];
-  /** The callback function called when an action is triggered, receiving the `action` as parameter. */
+  /**
+   * The callback function called when an action is triggered, receiving the `action` as parameter.
+   *
+   * @deprecated Use `onAction` instead.
+   * */
   actionsCallback?: (
     event: React.SyntheticEvent,
     id: string,
     action: HvActionGeneric
   ) => void;
+  /** The callback function called when an action is triggered, receiving the `action` as parameter. */
+  onAction?: (event: React.SyntheticEvent, action: HvActionGeneric) => void;
   /** The maximum number of visible actions before they're collapsed into a dropdown menu. */
   maxVisibleActions?: number;
   /** A Jss Object used to override or extend the styles applied to the component. */
@@ -58,14 +64,15 @@ export interface HvActionsGenericProps extends HvBaseProps {
 
 export const HvActionsGeneric = (props: HvActionsGenericProps) => {
   const {
-    id,
+    id: idProp,
     classes: classesProp,
     className,
     category = "secondaryGhost", // TODO - remove and update variant default in v6
     variant: variantProp,
     disabled = false,
     actions = [],
-    actionsCallback,
+    actionsCallback, // TODO - remove in v6
+    onAction,
     maxVisibleActions = Infinity,
     iconOnly: iconOnlyProp,
     ...others
@@ -74,6 +81,15 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
   const variant = variantProp || category;
 
   const { classes, cx } = useClasses(classesProp);
+
+  const handleCallback: HvActionsGenericProps["actionsCallback"] = (
+    event,
+    id,
+    action
+  ) => {
+    actionsCallback?.(event, id, action);
+    onAction?.(event, action);
+  };
 
   if (!Array.isArray(actions)) return isValidElement(actions) ? actions : null;
 
@@ -86,7 +102,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
       iconOnly,
       ...other
     } = action;
-    const actionId = setId(id, idx, "action", action.id);
+    const actionId = setId(idProp, idx, "action", action.id);
 
     const renderedIcon = isValidElement(icon)
       ? icon
@@ -97,7 +113,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
       variant,
       className: classes.button,
       disabled: actDisabled ?? disabled,
-      onClick: (event) => actionsCallback?.(event, id || "", action),
+      onClick: (event) => handleCallback(event, idProp || "", action),
       ...other,
     };
 
@@ -132,7 +148,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
       <>
         {actsVisible.map((action, idx) => renderButton(action, idx))}
         <HvDropDownMenu
-          id={setId(id, "menu")}
+          id={setId(idProp, "menu")}
           disabled={disabled}
           variant={variant}
           classes={{
@@ -143,7 +159,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
           icon={<MoreOptionsVertical color={iconColor} />}
           placement="left"
           onClick={(event, action) =>
-            actionsCallback?.(event, id || "", action as HvActionGeneric)
+            handleCallback(event, idProp || "", action as HvActionGeneric)
           }
           dataList={actsDropdown}
           keepOpened={false}

@@ -256,9 +256,8 @@ You might have noticed that all the types mentioned above in this section extend
 ```typescript
 interface HvFlowNodeLabelActions {
   actions?: HvActionsGeneric[];
-  actionsCallback?: (
+  onAction?: (
     event: React.SyntheticEvent,
-    id: string,
     action: HvActionGeneric,
     item:
       | HvFlowNodeInput
@@ -442,12 +441,12 @@ The `id` property will be typed to be one of the allowed default actions.
 At the node level you can specify other actions. To achieve this you'll have to define:
 
 - A set of actions (`actions`);
-- A callback to handle these actions (`actionCallback`);
+- A callback to handle these actions (`onAction`);
 - A maximum number of visible actions (`maxVisibleActions`). All the other actions will be placed in a dropdown menu. By default, only one action is visible;
 - And whether the actions should be all icon buttons when visible (`actionsIconOnly`). By default, this is set to `true`.
 
 ```tsx
-const handleAction = (event: any, id: string, action: any) => {
+const handleAction = (event: React.SyntheticEvent, action: HvActionGeneric) => {
   const node: Node | undefined = reactFlowInstance.getNode(id);
   if (!node) return;
 
@@ -480,7 +479,7 @@ const handleAction = (event: any, id: string, action: any) => {
       icon: <Favorite />,
     },
   ]}
-  actionCallback={handleAction}
+  onAction={handleAction}
   {...props}
 />;
 ```
@@ -599,7 +598,10 @@ export const Asset: HvFlowNodeFC = (props) => {
 
   const node = useFlowNode();
 
-  const handleAction = (event: any, nodeId: string, action: any) => {
+  const handleAction = (
+    event: React.SyntheticEvent,
+    action: HvActionGeneric
+  ) => {
     if (!node) return;
 
     switch (action.id) {
@@ -655,7 +657,7 @@ export const Asset: HvFlowNodeFC = (props) => {
             icon: <Flag />,
           },
         ]}
-        actionCallback={handleAction}
+        onAction={handleAction}
         params={[
           {
             id: "asset",

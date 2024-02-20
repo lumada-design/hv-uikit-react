@@ -18,6 +18,7 @@ import {
   HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeOutput,
+  HvFlowNodeProps,
   HvFlowNodeTypeMeta,
   useFlowNode,
 } from "@hitachivantara/uikit-react-lab";
@@ -42,7 +43,7 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
   const [details, setDetails] = useState<Node>();
   const node = useFlowNode();
 
-  const handleAction = (event: any, nodeId: string, action: any) => {
+  const handleAction: HvFlowNodeProps["onAction"] = (event, action) => {
     if (!node) return;
 
     switch (action.id) {
@@ -56,9 +57,8 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
     }
   };
 
-  const handleActionCallback: HvFlowNodeOutput["actionsCallback"] = (
+  const handleActionCallback: HvFlowNodeOutput["onAction"] = (
     event,
-    id,
     action,
     item
   ) => {
@@ -105,7 +105,7 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
             icon: <Flag />,
           },
         ]}
-        actionCallback={handleAction}
+        onAction={handleAction}
         params={[
           {
             id: "asset",
@@ -128,7 +128,7 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
                 label: "Configure",
               },
             ],
-            actionsCallback: handleActionCallback,
+            onAction: handleActionCallback,
             actionsButtonVariant: "primarySubtle",
             actionsPlacement: "right",
             // Actions shared by all outputs in the group
@@ -140,7 +140,7 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
                   icon: <Edit />,
                 },
               ],
-              actionsCallback: handleActionCallback,
+              onAction: handleActionCallback,
               actionsButtonVariant: "primaryGhost",
               actionsIconOnly: true,
             },

@@ -224,9 +224,7 @@ export const AllComponents: StoryObj<HvCardProps> = {
           <HvActionsGeneric
             actions={myActions}
             maxVisibleActions={1}
-            actionsCallback={(e, id, a) =>
-              alert(`You have pressed ${a.label}.`)
-            }
+            onAction={(e, a) => alert(`You have pressed ${a.label}.`)}
           />
         </HvActionBar>
       </HvCard>
