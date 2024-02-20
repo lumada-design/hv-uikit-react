@@ -11,6 +11,7 @@
     "@emotion/css": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@hitachivantara/app-shell-navigation": "latest",
     "@hitachivantara/uikit-react-core": "latest",
     "@hitachivantara/uikit-react-icons": "latest",
     "@mui/material": "^5.12.2",
@@ -21,11 +22,14 @@
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.6",
     "@hitachivantara/app-shell-vite-plugin": "latest",
+    "@hitachivantara/uikit-uno-preset": "latest",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.1.1",
     "typescript": "^5.3.3",
+    "unocss": "^0.58.5",
     "vite": "^5.1.0",
+    "vite-plugin-css-injected-by-js": "^3.4.0",
     "vite-tsconfig-paths": "^4.0.5"
   }
 }
