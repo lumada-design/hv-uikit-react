@@ -22,16 +22,16 @@
     "prepublishOnly": "run-s clean build && npx clean-publish"
   },
   "peerDependencies": {
-    "@unocss/core": ">= 0.57.7",
-    "@unocss/preset-uno": ">= 0.57.7"
+    "@unocss/core": "^0.58.5",
+    "@unocss/preset-uno": "^0.58.5"
   },
   "dependencies": {
     "@hitachivantara/uikit-styles": "^5.20.0",
-    "@unocss/preset-rem-to-px": "^0.57.7",
-    "unocss-preset-theme": "^0.11.0"
+    "@unocss/preset-rem-to-px": "^0.58.5",
+    "unocss-preset-theme": "^0.12.0"
   },
   "devDependencies": {
-    "@unocss/preset-uno": "^0.57.7",
+    "@unocss/preset-uno": "^0.58.5",
     "npm-run-all": "^4.1.5",
     "vite": "^5.1.0"
   },
