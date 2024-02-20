@@ -1,6 +1,7 @@
 {
   "name": "uikit-app",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "check": "tsc --noEmit",
@@ -42,7 +43,7 @@
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
     "typescript": "^4.9.5",
-    "unocss": "^0.57.7",
+    "unocss": "^0.58.5",
     "vite": "^5.1.0",
     "vite-tsconfig-paths": "^4.2.2"
   }
