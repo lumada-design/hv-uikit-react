@@ -62,7 +62,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
           borderRight: `solid 1px ${theme.colors.atmo4}`,
         },
         "&:disabled:hover": {
-          borderRight: `solid 1px ${theme.colors.atmo4} !important`,
+          borderRight: `solid 1px ${theme.colors.atmo4}`,
         },
       },
       "&:not($firstButton)": {
@@ -140,7 +140,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
             borderRight: `solid 1px ${theme.colors.atmo4}`,
           },
           "&:disabled:hover": {
-            borderRight: `solid 1px ${theme.colors.atmo4} !important`,
+            borderRight: `solid 1px ${theme.colors.atmo4}`,
           },
         },
         [`& .${dropDownMenuClasses.iconSelected}`]: {
@@ -149,6 +149,150 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       },
       "&:not($firstButton) > button": {
         marginLeft: "-1px",
+      },
+    },
+  },
+  splitGroup: {
+    background: theme.colors.atmo1,
+    "& button$button": {
+      "&:disabled": {
+        borderTop: "none",
+        borderBottom: "none",
+        "&:hover": {
+          borderTop: "none",
+          borderBottom: "none",
+        },
+      },
+      "&$firstButton": {
+        "&:not($selected):disabled": {
+          borderLeft: "none",
+          "&:hover": {
+            borderLeft: "none",
+          },
+        },
+      },
+      "&$lastButton": {
+        "&:not($selected):disabled": {
+          borderRight: "none",
+          "&:hover": {
+            borderRight: "none",
+          },
+        },
+      },
+      "&:not($firstButton)": {
+        marginLeft: 0,
+      },
+    },
+    // dropdown menu styles
+    "& $button": {
+      [`& .${dropDownMenuClasses.icon}`]: {
+        "&:disabled": {
+          borderTop: "none",
+          borderBottom: "none",
+          "&:hover": {
+            borderTop: "none",
+            borderBottom: "none",
+          },
+        },
+      },
+      "&$firstButton": {
+        [`& .${dropDownMenuClasses.icon}`]: {
+          "&:disabled": {
+            borderLeft: "none",
+            "&:hover": {
+              borderLeft: "none",
+            },
+          },
+        },
+      },
+      "&$lastButton": {
+        [`& .${dropDownMenuClasses.icon}`]: {
+          "&:disabled": {
+            borderRight: "none",
+            "&:hover": {
+              borderRight: "none",
+            },
+          },
+        },
+      },
+      "&:not($firstButton) > button": {
+        marginLeft: 0,
+      },
+    },
+    "&$secondarySubtle": {
+      "& button$button": {
+        borderTop: `solid 1px ${theme.colors.secondary}`,
+        borderBottom: `solid 1px ${theme.colors.secondary}`,
+        "&$firstButton": {
+          borderLeft: `solid 1px ${theme.colors.secondary}`,
+        },
+        "&$lastButton": {
+          borderRight: `solid 1px ${theme.colors.secondary}`,
+        },
+        "&:not($selected):disabled": {
+          borderTop: "none",
+          borderBottom: "none",
+          "&:hover": {
+            borderTop: "none",
+            borderBottom: "none",
+          },
+          "&$firstButton": {
+            "&:not($selected):disabled": {
+              borderLeft: "none",
+              "&:hover": {
+                borderLeft: "none",
+              },
+            },
+          },
+          "&$lastButton": {
+            "&:not($selected):disabled": {
+              borderRight: "none",
+              "&:hover": {
+                borderRight: "none",
+              },
+            },
+          },
+        },
+      },
+      "& $button": {
+        [`& .${dropDownMenuClasses.icon}`]: {
+          borderTop: `solid 1px ${theme.colors.secondary}`,
+          borderBottom: `solid 1px ${theme.colors.secondary}`,
+          "&:disabled": {
+            borderTop: "none",
+            borderBottom: "none",
+            "&:hover": {
+              borderTop: "none",
+              borderBottom: "none",
+            },
+          },
+        },
+        "&$firstButton": {
+          [`& .${dropDownMenuClasses.icon}`]: {
+            borderLeft: `solid 1px ${theme.colors.secondary}`,
+            "&:disabled": {
+              borderLeft: "none",
+              "&:hover": {
+                borderLeft: "none",
+              },
+            },
+          },
+        },
+        "&$lastButton": {
+          [`& .${dropDownMenuClasses.icon}`]: {
+            borderRight: `solid 1px ${theme.colors.secondary}`,
+            "&$lastButton": {
+              [`& .${dropDownMenuClasses.icon}`]: {
+                "&:disabled": {
+                  borderRight: "none",
+                  "&:hover": {
+                    borderRight: "none",
+                  },
+                },
+              },
+            },
+          },
+        },
       },
     },
   },
@@ -190,7 +334,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
         borderBottomLeftRadius: theme.radii.base,
         borderBottomRightRadius: theme.radii.base,
         "&:disabled:hover": {
-          borderBottom: `solid 1px ${theme.colors.atmo4} !important`,
+          borderBottom: `solid 1px ${theme.colors.atmo4}`,
         },
       },
       "&:not($firstButton)": {
@@ -298,4 +442,52 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   secondaryGhost: {},
   firstButton: {},
   lastButton: {},
+  split: {
+    width: 1,
+    height: "100%",
+    background: "currentColor",
+  },
+  splitContainer: {
+    marginLeft: 0,
+    width: 1,
+    height: "100%",
+    paddingTop: 4,
+    paddingBottom: 4,
+    color: theme.colors.secondary,
+    borderTop: `1px solid ${theme.colors.atmo4}`,
+    borderBottom: `1px solid ${theme.colors.atmo4}`,
+    "&$primary": {
+      color: theme.colors.atmo1,
+      backgroundColor: theme.colors.primary,
+      borderTop: `1px solid ${theme.colors.primary}`,
+      borderBottom: `1px solid ${theme.colors.primary}`,
+    },
+    "&$primarySubtle": {
+      color: theme.colors.primary,
+      borderTop: `1px solid ${theme.colors.primary}`,
+      borderBottom: `1px solid ${theme.colors.primary}`,
+    },
+    "&$primaryGhost": {
+      color: theme.colors.primary,
+      borderTop: `1px solid ${theme.colors.primary}`,
+      borderBottom: `1px solid ${theme.colors.primary}`,
+    },
+    "&$secondarySubtle": {
+      color: theme.colors.secondary,
+      borderTop: `1px solid ${theme.colors.secondary}`,
+      borderBottom: `1px solid ${theme.colors.secondary}`,
+    },
+    "&$secondaryGhost": {
+      color: theme.colors.secondary,
+      borderTop: `1px solid ${theme.colors.secondary}`,
+      borderBottom: `1px solid ${theme.colors.secondary}`,
+    },
+    "&$splitDisabled": {
+      background: theme.colors.atmo3,
+      color: theme.colors.secondary_60,
+      borderTop: "none",
+      borderBottom: "none",
+    },
+  },
+  splitDisabled: {},
 });

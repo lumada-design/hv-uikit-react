@@ -21,6 +21,7 @@ export interface HvMultiButtonProps extends HvBaseProps {
   classes?: HvMultiButtonClasses;
   /** Button size. */
   size?: HvButtonSize;
+  /** Add a split between buttons */
   split?: boolean;
 }
 
@@ -33,6 +34,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
     vertical = false,
     variant = "secondarySubtle",
     size,
+    split,
     ...others
   } = useDefaultProps("HvMultiButton", props);
   const { classes, cx } = useClasses(classesProp);
@@ -44,6 +46,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
         {
           [classes.vertical]: vertical,
           [classes[variant]]: variant,
+          [classes.splitGroup]: split,
         },
         className
       )}
@@ -53,18 +56,31 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
         if (React.isValidElement(child)) {
           const childIsSelected = !!child.props.selected;
 
-          return cloneElement(child as React.ReactElement, {
-            variant,
-            disabled: disabled || child.props.disabled,
-            size,
-            className: cx(child.props.className, classes.button, {
-              [classes.firstButton]: index === 0,
-              [classes.lastButton]:
-                index === React.Children.count(children) - 1,
-              [classes.selected]: childIsSelected,
-            }),
-            "aria-pressed": childIsSelected,
-          });
+          return (
+            <>
+              {cloneElement(child as React.ReactElement, {
+                variant,
+                disabled: disabled || child.props.disabled,
+                size,
+                className: cx(child.props.className, classes.button, {
+                  [classes.firstButton]: index === 0,
+                  [classes.lastButton]:
+                    index === React.Children.count(children) - 1,
+                  [classes.selected]: childIsSelected,
+                }),
+                "aria-pressed": childIsSelected,
+              })}
+              {split && index < React.Children.count(children) - 1 && (
+                <div
+                  className={cx(classes.splitContainer, classes[variant], {
+                    [classes.splitDisabled]: disabled,
+                  })}
+                >
+                  <div className={cx(classes.split)} />
+                </div>
+              )}
+            </>
+          );
         }
       })}
     </div>
