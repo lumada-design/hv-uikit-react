@@ -19,6 +19,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     },
 
     "& button$button": {
+      minWidth: "unset",
       width: "100%",
       maxWidth: 200,
       padding: 0,
@@ -97,10 +98,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     },
     // dropdown menu styles
     "& $button": {
-      [`& .${dropDownMenuClasses.container}`]: {
-        width: "unset",
-      },
-      [`& .${dropDownMenuClasses.root}`]: {
+      [`&.${dropDownMenuClasses.container}`]: {
         width: "unset",
       },
       [`& .${dropDownMenuClasses.icon}`]: {

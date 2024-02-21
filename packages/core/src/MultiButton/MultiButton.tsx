@@ -68,7 +68,6 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
                     index === React.Children.count(children) - 1,
                   [classes.selected]: childIsSelected,
                 }),
-                "aria-pressed": childIsSelected,
               })}
               {split && index < React.Children.count(children) - 1 && (
                 <div

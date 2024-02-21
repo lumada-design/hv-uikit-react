@@ -106,6 +106,7 @@ export const HvButton = fixedForwardRef(function HvButton<
     focusableWhenDisabled,
     onClick: onClickProp,
     onMouseDown: onMouseDownProp,
+    selected,
     ...others
   } = useDefaultProps("HvButton", props);
   const { classes, css, cx } = useClasses(classesProp);
@@ -149,6 +150,7 @@ export const HvButton = fixedForwardRef(function HvButton<
         tabIndex: focusableWhenDisabled ? 0 : -1,
         "aria-disabled": true,
       })}
+      {...(selected && { "aria-pressed": selected })}
       {...others}
     >
       {startIcon && <span className={classes.startIcon}>{startIcon}</span>}
