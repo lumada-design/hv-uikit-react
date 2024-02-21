@@ -4,6 +4,8 @@ import React, {
   useMemo,
   HTMLAttributes,
   useEffect,
+  useRef,
+  useState,
 } from "react";
 
 import {
@@ -244,13 +246,22 @@ export const HvBlade = (props: HvBladeProps) => {
     labelVariant,
   ]);
 
-  const bladeRef = React.useRef<HTMLDivElement>(null);
-  const maxWidthRef = React.useRef<number>(0);
+  const bladeRef = useRef<HTMLDivElement>(null);
+  const [maxWidth, setMaxWidth] = useState<number | undefined>(undefined);
   useEffect(() => {
     if (bladeRef.current) {
-      maxWidthRef.current = bladeRef.current.parentElement?.clientWidth || 0;
+      const resizeObserver = new ResizeObserver((entries) => {
+        setMaxWidth(entries[0].target.clientWidth);
+      });
+      resizeObserver.observe(
+        // using the blade's container as reference max-width is more stable
+        bladeRef.current.parentElement ?? bladeRef.current
+      );
+      return () => {
+        resizeObserver.disconnect();
+      };
     }
-  }, []);
+  }, [isExpanded]);
 
   const { style: containerStyle, ...otherContainerProps } =
     containerProps || {};
@@ -274,7 +285,7 @@ export const HvBlade = (props: HvBladeProps) => {
         hidden={!isExpanded}
         style={{
           ...containerStyle,
-          maxWidth: isExpanded ? maxWidthRef.current : 0,
+          maxWidth: isExpanded ? maxWidth : 0,
         }}
         {...otherContainerProps}
       >
