@@ -1,11 +1,17 @@
 import { MouseEvent, useState } from "react";
 import range from "lodash/range";
 import { Meta, StoryObj } from "@storybook/react";
-import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
+import {
+  DropDownXS,
+  LocationPin,
+  Map,
+} from "@hitachivantara/uikit-react-icons";
 import {
   HvButton,
+  HvDropDownMenu,
   HvMultiButton,
   HvMultiButtonProps,
+  HvSimpleGrid,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvMultiButton> = {
@@ -19,11 +25,13 @@ export const Main: StoryObj<HvMultiButtonProps> = {
     disabled: false,
     vertical: false,
     variant: "secondarySubtle",
+    size: undefined,
   },
   argTypes: {
     classes: { control: { disable: true } },
+    size: { control: { type: "select" } },
   },
-  render: ({ vertical, disabled, variant }) => {
+  render: ({ vertical, disabled, variant, size }) => {
     const [val, setVal] = useState(-1);
 
     return (
@@ -32,6 +40,7 @@ export const Main: StoryObj<HvMultiButtonProps> = {
         vertical={vertical}
         disabled={disabled}
         variant={variant}
+        size={size}
       >
         <HvButton
           key="1"
@@ -405,6 +414,226 @@ export const VerticalOrientation: StoryObj<HvMultiButtonProps> = {
           ))}
         </HvMultiButton>
       </div>
+    );
+  },
+};
+
+export const SplitButton: StoryObj<HvMultiButtonProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "MultiButton component used to create a **Split Button**.",
+      },
+    },
+  },
+  render: () => {
+    const options = [
+      { label: "Create merge commit" },
+      { label: "Squash and merge" },
+      { label: "Rebase and merge" },
+    ];
+
+    const [selectedOption, setSelectedOption] = useState(options[0]);
+
+    return (
+      <HvSimpleGrid cols={3} spacing="sm">
+        <HvMultiButton variant="primary" style={{ width: "232px" }} split>
+          <HvButton>{selectedOption.label}</HvButton>
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+        </HvMultiButton>
+        <HvMultiButton variant="primarySubtle" style={{ width: "232px" }} split>
+          <HvButton>{selectedOption.label}</HvButton>
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+        </HvMultiButton>
+        <HvMultiButton
+          variant="secondarySubtle"
+          style={{ width: "232px" }}
+          split
+        >
+          <HvButton>{selectedOption.label}</HvButton>
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+        </HvMultiButton>
+        <HvMultiButton
+          variant="primary"
+          style={{ width: "228px" }}
+          split
+          size="xs"
+        >
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+          <HvButton>{selectedOption.label}</HvButton>
+        </HvMultiButton>
+        <HvMultiButton
+          variant="primarySubtle"
+          style={{ width: "228px" }}
+          split
+          size="xs"
+        >
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+          <HvButton>{selectedOption.label}</HvButton>
+        </HvMultiButton>
+        <HvMultiButton
+          variant="secondarySubtle"
+          style={{ width: "228px" }}
+          split
+          size="xs"
+        >
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+          <HvButton>{selectedOption.label}</HvButton>
+        </HvMultiButton>
+        <HvMultiButton
+          variant="primary"
+          style={{ width: "240px" }}
+          split
+          size="lg"
+        >
+          <HvButton>{selectedOption.label}</HvButton>
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+        </HvMultiButton>
+        <HvMultiButton
+          variant="primarySubtle"
+          style={{ width: "240px" }}
+          split
+          size="lg"
+        >
+          <HvButton>{selectedOption.label}</HvButton>
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+        </HvMultiButton>
+        <HvMultiButton
+          variant="secondarySubtle"
+          style={{ width: "240px" }}
+          split
+          size="lg"
+        >
+          <HvButton>{selectedOption.label}</HvButton>
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+        </HvMultiButton>
+        <HvMultiButton
+          variant="primary"
+          style={{ width: "232px" }}
+          split
+          disabled
+          size="xl"
+        >
+          <HvButton>{selectedOption.label}</HvButton>
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+        </HvMultiButton>
+        <HvMultiButton
+          variant="primarySubtle"
+          style={{ width: "232px" }}
+          split
+          disabled
+          size="xl"
+        >
+          <HvButton>{selectedOption.label}</HvButton>
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+        </HvMultiButton>
+        <HvMultiButton
+          variant="secondarySubtle"
+          style={{ width: "232px" }}
+          split
+          disabled
+          size="xl"
+        >
+          <HvButton>{selectedOption.label}</HvButton>
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0]
+              )
+            }
+          />
+        </HvMultiButton>
+      </HvSimpleGrid>
     );
   },
 };

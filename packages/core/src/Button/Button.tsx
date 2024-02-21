@@ -12,6 +12,7 @@ import {
   getOverrideColors,
   getRadiusStyles,
   getSizeStyles,
+  getIconSizeStyles,
   useClasses,
 } from "./Button.styles";
 import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./types";
@@ -130,13 +131,14 @@ export const HvButton = fixedForwardRef(function HvButton<
       className={cx(
         classes.root,
         classes[variant],
-        size && css(getSizeStyles(size)),
+        size && !icon && css(getSizeStyles(size)),
         radius && css(getRadiusStyles(radius)),
         overrideIconColors && css(getOverrideColors()),
         {
           [classes.icon]: icon,
           [classes.disabled]: disabled,
         },
+        size && icon && css(getIconSizeStyles(size)),
         className
       )}
       onClick={handleClick}

@@ -190,6 +190,38 @@ export const Icons: StoryObj<HvButtonProps> = {
           Stop
         </HvButton>
       </div>
+      <div>
+        <HvButton icon aria-label="Play" variant="primarySubtle">
+          <Play />
+        </HvButton>
+        <HvButton aria-label="Play" variant="primarySubtle">
+          Play
+        </HvButton>
+        <HvButton icon aria-label="Pause" variant="primarySubtle" size="xs">
+          <Pause iconSize="XS" />
+        </HvButton>
+        <HvButton aria-label="Play" variant="primarySubtle" size="xs">
+          XS
+        </HvButton>
+        <HvButton icon aria-label="Stop" variant="primarySubtle" size="md">
+          <Stop />
+        </HvButton>
+        <HvButton aria-label="Play" variant="primarySubtle" size="md">
+          MD
+        </HvButton>
+        <HvButton icon aria-label="Stop" variant="primarySubtle" size="lg">
+          <Stop />
+        </HvButton>
+        <HvButton aria-label="Play" variant="primarySubtle" size="lg">
+          LG
+        </HvButton>
+        <HvButton icon aria-label="Stop" variant="primarySubtle" size="xl">
+          <Stop />
+        </HvButton>
+        <HvButton aria-label="Play" variant="primarySubtle" size="xl">
+          XL
+        </HvButton>
+      </div>
     </>
   ),
 };

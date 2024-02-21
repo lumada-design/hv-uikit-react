@@ -20,7 +20,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
 
     "& button$button": {
       width: "100%",
-      minWidth: 32,
       maxWidth: 200,
       padding: 0,
       transition: "none",
@@ -98,6 +97,12 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     },
     // dropdown menu styles
     "& $button": {
+      [`& .${dropDownMenuClasses.container}`]: {
+        width: "unset",
+      },
+      [`& .${dropDownMenuClasses.root}`]: {
+        width: "unset",
+      },
       [`& .${dropDownMenuClasses.icon}`]: {
         borderTop: `solid 1px ${theme.colors.atmo4}`,
         borderBottom: `solid 1px ${theme.colors.atmo4}`,
@@ -281,14 +286,10 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
         "&$lastButton": {
           [`& .${dropDownMenuClasses.icon}`]: {
             borderRight: `solid 1px ${theme.colors.secondary}`,
-            "&$lastButton": {
-              [`& .${dropDownMenuClasses.icon}`]: {
-                "&:disabled": {
-                  borderRight: "none",
-                  "&:hover": {
-                    borderRight: "none",
-                  },
-                },
+            "&:disabled": {
+              borderRight: "none",
+              "&:hover": {
+                borderRight: "none",
               },
             },
           },
@@ -306,6 +307,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       flex: "1 1 20px",
     },
     "& button$button": {
+      minWidth: 32,
       width: "100%",
       borderLeft: `solid 1px ${theme.colors.atmo4}`,
       borderRight: `solid 1px ${theme.colors.atmo4}`,
@@ -383,12 +385,15 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
         borderTop: "none",
         borderBottom: "none",
       },
+      [`& .${dropDownMenuClasses.iconSelected}`]: {
+        border: `solid 1px ${theme.colors.secondary}`,
+      },
       "&$firstButton": {
         [`& .${dropDownMenuClasses.icon}`]: {
           borderLeft: "none",
         },
         [`& .${dropDownMenuClasses.iconSelected}`]: {
-          border: `solid 1px ${theme.colors.secondary}`,
+          borderLeft: `solid 1px ${theme.colors.secondary}`,
         },
       },
       "&$lastButton": {
@@ -396,7 +401,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
           borderRight: "none",
         },
         [`& .${dropDownMenuClasses.iconSelected}`]: {
-          border: `solid 1px ${theme.colors.secondary}`,
+          borderRight: `solid 1px ${theme.colors.secondary}`,
         },
       },
     },
@@ -439,7 +444,21 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   primaryGhost: {},
   secondary: {},
   secondarySubtle: {},
-  secondaryGhost: {},
+  secondaryGhost: {
+    "& button$button": {
+      "&:disabled": {
+        background: theme.colors.atmo3,
+      },
+    },
+    // dropdown menu styles
+    "& $button": {
+      [`& .${dropDownMenuClasses.icon}`]: {
+        "&:disabled": {
+          background: theme.colors.atmo3,
+        },
+      },
+    },
+  },
   firstButton: {},
   lastButton: {},
   split: {
@@ -479,8 +498,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     },
     "&$secondaryGhost": {
       color: theme.colors.secondary,
-      borderTop: `1px solid ${theme.colors.secondary}`,
-      borderBottom: `1px solid ${theme.colors.secondary}`,
     },
     "&$splitDisabled": {
       background: theme.colors.atmo3,

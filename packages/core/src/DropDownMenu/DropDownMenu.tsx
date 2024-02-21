@@ -10,11 +10,12 @@ import { setId } from "../utils/setId";
 import { getPrevNextFocus } from "../utils/focusableElementFinder";
 import { ExtractNames } from "../utils/classes";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
-import { HvButton, HvButtonVariant } from "../Button";
+import { HvButton, HvButtonSize, HvButtonVariant } from "../Button";
 import { HvList, HvListProps, HvListValue } from "../List";
 import { HvPanel } from "../Panel";
 
 import { staticClasses, useClasses } from "./DropDownMenu.styles";
+import { getIconSizeStyles } from "../Button/Button.styles";
 
 export { staticClasses as dropDownMenuClasses };
 
@@ -60,6 +61,8 @@ export interface HvDropDownMenuProps
   category?: HvButtonVariant;
   /** The variant to be used in the header. */
   variant?: HvButtonVariant;
+  /** Button size. */
+  size?: HvButtonSize;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvDropDownMenuClasses;
 }
@@ -84,10 +87,11 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
     defaultExpanded = false,
     category = "secondaryGhost",
     variant,
+    size,
     ...others
   } = useDefaultProps("HvDropDownMenu", props);
 
-  const { classes, cx } = useClasses(classesProp);
+  const { classes, cx, css } = useClasses(classesProp);
   const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
   const id = useUniqueId(idProp, "dropdown-menu");
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
@@ -132,9 +136,14 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
           icon
           variant={variant ?? category}
           id={setId(id, "icon-button")}
-          className={cx(classes.icon, { [classes.iconSelected]: open })}
+          className={cx(
+            classes.icon,
+            { [classes.iconSelected]: open },
+            size && icon && css(getIconSizeStyles(size))
+          )}
           aria-expanded={open}
           disabled={disabled}
+          size={size}
           aria-label="Dropdown menu"
           aria-haspopup="menu"
         >
