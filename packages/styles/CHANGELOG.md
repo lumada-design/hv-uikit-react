@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.20.0 (2024-02-21)
+
+### Features
+
+- **Select:** add Select component ([b6e6640](https://github.com/lumada-design/hv-uikit-react/commit/b6e6640eeba06472e6522164d39c9a68c790ddd0))
+
 # 5.19.0 (2024-02-10)
 
 ### Features

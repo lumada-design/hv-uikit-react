@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.51.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.50.1...@hitachivantara/uikit-react-core@5.51.0) (2024-02-21)
+
+### Features
+
+- **Select:** add Select component ([b6e6640](https://github.com/lumada-design/hv-uikit-react/commit/b6e6640eeba06472e6522164d39c9a68c790ddd0))
+
 ## [5.50.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.50.0...@hitachivantara/uikit-react-core@5.50.1) (2024-02-20)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
