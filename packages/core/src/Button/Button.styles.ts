@@ -117,6 +117,11 @@ export const getSizeStyles = (size: HvButtonSize): CSSInterpolation => ({
   fontSize: theme.fontSizes[size],
 });
 
+export const getIconSizeStyles = (size: HvButtonSize): CSSInterpolation => ({
+  height: theme.sizes[size],
+  width: theme.sizes[size],
+});
+
 export const getOverrideColors = (): CSSInterpolation => ({
   "& svg .color0": {
     fill: "currentcolor",
