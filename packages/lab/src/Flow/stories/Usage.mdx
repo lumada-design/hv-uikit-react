@@ -207,20 +207,22 @@ Nodes need inputs and/or outputs to connect to other nodes and they can be defin
 Below are the specifications for a single input and output.
 
 ```typescript
-interface HvFlowNodeInput extends HvFlowNodeLabelActions {
+interface HvFlowNodeInput {
   id?: string;
   label: React.ReactNode;
   isMandatory?: boolean;
   accepts?: string[];
   maxConnections?: number;
+  labelAction?: HvFlowNodeLabelAction;
 }
 
-interface HvFlowNodeOutput extends HvFlowNodeLabelActions {
+interface HvFlowNodeOutput {
   id?: string;
   label: React.ReactNode;
   isMandatory?: boolean;
   provides?: string;
   maxConnections?: number;
+  labelAction?: HvFlowNodeLabelAction;
 }
 ```
 
@@ -236,86 +238,49 @@ the number of connections an input accepts as well as the number of connections 
 Nodes can also accept groups of inputs and outputs. These groups are defined by the types below.
 
 ```typescript
-interface HvFlowNodeInputGroup extends HvFlowNodeLabelActions {
+interface HvFlowNodeInputGroup {
   id?: string;
   label: React.ReactNode;
   inputs: HvFlowNodeInput[];
-  defaultInputsActions?: HvFlowNodeLabelActions;
+  defaultInputsLabelAction?: HvFlowNodeLabelAction;
+  labelAction?: HvFlowNodeLabelAction;
 }
 
-interface HvFlowNodeOutputGroup extends HvFlowNodeLabelActions {
+interface HvFlowNodeOutputGroup {
   id?: string;
   label: React.ReactNode;
   outputs: HvFlowNodeOutput[];
-  defaultOutputsActions?: HvFlowNodeLabelActions;
+  defaultOutputsLabelAction?: HvFlowNodeLabelAction;
+  labelAction?: HvFlowNodeLabelAction;
 }
 ```
 
-You might have noticed that all the types mentioned above in this section extend `HvFlowNodeLabelActions`. This type has the following properties:
+You might have noticed that all the types mentioned above have the `labelAction` property which is defined by the `HvFlowNodeLabelAction` type.
+This type has the following properties:
 
 ```typescript
-interface HvFlowNodeLabelActions {
-  actions?: HvActionsGeneric[];
-  onAction?: (
-    event: React.SyntheticEvent,
-    action: HvActionGeneric,
+interface HvFlowNodeLabelAction {
+  id: string;
+  label: string;
+  icon?: React.ReactNode;
+  iconOnly?: boolean;
+  variant?: HvButtonVariant;
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    id: string,
     item:
       | HvFlowNodeInput
       | HvFlowNodeInputGroup
       | HvFlowNodeOutput
       | HvFlowNodeOutputGroup
   ) => void;
-  actionsIconOnly?: boolean;
-  maxVisibleActions?: number;
-  actionsPlacement?: "left" | "right";
-  actionsButtonVariant?: HvButtonVariant;
 }
 ```
 
-These properties enable you to easily position actions to the left or right of the label. However, if you need more flexibility or to implement
-a more complex design, you should opt to customise the label since you can provide a `React.ReactNode`.
+The `labelAction` property enables you to define an action that will be positioned near the label.
+Actions for an input or output group will be positioned on the right of the label whereas for an input and output they will be positioned on the left.
+However, if you need more flexibility or to implement a more complex design, you can customise the label by providing a `React.ReactNode`.
 
-Please find an example below on how to use actions on the labels.
-
-```typescript
-<HvFlowNode
-  (...)
-  outputs={[
-    {
-      id: "sensors",
-      label: "Sensors",
-      actions: [
-        {
-          id: "config",
-          label: "Configure",
-        },
-      ],
-      actionsButtonVariant: "primarySubtle",
-      actionsPlacement: "right",
-      outputs: [
-        {
-          id: "sensor1"
-          label: "Sensor 1",
-          actions: [
-            {
-              id: "edit",
-              label: "Edit",
-              icon: <Edit />,
-            },
-          ],
-          actionsButtonVariant: "primaryGhost",
-          actionsIconOnly: true,
-          provides: "sensorData",
-        },
-      ],
-    },
-  ]}
-/>
-```
-
-Sometimes inputs/outputs inside a group have the same actions. Instead of repeating the same properties for all the inputs/outputs, the
-`defaultInputsActions` and `defaultOutputsActions` properties are provided.
-These default actions will be used in case none are defined at the input/output level.
 Please find an example below.
 
 ```typescript
@@ -325,26 +290,53 @@ Please find an example below.
     {
       id: "sensors",
       label: "Sensors",
-      actions: [
+      labelAction: {
+        id: "config",
+        label: "Configure",
+      },
+      outputs: [
         {
-          id: "config",
-          label: "Configure",
-        },
-      ],
-      actionsButtonVariant: "primarySubtle",
-      actionsPlacement: "right",
-      // Actions shared by all outputs in the group
-      defaultOutputsActions: {
-        actions: [
-          {
+          id: "sensor1"
+          label: "Sensor 1",
+          labelAction: {
             id: "edit",
             label: "Edit",
             icon: <Edit />,
+            iconOnly: true,
+            variant: "primaryGhost",
           },
-        ],
-        actionsButtonVariant: "primaryGhost",
-        actionsIconOnly: true,
+          provides: "sensorData",
+        },
+      ],
+    },
+  ]}
+/>
+```
+
+Sometimes inputs and outputs inside a group have the same action. Instead of repeating code, the `defaultInputsLabelAction` and
+`defaultOutputsLabelAction` properties are provided. This default action will be used in case none are defined at the input/output level.
+
+Please find an example below.
+
+```typescript
+<HvFlowNode
+  (...)
+  outputs={[
+    {
+      id: "sensors",
+      label: "Sensors",
+      labelAction: {
+        id: "config",
+        label: "Configure",
       },
+      // Actions shared by all outputs in the group
+      defaultOutputsLabelAction: {
+        id: "edit",
+        label: "Edit",
+        icon: <Edit />,
+        iconOnly: true,
+        variant: "primaryGhost",
+      ,
       outputs: [
         {
           id: "sensor1",

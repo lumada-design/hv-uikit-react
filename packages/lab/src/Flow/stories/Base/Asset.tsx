@@ -17,8 +17,8 @@ import {
   HvFlowInstance,
   HvFlowNode,
   HvFlowNodeFC,
-  HvFlowNodeOutput,
   HvFlowNodeProps,
+  HvFlowNodeLabelAction,
   HvFlowNodeTypeMeta,
   useFlowNode,
 } from "@hitachivantara/uikit-react-lab";
@@ -57,12 +57,12 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
     }
   };
 
-  const handleActionCallback: HvFlowNodeOutput["onAction"] = (
+  const handleActionCallback: HvFlowNodeLabelAction["onClick"] = (
     event,
-    action,
+    id,
     item
   ) => {
-    console.log("Action called:", action.id, item);
+    console.log("Action called:", id, item);
   };
 
   return (
@@ -122,27 +122,19 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
           {
             id: "sensors",
             label: "Sensors",
-            actions: [
-              {
-                id: "config",
-                label: "Configure",
-              },
-            ],
-            onAction: handleActionCallback,
-            actionsButtonVariant: "primarySubtle",
-            actionsPlacement: "right",
+            labelAction: {
+              id: "config",
+              label: "Configure",
+              onClick: handleActionCallback,
+            },
             // Actions shared by all outputs in the group
-            defaultOutputsActions: {
-              actions: [
-                {
-                  id: "edit",
-                  label: "Edit",
-                  icon: <Edit />,
-                },
-              ],
-              onAction: handleActionCallback,
-              actionsButtonVariant: "primaryGhost",
-              actionsIconOnly: true,
+            defaultOutputsLabelAction: {
+              id: "edit",
+              label: "Edit",
+              icon: <Edit />,
+              iconOnly: true,
+              variant: "primaryGhost",
+              onClick: handleActionCallback,
             },
             outputs: [
               {

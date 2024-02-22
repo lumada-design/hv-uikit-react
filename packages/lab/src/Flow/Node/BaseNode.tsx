@@ -9,7 +9,6 @@ import { Handle, NodeProps, NodeToolbar, Position } from "reactflow";
 import { uid } from "uid";
 import {
   ExtractNames,
-  HvActionsGeneric,
   HvBaseProps,
   HvButton,
   HvTooltip,
@@ -26,7 +25,7 @@ import {
   HvFlowNodeOutput,
   HvFlowNodeOutputGroup,
   HvFlowNodeInputGroup,
-  HvFlowNodeLabelActions,
+  HvFlowNodeLabelAction,
 } from "../types";
 import {
   useFlowNode,
@@ -41,7 +40,6 @@ import {
   isInputGroup,
   isOutputGroup,
   renderedIcon,
-  returnActions,
 } from "./utils";
 import { useFlowInstance } from "../hooks";
 
@@ -176,48 +174,62 @@ export const HvFlowBaseNode = ({
       | HvFlowNodeInputGroup
       | HvFlowNodeOutput
       | HvFlowNodeOutputGroup,
-    defaultActions?: HvFlowNodeLabelActions,
+    placement: "right" | "left",
+    defaultAction?: HvFlowNodeLabelAction,
     typographyProps?: HvTypographyProps
   ) => {
-    const { label } = item;
-    const result = returnActions(item, defaultActions);
-    const placement = result?.actionsPlacement ?? "left";
+    const { label, labelAction } = item;
+    const result = labelAction ?? defaultAction;
 
-    let labelActions: React.ReactNode = null;
+    let actionElement: React.ReactNode = null;
     if (result) {
       const {
-        actions,
-        actionsButtonVariant,
-        onAction,
-        actionsIconOnly,
-        maxVisibleActions,
+        id: actionId,
+        label: actionLabel,
+        icon: actionIcon,
+        iconOnly = false,
+        variant = "primarySubtle",
+        onClick,
       } = result;
 
-      labelActions = (
-        <HvActionsGeneric
-          actions={actions}
-          maxVisibleActions={maxVisibleActions}
-          onAction={(e, a) => onAction?.(e, a, item)}
-          iconOnly={actionsIconOnly}
-          variant={actionsButtonVariant}
-        />
+      // TODO - use IconButton component when available as a component
+      actionElement = iconOnly ? (
+        <HvTooltip enterDelay={500} title={actionLabel}>
+          <HvButton
+            icon
+            id={actionId}
+            variant={variant}
+            onClick={(e) => onClick?.(e, actionId, item)}
+          >
+            {actionIcon}
+          </HvButton>
+        </HvTooltip>
+      ) : (
+        <HvButton
+          id={actionId}
+          variant={variant}
+          startIcon={actionIcon}
+          onClick={(e) => onClick?.(e, actionId, item)}
+        >
+          {actionLabel}
+        </HvButton>
       );
     }
 
     return (
       <div className={classes.handleLabelContainer}>
-        {placement === "left" && labelActions}
+        {placement === "left" && actionElement}
         <HvTypography component="div" {...typographyProps}>
           {label}
         </HvTypography>
-        {placement === "right" && labelActions}
+        {placement === "right" && actionElement}
       </div>
     );
   };
 
   const renderOutput = (
     output: HvFlowNodeOutput,
-    defaultActions?: HvFlowNodeLabelActions
+    defaultAction?: HvFlowNodeLabelAction
   ) => {
     const edgeConnected = isConnected(id, "source", output.id!, outputEdges);
 
@@ -235,14 +247,14 @@ export const HvFlowBaseNode = ({
         {output.isMandatory && !edgeConnected && (
           <div className={classes.mandatory} />
         )}
-        {renderLabel(output, defaultActions)}
+        {renderLabel(output, "left", defaultAction)}
       </div>
     );
   };
 
   const renderInput = (
     input: HvFlowNodeInput,
-    defaultActions?: HvFlowNodeLabelActions
+    defaultAction?: HvFlowNodeLabelAction
   ) => {
     const edgeConnected = isConnected(id, "target", input.id!, inputEdges);
 
@@ -257,7 +269,7 @@ export const HvFlowBaseNode = ({
             [classes.handleConnected]: edgeConnected,
           })}
         />
-        {renderLabel(input, defaultActions)}
+        {renderLabel(input, "left", defaultAction)}
         {input.isMandatory && !edgeConnected && (
           <div className={classes.mandatory} />
         )}
@@ -285,6 +297,7 @@ export const HvFlowBaseNode = ({
     >
       <NodeToolbar isVisible={showActions} offset={0}>
         {nodeActions?.map((action) => (
+          /* TODO - use IconButton component when available as a component */
           <HvTooltip key={action.id} enterDelay={500} title={action.label}>
             <HvButton icon onClick={() => handleDefaultAction(action)}>
               {renderedIcon(action.icon)}
@@ -327,11 +340,11 @@ export const HvFlowBaseNode = ({
                   className={classes.inputGroupContainer}
                   key={`group${input.id ?? idx}`}
                 >
-                  {renderLabel(input, undefined, {
+                  {renderLabel(input, "right", undefined, {
                     variant: "label",
                   })}
                   {(input as HvFlowNodeInputGroup).inputs.map((inp) =>
-                    renderInput(inp, input.defaultInputsActions)
+                    renderInput(inp, input.defaultInputsLabelAction)
                   )}
                 </div>
               );
@@ -353,11 +366,11 @@ export const HvFlowBaseNode = ({
                   className={classes.outputGroupContainer}
                   key={`group${output.id ?? idx}`}
                 >
-                  {renderLabel(output, undefined, {
+                  {renderLabel(output, "right", undefined, {
                     variant: "label",
                   })}
                   {(output as HvFlowNodeOutputGroup).outputs.map((out) => {
-                    return renderOutput(out, output.defaultOutputsActions);
+                    return renderOutput(out, output.defaultOutputsLabelAction);
                   })}
                 </div>
               );
