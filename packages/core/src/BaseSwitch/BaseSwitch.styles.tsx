@@ -14,7 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     borderRadius: theme.radii.base,
 
     "&:hover": {
-      backgroundColor: theme.colors.primary_20,
+      backgroundColor: theme.colors.containerBackgroundHover,
     },
 
     // Higher CSS specificity here
