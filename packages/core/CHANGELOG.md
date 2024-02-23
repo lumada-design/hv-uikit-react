@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.52.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.51.0...@hitachivantara/uikit-react-core@5.52.0) (2024-02-23)
+
+### Bug Fixes
+
+- **FilterGroup:** select all when filter is on ([6d30477](https://github.com/lumada-design/hv-uikit-react/commit/6d30477866e2b591dc6ff3294c96cdf12a95e484))
+
+### Features
+
+- **FilterGroup:** disabled options ([6bd17f1](https://github.com/lumada-design/hv-uikit-react/commit/6bd17f13df6933288cdd458adfc948356d6fc4d6))
+
 # [5.51.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.50.1...@hitachivantara/uikit-react-core@5.51.0) (2024-02-21)
 
 ### Features

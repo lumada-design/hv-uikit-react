@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.27.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.27.11...@hitachivantara/uikit-react-lab@5.27.12) (2024-02-23)
+
+### Bug Fixes
+
+- **blade:** content width was set to zero on initially expanded blade ([87ebc30](https://github.com/lumada-design/hv-uikit-react/commit/87ebc300dd7bb7d2ec21cb2afaa3df3127191571))
+
 ## [5.27.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.27.10...@hitachivantara/uikit-react-lab@5.27.11) (2024-02-21)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
