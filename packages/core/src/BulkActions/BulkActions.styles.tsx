@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
     marginBottom: theme.space.xs,
   },
   semantic: {
-    backgroundColor: theme.colors.primary_20,
+    backgroundColor: theme.colors.containerBackgroundHover,
     "& $selectAll div": {
       color: "inherit",
 
