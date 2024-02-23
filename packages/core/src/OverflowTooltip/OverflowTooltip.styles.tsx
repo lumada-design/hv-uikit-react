@@ -8,6 +8,8 @@ export const { staticClasses, useClasses } = createClasses(
       whiteSpace: "nowrap",
       overflow: "hidden",
       textOverflow: "ellipsis",
+      maxWidth: "100%",
+      width: "fit-content",
     },
     tooltipAnchorParagraph: {
       overflow: "hidden",
