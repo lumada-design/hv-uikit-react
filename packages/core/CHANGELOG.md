@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.52.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.52.0...@hitachivantara/uikit-react-core@5.52.1) (2024-02-25)
+
+### Bug Fixes
+
+- use appropriate token for background color ([433b98f](https://github.com/lumada-design/hv-uikit-react/commit/433b98fec11502b399f30915862d82abbea475e4))
+
 # [5.52.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.51.0...@hitachivantara/uikit-react-core@5.52.0) (2024-02-23)
 
 ### Bug Fixes
