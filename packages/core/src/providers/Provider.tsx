@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-import createCache from "@emotion/cache";
+import createCache, { EmotionCache } from "@emotion/cache";
 import {
   css as cssReact,
   Global,
@@ -55,9 +55,15 @@ export interface HvProviderProps {
    * The string used to prefix the class names and uniquely identify them. The key can only contain lower case alphabetical characters.
    * This is useful to avoid class name collisions.
    *
-   * If no value is provided, the default is `hv`.
+   * If `emotionCache` is passed, this is value is ignored.
+   *
+   * @default "hv"
    */
   classNameKey?: string;
+  /**
+   * The emotion cache instance to use. If no value is provided, the default cache is used.
+   */
+  emotionCache?: EmotionCache;
   /**
    * List of themes to be used by UI Kit.
    * You can provide your own themes created with the `createTheme` utility and/or the default themes `ds3` and `ds5` provided by UI Kit.
@@ -93,6 +99,7 @@ export const HvProvider = ({
   themes,
   theme,
   colorMode,
+  emotionCache: emotionCacheProp,
   classNameKey = defaultCacheKey,
 }: HvProviderProps) => {
   const scopedRootId = useUniqueId(undefined, scopedRootPrefix);
@@ -103,13 +110,13 @@ export const HvProvider = ({
   // Emotion cache
   // Moves UI Kit styles to the top of the <head> so they're loaded first
   // This enables users to override the UI Kit styles if necessary
-  const emotionCache = useMemo(
-    () =>
-      classNameKey === defaultCacheKey
-        ? defaultEmotionCache
-        : createCache({ key: classNameKey, prepend: true }),
-    [classNameKey]
-  );
+  const emotionCache = useMemo(() => {
+    if (emotionCacheProp) return emotionCacheProp;
+    // reuse the default shared cache if `classNameKey` is the same
+    if (classNameKey === defaultCacheKey) return defaultEmotionCache;
+
+    return createCache({ key: classNameKey, prepend: true });
+  }, [classNameKey, emotionCacheProp]);
 
   return (
     <CacheProvider value={emotionCache}>
