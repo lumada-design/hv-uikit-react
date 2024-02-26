@@ -1,0 +1,19 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { ServerSideTableStory } from "./ServerSideTableSamples";
+
+<Meta title="Visualizations/Table/Virtualized Infinite Loading Table" />
+
+# Virtualized Infinite Loading Table
+
+This sample showcases a table that loads data from the server in chunks as the user scrolls down, using the `useSWRInfinite` hook from `swr`.
+
+It uses `@tanstack/react-virtual` to render only the visible rows, which makes it possible to handle large datasets with less performance issues.
+
+Pagination, sorting, and filtering are all handled server-side. The server-side behavior is mocked using an Arquero table.
+
+<Canvas>
+  <Story
+    name="Virtualized Infinite Loading Table"
+    story={ServerSideTableStory}
+  />
+</Canvas>
