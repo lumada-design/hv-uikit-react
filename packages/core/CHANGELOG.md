@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.53.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.52.1...@hitachivantara/uikit-react-core@5.53.0) (2024-02-27)
+
+### Bug Fixes
+
+- **TableSection:** fix pagination styles ([f26deb8](https://github.com/lumada-design/hv-uikit-react/commit/f26deb8b429703af74a2c4a660739435c6deb845))
+
+### Features
+
+- **Provider:** allow passing a custom cache ([88d1a4c](https://github.com/lumada-design/hv-uikit-react/commit/88d1a4cbd3994c4a7302b1140fb166ca6d6c1b41))
+
 ## [5.52.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.52.0...@hitachivantara/uikit-react-core@5.52.1) (2024-02-25)
 
 ### Bug Fixes
