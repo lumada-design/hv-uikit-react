@@ -10,3 +10,4 @@ export { flowClasses } from "./DroppableFlow";
 export * from "./types";
 export * from "./nodes";
 export * from "./hooks";
+export { useNodeMetaRegistry } from "./FlowContext/NodeMetaContext";
