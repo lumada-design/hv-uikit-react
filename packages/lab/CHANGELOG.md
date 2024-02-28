@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.28.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.27.14...@hitachivantara/uikit-react-lab@5.28.0) (2024-02-28)
+
+### Features
+
+- **Flow:** export useNodeMetaRegistry ([2bd29b6](https://github.com/lumada-design/hv-uikit-react/commit/2bd29b66a4abe28fbbe47af297a92e21f2bfb78d))
+
 ## [5.27.14](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.27.13...@hitachivantara/uikit-react-lab@5.27.14) (2024-02-27)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
