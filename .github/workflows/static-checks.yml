@@ -3,9 +3,6 @@ name: Checks
 on:
   workflow_dispatch:
   workflow_call:
-    secrets:
-      ORG_GHPAGES_DEPLOY_KEY:
-        required: false
     inputs:
       a11y-publish:
         type: boolean
@@ -65,8 +62,7 @@ jobs:
   a11y:
     name: A11y Tests
     uses: ./.github/workflows/tests-a11y.yml
-    secrets:
-      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+    secrets: inherit
     with:
       publish: ${{ inputs.a11y-publish }}
       exit: ${{ inputs.a11y-exit }}

@@ -16,15 +16,13 @@ jobs:
   applitools:
     name: Applitools
     uses: ./.github/workflows/tests-applitools.yml
-    secrets:
-      APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+    secrets: inherit
     with:
       batch-id: pr-${{ github.event.number }}
 
   artifacts:
     name: Artifacts
     uses: ./.github/workflows/documentation.yml
-    secrets:
-      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+    secrets: inherit
     with:
       publish-folder: pr-${{ github.event.number }}

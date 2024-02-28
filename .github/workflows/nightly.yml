@@ -13,25 +13,19 @@ jobs:
   static-checks:
     name: Static Checks
     uses: ./.github/workflows/static-checks.yml
-    secrets:
-      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+    secrets: inherit
     with:
       a11y-publish: true
 
   applitools:
     name: Applitools Tests
     uses: ./.github/workflows/tests-applitools.yml
-    secrets:
-      APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+    secrets: inherit
 
   security-scans:
     name: Security Scans
     uses: ./.github/workflows/security.yml
-    secrets:
-      CODE_DX_URL: ${{ secrets.CODE_DX_URL }}
-      CODE_DX_API_KEY: ${{ secrets.CODE_DX_API_KEY }}
-      BLACKDUCK_URL: "${{ secrets.BLACKDUCK_URL }}"
-      BLACKDUCK_TOKEN: "${{ secrets.BLACKDUCK_TOKEN }}"
+    secrets: inherit
 
   notify-fail:
     name: Notify Fail
