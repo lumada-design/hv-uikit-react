@@ -3,9 +3,6 @@ name: A11y Tests
 on:
   workflow_dispatch:
   workflow_call:
-    secrets:
-      ORG_GHPAGES_DEPLOY_KEY:
-        required: false
     inputs:
       publish:
         type: boolean

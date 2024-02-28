@@ -74,8 +74,7 @@ jobs:
     needs: [publish]
     if: needs.publish.outputs.published == 'true'
     uses: ./.github/workflows/documentation.yml
-    secrets:
-      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+    secrets: inherit
     with:
       publish-folder: ${{ github.ref_name }}
 

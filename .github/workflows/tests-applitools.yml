@@ -3,9 +3,6 @@ name: Applitools
 on:
   workflow_dispatch:
   workflow_call:
-    secrets:
-      APPLITOOLS_API_KEY:
-        required: true
     inputs:
       batch-id:
         type: string
