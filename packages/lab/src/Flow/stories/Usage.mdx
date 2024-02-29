@@ -132,17 +132,17 @@ The parameters and the list of inputs and outputs are passed as a property of th
 Find an example of a custom node below.
 
 ```tsx
-import {
-  HvFlowNode,
-  HvFlowNodeFC,
-  HvFlowNodeTypeMeta,
-} from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 export const CustomNode: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="CustomNode description"
       expanded
+      defaults={{
+        label: "CustomNode",
+        groupId: "someNodeGroup",
+      }}
       inputs={[
         {
           label: "Data",
@@ -175,11 +175,6 @@ export const CustomNode: HvFlowNodeFC = (props) => {
     </HvFlowNode>
   );
 };
-
-CustomNode.meta = {
-  label: "CustomNode",
-  groupId: "someNodeGroup",
-} satisfies HvFlowNodeTypeMeta;
 ```
 
 If you don't set a group id for any given node, then it will be added to a `Default` group that will serve as a repository to all nodes
@@ -521,6 +516,7 @@ export const Asset: HvFlowNodeFC = (props) => {
       </HvDialog>
       <HvFlowNode
         title="Asset"
+        group="someNodeGroup"
         description="Asset asset description"
         expanded
         maxVisibleActions={1}
@@ -580,11 +576,6 @@ export const Asset: HvFlowNodeFC = (props) => {
   );
 };
 
-Asset.meta = {
-  label: "Asset",
-  groupId: "someNodeGroup",
-} satisfies HvFlowNodeTypeMeta;
-```
-
 Other examples of custom nodes can be found on
 [our repository](https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories).
+```

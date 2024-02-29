@@ -1,14 +1,11 @@
 import { useMemo } from "react";
 import {
   HvFlowNode,
-  HvFlowNodeTypeMeta,
   HvFlowNodeProps,
   HvFlowNodeFC,
 } from "@hitachivantara/uikit-react-lab";
 
-import { NodeGroup } from "../types";
-
-export const Table: HvFlowNodeFC<NodeGroup> = (props) => {
+export const Table: HvFlowNodeFC = (props) => {
   const params: HvFlowNodeProps["params"] = useMemo(() => {
     return [
       { label: "Title", id: "title", type: "text" },
@@ -28,8 +25,11 @@ export const Table: HvFlowNodeFC<NodeGroup> = (props) => {
 
   return (
     <HvFlowNode
-      params={params}
+      title="Visualisation"
+      subtitle="Table"
       description="Table"
+      group="visualization"
+      params={params}
       expanded
       inputs={[
         {
@@ -47,16 +47,11 @@ export const Table: HvFlowNodeFC<NodeGroup> = (props) => {
         },
       ]}
       {...props}
+      data={{
+        title: "",
+        columns: undefined,
+        measure: "EMEA",
+      }}
     />
   );
 };
-
-Table.meta = {
-  label: "Table",
-  groupId: "visualization",
-  data: {
-    title: "",
-    columns: undefined,
-    measure: "EMEA",
-  },
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

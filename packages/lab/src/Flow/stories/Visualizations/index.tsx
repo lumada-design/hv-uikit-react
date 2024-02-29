@@ -47,18 +47,44 @@ const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available inputs.",
     icon: <DataSource />,
+    items: [
+      {
+        type: "jsonInput",
+        label: "JSON Input",
+      },
+    ],
   },
   transformations: {
     label: "Transformation",
     color: "cat5_80",
     description: "Find here all the available transformations.",
     icon: <Operation />,
+    items: [
+      {
+        type: "filter",
+        label: "Filter",
+      },
+    ],
   },
   visualizations: {
     label: "Visualization",
     color: "cat1_80",
     description: "Find here all the available visualizations.",
     icon: <LineChartAlt />,
+    items: [
+      {
+        type: "lineChart",
+        label: "Line Chart",
+      },
+      {
+        type: "barChart",
+        label: "Bar Chart",
+      },
+      {
+        type: "lineChart",
+        label: "Line Chart",
+      },
+    ],
   },
 } satisfies HvFlowProps["nodeGroups"];
 

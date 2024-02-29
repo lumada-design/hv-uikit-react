@@ -8,34 +8,25 @@ import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 // Node types
 
-type NodeExtras<GroupId extends keyof any = string, NodeData = any> = {
-  meta?: HvFlowNodeTypeMeta<GroupId, NodeData>;
-};
-
 /** HvFlowNode component type. @extends React.FC */
-export interface HvFlowNodeFC<
-  GroupId extends keyof any = string,
-  NodeData = any
-> extends FC<NodeProps<NodeData>>,
-    NodeExtras<GroupId, NodeData> {}
+export interface HvFlowNodeFC<NodeData = any> extends FC<NodeProps<NodeData>> {}
 
-export interface HvFlowNodeComponentClass<
-  GroupId extends keyof any = string,
-  NodeData = any
-> extends ComponentClass<NodeProps>,
-    NodeExtras<GroupId, NodeData> {}
+export interface HvFlowNodeComponentClass extends ComponentClass<NodeProps> {}
 
-export type HvFlowNodeComponentType<
-  GroupId extends keyof any = string,
-  NodeData = any
-> =
-  | HvFlowNodeComponentClass<GroupId, NodeData>
-  | HvFlowNodeFC<GroupId, NodeData>;
+export type HvFlowNodeComponentType<NodeData = any> =
+  | HvFlowNodeComponentClass
+  | HvFlowNodeFC<NodeData>;
 
-export type HvFlowNodeTypes<
-  GroupId extends keyof any = string,
-  NodeData = any
-> = Record<string, HvFlowNodeComponentType<GroupId, NodeData>>;
+export type HvFlowNodeTypes<NodeData = any> = Record<
+  string,
+  HvFlowNodeComponentType<NodeData>
+>;
+
+export type HvFlowGroupItem = {
+  type: string;
+  label: string;
+  data?: unknown;
+};
 
 /** Node groups */
 export interface HvFlowNodeGroup {
@@ -43,21 +34,12 @@ export interface HvFlowNodeGroup {
   description?: string;
   color?: HvColorAny;
   icon?: React.ReactNode;
+  items?: HvFlowGroupItem[];
 }
 export type HvFlowNodeGroups<GroupId extends keyof any = string> = Record<
   GroupId,
   HvFlowNodeGroup
 >;
-
-/** Metadata used on the `HvFlowSidebar` component to group the node */
-export type HvFlowNodeTypeMeta<
-  GroupId extends keyof any = string,
-  NodeData = any
-> = {
-  label: string;
-  groupId?: GroupId;
-  data?: NodeData;
-};
 
 export interface HvFlowNodeMeta {
   label: string;

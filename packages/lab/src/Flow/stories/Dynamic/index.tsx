@@ -20,37 +20,14 @@ import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 import { restrictToSample } from "../Base";
 
-const nodeGroups = {
-  assets: {
-    label: "Assets",
-    color: "cat3_80",
-    description:
-      "Find here all the available assets. Scroll to see all the options.",
-    icon: <DataSource />,
-  },
-} satisfies HvFlowProps["nodeGroups"];
-
 type NodeGroup = keyof typeof nodeGroups;
 
 /** Create a generic node programmatically */
-const createNode = (
-  nodeProps: Partial<HvFlowNodeProps>,
-  nodeMeta: HvFlowNodeFC<NodeGroup>["meta"]
-) => {
+const createNode = (nodeProps: Partial<HvFlowNodeProps>) => {
   const Asset: HvFlowNodeFC<NodeGroup> = (props) => (
     <HvFlowNode {...nodeProps} {...props} />
   );
-
-  Asset.meta = nodeMeta;
   return Asset;
-};
-
-/** Create an Asset node programmatically */
-const createAssetNode = ({ label, description, params, data }) => {
-  return createNode(
-    { expanded: true, description, params },
-    { label, groupId: "assets", data }
-  );
 };
 
 // Classes
@@ -77,19 +54,27 @@ const options = [
   { id: "zone", label: "Zone" },
 ];
 
-const nodeTypes = Object.fromEntries(
-  [...Array(numberOfAssets)].map((el, j) => {
-    const i = j + 1;
-    const NewAsset = createAssetNode({
-      label: `Asset ${i}`,
-      description: `Asset ${i} description`,
-      params: [{ id: "asset", label: "Asset", type: "select", options }],
-      data: { asset: options[i % options.length].id },
-    });
+const nodeTypes = {
+  asset: createNode({
+    expanded: true,
+    params: [{ id: "asset", label: "Asset", type: "select", options }],
+    group: "assets",
+  }),
+} satisfies HvFlowProps["nodeTypes"];
 
-    return [`asset${i}`, NewAsset] as const;
-  })
-);
+const nodeGroups = {
+  assets: {
+    label: "Assets",
+    color: "cat3_80",
+    description:
+      "Find here all the available assets. Scroll to see all the options.",
+    icon: <DataSource />,
+    items: Array.from({ length: numberOfAssets }).map((_, index) => ({
+      type: "asset",
+      label: `Asset ${index + 1}`,
+    })),
+  },
+} satisfies HvFlowProps["nodeGroups"];
 
 export const Dynamic = () => {
   const { rootId } = useTheme();

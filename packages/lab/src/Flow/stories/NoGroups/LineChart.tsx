@@ -1,18 +1,12 @@
-import {
-  HvFlowNode,
-  HvFlowNodeFC,
-  HvFlowNodeTypeMeta,
-} from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 export const LineChart: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
+      title="Line Chart"
       description="LineChart description"
-      nodeDefaults={{
-        title: "Line Chart",
-        subTitle: "Visualization",
-        color: "cat12_80",
-      }}
+      subtitle="Visualization"
+      color="cat12_80"
       inputs={[
         {
           label: "Data",
@@ -24,7 +18,3 @@ export const LineChart: HvFlowNodeFC = (props) => {
     />
   );
 };
-
-LineChart.meta = {
-  label: "LineChart",
-} satisfies HvFlowNodeTypeMeta;

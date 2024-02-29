@@ -18,18 +18,12 @@ import {
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
-import {
-  NodeGroup,
-  NodeType,
-  nodeGroups,
-  nodeTypes,
-  restrictToSample,
-} from "../Base";
+import { NodeType, nodeGroups, nodeTypes, restrictToSample } from "../Base";
 import { LayoutsProvider } from "../Base/LayoutsContext";
 
 // Flow
-const nodes: HvFlowProps<NodeGroup, NodeType>["nodes"] = [];
-const edges: HvFlowProps<NodeGroup, NodeType>["edges"] = [];
+const nodes: HvFlowProps<NodeType>["nodes"] = [];
+const edges: HvFlowProps<NodeType>["edges"] = [];
 
 // Classes
 export const classes = {
@@ -69,14 +63,14 @@ export const Flow = () => {
         position="relative"
         backButton={
           <HvButton aria-label="Back" icon>
-            <Backwards role="none" />
+            <Backwards role="presentation" />
           </HvButton>
         }
         title="New Flow"
       >
         <HvButton
           variant="primary"
-          startIcon={<Add role="none" />}
+          startIcon={<Add role="presentation" />}
           onClick={() => setOpen(true)}
         >
           Add Node

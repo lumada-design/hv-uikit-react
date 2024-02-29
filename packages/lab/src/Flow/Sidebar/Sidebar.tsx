@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import { useDebounceCallback } from "usehooks-ts";
 import {
   DndContextProps,
@@ -23,10 +23,9 @@ import { Add } from "@hitachivantara/uikit-react-icons";
 import { staticClasses, useClasses } from "./Sidebar.styles";
 import { HvFlowSidebarGroup } from "./SidebarGroup";
 import { useFlowContext } from "../hooks";
-import { buildGroups } from "./utils";
 import {
-  HvFlowDraggableSidebarGroupItem,
   HvFlowSidebarGroupItem,
+  HvFlowDraggableSidebarGroupItem,
 } from "./SidebarGroup/SidebarGroupItem";
 import { HvFlowNodeGroup } from "../types";
 
@@ -40,6 +39,8 @@ export interface HvFlowSidebarProps
   title?: string;
   /** Sidebar description. */
   description?: string;
+  /** Flatten sidebar items */
+  flatten?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowSidebarClasses;
   /** Labels used on the sidebar. */
@@ -67,6 +68,7 @@ export const HvFlowSidebar = ({
   description,
   anchor = "right",
   buttonTitle = "Close",
+  flatten = false,
   classes: classesProp,
   labels: labelsProps,
   dragOverlayProps,
@@ -75,20 +77,10 @@ export const HvFlowSidebar = ({
 }: HvFlowSidebarProps) => {
   const { classes } = useClasses(classesProp);
 
-  const { nodeGroups, nodeTypes, setExpandedNodeGroups } = useFlowContext();
+  const { nodeGroups, setExpandedNodeGroups } = useFlowContext();
 
-  const unfilteredGroups = useMemo(
-    () => buildGroups(nodeGroups, nodeTypes, defaultGroupProps),
-    [nodeGroups, nodeTypes, defaultGroupProps]
-  );
-
-  const [groups, setGroups] = useState(unfilteredGroups);
-  const [ndTypes, setNdTypes] = useState(nodeTypes);
+  const [groups, setGroups] = useState(nodeGroups || {});
   const [draggingLabel, setDraggingLabel] = useState(undefined);
-
-  useEffect(() => {
-    setGroups(unfilteredGroups);
-  }, [unfilteredGroups]);
 
   const labels = useLabels(DEFAULT_LABELS, labelsProps);
 
@@ -119,39 +111,30 @@ export const HvFlowSidebar = ({
   const handleSearch: HvInputProps["onChange"] = (event, value) => {
     if (nodeGroups) {
       const gps = value
-        ? Object.entries(unfilteredGroups).reduce((acc, curr) => {
-            // Filter nodes by search
-            const filteredNodes = curr[1].nodes.filter((obj) =>
-              obj.label.toLocaleLowerCase().includes(value.toLocaleLowerCase())
-            );
-            const nodesCount = filteredNodes.length;
+        ? Object.entries(nodeGroups).reduce((acc, curr) => {
+            // Filter items by search
+            const filteredItems =
+              curr[1].items?.filter((obj) =>
+                obj.label
+                  .toLocaleLowerCase()
+                  .includes(value.toLocaleLowerCase())
+              ) || [];
+            const itemsCount = filteredItems.length;
 
             // Only show groups with nodes
-            if (nodesCount > 0) {
+            if (itemsCount > 0) {
               acc[curr[0]] = {
                 ...curr[1],
-                nodes: filteredNodes,
+                items: filteredItems,
               };
             }
 
             return acc;
           }, {})
-        : unfilteredGroups;
+        : nodeGroups;
 
       setGroups(gps);
       setExpandedNodeGroups?.(value ? Object.keys(gps) : []);
-    } else if (nodeTypes) {
-      const filteredNodeTypes = {};
-      for (const [key, node] of Object.entries(nodeTypes)) {
-        if (
-          node.meta?.label
-            .toLocaleLowerCase()
-            .includes(value.toLocaleLowerCase())
-        ) {
-          filteredNodeTypes[key] = node;
-        }
-      }
-      setNdTypes(value ? filteredNodeTypes : nodeTypes);
     }
   };
 
@@ -171,7 +154,7 @@ export const HvFlowSidebar = ({
     >
       <div id={drawerElementId} ref={setNodeRef}>
         <div className={classes.titleContainer}>
-          <Add role="none" />
+          <Add role="presentation" />
           <HvTypography component="p" variant="title3">
             {title}
           </HvTypography>
@@ -190,40 +173,35 @@ export const HvFlowSidebar = ({
             onChange={handleDebouncedSearch}
             inputProps={{ autoComplete: "off" }}
           />
-          {nodeGroups ? (
-            <ul id={groupsElementId} className={classes.groupsContainer}>
-              {Object.entries(groups).map((obj) => {
-                return (
-                  <HvFlowSidebarGroup
-                    key={obj[0]}
-                    id={obj[0]}
-                    expandButtonProps={{
-                      "aria-label": labels?.expandGroupButtonAriaLabel,
-                    }}
-                    itemProps={{
-                      "aria-roledescription": labels?.itemAriaRoleDescription,
-                    }}
-                    {...obj[1]}
+          <ul id={groupsElementId} className={classes.groupsContainer}>
+            {Object.entries(groups).map((obj) => {
+              if (flatten) {
+                return obj[1].items?.map((item) => (
+                  <HvFlowDraggableSidebarGroupItem
+                    key={item.label}
+                    id={item.label}
+                    label={item.label}
+                    data={item.data}
+                    type={item.type}
                   />
-                );
-              })}
-            </ul>
-          ) : (
-            ndTypes &&
-            Object.entries(ndTypes).map((obj) => {
+                ));
+              }
+
               return (
-                <HvFlowDraggableSidebarGroupItem
+                <HvFlowSidebarGroup
                   key={obj[0]}
                   id={obj[0]}
-                  type={obj[0]}
-                  label={obj[1]?.meta?.label || ""}
-                  data={obj[1]?.meta?.data}
-                  aria-roledescription={labels?.itemAriaRoleDescription}
-                  className={classes.nodeType}
+                  expandButtonProps={{
+                    "aria-label": labels?.expandGroupButtonAriaLabel,
+                  }}
+                  itemProps={{
+                    "aria-roledescription": labels?.itemAriaRoleDescription,
+                  }}
+                  {...obj[1]}
                 />
               );
-            })
-          )}
+            })}
+          </ul>
         </div>
       </div>
       <DragOverlay modifiers={[restrictToWindowEdges]} {...dragOverlayProps}>

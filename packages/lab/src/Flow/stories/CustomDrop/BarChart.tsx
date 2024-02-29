@@ -2,21 +2,22 @@ import { css } from "@emotion/css";
 import {
   HvFlowNode,
   HvFlowNodeFC,
-  HvFlowNodeTypeMeta,
   useFlowInputNodes,
 } from "@hitachivantara/uikit-react-lab";
 import { HvBarChart } from "@hitachivantara/uikit-react-viz";
 
 import { NodeData, data } from "./data";
-import type { NodeGroup } from ".";
 
-export const BarChart: HvFlowNodeFC<NodeGroup> = (props) => {
+export const BarChart: HvFlowNodeFC = (props) => {
   const inputNodes = useFlowInputNodes<NodeData>();
   const country = inputNodes[0]?.data.country;
 
   return (
     <HvFlowNode
+      title="Visualizations"
+      subtitle="Bar Chart"
       description="Bar Chart"
+      group="visualizations"
       expanded
       classes={{ root: css({ width: 500 }) }}
       inputs={[
@@ -49,8 +50,3 @@ export const BarChart: HvFlowNodeFC<NodeGroup> = (props) => {
     </HvFlowNode>
   );
 };
-
-BarChart.meta = {
-  label: "Bar Chart",
-  groupId: "visualizations",
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

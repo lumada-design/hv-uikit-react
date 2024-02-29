@@ -2,21 +2,22 @@ import { css } from "@emotion/css";
 import {
   HvFlowNode,
   HvFlowNodeFC,
-  HvFlowNodeTypeMeta,
   useFlowInputNodes,
 } from "@hitachivantara/uikit-react-lab";
 import { HvLineChart } from "@hitachivantara/uikit-react-viz";
 
 import { NodeData } from "./data";
-import type { NodeGroup } from ".";
 
-export const LineChart: HvFlowNodeFC<NodeGroup> = (props) => {
+export const LineChart: HvFlowNodeFC = (props) => {
   const inputNodes = useFlowInputNodes<NodeData>();
   const jsonData = inputNodes[0]?.data.jsonData;
 
   return (
     <HvFlowNode
+      title="Visualizations"
+      subtitle="Line Chart"
       description="Line Chart description"
+      group="visualizations"
       expanded
       classes={{ root: css({ width: 500 }) }}
       inputs={[
@@ -47,8 +48,3 @@ export const LineChart: HvFlowNodeFC<NodeGroup> = (props) => {
     </HvFlowNode>
   );
 };
-
-LineChart.meta = {
-  label: "Line Chart",
-  groupId: "visualizations",
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

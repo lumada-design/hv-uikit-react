@@ -18,11 +18,8 @@ import {
   HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeProps,
-  HvFlowNodeTypeMeta,
   useFlowNode,
 } from "@hitachivantara/uikit-react-lab";
-
-import type { NodeGroup } from ".";
 
 type Node = ReturnType<HvFlowInstance["getNode"]>;
 
@@ -42,7 +39,7 @@ const classes = {
   }),
 };
 
-export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
+export const Asset: HvFlowNodeFC<AssetData> = (props) => {
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node>();
   const node = useFlowNode();
@@ -81,6 +78,9 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
         </HvDialogActions>
       </HvDialog>
       <HvFlowNode
+        title="Asset"
+        subtitle="My Asset"
+        group="assets"
         description="Asset description"
         expanded
         maxVisibleActions={1}
@@ -154,15 +154,10 @@ export const Asset: HvFlowNodeFC<NodeGroup, AssetData> = (props) => {
           },
         ]}
         {...props}
+        data={{
+          asset: "option1",
+        }}
       />
     </>
   );
 };
-
-Asset.meta = {
-  label: "My Asset",
-  groupId: "assets",
-  data: {
-    asset: "option1",
-  },
-} satisfies HvFlowNodeTypeMeta<NodeGroup, AssetData>;

@@ -8,13 +8,11 @@ import {
 import {
   HvFlowNodeFC,
   HvDashboardNode,
-  HvFlowNodeTypeMeta,
   HvFlowNodeProps,
   useFlowInstance,
   useFlowNodeInputEdges,
 } from "@hitachivantara/uikit-react-lab";
 
-import type { NodeGroup } from ".";
 import { LayoutConfig, useLayoutsContext } from "./LayoutsContext";
 import { buildLayout } from "./utils";
 
@@ -28,7 +26,7 @@ const classes = {
   footer: css({ display: "flex", justifyContent: "center" }),
 };
 
-export const Dashboard: HvFlowNodeFC<NodeGroup, DashboardData> = (props) => {
+export const Dashboard: HvFlowNodeFC<DashboardData> = (props) => {
   const { id, data } = props;
 
   const [config, setConfig] = useState<LayoutConfig>();
@@ -166,7 +164,10 @@ export const Dashboard: HvFlowNodeFC<NodeGroup, DashboardData> = (props) => {
 
   return (
     <HvDashboardNode
+      title="Dashboard"
+      subtitle="Dashboard"
       description="Dashboard description"
+      group="dashboards"
       open={config != null}
       onClose={() => setConfig(undefined)}
       onCancel={() => setConfig(undefined)}
@@ -209,73 +210,3 @@ export const Dashboard: HvFlowNodeFC<NodeGroup, DashboardData> = (props) => {
     />
   );
 };
-
-// Predefined layout configuration for the node
-const predefinedLayout = {
-  items: [
-    {
-      id: "kpi1",
-      type: "kpi",
-      label: "KPI 1",
-      predefined: true,
-    },
-    {
-      id: "kpi2",
-      type: "kpi",
-      label: "KPI 2",
-      predefined: true,
-    },
-    {
-      id: "kpi3",
-      type: "kpi",
-      label: "KPI 3",
-      predefined: true,
-    },
-    {
-      id: "lineChart1",
-      type: "lineChart",
-      label: "Line Chart 1",
-      predefined: true,
-    },
-    {
-      id: "lineChart2",
-      type: "lineChart",
-      label: "Line Chart 2",
-      predefined: true,
-    },
-    {
-      id: "table1",
-      type: "table",
-      label: "Table 1",
-      predefined: true,
-    },
-    {
-      id: "table2",
-      type: "table",
-      label: "Table 2",
-      predefined: true,
-    },
-  ],
-  layout: [
-    { w: 4, h: 1, x: 0, y: 0, i: "kpi1" },
-    { w: 4, h: 1, x: 4, y: 0, i: "kpi2" },
-    { w: 4, h: 1, x: 8, y: 0, i: "kpi3" },
-
-    { w: 6, h: 2, x: 0, y: 1, i: "lineChart1" },
-    { w: 6, h: 2, x: 6, y: 1, i: "lineChart2" },
-
-    { w: 6, h: 2, x: 0, y: 3, i: "table1" },
-    { w: 6, h: 2, x: 6, y: 3, i: "table2" },
-  ],
-};
-
-Dashboard.meta = {
-  label: "Dashboard",
-  groupId: "dashboard",
-  data: {
-    config: {
-      cols: 12,
-      ...predefinedLayout,
-    },
-  },
-} satisfies HvFlowNodeTypeMeta<NodeGroup, DashboardData>;

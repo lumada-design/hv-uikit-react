@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   ExtractNames,
   HvActionsGeneric,
@@ -20,13 +20,6 @@ import { HvFlowBaseNode, HvFlowBaseNodeProps } from "./BaseNode";
 export { staticClasses as flowNodeClasses };
 
 export type HvFlowNodeClasses = ExtractNames<typeof useClasses>;
-
-export type HvFlowNodeDefaults = {
-  title?: string;
-  subTitle?: string;
-  color?: string;
-  icon?: React.ReactNode;
-};
 
 const DEFAULT_LABELS = {
   collapseLabel: "Collapse",
@@ -50,12 +43,14 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   actionsIconOnly?: HvActionsGenericProps["iconOnly"];
   /** Node maximum number of actions visible. */
   maxVisibleActions?: HvActionsGenericProps["maxVisibleActions"];
+  /** Node subtitle */
+  subtitle?: string;
+  /** Node group */
+  group?: string;
   /** Node expanded */
   expanded?: boolean;
   /** Node parameters */
   params?: HvFlowNodeParam[];
-  /** A set of node default values for when there are no groups to fetch this data from. */
-  nodeDefaults?: HvFlowNodeDefaults;
   /** Props to be passed to the expand parameters button. */
   expandParamsButtonProps?: HvButtonProps;
   /** Labels used on the node. */
@@ -68,7 +63,6 @@ export const HvFlowNode = ({
   id,
   type,
   headerItems,
-  description,
   actions,
   actionCallback, // TODO - remove in v6
   onAction,
@@ -76,7 +70,6 @@ export const HvFlowNode = ({
   expanded = false,
   actionsIconOnly = true,
   params,
-  nodeDefaults,
   classes: classesProp,
   labels: labelsProps,
   children,
@@ -84,22 +77,17 @@ export const HvFlowNode = ({
   ...props
 }: HvFlowNodeProps<unknown>) => {
   const { classes } = useClasses(classesProp);
-
-  const labels = useLabels(DEFAULT_LABELS, labelsProps);
-
   const [showParams, setShowParams] = useState(expanded);
-
+  const { nodeGroups, defaultActions } = useFlowContext();
+  const labels = useLabels(DEFAULT_LABELS, labelsProps);
   const node = useFlowNode();
 
-  const { nodeGroups, nodeTypes, defaultActions } = useFlowContext();
+  const { title, subtitle, description, group, color, icon } = props || {};
 
-  const subtitle = nodeTypes?.[type].meta?.label || nodeDefaults?.subTitle;
-  const groupId = nodeTypes?.[type].meta?.groupId;
-
-  const group = (groupId && nodeGroups && nodeGroups[groupId]) || undefined;
-  const groupLabel = group?.label || nodeDefaults?.title;
-  const icon = group?.icon || nodeDefaults?.icon;
-  const color = group?.color || nodeDefaults?.color;
+  const nodeGroup = (group && nodeGroups && nodeGroups[group]) || undefined;
+  const nodeTitle = nodeGroup?.label || title;
+  const nodeIcon = nodeGroup?.icon || icon;
+  const nodeColor = nodeGroup?.color || color;
 
   const hasParams = !!(params && params.length > 0);
 
@@ -107,9 +95,9 @@ export const HvFlowNode = ({
     <HvFlowBaseNode
       id={id}
       type={type}
-      title={groupLabel}
-      icon={icon}
-      color={color}
+      title={nodeTitle}
+      icon={nodeIcon}
+      color={nodeColor}
       nodeActions={defaultActions}
       classes={classes}
       headerItems={
@@ -118,7 +106,7 @@ export const HvFlowNode = ({
           {description && (
             <HvTooltip title={description}>
               <div>
-                <Info role="none" color="base_dark" />
+                <Info role="presentation" color="base_dark" />
               </div>
             </HvTooltip>
           )}
@@ -133,9 +121,9 @@ export const HvFlowNode = ({
               {...expandParamsButtonProps}
             >
               {showParams ? (
-                <Up role="none" color="base_dark" />
+                <Up role="presentation" color="base_dark" />
               ) : (
-                <Down role="none" color="base_dark" />
+                <Down role="presentation" color="base_dark" />
               )}
             </HvButton>
           )}

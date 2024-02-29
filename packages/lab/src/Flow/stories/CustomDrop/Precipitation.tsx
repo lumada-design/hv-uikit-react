@@ -1,16 +1,13 @@
-import {
-  HvFlowNode,
-  HvFlowNodeFC,
-  HvFlowNodeTypeMeta,
-} from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 import { data } from "./data";
-import type { NodeGroup } from ".";
 
-export const Precipitation: HvFlowNodeFC<NodeGroup> = (props) => {
+export const Precipitation: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
+      title="Precipitation"
       description="Precipitation data"
+      group="sources"
       expanded
       params={[
         {
@@ -34,8 +31,3 @@ export const Precipitation: HvFlowNodeFC<NodeGroup> = (props) => {
     />
   );
 };
-
-Precipitation.meta = {
-  label: "Precipitation",
-  groupId: "sources",
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

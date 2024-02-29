@@ -22,20 +22,29 @@ export const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available datasets.",
     icon: <Storage />,
+    items: [{ type: "datasetsteelwheels", label: "Steelwheels" }],
   },
   visualization: {
     label: "Visualization",
     color: "cat1_80",
     description: "Find here all the available visualizations.",
     icon: <LineChartAlt />,
+    items: [
+      { type: "lineChart", label: "Line Chart" },
+      { type: "barChart", label: "Bar Chart" },
+      { type: "donutChart", label: "Donut Chart" },
+      { type: "kpi", label: "KPI" },
+      { type: "table", label: "Table" },
+    ],
   },
   dashboard: {
     label: "Dashboard",
     color: "cat2_80",
     description: "Find here all the available dashboards.",
     icon: <Cards />,
+    items: [{ type: "dashboard", label: "Dashboard" }],
   },
-} satisfies HvFlowProps<NodeGroup>["nodeGroups"];
+} satisfies HvFlowProps["nodeGroups"];
 
 /** Node types */
 export const baseNodeTypes = {

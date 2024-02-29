@@ -6,7 +6,13 @@ import {
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { Add, Backwards } from "@hitachivantara/uikit-react-icons";
+import {
+  Add,
+  Backwards,
+  Cluster,
+  MachineLearning,
+  LineChartAlt,
+} from "@hitachivantara/uikit-react-icons";
 import {
   HvFlowSidebar,
   HvFlow,
@@ -21,6 +27,8 @@ import { restrictToSample } from "../Base";
 import { Asset } from "./Asset";
 import { LineChart } from "./LineChart";
 import { MLModelPrediction } from "./MLModelPrediction";
+import { MLModelDetection } from "../Base/MLModelDetection";
+import { MLModel } from "../Base/MLModel";
 
 // Classes
 export const classes = {
@@ -37,10 +45,44 @@ export const classes = {
   }),
 };
 
-// Node types
+export const nodeGroups = {
+  assets: {
+    label: "Assets",
+    color: "cat3_80",
+    description: "Find here all the available assets.",
+    icon: <Cluster />,
+    items: [{ type: "asset", label: "Asset" }],
+  },
+  models: {
+    label: "ML Models",
+    color: "cat1_80",
+    description: "Find here all the available ML models.",
+    icon: <MachineLearning />,
+    items: [
+      {
+        type: "model",
+        label: "Model Prediction",
+        data: { component: MLModelPrediction },
+      },
+      {
+        type: "model",
+        label: "Model Detection",
+        data: { component: MLModelDetection },
+      },
+    ],
+  },
+  insights: {
+    label: "Insights",
+    color: "cat6_80",
+    description: "Find here all the available insights.",
+    icon: <LineChartAlt />,
+    items: [{ type: "lineChart", label: "Line Chart" }],
+  },
+} satisfies HvFlowProps["nodeGroups"];
+
 export const nodeTypes = {
-  Asset,
-  mlModelPrediction: MLModelPrediction,
+  asset: Asset,
+  model: MLModel,
   lineChart: LineChart,
 } satisfies HvFlowProps["nodeTypes"];
 
@@ -73,6 +115,7 @@ export const NoGroups = () => {
         <HvFlow
           nodes={[]}
           edges={[]}
+          nodeGroups={nodeGroups}
           nodeTypes={nodeTypes}
           defaultViewport={{
             zoom: 0.7,
@@ -92,6 +135,7 @@ export const NoGroups = () => {
                   (args) => restrictToSample(rootId || "", args),
                 ],
               }}
+              flatten
             />
           }
         >
