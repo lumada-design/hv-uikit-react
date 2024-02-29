@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.53.1 (2024-02-29)
+
+### Bug Fixes
+
+- **HvOverflowTooltip:** add variable width to trigger tooltip when data size changes ([#4044](https://github.com/lumada-design/hv-uikit-react/issues/4044)) ([b204af0](https://github.com/lumada-design/hv-uikit-react/commit/b204af0c6da2b6fb999bf86d64eeb5a4f08cb13f))
+
 # [5.53.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.52.1...@hitachivantara/uikit-react-core@5.53.0) (2024-02-27)
 
 ### Bug Fixes
