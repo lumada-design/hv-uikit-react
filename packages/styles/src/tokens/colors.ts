@@ -1,3 +1,5 @@
+import type { Property } from "csstype";
+
 const base = {
   base_light: "#FBFCFC",
   base_dark: "#414141",
@@ -293,4 +295,4 @@ export type HvColor = keyof typeof colors.common | keyof typeof colors.light;
  * A type representing an `HvColor` from the palette or any other color string
  * @example "secondary" "brand" "atmo2" "#FF0000" "purple" "inherit"
  * */
-export type HvColorAny = HvColor | (string & {});
+export type HvColorAny = HvColor | Property.Color;
