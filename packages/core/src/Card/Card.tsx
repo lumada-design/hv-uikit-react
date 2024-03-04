@@ -1,11 +1,8 @@
-import { getColor, theme } from "@hitachivantara/uikit-styles";
+import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
-import { HvBox } from "../Box";
 import { ExtractNames } from "../utils/classes";
 import { HvBaseProps } from "../types/generic";
-import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "../types/tokens";
 
 import { staticClasses, useClasses } from "./Card.styles";
 
@@ -21,16 +18,12 @@ export interface HvCardProps extends HvBaseProps {
   /** Whether the card is currently selected. */
   selected?: boolean;
   /** The background color of the card. */
-  bgcolor?:
-    | "sema0"
-    | HvSemanticColorKeys
-    | HvAtmosphereColorKeys
-    | "transparent";
+  bgcolor?: "sema0" | HvColorAny;
   /**
    *  The border color at the top of the card. Must be one of palette semantic or atmosphere colors.
    *  To set another color, the borderTop should be override.
    */
-  statusColor?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
+  statusColor?: "sema0" | HvColorAny;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvCardClasses;
 }
@@ -57,7 +50,7 @@ export const HvCard = (props: HvCardProps) => {
   const { classes, css, cx } = useClasses(classesProp);
 
   return (
-    <HvBox
+    <div
       className={cx(
         "HvIsCardGridElement",
         classes.root,
@@ -90,6 +83,6 @@ export const HvCard = (props: HvCardProps) => {
         <div className={classes.icon}>{icon}</div>
       </div>
       {children}
-    </HvBox>
+    </div>
   );
 };
