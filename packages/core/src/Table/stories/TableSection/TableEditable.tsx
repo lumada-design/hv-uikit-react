@@ -2,7 +2,11 @@ import { FormEvent, Fragment, useCallback, useMemo, useState } from "react";
 import { css, keyframes } from "@emotion/css";
 import {
   HvButton,
+  HvDialog,
+  HvDialogContent,
+  HvDialogTitle,
   HvDropdown,
+  HvGrid,
   HvInput,
   HvLoadingContainer,
   HvLabel,
@@ -169,6 +173,9 @@ const Table = <T extends Data>({
     }[],
   >([]);
 
+  const [openViewDialog, setOpenViewDialog] = useState(false);
+  const [dialogRow, setDialogRow] = useState<T | undefined>(undefined);
+
   const handleUndoDelete = useCallback(
     async (row: HvRowInstance<T>) => {
       try {
@@ -255,11 +262,14 @@ const Table = <T extends Data>({
         id: "view",
         variant: "actions",
         style: { minWidth: 70 },
-        Cell: () => (
+        Cell: ({ row }) => (
           <HvButton
             variant="secondaryGhost"
             aria-label="View row"
-            onClick={() => alert("Clicked")}
+            onClick={() => {
+              setDialogRow(row.values);
+              setOpenViewDialog(true);
+            }}
           >
             View
           </HvButton>
@@ -516,8 +526,14 @@ const Table = <T extends Data>({
           >
             <div className={edit ? undefined : classes.slide}>
               <div className={classes.tableCellContent}>
-                <HvLabel label="Closed" />
+                <HvLabel
+                  id="switch-label"
+                  label="Closed"
+                  htmlFor="switch-input"
+                />
                 <HvSwitch
+                  id="switch-input"
+                  aria-labelledby="switch-label"
                   inputProps={{
                     form: formId,
                   }}
@@ -558,7 +574,11 @@ const Table = <T extends Data>({
                     }
                   }}
                 />
-                <HvLabel label="Open" />
+                <HvLabel
+                  id="switch-label"
+                  label="Open"
+                  htmlFor="switch-input"
+                />
               </div>
             </div>
           </HvTableCell>
@@ -766,6 +786,29 @@ const Table = <T extends Data>({
           }}
         />
       ) : undefined}
+      <HvDialog open={openViewDialog} onClose={() => setOpenViewDialog(false)}>
+        <HvDialogTitle>Event Info</HvDialogTitle>
+        <HvDialogContent>
+          <HvGrid container padding={2}>
+            <HvGrid item>
+              <HvTypography variant="label">Title</HvTypography>
+              <HvTypography>{dialogRow?.name}</HvTypography>
+            </HvGrid>
+            <HvGrid item>
+              <HvTypography variant="label">Status</HvTypography>
+              <HvTypography>{dialogRow?.status}</HvTypography>
+            </HvGrid>
+            <HvGrid item>
+              <HvTypography variant="label">Severity</HvTypography>
+              <HvTypography>{dialogRow?.severity}</HvTypography>
+            </HvGrid>
+            <HvGrid item>
+              <HvTypography variant="label">Priority</HvTypography>
+              <HvTypography>{dialogRow?.priority}</HvTypography>
+            </HvGrid>
+          </HvGrid>
+        </HvDialogContent>
+      </HvDialog>
     </>
   );
 };
