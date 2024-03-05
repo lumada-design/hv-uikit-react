@@ -58,7 +58,7 @@ const getCell = (value: string) => value as unknown as React.ReactElement;
 
 const formatDate = (date: Date) => date.toISOString().split("T")[0];
 
-const getOption = (opts: string[], i: number) => opts[i % opts.length];
+export const getOption = (opts: string[], i: number) => opts[i % opts.length];
 
 const getTagColor = (status: string) =>
   status === "Closed" ? "negative_20" : "positive_20";
@@ -78,7 +78,7 @@ const generateLargeNumber = (i: number) => (i === 6 ? undefined : i);
 
 const generateBooleanState = (i: number) => i % 3 === 0;
 
-const getDropdownOptions = (options: string[] = [], selected = "") => {
+export const getDropdownOptions = (options: string[] = [], selected = "") => {
   return options.map((option, index) => {
     return {
       id: `${option}-${index}`,
