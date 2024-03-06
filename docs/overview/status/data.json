@@ -32,9 +32,9 @@
     },
     {
       "name": "Button",
-      "features": "Dropdown",
-      "status": "Supported",
-      "notes": "Use the Dropdown component"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Card",
@@ -57,8 +57,8 @@
     {
       "name": "Date Picker",
       "features": "Month range",
-      "status": "Not Planned",
-      "notes": ""
+      "status": "✅",
+      "notes": "Not Planned"
     },
     {
       "name": "Dialog",
@@ -68,9 +68,9 @@
     },
     {
       "name": "Dropdown",
-      "features": "Split",
-      "status": "Supported",
-      "notes": "Use the MultiButton component"
+      "features": "",
+      "status": "✅",
+      "notes": ""
     },
     {
       "name": "Empty State",
@@ -92,8 +92,8 @@
     },
     {
       "name": "Input",
-      "features": "With dropdown",
-      "status": "Not Planned",
+      "features": "",
+      "status": "✅",
       "notes": ""
     },
     {
@@ -105,7 +105,7 @@
     {
       "name": "Loading",
       "features": "Progress Bar",
-      "status": "Supported",
+      "status": "✅",
       "notes": "Use the Progress Bar component"
     },
     {
@@ -117,13 +117,13 @@
     {
       "name": "Pagination",
       "features": "Dot Pagination",
-      "status": "Supported",
-      "notes": "Use the DotPagination component"
+      "status": "✅",
+      "notes": "Use the Dot Pagination component"
     },
     {
       "name": "Panel",
       "features": "Overlap content",
-      "status": "Supported",
+      "status": "✅",
       "notes": "Use the Drawer component"
     },
     {
@@ -153,8 +153,8 @@
     {
       "name": "Slider",
       "features": "Multirange",
-      "status": "Not Planned",
-      "notes": ""
+      "status": "✅",
+      "notes": "Not Planned"
     },
     {
       "name": "Snackbar",
@@ -182,7 +182,7 @@
     },
     {
       "name": "Tag",
-      "features": "Actions",
+      "features": "",
       "status": "✅",
       "notes": ""
     },
@@ -295,8 +295,8 @@
     {
       "name": "Color Picker",
       "features": "Alpha slider",
-      "status": "Not Planned",
-      "notes": ""
+      "status": "✅",
+      "notes": "Not Planned"
     },
     {
       "name": "Controls",
@@ -313,7 +313,7 @@
     {
       "name": "Facet Search",
       "features": "",
-      "status": "Supported",
+      "status": "✅",
       "notes": "See the Facet Search Sample located in the Accordion section"
     },
     {
@@ -325,8 +325,8 @@
     {
       "name": "Filter Group",
       "features": "Extended",
-      "status": "Not Planned",
-      "notes": ""
+      "status": "✅",
+      "notes": "Not Planned"
     },
     {
       "name": "Footer",
@@ -361,12 +361,12 @@
     {
       "name": "User Preferences",
       "features": "",
-      "status": "⌛",
+      "status": "Dropped",
       "notes": ""
     },
     {
       "name": "Vertical Navigation",
-      "features": "Dynamic",
+      "features": "",
       "status": "✅",
       "notes": ""
     }
@@ -375,14 +375,14 @@
     {
       "name": "Notification Panel",
       "features": "",
-      "status": "⌛",
+      "status": "Dropped",
       "notes": ""
     },
     {
       "name": "Step Navigation",
       "features": "Vertical",
-      "status": "Not Planned",
-      "notes": ""
+      "status": "✅",
+      "notes": "Not Planned"
     },
     {
       "name": "Wizard",

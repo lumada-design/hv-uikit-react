@@ -5,11 +5,9 @@ import { Meta } from "@storybook/addon-docs";
 # Migration from v4.x to v5.x
 
 The NEXT UI Kit v5 is one of our most ambitious release to date. In this version, we **implemented our own theming system** to help reduce the gap between the
-Design System and UI Kit releases as well as improve our customization capabilities. In this sense, UI Kit v5 introduces the concept of **white labeling**
-which enables the use of the UI Kit in different design scenarios to seamlessly meet clients' needs.
+Design System and UI Kit releases as well as improve our customization capabilities.
 
-In this new version, we also reviewed the **components to be compliant with the most recent guidelines of the latest Design System v5 release**. Furthermore,
-we also took the opportunity to **migrate our packages from MUI's JSS styling system to Emotion**. This change was due mainly to performance benefits
+Furthermore, we also took the opportunity to **migrate our packages from MUI's JSS styling system to Emotion**. This change was due mainly to performance benefits
 introduced by using Emotion over JSS.
 
 Thus, in this page, you'll learn how to migrate from v4.x to v5.x. **If you are using UI Kit versions prior to v4.x, we encourage you to sequentially migrate
@@ -24,6 +22,7 @@ Here's what there is to know about this migration:
   - [Breaking changes in the theme object](#theme-object)
   - [Update styling and theme utilities](#update-utilities)
 - [Promoted components](#promoted-components)
+- [Removed components](#removed-components)
 - [Renamed components and types](#renamed-components-types)
 - [Colors](#colors)
 - [Visualizations](#visualizations)
@@ -62,17 +61,6 @@ npm i react@18 react-dom@18
 Before proceeding to this upgrade, you should also note that **you can't use UI Kit packages v4.x and v5.x simultaneously** due to the introduction of a new theming
 system not compatible with v4.x components.
 
-Furthermore, some components are currently missing from v5.x. Thus, if your application relies on the components listed below, you'll not be able to completely
-migrate your application at the moment since their development is still in progress.
-
-The following components are missing:
-
-- From `@hitachivantara/uikit-react-lab`:
-  - Navigation anchors
-  - Notification panel
-- From `@hitachivantara/uikit-react-core`:
-  - User preferences
-
 The following packages were **deprecated** in v5.x and are no longer needed:
 
 - `@hitachivantara/uikit-react-compat`
@@ -82,8 +70,7 @@ The following packages were **deprecated** in v5.x and are no longer needed:
 npm un @hitachivantara/uikit-react-compat @hitachivantara/uikit-common-themes
 ```
 
-If you are able to upgrade your application despite the limitations discussed above, upgrade the UI Kit packages to the latest v5.x versions
-using the command below.
+Upgrade the UI Kit packages to the latest v5.x versions using the command below.
 
 ```sh
 npm i @hitachivantara/uikit-react-core@5.x @hitachivantara/uikit-react-icons@5.x
@@ -102,11 +89,7 @@ Even though we created a new theming system in this new version, we are still re
 in previous versions. Our approach has always been to use the features we find value and enable them to our users. This philosophy did not change, and `@mui/material`
 is still needed in v5.x as a peer dependency to run the `uikit-react-core` package.
 
-In v5, MUI has migrated their styling solution from [JSS to Emotion](https://mui.com/blog/mui-core-v5/#migration-from-jss-to-emotion). Since previous versions of
-the UI Kit were relying entirely on [MUI's JSS styling system](https://mui.com/system/styles/basics/), we decided to keep using this system in v4.x to give
-us the time needed to do our own evaluation.
-
-In the NEXT UI Kit v5, the necessary evaluations were made, and we decided to also make the switch to Emotion to style our components. Thus, the `@mui/styles` package
+In v5, MUI has migrated their styling solution from [JSS to Emotion](https://mui.com/blog/mui-core-v5/#migration-from-jss-to-emotion) and we decided to also make the switch to Emotion to style our components. Thus, the `@mui/styles` package
 is no longer a peer dependency for the `uikit-react-core` package.
 
 Since we are no longer using JSS styling system in our packages, we recommend that you also make the transition to Emotion. However, the NEXT UI Kit was not built
@@ -463,6 +446,17 @@ In order to use them, you'll need to update the necessary imports. Please find a
 -  import { HvTimeAgo } from "@hitachivantara/uikit-react-lab"
 +  import { HvTimeAgo } from "@hitachivantara/uikit-react-core"
 ```
+
+## Removed components <a id="removed-components" />
+
+From `@hitachivantara/uikit-react-lab`:
+
+- `Navigation Anchors` (this component never existed as a DS pattern and was replaced by the `HvScrollToVertical` component.)
+- `Notification Panel` (this component was removed because it was not generic enough and should be easy to compose using the available components.)
+
+From `@hitachivantara/uikit-react-core`:
+
+- `User Preferences` (this component was removed because it was not generic enough and should be easy to compose using the available components.)
 
 ## Renamed components and types <a id="renamed-components-types" />
 
