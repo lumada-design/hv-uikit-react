@@ -10,7 +10,8 @@ import {
   HvActionGeneric,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import uniqueId from "lodash/uniqueId";
+
+const uniqueId = () => Math.random().toString(36).slice(2, 9);
 
 const actions: HvActionGeneric[] = [
   { id: "add", label: "Add", icon: <Add /> },

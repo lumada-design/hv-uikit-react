@@ -18,7 +18,7 @@ import {
   useHvFilters,
 } from "@hitachivantara/uikit-react-core";
 
-import { makeData, getColumns, AssetEvent, range } from "../storiesUtils";
+import { makeData, getColumns, AssetEvent } from "../storiesUtils";
 
 const NoDataRow = ({
   message,
@@ -111,7 +111,7 @@ export const UseHvFilters = () => {
             </HvTableHead>
             <HvTableBody {...getTableBodyProps()}>
               {page.length > 0 ? (
-                range(pageSize ?? 0).map(renderTableRow)
+                [...Array(pageSize ?? 0).keys()].map(renderTableRow)
               ) : (
                 <NoDataRow message="No data" />
               )}

@@ -12,8 +12,11 @@ import {
   DeepPartial,
   HvTheme,
 } from "@hitachivantara/uikit-react-core";
-import { HvBaseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
-import merge from "lodash/merge";
+import {
+  HvBaseTheme,
+  HvThemeStructure,
+  mergeTheme,
+} from "@hitachivantara/uikit-styles";
 
 import { themeDiff } from "./utils";
 
@@ -86,14 +89,13 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
         if (!isBaseChange) {
           if (!isCodeEdit) {
             const diff = themeDiff(prev, changes);
-            return merge({}, prev, diff);
+            return mergeTheme(prev, diff);
           }
           newTheme = createTheme({
             base: changes.base as HvBaseTheme,
             name: prev.name,
           });
-          const merged = merge({}, newTheme, changes);
-          return merged;
+          return mergeTheme(newTheme, changes);
         }
 
         newTheme = createTheme({
@@ -107,9 +109,7 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
       // Update theme changes
       if (updateThemeChanges) {
         if (!isCodeEdit) {
-          setThemeChanges((prev) => {
-            return merge({}, prev, changes);
-          });
+          setThemeChanges((prev) => mergeTheme(prev, changes));
         } else {
           setThemeChanges(changes);
         }

@@ -1,6 +1,6 @@
 import { CSSProperties, forwardRef, TdHTMLAttributes, useContext } from "react";
-import capitalize from "lodash/capitalize";
 
+import { capitalize } from "../../utils/helpers";
 import { ExtractNames } from "../../utils/classes";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 

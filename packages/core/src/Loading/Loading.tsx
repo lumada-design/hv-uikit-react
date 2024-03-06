@@ -1,7 +1,6 @@
 import { HvColorAny, getColor } from "@hitachivantara/uikit-styles";
 
-import range from "lodash/range";
-
+import { range } from "../utils/helpers";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -62,7 +61,7 @@ export const HvLoading = (props: HvLoadingProps) => {
       {...others}
     >
       <div className={classes.barContainer}>
-        {range(0, 3).map((e) => (
+        {range(3).map((e) => (
           <div
             key={e}
             style={inline}

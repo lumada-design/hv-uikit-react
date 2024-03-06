@@ -1,12 +1,9 @@
 import React, { useRef, useState } from "react";
-
-import uniqueId from "lodash/uniqueId";
-
 import { Doc } from "@hitachivantara/uikit-react-icons";
 
 import { setId } from "../../utils/setId";
 import { useUniqueId } from "../../hooks/useUniqueId";
-
+import { uniqueId } from "../../utils/helpers";
 import { HvTypography } from "../../Typography";
 import { HvInfoMessage, HvLabel } from "../../Forms";
 import { ExtractNames } from "../../utils/classes";

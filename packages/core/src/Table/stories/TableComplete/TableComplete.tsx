@@ -31,8 +31,6 @@ import {
 
 import { LoadingContainer } from "../TableSamples/LoadingContainer";
 
-const range = (n: number) => [...Array(n).keys()];
-
 const classes = {
   root: css({}),
   container: css({
@@ -308,7 +306,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
               {!data || data.length === 0 ? (
                 <NoDataRow message={labels.empty} />
               ) : (
-                range(pageSize ?? 0).map(renderTableRow)
+                [...Array(pageSize).keys()].map(renderTableRow)
               )}
             </HvTableBody>
           </HvTable>

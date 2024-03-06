@@ -12,7 +12,6 @@ import {
   tagsInputClasses,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import isEmpty from "lodash/isEmpty";
 
 import countryNamesArray from "./countries";
 
@@ -421,12 +420,12 @@ export const Suggestions: StoryObj<HvTagsInputProps> = {
     const countries = countryNamesArray;
 
     const suggestionHandler = (val: string) => {
-      if (typeof val !== "string" || isEmpty(val)) return null;
+      if (typeof val !== "string" || !val) return null;
       const foundCountries = countries.filter((country) =>
         country.toUpperCase().startsWith(val.toUpperCase())
       );
 
-      if (isEmpty(foundCountries)) return null;
+      if (foundCountries.length === 0) return null;
 
       return foundCountries.map((country, idx) => ({
         id: `c_${idx}`,
@@ -478,12 +477,12 @@ export const UnrestrictedSuggestions: StoryObj<HvTagsInputProps> = {
     const [statusMsg, setStatusMsg] = useState("");
 
     const suggestionHandler = (val: string) => {
-      if (typeof val !== "string" || isEmpty(val)) return null;
+      if (typeof val !== "string" || !val) return null;
       const foundOptions = options.filter((option) =>
         option.toUpperCase().startsWith(val.toUpperCase())
       );
 
-      if (isEmpty(foundOptions)) return null;
+      if (foundOptions.length === 0) return null;
 
       return foundOptions.map((option, idx) => ({
         id: `c_${idx}`,
@@ -492,7 +491,7 @@ export const UnrestrictedSuggestions: StoryObj<HvTagsInputProps> = {
     };
 
     const suggestionValidation = (val: string) => {
-      if (typeof val !== "string" || isEmpty(val)) return false;
+      if (typeof val !== "string" || !val) return false;
 
       if (!val.startsWith("Option")) {
         setStatus("invalid");

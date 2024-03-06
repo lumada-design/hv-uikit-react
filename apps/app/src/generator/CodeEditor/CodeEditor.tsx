@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { css } from "@emotion/css";
-import debounce from "lodash/debounce";
+import { useDebounceCallback } from "usehooks-ts";
 import JSON5 from "json5";
 import { HvIconButton, useTheme } from "@hitachivantara/uikit-react-core";
 import { Download, Reset, Duplicate } from "@hitachivantara/uikit-react-icons";
@@ -89,7 +89,7 @@ const CodeEditor = ({
     }
   };
 
-  const debouncedHandler = debounce(codeChangedHandler, 1000);
+  const debouncedHandler = useDebounceCallback(codeChangedHandler, 1000);
 
   return (
     <div className="relative">

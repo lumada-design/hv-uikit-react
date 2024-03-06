@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import debounce from "lodash/debounce";
+import { useDebounceCallback } from "usehooks-ts";
 import {
   DndContextProps,
   DragOverlay,
@@ -155,7 +155,7 @@ export const HvFlowSidebar = ({
     }
   };
 
-  const handleDebouncedSearch = debounce(handleSearch, 500);
+  const handleDebouncedSearch = useDebounceCallback(handleSearch, 500);
 
   return (
     <HvDrawer

@@ -5,9 +5,6 @@ import {
   useContext,
   useMemo,
 } from "react";
-
-import capitalize from "lodash/capitalize";
-
 import { hexToRgb, alpha } from "@mui/material/styles";
 
 import { theme } from "@hitachivantara/uikit-styles";
@@ -15,8 +12,8 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography, HvTypographyProps } from "../../Typography";
 import { useTheme } from "../../hooks/useTheme";
 import { ExtractNames } from "../../utils/classes";
+import { capitalize } from "../../utils/helpers";
 import { HvButton, HvButtonProps } from "../../Button";
-
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 
 import TableContext from "../TableContext";

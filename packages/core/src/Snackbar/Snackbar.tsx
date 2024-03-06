@@ -5,8 +5,8 @@ import MuiSnackbar, {
   SnackbarOrigin,
   SnackbarProps as MuiSnackbarProps,
 } from "@mui/material/Snackbar";
-import capitalize from "lodash/capitalize";
 
+import { capitalize } from "../utils/helpers";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { HvActionGeneric, HvActionsGenericProps } from "../ActionsGeneric";

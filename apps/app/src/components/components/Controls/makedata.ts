@@ -1,5 +1,4 @@
 import { HvTableColumnConfig } from "@hitachivantara/uikit-react-core";
-import range from "lodash/range";
 
 export interface NewEntry {
   id: string;
@@ -43,7 +42,7 @@ const newEntry = (i: number): NewEntry => {
   };
 };
 
-export const makeData = (len = 10) => range(len).map(newEntry);
+export const makeData = (len = 10) => [...Array(len).keys()].map(newEntry);
 
 export const getColumns = (): HvTableColumnConfig<NewEntry, string>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
