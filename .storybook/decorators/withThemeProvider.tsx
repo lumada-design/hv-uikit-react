@@ -6,7 +6,7 @@ import { Decorator } from "@storybook/react";
 
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
-import { ds3, ds5 } from "@hitachivantara/uikit-styles";
+import { ds3, ds5, pentahoPlus } from "@hitachivantara/uikit-styles";
 
 import { getStoryStyles } from "../theme/styles/story";
 import { ADDON_EVENT } from "../addons/theme-selector/constants";
@@ -58,7 +58,7 @@ const ThemeDecorator: Decorator = (Story) => {
       <HvProvider
         classNameKey="hv-story"
         cssTheme="scoped"
-        themes={[ds5, ds3]}
+        themes={[ds5, ds3, pentahoPlus]}
         theme={theme}
         colorMode={mode}
       >

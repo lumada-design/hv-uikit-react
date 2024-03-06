@@ -1,4 +1,10 @@
-export { theme, themes, ds3, ds5 } from "@hitachivantara/uikit-styles";
+export {
+  theme,
+  themes,
+  ds3,
+  ds5,
+  pentahoPlus,
+} from "@hitachivantara/uikit-styles";
 export type {
   HvThemeBreakpoint,
   HvThemeColorMode,
