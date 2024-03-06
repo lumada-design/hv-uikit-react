@@ -14,12 +14,11 @@ import {
   HvDialogProps,
   HvDialogTitle,
   HvDialogActions,
-  HvInput,
-  HvTextArea,
-  HvTypography,
-  HvGrid,
   theme,
 } from "@hitachivantara/uikit-react-core";
+
+import { FormStory } from "./stories/FormStory";
+import FormStoryRaw from "./stories/FormStory?raw";
 
 type SimpleDialogProps = Pick<HvDialogProps, "classes" | "variant"> & {
   buttonMessage?: string;
@@ -62,7 +61,6 @@ const SimpleDialog = ({
         {buttonMessage}
       </HvButton>
       <HvDialog
-        disableBackdropClick
         classes={classes}
         open={open}
         onClose={() => setOpen(false)}
@@ -216,87 +214,17 @@ export const SemanticVariants: StoryObj<HvDialogProps> = {
 export const Form: StoryObj<HvDialogProps> = {
   parameters: {
     docs: {
+      source: { code: FormStoryRaw },
       description: {
         story:
           "An example of using a `form` in `HvDialog`. The sample uses the `autofocus` attribute to focus the Title input by default.<br /> \
-          Accessibility-wise, `HvDialog` should have an `aria-labelledby` linking to the most appropriate element, \
-          as well as an optional `aria-describedby` pointing to the main content.",
+          Accessibility-wise, `HvDialogTitle` automatically labels the dialog. A `aria-describedby` can be used to describe the content.",
       },
     },
     eyes: { include: false },
   },
-  decorators: [(Story) => <div style={{ minHeight: 400 }}>{Story()}</div>],
-  render: () => {
-    const [open, setOpen] = useState(false);
-    const [postData, setPostData] = useState({});
-
-    return (
-      <>
-        <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
-          Create a post
-        </HvButton>
-        <br />
-        <br />
-        <HvTypography variant="title4">Data:</HvTypography>
-        <pre>{JSON.stringify(postData, null, 2)}</pre>
-        <HvDialog
-          disableBackdropClick
-          open={open}
-          onClose={() => setOpen(false)}
-          aria-labelledby="hv-dialog-title"
-          aria-describedby="hv-dialog-description"
-        >
-          <HvDialogTitle id="hv-dialog-title" variant="warning">
-            Create a new post
-          </HvDialogTitle>
-          <HvDialogContent indentContent>
-            <div id="hv-dialog-description" style={{ marginBottom: 10 }}>
-              Fill the following form to create a post.
-            </div>
-            <form
-              id="create-post"
-              onSubmit={(event) => {
-                event.preventDefault();
-                const formData = new FormData(event.currentTarget);
-                setPostData(Object.fromEntries(formData.entries()));
-                setOpen(false);
-              }}
-            >
-              <HvGrid container rowSpacing="xs">
-                <HvGrid item xs={12}>
-                  <HvInput
-                    required
-                    name="author"
-                    label="Author"
-                    defaultValue="John Doe"
-                  />
-                </HvGrid>
-                <HvGrid item xs={12}>
-                  <HvInput required name="title" label="Title" autoFocus />
-                </HvGrid>
-                <HvGrid item xs={12}>
-                  <HvTextArea
-                    required
-                    label="Description"
-                    name="content"
-                    rows={4}
-                  />
-                </HvGrid>
-              </HvGrid>
-            </form>
-          </HvDialogContent>
-          <HvDialogActions>
-            <HvButton type="submit" form="create-post" variant="primary">
-              Create
-            </HvButton>
-            <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
-              Cancel
-            </HvButton>
-          </HvDialogActions>
-        </HvDialog>
-      </>
-    );
-  },
+  decorators: [(Story) => <div style={{ minHeight: 440 }}>{Story()}</div>],
+  render: () => <FormStory />,
 };
 
 export const LongContent: StoryObj<HvDialogProps> = {

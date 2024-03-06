@@ -3,13 +3,11 @@ import MuiDialogTitle, {
 } from "@mui/material/DialogTitle";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
-import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
 import { iconVariant } from "../../utils/iconVariant";
 
-import { staticClasses, useClasses } from "./Title.styles";
 import { useDialogContext } from "../context";
+import { staticClasses, useClasses } from "./Title.styles";
 
 export { staticClasses as dialogTitleClasses };
 
@@ -66,14 +64,13 @@ export const HvDialogTitle = (props: HvDialogTitleProps) => {
     >
       <div className={classes.messageContainer}>
         {icon}
-        <div className={cx({ [classes.textWithIcon]: !!icon })}>
-          {!isString ? (
-            children
-          ) : (
-            <HvTypography variant="title4" className={classes.titleText}>
-              {children}
-            </HvTypography>
-          )}
+        <div
+          className={cx({
+            [classes.textWithIcon]: !!icon,
+            [classes.titleText]: isString,
+          })}
+        >
+          {children}
         </div>
       </div>
     </MuiDialogTitle>
