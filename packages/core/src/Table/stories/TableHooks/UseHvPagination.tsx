@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import range from "lodash/range";
 import {
   HvTable,
   HvTableBody,
@@ -69,7 +68,7 @@ export const UseHvPagination = () => {
             ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {pageSize && range(pageSize).map(renderTableRow)}
+            {pageSize && [...Array(pageSize).keys()].map(renderTableRow)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>

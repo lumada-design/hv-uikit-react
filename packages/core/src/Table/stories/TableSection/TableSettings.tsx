@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import range from "lodash/range";
+import { css } from "@emotion/css";
 import {
   HvBaseDropdown,
   HvListContainer,
@@ -46,8 +46,6 @@ import {
   PreviewOff,
   Settings,
 } from "@hitachivantara/uikit-react-icons";
-
-import { css } from "@emotion/css";
 
 import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
@@ -524,7 +522,7 @@ export const TableSettings = () => {
             ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {pageSize && range(pageSize).map(renderTableRow)}
+            {pageSize && [...Array(pageSize).keys()].map(renderTableRow)}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>

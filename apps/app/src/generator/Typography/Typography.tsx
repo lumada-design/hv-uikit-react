@@ -10,8 +10,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens, HvThemeTypography } from "@hitachivantara/uikit-styles";
 
-import debounce from "lodash/debounce";
-
+import { useDebounceCallback } from "usehooks-ts";
 import { css } from "@emotion/css";
 
 import { extractFontSizeUnit } from "~/generator/utils";
@@ -257,7 +256,10 @@ const Typography = () => {
     });
   };
 
-  const debouncedColorChangedHandler = debounce(colorChangedHandler, 250);
+  const debouncedColorChangedHandler = useDebounceCallback(
+    colorChangedHandler,
+    250
+  );
 
   return (
     <div className="flex flex-col w-full">

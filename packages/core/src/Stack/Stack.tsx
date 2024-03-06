@@ -5,9 +5,6 @@ import MuiDivider, {
   DividerProps as MuiDividerProps,
 } from "@mui/material/Divider";
 
-import isString from "lodash/isString";
-import isBoolean from "lodash/isBoolean";
-
 import { HvBreakpoints } from "@hitachivantara/uikit-styles";
 
 import { useWidth } from "../hooks/useWidth";
@@ -51,7 +48,7 @@ export interface HvStackProps extends HvBaseProps {
  *                     smaller than the current one to use.
  */
 const getDirection = (direction: any, width: any, breakpoints: any) => {
-  if (isString(direction)) return direction;
+  if (typeof direction === "string") return direction;
 
   for (let i = breakpoints.indexOf(width); i >= 0; i -= 1) {
     if (direction[breakpoints[i]] !== undefined) {
@@ -95,7 +92,7 @@ export const HvStack = (props: HvStackProps) => {
    *                   we use the custom divider the user passed.
    */
   const getDividerComponent = useCallback(() => {
-    if (isBoolean(divider) && divider) {
+    if (typeof divider === "boolean" && divider) {
       return (
         <MuiDivider
           orientation={

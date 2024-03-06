@@ -1,11 +1,9 @@
 import { memo, useCallback, useState } from "react";
-import uniqueId from "lodash/uniqueId";
-import isEmpty from "lodash/isEmpty";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { HvInput } from "../../../../Input";
-
+import { uniqueId } from "../../../../utils/helpers";
 import { useQueryBuilderContext } from "../../../Context";
 import { useClasses } from "./Numeric.styles";
 import { HvQueryBuilderNumericRange } from "../../../types";
@@ -34,7 +32,7 @@ export const NumericValue = ({
 
   const onSingleValueChange = useCallback(
     (_, data: string) => {
-      const numericData = isEmpty(data) ? null : Number(data);
+      const numericData = !data ? null : Number(data);
       dispatchAction({
         type: "set-value",
         id,
@@ -46,7 +44,7 @@ export const NumericValue = ({
 
   const onRangeValueChange = useCallback(
     (_, data: string, from = true) => {
-      const numericData = isEmpty(data) ? null : Number(data);
+      const numericData = !data ? null : Number(data);
       const currentValue = value;
       const numericRange = {
         from: currentValue?.from,

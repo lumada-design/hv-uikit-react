@@ -53,8 +53,6 @@ export type AssetEvent = {
   selected?: boolean;
 };
 
-export const range = (n: number) => Array.from({ length: n }, (_, i) => i);
-
 // If a Cell gets a value, it has to return a react element
 const getCell = (value: string) => value as unknown as React.ReactElement;
 
@@ -142,12 +140,13 @@ const controlledSelectedEntry = (i: number): AssetEvent => {
 };
 
 export const makeRenderersData = (len: number = 10) =>
-  range(len).map(newRendererEntry);
+  [...Array(len).keys()].map(newRendererEntry);
 
-export const makeData = (len: number = 10) => range(len).map(makeEvent);
+export const makeData = (len: number = 10) =>
+  [...Array(len).keys()].map(makeEvent);
 
 export const makeSelectedData = (len: number = 10) =>
-  range(len).map(controlledSelectedEntry);
+  [...Array(len).keys()].map(controlledSelectedEntry);
 
 // https://react-table.tanstack.com/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps

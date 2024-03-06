@@ -27,7 +27,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Add, Close, Filters } from "@hitachivantara/uikit-react-icons";
 
-import { AssetEvent, getColumns, makeData, range } from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
 const EmptyRow = () => (
   <HvTableRow>
@@ -315,7 +315,7 @@ export const TableFilter = () => {
               {data.length === 0 ? (
                 <EmptyRow />
               ) : (
-                range(pageSize ?? 0).map(renderTableRow)
+                [...Array(pageSize ?? 0).keys()].map(renderTableRow)
               )}
             </HvTableBody>
           </HvTable>

@@ -1,8 +1,6 @@
 import { forwardRef } from "react";
 import MuiGrid, { GridProps as MuiGridProps } from "@mui/material/Grid";
 
-import isString from "lodash/isString";
-
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useWidth } from "../hooks/useWidth";
 import { ExtractNames } from "../utils/classes";
@@ -149,7 +147,7 @@ export interface HvGridProps extends Omit<MuiGridProps, "classes" | "columns"> {
 function getGridSpacing(spacing: HvGridProps["spacing"]) {
   let gridSpacing: MuiGridProps["spacing"];
 
-  if (isString(spacing)) {
+  if (typeof spacing === "string") {
     if (spacing === "auto") {
       gridSpacing = BREAKPOINT_GUTTERS;
     } else {

@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 
-import capitalize from "lodash/capitalize";
-
+import { capitalize } from "../utils/helpers";
 import { DateRangeProp } from "./types";
 
 /**

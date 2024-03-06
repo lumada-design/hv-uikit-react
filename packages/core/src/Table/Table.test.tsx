@@ -1,4 +1,3 @@
-import range from "lodash/range";
 import { describe, expect, it } from "vitest";
 import { render, within } from "@testing-library/react";
 
@@ -67,15 +66,15 @@ describe("Simple Table", () => {
       <HvTable>
         <HvTableHead>
           <HvTableRow>
-            {range(NUM_COLS).map((id) => (
+            {[...Array(NUM_COLS).keys()].map((id) => (
               <HvTableHeader key={id}>{`Sample Header ${id}`}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
         <HvTableBody>
-          {range(NUM_ROWS).map((id) => (
+          {[...Array(NUM_ROWS).keys()].map((id) => (
             <HvTableRow key={id}>
-              {range(NUM_COLS).map((id2) => (
+              {[...Array(NUM_COLS).keys()].map((id2) => (
                 <HvTableCell key={id2}>{`Sample Cell ${id2}`}</HvTableCell>
               ))}
             </HvTableRow>
@@ -104,15 +103,15 @@ describe("List Row", () => {
       <HvTable variant="listrow">
         <HvTableHead>
           <HvTableRow>
-            {range(NUM_COLS).map((id) => (
+            {[...Array(NUM_COLS).keys()].map((id) => (
               <HvTableHeader key={id}>{`Sample Header ${id}`}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
         <HvTableBody withNavigation>
-          {range(NUM_ROWS).map((id) => (
+          {[...Array(NUM_ROWS).keys()].map((id) => (
             <HvTableRow key={id}>
-              {range(NUM_COLS).map((id2) => (
+              {[...Array(NUM_COLS).keys()].map((id2) => (
                 <HvTableCell key={id2}>{`Sample Cell ${id2}`}</HvTableCell>
               ))}
             </HvTableRow>
@@ -150,7 +149,7 @@ describe("Header Only Table", () => {
       <HvTable>
         <HvTableHead>
           <HvTableRow>
-            {range(NUM_COLS).map((id) => (
+            {[...Array(NUM_COLS).keys()].map((id) => (
               <HvTableHeader key={id}>{`Header ${id}`}</HvTableHeader>
             ))}
           </HvTableRow>

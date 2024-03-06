@@ -1,4 +1,3 @@
-import isEmpty from "lodash/isEmpty";
 import { Formik } from "formik";
 import * as yup from "yup";
 import {
@@ -53,12 +52,12 @@ const onSubmit = (data, { setSubmitting }) => {
  * @param {String} val - the value entered on the input
  */
 const suggestionHandler = (val) => {
-  if (typeof val !== "string" || isEmpty(val)) return null;
+  if (typeof val !== "string" || !val) return null;
   const foundCountries = allCountries.filter((country) =>
     country.toUpperCase().startsWith(val.toUpperCase())
   );
 
-  if (isEmpty(foundCountries)) return null;
+  if (foundCountries.length === 0) return null;
 
   return foundCountries.map((country, idx) => ({
     id: `c_${idx}`,

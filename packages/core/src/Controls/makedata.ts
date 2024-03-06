@@ -1,5 +1,4 @@
-import range from "lodash/range";
-
+import { range } from "../utils/helpers";
 import { HvTableColumnConfig } from "../Table";
 
 export interface NewEntry {

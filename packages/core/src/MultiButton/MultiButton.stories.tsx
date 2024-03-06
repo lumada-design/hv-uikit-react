@@ -1,5 +1,4 @@
 import { MouseEvent, useState } from "react";
-import range from "lodash/range";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   DropDownXS,
@@ -264,7 +263,7 @@ export const EnforcedSelection: StoryObj<HvMultiButtonProps> = {
     return (
       <div style={{ width: "600px" }}>
         <HvMultiButton>
-          {range(5).map((i) => (
+          {[...Array(5).keys()].map((i) => (
             <HvButton
               key={`ef-${i}`}
               startIcon={<LocationPin />}
@@ -303,7 +302,7 @@ export const MinimumSelection: StoryObj<HvMultiButtonProps> = {
     return (
       <div style={{ width: "800px" }}>
         <HvMultiButton>
-          {range(5).map((i) => (
+          {[...Array(5).keys()].map((i) => (
             <HvButton
               key={`ms-${i}`}
               startIcon={<LocationPin />}
@@ -342,7 +341,7 @@ export const MaximumSelection: StoryObj<HvMultiButtonProps> = {
     return (
       <div style={{ width: "800px" }}>
         <HvMultiButton>
-          {range(5).map((i) => (
+          {[...Array(5).keys()].map((i) => (
             <HvButton
               key={`maxse-${i}`}
               startIcon={<LocationPin />}

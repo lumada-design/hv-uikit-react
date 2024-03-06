@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
-import isEqual from "lodash/isEqual";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
+import { isEqual } from "../utils/helpers";
 
 import { ConfirmationDialog } from "./ConfirmationDialog";
 import {

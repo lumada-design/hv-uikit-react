@@ -1,5 +1,4 @@
 import { memo, useCallback, useMemo, useState } from "react";
-import uniqueId from "lodash/uniqueId";
 import dayjs from "dayjs";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -7,6 +6,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { HvWarningText } from "../../../../Forms";
 import { HvTimePicker, HvTimePickerValue } from "../../../../TimePicker";
 import { HvDatePicker } from "../../../../DatePicker";
+import { uniqueId } from "../../../../utils/helpers";
 
 import { useQueryBuilderContext } from "../../../Context";
 import { padTime, parseDate, parseTime } from "./utils";

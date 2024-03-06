@@ -20,14 +20,12 @@ import { HvButton } from "../Button";
 import { useTheme } from "../hooks/useTheme";
 import { HvTypography } from "../Typography";
 import { HvContainer } from "../Container";
+import { clamp } from "../utils/helpers";
 import { ExtractNames } from "../utils/classes";
 import { HvCarouselControls } from "./CarouselControls";
 import { HvCarouselThumbnails } from "./CarouselThumbnails";
 import { staticClasses, useClasses } from "./Carousel.styles";
 import { HvIconButton } from "../IconButton";
-
-const clamp = (num: number, max: number, min = 0) =>
-  Math.min(Math.max(num, min), max);
 
 export { staticClasses as carouselClasses };
 
@@ -162,7 +160,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
     if (!controller) return;
 
     controller.reInit();
-    setSelectedIndex((currentIndex) => clamp(currentIndex, numSlides, 0));
+    setSelectedIndex((currentIndex) => clamp(currentIndex, numSlides));
   }, [numSlides, controller]);
 
   const canPrev = controller?.canScrollPrev() ?? false;

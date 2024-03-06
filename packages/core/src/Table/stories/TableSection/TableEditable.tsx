@@ -26,12 +26,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Add, Delete, Edit } from "@hitachivantara/uikit-react-icons";
 
-import {
-  AssetEvent,
-  getEditableColumns,
-  range,
-  useServerData,
-} from "../storiesUtils";
+import { AssetEvent, getEditableColumns, useServerData } from "../storiesUtils";
 import { LoadingContainer } from "../TableSamples/LoadingContainer";
 
 const slide = keyframes`
@@ -580,7 +575,7 @@ const Table = <T extends Data>({
               {data?.length === 0 ? (
                 <EmptyRow />
               ) : (
-                range(pageSize ?? 0).map(renderTableRow)
+                [...Array(pageSize ?? 0).keys()].map(renderTableRow)
               )}
             </HvTableBody>
           </HvTable>

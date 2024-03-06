@@ -1,12 +1,10 @@
 import { useCallback, useMemo, useContext, useEffect, useState } from "react";
 
-import uniqueId from "lodash/uniqueId";
-
+import { uniqueId } from "../../utils/helpers";
 import { wrapperTooltip } from "../../utils/wrapperTooltip";
 import { setId } from "../../utils/setId";
 import { useControlled } from "../../hooks/useControlled";
 import { HvBaseProps } from "../../types/generic";
-
 import { ExtractNames } from "../../utils/classes";
 
 import {

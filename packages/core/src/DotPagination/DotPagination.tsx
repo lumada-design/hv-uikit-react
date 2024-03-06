@@ -4,6 +4,7 @@ import { CurrentStep, OtherStep } from "@hitachivantara/uikit-react-icons";
 import { HvRadio } from "../Radio";
 import { HvRadioGroup, HvRadioGroupProps } from "../RadioGroup";
 import { ExtractNames } from "../utils/classes";
+import { range } from "../utils/helpers";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 
@@ -69,8 +70,6 @@ const getSelectorIcons = (
     ),
   };
 };
-
-const range = (n: number) => Array.from(Array(n), (_, i) => i);
 
 /**
  * Pagination is the process of dividing a document into discrete pages. It relates to how users interact with structured content on a website or application.
