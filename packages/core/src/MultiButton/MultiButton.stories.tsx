@@ -440,6 +440,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         <HvMultiButton variant="primary" style={{ width: "232px" }} split>
           <HvButton>{selectedOption.label}</HvButton>
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -452,6 +453,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         <HvMultiButton variant="primarySubtle" style={{ width: "232px" }} split>
           <HvButton>{selectedOption.label}</HvButton>
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -468,6 +470,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         >
           <HvButton>{selectedOption.label}</HvButton>
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -484,6 +487,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
           size="xs"
         >
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -501,6 +505,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
           size="xs"
         >
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -518,6 +523,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
           size="xs"
         >
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -536,6 +542,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         >
           <HvButton>{selectedOption.label}</HvButton>
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -553,6 +560,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         >
           <HvButton>{selectedOption.label}</HvButton>
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -570,6 +578,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         >
           <HvButton>{selectedOption.label}</HvButton>
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -588,6 +597,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         >
           <HvButton>{selectedOption.label}</HvButton>
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -606,6 +616,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         >
           <HvButton>{selectedOption.label}</HvButton>
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>
@@ -624,6 +635,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         >
           <HvButton>{selectedOption.label}</HvButton>
           <HvDropDownMenu
+            keepOpened={false}
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>

@@ -69,8 +69,8 @@
     {
       "name": "Dropdown",
       "features": "Split",
-      "status": "Not Planned",
-      "notes": ""
+      "status": "Supported",
+      "notes": "Use the MultiButton component"
     },
     {
       "name": "Empty State",
@@ -183,7 +183,7 @@
     {
       "name": "Tag",
       "features": "Actions",
-      "status": "Planned",
+      "status": "✅",
       "notes": ""
     },
     {
