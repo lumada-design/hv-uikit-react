@@ -16,7 +16,6 @@ import {
   HvActionsGenericProps,
 } from "@hitachivantara/uikit-react-core";
 
-import { LoadingContainer } from "../utils";
 import { ListView } from "./ListView";
 import { CardView } from "./CardView";
 import classes from "./styles";
@@ -30,7 +29,7 @@ import {
   AssetInventoryEntry,
 } from "./data";
 
-const PAGE_OPTIONS = [12, 24, 36];
+const PAGE_OPTIONS = [6, 12, 18];
 
 const AssetInventory = () => {
   const [currentView, setCurrentView] = useState("card");
@@ -48,7 +47,7 @@ const AssetInventory = () => {
     deleteEntries,
   } = usePaginationData(params);
 
-  const columns = useMemo(() => getColumns(), []);
+  const columns = useMemo(() => getColumns(loading), [loading]);
 
   const instance = useHvData<AssetInventoryEntry, string>(
     {
@@ -126,66 +125,64 @@ const AssetInventory = () => {
   };
 
   return (
-    <LoadingContainer loading={loading}>
-      <div className={classes.root}>
-        <HvControls
-          views={views}
-          callbacks={instance}
-          defaultView="card"
-          onViewChange={(evt, id) => setCurrentView(id)}
-        >
-          <HvLeftControl
-            placeholder="Search"
-            onSearch={handleSearch}
-            searchProps={{
-              inputProps: {
-                "aria-label": "Search",
-                "aria-controls": `${cardViewId} ${listViewId}`,
-              },
-            }}
-          />
-          <HvRightControl
-            values={rightControlValues}
-            sortProps={{
-              "aria-label": "Sort by",
+    <div className={classes.root}>
+      <HvControls
+        views={views}
+        callbacks={instance}
+        defaultView="card"
+        onViewChange={(evt, id) => setCurrentView(id)}
+      >
+        <HvLeftControl
+          placeholder="Search"
+          onSearch={handleSearch}
+          searchProps={{
+            inputProps: {
+              "aria-label": "Search",
               "aria-controls": `${cardViewId} ${listViewId}`,
-            }}
-          />
-        </HvControls>
-
-        <HvBulkActions
-          {...bulkActionProps}
-          numTotal={data.length}
-          numSelected={instance.selectedFlatRows.length}
-          maxVisibleActions={2}
-          onSelectAll={() => bulkActionProps?.onSelectAll()}
-          onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
-          actions={actions}
-          onAction={handleAction}
-          checkboxProps={{
+            },
+          }}
+        />
+        <HvRightControl
+          values={rightControlValues}
+          sortProps={{
+            "aria-label": "Sort by",
             "aria-controls": `${cardViewId} ${listViewId}`,
           }}
         />
+      </HvControls>
 
-        {currentView === "card" && (
-          <CardView id={cardViewId} instance={instance} />
-        )}
+      <HvBulkActions
+        {...bulkActionProps}
+        numTotal={data.length}
+        numSelected={instance.selectedFlatRows.length}
+        maxVisibleActions={2}
+        onSelectAll={() => bulkActionProps?.onSelectAll()}
+        onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
+        actions={actions}
+        onAction={handleAction}
+        checkboxProps={{
+          "aria-controls": `${cardViewId} ${listViewId}`,
+        }}
+      />
 
-        {currentView === "list" && (
-          <ListView id={listViewId} instance={instance} columns={columns} />
-        )}
+      {currentView === "card" && (
+        <CardView id={cardViewId} instance={instance} loading={loading} />
+      )}
 
-        {instance.page?.length ? (
-          <HvPagination
-            {...instance.getHvPaginationProps?.()}
-            pageSizeOptions={PAGE_OPTIONS}
-            labels={{
-              pageSizeEntryName: currentView === "card" ? "cards" : "rows",
-            }}
-          />
-        ) : undefined}
-      </div>
-    </LoadingContainer>
+      {currentView === "list" && (
+        <ListView id={listViewId} instance={instance} columns={columns} />
+      )}
+
+      {instance.page?.length ? (
+        <HvPagination
+          {...instance.getHvPaginationProps?.()}
+          pageSizeOptions={PAGE_OPTIONS}
+          labels={{
+            pageSizeEntryName: currentView === "card" ? "cards" : "rows",
+          }}
+        />
+      ) : undefined}
+    </div>
   );
 };
 

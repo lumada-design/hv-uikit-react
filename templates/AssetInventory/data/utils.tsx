@@ -3,6 +3,7 @@ import {
   HvControlsProps,
   HvRightControlProps,
   HvSemanticColorKeys,
+  HvSkeleton,
   HvTableColumnConfig,
   HvTooltip,
 } from "@hitachivantara/uikit-react-core";
@@ -76,26 +77,30 @@ const getStatusMessage = (status?: AssetInventoryEntry["statusColor"]) => {
   }
 };
 
-export const getColumns = (): HvTableColumnConfig<
-  AssetInventoryEntry,
-  string
->[] => [
+export const getColumns = (
+  loading?: boolean
+): HvTableColumnConfig<AssetInventoryEntry, string>[] => [
   {
     Header: "Status",
     accessor: "statusColor",
     style: { width: 60 },
-    Cell: ({ value }) => (
-      <HvTooltip title={getStatusMessage(value)}>
-        <div>{getStatusIcon(value)}</div>
-      </HvTooltip>
-    ),
+    Cell: ({ value }) =>
+      loading ? (
+        <HvSkeleton width={32} height={32} variant="circle" animation="wave" />
+      ) : (
+        <HvTooltip title={getStatusMessage(value)}>
+          <div>{getStatusIcon(value)}</div>
+        </HvTooltip>
+      ),
   },
   {
     Header: "Asset",
     accessor: "image",
     style: { maxWidth: 60 },
     Cell: ({ value, row }) => {
-      return (
+      return loading ? (
+        <HvSkeleton width={60} height={40} variant="square" animation="wave" />
+      ) : (
         <HvTooltip
           placement="right"
           title={
@@ -111,12 +116,50 @@ export const getColumns = (): HvTableColumnConfig<
       );
     },
   },
-  { Header: "Title", accessor: "name", style: { minWidth: 140 } },
-  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
-  { Header: "Severity", accessor: "severity" },
-  { Header: "Priority", accessor: "priority" },
-  { Header: "Time", accessor: "time" },
-  { Header: "Temperature", accessor: "temperature" },
+  {
+    Header: "Title",
+    accessor: "name",
+    style: { minWidth: 140 },
+    Cell: ({ value }) => {
+      return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
+    },
+  },
+  {
+    Header: "Event Type",
+    accessor: "eventType",
+    style: { minWidth: 100 },
+    Cell: ({ value }) => {
+      return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
+    },
+  },
+  {
+    Header: "Severity",
+    accessor: "severity",
+    Cell: ({ value }) => {
+      return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
+    },
+  },
+  {
+    Header: "Priority",
+    accessor: "priority",
+    Cell: ({ value }) => {
+      return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
+    },
+  },
+  {
+    Header: "Time",
+    accessor: "time",
+    Cell: ({ value }) => {
+      return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
+    },
+  },
+  {
+    Header: "Temperature",
+    accessor: "temperature",
+    Cell: ({ value }) => {
+      return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
+    },
+  },
 ];
 
 export const actions: HvBulkActionsProps["actions"] = [
