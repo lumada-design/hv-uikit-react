@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.54.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.53.1...@hitachivantara/uikit-react-core@5.54.0) (2024-03-07)
+
+### Bug Fixes
+
+- accessibility issue, dropdownmenu styles in xs ([a46fd8e](https://github.com/lumada-design/hv-uikit-react/commit/a46fd8ecb3d9d9eadf2a15dc852637feb47e99a4))
+- **Dialog:** duplicate heading elements ([#4053](https://github.com/lumada-design/hv-uikit-react/issues/4053)) ([c090958](https://github.com/lumada-design/hv-uikit-react/commit/c09095891d63e1959b3b72cf6777d9615154f6b9))
+- **MultiButton:** add button sizes ([dfaddaf](https://github.com/lumada-design/hv-uikit-react/commit/dfaddaf9995375f00d1523621c00e78c07ee4c2e))
+- **MultiButton:** correct ds5 selected multibutton specs ([afe3ab0](https://github.com/lumada-design/hv-uikit-react/commit/afe3ab0f994697d7c948ecbe570ced47eacf0a55))
+
+### Features
+
+- **Card:** allow more colors to be passed ([012104e](https://github.com/lumada-design/hv-uikit-react/commit/012104e2711c176fd3e8eb433e7ebf009b78b672))
+- **MultiButton:** add primary and primarySubtle variant styles ([65a5fb1](https://github.com/lumada-design/hv-uikit-react/commit/65a5fb1ef458bfdbecf3772c9fc23209041be5fb))
+
 ## 5.53.1 (2024-02-29)
 
 ### Bug Fixes

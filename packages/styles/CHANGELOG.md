@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.21.0 (2024-03-07)
+
+### Bug Fixes
+
+- **MultiButton:** correct ds5 selected multibutton specs ([afe3ab0](https://github.com/lumada-design/hv-uikit-react/commit/afe3ab0f994697d7c948ecbe570ced47eacf0a55))
+
+### Features
+
+- **Card:** allow more colors to be passed ([012104e](https://github.com/lumada-design/hv-uikit-react/commit/012104e2711c176fd3e8eb433e7ebf009b78b672))
+
 # 5.20.0 (2024-02-21)
 
 ### Features
