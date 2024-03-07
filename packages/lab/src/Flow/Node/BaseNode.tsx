@@ -10,8 +10,7 @@ import { uid } from "uid";
 import {
   ExtractNames,
   HvBaseProps,
-  HvButton,
-  HvTooltip,
+  HvIconButton,
   HvTypography,
   useLabels,
 } from "@hitachivantara/uikit-react-core";
@@ -230,11 +229,13 @@ export const HvFlowBaseNode = ({
     >
       <NodeToolbar isVisible={showActions} offset={0}>
         {nodeActions?.map((action) => (
-          <HvTooltip key={action.id} enterDelay={500} title={action.label}>
-            <HvButton icon onClick={() => handleDefaultAction(action)}>
-              {renderedIcon(action.icon)}
-            </HvButton>
-          </HvTooltip>
+          <HvIconButton
+            key={action.id}
+            title={action.label}
+            onClick={() => handleDefaultAction(action)}
+          >
+            {renderedIcon(action.icon)}
+          </HvIconButton>
         ))}
       </NodeToolbar>
       <div

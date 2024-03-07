@@ -2,11 +2,10 @@ import { ReactNode } from "react";
 import { css } from "@emotion/css";
 import { Global, GlobalProps } from "@emotion/react";
 import {
-  HvButton,
   HvContainer,
   HvHeader,
   HvHeaderActions,
-  HvTooltip,
+  HvIconButton,
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
@@ -28,21 +27,17 @@ export const Container = ({ children }: { children: ReactNode }) => {
       <Global styles={globalStyles} />
       <HvHeader>
         <HvHeaderActions>
-          <HvTooltip title="UI Kit documentation">
-            <HvButton
-              icon
-              component="a"
-              href="https://lumada-design.github.io/uikit/master"
-              target="_blank"
-            >
-              <Help />
-            </HvButton>
-          </HvTooltip>
-          <HvTooltip title="Change theme">
-            <HvButton icon onClick={handleChangeTheme}>
-              <ThemeSwitcher />
-            </HvButton>
-          </HvTooltip>
+          <HvIconButton
+            title="UI Kit documentation"
+            component="a"
+            href="https://lumada-design.github.io/uikit/master"
+            target="_blank"
+          >
+            <Help />
+          </HvIconButton>
+          <HvIconButton title="Change theme" onClick={handleChangeTheme}>
+            <ThemeSwitcher />
+          </HvIconButton>
         </HvHeaderActions>
       </HvHeader>
       <HvContainer

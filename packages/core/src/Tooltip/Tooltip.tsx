@@ -61,6 +61,9 @@ export interface HvTooltipProps extends Omit<MuiTooltipProps, "classes"> {
 /**
  * Tooltips display informative text when users hover over, focus on, or tap an element.
  * Accessibility-wise, the tooltip automatically labels the `children` content.
+ *
+ * If you are looking to wrap an icon only button with a tooltip, take a look at the `HvIconButton` component
+ * which offers you thus behavior out of the box.
  */
 export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
   const {

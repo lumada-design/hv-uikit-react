@@ -1,11 +1,9 @@
 import {
   HvBox,
-  HvButton,
   HvTooltip,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { Add } from "@hitachivantara/uikit-react-icons";
 
 export const Tooltip = () => {
   const styling = {
@@ -27,11 +25,6 @@ export const Tooltip = () => {
       </HvTooltip>
       <HvTooltip title="Tooltip content" open>
         <p>{`I'm always showing a tooltip`}</p>
-      </HvTooltip>
-      <HvTooltip title="Tooltip content">
-        <HvButton icon variant="secondaryGhost">
-          <Add />
-        </HvButton>
       </HvTooltip>
     </HvBox>
   );

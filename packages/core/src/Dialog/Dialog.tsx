@@ -3,15 +3,13 @@ import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvButton } from "../Button";
-import { HvTooltip } from "../Tooltip";
 import { getElementById } from "../utils/document";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { useTheme } from "../hooks/useTheme";
-
 import { staticClasses, useClasses } from "./Dialog.styles";
 import { DialogContext } from "./context";
+import { HvIconButton } from "../IconButton";
 
 export { staticClasses as dialogClasses };
 
@@ -115,16 +113,14 @@ export const HvDialog = (props: HvDialogProps) => {
       aria-modal
       {...others}
     >
-      <HvTooltip placement="top" title={buttonTitle}>
-        <HvButton
-          id={setId(id, "close")}
-          className={classes.closeButton}
-          variant="secondaryGhost"
-          onClick={(event) => onClose?.(event, undefined)}
-        >
-          <Close role="none" />
-        </HvButton>
-      </HvTooltip>
+      <HvIconButton
+        title={buttonTitle}
+        id={setId(id, "close")}
+        className={classes.closeButton}
+        onClick={(event) => onClose?.(event, undefined)}
+      >
+        <Close role="none" />
+      </HvIconButton>
       <DialogContext.Provider value={contextValue}>
         {children}
       </DialogContext.Provider>

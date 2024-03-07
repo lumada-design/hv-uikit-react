@@ -1,14 +1,9 @@
 import { useState } from "react";
-
 import { Meta, StoryObj } from "@storybook/react";
-
 import { css } from "@emotion/css";
-
 import { Modal } from "@mui/material";
-
 import {
-  HvButton,
-  HvTooltip,
+  HvIconButton,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
@@ -76,37 +71,29 @@ const Header = (props: {
         >
           {fileName}
         </HvTypography>
-        <HvTooltip title="Open in new window">
-          <HvButton
-            className={styles.buttonMargin}
-            icon
-            aria-label="Popup"
-            component="a"
-            href="http://localhost:9001/iframe.html?id=components-code-editor--main"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <PopUp />
-          </HvButton>
-        </HvTooltip>
+        <HvIconButton
+          title="Open in new window"
+          className={styles.buttonMargin}
+          component="a"
+          href="http://localhost:9001/iframe.html?id=components-code-editor--main"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <PopUp />
+        </HvIconButton>
       </div>
       <div className={styles.headerItemsWrapper}>
-        <HvTooltip title="Fullscreen">
-          <HvButton
-            icon
-            aria-label="Fullscreen"
-            onClick={() => {
-              handleOpen(true);
-            }}
-          >
-            <Fullscreen />
-          </HvButton>
-        </HvTooltip>
-        <HvTooltip title="Duplicate">
-          <HvButton className={styles.buttonMargin} icon aria-label="Duplicate">
-            <Duplicate />
-          </HvButton>
-        </HvTooltip>
+        <HvIconButton
+          title="Fullscreen"
+          onClick={() => {
+            handleOpen(true);
+          }}
+        >
+          <Fullscreen />
+        </HvIconButton>
+        <HvIconButton title="Duplicate" className={styles.buttonMargin}>
+          <Duplicate />
+        </HvIconButton>
       </div>
     </div>
   );

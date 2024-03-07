@@ -1,20 +1,18 @@
 import { PopUp } from "@hitachivantara/uikit-react-icons";
-import {
-  HvButton,
-  HvTooltip,
-  HvTypography,
-} from "@hitachivantara/uikit-react-core";
+import { HvIconButton, HvTypography } from "@hitachivantara/uikit-react-core";
 
 export default {
   title: "Foundation/Typography/Usage",
 };
 
 export const Usage = () => (
-  <HvTooltip title="Open in new window">
-    <HvButton icon component="a" href="#">
-      <PopUp />
-    </HvButton>
-  </HvTooltip>
+  <HvIconButton
+    title={<HvTypography variant="caption1">Open in new window</HvTypography>}
+    component="a"
+    href="#"
+  >
+    <PopUp />
+  </HvIconButton>
 );
 
 export const Semantic = () => (
