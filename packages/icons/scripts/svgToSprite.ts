@@ -64,7 +64,7 @@ fs.mkdir(outputFolder, { recursive: true }, (err) => {
       : { icons: [inputPath] };
 
   for (const groupName in svgPathsByGroup) {
-    if (Object.prototype.hasOwnProperty.call(svgPathsByGroup, groupName)) {
+    if (Object.hasOwn(svgPathsByGroup, groupName)) {
       const svgPaths = svgPathsByGroup[groupName];
       const symbolsSvgPath = path.resolve(
         process.cwd(),

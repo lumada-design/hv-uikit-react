@@ -125,6 +125,11 @@
     "zod": "^3.22.4",
     "zustand": "^4.4.7"
   },
+  "overrides": {
+    "storycrawler": {
+      "puppeteer-core": "20.9.0"
+    }
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",

@@ -23,7 +23,7 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   build: {
-    target: "ES2021",
+    target: "ES2022",
     minify: false,
     emptyOutDir: true,
     lib: {

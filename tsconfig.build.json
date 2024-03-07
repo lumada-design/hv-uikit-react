@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "module": "ESNext",
-    "target": "ES2021",
-    "lib": ["DOM", "ES2021", "dom.iterable"],
+    "target": "ES2022",
+    "lib": ["DOM", "ES2022", "dom.iterable"],
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "esModuleInterop": true,

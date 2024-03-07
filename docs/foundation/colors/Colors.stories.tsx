@@ -20,7 +20,7 @@ import { themeColors } from "./themeColors";
 function groupColors(colorsJson?: HvThemeColorModeStructure) {
   const colorsMap = new Map<string, string>();
   for (const key in colorsJson) {
-    if (Object.prototype.hasOwnProperty.call(colorsJson, key)) {
+    if (Object.hasOwn(colorsJson, key)) {
       colorsMap.set(key, colorsJson[key]);
     }
   }

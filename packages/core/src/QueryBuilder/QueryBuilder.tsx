@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
-import cloneDeep from "lodash/cloneDeep";
 import isEqual from "lodash/isEqual";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -126,7 +125,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   const [state, dispatchAction] = useReducer(
     reducer,
     // Deep clone is needed to make sure that the "query" prop and "initialQuery" are not mutated
-    cloneDeep(initialQuery.current)
+    structuredClone(initialQuery.current)
   );
 
   const value = useMemo(
@@ -178,7 +177,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       }
 
       onChange?.(clearNodeIds(state) as HvQueryBuilderChangedQuery);
-      setPrevState(cloneDeep(state));
+      setPrevState(structuredClone(state));
     }
   }, [initialState, onChange, prevState, state]);
 

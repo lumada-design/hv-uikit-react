@@ -1,5 +1,4 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
-import cloneDeep from "lodash/cloneDeep";
 
 import { HvCheckBox } from "../../CheckBox";
 import { HvInput } from "../../Input";
@@ -106,7 +105,7 @@ export const HvFilterGroupRightPanel = ({
   };
 
   const handleSelectAll = useCallback(() => {
-    const newFilterValues = cloneDeep(filterValues);
+    const newFilterValues = structuredClone(filterValues);
 
     if (anySelected) {
       if (searchStr !== "") {
