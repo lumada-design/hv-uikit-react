@@ -24,11 +24,17 @@ The **Open Sans font** can be loaded from a CDN, using the following markup:
 
 The Typography component can be composed with other elements that require typographic styling to match design specifications.
 
-In the following example, the Typography component is passed as a property to the Tooltip component. The tooltip will then use the provided component
-as its content, allowing the styling of the text inside with the help of the typography component.
+In the following example, the Typography component is passed as a property to the Icon Button component.
+The provided component will be used as the tooltip content, allowing the styling of the text with the help of the typography component.
 
 ```tsx
-<HvTooltip title="Open in new window">
+<HvIconButton
+  title={<HvTypography variant="caption1">Open in new window</HvTypography>}
+  component="a"
+  href="#"
+>
+  <PopUp />
+</HvIconButton>
 ```
 
 <Canvas of={UsageStories.Usage} />

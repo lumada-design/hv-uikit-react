@@ -133,13 +133,12 @@ export const RuleGroup = ({
             labels.group.delete.ariaLabel
           }
           disabled={readOnly}
-          icon={
-            <Delete
-              role="none"
-              className={cx({ [classes.topRemoveButtonDisabled]: readOnly })}
-            />
-          }
-        />
+        >
+          <Delete
+            role="none"
+            className={cx({ [classes.topRemoveButtonDisabled]: readOnly })}
+          />
+        </HvIconButton>
       </div>
       {rules?.length > 0 && (
         <div

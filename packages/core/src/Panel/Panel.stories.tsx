@@ -2,10 +2,9 @@ import styled from "@emotion/styled";
 import { Close, Edit } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvButton,
+  HvIconButton,
   HvPanel,
   HvPanelProps,
-  HvTooltip,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
@@ -39,22 +38,21 @@ export const WithScroll: StoryObj<HvPanelProps> = {
   },
 };
 
-const CornerButton = styled(HvButton)({
-  position: "absolute",
-  top: theme.space.sm,
-  right: theme.space.sm,
-});
-
 export const FullWidth: StoryObj<HvPanelProps> = {
   render: () => {
     return (
       <HvPanel style={{ width: "100%", height: "200px" }}>
         <HvTypography>Panel Content</HvTypography>
-        <HvTooltip title="Edit">
-          <CornerButton icon>
-            <Edit />
-          </CornerButton>
-        </HvTooltip>
+        <HvIconButton
+          title="Edit"
+          style={{
+            position: "absolute",
+            top: theme.space.sm,
+            right: theme.space.sm,
+          }}
+        >
+          <Edit />
+        </HvIconButton>
       </HvPanel>
     );
   },
@@ -79,11 +77,16 @@ export const Modal: StoryObj<HvPanelProps> = {
           }}
         >
           <HvTypography>Panel Content</HvTypography>
-          <HvTooltip title="Close">
-            <CornerButton icon>
-              <Close />
-            </CornerButton>
-          </HvTooltip>
+          <HvIconButton
+            title="Close"
+            style={{
+              position: "absolute",
+              top: theme.space.sm,
+              right: theme.space.sm,
+            }}
+          >
+            <Close />
+          </HvIconButton>
         </HvPanel>
       </Overlay>
     );

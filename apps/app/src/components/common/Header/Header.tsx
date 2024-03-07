@@ -7,7 +7,7 @@ import {
   HvHeaderActions,
   HvHeaderNavigation,
   HvButton,
-  HvTooltip,
+  HvIconButton,
 } from "@hitachivantara/uikit-react-core";
 
 import logo from "~/assets/logo.png";
@@ -59,11 +59,12 @@ export const Header = () => {
         >
           TUTORIAL
         </HvButton>
-        <HvTooltip title={open ? "Close Theme Creator" : "Open Theme Creator"}>
-          <HvButton icon onClick={() => setOpen?.((prev) => !prev)}>
-            <Menu />
-          </HvButton>
-        </HvTooltip>
+        <HvIconButton
+          title={open ? "Close Theme Creator" : "Open Theme Creator"}
+          onClick={() => setOpen?.((prev) => !prev)}
+        >
+          <Menu />
+        </HvIconButton>
       </HvHeaderActions>
     </HvHeader>
   );

@@ -227,30 +227,28 @@ export const HvPagination = (props: HvPaginationProps) => {
           disabled={!canPrevious}
           onClick={() => changePage(0)}
           title={labels?.firstPage || labels?.paginationFirstPageTitle}
-          icon={
-            <Start
-              role="none"
-              className={classes.icon}
-              color={setColor(!canPrevious)}
-              iconSize="XS"
-            />
-          }
-        />
+        >
+          <Start
+            role="none"
+            className={classes.icon}
+            color={setColor(!canPrevious)}
+            iconSize="XS"
+          />
+        </HvIconButton>
         <HvIconButton
           id={setId(id, "previousPage-button")}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(page - 1)}
           title={labels?.previousPage || labels?.paginationPreviousPageTitle}
-          icon={
-            <Backwards
-              role="none"
-              className={classes.icon}
-              color={setColor(!canPrevious)}
-              iconSize="XS"
-            />
-          }
-        />
+        >
+          <Backwards
+            role="none"
+            className={classes.icon}
+            color={setColor(!canPrevious)}
+            iconSize="XS"
+          />
+        </HvIconButton>
         <div className={classes.pageInfo}>
           {showPageJump ? (
             renderPageJump()
@@ -274,29 +272,27 @@ export const HvPagination = (props: HvPaginationProps) => {
           disabled={!canNext}
           onClick={() => changePage(page + 1)}
           title={labels?.nextPage || labels?.paginationNextPageTitle}
-          icon={
-            <Forwards
-              role="none"
-              className={classes.icon}
-              color={setColor(!canNext)}
-              iconSize="XS"
-            />
-          }
-        />
+        >
+          <Forwards
+            role="none"
+            className={classes.icon}
+            color={setColor(!canNext)}
+            iconSize="XS"
+          />
+        </HvIconButton>
         <HvIconButton
           id={setId(id, "lastPage-button")}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
           title={labels?.lastPage || labels?.paginationLastPageTitle}
-          icon={
-            <End
-              className={classes.icon}
-              color={setColor(!canNext)}
-              iconSize="XS"
-            />
-          }
-        />
+        >
+          <End
+            className={classes.icon}
+            color={setColor(!canNext)}
+            iconSize="XS"
+          />
+        </HvIconButton>
       </div>
     </div>
   );

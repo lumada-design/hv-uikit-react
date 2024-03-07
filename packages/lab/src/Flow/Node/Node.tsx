@@ -6,6 +6,7 @@ import {
   HvButton,
   HvButtonProps,
   HvDropDownMenu,
+  HvIconButton,
   HvTooltip,
   HvTypography,
   useLabels,
@@ -152,17 +153,15 @@ export const HvFlowNode = ({
             {actions?.length && actions?.length > 0 && (
               <>
                 {actsVisible?.map((action) => (
-                  <HvTooltip key={action.id} title={action.label}>
-                    <HvButton
-                      icon
-                      onClick={(event) => {
-                        actionCallback?.(event, id, action);
-                      }}
-                      aria-label={action.label}
-                    >
-                      {renderedIcon(action.icon)}
-                    </HvButton>
-                  </HvTooltip>
+                  <HvIconButton
+                    key={action.id}
+                    title={action.label}
+                    onClick={(event) => {
+                      actionCallback?.(event, id, action);
+                    }}
+                  >
+                    {renderedIcon(action.icon)}
+                  </HvIconButton>
                 ))}
                 {actsDropdown && actsDropdown.length > 0 && (
                   <HvDropDownMenu

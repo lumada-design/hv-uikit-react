@@ -2,12 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { css } from "@emotion/css";
 import debounce from "lodash/debounce";
 import JSON5 from "json5";
-import {
-  HvButton,
-  HvIconButton,
-  HvTooltip,
-  useTheme,
-} from "@hitachivantara/uikit-react-core";
+import { HvIconButton, useTheme } from "@hitachivantara/uikit-react-core";
 import { Download, Reset, Duplicate } from "@hitachivantara/uikit-react-icons";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 
@@ -99,29 +94,25 @@ const CodeEditor = ({
   return (
     <div className="relative">
       <div className="flex items-center justify-between px-xs py-1 border border-b-0 border-atmo4">
-        <HvTooltip enterDelay={500} title="Download">
-          <HvButton
-            variant="secondaryGhost"
-            component="a"
-            download={fileName}
-            href={`data:text/plain;charset=utf-8,${encodedCode}`}
-            endIcon={<Download />}
-          >
-            {fileName}
-          </HvButton>
-        </HvTooltip>
+        <HvIconButton
+          title="Download"
+          component="a"
+          download={fileName}
+          href={`data:text/plain;charset=utf-8,${encodedCode}`}
+        >
+          <Download />
+        </HvIconButton>
         <div className="flex">
           <HvIconButton
             title="Reset"
-            icon={<Reset />}
             onClick={onResetHandler}
             disabled={!themeChanges || Object.keys(themeChanges).length === 0}
-          />
-          <HvIconButton
-            title="Copy to Clipboard"
-            icon={<Duplicate />}
-            onClick={onCopyHandler}
-          />
+          >
+            <Reset />
+          </HvIconButton>
+          <HvIconButton title="Copy to Clipboard" onClick={onCopyHandler}>
+            <Duplicate />
+          </HvIconButton>
         </div>
       </div>
       <HvCodeEditor

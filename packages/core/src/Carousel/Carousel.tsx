@@ -6,9 +6,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-
 import useCarousel from "embla-carousel-react";
-
 import {
   Backwards,
   Forwards,
@@ -17,18 +15,16 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import { HvBaseProps } from "../types/generic";
 import { HvButton } from "../Button";
 import { useTheme } from "../hooks/useTheme";
-import { HvTooltip } from "../Tooltip";
 import { HvTypography } from "../Typography";
 import { HvContainer } from "../Container";
 import { ExtractNames } from "../utils/classes";
-
 import { HvCarouselControls } from "./CarouselControls";
 import { HvCarouselThumbnails } from "./CarouselThumbnails";
 import { staticClasses, useClasses } from "./Carousel.styles";
+import { HvIconButton } from "../IconButton";
 
 const clamp = (num: number, max: number, min = 0) =>
   Math.min(Math.max(num, min), max);
@@ -190,15 +186,13 @@ export const HvCarousel = (props: HvCarouselProps) => {
     >
       {actionsProp}
       {showFullscreen && (
-        <HvTooltip title={isFullscreen ? "Close" : "Fullscreen"}>
-          <HvButton
-            icon
-            onClick={() => setIsFullscreen((curr) => !curr)}
-            className={classes.closeButton}
-          >
-            {isFullscreen ? <Close /> : <Fullscreen />}
-          </HvButton>
-        </HvTooltip>
+        <HvIconButton
+          title={isFullscreen ? "Close" : "Fullscreen"}
+          onClick={() => setIsFullscreen((curr) => !curr)}
+          className={classes.closeButton}
+        >
+          {isFullscreen ? <Close /> : <Fullscreen />}
+        </HvIconButton>
       )}
     </div>
   );
