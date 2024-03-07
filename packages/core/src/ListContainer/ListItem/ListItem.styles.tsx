@@ -16,14 +16,6 @@ export const { staticClasses, useClasses } = createClasses("HvListItem", {
     whiteSpace: "nowrap",
     position: "relative",
 
-    "&:not(:last-child)": {
-      marginBottom: "8px",
-    },
-
-    "&$condensed": {
-      marginBottom: 0,
-    },
-
     "&.HvIsFocused": {
       ...outlineStyles,
       backgroundColor: theme.colors.atmo3,

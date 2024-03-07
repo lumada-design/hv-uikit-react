@@ -30,7 +30,7 @@ export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
       backgroundColor: theme.alpha("base_light", 0.3),
     },
   },
-  actions: { display: "inline-flex", marginLeft: "auto" },
+  actions: { marginLeft: "auto" },
   selectAllContainer: { display: "flex", alignItems: "center" },
   selectAll: {},
   selectAllPages: {},

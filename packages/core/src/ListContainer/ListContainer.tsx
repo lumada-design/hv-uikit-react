@@ -110,7 +110,9 @@ export const HvListContainer = forwardRef<
       <ul
         ref={handleRef}
         id={id}
-        className={cx(classes.root, className)}
+        className={cx(classes.root, className, {
+          [classes.condensed]: condensed,
+        })}
         {...others}
       >
         {children}
