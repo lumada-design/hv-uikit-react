@@ -4,6 +4,7 @@ import debounce from "lodash/debounce";
 import JSON5 from "json5";
 import {
   HvButton,
+  HvIconButton,
   HvTooltip,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
@@ -12,7 +13,6 @@ import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 
 import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { getThemeCode } from "~/generator/utils";
-import { IconButton } from "~/components/common/IconButton";
 
 const codeEditorStyles = css({
   ".margin, .margin-view-overlays": {
@@ -111,14 +111,14 @@ const CodeEditor = ({
           </HvButton>
         </HvTooltip>
         <div className="flex">
-          <IconButton
-            label="Reset"
+          <HvIconButton
+            title="Reset"
             icon={<Reset />}
             onClick={onResetHandler}
             disabled={!themeChanges || Object.keys(themeChanges).length === 0}
           />
-          <IconButton
-            label="Copy to Clipboard"
+          <HvIconButton
+            title="Copy to Clipboard"
             icon={<Duplicate />}
             onClick={onCopyHandler}
           />
