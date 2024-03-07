@@ -72,7 +72,7 @@ const ThemeSelector = ({ api }) => {
           key={ADDON_ID}
           active={false}
           title="Select theme"
-          style={{ width: 140 }}
+          style={{ width: 200 }}
           placeholder="Select theme"
         >
           {`Theme: ${selectedTheme?.label}`}

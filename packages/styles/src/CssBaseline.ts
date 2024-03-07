@@ -107,7 +107,7 @@ export const CssBaseline = {
   },
 
   html: {
-    fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",
+    fontFamily: "'Open Sans','Inter', Arial, Helvetica, sans-serif",
   },
 
   body: {

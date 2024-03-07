@@ -8,5 +8,5 @@ export * from "./tokens";
 export * from "./CssBaseline";
 
 // Export each theme individually and a bundle of themes
-export { ds3, ds5 } from "./themes";
+export { ds3, ds5, pentahoPlus } from "./themes";
 export { themes };
