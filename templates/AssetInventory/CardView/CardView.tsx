@@ -9,6 +9,7 @@ import {
   HvTableInstance,
   HvCardMedia,
   HvButton,
+  HvSkeleton,
 } from "@hitachivantara/uikit-react-core";
 
 import { AssetInventoryEntry, getStatusIcon } from "../data";
@@ -16,10 +17,25 @@ import { AssetInventoryEntry, getStatusIcon } from "../data";
 interface CardViewProps {
   id?: string;
   instance: HvTableInstance<AssetInventoryEntry, string>;
+  loading?: boolean;
 }
 
-export const CardView = ({ id, instance }: CardViewProps) => {
+export const CardView = ({ id, instance, loading }: CardViewProps) => {
   const selectedCardsIds = instance.selectedFlatRows.map((r) => r.id);
+  const mode = "wave";
+
+  const items = loading
+    ? Array.from({ length: 6 }).map((_, i) => ({
+        id: i,
+        name: "",
+        eventType: "",
+        severity: "",
+        status: "",
+        priority: "",
+        image: "",
+      }))
+    : instance.page.map((p) => ({ ...p.original, id: p.id }));
+
   return (
     <HvSimpleGrid
       id={id}
@@ -30,62 +46,113 @@ export const CardView = ({ id, instance }: CardViewProps) => {
         { minWidth: 0, cols: 1, spacing: "sm" },
       ]}
     >
-      {instance.page.map((row) => {
-        const values = row.original;
+      {items.map((item) => {
+        const rowId = item ? item.id : null;
+        const statusColor = item ? item.statusColor : "sema0";
+
         return (
           <HvCard
             selectable
-            selected={selectedCardsIds.includes(row.id)}
+            selected={selectedCardsIds.includes(rowId)}
             bgcolor="atmo1"
-            key={`${values.name}-row`}
+            key={item.id}
             style={{ width: "100%" }}
-            statusColor={values.statusColor}
-            icon={getStatusIcon(values.statusColor)}
+            statusColor={statusColor}
+            icon={
+              !loading ? (
+                getStatusIcon(statusColor)
+              ) : (
+                <HvSkeleton
+                  hidden={!loading}
+                  variant="circle"
+                  animation="wave"
+                  width={32}
+                  height={32}
+                />
+              )
+            }
           >
-            <HvCardHeader title={values.name} />
+            <HvCardHeader
+              title={
+                loading ? (
+                  <HvSkeleton animation="wave" width="50%" />
+                ) : (
+                  item.name
+                )
+              }
+            />
             <div
               style={{
-                display: "flex",
-                flexDirection: "row",
-                flexWrap: "wrap",
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
               }}
             >
               <div>
                 <HvCardContent>
                   <HvTypography variant="label">Event</HvTypography>
-                  <HvTypography noWrap>{values.eventType}</HvTypography>
+                  <HvTypography noWrap>
+                    <HvSkeleton hidden={!loading} animation={mode}>
+                      {item.eventType}
+                    </HvSkeleton>
+                  </HvTypography>
                 </HvCardContent>
                 <HvCardContent>
                   <HvTypography variant="label">Severity</HvTypography>
-                  <HvTypography noWrap>{values.severity}</HvTypography>
+                  <HvTypography noWrap>
+                    <HvSkeleton hidden={!loading} animation={mode}>
+                      {item.severity}
+                    </HvSkeleton>
+                  </HvTypography>
                 </HvCardContent>
               </div>
               <div>
                 <HvCardContent>
                   <HvTypography variant="label">Status</HvTypography>
-                  <HvTypography noWrap>{values.status}</HvTypography>
+                  <HvTypography noWrap>
+                    <HvSkeleton hidden={!loading} animation={mode}>
+                      {item.status}{" "}
+                    </HvSkeleton>
+                  </HvTypography>
                 </HvCardContent>
                 <HvCardContent>
                   <HvTypography variant="label">Priority</HvTypography>
-                  <HvTypography noWrap>{values.priority}</HvTypography>
+                  <HvTypography noWrap>
+                    <HvSkeleton hidden={!loading} animation={mode}>
+                      {item.priority}{" "}
+                    </HvSkeleton>
+                  </HvTypography>
                 </HvCardContent>
               </div>
             </div>
-            <HvCardMedia
-              component="img"
-              alt={values.name}
-              height={140}
-              image={values.image}
-            />
-            <HvActionBar>
-              <HvCheckBox
-                onChange={() => instance.toggleRowSelected?.(row.id)}
-                checked={instance.selectedFlatRows.some((r) => r.id === row.id)}
-                value="value"
-                inputProps={{ "aria-label": "Tick to select the card" }}
+            <HvSkeleton
+              hidden={!loading}
+              width="auto"
+              variant="square"
+              animation={mode}
+              backgroundImage="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png"
+            >
+              <HvCardMedia
+                component="img"
+                alt={item.name}
+                height={140}
+                image={item.image}
               />
+            </HvSkeleton>
+            <HvActionBar>
+              <HvSkeleton hidden={!loading} variant="square" animation={mode}>
+                <HvCheckBox
+                  onChange={() => instance.toggleRowSelected?.(rowId)}
+                  checked={instance.selectedFlatRows.some(
+                    (r) => r.id === rowId
+                  )}
+                  value="value"
+                  inputProps={{ "aria-label": "Tick to select the card" }}
+                />
+              </HvSkeleton>
               <div aria-hidden style={{ flex: 1 }} />
-              <HvButton variant="secondaryGhost">View</HvButton>
+              <HvSkeleton hidden={!loading} variant="square" animation={mode}>
+                <HvButton variant="secondaryGhost">View</HvButton>
+              </HvSkeleton>
             </HvActionBar>
           </HvCard>
         );
