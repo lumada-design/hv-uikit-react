@@ -4,15 +4,14 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { HvGrid } from "../../Grid";
-import { IconButton } from "../../utils/IconButton";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { ExtractNames } from "../../utils/classes";
-
 import { useQueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";
 import { Value } from "./Value";
 import { staticClasses, useClasses } from "./Rule.styles";
+import { HvIconButton } from "../../IconButton";
 
 export { staticClasses as queryBuilderRuleClasses };
 
@@ -109,7 +108,7 @@ export const Rule = (props: RuleProps) => {
         </HvGrid>
       )}
       <HvGrid item className={classes.actionsContainer}>
-        <IconButton
+        <HvIconButton
           placement="bottom"
           title={labels.rule.delete.tooltip || labels.rule.delete.ariaLabel}
           onClick={() =>
@@ -121,9 +120,8 @@ export const Rule = (props: RuleProps) => {
                 })
           }
           disabled={readOnly}
-        >
-          <Delete role="none" />
-        </IconButton>
+          icon={<Delete role="none" />}
+        />
       </HvGrid>
     </HvGrid>
   );

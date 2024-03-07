@@ -2,10 +2,9 @@ import MuiDrawer, { DrawerProps as MuiDrawerProps } from "@mui/material/Drawer";
 import { Close } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { IconButton } from "../utils/IconButton";
 import { setId } from "../utils/setId";
 import { ExtractNames } from "../utils/classes";
-
+import { HvIconButton } from "../IconButton";
 import { staticClasses, useClasses } from "./Drawer.styles";
 
 export { staticClasses as drawerClasses };
@@ -125,15 +124,13 @@ export const HvDrawer = (props: HvDrawerProps) => {
       onClose={handleOnClose}
       {...others}
     >
-      <IconButton
+      <HvIconButton
         id={setId(id, "close")}
         className={classes.closeButton}
-        variant="secondaryGhost"
         onClick={onClose}
         title={buttonTitle}
-      >
-        <Close role="none" />
-      </IconButton>
+        icon={<Close role="none" />}
+      />
       {children}
     </MuiDrawer>
   );

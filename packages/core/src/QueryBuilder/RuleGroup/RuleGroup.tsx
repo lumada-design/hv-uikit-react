@@ -5,12 +5,12 @@ import { HvButton } from "../../Button";
 import { HvEmptyState } from "../../EmptyState";
 import { HvMultiButton } from "../../MultiButton";
 import { HvTypography } from "../../Typography";
-import { IconButton } from "../../utils/IconButton";
 import { ExtractNames } from "../../utils/classes";
 import { Rule } from "../Rule";
 import { useQueryBuilderContext } from "../Context";
 import { useClasses } from "../QueryBuilder.styles";
 import { HvQueryBuilderQuery, HvQueryBuilderQueryCombinator } from "../types";
+import { HvIconButton } from "../../IconButton";
 
 export interface RuleGroupProps {
   id: React.Key;
@@ -113,7 +113,7 @@ export const RuleGroup = ({
         ))}
       </HvMultiButton>
       <div className={cx(classes.buttonBackground, classes.topRemoveButton)}>
-        <IconButton
+        <HvIconButton
           className={classes.removeButton}
           onClick={() =>
             disableConfirmation
@@ -133,12 +133,13 @@ export const RuleGroup = ({
             labels.group.delete.ariaLabel
           }
           disabled={readOnly}
-        >
-          <Delete
-            role="none"
-            className={cx({ [classes.topRemoveButtonDisabled]: readOnly })}
-          />
-        </IconButton>
+          icon={
+            <Delete
+              role="none"
+              className={cx({ [classes.topRemoveButtonDisabled]: readOnly })}
+            />
+          }
+        />
       </div>
       {rules?.length > 0 && (
         <div

@@ -1,7 +1,5 @@
 import { HTMLAttributes, useCallback, useEffect } from "react";
-
 import Hidden from "@mui/material/Hidden";
-
 import {
   Start,
   End,
@@ -10,19 +8,17 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import { HvInput, HvInputProps } from "../Input";
 import { HvTypography } from "../Typography";
 import { HvBaseProps } from "../types/generic";
 import { setId } from "../utils/setId";
 import { isKey } from "../utils/keyboardUtils";
 import { ExtractNames } from "../utils/classes";
-import { IconButton } from "../utils/IconButton";
 import { useLabels } from "../hooks/useLabels";
-
 import HvSelect, { Option } from "./Select";
 import { staticClasses, useClasses } from "./Pagination.styles";
 import { usePageInput, getSafePage, setColor } from "./utils";
+import { HvIconButton } from "../IconButton";
 
 export { staticClasses as paginationClasses };
 
@@ -225,34 +221,36 @@ export const HvPagination = (props: HvPaginationProps) => {
         )}
       </div>
       <div className={classes.pageNavigator} {...navigationProps}>
-        <IconButton
+        <HvIconButton
           id={setId(id, "firstPage-button")}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
           title={labels?.firstPage || labels?.paginationFirstPageTitle}
-        >
-          <Start
-            role="none"
-            className={classes.icon}
-            color={setColor(!canPrevious)}
-            iconSize="XS"
-          />
-        </IconButton>
-        <IconButton
+          icon={
+            <Start
+              role="none"
+              className={classes.icon}
+              color={setColor(!canPrevious)}
+              iconSize="XS"
+            />
+          }
+        />
+        <HvIconButton
           id={setId(id, "previousPage-button")}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(page - 1)}
           title={labels?.previousPage || labels?.paginationPreviousPageTitle}
-        >
-          <Backwards
-            role="none"
-            className={classes.icon}
-            color={setColor(!canPrevious)}
-            iconSize="XS"
-          />
-        </IconButton>
+          icon={
+            <Backwards
+              role="none"
+              className={classes.icon}
+              color={setColor(!canPrevious)}
+              iconSize="XS"
+            />
+          }
+        />
         <div className={classes.pageInfo}>
           {showPageJump ? (
             renderPageJump()
@@ -270,33 +268,35 @@ export const HvPagination = (props: HvPaginationProps) => {
             {pages}
           </HvTypography>
         </div>
-        <IconButton
+        <HvIconButton
           id={setId(id, "nextPage-button")}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(page + 1)}
           title={labels?.nextPage || labels?.paginationNextPageTitle}
-        >
-          <Forwards
-            role="none"
-            className={classes.icon}
-            color={setColor(!canNext)}
-            iconSize="XS"
-          />
-        </IconButton>
-        <IconButton
+          icon={
+            <Forwards
+              role="none"
+              className={classes.icon}
+              color={setColor(!canNext)}
+              iconSize="XS"
+            />
+          }
+        />
+        <HvIconButton
           id={setId(id, "lastPage-button")}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
           title={labels?.lastPage || labels?.paginationLastPageTitle}
-        >
-          <End
-            className={classes.icon}
-            color={setColor(!canNext)}
-            iconSize="XS"
-          />
-        </IconButton>
+          icon={
+            <End
+              className={classes.icon}
+              color={setColor(!canNext)}
+              iconSize="XS"
+            />
+          }
+        />
       </div>
     </div>
   );
