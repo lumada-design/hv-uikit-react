@@ -83,6 +83,7 @@ export type HvThemeTypography = {
     title4: HvThemeTypographyProps;
     label: HvThemeTypographyProps;
     body: HvThemeTypographyProps;
+    captionLabel: HvThemeTypographyProps;
     caption1: HvThemeTypographyProps;
     caption2: HvThemeTypographyProps;
     // LEGACY UNMAPPABLE (DS3)

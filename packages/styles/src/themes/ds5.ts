@@ -66,6 +66,12 @@ const ds5 = makeTheme((theme) => ({
       fontSize: theme.fontSizes.base,
       lineHeight: theme.lineHeights.base,
     },
+    captionLabel: {
+      color: theme.colors.secondary,
+      fontWeight: theme.fontWeights.semibold,
+      fontSize: theme.fontSizes.sm,
+      lineHeight: theme.lineHeights.sm,
+    },
     caption1: {
       color: theme.colors.secondary,
       fontWeight: theme.fontWeights.normal,

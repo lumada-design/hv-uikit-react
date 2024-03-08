@@ -27,6 +27,7 @@ export const { useClasses, staticClasses } = createClasses("HvTypography", {
   title4: { ...theme.typography.title4 },
   body: { ...theme.typography.body },
   label: { ...theme.typography.label },
+  captionLabel: { ...theme.typography.captionLabel },
   caption1: { ...theme.typography.caption1 },
   caption2: { ...theme.typography.caption2 },
   // legacy variants
