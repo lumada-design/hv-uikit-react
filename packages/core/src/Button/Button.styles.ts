@@ -12,30 +12,24 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     justifyContent: "center",
     textTransform: "none",
     cursor: "pointer",
-    minWidth: "70px",
     whiteSpace: "nowrap",
 
+    // Background color common for almost all variants
     "&:hover:not($disabled)": {
       backgroundColor: theme.colors.containerBackgroundHover,
     },
-
     "&:focus-visible": {
       ...outlineStyles,
-
       "&:not($disabled)": {
         backgroundColor: theme.colors.containerBackgroundHover,
       },
     },
 
     // Default button - no size specified
-    fontFamily: theme.fontFamily.body,
-    fontSize: theme.fontSizes.base,
-    fontWeight: theme.fontWeights.semibold,
-    lineHeight: "11px",
-    letterSpacing: 0,
+    ...theme.typography.label,
     height: "32px",
     borderRadius: theme.radii.base,
-    padding: theme.spacing("xs", "sm"),
+    padding: theme.spacing(0, "sm"),
   },
   startIcon: {
     marginLeft: `calc(-1 * ${theme.space.xs})`,
@@ -46,8 +40,8 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   focusVisible: {},
   disabled: {
     color: theme.colors.secondary_60,
-    borderColor: theme.colors.atmo4,
-    backgroundColor: theme.colors.atmo3,
+    border: "none",
+    backgroundColor: "transparent",
     cursor: "not-allowed",
   },
   icon: {
@@ -109,18 +103,32 @@ export const getRadiusStyles = (radius: HvButtonRadius): CSSInterpolation => ({
   borderRadius: theme.radii[radius],
 });
 
-export const getSizeStyles = (size: HvButtonSize): CSSInterpolation => ({
-  height: theme.sizes[size],
-  paddingLeft: theme.space[size],
-  paddingRight: theme.space[size],
-  // @ts-ignore TODO: align font<-> button sizes
-  fontSize: theme.fontSizes[size],
-});
+// TODO - remove xs and xl in v6 since they are not DS spec
+const sizes = {
+  xs: { height: "24px", space: "sm", typography: "captionLabel" },
+  sm: { height: "24px", space: "sm", typography: "captionLabel" },
+  md: { height: "32px", space: "sm", typography: "label" },
+  lg: { height: "48px", space: "md", typography: "label" },
+  xl: { height: "48px", space: "md", typography: "label" },
+};
 
-export const getIconSizeStyles = (size: HvButtonSize): CSSInterpolation => ({
-  height: theme.sizes[size],
-  width: theme.sizes[size],
-});
+export const getSizeStyles = (size: HvButtonSize): CSSInterpolation => {
+  const { height, space, typography } = sizes[size];
+  const { color, ...typoProps } = theme.typography[typography];
+  return {
+    height,
+    padding: theme.spacing(0, space),
+    ...typoProps,
+  };
+};
+
+export const getIconSizeStyles = (size: HvButtonSize): CSSInterpolation => {
+  const { height } = sizes[size];
+  return {
+    height,
+    width: height,
+  };
+};
 
 export const getOverrideColors = (): CSSInterpolation => ({
   "& svg .color0": {

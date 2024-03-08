@@ -473,6 +473,17 @@ const ds3 = makeTheme((theme) => ({
             backgroundColor: "rgba(251, 252, 252, 0.1)",
           },
         },
+        secondary: {
+          backgroundColor: theme.colors.atmo1,
+          border: `1px solid ${theme.colors.atmo4}`,
+        },
+        ghost: {
+          color: theme.colors.secondary,
+          backgroundColor: "transparent",
+          "&$disabled": {
+            backgroundColor: "transparent",
+          },
+        },
       },
     },
     HvCalendarHeader: {
