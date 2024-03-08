@@ -47,6 +47,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
           [classes.vertical]: vertical,
           [classes[variant]]: variant,
           [classes.splitGroup]: split,
+          [classes.splitGroupDisabled]: split && disabled,
         },
         className
       )}

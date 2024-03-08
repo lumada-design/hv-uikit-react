@@ -15,19 +15,19 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     whiteSpace: "nowrap",
 
     // Background color common for almost all variants
-    "&:hover:not($disabled)": {
+    "&:hover": {
       backgroundColor: theme.colors.containerBackgroundHover,
     },
     "&:focus-visible": {
       ...outlineStyles,
-      "&:not($disabled)": {
-        backgroundColor: theme.colors.containerBackgroundHover,
-      },
+      backgroundColor: theme.colors.containerBackgroundHover,
     },
 
     // Default button - no size specified
+    fontFamily: theme.fontFamily.body,
     ...theme.typography.label,
     height: "32px",
+    border: "1px solid currentcolor",
     borderRadius: theme.radii.base,
     padding: theme.spacing(0, "sm"),
   },
@@ -39,65 +39,70 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   },
   focusVisible: {},
   disabled: {
-    color: theme.colors.secondary_60,
-    border: "none",
-    backgroundColor: "transparent",
     cursor: "not-allowed",
+    color: theme.colors.secondary_60,
+    borderColor: "transparent",
+    backgroundColor: "transparent",
+    "&:hover, &:focus-visible": {
+      backgroundColor: "transparent",
+      borderColor: "transparent",
+    },
   },
   icon: {
     margin: 0,
     padding: 0,
     height: "fit-content",
-    minWidth: "unset",
-  },
-  primary: {
-    color: theme.colors.atmo1,
-    backgroundColor: theme.colors.primary,
-    "&:not($disabled)": {
-      "&:hover, &:focus-visible": {
-        backgroundColor: theme.colors.primary_80,
-      },
+    "& > *": {
+      margin: -1,
     },
   },
-  primarySubtle: {
-    color: theme.colors.primary,
+  subtle: { backgroundColor: "transparent" },
+  ghost: {
+    borderColor: "transparent",
     backgroundColor: "transparent",
-    border: "1px solid currentColor",
-  },
-  primaryGhost: {
-    color: theme.colors.primary,
-    backgroundColor: "transparent",
-    "&$disabled": {
-      backgroundColor: "transparent",
-    },
-  },
-  secondarySubtle: {
-    color: theme.colors.secondary,
-    backgroundColor: "transparent",
-    border: "1px solid currentColor",
-  },
-  secondaryGhost: {
-    color: theme.colors.secondary,
-    backgroundColor: "transparent",
-    "&$disabled": {
-      backgroundColor: "transparent",
-    },
   },
   semantic: {
     color: theme.colors.base_dark,
     backgroundColor: "transparent",
-    "&:not($disabled)": {
-      "&:hover, &:focus-visible": {
-        backgroundColor: "rgba(251, 252, 252, 0.3)",
-      },
+    borderColor: "transparent",
+    "&:hover, &:focus-visible": {
+      backgroundColor: "rgba(251, 252, 252, 0.3)",
     },
     "&$disabled": {
       backgroundColor: "rgba(251, 252, 252, 0.1)",
     },
   },
+
+  // TODO - remove in v6
+  primary: {},
+  primarySubtle: {},
+  primaryGhost: {},
+  secondarySubtle: {},
+  secondaryGhost: {},
+
+  // Deprecated (DS3)
   secondary: {},
-  ghost: {},
 });
+
+export const getColoringStyle = (color: string, type?: string) => {
+  if (type)
+    return {
+      color: theme.colors[color !== "warning" ? color : `${color}_140`],
+    };
+
+  const bg = theme.colors[color !== "warning" ? color : `${color}_120`];
+  const hoverBg =
+    theme.colors[color !== "warning" ? `${color}_80` : `${color}_140`];
+  return {
+    color: theme.colors.atmo1,
+    backgroundColor: bg,
+    borderColor: bg,
+    "&:hover, &:focus-visible": {
+      backgroundColor: hoverBg,
+      borderColor: hoverBg,
+    },
+  };
+};
 
 export const getRadiusStyles = (radius: HvButtonRadius): CSSInterpolation => ({
   borderRadius: theme.radii[radius],
