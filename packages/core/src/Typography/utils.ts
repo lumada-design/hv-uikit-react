@@ -6,6 +6,7 @@ export const typographyVariants = [
   "title4",
   "body",
   "label",
+  "captionLabel",
   "caption1",
   "caption2",
 ] as const;

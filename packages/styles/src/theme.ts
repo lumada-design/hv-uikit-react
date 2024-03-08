@@ -71,6 +71,7 @@ const typographySpec: DeepString<HvThemeTypography> = {
     title4: { ...typographyProps },
     label: { ...typographyProps },
     body: { ...typographyProps },
+    captionLabel: { ...typographyProps },
     caption1: { ...typographyProps },
     caption2: { ...typographyProps },
     // LEGACY UNMAPPABLE (DS3)

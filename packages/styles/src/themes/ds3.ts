@@ -122,6 +122,12 @@ const ds3 = makeTheme((theme) => ({
       lineHeight: "16px",
       fontWeight: 400,
     },
+    captionLabel: {
+      color: theme.colors.secondary,
+      fontWeight: theme.fontWeights.semibold,
+      fontSize: theme.fontSizes.sm,
+      lineHeight: theme.lineHeights.sm,
+    },
     caption1: {
       color: theme.colors.secondary,
       fontSize: "10px",
