@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import { useTheme } from "../hooks/useTheme";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import {
@@ -6,7 +8,6 @@ import {
   PolymorphicRef,
 } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
 import {
   staticClasses as buttonClasses,
   getOverrideColors,
@@ -14,6 +15,7 @@ import {
   getSizeStyles,
   getIconSizeStyles,
   useClasses,
+  getColoringStyle,
 } from "./Button.styles";
 import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./types";
 
@@ -93,7 +95,7 @@ export const HvButton = fixedForwardRef(function HvButton<
   const {
     classes: classesProp,
     children,
-    variant: variantProp,
+    variant: variantProp, // TODO - should we split into two props (color and type) in v6?
     disabled = false,
     className,
     startIcon,
@@ -126,12 +128,25 @@ export const HvButton = fixedForwardRef(function HvButton<
     onMouseDownProp?.(e);
   };
 
+  const [color, type] = useMemo(() => {
+    const result = variant.split(/(?=[A-Z])/);
+    if (
+      result[0] === "ghost" ||
+      result[0] === "semantic" ||
+      (result[0] === "secondary" && !result[1])
+    )
+      return [];
+    return result.map((x) => x.toLowerCase());
+  }, [variant]);
+
   return (
     <Component
       ref={ref}
       className={cx(
         classes.root,
-        classes[variant],
+        type && classes[type],
+        color && css(getColoringStyle(color, type)),
+        classes[variant], // Placed after type and color CSS for DS3 override
         size && !icon && css(getSizeStyles(size)),
         radius && css(getRadiusStyles(radius)),
         overrideIconColors && css(getOverrideColors()),

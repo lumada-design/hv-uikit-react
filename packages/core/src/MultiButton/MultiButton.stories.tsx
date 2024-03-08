@@ -24,7 +24,6 @@ export const Main: StoryObj<HvMultiButtonProps> = {
   args: {
     disabled: false,
     vertical: false,
-    variant: "secondarySubtle",
     size: undefined,
   },
   argTypes: {
@@ -482,7 +481,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         </HvMultiButton>
         <HvMultiButton
           variant="primary"
-          style={{ width: "228px" }}
+          style={{ width: "223px" }}
           split
           size="xs"
         >
@@ -500,7 +499,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         </HvMultiButton>
         <HvMultiButton
           variant="primarySubtle"
-          style={{ width: "228px" }}
+          style={{ width: "223px" }}
           split
           size="xs"
         >
@@ -518,7 +517,7 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         </HvMultiButton>
         <HvMultiButton
           variant="secondarySubtle"
-          style={{ width: "228px" }}
+          style={{ width: "223px" }}
           split
           size="xs"
         >

@@ -463,31 +463,25 @@ const ds3 = makeTheme((theme) => ({
     HvButton: {
       classes: {
         root: {
-          padding: theme.spacing("0", "xs"),
+          padding: theme.spacing(0, "xs"),
         },
         secondarySubtle: {
           backgroundColor: theme.colors.atmo1,
-          border: `1px solid ${theme.colors.atmo4}`,
-        },
-        semantic: {
-          color: theme.colors.base_dark,
-          backgroundColor: "transparent",
-          "&:hover, &:focus-visible": {
-            backgroundColor: "rgba(251, 252, 252, 0.3)",
-          },
-          "&:disabled": {
-            backgroundColor: "rgba(251, 252, 252, 0.1)",
-          },
+          borderColor: theme.colors.atmo4,
         },
         secondary: {
           backgroundColor: theme.colors.atmo1,
-          border: `1px solid ${theme.colors.atmo4}`,
+          borderColor: theme.colors.atmo4,
         },
         ghost: {
           color: theme.colors.secondary,
-          backgroundColor: "transparent",
-          "&$disabled": {
-            backgroundColor: "transparent",
+        },
+        disabled: {
+          "&:not(.HvButton-ghost):not(.HvButton-semantic)": {
+            backgroundColor: theme.colors.atmo3,
+          },
+          "&.HvButton-subtle": {
+            borderColor: theme.colors.atmo4,
           },
         },
       },
@@ -1396,6 +1390,7 @@ const ds3 = makeTheme((theme) => ({
       },
     },
     HvMultiButton: {
+      variant: "secondaryGhost",
       classes: {
         root: {
           "& button&.HvMultiButton-button&.HvMultiButton-selected": {

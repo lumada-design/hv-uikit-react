@@ -89,10 +89,11 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
           zIndex: 1,
           color: theme.colors.secondary_60,
           background: theme.colors.atmo1,
-          border: `solid 1px ${theme.colors.secondary}`,
+          border: `solid 1px ${theme.colors.atmo4}`,
         },
       },
     },
+
     // dropdown menu styles
     "& $button": {
       [`&.${dropDownMenuClasses.container}`]: {
@@ -297,6 +298,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       },
     },
   },
+  splitGroupDisabled: { background: "transparent" },
   button: {},
   selected: {},
   // vertical button display Styling
@@ -501,7 +503,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       color: theme.colors.secondary,
     },
     "&$splitDisabled": {
-      background: theme.colors.atmo3,
+      background: "transparent",
       color: theme.colors.secondary_60,
       borderTop: "none",
       borderBottom: "none",

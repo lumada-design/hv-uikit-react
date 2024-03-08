@@ -70,19 +70,20 @@ export const Variants: StoryObj<HvSelectProps<{}, false>> = {
   render: () => {
     return (
       <>
-        <HvSelect required label="Required">
+        <HvSelect required label="Required" placeholder="Select an option">
           <HvOption value="op">Option</HvOption>
         </HvSelect>
-        <HvSelect disabled label="Disabled">
+        <HvSelect disabled label="Disabled" placeholder="Select an option">
           <HvOption value="op">Option</HvOption>
         </HvSelect>
-        <HvSelect readOnly label="Read-only">
+        <HvSelect readOnly label="Read-only" placeholder="Select an option">
           <HvOption value="op">Option</HvOption>
         </HvSelect>
         <HvSelect
           status="invalid"
           label="Invalid"
           statusMessage="This is always invalid"
+          placeholder="Select an option"
         >
           <HvOption value="op">Option</HvOption>
         </HvSelect>

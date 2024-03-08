@@ -1,3 +1,4 @@
+// TODO - review these sizes in v6. Are they needed?
 export const sizes = {
   xs: "28px",
   sm: "32px",

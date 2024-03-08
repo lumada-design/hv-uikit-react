@@ -78,6 +78,15 @@ export const Variants: StoryObj<HvButtonProps> = {
       <HvButton variant="secondaryGhost" disabled>
         Secondary Ghost
       </HvButton>
+      <HvButton variant="positive">Positive</HvButton>
+      <HvButton variant="positiveSubtle">Positive Subtle</HvButton>
+      <HvButton variant="positiveGhost">Positive Ghost</HvButton>
+      <HvButton variant="warning">Warning</HvButton>
+      <HvButton variant="warningSubtle">Warning Subtle</HvButton>
+      <HvButton variant="warningGhost">Warning Ghost</HvButton>
+      <HvButton variant="negative">Negative</HvButton>
+      <HvButton variant="negativeSubtle">Negative Subtle</HvButton>
+      <HvButton variant="negativeGhost">Negative Ghost</HvButton>
     </>
   ),
 };
@@ -87,9 +96,9 @@ export const Sizes: StoryObj<HvButtonProps> = {
     (Story) => (
       <HvBox
         sx={{
-          display: "grid",
+          display: "flex",
+          flexWrap: "wrap",
           gap: 10,
-          gridTemplateColumns: "repeat(3, 100px)",
         }}
       >
         {Story()}
@@ -98,32 +107,21 @@ export const Sizes: StoryObj<HvButtonProps> = {
   ],
   render: () => (
     <>
-      <div>
-        <HvButton variant="primary" size="sm">
-          Small
-        </HvButton>
-      </div>
-      <div>
-        <HvButton variant="primary" size="md">
-          Medium
-        </HvButton>
-      </div>
-      <div>
-        <HvButton variant="primary" size="lg">
-          Large
-        </HvButton>
-      </div>
-      <div />
-      <div>
-        <HvButton icon variant="primary" size="md" aria-label="Play">
-          <Play />
-        </HvButton>
-      </div>
-      <div>
-        <HvButton icon variant="primary" size="lg" aria-label="Play">
-          <Play />
-        </HvButton>
-      </div>
+      <HvButton variant="primary" size="sm">
+        Small
+      </HvButton>
+      <HvButton variant="warningSubtle" size="md">
+        Medium
+      </HvButton>
+      <HvButton variant="positive" size="lg">
+        Large
+      </HvButton>
+      <HvButton icon variant="negativeGhost" size="md" aria-label="Play">
+        <Play />
+      </HvButton>
+      <HvButton icon variant="primarySubtle" size="lg" aria-label="Play">
+        <Play />
+      </HvButton>
     </>
   ),
 };
@@ -194,13 +192,13 @@ export const Icons: StoryObj<HvButtonProps> = {
     <>
       <div>
         <HvButton icon aria-label="Play" variant="primaryGhost">
-          <Play />
+          <Play iconSize="M" />
         </HvButton>
         <HvButton icon aria-label="Pause">
-          <Pause />
+          <Pause iconSize="M" />
         </HvButton>
         <HvButton icon disabled aria-label="Stop">
-          <Stop />
+          <Stop iconSize="M" />
         </HvButton>
       </div>
       <div>
