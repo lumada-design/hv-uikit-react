@@ -5,14 +5,15 @@ import {
   HvDialog,
   HvDialogContent,
   HvDialogTitle,
-  HvDropdown,
   HvGrid,
   HvInput,
   HvLoadingContainer,
   HvLabel,
+  HvOption,
   HvOverflowTooltip,
   HvPagination,
   HvRowInstance,
+  HvSelect,
   HvSnackbarProvider,
   HvSwitch,
   HvTable,
@@ -36,7 +37,6 @@ import { Add, Delete, Edit } from "@hitachivantara/uikit-react-icons";
 
 import {
   AssetEvent,
-  getDropdownOptions,
   getEditableColumns,
   range,
   useServerData,
@@ -117,6 +117,7 @@ const classes = {
     maxWidth: "160px",
   }),
   tableRoot: css({ tableLayout: "fixed" }),
+  selectBackground: css({ backgroundColor: theme.colors.atmo1 }),
 };
 
 const EmptyRow = () => (
@@ -167,8 +168,6 @@ const Table = <T extends Data>({
     {
       id: string;
       status?: string;
-      severity?: string;
-      priority?: string;
       dirty: boolean;
     }[],
   >([]);
@@ -261,7 +260,7 @@ const Table = <T extends Data>({
       {
         id: "view",
         variant: "actions",
-        style: { minWidth: 70 },
+        style: { width: "70px", maxWidth: "unset" },
         Cell: ({ row }) => (
           <HvButton
             variant="secondaryGhost"
@@ -381,7 +380,6 @@ const Table = <T extends Data>({
       const mergedFormData = { ...asset, ...newRow };
       await onRowAdd?.(mergedFormData as Partial<T>);
       setNewRow({});
-      setNewRowDirty(false);
       enqueueSnackbar("New row added successfully.", {
         variant: "success",
         snackbarContentProps: {
@@ -544,13 +542,6 @@ const Table = <T extends Data>({
                         "Open"
                       : undefined
                   }
-                  value={
-                    edit
-                      ? editRows.find((r) => r.id === row.original.id)
-                          ?.status ??
-                        row?.original[String(cols[1].accessor)]?.toString()
-                      : newRow.status
-                  }
                   onChange={(e, c) => {
                     const newValue = c ? "Open" : "Closed";
                     if (edit) {
@@ -573,6 +564,13 @@ const Table = <T extends Data>({
                       setNewRowDirty(true);
                     }
                   }}
+                  value={
+                    edit
+                      ? editRows.find((r) => r.id === row.original.id)
+                          ?.status ??
+                        row.original[String(cols[2].accessor)]?.toString()
+                      : newRow.status
+                  }
                 />
                 <HvLabel
                   id="switch-label"
@@ -590,42 +588,49 @@ const Table = <T extends Data>({
           >
             <div className={edit ? undefined : classes.slide}>
               <div className={classes.tableCellContent}>
-                <HvDropdown
+                <HvSelect
                   name={String(cols[2].accessor)}
                   className={classes.inputRoot}
-                  values={getDropdownOptions(
-                    ["Critical", "Major", "Average", "Minor"],
+                  classes={{
+                    select: classes.selectBackground,
+                    panel: classes.selectBackground,
+                  }}
+                  inputProps={{ form: formId }}
+                  placeholder="Select Severity"
+                  defaultValue={
                     edit
-                      ? editRows.find((r) => r.id === row.original.id)
-                          ?.severity ??
-                          row?.original[String(cols[2].accessor)]?.toString()
-                      : newRow.severity
-                  )}
-                  onChange={(selected) => {
-                    if (!Array.isArray(selected)) {
-                      const newValue = selected?.label?.toString();
-                      if (edit && selected) {
-                        setEditRows((prev) =>
-                          prev.map((r) =>
-                            r.id === row.original.id
-                              ? {
-                                  ...r,
-                                  severity: selected.label?.toString(),
-                                  dirty: true,
-                                }
-                              : r
-                          )
-                        );
-                      } else {
-                        setNewRow({ ...newRow, severity: newValue });
-                      }
+                      ? row.original[String(cols[2].accessor)]?.toString()
+                      : undefined
+                  }
+                  onChange={() => {
+                    if (
+                      edit &&
+                      !editRows.find((r) => r.id === row.original.id)?.dirty
+                    ) {
+                      setEditRows((prev) =>
+                        prev.map((r) =>
+                          r.id === row.original.id
+                            ? {
+                                ...r,
+                                dirty: true,
+                              }
+                            : r
+                        )
+                      );
+                      return;
+                    }
 
-                      if (!newRowDirty) {
-                        setNewRowDirty(true);
-                      }
+                    if (!newRowDirty) {
+                      setNewRowDirty(true);
                     }
                   }}
-                />
+                >
+                  {["Critical", "Major", "Average", "Minor"].map((option) => (
+                    <HvOption value={option} label={option} key={option}>
+                      {option}
+                    </HvOption>
+                  ))}
+                </HvSelect>
               </div>
             </div>
           </HvTableCell>
@@ -640,42 +645,49 @@ const Table = <T extends Data>({
                 className={classes.tableCellContent}
                 style={{ justifyContent: "space-between" }}
               >
-                <HvDropdown
+                <HvSelect
                   name={String(cols[3].accessor)}
                   className={classes.inputRoot}
-                  values={getDropdownOptions(
-                    ["High", "Medium", "Low"],
+                  classes={{
+                    select: classes.selectBackground,
+                    panel: classes.selectBackground,
+                  }}
+                  inputProps={{ form: formId }}
+                  placeholder="Select Priority"
+                  defaultValue={
                     edit
-                      ? editRows.find((r) => r.id === row.original.id)
-                          ?.priority ??
-                          row?.original[String(cols[3].accessor)]?.toString()
-                      : newRow.priority
-                  )}
-                  onChange={(selected) => {
-                    if (!Array.isArray(selected)) {
-                      const newValue = selected?.label?.toString();
-                      if (edit && selected) {
-                        setEditRows((prev) =>
-                          prev.map((r) =>
-                            r.id === row.original.id
-                              ? {
-                                  ...r,
-                                  priority: newValue,
-                                  dirty: true,
-                                }
-                              : r
-                          )
-                        );
-                      } else {
-                        setNewRow({ ...newRow, priority: newValue });
-                      }
+                      ? row.original[String(cols[3].accessor)]?.toString()
+                      : undefined
+                  }
+                  onChange={() => {
+                    if (
+                      edit &&
+                      !editRows.find((r) => r.id === row.original.id)?.dirty
+                    ) {
+                      setEditRows((prev) =>
+                        prev.map((r) =>
+                          r.id === row.original.id
+                            ? {
+                                ...r,
+                                dirty: true,
+                              }
+                            : r
+                        )
+                      );
+                      return;
+                    }
 
-                      if (!newRowDirty) {
-                        setNewRowDirty(true);
-                      }
+                    if (!newRowDirty) {
+                      setNewRowDirty(true);
                     }
                   }}
-                />
+                >
+                  {["High", "Medium", "Low"].map((option) => (
+                    <HvOption value={option} label={option} key={option}>
+                      {option}
+                    </HvOption>
+                  ))}
+                </HvSelect>
                 <HvButton
                   icon
                   aria-label="Delete"
@@ -790,22 +802,21 @@ const Table = <T extends Data>({
         <HvDialogTitle>Event Info</HvDialogTitle>
         <HvDialogContent>
           <HvGrid container padding={2}>
-            <HvGrid item>
-              <HvTypography variant="label">Title</HvTypography>
-              <HvTypography>{dialogRow?.name}</HvTypography>
-            </HvGrid>
-            <HvGrid item>
-              <HvTypography variant="label">Status</HvTypography>
-              <HvTypography>{dialogRow?.status}</HvTypography>
-            </HvGrid>
-            <HvGrid item>
-              <HvTypography variant="label">Severity</HvTypography>
-              <HvTypography>{dialogRow?.severity}</HvTypography>
-            </HvGrid>
-            <HvGrid item>
-              <HvTypography variant="label">Priority</HvTypography>
-              <HvTypography>{dialogRow?.priority}</HvTypography>
-            </HvGrid>
+            {dialogRow &&
+              Object.entries(dialogRow).map(
+                ([key, value]) =>
+                  value && (
+                    <HvGrid item>
+                      <HvTypography
+                        variant="label"
+                        style={{ textTransform: "capitalize" }}
+                      >
+                        {key}
+                      </HvTypography>
+                      <HvTypography>{value}</HvTypography>
+                    </HvGrid>
+                  )
+              )}
           </HvGrid>
         </HvDialogContent>
       </HvDialog>
