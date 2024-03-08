@@ -74,6 +74,7 @@ export interface HvSelectProps<
   autoComplete?: string;
   /** Whether the width of the select panel can vary independently. */
   variableWidth?: boolean;
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
 /**
@@ -115,6 +116,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
     value: valueProp,
     defaultValue,
     placeholder,
+    inputProps,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
     description,
@@ -291,7 +293,11 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         </HvPanel>
       </Popper>
 
-      <input {...getHiddenInputProps()} autoComplete={autoComplete} />
+      <input
+        {...getHiddenInputProps()}
+        autoComplete={autoComplete}
+        {...inputProps}
+      />
 
       {canShowError && (
         <HvWarningText
