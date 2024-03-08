@@ -164,10 +164,9 @@ export const Dashboard: HvFlowNodeFC<DashboardData> = (props) => {
 
   return (
     <HvDashboardNode
-      title="Dashboard"
-      subtitle="Dashboard"
       description="Dashboard description"
       group="dashboards"
+      groupItem="dashboard"
       open={config != null}
       onClose={() => setConfig(undefined)}
       onCancel={() => setConfig(undefined)}

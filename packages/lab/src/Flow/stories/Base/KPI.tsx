@@ -3,10 +3,9 @@ import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 export const KPI: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      title="Insight"
-      subtitle="KPI"
       description="KPI description"
       group="insights"
+      groupItem="kpi"
       inputs={[
         {
           label: "Data",

@@ -1,10 +1,12 @@
+import { Cluster } from "@hitachivantara/uikit-react-icons";
 import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 export const Asset: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      title="My Asset"
+      title="Asset"
       subtitle="Asset"
+      icon={<Cluster />}
       description="Asset description"
       color="cat11_80"
       expanded

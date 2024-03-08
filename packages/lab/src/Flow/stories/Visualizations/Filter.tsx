@@ -40,10 +40,9 @@ export const Filter: HvFlowNodeFC = (props) => {
 
   return (
     <HvFlowNode
-      title="Transformations"
-      subtitle="Filter"
       description="Filtering data"
-      group="inputs"
+      group="transformations"
+      groupItem="filter"
       expanded
       inputs={[
         {

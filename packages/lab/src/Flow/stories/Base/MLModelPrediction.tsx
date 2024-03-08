@@ -3,10 +3,9 @@ import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 export const MLModelPrediction: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      title="ML Model"
-      subtitle="ML Model Prediction"
       description="Anomaly Prediction description"
       group="models"
+      groupItem="prediction"
       inputs={[
         {
           label: "Sensor Data",

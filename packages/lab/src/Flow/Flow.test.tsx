@@ -1,8 +1,6 @@
 import { useState } from "react";
-
 import { render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Favorite, Heart } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -20,28 +18,28 @@ const nodeGroups = {
     color: "cat3_80",
     description: "This is my description 1.",
     icon: <Heart />,
-    items: [
-      {
+    items: {
+      boomArm: {
         type: "boomArm",
         label: "Boom Arm",
       },
-      {
+      spaceMountain: {
         type: "spaceMountain",
         label: "Space Mountain",
       },
-    ],
+    },
   },
   digitalTwin: {
     label: "Digital Twin",
     color: "cat2_80",
     description: "This is my description 2.",
     icon: <Favorite />,
-    items: [
-      {
+    items: {
+      toyStory: {
         type: "toyStory",
         label: "Toy Story",
       },
-    ],
+    },
   },
 };
 const BoomArm = (props) => (

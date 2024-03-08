@@ -42,10 +42,9 @@ export const Kpi: HvFlowNodeFC = (props) => {
 
   return (
     <HvFlowNode
-      title="Visualisation"
-      subtitle="KPI"
       description="KPI"
       group="visualization"
+      groupItem="kpi"
       params={params}
       expanded
       inputs={[
@@ -64,12 +63,6 @@ export const Kpi: HvFlowNodeFC = (props) => {
         },
       ]}
       {...props}
-      data={{
-        title: "",
-        unit: "",
-        measure: undefined,
-        aggregation: undefined,
-      }}
     />
   );
 };

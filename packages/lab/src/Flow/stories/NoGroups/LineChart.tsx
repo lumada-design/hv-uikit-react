@@ -1,11 +1,13 @@
+import { LineChartAlt } from "@hitachivantara/uikit-react-icons";
 import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 export const LineChart: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      title="Line Chart"
+      title="Visualization"
+      subtitle="Line Chart"
+      icon={<LineChartAlt />}
       description="LineChart description"
-      subtitle="Visualization"
       color="cat12_80"
       inputs={[
         {

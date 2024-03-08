@@ -3,10 +3,9 @@ import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 export const LineChart: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      title="Insight"
-      subtitle="LineChart"
       description="LineChart description"
       group="insights"
+      groupItem="lineChart"
       inputs={[
         {
           label: "Data",

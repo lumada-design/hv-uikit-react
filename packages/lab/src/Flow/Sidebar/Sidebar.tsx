@@ -27,7 +27,7 @@ import {
   HvFlowSidebarGroupItem,
   HvFlowDraggableSidebarGroupItem,
 } from "./SidebarGroup/SidebarGroupItem";
-import { HvFlowNodeGroup } from "../types";
+import { HvFlowNodeGroup, HvFlowNodeGroups } from "../types";
 
 export { staticClasses as flowSidebarClasses };
 
@@ -51,8 +51,6 @@ export interface HvFlowSidebarProps
    * More information can be found in the [Dnd Kit documentation](https://docs.dndkit.com/api-documentation/draggable/drag-overlay).
    */
   dragOverlayProps?: DragOverlayProps;
-  /** Props to be applied to the default nodes group. */
-  defaultGroupProps?: HvFlowNodeGroup;
 }
 
 const DEFAULT_LABELS = {
@@ -72,7 +70,6 @@ export const HvFlowSidebar = ({
   classes: classesProp,
   labels: labelsProps,
   dragOverlayProps,
-  defaultGroupProps,
   ...others
 }: HvFlowSidebarProps) => {
   const { classes } = useClasses(classesProp);
@@ -111,20 +108,27 @@ export const HvFlowSidebar = ({
   const handleSearch: HvInputProps["onChange"] = (event, value) => {
     if (nodeGroups) {
       const gps = value
-        ? Object.entries(nodeGroups).reduce((acc, curr) => {
+        ? Object.entries(nodeGroups).reduce<HvFlowNodeGroups>((acc, cur) => {
             // Filter items by search
-            const filteredItems =
-              curr[1].items?.filter((obj) =>
-                obj.label
-                  .toLocaleLowerCase()
-                  .includes(value.toLocaleLowerCase())
-              ) || [];
-            const itemsCount = filteredItems.length;
+            const filteredItems = cur[1].items
+              ? Object.entries(cur[1].items)
+                  ?.filter(([, obj]) =>
+                    obj.label.toLowerCase().includes(value.toLowerCase())
+                  )
+                  .reduce<NonNullable<HvFlowNodeGroup["items"]>>(
+                    (items, [key, entry]) => {
+                      items[key] = entry;
+                      return items;
+                    },
+                    {}
+                  )
+              : {};
+            const itemsCount = Object.keys(filteredItems).length;
 
             // Only show groups with nodes
             if (itemsCount > 0) {
-              acc[curr[0]] = {
-                ...curr[1],
+              acc[cur[0]] = {
+                ...cur[1],
                 items: filteredItems,
               };
             }
@@ -174,30 +178,33 @@ export const HvFlowSidebar = ({
             inputProps={{ autoComplete: "off" }}
           />
           <ul id={groupsElementId} className={classes.groupsContainer}>
-            {Object.entries(groups).map((obj) => {
+            {Object.entries(groups).map(([groupId, group]) => {
               if (flatten) {
-                return obj[1].items?.map((item) => (
-                  <HvFlowDraggableSidebarGroupItem
-                    key={item.label}
-                    id={item.label}
-                    label={item.label}
-                    data={item.data}
-                    type={item.type}
-                  />
-                ));
+                return Object.entries(group.items || {}).map(
+                  ([itemId, item]) => (
+                    <HvFlowDraggableSidebarGroupItem
+                      key={itemId}
+                      id={itemId}
+                      label={item.label}
+                      data={item.data}
+                      type={item.type}
+                      aria-roledescription={labels?.itemAriaRoleDescription}
+                    />
+                  )
+                );
               }
 
               return (
                 <HvFlowSidebarGroup
-                  key={obj[0]}
-                  id={obj[0]}
+                  key={groupId}
+                  id={groupId}
                   expandButtonProps={{
                     "aria-label": labels?.expandGroupButtonAriaLabel,
                   }}
                   itemProps={{
                     "aria-roledescription": labels?.itemAriaRoleDescription,
                   }}
-                  {...obj[1]}
+                  {...group}
                 />
               );
             })}

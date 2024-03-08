@@ -1,10 +1,12 @@
+import { MachineLearning } from "@hitachivantara/uikit-react-icons";
 import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 export const MLModelPrediction: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      title="ML Model Prediction"
+      title="ML Model"
       subtitle="ML Model Prediction"
+      icon={<MachineLearning />}
       description="Anomaly Prediction description"
       color="cat10_80"
       outputs={[

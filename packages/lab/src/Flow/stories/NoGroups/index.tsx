@@ -6,13 +6,7 @@ import {
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import {
-  Add,
-  Backwards,
-  Cluster,
-  MachineLearning,
-  LineChartAlt,
-} from "@hitachivantara/uikit-react-icons";
+import { Add, Backwards } from "@hitachivantara/uikit-react-icons";
 import {
   HvFlowSidebar,
   HvFlow,
@@ -26,9 +20,7 @@ import { restrictToSample } from "../Base";
 // The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/NoGroups
 import { Asset } from "./Asset";
 import { LineChart } from "./LineChart";
-import { MLModelPrediction } from "./MLModelPrediction";
-import { MLModelDetection } from "../Base/MLModelDetection";
-import { MLModel } from "../Base/MLModel";
+import { MLModel } from "./MLModel";
 
 // Classes
 export const classes = {
@@ -47,40 +39,33 @@ export const classes = {
 
 export const nodeGroups = {
   assets: {
-    label: "Assets",
-    color: "cat3_80",
-    description: "Find here all the available assets.",
-    icon: <Cluster />,
-    items: [{ type: "asset", label: "Asset" }],
+    label: "Asset",
+    items: {
+      asset: { type: "asset", label: "Asset" },
+    },
   },
   models: {
-    label: "ML Models",
-    color: "cat1_80",
-    description: "Find here all the available ML models.",
-    icon: <MachineLearning />,
-    items: [
-      {
+    label: "Models",
+    items: {
+      prediction: {
         type: "model",
         label: "Model Prediction",
-        data: { component: MLModelPrediction },
+        data: { type: "prediction" },
       },
-      {
+      detection: {
         type: "model",
         label: "Model Detection",
-        data: { component: MLModelDetection },
+        data: { type: "detection" },
       },
-    ],
+    },
   },
   insights: {
     label: "Insights",
-    color: "cat6_80",
-    description: "Find here all the available insights.",
-    icon: <LineChartAlt />,
-    items: [{ type: "lineChart", label: "Line Chart" }],
+    items: { lineChart: { type: "lineChart", label: "Line Chart" } },
   },
 } satisfies HvFlowProps["nodeGroups"];
 
-export const nodeTypes = {
+const nodeTypes = {
   asset: Asset,
   model: MLModel,
   lineChart: LineChart,

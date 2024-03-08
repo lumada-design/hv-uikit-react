@@ -95,12 +95,6 @@ export const Flow = () => {
                   (args) => restrictToSample(rootId || "", args),
                 ],
               }}
-              defaultGroupProps={{
-                label: "All",
-                color: "cat11_80",
-                description:
-                  "This is for all the nodes that don't have groupId",
-              }}
             />
           }
           // Keeping track of flow updates

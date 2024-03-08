@@ -45,8 +45,10 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   maxVisibleActions?: HvActionsGenericProps["maxVisibleActions"];
   /** Node subtitle */
   subtitle?: string;
-  /** Node group */
+  /** Node group ID */
   group?: string;
+  /** Node group item ID */
+  groupItem?: string;
   /** Node expanded */
   expanded?: boolean;
   /** Node parameters */
@@ -74,6 +76,13 @@ export const HvFlowNode = ({
   labels: labelsProps,
   children,
   expandParamsButtonProps,
+  title,
+  subtitle,
+  description,
+  group,
+  groupItem,
+  color,
+  icon,
   ...props
 }: HvFlowNodeProps<unknown>) => {
   const { classes } = useClasses(classesProp);
@@ -82,9 +91,9 @@ export const HvFlowNode = ({
   const labels = useLabels(DEFAULT_LABELS, labelsProps);
   const node = useFlowNode();
 
-  const { title, subtitle, description, group, color, icon } = props || {};
-
   const nodeGroup = (group && nodeGroups && nodeGroups[group]) || undefined;
+  const nodeSubtitle =
+    (groupItem && nodeGroup?.items?.[groupItem]?.label) || subtitle;
   const nodeTitle = nodeGroup?.label || title;
   const nodeIcon = nodeGroup?.icon || icon;
   const nodeColor = nodeGroup?.color || color;
@@ -132,11 +141,11 @@ export const HvFlowNode = ({
       labels={labels as HvFlowNodeProps["labels"]}
       {...props}
     >
-      {(subtitle || actions) && (
+      {(nodeSubtitle || actions) && (
         <div className={classes.subtitleContainer}>
-          {subtitle && (
+          {nodeSubtitle && (
             <div>
-              <HvTypography>{subtitle}</HvTypography>
+              <HvTypography>{nodeSubtitle}</HvTypography>
             </div>
           )}
           {actions && (

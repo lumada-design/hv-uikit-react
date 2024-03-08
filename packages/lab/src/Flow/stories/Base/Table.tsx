@@ -3,10 +3,9 @@ import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 export const Table: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      title="Insight"
-      subtitle="Table"
       description="Table description"
       group="insights"
+      groupItem="table"
       inputs={[
         {
           label: "Data",

@@ -12,8 +12,6 @@ import { Dashboard } from "./Dashboard";
 import { KPI } from "./KPI";
 import { LineChart } from "./LineChart";
 import { MLModel } from "./MLModel";
-import { MLModelDetection } from "./MLModelDetection";
-import { MLModelPrediction } from "./MLModelPrediction";
 import { Table } from "./Table";
 import { Asset } from "./Asset";
 
@@ -81,44 +79,52 @@ export const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available assets.",
     icon: <Cluster />,
-    items: [{ type: "asset", label: "My Asset" }],
+    items: {
+      asset: {
+        type: "asset",
+        label: "Asset",
+        data: {
+          asset: "option1",
+        },
+      },
+    },
   },
   models: {
     label: "ML Model",
     color: "cat1_80",
     description: "Find here all the available ML models.",
     icon: <MachineLearning />,
-    items: [
-      {
+    items: {
+      prediction: {
         type: "model",
         label: "ML Model Prediction",
-        data: { component: MLModelPrediction },
+        data: { type: "prediction" },
       },
-      {
+      detection: {
         type: "model",
         label: "ML Model Detection",
-        data: { component: MLModelDetection },
+        data: { type: "detection" },
       },
-    ],
+    },
   },
   insights: {
     label: "Insight",
     color: "cat6_80",
     description: "Find here all the available insights.",
     icon: <LineChartAlt />,
-    items: [
-      { type: "kpi", label: "KPI" },
-      { type: "lineChart", label: "LineChart" },
-      { type: "table", label: "Table" },
-    ],
+    items: {
+      kpi: { type: "kpi", label: "KPI" },
+      lineChart: { type: "lineChart", label: "Line Chart" },
+      table: { type: "table", label: "Table" },
+    },
   },
   dashboards: {
     label: "Dashboard",
     color: "cat2_80",
     description: "Find here all the available dashboards.",
     icon: <Cards />,
-    items: [
-      {
+    items: {
+      dashboard: {
         type: "dashboard",
         label: "Dashboard",
         data: {
@@ -128,7 +134,7 @@ export const nodeGroups = {
           },
         },
       },
-    ],
+    },
   },
 } satisfies HvFlowProps["nodeGroups"];
 

@@ -44,10 +44,9 @@ export const BarChart: HvFlowNodeFC<NodeData> = (props) => {
 
   return (
     <HvFlowNode
-      title="Visualisation"
-      subtitle="Bar Chart"
       description="Bar Chart"
       group="visualization"
+      groupItem="barChart"
       params={params}
       expanded
       inputs={[
@@ -66,12 +65,6 @@ export const BarChart: HvFlowNodeFC<NodeData> = (props) => {
         },
       ]}
       {...props}
-      data={{
-        title: "",
-        measure: undefined,
-        groupBy: undefined,
-        splitBy: undefined,
-      }}
     />
   );
 };

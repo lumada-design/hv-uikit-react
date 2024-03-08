@@ -1,5 +1,4 @@
 import { useCallback, useMemo } from "react";
-
 import { Down, Up } from "@hitachivantara/uikit-react-icons";
 import {
   ExtractNames,
@@ -35,7 +34,7 @@ export interface HvFlowSidebarGroupProps extends HvFlowNodeGroup {
 export const HvFlowSidebarGroup = ({
   id,
   label,
-  items = [],
+  items = {},
   color,
   description,
   icon,
@@ -66,7 +65,9 @@ export const HvFlowSidebarGroup = ({
             {icon}
           </div>
           <HvTypography component="p" variant="title4">
-            {items.length > 1 ? `${label} (${items.length})` : label}
+            {Object.keys(items).length > 1
+              ? `${label} (${Object.keys(items).length})`
+              : label}
           </HvTypography>
         </div>
         <HvButton
@@ -85,11 +86,11 @@ export const HvFlowSidebarGroup = ({
       )}
       {opened && (
         <div className={classes.itemsContainer}>
-          {items.map((obj) => (
+          {Object.entries(items).map(([itemId, item]) => (
             <HvFlowDraggableSidebarGroupItem
-              key={obj.label}
+              key={itemId}
               {...itemProps}
-              {...obj}
+              {...item}
             />
           ))}
         </div>

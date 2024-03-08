@@ -27,8 +27,6 @@ import {
   LayoutsProvider,
   useLayoutsContext,
 } from "../Base/LayoutsContext";
-import { MLModelDetection } from "../Base/MLModelDetection";
-import { MLModelPrediction } from "../Base/MLModelPrediction";
 
 // Initial state
 const initialState = {
@@ -46,7 +44,7 @@ const initialState = {
       height: 274,
       id: "caf2381eaf3",
       position: { x: 637, y: -367 },
-      data: { component: MLModelPrediction },
+      data: { type: "prediction" },
       type: "model",
     },
     {
@@ -54,7 +52,7 @@ const initialState = {
       height: 274,
       id: "af2381eaf37",
       position: { x: 643, y: 314 },
-      data: { component: MLModelDetection },
+      data: { type: "detection" },
       type: "model",
     },
     {

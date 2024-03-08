@@ -98,9 +98,9 @@ export const Dashboard: HvFlowNodeFC<NodeData> = (props) => {
 
   return (
     <HvDashboardNode
-      title="Dashboard"
       description="Dashboard"
       group="dashboard"
+      groupItem="dashboard"
       inputs={nodeInputs}
       open={open}
       layout={config?.layout}

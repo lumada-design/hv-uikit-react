@@ -25,10 +25,9 @@ export const Table: HvFlowNodeFC = (props) => {
 
   return (
     <HvFlowNode
-      title="Visualisation"
-      subtitle="Table"
       description="Table"
       group="visualization"
+      groupItem="table"
       params={params}
       expanded
       inputs={[
@@ -47,11 +46,6 @@ export const Table: HvFlowNodeFC = (props) => {
         },
       ]}
       {...props}
-      data={{
-        title: "",
-        columns: undefined,
-        measure: "EMEA",
-      }}
     />
   );
 };

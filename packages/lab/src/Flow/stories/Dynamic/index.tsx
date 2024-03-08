@@ -20,12 +20,14 @@ import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 import { restrictToSample } from "../Base";
 
-type NodeGroup = keyof typeof nodeGroups;
+interface NodeData {
+  groupItem?: string;
+}
 
 /** Create a generic node programmatically */
 const createNode = (nodeProps: Partial<HvFlowNodeProps>) => {
-  const Asset: HvFlowNodeFC<NodeGroup> = (props) => (
-    <HvFlowNode {...nodeProps} {...props} />
+  const Asset: HvFlowNodeFC<NodeData> = (props) => (
+    <HvFlowNode groupItem={props?.data?.groupItem} {...nodeProps} {...props} />
   );
   return Asset;
 };
@@ -57,22 +59,30 @@ const options = [
 const nodeTypes = {
   asset: createNode({
     expanded: true,
-    params: [{ id: "asset", label: "Asset", type: "select", options }],
+    params: [
+      { id: "asset", label: "Select the asset", type: "select", options },
+    ],
     group: "assets",
   }),
 } satisfies HvFlowProps["nodeTypes"];
 
 const nodeGroups = {
   assets: {
-    label: "Assets",
+    label: "Asset",
     color: "cat3_80",
     description:
       "Find here all the available assets. Scroll to see all the options.",
     icon: <DataSource />,
-    items: Array.from({ length: numberOfAssets }).map((_, index) => ({
-      type: "asset",
-      label: `Asset ${index + 1}`,
-    })),
+    items: Object.fromEntries(
+      Array.from({ length: numberOfAssets }).map((_, index) => [
+        `asset${index + 1}`,
+        {
+          type: "asset",
+          label: `Asset ${index + 1}`,
+          data: { groupItem: `asset${index + 1}` },
+        },
+      ])
+    ),
   },
 } satisfies HvFlowProps["nodeGroups"];
 

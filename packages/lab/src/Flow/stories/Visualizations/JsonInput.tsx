@@ -1,14 +1,11 @@
 import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
-import { data } from "./data";
-
 export const JsonInput: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      title="Input"
-      subtitle="Json Input"
       description="Population Datakky7"
-      group="transformation"
+      group="inputs"
+      groupItem="json"
       outputs={[
         {
           label: "Json Data",
@@ -17,9 +14,6 @@ export const JsonInput: HvFlowNodeFC = (props) => {
         },
       ]}
       {...props}
-      data={{
-        jsonData: data,
-      }}
     />
   );
 };

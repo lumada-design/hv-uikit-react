@@ -5,9 +5,9 @@ import { data } from "./data";
 export const Precipitation: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      title="Precipitation"
       description="Precipitation data"
       group="sources"
+      groupItem="precipitation"
       expanded
       params={[
         {

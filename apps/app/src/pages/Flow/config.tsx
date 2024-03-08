@@ -22,27 +22,70 @@ export const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available datasets.",
     icon: <Storage />,
-    items: [{ type: "datasetsteelwheels", label: "Steelwheels" }],
+    items: { wheels: { type: "datasetsteelwheels", label: "Steelwheels" } },
   },
   visualization: {
     label: "Visualization",
     color: "cat1_80",
     description: "Find here all the available visualizations.",
     icon: <LineChartAlt />,
-    items: [
-      { type: "lineChart", label: "Line Chart" },
-      { type: "barChart", label: "Bar Chart" },
-      { type: "donutChart", label: "Donut Chart" },
-      { type: "kpi", label: "KPI" },
-      { type: "table", label: "Table" },
-    ],
+    items: {
+      lineChart: {
+        type: "lineChart",
+        label: "Line Chart",
+        data: {
+          title: "",
+          measure: undefined,
+          groupBy: undefined,
+          splitBy: undefined,
+        },
+      },
+      barChart: {
+        type: "barChart",
+        label: "Bar Chart",
+        data: {
+          title: "",
+          measure: undefined,
+          groupBy: undefined,
+          splitBy: undefined,
+        },
+      },
+      donutChart: {
+        type: "donutChart",
+        label: "Donut Chart",
+        data: {
+          title: "",
+          measure: undefined,
+          groupBy: undefined,
+        },
+      },
+      kpi: {
+        type: "kpi",
+        label: "KPI",
+        data: {
+          title: "",
+          unit: "",
+          measure: undefined,
+          aggregation: undefined,
+        },
+      },
+      table: {
+        type: "table",
+        label: "Table",
+        data: {
+          title: "",
+          columns: undefined,
+          measure: "EMEA",
+        },
+      },
+    },
   },
   dashboard: {
     label: "Dashboard",
     color: "cat2_80",
     description: "Find here all the available dashboards.",
     icon: <Cards />,
-    items: [{ type: "dashboard", label: "Dashboard" }],
+    items: { dashboard: { type: "dashboard", label: "Dashboard" } },
   },
 } satisfies HvFlowProps["nodeGroups"];
 

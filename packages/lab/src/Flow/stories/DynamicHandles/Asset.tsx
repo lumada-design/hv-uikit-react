@@ -85,8 +85,8 @@ export const Asset: HvFlowNodeFC<NodeData> = (props) => {
 
   return (
     <HvFlowNode
-      title="Asset"
       group="assets"
+      groupItem="asset"
       params={[
         {
           id: "type",

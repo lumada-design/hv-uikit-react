@@ -20,9 +20,10 @@ import {
   HvFlowNodeInputGroup,
   HvFlowNodeMetaRegistry,
   HvFlowNodeOutputGroup,
+  HvFlowNodeTypes,
 } from "./types";
 import { staticClasses, useClasses } from "./Flow.styles";
-import { useFlowContext, useFlowInstance } from "./hooks";
+import { useFlowInstance } from "./hooks";
 import { flowStyles } from "./base";
 import { useNodeMetaRegistry } from "./FlowContext/NodeMetaContext";
 
@@ -36,6 +37,8 @@ export interface HvDroppableFlowProps<
 > extends Omit<ReactFlowProps, "nodes" | "edges" | "nodeTypes"> {
   /** Flow content: background, controls, and minimap. */
   children?: React.ReactNode;
+  /** Flow nodes types. */
+  nodeTypes?: HvFlowNodeTypes<NodeData>;
   /** Flow nodes. */
   nodes?: Node<NodeData, NodeType>[];
   /** Flow edges. */
@@ -139,6 +142,7 @@ export const HvDroppableFlow = ({
   onNodesChange: onNodesChangeProp,
   onEdgesChange: onEdgesChangeProp,
   defaultEdgeOptions: defaultEdgeOptionsProp,
+  nodeTypes,
   ...others
 }: HvDroppableFlowProps) => {
   const { classes, cx } = useClasses(classesProp);
@@ -146,8 +150,6 @@ export const HvDroppableFlow = ({
   const elementId = useUniqueId(id);
 
   const reactFlowInstance = useFlowInstance();
-
-  const { nodeTypes } = useFlowContext();
 
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);

@@ -22,11 +22,12 @@ export type HvFlowNodeTypes<NodeData = any> = Record<
   HvFlowNodeComponentType<NodeData>
 >;
 
-export type HvFlowGroupItem = {
+export interface HvFlowGroupItem {
+  /** Node type */
   type: string;
   label: string;
   data?: unknown;
-};
+}
 
 /** Node groups */
 export interface HvFlowNodeGroup {
@@ -34,7 +35,7 @@ export interface HvFlowNodeGroup {
   description?: string;
   color?: HvColorAny;
   icon?: React.ReactNode;
-  items?: HvFlowGroupItem[];
+  items?: Record<string, HvFlowGroupItem>;
 }
 export type HvFlowNodeGroups<GroupId extends keyof any = string> = Record<
   GroupId,
