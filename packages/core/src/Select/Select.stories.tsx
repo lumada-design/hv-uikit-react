@@ -25,6 +25,8 @@ export default {
 export const Main: StoryObj<HvSelectProps<{}, false>> = {
   args: {
     multiple: false,
+    size: "md",
+    variant: "secondarySubtle",
   },
   argTypes: {},
   decorators: [decorator],

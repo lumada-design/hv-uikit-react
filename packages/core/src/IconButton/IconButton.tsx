@@ -5,6 +5,7 @@ import {
   PolymorphicRef,
   fixedForwardRef,
 } from "../types/generic";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 
 export type HvIconButtonProps<C extends React.ElementType = "button"> =
   PolymorphicComponentRef<
@@ -45,7 +46,7 @@ export const HvIconButton = fixedForwardRef(function HvIconButton<
     enterDelay = 500,
     tooltipProps,
     ...others
-  } = props;
+  } = useDefaultProps("HvIconButton", props);
 
   return (
     <HvTooltip

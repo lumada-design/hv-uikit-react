@@ -28,7 +28,8 @@ import { setId } from "../utils/setId";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvPanel } from "../Panel";
 import { HvListContainer } from "../ListContainer";
-import { HvSelectButton } from "./SelectButton";
+import { HvButtonProps } from "../Button";
+import { HvDropdownButton } from "../DropdownButton";
 
 function defaultRenderValue<Value>(
   options: SelectOption<Value> | SelectOption<Value>[] | null
@@ -66,7 +67,8 @@ export interface HvSelectProps<
       | "getSerializedValue"
       | "onChange"
       | "onOpenChange"
-    > {
+    >,
+    Pick<HvButtonProps, "size" | "variant"> {
   classes?: HvSelectClasses;
   placeholder?: React.ReactNode;
   autoComplete?: string;
@@ -97,6 +99,8 @@ export const HvSelect = fixedForwardRef(function HvSelect<
     classes: classesProp,
     className,
     id: idProp,
+    size,
+    variant = "secondarySubtle",
     name,
     required,
     disabled: disabledProp,
@@ -230,8 +234,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
           )}
         </div>
       )}
-
-      <HvSelectButton
+      <HvDropdownButton
         id={id}
         open={isOpen}
         disabled={disabled}
@@ -240,6 +243,8 @@ export const HvSelect = fixedForwardRef(function HvSelect<
           [classes.invalid]: validationState === "invalid",
         })}
         placement={placement}
+        size={size}
+        variant={variant}
         aria-label={ariaLabel}
         aria-labelledby={mergeIds(label && labelId, ariaLabelledBy)}
         aria-invalid={isInvalid ? true : undefined}
@@ -251,7 +256,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         {...getButtonProps()}
       >
         {defaultRenderValue(actualValue) ?? placeholder}
-      </HvSelectButton>
+      </HvDropdownButton>
       <Popper
         open={isOpen}
         keepMounted
