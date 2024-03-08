@@ -78,7 +78,7 @@ const generateLargeNumber = (i: number) => (i === 6 ? undefined : i);
 
 const generateBooleanState = (i: number) => i % 3 === 0;
 
-export const getDropdownOptions = (options: string[] = [], selected = "") => {
+const getDropdownOptions = (options: string[] = [], selected = "") => {
   return options.map((option, index) => {
     return {
       id: `${option}-${index}`,
