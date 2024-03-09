@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.56.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.55.0...@hitachivantara/uikit-react-core@5.56.0) (2024-03-09)
+
+### Features
+
+- **IconButon:** component added ([81f9540](https://github.com/lumada-design/hv-uikit-react/commit/81f9540f4e600cf851266028c7b67880decfe892))
+
 # [5.55.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.54.0...@hitachivantara/uikit-react-core@5.55.0) (2024-03-08)
 
 ### Features
