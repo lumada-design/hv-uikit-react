@@ -740,12 +740,11 @@ const ds3 = makeTheme((theme) => ({
     },
     HvDropDownMenu: {
       classes: {
-        icon: {
-          borderRadius: "0px",
-          border: "none",
-        },
         iconSelected: {
           border: "none",
+          "&:hover": {
+            border: "none",
+          },
         },
       },
     },
