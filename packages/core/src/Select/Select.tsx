@@ -30,6 +30,7 @@ import { HvPanel } from "../Panel";
 import { HvListContainer } from "../ListContainer";
 import { HvButtonProps } from "../Button";
 import { HvDropdownButton } from "../DropdownButton";
+import { useTheme } from "../hooks/useTheme";
 
 function defaultRenderValue<Value>(
   options: SelectOption<Value> | SelectOption<Value>[] | null
@@ -74,7 +75,12 @@ export interface HvSelectProps<
   autoComplete?: string;
   /** Whether the width of the select panel can vary independently. */
   variableWidth?: boolean;
+  /**
+   * Properties passed on to the input element.
+   */
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  /**  If enabled the panel will be rendered using a portal , if disabled will be under the DOM hierarchy of the parent component. */
+  enablePortal?: boolean;
 }
 
 /**
@@ -117,6 +123,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
     defaultValue,
     placeholder,
     inputProps,
+    enablePortal,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
     description,
@@ -131,6 +138,8 @@ export const HvSelect = fixedForwardRef(function HvSelect<
     ...others
   } = useDefaultProps("HvSelect", props);
   const { classes, cx } = useClasses(classesProp);
+
+  const { rootId } = useTheme();
 
   const [placement, setPlacement] = useState<Placement>("bottom-start");
 
@@ -262,7 +271,12 @@ export const HvSelect = fixedForwardRef(function HvSelect<
       <Popper
         open={isOpen}
         keepMounted
-        disablePortal
+        disablePortal={!enablePortal}
+        container={
+          enablePortal
+            ? document.getElementById(rootId || "") || document.body
+            : undefined
+        }
         anchorEl={buttonRef.current}
         className={classes.popper}
         placement={placement}
@@ -292,13 +306,11 @@ export const HvSelect = fixedForwardRef(function HvSelect<
           </SelectProvider>
         </HvPanel>
       </Popper>
-
       <input
         {...getHiddenInputProps()}
         autoComplete={autoComplete}
         {...inputProps}
       />
-
       {canShowError && (
         <HvWarningText
           id={errorMessageId}
