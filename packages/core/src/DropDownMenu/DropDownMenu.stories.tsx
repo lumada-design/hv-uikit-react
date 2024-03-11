@@ -30,6 +30,7 @@ export const Main: StoryObj<HvDropDownMenuProps> = {
     expanded: undefined,
     defaultExpanded: true,
     variant: "secondaryGhost",
+    size: "md",
   },
   argTypes: {
     classes: { control: { disable: true } },
@@ -48,7 +49,7 @@ export const WithIcons: StoryObj<HvDropDownMenuProps> = {
   parameters: {
     docs: {
       description: {
-        story: "DropDownMenu with icons and disabled actions",
+        story: "Dropdown menu with icons and disabled actions.",
       },
     },
     parameters: {
@@ -79,7 +80,7 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
   parameters: {
     docs: {
       description: {
-        story: "DropDownMenu toggle opening controlled by an external button.",
+        story: "Dropdown menu open state controlled by an external button.",
       },
     },
     eyes: { include: false },
@@ -88,7 +89,7 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
     const [open, setOpen] = useState(false);
 
     return (
-      <>
+      <div style={{ display: "flex", gap: 5 }}>
         <HvButton variant="secondaryGhost" onClick={() => setOpen(!open)}>
           {`Click to ${!open ? "Open" : "Close"}`}
         </HvButton>
@@ -106,7 +107,7 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
             setOpen(s);
           }}
         />
-      </>
+      </div>
     );
   },
 };

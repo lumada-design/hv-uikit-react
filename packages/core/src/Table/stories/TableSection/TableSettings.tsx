@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import {
   HvBaseDropdown,
+  HvIconButton,
   HvListContainer,
   HvListItem,
   HvPanel,
@@ -512,7 +513,11 @@ export const TableSettings = () => {
         <HvBaseDropdown
           expanded={popperOpen}
           onToggle={() => setPopperOpen((p) => !p)}
-          adornment={<Settings />}
+          component={
+            <HvIconButton title="Settings">
+              <Settings />
+            </HvIconButton>
+          }
           variableWidth
           classes={{
             header: classes.settingsHeader,

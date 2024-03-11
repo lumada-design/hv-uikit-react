@@ -9,10 +9,12 @@ const disabledStyle = {
   [`&.${buttonClasses.subtle}`]: {
     backgroundColor: theme.colors.atmo3,
     borderColor: theme.colors.atmo3,
+    "&:hover": { backgroundColor: theme.colors.atmo3 },
   },
   [`&.${buttonClasses.ghost}`]: {
     backgroundColor: theme.colors.atmo3,
     borderColor: theme.colors.atmo3,
+    "&:hover": { backgroundColor: theme.colors.atmo3 },
   },
 };
 
@@ -35,7 +37,9 @@ export const { staticClasses, useClasses } = createClasses("HvDropdownButton", {
     userSelect: "text",
     ...disabledStyle,
   },
-  open: {},
+  open: {
+    backgroundColor: theme.colors.atmo1,
+  },
   openUp: {
     borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
   },

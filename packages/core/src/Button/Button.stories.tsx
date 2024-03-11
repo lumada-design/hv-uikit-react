@@ -244,17 +244,13 @@ export const Semantic: StoryObj<HvButtonProps> = {
   ],
   render: () => (
     <>
-      <HvButton
-        variant="semantic"
-        aria-label="Favorite"
-        startIcon={<Favorite />}
-      >
+      <HvButton variant="semantic" startIcon={<Favorite />}>
         Favorite
       </HvButton>
-      <HvButton variant="semantic" startIcon={<Refresh />} aria-label="Refresh">
+      <HvButton variant="semantic" startIcon={<Refresh />}>
         Refresh
       </HvButton>
-      <HvButton variant="semantic" startIcon={<Delete />} aria-label="Delete">
+      <HvButton variant="semantic" startIcon={<Delete />}>
         Delete
       </HvButton>
       <HvButton variant="semantic" icon aria-label="More options">

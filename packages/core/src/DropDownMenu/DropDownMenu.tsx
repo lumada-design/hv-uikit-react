@@ -10,11 +10,11 @@ import { setId } from "../utils/setId";
 import { getPrevNextFocus } from "../utils/focusableElementFinder";
 import { ExtractNames } from "../utils/classes";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
-import { HvButton, HvButtonSize, HvButtonVariant } from "../Button";
+import { HvButtonSize, HvButtonVariant } from "../Button";
 import { HvList, HvListProps, HvListValue } from "../List";
 import { HvPanel } from "../Panel";
 import { staticClasses, useClasses } from "./DropDownMenu.styles";
-import { getIconSizeStyles } from "../Button/Button.styles";
+import { HvDropdownButton } from "../DropdownButton";
 
 export { staticClasses as dropDownMenuClasses };
 
@@ -67,7 +67,7 @@ export interface HvDropDownMenuProps
 }
 
 /**
- * A drop-down menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.
+ * A dropdown menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.
  */
 export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
   const {
@@ -86,11 +86,11 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
     defaultExpanded = false,
     category = "secondaryGhost", // TODO - remove and update variant default in v6
     variant,
-    size,
+    size = "md",
     ...others
   } = useDefaultProps("HvDropDownMenu", props);
 
-  const { classes, cx, css } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
   const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
   const id = useUniqueId(idProp);
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
@@ -131,28 +131,22 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
       }}
       expanded={open && !disabled}
       component={
-        <HvButton
-          icon
-          variant={variant ?? category}
+        <HvDropdownButton
           id={setId(id, "icon-button")}
-          className={cx(
-            classes.icon,
-            { [classes.iconSelected]: open },
-            size && icon && css(getIconSizeStyles(size))
-          )}
-          aria-expanded={open}
           disabled={disabled}
+          className={cx(classes.icon, {
+            [classes.iconSelected]: open,
+          })}
           size={size}
-          aria-label="Dropdown menu"
+          variant={variant ?? category}
+          open={open}
+          aria-expanded={open}
+          aria-label="Dropdown menu" // TODO - translate
           aria-haspopup="menu"
+          icon
         >
-          {icon || (
-            <MoreOptionsVertical
-              aria-hidden
-              color={disabled ? "secondary_60" : undefined}
-            />
-          )}
-        </HvButton>
+          {icon || <MoreOptionsVertical role="presentation" />}
+        </HvDropdownButton>
       }
       placement={placement}
       variableWidth

@@ -1,6 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../utils/classes";
+import { actionsGenericClasses } from "../ActionsGeneric";
 
 export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
   root: {
@@ -30,7 +31,15 @@ export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
       backgroundColor: theme.alpha("base_light", 0.3),
     },
   },
-  actions: { display: "inline-flex", marginLeft: "auto" },
+  actions: {
+    display: "inline-flex",
+    marginLeft: "auto",
+    [`& .${actionsGenericClasses.dropDownMenuButton}:disabled`]: {
+      backgroundColor: "transparent",
+      borderColor: "transparent",
+      "&:hover": { backgroundColor: "transparent", borderColor: "transparent" },
+    },
+  },
   selectAllContainer: { display: "flex", alignItems: "center" },
   selectAll: {},
   selectAllPages: {},
