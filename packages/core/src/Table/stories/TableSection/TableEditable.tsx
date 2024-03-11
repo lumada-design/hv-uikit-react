@@ -163,11 +163,9 @@ const Table = <T extends Data>({
   const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
 
   const [newRowDirty, setNewRowDirty] = useState<boolean>(false);
-  const [newRow, setNewRow] = useState<Partial<AssetEvent>>({});
   const [editRows, setEditRows] = useState<
     {
       id: string;
-      status?: string;
       dirty: boolean;
     }[],
   >([]);
@@ -377,9 +375,11 @@ const Table = <T extends Data>({
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
       const asset = Object.fromEntries(formData.entries());
-      const mergedFormData = { ...asset, ...newRow };
-      await onRowAdd?.(mergedFormData as Partial<T>);
-      setNewRow({});
+      const assetFormatted = {
+        ...asset,
+        status: asset.status === "on" ? "Open" : "Closed",
+      };
+      await onRowAdd?.(assetFormatted as unknown as Partial<T>);
       enqueueSnackbar("New row added successfully.", {
         variant: "success",
         snackbarContentProps: {
@@ -437,9 +437,11 @@ const Table = <T extends Data>({
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
       const asset = Object.fromEntries(formData.entries());
-      const formState = editRows.find((r) => r.id === id);
-      const mergedFormData = { ...asset, ...formState };
-      await onRowUpdate?.({ id, ...mergedFormData } as T);
+      const assetFormatted = {
+        ...asset,
+        status: asset.status === "on" ? "Open" : "Closed",
+      };
+      await onRowUpdate?.({ id, ...assetFormatted } as unknown as T);
       enqueueSnackbar("Row updated successfully.", {
         variant: "success",
         snackbarContentProps: {
@@ -536,40 +538,29 @@ const Table = <T extends Data>({
                     form: formId,
                   }}
                   name={String(cols[1].accessor)}
-                  defaultChecked={
-                    edit
-                      ? row.original[String(cols[1].accessor)]?.toString() ===
-                        "Open"
-                      : undefined
-                  }
-                  onChange={(e, c) => {
-                    const newValue = c ? "Open" : "Closed";
+                  onChange={() => {
                     if (edit) {
                       setEditRows((prev) =>
                         prev.map((r) =>
                           r.id === row.original.id
                             ? {
                                 ...r,
-                                status: newValue,
                                 dirty: true,
                               }
                             : r
                         )
                       );
-                    } else {
-                      setNewRow({ ...newRow, status: newValue });
+                      return;
                     }
-
                     if (!newRowDirty) {
                       setNewRowDirty(true);
                     }
                   }}
-                  value={
+                  defaultChecked={
                     edit
-                      ? editRows.find((r) => r.id === row.original.id)
-                          ?.status ??
-                        row.original[String(cols[2].accessor)]?.toString()
-                      : newRow.status
+                      ? row.original[String(cols[1].accessor)]?.toString() ===
+                        "Open"
+                      : false
                   }
                 />
                 <HvLabel
@@ -596,6 +587,7 @@ const Table = <T extends Data>({
                     panel: classes.selectBackground,
                   }}
                   inputProps={{ form: formId }}
+                  enablePortal
                   placeholder="Select Severity"
                   defaultValue={
                     edit
@@ -653,6 +645,7 @@ const Table = <T extends Data>({
                     panel: classes.selectBackground,
                   }}
                   inputProps={{ form: formId }}
+                  enablePortal
                   placeholder="Select Priority"
                   defaultValue={
                     edit
@@ -806,7 +799,7 @@ const Table = <T extends Data>({
               Object.entries(dialogRow).map(
                 ([key, value]) =>
                   value && (
-                    <HvGrid item>
+                    <HvGrid item key={key}>
                       <HvTypography
                         variant="label"
                         style={{ textTransform: "capitalize" }}
