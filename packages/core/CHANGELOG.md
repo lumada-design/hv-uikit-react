@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.57.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.56.0...@hitachivantara/uikit-react-core@5.57.0) (2024-03-12)
+
+### Features
+
+- **ActionsGeneric:** category deprecated and enable buttons to be icons ([b3ee345](https://github.com/lumada-design/hv-uikit-react/commit/b3ee345fc0d2160215ea3f5901694c684f21f608))
+- deprecate actionsCallback globally ([5d3d8ee](https://github.com/lumada-design/hv-uikit-react/commit/5d3d8ee129c46b2f6f598dee3bdc718dbde31312))
+
 # [5.56.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.55.0...@hitachivantara/uikit-react-core@5.56.0) (2024-03-09)
 
 ### Features

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.29.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.28.4...@hitachivantara/uikit-react-lab@5.29.0) (2024-03-12)
+
+### Features
+
+- deprecate actionsCallback globally ([5d3d8ee](https://github.com/lumada-design/hv-uikit-react/commit/5d3d8ee129c46b2f6f598dee3bdc718dbde31312))
+- **Node:** leverage actions generic for actions ([5a45b39](https://github.com/lumada-design/hv-uikit-react/commit/5a45b390665d6c5e156b94f7d522f0a7a262a861))
+
 ## [5.28.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.28.3...@hitachivantara/uikit-react-lab@5.28.4) (2024-03-09)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
