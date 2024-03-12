@@ -80,6 +80,13 @@ const classes = {
     display: "flex",
     alignItems: "center",
   }),
+  emptyGroup: css({
+    backgroundColor: theme.colors.atmo2,
+    border: `1px dashed ${theme.colors.atmo4}`,
+    padding: theme.space.xs,
+    display: "grid",
+    placeItems: "center",
+  }),
   item: css({
     backgroundColor: theme.colors.atmo1,
     border: `1px solid ${theme.colors.atmo4}`,
@@ -173,12 +180,19 @@ const ColumnGroup = ({
           </div>
           {columns.length} / {total}
         </div>
-        <HvListContainer selectable>
-          <SortableContext items={columnsIds}>
-            {columns &&
-              columns.map((col) => <ColumnItem key={col.id} item={col} />)}
-          </SortableContext>
-        </HvListContainer>
+        {columns.length === 0 && (
+          <div className={classes.emptyGroup}>
+            <HvTypography variant="caption1">Drag columns here</HvTypography>
+          </div>
+        )}
+        {columns.length > 0 && (
+          <HvListContainer selectable>
+            <SortableContext items={columnsIds}>
+              {columns &&
+                columns.map((col) => <ColumnItem key={col.id} item={col} />)}
+            </SortableContext>
+          </HvListContainer>
+        )}
       </div>
     </div>
   );
@@ -214,6 +228,7 @@ const SettingsDialog = ({
   settingsPanelId,
   hiddenColumns,
   fixedColumns,
+  columnOrder,
 }) => {
   const [activeGroup, setActiveGroup] = useState<Group | null>(null);
   const [activeColumn, setActiveColumn] = useState<Column | null>(null);
@@ -223,12 +238,19 @@ const SettingsDialog = ({
     { id: "visible", title: "Visible", icon: <Preview /> },
     { id: "hidden", title: "Hidden", icon: <PreviewOff /> },
   ]);
+
+  const orderedColumns = columnOrder.some((c) => c === undefined)
+    ? tableColumns
+    : columnOrder.map((columnId) => {
+        return tableColumns.find((c) => c.accessor === columnId);
+      });
+
   const [columns, setColumns] = useState<Column[]>(
-    tableColumns.map((c) => ({
+    orderedColumns.map((c) => ({
       id: c.accessor || "",
-      groupId: hiddenColumns.includes(c.id)
+      groupId: hiddenColumns.includes(c.accessor)
         ? "hidden"
-        : fixedColumns.includes(c.id)
+        : fixedColumns.includes(c.accessor)
         ? "fixed"
         : "visible",
       title: c.Header || "",
@@ -314,7 +336,9 @@ const SettingsDialog = ({
           onColumnHide?.(cols[activeIndex].id, "show");
           if (event.collisions?.some((c) => c.id === "fixed")) {
             setFixedColumns?.((p) => {
-              return arrayMove(p, activeIndex, overIndex);
+              const fc = arrayMove(p, activeIndex, overIndex);
+              const filteredFc = fc.filter((id) => id !== undefined);
+              return filteredFc;
             });
           } else {
             setFixedColumns?.((p) => {
@@ -471,9 +495,10 @@ export const TableSettings = () => {
 
   const handleHideColumn = (columnId: string, operation: "show" | "hide") => {
     if (operation === "hide") {
-      const newHiddenColumns = [...hiddenColumns, columnId];
-      setHiddenColumns(newHiddenColumns);
-      setTableHiddenColumns?.(newHiddenColumns);
+      const newHiddenColumns = new Set([...hiddenColumns, columnId]);
+      const newHiddenColumnsArray = Array.from(newHiddenColumns);
+      setHiddenColumns(newHiddenColumnsArray);
+      setTableHiddenColumns?.(newHiddenColumnsArray);
     } else if (operation === "show") {
       const newHiddenColumns = hiddenColumns.filter((c) => c !== columnId);
       setHiddenColumns(newHiddenColumns);
@@ -505,6 +530,7 @@ export const TableSettings = () => {
               settingsPanelId={settingsPanelId}
               fixedColumns={fixedColumns}
               hiddenColumns={hiddenColumns}
+              columnOrder={columnOrder}
             />
           </HvPanel>
         </HvBaseDropdown>
