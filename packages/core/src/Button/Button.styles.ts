@@ -1,4 +1,3 @@
-import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "../utils/focusUtils";
@@ -120,7 +119,7 @@ export const getColoringStyle = (color: string, type?: string) => {
   };
 };
 
-export const getRadiusStyles = (radius: HvButtonRadius): CSSInterpolation => ({
+export const getRadiusStyles = (radius: HvButtonRadius) => ({
   borderRadius: theme.radii[radius],
 });
 
@@ -133,7 +132,7 @@ const sizes = {
   xl: { height: "48px", space: "md", typography: "label" },
 };
 
-export const getSizeStyles = (size: HvButtonSize): CSSInterpolation => {
+export const getSizeStyles = (size: HvButtonSize) => {
   const { height, space, typography } = sizes[size];
   const { color, ...typoProps } = theme.typography[typography];
   return {
@@ -143,7 +142,7 @@ export const getSizeStyles = (size: HvButtonSize): CSSInterpolation => {
   };
 };
 
-export const getIconSizeStyles = (size: HvButtonSize): CSSInterpolation => {
+export const getIconSizeStyles = (size: HvButtonSize) => {
   const { height } = sizes[size];
   return {
     height,
@@ -151,7 +150,7 @@ export const getIconSizeStyles = (size: HvButtonSize): CSSInterpolation => {
   };
 };
 
-export const getOverrideColors = (): CSSInterpolation => ({
+export const getOverrideColors = () => ({
   "& svg .color0": {
     fill: "currentcolor",
   },

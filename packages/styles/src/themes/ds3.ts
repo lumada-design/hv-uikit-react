@@ -1397,6 +1397,9 @@ const ds3 = makeTheme((theme) => ({
             height: 32,
           },
         },
+        splitDisabled: {
+          backgroundColor: theme.colors.atmo3,
+        },
       },
     },
     HvTooltip: {
