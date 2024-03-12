@@ -1,17 +1,20 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { dropDownMenuClasses } from "../DropDownMenu";
-
 import { createClasses } from "../utils/classes";
+import { dropDownMenuClasses } from "../DropDownMenu";
+import { getColoringStyle, getSizeStyles } from "../Button/Button.styles";
+import { HvButtonSize } from "../Button";
 
 export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   root: {
     display: "flex",
     alignItems: "center",
     transition: "none",
-    background: theme.colors.atmo2,
     position: "relative",
     zIndex: 0,
+  },
+  multiple: {
+    background: theme.colors.atmo2,
 
     // prevent the focus ring to be hidden by sibling hover background
     "&>.HvIsFocusVisible": {
@@ -93,215 +96,51 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
         },
       },
     },
-
-    // dropdown menu styles
-    "& $button": {
-      [`&.${dropDownMenuClasses.container}`]: {
-        width: "unset",
-      },
-      [`& .${dropDownMenuClasses.icon}`]: {
-        borderTop: `solid 1px ${theme.colors.atmo4}`,
-        borderBottom: `solid 1px ${theme.colors.atmo4}`,
-        borderLeft: "solid 1px transparent",
-        borderRight: "solid 1px transparent",
-        borderRadius: 0,
-        "&:disabled": {
-          borderTop: `solid 1px ${theme.colors.atmo4}`,
-          borderBottom: `solid 1px ${theme.colors.atmo4}`,
-          "&:hover": {
-            borderTop: `solid 1px ${theme.colors.atmo4}`,
-            borderBottom: `solid 1px ${theme.colors.atmo4}`,
-            borderLeft: "solid 1px transparent",
-            borderRight: "solid 1px transparent",
-          },
-        },
-      },
-      [`& .${dropDownMenuClasses.iconSelected}`]: {
-        border: `solid 1px ${theme.colors.secondary}`,
-      },
-      "&$firstButton": {
-        [`& .${dropDownMenuClasses.icon}`]: {
-          borderLeft: `solid 1px ${theme.colors.atmo4}`,
-          borderTopLeftRadius: theme.radii.base,
-          borderBottomLeftRadius: theme.radii.base,
-          "&:disabled": {
-            borderLeft: `solid 1px ${theme.colors.atmo4}`,
-          },
-        },
-        [`& .${dropDownMenuClasses.iconSelected}`]: {
-          border: `solid 1px ${theme.colors.secondary}`,
-        },
-      },
-      "&$lastButton": {
-        [`& .${dropDownMenuClasses.icon}`]: {
-          borderRight: `solid 1px ${theme.colors.atmo4}`,
-          borderTopRightRadius: theme.radii.base,
-          borderBottomRightRadius: theme.radii.base,
-          "&:disabled": {
-            borderRight: `solid 1px ${theme.colors.atmo4}`,
-          },
-          "&:disabled:hover": {
-            borderRight: `solid 1px ${theme.colors.atmo4}`,
-          },
-        },
-        [`& .${dropDownMenuClasses.iconSelected}`]: {
-          border: `solid 1px ${theme.colors.secondary}`,
-        },
-      },
-      "&:not($firstButton) > button": {
-        marginLeft: "-1px",
-      },
-    },
   },
   splitGroup: {
+    width: "fit-content",
     background: theme.colors.atmo1,
+
+    // Button
     "& button$button": {
-      marginLeft: -1,
-      "&:disabled": {
-        borderTop: "none",
-        borderBottom: "none",
-        "&:hover": {
-          borderTop: "none",
-          borderBottom: "none",
-        },
-      },
       "&$firstButton": {
-        "&:not($selected):disabled": {
-          borderLeft: "none",
-          "&:hover": {
-            borderLeft: "none",
-          },
+        borderTopRightRadius: 0,
+        borderBottomRightRadius: 0,
+        "& + div$splitContainer": {
+          marginLeft: -1,
         },
       },
       "&$lastButton": {
-        "&:not($selected):disabled": {
-          borderRight: "none",
-          "&:hover": {
-            borderRight: "none",
-          },
-        },
-      },
-      "&:not($firstButton)": {
-        marginLeft: 0,
+        borderTopLeftRadius: 0,
+        borderBottomLeftRadius: 0,
       },
     },
-    // dropdown menu styles
-    "& $button": {
-      marginLeft: -1,
-      [`& .${dropDownMenuClasses.icon}`]: {
-        "&:disabled": {
-          borderTop: "none",
-          borderBottom: "none",
-          "&:hover": {
-            borderTop: "none",
-            borderBottom: "none",
-          },
+
+    // Dropdown Menu
+    [`& .${dropDownMenuClasses.root}`]: {
+      "&:has($firstButton)": {
+        "& + div$splitContainer": {
+          marginRight: -1,
         },
-      },
-      [`& .${dropDownMenuClasses.iconSelected}`]: {
-        zIndex: 2,
-      },
-      "&$firstButton": {
-        [`& .${dropDownMenuClasses.icon}`]: {
-          "&:disabled": {
-            borderLeft: "none",
-            "&:hover": {
-              borderLeft: "none",
-            },
-          },
-        },
-      },
-      "&$lastButton": {
-        [`& .${dropDownMenuClasses.icon}`]: {
-          "&:disabled": {
-            borderRight: "none",
-            "&:hover": {
-              borderRight: "none",
-            },
-          },
-        },
-      },
-      "&:not($firstButton) > button": {
-        marginLeft: 0,
       },
     },
-    "&$secondarySubtle": {
-      "& button$button": {
-        borderTop: `solid 1px ${theme.colors.secondary}`,
-        borderBottom: `solid 1px ${theme.colors.secondary}`,
-        "&$firstButton": {
-          borderLeft: `solid 1px ${theme.colors.secondary}`,
-        },
-        "&$lastButton": {
-          borderRight: `solid 1px ${theme.colors.secondary}`,
-        },
-        "&:not($selected):disabled": {
-          borderTop: "none",
-          borderBottom: "none",
-          "&:hover": {
-            borderTop: "none",
-            borderBottom: "none",
-          },
-          "&$firstButton": {
-            "&:not($selected):disabled": {
-              borderLeft: "none",
-              "&:hover": {
-                borderLeft: "none",
-              },
-            },
-          },
-          "&$lastButton": {
-            "&:not($selected):disabled": {
-              borderRight: "none",
-              "&:hover": {
-                borderRight: "none",
-              },
-            },
-          },
-        },
-      },
-      "& $button": {
-        [`& .${dropDownMenuClasses.icon}`]: {
-          borderTop: `solid 1px ${theme.colors.secondary}`,
-          borderBottom: `solid 1px ${theme.colors.secondary}`,
-          "&:disabled": {
-            borderTop: "none",
-            borderBottom: "none",
-            "&:hover": {
-              borderTop: "none",
-              borderBottom: "none",
-            },
-          },
-        },
-        "&$firstButton": {
-          [`& .${dropDownMenuClasses.icon}`]: {
-            borderLeft: `solid 1px ${theme.colors.secondary}`,
-            "&:disabled": {
-              borderLeft: "none",
-              "&:hover": {
-                borderLeft: "none",
-              },
-            },
-          },
-        },
-        "&$lastButton": {
-          [`& .${dropDownMenuClasses.icon}`]: {
-            borderRight: `solid 1px ${theme.colors.secondary}`,
-            "&:disabled": {
-              borderRight: "none",
-              "&:hover": {
-                borderRight: "none",
-              },
-            },
-          },
-        },
-      },
+    "& $button$firstButton > button": {
+      marginRight: -1.5,
+      borderTopRightRadius: 0,
+      borderBottomRightRadius: 0,
+    },
+    "& $button$lastButton > button": {
+      marginLeft: -1.5,
+      borderTopLeftRadius: 0,
+      borderBottomLeftRadius: 0,
+    },
+    [`& .${dropDownMenuClasses.iconSelected}`]: {
+      zIndex: 2,
     },
   },
-  splitGroupDisabled: { background: "transparent" },
+  splitGroupDisabled: { background: theme.colors.atmo3 },
   button: {},
   selected: {},
-  // vertical button display Styling
   vertical: {
     flexDirection: "column",
     height: "auto",
@@ -365,149 +204,48 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       },
     },
   },
-  primary: {
-    "& button$button": {
-      borderTop: "none",
-      borderBottom: "none",
-
-      "&$firstButton": {
-        borderLeft: "none",
-      },
-      "&$lastButton": {
-        borderRight: "none",
-      },
-      "&$selected": {
-        border: `solid 1px ${theme.colors.secondary}`,
-      },
-    },
-
-    // dropdown menu styles
-    "& $button": {
-      [`& .${dropDownMenuClasses.icon}`]: {
-        borderTop: "none",
-        borderBottom: "none",
-      },
-      [`& .${dropDownMenuClasses.iconSelected}`]: {
-        border: `solid 1px ${theme.colors.secondary}`,
-      },
-      "&$firstButton": {
-        [`& .${dropDownMenuClasses.icon}`]: {
-          borderLeft: "none",
-        },
-        [`& .${dropDownMenuClasses.iconSelected}`]: {
-          borderLeft: `solid 1px ${theme.colors.secondary}`,
-        },
-      },
-      "&$lastButton": {
-        [`& .${dropDownMenuClasses.icon}`]: {
-          borderRight: "none",
-        },
-        [`& .${dropDownMenuClasses.iconSelected}`]: {
-          borderRight: `solid 1px ${theme.colors.secondary}`,
-        },
-      },
-    },
-  },
-  primarySubtle: {
-    "& button$button": {
-      borderTop: `solid 1px ${theme.colors.primary}`,
-      borderBottom: `solid 1px ${theme.colors.primary}`,
-      "&$firstButton": {
-        borderLeft: `solid 1px ${theme.colors.primary}`,
-      },
-      "&$lastButton": {
-        borderRight: `solid 1px ${theme.colors.primary}`,
-      },
-    },
-    // dropdown menu styles
-    "& $button": {
-      [`& .${dropDownMenuClasses.icon}`]: {
-        borderTop: `solid 1px ${theme.colors.primary}`,
-        borderBottom: `solid 1px ${theme.colors.primary}`,
-      },
-      "&$firstButton": {
-        [`& .${dropDownMenuClasses.icon}`]: {
-          borderLeft: `solid 1px ${theme.colors.primary}`,
-        },
-        [`& .${dropDownMenuClasses.iconSelected}`]: {
-          border: `solid 1px ${theme.colors.secondary}`,
-        },
-      },
-      "&$lastButton": {
-        [`& .${dropDownMenuClasses.icon}`]: {
-          borderRight: `solid 1px ${theme.colors.primary}`,
-        },
-        [`& .${dropDownMenuClasses.iconSelected}`]: {
-          border: `solid 1px ${theme.colors.secondary}`,
-        },
-      },
-    },
-  },
-  primaryGhost: {},
-  secondary: {},
-  secondarySubtle: {},
-  secondaryGhost: {
-    "& button$button": {
-      "&:disabled": {
-        background: theme.colors.atmo3,
-      },
-    },
-    // dropdown menu styles
-    "& $button": {
-      [`& .${dropDownMenuClasses.icon}`]: {
-        "&:disabled": {
-          background: theme.colors.atmo3,
-        },
-      },
-    },
-  },
-  firstButton: {},
-  lastButton: {},
   split: {
     width: 1,
     height: "100%",
     background: "currentColor",
   },
   splitContainer: {
+    display: "flex",
+    justifyContent: "center",
     zIndex: 1,
-    marginLeft: -1,
-    width: 1,
-    height: "100%",
+    width: 2,
     paddingTop: 4,
     paddingBottom: 4,
-    color: theme.colors.secondary,
-    borderTop: `1px solid ${theme.colors.atmo4}`,
-    borderBottom: `1px solid ${theme.colors.atmo4}`,
-    "&$primary": {
-      color: theme.colors.atmo1,
-      backgroundColor: theme.colors.primary,
-      borderTop: `1px solid ${theme.colors.primary}`,
-      borderBottom: `1px solid ${theme.colors.primary}`,
-    },
-    "&$primarySubtle": {
-      color: theme.colors.primary,
-      borderTop: `1px solid ${theme.colors.primary}`,
-      borderBottom: `1px solid ${theme.colors.primary}`,
-    },
-    "&$primaryGhost": {
-      color: theme.colors.primary,
-      borderTop: `1px solid ${theme.colors.primary}`,
-      borderBottom: `1px solid ${theme.colors.primary}`,
-    },
-    "&$secondarySubtle": {
-      color: theme.colors.secondary,
-      borderTop: `1px solid ${theme.colors.secondary}`,
-      borderBottom: `1px solid ${theme.colors.secondary}`,
-    },
-    "&$secondaryGhost": {
-      color: theme.colors.secondary,
-    },
-    "&$splitDisabled": {
-      background: "transparent",
-      color: theme.colors.secondary_60,
-      borderTop: "none",
-      borderBottom: "none",
-    },
+    height: "calc(32px - 2px)",
   },
-  splitDisabled: {},
+  splitDisabled: {
+    color: theme.colors.secondary_60,
+  },
+  firstButton: {},
+  lastButton: {},
+
+  // TODO - review the need for these classes in v6
+  primary: {},
+  primarySubtle: {},
+  primaryGhost: {},
+  secondary: {},
+  secondarySubtle: {},
+  secondaryGhost: {},
+});
+
+export const getSplitContainerColor = (
+  color: string,
+  type?: string,
+  disabled?: boolean
+) => ({
+  color: getColoringStyle(color, type).color,
+  backgroundColor: disabled
+    ? theme.colors.atmo3
+    : type === "subtle"
+    ? theme.colors.atmo1
+    : "transparent",
+});
+
+export const getSplitContainerHeight = (size: HvButtonSize) => ({
+  height: `calc(${getSizeStyles(size).height} - 2px)`,
 });

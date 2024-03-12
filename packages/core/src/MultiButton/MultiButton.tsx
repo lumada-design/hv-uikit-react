@@ -1,11 +1,15 @@
-import { Children, cloneElement, isValidElement } from "react";
+import { Children, cloneElement, isValidElement, useMemo } from "react";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvButtonSize, HvButtonVariant } from "../Button";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
-import { staticClasses, useClasses } from "./MultiButton.styles";
+import {
+  getSplitContainerColor,
+  getSplitContainerHeight,
+  staticClasses,
+  useClasses,
+} from "./MultiButton.styles";
 
 export { staticClasses as multiButtonClasses };
 export type HvMultiButtonClasses = ExtractNames<typeof useClasses>;
@@ -37,15 +41,27 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
     split,
     ...others
   } = useDefaultProps("HvMultiButton", props);
-  const { classes, cx } = useClasses(classesProp);
+  const { classes, cx, css } = useClasses(classesProp);
+
+  const [color, type] = useMemo(() => {
+    const result = variant.split(/(?=[A-Z])/);
+    if (
+      result[0] === "ghost" ||
+      result[0] === "semantic" ||
+      (result[0] === "secondary" && !result[1])
+    )
+      return [];
+    return result.map((x) => x.toLowerCase());
+  }, [variant]);
 
   return (
     <div
       className={cx(
         classes.root,
         {
+          [classes.multiple]: !split,
           [classes.vertical]: vertical,
-          [classes[variant]]: variant,
+          [classes[variant]]: variant, // TODO - remove in v6
           [classes.splitGroup]: split,
           [classes.splitGroupDisabled]: split && disabled,
         },
@@ -71,11 +87,17 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
               })}
               {split && index < Children.count(children) - 1 && (
                 <div
-                  className={cx(classes.splitContainer, classes[variant], {
-                    [classes.splitDisabled]: disabled,
-                  })}
+                  className={cx(
+                    classes.splitContainer,
+                    color && css(getSplitContainerColor(color, type, disabled)),
+                    size && css(getSplitContainerHeight(size)),
+                    {
+                      [classes.splitDisabled]: disabled,
+                    },
+                    classes[variant] // TODO - remove in v6
+                  )}
                 >
-                  <div className={cx(classes.split)} />
+                  <div className={classes.split} />
                 </div>
               )}
             </>
