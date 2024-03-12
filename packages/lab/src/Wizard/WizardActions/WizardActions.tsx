@@ -26,15 +26,15 @@ export interface HvWizardActionsProps extends HvBaseProps {
   /** An object containing all the labels for the wizard actions component. */
   labels?: {
     /** Cancel button label. */
-    cancel?: string;
+    cancel?: string | React.ReactNode;
     /** Skip button label. */
-    skip?: string;
+    skip?: string | React.ReactNode;
     /** Previous button label. */
-    previous?: string;
+    previous?: string | React.ReactNode;
     /** Next button label. */
-    next?: string;
+    next?: string | React.ReactNode;
     /** Submit button label. */
-    submit?: string;
+    submit?: string | React.ReactNode;
   };
   /** Whether the submit button is disabled. */
   loading?: boolean;
@@ -42,6 +42,8 @@ export interface HvWizardActionsProps extends HvBaseProps {
   skippable?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state Wizard. */
   classes?: HvWizardActionsClasses;
+  /** Function executed instead of default go to next page */
+  handleBeforeNext?: () => void;
 }
 
 export const HvWizardActions = ({
@@ -57,6 +59,7 @@ export const HvWizardActions = ({
     skip: "Skip",
     submit: "Submit",
   },
+  handleBeforeNext,
 }: HvWizardActionsProps) => {
   const { classes, css, cx } = useClasses(classesProp);
 
@@ -109,7 +112,7 @@ export const HvWizardActions = ({
         onClick={handleClose}
         className={classes.buttonWidth}
       >
-        {`${labels.cancel ?? "Cancel"}`}
+        {labels.cancel ?? "Cancel"}
       </HvButton>
       {skippable && (
         <HvButton
@@ -118,7 +121,7 @@ export const HvWizardActions = ({
           className={classes.buttonWidth}
           onClick={handleSkip}
         >
-          {`${labels.skip ?? "Skip"}`}
+          {labels.skip ?? "Skip"}
         </HvButton>
       )}
       <div aria-hidden className={css({ flex: 1 })}>
@@ -132,7 +135,7 @@ export const HvWizardActions = ({
           onClick={() => setTab((t) => t - 1)}
           startIcon={<Backwards />}
         >
-          {`${labels.previous ?? "Previous"}`}
+          {labels.previous ?? "Previous"}
         </HvButton>
         {isLastPage ? (
           <HvButton
@@ -141,17 +144,17 @@ export const HvWizardActions = ({
             disabled={loading || !canSubmit}
             onClick={handleSubmitInternal}
           >
-            {`${labels.submit ?? "Submit"}`}
+            {labels.submit ?? "Submit"}
           </HvButton>
         ) : (
           <HvButton
             variant="secondaryGhost"
             className={cx(classes.buttonWidth, classes.buttonSpacing)}
-            onClick={() => setTab((t) => t + 1)}
+            onClick={() => handleBeforeNext?.() || setTab((t) => t + 1)}
             disabled={!skippable && !context?.[tab]?.valid}
             endIcon={<Forwards />}
           >
-            {`${labels.next ?? "Next"}`}
+            {labels.next ?? "Next"}
           </HvButton>
         )}
       </div>
