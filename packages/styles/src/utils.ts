@@ -72,8 +72,11 @@ export const mapCSSVars = <T extends object>(
   return vars;
 };
 
-export const mergeTheme = (...objects) => {
-  const isObject = (obj) => obj && typeof obj === "object";
+// TODO: review in v6:
+// - typings: accept any or theme object?
+// - arguments: source/target themes, or any number of theme objects?
+export const mergeTheme = (...objects: any[]) => {
+  const isObject = (obj: unknown) => obj && typeof obj === "object";
 
   return objects.reduce((prev, obj) => {
     Object.keys(obj).forEach((key) => {
@@ -81,9 +84,9 @@ export const mergeTheme = (...objects) => {
       const oVal = obj[key];
 
       if (isObject(pVal) && isObject(oVal)) {
-        prev[key] = pVal ? oVal : mergeTheme(pVal, oVal);
+        prev[key] = mergeTheme(pVal, oVal);
       } else {
-        prev[key] = oVal;
+        prev[key] = oVal !== undefined ? oVal : pVal;
       }
     });
 
