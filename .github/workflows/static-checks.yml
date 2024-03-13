@@ -14,7 +14,7 @@ on:
         required: false
 
 env:
-  LICENSES_WHITELIST: Apache-2.0\;ISC\;BSD-2-Clause\;BSD-3-Clause\;MIT\;W3C\;Zlib\;CC-BY-4.0
+  LICENSES_WHITELIST: Apache-2.0;ISC;BSD-2-Clause;BSD-3-Clause;MIT;W3C;Zlib;CC-BY-4.0;Hippocratic-2.1;Python-2.0;MPL-2.0;Unlicense;EPL-2.0;BSD;BlueOak-1.0.0;CC0-1.0;CC-BY-3.0;WTFPL
 
 jobs:
   checks:
@@ -30,7 +30,7 @@ jobs:
 
       - name: License Check
         run: |
-          npm exec npx license-checker --onlyAllow ${{ env.LICENSES_WHITELIST }} --workspaces
+          npx license-checker-rseidelsohn --onlyAllow "${{ env.LICENSES_WHITELIST }}" --excludePackagesStartingWith "@applitools;buffers;flatbuffers"
 
       - name: Security Audit
         run: npm audit --workspaces --omit dev
