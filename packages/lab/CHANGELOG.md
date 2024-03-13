@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.30.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.29.0...@hitachivantara/uikit-react-lab@5.30.0) (2024-03-13)
+
+### Features
+
+- allow run custom validations on Wizard before going to next page. DIG-1348 ([8561a0a](https://github.com/lumada-design/hv-uikit-react/commit/8561a0a520932d96db07797a6ce8a36f87e356d1))
+
 # [5.29.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.28.4...@hitachivantara/uikit-react-lab@5.29.0) (2024-03-12)
 
 ### Features
