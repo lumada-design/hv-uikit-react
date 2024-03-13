@@ -1,0 +1,16 @@
+import { lazy } from "react";
+import { Routes, Route } from "react-router-dom";
+
+/* INJECT_IMPORTS */ 
+
+const NotFound = lazy(() => import("pages/NotFound"));
+
+const AppRoutes = () => (
+  <Routes>
+    {/* INJECT_ROUTES */}
+    
+    <Route path="/*" element={<NotFound />} />
+  </Routes>
+);
+
+export default AppRoutes;

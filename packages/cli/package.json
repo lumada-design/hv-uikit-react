@@ -1,0 +1,39 @@
+{
+  "name": "@hitachivantara/hv-uikit-cli",
+  "version": "1.15.2",
+  "type": "module",
+  "author": "Hitachi Vantara UI Kit Team",
+  "description": "The Hitachi Vantara CLI for UI Kit apps.",
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "license": "Apache-2.0",
+  "main": "src/index.js",
+  "bin": {
+    "hv-uikit-cli": "src/index.js"
+  },
+  "keywords": [
+    "hitachivantara",
+    "hv-uikit-cli",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lumada-design/hv-uikit-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "colors": "^1.4.0",
+    "commander": "^10.0.0",
+    "fs-extra": "^11.1.0",
+    "inquirer": "^9.1.4",
+    "node-plop": "^0.31.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

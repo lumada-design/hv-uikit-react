@@ -1,0 +1,24 @@
+import { useTranslation } from "react-i18next";
+import {
+  HvGrid,
+  HvTypography,
+  HvGlobalActions,
+} from "@hitachivantara/uikit-react-core";
+{{#if useAppShell}}import { withProvider } from "providers/Provider";{{/if}}
+
+const {{titleCase name}}: React.FC = () => {
+  const { t } = useTranslation("{{lowerCase name}}");
+
+  return (
+    <HvGrid container>
+      <HvGrid item xs={12}>
+        <HvTypography variant="title2">{t("page.title")}</HvTypography>
+      </HvGrid>
+      <HvGrid item xs={12}>
+        <HvGlobalActions title={t("section.title")} variant="section" />
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+export default {{#if useAppShell}}withProvider({{/if}}{{titleCase name}}{{#if useAppShell}}){{/if}};
