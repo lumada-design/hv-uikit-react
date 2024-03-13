@@ -4,6 +4,7 @@ import { css } from "@emotion/css";
 import {
   HvButton,
   HvGrid,
+  HvLoading,
   HvMultiButton,
   HvMultiButtonProps,
   HvTypography,
@@ -162,7 +163,7 @@ const Dashboard = () => {
 
 export default () => (
   <HvVizProvider>
-    <Suspense>
+    <Suspense fallback={<HvLoading style={{ minHeight: 400 }} />}>
       <Dashboard />
     </Suspense>
   </HvVizProvider>

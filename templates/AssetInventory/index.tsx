@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useId } from "react";
 
 import {
   HvBulkActions,
@@ -25,7 +25,6 @@ import {
   usePaginationData,
   actions,
   views,
-  idsToControl,
   rightControlValues,
   getColumns,
   AssetInventoryEntry,
@@ -39,6 +38,9 @@ const AssetInventory = () => {
     limit: PAGE_OPTIONS[0],
     skip: 0,
   });
+
+  const cardViewId = useId();
+  const listViewId = useId();
 
   const {
     data: { pages, data },
@@ -138,7 +140,7 @@ const AssetInventory = () => {
             searchProps={{
               inputProps: {
                 "aria-label": "Search",
-                "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
+                "aria-controls": `${cardViewId} ${listViewId}`,
               },
             }}
           />
@@ -146,7 +148,7 @@ const AssetInventory = () => {
             values={rightControlValues}
             sortProps={{
               "aria-label": "Sort by",
-              "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
+              "aria-controls": `${cardViewId} ${listViewId}`,
             }}
           />
         </HvControls>
@@ -161,20 +163,16 @@ const AssetInventory = () => {
           actions={actions}
           onAction={handleAction}
           checkboxProps={{
-            "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
+            "aria-controls": `${cardViewId} ${listViewId}`,
           }}
         />
 
         {currentView === "card" && (
-          <CardView id={idsToControl.cards} instance={instance} />
+          <CardView id={cardViewId} instance={instance} />
         )}
 
         {currentView === "list" && (
-          <ListView
-            id={idsToControl.list}
-            instance={instance}
-            columns={columns}
-          />
+          <ListView id={listViewId} instance={instance} columns={columns} />
         )}
 
         {instance.page?.length ? (

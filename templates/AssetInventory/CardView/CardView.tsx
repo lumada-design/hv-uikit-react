@@ -5,46 +5,44 @@ import {
   HvCardContent,
   HvCheckBox,
   HvActionBar,
-  HvActionsGeneric,
   HvTypography,
-  Breakpoint,
   HvTableInstance,
   HvCardMedia,
+  HvButton,
 } from "@hitachivantara/uikit-react-core";
 
 import { AssetInventoryEntry, getStatusIcon } from "../data";
 
-interface CarViewProps {
+interface CardViewProps {
   id?: string;
   instance: HvTableInstance<AssetInventoryEntry, string>;
 }
 
-export const CardView = ({ id, instance }: CarViewProps) => {
+export const CardView = ({ id, instance }: CardViewProps) => {
   const selectedCardsIds = instance.selectedFlatRows.map((r) => r.id);
   return (
     <HvSimpleGrid
       id={id}
-      breakpoints={
-        [
-          { minWidth: 1919, cols: 4, spacing: "md" },
-          { minWidth: 960, cols: 3, spacing: "md" },
-          { minWidth: 600, cols: 2, spacing: "sm" },
-          { minWidth: 0, cols: 1, spacing: "sm" },
-        ] as Breakpoint[]
-      }
+      breakpoints={[
+        { minWidth: 1919, cols: 4, spacing: "md" },
+        { minWidth: 960, cols: 3, spacing: "md" },
+        { minWidth: 600, cols: 2, spacing: "sm" },
+        { minWidth: 0, cols: 1, spacing: "sm" },
+      ]}
     >
       {instance.page.map((row) => {
+        const values = row.original;
         return (
           <HvCard
             selectable
             selected={selectedCardsIds.includes(row.id)}
             bgcolor="atmo1"
-            key={`${row?.values?.name}-row`}
+            key={`${values.name}-row`}
             style={{ width: "100%" }}
-            statusColor={row?.original?.statusColor}
-            icon={getStatusIcon(row?.original?.statusColor)}
+            statusColor={values.statusColor}
+            icon={getStatusIcon(values.statusColor)}
           >
-            <HvCardHeader title={row?.values?.name} />
+            <HvCardHeader title={values.name} />
             <div
               style={{
                 display: "flex",
@@ -55,29 +53,29 @@ export const CardView = ({ id, instance }: CarViewProps) => {
               <div>
                 <HvCardContent>
                   <HvTypography variant="label">Event</HvTypography>
-                  <HvTypography noWrap>{row?.values?.eventType}</HvTypography>
+                  <HvTypography noWrap>{values.eventType}</HvTypography>
                 </HvCardContent>
                 <HvCardContent>
                   <HvTypography variant="label">Severity</HvTypography>
-                  <HvTypography noWrap>{row?.values?.severity}</HvTypography>
+                  <HvTypography noWrap>{values.severity}</HvTypography>
                 </HvCardContent>
               </div>
               <div>
                 <HvCardContent>
                   <HvTypography variant="label">Status</HvTypography>
-                  <HvTypography noWrap>{row?.values?.status}</HvTypography>
+                  <HvTypography noWrap>{values.status}</HvTypography>
                 </HvCardContent>
                 <HvCardContent>
                   <HvTypography variant="label">Priority</HvTypography>
-                  <HvTypography noWrap>{row?.values?.priority}</HvTypography>
+                  <HvTypography noWrap>{values.priority}</HvTypography>
                 </HvCardContent>
               </div>
             </div>
             <HvCardMedia
               component="img"
-              alt={row.original.name}
+              alt={values.name}
               height={140}
-              image={row.original.image}
+              image={values.image}
             />
             <HvActionBar>
               <HvCheckBox
@@ -86,8 +84,8 @@ export const CardView = ({ id, instance }: CarViewProps) => {
                 value="value"
                 inputProps={{ "aria-label": "Tick to select the card" }}
               />
-              <div style={{ flex: 1 }} />
-              <HvActionsGeneric actions={[{ id: "view1", label: "View" }]} />
+              <div aria-hidden style={{ flex: 1 }} />
+              <HvButton variant="secondaryGhost">View</HvButton>
             </HvActionBar>
           </HvCard>
         );
