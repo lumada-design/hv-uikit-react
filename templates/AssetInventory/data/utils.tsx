@@ -82,32 +82,30 @@ export const getColumns = (): HvTableColumnConfig<
 >[] => [
   {
     Header: "Status",
-    accessor: "status",
+    accessor: "statusColor",
     style: { width: 60 },
-    Cell: ({ row }) => {
-      return (
-        <HvTooltip title={getStatusMessage(row.original.statusColor)}>
-          <div>{getStatusIcon(row.original.statusColor)}</div>
-        </HvTooltip>
-      );
-    },
+    Cell: ({ value }) => (
+      <HvTooltip title={getStatusMessage(value)}>
+        <div>{getStatusIcon(value)}</div>
+      </HvTooltip>
+    ),
   },
   {
     Header: "Asset",
     accessor: "image",
     style: { maxWidth: 60 },
-    Cell: ({ row }) => {
+    Cell: ({ value, row }) => {
       return (
         <HvTooltip
           placement="right"
           title={
             <div style={{ width: 400 }}>
-              <img alt={row.original.name} src={row.original.image} />
+              <img alt={row.original.name} src={value} />
             </div>
           }
         >
           <div style={{ maxWidth: 60 }}>
-            <img alt={row.original.name} src={row.original.image} />
+            <img alt={row.original.name} src={value} />
           </div>
         </HvTooltip>
       );

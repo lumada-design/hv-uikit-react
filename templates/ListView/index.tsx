@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useId } from "react";
 import {
   HvGrid,
   HvGridProps,
@@ -31,13 +31,13 @@ import {
   getColumns,
   actions,
   ListViewEntry,
-  idsToControl,
 } from "./data";
 
 const INIT_PAGE_SIZE = 5;
 
 const ListView = () => {
-  const breakpoints = { xl: 3, lg: 3, md: 3, sm: 6, xs: 12 } as HvGridProps;
+  const breakpoints: HvGridProps = { xl: 3, lg: 3, md: 3, sm: 6, xs: 12 };
+  const listId = useId();
 
   const [kpiSelection, setKpiSelection] = useState<number | undefined>();
 
@@ -195,7 +195,7 @@ const ListView = () => {
           searchProps={{
             inputProps: {
               "aria-label": "Search",
-              "aria-controls": idsToControl.list,
+              "aria-controls": listId,
             },
           }}
         />
@@ -214,13 +214,13 @@ const ListView = () => {
         actionsDisabled={false}
         onAction={handleAction}
         checkboxProps={{
-          "aria-controls": idsToControl.list,
+          "aria-controls": listId,
         }}
       />
 
       <LoadingContainer loading={loading}>
         <div className={classes.marginTop}>
-          <Table instance={instance} id={idsToControl.list} />
+          <Table instance={instance} id={listId} />
           {instance.page?.length > 1 && (
             <HvPagination {...instance.getHvPaginationProps?.()} />
           )}

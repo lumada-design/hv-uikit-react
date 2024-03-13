@@ -1,11 +1,10 @@
-import { clsx } from "clsx";
+import { cx } from "@emotion/css";
 import {
   HvCard,
   HvTypography,
-  HvAtmosphereColorKeys,
-  HvSemanticColorKeys,
   HvLoading,
   HvTableInstance,
+  HvCardProps,
 } from "@hitachivantara/uikit-react-core";
 import { TopXS, BottomXS } from "@hitachivantara/uikit-react-icons";
 
@@ -16,7 +15,7 @@ import classes from "./styles";
 interface KpiProps {
   title: string;
   count?: number;
-  color: HvAtmosphereColorKeys | HvSemanticColorKeys | "sema0" | undefined;
+  color: HvCardProps["statusColor"];
   variation?: string;
   status: number;
   instance: HvTableInstance<ListViewEntry, string>;
@@ -55,11 +54,10 @@ export const Kpi = ({
       selected={status === kpiSelection}
       bgcolor="atmo1"
       statusColor={color}
-      onClick={() => handleKpiClick()}
-      className={clsx(
-        classes.card,
-        status === kpiSelection && classes.selected
-      )}
+      onClick={handleKpiClick}
+      className={cx(classes.card, {
+        [classes.selected]: status === kpiSelection,
+      })}
       icon={getStatusIcon(status)}
       tabIndex={0}
     >

@@ -1,10 +1,11 @@
 import {
   HvTooltip,
   HvTableColumnConfig,
-  HvCellProps,
   HvBulkActionsProps,
+  HvColor,
 } from "@hitachivantara/uikit-react-core";
 import {
+  IconType,
   Level0Good,
   Level1,
   Level2Average,
@@ -24,16 +25,32 @@ export interface ListViewEntry {
   status?: number;
 }
 
+const TooltipIcon = ({
+  title,
+  Icon,
+  color,
+}: {
+  title: string;
+  Icon: IconType;
+  color: HvColor;
+}) => (
+  <HvTooltip title={title}>
+    <div>
+      <Icon role="none" iconSize="XS" color={color} />
+    </div>
+  </HvTooltip>
+);
+
 export const getStatusIcon = (status?: ListViewEntry["status"]) => {
   switch (status) {
     case 0:
-      return <Level0Good color="positive" iconSize="XS" />;
+      return <TooltipIcon title="Success" Icon={Level0Good} color="positive" />;
     case 1:
-      return <Level3Bad color="negative" iconSize="XS" />;
+      return <TooltipIcon title="Error" Icon={Level3Bad} color="negative" />;
     case 2:
-      return <Level2Average color="warning" iconSize="XS" />;
+      return <TooltipIcon title="Open" Icon={Level2Average} color="warning" />;
     default:
-      return <Level1 color="neutral" iconSize="XS" />;
+      return <TooltipIcon title="Unassigned" Icon={Level1} color="neutral" />;
   }
 };
 
@@ -42,34 +59,7 @@ export const getColumns = (): HvTableColumnConfig<ListViewEntry, string>[] => [
     Header: "Status",
     accessor: "status",
     style: { width: 40 },
-    Cell: ({ row }: HvCellProps<ListViewEntry, string>) => {
-      switch (row.original.status) {
-        case 0:
-          return (
-            <HvTooltip title="Success">
-              <div>{getStatusIcon(0)}</div>
-            </HvTooltip>
-          );
-        case 1:
-          return (
-            <HvTooltip title="Error">
-              <div>{getStatusIcon(1)}</div>
-            </HvTooltip>
-          );
-        case 2:
-          return (
-            <HvTooltip title="Open">
-              <div>{getStatusIcon(2)}</div>
-            </HvTooltip>
-          );
-        default:
-          return (
-            <HvTooltip title="Unassigned">
-              <div>{getStatusIcon(3)}</div>
-            </HvTooltip>
-          );
-      }
-    },
+    Cell: ({ value }) => getStatusIcon(value),
   },
   { Header: "Name", accessor: "name", style: { minWidth: 200 } },
   { Header: "Description", accessor: "description", style: { minWidth: 200 } },
@@ -81,10 +71,6 @@ export const getColumns = (): HvTableColumnConfig<ListViewEntry, string>[] => [
 export const actions: HvBulkActionsProps["actions"] = [
   { id: "refresh", label: "Refresh", icon: <Refresh /> },
 ];
-
-export const idsToControl = {
-  list: "itemList",
-};
 
 const entries = [
   { name: "Previous", description: "Clean Data Logs" },
