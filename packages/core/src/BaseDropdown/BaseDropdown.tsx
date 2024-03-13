@@ -193,7 +193,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
 
     const ariaExpanded = ariaExpandedProp ?? (ariaRole ? !!isOpen : undefined);
 
-    const id = useUniqueId(idProp, "hvbasedropdown");
+    const id = useUniqueId(idProp);
     const containerId = setId(id, "children-container");
 
     const headerControlArias = {

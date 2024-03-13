@@ -44,7 +44,7 @@ export const HvFileList = (props: HvFileListProps) => {
   } = useDefaultProps("HvFileList", props);
   const { classes } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id, "hvfilelist");
+  const elementId = useUniqueId(id);
 
   const hasFiles = list.length > 0;
   if (!hasFiles) return null;

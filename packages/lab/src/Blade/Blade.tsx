@@ -188,7 +188,7 @@ export const HvBlade = (props: HvBladeProps) => {
     [handleAction]
   );
 
-  const id = useUniqueId(idProp, "hvblade");
+  const id = useUniqueId(idProp);
   const bladeHeaderId = setId(id, "button");
   const bladeContainerId = setId(id, "container");
   const bladeHeader = useMemo(() => {

@@ -195,7 +195,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
     const { classes, cx } = useClasses(classesProp);
     const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
-    const elementId = useUniqueId(id, "hvdatepicker");
+    const elementId = useUniqueId(id);
 
     const [validationState, setValidationState] = useControlled(
       status,

@@ -26,7 +26,7 @@ export const HvTableSection = forwardRef<HTMLDivElement, HvTableSectionProps>(
     } = useDefaultProps("HvTableSection", props);
 
     const { classes } = useClasses(classesProp);
-    const elementId = useUniqueId(id, "hvTableSection");
+    const elementId = useUniqueId(id);
 
     return (
       <HvSection id={elementId} ref={ref} classes={classes} {...others}>

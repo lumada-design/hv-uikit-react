@@ -9,7 +9,13 @@ let count = 0;
 
 export const useUniqueId = (
   deterministicId?: string,
-  idPrefix?: string
+  /**
+   * @deprecated
+   * Users should pick between a fully deterministic or fully generated id
+   * @example
+   * useUniqueId(setId(idPrefix, deterministicId))
+   * */
+  idPrefix?: string,
 ): string => {
   const [id, setId] = React.useState<string | undefined>(useReactId());
 

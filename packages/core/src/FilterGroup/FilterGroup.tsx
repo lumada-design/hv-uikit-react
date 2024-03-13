@@ -152,7 +152,7 @@ export const HvFilterGroup = forwardRef<HTMLDivElement, HvFilterGroupProps>(
     const { classes, cx } = useClasses(classesProp);
     const [validationMessage] = useControlled(statusMessage, "Required");
 
-    const elementId = useUniqueId(id, "hvfiltergroup");
+    const elementId = useUniqueId(id);
 
     const labels = useLabels(DEFAULT_LABELS, labelsProp);
 

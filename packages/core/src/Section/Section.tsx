@@ -71,7 +71,7 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
       Boolean(defaultExpanded)
     );
 
-    const elementId = useUniqueId(id, "hvSection");
+    const elementId = useUniqueId(id);
     const contentId = setId(elementId, "content");
 
     const showContent = expandable ? !!isOpen : true;

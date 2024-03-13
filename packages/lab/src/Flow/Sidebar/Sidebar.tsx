@@ -92,8 +92,8 @@ export const HvFlowSidebar = ({
 
   const labels = useLabels(DEFAULT_LABELS, labelsProps);
 
-  const drawerElementId = useUniqueId(id, "hvFlowSidebarDrawer");
-  const groupsElementId = useUniqueId(id, "hvFlowSidebarGroups");
+  const drawerElementId = useUniqueId(id);
+  const groupsElementId = useUniqueId(id);
 
   // The sidebar is droppable to distinguish between the canvas and the sidebar
   // Otherwise items dropped inside the sidebar will be added to the canvas

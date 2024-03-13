@@ -27,8 +27,7 @@ export const HvFlowDraggableSidebarGroupItem = ({
   ...others
 }: HvFlowDraggableSidebarGroupItemProps) => {
   const itemRef = useRef<HTMLElement>(null);
-
-  const elementId = useUniqueId(id, `hvFlowDraggableItem-${type}`);
+  const elementId = useUniqueId(id);
 
   const { attributes, listeners, setNodeRef, isDragging, transform } =
     useDraggable({

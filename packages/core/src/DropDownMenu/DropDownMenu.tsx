@@ -92,7 +92,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
 
   const { classes, cx, css } = useClasses(classesProp);
   const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
-  const id = useUniqueId(idProp, "dropdown-menu");
+  const id = useUniqueId(idProp);
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
 
   const listId = setId(id, "list");

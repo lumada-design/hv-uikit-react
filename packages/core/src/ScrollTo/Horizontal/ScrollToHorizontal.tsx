@@ -139,7 +139,7 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
 
   const { activeTheme } = useTheme();
 
-  const elementId = useUniqueId(id, "hvHorizontalScrollto");
+  const elementId = useUniqueId(id);
 
   const [selectedIndex, setScrollTo, elements] = useScrollTo(
     defaultSelectedIndex,

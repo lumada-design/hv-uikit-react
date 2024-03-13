@@ -166,7 +166,7 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
       savedColorsValue,
       defaultSavedColorsValue
     );
-    const elementId = useUniqueId(id, "hvdropdown");
+    const elementId = useUniqueId(id);
     const hasLabel = label != null;
     const hasDescription = description != null;
 

@@ -151,7 +151,7 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
 
     const { classes, cx } = useClasses(classesProp);
 
-    const elementId = useUniqueId(id, "hvswitch");
+    const elementId = useUniqueId(id);
 
     const [isChecked, setIsChecked] = useControlled(
       checked,
