@@ -80,7 +80,7 @@ export const HvFormElement = (props: HvFormElementProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id, "hvformelement");
+  const elementId = useUniqueId(id);
 
   const contextValue = useMemo(
     () => ({

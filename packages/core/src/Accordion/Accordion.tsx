@@ -86,7 +86,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
     ...others
   } = useDefaultProps("HvAccordion", props);
 
-  const id = useUniqueId(idProp, "hvaccordion");
+  const id = useUniqueId(idProp);
 
   const { classes, cx } = useClasses(classesProp);
 

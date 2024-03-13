@@ -131,7 +131,7 @@ export const HvDropZone = (props: HvDropZoneProps) => {
     disabled = false,
     onFilesAdded,
   } = useDefaultProps("HvDropZone", props);
-  const id = useUniqueId(idProp, "dropzone");
+  const id = useUniqueId(idProp);
 
   const { classes, cx } = useClasses(classesProp);
 

@@ -234,7 +234,7 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
 
     const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
-    const elementId = useUniqueId(id, "hvdropdown");
+    const elementId = useUniqueId(id);
 
     const [validationState, setValidationState] = useControlled(
       status,

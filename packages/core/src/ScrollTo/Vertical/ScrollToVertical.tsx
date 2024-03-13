@@ -125,7 +125,7 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id, "hvVerticalScrollto");
+  const elementId = useUniqueId(id);
 
   const [selectedIndex, setScrollTo, elements] = useScrollTo(
     defaultSelectedIndex,

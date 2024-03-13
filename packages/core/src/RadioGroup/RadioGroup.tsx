@@ -151,7 +151,7 @@ export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(
 
     const { classes, cx } = useClasses(classesProp);
 
-    const elementId = useUniqueId(id, "hvradiogroup");
+    const elementId = useUniqueId(id);
 
     const [value, setValue] = useControlled(
       valueProp,

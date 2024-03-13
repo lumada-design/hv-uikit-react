@@ -143,7 +143,7 @@ export const HvDroppableFlow = ({
 }: HvDroppableFlowProps) => {
   const { classes, cx } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id, "hvFlow");
+  const elementId = useUniqueId(id);
 
   const reactFlowInstance = useFlowInstance();
 

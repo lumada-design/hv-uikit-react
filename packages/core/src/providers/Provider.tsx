@@ -102,7 +102,8 @@ export const HvProvider = ({
   emotionCache: emotionCacheProp,
   classNameKey = defaultCacheKey,
 }: HvProviderProps) => {
-  const scopedRootId = useUniqueId(undefined, scopedRootPrefix);
+  const generatedId = useUniqueId();
+  const scopedRootId = `${scopedRootPrefix}-${generatedId}`;
 
   // Themes
   const themesList: (HvTheme | HvThemeStructure)[] = processThemes(themes);

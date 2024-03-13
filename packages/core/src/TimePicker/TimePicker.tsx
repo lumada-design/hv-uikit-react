@@ -174,7 +174,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
       ...others
     } = useDefaultProps("HvTimePicker", props);
 
-    const id = useUniqueId(idProp, "hvtimepicker");
+    const id = useUniqueId(idProp);
 
     const { classes, cx } = useClasses(classesProp);
 

@@ -203,7 +203,7 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id, "hvtextarea");
+  const elementId = useUniqueId(id);
 
   // Signals that the user has manually edited the input value
   const isDirty = useRef<boolean>(false);

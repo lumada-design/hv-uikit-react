@@ -143,7 +143,7 @@ export const HvSelectionList = forwardRef<
 
   const { classes, cx } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id, "hvselectionlist");
+  const elementId = useUniqueId(id);
 
   const [value, setValue] = useControlled(
     valueProp,

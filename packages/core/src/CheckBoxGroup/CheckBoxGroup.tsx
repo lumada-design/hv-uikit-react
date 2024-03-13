@@ -192,7 +192,7 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
 
     const [validationMessage] = useControlled(statusMessage, "Required");
 
-    const elementId = useUniqueId(id, "hvcheckboxgroup");
+    const elementId = useUniqueId(id);
 
     const selectionAnchor = useRef(undefined);
 

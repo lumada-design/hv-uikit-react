@@ -95,7 +95,7 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
 
     const { classes, cx } = useClasses(classesProp);
 
-    const elementId = useUniqueId(id, "hvcheckbox");
+    const elementId = useUniqueId(id);
 
     const [focusVisible, setFocusVisible] = useState<boolean>(false);
 

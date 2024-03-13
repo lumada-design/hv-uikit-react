@@ -228,7 +228,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
   // Signals that the user has manually edited the input value
   const isDirty = useRef(false);
 
-  const elementId = useUniqueId(id, "hvSlider");
+  const elementId = useUniqueId(id);
 
   const sliderInputId = setId(elementId, "input");
 

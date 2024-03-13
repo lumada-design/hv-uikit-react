@@ -162,7 +162,7 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
 
     const { classes, cx } = useClasses(classesProp);
 
-    const elementId = useUniqueId(id, "hvradio");
+    const elementId = useUniqueId(id);
 
     const [focusVisible, setFocusVisible] = useState(false);
 

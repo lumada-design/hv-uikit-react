@@ -163,7 +163,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
     const treeviewMode = mode === "treeview";
     const multiSelect = selectable && multiSelectProp;
 
-    const treeId = useUniqueId(idProp, "hvtreeview");
+    const treeId = useUniqueId(idProp);
     const treeRef = useRef<HTMLDivElement>(null);
     const handleRef = useForkRef(treeRef, ref);
 

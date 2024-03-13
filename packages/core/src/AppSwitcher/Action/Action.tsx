@@ -122,7 +122,7 @@ export const HvAppSwitcherAction = ({
   );
 
   const isLink = url != null;
-  const descriptionElementId = useUniqueId(id, "hvAction-description");
+  const descriptionElementId = useUniqueId(id);
 
   const renderApplication = useCallback(
     (children: React.ReactNode) => {

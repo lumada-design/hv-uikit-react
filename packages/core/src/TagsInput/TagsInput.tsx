@@ -190,7 +190,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
 
     const { classes, cx, css } = useClasses(classesProp);
 
-    const elementId = useUniqueId(id, "hvTagsInput");
+    const elementId = useUniqueId(id);
 
     const hasLabel = textAreaLabel != null;
     const hasDescription = description != null;

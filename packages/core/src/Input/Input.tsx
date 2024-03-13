@@ -279,7 +279,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
   } = useDefaultProps("HvInput", props);
   const { classes, cx } = useClasses(classesProp);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
-  const elementId = useUniqueId(id, "hvinput");
+  const elementId = useUniqueId(id);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const forkedRef = useForkRef(ref, inputRef, inputRefProp);
