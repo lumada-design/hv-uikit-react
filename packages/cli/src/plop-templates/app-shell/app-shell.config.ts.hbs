@@ -1,0 +1,46 @@
+import type { HvAppShellConfig } from "@hitachivantara/app-shell-vite-plugin";
+
+export default (): HvAppShellConfig => ({
+  name: "{{appName}}",
+
+  baseUrl: "/",
+
+  {{#if feats}}
+  header: {
+    actions: [
+    {{#each feats}}
+      { bundle: "{{bundle}}"{{#if config}},
+        config: {{{config}}}
+      {{/if}}
+      }{{#unless @last}},{{/unless}}
+    {{/each}}
+    ]
+  },
+  {{/if}}
+
+  mainPanel: {
+    maxWidth: "xl"{{#unless viteOptionsAppShell}},
+    views: [
+    {{#each pages}}
+        { bundle: "@self/{{pagesPath}}/{{name}}.js", route: "/{{kebabCase name}}" }{{#unless @last}},{{/unless}}
+    {{/each}}
+    ]
+    {{/unless}}
+  },
+
+  {{#unless viteOptionsAppShell}}
+  menu: [
+  {{#each pages}}
+    { label: "key_{{name}}", target: "/{{kebabCase name}}" }{{#unless @last}},{{/unless}}
+  {{/each}}
+  ],
+
+  translations: {
+    en: {
+    {{#each pages}}
+      key_{{name}}: "{{pageName}}"{{#unless @last}},{{/unless}}
+    {{/each}}
+    }
+  }
+  {{/unless}}
+});
