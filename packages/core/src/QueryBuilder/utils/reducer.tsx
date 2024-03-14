@@ -10,6 +10,8 @@ const reducer: Reducer<HvQueryBuilderQuery, QueryAction> = (state, action) => {
     case "reset-query": {
       return emptyGroup();
     }
+    case "set-query":
+      return action.query;
     case "reset-group": {
       const group = findNodeById(action.id, query);
       if (group && "rules" in group) {

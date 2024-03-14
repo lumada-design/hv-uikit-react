@@ -12,6 +12,8 @@ import { InitialQuery as InitialQueryStory } from "./InitialQuery";
 import InitialQueryRaw from "./InitialQuery?raw";
 import { Main as MainStory } from "./Main";
 import MainRaw from "./Main?raw";
+import { Controlled as ControlledStory } from "./Controlled";
+import ControlledRaw from "./Controlled?raw";
 
 const meta: Meta<typeof HvQueryBuilder> = {
   title: "Widgets/Query Builder",
@@ -74,6 +76,7 @@ export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
 
 export const CustomRenderers: StoryObj<HvQueryBuilderProps> = {
   parameters: {
+    eyes: { include: false },
     docs: {
       description: {
         story:
@@ -85,4 +88,20 @@ export const CustomRenderers: StoryObj<HvQueryBuilderProps> = {
     },
   },
   render: () => <CustomRenderersStory />,
+};
+
+export const Controlled: StoryObj<HvQueryBuilderProps> = {
+  parameters: {
+    eyes: { include: false },
+    docs: {
+      description: {
+        story:
+          "The query builder state can be controlled using the `value` and `onChange` properties.",
+      },
+      source: {
+        code: ControlledRaw,
+      },
+    },
+  },
+  render: () => <ControlledStory />,
 };

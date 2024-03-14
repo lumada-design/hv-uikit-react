@@ -105,6 +105,13 @@ const selectRenderers = {
   },
 };
 
+const classes = {
+  selectRoot: css({
+    display: "flex",
+    gap: theme.space.xs,
+  }),
+};
+
 type SelectValue = string | { start?: string; end?: string };
 
 const SelectRenderer = ({
@@ -142,12 +149,7 @@ const SelectRenderer = ({
 
   if (operator === "range") {
     return (
-      <div
-        className={css({
-          display: "flex",
-          gap: theme.space.xs,
-        })}
-      >
+      <div className={classes.selectRoot}>
         <HvDropdown
           required
           label={selectRenderers[attribute].labelStart}

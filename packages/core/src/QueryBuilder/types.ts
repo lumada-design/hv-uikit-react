@@ -121,6 +121,10 @@ export type QueryAction =
       type: "set-value";
       id: React.Key;
       value: HvQueryBuilderQueryRuleValue | null | any;
+    }
+  | {
+      type: "set-query";
+      query: HvQueryBuilderQuery;
     };
 
 export interface AskAction {
