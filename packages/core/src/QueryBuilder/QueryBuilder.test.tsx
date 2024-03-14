@@ -295,7 +295,7 @@ describe("QueryBuilder", () => {
 
   describe("initial query", () => {
     it("renders the query", () => {
-      render(<QueryBuilder query={initialQuery} />);
+      render(<QueryBuilder defaultValue={initialQuery} />);
 
       expect(() => screen.getByText("No conditions created yet")).toThrow();
 
@@ -328,7 +328,7 @@ describe("QueryBuilder", () => {
     it("should render the right custom renders", async () => {
       render(
         <QueryBuilder
-          query={initialQuery}
+          defaultValue={initialQuery}
           renderers={{
             custom: {
               equals: () => <input data-testid="equals-renderer" />,
@@ -362,7 +362,7 @@ describe("QueryBuilder", () => {
     it("should render the custom render for the Empty operator", async () => {
       render(
         <QueryBuilder
-          query={initialQuery}
+          defaultValue={initialQuery}
           renderers={{
             text: {
               Empty: () => <input data-testid="empty-renderer" />,
@@ -381,7 +381,7 @@ describe("QueryBuilder", () => {
     it("should show confirmation dialog", async () => {
       render(
         <QueryBuilder
-          query={{
+          defaultValue={{
             id: 1,
             combinator: "and",
             rules: [
@@ -409,7 +409,7 @@ describe("QueryBuilder", () => {
     it("should remove immediately", async () => {
       render(
         <QueryBuilder
-          query={{
+          defaultValue={{
             id: 1,
             combinator: "and",
             rules: [

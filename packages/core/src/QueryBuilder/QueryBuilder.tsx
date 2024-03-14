@@ -3,7 +3,6 @@ import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
 import { isEqual } from "../utils/helpers";
-
 import { ConfirmationDialog } from "./ConfirmationDialog";
 import {
   HvQueryBuilderProvider,
@@ -19,13 +18,14 @@ import {
   HvQueryBuilderLabels,
   HvQueryBuilderQueryCombinator,
   HvQueryBuilderQueryOperator,
-  HvQueryBuilderChangedQuery,
   HvQueryBuilderRenderers,
   defaultRendererKey,
+  HvQueryBuilderChangedQuery,
 } from "./types";
 import { clearNodeIds, emptyGroup } from "./utils";
 import reducer from "./utils/reducer";
 import { useClasses, staticClasses } from "./QueryBuilder.styles";
+import { useControlled } from "../hooks/useControlled";
 
 export { staticClasses as queryBuilderClasses };
 
@@ -38,10 +38,18 @@ export interface HvQueryBuilderProps {
   operators?: Record<string, HvQueryBuilderQueryOperator[]>;
   /** The query combinators operands. */
   combinators?: HvQueryBuilderQueryCombinator[];
-  /** The initial query representation. */
-  query?: HvQueryBuilderQuery;
-  /** Callback fired when query changes. */
-  onChange?: (value: HvQueryBuilderChangedQuery) => void;
+  /** The query when the component is controlled. */
+  value?: HvQueryBuilderQuery;
+  /** The initial query when the component is uncontrolled. */
+  defaultValue?: HvQueryBuilderQuery;
+  /**
+   * The initial query when the component is uncontrolled.
+   *
+   * @deprecated Use `defaultValue` instead.
+   * */
+  query?: HvQueryBuilderQuery; // TODO - remove in v6
+  /** Callback fired when the query changes. */
+  onChange?: (value: HvQueryBuilderChangedQuery | HvQueryBuilderQuery) => void; // TODO - only use HvQueryBuilderQuery in v6
   /** Max depth of nested query groups. */
   maxDepth?: number;
   /** Object containing all the labels. */
@@ -66,10 +74,10 @@ export interface HvQueryBuilderProps {
 }
 
 // TODO - v6
-// - uncontrolled vs controlled: users should be able to control the state
-// - "query" renamed to "initialQuery" and "query" used to control the state
-// - "query" provided with ids by the user but removed through "onChange"
 // - "range", "Empty", and "IsNotEmpty" operators with internal/built-in logic
+
+// Notes:
+// Deep clone is needed throughout the component to avoid undesired mutations in props, state, and ref values
 
 /**
  * This component allows you to create conditions and group them using logical operators.
@@ -81,7 +89,9 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   const {
     attributes,
     renderers,
-    query,
+    query: queryProp, // TODO - remove in v6
+    value,
+    defaultValue,
     onChange,
     disableConfirmation = false,
     operators = defaultOperators,
@@ -116,19 +126,25 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     null
   );
 
-  const initialQuery = useRef(query ?? emptyGroup());
+  const controlled = useRef(value != null);
+  const initialQuery = useRef(
+    value ?? defaultValue ?? queryProp ?? emptyGroup()
+  );
+  const [query, setQuery] = useControlled(
+    structuredClone(value),
+    structuredClone(initialQuery.current)
+  );
+  const prevQuery = useRef(query);
 
   const [pendingAction, setPendingAction] = useState<AskAction>();
-  const [prevState, setPrevState] = useState(initialQuery.current);
   const [initialState, setInitialState] = useState(true);
 
   const [state, dispatchAction] = useReducer(
     reducer,
-    // Deep clone is needed to make sure that the "query" prop and "initialQuery" are not mutated
     structuredClone(initialQuery.current)
   );
 
-  const value = useMemo(
+  const contextValue = useMemo(
     () => ({
       dispatchAction,
       askAction: setPendingAction,
@@ -169,17 +185,33 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     }
   }, [attributes]);
 
-  // Propagate the change if the query is modified
   useEffect(() => {
-    if (!isEqual(state, prevState)) {
-      if (initialState) {
-        setInitialState(false);
+    // "value" prop was updated by user
+    if (!isEqual(prevQuery.current, query)) {
+      dispatchAction({
+        type: "set-query",
+        query,
+      });
+      prevQuery.current = structuredClone(query);
+    } else if (!isEqual(state, query)) {
+      setInitialState(false);
+
+      // TODO - remove state manipulation with clearNodeIds in v6 (only keep else statement)
+      // To avoid breaking changes, clearNodeIds is used only when uncontrolled
+      if (!controlled.current) {
+        onChange?.(
+          clearNodeIds(structuredClone(state)) as HvQueryBuilderChangedQuery
+        );
+      } else {
+        // When controlled, the ids provided by the user are not removed
+        onChange?.(structuredClone(state));
       }
 
-      onChange?.(clearNodeIds(state) as HvQueryBuilderChangedQuery);
-      setPrevState(structuredClone(state));
+      prevQuery.current = structuredClone(state);
+      // This will only run if uncontrolled
+      setQuery(structuredClone(state));
     }
-  }, [initialState, onChange, prevState, state]);
+  }, [onChange, query, setQuery, state]);
 
   const handleConfirm = () => {
     if (pendingAction) {
@@ -193,7 +225,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   };
 
   return (
-    <HvQueryBuilderProvider value={value}>
+    <HvQueryBuilderProvider value={contextValue}>
       <RuleGroup
         level={0}
         id={state.id}
@@ -205,11 +237,11 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
         isOpen={pendingAction != null}
         onConfirm={handleConfirm}
         onCancel={handleCancel}
-        title={pendingAction?.dialog.dialogTitle || ""}
-        message={pendingAction?.dialog.dialogMessage || ""}
-        confirmButtonLabel={pendingAction?.dialog.dialogConfirm || ""}
-        cancelButtonLabel={pendingAction?.dialog.dialogCancel || ""}
-        closeButtonTooltip={pendingAction?.dialog.dialogCloseTooltip || ""}
+        title={pendingAction?.dialog.dialogTitle}
+        message={pendingAction?.dialog.dialogMessage}
+        confirmButtonLabel={pendingAction?.dialog.dialogConfirm}
+        cancelButtonLabel={pendingAction?.dialog.dialogCancel}
+        closeButtonTooltip={pendingAction?.dialog.dialogCloseTooltip}
       />
     </HvQueryBuilderProvider>
   );

@@ -1,7 +1,4 @@
-import { useState } from "react";
 import { HvQueryBuilder } from "@hitachivantara/uikit-react-core";
-
-import queryToMongo from "./queryToMongo";
 
 const attributes = {
   price: {
@@ -56,21 +53,10 @@ const initialQuery = {
   ],
 };
 
-export const ReadOnly = () => {
-  const [, setMongoQuery] = useState(queryToMongo(initialQuery));
-
-  return (
-    <HvQueryBuilder
-      readOnly
-      attributes={attributes}
-      query={initialQuery}
-      onChange={(query) => {
-        try {
-          setMongoQuery(queryToMongo(query));
-        } catch (error: any) {
-          console.log("error: ", error.toString());
-        }
-      }}
-    />
-  );
-};
+export const ReadOnly = () => (
+  <HvQueryBuilder
+    readOnly
+    attributes={attributes}
+    defaultValue={initialQuery}
+  />
+);

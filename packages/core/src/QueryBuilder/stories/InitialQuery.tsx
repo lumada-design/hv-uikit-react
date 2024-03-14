@@ -80,6 +80,10 @@ const initialQuery = {
   ],
 };
 
+const classes = {
+  button: css({ marginBottom: theme.space.sm }),
+};
+
 export const InitialQuery = () => {
   const [mongoQuery, setMongoQuery] = useState(queryToMongo(initialQuery));
   const [disable, setDisable] = useState(false);
@@ -90,14 +94,13 @@ export const InitialQuery = () => {
         variant="secondarySubtle"
         startIcon={<Topics />}
         onClick={() => setDisable(!disable)}
-        className={css({ marginBottom: theme.space.sm })}
+        className={classes.button}
       >
         {disable ? "Show" : "Hide"} confirmation dialogs
       </HvButton>
-
       <HvQueryBuilder
         attributes={attributes}
-        query={initialQuery}
+        defaultValue={initialQuery}
         onChange={(query) => {
           try {
             setMongoQuery(queryToMongo(query));
