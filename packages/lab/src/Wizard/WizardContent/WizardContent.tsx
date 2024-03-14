@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   useCallback,
   useContext,
@@ -10,13 +9,13 @@ import {
   ExtractNames,
   HvBaseProps,
   HvDialogContent,
+  HvLoadingContainer,
 } from "@hitachivantara/uikit-react-core";
 
 import { useElementSize } from "usehooks-ts";
 
 import { HvWizardContext, HvWizardTabs } from "../WizardContext";
 import { staticClasses, useClasses } from "./WizardContent.styles";
-import { LoadingContainer } from "./LoadingContainer";
 
 export { staticClasses as wizardContentClasses };
 
@@ -51,20 +50,17 @@ export const HvWizardContent = ({
 
   const arrayChildren = React.Children.toArray(children) as ChildElement[];
 
-  const initialContext = arrayChildren.reduce(
-    (acc, child: ChildElement, index) => {
-      const invalid =
-        "mustValidate" in child.props && child.props.mustValidate === true
-          ? false
-          : null;
-      const valid = invalid ?? (index === 0 || null);
-      return {
-        ...acc,
-        [index]: { ...child.props, form: {}, valid, touched: index === 0 },
-      };
-    },
-    {}
-  );
+  const initialContext = arrayChildren.reduce((acc, child, index) => {
+    const invalid =
+      "mustValidate" in child.props && child.props.mustValidate === true
+        ? false
+        : null;
+    const valid = invalid ?? (index === 0 || null);
+    return {
+      ...acc,
+      [index]: { ...child.props, form: {}, valid, touched: index === 0 },
+    };
+  }, {});
 
   const summaryRef = useRef<HTMLElement>();
   const resizedRef = useRef({ height: 0, width: 0 });
@@ -106,6 +102,7 @@ export const HvWizardContent = ({
 
   useEffect(() => {
     setContext(initialContext);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -157,13 +154,13 @@ export const HvWizardContent = ({
           </div>
         </div>
       )}
-      <HvDialogContent
-        className={cx(classes.contentContainer, {
-          [classes.fixedHeight]: fixedHeight,
-        })}
-        indentContent
-      >
-        <LoadingContainer hidden={!loading}>
+      <HvLoadingContainer hidden={!loading}>
+        <HvDialogContent
+          className={cx(classes.contentContainer, {
+            [classes.fixedHeight]: fixedHeight,
+          })}
+          indentContent
+        >
           {React.Children.map(arrayChildren, (child, index) => {
             if (index === tab) {
               return React.cloneElement(child as React.ReactElement, {
@@ -172,8 +169,8 @@ export const HvWizardContent = ({
             }
             return null;
           })}
-        </LoadingContainer>
-      </HvDialogContent>
+        </HvDialogContent>
+      </HvLoadingContainer>
     </div>
   );
 };

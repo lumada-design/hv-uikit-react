@@ -18,9 +18,9 @@ import {
   useHvFilters,
   HvLeftControlProps,
   HvActionsGenericProps,
+  HvLoadingContainer,
 } from "@hitachivantara/uikit-react-core";
 
-import { LoadingContainer } from "../utils";
 import { Kpi } from "./Kpi";
 import { Table } from "./Table";
 import classes from "./styles";
@@ -218,14 +218,14 @@ const ListView = () => {
         }}
       />
 
-      <LoadingContainer loading={loading}>
+      <HvLoadingContainer hidden={!loading}>
         <div className={classes.marginTop}>
           <Table instance={instance} id={listId} />
           {instance.page?.length > 1 && (
             <HvPagination {...instance.getHvPaginationProps?.()} />
           )}
         </div>
-      </LoadingContainer>
+      </HvLoadingContainer>
     </>
   );
 };
