@@ -116,6 +116,7 @@ export const iconCategories = {
     "Switch",
     "Tag",
     "TagGroup",
+    "Temperature",
     "Template",
     "TemplateAlt",
     "ThemeSwitcher",
