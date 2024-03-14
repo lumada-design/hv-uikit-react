@@ -16,20 +16,13 @@ import {
 import { hasChildNavigationItems } from "./utils/VerticalNavigation.utils";
 
 import { staticClasses, useClasses } from "./VerticalNavigation.styles";
+import { HvBaseProps } from "../types/generic";
 
 export { staticClasses as verticalNavigationClasses };
 
 export type HvVerticalNavigationClasses = ExtractNames<typeof useClasses>;
 
-export interface HvVerticalNavigationProps {
-  /**
-   * Id to be applied to the root node.
-   */
-  id?: string;
-  /**
-   * Class names to be applied.
-   */
-  className?: string;
+export interface HvVerticalNavigationProps extends HvBaseProps<HTMLDivElement> {
   /**
    * A Jss Object used to override or extend the styles applied to the component.
    */
@@ -39,7 +32,7 @@ export interface HvVerticalNavigationProps {
    */
   open?: boolean;
   /**
-   * Collpased Mode for the Vertical Navigation, the default value is "simple".
+   * Collapsed Mode for the Vertical Navigation, the default value is "simple".
    *
    * @deprecated - `useIcons` property should be used instead.
    */
@@ -48,10 +41,6 @@ export interface HvVerticalNavigationProps {
    * Boolean to determine if treeview is in slider mode (for mobile navigation), the default value is false.
    */
   slider?: boolean;
-  /**
-   * The content inside the actions container.
-   */
-  children?: React.ReactNode;
   /**
    * Boolean to determine if icons should be displayed in the navigation menu.
    * When `true` a icon will always be displayed, if no icon is provided the first letter of the label will be
