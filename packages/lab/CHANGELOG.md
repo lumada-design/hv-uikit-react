@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.30.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.30.0...@hitachivantara/uikit-react-lab@5.30.1) (2024-03-14)
+
+### Performance Improvements
+
+- remove lodash ([2f60a88](https://github.com/lumada-design/hv-uikit-react/commit/2f60a8863e4b46dd79ea9d27a0a8b49badee8014))
+
 # [5.30.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.29.0...@hitachivantara/uikit-react-lab@5.30.0) (2024-03-13)
 
 ### Features

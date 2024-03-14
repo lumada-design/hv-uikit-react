@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.23.0 (2024-03-14)
+
+### Bug Fixes
+
+- mergeTheme function ([5ae2978](https://github.com/lumada-design/hv-uikit-react/commit/5ae29782309c11ae8bacb6ff94c379e7a7608d75))
+
+### Features
+
+- **button:** align styles with ds ([8af93b6](https://github.com/lumada-design/hv-uikit-react/commit/8af93b64e64e27b69e0c96e362938f6527b193f0))
+- **button:** context colors added ([5809820](https://github.com/lumada-design/hv-uikit-react/commit/5809820055a73711b4d1e4e0d6a4141a89574094))
+- **typography:** caption label variant added ([0e96794](https://github.com/lumada-design/hv-uikit-react/commit/0e96794a082963e307ef2e1417a734b6c5f14875))
+
 # [5.22.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.21.0...@hitachivantara/uikit-styles@5.22.0) (2024-03-08)
 
 ### Features
