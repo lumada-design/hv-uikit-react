@@ -41,11 +41,11 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   disabled: {
     cursor: "not-allowed",
     color: theme.colors.secondary_60,
-    borderColor: "transparent",
-    backgroundColor: "transparent",
+    borderColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.atmo3,
     "&:hover, &:focus-visible": {
-      backgroundColor: "transparent",
-      borderColor: "transparent",
+      backgroundColor: theme.colors.atmo3,
+      borderColor: theme.colors.atmo3,
     },
   },
   icon: {
@@ -56,10 +56,26 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
       margin: -1,
     },
   },
-  subtle: { backgroundColor: "transparent" },
+  subtle: {
+    backgroundColor: "transparent",
+    "&$disabled": {
+      backgroundColor: "transparent",
+      "&:hover, &:focus-visible": {
+        backgroundColor: "transparent",
+      },
+    },
+  },
   ghost: {
     borderColor: "transparent",
     backgroundColor: "transparent",
+    "&$disabled": {
+      borderColor: "transparent",
+      backgroundColor: "transparent",
+      "&:hover, &:focus-visible": {
+        borderColor: "transparent",
+        backgroundColor: "transparent",
+      },
+    },
   },
   semantic: {
     color: theme.colors.base_dark,
