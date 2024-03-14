@@ -4,11 +4,10 @@ import {
   HvGrid,
   HvGridProps,
   HvLoading,
+  HvLoadingContainer,
   HvPanel,
   theme,
 } from "@hitachivantara/uikit-react-core";
-
-import { LoadingContainer } from "../utils";
 
 /** A `HvGrid` item + styled `HvPanel` container with a loading `Suspense` boundary */
 export const GridPanel = ({
@@ -18,7 +17,7 @@ export const GridPanel = ({
   ...others
 }: HvGridProps & { isLoading?: boolean }) => (
   <HvGrid item {...others}>
-    <LoadingContainer loading={isLoading}>
+    <HvLoadingContainer hidden={!isLoading}>
       <HvPanel
         role="region"
         style={{ height: height as number }}
@@ -37,6 +36,6 @@ export const GridPanel = ({
           {children}
         </Suspense>
       </HvPanel>
-    </LoadingContainer>
+    </HvLoadingContainer>
   </HvGrid>
 );

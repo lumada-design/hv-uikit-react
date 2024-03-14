@@ -83,6 +83,7 @@ export * from "./Kpi";
 export * from "./Link";
 export * from "./List";
 export * from "./Loading";
+export * from "./LoadingContainer";
 export * from "./Login";
 export * from "./MultiButton";
 export * from "./OverflowTooltip";

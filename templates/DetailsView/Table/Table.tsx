@@ -11,9 +11,9 @@ import {
   useHvData,
   useHvPagination,
   HvPagination,
+  HvLoadingContainer,
 } from "@hitachivantara/uikit-react-core";
 
-import { LoadingContainer } from "../../utils";
 import {
   PaginationDataProps,
   usePaginationData,
@@ -64,7 +64,7 @@ export const Table = ({ modelId }: TableProps) => {
   }, [instance.state]);
 
   return (
-    <LoadingContainer loading={loading}>
+    <HvLoadingContainer hidden={!loading}>
       <HvTableContainer style={{ padding: "2px" }}>
         <HvTable {...instance.getTableProps()}>
           <HvTableHead>
@@ -96,6 +96,6 @@ export const Table = ({ modelId }: TableProps) => {
           pageSizeOptions={PAGE_OPTIONS}
         />
       ) : undefined}
-    </LoadingContainer>
+    </HvLoadingContainer>
   );
 };

@@ -3,6 +3,7 @@ import { css, keyframes } from "@emotion/css";
 import {
   HvButton,
   HvInput,
+  HvLoadingContainer,
   HvOverflowTooltip,
   HvPagination,
   HvRowInstance,
@@ -27,7 +28,6 @@ import {
 import { Add, Delete, Edit } from "@hitachivantara/uikit-react-icons";
 
 import { AssetEvent, getEditableColumns, useServerData } from "../storiesUtils";
-import { LoadingContainer } from "../TableSamples/LoadingContainer";
 
 const slide = keyframes`
   0% { 
@@ -553,7 +553,7 @@ const Table = <T extends Data>({
 
   return (
     <>
-      <LoadingContainer loading={loading} label="Loading">
+      <HvLoadingContainer hidden={!loading} label="Loading">
         <HvTableContainer>
           <HvTable {...getTableProps()} className={classes.tableRoot}>
             <HvTableHead>
@@ -580,7 +580,7 @@ const Table = <T extends Data>({
             </HvTableBody>
           </HvTable>
         </HvTableContainer>
-      </LoadingContainer>
+      </HvLoadingContainer>
       {page.length > 0 ? (
         <HvPagination
           {...getHvPaginationProps?.()}

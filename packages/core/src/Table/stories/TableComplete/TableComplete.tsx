@@ -7,6 +7,7 @@ import {
   HvBulkActions,
   HvCellProps,
   HvEmptyState,
+  HvLoadingContainer,
   HvPagination,
   HvRowInstance,
   HvTable,
@@ -29,16 +30,11 @@ import {
   useHvTableSticky,
 } from "@hitachivantara/uikit-react-core";
 
-import { LoadingContainer } from "../TableSamples/LoadingContainer";
-
 const classes = {
   root: css({}),
   container: css({
     paddingBottom: 0,
     maxHeight: 600,
-  }),
-  loadingContainer: css({
-    height: "inherit",
   }),
   pagination: css({
     zIndex: "unset",
@@ -284,11 +280,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
           {...getHvBulkActionsProps?.()}
         />
       )}
-      <LoadingContainer
-        loading={loading}
-        label={labels.loading}
-        className={classes.loadingContainer}
-      >
+      <HvLoadingContainer hidden={!loading} label={labels.loading}>
         <HvTableContainer className={classes.container}>
           <HvTable {...getTableProps()}>
             <HvTableHead {...getTableHeadProps?.()}>
@@ -311,7 +303,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
             </HvTableBody>
           </HvTable>
         </HvTableContainer>
-      </LoadingContainer>
+      </HvLoadingContainer>
       {showPagination && page.length > 0 && (
         <HvPagination
           classes={{ root: classes.pagination }}
