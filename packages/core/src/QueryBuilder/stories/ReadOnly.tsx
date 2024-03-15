@@ -20,27 +20,22 @@ const attributes = {
 };
 
 const initialQuery = {
-  id: 1,
   combinator: "and",
   rules: [
     {
-      id: 2,
       attribute: "price",
       operator: "lessThan",
       value: 10,
     },
     {
-      id: 4,
       combinator: "and",
       rules: [
         {
-          id: 5,
           attribute: "in_stock",
           operator: "equalsTo",
           value: true,
         },
         {
-          id: 6,
           attribute: "release",
           operator: "greaterThan",
           value: {

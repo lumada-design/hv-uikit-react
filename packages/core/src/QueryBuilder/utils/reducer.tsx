@@ -1,10 +1,10 @@
 import { Reducer } from "react";
 
 import { emptyRule, emptyGroup, findNodeById, findParentById } from "./index";
-import { HvQueryBuilderQuery, QueryAction } from "../types";
+import { Query, QueryAction } from "../types";
 
-const reducer: Reducer<HvQueryBuilderQuery, QueryAction> = (state, action) => {
-  const query = { ...state };
+const reducer: Reducer<Query, QueryAction> = (state, action) => {
+  const query = structuredClone(state);
 
   switch (action.type) {
     case "reset-query": {

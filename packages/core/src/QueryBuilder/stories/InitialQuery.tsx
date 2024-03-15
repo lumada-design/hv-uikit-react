@@ -29,33 +29,27 @@ const attributes = {
 };
 
 const initialQuery = {
-  id: 1,
   combinator: "and",
   rules: [
     {
-      id: 2,
       attribute: "price",
       operator: "lessThan",
       value: 10,
     },
     {
-      id: 3,
       attribute: "category",
       operator: "equals",
       value: "Movies",
     },
     {
-      id: 4,
       combinator: "and",
       rules: [
         {
-          id: 5,
           attribute: "in_stock",
           operator: "equalsTo",
           value: true,
         },
         {
-          id: 6,
           attribute: "release",
           operator: "greaterThan",
           value: {
@@ -66,11 +60,9 @@ const initialQuery = {
       ],
     },
     {
-      id: 7,
       combinator: "or",
       rules: [
         {
-          id: 8,
           attribute: "in_stock",
           operator: "equalsTo",
           value: false,

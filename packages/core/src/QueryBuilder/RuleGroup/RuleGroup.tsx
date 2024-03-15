@@ -9,14 +9,14 @@ import { ExtractNames } from "../../utils/classes";
 import { Rule } from "../Rule";
 import { useQueryBuilderContext } from "../Context";
 import { useClasses } from "../QueryBuilder.styles";
-import { HvQueryBuilderQuery, HvQueryBuilderQueryCombinator } from "../types";
+import { HvQueryBuilderQueryCombinator, Query } from "../types";
 import { HvIconButton } from "../../IconButton";
 
 export interface RuleGroupProps {
   id: React.Key;
   level?: number;
   combinator?: string;
-  rules?: HvQueryBuilderQuery["rules"];
+  rules?: Query["rules"];
   classes?: ExtractNames<typeof useClasses>;
 }
 
