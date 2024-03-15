@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { useState } from "react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 
@@ -8,48 +8,41 @@ import {
   HvQueryBuilderProps,
   hvQueryBuilderDefaultOperators,
 } from ".";
+import { HvButton } from "../Button";
 
-const QueryBuilder = (props: HvQueryBuilderProps) => {
-  const attributes = useMemo(
-    () => ({
-      price: {
-        label: "Price",
-        type: "numeric",
-      },
-      category: {
-        label: "Category",
-        type: "text",
-      },
-      in_stock: {
-        label: "In stock",
-        type: "boolean",
-      },
-      release: {
-        label: "Release",
-        type: "dateandtime",
-      },
-      custom: {
-        label: "Custom",
-        type: "custom",
-      },
-    }),
-    []
-  );
-
-  const operators = useMemo(
-    () => ({
-      ...hvQueryBuilderDefaultOperators,
-      custom: [...hvQueryBuilderDefaultOperators.text],
-    }),
-    []
-  );
-
-  return (
-    <HvQueryBuilder operators={operators} attributes={attributes} {...props} />
-  );
+const operators = {
+  ...hvQueryBuilderDefaultOperators,
+  custom: [...hvQueryBuilderDefaultOperators.text],
 };
 
-const initialQuery = {
+const attributes = {
+  price: {
+    label: "Price",
+    type: "numeric",
+  },
+  category: {
+    label: "Category",
+    type: "text",
+  },
+  in_stock: {
+    label: "In stock",
+    type: "boolean",
+  },
+  release: {
+    label: "Release",
+    type: "dateandtime",
+  },
+  custom: {
+    label: "Custom",
+    type: "custom",
+  },
+  info: {
+    label: "Info",
+    type: "textarea",
+  },
+};
+
+const defaultValueWithIds = {
   id: 1,
   combinator: "and",
   rules: [
@@ -112,327 +105,798 @@ const initialQuery = {
   ],
 };
 
+const defaultValueWithoutIds = {
+  combinator: "and",
+  rules: [
+    {
+      attribute: "price",
+      operator: "lessThan",
+      value: 10,
+    },
+    {
+      attribute: "category",
+      operator: "equals",
+      value: "Movies",
+    },
+    {
+      attribute: "custom",
+      operator: "equals",
+      value: "1234",
+    },
+    {
+      attribute: "category",
+      operator: "Empty",
+    },
+    {
+      combinator: "and",
+      rules: [
+        {
+          attribute: "in_stock",
+          operator: "equalsTo",
+          value: true,
+        },
+        {
+          attribute: "release",
+          operator: "greaterThan",
+          value: {
+            date: "2021-01-01",
+            time: "00:00:00",
+          },
+        },
+      ],
+    },
+    {
+      combinator: "or",
+      rules: [
+        {
+          attribute: "in_stock",
+          operator: "equalsTo",
+          value: false,
+        },
+      ],
+    },
+  ],
+};
+
+const Controlled = (props?: HvQueryBuilderProps) => {
+  const [value, setValue] = useState<HvQueryBuilderProps["value"]>(
+    props?.value ?? {
+      combinator: "and",
+      rules: [],
+    }
+  );
+
+  return (
+    <>
+      <HvButton onClick={() => setValue(defaultValueWithoutIds)}>
+        Update Query
+      </HvButton>
+      <HvQueryBuilder
+        operators={operators}
+        attributes={attributes}
+        value={value}
+        onChange={(query) => {
+          setValue(query);
+          props?.onChange?.(query);
+        }}
+        {...props}
+      />
+    </>
+  );
+};
+
+const renderUncontrolled = (props?: HvQueryBuilderProps) =>
+  render(
+    <HvQueryBuilder operators={operators} attributes={attributes} {...props} />
+  );
+
+const renderControlled = (props?: HvQueryBuilderProps) =>
+  render(
+    <Controlled operators={operators} attributes={attributes} {...props} />
+  );
+
+const assertGroupCreated = async () => {
+  const noConditions = screen.queryByText("No conditions created yet");
+  const attributeDropdown = await screen.findByRole("combobox", {
+    name: /Attribute/i,
+  });
+  const andButtons = await screen.findAllByRole("button", { name: /AND/i });
+  const addConditionButtons = await screen.findAllByRole("button", {
+    name: /Add condition/i,
+  });
+  const removeConditionButton = await screen.findByRole("button", {
+    name: /Remove condition/i,
+  });
+  const removeGroupButton = await screen.findByRole("button", {
+    name: /Remove group/i,
+  });
+
+  expect(noConditions).not.toBeInTheDocument();
+  expect(attributeDropdown).toBeInTheDocument();
+  expect(andButtons).toHaveLength(2);
+  expect(addConditionButtons).toHaveLength(2);
+  expect(removeConditionButton).toBeInTheDocument();
+  expect(removeGroupButton).toBeInTheDocument();
+};
+
+const assertConditionCreated = async () => {
+  const noConditions = screen.queryByText("No conditions created yet");
+  const attributeDropdown = await screen.findByRole("combobox", {
+    name: /Attribute/i,
+  });
+  const removeButton = await screen.findByRole("button", {
+    name: /Remove condition/i,
+  });
+
+  expect(noConditions).not.toBeInTheDocument();
+  expect(attributeDropdown).toBeInTheDocument();
+  expect(removeButton).toBeInTheDocument();
+};
+
+const assertDefaultQuery = async () => {
+  const noConditions = screen.queryByText("No conditions created yet");
+  const attrs = screen.getAllByRole("combobox", {
+    name: /Attribute/i,
+  });
+  const removeConditionButtons = screen.getAllByRole("button", {
+    name: /remove condition/i,
+  });
+  const removeGroupButtons = screen.getAllByRole("button", {
+    name: /remove group/i,
+  });
+  const addConditionButtons = screen.getAllByRole("button", {
+    name: /add condition/i,
+  });
+  const addGroupButtons = screen.getAllByRole("button", {
+    name: /add group/i,
+  });
+
+  expect(noConditions).not.toBeInTheDocument();
+  expect(attrs).toHaveLength(7);
+  expect(removeConditionButtons).toHaveLength(7);
+  expect(removeGroupButtons).toHaveLength(2);
+  expect(addConditionButtons).toHaveLength(3);
+  expect(addGroupButtons).toHaveLength(1);
+};
+
 describe("QueryBuilder", () => {
-  describe("structure", () => {
-    it("renders the component as expected", () => {
-      render(<QueryBuilder />);
+  it("renders the component as expected when empty", () => {
+    renderUncontrolled();
 
-      const noConditions = screen.getByText("No conditions created yet");
-      expect(noConditions).toBeInTheDocument();
-
-      const andButton = screen.getByRole("button", { name: /AND/i });
-      expect(andButton).toBeInTheDocument();
-
-      const orButton = screen.getByRole("button", { name: /OR/i });
-      expect(orButton).toBeInTheDocument();
-
-      const addConditionButton = screen.getByRole("button", {
+    expect(screen.getByText("No conditions created yet")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /AND/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /OR/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", {
         name: /Add condition/i,
-      });
-      expect(addConditionButton).toBeInTheDocument();
-
-      const createConditionLink = screen.getByText("Create a condition");
-      expect(createConditionLink).toBeInTheDocument();
-
-      const addGroupButton = screen.getByRole("button", { name: /Add group/i });
-      expect(addGroupButton).toBeInTheDocument();
-
-      const createGroupLink = screen.getByText("condition group");
-      expect(createGroupLink).toBeInTheDocument();
-    });
-  });
-
-  describe("interaction", () => {
-    it("adds new condition (button)", async () => {
-      render(<QueryBuilder />);
-
-      const noConditions = screen.getByText("No conditions created yet");
-      expect(noConditions).toBeInTheDocument();
-
-      const addConditionButton = screen.getByRole("button", {
-        name: /Add condition/i,
-      });
-      expect(addConditionButton).toBeInTheDocument();
-
-      userEvent.click(addConditionButton);
-
-      const attributeDropdown = await screen.findByRole("combobox", {
-        name: /Attribute/i,
-      });
-      expect(attributeDropdown).toBeInTheDocument();
-      expect(noConditions).not.toBeInTheDocument();
-    });
-
-    it("adds new condition (link)", async () => {
-      render(<QueryBuilder />);
-
-      const noConditions = screen.getByText("No conditions created yet");
-      expect(noConditions).toBeInTheDocument();
-
-      const createConditionLink = screen.getByRole("button", {
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", {
+        name: /Add group/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", {
         name: /Create a condition/i,
-      });
-      expect(createConditionLink).toBeInTheDocument();
-
-      userEvent.click(createConditionLink);
-
-      const attributeDropdown = await screen.findByRole("combobox", {
-        name: /Attribute/i,
-      });
-      expect(attributeDropdown).toBeInTheDocument();
-      expect(noConditions).not.toBeInTheDocument();
-    });
-
-    it("adds new group (button)", async () => {
-      render(<QueryBuilder />);
-
-      const noConditions = screen.getByText("No conditions created yet");
-      expect(noConditions).toBeInTheDocument();
-
-      const addGroupButton = screen.getByRole("button", { name: /Add group/i });
-      expect(addGroupButton).toBeInTheDocument();
-
-      userEvent.click(addGroupButton);
-
-      const attributeDropdown = await screen.findByRole("combobox", {
-        name: /Attribute/i,
-      });
-      expect(attributeDropdown).toBeInTheDocument();
-      expect(noConditions).not.toBeInTheDocument();
-
-      const andButtons = await screen.findAllByRole("button", { name: /AND/i });
-      expect(andButtons).toHaveLength(2);
-
-      const addConditionButtons = await screen.findAllByRole("button", {
-        name: /Add condition/i,
-      });
-      expect(addConditionButtons).toHaveLength(2);
-    });
-
-    it("adds new group (link)", async () => {
-      render(<QueryBuilder />);
-
-      const noConditions = screen.getByText("No conditions created yet");
-      expect(noConditions).toBeInTheDocument();
-
-      const createGroupLink = screen.getByRole("button", {
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", {
         name: /condition group/i,
-      });
-      expect(createGroupLink).toBeInTheDocument();
-
-      userEvent.click(createGroupLink);
-
-      const attributeDropdown = await screen.findByRole("combobox", {
-        name: /Attribute/i,
-      });
-      expect(attributeDropdown).toBeInTheDocument();
-      expect(noConditions).not.toBeInTheDocument();
-
-      const andButton = await screen.findAllByRole("button", { name: /AND/i });
-      expect(andButton).toHaveLength(2);
-
-      const addConditionButtons = await screen.findAllByRole("button", {
-        name: /Add condition/i,
-      });
-      expect(addConditionButtons).toHaveLength(2);
-    });
-
-    it("removes created condition", async () => {
-      render(<QueryBuilder />);
-
-      const addConditionButton = screen.getByRole("button", {
-        name: /Add condition/i,
-      });
-      expect(addConditionButton).toBeInTheDocument();
-
-      userEvent.click(addConditionButton);
-
-      const attributeDropdown = await screen.findByRole("combobox", {
-        name: /Attribute/i,
-      });
-      expect(attributeDropdown).toBeInTheDocument();
-
-      const removeConditionButton = screen.getByRole("button", {
-        name: /Remove condition/i,
-      });
-      expect(removeConditionButton).toBeInTheDocument();
-
-      userEvent.click(removeConditionButton);
-
-      const confirmButton = await screen.findByRole("button", { name: /Yes/i });
-      expect(confirmButton).toBeInTheDocument();
-
-      userEvent.click(confirmButton);
-
-      const noConditions = await screen.findByText("No conditions created yet");
-      expect(noConditions).toBeInTheDocument();
-    });
-
-    it("removes created group", async () => {
-      render(<QueryBuilder />);
-
-      const addGroupButton = screen.getByRole("button", { name: /Add group/i });
-      expect(addGroupButton).toBeInTheDocument();
-
-      userEvent.click(addGroupButton);
-
-      const removeGroupButton = await screen.findByRole("button", {
-        name: /Remove group/i,
-      });
-      expect(removeGroupButton).toBeInTheDocument();
-
-      userEvent.click(removeGroupButton);
-
-      const confirmButton = await screen.findByRole("button", { name: /Yes/i });
-      expect(confirmButton).toBeInTheDocument();
-
-      userEvent.click(confirmButton);
-
-      const noConditions = await screen.findByText("No conditions created yet");
-      expect(noConditions).toBeInTheDocument();
-    });
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", {
+        name: /reset query/i,
+      })
+    ).toBeInTheDocument();
   });
 
-  describe("initial query", () => {
-    it("renders the query", () => {
-      render(<QueryBuilder defaultValue={initialQuery} />);
+  it("adds new condition when clicking on the add condition button", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled();
 
-      expect(() => screen.getByText("No conditions created yet")).toThrow();
-
-      const attrs = screen.getAllByRole("combobox", {
-        name: /Attribute/i,
-      });
-      expect(attrs).toHaveLength(7);
+    const addButton = screen.getByRole("button", {
+      name: /Add condition/i,
     });
+    await user.click(addButton);
+    await assertConditionCreated();
   });
 
-  describe("read only", () => {
-    it("should not be interactable", async () => {
-      const querySpy = vi.fn();
-      render(<QueryBuilder onChange={querySpy} readOnly />);
+  it("adds new condition when clicking on the create condition button", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled();
 
-      const buttons = screen.getAllByRole("button");
-
-      // toHaveAttribute("aria-disabled", "true") is used instead of toBeDisabled() since some buttons (IconButton) are still focusable when disabled
-      const assertButton = async (b: HTMLElement) => {
-        fireEvent.click(b);
-        expect(querySpy).not.toHaveBeenCalled();
-        expect(b).toHaveAttribute("aria-disabled", "true");
-      };
-
-      await Promise.all(buttons.map(assertButton));
+    const createButton = screen.getByRole("button", {
+      name: /Create a condition/i,
     });
+    await user.click(createButton);
+    await assertConditionCreated();
   });
 
-  describe("custom renderers", () => {
-    it("should render the right custom renders", async () => {
-      render(
-        <QueryBuilder
-          defaultValue={initialQuery}
-          renderers={{
-            custom: {
-              equals: () => <input data-testid="equals-renderer" />,
+  it("adds new group when clicking on the add group button", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled();
+
+    const addButton = screen.getByRole("button", { name: /Add group/i });
+    await user.click(addButton);
+    await assertGroupCreated();
+  });
+
+  it("adds new group when clicking on the create group button", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled();
+
+    const createButton = screen.getByRole("button", {
+      name: /condition group/i,
+    });
+    await user.click(createButton);
+    await assertGroupCreated();
+  });
+
+  it("shows confirmation dialog when trying to delete created condition", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled();
+
+    const addButton = screen.getByRole("button", {
+      name: /Add condition/i,
+    });
+    await user.click(addButton);
+    await assertConditionCreated();
+
+    const removeButton = screen.getByRole("button", {
+      name: /Remove condition/i,
+    });
+    await user.click(removeButton);
+
+    const confirmationDialog = await screen.findByRole("dialog", {
+      name: /remove condition/i,
+    });
+    const confirmButton = await screen.findByRole("button", { name: /Yes/i });
+    expect(confirmationDialog).toBeInTheDocument();
+    expect(confirmButton).toBeInTheDocument();
+  });
+
+  it("shows confirmation dialog when trying to delete created group", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled();
+
+    const addButton = screen.getByRole("button", { name: /Add group/i });
+    await user.click(addButton);
+    await assertGroupCreated();
+
+    const removeButton = await screen.findByRole("button", {
+      name: /Remove group/i,
+    });
+    await user.click(removeButton);
+
+    const confirmationDialog = await screen.findByRole("dialog", {
+      name: /remove group/i,
+    });
+    const confirmButton = await screen.findByRole("button", { name: /Yes/i });
+    expect(confirmationDialog).toBeInTheDocument();
+    expect(confirmButton).toBeInTheDocument();
+  });
+
+  it("removes created condition after confirmation", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled();
+
+    const addButton = screen.getByRole("button", {
+      name: /Add condition/i,
+    });
+    await user.click(addButton);
+
+    const removeButton = screen.getByRole("button", {
+      name: /Remove condition/i,
+    });
+    await user.click(removeButton);
+
+    const confirmButton = await screen.findByRole("button", { name: /Yes/i });
+    await user.click(confirmButton);
+
+    const noConditions = await screen.findByText("No conditions created yet");
+    expect(noConditions).toBeInTheDocument();
+  });
+
+  it("removes created group after confirmation", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled();
+
+    const addButton = screen.getByRole("button", { name: /Add group/i });
+    await user.click(addButton);
+
+    const removeButton = await screen.findByRole("button", {
+      name: /Remove group/i,
+    });
+    await user.click(removeButton);
+
+    const confirmButton = await screen.findByRole("button", { name: /Yes/i });
+    await user.click(confirmButton);
+
+    const noConditions = await screen.findByText("No conditions created yet");
+    expect(noConditions).toBeInTheDocument();
+  });
+
+  it("immediately removes created condition when disableConfirmation is true", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled({ disableConfirmation: true });
+
+    const addButton = screen.getByRole("button", {
+      name: /Add condition/i,
+    });
+    await user.click(addButton);
+
+    const removeButton = screen.getByRole("button", {
+      name: /Remove condition/i,
+    });
+    await user.click(removeButton);
+
+    const noConditions = await screen.findByText("No conditions created yet");
+    expect(noConditions).toBeInTheDocument();
+  });
+
+  it("immediately removes created group when disableConfirmation is true", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled({ disableConfirmation: true });
+
+    const addButton = screen.getByRole("button", { name: /Add group/i });
+    await user.click(addButton);
+
+    const removeButton = await screen.findByRole("button", {
+      name: /Remove group/i,
+    });
+    await user.click(removeButton);
+
+    const noConditions = await screen.findByText("No conditions created yet");
+    expect(noConditions).toBeInTheDocument();
+  });
+
+  it("not interactable when in read only mode", async () => {
+    const querySpy = vi.fn();
+    renderUncontrolled({
+      onChange: querySpy,
+      readOnly: true,
+    });
+
+    const buttons = screen.getAllByRole("button");
+
+    // toHaveAttribute("aria-disabled", "true") is used instead of toBeDisabled() since some buttons (IconButton) are still focusable when disabled
+    const assertButtons = async (b: HTMLElement) => {
+      fireEvent.click(b);
+      expect(querySpy).not.toHaveBeenCalled();
+      expect(b).toHaveAttribute("aria-disabled", "true");
+    };
+    await Promise.all(buttons.map(assertButtons));
+  });
+
+  it("renders the right custom renders", async () => {
+    renderUncontrolled({
+      defaultValue: defaultValueWithoutIds,
+      renderers: {
+        custom: {
+          equals: () => <input data-testid="equals-renderer" />,
+        },
+        numeric: () => <input data-testid="numeric-renderer" />,
+        text: {
+          DEFAULT: () => <input data-testid="text-renderer" />,
+          Contains: () => <input data-testid="contains-renderer" />,
+          Empty: () => <input data-testid="empty-renderer" />,
+        },
+      },
+    });
+
+    expect(screen.getByTestId("numeric-renderer")).toBeInTheDocument();
+    expect(screen.getByTestId("text-renderer")).toBeInTheDocument();
+    expect(screen.getByTestId("equals-renderer")).toBeInTheDocument();
+    expect(screen.queryByTestId("contains-renderer")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("empty-renderer")).not.toBeInTheDocument();
+  });
+
+  it("renders the custom render for the Empty operator when editing emptyRenderer", async () => {
+    renderUncontrolled({
+      defaultValue: defaultValueWithoutIds,
+      renderers: {
+        text: {
+          Empty: () => <input data-testid="empty-renderer" />,
+        },
+      },
+      emptyRenderer: [],
+    });
+
+    expect(screen.queryByTestId("empty-renderer")).toBeInTheDocument();
+  });
+
+  it("renders a text renderer", async () => {
+    renderUncontrolled({
+      defaultValue: {
+        combinator: "and",
+        rules: [
+          {
+            attribute: "category",
+            operator: "equals",
+            value: "stuff",
+          },
+        ],
+      },
+    });
+
+    expect(
+      screen.getByRole("combobox", {
+        name: /attribute/i,
+      })
+    ).toHaveTextContent("Category");
+    expect(
+      screen.getByRole("combobox", {
+        name: /operator/i,
+      })
+    ).toHaveTextContent("Equals");
+    expect(
+      screen.getByRole("textbox", {
+        name: /value/i,
+      })
+    ).toHaveValue("stuff");
+  });
+
+  it("renders a text area renderer", async () => {
+    renderUncontrolled({
+      defaultValue: {
+        combinator: "and",
+        rules: [
+          {
+            attribute: "info",
+            operator: "equals",
+            value: "stuff",
+          },
+        ],
+      },
+    });
+
+    expect(
+      screen.getByRole("combobox", {
+        name: /attribute/i,
+      })
+    ).toHaveTextContent("Info");
+    expect(
+      screen.getByRole("combobox", {
+        name: /operator/i,
+      })
+    ).toHaveTextContent("Equals");
+    expect(
+      screen.getByRole("textbox", {
+        name: /value/i,
+      })
+    ).toHaveValue("stuff");
+  });
+
+  it("renders a numeric renderer", async () => {
+    renderUncontrolled({
+      defaultValue: {
+        combinator: "and",
+        rules: [
+          {
+            attribute: "price",
+            operator: "notEqual",
+            value: 12,
+          },
+        ],
+      },
+    });
+
+    expect(
+      screen.getByRole("combobox", {
+        name: /attribute/i,
+      })
+    ).toHaveTextContent("Price");
+    expect(
+      screen.getByRole("combobox", {
+        name: /operator/i,
+      })
+    ).toHaveTextContent(/not equal to/i);
+    expect(
+      screen.getByRole("textbox", {
+        name: /value/i,
+      })
+    ).toHaveValue("12");
+  });
+
+  it("renders a numeric range renderer", async () => {
+    renderUncontrolled({
+      defaultValue: {
+        combinator: "and",
+        rules: [
+          {
+            attribute: "price",
+            operator: "range",
+            value: {
+              from: 12,
+              to: 20,
             },
-            numeric: () => <input data-testid="numeric-renderer" />,
-            text: {
-              DEFAULT: () => <input data-testid="text-renderer" />,
-              Contains: () => <input data-testid="contains-renderer" />,
-              Empty: () => <input data-testid="empty-renderer" />,
-            },
-          }}
-        />
-      );
-
-      const numericRenderer = screen.getByTestId("numeric-renderer");
-      expect(numericRenderer).toBeInTheDocument();
-
-      const textRenderer = screen.getByTestId("text-renderer");
-      expect(textRenderer).toBeInTheDocument();
-
-      const equalsRenderer = screen.getByTestId("equals-renderer");
-      expect(equalsRenderer).toBeInTheDocument();
-
-      const containsRenderer = screen.queryByTestId("contains-renderer");
-      expect(containsRenderer).not.toBeInTheDocument();
-
-      const emptyRenderer = screen.queryByTestId("empty-renderer");
-      expect(emptyRenderer).not.toBeInTheDocument();
+          },
+        ],
+      },
     });
 
-    it("should render the custom render for the Empty operator", async () => {
-      render(
-        <QueryBuilder
-          defaultValue={initialQuery}
-          renderers={{
-            text: {
-              Empty: () => <input data-testid="empty-renderer" />,
-            },
-          }}
-          emptyRenderer={[]}
-        />
-      );
-
-      const emptyRenderer = screen.queryByTestId("empty-renderer");
-      expect(emptyRenderer).toBeInTheDocument();
-    });
+    expect(
+      screen.getByRole("combobox", {
+        name: /attribute/i,
+      })
+    ).toHaveTextContent("Price");
+    expect(
+      screen.getByRole("combobox", {
+        name: /operator/i,
+      })
+    ).toHaveTextContent("Range");
+    expect(
+      screen.getByRole("textbox", {
+        name: /from/i,
+      })
+    ).toHaveValue("12");
+    expect(
+      screen.getByRole("textbox", {
+        name: "To",
+      })
+    ).toHaveValue("20");
   });
 
-  describe("disableConfirmation", () => {
-    it("should show confirmation dialog", async () => {
-      render(
-        <QueryBuilder
-          defaultValue={{
-            id: 1,
-            combinator: "and",
-            rules: [
-              {
-                id: 2,
-                attribute: "price",
-                operator: "lessThan",
-                value: 10,
-              },
-            ],
-          }}
-        />
-      );
-
-      const removeBtn = screen.getByRole("button", {
-        name: /Remove condition/i,
-      });
-
-      userEvent.click(removeBtn);
-
-      const dialog = await screen.findByRole("dialog");
-      expect(dialog).toBeInTheDocument();
+  it("renders a boolean renderer", async () => {
+    renderUncontrolled({
+      defaultValue: {
+        combinator: "and",
+        rules: [
+          {
+            attribute: "in_stock",
+            operator: "equalsTo",
+            value: false,
+          },
+        ],
+      },
     });
 
-    it("should remove immediately", async () => {
-      render(
-        <QueryBuilder
-          defaultValue={{
-            id: 1,
-            combinator: "and",
-            rules: [
-              {
-                id: 2,
-                attribute: "price",
-                operator: "lessThan",
-                value: 10,
-              },
-            ],
-          }}
-          disableConfirmation
-        />
-      );
+    expect(
+      screen.getByRole("combobox", {
+        name: /attribute/i,
+      })
+    ).toHaveTextContent("In stock");
+    expect(
+      screen.getByRole("combobox", {
+        name: /operator/i,
+      })
+    ).toHaveTextContent("=");
+    expect(
+      screen.getByRole("combobox", {
+        name: /value/i,
+      })
+    ).toHaveTextContent("False");
+  });
 
-      const removeBtn = screen.getByRole("button", {
-        name: /Remove condition/i,
-      });
+  it("renders a date time renderer", async () => {
+    renderUncontrolled({
+      defaultValue: {
+        combinator: "and",
+        rules: [
+          {
+            attribute: "release",
+            operator: "equalsTo",
+          },
+        ],
+      },
+    });
 
-      userEvent.click(removeBtn);
+    expect(
+      screen.getByRole("combobox", {
+        name: /attribute/i,
+      })
+    ).toHaveTextContent("Release");
+    expect(
+      screen.getByRole("combobox", {
+        name: /operator/i,
+      })
+    ).toHaveTextContent("Equal to");
+    expect(
+      screen.getByRole("combobox", {
+        name: /date/i,
+      })
+    ).toHaveTextContent("Select Date");
+    expect(
+      screen.getByRole("combobox", {
+        name: /time/i,
+      })
+    ).toHaveTextContent("Select Time");
+  });
 
-      const noConditions = await screen.findByText("No conditions created yet");
-      expect(noConditions).toBeInTheDocument();
+  it("renders a date time range renderer", async () => {
+    renderUncontrolled({
+      defaultValue: {
+        combinator: "and",
+        rules: [
+          {
+            attribute: "release",
+            operator: "range",
+          },
+        ],
+      },
+    });
+
+    expect(
+      screen.getByRole("combobox", {
+        name: /attribute/i,
+      })
+    ).toHaveTextContent("Release");
+    expect(
+      screen.getByRole("combobox", {
+        name: /operator/i,
+      })
+    ).toHaveTextContent("Range");
+    expect(
+      screen.getByRole("combobox", {
+        name: /start date/i,
+      })
+    ).toHaveTextContent("Select Start Date");
+    expect(
+      screen.getByRole("combobox", {
+        name: /start time/i,
+      })
+    ).toHaveTextContent("Select Start Time");
+    expect(
+      screen.getByRole("combobox", {
+        name: /end date/i,
+      })
+    ).toHaveTextContent("Select End Date");
+    expect(
+      screen.getByRole("combobox", {
+        name: /end time/i,
+      })
+    ).toHaveTextContent("Select End Time");
+  });
+
+  it("lists the right operators for an attribute depending on the selected combinator", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled({
+      defaultValue: {
+        combinator: "and",
+        rules: [
+          {
+            attribute: "price",
+            operator: "notEqual",
+          },
+        ],
+      },
+    });
+
+    const operatorDropdown = screen.getByRole("combobox", {
+      name: /operator/i,
+    });
+    await user.click(operatorDropdown);
+
+    const options = screen
+      .getAllByRole("option")
+      .map((element) => element.textContent);
+    expect(options).toEqual([
+      "Greater than (>)",
+      "Less than (<)",
+      "Equal to (=)",
+      "Greater than or equal to (>=)",
+      "Less than or equal to (<=)",
+      "Not equal to (!=)",
+      "Range",
+    ]);
+
+    const orButton = screen.getByRole("button", {
+      name: "OR",
+    });
+    await user.click(orButton);
+    await user.click(operatorDropdown);
+    expect(screen.getByRole("option")).toHaveTextContent("Equal to (=)");
+  });
+
+  it("enables to create a rule (select attribute > select operator > type value)", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled();
+
+    const addButton = screen.getByRole("button", {
+      name: /Add condition/i,
+    });
+    await user.click(addButton);
+
+    const attributeDropdown = await screen.findByRole("combobox", {
+      name: /Attribute/i,
+    });
+    await user.click(attributeDropdown);
+
+    const attrs = screen
+      .getAllByRole("option")
+      .map((element) => element.textContent);
+    expect(attrs).toEqual([
+      "Price",
+      "Category",
+      "In stock",
+      "Release",
+      "Custom",
+      "Info",
+    ]);
+    await user.click(screen.getByRole("option", { name: "Category" }));
+
+    const operatorDropdown = await screen.findByRole("combobox", {
+      name: /Operator/i,
+    });
+    await user.click(operatorDropdown);
+
+    const opts = screen
+      .getAllByRole("option")
+      .map((element) => element.textContent);
+    expect(opts).toEqual([
+      "Equals",
+      "Equals Ignore Case",
+      "Contains",
+      "A string begins with",
+      "A string ends with",
+      "Is Not empty",
+      "Is Not",
+      "Empty",
+    ]);
+    await user.click(screen.getByRole("option", { name: "Contains" }));
+
+    const textbox = screen.getByRole("textbox", { name: /Value/i });
+    await user.type(textbox, "stuff");
+    expect(textbox).toHaveValue("stuff");
+  });
+
+  // TODO - remove in v6 since "query" is deprecated
+  it("renders the default query value (query)", () => {
+    renderUncontrolled({ query: defaultValueWithIds });
+    assertDefaultQuery();
+  });
+
+  it("renders the default query value (defaultValue)", () => {
+    renderUncontrolled({ defaultValue: defaultValueWithIds });
+    assertDefaultQuery();
+  });
+
+  it("renders the default query value (value)", () => {
+    renderUncontrolled({ defaultValue: defaultValueWithoutIds });
+    assertDefaultQuery();
+  });
+
+  it("doesn't call onChange on first render", () => {
+    const querySpy = vi.fn();
+    renderUncontrolled({
+      defaultValue: defaultValueWithoutIds,
+      onChange: querySpy,
+    });
+    expect(querySpy).not.toHaveBeenCalled();
+  });
+
+  it("doesn't call onChange in controlled mode", async () => {
+    const user = userEvent.setup();
+    const querySpy = vi.fn();
+    renderControlled({ onChange: querySpy });
+
+    const updateQuery = screen.getByRole("button", { name: /update query/i });
+    await user.click(updateQuery);
+    expect(querySpy).not.toHaveBeenCalled();
+  });
+
+  it("calls onChange only when changing values", async () => {
+    const user = userEvent.setup();
+    const querySpy = vi.fn();
+    renderControlled({ value: defaultValueWithoutIds, onChange: querySpy });
+
+    // Update a value
+    await user.type(
+      screen.getAllByRole("textbox", { name: /value/i })[0],
+      "value"
+    );
+    expect(querySpy).toHaveBeenCalledTimes(1);
+
+    // Update an attribute
+    const attr = screen.getAllByRole("combobox", { name: /attribute/i })[0];
+    await user.click(attr);
+    const opt = await screen.findAllByRole("options")[0];
+    await user.click(opt);
+    waitFor(() => {
+      expect(querySpy).toHaveBeenCalledTimes(2);
     });
   });
 });
