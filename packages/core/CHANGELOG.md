@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.58.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.58.0...@hitachivantara/uikit-react-core@5.58.1) (2024-03-15)
+
+### Bug Fixes
+
+- **button:** disabled variants ([e2b2034](https://github.com/lumada-design/hv-uikit-react/commit/e2b2034f4f045d78a207df3b6d41e7597006dbc9))
+
 # 5.58.0 (2024-03-14)
 
 ### Features

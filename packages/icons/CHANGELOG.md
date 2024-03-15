@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.9.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.8.7...@hitachivantara/uikit-react-icons@5.9.0) (2024-03-15)
+
+### Features
+
+- add new Temperature icon ([8ca0d0c](https://github.com/lumada-design/hv-uikit-react/commit/8ca0d0c84878639a65ca5fce901e51b8a3eea8b7))
+
 ## 5.8.7 (2024-03-14)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons
