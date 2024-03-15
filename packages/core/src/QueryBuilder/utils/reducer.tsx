@@ -95,7 +95,11 @@ const reducer: Reducer<Query, QueryAction> = (state, action) => {
     case "set-value": {
       const node = findNodeById(action.id, query);
       if (node && "operator" in node) {
-        node.value = action.value ?? undefined;
+        // Making sure we are not adding "value: undefined" to the object when value wasn't even set (because of EmptyValue)
+        // Without this we can trigger onChange
+        if ("value" in node) {
+          node.value = action.value ?? undefined;
+        }
 
         return query;
       }
