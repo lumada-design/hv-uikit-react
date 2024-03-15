@@ -1,3 +1,5 @@
+import { HvOptional } from "../types/generic";
+
 export const defaultRendererKey = "DEFAULT";
 
 const defaultAttributes = [
@@ -38,21 +40,32 @@ export type HvQueryBuilderQueryRuleValue =
   | HvQueryBuilderDateTimeStrings
   | HvQueryBuilderDateTimeRange;
 
-export interface HvQueryBuilderQueryRule {
+export type HvQueryBuilderQueryRule = HvOptional<QueryRule, "id">;
+
+export interface HvQueryBuilderQueryGroup
+  extends Omit<HvOptional<QueryGroup, "id">, "rules"> {
+  rules: Array<HvQueryBuilderQueryRule | HvQueryBuilderQueryGroup>;
+}
+
+export type HvQueryBuilderQuery = HvQueryBuilderQueryGroup;
+
+export interface QueryRule {
   id: React.Key;
   attribute?: string;
   operator?: string;
   value?: HvQueryBuilderQueryRuleValue;
 }
 
-export interface HvQueryBuilderQueryGroup {
+export interface QueryGroup {
   id: React.Key;
   combinator: string;
-  rules: Array<HvQueryBuilderQueryRule | HvQueryBuilderQueryGroup>;
+  rules: Array<QueryRule | QueryGroup>;
 }
 
-export type HvQueryBuilderQuery = HvQueryBuilderQueryGroup;
+export type Query = QueryGroup;
 
+// TODO - remove this type in v6
+/** @deprecated */
 export interface HvQueryBuilderChangedQuery
   extends Omit<HvQueryBuilderQuery, "id" | "rules"> {
   rules: Array<
@@ -124,7 +137,8 @@ export type QueryAction =
     }
   | {
       type: "set-query";
-      query: HvQueryBuilderQuery;
+      // Query with ids
+      query: Query;
     };
 
 export interface AskAction {

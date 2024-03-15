@@ -20,9 +20,8 @@ import {
   HvQueryBuilderQueryOperator,
   HvQueryBuilderRenderers,
   defaultRendererKey,
-  HvQueryBuilderChangedQuery,
 } from "./types";
-import { clearNodeIds, emptyGroup } from "./utils";
+import { clearNodeIds, emptyGroup, setNodeIds } from "./utils";
 import reducer from "./utils/reducer";
 import { useClasses, staticClasses } from "./QueryBuilder.styles";
 import { useControlled } from "../hooks/useControlled";
@@ -49,7 +48,7 @@ export interface HvQueryBuilderProps {
    * */
   query?: HvQueryBuilderQuery; // TODO - remove in v6
   /** Callback fired when the query changes. */
-  onChange?: (value: HvQueryBuilderChangedQuery | HvQueryBuilderQuery) => void; // TODO - only use HvQueryBuilderQuery in v6
+  onChange?: (value: HvQueryBuilderQuery) => void;
   /** Max depth of nested query groups. */
   maxDepth?: number;
   /** Object containing all the labels. */
@@ -130,10 +129,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   const initialQuery = useRef(
     value ?? defaultValue ?? queryProp ?? emptyGroup()
   );
-  const [query, setQuery] = useControlled(
-    structuredClone(value),
-    structuredClone(initialQuery.current)
-  );
+  const [query, setQuery] = useControlled(value, initialQuery.current);
   const prevQuery = useRef(query);
 
   const [pendingAction, setPendingAction] = useState<AskAction>();
@@ -141,7 +137,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
 
   const [state, dispatchAction] = useReducer(
     reducer,
-    structuredClone(initialQuery.current)
+    setNodeIds(structuredClone(initialQuery.current))
   );
 
   const contextValue = useMemo(
@@ -186,30 +182,36 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   }, [attributes]);
 
   useEffect(() => {
-    // "value" prop was updated by user
+    // "value" prop was updated by user (when controlled)
     if (!isEqual(prevQuery.current, query)) {
       dispatchAction({
         type: "set-query",
-        query,
+        query: setNodeIds(structuredClone(query), state),
       });
-      prevQuery.current = structuredClone(query);
-    } else if (!isEqual(state, query)) {
+      prevQuery.current = query;
+    } else if (
+      !isEqual(
+        clearNodeIds(structuredClone(state)),
+        clearNodeIds(structuredClone(query))
+      )
+    ) {
       setInitialState(false);
 
-      // TODO - remove state manipulation with clearNodeIds in v6 (only keep else statement)
-      // To avoid breaking changes, clearNodeIds is used only when uncontrolled
+      // TODO - remove "true" from clearNodeIds in v6 (only keep else statement)
+      // To avoid breaking changes, clearNodeIds will delete all ids provided by the user when uncontrolled
+      // In the future if the user provides ids, it doesn't make sense to remove them with onChange
       if (!controlled.current) {
         onChange?.(
-          clearNodeIds(structuredClone(state)) as HvQueryBuilderChangedQuery
+          clearNodeIds(structuredClone(state), true) as HvQueryBuilderQuery
         );
       } else {
-        // When controlled, the ids provided by the user are not removed
-        onChange?.(structuredClone(state));
+        // When controlled, the ids provided by the user are not removed. Only the auto generated ones.
+        onChange?.(clearNodeIds(structuredClone(state)) as HvQueryBuilderQuery);
       }
 
-      prevQuery.current = structuredClone(state);
+      prevQuery.current = state;
       // This will only run if uncontrolled
-      setQuery(structuredClone(state));
+      setQuery(state);
     }
   }, [onChange, query, setQuery, state]);
 

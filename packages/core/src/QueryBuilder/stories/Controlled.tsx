@@ -4,7 +4,6 @@ import {
   HvLoading,
   HvQueryBuilder,
   HvQueryBuilderProps,
-  HvQueryBuilderQuery,
 } from "@hitachivantara/uikit-react-core";
 
 const attributes: HvQueryBuilderProps["attributes"] = {
@@ -27,20 +26,11 @@ const attributes: HvQueryBuilderProps["attributes"] = {
 };
 
 const initialQuery: HvQueryBuilderProps["value"] = {
-  id: 1,
   combinator: "and",
-  rules: [
-    {
-      id: 2,
-      attribute: "price",
-      operator: "lessThan",
-      value: 10,
-    },
-  ],
+  rules: [{ attribute: "price", operator: "lessThan", value: 10 }],
 };
 
 const emptyQuery: HvQueryBuilderProps["value"] = {
-  id: "1",
   combinator: "and",
   rules: [],
 };
@@ -74,7 +64,9 @@ export const Controlled = () => {
     <HvQueryBuilder
       attributes={attributes}
       value={query}
-      onChange={(newQuery) => setQuery(newQuery as HvQueryBuilderQuery)}
+      onChange={(newQuery) => {
+        setQuery(newQuery);
+      }}
       disableConfirmation
     />
   );
