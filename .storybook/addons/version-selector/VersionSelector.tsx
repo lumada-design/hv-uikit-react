@@ -35,6 +35,8 @@ const VersionSelector = () => {
         active={false}
         title={"Select theme"}
         placeholder="Select theme"
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
       >
         {`Version: ${selectedVersion}`}
       </IconButton>

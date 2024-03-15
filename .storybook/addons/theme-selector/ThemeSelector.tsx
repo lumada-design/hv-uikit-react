@@ -74,6 +74,8 @@ const ThemeSelector = ({ api }) => {
           title="Select theme"
           style={{ width: 200 }}
           placeholder="Select theme"
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
         >
           {`Theme: ${selectedTheme?.label}`}
         </IconButton>
