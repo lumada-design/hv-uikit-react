@@ -164,7 +164,6 @@ export const SectionVariant: StoryObj<HvGlobalActionsProps> = {
           "The `section` variant of Global Actions should be used to group related blocks of information. Use with parsimony, you might not need such a clear separator.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const customTitle = (

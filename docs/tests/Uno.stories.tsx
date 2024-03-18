@@ -5,7 +5,6 @@ import { Abacus } from "@hitachivantara/uikit-react-icons";
 export default {
   title: "Tests/Uno",
   parameters: {
-    eyes: { include: true },
     docs: { disable: true },
   },
 };

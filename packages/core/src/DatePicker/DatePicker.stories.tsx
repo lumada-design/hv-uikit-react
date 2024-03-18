@@ -114,7 +114,6 @@ export const Variants: StoryObj<HvDatePickerProps> = {
 
 export const Localized: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story: "Datepicker sample with values localized.",
@@ -154,7 +153,6 @@ export const Localized: StoryObj<HvDatePickerProps> = {
 
 export const WithActions: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story: "Datepicker with action buttons at the bottom.",
@@ -175,7 +173,6 @@ export const WithActions: StoryObj<HvDatePickerProps> = {
 
 export const WithCustomLabels: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story:
@@ -203,7 +200,6 @@ export const WithCustomLabels: StoryObj<HvDatePickerProps> = {
 
 export const RangeMode: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story:
@@ -259,9 +255,6 @@ export const NearInvalid: StoryObj<HvDatePickerProps> = {
 };
 
 export const Controlled: StoryObj<HvDatePickerProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   decorators: [
     (Story) => <div style={{ display: "flex", gap: 10 }}>{Story()}</div>,
   ],
@@ -400,7 +393,6 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
 
 export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story:

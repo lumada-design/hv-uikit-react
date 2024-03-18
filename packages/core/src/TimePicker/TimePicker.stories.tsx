@@ -131,7 +131,6 @@ export const Controlled: StoryObj<HvTimePickerProps> = {
           "Using `HvTimePicker` with _controlled_ state, using the `value` with initial `null` state to render the placeholder.",
       },
     },
-    eyes: { include: false },
   },
   decorators: [makeDecorator({ minHeight: 200, width: 200 })],
   render: () => {
@@ -203,7 +202,6 @@ export const Native: StoryObj<HvTimePickerProps> = {
           This can be useful for providing a better mobile experience. Disabled state must be managed by the user",
       },
     },
-    eyes: { include: false },
   },
   decorators: [makeDecorator({ minHeight: 200 })],
   render: () => {

@@ -134,7 +134,6 @@ export const Controller: StoryObj<HvSnackbarProps> = {
         story: "Different Snackbar variants with controller.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const SimpleSnackbar = ({ variant, ...others }: HvSnackbarProps) => {

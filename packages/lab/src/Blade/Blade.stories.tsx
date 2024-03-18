@@ -66,9 +66,6 @@ export const Disabled: StoryObj<HvBladeProps> = {
 };
 
 export const Controlled: StoryObj<HvBladeProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     const [expandedState, setExpandedState] = useState(true);
     const handleToggle = (newState?: boolean) => {

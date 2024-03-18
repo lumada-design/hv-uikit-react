@@ -64,9 +64,6 @@ export const Main: StoryObj<HvDropdownProps> = {
     (Story) => <div style={{ minHeight: 400 }}>{Story()}</div>,
   ],
   parameters: {
-    eyes: {
-      runBefore() {},
-    },
     docs: {
       source: {
         code: MainRaw,
@@ -131,7 +128,6 @@ export const Empty: StoryObj<HvDropdownProps> = {
         code: EmptyRaw,
       },
     },
-    eyes: { include: false },
   },
   decorators: [widthDecorator],
   render: () => <EmptyStory />,
@@ -176,7 +172,6 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
         code: ExternalErrorMessageRaw,
       },
     },
-    eyes: { include: false },
   },
   render: () => <ExternalErrorMessageStory />,
 };
@@ -192,7 +187,6 @@ export const WithDefinedHeight: StoryObj<HvDropdownProps> = {
         code: WithDefinedHeightRaw,
       },
     },
-    eyes: { include: false },
   },
   decorators: [widthDecorator],
   render: () => <WithDefinedHeightStory />,
@@ -209,7 +203,6 @@ export const Virtualized: StoryObj<HvDropdownProps> = {
         code: VirtualizedRaw,
       },
     },
-    eyes: { include: false },
   },
   decorators: [widthDecorator],
   render: () => <VirtualizedStory />,

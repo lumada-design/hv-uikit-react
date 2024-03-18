@@ -4,7 +4,11 @@ on:
   pull_request:
     branches:
       - master
-      - "next*"
+
+# Cancel previous call in progress
+concurrency:
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   static-checks:
@@ -13,12 +17,10 @@ jobs:
     with:
       a11y-exit: true
 
-  applitools:
-    name: Applitools
-    uses: ./.github/workflows/tests-applitools.yml
+  chromatic:
+    name: Chromatic
+    uses: ./.github/workflows/tests-chromatic.yml
     secrets: inherit
-    with:
-      batch-id: pr-${{ github.event.number }}
 
   artifacts:
     name: Artifacts
@@ -26,3 +28,4 @@ jobs:
     secrets: inherit
     with:
       publish-folder: pr-${{ github.event.number }}
+      publish-storybook: false

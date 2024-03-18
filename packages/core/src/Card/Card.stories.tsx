@@ -298,9 +298,6 @@ export const OnlyTitle: StoryObj<HvCardProps> = {
 };
 
 export const KPICard: StoryObj<HvCardProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     const [checked, setChecked] = useState(0);
     const data = {
@@ -415,7 +412,6 @@ export const Selectable: StoryObj<HvCardProps> = {
           "A card sample showcasing the ability to select in the content and click action.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [checked, setChecked] = useState(false);
@@ -503,7 +499,6 @@ export const SelectableNoFooter: StoryObj<HvCardProps> = {
         story: "A card sample showcasing the ability to select in the content.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [selected, setSelected] = useState(false);

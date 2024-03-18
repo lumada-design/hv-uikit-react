@@ -10,9 +10,6 @@ import {
 const meta: Meta<typeof HvCheckBoxGroup> = {
   title: "Components/Checkbox/Checkbox Group",
   component: HvCheckBoxGroup,
-  parameters: {
-    eyes: { include: false },
-  },
 };
 
 export default meta;
@@ -132,7 +129,6 @@ export const Controlled: StoryObj<HvCheckBoxGroupProps> = {
         story: "Controlled checkbox group.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [value, setValue] = useState(["2"]);
@@ -157,9 +153,6 @@ export const Controlled: StoryObj<HvCheckBoxGroupProps> = {
 };
 
 export const ShiftSelect: StoryObj<HvCheckBoxGroupProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     return (
       <HvCheckBoxGroup label="Choose the best checkbox">
