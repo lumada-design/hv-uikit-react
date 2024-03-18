@@ -150,7 +150,13 @@ export const HvWizardActions = ({
           <HvButton
             variant="secondaryGhost"
             className={cx(classes.buttonWidth, classes.buttonSpacing)}
-            onClick={() => handleBeforeNext?.() || setTab((t) => t + 1)}
+            onClick={() => {
+              if (handleBeforeNext) {
+                handleBeforeNext();
+              } else {
+                setTab((t) => t + 1);
+              }
+            }}
             disabled={!skippable && !context?.[tab]?.valid}
             endIcon={<Forwards />}
           >
