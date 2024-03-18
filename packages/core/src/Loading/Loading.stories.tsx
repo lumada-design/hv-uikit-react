@@ -112,7 +112,7 @@ const Progress = ({
 
 export const Determinate: StoryObj<HvLoadingProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (

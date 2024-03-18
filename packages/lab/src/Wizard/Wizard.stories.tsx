@@ -227,7 +227,7 @@ export const Skippable = () => {
 
 Skippable.parameters = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
 };
 
@@ -331,6 +331,6 @@ export const ComponentBreakDown = () => {
 
 ComponentBreakDown.parameters = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
 };

@@ -254,7 +254,7 @@ export const WithTitle: StoryObj<HvListContainerProps> = {
 
 export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const initialSelection = {

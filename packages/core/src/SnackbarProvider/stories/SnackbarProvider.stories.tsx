@@ -7,7 +7,7 @@ import SnackbarProviderButtonsRaw from "./SnackbarProviderButtons?raw";
 export default {
   title: "Components/Snackbar/Provider",
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
 } as Meta<typeof HvSnackbarProvider>;
 

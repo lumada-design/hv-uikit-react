@@ -241,7 +241,7 @@ export const LimitedWithCustomLabels: StoryObj<HvTextAreaProps> = {
     docs: {
       description: { story: "Text area char count with a custom labels." },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const validationMessages = {
@@ -292,7 +292,7 @@ export const Resizable: StoryObj<HvTextAreaProps> = {
     docs: {
       description: { story: "Text area that allow resizing." },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (
@@ -330,7 +330,7 @@ export const CustomValidation: StoryObj<HvTextAreaProps> = {
         story: "Text area value that can't contain numbers.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const validationMessages = {
@@ -359,7 +359,7 @@ export const AutoScroll: StoryObj<HvTextAreaProps> = {
           "Text Area using `autoScroll` to automatically scroll down. Auto-scroll stops once the user scrolls up, and resumes once the user scrolls back to the bottom.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [value, setValue] = useState<string>("");

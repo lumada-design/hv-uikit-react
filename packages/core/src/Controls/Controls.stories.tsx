@@ -33,7 +33,7 @@ const meta: Meta<typeof HvControls> = {
   // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvLeftControl, HvRightControl },
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
 };
 

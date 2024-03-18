@@ -82,7 +82,7 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
         story: "DropDownMenu toggle opening controlled by an external button.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [open, setOpen] = useState(false);

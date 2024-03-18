@@ -24,7 +24,7 @@ import { renderTooltip } from "./customTooltip";
 const meta: Meta<typeof HvBarChart> = {
   title: "Visualizations/Bar Chart",
   component: HvBarChart,
-  parameters: { eyes: { include: false } },
+  parameters: { chromatic: { disableSnapshot: true } },
   decorators: [vizDecorator],
 };
 export default meta;

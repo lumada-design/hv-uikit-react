@@ -328,7 +328,7 @@ export const SingleUpload: StoryObj<HvFileUploaderProps> = {
           "FileUploader which permits the upload of a single file at a time",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [list, setList] = useState<HvFileData[]>([]);
@@ -395,7 +395,7 @@ export const CustomizedFileTypes: StoryObj<HvFileUploaderProps> = {
         story: "FileUploader which restricts the upload to xls and xlsx files.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [list, setList] = useState<HvFileData[]>([]);

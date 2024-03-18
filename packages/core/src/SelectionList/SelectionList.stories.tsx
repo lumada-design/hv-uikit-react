@@ -12,7 +12,7 @@ const meta: Meta<typeof HvSelectionList> = {
   title: "Components/List/Selection List",
   component: HvSelectionList,
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
 };
 export default meta;
@@ -105,7 +105,7 @@ export const Controlled: StoryObj<HvSelectionListProps> = {
         story: "Controlled selection list.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [value, setValue] = useState(["2"]);
@@ -142,7 +142,7 @@ export const Controlled: StoryObj<HvSelectionListProps> = {
 
 export const CleanMultiSelection: StoryObj<HvSelectionListProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (

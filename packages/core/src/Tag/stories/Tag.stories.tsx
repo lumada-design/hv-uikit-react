@@ -225,7 +225,7 @@ export const SelectableControlled: StoryObj<HvTagProps> = {
         code: SelectableControlledRaw,
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <SelectableControlledStory />,
 };

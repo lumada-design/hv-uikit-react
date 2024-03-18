@@ -110,7 +110,7 @@ export const WithState: StoryObj<HvBadgeProps> = {
         story: "Badge sample using react hooks to set the number of events.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [count, setCount] = useState(1);
@@ -135,7 +135,7 @@ export const Accessibility: StoryObj<HvBadgeProps> = {
         story: "If you want to specify a custom aria-label, use the role prop.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => (
     <HvBadge

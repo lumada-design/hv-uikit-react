@@ -4,25 +4,9 @@ on:
   pull_request:
     branches:
       - master
-      - "next*"
 
 jobs:
-  static-checks:
-    name: Static Checks
-    uses: ./.github/workflows/static-checks.yml
-    with:
-      a11y-exit: true
-
-  applitools:
-    name: Applitools
-    uses: ./.github/workflows/tests-applitools.yml
+  chromatic:
+    name: Chromatic
+    uses: ./.github/workflows/tests-chromatic.yml
     secrets: inherit
-    with:
-      batch-id: pr-${{ github.event.number }}
-
-  artifacts:
-    name: Artifacts
-    uses: ./.github/workflows/documentation.yml
-    secrets: inherit
-    with:
-      publish-folder: pr-${{ github.event.number }}

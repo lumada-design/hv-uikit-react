@@ -12,7 +12,7 @@ const meta: Meta<typeof HvGrid> = {
   title: "Components/Grid/Grid",
   component: HvGrid,
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
 };
 export default meta;

@@ -82,7 +82,7 @@ export const InitialState: StoryObj<HvFlowProps> = {
         code: InitialStateRaw,
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <InitialStateStory />,
 };
@@ -98,7 +98,7 @@ export const Visualizations: StoryObj<HvFlowProps> = {
         code: VisualizationsRaw,
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <VisualizationsStory />,
 };
@@ -110,7 +110,7 @@ export const DynamicNodes: StoryObj<HvFlowProps> = {
         code: DynamicRaw,
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <DynamicStory />,
 };
@@ -126,7 +126,7 @@ export const CustomDrop: StoryObj<HvFlowProps> = {
         code: CustomDropRaw,
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <CustomDropStory />,
 };
@@ -142,7 +142,7 @@ export const NoGroups: StoryObj<HvFlowProps> = {
         code: NoGroupsRaw,
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <NoGroupStory />,
 };
@@ -158,7 +158,7 @@ export const DynamicHandles: StoryObj<HvFlowProps> = {
         code: DynamicHandlesRaw,
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <DynamicHandlesStory />,
 };
@@ -174,7 +174,7 @@ export const InvalidFlow: StoryObj<HvFlowProps> = {
         code: InvalidRaw,
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <InvalidStory />,
 };

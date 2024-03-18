@@ -23,7 +23,7 @@ const meta: Meta<typeof HvAvatar> = {
   component: HvAvatar,
   decorators: [flexDecorator],
   parameters: {
-    eyes: { disable: true },
+    chromatic: { disableSnapshot: true },
   },
 };
 export default meta;

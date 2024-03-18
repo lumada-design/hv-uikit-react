@@ -47,7 +47,7 @@ export const Main: StoryObj<HvFilterGroupProps> = {
 
 export const ResetToDefault: StoryObj<HvFilterGroupProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: {
       source: {
         code: ResetToDefaultRaw,
@@ -60,7 +60,7 @@ export const ResetToDefault: StoryObj<HvFilterGroupProps> = {
 
 export const Uncontrolled: StoryObj<HvFilterGroupProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: {
       source: {
         code: UncontrolledRaw,
@@ -73,7 +73,7 @@ export const Uncontrolled: StoryObj<HvFilterGroupProps> = {
 
 export const EmptyFilters: StoryObj<HvFilterGroupProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: {
       source: {
         code: EmptyFiltersRaw,

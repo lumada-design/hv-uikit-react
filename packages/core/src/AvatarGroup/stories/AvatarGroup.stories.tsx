@@ -25,7 +25,7 @@ const meta: Meta<typeof HvAvatarGroup> = {
   component: HvAvatarGroup,
   decorators: [flexDecorator],
   parameters: {
-    eyes: { disable: true },
+    chromatic: { disableSnapshot: true },
   },
 };
 export default meta;
@@ -200,7 +200,7 @@ export const CustomOverflow: StoryObj<HvAvatarGroupProps> = {
 
 export const WithTooltip: StoryObj<HvAvatarGroupProps> = {
   parameters: {
-    eyes: { disable: true },
+    chromatic: { disableSnapshot: true },
     docs: {
       source: {
         code: WithTooltipRaw,

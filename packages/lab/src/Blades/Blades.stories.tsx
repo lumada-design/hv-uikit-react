@@ -284,7 +284,7 @@ export const Main: StoryObj<HvBladesProps> = {
 
 export const Controlled: StoryObj<HvBladesProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [expandedState, setExpandedState] = useState([0]);

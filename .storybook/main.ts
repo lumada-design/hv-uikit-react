@@ -37,6 +37,7 @@ export default {
     },
     "@storybook/addon-a11y",
     "@storybook/addon-links",
+    "@chromatic-com/storybook",
     __dirname + "/addons/version-selector",
     __dirname + "/addons/theme-selector",
     __dirname + "/addons/mode-selector",

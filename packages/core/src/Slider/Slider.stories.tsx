@@ -209,7 +209,7 @@ export const RangeSpecificErrorSlider: StoryObj<HvSliderProps> = {
         story: "A range slider with an empty and invalid values.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (

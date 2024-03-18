@@ -68,7 +68,7 @@ export const Disabled: StoryObj<HvBladeProps> = {
 
 export const Controlled: StoryObj<HvBladeProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [expandedState, setExpandedState] = useState(true);

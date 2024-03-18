@@ -120,7 +120,7 @@ export const Disabled: StoryObj<HvAccordionProps> = {
 
 export const Controlled: StoryObj<HvAccordionProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [expandedState, setExpandedState] = useState({
@@ -252,7 +252,7 @@ interface SampleDataProps {
 
 export const Typography: StoryObj<HvAccordionProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: {
       description: {
         story: "An accordion with a different button typography.",

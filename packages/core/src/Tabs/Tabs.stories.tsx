@@ -78,7 +78,7 @@ export const ContentChanging: StoryObj<HvTabsProps> = {
           "Tabs changing the content to display according to the selected tab.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [value, setValue] = useState(0);
@@ -133,7 +133,7 @@ export const TextSize: StoryObj<HvTabsProps> = {
 
 export const CenteredTabs: StoryObj<HvTabsProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [value, setValue] = useState(0);

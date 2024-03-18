@@ -9,7 +9,7 @@ import { confusionMatrixDecorator } from "../BaseChart/stories/utils";
 const meta: Meta<typeof HvConfusionMatrix> = {
   title: "Visualizations/Confusion Matrix",
   component: HvConfusionMatrix,
-  parameters: { eyes: { include: false } },
+  parameters: { chromatic: { disableSnapshot: true } },
   decorators: [confusionMatrixDecorator],
 };
 export default meta;

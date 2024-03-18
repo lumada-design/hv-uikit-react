@@ -31,7 +31,7 @@ export const AllColumnRenderersStory: StoryObj = {
 
 export const TextColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: { source: { code: TextColumnRendererRaw } },
   },
   render: () => <TextColumnRenderer />,
@@ -39,7 +39,7 @@ export const TextColumnRendererStory: StoryObj = {
 
 export const NumberColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: { source: { code: NumberColumnRendererRaw } },
   },
   render: () => <NumberColumnRenderer />,
@@ -47,7 +47,7 @@ export const NumberColumnRendererStory: StoryObj = {
 
 export const DateColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: { source: { code: DateColumnRendererRaw } },
   },
   render: () => <DateColumnRenderer />,
@@ -55,7 +55,7 @@ export const DateColumnRendererStory: StoryObj = {
 
 export const ExpandColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: { source: { code: ExpandColumnRendererRaw } },
   },
   render: () => <ExpandColumnRenderer />,
@@ -63,7 +63,7 @@ export const ExpandColumnRendererStory: StoryObj = {
 
 export const SwitchColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: { source: { code: SwitchColumnRendererRaw } },
   },
   render: () => <SwitchColumnRenderer />,
@@ -71,7 +71,7 @@ export const SwitchColumnRendererStory: StoryObj = {
 
 export const TagColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: { source: { code: TagColumnRendererRaw } },
   },
   render: () => <TagColumnRenderer />,
@@ -79,7 +79,7 @@ export const TagColumnRendererStory: StoryObj = {
 
 export const ProgressColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
     docs: { source: { code: ProgressColumnRendererRaw } },
   },
   render: () => <ProgressColumnRenderer />,

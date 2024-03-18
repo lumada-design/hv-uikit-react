@@ -29,7 +29,7 @@ const meta: Meta<typeof HvInput> = {
   component: SearchBox,
   decorators: [(Story) => <div style={{ height: "300px" }}>{Story()}</div>],
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
 };
 

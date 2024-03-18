@@ -138,7 +138,7 @@ export const CustomDivider = () => {
 };
 
 CustomDivider.parameters = {
-  eyes: { include: false },
+  chromatic: { disableSnapshot: true },
   docs: {
     description: {
       story:
@@ -251,7 +251,7 @@ WithNavigation.decorators = [
   (Story) => <div style={{ overflow: "auto" }}>{Story()}</div>,
 ];
 WithNavigation.parameters = {
-  eyes: { include: false },
+  chromatic: { disableSnapshot: true },
   docs: {
     description: {
       story:

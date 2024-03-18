@@ -35,7 +35,7 @@ const meta: Meta<typeof HvTagsInput> = {
     (storyFn) => <div style={{ maxWidth: "600px" }}>{storyFn()}</div>,
   ],
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
 };
 export default meta;
@@ -125,7 +125,7 @@ export const ControlledStringArray: StoryObj<HvTagsInputProps> = {
         story: "Controlled Tags Input with string array.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [currValueStr, setCurrValueStr] = useState<string[]>([
@@ -213,7 +213,7 @@ ControlledTagArray.parameters = {
       story: "Controlled Tags Input with Tags array",
     },
   },
-  eyes: { include: false },
+  chromatic: { disableSnapshot: true },
 };
 
 export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
@@ -223,7 +223,7 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
         story: "Controlled Tags Input with validation.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [currValueStr, setCurrValueStr] = useState<string[]>([
@@ -274,7 +274,7 @@ export const AddTagOnBlur: StoryObj<HvTagsInputProps> = {
         story: "Sample showcasing how to add tags when the input is blurred.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [currValueArr, setCurrValueArr] = useState<HvTagProps[]>([
@@ -333,7 +333,7 @@ export const NotResizable: StoryObj<HvTagsInputProps> = {
         story: "Not resizable.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (
@@ -390,7 +390,7 @@ export const CustomCommitCharacter: StoryObj<HvTagsInputProps> = {
         story: "Custom commit character.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (
@@ -413,7 +413,7 @@ export const Suggestions: StoryObj<HvTagsInputProps> = {
         story: "With a list of suggestions.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [currValueStr, setCurrValueStr] = useState<HvTagProps[]>([]);
@@ -461,7 +461,7 @@ export const UnrestrictedSuggestions: StoryObj<HvTagsInputProps> = {
         to \`true\`.`,
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [options, setOptions] = useState([

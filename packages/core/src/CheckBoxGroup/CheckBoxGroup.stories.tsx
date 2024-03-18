@@ -11,7 +11,7 @@ const meta: Meta<typeof HvCheckBoxGroup> = {
   title: "Components/Checkbox/Checkbox Group",
   component: HvCheckBoxGroup,
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
 };
 
@@ -132,7 +132,7 @@ export const Controlled: StoryObj<HvCheckBoxGroupProps> = {
         story: "Controlled checkbox group.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [value, setValue] = useState(["2"]);
@@ -158,7 +158,7 @@ export const Controlled: StoryObj<HvCheckBoxGroupProps> = {
 
 export const ShiftSelect: StoryObj<HvCheckBoxGroupProps> = {
   parameters: {
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (

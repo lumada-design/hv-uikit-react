@@ -135,7 +135,7 @@ export const BannerController: StoryObj<HvBannerProps> = {
           "Different Banner variants with actions and controlled by buttons.",
       },
     },
-    eyes: { include: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const SimpleBanner = ({

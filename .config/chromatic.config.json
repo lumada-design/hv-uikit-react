@@ -1,0 +1,6 @@
+{
+  "projectId": "Project:65f859deec93ecc85a27d519",
+  "buildScriptName": "build:doc",
+  "skip": "dependabot/**",
+  "onlyStoryNames": ["Components/Button/*", "Components/Dialog/*"]
+}
