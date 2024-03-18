@@ -138,7 +138,6 @@ export const CustomDivider = () => {
 };
 
 CustomDivider.parameters = {
-  eyes: { include: false },
   docs: {
     description: {
       story:
@@ -251,7 +250,6 @@ WithNavigation.decorators = [
   (Story) => <div style={{ overflow: "auto" }}>{Story()}</div>,
 ];
 WithNavigation.parameters = {
-  eyes: { include: false },
   docs: {
     description: {
       story:

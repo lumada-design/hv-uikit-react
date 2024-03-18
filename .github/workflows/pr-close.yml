@@ -4,13 +4,12 @@ on:
   pull_request:
     branches:
       - master
-      - "next*"
     types: [closed]
 
 env:
   PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   PUBLISH_BRANCH: master
-  DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
+  DOCUMENTATION_PUBLISH_FOLDER: uikit-docs/pr-${{ github.event.number }}
   APP_PUBLISH_FOLDER: uikit-app/pr-${{ github.event.number }}
   PUBLISH_MESSAGE: "chore: remove PR ${{ github.event.number }} of ${{ github.repository }}"
 
@@ -39,7 +38,7 @@ jobs:
           git commit -m "${PUBLISH_MESSAGE}"
           git push
 
-      - name: Prune Deployment for Documentation
+      - name: Prune Deployment for Nextra Documentation
         uses: bobheadxi/deployments@v1
         with:
           step: deactivate-env

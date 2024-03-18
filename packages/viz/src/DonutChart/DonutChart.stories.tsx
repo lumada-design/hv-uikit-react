@@ -19,7 +19,6 @@ import { vizDecorator } from "../BaseChart/stories/utils";
 const meta: Meta<typeof HvDonutChart> = {
   title: "Visualizations/Donut Chart",
   component: HvDonutChart,
-  parameters: { eyes: { include: false } },
   decorators: [vizDecorator],
 };
 export default meta;

@@ -9,7 +9,6 @@ import {
 export default {
   title: "Tests/Icons",
   parameters: {
-    eyes: { include: true },
     docs: { disable: true },
   },
 };

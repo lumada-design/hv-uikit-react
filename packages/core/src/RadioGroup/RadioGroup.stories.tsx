@@ -124,7 +124,6 @@ export const Controlled: StoryObj<HvRadioGroupProps> = {
         story: "Controlled radio button group.",
       },
     },
-    eyes: { include: true },
   },
   render: () => {
     const [value, setValue] = useState<string>("2");

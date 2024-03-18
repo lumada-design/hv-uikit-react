@@ -158,7 +158,6 @@ export const Tooltip: StoryObj<HvToggleButtonProps> = {
           "A sample showcasing a tooltip changing its content combined with the toggle button.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [selected, setSelected] = useState(false);
@@ -181,7 +180,6 @@ export const Animated: StoryObj<HvToggleButtonProps> = {
           "A sample showcasing a toggle button with a custom animated icon.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [select, setSelect] = useState(true);

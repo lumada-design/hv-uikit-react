@@ -20,9 +20,6 @@ const meta: Meta<typeof HvAvatarGroup> = {
   title: "Components/Avatar/Avatar Group",
   component: HvAvatarGroup,
   decorators: [flexDecorator],
-  parameters: {
-    eyes: { disable: true },
-  },
 };
 export default meta;
 
@@ -196,7 +193,6 @@ export const CustomOverflow: StoryObj<HvAvatarGroupProps> = {
 
 export const WithTooltip: StoryObj<HvAvatarGroupProps> = {
   parameters: {
-    eyes: { disable: true },
     docs: {
       source: {
         code: WithTooltipRaw,

@@ -63,6 +63,11 @@ export const parameters: Preview["parameters"] = {
       ],
     },
   },
+  // Disables Chromatic's snapshotting on a global level
+  // Snapshots are to be enabled individually at the component or story level
+  chromatic: {
+    disableSnapshot: true,
+  },
 };
 
 export default {

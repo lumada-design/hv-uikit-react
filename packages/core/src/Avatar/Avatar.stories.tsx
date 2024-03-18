@@ -22,9 +22,6 @@ const meta: Meta<typeof HvAvatar> = {
   title: "Components/Avatar/Avatar",
   component: HvAvatar,
   decorators: [flexDecorator],
-  parameters: {
-    eyes: { disable: true },
-  },
 };
 export default meta;
 
@@ -152,7 +149,7 @@ export const Variants: StoryObj<HvAvatarProps> = {
           "You can configure the `size` and `variant` of an avatar. When using an icon, set its `iconSize` to the size immediately below the avatar size.",
       },
     },
-    eyes: { disable: false, waitBeforeCapture: 5000 },
+    eyes: { waitBeforeCapture: 5000 },
   },
   render: () => {
     return (
@@ -189,7 +186,6 @@ export const Status: StoryObj<HvAvatarProps> = {
           "An avatar can have a status, represented by either the `status` colored border or by the `badge` dot. The color can be from the theme palette or custom.",
       },
     },
-    eyes: { disable: false },
   },
   render: () => {
     return (
@@ -222,7 +218,6 @@ export const Actions: StoryObj<HvAvatarProps> = {
           "An avatar should be interacted with by wrapping it in an _interactable_ element, such as an `HvButton` or a link. Make sure the elements are labelled accordingly.",
       },
     },
-    eyes: { disable: false },
   },
   render: () => {
     return (

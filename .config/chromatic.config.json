@@ -1,0 +1,6 @@
+{
+  "projectId": "Project:TODO",
+  "buildScriptName": "build:doc",
+  "onlyChanged": true,
+  "skip": "dependabot/**"
+}

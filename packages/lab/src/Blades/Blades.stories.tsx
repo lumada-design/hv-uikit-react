@@ -281,9 +281,6 @@ export const Main: StoryObj<HvBladesProps> = {
 };
 
 export const Controlled: StoryObj<HvBladesProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     const [expandedState, setExpandedState] = useState([0]);
     const handleToggle = (key: number) => {

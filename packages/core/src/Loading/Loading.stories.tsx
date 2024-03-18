@@ -111,9 +111,6 @@ const Progress = ({
 };
 
 export const Determinate: StoryObj<HvLoadingProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     return (
       <div style={{ display: "flex", justifyContent: "space-around" }}>

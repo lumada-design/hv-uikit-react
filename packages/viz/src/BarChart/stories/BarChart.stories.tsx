@@ -21,7 +21,6 @@ import { customChartData } from "./mockData";
 const meta: Meta<typeof HvBarChart> = {
   title: "Visualizations/Bar Chart",
   component: HvBarChart,
-  parameters: { eyes: { include: false } },
   decorators: [vizDecorator],
 };
 export default meta;

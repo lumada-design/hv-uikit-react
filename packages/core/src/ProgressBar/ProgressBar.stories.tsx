@@ -37,9 +37,6 @@ export const Progressive: StoryObj<HvProgressBarProps> = {
     classes: { control: { disable: true } },
     value: { control: { type: "range" } },
   },
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     return (
       <>
