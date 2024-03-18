@@ -35,12 +35,12 @@ export interface HvWizardTitleProps extends HvBaseProps {
 }
 
 const switchTabState = (state, currentTab, index) => {
+  if (state.loading) return "Pending";
   if (index === currentTab) return "Current";
   if (state.valid) return "Completed";
+  if (state.disabled) return "Disabled";
   if (state.valid === null) return "Enabled";
   if (state.touched && state.valid === false) return "Failed";
-  // "Disabled"
-  // "Pending"
   return "Enabled";
 };
 
