@@ -27,6 +27,21 @@ jobs:
           CODE_DX_API_KEY: ${{ secrets.CODE_DX_API_KEY }}
           CODE_DX_PROJECT_ID: 120
 
+  citadel-scan:
+    name: Request Citadel Scan
+    runs-on: [self-hosted, Linux]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Request Citadel scan
+        run: |
+          echo "Sending the json request:" && \
+          cat .github/security-configurations/citadel-uikit.json && \
+          curl -k -X POST 'https://citadel.orl.eng.hitachivantara.com/citadel' --header \
+          'Content-Type: application/json' -d @.github/security-configurations/citadel-uikit.json
+
   black-duck-scans:
     name: Run Black Duck Scans
     runs-on: [self-hosted, Linux]
