@@ -202,6 +202,7 @@ export const getThemesVars = (themes: HvThemeStructure[]) => {
 
     colorModes.forEach((colorMode) => {
       const styleName = `[data-theme="${theme.name}"][data-color-mode="${colorMode}"]`;
+      const themeName = `[data-theme="${theme.name}"]`;
 
       // Extracting "components" and "name" because they shouldn't be mapped to CSS vars
       const { components, name, colors, ...rest } = theme;
@@ -216,7 +217,6 @@ export const getThemesVars = (themes: HvThemeStructure[]) => {
       );
 
       vars[styleName] = toCSSVars({
-        ...rest,
         colors: {
           ...colors.modes[colorMode],
         },
@@ -224,6 +224,10 @@ export const getThemesVars = (themes: HvThemeStructure[]) => {
         rgb: {
           ...rgbColors,
         },
+      });
+
+      vars[themeName] = toCSSVars({
+        ...rest,
       });
     });
   });
