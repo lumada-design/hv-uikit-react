@@ -139,6 +139,7 @@ const ColumnItem = ({ item }: { item: Column }) => {
       }}
       {...attributes}
       {...listeners}
+      role="listitem"
     >
       {item.title}
       <Drag />
@@ -184,7 +185,7 @@ const ColumnGroup = ({
           </div>
         )}
         {columns.length > 0 && (
-          <HvListContainer selectable>
+          <HvListContainer selectable role="list">
             <SortableContext items={columnsIds}>
               {columns &&
                 columns.map((col) => <ColumnItem key={col.id} item={col} />)}
@@ -421,7 +422,7 @@ const SettingsDialog = ({
 
 export const TableSettings = () => {
   const tableColumns = useMemo(() => getColumns(), []);
-  const [popperOpen, setPopperOpen] = useState(false);
+  const [popperOpen, setPopperOpen] = useState(true);
   const data = useMemo(() => makeData(5), []);
   const [columnOrder, setColumnOrder] = useState(tableColumns.map((c) => c.id));
   const [hiddenColumns, setHiddenColumns] = useState<string[]>([]);
