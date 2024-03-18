@@ -58,6 +58,7 @@
     "@storybook/addon-links": "^7.6.4",
     "@storybook/addons": "^7.6.4",
     "@storybook/core-common": "^7.6.4",
+    "@storybook/jest": "^0.2.3",
     "@storybook/react": "^7.6.4",
     "@storybook/react-vite": "^7.6.4",
     "@storybook/testing-library": "^0.2.2",

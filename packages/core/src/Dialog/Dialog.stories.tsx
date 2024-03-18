@@ -1,6 +1,7 @@
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { waitFor, screen, fireEvent } from "@storybook/testing-library";
+import { waitFor, screen, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 import {
   HvDialogContent,
   HvDialog,
@@ -43,13 +44,12 @@ export const Main: StoryObj<HvDialogProps> = {
     docs: {
       source: { code: MainStoryRaw },
     },
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button"));
-
-        return waitFor(() => screen.getByRole("dialog"));
-      },
-    },
+  },
+  play: async () => {
+    await userEvent.click(screen.getByRole("button"));
+    waitFor(() => {
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+    });
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -63,13 +63,12 @@ export const SemanticVariants: StoryObj<HvDialogProps> = {
           "The `HvDialog` component can receive a `variant` prop to set the status of the dialog. `HvDialogTitle` also accepts a `variant` prop that changes the icon. Alternatively, the `customIcon` prop allows for any custom icon",
       },
     },
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button", { name: "Success" }));
-
-        return waitFor(() => screen.getByRole("dialog"));
-      },
-    },
+  },
+  play: async () => {
+    await userEvent.click(screen.getByRole("button", { name: "Success" }));
+    waitFor(() => {
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+    });
   },
   decorators: [
     (Story) => (

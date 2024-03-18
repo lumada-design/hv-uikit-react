@@ -1,6 +1,7 @@
 {
-  "projectId": "Project:65f859deec93ecc85a27d519",
+  "projectId": "Project:65f8716c487ef2a51545b505",
   "buildScriptName": "build:doc",
   "skip": "dependabot/**",
-  "onlyStoryNames": ["Components/Button/*", "Components/Dialog/*"]
+  "onlyStoryNames": ["Components/Button/*", "Components/Dialog/*"],
+  "debug": true
 }
