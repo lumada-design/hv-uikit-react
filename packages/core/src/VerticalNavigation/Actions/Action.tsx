@@ -1,4 +1,4 @@
-import { MouseEventHandler, useCallback, useContext } from "react";
+import { useCallback, useContext } from "react";
 
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
@@ -37,7 +37,7 @@ export interface HvVerticalNavigationActionProps {
   /**
    * Callback called when clicked.
    */
-  onClick?: MouseEventHandler<HTMLElement>;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 export const HvVerticalNavigationAction = ({

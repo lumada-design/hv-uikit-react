@@ -1,4 +1,4 @@
-import React, { RefObject, useState } from "react";
+import { cloneElement, useState } from "react";
 
 import { HvBaseProps } from "../types/generic";
 import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
@@ -27,7 +27,7 @@ export interface HvFocusProps extends HvBaseProps<HTMLElement, "children"> {
   /** Whether the focus is disabled. */
   disabled?: boolean;
   /** The reference to the root element to hold all Focus' context. */
-  rootRef?: RefObject<HTMLElement>;
+  rootRef?: React.RefObject<HTMLElement>;
   /** Show focus when click element. v */
   focusOnClick?: boolean;
   /** Show focus when click element. v */
@@ -440,7 +440,7 @@ export const HvFocus = ({
 
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
-      {React.cloneElement(children, {
+      {cloneElement(children, {
         className: cx(
           [classes.root, filterClass],
           {

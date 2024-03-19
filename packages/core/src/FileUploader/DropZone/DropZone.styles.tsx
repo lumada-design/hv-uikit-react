@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../../utils/classes";
@@ -84,9 +83,9 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
     paddingBottom: 6,
   },
   dragText: {
-    ...(theme.typography.body as CSSProperties),
+    ...(theme.typography.body as React.CSSProperties),
   },
   selectFilesText: {
-    ...(theme.typography.label as CSSProperties),
+    ...(theme.typography.label as React.CSSProperties),
   },
 });

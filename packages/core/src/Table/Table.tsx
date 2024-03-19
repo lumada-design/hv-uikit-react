@@ -1,4 +1,4 @@
-import { forwardRef, TableHTMLAttributes, useMemo, useRef } from "react";
+import { forwardRef, useMemo, useRef } from "react";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
@@ -25,7 +25,8 @@ export type HvTableCellVariant =
   | "default"
   | "none";
 
-export interface HvTableProps extends TableHTMLAttributes<HTMLTableElement> {
+export interface HvTableProps
+  extends React.TableHTMLAttributes<HTMLTableElement> {
   /**
    * The component used for the root node. Either a string to use a HTML element or a component.
    * Defaults to `table`.

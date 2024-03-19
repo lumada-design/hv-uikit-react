@@ -1,10 +1,4 @@
-import {
-  forwardRef,
-  HTMLAttributes,
-  ThHTMLAttributes,
-  useContext,
-  useMemo,
-} from "react";
+import { forwardRef, useContext, useMemo } from "react";
 import { hexToRgb, alpha } from "@mui/material/styles";
 
 import { theme } from "@hitachivantara/uikit-styles";
@@ -31,7 +25,7 @@ export { staticClasses as tableHeaderClasses };
 export type HvTableHeaderClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTableHeaderProps
-  extends Omit<ThHTMLAttributes<HTMLTableCellElement>, "align"> {
+  extends Omit<React.ThHTMLAttributes<HTMLTableCellElement>, "align"> {
   /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to th. */
   component?: React.ElementType;
   /** Content to be rendered */
@@ -67,7 +61,7 @@ export interface HvTableHeaderProps
   /** Whether or not the cell is being resized */
   resizing?: boolean;
   /** The resize props injected in the resize handler */
-  resizerProps?: HTMLAttributes<HTMLDivElement>;
+  resizerProps?: React.HTMLAttributes<HTMLDivElement>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableHeaderClasses;
   /** Extra props to be passed onto the sort button in the header. */

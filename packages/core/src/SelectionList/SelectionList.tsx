@@ -1,12 +1,12 @@
-import React, {
+import {
   useCallback,
   useMemo,
   useRef,
   useEffect,
-  ReactNode,
   forwardRef,
+  Children,
+  cloneElement,
 } from "react";
-
 import { useForkRef } from "@mui/material/utils";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -87,10 +87,10 @@ export interface HvSelectionListProps
 }
 
 const getValueFromSelectedChildren = (
-  children: ReactNode,
+  children: React.ReactNode,
   multiple: boolean
 ) => {
-  const selectedValues = React.Children.toArray(children)
+  const selectedValues = Children.toArray(children)
     .map((child: any) => {
       const childIsControlled = child?.props?.selected !== undefined;
       const childIsSelected =
@@ -165,7 +165,7 @@ export const HvSelectionList = forwardRef<
     const childValues: any[] = [];
     const childSelectedState: boolean[] = [];
 
-    React.Children.toArray(children).forEach((child: any, i: number) => {
+    Children.toArray(children).forEach((child: any, i: number) => {
       const childValue = child?.props?.value;
       const childIsSelected = multiple
         ? value.indexOf(childValue) !== -1
@@ -270,10 +270,10 @@ export const HvSelectionList = forwardRef<
   );
 
   const modifiedChildren = useMemo(() => {
-    return React.Children.map(children, (child: any, i: number) => {
+    return Children.map(children, (child: any, i: number) => {
       const childIsSelected = selectedState[i];
 
-      return React.cloneElement(child, {
+      return cloneElement(child, {
         role: "option",
         selected: childIsSelected,
         onClick: (evt) =>

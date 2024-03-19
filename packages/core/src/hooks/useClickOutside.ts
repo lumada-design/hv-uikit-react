@@ -1,9 +1,9 @@
-import { useEffect, RefObject } from "react";
+import { useEffect } from "react";
 
 export type HvClickOutsideEvent = MouseEvent | KeyboardEvent | TouchEvent;
 
 export const useClickOutside = <T extends HTMLElement = HTMLElement>(
-  ref: RefObject<T>,
+  ref: React.RefObject<T>,
   handler: (event: HvClickOutsideEvent) => void
 ) => {
   useEffect(() => {

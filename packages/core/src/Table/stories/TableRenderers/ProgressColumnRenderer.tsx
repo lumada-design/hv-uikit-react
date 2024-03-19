@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   HvCellProps,
   HvPagination,
@@ -63,19 +63,13 @@ export const ProgressColumnRenderer = () => {
       prepareRow(row);
 
       return (
-        <React.Fragment key={row.id}>
-          <HvTableRow
-            {...row.getRowProps({
-              "aria-rowindex": index + 1,
-            })}
-          >
-            {row.cells.map((cell) => (
-              <HvTableCell {...cell.getCellProps()}>
-                {cell.render("Cell")}
-              </HvTableCell>
-            ))}
-          </HvTableRow>
-        </React.Fragment>
+        <HvTableRow {...row.getRowProps({ "aria-rowindex": index + 1 })}>
+          {row.cells.map((cell) => (
+            <HvTableCell {...cell.getCellProps()}>
+              {cell.render("Cell")}
+            </HvTableCell>
+          ))}
+        </HvTableRow>
       );
     });
   };

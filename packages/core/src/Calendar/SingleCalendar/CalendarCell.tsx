@@ -1,4 +1,4 @@
-import { SyntheticEvent, useRef } from "react";
+import { useRef } from "react";
 
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
@@ -62,7 +62,7 @@ export const HvCalendarCell = (props: HvCalendarCellProps) => {
   const endBookend = isSameDay(endDate, value);
   const isSelecting = isDateSelectionMode && isCellAfterStartingDate;
 
-  const handleClick = (event: SyntheticEvent) => {
+  const handleClick = (event: React.SyntheticEvent) => {
     if (value) {
       onChange?.(event, value);
       if (buttonEl.current) setTimeout(() => buttonEl?.current?.focus());
@@ -143,7 +143,7 @@ export interface HvCalendarCellProps {
   /**
    * Callback to define the input date.
    */
-  onChange?: (event: SyntheticEvent, value: Date | DateRangeProp) => void;
+  onChange?: (event: React.SyntheticEvent, value: Date | DateRangeProp) => void;
   /**
    * Callback to handle input onFocus.
    */

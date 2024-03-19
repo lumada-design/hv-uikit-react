@@ -1,11 +1,10 @@
-import { CSSProperties } from "react";
 import { clsx } from "clsx";
 import { Hooks } from "react-table";
 
 // #region ##### TYPES #####
 
 export type UseHvTableStylesTableOptions = {
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   className?: string;
   classes?: Record<string, string>;
   component?: any;
@@ -16,15 +15,15 @@ export interface UseHvTableStylesColumnOptions {
   variant?: "checkbox" | "expand" | "actions" | "default" | "none";
   align?: "center" | "inherit" | "justify" | "left" | "right";
 
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   className?: string;
   classes?: Record<string, string>;
 
-  headerStyle?: CSSProperties;
+  headerStyle?: React.CSSProperties;
   headerClassName?: string;
   headerClasses?: Record<string, string>;
 
-  cellStyle?: CSSProperties;
+  cellStyle?: React.CSSProperties;
   cellClassName?: string;
   cellClasses?: Record<string, string>;
 }
@@ -35,7 +34,7 @@ export interface UseHvTableStylesTableRowProps {
 }
 
 export interface UseHvTableStylesTableCellProps {
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   className?: string;
   classes?: Record<string, string>;
   variant?: "checkbox" | "expand" | "actions" | "default" | "none";

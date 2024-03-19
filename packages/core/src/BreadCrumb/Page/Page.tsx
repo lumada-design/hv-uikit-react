@@ -1,5 +1,3 @@
-import { MouseEvent } from "react";
-
 import { HvTypography } from "../../Typography";
 import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { ExtractNames } from "../../utils/classes";
@@ -14,7 +12,7 @@ export type HvBreadCrumbPageClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBreadCrumbPageProps {
   component?: React.ElementType;
-  onClick?: (event: MouseEvent<HTMLElement>, data: any) => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>, data: any) => void;
   elem: HvBreadCrumbPathElement;
   classes?: HvBreadCrumbPageClasses;
 }
@@ -31,7 +29,7 @@ export const HvBreadCrumbPage = (props: HvBreadCrumbPageProps) => {
 
   const { label, path, ...others } = elem;
 
-  const handleClick = (event: MouseEvent<HTMLElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
     onClick?.(event, elem);
   };

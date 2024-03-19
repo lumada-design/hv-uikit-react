@@ -1,7 +1,7 @@
-import { createContext, ComponentProps } from "react";
+import { createContext } from "react";
 
 export type NavigationData<T extends React.ElementType = "a"> =
-  ComponentProps<T> &
+  React.ComponentProps<T> &
     Record<string, any> & {
       /** The id to be applied to the root element. */
       id: string;

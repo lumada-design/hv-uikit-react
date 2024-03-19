@@ -1,11 +1,4 @@
-import React, {
-  CSSProperties,
-  Children,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { Children, useCallback, useEffect, useRef, useState } from "react";
 import useCarousel from "embla-carousel-react";
 import {
   Backwards,
@@ -36,9 +29,9 @@ export interface HvCarouselProps
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvCarouselClasses;
   /** Height of the Slider container. If `undefined`, images will keep a 16/9 aspect-ratio */
-  height?: CSSProperties["height"];
+  height?: React.CSSProperties["height"];
   /** Width of the thumbnail. Height will try to maintain a 16/9 aspect-ratio */
-  thumbnailWidth?: CSSProperties["width"];
+  thumbnailWidth?: React.CSSProperties["width"];
   /** Title of the carousel */
   title?: React.ReactNode;
   /** Content slides to be displayed. @see `<HvCarouselSlide />` */

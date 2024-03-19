@@ -1,5 +1,3 @@
-import { CSSProperties } from "react";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../../utils/classes";
@@ -24,7 +22,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
     backgroundColor: theme.colors.atmo1,
     borderTop: "1px solid transparent",
     borderBottom: `1px solid ${theme.colors.atmo4}`,
-    ...(theme.typography.label as CSSProperties),
+    ...(theme.typography.label as React.CSSProperties),
   },
   /** Styles applied to the cell when it's in the table body. */
   body: {
@@ -33,7 +31,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
       height: 32,
     },
     backgroundColor: "inherit",
-    ...(theme.typography.body as CSSProperties),
+    ...(theme.typography.body as React.CSSProperties),
     fontFamily: theme.fontFamily.body,
 
     "&$sorted": {

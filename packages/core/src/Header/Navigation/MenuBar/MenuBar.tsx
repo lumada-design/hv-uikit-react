@@ -1,5 +1,3 @@
-import { MouseEvent } from "react";
-
 import { HvBaseProps } from "../../../types/generic";
 
 import { useDefaultProps } from "../../../hooks/useDefaultProps";
@@ -12,7 +10,10 @@ export interface HvHeaderMenuBarProps
   extends HvBaseProps<HTMLDivElement, "onClick"> {
   data: HvHeaderNavigationItemProp[];
   type?: BarProps["type"];
-  onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
+  onClick?: (
+    event: React.MouseEvent,
+    selection: HvHeaderNavigationItemProp
+  ) => void;
   levels: number;
   currentLevel: number;
   classes?: HvHeaderMenuBarClasses;
@@ -30,7 +31,7 @@ export const HvHeaderMenuBar = (props: HvHeaderMenuBarProps) => {
   } = useDefaultProps("HvHeaderMenuBar", props);
   return (
     <Bar data={data} type={type} classes={classes} {...others}>
-      {data.map((item: HvHeaderNavigationItemProp) => (
+      {data.map((item) => (
         <HvHeaderMenuItem
           key={item.id}
           item={item}

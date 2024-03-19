@@ -1,4 +1,4 @@
-import React, { MouseEvent, useContext } from "react";
+import { useContext } from "react";
 
 import { HvTypography } from "../../../Typography";
 import { HvBaseProps } from "../../../types/generic";
@@ -21,7 +21,10 @@ export interface HvHeaderMenuItemProps
   extends HvBaseProps<HTMLDivElement, "onClick"> {
   item: HvHeaderNavigationItemProp;
   type?: string;
-  onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
+  onClick?: (
+    event: React.MouseEvent,
+    selection: HvHeaderNavigationItemProp
+  ) => void;
   levels: number;
   currentLevel: number;
   classes?: HvHeaderMenuItemClasses;

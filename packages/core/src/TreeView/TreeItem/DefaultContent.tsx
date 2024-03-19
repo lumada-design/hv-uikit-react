@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode, forwardRef } from "react";
+import { forwardRef } from "react";
 
 import { useCss } from "../../hooks/useCss";
 import { ExtractNames, createClasses } from "../../utils/classes";
@@ -17,21 +17,21 @@ export const { useClasses } = createClasses("HvTreeContent", {
 
 export type HvTreeContentClasses = ExtractNames<typeof useClasses>;
 
-export interface HvTreeContentProps extends HTMLAttributes<HTMLElement> {
+export interface HvTreeContentProps extends React.HTMLAttributes<HTMLElement> {
   /** className applied to the root element. */
   className?: string;
   /** Override or extend the styles applied to the component. */
   classes?: HvTreeContentClasses;
   /** The tree node label. */
-  label?: ReactNode;
+  label?: React.ReactNode;
   /** The id of the node. */
   nodeId: string;
   /** The icon to display next to the tree node's label. */
-  icon?: ReactNode;
+  icon?: React.ReactNode;
   /** The icon to display next to the tree node's label. Either an expansion or collapse icon. */
-  expansionIcon?: ReactNode;
+  expansionIcon?: React.ReactNode;
   /** The icon to display next to the tree node's label. Either a parent or end icon. */
-  displayIcon?: ReactNode;
+  displayIcon?: React.ReactNode;
 }
 
 /**

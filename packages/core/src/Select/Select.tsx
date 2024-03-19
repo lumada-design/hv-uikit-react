@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import type { Placement } from "@popperjs/core";
 import clsx from "clsx";
 

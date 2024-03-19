@@ -1,9 +1,11 @@
-import React, {
+import {
   useRef,
   useContext,
   useMemo,
   forwardRef,
   isValidElement,
+  Children,
+  cloneElement,
 } from "react";
 
 import { HvBaseProps } from "../types/generic";
@@ -83,12 +85,12 @@ export const HvListContainer = forwardRef<
   const children = useMemo(() => {
     if (!interactive) return childrenProp;
 
-    const anySelected = React.Children.toArray(childrenProp).some(
+    const anySelected = Children.toArray(childrenProp).some(
       (child) =>
         isValidElement(child) && child.props.selected && !child.props.disabled
     );
 
-    return React.Children.map(childrenProp, (child: any, i) => {
+    return Children.map(childrenProp, (child: any, i) => {
       const tabIndex =
         child.props.tabIndex ||
         (!anySelected && i === 0) ||
@@ -96,7 +98,7 @@ export const HvListContainer = forwardRef<
           ? 0
           : -1;
 
-      return React.cloneElement(child, {
+      return cloneElement(child, {
         tabIndex,
         interactive,
       });

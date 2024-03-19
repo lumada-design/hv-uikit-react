@@ -1,9 +1,7 @@
-import { ImgHTMLAttributes } from "react";
 import MuiCardMedia, {
   CardMediaProps as MuiCardMediaProps,
 } from "@mui/material/CardMedia";
 
-import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
 
 import { staticClasses, useClasses } from "./Media.styles";
@@ -14,8 +12,7 @@ export type HvCardMediaClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCardMediaProps
   extends Omit<MuiCardMediaProps, "classes">,
-    ImgHTMLAttributes<HTMLDivElement>,
-    HvBaseProps<HTMLDivElement, "onClick" | "title"> {
+    React.ImgHTMLAttributes<HTMLDivElement> {
   /** Id to be applied to the root node. */
   id?: string;
   /** The title of the media. */

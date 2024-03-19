@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, forwardRef } from "react";
+import { forwardRef } from "react";
 import { HvColorAny, getColor } from "@hitachivantara/uikit-styles";
 import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
 
@@ -44,7 +44,7 @@ export interface HvTagProps
    */
   deleteButtonArialLabel?: string;
   /** Props to apply to delete icon */
-  deleteButtonProps?: HTMLAttributes<HTMLDivElement>;
+  deleteButtonProps?: React.HTMLAttributes<HTMLDivElement>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTagClasses;
   /** @ignore */

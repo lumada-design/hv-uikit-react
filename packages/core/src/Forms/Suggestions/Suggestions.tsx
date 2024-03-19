@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { forwardRef, useContext, useEffect, useRef, useState } from "react";
 
 import MuiPopper from "@mui/material/Popper";
 import { useForkRef } from "@mui/material/utils";

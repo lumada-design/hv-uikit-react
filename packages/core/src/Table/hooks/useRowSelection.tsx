@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import {
   Hooks,
   IdType,
@@ -28,14 +28,14 @@ export interface UseHvRowSelectionTableColumnProps {
 }
 
 export interface UseHvRowSelectionRowCheckboxProps {
-  onChange?: (e: ChangeEvent, checked?: boolean) => void;
+  onChange?: (e: React.ChangeEvent, checked?: boolean) => void;
   checked?: boolean;
   disabled?: boolean;
   indeterminate?: boolean;
 }
 
 export interface UseHvRowSelectionBulkCheckboxProps {
-  onChange?: (e: ChangeEvent, checked?: boolean) => void;
+  onChange?: (e: React.ChangeEvent, checked?: boolean) => void;
   checked?: boolean;
   indeterminate?: boolean;
 }

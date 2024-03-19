@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useCallback } from "react";
+import { useMemo, useRef, useCallback, Children } from "react";
 
 import { useTheme } from "@mui/material/styles";
 import MuiDivider, {
@@ -118,7 +118,7 @@ export const HvStack = (props: HvStackProps) => {
       )}
       {...others}
     >
-      {React.Children.map(children, (child, i) => {
+      {Children.map(children, (child, i) => {
         return (
           <>
             {divider && i !== 0 && getDividerComponent()}
@@ -130,7 +130,7 @@ export const HvStack = (props: HvStackProps) => {
                 navigationJump={
                   processedDirection === "column"
                     ? 1
-                    : React.Children.count(children) || 0
+                    : Children.count(children) || 0
                 }
                 filterClass="child"
               >

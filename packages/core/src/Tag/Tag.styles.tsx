@@ -1,5 +1,3 @@
-import { CSSProperties } from "react";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { chipClasses } from "@mui/material/Chip";
@@ -49,7 +47,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     [`& .${chipClasses.label}`]: {
       paddingLeft: 4,
       paddingRight: 4,
-      ...(theme.typography.caption2 as CSSProperties),
+      ...(theme.typography.caption2 as React.CSSProperties),
       color: "currentcolor",
     },
 

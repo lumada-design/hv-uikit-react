@@ -1,5 +1,3 @@
-import { MouseEvent } from "react";
-
 import { MoreOptionsHorizontal } from "@hitachivantara/uikit-react-icons";
 
 import { HvDropDownMenu, HvDropDownMenuProps } from "../DropDownMenu";
@@ -12,7 +10,7 @@ export const pathWithSubMenu = (
   id: string | undefined,
   listRoute: any,
   maxVisible: number,
-  onClick?: (event: MouseEvent<HTMLElement>, data: any) => void,
+  onClick?: (event: React.MouseEvent<HTMLElement>, data: any) => void,
   dropDownMenuProps?: Partial<HvDropDownMenuProps>
 ) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;

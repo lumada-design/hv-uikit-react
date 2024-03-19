@@ -1,4 +1,4 @@
-import { forwardRef, ReactElement } from "react";
+import { forwardRef } from "react";
 import Tooltip, {
   TooltipProps as MuiTooltipProps,
 } from "@mui/material/Tooltip";
@@ -51,7 +51,7 @@ export interface HvTooltipProps extends Omit<MuiTooltipProps, "classes"> {
   /**
    * Node to apply the tooltip.
    */
-  children: ReactElement;
+  children: React.ReactElement;
   /**
    * Id attribute value of an HTML Element to have the tooltip appended to it.
    */

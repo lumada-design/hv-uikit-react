@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { useState } from "react";
 
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import { HvSelectionList, HvSelectionListProps } from "../SelectionList";

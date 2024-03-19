@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import { Hooks } from "react-table";
 
 // #region ##### TYPES #####
@@ -9,7 +8,7 @@ export interface UseHvHeaderGroupsInstance {
 
 // props target: <table><thead><tr><th>
 export interface UseHvHeaderGroupsColumnProps {
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   groupColumnMostLeft?: boolean;
   groupColumnMostRight?: boolean;
 }

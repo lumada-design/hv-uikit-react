@@ -1,4 +1,4 @@
-import React, { cloneElement } from "react";
+import { Children, cloneElement, isValidElement } from "react";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvButtonSize, HvButtonVariant } from "../Button";
@@ -53,8 +53,8 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
       )}
       {...others}
     >
-      {React.Children.map(children, (child, index) => {
-        if (React.isValidElement(child)) {
+      {Children.map(children, (child, index) => {
+        if (isValidElement(child)) {
           const childIsSelected = !!child.props.selected;
 
           return (
@@ -65,12 +65,11 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
                 size,
                 className: cx(child.props.className, classes.button, {
                   [classes.firstButton]: index === 0,
-                  [classes.lastButton]:
-                    index === React.Children.count(children) - 1,
+                  [classes.lastButton]: index === Children.count(children) - 1,
                   [classes.selected]: childIsSelected,
                 }),
               })}
-              {split && index < React.Children.count(children) - 1 && (
+              {split && index < Children.count(children) - 1 && (
                 <div
                   className={cx(classes.splitContainer, classes[variant], {
                     [classes.splitDisabled]: disabled,

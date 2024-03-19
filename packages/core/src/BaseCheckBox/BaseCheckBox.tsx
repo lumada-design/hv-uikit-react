@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useState } from "react";
+import { forwardRef, useCallback, useState } from "react";
 
 import MuiCheckbox, {
   CheckboxProps as MuiCheckboxProps,

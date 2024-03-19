@@ -1,5 +1,3 @@
-import { ImgHTMLAttributes } from "react";
-
 import { ExtractNames } from "../../utils/classes";
 
 import { useClasses } from "./CarouselSlide.styles";
@@ -7,7 +5,7 @@ import { useClasses } from "./CarouselSlide.styles";
 export type HvCarouselSlideClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCarouselSlideProps
-  extends ImgHTMLAttributes<HTMLImageElement> {
+  extends React.ImgHTMLAttributes<HTMLImageElement> {
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvCarouselSlideClasses;
   /** The width of the Slide. Defaults to `100%` */

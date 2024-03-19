@@ -1,5 +1,3 @@
-import { CSSProperties } from "react";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../utils/classes";
@@ -13,7 +11,7 @@ export const { staticClasses, useClasses } = createClasses("HvTab", {
     minHeight: 32,
     textTransform: "none",
     fontFamily: theme.fontFamily.body,
-    ...(theme.typography.body as CSSProperties),
+    ...(theme.typography.body as React.CSSProperties),
     "&:hover": {
       backgroundColor: theme.colors.containerBackgroundHover,
       borderRadius: theme.radii.base,

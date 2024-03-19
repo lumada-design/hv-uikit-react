@@ -1,6 +1,5 @@
-import React, {
-  FocusEvent,
-  HTMLInputTypeAttribute,
+import {
+  cloneElement,
   forwardRef,
   isValidElement,
   useCallback,
@@ -143,7 +142,7 @@ export interface HvInputProps
     value: string
   ) => void;
   /** The input type. */
-  type?: HTMLInputTypeAttribute;
+  type?: React.HTMLInputTypeAttribute;
   /** The placeholder value of the input. */
   placeholder?: string;
   /** Internal labels?. */
@@ -208,12 +207,12 @@ export type HvInputLabels = Partial<typeof DEFAULT_LABELS>;
 /**
  * Find the focused element onBlur.
  */
-const getFocusedElement = (event: FocusEvent) =>
+const getFocusedElement = (event: React.FocusEvent) =>
   isBrowser("ie") ? document.activeElement : event.relatedTarget;
 
 function eventTargetIsInsideContainer(
   container: HTMLElement | null,
-  event: FocusEvent<any>
+  event: React.FocusEvent<any>
 ) {
   return container != null && container.contains(getFocusedElement(event));
 }
@@ -694,7 +693,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
   const customIconEl = useMemo(
     () =>
       isValidElement(endAdornment) &&
-      React.cloneElement(endAdornment as React.ReactElement, {
+      cloneElement(endAdornment as React.ReactElement, {
         className: cx(endAdornment.props.className, classes.icon),
       }),
     [classes.icon, endAdornment, cx]

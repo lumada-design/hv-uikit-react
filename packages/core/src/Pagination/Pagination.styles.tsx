@@ -1,5 +1,3 @@
-import { CSSProperties } from "react";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { inputClasses } from "../Input";
@@ -19,7 +17,7 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
     flexWrap: "wrap",
     marginTop: theme.space.sm,
     [`& $pageSizeInput`]: {
-      ...(theme.typography.caption2 as CSSProperties),
+      ...(theme.typography.caption2 as React.CSSProperties),
       "&:focus": {
         padding: 0,
       },
@@ -64,10 +62,10 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
     justifyContent: "center",
     height: "24px",
     padding: "8px 0",
-    ...(theme.typography.caption2 as CSSProperties),
+    ...(theme.typography.caption2 as React.CSSProperties),
   },
   totalPagesTextContainer: {
-    ...(theme.typography.caption2 as CSSProperties),
+    ...(theme.typography.caption2 as React.CSSProperties),
   },
   /** Styles applied to the page size selector dropdown element. */
   pageSizeOptionsSelect: {
@@ -75,7 +73,7 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
     margin: `0px ${theme.space.xs}`,
     width: "auto",
 
-    ...(theme.typography.caption2 as CSSProperties),
+    ...(theme.typography.caption2 as React.CSSProperties),
   },
   /** Styles applied to the page navigation container. */
   pageNavigator: {
