@@ -13,11 +13,7 @@ export const MainStory = (props: HvDialogProps) => {
 
   return (
     <div>
-      <HvButton
-        style={{ width: "120px" }}
-        onClick={() => setOpen(true)}
-        variant="positive"
-      >
+      <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
         Open Dialog
       </HvButton>
       <HvDialog open={open} onClose={() => setOpen(false)} {...props}>
