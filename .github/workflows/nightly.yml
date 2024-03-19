@@ -22,14 +22,9 @@ jobs:
     uses: ./.github/workflows/tests-applitools.yml
     secrets: inherit
 
-  security-scans:
-    name: Security Scans
-    uses: ./.github/workflows/security.yml
-    secrets: inherit
-
   notify-fail:
     name: Notify Fail
-    needs: [static-checks, applitools, security-scans]
+    needs: [static-checks, applitools]
     if: failure()
     runs-on: ubuntu-latest
 

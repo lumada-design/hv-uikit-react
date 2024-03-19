@@ -129,3 +129,38 @@ jobs:
                 }
               ]
             }
+
+  security-scans:
+    name: Security Scans
+    needs: [publish-artifacts]
+    uses: ./.github/workflows/security.yml
+    secrets: inherit
+
+  notify-fail:
+    name: Notify Fail
+    needs: [security-scans]
+    if: failure()
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v1
+
+      - name: Notify Fail
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+          COLOR: "#C62828"
+        with:
+          args: |
+            {
+              "channel": "ui-kit-internal",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "${{env.COLOR}}",
+                  "title": "Security Scans failed",
+                  "title_link": "${{ env.RUN_URL }}"
+                }
+              ]
+            }
