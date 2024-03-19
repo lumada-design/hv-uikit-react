@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import {
   makePropGetter,
   useGetLatest,
@@ -185,7 +184,7 @@ const getRowProps = () => ({
 });
 
 const getCellProps = (header, isHeaderCell: boolean) => {
-  const props: UseHvTableStickyCellProps & { style: CSSProperties } = {
+  const props: UseHvTableStickyCellProps & { style: React.CSSProperties } = {
     style: {
       display: "inline-flex",
       flex: `${header.totalWidth} ${header.totalMinWidth} auto`,

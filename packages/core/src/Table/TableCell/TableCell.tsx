@@ -1,4 +1,4 @@
-import { CSSProperties, forwardRef, TdHTMLAttributes, useContext } from "react";
+import { forwardRef, useContext } from "react";
 
 import { capitalize } from "../../utils/helpers";
 import { ExtractNames } from "../../utils/classes";
@@ -18,13 +18,13 @@ export { staticClasses as tableCellClasses };
 export type HvTableCellClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTableCellProps
-  extends Omit<TdHTMLAttributes<HTMLTableCellElement>, "align"> {
+  extends Omit<React.TdHTMLAttributes<HTMLTableCellElement>, "align"> {
   /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to td. */
   component?: React.ElementType;
   /** Content to be rendered */
   children?: React.ReactNode;
   /** Inline styles to be applied to the root element. */
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   /** Set the text-align on the table cell content. */
   align?: HvTableCellAlign;
   /** Sets the cell's variant. */

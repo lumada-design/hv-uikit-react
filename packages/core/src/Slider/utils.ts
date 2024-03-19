@@ -1,5 +1,3 @@
-import { CSSProperties } from "react";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import validationStates from "../Forms/FormElement/validationStates";
@@ -134,18 +132,9 @@ export const createMark = (
   markDigits: number,
   disabled: boolean,
   formatMark: (label: React.ReactNode) => React.ReactNode = (mark) => mark
-): {
-  [key: number]: {
-    label: string;
-    style: CSSProperties;
-  };
-} => {
-  const marks: {
-    [key: number]: {
-      label: string;
-      style: CSSProperties;
-    };
-  } = {};
+): Record<number, { label: string; style: React.CSSProperties }> => {
+  const marks: Record<number, { label: string; style: React.CSSProperties }> =
+    {};
 
   if (markProperties.length > 0) {
     markProperties.forEach((markProperty) => {
@@ -207,8 +196,8 @@ export const createMark = (
  */
 export const createTrackStyles = (
   knobProperties: HvKnobProperty[]
-): CSSProperties[] => {
-  const trackStyles: CSSProperties[] = [];
+): React.CSSProperties[] => {
+  const trackStyles: React.CSSProperties[] = [];
 
   if (knobProperties.length > 0) {
     knobProperties.forEach((knobProperty, index) => {
@@ -234,11 +223,11 @@ export const createTrackStyles = (
 export const createKnobStyles = (
   knobProperties: HvKnobProperty[]
 ): {
-  knobInner: CSSProperties[];
-  knobOuterStyle: CSSProperties[];
+  knobInner: React.CSSProperties[];
+  knobOuterStyle: React.CSSProperties[];
 } => {
-  const knobInner: CSSProperties[] = [];
-  const knobOuterStyle: CSSProperties[] = [];
+  const knobInner: React.CSSProperties[] = [];
+  const knobOuterStyle: React.CSSProperties[] = [];
 
   const lastItem = knobProperties.length - 1;
   if (knobProperties.length > 0) {

@@ -1,10 +1,10 @@
-import React, {
+import {
   useMemo,
   useState,
   useCallback,
-  KeyboardEventHandler,
-  AriaAttributes,
   forwardRef,
+  isValidElement,
+  cloneElement,
 } from "react";
 
 import { createPortal } from "react-dom";
@@ -204,12 +204,12 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       "aria-expanded": ariaExpanded,
       "aria-owns": isOpen ? containerId : undefined,
       "aria-controls": isOpen ? containerId : undefined,
-    } satisfies AriaAttributes;
+    } satisfies React.AriaAttributes;
 
     const headerAriaLabels = {
       "aria-label": ariaLabelProp,
       "aria-labelledby": ariaLabelledByProp,
-    } satisfies AriaAttributes;
+    } satisfies React.AriaAttributes;
 
     const placement: Placement = `bottom-${
       placementProp === "right" ? "start" : "end"
@@ -419,8 +419,8 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
     );
 
     const headerElement =
-      component && React.isValidElement(component)
-        ? React.cloneElement(component as React.ReactElement, {
+      component && isValidElement(component)
+        ? cloneElement(component as React.ReactElement, {
             ref: handleDropdownHeaderRef,
             ...headerControlArias,
           })
@@ -430,7 +430,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       /**
        *  Handle keyboard inside children container.
        */
-      const handleContainerKeyDown: KeyboardEventHandler = (event) => {
+      const handleContainerKeyDown: React.KeyboardEventHandler = (event) => {
         if (isKey(event, "Esc")) {
           handleToggle(event);
         }

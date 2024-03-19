@@ -1,4 +1,4 @@
-import { LabelHTMLAttributes, useState } from "react";
+import { useState } from "react";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
 import {
@@ -140,7 +140,9 @@ export const WithLabels: StoryObj<HvSwitchProps> = {
     eyes: { include: false },
   },
   render: () => {
-    const Label: React.FC<LabelHTMLAttributes<HTMLLabelElement>> = (props) => (
+    const Label: React.FC<React.LabelHTMLAttributes<HTMLLabelElement>> = (
+      props
+    ) => (
       // eslint-disable-next-line jsx-a11y/label-has-associated-control
       <label style={{ cursor: "pointer" }} {...props} />
     );

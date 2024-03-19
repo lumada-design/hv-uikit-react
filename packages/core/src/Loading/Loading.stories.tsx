@@ -1,4 +1,4 @@
-import { ReactNode, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
@@ -82,7 +82,7 @@ const ButtonDeterminate = ({
   children,
 }: {
   label: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }) => (
   <div>
     <HvTypography variant="caption1">{label}</HvTypography>
@@ -95,8 +95,8 @@ const Progress = ({
   label,
   inc,
 }: {
-  label: (val: number) => ReactNode;
-  inc: SetStateAction<number>;
+  label: (val: number) => React.ReactNode;
+  inc: React.SetStateAction<number>;
 }) => {
   const [value, setValue] = useState(0);
 

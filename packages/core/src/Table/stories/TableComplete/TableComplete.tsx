@@ -1,4 +1,4 @@
-import { ReactNode, SyntheticEvent, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 import {
@@ -60,7 +60,7 @@ const NoDataRow = ({
   message,
   height = 96,
 }: {
-  message: ReactNode;
+  message: React.ReactNode;
   height?: number;
 }) => (
   <HvTableRow>
@@ -103,13 +103,13 @@ export interface TableProps<T extends object = Record<string, unknown>> {
     selectAllPages?: string;
   };
   onAction?: (
-    event: SyntheticEvent,
+    event: React.SyntheticEvent,
     action: TableAction<T>,
     row: HvRowInstance<T>
   ) => void;
   onSelection?: (selectedRowIds: HvTableState<T>["selectedRowIds"]) => void;
   onBulkAction?: (
-    event: SyntheticEvent,
+    event: React.SyntheticEvent,
     action: HvActionGeneric,
     selectedRows: HvTableInstance<T>["selectedFlatRows"]
   ) => void;

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import {
   HvCellProps,
   HvPagination,
@@ -143,7 +143,7 @@ export const AllColumnRenderers = () => {
       prepareRow(row);
 
       return (
-        <React.Fragment key={row.id}>
+        <Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
               "aria-rowindex": index + 1,
@@ -172,7 +172,7 @@ export const AllColumnRenderers = () => {
               </HvTypography>
             </HvTableCell>
           </HvTableRow>
-        </React.Fragment>
+        </Fragment>
       );
     });
   };

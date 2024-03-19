@@ -1,4 +1,4 @@
-import { SyntheticEvent, useCallback } from "react";
+import { useCallback } from "react";
 import Slide, { SlideProps } from "@mui/material/Slide";
 import MuiSnackbar, {
   SnackbarCloseReason,
@@ -27,12 +27,10 @@ export interface HvSnackbarProps
    * Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop.
    * The reason parameter can optionally be used to control the response to onClose, for example ignoring click away.
    * */
-  onClose?:
-    | ((
-        event: Event | SyntheticEvent<any, Event>,
-        reason: SnackbarCloseReason
-      ) => void)
-    | undefined;
+  onClose?: (
+    event: Event | React.SyntheticEvent<any, Event>,
+    reason: SnackbarCloseReason
+  ) => void;
   /** The message to display. */
   label?: React.ReactNode;
   /**

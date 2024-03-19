@@ -1,4 +1,4 @@
-import { ReactNode, useMemo } from "react";
+import { useMemo } from "react";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 import {
   HvTable,
@@ -24,7 +24,7 @@ const NoDataRow = ({
   message,
   height = 96,
 }: {
-  message: ReactNode;
+  message: React.ReactNode;
   height?: number;
 }) => (
   <HvTableRow>

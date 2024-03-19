@@ -1,4 +1,4 @@
-import { CSSProperties, MouseEvent, forwardRef } from "react";
+import { forwardRef } from "react";
 
 import { HvBaseProps } from "../types/generic";
 import { HvPaginationProps } from "../Pagination";
@@ -11,10 +11,10 @@ import { useClasses } from "./Carousel.styles";
 interface HvCarouselThumbnailsProps
   extends HvBaseProps<HTMLDivElement, "children">,
     Pick<HvPaginationProps, "page" | "pages" | "canPrevious" | "canNext"> {
-  width?: CSSProperties["width"];
+  width?: React.CSSProperties["width"];
   classes?: ExtractNames<typeof useClasses>;
   onThumbnailClick?: (
-    event: MouseEvent<HTMLButtonElement>,
+    event: React.MouseEvent<HTMLButtonElement>,
     index: number
   ) => void;
   thumbnailProps?: Partial<HvButtonProps>;

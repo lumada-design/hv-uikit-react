@@ -1,4 +1,4 @@
-import { isValidElement, MouseEvent } from "react";
+import { isValidElement } from "react";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
@@ -27,7 +27,7 @@ export interface HvBreadCrumbProps
   /** The component used for the link node. Either a string to use a DOM element or a component. */
   component?: React.ElementType;
   /** Function passed to the component. If defined the component prop is used as the link node. */
-  onClick?: (event: MouseEvent<HTMLElement>, data: any) => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>, data: any) => void;
   /** Props passed down to the DropDownMenu sub-menu component. */
   dropDownMenuProps?: Partial<HvDropDownMenuProps>;
   /** A Jss Object used to override or extend the styles applied to the component. */

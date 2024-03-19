@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode, useCallback, useMemo } from "react";
+import { forwardRef, useCallback, useMemo } from "react";
 import {
   OptionsObject,
   SnackbarContent,
@@ -45,7 +45,7 @@ export interface HvNotistackSnackMessageProps extends OptionsObject {
   /** class name to apply on the root node */
   className?: string;
   /** Your component tree. */
-  message?: ReactNode;
+  message?: React.ReactNode;
   /** Variant of the snackbar. */
   variant?: HvSnackbarVariant;
   /** Extra values to pass to the snackbar. */
@@ -84,7 +84,7 @@ export const useHvSnackbar = () => {
     snackbarContext;
 
   const enqueueSnackbar = useCallback(
-    (message: ReactNode, options: HvNotistackSnackMessageProps = {}) => {
+    (message: React.ReactNode, options: HvNotistackSnackMessageProps = {}) => {
       const {
         id,
         variant = "success",

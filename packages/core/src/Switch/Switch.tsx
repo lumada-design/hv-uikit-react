@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback } from "react";
+import { forwardRef, useCallback } from "react";
 
 import { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
 

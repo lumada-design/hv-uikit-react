@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import {
   Add,
@@ -321,7 +321,7 @@ export const KPICard: StoryObj<HvCardProps> = {
       icon,
     }: {
       value: string;
-      icon: ReactNode;
+      icon: React.ReactNode;
     }) => (
       <HvCardContent>
         <Grid container>
@@ -433,7 +433,11 @@ export const Selectable: StoryObj<HvCardProps> = {
       </HvCardContent>
     );
 
-    const CardClickableContent = ({ children }: { children: ReactNode }) => {
+    const CardClickableContent = ({
+      children,
+    }: {
+      children: React.ReactNode;
+    }) => {
       return (
         <StyledButton
           type="button"

@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useState } from "react";
+import { forwardRef, useCallback, useState } from "react";
 
 import { RadioProps as MuiRadioProps } from "@mui/material/Radio";
 

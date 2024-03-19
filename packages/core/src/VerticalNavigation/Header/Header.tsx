@@ -1,4 +1,4 @@
-import { MouseEventHandler, useContext, useMemo } from "react";
+import { useContext, useMemo } from "react";
 import { Backwards, Forwards, Menu } from "@hitachivantara/uikit-react-icons";
 
 import { ExtractNames } from "../../utils/classes";
@@ -48,7 +48,7 @@ export interface HvVerticalNavigationHeaderProps {
   /**
    * Handler for the collapse button.
    */
-  onCollapseButtonClick?: MouseEventHandler<HTMLElement>;
+  onCollapseButtonClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 export const HvVerticalNavigationHeader = ({

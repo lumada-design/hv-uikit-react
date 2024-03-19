@@ -1,9 +1,4 @@
-import React, {
-  SyntheticEvent,
-  useCallback,
-  useMemo,
-  HTMLAttributes,
-} from "react";
+import { useCallback, useMemo } from "react";
 
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
@@ -47,7 +42,7 @@ export interface HvAccordionProps
   /**
    * An object containing props to be passed onto container holding the accordion children.
    */
-  containerProps?: HTMLAttributes<HTMLDivElement>;
+  containerProps?: React.HTMLAttributes<HTMLDivElement>;
   /**
    * Heading Level to apply to accordion button if ´undefined´ the button won't have a header wrapper.
    */
@@ -93,7 +88,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
 
   const handleAction = useCallback(
-    (event: SyntheticEvent) => {
+    (event: React.SyntheticEvent) => {
       if (!disabled) {
         onChange?.(event, isOpen);
         setIsOpen(!isOpen);
@@ -105,7 +100,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
   );
 
   const handleClick = useCallback(
-    (event: SyntheticEvent) => {
+    (event: React.SyntheticEvent) => {
       handleAction(event);
       event.preventDefault();
       event.stopPropagation();

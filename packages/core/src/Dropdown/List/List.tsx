@@ -1,4 +1,4 @@
-import { MouseEvent, useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 
 import { theme } from "@hitachivantara/uikit-styles";
 
@@ -60,7 +60,7 @@ export interface HvDropdownListProps {
   /**
    * A function to be executed whenever the Cancel button is activated.
    */
-  onCancel: (event: MouseEvent) => void;
+  onCancel: (event: React.MouseEvent) => void;
   /**
    * An object containing all the labels for the dropdown.
    */

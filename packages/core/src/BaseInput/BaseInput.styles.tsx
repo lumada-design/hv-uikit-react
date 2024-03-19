@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "../utils/focusUtils";
@@ -207,7 +206,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     outline: "none",
     width: "initial",
     flexGrow: 1,
-    ...(theme.typography.body as CSSProperties),
+    ...(theme.typography.body as React.CSSProperties),
 
     "&::placeholder": {
       opacity: 1,

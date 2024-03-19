@@ -1,4 +1,3 @@
-import { HTMLAttributes } from "react";
 import { ensurePluginOrder, Hooks } from "react-table";
 
 // #region ##### TYPES #####
@@ -7,7 +6,7 @@ import { ensurePluginOrder, Hooks } from "react-table";
 export interface UseHvResizeColumnProps {
   resizable?: boolean;
   resizing?: boolean;
-  resizerProps?: HTMLAttributes<HTMLDivElement>;
+  resizerProps?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 // getCellProps:

@@ -1,5 +1,3 @@
-import { HTMLInputTypeAttribute } from "react";
-
 import { InputBaseComponentProps } from "@mui/material/InputBase";
 
 import validationStates from "../Forms/FormElement/validationStates";
@@ -23,7 +21,7 @@ export const validationTypes = Object.freeze({
 });
 
 /** Returns the input's validation type based in the type of the input. */
-export const computeValidationType = (type: HTMLInputTypeAttribute) => {
+export const computeValidationType = (type: React.HTMLInputTypeAttribute) => {
   switch (type) {
     case "number":
       return validationTypes.number;
@@ -40,7 +38,7 @@ export const computeValidationType = (type: HTMLInputTypeAttribute) => {
  */
 export const hasBuiltInValidations = (
   required: boolean,
-  validationType: HTMLInputTypeAttribute,
+  validationType: React.HTMLInputTypeAttribute,
   minCharQuantity: number | null | undefined,
   maxCharQuantity: number | null | undefined,
   validation?: (value: string) => boolean,

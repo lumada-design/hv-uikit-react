@@ -1,9 +1,6 @@
-import { MouseEventHandler, ReactNode } from "react";
-
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import { HvBaseProps } from "../types/generic";
 import { HvButton } from "../Button";
 import { HvPaginationProps } from "../Pagination";
@@ -16,9 +13,9 @@ interface HvCarouselControlsProps
     Pick<HvPaginationProps, "page" | "pages" | "canPrevious" | "canNext"> {
   showDots?: boolean;
   classes?: ExtractNames<typeof useClasses>;
-  actions?: ReactNode;
-  onPreviousClick?: MouseEventHandler<HTMLButtonElement>;
-  onNextClick?: MouseEventHandler<HTMLButtonElement>;
+  actions?: React.ReactNode;
+  onPreviousClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onNextClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const HvCarouselControls = (props: HvCarouselControlsProps) => {

@@ -1,5 +1,3 @@
-import { MouseEvent } from "react";
-
 import { HvBaseProps } from "../../types/generic";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { ExtractNames } from "../../utils/classes";
@@ -21,7 +19,10 @@ export interface HvHeaderNavigationProps
   extends HvBaseProps<HTMLDivElement, "onClick"> {
   data: HvHeaderNavigationItemProp[];
   selected?: string;
-  onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
+  onClick?: (
+    event: React.MouseEvent,
+    selection: HvHeaderNavigationItemProp
+  ) => void;
   classes?: HvHeaderNavigationClasses;
   /**
    * The number of levels to show: the first level (1) or the first and second level (2).
@@ -46,10 +47,7 @@ export const HvHeaderNavigation = (props: HvHeaderNavigationProps) => {
 
   const selectionPath = useSelectionPath(data, selected);
 
-  const handleClick: HvHeaderMenuBarProps["onClick"] = (
-    event: MouseEvent,
-    selection: HvHeaderNavigationItemProp
-  ) => {
+  const handleClick: HvHeaderMenuBarProps["onClick"] = (event, selection) => {
     event.preventDefault();
 
     onClick?.(event, selection);

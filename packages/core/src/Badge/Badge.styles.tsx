@@ -1,10 +1,8 @@
-import { CSSProperties } from "react";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../utils/classes";
 
-const labelBaseStyle: CSSProperties = {
+const labelBaseStyle: React.CSSProperties = {
   ...theme.typography.label,
   padding: "0 5px",
   color: theme.colors.atmo1,

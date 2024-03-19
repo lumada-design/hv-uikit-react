@@ -1,4 +1,4 @@
-import { Children, MouseEvent } from "react";
+import { Children } from "react";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps, HvExtraProps } from "../types/generic";
@@ -48,7 +48,10 @@ export interface HvControlsProps extends HvBaseProps {
   /**
    * Callback called when the view switcher button is pressed
    */
-  onViewChange?: (event: MouseEvent<HTMLButtonElement>, id: string) => void;
+  onViewChange?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    id: string
+  ) => void;
   /**
    * if `true` the button to switch views is not rendered
    */
@@ -79,7 +82,7 @@ export const HvControls = (props: HvControlsProps) => {
   );
 
   const onViewChangeHandler = (
-    evt: MouseEvent<HTMLButtonElement>,
+    evt: React.MouseEvent<HTMLButtonElement>,
     btnId: any
   ) => {
     setCurrentView(btnId);

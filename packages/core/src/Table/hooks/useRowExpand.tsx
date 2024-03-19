@@ -1,4 +1,3 @@
-import { MouseEventHandler } from "react";
 import {
   Hooks,
   TableExpandedToggleProps,
@@ -23,7 +22,7 @@ export type UseHvRowExpandTableOptions = {
 };
 
 export interface UseHvRowExpandRowToggleProps extends TableExpandedToggleProps {
-  onClick?: MouseEventHandler<unknown>;
+  onClick?: React.MouseEventHandler<unknown>;
 }
 
 export interface UseHvRowExpandRowInstance<

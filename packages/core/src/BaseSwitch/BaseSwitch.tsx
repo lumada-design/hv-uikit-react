@@ -1,4 +1,4 @@
-import React, { useState, useCallback, forwardRef } from "react";
+import { useState, useCallback, forwardRef } from "react";
 
 import MuiSwitch, { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
 

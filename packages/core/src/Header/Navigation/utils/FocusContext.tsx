@@ -1,4 +1,4 @@
-import React, { createContext, useMemo, useReducer } from "react";
+import { createContext, useMemo, useReducer } from "react";
 
 type Action = { type: "setItemFocused"; itemFocused: EventTarget & Element };
 

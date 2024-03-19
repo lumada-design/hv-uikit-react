@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLAttributes, forwardRef } from "react";
+import { forwardRef } from "react";
 
 import { User } from "@hitachivantara/uikit-react-icons";
 import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
@@ -23,8 +23,6 @@ export type HvAvatarVariant = "circular" | "square";
 export type HvAvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
 
 export interface HvAvatarProps extends HvBaseProps {
-  /** Inline styles to be applied to the root element. */
-  style?: CSSProperties;
   /** The component used for the root node. Either a string to use a DOM element or a component. */
   component?: React.ElementType;
   /** Sets one of the standard sizes of the icons */
@@ -45,7 +43,7 @@ export interface HvAvatarProps extends HvBaseProps {
    * Attributes applied to the `img` element if the component is used to display an image.
    * It can be used to listen for the loading error event.
    */
-  imgProps?: HTMLAttributes<HTMLImageElement>;
+  imgProps?: React.HTMLAttributes<HTMLImageElement>;
   /** A string representing the type of avatar to display, circular or square. */
   variant?: HvAvatarVariant;
   /** A string representing the color of the avatar border that represents its status. */
@@ -117,7 +115,7 @@ export const HvAvatar = forwardRef<any, HvAvatarProps>((props, ref) => {
     );
   }
 
-  const inlineStyle: CSSProperties = {
+  const inlineStyle: React.CSSProperties = {
     ...style,
   };
 
@@ -134,7 +132,7 @@ export const HvAvatar = forwardRef<any, HvAvatarProps>((props, ref) => {
     inlineStyle.color = getColor(color, theme.colors.atmo1);
   }
 
-  const statusInlineStyle: CSSProperties = {};
+  const statusInlineStyle: React.CSSProperties = {};
   if (status) {
     // set the status border. we're using the boxShadow property to set the border
     // to be inside the container and not on its edge.

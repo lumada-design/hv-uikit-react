@@ -1,4 +1,4 @@
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { fireEvent, screen } from "@storybook/testing-library";
 import {
@@ -10,7 +10,7 @@ import {
 import { css } from "@emotion/css";
 
 const makeDecorator =
-  (styles: CSSProperties): Decorator =>
+  (styles: React.CSSProperties): Decorator =>
   (Story) =>
     <div style={styles}>{Story()}</div>;
 

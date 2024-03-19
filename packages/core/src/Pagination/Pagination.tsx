@@ -1,4 +1,4 @@
-import { HTMLAttributes, useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import Hidden from "@mui/material/Hidden";
 import {
   Start,
@@ -81,9 +81,9 @@ export interface HvPaginationProps extends HvBaseProps {
   /** An object containing all the labels for the component. */
   labels?: HvPaginationLabels;
   /** Other props to show page component. */
-  showPageProps?: HTMLAttributes<HTMLDivElement>;
+  showPageProps?: React.HTMLAttributes<HTMLDivElement>;
   /** Other props to pagination component. */
-  navigationProps?: HTMLAttributes<HTMLDivElement>;
+  navigationProps?: React.HTMLAttributes<HTMLDivElement>;
   /** Extra properties passed to the input component representing the current pages. */
   currentPageInputProps?: HvInputProps;
   /** A Jss Object used to override or extend the styles applied to the component. */

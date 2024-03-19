@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "../utils/focusUtils";
@@ -6,7 +5,7 @@ import { createClasses } from "../utils/classes";
 
 import base from "./base";
 
-const dot: CSSProperties = {
+const dot: React.CSSProperties = {
   position: "absolute",
   bottom: "-1px",
   marginLeft: "0px",
@@ -20,7 +19,7 @@ const dot: CSSProperties = {
   zIndex: "-3",
 };
 
-const dragSquare: CSSProperties = {
+const dragSquare: React.CSSProperties = {
   cursor: "grab",
   width: "calc(100% - 40px)",
   left: "20px",
@@ -34,7 +33,7 @@ const dragSquare: CSSProperties = {
   zIndex: "-2",
 };
 
-const ring: CSSProperties = {
+const ring: React.CSSProperties = {
   width: "32px",
   height: "32px",
   borderRadius: "50%",
@@ -46,7 +45,7 @@ const ring: CSSProperties = {
   left: "-10px",
 };
 
-const border: CSSProperties = {
+const border: React.CSSProperties = {
   width: "20px",
   height: "20px",
   borderRadius: "50%",
@@ -117,7 +116,7 @@ export const sliderStyles = {
     marginTop: "-1px",
   },
   rail: { backgroundColor: theme.colors.atmo4, height: "1px", zIndex: "-3" },
-} satisfies Record<string, CSSProperties>;
+} satisfies Record<string, React.CSSProperties>;
 
 export const { staticClasses, useClasses } = createClasses("HvSlider", {
   sliderBase: { ...base },

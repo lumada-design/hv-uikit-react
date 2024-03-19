@@ -1,4 +1,4 @@
-import { useContext, forwardRef, MouseEventHandler, ForwardedRef } from "react";
+import { useContext, forwardRef } from "react";
 
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
@@ -26,7 +26,7 @@ export interface HvAdornmentProps
   /** When the adornment should be displayed. */
   showWhen?: HvFormStatus;
   /** Function to be executed when this element is clicked. */
-  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   /** If this property is defined the adornment visibility will be exclusively controlled by this value. */
   isVisible?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
@@ -75,7 +75,7 @@ export const HvAdornment = forwardRef<
     return isClickable ? (
       <button
         id={id}
-        ref={ref as ForwardedRef<HTMLButtonElement>}
+        ref={ref as React.ForwardedRef<HTMLButtonElement>}
         type="button"
         tabIndex={-1}
         aria-controls={input?.[0]?.id}
@@ -96,7 +96,7 @@ export const HvAdornment = forwardRef<
     ) : (
       <div
         id={id}
-        ref={ref as ForwardedRef<HTMLDivElement>}
+        ref={ref as React.ForwardedRef<HTMLDivElement>}
         className={cx(
           classes.root,
           classes.adornment,

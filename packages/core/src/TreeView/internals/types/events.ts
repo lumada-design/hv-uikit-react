@@ -1,5 +1,3 @@
-import { SyntheticEvent } from "react";
-
 export interface TreeViewEventLookupElement {
   params: object;
 }
@@ -10,7 +8,7 @@ export type TreeViewEventListener<E extends TreeViewEventLookupElement> = (
 ) => void;
 
 export type MuiBaseEvent =
-  | SyntheticEvent<HTMLElement>
+  | React.SyntheticEvent<HTMLElement>
   | DocumentEventMap[keyof DocumentEventMap]
   | {};
 

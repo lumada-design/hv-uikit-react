@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import {
   HvCellProps,
   HvPagination,
@@ -70,7 +70,7 @@ export const ExpandColumnRenderer = () => {
       prepareRow(row);
 
       return (
-        <React.Fragment key={row.id}>
+        <Fragment key={row.id}>
           <HvTableRow
             {...row.getRowProps({
               "aria-rowindex": index + 1,
@@ -84,6 +84,7 @@ export const ExpandColumnRenderer = () => {
           </HvTableRow>
           <HvTableRow style={{ display: row.isExpanded ? undefined : "none" }}>
             <HvTableCell
+              colSpan={100}
               style={{
                 paddingBottom: 0,
                 paddingTop: 0,
@@ -92,15 +93,13 @@ export const ExpandColumnRenderer = () => {
                 backgroundColor: theme.colors.atmo2,
                 borderTop: `solid 1px ${theme.colors.atmo4}`,
               }}
-              // @ts-ignore
-              colSpan="100%"
             >
               <HvTypography>
                 Expanded content for: {row.values.name}
               </HvTypography>
             </HvTableCell>
           </HvTableRow>
-        </React.Fragment>
+        </Fragment>
       );
     });
   };

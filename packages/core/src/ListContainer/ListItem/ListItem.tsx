@@ -1,4 +1,11 @@
-import React, { forwardRef, useCallback, useContext, useMemo } from "react";
+import {
+  cloneElement,
+  forwardRef,
+  isValidElement,
+  useCallback,
+  useContext,
+  useMemo,
+} from "react";
 
 import { HvBaseProps } from "../../types/generic";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
@@ -66,7 +73,7 @@ const applyClassNameAndStateToElement = (
 ) => {
   if (element == null) return null;
 
-  return React.cloneElement(element, {
+  return cloneElement(element, {
     className,
     checked: !!selected,
     disabled,
@@ -77,7 +84,7 @@ const applyClassNameAndStateToElement = (
 const applyClassNameToElement = (element, className?: string) => {
   if (element == null) return null;
 
-  return React.cloneElement(element, {
+  return cloneElement(element, {
     className,
   });
 };
@@ -138,7 +145,7 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
         cx(
           classes.startAdornment,
           { [classes.disabled]: disabled },
-          React.isValidElement(startAdornment)
+          isValidElement(startAdornment)
             ? startAdornment.props.className
             : undefined
         )
@@ -160,7 +167,7 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
         cx(
           classes.endAdornment,
           { [classes.disabled]: disabled },
-          React.isValidElement(endAdornment)
+          isValidElement(endAdornment)
             ? endAdornment.props.className
             : undefined
         )
