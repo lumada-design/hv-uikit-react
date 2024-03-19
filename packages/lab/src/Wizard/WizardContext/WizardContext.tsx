@@ -7,6 +7,8 @@ export type HvWizardTab = {
   touched?: boolean;
   form?: any;
   children?: React.ReactNode;
+  disabled?: boolean;
+  loading?: boolean;
   [other: string]: any;
 };
 
