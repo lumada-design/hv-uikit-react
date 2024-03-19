@@ -220,10 +220,29 @@ const pentahoPlus = makeTheme((theme) => ({
     ...radii,
     base: "6px",
   },
-  components: {} satisfies Record<
-    string,
-    Record<string, any> | { classes?: CSSProperties }
-  >,
+  components: {
+    HvBaseSwitch: {
+      classes: {
+        root: {
+          "& .HvBaseSwitch-switchBase": {
+            "&.HvBaseSwitch-checked": {
+              "& .HvBaseSwitch-thumb": {
+                border: `1px solid ${theme.colors.primary}`,
+              },
+              "+.HvBaseSwitch-track": {
+                backgroundColor: theme.colors.primary,
+                borderColor: theme.colors.primary,
+              },
+            },
+          },
+        },
+        thumb: {
+          height: 10,
+          width: 10,
+        },
+      },
+    },
+  } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
     secondLevelHeight: "56px",
