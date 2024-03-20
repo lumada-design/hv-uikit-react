@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvButton,
   HvDropDownMenu,
@@ -50,14 +49,6 @@ export const WithIcons: StoryObj<HvDropDownMenuProps> = {
     docs: {
       description: {
         story: "Dropdown menu with icons and disabled actions.",
-      },
-    },
-    parameters: {
-      eyes: {
-        runBefore() {
-          fireEvent.click(screen.getByRole("button"));
-          return waitFor(() => screen.getByRole("menuitem"));
-        },
       },
     },
   },

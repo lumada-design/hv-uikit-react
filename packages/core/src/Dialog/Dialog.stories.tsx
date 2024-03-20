@@ -1,6 +1,5 @@
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvDialog,
   HvDialogActions,
@@ -43,13 +42,6 @@ export const Main: StoryObj<HvDialogProps> = {
     docs: {
       source: { code: MainStoryRaw },
     },
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button"));
-
-        return waitFor(() => screen.getByRole("dialog"));
-      },
-    },
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -61,13 +53,6 @@ export const SemanticVariants: StoryObj<HvDialogProps> = {
       description: {
         story:
           "The `HvDialog` component can receive a `variant` prop to set the status of the dialog. `HvDialogTitle` also accepts a `variant` prop that changes the icon. Alternatively, the `customIcon` prop allows for any custom icon",
-      },
-    },
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button", { name: "Success" }));
-
-        return waitFor(() => screen.getByRole("dialog"));
       },
     },
   },

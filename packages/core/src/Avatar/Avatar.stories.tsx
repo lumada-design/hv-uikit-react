@@ -149,7 +149,6 @@ export const Variants: StoryObj<HvAvatarProps> = {
           "You can configure the `size` and `variant` of an avatar. When using an icon, set its `iconSize` to the size immediately below the avatar size.",
       },
     },
-    eyes: { waitBeforeCapture: 5000 },
   },
   render: () => {
     return (

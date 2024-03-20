@@ -1,5 +1,4 @@
 import type { StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 
 import { AllColumnRenderers } from "./AllColumnRenderers";
 import AllColumnRenderersRaw from "./AllColumnRenderers?raw";
@@ -80,13 +79,6 @@ export const ProgressColumnRendererStory: StoryObj = {
 
 export const DropdownColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Major"));
-
-        return waitFor(() => screen.getByRole("listbox"));
-      },
-    },
     docs: { source: { code: DropdownColumnRendererRaw } },
   },
   render: () => <DropdownColumnRenderer />,

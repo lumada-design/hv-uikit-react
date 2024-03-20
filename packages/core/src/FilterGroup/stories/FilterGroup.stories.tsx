@@ -1,5 +1,4 @@
 import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvFilterGroup,
   HvFilterGroupProps,
@@ -28,13 +27,6 @@ export default meta;
 
 export const Main: StoryObj<HvFilterGroupProps> = {
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-
-        return waitFor(() => screen.getByRole("tooltip"));
-      },
-    },
     docs: {
       source: {
         code: MainRaw,

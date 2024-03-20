@@ -18,11 +18,6 @@ export default {
   component: HvCarousel,
   // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvCarouselSlide },
-  parameters: {
-    eyes: {
-      waitBeforeCapture: 5000,
-    },
-  },
 } satisfies Meta<typeof HvCarousel>;
 
 export const Main: StoryObj<HvCarouselProps> = {

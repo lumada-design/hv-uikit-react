@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { css, CSSInterpolation } from "@emotion/css";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvButton,
   HvInput,
@@ -34,15 +33,6 @@ export const Main: StoryObj<HvTimePickerProps> = {
     value: { control: { disable: true } },
     defaultValue: { control: { disable: true } },
     dropdownProps: { control: { disable: true } },
-  },
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-
-        return waitFor(() => screen.getByRole("tooltip"));
-      },
-    },
   },
   decorators: [makeDecorator({ minHeight: 200, width: 200 })],
   render: (args) => {
@@ -171,13 +161,6 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
       description: {
         story:
           "Use the `timeFormat` prop to force either the 12-hour or 24-hour clock format.",
-      },
-    },
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-
-        return waitFor(() => screen.getByRole("tooltip"));
       },
     },
   },

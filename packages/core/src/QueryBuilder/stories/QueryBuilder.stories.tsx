@@ -76,7 +76,6 @@ export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
 
 export const CustomRenderers: StoryObj<HvQueryBuilderProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story:
@@ -92,7 +91,6 @@ export const CustomRenderers: StoryObj<HvQueryBuilderProps> = {
 
 export const Controlled: StoryObj<HvQueryBuilderProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story:

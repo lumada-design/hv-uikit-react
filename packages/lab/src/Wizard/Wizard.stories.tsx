@@ -1,7 +1,6 @@
 import { useCallback, useContext, useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvAccordion,
   HvButton,
@@ -96,15 +95,6 @@ export const Main: StoryObj<HvWizardProps> = {
   args: {},
   argTypes: {
     classes: { control: { disable: true } },
-  },
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button"));
-
-        return waitFor(() => screen.getByRole("dialog"));
-      },
-    },
   },
   render: () => {
     const [show, setShow] = useState(false);

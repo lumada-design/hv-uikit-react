@@ -126,11 +126,6 @@ const defaultValueJson = `{
   }`;
 
 export const Main: StoryObj<HvCodeEditorProps> = {
-  parameters: {
-    eyes: {
-      waitBeforeCapture: 5000,
-    },
-  },
   render: () => {
     const getModalStyle = () => {
       return {
@@ -202,9 +197,6 @@ export const YamlEditor: StoryObj<HvCodeEditorProps> = {
       description: {
         story: "Yaml editor.",
       },
-    },
-    eyes: {
-      waitBeforeCapture: 5000,
     },
   },
   render: () => {
