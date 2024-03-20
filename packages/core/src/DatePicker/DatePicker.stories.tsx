@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { css, CSSInterpolation, cx } from "@emotion/css";
 import { Global } from "@emotion/react";
 import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvButton,
   HvCalendar,
@@ -226,13 +225,6 @@ export const RangeMode: StoryObj<HvDatePickerProps> = {
 
 export const NearInvalid: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-
-        return waitFor(() => screen.getByText("January"));
-      },
-    },
     docs: {
       description: {
         story: "Datepicker in range mode with invalid near invalid dates.",
@@ -292,15 +284,6 @@ export const Controlled: StoryObj<HvDatePickerProps> = {
 };
 
 export const WithSelectionList: StoryObj<HvDatePickerProps> = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-
-        return waitFor(() => screen.getByRole("button", { name: "Apply" }));
-      },
-    },
-  },
   render: () => {
     const [startDate, setStartDate] = useState(new Date(2020, 8, 5));
     const [endDate, setEndDate] = useState(new Date(2020, 8, 10));

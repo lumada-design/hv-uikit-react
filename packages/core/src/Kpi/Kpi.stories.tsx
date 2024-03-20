@@ -35,11 +35,6 @@ const meta: Meta<typeof HvKpi> = {
 export default meta;
 
 export const Main: StoryObj<HvKpiProps> = {
-  parameters: {
-    eyes: {
-      waitBeforeCapture: 5000,
-    },
-  },
   args: {
     indicatorTextVariant: "title1",
     indicatorUnitTextVariant: "title2",

@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvFlow,
   HvFlowBackground,
@@ -37,17 +36,6 @@ const meta: Meta<typeof HvFlow> = {
     HvFlowSidebar,
   } as unknown,
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(
-          screen.getByRole("button", {
-            name: "Add Node",
-          }),
-        );
-
-        return waitFor(() => screen.getByText("Search node..."));
-      },
-    },
     a11y: {
       config: {
         rules: [

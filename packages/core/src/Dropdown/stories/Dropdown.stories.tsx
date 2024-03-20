@@ -29,14 +29,6 @@ const widthDecorator: DecoratorFn = (Story) => (
 export default {
   title: "Components/Dropdown",
   component: HvDropdown,
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-        return waitFor(() => screen.getByRole("listbox"));
-      },
-    },
-  },
 } satisfies Meta<typeof HvDropdown>;
 
 export const Main: StoryObj<HvDropdownProps> = {

@@ -73,11 +73,6 @@ const meta: Meta<typeof HvCard> = {
   component: HvCard,
   // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvCardHeader, HvCardContent, HvCardMedia },
-  parameters: {
-    eyes: {
-      waitBeforeCapture: 5000,
-    },
-  },
   decorators: [(Story) => <div style={{ margin: 20 }}>{Story()}</div>],
 };
 export default meta;
