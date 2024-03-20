@@ -60,6 +60,10 @@ export const Main: StoryObj<HvTagsInputProps> = {
 };
 
 export const Variants: StoryObj<HvTagsInputProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => {
     const styles: { root: CSSInterpolation } = {
       root: {

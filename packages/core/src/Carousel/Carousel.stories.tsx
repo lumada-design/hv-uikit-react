@@ -72,8 +72,9 @@ export const Actions: StoryObj<HvCarouselProps> = {
           Deleting a slide will turn show the low-cardinality dots instead of arrow pagination. Can be overridden with `showDots`",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false, delay: 5000 },
   },
-
   render: () => {
     const [index, setIndex] = useState(0);
     const [images, setImages] = useState([
@@ -121,6 +122,8 @@ export const Embedded: StoryObj<HvCarouselProps> = {
         A custom `height` is set as the default `16/9` aspect-ratio doesn't fit.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false, delay: 5000 },
   },
   render: () => {
     const images = [
@@ -173,8 +176,9 @@ export const Options: StoryObj<HvCarouselProps> = {
           "You can control the `HvCarousel`'s configuration via the `carouselOptions` prop. See [options documentation](https://www.embla-carousel.com/api/options/).",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false, delay: 5000 },
   },
-
   render: () => {
     const startIndex = 2;
     const images = [

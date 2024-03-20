@@ -28,6 +28,30 @@ export const Main: StoryObj<HvLoadingProps> = {
   },
 };
 
+export const Variants: StoryObj<HvLoadingProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        {Story()}
+      </div>
+    ),
+  ],
+  render: () => {
+    return (
+      <>
+        <HvLoading />
+        <HvLoading small />
+        <HvLoading color="primary" />
+        <HvLoading label="Loading" />
+      </>
+    );
+  },
+};
+
 const Button = ({
   label,
   variant,

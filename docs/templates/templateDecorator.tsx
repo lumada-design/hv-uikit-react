@@ -1,7 +1,7 @@
 import { Global } from "@emotion/react";
-import { DecoratorFn } from "@storybook/react";
+import { Decorator } from "@storybook/react";
 
-export const templateDecorator: DecoratorFn = (Story) => (
+export const templateDecorator: Decorator = (Story) => (
   <>
     <Global
       styles={{

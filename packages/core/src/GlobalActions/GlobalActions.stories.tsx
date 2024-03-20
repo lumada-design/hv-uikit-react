@@ -31,7 +31,7 @@ const meta: Meta<typeof HvGlobalActions> = {
   component: HvGlobalActions,
   decorators: [
     (Story) => (
-      <div style={{ maxHeight: 350, overflow: "auto" }}>
+      <div style={{ maxHeight: 400, overflow: "auto" }}>
         <HvContainer maxWidth="md">{Story()}</HvContainer>
       </div>
     ),
@@ -49,6 +49,10 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
   argTypes: {
     classes: { control: { disable: true } },
     backButton: { control: { disable: true } },
+  },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   render: (args) => {
     const backButton = (
@@ -200,6 +204,8 @@ export const CustomContent: StoryObj<HvGlobalActionsProps> = {
           "The content of the Global Actions can be customized. This is useful when you want to add different elements other than the title and actions.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   render: () => {
     const classes = {

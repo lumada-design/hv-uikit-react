@@ -32,6 +32,10 @@ export const Main: StoryObj<HvPaginationProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => {
     const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
     const data = [...Array(64).keys()];

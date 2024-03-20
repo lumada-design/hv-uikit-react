@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { HvDropdown, HvDropdownProps } from "@hitachivantara/uikit-react-core";
+import { userEvent, within } from "@storybook/testing-library";
 
 import { Empty as EmptyStory } from "./Empty";
 import EmptyRaw from "./Empty?raw";
@@ -22,7 +22,7 @@ import WithDefinedHeightRaw from "./WithDefinedHeight?raw";
 import { WithIcons as WithIconsStory } from "./WithIcons";
 import WithIconsRaw from "./WithIcons?raw";
 
-const widthDecorator: DecoratorFn = (Story) => (
+const widthDecorator: Decorator = (Story) => (
   <div style={{ minHeight: 120, width: 310 }}>{Story()}</div>
 );
 
@@ -61,6 +61,8 @@ export const Main: StoryObj<HvDropdownProps> = {
         code: MainRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -75,6 +77,8 @@ export const Variants: StoryObj<HvDropdownProps> = {
         code: VariantsRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   decorators: [
     (Story) => (
@@ -92,6 +96,11 @@ export const Variants: StoryObj<HvDropdownProps> = {
       </div>
     ),
   ],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const picker = canvas.getByRole("combobox", { name: /required/i });
+    await userEvent.click(picker);
+  },
   render: () => <VariantsStory />,
 };
 

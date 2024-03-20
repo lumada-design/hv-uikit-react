@@ -32,15 +32,10 @@ export const Main: StoryObj<HvBadgeProps> = {
     classes: { control: { disable: true } },
     icon: { control: { disable: true } },
   },
-  render: (args) => {
-    return <HvBadge {...args} />;
-  },
+  render: (args) => <HvBadge {...args} />,
 };
 
 export const Multiple: StoryObj<HvBadgeProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   render: () => {
     return (
       <>
@@ -55,9 +50,6 @@ export const Multiple: StoryObj<HvBadgeProps> = {
 };
 
 export const WithIcon: StoryObj<HvBadgeProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   parameters: {
     docs: {
       description: { story: "Badge sample that uses a custom icon." },
@@ -78,9 +70,6 @@ export const WithIcon: StoryObj<HvBadgeProps> = {
 };
 
 export const WithText: StoryObj<HvBadgeProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   parameters: {
     docs: {
       description: { story: "Badge sample using only text." },
@@ -101,9 +90,6 @@ export const WithText: StoryObj<HvBadgeProps> = {
 };
 
 export const WithState: StoryObj<HvBadgeProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   parameters: {
     docs: {
       description: {
@@ -125,9 +111,6 @@ export const WithState: StoryObj<HvBadgeProps> = {
 };
 
 export const Accessibility: StoryObj<HvBadgeProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   parameters: {
     docs: {
       description: {

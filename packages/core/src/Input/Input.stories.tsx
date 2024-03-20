@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseInput,
   HvButton,
@@ -19,7 +19,7 @@ import { Map } from "@hitachivantara/uikit-react-icons";
 
 import countryNamesArray from "./countries";
 
-const showcaseDecorator: DecoratorFn = (Story) => (
+const showcaseDecorator: Decorator = (Story) => (
   <div
     className={css({
       display: "flex",
@@ -85,9 +85,12 @@ export const Variants: StoryObj<HvInputProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Inputs in their various state variants",
+        story:
+          "Inputs in their various state variants. `HvInput` also has custom support for various `type` attributes, such as `email` and `password`.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   decorators: [showcaseDecorator],
   args: {
@@ -95,6 +98,14 @@ export const Variants: StoryObj<HvInputProps> = {
     placeholder: "Insert first name",
   },
   render: (args) => {
+    const validationMessages: HvValidationMessages = {
+      error: "Invalid value!",
+      maxCharError: "Value is too long!",
+      minCharError: "Value is too short!",
+      requiredError: "Value is required!",
+      typeMismatchError: "Type is incorrect!",
+    };
+
     return (
       <>
         <HvInput required label="Required" {...args} />
@@ -107,33 +118,6 @@ export const Variants: StoryObj<HvInputProps> = {
           statusMessage="Oh no!"
           {...args}
         />
-      </>
-    );
-  },
-};
-
-export const TypeVariants: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "`HvInput` has custom support for various `type` attributes, such as `email` and `password`.",
-      },
-    },
-  },
-  decorators: [showcaseDecorator],
-  args: {},
-  render: () => {
-    const validationMessages: HvValidationMessages = {
-      error: "Invalid value!",
-      maxCharError: "Value is too long!",
-      minCharError: "Value is too short!",
-      requiredError: "Value is required!",
-      typeMismatchError: "Type is incorrect!",
-    };
-
-    return (
-      <>
         <HvInput
           required
           type="email"

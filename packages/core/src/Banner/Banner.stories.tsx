@@ -52,6 +52,8 @@ export const Variants: StoryObj<HvBannerProps> = {
           "Banner with custom icon with base color on the semantic background.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   render: () => {
     const actionArray = (id: string) => [

@@ -52,6 +52,8 @@ export const Variants: StoryObj<HvSnackbarProps> = {
           "All the different Snackbar variants and some examples of Snackbar's with custom icons, actions and content.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   args: {
     open: true,

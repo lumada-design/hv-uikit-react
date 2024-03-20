@@ -7,30 +7,6 @@ import { HvDefaultNavigation, HvStep, HvStepProps } from "./DefaultNavigation";
 import { dotClasses, HvDot, HvSimpleNavigation } from "./SimpleNavigation";
 import { HvStepNavigation, HvStepNavigationProps } from "./StepNavigation";
 
-const StyledDiv = styled("div")({
-  display: "flex",
-  alignItems: "center",
-  flexWrap: "wrap",
-  overflow: "auto",
-  "& > *": {
-    margin: "0 10px 5px 0",
-  },
-  "& .two-examples": {
-    display: "flex",
-    flexDirection: "column",
-    "& > div.steps": {
-      display: "flex",
-      alignItems: "center",
-      "& > div, > button": {
-        marginLeft: 10,
-      },
-    },
-    "& > div:first-of-type": {
-      marginBottom: 40,
-    },
-  },
-});
-
 type StepType = Pick<
   HvStepProps,
   "state" | "title" | "onClick" | "className" | "disabled"
@@ -96,9 +72,16 @@ const meta: Meta<typeof HvStepNavigation> = {
   } as unknown,
   decorators: [
     (Story) => (
-      <StyledDiv>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          flexWrap: "wrap",
+          overflow: "auto",
+        }}
+      >
         <Story />
-      </StyledDiv>
+      </div>
     ),
   ],
 };
@@ -114,94 +97,114 @@ export const Main: StoryObj<HvStepNavigationProps> = {
     classes: { control: { disable: true } },
     steps: { control: { disable: true } },
   },
-  render: (args) => {
-    return <HvStepNavigation {...args} />;
-  },
+  render: (args) => <HvStepNavigation {...args} />,
 };
 
-export const WithTooltip = () => (
-  <div className="two-examples">
-    <HvStepNavigation
-      type="Simple"
-      steps={steps}
-      showTitles={false}
-      aria-label="Simple step navigation with tooltip"
-    />
-    <HvStepNavigation
-      type="Default"
-      steps={steps}
-      showTitles={false}
-      aria-label="Default step navigation with tooltip"
-    />
-  </div>
-);
+export const Variants: StoryObj<HvStepNavigationProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Variants of the step navigation component with titles and with tooltips shown on hover.",
+      },
+    },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  render: () => (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 80,
+      }}
+    >
+      <HvStepNavigation
+        type="Default"
+        steps={steps}
+        aria-label="Default step navigation with tooltip"
+      />
+      <HvStepNavigation
+        type="Simple"
+        steps={steps}
+        aria-label="Simple step navigation"
+      />
+      <HvStepNavigation
+        type="Default"
+        steps={steps}
+        showTitles={false}
+        aria-label="Default step navigation"
+      />
+      <HvStepNavigation
+        type="Simple"
+        steps={steps}
+        showTitles={false}
+        aria-label="Simple step navigation with tooltip"
+      />
+    </div>
+  ),
+};
 
-WithTooltip.parameters = {
-  docs: {
-    description: {
-      story: "Example with no titles displayed, only tooltips on hover.",
+export const Width: StoryObj<HvStepNavigationProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Example of a step navigation with a customized width for each breakpoint ('200px', '400px', '600px', '800px', '1000px').",
+      },
     },
   },
+  render: () => (
+    <HvStepNavigation
+      steps={steps}
+      width={{
+        xs: 200,
+        sm: 400,
+        md: 600,
+        lg: 800,
+        xl: 1000,
+      }}
+    />
+  ),
 };
 
-export const Width = () => (
-  <HvStepNavigation
-    steps={steps}
-    width={{
-      xs: 200,
-      sm: 400,
-      md: 600,
-      lg: 800,
-      xl: 1000,
-    }}
-  />
-);
-
-Width.parameters = {
-  docs: {
-    description: {
-      story:
-        "Example of a step navigation with a customized width for each breakpoint ('200px', '400px', '600px', '800px', '1000px').",
+export const Customized: StoryObj<HvStepNavigationProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Example of a step navigation with customized styles made by <b>className</b>, <b>separatorClassName</b>, <b>titleClassName</b> properties of each step definition",
+      },
     },
   },
-};
-
-export const Customized = () => {
-  const root = css({
-    backgroundColor: theme.colors.positive,
-    "&:hover": {
+  render: () => {
+    const root = css({
       backgroundColor: theme.colors.positive,
-    },
-    [`&.${dotClasses.ghostDisabled}`]: {
-      backgroundColor: theme.colors.secondary,
-    },
-  });
-  const separator = css({
-    backgroundColor: theme.colors.positive,
-    height: 3,
-  });
-  const title = css({
-    color: theme.colors.secondary,
-  });
+      "&:hover": {
+        backgroundColor: theme.colors.positive,
+      },
+      [`&.${dotClasses.ghostDisabled}`]: {
+        backgroundColor: theme.colors.secondary,
+      },
+    });
+    const separator = css({
+      backgroundColor: theme.colors.positive,
+      height: 3,
+    });
+    const title = css({
+      color: theme.colors.secondary,
+    });
 
-  return (
-    <HvStepNavigation
-      type="Simple"
-      steps={steps.map((s) => ({
-        ...s,
-        className: root,
-        separatorClassName: separator,
-        titleClassName: title,
-      }))}
-    />
-  );
-};
-
-Customized.parameters = {
-  docs: {
-    description: {
-      story:
-        "Example of a step navigation with customized styles made by <b>className</b>, <b>separatorClassName</b>, <b>titleClassName</b> properties of each step definition",
-    },
+    return (
+      <HvStepNavigation
+        type="Simple"
+        steps={steps.map((s) => ({
+          ...s,
+          className: root,
+          separatorClassName: separator,
+          titleClassName: title,
+        }))}
+      />
+    );
   },
 };

@@ -1,4 +1,4 @@
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvAvatar,
   HvAvatarGroup,
@@ -10,7 +10,7 @@ import CustomOverflowRaw from "./CustomOverflow?raw";
 import { WithTooltip as WithTooltipStory } from "./WithTooltip";
 import WithTooltipRaw from "./WithTooltip?raw";
 
-const flexDecorator: DecoratorFn = (Story) => (
+const flexDecorator: Decorator = (Story) => (
   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
     {Story()}
   </div>

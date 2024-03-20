@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvBadge,
   HvButton,
@@ -98,7 +99,16 @@ export const Main: StoryObj<HvHeaderProps> = {
       control: "select",
     },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   decorators: [(Story) => <div style={{ height: 150 }}>{Story()}</div>],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const link = canvas.getByRole("link", { name: /work orders/i });
+    await userEvent.click(link);
+  },
   render: ({ position }) => {
     const [selected, setSelected] = useState<string>("2");
     const handleChange: HvHeaderNavigationProps["onClick"] = (
@@ -237,6 +247,8 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
           "Horizontal and vertical navigation were combined for better organization and distribution of multi-level navigation.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   decorators: [(Story) => <div style={{ height: 300 }}>{Story()}</div>],
   render: () => {

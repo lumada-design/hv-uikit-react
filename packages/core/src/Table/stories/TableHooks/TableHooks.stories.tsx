@@ -1,4 +1,5 @@
 import { StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 
 import { AlternativeLayout } from "./AlternativeLayout";
 import AlternativeLayoutRaw from "./AlternativeLayout?raw";
@@ -46,7 +47,11 @@ export const AlternativeLayoutStory: StoryObj = {
 };
 
 export const ColumnResizeStory: StoryObj = {
-  parameters: { docs: { source: { code: ColumnResizeRaw } } },
+  parameters: {
+    docs: { source: { code: ColumnResizeRaw } },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => <ColumnResize />,
 };
 
@@ -66,7 +71,9 @@ export const UseHvSelectionControlledStory: StoryObj = {
 };
 
 export const LockedSelectionStory: StoryObj = {
-  parameters: { docs: { source: { code: LockedSelectionRaw } } },
+  parameters: {
+    docs: { source: { code: LockedSelectionRaw } },
+  },
   render: () => <LockedSelection />,
 };
 
@@ -86,22 +93,48 @@ export const UseHvSortByStory: StoryObj = {
 };
 
 export const UseHvRowExpandStory: StoryObj = {
-  parameters: { docs: { source: { code: UseHvRowExpandRaw } } },
+  parameters: {
+    docs: { source: { code: UseHvRowExpandRaw } },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getAllByRole("button", { name: /expand/i })[0];
+    await userEvent.click(button);
+  },
   render: () => <UseHvRowExpand />,
 };
 
 export const UseHvGroupByStory: StoryObj = {
-  parameters: { docs: { source: { code: UseHvGroupByRaw } } },
+  parameters: {
+    docs: { source: { code: UseHvGroupByRaw } },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getAllByRole("button", { name: /collapse/i })[0];
+    await userEvent.click(button);
+  },
   render: () => <UseHvGroupBy />,
 };
 
 export const UseHvTableStickyStory: StoryObj = {
-  parameters: { docs: { source: { code: UseHvTableStickyRaw } } },
+  parameters: {
+    docs: { source: { code: UseHvTableStickyRaw } },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => <UseHvTableSticky />,
 };
 
 export const UseHvHeaderGroupsStory: StoryObj = {
-  parameters: { docs: { source: { code: UseHvHeaderGroupsRaw } } },
+  parameters: {
+    docs: { source: { code: UseHvHeaderGroupsRaw } },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => <UseHvHeaderGroups />,
 };
 

@@ -134,8 +134,9 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
           and is not keyboard-navigable, therefore it shouldn't be too complex or contain interactable elements.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
-
   render: () => {
     const longTextTooltip = (
       <span style={{ maxWidth: 250 }}>
