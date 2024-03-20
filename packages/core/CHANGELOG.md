@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.58.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.58.2...@hitachivantara/uikit-react-core@5.58.3) (2024-03-20)
+
+### Bug Fixes
+
+- table settings story a11y issues ([e293856](https://github.com/lumada-design/hv-uikit-react/commit/e29385668084f3d378edf33a646408adf08ee6f8))
+
 ## [5.58.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.58.1...@hitachivantara/uikit-react-core@5.58.2) (2024-03-16)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

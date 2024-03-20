@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.31.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.30.3...@hitachivantara/uikit-react-lab@5.31.0) (2024-03-20)
+
+### Features
+
+- **Wizard:** allow disabled and loading state through the wizard context. ([#4085](https://github.com/lumada-design/hv-uikit-react/issues/4085)) ([9f3f231](https://github.com/lumada-design/hv-uikit-react/commit/9f3f231887eed4c4f0aed053be9ab0d2357dcfb8))
+
 ## [5.30.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.30.2...@hitachivantara/uikit-react-lab@5.30.3) (2024-03-16)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

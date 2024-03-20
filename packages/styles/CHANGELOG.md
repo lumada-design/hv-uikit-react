@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.23.1 (2024-03-20)
+
+### Bug Fixes
+
+- css vars deduplication ([fad003d](https://github.com/lumada-design/hv-uikit-react/commit/fad003d4de580b28445d27bcf60c3047f4e23a00))
+
 # 5.23.0 (2024-03-14)
 
 ### Bug Fixes
