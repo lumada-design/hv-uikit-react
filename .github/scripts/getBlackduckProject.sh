@@ -9,6 +9,6 @@ case $1 in
 "lab") echo "react-lab";;
 "shared") echo "react-shared";;
 "styles") echo "styles";;
-"uno-preset") echo "react-uno-preset";;
+"uno-preset") echo "uno-preset";;
 "viz") echo "react-viz";;
 esac
