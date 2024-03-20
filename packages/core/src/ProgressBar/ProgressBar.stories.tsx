@@ -24,19 +24,10 @@ export const Main: StoryObj<HvProgressBarProps> = {
     labelProps: { control: { disable: true } },
     value: { control: { type: "range" } },
   },
-  render: (args) => {
-    return <HvProgressBar aria-label="Status" {...args} />;
-  },
+  render: (args) => <HvProgressBar aria-label="Status" {...args} />,
 };
 
 export const Progressive: StoryObj<HvProgressBarProps> = {
-  args: {
-    value: 0,
-  },
-  argTypes: {
-    classes: { control: { disable: true } },
-    value: { control: { type: "range" } },
-  },
   render: () => {
     return (
       <>
@@ -82,71 +73,42 @@ export const Progressive: StoryObj<HvProgressBarProps> = {
 };
 
 export const Determinate: StoryObj<HvProgressBarProps> = {
-  args: {
-    value: 0,
-  },
-  argTypes: {
-    classes: { control: { disable: true } },
-    value: { control: { type: "range" } },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   render: () => {
     return (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-            alignItems: "center",
-            width: 400,
-            margin: "auto",
-            marginTop: 20,
-            marginBottom: 40,
-          }}
-        >
-          <HvTypography variant="label">Success</HvTypography>
-          <HvProgressBar
-            value={100}
-            status="completed"
-            aria-label="Example Determined Progress Bar"
-          />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-            alignItems: "center",
-            width: 400,
-            margin: "auto",
-            marginTop: 20,
-            marginBottom: 40,
-          }}
-        >
-          <HvTypography variant="label">Loading</HvTypography>
-          <HvProgressBar
-            value={40}
-            aria-label="Example Determined Loading Progress Bar"
-          />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-            alignItems: "center",
-            width: 400,
-            margin: "auto",
-          }}
-        >
-          <HvTypography variant="label">Error</HvTypography>
-          <HvProgressBar
-            value={30}
-            status="error"
-            aria-label="Example Determined Error Progress Bar"
-          />
-        </div>
-      </>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <HvTypography variant="label">Start</HvTypography>
+        <HvProgressBar value={0} aria-label="Example Determined Progress Bar" />
+        <br /> <br />
+        <HvTypography variant="label">Success</HvTypography>
+        <HvProgressBar
+          value={100}
+          status="completed"
+          aria-label="Example Determined Progress Bar"
+        />
+        <br /> <br />
+        <HvTypography variant="label">Loading</HvTypography>
+        <HvProgressBar
+          value={40}
+          aria-label="Example Determined Loading Progress Bar"
+        />
+        <br /> <br />
+        <HvTypography variant="label">Error</HvTypography>
+        <HvProgressBar
+          value={30}
+          status="error"
+          aria-label="Example Determined Error Progress Bar"
+        />
+      </div>
     );
   },
 };

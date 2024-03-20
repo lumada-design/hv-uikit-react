@@ -36,6 +36,10 @@ export const Main: StoryObj<HvDropDownMenuProps> = {
     onToggle: { control: { disable: true } },
     onClick: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: (args) => {
     return <HvDropDownMenu {...args} />;
   },

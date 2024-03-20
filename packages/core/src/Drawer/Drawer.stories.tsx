@@ -11,6 +11,7 @@ import {
   HvGlobalActions,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
+import { userEvent, within } from "@storybook/testing-library";
 
 const meta: Meta<typeof HvDrawer> = {
   title: "Widgets/Drawer",
@@ -42,6 +43,15 @@ export const Main: StoryObj<HvDrawerProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+  },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /open drawer/i });
+    await userEvent.click(button);
   },
   render: (args) => {
     const [open, setOpen] = useState(false);

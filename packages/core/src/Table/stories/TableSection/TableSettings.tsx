@@ -422,7 +422,7 @@ const SettingsDialog = ({
 
 export const TableSettings = () => {
   const tableColumns = useMemo(() => getColumns(), []);
-  const [popperOpen, setPopperOpen] = useState(true);
+  const [popperOpen, setPopperOpen] = useState(false);
   const data = useMemo(() => makeData(5), []);
   const [columnOrder, setColumnOrder] = useState(tableColumns.map((c) => c.id));
   const [hiddenColumns, setHiddenColumns] = useState<string[]>([]);

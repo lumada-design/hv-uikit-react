@@ -51,6 +51,10 @@ export const Main: StoryObj<HvCheckBoxProps> = {
 };
 
 export const Variants: StoryObj<HvCheckBoxProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => {
     const styles = {
       root: css({

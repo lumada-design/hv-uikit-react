@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library"
 import {
   HvActionGeneric,
   HvBulkActions,
@@ -122,6 +123,10 @@ export const Main: StoryObj<HvBulkActionsProps> = {
 };
 
 export const WithActions: StoryObj<HvBulkActionsProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => {
     const addEntry = (id: string | number): SampleComponentDatum => ({
       id: `Entry ${id}`,
@@ -184,6 +189,15 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
 };
 
 export const WithPagination: StoryObj<HvBulkActionsProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByRole("checkbox", { name: /All/i });
+    await userEvent.click(checkbox);
+  },
   render: () => {
     const pageSizeOptions: number[] = [4, 6, 12, 24, 48, 2000];
 

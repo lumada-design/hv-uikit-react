@@ -126,6 +126,10 @@ const defaultValueJson = `{
   }`;
 
 export const Main: StoryObj<HvCodeEditorProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false, delay: 5000 },
+  },
   render: () => {
     const getModalStyle = () => {
       return {
@@ -198,6 +202,8 @@ export const YamlEditor: StoryObj<HvCodeEditorProps> = {
         story: "Yaml editor.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false, delay: 5000 },
   },
   render: () => {
     return (

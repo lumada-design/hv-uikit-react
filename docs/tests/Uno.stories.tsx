@@ -5,11 +5,12 @@ import { Abacus } from "@hitachivantara/uikit-react-icons";
 export default {
   title: "Tests/Uno",
   parameters: {
-    docs: { disable: true },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
 };
 
-export const UnoClasses: StoryObj = {
+export const Main: StoryObj = {
   render: () => (
     <>
       <HvTypography variant="title4">Z-Index & Colors</HvTypography>

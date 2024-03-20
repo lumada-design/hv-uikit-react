@@ -54,8 +54,12 @@ export const Main: StoryObj<HvListContainerProps> = {
 };
 
 export const SingleSelection: StoryObj<HvListContainerProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => {
-    const [selectedItem, setSelectedItem] = useState(-1);
+    const [selectedItem, setSelectedItem] = useState(0);
 
     return (
       <HvPanel style={{ maxWidth: 220 }}>
@@ -169,60 +173,64 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
 };
 
 export const WithIcons: StoryObj<HvListContainerProps> = {
-  render: () => {
-    return (
-      <HvPanel style={{ maxWidth: 220 }}>
-        <HvListContainer
-          interactive
-          aria-label="Single Selection List with Left Icons Title"
-        >
-          <HvListItem startAdornment={<User />}>
-            Advanced server DS120
-          </HvListItem>
-          <HvListItem startAdornment={<Calendar />}>
-            Advanced server DS122
-          </HvListItem>
-          <HvListItem startAdornment={<Machine />}>
-            Advanced server DS250
-          </HvListItem>
-          <HvListItem startAdornment={<Plane />} disabled>
-            Advanced server DS530
-          </HvListItem>
-          <HvListItem startAdornment={<LineChart />}>
-            Advanced server DS555
-          </HvListItem>
-        </HvListContainer>
-      </HvPanel>
-    );
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
-};
-
-export const WithNavigationIcons: StoryObj<HvListContainerProps> = {
   render: () => {
     return (
-      <HvPanel style={{ overflow: "auto", maxWidth: 220 }}>
-        <HvListContainer
-          condensed
-          interactive
-          aria-label="Simple List With Navigation Icons"
-        >
-          <HvListItem endAdornment={<DropRightXS />}>Today</HvListItem>
-          <HvListItem>
-            <HvTypography component="a" href="#yesterday">
-              Yesterday
-            </HvTypography>
-          </HvListItem>
-          <HvListItem>
-            <HvTypography component="a" href="#last-week">
-              Last week
-            </HvTypography>
-          </HvListItem>
-          <HvListItem endAdornment={<DropRightXS />} disabled>
-            Last month
-          </HvListItem>
-          <HvListItem endAdornment={<DropRightXS />}>Last year</HvListItem>
-        </HvListContainer>
-      </HvPanel>
+      <>
+        <HvTypography variant="title3">Start Icons</HvTypography>
+        <br />
+        <HvPanel style={{ maxWidth: 220 }}>
+          <HvListContainer
+            interactive
+            aria-label="Single Selection List with Left Icons Title"
+          >
+            <HvListItem startAdornment={<User />}>
+              Advanced server DS120
+            </HvListItem>
+            <HvListItem startAdornment={<Calendar />}>
+              Advanced server DS122
+            </HvListItem>
+            <HvListItem startAdornment={<Machine />}>
+              Advanced server DS250
+            </HvListItem>
+            <HvListItem startAdornment={<Plane />} disabled>
+              Advanced server DS530
+            </HvListItem>
+            <HvListItem startAdornment={<LineChart />}>
+              Advanced server DS555
+            </HvListItem>
+          </HvListContainer>
+        </HvPanel>
+        <br />
+        <HvTypography variant="title3">Navigation Icons</HvTypography>
+        <br />
+        <HvPanel style={{ overflow: "auto", maxWidth: 220 }}>
+          <HvListContainer
+            condensed
+            interactive
+            aria-label="Simple List With Navigation Icons"
+          >
+            <HvListItem endAdornment={<DropRightXS />}>Today</HvListItem>
+            <HvListItem>
+              <HvTypography component="a" href="#yesterday">
+                Yesterday
+              </HvTypography>
+            </HvListItem>
+            <HvListItem>
+              <HvTypography component="a" href="#last-week">
+                Last week
+              </HvTypography>
+            </HvListItem>
+            <HvListItem endAdornment={<DropRightXS />} disabled>
+              Last month
+            </HvListItem>
+            <HvListItem endAdornment={<DropRightXS />}>Last year</HvListItem>
+          </HvListContainer>
+        </HvPanel>
+      </>
     );
   },
 };

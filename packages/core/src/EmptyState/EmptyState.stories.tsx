@@ -30,6 +30,10 @@ export const Main: StoryObj<HvEmptyStateProps> = {
 };
 
 export const WithAction: StoryObj<HvEmptyStateProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => {
     const CustomAction = <HvLink route="/">Create a new data route</HvLink>;
     return (
@@ -67,6 +71,10 @@ export const CustomMessages: StoryObj<HvEmptyStateProps> = {
 };
 
 export const Minimal: StoryObj<HvEmptyStateProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => {
     return <HvEmptyState message="No data to display" icon={<Info />} />;
   },

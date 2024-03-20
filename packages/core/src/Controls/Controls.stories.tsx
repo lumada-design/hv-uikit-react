@@ -183,6 +183,11 @@ export const Controls = () => {
   );
 };
 
+Controls.parameters = {
+  // Enables Chromatic snapshot
+  chromatic: { disableSnapshot: false },
+};
+
 export const ControlsControlled = () => {
   const originalData = useMemo(() => makeData(10), []);
   const [currentView, setCurrentView] = useState("card");

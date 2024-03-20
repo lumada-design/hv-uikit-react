@@ -1,11 +1,11 @@
 import { useMemo, useState } from "react";
 import { css, CSSInterpolation } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   Breakpoint,
   HvAccordion,
   HvAccordionProps,
-  HvBox,
   HvButton,
   HvInput,
   HvListContainer,
@@ -50,7 +50,6 @@ export const Main: StoryObj<HvAccordionProps> = {
     label: "Analytics",
     headingLevel: 1,
     disabled: false,
-    expanded: true,
     defaultExpanded: false,
     labelVariant: "label",
   },
@@ -61,26 +60,34 @@ export const Main: StoryObj<HvAccordionProps> = {
   },
   render: (args) => {
     return (
-      <HvBox sx={{ maxWidth: 300 }}>
-        <HvAccordion {...args}>
-          <HvListContainer
-            className={css(styles.listContainer)}
-            interactive
-            condensed
-          >
-            <HvListItem>Views</HvListItem>
-            <HvListItem>Parameters</HvListItem>
-          </HvListContainer>
-        </HvAccordion>
-      </HvBox>
+      <HvAccordion {...args}>
+        <HvListContainer
+          className={css(styles.listContainer)}
+          interactive
+          condensed
+        >
+          <HvListItem>Views</HvListItem>
+          <HvListItem>Parameters</HvListItem>
+        </HvListContainer>
+      </HvAccordion>
     );
   },
 };
 
 export const Disabled: StoryObj<HvAccordionProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  // Expand non-disabled option for visual tests
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: "System" });
+    await userEvent.click(button);
+  },
   render: () => {
     return (
-      <HvBox sx={{ maxWidth: 300 }}>
+      <div style={{ maxWidth: 300 }}>
         <HvAccordion label="Analytics" headingLevel={3} disabled>
           <HvListContainer
             className={css(styles.listContainer)}
@@ -111,7 +118,7 @@ export const Disabled: StoryObj<HvAccordionProps> = {
             <HvListItem>Memory</HvListItem>
           </HvListContainer>
         </HvAccordion>
-      </HvBox>
+      </div>
     );
   },
 };
@@ -187,7 +194,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             Expand all
           </HvButton>
         </HvSimpleGrid>
-        <HvBox sx={{ maxWidth: 300 }}>
+        <div style={{ maxWidth: 300 }}>
           <HvAccordion
             label="Personal Information"
             onChange={() => handleToggle("personalInformation")}
@@ -231,7 +238,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
               <HvInput label="Zip Code" placeholder="Insert code" />
             </div>
           </HvAccordion>
-        </HvBox>
+        </div>
       </>
     );
   },
@@ -319,7 +326,7 @@ export const Typography: StoryObj<HvAccordionProps> = {
     );
 
     return (
-      <HvBox sx={{ width: "100%" }}>
+      <div style={{ width: "100%" }}>
         <HvAccordion
           label="Films"
           labelVariant="title4"
@@ -355,7 +362,7 @@ export const Typography: StoryObj<HvAccordionProps> = {
             </HvTableBody>
           </HvTable>
         </HvAccordion>
-      </HvBox>
+      </div>
     );
   },
 };

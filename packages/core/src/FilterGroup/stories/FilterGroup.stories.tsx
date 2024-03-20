@@ -1,4 +1,5 @@
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvFilterGroup,
   HvFilterGroupProps,
@@ -13,7 +14,7 @@ import ResetToDefaultRaw from "./ResetToDefault?raw";
 import { Uncontrolled as UncontrolledStory } from "./Uncontrolled";
 import UncontrolledRaw from "./Uncontrolled?raw";
 
-const widthDecorator: DecoratorFn = (Story) => (
+const widthDecorator: Decorator = (Story) => (
   <div style={{ width: 180 }}>{Story()}</div>
 );
 
@@ -32,6 +33,13 @@ export const Main: StoryObj<HvFilterGroupProps> = {
         code: MainRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const combobox = canvas.getByRole("combobox", { name: /main filter/i });
+    await userEvent.click(combobox);
   },
   decorators: [widthDecorator],
   render: () => <MainStory />,

@@ -1,4 +1,4 @@
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvAvatar,
   HvAvatarProps,
@@ -12,7 +12,8 @@ import {
   Search,
 } from "@hitachivantara/uikit-react-icons";
 
-const flexDecorator: DecoratorFn = (Story) => (
+
+const flexDecorator: Decorator = (Story) => (
   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
     {Story()}
   </div>

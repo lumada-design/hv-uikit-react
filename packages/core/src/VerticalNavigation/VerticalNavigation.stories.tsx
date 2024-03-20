@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvVerticalNavigation,
   HvVerticalNavigationAction,
@@ -43,6 +44,10 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
     slider: false,
   },
   argTypes: {},
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: (args) => {
     const navigationData = useMemo<NavigationData[]>(
       () => [
@@ -132,8 +137,9 @@ export const TreeViewMode: StoryObj<HvVerticalNavigationProps> = {
           "Instead of TAB, use the arrow keys to navigate through items. Enter performs its default action (i.e. open/close parent nodes, select otherwise).",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
-
   render: () => {
     const navigationData = useMemo(
       () => [
@@ -209,6 +215,10 @@ export const TreeViewMode: StoryObj<HvVerticalNavigationProps> = {
 };
 
 export const WithoutActions: StoryObj<HvVerticalNavigationProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => {
     const navigationData = useMemo(
       () => [
@@ -297,6 +307,10 @@ export const WithoutActions: StoryObj<HvVerticalNavigationProps> = {
 };
 
 export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<
       NavigationData[]
@@ -396,8 +410,9 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
           "When collapsed in icon mode only the icons are visible, if an icon is not provided one will be generated based on the first letter of the label.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
-
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<
       NavigationData[]
@@ -604,8 +619,14 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
             "Custom popup styles can be applied to the popup container by passing a style object to the popupStyles prop.",
         },
       },
+      // Enables Chromatic snapshot
+      chromatic: { disableSnapshot: false },
     },
-
+    play: async ({ canvasElement }) => {
+      const canvas = within(canvasElement);
+      const button = canvas.getByRole("button", { name: /collapse/i });
+      await userEvent.click(button);
+    },
     render: () => {
       const [navigationDataState, setNavigationDataState] = useState<
         NavigationData[]
@@ -739,6 +760,10 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
   };
 
 export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<
       NavigationData[]
@@ -846,6 +871,8 @@ export const MobileNavigation: StoryObj<HvVerticalNavigationProps> = {
           "Example of an implementation of the Design System Mobile Navigation pattern: the Vertical Navigation component changes to Slider mode when the window is in a smaller size.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<

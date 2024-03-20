@@ -27,6 +27,10 @@ export const Main: StoryObj<HvScrollToVerticalProps> = {
     classes: { control: { disable: true } },
     options: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
   render: (args) => {
     const options = [
       { label: "Server status summary", value: "mainId1" },

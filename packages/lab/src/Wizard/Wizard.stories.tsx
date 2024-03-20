@@ -1,6 +1,7 @@
 import { useCallback, useContext, useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvAccordion,
   HvButton,
@@ -95,6 +96,15 @@ export const Main: StoryObj<HvWizardProps> = {
   args: {},
   argTypes: {
     classes: { control: { disable: true } },
+  },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /show wizard/i });
+    await userEvent.click(button);
   },
   render: () => {
     const [show, setShow] = useState(false);
@@ -215,6 +225,17 @@ export const Skippable: StoryObj<HvWizardProps> = {
 };
 
 export const ComponentBreakDown: StoryObj<HvWizardProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /show wizard/i });
+    await userEvent.click(button);
+    const summaryButton = canvas.getByRole("button", { name: /summary/i });
+    await userEvent.click(summaryButton);
+  },
   render: () => {
     const [open, setOpen] = useState(false);
 

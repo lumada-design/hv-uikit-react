@@ -7,6 +7,7 @@ import {
   HvFlowProps,
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
+import { userEvent, within } from "@storybook/testing-library";
 
 import { CustomDrop as CustomDropStory } from "./CustomDrop";
 import CustomDropRaw from "./CustomDrop?raw";
@@ -56,6 +57,15 @@ export const Main: StoryObj<HvFlowProps> = {
         code: MainRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /add node/i });
+    await userEvent.click(button);
+    const expand = canvas.getAllByRole("button", { name: /expand group/i })[0];
+    await userEvent.click(expand);
   },
   render: () => <MainStory />,
 };
@@ -70,6 +80,8 @@ export const InitialState: StoryObj<HvFlowProps> = {
         code: InitialStateRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   render: () => <InitialStateStory />,
 };

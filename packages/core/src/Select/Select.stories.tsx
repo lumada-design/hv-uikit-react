@@ -5,6 +5,7 @@ import {
   HvSelect,
   HvSelectProps,
 } from "@hitachivantara/uikit-react-core";
+import { userEvent, within } from "@storybook/testing-library";
 
 import ControlledStory from "./stories/Controlled";
 import ControlledStoryRaw from "./stories/Controlled?raw";
@@ -28,8 +29,16 @@ export const Main: StoryObj<HvSelectProps<{}, false>> = {
     size: "md",
     variant: "secondarySubtle",
   },
-  argTypes: {},
   decorators: [decorator],
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const select = canvas.getByRole("combobox", { name: /country/i });
+    await userEvent.click(select);
+  },
   render: (args) => {
     return (
       <HvSelect
@@ -63,17 +72,25 @@ export const Variants: StoryObj<HvSelectProps<{}, false>> = {
         story: "Selects in their various form state variants.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   decorators: [
     (Story) => (
       <div className="flex flex-wrap gap-sm [&>*]:w-[200px]">{Story()}</div>
     ),
   ],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const select = canvas.getByRole("combobox", { name: /required/i });
+    await userEvent.click(select);
+  },
   render: () => {
     return (
       <>
         <HvSelect required label="Required" placeholder="Select an option">
-          <HvOption value="op">Option</HvOption>
+          <HvOption value="op1">Option 1</HvOption>
+          <HvOption value="op2">Option 2</HvOption>
         </HvSelect>
         <HvSelect disabled label="Disabled" placeholder="Select an option">
           <HvOption value="op">Option</HvOption>

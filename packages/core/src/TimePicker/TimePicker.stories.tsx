@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { css, CSSInterpolation } from "@emotion/css";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvButton,
   HvInput,
@@ -35,6 +36,15 @@ export const Main: StoryObj<HvTimePickerProps> = {
     dropdownProps: { control: { disable: true } },
   },
   decorators: [makeDecorator({ minHeight: 200, width: 200 })],
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const picker = canvas.getByRole("combobox", { name: /time picker/i });
+    await userEvent.click(picker);
+  },
   render: (args) => {
     return <HvTimePicker {...args} />;
   },
@@ -82,6 +92,13 @@ export const Variants: StoryObj<HvTimePickerProps> = {
           "Time Pickers in their various form state variants. `defaultValue` is used to configure the _uncontrolled_ initial value.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const picker = canvas.getByRole("combobox", { name: /required/i });
+    await userEvent.click(picker);
   },
   render: () => {
     const value: HvTimePickerValue = { hours: 5, minutes: 30, seconds: 14 };
@@ -163,8 +180,15 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
           "Use the `timeFormat` prop to force either the 12-hour or 24-hour clock format.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   decorators: [makeDecorator({ minHeight: 200, width: 220 })],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const picker = canvas.getByRole("combobox", { name: /time picker/i });
+    await userEvent.click(picker);
+  },
   render: () => {
     return (
       <HvTimePicker
