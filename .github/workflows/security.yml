@@ -1,8 +1,13 @@
 name: Security Scans
 
 on:
+  repository_dispatch:
+    types: [security]
   workflow_dispatch:
   workflow_call:
+
+env:
+  RUN_URL: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
 
 jobs:
   codedx-scans:
@@ -36,11 +41,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Request Citadel scan
-        run: |
-          echo "Sending the json request:" && \
-          cat .github/security-configurations/citadel-uikit.json && \
-          curl -k -X POST 'https://citadel.orl.eng.hitachivantara.com/citadel' --header \
-          'Content-Type: application/json' -d @.github/security-configurations/citadel-uikit.json
+        run: .github/scripts/citadel-request.sh
 
   black-duck-scans:
     name: Run Black Duck Scans
@@ -94,3 +95,32 @@ jobs:
           BlackDuck_Api_Token: "${{ secrets.BLACKDUCK_TOKEN }}"
           BlackDuck_Url: "${{ secrets.BLACKDUCK_URL }}"
           ADDITIONAL_ARGS: "${{ env.BLACKDUCK_ARGS }}"
+
+  notify-fail:
+    name: Notify Fail
+    needs: [codedx-scans,citadel-scan,black-duck-scans]
+    if: failure()
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v1
+
+      - name: Notify Fail
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+          COLOR: "#C62828"
+        with:
+          args: |
+            {
+              "channel": "ui-kit-internal",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "${{env.COLOR}}",
+                  "title": "Security Scans failed",
+                  "title_link": "${{ env.RUN_URL }}"
+                }
+              ]
+            }
