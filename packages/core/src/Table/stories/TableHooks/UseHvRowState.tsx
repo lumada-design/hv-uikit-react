@@ -31,7 +31,6 @@ export const UseHvRowState = () => {
             <HvIconButton
               title={row.state.isEditing ? "Close" : "Edit"}
               variant="secondaryGhost"
-              aria-label="edit button"
               onClick={() =>
                 setRowState?.([row.id], (state) => ({
                   ...state,
