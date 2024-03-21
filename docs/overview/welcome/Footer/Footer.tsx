@@ -6,7 +6,7 @@ const Header = () => (
   <Wrapper>
     <Separator />
     <HvTypography variant="body">
-      © Hitachi Vantara Corporation 2023.
+      © Hitachi Vantara Corporation 2024.
     </HvTypography>
   </Wrapper>
 );

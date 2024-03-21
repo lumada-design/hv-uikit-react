@@ -148,7 +148,7 @@ export const makeData = (len: number = 10) =>
 export const makeSelectedData = (len: number = 10) =>
   [...Array(len).keys()].map(controlledSelectedEntry);
 
-// https://react-table.tanstack.com/docs/api/useTable#column-options
+// https://react-table-v7-docs.netlify.app/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps
 export const getColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
   {
