@@ -34,3 +34,6 @@ export * from "./useGlobalFilter";
 
 export { default as useHvFilters } from "./useFilters";
 export * from "./useFilters";
+
+export { default as useHvRowState } from "./useRowState";
+export * from "./useRowState";

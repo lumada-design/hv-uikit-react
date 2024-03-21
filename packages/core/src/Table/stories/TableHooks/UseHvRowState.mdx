@@ -1,0 +1,17 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import * as TableHooksStories from "./TableHooks.stories";
+
+<Meta
+  of={TableHooksStories}
+  title="Visualizations/Table/Table Hooks/useHvRowState"
+/>
+
+# useHvRowState
+
+Rows can have a state.
+
+Check [React Table's `useRowState` documentation](https://react-table.tanstack.com/docs/api/useRowSelect) for configuration details.
+
+Press the edit button to see the state of the row changing.
+
+<Canvas of={TableHooksStories.UseHvRowStateStory} />
