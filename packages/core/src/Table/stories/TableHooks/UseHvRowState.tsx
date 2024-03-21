@@ -12,26 +12,22 @@ import {
   HvInput,
   HvTableColumnConfig,
   HvIconButton,
+  HvCellProps,
 } from "@hitachivantara/uikit-react-core";
 
 import { Close, Edit } from "@hitachivantara/uikit-react-icons";
 
 import { makeData, AssetEvent } from "../storiesUtils";
 
-const EditableCell = ({ value }) => <HvInput defaultValue={value} />;
+const EditableCell = ({ value, row }: HvCellProps<AssetEvent, string>) =>
+  row.state?.isEditing ? <HvInput value={value} /> : value;
 
 const getRowStateColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
   {
     Header: "Title",
     accessor: "name",
     style: { minWidth: 140, maxWidth: 140 },
-    Cell: ({ value, row }) => {
-      return row.state?.isEditing ? (
-        <EditableCell value={value} />
-      ) : (
-        (value as unknown as React.ReactElement)
-      );
-    },
+    Cell: EditableCell,
   },
   {
     Header: "Time",
@@ -42,13 +38,7 @@ const getRowStateColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
     Header: "Event Type",
     accessor: "eventType",
     style: { minWidth: 140, maxWidth: 140 },
-    Cell: ({ value, row }) => {
-      return row.state?.isEditing ? (
-        <EditableCell value={value} />
-      ) : (
-        (value as unknown as React.ReactElement)
-      );
-    },
+    Cell: EditableCell,
   },
   {
     Header: "Status",
@@ -59,20 +49,20 @@ const getRowStateColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
   { Header: "Priority", accessor: "priority" },
   {
     id: "edit",
-    Cell: (props) => {
+    Cell: (props: HvCellProps<AssetEvent, string>) => {
       const { row, setRowState } = props;
       return (
         <HvIconButton
-          title={row.state.isEditing ? "Close" : "Edit"}
+          title={row.state?.isEditing ? "Close" : "Edit"}
           variant="secondaryGhost"
           onClick={() =>
-            setRowState?.([row.id], (state) => ({
+            setRowState?.([row.id], (state: { isEditing: boolean }) => ({
               ...state,
               isEditing: !state.isEditing,
             }))
           }
         >
-          {row.state.isEditing ? <Close /> : <Edit />}
+          {row.state?.isEditing ? <Close /> : <Edit />}
         </HvIconButton>
       );
     },
