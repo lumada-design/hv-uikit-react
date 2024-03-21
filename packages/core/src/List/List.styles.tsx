@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses("HvList", {
   item: {},
   itemSelector: {
     "&:not(:hover):not(.HvIsFocused):not(:focus-within)": {
-      backgroundColor: theme.colors.primary_20,
+      backgroundColor: theme.colors.containerBackgroundHover,
     },
   },
   link: {

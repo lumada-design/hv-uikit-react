@@ -58,4 +58,7 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
     lineHeight: "32px",
     width: "100%",
   },
+  checked: {},
+  indeterminate: {},
+  semantic: {},
 });

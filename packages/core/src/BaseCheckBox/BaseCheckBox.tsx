@@ -4,16 +4,12 @@ import MuiCheckbox, {
   CheckboxProps as MuiCheckboxProps,
 } from "@mui/material/Checkbox";
 
-import {
-  CheckboxCheck as CheckboxCheckIcon,
-  CheckboxPartial as CheckboxPartialIcon,
-  Checkbox as CheckboxIcon,
-} from "@hitachivantara/uikit-react-icons";
-
 import { ExtractNames } from "../utils/classes";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 
 import { staticClasses, useClasses } from "./BaseCheckBox.styles";
+
+import { Box, Check, Partial } from "./icons";
 
 export { staticClasses as baseCheckBoxClasses };
 
@@ -91,32 +87,11 @@ export interface HvBaseCheckBoxProps
   classes?: HvBaseCheckBoxClasses;
 }
 
-const getSelectorIcons = (
-  options: {
-    disabled: boolean;
-    semantic: boolean;
-  },
-  classes: HvBaseCheckBoxClasses
-) => {
-  const { disabled, semantic } = options;
-  const color =
-    (disabled && ["atmo3", "secondary_60"]) ||
-    (semantic && ["base_light", "base_dark"]) ||
-    undefined;
-  const checkedColor =
-    (disabled && ["atmo3", "secondary_60"]) ||
-    (semantic && ["base_dark", "base_light"]) ||
-    undefined;
-
-  // Default colors: ["atmo1","secondary"]
+const getSelectorIcons = () => {
   return {
-    checkbox: <CheckboxIcon color={color} className={classes.icon} />,
-    checkboxPartial: (
-      <CheckboxPartialIcon color={color} className={classes.icon} />
-    ),
-    checkboxChecked: (
-      <CheckboxCheckIcon color={checkedColor} className={classes.icon} />
-    ),
+    checkbox: <Box />,
+    checkboxPartial: <Partial />,
+    checkboxChecked: <Check />,
   };
 };
 
@@ -154,7 +129,7 @@ export const HvBaseCheckBox = forwardRef<
 
   const [focusVisible, setFocusVisible] = useState<boolean>(false);
 
-  const icons = getSelectorIcons({ disabled, semantic }, classes);
+  const icons = getSelectorIcons();
 
   const onChangeCallback = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -191,7 +166,13 @@ export const HvBaseCheckBox = forwardRef<
       value={value}
       className={cx(
         classes.root,
-        { [classes.disabled]: disabled, [classes.focusVisible]: focusVisible },
+        {
+          [classes.disabled]: disabled,
+          [classes.focusVisible]: focusVisible,
+          [classes.checked]: checked,
+          [classes.indeterminate]: indeterminate,
+          [classes.semantic]: semantic,
+        },
         className
       )}
       icon={icons.checkbox}
