@@ -28,6 +28,8 @@ import { UseHvSortBy } from "./UseHvSortBy";
 import UseHvSortByRaw from "./UseHvSortBy?raw";
 import { UseHvTableSticky } from "./UseHvTableSticky";
 import UseHvTableStickyRaw from "./UseHvTableSticky?raw";
+import { UseHvRowState } from "./UseHvRowState";
+import UseHvRowStateRaw from "./UseHvRowState?raw";
 
 export default {
   title: "Visualizations/Table/Table Hooks",
@@ -101,4 +103,9 @@ export const UseHvTableStickyStory: StoryObj = {
 export const UseHvHeaderGroupsStory: StoryObj = {
   parameters: { docs: { source: { code: UseHvHeaderGroupsRaw } } },
   render: () => <UseHvHeaderGroups />,
+};
+
+export const UseHvRowStateStory: StoryObj = {
+  parameters: { docs: { source: { code: UseHvRowStateRaw } } },
+  render: () => <UseHvRowState />,
 };
