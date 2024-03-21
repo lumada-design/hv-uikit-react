@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.24.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.23.1...@hitachivantara/uikit-styles@5.24.0) (2024-03-21)
+
+### Features
+
+- **select:** button size and variant ([d77c0ef](https://github.com/lumada-design/hv-uikit-react/commit/d77c0ef5383c2c562dfb1ede9dc01ef107887ccc))
+
 ## 5.23.1 (2024-03-20)
 
 ### Bug Fixes

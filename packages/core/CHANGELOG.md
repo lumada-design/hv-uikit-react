@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.59.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.58.3...@hitachivantara/uikit-react-core@5.59.0) (2024-03-21)
+
+### Features
+
+- **select:** button size and variant ([d77c0ef](https://github.com/lumada-design/hv-uikit-react/commit/d77c0ef5383c2c562dfb1ede9dc01ef107887ccc))
+
 ## [5.58.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.58.2...@hitachivantara/uikit-react-core@5.58.3) (2024-03-20)
 
 ### Bug Fixes
