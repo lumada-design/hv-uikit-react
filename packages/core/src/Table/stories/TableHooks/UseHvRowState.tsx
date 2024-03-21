@@ -10,42 +10,77 @@ import {
   useHvData,
   useHvRowState,
   HvInput,
+  HvTableColumnConfig,
   HvIconButton,
 } from "@hitachivantara/uikit-react-core";
 
 import { Close, Edit } from "@hitachivantara/uikit-react-icons";
 
-import { makeData, getColumns, AssetEvent } from "../storiesUtils";
+import { makeData, AssetEvent } from "../storiesUtils";
 
 const EditableCell = ({ value }) => <HvInput defaultValue={value} />;
 
+const getRowStateColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
+  {
+    Header: "Title",
+    accessor: "name",
+    style: { minWidth: 140, maxWidth: 140 },
+    Cell: ({ value, row }) => {
+      return row.state?.isEditing ? (
+        <EditableCell value={value} />
+      ) : (
+        (value as unknown as React.ReactElement)
+      );
+    },
+  },
+  {
+    Header: "Time",
+    accessor: "createdDate",
+    style: { minWidth: 100 },
+  },
+  {
+    Header: "Event Type",
+    accessor: "eventType",
+    style: { minWidth: 140, maxWidth: 140 },
+    Cell: ({ value, row }) => {
+      return row.state?.isEditing ? (
+        <EditableCell value={value} />
+      ) : (
+        (value as unknown as React.ReactElement)
+      );
+    },
+  },
+  {
+    Header: "Status",
+    accessor: "status",
+    style: { minWidth: 100 },
+  },
+  { Header: "Severity", accessor: "severity" },
+  { Header: "Priority", accessor: "priority" },
+  {
+    id: "edit",
+    Cell: (props) => {
+      const { row, setRowState } = props;
+      return (
+        <HvIconButton
+          title={row.state.isEditing ? "Close" : "Edit"}
+          variant="secondaryGhost"
+          onClick={() =>
+            setRowState?.([row.id], (state) => ({
+              ...state,
+              isEditing: !state.isEditing,
+            }))
+          }
+        >
+          {row.state.isEditing ? <Close /> : <Edit />}
+        </HvIconButton>
+      );
+    },
+  },
+];
+
 export const UseHvRowState = () => {
-  const columns = useMemo(
-    () => [
-      ...getColumns(),
-      {
-        id: "edit",
-        Cell: (props) => {
-          const { row, setRowState } = props;
-          return (
-            <HvIconButton
-              title={row.state.isEditing ? "Close" : "Edit"}
-              variant="secondaryGhost"
-              onClick={() =>
-                setRowState?.([row.id], (state) => ({
-                  ...state,
-                  isEditing: !state.isEditing,
-                }))
-              }
-            >
-              {row.state.isEditing ? <Close /> : <Edit />}
-            </HvIconButton>
-          );
-        },
-      },
-    ],
-    []
-  );
+  const columns = useMemo(() => getRowStateColumns(), []);
   const data = useMemo(() => makeData(6), []);
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
@@ -58,7 +93,10 @@ export const UseHvRowState = () => {
           {headerGroups.map((headerGroup) => (
             <HvTableRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()}>
+                <HvTableHeader
+                  {...col.getHeaderProps()}
+                  aria-hidden={col.variant === "actions" ? true : undefined}
+                >
                   {col.render("Header")}
                 </HvTableHeader>
               ))}
@@ -71,15 +109,8 @@ export const UseHvRowState = () => {
             return (
               <HvTableRow {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <HvTableCell
-                    {...cell.getCellProps()}
-                    style={row.state?.isEditing ? { maxWidth: 70 } : undefined}
-                  >
-                    {row.state?.isEditing && cell.column.id !== "edit" ? (
-                      <EditableCell value={cell.value} />
-                    ) : (
-                      cell.render("Cell")
-                    )}
+                  <HvTableCell {...cell.getCellProps()}>
+                    {cell.render("Cell")}
                   </HvTableCell>
                 ))}
               </HvTableRow>
