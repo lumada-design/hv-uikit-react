@@ -13,8 +13,17 @@ addons.setConfig({
   showPanel: true,
   sidebar: {
     filters: {
-      patters: (item) => {
-        return !item.tags?.includes("test");
+      patterns: (item) => {
+        if (
+          window.location.href.includes(
+            "https://lumada-design.github.io/uikit/master"
+          )
+        ) {
+          // Only hide "Tests" stories in the production build
+          // We need them in other cases for Chromatic and development
+          return !item.title?.includes("Tests/");
+        }
+        return true;
       },
     },
   },
