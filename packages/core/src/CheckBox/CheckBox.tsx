@@ -182,6 +182,9 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
         name={name}
         className={cx(classes.checkbox, {
           [classes.invalidCheckbox]: isStateInvalid,
+          [classes.checked]: isChecked,
+          [classes.indeterminate]: isIndeterminate,
+          [classes.semantic]: semantic,
         })}
         disabled={disabled}
         readOnly={readOnly}

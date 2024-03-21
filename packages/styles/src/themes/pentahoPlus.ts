@@ -221,6 +221,25 @@ const pentahoPlus = makeTheme((theme) => ({
     base: "6px",
   },
   components: {
+    HvBaseCheckBox: {
+      classes: {
+        root: {
+          "& svg": {
+            width: 16,
+            height: 16,
+            borderRadius: "3px",
+            border: `1px solid ${theme.colors.secondary}`,
+          },
+        },
+        checked: {
+          "& svg": {
+            border: `1px solid ${theme.colors.primary}`,
+            backgroundColor: theme.colors.primary,
+            color: theme.colors.atmo1,
+          },
+        },
+      },
+    },
     HvBaseSwitch: {
       classes: {
         root: {
