@@ -49,6 +49,7 @@ const getRowStateColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
   { Header: "Priority", accessor: "priority" },
   {
     id: "edit",
+    variant: "actions",
     Cell: (props: HvCellProps<AssetEvent, string>) => {
       const { row, setRowState } = props;
       return (
