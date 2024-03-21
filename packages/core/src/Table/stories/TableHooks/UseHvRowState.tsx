@@ -8,9 +8,9 @@ import {
   HvTableRow,
   HvTableCell,
   useHvData,
-  HvButton,
   useHvRowState,
   HvInput,
+  HvIconButton,
 } from "@hitachivantara/uikit-react-core";
 
 import { Close, Edit } from "@hitachivantara/uikit-react-icons";
@@ -28,8 +28,8 @@ export const UseHvRowState = () => {
         Cell: (props) => {
           const { row, setRowState } = props;
           return (
-            <HvButton
-              icon
+            <HvIconButton
+              title={row.state.isEditing ? "Close" : "Edit"}
               variant="secondaryGhost"
               aria-label="edit button"
               onClick={() =>
@@ -40,7 +40,7 @@ export const UseHvRowState = () => {
               }
             >
               {row.state.isEditing ? <Close /> : <Edit />}
-            </HvButton>
+            </HvIconButton>
           );
         },
       },
