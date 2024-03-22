@@ -61,19 +61,85 @@ export const Variants: StoryObj<HvRadioProps> = {
     ),
   ],
   render: () => {
+    const styles = {
+      root: css({
+        display: "flex",
+        flexDirection: "column",
+        gap: 20,
+        flexWrap: "wrap",
+      }),
+      group: css({
+        display: "flex",
+        flexDirection: "row",
+        gap: 20,
+      }),
+    };
+
     return (
-      <>
-        <HvRadio required name="required" label="Required" value="1" />
-        <HvRadio disabled name="disabled" label="Disabled" value="1" />
-        <HvRadio readOnly name="readonly" label="Readonly" value="1" />
-        <HvRadio
-          status="invalid"
-          statusMessage="Oh no!"
-          name="invalid"
-          label="Invalid"
-          value="1"
-        />
-      </>
+      <div className={styles.root}>
+        <HvTypography variant="title3">Disabled</HvTypography>
+        <div className={styles.group}>
+          <HvRadio disabled name="disabled" label="Disabled" value="1" />
+          <HvRadio
+            disabled
+            name="disabled"
+            defaultChecked
+            label="Disabled"
+            value="1"
+          />
+        </div>
+        <HvTypography variant="title3">Readonly</HvTypography>
+        <div className={styles.group}>
+          <HvRadio readOnly name="readonly" label="Readonly" value="1" />
+          <HvRadio
+            readOnly
+            name="readonly"
+            defaultChecked
+            label="Readonly"
+            value="1"
+          />
+        </div>
+        <HvTypography variant="title3">Required</HvTypography>
+        <div className={styles.group}>
+          <HvRadio required name="required" label="Required" value="1" />
+          <HvRadio
+            required
+            name="required"
+            defaultChecked
+            label="Required"
+            value="1"
+          />
+        </div>
+        <HvTypography variant="title3">Invalid</HvTypography>
+        <div className={styles.group}>
+          <HvRadio
+            status="invalid"
+            statusMessage="Oh no!"
+            name="invalid"
+            label="Invalid"
+            value="1"
+          />
+          <HvRadio
+            status="invalid"
+            statusMessage="Oh no!"
+            name="invalid"
+            defaultChecked
+            label="Invalid"
+            value="1"
+          />
+        </div>
+        <HvTypography variant="title3">Semantic</HvTypography>
+        <div className={styles.group}>
+          <HvRadio semantic name="semantic" label="Semantic" value="1" />
+          <HvRadio
+            semantic
+            name="semantic"
+            defaultChecked
+            label="Semantic"
+            value="1"
+          />
+        </div>
+      </div>
     );
   },
 };
@@ -201,6 +267,43 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
           </div>
         </HvGrid>
       </HvGrid>
+    );
+  },
+};
+
+export const Custom: StoryObj<HvRadioProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
+  render: () => {
+    const styles = {
+      group: css({
+        display: "flex",
+        flexDirection: "row",
+        gap: 20,
+      }),
+      box: css({
+        "& svg": {
+          borderRadius: "6px",
+          border: `1px solid ${theme.colors.warning}`,
+        },
+      }),
+      checked: css({
+        "& svg": {
+          border: `1px solid ${theme.colors.warning}`,
+          backgroundColor: theme.colors.atmo1,
+          color: theme.colors.warning,
+        },
+      }),
+    };
+
+    return (
+      <div className={styles.group}>
+        <HvRadio
+          label="Radio 1"
+          classes={{ root: styles.box, checked: styles.checked }}
+        />
+      </div>
     );
   },
 };

@@ -61,4 +61,6 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     width: "100%",
   },
   focusVisible: { backgroundColor: theme.colors.atmo3, ...outlineStyles },
+  checked: {},
+  semantic: {},
 });
