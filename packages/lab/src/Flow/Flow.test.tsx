@@ -1,8 +1,6 @@
 import { useState } from "react";
-
 import { render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Favorite, Heart } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -20,50 +18,60 @@ const nodeGroups = {
     color: "cat3_80",
     description: "This is my description 1.",
     icon: <Heart />,
+    items: {
+      boomArm: {
+        type: "boomArm",
+        label: "Boom Arm",
+      },
+      spaceMountain: {
+        type: "spaceMountain",
+        label: "Space Mountain",
+      },
+    },
   },
   digitalTwin: {
     label: "Digital Twin",
     color: "cat2_80",
     description: "This is my description 2.",
     icon: <Favorite />,
+    items: {
+      toyStory: {
+        type: "toyStory",
+        label: "Toy Story",
+      },
+    },
   },
 };
 const BoomArm = (props) => (
   <HvFlowBaseNode
     title="Asset"
+    subtitle="Boom Arm"
     description="Boom Arm"
+    group="asset"
     color={theme.colors.cat3_40}
     {...props}
   />
 );
-BoomArm.meta = {
-  label: "Boom Arm",
-  groupId: "asset",
-};
 const ToyStory = (props) => (
   <HvFlowBaseNode
     title="Digital Twin"
+    subtitle="Toy Story"
     description="Toy Story"
+    group="digitalTwin"
     color={theme.colors.cat2_40}
     {...props}
   />
 );
-ToyStory.meta = {
-  label: "Toy Story",
-  groupId: "digitalTwin",
-};
 const SpaceMountain = (props) => (
   <HvFlowBaseNode
     title="Asset"
+    subtitle="Space Mountain"
     description="Space Mountain"
+    group="asset"
     color={theme.colors.cat3_40}
     {...props}
   />
 );
-SpaceMountain.meta = {
-  label: "Space Mountain",
-  groupId: "asset",
-};
 const nodeTypes = {
   boomArm: BoomArm,
   toyStory: ToyStory,

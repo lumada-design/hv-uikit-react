@@ -1,15 +1,14 @@
 import { useMemo } from "react";
 import {
   HvFlowNode,
-  HvFlowNodeTypeMeta,
   HvFlowNodeProps,
   HvFlowNodeFC,
   useFlowInputNodes,
 } from "@hitachivantara/uikit-react-lab";
 
-import { NodeData, NodeGroup } from "../types";
+import { NodeData } from "../types";
 
-export const BarChart: HvFlowNodeFC<NodeGroup> = (props) => {
+export const BarChart: HvFlowNodeFC<NodeData> = (props) => {
   const inputNodes = useFlowInputNodes<NodeData>();
 
   const params: HvFlowNodeProps["params"] = useMemo(() => {
@@ -45,8 +44,10 @@ export const BarChart: HvFlowNodeFC<NodeGroup> = (props) => {
 
   return (
     <HvFlowNode
-      params={params}
       description="Bar Chart"
+      group="visualization"
+      groupItem="barChart"
+      params={params}
       expanded
       inputs={[
         {
@@ -67,14 +68,3 @@ export const BarChart: HvFlowNodeFC<NodeGroup> = (props) => {
     />
   );
 };
-
-BarChart.meta = {
-  label: "Bar Chart",
-  groupId: "visualization",
-  data: {
-    title: "",
-    measure: undefined,
-    groupBy: undefined,
-    splitBy: undefined,
-  },
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

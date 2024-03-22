@@ -42,12 +42,28 @@ export const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available data sources.",
     icon: <DataSource />,
+    items: {
+      precipitation: {
+        type: "precipitation",
+        label: "Precipitation",
+      },
+    },
   },
   visualizations: {
     label: "Visualization",
     color: "cat1_80",
     description: "Find here all the available visualizations.",
     icon: <LineChartAlt />,
+    items: {
+      lineChart: {
+        type: "lineChart",
+        label: "Line Chart",
+      },
+      barChart: {
+        type: "barChart",
+        label: "Bar Chart",
+      },
+    },
   },
 } satisfies HvFlowProps["nodeGroups"];
 

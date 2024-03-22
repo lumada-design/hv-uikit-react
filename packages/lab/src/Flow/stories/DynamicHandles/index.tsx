@@ -43,6 +43,12 @@ export const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available assets.",
     icon: <DataSource />,
+    items: {
+      asset: {
+        type: "asset",
+        label: "Asset",
+      },
+    },
   },
 } satisfies HvFlowProps["nodeGroups"];
 

@@ -20,7 +20,7 @@ import { restrictToSample } from "../Base";
 // The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/NoGroups
 import { Asset } from "./Asset";
 import { LineChart } from "./LineChart";
-import { MLModelPrediction } from "./MLModelPrediction";
+import { MLModel } from "./MLModel";
 
 // Classes
 export const classes = {
@@ -37,10 +37,37 @@ export const classes = {
   }),
 };
 
-// Node types
-export const nodeTypes = {
-  Asset,
-  mlModelPrediction: MLModelPrediction,
+export const nodeGroups = {
+  assets: {
+    label: "Asset",
+    items: {
+      asset: { type: "asset", label: "Asset" },
+    },
+  },
+  models: {
+    label: "Models",
+    items: {
+      prediction: {
+        type: "model",
+        label: "Model Prediction",
+        data: { type: "prediction" },
+      },
+      detection: {
+        type: "model",
+        label: "Model Detection",
+        data: { type: "detection" },
+      },
+    },
+  },
+  insights: {
+    label: "Insights",
+    items: { lineChart: { type: "lineChart", label: "Line Chart" } },
+  },
+} satisfies HvFlowProps["nodeGroups"];
+
+const nodeTypes = {
+  asset: Asset,
+  model: MLModel,
   lineChart: LineChart,
 } satisfies HvFlowProps["nodeTypes"];
 
@@ -73,6 +100,7 @@ export const NoGroups = () => {
         <HvFlow
           nodes={[]}
           edges={[]}
+          nodeGroups={nodeGroups}
           nodeTypes={nodeTypes}
           defaultViewport={{
             zoom: 0.7,
@@ -92,6 +120,7 @@ export const NoGroups = () => {
                   (args) => restrictToSample(rootId || "", args),
                 ],
               }}
+              flatten
             />
           }
         >

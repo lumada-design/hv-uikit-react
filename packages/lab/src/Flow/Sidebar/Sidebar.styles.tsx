@@ -18,7 +18,4 @@ export const { staticClasses, useClasses } = createClasses("HvFlowSidebar", {
     gap: theme.space.sm,
     listStyleType: "none",
   },
-  nodeType: {
-    marginBottom: theme.space.xs,
-  },
 });

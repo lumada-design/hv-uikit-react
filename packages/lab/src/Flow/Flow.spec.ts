@@ -94,7 +94,7 @@ test.describe("Node", () => {
       .click();
 
     const elementToDrag = baseAssetNodeLocator.getByRole("button", {
-      name: "My Asset",
+      name: "Asset",
     });
     const elementToDragBox = await elementToDrag.boundingBox();
 
@@ -226,12 +226,12 @@ test.describe("Connections", () => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
     await page.getByRole("button", { name: "Add Node" }).click();
 
-    const assetNode = await selectNode("Asset", "My Asset", true);
+    const assetNode = await selectNode("Asset", "Asset", true);
     await dragToPosition1(assetNode);
-    const lineChartNode = await selectNode("Insight", "LineChart", true);
+    const lineChartNode = await selectNode("Insight", "Line Chart", true);
     await dragToPosition3(lineChartNode);
 
-    await connectNodes("My Asset", "Sensor Group 2", "LineChart", "Data");
+    await connectNodes("Asset", "Sensor Group 2", "Line Chart", "Data");
     await expect(
       flowCanvasLocator.getByRole("button", { name: "Edge" })
     ).not.toBeVisible();
