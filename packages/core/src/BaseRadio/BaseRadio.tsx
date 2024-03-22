@@ -2,15 +2,11 @@ import { useState, useCallback, forwardRef } from "react";
 
 import MuiRadio, { RadioProps as MuiRadioProps } from "@mui/material/Radio";
 
-import {
-  RadioButtonUnselected,
-  RadioButtonSelected,
-} from "@hitachivantara/uikit-react-icons";
-
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
 
 import { staticClasses, useClasses } from "./BaseRadio.styles";
+import { Selected, Unselected } from "./icons";
 
 export { staticClasses as baseRadioClasses };
 
@@ -75,6 +71,10 @@ export interface HvBaseRadioProps
    */
   semantic?: boolean;
   /**
+   * Whether the selector is used on a pagination layout.
+   */
+  pagination?: boolean;
+  /**
    * Properties passed on to the input element.
    */
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
@@ -89,25 +89,10 @@ export interface HvBaseRadioProps
   onBlur?: (event: React.FocusEvent<any>) => void;
 }
 
-export const getSelectorIcons = (
-  options: { disabled: boolean; semantic: boolean },
-  classes: HvBaseRadioClasses
-) => {
-  const { disabled, semantic } = options;
-  const color =
-    (disabled && ["atmo3", "secondary_60"]) ||
-    (semantic && ["base_light", "base_dark"]) ||
-    undefined;
-  const checkedColor =
-    (disabled && ["atmo3", "secondary_60"]) ||
-    (semantic && ["base_dark", "base_light"]) ||
-    undefined;
-
+export const getSelectorIcons = () => {
   return {
-    radio: <RadioButtonUnselected color={color} className={classes.icon} />,
-    radioChecked: (
-      <RadioButtonSelected color={checkedColor} className={classes.icon} />
-    ),
+    radio: <Unselected />, // <RadioButtonUnselected color={color} className={classes.icon} />,
+    radioChecked: <Selected />,
   };
 };
 
@@ -132,6 +117,7 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
       defaultChecked,
       onChange,
       semantic = false,
+      pagination = false,
       inputProps,
       onFocusVisible,
       onBlur,
@@ -158,7 +144,7 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
       [onBlur]
     );
 
-    const icons = getSelectorIcons({ disabled, semantic }, classes);
+    const icons = getSelectorIcons();
 
     const onLocalChange = useCallback(
       (evt: React.ChangeEvent<HTMLInputElement>) => {
@@ -181,11 +167,14 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
           {
             [classes.disabled]: disabled,
             [classes.focusVisible]: focusVisible,
+            [classes.checked]: checked,
+            [classes.semantic]: semantic,
+            [classes.pagination]: pagination,
           },
           className
         )}
-        icon={icons.radio}
-        checkedIcon={icons.radioChecked}
+        icon={others.icon || icons.radio}
+        checkedIcon={others.checkedIcon || icons.radioChecked}
         color="default"
         disabled={disabled}
         required={required}

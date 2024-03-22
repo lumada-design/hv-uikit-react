@@ -240,6 +240,31 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvBaseRadio: {
+      classes: {
+        root: {
+          "& svg": {
+            width: 16,
+            height: 16,
+            border: `1px solid ${theme.colors.secondary}`,
+          },
+        },
+        checked: {
+          "& svg": {
+            border: `1px solid ${theme.colors.primary}`,
+            backgroundColor: theme.colors.atmo1,
+            color: theme.colors.primary,
+          },
+          "&.HvBaseRadio-disabled": {
+            "& svg": {
+              border: `1px solid ${theme.colors.secondary_60}`,
+              backgroundColor: theme.colors.atmo3,
+              color: theme.colors.secondary_60,
+            },
+          },
+        },
+      },
+    },
     HvBaseSwitch: {
       classes: {
         root: {
