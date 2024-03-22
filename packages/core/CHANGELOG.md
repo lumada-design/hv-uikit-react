@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.60.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.59.0...@hitachivantara/uikit-react-core@5.60.0) (2024-03-22)
+
+### Features
+
+- add useHvRowState hook ([#4095](https://github.com/lumada-design/hv-uikit-react/issues/4095)) ([f7b69f6](https://github.com/lumada-design/hv-uikit-react/commit/f7b69f6397083a7b7bbea36f9463c000d067e6b8))
+- **QueryBuilder:** controlled and uncontrolled ([9994325](https://github.com/lumada-design/hv-uikit-react/commit/999432535c76044c7115fcacef7ed3cced5fb88b))
+- **QueryBuilder:** make query ids optional ([b916a77](https://github.com/lumada-design/hv-uikit-react/commit/b916a77ae47b592143ad2ca30731d3a37768f720))
+
 # [5.59.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.58.3...@hitachivantara/uikit-react-core@5.59.0) (2024-03-21)
 
 ### Features
