@@ -14,8 +14,6 @@ import { KPIs } from "./KPIs";
 import { Table } from "./Table";
 import { Properties } from "./Properties";
 
-const MODEL_ID = "123";
-
 interface SectionProps extends HvGridProps {
   variant?: HvGlobalActionsProps["variant"];
   actions?: ReactNode;
@@ -90,7 +88,9 @@ const DetailsView = () => {
 
       <Section title="Events">
         <HvGrid item xs={12}>
-          <Table modelId={MODEL_ID} />
+          <Suspense fallback={<HvLoading style={{ height: 300 }} />}>
+            <Table />
+          </Suspense>
         </HvGrid>
       </Section>
     </>

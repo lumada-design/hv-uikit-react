@@ -12,11 +12,11 @@ import {
   HvSkeleton,
 } from "@hitachivantara/uikit-react-core";
 
-import { AssetInventoryEntry, getStatusIcon } from "./data";
+import { AssetEvent, getStatusIcon } from "./data";
 
 interface CardViewProps {
   id?: string;
-  instance: HvTableInstance<AssetInventoryEntry, string>;
+  instance: HvTableInstance<AssetEvent, string>;
   loading?: boolean;
 }
 
@@ -25,14 +25,17 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
   const mode = "wave";
 
   const items = loading
-    ? Array.from({ length: 6 }).map((_, i) => ({
-        id: i,
+    ? Array.from({ length: 6 }).map<AssetEvent>((_, i) => ({
+        id: `${i}`,
         name: "",
         eventType: "",
-        severity: "",
-        status: "",
-        priority: "",
-        image: "",
+        severity: "" as any,
+        status: "" as any,
+        priority: "" as any,
+        imageUrl: "",
+        createdAt: "",
+        riskScore: 0,
+        temperature: 0,
       }))
     : instance.page.map((p) => ({ ...p.original, id: p.id }));
 
@@ -47,8 +50,12 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
       ]}
     >
       {items.map((item) => {
-        const rowId = item ? item.id : null;
-        const statusColor = item ? item.statusColor : "sema0";
+        const rowId = item.id || "";
+        const statusMap = {
+          Open: "positive",
+          Pending: "warning",
+          Closed: "negative",
+        };
 
         return (
           <HvCard
@@ -57,10 +64,10 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
             bgcolor="atmo1"
             key={item.id}
             style={{ width: "100%" }}
-            statusColor={statusColor}
+            statusColor={statusMap[item.status!] || "sema0"}
             icon={
               !loading ? (
-                getStatusIcon(statusColor)
+                getStatusIcon(item.status)
               ) : (
                 <HvSkeleton
                   hidden={!loading}
@@ -135,7 +142,7 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
                 component="img"
                 alt={item.name}
                 height={140}
-                image={item.image}
+                image={item.imageUrl}
               />
             </HvSkeleton>
             <HvActionBar>

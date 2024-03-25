@@ -20,13 +20,14 @@ import {
 import { ListView } from "./ListView";
 import { CardView } from "./CardView";
 import {
-  PaginationDataProps,
-  usePaginationData,
+  AssetEvent,
+  AssetDataParams,
+  useAssetData,
   actions,
   views,
   rightControlValues,
   getColumns,
-  AssetInventoryEntry,
+  useStickyResult,
 } from "./data";
 
 const classes = {
@@ -40,31 +41,28 @@ const PAGE_OPTIONS = [6, 12, 18];
 
 const AssetInventory = () => {
   const [currentView, setCurrentView] = useState("card");
-  const [params, setParams] = useState<PaginationDataProps>({
-    limit: PAGE_OPTIONS[0],
+  const [params, setParams] = useState<AssetDataParams>({
+    take: PAGE_OPTIONS[0],
     skip: 0,
   });
 
   const cardViewId = useId();
   const listViewId = useId();
 
-  const {
-    data: { pages, data },
-    loading,
-    deleteEntries,
-  } = usePaginationData(params);
+  const { data: dataRes, isLoading } = useAssetData(params);
+  const data = useStickyResult(dataRes);
 
-  const columns = useMemo(() => getColumns(loading), [loading]);
+  const columns = useMemo(() => getColumns(isLoading), [isLoading]);
 
-  const instance = useHvData<AssetInventoryEntry, string>(
+  const instance = useHvData<AssetEvent, string>(
     {
-      data,
+      data: data?.items,
       columns,
       manualPagination: true,
       manualSortBy: true,
       autoResetPage: false,
       autoResetSortBy: true,
-      pageCount: pages,
+      pageCount: Math.ceil((data?.total || 0) / params.take),
       initialState: { pageSize: PAGE_OPTIONS[0] },
     },
     useHvGlobalFilter,
@@ -75,28 +73,30 @@ const AssetInventory = () => {
   );
 
   useEffect(() => {
-    const { pageSize = PAGE_OPTIONS[0], pageIndex = 0 } = instance.state;
+    const pageSize = instance.state.pageSize || PAGE_OPTIONS[0];
+    const pageIndex = instance.state.pageIndex || 0;
+    const sortBy = instance.state.sortBy?.[0];
 
     setParams((prev) => ({
       ...prev,
-      ...(instance.state.sortBy &&
-        instance.state.sortBy.length > 0 && {
-          order: instance.state.sortBy?.[0].desc ? "desc" : "asc",
-          sort: instance.state.sortBy?.[0].id,
-        }),
-      limit: pageSize,
+      ...(sortBy && {
+        sort: `${sortBy.id}-${sortBy.desc ? "desc" : "asc"}`,
+      }),
+      take: pageSize,
       skip: pageSize * pageIndex,
     }));
-  }, [instance.state]);
-
-  const bulkActionProps = instance.getHvBulkActionsProps?.();
+  }, [
+    instance.state.pageIndex,
+    instance.state.pageSize,
+    instance.state.sortBy,
+  ]);
 
   const handleSearch: HvLeftControlProps["onSearch"] = (e, value) => {
     instance.gotoPage?.(0);
     setParams((prev) => ({
       ...prev,
       skip: 0,
-      search: value,
+      name: value,
     }));
   };
 
@@ -104,31 +104,11 @@ const AssetInventory = () => {
     event,
     action
   ) => {
-    if (action.id === "put" || action.id === "add") {
-      alert(
-        `Callback for action ${
-          action.label
-        } on items ${instance.selectedFlatRows
-          .map((r) => r.original.id)
-          .join(", ")}`
-      );
-    } else if (action.id === "delete") {
-      const ids = instance.selectedFlatRows.map((r) => r.original.id || "");
-
-      await deleteEntries(ids);
-
-      if (
-        ids.length === data.length &&
-        instance.state.pageIndex === pages - 1
-      ) {
-        // Go back
-        instance.gotoPage?.((instance.state.pageIndex as number) - 1);
-        setParams((prev) => ({
-          ...prev,
-          skip: prev.skip - prev.limit,
-        }));
-      }
-    }
+    alert(
+      `Callback for action ${action.label} on items ${instance.selectedFlatRows
+        .map((r) => r.original.id)
+        .join(", ")}`
+    );
   };
 
   return (
@@ -140,11 +120,11 @@ const AssetInventory = () => {
         onViewChange={(evt, id) => setCurrentView(id)}
       >
         <HvLeftControl
-          placeholder="Search"
+          placeholder="Search by name"
           onSearch={handleSearch}
           searchProps={{
             inputProps: {
-              "aria-label": "Search",
+              "aria-label": "Search by name",
               "aria-controls": `${cardViewId} ${listViewId}`,
             },
           }}
@@ -159,12 +139,10 @@ const AssetInventory = () => {
       </HvControls>
 
       <HvBulkActions
-        {...bulkActionProps}
-        numTotal={data.length}
+        {...instance.getHvBulkActionsProps?.()}
+        numTotal={data?.items.length}
         numSelected={instance.selectedFlatRows.length}
         maxVisibleActions={2}
-        onSelectAll={() => bulkActionProps?.onSelectAll()}
-        onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
         actions={actions}
         onAction={handleAction}
         checkboxProps={{
@@ -173,7 +151,7 @@ const AssetInventory = () => {
       />
 
       {currentView === "card" && (
-        <CardView id={cardViewId} instance={instance} loading={loading} />
+        <CardView id={cardViewId} instance={instance} loading={isLoading} />
       )}
 
       {currentView === "list" && (

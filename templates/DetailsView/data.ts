@@ -1,14 +1,35 @@
 import useSWR from "swr";
+import { HvTableColumnConfig } from "@hitachivantara/uikit-react-core";
 
-import { ServerPaginationProps, delay, useServerPagination } from "../utils";
-import { DetailsViewEntry, createEntry } from "./utils";
+const delay = (ms: number) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+
+export type AssetEvent = {
+  id: string;
+  name: string;
+  createdAt: string;
+  eventType: string;
+  riskScore: number;
+  status?: "Open" | "Pending" | "Closed";
+  severity?: "Critical" | "Major" | "Average" | "Minor";
+  priority?: "High" | "Medium" | "Low";
+  temperature: number;
+  imageUrl: string;
+};
+
+export const getColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
+  { Header: "Title", accessor: "name", style: { minWidth: 120 } },
+  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
+  { Header: "Status", accessor: "status", style: { width: 120 } },
+  { Header: "Severity", accessor: "severity" },
+  { Header: "Priority", accessor: "priority" },
+  { Header: "Time", accessor: "createdAt" },
+  { Header: "Temperature", accessor: "temperature" },
+];
 
 // --- Data ---
-
-const TOTAL = 10;
-
-const db = [...Array(TOTAL).keys()].map(createEntry);
-
 const model = {
   description: "Model created from the example Jupyter Notebook",
   status: "Critical",
@@ -38,14 +59,23 @@ const model = {
 export type ModelDetails = typeof model;
 
 // #region Endpoints
-export interface PaginationDataProps
-  extends Omit<ServerPaginationProps<DetailsViewEntry>, "endpoint" | "db"> {
-  id: string;
+
+export interface AssetDataParams {
+  take: number;
+  skip: number;
 }
 
-export const usePaginationData = (props: PaginationDataProps) => {
-  const endpoint = `/model/${props.id}/events`;
-  return useServerPagination({ endpoint, db, ...props });
+export const useAssetData = (props: AssetDataParams) => {
+  return useSWR<{ items: AssetEvent[]; total: number }>(
+    ["assets", props],
+    async () => {
+      const params = new URLSearchParams(props as any);
+      const url = `https://assets-mock-api.deno.dev/assets?${params}`;
+      await delay(800);
+      return fetch(url).then((res) => res.json());
+    },
+    { suspense: true }
+  );
 };
 
 export const useModelData = () => {

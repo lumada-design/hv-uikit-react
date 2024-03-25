@@ -10,12 +10,12 @@ import {
   HvTableColumnConfig,
 } from "@hitachivantara/uikit-react-core";
 
-import { AssetInventoryEntry } from "./data";
+import { AssetEvent } from "./data";
 
 interface ListViewProps {
   id?: string;
-  columns: HvTableColumnConfig<AssetInventoryEntry, string>[];
-  instance: HvTableInstance<AssetInventoryEntry, string>;
+  columns: HvTableColumnConfig<AssetEvent, string>[];
+  instance: HvTableInstance<AssetEvent, string>;
 }
 
 export const ListView = ({ id, instance, columns }: ListViewProps) => {

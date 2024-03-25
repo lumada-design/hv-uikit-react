@@ -1,8 +1,9 @@
+import { useRef } from "react";
+import useSWR from "swr";
 import {
   HvBulkActionsProps,
   HvControlsProps,
   HvRightControlProps,
-  HvSemanticColorKeys,
   HvSkeleton,
   HvTableColumnConfig,
   HvTooltip,
@@ -19,85 +20,53 @@ import {
   Preview,
 } from "@hitachivantara/uikit-react-icons";
 
-import { ServerPaginationProps, useServerPagination } from "../utils";
-
 // --- Table data utils ---
 
-export interface AssetInventoryEntry {
-  id?: string;
-  name?: string;
-  eventType?: string;
-  status?: string;
-  severity?: string;
-  priority?: string;
-  time?: string;
-  temperature?: string;
-  statusColor?: HvSemanticColorKeys;
-  image?: string;
-}
+export type AssetEvent = {
+  id: string;
+  name: string;
+  createdAt: string;
+  eventType: string;
+  riskScore: number;
+  status?: "Open" | "Pending" | "Closed";
+  severity?: "Critical" | "Major" | "Average" | "Minor";
+  priority?: "High" | "Medium" | "Low";
+  temperature: number;
+  imageUrl: string;
+};
 
-const images = [
-  "https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-  "https://images.unsplash.com/photo-1589320011103-48e428abcbae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-  "https://images.unsplash.com/photo-1567789884554-0b844b597180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-  "https://images.unsplash.com/photo-1647427060118-4911c9821b82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-  "https://images.unsplash.com/photo-1612685180313-bdfe1d6896cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1190&q=80",
-  "https://images.unsplash.com/photo-1566930665082-4ae9dbbb5b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=873&q=80",
-  "https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-  "https://images.unsplash.com/photo-1622534376374-fe4480328daa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-  "https://images.unsplash.com/photo-1618840626133-54463084a141?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80",
-  "https://images.unsplash.com/photo-1600715502630-c9300abe78a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-];
-
-const getRandomImage = () => images[Math.floor(Math.random() * images.length)];
-
-export const getStatusIcon = (color?: AssetInventoryEntry["statusColor"]) => {
-  switch (color) {
-    case "positive":
+export const getStatusIcon = (severity?: AssetEvent["status"]) => {
+  switch (severity) {
+    case "Open":
       return <Level0Good color="positive" />;
-    case "warning":
+    case "Pending":
       return <Level2Average color="warning" />;
-    case "negative":
+    case "Closed":
       return <Level3Bad color="negative" />;
-    case "neutral":
     default:
       return <Level1 color="neutral" />;
   }
 };
 
-const getStatusMessage = (status?: AssetInventoryEntry["statusColor"]) => {
-  switch (status) {
-    case "positive":
-      return "Success";
-    case "warning":
-      return "Open";
-    case "negative":
-      return "Error";
-    case "neutral":
-    default:
-      return "Unassigned";
-  }
-};
-
 export const getColumns = (
   loading?: boolean
-): HvTableColumnConfig<AssetInventoryEntry, string>[] => [
+): HvTableColumnConfig<AssetEvent, string>[] => [
   {
     Header: "Status",
-    accessor: "statusColor",
+    accessor: "status",
     style: { width: 60 },
     Cell: ({ value }) =>
       loading ? (
         <HvSkeleton width={32} height={32} variant="circle" animation="wave" />
       ) : (
-        <HvTooltip title={getStatusMessage(value)}>
+        <HvTooltip title={value}>
           <div>{getStatusIcon(value)}</div>
         </HvTooltip>
       ),
   },
   {
     Header: "Asset",
-    accessor: "image",
+    accessor: "imageUrl",
     style: { maxWidth: 60 },
     Cell: ({ value, row }) => {
       return loading ? (
@@ -150,16 +119,20 @@ export const getColumns = (
   },
   {
     Header: "Time",
-    accessor: "time",
+    accessor: "createdAt",
     Cell: ({ value }) => {
-      return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
+      return loading ? (
+        <HvSkeleton animation="wave" />
+      ) : (
+        <span>{value.slice(11, 19)}</span>
+      );
     },
   },
   {
     Header: "Temperature",
     accessor: "temperature",
     Cell: ({ value }) => {
-      return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
+      return loading ? <HvSkeleton animation="wave" /> : <span>{value}º</span>;
     },
   },
 ];
@@ -222,45 +195,33 @@ export const rightControlValues: HvRightControlProps["values"] = [
   },
 ];
 
-const getOption = (opts: string[], i: number) => opts[i % opts.length];
+const delay = (ms: number) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
 
-const getTime = (priority: string, index: number) => {
-  let i = priority === "High" ? index + 4 : index + 3;
-  i = priority === "Medium" ? i + 30 : index + 20;
+export interface AssetDataParams
+  extends Partial<Record<keyof AssetEvent, string>> {
+  take: number;
+  skip: number;
+  sort?: string;
+}
 
-  return `${i % 12}:${i % 60}:${i % 60}`;
+export const useAssetData = (props: AssetDataParams) => {
+  return useSWR<{ items: AssetEvent[]; total: number }>(
+    ["assets", props],
+    async () => {
+      await delay(800);
+      const params = new URLSearchParams(props as any);
+      const url = `https://assets-mock-api.deno.dev/assets?${params}`;
+      return fetch(url).then((res) => res.json());
+    }
+  );
 };
 
-const getPriority = (i: number) =>
-  (i % 2 > 0 && "High") || (i % 2 < 0 && "Medium") || "Low";
-
-const getRandomStatus = (): HvSemanticColorKeys => {
-  return ["neutral", "positive", "negative", "warning"][
-    Math.floor(Math.random() * 5)
-  ] as HvSemanticColorKeys;
-};
-
-export const createEntry = (i: number): AssetInventoryEntry => {
-  return {
-    id: `${i + 1}`,
-    name: `Event ${i + 1}`,
-    eventType: `Anomaly detection ${i % 4}`,
-    status: getOption(["Closed", "Open"], i),
-    severity: getOption(["Critical", "Major", "Average", "Minor"], i),
-    priority: getPriority(i),
-    time: getTime(getPriority(i), i),
-    temperature: `${i + 35}º C`,
-    statusColor: getRandomStatus(),
-    image: getRandomImage(),
-  };
-};
-
-// --- Data & Endpoint ---
-const db = [...Array(50).keys()].map(createEntry);
-
-export interface PaginationDataProps
-  extends Omit<ServerPaginationProps<AssetInventoryEntry>, "endpoint" | "db"> {}
-
-export const usePaginationData = (props: PaginationDataProps) => {
-  return useServerPagination({ endpoint: "/events", db, ...props });
+/** Persists the last non-nullish value */
+export const useStickyResult = <T extends any>(value: T) => {
+  const val = useRef<T>();
+  if (value != null) val.current = value;
+  return val.current;
 };

@@ -11,56 +11,47 @@ import {
   useHvData,
   useHvPagination,
   HvPagination,
-  HvLoadingContainer,
 } from "@hitachivantara/uikit-react-core";
 
-import { DetailsViewEntry, getColumns } from "./utils";
-import { PaginationDataProps, usePaginationData } from "./data";
+import { AssetDataParams, AssetEvent, getColumns, useAssetData } from "./data";
 
 const PAGE_OPTIONS = [8, 16, 32];
 
-interface TableProps {
-  modelId: string;
-}
-
-export const Table = ({ modelId }: TableProps) => {
-  const [params, setParams] = useState<PaginationDataProps>({
-    id: modelId,
-    limit: PAGE_OPTIONS[0],
+export const Table = () => {
+  const [params, setParams] = useState<AssetDataParams>({
+    take: PAGE_OPTIONS[0],
     skip: 0,
   });
 
-  const {
-    data: { pages, data },
-    loading,
-  } = usePaginationData(params);
+  const { data } = useAssetData(params);
 
   const columns = useMemo(() => getColumns(), []);
 
-  const instance = useHvData<DetailsViewEntry, string>(
+  const instance = useHvData<AssetEvent, string>(
     {
-      data,
+      data: data.items,
       columns,
       manualPagination: true,
       autoResetPage: false,
-      pageCount: pages,
+      pageCount: Math.ceil(data.total / params.take),
       initialState: { pageSize: PAGE_OPTIONS[0] },
     },
     useHvPagination
   );
 
   useEffect(() => {
-    const { pageSize = PAGE_OPTIONS[0], pageIndex = 0 } = instance.state;
+    const pageSize = instance.state.pageSize || PAGE_OPTIONS[0];
+    const pageIndex = instance.state.pageIndex || 0;
 
     setParams((prev) => ({
       ...prev,
-      limit: pageSize,
+      take: pageSize,
       skip: pageSize * pageIndex,
     }));
-  }, [instance.state]);
+  }, [instance.state.pageSize, instance.state.pageIndex]);
 
   return (
-    <HvLoadingContainer hidden={!loading}>
+    <>
       <HvTableContainer style={{ padding: "2px" }}>
         <HvTable {...instance.getTableProps()}>
           <HvTableHead>
@@ -92,6 +83,6 @@ export const Table = ({ modelId }: TableProps) => {
           pageSizeOptions={PAGE_OPTIONS}
         />
       ) : undefined}
-    </HvLoadingContainer>
+    </>
   );
 };

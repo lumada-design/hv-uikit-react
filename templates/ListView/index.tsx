@@ -26,8 +26,8 @@ import {
 import { Kpi } from "./Kpi";
 import { Table } from "./Table";
 import {
-  ListViewEntry,
-  PaginationDataProps,
+  AssetDataParams,
+  AssetEvent,
   actions,
   getColumns,
   usePaginationData,
@@ -44,36 +44,34 @@ const classes = {
 };
 
 const INIT_PAGE_SIZE = 5;
+const breakpoints: HvGridProps = { xl: 3, lg: 3, md: 3, sm: 6, xs: 12 };
 
 const ListView = () => {
-  const breakpoints: HvGridProps = { xl: 3, lg: 3, md: 3, sm: 6, xs: 12 };
   const listId = useId();
 
-  const [kpiSelection, setKpiSelection] = useState<number | undefined>();
+  const [statusSelection, setStatusSelection] =
+    useState<AssetEvent["status"]>();
 
-  const [params, setParams] = useState<PaginationDataProps>({
-    limit: INIT_PAGE_SIZE,
+  const [params, setParams] = useState<AssetDataParams>({
+    take: INIT_PAGE_SIZE,
     skip: 0,
   });
 
-  const {
-    data: { pages, data },
-    loading,
-  } = usePaginationData(params);
+  const { data, isLoading } = usePaginationData(params);
 
   const { data: indicatorData, isLoading: indicatorLoading } = useSummaryData();
 
   const columns = useMemo(() => getColumns(), []);
 
-  const instance = useHvData<ListViewEntry, string>(
+  const instance = useHvData<AssetEvent, string>(
     {
-      data,
+      data: data?.items,
       columns,
       manualPagination: true,
       autoResetPage: false,
       manualFilters: true,
       autoResetFilters: true,
-      pageCount: pages,
+      pageCount: Math.ceil((data?.total || 0) / params.take),
       initialState: { pageSize: INIT_PAGE_SIZE },
     },
     useHvGlobalFilter,
@@ -85,38 +83,21 @@ const ListView = () => {
   );
 
   useEffect(() => {
-    const { pageSize = INIT_PAGE_SIZE, pageIndex = 0 } = instance.state;
+    const pageSize = instance.state.pageSize || INIT_PAGE_SIZE;
+    const pageIndex = instance.state.pageIndex || 0;
 
     setParams((prev) => ({
       ...prev,
-      limit: pageSize,
+      take: pageSize,
       skip: pageSize * pageIndex,
     }));
-  }, [instance.state]);
-
-  useEffect(() => {
-    instance.gotoPage?.(0);
-    setParams((prev) => ({
-      ...prev,
-      skip: 0,
-      filter:
-        instance.state.filters && instance.state.filters?.length > 0
-          ? instance.state.filters[0]
-          : undefined,
-    }));
-  }, [instance, instance.state.filters]);
-
-  const bulkActionProps = instance.getHvBulkActionsProps?.();
+  }, [instance.state.pageIndex, instance.state.pageSize]);
 
   const handleAction: HvActionsGenericProps["onAction"] = (event, action) => {
     if (action.id === "refresh") {
       instance.gotoPage?.(0);
-      setKpiSelection(undefined);
-      setParams((prev) => ({
-        ...prev,
-        skip: 0,
-        filter: undefined,
-      }));
+      setStatusSelection(undefined);
+      setParams((prev) => ({ ...prev, skip: 0 }));
     }
   };
 
@@ -125,7 +106,17 @@ const ListView = () => {
     setParams((prev) => ({
       ...prev,
       skip: 0,
-      search: value,
+      name: value,
+    }));
+  };
+
+  const handleKpiSelection = (status: AssetEvent["status"]) => {
+    setStatusSelection((prev) => (prev === status ? undefined : status));
+    instance.gotoPage?.(0);
+    setParams((prev) => ({
+      ...prev,
+      skip: 0,
+      status,
     }));
   };
 
@@ -140,10 +131,9 @@ const ListView = () => {
           <Kpi
             title="Success Requests"
             color="positive"
-            status={0}
-            instance={instance}
-            kpiSelection={kpiSelection}
-            setKpiSelection={setKpiSelection}
+            status="Open"
+            selected={statusSelection === "Open"}
+            onSelect={handleKpiSelection}
             loading={indicatorLoading}
             count={indicatorData?.success.count}
             variation={indicatorData?.success.variation}
@@ -154,10 +144,9 @@ const ListView = () => {
           <Kpi
             title="Error Requests"
             color="negative"
-            status={1}
-            instance={instance}
-            kpiSelection={kpiSelection}
-            setKpiSelection={setKpiSelection}
+            status="Closed"
+            selected={statusSelection === "Closed"}
+            onSelect={handleKpiSelection}
             loading={indicatorLoading}
             count={indicatorData?.error.count}
             variation={indicatorData?.error.variation}
@@ -168,10 +157,9 @@ const ListView = () => {
           <Kpi
             title="Open Requests"
             color="warning"
-            status={2}
-            instance={instance}
-            kpiSelection={kpiSelection}
-            setKpiSelection={setKpiSelection}
+            status="Pending"
+            selected={statusSelection === "Pending"}
+            onSelect={handleKpiSelection}
             loading={indicatorLoading}
             count={indicatorData?.open.count}
             variation={indicatorData?.open.variation}
@@ -182,10 +170,9 @@ const ListView = () => {
           <Kpi
             title="Unassigned Requests"
             color="neutral"
-            status={3}
-            instance={instance}
-            kpiSelection={kpiSelection}
-            setKpiSelection={setKpiSelection}
+            status={undefined}
+            selected={statusSelection === undefined}
+            onSelect={handleKpiSelection}
             loading={indicatorLoading}
             count={indicatorData?.unassign.count}
             variation={indicatorData?.unassign.variation}
@@ -200,11 +187,11 @@ const ListView = () => {
         callbacks={instance}
       >
         <HvLeftControl
-          placeholder="Search"
+          placeholder="Search by name"
           onSearch={handleSearch}
           searchProps={{
             inputProps: {
-              "aria-label": "Search",
+              "aria-label": "Search by name",
               "aria-controls": listId,
             },
           }}
@@ -214,12 +201,10 @@ const ListView = () => {
 
       <HvBulkActions
         className={classes.marginTop}
-        {...bulkActionProps}
-        numTotal={data.length}
+        {...instance.getHvBulkActionsProps?.()}
+        numTotal={data?.items.length}
         numSelected={instance.selectedFlatRows.length}
         maxVisibleActions={2}
-        onSelectAll={() => bulkActionProps?.onSelectAll()}
-        onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
         actions={actions}
         actionsDisabled={false}
         onAction={handleAction}
@@ -228,7 +213,7 @@ const ListView = () => {
         }}
       />
 
-      <HvLoadingContainer hidden={!loading}>
+      <HvLoadingContainer hidden={!isLoading}>
         <div className={classes.marginTop}>
           <Table instance={instance} id={listId} />
           {instance.page?.length > 1 && (
