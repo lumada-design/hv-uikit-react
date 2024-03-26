@@ -7,7 +7,7 @@ import { initReactI18next } from "react-i18next";
 const initAppI18n = (baseUrl: string) => {
   const i18n = i18next.createInstance();
 
-  const loadPath = baseUrl + "locales/{{lng}}/{{ns}}.json";
+  const loadPath = `${baseUrl}locales/{{lng}}/{{ns}}.json`;
 
   i18n
     // load translation using xhr -> see /public/locales
@@ -45,7 +45,7 @@ const useI18nInstance = () => {
       // TS picks up the Node's version of `import.meta.resolve` definition instead of the browser's
       // The browser's version of `import.meta.resolve` is defined in `src/types/import.meta.d.ts`
       // and it returns a string, not a Promise
-      initAppI18n(import.meta.resolve?.(moduleId + "/") as unknown as string),
+      initAppI18n(import.meta.resolve?.(`${moduleId}/`) || ""),
     [moduleId],
   );
 

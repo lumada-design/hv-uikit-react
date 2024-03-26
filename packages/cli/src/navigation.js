@@ -8,24 +8,17 @@ const plop = await nodePlop(`${__dirname}/plopfile.js`);
 const createRoute = plop.getGenerator("createRoute");
 const createNavigation = plop.getGenerator("createNavigation");
 
-const createNavigationFiles = async (path) => {
+export const createNavigationFiles = async (path) => {
   const pagesPath = `${path}/src/pages`;
   const pages = fs.readdirSync(pagesPath);
 
+  /* eslint-disable no-await-in-loop */
   for (const page of pages) {
-    if (page !== "NotFound") {
-      // create routes file from plop template
-      await createRoute.runActions({ path, name: page });
-      // create navigation file from plop template
-      await createNavigation.runActions({ path, name: toSentenceCase(page) });
-    }
+    if (page === "NotFound") break;
 
-    // write page index file
-    fs.writeFileSync(
-      `${pagesPath}/${page}/index.tsx`,
-      `export { default } from "./${page}";\n`,
-    );
+    // create routes file from plop template
+    await createRoute.runActions({ path, name: page });
+    // create navigation file from plop template
+    await createNavigation.runActions({ path, name: toSentenceCase(page) });
   }
 };
-
-export default createNavigationFiles;
