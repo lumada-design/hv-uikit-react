@@ -22,6 +22,7 @@ import {
   HvWarningText,
 } from "../Forms";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useTheme } from "../hooks/useTheme";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListContainer } from "../ListContainer";
 import { HvPanel } from "../Panel";
@@ -29,7 +30,6 @@ import { fixedForwardRef } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Select.styles";
-import { useTheme } from "../hooks/useTheme";
 
 function defaultRenderValue<Value>(
   options: SelectOption<Value> | SelectOption<Value>[] | null,
