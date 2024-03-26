@@ -4,7 +4,7 @@ import {
   HvContainerProps,
 } from "@hitachivantara/uikit-react-core";
 
-import { Loading } from "components/common/Loading";
+import { Loading } from "../Loading";
 import classes from "./styles";
 
 interface ContainerProps {

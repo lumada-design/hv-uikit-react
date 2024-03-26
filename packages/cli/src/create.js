@@ -4,9 +4,9 @@ import fs from "fs-extra";
 import inquirer from "inquirer";
 
 import { createAppShellBaseline, setupAppShell } from "./app-shell.js";
-import createAppContents from "./contents.js";
-import createNavigationFiles from "./navigation.js";
-import updatePackageJson from "./package.js";
+import { createAppContents } from "./contents.js";
+import { createNavigationFiles } from "./navigation.js";
+import { updatePackageJson } from "./package.js";
 import { __dirname, toPascalCase } from "./utils.js";
 
 const questions = [
@@ -33,17 +33,7 @@ const questions = [
     type: "checkbox",
     message: "Do you want to enable App Shell features? If so, choose which:",
     name: "appShellFeatures",
-    choices: [
-      {
-        name: "Help Link",
-      },
-      {
-        name: "Color Mode Switcher",
-      },
-      {
-        name: "App Switcher",
-      },
-    ],
+    choices: ["Help Link", "Color Mode Switcher", "App Switcher"],
     when(answers) {
       return answers.useAppShell;
     },
@@ -66,18 +56,12 @@ const questions = [
     message: "Do you want to use templates? If so, choose which:",
     name: "templates",
     choices: [
-      {
-        name: "Asset Inventory",
-      },
-      {
-        name: "List View",
-      },
-      {
-        name: "Details View",
-      },
-      {
-        name: "Form",
-      },
+      "Asset Inventory",
+      "Dashboard",
+      "Details View",
+      "Form",
+      "List View",
+      "Welcome",
     ],
     filter(val) {
       return val.map((v) => toPascalCase(v));
@@ -112,12 +96,6 @@ const create = async ({
     .replace(/[^a-z0-9-]/g, "");
   const appPath = `${process.cwd()}/${packageName}`;
 
-  // object for collecting extra dependencies coming from selected templates or other options
-  const dependencies = {
-    dependencies: {},
-    devDependencies: {},
-  };
-
   // create app baseline from receipt
   if (useAppShell) {
     await createAppShellBaseline(appPath);
@@ -125,7 +103,12 @@ const create = async ({
     createAppBaseline(appPath);
   }
   // create app contents from recipe templates selection
-  await createAppContents(appPath, name, templates, dependencies, useAppShell);
+  const dependencies = await createAppContents(
+    appPath,
+    name,
+    templates,
+    useAppShell,
+  );
 
   if (useAppShell) {
     await setupAppShell(
@@ -190,5 +173,3 @@ export const createCommand = new Command()
       });
     }
   });
-
-export { createCommand as default };

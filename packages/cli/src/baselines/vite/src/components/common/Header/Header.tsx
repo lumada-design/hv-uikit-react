@@ -10,9 +10,10 @@ import {
   HvHeaderNavigationProps,
 } from "@hitachivantara/uikit-react-core";
 
-import HitachiLogo from "assets/HitachiLogo";
-import { NavigationContext } from "lib/context/NavigationContext";
-import navigation from "lib/navigation";
+import HitachiLogo from "../../../assets/HitachiLogo";
+import { NavigationContext } from "../../../context/NavigationContext";
+// @ts-expect-error TODO
+import navigation from "../../../lib/navigation";
 
 export const Header = () => {
   const navigate = useNavigate();

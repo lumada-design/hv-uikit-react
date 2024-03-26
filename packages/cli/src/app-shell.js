@@ -20,60 +20,44 @@ const createAppShellIndexHtmlFile = async (path, name) => {
 const createAppShellConfigFile = async (
   path,
   name,
-  appShellFeatures,
-  viteOptionsAppShell,
+  appShellFeatures = [],
+  viteOptionsAppShell = {},
 ) => {
   const pagesPath = `${path}/src/pages`;
   const pages = fs.readdirSync(pagesPath);
 
-  const templ_pages = [];
+  const templatePages = pages.map((page) => ({
+    path,
+    pagesPath: "pages",
+    name: page,
+    pageName: page.replace(/([a-z])([A-Z])/g, "$1 $2"),
+  }));
 
-  for (const page of pages) {
-    templ_pages.push({
-      path,
-      pagesPath: "pages",
-      name: page,
-      pageName: page.replace(/([a-z])([A-Z])/g, "$1 $2"),
-    });
+  const appShellFeatMap = {
+    AppSwitcher: {
+      bundle: "@hv/app-switcher-client/toggle.js",
+      config:
+        '{ title: "Apps",\n\t\t\t\t\t\t\t\t\tapps: [\n\t\t\t\t\t\t\t\t\t\t{ label: "App 1", description: "Application 1", url: "#", target: "NEW" },\n\t\t\t\t\t\t\t\t\t\t{ label: "App 2", description: "Application 2", url: "#", target: "SELF", icon: { iconType: "uikit", name: "Warehouse" } }\n\t\t\t\t\t\t\t\t\t]}',
+    },
+    ColorModeSwitcher: {
+      bundle: "@hv/theming-client/colorModeSwitcher.js",
+    },
+    HelpLink: {
+      bundle: "@hv/help-client/button.js",
+      config:
+        '{ url: "https://www.hitachivantara.com/", description: "Hitachi Vantara Help Link" }',
+    },
+  };
 
-    // write page index file
-    fs.writeFileSync(
-      `${pagesPath}/${page}/index.tsx`,
-      `export { default } from "./${page}";\n`,
-    );
-  }
-
-  const appShell_feat = [];
-
-  for (const feat of appShellFeatures) {
-    switch (feat) {
-      case "AppSwitcher":
-        appShell_feat.push({
-          bundle: "@hv/app-switcher-client/toggle.js",
-          config:
-            '{ title: "Apps",\n\t\t\t\t\t\t\t\t\tapps: [\n\t\t\t\t\t\t\t\t\t\t{ label: "App 1", description: "Application 1", url: "#", target: "NEW" },\n\t\t\t\t\t\t\t\t\t\t{ label: "App 2", description: "Application 2", url: "#", target: "SELF", icon: { iconType: "uikit", name: "Warehouse" } }\n\t\t\t\t\t\t\t\t\t]}',
-        });
-        break;
-      case "ColorModeSwitcher":
-        appShell_feat.push({
-          bundle: "@hv/theming-client/colorModeSwitcher.js",
-        });
-        break;
-      case "HelpLink":
-        appShell_feat.push({
-          bundle: "@hv/help-client/button.js",
-          config:
-            '{ url: "https://www.hitachivantara.com/", description: "Hitachi Vantara Help Link" }',
-        });
-        break;
-    }
-  }
+  const appShellFeats = appShellFeatures
+    .map((feat) => appShellFeatMap[feat])
+    .filter(Boolean);
 
   await createAppShellConfig.runActions({
     path,
     appName: name.replace(/([a-z])([A-Z])/g, "$1 $2"),
-    pages: templ_pages,
-    feats: appShell_feat,
+    pages: templatePages,
+    feats: appShellFeats,
     viteOptionsAppShell,
   });
 };
@@ -82,19 +66,15 @@ const createAppShellViteConfigFile = async (path, viteOptionsAppShell) => {
   const pagesPath = `${path}/src/pages`;
   const pages = fs.readdirSync(pagesPath);
 
-  const templ_pages = [];
-
-  for (const page of pages) {
-    templ_pages.push({
-      path,
-      pagesPath: "src/pages",
-      name: page,
-    });
-  }
+  const templatePages = pages.map((page) => ({
+    path,
+    pagesPath: "src/pages",
+    name: page,
+  }));
 
   await createAppShellViteConfig.runActions({
     path,
-    pages: templ_pages,
+    pages: templatePages,
     viteOptionsAppShell,
   });
 };

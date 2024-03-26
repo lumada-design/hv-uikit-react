@@ -1,7 +1,6 @@
 import { useMemo, createContext } from "react";
 
-import { Header } from "components/common";
-import useNavigation from "lib/hooks/useNavigation";
+import { useNavigation } from "../hooks/useNavigation";
 
 interface NavigationProviderProps {
   children: React.ReactNode;
@@ -29,7 +28,6 @@ export const NavigationProvider = ({
 
   return (
     <NavigationContext.Provider value={value}>
-      <Header />
       {children}
     </NavigationContext.Provider>
   );

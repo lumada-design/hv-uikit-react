@@ -33,11 +33,11 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.6",
+    "@hitachivantara/app-shell-vite-plugin": "^1.0.0",
+    "@hitachivantara/uikit-uno-preset": "^0.2.5",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "@hitachivantara/app-shell-vite-plugin": "^1.0.0",
-    "@hitachivantara/uikit-uno-preset": "^0.2.5",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
@@ -45,7 +45,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^1.0.4",
     "eslint": "^8.39.0",
-    "jsdom": "^23.0.1",
+    "happy-dom": "^14.3.9",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.1.1",
     "typescript": "^5.3.3",
@@ -53,7 +53,6 @@
     "vite": "^5.0.7",
     "vite-plugin-css-injected-by-js": "^3.3.1",
     "vite-tsconfig-paths": "^4.0.5",
-    "vitest": "^1.0.4",
-    "whatwg-fetch": "^3.6.2"
+    "vitest": "^1.0.4"
   }
 }

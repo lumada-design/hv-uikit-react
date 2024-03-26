@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "no-alert": "off",
+    "no-console": "off",
+    "import/extensions": "off",
+    "ssr-friendly/no-dom-globals-in-module-scope": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/baselines/**/*"],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "import/no-relative-packages": "off"
+      }
+    }
+  ]
+}

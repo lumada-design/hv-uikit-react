@@ -41,7 +41,7 @@ export default defineConfig(({ mode }) => ({
 
   test: {
     globals: true,
-    environment: "jsdom",
+    environment: "happy-dom",
     setupFiles: ["src/tests/setupTests.ts"],
     reporters: "default",
     coverage: {
@@ -57,22 +57,6 @@ export default defineConfig(({ mode }) => ({
         "src/**/*.d.ts",
         "src/*.tsx",
       ],
-    },
-  },
-
-  build: {
-    rollupOptions: {
-      // hides warnings about module level directive use client
-      // that many third party libraries added because of React Server Components
-      onwarn(warning, warn) {
-        if (
-          warning.code === "MODULE_LEVEL_DIRECTIVE" &&
-          warning.message.includes("use client")
-        ) {
-          return;
-        }
-        warn(warning);
-      },
     },
   },
 }));

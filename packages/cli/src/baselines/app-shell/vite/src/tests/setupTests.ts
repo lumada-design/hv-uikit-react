@@ -1,8 +1,8 @@
-import "@testing-library/jest-dom";
-import "whatwg-fetch";
 import { vi } from "vitest";
 import { TOptionsBase, ThirdPartyModule } from "i18next";
 import { TransProps } from "react-i18next";
+
+import "@testing-library/jest-dom";
 
 vi.mock("react-i18next", async () => {
   const { initReactI18next } = await vi.importActual<{
