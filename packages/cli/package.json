@@ -33,6 +33,7 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.1"
   },
+  "engineStrict": true,
   "engines": {
     "node": ">=16"
   }

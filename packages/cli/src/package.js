@@ -10,7 +10,7 @@ const sortObjectKeys = (obj) => {
     }, {});
 };
 
-const updatePackageJson = async (appPath, packageName, dependencies) => {
+export const updatePackageJson = async (appPath, packageName, dependencies) => {
   // replace package name
   const pckgFile = `${appPath}/package.json`;
   const pckgData = fs.readFileSync(pckgFile, { encoding: "utf-8" });
@@ -35,5 +35,3 @@ const updatePackageJson = async (appPath, packageName, dependencies) => {
     fs.writeJsonSync(packageJsonPath, packageJson, { spaces: 2 });
   }
 };
-
-export default updatePackageJson;
