@@ -2,13 +2,10 @@ import { FormEvent, Fragment, useCallback, useMemo, useState } from "react";
 import { css, keyframes } from "@emotion/css";
 import {
   HvButton,
-  HvDialog,
-  HvDialogContent,
-  HvDialogTitle,
-  HvGrid,
+  HvCellProps,
   HvInput,
-  HvLoadingContainer,
   HvLabel,
+  HvLoadingContainer,
   HvOption,
   HvOverflowTooltip,
   HvPagination,
@@ -31,17 +28,13 @@ import {
   theme,
   useHvData,
   useHvPagination,
+  useHvRowExpand,
+  useHvRowState,
   useHvSnackbar,
 } from "@hitachivantara/uikit-react-core";
 import { Add, Delete, Edit } from "@hitachivantara/uikit-react-icons";
 
-import {
-  AssetEvent,
-  getEditableColumns,
-  range,
-  useServerData,
-} from "../storiesUtils";
-import { LoadingContainer } from "../TableSamples/LoadingContainer";
+import { AssetEvent, getEditableColumns, useServerData } from "../storiesUtils";
 
 const slide = keyframes`
   0% { 
@@ -49,7 +42,7 @@ const slide = keyframes`
   }
   100% { 
     max-height: 300px;
-  }
+  } 
 `;
 
 const classes = {
@@ -84,7 +77,7 @@ const classes = {
     gap: theme.space.sm,
   }),
   tableRowEditable: css({
-    backgroundColor: theme.colors.primary_20,
+    backgroundColor: theme.colors.containerBackgroundHover,
   }),
   tableCellEditable: css({
     padding: 0,
@@ -98,7 +91,7 @@ const classes = {
     alignItems: "center",
     gap: theme.space.sm,
     height: "48px",
-    padding: `calc(${theme.space.xs} - 2px) ${theme.space.xs} calc(${
+    padding: `calc(${theme.space.xs} - 2px) 0 calc(${
       theme.space.xs
     } - 3px) ${theme.spacing(4)}`,
     borderBottom: `1px solid ${theme.colors.atmo4}`,
@@ -106,6 +99,9 @@ const classes = {
   editableActions: css({
     display: "flex",
     justifyContent: "flex-end",
+    borderBottom: `1px solid ${theme.colors.atmo4}`,
+  }),
+  editableTableBorder: css({
     borderBottom: `1px solid ${theme.colors.atmo4}`,
   }),
   slide: css({
@@ -118,6 +114,8 @@ const classes = {
   }),
   tableRoot: css({ tableLayout: "fixed" }),
   selectBackground: css({ backgroundColor: theme.colors.atmo1 }),
+  switchContainer: css({ display: "flex", alignItems: "center" }),
+  switchRightLabel: css({ marginLeft: 10 }),
 };
 
 const EmptyRow = () => (
@@ -146,6 +144,133 @@ interface TableProps<T extends Data> {
   onExitAddRow?: () => void;
 }
 
+const EditableCell = ({
+  value,
+  row,
+  column,
+}: HvCellProps<AssetEvent, string>) => {
+  const formId = `edit-row-${row.original.id}`;
+
+  if (row.state?.isEditing) {
+    switch (column.id) {
+      case "status":
+        return (
+          <div className={classes.switchContainer}>
+            <HvLabel id="switch-label" label="Closed" htmlFor="switch-input" />
+            <HvSwitch
+              id="switch-input"
+              aria-labelledby="switch-label"
+              inputProps={{
+                form: formId,
+              }}
+              name={String(column.id)}
+              defaultChecked={value.getInitialValue === "Open"}
+              onChange={() => {
+                if (row.state?.isEditing && !row.state?.isDirty) {
+                  row.setState?.((state: Object) => ({
+                    ...state,
+                    isDirty: true,
+                  }));
+                }
+              }}
+            />
+            <HvLabel
+              id="switch-label"
+              label="Open"
+              htmlFor="switch-input"
+              className={classes.switchRightLabel}
+            />
+          </div>
+        );
+      case "severity":
+        return (
+          <div>
+            <HvSelect
+              name={String(column.id)}
+              className={classes.inputRoot}
+              classes={{
+                select: classes.selectBackground,
+                panel: classes.selectBackground,
+              }}
+              inputProps={{ form: formId }}
+              enablePortal
+              placeholder="Select Severity"
+              defaultValue={value}
+              onChange={() => {
+                if (row.state?.isEditing && !row.state?.isDirty) {
+                  row.setState?.((state: Object) => ({
+                    ...state,
+                    isDirty: true,
+                  }));
+                }
+              }}
+            >
+              {["Critical", "Major", "Average", "Minor"].map((option) => (
+                <HvOption value={option} label={option} key={option}>
+                  {option}
+                </HvOption>
+              ))}
+            </HvSelect>
+          </div>
+        );
+      case "priority":
+        return (
+          <div>
+            <HvSelect
+              name={String(column.id)}
+              className={classes.inputRoot}
+              classes={{
+                select: classes.selectBackground,
+                panel: classes.selectBackground,
+              }}
+              inputProps={{ form: formId }}
+              enablePortal
+              placeholder="Select Priority"
+              defaultValue={value}
+              onChange={() => {
+                if (row.state?.isEditing && !row.state?.isDirty) {
+                  row.setState?.((state: Object) => ({
+                    ...state,
+                    isDirty: true,
+                  }));
+                }
+              }}
+            >
+              {["High", "Medium", "Low"].map((option) => (
+                <HvOption value={option} label={option} key={option}>
+                  {option}
+                </HvOption>
+              ))}
+            </HvSelect>
+          </div>
+        );
+      default:
+        return (
+          <div>
+            <HvInput
+              inputProps={{
+                form: formId,
+              }}
+              className={classes.inputRoot}
+              name={String(column.id)}
+              defaultValue={value}
+              onChange={() => {
+                if (row.state?.isEditing && !row.state?.isDirty) {
+                  row.setState?.((state: Object) => ({
+                    ...state,
+                    isDirty: true,
+                  }));
+                }
+              }}
+              placeholder={column.Header}
+            />
+          </div>
+        );
+    }
+  }
+  return value || "-";
+};
+
 const Table = <T extends Data>({
   addRow,
   data,
@@ -163,15 +288,6 @@ const Table = <T extends Data>({
   const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
 
   const [newRowDirty, setNewRowDirty] = useState<boolean>(false);
-  const [editRows, setEditRows] = useState<
-    {
-      id: string;
-      dirty: boolean;
-    }[],
-  >([]);
-
-  const [openViewDialog, setOpenViewDialog] = useState(false);
-  const [dialogRow, setDialogRow] = useState<T | undefined>(undefined);
 
   const handleUndoDelete = useCallback(
     async (row: HvRowInstance<T>) => {
@@ -199,9 +315,6 @@ const Table = <T extends Data>({
                   variant="secondaryGhost"
                   onClick={() => {
                     handleUndoDelete(row);
-                    setEditRows((prev) =>
-                      prev.filter((r) => r.id !== row.original.id),
-                    );
                     closeSnackbar();
                   }}
                 >
@@ -260,35 +373,49 @@ const Table = <T extends Data>({
         variant: "actions",
         style: { width: "70px", maxWidth: "unset" },
         Cell: ({ row }) => (
-          <HvButton
-            variant="secondaryGhost"
-            aria-label="View row"
-            onClick={() => {
-              setDialogRow(row.values);
-              setOpenViewDialog(true);
-            }}
-          >
-            View
-          </HvButton>
+          <Fragment key={`${row.id}-view`}>
+            {!row.state?.isEditing && (
+              <HvButton
+                variant="secondaryGhost"
+                aria-label="View row"
+                onClick={() => {
+                  alert(JSON.stringify(row.values, null, 2));
+                }}
+              >
+                View
+              </HvButton>
+            )}
+          </Fragment>
         ),
       },
       {
         id: "edit",
         variant: "actions",
-        Cell: ({ row }) => (
-          <HvButton
-            icon
-            aria-label="Edit row"
-            onClick={() =>
-              setEditRows((prev) => [
-                ...prev,
-                { id: row.original.id, dirty: false },
-              ])
-            }
-          >
-            <Edit />
-          </HvButton>
-        ),
+        Cell: (props) => {
+          const { row, setRowState } = props;
+          return (
+            <Fragment key={`${row.id}-edit`}>
+              {!row.state?.isEditing && (
+                <HvButton
+                  icon
+                  aria-label="Edit row"
+                  onClick={() => {
+                    setRowState?.(
+                      [row.id],
+                      (state: { isEditing: boolean }) => ({
+                        ...state,
+                        isEditing: !state.isEditing,
+                      }),
+                    );
+                    row.getToggleRowExpandedProps().onClick();
+                  }}
+                >
+                  <Edit />
+                </HvButton>
+              )}
+            </Fragment>
+          );
+        },
       },
       {
         id: "delete",
@@ -320,6 +447,7 @@ const Table = <T extends Data>({
       data,
       columns,
       manualPagination: true,
+      disableCreateExpandButton: true,
       pageCount,
       stateReducer: (newState, action) => {
         switch (action.type) {
@@ -334,9 +462,10 @@ const Table = <T extends Data>({
         }
         return newState;
       },
-      defaultColumn: { Cell: ({ value }) => value || "-" },
     },
+    useHvRowExpand,
     useHvPagination,
+    useHvRowState,
   );
 
   const handleCancelAddRow = () => {
@@ -400,12 +529,16 @@ const Table = <T extends Data>({
     }
   };
 
-  const handleCancelEditRow = (id: string) => {
-    const editedRow = editRows.find((r) => r.id === id);
-    if (!editedRow?.dirty) {
-      setEditRows((prev) => prev.filter((row) => row.id !== id));
+  const handleCancelEditRow = (row: HvRowInstance<T, string>) => {
+    if (!row.state?.isDirty) {
+      row.setState?.((state) => ({
+        ...state,
+        isEditing: false,
+      }));
+      row.toggleRowExpanded?.();
       return;
     }
+
     enqueueSnackbar("Are you sure you want to discard the changes?", {
       variant: "warning",
       snackbarContentProps: {
@@ -414,8 +547,12 @@ const Table = <T extends Data>({
             <HvButton
               variant="secondaryGhost"
               onClick={() => {
-                setEditRows((prev) => prev.filter((row) => row.id !== id));
+                row.setState?.((state) => ({
+                  ...state,
+                  isEditing: false,
+                }));
                 closeSnackbar();
+                row?.toggleRowExpanded?.();
               }}
             >
               Discard
@@ -431,17 +568,18 @@ const Table = <T extends Data>({
 
   const handleEditRow = async (
     event: FormEvent<HTMLFormElement>,
-    id: string,
+    row: HvRowInstance<T, string>,
   ) => {
     try {
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
       const asset = Object.fromEntries(formData.entries());
+      console.log(asset);
       const assetFormatted = {
         ...asset,
         status: asset.status === "on" ? "Open" : "Closed",
       };
-      await onRowUpdate?.({ id, ...assetFormatted } as unknown as T);
+      await onRowUpdate?.({ id: row.id, ...assetFormatted } as unknown as T);
       enqueueSnackbar("Row updated successfully.", {
         variant: "success",
         snackbarContentProps: {
@@ -457,14 +595,16 @@ const Table = <T extends Data>({
         variant: "error",
       });
     } finally {
-      setEditRows((prev) => prev.filter((row) => row.id !== id));
+      row.setState?.((state: Object) => ({
+        ...state,
+        isEditing: false,
+        isDirty: false,
+      }));
     }
   };
 
-  const renderEditableRow = (row?: HvRowInstance<T, string>) => {
-    const cols = columns.filter((col) => col.variant !== "actions");
-    const edit = !!row;
-    const formId = edit ? `edit-row-${row.original.id}` : "add-row";
+  const renderEditableRow = (row: HvRowInstance<T, string>) => {
+    const formId = `edit-row-${row.original.id}`;
 
     return (
       <Fragment key={`editable_row_group_${row?.original.id}`}>
@@ -472,243 +612,28 @@ const Table = <T extends Data>({
           className={classes.tableRowEditable}
           {...row?.getRowProps()}
         >
-          <HvTableCell
-            className={classes.tableCellEditable}
-            key={`editable_row_cell-${cols[0].accessor as string}`}
-            colSpan={1}
-            {...row?.cells[0].getCellProps()}
-          >
-            <div className={edit ? undefined : classes.slide}>
-              <div className={classes.tableCellContent}>
-                <HvInput
-                  inputProps={{
-                    form: formId,
-                  }}
-                  className={classes.inputRoot}
-                  name={String(cols[0].accessor)}
-                  defaultValue={
-                    edit
-                      ? row.original[String(cols[0].accessor)]?.toString()
-                      : undefined
-                  }
-                  placeholder={cols[0].Header}
-                  onChange={() => {
-                    if (
-                      edit &&
-                      !editRows.find((r) => r.id === row.original.id)?.dirty
-                    ) {
-                      setEditRows((prev) =>
-                        prev.map((r) =>
-                          r.id === row.original.id
-                            ? {
-                                ...r,
-                                dirty: true,
-                              }
-                            : r
-                        )
-                      );
-                      return;
-                    }
-
-                    if (!newRowDirty) {
-                      setNewRowDirty(true);
-                    }
-                  }}
-                />
-              </div>
-            </div>
-          </HvTableCell>
-          <HvTableCell
-            className={classes.tableCellEditable}
-            key={`editable_row_cell-${cols[1].accessor as string}`}
-            colSpan={1}
-            {...row?.cells[1].getCellProps()}
-          >
-            <div className={edit ? undefined : classes.slide}>
-              <div className={classes.tableCellContent}>
-                <HvLabel
-                  id="switch-label"
-                  label="Closed"
-                  htmlFor="switch-input"
-                />
-                <HvSwitch
-                  id="switch-input"
-                  aria-labelledby="switch-label"
-                  inputProps={{
-                    form: formId,
-                  }}
-                  name={String(cols[1].accessor)}
-                  onChange={() => {
-                    if (edit) {
-                      setEditRows((prev) =>
-                        prev.map((r) =>
-                          r.id === row.original.id
-                            ? {
-                                ...r,
-                                dirty: true,
-                              }
-                            : r
-                        )
-                      );
-                      return;
-                    }
-                    if (!newRowDirty) {
-                      setNewRowDirty(true);
-                    }
-                  }}
-                  defaultChecked={
-                    edit
-                      ? row.original[String(cols[1].accessor)]?.toString() ===
-                        "Open"
-                      : false
-                  }
-                />
-                <HvLabel
-                  id="switch-label"
-                  label="Open"
-                  htmlFor="switch-input"
-                />
-              </div>
-            </div>
-          </HvTableCell>
-          <HvTableCell
-            className={classes.tableCellEditable}
-            key={`editable_row_cell-${cols[2].accessor as string}`}
-            colSpan={1}
-            {...row?.cells[2].getCellProps()}
-          >
-            <div className={edit ? undefined : classes.slide}>
-              <div className={classes.tableCellContent}>
-                <HvSelect
-                  name={String(cols[2].accessor)}
-                  className={classes.inputRoot}
-                  classes={{
-                    select: classes.selectBackground,
-                    panel: classes.selectBackground,
-                  }}
-                  inputProps={{ form: formId }}
-                  enablePortal
-                  placeholder="Select Severity"
-                  defaultValue={
-                    edit
-                      ? row.original[String(cols[2].accessor)]?.toString()
-                      : undefined
-                  }
-                  onChange={() => {
-                    if (
-                      edit &&
-                      !editRows.find((r) => r.id === row.original.id)?.dirty
-                    ) {
-                      setEditRows((prev) =>
-                        prev.map((r) =>
-                          r.id === row.original.id
-                            ? {
-                                ...r,
-                                dirty: true,
-                              }
-                            : r
-                        )
-                      );
-                      return;
-                    }
-
-                    if (!newRowDirty) {
-                      setNewRowDirty(true);
-                    }
-                  }}
-                >
-                  {["Critical", "Major", "Average", "Minor"].map((option) => (
-                    <HvOption value={option} label={option} key={option}>
-                      {option}
-                    </HvOption>
-                  ))}
-                </HvSelect>
-              </div>
-            </div>
-          </HvTableCell>
-          <HvTableCell
-            className={classes.tableCellEditable}
-            key={`editable_row_cell-${cols[3].accessor as string}`}
-            colSpan={4}
-            {...row?.cells[3].getCellProps()}
-          >
-            <div className={edit ? undefined : classes.slide}>
-              <div
-                className={classes.tableCellContent}
-                style={{ justifyContent: "space-between" }}
-              >
-                <HvSelect
-                  name={String(cols[3].accessor)}
-                  className={classes.inputRoot}
-                  classes={{
-                    select: classes.selectBackground,
-                    panel: classes.selectBackground,
-                  }}
-                  inputProps={{ form: formId }}
-                  enablePortal
-                  placeholder="Select Priority"
-                  defaultValue={
-                    edit
-                      ? row.original[String(cols[3].accessor)]?.toString()
-                      : undefined
-                  }
-                  onChange={() => {
-                    if (
-                      edit &&
-                      !editRows.find((r) => r.id === row.original.id)?.dirty
-                    ) {
-                      setEditRows((prev) =>
-                        prev.map((r) =>
-                          r.id === row.original.id
-                            ? {
-                                ...r,
-                                dirty: true,
-                              }
-                            : r
-                        )
-                      );
-                      return;
-                    }
-
-                    if (!newRowDirty) {
-                      setNewRowDirty(true);
-                    }
-                  }}
-                >
-                  {["High", "Medium", "Low"].map((option) => (
-                    <HvOption value={option} label={option} key={option}>
-                      {option}
-                    </HvOption>
-                  ))}
-                </HvSelect>
-                <HvButton
-                  icon
-                  aria-label="Delete"
-                  variant="secondaryGhost"
-                  onClick={
-                    edit ? () => handleRequestDelete(row) : handleCancelAddRow
-                  }
-                >
-                  <Delete />
-                </HvButton>
-              </div>
-            </div>
-          </HvTableCell>
+          {row.cells.map((cell) => (
+            <HvTableCell
+              {...cell.getCellProps()}
+              style={{ borderBottom: `1px solid ${theme.colors.atmo4}` }}
+            >
+              {cell.render("Cell")}
+            </HvTableCell>
+          ))}
         </HvTableRow>
-        <HvTableRow className={classes.tableRowEditable}>
+        <HvTableRow
+          className={classes.tableRowEditable}
+          style={{ display: row?.isExpanded ? "table-row" : "none" }}
+        >
           <HvTableCell
             colSpan={columns.length}
             className={classes.tableCellEditable}
           >
-            <div className={edit ? undefined : classes.slide}>
+            <div>
               <div className={classes.editableActions}>
                 <form
                   id={formId}
-                  onSubmit={
-                    edit
-                      ? (event) => handleEditRow(event, row.original.id)
-                      : handleAddRow
-                  }
+                  onSubmit={(event) => handleEditRow(event, row)}
                 >
                   <HvButton variant="primaryGhost" type="submit">
                     Save
@@ -716,12 +641,78 @@ const Table = <T extends Data>({
                 </form>
                 <HvButton
                   variant="secondaryGhost"
-                  onClick={
-                    edit
-                      ? () => handleCancelEditRow(row.original.id)
-                      : handleCancelAddRow
-                  }
+                  onClick={() => {
+                    handleCancelEditRow(row);
+                  }}
                 >
+                  Cancel
+                </HvButton>
+              </div>
+            </div>
+          </HvTableCell>
+        </HvTableRow>
+      </Fragment>
+    );
+  };
+
+  const renderAddRow = () => {
+    const cols = columns.filter((col) => col.variant !== "actions");
+    const formId = "add-row";
+
+    return (
+      <Fragment key="add_row">
+        <HvTableRow className={classes.tableRowEditable}>
+          {cols.map((col, idx) => {
+            const last = cols.length - 1 === idx;
+
+            return (
+              <HvTableCell
+                className={classes.tableCellEditable}
+                key={`editable_row_cell-${col.accessor as string}`}
+                colSpan={last ? 4 : 1}
+              >
+                <div className={classes.slide}>
+                  <div
+                    className={classes.tableCellContent}
+                    style={{ justifyContent: "space-between" }}
+                  >
+                    <HvInput
+                      inputProps={{
+                        form: formId,
+                      }}
+                      className={classes.inputRoot}
+                      name={String(col.accessor)}
+                      placeholder={col.Header}
+                    />
+                    {last && (
+                      <HvButton
+                        icon
+                        aria-label="Delete"
+                        variant="secondaryGhost"
+                        onClick={handleCancelAddRow}
+                      >
+                        <Delete />
+                      </HvButton>
+                    )}
+                  </div>
+                </div>
+              </HvTableCell>
+            );
+          })}
+        </HvTableRow>
+        <HvTableRow className={classes.tableRowEditable}>
+          <HvTableCell
+            colSpan={columns.length}
+            className={classes.tableCellEditable}
+          >
+            <div className={classes.slide}>
+              <div className={classes.editableActions}>
+                <form id={formId} onSubmit={handleAddRow}>
+                  <HvButton variant="primaryGhost" type="submit">
+                    Save
+                  </HvButton>
+                </form>
+                <HvButton variant="secondaryGhost" onClick={handleCancelAddRow}>
                   Cancel
                 </HvButton>
               </div>
@@ -739,7 +730,7 @@ const Table = <T extends Data>({
 
     prepareRow(row);
 
-    return editRows.find((r) => r.id === row.original.id) ? (
+    return row.state?.isEditing ? (
       renderEditableRow(row)
     ) : (
       <HvTableRow {...row.getRowProps()}>
@@ -772,7 +763,7 @@ const Table = <T extends Data>({
               ))}
             </HvTableHead>
             <HvTableBody {...getTableBodyProps()}>
-              {addRow && renderEditableRow()}
+              {addRow && renderAddRow()}
               {data?.length === 0 ? (
                 <EmptyRow />
               ) : (
@@ -791,28 +782,6 @@ const Table = <T extends Data>({
           }}
         />
       ) : undefined}
-      <HvDialog open={openViewDialog} onClose={() => setOpenViewDialog(false)}>
-        <HvDialogTitle>Event Info</HvDialogTitle>
-        <HvDialogContent>
-          <HvGrid container padding={2}>
-            {dialogRow &&
-              Object.entries(dialogRow).map(
-                ([key, value]) =>
-                  value && (
-                    <HvGrid item key={key}>
-                      <HvTypography
-                        variant="label"
-                        style={{ textTransform: "capitalize" }}
-                      >
-                        {key}
-                      </HvTypography>
-                      <HvTypography>{value}</HvTypography>
-                    </HvGrid>
-                  )
-              )}
-          </HvGrid>
-        </HvDialogContent>
-      </HvDialog>
     </>
   );
 };
@@ -825,7 +794,11 @@ export const TableEditable = () => {
   const [contentRef, setContentRef] = useState<HTMLDivElement | null>(null);
 
   const columns: HvTableColumnConfig<AssetEvent, string>[] = useMemo(
-    () => getEditableColumns(),
+    () =>
+      getEditableColumns().map((col) => ({
+        ...col,
+        Cell: EditableCell,
+      })),
     [],
   );
 
