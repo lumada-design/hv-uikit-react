@@ -3,11 +3,11 @@ import chalk from "chalk";
 import inquirer from "inquirer";
 import { Command } from "commander";
 
-import createAppContents from "./contents.js";
+import { createAppContents } from "./contents.js";
 import { createAppShellBaseline, setupAppShell } from "./app-shell.js";
 import { __dirname, toPascalCase } from "./utils.js";
-import updatePackageJson from "./package.js";
-import createNavigationFiles from "./navigation.js";
+import { updatePackageJson } from "./package.js";
+import { createNavigationFiles } from "./navigation.js";
 
 const questions = [
   {
@@ -33,17 +33,7 @@ const questions = [
     type: "checkbox",
     message: "Do you want to enable App Shell features? If so, choose which:",
     name: "appShellFeatures",
-    choices: [
-      {
-        name: "Help Link",
-      },
-      {
-        name: "Color Mode Switcher",
-      },
-      {
-        name: "App Switcher",
-      },
-    ],
+    choices: ["Help Link", "Color Mode Switcher", "App Switcher"],
     when(answers) {
       return answers.useAppShell;
     },
@@ -66,18 +56,12 @@ const questions = [
     message: "Do you want to use templates? If so, choose which:",
     name: "templates",
     choices: [
-      {
-        name: "Asset Inventory",
-      },
-      {
-        name: "List View",
-      },
-      {
-        name: "Details View",
-      },
-      {
-        name: "Form",
-      },
+      "Asset Inventory",
+      "Dashboard",
+      "Details View",
+      "Form",
+      "List View",
+      "Welcome",
     ],
     filter(val) {
       return val.map((v) => toPascalCase(v));
@@ -112,12 +96,6 @@ const create = async ({
     .replace(/[^a-z0-9-]/g, "");
   const appPath = `${process.cwd()}/${packageName}`;
 
-  // object for collecting extra dependencies coming from selected templates or other options
-  const dependencies = {
-    dependencies: {},
-    devDependencies: {},
-  };
-
   // create app baseline from receipt
   if (useAppShell) {
     await createAppShellBaseline(appPath);
@@ -125,12 +103,23 @@ const create = async ({
     createAppBaseline(appPath);
   }
   // create app contents from recipe templates selection
-  await createAppContents(appPath, name, templates, dependencies, useAppShell);
+  const dependencies = await createAppContents(
+    appPath,
+    name,
+    templates,
+    useAppShell
+  );
 
   if (useAppShell) {
-    await setupAppShell(appPath, name, appShellFeatures, viteOptionsAppShell, packageName);
+    await setupAppShell(
+      appPath,
+      name,
+      appShellFeatures,
+      viteOptionsAppShell,
+      packageName
+    );
     console.log(
-      `Documentation regarding App Shell can be found in: ${chalk.yellow(
+      `App Shell documentation can be found in: ${chalk.blueBright(
         "https://github.com/lumada-design/hv-app-shell/blob/main/README.md"
       )}`
     );
@@ -168,8 +157,12 @@ export const createCommand = new Command()
       const results = await inquirer.prompt(questions);
       create(results);
     } else {
-      const { withoutAppShell, appShellFeatures, disableFileBasedRouting, templates } =
-        options;
+      const {
+        withoutAppShell,
+        appShellFeatures,
+        disableFileBasedRouting,
+        templates,
+      } = options;
 
       create({
         name,
@@ -180,5 +173,3 @@ export const createCommand = new Command()
       });
     }
   });
-
-export { createCommand as default };

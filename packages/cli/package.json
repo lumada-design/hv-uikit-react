@@ -22,6 +22,11 @@
   "bugs": {
     "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
+  "scripts": {
+    "pretest": "node src/index.js create uikit-app -t Form,ListView",
+    "test": "cd uikit-app && npm i && npm run format && npm t",
+    "posttest": "rm -rf uikit-app"
+  },
   "dependencies": {
     "chalk": "^5.2.0",
     "colors": "^1.4.0",
@@ -33,6 +38,7 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.1"
   },
+  "engineStrict": true,
   "engines": {
     "node": ">=16"
   }
