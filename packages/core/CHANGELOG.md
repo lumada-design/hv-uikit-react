@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.61.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.60.0...@hitachivantara/uikit-react-core@5.61.0) (2024-03-26)
+
+### Features
+
+- add CheckBox styles to Pentaho Plus theme ([28aeff3](https://github.com/lumada-design/hv-uikit-react/commit/28aeff3a5f275d572ade126d0aa699dfbd85d207))
+- **LoadingContainer:** add component ([d141e67](https://github.com/lumada-design/hv-uikit-react/commit/d141e670a33057e2790b67d960584576ff7fc00d))
+
 # [5.60.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.59.0...@hitachivantara/uikit-react-core@5.60.0) (2024-03-22)
 
 ### Features

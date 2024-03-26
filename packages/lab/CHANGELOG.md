@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.32.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.31.2...@hitachivantara/uikit-react-lab@5.32.0) (2024-03-26)
+
+### Features
+
+- **LoadingContainer:** add component ([d141e67](https://github.com/lumada-design/hv-uikit-react/commit/d141e670a33057e2790b67d960584576ff7fc00d))
+
 ## [5.31.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.31.1...@hitachivantara/uikit-react-lab@5.31.2) (2024-03-22)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
