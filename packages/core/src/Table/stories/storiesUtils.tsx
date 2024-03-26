@@ -58,7 +58,7 @@ const getCell = (value: string) => value as unknown as React.ReactElement;
 
 const formatDate = (date: Date) => date.toISOString().split("T")[0];
 
-export const getOption = (opts: string[], i: number) => opts[i % opts.length];
+const getOption = (opts: string[], i: number) => opts[i % opts.length];
 
 const getTagColor = (status: string) =>
   status === "Closed" ? "negative_20" : "positive_20";
