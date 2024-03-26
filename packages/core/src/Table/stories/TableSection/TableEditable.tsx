@@ -3,10 +3,6 @@ import { css, keyframes } from "@emotion/css";
 import {
   HvButton,
   HvCellProps,
-  HvDialog,
-  HvDialogContent,
-  HvDialogTitle,
-  HvGrid,
   HvInput,
   HvLoadingContainer,
   HvLabel,
@@ -293,9 +289,6 @@ const Table = <T extends Data>({
 
   const [newRowDirty, setNewRowDirty] = useState<boolean>(false);
 
-  const [openViewDialog, setOpenViewDialog] = useState(false);
-  const [dialogRow, setDialogRow] = useState<T | undefined>(undefined);
-
   const handleUndoDelete = useCallback(
     async (row: HvRowInstance<T>) => {
       try {
@@ -386,8 +379,7 @@ const Table = <T extends Data>({
                 variant="secondaryGhost"
                 aria-label="View row"
                 onClick={() => {
-                  setDialogRow(row.values);
-                  setOpenViewDialog(true);
+                  alert(JSON.stringify(row.values, null, 2));
                 }}
               >
                 View
@@ -790,28 +782,6 @@ const Table = <T extends Data>({
           }}
         />
       ) : undefined}
-      <HvDialog open={openViewDialog} onClose={() => setOpenViewDialog(false)}>
-        <HvDialogTitle>Event Info</HvDialogTitle>
-        <HvDialogContent>
-          <HvGrid container padding={2}>
-            {dialogRow &&
-              Object.entries(dialogRow).map(
-                ([key, value]) =>
-                  value && (
-                    <HvGrid item key={key}>
-                      <HvTypography
-                        variant="label"
-                        style={{ textTransform: "capitalize" }}
-                      >
-                        {key}
-                      </HvTypography>
-                      <HvTypography>{value}</HvTypography>
-                    </HvGrid>
-                  )
-              )}
-          </HvGrid>
-        </HvDialogContent>
-      </HvDialog>
     </>
   );
 };
