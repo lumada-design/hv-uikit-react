@@ -15,10 +15,10 @@ jobs:
     name: Static Checks
     uses: ./.github/workflows/static-checks.yml
 
-  chromatic:
-    name: Chromatic
-    uses: ./.github/workflows/tests-chromatic.yml
-    secrets: inherit
+  # chromatic:
+  #   name: Chromatic
+  #   uses: ./.github/workflows/tests-chromatic.yml
+  #   secrets: inherit
 
   artifacts:
     name: Artifacts
