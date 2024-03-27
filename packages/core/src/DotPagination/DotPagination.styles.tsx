@@ -18,7 +18,9 @@ export const { useClasses, staticClasses } = createClasses("HvDotPagination", {
   },
 
   radio: {
-    height: "16px",
+    height: 16,
+    width: 16,
+    minWidth: 16,
 
     "&:hover": {
       backgroundColor: theme.colors.neutral_20,
@@ -27,7 +29,13 @@ export const { useClasses, staticClasses } = createClasses("HvDotPagination", {
   },
 
   icon: {
-    width: "16px",
-    height: "16px",
+    minWidth: 0,
+    width: 16,
+    height: 16,
+    "&& svg": {
+      border: "none",
+      width: "unset",
+      height: "unset",
+    },
   },
 });

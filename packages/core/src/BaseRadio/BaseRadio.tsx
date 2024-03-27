@@ -71,10 +71,6 @@ export interface HvBaseRadioProps
    */
   semantic?: boolean;
   /**
-   * Whether the selector is used on a pagination layout.
-   */
-  pagination?: boolean;
-  /**
    * Properties passed on to the input element.
    */
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
@@ -91,7 +87,7 @@ export interface HvBaseRadioProps
 
 export const getSelectorIcons = () => {
   return {
-    radio: <Unselected />, // <RadioButtonUnselected color={color} className={classes.icon} />,
+    radio: <Unselected />,
     radioChecked: <Selected />,
   };
 };
@@ -117,10 +113,11 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
       defaultChecked,
       onChange,
       semantic = false,
-      pagination = false,
       inputProps,
       onFocusVisible,
       onBlur,
+      icon,
+      checkedIcon,
       ...others
     } = useDefaultProps("HvBaseRadio", props);
 
@@ -169,12 +166,11 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
             [classes.focusVisible]: focusVisible,
             [classes.checked]: checked,
             [classes.semantic]: semantic,
-            [classes.pagination]: pagination,
           },
           className
         )}
-        icon={others.icon || icons.radio}
-        checkedIcon={others.checkedIcon || icons.radioChecked}
+        icon={icon || icons.radio}
+        checkedIcon={checkedIcon || icons.radioChecked}
         color="default"
         disabled={disabled}
         required={required}

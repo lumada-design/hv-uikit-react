@@ -265,6 +265,14 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvDotPagination: {
+      classes: {
+        radio: {
+          width: 16,
+          minWidth: 16,
+        },
+      },
+    },
     HvBaseSwitch: {
       classes: {
         root: {
