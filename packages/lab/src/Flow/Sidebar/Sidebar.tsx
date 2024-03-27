@@ -171,7 +171,7 @@ export const HvFlowSidebar = ({
     >
       <div id={drawerElementId} ref={setNodeRef}>
         <div className={classes.titleContainer}>
-          <Add role="none" />
+          <Add />
           <HvTypography component="p" variant="title3">
             {title}
           </HvTypography>

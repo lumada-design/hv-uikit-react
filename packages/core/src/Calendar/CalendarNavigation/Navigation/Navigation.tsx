@@ -37,7 +37,7 @@ export const Navigation = ({
         })}
         onClick={onNavigatePrevious}
       >
-        <DropLeftIcon role="none" />
+        <DropLeftIcon />
       </HvButton>
 
       <HvButton
@@ -62,7 +62,7 @@ export const Navigation = ({
         })}
         onClick={onNavigateNext}
       >
-        <DropRightIcon role="none" />
+        <DropRightIcon />
       </HvButton>
     </div>
   );

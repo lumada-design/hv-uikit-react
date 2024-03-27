@@ -71,9 +71,7 @@ export const HvFlowSidebarGroup = ({
     <li className={cx(css({ borderColor: getColor(color) }), classes.root)}>
       <div className={classes.titleContainer}>
         <div className={classes.labelContainer}>
-          <div className={classes.icon} role="none">
-            {icon}
-          </div>
+          <div className={classes.icon}>{icon}</div>
           <HvTypography component="p" variant="title4">
             {nodes.length > 1 ? `${label} (${nodes.length})` : label}
           </HvTypography>
@@ -84,7 +82,7 @@ export const HvFlowSidebarGroup = ({
           aria-expanded={opened}
           {...expandButtonProps}
         >
-          {opened ? <Up role="none" /> : <Down role="none" />}
+          {opened ? <Up /> : <Down />}
         </HvButton>
       </div>
       {description && (

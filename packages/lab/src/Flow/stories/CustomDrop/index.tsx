@@ -132,14 +132,14 @@ export const CustomDrop = () => {
         position="relative"
         backButton={
           <HvButton aria-label="Back" icon>
-            <Backwards role="none" />
+            <Backwards />
           </HvButton>
         }
         title="New Flow"
       >
         <HvButton
           variant="primary"
-          startIcon={<Add role="none" />}
+          startIcon={<Add />}
           onClick={() => setOpen(true)}
         >
           Add Node

@@ -48,7 +48,7 @@ export const HvFlowSidebarGroupItem = forwardRef<
         {...others}
       >
         <HvTypography>{label}</HvTypography>
-        <Drag role="none" />
+        <Drag />
       </div>
     );
   },

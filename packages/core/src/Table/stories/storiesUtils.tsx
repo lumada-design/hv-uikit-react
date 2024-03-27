@@ -11,7 +11,7 @@ import { Ban } from "@hitachivantara/uikit-react-icons";
 export const EmptyRow = ({ height }) => (
   <HvTableRow>
     <HvTableCell colSpan={100} style={{ height }}>
-      <HvEmptyState message="No data to display" icon={<Ban role="none" />} />
+      <HvEmptyState message="No data to display" icon={<Ban />} />
     </HvTableCell>
   </HvTableRow>
 );

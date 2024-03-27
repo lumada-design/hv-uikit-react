@@ -1,9 +1,9 @@
 import { ErrorBoundary } from "react-error-boundary";
 import { css } from "@emotion/css";
 import {
-  HvButton,
   HvEmptyState,
   HvGlobalActions,
+  HvIconButton,
   theme,
 } from "@hitachivantara/uikit-react-core";
 import { Backwards, Level3Bad } from "@hitachivantara/uikit-react-icons";
@@ -74,9 +74,9 @@ export const Invalid = () => {
         className={classes.globalActions}
         position="relative"
         backButton={
-          <HvButton aria-label="Back" icon>
-            <Backwards role="none" />
-          </HvButton>
+          <HvIconButton title="Back">
+            <Backwards />
+          </HvIconButton>
         }
         title="New Flow"
       />

@@ -130,7 +130,7 @@ export const HvDrawer = (props: HvDrawerProps) => {
         onClick={onClose}
         title={buttonTitle}
       >
-        <Close role="none" />
+        <Close />
       </HvIconButton>
       {children}
     </MuiDrawer>

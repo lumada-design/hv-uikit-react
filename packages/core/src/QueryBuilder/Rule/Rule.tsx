@@ -121,7 +121,7 @@ export const Rule = (props: RuleProps) => {
           }
           disabled={readOnly}
         >
-          <Delete role="none" />
+          <Delete />
         </HvIconButton>
       </HvGrid>
     </HvGrid>

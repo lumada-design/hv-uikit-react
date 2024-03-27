@@ -79,10 +79,7 @@ export const UseHvBulkActions = () => {
     () => (
       <HvTableRow>
         <HvTableCell colSpan={100} style={{ height: 96 }}>
-          <HvEmptyState
-            message="No data to display."
-            icon={<Ban role="none" />}
-          />
+          <HvEmptyState message="No data to display." icon={<Ban />} />
         </HvTableCell>
       </HvTableRow>
     ),

@@ -92,7 +92,7 @@ export const HvDashboardNode = (props: HvDashboardNodeProps) => {
           ) : (
             <HvEmptyState
               className={classes.empty}
-              icon={<Info role="none" />}
+              icon={<Info />}
               message={labels?.emptyMessage}
             />
           )}

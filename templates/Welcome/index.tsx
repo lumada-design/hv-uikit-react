@@ -50,7 +50,7 @@ const Welcome = () => {
             </HvGrid>
             <HvGrid item xs={6}>
               <div className={classes.glossaryContainer}>
-                <Palette iconSize="M" role="none" />
+                <Palette iconSize="M" />
                 <HvTypography variant="title4" component="p">
                   Themeable
                 </HvTypography>
@@ -62,7 +62,7 @@ const Welcome = () => {
             </HvGrid>
             <HvGrid item xs={6}>
               <div className={classes.glossaryContainer}>
-                <Heart iconSize="M" role="none" />
+                <Heart iconSize="M" />
                 <HvTypography variant="title4" component="p">
                   Community
                 </HvTypography>
