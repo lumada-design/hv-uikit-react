@@ -1,61 +1,30 @@
-import { colors as hvColors } from "@hitachivantara/uikit-styles";
+import { HvColor } from "@hitachivantara/uikit-styles";
 
-import { isSelector } from "../../../lib/utils";
-
-const replaceColorsWithTheme = (defaultPalette, themePalette) => {
-  let result = defaultPalette;
-  const paletteArray = defaultPalette.split(",");
-  Object.keys(themePalette).forEach((categoryName) => {
-    const categoryObject = themePalette[categoryName];
-    Object.keys(categoryObject).forEach((themeColorName) => {
-      paletteArray.forEach((defaultColor) => {
-        const themeColor = `"${categoryObject[themeColorName]}"`;
-        if (themeColor === defaultColor.toUpperCase()) {
-          result = defaultPalette.replace(
-            `${defaultColor}`,
-            `theme.colors.${themeColorName}`,
-          );
-        }
-      });
-    });
-  });
-  return result;
-};
+const hexColorMap = {
+  "#414141": "secondary",
+  "#fff": "atmo1",
+  "#f0f0f0": "atmo2",
+  "#ccced0": "atmo4",
+} satisfies Record<string, HvColor>;
 
 /**
  * Creates a full component string based upon provided svg data and a component name
  * @return The parsed component string
  */
-export const generateComponent = ({
-  svgOutput,
-  iconName,
-  colors,
-  defaultSizes,
+export const generateComponent = (
+  svgOutput: string,
+  iconName: string,
+  colorArray: string[],
+  viewBox: string,
   basePath = "..",
-}) => {
-  const whiteColor = isSelector(iconName) ? "atmo1" : "acce0";
+) => {
+  const palette = colorArray.map((c) => `"${hexColorMap[c] || c}"`).join(",");
 
-  const themedPalette = colors
-    .replace(/"#414141"/g, "theme.colors.secondary")
-    .replace(/"#fff"/g, `theme.colors.${whiteColor}`)
-    .replace(/"#f0f0f0"/g, "theme.colors.atmo2")
-    .replace(/"#ccced0"/g, "theme.colors.atmo4");
-  const palette = replaceColorsWithTheme(themedPalette, hvColors.light);
-  const defaultViewBox = defaultSizes.viewBoxRegexp.join(" ");
+  return `import { createHvIcon, IconType } from "${basePath}/IconBase";
 
-  return `
-import { theme } from "@hitachivantara/uikit-styles";
-
-import { IconBase, IconType, splitIconProps } from "${basePath}/IconBase";
-
-export const ${iconName}: IconType = ({ viewbox = "${defaultViewBox}", ...others }) => {
-  const [svgProps, rest] = splitIconProps("${iconName}", others);
-
-  return (
-    <IconBase iconName="${iconName}" palette={[${palette}]} {...rest}>
-    ${svgOutput.replace("{...other}", "{...svgProps}")}
-    </IconBase>
-)};
-${iconName}.displayName = "${iconName}";
+export const ${iconName}: IconType = createHvIcon(
+  "${iconName}", "${viewBox}", [${palette}],
+  <>${svgOutput}</>,
+);
 `;
 };
