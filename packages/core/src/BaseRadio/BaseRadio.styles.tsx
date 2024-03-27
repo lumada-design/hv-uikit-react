@@ -64,14 +64,4 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
       backgroundColor: theme.colors.base_light,
     },
   },
-  pagination: {
-    minWidth: 0,
-    width: 16,
-    height: 16,
-    "& svg": {
-      border: "none",
-      width: "unset",
-      height: "unset",
-    },
-  },
 });

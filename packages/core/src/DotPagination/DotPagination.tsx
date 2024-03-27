@@ -114,7 +114,6 @@ export const HvDotPagination = (props: HvDotPaginationProps) => {
           icon={icons.radio}
           checkedIcon={icons.radioChecked}
           aria-label={getItemAriaLabel?.(i)}
-          pagination
         />
       ))}
     </HvRadioGroup>

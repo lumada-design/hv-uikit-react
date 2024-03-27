@@ -108,10 +108,6 @@ export interface HvRadioProps
    */
   semantic?: boolean;
   /**
-   * Whether the selector is used on a pagination layout.
-   */
-  pagination?: boolean;
-  /**
    * Properties passed on to the input element.
    */
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
@@ -158,7 +154,6 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
       statusMessage,
       "aria-errormessage": ariaErrorMessage,
       semantic = false,
-      pagination = false,
       inputProps,
       onFocusVisible,
       onBlur,
@@ -234,7 +229,6 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
         value={value}
         checked={isChecked}
         semantic={semantic}
-        pagination={pagination}
         inputProps={{
           "aria-invalid": isStateInvalid ? true : undefined,
           "aria-errormessage": errorMessageId,
