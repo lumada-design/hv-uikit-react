@@ -1,13 +1,13 @@
-import { theme } from "@hitachivantara/uikit-styles";
+import { type HvColor } from "@hitachivantara/uikit-styles";
 
 import { getIconSize, IconBase, IconBaseProps } from "./IconBase";
 import { isSelector, isSemantic, isSort, isXS } from "./utils";
 
-const getSecondaryColor = (iconName: string) => {
-  if (isSelector(iconName)) return theme.colors.atmo1;
-  if (isSort(iconName)) return theme.colors.atmo4;
+const getSecondaryColor = (iconName: string): HvColor => {
+  if (isSelector(iconName)) return "atmo1";
+  if (isSort(iconName)) return "atmo4";
 
-  return theme.colors.atmo2;
+  return "atmo2";
 };
 
 export interface HvIconSpriteProps
@@ -29,13 +29,12 @@ export const HvIconSprite = ({
   iconSize: iconSizeProp,
   height,
   width,
-  svgProps = {},
   ...others
 }: HvIconSpriteProps) => {
   const iconSize = iconSizeProp ?? (isXS(iconName) ? "XS" : "S");
 
   // this color array is fragile... we know it currently covers all the existing icons
-  const baseColors = [theme.colors.secondary, getSecondaryColor(iconName)];
+  const baseColors: HvColor[] = ["secondary", getSecondaryColor(iconName)];
 
   const size = getIconSize(iconSize, isSemantic(iconName), width, height);
 
@@ -45,21 +44,15 @@ export const HvIconSprite = ({
       iconSize={iconSize}
       color={color}
       palette={baseColors}
+      height={size.height}
+      width={size.width}
       {...others}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
+      <use
+        href={`${spriteUrl}#${iconName}`}
         height={size.height}
         width={size.width}
-        focusable={false}
-        {...svgProps}
-      >
-        <use
-          href={`${spriteUrl}#${iconName}`}
-          height={size.height}
-          width={size.width}
-        />
-      </svg>
+      />
     </IconBase>
   );
 };
