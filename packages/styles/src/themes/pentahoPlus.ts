@@ -40,6 +40,8 @@ const pentahoPlus = makeTheme((theme) => ({
         warning_20: "#fefce8",
         positive_20: "#ecfdf5",
         neutral_20: "#ecfeff",
+        shadow: "0px 2px 4px -1px rgba(51, 65, 85, 0.08)",
+        shad1: "rgba(51, 65, 85, 0.08)",
       },
       wicked: {
         type: "dark",
