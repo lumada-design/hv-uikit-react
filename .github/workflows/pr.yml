@@ -17,10 +17,11 @@ jobs:
     with:
       a11y-exit: true
 
-  # chromatic:
-  #   name: Chromatic
-  #   uses: ./.github/workflows/tests-chromatic.yml
-  #   secrets: inherit
+  chromatic:
+    name: Chromatic
+    if: contains(github.event.pull_request.labels.*.name, 'visual')
+    uses: ./.github/workflows/tests-chromatic.yml
+    secrets: inherit
 
   artifacts:
     name: Artifacts
