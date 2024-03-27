@@ -135,18 +135,16 @@ export const Disabled: StoryObj<HvToggleButtonProps> = {
     docs: {
       description: {
         story:
-          "A sample showcasing a disabled toggle button combined with a tooltip. There is a known limitation with the Button Forward ref, but adding a div around the Tooltip fixes it temporarily.",
+          "A sample showcasing a disabled toggle button combined with a tooltip.",
       },
     },
   },
   render: () => {
     return (
       <HvTooltip title="Can not turn the light on">
-        <span>
-          <HvToggleButton disabled aria-label="Light">
-            <LightOff />
-          </HvToggleButton>
-        </span>
+        <HvToggleButton disabled>
+          <LightOff />
+        </HvToggleButton>
       </HvTooltip>
     );
   },
@@ -157,7 +155,7 @@ export const Tooltip: StoryObj<HvToggleButtonProps> = {
     docs: {
       description: {
         story:
-          "A sample showcasing a tooltip changing its content combined with the toggle button. The same Tooltip Forward Ref combination with Button known limitation as the previous sample is applied here.",
+          "A sample showcasing a tooltip changing its content combined with the toggle button.",
       },
     },
     eyes: { include: false },
@@ -167,10 +165,7 @@ export const Tooltip: StoryObj<HvToggleButtonProps> = {
 
     return (
       <HvTooltip title={selected ? "Turn off" : "Turn on"}>
-        <HvToggleButton
-          aria-label="Light"
-          onClick={() => setSelected(!selected)}
-        >
+        <HvToggleButton onClick={() => setSelected(!selected)}>
           {selected ? <LightOn /> : <LightOff />}
         </HvToggleButton>
       </HvTooltip>

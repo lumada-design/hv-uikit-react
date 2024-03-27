@@ -91,7 +91,7 @@ export const getColumns = (
         <HvSkeleton width={32} height={32} variant="circle" animation="wave" />
       ) : (
         <HvTooltip title={getStatusMessage(value)}>
-          <div>{getStatusIcon(value)}</div>
+          {getStatusIcon(value)}
         </HvTooltip>
       ),
   },

@@ -119,7 +119,7 @@ export const HvDialog = (props: HvDialogProps) => {
         className={classes.closeButton}
         onClick={(event) => onClose?.(event, undefined)}
       >
-        <Close role="none" />
+        <Close />
       </HvIconButton>
       <DialogContext.Provider value={contextValue}>
         {children}

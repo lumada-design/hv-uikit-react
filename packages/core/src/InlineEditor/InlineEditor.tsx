@@ -145,7 +145,6 @@ export const HvInlineEditor = (props: HvInlineEditorProps) => {
           endIcon={
             <Edit
               color="secondary_60"
-              role="none"
               className={cx(classes.icon, {
                 [classes.iconVisible]: showIcon,
               })}

@@ -13,13 +13,13 @@ describe("HvAvatarGroup", () => {
     render(
       <HvAvatarGroup>
         <HvAvatar>
-          <LogIn role="img" aria-label="login" />
+          <LogIn title="login" />
         </HvAvatar>
         <HvAvatar>
-          <LogIn role="img" aria-label="login" />
+          <LogIn title="login" />
         </HvAvatar>
         <HvAvatar>
-          <LogIn role="img" aria-label="login" />
+          <LogIn title="login" />
         </HvAvatar>
       </HvAvatarGroup>,
     );
@@ -32,13 +32,13 @@ describe("HvAvatarGroup", () => {
     render(
       <HvAvatarGroup maxVisible={1}>
         <HvAvatar>
-          <LogIn role="img" aria-label="login" />
+          <LogIn title="login" />
         </HvAvatar>
         <HvAvatar>
-          <LogIn role="img" aria-label="login" />
+          <LogIn title="login" />
         </HvAvatar>
         <HvAvatar>
-          <LogIn role="img" aria-label="login" />
+          <LogIn title="login" />
         </HvAvatar>
       </HvAvatarGroup>,
     );
@@ -51,13 +51,13 @@ describe("HvAvatarGroup", () => {
     render(
       <HvAvatarGroup maxVisible={2}>
         <HvAvatar>
-          <LogIn role="img" aria-label="login" />
+          <LogIn title="login" />
         </HvAvatar>
         <HvAvatar>
-          <LogIn role="img" aria-label="login" />
+          <LogIn title="login" />
         </HvAvatar>
         <HvAvatar>
-          <LogIn role="img" aria-label="login" />
+          <LogIn title="login" />
         </HvAvatar>
       </HvAvatarGroup>,
     );

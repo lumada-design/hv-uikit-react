@@ -14,7 +14,7 @@ describe("Avatar", () => {
   it("renders the icon", () => {
     render(
       <HvAvatar>
-        <LogIn role="img" aria-label="login" />
+        <LogIn title="login" />
       </HvAvatar>,
     );
 
