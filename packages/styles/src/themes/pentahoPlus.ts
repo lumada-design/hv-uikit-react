@@ -261,6 +261,27 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvTag: {
+      classes: {
+        root: {
+          "&.MuiButtonBase-root.MuiChip-root": {
+            borderRadius: theme.radii.full,
+            padding: theme.spacing("2px", 0),
+            "& .MuiChip-label": {
+              paddingLeft: 8,
+              paddingRight: 8,
+            },
+            "& .MuiChip-avatar": {
+              marginLeft: theme.space.xs,
+            },
+          },
+          "&& .MuiChip-deleteIcon": {
+            borderRadius: `0 ${theme.radii.full} ${theme.radii.full} 0`,
+            paddingRight: 4,
+          },
+        },
+      },
+    },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
