@@ -99,7 +99,6 @@ export const HvTag = forwardRef<HTMLDivElement, HvTagProps>((props, ref) => {
 
   const defaultDeleteIcon = (
     <CloseXS
-      role="none"
       className={cx(classes.button, classes.tagButton)}
       iconSize="XS"
       {...deleteButtonProps}

@@ -199,14 +199,11 @@ export const HvAppSwitcherAction = ({
               disableTouchListener
               title={description}
             >
-              <div>
-                <Info
-                  className={classes.iconInfo}
-                  role="img"
-                  aria-label={description}
-                  id={descriptionElementId}
-                />
-              </div>
+              <Info
+                className={classes.iconInfo}
+                title={description}
+                id={descriptionElementId}
+              />
             </HvTooltip>
           )}
         </>,

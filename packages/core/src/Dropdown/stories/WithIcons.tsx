@@ -9,25 +9,29 @@ import {
   Priority5,
 } from "@hitachivantara/uikit-react-icons";
 
+const classes = {
+  iconContainer: css({
+    lineHeight: "32px",
+    display: "flex",
+    alignItems: "center",
+    gap: 5,
+  }),
+  icon: css({
+    width: 16,
+    height: 16,
+  }),
+};
+
 const PriorityIcon = ({
   Icon,
   label,
 }: {
-  Icon: React.ElementType;
+  Icon: typeof Priority1;
   label: string;
 }) => (
-  <span
-    className={css({
-      lineHeight: "32px",
-      display: "flex",
-      alignItems: "center",
-    })}
-  >
-    <Icon
-      iconSize={{ width: 22, height: 22 }}
-      className={css({ float: "left", margin: "5px 5px 5px 0" })}
-    />
-    <h3>{label}</h3>
+  <span className={classes.iconContainer}>
+    <Icon className={classes.icon} />
+    <div>{label}</div>
   </span>
 );
 

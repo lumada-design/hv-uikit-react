@@ -37,13 +37,7 @@ describe("Badge", () => {
   });
 
   it("should render correctly with svg", () => {
-    render(
-      <HvBadge
-        count={100}
-        showCount
-        icon={<Alert role="img" aria-label="Alert" />}
-      />,
-    );
+    render(<HvBadge count={100} showCount icon={<Alert title="Alert" />} />);
     expect(screen.queryByText("99+")).toBeInTheDocument();
     expect(screen.getByRole("img", { name: "Alert" })).toBeInTheDocument();
   });

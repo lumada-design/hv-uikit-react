@@ -7,9 +7,7 @@ import { HvAdornment } from ".";
 
 describe("Adornment", () => {
   it("should render the passed icon", () => {
-    render(
-      <HvAdornment icon={<CloseXS role="img" aria-label="close icon" />} />,
-    );
+    render(<HvAdornment icon={<CloseXS title="close icon" />} />);
     expect(screen.getByRole("img", { name: "close icon" })).toBeInTheDocument();
   });
 

@@ -229,7 +229,6 @@ export const HvPagination = (props: HvPaginationProps) => {
           title={labels?.firstPage || labels?.paginationFirstPageTitle}
         >
           <Start
-            role="none"
             className={classes.icon}
             color={setColor(!canPrevious)}
             iconSize="XS"
@@ -243,7 +242,6 @@ export const HvPagination = (props: HvPaginationProps) => {
           title={labels?.previousPage || labels?.paginationPreviousPageTitle}
         >
           <Backwards
-            role="none"
             className={classes.icon}
             color={setColor(!canPrevious)}
             iconSize="XS"
@@ -274,7 +272,6 @@ export const HvPagination = (props: HvPaginationProps) => {
           title={labels?.nextPage || labels?.paginationNextPageTitle}
         >
           <Forwards
-            role="none"
             className={classes.icon}
             color={setColor(!canNext)}
             iconSize="XS"

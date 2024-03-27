@@ -165,7 +165,7 @@ export const DynamicHandles = () => {
       >
         <HvButton
           variant="primary"
-          startIcon={<Add role="none" />}
+          startIcon={<Add />}
           onClick={() => setOpen(true)}
         >
           Add Node

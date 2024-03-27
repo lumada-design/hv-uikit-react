@@ -116,7 +116,7 @@ export const HvFlowControls = ({
             onClick={handleZoomIn}
             disabled={maxZoomReached}
           >
-            <ZoomIn role="none" />
+            <ZoomIn />
           </HvButton>
         )}
         {!hideZoom && (
@@ -126,12 +126,12 @@ export const HvFlowControls = ({
             onClick={handleZoomOut}
             disabled={minZoomReached}
           >
-            <ZoomOut role="none" />
+            <ZoomOut />
           </HvButton>
         )}
         {!hideFitView && (
           <HvButton icon title={labels?.fitView} onClick={handleFitView}>
-            <Focus role="none" />
+            <Focus />
           </HvButton>
         )}
         {!hideInteractive && (
@@ -140,7 +140,7 @@ export const HvFlowControls = ({
             title={labels?.interactive}
             onClick={handleInteractive}
           >
-            {isInteractive ? <Unlock role="none" /> : <Lock role="none" />}
+            {isInteractive ? <Unlock /> : <Lock />}
           </HvButton>
         )}
         {children}

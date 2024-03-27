@@ -4,6 +4,7 @@ import { css } from "@emotion/css";
 import {
   HvButton,
   HvGlobalActions,
+  HvIconButton,
   HvTypography,
   theme,
   useTheme,
@@ -68,15 +69,15 @@ export const Flow = () => {
         className={classes.globalActions}
         position="relative"
         backButton={
-          <HvButton aria-label="Back" icon>
-            <Backwards role="none" />
-          </HvButton>
+          <HvIconButton title="Back">
+            <Backwards />
+          </HvIconButton>
         }
         title="New Flow"
       >
         <HvButton
           variant="primary"
-          startIcon={<Add role="none" />}
+          startIcon={<Add />}
           onClick={() => setOpen(true)}
         >
           Add Node
