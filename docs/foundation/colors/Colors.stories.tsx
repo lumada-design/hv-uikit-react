@@ -85,6 +85,23 @@ const ColorsGroup = ({
           </StyledGroup>
         </div>
       ))}
+      <StyledGroup>
+        <StyledGroupName variant="title2">Shadow</StyledGroupName>
+        <StyledColorContainer>
+          <StyledColorSquare
+            style={{
+              backgroundColor: theme.colors.atmo1,
+              boxShadow: theme.colors.shadow,
+            }}
+          />
+          <StyledColorName>
+            <HvTypography variant="label">Shadow</HvTypography>
+            <HvTypography variant="caption1">
+              {colors.get("shadow")}
+            </HvTypography>
+          </StyledColorName>
+        </StyledColorContainer>
+      </StyledGroup>
     </div>
   );
 };
