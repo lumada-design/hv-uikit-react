@@ -16,7 +16,7 @@ addons.setConfig({
       patterns: (item) => {
         if (
           window.location.href.includes(
-            "https://lumada-design.github.io/uikit/master"
+            "https://lumada-design.github.io/uikit/master",
           )
         ) {
           // Only hide "Tests" stories in the production build

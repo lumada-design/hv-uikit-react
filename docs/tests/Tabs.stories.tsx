@@ -1,3 +1,4 @@
+import { StoryObj } from "@storybook/react";
 import { HvBadge, HvTab, HvTabs } from "@hitachivantara/uikit-react-core";
 import {
   Alert,
@@ -6,7 +7,6 @@ import {
   Helicopter,
   Reload,
 } from "@hitachivantara/uikit-react-icons";
-import { StoryObj } from "@storybook/react";
 
 export default {
   title: "Tests/Tabs",

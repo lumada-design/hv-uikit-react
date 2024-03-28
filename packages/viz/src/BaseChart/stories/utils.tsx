@@ -1,6 +1,5 @@
-
 import { css } from "@emotion/css";
-import { Decorator} from "@storybook/react";
+import { Decorator } from "@storybook/react";
 import { theme } from "@hitachivantara/uikit-react-core";
 
 export const vizDecorator: Decorator = (Story) => (

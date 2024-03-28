@@ -1,9 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import {  HvProvider,
+import {
+  HvProvider,
   HvProviderProps,
-  HvTypography, } from "@hitachivantara/uikit-react-core";
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 import { ds3, ds5 } from "@hitachivantara/uikit-styles";
-
 
 const meta: Meta<typeof HvProvider> = {
   title: "Tests/Provider",

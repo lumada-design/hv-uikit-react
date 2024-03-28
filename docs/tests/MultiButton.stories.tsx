@@ -1,6 +1,6 @@
+import { StoryObj } from "@storybook/react";
 import { HvButton, HvMultiButton } from "@hitachivantara/uikit-react-core";
 import { LocationPin } from "@hitachivantara/uikit-react-icons";
-import { StoryObj } from "@storybook/react";
 
 export default {
   title: "Tests/Multi Button",

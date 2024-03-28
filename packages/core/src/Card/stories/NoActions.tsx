@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import { Grid } from "@mui/material";
 import {
   HvCard,
   HvCardContent,
@@ -6,7 +7,6 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { Grid } from "@mui/material";
 
 const classes = {
   grid: css({

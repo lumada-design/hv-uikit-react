@@ -15,7 +15,7 @@ export const useUniqueId = (
    * @example
    * useUniqueId(setId(idPrefix, deterministicId))
    * */
-  idPrefix?: string
+  idPrefix?: string,
 ): string => {
   const [id, setId] = React.useState<string | undefined>(useReactId());
 

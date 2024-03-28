@@ -1,5 +1,5 @@
-import { HvColorPicker } from "@hitachivantara/uikit-react-core";
 import { StoryObj } from "@storybook/react";
+import { HvColorPicker } from "@hitachivantara/uikit-react-core";
 
 export default {
   title: "Tests/Color Picker",

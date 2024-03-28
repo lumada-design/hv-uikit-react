@@ -1,6 +1,6 @@
+import { StoryObj } from "@storybook/react";
 import { HvBadge } from "@hitachivantara/uikit-react-core";
 import { Alert } from "@hitachivantara/uikit-react-icons";
-import { StoryObj } from "@storybook/react";
 
 export default {
   title: "Tests/Badge",

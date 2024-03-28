@@ -1,11 +1,11 @@
 import { Decorator, Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvOption,
   HvOptionGroup,
   HvSelect,
   HvSelectProps,
 } from "@hitachivantara/uikit-react-core";
-import { userEvent, within } from "@storybook/testing-library";
 
 import ControlledStory from "./stories/Controlled";
 import ControlledStoryRaw from "./stories/Controlled?raw";
