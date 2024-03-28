@@ -5,7 +5,8 @@
 export const generateSymbol = (svgOutput: string, componentName: string) => {
   return svgOutput
     .replace(/<svg/, `<symbol id="${componentName}"`)
-    .replace(/\n<\/svg>/, `</symbol>`)
+    .replace(`xmlns="http://www.w3.org/2000/svg"`, "")
+    .replace(`</svg>`, `</symbol>`)
     .replace(/\n/g, "")
     .replace(/ {2,}/g, " ");
 };

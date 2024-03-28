@@ -1,20 +1,15 @@
 /* eslint-disable no-console */
 import fs from "node:fs";
 import path from "node:path";
-import ReactDOMServer from "react-dom/server";
-import { Parser } from "html-to-react";
-import jsdom from "jsdom-no-contextify";
+import { transform } from "@svgr/core";
 import recursive from "recursive-readdir";
 import yargs from "yargs";
 
-import { extractColors, replaceFill } from "./utils/colors";
-import { formatSVG, generateComponent, removeStyle } from "./utils/converter";
-import { createComponentName } from "./utils/createComponentName";
-import { extractSize, replaceSize } from "./utils/size";
+import { generateComponent } from "./generateComponent";
+import { extractColors, extractSize, replaceFill } from "./utils";
 
 // Argument setup
 const args = yargs // reading arguments from the command line
-  .option("format", { default: true })
   .option("output", { alias: "o" })
   .option("input", { alias: "i" })
   .option("rm-style", { default: false }).argv as any;
@@ -23,12 +18,9 @@ const args = yargs // reading arguments from the command line
 const firstArg = args._[0];
 const secondArgs = args._[1] || "MyComponent";
 const inputPath = args.input;
-const { rmStyle, format } = args;
 const outputPath = args.output as string;
 
 // Bootstrap base variables
-const htmlToReactParser = new (Parser as any)();
-
 const svg = `./${firstArg}.svg`; // append the file extension
 
 const componentOutputFolder = outputPath
@@ -36,6 +28,15 @@ const componentOutputFolder = outputPath
   : path.resolve(process.cwd());
 
 const knownSubfolders = {};
+
+const transformToJsx = (svgCode: string) => {
+  return transform.sync(svgCode, {
+    plugins: ["@svgr/plugin-jsx"],
+    jsxRuntime: "automatic",
+    // we only care about the JSX part of the generated React component
+    template: (vars, { tpl }) => tpl`${vars.jsx}`,
+  });
+};
 
 const writeFile = (processedSVG, fileName, subFolder = ".") => {
   fs.mkdirSync(path.resolve(componentOutputFolder, subFolder), {
@@ -104,114 +105,48 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
   }
 };
 
-const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
-  fs.readFile(fileToRead, "utf8", (err, file) => {
+const runUtil = (
+  fileToRead: string,
+  iconName: string,
+  subFolder = ".",
+  depth = 0,
+) => {
+  fs.readFile(fileToRead, "utf8", (err, fileData) => {
     if (err) {
       console.error(err);
       return;
     } // exit early
 
-    let output = file;
+    let output = transformToJsx(fileData);
 
-    jsdom.env(output, async (_err, window) => {
-      const body = window.document.getElementsByTagName("body")[0];
+    const viewBox = extractSize(output);
+    const colorArray = extractColors(output);
 
-      if (rmStyle) {
-        removeStyle(body);
-      }
+    output = replaceFill(output, colorArray)
+      // remove svg tag, keeping only the content
+      .replace(/<svg.*?>(.*?)<\/svg>;/s, "$1");
 
-      // Add width and height
-      // The order of precedence of how width/height is set on to an element is as follows:
-      // 1st - passed in props are always priority one. This gives run time control to the container
-      // 2nd - svg set width/height is second priority
-      // 3rd - if no props, and no svg width/height, use the viewbox width/height as the width/height
-      // 4th - if no props, svg width/height or viewbox, simlpy set it to 50px/50px
-      let defaultWidth = "50px";
-      let defaultHeight = "50px";
-      if (body.firstChild.hasAttribute("viewBox")) {
-        const [, , width, height] = body.firstChild
-          .getAttribute("viewBox")
-          .split(/[,\s]+/);
-        defaultWidth = width;
-        defaultHeight = height;
-      }
-
-      if (!body.firstChild.hasAttribute("width")) {
-        body.firstChild.setAttribute("width", defaultWidth);
-      }
-      if (!body.firstChild.hasAttribute("height")) {
-        body.firstChild.setAttribute("height", defaultHeight);
-      }
-
-      // Add generic props attribute to parent element, allowing props to be passed to the svg
-      // such as className
-      body.firstChild.setAttribute(":props:", "");
-
-      // Convert from HTML to JSX
-      const parsed = htmlToReactParser.parse(body.innerHTML);
-      output = ReactDOMServer.renderToStaticMarkup(parsed);
-
-      // jsdom and htmltojsx will automatically (and correctly) wrap attributes in double quotes,
-      // and generally just dislikes all the little markers used by react, such as the spread
-      // operator. We will sub those back in manually now
-
-      const widthValue = output
-        .match(/width="(\d*?)"/g)?.[0]
-        .match(/"(\d*?)"/g)?.[0]
-        .replace(/['"]+/g, "");
-
-      const heightValue = output
-        .match(/height="(\d*?)"/g)?.[0]
-        .match(/"(\d*?)"/g)?.[0]
-        .replace(/['"]+/g, "");
-
-      const viewBox = extractSize(output);
-      const colorArray = extractColors(output);
-
-      output = output
-        .replace(/:props:/g, "")
-        .replace(/width="(\d*?)"/g, `width={${widthValue}}`)
-        .replace(/height="(\d*?)"/g, `height={${heightValue}}`)
-        .replace('style="isolation:isolate"', "")
-        .replace('="">', ">")
-        // remove svg tag, keeping only the content
-        .replace(/<svg.*?>(.*?)<\/svg>/s, "$1");
-
-      output = replaceSize(output);
-      output = replaceFill(output, colorArray);
-
-      // regexp fill="(.*?)"
-
-      // Format / Prettify JSX
-      if (format) {
-        output = formatSVG(output);
-      }
-
-      const iconName = fileToWrite.split(".").join("");
-
-      // Wrap it up in a React component
-      output = generateComponent(
-        output,
-        iconName,
-        colorArray,
-        viewBox,
-        `${".".repeat(depth + 1)}`,
-      );
-      writeFile(output, fileToWrite, subFolder);
-    });
+    // Wrap it up in a React component
+    output = generateComponent(
+      output,
+      iconName,
+      colorArray,
+      viewBox,
+      `${".".repeat(depth + 1)}`,
+    );
+    writeFile(output, iconName, subFolder);
   });
 };
 
-const isFolder = (dirPath) =>
+const isFolder = (dirPath: string) =>
   fs.existsSync(dirPath) && fs.lstatSync(dirPath).isDirectory();
 
-const processFile = (file, subFolder = ".", depth = 0) => {
-  const extension = path.extname(file); // extract extensions
-  const fileName = path.basename(file); // extract file name extensions
+const processFile = (file: string, subFolder = ".", depth = 0) => {
+  const extension = path.extname(file);
+  const fileName = path.basename(file, extension);
 
   if (extension === ".svg") {
-    // variable instantiated up top
-    const componentName = createComponentName(file, fileName);
+    const componentName = fileName.replace(/[-.]g/, "");
     runUtil(file, componentName, subFolder, depth);
   }
 };

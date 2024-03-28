@@ -20,9 +20,9 @@ export const generateComponent = (
 ) => {
   const palette = colorArray.map((c) => `"${hexColorMap[c] || c}"`).join(",");
 
-  return `import { createHvIcon, IconType } from "${basePath}/IconBase";
+  return `import { createHvIcon } from "${basePath}/IconBase";
 
-export const ${iconName}: IconType = createHvIcon(
+export const ${iconName} = createHvIcon(
   "${iconName}", "${viewBox}", [${palette}],
   <>${svgOutput}</>,
 );
