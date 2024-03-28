@@ -112,6 +112,8 @@ export const Variants: StoryObj<HvSliderProps> = {
         story: "Sliders in their various state variants.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   decorators: [variantsDecorator],
   render: () => {
@@ -141,6 +143,8 @@ export const RangeVariants: StoryObj<HvSliderProps> = {
         story: "Range sliders in their various state variants.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   decorators: [variantsDecorator],
   render: () => {
@@ -209,7 +213,6 @@ export const RangeSpecificErrorSlider: StoryObj<HvSliderProps> = {
         story: "A range slider with an empty and invalid values.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     return (

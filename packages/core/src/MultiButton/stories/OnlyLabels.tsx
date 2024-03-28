@@ -3,13 +3,12 @@ import { HvButton, HvMultiButton } from "@hitachivantara/uikit-react-core";
 
 export const OnlyLabels = () => {
   const [selection, setSelection] = useState(0);
-  const buttons = ["Map", "Satellite"];
 
   return (
     <HvMultiButton style={{ width: "210px" }}>
-      {buttons.map((button, i) => (
+      {["Map", "Satellite"].map((button, i) => (
         <HvButton
-          key={`${buttons[i]}`}
+          key={button}
           selected={selection === i}
           onClick={() => setSelection(i)}
         >

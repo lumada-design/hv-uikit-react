@@ -1,20 +1,21 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvTreeItem,
   HvTreeView,
   HvTreeViewProps,
 } from "@hitachivantara/uikit-react-core";
 
-import { AsyncLoading as AsyncLoadingStory } from "./stories/AsyncLoading";
-import AsyncLoadingStoryRaw from "./stories/AsyncLoading?raw";
-import { Controlled as ControlledStory } from "./stories/Controlled";
-import ControlledStoryRaw from "./stories/Controlled?raw";
-import { DataObject as DataObjectStory } from "./stories/DataObject";
-import DataObjectStoryRaw from "./stories/DataObject?raw";
-import { Main as MainStory } from "./stories/Main";
-import MainStoryRaw from "./stories/Main?raw";
-import { VerticalNavigation as VerticalNavigationStory } from "./stories/VerticalNavigation";
-import VerticalNavigationStoryRaw from "./stories/VerticalNavigation?raw";
+import { AsyncLoading as AsyncLoadingStory } from "./AsyncLoading";
+import AsyncLoadingStoryRaw from "./AsyncLoading?raw";
+import { Controlled as ControlledStory } from "./Controlled";
+import ControlledStoryRaw from "./Controlled?raw";
+import { DataObject as DataObjectStory } from "./DataObject";
+import DataObjectStoryRaw from "./DataObject?raw";
+import { Main as MainStory } from "./Main";
+import MainStoryRaw from "./Main?raw";
+import { VerticalNavigation as VerticalNavigationStory } from "./VerticalNavigation";
+import VerticalNavigationStoryRaw from "./VerticalNavigation?raw";
 
 export default {
   title: "Components/Tree View",
@@ -32,6 +33,15 @@ export const Main: StoryObj<HvTreeViewProps<false>> = {
     docs: {
       source: { code: MainStoryRaw },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const item = canvas.getByText("Documents"); // Not able to get it by role treeitem
+    await userEvent.click(item);
+    const subItem = canvas.getByText("private");
+    await userEvent.click(subItem);
   },
   render: () => <MainStory />,
 };
@@ -58,6 +68,17 @@ export const DataObject: StoryObj<HvTreeViewProps<false>> = {
           "Sometimes the tree data is in an object shape. These can be easily converted to `HvTreeItem` nodes using a recursive `renderItem` function.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const item = canvas.getByText("User"); // Not able to get it by role treeitem
+    await userEvent.click(item);
+    const subItem1 = canvas.getByText("Applications");
+    await userEvent.click(subItem1);
+    const subItem2 = canvas.getByText("git");
+    await userEvent.click(subItem2);
   },
   render: () => <DataObjectStory />,
 };

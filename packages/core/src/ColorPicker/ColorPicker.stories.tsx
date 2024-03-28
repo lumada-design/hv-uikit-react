@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen } from "@storybook/testing-library";
 import {
   HvColorPicker,
   HvColorPickerProps,
@@ -16,13 +15,6 @@ const makeDecorator =
 const meta: Meta<typeof HvColorPicker> = {
   title: "Widgets/Color Picker",
   component: HvColorPicker,
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-      },
-    },
-  },
 };
 export default meta;
 

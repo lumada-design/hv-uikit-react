@@ -32,15 +32,10 @@ export const Main: StoryObj<HvBadgeProps> = {
     classes: { control: { disable: true } },
     icon: { control: { disable: true } },
   },
-  render: (args) => {
-    return <HvBadge {...args} />;
-  },
+  render: (args) => <HvBadge {...args} />,
 };
 
 export const Multiple: StoryObj<HvBadgeProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   render: () => {
     return (
       <>
@@ -55,9 +50,6 @@ export const Multiple: StoryObj<HvBadgeProps> = {
 };
 
 export const WithIcon: StoryObj<HvBadgeProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   parameters: {
     docs: {
       description: { story: "Badge sample that uses a custom icon." },
@@ -78,9 +70,6 @@ export const WithIcon: StoryObj<HvBadgeProps> = {
 };
 
 export const WithText: StoryObj<HvBadgeProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   parameters: {
     docs: {
       description: { story: "Badge sample using only text." },
@@ -101,16 +90,12 @@ export const WithText: StoryObj<HvBadgeProps> = {
 };
 
 export const WithState: StoryObj<HvBadgeProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   parameters: {
     docs: {
       description: {
         story: "Badge sample using react hooks to set the number of events.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [count, setCount] = useState(1);
@@ -126,16 +111,12 @@ export const WithState: StoryObj<HvBadgeProps> = {
 };
 
 export const Accessibility: StoryObj<HvBadgeProps> = {
-  argTypes: {
-    classes: { control: { disable: true } },
-  },
   parameters: {
     docs: {
       description: {
         story: "If you want to specify a custom aria-label, use the role prop.",
       },
     },
-    eyes: { include: false },
   },
   render: () => (
     <HvBadge

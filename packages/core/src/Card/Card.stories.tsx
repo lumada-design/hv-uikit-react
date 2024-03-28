@@ -73,11 +73,6 @@ const meta: Meta<typeof HvCard> = {
   component: HvCard,
   // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvCardHeader, HvCardContent, HvCardMedia },
-  parameters: {
-    eyes: {
-      waitBeforeCapture: 5000,
-    },
-  },
   decorators: [(Story) => <div style={{ margin: 20 }}>{Story()}</div>],
 };
 export default meta;
@@ -298,9 +293,6 @@ export const OnlyTitle: StoryObj<HvCardProps> = {
 };
 
 export const KPICard: StoryObj<HvCardProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     const [checked, setChecked] = useState(0);
     const data = {
@@ -415,7 +407,6 @@ export const Selectable: StoryObj<HvCardProps> = {
           "A card sample showcasing the ability to select in the content and click action.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [checked, setChecked] = useState(false);
@@ -503,7 +494,6 @@ export const SelectableNoFooter: StoryObj<HvCardProps> = {
         story: "A card sample showcasing the ability to select in the content.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [selected, setSelected] = useState(false);

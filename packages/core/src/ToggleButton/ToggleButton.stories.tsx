@@ -65,6 +65,8 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
         story: "Showcasing multiple samples of the Toggle Button.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   render: () => {
     return (
@@ -124,6 +126,7 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
           notSelectedIcon={<Unlock />}
           selectedIcon={<Lock />}
           style={{ margin: "0 10px 5px 0" }}
+          disabled
         />
       </>
     );
@@ -135,18 +138,16 @@ export const Disabled: StoryObj<HvToggleButtonProps> = {
     docs: {
       description: {
         story:
-          "A sample showcasing a disabled toggle button combined with a tooltip. There is a known limitation with the Button Forward ref, but adding a div around the Tooltip fixes it temporarily.",
+          "A sample showcasing a disabled toggle button combined with a tooltip.",
       },
     },
   },
   render: () => {
     return (
       <HvTooltip title="Can not turn the light on">
-        <span>
-          <HvToggleButton disabled aria-label="Light">
-            <LightOff />
-          </HvToggleButton>
-        </span>
+        <HvToggleButton disabled aria-label="Light">
+          <LightOff />
+        </HvToggleButton>
       </HvTooltip>
     );
   },
@@ -157,10 +158,9 @@ export const Tooltip: StoryObj<HvToggleButtonProps> = {
     docs: {
       description: {
         story:
-          "A sample showcasing a tooltip changing its content combined with the toggle button. The same Tooltip Forward Ref combination with Button known limitation as the previous sample is applied here.",
+          "A sample showcasing a tooltip changing its content combined with the toggle button.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [selected, setSelected] = useState(false);
@@ -186,7 +186,6 @@ export const Animated: StoryObj<HvToggleButtonProps> = {
           "A sample showcasing a toggle button with a custom animated icon.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [select, setSelect] = useState(true);

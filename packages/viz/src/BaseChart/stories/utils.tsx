@@ -1,8 +1,8 @@
 import { css } from "@emotion/css";
-import { DecoratorFn } from "@storybook/react";
+import { Decorator } from "@storybook/react";
 import { theme } from "@hitachivantara/uikit-react-core";
 
-export const vizDecorator: DecoratorFn = (Story) => (
+export const vizDecorator: Decorator = (Story) => (
   <div
     className={css({
       backgroundColor: theme.colors.atmo1,
@@ -16,7 +16,7 @@ export const vizDecorator: DecoratorFn = (Story) => (
   </div>
 );
 
-export const confusionMatrixDecorator: DecoratorFn = (Story) => (
+export const confusionMatrixDecorator: Decorator = (Story) => (
   <div
     className={css({
       backgroundColor: theme.colors.atmo1,

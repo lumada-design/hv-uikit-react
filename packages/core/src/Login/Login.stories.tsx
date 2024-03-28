@@ -72,6 +72,10 @@ export const Main: StoryObj<HvLoginProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false, delay: 5000 },
+  },
   render: () => {
     const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
       event.preventDefault();

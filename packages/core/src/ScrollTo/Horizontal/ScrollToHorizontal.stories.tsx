@@ -88,6 +88,8 @@ export const Overflow: StoryObj<HvScrollToHorizontalProps> = {
         story: "Scroll to with big strings on the items.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   render: () => {
     const options = [

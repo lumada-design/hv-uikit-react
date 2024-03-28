@@ -35,11 +35,6 @@ const meta: Meta<typeof HvKpi> = {
 export default meta;
 
 export const Main: StoryObj<HvKpiProps> = {
-  parameters: {
-    eyes: {
-      waitBeforeCapture: 5000,
-    },
-  },
   args: {
     indicatorTextVariant: "title1",
     indicatorUnitTextVariant: "title2",
@@ -63,6 +58,10 @@ export const Main: StoryObj<HvKpiProps> = {
       options: ["title2", "body"],
     },
     classes: { control: { disable: true } },
+  },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   render: (args) => {
     return <HvKpi {...args} />;
