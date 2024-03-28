@@ -84,18 +84,8 @@ test.describe("Node", () => {
     page,
   }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
-    await page.getByRole("button", { name: "Add Node" }).click();
 
-    const baseAssetNodeLocator = page
-      .getByRole("listitem")
-      .filter({ hasText: "Asset" });
-    await baseAssetNodeLocator
-      .getByRole("button", { name: "Expand Group" })
-      .click();
-
-    const elementToDrag = baseAssetNodeLocator.getByRole("button", {
-      name: "My Asset",
-    });
+    const elementToDrag = await selectNode("Asset", "My Asset", false);
     const elementToDragBox = await elementToDrag.boundingBox();
 
     await expect(elementToDrag).toBeVisible();
@@ -123,7 +113,6 @@ test.describe("Node", () => {
 
   test("should be able to duplicate a node", async ({ page }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
-    await page.getByRole("button", { name: "Add Node" }).click();
 
     const node = await selectNode("ML Model", "ML Model Prediction", true);
     await dragToPosition1(node);
@@ -145,7 +134,6 @@ test.describe("Node", () => {
 
   test("should be able to delete a node", async ({ page }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
-    await page.getByRole("button", { name: "Add Node" }).click();
 
     const node = await selectNode("ML Model", "ML Model Detection", true);
     await dragToPosition3(node);
@@ -168,7 +156,6 @@ test.describe("Node", () => {
 test.describe("Connections", () => {
   test("should be able to connect two nodes", async ({ page }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
-    await page.getByRole("button", { name: "Add Node" }).click();
 
     const mlNode = await selectNode("ML Model", "ML Model Detection", true);
     await dragToPosition1(mlNode);
@@ -205,7 +192,6 @@ test.describe("Connections", () => {
 
   test("should be able to delete a connection", async ({ page }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
-    await page.getByRole("button", { name: "Add Node" }).click();
 
     const assetNode = await selectNode("Dashboard", "Dashboard", true);
     await dragToPosition1(assetNode);
@@ -224,9 +210,8 @@ test.describe("Connections", () => {
 
   test("should not be able to connect incompatible nodes", async ({ page }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
-    await page.getByRole("button", { name: "Add Node" }).click();
 
-    const assetNode = await selectNode("Asset", "My Asset", true);
+    const assetNode = await selectNode("Asset", "My Asset", false);
     await dragToPosition1(assetNode);
     const lineChartNode = await selectNode("Insight", "LineChart", true);
     await dragToPosition3(lineChartNode);
@@ -239,7 +224,6 @@ test.describe("Connections", () => {
 
   test("flow allows multiple connections", async ({ page }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
-    await page.getByRole("button", { name: "Add Node" }).click();
 
     const mlNode1 = await selectNode("Insight", "Table", true);
     await dragToPosition1(mlNode1);
@@ -343,7 +327,6 @@ test.describe("Interactive button", () => {
     page,
   }) => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
-    await page.getByRole("button", { name: "Add Node" }).click();
 
     const node = await selectNode("ML Model", "ML Model Prediction", true);
     await dragToPosition1(node);
