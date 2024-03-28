@@ -110,6 +110,7 @@
         "**/*.stories.ts?(x)",
         "**/stories/**/*",
         "**/*.test.ts?(x)",
+        "**/*.spec.ts?(x)",
         "docs/**/*",
         "**/test/**/*",
         "**/templates/**/*.ts?(x)"
