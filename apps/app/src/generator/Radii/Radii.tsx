@@ -6,8 +6,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 
-import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { UnitSlider } from "~/components/common/UnitSlider";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { extractFontSizeUnit } from "~/generator/utils";
 
 type Radius = keyof HvThemeTokens["radii"];
@@ -16,7 +16,7 @@ const Radii = () => {
   const { activeTheme } = useTheme();
   const { customTheme, updateCustomTheme } = useGeneratorContext();
   const [currValues, setCurrValues] = useState<Map<Radius, string | number>>(
-    new Map<Radius, string | number>()
+    new Map<Radius, string | number>(),
   );
   const currValuesRef = useRef(currValues);
 
@@ -58,7 +58,7 @@ const Radii = () => {
     const value = parseInt(
       currValuesRef.current.get(radii)?.toString() ||
         customTheme.radii[radii as keyof HvThemeTokens["radii"]].toString(),
-      10
+      10,
     );
 
     const map = new Map<Radius, string | number>(currValues);

@@ -3,11 +3,9 @@ import MuiDialogActions, {
 } from "@mui/material/DialogActions";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
 import { ExtractNames } from "../../utils/classes";
-
-import { staticClasses, useClasses } from "./Actions.styles";
 import { useDialogContext } from "../context";
+import { staticClasses, useClasses } from "./Actions.styles";
 
 export { staticClasses as dialogActionClasses };
 

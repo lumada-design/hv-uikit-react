@@ -1,8 +1,8 @@
 import type { CSSProperties } from "react";
 
-import { colors } from "../tokens/colors";
 import { makeTheme } from "../makeTheme";
 import { radii } from "../tokens";
+import { colors } from "../tokens/colors";
 
 const pentahoPlus = makeTheme((theme) => ({
   name: "pentahoPlus",

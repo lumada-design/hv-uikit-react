@@ -1,10 +1,11 @@
 import { useMemo, useState } from "react";
-
-import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
+import { describe, expect, it, vi } from "vitest";
 import {
+  HvCellProps,
+  hvDropdownColumn,
+  HvRowInstance,
   HvTable,
   HvTableBody,
   HvTableCell,
@@ -14,9 +15,6 @@ import {
   HvTableRow,
   useHvData,
   useHvPagination,
-  HvRowInstance,
-  HvCellProps,
-  hvDropdownColumn,
 } from "@hitachivantara/uikit-react-core";
 
 import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
@@ -54,7 +52,7 @@ const DropdownColumnRenderer = () => {
             return newVal;
           });
           setData(newData);
-        }
+        },
       ),
     ];
   }, [data]);
@@ -69,7 +67,7 @@ const DropdownColumnRenderer = () => {
             value ?? "—",
         },
       },
-      useHvPagination
+      useHvPagination,
     );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
@@ -134,7 +132,7 @@ describe("DropDownColumnRenderer", () => {
 
     await userEvent.selectOptions(
       screen.getByRole("listbox"),
-      screen.getByRole("option", { name: "Major" })
+      screen.getByRole("option", { name: "Major" }),
     );
 
     expect(consoleMock).not.toHaveBeenCalled();
@@ -148,7 +146,7 @@ describe("DropDownColumnRenderer", () => {
     await userEvent.click(screen.getByText("Average"));
     await userEvent.selectOptions(
       screen.getByRole("listbox"),
-      screen.getByRole("option", { name: "Minor" })
+      screen.getByRole("option", { name: "Minor" }),
     );
 
     expect(screen.queryAllByText("Average")).toHaveLength(0);

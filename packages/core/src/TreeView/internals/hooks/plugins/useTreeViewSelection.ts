@@ -1,20 +1,20 @@
 import * as React from "react";
 
 import type {
-  TreeViewPlugin,
-  TreeViewItemRange,
   DefaultizedProps,
-  TreeViewPluginSignature,
   TreeViewInstance,
+  TreeViewItemRange,
+  TreeViewPlugin,
+  TreeViewPluginSignature,
 } from "../../types";
 import {
-  populateInstance,
-  getNextNode,
   getFirstNode,
   getLastNode,
+  getNextNode,
+  populateInstance,
 } from "../utils";
-import type { UseTreeViewNodesSignature } from "./useTreeViewNodes";
 import type { UseTreeViewExpansionSignature } from "./useTreeViewExpansion";
+import type { UseTreeViewNodesSignature } from "./useTreeViewNodes";
 
 /**
  * This is used to determine the start and end of a selection range so
@@ -33,7 +33,7 @@ import type { UseTreeViewExpansionSignature } from "./useTreeViewExpansion";
 export const findOrderInTremauxTree = (
   instance: TreeViewInstance<[UseTreeViewNodesSignature]>,
   nodeAId: string,
-  nodeBId: string
+  nodeBId: string,
 ) => {
   if (nodeAId === nodeBId) {
     return [nodeAId, nodeBId];
@@ -96,20 +96,20 @@ export interface UseTreeViewSelectionInstance {
   selectNode: (
     event: React.SyntheticEvent,
     nodeId: string,
-    multiple?: boolean
+    multiple?: boolean,
   ) => void;
   selectRange: (
     event: React.SyntheticEvent,
     nodes: TreeViewItemRange,
-    stacked?: boolean
+    stacked?: boolean,
   ) => void;
   rangeSelectToFirst: (
     event: React.KeyboardEvent<HTMLUListElement>,
-    nodeId: string
+    nodeId: string,
   ) => void;
   rangeSelectToLast: (
     event: React.KeyboardEvent<HTMLUListElement>,
-    nodeId: string
+    nodeId: string,
   ) => void;
 }
 
@@ -117,7 +117,7 @@ type TreeViewSelectionValue<Multiple extends boolean | undefined> =
   Multiple extends true ? string[] : string | null;
 
 export interface UseTreeViewSelectionParameters<
-  Multiple extends boolean | undefined
+  Multiple extends boolean | undefined,
 > {
   /**
    * If `true` selection is disabled.
@@ -148,19 +148,19 @@ export interface UseTreeViewSelectionParameters<
    */
   onNodeSelect?: (
     event: React.SyntheticEvent,
-    nodeIds: Exclude<TreeViewSelectionValue<Multiple>, null>
+    nodeIds: Exclude<TreeViewSelectionValue<Multiple>, null>,
   ) => void;
 }
 
 export type UseTreeViewSelectionDefaultizedParameters<
-  Multiple extends boolean
+  Multiple extends boolean,
 > = DefaultizedProps<
   UseTreeViewSelectionParameters<Multiple>,
   "disableSelection" | "defaultSelected" | "multiSelect"
 >;
 
 export type UseTreeViewSelectionSignature<
-  Multiple extends boolean | undefined
+  Multiple extends boolean | undefined,
 > = TreeViewPluginSignature<
   UseTreeViewSelectionParameters<Multiple>,
   UseTreeViewSelectionDefaultizedParameters<
@@ -173,7 +173,7 @@ export type UseTreeViewSelectionSignature<
   [
     UseTreeViewNodesSignature,
     UseTreeViewExpansionSignature,
-    UseTreeViewNodesSignature
+    UseTreeViewNodesSignature,
   ]
 >;
 
@@ -192,7 +192,7 @@ export const useTreeViewSelection: TreeViewPlugin<
   const selectNode = (
     event: React.SyntheticEvent,
     nodeId: string,
-    multiple = false
+    multiple = false,
   ) => {
     if (params.disableSelection) {
       return;
@@ -210,7 +210,7 @@ export const useTreeViewSelection: TreeViewPlugin<
         if (params.onNodeSelect) {
           (params.onNodeSelect as UseTreeViewSelectionDefaultizedParameters<true>["onNodeSelect"])!(
             event,
-            newSelected
+            newSelected,
           );
         }
 
@@ -246,7 +246,7 @@ export const useTreeViewSelection: TreeViewPlugin<
 
   const handleRangeArrowSelect = (
     event: React.SyntheticEvent,
-    nodes: TreeViewItemRange
+    nodes: TreeViewItemRange,
   ) => {
     let base = (models.selected.value as string[]).slice();
     const { start, next, current } = nodes;
@@ -263,7 +263,7 @@ export const useTreeViewSelection: TreeViewPlugin<
       if (currentRangeSelection.current.indexOf(next) !== -1) {
         base = base.filter((id) => id === start || id !== current);
         currentRangeSelection.current = currentRangeSelection.current.filter(
-          (id) => id === start || id !== current
+          (id) => id === start || id !== current,
         );
       } else {
         base.push(next);
@@ -277,7 +277,7 @@ export const useTreeViewSelection: TreeViewPlugin<
     if (params.onNodeSelect) {
       (params.onNodeSelect as UseTreeViewSelectionDefaultizedParameters<true>["onNodeSelect"])!(
         event,
-        base
+        base,
       );
     }
 
@@ -286,14 +286,14 @@ export const useTreeViewSelection: TreeViewPlugin<
 
   const handleRangeSelect = (
     event: React.SyntheticEvent,
-    nodes: { start: string; end: string }
+    nodes: { start: string; end: string },
   ) => {
     let base = (models.selected.value as string[]).slice();
     const { start, end } = nodes;
     // If last selection was a range selection ignore nodes that were selected.
     if (lastSelectionWasRange.current) {
       base = base.filter(
-        (id) => currentRangeSelection.current.indexOf(id) === -1
+        (id) => currentRangeSelection.current.indexOf(id) === -1,
       );
     }
 
@@ -306,7 +306,7 @@ export const useTreeViewSelection: TreeViewPlugin<
     if (params.onNodeSelect) {
       (params.onNodeSelect as UseTreeViewSelectionDefaultizedParameters<true>["onNodeSelect"])!(
         event,
-        newSelected
+        newSelected,
       );
     }
 
@@ -316,7 +316,7 @@ export const useTreeViewSelection: TreeViewPlugin<
   const selectRange = (
     event: React.SyntheticEvent,
     nodes: TreeViewItemRange,
-    stacked = false
+    stacked = false,
   ) => {
     if (params.disableSelection) {
       return;
@@ -333,7 +333,7 @@ export const useTreeViewSelection: TreeViewPlugin<
 
   const rangeSelectToFirst = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    nodeId: string
+    nodeId: string,
   ) => {
     if (!lastSelectedNode.current) {
       lastSelectedNode.current = nodeId;
@@ -351,7 +351,7 @@ export const useTreeViewSelection: TreeViewPlugin<
 
   const rangeSelectToLast = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    nodeId: string
+    nodeId: string,
   ) => {
     if (!lastSelectedNode.current) {
       lastSelectedNode.current = nodeId;

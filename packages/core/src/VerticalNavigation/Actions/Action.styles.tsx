@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "../../utils/focusUtils";
 import { createClasses } from "../../utils/classes";
+import { outlineStyles } from "../../utils/focusUtils";
 
 const hover = () => ({
   background: theme.colors.containerBackgroundHover,
@@ -43,5 +43,5 @@ export const { staticClasses, useClasses } = createClasses(
       justifyContent: "center",
       paddingRight: 0,
     },
-  }
+  },
 );

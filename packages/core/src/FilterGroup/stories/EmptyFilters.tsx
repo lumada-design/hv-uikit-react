@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Info } from "@hitachivantara/uikit-react-icons";
 import {
   HvEmptyState,
   HvFilterGroup,
@@ -8,6 +7,7 @@ import {
   HvSwitch,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
+import { Info } from "@hitachivantara/uikit-react-icons";
 
 export const EmptyFilters = () => {
   const [hasFilters, setHasFilters] = useState<boolean>(true);

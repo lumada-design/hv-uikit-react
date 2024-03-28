@@ -2,16 +2,16 @@ import { useMemo } from "react";
 import {
   HvTable,
   HvTableBody,
+  HvTableCell,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   useHvData,
   useHvHeaderGroups,
 } from "@hitachivantara/uikit-react-core";
 
-import { makeData, getGroupedColumns, AssetEvent } from "../storiesUtils";
+import { AssetEvent, getGroupedColumns, makeData } from "../storiesUtils";
 
 export const UseHvHeaderGroups = () => {
   const columns = useMemo(() => getGroupedColumns(), []);
@@ -23,7 +23,7 @@ export const UseHvHeaderGroups = () => {
         columns,
         data,
       },
-      useHvHeaderGroups
+      useHvHeaderGroups,
     );
 
   return (

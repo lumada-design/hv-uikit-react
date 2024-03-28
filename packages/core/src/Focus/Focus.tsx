@@ -1,13 +1,12 @@
 import { cloneElement, useState } from "react";
 
 import { HvBaseProps } from "../types/generic";
-import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
 import { isBrowser } from "../utils/browser";
-import { ConditionalWrapper } from "../utils/ConditionalWrapper";
 import { ExtractNames } from "../utils/classes";
-
-import { getFocusableChildren, setFocusTo } from "./utils";
+import { ConditionalWrapper } from "../utils/ConditionalWrapper";
+import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
 import { staticClasses, useClasses } from "./Focus.styles";
+import { getFocusableChildren, setFocusTo } from "./utils";
 
 export { staticClasses as focusClasses };
 export type HvFocusClasses = ExtractNames<typeof useClasses>;
@@ -68,8 +67,8 @@ export const HvFocus = ({
     const focuses = rootRef?.current
       ? Array.from(
           rootRef.current.getElementsByClassName(
-            filterClass || staticClasses.root || "root"
-          )
+            filterClass || staticClasses.root || "root",
+          ),
         )
       : [];
     return focuses;
@@ -89,7 +88,7 @@ export const HvFocus = ({
   const setSelectedTabIndex = () => {
     const focuses = getFocuses();
     const firstSelected = focuses.find((focus) =>
-      focus.classList.contains(classes.selected || "selected")
+      focus.classList.contains(classes.selected || "selected"),
     );
 
     if (!firstSelected) return;
@@ -224,7 +223,7 @@ export const HvFocus = ({
     focuses,
     focusesList,
     currentFocusIndex,
-    jump
+    jump,
   ) => {
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
@@ -255,7 +254,7 @@ export const HvFocus = ({
     const blockedKeys = getEnabledKeys(
       currentFocusIndex,
       jump,
-      focusesList.length
+      focusesList.length,
     );
 
     switch (evt.code) {
@@ -272,7 +271,7 @@ export const HvFocus = ({
           focusAndUpdateIndex(
             focuses.jump || focuses.last,
             evt.current,
-            focusesList
+            focusesList,
           );
         }
         break;
@@ -281,7 +280,7 @@ export const HvFocus = ({
           focusAndUpdateIndex(
             focuses.fall || focuses.first,
             evt.current,
-            focusesList
+            focusesList,
           );
         }
         break;
@@ -290,7 +289,7 @@ export const HvFocus = ({
           focusAndUpdateIndex(
             focuses.previous || focuses.last,
             evt.current,
-            focusesList
+            focusesList,
           );
         }
         break;
@@ -299,7 +298,7 @@ export const HvFocus = ({
           focusAndUpdateIndex(
             focuses.next || focuses.first,
             evt.current,
-            focusesList
+            focusesList,
           );
         }
         break;
@@ -344,14 +343,14 @@ export const HvFocus = ({
         focusAndUpdateIndex(
           focuses.previous || focuses.last,
           evt.current,
-          focusesList
+          focusesList,
         );
         break;
       case "ArrowDown":
         focusAndUpdateIndex(
           focuses.next || focuses.first,
           evt.current,
-          focusesList
+          focusesList,
         );
         break;
       case "Home":
@@ -395,7 +394,7 @@ export const HvFocus = ({
     const focusesList = getFocuses().filter(
       (el) =>
         isDisabledFocusable ||
-        !el.classList.contains(classes?.disabled as string)
+        !el.classList.contains(classes?.disabled as string),
     );
 
     const currentFocus = focusesList.indexOf(evt.currentTarget);
@@ -415,7 +414,7 @@ export const HvFocus = ({
         focuses,
         focusesList,
         currentFocus,
-        navigationJump
+        navigationJump,
       );
       return;
     }
@@ -448,7 +447,7 @@ export const HvFocus = ({
             [classes.disabled]: disabledClass,
             [classes.focusDisabled]: focusDisabled,
           },
-          children.props.className
+          children.props.className,
         ),
         ref: config,
         onFocus,

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { css } from "@emotion/css";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { fireEvent, screen } from "@storybook/testing-library";
 import {
@@ -7,12 +8,10 @@ import {
   HvStack,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { css } from "@emotion/css";
 
 const makeDecorator =
   (styles: React.CSSProperties): Decorator =>
-  (Story) =>
-    <div style={styles}>{Story()}</div>;
+  (Story) => <div style={styles}>{Story()}</div>;
 
 const meta: Meta<typeof HvColorPicker> = {
   title: "Widgets/Color Picker",
@@ -232,7 +231,7 @@ export const ControlledColorPicker: StoryObj<HvColorPickerProps> = {
     const [color, setColor] = useState<string | undefined>("#95AFE8");
 
     const [squareColor, setSquareColor] = useState<string | undefined>(
-      "#95AFE8"
+      "#95AFE8",
     );
 
     return (

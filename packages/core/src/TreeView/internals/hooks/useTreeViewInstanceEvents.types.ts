@@ -11,7 +11,7 @@ export interface UseTreeViewInstanceEventsInstance {
    */
   $$subscribeEvent: (
     eventName: string,
-    handler: TreeViewEventListener<any>
+    handler: TreeViewEventListener<any>,
   ) => () => void;
   /**
    * Should never be used directly.

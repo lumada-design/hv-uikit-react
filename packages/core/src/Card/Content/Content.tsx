@@ -3,7 +3,6 @@ import MuiCardContent, {
 } from "@mui/material/CardContent";
 
 import { ExtractNames } from "../../utils/classes";
-
 import { staticClasses, useClasses } from "./Content.styles";
 
 export { staticClasses as cardContentClasses };

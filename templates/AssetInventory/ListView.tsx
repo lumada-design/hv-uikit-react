@@ -1,13 +1,13 @@
 import {
   HvTable,
-  HvTableContainer,
-  HvTableRow,
-  HvTableHead,
-  HvTableHeader,
   HvTableBody,
   HvTableCell,
-  HvTableInstance,
   HvTableColumnConfig,
+  HvTableContainer,
+  HvTableHead,
+  HvTableHeader,
+  HvTableInstance,
+  HvTableRow,
 } from "@hitachivantara/uikit-react-core";
 
 import { AssetInventoryEntry } from "./data";

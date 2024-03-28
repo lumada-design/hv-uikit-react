@@ -11,7 +11,7 @@ const renderIconButton = (props?: Partial<HvIconButtonProps>) =>
   render(
     <HvIconButton title={title} {...props}>
       <Download data-testid="downloadIconId" />
-    </HvIconButton>
+    </HvIconButton>,
   );
 
 const assertTooltipWhenHovered = async () => {

@@ -6,5 +6,5 @@ export const { useClasses, staticClasses } = createClasses(
     location: {
       flexGrow: 1,
     },
-  }
+  },
 );

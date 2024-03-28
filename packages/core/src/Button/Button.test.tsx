@@ -1,6 +1,6 @@
-import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it, vi } from "vitest";
 import { Alert } from "@hitachivantara/uikit-react-icons";
 
 import { HvLoading } from "../Loading";
@@ -22,7 +22,7 @@ describe("Button", () => {
       >
         <HvLoading data-testid="loadingId" />
         content
-      </HvButton>
+      </HvButton>,
     );
 
     expect(screen.getByTestId("startId")).toBeInTheDocument();
@@ -56,7 +56,7 @@ describe("Button", () => {
             {variant}
           </HvButton>
         ))}
-      </div>
+      </div>,
     );
 
     buttonVariant.forEach((variant) => {
@@ -69,7 +69,7 @@ describe("Button", () => {
     render(
       <form>
         <HvButton>Button</HvButton>
-      </form>
+      </form>,
     );
     const button = screen.getByRole("button", { name: "Button" });
     expect(button).toHaveAttribute("type", "button");
@@ -81,7 +81,7 @@ describe("Button", () => {
     render(
       <form onSubmit={submitFn}>
         <HvButton type="submit">Button</HvButton>
-      </form>
+      </form>,
     );
 
     const button = screen.getByRole("button", { name: "Button" });
@@ -127,7 +127,7 @@ describe("Button", () => {
       render(
         <HvButton disabled onClick={buttonSpy}>
           {buttonText}
-        </HvButton>
+        </HvButton>,
       );
 
       const buttonToTest = screen.getByRole("button", { name: buttonText });
@@ -147,7 +147,7 @@ describe("Button", () => {
         <div data-testid="outer-div">
           <HvButton onClick={buttonSpyDismiss}>{buttonDismissText}</HvButton>
           <HvButton onClick={buttonSpy}>{buttonText}</HvButton>
-        </div>
+        </div>,
       );
 
       const div = screen.getByTestId("outer-div");
@@ -187,7 +187,7 @@ describe("Button", () => {
           <HvButton disabled onClick={buttonSpy} onKeyDown={buttonSpy}>
             {buttonText}
           </HvButton>
-        </div>
+        </div>,
       );
 
       const div = screen.getByTestId("outer-div");
@@ -224,7 +224,7 @@ describe("Button", () => {
       render(
         <HvButton component="a" href="/path/to" onClick={buttonSpy}>
           Link
-        </HvButton>
+        </HvButton>,
       );
 
       const button = screen.getByRole("link", { name: "Link" });
@@ -239,7 +239,7 @@ describe("Button", () => {
       render(
         <HvButton component={CustomLink} to="/path/to">
           Link
-        </HvButton>
+        </HvButton>,
       );
 
       const button = screen.getByRole("link", { name: "Link" });
@@ -265,7 +265,7 @@ describe("Button", () => {
               {variant}
             </HvButton>
           ))}
-        </div>
+        </div>,
       );
 
       buttonVariant.forEach(async (variant) => {

@@ -30,7 +30,7 @@ describe("Tooltip", () => {
       render(
         <HvTooltip title={smallTitle} open>
           {Anchor}
-        </HvTooltip>
+        </HvTooltip>,
       );
 
       const tooltip = screen.getByRole("tooltip");
@@ -76,7 +76,7 @@ describe("Tooltip", () => {
       render(
         <HvTooltip title={title} open useSingle={false}>
           {Anchor}
-        </HvTooltip>
+        </HvTooltip>,
       );
 
       const tooltip = screen.getByRole("tooltip");
@@ -92,7 +92,7 @@ describe("Tooltip", () => {
       render(
         <HvTooltip title={title} useSingle={false}>
           {Anchor}
-        </HvTooltip>
+        </HvTooltip>,
       );
 
       expect(() => screen.getByRole("tooltip")).toThrow();
@@ -102,7 +102,7 @@ describe("Tooltip", () => {
       render(
         <HvTooltip title={title} useSingle={false}>
           {Anchor}
-        </HvTooltip>
+        </HvTooltip>,
       );
 
       expect(() => screen.getByRole("tooltip")).toThrow();

@@ -3,17 +3,17 @@ import { useGroupBy } from "react-table";
 import {
   HvTable,
   HvTableBody,
+  HvTableCell,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
+  theme,
   useHvData,
   useHvRowExpand,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
-import { makeData, getGroupedRowsColumns, AssetEvent } from "../storiesUtils";
+import { AssetEvent, getGroupedRowsColumns, makeData } from "../storiesUtils";
 
 export const UseHvGroupBy = () => {
   const columns = useMemo(() => getGroupedRowsColumns(), []);
@@ -33,7 +33,7 @@ export const UseHvGroupBy = () => {
         },
       },
       useGroupBy,
-      useHvRowExpand
+      useHvRowExpand,
     );
 
   return (

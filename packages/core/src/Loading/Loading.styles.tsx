@@ -1,5 +1,4 @@
 import { keyframes } from "@emotion/react";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../utils/classes";

@@ -1,7 +1,7 @@
 import * as React from "react";
+import { EventHandlers } from "@mui/base/utils";
 import { useTheme } from "@mui/material/styles";
 import { useEventCallback } from "@mui/material/utils";
-import { EventHandlers } from "@mui/base/utils";
 
 import { TreeViewPlugin, TreeViewPluginSignature } from "../../types";
 import {
@@ -11,10 +11,10 @@ import {
   getPreviousNode,
   populateInstance,
 } from "../utils";
+import type { UseTreeViewExpansionSignature } from "./useTreeViewExpansion";
+import type { UseTreeViewFocusSignature } from "./useTreeViewFocus";
 import type { UseTreeViewNodesSignature } from "./useTreeViewNodes";
 import type { UseTreeViewSelectionSignature } from "./useTreeViewSelection";
-import type { UseTreeViewFocusSignature } from "./useTreeViewFocus";
-import type { UseTreeViewExpansionSignature } from "./useTreeViewExpansion";
 
 function isPrintableCharacter(string: string) {
   return string && string.length === 1 && string.match(/\S/);
@@ -23,7 +23,7 @@ function isPrintableCharacter(string: string) {
 function findNextFirstChar(
   firstChars: string[],
   startIndex: number,
-  char: string
+  char: string,
 ) {
   for (let i = startIndex; i < firstChars.length; i += 1) {
     if (char === firstChars[i]) {
@@ -48,7 +48,7 @@ export type UseTreeViewKeyboardNavigationSignature = TreeViewPluginSignature<
     UseTreeViewNodesSignature,
     UseTreeViewSelectionSignature<any>,
     UseTreeViewFocusSignature,
-    UseTreeViewExpansionSignature
+    UseTreeViewExpansionSignature,
   ]
 >;
 
@@ -88,7 +88,7 @@ export const useTreeViewKeyboardNavigation: TreeViewPlugin<
   };
 
   const handlePreviousArrow = (
-    event: React.KeyboardEvent<HTMLUListElement>
+    event: React.KeyboardEvent<HTMLUListElement>,
   ) => {
     if (state.focusedNodeId == null) {
       return false;
@@ -113,7 +113,7 @@ export const useTreeViewKeyboardNavigation: TreeViewPlugin<
   const focusByFirstCharacter = (
     event: React.KeyboardEvent<HTMLUListElement>,
     nodeId: string,
-    firstChar: string
+    firstChar: string,
   ) => {
     let start: number;
     let index: number;
@@ -159,7 +159,7 @@ export const useTreeViewKeyboardNavigation: TreeViewPlugin<
 
   const selectNextNode = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    id: string
+    id: string,
   ) => {
     if (!instance.isNodeDisabled(getNextNode(instance, id))) {
       instance.selectRange(
@@ -168,14 +168,14 @@ export const useTreeViewKeyboardNavigation: TreeViewPlugin<
           end: getNextNode(instance, id),
           current: id,
         },
-        true
+        true,
       );
     }
   };
 
   const selectPreviousNode = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    nodeId: string
+    nodeId: string,
   ) => {
     if (!instance.isNodeDisabled(getPreviousNode(instance, nodeId))) {
       instance.selectRange(
@@ -184,7 +184,7 @@ export const useTreeViewKeyboardNavigation: TreeViewPlugin<
           end: getPreviousNode(instance, nodeId)!,
           current: nodeId,
         },
-        true
+        true,
       );
     }
   };
@@ -261,7 +261,7 @@ export const useTreeViewKeyboardNavigation: TreeViewPlugin<
           }
           instance.focusNode(
             event,
-            getPreviousNode(instance, state.focusedNodeId)
+            getPreviousNode(instance, state.focusedNodeId),
           );
           flag = true;
           break;

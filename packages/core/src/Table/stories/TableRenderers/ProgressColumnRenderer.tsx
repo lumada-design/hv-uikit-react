@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import {
   HvCellProps,
   HvPagination,
+  hvProgressColumn,
   HvRowInstance,
   HvTable,
   HvTableBody,
@@ -10,12 +11,11 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  hvProgressColumn,
   useHvData,
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, NewRendererEntry, makeRenderersData } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
 export const ProgressColumnRenderer = () => {
   const columns = useMemo(() => {
@@ -30,7 +30,7 @@ export const ProgressColumnRenderer = () => {
         },
         (row) => row.original.riskScore,
         () => 100,
-        "secondary"
+        "secondary",
       ),
     ];
   }, []);
@@ -55,7 +55,7 @@ export const ProgressColumnRenderer = () => {
           value ?? "—",
       },
     },
-    useHvPagination
+    useHvPagination,
   );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {

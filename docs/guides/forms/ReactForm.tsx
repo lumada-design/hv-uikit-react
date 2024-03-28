@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { z, typeToFlattenedError } from "zod";
-import { Map } from "@hitachivantara/uikit-react-icons";
+import { typeToFlattenedError, z } from "zod";
 import {
-  HvInput,
   HvButton,
   HvCheckBox,
-  HvGrid,
   HvDatePicker,
-  HvTimePicker,
-  HvTextArea,
-  HvRadioGroup,
+  HvGrid,
+  HvInput,
   HvRadio,
+  HvRadioGroup,
+  HvTextArea,
+  HvTimePicker,
 } from "@hitachivantara/uikit-react-core";
+import { Map } from "@hitachivantara/uikit-react-icons";
 
 type Country = "Portugal" | "Spain" | "France" | "Germany" | "United States";
 
@@ -32,7 +32,7 @@ const formSchema = z
       .email("Invalid email")
       .refine(
         (email) => email.endsWith("@hitachivantara.com"),
-        "Email must be from @hitachivantara.com"
+        "Email must be from @hitachivantara.com",
       ),
     address: z.string().optional(),
     country: z
@@ -75,7 +75,7 @@ export default () => {
 
   const setValue = <K extends keyof FormSchema>(
     name: K,
-    value: FormSchema[K]
+    value: FormSchema[K],
   ) => setData((prev) => ({ ...prev, [name]: value }));
 
   const [errors, setErrors] = useState<

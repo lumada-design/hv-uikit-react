@@ -1,19 +1,18 @@
 import { Meta, StoryObj } from "@storybook/react";
-
 import {
+  HvTreeItem,
   HvTreeView,
   HvTreeViewProps,
-  HvTreeItem,
 } from "@hitachivantara/uikit-react-core";
 
-import { Main as MainStory } from "./stories/Main";
-import MainStoryRaw from "./stories/Main?raw";
+import { AsyncLoading as AsyncLoadingStory } from "./stories/AsyncLoading";
+import AsyncLoadingStoryRaw from "./stories/AsyncLoading?raw";
 import { Controlled as ControlledStory } from "./stories/Controlled";
 import ControlledStoryRaw from "./stories/Controlled?raw";
 import { DataObject as DataObjectStory } from "./stories/DataObject";
 import DataObjectStoryRaw from "./stories/DataObject?raw";
-import { AsyncLoading as AsyncLoadingStory } from "./stories/AsyncLoading";
-import AsyncLoadingStoryRaw from "./stories/AsyncLoading?raw";
+import { Main as MainStory } from "./stories/Main";
+import MainStoryRaw from "./stories/Main?raw";
 import { VerticalNavigation as VerticalNavigationStory } from "./stories/VerticalNavigation";
 import VerticalNavigationStoryRaw from "./stories/VerticalNavigation?raw";
 

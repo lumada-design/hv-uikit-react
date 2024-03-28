@@ -6,7 +6,7 @@ export interface CleanupTracking {
   register(
     object: any,
     unsubscribe: UnsubscribeFn,
-    unregisterToken: UnregisterToken
+    unregisterToken: UnregisterToken,
   ): void;
   unregister(unregisterToken: UnregisterToken): void;
   reset(): void;

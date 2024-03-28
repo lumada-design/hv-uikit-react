@@ -5,7 +5,7 @@ export function useSavedState<T>(defaultState: T) {
 
   const [state, setState] = useState<T | undefined>(initialState);
   const [submittedState, setSubmittedState] = useState<T | undefined>(
-    initialState
+    initialState,
   );
 
   const changeState = useCallback((value?: T, save = false) => {

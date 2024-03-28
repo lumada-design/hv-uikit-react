@@ -1,5 +1,6 @@
-import { Meta, Story, Canvas, Unstyled } from "@storybook/addon-docs";
-import { HvProvider, ds3 } from "@hitachivantara/uikit-react-core";
+import { Canvas, Meta, Story, Unstyled } from "@storybook/addon-docs";
+import { ds3, HvProvider } from "@hitachivantara/uikit-react-core";
+
 import { ThemeSample } from "./ThemeSample";
 import { ThemeStructure } from "./ThemeStructure";
 import * as ThemingStories from "./Theming.stories";
@@ -139,7 +140,7 @@ as shown in the example below. The `colorMode` can then be set to one of the `ds
 the color mode will default to `dawn`.
 
 ```tsx
-import { HvProvider, ds3 } from "@hitachivantara/uikit-react-core";
+import { ds3, HvProvider } from "@hitachivantara/uikit-react-core";
 
 const MyApp = ({ children }) => (
   <HvProvider themes={[ds3]} colorMode="dawn">
@@ -156,7 +157,7 @@ If `theme` and `colorMode` were not set, the active theme would be the first the
 mode defined in the active theme, which is the `dawn` color mode for `ds3` and `ds5`.
 
 ```tsx
-import { HvProvider, ds3, ds5 } from "@hitachivantara/uikit-react-core";
+import { ds3, ds5, HvProvider } from "@hitachivantara/uikit-react-core";
 
 const MyApp = ({ children }) => (
   <HvProvider themes={[ds3, ds5]} theme="ds3" colorMode="dawn">
@@ -176,9 +177,9 @@ be set to the ones from the base theme `dawn` color mode. Finally, the font fami
 
 ```tsx
 import {
+  createTheme,
   HvProvider,
   HvTypography,
-  createTheme,
 } from "@hitachivantara/uikit-react-core";
 
 const newTheme = createTheme({

@@ -13,5 +13,5 @@ export const { staticClasses, useClasses } = createClasses(
     navigationMonth: {
       minWidth: "160px",
     },
-  }
+  },
 );

@@ -1,10 +1,9 @@
-import { useMemo, useCallback } from "react";
-
+import { useCallback, useMemo } from "react";
 import { useTheme } from "@hitachivantara/uikit-react-core";
 
-import { getAxisType } from "../utils";
 import { HvChartAxisType } from "../types";
 import { HvChartYAxis, HvEChartsOption } from "../types/common";
+import { getAxisType } from "../utils";
 
 interface YAxis extends HvChartYAxis {
   data?: string[];
@@ -70,7 +69,7 @@ export const useYAxis = ({
         ...(position && { position }),
       };
     },
-    [colors, defaultType]
+    [colors, defaultType],
   );
 
   const option = useMemo<Pick<HvEChartsOption, "yAxis">>(() => {

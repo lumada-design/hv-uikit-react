@@ -5,14 +5,13 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { useElementSize } from "usehooks-ts";
 import {
   ExtractNames,
   HvBaseProps,
   HvDialogContent,
   HvLoadingContainer,
 } from "@hitachivantara/uikit-react-core";
-
-import { useElementSize } from "usehooks-ts";
 
 import { HvWizardContext, HvWizardTabs } from "../WizardContext";
 import { staticClasses, useClasses } from "./WizardContent.styles";
@@ -120,7 +119,7 @@ export const HvWizardContent = ({
               }
             : { [key]: childState }),
         }),
-        {}
+        {},
       );
 
       setContext(updatedContext);

@@ -7,11 +7,10 @@ import {
   useMemo,
 } from "react";
 
-import { HvBaseProps } from "../../types/generic";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { ExtractNames } from "../../utils/classes";
 import { HvFocus } from "../../Focus";
-
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvBaseProps } from "../../types/generic";
+import { ExtractNames } from "../../utils/classes";
 import HvListContext from "../ListContext";
 import { staticClasses, useClasses } from "./ListItem.styles";
 
@@ -69,7 +68,7 @@ const applyClassNameAndStateToElement = (
   selected: boolean | undefined,
   disabled: boolean | undefined,
   onClick: React.MouseEventHandler<HTMLLIElement>,
-  className?: string
+  className?: string,
 ) => {
   if (element == null) return null;
 
@@ -132,7 +131,7 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
       if (disabled) return;
       onClick?.(evt);
     },
-    [disabled, onClick]
+    [disabled, onClick],
   );
 
   const clonedStartAdornment = useMemo(
@@ -147,8 +146,8 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
           { [classes.disabled]: disabled },
           isValidElement(startAdornment)
             ? startAdornment.props.className
-            : undefined
-        )
+            : undefined,
+        ),
       ),
     [
       cx,
@@ -158,7 +157,7 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
       handleClick,
       selected,
       startAdornment,
-    ]
+    ],
   );
   const clonedEndAdornment = useMemo(
     () =>
@@ -169,10 +168,10 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
           { [classes.disabled]: disabled },
           isValidElement(endAdornment)
             ? endAdornment.props.className
-            : undefined
-        )
+            : undefined,
+        ),
       ),
-    [cx, classes?.endAdornment, classes?.disabled, disabled, endAdornment]
+    [cx, classes?.endAdornment, classes?.disabled, disabled, endAdornment],
   );
 
   const roleOptionAriaProps =
@@ -201,7 +200,7 @@ export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
           [classes.withStartAdornment]: startAdornment != null,
           [classes.withEndAdornment]: endAdornment != null,
         },
-        className
+        className,
       )}
       tabIndex={interactive ? undefined : tabIndex}
       onClick={handleClick}

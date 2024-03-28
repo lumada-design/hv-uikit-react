@@ -1,14 +1,14 @@
 import * as React from "react";
 import { EventHandlers } from "@mui/base/utils";
 
-import type { TreeViewModel } from "./treeView";
-import type { TreeViewContextValue } from "../TreeViewProvider";
-import type { MergePluginsProperty } from "./helpers";
-import type { TreeViewEventLookupElement } from "./events";
 import type { TreeViewCorePluginsSignature } from "../corePlugins";
+import type { TreeViewContextValue } from "../TreeViewProvider";
+import type { TreeViewEventLookupElement } from "./events";
+import type { MergePluginsProperty } from "./helpers";
+import type { TreeViewModel } from "./treeView";
 
 export interface TreeViewPluginOptions<
-  TSignature extends TreeViewAnyPluginSignature
+  TSignature extends TreeViewAnyPluginSignature,
 > {
   instance: TreeViewUsedInstance<TSignature>;
   params: TreeViewUsedDefaultizedParams<TSignature>;
@@ -28,7 +28,7 @@ type TreeViewModelsInitializer<TSignature extends TreeViewAnyPluginSignature> =
 
 interface TreeViewResponse {
   getRootProps?: <TOther extends EventHandlers = {}>(
-    otherHandlers: TOther
+    otherHandlers: TOther,
   ) => React.HTMLAttributes<HTMLUListElement>;
   contextValue?: TreeViewContextValue<any>;
 }
@@ -40,7 +40,7 @@ export type TreeViewPluginSignature<
   TEvents extends { [key in keyof TEvents]: TreeViewEventLookupElement },
   TState extends {},
   TModelNames extends keyof TDefaultizedParams,
-  TDependantPlugins extends readonly TreeViewAnyPluginSignature[]
+  TDependantPlugins extends readonly TreeViewAnyPluginSignature[],
 > = {
   params: TParams;
   defaultizedParams: TDefaultizedParams;
@@ -67,7 +67,7 @@ export type TreeViewAnyPluginSignature = {
 
 type TreeViewUsedPlugins<TSignature extends TreeViewAnyPluginSignature> = [
   TreeViewCorePluginsSignature,
-  ...TSignature["dependantPlugins"]
+  ...TSignature["dependantPlugins"],
 ];
 
 type TreeViewUsedParams<TSignature extends TreeViewAnyPluginSignature> =
@@ -75,12 +75,12 @@ type TreeViewUsedParams<TSignature extends TreeViewAnyPluginSignature> =
     MergePluginsProperty<TreeViewUsedPlugins<TSignature>, "params">;
 
 type TreeViewUsedDefaultizedParams<
-  TSignature extends TreeViewAnyPluginSignature
+  TSignature extends TreeViewAnyPluginSignature,
 > = TSignature["defaultizedParams"] &
   MergePluginsProperty<TreeViewUsedPlugins<TSignature>, "defaultizedParams">;
 
 export type TreeViewUsedInstance<
-  TSignature extends TreeViewAnyPluginSignature
+  TSignature extends TreeViewAnyPluginSignature,
 > = TSignature["instance"] &
   MergePluginsProperty<TreeViewUsedPlugins<TSignature>, "instance"> & {
     /**
@@ -104,10 +104,10 @@ export type TreeViewUsedEvents<TSignature extends TreeViewAnyPluginSignature> =
 export type TreeViewPlugin<TSignature extends TreeViewAnyPluginSignature> = {
   (options: TreeViewPluginOptions<TSignature>): void | TreeViewResponse;
   getDefaultizedParams?: (
-    params: TreeViewUsedParams<TSignature>
+    params: TreeViewUsedParams<TSignature>,
   ) => TSignature["defaultizedParams"];
   getInitialState?: (
-    params: TreeViewUsedDefaultizedParams<TSignature>
+    params: TreeViewUsedDefaultizedParams<TSignature>,
   ) => TSignature["state"];
   models?: TreeViewModelsInitializer<TSignature>;
 };

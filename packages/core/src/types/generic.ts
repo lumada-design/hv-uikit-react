@@ -1,8 +1,7 @@
 import { forwardRef } from "react";
-
 import type {
-  HvExtraProps,
   HvExtraDeepProps,
+  HvExtraProps,
 } from "@hitachivantara/uikit-react-shared";
 
 export type { HvExtraProps, HvExtraDeepProps };
@@ -20,7 +19,7 @@ type FixComponentProps<T> = T extends any ? T : never;
 
 type PolymorphicComponent<
   C extends React.ElementType,
-  Props = {}
+  Props = {},
 > = React.PropsWithChildren<Props & AsProp<C>> &
   FixComponentProps<
     Omit<React.ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>
@@ -31,13 +30,13 @@ export type PolymorphicRef<C extends React.ElementType> =
 
 export type PolymorphicComponentRef<
   C extends React.ElementType,
-  Props = {}
+  Props = {},
 > = PolymorphicComponent<C, Props> & { ref?: PolymorphicRef<C> };
 
 /** HV Base Props. Extends `React.HTMLAttributes` of an element `E`, and filters `K` keys. */
 export type HvBaseProps<
   E extends HTMLElement = HTMLDivElement,
-  K extends keyof React.HTMLAttributes<E> = never
+  K extends keyof React.HTMLAttributes<E> = never,
 > = Omit<React.HTMLAttributes<E>, K>;
 
 /** This type allows to do a deep partial by applying the Partial type to each key recursively */
@@ -58,7 +57,7 @@ export type Arrayable<T> = T | T[];
 /** React.forwardRef with fixed type declarations */
 export function fixedForwardRef<T, P = {}>(
   // TODO: change `React.ReactElement | null` to `React.ReactNode` in typescript@5
-  render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+  render: (props: P, ref: React.Ref<T>) => React.ReactElement | null,
 ): (props: P & React.RefAttributes<T>) => React.ReactElement | null {
   return forwardRef(render) as any;
 }

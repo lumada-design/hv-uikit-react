@@ -1,21 +1,20 @@
 import { useCallback, useMemo } from "react";
-
-import { Down, Up } from "@hitachivantara/uikit-react-icons";
 import {
   ExtractNames,
   HvButton,
   HvButtonProps,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
+import { Down, Up } from "@hitachivantara/uikit-react-icons";
 import { getColor } from "@hitachivantara/uikit-styles";
 
+import { useFlowContext } from "../../hooks";
 import { HvFlowNodeGroup } from "../../types";
 import { staticClasses, useClasses } from "./SidebarGroup.styles";
 import {
   HvFlowDraggableSidebarGroupItem,
   HvFlowDraggableSidebarGroupItemProps,
 } from "./SidebarGroupItem";
-import { useFlowContext } from "../../hooks";
 
 export { staticClasses as flowSidebarGroupClasses };
 
@@ -59,12 +58,12 @@ export const HvFlowSidebarGroup = ({
 
   const opened = useMemo(
     () => !!expandedNodeGroups?.find((groupId) => groupId === id),
-    [expandedNodeGroups, id]
+    [expandedNodeGroups, id],
   );
 
   const handleClick = useCallback(() => {
     setExpandedNodeGroups?.((prev) =>
-      opened ? prev.filter((groupId) => id !== groupId) : [...prev, id]
+      opened ? prev.filter((groupId) => id !== groupId) : [...prev, id],
     );
   }, [id, opened, setExpandedNodeGroups]);
 

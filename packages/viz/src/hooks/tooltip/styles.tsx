@@ -1,4 +1,4 @@
-import { theme, createClasses } from "@hitachivantara/uikit-react-core";
+import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
 export const { useClasses, staticClasses } = createClasses("HvChartTooltip", {
   /** Single tooltip styles */

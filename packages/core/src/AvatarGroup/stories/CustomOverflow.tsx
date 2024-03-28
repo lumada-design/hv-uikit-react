@@ -1,7 +1,7 @@
 import {
-  HvTooltip,
-  HvAvatarGroup,
   HvAvatar,
+  HvAvatarGroup,
+  HvTooltip,
 } from "@hitachivantara/uikit-react-core";
 
 export const CustomOverflow = () => {

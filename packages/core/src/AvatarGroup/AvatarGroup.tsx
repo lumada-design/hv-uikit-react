@@ -1,18 +1,12 @@
 import { Children, cloneElement, forwardRef } from "react";
-
 import { css } from "@emotion/css";
-
 import { HvSize, theme } from "@hitachivantara/uikit-styles";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-
-import { HvBaseProps } from "../types/generic";
-
-import { ExtractNames } from "../utils/classes";
-
-import { staticClasses, useClasses } from "./AvatarGroup.styles";
-
 import { HvAvatar } from "../Avatar/Avatar";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { staticClasses, useClasses } from "./AvatarGroup.styles";
 
 export { staticClasses as avatarGroupClasses };
 
@@ -43,7 +37,7 @@ export interface HvAvatarGroupProps extends HvBaseProps {
 
 const getSpacingValue = (
   spacing: HvAvatarGroupProps["spacing"],
-  size: HvAvatarGroupProps["size"]
+  size: HvAvatarGroupProps["size"],
 ) => {
   switch (size) {
     case "xs":
@@ -143,5 +137,5 @@ export const HvAvatarGroup = forwardRef<HTMLDivElement, HvAvatarGroupProps>(
         )}
       </div>
     );
-  }
+  },
 );

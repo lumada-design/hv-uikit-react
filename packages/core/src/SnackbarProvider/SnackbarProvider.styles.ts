@@ -20,5 +20,5 @@ export const { useClasses, staticClasses } = createClasses(
         backgroundColor: "inherit",
       },
     },
-  }
+  },
 );

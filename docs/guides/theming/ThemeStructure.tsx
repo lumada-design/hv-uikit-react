@@ -1,18 +1,18 @@
 import { ReactElement, ReactNode, useState } from "react";
-import {
-  HvDropdown,
-  HvAccordion,
-  HvTypography,
-  HvSwitch,
-  HvLabel,
-  themes,
-  theme,
-  getVarValue,
-  useTheme,
-} from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 import { clsx } from "clsx";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
+import {
+  getVarValue,
+  HvAccordion,
+  HvDropdown,
+  HvLabel,
+  HvSwitch,
+  HvTypography,
+  theme,
+  themes,
+  useTheme,
+} from "@hitachivantara/uikit-react-core";
 
 const tokens: string[] = [
   "breakpoints",
@@ -110,7 +110,7 @@ const ThemeValue = ({
 
 export const ThemeStructure = () => {
   const [selectedTheme, setSelectedTheme] = useState<string | undefined>(
-    defaultThemes.find((t) => t.selected)?.id
+    defaultThemes.find((t) => t.selected)?.id,
   );
   const [showComponents, setShowComponents] = useState<boolean>(false);
 
@@ -119,7 +119,7 @@ export const ThemeStructure = () => {
   const renderClasses = (
     value: object | string | number,
     label: string,
-    level: number
+    level: number,
   ): ReactElement => {
     return (
       <HvAccordion
@@ -127,7 +127,7 @@ export const ThemeStructure = () => {
         classes={{
           root: clsx(
             css({ paddingLeft: levelSpacing(level) }),
-            styles.accordionRoot
+            styles.accordionRoot,
           ),
           container: styles.accordionContainer,
           label: styles.accordionLabel,
@@ -148,7 +148,7 @@ export const ThemeStructure = () => {
   const renderLevel = (
     value: object | string | number,
     label: string,
-    level: number
+    level: number,
   ): ReactElement => {
     if (value && typeof value === "object" && !Array.isArray(value)) {
       // Level
@@ -158,7 +158,7 @@ export const ThemeStructure = () => {
           classes={{
             root: clsx(
               css({ paddingLeft: levelSpacing(level) }),
-              styles.accordionRoot
+              styles.accordionRoot,
             ),
             container: styles.accordionContainer,
             label: styles.accordionLabel,
@@ -242,7 +242,7 @@ export const ThemeStructure = () => {
             renderLevel(themes[selectedTheme].name, "name", 1)}
           {Object.keys(themes[selectedTheme])
             .filter(
-              (p) => (showComponents || tokens.includes(p)) && p !== "name"
+              (p) => (showComponents || tokens.includes(p)) && p !== "name",
             )
             .map((key) => renderLevel(themes[selectedTheme][key], key, 1))}
         </div>

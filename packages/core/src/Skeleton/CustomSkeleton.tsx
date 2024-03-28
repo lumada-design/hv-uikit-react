@@ -1,6 +1,5 @@
-import { keyframes } from "@emotion/react";
 import { css } from "@emotion/css";
-
+import { keyframes } from "@emotion/react";
 import { HvSkeleton } from "@hitachivantara/uikit-react-core";
 
 export const CustomSkeleton = () => {

@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-
 import { internal } from "arquero";
 
 import { HvEChartsOption } from "../types/common";
@@ -13,7 +12,7 @@ export const useDataset = (data: internal.ColumnTable) => {
             ...acc,
             [c]: data.array(c),
           }),
-          {}
+          {},
         ),
       },
     };

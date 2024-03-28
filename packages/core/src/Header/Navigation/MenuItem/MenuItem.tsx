@@ -1,17 +1,15 @@
 import { useContext } from "react";
 
-import { HvTypography } from "../../../Typography";
-import { HvBaseProps } from "../../../types/generic";
-import { isKey } from "../../../utils/keyboardUtils";
-import { ExtractNames } from "../../../utils/classes";
-
 import { useDefaultProps } from "../../../hooks/useDefaultProps";
-
+import { HvBaseProps } from "../../../types/generic";
+import { HvTypography } from "../../../Typography";
+import { ExtractNames } from "../../../utils/classes";
+import { isKey } from "../../../utils/keyboardUtils";
+import { Bar } from "../MenuBar/Bar";
+import { HvHeaderNavigationItemProp } from "../useSelectionPath";
 import { FocusContext } from "../utils/FocusContext";
 import { SelectionContext } from "../utils/SelectionContext";
-import { useClasses, staticClasses } from "./MenuItem.styles";
-import { HvHeaderNavigationItemProp } from "../useSelectionPath";
-import { Bar } from "../MenuBar/Bar";
+import { staticClasses, useClasses } from "./MenuItem.styles";
 
 export { staticClasses as headerMenuItemClasses };
 
@@ -23,7 +21,7 @@ export interface HvHeaderMenuItemProps
   type?: string;
   onClick?: (
     event: React.MouseEvent,
-    selection: HvHeaderNavigationItemProp
+    selection: HvHeaderNavigationItemProp,
   ) => void;
   levels: number;
   currentLevel: number;
@@ -32,7 +30,7 @@ export interface HvHeaderMenuItemProps
 
 // Traverse the tree of items and return the first href it finds
 const traverseItem = (
-  node: HvHeaderNavigationItemProp
+  node: HvHeaderNavigationItemProp,
 ): { href?: string; target?: string } => {
   let href: string | undefined;
   let target: string | undefined;
@@ -142,7 +140,7 @@ export const HvHeaderMenuItem = (props: HvHeaderMenuItemProps) => {
           [classes.menubar]: !isMenu,
           [classes.selected]: !!isSelected,
         },
-        className
+        className,
       )}
     >
       {itemHref ? (

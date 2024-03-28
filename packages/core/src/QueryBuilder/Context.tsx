@@ -3,11 +3,11 @@ import { createContext, useContext } from "react";
 import {
   AskAction,
   HvQueryBuilderAttribute,
-  QueryAction,
   HvQueryBuilderLabels,
   HvQueryBuilderQueryCombinator,
   HvQueryBuilderQueryOperator,
   HvQueryBuilderRenderers,
+  QueryAction,
 } from "./types";
 
 export const defaultOperators = {

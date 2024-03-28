@@ -1,8 +1,8 @@
-import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 
-import { ControlledTagArray } from "./TagsInput.stories";
 import { HvTagsInput } from ".";
+import { ControlledTagArray } from "./TagsInput.stories";
 
 describe("TagsInput examples", () => {
   describe("<ControlledTagArray />", () => {
@@ -68,7 +68,7 @@ describe("TagsInput Component", () => {
         label="Custom label"
         classes={mockClasses}
         value={["tag1", "tag2"]}
-      />
+      />,
     );
 
     expect(screen.getByText("tag1")).toBeInTheDocument();
@@ -84,7 +84,7 @@ describe("TagsInput Component", () => {
         label="Custom label"
         classes={mockClasses}
         value={[{ label: "tag1" }, { label: "tag2" }]}
-      />
+      />,
     );
 
     expect(screen.getByText("tag1")).toBeInTheDocument();
@@ -105,7 +105,7 @@ describe("TagsInput Component", () => {
         value={[{ label: "tag1" }, { label: "tag2" }]}
         onChange={onChangeSpy}
         onDelete={onDeleteSpy}
-      />
+      />,
     );
 
     expect(screen.getByText("tag1")).toBeInTheDocument();
@@ -123,7 +123,7 @@ describe("TagsInput Component", () => {
     expect(onDeleteSpy).toHaveBeenCalledWith(
       expect.any(Object),
       { label: "tag2" },
-      1
+      1,
     );
 
     // the value is controlled so it should not change only inform
@@ -140,7 +140,7 @@ describe("TagsInput Component", () => {
         value={[{ label: "tag1" }, { label: "tag2" }]}
         onChange={onChangeSpy}
         onAdd={onAddSpy}
-      />
+      />,
     );
 
     expect(screen.getByText("tag1")).toBeInTheDocument();
@@ -161,7 +161,7 @@ describe("TagsInput Component", () => {
     expect(onAddSpy).toHaveBeenCalledWith(
       expect.any(Object),
       { label: "tag3", type: "semantic" },
-      2
+      2,
     );
     // the value is controlled so it should not change only inform
     expect(remainingButton.length).toBe(2);
@@ -178,7 +178,7 @@ describe("TagsInput Component", () => {
         value={[{ label: "tag1" }, { label: "tag2" }]}
         onChange={onChangeSpy}
         onBlur={onBlurSpy}
-      />
+      />,
     );
     const { parentElement } = screen.getByText("Custom label");
     // @ts-ignore
@@ -211,7 +211,7 @@ describe("TagsInput Component", () => {
           { label: "tag1", disabled: true },
           { label: "tag2", type: "categorical", disabled: true },
         ]}
-      />
+      />,
     );
 
     const input = screen.queryByRole("textbox");
@@ -225,7 +225,7 @@ describe("TagsInput Component", () => {
         classes={mockClasses}
         readOnly
         value={[{ label: "tag1" }]}
-      />
+      />,
     );
 
     const input = screen.queryByRole("textbox");
@@ -248,7 +248,7 @@ describe("TagsInput Component", () => {
         classes={mockClasses}
         value={[{ label: "tag1" }, { label: "tag2" }]}
         suggestionListCallback={suggestionHandler}
-      />
+      />,
     );
 
     const tagsInput = screen.getByRole("textbox");

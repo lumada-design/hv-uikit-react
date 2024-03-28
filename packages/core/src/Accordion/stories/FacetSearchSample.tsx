@@ -1,16 +1,13 @@
 import { useState } from "react";
-
 import { css } from "@emotion/css";
-
 import {
   HvAccordion,
-  HvCheckBoxGroup,
-  HvCheckBox,
   HvButton,
-  HvTypography,
+  HvCheckBox,
+  HvCheckBoxGroup,
   HvInput,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 // used to fill option with mock data

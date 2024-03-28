@@ -49,7 +49,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        PACKAGE: ["code-editor", "core", "icons", "lab", "shared", "styles", "uno-preset", "viz"]
+        PACKAGE:
+          - "code-editor"
+          - "core"
+          - "icons"
+          - "lab"
+          - "shared"
+          - "styles"
+          - "uno-preset"
+          - "viz"
 
     steps:
       - name: Checkout
@@ -98,7 +106,7 @@ jobs:
 
   notify-fail:
     name: Notify Fail
-    needs: [codedx-scans,citadel-scan,black-duck-scans]
+    needs: [codedx-scans, citadel-scan, black-duck-scans]
     if: failure()
     runs-on: ubuntu-latest
 

@@ -1,19 +1,17 @@
 import { useRef } from "react";
 
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-
+import CalendarModel from "../model";
+import { DateRangeProp } from "../types";
 import {
+  checkIfDateIsDisabled,
+  dateInProvidedValueRange,
+  isDateRangeProp,
   isSameDay,
   isSameMonth,
-  dateInProvidedValueRange,
-  checkIfDateIsDisabled,
-  isDateRangeProp,
 } from "../utils";
-import { DateRangeProp } from "../types";
-import CalendarModel from "../model";
-
 import { staticClasses, useClasses } from "./CalendarCell.styles";
 
 export { staticClasses as calendarCellClasses };

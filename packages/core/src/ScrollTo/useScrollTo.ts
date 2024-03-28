@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { HvScrollToOption } from "./types";
 import {
   findFirstVisibleElement,
   getScrollTop,
@@ -7,7 +8,6 @@ import {
   scrollElement,
   verticalScrollOffset,
 } from "./utils";
-import { HvScrollToOption } from "./types";
 
 interface HvScrollToOptionWithLink extends HvScrollToOption {
   href: string;
@@ -26,10 +26,10 @@ export const useScrollTo = (
           | Event
           | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
           | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
-        index: number
+        index: number,
       ) => void)
     | undefined = undefined,
-  direction: "column" | "row" = "column"
+  direction: "column" | "row" = "column",
 ): [
   number,
   (
@@ -38,9 +38,9 @@ export const useScrollTo = (
       | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
     id: string,
     index: number,
-    wrappedOnChange?: (index: number) => void
+    wrappedOnChange?: (index: number) => void,
   ) => void,
-  HvScrollToOptionWithLink[]
+  HvScrollToOptionWithLink[],
 ] => {
   const RETRY_MAX: number = 5;
   const [selectedIndex, setSelectedIndex] = useState<number>(selectedIndexProp);
@@ -69,7 +69,7 @@ export const useScrollTo = (
       event:
         | Event
         | React.MouseEvent<HTMLDivElement>
-        | React.KeyboardEvent<HTMLDivElement>
+        | React.KeyboardEvent<HTMLDivElement>,
     ) => {
       if (
         requestedAnimationFrame.current === 0 &&
@@ -81,7 +81,7 @@ export const useScrollTo = (
           const firstVisibleElementIndex = findFirstVisibleElement(
             scrollEle.current,
             options,
-            offset
+            offset,
           );
 
           let newSelectedIndex = firstVisibleElementIndex;
@@ -120,7 +120,7 @@ export const useScrollTo = (
         });
       }
     },
-    [offset, options, onChange]
+    [offset, options, onChange],
   );
 
   // Registers and unregisters the scroll listener
@@ -186,7 +186,7 @@ export const useScrollTo = (
         ...o,
         href: `${baseUrl}#${o.value}`,
       })),
-    [options, baseUrl]
+    [options, baseUrl],
   );
 
   const setScrollTo = useCallback(
@@ -196,7 +196,7 @@ export const useScrollTo = (
         | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
       id: string,
       index: number,
-      wrappedOnChange?: (index: number) => void
+      wrappedOnChange?: (index: number) => void,
     ) => {
       const option = elements.find((o) => o.value === id);
 
@@ -207,7 +207,7 @@ export const useScrollTo = (
             ele,
             scrollEle.current,
             option.offset || offset,
-            direction
+            direction,
           );
         }
 
@@ -225,7 +225,7 @@ export const useScrollTo = (
         selectedIndexRef.current = index;
       }
     },
-    [elements, navigationMode, direction, offset]
+    [elements, navigationMode, direction, offset],
   );
 
   return [selectedIndex, setScrollTo, elements];

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { HvDropdown, HvDropdownProps } from "@hitachivantara/uikit-react-core";
 
-import { HvFlowNodeSelectParam } from "../../types";
 import { useFlowNodeUtils } from "../../hooks";
+import { HvFlowNodeSelectParam } from "../../types";
 
 interface SelectProps {
   param: Omit<HvFlowNodeSelectParam, "type">;
@@ -14,7 +14,7 @@ const Select = ({ param, data }: SelectProps) => {
   const { setNodeData } = useFlowNodeUtils();
 
   const [opts, setOpts] = useState<string[] | undefined>(
-    data[id] ? (Array.isArray(data[id]) ? data[id] : [data[id]]) : undefined
+    data[id] ? (Array.isArray(data[id]) ? data[id] : [data[id]]) : undefined,
   );
 
   const handleChange: HvDropdownProps["onChange"] = (item) => {
@@ -24,7 +24,7 @@ const Select = ({ param, data }: SelectProps) => {
 
     setNodeData((prev) => ({ ...prev, [id]: newOpts }));
     setOpts(
-      newOpts ? (Array.isArray(newOpts) ? newOpts : [newOpts]) : undefined
+      newOpts ? (Array.isArray(newOpts) ? newOpts : [newOpts]) : undefined,
     );
   };
 

@@ -1,21 +1,19 @@
 import { forwardRef, useCallback, useState } from "react";
-
 import { RadioProps as MuiRadioProps } from "@mui/material/Radio";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseRadio } from "../BaseRadio";
 import {
-  HvWarningText,
-  HvLabelProps,
-  isInvalid,
   HvFormElement,
   HvLabel,
+  HvLabelProps,
+  HvWarningText,
+  isInvalid,
 } from "../Forms";
-import { useUniqueId } from "../hooks/useUniqueId";
 import { useControlled } from "../hooks/useControlled";
-import { setId } from "../utils/setId";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
 import { ExtractNames } from "../utils/classes";
-
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Radio.styles";
 
 export { staticClasses as radioClasses };
@@ -101,7 +99,7 @@ export interface HvRadioProps
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
     checked: boolean,
-    value: any
+    value: any,
   ) => void;
   /**
    * Whether the selector should use semantic colors.
@@ -171,7 +169,7 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
         setFocusVisible(true);
         onFocusVisible?.(evt);
       },
-      [onFocusVisible]
+      [onFocusVisible],
     );
 
     const onBlurCallback = useCallback(
@@ -179,12 +177,12 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
         setFocusVisible(false);
         onBlur?.(evt);
       },
-      [onBlur]
+      [onBlur],
     );
 
     const [isChecked, setIsChecked] = useControlled(
       checked,
-      Boolean(defaultChecked)
+      Boolean(defaultChecked),
     );
 
     const onLocalChange = useCallback(
@@ -193,7 +191,7 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
 
         onChange?.(evt, newChecked, value);
       },
-      [onChange, setIsChecked, value]
+      [onChange, setIsChecked, value],
     );
 
     // the error message area will only be created if:
@@ -282,5 +280,5 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
         )}
       </HvFormElement>
     );
-  }
+  },
 );

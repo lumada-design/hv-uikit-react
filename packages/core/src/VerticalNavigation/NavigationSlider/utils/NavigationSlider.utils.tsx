@@ -11,7 +11,7 @@ const searchInCollection = (
   collection,
   childrenPropName,
   propName,
-  propValue
+  propValue,
 ) => {
   if (collection[propName] === propValue) {
     return collection;
@@ -25,7 +25,7 @@ const searchInCollection = (
       items[index],
       childrenPropName,
       propName,
-      propValue
+      propValue,
     );
   }
   return foundItem;
@@ -52,7 +52,7 @@ const getNavigationItemById = (navigationItems, navigationItemId) => {
 const getParentItemById = (navigationItems, navigationItemId) => {
   const parentId = getNavigationItemById(
     navigationItems,
-    navigationItemId
+    navigationItemId,
   )?.parent;
   return getNavigationItemById(navigationItems, parentId);
 };

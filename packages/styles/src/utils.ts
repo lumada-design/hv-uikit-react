@@ -19,7 +19,7 @@ export const spacingUtil = (value: SpacingValue, vars: HvThemeVars): string => {
 // TODO: remove in favour or `spacingUtil` in v6
 export const spacingUtilOld = (
   value: SpacingValue,
-  vars: HvThemeVars
+  vars: HvThemeVars,
 ): string => {
   switch (typeof value) {
     case "number":
@@ -50,14 +50,14 @@ const toCSSVars = (obj: object, prefix = "--uikit") => {
 };
 
 export const hasMultipleArgs = <T extends any>(
-  args: T[] | [T[]]
+  args: T[] | [T[]],
 ): args is T[] => {
   return args.length > 1;
 };
 
 export const mapCSSVars = <T extends object>(
   obj: T,
-  prefix: string = "--uikit"
+  prefix: string = "--uikit",
 ): DeepString<T> => {
   const vars = {} as DeepString<T>;
 
@@ -97,7 +97,7 @@ export const mergeTheme = (...objects: any[]) => {
 export const parseTheme = (
   themes: HvThemeStructure[],
   theme: string = "",
-  colorMode: string = ""
+  colorMode: string = "",
 ): {
   theme: HvThemeStructure;
   selectedTheme: string;
@@ -213,7 +213,7 @@ export const getThemesVars = (themes: HvThemeStructure[]) => {
           if (rgb) acc[key] = rgb;
           return acc;
         },
-        {}
+        {},
       );
 
       vars[styleName] = toCSSVars({

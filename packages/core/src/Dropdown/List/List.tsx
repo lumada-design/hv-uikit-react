@@ -1,22 +1,19 @@
 import { useContext, useEffect, useMemo, useState } from "react";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { setId } from "../../utils/setId";
-import { HvTypography } from "../../Typography";
-import { HvButton } from "../../Button";
-import { HvCheckBox } from "../../CheckBox";
-import { HvInput } from "../../Input";
-import { HvList, HvListProps, HvListValue } from "../../List";
 import { HvActionBar } from "../../ActionBar";
 import BaseDropdownContext from "../../BaseDropdown/BaseDropdownContext";
-import { ExtractNames } from "../../utils/classes";
-
+import { HvButton } from "../../Button";
+import { HvCheckBox } from "../../CheckBox";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
-import { staticClasses, useClasses } from "./List.styles";
-import { getSelected } from "../utils";
+import { HvInput } from "../../Input";
+import { HvList, HvListProps, HvListValue } from "../../List";
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
+import { setId } from "../../utils/setId";
 import type { HvDropdownLabels } from "../Dropdown";
+import { getSelected } from "../utils";
+import { staticClasses, useClasses } from "./List.styles";
 
 export { staticClasses as dropdownListClasses };
 
@@ -55,7 +52,7 @@ export interface HvDropdownListProps {
     /** If `true` the dropdown should toggle it's current state */
     toggle: boolean,
     /** If `true` the dropdown will call onChange */
-    notifyChanges: boolean
+    notifyChanges: boolean,
   ) => void;
   /**
    * A function to be executed whenever the Cancel button is activated.
@@ -204,7 +201,7 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
             }
 
             return stringValue.indexOf(str.toLowerCase()) >= 0;
-          }
+          },
         )
       : null;
 
@@ -365,7 +362,7 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
                     maxHeight: "inherit",
                     overflow: "inherit",
                     padding: 0,
-                  })
+                  }),
               ),
             }}
             values={list}

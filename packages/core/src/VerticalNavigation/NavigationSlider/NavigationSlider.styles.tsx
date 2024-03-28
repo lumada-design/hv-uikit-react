@@ -28,5 +28,5 @@ export const { staticClasses, useClasses } = createClasses(
         background: theme.colors.atmo3,
       },
     },
-  }
+  },
 );

@@ -1,13 +1,11 @@
 import { cloneElement } from "react";
 import { CurrentStep, OtherStep } from "@hitachivantara/uikit-react-icons";
 
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvRadio } from "../Radio";
 import { HvRadioGroup, HvRadioGroupProps } from "../RadioGroup";
 import { ExtractNames } from "../utils/classes";
 import { range } from "../utils/helpers";
-
-import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import { staticClasses, useClasses } from "./DotPagination.styles";
 
 export { staticClasses as dotPaginationClasses };
@@ -41,7 +39,7 @@ export interface HvDotPaginationProps
    */
   onPageChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
-    page: number
+    page: number,
   ) => void;
   /**
    * The callback fired to get the page aria label.
@@ -56,7 +54,7 @@ export interface HvDotPaginationProps
 const getSelectorIcons = (
   radioIcon?: React.ReactElement,
   radioCheckedIcon?: React.ReactElement,
-  classes?: HvDotPaginationClasses
+  classes?: HvDotPaginationClasses,
 ) => {
   return {
     radio: cloneElement(radioIcon || <OtherStep width={8} height={8} />, {
@@ -66,7 +64,7 @@ const getSelectorIcons = (
       radioCheckedIcon || <CurrentStep width={8} height={8} />,
       {
         className: classes?.icon,
-      }
+      },
     ),
   };
 };

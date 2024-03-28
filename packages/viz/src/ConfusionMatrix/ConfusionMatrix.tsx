@@ -1,16 +1,15 @@
 import { forwardRef, useMemo } from "react";
-
-import * as echarts from "echarts/core";
+import ReactECharts from "echarts-for-react/lib/core";
 import { HeatmapChart } from "echarts/charts";
 import {
-  VisualMapComponent,
   GridComponent,
   TooltipComponent,
+  VisualMapComponent,
 } from "echarts/components";
-import ReactECharts from "echarts-for-react/lib/core";
-
+import * as echarts from "echarts/core";
 import { Arrayable, ExtractNames } from "@hitachivantara/uikit-react-core";
 
+import { HvBaseChart } from "../BaseChart";
 import {
   HvVisualMapHookProps,
   useData,
@@ -21,23 +20,21 @@ import {
   useXAxis,
   useYAxis,
 } from "../hooks";
-import { getGroupKey } from "../utils";
-
-import { HvBaseChart } from "../BaseChart";
-import { useClasses } from "./ConfusionMatrix.styles";
 import {
   HvChartCommonProps,
   HvChartXAxis,
   HvChartYAxis,
 } from "../types/common";
-import { HvChartTooltip } from "../types/tooltip";
 import { HvConfusionMatrixMeasure } from "../types/measures";
-import { useColorScale, useGridLayout, useSeries } from "./utils";
+import { HvChartTooltip } from "../types/tooltip";
+import { getGroupKey } from "../utils";
+import { useClasses } from "./ConfusionMatrix.styles";
 import {
-  HvConfusionMatrixFormat,
   HvConfusionMatrixColorScale,
+  HvConfusionMatrixFormat,
   HvConfusionMatrixValuesProps,
 } from "./types";
+import { useColorScale, useGridLayout, useSeries } from "./utils";
 
 // Register chart components
 echarts.use([
@@ -150,8 +147,8 @@ export const HvConfusionMatrix = forwardRef<
         typeof measure !== "string" && measure.valueFormatter
           ? measure.valueFormatter(value)
           : tooltip?.valueFormatter
-          ? tooltip?.valueFormatter(value)
-          : value;
+            ? tooltip?.valueFormatter(value)
+            : value;
       const ftmTitle = tooltip?.titleFormatter
         ? tooltip.titleFormatter(params?.title)
         : params?.title;

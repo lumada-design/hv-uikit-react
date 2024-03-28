@@ -8,12 +8,12 @@ import {
   HvLabel,
   HvWarningText,
 } from "../Forms";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { useControlled } from "../hooks/useControlled";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import {
   HvFilterGroupContent,
   HvFilterGroupContentProps,
@@ -70,7 +70,7 @@ export interface HvFilterGroupProps
   /** The callback fired when the value changes. */
   onChange?: (
     event: React.MouseEvent<HTMLButtonElement>,
-    value?: HvFilterGroupValue
+    value?: HvFilterGroupValue,
   ) => void;
   /** An Object containing the various text associated with the input. */
   labels?: HvFilterGroupLabels;
@@ -231,5 +231,5 @@ export const HvFilterGroup = forwardRef<HTMLDivElement, HvFilterGroupProps>(
         </HvFilterGroupProvider>
       </HvFormElement>
     );
-  }
+  },
 );

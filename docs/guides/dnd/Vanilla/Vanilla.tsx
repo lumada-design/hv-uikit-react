@@ -1,14 +1,14 @@
 import { useState } from "react";
+import { cx } from "@emotion/css";
 import {
   HvListContainer,
   HvListItem,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Drag } from "@hitachivantara/uikit-react-icons";
-import { cx } from "@emotion/css";
 
-import { sampleItems } from "./sampleData";
 import { Item } from "../types";
+import { sampleItems } from "./sampleData";
 import classes from "./styles";
 
 export const Vanilla = () => {

@@ -1,8 +1,5 @@
 import { useState } from "react";
-import {
-  CurrentStep,
-  RadioButtonUnselected,
-} from "@hitachivantara/uikit-react-icons";
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvDotPagination,
@@ -11,7 +8,10 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { css } from "@emotion/css";
+import {
+  CurrentStep,
+  RadioButtonUnselected,
+} from "@hitachivantara/uikit-react-icons";
 
 const meta: Meta<typeof HvDotPagination> = {
   title: "Components/Pagination/Dot Pagination",

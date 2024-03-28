@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "../utils/focusUtils";
 import { createClasses } from "../utils/classes";
+import { outlineStyles } from "../utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvRadio", {
   root: { display: "inline-block" },

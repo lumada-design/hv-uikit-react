@@ -2,15 +2,15 @@ import { useMemo } from "react";
 import {
   HvTable,
   HvTableBody,
+  HvTableCell,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   useHvData,
 } from "@hitachivantara/uikit-react-core";
 
-import { makeData, AssetEvent } from "../storiesUtils";
+import { AssetEvent, makeData } from "../storiesUtils";
 
 export const UseHvHooks = () => {
   const data = useMemo(() => makeData(6), []);

@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import { UnregisterToken, CleanupTracking } from "../utils/CleanupTracking";
-import { TimerBasedCleanupTracking } from "../utils/TimerBasedCleanupTracking";
-import { FinalizationRegistryBasedCleanupTracking } from "../utils/FinalizationRegistryBasedCleanupTracking";
 import { TreeViewAnyPluginSignature, TreeViewUsedEvents } from "../types";
 import { TreeViewEventListener } from "../types/events";
+import { CleanupTracking, UnregisterToken } from "../utils/CleanupTracking";
+import { FinalizationRegistryBasedCleanupTracking } from "../utils/FinalizationRegistryBasedCleanupTracking";
+import { TimerBasedCleanupTracking } from "../utils/TimerBasedCleanupTracking";
 import { UseTreeViewInstanceEventsInstance } from "./useTreeViewInstanceEvents.types";
 
 interface RegistryContainer {
@@ -17,7 +17,7 @@ class ObjectToBeRetainedByReact {}
 // Based on https://github.com/Bnaya/use-dispose-uncommitted/blob/main/src/finalization-registry-based-impl.ts
 // Check https://github.com/facebook/react/issues/15317 to get more information
 export function createUseInstanceEventHandler(
-  registryContainer: RegistryContainer
+  registryContainer: RegistryContainer,
 ) {
   let cleanupTokensCounter = 0;
 
@@ -25,13 +25,13 @@ export function createUseInstanceEventHandler(
     Instance extends UseTreeViewInstanceEventsInstance & {
       $$signature: TreeViewAnyPluginSignature;
     },
-    E extends keyof TreeViewUsedEvents<Instance["$$signature"]>
+    E extends keyof TreeViewUsedEvents<Instance["$$signature"]>,
   >(
     instance: Instance,
     eventName: E,
     handler: TreeViewEventListener<
       TreeViewUsedEvents<Instance["$$signature"]>[E]
-    >
+    >,
   ) {
     type Signature = Instance["$$signature"];
 
@@ -43,7 +43,7 @@ export function createUseInstanceEventHandler(
     }
 
     const [objectRetainedByReact] = React.useState(
-      new ObjectToBeRetainedByReact()
+      new ObjectToBeRetainedByReact(),
     );
     const subscription = React.useRef<(() => void) | null>(null);
     const handlerRef = React.useRef<
@@ -63,7 +63,7 @@ export function createUseInstanceEventHandler(
 
       subscription.current = instance.$$subscribeEvent(
         eventName as string,
-        enhancedHandler
+        enhancedHandler,
       );
 
       cleanupTokensCounter += 1;
@@ -76,7 +76,7 @@ export function createUseInstanceEventHandler(
           subscription.current = null;
           cleanupTokenRef.current = null;
         },
-        cleanupTokenRef.current
+        cleanupTokenRef.current,
       );
     } else if (!handlerRef.current && subscription.current) {
       subscription.current();
@@ -100,7 +100,7 @@ export function createUseInstanceEventHandler(
 
         subscription.current = instance.$$subscribeEvent(
           eventName as string,
-          enhancedHandler
+          enhancedHandler,
         );
       }
 

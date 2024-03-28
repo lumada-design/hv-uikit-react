@@ -9,10 +9,10 @@ describe("Container", () => {
     render(
       <HvContainer>
         <HvTypography variant="title1">CONTENT</HvTypography>
-      </HvContainer>
+      </HvContainer>,
     );
     expect(
-      screen.getByRole("heading", { name: "CONTENT" })
+      screen.getByRole("heading", { name: "CONTENT" }),
     ).toBeInTheDocument();
   });
 });

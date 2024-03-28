@@ -5,7 +5,6 @@ import MuiDialogTitle, {
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { ExtractNames } from "../../utils/classes";
 import { iconVariant } from "../../utils/iconVariant";
-
 import { useDialogContext } from "../context";
 import { staticClasses, useClasses } from "./Title.styles";
 
@@ -58,7 +57,7 @@ export const HvDialogTitle = (props: HvDialogTitleProps) => {
         {
           [classes.fullscreen]: fullscreen,
         },
-        className
+        className,
       )}
       {...others}
     >

@@ -1,30 +1,30 @@
+import { Meta, StoryObj } from "@storybook/react";
+import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
+  HvFlow,
   HvFlowBackground,
   HvFlowControls,
   HvFlowMinimap,
-  HvFlowSidebar,
-  HvFlow,
   HvFlowProps,
+  HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
-import { Meta, StoryObj } from "@storybook/react";
-import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 
-import { InitialState as InitialStateStory } from "./InitialState";
-import InitialStateRaw from "./InitialState?raw";
-import { Main as MainStory } from "./Main";
-import MainRaw from "./Main?raw";
-import { Visualizations as VisualizationsStory } from "./Visualizations";
-import VisualizationsRaw from "./Visualizations?raw";
-import { Dynamic as DynamicStory } from "./Dynamic";
-import DynamicRaw from "./Dynamic?raw";
 import { CustomDrop as CustomDropStory } from "./CustomDrop";
 import CustomDropRaw from "./CustomDrop?raw";
-import { NoGroups as NoGroupStory } from "./NoGroups";
-import NoGroupsRaw from "./NoGroups?raw";
+import { Dynamic as DynamicStory } from "./Dynamic";
+import DynamicRaw from "./Dynamic?raw";
 import { DynamicHandles as DynamicHandlesStory } from "./DynamicHandles";
 import DynamicHandlesRaw from "./DynamicHandles?raw";
+import { InitialState as InitialStateStory } from "./InitialState";
+import InitialStateRaw from "./InitialState?raw";
 import { Invalid as InvalidStory } from "./Invalid";
 import InvalidRaw from "./Invalid?raw";
+import { Main as MainStory } from "./Main";
+import MainRaw from "./Main?raw";
+import { NoGroups as NoGroupStory } from "./NoGroups";
+import NoGroupsRaw from "./NoGroups?raw";
+import { Visualizations as VisualizationsStory } from "./Visualizations";
+import VisualizationsRaw from "./Visualizations?raw";
 
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",
@@ -42,7 +42,7 @@ const meta: Meta<typeof HvFlow> = {
         fireEvent.click(
           screen.getByRole("button", {
             name: "Add Node",
-          })
+          }),
         );
 
         return waitFor(() => screen.getByText("Search node..."));

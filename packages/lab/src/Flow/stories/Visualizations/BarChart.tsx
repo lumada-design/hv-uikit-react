@@ -7,8 +7,8 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 import { HvBarChart } from "@hitachivantara/uikit-react-viz";
 
-import type { NodeData } from "./data";
 import type { NodeGroup } from ".";
+import type { NodeData } from "./data";
 
 export const BarChart: HvFlowNodeFC<NodeGroup> = (props) => {
   const inputNodes = useFlowInputNodes<NodeData>();

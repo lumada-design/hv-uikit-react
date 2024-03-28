@@ -1,22 +1,19 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
-import {
-  VerticalNavigationContext,
-  NavigationData,
-} from "./VerticalNavigationContext";
 import {
   fillDataWithParentId,
   getNavigationItemById,
   getParentItemById,
 } from "./NavigationSlider/utils";
 import { hasChildNavigationItems } from "./utils/VerticalNavigation.utils";
-
 import { staticClasses, useClasses } from "./VerticalNavigation.styles";
-import { HvBaseProps } from "../types/generic";
+import {
+  NavigationData,
+  VerticalNavigationContext,
+} from "./VerticalNavigationContext";
 
 export { staticClasses as verticalNavigationClasses };
 
@@ -93,24 +90,24 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
   // navigationSlider
   const withParentData = useMemo(
     () => fillDataWithParentId(parentData),
-    [parentData]
+    [parentData],
   );
 
   const initialParentItem = useMemo(
     () => getParentItemById(withParentData, parentSelected),
-    [withParentData, parentSelected]
+    [withParentData, parentSelected],
   );
 
   const [parentItem, setParentItem] = useState(initialParentItem);
 
   const hasAnyChildWithData = useMemo(
     () => hasChildNavigationItems(parentData),
-    [parentData]
+    [parentData],
   );
 
   useEffect(
     () => setHeaderTitle(parentItem?.label),
-    [parentItem, setParentItem]
+    [parentItem, setParentItem],
   );
 
   const navigateToParentHandler = useCallback(() => {
@@ -122,7 +119,7 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
       setParentItem(getNavigationItemById(withParentData, item.id));
       event.stopPropagation();
     },
-    [setParentItem, withParentData]
+    [setParentItem, withParentData],
   );
 
   const value = useMemo(
@@ -159,7 +156,7 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
       hasAnyChildWithData,
       parentData,
       parentSelected,
-    ]
+    ],
   );
 
   const content = (
@@ -173,7 +170,7 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
             [classes.slider]: slider,
             [classes.childData]: hasAnyChildWithData,
           },
-          className
+          className,
         )}
         {...others}
       >

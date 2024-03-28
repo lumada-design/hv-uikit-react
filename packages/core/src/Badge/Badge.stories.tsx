@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
-import { Alert } from "@hitachivantara/uikit-react-icons";
+import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvButton,
   HvBadge,
   HvBadgeProps,
+  HvButton,
 } from "@hitachivantara/uikit-react-core";
+import { Alert } from "@hitachivantara/uikit-react-icons";
 
 const meta: Meta<typeof HvBadge> = {
   title: "Components/Badge",

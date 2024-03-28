@@ -1,15 +1,14 @@
-import { HvBaseProps } from "../../types/generic";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
 import { HvHeaderMenuBar, HvHeaderMenuBarProps } from "./MenuBar";
 import { staticClasses, useClasses } from "./Navigation.styles";
-import { FocusProvider } from "./utils/FocusContext";
-import { SelectionContext } from "./utils/SelectionContext";
 import {
   HvHeaderNavigationItemProp,
   useSelectionPath,
 } from "./useSelectionPath";
+import { FocusProvider } from "./utils/FocusContext";
+import { SelectionContext } from "./utils/SelectionContext";
 
 export { staticClasses as headerNavigationClasses };
 
@@ -21,7 +20,7 @@ export interface HvHeaderNavigationProps
   selected?: string;
   onClick?: (
     event: React.MouseEvent,
-    selection: HvHeaderNavigationItemProp
+    selection: HvHeaderNavigationItemProp,
   ) => void;
   classes?: HvHeaderNavigationClasses;
   /**

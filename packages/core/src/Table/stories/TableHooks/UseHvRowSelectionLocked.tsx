@@ -1,24 +1,24 @@
 import { useMemo } from "react";
 import {
+  HvBulkActions,
+  HvPagination,
   HvTable,
   HvTableBody,
+  HvTableCell,
+  HvTableColumnConfig,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   HvToggleButton,
-  HvPagination,
-  HvBulkActions,
+  useHvBulkActions,
   useHvData,
   useHvPagination,
   useHvRowSelection,
-  HvTableColumnConfig,
-  useHvBulkActions,
 } from "@hitachivantara/uikit-react-core";
 import { Lock, Unlock } from "@hitachivantara/uikit-react-icons";
 
-import { makeData, getColumns, AssetEvent } from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
 export const LockedSelection = () => {
   const data = useMemo(() => makeData(64), []);
@@ -42,7 +42,7 @@ export const LockedSelection = () => {
         },
       },
     ],
-    []
+    [],
   );
 
   const {
@@ -68,7 +68,7 @@ export const LockedSelection = () => {
     },
     useHvPagination,
     useHvRowSelection,
-    useHvBulkActions
+    useHvBulkActions,
   );
 
   return (

@@ -1,21 +1,21 @@
 import { useState } from "react";
+import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvTab,
-  HvTypography,
   HvBadge,
+  HvTab,
   HvTabs,
   HvTabsProps,
+  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 import {
-  Helicopter,
   Alert,
   Calendar,
-  Reload,
   DataStore,
+  Helicopter,
+  Reload,
 } from "@hitachivantara/uikit-react-icons";
-import styled from "@emotion/styled";
 
 const meta: Meta<typeof HvTabs> = {
   title: "Components/Tabs",

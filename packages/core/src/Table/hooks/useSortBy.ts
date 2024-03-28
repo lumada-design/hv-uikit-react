@@ -16,7 +16,7 @@ export interface UseHvSortByTableCellProps {
 }
 
 export type UseHvSortByProps = (<D extends object = Record<string, unknown>>(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####
@@ -37,7 +37,7 @@ const getHeaderPropsHook = (props, { instance, column }) => {
           e.persist();
           column.toggleSortBy(
             undefined,
-            !instance.disableMultiSort && isMultiSortEvent(e)
+            !instance.disableMultiSort && isMultiSortEvent(e),
           );
         }
       : undefined,

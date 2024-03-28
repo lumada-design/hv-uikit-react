@@ -1,16 +1,16 @@
 import { css, cx } from "@emotion/css";
 import {
   HvCard,
-  HvTypography,
+  HvCardProps,
   HvLoading,
   HvTableInstance,
-  HvCardProps,
+  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { TopXS, BottomXS } from "@hitachivantara/uikit-react-icons";
+import { BottomXS, TopXS } from "@hitachivantara/uikit-react-icons";
 
+import { getStatusIcon, ListViewEntry, TrendData } from "./data";
 import { Indicator } from "./Indicator";
-import { ListViewEntry, TrendData, getStatusIcon } from "./data";
 
 const classes = {
   container: css({

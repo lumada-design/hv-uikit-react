@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { css } from "@emotion/css";
+import { HvDropdown } from "@hitachivantara/uikit-react-core";
 import {
   Priority1,
   Priority2,
@@ -7,7 +8,6 @@ import {
   Priority4,
   Priority5,
 } from "@hitachivantara/uikit-react-icons";
-import { HvDropdown } from "@hitachivantara/uikit-react-core";
 
 const PriorityIcon = ({
   Icon,

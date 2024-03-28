@@ -2,14 +2,14 @@ import { useRef, useState } from "react";
 import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 
-import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { UnitSlider } from "~/components/common/UnitSlider";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
 
 const Sizes = () => {
   const { activeTheme } = useTheme();
   const { customTheme, updateCustomTheme } = useGeneratorContext();
   const [currValues, setCurrValues] = useState<Map<string, string>>(
-    new Map<string, string>()
+    new Map<string, string>(),
   );
   const currValuesRef = useRef<Map<string, string>>(currValues);
 
@@ -41,7 +41,7 @@ const Sizes = () => {
                 defaultSize={parseInt(
                   currValues?.get(r)?.toString() ||
                     customTheme.sizes[r as keyof HvThemeTokens["sizes"]],
-                  10
+                  10,
                 )}
                 unit="px"
                 hideUnits

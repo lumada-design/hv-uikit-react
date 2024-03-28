@@ -1,4 +1,4 @@
-import { HvDropdownProps, HvDropdown } from "../../../Dropdown";
+import { HvDropdown, HvDropdownProps } from "../../../Dropdown";
 import { HvListValue } from "../../../List";
 
 export interface HvDropdownColumnCellProp {

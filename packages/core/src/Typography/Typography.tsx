@@ -1,17 +1,17 @@
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useTheme } from "../hooks/useTheme";
 import {
   fixedForwardRef,
   PolymorphicComponentRef,
   PolymorphicRef,
 } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-import { useTheme } from "../hooks/useTheme";
-import { useDefaultProps } from "../hooks/useDefaultProps";
+import { staticClasses, useClasses } from "./Typography.styles";
 import {
   HvTypographyLegacyVariants,
   HvTypographyVariants,
   mapVariant,
 } from "./utils";
-import { staticClasses, useClasses } from "./Typography.styles";
 
 export { staticClasses as typographyClasses };
 
@@ -85,7 +85,7 @@ export type HvTypographyProps<C extends React.ElementType = "p"> =
  * Typography component is used to render text and paragraphs within an interface.
  */
 export const HvTypography = fixedForwardRef(function HvTypography<
-  C extends React.ElementType = "p"
+  C extends React.ElementType = "p",
 >(props: HvTypographyProps<C>, ref: PolymorphicRef<C>) {
   const {
     className,
@@ -117,7 +117,7 @@ export const HvTypography = fixedForwardRef(function HvTypography<
           [classes.noWrap]: noWrap,
           [classes.disabled]: disabled,
         },
-        className
+        className,
       )}
       disabled={disabled}
       {...others}

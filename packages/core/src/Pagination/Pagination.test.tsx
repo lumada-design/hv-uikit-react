@@ -43,7 +43,7 @@ describe("Pagination", () => {
     const user = userEvent.setup();
     const changeMock = vi.fn();
     render(
-      <HvPagination canNext page={0} pages={100} onPageChange={changeMock} />
+      <HvPagination canNext page={0} pages={100} onPageChange={changeMock} />,
     );
 
     const [firstButton, prevButton, nextButton, lastButton] =

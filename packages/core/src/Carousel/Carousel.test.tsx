@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
+import { fireEvent, render, screen } from "@testing-library/react";
 import { vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
 
 import { HvCarousel, HvCarouselSlide } from ".";
 
@@ -17,7 +17,7 @@ const setup = ({ title = "TITLE", numImages = 10, onChange = () => {} }) => {
       {Array.from(Array(numImages), (el, i) => (
         <HvCarouselSlide src={`/image-${i}`} alt={`label-${i}`} />
       ))}
-    </HvCarousel>
+    </HvCarousel>,
   );
 };
 

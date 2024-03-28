@@ -1,17 +1,15 @@
 import { useRef, useState } from "react";
 import { Doc } from "@hitachivantara/uikit-react-icons";
 
-import { setId } from "../../utils/setId";
-import { useUniqueId } from "../../hooks/useUniqueId";
-import { uniqueId } from "../../utils/helpers";
-import { HvTypography } from "../../Typography";
 import { HvInfoMessage, HvLabel } from "../../Forms";
-import { ExtractNames } from "../../utils/classes";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
-import { convertUnits } from "../utils";
+import { useUniqueId } from "../../hooks/useUniqueId";
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
+import { uniqueId } from "../../utils/helpers";
+import { setId } from "../../utils/setId";
 import { HvFileData, HvFilesAddedEvent } from "../File";
-
+import { convertUnits } from "../utils";
 import { staticClasses, useClasses } from "./DropZone.styles";
 
 export { staticClasses as dropZoneClasses };

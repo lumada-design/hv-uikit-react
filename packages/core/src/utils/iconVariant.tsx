@@ -1,15 +1,15 @@
 import {
-  Fail,
-  Success,
   Caution,
-  Info,
+  Fail,
   IconBaseProps,
+  Info,
+  Success,
 } from "@hitachivantara/uikit-react-icons";
 
 export const iconVariant = (
   variant: "success" | "warning" | "error" | "info" | "default",
   color?: IconBaseProps["color"],
-  semantic?: true
+  semantic?: true,
 ) => {
   switch (variant) {
     case "success":

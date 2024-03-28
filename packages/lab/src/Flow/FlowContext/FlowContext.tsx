@@ -1,7 +1,7 @@
 import {
+  createContext,
   Dispatch,
   SetStateAction,
-  createContext,
   useMemo,
   useState,
 } from "react";
@@ -51,7 +51,7 @@ export const HvFlowProvider = ({
       expandedNodeGroups,
       setExpandedNodeGroups,
     }),
-    [nodeTypes, nodeGroups, defaultActions, expandedNodeGroups]
+    [nodeTypes, nodeGroups, defaultActions, expandedNodeGroups],
   );
 
   return (

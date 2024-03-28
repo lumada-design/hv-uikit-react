@@ -28,7 +28,7 @@ export const { staticClasses, useClasses } = createClasses(
       zIndex: `calc(${theme.zIndices.banner} - 2)`,
       right: "0",
     },
-  }
+  },
 );
 
 export const calculateOffset = (quantityOfOptions: number) => {

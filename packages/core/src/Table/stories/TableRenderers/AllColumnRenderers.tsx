@@ -1,8 +1,14 @@
 import { Fragment, useMemo, useState } from "react";
 import {
   HvCellProps,
+  hvDateColumn,
+  hvDropdownColumn,
+  hvExpandColumn,
+  hvNumberColumn,
   HvPagination,
+  hvProgressColumn,
   HvRowInstance,
+  hvSwitchColumn,
   HvTable,
   HvTableBody,
   HvTableCell,
@@ -10,22 +16,16 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTypography,
-  hvDateColumn,
-  hvDropdownColumn,
-  hvExpandColumn,
-  hvNumberColumn,
-  hvProgressColumn,
-  hvSwitchColumn,
   hvTagColumn,
   hvTextColumn,
+  HvTypography,
   theme,
   useHvData,
   useHvPagination,
   useHvRowExpand,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, NewRendererEntry, makeRenderersData } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
 export const AllColumnRenderers = () => {
   const getColumns = () => [
@@ -41,7 +41,7 @@ export const AllColumnRenderers = () => {
       "no",
       {
         disabled: true,
-      }
+      },
     ),
     hvExpandColumn<NewRendererEntry, string>(
       {
@@ -52,7 +52,7 @@ export const AllColumnRenderers = () => {
       },
       "expand",
       "collapse",
-      () => true
+      () => true,
     ),
     hvDateColumn<NewRendererEntry, string>(
       {
@@ -61,7 +61,7 @@ export const AllColumnRenderers = () => {
         style: { minWidth: 50 },
         id: "time-header",
       },
-      "YYYY/MM/DD HH:mm"
+      "YYYY/MM/DD HH:mm",
     ),
     hvNumberColumn<NewRendererEntry, string>({
       Header: "Quantity",
@@ -86,7 +86,7 @@ export const AllColumnRenderers = () => {
       "status_color",
       "status_text_color",
       undefined,
-      undefined
+      undefined,
     ),
     hvProgressColumn<NewRendererEntry, string>(
       {
@@ -98,14 +98,14 @@ export const AllColumnRenderers = () => {
       },
       (row) => row.original.riskScore,
       () => 100,
-      "secondary"
+      "secondary",
     ),
     hvDropdownColumn<NewRendererEntry, string>(
       { Header: "Severity", accessor: "severity", id: "severity-header" },
       undefined,
       "Select severity...",
       "Select severity...",
-      () => console.log("select me")
+      () => console.log("select me"),
     ),
   ];
 
@@ -135,7 +135,7 @@ export const AllColumnRenderers = () => {
       disableCreateExpandButton: true,
     },
     useHvRowExpand,
-    useHvPagination
+    useHvPagination,
   );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {

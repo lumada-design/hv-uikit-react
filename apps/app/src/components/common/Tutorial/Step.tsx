@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { clsx } from "clsx";
 import { css } from "@emotion/css";
+import { clsx } from "clsx";
 import {
   HvButton,
   HvDialog,
@@ -61,7 +61,7 @@ export const Step = ({
             ...stepData?.position,
             ...stepData?.size,
           }),
-          classes.paper
+          classes.paper,
         ),
       }}
       onClose={onCloseHandler}

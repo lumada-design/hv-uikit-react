@@ -1,15 +1,15 @@
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
-  HvSelect,
-  HvSelectProps,
   HvOption,
   HvOptionGroup,
+  HvSelect,
+  HvSelectProps,
 } from "@hitachivantara/uikit-react-core";
 
-import FormStory from "./stories/Form";
-import FormStoryRaw from "./stories/Form?raw";
 import ControlledStory from "./stories/Controlled";
 import ControlledStoryRaw from "./stories/Controlled?raw";
+import FormStory from "./stories/Form";
+import FormStoryRaw from "./stories/Form?raw";
 
 const decorator: Decorator = (Story) => (
   <div className="w-[300px] min-h-[300px]">{Story()}</div>

@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
+import dayjs from "dayjs";
 import {
   HvRadio,
   HvRadioGroup,
@@ -8,10 +9,11 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import dayjs from "dayjs";
+
 import "dayjs/locale/fr";
 import "dayjs/locale/de";
 import "dayjs/locale/pt";
+
 import { css } from "@emotion/css";
 
 const styles = {
@@ -74,7 +76,7 @@ export const Samples = () => {
         dayjs().month(-2),
         dayjs().month(-4),
       ].map((date) => date.valueOf()),
-    []
+    [],
   );
 
   return (

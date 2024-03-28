@@ -1,17 +1,13 @@
 import { useContext } from "react";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-
-import { setId } from "../utils/setId";
 import { HvFormElementContext, HvFormElementValueContext } from "../Forms";
-
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
-
-import { isRange } from "./utils";
+import { setId } from "../utils/setId";
+import { staticClasses, useClasses } from "./Calendar.styles";
 import { HvSingleCalendar } from "./SingleCalendar";
 import { DateRangeProp, VisibilitySelectorActions } from "./types";
-
-import { staticClasses, useClasses } from "./Calendar.styles";
+import { isRange } from "./utils";
 
 export { staticClasses as calendarClasses };
 
@@ -59,7 +55,7 @@ export interface HvCalendarProps {
     event:
       | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
       | undefined,
-    value: Date | DateRangeProp
+    value: Date | DateRangeProp,
   ) => void;
   /**
    * Callback function to be triggered when the selected date input has changed.
@@ -71,7 +67,7 @@ export interface HvCalendarProps {
         >
       | undefined,
     value: Date | DateRangeProp,
-    position: "left" | "right"
+    position: "left" | "right",
   ) => void;
   /**
    * Callback function to be triggered when the user clicks on the month or year selector.
@@ -84,7 +80,7 @@ export interface HvCalendarProps {
       | undefined,
     action: VisibilitySelectorActions,
     value?: Date | DateRangeProp | number,
-    position?: "left" | "right"
+    position?: "left" | "right",
   ) => void;
   /**
    * The maximum selectable date after this all values are disabled.

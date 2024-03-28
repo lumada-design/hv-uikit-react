@@ -1,7 +1,6 @@
 import { useContext } from "react";
 
 import { ExtractNames } from "../../utils/classes";
-
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { staticClasses, useClasses } from "./Actions.styles";
 
@@ -49,7 +48,7 @@ export const HvVerticalNavigationActions = ({
         {
           [classes.hide]: !isOpen && !useIcons,
         },
-        className
+        className,
       )}
       {...others}
     >

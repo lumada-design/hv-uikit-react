@@ -1,9 +1,8 @@
+import type { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import type { CSSInterpolation } from "@emotion/serialize";
-
-import { outlineStyles } from "../../../utils/focusUtils";
 import { createClasses } from "../../../utils/classes";
+import { outlineStyles } from "../../../utils/focusUtils";
 
 const item: CSSInterpolation = {
   border: "none",
@@ -99,5 +98,5 @@ export const { staticClasses, useClasses } = createClasses(
       color: "inherit",
       ...item,
     } as CSSInterpolation,
-  }
+  },
 );

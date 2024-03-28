@@ -1,19 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery, useTheme } from "@mui/material";
-import { Menu } from "@hitachivantara/uikit-react-icons";
 import {
-  HvHeader,
-  HvHeaderBrand,
-  HvHeaderActions,
-  HvHeaderNavigation,
   HvButton,
+  HvHeader,
+  HvHeaderActions,
+  HvHeaderBrand,
+  HvHeaderNavigation,
   HvIconButton,
 } from "@hitachivantara/uikit-react-core";
+import { Menu } from "@hitachivantara/uikit-react-icons";
 
 import logo from "~/assets/logo.png";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { useNavigationContext } from "~/lib/context/navigation";
 import navigation from "~/lib/navigation";
-import { useGeneratorContext } from "~/generator/GeneratorContext";
 
 export const Header = () => {
   const navigate = useNavigate();

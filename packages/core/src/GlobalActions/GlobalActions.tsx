@@ -5,7 +5,6 @@ import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
-
 import {
   getBreakpointStyles,
   staticClasses,
@@ -75,7 +74,7 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
           [classes.section]: variant === "section",
         },
         position === "fixed" && css(getBreakpointStyles(isUpMd, isSmDown)),
-        className
+        className,
       )}
       {...others}
     >

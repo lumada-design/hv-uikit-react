@@ -21,5 +21,5 @@ export const { staticClasses, useClasses } = createClasses(
       },
     },
     dragging: { borderColor: theme.colors.primary_80 },
-  }
+  },
 );

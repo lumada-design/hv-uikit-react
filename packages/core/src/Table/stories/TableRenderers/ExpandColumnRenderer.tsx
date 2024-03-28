@@ -1,6 +1,7 @@
 import { Fragment, useMemo, useState } from "react";
 import {
   HvCellProps,
+  hvExpandColumn,
   HvPagination,
   HvRowInstance,
   HvTable,
@@ -10,16 +11,15 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTypography,
-  hvExpandColumn,
   hvTextColumn,
+  HvTypography,
   theme,
   useHvData,
   useHvPagination,
   useHvRowExpand,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, NewRendererEntry, makeRenderersData } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
 export const ExpandColumnRenderer = () => {
   const getColumns = () => [
@@ -32,7 +32,7 @@ export const ExpandColumnRenderer = () => {
       { Header: "Title", accessor: "name", style: { maxWidth: 100 } },
       "expand",
       "collapse",
-      (row) => row.original.eventType !== undefined
+      (row) => row.original.eventType !== undefined,
     ),
   ];
 
@@ -62,7 +62,7 @@ export const ExpandColumnRenderer = () => {
       disableCreateExpandButton: true,
     },
     useHvRowExpand,
-    useHvPagination
+    useHvPagination,
   );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {

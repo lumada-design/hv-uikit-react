@@ -2,9 +2,9 @@ import MuiDrawer, { DrawerProps as MuiDrawerProps } from "@mui/material/Drawer";
 import { Close } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { setId } from "../utils/setId";
-import { ExtractNames } from "../utils/classes";
 import { HvIconButton } from "../IconButton";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Drawer.styles";
 
 export { staticClasses as drawerClasses };
@@ -39,7 +39,7 @@ export interface HvDrawerProps extends Omit<MuiDrawerProps, "classes"> {
    */
   onClose?: (
     event: React.SyntheticEvent,
-    reason?: "escapeKeyDown" | "backdropClick"
+    reason?: "escapeKeyDown" | "backdropClick",
   ) => void;
   /**
    * The side the drawer opens from.
@@ -89,7 +89,7 @@ export const HvDrawer = (props: HvDrawerProps) => {
 
   const handleOnClose: MuiDrawerProps["onClose"] = (
     event: React.SyntheticEvent,
-    reason
+    reason,
   ) => {
     if (reason === "backdropClick" && disableBackdropClick) return;
 

@@ -1,23 +1,20 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-
-import { parseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
-import {
-  HvThemeContext,
-  defaultCacheKey,
-  defaultEmotionCache,
-  EmotionContext,
-} from "@hitachivantara/uikit-react-shared";
-import type { HvThemeContextValue } from "@hitachivantara/uikit-react-shared";
-
+import { EmotionCache } from "@emotion/cache";
 import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
+import {
+  defaultCacheKey,
+  defaultEmotionCache,
+  EmotionContext,
+  HvThemeContext,
+  type HvThemeContextValue,
+} from "@hitachivantara/uikit-react-shared";
+import { HvThemeStructure, parseTheme } from "@hitachivantara/uikit-styles";
 
-import { EmotionCache } from "@emotion/cache";
-
-import { setElementAttrs } from "../utils/theme";
 import { HvTheme } from "../types/theme";
+import { setElementAttrs } from "../utils/theme";
 
 export { HvThemeContext };
 export type { HvThemeContextValue };
@@ -66,7 +63,7 @@ export const HvThemeProvider = ({
       parsedTheme.selectedTheme,
       parsedTheme.selectedMode,
       parsedTheme.colorScheme,
-      rootId
+      rootId,
     );
   }, [parsedTheme, rootId]);
 
@@ -75,7 +72,7 @@ export const HvThemeProvider = ({
       const pTheme = parseTheme(themesList, newTheme, newMode);
       setParsedTheme(pTheme);
     },
-    [selectedMode, selectedTheme, themesList]
+    [selectedMode, selectedTheme, themesList],
   );
 
   const value = useMemo<HvThemeContextValue>(
@@ -96,7 +93,7 @@ export const HvThemeProvider = ({
       selectedMode,
       changeTheme,
       rootId,
-    ]
+    ],
   );
 
   const MuiTheme = createTheme({
@@ -109,7 +106,7 @@ export const HvThemeProvider = ({
 
   const emotionCacheValue = useMemo(
     () => ({ cache: emotionCache }),
-    [emotionCache]
+    [emotionCache],
   );
 
   return (

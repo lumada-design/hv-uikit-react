@@ -1,9 +1,8 @@
-import React, { useMemo, useState, useEffect, ComponentType } from "react";
+import React, { ComponentType, useEffect, useMemo, useState } from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { DocsContainer } from "@storybook/addon-docs";
-import { Global } from "@storybook/theming";
 import { addons } from "@storybook/addons";
-
+import { Global } from "@storybook/theming";
 import {
   HvProvider,
   HvTypography,
@@ -11,9 +10,9 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-import { getDocsStyles } from "../theme/styles/docs";
-import { getInitialMode, Mode } from "../addons/mode-selector/utils";
 import { ADDON_EVENT } from "../addons/mode-selector/constants";
+import { getInitialMode, Mode } from "../addons/mode-selector/utils";
+import { getDocsStyles } from "../theme/styles/docs";
 import { themes } from ".storybook/theme";
 
 const components: Record<string, ComponentType> = {

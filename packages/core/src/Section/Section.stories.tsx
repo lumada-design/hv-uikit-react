@@ -1,17 +1,16 @@
 import { useMemo, useState } from "react";
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvSwitch,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { HvDonutChart } from "@hitachivantara/uikit-react-viz";
 import { Duplicate, Ticket } from "@hitachivantara/uikit-react-icons";
-import { css } from "@emotion/css";
+import { HvDonutChart } from "@hitachivantara/uikit-react-viz";
 
 import { HvActionsGeneric } from "../ActionsGeneric";
 import { HvButton } from "../Button";
-
 import { HvSection, HvSectionProps } from "./Section";
 
 const meta: Meta<typeof HvSection> = {
@@ -116,7 +115,7 @@ export const WithActions: StoryObj<HvSectionProps> = {
           maxVisibleActions={1}
         />
       ),
-      []
+      [],
     );
 
     return (
@@ -209,7 +208,7 @@ export const Multiple: StoryObj<HvSectionProps> = {
         { id: "5", title: "Section 5", content: "Section 5 content." },
         { id: "6", title: "Section 6", content: "Section 6 content." },
       ],
-      []
+      [],
     );
 
     const classes = {

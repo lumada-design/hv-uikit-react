@@ -1,38 +1,38 @@
-import { useState, useMemo, useEffect, useId } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import {
+  HvActionsGenericProps,
+  HvBulkActions,
+  HvButton,
+  HvControls,
+  HvGlobalActions,
   HvGrid,
   HvGridProps,
-  HvGlobalActions,
-  HvButton,
-  HvBulkActions,
-  HvPagination,
-  HvControls,
   HvLeftControl,
-  HvRightControl,
-  useHvData,
-  useHvSortBy,
-  useHvGlobalFilter,
-  useHvRowSelection,
-  useHvBulkActions,
-  useHvPagination,
-  useHvFilters,
   HvLeftControlProps,
-  HvActionsGenericProps,
   HvLoadingContainer,
+  HvPagination,
+  HvRightControl,
   theme,
+  useHvBulkActions,
+  useHvData,
+  useHvFilters,
+  useHvGlobalFilter,
+  useHvPagination,
+  useHvRowSelection,
+  useHvSortBy,
 } from "@hitachivantara/uikit-react-core";
 
-import { Kpi } from "./Kpi";
-import { Table } from "./Table";
 import {
-  ListViewEntry,
-  PaginationDataProps,
   actions,
   getColumns,
+  ListViewEntry,
+  PaginationDataProps,
   usePaginationData,
   useSummaryData,
 } from "./data";
+import { Kpi } from "./Kpi";
+import { Table } from "./Table";
 
 const classes = {
   paddingTop: css({
@@ -81,7 +81,7 @@ const ListView = () => {
     useHvSortBy,
     useHvPagination,
     useHvRowSelection,
-    useHvBulkActions
+    useHvBulkActions,
   );
 
   useEffect(() => {

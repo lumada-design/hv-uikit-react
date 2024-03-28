@@ -16,9 +16,9 @@ export interface UseHvResizeTableCellProps {
 }
 
 export type UseHvResizeColumnsProps = (<
-  D extends object = Record<string, unknown>
+  D extends object = Record<string, unknown>,
 >(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####
@@ -56,7 +56,7 @@ const useInstanceHook = (instance) => {
   ensurePluginOrder(
     instance.plugins,
     ["useResizeColumns"],
-    "useHvResizeColumns"
+    "useHvResizeColumns",
   );
 };
 

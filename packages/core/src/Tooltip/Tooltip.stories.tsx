@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Play } from "@hitachivantara/uikit-react-icons";
 import {
   HvAvatar,
   HvBox,
@@ -9,6 +8,7 @@ import {
   HvTypography,
   tooltipClasses,
 } from "@hitachivantara/uikit-react-core";
+import { Play } from "@hitachivantara/uikit-react-icons";
 
 const meta: Meta<typeof HvTooltip> = {
   title: "Components/Tooltip/Tooltip",

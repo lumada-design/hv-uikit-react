@@ -1,16 +1,15 @@
 import { isValidElement } from "react";
 
+import { HvDropDownMenuProps } from "../DropDownMenu";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
-import { HvDropDownMenuProps } from "../DropDownMenu";
-import { ExtractNames } from "../utils/classes";
 import { HvTypography } from "../Typography";
-
-import { HvPathElement } from "./PathElement";
-import { HvBreadCrumbPage } from "./Page";
+import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./BreadCrumb.styles";
-import { pathWithSubMenu, removeExtension } from "./utils";
+import { HvBreadCrumbPage } from "./Page";
+import { HvPathElement } from "./PathElement";
 import { HvBreadCrumbPathElement } from "./types";
+import { pathWithSubMenu, removeExtension } from "./utils";
 
 export { staticClasses as breadCrumbClasses };
 
@@ -72,7 +71,7 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
       listPath.push({
         label: decodeURI(elem),
         path: `${baseUrl}/${pathNames.slice(0, index + 1).join("/")}`,
-      })
+      }),
     );
   }
 
@@ -83,7 +82,7 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
           listPath,
           maxVisibleElem,
           onClick,
-          dropDownMenuProps
+          dropDownMenuProps,
         )
       : listPath;
 

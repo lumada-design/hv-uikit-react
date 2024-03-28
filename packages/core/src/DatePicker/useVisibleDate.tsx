@@ -1,7 +1,6 @@
 import { Reducer, useReducer } from "react";
 
 import { VisibilitySelectorActions } from "../Calendar";
-
 import { validateDate } from "./utils";
 
 function stateToLeftRight({
@@ -179,12 +178,15 @@ function stateFromRange(startDate: any, endDate: any) {
       year: initialStartDate.getFullYear(),
       month: initialStartDate.getMonth() + 1,
     },
-    { year: initialEndDate.getFullYear(), month: initialEndDate.getMonth() + 1 }
+    {
+      year: initialEndDate.getFullYear(),
+      month: initialEndDate.getMonth() + 1,
+    },
   );
 }
 
 export default function useVisibleDate(startDate?: Date, endDate?: Date) {
   return useReducer(visibleDateReducer, { startDate, endDate }, (initData) =>
-    stateFromRange(initData.startDate, initData.endDate)
+    stateFromRange(initData.startDate, initData.endDate),
   );
 }

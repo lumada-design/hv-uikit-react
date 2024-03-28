@@ -1,7 +1,7 @@
 import {
   HvPanel,
-  HvTreeView,
   HvTreeItem,
+  HvTreeView,
 } from "@hitachivantara/uikit-react-core";
 
 export const Main = () => {

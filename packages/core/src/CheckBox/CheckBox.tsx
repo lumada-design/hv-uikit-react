@@ -1,20 +1,19 @@
 import { forwardRef, useCallback, useState } from "react";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useControlled } from "../hooks/useControlled";
-import { setId } from "../utils/setId";
 import { HvBaseCheckBox, HvBaseCheckBoxProps } from "../BaseCheckBox";
 import {
-  HvLabelProps,
+  HvFormElement,
   HvFormStatus,
+  HvLabel,
+  HvLabelProps,
   HvWarningText,
   isInvalid,
-  HvFormElement,
-  HvLabel,
 } from "../Forms";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
 import { ExtractNames } from "../utils/classes";
-
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./CheckBox.styles";
 
 export { staticClasses as checkBoxClasses };
@@ -101,19 +100,19 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
 
     const [validationState, setValidationState] = useControlled(
       status,
-      "standBy"
+      "standBy",
     );
 
     const [validationMessage] = useControlled(statusMessage, "Required");
 
     const [isChecked, setIsChecked] = useControlled(
       checked,
-      Boolean(defaultChecked)
+      Boolean(defaultChecked),
     );
 
     const [isIndeterminate, setIsIndeterminate] = useControlled(
       checked !== undefined ? indeterminate : undefined,
-      Boolean(indeterminate)
+      Boolean(indeterminate),
     );
 
     const isStateInvalid = isInvalid(validationState);
@@ -144,7 +143,7 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
         setIsIndeterminate,
         setValidationState,
         value,
-      ]
+      ],
     );
 
     const onFocusVisibleCallback: HvBaseCheckBoxProps["onBlur"] = (event) => {
@@ -219,7 +218,7 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
         className={cx(
           classes.root,
           { [classes.focusVisible]: !!(focusVisible && label) },
-          className
+          className,
         )}
       >
         {hasLabel ? (
@@ -253,5 +252,5 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
         )}
       </HvFormElement>
     );
-  }
+  },
 );

@@ -1,14 +1,14 @@
+import * as tokens from "./tokens";
+import type { HvColorAny } from "./tokens";
 import {
   DeepString,
   HvTheme,
   HvThemeComponents,
   HvThemeTypography,
-  HvThemeVars,
   HvThemeTypographyProps,
   HvThemeUtils,
+  HvThemeVars,
 } from "./types";
-import * as tokens from "./tokens";
-import type { HvColorAny } from "./tokens";
 import {
   hasMultipleArgs,
   mapCSSVars,
@@ -151,5 +151,5 @@ const getColorOrFallback = (color: HvColorAny | undefined) => {
 /** Get a `color` from the theme palette, or `fallbackColor` if not found */
 export const getColor = (
   color: HvColorAny | undefined,
-  fallbackColor?: HvColorAny
+  fallbackColor?: HvColorAny,
 ) => getColorOrFallback(color) || getColorOrFallback(fallbackColor);

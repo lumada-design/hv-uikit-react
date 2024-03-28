@@ -1,11 +1,11 @@
 import { useCallback, useMemo } from "react";
 import {
-  Node,
   Edge,
+  Node,
   ReactFlowState,
-  useStore,
-  useNodes,
   useEdges,
+  useNodes,
+  useStore,
 } from "reactflow";
 import { shallow } from "zustand/shallow";
 
@@ -19,7 +19,7 @@ export function useFlowNode<T extends Node = Node>(id?: string) {
   const nodeSelector = useCallback(
     (state: ReactFlowState) =>
       state.getNodes().find((n: Node): n is T => n.id === nodeId),
-    [nodeId]
+    [nodeId],
   );
   return useStore<T | undefined>(nodeSelector, shallow);
 }
@@ -31,7 +31,7 @@ export function useFlowNodeInputEdges(id?: string) {
   const inputEdgesSelector = useCallback(
     (state: ReactFlowState) =>
       state.edges.filter((e: Edge) => e.target === nodeId),
-    [nodeId]
+    [nodeId],
   );
   return useStore(inputEdgesSelector, shallow);
 }
@@ -43,7 +43,7 @@ export function useFlowNodeOutputEdges(id?: string) {
   const outputEdgesSelector = useCallback(
     (state: ReactFlowState) =>
       state.edges.filter((e: Edge) => e.source === nodeId),
-    [nodeId]
+    [nodeId],
   );
   return useStore(outputEdgesSelector, shallow);
 }
@@ -55,9 +55,9 @@ export function useFlowNodeEdges(id?: string) {
   const edgesSelector = useCallback(
     (state: ReactFlowState) =>
       state.edges.filter(
-        (e: Edge) => e.source === nodeId || e.target === nodeId
+        (e: Edge) => e.source === nodeId || e.target === nodeId,
       ),
-    [nodeId]
+    [nodeId],
   );
   return useStore(edgesSelector, shallow);
 }
@@ -71,7 +71,7 @@ export function useFlowNodeParents(id?: string) {
         .map((e) => state.getNodes().find((n: Node) => n.id === e.source))
         .filter((n): n is Node => n !== null);
     },
-    [inputEdges]
+    [inputEdges],
   );
   return useStore(parentNodesSelector, shallow);
 }
@@ -123,13 +123,13 @@ export function useFlowNodeUtils<NodeData = any>(id?: string) {
         });
       });
     },
-    [nodeId, reactFlowInstance]
+    [nodeId, reactFlowInstance],
   );
 
   return useMemo(
     () => ({
       setNodeData,
     }),
-    [setNodeData]
+    [setNodeData],
   );
 }

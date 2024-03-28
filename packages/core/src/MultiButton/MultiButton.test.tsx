@@ -1,9 +1,8 @@
-import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "../Button";
-
 import { HvMultiButton } from "./MultiButton";
 
 describe("MultiButton", () => {
@@ -16,7 +15,7 @@ describe("MultiButton", () => {
         <HvButton key="2" startIcon={<LocationPin />}>
           Button2
         </HvButton>
-      </HvMultiButton>
+      </HvMultiButton>,
     );
     const buttons = screen.queryAllByRole("button");
     expect(buttons.length).toBe(2);

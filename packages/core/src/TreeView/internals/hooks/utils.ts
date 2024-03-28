@@ -10,7 +10,7 @@ export const getPreviousNode = (
   instance: TreeViewInstance<
     [UseTreeViewNodesSignature, UseTreeViewExpansionSignature]
   >,
-  nodeId: string
+  nodeId: string,
 ) => {
   const node = instance.getNode(nodeId);
   const siblings = instance.getNavigableChildrenIds(node.parentId);
@@ -35,7 +35,7 @@ export const getNextNode = (
   instance: TreeViewInstance<
     [UseTreeViewExpansionSignature, UseTreeViewNodesSignature]
   >,
-  nodeId: string
+  nodeId: string,
 ) => {
   // If expanded get first child
   if (
@@ -65,7 +65,7 @@ export const getNextNode = (
 export const getLastNode = (
   instance: TreeViewInstance<
     [UseTreeViewExpansionSignature, UseTreeViewNodesSignature]
-  >
+  >,
 ) => {
   let lastNode = instance.getNavigableChildrenIds(null).pop()!;
 
@@ -76,12 +76,12 @@ export const getLastNode = (
 };
 
 export const getFirstNode = (
-  instance: TreeViewInstance<[UseTreeViewNodesSignature]>
+  instance: TreeViewInstance<[UseTreeViewNodesSignature]>,
 ) => instance.getNavigableChildrenIds(null)[0];
 
 export const populateInstance = <T extends TreeViewAnyPluginSignature>(
   instance: TreeViewUsedInstance<T>,
-  methods: T["instance"]
+  methods: T["instance"],
 ) => {
   Object.assign(instance, methods);
 };

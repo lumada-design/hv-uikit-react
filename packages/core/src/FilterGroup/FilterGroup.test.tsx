@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it } from "vitest";
 
 import { HvFilterGroup, HvFilterGroupProps } from "./FilterGroup";
 import { HvFilterGroupValue } from "./types";
@@ -60,7 +60,7 @@ const FilterGroup = ({ emptyValue }: { emptyValue?: boolean }) => {
   const [value, setValue] = useState<HvFilterGroupValue | undefined>(
     emptyValue
       ? undefined
-      : [["category1", 2], [], ["subsubcategory2", "subsubcategory8"]]
+      : [["category1", 2], [], ["subsubcategory2", "subsubcategory8"]],
   );
 
   return (
@@ -209,7 +209,7 @@ describe("FilterGroup", () => {
 
     await user.click(within(leftList).getAllByRole("listitem")[2]);
     const rightItems = within(screen.getAllByRole("list")[1]).getAllByRole(
-      "listitem"
+      "listitem",
     );
     expect(rightItems).toHaveLength(12);
   });

@@ -1,7 +1,6 @@
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { HvBaseProps } from "../types/generic";
-
+import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Login.styles";
 
 export { staticClasses as loginClasses };

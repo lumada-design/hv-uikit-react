@@ -1,13 +1,13 @@
+import styled from "@emotion/styled";
 import {
-  HvPanel,
   HvCheckBox,
+  HvPanel,
   HvRadio,
   HvSwitch,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 import { Level0Good, Level1 } from "@hitachivantara/uikit-react-icons";
-import styled from "@emotion/styled";
 
 const StyledPanel = styled(HvPanel)({
   display: "flex",

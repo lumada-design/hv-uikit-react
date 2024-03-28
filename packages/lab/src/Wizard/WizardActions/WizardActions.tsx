@@ -1,5 +1,4 @@
 import { useCallback, useContext, useEffect, useState } from "react";
-
 import {
   ExtractNames,
   HvBaseProps,
@@ -19,7 +18,7 @@ export interface HvWizardActionsProps extends HvBaseProps {
   /** Function to handle the cancel button. */
   handleClose: (
     event: React.SyntheticEvent,
-    reason?: "escapeKeyDown" | "backdropClick"
+    reason?: "escapeKeyDown" | "backdropClick",
   ) => void;
   /** Function to handle the submit button. Also sends the current context state. */
   handleSubmit: (context: any) => void;
@@ -73,7 +72,7 @@ export const HvWizardActions = ({
       setPages(contextEntries.length);
 
       const validWizard = Object.entries(context).every(
-        ([, value]) => value?.valid
+        ([, value]) => value?.valid,
       );
       if (validWizard !== canSubmit) {
         setCanSubmit(validWizard);
@@ -94,15 +93,15 @@ export const HvWizardActions = ({
             valid: child?.valid !== false,
           },
         }),
-        {} as HvWizardTabs
-      )
+        {} as HvWizardTabs,
+      ),
     );
     setTab(lastPage);
   }, [setTab, lastPage, setContext]);
 
   const handleSubmitInternal = useCallback(
     () => handleSubmit(context),
-    [handleSubmit, context]
+    [handleSubmit, context],
   );
 
   return (

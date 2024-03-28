@@ -59,7 +59,7 @@ export const makeUTCDate = (
   year: number,
   monthIndex: number,
   day: number,
-  hour = 1
+  hour = 1,
 ) => new Date(Date.UTC(year, monthIndex, day, hour));
 
 /**
@@ -163,7 +163,7 @@ export const getNextMonth = (month: number, year: number) => {
  */
 export const getMonthNamesList = (
   locale: string | undefined,
-  representationValue: Intl.DateTimeFormatOptions["month"] = "long"
+  representationValue: Intl.DateTimeFormatOptions["month"] = "long",
 ) => {
   const options = { month: representationValue, timeZone: "UTC" };
 
@@ -201,7 +201,7 @@ export const getWeekdayNamesList = (locale: string) => {
 export const getMonthName = (
   date: Date,
   locale: string,
-  representationValue: Intl.DateTimeFormatOptions["month"] = "long"
+  representationValue: Intl.DateTimeFormatOptions["month"] = "long",
 ) =>
   new Intl.DateTimeFormat(locale, { month: representationValue }).format(date);
 
@@ -217,7 +217,7 @@ export const getFormattedDate = (
   // TODO: fix this
   date: any,
   locale: any,
-  rep: Intl.DateTimeFormatOptions["month"] = "short"
+  rep: Intl.DateTimeFormatOptions["month"] = "short",
 ) =>
   `${date.getDate()} ${getMonthName(date, locale, rep)} ${date.getFullYear()}`;
 
@@ -268,7 +268,7 @@ export const isRange = (date: any): date is DateRangeProp =>
  */
 export const dateInProvidedValueRange = (
   date: any,
-  providedValueRange: any
+  providedValueRange: any,
 ) => {
   const { startDate, endDate } = providedValueRange;
 
@@ -286,7 +286,7 @@ export const dateInProvidedValueRange = (
 export const checkIfDateIsDisabled = (
   date?: string | number | Date | dayjs.Dayjs,
   minimumDate?: string | number | Date | dayjs.Dayjs,
-  maximumDate?: string | number | Date | dayjs.Dayjs
+  maximumDate?: string | number | Date | dayjs.Dayjs,
 ) => {
   if (!minimumDate && !maximumDate) return false;
   const modStartDate = minimumDate

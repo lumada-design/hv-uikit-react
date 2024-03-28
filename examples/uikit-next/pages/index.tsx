@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { HvTypography, HvButton } from "@hitachivantara/uikit-react-core";
+import { HvButton, HvTypography } from "@hitachivantara/uikit-react-core";
 
 import styles from "~/styles/Home.module.css";
 

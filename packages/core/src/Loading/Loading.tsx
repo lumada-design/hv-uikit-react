@@ -1,11 +1,10 @@
-import { HvColorAny, getColor } from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
-import { range } from "../utils/helpers";
-import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-
+import { ExtractNames } from "../utils/classes";
+import { range } from "../utils/helpers";
 import { staticClasses, useClasses } from "./Loading.styles";
 
 export { staticClasses as loadingClasses };
@@ -56,7 +55,7 @@ export const HvLoading = (props: HvLoadingProps) => {
         {
           [classes.hidden]: hidden,
         },
-        className
+        className,
       )}
       {...others}
     >

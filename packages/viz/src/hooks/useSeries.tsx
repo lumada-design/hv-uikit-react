@@ -1,16 +1,12 @@
 import { useMemo } from "react";
-
-import { Arrayable } from "@hitachivantara/uikit-react-core";
-
+import { internal } from "arquero";
 import {
   BarSeriesOption,
   LineSeriesOption,
   PieSeriesOption,
 } from "echarts/charts";
+import { Arrayable } from "@hitachivantara/uikit-react-core";
 
-import { internal } from "arquero";
-
-import { getGroupKey, getMeasure } from "../utils";
 import {
   HvBarChartMeasures,
   HvChartEmptyCellMode,
@@ -23,6 +19,7 @@ import {
   HvEChartsOption,
 } from "../types/common";
 import { BarFullMeasures, LineFullMeasures } from "../types/measures";
+import { getGroupKey, getMeasure } from "../utils";
 
 interface HvSeriesHookProps {
   type: "line" | "bar" | "pie";

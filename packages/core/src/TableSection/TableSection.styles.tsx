@@ -5,8 +5,8 @@ import { paginationClasses } from "../Pagination";
 import { tableCellClasses } from "../Table/TableCell";
 import { tableContainerClasses } from "../Table/TableContainer";
 import { tableHeaderClasses } from "../Table/TableHeader";
-import { createClasses } from "../utils/classes";
 import { tableRowClasses } from "../Table/TableRow";
+import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvTableSection", {
   root: {},

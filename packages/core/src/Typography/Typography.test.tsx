@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-
 import { describe, expect, it } from "vitest";
 
 import { HvTypography, HvTypographyProps } from "./Typography";
@@ -28,7 +27,7 @@ describe("Typography", () => {
     render(
       <HvTypography>
         <button type="button">TEXT</button>
-      </HvTypography>
+      </HvTypography>,
     );
 
     const button = screen.getByRole("button", { name: "TEXT" });
@@ -54,7 +53,7 @@ describe("Typography", () => {
       render(
         <HvTypography component="a" href="/path/to">
           TEXT
-        </HvTypography>
+        </HvTypography>,
       );
 
       const link = screen.getByRole("link", { name: "TEXT" });
@@ -67,7 +66,7 @@ describe("Typography", () => {
       render(
         <HvTypography component={CustomLink} to="/path/to">
           TEXT
-        </HvTypography>
+        </HvTypography>,
       );
 
       const link = screen.getByRole("link", { name: "TEXT" });

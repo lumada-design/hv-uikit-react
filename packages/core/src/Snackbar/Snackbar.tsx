@@ -1,17 +1,17 @@
 import { useCallback } from "react";
 import Slide, { SlideProps } from "@mui/material/Slide";
 import MuiSnackbar, {
+  SnackbarProps as MuiSnackbarProps,
   SnackbarCloseReason,
   SnackbarOrigin,
-  SnackbarProps as MuiSnackbarProps,
 } from "@mui/material/Snackbar";
 
-import { capitalize } from "../utils/helpers";
-import { ExtractNames } from "../utils/classes";
-import { setId } from "../utils/setId";
 import { HvActionGeneric, HvActionsGenericProps } from "../ActionsGeneric";
-import { HvSnackbarContentProps, HvSnackbarContent } from "./SnackbarContent";
+import { ExtractNames } from "../utils/classes";
+import { capitalize } from "../utils/helpers";
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Snackbar.styles";
+import { HvSnackbarContent, HvSnackbarContentProps } from "./SnackbarContent";
 import { HvSnackbarVariant } from "./types";
 
 export { staticClasses as snackbarClasses };
@@ -29,7 +29,7 @@ export interface HvSnackbarProps
    * */
   onClose?: (
     event: Event | React.SyntheticEvent<any, Event>,
-    reason: SnackbarCloseReason
+    reason: SnackbarCloseReason,
   ) => void;
   /** The message to display. */
   label?: React.ReactNode;
@@ -122,7 +122,7 @@ export const HvSnackbar = ({
         direction={transitionDirection}
       />
     ),
-    [container, transitionDirection]
+    [container, transitionDirection],
   );
 
   return (

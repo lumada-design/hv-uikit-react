@@ -13,7 +13,7 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
         if (themeColor === defaultColor.toUpperCase()) {
           result = defaultPalette.replace(
             `${defaultColor}`,
-            `theme.colors.${themeColorName}`
+            `theme.colors.${themeColorName}`,
           );
         }
       });

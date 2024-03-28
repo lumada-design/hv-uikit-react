@@ -1,4 +1,5 @@
-import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
 import * as UtilityClassesStories from "./UtilityClasses.stories";
 
 <Meta of={UtilityClassesStories} />
@@ -21,8 +22,8 @@ npm i -D unocss @hitachivantara/uikit-uno-preset
 
 ```ts
 // vite.config.ts
-import { defineConfig } from "vite";
 import unoCSS from "unocss/vite";
+import { defineConfig } from "vite";
 import { presetHv } from "@hitachivantara/uikit-uno-preset";
 
 export default defineConfig({

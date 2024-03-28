@@ -1,11 +1,8 @@
 import { forwardRef } from "react";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import { HvBaseProps } from "../types/generic";
-
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./Panel.styles";
 
 export { staticClasses as panelClasses };
@@ -37,5 +34,5 @@ export const HvPanel = forwardRef<HTMLDivElement, HvPanelProps>(
         {children}
       </div>
     );
-  }
+  },
 );

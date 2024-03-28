@@ -1,13 +1,13 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import {
-  HvCheckBox,
   HvActionGeneric,
   HvBulkActions,
-  HvPagination,
   HvBulkActionsProps,
+  HvCheckBox,
+  HvPagination,
 } from "@hitachivantara/uikit-react-core";
-import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
+import { Add, Delete, Lock, Preview } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
 const StyledRoot = styled("div")({
@@ -38,7 +38,7 @@ const SampleComponent = ({
   onChange: (
     event: React.ChangeEvent<HTMLInputElement>,
     index: number,
-    checked: boolean
+    checked: boolean,
   ) => void;
 }) => (
   <StyledRoot>
@@ -72,7 +72,7 @@ export const BulkActions = () => {
   });
 
   const [data, setData] = useState<SampleComponentDatum[]>(
-    Array.from(Array(18), (_, i) => addEntry(i))
+    Array.from(Array(18), (_, i) => addEntry(i)),
   );
 
   const [page, setPage] = useState<number>(0);
@@ -106,7 +106,7 @@ export const BulkActions = () => {
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     i: number,
-    checked: boolean
+    checked: boolean,
   ) => {
     const newData = [...data];
     newData[i + pageSize * page].checked = checked;

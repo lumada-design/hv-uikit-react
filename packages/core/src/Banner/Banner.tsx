@@ -6,10 +6,10 @@ import Snackbar, {
 } from "@mui/material/Snackbar";
 
 import { HvActionsGenericProps } from "../ActionsGeneric";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { useClasses, staticClasses } from "./Banner.styles";
+import { staticClasses, useClasses } from "./Banner.styles";
 import {
   HvBannerContent,
   HvBannerContentProps,
@@ -112,7 +112,7 @@ export const HvBanner = (props: HvBannerProps) => {
         direction={transitionDirection}
       />
     ),
-    [container, transitionDirection]
+    [container, transitionDirection],
   );
 
   return (

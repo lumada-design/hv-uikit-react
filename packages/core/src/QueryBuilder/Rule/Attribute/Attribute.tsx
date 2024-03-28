@@ -1,9 +1,8 @@
-import { useMemo, memo } from "react";
+import { memo, useMemo } from "react";
 
 import { HvDropdown } from "../../../Dropdown";
-
-import { isBigList } from "../../utils";
 import { useQueryBuilderContext } from "../../Context";
+import { isBigList } from "../../utils";
 
 export interface AttributeProps {
   id: React.Key;

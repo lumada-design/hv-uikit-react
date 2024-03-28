@@ -1,15 +1,12 @@
 import React from "react";
-
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography, HvTypographyProps } from "../Typography";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./EmptyState.styles";
 
 export { staticClasses as emptyStateClasses };
@@ -56,7 +53,7 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
   const renderNode = (
     variant?: HvTypographyProps["variant"],
     node?: React.ReactNode,
-    style?: string
+    style?: string,
   ) =>
     node && (
       <HvTypography component="div" variant={variant} className={style}>
@@ -78,14 +75,14 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
           {
             [classes.containerMessageOnly]: messageOnly,
           },
-          onlyXs && messageOnly && css({ flexDirection: "row" })
+          onlyXs && messageOnly && css({ flexDirection: "row" }),
         )}
       >
         <div className={classes.iconContainer}>{icon}</div>
         <div
           className={cx(
             classes.textContainer,
-            upSm && css({ marginLeft: theme.space.xs })
+            upSm && css({ marginLeft: theme.space.xs }),
           )}
         >
           {renderNode("title4", title, classes.titleContainer)}

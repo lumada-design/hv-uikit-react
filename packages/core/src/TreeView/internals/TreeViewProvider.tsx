@@ -1,10 +1,10 @@
 import { createContext, useContext } from "react";
 
-import { TreeViewAnyPluginSignature, TreeViewInstance } from "./types";
 import { DescendantProvider } from "./DescendantProvider";
+import { TreeViewAnyPluginSignature, TreeViewInstance } from "./types";
 
 export interface TreeViewContextValue<
-  TPlugins extends readonly TreeViewAnyPluginSignature[]
+  TPlugins extends readonly TreeViewAnyPluginSignature[],
 > {
   treeId: string | undefined;
   instance: TreeViewInstance<TPlugins> | null;
@@ -35,11 +35,11 @@ export const DEFAULT_TREE_VIEW_CONTEXT_VALUE: TreeViewContextValue<any> = {
  * @ignore - internal component.
  */
 export const TreeViewContext = createContext<TreeViewContextValue<any>>(
-  DEFAULT_TREE_VIEW_CONTEXT_VALUE
+  DEFAULT_TREE_VIEW_CONTEXT_VALUE,
 );
 
 export interface TreeViewProviderProps<
-  TPlugins extends readonly TreeViewAnyPluginSignature[]
+  TPlugins extends readonly TreeViewAnyPluginSignature[],
 > {
   value: TreeViewContextValue<TPlugins>;
   children: React.ReactNode;
@@ -51,9 +51,9 @@ export interface TreeViewProviderProps<
  * @ignore - do not document.
  */
 export const TreeViewProvider = <
-  TPlugins extends readonly TreeViewAnyPluginSignature[]
+  TPlugins extends readonly TreeViewAnyPluginSignature[],
 >(
-  props: TreeViewProviderProps<TPlugins>
+  props: TreeViewProviderProps<TPlugins>,
 ) => {
   const { value, children } = props;
 
@@ -65,5 +65,5 @@ export const TreeViewProvider = <
 };
 
 export const useTreeViewContext = <
-  TPlugins extends readonly TreeViewAnyPluginSignature[]
+  TPlugins extends readonly TreeViewAnyPluginSignature[],
 >() => useContext(TreeViewContext) as TreeViewContextValue<TPlugins>;

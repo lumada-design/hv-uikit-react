@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { css } from "@emotion/css";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
-import { css } from "@emotion/css";
 import {
   HvBaseCheckBox,
   HvCheckBox,
@@ -179,7 +179,7 @@ export const ExternalErrorMessage: StoryObj<HvCheckBoxProps> = {
                   setFirstCheckboxErrorMessage(null);
                 } else if (!checked) {
                   setFirstCheckboxErrorMessage(
-                    "You must check the first checkbox"
+                    "You must check the first checkbox",
                   );
                 }
               }}
@@ -192,7 +192,7 @@ export const ExternalErrorMessage: StoryObj<HvCheckBoxProps> = {
               aria-errormessage="secondCheckbox-error"
               onChange={() => {
                 setSecondCheckboxErrorMessage(
-                  "No way for the second checkbox to be valid! I told you!"
+                  "No way for the second checkbox to be valid! I told you!",
                 );
               }}
               label="Second Checkbox"

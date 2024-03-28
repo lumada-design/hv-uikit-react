@@ -1,8 +1,7 @@
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
-import { useClasses, staticClasses } from "./Actions.styles";
+import { staticClasses, useClasses } from "./Actions.styles";
 
 export { staticClasses as headerActionsClasses };
 

@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
-import { ServerPaginationProps, delay, useServerPagination } from "../utils";
-import { DetailsViewEntry, createEntry } from "./utils";
+import { delay, ServerPaginationProps, useServerPagination } from "../utils";
+import { createEntry, DetailsViewEntry } from "./utils";
 
 // --- Data ---
 
@@ -57,7 +57,7 @@ export const useModelData = () => {
 
       return model;
     },
-    { suspense: true }
+    { suspense: true },
   );
 };
 // #endregion

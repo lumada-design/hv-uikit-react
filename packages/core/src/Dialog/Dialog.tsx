@@ -3,13 +3,13 @@ import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { getElementById } from "../utils/document";
-import { ExtractNames } from "../utils/classes";
-import { setId } from "../utils/setId";
 import { useTheme } from "../hooks/useTheme";
-import { staticClasses, useClasses } from "./Dialog.styles";
-import { DialogContext } from "./context";
 import { HvIconButton } from "../IconButton";
+import { ExtractNames } from "../utils/classes";
+import { getElementById } from "../utils/document";
+import { setId } from "../utils/setId";
+import { DialogContext } from "./context";
+import { staticClasses, useClasses } from "./Dialog.styles";
 
 export { staticClasses as dialogClasses };
 
@@ -106,7 +106,7 @@ export const HvDialog = (props: HvDialogProps) => {
             variant && cx(classes.statusBar, classes[variant]),
             {
               [classes.fullscreen]: fullscreen,
-            }
+            },
           ),
         },
       }}

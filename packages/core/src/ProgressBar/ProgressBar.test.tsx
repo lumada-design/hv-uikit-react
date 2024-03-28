@@ -1,6 +1,6 @@
-import { describe, it } from "vitest";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, it } from "vitest";
 
 import { HvProgressBar } from "./ProgressBar";
 import { ProgressBarSimulator } from "./ProgressBarSimulator";
@@ -18,7 +18,7 @@ describe(
               "aria-busy": false,
               "aria-live": "polite",
             }}
-          />
+          />,
         );
 
         const progressBar = await findByRole("progressbar");
@@ -40,7 +40,7 @@ describe(
               "aria-busy": false,
               "aria-live": "polite",
             }}
-          />
+          />,
         );
         const progressBar = await findByRole("progressbar");
         await findByText("0%");
@@ -61,7 +61,7 @@ describe(
               "aria-busy": false,
               "aria-live": "polite",
             }}
-          />
+          />,
         );
         const progressBar = await findByRole("progressbar");
         await findByText("50%");
@@ -82,7 +82,7 @@ describe(
               "aria-busy": false,
               "aria-live": "polite",
             }}
-          />
+          />,
         );
         const progressBar = await findByRole("progressbar");
         await findByText("100%");
@@ -103,7 +103,7 @@ describe(
               "aria-busy": false,
               "aria-live": "polite",
             }}
-          />
+          />,
         );
         const progressBar = await findByRole("progressbar");
         await findByText("0%");
@@ -124,7 +124,7 @@ describe(
               "aria-busy": false,
               "aria-live": "polite",
             }}
-          />
+          />,
         );
         const progressBar = await findByRole("progressbar");
         await findByText("0%");
@@ -147,7 +147,7 @@ describe(
               "aria-busy": false,
               "aria-live": "polite",
             }}
-          />
+          />,
         );
         await findByRole("progressbar");
 
@@ -161,7 +161,7 @@ describe(
     describe("Dynamic Determinate Value Tests", () => {
       it("completed progress bar", async () => {
         const { container, findByRole, findByText } = render(
-          <ProgressBarSimulator inc={(v) => v + 75} ariaLabel="Progress Bar" />
+          <ProgressBarSimulator inc={(v) => v + 75} ariaLabel="Progress Bar" />,
         );
 
         const progressBar = await findByRole("progressbar");
@@ -181,7 +181,7 @@ describe(
             inc={(v) => v + 15}
             ariaLabel="Progress Bar"
             error={30}
-          />
+          />,
         );
 
         const progressBar = await findByRole("progressbar");
@@ -195,5 +195,5 @@ describe(
       });
     });
   },
-  { timeout: 30000 }
+  { timeout: 30000 },
 );

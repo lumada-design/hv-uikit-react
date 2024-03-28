@@ -1,11 +1,10 @@
 import { forwardRef } from "react";
 
-import { HvBaseProps } from "../types/generic";
+import { HvButton, HvButtonProps } from "../Button";
 import { HvPaginationProps } from "../Pagination";
 import { HvStack } from "../Stack";
-import { HvButton, HvButtonProps } from "../Button";
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
 import { useClasses } from "./Carousel.styles";
 
 interface HvCarouselThumbnailsProps
@@ -15,7 +14,7 @@ interface HvCarouselThumbnailsProps
   classes?: ExtractNames<typeof useClasses>;
   onThumbnailClick?: (
     event: React.MouseEvent<HTMLButtonElement>,
-    index: number
+    index: number,
   ) => void;
   thumbnailProps?: Partial<HvButtonProps>;
   showDots?: boolean;

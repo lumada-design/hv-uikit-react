@@ -4,7 +4,7 @@ export interface TreeViewEventLookupElement {
 
 export type TreeViewEventListener<E extends TreeViewEventLookupElement> = (
   params: E["params"],
-  event: MuiEvent<{}>
+  event: MuiEvent<{}>,
 ) => void;
 
 export type MuiBaseEvent =

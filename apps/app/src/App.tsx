@@ -2,12 +2,13 @@ import { RouterProvider } from "react-router-dom";
 import {
   ds3,
   ds5,
-  pentahoPlus,
   HvProvider,
+  pentahoPlus,
 } from "@hitachivantara/uikit-react-core";
 
-import "~/lib/i18n";
 import { router } from "~/lib/routes";
+
+import "~/lib/i18n";
 
 const App = () => {
   return (

@@ -1,28 +1,27 @@
 import {
-  useCallback,
-  useMemo,
-  useRef,
-  useEffect,
-  forwardRef,
   Children,
   cloneElement,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
 } from "react";
 import { useForkRef } from "@mui/material/utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvBaseProps } from "../types/generic";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useControlled } from "../hooks/useControlled";
-import { multiSelectionEventHandler } from "../utils/multiSelectionEventHandler";
-import { isKey } from "../utils/keyboardUtils";
-import { setId } from "../utils/setId";
 import { HvFormElement, HvFormStatus } from "../Forms/FormElement";
-import { ExtractNames } from "../utils/classes";
-import { HvLabel } from "../Forms/Label";
 import { HvInfoMessage } from "../Forms/InfoMessage";
+import { HvLabel } from "../Forms/Label";
 import { HvWarningText } from "../Forms/WarningText";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListContainer } from "../ListContainer";
-
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { isKey } from "../utils/keyboardUtils";
+import { multiSelectionEventHandler } from "../utils/multiSelectionEventHandler";
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./SelectionList.styles";
 
 export { staticClasses as selectionListClasses };
@@ -88,7 +87,7 @@ export interface HvSelectionListProps
 
 const getValueFromSelectedChildren = (
   children: React.ReactNode,
-  multiple: boolean
+  multiple: boolean,
 ) => {
   const selectedValues = Children.toArray(children)
     .map((child: any) => {
@@ -151,12 +150,12 @@ export const HvSelectionList = forwardRef<
       ? defaultValue
       : // when uncontrolled and no default value is given,
         // extract the initial selected values from the children own state
-        () => getValueFromSelectedChildren(children, multiple)
+        () => getValueFromSelectedChildren(children, multiple),
   );
 
   const [validationState, setValidationState] = useControlled(
     status,
-    "standBy"
+    "standBy",
   );
 
   const [validationMessage] = useControlled(statusMessage, "Required");
@@ -217,7 +216,7 @@ export const HvSelectionList = forwardRef<
     (
       index: number,
       childOnClick: (e: React.MouseEvent) => void,
-      evt: React.MouseEvent
+      evt: React.MouseEvent,
     ) => {
       childOnClick?.(evt);
 
@@ -230,7 +229,7 @@ export const HvSelectionList = forwardRef<
             selectionAnchor,
             allValues,
             selectedState,
-            undefined
+            undefined,
           );
         } else {
           newValue =
@@ -266,7 +265,7 @@ export const HvSelectionList = forwardRef<
       setValue,
       singleSelectionToggle,
       selectionAnchor,
-    ]
+    ],
   );
 
   const modifiedChildren = useMemo(() => {

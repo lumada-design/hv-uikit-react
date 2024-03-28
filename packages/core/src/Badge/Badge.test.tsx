@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import { Alert } from "@hitachivantara/uikit-react-icons";
 
 import { HvBadge } from "./Badge";
@@ -42,7 +42,7 @@ describe("Badge", () => {
         count={100}
         showCount
         icon={<Alert role="img" aria-label="Alert" />}
-      />
+      />,
     );
     expect(screen.queryByText("99+")).toBeInTheDocument();
     expect(screen.getByRole("img", { name: "Alert" })).toBeInTheDocument();

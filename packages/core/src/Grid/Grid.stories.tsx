@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvTypography,
   HvGrid,
   HvGridProps,
+  HvTypography,
   theme,
   useWidth,
 } from "@hitachivantara/uikit-react-core";

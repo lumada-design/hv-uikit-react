@@ -1,9 +1,9 @@
 import {
-  makePropGetter,
-  useGetLatest,
   Hooks,
+  makePropGetter,
   PropGetter,
   TableCommonProps,
+  useGetLatest,
 } from "react-table";
 import { theme } from "@hitachivantara/uikit-styles";
 
@@ -29,7 +29,7 @@ export interface UseHvTableStickyHooks<D extends object> {
 
 export interface UseHvTableStickyTableInstance<D extends object> {
   getTableHeadProps: (
-    propGetter?: HvTableHeadPropGetter<D>
+    propGetter?: HvTableHeadPropGetter<D>,
   ) => UseHvTableStickyTableHeadProps;
 
   totalRight?: number;
@@ -57,7 +57,7 @@ export interface UseHvTableStickyCellProps {
 }
 
 export type UseHvTableSticky = (<D extends object = Record<string, unknown>>(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####
@@ -172,7 +172,7 @@ const useInstanceHook = (instance) => {
     instance.getHooks().getTableHeadProps,
     {
       instance: getInstance(),
-    }
+    },
   );
 };
 

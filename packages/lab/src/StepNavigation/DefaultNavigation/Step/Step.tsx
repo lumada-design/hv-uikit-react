@@ -1,16 +1,16 @@
 import {
-  Level0Good,
-  Level3Bad,
-  HourGlass,
-} from "@hitachivantara/uikit-react-icons";
-import {
-  HvAvatarSize,
-  HvButtonProps,
-  HvBaseProps,
   ExtractNames,
   HvAvatar,
+  HvAvatarSize,
+  HvBaseProps,
   HvButton,
+  HvButtonProps,
 } from "@hitachivantara/uikit-react-core";
+import {
+  HourGlass,
+  Level0Good,
+  Level3Bad,
+} from "@hitachivantara/uikit-react-icons";
 
 import { getColor, getSemantic } from "../utils";
 import { useClasses } from "./Step.styles";
@@ -99,7 +99,7 @@ export const HvStep = ({
         {
           [classes.notCurrent]: state !== "Current",
         },
-        className
+        className,
       )}
     >
       <HvButton

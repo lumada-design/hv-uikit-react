@@ -1,13 +1,12 @@
 import React, {
+  HTMLAttributes,
   SyntheticEvent,
   useCallback,
-  useMemo,
-  HTMLAttributes,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
-
 import {
   ExtractNames,
   HvBaseProps,
@@ -131,7 +130,7 @@ export const HvBlade = (props: HvBladeProps) => {
 
   const [isExpanded, setIsExpanded] = useControlled(
     expanded,
-    Boolean(defaultExpanded)
+    Boolean(defaultExpanded),
   );
 
   const handleAction = useCallback(
@@ -146,7 +145,7 @@ export const HvBlade = (props: HvBladeProps) => {
       }
       return false;
     },
-    [disabled, onChange, isExpanded, setIsExpanded]
+    [disabled, onChange, isExpanded, setIsExpanded],
   );
 
   const handleClick = useCallback(
@@ -155,7 +154,7 @@ export const HvBlade = (props: HvBladeProps) => {
       event.preventDefault();
       event.stopPropagation();
     },
-    [handleAction]
+    [handleAction],
   );
 
   const handleKeyDown = useCallback(
@@ -185,7 +184,7 @@ export const HvBlade = (props: HvBladeProps) => {
         event.stopPropagation();
       }
     },
-    [handleAction]
+    [handleAction],
   );
 
   const id = useUniqueId(idProp);
@@ -255,7 +254,7 @@ export const HvBlade = (props: HvBladeProps) => {
       });
       resizeObserver.observe(
         // using the blade's container as reference max-width is more stable
-        bladeRef.current.parentElement ?? bladeRef.current
+        bladeRef.current.parentElement ?? bladeRef.current,
       );
       return () => {
         resizeObserver.disconnect();

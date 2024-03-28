@@ -1,7 +1,7 @@
-import { Header } from "../Header";
 import { Center } from "../Center";
-import { Grid } from "../Grid";
 import { Footer } from "../Footer";
+import { Grid } from "../Grid";
+import { Header } from "../Header";
 
 const Welcome = () => (
   <>

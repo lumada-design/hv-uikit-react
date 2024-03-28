@@ -10,7 +10,7 @@ export const getColor = (state: HvStepProps["state"]) =>
     Current: theme.colors.secondary ?? "secondary",
     Disabled: theme.colors.secondary_60 ?? "secondary_60",
     Enabled: theme.colors.secondary ?? "secondary",
-  }[state]);
+  })[state];
 
 export const getSemantic = (state: HvStepProps["state"]) =>
   ({
@@ -20,7 +20,7 @@ export const getSemantic = (state: HvStepProps["state"]) =>
     Current: "secondary",
     Disabled: "secondary_60",
     Enabled: "secondary",
-  }[state]);
+  })[state];
 
 const EXTRA_SMALL = { container: 32, avatar: 24 };
 const SMALL = { container: 40, avatar: 32 };

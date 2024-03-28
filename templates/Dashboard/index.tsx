@@ -1,6 +1,6 @@
 import { Suspense, useState, useTransition } from "react";
-import { useDebounce } from "usehooks-ts";
 import { css } from "@emotion/css";
+import { useDebounce } from "usehooks-ts";
 import {
   HvButton,
   HvGrid,
@@ -18,10 +18,10 @@ import {
   HvVizProvider,
 } from "@hitachivantara/uikit-react-viz";
 
-import { GridPanel } from "./GridPanel";
-import { Map as MapComponent } from "./Map";
-import { Kpi } from "./Kpi";
 import { useServerData } from "./data";
+import { GridPanel } from "./GridPanel";
+import { Kpi } from "./Kpi";
+import { Map as MapComponent } from "./Map";
 
 interface ButtonsProps extends HvMultiButtonProps {
   labels: string[];

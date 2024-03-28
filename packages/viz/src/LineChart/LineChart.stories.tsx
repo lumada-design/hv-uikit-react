@@ -1,20 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import {
-  HvDropDownMenu,
-  HvDropdown,
-  HvListValue,
-  HvTypography,
-  HvCheckBox,
-  Random,
-  useTheme,
-} from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import { loadArrow } from "arquero";
-
-import { emptyCellMode } from "../types/generic";
+import {
+  HvCheckBox,
+  HvDropdown,
+  HvDropDownMenu,
+  HvListValue,
+  HvTypography,
+  Random,
+  useTheme,
+} from "@hitachivantara/uikit-react-core";
 
 import { vizDecorator } from "../BaseChart/stories/utils";
+import { emptyCellMode } from "../types/generic";
 import { HvLineChart, HvLineChartProps } from "./LineChart";
 import { chartData } from "./mockData";
 
@@ -120,7 +119,7 @@ export const WithArea: StoryObj<HvLineChartProps> = {
             [
               5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119,
               2146,
-            ]
+            ],
           )}
         groupBy="Month"
         measures="Sales Target"
@@ -261,7 +260,7 @@ export const CustomMultipleLinesChart: StoryObj<HvLineChartProps> = {
         { value: "portugal", label: "Portugal", selected: true },
         { value: "spain", label: "Spain" },
       ],
-      []
+      [],
     );
 
     const timePeriods = useMemo(
@@ -269,7 +268,7 @@ export const CustomMultipleLinesChart: StoryObj<HvLineChartProps> = {
         { value: 0, label: "Last 0.5h", selected: true },
         { value: 1, label: "Last 1.5h" },
       ],
-      []
+      [],
     );
 
     return (
@@ -476,7 +475,7 @@ export const HorizontalRangeSlider: StoryObj<HvLineChartProps> = {
       Array.from(Array(num).keys()).map((i) =>
         new Date(new Date(startDate).setDate(startDate.getDate() + i))
           .toISOString()
-          .slice(0, 10)
+          .slice(0, 10),
       );
 
     const generateValues = (num = 10, start = 100, inc = 1) => {
@@ -521,7 +520,7 @@ export const WithIntervalUpdates: StoryObj<HvLineChartProps> = {
       Array.from(Array(num).keys()).map((i) =>
         new Date(new Date(initialDate).setDate(initialDate.getDate() + i))
           .toISOString()
-          .slice(0, 10)
+          .slice(0, 10),
       );
 
     const generateValues = (num = 10, start = 200, inc = 8) => {
@@ -556,7 +555,7 @@ export const WithIntervalUpdates: StoryObj<HvLineChartProps> = {
         const intervalValues = values.current.slice();
         intervalValues.splice(0, 1);
         values.current = intervalValues.concat(
-          generateValues(1, intervalValues[intervalValues.length])
+          generateValues(1, intervalValues[intervalValues.length]),
         );
 
         setData(generateData());
@@ -590,7 +589,7 @@ export const ArrowData: StoryObj<HvLineChartProps> = {
     async () => ({
       // @ts-ignore
       data: await loadArrow(
-        "https://lumada-design.github.io/assets/steelwheels.arrow"
+        "https://lumada-design.github.io/assets/steelwheels.arrow",
       ),
     }),
   ],
@@ -609,7 +608,7 @@ export const ArrowData: StoryObj<HvLineChartProps> = {
         { label: "Territory", value: "Territory", selected: true },
         { label: "Country", value: "Country" },
       ],
-      []
+      [],
     );
 
     return (

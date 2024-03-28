@@ -1,13 +1,12 @@
-import { HvBaseProps } from "../types/generic";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
-import { Breakpoint, Spacing } from "./types";
 import {
   getContainerStyle,
   staticClasses,
   useClasses,
 } from "./SimpleGrid.styles";
+import { Breakpoint, Spacing } from "./types";
 
 export { staticClasses as simpleGridClasses };
 

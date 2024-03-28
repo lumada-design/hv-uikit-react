@@ -12,5 +12,5 @@ export const { staticClasses, useClasses } = createClasses(
     closeButton: {
       display: "none",
     },
-  }
+  },
 );

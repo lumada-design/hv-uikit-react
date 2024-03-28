@@ -11,7 +11,7 @@ export const pathWithSubMenu = (
   listRoute: any,
   maxVisible: number,
   onClick?: (event: React.MouseEvent<HTMLElement>, data: any) => void,
-  dropDownMenuProps?: Partial<HvDropDownMenuProps>
+  dropDownMenuProps?: Partial<HvDropDownMenuProps>,
 ) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
@@ -31,7 +31,7 @@ export const pathWithSubMenu = (
       dataList={subMenuList}
       {...dropDownMenuProps}
       onClick={onClick != null ? handleClick : undefined}
-    />
+    />,
   );
 
   return listRoute;

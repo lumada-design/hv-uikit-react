@@ -1,30 +1,30 @@
 import * as React from "react";
-import { useForkRef } from "@mui/material/utils";
 import { EventHandlers } from "@mui/base/utils";
+import { useForkRef } from "@mui/material/utils";
 
+import { TREE_VIEW_CORE_PLUGINS } from "../corePlugins";
 import {
+  DEFAULT_TREE_VIEW_CONTEXT_VALUE,
+  TreeViewContextValue,
+} from "../TreeViewProvider";
+import {
+  ConvertPluginsIntoSignatures,
+  MergePluginsProperty,
   TreeViewAnyPluginSignature,
   TreeViewInstance,
   TreeViewPlugin,
-  ConvertPluginsIntoSignatures,
-  MergePluginsProperty,
 } from "../types";
-import {
-  TreeViewContextValue,
-  DEFAULT_TREE_VIEW_CONTEXT_VALUE,
-} from "../TreeViewProvider";
-import { TREE_VIEW_CORE_PLUGINS } from "../corePlugins";
 import { useTreeViewModels } from "./useTreeViewModels";
 
 export type UseTreeViewParameters<
-  TPlugins extends readonly TreeViewPlugin<TreeViewAnyPluginSignature>[]
+  TPlugins extends readonly TreeViewPlugin<TreeViewAnyPluginSignature>[],
 > = {
   rootRef?: React.Ref<HTMLUListElement> | undefined;
   plugins: TPlugins;
 } & MergePluginsProperty<ConvertPluginsIntoSignatures<TPlugins>, "params">;
 
 export type UseTreeViewDefaultizedParameters<
-  TPlugins extends readonly TreeViewPlugin<TreeViewAnyPluginSignature>[]
+  TPlugins extends readonly TreeViewPlugin<TreeViewAnyPluginSignature>[],
 > = {
   rootRef?: React.Ref<HTMLUListElement> | undefined;
   plugins: TPlugins;
@@ -49,19 +49,19 @@ export interface UseTreeViewRootSlotProps
 }
 
 export interface UseTreeViewReturnValue<
-  TPlugins extends readonly TreeViewAnyPluginSignature[]
+  TPlugins extends readonly TreeViewAnyPluginSignature[],
 > {
   getRootProps: <TOther extends EventHandlers = {}>(
-    otherHandlers?: TOther
+    otherHandlers?: TOther,
   ) => UseTreeViewRootSlotProps;
   rootRef: React.RefCallback<HTMLUListElement> | null;
   contextValue: TreeViewContextValue<TPlugins>;
 }
 
 export const useTreeView = <
-  Plugins extends readonly TreeViewPlugin<TreeViewAnyPluginSignature>[]
+  Plugins extends readonly TreeViewPlugin<TreeViewAnyPluginSignature>[],
 >(
-  inParams: UseTreeViewParameters<Plugins>
+  inParams: UseTreeViewParameters<Plugins>,
 ): UseTreeViewReturnValue<ConvertPluginsIntoSignatures<Plugins>> => {
   const plugins = [...TREE_VIEW_CORE_PLUGINS, ...inParams.plugins];
   type Signatures = ConvertPluginsIntoSignatures<typeof plugins>;
@@ -76,10 +76,10 @@ export const useTreeView = <
 
   const models = useTreeViewModels(
     plugins,
-    params as MergePluginsProperty<Signatures, "defaultizedParams">
+    params as MergePluginsProperty<Signatures, "defaultizedParams">,
   );
   const instanceRef = React.useRef<TreeViewInstance<Signatures>>(
-    {} as TreeViewInstance<Signatures>
+    {} as TreeViewInstance<Signatures>,
   );
   const instance = instanceRef.current;
   const innerRootRef = React.useRef(null);
@@ -92,8 +92,8 @@ export const useTreeView = <
         Object.assign(
           temp,
           plugin.getInitialState(
-            params as UseTreeViewDefaultizedParameters<any>
-          )
+            params as UseTreeViewDefaultizedParameters<any>,
+          ),
         );
       }
     });
@@ -102,7 +102,7 @@ export const useTreeView = <
   });
 
   const rootPropsGetters: (<TOther extends EventHandlers = {}>(
-    otherHandlers: TOther
+    otherHandlers: TOther,
   ) => React.HTMLAttributes<HTMLUListElement>)[] = [];
   let contextValue: TreeViewContextValue<Signatures> =
     DEFAULT_TREE_VIEW_CONTEXT_VALUE;
@@ -130,7 +130,7 @@ export const useTreeView = <
   plugins.forEach(runPlugin);
 
   const getRootProps = <TOther extends EventHandlers = {}>(
-    otherHandlers: TOther = {} as TOther
+    otherHandlers: TOther = {} as TOther,
   ) => {
     const rootProps: UseTreeViewRootSlotProps = {
       role: "tree",

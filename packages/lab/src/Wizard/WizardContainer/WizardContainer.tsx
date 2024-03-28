@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   ExtractNames,
   HvBaseProps,
@@ -22,7 +21,7 @@ export interface HvWizardContainerProps
   /** Function executed on close. */
   handleClose: (
     event: React.SyntheticEvent,
-    reason?: "escapeKeyDown" | "backdropClick"
+    reason?: "escapeKeyDown" | "backdropClick",
   ) => void;
   /** A Jss Object used to override or extend the styles applied to the empty state Wizard. */
   classes?: HvWizardContainerClasses;

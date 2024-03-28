@@ -6,7 +6,7 @@
 //    so the stacktrace shows the caller
 // 4. given that, the hook signature was simplified, no need for metadata
 
-import { useRef, useState, useCallback, SetStateAction } from "react";
+import { SetStateAction, useCallback, useRef, useState } from "react";
 
 export const useControlled = (controlledProp: any, initialState: any) => {
   const { current: isControlled } = useRef(controlledProp !== undefined);
@@ -23,7 +23,7 @@ export const useControlled = (controlledProp: any, initialState: any) => {
         "Elements should not switch from uncontrolled to controlled (or vice versa).",
         "Decide between using a controlled or uncontrolled element for the lifetime of the component.",
         "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`.",
-      ].join("\n")
+      ].join("\n"),
     );
   }
 
@@ -33,7 +33,7 @@ export const useControlled = (controlledProp: any, initialState: any) => {
         setValue(newValue);
       }
     },
-    [isControlled]
+    [isControlled],
   );
 
   return [value, setValueIfUncontrolled];

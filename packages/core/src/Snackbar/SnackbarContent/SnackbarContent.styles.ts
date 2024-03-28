@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "../../utils/classes";
 import { actionsGenericClasses } from "../../ActionsGeneric";
+import { createClasses } from "../../utils/classes";
 
 export const { useClasses, staticClasses } = createClasses(
   "HvSnackbar-Content",
@@ -56,5 +56,5 @@ export const { useClasses, staticClasses } = createClasses(
       },
     },
     iconVariant: {},
-  }
+  },
 );

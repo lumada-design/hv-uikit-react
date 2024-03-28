@@ -2,7 +2,6 @@ import { forwardRef } from "react";
 
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
 import { staticClasses, useClasses } from "./TableContainer.styles";
 
 export { staticClasses as tableContainerClasses };
@@ -40,5 +39,5 @@ export const HvTableContainer = forwardRef<HTMLElement, HvTableContainerProps>(
         {...others}
       />
     );
-  }
+  },
 );

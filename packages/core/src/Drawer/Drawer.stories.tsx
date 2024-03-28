@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { waitFor, screen, fireEvent } from "@storybook/testing-library";
+import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvButton,
   HvDialogActions,
@@ -9,8 +9,8 @@ import {
   HvDialogTitle,
   HvDrawer,
   HvDrawerProps,
-  HvTypography,
   HvGlobalActions,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvDrawer> = {
@@ -78,7 +78,7 @@ export const Main: StoryObj<HvDrawerProps> = {
                   () => `Cras mattis consectetur purus sit amet fermentum. 
                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. 
                   Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                  Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
+                  Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
                 )
                 .join("\n")}
             </HvTypography>

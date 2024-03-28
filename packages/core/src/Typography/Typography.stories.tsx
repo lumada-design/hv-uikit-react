@@ -3,8 +3,8 @@ import {
   HvBox,
   HvTypography,
   HvTypographyProps,
-  typographyVariants,
   theme,
+  typographyVariants,
 } from "@hitachivantara/uikit-react-core";
 
 export default { title: "Foundation/Typography", component: HvTypography };

@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 
-import { colors } from "../tokens/colors";
 import { makeTheme } from "../makeTheme";
+import { colors } from "../tokens/colors";
 
 const ds3 = makeTheme((theme) => ({
   name: "ds3",
@@ -1273,7 +1273,7 @@ const ds3 = makeTheme((theme) => ({
           "&.HvTableCell-sorted": {
             backgroundImage: `linear-gradient(to right, ${theme.alpha(
               "atmo1",
-              0.4
+              0.4,
             )}, ${theme.alpha("atmo1", 0.4)})`,
           },
         },

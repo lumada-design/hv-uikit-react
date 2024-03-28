@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { useDebounceCallback } from "usehooks-ts";
 import {
   DndContextProps,
   DragOverlay,
@@ -8,6 +7,7 @@ import {
   useDroppable,
 } from "@dnd-kit/core";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
+import { useDebounceCallback } from "usehooks-ts";
 import {
   ExtractNames,
   HvDrawer,
@@ -20,15 +20,15 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Add } from "@hitachivantara/uikit-react-icons";
 
+import { useFlowContext } from "../hooks";
+import { HvFlowNodeGroup } from "../types";
 import { staticClasses, useClasses } from "./Sidebar.styles";
 import { HvFlowSidebarGroup } from "./SidebarGroup";
-import { useFlowContext } from "../hooks";
-import { buildGroups } from "./utils";
 import {
   HvFlowDraggableSidebarGroupItem,
   HvFlowSidebarGroupItem,
 } from "./SidebarGroup/SidebarGroupItem";
-import { HvFlowNodeGroup } from "../types";
+import { buildGroups } from "./utils";
 
 export { staticClasses as flowSidebarClasses };
 
@@ -79,7 +79,7 @@ export const HvFlowSidebar = ({
 
   const unfilteredGroups = useMemo(
     () => buildGroups(nodeGroups, nodeTypes, defaultGroupProps),
-    [nodeGroups, nodeTypes, defaultGroupProps]
+    [nodeGroups, nodeTypes, defaultGroupProps],
   );
 
   const [groups, setGroups] = useState(unfilteredGroups);
@@ -122,7 +122,7 @@ export const HvFlowSidebar = ({
         ? Object.entries(unfilteredGroups).reduce((acc, curr) => {
             // Filter nodes by search
             const filteredNodes = curr[1].nodes.filter((obj) =>
-              obj.label.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+              obj.label.toLocaleLowerCase().includes(value.toLocaleLowerCase()),
             );
             const nodesCount = filteredNodes.length;
 

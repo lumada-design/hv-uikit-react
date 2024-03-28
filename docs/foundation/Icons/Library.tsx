@@ -1,19 +1,19 @@
 import { useMemo, useState } from "react";
+import { css } from "@emotion/css";
 import {
   HvAccordion,
   HvBox,
   HvButton,
   HvDropdown,
   HvInput,
+  HvListValue,
   HvSimpleGrid,
   HvTypography,
-  HvListValue,
 } from "@hitachivantara/uikit-react-core";
 import {
   icons as iconComponentList,
   pictograms as pictogramComponentList,
 } from "@hitachivantara/uikit-react-icons";
-import { css } from "@emotion/css";
 
 import { iconCategories } from "./IconCategories";
 
@@ -91,10 +91,13 @@ const Library = () => {
 
     return Object.keys(iconList)
       .filter((key) => key.toLowerCase().includes(search.toLowerCase()))
-      .reduce((obj, key) => {
-        obj[key] = iconList[key];
-        return obj;
-      }, {} as typeof iconList);
+      .reduce(
+        (obj, key) => {
+          obj[key] = iconList[key];
+          return obj;
+        },
+        {} as typeof iconList,
+      );
   }, [search]);
 
   const handleToggle = (category: IconCategory, open: boolean) => {

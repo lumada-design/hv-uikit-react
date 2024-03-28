@@ -11,5 +11,5 @@ export const { staticClasses, useClasses } = createClasses(
       top: "0px",
       left: "0px",
     },
-  }
+  },
 );

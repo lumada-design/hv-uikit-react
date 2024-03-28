@@ -17,7 +17,7 @@ describe("ColorPicker", () => {
         defaultValue="#de2beb"
         expanded
         showSavedColors={false}
-      />
+      />,
     );
 
     expect(screen.getByText("#de2beb")).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe("ColorPicker", () => {
         expanded
         showSavedColors={false}
         showCustomColors={false}
-      />
+      />,
     );
 
     expect(screen.getByText(/recommended colors/i)).toBeInTheDocument();
@@ -60,7 +60,7 @@ describe("ColorPicker", () => {
         showSavedColors
         showCustomColors
         deleteSavedColorButtonArialLabel="DELETE"
-      />
+      />,
     );
 
     const addButton = screen.getByRole("button");

@@ -1,6 +1,6 @@
-import { mergeConfig } from "vite";
 import { StorybookConfig } from "@storybook/react-vite";
 import remarkGfm from "remark-gfm";
+import { mergeConfig } from "vite";
 
 import viteConfig from "./vite.config";
 

@@ -1,7 +1,7 @@
 import { useCallback } from "react";
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
-import useSWR from "swr";
 import { loadArrow } from "arquero";
+import useSWR from "swr";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 import { DashboardSpecs, LAYOUT_COLS } from "./types";
 
@@ -71,7 +71,7 @@ export const createDataset = ({
 
 export const buildLayout = (
   items: DashboardSpecs["items"],
-  layout?: DashboardSpecs["layout"]
+  layout?: DashboardSpecs["layout"],
 ) => {
   return items.map((node, idx) => {
     const item = layout?.find((x) => x.i === node.id);

@@ -9,8 +9,8 @@ describe("<Calendar /> with minimum configuration", () => {
 
     expect(
       container.getElementsByClassName(
-        "HvComposedNavigation-navigationContainer"
-      )
+        "HvComposedNavigation-navigationContainer",
+      ),
     ).toHaveLength(1);
   });
 });
@@ -23,7 +23,7 @@ describe("<Calendar /> with configurations", () => {
         visibleMonth={selectedDate.getMonth() + 1}
         visibleYear={selectedDate.getFullYear()}
         value={selectedDate}
-      />
+      />,
     );
 
     expect(screen.getByText("January")).toBeInTheDocument();

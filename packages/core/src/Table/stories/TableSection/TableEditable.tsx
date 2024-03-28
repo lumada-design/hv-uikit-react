@@ -150,7 +150,7 @@ const Table = <T extends Data>({
 
   const [newRowDirty, setNewRowDirty] = useState<boolean>(false);
   const [editRows, setEditRows] = useState<{ id: string; dirty: boolean }[]>(
-    []
+    [],
   );
 
   const handleUndoDelete = useCallback(
@@ -163,7 +163,7 @@ const Table = <T extends Data>({
         });
       }
     },
-    [enqueueSnackbar, onRowRestore]
+    [enqueueSnackbar, onRowRestore],
   );
 
   const handleDelete = useCallback(
@@ -180,7 +180,7 @@ const Table = <T extends Data>({
                   onClick={() => {
                     handleUndoDelete(row);
                     setEditRows((prev) =>
-                      prev.filter((r) => r.id !== row.original.id)
+                      prev.filter((r) => r.id !== row.original.id),
                     );
                     closeSnackbar();
                   }}
@@ -203,7 +203,7 @@ const Table = <T extends Data>({
         });
       }
     },
-    [closeSnackbar, enqueueSnackbar, handleUndoDelete, onRowDelete]
+    [closeSnackbar, enqueueSnackbar, handleUndoDelete, onRowDelete],
   );
 
   const handleRequestDelete = useCallback(
@@ -229,7 +229,7 @@ const Table = <T extends Data>({
           ),
         },
       }),
-    [closeSnackbar, enqueueSnackbar, handleDelete]
+    [closeSnackbar, enqueueSnackbar, handleDelete],
   );
 
   const columns: HvTableColumnConfig<T, string>[] = useMemo(
@@ -267,7 +267,7 @@ const Table = <T extends Data>({
         ),
       },
     ],
-    [columnsProp, handleRequestDelete]
+    [columnsProp, handleRequestDelete],
   );
 
   const {
@@ -299,7 +299,7 @@ const Table = <T extends Data>({
       },
       defaultColumn: { Cell: ({ value }) => value || "-" },
     },
-    useHvPagination
+    useHvPagination,
   );
 
   const handleCancelAddRow = () => {
@@ -332,7 +332,7 @@ const Table = <T extends Data>({
   };
 
   const handleAddRow: React.FormEventHandler<HTMLFormElement> = async (
-    event
+    event,
   ) => {
     try {
       event.preventDefault();
@@ -390,7 +390,7 @@ const Table = <T extends Data>({
 
   const handleEditRow = async (
     event: FormEvent<HTMLFormElement>,
-    id: string
+    id: string,
   ) => {
     try {
       event.preventDefault();
@@ -463,8 +463,8 @@ const Table = <T extends Data>({
                                     ...r,
                                     dirty: true,
                                   }
-                                : r
-                            )
+                                : r,
+                            ),
                           );
                           return;
                         }
@@ -603,7 +603,7 @@ export const TableEditable = () => {
 
   const columns: HvTableColumnConfig<AssetEvent, string>[] = useMemo(
     () => getEditableColumns(),
-    []
+    [],
   );
 
   return (

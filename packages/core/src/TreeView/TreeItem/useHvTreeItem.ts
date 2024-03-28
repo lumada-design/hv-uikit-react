@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import { useTreeViewContext } from "../internals/TreeViewProvider";
 import { DefaultTreeViewPlugins } from "../internals/hooks/plugins";
+import { useTreeViewContext } from "../internals/TreeViewProvider";
 
 export function useHvTreeItem(nodeId: string) {
   const { instance, multiSelect } =

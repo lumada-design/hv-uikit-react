@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { HvToggleButton } from "@hitachivantara/uikit-react-core";
 import {
   Delete,
   Duplicate,
@@ -7,7 +8,6 @@ import {
   Share,
   Unlock,
 } from "@hitachivantara/uikit-react-icons";
-import { HvToggleButton } from "@hitachivantara/uikit-react-core";
 
 import { AssetEvent, getColumns, useServerData } from "../storiesUtils";
 import { TableComplete as Table, TableProps } from "./TableComplete";
@@ -30,7 +30,7 @@ const useColumns = () => {
         ),
       },
     ],
-    []
+    [],
   );
 };
 
@@ -42,7 +42,7 @@ export const TableComplete = () => {
   const handleAction: TableProps<AssetEvent>["onAction"] = (
     event,
     action,
-    row
+    row,
   ) => {
     const { original: rowData } = row;
     console.log(`Action ${action.id} on row ${row.id}`, rowData);
@@ -61,7 +61,7 @@ export const TableComplete = () => {
   const handleBulkAction: TableProps<AssetEvent>["onBulkAction"] = (
     event,
     action,
-    selectedRows
+    selectedRows,
   ) => {
     console.log(`Bulk Action ${action.id} on rows`, selectedRows);
     if (action.id === "duplicate") {

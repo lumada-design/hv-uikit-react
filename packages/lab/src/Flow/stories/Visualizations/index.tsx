@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { css } from "@emotion/css";
 import {
   HvButton,
@@ -9,26 +10,25 @@ import {
 import {
   Add,
   Backwards,
+  DataSource,
   LineChartAlt,
   Operation,
-  DataSource,
 } from "@hitachivantara/uikit-react-icons";
 import {
-  HvFlowSidebar,
   HvFlow,
-  HvFlowProps,
   HvFlowControls,
+  HvFlowProps,
+  HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
+// The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
+import { restrictToSample } from "../Base";
 // The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Visualizations
 import { BarChart } from "./BarChart";
+import { data } from "./data";
 import { Filter } from "./Filter";
 import { JsonInput } from "./JsonInput";
 import { LineChart } from "./LineChart";
-import { data } from "./data";
-// The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
-import { restrictToSample } from "../Base";
 
 // Note types
 const nodeTypes = {

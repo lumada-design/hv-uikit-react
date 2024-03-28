@@ -1,12 +1,10 @@
-import { ds3, ds5 } from "@hitachivantara/uikit-styles";
 import { queryHelpers, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
 import { describe, expect, it } from "vitest";
+import { ds3, ds5 } from "@hitachivantara/uikit-styles";
 
 import { useTheme } from "../hooks/useTheme";
 import { createTheme } from "../utils/theme";
-
 import { HvProvider } from "./Provider";
 
 const Main = () => {
@@ -46,14 +44,14 @@ describe("Provider", () => {
         <HvProvider cssTheme="scoped" rootElementId="hv-root">
           <p>Theme provider test</p>
         </HvProvider>
-      </div>
+      </div>,
     );
 
     const theme = queryHelpers.queryByAttribute("data-theme", container, "ds5");
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "dawn"
+      "dawn",
     );
 
     expect(theme).toBeInTheDocument();
@@ -70,14 +68,14 @@ describe("Provider", () => {
         >
           <p>Theme provider test</p>
         </HvProvider>
-      </div>
+      </div>,
     );
 
     const theme = queryHelpers.queryByAttribute("data-theme", container, "ds5");
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "wicked"
+      "wicked",
     );
 
     expect(theme).toBeInTheDocument();
@@ -95,18 +93,18 @@ describe("Provider", () => {
         >
           <p>Theme provider test</p>
         </HvProvider>
-      </div>
+      </div>,
     );
 
     const theme = queryHelpers.queryByAttribute(
       "data-theme",
       container,
-      "custom-theme"
+      "custom-theme",
     );
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "dawn"
+      "dawn",
     );
 
     expect(theme).toBeInTheDocument();
@@ -125,18 +123,18 @@ describe("Provider", () => {
         >
           <p>Theme provider test</p>
         </HvProvider>
-      </div>
+      </div>,
     );
 
     const theme = queryHelpers.queryByAttribute(
       "data-theme",
       container,
-      "custom-theme"
+      "custom-theme",
     );
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "purple"
+      "purple",
     );
 
     expect(theme).toBeInTheDocument();
@@ -153,14 +151,14 @@ describe("Provider", () => {
         >
           <p>Theme provider test</p>
         </HvProvider>
-      </div>
+      </div>,
     );
 
     const theme = queryHelpers.queryByAttribute("data-theme", container, "ds3");
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "dawn"
+      "dawn",
     );
 
     expect(theme).toBeInTheDocument();
@@ -179,18 +177,18 @@ describe("Provider", () => {
         >
           <Main />
         </HvProvider>
-      </div>
+      </div>,
     );
 
     const theme = queryHelpers.queryByAttribute(
       "data-theme",
       container,
-      "custom-theme"
+      "custom-theme",
     );
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "purple"
+      "purple",
     );
 
     expect(theme).toBeInTheDocument();
@@ -203,12 +201,12 @@ describe("Provider", () => {
     const updatedTheme = queryHelpers.queryByAttribute(
       "data-theme",
       container,
-      "ds3"
+      "ds3",
     );
     const updatedMode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "wicked"
+      "wicked",
     );
 
     expect(updatedTheme).toBeInTheDocument();

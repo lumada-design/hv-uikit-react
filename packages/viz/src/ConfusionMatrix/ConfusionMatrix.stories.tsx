@@ -1,8 +1,8 @@
+import { Meta, StoryObj } from "@storybook/react";
 import {
   HvConfusionMatrix,
   HvConfusionMatrixProps,
 } from "@hitachivantara/uikit-react-viz";
-import { Meta, StoryObj } from "@storybook/react";
 
 import { confusionMatrixDecorator } from "../BaseChart/stories/utils";
 
@@ -222,10 +222,10 @@ export const LandscapeFormat: StoryObj<HvConfusionMatrixProps> = {
     }, []);
     const expected = Array.from(
       Array(base.length * base.length),
-      () => base
+      () => base,
     ).flat();
     const matches = Array.from(Array(base.length * base.length), () =>
-      Math.random().toFixed(2)
+      Math.random().toFixed(2),
     ).flat();
 
     return (

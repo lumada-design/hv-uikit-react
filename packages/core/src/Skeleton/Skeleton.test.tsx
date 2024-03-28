@@ -11,7 +11,7 @@ describe("Skeleton", () => {
   it("has the appropriate role when provided", () => {
     render(<HvSkeleton role="progressbar" aria-label="Loading" />);
     expect(
-      screen.getByRole("progressbar", { name: "Loading" })
+      screen.getByRole("progressbar", { name: "Loading" }),
     ).toBeInTheDocument();
   });
 });

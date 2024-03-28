@@ -1,13 +1,13 @@
 import {
-  Alert,
-  DropRightXS,
-  InProgress,
-} from "@hitachivantara/uikit-react-icons";
-import {
   HvButton,
   HvDropdown,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
+import {
+  Alert,
+  DropRightXS,
+  InProgress,
+} from "@hitachivantara/uikit-react-icons";
 
 export default {
   title: "Guides/Styling/Utility Classes",

@@ -1,14 +1,11 @@
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "../../Button";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvListContainer, HvListItem } from "../../ListContainer";
 import { HvOverflowTooltip } from "../../OverflowTooltip";
-
 import { ExtractNames } from "../../utils/classes";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-
 import { NavigationData } from "../VerticalNavigationContext";
-
 import { staticClasses, useClasses } from "./NavigationSlider.styles";
 
 export { staticClasses as verticalNavigationSliderClasses };
@@ -44,21 +41,21 @@ export interface HvVerticalNavigationSliderProps {
    */
   onNavigateToTarget?: (
     event: React.MouseEvent<HTMLLIElement>,
-    item: NavigationData
+    item: NavigationData,
   ) => void;
   /**
    * Triggered when the navigate to child button is clicked.
    */
   onNavigateToChild?: (
     event: React.MouseEvent<HTMLButtonElement>,
-    item: NavigationData
+    item: NavigationData,
   ) => void;
   /** Aria label to apply to the navigate to submenu button on the list items. */
   forwardButtonAriaLabel?: string;
 }
 
 export const HvVerticalNavigationSlider = (
-  props: HvVerticalNavigationSliderProps
+  props: HvVerticalNavigationSliderProps,
 ) => {
   const {
     id,

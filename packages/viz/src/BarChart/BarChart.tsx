@@ -1,36 +1,33 @@
 import { forwardRef } from "react";
-
-import * as echarts from "echarts/core";
+import ReactECharts from "echarts-for-react/lib/core";
 import { BarChart } from "echarts/charts";
 import {
   DatasetComponent,
-  GridComponent,
-  TooltipComponent,
-  LegendComponent,
-  DataZoomSliderComponent,
   DataZoomInsideComponent,
+  DataZoomSliderComponent,
+  GridComponent,
+  LegendComponent,
   MarkLineComponent,
+  TooltipComponent,
 } from "echarts/components";
-import ReactECharts from "echarts-for-react/lib/core";
-
+import * as echarts from "echarts/core";
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
+import { HvBaseChart } from "../BaseChart";
 import {
-  useXAxis,
-  useYAxis,
-  useDataZoom,
-  useGrid,
+  HvChartTooltipClasses,
   useData,
   useDataset,
-  useSeries,
+  useDataZoom,
+  useGrid,
   useLegend,
-  useTooltip,
   useOption,
-  HvChartTooltipClasses,
+  useSeries,
+  useTooltip,
+  useXAxis,
+  useYAxis,
 } from "../hooks";
-
 import { HvBarChartMeasures } from "../types";
-import { HvBaseChart } from "../BaseChart";
 import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
 
 // Register chart components
@@ -145,5 +142,5 @@ export const HvBarChart = forwardRef<ReactECharts, HvBarChartProps>(
     return (
       <HvBaseChart ref={ref} option={option} width={width} height={height} />
     );
-  }
+  },
 );

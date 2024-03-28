@@ -1,10 +1,9 @@
 import { useContext } from "react";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { setId } from "../../utils/setId";
-import { ExtractNames } from "../../utils/classes";
 import { HvTypography, HvTypographyProps } from "../../Typography";
-
+import { ExtractNames } from "../../utils/classes";
+import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../FormElement";
 import { findDescriptors } from "../FormElement/utils/FormUtils";
 import { staticClasses, useClasses } from "./Label.styles";
@@ -66,7 +65,7 @@ export const HvLabel = (props: HvLabelProps) => {
             [classes.labelDisabled]: !!localDisabled,
             [classes.childGutter]: !!(children && label),
           },
-          className
+          className,
         )}
         variant="label"
         component="label"

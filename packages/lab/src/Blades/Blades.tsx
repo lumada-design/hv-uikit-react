@@ -1,16 +1,15 @@
 import React, {
+  Children,
+  cloneElement,
   SyntheticEvent,
   useCallback,
   useMemo,
-  Children,
-  cloneElement,
 } from "react";
-
 import {
   ExtractNames,
   HvBaseProps,
-  useDefaultProps,
   useControlled,
+  useDefaultProps,
 } from "@hitachivantara/uikit-react-core";
 
 import { staticClasses, useClasses } from "./Blades.styles";
@@ -75,7 +74,7 @@ function getExpandedBlades(
   defaultExpanded: number[] | undefined,
   children: React.ReactNode,
   atMostOneExpanded: boolean,
-  atLeastOneExpanded: boolean
+  atLeastOneExpanded: boolean,
 ) {
   const childrenArray = Children.toArray(children);
   const expandedBlades =
@@ -134,8 +133,8 @@ export const HvBlades = (props: HvBladesProps) => {
       defaultExpanded,
       children,
       atMostOneExpanded,
-      atLeastOneExpanded
-    )
+      atLeastOneExpanded,
+    ),
   );
 
   const onChildChangeInterceptor = useCallback(
@@ -143,7 +142,7 @@ export const HvBlades = (props: HvBladesProps) => {
       index: number,
       childOnChange: (event: SyntheticEvent, isExpanded: boolean) => void,
       event: SyntheticEvent,
-      isExpanded: boolean
+      isExpanded: boolean,
     ) => {
       const newValue: number[] = [];
       if (atMostOneExpanded) {
@@ -170,7 +169,7 @@ export const HvBlades = (props: HvBladesProps) => {
       // This will only run if uncontrolled
       setExpanded(newValue);
     },
-    [onChange, expanded, setExpanded, atMostOneExpanded, atLeastOneExpanded]
+    [onChange, expanded, setExpanded, atMostOneExpanded, atLeastOneExpanded],
   );
 
   const modifiedChildren = useMemo(() => {
@@ -193,13 +192,13 @@ export const HvBlades = (props: HvBladesProps) => {
         },
         onChange: (
           event: React.ChangeEvent<HTMLInputElement>,
-          isExpanded: boolean
+          isExpanded: boolean,
         ) =>
           onChildChangeInterceptor(
             i,
             child?.props?.onChange,
             event,
-            isExpanded
+            isExpanded,
           ),
       });
     });

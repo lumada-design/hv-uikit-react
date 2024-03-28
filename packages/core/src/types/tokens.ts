@@ -2,9 +2,9 @@ import type {
   HvAccentColor,
   HvAtmosphereColor,
   HvBaseColor,
+  HvCategoricalColor,
   HvSemanticColor,
   HvSupportColor,
-  HvCategoricalColor,
 } from "@hitachivantara/uikit-styles";
 
 export type HvAccentColorKeys = HvAccentColor;

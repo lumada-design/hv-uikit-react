@@ -1,18 +1,18 @@
 import { useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import {
+  HvButton,
+  HvSection,
+  HvTypography,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+import {
   HvDashboardNode,
   HvFlowNodeFC,
   HvFlowNodeInput,
   HvFlowNodeTypeMeta,
   useFlowContext,
 } from "@hitachivantara/uikit-react-lab";
-import {
-  HvButton,
-  HvSection,
-  HvTypography,
-  theme,
-} from "@hitachivantara/uikit-react-core";
 
 import {
   DASHBOARDS_STORAGE_KEY,

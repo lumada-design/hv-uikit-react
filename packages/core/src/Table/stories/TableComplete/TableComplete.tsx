@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
-import { Ban } from "@hitachivantara/uikit-react-icons";
 import {
   HvActionGeneric,
   HvActionsGeneric,
@@ -29,6 +28,7 @@ import {
   useHvTable,
   useHvTableSticky,
 } from "@hitachivantara/uikit-react-core";
+import { Ban } from "@hitachivantara/uikit-react-icons";
 
 const classes = {
   root: css({}),
@@ -101,13 +101,13 @@ export interface TableProps<T extends object = Record<string, unknown>> {
   onAction?: (
     event: React.SyntheticEvent,
     action: TableAction<T>,
-    row: HvRowInstance<T>
+    row: HvRowInstance<T>,
   ) => void;
   onSelection?: (selectedRowIds: HvTableState<T>["selectedRowIds"]) => void;
   onBulkAction?: (
     event: React.SyntheticEvent,
     action: HvActionGeneric,
-    selectedRows: HvTableInstance<T>["selectedFlatRows"]
+    selectedRows: HvTableInstance<T>["selectedFlatRows"],
   ) => void;
   onUpdate?: (tableParams: HvTableState<T>) => void;
   onData?: (data: TableProps<T>["data"]) => void;
@@ -167,7 +167,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
 
   const bulkActions = useMemo(
     () => actions?.filter((a) => !!a.isBulk).map(({ isBulk, ...rest }) => rest),
-    [actions]
+    [actions],
   );
 
   const {
@@ -228,7 +228,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
     useHvSortBy,
     useHvPagination,
     useHvRowSelection,
-    useHvBulkActions
+    useHvBulkActions,
   );
 
   useEffect(() => {

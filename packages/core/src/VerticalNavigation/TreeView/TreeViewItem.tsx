@@ -7,25 +7,22 @@ import {
   useRef,
   useState,
 } from "react";
-
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { useForkRef } from "../../hooks/useForkRef";
-import { setId } from "../../utils/setId";
-
-import { ExtractNames } from "../../utils/classes";
-import { HvTypography } from "../../Typography";
-import { HvTooltip } from "../../Tooltip";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
-import { staticClasses, useClasses } from "./TreeViewItem.styles";
+import { useForkRef } from "../../hooks/useForkRef";
+import { HvTooltip } from "../../Tooltip";
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
+import { setId } from "../../utils/setId";
+import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { DescendantProvider, useDescendant } from "./descendants";
+import { IconWrapper } from "./IconWrapper";
 import {
   TreeViewControlContext,
   TreeViewStateContext,
 } from "./TreeViewContext";
-import { VerticalNavigationContext } from "../VerticalNavigationContext";
-import { IconWrapper } from "./IconWrapper";
+import { staticClasses, useClasses } from "./TreeViewItem.styles";
 
 export { staticClasses as treeViewItemClasses };
 
@@ -181,7 +178,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         element: treeitemElement,
         id: nodeId,
       }),
-      [nodeId, treeitemElement]
+      [nodeId, treeitemElement],
     );
 
     const { isOpen, useIcons } = useContext(VerticalNavigationContext);
@@ -243,7 +240,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
       ) {
         mapFirstChar(
           nodeId,
-          contentRef.current?.textContent.substring(0, 1).toLowerCase()
+          contentRef.current?.textContent.substring(0, 1).toLowerCase(),
         );
 
         return () => {
@@ -285,7 +282,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           focus(event, nodeId);
         }
       },
-      [disabled, disabledItemsFocusable, focus, focused, nodeId, treeId]
+      [disabled, disabledItemsFocusable, focus, focused, nodeId, treeId],
     );
 
     const handleExpansion = useCallback(
@@ -319,7 +316,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         toggleExpansion,
         treeviewMode,
         isOpen,
-      ]
+      ],
     );
 
     const handleSelection = useCallback(
@@ -351,7 +348,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         selectRange,
         selectable,
         treeviewMode,
-      ]
+      ],
     );
 
     const handleMouseDown = useCallback(
@@ -362,7 +359,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           onMouseDown(event);
         }
       },
-      [disabled, onMouseDown]
+      [disabled, onMouseDown],
     );
 
     const handleClick = useCallback(
@@ -389,7 +386,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         onClick,
         selectable,
         isOpen,
-      ]
+      ],
     );
 
     const handleKeyDown = useCallback(
@@ -422,7 +419,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           }
         }
       },
-      [expandable, handleExpansion, handleSelection, selectable, isOpen]
+      [expandable, handleExpansion, handleSelection, selectable, isOpen],
     );
 
     const renderedContent = useMemo(() => {
@@ -544,7 +541,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             {children}
           </ul>
         ),
-      [children, classes?.group, id, treeviewMode]
+      [children, classes?.group, id, treeviewMode],
     );
 
     return (
@@ -583,5 +580,5 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         )}
       </li>
     );
-  }
+  },
 );

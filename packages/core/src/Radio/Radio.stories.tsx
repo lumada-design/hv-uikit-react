@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { css } from "@emotion/css";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseRadio,
   HvGrid,
@@ -8,8 +10,6 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof HvRadio> = {
   title: "Components/Radio/Radio",
@@ -195,7 +195,7 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
     >("");
 
     const [secondRadioErrorMessage, setSecondRadioErrorMessage] = useState(
-      "No way for the second radio to be valid!"
+      "No way for the second radio to be valid!",
     );
 
     return (
@@ -223,7 +223,7 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
               aria-errormessage="secondRadio-error"
               onChange={() => {
                 setSecondRadioErrorMessage(
-                  "No way for the second radio to be valid! I told you!"
+                  "No way for the second radio to be valid! I told you!",
                 );
               }}
               label="Second Radio"

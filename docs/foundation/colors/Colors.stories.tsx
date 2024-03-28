@@ -1,19 +1,19 @@
 import React, { useMemo } from "react";
 import { Meta } from "@storybook/react";
-import { HvThemeColorModeStructure } from "@hitachivantara/uikit-styles";
 import {
   HvTypography,
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
+import { HvThemeColorModeStructure } from "@hitachivantara/uikit-styles";
 
 import {
+  StyledColorContainer,
+  StyledColorName,
+  StyledColors,
+  StyledColorSquare,
   StyledGroup,
   StyledGroupName,
-  StyledColors,
-  StyledColorContainer,
-  StyledColorSquare,
-  StyledColorName,
 } from "./Colors.styles";
 import { themeColors } from "./themeColors";
 
@@ -78,7 +78,7 @@ const ColorsGroup = ({
                         </StyledColorName>
                       </StyledColorContainer>
                     </React.Fragment>
-                  )
+                  ),
                 )}
               </StyledColors>
             </div>

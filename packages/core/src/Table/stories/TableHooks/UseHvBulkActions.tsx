@@ -1,19 +1,19 @@
 import { useCallback, useMemo, useState } from "react";
 import {
+  HvBulkActions,
+  HvEmptyState,
+  HvPagination,
   HvTable,
   HvTableBody,
+  HvTableCell,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
-  HvPagination,
-  HvEmptyState,
-  HvBulkActions,
+  useHvBulkActions,
   useHvData,
   useHvPagination,
   useHvRowSelection,
-  useHvBulkActions,
 } from "@hitachivantara/uikit-react-core";
 import {
   Ban,
@@ -23,7 +23,7 @@ import {
   Preview,
 } from "@hitachivantara/uikit-react-icons";
 
-import { makeData, getColumns, AssetEvent } from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
 export const UseHvBulkActions = () => {
   const columns = useMemo(() => getColumns(), []);
@@ -43,7 +43,7 @@ export const UseHvBulkActions = () => {
     { columns, data },
     useHvPagination,
     useHvRowSelection,
-    useHvBulkActions
+    useHvBulkActions,
   );
 
   const handleAction = useCallback(
@@ -72,7 +72,7 @@ export const UseHvBulkActions = () => {
           break;
       }
     },
-    [data, selectedFlatRows, toggleAllRowsSelected]
+    [data, selectedFlatRows, toggleAllRowsSelected],
   );
 
   const EmptyStateRow = useCallback(
@@ -86,7 +86,7 @@ export const UseHvBulkActions = () => {
         </HvTableCell>
       </HvTableRow>
     ),
-    []
+    [],
   );
 
   return (

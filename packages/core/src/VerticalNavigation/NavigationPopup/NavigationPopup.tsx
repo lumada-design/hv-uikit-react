@@ -1,13 +1,12 @@
 import { HvBaseProps } from "../../types/generic";
 import { setId } from "../../utils/setId";
-
 import { HvVerticalNavigationTree } from "../Navigation";
 import { NavigationData } from "../VerticalNavigationContext";
+import { useClasses } from "./NavigationPopup.styles";
 import {
   HvVerticalNavigationPopupClasses,
   NavigationPopupContainer,
 } from "./NavigationPopupContainer";
-import { useClasses } from "./NavigationPopup.styles";
 
 export interface HvVerticalNavigationPopupProps
   extends HvBaseProps<HTMLDivElement> {

@@ -1,9 +1,9 @@
-import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it, vi } from "vitest";
 
-import { HvDatePicker } from "./DatePicker";
 import { makeUTCDate } from "../Calendar/utils";
+import { HvDatePicker } from "./DatePicker";
 
 export const Main = () => (
   <HvDatePicker placeholder="Select date" aria-label="Date" />
@@ -49,7 +49,7 @@ describe("HvDatePicker", () => {
   describe("single calendar", () => {
     it("should have a value and not be open", () => {
       render(
-        <HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-US" />
+        <HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-US" />,
       );
       const calendarButtons = screen.queryAllByRole("button");
       const firstDayOfTheMonth = screen.queryAllByText("1");
@@ -65,7 +65,7 @@ describe("HvDatePicker", () => {
     });
     it("should render a calendar component with a value", async () => {
       render(
-        <HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-US" />
+        <HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-US" />,
       );
       let calendarButtons = screen.queryAllByRole("button");
       let firstDayOfTheMonth = screen.queryAllByText("1");
@@ -116,7 +116,7 @@ describe("HvDatePicker", () => {
           locale="en-US"
           startValue={new Date(2019, 0, 5, 12)}
           endValue={new Date(2019, 0, 10, 12)}
-        />
+        />,
       );
       const calendarButtons = screen.queryAllByRole("button");
       const firstDayOfTheMonth = screen.queryAllByText("1");
@@ -139,7 +139,7 @@ describe("HvDatePicker", () => {
           locale="en-US"
           startValue={new Date(2019, 0, 5, 12)}
           endValue={new Date(2019, 0, 10, 12)}
-        />
+        />,
       );
       let calendarButtons = screen.queryAllByRole("button");
       let firstDayOfTheMonth = screen.queryAllByText("1");
@@ -191,7 +191,7 @@ describe("HvDatePicker", () => {
           placeholder={labels.placeholder}
           horizontalPlacement="left"
           showActions
-        />
+        />,
       );
       const calendarButtons = queryAllByRole("button");
       const firstDayOfTheMonth = queryAllByText("1");
@@ -228,7 +228,7 @@ describe("HvDatePicker", () => {
           placeholder={labels.placeholder}
           horizontalPlacement="left"
           showActions
-        />
+        />,
       );
       let calendarButtons = queryAllByRole("button");
       let firstDayOfTheMonth = queryAllByText("1");
@@ -268,7 +268,7 @@ describe("HvDatePicker", () => {
           placeholder="Can't select a date now"
           aria-label="Read only date picker"
           readOnly
-        />
+        />,
       );
 
       const timepickerDropdown = getByRole("combobox");

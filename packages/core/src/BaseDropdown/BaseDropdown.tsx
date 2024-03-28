@@ -1,39 +1,35 @@
 import {
-  useMemo,
-  useState,
-  useCallback,
+  cloneElement,
   forwardRef,
   isValidElement,
-  cloneElement,
+  useCallback,
+  useMemo,
+  useState,
 } from "react";
-
 import { createPortal } from "react-dom";
-
+import { PopperProps, usePopper } from "react-popper";
 import ClickAwayListener, {
   ClickAwayListenerProps,
 } from "@mui/material/ClickAwayListener";
-import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-
-import { PopperProps, usePopper } from "react-popper";
 import {
   detectOverflow,
   ModifierArguments,
   Options,
   Placement,
 } from "@popperjs/core";
+import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { HvTypography } from "../Typography";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useTheme } from "../hooks/useTheme";
-import { useForkRef } from "../hooks/useForkRef";
 import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useForkRef } from "../hooks/useForkRef";
+import { useTheme } from "../hooks/useTheme";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvBaseProps } from "../types/generic";
+import { HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
+import { getFirstAndLastFocus } from "../utils/focusableElementFinder";
 import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
-import { getFirstAndLastFocus } from "../utils/focusableElementFinder";
-import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./BaseDropdown.styles";
 import BaseDropdownContext from "./BaseDropdownContext";
 
@@ -167,13 +163,13 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
 
     const [isOpen, setIsOpen] = useControlled(
       expanded,
-      Boolean(defaultExpanded)
+      Boolean(defaultExpanded),
     );
 
     const [referenceElement, setReferenceElement] =
       useState<HTMLElement | null>(null);
     const [popperElement, setPopperElement] = useState<HTMLElement | null>(
-      null
+      null,
     );
     const [popperMaxSize, setPopperMaxSize] = useState<{
       width?: number;
@@ -182,11 +178,11 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
 
     const handleDropdownHeaderRefProp = useForkRef(
       dropdownHeaderRefProp,
-      dropdownHeaderProps?.ref
+      dropdownHeaderProps?.ref,
     );
     const handleDropdownHeaderRef = useForkRef(
       setReferenceElement,
-      handleDropdownHeaderRefProp
+      handleDropdownHeaderRefProp,
     );
 
     const ariaRole = role || (component == null ? "combobox" : undefined);
@@ -230,7 +226,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       ({ state }: ModifierArguments<Options>) => {
         state.styles.popper.width = `${state.rects.reference.width}px`;
       },
-      []
+      [],
     );
 
     const widthCalculatorEffect = useCallback(
@@ -239,7 +235,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
           (state.elements.reference as any).offsetWidth
         }px`;
       },
-      []
+      [],
     );
 
     const applyMaxSizeCalculator = useCallback(
@@ -259,7 +255,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
           maxHeight: `${height}px`,
         };
       },
-      [popperMaxSize]
+      [popperMaxSize],
     );
 
     const maxSizeCalculator = useCallback(
@@ -282,7 +278,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
           height: popperHeight - overflow[heightProp] - y,
         };
       },
-      []
+      [],
     );
 
     const modifiers = useMemo<Options["modifiers"]>(
@@ -318,7 +314,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
         variableWidth,
         widthCalculator,
         widthCalculatorEffect,
-      ]
+      ],
     );
 
     const { styles: popperStyles, attributes } = usePopper(
@@ -329,7 +325,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
         modifiers,
         onFirstUpdate,
         ...otherPopperProps,
-      }
+      },
     );
 
     const popperPlacement =
@@ -367,7 +363,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
 
         onToggle?.(event, newOpen);
       },
-      [isOpen, disabled, setIsOpen, onToggle, referenceElement]
+      [isOpen, disabled, setIsOpen, onToggle, referenceElement],
     );
 
     const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
@@ -494,7 +490,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
                         popperPlacement.includes("end"),
                       [classes.inputExtensionFloatLeft]:
                         popperPlacement.includes("start"),
-                    }
+                    },
                   )}
                 />
               )}
@@ -507,7 +503,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
 
       return createPortal(
         container,
-        document.getElementById(rootId || "") || document.body
+        document.getElementById(rootId || "") || document.body,
       );
     })();
 
@@ -519,7 +515,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
           className={cx(
             classes.anchor,
             { [classes.rootDisabled]: disabled },
-            className
+            className,
           )}
           {...(!readOnly && {
             onKeyDown: handleToggle,
@@ -539,5 +535,5 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
         {isOpen && containerComponent}
       </div>
     );
-  }
+  },
 );

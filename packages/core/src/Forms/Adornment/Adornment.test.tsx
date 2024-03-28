@@ -1,14 +1,14 @@
-import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
+import { CloseXS } from "@hitachivantara/uikit-react-icons";
 
 import { HvAdornment } from ".";
 
 describe("Adornment", () => {
   it("should render the passed icon", () => {
     render(
-      <HvAdornment icon={<CloseXS role="img" aria-label="close icon" />} />
+      <HvAdornment icon={<CloseXS role="img" aria-label="close icon" />} />,
     );
     expect(screen.getByRole("img", { name: "close icon" })).toBeInTheDocument();
   });

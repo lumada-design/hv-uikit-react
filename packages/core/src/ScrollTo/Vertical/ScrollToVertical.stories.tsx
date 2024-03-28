@@ -1,3 +1,4 @@
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvContainer,
@@ -8,7 +9,6 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { css } from "@emotion/css";
 
 const meta: Meta<typeof HvScrollToVertical> = {
   title: "Components/Scroll To/Vertical",

@@ -1,15 +1,15 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
-import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import {
+  HvActionGeneric,
   HvBulkActions,
   HvBulkActionsProps,
   HvCheckBox,
   HvPagination,
-  HvActionGeneric,
   theme,
 } from "@hitachivantara/uikit-react-core";
+import { Add, Delete, Lock, Preview } from "@hitachivantara/uikit-react-icons";
 
 const uniqueId = () => Math.random().toString(36).slice(2, 9);
 
@@ -53,7 +53,7 @@ type SampleComponentProps = {
   onChange: (
     event: React.ChangeEvent<HTMLInputElement>,
     index: number,
-    checked: boolean
+    checked: boolean,
   ) => void;
 };
 
@@ -89,7 +89,7 @@ export const Main: StoryObj<HvBulkActionsProps> = {
     });
 
     const [data, setData] = useState<SampleComponentDatum[]>(
-      Array.from(Array(8), (_, i) => addEntry(i))
+      Array.from(Array(8), (_, i) => addEntry(i)),
     );
 
     const handleSelectAll = (_: any, checked = false) => {
@@ -130,7 +130,7 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
     });
 
     const [data, setData] = useState<SampleComponentDatum[]>(
-      Array.from(Array(8), (_, i) => addEntry(i))
+      Array.from(Array(8), (_, i) => addEntry(i)),
     );
 
     const handleSelectAll: HvBulkActionsProps["onSelectAll"] = (_, checked) => {
@@ -149,7 +149,7 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
       switch (action.id) {
         case "add": {
           const newEls = selected.map((el) =>
-            addEntry(`${el.id}-copy-${uniqueId()}`)
+            addEntry(`${el.id}-copy-${uniqueId()}`),
           );
           setData([...data, ...newEls]);
           break;
@@ -194,7 +194,7 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
     });
 
     const [data, setData] = useState<SampleComponentDatum[]>(
-      Array.from(Array(18), (_, i) => addEntry(i))
+      Array.from(Array(18), (_, i) => addEntry(i)),
     );
 
     const [page, setPage] = useState<number>(0);
@@ -238,7 +238,7 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
       switch (action.id) {
         case "add": {
           const newEls = selected.map((el) =>
-            addEntry(`${el.id}-copy-${uniqueId()}`)
+            addEntry(`${el.id}-copy-${uniqueId()}`),
           );
           setData([...data, ...newEls]);
           break;

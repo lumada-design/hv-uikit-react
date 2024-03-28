@@ -1,19 +1,19 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
-  HvTableContainer,
+  HvActionsGeneric,
   HvTable,
   HvTableBody,
+  HvTableCell,
+  HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   HvTableSection,
   HvTypography,
-  HvActionsGeneric,
-  useHvPagination,
-  useHvRowSelection,
   useHvBulkActions,
   useHvData,
+  useHvPagination,
+  useHvRowSelection,
 } from "@hitachivantara/uikit-react-core";
 
 import { AssetEvent, getColumns, makeData } from "../storiesUtils";
@@ -39,7 +39,7 @@ export const PropsTableSection = () => {
     { columns, data, initialState: { pageSize: 3 } },
     useHvPagination,
     useHvRowSelection,
-    useHvBulkActions
+    useHvBulkActions,
   );
 
   const actions = useMemo(
@@ -62,7 +62,7 @@ export const PropsTableSection = () => {
         maxVisibleActions={1}
       />
     ),
-    []
+    [],
   );
 
   const renderTableRow = (i: number) => {

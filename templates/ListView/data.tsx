@@ -1,9 +1,9 @@
 import useSWR from "swr";
 import {
-  HvTooltip,
-  HvTableColumnConfig,
   HvBulkActionsProps,
   HvColor,
+  HvTableColumnConfig,
+  HvTooltip,
 } from "@hitachivantara/uikit-react-core";
 import {
   IconType,
@@ -14,7 +14,7 @@ import {
   Refresh,
 } from "@hitachivantara/uikit-react-icons";
 
-import { ServerPaginationProps, useServerPagination, delay } from "../utils";
+import { delay, ServerPaginationProps, useServerPagination } from "../utils";
 
 // --- Table data utils ---
 
@@ -87,7 +87,7 @@ const getDate = (): string => {
   const start = new Date(2018, 1, 1);
   const end = new Date();
   const date = new Date(
-    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+    start.getTime() + Math.random() * (end.getTime() - start.getTime()),
   );
 
   return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDay()}`;

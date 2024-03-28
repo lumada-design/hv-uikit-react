@@ -1,5 +1,5 @@
-import { theme } from "@hitachivantara/uikit-styles";
 import { tooltipClasses as MuitooltipClasses } from "@mui/material/Tooltip";
+import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../utils/classes";
 

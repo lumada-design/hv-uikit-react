@@ -98,7 +98,7 @@ describe("NodeTreeExpandUtils", () => {
       const result = NodeTreeExpandUtils.expandAllSiblings(
         expanded,
         nodeMap,
-        "A"
+        "A",
       );
 
       expect(Object.is(expanded, result)).toBe(false);
@@ -110,7 +110,7 @@ describe("NodeTreeExpandUtils", () => {
       const result = NodeTreeExpandUtils.expandAllSiblings(
         expanded,
         nodeMap,
-        "A1"
+        "A1",
       );
 
       expect(Object.is(expanded, result)).toBe(false);
@@ -122,7 +122,7 @@ describe("NodeTreeExpandUtils", () => {
       const result = NodeTreeExpandUtils.expandAllSiblings(
         expanded,
         nodeMap,
-        "A1"
+        "A1",
       );
 
       expect(Object.is(expanded, result)).toBe(true);
@@ -161,7 +161,7 @@ describe("NodeTreeExpandUtils", () => {
     it("all expanded", () => {
       const result = NodeTreeExpandUtils.getVisibleNodes(
         ["A", "A3", "C"],
-        nodeMap
+        nodeMap,
       );
 
       expect(result.sort()).toEqual([

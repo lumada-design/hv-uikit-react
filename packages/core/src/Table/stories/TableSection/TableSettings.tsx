@@ -1,4 +1,20 @@
 import { useMemo, useState } from "react";
+import { useColumnOrder } from "react-table";
+import {
+  DndContext,
+  DragEndEvent,
+  DragOverEvent,
+  DragOverlay,
+  DragStartEvent,
+  KeyboardSensor,
+  Modifier,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
+import { arrayMove, SortableContext, useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import { css } from "@emotion/css";
 import {
   HvBaseDropdown,
@@ -23,23 +39,6 @@ import {
   useHvTableSticky,
   useUniqueId,
 } from "@hitachivantara/uikit-react-core";
-import { useColumnOrder } from "react-table";
-import {
-  DndContext,
-  DragOverEvent,
-  DragOverlay,
-  DragStartEvent,
-  DragEndEvent,
-  PointerSensor,
-  useSensor,
-  useSensors,
-  KeyboardSensor,
-  Modifier,
-} from "@dnd-kit/core";
-import { arrayMove, SortableContext, useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
-
 import {
   Drag,
   Pin,
@@ -251,10 +250,10 @@ const SettingsDialog = ({
       groupId: hiddenColumns.includes(c.accessor)
         ? "hidden"
         : fixedColumns.includes(c.accessor)
-        ? "fixed"
-        : "visible",
+          ? "fixed"
+          : "visible",
       title: c.Header || "",
-    }))
+    })),
   );
 
   const sensors = useSensors(
@@ -263,7 +262,7 @@ const SettingsDialog = ({
         distance: 2,
       },
     }),
-    useSensor(KeyboardSensor, {})
+    useSensor(KeyboardSensor, {}),
   );
 
   const columnsId = useMemo(() => groups.map((col) => col.id), [groups]);
@@ -440,7 +439,7 @@ export const TableSettings = () => {
       }
     }
     const rest = tableColumns.filter(
-      (tc) => !fixedColumns.includes(tc.accessor as string)
+      (tc) => !fixedColumns.includes(tc.accessor as string),
     );
     return [...fixed, ...rest];
   }, [fixedColumns, tableColumns]);
@@ -467,7 +466,7 @@ export const TableSettings = () => {
     useHvSortBy,
     useHvPagination,
     useHvTableSticky,
-    useColumnOrder
+    useColumnOrder,
   );
 
   const renderTableRow = (i: number) => {

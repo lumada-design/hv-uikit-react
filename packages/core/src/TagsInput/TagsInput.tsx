@@ -6,26 +6,12 @@ import {
   useRef,
   useState,
 } from "react";
-
 import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material/InputBase";
 import { useForkRef } from "@mui/material/utils";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvListContainer, HvListItem } from "../ListContainer";
 import { baseInputClasses } from "../BaseInput";
-import { HvInput } from "../Input";
-import { HvTagSuggestion, HvValidationMessages } from "../types/forms";
-import { HvBaseProps } from "../types/generic";
-import { useControlled } from "../hooks/useControlled";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useIsMounted } from "../hooks/useIsMounted";
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { isKey } from "../utils/keyboardUtils";
-import { setId } from "../utils/setId";
-import validationStates from "../Forms/FormElement/validationStates";
 import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
-import { HvTag, HvTagProps } from "../Tag";
 import {
   HvCharCounter,
   HvCharCounterProps,
@@ -36,8 +22,19 @@ import {
   HvSuggestions,
   HvWarningText,
 } from "../Forms";
+import validationStates from "../Forms/FormElement/validationStates";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useIsMounted } from "../hooks/useIsMounted";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvInput } from "../Input";
+import { HvListContainer, HvListItem } from "../ListContainer";
+import { HvTag, HvTagProps } from "../Tag";
+import { HvTagSuggestion, HvValidationMessages } from "../types/forms";
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
+import { isKey } from "../utils/keyboardUtils";
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./TagsInput.styles";
 
 export { staticClasses as tagsInputClasses };
@@ -77,7 +74,7 @@ export interface HvTagsInputProps
       | React.MouseEvent<HTMLButtonElement>
       | React.MouseEvent<HTMLElement, MouseEvent>
       | React.KeyboardEventHandler<HTMLElement>,
-    value: HvTagProps[]
+    value: HvTagProps[],
   ) => void;
   /** The function that will be executed when the element is focused. */
   onFocus?: (event: React.FocusEvent<HTMLInputElement>, value: string) => void;
@@ -92,7 +89,7 @@ export interface HvTagsInputProps
       | React.MouseEvent<HTMLElement, MouseEvent>
       | React.KeyboardEventHandler<HTMLElement>,
     value: HvTagProps,
-    index: number
+    index: number,
   ) => void;
   /** The function that will be executed when a tag is added. */
   onAdd?: (
@@ -103,7 +100,7 @@ export interface HvTagsInputProps
       | React.MouseEvent<HTMLElement, MouseEvent>
       | React.KeyboardEventHandler<HTMLElement>,
     value: HvTagProps,
-    index: number
+    index: number,
   ) => void;
   /** The placeholder value of the input. */
   placeholder?: string;
@@ -199,11 +196,11 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
 
     const [validationState, setValidationState] = useControlled(
       status,
-      validationStates.standBy
+      validationStates.standBy,
     );
     const [validationMessage, setValidationMessage] = useControlled(
       statusMessage,
-      ""
+      "",
     );
 
     const [tagInput, setTagInput] = useState("");
@@ -235,7 +232,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
 
     const errorMessages = useMemo(
       () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
-      [validationMessages]
+      [validationMessages],
     );
 
     const performValidation = useCallback(
@@ -259,7 +256,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         maxTagsQuantity,
         setValidationMessage,
         setValidationState,
-      ]
+      ],
     );
 
     /**
@@ -278,7 +275,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         ];
         setValue(newTagsArr);
         setTagCursorPos(
-          end ? newTagsArr.length : tagCursorPos > 0 ? tagCursorPos - 1 : 0
+          end ? newTagsArr.length : tagCursorPos > 0 ? tagCursorPos - 1 : 0,
         );
         inputRef.current?.focus();
         performValidation(newTagsArr);
@@ -286,7 +283,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         onChange?.(event, newTagsArr);
         skipReset.current = true;
       },
-      [onChange, onDelete, performValidation, setValue, tagCursorPos, value]
+      [onChange, onDelete, performValidation, setValue, tagCursorPos, value],
     );
 
     /**
@@ -308,7 +305,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           onChange?.(event, newTagsArr);
         }
       },
-      [onAdd, onChange, performValidation, setValue, value]
+      [onAdd, onChange, performValidation, setValue, value],
     );
 
     const canShowError =
@@ -357,11 +354,11 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       (li) => {
         // TODO Replace with ref
         const listEl = document.getElementById(
-          setId(elementId, "suggestions-list") || ""
+          setId(elementId, "suggestions-list") || "",
         );
         return li != null ? listEl?.getElementsByTagName("li")?.[li] : listEl;
       },
-      [elementId]
+      [elementId],
     );
 
     /**
@@ -385,7 +382,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           suggestionClearHandler();
         }
       },
-      [suggestionClearHandler, suggestionListCallback]
+      [suggestionClearHandler, suggestionListCallback],
     );
 
     /**
@@ -430,7 +427,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           suggestionHandler(input);
         }
       },
-      [canShowSuggestions, suggestionHandler]
+      [canShowSuggestions, suggestionHandler],
     );
 
     /**
@@ -442,7 +439,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           addTag(event, tagInput);
         }
       },
-      [addTag, canShowSuggestions, commitTagOn, tagInput]
+      [addTag, canShowSuggestions, commitTagOn, tagInput],
     );
 
     /**
@@ -457,7 +454,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
               break;
             case "ArrowRight":
               setTagCursorPos(
-                tagCursorPos < value.length ? tagCursorPos + 1 : value.length
+                tagCursorPos < value.length ? tagCursorPos + 1 : value.length,
               );
               break;
             case "Backspace":
@@ -512,7 +509,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         tagCursorPos,
         tagInput,
         value.length,
-      ]
+      ],
     );
 
     /**
@@ -523,7 +520,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         deleteTag(i, event, true);
         setValidationState(validationStates.standBy);
       },
-      [deleteTag, setValidationState]
+      [deleteTag, setValidationState],
     );
 
     /**
@@ -562,7 +559,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         className={cx(
           classes.root,
           { [classes.disabled]: disabled, [classes.readOnly]: readOnly },
-          className
+          className,
         )}
       >
         {(hasLabel || hasDescription) && (
@@ -662,7 +659,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
                     [`& .${baseInputClasses.inputRoot}`]: {
                       backgroundColor: theme.colors.atmo1,
                     },
-                  })
+                  }),
               )}
               classes={{
                 root: classes.tagInputContainerRoot,
@@ -737,5 +734,5 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         )}
       </HvFormElement>
     );
-  }
+  },
 );

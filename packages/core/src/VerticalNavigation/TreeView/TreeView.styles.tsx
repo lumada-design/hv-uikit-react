@@ -14,5 +14,5 @@ export const { staticClasses, useClasses } = createClasses(
 
       outline: "none",
     },
-  }
+  },
 );

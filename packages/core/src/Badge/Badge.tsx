@@ -1,8 +1,7 @@
-import { HvTypography, HvTypographyVariants } from "../Typography";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
+import { HvTypography, HvTypographyVariants } from "../Typography";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./Badge.styles";
 
 export { staticClasses as badgeClasses };

@@ -1,22 +1,22 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import { User, Menu, Alert } from "@hitachivantara/uikit-react-icons";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   HvBadge,
   HvButton,
-  HvHeaderProps,
   HvHeader,
   HvHeaderActions,
   HvHeaderBrand,
   HvHeaderNavigation,
+  HvHeaderNavigationItemProp,
   HvHeaderNavigationProps,
+  HvHeaderProps,
   HvVerticalNavigation,
   HvVerticalNavigationTree,
-  HvHeaderNavigationItemProp,
   theme,
 } from "@hitachivantara/uikit-react-core";
+import { Alert, Menu, User } from "@hitachivantara/uikit-react-icons";
 
 import { HitachiLogo } from "./assets/HitachiLogo";
 
@@ -103,7 +103,7 @@ export const Main: StoryObj<HvHeaderProps> = {
     const [selected, setSelected] = useState<string>("2");
     const handleChange: HvHeaderNavigationProps["onClick"] = (
       event,
-      selectedItem
+      selectedItem,
     ) => {
       if (selectedItem.href) {
         setSelected(selectedItem.id);
@@ -243,11 +243,11 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
     const [selectedHeaderItem, setSelectedHeaderItem] =
       useState<HvHeaderNavigationItemProp>(navigationDataCombined[0]);
     const [selected, setSelected] = useState(
-      navigationDataCombined[0].data?.[0].id
+      navigationDataCombined[0].data?.[0].id,
     );
 
     const traverseItem = (
-      item: HvHeaderNavigationItemProp
+      item: HvHeaderNavigationItemProp,
     ): string | undefined => {
       if (item.data) {
         return traverseItem(item.data[0]);

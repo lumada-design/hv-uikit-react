@@ -1,19 +1,18 @@
 import { useCallback, useMemo } from "react";
 import {
-  Hooks,
-  IdType,
-  PropGetter,
-  Row,
   actions,
   ensurePluginOrder,
+  Hooks,
+  IdType,
+  makePropGetter,
+  PropGetter,
+  Row,
   useGetLatest,
   useMountedLayoutEffect,
-  makePropGetter,
 } from "react-table";
 
-import { useLabels } from "../../hooks/useLabels";
-
 import { HvCheckBox } from "../../CheckBox";
+import { useLabels } from "../../hooks/useLabels";
 
 // #region ##### TYPES #####
 
@@ -70,10 +69,10 @@ export interface UseHvRowSelectionTableInstance<D extends object> {
   toggleAllRowsSelected: (value?: boolean) => void;
   toggleAllPageRowsSelected: (value?: boolean) => void;
   getToggleAllRowsSelectedProps: (
-    props?: Partial<UseHvRowSelectionBulkCheckboxProps>
+    props?: Partial<UseHvRowSelectionBulkCheckboxProps>,
   ) => UseHvRowSelectionBulkCheckboxProps;
   getToggleAllPageRowsSelectedProps: (
-    props?: Partial<UseHvRowSelectionBulkCheckboxProps>
+    props?: Partial<UseHvRowSelectionBulkCheckboxProps>,
   ) => UseHvRowSelectionBulkCheckboxProps;
 
   isNoRowsSelected: boolean;
@@ -95,14 +94,14 @@ export interface UseHvRowSelectionRowInstance {
   toggleRowLockedSelection: (set?: boolean) => void;
   toggleRowSelected: (set?: boolean) => void;
   getToggleRowSelectedProps: (
-    props?: Partial<UseHvRowSelectionRowCheckboxProps>
+    props?: Partial<UseHvRowSelectionRowCheckboxProps>,
   ) => UseHvRowSelectionRowCheckboxProps;
 }
 
 export type UseRowSelectionProps = (<
-  D extends object = Record<string, unknown>
+  D extends object = Record<string, unknown>,
 >(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####
@@ -206,14 +205,14 @@ export const defaultGetToggleAllRowsSelectedProps = (props, { instance }) => [
     checked: instance.isAllRowsSelected,
     indeterminate: Boolean(
       !instance.isAllRowsSelected &&
-        Object.keys(instance.state.selectedRowIds).length
+        Object.keys(instance.state.selectedRowIds).length,
     ),
   },
 ];
 
 export const defaultGetToggleAllPageRowsSelectedProps = (
   props,
-  { instance }
+  { instance },
 ) => [
   props,
   {
@@ -223,7 +222,7 @@ export const defaultGetToggleAllPageRowsSelectedProps = (
     checked: instance.isAllPageRowsSelected,
     indeterminate: Boolean(
       !instance.isAllPageRowsSelected &&
-        instance.page.some(({ id }) => instance.state.selectedRowIds[id])
+        instance.page.some(({ id }) => instance.state.selectedRowIds[id]),
     ),
   },
 ];
@@ -481,7 +480,7 @@ export function useInstance(instance) {
   ensurePluginOrder(
     plugins,
     ["useFilters", "useGroupBy", "useSortBy", "useExpanded", "usePagination"],
-    "useHvRowSelection"
+    "useHvRowSelection",
   );
 
   const rowsToSelect = applyToggleAllRowsSelectedToPrefilteredRows
@@ -536,7 +535,7 @@ export function useInstance(instance) {
     isNoPageRowsSelected = true;
   } else {
     isAllRowsSelected = !Object.keys(rowsToSelect).some(
-      (id) => !selectedRowIds[id]
+      (id) => !selectedRowIds[id],
     );
 
     if (isAllRowsSelected) {
@@ -613,7 +612,7 @@ export function useInstance(instance) {
   const getAutoResetSelectedRows = useGetLatest(autoResetSelectedRows);
 
   const getAutoResetLockedSelectionRows = useGetLatest(
-    autoResetLockedSelectionRows
+    autoResetLockedSelectionRows,
   );
 
   useMountedLayoutEffect(() => {
@@ -627,17 +626,17 @@ export function useInstance(instance) {
 
   const toggleAllRowsSelected = useCallback(
     (value) => dispatch({ type: actions.toggleAllRowsSelected, value }),
-    [dispatch]
+    [dispatch],
   );
 
   const toggleAllPageRowsSelected = useCallback(
     (value) => dispatch({ type: actions.toggleAllPageRowsSelected, value }),
-    [dispatch]
+    [dispatch],
   );
 
   const toggleRowSelected = useCallback(
     (id, value) => dispatch({ type: actions.toggleRowSelected, id, value }),
-    [dispatch]
+    [dispatch],
   );
 
   const getInstance = useGetLatest(instance);
@@ -646,18 +645,18 @@ export function useInstance(instance) {
     getHooks().getToggleAllRowsSelectedProps,
     {
       instance: getInstance(),
-    }
+    },
   );
 
   const getToggleAllPageRowsSelectedProps = makePropGetter(
     getHooks().getToggleAllPageRowsSelectedProps,
-    { instance: getInstance() }
+    { instance: getInstance() },
   );
 
   const toggleRowLockedSelection = useCallback(
     (id, value) =>
       dispatch({ type: actions.toggleRowLockedSelection, id, value }),
-    [dispatch]
+    [dispatch],
   );
 
   Object.assign(instance, {
@@ -686,7 +685,7 @@ export function prepareRow(row, { instance }) {
     {
       instance,
       row,
-    }
+    },
   );
 
   row.toggleRowLockedSelection = (set) =>

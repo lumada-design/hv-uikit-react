@@ -14,7 +14,7 @@ const getSelectionPath = (
   selectedId: string | undefined,
   selection: string[] = [],
   idx: number = -1,
-  parent: HvHeaderNavigationItemProp[] = []
+  parent: HvHeaderNavigationItemProp[] = [],
 ): string[] => {
   data?.forEach((item: HvHeaderNavigationItemProp, i) => {
     const hasData = item.data && item.data.length;
@@ -32,7 +32,7 @@ const getSelectionPath = (
 
 export const useSelectionPath = (
   data: HvHeaderNavigationItemProp[],
-  selectedId?: string
+  selectedId?: string,
 ): string[] => {
   const [selectionPath, setSelectionPath] = useState<string[]>([]);
 

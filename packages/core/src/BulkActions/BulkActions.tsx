@@ -1,12 +1,12 @@
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { setId } from "../utils/setId";
-import { useTheme } from "../hooks/useTheme";
-import { HvBaseProps } from "../types/generic";
+import { HvActionsGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
 import { HvCheckBox, HvCheckBoxProps } from "../CheckBox";
-import { HvActionsGeneric, HvActionsGenericProps } from "../ActionsGeneric";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useTheme } from "../hooks/useTheme";
+import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./BulkActions.styles";
 
 export { staticClasses as bulkActionsClasses };
@@ -112,7 +112,7 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
       className={cx(
         classes.root,
         { [classes.semantic]: isSemantic },
-        className
+        className,
       )}
       {...others}
     >

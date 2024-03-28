@@ -1,7 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../../utils/classes";
-
 import { staticClasses as queryBuilderClasses } from "../QueryBuilder.styles";
 
 export const { useClasses, staticClasses } = createClasses(
@@ -66,5 +65,5 @@ export const { useClasses, staticClasses } = createClasses(
         marginTop: theme.space.xs,
       },
     },
-  }
+  },
 );

@@ -50,5 +50,5 @@ export const { staticClasses, useClasses } = createClasses(
     },
 
     childData: {},
-  }
+  },
 );

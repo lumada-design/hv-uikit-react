@@ -1,10 +1,10 @@
 import * as React from "react";
 
 import {
-  TreeViewAnyPluginSignature,
-  TreeViewPlugin,
   ConvertPluginsIntoSignatures,
   MergePluginsProperty,
+  TreeViewAnyPluginSignature,
+  TreeViewPlugin,
 } from "../types";
 
 /**
@@ -12,13 +12,13 @@ import {
  * The controlled models are never stored in the state and the state is only updated if the model is not controlled.
  */
 export const useTreeViewModels = <
-  TPlugins extends readonly TreeViewPlugin<TreeViewAnyPluginSignature>[]
+  TPlugins extends readonly TreeViewPlugin<TreeViewAnyPluginSignature>[],
 >(
   plugins: TPlugins,
   props: MergePluginsProperty<
     ConvertPluginsIntoSignatures<TPlugins>,
     "defaultizedParams"
-  >
+  >,
 ) => {
   const modelsRef = React.useRef<{
     [modelName: string]: {
@@ -71,7 +71,7 @@ export const useTreeViewModels = <
           },
         },
       ];
-    })
+    }),
   ) as MergePluginsProperty<ConvertPluginsIntoSignatures<TPlugins>, "models">;
 
   return models;

@@ -1,12 +1,9 @@
-import { setId } from "../../../utils/setId";
-
 import { ExtractNames } from "../../../utils/classes";
-
-import { getMonthNamesList } from "../../utils";
+import { setId } from "../../../utils/setId";
 import { ViewMode } from "../../enums";
-import { Navigation } from "../Navigation";
 import { VisibilitySelectorActions } from "../../types";
-
+import { getMonthNamesList } from "../../utils";
+import { Navigation } from "../Navigation";
 import { staticClasses, useClasses } from "./ComposedNavigation.styles";
 
 export { staticClasses as composedNavigationClasses };

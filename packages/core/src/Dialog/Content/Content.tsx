@@ -3,10 +3,8 @@ import MuiDialogContent, {
 } from "@mui/material/DialogContent";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
-import { ExtractNames } from "../../utils/classes";
 import { HvTypography } from "../../Typography";
-
+import { ExtractNames } from "../../utils/classes";
 import { staticClasses, useClasses } from "./Content.styles";
 
 export { staticClasses as dialogContentClasses };
@@ -38,7 +36,7 @@ export const HvDialogContent = (props: HvDialogContentProps) => {
       className={cx(
         classes.root,
         { [classes.textContent]: !!indentContent },
-        className
+        className,
       )}
       {...others}
     >

@@ -1,7 +1,7 @@
 import { addons } from "@storybook/addons";
 
-import { themes } from "./theme";
 import { getInitialMode } from "./addons/mode-selector/utils";
+import { themes } from "./theme";
 
 const initialMode = getInitialMode();
 

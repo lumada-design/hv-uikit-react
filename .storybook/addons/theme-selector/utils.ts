@@ -12,7 +12,7 @@ export const getLocalTheme = (): string | null => {
 export const getInitialTheme = (themes: Theme[]) => {
   const localTheme = getLocalTheme();
   const prefersDark = window?.matchMedia(
-    "(prefers-color-scheme: dark)"
+    "(prefers-color-scheme: dark)",
   ).matches;
 
   const initialTheme = localTheme ? localTheme.split("-")[0] : DEFAULT_THEME;
@@ -29,7 +29,7 @@ export const getInitialTheme = (themes: Theme[]) => {
 const toPascalCase = (str: string) =>
   str.replace(
     /\w\S*/g,
-    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(),
   );
 
 export const getThemesList = (themes) => {

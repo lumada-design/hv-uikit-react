@@ -1,22 +1,22 @@
 import { forwardRef, useContext, useMemo, useRef, useState } from "react";
 import { Filters } from "@hitachivantara/uikit-react-icons";
 
-import { useTheme } from "../../hooks/useTheme";
 import { HvActionBar } from "../../ActionBar";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../../BaseDropdown";
 import { HvButton, HvButtonVariant } from "../../Button";
 import { HvFormStatus } from "../../Forms";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { useTheme } from "../../hooks/useTheme";
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { HvFilterGroupValue, HvFilterGroupHorizontalPlacement } from "../types";
-import { staticClasses, useClasses } from "./FilterContent.styles";
-import { HvFilterGroupContext } from "../FilterGroupContext";
 import { HvFilterGroupCounter } from "../Counter";
+import type { HvFilterGroupLabels } from "../FilterGroup";
+import { HvFilterGroupContext } from "../FilterGroupContext";
 import { HvFilterGroupLeftPanel } from "../LeftPanel";
 import { HvFilterGroupRightPanel } from "../RightPanel";
-import type { HvFilterGroupLabels } from "../FilterGroup";
+import { HvFilterGroupHorizontalPlacement, HvFilterGroupValue } from "../types";
+import { staticClasses, useClasses } from "./FilterContent.styles";
 
 export { staticClasses as filterGroupContentClasses };
 
@@ -28,7 +28,7 @@ export interface HvFilterGroupContentProps
   status?: HvFormStatus;
   onChange?: (
     event: React.MouseEvent<HTMLButtonElement>,
-    value?: HvFilterGroupValue
+    value?: HvFilterGroupValue,
   ) => void;
   onCancel?: (event: React.MouseEvent<HTMLButtonElement> | Event) => void;
   onClear?: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -96,7 +96,7 @@ export const HvFilterGroupContent = forwardRef<
   };
 
   const onCancelHandler = (
-    event: React.MouseEvent<HTMLButtonElement> | Event
+    event: React.MouseEvent<HTMLButtonElement> | Event,
   ) => {
     rollbackFilters();
     onCancel?.(event);
@@ -126,7 +126,7 @@ export const HvFilterGroupContent = forwardRef<
         <HvTypography variant="label">{labels?.placeholder}</HvTypography>
       </>
     ),
-    [labels?.placeholder]
+    [labels?.placeholder],
   );
 
   return (

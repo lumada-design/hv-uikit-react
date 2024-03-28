@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ds3, ds5 } from "@hitachivantara/uikit-styles";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
+import { ds3, ds5 } from "@hitachivantara/uikit-styles";
 
 import { HvProvider, HvProviderProps } from "./Provider";
 

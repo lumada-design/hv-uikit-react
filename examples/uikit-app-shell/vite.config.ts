@@ -1,14 +1,13 @@
 /// <reference types="vite/client" />
 /// <reference types="vitest" />
 
-import { defineConfig } from "vite";
-
 import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
 import unoCSS from "unocss/vite";
+import { defineConfig } from "vite";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
-import { presetHv } from "@hitachivantara/uikit-uno-preset";
+import tsconfigPaths from "vite-tsconfig-paths";
 import { HvAppShellVitePlugin } from "@hitachivantara/app-shell-vite-plugin";
+import { presetHv } from "@hitachivantara/uikit-uno-preset";
 
 export default defineConfig(({ mode }) => ({
   plugins: [

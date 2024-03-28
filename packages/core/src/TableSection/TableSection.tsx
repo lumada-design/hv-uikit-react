@@ -1,10 +1,10 @@
 import { forwardRef } from "react";
 
-import { ExtractNames } from "../utils/classes";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { staticClasses, useClasses } from "./TableSection.styles";
 import { HvSection, HvSectionProps } from "../Section";
+import { ExtractNames } from "../utils/classes";
+import { staticClasses, useClasses } from "./TableSection.styles";
 
 export { staticClasses as tableSectionClasses };
 
@@ -33,5 +33,5 @@ export const HvTableSection = forwardRef<HTMLDivElement, HvTableSectionProps>(
         {children}
       </HvSection>
     );
-  }
+  },
 );

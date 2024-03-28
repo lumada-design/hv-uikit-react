@@ -3,7 +3,7 @@ import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 import { staticClasses as baseNodeClasses } from "./BaseNode.styles";
 
 const baseClasses = Object.fromEntries(
-  Object.keys(baseNodeClasses).map((key) => [key, {}])
+  Object.keys(baseNodeClasses).map((key) => [key, {}]),
 ) as Record<keyof typeof baseNodeClasses, {}>;
 
 export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
@@ -13,7 +13,7 @@ export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
       theme.space.xs,
       theme.space.xs,
       theme.space.xs,
-      theme.space.sm
+      theme.space.sm,
     ),
     display: "flex",
     flexDirection: "row",

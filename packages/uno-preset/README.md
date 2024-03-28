@@ -14,8 +14,8 @@ Add the `presetHv` to the array of presets in your `vite.config.ts` or `uno.conf
 
 ```ts
 // vite.config.ts
-import { defineConfig } from "vite";
 import unoCSS from "unocss/vite";
+import { defineConfig } from "vite";
 import { presetHv } from "@hitachivantara/uikit-uno-preset";
 
 export default defineConfig({

@@ -3,11 +3,11 @@ import { EventHandlers } from "@mui/base/utils";
 import { ownerDocument, useEventCallback } from "@mui/material/utils";
 
 import type { TreeViewPlugin, TreeViewPluginSignature } from "../../types";
-import { populateInstance } from "../utils";
 import { useInstanceEventHandler } from "../useInstanceEventHandler";
+import { populateInstance } from "../utils";
+import type { UseTreeViewExpansionSignature } from "./useTreeViewExpansion";
 import type { UseTreeViewNodesSignature } from "./useTreeViewNodes";
 import type { UseTreeViewSelectionSignature } from "./useTreeViewSelection";
-import type { UseTreeViewExpansionSignature } from "./useTreeViewExpansion";
 
 export interface UseTreeViewFocusInstance {
   isNodeFocused: (nodeId: string) => boolean;
@@ -40,7 +40,7 @@ export type UseTreeViewFocusSignature = TreeViewPluginSignature<
   [
     UseTreeViewNodesSignature,
     UseTreeViewSelectionSignature<any>,
-    UseTreeViewExpansionSignature
+    UseTreeViewExpansionSignature,
   ]
 >;
 
@@ -57,12 +57,12 @@ export const useTreeViewFocus: TreeViewPlugin<UseTreeViewFocusSignature> = ({
       const cleanNodeId =
         typeof nodeId === "function" ? nodeId(state.focusedNodeId) : nodeId;
       setState((prevState) => ({ ...prevState, focusedNodeId: cleanNodeId }));
-    }
+    },
   );
 
   const isNodeFocused = React.useCallback(
     (nodeId: string) => state.focusedNodeId === nodeId,
-    [state.focusedNodeId]
+    [state.focusedNodeId],
   );
 
   const focusNode = useEventCallback(
@@ -74,7 +74,7 @@ export const useTreeViewFocus: TreeViewPlugin<UseTreeViewFocusSignature> = ({
           params.onNodeFocus(event, nodeId);
         }
       }
-    }
+    },
   );
 
   populateInstance<UseTreeViewFocusSignature>(instance, {

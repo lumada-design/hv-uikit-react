@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-
+import { css, CSSInterpolation, cx } from "@emotion/css";
 import { Global } from "@emotion/react";
-import { CSSInterpolation, css, cx } from "@emotion/css";
-
-import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
-
+import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvButton,
   HvCalendar,
@@ -418,7 +415,7 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
 
     const [startErrorMessage, setStartErrorMessage] = useState<string>();
     const [endErrorMessage, setEndErrorMessage] = useState(
-      "The end date will always be invalid."
+      "The end date will always be invalid.",
     );
 
     return (
@@ -433,7 +430,7 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
               aria-errormessage="start-error"
               onChange={(value) => {
                 setStartErrorMessage(
-                  value ? undefined : "Start date is required."
+                  value ? undefined : "Start date is required.",
                 );
               }}
             />
@@ -452,7 +449,7 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
                 setEndErrorMessage(
                   value
                     ? "The end date will always be invalid."
-                    : "You can try choosing an end date."
+                    : "You can try choosing an end date.",
                 );
               }}
             />

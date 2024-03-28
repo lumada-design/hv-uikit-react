@@ -1,21 +1,18 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-
+import { ModalProps } from "@mui/material/Modal";
 import {
   ExtractNames,
   HvBaseProps,
   HvDialogProps,
 } from "@hitachivantara/uikit-react-core";
 
-import { ModalProps } from "@mui/material/Modal";
-
 import { HvStepNavigationProps } from "../StepNavigation";
+import { staticClasses, useClasses } from "./Wizard.styles";
+import { HvWizardActions, HvWizardActionsProps } from "./WizardActions";
+import { HvWizardContainer } from "./WizardContainer";
 import { HvWizardContent } from "./WizardContent";
 import { HvWizardContext, HvWizardTabs } from "./WizardContext";
 import { HvWizardTitle, HvWizardTitleProps } from "./WizardTitle";
-import { HvWizardActions, HvWizardActionsProps } from "./WizardActions";
-import { HvWizardContainer } from "./WizardContainer";
-
-import { staticClasses, useClasses } from "./Wizard.styles";
 
 export { staticClasses as wizardClasses };
 
@@ -86,7 +83,7 @@ export const HvWizard = ({
         onClose?.(evt, reason);
       }
     },
-    [onClose]
+    [onClose],
   );
 
   // on unmount
@@ -102,8 +99,8 @@ export const HvWizard = ({
                 touched: false,
               },
             }),
-            {} as HvWizardTabs
-          )
+            {} as HvWizardTabs,
+          ),
         );
         setTab(0);
       }
@@ -112,7 +109,7 @@ export const HvWizard = ({
 
   const value = useMemo(
     () => ({ context, setContext, summary, setSummary, tab, setTab }),
-    [context, setContext, summary, setSummary, tab, setTab]
+    [context, setContext, summary, setSummary, tab, setTab],
   );
 
   return (

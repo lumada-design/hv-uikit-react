@@ -1,32 +1,32 @@
 import { useState } from "react";
+import ReactChart from "react-google-charts";
+import { css, CSSInterpolation, cx } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
+  cardClasses,
   HvCard,
   HvKpi,
   HvKpiProps,
   HvLoading,
   HvTypography,
-  cardClasses,
   theme,
 } from "@hitachivantara/uikit-react-core";
 import {
-  Level0Good,
-  TopXS,
-  Level2Average,
-  Fail,
-  Caution,
   Blocked,
-  Success,
+  Caution,
+  Fail,
+  Level0Good,
+  Level2Average,
   Level3Bad,
-  Train,
   Severity1,
   Severity2,
   Severity3,
   Severity4,
   Severity5,
+  Success,
+  TopXS,
+  Train,
 } from "@hitachivantara/uikit-react-icons";
-import ReactChart from "react-google-charts";
-import { CSSInterpolation, css, cx } from "@emotion/css";
 
 const meta: Meta<typeof HvKpi> = {
   title: "Visualizations/KPI",
@@ -564,7 +564,7 @@ export const Gauge: StoryObj<HvKpiProps> = {
               css(styles.gaugeMask),
               css({
                 transform: `rotate(${percentage}deg)`,
-              })
+              }),
             )}
           />
           <div className={css(styles.gaugeInnerSemiCircle)} />

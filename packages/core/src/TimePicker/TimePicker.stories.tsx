@@ -1,9 +1,7 @@
 import { useRef, useState } from "react";
-
+import { css, CSSInterpolation } from "@emotion/css";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
-import { waitFor, screen, fireEvent } from "@storybook/testing-library";
-
-import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
+import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvButton,
   HvInput,
@@ -13,8 +11,7 @@ import {
   HvTimePickerValue,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-
-import { CSSInterpolation, css } from "@emotion/css";
+import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 
 export default {
   title: "Components/Time Picker",
@@ -23,8 +20,7 @@ export default {
 
 const makeDecorator =
   (style: CSSInterpolation): Decorator =>
-  (Story) =>
-    <div className={css(style)}>{Story()}</div>;
+  (Story) => <div className={css(style)}>{Story()}</div>;
 
 export const Main: StoryObj<HvTimePickerProps> = {
   args: {

@@ -1,8 +1,6 @@
-import { HvBaseProps } from "../types/generic";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./ActionBar.styles";
 
 export { staticClasses as actionBarClasses };

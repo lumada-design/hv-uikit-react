@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { HvLoading, HvEmptyState } from "@hitachivantara/uikit-react-core";
+import { HvEmptyState, HvLoading } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
 interface ErrorStateProps {

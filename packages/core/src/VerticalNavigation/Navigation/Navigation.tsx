@@ -1,25 +1,24 @@
-import { useCallback, useMemo, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 
-import { uniqueId } from "../../utils/helpers";
-import { wrapperTooltip } from "../../utils/wrapperTooltip";
-import { setId } from "../../utils/setId";
 import { useControlled } from "../../hooks/useControlled";
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
+import { uniqueId } from "../../utils/helpers";
+import { setId } from "../../utils/setId";
+import { wrapperTooltip } from "../../utils/wrapperTooltip";
+import { NavigationPopupContainer } from "../NavigationPopup/NavigationPopupContainer";
+import { HvVerticalNavigationSlider } from "../NavigationSlider";
+import { getParentItemById } from "../NavigationSlider/utils/NavigationSlider.utils";
 import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
   NavigationMode,
 } from "../TreeView";
-import { staticClasses, useClasses } from "./Navigation.styles";
-import { HvVerticalNavigationSlider } from "../NavigationSlider";
 import {
-  VerticalNavigationContext,
   NavigationData,
+  VerticalNavigationContext,
 } from "../VerticalNavigationContext";
-import { getParentItemById } from "../NavigationSlider/utils/NavigationSlider.utils";
-import { NavigationPopupContainer } from "../NavigationPopup/NavigationPopupContainer";
+import { staticClasses, useClasses } from "./Navigation.styles";
 
 export { staticClasses as verticalNavigationTreeClasses };
 
@@ -101,7 +100,7 @@ const createListHierarchy = (
   id,
   classes?: HvVerticalNavigationTreeClasses,
   mouseEnterHandler?: (event, item) => void,
-  disableTooltip = false
+  disableTooltip = false,
 ) =>
   items.map((item) => {
     const {
@@ -143,7 +142,7 @@ const createListHierarchy = (
               id,
               classes,
               mouseEnterHandler,
-              disableTooltip
+              disableTooltip,
             )
           : undefined}
       </HvVerticalNavigationTreeViewItem>
@@ -152,7 +151,7 @@ const createListHierarchy = (
 
 const getAllParents = (items) => {
   const parents = items.filter(
-    (item) => item.data != null && item.data.length > 0
+    (item) => item.data != null && item.data.length > 0,
   );
   const childParents = parents.flatMap((item) => getAllParents(item.data));
 
@@ -287,7 +286,7 @@ export const HvVerticalNavigationTree = ({
         }
       }
     },
-    [onChange, setSelected, setExpanded, isOpen, useIcons, data]
+    [onChange, setSelected, setExpanded, isOpen, useIcons, data],
   );
 
   const treeViewItemMouseEnterHandler = useCallback(
@@ -307,7 +306,7 @@ export const HvVerticalNavigationTree = ({
         setNavigationPopup(null);
       }
     },
-    [isOpen, useIcons, navigationPopup]
+    [isOpen, useIcons, navigationPopup],
   );
 
   const handleToggle = useCallback(
@@ -318,7 +317,7 @@ export const HvVerticalNavigationTree = ({
         onToggle(event, newExpanded);
       }
     },
-    [onToggle, setExpanded]
+    [onToggle, setExpanded],
   );
 
   const children = useMemo(
@@ -329,9 +328,9 @@ export const HvVerticalNavigationTree = ({
         id,
         classes,
         treeViewItemMouseEnterHandler,
-        navigationPopup?.fixedMode
+        navigationPopup?.fixedMode,
       ),
-    [classes, data, id, navigationPopup, treeViewItemMouseEnterHandler]
+    [classes, data, id, navigationPopup, treeViewItemMouseEnterHandler],
   );
 
   useEffect(() => {
@@ -390,7 +389,7 @@ export const HvVerticalNavigationTree = ({
       className={cx(
         classes.root,
         { [classes.collapsed]: !isOpen && !useIcons },
-        className
+        className,
       )}
       onMouseLeave={handleStyledNavMouseLeave}
       {...others}

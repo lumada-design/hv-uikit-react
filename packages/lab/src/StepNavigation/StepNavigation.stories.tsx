@@ -1,11 +1,11 @@
-import styled from "@emotion/styled";
 import { css } from "@emotion/css";
+import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import { theme } from "@hitachivantara/uikit-react-core";
 
-import { HvStepNavigation, HvStepNavigationProps } from "./StepNavigation";
 import { HvDefaultNavigation, HvStep, HvStepProps } from "./DefaultNavigation";
-import { HvDot, HvSimpleNavigation, dotClasses } from "./SimpleNavigation";
+import { dotClasses, HvDot, HvSimpleNavigation } from "./SimpleNavigation";
+import { HvStepNavigation, HvStepNavigationProps } from "./StepNavigation";
 
 const StyledDiv = styled("div")({
   display: "flex",

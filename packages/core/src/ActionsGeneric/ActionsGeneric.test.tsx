@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it, vi } from "vitest";
 import {
   Add,
   Delete,
@@ -53,7 +53,7 @@ describe("ActionsGeneric", () => {
         onAction={callbackSpy}
         actionsCallback={callbackSpy}
         maxVisibleActions={2}
-      />
+      />,
     );
 
     const previewBtn = screen.getByRole("button", { name: "Preview" });
@@ -80,7 +80,7 @@ describe("ActionsGeneric", () => {
         actionsCallback={callbackSpy}
         onAction={callbackSpy}
         maxVisibleActions={2}
-      />
+      />,
     );
 
     const addBtn = screen.getByRole("button", { name: "Add" });
@@ -118,7 +118,7 @@ describe("ActionsGeneric", () => {
   it("should render icon buttons for all visible actions when iconOnly is true at the component level", async () => {
     const user = userEvent.setup();
     render(
-      <HvActionsGeneric iconOnly actions={actions} maxVisibleActions={1} />
+      <HvActionsGeneric iconOnly actions={actions} maxVisibleActions={1} />,
     );
 
     const addBtn = screen.getByRole("button", { name: "Add" });
@@ -134,7 +134,7 @@ describe("ActionsGeneric", () => {
 
   it("iconOnly at the action level should override iconOnly", async () => {
     render(
-      <HvActionsGeneric iconOnly actions={actions} maxVisibleActions={3} />
+      <HvActionsGeneric iconOnly actions={actions} maxVisibleActions={3} />,
     );
 
     const uploadBtn = screen.getByRole("button", { name: "Upload" });

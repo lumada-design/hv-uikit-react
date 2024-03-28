@@ -1,5 +1,5 @@
-import { range } from "../utils/helpers";
 import { HvTableColumnConfig } from "../Table";
+import { range } from "../utils/helpers";
 
 export interface NewEntry {
   id: string;

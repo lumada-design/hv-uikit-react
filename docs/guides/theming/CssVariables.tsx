@@ -1,4 +1,4 @@
-import { theme, HvTypography } from "@hitachivantara/uikit-react-core";
+import { HvTypography, theme } from "@hitachivantara/uikit-react-core";
 
 export const CssVariables = () => {
   return (

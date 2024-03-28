@@ -3,7 +3,6 @@ import MuiCardMedia, {
 } from "@mui/material/CardMedia";
 
 import { ExtractNames } from "../../utils/classes";
-
 import { staticClasses, useClasses } from "./Media.styles";
 
 export { staticClasses as cardMediaClasses };

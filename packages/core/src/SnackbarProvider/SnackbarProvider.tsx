@@ -1,4 +1,5 @@
 import { forwardRef, useCallback, useMemo } from "react";
+import { SnackbarOrigin } from "@mui/material/Snackbar";
 import {
   OptionsObject,
   SnackbarContent,
@@ -6,14 +7,13 @@ import {
   SnackbarProviderProps,
   useSnackbar,
 } from "notistack";
-import { SnackbarOrigin } from "@mui/material/Snackbar";
 
-import { ExtractNames } from "../utils/classes";
 import {
   HvSnackbarContent,
   HvSnackbarContentProps,
 } from "../Snackbar/SnackbarContent";
 import { HvSnackbarVariant } from "../Snackbar/types";
+import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./SnackbarProvider.styles";
 
 export { staticClasses as snackbarProviderClasses };
@@ -100,17 +100,17 @@ export const useHvSnackbar = () => {
           variant={variant}
           snackbarContentProps={snackbarContentProps}
         />,
-        { ...otherOptions, className }
+        { ...otherOptions, className },
       );
     },
-    [enqueueNotistackSnackbar]
+    [enqueueNotistackSnackbar],
   );
   return useMemo(
     () => ({
       enqueueSnackbar,
       closeSnackbar,
     }),
-    [enqueueSnackbar, closeSnackbar]
+    [enqueueSnackbar, closeSnackbar],
   );
 };
 
@@ -143,7 +143,7 @@ export const HvSnackbarProvider = ({
           transition: "all 0s ease 0s !important",
         },
       }),
-      containerRoot
+      containerRoot,
     ),
     ...otherNotistackClasses,
   };

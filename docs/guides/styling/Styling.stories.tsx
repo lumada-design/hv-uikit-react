@@ -1,21 +1,21 @@
 import { useState } from "react";
-import {
-  HvButton,
-  HvSwitch,
-  HvButtonProps,
-  HvTabs,
-  HvTab,
-  tabsClasses,
-  theme,
-  HvProvider,
-  HvCard,
-  HvCardHeader,
-  HvCardContent,
-  HvTypography,
-  createTheme,
-} from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 import styled from "@emotion/styled";
+import {
+  createTheme,
+  HvButton,
+  HvButtonProps,
+  HvCard,
+  HvCardContent,
+  HvCardHeader,
+  HvProvider,
+  HvSwitch,
+  HvTab,
+  HvTabs,
+  HvTypography,
+  tabsClasses,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 export default {
   title: "Guides/Styling",

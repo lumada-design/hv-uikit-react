@@ -1,20 +1,20 @@
 import { ChangeEvent, useMemo } from "react";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useControlled } from "../hooks/useControlled";
-import { HvBaseProps } from "../types/generic";
-import { isKey } from "../utils/keyboardUtils";
-import { setId } from "../utils/setId";
-import { getPrevNextFocus } from "../utils/focusableElementFinder";
-import { ExtractNames } from "../utils/classes";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import { HvButtonSize, HvButtonVariant } from "../Button";
+import { HvDropdownButton } from "../DropdownButton";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
 import { HvList, HvListProps, HvListValue } from "../List";
 import { HvPanel } from "../Panel";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { getPrevNextFocus } from "../utils/focusableElementFinder";
+import { isKey } from "../utils/keyboardUtils";
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./DropDownMenu.styles";
-import { HvDropdownButton } from "../DropdownButton";
 
 export { staticClasses as dropDownMenuClasses };
 
@@ -43,7 +43,7 @@ export interface HvDropDownMenuProps
   /** Function executed in each onClick. Should received the clicked element. */
   onClick?: (
     event: React.ChangeEvent<HTMLLIElement>,
-    value: HvListValue
+    value: HvListValue,
   ) => void;
   /** Keep the Dropdown Menu opened after clicking one option */
   keepOpened?: boolean;
@@ -114,7 +114,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
   };
 
   const setFocusToContent: HvBaseDropdownProps["onContainerCreation"] = (
-    containerRef
+    containerRef,
   ) => {
     containerRef?.getElementsByTagName("li")[0]?.focus();
   };

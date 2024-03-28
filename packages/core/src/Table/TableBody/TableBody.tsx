@@ -6,11 +6,10 @@ import {
   useRef,
 } from "react";
 
-import { HvBaseProps } from "../../types/generic";
-import { useForkRef } from "../../hooks/useForkRef";
 import { HvFocus } from "../../Focus";
+import { useForkRef } from "../../hooks/useForkRef";
+import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableBody.styles";
@@ -57,7 +56,7 @@ export const HvTableBody = forwardRef<HTMLElement, HvTableBodyProps>(
       withNavigation = false,
       ...others
     },
-    externalRef
+    externalRef,
   ) => {
     const { classes, cx } = useClasses(classesProp);
 
@@ -101,5 +100,5 @@ export const HvTableBody = forwardRef<HTMLElement, HvTableBodyProps>(
         </Component>
       </TableSectionContext.Provider>
     );
-  }
+  },
 );

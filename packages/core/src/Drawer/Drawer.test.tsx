@@ -1,6 +1,6 @@
 import { useState } from "react";
-import userEvent from "@testing-library/user-event";
 import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import { HvButton, HvDialogActions, HvDialogContent, HvDialogTitle } from "..";
 import { HvDrawer } from "./Drawer";
@@ -39,7 +39,7 @@ const Sample = ({ startingOpen }: { startingOpen: boolean }) => {
 describe("HvDrawer", () => {
   it("should open when closed", async () => {
     const { getByRole, queryByText, getByText, queryByRole } = render(
-      <Sample startingOpen={false} />
+      <Sample startingOpen={false} />,
     );
 
     const openButton = getByRole("button", { name: "openDialog" });
@@ -58,7 +58,7 @@ describe("HvDrawer", () => {
 
   it("should close when opened", async () => {
     const { getByRole, getByText, queryByRole } = render(
-      <Sample startingOpen />
+      <Sample startingOpen />,
     );
 
     const closeButton = getByRole("button", { name: "Close" });

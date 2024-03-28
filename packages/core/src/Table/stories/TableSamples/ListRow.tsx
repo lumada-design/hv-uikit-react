@@ -1,16 +1,16 @@
 import { useMemo } from "react";
 import {
-  HvTableContainer,
+  HvButton,
+  HvCheckBox,
+  HvDropDownMenu,
   HvTable,
   HvTableBody,
+  HvTableCell,
   HvTableColumnConfig,
+  HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
-  HvCheckBox,
-  HvDropDownMenu,
-  HvButton,
 } from "@hitachivantara/uikit-react-core";
 
 import {
@@ -29,7 +29,7 @@ export const ListRow = () => {
 
   const data = useMemo<AssetEvent[]>(
     () => makeData(4).map((row) => ({ ...row, link: "/details" })),
-    []
+    [],
   );
 
   if (!data) return null;

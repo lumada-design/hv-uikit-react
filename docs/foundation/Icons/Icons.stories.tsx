@@ -1,13 +1,13 @@
+import { Meta, StoryObj } from "@storybook/react";
 import {
   Bookmark,
   CheckboxCheck,
+  HvIconSprite,
+  HvIconSpriteProps,
+  IconBase,
   Level4,
   Machine,
-  IconBase,
-  HvIconSpriteProps,
-  HvIconSprite,
 } from "@hitachivantara/uikit-react-icons";
-import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof IconBase> = {
   title: "Foundation/Icons",

@@ -65,7 +65,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(
         () => false,
         nodeMap,
-        "B"
+        "B",
       );
 
       expect(foundNodeId).toEqual("C");
@@ -75,7 +75,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(
         () => false,
         nodeMap,
-        "A"
+        "A",
       );
 
       expect(foundNodeId).toEqual("B");
@@ -85,7 +85,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(
         (nodeId) => nodeId === "A",
         nodeMap,
-        "A"
+        "A",
       );
 
       expect(foundNodeId).toEqual("A1");
@@ -95,7 +95,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(
         () => false,
         nodeMap,
-        "A3"
+        "A3",
       );
 
       expect(foundNodeId).toEqual("B");
@@ -105,7 +105,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(
         () => false,
         nodeMap,
-        "A3c"
+        "A3c",
       );
 
       expect(foundNodeId).toEqual("B");
@@ -117,7 +117,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
         (nodeId) => nodeId === "A",
         nodeMap,
-        "A1"
+        "A1",
       );
 
       expect(foundNodeId).toEqual("A");
@@ -127,7 +127,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
         () => false,
         nodeMap,
-        "C"
+        "C",
       );
 
       expect(foundNodeId).toEqual("B");
@@ -137,7 +137,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
         () => false,
         nodeMap,
-        "B"
+        "B",
       );
 
       expect(foundNodeId).toEqual("A");
@@ -147,7 +147,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
         (nodeId) => nodeId === "A",
         nodeMap,
-        "B"
+        "B",
       );
 
       expect(foundNodeId).toEqual("A3");
@@ -157,7 +157,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
         (nodeId) => nodeId === "A",
         nodeMap,
-        "B"
+        "B",
       );
 
       expect(foundNodeId).toEqual("A3");
@@ -167,7 +167,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
         (nodeId) => nodeId === "A" || nodeId === "A3",
         nodeMap,
-        "B"
+        "B",
       );
 
       expect(foundNodeId).toEqual("A3c");
@@ -178,7 +178,7 @@ describe("NodeTreeNavigationUtils", () => {
     it("if last top node is collapsed or childless, return last node", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
         () => false,
-        nodeMap
+        nodeMap,
       );
 
       expect(foundNodeId).toEqual("C");
@@ -187,7 +187,7 @@ describe("NodeTreeNavigationUtils", () => {
     it("if last top node is expanded, return last child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
         (nodeId) => nodeId === "C",
-        nodeMap
+        nodeMap,
       );
 
       expect(foundNodeId).toEqual("C3");
@@ -197,7 +197,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
         () => false,
         nodeMap,
-        "A"
+        "A",
       );
 
       expect(foundNodeId).toEqual("A");
@@ -207,7 +207,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
         () => false,
         nodeMap,
-        "B"
+        "B",
       );
 
       expect(foundNodeId).toEqual("B");
@@ -217,7 +217,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
         (nodeId) => nodeId === "A",
         nodeMap,
-        "A"
+        "A",
       );
 
       expect(foundNodeId).toEqual("A3");
@@ -227,7 +227,7 @@ describe("NodeTreeNavigationUtils", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
         (nodeId) => nodeId === "A" || nodeId === "A3",
         nodeMap,
-        "A"
+        "A",
       );
 
       expect(foundNodeId).toEqual("A3c");
@@ -253,7 +253,7 @@ describe("NodeTreeNavigationUtils", () => {
           "C3",
         ],
         "A",
-        "z"
+        "z",
       );
 
       expect(foundNodeId).toBeNull();
@@ -264,7 +264,7 @@ describe("NodeTreeNavigationUtils", () => {
         nodeMap,
         ["A", "A1", "A2", "A3", "B", "C", "C1", "C2", "C3"],
         "A",
-        "j"
+        "j",
       );
 
       expect(foundNodeId).toBeNull();
@@ -288,7 +288,7 @@ describe("NodeTreeNavigationUtils", () => {
           "C3",
         ],
         "A",
-        "j"
+        "j",
       );
 
       expect(foundNodeId).toEqual("A3c");
@@ -312,7 +312,7 @@ describe("NodeTreeNavigationUtils", () => {
           "C3",
         ],
         "A",
-        "J"
+        "J",
       );
 
       expect(foundNodeId).toEqual("A3c");
@@ -336,7 +336,7 @@ describe("NodeTreeNavigationUtils", () => {
           "C3",
         ],
         "A",
-        "b"
+        "b",
       );
 
       expect(foundNodeId).toEqual("A3b");
@@ -358,7 +358,7 @@ describe("NodeTreeNavigationUtils", () => {
           "C3",
         ],
         "A3c",
-        "b"
+        "b",
       );
 
       expect(foundNodeId).toEqual("B");
@@ -382,7 +382,7 @@ describe("NodeTreeNavigationUtils", () => {
           "C3",
         ],
         "C1",
-        "g"
+        "g",
       );
 
       expect(foundNodeId).toEqual("C2");
@@ -404,7 +404,7 @@ describe("NodeTreeNavigationUtils", () => {
           "C3",
         ],
         "A3a",
-        "i"
+        "i",
       );
 
       expect(foundNodeId).toBeNull();
@@ -428,7 +428,7 @@ describe("NodeTreeNavigationUtils", () => {
           "C3",
         ],
         "C",
-        "d"
+        "d",
       );
 
       expect(foundNodeId).toEqual("A1");

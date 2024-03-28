@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import {
-  useTheme,
   HvDropdown,
   HvListValue,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 
-import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { ScaleProps, UnitSlider } from "~/components/common/UnitSlider";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { extractFontSizeUnit } from "~/generator/utils";
 
 const FontSizes = () => {
@@ -17,7 +17,7 @@ const FontSizes = () => {
   const [fontValue, setFontValue] = useState<number>(); // 14, 16, ...
   const [unit, setUnit] = useState("px"); // px, rem, ...
   const [currSizes, setCurrSizes] = useState<Map<string, string>>(
-    new Map<string, string>()
+    new Map<string, string>(),
   );
   const [scale, setScale] = useState<ScaleProps>({
     minMax: [0, 100],
@@ -106,7 +106,7 @@ const FontSizes = () => {
           values={fontSizes}
           onChange={(item) =>
             onSizeChangedHandler(
-              (item as HvListValue)?.label as string | undefined
+              (item as HvListValue)?.label as string | undefined,
             )
           }
         />

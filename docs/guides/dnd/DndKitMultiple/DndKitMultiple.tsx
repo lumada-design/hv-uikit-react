@@ -1,4 +1,4 @@
-import { useMemo, useState, HTMLAttributes } from "react";
+import { HTMLAttributes, useMemo, useState } from "react";
 import {
   DndContext,
   DragEndEvent,
@@ -6,14 +6,15 @@ import {
   DragOverlay,
   DragStartEvent,
   KeyboardSensor,
+  Modifier,
   PointerSensor,
   useSensor,
   useSensors,
-  Modifier,
 } from "@dnd-kit/core";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { arrayMove, SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
+import { css } from "@emotion/css";
 import {
   HvListContainer,
   HvListItem,
@@ -23,10 +24,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Drag } from "@hitachivantara/uikit-react-icons";
 
-import { css } from "@emotion/css";
-
-import { sampleColumns, sampleItems } from "./sampleData";
 import { Column, Item } from "../types";
+import { sampleColumns, sampleItems } from "./sampleData";
 import classes from "./styles";
 
 // #region Fixes a problem we have while dragging items in storybook docs mode
@@ -36,7 +35,7 @@ type RestrictToSampleModifier = Modifier extends (...args: infer A) => infer R
 
 export const restrictToSample: RestrictToSampleModifier = (
   rootId,
-  { transform }
+  { transform },
 ) => {
   const rect = document.getElementById(rootId)?.getBoundingClientRect();
 
@@ -158,7 +157,7 @@ export const DndKitMultiple = () => {
         distance: 2,
       },
     }),
-    useSensor(KeyboardSensor, {})
+    useSensor(KeyboardSensor, {}),
   );
 
   const columnsId = useMemo(() => columns.map((col) => col.id), [columns]);

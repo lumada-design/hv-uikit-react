@@ -1,11 +1,11 @@
 import {
+  HvBox,
   HvCard,
-  HvCardHeader,
   HvCardContent,
+  HvCardHeader,
   HvCardMedia,
   HvTypography,
   theme,
-  HvBox,
 } from "@hitachivantara/uikit-react-core";
 
 export const Cards = () => {

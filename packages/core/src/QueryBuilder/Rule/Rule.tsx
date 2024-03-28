@@ -1,17 +1,17 @@
 import { useMemo } from "react";
-import { Delete } from "@hitachivantara/uikit-react-icons";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { Delete } from "@hitachivantara/uikit-react-icons";
 
 import { HvGrid } from "../../Grid";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvIconButton } from "../../IconButton";
 import { ExtractNames } from "../../utils/classes";
 import { useQueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";
-import { Value } from "./Value";
 import { staticClasses, useClasses } from "./Rule.styles";
-import { HvIconButton } from "../../IconButton";
+import { Value } from "./Value";
 
 export { staticClasses as queryBuilderRuleClasses };
 
@@ -65,7 +65,7 @@ export const Rule = (props: RuleProps) => {
         return typeOperators.reduce(
           (count, item) =>
             count + (item.combinators.includes(combinator) ? 1 : 0),
-          0
+          0,
         );
       }
     }

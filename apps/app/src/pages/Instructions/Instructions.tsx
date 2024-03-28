@@ -4,22 +4,22 @@ import {
   HvCardContent,
   HvCardHeader,
   HvContainer,
-  HvTypography,
   HvSimpleGrid,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import {
-  Tool,
-  Favorite,
-  PaintBucket,
-  FontSize,
   Bold,
-  Template,
-  Components,
-  Preview,
-  ThemeSwitcher,
   Code,
   ColorPicker,
+  Components,
+  Favorite,
+  FontSize,
   FontSizeBigger,
+  PaintBucket,
+  Preview,
+  Template,
+  ThemeSwitcher,
+  Tool,
 } from "@hitachivantara/uikit-react-icons";
 
 import { useGeneratorContext } from "~/generator/GeneratorContext";

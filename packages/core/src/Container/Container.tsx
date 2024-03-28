@@ -1,16 +1,13 @@
 import { forwardRef } from "react";
-
-import { theme } from "@hitachivantara/uikit-styles";
-
-import { useTheme } from "@mui/material/styles";
 import MuiContainer, {
   ContainerProps as MuiContainerProps,
 } from "@mui/material/Container";
+import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./Container.styles";
 
 export { staticClasses as containerClasses };
@@ -96,5 +93,5 @@ export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
         {...others}
       />
     );
-  }
+  },
 );

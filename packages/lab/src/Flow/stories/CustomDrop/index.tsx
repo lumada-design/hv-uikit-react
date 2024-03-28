@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { css } from "@emotion/css";
 import {
   HvButton,
@@ -19,21 +20,20 @@ import {
   LineChartAlt,
 } from "@hitachivantara/uikit-react-icons";
 import {
-  HvFlowSidebar,
   HvFlow,
-  HvFlowProps,
   HvFlowControls,
   HvFlowInstance,
+  HvFlowProps,
+  HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
-// The code for these components and values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/CustomDrop
-import { Precipitation } from "./Precipitation";
-import { data } from "./data";
-import { LineChart } from "./LineChart";
-import { BarChart } from "./BarChart";
 // The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
 import { restrictToSample } from "../Base";
+import { BarChart } from "./BarChart";
+import { data } from "./data";
+import { LineChart } from "./LineChart";
+// The code for these components and values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/CustomDrop
+import { Precipitation } from "./Precipitation";
 
 // Node groups
 export const nodeGroups = {
@@ -90,7 +90,7 @@ export const CustomDrop = () => {
       Object.keys(data).map((key) => {
         return { label: key };
       }),
-    []
+    [],
   );
 
   const handleCloseConfig = () => {

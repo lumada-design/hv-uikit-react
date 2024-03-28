@@ -3,8 +3,8 @@ import { fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
-import { HvFileUploader, HvFileUploaderProps } from "./FileUploader";
 import { HvFileData } from "./File";
+import { HvFileUploader, HvFileUploaderProps } from "./FileUploader";
 
 const fileList: HvFileData[] = [
   {
@@ -114,13 +114,13 @@ describe("FileUploader", () => {
         }
         acceptedFiles={["png"]}
         maxFileSize={1}
-      />
+      />,
     );
 
     const files = screen.queryAllByRole("listitem");
 
     expect(
-      within(files[0]).getByText(/File type not allowed for upload/)
+      within(files[0]).getByText(/File type not allowed for upload/),
     ).toBeVisible();
   });
 
@@ -142,13 +142,13 @@ describe("FileUploader", () => {
         }
         acceptedFiles={["png"]}
         maxFileSize={5 * 1000}
-      />
+      />,
     );
 
     const files = screen.queryAllByRole("listitem");
 
     expect(
-      within(files[0]).getByText(/The file exceeds the maximum upload size/)
+      within(files[0]).getByText(/The file exceeds the maximum upload size/),
     ).toBeVisible();
   });
 });

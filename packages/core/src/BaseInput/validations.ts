@@ -42,7 +42,7 @@ export const hasBuiltInValidations = (
   minCharQuantity: number | null | undefined,
   maxCharQuantity: number | null | undefined,
   validation?: (value: string) => boolean,
-  inputProps?: InputBaseComponentProps
+  inputProps?: InputBaseComponentProps,
 ) =>
   required ||
   validationType !== validationTypes.none ||
@@ -62,7 +62,7 @@ export const hasBuiltInValidations = (
 /** Returns the form element's validation state based in the validity state of the input. */
 export const computeValidationState = (
   inputValidity: HvInputValidity,
-  isEmptyValue: boolean
+  isEmptyValue: boolean,
 ) => {
   // to keep 2.x behaviour,
   // consider that if the value is empty (and not required) we're returning to the standBy state.
@@ -88,7 +88,7 @@ export const computeValidationState = (
 export const computeValidationMessage = (
   inputValidity: HvInputValidity,
   /** The available localized error messages. */
-  errorMessages: Record<string, string>
+  errorMessages: Record<string, string>,
 ) => {
   if (inputValidity.valid) {
     return "";
@@ -123,7 +123,7 @@ export const validateInput = (
   minCharQuantity: any,
   maxCharQuantity: any,
   validationType: string,
-  validation?: (value: string) => boolean
+  validation?: (value: string) => boolean,
 ): HvInputValidity => {
   // bootstrap validity object using browser's built-in validation
   const inputValidity: HvInputValidity = {

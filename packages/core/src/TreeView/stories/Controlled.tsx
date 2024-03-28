@@ -2,8 +2,8 @@ import { useState } from "react";
 import {
   HvButton,
   HvPanel,
-  HvTreeView,
   HvTreeItem,
+  HvTreeView,
 } from "@hitachivantara/uikit-react-core";
 
 export const Controlled = () => {

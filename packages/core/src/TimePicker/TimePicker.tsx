@@ -1,34 +1,29 @@
-import { useState, useRef, useMemo, forwardRef } from "react";
-
+import { forwardRef, useMemo, useRef, useState } from "react";
 import { Time } from "@internationalized/date";
-
 import { useForkRef } from "@mui/material/utils";
-
 import { useTimeField } from "@react-aria/datepicker";
 import {
   TimeFieldStateOptions,
   useTimeFieldState,
 } from "@react-stately/datepicker";
-
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 
+import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import {
   HvFormElement,
+  HvFormElementProps,
+  HvInfoMessage,
   HvLabel,
   HvWarningText,
-  HvInfoMessage,
-  HvFormElementProps,
 } from "../Forms";
-import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
-import { useDefaultProps } from "../hooks/useDefaultProps";
-
-import { Unit } from "./Unit";
 import { Placeholder } from "./Placeholder";
 import { staticClasses, useClasses } from "./TimePicker.styles";
+import { Unit } from "./Unit";
 
 const toTime = (value?: HvTimePickerValue | null) => {
   if (!value) return value;
@@ -208,7 +203,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
         "aria-describedby": ariaDescribedBy,
       },
       state,
-      timeFieldRef
+      timeFieldRef,
     );
 
     const [open, setOpen] = useState(false);
@@ -222,7 +217,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
         minute: minutesPlaceholder,
         second: secondsPlaceholder,
       }),
-      [hoursPlaceholder, minutesPlaceholder, secondsPlaceholder]
+      [hoursPlaceholder, minutesPlaceholder, secondsPlaceholder],
     );
 
     // the error message area will only be created if:
@@ -357,5 +352,5 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
         )}
       </HvFormElement>
     );
-  }
+  },
 );

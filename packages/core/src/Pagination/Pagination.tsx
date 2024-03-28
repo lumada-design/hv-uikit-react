@@ -1,24 +1,24 @@
 import { useCallback, useEffect } from "react";
 import Hidden from "@mui/material/Hidden";
 import {
-  Start,
-  End,
   Backwards,
+  End,
   Forwards,
+  Start,
 } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvInput, HvInputProps } from "../Input";
-import { HvTypography } from "../Typography";
-import { HvBaseProps } from "../types/generic";
-import { setId } from "../utils/setId";
-import { isKey } from "../utils/keyboardUtils";
-import { ExtractNames } from "../utils/classes";
 import { useLabels } from "../hooks/useLabels";
-import HvSelect, { Option } from "./Select";
-import { staticClasses, useClasses } from "./Pagination.styles";
-import { usePageInput, getSafePage, setColor } from "./utils";
 import { HvIconButton } from "../IconButton";
+import { HvInput, HvInputProps } from "../Input";
+import { HvBaseProps } from "../types/generic";
+import { HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
+import { isKey } from "../utils/keyboardUtils";
+import { setId } from "../utils/setId";
+import { staticClasses, useClasses } from "./Pagination.styles";
+import HvSelect, { Option } from "./Select";
+import { getSafePage, setColor, usePageInput } from "./utils";
 
 export { staticClasses as paginationClasses };
 
@@ -127,7 +127,7 @@ export const HvPagination = (props: HvPaginationProps) => {
       onPageChange?.(safePage);
       handleInputChange(null, safePage + 1);
     },
-    [page, pages, onPageChange, handleInputChange]
+    [page, pages, onPageChange, handleInputChange],
   );
 
   useEffect(() => {

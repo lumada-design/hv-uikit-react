@@ -1,10 +1,8 @@
-import { useState, useCallback, forwardRef } from "react";
-
+import { forwardRef, useCallback, useState } from "react";
 import MuiRadio, { RadioProps as MuiRadioProps } from "@mui/material/Radio";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./BaseRadio.styles";
 import { Selected, Unselected } from "./icons";
 
@@ -64,7 +62,7 @@ export interface HvBaseRadioProps
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
     checked: boolean,
-    value: any
+    value: any,
   ) => void;
   /**
    * Whether the selector should use semantic colors.
@@ -130,7 +128,7 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
         setFocusVisible(true);
         onFocusVisible?.(evt);
       },
-      [onFocusVisible]
+      [onFocusVisible],
     );
 
     const onBlurCallback = useCallback(
@@ -138,7 +136,7 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
         setFocusVisible(false);
         onBlur?.(evt);
       },
-      [onBlur]
+      [onBlur],
     );
 
     const icons = getSelectorIcons();
@@ -151,7 +149,7 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
 
         onChange?.(evt, evt.target.checked, value);
       },
-      [onChange, readOnly, value]
+      [onChange, readOnly, value],
     );
 
     return (
@@ -167,7 +165,7 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
             [classes.checked]: checked,
             [classes.semantic]: semantic,
           },
-          className
+          className,
         )}
         icon={icon || icons.radio}
         checkedIcon={checkedIcon || icons.radioChecked}
@@ -186,5 +184,5 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
         {...others}
       />
     );
-  }
+  },
 );

@@ -26,5 +26,5 @@ export const { staticClasses, useClasses } = createClasses(
       opacity: "1",
       borderRadius: theme.radii.base,
     },
-  }
+  },
 );

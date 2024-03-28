@@ -3,14 +3,14 @@ import { Add, Delete, Info } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "../../Button";
 import { HvEmptyState } from "../../EmptyState";
+import { HvIconButton } from "../../IconButton";
 import { HvMultiButton } from "../../MultiButton";
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
-import { Rule } from "../Rule";
 import { useQueryBuilderContext } from "../Context";
 import { useClasses } from "../QueryBuilder.styles";
+import { Rule } from "../Rule";
 import { HvQueryBuilderQueryCombinator, Query } from "../types";
-import { HvIconButton } from "../../IconButton";
 
 export interface RuleGroupProps {
   id: React.Key;
@@ -84,7 +84,7 @@ export const RuleGroup = ({
         combinator: item.operand,
       });
     },
-    [dispatchAction, id]
+    [dispatchAction, id],
   );
 
   return (
@@ -229,7 +229,7 @@ export const RuleGroup = ({
       <div
         className={cx(
           classes.actionButtonContainer,
-          classes.topActionButtonContainer
+          classes.topActionButtonContainer,
         )}
       >
         {actionButtons}

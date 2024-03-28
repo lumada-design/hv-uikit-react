@@ -6,7 +6,7 @@ const fixTitle = (filePath, title) => {
   const data = fs.readFileSync(filePath, "utf-8");
   const updatedData = data.replace(
     /<title>.*<\/title>/,
-    `<title>${title}</title>`
+    `<title>${title}</title>`,
   );
 
   fs.writeFileSync(filePath, updatedData);

@@ -17,7 +17,7 @@ describe("Dropdown", () => {
           { label: "value 3" },
           { label: "value 4" },
         ]}
-      />
+      />,
     );
 
     const dropdown = screen.getByRole("combobox");
@@ -42,10 +42,10 @@ describe("Dropdown", () => {
           { label: "value 3" },
           { label: "value 4" },
         ]}
-      />
+      />,
     );
     expect(
-      container.getElementsByClassName("HvBaseDropdown-rootDisabled")
+      container.getElementsByClassName("HvBaseDropdown-rootDisabled"),
     ).toHaveLength(1);
 
     const DropdownHeader = screen.getByRole("combobox");
@@ -66,7 +66,7 @@ describe("Dropdown", () => {
           { label: "value 3" },
           { label: "value 4" },
         ]}
-      />
+      />,
     );
 
     const DropdownHeader = screen.getByRole("combobox");
@@ -86,7 +86,7 @@ describe("Dropdown", () => {
           { label: "value 3" },
           { label: "value 4" },
         ]}
-      />
+      />,
     );
 
     const DropdownHeader = screen.getByRole("combobox");
@@ -119,7 +119,7 @@ describe("Dropdown", () => {
           { label: "value 3" },
           { label: "value 4" },
         ]}
-      />
+      />,
     );
 
     const DropdownHeader = screen.getByRole("combobox");
@@ -142,7 +142,7 @@ describe("Dropdown", () => {
           { label: "value 3" },
           { label: "value 4" },
         ]}
-      />
+      />,
     );
 
     await userEvent.click(screen.getByRole("combobox"));

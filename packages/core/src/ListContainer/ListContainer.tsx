@@ -1,18 +1,17 @@
 import {
-  useRef,
-  useContext,
-  useMemo,
-  forwardRef,
-  isValidElement,
   Children,
   cloneElement,
+  forwardRef,
+  isValidElement,
+  useContext,
+  useMemo,
+  useRef,
 } from "react";
 
-import { HvBaseProps } from "../types/generic";
-import { useForkRef } from "../hooks/useForkRef";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useForkRef } from "../hooks/useForkRef";
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./ListContainer.styles";
 import HvListContext from "./ListContext";
 
@@ -79,7 +78,7 @@ export const HvListContainer = forwardRef<
       interactive,
       nesting,
       topContainerRef,
-    ]
+    ],
   );
 
   const children = useMemo(() => {
@@ -87,7 +86,7 @@ export const HvListContainer = forwardRef<
 
     const anySelected = Children.toArray(childrenProp).some(
       (child) =>
-        isValidElement(child) && child.props.selected && !child.props.disabled
+        isValidElement(child) && child.props.selected && !child.props.disabled,
     );
 
     return Children.map(childrenProp, (child: any, i) => {

@@ -1,13 +1,10 @@
 import { useMemo, useState } from "react";
-
-import { Meta, StoryObj } from "@storybook/react";
-
 import { css } from "@emotion/css";
-
+import { Meta, StoryObj } from "@storybook/react";
 import {
   HvCheckBox,
-  HvDropDownMenu,
   HvDropdown,
+  HvDropDownMenu,
   HvListValue,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
@@ -18,8 +15,8 @@ import {
 } from "@hitachivantara/uikit-react-viz";
 
 import { vizDecorator } from "../../BaseChart/stories/utils";
-import { customChartData } from "./mockData";
 import { renderTooltip } from "./customTooltip";
+import { customChartData } from "./mockData";
 
 const meta: Meta<typeof HvBarChart> = {
   title: "Visualizations/Bar Chart",
@@ -194,7 +191,7 @@ export const CustomStackedBarChart: StoryObj<HvBarChartProps> = {
         { value: 2, label: "Last 24h" },
         { value: 3, label: "Last 48h" },
       ],
-      []
+      [],
     );
 
     const formatter = (value?: string | number) => `${value} Gb`;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { css } from "@emotion/css";
 import {
   HvButton,
@@ -8,15 +9,14 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Add, Backwards, DataSource } from "@hitachivantara/uikit-react-icons";
 import {
-  HvFlowSidebar,
   HvFlow,
-  HvFlowNode,
-  HvFlowNodeProps,
-  HvFlowNodeFC,
-  HvFlowProps,
   HvFlowControls,
+  HvFlowNode,
+  HvFlowNodeFC,
+  HvFlowNodeProps,
+  HvFlowProps,
+  HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 import { restrictToSample } from "../Base";
 
@@ -35,7 +35,7 @@ type NodeGroup = keyof typeof nodeGroups;
 /** Create a generic node programmatically */
 const createNode = (
   nodeProps: Partial<HvFlowNodeProps>,
-  nodeMeta: HvFlowNodeFC<NodeGroup>["meta"]
+  nodeMeta: HvFlowNodeFC<NodeGroup>["meta"],
 ) => {
   const Asset: HvFlowNodeFC<NodeGroup> = (props) => (
     <HvFlowNode {...nodeProps} {...props} />
@@ -49,7 +49,7 @@ const createNode = (
 const createAssetNode = ({ label, description, params, data }) => {
   return createNode(
     { expanded: true, description, params },
-    { label, groupId: "assets", data }
+    { label, groupId: "assets", data },
   );
 };
 
@@ -88,7 +88,7 @@ const nodeTypes = Object.fromEntries(
     });
 
     return [`asset${i}`, NewAsset] as const;
-  })
+  }),
 );
 
 export const Dynamic = () => {

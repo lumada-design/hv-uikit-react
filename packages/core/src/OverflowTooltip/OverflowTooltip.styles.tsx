@@ -17,5 +17,5 @@ export const { staticClasses, useClasses } = createClasses(
       WebkitLineClamp: 3,
       WebkitBoxOrient: "vertical",
     },
-  }
+  },
 );

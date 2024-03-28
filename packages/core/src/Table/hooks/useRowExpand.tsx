@@ -3,13 +3,11 @@ import {
   TableExpandedToggleProps,
   UseExpandedRowProps,
 } from "react-table";
-
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { HvTypography } from "../../Typography";
 import { HvButton } from "../../Button";
-
 import { useLabels } from "../../hooks/useLabels";
+import { HvTypography } from "../../Typography";
 
 // #region ##### TYPES #####
 
@@ -26,15 +24,15 @@ export interface UseHvRowExpandRowToggleProps extends TableExpandedToggleProps {
 }
 
 export interface UseHvRowExpandRowInstance<
-  D extends object = Record<string, unknown>
+  D extends object = Record<string, unknown>,
 > extends UseExpandedRowProps<D> {
   getToggleRowExpandedProps: (
-    props?: Partial<TableExpandedToggleProps>
+    props?: Partial<TableExpandedToggleProps>,
   ) => UseHvRowExpandRowToggleProps;
 }
 
 export type UseRowExpandProps = (<D extends object = Record<string, unknown>>(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####
@@ -80,7 +78,7 @@ const visibleColumnsHook = (columns, { instance }) => {
   // add a button to first data column, unless it has a custom renderer
   // if so, add an extra column instead
   const firstDataColumnIndex = columns.findIndex(
-    (c) => c.id?.indexOf("_hv_") !== 0
+    (c) => c.id?.indexOf("_hv_") !== 0,
   );
 
   if (firstDataColumnIndex !== -1) {
@@ -111,7 +109,7 @@ const visibleColumnsHook = (columns, { instance }) => {
   columnsCopy.splice(
     firstDataColumnIndex !== -1 ? firstDataColumnIndex : 0,
     0,
-    expandColumn
+    expandColumn,
   );
 
   return columnsCopy;

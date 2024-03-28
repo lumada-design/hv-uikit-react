@@ -1,8 +1,8 @@
-import { HvBaseProps } from "../../../types/generic";
 import {
   HvActionsGeneric,
   HvActionsGenericProps,
 } from "../../../ActionsGeneric";
+import { HvBaseProps } from "../../../types/generic";
 import { HvTypography } from "../../../Typography";
 import { ExtractNames } from "../../../utils/classes";
 import { setId } from "../../../utils/setId";

@@ -24,12 +24,12 @@ describe("DropZone", () => {
 
     expect(screen.getByText("Label", { selector: "label" })).toBeVisible();
     expect(
-      screen.getByText("Max. file size: 1.00B (.jpg)", { selector: "label" })
+      screen.getByText("Max. file size: 1.00B (.jpg)", { selector: "label" }),
     ).toBeVisible();
     expect(screen.getByText("Drag and drop or")).toBeVisible();
     expect(screen.getByText("Select files")).toBeVisible();
     expect(
-      screen.getByLabelText("Label", { selector: "input" })
+      screen.getByLabelText("Label", { selector: "input" }),
     ).toBeInTheDocument();
   });
 });

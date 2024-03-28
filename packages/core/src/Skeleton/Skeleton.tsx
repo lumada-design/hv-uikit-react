@@ -1,8 +1,7 @@
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
-import { useClasses, staticClasses } from "./Skeleton.styles";
+import { staticClasses, useClasses } from "./Skeleton.styles";
 
 export { staticClasses as skeletonClasses };
 
@@ -52,7 +51,7 @@ export const HvSkeleton = (props: HvSkeletonProps) => {
         classes.root,
         classes[variant],
         animation && classes[animation],
-        className
+        className,
       )}
       style={{
         width,

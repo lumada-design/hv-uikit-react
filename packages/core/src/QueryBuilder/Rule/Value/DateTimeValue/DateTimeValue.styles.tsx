@@ -32,5 +32,5 @@ export const { useClasses, staticClasses } = createClasses(
     timePicker: {
       flex: 1,
     },
-  }
+  },
 );

@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 
 import { HvEmptyState } from "./EmptyState";
 
@@ -16,7 +16,7 @@ describe("EmptyState", () => {
         message={MockMessage}
         action={MockAction}
         icon={MockIcon}
-      />
+      />,
     );
     expect(container).toBeDefined();
   });
@@ -28,7 +28,7 @@ describe("EmptyState", () => {
         message={MockMessage}
         action={MockAction}
         icon={MockIcon}
-      />
+      />,
     );
     expect(getByText("mockTitle")).toBeInTheDocument();
     expect(getByText("mockMessage")).toBeInTheDocument();
@@ -43,7 +43,7 @@ describe("EmptyState", () => {
         message="mockMessage"
         action="mockAction"
         icon={MockIcon}
-      />
+      />,
     );
     expect(getByText("mockTitle")).toBeInTheDocument();
     expect(getByText("mockMessage")).toBeInTheDocument();
@@ -52,7 +52,7 @@ describe("EmptyState", () => {
 
   it("should not render title or action if none is passed (minimal empty state)", () => {
     const { getByText, queryByText } = render(
-      <HvEmptyState message={MockMessage} icon={MockIcon} />
+      <HvEmptyState message={MockMessage} icon={MockIcon} />,
     );
     expect(getByText("mockMessage")).toBeInTheDocument();
     expect(getByText("mockIcon")).toBeInTheDocument();

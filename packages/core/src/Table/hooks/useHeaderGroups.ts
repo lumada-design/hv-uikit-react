@@ -20,9 +20,9 @@ export interface UseHvHeaderGroupsCellProps {
 }
 
 export type UseHvHeaderGroupsProps = (<
-  D extends object = Record<string, unknown>
+  D extends object = Record<string, unknown>,
 >(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####
@@ -41,7 +41,7 @@ const replaceHeaderPlaceholders = (headerGroups) => {
   const [headerGroup] = headerGroups;
 
   const hasPlaceholderHeaders = headerGroup.headers.some(
-    (h) => h.placeholderOf != null
+    (h) => h.placeholderOf != null,
   );
   if (!hasPlaceholderHeaders) {
     return; // no placeholder header found to replace

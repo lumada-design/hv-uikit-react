@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 
 import { HvAppSwitcher, HvAppSwitcherProps } from "./AppSwitcher";
 
@@ -47,7 +47,7 @@ describe("<AppSwitcher /> with minimum configuration", () => {
 
   it("should use an avatar for actions without icon", () => {
     const { getAllByText } = render(
-      <HvAppSwitcher {...mockAppSwitcherProps} />
+      <HvAppSwitcher {...mockAppSwitcherProps} />,
     );
     const avatars = getAllByText("MA", { exact: true });
     expect(avatars.length).toBe(1);

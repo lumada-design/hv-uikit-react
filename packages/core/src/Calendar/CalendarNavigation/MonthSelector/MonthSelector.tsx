@@ -1,12 +1,9 @@
-import { isKey } from "../../../utils/keyboardUtils";
-
 import { HvTypography } from "../../../Typography";
 import { ExtractNames } from "../../../utils/classes";
-
-import { getMonthNamesList } from "../../utils";
+import { isKey } from "../../../utils/keyboardUtils";
 import { ViewMode } from "../../enums";
 import { DateRangeProp, VisibilitySelectorActions } from "../../types";
-
+import { getMonthNamesList } from "../../utils";
 import { staticClasses, useClasses } from "./MonthSelector.styles";
 
 export { staticClasses as monthSelectorClasses };
@@ -84,7 +81,7 @@ export interface HvMonthSelectorProps {
   onChange?: (
     event: any,
     action: VisibilitySelectorActions,
-    value: Date | DateRangeProp | number
+    value: Date | DateRangeProp | number,
   ) => void;
   /**
    * Callback to define the input date.

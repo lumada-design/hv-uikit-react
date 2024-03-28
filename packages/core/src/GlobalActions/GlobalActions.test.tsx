@@ -8,7 +8,7 @@ describe("GlobalActions", () => {
     const headingLevel = 3;
 
     const { container, getByText } = render(
-      <HvGlobalActions title="mockTitle" headingLevel={headingLevel} />
+      <HvGlobalActions title="mockTitle" headingLevel={headingLevel} />,
     );
 
     expect(getByText("mockTitle")).toBeInTheDocument();

@@ -1,16 +1,16 @@
 import { memo } from "react";
 
 import { useQueryBuilderContext } from "../../Context";
-import { BooleanValue } from "./BooleanValue";
-import { NumericValue } from "./NumericValue";
-import { TextValue } from "./TextValue";
-import { DateTimeValue } from "./DateTimeValue";
 import {
+  defaultRendererKey,
   HvQueryBuilderRendererProps,
   ValueRenderer,
-  defaultRendererKey,
 } from "../../types";
+import { BooleanValue } from "./BooleanValue";
+import { DateTimeValue } from "./DateTimeValue";
 import { EmptyValue } from "./EmptyValue";
+import { NumericValue } from "./NumericValue";
+import { TextValue } from "./TextValue";
 
 export interface ValueProps {
   id: React.Key;

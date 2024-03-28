@@ -120,7 +120,7 @@ const newRendererEntry = (i: number): NewRendererEntry => {
     isDisabled: generateBooleanState(i),
     severity: getDropdownOptions(
       ["Critical", "Major", "Average", "Minor"],
-      getOption(["Critical", "Major", "Average", "Minor"], i)
+      getOption(["Critical", "Major", "Average", "Minor"], i),
     ),
   };
 };
@@ -334,7 +334,7 @@ export const useServerData = () => {
 
       setLoading(false);
     },
-    [allData]
+    [allData],
   );
 
   const mutateData = useCallback(async (...args: ChangeDataArgs) => {
@@ -352,18 +352,18 @@ export const useServerData = () => {
         prev.map((el) => ({
           ...el,
           hidden: params.includes(el.id) ? true : el.hidden,
-        }))
+        })),
       );
     } else if (method === "update") {
       setAllData((prev) =>
-        prev.map((el) => (params.id === el.id ? { ...el, ...params } : el))
+        prev.map((el) => (params.id === el.id ? { ...el, ...params } : el)),
       );
     } else if (method === "restore") {
       setAllData((prev) =>
         prev.map((el) => ({
           ...el,
           hidden: params.includes(el.id) ? false : el.hidden,
-        }))
+        })),
       );
     }
   }, []);

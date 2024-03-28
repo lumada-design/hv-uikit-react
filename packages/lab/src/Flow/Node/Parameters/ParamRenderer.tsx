@@ -1,7 +1,7 @@
 import { HvFlowNodeParam } from "../../types";
-import Text from "./Text";
 import Select from "./Select";
 import Slider from "./Slider";
+import Text from "./Text";
 
 export type ParamRendererProps = {
   params: HvFlowNodeParam[];

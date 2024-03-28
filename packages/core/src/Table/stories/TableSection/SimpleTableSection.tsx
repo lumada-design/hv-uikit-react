@@ -1,17 +1,17 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
-  HvTableContainer,
   HvTable,
   HvTableBody,
+  HvTableCell,
+  HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   HvTableSection,
-  useHvPagination,
-  useHvRowSelection,
   useHvBulkActions,
   useHvData,
+  useHvPagination,
+  useHvRowSelection,
   useHvSortBy,
 } from "@hitachivantara/uikit-react-core";
 
@@ -39,7 +39,7 @@ export const SimpleTableSection = () => {
     useHvSortBy,
     useHvPagination,
     useHvRowSelection,
-    useHvBulkActions
+    useHvBulkActions,
   );
 
   const renderTableRow = (i: number) => {

@@ -1,6 +1,6 @@
-import { vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { vi } from "vitest";
 
 import { HvTimePicker, HvTimePickerProps, HvTimePickerValue } from ".";
 
@@ -15,7 +15,7 @@ const setup = ({ ...props }: Partial<HvTimePickerProps>) =>
 
 const assertTime = (
   inputs: HTMLElement[],
-  { hours, minutes, seconds }: HvTimePickerValue
+  { hours, minutes, seconds }: HvTimePickerValue,
 ) => {
   expect(inputs[0]).toHaveTextContent(String(hours));
   expect(inputs[1]).toHaveTextContent(String(minutes));

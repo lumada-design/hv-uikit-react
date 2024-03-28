@@ -1,9 +1,8 @@
 import { useMemo } from "react";
-
 import { useTheme } from "@hitachivantara/uikit-react-core";
 
-import { getAxisType } from "../utils";
 import { HvChartXAxis, HvEChartsOption } from "../types/common";
+import { getAxisType } from "../utils";
 
 interface HvXAxisHookProps extends HvChartXAxis {
   scale?: boolean;

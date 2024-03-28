@@ -12,7 +12,7 @@ describe("TextArea", () => {
         placeholder="Enter value"
         rows={5}
         maxCharQuantity={10}
-      />
+      />,
     );
 
     const textarea = screen.getByRole("textbox", { name: "Label" });
@@ -64,7 +64,7 @@ describe("TextArea", () => {
         defaultValue="Test"
         middleCountLabel="of"
         maxCharQuantity={10}
-      />
+      />,
     );
 
     const labelCount = screen.getByText("4");
@@ -81,7 +81,7 @@ describe("TextArea", () => {
         middleCountLabel="of"
         maxCharQuantity={3}
         defaultValue="Tests"
-      />
+      />,
     );
 
     const textarea = screen.getByRole("textbox", { name: "Label" });
@@ -106,7 +106,7 @@ describe("TextArea", () => {
         rows={4}
         maxCharQuantity={10}
         inputRef={ref}
-      />
+      />,
     );
 
     expect(ref.current).toBeInstanceOf(HTMLTextAreaElement);

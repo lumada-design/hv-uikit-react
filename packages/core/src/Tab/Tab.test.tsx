@@ -8,7 +8,7 @@ describe("Tab", () => {
     render(<HvTab label="Clickable tab" />);
 
     expect(
-      screen.getByRole("tab", { name: "Clickable tab" })
+      screen.getByRole("tab", { name: "Clickable tab" }),
     ).toBeInTheDocument();
   });
 });

@@ -43,7 +43,7 @@ export const Disabled: StoryObj<HvInlineEditorProps> = {
 
 export const LargeVariants = () => {
   const [value, setValue] = useState(
-    "Very very very long text that is likely to be truncated"
+    "Very very very long text that is likely to be truncated",
   );
   const variants: HvTypographyVariants[] = [
     "display",

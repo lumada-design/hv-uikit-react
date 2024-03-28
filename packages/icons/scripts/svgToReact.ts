@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
 import fs from "node:fs";
 import path from "node:path";
-
-import { Parser } from "html-to-react";
 import ReactDOMServer from "react-dom/server";
+import { Parser } from "html-to-react";
+import jsdom from "jsdom-no-contextify";
 import recursive from "recursive-readdir";
 import yargs from "yargs";
-import jsdom from "jsdom-no-contextify";
 
 import { extractColors, replaceFill } from "./utils/colors";
 import { formatSVG, generateComponent, removeStyle } from "./utils/converter";
@@ -46,7 +45,7 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
   const file = path.resolve(
     componentOutputFolder,
     subFolder,
-    `${fileName}.tsx`
+    `${fileName}.tsx`,
   );
 
   fs.writeFile(file, processedSVG, { flag: "w" }, (err) => {
@@ -62,13 +61,13 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
     fs.appendFile(
       path.resolve(componentOutputFolder, `icons.ts`),
       exportString,
-      () => {}
+      () => {},
     );
   } else {
     fs.appendFile(
       path.resolve(componentOutputFolder, subFolder, `index.ts`),
       exportString,
-      () => {}
+      () => {},
     );
   }
 
@@ -87,7 +86,7 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
           `export { icons };`,
           "\n",
         ].join("\n"),
-        () => {}
+        () => {},
       );
     } else {
       const subFolderName = subFolder.replace("./", "");
@@ -99,7 +98,7 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
           `export { ${subFolderName} };`,
           "\n",
         ].join("\n"),
-        () => {}
+        () => {},
       );
     }
   }
@@ -242,7 +241,7 @@ const runUtilForJustFilesInDir = (folder, subFolder = ".", depth = 0) => {
         runUtilForJustFilesInDir(
           filePath,
           `${subFolder}/${path.basename(file)}`,
-          depth + 1
+          depth + 1,
         );
       }
     });

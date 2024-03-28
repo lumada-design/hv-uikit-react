@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Forwards } from "@hitachivantara/uikit-react-icons";
 
 import { HvAvatar } from "../../../Avatar";
-
 import { VerticalNavigationContext } from "../../VerticalNavigationContext";
 import { SpacerDiv, StyledIconsContainer } from "./IconWrapper.styles";
 

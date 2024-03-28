@@ -1,21 +1,20 @@
-import { useState, useMemo, useEffect } from "react";
-
+import { useEffect, useMemo, useState } from "react";
 import {
+  HvLoadingContainer,
+  HvPagination,
   HvTable,
-  HvTableContainer,
-  HvTableRow,
-  HvTableHead,
-  HvTableHeader,
   HvTableBody,
   HvTableCell,
+  HvTableContainer,
+  HvTableHead,
+  HvTableHeader,
+  HvTableRow,
   useHvData,
   useHvPagination,
-  HvPagination,
-  HvLoadingContainer,
 } from "@hitachivantara/uikit-react-core";
 
-import { DetailsViewEntry, getColumns } from "./utils";
 import { PaginationDataProps, usePaginationData } from "./data";
+import { DetailsViewEntry, getColumns } from "./utils";
 
 const PAGE_OPTIONS = [8, 16, 32];
 
@@ -46,7 +45,7 @@ export const Table = ({ modelId }: TableProps) => {
       pageCount: pages,
       initialState: { pageSize: PAGE_OPTIONS[0] },
     },
-    useHvPagination
+    useHvPagination,
   );
 
   useEffect(() => {

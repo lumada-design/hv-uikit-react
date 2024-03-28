@@ -1,23 +1,24 @@
-import { useMemo, useState, HTMLAttributes } from "react";
+import { HTMLAttributes, useMemo, useState } from "react";
 import {
   DndContext,
   DragOverEvent,
   DragOverlay,
   DragStartEvent,
   KeyboardSensor,
+  Modifier,
   PointerSensor,
   useSensor,
   useSensors,
-  Modifier,
 } from "@dnd-kit/core";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import {
-  SortableContext,
   arrayMove,
+  SortableContext,
   sortableKeyboardCoordinates,
   useSortable,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
+import { css } from "@emotion/css";
 import {
   HvListContainer,
   HvListItem,
@@ -27,10 +28,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Drag } from "@hitachivantara/uikit-react-icons";
 
-import { css } from "@emotion/css";
-
-import { sampleItems } from "./sampleData";
 import { Item } from "../types";
+import { sampleItems } from "./sampleData";
 import classes from "./styles";
 
 // #region Fixes a problem we have while dragging items in storybook docs mode
@@ -40,7 +39,7 @@ type RestrictToSampleModifier = Modifier extends (...args: infer A) => infer R
 
 export const restrictToSample: RestrictToSampleModifier = (
   rootId,
-  { transform }
+  { transform },
 ) => {
   const rect = document.getElementById(rootId)?.getBoundingClientRect();
 
@@ -117,7 +116,7 @@ export const DndKitSingle = () => {
       // the `sortableKeyboardCoordinates` function moves the active draggable
       // item to the closest sortable element in a given direction
       coordinateGetter: sortableKeyboardCoordinates,
-    })
+    }),
   );
 
   const onDragStart = (event: DragStartEvent) => {

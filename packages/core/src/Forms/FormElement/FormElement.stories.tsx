@@ -1,18 +1,18 @@
 import { useRef, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { CloseXS, Success } from "@hitachivantara/uikit-react-icons";
 import {
+  HvAdornment,
   HvBaseInput,
+  HvBaseInputProps,
   HvFormElement,
   HvFormElementProps,
+  HvFormStatus,
+  HvInfoMessage,
   HvLabel,
   HvWarningText,
-  HvInfoMessage,
-  HvAdornment,
-  HvFormStatus,
-  HvBaseInputProps,
   setId,
 } from "@hitachivantara/uikit-react-core";
+import { CloseXS, Success } from "@hitachivantara/uikit-react-icons";
 
 const meta: Meta<typeof HvFormElement> = {
   title: "Guides/Forms/Form Element",
@@ -39,7 +39,7 @@ export const Main: StoryObj<HvFormElementProps> = {
 
       if (setStatus) {
         setElementStatus(
-          (hasNumber && "invalid") || (isEmpty && "standBy") || "valid"
+          (hasNumber && "invalid") || (isEmpty && "standBy") || "valid",
         );
       }
       setShowCloseAdornment(!isEmpty);

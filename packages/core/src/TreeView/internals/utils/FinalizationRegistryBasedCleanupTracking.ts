@@ -1,7 +1,7 @@
 import {
   CleanupTracking,
-  UnsubscribeFn,
   UnregisterToken,
+  UnsubscribeFn,
 } from "./CleanupTracking";
 
 export class FinalizationRegistryBasedCleanupTracking
@@ -16,7 +16,7 @@ export class FinalizationRegistryBasedCleanupTracking
   register(
     object: any,
     unsubscribe: UnsubscribeFn,
-    unregisterToken: UnregisterToken
+    unregisterToken: UnregisterToken,
   ): void {
     this.registry.register(object, unsubscribe, unregisterToken);
   }

@@ -1,6 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
 import { describe, expect, it, vi } from "vitest";
 
 import { HvCheckBox } from "../CheckBox";
@@ -52,7 +51,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -70,7 +69,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" name="snoopy" />
           <HvCheckBox value="cats" label="Cats" name="garfield" />
           <HvCheckBox value="dragons" label="Dragons" name="falkor" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -90,7 +89,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -107,7 +106,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox name="another-name" value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -125,7 +124,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -156,7 +155,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -189,7 +188,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" checked />
           <HvCheckBox value="dragons" label="Dragons" defaultChecked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -217,7 +216,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" checked />
           <HvCheckBox value="dragons" label="Dragons" defaultChecked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -233,7 +232,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" checked />
           <HvCheckBox value="dragons" label="Dragons" defaultChecked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -251,7 +250,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -269,7 +268,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -287,7 +286,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -314,7 +313,7 @@ describe("CheckBoxGroup", () => {
             label="Dragons"
             onChange={checkboxOnChangeMock}
           />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -347,7 +346,7 @@ describe("CheckBoxGroup", () => {
             label="Dragons"
             onChange={checkboxOnChangeMock}
           />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -383,7 +382,7 @@ describe("CheckBoxGroup", () => {
             onChange={checkboxOnChangeMock}
           />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -413,7 +412,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       // There is a visible label element
@@ -432,14 +431,14 @@ describe("CheckBoxGroup", () => {
             <HvCheckBox value="cats" label="Cats" />
             <HvCheckBox value="dragons" label="Dragons" />
           </HvCheckBoxGroup>
-        </>
+        </>,
       );
 
       const checkboxGroup = getByRole("group", { name: "An external label" });
 
       expect(checkboxGroup).toHaveAttribute(
         "aria-labelledby",
-        "label-element-id"
+        "label-element-id",
       );
     });
 
@@ -449,7 +448,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -465,7 +464,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       // The description text is visible
@@ -488,13 +487,13 @@ describe("CheckBoxGroup", () => {
             <HvCheckBox value="cats" label="Cats" />
             <HvCheckBox value="dragons" label="Dragons" />
           </HvCheckBoxGroup>
-        </>
+        </>,
       );
 
       const checkboxGroup = getByRole("group");
 
       expect(checkboxGroup).toHaveAccessibleDescription(
-        "An external description"
+        "An external description",
       );
     });
   });
@@ -508,7 +507,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const dragons = getByLabelText("Dragons");
@@ -528,7 +527,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const dragons = getByLabelText("Dragons");
@@ -552,7 +551,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const selectAll = getByLabelText("All (3)");
@@ -580,7 +579,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" checked />
           <HvCheckBox value="cats" label="Cats" checked />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const selectAll = getByLabelText("3 / 3");
@@ -604,7 +603,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -623,7 +622,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -639,7 +638,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -657,7 +656,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -678,7 +677,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" checked />
           <HvCheckBox value="cats" label="Cats" checked />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -699,7 +698,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxGroup = getByRole("group");
@@ -726,7 +725,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const selectAll = getByRole("checkbox", { name: "All (3)" });
@@ -741,7 +740,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" checked />
           <HvCheckBox value="cats" label="Cats" checked />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const selectAll = getByRole("checkbox", { name: "3 / 3" });
@@ -756,7 +755,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" checked />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const selectAll = getByRole("checkbox", { name: "2 / 3" });
@@ -771,7 +770,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -798,7 +797,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" checked />
           <HvCheckBox value="cats" label="Cats" checked />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -825,7 +824,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" checked />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -852,7 +851,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -880,7 +879,7 @@ describe("CheckBoxGroup", () => {
       const { getAllByRole } = render(
         <HvCheckBoxGroup showSelectAll label="Favorite Pet">
           <HvCheckBox value="dogs" label="Dogs" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -906,7 +905,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" checked />
           <HvCheckBox value="cats" label="Cats" checked />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -934,7 +933,7 @@ describe("CheckBoxGroup", () => {
       const { getAllByRole } = render(
         <HvCheckBoxGroup showSelectAll label="Favorite Pet">
           <HvCheckBox value="dogs" label="Dogs" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -960,7 +959,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -990,7 +989,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="dogs" label="Dogs" checked />
           <HvCheckBox value="cats" label="Cats" />
           <HvCheckBox value="dragons" label="Dragons" checked />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");
@@ -1118,7 +1117,7 @@ describe("CheckBoxGroup", () => {
           <HvCheckBox value="horses" label="Horses" />
           <HvCheckBox value="hamsters" label="Hamsters" />
           <HvCheckBox value="rabbits" label="Rabbits" />
-        </HvCheckBoxGroup>
+        </HvCheckBoxGroup>,
       );
 
       const checkboxes = getAllByRole("checkbox");

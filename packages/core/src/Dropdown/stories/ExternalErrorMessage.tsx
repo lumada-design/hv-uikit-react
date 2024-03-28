@@ -17,7 +17,7 @@ export const ExternalErrorMessage = () => {
       { label: "value 3" },
       { label: "value 4" },
     ],
-    []
+    [],
   );
 
   const values2 = useMemo(
@@ -27,16 +27,16 @@ export const ExternalErrorMessage = () => {
       { label: "value 3" },
       { label: "value 4" },
     ],
-    []
+    [],
   );
 
   const [deathValidationState, setDeathValidationState] = useState("invalid");
 
   const [birthErrorMessage, setBirthErrorMessage] = useState<string | null>(
-    null
+    null,
   );
   const [deathErrorMessage, setDeathErrorMessage] = useState(
-    "Dropdown 2 is always invalid."
+    "Dropdown 2 is always invalid.",
   );
 
   return (
@@ -52,7 +52,7 @@ export const ExternalErrorMessage = () => {
             onChange={(value) => {
               if ((value as HvListValue[]).length === 0) {
                 setBirthErrorMessage(
-                  "Select at least one value from dropdown 1."
+                  "Select at least one value from dropdown 1.",
                 );
               } else {
                 setBirthErrorMessage(null);
@@ -73,13 +73,13 @@ export const ExternalErrorMessage = () => {
 
               if ((value as HvListValue[]).length === 0) {
                 setDeathErrorMessage(
-                  "Select at least one value from dropdown 2."
+                  "Select at least one value from dropdown 2.",
                 );
               } else {
                 setDeathErrorMessage(
                   `Dropdown 2 is always invalid, even with ${
                     (value as HvListValue[]).length
-                  } items selected.`
+                  } items selected.`,
                 );
               }
             }}

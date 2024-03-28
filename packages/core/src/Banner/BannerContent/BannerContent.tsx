@@ -3,13 +3,13 @@ import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
 
-import { iconVariant } from "../../utils/iconVariant";
-import { ExtractNames } from "../../utils/classes";
 import { HvActionsGenericProps } from "../../ActionsGeneric";
+import { ExtractNames } from "../../utils/classes";
+import { iconVariant } from "../../utils/iconVariant";
 import { HvBannerActionPosition, HvBannerVariant } from "../types";
 import { HvActionContainer, HvActionContainerProps } from "./ActionContainer";
+import { staticClasses, useClasses } from "./BannerContent.styles";
 import { HvMessageContainer } from "./MessageContainer";
-import { useClasses, staticClasses } from "./BannerContent.styles";
 
 export { staticClasses as bannerContentClasses };
 
@@ -111,5 +111,5 @@ export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
         />
       </div>
     );
-  }
+  },
 );

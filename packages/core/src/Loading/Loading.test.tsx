@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 
 import { HvLoading, loadingClasses } from "./Loading";
 
@@ -21,8 +21,8 @@ describe("Loading", () => {
     expect(
       loadingClasses.hidden &&
         (container.firstChild as HTMLElement).classList.contains(
-          loadingClasses.hidden
-        )
+          loadingClasses.hidden,
+        ),
     ).toBe(true);
   });
 

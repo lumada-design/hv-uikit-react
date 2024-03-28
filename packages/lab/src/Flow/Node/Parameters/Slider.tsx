@@ -1,8 +1,8 @@
 import { css } from "@emotion/css";
 import { HvSlider } from "@hitachivantara/uikit-react-core";
 
-import { HvFlowNodeSliderParam } from "../../types";
 import { useFlowNodeUtils } from "../../hooks";
+import { HvFlowNodeSliderParam } from "../../types";
 
 interface SliderProps {
   param: Omit<HvFlowNodeSliderParam, "type">;

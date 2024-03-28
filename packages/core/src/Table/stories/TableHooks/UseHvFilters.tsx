@@ -1,24 +1,24 @@
 import { useMemo } from "react";
-import { Ban } from "@hitachivantara/uikit-react-icons";
 import {
-  HvTable,
-  HvTableBody,
-  HvTableContainer,
-  HvTableHead,
-  HvTableHeader,
-  HvTableRow,
-  HvTableCell,
   HvEmptyState,
   HvGrid,
   HvInput,
   HvPagination,
+  HvTable,
+  HvTableBody,
+  HvTableCell,
+  HvTableContainer,
+  HvTableHead,
+  HvTableHeader,
+  HvTableRow,
   useHvData,
-  useHvPagination,
-  useHvGlobalFilter,
   useHvFilters,
+  useHvGlobalFilter,
+  useHvPagination,
 } from "@hitachivantara/uikit-react-core";
+import { Ban } from "@hitachivantara/uikit-react-icons";
 
-import { makeData, getColumns, AssetEvent } from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
 const NoDataRow = ({
   message,
@@ -58,7 +58,7 @@ export const UseHvFilters = () => {
     { columns, data },
     useHvFilters,
     useHvGlobalFilter,
-    useHvPagination
+    useHvPagination,
   );
 
   const renderTableRow = (i: number) => {

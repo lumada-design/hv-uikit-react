@@ -1,10 +1,9 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import validationStates from "../Forms/FormElement/validationStates";
 import { HvFormStatus } from "../Forms";
-
-import { HvKnobProperty, HvMarkProperty } from "./types";
+import validationStates from "../Forms/FormElement/validationStates";
 import { sliderStyles as styles } from "./Slider.styles";
+import { HvKnobProperty, HvMarkProperty } from "./types";
 
 /**
  * Transform the scaled values into knobs positions.
@@ -16,7 +15,7 @@ import { sliderStyles as styles } from "./Slider.styles";
 export const knobsPositionToScaledValue = (
   sliderValue: number,
   minPointValue: number,
-  stepValue: number
+  stepValue: number,
 ): number => minPointValue + stepValue * sliderValue;
 
 /**
@@ -31,7 +30,7 @@ export const knobsPositionToScaledValue = (
 export const scaledValueToKnobsPositionValue = (
   scaledValue: number | undefined,
   minPointValue: number,
-  inverseStepValue: number
+  inverseStepValue: number,
 ): number =>
   typeof scaledValue === "number"
     ? Math.floor((scaledValue - minPointValue) * inverseStepValue)
@@ -50,7 +49,7 @@ export const scaledValueToKnobsPositionValue = (
 export const knobsValuesToKnobsPositions = (
   values: (number | undefined)[],
   inverseStepValue: number,
-  minPointValue: number
+  minPointValue: number,
 ): number[] => {
   const knobsPositions: number[] = [];
 
@@ -58,7 +57,7 @@ export const knobsValuesToKnobsPositions = (
     knobsPositions[index] = scaledValueToKnobsPositionValue(
       value,
       minPointValue,
-      inverseStepValue
+      inverseStepValue,
     );
   });
 
@@ -78,7 +77,7 @@ export const knobsValuesToKnobsPositions = (
 export const knobsPositionsToKnobsValues = (
   knobPositions: number[],
   stepValue: number,
-  minPointValue: number
+  minPointValue: number,
 ): number[] => {
   const knobsValues: number[] = [];
 
@@ -86,7 +85,7 @@ export const knobsPositionsToKnobsValues = (
     knobsValues[index] = knobsPositionToScaledValue(
       value,
       minPointValue,
-      stepValue
+      stepValue,
     );
   });
 
@@ -103,7 +102,7 @@ export const knobsPositionsToKnobsValues = (
 export const calculateStepValue = (
   maxPointValue: number,
   minPointValue: number,
-  divisionQuantity: number
+  divisionQuantity: number,
 ): number => Math.abs(maxPointValue - minPointValue) / divisionQuantity;
 
 /**
@@ -131,7 +130,7 @@ export const createMark = (
   stepValue: number,
   markDigits: number,
   disabled: boolean,
-  formatMark: (label: React.ReactNode) => React.ReactNode = (mark) => mark
+  formatMark: (label: React.ReactNode) => React.ReactNode = (mark) => mark,
 ): Record<number, { label: string; style: React.CSSProperties }> => {
   const marks: Record<number, { label: string; style: React.CSSProperties }> =
     {};
@@ -161,7 +160,7 @@ export const createMark = (
       let labelValue: React.ReactNode = knobsPositionToScaledValue(
         index,
         minPointValue,
-        stepValue
+        stepValue,
       ).toFixed(markDigits);
 
       labelValue = formatMark?.(labelValue) || labelValue;
@@ -195,7 +194,7 @@ export const createMark = (
  * @memberof HvSlider
  */
 export const createTrackStyles = (
-  knobProperties: HvKnobProperty[]
+  knobProperties: HvKnobProperty[],
 ): React.CSSProperties[] => {
   const trackStyles: React.CSSProperties[] = [];
 
@@ -221,7 +220,7 @@ export const createTrackStyles = (
  * @memberof HvSlider
  */
 export const createKnobStyles = (
-  knobProperties: HvKnobProperty[]
+  knobProperties: HvKnobProperty[],
 ): {
   knobInner: React.CSSProperties[];
   knobOuterStyle: React.CSSProperties[];
@@ -267,7 +266,7 @@ export const createKnobStyles = (
  */
 export const isSingleSlider = (
   values: number[],
-  defaultValues: (number | undefined)[]
+  defaultValues: (number | undefined)[],
 ): boolean => {
   if (!(values?.length > 1)) {
     return defaultValues.length === 1;
@@ -289,7 +288,7 @@ export const isSingleSlider = (
 export const generateDefaultKnobProperties = (
   numberOfKnobs: number = 1,
   disabled: boolean = false,
-  knobPropertiesProp?: HvKnobProperty[]
+  knobPropertiesProp?: HvKnobProperty[],
 ): HvKnobProperty[] => {
   let knobProperties = knobPropertiesProp || [];
 
@@ -336,7 +335,7 @@ export const generateDefaultKnobProperties = (
 const pushSlider = (
   index: number,
   inputIndex: number,
-  inputValue: number
+  inputValue: number,
 ): number => {
   const difference = index - inputIndex;
 
@@ -345,7 +344,7 @@ const pushSlider = (
 
 export const ensureValuesConsistency = (
   knobPositions: number[],
-  inputIndex: number
+  inputIndex: number,
 ): number[] => {
   const newKnobsPosition: number[] = [...knobPositions];
 
@@ -354,19 +353,19 @@ export const ensureValuesConsistency = (
       newKnobsPosition[index] = pushSlider(
         index,
         inputIndex,
-        newKnobsPosition[inputIndex]
+        newKnobsPosition[inputIndex],
       );
     } else if (index < inputIndex && value > newKnobsPosition[inputIndex]) {
       newKnobsPosition[index] = pushSlider(
         index,
         inputIndex,
-        newKnobsPosition[inputIndex]
+        newKnobsPosition[inputIndex],
       );
     } else if (index > inputIndex && value < newKnobsPosition[inputIndex]) {
       newKnobsPosition[index] = pushSlider(
         index,
         inputIndex,
-        newKnobsPosition[inputIndex]
+        newKnobsPosition[inputIndex],
       );
     }
   });
@@ -376,7 +375,7 @@ export const ensureValuesConsistency = (
 
 export const convertStatusToArray = (
   length: number,
-  status?: HvFormStatus | HvFormStatus[]
+  status?: HvFormStatus | HvFormStatus[],
 ): {
   arrayStatus?: HvFormStatus[];
   arrayDefaultStatus: (keyof typeof validationStates)[];
@@ -401,10 +400,10 @@ export const convertStatusToArray = (
 };
 
 export const statusArrayToFormStatus = (
-  arrayStatus: HvFormStatus[]
+  arrayStatus: HvFormStatus[],
 ): keyof typeof validationStates => {
   const invalid = arrayStatus.some(
-    (status) => status === validationStates.invalid
+    (status) => status === validationStates.invalid,
   );
 
   if (invalid) return validationStates.invalid;
@@ -418,10 +417,10 @@ export const statusArrayToFormStatus = (
 
 export const knobsValuesToString = (
   knobsValues: number[],
-  markDigits: number
+  markDigits: number,
 ): string[] =>
   knobsValues.map((knobValue) =>
-    Number.isNaN(knobValue) ? "" : knobValue.toFixed(markDigits)
+    Number.isNaN(knobValue) ? "" : knobValue.toFixed(markDigits),
   );
 
 export const stringValuesToKnobs = (inputsValues: string[]): number[] =>

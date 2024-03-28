@@ -1,14 +1,13 @@
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
-import { HvChartCommonProps } from "../types/common";
-import { HvChartLegendIcon } from "../types/legend";
-
 import type {
   HvBarChartMeasures,
   HvChartAxisType,
   HvDonutChartMeasure,
   HvLineChartMeasures,
 } from "..";
+import { HvChartCommonProps } from "../types/common";
+import { HvChartLegendIcon } from "../types/legend";
 
 export const getAxisType = (type?: HvChartAxisType) => {
   switch (type) {
@@ -38,7 +37,9 @@ export const getLegendIcon = (icon: HvChartLegendIcon) => {
 
 export const getMeasure = (
   name: string,
-  msr: Arrayable<HvLineChartMeasures | HvBarChartMeasures> | HvDonutChartMeasure
+  msr:
+    | Arrayable<HvLineChartMeasures | HvBarChartMeasures>
+    | HvDonutChartMeasure,
 ): HvLineChartMeasures | HvBarChartMeasures | HvDonutChartMeasure => {
   const measureName = name.split("_")[0];
   const measuresArray = Array.isArray(msr) ? msr : [msr];

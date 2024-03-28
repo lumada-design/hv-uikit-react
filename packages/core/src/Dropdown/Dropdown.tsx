@@ -1,28 +1,26 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
-
 import { useForkRef } from "@mui/material/utils";
 
+import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
+import {
+  HvFormElement,
+  HvFormElementProps,
+  HvInfoMessage,
+  HvLabel,
+  HvWarningText,
+  isInvalid,
+} from "../Forms";
+import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { setId } from "../utils/setId";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { useControlled } from "../hooks/useControlled";
-import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import { HvListValue } from "../List";
-import {
-  isInvalid,
-  HvInfoMessage,
-  HvWarningText,
-  HvFormElement,
-  HvLabel,
-  HvFormElementProps,
-} from "../Forms";
-import { ExtractNames } from "../utils/classes";
 import { HvTypography } from "../Typography";
-
-import { getSelected, getSelectionLabel } from "./utils";
-import { HvDropdownList, HvDropdownListProps } from "./List";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Dropdown.styles";
+import { HvDropdownList, HvDropdownListProps } from "./List";
+import { getSelected, getSelectionLabel } from "./utils";
 
 export { staticClasses as dropdownClasses };
 
@@ -238,17 +236,17 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
 
     const [validationState, setValidationState] = useControlled(
       status,
-      "standBy"
+      "standBy",
     );
 
     const [validationMessage] = useControlled(statusMessage, "Required");
 
     const [isOpen, setIsOpen] = useControlled(
       expanded,
-      Boolean(defaultExpanded)
+      Boolean(defaultExpanded),
     );
     const [selectionLabel, setSelectionLabel] = useState(
-      getSelectionLabel(labels, placeholder, multiSelect, values)
+      getSelectionLabel(labels, placeholder, multiSelect, values),
     );
 
     const [internalValues, setInternalValues] = useState(values);
@@ -263,14 +261,14 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
 
     useEffect(() => {
       setSelectionLabel(
-        getSelectionLabel(labels, placeholder, multiSelect, values)
+        getSelectionLabel(labels, placeholder, multiSelect, values),
       );
     }, [labels, multiSelect, placeholder, values]);
 
     if (import.meta.env.DEV && virtualized && !height) {
       // eslint-disable-next-line no-console
       console.error(
-        "Dropdown/List in virtualized mode requires a height. Please define it."
+        "Dropdown/List in virtualized mode requires a height. Please define it.",
       );
     }
 
@@ -283,7 +281,7 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
     } = baseDropdownProps;
     const headerForkedRef = useForkRef(
       dropdownHeaderRefProp,
-      dropdownHeaderRef
+      dropdownHeaderRef,
     );
 
     const dropdownForkedRef = useForkRef(ref, refProp);
@@ -317,7 +315,7 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
       listValues,
       commitChanges,
       toggle,
-      notifyChanges = true
+      notifyChanges = true,
     ) => {
       const selected = getSelected(listValues);
 
@@ -326,7 +324,7 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
         internalValuesRef.current = listValues;
 
         setSelectionLabel(
-          getSelectionLabel(labels, placeholder, multiSelect, listValues)
+          getSelectionLabel(labels, placeholder, multiSelect, listValues),
         );
 
         setValidationState(() => {
@@ -367,7 +365,7 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
     };
 
     const setFocusToContent: HvBaseDropdownProps["onContainerCreation"] = (
-      containerRef
+      containerRef,
     ) => {
       const inputs = containerRef?.getElementsByTagName("input");
       if (inputs && inputs.length > 0) {
@@ -448,7 +446,7 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
           {
             [classes.disabled]: disabled,
           },
-          className
+          className,
         )}
         {...others}
       >
@@ -550,5 +548,5 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
         )}
       </HvFormElement>
     );
-  }
+  },
 );

@@ -1,9 +1,9 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "../utils/classes";
-import { dropDownMenuClasses } from "../DropDownMenu";
-import { getColoringStyle, getSizeStyles } from "../Button/Button.styles";
 import { HvButtonSize } from "../Button";
+import { getColoringStyle, getSizeStyles } from "../Button/Button.styles";
+import { dropDownMenuClasses } from "../DropDownMenu";
+import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   root: {
@@ -236,14 +236,14 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
 export const getSplitContainerColor = (
   color: string,
   type?: string,
-  disabled?: boolean
+  disabled?: boolean,
 ) => ({
   color: getColoringStyle(color, type).color,
   backgroundColor: disabled
     ? theme.colors.atmo3
     : type === "subtle"
-    ? theme.colors.atmo1
-    : "transparent",
+      ? theme.colors.atmo1
+      : "transparent",
 });
 
 export const getSplitContainerHeight = (size: HvButtonSize) => ({

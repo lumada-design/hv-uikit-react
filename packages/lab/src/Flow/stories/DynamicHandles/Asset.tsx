@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useRef } from "react";
 import {
+  HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeInput,
   HvFlowNodeOutput,
-  HvFlowNode,
   HvFlowNodeTypeMeta,
-  useFlowNodeUtils,
   useFlowInstance,
+  useFlowNodeUtils,
 } from "@hitachivantara/uikit-react-lab";
 
 import type { NodeGroup } from ".";
@@ -77,7 +77,7 @@ export const Asset: HvFlowNodeFC<NodeGroup, NodeData> = (props) => {
 
       // Clean up the edges for this node since the inputs and outputs changed
       reactFlowInstance?.setEdges((eds) =>
-        eds.filter((ed) => ed.source !== id && ed.target !== id)
+        eds.filter((ed) => ed.source !== id && ed.target !== id),
       );
     }
   }, [data.type, id, reactFlowInstance, setNodeData]);

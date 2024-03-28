@@ -1,10 +1,9 @@
 import { useContext, useMemo } from "react";
 import { Backwards, Forwards, Menu } from "@hitachivantara/uikit-react-icons";
 
-import { ExtractNames } from "../../utils/classes";
-import { HvTypography } from "../../Typography";
 import { HvButton, HvButtonProps } from "../../Button";
-
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { staticClasses, useClasses } from "./Header.styles";
 
@@ -84,7 +83,7 @@ export const HvVerticalNavigationHeader = ({
   // In the first level it's always an array with the first level elements.
   const shouldShowTitle = useMemo(
     () => !slider || (slider && !Array.isArray(parentItem)),
-    [parentItem, slider]
+    [parentItem, slider],
   );
 
   return shouldShowTitle ? (

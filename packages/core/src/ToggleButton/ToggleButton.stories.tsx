@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
+  HvToggleButton,
+  HvToggleButtonProps,
+  HvTooltip,
+} from "@hitachivantara/uikit-react-core";
+import {
   BackwardsEmpty,
   BackwardsSelected,
   Dislike,
@@ -20,11 +25,6 @@ import {
   UpEmpty,
   UpSelected,
 } from "@hitachivantara/uikit-react-icons";
-import {
-  HvToggleButton,
-  HvToggleButtonProps,
-  HvTooltip,
-} from "@hitachivantara/uikit-react-core";
 
 import { ToggleEye } from "./ToggleEye";
 

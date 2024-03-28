@@ -1,14 +1,14 @@
 import { forwardRef, useState } from "react";
 import { css } from "@emotion/css";
-import { Doc, Folders } from "@hitachivantara/uikit-react-icons";
 import {
   HvLoading,
   HvPanel,
-  HvTreeView,
   HvTreeItem,
   HvTreeItemProps,
+  HvTreeView,
   useHvTreeItem,
 } from "@hitachivantara/uikit-react-core";
+import { Doc, Folders } from "@hitachivantara/uikit-react-icons";
 
 const delay = (ms: number) =>
   new Promise((resolve) => {
@@ -58,7 +58,7 @@ const LoadingItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
         {isLoading ? <HvLoading small style={{ padding: 8 }} /> : children}
       </HvTreeItem>
     );
-  }
+  },
 );
 
 const dataObject = {

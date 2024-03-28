@@ -1,14 +1,14 @@
 import { useState } from "react";
+import { css, CSSInterpolation } from "@emotion/css";
 import styled from "@emotion/styled";
-import { CSSInterpolation, css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
+  HvFormStatus,
+  HvTagProps,
   HvTagsInput,
   HvTagsInputProps,
   HvTypography,
-  HvTagProps,
-  HvFormStatus,
   tagsInputClasses,
   theme,
 } from "@hitachivantara/uikit-react-core";
@@ -422,7 +422,7 @@ export const Suggestions: StoryObj<HvTagsInputProps> = {
     const suggestionHandler = (val: string) => {
       if (typeof val !== "string" || !val) return null;
       const foundCountries = countries.filter((country) =>
-        country.toUpperCase().startsWith(val.toUpperCase())
+        country.toUpperCase().startsWith(val.toUpperCase()),
       );
 
       if (foundCountries.length === 0) return null;
@@ -479,7 +479,7 @@ export const UnrestrictedSuggestions: StoryObj<HvTagsInputProps> = {
     const suggestionHandler = (val: string) => {
       if (typeof val !== "string" || !val) return null;
       const foundOptions = options.filter((option) =>
-        option.toUpperCase().startsWith(val.toUpperCase())
+        option.toUpperCase().startsWith(val.toUpperCase()),
       );
 
       if (foundOptions.length === 0) return null;
@@ -496,7 +496,7 @@ export const UnrestrictedSuggestions: StoryObj<HvTagsInputProps> = {
       if (!val.startsWith("Option")) {
         setStatus("invalid");
         setStatusMsg(
-          "Oops, that's not an option. Your tag must start with 'Option'"
+          "Oops, that's not an option. Your tag must start with 'Option'",
         );
         return false;
       }

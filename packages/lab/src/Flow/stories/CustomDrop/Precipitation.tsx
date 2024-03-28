@@ -4,8 +4,8 @@ import {
   HvFlowNodeTypeMeta,
 } from "@hitachivantara/uikit-react-lab";
 
-import { data } from "./data";
 import type { NodeGroup } from ".";
+import { data } from "./data";
 
 export const Precipitation: HvFlowNodeFC<NodeGroup> = (props) => {
   return (

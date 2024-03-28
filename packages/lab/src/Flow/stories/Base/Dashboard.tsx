@@ -6,10 +6,10 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import {
-  HvFlowNodeFC,
   HvDashboardNode,
-  HvFlowNodeTypeMeta,
+  HvFlowNodeFC,
   HvFlowNodeProps,
+  HvFlowNodeTypeMeta,
   useFlowInstance,
   useFlowNodeInputEdges,
 } from "@hitachivantara/uikit-react-lab";
@@ -72,7 +72,7 @@ export const Dashboard: HvFlowNodeFC<NodeGroup, DashboardData> = (props) => {
         return prevLayouts;
       });
     },
-    [id, setLayouts]
+    [id, setLayouts],
   );
 
   // Mount: set layout in context
@@ -93,7 +93,7 @@ export const Dashboard: HvFlowNodeFC<NodeGroup, DashboardData> = (props) => {
           ?.filter((i) => i.predefined)
           .reduce<NonNullable<LayoutConfig["items"]>>((acc, item) => {
             const edge = egs.find(
-              (ed) => ed.targetHandle === item.id && ed.target === id
+              (ed) => ed.targetHandle === item.id && ed.target === id,
             );
 
             if (!edge && item.connected) {
@@ -138,7 +138,7 @@ export const Dashboard: HvFlowNodeFC<NodeGroup, DashboardData> = (props) => {
                   return found;
                 }
                 return v;
-              })
+              }),
             );
           }
           return acc;
@@ -151,13 +151,13 @@ export const Dashboard: HvFlowNodeFC<NodeGroup, DashboardData> = (props) => {
         layout: buildLayout(
           items,
           currentConfig?.layout,
-          currentConfig?.cols as number
+          currentConfig?.cols as number,
         ),
         cols: currentConfig?.cols,
       };
       updateLayout(newConfig);
     },
-    [id, instance, layouts, updateLayout]
+    [id, instance, layouts, updateLayout],
   );
 
   useEffect(() => {

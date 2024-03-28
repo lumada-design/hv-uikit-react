@@ -1,14 +1,13 @@
 import { Children } from "react";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvBaseProps, HvExtraProps } from "../types/generic";
 import { HvButton } from "../Button";
-import { HvMultiButton } from "../MultiButton";
-import { setId } from "../utils/setId";
 import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvMultiButton } from "../MultiButton";
 import { HvTableInstance } from "../Table/hooks/useTable";
+import { HvBaseProps, HvExtraProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
+import { setId } from "../utils/setId";
 import { HvControlsContextProvider } from "./context/ControlsContext";
 import { staticClasses, useClasses } from "./Controls.styles";
 
@@ -50,7 +49,7 @@ export interface HvControlsProps extends HvBaseProps {
    */
   onViewChange?: (
     event: React.MouseEvent<HTMLButtonElement>,
-    id: string
+    id: string,
   ) => void;
   /**
    * if `true` the button to switch views is not rendered
@@ -78,12 +77,12 @@ export const HvControls = (props: HvControlsProps) => {
 
   const [currentView, setCurrentView] = useControlled(
     selectedView,
-    defaultView
+    defaultView,
   );
 
   const onViewChangeHandler = (
     evt: React.MouseEvent<HTMLButtonElement>,
-    btnId: any
+    btnId: any,
   ) => {
     setCurrentView(btnId);
     onViewChange?.(evt, btnId);
@@ -106,7 +105,7 @@ export const HvControls = (props: HvControlsProps) => {
   const leftChildren = childrenArray.slice(0, childrenIndexCut);
   const rightChildren = childrenArray.slice(
     childrenIndexCut,
-    childrenCount || 0
+    childrenCount || 0,
   );
 
   return (

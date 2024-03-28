@@ -16,7 +16,7 @@ export const StyledIconsContainer = styled("div")(
       width: "14px",
       marginLeft: "auto",
     },
-  })
+  }),
 );
 
 export const SpacerDiv = styled("div")({});

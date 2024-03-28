@@ -1,7 +1,7 @@
 import * as CSS from "csstype";
 
-import { colors } from "./tokens/colors";
 import * as tokens from "./tokens";
+import { colors } from "./tokens/colors";
 
 // Theme tokens
 const flattenTokens = {
@@ -126,7 +126,7 @@ export type HvThemeUtils = {
    * */
   alpha: (
     color: Exclude<keyof HvThemeTokens["colors"], "type" | "shadow">, // "type" and "shadow" are not actual colors
-    alpha: number | string
+    alpha: number | string,
   ) => string;
 };
 

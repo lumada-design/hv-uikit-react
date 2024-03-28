@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { Meta } from "@storybook/react";
-import { Cards, List } from "@hitachivantara/uikit-react-icons";
 import {
   HvButton,
   HvCard,
@@ -24,6 +23,7 @@ import {
   useHvGlobalFilter,
   useHvSortBy,
 } from "@hitachivantara/uikit-react-core";
+import { Cards, List } from "@hitachivantara/uikit-react-icons";
 
 import { getColumns, makeData, NewEntry } from "./makedata";
 
@@ -74,7 +74,7 @@ export const Controls = () => {
       columns,
     },
     useHvGlobalFilter,
-    useHvSortBy
+    useHvSortBy,
   );
 
   const idsToControl = {
@@ -198,7 +198,7 @@ export const ControlsControlled = () => {
       columns,
     },
     useHvGlobalFilter,
-    useHvSortBy
+    useHvSortBy,
   );
 
   const idsToControl = {
@@ -302,7 +302,7 @@ export const CustomControls = () => {
   const [temperatureSelection, setTemperatureSelection] = useState(0);
   const buttons = useMemo(
     () => ["All", "Critical", "Major", "Average", "Minor"],
-    []
+    [],
   );
 
   const columns = useMemo<HvTableColumnConfig<NewEntry, string>[]>(() => {
@@ -310,12 +310,12 @@ export const CustomControls = () => {
       rows.filter(
         (row) =>
           buttons[severitySelection] === "All" ||
-          row.original.severity === buttons[severitySelection]
+          row.original.severity === buttons[severitySelection],
       );
 
     const filterTemperature: HvTableColumnConfig<NewEntry>["filter"] = (rows) =>
       rows.filter(
-        (row) => row.original.temperature > String(temperatureSelection)
+        (row) => row.original.temperature > String(temperatureSelection),
       );
 
     return [
@@ -337,7 +337,7 @@ export const CustomControls = () => {
       data,
       columns,
     },
-    useHvFilters
+    useHvFilters,
   );
 
   const handleChange = (_: any, idx: number) => {
@@ -423,7 +423,7 @@ export const MixedControls = () => {
   const [temperatureSelection, setTemperatureSelection] = useState(0);
   const buttons = useMemo(
     () => ["All", "Critical", "Major", "Average", "Minor"],
-    []
+    [],
   );
 
   const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(() => {
@@ -431,12 +431,12 @@ export const MixedControls = () => {
       rows.filter(
         (row) =>
           buttons[severitySelection] === "All" ||
-          row.original.severity === buttons[severitySelection]
+          row.original.severity === buttons[severitySelection],
       );
 
     const sliderTemperature: HvTableColumnConfig<NewEntry>["filter"] = (rows) =>
       rows.filter(
-        (row) => row.original.temperature > String(temperatureSelection)
+        (row) => row.original.temperature > String(temperatureSelection),
       );
 
     return [
@@ -459,7 +459,7 @@ export const MixedControls = () => {
       columns,
     },
     useHvFilters,
-    useHvGlobalFilter
+    useHvGlobalFilter,
   );
 
   const handleChange = (_: any, idx: number) => {

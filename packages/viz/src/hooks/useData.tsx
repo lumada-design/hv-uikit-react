@@ -1,20 +1,18 @@
 import { useMemo } from "react";
-
-import { from, internal, not, table, desc } from "arquero";
+import { desc, from, internal, not, table } from "arquero";
 import type ColumnTable from "arquero/dist/types/table/column-table";
-
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
 import {
   HvBarChartMeasures,
   HvChartAggregation,
-  HvChartOrder,
-  HvLineChartMeasures,
   HvChartData,
+  HvChartOrder,
   HvDonutChartMeasure,
+  HvLineChartMeasures,
 } from "../types";
-import { getGroupKey } from "../utils";
 import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
+import { getGroupKey } from "../utils";
 
 const getAgFunc = (func: HvChartAggregation, field: string) =>
   func === "count" ? "count()" : `${func}(d["${field}"])`;
@@ -59,58 +57,61 @@ export const useData = ({
     const splitByFields = Array.isArray(splitBy)
       ? splitBy
       : splitBy != null
-      ? [splitBy]
-      : [];
+        ? [splitBy]
+        : [];
 
     const measuresFields: { [key: string]: string } =
       measures == null
         ? {}
         : typeof measures === "string"
-        ? { [measures]: getAgFunc("sum", measures) }
-        : Array.isArray(measures)
-        ? measures.reduce<{ [key: string]: string }>((acc, value) => {
-            let field: string;
-            let agFunction: HvChartAggregation;
-            if (typeof value === "string") {
-              field = value;
-              agFunction = "sum";
-            } else {
-              field = value.field;
-              agFunction = value.agg ?? "sum";
-            }
+          ? { [measures]: getAgFunc("sum", measures) }
+          : Array.isArray(measures)
+            ? measures.reduce<{ [key: string]: string }>((acc, value) => {
+                let field: string;
+                let agFunction: HvChartAggregation;
+                if (typeof value === "string") {
+                  field = value;
+                  agFunction = "sum";
+                } else {
+                  field = value.field;
+                  agFunction = value.agg ?? "sum";
+                }
 
-            return {
-              ...acc,
-              [field]: getAgFunc(agFunction, field),
-            };
-          }, {})
-        : {
-            [measures.field]: getAgFunc(measures.agg ?? "sum", measures.field),
-          };
+                return {
+                  ...acc,
+                  [field]: getAgFunc(agFunction, field),
+                };
+              }, {})
+            : {
+                [measures.field]: getAgFunc(
+                  measures.agg ?? "sum",
+                  measures.field,
+                ),
+              };
 
     const sortByFields: { [key: string]: HvChartOrder } =
       sortBy == null
         ? {}
         : typeof sortBy === "string"
-        ? { [sortBy]: "asc" }
-        : Array.isArray(sortBy)
-        ? sortBy.reduce<{ [key: string]: HvChartOrder }>((acc, value) => {
-            let field: string;
-            let orderFunction: HvChartOrder;
-            if (typeof value === "string") {
-              field = value;
-              orderFunction = "asc";
-            } else {
-              field = value.field;
-              orderFunction = value.order ?? "asc";
-            }
+          ? { [sortBy]: "asc" }
+          : Array.isArray(sortBy)
+            ? sortBy.reduce<{ [key: string]: HvChartOrder }>((acc, value) => {
+                let field: string;
+                let orderFunction: HvChartOrder;
+                if (typeof value === "string") {
+                  field = value;
+                  orderFunction = "asc";
+                } else {
+                  field = value.field;
+                  orderFunction = value.order ?? "asc";
+                }
 
-            return {
-              ...acc,
-              [field]: orderFunction,
-            };
-          }, {})
-        : { [sortBy.field]: sortBy.order ?? "asc" };
+                return {
+                  ...acc,
+                  [field]: orderFunction,
+                };
+              }, {})
+            : { [sortBy.field]: sortBy.order ?? "asc" };
 
     const allFields = [
       ...groupByFields,
@@ -128,7 +129,7 @@ export const useData = ({
             [curr]: `d => d.${curr} - d.${delta}`,
           };
         },
-        {}
+        {},
       );
 
       tableData = tableData.derive(deltaExpression);
@@ -159,7 +160,7 @@ export const useData = ({
 
       tableData = tableData.derive(
         { [groupByKey]: expression },
-        { after: groupByFields[groupByFields.length - 1] }
+        { after: groupByFields[groupByFields.length - 1] },
       );
     }
 
@@ -169,7 +170,7 @@ export const useData = ({
         ...Object.keys(sortByFields)
           // only sort by fields that are in the table, ignore the rest
           .filter((key) => allFields.includes(key))
-          .map((key) => (sortByFields[key] === "desc" ? desc(key) : key))
+          .map((key) => (sortByFields[key] === "desc" ? desc(key) : key)),
       );
     }
 

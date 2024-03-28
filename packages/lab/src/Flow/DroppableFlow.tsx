@@ -1,30 +1,30 @@
 import { useCallback, useRef, useState } from "react";
+import { DragEndEvent, useDndMonitor, useDroppable } from "@dnd-kit/core";
+import { Global } from "@emotion/react";
 import ReactFlow, {
-  Connection,
-  EdgeChange,
-  NodeChange,
-  ReactFlowProps,
   addEdge,
   applyEdgeChanges,
   applyNodeChanges,
-  MarkerType,
+  Connection,
   Edge,
+  EdgeChange,
+  MarkerType,
   Node,
+  NodeChange,
+  ReactFlowProps,
 } from "reactflow";
-import { Global } from "@emotion/react";
-import { DragEndEvent, useDndMonitor, useDroppable } from "@dnd-kit/core";
 import { uid } from "uid";
 import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 
+import { flowStyles } from "./base";
+import { staticClasses, useClasses } from "./Flow.styles";
+import { useNodeMetaRegistry } from "./FlowContext/NodeMetaContext";
+import { useFlowContext, useFlowInstance } from "./hooks";
 import {
   HvFlowNodeInputGroup,
   HvFlowNodeMetaRegistry,
   HvFlowNodeOutputGroup,
 } from "./types";
-import { staticClasses, useClasses } from "./Flow.styles";
-import { useFlowContext, useFlowInstance } from "./hooks";
-import { flowStyles } from "./base";
-import { useNodeMetaRegistry } from "./FlowContext/NodeMetaContext";
 
 export { staticClasses as flowClasses };
 
@@ -32,7 +32,7 @@ export type HvFlowClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDroppableFlowProps<
   NodeType extends string | undefined = string | undefined,
-  NodeData = any
+  NodeData = any,
 > extends Omit<ReactFlowProps, "nodes" | "edges" | "nodeTypes"> {
   /** Flow content: background, controls, and minimap. */
   children?: React.ReactNode;
@@ -66,7 +66,7 @@ const validateEdge = (
   nodes: Node[],
   edges: Edge[],
   connection: Connection,
-  nodeMetaRegistry: HvFlowNodeMetaRegistry
+  nodeMetaRegistry: HvFlowNodeMetaRegistry,
 ) => {
   const {
     source: sourceId,
@@ -109,7 +109,7 @@ const validateEdge = (
 
   if (isValid && targetMaxConnections != null) {
     const targetConnections = edges.filter(
-      (edg) => edg.target === targetId && edg.targetHandle === targetHandle
+      (edg) => edg.target === targetId && edg.targetHandle === targetHandle,
     ).length;
 
     isValid = targetConnections < targetMaxConnections;
@@ -117,7 +117,7 @@ const validateEdge = (
 
   if (isValid && sourceMaxConnections != null) {
     const sourceConnections = edges.filter(
-      (edg) => edg.source === sourceId && edg.sourceHandle === sourceHandle
+      (edg) => edg.source === sourceId && edg.sourceHandle === sourceHandle,
     ).length;
 
     isValid = sourceConnections < sourceMaxConnections;
@@ -181,7 +181,7 @@ export const HvDroppableFlow = ({
         if (import.meta.env.DEV) {
           // eslint-disable-next-line no-console
           console.error(
-            `Could not add node to the flow because of unknown type ${type}. Use nodeTypes to define all the node types.`
+            `Could not add node to the flow because of unknown type ${type}. Use nodeTypes to define all the node types.`,
           );
         }
         return;
@@ -212,7 +212,7 @@ export const HvDroppableFlow = ({
 
       updateNodes(nodes.concat(newNode));
     },
-    [elementId, nodeTypes, nodes, onDndDrop, reactFlowInstance]
+    [elementId, nodeTypes, nodes, onDndDrop, reactFlowInstance],
   );
 
   useDndMonitor({
@@ -228,7 +228,7 @@ export const HvDroppableFlow = ({
         onFlowChange?.(nds, eds);
       }
     },
-    [onFlowChange]
+    [onFlowChange],
   );
 
   const handleConnect = useCallback(
@@ -239,7 +239,7 @@ export const HvDroppableFlow = ({
       handleFlowChange(nodesRef.current, eds);
       onConnectProp?.(connection);
     },
-    [handleFlowChange, onConnectProp]
+    [handleFlowChange, onConnectProp],
   );
 
   const handleNodesChange = useCallback(
@@ -250,7 +250,7 @@ export const HvDroppableFlow = ({
       handleFlowChange(nds, edgesRef.current);
       onNodesChangeProp?.(changes);
     },
-    [handleFlowChange, onNodesChangeProp]
+    [handleFlowChange, onNodesChangeProp],
   );
 
   const handleEdgesChange = useCallback(
@@ -261,7 +261,7 @@ export const HvDroppableFlow = ({
       handleFlowChange(nodesRef.current, eds);
       onEdgesChangeProp?.(changes);
     },
-    [handleFlowChange, onEdgesChangeProp]
+    [handleFlowChange, onEdgesChangeProp],
   );
 
   const { registry } = useNodeMetaRegistry();

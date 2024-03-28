@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
-
-import { theme } from "@hitachivantara/uikit-styles";
 import { Popper } from "@mui/base";
+import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../../utils/classes";
 
@@ -21,5 +20,5 @@ export const { staticClasses, useClasses } = createClasses(
     popper: {
       zIndex: theme.zIndices.popover,
     },
-  }
+  },
 );

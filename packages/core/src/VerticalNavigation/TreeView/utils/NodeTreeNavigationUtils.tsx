@@ -22,7 +22,7 @@ export class NodeTreeNavigationUtils {
           isExpanded,
           nodeMap,
           node.parent,
-          true
+          true,
         );
       }
     }
@@ -41,7 +41,7 @@ export class NodeTreeNavigationUtils {
         return NodeTreeNavigationUtils.getLastNode(
           isExpanded,
           nodeMap,
-          parent.children[nodeIndex - 1]
+          parent.children[nodeIndex - 1],
         );
       }
 
@@ -60,7 +60,7 @@ export class NodeTreeNavigationUtils {
       return NodeTreeNavigationUtils.getLastNode(
         isExpanded,
         nodeMap,
-        node.children[node.children.length - 1]
+        node.children[node.children.length - 1],
       );
     }
 
