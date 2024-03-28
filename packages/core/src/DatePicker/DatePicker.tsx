@@ -1,35 +1,32 @@
 import { forwardRef, useEffect, useRef } from "react";
-
 import { useForkRef } from "@mui/material/utils";
-
 import { Calendar } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvActionBar } from "../ActionBar";
+import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
+import { HvButton } from "../Button";
+import { HvCalendar, HvCalendarProps } from "../Calendar";
+import { isDate } from "../Calendar/utils";
+import {
+  HvFormElement,
+  HvFormElementProps,
+  HvFormStatus,
+  HvInfoMessage,
+  HvLabel,
+  HvWarningText,
+  isInvalid,
+} from "../Forms";
 import { useControlled } from "../hooks/useControlled";
-import { useUniqueId } from "../hooks/useUniqueId";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { useSavedState } from "../utils/useSavedState";
-import {
-  isInvalid,
-  HvLabel,
-  HvFormStatus,
-  HvWarningText,
-  HvFormElement,
-  HvInfoMessage,
-  HvFormElementProps,
-} from "../Forms";
-import { isDate } from "../Calendar/utils";
-import { HvCalendar, HvCalendarProps } from "../Calendar";
-import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
-import { HvTypography } from "../Typography";
-import { HvActionBar } from "../ActionBar";
-import { HvButton } from "../Button";
-
-import { getDateLabel } from "./utils";
-import useVisibleDate from "./useVisibleDate";
 import { staticClasses, useClasses } from "./DatePicker.styles";
+import useVisibleDate from "./useVisibleDate";
+import { getDateLabel } from "./utils";
 
 export { staticClasses as datePickerClasses };
 
@@ -199,7 +196,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
 
     const [validationState, setValidationState] = useControlled(
       status,
-      "standBy"
+      "standBy",
     );
 
     const [validationMessage] = useControlled(statusMessage, "Required");
@@ -208,11 +205,11 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
 
     const [calendarOpen, setCalendarOpen] = useControlled(
       expanded,
-      Boolean(defaultExpanded)
+      Boolean(defaultExpanded),
     );
 
     const [startDate, setStartDate, rollbackStartDate] = useSavedState(
-      rangeMode ? startValue : value
+      rangeMode ? startValue : value,
     );
     const [endDate, setEndDate, rollbackEndDate] = useSavedState(endValue);
 
@@ -355,7 +352,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
     const handleInputDateChange: HvCalendarProps["onInputChange"] = (
       event,
       newDate,
-      position
+      position,
     ) => {
       if (!isDate(newDate)) return;
 
@@ -551,5 +548,5 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
         )}
       </HvFormElement>
     );
-  }
+  },
 );

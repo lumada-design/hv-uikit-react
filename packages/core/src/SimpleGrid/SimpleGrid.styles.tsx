@@ -1,10 +1,8 @@
 import { CSSObject } from "@emotion/serialize";
-
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../utils/classes";
-
-import { Spacing, Breakpoint } from "./types";
+import { Breakpoint, Spacing } from "./types";
 
 export const { staticClasses, useClasses } = createClasses("HvSimpleGrid", {
   root: {},
@@ -27,7 +25,7 @@ function getSortedBreakpoints(breakpoints: Breakpoint[]) {
   const sorted = [...breakpoints].sort(
     (a, b) =>
       size({ size: b[property], sizes: theme.breakpoints }) -
-      size({ size: a[property], sizes: theme.breakpoints })
+      size({ size: a[property], sizes: theme.breakpoints }),
   );
 
   return property === "minWidth" ? sorted.reverse() : sorted;

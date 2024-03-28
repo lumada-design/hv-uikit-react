@@ -27,5 +27,5 @@ export const { staticClasses, useClasses } = createClasses(
       gap: theme.space.xs,
       paddingLeft: theme.space.sm,
     },
-  }
+  },
 );

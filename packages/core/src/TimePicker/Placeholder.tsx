@@ -1,7 +1,6 @@
 import { forwardRef, useRef } from "react";
-
-import { DateFieldState, DateSegment } from "@react-stately/datepicker";
 import { useDateSegment } from "@react-aria/datepicker";
+import { DateFieldState, DateSegment } from "@react-stately/datepicker";
 
 import { HvBaseProps } from "../types/generic";
 
@@ -75,5 +74,5 @@ export const Placeholder = forwardRef<HTMLDivElement, PlaceholderProps>(
         </div>
       </>
     );
-  }
+  },
 );

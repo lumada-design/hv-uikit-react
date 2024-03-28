@@ -2,11 +2,9 @@
 // @ts-ignore
 import { Swatch } from "react-color/lib/components/common";
 
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
-
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-
 import { staticClasses, useClasses } from "./PresetColors.styles";
 
 export { staticClasses as colorPickerPresetColorsClasses };

@@ -12,9 +12,9 @@ import {
   HvRightControl,
   HvSimpleGrid,
   HvTypography,
+  useHvData,
   useHvGlobalFilter,
   useHvSortBy,
-  useHvData,
 } from "@hitachivantara/uikit-react-core";
 import { Cards, List } from "@hitachivantara/uikit-react-icons";
 
@@ -32,7 +32,7 @@ export const Controls = () => {
       columns,
     },
     useHvGlobalFilter,
-    useHvSortBy
+    useHvSortBy,
   );
 
   const views: HvControlsViewConfiguration[] = [

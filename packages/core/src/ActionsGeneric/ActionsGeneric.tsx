@@ -1,14 +1,14 @@
 import { isValidElement } from "react";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
 import { HvDropDownMenu } from "../DropDownMenu";
-import { setId } from "../utils/setId";
-import { ExtractNames } from "../utils/classes";
-import { HvBaseProps } from "../types/generic";
-import { staticClasses, useClasses } from "./ActionsGeneric.styles";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvIconButton } from "../IconButton";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
+import { staticClasses, useClasses } from "./ActionsGeneric.styles";
 
 export { staticClasses as actionsGenericClasses };
 
@@ -52,7 +52,7 @@ export interface HvActionsGenericProps extends HvBaseProps {
   actionsCallback?: (
     event: React.SyntheticEvent,
     id: string,
-    action: HvActionGeneric
+    action: HvActionGeneric,
   ) => void;
   /** The callback function called when an action is triggered, receiving the `action` as parameter. */
   onAction?: (event: React.SyntheticEvent, action: HvActionGeneric) => void;
@@ -85,7 +85,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
   const handleCallback: HvActionsGenericProps["actionsCallback"] = (
     event,
     id,
-    action
+    action,
   ) => {
     actionsCallback?.(event, id, action);
     onAction?.(event, action);
@@ -175,7 +175,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
       className={cx(
         classes.root,
         { [classes.actionContainer]: actionOverflow },
-        className
+        className,
       )}
       {...others}
     >

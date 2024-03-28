@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvListItem,
   HvListContainer,
   HvListContainerProps,
+  HvListItem,
   HvOverflowTooltip,
-  HvTypography,
   HvPanel,
+  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 import {
@@ -121,7 +121,7 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
 
     const handleListItemClick = (
       event: React.MouseEvent,
-      index: keyof typeof selectedItems
+      index: keyof typeof selectedItems,
     ) => {
       setSelectedItems((previousSelection) => ({
         ...previousSelection,
@@ -287,18 +287,18 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
       const getUpdatedSelectionArray = (
         initialSet,
         selectionStart,
-        selectionEnd
+        selectionEnd,
       ) => {
         return Object.fromEntries(
           flipSelection(
-            Object.entries(initialSet).slice(selectionStart, selectionEnd + 1)
-          )
+            Object.entries(initialSet).slice(selectionStart, selectionEnd + 1),
+          ),
         );
       };
 
       const getIndexOfSelectedItem = (selectionSet) => {
         const preExistingSelectedItems = Object.entries(selectionSet).filter(
-          (e) => e[1] === true
+          (e) => e[1] === true,
         )[0];
         return +preExistingSelectedItems[0];
       };
@@ -316,7 +316,7 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
             updatedArray = getUpdatedSelectionArray(
               initialSelection,
               indexSelectedItem,
-              index
+              index,
             );
 
             leftSet = updatedArray;
@@ -326,7 +326,7 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
             updatedArray = getUpdatedSelectionArray(
               initialSelection,
               index,
-              indexSelectedItem
+              indexSelectedItem,
             );
 
             leftSet = initialSelection;
@@ -358,7 +358,7 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
           updatedArray = getUpdatedSelectionArray(
             initialSelection,
             startOfSlice,
-            endOfSlice
+            endOfSlice,
           );
 
           leftSet =
@@ -411,7 +411,7 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
         const existingSelections = Object.entries(selectedItems).filter(
           (item) => {
             return item[1] === true;
-          }
+          },
         )[0];
 
         if (existingSelections === undefined) {

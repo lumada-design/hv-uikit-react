@@ -1,11 +1,8 @@
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
 import { HvBaseProps } from "../types/generic";
 import { HvTypography, HvTypographyProps } from "../Typography";
-
-import { clamp } from "../utils/helpers";
 import { ExtractNames } from "../utils/classes";
-
+import { clamp } from "../utils/helpers";
 import { staticClasses, useClasses } from "./ProgressBar.styles";
 
 export { staticClasses as progressBarClasses };

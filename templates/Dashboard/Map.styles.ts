@@ -355,7 +355,10 @@ export const mapStyles = css`
 
   .leaflet-control-zoom-in,
   .leaflet-control-zoom-out {
-    font: bold 18px "Lucida Console", Monaco, monospace;
+    font:
+      bold 18px "Lucida Console",
+      Monaco,
+      monospace;
     text-indent: 1px;
   }
 
@@ -547,7 +550,10 @@ export const mapStyles = css`
     text-align: center;
     width: 24px;
     height: 24px;
-    font: 16px/24px Tahoma, Verdana, sans-serif;
+    font:
+      16px/24px Tahoma,
+      Verdana,
+      sans-serif;
     color: #757575;
     text-decoration: none;
     background: transparent;

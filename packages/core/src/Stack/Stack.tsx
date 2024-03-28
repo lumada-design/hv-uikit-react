@@ -1,19 +1,16 @@
-import { useMemo, useRef, useCallback, Children } from "react";
-
-import { useTheme } from "@mui/material/styles";
+import { Children, useCallback, useMemo, useRef } from "react";
 import MuiDivider, {
   DividerProps as MuiDividerProps,
 } from "@mui/material/Divider";
-
+import { useTheme } from "@mui/material/styles";
 import { HvBreakpoints } from "@hitachivantara/uikit-styles";
 
-import { useWidth } from "../hooks/useWidth";
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvBaseProps } from "../types/generic";
 import { HvFocus } from "../Focus";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useWidth } from "../hooks/useWidth";
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
-import { useClasses, staticClasses } from "./Stack.styles";
+import { staticClasses, useClasses } from "./Stack.styles";
 
 export { staticClasses as stackClasses };
 
@@ -83,7 +80,7 @@ export const HvStack = (props: HvStackProps) => {
 
   const processedDirection = useMemo(
     () => getDirection(direction, width, breakpoints.keys),
-    [direction, width, breakpoints]
+    [direction, width, breakpoints],
   );
 
   /**
@@ -114,7 +111,7 @@ export const HvStack = (props: HvStackProps) => {
         classes.root,
         classes[processedDirection],
         classes[spacing],
-        className
+        className,
       )}
       {...others}
     >

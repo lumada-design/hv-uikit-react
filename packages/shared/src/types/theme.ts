@@ -1,6 +1,6 @@
 import {
-  HvThemeStructure,
   HvThemeColorModeStructure,
+  HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
 // This type allows to pass undetermined extra props to components

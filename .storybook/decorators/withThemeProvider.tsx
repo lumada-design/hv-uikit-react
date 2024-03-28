@@ -1,16 +1,14 @@
-import { useState, useEffect, useRef } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import { addons } from "@storybook/addons";
-import { Global } from "@storybook/theming";
 import { Decorator } from "@storybook/react";
-
+import { Global } from "@storybook/theming";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 import { ds3, ds5, pentahoPlus } from "@hitachivantara/uikit-styles";
 
-import { getStoryStyles } from "../theme/styles/story";
 import { ADDON_EVENT } from "../addons/theme-selector/constants";
 import { getLocalTheme } from "../addons/theme-selector/utils";
+import { getStoryStyles } from "../theme/styles/story";
 
 /** Return a `ref` that adds/removes `dark` class variant depending on `mode` */
 const useDarkClass = <T extends HTMLElement = HTMLDivElement>(mode: string) => {

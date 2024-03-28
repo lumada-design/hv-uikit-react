@@ -1,21 +1,20 @@
 import { useCallback, useMemo } from "react";
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { theme } from "@hitachivantara/uikit-styles";
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
+import { theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { HvBaseProps } from "../../types/generic";
-import { useUniqueId } from "../../hooks/useUniqueId";
 import { useTheme } from "../../hooks/useTheme";
+import { useUniqueId } from "../../hooks/useUniqueId";
+import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
-
 import { HvScrollToTooltipPositions } from "../types";
+import { useScrollTo } from "../useScrollTo";
 import { withTooltip } from "../withTooltip";
 import { HvHorizontalScrollListItem } from "./HorizontalScrollListItem";
-import { useScrollTo } from "../useScrollTo";
 import { staticClasses, useClasses } from "./ScrollToHorizontal.styles";
 
 export { staticClasses as scrollToHorizontalClasses };
@@ -92,17 +91,17 @@ export interface HvScrollToHorizontalProps
       | Event
       | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
       | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
-    index: number
+    index: number,
   ) => void;
   /** A function called each time an user clicks on a tab element. */
   onClick?: (
     event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>,
-    index: number
+    index: number,
   ) => void;
   /** A function called each time an user press enter on a tab element. */
   onEnter?: (
     event: React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
-    index: number
+    index: number,
   ) => void;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvScrollToHorizontalClasses;
@@ -148,7 +147,7 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
     relativeLinks,
     offset,
     options,
-    onChange
+    onChange,
   );
 
   const handleSelection = (
@@ -156,7 +155,7 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
       | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
       | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
     value: string,
-    index: number
+    index: number,
   ) => {
     event.preventDefault();
 
@@ -251,7 +250,7 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
           [classes.positionSticky]: position === "sticky",
           [classes.positionFixed]: position === "fixed",
         },
-        className
+        className,
       )}
       id={elementId}
       {...others}

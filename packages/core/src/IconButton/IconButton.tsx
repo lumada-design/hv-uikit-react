@@ -1,11 +1,11 @@
-import { HvTooltip, HvTooltipProps } from "../Tooltip";
 import { HvButton, HvButtonProps } from "../Button";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvTooltip, HvTooltipProps } from "../Tooltip";
 import {
+  fixedForwardRef,
   PolymorphicComponentRef,
   PolymorphicRef,
-  fixedForwardRef,
 } from "../types/generic";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 
 export type HvIconButtonProps<C extends React.ElementType = "button"> =
   PolymorphicComponentRef<
@@ -38,7 +38,7 @@ export type HvIconButtonProps<C extends React.ElementType = "button"> =
  * This component provides this behavior out of the box.
  */
 export const HvIconButton = fixedForwardRef(function HvIconButton<
-  C extends React.ElementType = "button"
+  C extends React.ElementType = "button",
 >(props: HvIconButtonProps<C>, ref: PolymorphicRef<C>) {
   const {
     title,

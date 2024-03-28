@@ -1,5 +1,4 @@
 import { useCallback, useMemo } from "react";
-
 import { Arrayable, ExtractNames } from "@hitachivantara/uikit-react-core";
 
 import {
@@ -9,9 +8,8 @@ import {
   HvDonutChartMeasure,
   HvLineChartMeasures,
 } from "../../types";
-import { getMeasure } from "../../utils";
 import { HvEChartsOption } from "../../types/common";
-
+import { getMeasure } from "../../utils";
 import { useClasses } from "./styles";
 
 export type HvChartTooltipClasses = ExtractNames<typeof useClasses>;
@@ -62,8 +60,8 @@ export const useTooltip = ({
         params[0].seriesType === "pie"
           ? params[0].seriesName
           : horizontal
-          ? params[0].value[params[0].encode.y[0]]
-          : params[0].value[params[0].encode.x[0]];
+            ? params[0].value[params[0].encode.y[0]]
+            : params[0].value[params[0].encode.x[0]];
 
       const formattedTitle = titleFormatter ? titleFormatter(title) : title;
 
@@ -72,24 +70,24 @@ export const useTooltip = ({
           params[0].seriesType === "pie"
             ? params[0].name
             : horizontal
-            ? params[0].dimensionNames[params[0].encode.x[0]]
-            : params[0].dimensionNames[params[0].encode.y[0]],
-          measures
+              ? params[0].dimensionNames[params[0].encode.x[0]]
+              : params[0].dimensionNames[params[0].encode.y[0]],
+          measures,
         );
 
         const value =
           params[0].seriesType === "pie"
             ? params[0].value[params[0].encode.value[0]]
             : horizontal
-            ? params[0].value[params[0].encode.x[0]]
-            : params[0].value[params[0].encode.y[0]];
+              ? params[0].value[params[0].encode.x[0]]
+              : params[0].value[params[0].encode.y[0]];
 
         const formattedValue =
           typeof measure !== "string" && measure.valueFormatter
             ? measure.valueFormatter(value)
             : valueFormatter
-            ? valueFormatter(value)
-            : value;
+              ? valueFormatter(value)
+              : value;
 
         return `
             <div class="${hvClasses?.singleTooltipRoot}">
@@ -115,24 +113,24 @@ export const useTooltip = ({
                   s.seriesType === "pie"
                     ? s.name
                     : horizontal
-                    ? s.dimensionNames[s.encode.x[0]]
-                    : s.dimensionNames[s.encode.y[0]],
-                  measures
+                      ? s.dimensionNames[s.encode.x[0]]
+                      : s.dimensionNames[s.encode.y[0]],
+                  measures,
                 );
 
                 const value =
                   s.seriesType === "pie"
                     ? s.value[s.encode.value[0]]
                     : horizontal
-                    ? s.value[s.encode.x[0]]
-                    : s.value[s.encode.y[0]];
+                      ? s.value[s.encode.x[0]]
+                      : s.value[s.encode.y[0]];
 
                 const formattedValue =
                   typeof measure !== "string" && measure.valueFormatter
                     ? measure.valueFormatter(value)
                     : valueFormatter
-                    ? valueFormatter(value)
-                    : value;
+                      ? valueFormatter(value)
+                      : value;
 
                 const name = s.seriesType === "pie" ? s.name : s.seriesName;
 
@@ -163,7 +161,7 @@ export const useTooltip = ({
       nameFormatter,
       titleFormatter,
       valueFormatter,
-    ]
+    ],
   );
 
   const renderCustomTooltip = useCallback(
@@ -174,8 +172,8 @@ export const useTooltip = ({
             params[0].seriesType === "pie"
               ? params[0].seriesName
               : horizontal
-              ? params[0].value[params[0].encode.y[0]]
-              : params[0].value[params[0].encode.x[0]],
+                ? params[0].value[params[0].encode.y[0]]
+                : params[0].value[params[0].encode.x[0]],
           series: params.map((p) => {
             return {
               color: p.color,
@@ -183,14 +181,14 @@ export const useTooltip = ({
                 p.seriesType === "heatmap"
                   ? String(p.value[p.encode.y[0]])
                   : p.seriesType === "pie"
-                  ? p.name
-                  : p.seriesName,
+                    ? p.name
+                    : p.seriesName,
               value:
                 p.seriesType === "pie" || p.seriesType === "heatmap"
                   ? p.value[p.encode.value[0]]
                   : horizontal
-                  ? p.value[p.encode.x[0]]
-                  : p.value[p.encode.y[0]],
+                    ? p.value[p.encode.x[0]]
+                    : p.value[p.encode.y[0]],
             };
           }),
         };
@@ -200,7 +198,7 @@ export const useTooltip = ({
 
       return component;
     },
-    [component, horizontal]
+    [component, horizontal],
   );
 
   const option = useMemo<Pick<HvEChartsOption, "tooltip">>(() => {

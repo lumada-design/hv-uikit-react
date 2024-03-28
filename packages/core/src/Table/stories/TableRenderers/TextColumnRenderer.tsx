@@ -15,7 +15,7 @@ import {
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, NewRendererEntry, makeRenderersData } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
 export const TextColumnRenderer = () => {
   const getColumns = () => [
@@ -50,7 +50,7 @@ export const TextColumnRenderer = () => {
           value ?? "—",
       },
     },
-    useHvPagination
+    useHvPagination,
   );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {

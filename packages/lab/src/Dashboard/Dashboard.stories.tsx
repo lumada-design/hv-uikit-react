@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
-import {
-  HvBarChart,
-  HvLineChart,
-  HvDonutChart,
-} from "@hitachivantara/uikit-react-viz";
-import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
   HvSection,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Tool } from "@hitachivantara/uikit-react-icons";
+import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
+import {
+  HvBarChart,
+  HvDonutChart,
+  HvLineChart,
+} from "@hitachivantara/uikit-react-viz";
 
 const meta: Meta<typeof HvDashboard> = {
   title: "Lab/Dashboard",

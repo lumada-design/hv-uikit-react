@@ -13,8 +13,8 @@ import {
   useFlowNodeUtils,
 } from "@hitachivantara/uikit-react-lab";
 
-import { NodeData } from "./data";
 import type { NodeGroup } from ".";
+import { NodeData } from "./data";
 
 function filterDataByCountries(data, countriesToFilter: string[]) {
   return data.filter((item) => countriesToFilter.includes(item.country));

@@ -1,15 +1,15 @@
 import {
-  HvSimpleGrid,
-  HvCard,
-  HvCardHeader,
-  HvCardContent,
-  HvCheckBox,
   HvActionBar,
-  HvTypography,
-  HvTableInstance,
-  HvCardMedia,
   HvButton,
+  HvCard,
+  HvCardContent,
+  HvCardHeader,
+  HvCardMedia,
+  HvCheckBox,
+  HvSimpleGrid,
   HvSkeleton,
+  HvTableInstance,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 import { AssetInventoryEntry, getStatusIcon } from "./data";
@@ -143,7 +143,7 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
                 <HvCheckBox
                   onChange={() => instance.toggleRowSelected?.(rowId)}
                   checked={instance.selectedFlatRows.some(
-                    (r) => r.id === rowId
+                    (r) => r.id === rowId,
                   )}
                   value="value"
                   inputProps={{ "aria-label": "Tick to select the card" }}

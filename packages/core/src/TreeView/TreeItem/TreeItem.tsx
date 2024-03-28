@@ -2,19 +2,18 @@ import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
 import Collapse from "@mui/material/Collapse";
 import { TransitionProps } from "@mui/material/transitions";
 
-import { ExtractNames } from "../../utils/classes";
-import { useForkRef } from "../../hooks/useForkRef";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
-import { useTreeViewContext } from "../internals/TreeViewProvider";
-import { DefaultTreeViewPlugins } from "../internals/hooks/plugins";
+import { useForkRef } from "../../hooks/useForkRef";
+import { ExtractNames } from "../../utils/classes";
 import {
   DescendantProvider,
   TreeItemDescendant,
   useDescendant,
 } from "../internals/DescendantProvider";
-import { staticClasses, useClasses } from "./TreeItem.styles";
+import { DefaultTreeViewPlugins } from "../internals/hooks/plugins";
+import { useTreeViewContext } from "../internals/TreeViewProvider";
 import { DefaultContent, HvTreeContentClasses } from "./DefaultContent";
+import { staticClasses, useClasses } from "./TreeItem.styles";
 
 export { staticClasses as treeItemClasses };
 
@@ -109,7 +108,7 @@ export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
 
     const descendant = useMemo<TreeItemDescendant>(
       () => ({ element: treeItemElement!, id: nodeId }),
-      [nodeId, treeItemElement]
+      [nodeId, treeItemElement],
     );
 
     const { index, parentId } = useDescendant(descendant);
@@ -150,7 +149,7 @@ export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
       if (instance && label) {
         return instance.mapFirstChar(
           nodeId,
-          (contentRef.current?.textContent ?? "").substring(0, 1).toLowerCase()
+          (contentRef.current?.textContent ?? "").substring(0, 1).toLowerCase(),
         );
       }
       return undefined;
@@ -228,5 +227,5 @@ export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
         )}
       </li>
     );
-  }
+  },
 );

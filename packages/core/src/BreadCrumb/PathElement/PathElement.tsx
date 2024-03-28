@@ -1,7 +1,6 @@
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 
 import { ExtractNames } from "../../utils/classes";
-
 import { staticClasses, useClasses } from "./PathElement.styles";
 
 export { staticClasses as pathElementClasses };

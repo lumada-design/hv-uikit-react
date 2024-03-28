@@ -1,7 +1,7 @@
 import { Reducer } from "react";
 
-import { emptyRule, emptyGroup, findNodeById, findParentById } from "./index";
 import { Query, QueryAction } from "../types";
+import { emptyGroup, emptyRule, findNodeById, findParentById } from "./index";
 
 const reducer: Reducer<Query, QueryAction> = (state, action) => {
   const query = structuredClone(state);

@@ -1,9 +1,8 @@
 import { forwardRef, useContext } from "react";
 
-import { ExtractNames } from "../../utils/classes";
-import { HvBaseProps } from "../../types/generic";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
+import { HvBaseProps } from "../../types/generic";
+import { ExtractNames } from "../../utils/classes";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableRow.styles";
@@ -75,11 +74,11 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
             [classes.variantList]: isList && type === "body",
             [classes.variantListHead]: isList && type === "head",
           },
-          className
+          className,
         )}
         role={Component === defaultComponent ? null : "row"}
         {...others}
       />
     );
-  }
+  },
 );

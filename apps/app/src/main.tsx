@@ -10,5 +10,5 @@ const root = createRoot(document.getElementById("hv-root")!);
 root.render(
   <Suspense fallback>
     <App />
-  </Suspense>
+  </Suspense>,
 );

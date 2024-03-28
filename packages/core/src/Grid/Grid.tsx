@@ -4,7 +4,6 @@ import MuiGrid, { GridProps as MuiGridProps } from "@mui/material/Grid";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useWidth } from "../hooks/useWidth";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./Grid.styles";
 
 export { staticClasses as gridClasses };
@@ -160,7 +159,7 @@ function getGridSpacing(spacing: HvGridProps["spacing"]) {
         [breakpoint]:
           BREAKPOINT_GUTTERS[spacing[breakpoint]] ?? spacing[breakpoint],
       }),
-      {}
+      {},
     );
   } else if (spacing === 0) {
     gridSpacing = { xs: 0 };
@@ -187,7 +186,7 @@ function getContainerProps(
   spacing: HvGridProps["spacing"],
   rowSpacing: HvGridProps["rowSpacing"],
   columnSpacing: HvGridProps["columnSpacing"],
-  columns: HvGridProps["columns"]
+  columns: HvGridProps["columns"],
 ) {
   const containerProps: Pick<
     MuiGridProps,
@@ -221,7 +220,7 @@ const WidthGrid = forwardRef<HTMLDivElement, HvGridProps>((props, ref) => {
         spacing === "auto" ? width : spacing,
         rowSpacing === "auto" ? width : rowSpacing,
         columnSpacing === "auto" ? width : columnSpacing,
-        columns
+        columns,
       )
     : {};
 

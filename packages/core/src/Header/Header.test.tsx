@@ -1,13 +1,12 @@
-import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 
 import { HvButton } from "../Button";
-
-import { HvHeader } from "./Header";
-import { HvHeaderNavigation } from "./Navigation";
-import { HvHeaderBrand } from "./Brand";
 import { HvHeaderActions } from "./Actions";
 import { HitachiLogo } from "./assets/HitachiLogo";
+import { HvHeaderBrand } from "./Brand";
+import { HvHeader } from "./Header";
+import { HvHeaderNavigation } from "./Navigation";
 
 describe("Header", () => {
   it("should render correctly with no data", () => {
@@ -22,7 +21,7 @@ describe("Header", () => {
           logo={<HitachiLogo data-testid="logo" />}
           name="Lumada App"
         />
-      </HvHeader>
+      </HvHeader>,
     );
     expect(getByText("Lumada App")).toBeInTheDocument();
     expect(getByTestId("logo")).toBeInTheDocument();
@@ -50,7 +49,7 @@ describe("Header", () => {
     const { getAllByText, getAllByRole, getByRole } = render(
       <HvHeader>
         <HvHeaderNavigation data={navigationData} />
-      </HvHeader>
+      </HvHeader>,
     );
     expect(getAllByRole("link")).toHaveLength(1);
     expect(getByRole("link", { name: "text" })).toBeInTheDocument();
@@ -76,7 +75,7 @@ describe("Header", () => {
             User
           </HvButton>
         </HvHeaderActions>
-      </HvHeader>
+      </HvHeader>,
     );
     expect(getAllByRole("button")).toHaveLength(2);
   });

@@ -2,12 +2,11 @@ import { useContext } from "react";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../types/generic";
-import { setId } from "../../utils/setId";
-import { ExtractNames } from "../../utils/classes";
 import { HvTypography } from "../../Typography";
-
-import { staticClasses, useClasses } from "./CharCounter.styles";
+import { ExtractNames } from "../../utils/classes";
+import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../FormElement";
+import { staticClasses, useClasses } from "./CharCounter.styles";
 
 export { staticClasses as charCounterClasses };
 
@@ -65,7 +64,7 @@ export const HvCharCounter = (props: HvCharCounterProps) => {
           [classes.counterDisabled]: !!localDisabled,
           [classes.gutter]: !disableGutter,
         },
-        className
+        className,
       )}
       aria-live="polite"
       aria-disabled={localDisabled}

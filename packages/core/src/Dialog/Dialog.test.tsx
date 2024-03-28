@@ -1,4 +1,4 @@
-import { render, fireEvent, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { HvDialog } from "./Dialog";
@@ -11,7 +11,7 @@ describe("Dialog", () => {
         <HvDialogTitle>mockTitle</HvDialogTitle>
         <HvDialogContent>mockContent</HvDialogContent>
         <HvDialogActions>mockActions</HvDialogActions>
-      </HvDialog>
+      </HvDialog>,
     );
     expect(screen.getByText("mockTitle")).toBeInTheDocument();
     expect(screen.getByText("mockContent")).toBeInTheDocument();
@@ -23,7 +23,7 @@ describe("Dialog", () => {
     const mockBtnTitle = "closeBtn";
 
     const { getByRole } = render(
-      <HvDialog open onClose={mockFn} buttonTitle={mockBtnTitle} />
+      <HvDialog open onClose={mockFn} buttonTitle={mockBtnTitle} />,
     );
     const btn = getByRole("button", { name: mockBtnTitle });
     fireEvent.click(btn);

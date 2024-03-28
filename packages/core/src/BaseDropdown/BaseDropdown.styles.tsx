@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "../utils/focusUtils";
 import { createClasses } from "../utils/classes";
+import { outlineStyles } from "../utils/focusUtils";
 
 export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
   root: { width: "100%", position: "relative" },

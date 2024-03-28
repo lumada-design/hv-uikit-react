@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  WithTooltip,
-  TooltipLinkList,
   IconButton,
+  TooltipLinkList,
+  WithTooltip,
 } from "@storybook/components";
 
 import { ADDON_ID } from "./constants";

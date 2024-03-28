@@ -1,15 +1,15 @@
 import { forwardRef } from "react";
-
-import * as echarts from "echarts/core";
+import ReactECharts from "echarts-for-react/lib/core";
 import { PieChart } from "echarts/charts";
 import {
   DatasetComponent,
   GridComponent,
-  TooltipComponent,
   LegendComponent,
+  TooltipComponent,
 } from "echarts/components";
-import ReactECharts from "echarts-for-react/lib/core";
+import * as echarts from "echarts/core";
 
+import { HvBaseChart } from "../BaseChart";
 import {
   HvChartTooltipClasses,
   useData,
@@ -20,10 +20,8 @@ import {
   useSeries,
   useTooltip,
 } from "../hooks";
-
-import { HvBaseChart } from "../BaseChart";
-import { HvChartCommonProps } from "../types/common";
 import { HvDonutChartMeasure } from "../types";
+import { HvChartCommonProps } from "../types/common";
 
 // Register chart components
 echarts.use([
@@ -112,5 +110,5 @@ export const HvDonutChart = forwardRef<ReactECharts, HvDonutChartProps>(
     return (
       <HvBaseChart ref={ref} option={option} width={width} height={height} />
     );
-  }
+  },
 );

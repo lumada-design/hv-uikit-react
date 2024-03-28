@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-
 import {
   ExtractNames,
   HvBaseProps,
@@ -78,7 +77,7 @@ export const HvWizardTitle = ({
             state: switchTabState(childState, tab, index),
             onClick: () => setTab(index),
           };
-        }
+        },
       );
 
       setSteps(updatedSteps);

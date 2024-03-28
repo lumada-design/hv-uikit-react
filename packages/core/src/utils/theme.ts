@@ -1,11 +1,10 @@
 import {
-  themes,
   HvThemeColorModeStructure,
   HvThemeStructure,
+  themes,
 } from "@hitachivantara/uikit-styles";
 
-import { HvTheme, HvCreateThemeProps } from "../types/theme";
-
+import { HvCreateThemeProps, HvTheme } from "../types/theme";
 import { getElementById } from "./document";
 
 /**
@@ -15,7 +14,7 @@ export const setElementAttrs = (
   themeName: string,
   modeName: string,
   colorScheme: string,
-  themeRootId?: string
+  themeRootId?: string,
 ) => {
   const element = themeRootId
     ? document.getElementById(themeRootId)
@@ -47,7 +46,7 @@ const applyThemeCustomizations = (obj: any, customizations: any) => {
       if (isObject(customizedTheme[key]) && isObject(customizations[key])) {
         customizedTheme[key] = applyThemeCustomizations(
           customizedTheme[key],
-          customizations[key]
+          customizations[key],
         );
       } else if (typeof customizedTheme[key] === typeof customizations[key]) {
         customizedTheme[key] = customizations[key];
@@ -65,7 +64,7 @@ const applyThemeCustomizations = (obj: any, customizations: any) => {
  * For the color modes, the colors that are not defined will be replaced by the values from the dawn mode of the base theme.
  */
 export const createTheme = (
-  props: HvCreateThemeProps
+  props: HvCreateThemeProps,
 ): HvTheme | HvThemeStructure => {
   const {
     name,
@@ -118,14 +117,14 @@ export const createTheme = (
  *  - Returns the default if the list is empty (ds5)
  */
 export const processThemes = (
-  themesList?: (HvTheme | HvThemeStructure)[]
+  themesList?: (HvTheme | HvThemeStructure)[],
 ): (HvTheme | HvThemeStructure)[] => {
   if (themesList && Array.isArray(themesList) && themesList.length > 0) {
     const list: (HvTheme | HvThemeStructure)[] = [];
 
     themesList.forEach((thm) => {
       const i: number = list.findIndex(
-        (t) => t.name.trim() === thm.name.trim()
+        (t) => t.name.trim() === thm.name.trim(),
       );
 
       if (i !== -1) {

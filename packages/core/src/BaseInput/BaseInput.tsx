@@ -1,24 +1,20 @@
 import { useContext } from "react";
-
-import {
-  InputBaseComponentProps as MuiInputBaseComponentProps,
-  InputBaseProps,
-} from "@mui/material/InputBase";
-import MuiInput, { InputProps as MuiInputProps } from "@mui/material/Input";
-
 import { css as emotionCss, Global } from "@emotion/react";
-
+import MuiInput, { InputProps as MuiInputProps } from "@mui/material/Input";
+import {
+  InputBaseProps,
+  InputBaseComponentProps as MuiInputBaseComponentProps,
+} from "@mui/material/InputBase";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { ExtractNames } from "../utils/classes";
 import {
+  buildAriaPropsFromContext,
+  buildFormElementPropsFromContext,
   HvFormElementContext,
   HvFormElementDescriptorsContext,
-  buildFormElementPropsFromContext,
-  buildAriaPropsFromContext,
 } from "../Forms";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
+import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./BaseInput.styles";
 
 export { staticClasses as baseInputClasses };
@@ -71,7 +67,7 @@ export interface HvBaseInputProps
    * it receives the value. If a new value should be presented it must returned it. */
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    value: string
+    value: string,
   ) => void;
   /** The input type. */
   type?: string;
@@ -123,19 +119,19 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
     disabled,
     readOnly,
     required,
-    formElementContext
+    formElementContext,
   );
 
   const localInvalid = invalid || formElementProps.status === "invalid";
 
   const formElementDescriptorsContext = useContext(
-    HvFormElementDescriptorsContext
+    HvFormElementDescriptorsContext,
   );
   const ariaProps = buildAriaPropsFromContext(
     inputProps,
     formElementDescriptorsContext,
     localInvalid,
-    id
+    id,
   );
 
   const onChangeHandler: MuiInputProps["onChange"] = (event) => {

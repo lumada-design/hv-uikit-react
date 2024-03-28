@@ -1,5 +1,5 @@
-import { outlineStyles } from "../utils/focusUtils";
 import { createClasses } from "../utils/classes";
+import { outlineStyles } from "../utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvFocus", {
   root: {},

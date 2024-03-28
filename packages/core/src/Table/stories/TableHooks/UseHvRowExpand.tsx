@@ -2,18 +2,18 @@ import { Fragment, useMemo } from "react";
 import {
   HvTable,
   HvTableBody,
+  HvTableCell,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   HvTypography,
+  theme,
   useHvData,
   useHvRowExpand,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
-import { makeData, getColumns, AssetEvent } from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
 export const UseHvRowExpand = () => {
   const columns = useMemo(() => getColumns(), []);
@@ -23,13 +23,13 @@ export const UseHvRowExpand = () => {
       expandRowButtonAriaLabel: "Click to expand this row",
       collapseRowButtonAriaLabel: "Click to collapse this row",
     }),
-    []
+    [],
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
     useHvData<AssetEvent, string>(
       { columns, data, labels: i18n },
-      useHvRowExpand
+      useHvRowExpand,
     );
 
   return (

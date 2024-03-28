@@ -1,12 +1,10 @@
 import { useMemo, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
-
 import { css, CSSInterpolation } from "@emotion/css";
-
+import { Meta, StoryObj } from "@storybook/react";
 import {
   Breakpoint,
-  HvAccordionProps,
   HvAccordion,
+  HvAccordionProps,
   HvBox,
   HvButton,
   HvInput,
@@ -24,8 +22,8 @@ import {
   useHvTableSticky,
 } from "@hitachivantara/uikit-react-core";
 
-import FacetSearchRaw from "./stories/FacetSearchSample?raw";
 import { FacetSearch } from "./stories/FacetSearchSample";
+import FacetSearchRaw from "./stories/FacetSearchSample?raw";
 
 const styles: { [key: string]: CSSInterpolation } = {
   listContainer: {
@@ -321,7 +319,7 @@ export const Typography: StoryObj<HvAccordionProps> = {
         data,
         stickyHeader: true,
       },
-      useHvTableSticky
+      useHvTableSticky,
     );
 
     return (

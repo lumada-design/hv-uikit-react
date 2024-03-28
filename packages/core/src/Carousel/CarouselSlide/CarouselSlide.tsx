@@ -1,5 +1,4 @@
 import { ExtractNames } from "../../utils/classes";
-
 import { useClasses } from "./CarouselSlide.styles";
 
 export type HvCarouselSlideClasses = ExtractNames<typeof useClasses>;
@@ -33,7 +32,7 @@ export const HvCarouselSlide = ({
       className={cx(
         css({ flex: `0 0 ${flexBasis}` }),
         classes.slide,
-        className
+        className,
       )}
     >
       {children ?? (

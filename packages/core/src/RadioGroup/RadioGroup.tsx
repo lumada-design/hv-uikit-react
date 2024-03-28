@@ -1,16 +1,11 @@
 import {
   Children,
-  useMemo,
-  useCallback,
   cloneElement,
   forwardRef,
+  useCallback,
+  useMemo,
 } from "react";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvBaseProps } from "../types/generic";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useControlled } from "../hooks/useControlled";
-import { setId } from "../utils/setId";
 import {
   HvFormElement,
   HvFormStatus,
@@ -18,8 +13,12 @@ import {
   HvLabel,
   HvWarningText,
 } from "../Forms";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./RadioGroup.styles";
 
 export { staticClasses as radioGroupClasses };
@@ -159,7 +158,7 @@ export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(
         ? defaultValue
         : // When uncontrolled and no default value is given,
           // extract the initial selected values from the children own state
-          () => getValueFromSelectedChildren(children)
+          () => getValueFromSelectedChildren(children),
     );
 
     const onChildChangeInterceptor = useCallback(
@@ -167,11 +166,11 @@ export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(
         childOnChange: (
           event: React.ChangeEvent<HTMLInputElement>,
           checked: boolean,
-          value: any
+          value: any,
         ) => void,
         event: React.ChangeEvent<HTMLInputElement>,
         isChecked: boolean,
-        newValue: any
+        newValue: any,
       ) => {
         childOnChange?.(event, isChecked, newValue);
 
@@ -179,7 +178,7 @@ export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(
 
         setValue(newValue);
       },
-      [onChange, setValue]
+      [onChange, setValue],
     );
 
     const modifiedChildren = useMemo(() => {
@@ -194,13 +193,13 @@ export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(
           onChange: (
             event: React.ChangeEvent<HTMLInputElement>,
             isChecked: boolean,
-            newValue: any
+            newValue: any,
           ) =>
             onChildChangeInterceptor(
               child?.props?.onChange,
               event,
               isChecked,
-              newValue
+              newValue,
             ),
           inputProps: {
             ...child?.props?.inputProps,
@@ -296,5 +295,5 @@ export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(
         )}
       </HvFormElement>
     );
-  }
+  },
 );

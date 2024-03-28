@@ -1,14 +1,13 @@
 import { forwardRef } from "react";
 import { Down, Up } from "@hitachivantara/uikit-react-icons";
 
+import { HvButton, HvButtonProps } from "../Button";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-import { HvButton, HvButtonProps } from "../Button";
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { useControlled } from "../hooks/useControlled";
-import { useUniqueId } from "../hooks/useUniqueId";
 import { setId } from "../utils/setId";
-
 import { staticClasses, useClasses } from "./Section.styles";
 
 export { staticClasses as sectionClasses };
@@ -30,7 +29,7 @@ export interface HvSectionProps
   /** Section onExpand callback */
   onToggle?: (
     event: React.MouseEvent<HTMLButtonElement>,
-    open: boolean
+    open: boolean,
   ) => void;
   /** Props to be passed to the expand button */
   expandButtonProps?: HvButtonProps;
@@ -68,7 +67,7 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
 
     const [isOpen, setIsOpen] = useControlled(
       expanded,
-      Boolean(defaultExpanded)
+      Boolean(defaultExpanded),
     );
 
     const elementId = useUniqueId(id);
@@ -121,5 +120,5 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
         </div>
       </div>
     );
-  }
+  },
 );

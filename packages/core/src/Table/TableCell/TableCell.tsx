@@ -1,9 +1,8 @@
 import { forwardRef, useContext } from "react";
 
-import { capitalize } from "../../utils/helpers";
-import { ExtractNames } from "../../utils/classes";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
+import { ExtractNames } from "../../utils/classes";
+import { capitalize } from "../../utils/helpers";
 import {
   HvTableCellAlign,
   HvTableCellType,
@@ -111,12 +110,12 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
             [classes.resizable]: resizable,
             [classes.resizing]: resizing,
           },
-          className
+          className,
         )}
         {...others}
       >
         {children}
       </Component>
     );
-  }
+  },
 );

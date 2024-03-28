@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { Alert } from "@hitachivantara/uikit-react-icons";
-import { describe, expect, it, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it, vi } from "vitest";
+import { Alert } from "@hitachivantara/uikit-react-icons";
 
 import { HvSnackbar, HvSnackbarProps } from "./Snackbar";
 
@@ -16,7 +16,7 @@ const setup = (props?: Partial<HvSnackbarProps>) =>
       label={snackbarLabel}
       action={{ id: "action", label: "Action" }}
       {...props}
-    />
+    />,
   );
 
 describe("Snackbar", () => {

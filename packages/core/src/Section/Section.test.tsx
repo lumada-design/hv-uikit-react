@@ -14,7 +14,7 @@ describe("Section", () => {
     render(
       <HvSection title="Section Title" expanded>
         <div>Child Content</div>
-      </HvSection>
+      </HvSection>,
     );
     expect(screen.getByText("Child Content")).toBeInTheDocument();
   });
@@ -23,7 +23,7 @@ describe("Section", () => {
     render(
       <HvSection title="Section Title" expandable defaultExpanded>
         <div>Child Content</div>
-      </HvSection>
+      </HvSection>,
     );
     expect(screen.queryByText("Child Content")).toBeInTheDocument();
   });
@@ -32,7 +32,7 @@ describe("Section", () => {
     render(
       <HvSection title="Section Title" expandable defaultExpanded={false}>
         <div>Child Content</div>
-      </HvSection>
+      </HvSection>,
     );
     expect(screen.queryByText("Child Content")).not.toBeVisible();
   });
@@ -41,7 +41,7 @@ describe("Section", () => {
     render(
       <HvSection title="Section Title" expandable defaultExpanded={false}>
         <div>Child Content</div>
-      </HvSection>
+      </HvSection>,
     );
 
     expect(screen.queryByText("Child Content")).not.toBeVisible();

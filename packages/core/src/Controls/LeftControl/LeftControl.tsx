@@ -1,12 +1,11 @@
 import { useContext } from "react";
 
-import { HvBaseProps } from "../../types/generic";
-import { setId } from "../../utils/setId";
 import { HvInput, HvInputProps } from "../../Input";
+import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
-import { useClasses, staticClasses } from "./LeftControl.styles";
+import { setId } from "../../utils/setId";
 import { HvControlsContext } from "../context/ControlsContext";
+import { staticClasses, useClasses } from "./LeftControl.styles";
 
 export { staticClasses as leftControlClasses };
 
@@ -20,7 +19,7 @@ export interface HvLeftControlProps extends HvBaseProps {
   /** Callback called when a search action occurs */
   onSearch?: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    value: string
+    value: string,
   ) => void;
   /** Extra props passed to input */
   searchProps?: HvInputProps;

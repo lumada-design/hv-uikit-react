@@ -12,7 +12,7 @@ export const Input = () => {
   const suggestionHandler = (val: string) => {
     if (typeof val !== "string" || val === "") return null;
     const foundCountries = countries.filter((country) =>
-      country.toUpperCase().startsWith(val.toUpperCase())
+      country.toUpperCase().startsWith(val.toUpperCase()),
     );
 
     if (foundCountries.length === 0) return null;

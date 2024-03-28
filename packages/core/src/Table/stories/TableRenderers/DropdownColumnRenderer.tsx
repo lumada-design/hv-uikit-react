@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import {
   HvCellProps,
+  hvDropdownColumn,
   HvPagination,
   HvRowInstance,
   HvTable,
@@ -10,12 +11,11 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  hvDropdownColumn,
   useHvData,
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, NewRendererEntry, makeRenderersData } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
 export const DropdownColumnRenderer = () => {
   const initialData = useMemo(() => makeRenderersData(64), []);
@@ -46,7 +46,7 @@ export const DropdownColumnRenderer = () => {
             return newVal;
           });
           setData(newData);
-        }
+        },
       ),
     ];
   }, [data]);
@@ -68,7 +68,7 @@ export const DropdownColumnRenderer = () => {
           value ?? "—",
       },
     },
-    useHvPagination
+    useHvPagination,
   );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {

@@ -10,11 +10,11 @@ const getReactFlowStyles = () => {
 
     const reactFlowFile = path.resolve(
       __dirname,
-      "../../node_modules/reactflow/dist/style.css"
+      "../../node_modules/reactflow/dist/style.css",
     );
     const filePath = path.resolve(
       __dirname,
-      "../../packages/lab/src/components/Flow/base.ts"
+      "../../packages/lab/src/components/Flow/base.ts",
     );
 
     // Get styles

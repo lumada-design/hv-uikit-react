@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 
 import {
   HvQueryBuilder,
-  HvQueryBuilderProps,
   hvQueryBuilderDefaultOperators,
+  HvQueryBuilderProps,
 } from ".";
 import { HvButton } from "../Button";
 
@@ -163,7 +163,7 @@ const Controlled = (props?: HvQueryBuilderProps) => {
     props?.value ?? {
       combinator: "and",
       rules: [],
-    }
+    },
   );
 
   return (
@@ -187,12 +187,12 @@ const Controlled = (props?: HvQueryBuilderProps) => {
 
 const renderUncontrolled = (props?: HvQueryBuilderProps) =>
   render(
-    <HvQueryBuilder operators={operators} attributes={attributes} {...props} />
+    <HvQueryBuilder operators={operators} attributes={attributes} {...props} />,
   );
 
 const renderControlled = (props?: HvQueryBuilderProps) =>
   render(
-    <Controlled operators={operators} attributes={attributes} {...props} />
+    <Controlled operators={operators} attributes={attributes} {...props} />,
   );
 
 const assertGroupCreated = async () => {
@@ -269,27 +269,27 @@ describe("QueryBuilder", () => {
     expect(
       screen.getByRole("button", {
         name: /Add condition/i,
-      })
+      }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", {
         name: /Add group/i,
-      })
+      }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", {
         name: /Create a condition/i,
-      })
+      }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", {
         name: /condition group/i,
-      })
+      }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", {
         name: /reset query/i,
-      })
+      }),
     ).toBeInTheDocument();
   });
 
@@ -525,17 +525,17 @@ describe("QueryBuilder", () => {
     expect(
       screen.getByRole("combobox", {
         name: /attribute/i,
-      })
+      }),
     ).toHaveTextContent("Category");
     expect(
       screen.getByRole("combobox", {
         name: /operator/i,
-      })
+      }),
     ).toHaveTextContent("Equals");
     expect(
       screen.getByRole("textbox", {
         name: /value/i,
-      })
+      }),
     ).toHaveValue("stuff");
   });
 
@@ -556,17 +556,17 @@ describe("QueryBuilder", () => {
     expect(
       screen.getByRole("combobox", {
         name: /attribute/i,
-      })
+      }),
     ).toHaveTextContent("Info");
     expect(
       screen.getByRole("combobox", {
         name: /operator/i,
-      })
+      }),
     ).toHaveTextContent("Equals");
     expect(
       screen.getByRole("textbox", {
         name: /value/i,
-      })
+      }),
     ).toHaveValue("stuff");
   });
 
@@ -587,17 +587,17 @@ describe("QueryBuilder", () => {
     expect(
       screen.getByRole("combobox", {
         name: /attribute/i,
-      })
+      }),
     ).toHaveTextContent("Price");
     expect(
       screen.getByRole("combobox", {
         name: /operator/i,
-      })
+      }),
     ).toHaveTextContent(/not equal to/i);
     expect(
       screen.getByRole("textbox", {
         name: /value/i,
-      })
+      }),
     ).toHaveValue("12");
   });
 
@@ -621,22 +621,22 @@ describe("QueryBuilder", () => {
     expect(
       screen.getByRole("combobox", {
         name: /attribute/i,
-      })
+      }),
     ).toHaveTextContent("Price");
     expect(
       screen.getByRole("combobox", {
         name: /operator/i,
-      })
+      }),
     ).toHaveTextContent("Range");
     expect(
       screen.getByRole("textbox", {
         name: /from/i,
-      })
+      }),
     ).toHaveValue("12");
     expect(
       screen.getByRole("textbox", {
         name: "To",
-      })
+      }),
     ).toHaveValue("20");
   });
 
@@ -657,17 +657,17 @@ describe("QueryBuilder", () => {
     expect(
       screen.getByRole("combobox", {
         name: /attribute/i,
-      })
+      }),
     ).toHaveTextContent("In stock");
     expect(
       screen.getByRole("combobox", {
         name: /operator/i,
-      })
+      }),
     ).toHaveTextContent("=");
     expect(
       screen.getByRole("combobox", {
         name: /value/i,
-      })
+      }),
     ).toHaveTextContent("False");
   });
 
@@ -687,22 +687,22 @@ describe("QueryBuilder", () => {
     expect(
       screen.getByRole("combobox", {
         name: /attribute/i,
-      })
+      }),
     ).toHaveTextContent("Release");
     expect(
       screen.getByRole("combobox", {
         name: /operator/i,
-      })
+      }),
     ).toHaveTextContent("Equal to");
     expect(
       screen.getByRole("combobox", {
         name: /date/i,
-      })
+      }),
     ).toHaveTextContent("Select Date");
     expect(
       screen.getByRole("combobox", {
         name: /time/i,
-      })
+      }),
     ).toHaveTextContent("Select Time");
   });
 
@@ -722,32 +722,32 @@ describe("QueryBuilder", () => {
     expect(
       screen.getByRole("combobox", {
         name: /attribute/i,
-      })
+      }),
     ).toHaveTextContent("Release");
     expect(
       screen.getByRole("combobox", {
         name: /operator/i,
-      })
+      }),
     ).toHaveTextContent("Range");
     expect(
       screen.getByRole("combobox", {
         name: /start date/i,
-      })
+      }),
     ).toHaveTextContent("Select Start Date");
     expect(
       screen.getByRole("combobox", {
         name: /start time/i,
-      })
+      }),
     ).toHaveTextContent("Select Start Time");
     expect(
       screen.getByRole("combobox", {
         name: /end date/i,
-      })
+      }),
     ).toHaveTextContent("Select End Date");
     expect(
       screen.getByRole("combobox", {
         name: /end time/i,
-      })
+      }),
     ).toHaveTextContent("Select End Time");
   });
 
@@ -886,7 +886,7 @@ describe("QueryBuilder", () => {
     // Update a value
     await user.type(
       screen.getAllByRole("textbox", { name: /value/i })[0],
-      "value"
+      "value",
     );
     expect(querySpy).toHaveBeenCalledTimes(1);
 

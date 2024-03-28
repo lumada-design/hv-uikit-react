@@ -1,11 +1,11 @@
 import { Close } from "@hitachivantara/uikit-react-icons";
 
-import { HvBaseProps } from "../../../types/generic";
 import {
   HvActionsGeneric,
   HvActionsGenericProps,
 } from "../../../ActionsGeneric";
 import { HvButton } from "../../../Button";
+import { HvBaseProps } from "../../../types/generic";
 import { ExtractNames } from "../../../utils/classes";
 import { staticClasses, useClasses } from "./ActionContainer.styles";
 

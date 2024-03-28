@@ -1,11 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-
 import useSWR from "swr";
 
 // --- Types ---
 
 export interface ServerPaginationProps<
-  T extends object = Record<string, string | number>
+  T extends object = Record<string, string | number>,
 > {
   endpoint: string;
   db: T[];
@@ -18,7 +17,7 @@ export interface ServerPaginationProps<
 }
 
 export interface PaginationData<
-  T extends object = Record<string, string | number>
+  T extends object = Record<string, string | number>,
 > {
   data: T[];
   total: number;
@@ -37,14 +36,14 @@ const searchObj = (entry: Record<string, string | number>, search: string) => {
     .filter((key) => key !== "id" && key !== "statusColor")
     .find(
       (key) =>
-        entry[key].toString().toLowerCase().search(search.toLowerCase()) !== -1
+        entry[key].toString().toLowerCase().search(search.toLowerCase()) !== -1,
     )?.length;
 };
 
 // --- Pagination hook ---
 
 export function useServerPagination<
-  T extends object = Record<string, string | number>
+  T extends object = Record<string, string | number>,
 >({
   endpoint,
   db,
@@ -76,7 +75,7 @@ export function useServerPagination<
             if (search) {
               keep = !!searchObj(
                 entry as Record<string, string | number>,
-                search
+                search,
               );
             }
             if (filter && keep) {
@@ -104,7 +103,7 @@ export function useServerPagination<
                       sensitivity: "base",
                     });
               }
-            : undefined
+            : undefined,
         )
         .slice(skip, skip + limit),
       total: items.length,
@@ -136,7 +135,7 @@ export function useServerPagination<
       setDeleting(true);
 
       setAllData((prev) =>
-        prev.filter((entry: any) => entry.id && !ids.includes(entry.id))
+        prev.filter((entry: any) => entry.id && !ids.includes(entry.id)),
       );
 
       const refreshedData = await fetcher();
@@ -147,7 +146,7 @@ export function useServerPagination<
 
       setDeleting(false);
     },
-    [fetcher, mutate]
+    [fetcher, mutate],
   );
 
   return {

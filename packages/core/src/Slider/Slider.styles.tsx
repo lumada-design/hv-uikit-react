@@ -1,8 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "../utils/focusUtils";
 import { createClasses } from "../utils/classes";
-
+import { outlineStyles } from "../utils/focusUtils";
 import base from "./base";
 
 const dot: React.CSSProperties = {

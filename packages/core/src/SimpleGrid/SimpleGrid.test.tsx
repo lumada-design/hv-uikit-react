@@ -17,7 +17,7 @@ describe("SimpleGrid", () => {
     const { getByTestId } = render(
       <HvSimpleGrid data-testid="ancestor">
         <p data-testid="descendant">Hello world</p>
-      </HvSimpleGrid>
+      </HvSimpleGrid>,
     );
     const ancestor = getByTestId("ancestor");
     const descendant = getByTestId("descendant");

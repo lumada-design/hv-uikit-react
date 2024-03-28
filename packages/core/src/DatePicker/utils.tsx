@@ -11,13 +11,13 @@ export const validateDate = (date: any) => (isDate(date) && date) || new Date();
 export const getFormattedDateRange = (
   date: DateRangeProp,
   locale: string,
-  rep: Intl.DateTimeFormatOptions["month"] = "short"
+  rep: Intl.DateTimeFormatOptions["month"] = "short",
 ) => {
   const { startDate, endDate } = date;
   const monthYear = `${getMonthName(
     startDate,
     locale,
-    rep
+    rep,
   )} ${startDate.getFullYear()}`;
   return `${startDate.getDate()} - ${endDate?.getDate()} ${monthYear}`;
 };
@@ -27,7 +27,7 @@ export const getSingleDateLabel = (date: any, locale?: string) =>
 
 export const getRangeDateLabel = (
   { startDate, endDate }: any,
-  locale: string
+  locale: string,
 ) => {
   if (!(isDate(startDate) && isDate(endDate)))
     return getSingleDateLabel(startDate);
@@ -36,14 +36,14 @@ export const getRangeDateLabel = (
     ? getFormattedDateRange({ startDate, endDate }, locale)
     : `${getFormattedDate(startDate, locale)} - ${getFormattedDate(
         endDate,
-        locale
+        locale,
       )}`;
 };
 
 export const getDateLabel = (
   date: Date | Partial<DateRangeProp> | undefined,
   rangeMode: boolean,
-  locale: string
+  locale: string,
 ) =>
   rangeMode
     ? getRangeDateLabel(date as Required<DateRangeProp>, locale)

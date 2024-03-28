@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import { css } from "@emotion/css";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
+import { css } from "@emotion/css";
 import {
   HvButton,
   HvDialog,
@@ -16,10 +16,10 @@ import {
 import { Add, DataSource } from "@hitachivantara/uikit-react-icons";
 import {
   HvFlow,
-  HvFlowProps,
-  HvFlowSidebar,
   HvFlowControls,
   HvFlowInstance,
+  HvFlowProps,
+  HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
 // The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
@@ -108,7 +108,7 @@ export const DynamicHandles = () => {
       Object.keys(types).map((key) => {
         return { id: key, label: key };
       }),
-    []
+    [],
   );
 
   const handleCloseConfig = () => {

@@ -1,12 +1,12 @@
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
-import { HvChartTooltip } from "./tooltip";
-import { HvChartGrid } from "./grid";
+import { HvChartAxis } from "./axis";
 import { HvChartData } from "./generic";
-import { HvChartSortBy } from "./sort";
+import { HvChartGrid } from "./grid";
 import { HvChartLegend } from "./legend";
 import { HvChartHorizontalRangeSlider } from "./slider";
-import { HvChartAxis } from "./axis";
+import { HvChartSortBy } from "./sort";
+import { HvChartTooltip } from "./tooltip";
 
 // Note: These types should not be exported at the moment since they can change over time.
 

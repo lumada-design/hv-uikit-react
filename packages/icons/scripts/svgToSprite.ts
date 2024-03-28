@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
 import fs from "node:fs";
 import path from "node:path";
-
-import yargs from "yargs";
 import recursive from "recursive-readdir";
+import yargs from "yargs";
 
-import { formatSVG, generateSymbol } from "./utils/converter";
 import { extractColors, replaceFill } from "./utils/colors";
+import { formatSVG, generateSymbol } from "./utils/converter";
 
 // Argument setup
 const args = yargs // reading arguments from the command line
@@ -30,7 +29,7 @@ const outputFolder = outputPath
  * @returns A Promise that resolves with an object that maps each sub-folder name to an array of SVG file paths.
  */
 async function getSvgPathsByGroup(
-  dirPath: string
+  dirPath: string,
 ): Promise<{ [key: string]: string[] }> {
   const svgPathsByGroup: { [key: string]: string[] } = {};
   const files = await recursive(dirPath);
@@ -69,7 +68,7 @@ fs.mkdir(outputFolder, { recursive: true }, (err) => {
       const symbolsSvgPath = path.resolve(
         process.cwd(),
         outputPath,
-        `${groupName}.svg`
+        `${groupName}.svg`,
       );
       const spriteStream = fs.createWriteStream(symbolsSvgPath, { flags: "w" });
       spriteStream.on("error", (err) => {
@@ -77,7 +76,7 @@ fs.mkdir(outputFolder, { recursive: true }, (err) => {
       });
       spriteStream.on("open", () => {
         spriteStream.write(
-          `<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 0 0">\n`
+          `<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 0 0">\n`,
         );
 
         for (const svgPath of svgPaths) {
@@ -96,7 +95,7 @@ fs.mkdir(outputFolder, { recursive: true }, (err) => {
           const svgWithCssVars = replaceFill(svgData, colorObject);
           const symbol = generateSymbol(
             svgWithCssVars,
-            path.basename(svgPath, ".svg")
+            path.basename(svgPath, ".svg"),
           );
           spriteStream.write(symbol);
           spriteStream.write("\n");

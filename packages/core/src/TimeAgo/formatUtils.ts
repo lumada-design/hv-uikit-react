@@ -80,7 +80,7 @@ export const formatTimeAgo = (
   date: Date,
   locale: string,
   showSeconds = false,
-  referenceDate = new Date()
+  referenceDate = new Date(),
 ) => {
   const dayReferenceDate = dayjs(referenceDate);
   const dayDate = dayjs(date).locale(locale);

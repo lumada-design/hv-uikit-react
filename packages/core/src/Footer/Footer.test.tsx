@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 
 import { HvFooter } from "./Footer";
 
@@ -15,7 +15,7 @@ describe("Footer", () => {
     const mockLinks = <div>mockLinks</div>;
 
     const { getByText } = render(
-      <HvFooter name={mockName} copyright={mockCopyright} links={mockLinks} />
+      <HvFooter name={mockName} copyright={mockCopyright} links={mockLinks} />,
     );
     expect(getByText("mockName")).toBeInTheDocument();
     expect(getByText("mockCopyright")).toBeInTheDocument();

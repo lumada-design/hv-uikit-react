@@ -1,10 +1,10 @@
 import { lazy } from "react";
-import { Navigate, createBrowserRouter, RouteObject } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
 
 /* eslint-disable import/no-relative-packages */
 // Templates
 const AssetInventory = lazy(
-  () => import("../../../../templates/AssetInventory")
+  () => import("../../../../templates/AssetInventory"),
 );
 const ListView = lazy(() => import("../../../../templates/ListView"));
 const Form = lazy(() => import("../../../../templates/Form"));

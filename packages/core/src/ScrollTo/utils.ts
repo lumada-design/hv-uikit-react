@@ -3,7 +3,7 @@ import { HvScrollToOption } from "./types";
 type ExtendedWindow = Window & typeof globalThis & HTMLElement;
 
 export const getScrollTop = (
-  c: HTMLElement | (Window & typeof globalThis) = window
+  c: HTMLElement | (Window & typeof globalThis) = window,
 ) => {
   if (c === window) {
     return (
@@ -19,7 +19,7 @@ export const getScrollTop = (
 
 export const verticalScrollOffset = (
   t: HTMLElement | (Window & typeof globalThis),
-  c: HTMLElement | (Window & typeof globalThis) = window
+  c: HTMLElement | (Window & typeof globalThis) = window,
 ) => {
   if (c === window) {
     return (
@@ -36,7 +36,7 @@ export const verticalScrollOffset = (
 
 export const horizontalScrollOffset = (
   t: HTMLElement,
-  c: HTMLElement | (Window & typeof globalThis) = window
+  c: HTMLElement | (Window & typeof globalThis) = window,
 ) => {
   if (c === window) {
     return (
@@ -55,7 +55,7 @@ export const scrollElement = (
   element: HTMLElement,
   container: HTMLElement | (Window & typeof globalThis),
   offset: number = 0,
-  direction?: "row" | "column"
+  direction?: "row" | "column",
 ) => {
   if (direction === "row") {
     const elemLeft = horizontalScrollOffset(element, container);
@@ -74,7 +74,7 @@ export const scrollElement = (
 };
 
 export const isScrolledToTheBottom = (
-  container: HTMLElement | (Window & typeof globalThis)
+  container: HTMLElement | (Window & typeof globalThis),
 ) => {
   const containerScrollTop = getScrollTop(container);
 
@@ -96,7 +96,7 @@ export const isScrolledToTheBottom = (
 export const findFirstVisibleElement = (
   container: HTMLElement | (Window & typeof globalThis),
   options: HvScrollToOption[],
-  offset: number
+  offset: number,
 ) => {
   const boundsTop = verticalScrollOffset(container);
 

@@ -1,7 +1,5 @@
 import { useCallback, useEffect } from "react";
-
 import { Editor, EditorProps, useMonaco } from "@monaco-editor/react";
-
 import {
   ExtractNames,
   HvTheme,
@@ -83,7 +81,7 @@ export const HvCodeEditor = ({
         });
       }
     },
-    [monaco]
+    [monaco],
   );
 
   useEffect(() => {

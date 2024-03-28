@@ -1,11 +1,9 @@
-import { useState, useCallback, forwardRef } from "react";
-
+import { forwardRef, useCallback, useState } from "react";
 import MuiSwitch, { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
-
-import { useClasses, staticClasses } from "./BaseSwitch.styles";
+import { staticClasses, useClasses } from "./BaseSwitch.styles";
 
 export { staticClasses as baseSwitchClasses };
 
@@ -121,7 +119,7 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
         setFocusVisible(true);
         onFocusVisible?.(evt);
       },
-      [onFocusVisible]
+      [onFocusVisible],
     );
 
     const onBlurCallback = useCallback(
@@ -129,7 +127,7 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
         setFocusVisible(false);
         onBlur?.(evt);
       },
-      [onBlur]
+      [onBlur],
     );
 
     const onLocalChange = useCallback(
@@ -140,7 +138,7 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
 
         onChange?.(evt, evt.target.checked, value);
       },
-      [onChange, readOnly, value]
+      [onChange, readOnly, value],
     );
 
     return (
@@ -155,7 +153,7 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
             [classes.readOnly]: readOnly,
             [classes.focusVisible]: focusVisible,
           },
-          className
+          className,
         )}
         color="default"
         disabled={disabled}
@@ -180,5 +178,5 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
         {...others}
       />
     );
-  }
+  },
 );

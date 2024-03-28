@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { theme, outlineStyles } from "@hitachivantara/uikit-react-core";
+import { outlineStyles, theme } from "@hitachivantara/uikit-react-core";
 
 const styles = {
   columnsContainer: css({

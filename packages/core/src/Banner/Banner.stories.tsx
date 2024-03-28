@@ -1,17 +1,17 @@
 import { useState } from "react";
+import { css } from "@emotion/css";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
-import { css } from "@emotion/css";
-import { Info } from "@hitachivantara/uikit-react-icons";
 import {
   HvBanner,
-  HvBannerProps,
   HvBannerContent,
   HvBannerContentProps,
+  HvBannerProps,
   HvButton,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
+import { Info } from "@hitachivantara/uikit-react-icons";
 
 const StyledBanner = styled(HvBanner)({
   position: "relative",

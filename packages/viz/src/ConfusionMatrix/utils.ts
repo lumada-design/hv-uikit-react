@@ -1,11 +1,8 @@
-import { useMemo, useCallback } from "react";
-
+import { useCallback, useMemo } from "react";
 import type ColumnTable from "arquero/dist/types/table/column-table";
-
 import { useTheme } from "@hitachivantara/uikit-react-core";
 
 import { HvChartXAxis } from "../types/common";
-
 import {
   HvConfusionMatrixColorScale,
   HvConfusionMatrixFormat,
@@ -40,7 +37,7 @@ export const useColorScale = ({
             });
             return acc;
           },
-          []
+          [],
         ),
       };
     }
@@ -89,7 +86,7 @@ export const useSeries = ({
 
       return colors?.base_light;
     },
-    [colors]
+    [colors],
   );
 
   const chartSeries = useMemo(() => {

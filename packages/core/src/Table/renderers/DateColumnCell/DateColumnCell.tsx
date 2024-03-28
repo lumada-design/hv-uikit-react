@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-
 import dayjs from "dayjs";
 
 import { HvOverflowTooltip } from "../../../OverflowTooltip";
@@ -18,7 +17,7 @@ export const HvDateColumnCell = ({
   const formattedDate = useMemo(() => {
     if (date)
       return dayjs(date).format(
-        dateFormat !== "ISO8601" ? dateFormat : undefined
+        dateFormat !== "ISO8601" ? dateFormat : undefined,
       );
     return "—";
   }, [date, dateFormat]);

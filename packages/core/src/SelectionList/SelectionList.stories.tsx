@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { css, CSSInterpolation } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { CSSInterpolation, css } from "@emotion/css";
 import {
   HvFormStatus,
   HvListItem,
@@ -113,7 +113,7 @@ export const Controlled: StoryObj<HvSelectionListProps> = {
 
     const handleOnChange: HvSelectionListProps["onChange"] = (
       _evt,
-      newValue
+      newValue,
     ) => {
       setValue(newValue);
 

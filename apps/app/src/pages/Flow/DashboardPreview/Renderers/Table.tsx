@@ -1,26 +1,26 @@
-import { useMemo, useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
-import { Ban } from "@hitachivantara/uikit-react-icons";
-import {
-  HvSection,
-  HvTypography,
-  useHvData,
-  HvTableColumnConfig,
-  useHvSortBy,
-  useHvPagination,
-  HvTableContainer,
-  HvTable,
-  HvTableHead,
-  HvTableRow,
-  HvTableHeader,
-  HvTableBody,
-  HvTableCell,
-  HvPagination,
-  useHvFilters,
-  HvEmptyState,
-} from "@hitachivantara/uikit-react-core";
 import { table } from "arquero";
 import type ColumnTable from "arquero/dist/types/table/column-table";
+import {
+  HvEmptyState,
+  HvPagination,
+  HvSection,
+  HvTable,
+  HvTableBody,
+  HvTableCell,
+  HvTableColumnConfig,
+  HvTableContainer,
+  HvTableHead,
+  HvTableHeader,
+  HvTableRow,
+  HvTypography,
+  useHvData,
+  useHvFilters,
+  useHvPagination,
+  useHvSortBy,
+} from "@hitachivantara/uikit-react-core";
+import { Ban } from "@hitachivantara/uikit-react-icons";
 
 interface TableProps {
   loading: boolean;
@@ -85,7 +85,7 @@ export const Table = ({
     },
     useHvFilters,
     useHvSortBy,
-    useHvPagination
+    useHvPagination,
   );
 
   useEffect(() => {

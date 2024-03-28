@@ -10,13 +10,13 @@ import {
 } from "../types";
 
 export const isInputGroup = (
-  input: HvFlowNodeInput | HvFlowNodeInputGroup
+  input: HvFlowNodeInput | HvFlowNodeInputGroup,
 ): input is HvFlowNodeInputGroup => {
   return "inputs" in input;
 };
 
 export const isOutputGroup = (
-  output: HvFlowNodeOutput | HvFlowNodeOutputGroup
+  output: HvFlowNodeOutput | HvFlowNodeOutputGroup,
 ): output is HvFlowNodeOutputGroup => {
   return "outputs" in output;
 };
@@ -25,7 +25,7 @@ export const isConnected = (
   id: string,
   type: "target" | "source",
   handleId: string,
-  edges: Edge[]
+  edges: Edge[],
 ) => {
   if (type === "target") {
     return edges.some((e) => e.target === id && e.targetHandle === handleId);
@@ -43,7 +43,7 @@ export const renderedIcon = (actionIcon: HvActionGeneric["icon"]) =>
 export const identifyHandles = (
   handles?:
     | (HvFlowNodeInput | HvFlowNodeInputGroup)[]
-    | (HvFlowNodeOutput | HvFlowNodeOutputGroup)[]
+    | (HvFlowNodeOutput | HvFlowNodeOutputGroup)[],
 ) => {
   let idx = 0;
 
@@ -53,7 +53,7 @@ export const identifyHandles = (
         | HvFlowNodeOutput
         | HvFlowNodeOutputGroup
         | HvFlowNodeInput
-        | HvFlowNodeInputGroup
+        | HvFlowNodeInputGroup,
     ) => {
       if (isInputGroup(handle)) {
         return {
@@ -83,6 +83,6 @@ export const identifyHandles = (
         handle.id != null ? handle : { ...handle, id: String(idx) };
       idx += 1;
       return identifiedHandle;
-    }
+    },
   );
 };

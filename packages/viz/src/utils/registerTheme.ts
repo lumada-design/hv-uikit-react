@@ -1,10 +1,10 @@
-import { HvTheme } from "@hitachivantara/uikit-react-core";
 import * as echarts from "echarts/core";
+import { HvTheme } from "@hitachivantara/uikit-react-core";
 
 export const registerTheme = (
   name: string,
   mode: string,
-  themeStructure?: HvTheme
+  themeStructure?: HvTheme,
 ) => {
   const baseText = {
     color: themeStructure?.colors.modes[mode].secondary,

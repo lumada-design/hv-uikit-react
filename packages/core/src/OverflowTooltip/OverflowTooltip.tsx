@@ -2,11 +2,10 @@ import { useMemo } from "react";
 import { useResizeDetector } from "react-resize-detector";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvBaseProps } from "../types/generic";
 import { HvTooltip, HvTooltipProps } from "../Tooltip";
+import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./OverflowTooltip.styles";
 
 export { staticClasses as overflowTooltipClasses };
@@ -72,7 +71,7 @@ export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
 
   const isParag = useMemo(
     () => paragraphOverflow && isParagraph(data?.toString()),
-    [data, paragraphOverflow]
+    [data, paragraphOverflow],
   );
 
   // The difference should be higher than a pixel to be considered as overflowing
@@ -97,7 +96,7 @@ export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
             [classes.tooltipAnchor]: !isParag,
             [classes.tooltipAnchorParagraph]: isParag,
           },
-          className
+          className,
         )}
       >
         {data}
@@ -111,7 +110,7 @@ export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
       data,
       isParag,
       ref,
-    ]
+    ],
   );
 
   return (

@@ -1,10 +1,10 @@
 import {
-  Title,
-  Subtitle,
+  ArgsTable,
   Description,
   Primary,
-  ArgsTable,
   Stories,
+  Subtitle,
+  Title,
 } from "@storybook/blocks";
 
 export const DocsPage = () => (

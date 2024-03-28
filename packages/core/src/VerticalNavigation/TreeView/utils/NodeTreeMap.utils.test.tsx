@@ -73,7 +73,7 @@ describe("NodeTreeMapUtils", () => {
         {
           label: "Z",
           path: "something",
-        }
+        },
       );
 
       expect(Object.is(nodeMap, result)).toBe(false);

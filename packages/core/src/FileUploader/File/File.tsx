@@ -1,12 +1,11 @@
 import { Close, Fail, Success } from "@hitachivantara/uikit-react-icons";
 
-import { setId } from "../../utils/setId";
 import { HvButton } from "../../Button";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvProgressBar } from "../../ProgressBar";
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
-import { HvProgressBar } from "../../ProgressBar";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-
+import { setId } from "../../utils/setId";
 import { convertUnits } from "../utils";
 import { staticClasses, useClasses } from "./File.styles";
 
@@ -74,7 +73,7 @@ export type HvFileProps = {
 
 const getStatusIcon = (
   classes?: HvFileClasses,
-  status?: HvFileData["status"]
+  status?: HvFileData["status"],
 ) => {
   switch (status) {
     case "success":
@@ -148,7 +147,7 @@ export const HvFile = (props: HvFileProps) => {
             root: classes.progressbar,
             progressBarContainer: cx(
               classes.progressbarContainer,
-              classes.progressbarBack
+              classes.progressbarBack,
             ),
           }}
           value={currentProgress}

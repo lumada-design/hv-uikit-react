@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { css, CSSInterpolation } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { CSSInterpolation, css } from "@emotion/css";
 import {
   HvFormStatus,
   HvRadio,
@@ -132,7 +132,7 @@ export const Controlled: StoryObj<HvRadioGroupProps> = {
 
     const handleOnChange = (
       _: React.ChangeEvent<HTMLInputElement>,
-      newValue: string
+      newValue: string,
     ) => {
       setValue(newValue);
 

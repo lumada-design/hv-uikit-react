@@ -6,7 +6,6 @@ import {
   HvDialogProps,
   HvDialogTitle,
 } from "../../Dialog";
-
 import { useClasses } from "./ConfirmationDialog.styles";
 
 export interface ConfirmationDialogProps {

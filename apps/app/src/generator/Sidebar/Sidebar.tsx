@@ -19,8 +19,8 @@ import {
   Template,
 } from "@hitachivantara/uikit-react-icons";
 
-import { useGeneratorContext } from "~/generator/GeneratorContext";
 import CodeEditor from "~/generator/CodeEditor";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
 
 const Colors = lazy(() => import("~/generator/Colors"));
 const FontSizes = lazy(() => import("~/generator/FontSizes"));

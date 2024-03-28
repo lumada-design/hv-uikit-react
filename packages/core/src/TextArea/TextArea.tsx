@@ -1,22 +1,14 @@
 import {
+  forwardRef,
   useCallback,
+  useEffect,
+  useMemo,
   useRef,
   useState,
-  useMemo,
-  useEffect,
-  forwardRef,
 } from "react";
-
 import { useForkRef } from "@mui/material/utils";
 
-import { setId } from "../utils/setId";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import validationStates, {
-  isInvalid,
-} from "../Forms/FormElement/validationStates";
-import { HvValidationMessages } from "../types/forms";
+import { HvBaseInput, HvBaseInputProps } from "../BaseInput";
 import {
   computeValidationMessage,
   computeValidationState,
@@ -26,7 +18,6 @@ import {
   validateInput,
   validationTypes,
 } from "../BaseInput/validations";
-import { HvBaseInput, HvBaseInputProps } from "../BaseInput";
 import {
   HvCharCounter,
   HvCharCounterProps,
@@ -37,8 +28,15 @@ import {
   HvLabel,
   HvWarningText,
 } from "../Forms";
+import validationStates, {
+  isInvalid,
+} from "../Forms/FormElement/validationStates";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvValidationMessages } from "../types/forms";
 import { ExtractNames } from "../utils/classes";
-
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./TextArea.styles";
 
 export { staticClasses as textAreaClasses };
@@ -134,7 +132,7 @@ export interface HvTextAreaProps
    */
   onChange?: (
     event: React.ChangeEvent<HTMLTextAreaElement>,
-    value: string
+    value: string,
   ) => void;
   /**
    * Called back when the value is changed.
@@ -142,7 +140,7 @@ export interface HvTextAreaProps
   onBlur?: (
     event: React.FocusEvent<HTMLTextAreaElement>,
     value: string,
-    validationState: HvInputValidity
+    validationState: HvInputValidity,
   ) => void;
   /**
    * The function that will be executed onBlur, allows checking the value state,
@@ -150,7 +148,7 @@ export interface HvTextAreaProps
    */
   onFocus?: (
     event: React.FocusEvent<HTMLTextAreaElement>,
-    value: string
+    value: string,
   ) => void;
   /**
    * A Jss Object used to override or extend the component styles applied.
@@ -217,12 +215,12 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
 
   const [validationState, setValidationState] = useControlled(
     status,
-    validationStates.standBy
+    validationStates.standBy,
   );
 
   const [validationMessage, setValidationMessage] = useControlled(
     statusMessage,
-    ""
+    "",
   );
 
   const [value, setValue] = useControlled(valueProp, defaultValue);
@@ -241,7 +239,7 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
   // Dependencies must be more explicit so we set
   const errorMessages = useMemo(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
-    [validationMessages]
+    [validationMessages],
   );
 
   // Validates the input, sets the status and the statusMessage accordingly (if uncontrolled)
@@ -254,7 +252,7 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
       minCharQuantity,
       maxCharQuantity,
       validationTypes.none,
-      validation
+      validation,
     );
 
     // This will only run if status is uncontrolled
@@ -262,7 +260,7 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
 
     // This will only run if statusMessage is uncontrolled
     setValidationMessage(
-      computeValidationMessage(inputValidity, errorMessages)
+      computeValidationMessage(inputValidity, errorMessages),
     );
 
     return inputValidity;
@@ -310,7 +308,7 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
    */
   const onChangeHandler: HvBaseInputProps["onChange"] = (
     event,
-    currentValue
+    currentValue,
   ) => {
     isDirty.current = true;
 
@@ -398,7 +396,7 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
             ? maxCharQuantity
             : null,
           validation,
-          inputProps
+          inputProps,
         )));
 
   let errorMessageId;
@@ -423,7 +421,7 @@ export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
           [classes.disabled]: disabled,
           [classes.invalid]: isStateInvalid,
         },
-        className
+        className,
       )}
       onBlur={onContainerBlurHandler}
     >

@@ -1,8 +1,7 @@
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
-import { useClasses, staticClasses } from "./Header.styles";
+import { staticClasses, useClasses } from "./Header.styles";
 
 export { staticClasses as headerClasses };
 
@@ -49,7 +48,7 @@ export const HvHeader = (props: HvHeaderProps) => {
             right: 0,
           }),
         }),
-        className
+        className,
       )}
       {...others}
     >

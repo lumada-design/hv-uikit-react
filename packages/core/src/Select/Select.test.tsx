@@ -2,9 +2,9 @@ import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
-import { HvSelect, HvSelectProps } from "./Select";
 import { HvOption } from "./Option";
 import { HvOptionGroup } from "./OptionGroup";
+import { HvSelect, HvSelectProps } from "./Select";
 
 const name = "MySelect";
 
@@ -16,7 +16,7 @@ const setup = (props?: HvSelectProps<string, false>) =>
       <HvOption value="opt1">Option1</HvOption>
       <HvOption value="opt2">Option2</HvOption>
       <HvOption value="opt3">Option3</HvOption>
-    </HvSelect>
+    </HvSelect>,
   );
 
 describe("Select", () => {
@@ -54,7 +54,7 @@ describe("Select", () => {
         <HvOption value="opt1">Option1</HvOption>
         <HvOption value="opt2">Option2</HvOption>
         <HvOption value="opt3">Option3</HvOption>
-      </HvSelect>
+      </HvSelect>,
     );
 
     expect(getSelect()).toHaveTextContent("Option1, Option2");
@@ -72,7 +72,7 @@ describe("Select", () => {
           <HvOption value="opt4">Option4</HvOption>
           <HvOption value="opt5">Option5</HvOption>
         </HvOptionGroup>
-      </HvSelect>
+      </HvSelect>,
     );
 
     await userEvent.click(getSelect());

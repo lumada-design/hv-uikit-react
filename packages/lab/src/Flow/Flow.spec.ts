@@ -1,4 +1,4 @@
-import { test, expect, type Locator, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "@playwright/test";
 
 let flowCanvasLocator: Locator;
 let referencePage: Page;
@@ -6,7 +6,7 @@ let referencePage: Page;
 async function selectNode(
   nodeGroup: string,
   nodeName: string,
-  withExpand: boolean
+  withExpand: boolean,
 ) {
   const baseAssetNodeLocator = referencePage
     .getByRole("listitem")
@@ -35,7 +35,7 @@ async function connectNodes(
   sourceNode: string,
   sourceConnection: string,
   targetNode: string,
-  targetConnection: string
+  targetConnection: string,
 ) {
   const source = flowCanvasLocator
     .getByRole("button", { name: sourceNode })
@@ -69,7 +69,7 @@ async function moveUp(renderedNode: Locator, verticalMovement: number) {
   await referencePage.mouse.down();
   await referencePage.mouse.move(
     initialPointX,
-    initialPointY - verticalMovement
+    initialPointY - verticalMovement,
   );
   await referencePage.mouse.up();
 }
@@ -116,7 +116,7 @@ test.describe("Node", () => {
     expect(nodeInCanvasBox?.x).toBeGreaterThanOrEqual(dragDestinationBox!.x);
     expect(nodeInCanvasBox?.x).toBeLessThanOrEqual(dragDestinationBox!.x + 20);
     expect(nodeInCanvasBox?.y).toBeGreaterThanOrEqual(
-      dragDestinationBox!.y + 20
+      dragDestinationBox!.y + 20,
     );
     expect(nodeInCanvasBox?.y).toBeLessThanOrEqual(dragDestinationBox!.y + 40);
   });
@@ -137,7 +137,7 @@ test.describe("Node", () => {
       .hover();
     await page.getByRole("button", { name: "Duplicate" }).hover();
     await expect(
-      page.getByRole("tooltip", { name: "Duplicate" })
+      page.getByRole("tooltip", { name: "Duplicate" }),
     ).toBeVisible();
     await page.getByRole("button", { name: "Duplicate" }).click();
     expect(await createdNode.all()).toHaveLength(2);
@@ -195,11 +195,11 @@ test.describe("Connections", () => {
     // await expect(destination).toHaveCSS("background-color", "rgb(153, 153, 153)"); */
 
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" })
+      flowCanvasLocator.getByRole("button", { name: "Edge" }),
     ).not.toBeVisible();
     await connectNodes("ML Model Detection", "Detection", "KPI", "Data");
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" })
+      flowCanvasLocator.getByRole("button", { name: "Edge" }),
     ).toBeVisible();
   });
 
@@ -214,11 +214,11 @@ test.describe("Connections", () => {
 
     await connectNodes("Table", "Insight", "Dashboard", "Insights");
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" })
+      flowCanvasLocator.getByRole("button", { name: "Edge" }),
     ).toBeVisible();
     await deleteConnection("Edge");
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" })
+      flowCanvasLocator.getByRole("button", { name: "Edge" }),
     ).not.toBeVisible();
   });
 
@@ -233,7 +233,7 @@ test.describe("Connections", () => {
 
     await connectNodes("My Asset", "Sensor Group 2", "LineChart", "Data");
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" })
+      flowCanvasLocator.getByRole("button", { name: "Edge" }),
     ).not.toBeVisible();
   });
 
@@ -250,15 +250,15 @@ test.describe("Connections", () => {
 
     await connectNodes("KPI", "Insight", "Dashboard", "Insights");
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" })
+      flowCanvasLocator.getByRole("button", { name: "Edge" }),
     ).toBeVisible();
     await connectNodes("Table", "Insight", "Dashboard", "Insights");
     expect(
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all()
+      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
     ).toHaveLength(2);
     await connectNodes("Table", "Insight", "Dashboard", "Table 1");
     expect(
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all()
+      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
     ).toHaveLength(3);
   });
 
@@ -267,13 +267,13 @@ test.describe("Connections", () => {
   }) => {
     await page.goto(
       "./iframe.html?args=&id=lab-flow--visualizations&viewMode=story",
-      { waitUntil: "networkidle" }
+      { waitUntil: "networkidle" },
     );
 
     await expect(
       flowCanvasLocator.getByRole("button", {
         name: "Edge from jsonInput to lineChart",
-      })
+      }),
     ).toBeVisible(); // This more meaningfull name occurs in this sample but not on the other tried on this file. Should we adapt the other sample?
     const numberConnections = (
       await flowCanvasLocator.getByRole("button", { name: "Edge" }).all()
@@ -281,15 +281,15 @@ test.describe("Connections", () => {
 
     await connectNodes("Filter", "Filtered Data", "Line Chart", "Data");
     expect(
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all()
+      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
     ).toHaveLength(numberConnections);
     await deleteConnection("Edge from jsonInput to lineChart");
     expect(
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all()
+      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
     ).toHaveLength(numberConnections - 1);
     await connectNodes("Filter", "Filtered Data", "Line Chart", "Data");
     expect(
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all()
+      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
     ).toHaveLength(numberConnections);
   });
 
@@ -305,7 +305,7 @@ test.describe("Interactive button", () => {
     page,
   }) => {
     await page.goto(
-      "./iframe.html?args=&id=lab-flow--visualizations&viewMode=story"
+      "./iframe.html?args=&id=lab-flow--visualizations&viewMode=story",
     );
 
     const inputNode = flowCanvasLocator.getByRole("button", {
@@ -323,7 +323,7 @@ test.describe("Interactive button", () => {
       .getByRole("button", { name: "Line Chart" })
       .boundingBox();
     expect(Math.floor(inputBox!.y - lineChartBox!.y)).toEqual(
-      Math.floor(inputLineChartDiff - 50)
+      Math.floor(inputLineChartDiff - 50),
     );
 
     await page.getByRole("button", { name: "Interactive" }).click();
@@ -335,7 +335,7 @@ test.describe("Interactive button", () => {
       .getByRole("button", { name: "Line Chart" })
       .boundingBox();
     expect(Math.floor(inputBox!.y - lineChartBox!.y)).toEqual(
-      Math.floor(inputLineChartDiff)
+      Math.floor(inputLineChartDiff),
     );
   });
 
@@ -359,10 +359,10 @@ test.describe("Interactive button", () => {
 
     await page.mouse.move(nodeBox!.x + 30, nodeBox!.y + 30);
     await expect(
-      page.getByRole("button", { name: "Duplicate" })
+      page.getByRole("button", { name: "Duplicate" }),
     ).not.toBeVisible();
     await expect(
-      page.getByRole("button", { name: "Delete" })
+      page.getByRole("button", { name: "Delete" }),
     ).not.toBeVisible();
   });
 

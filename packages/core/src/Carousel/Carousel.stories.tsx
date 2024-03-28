@@ -1,12 +1,10 @@
 import { useState } from "react";
-
 import { Meta, StoryObj } from "@storybook/react";
-
 import {
   HvCard,
+  HvCardContent,
   HvCardHeader,
   HvCardMedia,
-  HvCardContent,
   HvCarousel,
   HvCarouselProps,
   HvCarouselSlide,

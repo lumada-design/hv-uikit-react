@@ -1,4 +1,4 @@
-import { render, fireEvent } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -45,7 +45,7 @@ describe("<HvControls>", () => {
     });
     it("renders the mixed controls", () => {
       const { getAllByRole, getAllByText, getByPlaceholderText } = render(
-        <MixedControls />
+        <MixedControls />,
       );
       // const slider = queryByRole("slider");
       // expect(slider).toBeInTheDocument();
@@ -75,7 +75,7 @@ describe("<HvControls>", () => {
       });
       it("able to sort with the dropdown", async () => {
         const { getAllByText, getByRole, findAllByText, findByText } = render(
-          <Controls />
+          <Controls />,
         );
         const dropdown = getByRole("combobox");
         expect(dropdown).toBeInTheDocument();
@@ -89,7 +89,7 @@ describe("<HvControls>", () => {
       });
       it("able to filter with the input", async () => {
         const { getAllByText, getByPlaceholderText, findAllByText } = render(
-          <Controls />
+          <Controls />,
         );
         let cards = getAllByText(/Severity/);
         expect(cards.length).toBe(10);
@@ -117,7 +117,7 @@ describe("<HvControls>", () => {
       });
       it("able to sort with the dropdown", async () => {
         const { getAllByText, getByRole, findByText, findAllByText } = render(
-          <ControlsControlled />
+          <ControlsControlled />,
         );
         const dropdown = getByRole("combobox");
         expect(dropdown).toBeInTheDocument();
@@ -131,7 +131,7 @@ describe("<HvControls>", () => {
       });
       it("able to filter with the input", async () => {
         const { getAllByText, getByPlaceholderText, findAllByText } = render(
-          <ControlsControlled />
+          <ControlsControlled />,
         );
         let cards = getAllByText(/Severity/);
         expect(cards.length).toBe(10);
@@ -145,7 +145,7 @@ describe("<HvControls>", () => {
     describe("custom controls", () => {
       it("able to filter with the multibutton", async () => {
         const { getAllByText, getByText, findAllByText } = render(
-          <CustomControls />
+          <CustomControls />,
         );
         let cards = getAllByText(/Severity/);
         expect(cards.length).toBe(15);
@@ -169,7 +169,7 @@ describe("<HvControls>", () => {
     describe("mixed controls", () => {
       it("able to filter with the multibutton", async () => {
         const { getAllByText, getByText, findAllByText } = render(
-          <MixedControls />
+          <MixedControls />,
         );
         let cards = getAllByText(/Severity/);
         expect(cards.length).toBe(15);
@@ -191,7 +191,7 @@ describe("<HvControls>", () => {
       // });
       it("able to filter with the input", async () => {
         const { getAllByText, getByPlaceholderText, findAllByText } = render(
-          <MixedControls />
+          <MixedControls />,
         );
         let cards = getAllByText(/Severity/);
         expect(cards.length).toBe(15);

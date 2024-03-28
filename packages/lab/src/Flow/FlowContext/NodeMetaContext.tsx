@@ -1,4 +1,4 @@
-import { createContext, useRef, useCallback, useContext, useMemo } from "react";
+import { createContext, useCallback, useContext, useMemo, useRef } from "react";
 
 import { HvFlowNodeMeta } from "../types";
 
@@ -37,7 +37,7 @@ export const HvFlowNodeMetaProvider = ({
       unregisterNode,
       getRegistry,
     }),
-    [registerNode, unregisterNode, getRegistry]
+    [registerNode, unregisterNode, getRegistry],
   );
 
   return (
@@ -52,7 +52,7 @@ export function useNodeMetaRegistry() {
 
   if (context === undefined) {
     throw new Error(
-      "useNodeRegistry must be used within a HvFlowNodeMetaProvider"
+      "useNodeRegistry must be used within a HvFlowNodeMetaProvider",
     );
   }
 

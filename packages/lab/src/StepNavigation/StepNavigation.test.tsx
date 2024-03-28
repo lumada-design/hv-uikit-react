@@ -2,8 +2,8 @@ import { act, render, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
-import { HvStepNavigation } from "./StepNavigation";
 import { HvStepProps } from "./DefaultNavigation";
+import { HvStepNavigation } from "./StepNavigation";
 
 type StepType = Pick<
   HvStepProps,
@@ -36,7 +36,7 @@ describe("StepNavigation", () => {
 
   it("should show a tooltip on hover", () => {
     const { getByLabelText, findByRole, queryByRole } = render(
-      <HvStepNavigation type="Simple" showTitles={false} steps={steps} />
+      <HvStepNavigation type="Simple" showTitles={false} steps={steps} />,
     );
     act(async () => {
       userEvent.hover(getByLabelText("Pending"));

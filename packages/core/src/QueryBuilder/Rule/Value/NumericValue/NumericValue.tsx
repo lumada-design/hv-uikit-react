@@ -5,8 +5,8 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { HvInput } from "../../../../Input";
 import { uniqueId } from "../../../../utils/helpers";
 import { useQueryBuilderContext } from "../../../Context";
-import { useClasses } from "./Numeric.styles";
 import { HvQueryBuilderNumericRange } from "../../../types";
+import { useClasses } from "./Numeric.styles";
 
 export interface NumericValueProps {
   id: React.Key;
@@ -39,7 +39,7 @@ export const NumericValue = ({
         value: Number.isNaN(numericData) ? data : numericData,
       });
     },
-    [dispatchAction, id]
+    [dispatchAction, id],
   );
 
   const onRangeValueChange = useCallback(
@@ -61,7 +61,7 @@ export const NumericValue = ({
         value: numericRange,
       });
     },
-    [dispatchAction, id, value]
+    [dispatchAction, id, value],
   );
 
   const [touchedNumeric, setTouchedNumeric] = useState(initialTouched);

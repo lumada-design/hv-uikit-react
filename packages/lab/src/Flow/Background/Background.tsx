@@ -1,6 +1,5 @@
 import { Background, BackgroundProps } from "reactflow";
-
-import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 export interface HvFlowBackgroundProps extends Omit<BackgroundProps, "color"> {
   /** Color for the background dots. Defaults to `secondary`. */

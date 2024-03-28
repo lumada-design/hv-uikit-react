@@ -3,14 +3,14 @@ import type { TreeViewAnyPluginSignature, TreeViewPlugin } from "./plugin";
 export type DefaultizedProps<
   P extends {},
   RequiredProps extends keyof P,
-  AdditionalProps extends {} = {}
+  AdditionalProps extends {} = {},
 > = Omit<P, RequiredProps | keyof AdditionalProps> &
   Required<Pick<P, RequiredProps>> &
   AdditionalProps;
 
 export type MergePluginsProperty<
   TPlugins extends readonly any[],
-  TProperty extends keyof TreeViewAnyPluginSignature
+  TProperty extends keyof TreeViewAnyPluginSignature,
 > = TPlugins extends readonly [plugin: infer P, ...otherPlugin: infer R]
   ? P extends TreeViewAnyPluginSignature
     ? P[TProperty] & MergePluginsProperty<R, TProperty>

@@ -1,13 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
-import {
-  BarChart,
-  Cloud,
-  Deploy,
-  LogOut,
-  Open,
-  User,
-} from "@hitachivantara/uikit-react-icons";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { StoryObj } from "@storybook/react";
 import {
@@ -22,6 +14,14 @@ import {
   HvVerticalNavigationTreeViewItem,
   NavigationData,
 } from "@hitachivantara/uikit-react-core";
+import {
+  BarChart,
+  Cloud,
+  Deploy,
+  LogOut,
+  Open,
+  User,
+} from "@hitachivantara/uikit-react-icons";
 
 export default {
   title: "Widgets/Vertical Navigation",
@@ -94,7 +94,7 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
           ],
         },
       ],
-      []
+      [],
     );
 
     const [value, setValue] = useState("00");
@@ -181,7 +181,7 @@ export const TreeViewMode: StoryObj<HvVerticalNavigationProps> = {
           ],
         },
       ],
-      []
+      [],
     );
 
     const [value, setValue] = useState("01-01");
@@ -274,7 +274,7 @@ export const WithoutActions: StoryObj<HvVerticalNavigationProps> = {
           ],
         },
       ],
-      []
+      [],
     );
 
     const [value, setValue] = useState("02-03-02");

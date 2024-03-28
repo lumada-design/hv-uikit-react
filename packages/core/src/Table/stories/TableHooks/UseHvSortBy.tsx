@@ -2,16 +2,16 @@ import { useMemo } from "react";
 import {
   HvTable,
   HvTableBody,
+  HvTableCell,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   useHvData,
   useHvSortBy,
 } from "@hitachivantara/uikit-react-core";
 
-import { makeData, getColumns, AssetEvent } from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
 export const UseHvSortBy = () => {
   const colSort = useMemo(() => {

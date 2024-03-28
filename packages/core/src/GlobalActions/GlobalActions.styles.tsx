@@ -78,7 +78,7 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
 
 export const getBreakpointStyles = (
   isUpMd: boolean,
-  isSmDown: boolean
+  isSmDown: boolean,
 ): CSSInterpolation => {
   const unit = isUpMd ? 4 : isSmDown ? 2 : 0;
   if (!unit) return {};

@@ -36,7 +36,7 @@ export const Main: StoryObj<HvSuggestionsProps> = {
 
     const handleChange: HvBaseInputProps["onChange"] = (e, val) => {
       const matches = suggestions.filter((v) =>
-        v.toUpperCase().startsWith(val.toUpperCase())
+        v.toUpperCase().startsWith(val.toUpperCase()),
       );
       const newList = val.length >= 1 ? matches : [];
       setSuggestionList(newList);
@@ -46,7 +46,7 @@ export const Main: StoryObj<HvSuggestionsProps> = {
 
     const handleSelection: HvSuggestionsProps["onSuggestionSelected"] = (
       e,
-      val
+      val,
     ) => {
       console.log(val);
       setOpen(false);
@@ -124,7 +124,7 @@ export const ServerSideSuggestions: StoryObj<HvSuggestionsProps> = {
 
     const handleSelection: HvSuggestionsProps["onSuggestionSelected"] = (
       e,
-      val
+      val,
     ) => {
       console.log(val);
       setOpen(false);
@@ -183,7 +183,7 @@ export const OpenWithDownArrow: StoryObj<HvSuggestionsProps> = {
 
     const handleChange: HvBaseInputProps["onChange"] = (e, val) => {
       const matches = suggestions.filter((v) =>
-        v.toUpperCase().startsWith(val.toUpperCase())
+        v.toUpperCase().startsWith(val.toUpperCase()),
       );
       const newList = val.length >= 1 ? matches : [];
       setSuggestionList(newList);
@@ -193,7 +193,7 @@ export const OpenWithDownArrow: StoryObj<HvSuggestionsProps> = {
 
     const handleSelection: HvSuggestionsProps["onSuggestionSelected"] = (
       e,
-      val
+      val,
     ) => {
       console.log(val);
       setOpen(false);

@@ -15,21 +15,22 @@ import {
   useLabels,
 } from "@hitachivantara/uikit-react-core";
 import { Delete, Duplicate } from "@hitachivantara/uikit-react-icons";
-import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
-import {
-  HvFlowNodeAction,
-  HvFlowNodeInput,
-  HvFlowNodeOutput,
-  HvFlowNodeOutputGroup,
-  HvFlowNodeInputGroup,
-} from "../types";
+import { useNodeMetaRegistry } from "../FlowContext/NodeMetaContext";
+import { useFlowInstance } from "../hooks";
 import {
   useFlowNode,
   useFlowNodeInputEdges,
   useFlowNodeOutputEdges,
 } from "../hooks/useFlowNode";
-import { useNodeMetaRegistry } from "../FlowContext/NodeMetaContext";
+import {
+  HvFlowNodeAction,
+  HvFlowNodeInput,
+  HvFlowNodeInputGroup,
+  HvFlowNodeOutput,
+  HvFlowNodeOutputGroup,
+} from "../types";
 import { staticClasses, useClasses } from "./BaseNode.styles";
 import {
   identifyHandles,
@@ -38,7 +39,6 @@ import {
   isOutputGroup,
   renderedIcon,
 } from "./utils";
-import { useFlowInstance } from "../hooks";
 
 export { staticClasses as flowBaseNodeClasses };
 
@@ -109,7 +109,7 @@ export const HvFlowBaseNode = ({
           icon: <Duplicate />,
         },
       ],
-    [labels?.deleteActionLabel, labels?.duplicateActionLabel, nodeActionsProp]
+    [labels?.deleteActionLabel, labels?.duplicateActionLabel, nodeActionsProp],
   );
 
   useEffect(() => {
@@ -162,7 +162,7 @@ export const HvFlowBaseNode = ({
           break;
       }
     },
-    [node, reactFlowInstance]
+    [node, reactFlowInstance],
   );
 
   const renderOutput = (output: HvFlowNodeOutput) => {
@@ -222,7 +222,7 @@ export const HvFlowBaseNode = ({
         "nowheel", // Disables the default canvas pan behaviour when scrolling inside the node
         css({ border: `1px solid ${color}` }),
         classes.root,
-        className
+        className,
       )}
       onMouseEnter={() => setShowActions(true)}
       onMouseLeave={() => setShowActions(false)}
@@ -244,7 +244,7 @@ export const HvFlowBaseNode = ({
         <div
           className={cx(
             classes.titleContainer,
-            css({ "& svg *.color0": { fill: iconColor } })
+            css({ "& svg *.color0": { fill: iconColor } }),
           )}
         >
           {icon}
@@ -277,7 +277,7 @@ export const HvFlowBaseNode = ({
                     {input.label}
                   </HvTypography>
                   {(input as HvFlowNodeInputGroup).inputs.map((inp) =>
-                    renderInput(inp)
+                    renderInput(inp),
                   )}
                 </div>
               );

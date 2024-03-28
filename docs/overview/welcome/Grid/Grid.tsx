@@ -1,14 +1,14 @@
-import { HvTypography, HvSimpleGrid } from "@hitachivantara/uikit-react-core";
+import { HvSimpleGrid, HvTypography } from "@hitachivantara/uikit-react-core";
 import {
-  Energy,
+  Code,
   Components,
+  Energy,
+  Heart,
   People,
   Tool,
-  Code,
-  Heart,
 } from "@hitachivantara/uikit-react-icons";
 
-import { Wrapper, GridElement, GridGroup, Separator } from "./styles";
+import { GridElement, GridGroup, Separator, Wrapper } from "./styles";
 
 const elements = [
   {

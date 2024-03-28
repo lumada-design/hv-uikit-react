@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { Map } from "@hitachivantara/uikit-react-icons";
 import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
 import {
+  HvBaseInput,
   HvButton,
   HvFormStatus,
+  HvGrid,
+  HvInfoMessage,
   HvInput,
   HvInputProps,
   HvInputSuggestion,
-  HvValidationMessages,
-  HvGrid,
   HvLabel,
-  HvInfoMessage,
   HvTypography,
-  HvBaseInput,
+  HvValidationMessages,
   theme,
 } from "@hitachivantara/uikit-react-core";
+import { Map } from "@hitachivantara/uikit-react-icons";
 
 import countryNamesArray from "./countries";
 
@@ -257,7 +257,7 @@ export const InvalidState: StoryObj<HvInputProps> = {
     const [validationState, setValidationState] =
       useState<HvFormStatus>("invalid");
     const [errorMessage, setErrorMessage] = useState(
-      "This is invalid just because I said so."
+      "This is invalid just because I said so.",
     );
 
     return (
@@ -272,7 +272,7 @@ export const InvalidState: StoryObj<HvInputProps> = {
         onBlur={() => {
           setValidationState("invalid");
           setErrorMessage(
-            "Nice try, but this will always be invalid. I told you!"
+            "Nice try, but this will always be invalid. I told you!",
           );
         }}
       />
@@ -297,7 +297,7 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
     const [firstNameErrorMessage, setFirstNameErrorMessage] =
       useState<string>();
     const [lastNameErrorMessage, setLastNameErrorMessage] = useState(
-      "The last name is invalid just because I said so."
+      "The last name is invalid just because I said so.",
     );
 
     return (
@@ -341,7 +341,7 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
                   setLastNameErrorMessage("You must provide a last name");
                 } else {
                   setLastNameErrorMessage(
-                    "Nice try, but the last name will always be invalid. I told you!"
+                    "Nice try, but the last name will always be invalid. I told you!",
                   );
                 }
               }}
@@ -444,7 +444,7 @@ export const EventDemonstration: StoryObj<HvInputProps> = {
         onBlur={(_event, newValue, validationState) => {
           console.log(
             `my value is ${newValue} and my validation state is`,
-            validationState
+            validationState,
           );
         }}
         onChange={(_event, newValue) => setValue(`${newValue}.`)}
@@ -496,7 +496,7 @@ export const Suggestion: StoryObj<HvInputProps> = {
     const suggestionHandler = (val: string): HvInputSuggestion[] | null => {
       if (typeof val !== "string" || val === "") return null;
       const foundCountries = countries.filter((country) =>
-        country.toUpperCase().startsWith(val.toUpperCase())
+        country.toUpperCase().startsWith(val.toUpperCase()),
       );
 
       if (foundCountries.length === 0) return null;

@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-
 import { Remove } from "@hitachivantara/uikit-react-icons";
 
-import { setId } from "../../utils/setId";
 import { HvFormStatus } from "../../Forms";
 import { HvInput, HvInputProps } from "../../Input";
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
+import { setId } from "../../utils/setId";
 import { knobsValuesToString, stringValuesToKnobs } from "../utils";
 import { staticClasses, useClasses } from "./SliderInput.styles";
 
@@ -72,7 +70,7 @@ export const HvSliderInput = ({
   const { classes, cx } = useClasses(classesProp);
 
   const [inputValues, setInputValues] = useState<string[]>(
-    knobsValuesToString(valuesProp, markDigits)
+    knobsValuesToString(valuesProp, markDigits),
   );
 
   const handleChange = (index: number) => {

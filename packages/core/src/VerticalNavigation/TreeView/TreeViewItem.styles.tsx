@@ -1,8 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "../../utils/focusUtils";
-
 import { createClasses } from "../../utils/classes";
+import { outlineStyles } from "../../utils/focusUtils";
 
 const selected = () => ({
   background: theme.colors.atmo3,
@@ -139,5 +138,5 @@ export const { staticClasses, useClasses } = createClasses(
         maxWidth: "calc(100% - 64px)",
       },
     },
-  }
+  },
 );

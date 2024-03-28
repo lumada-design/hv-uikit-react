@@ -1,11 +1,10 @@
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
 
-import { HvBaseProps } from "../../../types/generic";
-import { HvTooltip, HvTooltipProps } from "../../../Tooltip";
-import { ExtractNames } from "../../../utils/classes";
-import { useTheme } from "../../../hooks/useTheme";
 import { useDefaultProps } from "../../../hooks/useDefaultProps";
-
+import { useTheme } from "../../../hooks/useTheme";
+import { HvTooltip, HvTooltipProps } from "../../../Tooltip";
+import { HvBaseProps } from "../../../types/generic";
+import { ExtractNames } from "../../../utils/classes";
 import { staticClasses, useClasses } from "./VerticalScrollListItem.styles";
 
 export { staticClasses as verticalScrollListItemClasses };
@@ -20,11 +19,11 @@ export interface HvVerticalScrollListItemProps
   selected?: boolean;
   /** The function to be executed when the element is clicked. */
   onClick?: (
-    event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
+    event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>,
   ) => void;
   /** The function to be executed when the element is clicked. */
   onKeyDown?: (
-    event: React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>
+    event: React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
   ) => void;
   label?: React.ReactNode;
   tooltipPlacement?: HvTooltipProps["placement"];
@@ -41,7 +40,7 @@ export interface HvVerticalScrollListItemProps
  * HvVerticalScrollListItem a focusable item to be used as part of the vertical scroll
  */
 export const HvVerticalScrollListItem = (
-  props: HvVerticalScrollListItemProps
+  props: HvVerticalScrollListItemProps,
 ) => {
   const {
     id,

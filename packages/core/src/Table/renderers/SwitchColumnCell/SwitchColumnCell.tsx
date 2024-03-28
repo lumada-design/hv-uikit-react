@@ -1,6 +1,5 @@
 import { HvBaseSwitch, HvBaseSwitchProps } from "../../../BaseSwitch";
 import { HvTypography } from "../../../Typography";
-
 import { useClasses } from "./SwitchColumnCell.styles";
 
 export interface HvSwitchColumnCellProp {

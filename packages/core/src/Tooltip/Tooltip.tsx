@@ -1,14 +1,13 @@
 import { forwardRef } from "react";
+import Fade from "@mui/material/Fade";
 import Tooltip, {
   TooltipProps as MuiTooltipProps,
 } from "@mui/material/Tooltip";
-import Fade from "@mui/material/Fade";
 
-import { useTheme } from "../hooks/useTheme";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { getElementById } from "../utils/document";
+import { useTheme } from "../hooks/useTheme";
 import { ExtractNames } from "../utils/classes";
-
+import { getElementById } from "../utils/document";
 import { staticClasses, useClasses } from "./Tooltip.styles";
 
 export { staticClasses as tooltipClasses };

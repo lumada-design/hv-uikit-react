@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-
 import { IconButton } from "@storybook/components";
-
 import { colors } from "@hitachivantara/uikit-styles";
 
-import { Mode, getInitialMode, setLocalMode } from "./utils";
-import { ADDON_EVENT, ADDON_ID } from "./constants";
 import { themes } from "../../theme";
+import { ADDON_EVENT, ADDON_ID } from "./constants";
+import { getInitialMode, Mode, setLocalMode } from "./utils";
 
 const ModeSelector = ({ api }) => {
   const initialMode: Mode = getInitialMode();

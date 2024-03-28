@@ -6,7 +6,7 @@ export const setColor = (condition: boolean): string | undefined =>
 export const getSafePage = (
   inPage: number,
   page: number,
-  pages: number
+  pages: number,
 ): number =>
   Number.isNaN(inPage) ? page : Math.min(Math.max(inPage, 0), pages - 1);
 
@@ -15,7 +15,7 @@ export const usePageInput = (initialPage: number) => {
 
   const handleChange = useCallback(
     (evt: any, newPage: number) => setPage(newPage),
-    []
+    [],
   );
 
   return [page, handleChange] as const;

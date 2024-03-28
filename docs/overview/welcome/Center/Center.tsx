@@ -1,6 +1,6 @@
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
-import { Wrapper, Separator } from "./styles";
+import { Separator, Wrapper } from "./styles";
 
 const Header = () => (
   <Wrapper>

@@ -2,23 +2,23 @@ import { Children, useCallback, useEffect, useRef, useState } from "react";
 import useCarousel from "embla-carousel-react";
 import {
   Backwards,
-  Forwards,
   Close,
+  Forwards,
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvBaseProps } from "../types/generic";
 import { HvButton } from "../Button";
-import { useTheme } from "../hooks/useTheme";
-import { HvTypography } from "../Typography";
 import { HvContainer } from "../Container";
-import { clamp } from "../utils/helpers";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useTheme } from "../hooks/useTheme";
+import { HvIconButton } from "../IconButton";
+import { HvBaseProps } from "../types/generic";
+import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
+import { clamp } from "../utils/helpers";
+import { staticClasses, useClasses } from "./Carousel.styles";
 import { HvCarouselControls } from "./CarouselControls";
 import { HvCarouselThumbnails } from "./CarouselThumbnails";
-import { staticClasses, useClasses } from "./Carousel.styles";
-import { HvIconButton } from "../IconButton";
 
 export { staticClasses as carouselClasses };
 
@@ -105,7 +105,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
   });
 
   const [selectedIndex, setSelectedIndex] = useState(
-    carouselOptions?.startIndex ?? 0
+    carouselOptions?.startIndex ?? 0,
   );
 
   const numSlides = Children.count(children);
@@ -172,7 +172,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
         classes.actions,
         actionsPosition === "header"
           ? css({ position: "relative", top: -40, height: 0 })
-          : css({ position: "absolute" })
+          : css({ position: "absolute" }),
       )}
     >
       {actionsProp}

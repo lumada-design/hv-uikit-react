@@ -1,12 +1,12 @@
-import {
-  theme,
-  HvBox,
-  HvSlider,
-  HvListValue,
-  HvTypography,
-  HvDropdown,
-} from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
+import {
+  HvBox,
+  HvDropdown,
+  HvListValue,
+  HvSlider,
+  HvTypography,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 export interface ScaleProps {
   minMax: [number, number];

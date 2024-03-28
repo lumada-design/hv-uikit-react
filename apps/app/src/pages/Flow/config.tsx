@@ -5,7 +5,6 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { HvFlowProps } from "@hitachivantara/uikit-react-lab";
 
-import { NodeGroup } from "./types";
 import {
   BarChart,
   Dashboard,
@@ -14,6 +13,7 @@ import {
   LineChart,
   Table,
 } from "./Nodes";
+import { NodeGroup } from "./types";
 
 /** Node groups */
 export const nodeGroups = {

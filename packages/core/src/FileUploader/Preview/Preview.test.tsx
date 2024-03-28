@@ -9,7 +9,7 @@ describe("FileUploaderPreview", () => {
     const { container, queryByRole, getByTestId } = render(
       <HvFileUploaderPreview>
         <div data-testid="child">Hello</div>
-      </HvFileUploaderPreview>
+      </HvFileUploaderPreview>,
     );
 
     const button = queryByRole("button");
@@ -28,7 +28,7 @@ describe("FileUploaderPreview", () => {
     const { container, getByRole, getByTestId } = render(
       <HvFileUploaderPreview onClick={onClickMock}>
         <div data-testid="child">Hello</div>
-      </HvFileUploaderPreview>
+      </HvFileUploaderPreview>,
     );
 
     const button = getByRole("button");
@@ -47,7 +47,7 @@ describe("FileUploaderPreview", () => {
     const { unmount } = render(
       <HvFileUploaderPreview onUnload={onUnloadMock}>
         <div data-testid="child">Hello</div>
-      </HvFileUploaderPreview>
+      </HvFileUploaderPreview>,
     );
 
     expect(onUnloadMock).toHaveBeenCalledTimes(0);
@@ -63,7 +63,7 @@ describe("FileUploaderPreview", () => {
     const { getByRole } = render(
       <HvFileUploaderPreview onClick={onClickMock}>
         <div data-testid="child">Hello</div>
-      </HvFileUploaderPreview>
+      </HvFileUploaderPreview>,
     );
 
     const button = getByRole("button");

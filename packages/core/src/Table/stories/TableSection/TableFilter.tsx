@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import { css, keyframes } from "@emotion/css";
 import {
+  baseDropdownClasses,
   HvButton,
   HvCheckBox,
   HvFilterGroup,
@@ -18,7 +19,6 @@ import {
   HvTableRow,
   HvTableSection,
   HvTypography,
-  baseDropdownClasses,
   theme,
   useHvData,
   useHvFilters,
@@ -147,7 +147,7 @@ export const TableFilter = () => {
           }
 
           return rows.filter((row) =>
-            filterValues.includes(row.values[columnIds[0]])
+            filterValues.includes(row.values[columnIds[0]]),
           );
         },
       }));
@@ -168,9 +168,9 @@ export const TableFilter = () => {
             label: filters[idx].data.find((x) => x.id === value)?.name,
             id: value,
           },
-        }))
+        })),
       ),
-    [selectedFilters]
+    [selectedFilters],
   );
 
   const {
@@ -187,7 +187,7 @@ export const TableFilter = () => {
     { columns, data },
     useHvFilters,
     useHvGlobalFilter,
-    useHvPagination
+    useHvPagination,
   );
 
   const renderTableRow = (i: number) => {
@@ -279,7 +279,7 @@ export const TableFilter = () => {
                       const newFilters = selectedFilters?.map((array, idx) =>
                         idx === filters.findIndex((x) => x.id === category.id)
                           ? array.filter((x) => x !== value.id)
-                          : array
+                          : array,
                       );
                       handleFilters(newFilters);
                     }}

@@ -1,22 +1,21 @@
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { HvBaseProps } from "../../types/generic";
 import { useUniqueId } from "../../hooks/useUniqueId";
+import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
-
 import {
-  staticClasses,
-  useClasses,
-  calculateOffset,
-} from "./ScrollToVertical.styles";
-import { HvVerticalScrollListItem } from "./VerticalScrollListItem";
-import { useScrollTo } from "../useScrollTo";
-import {
-  HvScrollToTooltipPositions,
   HvScrollToOption,
+  HvScrollToTooltipPositions,
   HvScrollToVerticalPositions,
 } from "../types";
+import { useScrollTo } from "../useScrollTo";
+import {
+  calculateOffset,
+  staticClasses,
+  useClasses,
+} from "./ScrollToVertical.styles";
+import { HvVerticalScrollListItem } from "./VerticalScrollListItem";
 
 export { staticClasses as scrollToVerticalClasses };
 
@@ -83,17 +82,17 @@ export interface HvScrollToVerticalProps
       | Event
       | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
       | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
-    index: number
+    index: number,
   ) => void;
   /** A function called each time an user clicks on a tab element. */
   onClick?: (
     event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>,
-    index: number
+    index: number,
   ) => void;
   /** A function called each time an user press enter on a tab element. */
   onEnter?: (
     event: React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
-    index: number
+    index: number,
   ) => void;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvScrollToVerticalClasses;
@@ -134,7 +133,7 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
     relativeLinks,
     offset,
     options,
-    onChange
+    onChange,
   );
 
   const handleSelection = (
@@ -142,7 +141,7 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
       | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
       | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
     value: string,
-    index: number
+    index: number,
   ) => {
     event.preventDefault();
 
@@ -192,7 +191,7 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
           [classes.positionFixed]: position === "fixed",
           [classes.positionAbsolute]: position === "absolute",
         },
-        className
+        className,
       )}
       style={{ top: `calc(50% - ${positionOffset}px)`, ...style }}
       id={elementId}

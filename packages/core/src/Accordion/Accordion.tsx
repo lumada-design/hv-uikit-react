@@ -1,16 +1,13 @@
 import { useCallback, useMemo } from "react";
-
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
-
 import { HvBaseProps } from "../types/generic";
-import { setId } from "../utils/setId";
-import { HvTypographyVariants, HvTypography } from "../Typography";
+import { HvTypography, HvTypographyVariants } from "../Typography";
 import { ExtractNames } from "../utils/classes";
-
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Accordion.styles";
 
 export { staticClasses as accordionClasses };
@@ -96,7 +93,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
       }
       return false;
     },
-    [disabled, onChange, isOpen, setIsOpen]
+    [disabled, onChange, isOpen, setIsOpen],
   );
 
   const handleClick = useCallback(
@@ -105,7 +102,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
       event.preventDefault();
       event.stopPropagation();
     },
-    [handleAction]
+    [handleAction],
   );
 
   const handleKeyDown = useCallback(
@@ -135,7 +132,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
         event.stopPropagation();
       }
     },
-    [handleAction]
+    [handleAction],
   );
 
   const accordionHeaderId = setId(id, "button");

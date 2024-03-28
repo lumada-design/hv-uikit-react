@@ -3,7 +3,7 @@ import { Hooks, useRowState } from "react-table";
 // #region ##### TYPES #####
 
 export type UseRowStateProps = (<D extends object = Record<string, unknown>>(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####

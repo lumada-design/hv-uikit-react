@@ -1,10 +1,8 @@
 import { render, screen } from "@testing-library/react";
-
 import { LogIn } from "@hitachivantara/uikit-react-icons";
 
-import { HvAvatarGroup } from "./AvatarGroup";
-
 import { HvAvatar } from "../Avatar/Avatar";
+import { HvAvatarGroup } from "./AvatarGroup";
 
 describe("HvAvatarGroup", () => {
   it("renders without crashing", () => {
@@ -23,7 +21,7 @@ describe("HvAvatarGroup", () => {
         <HvAvatar>
           <LogIn role="img" aria-label="login" />
         </HvAvatar>
-      </HvAvatarGroup>
+      </HvAvatarGroup>,
     );
 
     const renderedAvatars = screen.getAllByRole("img");
@@ -42,7 +40,7 @@ describe("HvAvatarGroup", () => {
         <HvAvatar>
           <LogIn role="img" aria-label="login" />
         </HvAvatar>
-      </HvAvatarGroup>
+      </HvAvatarGroup>,
     );
 
     const renderedAvatars = screen.getAllByRole("img");
@@ -61,7 +59,7 @@ describe("HvAvatarGroup", () => {
         <HvAvatar>
           <LogIn role="img" aria-label="login" />
         </HvAvatar>
-      </HvAvatarGroup>
+      </HvAvatarGroup>,
     );
 
     const overflowAvatar = screen.getByText("+1");

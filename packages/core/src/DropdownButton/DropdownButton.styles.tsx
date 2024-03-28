@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "../utils/classes";
 import { buttonClasses } from "../Button";
+import { createClasses } from "../utils/classes";
 
 const disabledStyle = {
   backgroundColor: theme.colors.atmo3,

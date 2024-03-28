@@ -1,18 +1,18 @@
 import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
-import { waitFor, screen, fireEvent } from "@storybook/testing-library";
+import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvFilterGroup,
   HvFilterGroupProps,
 } from "@hitachivantara/uikit-react-core";
 
+import { EmptyFilters as EmptyFiltersStory } from "./EmptyFilters";
+import EmptyFiltersRaw from "./EmptyFilters?raw";
 import { Main as MainStory } from "./Main";
 import MainRaw from "./Main?raw";
 import { ResetToDefault as ResetToDefaultStory } from "./ResetToDefault";
 import ResetToDefaultRaw from "./ResetToDefault?raw";
 import { Uncontrolled as UncontrolledStory } from "./Uncontrolled";
 import UncontrolledRaw from "./Uncontrolled?raw";
-import { EmptyFilters as EmptyFiltersStory } from "./EmptyFilters";
-import EmptyFiltersRaw from "./EmptyFilters?raw";
 
 const widthDecorator: DecoratorFn = (Story) => (
   <div style={{ width: 180 }}>{Story()}</div>

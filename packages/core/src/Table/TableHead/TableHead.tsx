@@ -2,7 +2,6 @@ import { forwardRef, useContext } from "react";
 
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableHead.styles";
@@ -43,7 +42,7 @@ const defaultComponent = "thead";
 export const HvTableHead = forwardRef<HTMLElement, HvTableHeadProps>(
   (
     { classes: classesProp, className, component, stickyHeader, ...others },
-    externalRef
+    externalRef,
   ) => {
     const { classes, cx } = useClasses(classesProp);
 
@@ -58,7 +57,7 @@ export const HvTableHead = forwardRef<HTMLElement, HvTableHeadProps>(
           className={cx(
             classes.root,
             { [classes.stickyHeader]: stickyHeader },
-            className
+            className,
           )}
           ref={externalRef}
           role={Component === defaultComponent ? null : "rowgroup"}
@@ -66,5 +65,5 @@ export const HvTableHead = forwardRef<HTMLElement, HvTableHeadProps>(
         />
       </TableSectionContext.Provider>
     );
-  }
+  },
 );

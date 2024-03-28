@@ -39,7 +39,7 @@ export const themeDiff = (a: object, b: object): object => {
     ) {
       const nestedDiff = themeDiff(
         a[key as keyof typeof b],
-        b[key as keyof typeof b]
+        b[key as keyof typeof b],
         // false
       );
       if (Object.keys(nestedDiff).length > 0) {
@@ -58,7 +58,7 @@ export const themeDiff = (a: object, b: object): object => {
 export const getThemeCode = (
   themeName: string,
   selectedTheme: string,
-  themeChanges?: Partial<HvTheme | HvThemeStructure>
+  themeChanges?: Partial<HvTheme | HvThemeStructure>,
 ) => {
   const final = {
     name: themeName,
@@ -72,7 +72,7 @@ export const getThemeCode = (
   
 export default createTheme(${JSON.stringify(final, null, 2).replace(
     /"([^(")"]+)":/g,
-    "$1:"
+    "$1:",
   )});
 `;
 };
@@ -81,7 +81,7 @@ export const downloadTheme = (filename: string, text: string) => {
   const element = document.createElement("a");
   element.setAttribute(
     "href",
-    `data:text/plain;charset=utf-8,${encodeURIComponent(text)}`
+    `data:text/plain;charset=utf-8,${encodeURIComponent(text)}`,
   );
   element.setAttribute("download", filename);
 

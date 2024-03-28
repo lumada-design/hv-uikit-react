@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
 import { describe, expect, it } from "vitest";
 
 import { HvDotPagination } from "./DotPagination";
@@ -121,7 +120,7 @@ describe("DotPagination", () => {
 
   it("should have dot navigation on all pages", async () => {
     const { getByLabelText, findByRole, findByText } = render(
-      <PaginationWithState />
+      <PaginationWithState />,
     );
 
     const dotPagination = await findByRole("navigation");

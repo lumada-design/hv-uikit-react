@@ -1,18 +1,16 @@
 import { useCallback, useState } from "react";
-
-import { theme, getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 import { Info } from "@hitachivantara/uikit-react-icons";
+import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 import { HvAvatar } from "../../Avatar";
-import { HvListItem } from "../../ListContainer";
-import { HvTypography } from "../../Typography";
-import { HvTooltip } from "../../Tooltip";
-import { HvOverflowTooltip } from "../../OverflowTooltip";
-import { HvBaseProps } from "../../types/generic";
 import { useUniqueId } from "../../hooks/useUniqueId";
+import { HvListItem } from "../../ListContainer";
+import { HvOverflowTooltip } from "../../OverflowTooltip";
+import { HvTooltip } from "../../Tooltip";
+import { HvBaseProps } from "../../types/generic";
+import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
-
-import { useClasses, staticClasses } from "./Action.styles";
+import { staticClasses, useClasses } from "./Action.styles";
 
 export { staticClasses as appSwitcherActionClasses };
 
@@ -47,7 +45,7 @@ export interface HvAppSwitcherActionProps extends HvBaseProps {
   /** Callback triggered when the action is clicked. */
   onClickCallback?: (
     event: React.MouseEvent,
-    application: HvAppSwitcherActionApplication
+    application: HvAppSwitcherActionApplication,
   ) => void;
   /** Must return a boolean stating if the action element is selected or not. */
   isSelectedCallback?: (application: HvAppSwitcherActionApplication) => boolean;
@@ -118,7 +116,7 @@ export const HvAppSwitcherAction = ({
 
       onClickCallback?.(event, { ...application, isSelected });
     },
-    [application, disabled, isSelected, onClickCallback]
+    [application, disabled, isSelected, onClickCallback],
   );
 
   const isLink = url != null;
@@ -163,7 +161,7 @@ export const HvAppSwitcherAction = ({
       name,
       target,
       url,
-    ]
+    ],
   );
 
   return (
@@ -176,7 +174,7 @@ export const HvAppSwitcherAction = ({
       className={cx(
         classes.root,
         { [classes.disabled]: disabled, [classes.selected]: isSelected },
-        className
+        className,
       )}
     >
       {/* As HvTooltip don't have the id prop, is not possible to use the aria-labelledby to reference it.
@@ -211,7 +209,7 @@ export const HvAppSwitcherAction = ({
               </div>
             </HvTooltip>
           )}
-        </>
+        </>,
       )}
     </HvListItem>
   );

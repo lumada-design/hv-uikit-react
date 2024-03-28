@@ -1,14 +1,13 @@
 import { useMemo } from "react";
 
-import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvListContainer } from "../ListContainer";
-import { HvTypography } from "../Typography";
 import { HvOverflowTooltip } from "../OverflowTooltip";
-
+import { HvBaseProps } from "../types/generic";
+import { HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
 import { HvAppSwitcherAction, HvAppSwitcherActionApplication } from "./Action";
-import { useClasses, staticClasses } from "./AppSwitcher.styles";
+import { staticClasses, useClasses } from "./AppSwitcher.styles";
 
 export { staticClasses as appSwitcherClasses };
 
@@ -24,11 +23,11 @@ export interface HvAppSwitcherProps extends HvBaseProps {
   /** Triggered when an action is clicked. */
   onActionClickedCallback?: (
     event: React.MouseEvent,
-    application: HvAppSwitcherActionApplication
+    application: HvAppSwitcherActionApplication,
   ) => void;
   /** Must return a boolean stating if the action element is selected or not. */
   isActionSelectedCallback?: (
-    application: HvAppSwitcherActionApplication
+    application: HvAppSwitcherActionApplication,
   ) => boolean;
   /** Element to be added to the header container, if none is provided a label with the title will be added. */
   header?: React.ReactNode;
@@ -86,7 +85,7 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
 
         return undefined;
       }),
-    [applications, classes, isActionSelectedCallback, onActionClickedCallback]
+    [applications, classes, isActionSelectedCallback, onActionClickedCallback],
   );
 
   return (
@@ -95,7 +94,7 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
         classes.root,
         classes[layout],
         { [classes.open]: !!isOpen, [classes.closed]: isOpen === false },
-        className
+        className,
       )}
       {...others}
     >

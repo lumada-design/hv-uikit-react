@@ -1,7 +1,6 @@
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./Link.styles";
 
 export { staticClasses as linkClasses };
@@ -11,7 +10,7 @@ export type HvLinkClasses = ExtractNames<typeof useClasses>;
 export interface HvLinkProps extends HvBaseProps<HTMLAnchorElement, "onClick"> {
   onClick?: (
     event: React.MouseEvent<HTMLAnchorElement>,
-    data: any
+    data: any,
   ) => void | undefined;
   route?: string;
   data?: any;

@@ -1,16 +1,16 @@
 import { useMemo } from "react";
 import {
-  HvTableContainer,
   HvTable,
-  HvTableHead,
-  HvTableRow,
-  HvTableCell,
-  HvTableHeader,
   HvTableBody,
+  HvTableCell,
+  HvTableContainer,
+  HvTableHead,
+  HvTableHeader,
   HvTableInstance,
+  HvTableRow,
 } from "@hitachivantara/uikit-react-core";
 
-import { ListViewEntry, getColumns } from "./data";
+import { getColumns, ListViewEntry } from "./data";
 
 interface TableProps {
   instance: HvTableInstance<ListViewEntry, string>;

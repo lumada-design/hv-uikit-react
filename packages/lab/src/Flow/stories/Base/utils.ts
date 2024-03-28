@@ -3,10 +3,10 @@ import { LayoutConfig } from "./LayoutsContext";
 export const buildLayout = (
   items?: LayoutConfig["items"],
   layout?: LayoutConfig["layout"],
-  cols: number = 12
+  cols: number = 12,
 ) => {
   const itemsToPosition = items?.filter(
-    (i) => !layout?.find((x) => x.i === i.id)
+    (i) => !layout?.find((x) => x.i === i.id),
   );
 
   return itemsToPosition?.reduce((acc, item, idx) => {

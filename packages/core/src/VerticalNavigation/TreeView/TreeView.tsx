@@ -1,18 +1,16 @@
 import { forwardRef, useCallback, useMemo, useRef, useState } from "react";
 
 import { useControlled } from "../../hooks/useControlled";
-import { useUniqueId } from "../../hooks/useUniqueId";
 import { useForkRef } from "../../hooks/useForkRef";
-
+import { useUniqueId } from "../../hooks/useUniqueId";
 import { ExtractNames } from "../../utils/classes";
-
+import { DescendantProvider } from "./descendants";
+import { staticClasses, useClasses } from "./TreeView.styles";
 import {
   NavigationMode,
   TreeViewControlContext,
   TreeViewStateContext,
 } from "./TreeViewContext";
-import { DescendantProvider } from "./descendants";
-import { staticClasses, useClasses } from "./TreeView.styles";
 
 export { staticClasses as treeViewClasses };
 
@@ -169,12 +167,12 @@ export const HvVerticalNavigationTreeView = forwardRef(
 
     const [expanded, setExpandedState] = useControlled(
       expandedProp,
-      defaultExpanded
+      defaultExpanded,
     );
 
     const [selected, setSelectedState] = useControlled(
       selectedProp,
-      defaultSelected
+      defaultSelected,
     );
 
     const [focusedNodeId, setFocusedNodeId] = useState<string | null>(null);
@@ -190,13 +188,13 @@ export const HvVerticalNavigationTreeView = forwardRef(
       (id) =>
         !collapsible ||
         (Array.isArray(expanded) ? expanded.indexOf(id) !== -1 : false),
-      [collapsible, expanded]
+      [collapsible, expanded],
     );
 
     const isExpandable = useCallback(
       (id) =>
         collapsible && nodeMap.current[id] && nodeMap.current[id].expandable,
-      [collapsible]
+      [collapsible],
     );
 
     const isSelected = useCallback(
@@ -205,13 +203,13 @@ export const HvVerticalNavigationTreeView = forwardRef(
         (Array.isArray(selected)
           ? selected.indexOf(id) !== -1
           : selected === id),
-      [selectable, selected]
+      [selectable, selected],
     );
 
     const isSelectable = useCallback(
       (id) =>
         selectable && nodeMap.current[id] && nodeMap.current[id].selectable,
-      [selectable]
+      [selectable],
     );
 
     const isDisabled = useCallback((id) => {
@@ -238,14 +236,14 @@ export const HvVerticalNavigationTreeView = forwardRef(
 
     const isFocused = useCallback(
       (id) => focusedNodeId === id,
-      [focusedNodeId]
+      [focusedNodeId],
     );
 
     const isChildSelected = useCallback(
       // the second part of the condition is to ensure that the id we're
       // looking at is actually of a child (ie, there's at least one "-")
       (id) => selected.startsWith(id) && selected.includes("-"),
-      [selected]
+      [selected],
     );
 
     /*
@@ -269,7 +267,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
         }
         return childrenIds;
       },
-      [disabledItemsFocusable, isDisabled]
+      [disabledItemsFocusable, isDisabled],
     );
 
     /*
@@ -298,7 +296,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
 
         return null;
       },
-      [getNavigableChildrenIds, isExpanded]
+      [getNavigableChildrenIds, isExpanded],
     );
 
     const getPreviousNode = (id: string) => {
@@ -403,7 +401,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
           ? [nodeAId, nodeBId]
           : [nodeBId, nodeAId];
       },
-      []
+      [],
     );
 
     const getNodesInRange = useCallback(
@@ -423,7 +421,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
         }
         return [];
       },
-      [findOrderInTremauxTree, getNextNode]
+      [findOrderInTremauxTree, getNextNode],
     );
 
     /*
@@ -505,7 +503,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
 
         setExpandedState(newExpanded);
       },
-      [expanded, focusedNodeId, onToggle, setExpandedState]
+      [expanded, focusedNodeId, onToggle, setExpandedState],
     );
 
     const expandAllSiblings = (event, id) => {
@@ -513,7 +511,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
       const siblings = getChildrenIds(map.parentId);
 
       const diff = siblings.filter(
-        (child) => isExpandable(child) && !isExpanded(child)
+        (child) => isExpandable(child) && !isExpanded(child),
       );
 
       const newExpanded = expanded.concat(diff);
@@ -562,7 +560,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
             base = base.filter((id) => id === start || id !== current);
             currentRangeSelection.current =
               currentRangeSelection.current.filter(
-                (id) => id === start || id !== current
+                (id) => id === start || id !== current,
               );
           } else {
             base.push(next);
@@ -577,13 +575,13 @@ export const HvVerticalNavigationTreeView = forwardRef(
           onChange(
             event,
             base,
-            base.map((id) => nodeMap.current[id]?.payload)
+            base.map((id) => nodeMap.current[id]?.payload),
           );
         }
 
         setSelectedState(base);
       },
-      [onChange, selected, setSelectedState]
+      [onChange, selected, setSelectedState],
     );
 
     const handleRangeSelect = useCallback(
@@ -593,7 +591,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
         // If last selection was a range selection ignore nodes that were selected.
         if (lastSelectionWasRange.current) {
           base = base.filter(
-            (id) => currentRangeSelection.current.indexOf(id) === -1
+            (id) => currentRangeSelection.current.indexOf(id) === -1,
           );
         }
 
@@ -602,20 +600,20 @@ export const HvVerticalNavigationTreeView = forwardRef(
         currentRangeSelection.current = range;
         let newSelected = base.concat(range);
         newSelected = newSelected.filter(
-          (id, i) => newSelected.indexOf(id) === i
+          (id, i) => newSelected.indexOf(id) === i,
         );
 
         if (onChange) {
           onChange(
             event,
             newSelected,
-            newSelected.map((id) => nodeMap.current[id]?.payload)
+            newSelected.map((id) => nodeMap.current[id]?.payload),
           );
         }
 
         setSelectedState(newSelected);
       },
-      [getNodesInRange, isDisabled, onChange, selected, setSelectedState]
+      [getNodesInRange, isDisabled, onChange, selected, setSelectedState],
     );
 
     const handleMultipleSelect = useCallback(
@@ -631,13 +629,13 @@ export const HvVerticalNavigationTreeView = forwardRef(
           onChange(
             event,
             newSelected,
-            newSelected.map((id) => nodeMap.current[id]?.payload)
+            newSelected.map((id) => nodeMap.current[id]?.payload),
           );
         }
 
         setSelectedState(newSelected);
       },
-      [onChange, selected, setSelectedState]
+      [onChange, selected, setSelectedState],
     );
 
     const handleSingleSelect = useCallback(
@@ -650,7 +648,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
 
         setSelectedState(newSelected);
       },
-      [multiSelect, onChange, setSelectedState]
+      [multiSelect, onChange, setSelectedState],
     );
 
     const selectNode = useCallback(
@@ -669,14 +667,14 @@ export const HvVerticalNavigationTreeView = forwardRef(
         }
         return false;
       },
-      [handleMultipleSelect, handleSingleSelect, isSelectable]
+      [handleMultipleSelect, handleSingleSelect, isSelectable],
     );
 
     const selectRange = useCallback(
       (
         event,
         nodes: { start?; end?; current?: HTMLDivElement | null },
-        stacked = false
+        stacked = false,
       ) => {
         const { start = lastSelectedNode.current, end, current } = nodes;
         if (stacked) {
@@ -686,7 +684,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
         }
         lastSelectionWasRange.current = true;
       },
-      [handleRangeArrowSelect, handleRangeSelect]
+      [handleRangeArrowSelect, handleRangeSelect],
     );
 
     const rangeSelectToFirst = (event, id) => {
@@ -727,7 +725,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
             end: getNextNode(id),
             current: id,
           },
-          true
+          true,
         );
       }
     };
@@ -740,7 +738,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
             end: getPreviousNode(id),
             current: id,
           },
-          true
+          true,
         );
       }
     };
@@ -1006,7 +1004,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
         multiSelect,
         disabledItemsFocusable,
         treeId,
-      ]
+      ],
     );
 
     const treeStateContext = useMemo(
@@ -1017,7 +1015,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
         isDisabled,
         isChildSelected,
       }),
-      [isDisabled, isExpanded, isFocused, isSelected, isChildSelected]
+      [isDisabled, isExpanded, isFocused, isSelected, isChildSelected],
     );
 
     return (
@@ -1046,5 +1044,5 @@ export const HvVerticalNavigationTreeView = forwardRef(
         </TreeViewStateContext.Provider>
       </TreeViewControlContext.Provider>
     );
-  }
+  },
 );

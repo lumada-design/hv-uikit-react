@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import { css, CSSInterpolation } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { CSSInterpolation, css } from "@emotion/css";
 import { HvTextArea, HvTextAreaProps } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvTextArea> = {

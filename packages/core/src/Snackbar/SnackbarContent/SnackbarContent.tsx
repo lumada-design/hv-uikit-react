@@ -3,19 +3,19 @@ import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
 
-import { ExtractNames } from "../../utils/classes";
-import { setId } from "../../utils/setId";
-import { iconVariant } from "../../utils/iconVariant";
 import {
-  HvActionsGeneric,
   HvActionGeneric,
+  HvActionsGeneric,
   HvActionsGenericProps,
 } from "../../ActionsGeneric";
 import { HvButtonVariant } from "../../Button";
-import { useTheme } from "../../hooks/useTheme";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { staticClasses, useClasses } from "./SnackbarContent.styles";
+import { useTheme } from "../../hooks/useTheme";
+import { ExtractNames } from "../../utils/classes";
+import { iconVariant } from "../../utils/iconVariant";
+import { setId } from "../../utils/setId";
 import { HvSnackbarVariant } from "../types";
+import { staticClasses, useClasses } from "./SnackbarContent.styles";
 
 export { staticClasses as snackbarContentClasses };
 

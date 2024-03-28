@@ -1,15 +1,14 @@
 import { useMemo } from "react";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { HvBaseProps } from "../../types/generic";
 import { useUniqueId } from "../../hooks/useUniqueId";
+import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
-import { findDescriptors } from "./utils/FormUtils";
 import { HvFormElementContextProvider } from "./context/FormElementContext";
-import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";
 import { HvFormElementDescriptorsContextProvider } from "./context/FormElementDescriptorsContext";
+import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";
 import { staticClasses, useClasses } from "./FormElement.styles";
+import { findDescriptors } from "./utils/FormUtils";
 
 export { staticClasses as formElementClasses };
 
@@ -91,7 +90,7 @@ export const HvFormElement = (props: HvFormElementProps) => {
       elementRequired: required,
       elementReadOnly: readOnly,
     }),
-    [disabled, elementId, name, readOnly, required, status]
+    [disabled, elementId, name, readOnly, required, status],
   );
 
   const descriptors = useMemo(() => findDescriptors(children), [children]);

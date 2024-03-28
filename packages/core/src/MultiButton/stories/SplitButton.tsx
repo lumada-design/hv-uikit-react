@@ -45,7 +45,7 @@ export const SplitButton = () => {
       { label: "Squash and merge" },
       { label: "Rebase and merge" },
     ],
-    []
+    [],
   );
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
@@ -66,7 +66,7 @@ export const SplitButton = () => {
                 icon={<DropDownXS />}
                 onClick={(e, item) =>
                   setSelectedOption(
-                    options.filter((option) => option.label === item.label)[0]
+                    options.filter((option) => option.label === item.label)[0],
                   )
                 }
               />,

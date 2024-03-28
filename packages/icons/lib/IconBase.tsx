@@ -1,23 +1,26 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { theme, getColor, HvColorAny } from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 import { isSemantic, isXS } from "./utils";
 
 const getDims = (size: number) => ({ width: size, height: size });
 
 export const getColorVars = (colorArray: string[]) => {
-  return colorArray.reduce((acc, value, index) => {
-    acc[`--color-${index}`] = value;
-    return acc;
-  }, {} as Record<string, string>);
+  return colorArray.reduce(
+    (acc, value, index) => {
+      acc[`--color-${index}`] = value;
+      return acc;
+    },
+    {} as Record<string, string>,
+  );
 };
 
 export const getIconSize = (
   iconSize?: IconSize,
   hasSpecialSize?: boolean,
   width?: number,
-  height?: number
+  height?: number,
 ) => {
   if (width && height) return { width, height };
 
@@ -41,7 +44,7 @@ export const getIconColors = (
   palette: string[] = [],
   color?: HvColorAny | HvColorAny[],
   semantic?: string,
-  inverted = false
+  inverted = false,
 ) => {
   const colorArray = palette;
 
@@ -148,7 +151,7 @@ export const StyledIconBase = styled("div")(
     ...(iconSize === "S" && getDims(32)),
     ...(iconSize === "M" && getDims(48)),
     ...(iconSize === "L" && getDims(112)),
-  })
+  }),
 );
 
 export type IconType = React.FC<IconBaseProps>;

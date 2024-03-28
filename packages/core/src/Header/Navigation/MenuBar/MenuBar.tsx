@@ -1,7 +1,5 @@
-import { HvBaseProps } from "../../../types/generic";
-
 import { useDefaultProps } from "../../../hooks/useDefaultProps";
-
+import { HvBaseProps } from "../../../types/generic";
 import { HvHeaderMenuItem } from "../MenuItem";
 import { HvHeaderNavigationItemProp } from "../useSelectionPath";
 import { Bar, BarProps, HvHeaderMenuBarClasses } from "./Bar";
@@ -12,7 +10,7 @@ export interface HvHeaderMenuBarProps
   type?: BarProps["type"];
   onClick?: (
     event: React.MouseEvent,
-    selection: HvHeaderNavigationItemProp
+    selection: HvHeaderNavigationItemProp,
   ) => void;
   levels: number;
   currentLevel: number;

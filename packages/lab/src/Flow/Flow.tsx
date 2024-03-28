@@ -7,17 +7,16 @@ import {
   useSensors,
 } from "@dnd-kit/core";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
-
 import { ReactFlowProvider } from "reactflow";
 
-import { HvFlowNodeAction, HvFlowNodeGroups, HvFlowNodeTypes } from "./types";
-import { HvFlowProvider } from "./FlowContext";
 import { HvDroppableFlow, HvDroppableFlowProps } from "./DroppableFlow";
+import { HvFlowProvider } from "./FlowContext";
+import { HvFlowNodeAction, HvFlowNodeGroups, HvFlowNodeTypes } from "./types";
 
 export interface HvFlowProps<
   NodeGroups extends keyof any = string,
   NodeType extends string | undefined = string | undefined,
-  NodeData = any
+  NodeData = any,
 > extends HvDroppableFlowProps<NodeType, NodeData> {
   /** Flow nodes groups. */
   nodeGroups?: HvFlowNodeGroups<NodeGroups>;
@@ -55,7 +54,7 @@ export const HvFlow = ({
 }: HvFlowProps) => {
   const sensors = useSensors(
     useSensor(PointerSensor),
-    useSensor(KeyboardSensor)
+    useSensor(KeyboardSensor),
   );
 
   // We're wrapping the main Flow component with the ReactFlowProvider to access the react flow instance.

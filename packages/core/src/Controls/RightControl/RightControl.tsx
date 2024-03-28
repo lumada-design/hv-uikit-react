@@ -1,13 +1,12 @@
 import { useContext, useState } from "react";
 
-import { HvBaseProps } from "../../types/generic";
-import { setId } from "../../utils/setId";
 import { HvDropdown, HvDropdownProps } from "../../Dropdown";
 import { HvListValue } from "../../List";
+import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
-import { useClasses, staticClasses } from "./RightControl.styles";
+import { setId } from "../../utils/setId";
 import { HvControlsContext } from "../context/ControlsContext";
+import { staticClasses, useClasses } from "./RightControl.styles";
 
 export { staticClasses as rightControlClasses };
 
@@ -56,7 +55,7 @@ export const HvRightControl = ({
       prevValues?.map((prevValue) => ({
         ...prevValue,
         selected: prevValue.id === value.id,
-      }))
+      })),
     );
   };
 

@@ -1,18 +1,19 @@
 import { useMemo, useState } from "react";
+import { css, CSSInterpolation } from "@emotion/css";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   HvCheckBox,
-  HvDropDownMenu,
   HvDropdown,
+  HvDropDownMenu,
   HvListValue,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { Meta, StoryObj } from "@storybook/react";
-import { CSSInterpolation, css } from "@emotion/css";
+import { Ticket } from "@hitachivantara/uikit-react-icons"; // eslint-disable-line
 import {
   HvDonutChart,
   HvDonutChartProps,
 } from "@hitachivantara/uikit-react-viz";
-import { Ticket } from "@hitachivantara/uikit-react-icons"; // eslint-disable-line
+
 import { vizDecorator } from "../BaseChart/stories/utils";
 
 const meta: Meta<typeof HvDonutChart> = {
@@ -194,7 +195,7 @@ export const WithControls: StoryObj<HvDonutChartProps> = {
         { value: 0, label: "Last 24h", selected: true },
         { value: 1, label: "Last 48h" },
       ],
-      []
+      [],
     );
 
     const data = [

@@ -3,12 +3,12 @@ import type { CSSInterpolation } from "@emotion/serialize";
 import { useCss } from "../hooks/useCss";
 
 export type ExtractNames<
-  T extends (...args: any) => { classes: Record<string, any>; cx: any }
+  T extends (...args: any) => { classes: Record<string, any>; cx: any },
 > = Partial<ReturnType<T>["classes"]>;
 
 export const getClasses = <T extends string, N extends string>(
   keys: T[],
-  name: N
+  name: N,
 ) => {
   const classesObj: Record<string, string> = {};
   keys.forEach((key: string) => {
@@ -19,7 +19,7 @@ export const getClasses = <T extends string, N extends string>(
 
 const deepRenameKeys = <T extends object>(
   obj: T,
-  mapFn: (key: string) => string
+  mapFn: (key: string) => string,
 ): T => {
   const result: any = {};
   for (const key in obj) {
@@ -40,7 +40,7 @@ export const replace$ = <T extends object>(stylesObj: T, name: string): T => {
     if (!matches?.length) return key;
     const newKey = matches.reduce(
       (acc, match) => acc.replace(match, `.${name}-${match.slice(1)}`),
-      key
+      key,
     );
     return newKey ?? key;
   });
@@ -50,7 +50,7 @@ export const replace$ = <T extends object>(stylesObj: T, name: string): T => {
 export function createClasses<Name extends string, ClassName extends string>(
   /** Component name in PascalCase (ie. `HvTableCell`). */
   name: Name,
-  stylesObject: Record<ClassName, CSSInterpolation>
+  stylesObject: Record<ClassName, CSSInterpolation>,
 ) {
   const styles = replace$(stylesObject, name);
 
@@ -63,7 +63,7 @@ export function createClasses<Name extends string, ClassName extends string>(
   function useClasses(
     classesProp: Partial<Record<ClassName, string>> = {},
     /** Whether to add the static classes. Disable when included by `classesProp` */
-    addStatic = true
+    addStatic = true,
   ) {
     const { cx, css } = useCss();
 
@@ -71,7 +71,7 @@ export function createClasses<Name extends string, ClassName extends string>(
       cx(addStatic && `${name}-${key}`, css(styles[key]), classesProp?.[key]);
 
     const classes = Object.fromEntries(
-      Object.keys(styles).map((key) => [key, mergeClasses(key)])
+      Object.keys(styles).map((key) => [key, mergeClasses(key)]),
     ) as { [P in ClassName]: string };
 
     return { classes, css, cx };

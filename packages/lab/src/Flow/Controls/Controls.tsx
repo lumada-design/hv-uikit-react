@@ -74,7 +74,7 @@ export const HvFlowControls = ({
 }: HvFlowControlsProps) => {
   const { isInteractive, minZoomReached, maxZoomReached } = useStore(
     selector,
-    shallow
+    shallow,
   );
   const store = useStoreApi();
   const { zoomIn, zoomOut, fitView } = useFlowInstance();

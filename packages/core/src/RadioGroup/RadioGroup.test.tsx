@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
 import { describe, expect, it, vi } from "vitest";
 
-import { HvRadio } from "../Radio";
 import { HvFormStatus } from "../Forms";
+import { HvRadio } from "../Radio";
 import { HvRadioGroup } from "./RadioGroup";
 
 const Main = () => (
@@ -22,7 +21,7 @@ const RadioGroupComp = ({ onChange = () => {}, defaultValue = "2" }) => {
 
   const handleOnChange = (
     _: React.ChangeEvent<HTMLInputElement>,
-    newValue: string
+    newValue: string,
   ) => {
     setValue(newValue);
 
@@ -92,7 +91,7 @@ describe("RadioGroup", () => {
           <HvRadio label="Radio 1" value="1" />
           <HvRadio label="Radio 2" value="2" checked />
           <HvRadio label="Radio 3" value="3" />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       const radioGroup = getByRole("radiogroup");
@@ -124,7 +123,7 @@ describe("RadioGroup", () => {
       const onChangeMock = vi.fn();
 
       const { getAllByRole, getByLabelText } = render(
-        <RadioGroupComp onChange={onChangeMock} />
+        <RadioGroupComp onChange={onChangeMock} />,
       );
 
       const radioButtons = getAllByRole("radio");
@@ -154,7 +153,7 @@ describe("RadioGroup", () => {
           <HvRadio label="Radio 1" value="1" />
           <HvRadio label="Radio 2" value="2" checked />
           <HvRadio label="Radio 3" value="3" />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       const radioButtons = getAllByRole("radio");
@@ -174,7 +173,7 @@ describe("RadioGroup", () => {
           <HvRadio label="Radio 1" value="1" />
           <HvRadio label="Radio 2" value="2" checked />
           <HvRadio label="Radio 3" value="3" />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       const radioButtons = getAllByRole("radio");
@@ -196,7 +195,7 @@ describe("RadioGroup", () => {
           <HvRadio label="Radio 1" value="1" />
           <HvRadio label="Radio 2" value="2" checked />
           <HvRadio label="Radio 3" value="3" />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       const radioGroup = getByRole("radiogroup");
@@ -220,7 +219,7 @@ describe("RadioGroup", () => {
           <HvRadio label="Radio 1" value="1" />
           <HvRadio label="Radio 2" value="2" checked />
           <HvRadio label="Radio 3" value="3" />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       const radioButtons = getAllByRole("radio");
@@ -248,7 +247,7 @@ describe("RadioGroup", () => {
             value="3"
             onChange={radioButtonOnChangeMock}
           />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       const radio3 = getByLabelText("Radio 3");
@@ -280,7 +279,7 @@ describe("RadioGroup", () => {
             value="3"
             onChange={radioButtonOnChangeMock}
           />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       const radio3 = getByLabelText("Radio 3");
@@ -310,7 +309,7 @@ describe("RadioGroup", () => {
             onChange={radioButtonOnChangeMock}
           />
           <HvRadio label="Radio 3" value="3" />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       const radioGroup = getByRole("radiogroup");
@@ -336,7 +335,7 @@ describe("RadioGroup", () => {
           <HvRadio label="Radio 1" value="1" />
           <HvRadio label="Radio 2" value="2" />
           <HvRadio label="Radio 3" value="3" />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       // There is a visible label element
@@ -355,7 +354,7 @@ describe("RadioGroup", () => {
             <HvRadio label="Radio 2" value="2" />
             <HvRadio label="Radio 3" value="3" />
           </HvRadioGroup>
-        </>
+        </>,
       );
 
       const radioGroup = getByRole("radiogroup", { name: "An external label" });
@@ -369,7 +368,7 @@ describe("RadioGroup", () => {
           <HvRadio label="Radio 1" value="1" />
           <HvRadio label="Radio 2" value="2" />
           <HvRadio label="Radio 3" value="3" />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       const radioGroup = getByRole("radiogroup");
@@ -388,7 +387,7 @@ describe("RadioGroup", () => {
           <HvRadio label="Radio 1" value="1" />
           <HvRadio label="Radio 2" value="2" />
           <HvRadio label="Radio 3" value="3" />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       // The description text is visible
@@ -411,7 +410,7 @@ describe("RadioGroup", () => {
             <HvRadio label="Radio 2" value="2" />
             <HvRadio label="Radio 3" value="3" />
           </HvRadioGroup>
-        </>
+        </>,
       );
 
       const radioGroup = getByRole("radiogroup");
@@ -432,7 +431,7 @@ describe("RadioGroup", () => {
           <HvRadio label="Radio 1" value="1" />
           <HvRadio label="Radio 2" value="2" />
           <HvRadio label="Radio 3" value="3" />
-        </HvRadioGroup>
+        </HvRadioGroup>,
       );
 
       const radio1 = getByLabelText("Radio 1");

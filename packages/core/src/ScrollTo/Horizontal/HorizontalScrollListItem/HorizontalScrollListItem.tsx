@@ -1,10 +1,8 @@
+import { useDefaultProps } from "../../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../../types/generic";
+import { HvTypographyProps } from "../../../Typography";
 import { ExtractNames } from "../../../utils/classes";
 import { setId } from "../../../utils/setId";
-import { HvTypographyProps } from "../../../Typography";
-
-import { useDefaultProps } from "../../../hooks/useDefaultProps";
-
 import { staticClasses, useClasses } from "./HorizontalScrollListItem.styles";
 
 export { staticClasses as horizontalScrollListItemClasses };
@@ -26,11 +24,11 @@ export interface HvHorizontalScrollListItemProps
   selected?: boolean;
   /** The function to be executed when the element is clicked. */
   onClick?: (
-    event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
+    event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>,
   ) => void;
   /** The function to be executed when the element is clicked. */
   onKeyDown?: (
-    event: React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>
+    event: React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
   ) => void;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvHorizontalScrollListItemClasses;
@@ -47,7 +45,7 @@ export interface HvHorizontalScrollListItemProps
  * HvHorizontalScrollListItem a focusable item to be used as part of the horizontal scroll
  */
 export const HvHorizontalScrollListItem = (
-  props: HvHorizontalScrollListItemProps
+  props: HvHorizontalScrollListItemProps,
 ) => {
   const {
     id,

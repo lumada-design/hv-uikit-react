@@ -6,22 +6,21 @@ import {
   useRef,
   useState,
 } from "react";
-
 import Slider, { SliderProps, SliderRef } from "rc-slider";
-
 import Tooltip from "rc-tooltip";
 
-import { HvBaseProps } from "../types/generic";
-import { setId } from "../utils/setId";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useControlled } from "../hooks/useControlled";
-import validationStates from "../Forms/FormElement/validationStates";
-import { HvInputProps } from "../Input";
 import { HvFormElement, HvFormStatus, HvLabel, HvWarningText } from "../Forms";
-import { ExtractNames } from "../utils/classes";
+import validationStates from "../Forms/FormElement/validationStates";
+import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvInputProps } from "../Input";
+import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
 import { sliderStyles, staticClasses, useClasses } from "./Slider.styles";
+import { HvSliderInput } from "./SliderInput/SliderInput";
+import { HvKnobProperty, HvMarkProperty } from "./types";
 import {
   calculateStepValue,
   convertStatusToArray,
@@ -37,8 +36,6 @@ import {
   scaledValueToKnobsPositionValue,
   statusArrayToFormStatus,
 } from "./utils";
-import { HvSliderInput } from "./SliderInput/SliderInput";
-import { HvKnobProperty, HvMarkProperty } from "./types";
 
 export { staticClasses as sliderClasses };
 
@@ -130,7 +127,7 @@ export interface HvSliderProps
   onBlur?: (
     event: React.FocusEvent,
     knobsValues: number[],
-    status?: HvFormStatus | HvFormStatus[]
+    status?: HvFormStatus | HvFormStatus[],
   ) => void;
   /**
    * The separation in points between marks.
@@ -234,7 +231,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
 
   const stepValue = useMemo(
     () => calculateStepValue(maxPointValue, minPointValue, divisionQuantity),
-    [divisionQuantity, maxPointValue, minPointValue]
+    [divisionQuantity, maxPointValue, minPointValue],
   );
 
   const inverseStepValue = 1 / stepValue;
@@ -249,7 +246,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
         stepValue,
         markDigits,
         !!disabled,
-        formatMark
+        formatMark,
       ),
     [
       disabled,
@@ -260,7 +257,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
       markStep,
       minPointValue,
       stepValue,
-    ]
+    ],
   );
 
   const canShowError =
@@ -270,7 +267,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
 
   const isSingle: boolean = useMemo(
     () => isSingleSlider(valuesProp, defaultValues),
-    [defaultValues, valuesProp]
+    [defaultValues, valuesProp],
   );
 
   const value: number[] | undefined = useMemo(
@@ -279,10 +276,10 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
         ? knobsValuesToKnobsPositions(
             valuesProp,
             inverseStepValue,
-            minPointValue
+            minPointValue,
           )
         : undefined,
-    [inverseStepValue, minPointValue, valuesProp]
+    [inverseStepValue, minPointValue, valuesProp],
   );
 
   const defaultKnobsPositions: number[] = useMemo(
@@ -290,30 +287,30 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
       knobsValuesToKnobsPositions(
         defaultValues,
         inverseStepValue,
-        minPointValue
+        minPointValue,
       ),
-    [defaultValues, inverseStepValue, minPointValue]
+    [defaultValues, inverseStepValue, minPointValue],
   );
 
   const [knobsPositions, setKnobsPositions] = useControlled(
     value,
-    defaultKnobsPositions
+    defaultKnobsPositions,
   );
 
   // Validation related state
   const { arrayStatus, arrayDefaultStatus } = useMemo(
     () => convertStatusToArray(knobsPositions.length, status),
-    [knobsPositions.length, status]
+    [knobsPositions.length, status],
   );
 
   const [validationStatus, setValidationState] = useControlled(
     arrayStatus,
-    arrayDefaultStatus
+    arrayDefaultStatus,
   );
 
   const [validationMessage, setValidationMessage] = useControlled(
     statusMessage,
-    ""
+    "",
   );
 
   const [isDraggingTrack, setIsDraggingTrack] = useState(false);
@@ -321,7 +318,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
   const knobProperties = generateDefaultKnobProperties(
     knobsPositions.length,
     disabled,
-    knobPropertiesProp
+    knobPropertiesProp,
   );
 
   const rangesCount = knobProperties.length - 1;
@@ -360,7 +357,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     const stepVl = calculateStepValue(
       maxPointValue,
       minPointValue,
-      divisionQuantity
+      divisionQuantity,
     );
 
     const inverseStepVl = 1 / stepVl;
@@ -370,8 +367,8 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
         knobsValuesToKnobsPositions(
           valuesProp.length > 0 ? valuesProp : defaultValues,
           inverseStepVl,
-          minPointValue
-        )
+          minPointValue,
+        ),
       );
     }
   }, [
@@ -411,7 +408,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
    * @memberof HvSlider
    */
   const generateKnobsPositionAndValues = (
-    knobsCurrentPosition: number[]
+    knobsCurrentPosition: number[],
   ): { knobsPosition: number[]; knobsValues: number[] } => {
     const newKnobsPosition: number[] = knobsCurrentPosition.slice();
     const knobsValues: number[] = [];
@@ -419,7 +416,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     let duplicatedValue: number | null = null;
 
     const findDuplicated: number[] = newKnobsPosition.filter(
-      (item, index) => newKnobsPosition.indexOf(item) !== index
+      (item, index) => newKnobsPosition.indexOf(item) !== index,
     );
 
     if (noOverlap && findDuplicated.length > 0) {
@@ -441,7 +438,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
       knobsValues[index] = knobsPositionToScaledValue(
         newPosition,
         minPointValue,
-        stepValue
+        stepValue,
       );
     }, this);
 
@@ -475,7 +472,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
         knobs.knobsPosition[index] = scaledValueToKnobsPositionValue(
           defaultValues[index],
           minPointValue,
-          inverseStepValue
+          inverseStepValue,
         );
       }
     });
@@ -491,7 +488,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     let newKnobPositions = knobsValuesToKnobsPositions(
       inputValues,
       inverseStepValue,
-      minPointValue
+      minPointValue,
     );
 
     newKnobPositions = ensureValuesConsistency(newKnobPositions, index);
@@ -534,7 +531,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     const scaledKnobValue = knobsPositionToScaledValue(
       knobValue,
       minPointValue,
-      stepValue
+      stepValue,
     ).toFixed(markDigits);
     if (dragging) {
       style.backgroundColor = knobProperties[index]?.dragColor;
@@ -575,7 +572,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
             aria-valuenow={knobsPositionToScaledValue(
               knobValue,
               minPointValue,
-              stepValue
+              stepValue,
             )}
             aria-valuemin={minPointValue}
             aria-valuemax={maxPointValue}
@@ -597,7 +594,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
             !readOnly && !disabled && !isSingle && isDraggingTrack,
           [classes.rootDisabled]: !!disabled,
         },
-        className
+        className,
       )}
       id={id}
       name={name}
@@ -633,7 +630,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
               values={knobsPositionsToKnobsValues(
                 knobsPositions,
                 stepValue,
-                minPointValue
+                minPointValue,
               )}
               onChange={onInputChangeHandler}
               status={validationStatus}
@@ -672,8 +669,8 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
             knobsPositions.length === 0
               ? undefined
               : isSingle
-              ? knobsPositions[0]
-              : [...knobsPositions]
+                ? knobsPositions[0]
+                : [...knobsPositions]
           }
           allowCross={false}
           disabled={disabled}

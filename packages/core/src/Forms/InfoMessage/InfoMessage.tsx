@@ -1,12 +1,11 @@
 import { useContext } from "react";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { setId } from "../../utils/setId";
-import { ExtractNames } from "../../utils/classes";
 import { HvTypography, HvTypographyProps } from "../../Typography";
-
-import { staticClasses, useClasses } from "./InfoMessage.styles";
+import { ExtractNames } from "../../utils/classes";
+import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../FormElement";
+import { staticClasses, useClasses } from "./InfoMessage.styles";
 
 export { staticClasses as infoMessageClasses };
 
@@ -50,7 +49,7 @@ export const HvInfoMessage = (props: HvInfoMessageProps) => {
           [classes.infoDisabled]: !!localDisabled,
           [classes.gutter]: !disableGutter,
         },
-        className
+        className,
       )}
       variant="body"
       component="label"

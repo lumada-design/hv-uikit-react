@@ -1,17 +1,18 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { useRef, useState } from "react";
+import { Popper } from "@mui/base/Popper";
+import { SelectOption } from "@mui/base/useOption";
+import {
+  SelectProvider,
+  useSelect,
+  UseSelectParameters,
+} from "@mui/base/useSelect";
+import { useControlled, useForkRef } from "@mui/material/utils";
 import type { Placement } from "@popperjs/core";
 import clsx from "clsx";
 
-import {
-  SelectProvider,
-  UseSelectParameters,
-  useSelect,
-} from "@mui/base/useSelect";
-import { useControlled, useForkRef } from "@mui/material/utils";
-import { Popper } from "@mui/base/Popper";
-import { SelectOption } from "@mui/base/useOption";
-
+import { HvButtonProps } from "../Button";
+import { HvDropdownButton } from "../DropdownButton";
 import {
   HvFormElement,
   HvFormElementProps,
@@ -20,19 +21,17 @@ import {
   HvLabel,
   HvWarningText,
 } from "../Forms";
-import { ExtractNames } from "../utils/classes";
-import { fixedForwardRef } from "../types/generic";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { staticClasses, useClasses } from "./Select.styles";
-import { setId } from "../utils/setId";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { HvPanel } from "../Panel";
 import { HvListContainer } from "../ListContainer";
-import { HvButtonProps } from "../Button";
-import { HvDropdownButton } from "../DropdownButton";
+import { HvPanel } from "../Panel";
+import { fixedForwardRef } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
+import { staticClasses, useClasses } from "./Select.styles";
 
 function defaultRenderValue<Value>(
-  options: SelectOption<Value> | SelectOption<Value>[] | null
+  options: SelectOption<Value> | SelectOption<Value>[] | null,
 ) {
   if (Array.isArray(options)) {
     if (options.length === 0) return null;
@@ -50,7 +49,7 @@ export type HvSelectClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSelectProps<
   OptionValue extends {},
-  Multiple extends boolean = false
+  Multiple extends boolean = false,
 > extends Omit<HvFormElementProps, "value" | "defaultValue" | "onChange">,
     Pick<
       UseSelectParameters<OptionValue, Multiple>,
@@ -89,10 +88,10 @@ export interface HvSelectProps<
  * */
 export const HvSelect = fixedForwardRef(function HvSelect<
   OptionValue extends {},
-  Multiple extends boolean
+  Multiple extends boolean,
 >(
   props: HvSelectProps<OptionValue, Multiple>,
-  ref: React.Ref<HTMLButtonElement>
+  ref: React.Ref<HTMLButtonElement>,
 ) {
   const {
     children,
@@ -251,7 +250,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         aria-errormessage={errorMessageId}
         aria-describedby={mergeIds(
           description && descriptionId,
-          ariaDescribedBy
+          ariaDescribedBy,
         )}
         {...getButtonProps()}
       >

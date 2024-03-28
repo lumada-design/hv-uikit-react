@@ -45,5 +45,5 @@ export const { staticClasses, useClasses } = createClasses(
       height: "16px",
       width: "16px",
     },
-  }
+  },
 );

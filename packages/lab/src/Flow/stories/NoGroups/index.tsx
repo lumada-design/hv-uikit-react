@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { css } from "@emotion/css";
 import {
   HvButton,
@@ -8,12 +9,11 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Add, Backwards } from "@hitachivantara/uikit-react-icons";
 import {
-  HvFlowSidebar,
   HvFlow,
   HvFlowControls,
   HvFlowProps,
+  HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
 import { restrictToSample } from "../Base";

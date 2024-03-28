@@ -1,17 +1,17 @@
 import { useEffect, useMemo } from "react";
+import { css } from "@emotion/css";
 import {
   HvDropdown,
   HvQueryBuilder,
-  HvQueryBuilderRendererProps,
-  useQueryBuilderContext,
-  theme,
   hvQueryBuilderDefaultOperators,
-  HvSlider,
   HvQueryBuilderProps,
-  HvTagsInputProps,
+  HvQueryBuilderRendererProps,
+  HvSlider,
   HvTagsInput,
+  HvTagsInputProps,
+  theme,
+  useQueryBuilderContext,
 } from "@hitachivantara/uikit-react-core";
-import { css } from "@emotion/css";
 
 const attributes: HvQueryBuilderProps["attributes"] = {
   month: {
@@ -128,7 +128,7 @@ const SelectRenderer = ({
         id: val,
         label: val,
       })),
-    [attribute]
+    [attribute],
   );
 
   const handleUpdateRange = (type: "start" | "end", val?: string) => {

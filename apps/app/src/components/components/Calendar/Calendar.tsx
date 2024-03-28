@@ -43,7 +43,7 @@ export const Calendar = () => {
   const visibleDateChangeHandler: HvCalendarProps["onVisibleDateChange"] = (
     event,
     action,
-    index
+    index,
   ) => {
     if (action === "previous_month") {
       const previousMonth = visibleMonth - 1;

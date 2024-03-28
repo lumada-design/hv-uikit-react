@@ -45,17 +45,17 @@ const generateModelFromDate = (seedValue: any) => {
     const today = new Date();
     calendarModel = new CalendarModel(
       today.getMonth() + 1,
-      today.getFullYear()
+      today.getFullYear(),
     );
   } else if (isRange(seedValue)) {
     calendarModel = new CalendarModel(
       seedValue.startDate.getMonth() + 1,
-      seedValue.startDate.getFullYear()
+      seedValue.startDate.getFullYear(),
     );
   } else {
     calendarModel = new CalendarModel(
       seedValue.getMonth() + 1,
-      seedValue.getFullYear()
+      seedValue.getFullYear(),
     );
   }
 
@@ -65,7 +65,7 @@ const generateModelFromDate = (seedValue: any) => {
 export const generateCalendarModel = (
   seedValue: any,
   visibleMonth?: number,
-  visibleYear?: number
+  visibleYear?: number,
 ) => {
   let calendarModel;
 

@@ -1,11 +1,11 @@
 import { css } from "@emotion/css";
-import { Bottom, Top } from "@hitachivantara/uikit-react-icons";
 import {
-  HvGrid,
   HvAvatar,
-  theme,
+  HvGrid,
   HvTypography,
+  theme,
 } from "@hitachivantara/uikit-react-core";
+import { Bottom, Top } from "@hitachivantara/uikit-react-icons";
 
 import { useModelData } from "./data";
 import { MetadataItem } from "./MetadataItem";

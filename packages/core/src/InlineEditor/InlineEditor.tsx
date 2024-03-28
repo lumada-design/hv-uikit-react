@@ -1,22 +1,19 @@
 import { useLayoutEffect, useRef, useState } from "react";
-
 import { Edit } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-
-import { HvBaseProps } from "../types/generic";
+import { HvButton, HvButtonProps } from "../Button";
 import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useTheme } from "../hooks/useTheme";
+import { HvInput, HvInputProps } from "../Input";
+import { HvBaseProps } from "../types/generic";
+import {
+  HvTypography,
+  HvTypographyProps,
+  HvTypographyVariants,
+} from "../Typography";
 import { ExtractNames } from "../utils/classes";
 import { isKey } from "../utils/keyboardUtils";
-import { HvButtonProps, HvButton } from "../Button";
-import {
-  HvTypographyVariants,
-  HvTypographyProps,
-  HvTypography,
-} from "../Typography";
-import { HvInput, HvInputProps } from "../Input";
-
 import { staticClasses, useClasses } from "./InlineEditor.styles";
 
 export { staticClasses as inlineEditorClasses };
@@ -36,7 +33,7 @@ export interface HvInlineEditorProps
   /** Called when the input is blurred. */
   onBlur?: (
     event: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>,
-    value: string
+    value: string,
   ) => void;
   /** Called when the input value changes. */
   onChange?: (event: React.SyntheticEvent, value: string) => void;

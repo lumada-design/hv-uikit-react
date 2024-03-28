@@ -1,11 +1,9 @@
 import { useCallback, useContext } from "react";
 
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
-
-import { ExtractNames } from "../../utils/classes";
-import { HvTypography } from "../../Typography";
-
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { staticClasses, useClasses } from "./Action.styles";
 
@@ -64,7 +62,7 @@ export const HvVerticalNavigationAction = ({
 
       onClick(event);
     },
-    [onClick]
+    [onClick],
   );
 
   return (
@@ -78,7 +76,7 @@ export const HvVerticalNavigationAction = ({
           [classes.noIcon]: !icon,
           [classes.minimized]: !isOpen,
         },
-        className
+        className,
       )}
       tabIndex={0}
       {...(!isOpen && { "aria-label": label })}

@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
 
+import { HvButton } from "../Button";
 import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
-import { HvButton } from "../Button";
 
 export interface HvToggleButtonProps
   extends HvBaseProps<HTMLButtonElement, "onClick"> {
@@ -20,7 +20,7 @@ export interface HvToggleButtonProps
   /** Function called when icon is clicked. */
   onClick?: (
     event: React.MouseEvent<HTMLButtonElement>,
-    selected: boolean
+    selected: boolean,
   ) => void;
 }
 
@@ -40,7 +40,7 @@ export const HvToggleButton = forwardRef<
 
   const [isSelected, setIsSelected] = useControlled(
     selected,
-    Boolean(defaultSelected)
+    Boolean(defaultSelected),
   );
 
   const onClickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {

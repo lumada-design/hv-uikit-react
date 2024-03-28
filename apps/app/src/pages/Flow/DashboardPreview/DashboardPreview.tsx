@@ -1,6 +1,6 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
-import { css } from "@emotion/css";
 import { useSearchParams } from "react-router-dom";
+import { css } from "@emotion/css";
 import {
   HvContainer,
   HvGlobalActions,
@@ -55,7 +55,7 @@ const DashboardPreview = () => {
 
       setConfig({ cols, layout, items: buildContent(items) });
     },
-    [id]
+    [id],
   );
 
   const onStorageUpdate = useCallback(
@@ -66,7 +66,7 @@ const DashboardPreview = () => {
         buildDashboard(newValue);
       }
     },
-    [buildDashboard]
+    [buildDashboard],
   );
 
   useEffect(() => {

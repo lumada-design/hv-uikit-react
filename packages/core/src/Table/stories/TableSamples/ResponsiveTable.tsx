@@ -1,15 +1,15 @@
 import { useMemo } from "react";
 import styled from "@emotion/styled";
-import { useTheme, Breakpoints as MuiBreakpoints } from "@mui/material/styles";
+import { Breakpoints as MuiBreakpoints, useTheme } from "@mui/material/styles";
 import {
-  HvTableContainer,
+  HvOverflowTooltip,
   HvTable,
   HvTableBody,
+  HvTableCell,
+  HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
-  HvOverflowTooltip,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -45,7 +45,7 @@ const StyledResponsiveHead = styled(HvTableHead)(
         display: "none",
       },
     },
-  })
+  }),
 );
 
 const StyledResponsiveBody = styled(HvTableBody)(
@@ -66,7 +66,7 @@ const StyledResponsiveBody = styled(HvTableBody)(
         display: "none",
       },
     },
-  })
+  }),
 );
 
 const StyledResponsiveTableRow = styled(HvTableRow)(
@@ -98,7 +98,7 @@ const StyledResponsiveTableRow = styled(HvTableRow)(
         width: 150,
       },
     },
-  })
+  }),
 );
 
 const StyledResponsiveTableHeader = styled(HvTableHeader)({

@@ -1,9 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
 import { describe, expect, it, vi } from "vitest";
 
-import { HvTreeView, HvTreeItem } from ".";
+import { HvTreeItem, HvTreeView } from ".";
 
 describe("HvTreeView", () => {
   it("renders the tree and items", () => {
@@ -12,7 +11,7 @@ describe("HvTreeView", () => {
         <HvTreeItem nodeId="1" label="item1" />
         <HvTreeItem nodeId="2" label="item2" />
         <HvTreeItem nodeId="3" label="item3" />
-      </HvTreeView>
+      </HvTreeView>,
     );
 
     expect(screen.getByRole("tree", { name: "myTree" })).toBeInTheDocument();
@@ -34,7 +33,7 @@ describe("HvTreeView", () => {
         </HvTreeItem>
         <HvTreeItem nodeId="1" label="item2" />
         <HvTreeItem nodeId="1" label="item3" />
-      </HvTreeView>
+      </HvTreeView>,
     );
 
     expect(screen.getAllByRole("treeitem").length).toBe(5);

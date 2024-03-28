@@ -3,22 +3,22 @@ import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 
 import { AllColumnRenderers } from "./AllColumnRenderers";
 import AllColumnRenderersRaw from "./AllColumnRenderers?raw";
-import { TextColumnRenderer } from "./TextColumnRenderer";
-import TextColumnRendererRaw from "./TextColumnRenderer?raw";
-import { NumberColumnRenderer } from "./NumberColumnRenderer";
-import NumberColumnRendererRaw from "./NumberColumnRenderer?raw";
 import { DateColumnRenderer } from "./DateColumnRenderer";
 import DateColumnRendererRaw from "./DateColumnRenderer?raw";
+import { DropdownColumnRenderer } from "./DropdownColumnRenderer";
+import DropdownColumnRendererRaw from "./DropdownColumnRenderer?raw";
 import { ExpandColumnRenderer } from "./ExpandColumnRenderer";
 import ExpandColumnRendererRaw from "./ExpandColumnRenderer?raw";
+import { NumberColumnRenderer } from "./NumberColumnRenderer";
+import NumberColumnRendererRaw from "./NumberColumnRenderer?raw";
+import { ProgressColumnRenderer } from "./ProgressColumnRenderer";
+import ProgressColumnRendererRaw from "./ProgressColumnRenderer?raw";
 import { SwitchColumnRenderer } from "./SwitchColumnRenderer";
 import SwitchColumnRendererRaw from "./SwitchColumnRenderer?raw";
 import { TagColumnRenderer } from "./TagColumnRenderer";
 import TagColumnRendererRaw from "./TagColumnRenderer?raw";
-import { ProgressColumnRenderer } from "./ProgressColumnRenderer";
-import ProgressColumnRendererRaw from "./ProgressColumnRenderer?raw";
-import { DropdownColumnRenderer } from "./DropdownColumnRenderer";
-import DropdownColumnRendererRaw from "./DropdownColumnRenderer?raw";
+import { TextColumnRenderer } from "./TextColumnRenderer";
+import TextColumnRendererRaw from "./TextColumnRenderer?raw";
 
 export default {
   title: "Visualizations/Table/Table Renderers",

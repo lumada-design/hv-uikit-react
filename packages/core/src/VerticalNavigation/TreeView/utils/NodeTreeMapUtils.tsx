@@ -28,7 +28,7 @@ export class NodeTreeMapUtils {
         const parentNode = newMap[node.parent];
         if (parentNode && parentNode.children) {
           const parentChildren = parentNode.children.filter(
-            (c) => c !== nodeId
+            (c) => c !== nodeId,
           );
           newMap[node.parent] = {
             ...parentNode,

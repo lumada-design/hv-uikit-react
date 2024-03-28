@@ -1,11 +1,5 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
-import {
-  Fail,
-  Preview,
-  PreviewOff,
-  Success,
-} from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvAdornment,
@@ -16,6 +10,12 @@ import {
   HvFormStatus,
   HvLabel,
 } from "@hitachivantara/uikit-react-core";
+import {
+  Fail,
+  Preview,
+  PreviewOff,
+  Success,
+} from "@hitachivantara/uikit-react-icons";
 
 const StyledButton = styled(HvButton)({
   width: "250px",

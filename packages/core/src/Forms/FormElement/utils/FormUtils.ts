@@ -31,7 +31,7 @@ const findDescriptors = (
 
     // TODO: refactor this out
     HvCalendarHeader: [],
-  }
+  },
 ) => {
   React.Children.forEach(children, (child) => {
     if (child?.type?.formElementType && child.props?.id) {
@@ -52,7 +52,7 @@ const findDescriptors = (
 const getIdReferenceListFor = (
   formElementType,
   descriptors,
-  filterFor = null
+  filterFor = null,
 ) => {
   const referenceList = descriptors?.[formElementType]
     ?.filter((d) => d.htmlFor !== filterFor)
@@ -76,7 +76,7 @@ const buildFormElementPropsFromContext = (
   disabled,
   readOnly,
   required,
-  context
+  context,
 ) => {
   return {
     name: name || context?.elementName,

@@ -1,10 +1,9 @@
 import { useSlotProps } from "@mui/base/utils";
 import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
 
-import { HvBaseProps, fixedForwardRef } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
+import { fixedForwardRef, HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
 import {
   DEFAULT_TREE_VIEW_PLUGINS,
   DefaultTreeViewPluginParameters,
@@ -43,7 +42,7 @@ export interface HvTreeViewProps<Multiple extends boolean | undefined>
  * ```
  */
 export const HvTreeView = fixedForwardRef(function HvTreeView<
-  Multiple extends boolean | undefined
+  Multiple extends boolean | undefined,
 >(props: HvTreeViewProps<Multiple>, ref: React.Ref<HTMLUListElement>) {
   const {
     id,

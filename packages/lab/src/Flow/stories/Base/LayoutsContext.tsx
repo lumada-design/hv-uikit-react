@@ -1,7 +1,7 @@
 import {
+  createContext,
   Dispatch,
   SetStateAction,
-  createContext,
   useContext,
   useMemo,
   useState,
@@ -44,7 +44,7 @@ export const LayoutsProvider = ({
       layouts,
       setLayouts,
     }),
-    [layouts]
+    [layouts],
   );
 
   return (

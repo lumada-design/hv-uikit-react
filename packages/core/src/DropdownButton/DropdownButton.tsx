@@ -69,7 +69,7 @@ export const HvDropdownButton = forwardRef<
           [classes.disabled]: disabled,
           [classes.readOnly]: readOnly,
         },
-        className
+        className,
       )}
       classes={{ endIcon: classes.arrowContainer }}
       endIcon={endIcon}

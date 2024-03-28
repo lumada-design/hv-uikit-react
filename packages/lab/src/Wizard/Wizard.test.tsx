@@ -18,7 +18,7 @@ describe("HvWizard", () => {
         <div>First Component</div>
         <div>Second Component</div>
         <div>Third Component</div>
-      </HvWizard>
+      </HvWizard>,
     );
 
     const container = getByText("Mock Wizard");
@@ -42,7 +42,7 @@ describe("HvWizard", () => {
         <div>First Component</div>
         <div>Second Component</div>
         <div>Third Component</div>
-      </HvWizard>
+      </HvWizard>,
     );
 
     expect(getByRole("button", { name: "Previous" })).toBeDisabled();

@@ -1,13 +1,11 @@
 import { useMemo } from "react";
-
 import createCache, { EmotionCache } from "@emotion/cache";
 import {
-  css as cssReact,
-  Global,
   CacheProvider,
   ClassNames,
+  css as cssReact,
+  Global,
 } from "@emotion/react";
-
 import {
   CssBaseline,
   CssScopedBaseline,
@@ -15,15 +13,14 @@ import {
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvTheme } from "../types/theme";
 import { getElementById } from "../utils/document";
 import { processThemes } from "../utils/theme";
-import { HvTheme } from "../types/theme";
-import { useUniqueId } from "../hooks/useUniqueId";
-
 import {
-  HvThemeProvider,
   defaultCacheKey,
   defaultEmotionCache,
+  HvThemeProvider,
 } from "./ThemeProvider";
 
 // Provider props
@@ -153,7 +150,7 @@ export const HvProvider = ({
                     [`@layer ${rootElementId}-baseline`]: {
                       ...CssScopedBaseline,
                     },
-                  })
+                  }),
                 );
               }
             }

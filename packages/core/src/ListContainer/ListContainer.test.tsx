@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { HvListItem } from "./ListItem";
 import { HvListContainer } from "./ListContainer";
+import { HvListItem } from "./ListItem";
 
 describe("ListContainer", () => {
   it("should render all the items", () => {
@@ -11,7 +11,7 @@ describe("ListContainer", () => {
         <HvListItem role="option">Item 1</HvListItem>
         <HvListItem role="option">Item 2</HvListItem>
         <HvListItem role="option">Item 3</HvListItem>
-      </HvListContainer>
+      </HvListContainer>,
     );
     expect(screen.getAllByRole("option")).toHaveLength(3);
   });

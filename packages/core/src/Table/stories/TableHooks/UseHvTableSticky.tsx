@@ -2,17 +2,17 @@ import { useMemo } from "react";
 import {
   HvTable,
   HvTableBody,
+  HvTableCell,
+  HvTableColumnConfig,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   useHvData,
   useHvTableSticky,
-  HvTableColumnConfig,
 } from "@hitachivantara/uikit-react-core";
 
-import { makeData, AssetEvent } from "../storiesUtils";
+import { AssetEvent, makeData } from "../storiesUtils";
 
 export const UseHvTableSticky = () => {
   const columns = useMemo<HvTableColumnConfig<AssetEvent, string>[]>(
@@ -41,7 +41,7 @@ export const UseHvTableSticky = () => {
       },
       { Header: "Priority", accessor: "priority", width: 80 },
     ],
-    []
+    [],
   );
   const data = useMemo(() => makeData(100), []);
 
@@ -58,7 +58,7 @@ export const UseHvTableSticky = () => {
       data,
       stickyHeader: true,
     },
-    useHvTableSticky
+    useHvTableSticky,
   );
 
   return (

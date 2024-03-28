@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-
 import { describe, expect, it } from "vitest";
 
 import { HvCard, HvCardContent, HvCardHeader, HvCardMedia } from ".";
@@ -9,7 +8,7 @@ describe("Card", () => {
     render(
       <HvCard>
         <HvCardHeader title="mockTitle" subheader="mockSubtitle" />
-      </HvCard>
+      </HvCard>,
     );
     expect(screen.getByText("mockTitle")).toBeInTheDocument();
     expect(screen.getByText("mockSubtitle")).toBeInTheDocument();
@@ -20,7 +19,7 @@ describe("Card", () => {
     render(
       <HvCard>
         <HvCardMedia component="img" alt="mockImg" image={mockImg} />
-      </HvCard>
+      </HvCard>,
     );
     expect(screen.getByRole("img", { name: /mockImg/ })).toBeInTheDocument();
   });
@@ -31,7 +30,7 @@ describe("Card", () => {
         <HvCardContent>
           <div>mockCardContent</div>
         </HvCardContent>
-      </HvCard>
+      </HvCard>,
     );
     expect(screen.getByText("mockCardContent")).toBeInTheDocument();
   });
@@ -45,7 +44,7 @@ describe("Card", () => {
         <HvCardContent>
           <div>mockCardContent</div>
         </HvCardContent>
-      </HvCard>
+      </HvCard>,
     );
     expect(screen.getByText("mockTitle")).toBeInTheDocument();
     expect(screen.getByText("mockSubtitle")).toBeInTheDocument();

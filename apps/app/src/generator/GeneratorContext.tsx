@@ -1,11 +1,11 @@
 import React, {
   createContext,
-  useMemo,
-  useState,
   Dispatch,
   SetStateAction,
   useCallback,
   useContext,
+  useMemo,
+  useState,
 } from "react";
 import {
   createTheme,
@@ -31,7 +31,7 @@ type GeneratorContextProp = {
   customTheme: HvTheme | HvThemeStructure;
   updateCustomTheme: (
     changes: DeepPartial<HvTheme | HvThemeStructure>,
-    options?: GeneratorContextOptions
+    options?: GeneratorContextOptions,
   ) => void;
 
   open?: boolean;
@@ -47,7 +47,7 @@ type GeneratorContextProp = {
 };
 
 export const GeneratorContext = createContext<GeneratorContextProp | null>(
-  null
+  null,
 );
 
 const initialTheme = createTheme({ name: "customTheme", base: "ds5" });
@@ -67,7 +67,7 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
         isBaseChange: false,
         isReset: false,
         isCodeEdit: false,
-      }
+      },
     ) => {
       const {
         updateThemeChanges = true,
@@ -115,7 +115,7 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
         }
       }
     },
-    [themeChanges]
+    [themeChanges],
   );
 
   const value = useMemo(
@@ -140,7 +140,7 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
       currentStep,
       setCurrentStep,
       themeChanges,
-    ]
+    ],
   );
 
   return (
@@ -154,7 +154,7 @@ export const useGeneratorContext = () => {
   const context = useContext(GeneratorContext);
   if (context === null) {
     throw new Error(
-      "useGeneratorContext must be used within a GeneratorProvider"
+      "useGeneratorContext must be used within a GeneratorProvider",
     );
   }
   return context;

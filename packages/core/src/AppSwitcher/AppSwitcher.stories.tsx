@@ -1,15 +1,12 @@
 import { useState } from "react";
-
-import { Champion, Code, LeftAlign } from "@hitachivantara/uikit-react-icons";
-
 import { Meta, StoryObj } from "@storybook/react";
-
 import {
   HvAppSwitcher,
-  HvAppSwitcherProps,
   HvAppSwitcherActionApplication,
+  HvAppSwitcherProps,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
+import { Champion, Code, LeftAlign } from "@hitachivantara/uikit-react-icons";
 
 const applicationsList: HvAppSwitcherActionApplication[] = [
   {
@@ -70,7 +67,7 @@ export const Main: StoryObj<HvAppSwitcherProps> = {
 
     const handleActionClicked: HvAppSwitcherProps["onActionClickedCallback"] = (
       event,
-      application
+      application,
     ) => {
       if (!application.url) {
         alert(`The clicked application was: ${application.name}`);
@@ -143,7 +140,7 @@ export const CustomHeader: StoryObj<HvAppSwitcherProps> = {
 
     const handleActionClicked: HvAppSwitcherProps["onActionClickedCallback"] = (
       event,
-      application
+      application,
     ) => {
       setSelected(application.name);
     };

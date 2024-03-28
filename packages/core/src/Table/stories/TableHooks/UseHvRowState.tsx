@@ -1,23 +1,22 @@
 import { useMemo } from "react";
 import {
+  HvCellProps,
+  HvIconButton,
+  HvInput,
   HvTable,
   HvTableBody,
+  HvTableCell,
+  HvTableColumnConfig,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   useHvData,
   useHvRowState,
-  HvInput,
-  HvTableColumnConfig,
-  HvIconButton,
-  HvCellProps,
 } from "@hitachivantara/uikit-react-core";
-
 import { Close, Edit } from "@hitachivantara/uikit-react-icons";
 
-import { makeData, AssetEvent } from "../storiesUtils";
+import { AssetEvent, makeData } from "../storiesUtils";
 
 const EditableCell = ({ value, row }: HvCellProps<AssetEvent, string>) =>
   row.state?.isEditing ? <HvInput value={value} /> : value;

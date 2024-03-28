@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fireEvent, render } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it } from "vitest";
 
 import { HvSlider } from "./Slider";
 
@@ -44,7 +44,7 @@ describe("Slider", () => {
 
     it("renders the range slider as expected", () => {
       const { getAllByRole, getByText } = render(
-        <HvSlider label="Failure Rate" defaultValues={[10, 40]} />
+        <HvSlider label="Failure Rate" defaultValues={[10, 40]} />,
       );
 
       const knobs = getAllByRole("slider");
@@ -63,7 +63,7 @@ describe("Slider", () => {
           label="Failure Rate"
           status="invalid"
           statusMessage="Invalid"
-        />
+        />,
       );
 
       const knob = queryByRole("slider");
@@ -86,7 +86,7 @@ describe("Slider", () => {
           status="invalid"
           statusMessage="Invalid "
           defaultValues={[undefined, 53]}
-        />
+        />,
       );
 
       const knobs = getAllByRole("slider");
@@ -104,7 +104,7 @@ describe("Slider", () => {
 
     it("renders the slider without an input", () => {
       const { getByRole, queryByRole, getByText } = render(
-        <HvSlider label="Failure Rate" defaultValues={[10]} hideInput />
+        <HvSlider label="Failure Rate" defaultValues={[10]} hideInput />,
       );
 
       const knob = getByRole("slider");
@@ -123,7 +123,7 @@ describe("Slider", () => {
           knobProps={[{ "aria-label": "no-label-knob" }]}
           hideInput
           defaultValues={[10]}
-        />
+        />,
       );
 
       const knob = getByRole("slider");
@@ -176,7 +176,7 @@ describe("Slider", () => {
         const tenStyle = "left: 10%;";
 
         const { getByRole, findByRole, getByText } = render(
-          <HvSlider label="Failure Rate" defaultValues={[10]} disabled />
+          <HvSlider label="Failure Rate" defaultValues={[10]} disabled />,
         );
 
         const input = getByRole("textbox");
@@ -272,7 +272,7 @@ describe("Slider", () => {
         const fiftyOneStyle = "left: 51%;";
 
         const { findAllByRole, getAllByRole } = render(
-          <HvSlider label="Failure Rate" defaultValues={[10, 40]} />
+          <HvSlider label="Failure Rate" defaultValues={[10, 40]} />,
         );
 
         const inputs = getAllByRole("textbox");
@@ -298,7 +298,7 @@ describe("Slider", () => {
         const fiftyOneStyle = "left: 51%;";
 
         const { getAllByRole, findAllByRole } = render(
-          <RangeSliderControlled />
+          <RangeSliderControlled />,
         );
 
         const inputs = getAllByRole("textbox");
@@ -327,7 +327,7 @@ describe("Slider", () => {
         const fortyStyle = "left: 40%;";
 
         const { getAllByRole, findAllByRole } = render(
-          <HvSlider label="Failure Rate" defaultValues={[10, 40]} disabled />
+          <HvSlider label="Failure Rate" defaultValues={[10, 40]} disabled />,
         );
 
         const inputs = getAllByRole("textbox");

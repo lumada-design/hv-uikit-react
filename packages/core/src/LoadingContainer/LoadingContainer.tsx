@@ -1,7 +1,7 @@
-import { ExtractNames } from "../utils/classes";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvLoading, HvLoadingProps } from "../Loading";
 import { HvBaseProps } from "../types/generic";
+import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./LoadingContainer.styles";
 
 export { staticClasses as loadingContainerClasses };

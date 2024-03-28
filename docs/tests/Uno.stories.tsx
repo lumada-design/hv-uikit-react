@@ -1,6 +1,6 @@
 import { StoryObj } from "@storybook/react";
-import { Abacus } from "@hitachivantara/uikit-react-icons";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
+import { Abacus } from "@hitachivantara/uikit-react-icons";
 
 export default {
   title: "Tests/Uno",

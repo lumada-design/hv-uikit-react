@@ -1,7 +1,7 @@
-import { useFilters, Hooks } from "react-table";
+import { Hooks, useFilters } from "react-table";
 
 export type UseFiltersProps = (<D extends object = Record<string, unknown>>(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####

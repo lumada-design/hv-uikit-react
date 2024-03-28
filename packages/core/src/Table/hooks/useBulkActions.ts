@@ -1,11 +1,11 @@
 import { useCallback } from "react";
 import {
+  ensurePluginOrder,
   Hooks,
+  makePropGetter,
   PropGetter,
   TableCommonProps,
-  makePropGetter,
   useGetLatest,
-  ensurePluginOrder,
 } from "react-table";
 
 // #region ##### TYPES #####
@@ -40,13 +40,13 @@ export type UseHvBulkActionsTableOptions = {
 
 export interface UseHvBulkActionsTableInstanceProps<D extends object> {
   getHvBulkActionsProps: (
-    propGetter?: HvBulkActionsPropGetter<D>
+    propGetter?: HvBulkActionsPropGetter<D>,
   ) => HvTAbleBulkActionsProps;
   invertedToggleAllRowsSelected: () => void;
 }
 
 export type UseBulkActionsProps = (<D extends object = Record<string, unknown>>(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####
@@ -63,7 +63,7 @@ const useInstanceHook = (instance) => {
     instance.getHooks().getHvBulkActionsProps,
     {
       instance: getInstance(),
-    }
+    },
   );
 
   const isPaginated = !!page;

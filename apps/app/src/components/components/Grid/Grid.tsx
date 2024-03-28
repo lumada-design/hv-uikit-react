@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import {
   HvGrid,
-  theme,
   HvTypography,
+  theme,
   useWidth,
 } from "@hitachivantara/uikit-react-core";
 
@@ -24,7 +24,7 @@ const getBreakpointValue = (breakpoint: string) => {
   const root = document.querySelector("#root");
   if (root) {
     const breakpointValue = getComputedStyle(root).getPropertyValue(
-      `--breakpoints-values-${breakpoint}`
+      `--breakpoints-values-${breakpoint}`,
     );
     return breakpointValue;
   }
@@ -38,7 +38,7 @@ export const Grid = () => {
     <>
       <HvTypography variant="label">
         {Object.keys(theme.breakpoints.values).map(
-          (b: string) => `${b}: ${getBreakpointValue(b)}, `
+          (b: string) => `${b}: ${getBreakpointValue(b)}, `,
         )}
       </HvTypography>
       <HvTypography variant="label">{`Current width: ${width}`}</HvTypography>

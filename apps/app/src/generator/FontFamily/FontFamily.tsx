@@ -56,7 +56,7 @@ const FontFamily = () => {
 
   const handleClose = (
     event: Event | SyntheticEvent<any, Event>,
-    reason: SnackbarCloseReason
+    reason: SnackbarCloseReason,
   ) => {
     if (reason === "clickaway") return;
     setFontAdded(false);
@@ -95,7 +95,7 @@ const FontFamily = () => {
         values={fontValues}
         onChange={(item) =>
           onDropdownClickHandler(
-            (item as HvListValue)?.label as string | undefined
+            (item as HvListValue)?.label as string | undefined,
           )
         }
       />

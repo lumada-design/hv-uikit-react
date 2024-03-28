@@ -1,11 +1,11 @@
 import {
-  HvTableContainer,
   HvTable,
   HvTableBody,
+  HvTableCell,
+  HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   theme,
 } from "@hitachivantara/uikit-react-core";
 

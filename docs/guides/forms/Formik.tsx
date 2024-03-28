@@ -2,11 +2,11 @@ import { useMemo } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 import {
-  HvInput,
   HvButton,
-  HvCheckBoxGroup,
   HvCheckBox,
+  HvCheckBoxGroup,
   HvDropdown,
+  HvInput,
 } from "@hitachivantara/uikit-react-core";
 
 const validationSchema = yup.object({
@@ -48,7 +48,7 @@ export default () => (
             id: `v${i + 1}`,
             label: `Value ${i + 1}`,
           })),
-        []
+        [],
       );
 
       return (

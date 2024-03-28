@@ -7,7 +7,7 @@ const outputPackages = "code-editor,core,icons,lab,shared,styles,uno-preset,viz"
   .map((p) => `/workdir/packages/${p}`)
   .join(",");
 
-const arguments = `
+const args = `
 --detect.npm.dependency.types.excluded=DEV
 --detect.excluded.detector.types=LERNA
 --detect.project.version.phase=${phase}
@@ -17,4 +17,4 @@ const arguments = `
 --detect.excluded.directories=${outputPackages}
 `;
 
-console.log(arguments.replace(/\n/g, " ").trim());
+console.log(args.replace(/\n/g, " ").trim());

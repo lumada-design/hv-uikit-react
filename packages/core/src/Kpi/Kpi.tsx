@@ -3,7 +3,6 @@ import { useLabels } from "../hooks/useLabels";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
-
 import { staticClasses, useClasses } from "./Kpi.styles";
 
 export { staticClasses as kpiClasses };
@@ -89,7 +88,7 @@ export const HvKpi = (props: HvKpiProps) => {
           <div
             className={cx(
               classes.visualIndicatorContainer,
-              classes.spacingToTheRight
+              classes.spacingToTheRight,
             )}
           >
             {visualIndicator}

@@ -1,10 +1,10 @@
 import {
-  makePropGetter,
-  useGetLatest,
   ensurePluginOrder,
   Hooks,
+  makePropGetter,
   PropGetter,
   TableCommonProps,
+  useGetLatest,
 } from "react-table";
 
 // #region ##### TYPES #####
@@ -31,12 +31,12 @@ export interface UseHvPaginationHooks<D extends object> {
 
 export interface UseHvPaginationTableInstance<D extends object> {
   getHvPaginationProps: (
-    propGetter?: HvPaginationPropGetter<D>
+    propGetter?: HvPaginationPropGetter<D>,
   ) => HvTablePaginationProps;
 }
 
 export type UsePaginationProps = (<D extends object = Record<string, unknown>>(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####
@@ -52,7 +52,7 @@ const useInstanceHook = (instance) => {
       "useHvSortBy",
       "useHvRowExpand",
     ],
-    "useHvPagination"
+    "useHvPagination",
   );
 
   const getInstance = useGetLatest(instance);
@@ -60,7 +60,7 @@ const useInstanceHook = (instance) => {
     instance.getHooks().getHvPaginationProps,
     {
       instance: getInstance(),
-    }
+    },
   );
 
   Object.assign(instance, {

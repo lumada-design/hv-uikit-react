@@ -1,16 +1,15 @@
 import { memo, useCallback, useMemo, useState } from "react";
-import dayjs from "dayjs";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import dayjs from "dayjs";
 
+import { HvDatePicker } from "../../../../DatePicker";
 import { HvWarningText } from "../../../../Forms";
 import { HvTimePicker, HvTimePickerValue } from "../../../../TimePicker";
-import { HvDatePicker } from "../../../../DatePicker";
 import { uniqueId } from "../../../../utils/helpers";
-
 import { useQueryBuilderContext } from "../../../Context";
-import { padTime, parseDate, parseTime } from "./utils";
 import { useClasses } from "./DateTimeValue.styles";
+import { padTime, parseDate, parseTime } from "./utils";
 
 function valueIsRange(operator?: string) {
   return operator === "range";
@@ -80,7 +79,7 @@ export const DateTimeValue = ({
         });
       }
     },
-    [dispatchAction, id, isRange, valueProp]
+    [dispatchAction, id, isRange, valueProp],
   );
 
   const onTimeChange = useCallback(
@@ -90,7 +89,7 @@ export const DateTimeValue = ({
       let time;
       if (data != null) {
         time = `${padTime(data.hours)}:${padTime(data.minutes)}:${padTime(
-          data.seconds
+          data.seconds,
         )}`;
       }
 
@@ -120,7 +119,7 @@ export const DateTimeValue = ({
         });
       }
     },
-    [dispatchAction, id, isRange, valueProp]
+    [dispatchAction, id, isRange, valueProp],
   );
 
   const onEndDateChange = useCallback(
@@ -148,7 +147,7 @@ export const DateTimeValue = ({
         });
       }
     },
-    [dispatchAction, id, valueProp]
+    [dispatchAction, id, valueProp],
   );
 
   const onEndTimeChange = useCallback(
@@ -158,7 +157,7 @@ export const DateTimeValue = ({
       let time;
       if (data != null) {
         time = `${padTime(data.hours)}:${padTime(data.minutes)}:${padTime(
-          data.seconds
+          data.seconds,
         )}`;
       }
 
@@ -178,7 +177,7 @@ export const DateTimeValue = ({
         });
       }
     },
-    [dispatchAction, id, valueProp]
+    [dispatchAction, id, valueProp],
   );
 
   const startDate = isRange ? valueProp?.start?.date : valueProp?.date;

@@ -1,17 +1,13 @@
 import { forwardRef } from "react";
-
-import { User } from "@hitachivantara/uikit-react-icons";
-import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
-
 import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
+import { User } from "@hitachivantara/uikit-react-icons";
+import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
-import { HvBaseProps } from "../types/generic";
 import { useImageLoaded } from "../hooks/useImageLoaded";
-import { decreaseSize } from "../utils/sizes";
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
+import { decreaseSize } from "../utils/sizes";
 import { staticClasses, useClasses } from "./Avatar.styles";
 
 export { staticClasses as avatarClasses };
@@ -127,7 +123,7 @@ export const HvAvatar = forwardRef<any, HvAvatarProps>((props, ref) => {
   if (!hasImgNotFailing) {
     inlineStyle.backgroundColor = getColor(
       backgroundColor,
-      theme.colors.secondary
+      theme.colors.secondary,
     );
     inlineStyle.color = getColor(color, theme.colors.atmo1);
   }

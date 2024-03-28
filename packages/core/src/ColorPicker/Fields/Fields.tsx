@@ -1,15 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-
 import { HSLColor, HSVColor, RGBColor } from "react-color";
-
 // @ts-ignore
 import * as color from "react-color/lib/helpers/color";
 
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvInput } from "../../Input";
 import { ExtractNames } from "../../utils/classes";
-
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-
 import { staticClasses, useClasses } from "./Fields.styles";
 
 export { staticClasses as colorPickerFieldsClasses };
@@ -29,7 +25,7 @@ interface FieldsProps {
           source?: string;
           hex?: string;
         },
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => void;
   classes?: HvColorPickerFieldsClasses;
 }
@@ -80,7 +76,7 @@ export const Fields = (props: FieldsProps) => {
       g?: number;
       b?: number;
     },
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     if (data.hex && color.isValidHex(data.hex)) {
       onChange(
@@ -88,7 +84,7 @@ export const Fields = (props: FieldsProps) => {
           hex: data.hex,
           source: "hex",
         },
-        event
+        event,
       );
     } else if (data.r || data.g || data.b) {
       onChange(
@@ -98,7 +94,7 @@ export const Fields = (props: FieldsProps) => {
           b: data.b || rgb?.b,
           source: "rgb",
         },
-        event
+        event,
       );
     }
   };
@@ -111,7 +107,7 @@ export const Fields = (props: FieldsProps) => {
   const onChangeRbg = (
     event: React.ChangeEvent<any>,
     value: string,
-    colorPart: "r" | "g" | "b"
+    colorPart: "r" | "g" | "b",
   ) => {
     if (colorPart === "r") setInternalRed(Number(value));
     if (colorPart === "g") setInternalGreen(Number(value));
@@ -123,7 +119,7 @@ export const Fields = (props: FieldsProps) => {
         g: colorPart === "g" ? Number(value) : rgb?.g,
         b: colorPart === "b" ? Number(value) : rgb?.b,
       },
-      event
+      event,
     );
   };
 

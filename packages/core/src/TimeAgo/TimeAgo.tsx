@@ -1,12 +1,11 @@
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
-import { HvTypography } from "../Typography";
 import {
   fixedForwardRef,
   PolymorphicComponentRef,
   PolymorphicRef,
 } from "../types/generic";
-
+import { HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./TimeAgo.styles";
 import useTimeAgo from "./useTimeAgo";
 
@@ -51,7 +50,7 @@ export type HvTimeAgoProps<C extends React.ElementType = "p"> =
  * The HvTimeAgo component implements the Design System relative time format guidelines.
  */
 export const HvTimeAgo = fixedForwardRef(function HvTimeAgo<
-  C extends React.ElementType = "p"
+  C extends React.ElementType = "p",
 >(props: HvTimeAgoProps<C>, ref: PolymorphicRef<C>) {
   const {
     classes: classesProp,

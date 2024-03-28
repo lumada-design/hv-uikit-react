@@ -14,10 +14,10 @@ const parseState = (list = []) => {
   const anySelected = !!selection.length;
   const allSelected = selection.length === list.length;
   const anySelectableSelected = list.some(
-    (elem: any) => elem?.selected || elem?.disabled
+    (elem: any) => elem?.selected || elem?.disabled,
   );
   const allSelectableSelected = list.every(
-    (elem: any) => elem?.selected || elem?.disabled
+    (elem: any) => elem?.selected || elem?.disabled,
   );
 
   return {
@@ -39,7 +39,7 @@ const parseList = (
     singleSelectionToggle?: boolean;
   },
   selectAll: boolean | undefined,
-  list: HvListValue[] = []
+  list: HvListValue[] = [],
 ): HvListValue[] => {
   const { multiSelect, selectable, singleSelectionToggle } = props || {};
 

@@ -33,7 +33,7 @@ export const SimpleTable = () => {
         ...row,
         link: "/details",
       })),
-    []
+    [],
   );
 
   return (

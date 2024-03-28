@@ -1,5 +1,6 @@
-import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
 import { HvButton, theme } from "@hitachivantara/uikit-react-core";
+
 import * as StylingStories from "./Styling.stories";
 
 <Meta of={StylingStories} />
@@ -61,6 +62,7 @@ Then, you need to import the CSS file and use the custom class you created on th
 // CustomButton.tsx file
 
 import "./CustomButton.css";
+
 import { HvButton } from "@hitachivantara/uikit-react-core";
 
 const MyComponent = () => (
@@ -77,8 +79,8 @@ const MyComponent = () => (
 It's also possible to use **Emotion** to achieve the same result using the `css` utility as shown in the example below.
 
 ```tsx
-import { HvButton, theme } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
+import { HvButton, theme } from "@hitachivantara/uikit-react-core";
 
 const classes = {
   customButton: css({ color: theme.colors.negative }),
@@ -108,13 +110,13 @@ classes you want to override, you can target them in your CSS by creating a sele
 In the example below, a selector was created to change the color of the indicator used on the selected tab.
 
 ```tsx
+import { css } from "@emotion/css";
 import {
-  HvTabs,
   HvTab,
+  HvTabs,
   tabsClasses,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { css } from "@emotion/css";
 
 const classes = {
   tabsIndicator: css({
@@ -156,8 +158,8 @@ To create a custom class name you can use one of the patterns that were shown ab
 Find below an example on how to override the `classes` property of a component. In this example, we are overriding the style of the `HvSwitch`'s label.
 
 ```tsx
-import { HvSwitch } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
+import { HvSwitch } from "@hitachivantara/uikit-react-core";
 
 const classes = {
   label: css({ textTransform: "uppercase" }),
@@ -195,8 +197,8 @@ In order to have a cleaner and more maintainable code, you should always strive 
 To achieve this, you can use the `styled` utility from Emotion as shown in the example below. In this example, we are overriding UI Kit's `HvButton`.
 
 ```tsx
-import { HvButton, HvButtonProps } from "@hitachivantara/uikit-react-core";
 import styled from "@emotion/styled";
+import { HvButton, HvButtonProps } from "@hitachivantara/uikit-react-core";
 
 const StyledHvButton = styled(HvButton)({
   textTransform: "uppercase",
@@ -226,10 +228,10 @@ In the example below, the border radius and background color of the `HvCard` com
 ```tsx
 import {
   createTheme,
-  HvProvider,
   HvCard,
-  HvCardHeader,
   HvCardContent,
+  HvCardHeader,
+  HvProvider,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
@@ -272,10 +274,10 @@ The example below shows how the `HvTypography` and `HvButton` components can be 
 ```tsx
 import {
   createTheme,
-  HvProvider,
   HvCard,
-  HvCardHeader,
   HvCardContent,
+  HvCardHeader,
+  HvProvider,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 

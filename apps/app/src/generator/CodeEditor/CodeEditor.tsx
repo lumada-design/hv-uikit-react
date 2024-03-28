@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { css } from "@emotion/css";
-import { useDebounceCallback } from "usehooks-ts";
 import JSON5 from "json5";
-import { HvIconButton, useTheme } from "@hitachivantara/uikit-react-core";
-import { Download, Reset, Duplicate } from "@hitachivantara/uikit-react-icons";
+import { useDebounceCallback } from "usehooks-ts";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
+import { HvIconButton, useTheme } from "@hitachivantara/uikit-react-core";
+import { Download, Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
 
 import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { getThemeCode } from "~/generator/utils";
@@ -63,7 +63,7 @@ const CodeEditor = ({
 
     const snippet = code.substring(
       code.indexOf("({") + 1,
-      code.indexOf("});") + 1
+      code.indexOf("});") + 1,
     );
 
     try {
@@ -76,7 +76,7 @@ const CodeEditor = ({
             {
               isBaseChange: true,
               isCodeEdit: true,
-            }
+            },
           );
         } else {
           console.log("invalid base theme");

@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 
-import { Header } from "~/components/common/Header";
 import { Container } from "~/components/common/Container";
+import { Header } from "~/components/common/Header";
 import { Tutorial } from "~/components/common/Tutorial";
 import GeneratorProvider, {
   useGeneratorContext,

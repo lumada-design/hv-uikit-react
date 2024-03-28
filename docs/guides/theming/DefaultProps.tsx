@@ -1,8 +1,8 @@
 import {
-  HvProvider,
   createTheme,
   HvAvatar,
   HvButton,
+  HvProvider,
   theme,
 } from "@hitachivantara/uikit-react-core";
 

@@ -107,7 +107,7 @@ export function useDescendant(descendant) {
   // so that everything is up-to-date before the user interacts with a
   // collection.
   const index = descendants.findIndex(
-    (item) => item.element === descendant.element
+    (item) => item.element === descendant.element,
   );
 
   const previousDescendants: Item[] | null = usePrevious(descendants);
@@ -123,7 +123,7 @@ export function useDescendant(descendant) {
         // previousDescendants[position].element !== newDescendant.element
         // was not able to type check this, did not any difference
       );
-    }
+    },
   );
 
   // Prevent any flashing
@@ -208,7 +208,7 @@ export const DescendantProvider = (props: DescendantProviderProps) => {
 
   const unregisterDescendant = useCallback((element: Item) => {
     set((oldItems) =>
-      oldItems.filter((item: Item) => element !== item.element)
+      oldItems.filter((item: Item) => element !== item.element),
     );
   }, []);
 
@@ -220,7 +220,7 @@ export const DescendantProvider = (props: DescendantProviderProps) => {
       parentId: id,
       level,
     }),
-    [items, registerDescendant, unregisterDescendant, id, level]
+    [items, registerDescendant, unregisterDescendant, id, level],
   );
 
   return (

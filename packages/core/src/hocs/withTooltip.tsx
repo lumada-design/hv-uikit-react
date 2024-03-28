@@ -19,11 +19,11 @@ export const withTooltip =
     placement: HvTooltipPlacementType,
     hideTooltip?: (event: React.MouseEvent<HTMLDivElement>) => boolean,
     tooltipProps?: Partial<HvTooltipProps>,
-    tooltipContainerProps?: HvBaseProps
+    tooltipContainerProps?: HvBaseProps,
   ) =>
   (props) => {
     const [isHoverDisabled, setIsHoverDisabled] = useState<boolean | undefined>(
-      false
+      false,
     );
     const [open, setOpen] = useState<boolean>(false);
 

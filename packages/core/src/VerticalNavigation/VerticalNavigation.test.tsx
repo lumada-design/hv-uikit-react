@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { LogOut, User } from "@hitachivantara/uikit-react-icons";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it } from "vitest";
+import { LogOut, User } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvVerticalNavigation,
@@ -70,7 +70,7 @@ const Sample = ({
         ],
       },
     ],
-    []
+    [],
   );
 
   const [value, setValue] = useState("00");
@@ -175,7 +175,7 @@ const SliderSample = () => {
         parent: null,
       },
     ],
-    []
+    [],
   );
 
   const [value, setValue] = useState("menu3");
@@ -296,7 +296,7 @@ describe("VerticalNavigation", () => {
       expect(newTitle).toBeInTheDocument();
 
       expect(
-        screen.queryByRole("listitem", { name: "Menu 2" })
+        screen.queryByRole("listitem", { name: "Menu 2" }),
       ).not.toBeInTheDocument();
 
       const goBackButton = screen.getByRole("button", { name: "backButton" });
@@ -305,7 +305,7 @@ describe("VerticalNavigation", () => {
       await userEvent.click(goBackButton);
 
       expect(
-        screen.queryByRole("listitem", { name: "Menu 2" })
+        screen.queryByRole("listitem", { name: "Menu 2" }),
       ).toBeInTheDocument();
     });
   });

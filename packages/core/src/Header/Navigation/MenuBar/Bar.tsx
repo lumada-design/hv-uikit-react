@@ -1,13 +1,11 @@
 import { useContext } from "react";
 
+import { useDefaultProps } from "../../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../../types/generic";
 import { ExtractNames } from "../../../utils/classes";
-
-import { useDefaultProps } from "../../../hooks/useDefaultProps";
-
+import { HvHeaderNavigationItemProp } from "../useSelectionPath";
 import { SelectionContext } from "../utils/SelectionContext";
 import { staticClasses, useClasses } from "./Bar.styles";
-import { HvHeaderNavigationItemProp } from "../useSelectionPath";
 
 export { staticClasses as headerMenuBarClasses };
 
@@ -46,7 +44,7 @@ export const Bar = (props: BarProps) => {
           [classes.hidden]: isMenu,
           [classes.active]: isActive,
         },
-        className
+        className,
       )}
     >
       <ul className={classes.list} id={id} onFocus={() => {}}>

@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-
 import {
   ExtractNames,
   HvBaseProps,
@@ -34,7 +33,7 @@ export const HvFlowSidebarGroupItem = forwardRef<
       className,
       ...others
     }: HvFlowSidebarGroupItemProps,
-    ref
+    ref,
   ) => {
     const { classes, cx } = useClasses(classesProp);
 
@@ -44,7 +43,7 @@ export const HvFlowSidebarGroupItem = forwardRef<
         className={cx(
           classes.root,
           { [classes.dragging]: isDragging },
-          className
+          className,
         )}
         {...others}
       >
@@ -52,5 +51,5 @@ export const HvFlowSidebarGroupItem = forwardRef<
         <Drag role="none" />
       </div>
     );
-  }
+  },
 );

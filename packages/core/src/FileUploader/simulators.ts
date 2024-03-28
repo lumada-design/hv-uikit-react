@@ -11,7 +11,7 @@ const simulateUploadStep = (
   file: HvFileData,
   onProgress: (progress: number) => void,
   onComplete: () => void,
-  uploadSpeed: number
+  uploadSpeed: number,
 ) => {
   const progress =
     file.progress != null && file.size != null
@@ -31,13 +31,13 @@ export const simulateUpload = (
   file: HvFileData,
   onProgress: (progress: number) => void,
   onComplete: () => void,
-  uploadSpeed = 20000 /* bits per second */
+  uploadSpeed = 20000 /* bits per second */,
 ) => {
   uploadHandlers.set(
     file,
     setInterval(() => {
       simulateUploadStep(file, onProgress, onComplete, uploadSpeed);
-    }, 250)
+    }, 250),
   );
 };
 

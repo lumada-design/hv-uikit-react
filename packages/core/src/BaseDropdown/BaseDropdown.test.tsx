@@ -1,5 +1,5 @@
-import userEvent from "@testing-library/user-event";
 import { fireEvent, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
 import { HvBaseDropdown } from "./BaseDropdown";
@@ -28,7 +28,7 @@ describe("BaseDropDown", () => {
         disabled
         placeholder="Placeholder..."
         aria-label="Main sample"
-      />
+      />,
     );
 
     const baseDropdownHeader = screen.getByRole("combobox");

@@ -1,7 +1,6 @@
 import { memo, useMemo } from "react";
 
 import { HvDropdown } from "../../../Dropdown";
-
 import { useQueryBuilderContext } from "../../Context";
 import { isBigList } from "../../utils";
 
@@ -28,7 +27,7 @@ export const Operator = ({
       attribute && attributes ? attributes[attribute] : null;
     const options = attributeSpec
       ? operators[attributeSpec.type].filter((o) =>
-          o.combinators.includes(combinator)
+          o.combinators.includes(combinator),
         ) ?? []
       : [];
     return options.map((key) => ({

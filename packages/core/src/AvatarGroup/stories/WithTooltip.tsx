@@ -1,8 +1,8 @@
 import {
+  HvAvatar,
+  HvAvatarGroup,
   HvTooltip,
   HvTypography,
-  HvAvatarGroup,
-  HvAvatar,
 } from "@hitachivantara/uikit-react-core";
 
 export const WithTooltip = () => {

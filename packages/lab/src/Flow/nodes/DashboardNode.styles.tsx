@@ -3,7 +3,7 @@ import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 import { staticClasses as nodeClasses } from "../Node/Node.styles";
 
 const baseClasses = Object.fromEntries(
-  Object.keys(nodeClasses).map((key) => [key, {}])
+  Object.keys(nodeClasses).map((key) => [key, {}]),
 ) as Record<keyof typeof nodeClasses, {}>;
 
 export const { staticClasses, useClasses } = createClasses("HvDashboardNode", {

@@ -1,11 +1,10 @@
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvBaseProps } from "../types/generic";
 import { HvButton } from "../Button";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvPaginationProps } from "../Pagination";
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
 import { useClasses } from "./Carousel.styles";
 
 interface HvCarouselControlsProps

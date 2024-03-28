@@ -1,24 +1,22 @@
 import { forwardRef, useContext, useMemo } from "react";
-import { hexToRgb, alpha } from "@mui/material/styles";
-
+import { alpha, hexToRgb } from "@mui/material/styles";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvTypography, HvTypographyProps } from "../../Typography";
-import { useTheme } from "../../hooks/useTheme";
-import { ExtractNames } from "../../utils/classes";
-import { capitalize } from "../../utils/helpers";
 import { HvButton, HvButtonProps } from "../../Button";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
-import TableContext from "../TableContext";
-import TableSectionContext from "../TableSectionContext";
-import { getSortIcon, isParagraph } from "./utils";
-import { useClasses, staticClasses } from "./TableHeader.styles";
+import { useTheme } from "../../hooks/useTheme";
+import { HvTypography, HvTypographyProps } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
+import { capitalize } from "../../utils/helpers";
 import {
   HvTableCellAlign,
   HvTableCellType,
   HvTableCellVariant,
 } from "../Table";
+import TableContext from "../TableContext";
+import TableSectionContext from "../TableSectionContext";
+import { staticClasses, useClasses } from "./TableHeader.styles";
+import { getSortIcon, isParagraph } from "./utils";
 
 export { staticClasses as tableHeaderClasses };
 
@@ -113,7 +111,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
 
     const Sort = useMemo(
       () => getSortIcon(sorted && sortDirection),
-      [sorted, sortDirection]
+      [sorted, sortDirection],
     );
 
     const Component =
@@ -123,8 +121,8 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
       Component === defaultComponent
         ? null
         : isHeadCell
-        ? "columnheader"
-        : "rowheader";
+          ? "columnheader"
+          : "rowheader";
     const paragraph = isParagraph(children);
 
     // Keep the header sticky
@@ -146,7 +144,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
               [`&.${staticClasses.sorted}`]: {
                 backgroundColor: alpha(
                   hexToRgb(colors?.atmo1 || theme.colors.atmo1),
-                  0.4
+                  0.4,
                 ),
               },
             }),
@@ -164,7 +162,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
             [classes[`align${capitalize(align)}`]]: align !== "inherit",
             [classes[`variant${capitalize(variant)}`]]: variant !== "default",
           },
-          className
+          className,
         )}
         aria-sort={sortable ? sortDirection : undefined}
         {...others}
@@ -201,5 +199,5 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
         </div>
       </Component>
     );
-  }
+  },
 );

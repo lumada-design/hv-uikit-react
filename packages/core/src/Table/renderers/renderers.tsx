@@ -1,37 +1,35 @@
 import { ClassNames } from "@emotion/react";
-
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import { setId } from "../../utils/setId";
-import { HvTag, HvTagProps } from "../../Tag";
+import { HvBaseSwitchProps } from "../../BaseSwitch";
 import { HvButton } from "../../Button";
-import { HvTypography } from "../../Typography";
+import { HvDropdownProps } from "../../Dropdown";
+import { HvListValue } from "../../List";
 import {
   HvOverflowTooltip,
   HvOverflowTooltipProps,
 } from "../../OverflowTooltip";
-import { HvBaseSwitchProps } from "../../BaseSwitch";
-import { HvListValue } from "../../List";
-
+import { HvTag, HvTagProps } from "../../Tag";
+import { HvTypography } from "../../Typography";
+import { setId } from "../../utils/setId";
 import {
-  HvTableHeaderRenderer,
   HvCellProps,
-  HvTableColumnConfig,
   HvRowInstance,
+  HvTableColumnConfig,
+  HvTableHeaderRenderer,
 } from "../hooks/useTable";
+import { hvNumberFallback, hvStringFallback } from "../utils";
 import { HvDateColumnCell } from "./DateColumnCell";
-import { HvSwitchColumnCell } from "./SwitchColumnCell";
-import { HvProgressColumnCell } from "./ProgressColumnCell";
 import { HvDropdownColumnCell } from "./DropdownColumnCell";
-import { hvStringFallback, hvNumberFallback } from "../utils";
-import { HvDropdownProps } from "../../Dropdown";
+import { HvProgressColumnCell } from "./ProgressColumnCell";
+import { HvSwitchColumnCell } from "./SwitchColumnCell";
 
 export function hvTextColumn<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(
   col: HvTableColumnConfig<D, H>,
-  overflowTooltipProps: Omit<HvOverflowTooltipProps, "data"> = {}
+  overflowTooltipProps: Omit<HvOverflowTooltipProps, "data"> = {},
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: ({ value }: HvCellProps<D, H>) => (
@@ -47,7 +45,7 @@ export function hvTextColumn<
 
 export function hvNumberColumn<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(col: HvTableColumnConfig<D, H>): HvTableColumnConfig<D, H> {
   return {
     Cell: ({ value }: HvCellProps<D, H>) => <>{hvNumberFallback(value)}</>,
@@ -59,10 +57,10 @@ export function hvNumberColumn<
 
 export function hvDateColumn<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(
   col: HvTableColumnConfig<D, H>,
-  dateFormat?: string
+  dateFormat?: string,
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: ({ value }: HvCellProps<D, H>) => (
@@ -76,14 +74,14 @@ export function hvDateColumn<
 
 export function hvExpandColumn<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(
   col: HvTableColumnConfig<D, H>,
   expandRowButtonAriaLabel: string,
   collapseRowButtonAriaLabel: string,
   getCanRowExpand?: (row: HvRowInstance<D, H>) => boolean,
   ExpandedIcon: React.ReactNode = <DropUpXS />,
-  CollapsedIcon: React.ReactNode = <DropDownXS />
+  CollapsedIcon: React.ReactNode = <DropDownXS />,
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
@@ -136,14 +134,14 @@ export function hvExpandColumn<
 export function hvTagColumn<
   D extends object = Record<string, unknown>,
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
-  A extends object = Record<string, unknown>
+  A extends object = Record<string, unknown>,
 >(
   col: HvTableColumnConfig<D, H>,
   valueDataKey: keyof A,
   colorDataKey: keyof A,
   textColorDataKey: keyof A,
   fromRowData: boolean = false,
-  tagProps?: HvTagProps
+  tagProps?: HvTagProps,
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
@@ -181,13 +179,13 @@ export function hvTagColumn<
 
 export function hvSwitchColumn<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(
   col: HvTableColumnConfig<D, H>,
   switchLabel: string,
   falseLabel?: string,
   trueLabel?: string,
-  switchProps?: HvBaseSwitchProps
+  switchProps?: HvBaseSwitchProps,
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
@@ -213,14 +211,14 @@ export function hvSwitchColumn<
 
 export function hvDropdownColumn<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(
   col: HvTableColumnConfig<D, H>,
   id: string | undefined,
   placeholder: string,
   disabledPlaceholder: string,
   onChange?: (identifier: string, value: HvListValue) => void,
-  dropdownProps?: HvDropdownProps
+  dropdownProps?: HvDropdownProps,
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
@@ -250,12 +248,12 @@ export function hvDropdownColumn<
 
 export function hvProgressColumn<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(
   col: HvTableColumnConfig<D, H>,
   getPartial?: (row: HvRowInstance<D, H>) => number,
   getTotal?: (row: HvRowInstance<D, H>) => number,
-  color?: "primary" | "secondary"
+  color?: "primary" | "secondary",
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {

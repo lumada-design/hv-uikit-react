@@ -1,5 +1,5 @@
-import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { useTheme } from "nextra-theme-docs";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 import { Logo } from "./components/Logo";
 

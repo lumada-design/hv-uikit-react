@@ -1,5 +1,5 @@
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
-import { Tetris, Ungroup, Table } from "@hitachivantara/uikit-react-icons";
+import { Table, Tetris, Ungroup } from "@hitachivantara/uikit-react-icons";
 
 import { Container } from "./styles";
 

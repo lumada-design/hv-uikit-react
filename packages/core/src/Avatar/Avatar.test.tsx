@@ -15,7 +15,7 @@ describe("Avatar", () => {
     render(
       <HvAvatar>
         <LogIn role="img" aria-label="login" />
-      </HvAvatar>
+      </HvAvatar>,
     );
 
     expect(screen.getByRole("img", { name: "login" })).toBeInTheDocument();

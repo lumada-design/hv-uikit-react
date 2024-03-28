@@ -1,5 +1,4 @@
 import { HvListValue } from "../List";
-
 import type { HvDropdownLabels } from "./Dropdown";
 
 /** Filter selected elements. */
@@ -14,7 +13,7 @@ const getSelectionLabel = (
   labels: HvDropdownLabels | undefined,
   placeholder: string,
   multiSelect: boolean,
-  list: HvListValue[] = []
+  list: HvListValue[] = [],
 ) => {
   const { select } = labels || {};
   const selected = getSelected(list);

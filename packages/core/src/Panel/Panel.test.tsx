@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 
 import { HvPanel } from "./Panel";
 
@@ -8,7 +8,7 @@ describe("Panel", () => {
     render(
       <HvPanel>
         <div>Panel Content</div>
-      </HvPanel>
+      </HvPanel>,
     );
     const component = await screen.findAllByText("Panel Content");
     expect(component.length).toBe(1);

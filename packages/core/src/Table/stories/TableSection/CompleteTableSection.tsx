@@ -1,19 +1,19 @@
-import { useState, useCallback, useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import {
-  HvTableContainer,
+  HvBulkActions,
+  HvPagination,
   HvTable,
   HvTableBody,
+  HvTableCell,
+  HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   HvTableSection,
-  HvPagination,
-  HvBulkActions,
-  useHvPagination,
-  useHvRowSelection,
   useHvBulkActions,
   useHvData,
+  useHvPagination,
+  useHvRowSelection,
 } from "@hitachivantara/uikit-react-core";
 import {
   Delete,
@@ -49,7 +49,7 @@ export const CompleteTableSection = () => {
     { columns, data },
     useHvPagination,
     useHvRowSelection,
-    useHvBulkActions
+    useHvBulkActions,
   );
 
   const handleAction = useCallback(
@@ -78,7 +78,7 @@ export const CompleteTableSection = () => {
           break;
       }
     },
-    [data, selectedFlatRows, toggleAllRowsSelected]
+    [data, selectedFlatRows, toggleAllRowsSelected],
   );
 
   const renderTableRow = (i: number) => {

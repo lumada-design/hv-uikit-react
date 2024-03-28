@@ -1,6 +1,5 @@
-import type { Theme } from "@unocss/preset-uno";
 import { ThemeExtender } from "@unocss/core";
-
+import type { Theme } from "@unocss/preset-uno";
 import { ds5 as hvTheme } from "@hitachivantara/uikit-styles";
 
 // #region theme conversion utils
@@ -9,11 +8,11 @@ const { base, ...hvSpacing } = hvTheme.space;
 
 /** HV breakpoints with added `px` suffix */
 const hvBreakpoints = Object.entries(hvTheme.breakpoints.values).map(
-  ([key, value]) => [key, `${value}px`] as const
+  ([key, value]) => [key, `${value}px`] as const,
 );
 
 const hvZIndex = Object.entries(hvTheme.zIndices).map(
-  ([key, value]) => [key, `${value}`] as const
+  ([key, value]) => [key, `${value}`] as const,
 );
 // #endregion
 
@@ -27,7 +26,7 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
   },
   breakpoints: Object.fromEntries(hvBreakpoints),
   containers: Object.fromEntries(
-    hvBreakpoints.map(([k, v]) => [k, `(min-width: ${v})`])
+    hvBreakpoints.map(([k, v]) => [k, `(min-width: ${v})`]),
   ),
   spacing: {
     DEFAULT: hvSpacing.xs,

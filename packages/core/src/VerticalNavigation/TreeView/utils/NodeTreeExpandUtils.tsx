@@ -7,7 +7,7 @@ export class NodeTreeExpandUtils {
     let newExpanded;
     if (expanded.indexOf(nodeId) !== -1) {
       newExpanded = expanded.filter(
-        (expandedNodeId) => expandedNodeId !== nodeId
+        (expandedNodeId) => expandedNodeId !== nodeId,
       );
     } else {
       newExpanded = [...expanded, nodeId];
@@ -23,7 +23,7 @@ export class NodeTreeExpandUtils {
     const diff = parent.children
       .filter((childNode) => nodeMap[childNode].children != null)
       .filter(
-        (childNode) => !NodeTreeExpandUtils.isExpanded(expanded, childNode)
+        (childNode) => !NodeTreeExpandUtils.isExpanded(expanded, childNode),
       );
 
     if (diff.length > 0) {
@@ -50,8 +50,8 @@ export class NodeTreeExpandUtils {
       if (node && node.children) {
         node.children.forEach((childId) =>
           toReturn.push(
-            ...NodeTreeExpandUtils.getVisibleNodes(expanded, nodeMap, childId)
-          )
+            ...NodeTreeExpandUtils.getVisibleNodes(expanded, nodeMap, childId),
+          ),
         );
       }
     }

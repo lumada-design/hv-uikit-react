@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { Global } from "@storybook/theming";
-import {
-  WithTooltip,
-  TooltipLinkList,
-  IconButton,
-} from "@storybook/components";
+import React, { useEffect, useState } from "react";
 import { addons } from "@storybook/addons";
+import {
+  IconButton,
+  TooltipLinkList,
+  WithTooltip,
+} from "@storybook/components";
+import { Global } from "@storybook/theming";
 
 import { themes } from "../../../packages/styles/src";
 import { getManagerStyles } from "../../theme/styles/manager";
-import {
-  getThemesList,
-  getInitialTheme,
-  setLocalTheme,
-  getLocalTheme,
-} from "./utils";
 import { ADDON_EVENT, ADDON_ID } from "./constants";
+import {
+  getInitialTheme,
+  getLocalTheme,
+  getThemesList,
+  setLocalTheme,
+} from "./utils";
 
 const ThemeSelector = ({ api }) => {
   const managerStyles = getManagerStyles();
@@ -27,7 +27,7 @@ const ThemeSelector = ({ api }) => {
     const currentTheme = getLocalTheme();
 
     const newTheme = themesList.find(
-      (el) => el.name === `${currentTheme?.split("-")[0]}-${mode}`
+      (el) => el.name === `${currentTheme?.split("-")[0]}-${mode}`,
     );
 
     if (newTheme) {

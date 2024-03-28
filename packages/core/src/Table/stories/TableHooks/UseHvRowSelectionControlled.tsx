@@ -2,16 +2,16 @@ import { useMemo, useState } from "react";
 import {
   HvTable,
   HvTableBody,
+  HvTableCell,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTableCell,
   useHvData,
   useHvRowSelection,
 } from "@hitachivantara/uikit-react-core";
 
-import { getColumns, makeSelectedData, AssetEvent } from "../storiesUtils";
+import { AssetEvent, getColumns, makeSelectedData } from "../storiesUtils";
 
 export const UseHvSelectionControlled = () => {
   const columns = useMemo(() => getColumns(), []);
@@ -21,7 +21,7 @@ export const UseHvSelectionControlled = () => {
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
     useHvData<AssetEvent, string>(
       { columns, data, manualRowSelectedKey: "selected" },
-      useHvRowSelection
+      useHvRowSelection,
     );
 
   return (

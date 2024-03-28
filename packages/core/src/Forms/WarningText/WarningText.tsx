@@ -1,15 +1,13 @@
 import { useContext } from "react";
-
 import { Fail } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../types/generic";
-import { setId } from "../../utils/setId";
-import { ExtractNames } from "../../utils/classes";
 import { HvTypography } from "../../Typography";
-
-import { staticClasses, useClasses } from "./WarningText.styles";
+import { ExtractNames } from "../../utils/classes";
+import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../FormElement";
+import { staticClasses, useClasses } from "./WarningText.styles";
 
 export { staticClasses as warningTextClasses };
 
@@ -74,7 +72,7 @@ export const HvWarningText = (props: HvWarningTextProps) => {
           [classes.show]: showWarning,
           [classes.topBorder]: !disableBorder,
         },
-        className
+        className,
       )}
     >
       {!disableAdornment && localAdornment}

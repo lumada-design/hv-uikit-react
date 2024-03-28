@@ -28,7 +28,7 @@ const init = () => {
 
     // Run a11y and create a report
     execSync(
-      `npx storybook-a11y-report --storybookUrl ${storybookUrl} --outputFormat html --outDir ${outputDir} ${excludeStories}`
+      `npx storybook-a11y-report --storybookUrl ${storybookUrl} --outputFormat html --outDir ${outputDir} ${excludeStories}`,
     );
 
     // File paths
@@ -51,7 +51,7 @@ const init = () => {
         "<title>Accessibility report</title>",
         `<title>NEXT UI Kit Accessibility Report</title>
         <link rel="stylesheet" type="text/css" href="styles/styles.css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet"/>`
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet"/>`,
       )
       .replace(
         "<h1>Accessibility report</h1>",
@@ -67,8 +67,8 @@ const init = () => {
             hour12: false,
             timeZoneName: "long",
             timeZone: "GMT",
-          }
-        )}</h2>`
+          },
+        )}</h2>`,
       )
       .replace("violations have been found", "A11y issues")
       .replaceAll(storybookUrl, "https://lumada-design.github.io/uikit/master");
@@ -76,7 +76,7 @@ const init = () => {
     if (updatedHtml.search("A11y issues") === -1) {
       updatedHtml = updatedHtml.replace(
         "</body>",
-        "<h3>No Accessibility Issues Found</h3><img src='./404.svg'><h4>Wow, such empty</h4></body>"
+        "<h3>No Accessibility Issues Found</h3><img src='./404.svg'><h4>Wow, such empty</h4></body>",
       );
     }
 

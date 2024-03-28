@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it, vi } from "vitest";
+import { Add, Delete, Lock, Preview } from "@hitachivantara/uikit-react-icons";
 
 import { HvBulkActions, HvBulkActionsProps } from "./BulkActions";
 

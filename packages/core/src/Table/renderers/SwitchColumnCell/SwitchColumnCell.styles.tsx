@@ -15,5 +15,5 @@ export const { staticClasses, useClasses } = createClasses(
     switchYes: {
       ...switchStyle,
     },
-  }
+  },
 );

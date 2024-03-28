@@ -8,24 +8,26 @@ import {
   useRef,
   useState,
 } from "react";
-
 import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material/InputBase";
 import { useForkRef } from "@mui/material/utils";
-
 import {
   CloseXS,
-  PreviewOff,
   Preview,
+  PreviewOff,
   Search,
   Success,
 } from "@hitachivantara/uikit-react-icons";
 
-import { ExtractNames } from "../utils/classes";
-import { isBrowser } from "../utils/browser";
-import { isKey } from "../utils/keyboardUtils";
-import { setId } from "../utils/setId";
-import { HvInputSuggestion, HvValidationMessages } from "../types/forms";
-import { HvBaseProps } from "../types/generic";
+import { HvBaseInput, HvBaseInputProps } from "../BaseInput";
+import {
+  computeValidationMessage,
+  computeValidationState,
+  computeValidationType,
+  DEFAULT_ERROR_MESSAGES,
+  hasBuiltInValidations,
+  HvInputValidity,
+  validateInput,
+} from "../BaseInput/validations";
 import {
   HvAdornment,
   HvAdornmentProps,
@@ -38,28 +40,22 @@ import {
   HvSuggestions,
   HvSuggestionsProps,
   HvWarningText,
-  isValid,
   isInvalid,
+  isValid,
 } from "../Forms";
 import validationStates from "../Forms/FormElement/validationStates";
-import { HvBaseInput, HvBaseInputProps } from "../BaseInput";
-import {
-  DEFAULT_ERROR_MESSAGES,
-  computeValidationType,
-  hasBuiltInValidations,
-  validateInput,
-  computeValidationState,
-  computeValidationMessage,
-  HvInputValidity,
-} from "../BaseInput/validations";
-import { HvTooltip } from "../Tooltip";
 import { useControlled } from "../hooks/useControlled";
-import { useIsMounted } from "../hooks/useIsMounted";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useLabels } from "../hooks/useLabels";
-
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
+import { useIsMounted } from "../hooks/useIsMounted";
+import { useLabels } from "../hooks/useLabels";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvTooltip } from "../Tooltip";
+import { HvInputSuggestion, HvValidationMessages } from "../types/forms";
+import { HvBaseProps } from "../types/generic";
+import { isBrowser } from "../utils/browser";
+import { ExtractNames } from "../utils/classes";
+import { isKey } from "../utils/keyboardUtils";
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Input.styles";
 
 export { staticClasses as inputClasses };
@@ -117,7 +113,7 @@ export interface HvInputProps
    */
   onEnter?: (
     event: React.KeyboardEvent<InputElement> | React.MouseEvent,
-    value: string
+    value: string,
   ) => void;
   /**
    * The function that will be executed onBlur, allows checking the validation state,
@@ -126,7 +122,7 @@ export interface HvInputProps
   onBlur?: (
     event: React.FocusEvent<InputElement>,
     value: string,
-    validationState: HvInputValidity
+    validationState: HvInputValidity,
   ) => void;
   /**
    * The function that will be executed onBlur, allows checking the value state,
@@ -139,7 +135,7 @@ export interface HvInputProps
    */
   onKeyDown?: (
     event: React.KeyboardEvent<InputElement> | React.MouseEvent,
-    value: string
+    value: string,
   ) => void;
   /** The input type. */
   type?: React.HTMLInputTypeAttribute;
@@ -212,7 +208,7 @@ const getFocusedElement = (event: React.FocusEvent) =>
 
 function eventTargetIsInsideContainer(
   container: HTMLElement | null,
-  event: React.FocusEvent<any>
+  event: React.FocusEvent<any>,
 ) {
   return container != null && container.contains(getFocusedElement(event));
 }
@@ -224,7 +220,7 @@ const changeInputValue = (input: HTMLInputElement | null, value = "") => {
   /** Original `input.value` setter (React overrides it). */
   const setInputValue = Object.getOwnPropertyDescriptor(
     window.HTMLInputElement.prototype,
-    "value"
+    "value",
   )?.set;
 
   setInputValue?.call(input, value);
@@ -297,12 +293,12 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
   // Validation related state
   const [validationState, setValidationState] = useControlled(
     status,
-    validationStates.standBy
+    validationStates.standBy,
   );
 
   const [validationMessage, setValidationMessage] = useControlled(
     statusMessage,
-    ""
+    "",
   );
 
   // validationMessages reference tends to change, as users will not memoize/useState for it;
@@ -316,7 +312,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
       validationMessages?.minCharError,
       validationMessages?.maxCharError,
       validationMessages?.typeMismatchError,
-    ]
+    ],
   );
 
   const validationType = useMemo(() => computeValidationType(type), [type]);
@@ -331,7 +327,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
       minCharQuantity,
       maxCharQuantity,
       validationType,
-      validation
+      validation,
     );
 
     // This will only run if status is uncontrolled
@@ -339,7 +335,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
 
     // This will only run if statusMessage is uncontrolled
     setValidationMessage(
-      computeValidationMessage(inputValidity, errorMessages)
+      computeValidationMessage(inputValidity, errorMessages),
     );
 
     return inputValidity;
@@ -370,7 +366,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
           minCharQuantity,
           maxCharQuantity,
           validation,
-          inputProps
+          inputProps,
         )));
 
   const isStateInvalid = isInvalid(validationState);
@@ -500,7 +496,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
   const getSuggestions = (li: number | null) => {
     // TODO Replace with ref
     const listEl = document.getElementById(
-      setId(elementId, "suggestions-list") || ""
+      setId(elementId, "suggestions-list") || "",
     );
     return li != null ? listEl?.getElementsByTagName("li")?.[li] : listEl;
   };
@@ -603,7 +599,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
     (event) => {
       onEnter?.(event, value);
     },
-    [onEnter, value]
+    [onEnter, value],
   );
 
   const searchButton = useMemo(() => {
@@ -696,7 +692,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
       cloneElement(endAdornment as React.ReactElement, {
         className: cx(endAdornment.props.className, classes.icon),
       }),
-    [classes.icon, endAdornment, cx]
+    [classes.icon, endAdornment, cx],
   );
 
   const adornments = useMemo(() => {
@@ -759,7 +755,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
         {
           [classes.hasSuggestions]: hasSuggestions,
         },
-        className
+        className,
       )}
       onBlur={onContainerBlurHandler}
     >
@@ -820,8 +816,8 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
             ariaDescribedBy != null
               ? ariaDescribedBy
               : description
-              ? setId(elementId, "description")
-              : undefined,
+                ? setId(elementId, "description")
+                : undefined,
           "aria-controls": canShowSuggestions
             ? setId(elementId, "suggestions")
             : undefined,

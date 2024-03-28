@@ -35,7 +35,7 @@ describe("CheckBox", () => {
               "data-testid": "favorite-animal",
             } as React.InputHTMLAttributes<HTMLInputElement>
           }
-        />
+        />,
       );
 
       const checkbox = screen.getByRole("checkbox");
@@ -49,7 +49,7 @@ describe("CheckBox", () => {
       const onFocusMock = vi.fn();
 
       render(
-        <HvCheckBox value="dogs" label="Dogs" onFocusVisible={onFocusMock} />
+        <HvCheckBox value="dogs" label="Dogs" onFocusVisible={onFocusMock} />,
       );
 
       const checkbox = screen.getByRole("checkbox", { name: "Dogs" });
@@ -158,7 +158,7 @@ describe("CheckBox", () => {
 
     it("should clear the indeterminate state by clicking an uncontrolled checkbox (checked)", async () => {
       render(
-        <HvCheckBox value="dogs" label="Dogs" defaultChecked indeterminate />
+        <HvCheckBox value="dogs" label="Dogs" defaultChecked indeterminate />,
       );
 
       const checkbox = screen.getByRole("checkbox");
@@ -212,7 +212,7 @@ describe("CheckBox", () => {
           label="Dogs"
           readOnly
           onChange={onChangeMock}
-        />
+        />,
       );
 
       const checkbox = screen.getByRole("checkbox");
@@ -245,7 +245,7 @@ describe("CheckBox", () => {
           label="Dogs"
           disabled
           onChange={onChangeMock}
-        />
+        />,
       );
 
       const checkbox = screen.getByRole("checkbox");
@@ -278,7 +278,7 @@ describe("CheckBox", () => {
         <>
           <span id="label-element-id">An external label</span>
           <HvCheckBox value="dogs" aria-labelledby="label-element-id" />
-        </>
+        </>,
       );
 
       const checkbox = screen.getByRole("checkbox", {
@@ -309,7 +309,7 @@ describe("CheckBox", () => {
             label="Dogs"
             aria-describedby="description-element-id"
           />
-        </>
+        </>,
       );
 
       const checkbox = screen.getByRole("checkbox");
@@ -336,7 +336,7 @@ describe("CheckBox", () => {
       expect(onChangeMock).toHaveBeenCalledWith(
         expect.anything(),
         true,
-        "dogs"
+        "dogs",
       );
     });
 
@@ -349,7 +349,7 @@ describe("CheckBox", () => {
           label="Dogs"
           defaultChecked
           onChange={onChangeMock}
-        />
+        />,
       );
 
       const checkbox = screen.getByRole("checkbox");
@@ -363,7 +363,7 @@ describe("CheckBox", () => {
       expect(onChangeMock).toHaveBeenCalledWith(
         expect.anything(),
         false,
-        "dogs"
+        "dogs",
       );
     });
 
@@ -376,7 +376,7 @@ describe("CheckBox", () => {
           label="Dogs"
           indeterminate
           onChange={onChangeMock}
-        />
+        />,
       );
 
       const checkbox = screen.getByRole("checkbox");
@@ -390,7 +390,7 @@ describe("CheckBox", () => {
       expect(onChangeMock).toHaveBeenCalledWith(
         expect.anything(),
         true,
-        "dogs"
+        "dogs",
       );
     });
 
@@ -404,7 +404,7 @@ describe("CheckBox", () => {
           indeterminate
           defaultChecked
           onChange={onChangeMock}
-        />
+        />,
       );
 
       const checkbox = screen.getByRole("checkbox");
@@ -418,7 +418,7 @@ describe("CheckBox", () => {
       expect(onChangeMock).toHaveBeenCalledWith(
         expect.anything(),
         false,
-        "dogs"
+        "dogs",
       );
     });
   });
@@ -431,7 +431,7 @@ describe("CheckBox", () => {
           label="Dogs"
           status="invalid"
           statusMessage="The error message"
-        />
+        />,
       );
 
       const checkbox = screen.getByRole("checkbox");
@@ -448,7 +448,7 @@ describe("CheckBox", () => {
           label="Dogs"
           status="valid"
           statusMessage="The error message"
-        />
+        />,
       );
 
       const checkbox = screen.getByRole("checkbox");

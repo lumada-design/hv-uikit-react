@@ -1,11 +1,10 @@
-import { UserConfig, definePreset, mergeConfigs } from "@unocss/core";
-import { Theme, presetUno, PresetUnoOptions } from "@unocss/preset-uno";
+import { definePreset, mergeConfigs, UserConfig } from "@unocss/core";
 import { presetRemToPx } from "@unocss/preset-rem-to-px";
-
+import { presetUno, PresetUnoOptions, Theme } from "@unocss/preset-uno";
 import { presetTheme } from "unocss-preset-theme";
 
-import { extendTheme, themeModes } from "./theme";
 import { rules } from "./rules";
+import { extendTheme, themeModes } from "./theme";
 
 export { rules, extendTheme, themeModes };
 

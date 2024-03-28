@@ -1,8 +1,7 @@
 import { forwardRef } from "react";
 
 import { useCss } from "../../hooks/useCss";
-import { ExtractNames, createClasses } from "../../utils/classes";
-
+import { createClasses, ExtractNames } from "../../utils/classes";
 import { useHvTreeItem } from "./useHvTreeItem";
 
 export const { useClasses } = createClasses("HvTreeContent", {
@@ -93,5 +92,5 @@ export const DefaultContent = forwardRef<HTMLDivElement, HvTreeContentProps>(
         <div className={classes.label}>{label}</div>
       </div>
     );
-  }
+  },
 );

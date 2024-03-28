@@ -11,6 +11,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import {
+  Avatar,
   Badge,
   BreadCrumb,
   BulkActions,
@@ -25,18 +26,17 @@ import {
   FileUploader,
   Icons,
   Input,
+  Loading,
   Pagination,
+  ProgressBar,
   Radio,
   Snackbars,
   Switch,
   Tags,
+  TagsInput,
   Tooltip,
   Typography,
-  TagsInput,
   VerticalNavigation,
-  Avatar,
-  ProgressBar,
-  Loading,
 } from "~/components/components";
 
 // const coreStories = import.meta.glob("../../../../packages/core/src/**/*.stories.tsx");
@@ -252,7 +252,7 @@ const initialSelection = [
 const Components = () => {
   const [params, setParams] = useSearchParams();
   const [selection, setSelection] = useState(
-    params.get("selection")?.split(",") ?? initialSelection
+    params.get("selection")?.split(",") ?? initialSelection,
   );
 
   useEffect(() => {
@@ -262,7 +262,7 @@ const Components = () => {
   const componentsToShow = useMemo(
     () =>
       componentsList.map((c) => ({ ...c, selected: selection.includes(c.id) })),
-    [selection]
+    [selection],
   );
 
   const handleClick = (id: string) => {

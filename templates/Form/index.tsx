@@ -1,17 +1,17 @@
-import { Phone } from "@hitachivantara/uikit-react-icons";
 import {
-  HvInput,
   HvButton,
   HvCheckBox,
-  HvTimePicker,
-  HvRadioGroup,
-  HvRadio,
-  HvGrid,
   HvDatePicker,
-  HvTextArea,
-  HvSelect,
+  HvGrid,
+  HvInput,
   HvOption,
+  HvRadio,
+  HvRadioGroup,
+  HvSelect,
+  HvTextArea,
+  HvTimePicker,
 } from "@hitachivantara/uikit-react-core";
+import { Phone } from "@hitachivantara/uikit-react-icons";
 
 const countries = [
   { id: "pt", label: "Portugal" },

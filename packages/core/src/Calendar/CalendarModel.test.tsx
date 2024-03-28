@@ -26,7 +26,7 @@ describe("CalendarModel", () => {
 
   it("should have all the days of the month available in the dates array", () => {
     const currentDates = calendarModelInstance.dates.filter(
-      (date) => date.getMonth() + 1 === 1 && date.getFullYear() === 2000
+      (date) => date.getMonth() + 1 === 1 && date.getFullYear() === 2000,
     );
 
     expect(currentDates.length).toBe(getMonthDays(1, 2000));

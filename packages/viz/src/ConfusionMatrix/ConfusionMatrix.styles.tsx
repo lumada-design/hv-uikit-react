@@ -21,5 +21,5 @@ export const { useClasses, staticClasses } = createClasses(
       fontSize: theme.fontSizes.sm,
       color: theme.colors.secondary,
     },
-  }
+  },
 );

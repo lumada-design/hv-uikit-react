@@ -43,7 +43,7 @@ const VerticalNavigationContext = createContext<VerticalNavigationContextValue>(
     isOpen: true,
     useIcons: false,
     slider: false,
-  }
+  },
 );
 
 export { VerticalNavigationContext };

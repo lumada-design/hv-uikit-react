@@ -5,7 +5,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { HvStepProps } from "../../DefaultNavigation";
-import { getColor, dotSizes } from "../utils";
+import { dotSizes, getColor } from "../utils";
 import { staticClasses, useClasses } from "./Dot.styles";
 
 export { staticClasses as dotClasses };
@@ -52,7 +52,7 @@ export const HvDot = ({
           [classes.ghostDisabled]:
             disabled ?? ["Current", "Disabled"].includes(state),
         },
-        className
+        className,
       )}
       aria-label={`${title}`}
       icon

@@ -1,33 +1,33 @@
-import { useState, useMemo, useEffect, useId } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import {
+  HvActionsGenericProps,
   HvBulkActions,
-  HvPagination,
   HvControls,
   HvLeftControl,
+  HvLeftControlProps,
+  HvPagination,
   HvRightControl,
+  theme,
+  useHvBulkActions,
   useHvData,
   useHvGlobalFilter,
-  useHvRowSelection,
-  useHvBulkActions,
   useHvPagination,
+  useHvRowSelection,
   useHvSortBy,
-  HvLeftControlProps,
-  HvActionsGenericProps,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
-import { ListView } from "./ListView";
 import { CardView } from "./CardView";
 import {
-  PaginationDataProps,
-  usePaginationData,
   actions,
-  views,
-  rightControlValues,
-  getColumns,
   AssetInventoryEntry,
+  getColumns,
+  PaginationDataProps,
+  rightControlValues,
+  usePaginationData,
+  views,
 } from "./data";
+import { ListView } from "./ListView";
 
 const classes = {
   root: css({
@@ -71,7 +71,7 @@ const AssetInventory = () => {
     useHvSortBy,
     useHvPagination,
     useHvRowSelection,
-    useHvBulkActions
+    useHvBulkActions,
   );
 
   useEffect(() => {
@@ -102,7 +102,7 @@ const AssetInventory = () => {
 
   const handleAction: HvActionsGenericProps["onAction"] = async (
     event,
-    action
+    action,
   ) => {
     if (action.id === "put" || action.id === "add") {
       alert(
@@ -110,7 +110,7 @@ const AssetInventory = () => {
           action.label
         } on items ${instance.selectedFlatRows
           .map((r) => r.original.id)
-          .join(", ")}`
+          .join(", ")}`,
       );
     } else if (action.id === "delete") {
       const ids = instance.selectedFlatRows.map((r) => r.original.id || "");

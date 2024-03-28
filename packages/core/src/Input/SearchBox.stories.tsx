@@ -1,19 +1,19 @@
 import { useMemo, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
+import { Meta, StoryObj } from "@storybook/react";
 import parser from "html-react-parser";
-import { Fail } from "@hitachivantara/uikit-react-icons";
 import {
   HvDropdown,
-  HvListValue,
   HvEmptyState,
-  HvPanel,
-  HvTypography,
   HvInput,
   HvInputProps,
   HvInputSuggestion,
+  HvListValue,
+  HvPanel,
+  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
+import { Fail } from "@hitachivantara/uikit-react-icons";
 
 import countryNamesArray, { continents, countries } from "./countries";
 
@@ -148,7 +148,7 @@ export const DynamicSearch: StoryObj = {
           id: v,
           value: v,
           label: parser(
-            `<b>${v.replace(new RegExp(value, "gi"), "</b>$&<b>")}</b>`
+            `<b>${v.replace(new RegExp(value, "gi"), "</b>$&<b>")}</b>`,
           ) as string,
         }))
         .slice(0, 6);
@@ -244,7 +244,7 @@ export const ScopedSearch: StoryObj = {
           id: v,
           value: v,
           label: parser(
-            v.replace(new RegExp(value, "gi"), "<b>$&</b>")
+            v.replace(new RegExp(value, "gi"), "<b>$&</b>"),
           ) as string,
         }))
         .slice(0, 6);
@@ -257,7 +257,7 @@ export const ScopedSearch: StoryObj = {
           value: c,
         })),
       ],
-      []
+      [],
     );
 
     const handleSearch: HvInputProps["onEnter"] = (_, value) => {
@@ -357,7 +357,7 @@ export const SearchAsYouType: StoryObj = {
         .filter((v) => v.toUpperCase().includes(value.toUpperCase()))
         .map(
           (v) =>
-            parser(v.replace(new RegExp(value, "gi"), "<b>$&</b>")) as string
+            parser(v.replace(new RegExp(value, "gi"), "<b>$&</b>")) as string,
         );
 
       setResults(newResults);

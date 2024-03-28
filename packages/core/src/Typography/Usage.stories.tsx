@@ -1,5 +1,5 @@
-import { PopUp } from "@hitachivantara/uikit-react-icons";
 import { HvIconButton, HvTypography } from "@hitachivantara/uikit-react-core";
+import { PopUp } from "@hitachivantara/uikit-react-icons";
 
 export default {
   title: "Foundation/Typography/Usage",

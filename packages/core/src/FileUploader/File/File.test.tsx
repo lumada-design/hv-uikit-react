@@ -45,7 +45,7 @@ describe("File", () => {
     const onClickMock = vi.fn();
 
     const { getByRole } = render(
-      <Main data={dataSuccess} onFileRemoved={onClickMock} />
+      <Main data={dataSuccess} onFileRemoved={onClickMock} />,
     );
 
     const fileButton = getByRole("button");

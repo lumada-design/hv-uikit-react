@@ -11,8 +11,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { KPIs } from "./KPIs";
-import { Table } from "./Table";
 import { Properties } from "./Properties";
+import { Table } from "./Table";
 
 const MODEL_ID = "123";
 

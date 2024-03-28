@@ -1,12 +1,10 @@
 import { useState } from "react";
 
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
-import { HvSelectionList, HvSelectionListProps } from "../SelectionList";
-import { HvPanel } from "../Panel";
-import { HvListItem, HvListItemProps } from "../ListContainer";
-
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
+import { HvListItem, HvListItemProps } from "../ListContainer";
+import { HvPanel } from "../Panel";
+import { HvSelectionList, HvSelectionListProps } from "../SelectionList";
 import { useClasses } from "./Select.styles";
 
 export const Option = ({ ...props }: Partial<HvListItemProps>) => (
@@ -42,7 +40,7 @@ const HvSelect = (props: HvPaginationSelectProps) => {
   };
 
   const setFocusToContent: HvBaseDropdownProps["onContainerCreation"] = (
-    containerRef
+    containerRef,
   ) => {
     const listItems =
       containerRef != null ? [...containerRef.getElementsByTagName("li")] : [];

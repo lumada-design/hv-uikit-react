@@ -18,7 +18,7 @@ function findIndex<T>(array: T[], comp: (item: T) => boolean) {
 
 function binaryFindElement(
   array: TreeItemDescendant[],
-  element: HTMLLIElement
+  element: HTMLLIElement,
 ) {
   let start = 0;
   let end = array.length - 1;
@@ -104,7 +104,7 @@ export function useDescendant(descendant: TreeItemDescendant) {
   // collection.
   const index = findIndex(
     descendants,
-    (item) => item.element === descendant.element
+    (item) => item.element === descendant.element,
   );
 
   const previousDescendants = usePrevious(descendants);
@@ -120,7 +120,7 @@ export function useDescendant(descendant: TreeItemDescendant) {
         previousDescendants[position] &&
         previousDescendants[position].element !== newDescendant.element
       );
-    }
+    },
   );
 
   // Prevent any flashing
@@ -210,7 +210,7 @@ export const DescendantProvider = (props: DescendantProviderProps) => {
         return newItems;
       });
     },
-    []
+    [],
   );
 
   const unregisterDescendant = React.useCallback((element: HTMLLIElement) => {
@@ -224,7 +224,7 @@ export const DescendantProvider = (props: DescendantProviderProps) => {
       unregisterDescendant,
       parentId: id,
     }),
-    [items, registerDescendant, unregisterDescendant, id]
+    [items, registerDescendant, unregisterDescendant, id],
   );
 
   return (

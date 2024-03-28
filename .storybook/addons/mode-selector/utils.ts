@@ -19,7 +19,7 @@ export const getInitialMode = (): Mode => {
   }
 
   const prefersDark = window?.matchMedia?.(
-    "(prefers-color-scheme: dark)"
+    "(prefers-color-scheme: dark)",
   )?.matches;
 
   return prefersDark ? "wicked" : "dawn";

@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvTypography,
   HvFooter,
   HvFooterProps,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvFooter> = {

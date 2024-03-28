@@ -14,7 +14,7 @@ const Zindices = () => {
   const { activeTheme } = useTheme();
   const { customTheme, updateCustomTheme } = useGeneratorContext();
   const [currValues, setCurrValues] = useState<Map<string, number>>(
-    new Map<string, number>()
+    new Map<string, number>(),
   );
 
   const valueChangedHandler = (zIndex: string, value: string) => {

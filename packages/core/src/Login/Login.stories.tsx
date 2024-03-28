@@ -2,17 +2,17 @@ import { FormEventHandler, forwardRef } from "react";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
+  dropdownClasses,
   HvButton,
+  HvButtonProps,
   HvCheckBox,
   HvDropdown,
   HvInput,
+  HvInputProps,
   HvLogin,
   HvLoginProps,
   HvTypography,
   PolymorphicRef,
-  dropdownClasses,
-  HvInputProps,
-  HvButtonProps,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -35,7 +35,7 @@ const StyledInput = styled((props: HvInputProps) => <HvInput {...props} />)({
 const StyledButton = styled(
   forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
     return <HvButton {...props} ref={ref} />;
-  })
+  }),
 )({
   width: 120,
   float: "right",

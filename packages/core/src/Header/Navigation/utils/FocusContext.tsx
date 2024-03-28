@@ -24,7 +24,7 @@ export const FocusProvider = ({ children }: { children?: React.ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const contextValue = useMemo(
     () => ({ ...state, dispatch }),
-    [state, dispatch]
+    [state, dispatch],
   );
 
   return (

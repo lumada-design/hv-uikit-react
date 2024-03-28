@@ -1,9 +1,9 @@
 import { HvBox } from "@hitachivantara/uikit-react-core";
 import {
-  CheckboxCheck,
   Bookmark,
-  Machine,
+  CheckboxCheck,
   Level5,
+  Machine,
 } from "@hitachivantara/uikit-react-icons";
 
 export const Icons = () => {

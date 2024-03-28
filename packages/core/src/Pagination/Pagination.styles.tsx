@@ -1,8 +1,8 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
+import { baseDropdownClasses } from "../BaseDropdown";
 import { inputClasses } from "../Input";
 import { createClasses } from "../utils/classes";
-import { baseDropdownClasses } from "../BaseDropdown";
 
 const hoverColor = theme.colors.atmo3;
 

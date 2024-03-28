@@ -2,9 +2,8 @@ import { forwardRef, useMemo, useRef } from "react";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
-
-import TableContext from "./TableContext";
 import { staticClasses, useClasses } from "./Table.styles";
+import TableContext from "./TableContext";
 
 export { staticClasses as tableClasses };
 
@@ -96,12 +95,12 @@ export const HvTable = forwardRef<HTMLElement, HvTableProps>((props, ref) => {
 
   const components = useMemo(
     () => computeTablePartComponents(component),
-    [component]
+    [component],
   );
 
   const tableContext = useMemo(
     () => ({ components, variant, containerRef }),
-    [components, variant, containerRef]
+    [components, variant, containerRef],
   );
 
   const Table = useMemo(() => components.Table, [components]);
@@ -118,7 +117,7 @@ export const HvTable = forwardRef<HTMLElement, HvTableProps>((props, ref) => {
             [classes.stickyColumns]: stickyColumns,
             [classes.listRow]: variant === "listrow",
           },
-          className
+          className,
         )}
         {...others}
       />

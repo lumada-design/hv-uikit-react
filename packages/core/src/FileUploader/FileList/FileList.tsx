@@ -1,9 +1,7 @@
-import { useUniqueId } from "../../hooks/useUniqueId";
-import { setId } from "../../utils/setId";
-
-import { ExtractNames } from "../../utils/classes";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
+import { useUniqueId } from "../../hooks/useUniqueId";
+import { ExtractNames } from "../../utils/classes";
+import { setId } from "../../utils/setId";
 import { HvFile, HvFileData, HvFileRemovedEvent } from "../File";
 import { staticClasses, useClasses } from "./FileList.styles";
 

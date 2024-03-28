@@ -17,5 +17,5 @@ export const { staticClasses, useClasses } = createClasses(
     hide: {
       display: "none",
     },
-  }
+  },
 );

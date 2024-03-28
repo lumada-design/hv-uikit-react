@@ -1,14 +1,13 @@
-import { useContext, forwardRef } from "react";
+import { forwardRef, useContext } from "react";
 
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
-
-import { staticClasses, useClasses } from "./Adornment.styles";
 import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
   HvFormStatus,
 } from "../FormElement";
+import { staticClasses, useClasses } from "./Adornment.styles";
 
 const noop = () => {};
 
@@ -59,7 +58,7 @@ export const HvAdornment = forwardRef<
       isVisible = undefined,
       ...others
     },
-    ref
+    ref,
   ) => {
     const { classes, cx } = useClasses(classesProp);
 
@@ -84,7 +83,7 @@ export const HvAdornment = forwardRef<
           classes.adornment,
           classes.adornmentButton,
           { [classes.hideIcon]: !displayIcon },
-          className
+          className,
         )}
         onClick={onClick}
         onMouseDown={(event) => event.preventDefault()}
@@ -102,7 +101,7 @@ export const HvAdornment = forwardRef<
           classes.adornment,
           classes.adornmentIcon,
           { [classes.hideIcon]: !displayIcon },
-          className
+          className,
         )}
         role="presentation"
         {...others}
@@ -110,5 +109,5 @@ export const HvAdornment = forwardRef<
         <div className={classes.icon}>{icon}</div>
       </div>
     );
-  }
+  },
 );

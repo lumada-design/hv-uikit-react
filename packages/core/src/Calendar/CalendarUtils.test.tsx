@@ -12,8 +12,8 @@ import {
   isDate,
   isSameDay,
   isSameMonth,
-  zeroPad,
   makeUTCDate,
+  zeroPad,
 } from "./utils";
 
 describe("Calendar utils - zeroPad", () => {
@@ -89,7 +89,7 @@ describe("Calendar utils - isSameMonth", () => {
   });
   it("should return `false` if the received dates are not in the same month and year", () => {
     expect(isSameMonth(new Date(2019, 0, 1), new Date(2019, 1, 31))).toBe(
-      false
+      false,
     );
   });
   it("should return `false` if one of the dates is invalid", () => {
@@ -173,7 +173,7 @@ describe("Calendar utils - getMonthName", () => {
 describe("Calendar utils - getFormattedDate", () => {
   it("should return a date as a string with the format `14 Aug, 2019`", () => {
     expect(getFormattedDate(new Date(2019, 7, 14), "en-US")).toBe(
-      "14 Aug 2019"
+      "14 Aug 2019",
     );
   });
 });
@@ -190,7 +190,7 @@ describe("Calendar utils - createDatesArray", () => {
     for (let iMonth = 1; iMonth <= 12; iMonth += 1) {
       datesArray = createDatesArray(iMonth, year);
       const currentMonthDates = datesArray.filter(
-        (date) => date.getMonth() + 1 === iMonth && date.getFullYear() === year
+        (date) => date.getMonth() + 1 === iMonth && date.getFullYear() === year,
       );
       const monthDays = getMonthDays(iMonth, year);
 
@@ -203,7 +203,7 @@ describe("Calendar utils - createDatesArray", () => {
     const previousMonthDays = getMonthFirstWeekday(1, 2000);
 
     const previousMonthDates = datesArray.filter(
-      (date) => date.getMonth() + 1 === 12 && date.getFullYear() === 1999
+      (date) => date.getMonth() + 1 === 12 && date.getFullYear() === 1999,
     );
     expect(previousMonthDates.length).toBe(previousMonthDays);
   });
@@ -212,13 +212,13 @@ describe("Calendar utils - createDatesArray", () => {
     const datesArray = createDatesArray(1, 2000);
 
     const previousMonthDates = datesArray.filter(
-      (date) => date.getMonth() + 1 === 12 && date.getFullYear() === 1999
+      (date) => date.getMonth() + 1 === 12 && date.getFullYear() === 1999,
     );
     const currentMonthDates = datesArray.filter(
-      (date) => date.getMonth() + 1 === 1 && date.getFullYear() === 2000
+      (date) => date.getMonth() + 1 === 1 && date.getFullYear() === 2000,
     );
     const nextMonthDates = datesArray.filter(
-      (date) => date.getMonth() + 1 === 2 && date.getFullYear() === 2000
+      (date) => date.getMonth() + 1 === 2 && date.getFullYear() === 2000,
     );
 
     const totalAmountOfDates =

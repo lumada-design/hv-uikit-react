@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
-import { useTheme } from "../hooks/useTheme";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useTheme } from "../hooks/useTheme";
 import {
   fixedForwardRef,
   PolymorphicComponentRef,
@@ -10,12 +10,12 @@ import {
 import { ExtractNames } from "../utils/classes";
 import {
   staticClasses as buttonClasses,
+  getColoringStyle,
+  getIconSizeStyles,
   getOverrideColors,
   getRadiusStyles,
   getSizeStyles,
-  getIconSizeStyles,
   useClasses,
-  getColoringStyle,
 } from "./Button.styles";
 import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./types";
 
@@ -65,7 +65,7 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
  */
 const mapVariant = (
   variant: HvButtonVariant,
-  theme?: string
+  theme?: string,
 ): HvButtonVariant => {
   if (theme === "ds3") return variant;
 
@@ -79,7 +79,7 @@ const mapVariant = (
   if (import.meta.env.DEV && mappedVariant) {
     // eslint-disable-next-line no-console
     console.warn(
-      `Button variant '${variant}' is deprecated. Please use '${mappedVariant}'.`
+      `Button variant '${variant}' is deprecated. Please use '${mappedVariant}'.`,
     );
   }
 
@@ -90,7 +90,7 @@ const mapVariant = (
  * Button component is used to trigger an action or event.
  */
 export const HvButton = fixedForwardRef(function HvButton<
-  C extends React.ElementType = "button"
+  C extends React.ElementType = "button",
 >(props: HvButtonProps<C>, ref: PolymorphicRef<C>) {
   const {
     classes: classesProp,
@@ -115,7 +115,7 @@ export const HvButton = fixedForwardRef(function HvButton<
   const { activeTheme } = useTheme();
   const variant = mapVariant(
     variantProp ?? (icon ? "secondaryGhost" : "primary"),
-    activeTheme?.name
+    activeTheme?.name,
   );
 
   const handleClick: HvButtonProps["onClick"] = (e) => {
@@ -155,7 +155,7 @@ export const HvButton = fixedForwardRef(function HvButton<
           [classes.disabled]: disabled,
         },
         size && icon && css(getIconSizeStyles(size)),
-        className
+        className,
       )}
       onClick={handleClick}
       onMouseDown={handleMouseDown}

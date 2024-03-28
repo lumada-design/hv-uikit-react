@@ -11,7 +11,7 @@ describe("Tabs", () => {
         <HvTab label="Clickable tab 1" />
         <HvTab label="Clickable tab 2" />
         <HvTab label="Clickable tab 3" />
-      </HvTabs>
+      </HvTabs>,
     );
 
     expect(screen.getByRole("tablist")).toBeInTheDocument();

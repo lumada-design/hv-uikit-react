@@ -1,12 +1,12 @@
 import { useRef } from "react";
-import { useOption } from "@mui/base/useOption";
 import { OptionOwnProps } from "@mui/base/Option";
+import { useOption } from "@mui/base/useOption";
 import { useForkRef } from "@mui/material/utils";
 
-import { HvListItem, HvListItemProps } from "../ListContainer";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { HvListItem, HvListItemProps } from "../ListContainer";
 import { fixedForwardRef } from "../types/generic";
-import { ExtractNames, createClasses } from "../utils/classes";
+import { createClasses, ExtractNames } from "../utils/classes";
 import { outlineStyles } from "../utils/focusUtils";
 
 const { staticClasses, useClasses } = createClasses("HvOption", {
@@ -27,7 +27,7 @@ export interface HvOptionProps<OptionValue extends {}>
 }
 
 export const HvOption = fixedForwardRef(function HvOption<
-  OptionValue extends {}
+  OptionValue extends {},
 >(props: HvOptionProps<OptionValue>, ref: React.Ref<HTMLLIElement>) {
   const {
     classes: classesProp,

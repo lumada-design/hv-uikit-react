@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import {
   HvCellProps,
+  hvDateColumn,
   HvPagination,
   HvRowInstance,
   HvTable,
@@ -10,18 +11,17 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  hvDateColumn,
   useHvData,
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, NewRendererEntry, makeRenderersData } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
 export const DateColumnRenderer = () => {
   const getColumns = () => [
     hvDateColumn<NewRendererEntry, string>(
       { Header: "Time", accessor: "createdDate", style: { minWidth: 80 } },
-      "DD/MM/YYYY"
+      "DD/MM/YYYY",
     ),
   ];
 
@@ -49,7 +49,7 @@ export const DateColumnRenderer = () => {
           value ?? "—",
       },
     },
-    useHvPagination
+    useHvPagination,
   );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {

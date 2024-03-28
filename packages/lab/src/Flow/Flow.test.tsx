@@ -1,18 +1,16 @@
 import { useState } from "react";
-
 import { render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Favorite, Heart } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvFlowBaseNode } from "./Node";
-import { HvFlow } from "./Flow";
-import { HvFlowSidebar } from "./Sidebar";
-import { HvFlowControls, HvFlowControlsProps } from "./Controls";
-import { HvFlowMinimap } from "./Minimap";
 import { HvFlowBackground } from "./Background";
+import { HvFlowControls, HvFlowControlsProps } from "./Controls";
+import { HvFlow } from "./Flow";
+import { HvFlowMinimap } from "./Minimap";
+import { HvFlowBaseNode } from "./Node";
+import { HvFlowSidebar } from "./Sidebar";
 
 const nodeGroups = {
   asset: {
@@ -159,7 +157,7 @@ describe("Flow", () => {
 
   it("should hide the fit view control", () => {
     const { queryByRole } = render(
-      <Flow controlsProps={{ hideFitView: true }} />
+      <Flow controlsProps={{ hideFitView: true }} />,
     );
 
     const zoomIn = queryByRole("button", { name: /Zoom in/i });
@@ -175,7 +173,7 @@ describe("Flow", () => {
 
   it("should hide the interactive control", () => {
     const { queryByRole } = render(
-      <Flow controlsProps={{ hideInteractive: true }} />
+      <Flow controlsProps={{ hideInteractive: true }} />,
     );
 
     const zoomIn = queryByRole("button", { name: /Zoom in/i });
@@ -224,7 +222,7 @@ describe("Flow", () => {
 
   it("should have two groups in drawer", () => {
     const { getByRole, getAllByRole, queryByText } = render(
-      <Flow opened emptyCanvas />
+      <Flow opened emptyCanvas />,
     );
 
     const groups = getByRole("list");
@@ -280,7 +278,7 @@ describe("Flow", () => {
 
   it("should update the groups on search", async () => {
     const { getByRole, queryAllByRole, queryByText } = render(
-      <Flow opened emptyCanvas />
+      <Flow opened emptyCanvas />,
     );
 
     const search = getByRole("searchbox");
@@ -312,7 +310,7 @@ describe("Flow", () => {
         expect(group1TitleAf).toBeInTheDocument();
         expect(group2TitleAf).toBeNull();
       },
-      { timeout: 2000 }
+      { timeout: 2000 },
     );
   });
 });

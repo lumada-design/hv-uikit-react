@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it, vi } from "vitest";
 
 import { HvRadio, HvRadioProps } from "./Radio";
 
@@ -229,7 +229,7 @@ describe("HvRadio", () => {
       const onChangeSpy = vi.fn();
 
       const { getAllByRole } = render(
-        <DisabledSample onChange={onChangeSpy} />
+        <DisabledSample onChange={onChangeSpy} />,
       );
 
       const radioBtns = getAllByRole("radio");
@@ -274,7 +274,7 @@ describe("HvRadio", () => {
             aria-labelledby="radioDescriptor"
             aria-describedby="radioDescriptor"
           />
-        </>
+        </>,
       );
 
       const radioBtn = getByRole("radio");
@@ -295,7 +295,7 @@ describe("HvRadio", () => {
           label="Radio 1"
           value="1"
           onChange={onChangeSpy}
-        />
+        />,
       );
 
       const radioBtn = getByRole("radio");

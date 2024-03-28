@@ -1,22 +1,20 @@
 import { forwardRef, useCallback } from "react";
-
 import { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
 
+import { HvBaseSwitch } from "../BaseSwitch";
+import {
+  HvFormElement,
+  HvFormStatus,
+  HvLabel,
+  HvLabelProps,
+  HvWarningText,
+} from "../Forms";
+import { isInvalid } from "../Forms/FormElement/validationStates";
+import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { useControlled } from "../hooks/useControlled";
-import { setId } from "../utils/setId";
-import {
-  HvWarningText,
-  HvLabelProps,
-  HvFormStatus,
-  HvFormElement,
-  HvLabel,
-} from "../Forms";
-import { HvBaseSwitch } from "../BaseSwitch";
-import { isInvalid } from "../Forms/FormElement/validationStates";
 import { ExtractNames } from "../utils/classes";
-
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Switch.styles";
 
 export { staticClasses as switchClasses };
@@ -155,12 +153,12 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
 
     const [isChecked, setIsChecked] = useControlled(
       checked,
-      Boolean(defaultChecked)
+      Boolean(defaultChecked),
     );
 
     const [validationState, setValidationState] = useControlled(
       status,
-      "standBy"
+      "standBy",
     );
 
     const [validationMessage] = useControlled(statusMessage, "Required");
@@ -180,7 +178,7 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
 
         onChange?.(evt, newChecked, value);
       },
-      [onChange, required, setIsChecked, setValidationState, value]
+      [onChange, required, setIsChecked, setValidationState, value],
     );
 
     // the error message area will only be created if:
@@ -259,5 +257,5 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
         )}
       </HvFormElement>
     );
-  }
+  },
 );

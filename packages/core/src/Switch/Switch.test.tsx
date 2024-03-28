@@ -11,7 +11,7 @@ describe("Switch", () => {
         <>
           <HvSwitch aria-label="Engine 1" />
           <HvSwitch defaultChecked aria-label="Engine 2" />
-        </>
+        </>,
       );
       expect(container).toBeDefined();
     });
@@ -21,7 +21,7 @@ describe("Switch", () => {
         <>
           <HvSwitch aria-label="Engine 1" />
           <HvSwitch defaultChecked aria-label="Engine 2" />
-        </>
+        </>,
       );
       const switch1 = getByLabelText("Engine 1");
       const switch2 = getByLabelText("Engine 2");
@@ -37,7 +37,7 @@ describe("Switch", () => {
         <>
           <HvSwitch aria-label="Engine 1" />
           <HvSwitch defaultChecked aria-label="Engine 2" />
-        </>
+        </>,
       );
 
       const switchComponent = getByLabelText("Engine 1");
@@ -55,7 +55,7 @@ describe("Switch", () => {
         <>
           <HvSwitch disabled aria-label="Engine 1" />
           <HvSwitch defaultChecked disabled aria-label="Engine 2" />
-        </>
+        </>,
       );
       expect(container).toBeDefined();
     });
@@ -65,7 +65,7 @@ describe("Switch", () => {
         <>
           <HvSwitch disabled aria-label="Engine 1" />
           <HvSwitch defaultChecked disabled aria-label="Engine 2" />
-        </>
+        </>,
       );
       const switch1 = getByLabelText("Engine 1");
       const switch2 = getByLabelText("Engine 2");
@@ -81,7 +81,7 @@ describe("Switch", () => {
         <>
           <HvSwitch disabled aria-label="Engine 1" />
           <HvSwitch defaultChecked disabled aria-label="Engine 2" />
-        </>
+        </>,
       );
 
       const switchComponent = getByLabelText("Engine 1");

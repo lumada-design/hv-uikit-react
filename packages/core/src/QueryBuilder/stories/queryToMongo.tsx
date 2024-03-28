@@ -189,17 +189,17 @@ const ruleToMongo = (rule, timezone) => {
           rule.value.start.date,
           rule.value.start.time,
           rule.value.end.date,
-          rule.value.end.time
+          rule.value.end.time,
         )
       ) {
         value = {
           $gte: formatToUTC(
             `${rule.value.start.date} ${rule.value.start.time}`,
-            timezone
+            timezone,
           ),
           $lte: formatToUTC(
             `${rule.value.end.date} ${rule.value.end.time}`,
-            timezone
+            timezone,
           ),
         };
       } else if (
@@ -263,7 +263,7 @@ const groupToMongo = (group, timezone) => {
 
 export default (query, timezone = dayjs.tz.guess()) => {
   const isValid = !JSON.stringify(query, (key, value) =>
-    value === undefined ? "undefined" : value
+    value === undefined ? "undefined" : value,
   ).includes("undefined");
 
   if (isValid) return groupToMongo(query, timezone);

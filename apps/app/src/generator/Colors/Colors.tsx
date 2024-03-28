@@ -1,12 +1,12 @@
+import { css } from "@emotion/css";
 import {
+  baseDropdownClasses,
+  HvColorPicker,
   HvTooltip,
   HvTypography,
-  HvColorPicker,
   useTheme,
-  baseDropdownClasses,
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
-import { css } from "@emotion/css";
 
 import { useGeneratorContext } from "~/generator/GeneratorContext";
 

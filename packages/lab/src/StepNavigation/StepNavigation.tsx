@@ -1,17 +1,16 @@
 import { ReactNode } from "react";
 import styled from "@emotion/styled";
-
-import { theme } from "@hitachivantara/uikit-styles";
 import {
+  ExtractNames,
   HvBaseProps,
-  HvBreakpoints,
-  useTheme,
-  useWidth,
   HvBox,
+  HvBreakpoints,
   HvTooltip,
   HvTypography,
-  ExtractNames,
+  useTheme,
+  useWidth,
 } from "@hitachivantara/uikit-react-core";
+import { theme } from "@hitachivantara/uikit-styles";
 
 import {
   HvDefaultNavigation,
@@ -19,8 +18,8 @@ import {
   HvStepProps,
 } from "./DefaultNavigation";
 import { HvSimpleNavigation } from "./SimpleNavigation";
-import { SEPARATOR_WIDTH, TITLE_MARGIN, TITLE_WIDTH } from "./utils";
 import { staticClasses, useClasses } from "./StepNavigation.styles";
+import { SEPARATOR_WIDTH, TITLE_MARGIN, TITLE_WIDTH } from "./utils";
 
 export { staticClasses as stepNavigationClasses };
 
@@ -111,7 +110,7 @@ export const HvStepNavigation = ({
     separatorClassName,
     separatorHeight,
     separatorWidth,
-    backgroundColor
+    backgroundColor,
   ) => {
     const widthValue =
       separatorWidth -
@@ -119,8 +118,8 @@ export const HvStepNavigation = ({
         Number(
           (activeTheme?.stepNavigation.separatorMargin || "0px").replace(
             "px",
-            ""
-          )
+            "",
+          ),
         );
 
     return (
@@ -134,7 +133,7 @@ export const HvStepNavigation = ({
             backgroundColor,
             margin: `0 ${theme.stepNavigation.separatorMargin}`,
           }),
-          classes.separator
+          classes.separator,
         )}
       >
         <div className={separatorClassName} />
@@ -192,21 +191,21 @@ export const HvStepNavigation = ({
               : maxWidth,
             getColor(
               steps[index + 1].state === "Disabled" ? "Disabled" : state,
-              theme
-            )
+              theme,
+            ),
           );
           return [...acc, stepElement, separatorElement];
         }
         return [...acc, stepElement];
       },
-      []
+      [],
     );
 
     return <ol className={classes.ol}>{items}</ol>;
   };
 
   const getDynamicValues: HvDefaultNavigationProps["getDynamicValues"] = (
-    stepsWidth
+    stepsWidth,
   ) => {
     const themeBreakpoints = activeTheme?.breakpoints.values || {};
     const maxWidth =
@@ -214,14 +213,14 @@ export const HvStepNavigation = ({
       Math.max(
         Number(hasTitles) * (TITLE_WIDTH + TITLE_MARGIN) * steps.length -
           TITLE_MARGIN,
-        SEPARATOR_WIDTH * (steps.length - 1) + stepsWidth
+        SEPARATOR_WIDTH * (steps.length - 1) + stepsWidth,
       );
     const next = Object.keys(themeBreakpoints).find((_, index, self) =>
-      index - 1 >= 0 ? self[index - 1] === breakpoint : false
+      index - 1 >= 0 ? self[index - 1] === breakpoint : false,
     );
     const navWidth = Math.min(
       maxWidth,
-      next ? themeBreakpoints[next] : maxWidth
+      next ? themeBreakpoints[next] : maxWidth,
     );
     const titleWidth =
       Number(hasTitles) * Math.ceil((navWidth + TITLE_MARGIN) / steps.length);
@@ -255,7 +254,7 @@ export const HvStepNavigation = ({
                   width: titleWidth - TITLE_MARGIN,
                   marginRight: TITLE_MARGIN,
                 }),
-                titleClassName
+                titleClassName,
               )}
               disabled={titleDisabled}
               key={title}

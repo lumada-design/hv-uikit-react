@@ -1,23 +1,20 @@
 import { forwardRef } from "react";
-
 import { ColorState } from "react-color";
-
 import { Checkbox, ColorPicker } from "@hitachivantara/uikit-react-icons";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { useControlled } from "../hooks/useControlled";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useLabels } from "../hooks/useLabels";
-import { ExtractNames } from "../utils/classes";
-import { setId } from "../utils/setId";
-import { HvTypography } from "../Typography";
-import { HvPanel } from "../Panel";
-import { HvFormElement, HvInfoMessage, HvLabel } from "../Forms";
 import { HvBaseDropdown } from "../BaseDropdown";
 import { HvDropdownProps } from "../Dropdown";
-
-import { Picker } from "./Picker";
+import { HvFormElement, HvInfoMessage, HvLabel } from "../Forms";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useLabels } from "../hooks/useLabels";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvPanel } from "../Panel";
+import { HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./ColorPicker.styles";
+import { Picker } from "./Picker";
 import { PresetColors } from "./PresetColors";
 import { SavedColors } from "./SavedColors";
 
@@ -159,12 +156,12 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
 
     const [isOpen, setIsOpen] = useControlled(
       expanded,
-      Boolean(defaultExpanded)
+      Boolean(defaultExpanded),
     );
     const [color, setColor] = useControlled(value, defaultValue);
     const [savedColors, setSavedColors] = useControlled(
       savedColorsValue,
-      defaultSavedColorsValue
+      defaultSavedColorsValue,
     );
     const elementId = useUniqueId(id);
     const hasLabel = label != null;
@@ -175,7 +172,7 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
     };
 
     const handleSelect = (
-      val: ColorState | { hex: string; source: string }
+      val: ColorState | { hex: string; source: string },
     ) => {
       onChange?.(val.hex);
       onChangeComplete?.(val.hex);
@@ -183,14 +180,14 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
     };
 
     const handleOnChange = (
-      val: ColorState | { hex: string; source: string }
+      val: ColorState | { hex: string; source: string },
     ) => {
       onChange?.(val.hex);
       setColor(val.hex);
     };
 
     const handleOnChangeComplete = (
-      val: ColorState | { hex: string; source: string }
+      val: ColorState | { hex: string; source: string },
     ) => {
       onChangeComplete?.(val.hex);
       setColor(val.hex);
@@ -347,5 +344,5 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
         </HvBaseDropdown>
       </HvFormElement>
     );
-  }
+  },
 );

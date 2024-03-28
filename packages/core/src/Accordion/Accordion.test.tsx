@@ -1,6 +1,6 @@
-import { describe, expect, it } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it } from "vitest";
 
 import { HvTypography } from "../Typography";
 import { HvAccordion } from "./Accordion";
@@ -25,7 +25,7 @@ describe("Accordion", () => {
           <HvAccordion label="Data" headingLevel={2}>
             <HvTypography>item 3</HvTypography>
           </HvAccordion>
-        </>
+        </>,
       );
       const analyticsItem = screen.getByRole("button", { name: /Analytics/i });
       testAttributes(analyticsItem);
@@ -49,7 +49,7 @@ describe("Accordion", () => {
           <HvAccordion label="Data" headingLevel={2}>
             <HvTypography>item 3</HvTypography>
           </HvAccordion>
-        </>
+        </>,
       );
       let analyticsItem = getByRole("button", { name: /Analytics/i });
       const analyticsContent = getByText("Views");
@@ -78,7 +78,7 @@ describe("Accordion", () => {
           <HvAccordion label="Data" headingLevel={2}>
             <HvTypography>item 3</HvTypography>
           </HvAccordion>
-        </>
+        </>,
       );
       let analyticsItem = getByRole("button", { name: /Analytics/i });
       const analyticsContent = getByText("Views");
@@ -113,7 +113,7 @@ describe("Accordion", () => {
           <HvAccordion label="Data" headingLevel={2} disabled>
             <HvTypography>item 3</HvTypography>
           </HvAccordion>
-        </>
+        </>,
       );
       const analyticsItem = getByRole("button", { name: /Analytics/i });
       const analyticsContent = getByText("Views");
@@ -143,7 +143,7 @@ describe("Accordion", () => {
           <HvAccordion label="Data" headingLevel={2} disabled>
             <HvTypography>item 3</HvTypography>
           </HvAccordion>
-        </>
+        </>,
       );
       const analyticsItem = getByRole("button", { name: /Analytics/i });
       const analyticsContent = getByText("Views");

@@ -1,14 +1,12 @@
 import { useMemo } from "react";
 import {
-  useTable,
-  usePagination,
-  useExpanded,
-  useSortBy,
-  useResizeColumns,
+  ActionType,
   Cell,
   ColumnInstance,
   ColumnInterface,
   Hooks,
+  PluginHook,
+  ReducerTableState,
   Renderer,
   Row,
   TableCellProps,
@@ -21,6 +19,7 @@ import {
   TableState,
   UseColumnOrderInstanceProps,
   UseColumnOrderState,
+  useExpanded,
   UseExpandedHooks,
   UseExpandedInstanceProps,
   UseExpandedOptions,
@@ -30,6 +29,7 @@ import {
   UseFiltersInstanceProps,
   UseFiltersOptions,
   UseFiltersState,
+  UseGlobalFiltersColumnOptions,
   UseGlobalFiltersInstanceProps,
   UseGlobalFiltersOptions,
   UseGlobalFiltersState,
@@ -41,45 +41,57 @@ import {
   UseGroupByOptions,
   UseGroupByRowProps,
   UseGroupByState,
+  usePagination,
   UsePaginationInstanceProps,
   UsePaginationOptions,
   UsePaginationState,
+  useResizeColumns,
   UseResizeColumnsColumnOptions,
   UseResizeColumnsColumnProps,
   UseResizeColumnsOptions,
   UseResizeColumnsState,
+  UseRowStateInstanceProps,
+  UseRowStateOptions,
+  UseRowStateRowProps,
+  UseRowStateState,
+  useSortBy,
   UseSortByColumnOptions,
   UseSortByColumnProps,
   UseSortByHooks,
   UseSortByInstanceProps,
   UseSortByOptions,
   UseSortByState,
-  UseRowStateState,
-  UseRowStateOptions,
-  UseGlobalFiltersColumnOptions,
-  UseRowStateInstanceProps,
-  UseRowStateRowProps,
+  useTable,
   UseTableHeaderGroupProps,
-  PluginHook,
-  ActionType,
-  ReducerTableState,
 } from "react-table";
 
-import useHvTableStyles, {
-  UseHvTableStylesTableOptions,
-  UseHvTableStylesColumnOptions,
-  UseHvTableStylesTableCellProps,
-  UseHvTableStylesTableRowProps,
-} from "./useTableStyles";
+import { HvTableProps } from "../Table";
+import { HvTableCellProps } from "../TableCell";
+import { HvTableHeaderProps } from "../TableHeader";
+import { HvTableRowProps } from "../TableRow";
 import {
-  UseHvTableStickyCellProps,
-  UseHvTableStickyColumnProps,
-  UseHvTableStickyHooks,
-  UseHvTableStickyTableInstance,
-  UseHvTableStickyTableOptions,
-  UseHvTableStickyTableProps,
-} from "./useSticky";
-import { UseHvSortByColumnProps, UseHvSortByTableCellProps } from "./useSortBy";
+  UseHvBulkActionsHooks,
+  UseHvBulkActionsTableInstanceProps,
+  UseHvBulkActionsTableOptions,
+} from "./useBulkActions";
+import {
+  UseHvHeaderGroupsCellProps,
+  UseHvHeaderGroupsColumnProps,
+  UseHvHeaderGroupsInstance,
+} from "./useHeaderGroups";
+import {
+  UseHvPaginationHooks,
+  UseHvPaginationTableInstance,
+} from "./usePagination";
+import {
+  UseHvResizeColumnProps,
+  UseHvResizeTableCellProps,
+} from "./useResizeColumns";
+import {
+  UseHvRowExpandRowInstance,
+  UseHvRowExpandTableOptions,
+  UseHvRowExpandTableRowProps,
+} from "./useRowExpand";
 import {
   UseHvRowSelectionHooks,
   UseHvRowSelectionRowInstance,
@@ -88,33 +100,21 @@ import {
   UseHvRowSelectionTableOptions,
   UseHvRowSelectionTableRowProps,
 } from "./useRowSelection";
+import { UseHvSortByColumnProps, UseHvSortByTableCellProps } from "./useSortBy";
 import {
-  UseHvPaginationHooks,
-  UseHvPaginationTableInstance,
-} from "./usePagination";
-import {
-  UseHvBulkActionsHooks,
-  UseHvBulkActionsTableInstanceProps,
-  UseHvBulkActionsTableOptions,
-} from "./useBulkActions";
-import {
-  UseHvRowExpandTableOptions,
-  UseHvRowExpandRowInstance,
-  UseHvRowExpandTableRowProps,
-} from "./useRowExpand";
-import {
-  UseHvHeaderGroupsColumnProps,
-  UseHvHeaderGroupsCellProps,
-  UseHvHeaderGroupsInstance,
-} from "./useHeaderGroups";
-import {
-  UseHvResizeColumnProps,
-  UseHvResizeTableCellProps,
-} from "./useResizeColumns";
-import { HvTableRowProps } from "../TableRow";
-import { HvTableProps } from "../Table";
-import { HvTableCellProps } from "../TableCell";
-import { HvTableHeaderProps } from "../TableHeader";
+  UseHvTableStickyCellProps,
+  UseHvTableStickyColumnProps,
+  UseHvTableStickyHooks,
+  UseHvTableStickyTableInstance,
+  UseHvTableStickyTableOptions,
+  UseHvTableStickyTableProps,
+} from "./useSticky";
+import useHvTableStyles, {
+  UseHvTableStylesColumnOptions,
+  UseHvTableStylesTableCellProps,
+  UseHvTableStylesTableOptions,
+  UseHvTableStylesTableRowProps,
+} from "./useTableStyles";
 
 // #region ##### TYPES #####
 
@@ -125,7 +125,7 @@ type Accessor<D extends object> = (
     subRows: D[];
     depth: number;
     data: D[];
-  }
+  },
 ) => CellValue;
 
 type ValueOf<T> = T[keyof T];
@@ -140,7 +140,7 @@ type HvHeaderProps<D extends object = Record<string, unknown>> =
 
 interface HvMetaBase<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > {
   instance: HvTableInstance<D, H>;
   userProps: any;
@@ -150,7 +150,7 @@ export type HvMeta<
   D extends object = Record<string, unknown>,
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
   Extension = never,
-  M = HvMetaBase<D, H>
+  M = HvMetaBase<D, H>,
 > = [Extension] extends [never] ? M : M & Extension;
 
 export type HvPropGetter<
@@ -158,7 +158,7 @@ export type HvPropGetter<
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
   Props extends object = Record<string, unknown>,
   T extends object = never,
-  P = Partial<Props>
+  P = Partial<Props>,
 > = ((props: P, meta: HvMeta<D, H, T>) => P | P[]) | P | P[];
 
 export type HvTableHeaderRenderer<D extends object = Record<string, unknown>> =
@@ -171,7 +171,7 @@ type HvFooterProps<D extends object = Record<string, unknown>> =
 
 interface HvHeaderGroup<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > extends HvColumnInstance<D, H>,
     Omit<UseTableHeaderGroupProps<D>, "headers"> {
   headers: Array<HvHeaderGroup<D, H>>;
@@ -179,33 +179,33 @@ interface HvHeaderGroup<
 
 type HvRowPropGetter<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > = HvPropGetter<D, H, HvUseTableRowProps, { row: HvRowInstance<D, H> }>;
 
 type HvTablePropGetter<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > = HvPropGetter<D, H, HvUseTableProps>;
 
 type HvCellPropGetter<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > = HvPropGetter<D, H, HvUseTableCellProps, { cell: HvCellInstance<D, H> }>;
 
 type HvHeaderPropGetter<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > = HvPropGetter<D, H, HvUseTableHeaderProps, { column: HvHeaderGroup<D, H> }>;
 
 type HvFooterPropGetter<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > = HvPropGetter<D, H, HvUseTableFooterProps, { column: HvHeaderGroup<D, H> }>;
 
 export interface HvCellProps<
   D extends object = Record<string, unknown>,
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
-  V = any
+  V = any,
 > extends HvTableInstance<D, H> {
   column: HvColumnInstance<D, H>;
   row: HvRowInstance<D, H>;
@@ -215,27 +215,27 @@ export interface HvCellProps<
 
 export type HvTableDefinitionConfig<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > = HvTableOptions<D, H>;
 
 interface HvColumnInterfaceBasedOnValue<
   D extends object = Record<string, unknown>,
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
-  V = any
+  V = any,
 > {
   Cell?: Renderer<HvCellProps<D, H, V>>;
 }
 
 interface HvColumnGroupInterface<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > {
   columns: Array<HvTableColumnConfig<D, H>>;
 }
 
 type HvColumnGroup<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > = HvTableColumnOptions<D, H> &
   HvColumnGroupInterface<D, H> &
   (
@@ -247,7 +247,7 @@ type HvColumnGroup<
 
 type HvColumnWithStrictAccessor<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > = HvTableColumnOptions<D, H> &
   ValueOf<{
     [K in keyof D]: {
@@ -257,7 +257,7 @@ type HvColumnWithStrictAccessor<
 
 type HvColumnWithLooseAccessor<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > = HvTableColumnOptions<D, H> &
   HvColumnInterfaceBasedOnValue<D, H> &
   (
@@ -270,7 +270,7 @@ type HvColumnWithLooseAccessor<
 
 export type HvTableColumnConfig<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > =
   | HvColumnGroup<D, H>
   | HvColumnWithLooseAccessor<D, H>
@@ -279,7 +279,7 @@ export type HvTableColumnConfig<
 // #region HOOKS
 export interface HvHooks<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > extends Omit<Hooks<D>, "useOptions">,
     Partial<UseExpandedHooks<D>>,
     Partial<UseGroupByHooks<D>>,
@@ -291,7 +291,7 @@ export interface HvHooks<
   useOptions: Array<
     (
       options: HvTableOptions<D, H>,
-      args: HvTableOptions<D, H>
+      args: HvTableOptions<D, H>,
     ) => HvTableOptions<D, H>
   >;
   stateReducers: Array<
@@ -299,31 +299,31 @@ export interface HvHooks<
       newState: HvTableState<D>,
       action: ActionType,
       previousState?: HvTableState<D>,
-      instance?: HvTableState<D>
+      instance?: HvTableState<D>,
     ) => ReducerTableState<D> | undefined
   >;
   columns: Array<
     (
       columns: Array<HvTableColumnConfig<D, H>>,
-      meta: HvMeta<D, H>
+      meta: HvMeta<D, H>,
     ) => Array<HvTableColumnConfig<D, H>>
   >;
   allColumns: Array<
     (
       allColumns: Array<HvColumnInstance<D, H>>,
-      meta: HvMeta<D, H>
+      meta: HvMeta<D, H>,
     ) => Array<HvTableColumnConfig<D, H>>
   >;
   visibleColumns: Array<
     (
       allColumns: Array<HvColumnInstance<D, H>>,
-      meta: HvMeta<D, H>
+      meta: HvMeta<D, H>,
     ) => Array<HvTableColumnConfig<D, H>>
   >;
   headerGroups: Array<
     (
       allColumns: Array<HvHeaderGroup<D, H>>,
-      meta: HvMeta<D, H>
+      meta: HvMeta<D, H>,
     ) => Array<HvHeaderGroup<D, H>>
   >;
   useInstanceBeforeDimensions: Array<(instance: HvTableInstance<D, H>) => void>;
@@ -360,7 +360,7 @@ export interface HvTableState<D extends object = Record<string, unknown>>
 // #region OPTIONS
 export interface HvTableOptions<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > extends Omit<
       TableOptions<D>,
       | "columns"
@@ -392,22 +392,22 @@ export interface HvTableOptions<
     newState: HvTableState<D>,
     action: ActionType,
     previousState: HvTableState<D>,
-    instance?: HvTableInstance<D, H>
+    instance?: HvTableInstance<D, H>,
   ) => HvTableState<D>;
   useControlledState?: (
     state: HvTableState<D>,
-    meta: HvMeta<D, H>
+    meta: HvMeta<D, H>,
   ) => HvTableState<D>;
   getRowId?: (
     originalRow: D,
     relativeIndex: number,
-    parent?: HvRowInstance<D, H>
+    parent?: HvRowInstance<D, H>,
   ) => string;
 }
 
 export interface HvTableColumnOptions<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > extends Omit<ColumnInterface<D>, "Header" | "Footer">,
     Partial<UseFiltersColumnOptions<D>>,
     Partial<UseGroupByColumnOptions<D>>,
@@ -424,7 +424,7 @@ export interface HvTableColumnOptions<
 // #region INSTANCE
 export interface HvTableInstance<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > extends Omit<
       TableInstance<D>,
       | "pageCount"
@@ -487,7 +487,7 @@ export interface HvTableInstance<
 
 export interface HvColumnInstance<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > extends Omit<
       ColumnInstance<D>,
       | "Cell"
@@ -510,16 +510,16 @@ export interface HvColumnInstance<
   parent: HvColumnInstance<D, H>;
   placeholderOf?: HvColumnInstance<D, H>;
   getHeaderProps: (
-    propGetter?: HvHeaderPropGetter<D, H>
+    propGetter?: HvHeaderPropGetter<D, H>,
   ) => HvUseTableHeaderProps;
   getFooterProps: (
-    propGetter?: HvFooterPropGetter<D, H>
+    propGetter?: HvFooterPropGetter<D, H>,
   ) => HvUseTableFooterProps;
 }
 
 export interface HvRowInstance<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 > extends Omit<Row<D>, "cells" | "allCells" | "subRows" | "getRowProps">,
     Partial<Omit<UseGroupByRowProps<D>, "subRows" | "values">>,
     Partial<UseRowStateRowProps<D>>,
@@ -537,7 +537,7 @@ export interface HvRowInstance<
 export interface HvCellInstance<
   D extends object = Record<string, unknown>,
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
-  V = any
+  V = any,
 > extends Omit<Cell<D, V>, "column" | "row" | "getCellProps">,
     Partial<UseGroupByCellProps<D>> {
   column: HvColumnInstance<D, H>;
@@ -585,7 +585,7 @@ export interface HvUseTableCellProps
 
 export type UseHvTableProps = <
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(
   options: HvTableOptions<D, H>,
   ...plugins: Array<PluginHook<D>>
@@ -607,7 +607,7 @@ const toTitleCase = (str: string) => {
 
 function useDefaultData<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(data?: HvTableOptions<D, H>["data"]) {
   return useMemo(() => {
     return data || [];
@@ -616,10 +616,10 @@ function useDefaultData<
 
 function useDefaultColumns<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(
   data: NonNullable<HvTableOptions<D, H>["data"]>,
-  columns?: HvTableOptions<D, H>["columns"]
+  columns?: HvTableOptions<D, H>["columns"],
 ) {
   return useMemo(() => {
     if (columns != null) {
@@ -638,17 +638,17 @@ function useDefaultColumns<
 }
 
 function ensureCorePluginInstallation<
-  D extends object = Record<string, unknown>
+  D extends object = Record<string, unknown>,
 >(
   plugins: PluginHook<D>[],
   hvPluginName: string,
-  corePluginToInstall: PluginHook<D>
+  corePluginToInstall: PluginHook<D>,
 ) {
   const indexOfCorePlugin = plugins.findIndex(
-    (plugin) => plugin.pluginName === corePluginToInstall.pluginName
+    (plugin) => plugin.pluginName === corePluginToInstall.pluginName,
   );
   const indexOfHvPlugin = plugins.findIndex(
-    (plugin) => plugin.pluginName === hvPluginName
+    (plugin) => plugin.pluginName === hvPluginName,
   );
 
   if (
@@ -664,7 +664,7 @@ function ensureCorePluginInstallation<
 }
 
 function useInstanceHook<D extends object = Record<string, unknown>>(
-  instance: TableInstance<D>
+  instance: TableInstance<D>,
 ) {
   const { rowsById } = instance;
 
@@ -674,7 +674,7 @@ function useInstanceHook<D extends object = Record<string, unknown>>(
 }
 
 function useHvTableSetup<D extends object = Record<string, unknown>>(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) {
   hooks.useInstance.push(useInstanceHook);
 }
@@ -682,7 +682,7 @@ useHvTableSetup.pluginName = "useHvTableSetup";
 
 function useHvTable<
   D extends object = Record<string, unknown>,
-  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
+  H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(
   options: HvTableOptions<D, H>,
   ...plugins: PluginHook<D>[]
@@ -698,11 +698,11 @@ function useHvTable<
   ensureCorePluginInstallation<D>(
     plugins,
     "useHvResizeColumns",
-    useResizeColumns
+    useResizeColumns,
   );
 
   const indexOfHvTableStylesPlugin = plugins.findIndex(
-    (plugin) => plugin.pluginName === "useHvTableStyles"
+    (plugin) => plugin.pluginName === "useHvTableStyles",
   );
   if (indexOfHvTableStylesPlugin === -1) {
     plugins.push(useHvTableStyles);
@@ -716,7 +716,7 @@ function useHvTable<
       ...others,
     } as any,
     useHvTableSetup,
-    ...plugins
+    ...plugins,
   ) as any;
 }
 

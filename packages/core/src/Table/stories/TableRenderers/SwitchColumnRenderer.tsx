@@ -3,6 +3,7 @@ import {
   HvCellProps,
   HvPagination,
   HvRowInstance,
+  hvSwitchColumn,
   HvTable,
   HvTableBody,
   HvTableCell,
@@ -10,12 +11,11 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  hvSwitchColumn,
   useHvData,
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, NewRendererEntry, makeRenderersData } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
 export const SwitchColumnRenderer = () => {
   const initialData = useMemo(() => makeRenderersData(64), []);
@@ -45,7 +45,7 @@ export const SwitchColumnRenderer = () => {
             });
             setData(newData);
           },
-        }
+        },
       ),
     ];
   }, [data]);
@@ -66,7 +66,7 @@ export const SwitchColumnRenderer = () => {
           value ?? "—",
       },
     },
-    useHvPagination
+    useHvPagination,
   );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {

@@ -11,7 +11,7 @@ describe("<Navigation />", () => {
         visibleYear={2020}
         visibleMonth={4}
         onViewModeChange={() => {}}
-      />
+      />,
     );
     expect(screen.getByText("2020")).toBeInTheDocument();
     expect(screen.getByText("April")).toBeInTheDocument();

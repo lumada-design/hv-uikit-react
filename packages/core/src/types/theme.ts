@@ -1,10 +1,9 @@
+import type { HvTheme } from "@hitachivantara/uikit-react-shared";
 import {
   HvBaseTheme,
-  HvThemeStructure,
   HvThemeColorModeStructure,
+  HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
-
-import type { HvTheme } from "@hitachivantara/uikit-react-shared";
 
 import { HvExtraDeepPartialProps } from "./generic";
 

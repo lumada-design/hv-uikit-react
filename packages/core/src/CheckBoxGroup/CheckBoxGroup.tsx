@@ -7,12 +7,6 @@ import {
   useRef,
 } from "react";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvBaseProps } from "../types/generic";
-import { useUniqueId } from "../hooks/useUniqueId";
-import { useControlled } from "../hooks/useControlled";
-import { setId } from "../utils/setId";
-import { multiSelectionEventHandler } from "../utils/multiSelectionEventHandler";
 import { HvCheckBox } from "../CheckBox";
 import {
   HvFormElement,
@@ -21,8 +15,13 @@ import {
   HvLabel,
   HvWarningText,
 } from "../Forms";
+import { useControlled } from "../hooks/useControlled";
+import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
-
+import { multiSelectionEventHandler } from "../utils/multiSelectionEventHandler";
+import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./CheckBoxGroup.styles";
 
 const computeSelectAllState = (selected: number, total: number) => {
@@ -182,12 +181,12 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
         ? defaultValue
         : // When uncontrolled and no default value is given,
           // extract the initial selected values from the children own state
-          () => getValueFromSelectedChildren(children)
+          () => getValueFromSelectedChildren(children),
     );
 
     const [validationState, setValidationState] = useControlled(
       status,
-      "standBy"
+      "standBy",
     );
 
     const [validationMessage] = useControlled(statusMessage, "Required");
@@ -218,7 +217,7 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
 
     const selectAllState = computeSelectAllState(
       value.length,
-      selectedState.length
+      selectedState.length,
     );
 
     const onChildChangeInterceptor = useCallback(
@@ -226,10 +225,10 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
         index: number,
         childOnChange: (
           event: React.ChangeEvent<HTMLInputElement>,
-          isChecked: boolean
+          isChecked: boolean,
         ) => void,
         event: React.ChangeEvent<HTMLInputElement>,
-        isChecked: boolean
+        isChecked: boolean,
       ) => {
         const newValue = multiSelectionEventHandler(
           event,
@@ -237,7 +236,7 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
           selectionAnchor,
           allValues,
           selectedState,
-          isChecked
+          isChecked,
         );
 
         childOnChange?.(event, isChecked);
@@ -263,7 +262,7 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
         selectedState,
         setValidationState,
         setValue,
-      ]
+      ],
     );
 
     const modifiedChildren = useMemo(() => {
@@ -275,13 +274,13 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
           name: child?.props?.name || name,
           onChange: (
             event: React.ChangeEvent<HTMLInputElement>,
-            isChecked: boolean
+            isChecked: boolean,
           ) =>
             onChildChangeInterceptor(
               i,
               child?.props?.onChange,
               event,
-              isChecked
+              isChecked,
             ),
           disabled: disabled || child?.props?.disabled,
           readOnly: readOnly || child?.props?.readOnly,
@@ -298,7 +297,7 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
 
     const handleSelectAll = (
       event: React.ChangeEvent<HTMLInputElement>,
-      selectAllChecked: boolean
+      selectAllChecked: boolean,
     ) => {
       let newValue: any[];
       if (selectAllState === "some") {
@@ -422,5 +421,5 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
         )}
       </HvFormElement>
     );
-  }
+  },
 );

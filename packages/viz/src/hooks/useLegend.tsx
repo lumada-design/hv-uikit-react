@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 
-import { getLegendIcon } from "../utils";
-import { HvChartLegend, HvChartLegendIcon } from "../types/legend";
 import { HvEChartsOption } from "../types/common";
+import { HvChartLegend, HvChartLegendIcon } from "../types/legend";
+import { getLegendIcon } from "../utils";
 
 interface HvLegendHookProps {
   show?: HvChartLegend["show"];
@@ -44,7 +44,7 @@ export const useLegend = ({
                   return {
                     name: s.name as string,
                     icon: getLegendIcon(
-                      (s as any).areaStyle != null ? "square" : "line"
+                      (s as any).areaStyle != null ? "square" : "line",
                     ),
                   };
                 })

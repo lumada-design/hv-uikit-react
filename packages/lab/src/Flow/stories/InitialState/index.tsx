@@ -1,10 +1,11 @@
 import { useCallback, useRef, useState } from "react";
+import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { css } from "@emotion/css";
 import {
   HvButton,
   HvDialog,
-  HvDialogTitle,
   HvDialogContent,
+  HvDialogTitle,
   HvGlobalActions,
   HvTypography,
   theme,
@@ -12,13 +13,12 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Add, Backwards } from "@hitachivantara/uikit-react-icons";
 import {
-  HvFlowSidebar,
   HvFlow,
   HvFlowControls,
-  HvFlowProps,
   HvFlowInstance,
+  HvFlowProps,
+  HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 // The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
 import { nodeGroups, nodeTypes, restrictToSample } from "../Base";

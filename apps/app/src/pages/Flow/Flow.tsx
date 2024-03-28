@@ -17,6 +17,7 @@ import {
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
+import { baseNodeTypes, edges, nodeGroups, nodes } from "./config";
 import {
   DASHBOARDS_STORAGE_KEY,
   DashboardSpecs,
@@ -24,7 +25,6 @@ import {
   LAYOUT_COLS,
 } from "./types";
 import { buildLayout, createDataset, useDatasets } from "./utils";
-import { baseNodeTypes, edges, nodeGroups, nodes } from "./config";
 
 /** Initial Layout */
 const layout = [
@@ -48,7 +48,7 @@ const Content = () => {
   const persistDashboards = (
     nds: Node[],
     egs: Edge[],
-    ly?: HvDashboardProps["layout"]
+    ly?: HvDashboardProps["layout"],
   ) => {
     const value = localStorage.getItem(DASHBOARDS_STORAGE_KEY);
     const specs: DashboardsStorage = value ? JSON.parse(value) : undefined;
@@ -60,7 +60,7 @@ const Content = () => {
           .reduce<DashboardSpecs["items"]>((accN, curEdg) => {
             const vizNode = nds.find((node) => node.id === curEdg.source);
             const datasetNodeId = egs.find(
-              (edge) => edge.target === vizNode?.id
+              (edge) => edge.target === vizNode?.id,
             )?.source;
             const datasetNode = nds.find((node) => node.id === datasetNodeId);
 
@@ -133,7 +133,7 @@ const Content = () => {
 
       if (sourceNode?.type?.includes("dataset")) {
         const targetNode = reactFlowInstance?.getNode(
-          removedEdged?.target || ""
+          removedEdged?.target || "",
         );
 
         // Reset chart node

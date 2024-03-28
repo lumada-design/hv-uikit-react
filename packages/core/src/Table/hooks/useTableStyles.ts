@@ -1,5 +1,5 @@
-import { clsx } from "clsx";
 import { Hooks } from "react-table";
+import { clsx } from "clsx";
 
 // #region ##### TYPES #####
 
@@ -42,7 +42,7 @@ export interface UseHvTableStylesTableCellProps {
 }
 
 export type UseTableStylesProps = (<D extends object = Record<string, unknown>>(
-  hooks: Hooks<D>
+  hooks: Hooks<D>,
 ) => void) & { pluginName: string };
 
 // #endregion ##### TYPES #####
@@ -87,7 +87,7 @@ export const getHeaderFooterPropsHook = (props, { column }) => {
     nextProps.className = clsx(
       props.className,
       column.className,
-      column.headerClassName
+      column.headerClassName,
     );
   }
 
@@ -130,7 +130,7 @@ const getCellPropsHook = (props, { cell }) => {
     nextProps.className = clsx(
       props.className,
       cell.column.className,
-      cell.column.cellClassName
+      cell.column.cellClassName,
     );
   }
 

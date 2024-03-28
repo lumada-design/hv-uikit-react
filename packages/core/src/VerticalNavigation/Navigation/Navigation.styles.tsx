@@ -22,5 +22,5 @@ export const { staticClasses, useClasses } = createClasses(
     navigationPopup: {
       boxShadow: "inset 5px 0 5px -3px rgb(65 65 65 / 12%)",
     },
-  }
+  },
 );

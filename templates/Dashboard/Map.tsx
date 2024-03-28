@@ -1,7 +1,4 @@
 import { ReactNode } from "react";
-import { Global } from "@emotion/react";
-import { css, cx } from "@emotion/css";
-import { Icon } from "leaflet";
 import {
   MapContainer,
   MapContainerProps,
@@ -11,6 +8,9 @@ import {
   PopupProps,
   TileLayer,
 } from "react-leaflet";
+import { css, cx } from "@emotion/css";
+import { Global } from "@emotion/react";
+import { Icon } from "leaflet";
 
 import { mapStyles } from "./Map.styles";
 
@@ -51,7 +51,7 @@ export const Map = ({ markers, ...props }: MapProps) => {
             ".leaflet-tile-container img": {
               filter: "grayscale(100%)",
             },
-          })
+          }),
         )}
         {...props}
       >

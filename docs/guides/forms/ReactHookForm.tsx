@@ -1,26 +1,26 @@
 import {
-  useForm,
-  useController,
   Controller,
   ControllerProps,
   FieldError,
+  useController,
+  useForm,
 } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Map } from "@hitachivantara/uikit-react-icons";
 import {
-  HvInput,
   HvButton,
   HvCheckBox,
-  HvGrid,
-  HvInputProps,
   HvDatePicker,
-  HvTimePicker,
-  HvTextArea,
-  HvRadioGroup,
-  HvRadio,
   HvFormElementProps,
+  HvGrid,
+  HvInput,
+  HvInputProps,
+  HvRadio,
+  HvRadioGroup,
+  HvTextArea,
+  HvTimePicker,
 } from "@hitachivantara/uikit-react-core";
+import { Map } from "@hitachivantara/uikit-react-icons";
 
 const passwordSchema = z
   .string()
@@ -39,7 +39,7 @@ const formSchema = z
       .email("Invalid email")
       .refine(
         (email) => email.endsWith("@hitachivantara.com"),
-        "Email must be from @hitachivantara.com"
+        "Email must be from @hitachivantara.com",
       ),
     address: z.string().optional(),
     country: z
@@ -128,7 +128,7 @@ export default () => {
       autoComplete="on"
       onSubmit={handleSubmit(
         (data) => alert(JSON.stringify(data, null, 2)),
-        (errors) => console.error("Form errors", errors)
+        (errors) => console.error("Form errors", errors),
       )}
     >
       <HvGrid container maxWidth="md" rowSpacing="xs">

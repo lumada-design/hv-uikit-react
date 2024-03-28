@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
+import { formatTimeAgo } from "./formatUtils";
 import type { HvTimeAgoProps } from "./TimeAgo";
 import { useTimeout } from "./useTimeout";
-import { formatTimeAgo } from "./formatUtils";
 
 /**
  * Calls `formatTimeAgo` with timestamp conversion
@@ -15,7 +15,7 @@ const fmt = (timestamp: any, locale: any, showSeconds?: boolean) => {
 
 export default function useTimeAgo(
   timestamp: number | undefined,
-  options?: Pick<HvTimeAgoProps, "locale" | "disableRefresh" | "showSeconds">
+  options?: Pick<HvTimeAgoProps, "locale" | "disableRefresh" | "showSeconds">,
 ) {
   const { locale, disableRefresh = false, showSeconds = false } = options || {};
   const [timeAgo, setTimeAgo] = useState(fmt(timestamp, locale, showSeconds));

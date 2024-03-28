@@ -2,14 +2,14 @@ import { useRef, useState } from "react";
 import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 
-import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { UnitSlider } from "~/components/common/UnitSlider";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
 
 const Spacing = () => {
   const { activeTheme } = useTheme();
   const { customTheme, updateCustomTheme } = useGeneratorContext();
   const [currValues, setCurrValues] = useState<Map<string, string | number>>(
-    new Map<string, string | number>()
+    new Map<string, string | number>(),
   );
   const currValuesRef = useRef<Map<string, string | number>>(currValues);
 
@@ -28,7 +28,7 @@ const Spacing = () => {
       spacing === "base"
         ? value.toString() || ""
         : currValues.get(spacing)?.toString() || "",
-      10
+      10,
     );
 
     updateCustomTheme({
@@ -51,7 +51,7 @@ const Spacing = () => {
                     customTheme.space[
                       s as keyof HvThemeTokens["space"]
                     ].toString(),
-                  10
+                  10,
                 )}
                 unit="px"
                 hideUnits

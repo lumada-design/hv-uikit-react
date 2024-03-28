@@ -1,8 +1,8 @@
 import { useMemo } from "react";
+import { EmotionCache, css as emotionCss } from "@emotion/css";
+import { RegisteredCache, serializeStyles } from "@emotion/serialize";
+import { getRegisteredStyles, insertStyles } from "@emotion/utils";
 import clsx from "clsx";
-import { css as emotionCss, EmotionCache } from "@emotion/css";
-import { serializeStyles, RegisteredCache } from "@emotion/serialize";
-import { insertStyles, getRegisteredStyles } from "@emotion/utils";
 
 import { useEmotionCache } from "./useEmotionCache";
 
@@ -34,7 +34,7 @@ const cssFactory = (() => {
     const rawClassName = getRegisteredStyles(
       registered,
       registeredStyles,
-      className
+      className,
     );
 
     if (registeredStyles.length < 2) {

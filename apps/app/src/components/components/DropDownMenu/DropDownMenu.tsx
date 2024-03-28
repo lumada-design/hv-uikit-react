@@ -3,8 +3,7 @@ import { Calendar, Plane, User } from "@hitachivantara/uikit-react-icons";
 
 const iconSelectedColor =
   (Icon: React.ElementType): HvListValue["icon"] =>
-  ({ isSelected }) =>
-    <Icon color={isSelected ? "atmo1" : undefined} />;
+  ({ isSelected }) => <Icon color={isSelected ? "atmo1" : undefined} />;
 
 export const DropDownMenu = () => {
   return (

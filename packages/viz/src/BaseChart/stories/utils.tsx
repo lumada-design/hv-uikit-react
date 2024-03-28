@@ -1,5 +1,5 @@
-import { DecoratorFn } from "@storybook/react";
 import { css } from "@emotion/css";
+import { DecoratorFn } from "@storybook/react";
 import { theme } from "@hitachivantara/uikit-react-core";
 
 export const vizDecorator: DecoratorFn = (Story) => (

@@ -1,14 +1,11 @@
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 
 import { HvBaseProps } from "../../types/generic";
-
 import { ExtractNames } from "../../utils/classes";
-
 import { HvVerticalNavigation } from "../VerticalNavigation";
-
 import {
-  StyledPopper,
   staticClasses,
+  StyledPopper,
   useClasses,
 } from "./NavigationPopup.styles";
 

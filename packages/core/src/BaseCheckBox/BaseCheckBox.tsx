@@ -1,14 +1,11 @@
 import { forwardRef, useCallback, useState } from "react";
-
 import MuiCheckbox, {
   CheckboxProps as MuiCheckboxProps,
 } from "@mui/material/Checkbox";
 
-import { ExtractNames } from "../utils/classes";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-
+import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./BaseCheckBox.styles";
-
 import { Box, Check, Partial } from "./icons";
 
 export { staticClasses as baseCheckBoxClasses };
@@ -62,7 +59,7 @@ export interface HvBaseCheckBoxProps
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
     checked: boolean,
-    value: any
+    value: any,
   ) => void;
   /**
    * Whether the selector should use semantic colors.
@@ -139,7 +136,7 @@ export const HvBaseCheckBox = forwardRef<
 
       onChange?.(event, event.target.checked, value);
     },
-    [onChange, readOnly, value]
+    [onChange, readOnly, value],
   );
 
   const onBlurCallback = useCallback(
@@ -147,7 +144,7 @@ export const HvBaseCheckBox = forwardRef<
       setFocusVisible(false);
       onBlur?.(event);
     },
-    [onBlur]
+    [onBlur],
   );
 
   const onFocusVisibleCallback = useCallback(
@@ -155,7 +152,7 @@ export const HvBaseCheckBox = forwardRef<
       setFocusVisible(true);
       onFocusVisible?.(event);
     },
-    [onFocusVisible]
+    [onFocusVisible],
   );
 
   return (
@@ -173,7 +170,7 @@ export const HvBaseCheckBox = forwardRef<
           [classes.indeterminate]: indeterminate,
           [classes.semantic]: semantic,
         },
-        className
+        className,
       )}
       icon={icons.checkbox}
       indeterminateIcon={icons.checkboxPartial}

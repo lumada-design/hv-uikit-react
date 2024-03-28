@@ -1,30 +1,30 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 
+import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { ExtractNames } from "../utils/classes";
 import { isEqual } from "../utils/helpers";
 import { ConfirmationDialog } from "./ConfirmationDialog";
 import {
-  HvQueryBuilderProvider,
   defaultCombinators,
   defaultLabels,
   defaultOperators,
+  HvQueryBuilderProvider,
 } from "./Context";
+import { staticClasses, useClasses } from "./QueryBuilder.styles";
 import { RuleGroup } from "./RuleGroup";
 import {
   AskAction,
+  defaultRendererKey,
   HvQueryBuilderAttribute,
-  HvQueryBuilderQuery,
   HvQueryBuilderLabels,
+  HvQueryBuilderQuery,
   HvQueryBuilderQueryCombinator,
   HvQueryBuilderQueryOperator,
   HvQueryBuilderRenderers,
-  defaultRendererKey,
 } from "./types";
 import { clearNodeIds, emptyGroup, setNodeIds } from "./utils";
 import reducer from "./utils/reducer";
-import { useClasses, staticClasses } from "./QueryBuilder.styles";
-import { useControlled } from "../hooks/useControlled";
 
 export { staticClasses as queryBuilderClasses };
 
@@ -115,19 +115,19 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   ) {
     // eslint-disable-next-line no-console
     console.error(
-      `${defaultRendererKey} is a restricted key and shouldn't be used as an attribute or operator type. Update the key to avoid unexpected behaviors.`
+      `${defaultRendererKey} is a restricted key and shouldn't be used as an attribute or operator type. Update the key to avoid unexpected behaviors.`,
     );
   }
 
   const { classes } = useClasses(classesProp);
 
   const currentAttributes = useRef<HvQueryBuilderProps["attributes"] | null>(
-    null
+    null,
   );
 
   const controlled = useRef(value != null);
   const initialQuery = useRef(
-    value ?? defaultValue ?? queryProp ?? emptyGroup()
+    value ?? defaultValue ?? queryProp ?? emptyGroup(),
   );
   const [query, setQuery] = useControlled(value, initialQuery.current);
   const prevQuery = useRef(query);
@@ -137,7 +137,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
 
   const [state, dispatchAction] = useReducer(
     reducer,
-    setNodeIds(structuredClone(initialQuery.current))
+    setNodeIds(structuredClone(initialQuery.current)),
   );
 
   const contextValue = useMemo(
@@ -166,7 +166,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       renderers,
       disableConfirmation,
       emptyRenderer,
-    ]
+    ],
   );
 
   // Keep track of attributes
@@ -192,7 +192,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     } else if (
       !isEqual(
         clearNodeIds(structuredClone(state)),
-        clearNodeIds(structuredClone(query))
+        clearNodeIds(structuredClone(query)),
       )
     ) {
       setInitialState(false);
@@ -202,7 +202,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       // In the future if the user provides ids, it doesn't make sense to remove them with onChange
       if (!controlled.current) {
         onChange?.(
-          clearNodeIds(structuredClone(state), true) as HvQueryBuilderQuery
+          clearNodeIds(structuredClone(state), true) as HvQueryBuilderQuery,
         );
       } else {
         // When controlled, the ids provided by the user are not removed. Only the auto generated ones.

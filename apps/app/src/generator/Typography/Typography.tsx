@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
+import { css } from "@emotion/css";
+import { useDebounceCallback } from "usehooks-ts";
 import {
+  getVarValue,
   HvAccordion,
-  HvTypography,
   HvDropdown,
   HvListValue,
-  useTheme,
+  HvTypography,
   theme,
-  getVarValue,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens, HvThemeTypography } from "@hitachivantara/uikit-styles";
 
-import { useDebounceCallback } from "usehooks-ts";
-import { css } from "@emotion/css";
-
-import { extractFontSizeUnit } from "~/generator/utils";
-import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { ScaleProps, UnitSlider } from "~/components/common/UnitSlider";
+import { useGeneratorContext } from "~/generator/GeneratorContext";
+import { extractFontSizeUnit } from "~/generator/utils";
 
 const typographyToShow: (keyof HvThemeTypography["typography"])[] = [
   "display",
@@ -34,10 +33,10 @@ const Typography = () => {
   const { rootId } = useTheme();
 
   const [updatedHeights, setUpdatedHeights] = useState<Map<string, string>>(
-    new Map<string, string>()
+    new Map<string, string>(),
   );
   const [updatedWeights, setUpdatedWeights] = useState<Map<string, string>>(
-    new Map<string, string>()
+    new Map<string, string>(),
   );
   const [updatedSizes, setUpdatedSizes] = useState<
     Map<string, { value: number; unit: string }>
@@ -60,7 +59,7 @@ const Typography = () => {
           ) {
             val = getVarValue(
               customTheme.typography[t].fontSize as string,
-              rootId
+              rootId,
             );
           } else {
             val = customTheme.typography[t].fontSize;
@@ -88,7 +87,7 @@ const Typography = () => {
 
   const setSizeHandler = (
     value: number,
-    typographyName: keyof HvThemeTypography["typography"]
+    typographyName: keyof HvThemeTypography["typography"],
   ) => {
     const unit = updatedSizes.get(typographyName)?.unit || "px";
     const fixedValue = value.toFixed(unit === "em" || unit === "rem" ? 1 : 0);
@@ -103,7 +102,7 @@ const Typography = () => {
 
   const unitChangedHandler = (
     item: HvListValue,
-    typographyName: keyof HvThemeTypography["typography"]
+    typographyName: keyof HvThemeTypography["typography"],
   ) => {
     const map = new Map<string, { value: number; unit: string }>(updatedSizes);
 
@@ -142,7 +141,7 @@ const Typography = () => {
   };
 
   const getLineHeights = (
-    typographyName: keyof HvThemeTypography["typography"]
+    typographyName: keyof HvThemeTypography["typography"],
   ) => {
     const lineHeights: HvListValue[] = [];
 
@@ -176,7 +175,7 @@ const Typography = () => {
   };
 
   const getFontWeights = (
-    typographyName: keyof HvThemeTypography["typography"]
+    typographyName: keyof HvThemeTypography["typography"],
   ) => {
     const fontWeights: HvListValue[] = [];
 
@@ -211,7 +210,7 @@ const Typography = () => {
 
   const lineHeightChangedHandler = (
     typographyName: keyof HvThemeTypography["typography"],
-    lineHeight: keyof HvThemeTokens["lineHeights"]
+    lineHeight: keyof HvThemeTokens["lineHeights"],
   ) => {
     updateCustomTheme({
       typography: {
@@ -228,7 +227,7 @@ const Typography = () => {
 
   const fontWeightChangedHandler = (
     typographyName: keyof HvThemeTypography["typography"],
-    fontWeight: keyof HvThemeTokens["fontWeights"]
+    fontWeight: keyof HvThemeTokens["fontWeights"],
   ) => {
     updateCustomTheme({
       typography: {
@@ -245,7 +244,7 @@ const Typography = () => {
 
   const colorChangedHandler = (
     typographyName: keyof HvThemeTypography["typography"],
-    colorValue: string
+    colorValue: string,
   ) => {
     updateCustomTheme({
       typography: {
@@ -258,7 +257,7 @@ const Typography = () => {
 
   const debouncedColorChangedHandler = useDebounceCallback(
     colorChangedHandler,
-    250
+    250,
   );
 
   return (
@@ -317,7 +316,7 @@ const Typography = () => {
                     lineHeightChangedHandler(
                       t,
                       (item as HvListValue)
-                        ?.label as keyof HvThemeTokens["lineHeights"]
+                        ?.label as keyof HvThemeTokens["lineHeights"],
                     )
                   }
                 />

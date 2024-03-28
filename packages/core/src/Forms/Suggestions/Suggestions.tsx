@@ -1,20 +1,18 @@
 import { forwardRef, useContext, useEffect, useRef, useState } from "react";
-
 import MuiPopper from "@mui/material/Popper";
 import { useForkRef } from "@mui/material/utils";
 
-import { HvBaseProps } from "../../types/generic";
-import { setId } from "../../utils/setId";
-import { HvListItem } from "../../ListContainer";
 import {
   HvClickOutsideEvent,
   useClickOutside,
 } from "../../hooks/useClickOutside";
-import { ExtractNames } from "../../utils/classes";
+import { HvListItem } from "../../ListContainer";
 import { HvSelectionList } from "../../SelectionList";
-
-import { staticClasses, useClasses } from "./Suggestions.styles";
+import { HvBaseProps } from "../../types/generic";
+import { ExtractNames } from "../../utils/classes";
+import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../FormElement";
+import { staticClasses, useClasses } from "./Suggestions.styles";
 
 export { staticClasses as suggestionsClasses };
 

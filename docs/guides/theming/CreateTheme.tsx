@@ -1,6 +1,6 @@
 import {
-  HvProvider,
   createTheme,
+  HvProvider,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 

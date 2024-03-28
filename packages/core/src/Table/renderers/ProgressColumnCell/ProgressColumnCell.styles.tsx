@@ -20,5 +20,5 @@ export const { staticClasses, useClasses } = createClasses(
     linearProgressBarColorSecondary: {
       backgroundColor: theme.colors.secondary,
     },
-  }
+  },
 );

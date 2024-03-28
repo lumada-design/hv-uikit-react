@@ -30,7 +30,7 @@ export class EventManager {
   on(
     eventName: string,
     listener: EventListener,
-    options: EventListenerOptions = {}
+    options: EventListenerOptions = {},
   ): void {
     let collection = this.events[eventName];
 

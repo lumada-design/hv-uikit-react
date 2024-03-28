@@ -2,8 +2,8 @@ import { forwardRef } from "react";
 import { OptionGroup, OptionGroupProps } from "@mui/base/OptionGroup";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { ExtractNames, createClasses } from "../utils/classes";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { createClasses, ExtractNames } from "../utils/classes";
 
 const { staticClasses, useClasses } = createClasses("HvOptionGroup", {
   root: {
@@ -36,5 +36,5 @@ export const HvOptionGroup = forwardRef<HTMLLIElement, HvOptionGroupProps>(
         {...others}
       />
     );
-  }
+  },
 );

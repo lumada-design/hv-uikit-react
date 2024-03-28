@@ -4,7 +4,7 @@ import {
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 
-import { Wrapper, BackgroundWrapper, ContentWrapper } from "./styles";
+import { BackgroundWrapper, ContentWrapper, Wrapper } from "./styles";
 
 const Header = () => {
   const { selectedMode } = useTheme();

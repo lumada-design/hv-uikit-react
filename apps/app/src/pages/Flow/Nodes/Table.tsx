@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import {
   HvFlowNode,
-  HvFlowNodeTypeMeta,
-  HvFlowNodeProps,
   HvFlowNodeFC,
+  HvFlowNodeProps,
+  HvFlowNodeTypeMeta,
 } from "@hitachivantara/uikit-react-lab";
 
 import { NodeGroup } from "../types";

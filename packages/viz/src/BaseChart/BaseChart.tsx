@@ -1,11 +1,9 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
-
 import { useForkRef } from "@mui/material/utils";
-
-import { AriaComponent } from "echarts/components";
-import { CanvasRenderer } from "echarts/renderers";
-import * as echarts from "echarts/core";
 import ReactECharts from "echarts-for-react/lib/core";
+import { AriaComponent } from "echarts/components";
+import * as echarts from "echarts/core";
+import { CanvasRenderer } from "echarts/renderers";
 
 import { useVizTheme } from "../hooks";
 import { HvEChartsOption } from "../types/common";
@@ -75,5 +73,5 @@ export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
         }}
       />
     );
-  }
+  },
 );

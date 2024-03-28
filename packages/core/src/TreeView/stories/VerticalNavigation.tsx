@@ -1,16 +1,16 @@
 import { forwardRef, useMemo, useState } from "react";
 import { css } from "@emotion/css";
-import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 import {
   HvPanel,
-  HvTreeView,
   HvTreeItem,
   HvTreeItemProps,
+  HvTreeView,
   HvTypography,
   NavigationData,
-  useHvTreeItem,
   theme,
+  useHvTreeItem,
 } from "@hitachivantara/uikit-react-core";
+import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 
 interface CustomTreeItemProps extends HvTreeItemProps {
   /** Triggered when the tree item is expanded */
@@ -58,7 +58,7 @@ const NavigationItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
         {children}
       </HvTreeItem>
     );
-  }
+  },
 );
 
 /** Render tree view items */
@@ -102,7 +102,7 @@ export const VerticalNavigation = () => {
         ],
       },
     ],
-    []
+    [],
   );
 
   return (

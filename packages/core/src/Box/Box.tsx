@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
 import { HvTheme, theme } from "@hitachivantara/uikit-styles";
 
-import { PolymorphicComponentRef, PolymorphicRef } from "../types/generic";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { PolymorphicComponentRef, PolymorphicRef } from "../types/generic";
 
 type SxProps = React.CSSProperties | ((theme: HvTheme) => React.CSSProperties);
 
@@ -13,7 +13,7 @@ type HvBoxBaseProps<C extends React.ElementType> = PolymorphicComponentRef<
 
 // v6 - This shouldn't be named HvBoxProps
 export type HvBoxProps = <C extends React.ElementType = "div">(
-  props: HvBoxBaseProps<C>
+  props: HvBoxBaseProps<C>,
 ) => React.ReactElement | null;
 
 const sxFn = (sx: SxProps) => {
@@ -28,7 +28,7 @@ const sxFn = (sx: SxProps) => {
 export const HvBox: HvBoxProps = forwardRef(
   <C extends React.ElementType = "div">(
     props: HvBoxBaseProps<C>,
-    ref?: PolymorphicRef<C>
+    ref?: PolymorphicRef<C>,
   ) => {
     const {
       style,
@@ -44,5 +44,5 @@ export const HvBox: HvBoxProps = forwardRef(
         {children}
       </Component>
     );
-  }
+  },
 );

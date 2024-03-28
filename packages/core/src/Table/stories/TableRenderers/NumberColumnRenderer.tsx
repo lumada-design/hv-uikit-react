@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import {
   HvCellProps,
+  hvNumberColumn,
   HvPagination,
   HvRowInstance,
   HvTable,
@@ -10,12 +11,11 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  hvNumberColumn,
   useHvData,
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, NewRendererEntry, makeRenderersData } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
 export const NumberColumnRenderer = () => {
   const getColumns = () => [
@@ -50,7 +50,7 @@ export const NumberColumnRenderer = () => {
           value ?? "—",
       },
     },
-    useHvPagination
+    useHvPagination,
   );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {

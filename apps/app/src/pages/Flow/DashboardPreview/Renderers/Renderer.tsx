@@ -1,5 +1,5 @@
-import useSWR from "swr";
 import { loadArrow } from "arquero";
+import useSWR from "swr";
 import {
   HvBarChart,
   HvDonutChart,
@@ -8,7 +8,6 @@ import {
 
 import { NodeData } from "../../types";
 import { datasets } from "../../utils";
-
 import { ChartContainer } from "./ChartContainer";
 import { Kpi } from "./Kpi";
 import { Table } from "./Table";

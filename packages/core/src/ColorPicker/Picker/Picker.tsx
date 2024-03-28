@@ -1,6 +1,4 @@
 import { useCallback } from "react";
-
-import { Saturation, Hue } from "react-color/lib/components/common";
 import {
   CustomPicker,
   CustomPickerInjectedProps,
@@ -8,15 +6,14 @@ import {
   HSVColor,
   RGBColor,
 } from "react-color";
-
-import { HvTypography } from "../../Typography";
-import { useTheme } from "../../hooks/useTheme";
-import { ExtractNames } from "../../utils/classes";
+import { Hue, Saturation } from "react-color/lib/components/common";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-
-import { staticClasses, useClasses } from "./Picker.styles";
+import { useTheme } from "../../hooks/useTheme";
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
 import { Fields } from "../Fields";
+import { staticClasses, useClasses } from "./Picker.styles";
 
 export { staticClasses as colorPickerPickerClasses };
 
@@ -51,12 +48,12 @@ const Component = (props: PickerProps) => {
 
   const SaturationPointer = useCallback(
     () => <div className={classes?.saturationPointer} />,
-    [classes?.saturationPointer]
+    [classes?.saturationPointer],
   );
 
   const HueSlider = useCallback(
     () => <div className={classes?.hueSlider} />,
-    [classes?.hueSlider]
+    [classes?.hueSlider],
   );
 
   return (

@@ -8,14 +8,14 @@ import {
   HvTooltip,
 } from "@hitachivantara/uikit-react-core";
 import {
+  Add,
   Cards,
-  List,
+  Delete,
   Level0Good,
   Level1,
   Level2Average,
   Level3Bad,
-  Add,
-  Delete,
+  List,
   Preview,
 } from "@hitachivantara/uikit-react-icons";
 
@@ -80,7 +80,7 @@ const getStatusMessage = (status?: AssetInventoryEntry["statusColor"]) => {
 };
 
 export const getColumns = (
-  loading?: boolean
+  loading?: boolean,
 ): HvTableColumnConfig<AssetInventoryEntry, string>[] => [
   {
     Header: "Status",

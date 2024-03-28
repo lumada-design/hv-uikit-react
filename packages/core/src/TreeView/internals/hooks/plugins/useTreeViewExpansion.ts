@@ -15,7 +15,7 @@ export interface UseTreeViewExpansionInstance {
   toggleNodeExpansion: (event: React.SyntheticEvent, value: string) => void;
   expandAllSiblings: (
     event: React.KeyboardEvent<HTMLUListElement>,
-    nodeId: string
+    nodeId: string,
   ) => void;
 }
 
@@ -63,12 +63,12 @@ export const useTreeViewExpansion: TreeViewPlugin<
         ? models.expanded.value.indexOf(nodeId) !== -1
         : false;
     },
-    [models.expanded.value]
+    [models.expanded.value],
   );
 
   const isNodeExpandable = React.useCallback(
     (nodeId: string) => !!instance.getNode(nodeId)?.expandable,
-    [instance]
+    [instance],
   );
 
   const toggleNodeExpansion = useEventCallback(
@@ -90,19 +90,19 @@ export const useTreeViewExpansion: TreeViewPlugin<
       }
 
       models.expanded.setValue(newExpanded);
-    }
+    },
   );
 
   const expandAllSiblings = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    nodeId: string
+    nodeId: string,
   ) => {
     const node = instance.getNode(nodeId);
     const siblings = instance.getChildrenIds(node.parentId);
 
     const diff = siblings.filter(
       (child) =>
-        instance.isNodeExpandable(child) && !instance.isNodeExpanded(child)
+        instance.isNodeExpandable(child) && !instance.isNodeExpanded(child),
     );
 
     const newExpanded = models.expanded.value.concat(diff);

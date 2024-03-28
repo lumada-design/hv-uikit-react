@@ -1,15 +1,15 @@
 import {
+  createContext,
   Dispatch,
   SetStateAction,
-  createContext,
   useCallback,
   useEffect,
   useMemo,
   useState,
 } from "react";
 
-import { isEqual } from "../utils/helpers";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { isEqual } from "../utils/helpers";
 import { useSavedState } from "../utils/useSavedState";
 import { HvFilterGroupFilters, HvFilterGroupValue } from "./types";
 
@@ -53,7 +53,7 @@ interface HvFilterGroupProviderProps {
 export const HvFilterGroupProvider = (props: HvFilterGroupProviderProps) => {
   const { defaultValue, value, filters, children } = useDefaultProps(
     "HvFilterGroupProvider",
-    props
+    props,
   );
 
   const [group, setActiveGroup] = useState<number>(0);
@@ -102,7 +102,7 @@ export const HvFilterGroupProvider = (props: HvFilterGroupProviderProps) => {
       rollbackFilters,
       setFilterValues,
       defaultValue,
-    ]
+    ],
   );
 
   return (

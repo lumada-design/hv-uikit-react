@@ -48,7 +48,7 @@ export const HvFilterGroupRightPanel = ({
   const { all: allActiveGroupOptions, enabled: enabledActiveGroupOptions } =
     useMemo(() => {
       const filteredOptions = filterOptions[activeGroup]?.data.filter(
-        (option) => option.name.toLowerCase().includes(searchStr.toLowerCase())
+        (option) => option.name.toLowerCase().includes(searchStr.toLowerCase()),
       );
 
       return {
@@ -63,9 +63,9 @@ export const HvFilterGroupRightPanel = ({
   const activeFilterValues = useMemo(
     () =>
       filterValues[activeGroup]?.filter((value) =>
-        allActiveGroupOptions.includes(value)
+        allActiveGroupOptions.includes(value),
       ) || [],
-    [filterValues, allActiveGroupOptions, activeGroup]
+    [filterValues, allActiveGroupOptions, activeGroup],
   );
 
   const listValues = useMemo(
@@ -77,7 +77,7 @@ export const HvFilterGroupRightPanel = ({
         isHidden:
           option.name.toLowerCase().indexOf(searchStr.toLowerCase()) < 0,
       })) || [],
-    [filterOptions, filterValues, activeGroup, searchStr]
+    [filterOptions, filterValues, activeGroup, searchStr],
   );
 
   const updateSelectAll = useCallback(() => {
@@ -99,7 +99,7 @@ export const HvFilterGroupRightPanel = ({
     const newFilterValues = filterOptions.map((_, i) =>
       activeGroup === i
         ? values.filter((v) => v.selected).map((v) => v.id)
-        : [...(filterValues[i] || [])]
+        : [...(filterValues[i] || [])],
     );
     setFilterValues(newFilterValues as any);
   };
@@ -110,7 +110,7 @@ export const HvFilterGroupRightPanel = ({
     if (anySelected) {
       if (searchStr !== "") {
         newFilterValues[activeGroup] = filterValues[activeGroup]?.filter(
-          (value) => !enabledActiveGroupOptions.includes(value)
+          (value) => !enabledActiveGroupOptions.includes(value),
         );
       } else {
         newFilterValues[activeGroup] = [];

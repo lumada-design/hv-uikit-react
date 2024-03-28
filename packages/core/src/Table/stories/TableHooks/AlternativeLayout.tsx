@@ -1,7 +1,12 @@
 import { useMemo, useState } from "react";
 import { useAbsoluteLayout, useBlockLayout, useFlexLayout } from "react-table";
-import { Delete } from "@hitachivantara/uikit-react-icons";
 import {
+  HvBulkActions,
+  HvButton,
+  HvDropdown,
+  HvListValue,
+  HvPagination,
+  HvSwitch,
   HvTable,
   HvTableBody,
   HvTableCell,
@@ -10,18 +15,13 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
+  HvTypography,
   useHvBulkActions,
   useHvData,
   useHvPagination,
   useHvRowSelection,
-  HvBulkActions,
-  HvButton,
-  HvDropdown,
-  HvListValue,
-  HvPagination,
-  HvSwitch,
-  HvTypography,
 } from "@hitachivantara/uikit-react-core";
+import { Delete } from "@hitachivantara/uikit-react-icons";
 
 import { AssetEvent, makeData } from "../storiesUtils";
 
@@ -44,7 +44,7 @@ const SampleTable = ({ columns, data, layoutHook, component }) => {
     layoutHook,
     useHvPagination,
     useHvRowSelection,
-    useHvBulkActions
+    useHvBulkActions,
   );
 
   return (
@@ -103,7 +103,7 @@ export const AlternativeLayout = () => {
       { id: "1", label: "useBlockLayout", hook: useBlockLayout },
       { id: "2", label: "useAbsoluteLayout", hook: useAbsoluteLayout },
     ],
-    []
+    [],
   );
 
   const [layoutHook, setLayoutHook] = useState(() => useFlexLayout);
@@ -134,7 +134,7 @@ export const AlternativeLayout = () => {
         ),
       },
     ],
-    []
+    [],
   );
 
   const table = useMemo(
@@ -149,7 +149,7 @@ export const AlternativeLayout = () => {
         key={layoutHook as any}
       />
     ),
-    [columns, data, layoutHook, tableElements]
+    [columns, data, layoutHook, tableElements],
   );
 
   return (

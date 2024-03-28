@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
 import {
   HvDialog,
   HvDialogContent,
   HvDialogTitle,
   HvFileData,
   HvFileUploader,
-  HvFileUploaderProps,
   HvFileUploaderPreview,
+  HvFileUploaderProps,
 } from "@hitachivantara/uikit-react-core";
+import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
 
 import { cancelUpload, simulateUpload } from "./simulators";
 
@@ -56,7 +56,7 @@ export const Main: StoryObj<HvFileUploaderProps> = {
             newFile.status = "success";
 
             setList((previousList) => [...previousList]);
-          }
+          },
         );
       }
 
@@ -75,7 +75,7 @@ export const Main: StoryObj<HvFileUploaderProps> = {
       // it might be necessary to call an API to delete it there
 
       setList((previousList) =>
-        previousList.filter((file) => file !== fileToRemove)
+        previousList.filter((file) => file !== fileToRemove),
       );
     };
 
@@ -121,7 +121,7 @@ export const Basic: StoryObj<HvFileUploaderProps> = {
           () => {
             newFile.status = "success";
             setList((previousList) => [...previousList]);
-          }
+          },
         );
       }
 
@@ -134,7 +134,7 @@ export const Basic: StoryObj<HvFileUploaderProps> = {
       }
 
       setList((previousList) =>
-        previousList.filter((file) => file !== fileToRemove)
+        previousList.filter((file) => file !== fileToRemove),
       );
     };
 
@@ -197,7 +197,7 @@ export const WithPreviewThumbnails: StoryObj<HvFileUploaderProps> = {
               onClick={() =>
                 openDialog(
                   "https://i.imgur.com/YcVYmM0.jpg",
-                  "already_here.jpg"
+                  "already_here.jpg",
                 )
               }
             >
@@ -272,7 +272,7 @@ export const WithPreviewThumbnails: StoryObj<HvFileUploaderProps> = {
             // using a server side URL, for instance
 
             setList((previousList) => [...previousList]);
-          }
+          },
         );
       }
 
@@ -285,7 +285,7 @@ export const WithPreviewThumbnails: StoryObj<HvFileUploaderProps> = {
       }
 
       setList((previousList) =>
-        previousList.filter((file) => file !== fileToRemove)
+        previousList.filter((file) => file !== fileToRemove),
       );
     };
 
@@ -353,7 +353,7 @@ export const SingleUpload: StoryObj<HvFileUploaderProps> = {
             newFile.status = "success";
 
             setList((previousList) => [...previousList]);
-          }
+          },
         );
       }
 
@@ -366,7 +366,7 @@ export const SingleUpload: StoryObj<HvFileUploaderProps> = {
       }
 
       setList((previousList) =>
-        previousList.filter((file) => file !== fileToRemove)
+        previousList.filter((file) => file !== fileToRemove),
       );
     };
 
@@ -420,7 +420,7 @@ export const CustomizedFileTypes: StoryObj<HvFileUploaderProps> = {
             newFile.status = "success";
 
             setList((previousList) => [...previousList]);
-          }
+          },
         );
       }
 
@@ -433,7 +433,7 @@ export const CustomizedFileTypes: StoryObj<HvFileUploaderProps> = {
       }
 
       setList((previousList) =>
-        previousList.filter((file) => file !== fileToRemove)
+        previousList.filter((file) => file !== fileToRemove),
       );
     };
 

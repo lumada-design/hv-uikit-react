@@ -1,23 +1,22 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
 import localeData from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import customParseFormat from "dayjs/plugin/customParseFormat";
 
 import {
   HvFormElementContext,
-  HvFormElementValueContext,
   HvFormElementDescriptorsContext,
+  HvFormElementValueContext,
 } from "../../Forms";
-import { isKey } from "../../utils/keyboardUtils";
-import { setId } from "../../utils/setId";
-import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvInput, HvInputProps } from "../../Input";
-
-import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
+import { isKey } from "../../utils/keyboardUtils";
+import { setId } from "../../utils/setId";
 import { DateRangeProp } from "../types";
+import { formatToLocale, isDate, isRange, isSameDay } from "../utils";
 import { staticClasses, useClasses } from "./CalendarHeader.styles";
 
 export { staticClasses as calendarHeaderClasses };
@@ -66,7 +65,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   const localeFormat = dayjs().locale(locale).localeData().longDateFormat("L");
 
   const [isValidValue, setIsValidValue] = useState(
-    inputValue.length === 0 || (!!inputValue && dayjs(localValue).isValid())
+    inputValue.length === 0 || (!!inputValue && dayjs(localValue).isValid()),
   );
 
   const validateInput = (incomingValid: any) =>
@@ -210,14 +209,14 @@ export interface HvCalendarHeaderProps {
     event:
       | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
       | undefined,
-    value: Date | DateRangeProp
+    value: Date | DateRangeProp,
   ) => void;
   /**
    * Callback to handle input onFocus.
    */
   onFocus?: (
     event: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>,
-    formattedDate: string | null
+    formattedDate: string | null,
   ) => void;
   /**
    * Indicates if header should display end date in a date range.

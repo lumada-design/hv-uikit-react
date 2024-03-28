@@ -15,7 +15,7 @@ import {
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, NewRendererEntry, makeRenderersData } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
 
 export const TagColumnRenderer = () => {
   const columns = useMemo(() => {
@@ -29,7 +29,7 @@ export const TagColumnRenderer = () => {
         {
           color: "cat5",
           type: "categorical",
-        }
+        },
       ),
     ];
   }, []);
@@ -54,7 +54,7 @@ export const TagColumnRenderer = () => {
           value ?? "—",
       },
     },
-    useHvPagination
+    useHvPagination,
   );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {

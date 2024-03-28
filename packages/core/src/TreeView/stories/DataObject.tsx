@@ -1,12 +1,12 @@
 import { forwardRef } from "react";
 import { css } from "@emotion/css";
-import { Doc, Folders } from "@hitachivantara/uikit-react-icons";
 import {
   HvPanel,
-  HvTreeView,
   HvTreeItem,
   HvTreeItemProps,
+  HvTreeView,
 } from "@hitachivantara/uikit-react-core";
+import { Doc, Folders } from "@hitachivantara/uikit-react-icons";
 
 type TreeData = { id: string; label: string; children?: TreeData[] };
 
@@ -67,7 +67,7 @@ const SimpleTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
         {children}
       </HvTreeItem>
     );
-  }
+  },
 );
 
 /** Render tree view items */

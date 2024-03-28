@@ -34,7 +34,7 @@ export const ColumnResize = () => {
       },
       { Header: "Priority", accessor: "priority" },
     ],
-    []
+    [],
   );
   const data = useMemo(() => makeData(6), []);
 
@@ -44,7 +44,7 @@ export const ColumnResize = () => {
       width: 200,
       maxWidth: 400,
     }),
-    []
+    [],
   );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
@@ -55,7 +55,7 @@ export const ColumnResize = () => {
         defaultColumn,
       },
       useBlockLayout,
-      useHvResizeColumns
+      useHvResizeColumns,
     );
 
   return (

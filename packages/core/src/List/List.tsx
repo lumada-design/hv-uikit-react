@@ -6,30 +6,27 @@ import {
   useMemo,
   useRef,
 } from "react";
-
 import { FixedSizeList } from "react-window";
-
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 
+import { HvCheckBox } from "../CheckBox";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { HvBaseProps } from "../types/generic";
+import { HvLink } from "../Link";
 import {
   HvListContainer,
   HvListContainerProps,
   HvListItem,
 } from "../ListContainer";
+import { HvRadio } from "../Radio";
+import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
+import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { wrapperTooltip } from "../utils/wrapperTooltip";
-import { ExtractNames } from "../utils/classes";
-import { HvCheckBox } from "../CheckBox";
-import { HvLink } from "../Link";
-import { HvRadio } from "../Radio";
-
 import { staticClasses, useClasses } from "./List.styles";
+import { HvListLabels, HvListValue } from "./types";
 import { useSelectableList } from "./useSelectableList";
 import { parseList } from "./utils";
-import { HvListLabels, HvListValue } from "./types";
 
 export { staticClasses as listClasses };
 
@@ -66,7 +63,7 @@ export interface HvListProps
   /** Call back fired when list item is selected. Returns selected item. */
   onClick?: (
     event: React.ChangeEvent<HTMLLIElement>,
-    value: HvListValue
+    value: HvListValue,
   ) => void;
   /** If `true` the list items will show the selection state. */
   selectable?: boolean;
@@ -124,7 +121,7 @@ export const HvList = (props: HvListProps) => {
       undefined,
       passedProps,
       undefined,
-      valuesProp
+      valuesProp,
     );
 
     setList(parsedList);
@@ -153,13 +150,13 @@ export const HvList = (props: HvListProps) => {
   const handleSelectAll = () => {
     const passedProps = { multiSelect, selectable, singleSelectionToggle };
     const anySelectableSelected = list.some(
-      (elem) => elem.selected || elem.disabled
+      (elem) => elem.selected || elem.disabled,
     );
     const parsedList = parseList(
       undefined,
       passedProps,
       !anySelectableSelected,
-      list
+      list,
     );
     setList(parsedList);
 
@@ -238,7 +235,7 @@ export const HvList = (props: HvListProps) => {
             label: classes.truncate,
           }}
         />,
-        item.label
+        item.label,
       );
       return <Selection />;
     }
@@ -261,7 +258,7 @@ export const HvList = (props: HvListProps) => {
             label: classes.truncate,
           }}
         />,
-        item.label
+        item.label,
       );
       return <Selection />;
     }
@@ -357,7 +354,7 @@ export const HvList = (props: HvListProps) => {
           ref={ref}
           {...rest}
         />
-      )
+      ),
     );
   }, [
     cx,

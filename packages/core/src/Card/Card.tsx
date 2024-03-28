@@ -1,9 +1,8 @@
-import { HvColorAny, getColor, theme } from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { HvBaseProps } from "../types/generic";
-
+import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Card.styles";
 
 export { staticClasses as cardClasses };
@@ -61,7 +60,7 @@ export const HvCard = (props: HvCardProps) => {
           [classes.selectable]: selectable,
           [classes.selected]: selected,
         },
-        className
+        className,
       )}
       {...others}
     >
@@ -77,7 +76,7 @@ export const HvCard = (props: HvCardProps) => {
                     : theme.colors.atmo4
                   : theme.colors[statusColor],
             }),
-            classes.semanticBar
+            classes.semanticBar,
           )}
         />
         <div className={classes.icon}>{icon}</div>

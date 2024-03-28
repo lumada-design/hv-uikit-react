@@ -1,10 +1,7 @@
 import { useCallback, useContext, useState } from "react";
-
-import { Meta, StoryObj } from "@storybook/react";
-import { waitFor, screen, fireEvent } from "@storybook/testing-library";
-
 import { css } from "@emotion/css";
-
+import { Meta, StoryObj } from "@storybook/react";
+import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvAccordion,
   HvButton,
@@ -16,8 +13,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import {
   HvWizard,
-  HvWizardProps,
   HvWizardContext,
+  HvWizardProps,
 } from "@hitachivantara/uikit-react-lab";
 
 import mockText from "./mockData";
@@ -46,7 +43,7 @@ const RandomFormComponent = () => {
 
   const toggleContextValid = useCallback(
     (valid) => setContext({ ...context, [tab]: { ...context[tab], valid } }),
-    [context, setContext, tab]
+    [context, setContext, tab],
   );
 
   const handleFieldValue = (fieldName, fieldValue) => {

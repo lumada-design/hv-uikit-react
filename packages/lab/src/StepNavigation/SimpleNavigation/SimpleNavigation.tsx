@@ -6,7 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { HvDot, HvDotProps } from "./Dot";
-import { getColor, dotSizes } from "./utils";
+import { dotSizes, getColor } from "./utils";
 
 export type ComponentChildProps = {
   stepsWidth: number;
@@ -35,7 +35,7 @@ export interface HvSimpleNavigationProps extends Omit<HvBaseProps, "children"> {
       state: HvDotProps["state"];
       rawTitle: string;
       number: number;
-    }) => { variant: string; title: string }
+    }) => { variant: string; title: string },
   ) => ReactNode;
   /** Returns dynamic width values of the component (width, titleWidth, separatorWidth). */
   getDynamicValues: (stepsWidth: number) => {

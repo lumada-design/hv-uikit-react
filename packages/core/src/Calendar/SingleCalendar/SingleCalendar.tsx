@@ -1,20 +1,16 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 
+import { HvTypography } from "../../Typography";
+import { ExtractNames } from "../../utils/classes";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
-
-import { ExtractNames } from "../../utils/classes";
-import { HvTypography } from "../../Typography";
-
-import { ViewMode } from "../enums";
-import { isRange, isDate, getWeekdayNamesList } from "../utils";
-import { generateCalendarModel } from "../model";
-import { HvComposedNavigation, HvMonthSelector } from "../CalendarNavigation";
-import { DateRangeProp, VisibilitySelectorActions } from "../types";
-
-import { HvCalendarCell } from "./CalendarCell";
 import { HvCalendarHeader } from "../CalendarHeader/CalendarHeader";
-
+import { HvComposedNavigation, HvMonthSelector } from "../CalendarNavigation";
+import { ViewMode } from "../enums";
+import { generateCalendarModel } from "../model";
+import { DateRangeProp, VisibilitySelectorActions } from "../types";
+import { getWeekdayNamesList, isDate, isRange } from "../utils";
+import { HvCalendarCell } from "./CalendarCell";
 import { staticClasses, useClasses } from "./SingleCalendar.styles";
 
 export { staticClasses as singleCalendarClasses };
@@ -85,7 +81,7 @@ export const HvSingleCalendar = ({
     const siblings =
       parent != null
         ? Array.from(
-            parent.getElementsByClassName(classes.cellContainer as string)
+            parent.getElementsByClassName(classes.cellContainer as string),
           )
         : [];
     const elIndex = el ? siblings.indexOf(el) : 0;
@@ -222,7 +218,7 @@ export interface HvSingleCalendarProps {
     event:
       | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
       | undefined,
-    value: Date | DateRangeProp
+    value: Date | DateRangeProp,
   ) => void;
   /**
    * Callback function to be triggered when the selected date input has changed.
@@ -234,7 +230,7 @@ export interface HvSingleCalendarProps {
         >
       | undefined,
     value: Date | DateRangeProp,
-    position?: "left" | "right"
+    position?: "left" | "right",
   ) => void;
   /**
    * Callback function to be triggered when visible date has changed.
@@ -244,7 +240,7 @@ export interface HvSingleCalendarProps {
       | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
       | undefined,
     action: VisibilitySelectorActions,
-    value?: Date | DateRangeProp | number
+    value?: Date | DateRangeProp | number,
   ) => void;
   /**
    * The maximum selectable date after this all values are disabled.

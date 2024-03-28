@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { BarChart, Ghost, Info } from "@hitachivantara/uikit-react-icons";
 import {
-  HvLink,
-  HvTypography,
   HvEmptyState,
   HvEmptyStateProps,
+  HvLink,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
+import { BarChart, Ghost, Info } from "@hitachivantara/uikit-react-icons";
 
 const meta: Meta<typeof HvEmptyState> = {
   title: "Components/Empty State",

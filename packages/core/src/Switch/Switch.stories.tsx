@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { css } from "@emotion/css";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseSwitch,
   HvButton,
@@ -141,7 +141,7 @@ export const WithLabels: StoryObj<HvSwitchProps> = {
   },
   render: () => {
     const Label: React.FC<React.LabelHTMLAttributes<HTMLLabelElement>> = (
-      props
+      props,
     ) => (
       // eslint-disable-next-line jsx-a11y/label-has-associated-control
       <label style={{ cursor: "pointer" }} {...props} />
@@ -188,7 +188,7 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
   render: () => {
     const [firstSwitchErrorMessage, setFirstSwitchErrorMessage] = useState("");
     const [secondSwitchErrorMessage, setSecondSwitchErrorMessage] = useState(
-      "No way for the second switch to be valid!"
+      "No way for the second switch to be valid!",
     );
 
     return (
@@ -201,7 +201,7 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
               aria-errormessage="firstSwitch-error"
               onChange={(_e, checked) => {
                 setFirstSwitchErrorMessage(
-                  checked ? "" : "You must turn on the first switch"
+                  checked ? "" : "You must turn on the first switch",
                 );
               }}
               label="First Switch"
@@ -213,7 +213,7 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
               aria-errormessage="secondSwitch-error"
               onChange={() => {
                 setSecondSwitchErrorMessage(
-                  "No way for the second switch to be valid! I told you!"
+                  "No way for the second switch to be valid! I told you!",
                 );
               }}
               label="Second Switch"

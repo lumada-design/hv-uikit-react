@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export const getActivePath = (
   pathname: string,
-  navigation?: NavigationData[]
+  navigation?: NavigationData[],
 ) => {
   let activePath: NavigationData | undefined;
 
@@ -29,7 +29,7 @@ export const getActivePath = (
 };
 
 export const useNavigation = (
-  navigationData: NavigationData[] = []
+  navigationData: NavigationData[] = [],
 ): NavigationContextValue => {
   const { pathname } = useLocation();
   const initialPath = getActivePath(pathname, navigationData);

@@ -1,7 +1,7 @@
 import { Children, cloneElement, isValidElement, useMemo } from "react";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvButtonSize, HvButtonVariant } from "../Button";
+import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 import {
@@ -65,7 +65,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
           [classes.splitGroup]: split,
           [classes.splitGroupDisabled]: split && disabled,
         },
-        className
+        className,
       )}
       {...others}
     >
@@ -94,7 +94,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
                     {
                       [classes.splitDisabled]: disabled,
                     },
-                    classes[variant] // TODO - remove in v6
+                    classes[variant], // TODO - remove in v6
                   )}
                 >
                   <div className={classes.split} />

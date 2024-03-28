@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import type { TreeViewAnyPluginSignature } from "./plugin";
 import type { MergePluginsProperty } from "./helpers";
+import type { TreeViewAnyPluginSignature } from "./plugin";
 
 export interface TreeViewNode {
   id: string;
@@ -26,5 +26,5 @@ export interface TreeViewModel<TValue> {
 }
 
 export type TreeViewInstance<
-  TSignatures extends readonly TreeViewAnyPluginSignature[]
+  TSignatures extends readonly TreeViewAnyPluginSignature[],
 > = MergePluginsProperty<TSignatures, "instance">;

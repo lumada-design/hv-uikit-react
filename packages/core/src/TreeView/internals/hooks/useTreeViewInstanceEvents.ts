@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import { EventManager } from "../utils/EventManager";
 import type { TreeViewPlugin } from "../types";
 import type { TreeViewEventListener } from "../types/events";
+import { EventManager } from "../utils/EventManager";
 import { UseTreeViewInstanceEventsSignature } from "./useTreeViewInstanceEvents.types";
 import { populateInstance } from "./utils";
 
@@ -31,7 +31,7 @@ export const useTreeViewInstanceEvents: TreeViewPlugin<
 
       eventManager.emit(name, params, event);
     },
-    [eventManager]
+    [eventManager],
   );
 
   const subscribeEvent = React.useCallback(
@@ -41,7 +41,7 @@ export const useTreeViewInstanceEvents: TreeViewPlugin<
         eventManager.removeListener(event, handler);
       };
     },
-    [eventManager]
+    [eventManager],
   );
 
   populateInstance<UseTreeViewInstanceEventsSignature>(instance, {

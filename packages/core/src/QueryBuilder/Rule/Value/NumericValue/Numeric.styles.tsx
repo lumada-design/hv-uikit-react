@@ -30,5 +30,5 @@ export const { useClasses, staticClasses } = createClasses(
         marginRight: `calc(${theme.space.md} / 2)`,
       },
     },
-  }
+  },
 );

@@ -1,16 +1,16 @@
 import { ComponentType } from "react";
 import { css } from "@emotion/css";
-import { Caution, Level4Alt } from "@hitachivantara/uikit-react-icons";
 import {
-  theme,
-  HvProgressBar,
   HvColor,
-  HvTag,
-  HvGridProps,
-  HvTextArea,
   HvDropdown,
+  HvGridProps,
+  HvProgressBar,
+  HvTag,
   HvTagsInput,
+  HvTextArea,
+  theme,
 } from "@hitachivantara/uikit-react-core";
+import { Caution, Level4Alt } from "@hitachivantara/uikit-react-icons";
 
 import { ModelDetails, useModelData } from "./data";
 import { MetadataItem } from "./MetadataItem";

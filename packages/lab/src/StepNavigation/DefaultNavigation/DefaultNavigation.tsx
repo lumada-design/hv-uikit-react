@@ -36,7 +36,7 @@ export interface HvDefaultNavigationProps
       state: HvStepProps["state"];
       rawTitle: string;
       number: number;
-    }) => { variant?: string; title?: string }
+    }) => { variant?: string; title?: string },
   ) => ReactNode;
   /** Returns dynamic width values of the component (width, titleWidth, separatorWidth). */
   getDynamicValues: (stepsWidth: number) => {
@@ -71,7 +71,7 @@ export const HvDefaultNavigation = ({
   const maxWidth = Math.max(titleWidth - minSize, separatorWidth);
   const minWidth = Math.max(
     titleWidth - (maxSize + minSize) * 0.5,
-    separatorWidth
+    separatorWidth,
   );
   //
 

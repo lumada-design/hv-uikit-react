@@ -1,8 +1,6 @@
 import { useState } from "react";
-
-import { HvTag, HvTypography, theme } from "@hitachivantara/uikit-react-core";
-
 import { css } from "@emotion/css";
+import { HvTag, HvTypography, theme } from "@hitachivantara/uikit-react-core";
 
 const tags = [
   {
@@ -51,7 +49,7 @@ export const Selectable = () => {
               setSelectedTags((prev) =>
                 selected
                   ? prev.concat(tag.label)
-                  : prev.filter((item) => item !== tag.label)
+                  : prev.filter((item) => item !== tag.label),
               );
             }}
             classes={{ root: css({ color: tag.color || "unset" }) }}

@@ -1,23 +1,23 @@
+import styled from "@emotion/styled";
 import { Meta, StoryFn, StoryObj } from "@storybook/react";
 import {
-  Tool,
-  Favorite,
-  FavoriteSelected,
-} from "@hitachivantara/uikit-react-icons";
-import {
   HvActionBar,
+  HvButton,
   HvCard,
   HvCardContent,
   HvCardHeader,
-  HvToggleButton,
-  HvTypography,
   HvStack,
   HvStackProps,
-  HvButton,
+  HvToggleButton,
+  HvTypography,
   theme,
   useWidth,
 } from "@hitachivantara/uikit-react-core";
-import styled from "@emotion/styled";
+import {
+  Favorite,
+  FavoriteSelected,
+  Tool,
+} from "@hitachivantara/uikit-react-icons";
 
 const Box = styled("div")({
   display: "flex",

@@ -15,26 +15,26 @@ type NodeExtras<GroupId extends keyof any = string, NodeData = any> = {
 /** HvFlowNode component type. @extends React.FC */
 export interface HvFlowNodeFC<
   GroupId extends keyof any = string,
-  NodeData = any
+  NodeData = any,
 > extends FC<NodeProps<NodeData>>,
     NodeExtras<GroupId, NodeData> {}
 
 export interface HvFlowNodeComponentClass<
   GroupId extends keyof any = string,
-  NodeData = any
+  NodeData = any,
 > extends ComponentClass<NodeProps>,
     NodeExtras<GroupId, NodeData> {}
 
 export type HvFlowNodeComponentType<
   GroupId extends keyof any = string,
-  NodeData = any
+  NodeData = any,
 > =
   | HvFlowNodeComponentClass<GroupId, NodeData>
   | HvFlowNodeFC<GroupId, NodeData>;
 
 export type HvFlowNodeTypes<
   GroupId extends keyof any = string,
-  NodeData = any
+  NodeData = any,
 > = Record<string, HvFlowNodeComponentType<GroupId, NodeData>>;
 
 /** Node groups */
@@ -52,7 +52,7 @@ export type HvFlowNodeGroups<GroupId extends keyof any = string> = Record<
 /** Metadata used on the `HvFlowSidebar` component to group the node */
 export type HvFlowNodeTypeMeta<
   GroupId extends keyof any = string,
-  NodeData = any
+  NodeData = any,
 > = {
   label: string;
   groupId?: GroupId;
