@@ -1,5 +1,4 @@
 import { css } from "@emotion/css";
-import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import { theme } from "@hitachivantara/uikit-react-core";
 

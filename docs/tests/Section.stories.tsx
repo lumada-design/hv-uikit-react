@@ -1,9 +1,9 @@
+import { StoryObj } from "@storybook/react";
 import {
+  HvButton,
   HvSection,
   HvTypography,
-  HvButton,
 } from "@hitachivantara/uikit-react-core";
-import { StoryObj } from "@storybook/react";
 
 export default {
   title: "Tests/Section",

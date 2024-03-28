@@ -12,7 +12,6 @@ import {
   Search,
 } from "@hitachivantara/uikit-react-icons";
 
-
 const flexDecorator: Decorator = (Story) => (
   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
     {Story()}

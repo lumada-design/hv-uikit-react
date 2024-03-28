@@ -61,7 +61,6 @@ export const Main: StoryObj<HvTimeAgoProps> = {
   },
 };
 
-
 export const Samples: StoryObj<HvTimeAgoProps> = {
   render: () => {
     const dates = useMemo(
@@ -77,7 +76,7 @@ export const Samples: StoryObj<HvTimeAgoProps> = {
           dayjs().month(-2),
           dayjs().month(-4),
         ].map((date) => date.valueOf()),
-      []
+      [],
     );
 
     return (

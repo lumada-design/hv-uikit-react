@@ -1,3 +1,4 @@
+import { StoryObj } from "@storybook/react";
 import {
   HvContainer,
   HvGrid,
@@ -5,7 +6,6 @@ import {
   HvTypography,
   HvTypographyVariants,
 } from "@hitachivantara/uikit-react-core";
-import { StoryObj } from "@storybook/react";
 
 export default {
   title: "Tests/Inline Editor",

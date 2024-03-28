@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
-import { HvTag, theme } from "@hitachivantara/uikit-react-core";
 import { StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
+import { HvTag, theme } from "@hitachivantara/uikit-react-core";
 
 export default {
   title: "Tests/Tags",

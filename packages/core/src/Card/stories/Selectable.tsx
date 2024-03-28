@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { css } from "@emotion/css";
 import {
   HvActionBar,
   HvActionsGeneric,
@@ -10,8 +11,7 @@ import {
   HvToggleButton,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { FavoriteSelected, Favorite } from "@hitachivantara/uikit-react-icons";
-import { css } from "@emotion/css";
+import { Favorite, FavoriteSelected } from "@hitachivantara/uikit-react-icons";
 
 const SingleContent = () => (
   <HvCardContent>

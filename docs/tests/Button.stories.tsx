@@ -1,6 +1,6 @@
+import { StoryObj } from "@storybook/react";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Pause, Play, Stop } from "@hitachivantara/uikit-react-icons";
-import { StoryObj } from "@storybook/react";
 
 export default {
   title: "Tests/Button",

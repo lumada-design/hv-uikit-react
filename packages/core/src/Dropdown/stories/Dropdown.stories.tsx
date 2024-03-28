@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
-import { HvDropdown, HvDropdownProps } from "@hitachivantara/uikit-react-core";
 import { userEvent, within } from "@storybook/testing-library";
+import { HvDropdown, HvDropdownProps } from "@hitachivantara/uikit-react-core";
 
 import { Empty as EmptyStory } from "./Empty";
 import EmptyRaw from "./Empty?raw";
