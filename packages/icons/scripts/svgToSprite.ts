@@ -4,19 +4,17 @@ import path from "node:path";
 import recursive from "recursive-readdir";
 import yargs from "yargs";
 
-import { extractColors, replaceFill } from "./utils/colors";
-import { formatSVG, generateSymbol } from "./utils/converter";
+import { generateSymbol } from "./generateSymbol";
+import { extractColors, replaceFill } from "./utils";
 
 // Argument setup
 const args = yargs // reading arguments from the command line
-  .option("format", { default: true })
   .option("output", { alias: "o" })
   .option("input", { alias: "i" }).argv as any;
 
 // Resolve arguments
 const firstArg = args._[0];
 const inputPath = args.input as string;
-const { format } = args;
 const outputPath = args.output as string;
 
 const outputFolder = outputPath
@@ -80,17 +78,7 @@ fs.mkdir(outputFolder, { recursive: true }, (err) => {
         );
 
         for (const svgPath of svgPaths) {
-          let svgData = fs.readFileSync(svgPath, "utf8");
-
-          svgData = svgData
-            .replace('fill="none"', "")
-            .replace('style="isolation:isolate"', "")
-            .replace('="">', ">");
-
-          // Format / Prettify JSX
-          if (format) {
-            svgData = formatSVG(svgData);
-          }
+          const svgData = fs.readFileSync(svgPath, "utf8");
           const colorObject = extractColors(svgData);
           const svgWithCssVars = replaceFill(svgData, colorObject);
           const symbol = generateSymbol(

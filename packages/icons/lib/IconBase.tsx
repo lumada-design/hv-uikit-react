@@ -216,7 +216,7 @@ export const createHvIcon = (
   viewBox: string,
   palette: string[],
   children: React.ReactNode,
-) => {
+): IconType => {
   const IconComponent = (
     props: IconBaseProps,
     ref: React.Ref<HTMLDivElement>,
@@ -233,7 +233,7 @@ export const createHvIcon = (
       </IconBase>
     );
   };
-  IconComponent.displayName = iconName;
+  IconComponent.displayName = `HvIcon${iconName}`;
 
   return memo(forwardRef(IconComponent));
 };

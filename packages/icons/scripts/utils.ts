@@ -1,3 +1,9 @@
+/** Extracts the SVG viewBox */
+export const extractSize = (fileData: string) => {
+  const viewBoxRegexp = /viewBox="(\d*?) (\d*?) (\d*?) (\d*?)"/;
+  return (viewBoxRegexp.exec(fileData) || []).slice(1, 5).join(" ");
+};
+
 /** Creates a standardized component name from a given file and filename */
 export const extractColors = (fileData: string) => {
   const regexp = /fill="(.*?)"/g; // find all the fills inside the component
