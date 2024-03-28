@@ -240,7 +240,7 @@ export const CustomContent: StoryObj<HvGlobalActionsProps> = {
             <HvButton aria-label="Go back" icon>
               <Backwards />
             </HvButton>
-            <Home aria-label="Home" />
+            <Home title="Home" />
             <HvBreadCrumb listRoute={data} maxVisible={2} />
           </div>
         }

@@ -165,18 +165,20 @@ const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
         .match(/"(\d*?)"/g)?.[0]
         .replace(/['"]+/g, "");
 
+      const viewBox = extractSize(output);
+      const colorArray = extractColors(output);
+
       output = output
-        .replace(/:props:/g, "{...other}")
+        .replace(/:props:/g, "")
         .replace(/width="(\d*?)"/g, `width={${widthValue}}`)
         .replace(/height="(\d*?)"/g, `height={${heightValue}}`)
         .replace('style="isolation:isolate"', "")
-        .replace('="">', ">");
+        .replace('="">', ">")
+        // remove svg tag, keeping only the content
+        .replace(/<svg.*?>(.*?)<\/svg>/s, "$1");
 
-      const sizeObject = extractSize(output);
       output = replaceSize(output);
-
-      const colorObject = extractColors(output);
-      output = replaceFill(output, colorObject);
+      output = replaceFill(output, colorArray);
 
       // regexp fill="(.*?)"
 
@@ -185,18 +187,16 @@ const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
         output = formatSVG(output);
       }
 
-      const processedFileToWrite = fileToWrite.split(".").join("");
+      const iconName = fileToWrite.split(".").join("");
 
       // Wrap it up in a React component
-      const params = {
-        svgOutput: output,
-        iconName: processedFileToWrite,
-        colors: colorObject.colorText,
-        defaultSizes: sizeObject,
-        basePath: `${".".repeat(depth + 1)}`,
-      };
-
-      output = generateComponent(params);
+      output = generateComponent(
+        output,
+        iconName,
+        colorArray,
+        viewBox,
+        `${".".repeat(depth + 1)}`,
+      );
       writeFile(output, fileToWrite, subFolder);
     });
   });

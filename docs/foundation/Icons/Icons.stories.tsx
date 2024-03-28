@@ -1,7 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { HvIconButton } from "@hitachivantara/uikit-react-core";
 import {
   Bookmark,
   CheckboxCheck,
+  Close,
   HvIconSprite,
   HvIconSpriteProps,
   IconBase,
@@ -45,7 +47,7 @@ export const CustomColors = () => (
   <Bookmark
     color={["brand", "secondary"]}
     iconSize="M"
-    aria-label="Click to bookmark"
+    title="Click to bookmark"
   />
 );
 
@@ -57,8 +59,11 @@ CustomColors.parameters = {
 
 export const Accessibility = () => (
   <>
-    <Machine role="none" iconSize="M" />
-    <Level4 role="img" title="Warning!" iconSize="M" color="negative" />
+    <Machine iconSize="M" />
+    <Level4 title="Warning!" iconSize="M" color="negative" />
+    <HvIconButton title="Close" onClick={() => {}}>
+      <Close />
+    </HvIconButton>
   </>
 );
 
@@ -66,13 +71,15 @@ Accessibility.parameters = {
   docs: {
     description: {
       story:
-        'Decorative icons should have `role="none"` or equivalent, hiding them from the accessibility tree. <br /> Semantic icons should be given a role and label associated with their meaning, such as `role="img"`',
+        'Icons have `role="none"` by default, hiding them from the accessibility tree. <br /> \
+        Semantic icons should be given a `title` label associated with their meaning. <br /> \
+        If icons trigger actions, they should be wrapped in a tooltip and a button. For this, use `HvIconButton` with the `title` attribute.',
     },
   },
 };
 
 export const CustomSize = () => (
-  <CheckboxCheck height={200} width={200} style={{ width: 240, height: 240 }} />
+  <CheckboxCheck width={200} height={200} style={{ width: 240, height: 240 }} />
 );
 
 CustomSize.parameters = {

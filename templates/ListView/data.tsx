@@ -38,9 +38,7 @@ const TooltipIcon = ({
   color: HvColor;
 }) => (
   <HvTooltip title={title}>
-    <div>
-      <Icon role="none" iconSize="XS" color={color} />
-    </div>
+    <Icon iconSize="XS" color={color} />
   </HvTooltip>
 );
 

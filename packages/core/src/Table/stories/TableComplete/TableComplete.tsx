@@ -61,7 +61,7 @@ const NoDataRow = ({
 }) => (
   <HvTableRow>
     <HvTableCell colSpan={100} style={{ height }}>
-      <HvEmptyState message={message} icon={<Ban role="none" />} />
+      <HvEmptyState message={message} icon={<Ban />} />
     </HvTableCell>
   </HvTableRow>
 );

@@ -117,9 +117,7 @@ export const HvFlowNode = ({
           {headerItems}
           {description && (
             <HvTooltip title={description}>
-              <div>
-                <Info role="none" color="base_dark" />
-              </div>
+              <Info color="base_dark" />
             </HvTooltip>
           )}
           {hasParams && (
@@ -133,9 +131,9 @@ export const HvFlowNode = ({
               {...expandParamsButtonProps}
             >
               {showParams ? (
-                <Up role="none" color="base_dark" />
+                <Up color="base_dark" />
               ) : (
-                <Down role="none" color="base_dark" />
+                <Down color="base_dark" />
               )}
             </HvButton>
           )}

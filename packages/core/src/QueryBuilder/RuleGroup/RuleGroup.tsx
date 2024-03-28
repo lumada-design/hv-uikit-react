@@ -135,7 +135,6 @@ export const RuleGroup = ({
           disabled={readOnly}
         >
           <Delete
-            role="none"
             className={cx({ [classes.topRemoveButtonDisabled]: readOnly })}
           />
         </HvIconButton>

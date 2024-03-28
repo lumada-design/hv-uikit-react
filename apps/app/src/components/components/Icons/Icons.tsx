@@ -13,7 +13,7 @@ export const Icons = () => {
       <Bookmark
         color={["brand", "secondary"]}
         iconSize="S"
-        aria-label="Click to bookmark"
+        title="Click to bookmark"
       />
       <Machine role="presentation" iconSize="M" />
       <CheckboxCheck height={60} width={60} style={{ width: 80, height: 80 }} />
