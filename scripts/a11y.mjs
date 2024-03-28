@@ -30,14 +30,9 @@ const init = () => {
     console.log("");
     const incompleteNumber = showResults("Incomplete");
 
-    if (violationNumber != 0 || incompleteNumber != 0) {
+    if (violationNumber !== 0 || incompleteNumber !== 0) {
       // Exit
-      if (
-        process.argv[2] === "--exit" &&
-        process.argv[3]?.toString() === "true"
-      ) {
-        process.exit(1);
-      }
+      process.exit(1);
     } else {
       // No violations found
       console.log("✅ No a11y issues found");

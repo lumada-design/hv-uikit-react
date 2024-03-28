@@ -3,16 +3,12 @@ name: A11y Tests
 on:
   workflow_dispatch:
   workflow_call:
-    inputs:
-      exit:
-        type: boolean
-        default: false
-        required: false
 
 jobs:
   run-tests:
     name: A11y Tests
     runs-on: ubuntu-latest
+    continue-on-error: true
 
     steps:
       - name: Checkout
@@ -34,4 +30,4 @@ jobs:
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
           "npx serve dist -l 6006 -L" \
-          "npx wait-on tcp:6006 && npm run test:a11y -- --exit ${{ inputs.exit }}"
+          "npx wait-on tcp:6006 && npm run test:a11y"
