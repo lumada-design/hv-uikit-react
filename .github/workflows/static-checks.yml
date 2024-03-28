@@ -4,10 +4,6 @@ on:
   workflow_dispatch:
   workflow_call:
     inputs:
-      a11y-publish:
-        type: boolean
-        default: false
-        required: false
       a11y-exit:
         type: boolean
         default: false
@@ -67,7 +63,6 @@ jobs:
     uses: ./.github/workflows/tests-a11y.yml
     secrets: inherit
     with:
-      publish: ${{ inputs.a11y-publish }}
       exit: ${{ inputs.a11y-exit }}
 
   build:

@@ -15,7 +15,7 @@ jobs:
     uses: ./.github/workflows/static-checks.yml
     secrets: inherit
     with:
-      a11y-publish: true
+      a11y-exit: false
 
   applitools:
     name: Applitools Tests

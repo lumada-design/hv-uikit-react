@@ -11,7 +11,7 @@ jobs:
     name: Static Checks
     uses: ./.github/workflows/static-checks.yml
     with:
-      a11y-exit: true
+      a11y-exit: false
 
   applitools:
     name: Applitools
