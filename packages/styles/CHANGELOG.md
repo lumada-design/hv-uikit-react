@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.27.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.26.0...@hitachivantara/uikit-styles@5.27.0) (2024-03-29)
+
+### Features
+
+- add Radio styles to Pentaho Plus theme ([64c7d25](https://github.com/lumada-design/hv-uikit-react/commit/64c7d253cd64cc26353b94176e3a3fe1fc455342))
+- add shadow styles to Pentaho Plus theme ([#4105](https://github.com/lumada-design/hv-uikit-react/issues/4105)) ([e7e1d24](https://github.com/lumada-design/hv-uikit-react/commit/e7e1d24ace8ca857a8323ca8b81c9168c07bd422))
+- add Tag styles to Pentaho Plus theme ([9869fc6](https://github.com/lumada-design/hv-uikit-react/commit/9869fc6905ab821b4c91218e7a2909cfdebed167))
+
 # [5.26.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.25.0...@hitachivantara/uikit-styles@5.26.0) (2024-03-26)
 
 ### Features

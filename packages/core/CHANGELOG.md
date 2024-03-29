@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.62.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.61.0...@hitachivantara/uikit-react-core@5.62.0) (2024-03-29)
+
+### Features
+
+- add Radio styles to Pentaho Plus theme ([64c7d25](https://github.com/lumada-design/hv-uikit-react/commit/64c7d253cd64cc26353b94176e3a3fe1fc455342))
+
 # [5.61.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.60.0...@hitachivantara/uikit-react-core@5.61.0) (2024-03-26)
 
 ### Features
