@@ -190,6 +190,7 @@ export const Variants: StoryObj<HvTextAreaProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const styles: { root: CSSInterpolation } = {

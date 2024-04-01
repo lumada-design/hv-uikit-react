@@ -50,6 +50,7 @@ export const Main: StoryObj<HvDialogProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -70,6 +71,7 @@ export const SemanticVariants: StoryObj<HvDialogProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [
     (Story) => (

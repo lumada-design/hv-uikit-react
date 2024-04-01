@@ -15,6 +15,13 @@ jobs:
     name: Static Checks
     uses: ./.github/workflows/static-checks.yml
 
+  applitools:
+    name: Applitools
+    uses: ./.github/workflows/tests-applitools.yml
+    secrets: inherit
+    with:
+      batch-id: pr-${{ github.event.number }}
+
   chromatic:
     name: Chromatic
     if: contains(github.event.pull_request.labels.*.name, 'visual')
@@ -27,4 +34,4 @@ jobs:
     secrets: inherit
     with:
       publish-folder: pr-${{ github.event.number }}
-      publish-storybook: false
+      # publish-storybook: false # Uncomment when Chromatic is always used in PRs since it already builds the docs

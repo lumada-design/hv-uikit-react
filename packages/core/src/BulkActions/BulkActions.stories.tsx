@@ -126,6 +126,7 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const addEntry = (id: string | number): SampleComponentDatum => ({
@@ -192,6 +193,7 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

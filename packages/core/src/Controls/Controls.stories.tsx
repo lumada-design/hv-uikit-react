@@ -186,6 +186,7 @@ export const Controls = () => {
 Controls.parameters = {
   // Enables Chromatic snapshot
   chromatic: { disableSnapshot: false },
+  eyes: { include: true },
 };
 
 export const ControlsControlled = () => {

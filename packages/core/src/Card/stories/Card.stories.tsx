@@ -55,6 +55,7 @@ export const AllComponents: StoryObj<HvCardProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false, delay: 5000 },
+    eyes: { include: true, waitBeforeCapture: 5000 },
   },
   render: () => <AllComponentsStory />,
 };
@@ -66,6 +67,7 @@ export const NoActions: StoryObj<HvCardProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <NoActionsStory />,
 };
@@ -77,6 +79,7 @@ export const OnlyTitle: StoryObj<HvCardProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <OnlyTitleStory />,
 };

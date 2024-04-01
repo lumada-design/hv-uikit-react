@@ -68,6 +68,7 @@ export const parameters: Preview["parameters"] = {
   chromatic: {
     disableSnapshot: true,
   },
+  eyes: { include: false },
 };
 
 export default {

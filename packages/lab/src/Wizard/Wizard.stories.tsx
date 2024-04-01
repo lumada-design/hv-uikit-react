@@ -100,6 +100,7 @@ export const Main: StoryObj<HvWizardProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -228,6 +229,7 @@ export const ComponentBreakDown: StoryObj<HvWizardProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

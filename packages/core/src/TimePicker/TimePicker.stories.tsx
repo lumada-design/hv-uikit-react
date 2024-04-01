@@ -39,6 +39,7 @@ export const Main: StoryObj<HvTimePickerProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -94,6 +95,7 @@ export const Variants: StoryObj<HvTimePickerProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -182,6 +184,7 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [makeDecorator({ minHeight: 200, width: 220 })],
   play: async ({ canvasElement }) => {

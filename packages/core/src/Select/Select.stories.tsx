@@ -33,6 +33,7 @@ export const Main: StoryObj<HvSelectProps<{}, false>> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -74,6 +75,7 @@ export const Variants: StoryObj<HvSelectProps<{}, false>> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [
     (Story) => (

@@ -63,6 +63,7 @@ export const Main: StoryObj<HvDropdownProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -79,6 +80,7 @@ export const Variants: StoryObj<HvDropdownProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [
     (Story) => (

@@ -136,6 +136,7 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const longTextTooltip = (

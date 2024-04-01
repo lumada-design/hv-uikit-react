@@ -34,6 +34,7 @@ export const Main: StoryObj<HvDashboardProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false, delay: 5000 },
+    eyes: { include: true, waitBeforeCapture: 5000 },
   },
   render: () => {
     return (

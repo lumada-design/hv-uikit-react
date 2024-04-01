@@ -90,6 +90,7 @@ export const Overflow: StoryObj<HvScrollToHorizontalProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const options = [

@@ -120,4 +120,4 @@ Test your changes by running our test commands:
 npm run test
 ```
 
-We also execute regression tests in all pull requests and releases against the a11y standards (accessibility static analysis), end-to-end tests (using Playwright) and visual tests using Chromatic. Please keep an eye on the pull request result for detailed feedback.
+We also execute regression tests in all pull requests and releases against the a11y standards (accessibility static analysis), end-to-end tests (using Playwright) and visual tests using Chromatic and Applitools. Please keep an eye on the pull request result for detailed feedback.

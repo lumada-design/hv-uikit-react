@@ -47,6 +47,7 @@ export const Variants: StoryObj<HvSelectionListProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const styles: { root: CSSInterpolation } = {

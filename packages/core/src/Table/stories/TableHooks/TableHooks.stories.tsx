@@ -51,6 +51,7 @@ export const ColumnResizeStory: StoryObj = {
     docs: { source: { code: ColumnResizeRaw } },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <ColumnResize />,
 };
@@ -97,6 +98,7 @@ export const UseHvRowExpandStory: StoryObj = {
     docs: { source: { code: UseHvRowExpandRaw } },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -111,6 +113,7 @@ export const UseHvGroupByStory: StoryObj = {
     docs: { source: { code: UseHvGroupByRaw } },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -125,6 +128,7 @@ export const UseHvTableStickyStory: StoryObj = {
     docs: { source: { code: UseHvTableStickyRaw } },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <UseHvTableSticky />,
 };
@@ -134,6 +138,7 @@ export const UseHvHeaderGroupsStory: StoryObj = {
     docs: { source: { code: UseHvHeaderGroupsRaw } },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <UseHvHeaderGroups />,
 };

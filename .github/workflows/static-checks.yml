@@ -21,7 +21,7 @@ jobs:
 
       - name: License Check
         run: |
-          npx license-checker-rseidelsohn --onlyAllow "${{ env.LICENSES_WHITELIST }}" --excludePackagesStartingWith "buffers;flatbuffers"
+          npx license-checker-rseidelsohn --onlyAllow "${{ env.LICENSES_WHITELIST }}" --excludePackagesStartingWith "@applitools;buffers;flatbuffers"
 
       - name: Security Audit
         run: npm audit --workspaces --omit dev

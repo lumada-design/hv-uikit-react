@@ -47,6 +47,7 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => {
     const navigationData = useMemo<NavigationData[]>(
@@ -139,6 +140,7 @@ export const TreeViewMode: StoryObj<HvVerticalNavigationProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const navigationData = useMemo(
@@ -218,6 +220,7 @@ export const WithoutActions: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const navigationData = useMemo(
@@ -310,6 +313,7 @@ export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<
@@ -412,6 +416,7 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<
@@ -621,6 +626,7 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
       },
       // Enables Chromatic snapshot
       chromatic: { disableSnapshot: false },
+      eyes: { include: true },
     },
     play: async ({ canvasElement }) => {
       const canvas = within(canvasElement);
@@ -763,6 +769,7 @@ export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<
@@ -873,6 +880,7 @@ export const MobileNavigation: StoryObj<HvVerticalNavigationProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<

@@ -114,6 +114,7 @@ export const Variants: StoryObj<HvSliderProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [variantsDecorator],
   render: () => {
@@ -145,6 +146,7 @@ export const RangeVariants: StoryObj<HvSliderProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [variantsDecorator],
   render: () => {

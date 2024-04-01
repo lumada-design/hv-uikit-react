@@ -54,6 +54,7 @@ export const Variants: StoryObj<HvBannerProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const actionArray = (id: string) => [

@@ -9,7 +9,8 @@ on:
 env:
   PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   PUBLISH_BRANCH: master
-  DOCUMENTATION_PUBLISH_FOLDER: uikit-docs/pr-${{ github.event.number }}
+  NEXTRA_PUBLISH_FOLDER: uikit-docs/pr-${{ github.event.number }}
+  STORYBOOK_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
   APP_PUBLISH_FOLDER: uikit-app/pr-${{ github.event.number }}
   PUBLISH_MESSAGE: "chore: remove PR ${{ github.event.number }} of ${{ github.repository }}"
 
@@ -34,17 +35,26 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git rm -r ${APP_PUBLISH_FOLDER}
-          git rm -r ${DOCUMENTATION_PUBLISH_FOLDER}
+          git rm -r ${NEXTRA_PUBLISH_FOLDER}
+          git rm -r ${STORYBOOK_PUBLISH_FOLDER}
           git commit -m "${PUBLISH_MESSAGE}"
           git push
+
+      - name: Prune Deployment for Storybook Documentation
+        uses: bobheadxi/deployments@v1
+        with:
+          step: deactivate-env
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: ${{env.STORYBOOK_PUBLISH_FOLDER}}
+          desc: Deployment for Stroybook documentation was pruned
 
       - name: Prune Deployment for Nextra Documentation
         uses: bobheadxi/deployments@v1
         with:
           step: deactivate-env
           token: ${{ secrets.GITHUB_TOKEN }}
-          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-          desc: Deployment for documentation was pruned
+          env: ${{env.NEXTRA_PUBLISH_FOLDER}}
+          desc: Deployment for Nextra documentation was pruned
 
       - name: Prune Deployment for App
         uses: bobheadxi/deployments@v1

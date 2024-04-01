@@ -171,6 +171,7 @@ export const WithPreviewThumbnails: StoryObj<HvFileUploaderProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const [open, setOpen] = useState<boolean>(false);

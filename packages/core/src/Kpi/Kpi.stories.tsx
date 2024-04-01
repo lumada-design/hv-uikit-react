@@ -62,6 +62,7 @@ export const Main: StoryObj<HvKpiProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => {
     return <HvKpi {...args} />;

@@ -54,6 +54,7 @@ export const Variants: StoryObj<HvSkeletonProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     return (

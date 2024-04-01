@@ -39,6 +39,7 @@ export const Main: StoryObj<HvBreadCrumbProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => {
     return (
@@ -135,6 +136,7 @@ export const WithLongLabels: StoryObj<HvBreadCrumbProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => {
     const longData = [

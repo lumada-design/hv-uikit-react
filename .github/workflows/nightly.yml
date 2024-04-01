@@ -15,6 +15,11 @@ jobs:
     uses: ./.github/workflows/static-checks.yml
     secrets: inherit
 
+  applitools:
+    name: Applitools Tests
+    uses: ./.github/workflows/tests-applitools.yml
+    secrets: inherit
+
   chromatic:
     name: Chromatic Tests
     uses: ./.github/workflows/tests-chromatic.yml
@@ -22,7 +27,7 @@ jobs:
 
   notify-fail:
     name: Notify Fail
-    needs: [static-checks, chromatic]
+    needs: [static-checks, chromatic, applitools]
     if: failure()
     runs-on: ubuntu-latest
 
@@ -52,7 +57,7 @@ jobs:
   release:
     name: Release
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [static-checks, chromatic]
+    needs: [static-checks, applitools] # For now the release won't fail because of Chromatic. To be changed when is Applitools is removed.
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Release

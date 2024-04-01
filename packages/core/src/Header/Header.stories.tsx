@@ -101,6 +101,7 @@ export const Main: StoryObj<HvHeaderProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [(Story) => <div style={{ height: 150 }}>{Story()}</div>],
   // play: async ({ canvasElement }) => {
@@ -248,6 +249,7 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [(Story) => <div style={{ height: 300 }}>{Story()}</div>],
   render: () => {

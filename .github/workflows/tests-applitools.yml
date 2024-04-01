@@ -1,0 +1,38 @@
+name: Applitools
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      batch-id:
+        type: string
+
+env:
+  APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+  APPLITOOLS_BATCH_ID: ${{ inputs.batch-id || github.ref_name }}
+  APPLITOOLS_BRANCH_NAME: "lumada-design/hv-uikit-react/master"
+
+jobs:
+  run-tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Set Applitools App Name
+        id: set-app-name
+        run: |
+          if [[ "${{ github.ref_name }}" == "next"* ]]; then
+            echo "APPLITOOLS_APP_NAME=NEXT UI Kit" >> $GITHUB_ENV
+          else
+          echo "APPLITOOLS_APP_NAME=UI Kit" >> $GITHUB_ENV
+          fi
+
+      - name: Eyes Storybook
+        run: npm run test:eyes
+        timeout-minutes: 30

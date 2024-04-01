@@ -35,6 +35,7 @@ export const Main: StoryObj<HvSimpleGridProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => {
     return (

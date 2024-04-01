@@ -38,6 +38,7 @@ export const Main: StoryObj<HvOverflowTooltipProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => {
     return <HvOverflowTooltip {...args} />;
