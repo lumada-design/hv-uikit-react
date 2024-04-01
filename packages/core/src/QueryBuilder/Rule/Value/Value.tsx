@@ -36,8 +36,7 @@ export const Value = ({
   const { attributes, initialTouched, renderers, emptyRenderer } =
     useQueryBuilderContext();
 
-  const attrType =
-    attribute && attributes ? attributes[attribute].type : undefined;
+  const attrType = attributes?.[attribute]?.type;
 
   // Empty value renderer
   if (emptyRenderer?.find((op) => op === operator)) {
