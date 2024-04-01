@@ -14,7 +14,11 @@ import {
   Refresh,
 } from "@hitachivantara/uikit-react-icons";
 
-import { delay, ServerPaginationProps, useServerPagination } from "../utils";
+import {
+  delay,
+  ServerPaginationProps,
+  useServerPagination,
+} from "./usePaginationData";
 
 // --- Table data utils ---
 

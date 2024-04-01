@@ -19,7 +19,10 @@ import {
   Preview,
 } from "@hitachivantara/uikit-react-icons";
 
-import { ServerPaginationProps, useServerPagination } from "../utils";
+import {
+  ServerPaginationProps,
+  useServerPagination,
+} from "./usePaginationData";
 
 // --- Table data utils ---
 
