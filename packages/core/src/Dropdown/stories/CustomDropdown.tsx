@@ -137,6 +137,7 @@ export const CustomDropdown = () => {
             aria-label="Search Folder"
             placeholder="Search"
             type="search"
+            classes={{ root: css({ paddingBottom: theme.space.xs }) }}
           />
           <HvTreeView aria-label="file system navigator">
             {results && renderItem(results)}
