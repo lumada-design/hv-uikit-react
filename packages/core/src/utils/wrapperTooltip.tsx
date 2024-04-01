@@ -11,6 +11,7 @@ const hideTooltip = (evt: any) => {
   return !isOverFlow;
 };
 
+/** @deprecated */
 export const wrapperTooltip = (
   hasTooltips: boolean,
   Component: any,

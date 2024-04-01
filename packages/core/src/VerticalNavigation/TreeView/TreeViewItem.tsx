@@ -11,6 +11,7 @@ import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
 import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { useForkRef } from "../../hooks/useForkRef";
+import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { HvTooltip } from "../../Tooltip";
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
@@ -488,7 +489,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                   [classes.labelExpandable]: !!expandable,
                 })}
               >
-                {label}
+                <HvOverflowTooltip data={label} />
               </div>
             )}
 

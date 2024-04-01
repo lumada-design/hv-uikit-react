@@ -5,7 +5,6 @@ import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
 import { uniqueId } from "../../utils/helpers";
 import { setId } from "../../utils/setId";
-import { wrapperTooltip } from "../../utils/wrapperTooltip";
 import { NavigationPopupContainer } from "../NavigationPopup/NavigationPopupContainer";
 import { HvVerticalNavigationSlider } from "../NavigationSlider";
 import { getParentItemById } from "../NavigationSlider/utils/NavigationSlider.utils";
@@ -114,8 +113,6 @@ const createListHierarchy = (
       target,
     } = item;
 
-    const ItemText = wrapperTooltip(true, itemLabel, itemLabel);
-
     const itemMouseEnterHandler = (event) => {
       mouseEnterHandler?.(event, item);
     };
@@ -128,7 +125,7 @@ const createListHierarchy = (
         target={target}
         key={itemId}
         nodeId={itemId}
-        label={<ItemText />}
+        label={itemLabel}
         icon={icon}
         payload={item}
         selectable={selectable}

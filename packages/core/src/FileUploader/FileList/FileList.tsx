@@ -1,5 +1,4 @@
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { useUniqueId } from "../../hooks/useUniqueId";
 import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import { HvFile, HvFileData, HvFileRemovedEvent } from "../File";
@@ -42,8 +41,6 @@ export const HvFileList = (props: HvFileListProps) => {
   } = useDefaultProps("HvFileList", props);
   const { classes } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id);
-
   const hasFiles = list.length > 0;
   if (!hasFiles) return null;
 
@@ -53,7 +50,6 @@ export const HvFileList = (props: HvFileListProps) => {
         <HvFile
           key={data.id}
           classes={{ root: classes?.listItem }}
-          id={setId(elementId, "values")}
           data={data}
           onFileRemoved={onFileRemoved}
           removeFileButtonLabel={removeFileButtonLabel}

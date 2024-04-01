@@ -1,11 +1,10 @@
 import { Close, Fail, Success } from "@hitachivantara/uikit-react-icons";
 
-import { HvButton } from "../../Button";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvIconButton } from "../../IconButton";
 import { HvProgressBar } from "../../ProgressBar";
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
-import { setId } from "../../utils/setId";
 import { convertUnits } from "../utils";
 import { staticClasses, useClasses } from "./File.styles";
 
@@ -121,7 +120,6 @@ const getProgressBarWith = ({ size, progress }: HvFileData) => {
 
 export const HvFile = (props: HvFileProps) => {
   const {
-    id,
     classes: classesProp,
     data,
     onFileRemoved,
@@ -167,15 +165,13 @@ export const HvFile = (props: HvFileProps) => {
         <div className={classes.previewContainer}>{data.preview}</div>
       )}
 
-      <HvButton
-        id={setId(id, "remove-button")}
-        aria-label={removeFileButtonLabel}
+      <HvIconButton
+        title={removeFileButtonLabel}
         className={classes.removeButton}
         onClick={() => onFileRemoved?.(data)}
-        icon
       >
         <Close iconSize="XS" />
-      </HvButton>
+      </HvIconButton>
     </li>
   );
 };
