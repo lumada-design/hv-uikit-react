@@ -245,9 +245,6 @@ export const ExternalErrorMessage: StoryObj<HvCheckBoxProps> = {
 };
 
 export const Custom: StoryObj<HvCheckBoxProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     const styles = {
       group: css({

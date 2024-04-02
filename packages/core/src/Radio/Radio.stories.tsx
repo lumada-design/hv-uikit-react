@@ -276,9 +276,6 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
 };
 
 export const Custom: StoryObj<HvRadioProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     const styles = {
       group: css({
