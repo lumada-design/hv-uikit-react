@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.28.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.27.0...@hitachivantara/uikit-styles@5.28.0) (2024-04-02)
+
+### Features
+
+- add Button styles to Pentaho Plus theme ([f311f6e](https://github.com/lumada-design/hv-uikit-react/commit/f311f6ea82192d5e1323b33b84133002ec20e5ec))
+
 # [5.27.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.26.0...@hitachivantara/uikit-styles@5.27.0) (2024-03-29)
 
 ### Features

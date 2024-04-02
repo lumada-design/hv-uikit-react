@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.62.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.62.0...@hitachivantara/uikit-react-core@5.62.1) (2024-04-02)
+
+### Bug Fixes
+
+- **QueryBuilder:** value renderer ([d040a1f](https://github.com/lumada-design/hv-uikit-react/commit/d040a1ff32a03ec3eae45048c780f3e81b82cf2a))
+
 # [5.62.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.61.0...@hitachivantara/uikit-react-core@5.62.0) (2024-03-29)
 
 ### Features
