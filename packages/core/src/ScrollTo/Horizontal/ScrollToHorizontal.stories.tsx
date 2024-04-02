@@ -27,11 +27,16 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
     classes: { control: { disable: true } },
     options: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: (args) => {
     const options = [
       { label: "Server status summary", value: "mainId1" },
       { label: "Optimization", value: "mainId2" },
-      { label: "Performance analysis", value: "mainId3" },
+      { label: "Performance analysis review", value: "mainId3" },
       { label: "Insights", value: "mainId4" },
     ];
 
@@ -78,34 +83,5 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
         </HvContainer>
       </>
     );
-  },
-};
-
-export const Overflow: StoryObj<HvScrollToHorizontalProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Scroll to with big strings on the items.",
-      },
-    },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-    eyes: { include: true },
-  },
-  render: () => {
-    const options = [
-      { label: "Server status summaryssssssssssssssssssss", value: "Id1" },
-      { label: "Optimization", value: "Id2" },
-      { label: "Performance analysis", value: "Id3" },
-      { label: "Insightssssssssssssssssssssssssssssss", value: "Id4" },
-      { label: "Analytics", value: "Id5" },
-      { label: "Indicators", value: "Id6" },
-      { label: "Settings", value: "Id7" },
-      { label: "Monitoring", value: "Id8" },
-      { label: "About", value: "Id9" },
-      { label: "Markers", value: "Id10" },
-    ];
-
-    return <HvScrollToHorizontal options={options} navigationMode="none" />;
   },
 };

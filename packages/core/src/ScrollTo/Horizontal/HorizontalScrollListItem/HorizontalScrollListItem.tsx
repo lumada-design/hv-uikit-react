@@ -1,6 +1,9 @@
 import { useDefaultProps } from "../../../hooks/useDefaultProps";
+import {
+  HvOverflowTooltip,
+  HvOverflowTooltipProps,
+} from "../../../OverflowTooltip";
 import { HvBaseProps } from "../../../types/generic";
-import { HvTypographyProps } from "../../../Typography";
 import { ExtractNames } from "../../../utils/classes";
 import { setId } from "../../../utils/setId";
 import { staticClasses, useClasses } from "./HorizontalScrollListItem.styles";
@@ -12,24 +15,10 @@ export type HvHorizontalScrollListItemClasses = ExtractNames<typeof useClasses>;
 export interface HvHorizontalScrollListItemProps
   extends HvBaseProps<HTMLDivElement | HTMLAnchorElement> {
   /** The text to render.  */
-  children: React.ReactNode;
-  /** A function component that renders a typography wrapped with a tooltip. */
-  tooltipWrapper: React.FunctionComponent<{
-    id?: string;
-    className?: string;
-    variant?: HvTypographyProps["variant"];
-    children?: React.ReactNode;
-  }>;
+  label?: React.ReactNode;
   /** Whether the element is selected. */
   selected?: boolean;
-  /** The function to be executed when the element is clicked. */
-  onClick?: (
-    event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>,
-  ) => void;
-  /** The function to be executed when the element is clicked. */
-  onKeyDown?: (
-    event: React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
-  ) => void;
+  tooltipPlacement: HvOverflowTooltipProps["placement"];
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvHorizontalScrollListItemClasses;
 
@@ -39,6 +28,8 @@ export interface HvHorizontalScrollListItemProps
    * If this is not set, the element will be rendered as a div with a button role.
    */
   href?: string;
+  /** @deprecated remove in v6 */
+  iconClasses?: string;
 }
 
 /**
@@ -52,18 +43,14 @@ export const HvHorizontalScrollListItem = (
     className,
     classes: classesProp,
     selected,
-    children,
-    onClick,
-    onKeyDown,
-    tooltipWrapper,
+    label,
+    tooltipPlacement,
     href,
+    iconClasses,
     ...others
   } = useDefaultProps("HvHorizontalScrollListItem", props);
   const { classes, cx } = useClasses(classesProp);
-  const variant = selected ? "label" : "body";
-  const labelId = setId(id, "label");
   const buttonId = setId(id, "button");
-  const Tooltip = tooltipWrapper;
 
   const Component = href != null ? "a" : "div";
 
@@ -73,20 +60,23 @@ export const HvHorizontalScrollListItem = (
         id={buttonId}
         role={href == null ? "button" : undefined}
         tabIndex={0}
-        onClick={onClick}
-        onKeyDown={onKeyDown}
         className={classes.button}
-        aria-labelledby={labelId}
         href={href}
         {...others}
       >
-        <Tooltip
-          id={labelId}
+        <HvOverflowTooltip
           className={cx(classes.text, { [classes.selected]: selected })}
-          variant={variant}
+          placement={tooltipPlacement}
+          data={label}
+        />
+        <div
+          aria-hidden
+          className={cx(classes.bullet, iconClasses, {
+            [classes.bulletSelected]: selected,
+          })}
         >
-          {children}
-        </Tooltip>
+          <span />
+        </div>
       </Component>
     </li>
   );

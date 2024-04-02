@@ -1,7 +1,4 @@
-import { CurrentStep } from "@hitachivantara/uikit-react-icons";
-
 import { useDefaultProps } from "../../../hooks/useDefaultProps";
-import { useTheme } from "../../../hooks/useTheme";
 import { HvTooltip, HvTooltipProps } from "../../../Tooltip";
 import { HvBaseProps } from "../../../types/generic";
 import { ExtractNames } from "../../../utils/classes";
@@ -17,14 +14,6 @@ export interface HvVerticalScrollListItemProps
   classes?: HvVerticalScrollListItemClasses;
   /** Whether the element is selected. */
   selected?: boolean;
-  /** The function to be executed when the element is clicked. */
-  onClick?: (
-    event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>,
-  ) => void;
-  /** The function to be executed when the element is clicked. */
-  onKeyDown?: (
-    event: React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
-  ) => void;
   label?: React.ReactNode;
   tooltipPlacement?: HvTooltipProps["placement"];
 
@@ -48,23 +37,11 @@ export const HvVerticalScrollListItem = (
     classes: classesProp,
     selected,
     label,
-    onClick,
-    onKeyDown,
     tooltipPlacement = "left",
     href,
     ...others
   } = useDefaultProps("HvVerticalScrollListItem", props);
   const { classes, cx } = useClasses(classesProp);
-  const { activeTheme } = useTheme();
-
-  const icon = selected ? (
-    <CurrentStep
-      height={activeTheme?.scrollTo.dotSelectedSize}
-      width={activeTheme?.scrollTo.dotSelectedSize}
-    />
-  ) : (
-    <div className={classes.notSelected} />
-  );
 
   const Component = href != null ? "a" : "div";
 
@@ -74,13 +51,15 @@ export const HvVerticalScrollListItem = (
         <Component
           role={href == null ? "button" : undefined}
           tabIndex={0}
-          onClick={onClick}
-          onKeyDown={onKeyDown}
           className={cx(classes.button, classes.text)}
           href={href}
           {...others}
         >
-          {icon}
+          <div
+            className={cx(classes.icon, {
+              [classes.notSelected]: !selected,
+            })}
+          />
         </Component>
       </HvTooltip>
     </li>
