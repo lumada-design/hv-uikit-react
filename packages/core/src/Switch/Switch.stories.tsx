@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
@@ -143,13 +143,16 @@ export const WithLabels: StoryObj<HvSwitchProps> = {
     },
   },
   render: () => {
-    const Label: React.FC<React.LabelHTMLAttributes<HTMLLabelElement>> = (
-      props,
-    ) => (
-      // eslint-disable-next-line jsx-a11y/label-has-associated-control
-      <label style={{ cursor: "pointer" }} {...props} />
+    const inputRef = useRef<HTMLButtonElement>(null);
+
+    const ToggleLabel = (props: React.HTMLAttributes<HTMLDivElement>) => (
+      <div
+        aria-hidden
+        style={{ cursor: "pointer" }}
+        onClick={() => inputRef.current?.click()}
+        {...props}
+      />
     );
-    Label.displayName = "Label";
 
     return (
       <>
@@ -164,14 +167,9 @@ export const WithLabels: StoryObj<HvSwitchProps> = {
           </HvInfoMessage>
         </div>
         <div className={css({ display: "flex", alignItems: "center", gap: 8 })}>
-          <Label htmlFor="switch-input">Off</Label>
-          <HvBaseSwitch
-            id="switch-input"
-            aria-labelledby="switch-label"
-            aria-describedby="switch-description"
-            defaultChecked
-          />
-          <Label htmlFor="switch-input">On</Label>
+          <ToggleLabel>Off</ToggleLabel>
+          <HvBaseSwitch inputRef={inputRef} id="switch-input" defaultChecked />
+          <ToggleLabel>On</ToggleLabel>
         </div>
       </>
     );
