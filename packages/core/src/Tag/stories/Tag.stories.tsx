@@ -41,7 +41,7 @@ export const Main: StoryObj<HvTagProps> = {
 
 export const LongLabelText: StoryObj<HvTagProps> = {
   render: () => {
-    const longText = "This is an example of a very long tag";
+    const longText = "This is an example of a extremely long tag";
 
     return (
       <>
