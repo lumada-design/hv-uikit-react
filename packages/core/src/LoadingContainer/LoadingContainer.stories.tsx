@@ -10,9 +10,6 @@ import {
 export default {
   title: "Components/Loading/Loading Container",
   component: HvLoadingContainer,
-  parameters: {
-    eyes: { include: false },
-  },
 } satisfies Meta<typeof HvLoadingContainer>;
 
 export const Main: StoryObj<HvLoadingContainerProps> = {
