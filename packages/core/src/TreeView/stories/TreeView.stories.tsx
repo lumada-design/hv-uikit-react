@@ -104,6 +104,16 @@ export const VerticalNavigation: StoryObj<HvTreeViewProps<false>> = {
     docs: {
       source: { code: VerticalNavigationStoryRaw },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const item = canvas.getByText("Storage"); // Not able to get it by role treeitem
+    await userEvent.click(item);
+    const subItem1 = canvas.getByText("Cloud");
+    await userEvent.click(subItem1);
   },
   render: () => <VerticalNavigationStory />,
 };

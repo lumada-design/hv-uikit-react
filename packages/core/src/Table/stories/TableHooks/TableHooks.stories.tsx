@@ -42,7 +42,12 @@ export const UseHvHooksStory: StoryObj = {
 };
 
 export const AlternativeLayoutStory: StoryObj = {
-  parameters: { docs: { source: { code: AlternativeLayoutRaw } } },
+  parameters: {
+    docs: { source: { code: AlternativeLayoutRaw } },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: () => <AlternativeLayout />,
 };
 

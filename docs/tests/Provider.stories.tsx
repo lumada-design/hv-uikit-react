@@ -1,20 +1,17 @@
-import { Meta, StoryObj } from "@storybook/react";
-import {
-  HvProvider,
-  HvProviderProps,
-  HvTypography,
-} from "@hitachivantara/uikit-react-core";
+import { StoryObj } from "@storybook/react";
+import { HvProvider, HvTypography } from "@hitachivantara/uikit-react-core";
 import { ds3, ds5 } from "@hitachivantara/uikit-styles";
 
-const meta: Meta<typeof HvProvider> = {
+export default {
   title: "Tests/Provider",
-  component: HvProvider,
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
 };
 
-export default meta;
-
-export const Main: StoryObj<HvProviderProps> = {
-  args: {},
+export const Main: StoryObj = {
   render: () => {
     return (
       <HvProvider

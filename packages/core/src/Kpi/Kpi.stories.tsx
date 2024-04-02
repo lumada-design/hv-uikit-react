@@ -240,6 +240,11 @@ export const StorageArray: StoryObj<HvKpiProps> = {
     },
     visualComparison: "-5 units",
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: (args) => {
     return <HvKpi {...args} />;
   },

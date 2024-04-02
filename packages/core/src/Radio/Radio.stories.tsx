@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
 import {
   HvBaseRadio,
   HvGrid,
@@ -65,11 +64,6 @@ export const Variants: StoryObj<HvRadioProps> = {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const radio = canvas.getByRole("radio", { name: /required/i });
-    await userEvent.click(radio);
   },
   render: () => {
     const styles = {

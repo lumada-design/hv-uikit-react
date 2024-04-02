@@ -550,8 +550,10 @@ export const CollapsibleIconsWithoutSubItems: StoryObj<HvVerticalNavigationProps
             "When collapsed in icon mode and no item has sub item, the panel will be have a smaller width.",
         },
       },
+      // Enables Chromatic snapshot
+      chromatic: { disableSnapshot: false },
+      eyes: { include: true },
     },
-
     render: () => {
       const [navigationDataState, setNavigationDataState] = useState<
         NavigationData[]

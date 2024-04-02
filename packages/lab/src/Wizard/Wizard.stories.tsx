@@ -168,6 +168,11 @@ export const Main: StoryObj<HvWizardProps> = {
 };
 
 export const Skippable: StoryObj<HvWizardProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: () => {
     const [show, setShow] = useState(false);
     const [loading, setLoading] = useState(false);

@@ -98,17 +98,7 @@ export const Main: StoryObj<HvHeaderProps> = {
       control: "select",
     },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-    eyes: { include: true },
-  },
   decorators: [(Story) => <div style={{ height: 150 }}>{Story()}</div>],
-  // play: async ({ canvasElement }) => {
-  //   const canvas = within(canvasElement);
-  //   const link = canvas.getByRole("link", { name: /work orders/i });
-  //   await userEvent.click(link);
-  // },
   render: ({ position }) => {
     const [selected, setSelected] = useState<string>("2");
     const handleChange: HvHeaderNavigationProps["onClick"] = (

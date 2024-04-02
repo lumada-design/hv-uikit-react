@@ -112,9 +112,6 @@ export const ResponsiveTable: StoryObj<HvTableProps> = {
           "A table with non-table elements and responsive layout (try resizing your browser).",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => <ResponsiveTableStory />,
 };
