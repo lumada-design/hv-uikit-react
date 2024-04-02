@@ -1,7 +1,7 @@
 import fs from "fs";
 import { getStoryContext, type TestRunnerConfig } from "@storybook/test-runner";
 import { NodeResult, Result } from "axe-core";
-import { getAxeResults, injectAxe } from "axe-playwright";
+import { configureAxe, getAxeResults, injectAxe } from "axe-playwright";
 
 const excludeStories = [
   "Overview",
@@ -54,12 +54,16 @@ const config: TestRunnerConfig = {
     );
     if (validStories.length != 0) return;
 
-    const axeResults = await getAxeResults(page, "#storybook-root", {
-      rules: {
-        // Disable color contrast rule
-        "color-contrast": { enabled: false },
-      },
+    const specificA11yRules = [{ id: "color-contrast", enabled: false }];
+
+    // Apply story-level a11y rules
+    await configureAxe(page, {
+      rules: specificA11yRules.concat(
+        storyContext.parameters?.a11y?.config?.rules,
+      ),
     });
+
+    const axeResults = await getAxeResults(page, "#storybook-root");
 
     writeAxeResults(
       storyContext.title,
