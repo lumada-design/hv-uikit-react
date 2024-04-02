@@ -2,6 +2,7 @@ import { useCallback, useContext, useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
+import isChromatic from "chromatic/isChromatic";
 import {
   HvAccordion,
   HvButton,
@@ -22,7 +23,11 @@ import mockText from "./mockData";
 const meta: Meta<typeof HvWizard> = {
   title: "Lab/Wizard",
   component: HvWizard,
-  decorators: [(Story) => <div style={{ minHeight: 600 }}>{Story()}</div>],
+  decorators: [
+    (Story) => (
+      <div style={{ minHeight: isChromatic() ? 1080 : 600 }}>{Story()}</div>
+    ),
+  ],
 };
 export default meta;
 
@@ -172,6 +177,11 @@ export const Skippable: StoryObj<HvWizardProps> = {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /show wizard/i });
+    await userEvent.click(button);
   },
   render: () => {
     const [show, setShow] = useState(false);

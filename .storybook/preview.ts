@@ -69,6 +69,19 @@ export const parameters: Preview["parameters"] = {
     disableSnapshot: true,
   },
   eyes: { include: false },
+  // Chromatic default viewport
+  viewport: {
+    viewports: {
+      desktop: {
+        name: "desktop",
+        styles: {
+          height: "1080px",
+          width: "1920px",
+        },
+      },
+    },
+    defaultViewport: "desktop",
+  },
 };
 
 export default {
