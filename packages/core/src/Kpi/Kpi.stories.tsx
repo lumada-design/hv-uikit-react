@@ -28,9 +28,22 @@ import {
   Train,
 } from "@hitachivantara/uikit-react-icons";
 
+import { Selectable as SelectableStory } from "./stories/Selectable";
+import SelectableStoryRaw from "./stories/Selectable?raw";
+
 const meta: Meta<typeof HvKpi> = {
   title: "Visualizations/KPI",
   component: HvKpi,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          // disable react-google-chart's labelling elements without role
+          { id: "aria-allowed-attr", enabled: false },
+        ],
+      },
+    },
+  },
 };
 export default meta;
 
@@ -253,239 +266,13 @@ export const StorageArray: StoryObj<HvKpiProps> = {
 export const Selectable: StoryObj<HvKpiProps> = {
   parameters: {
     docs: {
+      source: { code: SelectableStoryRaw },
       description: {
-        story: "A selectable KPI with the total numbers of event.",
+        story: "A selectable KPI with the total numbers of events.",
       },
     },
   },
-  render: () => {
-    const [selected, setSelected] = useState(false);
-
-    const styles: { [key: string]: CSSInterpolation } = {
-      trendChartContainer: {
-        pointerEvents: "none",
-        marginRight: -8,
-        marginBottom: -1,
-      },
-      root: { width: 280, cursor: "pointer" },
-      title: {
-        padding: "0px 24px 8px 24px",
-      },
-      time: { color: theme.colors.secondary_80 },
-      trendTextContainer: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-end",
-        justifyContent: "flex-end",
-        paddingLeft: "4px",
-      },
-      trendContainer: {
-        paddingTop: "8px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-end",
-      },
-      contentContainer: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "flex-start",
-        padding: "12px 16px 22px 16px",
-      },
-    };
-
-    const TrendChart = () => (
-      <div className={css(styles.trendChartContainer)}>
-        <ReactChart
-          width="40px"
-          height="30px"
-          chartType="AreaChart"
-          data={[
-            ["Year", "Sales"],
-            ["2019", 1200],
-            ["2020", 2100],
-            ["2021", 3200],
-            ["2022", 3500],
-          ]}
-          options={{
-            legend: "none",
-            colors: ["green"],
-            tooltip: {
-              trigger: "none",
-            },
-            hAxis: {
-              minValue: 0,
-              maxValue: 10,
-              gridlines: {
-                color: "transparent",
-              },
-              baselineColor: "transparent",
-            },
-            backgroundColor: "transparent",
-            vAxis: {
-              gridlines: {
-                color: "transparent",
-              },
-              baselineColor: "transparent",
-            },
-          }}
-        />
-      </div>
-    );
-
-    return (
-      <HvCard
-        className={css(styles.root)}
-        selectable
-        selected={selected}
-        onClick={() => setSelected(!selected)}
-        tabIndex={0}
-        role="button"
-        onKeyDown={(event) => {
-          if (event.code === "Enter" || event.code === "Space") {
-            setSelected(!selected);
-          }
-        }}
-        aria-pressed={selected}
-        statusColor="sema0"
-      >
-        <div className={css(styles.contentContainer)}>
-          <HvTypography className={css(styles.title)} variant="label">
-            Total number of events
-          </HvTypography>
-          <HvTypography variant="title2">508K</HvTypography>
-          <div className={css(styles.trendContainer)}>
-            <TrendChart />
-            <div className={css(styles.trendTextContainer)}>
-              <HvTypography variant="caption2">+82,15%</HvTypography>
-              <HvTypography variant="caption2" className={css(styles.time)}>
-                Last 24h
-              </HvTypography>
-            </div>
-          </div>
-        </div>
-      </HvCard>
-    );
-  },
-};
-
-export const SelectableSemantic: StoryObj<HvKpiProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "A selectable KPI with the total numbers of event.",
-      },
-    },
-  },
-  render: () => {
-    const [selected, setSelected] = useState(false);
-
-    const styles: { [key: string]: CSSInterpolation } = {
-      trendChartContainer: {
-        pointerEvents: "none",
-        marginRight: -8,
-        marginBottom: -1,
-      },
-      root: { width: 280, cursor: "pointer" },
-      title: {
-        padding: "0px 24px 8px 24px",
-      },
-      time: { color: theme.colors.secondary_80 },
-      trendTextContainer: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-end",
-        justifyContent: "flex-end",
-        paddingLeft: "4px",
-      },
-      trendContainer: {
-        paddingTop: "8px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-end",
-      },
-      contentContainer: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "flex-start",
-        padding: "12px 16px 22px 16px",
-      },
-    };
-
-    const TrendChart = () => (
-      <div className={css(styles.trendChartContainer)}>
-        <ReactChart
-          width="40px"
-          height="30px"
-          chartType="AreaChart"
-          data={[
-            ["Year", "Sales"],
-            ["2019", 3500],
-            ["2020", 3200],
-            ["2021", 2100],
-            ["2022", 1200],
-          ]}
-          options={{
-            legend: "none",
-            colors: ["red"],
-            tooltip: {
-              trigger: "none",
-            },
-            hAxis: {
-              minValue: 0,
-              maxValue: 10,
-              gridlines: {
-                color: "transparent",
-              },
-              baselineColor: "transparent",
-            },
-            backgroundColor: "transparent",
-            vAxis: {
-              gridlines: {
-                color: "transparent",
-              },
-              baselineColor: "transparent",
-            },
-          }}
-        />
-      </div>
-    );
-
-    return (
-      <HvCard
-        className={css(styles.root)}
-        selectable
-        selected={selected}
-        onClick={() => setSelected(!selected)}
-        tabIndex={0}
-        role="button"
-        onKeyDown={(event) => {
-          if (event.code === "Enter" || event.code === "Space") {
-            setSelected(!selected);
-          }
-        }}
-        aria-pressed={selected}
-        statusColor="negative"
-      >
-        <div className={css(styles.contentContainer)}>
-          <HvTypography className={css(styles.title)} variant="label">
-            Total number of events
-          </HvTypography>
-          <HvTypography variant="title2">508K</HvTypography>
-          <div className={css(styles.trendContainer)}>
-            <TrendChart />
-            <div className={css(styles.trendTextContainer)}>
-              <HvTypography variant="caption2">-82,15%</HvTypography>
-              <HvTypography className={css(styles.time)} variant="caption2">
-                Last 24h
-              </HvTypography>
-            </div>
-          </div>
-        </div>
-      </HvCard>
-    );
-  },
+  render: () => <SelectableStory />,
 };
 
 export const Gauge: StoryObj<HvKpiProps> = {
