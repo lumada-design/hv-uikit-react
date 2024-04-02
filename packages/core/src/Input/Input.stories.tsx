@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseInput,
   HvButton,
@@ -19,7 +19,7 @@ import { Map } from "@hitachivantara/uikit-react-icons";
 
 import countryNamesArray from "./countries";
 
-const showcaseDecorator: DecoratorFn = (Story) => (
+const showcaseDecorator: Decorator = (Story) => (
   <div
     className={css({
       display: "flex",
@@ -85,9 +85,13 @@ export const Variants: StoryObj<HvInputProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Inputs in their various state variants",
+        story:
+          "Inputs in their various state variants. `HvInput` also has custom support for various `type` attributes, such as `email` and `password`.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [showcaseDecorator],
   args: {
@@ -95,6 +99,14 @@ export const Variants: StoryObj<HvInputProps> = {
     placeholder: "Insert first name",
   },
   render: (args) => {
+    const validationMessages: HvValidationMessages = {
+      error: "Invalid value!",
+      maxCharError: "Value is too long!",
+      minCharError: "Value is too short!",
+      requiredError: "Value is required!",
+      typeMismatchError: "Type is incorrect!",
+    };
+
     return (
       <>
         <HvInput required label="Required" {...args} />
@@ -107,33 +119,6 @@ export const Variants: StoryObj<HvInputProps> = {
           statusMessage="Oh no!"
           {...args}
         />
-      </>
-    );
-  },
-};
-
-export const TypeVariants: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "`HvInput` has custom support for various `type` attributes, such as `email` and `password`.",
-      },
-    },
-  },
-  decorators: [showcaseDecorator],
-  args: {},
-  render: () => {
-    const validationMessages: HvValidationMessages = {
-      error: "Invalid value!",
-      maxCharError: "Value is too long!",
-      minCharError: "Value is too short!",
-      requiredError: "Value is required!",
-      typeMismatchError: "Type is incorrect!",
-    };
-
-    return (
-      <>
         <HvInput
           required
           type="email"
@@ -195,7 +180,6 @@ export const Controlled: StoryObj<HvInputProps> = {
         story: "Changing the input value from outside the input component.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [value, setValue] = useState("Initial value");
@@ -251,7 +235,6 @@ export const InvalidState: StoryObj<HvInputProps> = {
           "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the statusMessage property. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [validationState, setValidationState] =
@@ -288,7 +271,6 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
           "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [lastNameValidationState, setLastNameValidationState] =
@@ -397,7 +379,6 @@ export const CustomValidation: StoryObj<HvInputProps> = {
           "Input with a custom validation function, it validates if the input contains the value `hello`.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const validationMessages = {
@@ -427,7 +408,6 @@ export const EventDemonstration: StoryObj<HvInputProps> = {
         story: "Input with all events functions enabled.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [value, setValue] = useState("");
@@ -461,7 +441,6 @@ export const CustomProps: StoryObj<HvInputProps> = {
           "Using the input props to inject custom props. This input will block values exceeding 25 character and display an error if less than 5 characters.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     return (
@@ -485,7 +464,6 @@ export const Suggestion: StoryObj<HvInputProps> = {
         story: "Input with suggestion list.",
       },
     },
-    eyes: { include: false },
   },
   decorators: [(Story) => <div style={{ height: 400 }}>{Story()}</div>],
   render: () => {
@@ -529,7 +507,6 @@ export const PrefixAndSuffix: StoryObj<HvInputProps> = {
           "If you need to apply a custom layout, e.g. for providing a prefix or suffix, you can and should externalize both the label and description.",
       },
     },
-    eyes: { include: false },
   },
   decorators: [(Story) => <div style={{ maxWidth: 400 }}>{Story()}</div>],
   render: () => {

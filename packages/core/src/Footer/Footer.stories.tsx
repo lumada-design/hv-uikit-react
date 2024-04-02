@@ -20,6 +20,11 @@ export const Main: StoryObj<HvFooterProps> = {
     classes: { control: { disable: true } },
     links: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: (args) => {
     return <HvFooter {...args} />;
   },
@@ -44,6 +49,11 @@ export const CustomLabels: StoryObj<HvFooterProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+  },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => {
     return <HvFooter {...args} />;

@@ -2,12 +2,13 @@ import { useState } from "react";
 import { HvButton, HvMultiButton } from "@hitachivantara/uikit-react-core";
 import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
 
+const buttons = [
+  { name: "Map", icon: <Map /> },
+  { name: "Location", icon: <LocationPin /> },
+];
+
 export const OnlyIcons = () => {
   const [selection, setSelection] = useState([0]);
-  const buttons = [
-    { name: "Map", icon: <Map /> },
-    { name: "Location", icon: <LocationPin /> },
-  ];
 
   const handleChange = (idx: number) => {
     const newSelection = selection.includes(idx)

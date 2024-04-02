@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 import {
   HvButton,
   HvDropDownMenu,
@@ -37,6 +36,11 @@ export const Main: StoryObj<HvDropDownMenuProps> = {
     onToggle: { control: { disable: true } },
     onClick: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: (args) => {
     return <HvDropDownMenu {...args} />;
   },
@@ -50,14 +54,6 @@ export const WithIcons: StoryObj<HvDropDownMenuProps> = {
     docs: {
       description: {
         story: "Dropdown menu with icons and disabled actions.",
-      },
-    },
-    parameters: {
-      eyes: {
-        runBefore() {
-          fireEvent.click(screen.getByRole("button"));
-          return waitFor(() => screen.getByRole("menuitem"));
-        },
       },
     },
   },
@@ -83,7 +79,6 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
         story: "Dropdown menu open state controlled by an external button.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [open, setOpen] = useState(false);

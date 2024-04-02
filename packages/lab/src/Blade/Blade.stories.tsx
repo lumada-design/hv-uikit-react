@@ -53,11 +53,31 @@ export const Main: StoryObj<HvBladeProps> = {
   },
 };
 
-export const Disabled: StoryObj<HvBladeProps> = {
+export const Variants: StoryObj<HvBladeProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: () => {
     return (
-      <div style={{ display: "flex" }}>
-        <HvBlade label="Hidden information" headingLevel={3} disabled>
+      <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+        <HvBlade label="Click me">
+          <div style={{ whiteSpace: "nowrap", padding: theme.spacing("xs") }}>
+            Boo!
+          </div>
+        </HvBlade>
+        <HvBlade label="Default Expanded" labelVariant="title4" defaultExpanded>
+          <div
+            style={{
+              whiteSpace: "nowrap",
+              padding: theme.spacing("xs"),
+            }}
+          >
+            Close me!
+          </div>
+        </HvBlade>
+        <HvBlade label="Disabled" disabled>
           <div style={{ whiteSpace: "nowrap" }}>Content never shown</div>
         </HvBlade>
       </div>
@@ -66,9 +86,6 @@ export const Disabled: StoryObj<HvBladeProps> = {
 };
 
 export const Controlled: StoryObj<HvBladeProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     const [expandedState, setExpandedState] = useState(true);
     const handleToggle = (newState?: boolean) => {

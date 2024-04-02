@@ -6,9 +6,6 @@ import SnackbarProviderButtonsRaw from "./SnackbarProviderButtons?raw";
 
 export default {
   title: "Components/Snackbar/Provider",
-  parameters: {
-    eyes: { include: false },
-  },
 } as Meta<typeof HvSnackbarProvider>;
 
 export const Provider: StoryObj = {

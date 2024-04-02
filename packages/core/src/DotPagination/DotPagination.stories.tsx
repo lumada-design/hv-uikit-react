@@ -31,6 +31,11 @@ export const Main: StoryObj<HvDotPaginationProps> = {
     unselectedIcon: { control: { disable: true } },
     selectedIcon: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: () => {
     const [page, setPage] = useState<number>(0);
     const pages = [

@@ -39,6 +39,11 @@ export const Main: StoryObj<HvBladesProps> = {
     classes: { control: { disable: true } },
     children: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: (args) => {
     const classes = {
       blueContainer: css({
@@ -281,9 +286,6 @@ export const Main: StoryObj<HvBladesProps> = {
 };
 
 export const Controlled: StoryObj<HvBladesProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     const [expandedState, setExpandedState] = useState([0]);
     const handleToggle = (key: number) => {

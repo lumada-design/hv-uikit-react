@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import { HvDropdown, HvDropdownProps } from "@hitachivantara/uikit-react-core";
 
 import { Empty as EmptyStory } from "./Empty";
@@ -22,21 +22,13 @@ import WithDefinedHeightRaw from "./WithDefinedHeight?raw";
 import { WithIcons as WithIconsStory } from "./WithIcons";
 import WithIconsRaw from "./WithIcons?raw";
 
-const widthDecorator: DecoratorFn = (Story) => (
+const widthDecorator: Decorator = (Story) => (
   <div style={{ minHeight: 120, width: 310 }}>{Story()}</div>
 );
 
 export default {
   title: "Components/Dropdown",
   component: HvDropdown,
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-        return waitFor(() => screen.getByRole("listbox"));
-      },
-    },
-  },
 } satisfies Meta<typeof HvDropdown>;
 
 export const Main: StoryObj<HvDropdownProps> = {
@@ -64,14 +56,14 @@ export const Main: StoryObj<HvDropdownProps> = {
     (Story) => <div style={{ minHeight: 400 }}>{Story()}</div>,
   ],
   parameters: {
-    eyes: {
-      runBefore() {},
-    },
     docs: {
       source: {
         code: MainRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -86,6 +78,9 @@ export const Variants: StoryObj<HvDropdownProps> = {
         code: VariantsRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [
     (Story) => (
@@ -103,6 +98,11 @@ export const Variants: StoryObj<HvDropdownProps> = {
       </div>
     ),
   ],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const picker = canvas.getByRole("combobox", { name: /required/i });
+    await userEvent.click(picker);
+  },
   render: () => <VariantsStory />,
 };
 
@@ -131,7 +131,6 @@ export const Empty: StoryObj<HvDropdownProps> = {
         code: EmptyRaw,
       },
     },
-    eyes: { include: false },
   },
   decorators: [widthDecorator],
   render: () => <EmptyStory />,
@@ -176,7 +175,6 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
         code: ExternalErrorMessageRaw,
       },
     },
-    eyes: { include: false },
   },
   render: () => <ExternalErrorMessageStory />,
 };
@@ -192,7 +190,6 @@ export const WithDefinedHeight: StoryObj<HvDropdownProps> = {
         code: WithDefinedHeightRaw,
       },
     },
-    eyes: { include: false },
   },
   decorators: [widthDecorator],
   render: () => <WithDefinedHeightStory />,
@@ -209,7 +206,6 @@ export const Virtualized: StoryObj<HvDropdownProps> = {
         code: VirtualizedRaw,
       },
     },
-    eyes: { include: false },
   },
   decorators: [widthDecorator],
   render: () => <VirtualizedStory />,

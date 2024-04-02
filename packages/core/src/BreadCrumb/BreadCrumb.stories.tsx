@@ -36,6 +36,11 @@ export const Main: StoryObj<HvBreadCrumbProps> = {
     dropDownMenuProps: { control: { disable: true } },
     maxVisible: { control: { type: "range", min: 0, max: data.length } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: (args) => {
     return (
       <HvBreadCrumb listRoute={data} aria-label="Breadcrumb" {...args}>
@@ -129,6 +134,9 @@ export const WithLongLabels: StoryObj<HvBreadCrumbProps> = {
         story: "Breadcrumb with long labels.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => {
     const longData = [

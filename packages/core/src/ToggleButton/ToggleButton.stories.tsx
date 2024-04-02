@@ -65,6 +65,9 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
         story: "Showcasing multiple samples of the Toggle Button.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     return (
@@ -124,6 +127,7 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
           notSelectedIcon={<Unlock />}
           selectedIcon={<Lock />}
           style={{ margin: "0 10px 5px 0" }}
+          disabled
         />
       </>
     );
@@ -158,7 +162,6 @@ export const Tooltip: StoryObj<HvToggleButtonProps> = {
           "A sample showcasing a tooltip changing its content combined with the toggle button.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [selected, setSelected] = useState(false);
@@ -181,7 +184,6 @@ export const Animated: StoryObj<HvToggleButtonProps> = {
           "A sample showcasing a toggle button with a custom animated icon.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [select, setSelect] = useState(true);

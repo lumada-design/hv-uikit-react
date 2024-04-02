@@ -50,6 +50,9 @@ export const Main: StoryObj<HvTableProps> = {
     docs: {
       source: { code: MainRaw },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -62,6 +65,9 @@ export const NoData: StoryObj<HvTableProps> = {
         story: "Table with no data available.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <NoDataStory />,
 };
@@ -75,6 +81,9 @@ export const SimpleTable: StoryObj<HvTableProps> = {
           "Simple table that uses `HvTable` features in order to style checkbox and secondary actions columns.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <SimpleTableStory />,
 };
@@ -87,6 +96,9 @@ export const GroupedRows: StoryObj<HvTableProps> = {
         story: "A table example with grouped rows.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <GroupedRowsStory />,
 };
@@ -112,6 +124,9 @@ export const ListRow: StoryObj<HvTableProps> = {
         story: "List row variant of the table.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <ListRowStory />,
 };

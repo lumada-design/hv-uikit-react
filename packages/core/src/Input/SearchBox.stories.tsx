@@ -28,9 +28,6 @@ const meta: Meta<typeof HvInput> = {
   title: "Components/Input/Search Box",
   component: SearchBox,
   decorators: [(Story) => <div style={{ height: "300px" }}>{Story()}</div>],
-  parameters: {
-    eyes: { include: false },
-  },
 };
 
 export default meta;

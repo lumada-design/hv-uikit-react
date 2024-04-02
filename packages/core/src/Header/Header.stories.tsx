@@ -237,6 +237,9 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
           "Horizontal and vertical navigation were combined for better organization and distribution of multi-level navigation.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [(Story) => <div style={{ height: 300 }}>{Story()}</div>],
   render: () => {

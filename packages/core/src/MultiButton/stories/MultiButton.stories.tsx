@@ -178,6 +178,9 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
         code: SplitButtonRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <SplitButtonStory />,
 };

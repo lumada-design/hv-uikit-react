@@ -28,6 +28,31 @@ export const Main: StoryObj<HvLoadingProps> = {
   },
 };
 
+export const Variants: StoryObj<HvLoadingProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        {Story()}
+      </div>
+    ),
+  ],
+  render: () => {
+    return (
+      <>
+        <HvLoading />
+        <HvLoading small />
+        <HvLoading color="primary" />
+        <HvLoading label="Loading" />
+      </>
+    );
+  },
+};
+
 const Button = ({
   label,
   variant,
@@ -111,9 +136,6 @@ const Progress = ({
 };
 
 export const Determinate: StoryObj<HvLoadingProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   render: () => {
     return (
       <div style={{ display: "flex", justifyContent: "space-around" }}>

@@ -14,7 +14,6 @@ export default {
 export const DndKitSingleStory: StoryObj = {
   name: "DndKit Single",
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: DndKitSingleRaw } },
   },
   render: () => <DndKitSingle />,
@@ -23,7 +22,6 @@ export const DndKitSingleStory: StoryObj = {
 export const DndKitMultipleStory: StoryObj = {
   name: "DndKit Multiple",
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: DndKitMultipleRaw } },
   },
   render: () => <DndKitMultiple />,
@@ -32,7 +30,6 @@ export const DndKitMultipleStory: StoryObj = {
 export const VanillaStory: StoryObj = {
   name: "Native Javascript",
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: VanillaRaw } },
   },
   render: () => <Vanilla />,

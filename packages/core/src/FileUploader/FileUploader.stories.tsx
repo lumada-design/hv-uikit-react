@@ -169,6 +169,9 @@ export const WithPreviewThumbnails: StoryObj<HvFileUploaderProps> = {
           "The `HvFileUploaderPreview` component is available to facilitate the styling of the button (when clickable) and the detection of image unloading.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const [open, setOpen] = useState<boolean>(false);
@@ -328,7 +331,6 @@ export const SingleUpload: StoryObj<HvFileUploaderProps> = {
           "FileUploader which permits the upload of a single file at a time",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [list, setList] = useState<HvFileData[]>([]);
@@ -395,7 +397,6 @@ export const CustomizedFileTypes: StoryObj<HvFileUploaderProps> = {
         story: "FileUploader which restricts the upload to xls and xlsx files.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [list, setList] = useState<HvFileData[]>([]);

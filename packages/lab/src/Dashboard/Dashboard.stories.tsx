@@ -31,6 +31,11 @@ export const Main: StoryObj<HvDashboardProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false, delay: 5000 },
+    eyes: { include: true, waitBeforeCapture: 5000 },
+  },
   render: () => {
     return (
       <HvDashboard
@@ -83,7 +88,6 @@ export const DataDriven: StoryObj<HvDashboardProps> = {
           "This story demonstrates how to construct a dashboard from an array of data elements, where each item holds a `type` of dashboard item to render.",
       },
     },
-    eyes: { include: false },
     a11y: {
       config: {
         rules: [

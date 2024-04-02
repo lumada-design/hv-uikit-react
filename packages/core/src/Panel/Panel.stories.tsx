@@ -19,6 +19,11 @@ export const Main: StoryObj<HvPanelProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: () => {
     return (
       <HvPanel>
@@ -39,6 +44,11 @@ export const WithScroll: StoryObj<HvPanelProps> = {
 };
 
 export const FullWidth: StoryObj<HvPanelProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: () => {
     return (
       <HvPanel style={{ width: "100%", height: "200px" }}>

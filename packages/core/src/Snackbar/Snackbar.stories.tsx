@@ -52,6 +52,9 @@ export const Variants: StoryObj<HvSnackbarProps> = {
           "All the different Snackbar variants and some examples of Snackbar's with custom icons, actions and content.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   args: {
     open: true,
@@ -134,7 +137,6 @@ export const Controller: StoryObj<HvSnackbarProps> = {
         story: "Different Snackbar variants with controller.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const SimpleSnackbar = ({ variant, ...others }: HvSnackbarProps) => {

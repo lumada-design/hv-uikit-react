@@ -50,6 +50,11 @@ export const Disabled: StoryObj<HvIconButtonProps> = {
 };
 
 export const Variants: StoryObj<HvIconButtonProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   decorators: [
     (Story) => (
       <div style={{ display: "flex", flexWrap: "wrap", gap: theme.space.sm }}>
@@ -68,7 +73,7 @@ export const Variants: StoryObj<HvIconButtonProps> = {
       <HvIconButton title="Delete" size="xl" variant="secondarySubtle">
         <Delete />
       </HvIconButton>
-      <HvIconButton title="Download" variant="primarySubtle" size="xl">
+      <HvIconButton title="Download" variant="primarySubtle" size="xl" disabled>
         <Download />
       </HvIconButton>
     </>

@@ -1,4 +1,4 @@
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvAvatar,
   HvAvatarGroup,
@@ -10,7 +10,7 @@ import CustomOverflowRaw from "./CustomOverflow?raw";
 import { WithTooltip as WithTooltipStory } from "./WithTooltip";
 import WithTooltipRaw from "./WithTooltip?raw";
 
-const flexDecorator: DecoratorFn = (Story) => (
+const flexDecorator: Decorator = (Story) => (
   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
     {Story()}
   </div>
@@ -20,9 +20,6 @@ const meta: Meta<typeof HvAvatarGroup> = {
   title: "Components/Avatar/Avatar Group",
   component: HvAvatarGroup,
   decorators: [flexDecorator],
-  parameters: {
-    eyes: { disable: true },
-  },
 };
 export default meta;
 
@@ -196,7 +193,6 @@ export const CustomOverflow: StoryObj<HvAvatarGroupProps> = {
 
 export const WithTooltip: StoryObj<HvAvatarGroupProps> = {
   parameters: {
-    eyes: { disable: true },
     docs: {
       source: {
         code: WithTooltipRaw,

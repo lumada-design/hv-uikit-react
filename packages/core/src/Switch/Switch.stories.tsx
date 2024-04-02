@@ -58,6 +58,11 @@ export const Main: StoryObj<HvSwitchProps> = {
 
 export const Variants: StoryObj<HvSwitchProps> = {
   decorators: [decorator],
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: () => {
     const styles = {
       group: css({
@@ -105,7 +110,6 @@ export const Controlled: StoryObj<HvSwitchProps> = {
     docs: {
       description: { story: "Controlled Switch." },
     },
-    eyes: { include: false },
   },
   decorators: [decorator],
   render: () => {
@@ -137,7 +141,6 @@ export const WithLabels: StoryObj<HvSwitchProps> = {
           "Sample showing usage of custom switch labels and description, built using `HvBaseSwitch`. The labels can also be clicked to trigger the switch",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const Label: React.FC<React.LabelHTMLAttributes<HTMLLabelElement>> = (
@@ -183,7 +186,6 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
           "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is responsibility of the app.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [firstSwitchErrorMessage, setFirstSwitchErrorMessage] = useState("");

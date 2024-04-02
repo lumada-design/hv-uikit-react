@@ -1,6 +1,7 @@
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/testing-library";
+import isChromatic from "chromatic/isChromatic";
 import {
   HvDialog,
   HvDialogActions,
@@ -23,7 +24,11 @@ const meta: Meta<typeof HvDialog> = {
   component: HvDialog,
   // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvDialogTitle, HvDialogContent, HvDialogActions },
-  decorators: [(Story) => <div style={{ minHeight: 250 }}>{Story()}</div>],
+  decorators: [
+    (Story) => (
+      <div style={{ minHeight: isChromatic() ? 768 : 250 }}>{Story()}</div>
+    ),
+  ],
 };
 export default meta;
 
@@ -43,13 +48,14 @@ export const Main: StoryObj<HvDialogProps> = {
     docs: {
       source: { code: MainStoryRaw },
     },
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button"));
-
-        return waitFor(() => screen.getByRole("dialog"));
-      },
-    },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /open dialog/i });
+    await userEvent.click(button);
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -63,21 +69,29 @@ export const SemanticVariants: StoryObj<HvDialogProps> = {
           "The `HvDialog` component can receive a `variant` prop to set the status of the dialog. `HvDialogTitle` also accepts a `variant` prop that changes the icon. Alternatively, the `customIcon` prop allows for any custom icon",
       },
     },
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button", { name: "Success" }));
-
-        return waitFor(() => screen.getByRole("dialog"));
-      },
-    },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [
     (Story) => (
-      <div className={css({ display: "flex", flexFlow: "column", gap: 20 })}>
+      <div
+        className={css({
+          display: "flex",
+          flexFlow: "column",
+          gap: 20,
+          minHeight: isChromatic() ? 768 : undefined,
+        })}
+      >
         {Story()}
       </div>
     ),
   ],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /success/i });
+    await userEvent.click(button);
+  },
   render: () => <SemanticVariantsStory />,
 };
 
@@ -91,7 +105,6 @@ export const Form: StoryObj<HvDialogProps> = {
           Accessibility-wise, `HvDialogTitle` automatically labels the dialog. A `aria-describedby` can be used to describe the content.",
       },
     },
-    eyes: { include: false },
   },
   decorators: [(Story) => <div style={{ minHeight: 440 }}>{Story()}</div>],
   render: () => <FormStory />,
@@ -106,7 +119,6 @@ export const LongContent: StoryObj<HvDialogProps> = {
           "With very long content the dialog grows in height, up to a maximum where a margin of 100px is left on top and bottom.",
       },
     },
-    eyes: { include: false },
   },
   decorators: [(Story) => <div style={{ minHeight: 400 }}>{Story()}</div>],
   render: () => <LongContentStory />,

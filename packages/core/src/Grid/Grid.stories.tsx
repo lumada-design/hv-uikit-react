@@ -11,9 +11,6 @@ import {
 const meta: Meta<typeof HvGrid> = {
   title: "Components/Grid/Grid",
   component: HvGrid,
-  parameters: {
-    eyes: { include: false },
-  },
 };
 export default meta;
 
@@ -123,6 +120,9 @@ export const TheDesignSystemColumns: StoryObj<HvGridProps> = {
           "Grid using the Design System's column definitions. The number of columns is based on the current breakpoint. Resize the browser to see the number of columns change.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     const width = useWidth();

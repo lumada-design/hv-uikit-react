@@ -1,4 +1,4 @@
-import { StoryFn, StoryObj } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
 import {
   HvBox,
   HvTypography,
@@ -28,22 +28,36 @@ export const Main: StoryObj<HvTypographyProps> = {
   ),
 };
 
-export const Variants = () => {
-  return (
-    <div
-      style={{ display: "flex", flexDirection: "column", gap: theme.space.sm }}
-    >
-      {typographyVariants.map((variant) => (
-        <div key={variant}>
-          <HvTypography variant="label">{variant}</HvTypography>
-          <br />
-          <HvTypography variant={variant}>
-            Welcome to NEXT Design System!
-          </HvTypography>
-        </div>
-      ))}
-    </div>
-  );
+export const Variants: StoryObj<HvTypographyProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "The component supports different variants through the `variant` property as shown below. It's also possible to set the `disabled` or `link` properties if needed.",
+      },
+    },
+  },
+  render: () => {
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: theme.space.sm,
+        }}
+      >
+        {typographyVariants.map((variant) => (
+          <div key={variant}>
+            <HvTypography variant="label">{variant}</HvTypography>
+            <br />
+            <HvTypography variant={variant}>
+              Welcome to NEXT Design System!
+            </HvTypography>
+          </div>
+        ))}
+      </div>
+    );
+  },
 };
 
 interface CustomLinkProps extends HvTypographyProps<"a"> {
@@ -56,33 +70,34 @@ const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
   </a>
 );
 
-export const CustomRootComponent: StoryFn = () => {
-  return (
-    <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
-      <HvTypography component="span">Typography</HvTypography>
-      <HvTypography
-        link
-        component="a"
-        href="https://lumada-design.github.io/uikit/master"
-      >
-        Link
-      </HvTypography>
-      <HvTypography
-        link
-        component={CustomLink}
-        to="https://lumada-design.github.io/uikit/master"
-      >
-        Custom link
-      </HvTypography>
-    </HvBox>
-  );
-};
-
-CustomRootComponent.parameters = {
-  docs: {
-    description: {
-      story:
-        "The `component` prop can be used to change the root element, like an `a` element or a `CustomLink` component.",
+export const CustomRootComponent: StoryObj<HvTypographyProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "The `component` prop can be used to change the root element, like an `a` element or a `CustomLink` component.",
+      },
     },
+  },
+  render: () => {
+    return (
+      <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
+        <HvTypography component="span">Typography</HvTypography>
+        <HvTypography
+          link
+          component="a"
+          href="https://lumada-design.github.io/uikit/master"
+        >
+          Link
+        </HvTypography>
+        <HvTypography
+          link
+          component={CustomLink}
+          to="https://lumada-design.github.io/uikit/master"
+        >
+          Custom link
+        </HvTypography>
+      </HvBox>
+    );
   },
 };

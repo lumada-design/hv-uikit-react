@@ -4,16 +4,20 @@ on:
   pull_request:
     branches:
       - master
-      - "next*"
+
+# Cancel previous call in progress
+concurrency:
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   static-checks:
     name: Static Checks
     uses: ./.github/workflows/static-checks.yml
 
-  applitools:
-    name: Applitools
-    uses: ./.github/workflows/tests-applitools.yml
+  visual-tests:
+    name: Visual Tests
+    uses: ./.github/workflows/tests-visual.yml
     secrets: inherit
     with:
       batch-id: pr-${{ github.event.number }}
@@ -24,3 +28,5 @@ jobs:
     secrets: inherit
     with:
       publish-folder: pr-${{ github.event.number }}
+      # Uncomment when Chromatic is always used in PRs (since it already builds the docs)
+      # publish-storybook: false

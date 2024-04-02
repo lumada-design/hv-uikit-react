@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvButton,
   HvDialogActions,
@@ -45,13 +45,14 @@ export const Main: StoryObj<HvDrawerProps> = {
     classes: { control: { disable: true } },
   },
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button"));
-
-        return waitFor(() => screen.findByTestId("drawer"));
-      },
-    },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /open drawer/i });
+    await userEvent.click(button);
   },
   render: (args) => {
     const [open, setOpen] = useState(false);

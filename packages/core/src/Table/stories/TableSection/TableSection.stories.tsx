@@ -1,4 +1,5 @@
 import { StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 
 import { CompleteTableSection } from "./CompleteTableSection";
 import CompleteTableSectionRaw from "./CompleteTableSection?raw";
@@ -20,6 +21,9 @@ export default {
 export const SimpleTableSectionStory: StoryObj = {
   parameters: {
     docs: { source: { code: SimpleTableSectionRaw } },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <SimpleTableSection />,
 };
@@ -27,6 +31,9 @@ export const SimpleTableSectionStory: StoryObj = {
 export const CompleteTableSectionStory: StoryObj = {
   parameters: {
     docs: { source: { code: CompleteTableSectionRaw } },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <CompleteTableSection />,
 };
@@ -34,6 +41,14 @@ export const CompleteTableSectionStory: StoryObj = {
 export const PropsTableSectionStory: StoryObj = {
   parameters: {
     docs: { source: { code: PropsTableSectionRaw } },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /expand/i });
+    await userEvent.click(button);
   },
   render: () => <PropsTableSection />,
 };
@@ -55,6 +70,11 @@ export const FilterStory: StoryObj = {
 export const TableSettingsStory: StoryObj = {
   parameters: {
     docs: { source: { code: TableSettingsRaw } },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /settings/i });
+    await userEvent.click(button);
   },
   render: () => <TableSettings />,
 };

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { css, CSSInterpolation, cx } from "@emotion/css";
 import { Global } from "@emotion/react";
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvButton,
   HvCalendar,
@@ -18,13 +18,13 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-const containerDecorator: DecoratorFn = (Story) => (
+const containerDecorator: Decorator = (Story) => (
   <div className={cx("decorator", css({ width: 340, padding: 10 }))}>
     {Story()}
   </div>
 );
 
-const unsetDecorator: DecoratorFn = (Story) => (
+const unsetDecorator: Decorator = (Story) => (
   <>
     <Global styles={{ ".decorator:has(.unset)": { width: "unset" } }} />
     <div className="unset">{Story()}</div>
@@ -80,8 +80,16 @@ export const Variants: StoryObj<HvDatePickerProps> = {
           "Date Pickers in their various form state variants. `value` is used to configure the _uncontrolled_ initial value.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   decorators: [unsetDecorator],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const picker = canvas.getByRole("combobox", { name: /required/i });
+    await userEvent.click(picker);
+  },
   render: () => {
     const value = new Date("2023-01-01");
 
@@ -114,7 +122,6 @@ export const Variants: StoryObj<HvDatePickerProps> = {
 
 export const Localized: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story: "Datepicker sample with values localized.",
@@ -154,7 +161,6 @@ export const Localized: StoryObj<HvDatePickerProps> = {
 
 export const WithActions: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story: "Datepicker with action buttons at the bottom.",
@@ -175,7 +181,6 @@ export const WithActions: StoryObj<HvDatePickerProps> = {
 
 export const WithCustomLabels: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story:
@@ -203,13 +208,20 @@ export const WithCustomLabels: StoryObj<HvDatePickerProps> = {
 
 export const RangeMode: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story:
           "Datepicker in range mode allowing the selection of more than one value.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const picker = canvas.getByRole("combobox", { name: /date/i });
+    await userEvent.click(picker);
   },
   render: () => {
     return (
@@ -230,13 +242,6 @@ export const RangeMode: StoryObj<HvDatePickerProps> = {
 
 export const NearInvalid: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-
-        return waitFor(() => screen.getByText("January"));
-      },
-    },
     docs: {
       description: {
         story: "Datepicker in range mode with invalid near invalid dates.",
@@ -259,9 +264,6 @@ export const NearInvalid: StoryObj<HvDatePickerProps> = {
 };
 
 export const Controlled: StoryObj<HvDatePickerProps> = {
-  parameters: {
-    eyes: { include: false },
-  },
   decorators: [
     (Story) => <div style={{ display: "flex", gap: 10 }}>{Story()}</div>,
   ],
@@ -300,13 +302,14 @@ export const Controlled: StoryObj<HvDatePickerProps> = {
 
 export const WithSelectionList: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-
-        return waitFor(() => screen.getByRole("button", { name: "Apply" }));
-      },
-    },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const picker = canvas.getByRole("combobox", { name: /date/i });
+    await userEvent.click(picker);
   },
   render: () => {
     const [startDate, setStartDate] = useState(new Date(2020, 8, 5));
@@ -400,7 +403,6 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
 
 export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       description: {
         story:

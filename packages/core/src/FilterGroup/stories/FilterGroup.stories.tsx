@@ -1,5 +1,5 @@
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvFilterGroup,
   HvFilterGroupProps,
@@ -14,7 +14,7 @@ import ResetToDefaultRaw from "./ResetToDefault?raw";
 import { Uncontrolled as UncontrolledStory } from "./Uncontrolled";
 import UncontrolledRaw from "./Uncontrolled?raw";
 
-const widthDecorator: DecoratorFn = (Story) => (
+const widthDecorator: Decorator = (Story) => (
   <div style={{ width: 180 }}>{Story()}</div>
 );
 
@@ -28,18 +28,19 @@ export default meta;
 
 export const Main: StoryObj<HvFilterGroupProps> = {
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-
-        return waitFor(() => screen.getByRole("tooltip"));
-      },
-    },
     docs: {
       source: {
         code: MainRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const combobox = canvas.getByRole("combobox", { name: /main filter/i });
+    await userEvent.click(combobox);
   },
   decorators: [widthDecorator],
   render: () => <MainStory />,
@@ -47,7 +48,6 @@ export const Main: StoryObj<HvFilterGroupProps> = {
 
 export const ResetToDefault: StoryObj<HvFilterGroupProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       source: {
         code: ResetToDefaultRaw,
@@ -60,7 +60,6 @@ export const ResetToDefault: StoryObj<HvFilterGroupProps> = {
 
 export const Uncontrolled: StoryObj<HvFilterGroupProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       source: {
         code: UncontrolledRaw,
@@ -73,7 +72,6 @@ export const Uncontrolled: StoryObj<HvFilterGroupProps> = {
 
 export const EmptyFilters: StoryObj<HvFilterGroupProps> = {
   parameters: {
-    eyes: { include: false },
     docs: {
       source: {
         code: EmptyFiltersRaw,

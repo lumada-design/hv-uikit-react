@@ -1,7 +1,8 @@
 import { useCallback, useContext, useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/testing-library";
+import isChromatic from "chromatic/isChromatic";
 import {
   HvAccordion,
   HvButton,
@@ -22,7 +23,11 @@ import mockText from "./mockData";
 const meta: Meta<typeof HvWizard> = {
   title: "Lab/Wizard",
   component: HvWizard,
-  decorators: [(Story) => <div style={{ minHeight: 600 }}>{Story()}</div>],
+  decorators: [
+    (Story) => (
+      <div style={{ minHeight: isChromatic() ? 1080 : 600 }}>{Story()}</div>
+    ),
+  ],
 };
 export default meta;
 
@@ -98,13 +103,14 @@ export const Main: StoryObj<HvWizardProps> = {
     classes: { control: { disable: true } },
   },
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button"));
-
-        return waitFor(() => screen.getByRole("dialog"));
-      },
-    },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /show wizard/i });
+    await userEvent.click(button);
   },
   render: () => {
     const [show, setShow] = useState(false);
@@ -166,168 +172,182 @@ export const Main: StoryObj<HvWizardProps> = {
   },
 };
 
-export const Skippable = () => {
-  const [show, setShow] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const title = "Cross browser test";
-  const labels = {
-    previous: "Previous Step",
-    next: "Next Step",
-  };
-  const mockSubmit = useCallback(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setShow(false);
-    }, 2000);
-  }, []);
-  return (
-    <>
-      <HvButton onClick={() => setShow(true)}>Show Wizard</HvButton>
-      <HvWizard
-        open={show}
-        onClose={() => setShow(false)}
-        skippable
-        title={title}
-        hasSummary={false}
-        labels={labels}
-        fixedHeight={false}
-        loading={loading}
-        handleSubmit={mockSubmit}
-      >
-        {/* @ts-ignore */}
-        <div name="Review Model">
-          <HvTypography variant="title3" component="h2">
-            1. API details
-          </HvTypography>
-          <HvTypography>
-            Some text explaining what this section is about. It can be multiline
-            but 2 lines are the maximum recommended.
-          </HvTypography>
-        </div>
-        {/* @ts-ignore */}
-        <RandomFormComponent name="randomForm" mustValidate />
-        {/* @ts-ignore */}
-        <div name="Review Parameters">
-          <HvTypography variant="title3" component="h2">
-            2. Deployment details
-          </HvTypography>
-          <br />
-          {mockText}
-        </div>
-        {/* @ts-ignore */}
-        <div name="last">Last</div>
-      </HvWizard>
-    </>
-  );
-};
-
-Skippable.parameters = {
+export const Skippable: StoryObj<HvWizardProps> = {
   parameters: {
-    eyes: { include: false },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /show wizard/i });
+    await userEvent.click(button);
+  },
+  render: () => {
+    const [show, setShow] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const title = "Cross browser test";
+    const labels = {
+      previous: "Previous Step",
+      next: "Next Step",
+    };
+    const mockSubmit = useCallback(() => {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setShow(false);
+      }, 2000);
+    }, []);
+    return (
+      <>
+        <HvButton onClick={() => setShow(true)}>Show Wizard</HvButton>
+        <HvWizard
+          open={show}
+          onClose={() => setShow(false)}
+          skippable
+          title={title}
+          hasSummary={false}
+          labels={labels}
+          fixedHeight={false}
+          loading={loading}
+          handleSubmit={mockSubmit}
+        >
+          {/* @ts-ignore */}
+          <div name="Review Model">
+            <HvTypography variant="title3" component="h2">
+              1. API details
+            </HvTypography>
+            <HvTypography>
+              Some text explaining what this section is about. It can be
+              multiline but 2 lines are the maximum recommended.
+            </HvTypography>
+          </div>
+          {/* @ts-ignore */}
+          <RandomFormComponent name="randomForm" mustValidate />
+          {/* @ts-ignore */}
+          <div name="Review Parameters">
+            <HvTypography variant="title3" component="h2">
+              2. Deployment details
+            </HvTypography>
+            <br />
+            {mockText}
+          </div>
+          {/* @ts-ignore */}
+          <div name="last">Last</div>
+        </HvWizard>
+      </>
+    );
   },
 };
 
-export const ComponentBreakDown = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleClose = useCallback((evt, reason) => {
-    if (reason !== "backdropClick") {
-      setOpen(false);
-    }
-  }, []);
-
-  const handleSubmit = useCallback(() => {
-    setOpen(false);
-  }, []);
-
-  const classes = {
-    summaryContainer: css({
-      padding: 16,
-    }),
-    accordionSpacing: css({
-      "& > li": {
-        paddingLeft: 32,
-      },
-    }),
-  };
-
-  const summaryContent = (
-    <div className={classes.summaryContainer}>
-      <HvAccordion label="Basics" headingLevel={3}>
-        <HvListContainer
-          className={classes.accordionSpacing}
-          interactive
-          condensed
-        >
-          <HvListItem>Views</HvListItem>
-          <HvListItem>Parameters</HvListItem>
-        </HvListContainer>
-      </HvAccordion>
-      <HvAccordion label="Code Base" headingLevel={3}>
-        <HvListContainer
-          className={classes.accordionSpacing}
-          interactive
-          condensed
-        >
-          <HvListItem>Settings</HvListItem>
-          <HvListItem>Network</HvListItem>
-        </HvListContainer>
-      </HvAccordion>
-      <HvAccordion label="Execution" headingLevel={3}>
-        <HvListContainer
-          className={classes.accordionSpacing}
-          interactive
-          condensed
-        >
-          <HvListItem>
-            <HvTypography variant="label" component="span">
-              Status
-            </HvTypography>{" "}
-            Open
-          </HvListItem>
-          <HvListItem>
-            <HvTypography variant="label" component="span">
-              Date
-            </HvTypography>{" "}
-            12/08/2018
-          </HvListItem>
-          <HvListItem>
-            <HvTypography variant="label" component="span">
-              Assignee
-            </HvTypography>{" "}
-            Management
-          </HvListItem>
-        </HvListContainer>
-      </HvAccordion>
-      {mockText}
-    </div>
-  );
-
-  return (
-    <>
-      <HvButton onClick={() => setOpen(true)}>Show Wizard</HvButton>
-      <HvWizard
-        open={open}
-        hasSummary
-        summaryContent={summaryContent}
-        onClose={handleClose}
-        handleSubmit={handleSubmit}
-        title="Super component"
-        customStep={{ width: { xs: 200, sm: 250, md: 420, lg: 650 } }}
-      >
-        <div>1. Content</div>
-        <div>
-          <h2>2. Description</h2>
-          <p>{mockText}</p>
-        </div>
-      </HvWizard>
-    </>
-  );
-};
-
-ComponentBreakDown.parameters = {
+export const ComponentBreakDown: StoryObj<HvWizardProps> = {
   parameters: {
-    eyes: { include: false },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /show wizard/i });
+    await userEvent.click(button);
+    const summaryButton = canvas.getByRole("button", { name: /summary/i });
+    await userEvent.click(summaryButton);
+  },
+  render: () => {
+    const [open, setOpen] = useState(false);
+
+    const handleClose = useCallback((evt, reason) => {
+      if (reason !== "backdropClick") {
+        setOpen(false);
+      }
+    }, []);
+
+    const handleSubmit = useCallback(() => {
+      setOpen(false);
+    }, []);
+
+    const classes = {
+      summaryContainer: css({
+        padding: 16,
+      }),
+      accordionSpacing: css({
+        "& > li": {
+          paddingLeft: 32,
+        },
+      }),
+    };
+
+    const summaryContent = (
+      <div className={classes.summaryContainer}>
+        <HvAccordion label="Basics" headingLevel={3}>
+          <HvListContainer
+            className={classes.accordionSpacing}
+            interactive
+            condensed
+          >
+            <HvListItem>Views</HvListItem>
+            <HvListItem>Parameters</HvListItem>
+          </HvListContainer>
+        </HvAccordion>
+        <HvAccordion label="Code Base" headingLevel={3}>
+          <HvListContainer
+            className={classes.accordionSpacing}
+            interactive
+            condensed
+          >
+            <HvListItem>Settings</HvListItem>
+            <HvListItem>Network</HvListItem>
+          </HvListContainer>
+        </HvAccordion>
+        <HvAccordion label="Execution" headingLevel={3}>
+          <HvListContainer
+            className={classes.accordionSpacing}
+            interactive
+            condensed
+          >
+            <HvListItem>
+              <HvTypography variant="label" component="span">
+                Status
+              </HvTypography>{" "}
+              Open
+            </HvListItem>
+            <HvListItem>
+              <HvTypography variant="label" component="span">
+                Date
+              </HvTypography>{" "}
+              12/08/2018
+            </HvListItem>
+            <HvListItem>
+              <HvTypography variant="label" component="span">
+                Assignee
+              </HvTypography>{" "}
+              Management
+            </HvListItem>
+          </HvListContainer>
+        </HvAccordion>
+        {mockText}
+      </div>
+    );
+
+    return (
+      <>
+        <HvButton onClick={() => setOpen(true)}>Show Wizard</HvButton>
+        <HvWizard
+          open={open}
+          hasSummary
+          summaryContent={summaryContent}
+          onClose={handleClose}
+          handleSubmit={handleSubmit}
+          title="Super component"
+          customStep={{ width: { xs: 200, sm: 250, md: 420, lg: 650 } }}
+        >
+          <div>1. Content</div>
+          <div>
+            <h2>2. Description</h2>
+            <p>{mockText}</p>
+          </div>
+        </HvWizard>
+      </>
+    );
   },
 };

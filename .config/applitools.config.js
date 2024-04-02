@@ -1,14 +1,3 @@
-const isExcludedPath = (kind) => {
-  const excludePaths = [
-    "Overview/",
-    "Foundation/Colors",
-    "Guides/",
-    "Templates/",
-  ];
-
-  return excludePaths.some((p) => kind.includes(p));
-};
-
 module.exports = {
   matchLevel: "Strict",
 
@@ -28,8 +17,6 @@ module.exports = {
     { width: 1024, height: 768, name: "safari" },
     { width: 1024, height: 768, name: "edgechromium" },
   ],
-
-  include: ({ kind }) => !isExcludedPath(kind),
 
   testConcurrency: 20,
 };

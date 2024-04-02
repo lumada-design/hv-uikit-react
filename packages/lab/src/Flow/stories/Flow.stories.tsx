@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/testing-library";
 import {
   HvFlow,
   HvFlowBackground,
@@ -37,17 +37,6 @@ const meta: Meta<typeof HvFlow> = {
     HvFlowSidebar,
   } as unknown,
   parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(
-          screen.getByRole("button", {
-            name: "Add Node",
-          }),
-        );
-
-        return waitFor(() => screen.getByText("Search node..."));
-      },
-    },
     a11y: {
       config: {
         rules: [
@@ -68,6 +57,16 @@ export const Main: StoryObj<HvFlowProps> = {
         code: MainRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /add node/i });
+    await userEvent.click(button);
+    const expand = canvas.getAllByRole("button", { name: /expand group/i })[0];
+    await userEvent.click(expand);
   },
   render: () => <MainStory />,
 };
@@ -82,7 +81,9 @@ export const InitialState: StoryObj<HvFlowProps> = {
         code: InitialStateRaw,
       },
     },
-    eyes: { include: false },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => <InitialStateStory />,
 };
@@ -98,7 +99,6 @@ export const Visualizations: StoryObj<HvFlowProps> = {
         code: VisualizationsRaw,
       },
     },
-    eyes: { include: false },
   },
   render: () => <VisualizationsStory />,
 };
@@ -110,7 +110,6 @@ export const DynamicNodes: StoryObj<HvFlowProps> = {
         code: DynamicRaw,
       },
     },
-    eyes: { include: false },
   },
   render: () => <DynamicStory />,
 };
@@ -126,7 +125,6 @@ export const CustomDrop: StoryObj<HvFlowProps> = {
         code: CustomDropRaw,
       },
     },
-    eyes: { include: false },
   },
   render: () => <CustomDropStory />,
 };
@@ -142,7 +140,6 @@ export const NoGroups: StoryObj<HvFlowProps> = {
         code: NoGroupsRaw,
       },
     },
-    eyes: { include: false },
   },
   render: () => <NoGroupStory />,
 };
@@ -158,7 +155,6 @@ export const DynamicHandles: StoryObj<HvFlowProps> = {
         code: DynamicHandlesRaw,
       },
     },
-    eyes: { include: false },
   },
   render: () => <DynamicHandlesStory />,
 };
@@ -174,7 +170,6 @@ export const InvalidFlow: StoryObj<HvFlowProps> = {
         code: InvalidRaw,
       },
     },
-    eyes: { include: false },
   },
   render: () => <InvalidStory />,
 };

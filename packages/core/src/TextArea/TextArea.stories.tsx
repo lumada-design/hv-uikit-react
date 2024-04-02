@@ -187,6 +187,11 @@ export const Main: StoryObj<HvTextAreaProps> = {
 };
 
 export const Variants: StoryObj<HvTextAreaProps> = {
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: () => {
     const styles: { root: CSSInterpolation } = {
       root: {
@@ -241,7 +246,6 @@ export const LimitedWithCustomLabels: StoryObj<HvTextAreaProps> = {
     docs: {
       description: { story: "Text area char count with a custom labels." },
     },
-    eyes: { include: false },
   },
   render: () => {
     const validationMessages = {
@@ -292,7 +296,6 @@ export const Resizable: StoryObj<HvTextAreaProps> = {
     docs: {
       description: { story: "Text area that allow resizing." },
     },
-    eyes: { include: false },
   },
   render: () => {
     return (
@@ -330,7 +333,6 @@ export const CustomValidation: StoryObj<HvTextAreaProps> = {
         story: "Text area value that can't contain numbers.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const validationMessages = {
@@ -359,7 +361,6 @@ export const AutoScroll: StoryObj<HvTextAreaProps> = {
           "Text Area using `autoScroll` to automatically scroll down. Auto-scroll stops once the user scrolls up, and resumes once the user scrolls back to the bottom.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     const [value, setValue] = useState<string>("");

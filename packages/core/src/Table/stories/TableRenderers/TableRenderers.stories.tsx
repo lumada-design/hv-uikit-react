@@ -1,5 +1,4 @@
 import type { StoryObj } from "@storybook/react";
-import { fireEvent, screen, waitFor } from "@storybook/testing-library";
 
 import { AllColumnRenderers } from "./AllColumnRenderers";
 import AllColumnRenderersRaw from "./AllColumnRenderers?raw";
@@ -25,13 +24,17 @@ export default {
 };
 
 export const AllColumnRenderersStory: StoryObj = {
-  parameters: { docs: { source: { code: AllColumnRenderersRaw } } },
+  parameters: {
+    docs: { source: { code: AllColumnRenderersRaw } },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
   render: () => <AllColumnRenderers />,
 };
 
 export const TextColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: TextColumnRendererRaw } },
   },
   render: () => <TextColumnRenderer />,
@@ -39,7 +42,6 @@ export const TextColumnRendererStory: StoryObj = {
 
 export const NumberColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: NumberColumnRendererRaw } },
   },
   render: () => <NumberColumnRenderer />,
@@ -47,7 +49,6 @@ export const NumberColumnRendererStory: StoryObj = {
 
 export const DateColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: DateColumnRendererRaw } },
   },
   render: () => <DateColumnRenderer />,
@@ -55,7 +56,6 @@ export const DateColumnRendererStory: StoryObj = {
 
 export const ExpandColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: ExpandColumnRendererRaw } },
   },
   render: () => <ExpandColumnRenderer />,
@@ -63,7 +63,6 @@ export const ExpandColumnRendererStory: StoryObj = {
 
 export const SwitchColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: SwitchColumnRendererRaw } },
   },
   render: () => <SwitchColumnRenderer />,
@@ -71,7 +70,6 @@ export const SwitchColumnRendererStory: StoryObj = {
 
 export const TagColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: TagColumnRendererRaw } },
   },
   render: () => <TagColumnRenderer />,
@@ -79,7 +77,6 @@ export const TagColumnRendererStory: StoryObj = {
 
 export const ProgressColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: ProgressColumnRendererRaw } },
   },
   render: () => <ProgressColumnRenderer />,
@@ -87,14 +84,6 @@ export const ProgressColumnRendererStory: StoryObj = {
 
 export const DropdownColumnRendererStory: StoryObj = {
   parameters: {
-    eyes: {
-      include: true,
-      runBefore() {
-        fireEvent.click(screen.getByText("Major"));
-
-        return waitFor(() => screen.getByRole("listbox"));
-      },
-    },
     docs: { source: { code: DropdownColumnRendererRaw } },
   },
   render: () => <DropdownColumnRenderer />,

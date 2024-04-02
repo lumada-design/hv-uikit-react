@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { DecoratorFn, Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvActionBar,
   HvActionBarProps,
@@ -7,7 +7,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-const containerDecorator: DecoratorFn = (Story) => (
+const containerDecorator: Decorator = (Story) => (
   <div
     className={css({
       position: "relative",
@@ -34,6 +34,11 @@ export default meta;
 export const Main: StoryObj<HvActionBarProps> = {
   argTypes: {
     classes: { control: { disable: true } },
+  },
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
   },
   render: () => {
     return (
