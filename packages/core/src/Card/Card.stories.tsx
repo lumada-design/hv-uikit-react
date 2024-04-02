@@ -7,18 +7,18 @@ import {
   HvCardProps,
 } from "@hitachivantara/uikit-react-core";
 
-import { AllComponents as AllComponentsStory } from "./AllComponents";
-import AllComponentsRaw from "./AllComponents?raw";
-import { KPICards as KPICardsStory } from "./KPICards";
-import KPICardsRaw from "./KPICards?raw";
-import { Main as MainStory } from "./Main";
-import MainRaw from "./Main?raw";
-import { NoActions as NoActionsStory } from "./NoActions";
-import NoActionsRaw from "./NoActions?raw";
-import { OnlyTitle as OnlyTitleStory } from "./OnlyTitle";
-import OnlyTitleRaw from "./OnlyTitle?raw";
-import { Selectable as SelectableStory } from "./Selectable";
-import SelectableRaw from "./Selectable?raw";
+import { AllComponents as AllComponentsStory } from "./stories/AllComponents";
+import AllComponentsRaw from "./stories/AllComponents?raw";
+import { KPICards as KPICardsStory } from "./stories/KPICards";
+import KPICardsRaw from "./stories/KPICards?raw";
+import { Main as MainStory } from "./stories/Main";
+import MainRaw from "./stories/Main?raw";
+import { NoActions as NoActionsStory } from "./stories/NoActions";
+import NoActionsRaw from "./stories/NoActions?raw";
+import { OnlyTitle as OnlyTitleStory } from "./stories/OnlyTitle";
+import OnlyTitleRaw from "./stories/OnlyTitle?raw";
+import { Selectable as SelectableStory } from "./stories/Selectable";
+import SelectableRaw from "./stories/Selectable?raw";
 
 const meta: Meta<typeof HvCard> = {
   title: "Components/Card",
