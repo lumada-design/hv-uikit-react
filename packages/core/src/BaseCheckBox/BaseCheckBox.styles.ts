@@ -30,6 +30,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
       "& svg": {
         color: theme.colors.atmo3,
         borderColor: theme.colors.secondary_60,
+        backgroundColor: theme.colors.atmo3,
       },
     },
   },
@@ -47,8 +48,6 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
     },
     "&$disabled": {
       "& svg": {
-        backgroundColor: theme.colors.atmo3,
-        borderColor: theme.colors.atmo3,
         color: theme.colors.secondary_60,
       },
     },
@@ -59,8 +58,6 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
     },
     "&$disabled": {
       "& svg": {
-        backgroundColor: theme.colors.atmo3,
-        borderColor: theme.colors.secondary_60,
         color: theme.colors.secondary_60,
       },
     },
