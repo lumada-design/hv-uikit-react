@@ -1,0 +1,86 @@
+name: Visual Tests
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      batch-id:
+        type: string
+
+env:
+  APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+  APPLITOOLS_BATCH_ID: ${{ inputs.batch-id || github.ref_name }}
+  APPLITOOLS_BRANCH_NAME: "lumada-design/hv-uikit-react/master"
+
+jobs:
+  chromatic:
+    name: Chromatic
+    # For now, only run Chromatic when PRs have the visual tag or when it runs in the nightly (master branch)
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'visual') || github.ref_name == 'master' }}
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Pulls all commits (needed for Chromatic)
+          fetch-depth: 0
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+        env:
+          # Pulls all commits (needed for Chromatic)
+          FETCH_DEPTH: 0
+
+      - name: Publish to Chromatic
+        id: publish
+        uses: chromaui/action@latest
+        with:
+          configFile: .config/chromatic.config.json
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+      - name: Notify Fail
+        # Notify fail on Slack for the Nighly since the worklow won't fail if Chromatic does
+        if: ${{ github.ref_name == 'master' && steps.publish.outcome == 'failure'  }}
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          COLOR: "#C62828"
+        with:
+          args: |
+            {
+              "channel": "ui-kit-internal",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "${{env.COLOR}}",
+                  "title": "Chromatic failed",
+                  "title_link": "${{ env.RUN_URL }}"
+                }
+              ]
+            }
+
+  applitools:
+    name: Applitools
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Set Applitools App Name
+        id: set-app-name
+        run: |
+          if [[ "${{ github.ref_name }}" == "next"* ]]; then
+            echo "APPLITOOLS_APP_NAME=NEXT UI Kit" >> $GITHUB_ENV
+          else
+          echo "APPLITOOLS_APP_NAME=UI Kit" >> $GITHUB_ENV
+          fi
+
+      - name: Eyes Storybook
+        run: npm run test:eyes
+        timeout-minutes: 30
