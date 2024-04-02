@@ -915,6 +915,9 @@ const ds3 = makeTheme((theme) => ({
     },
     HvHorizontalScrollListItem: {
       classes: {
+        root: {
+          maxWidth: 180,
+        },
         button: {
           height: "32px",
           borderBottom: "2px solid transparent",
@@ -931,13 +934,14 @@ const ds3 = makeTheme((theme) => ({
         text: {
           height: "32px",
           borderBottom: "2px solid transparent",
-          "& p": {
-            padding: "8px 10px",
-            maxWidth: "180px",
-          },
+          padding: "8px 10px",
+          margin: 0,
         },
         selected: {
           borderBottom: `2px solid ${theme.colors.secondary}`,
+        },
+        bullet: {
+          display: "none",
         },
       },
     },
@@ -955,10 +959,12 @@ const ds3 = makeTheme((theme) => ({
     },
     HvVerticalScrollListItem: {
       classes: {
+        icon: {
+          fontSize: "10px",
+        },
         notSelected: {
-          height: "6px",
-          width: "6px",
-          backgroundColor: theme.colors.atmo4,
+          color: theme.colors.atmo4,
+          fontSize: "6px",
         },
         text: {
           height: "32px",
@@ -971,9 +977,8 @@ const ds3 = makeTheme((theme) => ({
           cursor: "pointer",
           "&:hover": {
             "& .HvVerticalScrollListItem-notSelected": {
-              height: "10px",
-              width: "10px",
-              backgroundColor: theme.colors.atmo4,
+              fontSize: "10px",
+              color: theme.colors.atmo4,
             },
           },
         },
@@ -1141,22 +1146,6 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           backgroundColor: theme.alpha("atmo2", 0.8),
-        },
-        notSelectedRoot: {
-          display: "none",
-          height: "32px",
-          width: "32px",
-          borderRadius: "0%",
-        },
-        notSelected: {
-          height: "6px",
-          width: "6px",
-          backgroundColor: theme.colors.atmo4,
-        },
-        selected: {
-          display: "none",
-          height: "32px",
-          width: "32px",
         },
       },
     },
@@ -1495,7 +1484,7 @@ const ds3 = makeTheme((theme) => ({
     cancelButtonVariant: "secondaryGhost",
   },
   scrollTo: {
-    dotSelectedSize: 10,
+    dotSelectedSize: 10, // TODO - remove in v6
     backgroundColorOpacity: 0.8, // TODO - remove in v6
   },
   colorPicker: {

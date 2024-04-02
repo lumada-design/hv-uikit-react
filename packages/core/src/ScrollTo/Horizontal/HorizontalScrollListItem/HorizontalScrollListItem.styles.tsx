@@ -7,51 +7,44 @@ const name = "HvHorizontalScrollListItem";
 
 export const { staticClasses, useClasses } = createClasses(name, {
   root: {
-    padding: "10px 0",
+    padding: theme.spacing("xs", 0),
+    maxWidth: 120,
   },
   button: {
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: "48px",
-    cursor: "pointer",
-    borderBottom: "none",
-    "&:hover": {
-      backgroundColor: "transparent",
-
-      "& $notSelected": {
-        height: "6px",
-        width: "6px",
-        backgroundColor: theme.colors.secondary,
-      },
-
-      "& $notSelectedRoot": {
-        backgroundColor: theme.colors.containerBackgroundHover,
-      },
-    },
-    "&:focus": {
-      outline: "none",
-    },
     "&:focus-visible": {
       ...outlineStyles,
     },
   },
   text: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "48px",
-    borderBottom: "none",
-
-    "& p": {
-      padding: "3px 10px",
-      maxWidth: "120px",
-      textOverflow: "ellipsis",
-      overflow: "hidden",
-    },
+    margin: theme.spacing("xs", "xs", "0"),
   },
   selected: {
-    borderBottom: "none",
+    fontWeight: theme.typography.label.fontWeight,
+  },
+  bullet: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: 24,
+    height: 24,
+    width: 24,
+    fontSize: 4,
+    color: theme.colors.secondary_60,
+
+    "& > span": {
+      margin: "auto",
+      width: "1em",
+      height: "1em",
+      backgroundColor: "currentcolor",
+      borderRadius: "50%",
+    },
+  },
+  bulletSelected: {
+    fontSize: 6,
+    color: theme.colors.secondary,
   },
 });

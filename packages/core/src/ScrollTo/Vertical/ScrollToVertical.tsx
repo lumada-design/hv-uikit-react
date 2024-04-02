@@ -1,5 +1,4 @@
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { useUniqueId } from "../../hooks/useUniqueId";
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
 import { isKey } from "../../utils/keyboardUtils";
@@ -124,8 +123,6 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id);
-
   const [selectedIndex, setScrollTo, elements] = useScrollTo(
     defaultSelectedIndex,
     scrollElementId,
@@ -136,42 +133,21 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
     onChange,
   );
 
-  const handleSelection = (
-    event:
-      | React.MouseEvent<HTMLDivElement | HTMLAnchorElement>
-      | React.KeyboardEvent<HTMLDivElement | HTMLAnchorElement>,
-    value: string,
-    index: number,
-  ) => {
-    event.preventDefault();
-
-    const wrappedOnChange = () => {
-      onChange?.(event, index);
-    };
-
-    setScrollTo(event, value, index, wrappedOnChange);
-  };
-
   const tabs = elements.map((option, index) => (
     <HvVerticalScrollListItem
-      id={setId(elementId, `item-${index}`)}
+      id={setId(id, `item-${index}`)}
       onClick={(event) => {
-        if (navigationMode !== "none") {
-          event.preventDefault();
-        }
+        event.preventDefault();
 
-        handleSelection(event, option.value, index);
+        setScrollTo(event, option.value, index, () => onChange?.(event, index));
         onClick?.(event, index);
       }}
       onKeyDown={(event) => {
-        if (isKey(event, "Enter") === true) {
-          if (navigationMode !== "none") {
-            event.preventDefault();
-          }
+        if (isKey(event, "Enter") !== true) return;
+        event.preventDefault();
 
-          handleSelection(event, option.value, index);
-          onEnter?.(event, index);
-        }
+        setScrollTo(event, option.value, index, () => onChange?.(event, index));
+        onEnter?.(event, index);
       }}
       href={navigationMode !== "none" ? option.href : undefined}
       tooltipPlacement={tooltipPosition}
@@ -194,7 +170,7 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
         className,
       )}
       style={{ top: `calc(50% - ${positionOffset}px)`, ...style }}
-      id={elementId}
+      id={id}
       {...others}
     >
       {tabs}

@@ -14,12 +14,18 @@ export const { staticClasses, useClasses } = createClasses(name, {
     justifyContent: "center",
     alignItems: "center",
   },
-  notSelected: {
-    height: "4px",
-    width: "4px",
+  icon: {
+    width: "1em",
+    height: "1em",
     borderRadius: "50%",
+    fontSize: 6,
+    color: theme.colors.secondary,
     display: "inline-block",
-    backgroundColor: theme.colors.secondary_60,
+    backgroundColor: "currentcolor",
+  },
+  notSelected: {
+    fontSize: 4,
+    color: theme.colors.secondary_60,
   },
   // TODO: remove in v6 (use classes.button)
   text: {},
@@ -35,9 +41,8 @@ export const { staticClasses, useClasses } = createClasses(name, {
       backgroundColor: theme.colors.containerBackgroundHover,
 
       "& $notSelected": {
-        height: "6px",
-        width: "6px",
-        backgroundColor: theme.colors.secondary,
+        fontSize: 6,
+        color: theme.colors.secondary,
       },
     },
     "&:focus": {

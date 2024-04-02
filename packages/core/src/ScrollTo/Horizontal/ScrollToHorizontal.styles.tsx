@@ -25,25 +25,8 @@ export const { staticClasses, useClasses } = createClasses(
       top: 0,
       left: 0,
     },
-    notSelectedRoot: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "16px",
-      width: "16px",
-      borderRadius: "50%",
-    },
-    notSelected: {
-      height: "4px",
-      width: "4px",
-      borderRadius: "50%",
-      display: "inline-block",
-      backgroundColor: theme.colors.secondary_60,
-    },
-    selected: {
-      display: "flex",
-      height: "16px",
-      width: "16px",
-    },
+    notSelectedRoot: {},
+    notSelected: {},
+    selected: {},
   },
 );

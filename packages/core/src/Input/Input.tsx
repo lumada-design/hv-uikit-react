@@ -52,7 +52,6 @@ import { useUniqueId } from "../hooks/useUniqueId";
 import { HvTooltip } from "../Tooltip";
 import { HvInputSuggestion, HvValidationMessages } from "../types/forms";
 import { HvBaseProps } from "../types/generic";
-import { isBrowser } from "../utils/browser";
 import { ExtractNames } from "../utils/classes";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
@@ -200,17 +199,11 @@ const DEFAULT_LABELS = {
 
 export type HvInputLabels = Partial<typeof DEFAULT_LABELS>;
 
-/**
- * Find the focused element onBlur.
- */
-const getFocusedElement = (event: React.FocusEvent) =>
-  isBrowser("ie") ? document.activeElement : event.relatedTarget;
-
 function eventTargetIsInsideContainer(
   container: HTMLElement | null,
   event: React.FocusEvent<any>,
 ) {
-  return container != null && container.contains(getFocusedElement(event));
+  return !!container?.contains(event.relatedTarget);
 }
 
 /** Changes a given `input`'s `value`, triggering its `onChange` */
