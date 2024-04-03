@@ -42,7 +42,7 @@ jobs:
 
       - name: Notify Fail
         # Notify fail on Slack for the Nighly since the worklow won't fail if Chromatic does
-        if: ${{ github.ref_name == 'master' && steps.publish.outcome == 'failure'  }}
+        if: ${{ github.ref_name == 'master' && (steps.publish.outcome == 'failure' || steps.publish.outputs.changeCount != '0' || steps.publish.outputs.errorCount != '0') }}
         uses: hbfernandes/slack-action@1.0
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
