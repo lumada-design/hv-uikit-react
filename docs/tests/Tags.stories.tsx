@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import { expect } from "@storybook/jest";
 import { StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { HvTag, theme } from "@hitachivantara/uikit-react-core";
@@ -13,10 +14,17 @@ export default {
 };
 
 export const Main: StoryObj = {
+  // For visual testing
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const button = canvas.getByRole("button", { name: /asset 2/i });
+    const button = canvas.getByRole("button", {
+      name: /asset 2/i,
+      pressed: false,
+    });
     await userEvent.click(button);
+    await expect(
+      canvas.getByRole("button", { name: /asset 2/i, pressed: true }),
+    ).toBeInTheDocument();
   },
   render: () => (
     <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>

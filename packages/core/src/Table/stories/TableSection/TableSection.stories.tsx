@@ -1,3 +1,4 @@
+import { expect } from "@storybook/jest";
 import { StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 
@@ -45,10 +46,12 @@ export const PropsTableSectionStory: StoryObj = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: /expand/i });
     await userEvent.click(button);
+    await expect(canvas.getByText("Event 1")).toBeInTheDocument();
   },
   render: () => <PropsTableSection />,
 };
@@ -71,10 +74,12 @@ export const TableSettingsStory: StoryObj = {
   parameters: {
     docs: { source: { code: TableSettingsRaw } },
   },
+  // For a11y testing
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: /settings/i });
     await userEvent.click(button);
+    await expect(canvas.getAllByRole("listitem")).toHaveLength(7);
   },
   render: () => <TableSettings />,
 };

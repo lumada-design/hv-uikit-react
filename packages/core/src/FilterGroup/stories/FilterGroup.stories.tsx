@@ -1,3 +1,4 @@
+import { expect } from "@storybook/jest";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
@@ -37,10 +38,14 @@ export const Main: StoryObj<HvFilterGroupProps> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const combobox = canvas.getByRole("combobox", { name: /main filter/i });
     await userEvent.click(combobox);
+    await expect(
+      canvas.getByRole("button", { name: /clear filters/i }),
+    ).toBeInTheDocument();
   },
   decorators: [widthDecorator],
   render: () => <MainStory />,

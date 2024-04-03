@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import isChromatic from "chromatic/isChromatic";
@@ -52,10 +53,12 @@ export const Main: StoryObj<HvDialogProps> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: /open dialog/i });
     await userEvent.click(button);
+    await expect(canvas.getByRole("dialog")).toBeInTheDocument();
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -87,10 +90,12 @@ export const SemanticVariants: StoryObj<HvDialogProps> = {
       </div>
     ),
   ],
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: /success/i });
     await userEvent.click(button);
+    await expect(canvas.getByRole("dialog")).toBeInTheDocument();
   },
   render: () => <SemanticVariantsStory />,
 };

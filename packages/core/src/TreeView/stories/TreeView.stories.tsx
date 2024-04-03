@@ -1,3 +1,4 @@
+import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
@@ -16,6 +17,12 @@ import { Main as MainStory } from "./Main";
 import MainStoryRaw from "./Main?raw";
 import { VerticalNavigation as VerticalNavigationStory } from "./VerticalNavigation";
 import VerticalNavigationStoryRaw from "./VerticalNavigation?raw";
+
+// Function to emulate pausing between interactions
+const sleep = (ms: number) =>
+  new Promise((resolve) => {
+    setTimeout(() => resolve("Time passed"), ms);
+  });
 
 export default {
   title: "Components/Tree View",
@@ -37,12 +44,16 @@ export const Main: StoryObj<HvTreeViewProps<false>> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const item = canvas.getByText("Documents"); // Not able to get it by role treeitem
     await userEvent.click(item);
+    // Wait before clicking the other item to avoid errors in visual tests
+    await sleep(500);
     const subItem = canvas.getByText("private");
     await userEvent.click(subItem);
+    await expect(canvas.getAllByRole("treeitem")).toHaveLength(5);
   },
   render: () => <MainStory />,
 };
@@ -73,14 +84,19 @@ export const DataObject: StoryObj<HvTreeViewProps<false>> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const item = canvas.getByText("User"); // Not able to get it by role treeitem
     await userEvent.click(item);
+    // Wait before clicking the other item to avoid errors in visual tests
+    await sleep(500);
     const subItem1 = canvas.getByText("Applications");
     await userEvent.click(subItem1);
+    await sleep(500);
     const subItem2 = canvas.getByText("git");
     await userEvent.click(subItem2);
+    await expect(canvas.getAllByRole("treeitem")).toHaveLength(9);
   },
   render: () => <DataObjectStory />,
 };
@@ -108,12 +124,16 @@ export const VerticalNavigation: StoryObj<HvTreeViewProps<false>> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const item = canvas.getByText("Storage"); // Not able to get it by role treeitem
     await userEvent.click(item);
+    // Wait before clicking the other item to avoid errors in visual tests
+    await sleep(500);
     const subItem1 = canvas.getByText("Cloud");
     await userEvent.click(subItem1);
+    await expect(canvas.getAllByRole("treeitem")).toHaveLength(8);
   },
   render: () => <VerticalNavigationStory />,
 };

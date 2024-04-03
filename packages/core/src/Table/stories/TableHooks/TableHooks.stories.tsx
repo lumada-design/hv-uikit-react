@@ -1,3 +1,4 @@
+import { expect } from "@storybook/jest";
 import { StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 
@@ -105,10 +106,14 @@ export const UseHvRowExpandStory: StoryObj = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getAllByRole("button", { name: /expand/i })[0];
     await userEvent.click(button);
+    await expect(
+      canvas.getByText("Expanded content for: Event 1"),
+    ).toBeInTheDocument();
   },
   render: () => <UseHvRowExpand />,
 };
@@ -120,10 +125,12 @@ export const UseHvGroupByStory: StoryObj = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getAllByRole("button", { name: /collapse/i })[0];
     await userEvent.click(button);
+    await expect(canvas.getByText("Event 2")).toBeInTheDocument();
   },
   render: () => <UseHvGroupBy />,
 };

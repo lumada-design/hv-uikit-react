@@ -40,7 +40,7 @@
     "lab:flow": "node scripts/flow-styles"
   },
   "devDependencies": {
-    "@applitools/eyes-storybook": "^3.47.4",
+    "@applitools/eyes-storybook": "^3.48.1",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@dnd-kit/core": "^6.1.0",
@@ -60,6 +60,7 @@
     "@storybook/addon-links": "^7.6.4",
     "@storybook/addons": "^7.6.4",
     "@storybook/core-common": "^7.6.4",
+    "@storybook/jest": "^0.2.3",
     "@storybook/react": "^7.6.4",
     "@storybook/react-vite": "^7.6.4",
     "@storybook/test-runner": "^0.17.0",
