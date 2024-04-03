@@ -148,11 +148,17 @@ const EditableCell = ({
   value,
   row,
   column,
-}: HvCellProps<AssetEvent, string>) => {
-  const formId = `edit-row-${row.original.id}`;
+}:
+  | HvCellProps<AssetEvent, string>
+  | {
+      value?: undefined;
+      row?: undefined;
+      column: HvTableColumnConfig<AssetEvent, string>;
+    }) => {
+  const formId = row ? `edit-row-${row.original.id}` : "add-row";
 
-  if (row.state?.isEditing) {
-    switch (column.id) {
+  if (row?.state?.isEditing || !row) {
+    switch (column.id || column.accessor) {
       case "status":
         return (
           <div className={classes.switchContainer}>
@@ -163,10 +169,10 @@ const EditableCell = ({
               inputProps={{
                 form: formId,
               }}
-              name={String(column.id)}
-              defaultChecked={value.getInitialValue === "Open"}
+              name={row ? String(column.id) : String(column.accessor)}
+              defaultChecked={value === "Open"}
               onChange={() => {
-                if (row.state?.isEditing && !row.state?.isDirty) {
+                if (row?.state?.isEditing && !row?.state?.isDirty) {
                   row.setState?.((state: Object) => ({
                     ...state,
                     isDirty: true,
@@ -186,7 +192,7 @@ const EditableCell = ({
         return (
           <div>
             <HvSelect
-              name={String(column.id)}
+              name={row ? String(column.id) : String(column.accessor)}
               className={classes.inputRoot}
               classes={{
                 select: classes.selectBackground,
@@ -197,7 +203,7 @@ const EditableCell = ({
               placeholder="Select Severity"
               defaultValue={value}
               onChange={() => {
-                if (row.state?.isEditing && !row.state?.isDirty) {
+                if (row?.state?.isEditing && !row?.state?.isDirty) {
                   row.setState?.((state: Object) => ({
                     ...state,
                     isDirty: true,
@@ -217,7 +223,7 @@ const EditableCell = ({
         return (
           <div>
             <HvSelect
-              name={String(column.id)}
+              name={row ? String(column.id) : String(column.accessor)}
               className={classes.inputRoot}
               classes={{
                 select: classes.selectBackground,
@@ -228,7 +234,7 @@ const EditableCell = ({
               placeholder="Select Priority"
               defaultValue={value}
               onChange={() => {
-                if (row.state?.isEditing && !row.state?.isDirty) {
+                if (row?.state?.isEditing && !row?.state?.isDirty) {
                   row.setState?.((state: Object) => ({
                     ...state,
                     isDirty: true,
@@ -252,17 +258,17 @@ const EditableCell = ({
                 form: formId,
               }}
               className={classes.inputRoot}
-              name={String(column.id)}
+              name={row ? String(column.id) : String(column.accessor)}
               defaultValue={value}
               onChange={() => {
-                if (row.state?.isEditing && !row.state?.isDirty) {
+                if (row?.state?.isEditing && !row?.state?.isDirty) {
                   row.setState?.((state: Object) => ({
                     ...state,
                     isDirty: true,
                   }));
                 }
               }}
-              placeholder={column.Header}
+              placeholder={String(column.Header)}
             />
           </div>
         );
@@ -574,12 +580,14 @@ const Table = <T extends Data>({
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
       const asset = Object.fromEntries(formData.entries());
-      console.log(asset);
       const assetFormatted = {
         ...asset,
         status: asset.status === "on" ? "Open" : "Closed",
       };
-      await onRowUpdate?.({ id: row.id, ...assetFormatted } as unknown as T);
+      await onRowUpdate?.({
+        id: row.original.id,
+        ...assetFormatted,
+      } as unknown as T);
       enqueueSnackbar("Row updated successfully.", {
         variant: "success",
         snackbarContentProps: {
@@ -676,14 +684,9 @@ const Table = <T extends Data>({
                     className={classes.tableCellContent}
                     style={{ justifyContent: "space-between" }}
                   >
-                    <HvInput
-                      inputProps={{
-                        form: formId,
-                      }}
-                      className={classes.inputRoot}
-                      name={String(col.accessor)}
-                      placeholder={col.Header}
-                    />
+                    {EditableCell({
+                      column: col as HvTableColumnConfig<AssetEvent, string>,
+                    })}
                     {last && (
                       <HvButton
                         icon

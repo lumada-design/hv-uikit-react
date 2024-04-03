@@ -506,6 +506,7 @@ export interface HvColumnInstance<
     Partial<UseResizeColumnsColumnProps<D>>,
     Partial<UseSortByColumnProps<D>> {
   Cell?: Renderer<HvCellProps<D, H>>;
+  accessor: HvColumnInstance<D, H>;
   columns: Array<HvColumnInstance<D, H>>;
   parent: HvColumnInstance<D, H>;
   placeholderOf?: HvColumnInstance<D, H>;
