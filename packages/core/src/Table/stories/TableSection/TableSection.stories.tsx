@@ -55,6 +55,7 @@ export const PropsTableSectionStory: StoryObj = {
 
 export const EditableStory: StoryObj = {
   parameters: {
+    eyes: { include: false },
     docs: { source: { code: TableEditableRaw } },
   },
   render: () => <TableEditable />,
