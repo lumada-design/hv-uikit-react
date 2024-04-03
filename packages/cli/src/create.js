@@ -7,7 +7,7 @@ import { createAppShellBaseline, setupAppShell } from "./app-shell.js";
 import { createAppContents } from "./contents.js";
 import { createNavigationFiles } from "./navigation.js";
 import { updatePackageJson } from "./package.js";
-import { __dirname, toPascalCase } from "./utils.js";
+import { __dirname, toPascalCase, toSentenceCase } from "./utils.js";
 
 const questions = [
   {
@@ -55,14 +55,7 @@ const questions = [
     type: "checkbox",
     message: "Do you want to use templates? If so, choose which:",
     name: "templates",
-    choices: [
-      "Asset Inventory",
-      "Dashboard",
-      "Details View",
-      "Form",
-      "List View",
-      "Welcome",
-    ],
+    choices: fs.readdirSync(`${__dirname}/templates`).map(toSentenceCase),
     filter(val) {
       return val.map((v) => toPascalCase(v));
     },
