@@ -35,6 +35,18 @@ export const Main: StoryObj<HvSelectProps<{}, false>> = {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
+    a11y: {
+      config: {
+        rules: [
+          // Axe isn't (incorrectly) identifying the ul <-> li hierarchy
+          // on HvSelect with grouping (HvOptionGroup)
+          { id: "list", enabled: false },
+          { id: "listitem", enabled: false },
+          { id: "aria-required-parent", enabled: false },
+          { id: "aria-required-children", enabled: false },
+        ],
+      },
+    },
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {

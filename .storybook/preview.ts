@@ -60,6 +60,11 @@ export const parameters: Preview["parameters"] = {
           id: "color-contrast",
           enabled: false,
         },
+        {
+          // disable because all stories have a `aria-hidden="true"` in the root
+          id: "aria-hidden-focus",
+          enabled: false,
+        },
       ],
     },
   },

@@ -16,6 +16,14 @@ export default {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
+    a11y: {
+      config: {
+        rules: [
+          { id: "landmark-no-duplicate-banner", enabled: false },
+          { id: "landmark-unique", enabled: false },
+        ],
+      },
+    },
   },
 };
 

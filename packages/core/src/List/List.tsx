@@ -17,12 +17,12 @@ import {
   HvListContainerProps,
   HvListItem,
 } from "../ListContainer";
+import { HvOverflowTooltip } from "../OverflowTooltip";
 import { HvRadio } from "../Radio";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
-import { wrapperTooltip } from "../utils/wrapperTooltip";
 import { staticClasses, useClasses } from "./List.styles";
 import { HvListLabels, HvListValue } from "./types";
 import { useSelectableList } from "./useSelectableList";
@@ -71,7 +71,7 @@ export interface HvListProps
   singleSelectionToggle?: boolean;
   /** If `true` the list will be rendered without vertical spacing. */
   condensed?: boolean;
-  /** If `true` the dropdown will show tooltips when user mouseenter text in list */
+  /** If `true` the dropdown will show tooltips when user mouseenter text in list. @deprecated this is always enabled */
   hasTooltips?: boolean;
   /** Experimental. Height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class. Required in case virtualized is used */
   height?: number;
@@ -95,6 +95,7 @@ export const HvList = (props: HvListProps) => {
     classes: classesProp,
     className,
     multiSelect = false,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     hasTooltips = false,
     showSelectAll = false,
     labels = DEFAULT_LABELS,
@@ -207,72 +208,43 @@ export const HvList = (props: HvListProps) => {
     );
   };
 
-  const renderItemText = (item) => {
-    const ItemText = wrapperTooltip(hasTooltips, item.label, item.label);
-
+  const renderItemText = (item: HvListValue) => {
     return !multiSelect && item.path ? (
-      <HvLink key={item.label} route={item.path} classes={{ a: classes.link }}>
-        <ItemText />
+      <HvLink route={item.path} classes={{ a: classes.link }}>
+        <HvOverflowTooltip data={item.label} />
       </HvLink>
     ) : (
-      <ItemText />
+      <HvOverflowTooltip data={item.label} />
     );
   };
 
-  const renderMultiSelectItem = (item, itemId) => {
-    if (useSelector) {
-      const Selection = wrapperTooltip(
-        hasTooltips,
-        <HvCheckBox
-          id={setId(itemId, "selector")}
-          label={item.label}
-          checked={item.selected}
-          disabled={item.disabled}
-          onChange={(evt) => handleSelect(evt, item)}
-          classes={{
-            root: classes.selectorRoot,
-            container: classes.selectorContainer,
-            label: classes.truncate,
-          }}
-        />,
-        item.label,
-      );
-      return <Selection />;
-    }
+  const renderSelectItem = (item: HvListValue, itemId?: string) => {
+    if (!useSelector) return renderItemText(item);
 
-    return renderItemText(item);
+    const Component = multiSelect ? HvCheckBox : HvRadio;
+
+    return (
+      <Component
+        id={setId(itemId, "selector")}
+        label={<HvOverflowTooltip data={item.label} />}
+        checked={item.selected || false}
+        disabled={item.disabled}
+        onChange={multiSelect ? (evt) => handleSelect(evt, item) : undefined}
+        classes={{
+          root: classes.selectorRoot,
+          container: classes.selectorContainer,
+          label: classes.truncate,
+        }}
+      />
+    );
   };
 
-  const renderSingleSelectItem = (item, itemId) => {
-    if (useSelector) {
-      const Selection = wrapperTooltip(
-        hasTooltips,
-        <HvRadio
-          id={setId(itemId, "selector")}
-          label={item.label}
-          checked={item.selected}
-          disabled={item.disabled}
-          classes={{
-            root: classes.selectorRoot,
-            container: classes.selectorContainer,
-            label: classes.truncate,
-          }}
-        />,
-        item.label,
-      );
-      return <Selection />;
-    }
-    return renderItemText(item);
-  };
-
-  const renderListItem = (item, i, otherProps = {}) => {
+  const renderListItem = (item: HvListValue, i: number, otherProps = {}) => {
     const itemId = setId(id, "item", i);
     const selected = item.selected || false;
 
-    let startAdornment = null;
-    if (!useSelector && item.icon) {
-      startAdornment = renderLeftIcon(item);
-    }
+    const startAdornment =
+      !useSelector && item.icon ? renderLeftIcon(item) : null;
 
     return (
       <HvListItem
@@ -296,9 +268,7 @@ export const HvList = (props: HvListProps) => {
         }
         {...otherProps}
       >
-        {multiSelect
-          ? renderMultiSelectItem(item, itemId)
-          : renderSingleSelectItem(item, itemId)}
+        {renderSelectItem(item, itemId)}
       </HvListItem>
     );
   };

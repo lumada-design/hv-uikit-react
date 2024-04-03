@@ -264,12 +264,12 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
     };
 
     const muiTheme = useTheme();
-    const isLarge = useMediaQuery(muiTheme.breakpoints.up("md"));
+    const isLgUp = useMediaQuery(muiTheme.breakpoints.up("lg"));
 
     return (
       <div>
         <HvHeader position="relative">
-          {!isLarge && (
+          {!isLgUp && (
             <HvButton
               icon
               onClick={() => console.log("menu")}
@@ -280,7 +280,7 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
             </HvButton>
           )}
 
-          {isLarge && (
+          {isLgUp && (
             <HvHeaderNavigation
               data={navigationDataCombined}
               selected={selectedHeaderItem.id}

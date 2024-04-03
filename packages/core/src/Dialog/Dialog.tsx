@@ -110,7 +110,6 @@ export const HvDialog = (props: HvDialogProps) => {
           ),
         },
       }}
-      aria-modal
       {...others}
     >
       <HvIconButton

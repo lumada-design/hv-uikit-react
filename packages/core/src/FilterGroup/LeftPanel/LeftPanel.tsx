@@ -1,10 +1,10 @@
 import { useContext } from "react";
 
 import { HvListContainer, HvListItem } from "../../ListContainer";
+import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { HvPanel } from "../../Panel";
 import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
-import { wrapperTooltip } from "../../utils/wrapperTooltip";
 import { HvFilterGroupCounter } from "../Counter";
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { staticClasses, useClasses } from "./LeftPanel.styles";
@@ -26,7 +26,7 @@ export const HvFilterGroupLeftPanel = ({
   emptyElement,
   classes: classesProp,
 }: HvFilterGroupLeftPanelProps) => {
-  const { classes, cx } = useClasses(classesProp);
+  const { classes } = useClasses(classesProp);
   const { filterOptions, activeGroup, setActiveGroup } =
     useContext(HvFilterGroupContext);
 
@@ -34,22 +34,17 @@ export const HvFilterGroupLeftPanel = ({
     <HvPanel id={setId(id, "leftPanel")} className={className}>
       {filterOptions.length > 0 ? (
         <HvListContainer id={setId(id, "leftPanel-list")} condensed interactive>
-          {filterOptions.map((group, index) => {
-            const ItemText = wrapperTooltip(true, group.name, group.name);
-
-            return (
-              <HvListItem
-                id={group.id}
-                key={group.name}
-                className={cx(classes.listItem)}
-                onClick={() => setActiveGroup(index)}
-                selected={filterOptions[activeGroup].id === group.id}
-                endAdornment={<HvFilterGroupCounter id={group.id} />}
-              >
-                <ItemText />
-              </HvListItem>
-            );
-          })}
+          {filterOptions.map((group, index) => (
+            <HvListItem
+              key={group.id || group.name}
+              className={classes.listItem}
+              onClick={() => setActiveGroup(index)}
+              selected={filterOptions[activeGroup].id === group.id}
+              endAdornment={<HvFilterGroupCounter groupId={group.id} />}
+            >
+              <HvOverflowTooltip data={group.name} />
+            </HvListItem>
+          ))}
         </HvListContainer>
       ) : (
         emptyElement

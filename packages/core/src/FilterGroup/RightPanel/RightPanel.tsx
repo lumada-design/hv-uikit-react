@@ -34,9 +34,9 @@ export const HvFilterGroupRightPanel = ({
   classes: classesProp,
 }: HvFilterGroupRightPanelProps) => {
   const { classes } = useClasses(classesProp);
-  const [searchStr, setSearchStr] = useState<string>("");
-  const [allSelected, setAllSelected] = useState<boolean>(false);
-  const [anySelected, setAnySelected] = useState<boolean>(false);
+  const [searchStr, setSearchStr] = useState("");
+  const [allSelected, setAllSelected] = useState(false);
+  const [anySelected, setAnySelected] = useState(false);
 
   const {
     filterOptions,
