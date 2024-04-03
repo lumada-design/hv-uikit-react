@@ -5,8 +5,8 @@ import { createClasses } from "../utils/classes";
 export const { staticClasses, useClasses } = createClasses("HvCheckBoxGroup", {
   root: {
     display: "inline-block",
-    padding: 0,
-    margin: 0,
+    padding: 4,
+    margin: -4,
     overflow: "hidden",
     verticalAlign: "top",
   },

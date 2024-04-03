@@ -9,11 +9,8 @@ export const { staticClasses, useClasses } = createClasses(name, {
     marginBottom: theme.spacing("xs"),
   },
   list: {
-    width: "calc(100% + 8px)",
     height: "calc(100% - 70px)",
     overflowY: "auto",
-    margin: -4,
-    padding: 4,
   },
   selectAllContainer: {
     // Prevent the focus ring to be hidden by sibling hover background

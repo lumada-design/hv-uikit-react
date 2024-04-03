@@ -12,7 +12,7 @@ export type HvFilterGroupCounterClasses = ExtractNames<typeof useClasses>;
 
 export interface HvFilterGroupCounterProps {
   className?: string;
-  id?: string;
+  groupId?: string;
   classes?: HvFilterGroupCounterClasses;
 }
 
@@ -33,7 +33,7 @@ const getExistingFiltersById = (
 export const HvFilterGroupCounter = (props: HvFilterGroupCounterProps) => {
   const {
     className,
-    id,
+    groupId,
     classes: classesProp,
   } = useDefaultProps("HvFilterGroupCounter", props);
   const { classes, cx } = useClasses(classesProp);
@@ -44,19 +44,17 @@ export const HvFilterGroupCounter = (props: HvFilterGroupCounterProps) => {
   } = useContext(HvFilterGroupContext);
 
   const options =
-    id && filterOptions.find((option) => option.id === id)
-      ? ([
-          filterOptions.find((option) => option.id === id),
-        ] as HvFilterGroupFilters)
+    groupId && filterOptions.find((option) => option.id === groupId)
+      ? [filterOptions.find((option) => option.id === groupId)!]
       : filterOptions;
-  const optionIdx = filterOptions.findIndex((option) => option.id === id);
+  const optionIdx = filterOptions.findIndex((option) => option.id === groupId);
 
   let groupsCounter = 0;
   appliedFilters.forEach((fg, i) => {
     groupsCounter += getExistingFiltersById(i, filterValues, filterOptions);
   });
 
-  const partialCounter = id
+  const partialCounter = groupId
     ? getExistingFiltersById(optionIdx, filterValues, filterOptions) || 0
     : groupsCounter;
 

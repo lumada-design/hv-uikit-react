@@ -151,6 +151,15 @@ export const UseHvHeaderGroupsStory: StoryObj = {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
+    a11y: {
+      config: {
+        rules: [
+          // the th cells without data are hidden to the a11y tree,
+          // but axe-core doesn't correctly understand that
+          { id: "th-has-data-cells", enabled: false },
+        ],
+      },
+    },
   },
   render: () => <UseHvHeaderGroups />,
 };
