@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { css, CSSInterpolation, cx } from "@emotion/css";
 import { Global } from "@emotion/react";
+import { expect } from "@storybook/jest";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
@@ -85,10 +86,14 @@ export const Variants: StoryObj<HvDatePickerProps> = {
     eyes: { include: true },
   },
   decorators: [unsetDecorator],
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /required/i });
     await userEvent.click(picker);
+    await expect(
+      canvas.getByRole("button", { name: "January" }),
+    ).toBeInTheDocument();
   },
   render: () => {
     const value = new Date("2023-01-01");
@@ -218,10 +223,14 @@ export const RangeMode: StoryObj<HvDatePickerProps> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /date/i });
     await userEvent.click(picker);
+    await expect(
+      canvas.getByRole("button", { name: "February" }),
+    ).toBeInTheDocument();
   },
   render: () => {
     return (
@@ -306,10 +315,14 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /date/i });
     await userEvent.click(picker);
+    await expect(
+      canvas.getByRole("button", { name: "September" }),
+    ).toBeInTheDocument();
   },
   render: () => {
     const [startDate, setStartDate] = useState(new Date(2020, 8, 5));

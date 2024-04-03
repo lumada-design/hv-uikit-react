@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
+import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
@@ -195,10 +196,12 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const checkbox = canvas.getByRole("checkbox", { name: /All/i });
     await userEvent.click(checkbox);
+    await expect(canvas.getByRole("button", { name: /add/i })).toBeEnabled();
   },
   render: () => {
     const pageSizeOptions: number[] = [4, 6, 12, 24, 48, 2000];

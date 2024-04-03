@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import { expect } from "@storybook/jest";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { HvDropdown, HvDropdownProps } from "@hitachivantara/uikit-react-core";
@@ -98,10 +99,12 @@ export const Variants: StoryObj<HvDropdownProps> = {
       </div>
     ),
   ],
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /required/i });
     await userEvent.click(picker);
+    await expect(canvas.getByRole("listbox")).toBeInTheDocument();
   },
   render: () => <VariantsStory />,
 };

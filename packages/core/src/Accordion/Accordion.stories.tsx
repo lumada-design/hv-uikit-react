@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { css, CSSInterpolation } from "@emotion/css";
+import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
@@ -80,11 +81,12 @@ export const Disabled: StoryObj<HvAccordionProps> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
-  // Expand non-disabled option for visual tests
+  // For visual testing
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: "System" });
     await userEvent.click(button);
+    await expect(canvas.getAllByRole("listitem")).toHaveLength(2);
   },
   render: () => {
     return (

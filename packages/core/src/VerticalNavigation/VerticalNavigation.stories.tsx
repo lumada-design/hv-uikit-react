@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { expect } from "@storybook/jest";
 import { StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
@@ -630,10 +631,12 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
       chromatic: { disableSnapshot: false },
       eyes: { include: true },
     },
+    // For visual testing and a11y
     play: async ({ canvasElement }) => {
       const canvas = within(canvasElement);
       const button = canvas.getByRole("button", { name: /collapse/i });
       await userEvent.click(button);
+      await expect(canvas.getAllByRole("listitem")).toHaveLength(4);
     },
     render: () => {
       const [navigationDataState, setNavigationDataState] = useState<

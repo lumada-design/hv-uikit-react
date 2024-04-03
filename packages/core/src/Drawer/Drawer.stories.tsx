@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
+import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
@@ -49,10 +50,12 @@ export const Main: StoryObj<HvDrawerProps> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: /open drawer/i });
     await userEvent.click(button);
+    await expect(canvas.getByText("Lorem Ipsum")).toBeInTheDocument();
   },
   render: (args) => {
     const [open, setOpen] = useState(false);

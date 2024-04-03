@@ -1,3 +1,4 @@
+import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
@@ -61,12 +62,16 @@ export const Main: StoryObj<HvFlowProps> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: /add node/i });
     await userEvent.click(button);
     const expand = canvas.getAllByRole("button", { name: /expand group/i })[0];
     await userEvent.click(expand);
+    await expect(
+      canvas.getByRole("searchbox", { name: /search node/i }),
+    ).toBeInTheDocument();
   },
   render: () => <MainStory />,
 };

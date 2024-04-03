@@ -1,3 +1,4 @@
+import { expect } from "@storybook/jest";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
@@ -35,10 +36,12 @@ export const Main: StoryObj<HvSelectProps<{}, false>> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const select = canvas.getByRole("combobox", { name: /country/i });
     await userEvent.click(select);
+    await expect(canvas.getAllByRole("option")).toHaveLength(6);
   },
   render: (args) => {
     return (
@@ -82,10 +85,12 @@ export const Variants: StoryObj<HvSelectProps<{}, false>> = {
       <div className="flex flex-wrap gap-sm [&>*]:w-[200px]">{Story()}</div>
     ),
   ],
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const select = canvas.getByRole("combobox", { name: /required/i });
     await userEvent.click(select);
+    await expect(canvas.getAllByRole("option")).toHaveLength(2);
   },
   render: () => {
     return (

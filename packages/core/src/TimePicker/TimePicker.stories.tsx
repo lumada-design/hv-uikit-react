@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { css, CSSInterpolation } from "@emotion/css";
+import { expect } from "@storybook/jest";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
@@ -41,10 +42,12 @@ export const Main: StoryObj<HvTimePickerProps> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /time picker/i });
     await userEvent.click(picker);
+    await expect(canvas.getByPlaceholderText("hh")).toBeInTheDocument();
   },
   render: (args) => {
     return <HvTimePicker {...args} />;
@@ -97,10 +100,12 @@ export const Variants: StoryObj<HvTimePickerProps> = {
     chromatic: { disableSnapshot: false },
     eyes: { include: true },
   },
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /required/i });
     await userEvent.click(picker);
+    await expect(canvas.getByPlaceholderText("hh")).toBeInTheDocument();
   },
   render: () => {
     const value: HvTimePickerValue = { hours: 5, minutes: 30, seconds: 14 };
@@ -187,10 +192,14 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
     eyes: { include: true },
   },
   decorators: [makeDecorator({ minHeight: 200, width: 220 })],
+  // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /time picker/i });
     await userEvent.click(picker);
+    await expect(
+      canvas.getByRole("button", { name: /pm/i }),
+    ).toBeInTheDocument();
   },
   render: () => {
     return (
