@@ -1,8 +1,7 @@
 import { useRef, useState } from "react";
 import { css, CSSInterpolation } from "@emotion/css";
-import { expect } from "@storybook/jest";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
+import { expect, userEvent, within } from "@storybook/test";
 import {
   HvButton,
   HvInput,

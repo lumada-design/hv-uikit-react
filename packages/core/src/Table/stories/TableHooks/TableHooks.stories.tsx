@@ -1,6 +1,5 @@
-import { expect } from "@storybook/jest";
 import { StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
+import { expect, userEvent, within } from "@storybook/test";
 
 import { AlternativeLayout } from "./AlternativeLayout";
 import AlternativeLayoutRaw from "./AlternativeLayout?raw";

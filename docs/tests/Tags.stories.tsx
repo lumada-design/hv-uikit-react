@@ -1,7 +1,6 @@
 import { css } from "@emotion/css";
-import { expect } from "@storybook/jest";
 import { StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
+import { expect, userEvent, within } from "@storybook/test";
 import { HvTag, theme } from "@hitachivantara/uikit-react-core";
 
 export default {

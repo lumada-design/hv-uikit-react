@@ -1,3 +1,4 @@
+import { dirname, join } from "path";
 import { StorybookConfig } from "@storybook/react-vite";
 import remarkGfm from "remark-gfm";
 import { mergeConfig } from "vite";
@@ -6,7 +7,7 @@ import viteConfig from "./vite.config";
 
 export default {
   framework: {
-    name: "@storybook/react-vite",
+    name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
   stories: [
@@ -22,9 +23,8 @@ export default {
     autodocs: true,
   },
   addons: [
-    // "@storybook/addon-actions",
-    "@storybook/addon-controls",
-    "@storybook/addon-toolbars",
+    getAbsolutePath("@storybook/addon-controls"),
+    getAbsolutePath("@storybook/addon-toolbars"),
     {
       name: "@storybook/addon-docs",
       options: {
@@ -35,16 +35,13 @@ export default {
         },
       },
     },
-    "@storybook/addon-a11y",
-    "@storybook/addon-links",
+    getAbsolutePath("@storybook/addon-a11y"),
+    getAbsolutePath("@storybook/addon-links"),
     __dirname + "/addons/version-selector",
     __dirname + "/addons/theme-selector",
     __dirname + "/addons/mode-selector",
   ],
-  features: {
-    storyStoreV7: true,
-    buildStoriesJson: true,
-  },
+  features: {},
   staticDirs: [
     "./assets",
     {
@@ -68,3 +65,7 @@ export default {
     },
   },
 } as StorybookConfig;
+
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, "package.json")));
+}

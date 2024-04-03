@@ -1,4 +1,4 @@
-import { addons } from "@storybook/addons";
+import { addons } from "@storybook/manager-api";
 
 import { getInitialMode } from "./addons/mode-selector/utils";
 import { themes } from "./theme";

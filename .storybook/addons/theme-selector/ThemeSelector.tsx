@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { addons } from "@storybook/addons";
 import {
   IconButton,
   TooltipLinkList,
   WithTooltip,
 } from "@storybook/components";
+import { addons } from "@storybook/manager-api";
 import { Global } from "@storybook/theming";
 
 import { themes } from "../../../packages/styles/src";
@@ -73,9 +73,6 @@ const ThemeSelector = ({ api }) => {
           active={false}
           title="Select theme"
           style={{ width: 200 }}
-          placeholder="Select theme"
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
         >
           {`Theme: ${selectedTheme?.label}`}
         </IconButton>

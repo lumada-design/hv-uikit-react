@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { addons } from "@storybook/addons";
+import { addons } from "@storybook/manager-api";
 import { Decorator } from "@storybook/react";
 import { Global } from "@storybook/theming";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
