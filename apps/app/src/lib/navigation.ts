@@ -24,6 +24,11 @@ const navigation = [
         label: "Details View",
         path: "/templates/details-view",
       },
+      {
+        id: "kanban-board",
+        label: "Kanban Board",
+        path: "/templates/kanban-board",
+      },
     ],
   },
   { id: "flow", label: "Flow", path: "/flow" },
