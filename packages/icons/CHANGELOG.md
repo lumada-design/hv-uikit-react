@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.9.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.9.6...@hitachivantara/uikit-react-icons@5.9.7) (2024-04-03)
+
+### Bug Fixes
+
+- **icons:** add forwardRef/memo, review a11y, misc ([3e41540](https://github.com/lumada-design/hv-uikit-react/commit/3e41540a81dd073c675c70c33460c8acb8165806))
+
 ## [5.9.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.9.5...@hitachivantara/uikit-react-icons@5.9.6) (2024-04-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

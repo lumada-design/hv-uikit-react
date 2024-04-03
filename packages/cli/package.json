@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/hv-uikit-cli",
-  "version": "1.15.2",
+  "version": "1.16.0",
   "type": "module",
   "author": "Hitachi Vantara UI Kit Team",
   "description": "The Hitachi Vantara CLI for UI Kit apps.",

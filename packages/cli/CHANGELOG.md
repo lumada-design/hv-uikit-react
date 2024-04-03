@@ -1,3 +1,14 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 1.16.0 (2024-04-03)
+
+### Features
+
+- **cli:** move package from hv-uikit-cli repo ([c4e3bf1](https://github.com/lumada-design/hv-uikit-react/commit/c4e3bf1f2de1c77d0161be582c40482dd213585b))
+
 ## [1.15.2](https://github.com/lumada-design/hv-uikit-cli/compare/v1.15.1...v1.15.2) (2024-01-25)
 
 ### Bug Fixes
