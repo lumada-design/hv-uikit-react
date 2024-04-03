@@ -11,6 +11,7 @@ const Form = lazy(() => import("../../../../templates/Form"));
 const DetailsView = lazy(() => import("../../../../templates/DetailsView"));
 const Dashboard = lazy(() => import("../../../../templates/Dashboard"));
 const Welcome = lazy(() => import("../../../../templates/Welcome"));
+const KanbanBoard = lazy(() => import("../../../../templates/KanbanBoard"));
 
 const routes: RouteObject[] = [
   {
@@ -30,6 +31,7 @@ const routes: RouteObject[] = [
           { path: "list-view", element: <ListView /> },
           { path: "form", element: <Form /> },
           { path: "details-view", element: <DetailsView /> },
+          { path: "kanban-board", element: <KanbanBoard /> },
         ],
       },
       { path: "/*", lazy: () => import("~/pages/NotFound") },
