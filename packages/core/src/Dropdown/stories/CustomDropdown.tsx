@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, SyntheticEvent, useState } from "react";
 import { css } from "@emotion/css";
 import {
   HvIconButton,
@@ -86,9 +86,11 @@ const renderItem = ({ id, label, children }: TreeData) => (
 export const CustomDropdown = () => {
   const [results, setResults] = useState<TreeData | undefined>(treeDataObject);
 
+  const [selected, setSelected] = useState("Check out this Tree view");
+
   const search = (data: TreeData, searchTerm: string): TreeData | undefined => {
     let newChildren: TreeData[] = [];
-    if (data.label.includes(searchTerm)) {
+    if (data.label.toLowerCase().includes(searchTerm.toLowerCase())) {
       return data;
     }
     if (data.children) {
@@ -103,11 +105,18 @@ export const CustomDropdown = () => {
     return undefined;
   };
 
+  const handleNodeSelect = (
+    _event: SyntheticEvent,
+    nodeId: string | string[],
+  ) => {
+    if (typeof nodeId === "string") setSelected(nodeId);
+  };
+
   return (
     <HvSimpleGrid cols={2} style={{ width: 500 }}>
       <HvBaseDropdown
         adornment={<Plant />}
-        placeholder="Check out this Tree view"
+        placeholder={selected}
         variableWidth
         aria-label="custom dropdown sample"
       >
@@ -119,7 +128,10 @@ export const CustomDropdown = () => {
             classes={{ root: css({ paddingBottom: theme.space.xs }) }}
             onChange={(_, value) => setResults(search(treeDataObject, value))}
           />
-          <HvTreeView aria-label="file system navigator">
+          <HvTreeView
+            aria-label="file system navigator"
+            onNodeSelect={handleNodeSelect}
+          >
             {results && renderItem(results)}
           </HvTreeView>
         </HvPanel>

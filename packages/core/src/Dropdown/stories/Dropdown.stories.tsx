@@ -3,6 +3,7 @@ import { expect } from "@storybook/jest";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import {
+  HvBaseDropdown,
   HvBaseDropdownProps,
   HvDropdown,
   HvDropdownProps,
@@ -36,6 +37,16 @@ const widthDecorator: Decorator = (Story) => (
 export default {
   title: "Components/Dropdown",
   component: HvDropdown,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
+  subcomponents: { HvBaseDropdown },
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("combobox"));
+        return waitFor(() => screen.getByRole("listbox"));
+      },
+    },
+  },
 } satisfies Meta<typeof HvDropdown>;
 
 export const Main: StoryObj<HvDropdownProps> = {
