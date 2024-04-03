@@ -157,8 +157,10 @@ const EditableCell = ({
     }) => {
   const formId = row ? `edit-row-${row.original.id}` : "add-row";
 
-  if (row?.state?.isEditing || !row) {
-    switch (column.id || column.accessor) {
+  const accessor = String(!row ? column.accessor : "");
+
+  if (row?.state?.isEditing || (!row && column.accessor)) {
+    switch (column.id || accessor) {
       case "status":
         return (
           <div className={classes.switchContainer}>
@@ -169,7 +171,7 @@ const EditableCell = ({
               inputProps={{
                 form: formId,
               }}
-              name={row ? String(column.id) : String(column.accessor)}
+              name={row ? String(column.id) : accessor}
               defaultChecked={value === "Open"}
               onChange={() => {
                 if (row?.state?.isEditing && !row?.state?.isDirty) {
@@ -192,7 +194,7 @@ const EditableCell = ({
         return (
           <div>
             <HvSelect
-              name={row ? String(column.id) : String(column.accessor)}
+              name={row ? String(column.id) : accessor}
               className={classes.inputRoot}
               classes={{
                 select: classes.selectBackground,
@@ -223,7 +225,7 @@ const EditableCell = ({
         return (
           <div>
             <HvSelect
-              name={row ? String(column.id) : String(column.accessor)}
+              name={row ? String(column.id) : accessor}
               className={classes.inputRoot}
               classes={{
                 select: classes.selectBackground,
@@ -258,7 +260,7 @@ const EditableCell = ({
                 form: formId,
               }}
               className={classes.inputRoot}
-              name={row ? String(column.id) : String(column.accessor)}
+              name={row ? String(column.id) : accessor}
               defaultValue={value}
               onChange={() => {
                 if (row?.state?.isEditing && !row?.state?.isDirty) {
