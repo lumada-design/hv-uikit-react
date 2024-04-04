@@ -114,10 +114,6 @@ export const HvDrawer = (props: HvDrawerProps) => {
             classes: {
               root: classes.background,
             },
-            onClick: (event) => {
-              if (disableBackdropClick) return;
-              onClose?.(event, "backdropClick");
-            },
           },
         },
       })}
