@@ -33,6 +33,10 @@ export interface HvAvatarGroupProps extends HvBaseProps {
    * If `undefined` a default `HvAvatar` will be displayed along with a HvTooltip with the count of overflowing items.
    * */
   overflowComponent?: (overflowCount: number) => React.ReactNode;
+  /**
+   * If `true` the avatars will be brought to the front when hovered.
+   */
+  highlight?: boolean;
 }
 
 const getSpacingValue = (
@@ -70,6 +74,7 @@ export const HvAvatarGroup = forwardRef<HTMLDivElement, HvAvatarGroupProps>(
       toBack = true,
       maxVisible = 3,
       overflowComponent,
+      highlight = false,
       ...others
     } = useDefaultProps("HvAvatarGroup", props);
     const { classes, cx } = useClasses(classesProp);
@@ -89,9 +94,6 @@ export const HvAvatarGroup = forwardRef<HTMLDivElement, HvAvatarGroupProps>(
         {Children.map(children, (child: any, index: number) => {
           if (index < maxVisible) {
             return cloneElement(child, {
-              style: {
-                zIndex: 100 + index * zIndexMultiplier,
-              },
               classes: {
                 container: css({
                   marginLeft:
@@ -102,6 +104,14 @@ export const HvAvatarGroup = forwardRef<HTMLDivElement, HvAvatarGroupProps>(
                         ? -spacingValue
                         : 0
                       : 0,
+                }),
+                root: css({
+                  zIndex: 100 + index * zIndexMultiplier,
+                  ...(highlight && {
+                    "&:hover": {
+                      zIndex: 100 + totalChildren + 1,
+                    },
+                  }),
                 }),
               },
               size,

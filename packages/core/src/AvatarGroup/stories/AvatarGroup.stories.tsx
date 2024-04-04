@@ -30,6 +30,7 @@ export const Main: StoryObj<HvAvatarGroupProps> = {
     toBack: true,
     maxVisible: 5,
     direction: "row",
+    highlight: false,
   },
   argTypes: {
     classes: { control: { disable: true } },
