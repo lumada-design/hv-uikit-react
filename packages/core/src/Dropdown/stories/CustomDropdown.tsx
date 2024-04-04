@@ -1,18 +1,26 @@
 import { forwardRef, SyntheticEvent, useState } from "react";
 import { css } from "@emotion/css";
 import {
+  HvBaseDropdown,
+  HvButton,
   HvIconButton,
   HvInput,
+  HvOption,
+  HvPanel,
+  HvSelect,
   HvSimpleGrid,
   HvTreeItem,
   HvTreeItemProps,
   HvTreeView,
+  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { Doc, Folders, Plant } from "@hitachivantara/uikit-react-icons";
-
-import { HvBaseDropdown } from "../../BaseDropdown";
-import { HvPanel } from "../../Panel";
+import {
+  Doc,
+  Folders,
+  Plant,
+  Settings,
+} from "@hitachivantara/uikit-react-icons";
 
 type TreeData = { id: string; label: string; children?: TreeData[] };
 
@@ -88,6 +96,8 @@ export const CustomDropdown = () => {
 
   const [selected, setSelected] = useState("Check out this Tree view");
 
+  const [expanded, setExpanded] = useState(false);
+
   const search = (data: TreeData, searchTerm: string): TreeData | undefined => {
     let newChildren: TreeData[] = [];
     if (data.label.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -111,6 +121,12 @@ export const CustomDropdown = () => {
   ) => {
     if (typeof nodeId === "string") setSelected(nodeId);
   };
+
+  const options = [
+    { label: "String", value: "string" },
+    { label: "Integer", value: "int" },
+    { label: "Float", value: "float" },
+  ];
 
   return (
     <HvSimpleGrid cols={2} style={{ width: 500 }}>
@@ -138,22 +154,47 @@ export const CustomDropdown = () => {
       </HvBaseDropdown>
       <HvBaseDropdown
         component={
-          <HvIconButton title="Check out this Tree view">
-            <Plant />
+          <HvIconButton title="Settings">
+            <Settings />
           </HvIconButton>
         }
         variableWidth
+        expanded={expanded}
+        onToggle={() => setExpanded(!expanded)}
       >
         <HvPanel style={{ width: 300 }}>
-          <HvInput
-            aria-label="Search Folder"
-            placeholder="Search"
-            type="search"
-            classes={{ root: css({ paddingBottom: theme.space.xs }) }}
-          />
-          <HvTreeView aria-label="file system navigator">
-            {results && renderItem(results)}
-          </HvTreeView>
+          <HvSimpleGrid cols={1}>
+            <HvTypography variant="title4">Column Types</HvTypography>
+            <HvSelect label="User ID" placeholder="Select an option">
+              {options.map((option) => (
+                <HvOption value={option.value}>{option.label}</HvOption>
+              ))}
+            </HvSelect>
+            <HvSelect label="Name" placeholder="Select an option">
+              {options.map((option) => (
+                <HvOption value={option.value}>{option.label}</HvOption>
+              ))}
+            </HvSelect>
+            <HvSelect label="Email" placeholder="Select an option">
+              {options.map((option) => (
+                <HvOption value={option.value}>{option.label}</HvOption>
+              ))}
+            </HvSelect>
+            <HvSelect label="Telephone" placeholder="Select an option">
+              {options.map((option) => (
+                <HvOption value={option.value}>{option.label}</HvOption>
+              ))}
+            </HvSelect>
+            <HvSimpleGrid cols={2}>
+              <HvButton>Apply</HvButton>
+              <HvButton
+                variant="primarySubtle"
+                onClick={() => setExpanded(false)}
+              >
+                Cancel
+              </HvButton>
+            </HvSimpleGrid>
+          </HvSimpleGrid>
         </HvPanel>
       </HvBaseDropdown>
     </HvSimpleGrid>
