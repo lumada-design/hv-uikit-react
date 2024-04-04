@@ -57,7 +57,8 @@ export const getIconColors = (
   semantic?: string,
   inverted = false,
 ) => {
-  const colorArray = palette;
+  // Copy array to avoid mutating the palette
+  const colorArray = [...palette];
 
   if (typeof color === "string") {
     colorArray[0] = color;
