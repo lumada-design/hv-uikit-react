@@ -1,12 +1,10 @@
 import { fireEvent, render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import {
-  Controls,
-  ControlsControlled,
-  CustomControls,
-  MixedControls,
-} from "./Controls.stories";
+import { Controls } from "./stories/Controls";
+import { ControlsControlled } from "./stories/ControlsControlled";
+import { CustomControls } from "./stories/CustomControls";
+import { MixedControls } from "./stories/MixedControls";
 
 describe("<HvControls>", () => {
   describe("general structure", () => {

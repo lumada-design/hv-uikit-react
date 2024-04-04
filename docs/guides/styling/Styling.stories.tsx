@@ -21,8 +21,6 @@ export default {
   title: "Guides/Styling",
 };
 
-// ----- Inline styles -----
-
 export const InlineStyles = () => (
   <HvButton
     id="inline-styles-button-id"
@@ -94,9 +92,11 @@ const StyledHvButton = styled(HvButton)({
   textTransform: "uppercase",
 });
 
-export const ReusableComponent = (props: HvButtonProps) => (
-  <StyledHvButton {...props}>Click me!</StyledHvButton>
-);
+export const ReusableComponent = {
+  render: (props: HvButtonProps) => (
+    <StyledHvButton {...props}>Click me!</StyledHvButton>
+  ),
+};
 
 // ----- Theme override -----
 
