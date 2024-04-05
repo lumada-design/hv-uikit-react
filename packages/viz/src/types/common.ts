@@ -1,4 +1,5 @@
-import { Arrayable } from "@hitachivantara/uikit-react-core";
+import type { EChartsType } from "echarts";
+import { Arrayable, HvExtraProps } from "@hitachivantara/uikit-react-core";
 
 import { HvChartAxis } from "./axis";
 import { HvChartData } from "./generic";
@@ -13,6 +14,17 @@ import { HvChartTooltip } from "./tooltip";
 // The "EChartsOption" type is set as "any" which is not very helpful.
 // This type was created to have something a little bit more specific.
 export type HvEChartsOption = Record<string, any>;
+
+// Echarts doesn't provide much information about the params properties so we extend HvExtraProps
+interface EventParams extends HvExtraProps {
+  componentIndex?: number;
+  componentType?: string;
+  dataIndex?: number;
+  value?: any;
+  targetType?: string;
+  type?: string;
+  event?: HvExtraProps;
+}
 
 /** Props common among all charts. */
 export interface HvChartCommonProps {
@@ -38,6 +50,11 @@ export interface HvChartCommonProps {
    * For more information about the ECharts option and the available properties, take a look at their [documentation](https://echarts.apache.org/en/option.html).
    */
   onOptionChange?: (option: HvEChartsOption) => HvEChartsOption;
+  /** Callback to bind events to the chart. */
+  onEvents?: Record<
+    string,
+    (params: EventParams, instance?: EChartsType) => void
+  >;
 }
 
 export interface HvChartXAxis extends HvChartAxis {

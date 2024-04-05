@@ -79,6 +79,7 @@ export const HvBarChart = forwardRef<ReactECharts, HvBarChartProps>(
       height,
       width,
       onOptionChange,
+      ...others
     } = props;
 
     const chartData = useData({ data, groupBy, sortBy, splitBy, measures });
@@ -140,7 +141,13 @@ export const HvBarChart = forwardRef<ReactECharts, HvBarChartProps>(
     });
 
     return (
-      <HvBaseChart ref={ref} option={option} width={width} height={height} />
+      <HvBaseChart
+        ref={ref}
+        option={option}
+        width={width}
+        height={height}
+        {...others}
+      />
     );
   },
 );

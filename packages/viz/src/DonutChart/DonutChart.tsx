@@ -65,6 +65,7 @@ export const HvDonutChart = forwardRef<ReactECharts, HvDonutChartProps>(
       type = "regular",
       slicesNameFormatter,
       onOptionChange,
+      ...others
     } = props;
 
     const chartData = useData({ data, groupBy, measures, sortBy });
@@ -108,7 +109,13 @@ export const HvDonutChart = forwardRef<ReactECharts, HvDonutChartProps>(
     });
 
     return (
-      <HvBaseChart ref={ref} option={option} width={width} height={height} />
+      <HvBaseChart
+        ref={ref}
+        option={option}
+        width={width}
+        height={height}
+        {...others}
+      />
     );
   },
 );

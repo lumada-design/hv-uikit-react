@@ -108,6 +108,7 @@ export const HvConfusionMatrix = forwardRef<
     format = "square",
     classes: classesProp,
     onOptionChange,
+    ...others
   } = props;
 
   const { classes } = useClasses(classesProp);
@@ -266,5 +267,5 @@ export const HvConfusionMatrix = forwardRef<
     onOptionChange,
   });
 
-  return <HvBaseChart ref={ref} option={option} {...size} />;
+  return <HvBaseChart ref={ref} option={option} {...size} {...others} />;
 });
