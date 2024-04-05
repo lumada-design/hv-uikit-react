@@ -40,19 +40,10 @@ jobs:
           configFile: .config/chromatic.config.json
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
-      - name: Evaluate Fail
-        if: ${{ github.ref_name == 'master' && (steps.publish.outcome == 'failure' || steps.publish.outputs.changeCount != '0' || steps.publish.outputs.errorCount != '0') }}
-        run: exit 1
-
-  # Notify fail on Slack for the Nighly since the worklow won't fail if Chromatic does
-  notify-fail:
-    name: Notify Fail
-    needs: [chromatic]
-    if: failure()
-    runs-on: ubuntu-latest
-
-    steps:
+      # Notify fail on Slack for the Nighly since the worklow won't fail if Chromatic does
       - name: Notify Fail
+        id: notify
+        if: ${{ github.ref_name == 'master' && (steps.publish.outcome == 'failure' || steps.publish.outputs.changeCount != '0' || steps.publish.outputs.errorCount != '0') }}
         uses: hbfernandes/slack-action@1.0
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
@@ -70,6 +61,11 @@ jobs:
                 }
               ]
             }
+
+      # Add red mark to workflow if it failed
+      - name: Evaluate Fail
+        if: ${{ steps.notify.outcome != 'skipped' }}
+        run: exit 1
 
   applitools:
     name: Applitools
