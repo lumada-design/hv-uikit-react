@@ -30,7 +30,6 @@ export default defineConfig({
       name: pkg.name,
       entry: resolve(process.cwd(), "src/index.ts"),
     },
-    sourcemap: "hidden",
     rollupOptions: {
       output: [
         {
@@ -43,6 +42,7 @@ export default defineConfig({
             : "[name].mjs",
           exports: "named",
           interop: "auto",
+          sourcemap: "hidden",
         },
         {
           format: "cjs",
