@@ -1,8 +1,14 @@
 import { forwardRef } from "react";
 import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 import { User } from "@hitachivantara/uikit-react-icons";
-import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
+import {
+  getColor,
+  HvColorAny,
+  HvSize,
+  theme,
+} from "@hitachivantara/uikit-styles";
 
+import { useAvatarGroupContext } from "../AvatarGroup/AvatarGroupContext";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useImageLoaded } from "../hooks/useImageLoaded";
 import { HvBaseProps } from "../types/generic";
@@ -16,13 +22,11 @@ export type HvAvatarClasses = ExtractNames<typeof useClasses>;
 
 export type HvAvatarVariant = "circular" | "square";
 
-export type HvAvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
-
 export interface HvAvatarProps extends HvBaseProps {
   /** The component used for the root node. Either a string to use a DOM element or a component. */
   component?: React.ElementType;
   /** Sets one of the standard sizes of the icons */
-  size?: HvAvatarSize;
+  size?: HvSize;
   /** A color representing the foreground color of the avatar's letters or the generic User icon fallback. */
   color?: HvColorAny;
   /** A String representing the background color of the avatar. */
@@ -63,7 +67,7 @@ export const HvAvatar = forwardRef<any, HvAvatarProps>((props, ref) => {
     classes: classesProp,
     children: childrenProp,
     component = "div",
-    size = "sm",
+    size: sizeProp,
     backgroundColor = "secondary",
     color = "atmo1",
     src,
@@ -78,6 +82,10 @@ export const HvAvatar = forwardRef<any, HvAvatarProps>((props, ref) => {
     ...others
   } = useDefaultProps("HvAvatar", props);
   const { classes, cx } = useClasses(classesProp);
+
+  const avatarGroupContext = useAvatarGroupContext();
+
+  const size = sizeProp || avatarGroupContext?.size || "sm";
 
   let children: React.ReactNode;
 

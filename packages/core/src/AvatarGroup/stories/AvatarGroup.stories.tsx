@@ -25,12 +25,12 @@ export default meta;
 
 export const Main: StoryObj<HvAvatarGroupProps> = {
   args: {
-    size: "sm",
+    size: "md",
     spacing: "loose",
     toBack: true,
     maxVisible: 5,
     direction: "row",
-    highlight: false,
+    highlight: true,
   },
   argTypes: {
     classes: { control: { disable: true } },
@@ -41,10 +41,10 @@ export const Main: StoryObj<HvAvatarGroupProps> = {
         <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
         <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
         <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-        <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-        <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-        <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-        <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+        <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+        <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+        <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+        <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
       </HvAvatarGroup>
     );
   },
@@ -53,56 +53,63 @@ export const Main: StoryObj<HvAvatarGroupProps> = {
 export const Sizes: StoryObj<HvAvatarGroupProps> = {
   render: () => {
     return (
-      <div style={{ display: "flex", gap: 20 }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "flex-start",
+          gap: 20,
+        }}
+      >
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           <HvAvatarGroup size="xs" maxVisible={3}>
             <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
             <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
             <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-            <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-            <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-            <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-            <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+            <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+            <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+            <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+            <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
           </HvAvatarGroup>
 
           <HvAvatarGroup size="sm" maxVisible={3}>
             <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
             <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
             <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-            <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-            <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-            <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-            <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+            <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+            <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+            <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+            <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
           </HvAvatarGroup>
 
           <HvAvatarGroup size="md" maxVisible={3}>
             <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
             <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
             <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-            <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-            <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-            <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-            <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+            <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+            <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+            <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+            <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
           </HvAvatarGroup>
 
           <HvAvatarGroup size="lg" maxVisible={3}>
             <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
             <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
             <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-            <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-            <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-            <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-            <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+            <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+            <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+            <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+            <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
           </HvAvatarGroup>
 
           <HvAvatarGroup size="xl" maxVisible={3}>
             <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
             <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
             <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-            <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-            <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-            <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-            <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+            <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+            <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+            <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+            <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
           </HvAvatarGroup>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -110,50 +117,50 @@ export const Sizes: StoryObj<HvAvatarGroupProps> = {
             <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
             <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
             <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-            <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-            <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-            <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-            <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+            <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+            <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+            <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+            <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
           </HvAvatarGroup>
 
           <HvAvatarGroup size="sm" spacing="compact" maxVisible={3}>
             <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
             <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
             <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-            <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-            <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-            <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-            <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+            <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+            <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+            <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+            <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
           </HvAvatarGroup>
 
           <HvAvatarGroup size="md" spacing="compact" maxVisible={3}>
             <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
             <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
             <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-            <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-            <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-            <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-            <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+            <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+            <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+            <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+            <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
           </HvAvatarGroup>
 
           <HvAvatarGroup size="lg" spacing="compact" maxVisible={3}>
             <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
             <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
             <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-            <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-            <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-            <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-            <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+            <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+            <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+            <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+            <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
           </HvAvatarGroup>
 
           <HvAvatarGroup size="xl" spacing="compact" maxVisible={3}>
             <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
             <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
             <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-            <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-            <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-            <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-            <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+            <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+            <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+            <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+            <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
           </HvAvatarGroup>
         </div>
       </div>
@@ -168,10 +175,10 @@ export const Vertical: StoryObj<HvAvatarGroupProps> = {
         <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
         <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
         <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
-        <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
-        <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
-        <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
-        <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+        <HvAvatar alt="Clara" src="https://i.imgur.com/6sYhSb6.png" />
+        <HvAvatar alt="Steve" src="https://i.imgur.com/8we9311.jpeg" />
+        <HvAvatar alt="Sarah" src="https://i.imgur.com/2aJYRLM.jpeg" />
+        <HvAvatar alt="Cristina" src="https://i.imgur.com/fj50fND.jpeg" />
       </HvAvatarGroup>
     );
   },
@@ -195,6 +202,10 @@ export const CustomOverflow: StoryObj<HvAvatarGroupProps> = {
 export const WithTooltip: StoryObj<HvAvatarGroupProps> = {
   parameters: {
     docs: {
+      description: {
+        story:
+          "The `HvAvatarGroup` component accepts `HvAvatar` as children. But you can wrap them with a `HvTooltip` component to display a tooltip on hover.",
+      },
       source: {
         code: WithTooltipRaw,
       },

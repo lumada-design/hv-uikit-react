@@ -1,4 +1,4 @@
-import { Children, cloneElement, forwardRef } from "react";
+import { Children, forwardRef } from "react";
 import { css } from "@emotion/css";
 import { HvSize, theme } from "@hitachivantara/uikit-styles";
 
@@ -7,6 +7,7 @@ import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./AvatarGroup.styles";
+import { HvAvatarGroupProvider } from "./AvatarGroupContext";
 
 export { staticClasses as avatarGroupClasses };
 
@@ -59,6 +60,65 @@ const getSpacingValue = (
   }
 };
 
+const getFontSize = (size: HvAvatarGroupProps["size"]) => {
+  switch (size) {
+    case "xs":
+      return "1em";
+    case "sm":
+      return "1.25em";
+    case "md":
+      return "1.5em";
+    case "lg":
+      return "1.75em";
+    case "xl":
+      return "3em";
+    default:
+      return "1em";
+  }
+};
+
+const Overflow = ({
+  direction,
+  childrenToShow,
+  spacingValue,
+  overflowComponent,
+  totalChildren,
+  maxVisible,
+  size,
+}) => {
+  return (
+    <div
+      style={{
+        marginLeft:
+          direction === "row" && childrenToShow.length > 0 ? -spacingValue : 0,
+        marginTop:
+          direction === "column" && childrenToShow.length > 0
+            ? -spacingValue
+            : 0,
+        zIndex: 0,
+      }}
+    >
+      {overflowComponent ? (
+        overflowComponent(totalChildren - maxVisible)
+      ) : (
+        <HvAvatar
+          size={size}
+          backgroundColor={theme.colors.atmo4}
+          classes={{
+            avatar: css({
+              [`&.HvAvatar-${size}`]: {
+                fontSize: getFontSize(size),
+              },
+            }),
+          }}
+        >
+          +{totalChildren - maxVisible}
+        </HvAvatar>
+      )}
+    </div>
+  );
+};
+
 /**
  * The AvatarGroup component is used to group multiple avatars.
  */
@@ -66,15 +126,16 @@ export const HvAvatarGroup = forwardRef<HTMLDivElement, HvAvatarGroupProps>(
   (props, ref) => {
     const {
       className,
+      style,
       classes: classesProp,
       children,
       size = "sm",
       spacing = "loose",
       direction = "row",
-      toBack = true,
       maxVisible = 3,
       overflowComponent,
       highlight = false,
+      toBack = false,
       ...others
     } = useDefaultProps("HvAvatarGroup", props);
     const { classes, cx } = useClasses(classesProp);
@@ -82,69 +143,54 @@ export const HvAvatarGroup = forwardRef<HTMLDivElement, HvAvatarGroupProps>(
     const spacingValue = getSpacingValue(spacing, size);
 
     const totalChildren = Children.count(children);
-    const zIndexMultiplier = toBack ? -1 : 1;
     const willOverflow = totalChildren > maxVisible;
+
+    const childrenToShow = Children.toArray(children).slice(0, maxVisible);
+
+    // Since the `HvAvatar` components are displayed in reverse order using `row-reverse`, we need to reverse the array.
+    if (toBack) childrenToShow.reverse();
 
     return (
       <div
-        className={cx(classes.root, classes[direction], className)}
+        className={cx(
+          classes.root,
+          classes[direction],
+          { [classes.highlight]: highlight },
+          { [classes.toBack]: toBack },
+          className,
+        )}
+        style={{
+          ["--spacing" as string]: `-${spacingValue}px`,
+          ...style,
+        }}
         ref={ref}
         {...others}
       >
-        {Children.map(children, (child: any, index: number) => {
-          if (index < maxVisible) {
-            return cloneElement(child, {
-              classes: {
-                container: css({
-                  marginLeft:
-                    direction === "row" ? (index !== 0 ? -spacingValue : 0) : 0,
-                  marginTop:
-                    direction === "column"
-                      ? index !== 0
-                        ? -spacingValue
-                        : 0
-                      : 0,
-                }),
-                root: css({
-                  zIndex: 100 + index * zIndexMultiplier,
-                  ...(highlight && {
-                    "&:hover": {
-                      zIndex: 100 + totalChildren + 1,
-                    },
-                  }),
-                }),
-              },
-              size,
-            });
-          }
-        })}
-        {willOverflow && (
-          <div
-            style={{
-              marginLeft: direction === "row" ? -spacingValue : 0,
-              marginTop: direction === "column" ? -spacingValue : 0,
-              zIndex: 100 + maxVisible * zIndexMultiplier,
-            }}
-          >
-            {overflowComponent ? (
-              overflowComponent(totalChildren - maxVisible)
-            ) : (
-              <HvAvatar
-                size={size}
-                backgroundColor={theme.colors.atmo4}
-                classes={{
-                  avatar: css({
-                    [`&.HvAvatar-${size}`]: {
-                      fontSize: "unset",
-                    },
-                  }),
-                }}
-              >
-                +{totalChildren - maxVisible}
-              </HvAvatar>
-            )}
-          </div>
-        )}
+        <HvAvatarGroupProvider size={size}>
+          {toBack && willOverflow && (
+            <Overflow
+              childrenToShow={childrenToShow}
+              direction={direction}
+              maxVisible={maxVisible}
+              overflowComponent={overflowComponent}
+              size={size}
+              spacingValue={spacingValue}
+              totalChildren={totalChildren}
+            />
+          )}
+          {childrenToShow}
+          {!toBack && willOverflow && (
+            <Overflow
+              childrenToShow={childrenToShow}
+              direction={direction}
+              maxVisible={maxVisible}
+              overflowComponent={overflowComponent}
+              size={size}
+              spacingValue={spacingValue}
+              totalChildren={totalChildren}
+            />
+          )}
+        </HvAvatarGroupProvider>
       </div>
     );
   },
