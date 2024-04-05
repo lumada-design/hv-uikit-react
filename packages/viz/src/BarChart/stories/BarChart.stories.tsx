@@ -15,6 +15,8 @@ import {
 } from "@hitachivantara/uikit-react-viz";
 
 import { vizDecorator } from "../../BaseChart/stories/utils";
+import { CustomEchartsOptions as CustomEchartsOptionsStory } from "./CustomEchartsOptions";
+import CustomEchartsOptionsRaw from "./CustomEchartsOptions?raw";
 import { renderTooltip } from "./customTooltip";
 import { customChartData } from "./mockData";
 
@@ -484,30 +486,10 @@ export const CustomEchartsOptions: StoryObj<HvBarChartProps> = {
     docs: {
       description: {
         story:
-          "If necessary, you can customize the chart's option and take advantage of the additional properties offered by ECharts.",
+          "If necessary, you can customize the chart's option and take advantage of the additional properties offered by ECharts. In this sample, the Y axis labels are truncated when they are too long and a tooltip is shown when hovered.",
       },
+      source: { code: CustomEchartsOptionsRaw },
     },
   },
-  render: () => {
-    return (
-      <HvBarChart
-        data={{
-          Month: ["January", "February", "March"],
-          "Sales Target": [2000, 1000, 6000],
-        }}
-        groupBy="Month"
-        measures="Sales Target"
-        tooltip={{
-          type: "single",
-        }}
-        onOptionChange={(option) => {
-          if (Array.isArray(option.yAxis) && option.yAxis.length === 1) {
-            option.yAxis = [{ ...option.yAxis[0], splitNumber: 3 }];
-          }
-
-          return option;
-        }}
-      />
-    );
-  },
+  render: () => <CustomEchartsOptionsStory />,
 };
