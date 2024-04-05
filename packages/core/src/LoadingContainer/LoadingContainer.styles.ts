@@ -6,10 +6,10 @@ const { staticClasses, useClasses } = createClasses("HvLoadingContainer", {
   root: {
     position: "relative",
     height: "inherit",
-    userSelect: "none",
   },
   loading: {
     position: "absolute",
+    userSelect: "none",
     inset: 0,
     zIndex: theme.zIndices.overlay,
     transition: "background-color .2s ease",
