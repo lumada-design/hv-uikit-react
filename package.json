@@ -19,6 +19,7 @@
     "clean": "lerna run clean",
     "build": "lerna run build",
     "build:doc": "storybook build -o dist --quiet && node scripts/storybook-title",
+    "build:doc:test": "storybook build -o dist --quiet --test",
     "build:app": "vite build apps/app",
     "build:nextra": "npm run build -w apps/docs",
     "test": "lerna run test",

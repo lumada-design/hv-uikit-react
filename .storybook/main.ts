@@ -64,6 +64,12 @@ export default {
       shouldRemoveUndefinedFromOptional: true,
     },
   },
+  build: {
+    test: {
+      // https://storybook.js.org/docs/api/main-config-build#testdisableblocks
+      disableBlocks: false,
+    },
+  },
 } as StorybookConfig;
 
 function getAbsolutePath(value: string): any {
