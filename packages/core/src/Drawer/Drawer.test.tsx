@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { vi } from "vitest";
 
 import { HvButton, HvDialogActions, HvDialogContent, HvDialogTitle } from "..";
 import { HvDrawer } from "./Drawer";
 
-const Sample = ({ startingOpen }: { startingOpen: boolean }) => {
+const Sample = ({
+  startingOpen,
+  onClose,
+}: {
+  startingOpen: boolean;
+  onClose?: () => void;
+}) => {
   const [open, setOpen] = useState(startingOpen);
 
   return (
@@ -17,7 +24,16 @@ const Sample = ({ startingOpen }: { startingOpen: boolean }) => {
       >
         Open dialog
       </HvButton>
-      <HvDrawer id="drawer-test" open={open} onClose={() => setOpen(false)}>
+      <HvDrawer
+        id="drawer-test"
+        open={open}
+        onClose={() => {
+          onClose?.();
+          setOpen(false);
+        }}
+        // @ts-ignore
+        slotProps={{ backdrop: { "data-testid": "backdrop" } }}
+      >
         <HvDialogTitle>Lorem Ipsum</HvDialogTitle>
         <HvDialogContent>
           {`Cras mattis consectetur purus sit amet fermentum. 
@@ -70,6 +86,29 @@ describe("HvDrawer", () => {
     expect(queryByRole("button", { name: "openDialog" })).toBeNull();
 
     await userEvent.click(closeButton);
+
+    expect(getByRole("button", { name: "openDialog" })).toBeInTheDocument();
+
+    expect(queryByRole("button", { name: "Close" })).toBeNull();
+  });
+
+  it("should close when click on backdrop", async () => {
+    const onCloseMock = vi.fn();
+    const { getByRole, getByTestId, getByText, queryByRole } = render(
+      <Sample startingOpen onClose={onCloseMock} />,
+    );
+
+    const backdrop = getByTestId("backdrop");
+    const title = getByText("Lorem Ipsum");
+
+    expect(backdrop).toBeInTheDocument();
+    expect(title).toBeInTheDocument();
+
+    expect(queryByRole("button", { name: "openDialog" })).toBeNull();
+
+    await userEvent.click(backdrop);
+
+    expect(onCloseMock).toHaveBeenCalledTimes(1);
 
     expect(getByRole("button", { name: "openDialog" })).toBeInTheDocument();
 
