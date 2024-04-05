@@ -39,14 +39,6 @@ export default {
   component: HvDropdown,
   // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvBaseDropdown },
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("combobox"));
-        return waitFor(() => screen.getByRole("listbox"));
-      },
-    },
-  },
 } satisfies Meta<typeof HvDropdown>;
 
 export const Main: StoryObj<HvDropdownProps> = {
@@ -242,7 +234,6 @@ export const CustomDropdown: StoryObj<HvBaseDropdownProps> = {
         code: CustomDropdownRaw,
       },
     },
-    eyes: { include: false },
   },
   decorators: [widthDecorator],
   render: () => <CustomDropdownStory />,
