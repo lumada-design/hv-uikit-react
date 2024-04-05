@@ -6,12 +6,12 @@ import * as echarts from "echarts/core";
 import { CanvasRenderer } from "echarts/renderers";
 
 import { useVizTheme } from "../hooks";
-import { HvEChartsOption } from "../types/common";
+import { HvChartCommonProps, HvEChartsOption } from "../types/common";
 
 // Register chart components
 echarts.use([CanvasRenderer, AriaComponent]);
 
-export interface HvBaseChartProps {
+export interface HvBaseChartProps extends Pick<HvChartCommonProps, "onEvents"> {
   /** ECharts option. */
   option: HvEChartsOption;
   /** Charts width. */
@@ -25,7 +25,7 @@ export interface HvBaseChartProps {
  */
 export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
   (props, ref) => {
-    const { option, width, height } = props;
+    const { option, width, height, onEvents, ...others } = props;
 
     const { theme, activeTheme } = useVizTheme();
 
@@ -36,8 +36,20 @@ export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
 
     const [initialOption, setInitialOption] = useState<HvEChartsOption>(option);
 
+    // Dispose the instance of the chart when the component unmounts. This ensures that
+    // the chart theme will update when the theme changes.
     useEffect(() => {
-      // when the theme changes echarts destroys the chart and mounts it again
+      const instance = chartRef.current?.getEchartsInstance();
+
+      if (!instance) return;
+
+      return () => {
+        instance.dispose();
+      };
+    }, [activeTheme]);
+
+    useEffect(() => {
+      // When the theme changes echarts destroys the chart and mounts it again
       // thus we need to reset the initial option
       if (theme !== currentTheme.current) {
         setInitialOption(option);
@@ -52,13 +64,7 @@ export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
       instance.setOption(option, {
         replaceMerge: ["xAxis", "yAxis", "series", "dataset"],
       });
-
-      return () => {
-        // Dispose the instance of the chart when the component unmounts. This ensures that
-        // the chart theme will update when the theme changes.
-        instance.dispose();
-      };
-    }, [theme, option, activeTheme]);
+    }, [theme, option]);
 
     return (
       <ReactECharts
@@ -68,9 +74,11 @@ export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
         theme={theme}
         notMerge
         style={{
-          width: width || "100%",
-          height: height || "100%",
+          width: width ?? "100%",
+          height: height ?? "100%",
         }}
+        onEvents={onEvents}
+        {...others}
       />
     );
   },
