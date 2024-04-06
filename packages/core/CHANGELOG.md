@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.63.0 (2024-04-06)
+
+### Bug Fixes
+
+- **BaseCheckbox:** svg border color when disabled ([996c0f1](https://github.com/lumada-design/hv-uikit-react/commit/996c0f188dce370ce6d289066ea849c06d5a8017))
+- **BaseRadio:** fix background color ([c94ad49](https://github.com/lumada-design/hv-uikit-react/commit/c94ad49e45dc701cb7ef5ee97afc4be6f0eab465))
+- **LoadingContainer:** content selection ([54151ea](https://github.com/lumada-design/hv-uikit-react/commit/54151ea4643dc2e6373961fd90a9ff95ef35bc4c))
+
+### Features
+
+- **AvatarGroup:** add highlight feature ([2fd2b97](https://github.com/lumada-design/hv-uikit-react/commit/2fd2b97984d82ab18280fc1a216c3be39263afd3))
+- **HvSelect:** add input props to select component ([4ee15f7](https://github.com/lumada-design/hv-uikit-react/commit/4ee15f70b435f613d060c1bb40b80b05d9183664))
+- **select:** add portal ([56b874f](https://github.com/lumada-design/hv-uikit-react/commit/56b874f8634af92da63fb6cff0e8d0321017a36b))
+
 ## [5.62.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.62.1...@hitachivantara/uikit-react-core@5.62.2) (2024-04-03)
 
 ### Bug Fixes
