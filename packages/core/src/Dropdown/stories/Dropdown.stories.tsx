@@ -2,8 +2,15 @@ import { css } from "@emotion/css";
 import { expect } from "@storybook/jest";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
-import { HvDropdown, HvDropdownProps } from "@hitachivantara/uikit-react-core";
+import {
+  HvBaseDropdown,
+  HvBaseDropdownProps,
+  HvDropdown,
+  HvDropdownProps,
+} from "@hitachivantara/uikit-react-core";
 
+import { CustomDropdown as CustomDropdownStory } from "./CustomDropdown";
+import CustomDropdownRaw from "./CustomDropdown?raw";
 import { Empty as EmptyStory } from "./Empty";
 import EmptyRaw from "./Empty?raw";
 import { ExternalErrorMessage as ExternalErrorMessageStory } from "./ExternalErrorMessage";
@@ -30,6 +37,8 @@ const widthDecorator: Decorator = (Story) => (
 export default {
   title: "Components/Dropdown",
   component: HvDropdown,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
+  subcomponents: { HvBaseDropdown },
 } satisfies Meta<typeof HvDropdown>;
 
 export const Main: StoryObj<HvDropdownProps> = {
@@ -212,4 +221,20 @@ export const Virtualized: StoryObj<HvDropdownProps> = {
   },
   decorators: [widthDecorator],
   render: () => <VirtualizedStory />,
+};
+
+export const CustomDropdown: StoryObj<HvBaseDropdownProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "You can also use the `HvBaseDropdown` component to create your own dropdown components. This component can be leveraged to create similar dropdown components to the ones we provide, or you can use the `component` prop to add it to any component of your choosing.",
+      },
+      source: {
+        code: CustomDropdownRaw,
+      },
+    },
+  },
+  decorators: [widthDecorator],
+  render: () => <CustomDropdownStory />,
 };
