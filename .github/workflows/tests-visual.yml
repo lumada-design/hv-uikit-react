@@ -39,6 +39,7 @@ jobs:
         with:
           configFile: .config/chromatic.config.json
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          forceRebuild: true
 
       # Notify fail on Slack for the Nighly since the worklow won't fail if Chromatic does
       - name: Notify Fail
