@@ -1,10 +1,10 @@
 import {
   ExtractNames,
   HvAvatar,
-  HvAvatarSize,
   HvBaseProps,
   HvButton,
   HvButtonProps,
+  HvSize,
 } from "@hitachivantara/uikit-react-core";
 import {
   HourGlass,
@@ -33,7 +33,7 @@ export interface HvStepProps
   /** Title of the step. */
   title: string;
   /** Sets one of the standard sizes of the step */
-  size?: HvAvatarSize;
+  size?: HvSize;
   /** Number of the step. */
   number?: number;
   /**
