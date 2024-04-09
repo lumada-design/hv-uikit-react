@@ -4,13 +4,13 @@ import {
   HvMultiButton,
   HvMultiButtonProps,
 } from "@hitachivantara/uikit-react-core";
-import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
+import { Abacus, LocationPin, Map } from "@hitachivantara/uikit-react-icons";
 
 export const Main = (props: HvMultiButtonProps) => {
-  const [val, setVal] = useState(-1);
+  const [val, setVal] = useState(1);
 
   return (
-    <HvMultiButton style={{ width: "210px" }} {...props}>
+    <HvMultiButton style={{ width: "400px" }} {...props}>
       <HvButton
         startIcon={<Map />}
         selected={val === 0}
@@ -24,6 +24,13 @@ export const Main = (props: HvMultiButtonProps) => {
         startIcon={<LocationPin />}
       >
         Satellite
+      </HvButton>
+      <HvButton
+        startIcon={<Abacus />}
+        selected={val === 2}
+        onClick={() => setVal(2)}
+      >
+        Abacus
       </HvButton>
     </HvMultiButton>
   );
