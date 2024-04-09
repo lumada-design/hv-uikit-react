@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.63.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.63.0...@hitachivantara/uikit-react-core@5.63.1) (2024-04-09)
+
+### Bug Fixes
+
+- **a11y:** fix issues ([1f1f1dc](https://github.com/lumada-design/hv-uikit-react/commit/1f1f1dc90b3b9869bc3e0bf1b90c9130703b5c0b))
+- **a11y:** fix issues ([03371c0](https://github.com/lumada-design/hv-uikit-react/commit/03371c0799ab310fa3dd31feb7d7e204a9cb424b))
+- **Drawer:** remove onclose trigger ([226511f](https://github.com/lumada-design/hv-uikit-react/commit/226511f467583530f981c54e9bb5d469c14b81a1))
+- **ScrollTo:** dom & tooltip a11y ([cfa86d3](https://github.com/lumada-design/hv-uikit-react/commit/cfa86d39139d99ab724979a207a80f516a2e0d35))
+
 # 5.63.0 (2024-04-06)
 
 ### Bug Fixes

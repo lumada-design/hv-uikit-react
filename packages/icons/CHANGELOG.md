@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.9.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.9.8...@hitachivantara/uikit-react-icons@5.9.9) (2024-04-09)
+
+### Bug Fixes
+
+- **icons:** use svgr to convert svg icons to jsx ([69a7b76](https://github.com/lumada-design/hv-uikit-react/commit/69a7b76c722a8e265a477db73fc8bb7cbf24b3b4))
+
 ## 5.9.8 (2024-04-06)
 
 ### Bug Fixes

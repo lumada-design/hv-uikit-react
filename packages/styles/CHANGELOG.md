@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.28.1 (2024-04-09)
+
+### Bug Fixes
+
+- **ScrollTo:** dom & tooltip a11y ([cfa86d3](https://github.com/lumada-design/hv-uikit-react/commit/cfa86d39139d99ab724979a207a80f516a2e0d35))
+
 # [5.28.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.27.0...@hitachivantara/uikit-styles@5.28.0) (2024-04-02)
 
 ### Features
