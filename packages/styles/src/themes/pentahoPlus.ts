@@ -361,6 +361,62 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvMultiButton: {
+      classes: {
+        multiple: {
+          backgroundColor: "#EEEEEE",
+          color: "#999999",
+          borderRadius: 20,
+          "& button.HvMultiButton-button": {
+            border: "none",
+            backgroundColor: "transparent",
+            "&.HvMultiButton-firstButton": {
+              borderRadius: "20px 0 0 20px",
+            },
+            "&.HvMultiButton-lastButton": {
+              borderRadius: "0 20px 20px 0",
+            },
+            "&.HvMultiButton-selected": {
+              borderRadius: 20,
+              border: "none",
+              color: theme.colors.primary,
+              backgroundColor: theme.colors.atmo1,
+            },
+            "&:disabled": {
+              border: "none",
+              "&:hover": {
+                border: "none",
+                backgroundColor: "transparent",
+              },
+            },
+          },
+        },
+        vertical: {
+          backgroundColor: "#EEEEEE",
+          color: "#999999",
+          borderRadius: 20,
+          "& button.HvMultiButton-button": {
+            border: "none",
+            backgroundColor: "transparent",
+            "&.HvMultiButton-firstButton": {
+              borderRadius: "20px 0 0 20px",
+            },
+            "&.HvMultiButton-lastButton": {
+              borderRadius: "0 20px 20px 0",
+            },
+            "&.HvMultiButton-selected": {
+              borderRadius: 20,
+              border: "none",
+              color: theme.colors.primary,
+              backgroundColor: theme.colors.atmo1,
+            },
+            "&:disabled": {
+              border: "none",
+            },
+          },
+        },
+      },
+    },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
