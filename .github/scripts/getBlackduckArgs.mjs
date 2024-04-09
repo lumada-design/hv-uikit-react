@@ -1,8 +1,12 @@
 #!/usr/bin/env node
+import { readdirSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const [, , filterPackage, phase = "DEVELOPMENT"] = process.argv;
-const outputPackages = "code-editor,core,icons,lab,shared,styles,uno-preset,viz"
-  .split(",")
+const outputPackages = readdirSync(resolve(__dirname, "../../packages"))
   .filter((p) => p !== filterPackage)
   .map((p) => `/workdir/packages/${p}`)
   .join(",");
