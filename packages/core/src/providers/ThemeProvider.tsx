@@ -97,6 +97,13 @@ export const HvThemeProvider = ({
   );
 
   const MuiTheme = createTheme({
+    components: {
+      MuiButtonBase: {
+        defaultProps: {
+          disableRipple: true,
+        },
+      },
+    },
     breakpoints: {
       values: {
         ...activeTheme.breakpoints.values,
