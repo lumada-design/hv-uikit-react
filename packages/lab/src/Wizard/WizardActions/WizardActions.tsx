@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import {
   ExtractNames,
   HvBaseProps,
@@ -104,6 +104,12 @@ export const HvWizardActions = ({
     [handleSubmit, context],
   );
 
+  const nextDisabled = useMemo(() => {
+    if (loading) return true;
+
+    return !skippable && !context?.[tab]?.valid;
+  }, [context, loading, skippable, tab]);
+
   return (
     <HvDialogActions className={classes.actionsContainer}>
       <HvButton
@@ -156,7 +162,7 @@ export const HvWizardActions = ({
                 setTab((t) => t + 1);
               }
             }}
-            disabled={!skippable && !context?.[tab]?.valid}
+            disabled={nextDisabled}
             endIcon={<Forwards />}
           >
             {labels.next ?? "Next"}
