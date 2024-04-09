@@ -37,6 +37,7 @@ export const Main: StoryObj<HvDonutChartProps> = {
     legend: { control: { disable: true } },
     grid: { control: { disable: true } },
     classes: { control: { disable: true } },
+    onEvents: { control: { disable: true } },
   },
   render: ({ data, groupBy, measure, ...others }) => {
     return (

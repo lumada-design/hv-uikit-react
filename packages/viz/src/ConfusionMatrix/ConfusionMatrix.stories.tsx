@@ -71,6 +71,7 @@ export const Main: StoryObj<HvConfusionMatrixProps> = {
     sortBy: { control: { disable: true } },
     legend: { control: { disable: true } },
     grid: { control: { disable: true } },
+    onEvents: { control: { disable: true } },
   },
   render: ({ data, measure, groupBy, splitBy, sortBy, ...others }) => {
     return (

@@ -10,6 +10,7 @@ import {
   HvChartOrder,
   HvDonutChartMeasure,
   HvLineChartMeasures,
+  HvScatterPlotMeasure,
 } from "../types";
 import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
 import { getGroupKey } from "../utils";
@@ -21,7 +22,7 @@ interface HvDataHookProps {
   data: HvChartData;
   groupBy: HvChartCommonProps["groupBy"];
   measures:
-    | Arrayable<HvLineChartMeasures | HvBarChartMeasures>
+    | Arrayable<HvLineChartMeasures | HvBarChartMeasures | HvScatterPlotMeasure>
     | HvDonutChartMeasure;
   splitBy?: HvAxisChartCommonProps["splitBy"];
   sortBy?: HvChartCommonProps["sortBy"];

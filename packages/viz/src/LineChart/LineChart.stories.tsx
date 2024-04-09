@@ -11,10 +11,10 @@ import {
   Random,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
+import { HvLineChart, HvLineChartProps } from "@hitachivantara/uikit-react-viz";
 
 import { vizDecorator } from "../BaseChart/stories/utils";
 import { emptyCellMode } from "../types/generic";
-import { HvLineChart, HvLineChartProps } from "./LineChart";
 import { chartData } from "./mockData";
 
 const meta: Meta<typeof HvLineChart> = {
@@ -57,6 +57,7 @@ export const Main: StoryObj<HvLineChartProps> = {
     },
     classes: { control: { disable: true } },
     grid: { control: { disable: true } },
+    onEvents: { control: { disable: true } },
   },
   render: ({ data, groupBy, measures, ...others }) => {
     return (

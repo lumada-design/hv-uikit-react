@@ -7,6 +7,7 @@ import {
   HvChartTooltipParams,
   HvDonutChartMeasure,
   HvLineChartMeasures,
+  HvScatterPlotMeasure,
 } from "../../types";
 import { HvEChartsOption } from "../../types/common";
 import { getMeasure } from "../../utils";
@@ -27,7 +28,7 @@ interface EChartsTooltipParams {
 
 interface HvTooltipHookProps {
   measures?:
-    | Arrayable<HvLineChartMeasures | HvBarChartMeasures>
+    | Arrayable<HvLineChartMeasures | HvBarChartMeasures | HvScatterPlotMeasure>
     | HvDonutChartMeasure;
   trigger?: "item" | "axis";
   classes?: HvChartTooltipClasses;
