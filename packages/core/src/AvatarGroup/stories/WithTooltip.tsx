@@ -16,7 +16,7 @@ export const WithTooltip = () => {
     <HvAvatarGroup maxVisible={4} size="lg" highlight>
       {users.map((u) => (
         <HvTooltip key={u.img} title={u.name} enterDelay={10}>
-          <HvAvatar alt={u.name} src={u.img} />
+          <HvAvatar role="img" alt={u.name} src={u.img} />
         </HvTooltip>
       ))}
     </HvAvatarGroup>
