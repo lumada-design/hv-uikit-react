@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.33.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.32.5...@hitachivantara/uikit-react-lab@5.33.0) (2024-04-10)
+
+### Features
+
+- **wizard:** disable next button when loading is true ([a6e23e7](https://github.com/lumada-design/hv-uikit-react/commit/a6e23e73d92ea104b22ef49a9716204d37e63313))
+
 ## [5.32.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.32.4...@hitachivantara/uikit-react-lab@5.32.5) (2024-04-09)
 
 ### Bug Fixes
