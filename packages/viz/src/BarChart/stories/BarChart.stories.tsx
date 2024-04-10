@@ -54,6 +54,7 @@ export const Main: StoryObj<HvBarChartProps> = {
     horizontalRangeSlider: { control: { disable: true } },
     classes: { control: { disable: true } },
     grid: { control: { disable: true } },
+    onEvents: { control: { disable: true } },
   },
   render: ({ data, xAxis, yAxis, groupBy, measures, ...others }) => {
     return (

@@ -4,6 +4,7 @@ import {
   BarSeriesOption,
   LineSeriesOption,
   PieSeriesOption,
+  ScatterSeriesOption,
 } from "echarts/charts";
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
@@ -18,15 +19,20 @@ import {
   HvChartCommonProps,
   HvEChartsOption,
 } from "../types/common";
-import { BarFullMeasures, LineFullMeasures } from "../types/measures";
+import {
+  BarFullMeasure,
+  HvScatterPlotMeasure,
+  LineFullMeasure,
+  ScatterPlotMeasure,
+} from "../types/measures";
 import { getGroupKey, getMeasure } from "../utils";
 
 interface HvSeriesHookProps {
-  type: "line" | "bar" | "pie";
+  type: "line" | "bar" | "pie" | "scatter";
   data: internal.ColumnTable;
   groupBy: HvChartCommonProps["groupBy"];
   measures:
-    | Arrayable<HvLineChartMeasures | HvBarChartMeasures>
+    | Arrayable<HvLineChartMeasures | HvBarChartMeasures | HvScatterPlotMeasure>
     | HvDonutChartMeasure;
   area?: boolean;
   areaOpacity?: number;
@@ -59,12 +65,33 @@ export const useSeries = ({
       series: data
         .columnNames()
         .filter((c) => c !== groupByKey)
-        .map<LineSeriesOption | BarSeriesOption | PieSeriesOption>((c) => {
+        .map<
+          | LineSeriesOption
+          | BarSeriesOption
+          | PieSeriesOption
+          | ScatterSeriesOption
+        >((c) => {
           const measure = getMeasure(c, measures);
 
           let pieOps: PieSeriesOption = {};
           let lineOps: LineSeriesOption = {};
           let barOps: BarSeriesOption = {};
+          let scatterOps: ScatterSeriesOption = {};
+
+          // scatter
+          if (type === "scatter") {
+            const yAxisId =
+              typeof measure !== "string"
+                ? (measure as ScatterPlotMeasure).yAxis
+                : undefined;
+            scatterOps = {
+              yAxisId,
+              encode: {
+                x: groupByKey,
+                y: c,
+              },
+            };
+          }
 
           // pie
           if (type === "pie") {
@@ -92,15 +119,15 @@ export const useSeries = ({
           if (type === "line" || type === "bar") {
             const sampling =
               typeof measure !== "string"
-                ? (measure as LineFullMeasures | BarFullMeasures).sampling
+                ? (measure as LineFullMeasure | BarFullMeasure).sampling
                 : undefined;
             const yAxisId =
               typeof measure !== "string"
-                ? (measure as LineFullMeasures | BarFullMeasures).yAxis
+                ? (measure as LineFullMeasure | BarFullMeasure).yAxis
                 : undefined;
             const stackName =
               typeof measure !== "string"
-                ? (measure as LineFullMeasures | BarFullMeasures).stack ??
+                ? (measure as LineFullMeasure | BarFullMeasure).stack ??
                   stack ??
                   undefined
                 : stack ?? undefined;
@@ -133,20 +160,20 @@ export const useSeries = ({
             if (type === "line") {
               const showSymbol =
                 typeof measure !== "string"
-                  ? !(measure as LineFullMeasures).hideSymbol
+                  ? !(measure as LineFullMeasure).hideSymbol
                   : true;
               const connectNulls =
                 typeof measure !== "string" &&
-                (measure as LineFullMeasures).emptyCellMode
-                  ? (measure as LineFullMeasures).emptyCellMode === "connect"
+                (measure as LineFullMeasure).emptyCellMode
+                  ? (measure as LineFullMeasure).emptyCellMode === "connect"
                   : emptyCellMode === "connect";
               const isArea =
                 typeof measure !== "string"
-                  ? (measure as LineFullMeasures).area ?? area
+                  ? (measure as LineFullMeasure).area ?? area
                   : area;
               const aOpacity =
                 typeof measure !== "string"
-                  ? (measure as LineFullMeasures).areaOpacity ?? areaOpacity
+                  ? (measure as LineFullMeasure).areaOpacity ?? areaOpacity
                   : areaOpacity;
 
               lineOps = {
@@ -165,7 +192,12 @@ export const useSeries = ({
             ...pieOps,
             ...barOps,
             ...lineOps,
-          } as LineSeriesOption | BarSeriesOption | PieSeriesOption;
+            ...scatterOps,
+          } as
+            | LineSeriesOption
+            | BarSeriesOption
+            | PieSeriesOption
+            | ScatterSeriesOption;
         }),
     };
   }, [

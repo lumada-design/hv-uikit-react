@@ -12,7 +12,7 @@ export type HvChartSampling =
 /** Aggregation functions */
 export type HvChartAggregation = "sum" | "average" | "min" | "max" | "count";
 
-interface BaseMeasures {
+interface BaseMeasure {
   /** Column name. */
   field: string;
   /** Aggregation function to use. If no `agg` is defined, it will default to `sum`. */
@@ -21,7 +21,7 @@ interface BaseMeasures {
   valueFormatter?: (value?: string | number) => string;
 }
 
-interface AxisMeasures {
+interface AxisMeasure {
   /** Id of the yAxis. */
   yAxis?: string;
   /**
@@ -36,7 +36,7 @@ interface AxisMeasures {
   sampling?: HvChartSampling;
 }
 
-export interface LineFullMeasures extends BaseMeasures, AxisMeasures {
+export interface LineFullMeasure extends BaseMeasure, AxisMeasure {
   /** Whether to hide the symbol for data points. Defaults to `false`. */
   hideSymbol?: boolean;
   /** Whether the area under the lines should be filled. If not specified, it defaults to the global `area` prop. */
@@ -47,16 +47,24 @@ export interface LineFullMeasures extends BaseMeasures, AxisMeasures {
   emptyCellMode?: HvChartEmptyCellMode;
 }
 
-export interface BarFullMeasures extends BaseMeasures, AxisMeasures {}
+export interface BarFullMeasure extends BaseMeasure, AxisMeasure {}
 
-export interface DonutFullMeasures extends BaseMeasures {}
+export interface DonutFullMeasure extends BaseMeasure {}
 
-export interface ConfusionMatrixMeasure extends BaseMeasures {}
+export interface ConfusionMatrixMeasure extends BaseMeasure {}
 
-export type HvLineChartMeasures = string | LineFullMeasures;
+export interface ScatterPlotMeasure
+  extends BaseMeasure,
+    Pick<AxisMeasure, "yAxis"> {}
 
-export type HvBarChartMeasures = string | BarFullMeasures;
+// TODO - remove unnecessary plural (HvLineChartMeasure) in v6
+export type HvLineChartMeasures = string | LineFullMeasure;
 
-export type HvDonutChartMeasure = string | DonutFullMeasures;
+// TODO - remove unnecessary plural (HvBarChartMeasure) in v6
+export type HvBarChartMeasures = string | BarFullMeasure;
+
+export type HvDonutChartMeasure = string | DonutFullMeasure;
 
 export type HvConfusionMatrixMeasure = string | ConfusionMatrixMeasure;
+
+export type HvScatterPlotMeasure = string | ScatterPlotMeasure;

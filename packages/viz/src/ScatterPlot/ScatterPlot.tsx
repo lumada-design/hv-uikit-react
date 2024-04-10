@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import ReactECharts from "echarts-for-react/lib/core";
-import { LineChart } from "echarts/charts";
+import { ScatterChart } from "echarts/charts";
 import {
   DatasetComponent,
   DataZoomInsideComponent,
@@ -27,12 +27,12 @@ import {
   useXAxis,
   useYAxis,
 } from "../hooks";
-import { HvChartEmptyCellMode, HvLineChartMeasures } from "../types";
 import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
+import { HvScatterPlotMeasure } from "../types/measures";
 
 // Register chart components
 echarts.use([
-  LineChart,
+  ScatterChart,
   DatasetComponent,
   GridComponent,
   TooltipComponent,
@@ -42,33 +42,24 @@ echarts.use([
   MarkLineComponent,
 ]);
 
-export interface HvLineChartClasses extends HvChartTooltipClasses {}
+export interface HvScatterPlotClasses extends HvChartTooltipClasses {}
 
-export interface HvLineChartProps
-  extends HvAxisChartCommonProps,
-    HvChartCommonProps {
-  /** Columns to measure on the chart. */
-  measures: Arrayable<HvLineChartMeasures>;
-  /** Strategy to use when there are empty cells. Defaults to `void`. */
-  emptyCellMode?: HvChartEmptyCellMode;
-  /** Whether the area under the lines should be filled. Defaults to `false`. */
-  area?: boolean;
-  /** Sets opacity of the filled area if `area` is true. Defaults to `0.5`. */
-  areaOpacity?: number;
+export interface HvScatterPlotProps
+  extends HvChartCommonProps,
+    Omit<HvAxisChartCommonProps, "stack"> {
+  /** Columns to measure on the plot. */
+  measures: Arrayable<HvScatterPlotMeasure>;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvLineChartClasses;
+  classes?: HvScatterPlotClasses;
 }
 
 /**
- * A line chart or line plot or line graph is a type of chart which displays information as a series of data points
- * connected by straight line segments. It is a basic type of chart common in many fields.
+ * A scatter plot is a type of chart which displays dots to represent two numeric variables.
+ * This type of chart is used to determine the relationship between two variables.
  */
-export const HvLineChart = forwardRef<ReactECharts, HvLineChartProps>(
+export const HvScatterPlot = forwardRef<ReactECharts, HvScatterPlotProps>(
   (props, ref) => {
     const {
-      area = false,
-      emptyCellMode = "void",
-      areaOpacity = 0.5,
       yAxis,
       xAxis,
       horizontalRangeSlider,
@@ -78,7 +69,6 @@ export const HvLineChart = forwardRef<ReactECharts, HvLineChartProps>(
       splitBy,
       sortBy,
       measures,
-      stack,
       seriesNameFormatter,
       legend,
       classes,
@@ -97,7 +87,7 @@ export const HvLineChart = forwardRef<ReactECharts, HvLineChartProps>(
       axes: Array.isArray(yAxis) || yAxis == null ? yAxis : [yAxis],
     });
 
-    const chartXAxis = useXAxis({ ...xAxis, scale: true });
+    const chartXAxis = useXAxis({ type: "continuous", ...xAxis });
 
     const chartSlider = useDataZoom({
       showHorizontal: horizontalRangeSlider?.show,
@@ -106,14 +96,10 @@ export const HvLineChart = forwardRef<ReactECharts, HvLineChartProps>(
     const chartGrid = useGrid({ ...grid });
 
     const chartSeries = useSeries({
-      type: "line",
+      type: "scatter",
       data: chartData,
       groupBy,
       measures,
-      area,
-      areaOpacity,
-      emptyCellMode,
-      stack,
       nameFormatter: seriesNameFormatter,
     });
 

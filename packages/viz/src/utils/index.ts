@@ -8,6 +8,7 @@ import type {
 } from "..";
 import { HvChartCommonProps } from "../types/common";
 import { HvChartLegendIcon } from "../types/legend";
+import { HvScatterPlotMeasure } from "../types/measures";
 
 export const getAxisType = (type?: HvChartAxisType) => {
   switch (type) {
@@ -27,6 +28,8 @@ export const getGroupKey = (groupBy: HvChartCommonProps["groupBy"]) =>
 
 export const getLegendIcon = (icon: HvChartLegendIcon) => {
   switch (icon) {
+    case "circle":
+      return "circle";
     case "square":
       return "path://M0,0L16,0L16,16L0,16L0,0Z";
     case "line":
@@ -38,9 +41,13 @@ export const getLegendIcon = (icon: HvChartLegendIcon) => {
 export const getMeasure = (
   name: string,
   msr:
-    | Arrayable<HvLineChartMeasures | HvBarChartMeasures>
+    | Arrayable<HvLineChartMeasures | HvBarChartMeasures | HvScatterPlotMeasure>
     | HvDonutChartMeasure,
-): HvLineChartMeasures | HvBarChartMeasures | HvDonutChartMeasure => {
+):
+  | HvLineChartMeasures
+  | HvBarChartMeasures
+  | HvDonutChartMeasure
+  | HvScatterPlotMeasure => {
   const measureName = name.split("_")[0];
   const measuresArray = Array.isArray(msr) ? msr : [msr];
   // find the measure in measures array or return the first one

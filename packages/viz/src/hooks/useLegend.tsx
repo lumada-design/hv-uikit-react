@@ -41,11 +41,16 @@ export const useLegend = ({
           data:
             show !== false && Array.isArray(series)
               ? series.map((s) => {
+                  let iconType: HvChartLegendIcon = "line";
+                  if (s.areaStyle != null) {
+                    iconType = "square";
+                  }
+                  if (s.type === "scatter") {
+                    iconType = "circle";
+                  }
                   return {
                     name: s.name as string,
-                    icon: getLegendIcon(
-                      (s as any).areaStyle != null ? "square" : "line",
-                    ),
+                    icon: getLegendIcon(iconType),
                   };
                 })
               : undefined,
