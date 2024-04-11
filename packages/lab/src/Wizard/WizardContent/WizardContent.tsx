@@ -106,23 +106,23 @@ export const HvWizardContent = ({
 
   useEffect(() => {
     if (tab && !context[tab]?.touched) {
-      const updatedContext = Object.entries(context).reduce(
-        (acc, [key, childState]) => ({
-          ...acc,
-          ...(+key <= tab
-            ? {
-                [key]: {
-                  ...childState,
-                  touched: true,
-                  valid: childState?.valid ?? true,
-                },
-              }
-            : { [key]: childState }),
-        }),
-        {},
+      setContext((oldContext) =>
+        Object.entries(oldContext).reduce(
+          (acc, [key, childState]) => ({
+            ...acc,
+            ...(+key <= tab
+              ? {
+                  [key]: {
+                    ...childState,
+                    touched: true,
+                    valid: childState?.valid ?? true,
+                  },
+                }
+              : { [key]: childState }),
+          }),
+          {},
+        ),
       );
-
-      setContext(updatedContext);
     }
   }, [tab, context, setContext]);
 
