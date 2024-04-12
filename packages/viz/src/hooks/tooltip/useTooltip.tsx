@@ -58,17 +58,19 @@ export const useTooltip = ({
   const renderTooltip = useCallback(
     (params: EChartsTooltipParams[]) => {
       const title =
-        params[0].seriesType === "pie"
-          ? params[0].seriesName
-          : horizontal
-            ? params[0].value[params[0].encode.y[0]]
-            : params[0].value[params[0].encode.x[0]];
+        params[0].seriesType === "treemap"
+          ? params[0].name
+          : params[0].seriesType === "pie"
+            ? params[0].seriesName
+            : horizontal
+              ? params[0].value[params[0].encode.y[0]]
+              : params[0].value[params[0].encode.x[0]];
 
       const formattedTitle = titleFormatter ? titleFormatter(title) : title;
 
       if (type === "single") {
         const measure = getMeasure(
-          params[0].seriesType === "pie"
+          params[0].seriesType === "pie" || params[0].seriesType === "treemap"
             ? params[0].name
             : horizontal
               ? params[0].dimensionNames[params[0].encode.x[0]]
@@ -77,14 +79,14 @@ export const useTooltip = ({
         );
 
         const value =
-          params[0].seriesType === "pie"
+          params[0].seriesType === "pie" || params[0].seriesType === "treemap"
             ? params[0].value[params[0].encode.value[0]]
             : horizontal
               ? params[0].value[params[0].encode.x[0]]
               : params[0].value[params[0].encode.y[0]];
 
         const formattedValue =
-          typeof measure !== "string" && measure.valueFormatter
+          measure && typeof measure !== "string" && measure.valueFormatter
             ? measure.valueFormatter(value)
             : valueFormatter
               ? valueFormatter(value)
@@ -170,7 +172,7 @@ export const useTooltip = ({
       if (typeof component === "function") {
         const values: HvChartTooltipParams = {
           title:
-            params[0].seriesType === "pie"
+            params[0].seriesType === "pie" || params[0].seriesType === "treemap"
               ? params[0].seriesName
               : horizontal
                 ? params[0].value[params[0].encode.y[0]]
@@ -181,11 +183,13 @@ export const useTooltip = ({
               name:
                 p.seriesType === "heatmap"
                   ? String(p.value[p.encode.y[0]])
-                  : p.seriesType === "pie"
+                  : p.seriesType === "pie" || p.seriesType === "treemap"
                     ? p.name
                     : p.seriesName,
               value:
-                p.seriesType === "pie" || p.seriesType === "heatmap"
+                p.seriesType === "pie" ||
+                p.seriesType === "treemap" ||
+                p.seriesType === "heatmap"
                   ? p.value[p.encode.value[0]]
                   : horizontal
                     ? p.value[p.encode.x[0]]

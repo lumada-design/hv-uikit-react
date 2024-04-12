@@ -113,5 +113,15 @@ export const registerTheme = (
         borderWidth: 1,
       },
     },
+    treemap: {
+      breadcrumb: {
+        itemStyle: {
+          color: themeStructure?.colors.modes[mode].secondary,
+          textStyle: {
+            color: themeStructure?.colors.modes[mode].atmo1,
+          },
+        },
+      },
+    },
   });
 };

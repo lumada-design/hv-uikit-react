@@ -13,6 +13,7 @@ const excludeStories = [
   "Visualizations/Donut Chart",
   "Visualizations/Confusion Matrix",
   "Visualizations/Scatter Plot",
+  "Visualizations/Treemap Chart",
   "Widgets/Code Editor",
 ];
 

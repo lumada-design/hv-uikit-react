@@ -28,7 +28,7 @@ import {
 import { getGroupKey, getMeasure } from "../utils";
 
 interface HvSeriesHookProps {
-  type: "line" | "bar" | "pie" | "scatter";
+  type: "line" | "bar" | "pie" | "scatter" | "treemap";
   data: internal.ColumnTable;
   groupBy: HvChartCommonProps["groupBy"];
   measures:
