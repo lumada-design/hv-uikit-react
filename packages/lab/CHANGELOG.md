@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.33.1 (2024-04-12)
+
+### Bug Fixes
+
+- **wizard:** concurrency problem when child was defining a valid child state ([#4142](https://github.com/lumada-design/hv-uikit-react/issues/4142)) ([745f96c](https://github.com/lumada-design/hv-uikit-react/commit/745f96c490c2454c12a51128bc2213e37fef6f65))
+
 # [5.33.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.32.5...@hitachivantara/uikit-react-lab@5.33.0) (2024-04-10)
 
 ### Features
