@@ -1,17 +1,20 @@
 import React, { useState } from "react";
+import { css } from "@emotion/css";
 import {
   ExtractNames,
   HvActionsGeneric,
   HvActionsGenericProps,
   HvButton,
   HvButtonProps,
+  HvInlineEditor,
   HvTooltip,
   HvTypography,
+  theme,
   useLabels,
 } from "@hitachivantara/uikit-react-core";
 import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
 
-import { useFlowContext, useFlowNode } from "../hooks";
+import { useFlowContext, useFlowNode, useFlowNodeUtils } from "../hooks";
 import { HvFlowNodeParam } from "../types";
 import { HvFlowBaseNode, HvFlowBaseNodeProps } from "./BaseNode";
 import { staticClasses, useClasses } from "./Node.styles";
@@ -62,6 +65,8 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   labels?: HvFlowBaseNodeProps["labels"] & Partial<typeof DEFAULT_LABELS>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowNodeClasses;
+  /** Remove the ability to customize the label of the Node */
+  disableInlineEdit?: boolean;
 }
 
 export const HvFlowNode = ({
@@ -81,6 +86,7 @@ export const HvFlowNode = ({
   labels: labelsProps,
   children,
   expandParamsButtonProps,
+  disableInlineEdit,
   ...props
 }: HvFlowNodeProps<unknown>) => {
   const { classes } = useClasses(classesProp);
@@ -91,10 +97,20 @@ export const HvFlowNode = ({
 
   const node = useFlowNode();
 
+  const { setNodeData } = useFlowNodeUtils();
+
   const { nodeGroups, nodeTypes, defaultActions } = useFlowContext();
 
-  const subtitle = nodeTypes?.[type].meta?.label || nodeDefaults?.subTitle;
+  const subtitle =
+    node?.data.label || nodeTypes?.[type].meta?.label || nodeDefaults?.subTitle;
   const groupId = nodeTypes?.[type].meta?.groupId;
+
+  const inlineEditorWidth =
+    actions === undefined ||
+    (Array.isArray(actions) && actions.length === 0) ||
+    maxVisibleActions === 0
+      ? "100%"
+      : `calc(200px - calc(${maxVisibleActions} * 32px + ${theme.spacing(2)}))`;
 
   const group = (groupId && nodeGroups && nodeGroups[groupId]) || undefined;
   const groupLabel = group?.label || nodeDefaults?.title;
@@ -144,11 +160,28 @@ export const HvFlowNode = ({
     >
       {(subtitle || actions) && (
         <div className={classes.subtitleContainer}>
-          {subtitle && (
-            <div>
+          {subtitle &&
+            (disableInlineEdit ? (
               <HvTypography>{subtitle}</HvTypography>
-            </div>
-          )}
+            ) : (
+              <HvInlineEditor
+                defaultValue={subtitle}
+                showIcon
+                classes={{
+                  root: css({
+                    display: "inline-flex",
+                    flexGrow: 1,
+                  }),
+                  button: css({ justifyContent: "space-between" }),
+                  inputRoot: css({
+                    width: inlineEditorWidth,
+                  }),
+                }}
+                onBlur={(evt, value) =>
+                  setNodeData((prev) => ({ ...prev, label: value }))
+                }
+              />
+            ))}
           {actions && (
             <HvActionsGeneric
               className={classes.actions}
