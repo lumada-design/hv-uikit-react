@@ -110,19 +110,19 @@ export const Variants: StoryObj<HvTimePickerProps> = {
   render: () => {
     const value: HvTimePickerValue = { hours: 5, minutes: 30, seconds: 14 };
 
-    const styles: { root: CSSInterpolation } = {
-      root: {
+    const classes = {
+      root: css({
         display: "flex",
         gap: 20,
         flexWrap: "wrap",
         "& > div": {
           width: 200,
         },
-      },
+      }),
     };
 
     return (
-      <div className={css(styles.root)}>
+      <div className={classes.root}>
         <HvTimePicker required label="Required" defaultValue={value} />
         <HvTimePicker disabled label="Disabled" defaultValue={value} />
         <HvTimePicker readOnly label="Read-only" defaultValue={value} />

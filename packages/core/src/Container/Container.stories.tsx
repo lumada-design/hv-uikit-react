@@ -1,4 +1,4 @@
-import { css, CSSInterpolation } from "@emotion/css";
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvContainer,
@@ -30,8 +30,8 @@ export const Main: StoryObj<HvContainerProps> = {
     eyes: { include: true },
   },
   render: (args) => {
-    const styles: { [key: string]: CSSInterpolation } = {
-      content: {
+    const classes = {
+      content: css({
         border: "1px solid",
         borderColor: theme.colors.atmo4,
         backgroundColor: theme.colors.atmo3,
@@ -40,20 +40,23 @@ export const Main: StoryObj<HvContainerProps> = {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-      },
-      row: { display: "flex", flexDirection: "row" },
+      }),
+      row: css({
+        display: "flex",
+        flexDirection: "row",
+      }),
     };
 
     const width = useWidth();
 
     return (
       <HvContainer {...args}>
-        <div className={css(styles.content)}>
-          <div className={css(styles.row)}>
+        <div className={classes.content}>
+          <div className={classes.row}>
             <HvTypography variant="label">Current width:</HvTypography>
             <HvTypography variant="body">{width}</HvTypography>
           </div>
-          <div className={css(styles.row)}>
+          <div className={classes.row}>
             <HvTypography variant="label">maxWidth:</HvTypography>
             <HvTypography variant="body">{args.maxWidth}</HvTypography>
           </div>

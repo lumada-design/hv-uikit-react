@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { css, CSSInterpolation } from "@emotion/css";
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvTextArea, HvTextAreaProps } from "@hitachivantara/uikit-react-core";
 
@@ -193,8 +193,8 @@ export const Variants: StoryObj<HvTextAreaProps> = {
     eyes: { include: true },
   },
   render: () => {
-    const styles: { root: CSSInterpolation } = {
-      root: {
+    const classes = {
+      root: css({
         display: "flex",
         justifyContent: "space-between",
         flexWrap: "wrap",
@@ -202,11 +202,11 @@ export const Variants: StoryObj<HvTextAreaProps> = {
         "& > div": {
           width: 130,
         },
-      },
+      }),
     };
 
     return (
-      <div className={css(styles.root)}>
+      <div className={classes.root}>
         <HvTextArea
           rows={5}
           label="Required"

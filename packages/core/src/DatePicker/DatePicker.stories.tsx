@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { css, CSSInterpolation, cx } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import { Global } from "@emotion/react";
 import { expect } from "@storybook/jest";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
@@ -98,19 +98,19 @@ export const Variants: StoryObj<HvDatePickerProps> = {
   render: () => {
     const value = new Date("2023-01-01");
 
-    const styles: { root: CSSInterpolation } = {
-      root: {
+    const classes = {
+      root: css({
         display: "flex",
         gap: 20,
         flexFlow: "row",
         "& > div": {
           width: 200,
         },
-      },
+      }),
     };
 
     return (
-      <div className={css(styles.root)}>
+      <div className={classes.root}>
         <HvDatePicker required label="Required" value={value} />
         <HvDatePicker disabled label="Disabled" value={value} />
         <HvDatePicker readOnly label="Read-only" value={value} />

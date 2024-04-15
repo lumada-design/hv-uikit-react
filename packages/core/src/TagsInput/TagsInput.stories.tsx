@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { css, CSSInterpolation } from "@emotion/css";
+import { css } from "@emotion/css";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
@@ -66,18 +66,18 @@ export const Variants: StoryObj<HvTagsInputProps> = {
     eyes: { include: true },
   },
   render: () => {
-    const styles: { root: CSSInterpolation } = {
-      root: {
+    const classes = {
+      root: css({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         flexWrap: "wrap",
         gap: 20,
-      },
+      }),
     };
 
     return (
-      <div className={css(styles.root)}>
+      <div className={classes.root}>
         <HvTagsInput
           label="Required"
           aria-label="Required"
