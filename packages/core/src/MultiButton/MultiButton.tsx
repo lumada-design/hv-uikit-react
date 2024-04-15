@@ -1,4 +1,10 @@
-import { Children, cloneElement, isValidElement, useMemo } from "react";
+import {
+  Children,
+  cloneElement,
+  isValidElement,
+  ReactElement,
+  useMemo,
+} from "react";
 
 import { HvButtonSize, HvButtonVariant } from "../Button";
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -54,6 +60,17 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
     return result.map((x) => x.toLowerCase());
   }, [variant]);
 
+  // Filter children: remove invalid and undefined/null
+  const buttons = useMemo(() => {
+    const btns: ReactElement[] = [];
+    Children.forEach(children, (child) => {
+      if (child && isValidElement(child)) {
+        btns.push(child);
+      }
+    });
+    return btns;
+  }, [children]);
+
   return (
     <div
       className={cx(
@@ -69,40 +86,37 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
       )}
       {...others}
     >
-      {Children.map(children, (child, index) => {
-        if (isValidElement(child)) {
-          const childIsSelected = !!child.props.selected;
-
-          return (
-            <>
-              {cloneElement(child as React.ReactElement, {
-                variant,
-                disabled: disabled || child.props.disabled,
-                size,
-                className: cx(child.props.className, classes.button, {
-                  [classes.firstButton]: index === 0,
-                  [classes.lastButton]: index === Children.count(children) - 1,
-                  [classes.selected]: childIsSelected,
-                }),
-              })}
-              {split && index < Children.count(children) - 1 && (
-                <div
-                  className={cx(
-                    classes.splitContainer,
-                    color && css(getSplitContainerColor(color, type, disabled)),
-                    size && css(getSplitContainerHeight(size)),
-                    {
-                      [classes.splitDisabled]: disabled,
-                    },
-                    classes[variant], // TODO - remove in v6
-                  )}
-                >
-                  <div className={classes.split} />
-                </div>
-              )}
-            </>
-          );
-        }
+      {buttons.map((child, index) => {
+        const childIsSelected = !!child.props.selected;
+        return (
+          <>
+            {cloneElement(child, {
+              variant,
+              disabled: disabled || child.props.disabled,
+              size,
+              className: cx(child.props.className, classes.button, {
+                [classes.firstButton]: index === 0,
+                [classes.lastButton]: index === buttons.length - 1,
+                [classes.selected]: childIsSelected,
+              }),
+            })}
+            {split && index < buttons.length - 1 && (
+              <div
+                className={cx(
+                  classes.splitContainer,
+                  color && css(getSplitContainerColor(color, type, disabled)),
+                  size && css(getSplitContainerHeight(size)),
+                  {
+                    [classes.splitDisabled]: disabled,
+                  },
+                  classes[variant], // TODO - remove in v6
+                )}
+              >
+                <div className={classes.split} />
+              </div>
+            )}
+          </>
+        );
       })}
     </div>
   );

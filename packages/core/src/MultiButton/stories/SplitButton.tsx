@@ -59,19 +59,17 @@ export const SplitButton = () => {
             disabled={disabled}
             split
           >
-            {[
-              side === "left" && <HvButton>{selectedOption.label}</HvButton>,
-              <HvDropDownMenu
-                dataList={options}
-                icon={<DropDownXS />}
-                onClick={(e, item) =>
-                  setSelectedOption(
-                    options.filter((option) => option.label === item.label)[0],
-                  )
-                }
-              />,
-              side === "right" && <HvButton>{selectedOption.label}</HvButton>,
-            ].filter((child) => child)}
+            {side === "left" && <HvButton>{selectedOption.label}</HvButton>}
+            <HvDropDownMenu
+              dataList={options}
+              icon={<DropDownXS />}
+              onClick={(e, item) =>
+                setSelectedOption(
+                  options.filter((option) => option.label === item.label)[0],
+                )
+              }
+            />
+            {side === "right" && <HvButton>{selectedOption.label}</HvButton>}
           </HvMultiButton>
         </div>
       ))}
