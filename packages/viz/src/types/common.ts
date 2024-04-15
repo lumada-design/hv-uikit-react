@@ -67,6 +67,14 @@ export interface HvChartYAxis extends HvChartAxis {
   position?: "left" | "right";
 }
 
+export interface YAxis extends HvChartYAxis {
+  data?: string[];
+}
+
+export interface XAxis extends HvChartXAxis {
+  data?: string[];
+}
+
 /** Axis charts (line and bar) common props  */
 export interface HvAxisChartCommonProps {
   /** Columns to use to split the measures. */
