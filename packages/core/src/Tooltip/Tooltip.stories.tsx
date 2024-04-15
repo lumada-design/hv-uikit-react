@@ -135,8 +135,8 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-    eyes: { include: true },
+    chromatic: { disableSnapshot: false, delay: 5000 },
+    eyes: { include: true, waitBeforeCapture: 5000 },
   },
   render: () => {
     const longTextTooltip = (
