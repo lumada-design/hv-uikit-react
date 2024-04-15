@@ -15,10 +15,7 @@ export const { staticClasses, useClasses } = createClasses(
     },
     overlay: {
       position: "absolute",
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
+      inset: 0,
       display: "none",
       justifyContent: "center",
       alignItems: "center",

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { css, CSSInterpolation } from "@emotion/css";
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvFormStatus,
@@ -50,19 +50,19 @@ export const Variants: StoryObj<HvSelectionListProps> = {
     eyes: { include: true },
   },
   render: () => {
-    const styles: { root: CSSInterpolation } = {
-      root: {
+    const classes = {
+      root: css({
         display: "flex",
         justifyContent: "space-around",
         flexWrap: "wrap",
         "& > div": {
           width: 175,
         },
-      },
+      }),
     };
 
     return (
-      <div className={css(styles.root)}>
+      <div className={classes.root}>
         <HvSelectionList required label="Required">
           <HvListItem value="1">ListItem 1</HvListItem>
           <HvListItem value="2" selected>

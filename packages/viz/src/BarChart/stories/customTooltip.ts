@@ -1,39 +1,39 @@
-import { css, CSSInterpolation, cx } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-react-core";
 import { HvChartTooltipParams } from "@hitachivantara/uikit-react-viz";
 
 import { customTooltipData } from "./mockData";
 
-const styles: { [key: string]: CSSInterpolation } = {
-  root: {
+const classes = {
+  root: css({
     display: "flex",
     flexDirection: "column",
     backgroundColor: theme.colors.atmo1,
     width: "fit-content",
     minWidth: 220,
     boxShadow: theme.colors.shadow,
-  },
-  container: {
+  }),
+  container: css({
     padding: theme.spacing("15px", "sm"),
     display: "flex",
     flexDirection: "column",
-  },
-  containerBorder: {
+  }),
+  containerBorder: css({
     borderBottom: `3px solid ${theme.colors.atmo2}`,
-  },
-  valuesContainer: {
+  }),
+  valuesContainer: css({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-  },
-  title: {
+  }),
+  title: css({
     marginBottom: 10,
-  },
-  separator: {
+  }),
+  separator: css({
     marginRight: theme.space.md,
-  },
-  thresholdContainer: {
+  }),
+  thresholdContainer: css({
     display: "flex",
     alignItems: "center",
     "& > div": {
@@ -43,20 +43,20 @@ const styles: { [key: string]: CSSInterpolation } = {
         marginLeft: 0,
       },
     },
-  },
-  label: {
+  }),
+  label: css({
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.semibold,
     fontSize: theme.fontSizes.sm,
     color: theme.colors.secondary,
-  },
-  text: {
+  }),
+  text: css({
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.normal,
     fontSize: theme.fontSizes.sm,
     color: theme.colors.secondary,
-  },
-  icon: {
+  }),
+  icon: css({
     display: "flex",
     "& svg": {
       margin: "auto",
@@ -64,7 +64,7 @@ const styles: { [key: string]: CSSInterpolation } = {
     },
     width: 32,
     height: 32,
-  },
+  }),
 };
 
 const percentage = (value: number) => Math.round(value * 100);
@@ -86,7 +86,7 @@ const thresholdSwitcher = (
 };
 
 const renderSvgContent = (content: string) => `
-  <div class="${css(styles.icon)}">
+  <div class="${classes.icon}">
     <svg viewBox="0 0 16 16" height="16" width="16">${content}</svg>
   </div>
 `;
@@ -121,52 +121,45 @@ export const renderTooltip = (params?: HvChartTooltipParams) => {
   );
 
   return `
-      <div class="${css(styles.root)}">
-        <div class="${cx(css(styles.container), css(styles.containerBorder))}">
+      <div class="${classes.root}">
+        <div class="${cx(classes.container, classes.containerBorder)}">
           <div>
-            <p class="${css(styles.label)}">${metric?.metric}</p>
+            <p class="${classes.label}">${metric?.metric}</p>
           </div>
         </div>
-        <div class="${cx(css(styles.container), css(styles.containerBorder))}">
-          <div class="${cx(css(styles.valuesContainer), css(styles.title))}">
-            <div class="${cx(css(styles.label), css(styles.separator))}">
+        <div class="${cx(classes.container, classes.containerBorder)}">
+          <div class="${cx(classes.valuesContainer, classes.title)}">
+            <div class="${cx(classes.label, classes.separator)}">
               ${colorValue?.name}
             </div>
-            <div class="${css(styles.thresholdContainer)}">
+            <div class="${classes.thresholdContainer}">
               ${iconSwitcher(colorValue?.name || "")}
-              <p class="${css(styles.text)}">${
+              <p class="${classes.text}">${
                 metric?.value ? percentage(metric.value) : "-"
               }%</p>
             </div>
           </div>
-          <div class="${css(styles.valuesContainer)}">
-            <div class="${cx(css(styles.label), css(styles.separator))}">
+          <div class="${classes.valuesContainer}">
+            <div class="${cx(classes.label, classes.separator)}">
               Total times
             </div>
-            <div class="${css(styles.text)}">${
-              customTooltipData.totalTimes
-            }</div>
+            <div class="${classes.text}">${customTooltipData.totalTimes}</div>
           </div>
         </div>
-        <div class="${css(styles.container)}">
-          <p class="${cx(css(styles.title), css(styles.label))}">
+        <div class="${classes.container}">
+          <p class="${cx(classes.title, classes.label)}">
             Thresholds
           </p>
             ${metric?.threshold
               ?.map(
                 (threshold, index) =>
                   `
-              <div key="${threshold.name}" class="${css(
-                styles.valuesContainer,
-              )}">
-                <div class="${cx(
-                  css(styles.thresholdContainer),
-                  css(styles.separator),
-                )}">
+              <div key="${threshold.name}" class="${classes.valuesContainer}">
+                <div class="${cx(classes.thresholdContainer, classes.separator)}">
                   ${iconSwitcher(threshold.name)}
-                  <p class="${css(styles.label)}">${threshold.name}</p>
+                  <p class="${classes.label}">${threshold.name}</p>
                 </div>
-                <div class="${css(styles.text)}">
+                <div class="${classes.text}">
                   ${thresholdSwitcher(threshold.value, index, metric.threshold)}
                 </div>
               </div>

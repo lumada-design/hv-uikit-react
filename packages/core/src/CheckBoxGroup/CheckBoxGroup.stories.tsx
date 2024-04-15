@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { css, CSSInterpolation } from "@emotion/css";
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvCheckBox,
@@ -46,16 +46,16 @@ export const Variants: StoryObj<HvCheckBoxGroupProps> = {
     eyes: { include: true },
   },
   render: () => {
-    const styles: { root: CSSInterpolation } = {
-      root: {
+    const classes = {
+      root: css({
         display: "flex",
         justifyContent: "space-around",
         flexWrap: "wrap",
-      },
+      }),
     };
 
     return (
-      <div className={css(styles.root)}>
+      <div className={classes.root}>
         <HvCheckBoxGroup showSelectAll required label="Required">
           <HvCheckBox label="Checkbox 1" value="1" />
           <HvCheckBox label="Checkbox 2" value="2" checked />

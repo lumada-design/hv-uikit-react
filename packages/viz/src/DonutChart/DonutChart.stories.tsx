@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { css, CSSInterpolation } from "@emotion/css";
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvCheckBox,
@@ -122,9 +122,9 @@ export const Total: StoryObj<HvDonutChartProps> = {
     },
   },
   render: () => {
-    const styles: { [key: string]: CSSInterpolation } = {
-      root: { position: "relative", height: "100%" },
-      content: {
+    const classes = {
+      root: css({ position: "relative", height: "100%" }),
+      content: css({
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -133,7 +133,7 @@ export const Total: StoryObj<HvDonutChartProps> = {
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-      },
+      }),
     };
 
     const data = {
@@ -142,9 +142,9 @@ export const Total: StoryObj<HvDonutChartProps> = {
     };
 
     return (
-      <div className={css(styles.root)}>
+      <div className={classes.root}>
         <HvDonutChart data={data} groupBy="Country" measure="Tickets Sold" />
-        <div className={css(styles.content)}>
+        <div className={classes.content}>
           <Ticket iconSize="M" />
           <HvTypography variant="title3">
             {data["Tickets Sold"].reduce((acc, value) => acc + value, 0)}

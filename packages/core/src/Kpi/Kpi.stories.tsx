@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ReactChart from "react-google-charts";
-import { css, CSSInterpolation, cx } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   cardClasses,
@@ -89,32 +89,32 @@ export const AverageService: StoryObj<HvKpiProps> = {
     },
   },
   render: () => {
-    const styles: { [key: string]: CSSInterpolation } = {
-      root: { width: 280 },
-      contentContainer: {
+    const classes = {
+      root: css({ width: 280 }),
+      contentContainer: css({
         padding: "12px 16px 22px 16px",
-      },
-      valueContainer: {
+      }),
+      valueContainer: css({
         display: "flex",
         alignItems: "center",
-      },
-      title: { padding: "0px 24px 16px 0px" },
-      value: { paddingRight: "10px" },
+      }),
+      title: css({ padding: "0px 24px 16px 0px" }),
+      value: css({ paddingRight: "10px" }),
     };
 
     return (
       <HvCard
-        className={css(styles.root)}
+        className={classes.root}
         statusColor="positive"
         bgcolor="atmo2"
         icon={<Level0Good title="Good" color="positive" />}
       >
-        <div className={css(styles.contentContainer)}>
-          <HvTypography className={css(styles.title)} variant="label">
+        <div className={classes.contentContainer}>
+          <HvTypography className={classes.title} variant="label">
             Avg. service time
           </HvTypography>
-          <div className={css(styles.valueContainer)}>
-            <HvTypography className={css(styles.value)} variant="title2">
+          <div className={classes.valueContainer}>
+            <HvTypography className={classes.value} variant="title2">
               12 414
             </HvTypography>
             <TopXS title="Up" color="positive" />
@@ -135,37 +135,37 @@ export const IOPS: StoryObj<HvKpiProps> = {
   render: () => {
     const [selected, setSelected] = useState(false);
 
-    const styles: { [key: string]: CSSInterpolation } = {
-      trendChartContainer: {
+    const classes = {
+      trendChartContainer: css({
         pointerEvents: "none",
         marginRight: -8,
         marginBottom: -1,
-      },
-      root: { width: 280, cursor: "pointer" },
-      title: { padding: "0px 24px 16px 0px" },
-      time: { color: theme.colors.secondary_80 },
-      trendTextContainer: {
+      }),
+      root: css({ width: 280, cursor: "pointer" }),
+      title: css({ padding: "0px 24px 16px 0px" }),
+      time: css({ color: theme.colors.secondary_80 }),
+      trendTextContainer: css({
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-end",
         justifyContent: "center",
         paddingLeft: "4px",
-      },
-      trendContainer: {
+      }),
+      trendContainer: css({
         display: "flex",
         justifyContent: "flex-end",
         alignItems: "flex-end",
-      },
-      valueContainer: {
+      }),
+      valueContainer: css({
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-      },
-      contentContainer: { padding: "12px 16px 22px 16px" },
+      }),
+      contentContainer: css({ padding: "12px 16px 22px 16px" }),
     };
 
     const TrendChart = () => (
-      <div className={css(styles.trendChartContainer)}>
+      <div className={classes.trendChartContainer}>
         <ReactChart
           width="40px"
           height="30px"
@@ -205,7 +205,7 @@ export const IOPS: StoryObj<HvKpiProps> = {
 
     return (
       <HvCard
-        className={css(styles.root)}
+        className={classes.root}
         selectable
         selected={selected}
         onClick={() => setSelected(!selected)}
@@ -220,17 +220,17 @@ export const IOPS: StoryObj<HvKpiProps> = {
         statusColor="negative"
         icon={<Level2Average title="Bad" color="negative" />}
       >
-        <div className={css(styles.contentContainer)}>
-          <HvTypography className={css(styles.title)} variant="label">
+        <div className={classes.contentContainer}>
+          <HvTypography className={classes.title} variant="label">
             Total IOPS
           </HvTypography>
-          <div className={css(styles.valueContainer)}>
+          <div className={classes.valueContainer}>
             <HvTypography variant="title2">113 227</HvTypography>
-            <div className={css(styles.trendContainer)}>
+            <div className={classes.trendContainer}>
               <TrendChart />
-              <div className={css(styles.trendTextContainer)}>
+              <div className={classes.trendTextContainer}>
                 <HvTypography variant="caption2">-0,15%</HvTypography>
-                <HvTypography variant="caption2" className={css(styles.time)}>
+                <HvTypography variant="caption2" className={classes.time}>
                   Last 24h
                 </HvTypography>
               </div>
@@ -284,31 +284,31 @@ export const Gauge: StoryObj<HvKpiProps> = {
     },
   },
   render: () => {
-    const styles: { [key: string]: CSSInterpolation } = {
-      root: { width: 222 },
-      title: {
+    const classes = {
+      root: css({ width: 222 }),
+      title: css({
         padding: "0px 24px 10px 24px",
         textAlign: "center",
-      },
-      contentContainer: {
+      }),
+      contentContainer: css({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "flex-start",
         padding: "12px 16px 22px 16px",
-      },
-      gaugeContainer: {
+      }),
+      gaugeContainer: css({
         position: "relative",
-      },
-      gaugeOuterSemiCircle: {
+      }),
+      gaugeOuterSemiCircle: css({
         position: "relative",
         width: "122px",
         height: "61px",
         borderRadius: "61px 61px 0px 0px",
         backgroundColor: theme.colors.positive,
         overflow: "hidden",
-      },
-      gaugeInnerSemiCircle: {
+      }),
+      gaugeInnerSemiCircle: css({
         position: "absolute",
         width: "110px",
         height: "55px",
@@ -318,8 +318,8 @@ export const Gauge: StoryObj<HvKpiProps> = {
         left: 0,
         right: 0,
         margin: "auto",
-      },
-      gaugeMask: {
+      }),
+      gaugeMask: css({
         position: "absolute",
         width: "122px",
         height: "61px",
@@ -330,8 +330,8 @@ export const Gauge: StoryObj<HvKpiProps> = {
         margin: "auto",
         backgroundColor: theme.colors.atmo4,
         transformOrigin: "bottom center",
-      },
-      gaugeIndicatorContainer: {
+      }),
+      gaugeIndicatorContainer: css({
         position: "absolute",
         zIndex: 10,
         display: "flex",
@@ -341,7 +341,7 @@ export const Gauge: StoryObj<HvKpiProps> = {
         right: 0,
         margin: "auto",
         bottom: -8,
-      },
+      }),
     };
 
     const GaugeChart = ({
@@ -349,19 +349,19 @@ export const Gauge: StoryObj<HvKpiProps> = {
       unit,
       percentage,
     }: Record<string, React.ReactNode>) => (
-      <div className={css(styles.gaugeContainer)}>
-        <div className={css(styles.gaugeOuterSemiCircle)}>
+      <div className={classes.gaugeContainer}>
+        <div className={classes.gaugeOuterSemiCircle}>
           <div
             className={cx(
-              css(styles.gaugeMask),
+              classes.gaugeMask,
               css({
                 transform: `rotate(${percentage}deg)`,
               }),
             )}
           />
-          <div className={css(styles.gaugeInnerSemiCircle)} />
+          <div className={classes.gaugeInnerSemiCircle} />
         </div>
-        <div className={css(styles.gaugeIndicatorContainer)}>
+        <div className={classes.gaugeIndicatorContainer}>
           <HvTypography variant="title2">{indicator}</HvTypography>
           {unit && (
             <HvTypography
@@ -377,13 +377,13 @@ export const Gauge: StoryObj<HvKpiProps> = {
 
     return (
       <HvCard
-        className={css(styles.root)}
+        className={classes.root}
         statusColor="positive"
         bgcolor="atmo2"
         icon={<Level0Good title="Good" color="positive" />}
       >
-        <div className={css(styles.contentContainer)}>
-          <HvTypography className={css(styles.title)} variant="label">
+        <div className={classes.contentContainer}>
+          <HvTypography className={classes.title} variant="label">
             KPI description
           </HvTypography>
           <GaugeChart indicator="3,460" unit="t/h" percentage={125} />
@@ -434,31 +434,31 @@ export const StatusTrain: StoryObj<HvKpiProps> = {
       },
     ];
 
-    const styles: { [key: string]: CSSInterpolation } = {
-      storyRoot: {
+    const classes = {
+      storyRoot: css({
         display: "flex",
         flexWrap: "wrap",
         alignItems: "flex-start",
         gap: theme.space.sm,
-      },
-      root: { width: 280 },
-      dataContainer: {
+      }),
+      root: css({ width: 280 }),
+      dataContainer: css({
         marginTop: theme.space.sm,
         display: "flex",
         flexWrap: "wrap",
         gap: theme.space.sm,
-      },
-      contentContainer: {
+      }),
+      contentContainer: css({
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "flex-start",
         padding: theme.space.xs,
-      },
-      alarmContainer: {
+      }),
+      alarmContainer: css({
         display: "flex",
         alignItems: "center",
-      },
+      }),
     };
 
     const renderAlarm = (type: AlarmType, value: number) => {
@@ -484,7 +484,7 @@ export const StatusTrain: StoryObj<HvKpiProps> = {
       }
 
       return (
-        <div className={css(styles.alarmContainer)}>
+        <div className={classes.alarmContainer}>
           {icon}
           <HvTypography variant="caption1">{value}</HvTypography>
         </div>
@@ -492,29 +492,29 @@ export const StatusTrain: StoryObj<HvKpiProps> = {
     };
 
     return (
-      <div className={css(styles.storyRoot)}>
+      <div className={classes.storyRoot}>
         <HvCard
-          className={css(styles.root)}
+          className={classes.root}
           statusColor="positive"
           bgcolor="atmo2"
           icon={<Level0Good color="positive" />}
         >
-          <div className={css(styles.contentContainer)}>
+          <div className={classes.contentContainer}>
             <HvTypography variant="label">Alarms</HvTypography>
-            <div className={css(styles.dataContainer)}>
+            <div className={classes.dataContainer}>
               {dataAlarms.map((obj) => renderAlarm(obj.type, obj.value))}
             </div>
           </div>
         </HvCard>
         <HvCard
-          className={css(styles.root)}
+          className={classes.root}
           statusColor="negative"
           bgcolor="atmo2"
           icon={<Level3Bad color="negative" />}
         >
-          <div className={css(styles.contentContainer)}>
+          <div className={classes.contentContainer}>
             <HvTypography variant="label">Transport</HvTypography>
-            <div className={css(styles.dataContainer)}>
+            <div className={classes.dataContainer}>
               {dataTransport.map((obj) => renderAlarm(obj.type, obj.value))}
             </div>
           </div>
@@ -535,14 +535,14 @@ export const Small: StoryObj<HvKpiProps> = {
   render: () => {
     const [selected, setSelected] = useState(false);
 
-    const styles: { [key: string]: CSSInterpolation } = {
-      storyRoot: {
+    const classes = {
+      storyRoot: css({
         display: "flex",
         flexWrap: "wrap",
         alignItems: "flex-start",
         gap: theme.space.sm,
-      },
-      root: {
+      }),
+      root: css({
         width: 280,
         cursor: "pointer",
         backgroundColor: theme.colors.atmo1,
@@ -554,43 +554,43 @@ export const Small: StoryObj<HvKpiProps> = {
             backgroundColor: theme.colors.primary_20,
           },
         },
-      },
-      semanticBar: {
+      }),
+      semanticBar: css({
         height: 1,
-      },
-      selectable: {
+      }),
+      selectable: css({
         "&:hover": {
           outline: `1px solid ${theme.colors.primary_20}`,
         },
-      },
-      contentContainer: {
+      }),
+      contentContainer: css({
         display: "flex",
         padding: theme.space.xs,
-      },
-      textContainer: {
+      }),
+      textContainer: css({
         display: "flex",
         flexDirection: "column",
         marginLeft: theme.space.xs,
-      },
-      valueContainer: { display: "flex", alignItems: "flex-end" },
-      caption: { color: theme.colors.secondary_80 },
-      unit: {
+      }),
+      valueContainer: css({ display: "flex", alignItems: "flex-end" }),
+      caption: css({ color: theme.colors.secondary_80 }),
+      unit: css({
         padding: "0px 2px 5px 2px",
-      },
-      rootLoading: {
+      }),
+      rootLoading: css({
         width: 280,
-      },
-      loadingContainer: {
+      }),
+      loadingContainer: css({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         padding: theme.space.md,
         gap: theme.space.xs,
-      },
+      }),
     };
 
     return (
-      <div className={css(styles.storyRoot)}>
+      <div className={classes.storyRoot}>
         <HvCard
           selectable
           selected={selected}
@@ -604,37 +604,37 @@ export const Small: StoryObj<HvKpiProps> = {
           }}
           aria-pressed={selected}
           classes={{
-            semanticBar: css(styles.semanticBar),
-            selectable: css(styles.selectable),
-            root: css(styles.root),
+            semanticBar: classes.semanticBar,
+            selectable: classes.selectable,
+            root: classes.root,
           }}
         >
-          <div className={css(styles.contentContainer)}>
+          <div className={classes.contentContainer}>
             <Level3Bad color="negative" />
-            <div className={css(styles.textContainer)}>
-              <div className={css(styles.valueContainer)}>
+            <div className={classes.textContainer}>
+              <div className={classes.valueContainer}>
                 <HvTypography variant="title2">7</HvTypography>
                 <HvTypography
                   variant="caption1"
-                  className={cx(css(styles.caption), css(styles.unit))}
+                  className={cx(classes.caption, classes.unit)}
                 >
                   %
                 </HvTypography>
               </div>
-              <HvTypography variant="caption1" className={css(styles.caption)}>
+              <HvTypography variant="caption1" className={classes.caption}>
                 Invalid services
               </HvTypography>
             </div>
           </div>
         </HvCard>
         <HvCard
-          className={css(styles.rootLoading)}
+          className={classes.rootLoading}
           bgcolor="atmo2"
           classes={{
-            semanticBar: css(styles.semanticBar),
+            semanticBar: classes.semanticBar,
           }}
         >
-          <div className={css(styles.loadingContainer)}>
+          <div className={classes.loadingContainer}>
             <HvLoading small />
             <HvTypography>Loading data...</HvTypography>
           </div>
@@ -664,9 +664,9 @@ export const Column: StoryObj<HvKpiProps> = {
       { value: 3980, severity: "5" },
     ];
 
-    const styles: { [key: string]: CSSInterpolation } = {
-      root: { width: "fit-content" },
-      contentContainer: {
+    const classes = {
+      root: css({ width: "fit-content" }),
+      contentContainer: css({
         display: "flex",
         flexDirection: "column",
         padding: theme.space.sm,
@@ -674,23 +674,23 @@ export const Column: StoryObj<HvKpiProps> = {
         "& > *:not(:last-child)": {
           paddingBottom: theme.space.xs,
         },
-      },
-      semanticBar: {
+      }),
+      semanticBar: css({
         height: 1,
-      },
-      severityContainer: {
+      }),
+      severityContainer: css({
         display: "flex",
         justifyContent: "space-between",
-      },
-      valueContainer: {
+      }),
+      valueContainer: css({
         display: "flex",
         paddingLeft: theme.space.md,
         alignItems: "flex-end",
-      },
-      unit: {
+      }),
+      unit: css({
         color: theme.colors.secondary_80,
         padding: "0px 2px 5px 2px",
-      },
+      }),
     };
 
     const renderSeverity = (value: number, type: SeverityType) => {
@@ -716,11 +716,11 @@ export const Column: StoryObj<HvKpiProps> = {
       }
 
       return (
-        <div className={css(styles.severityContainer)}>
+        <div className={classes.severityContainer}>
           {icon}
-          <div className={css(styles.valueContainer)}>
+          <div className={classes.valueContainer}>
             <HvTypography variant="title2">{value}</HvTypography>
-            <HvTypography variant="caption1" className={css(styles.unit)}>
+            <HvTypography variant="caption1" className={classes.unit}>
               GB
             </HvTypography>
           </div>
@@ -730,13 +730,13 @@ export const Column: StoryObj<HvKpiProps> = {
 
     return (
       <HvCard
-        className={css(styles.root)}
+        className={classes.root}
         bgcolor="atmo1"
         classes={{
-          semanticBar: css(styles.semanticBar),
+          semanticBar: classes.semanticBar,
         }}
       >
-        <div className={css(styles.contentContainer)}>
+        <div className={classes.contentContainer}>
           {data.map((obj) => renderSeverity(obj.value, obj.severity))}
         </div>
       </HvCard>

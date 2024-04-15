@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { css, CSSInterpolation } from "@emotion/css";
+import { css } from "@emotion/css";
 import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
@@ -26,18 +26,18 @@ import {
 import { FacetSearch } from "./stories/FacetSearchSample";
 import FacetSearchRaw from "./stories/FacetSearchSample?raw";
 
-const styles: { [key: string]: CSSInterpolation } = {
-  listContainer: {
+const classes = {
+  listContainer: css({
     "& > li": {
       paddingLeft: 32,
     },
-  },
-  formContainer: {
+  }),
+  formContainer: css({
     padding: "0 32px",
     "& > div": {
       paddingTop: 17,
     },
-  },
+  }),
 };
 
 const meta: Meta<typeof HvAccordion> = {
@@ -63,7 +63,7 @@ export const Main: StoryObj<HvAccordionProps> = {
     return (
       <HvAccordion {...args}>
         <HvListContainer
-          className={css(styles.listContainer)}
+          className={classes.listContainer}
           interactive
           condensed
         >
@@ -93,7 +93,7 @@ export const Disabled: StoryObj<HvAccordionProps> = {
       <div style={{ maxWidth: 300 }}>
         <HvAccordion label="Analytics" headingLevel={3} disabled>
           <HvListContainer
-            className={css(styles.listContainer)}
+            className={classes.listContainer}
             interactive
             condensed
           >
@@ -103,7 +103,7 @@ export const Disabled: StoryObj<HvAccordionProps> = {
         </HvAccordion>
         <HvAccordion label="System" headingLevel={3}>
           <HvListContainer
-            className={css(styles.listContainer)}
+            className={classes.listContainer}
             interactive
             condensed
           >
@@ -113,7 +113,7 @@ export const Disabled: StoryObj<HvAccordionProps> = {
         </HvAccordion>
         <HvAccordion label="Data" headingLevel={3} disabled>
           <HvListContainer
-            className={css(styles.listContainer)}
+            className={classes.listContainer}
             interactive
             condensed
           >
@@ -203,7 +203,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("personalInformation")}
             expanded={expandedState.personalInformation}
           >
-            <div className={css(styles.formContainer)}>
+            <div className={classes.formContainer}>
               <HvInput label="Name" placeholder="Insert first name" required />
               <HvInput label="Email" placeholder="Insert your email" required />
               <HvInput label="Phone" placeholder="Insert your phone number" />
@@ -220,7 +220,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("billingAddress")}
             expanded={expandedState.billingAddress}
           >
-            <div className={css(styles.formContainer)}>
+            <div className={classes.formContainer}>
               <HvInput label="Address 1" placeholder="Insert first name" />
               <HvInput label="Address 2" placeholder="Insert address" />
               <HvInput label="City" placeholder="Insert city name" />
@@ -233,7 +233,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("shippingAddress")}
             expanded={expandedState.shippingAddress}
           >
-            <div className={css(styles.formContainer)}>
+            <div className={classes.formContainer}>
               <HvInput label="Address 1" placeholder="Insert first name" />
               <HvInput label="Address 2" placeholder="Insert address" />
               <HvInput label="City" placeholder="Insert city name" />
