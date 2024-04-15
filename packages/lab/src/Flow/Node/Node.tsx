@@ -162,29 +162,25 @@ export const HvFlowNode = ({
         <div className={classes.subtitleContainer}>
           {subtitle &&
             (disableInlineEdit ? (
-              <div>
-                <HvTypography>{subtitle}</HvTypography>
-              </div>
+              <HvTypography>{subtitle}</HvTypography>
             ) : (
-              <div>
-                <HvInlineEditor
-                  defaultValue={subtitle}
-                  showIcon
-                  classes={{
-                    root: css({
-                      display: "inline-flex",
-                      flexGrow: 1,
-                    }),
-                    button: css({ justifyContent: "space-between" }),
-                    inputRoot: css({
-                      width: inlineEditorWidth,
-                    }),
-                  }}
-                  onBlur={(evt, value) =>
-                    setNodeData((prev) => ({ ...prev, label: value }))
-                  }
-                />
-              </div>
+              <HvInlineEditor
+                defaultValue={subtitle}
+                showIcon
+                classes={{
+                  root: css({
+                    display: "inline-flex",
+                    flexGrow: 1,
+                  }),
+                  button: css({ justifyContent: "space-between" }),
+                  inputRoot: css({
+                    width: inlineEditorWidth,
+                  }),
+                }}
+                onBlur={(evt, value) =>
+                  setNodeData((prev) => ({ ...prev, label: value }))
+                }
+              />
             ))}
           {actions && (
             <HvActionsGeneric

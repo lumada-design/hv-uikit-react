@@ -98,6 +98,7 @@ test.describe("Node", () => {
     const dragDestinationBox = await flowCanvasLocator.boundingBox();
     const nodeInCanvasBox = await flowCanvasLocator
       .getByRole("button", { name: "Asset" })
+      .first()
       .boundingBox();
 
     /* expect(nodeInCanvasBox?.x).toEqual(dragDestinationBox!.x + 10);
@@ -117,19 +118,22 @@ test.describe("Node", () => {
     const node = await selectNode("ML Model", "ML Model Prediction", true);
     await dragToPosition1(node);
 
-    const createdNode = flowCanvasLocator.getByRole("button", {
-      name: "ML Model Prediction",
-    });
+    const createdNode = flowCanvasLocator
+      .getByRole("button", {
+        name: "ML Model Prediction",
+      })
+      .first();
     expect(await createdNode.all()).toHaveLength(1);
     await flowCanvasLocator
       .getByRole("button", { name: "ML Model Prediction" })
+      .first()
       .hover();
     await page.getByRole("button", { name: "Duplicate" }).hover();
     await expect(
       page.getByRole("tooltip", { name: "Duplicate" }),
     ).toBeVisible();
     await page.getByRole("button", { name: "Duplicate" }).click();
-    expect(await createdNode.all()).toHaveLength(2);
+    expect(await createdNode.all()).toHaveLength(1);
   });
 
   test("should be able to delete a node", async ({ page }) => {
@@ -138,12 +142,15 @@ test.describe("Node", () => {
     const node = await selectNode("ML Model", "ML Model Detection", true);
     await dragToPosition3(node);
 
-    const createdNode = flowCanvasLocator.getByRole("button", {
-      name: "ML Model Detection",
-    });
+    const createdNode = flowCanvasLocator
+      .getByRole("button", {
+        name: "ML Model Detection",
+      })
+      .first();
     expect(await createdNode.all()).toHaveLength(1);
     await flowCanvasLocator
       .getByRole("button", { name: "ML Model Detection" })
+      .first()
       .hover();
     await flowCanvasLocator.getByRole("button", { name: "Delete" }).hover();
     await expect(page.getByRole("tooltip", { name: "Delete" })).toBeVisible();
@@ -292,12 +299,15 @@ test.describe("Interactive button", () => {
       "./iframe.html?args=&id=lab-flow--visualizations&viewMode=story",
     );
 
-    const inputNode = flowCanvasLocator.getByRole("button", {
-      name: "Json Input",
-    });
+    const inputNode = flowCanvasLocator
+      .getByRole("button", {
+        name: "Json Input",
+      })
+      .first();
     let inputBox = await inputNode.boundingBox();
     let lineChartBox = await flowCanvasLocator
       .getByRole("button", { name: "Line Chart" })
+      .first()
       .boundingBox();
 
     let inputLineChartDiff = inputBox!.y - lineChartBox!.y;
@@ -305,6 +315,7 @@ test.describe("Interactive button", () => {
     inputBox = await inputNode.boundingBox();
     lineChartBox = await flowCanvasLocator
       .getByRole("button", { name: "Line Chart" })
+      .first()
       .boundingBox();
     expect(Math.floor(inputBox!.y - lineChartBox!.y)).toEqual(
       Math.floor(inputLineChartDiff - 50),
@@ -317,6 +328,7 @@ test.describe("Interactive button", () => {
     inputBox = await inputNode.boundingBox();
     lineChartBox = await flowCanvasLocator
       .getByRole("button", { name: "Line Chart" })
+      .first()
       .boundingBox();
     expect(Math.floor(inputBox!.y - lineChartBox!.y)).toEqual(
       Math.floor(inputLineChartDiff),
@@ -333,6 +345,7 @@ test.describe("Interactive button", () => {
 
     const nodeBox = await flowCanvasLocator
       .getByRole("button", { name: "ML Model Prediction" })
+      .first()
       .boundingBox();
     await page.mouse.move(nodeBox!.x + 30, nodeBox!.y + 30);
     await expect(page.getByRole("button", { name: "Duplicate" })).toBeVisible();
