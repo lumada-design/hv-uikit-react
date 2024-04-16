@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.63.3 (2024-04-16)
+
+### Bug Fixes
+
+- **MultiButton:** filter out undefined children ([#4145](https://github.com/lumada-design/hv-uikit-react/issues/4145)) ([63a98ac](https://github.com/lumada-design/hv-uikit-react/commit/63a98ac2d516fe2d6a11f853b83a4da2b04362de))
+
 ## [5.63.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.63.1...@hitachivantara/uikit-react-core@5.63.2) (2024-04-10)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
