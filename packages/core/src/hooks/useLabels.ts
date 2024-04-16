@@ -1,7 +1,10 @@
 import { useMemo } from "react";
 
-export function useLabels<T>(defaultLabels: T, labels?: Partial<T>): T {
+import { DeepPartial } from "../types/generic";
+import { deepMerge } from "../utils/deepMerge";
+
+export function useLabels<T>(defaultLabels: T, labels?: DeepPartial<T>): T {
   return useMemo(() => {
-    return { ...defaultLabels, ...labels };
+    return deepMerge(defaultLabels, labels);
   }, [defaultLabels, labels]);
 }
