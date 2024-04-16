@@ -899,4 +899,18 @@ describe("QueryBuilder", () => {
       expect(querySpy).toHaveBeenCalledTimes(2);
     });
   });
+
+  it("overrides labels", () => {
+    const label = "Custom value";
+    renderUncontrolled({
+      labels: {
+        query: { addRule: { label } },
+      },
+    });
+
+    const addButton = screen.getByRole("button", {
+      name: label,
+    });
+    expect(addButton).toBeInTheDocument();
+  });
 });
