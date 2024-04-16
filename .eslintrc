@@ -41,6 +41,7 @@
         "allowAsProps": true
       }
     ],
+    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
     "react/jsx-pascal-case": [
       "error",
       {
