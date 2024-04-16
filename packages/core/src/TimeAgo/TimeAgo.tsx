@@ -73,7 +73,6 @@ export const HvTimeAgo = fixedForwardRef(function HvTimeAgo<
     showSeconds,
   });
 
-  // eslint-disable-next-line react/jsx-no-useless-fragment
   if (justText && timestamp) return <>{timeAgo}</>;
 
   return (

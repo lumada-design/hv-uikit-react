@@ -122,6 +122,5 @@ export const Properties = ({ editMode }: { editMode?: boolean }) => {
     );
   });
 
-  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{elements}</>;
 };
