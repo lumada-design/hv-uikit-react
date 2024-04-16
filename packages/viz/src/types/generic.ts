@@ -10,16 +10,3 @@ export type HvChartData =
   | Record<string | number, (string | number)[]>
   | Record<string | number, string | number>[]
   | ColumnTable;
-
-export type HvTreemapData = {
-  [propName: string]:
-    | string
-    | number
-    | number[]
-    | HvTreemapData[]
-    | undefined
-    | null;
-  children?: HvTreemapData[];
-  name?: string;
-  value?: number[];
-};
