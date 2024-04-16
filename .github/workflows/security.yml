@@ -40,8 +40,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
       - name: Request Citadel scan
-        run: .github/scripts/citadel-request.sh
+        run: .github/scripts/citadel-request.mjs
 
   black-duck-scans:
     name: Run Black Duck Scans
