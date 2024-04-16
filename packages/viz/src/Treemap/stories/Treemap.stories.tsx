@@ -10,7 +10,7 @@ import CustomTooltipRaw from "./CustomTooltip?raw";
 import { data as testData } from "./data";
 
 const meta: Meta<typeof HvTreemapChart> = {
-  title: "Visualizations/Treemap Chart",
+  title: "Visualizations/Treemap",
   component: HvTreemapChart,
   decorators: [vizDecorator],
 };

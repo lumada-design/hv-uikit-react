@@ -8,10 +8,22 @@ import { HvBaseChart } from "../BaseChart";
 import { HvChartTooltipClasses, useOption, useTooltip } from "../hooks";
 import { HvChartTooltip } from "../types";
 import { HvChartCommonProps } from "../types/common";
-import { HvTreemapData } from "../types/generic";
 
 // Register chart components
 echarts.use([TreemapChart, TooltipComponent]);
+
+export type HvTreemapData = {
+  [propName: string]:
+    | string
+    | number
+    | number[]
+    | HvTreemapData[]
+    | undefined
+    | null;
+  children?: HvTreemapData[];
+  name?: string;
+  value?: number[];
+};
 
 export interface HvTreemapChartClasses extends HvChartTooltipClasses {}
 
