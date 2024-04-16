@@ -2,6 +2,8 @@ import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 
 import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useLabels } from "../hooks/useLabels";
+import { DeepPartial } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 import { isEqual } from "../utils/helpers";
 import { ConfirmationDialog } from "./ConfirmationDialog";
@@ -52,7 +54,7 @@ export interface HvQueryBuilderProps {
   /** Max depth of nested query groups. */
   maxDepth?: number;
   /** Object containing all the labels. */
-  labels?: HvQueryBuilderLabels;
+  labels?: DeepPartial<HvQueryBuilderLabels>;
   /** Whether the query builder is in read-only mode. */
   readOnly?: boolean;
   /**
@@ -96,7 +98,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     operators = defaultOperators,
     combinators = defaultCombinators,
     maxDepth = 1,
-    labels = defaultLabels,
+    labels: labelsProp,
     readOnly = false,
     emptyRenderer = ["Empty", "IsNotEmpty"],
     classes: classesProp,
@@ -139,6 +141,8 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     reducer,
     setNodeIds(structuredClone(initialQuery.current)),
   );
+
+  const labels = useLabels(defaultLabels, labelsProp);
 
   const contextValue = useMemo(
     () => ({

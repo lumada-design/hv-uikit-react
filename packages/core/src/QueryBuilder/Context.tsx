@@ -183,7 +183,7 @@ export const defaultCombinators = [
   { operand: "or", label: "OR" },
 ];
 
-export const defaultLabels = {
+export const defaultLabels: HvQueryBuilderLabels = {
   query: {
     delete: {
       ariaLabel: "Reset query",
@@ -194,6 +194,12 @@ export const defaultLabels = {
       dialogConfirm: "Yes",
       dialogCancel: "No",
       dialogCloseTooltip: "Close",
+    },
+    addRule: {
+      label: "Add condition",
+    },
+    addGroup: {
+      label: "Add group",
     },
   },
   rule: {

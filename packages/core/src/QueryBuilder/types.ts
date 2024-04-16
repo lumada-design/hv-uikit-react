@@ -146,6 +146,7 @@ export interface AskAction {
   dialog: DialogLabels;
 }
 
+// TODO - Infer type from defaultLabels object and flatten the object to remove all the nesting in v6
 export interface HvQueryBuilderLabels {
   query?: {
     delete?: ActionIconLabels;
