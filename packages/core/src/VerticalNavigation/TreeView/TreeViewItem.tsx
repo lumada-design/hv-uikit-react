@@ -432,15 +432,17 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
       const hasChildren = !!children;
       const showTooltip = !hasChildren && !isOpen && !disableTooltip;
 
+      const isLink = href !== undefined && !disabled;
+
       return (
         <HvTooltip placement="right" title={showTooltip && label}>
           <HvTypography
             id={setId(id, "button")}
-            component={href ? "a" : "div"}
-            {...(href ? buttonLinkProps : null)}
+            component={isLink ? "a" : "div"}
+            {...(isLink ? buttonLinkProps : null)}
             ref={contentRef}
             className={cx(classes.content, {
-              [classes.link]: href != null,
+              [classes.link]: isLink,
               [classes.minimized]: !isOpen,
             })}
             variant="body"
@@ -452,7 +454,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                 (useIcons || !isOpen ? 0 : 10) +
                 level * (collapsible ? 16 : 10),
             }}
-            role={href ? undefined : "button"}
+            role={isLink ? undefined : "button"}
             {...(treeviewMode
               ? {
                   tabIndex: -1,
