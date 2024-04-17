@@ -1,6 +1,7 @@
 import {
   Children,
   cloneElement,
+  Fragment,
   isValidElement,
   ReactElement,
   useMemo,
@@ -10,6 +11,7 @@ import { HvButtonSize, HvButtonVariant } from "../Button";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
+import { setId } from "../utils/setId";
 import {
   getSplitContainerColor,
   getSplitContainerHeight,
@@ -37,6 +39,7 @@ export interface HvMultiButtonProps extends HvBaseProps {
 
 export const HvMultiButton = (props: HvMultiButtonProps) => {
   const {
+    id,
     className,
     children,
     classes: classesProp,
@@ -73,6 +76,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
 
   return (
     <div
+      id={id}
       className={cx(
         classes.root,
         {
@@ -88,8 +92,9 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
     >
       {buttons.map((child, index) => {
         const childIsSelected = !!child.props.selected;
+        const btnKey = setId([id, index]);
         return (
-          <>
+          <Fragment key={btnKey}>
             {cloneElement(child, {
               variant,
               disabled: disabled || child.props.disabled,
@@ -115,7 +120,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
                 <div className={classes.split} />
               </div>
             )}
-          </>
+          </Fragment>
         );
       })}
     </div>
