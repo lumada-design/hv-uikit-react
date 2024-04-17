@@ -102,7 +102,9 @@ export const HvFlowNode = ({
   const { nodeGroups, nodeTypes, defaultActions } = useFlowContext();
 
   const subtitle =
-    node?.data.label || nodeTypes?.[type].meta?.label || nodeDefaults?.subTitle;
+    node?.data.customNodeLabel ||
+    nodeTypes?.[type].meta?.label ||
+    nodeDefaults?.subTitle;
   const groupId = nodeTypes?.[type].meta?.groupId;
 
   const inlineEditorWidth =
@@ -162,23 +164,22 @@ export const HvFlowNode = ({
         <div className={classes.subtitleContainer}>
           {subtitle &&
             (disableInlineEdit ? (
-              <HvTypography>{subtitle}</HvTypography>
+              <HvTypography className={classes.subtitle}>
+                {subtitle}
+              </HvTypography>
             ) : (
               <HvInlineEditor
                 defaultValue={subtitle}
                 showIcon
                 classes={{
-                  root: css({
-                    display: "inline-flex",
-                    flexGrow: 1,
-                  }),
-                  button: css({ justifyContent: "space-between" }),
+                  root: classes.inlineEditRoot,
+                  button: classes.inlineEditButton,
                   inputRoot: css({
                     width: inlineEditorWidth,
                   }),
                 }}
                 onBlur={(evt, value) =>
-                  setNodeData((prev) => ({ ...prev, label: value }))
+                  setNodeData((prev) => ({ ...prev, customNodeLabel: value }))
                 }
               />
             ))}

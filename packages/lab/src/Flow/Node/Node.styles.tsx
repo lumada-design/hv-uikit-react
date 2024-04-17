@@ -9,16 +9,21 @@ const baseClasses = Object.fromEntries(
 export const { staticClasses, useClasses } = createClasses("HvFlowNode", {
   subtitleContainer: {
     minHeight: 48,
-    padding: theme.spacing(
-      theme.space.xs,
-      theme.space.xs,
-      theme.space.xs,
-      theme.space.sm,
-    ),
+    padding: theme.spacing("xs"),
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  subtitle: {
+    paddingLeft: theme.spacing("xs"),
+  },
+  inlineEditRoot: {
+    display: "inline-flex",
+    flexGrow: 1,
+  },
+  inlineEditButton: {
+    justifyContent: "space-between",
   },
   actions: {},
   actionsButton: {

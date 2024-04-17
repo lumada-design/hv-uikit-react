@@ -37,7 +37,7 @@ const initialState = {
       height: 365,
       id: "1caf2381eaf",
       position: { x: 194, y: -160 },
-      data: { asset: "option1", label: "Custom Label" },
+      data: { asset: "option1", customNodeLabel: "Custom Label" },
       type: "Asset",
     },
     {

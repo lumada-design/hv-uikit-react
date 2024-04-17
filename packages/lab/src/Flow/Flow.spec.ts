@@ -118,12 +118,10 @@ test.describe("Node", () => {
     const node = await selectNode("ML Model", "ML Model Prediction", true);
     await dragToPosition1(node);
 
-    const createdNode = flowCanvasLocator
-      .getByRole("button", {
-        name: "ML Model Prediction",
-      })
-      .first();
-    expect(await createdNode.all()).toHaveLength(1);
+    const createdNode = flowCanvasLocator.getByRole("button", {
+      name: "ML Model Prediction",
+    });
+    expect(await createdNode.all()).toHaveLength(2);
     await flowCanvasLocator
       .getByRole("button", { name: "ML Model Prediction" })
       .first()
@@ -133,7 +131,7 @@ test.describe("Node", () => {
       page.getByRole("tooltip", { name: "Duplicate" }),
     ).toBeVisible();
     await page.getByRole("button", { name: "Duplicate" }).click();
-    expect(await createdNode.all()).toHaveLength(1);
+    expect(await createdNode.all()).toHaveLength(4);
   });
 
   test("should be able to delete a node", async ({ page }) => {
