@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.64.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.63.3...@hitachivantara/uikit-react-core@5.64.0) (2024-04-17)
+
+### Features
+
+- add MultiButton styles to Pentaho Plus theme ([b0e3595](https://github.com/lumada-design/hv-uikit-react/commit/b0e3595388736b8c767274e750707c4d7d82f3c8))
+
 ## 5.63.3 (2024-04-16)
 
 ### Bug Fixes

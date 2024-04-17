@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.9.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.8.1...@hitachivantara/uikit-react-viz@5.9.0) (2024-04-17)
+
+### Features
+
+- add Treemap viz ([f92a418](https://github.com/lumada-design/hv-uikit-react/commit/f92a4181cf80be35c96562a0c407491c605d5b54))
+
 ## 5.8.1 (2024-04-16)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz

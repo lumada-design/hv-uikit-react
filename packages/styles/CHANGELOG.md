@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.29.0 (2024-04-17)
+
+### Features
+
+- add MultiButton styles to Pentaho Plus theme ([b0e3595](https://github.com/lumada-design/hv-uikit-react/commit/b0e3595388736b8c767274e750707c4d7d82f3c8))
+
 ## 5.28.1 (2024-04-09)
 
 ### Bug Fixes
