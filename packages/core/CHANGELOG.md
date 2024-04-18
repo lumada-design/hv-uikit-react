@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.64.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.64.0...@hitachivantara/uikit-react-core@5.64.1) (2024-04-18)
+
+### Bug Fixes
+
+- **MultiButton:** missing key ([697a404](https://github.com/lumada-design/hv-uikit-react/commit/697a4040436804e292ad8949e8884ff495927e62))
+- **QueryBuilder:** override labels ([8627786](https://github.com/lumada-design/hv-uikit-react/commit/8627786bed38d7688d77cd829ed9254f93554f41))
+- **useLabels:** deep merge labels ([af83d3d](https://github.com/lumada-design/hv-uikit-react/commit/af83d3de3e5614b2dcf1e59a2819a4547863c8e1))
+
 # [5.64.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.63.3...@hitachivantara/uikit-react-core@5.64.0) (2024-04-17)
 
 ### Features
