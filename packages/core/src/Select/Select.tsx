@@ -256,13 +256,12 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         size={size}
         variant={variant}
         aria-label={ariaLabel}
-        aria-labelledby={mergeIds(label && labelId, ariaLabelledBy)}
+        aria-labelledby={mergeIds(ariaLabelledBy, { [labelId]: label })}
         aria-invalid={isInvalid ? true : undefined}
         aria-errormessage={errorMessageId}
-        aria-describedby={mergeIds(
-          description && descriptionId,
-          ariaDescribedBy,
-        )}
+        aria-describedby={mergeIds(ariaDescribedBy, {
+          [descriptionId]: description,
+        })}
         {...getButtonProps()}
       >
         {defaultRenderValue(actualValue) ?? placeholder}

@@ -26,48 +26,48 @@ const StyledResponsiveTable = styled(HvTable)({
   flexFlow: "column wrap",
 });
 
-const StyledResponsiveHead = styled(HvTableHead)(
-  ({ $breakpoints }: { $breakpoints: MuiBreakpoints }) => ({
-    display: "flex",
-    flexFlow: "column wrap",
-    height: "auto",
+const StyledResponsiveHead = styled(HvTableHead)<{
+  $breakpoints: MuiBreakpoints;
+}>(({ $breakpoints }) => ({
+  display: "flex",
+  flexFlow: "column wrap",
+  height: "auto",
 
-    [$breakpoints.only("md")]: {
-      "&:first-of-type": {
-        position: "sticky",
-        top: -1,
-        zIndex: 3,
-      },
+  [$breakpoints.only("md")]: {
+    "&:first-of-type": {
+      position: "sticky",
+      top: -1,
+      zIndex: 3,
     },
+  },
 
-    [$breakpoints.down("sm")]: {
-      "&:first-of-type": {
-        display: "none",
-      },
+  [$breakpoints.down("sm")]: {
+    "&:first-of-type": {
+      display: "none",
     },
-  }),
-);
+  },
+}));
 
-const StyledResponsiveBody = styled(HvTableBody)(
-  ({ $breakpoints }: { $breakpoints: MuiBreakpoints }) => ({
-    display: "flex",
-    flexFlow: "column wrap",
+const StyledResponsiveBody = styled(HvTableBody)<{
+  $breakpoints: MuiBreakpoints;
+}>(({ $breakpoints }) => ({
+  display: "flex",
+  flexFlow: "column wrap",
 
-    [$breakpoints.only("md")]: {
-      "&:first-of-type": {
-        position: "sticky",
-        top: -1,
-        zIndex: 3,
-      },
+  [$breakpoints.only("md")]: {
+    "&:first-of-type": {
+      position: "sticky",
+      top: -1,
+      zIndex: 3,
     },
+  },
 
-    [$breakpoints.down("sm")]: {
-      "&:first-of-type": {
-        display: "none",
-      },
+  [$breakpoints.down("sm")]: {
+    "&:first-of-type": {
+      display: "none",
     },
-  }),
-);
+  },
+}));
 
 const StyledResponsiveTableRow = styled(HvTableRow)(
   ({ $breakpoints }: { $breakpoints: MuiBreakpoints }) => ({
