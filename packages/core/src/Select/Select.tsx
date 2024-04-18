@@ -256,11 +256,14 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         size={size}
         variant={variant}
         aria-label={ariaLabel}
-        aria-labelledby={mergeIds(label && labelId, ariaLabelledBy)}
+        aria-labelledby={mergeIds(
+          (label && labelId) as clsx.ClassValue,
+          ariaLabelledBy,
+        )}
         aria-invalid={isInvalid ? true : undefined}
         aria-errormessage={errorMessageId}
         aria-describedby={mergeIds(
-          description && descriptionId,
+          (description && descriptionId) as clsx.ClassValue,
           ariaDescribedBy,
         )}
         {...getButtonProps()}

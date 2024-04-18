@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useMemo } from "react";
 import styled from "@emotion/styled";
 import { Breakpoints as MuiBreakpoints, useTheme } from "@mui/material/styles";
