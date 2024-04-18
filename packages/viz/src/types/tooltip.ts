@@ -9,6 +9,7 @@ export interface HvChartTooltipParams {
     name?: string;
     value?: string | number;
   }[];
+  value?: (string | number)[];
 }
 
 export interface HvChartTooltip {

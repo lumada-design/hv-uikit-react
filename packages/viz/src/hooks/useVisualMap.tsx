@@ -1,10 +1,11 @@
 import { useMemo } from "react";
+import { VisualMapComponentOption } from "echarts";
 
 import { HvChartLegend } from "../types";
 import { HvEChartsOption } from "../types/common";
 import { getLegendIcon } from "../utils";
 
-export interface HvVisualMapHookProps {
+export type HvVisualMapHookProps = VisualMapComponentOption & {
   show?: boolean;
   pieces?: Record<string, string | number>[];
   max?: number;
@@ -14,7 +15,7 @@ export interface HvVisualMapHookProps {
   // Uses the same props as the legend
   position?: HvChartLegend["position"];
   direction?: HvChartLegend["direction"];
-}
+};
 
 export const useVisualMap = ({
   show = true,
@@ -25,6 +26,7 @@ export const useVisualMap = ({
   min,
   colorScale,
   position: positionProp,
+  ...others
 }: HvVisualMapHookProps) => {
   const option = useMemo<Pick<HvEChartsOption, "visualMap">>(() => {
     return {
@@ -50,6 +52,7 @@ export const useVisualMap = ({
         orient: direction,
         top: positionProp?.y || "top",
         left: positionProp?.x || "center",
+        ...others,
       },
     };
   }, [
@@ -57,6 +60,8 @@ export const useVisualMap = ({
     direction,
     max,
     min,
+    others,
+
     pieces,
     positionProp?.x,
     positionProp?.y,
