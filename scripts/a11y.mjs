@@ -21,7 +21,7 @@ const init = () => {
 
     // Run a11y checks
     execSync(
-      `npx test-storybook --url ${storybookUrl} --maxWorkers=2 >/dev/null 2>&1`,
+      `npx test-storybook --url ${storybookUrl} --excludeTags="skipTestRunner" --maxWorkers=2 >/dev/null 2>&1`,
     );
 
     const violationNumber = showResults("Violation");

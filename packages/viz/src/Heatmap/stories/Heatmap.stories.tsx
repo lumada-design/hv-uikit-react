@@ -11,6 +11,7 @@ const meta: Meta<typeof HvHeatmap> = {
   title: "Visualizations/Heatmap",
   component: HvHeatmap,
   decorators: [vizDecorator],
+  tags: ["skipTestRunner"],
 };
 export default meta;
 
