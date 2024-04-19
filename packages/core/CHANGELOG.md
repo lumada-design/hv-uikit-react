@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.64.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.64.1...@hitachivantara/uikit-react-core@5.64.2) (2024-04-19)
+
+### Bug Fixes
+
+- **VerticalNavigation:** remove href when item is disabled ([173ed40](https://github.com/lumada-design/hv-uikit-react/commit/173ed402337a3c3e69b87313638626f441141f60))
+
 ## [5.64.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.64.0...@hitachivantara/uikit-react-core@5.64.1) (2024-04-18)
 
 ### Bug Fixes
