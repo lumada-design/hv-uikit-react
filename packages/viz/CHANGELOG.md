@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.9.2...@hitachivantara/uikit-react-viz@5.10.0) (2024-04-21)
+
+### Features
+
+- add Heatmap viz ([99c2a7a](https://github.com/lumada-design/hv-uikit-react/commit/99c2a7a603fca51aafaa90c012d8026a29720aa1))
+
 ## [5.9.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.9.1...@hitachivantara/uikit-react-viz@5.9.2) (2024-04-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz
