@@ -19,18 +19,12 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 
 // The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
-import {
-  NodeGroup,
-  nodeGroups,
-  NodeType,
-  nodeTypes,
-  restrictToSample,
-} from "../Base";
+import { nodeGroups, NodeType, nodeTypes, restrictToSample } from "../Base";
 import { LayoutsProvider } from "../Base/LayoutsContext";
 
 // Flow
-const nodes: HvFlowProps<NodeGroup, NodeType>["nodes"] = [];
-const edges: HvFlowProps<NodeGroup, NodeType>["edges"] = [];
+const nodes: HvFlowProps<NodeType>["nodes"] = [];
+const edges: HvFlowProps<NodeType>["edges"] = [];
 
 // Classes
 export const classes = {
@@ -101,12 +95,6 @@ export const Flow = () => {
                   restrictToWindowEdges,
                   (args) => restrictToSample(rootId || "", args),
                 ],
-              }}
-              defaultGroupProps={{
-                label: "All",
-                color: "cat11_80",
-                description:
-                  "This is for all the nodes that don't have groupId",
               }}
             />
           }

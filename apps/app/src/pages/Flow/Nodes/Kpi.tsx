@@ -3,13 +3,12 @@ import {
   HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeProps,
-  HvFlowNodeTypeMeta,
   useFlowInputNodes,
 } from "@hitachivantara/uikit-react-lab";
 
-import { NodeData, NodeGroup } from "../types";
+import { NodeData } from "../types";
 
-export const Kpi: HvFlowNodeFC<NodeGroup> = (props) => {
+export const Kpi: HvFlowNodeFC = (props) => {
   const inputNodes = useFlowInputNodes<NodeData>();
 
   const params: HvFlowNodeProps["params"] = useMemo(() => {
@@ -43,8 +42,10 @@ export const Kpi: HvFlowNodeFC<NodeGroup> = (props) => {
 
   return (
     <HvFlowNode
-      params={params}
       description="KPI"
+      group="visualization"
+      groupItem="kpi"
+      params={params}
       expanded
       inputs={[
         {
@@ -65,14 +66,3 @@ export const Kpi: HvFlowNodeFC<NodeGroup> = (props) => {
     />
   );
 };
-
-Kpi.meta = {
-  label: "KPI",
-  groupId: "visualization",
-  data: {
-    title: "",
-    unit: "",
-    measure: undefined,
-    aggregation: undefined,
-  },
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

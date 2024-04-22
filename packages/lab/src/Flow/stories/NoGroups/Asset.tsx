@@ -1,13 +1,14 @@
-import {
-  HvFlowNode,
-  HvFlowNodeFC,
-  HvFlowNodeTypeMeta,
-} from "@hitachivantara/uikit-react-lab";
+import { Cluster } from "@hitachivantara/uikit-react-icons";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 export const Asset: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
+      title="Asset"
+      subtitle="Asset"
+      icon={<Cluster />}
       description="Asset description"
+      color="cat11_80"
       expanded
       params={[
         {
@@ -20,11 +21,6 @@ export const Asset: HvFlowNodeFC = (props) => {
           ],
         },
       ]}
-      nodeDefaults={{
-        title: "My Asset",
-        subTitle: "Asset",
-        color: "cat11_80",
-      }}
       outputs={[
         {
           label: "Sensor Group 1",
@@ -41,7 +37,3 @@ export const Asset: HvFlowNodeFC = (props) => {
     />
   );
 };
-
-Asset.meta = {
-  label: "My Asset",
-} satisfies HvFlowNodeTypeMeta;

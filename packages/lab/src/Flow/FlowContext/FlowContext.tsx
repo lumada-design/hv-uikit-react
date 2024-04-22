@@ -6,12 +6,10 @@ import {
   useState,
 } from "react";
 
-import { HvFlowNodeAction, HvFlowNodeGroups, HvFlowNodeTypes } from "../types";
+import { HvFlowNodeAction, HvFlowNodeGroups } from "../types";
 import { HvFlowNodeMetaProvider } from "./NodeMetaContext";
 
 export interface HvFlowContextValue<NodeGroups extends keyof any = string> {
-  /** Flow nodes types. */
-  nodeTypes?: HvFlowNodeTypes<NodeGroups>;
   /** Flow nodes groups. */
   nodeGroups?: HvFlowNodeGroups<NodeGroups>;
   /** Flow nodes groups expanded on sidebar. */
@@ -25,8 +23,6 @@ export interface HvFlowContextValue<NodeGroups extends keyof any = string> {
 export const HvFlowContext = createContext<HvFlowContextValue>({});
 
 export interface HvFlowProviderProps<NodeGroups extends keyof any = string> {
-  /** Flow nodes types. */
-  nodeTypes?: HvFlowContextValue<NodeGroups>["nodeTypes"];
   /** Flow nodes groups. */
   nodeGroups?: HvFlowContextValue<NodeGroups>["nodeGroups"];
   /** Flow default actions. */
@@ -37,7 +33,6 @@ export interface HvFlowProviderProps<NodeGroups extends keyof any = string> {
 
 export const HvFlowProvider = ({
   nodeGroups,
-  nodeTypes,
   defaultActions,
   children,
 }: HvFlowProviderProps) => {
@@ -45,13 +40,12 @@ export const HvFlowProvider = ({
 
   const value = useMemo(
     () => ({
-      nodeTypes,
       nodeGroups,
       defaultActions,
       expandedNodeGroups,
       setExpandedNodeGroups,
     }),
-    [nodeTypes, nodeGroups, defaultActions, expandedNodeGroups],
+    [nodeGroups, defaultActions, expandedNodeGroups],
   );
 
   return (

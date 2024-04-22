@@ -22,20 +22,72 @@ export const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available datasets.",
     icon: <Storage />,
+    items: [{ nodeType: "datasetsteelwheels", label: "Steelwheels" }],
   },
   visualization: {
     label: "Visualization",
     color: "cat1_80",
     description: "Find here all the available visualizations.",
     icon: <LineChartAlt />,
+    items: [
+      {
+        nodeType: "lineChart",
+        label: "Line Chart",
+        data: {
+          title: "",
+          measure: undefined,
+          groupBy: undefined,
+          splitBy: undefined,
+        },
+      },
+      {
+        nodeType: "barChart",
+        label: "Bar Chart",
+        data: {
+          title: "",
+          measure: undefined,
+          groupBy: undefined,
+          splitBy: undefined,
+        },
+      },
+      {
+        nodeType: "donutChart",
+        label: "Donut Chart",
+        data: {
+          title: "",
+          measure: undefined,
+          groupBy: undefined,
+        },
+      },
+      {
+        nodeType: "kpi",
+        label: "KPI",
+        data: {
+          title: "",
+          unit: "",
+          measure: undefined,
+          aggregation: undefined,
+        },
+      },
+      {
+        nodeType: "table",
+        label: "Table",
+        data: {
+          title: "",
+          columns: undefined,
+          measure: "EMEA",
+        },
+      },
+    ],
   },
   dashboard: {
     label: "Dashboard",
     color: "cat2_80",
     description: "Find here all the available dashboards.",
     icon: <Cards />,
+    items: [{ nodeType: "dashboard", label: "Dashboard" }],
   },
-} satisfies HvFlowProps<NodeGroup>["nodeGroups"];
+} satisfies HvFlowProps["nodeGroups"];
 
 /** Node types */
 export const baseNodeTypes = {

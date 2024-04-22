@@ -43,7 +43,10 @@ Optionally you can also define:
 
 ## Sidebar <a id="sidebar" />
 
-To create the groups of nodes in the sidebar you'll have to create node groups. These should have a set of basic properties:
+In the context of the flow component, we provide a sidebar that you can use to list your nodes and drag them to the canvas.
+However, the use of this component is not mandatory, and you can create your own component if needed.
+
+To create groups of nodes in the sidebar, you'll have to create node groups. These should have a set of basic properties:
 
 ```typescript
 interface HvFlowNodeGroup {
@@ -51,52 +54,58 @@ interface HvFlowNodeGroup {
   description?: string;
   color?: HvColorAny;
   icon?: React.ReactNode;
+  items?: HvFlowGroupItem[];
+}
+
+interface HvFlowGroupItem {
+  label: string;
+  // Node type
+  nodeType: string;
+  // Initial node data used when the node is dropped in the canvas
+  data?: unknown;
 }
 ```
 
 Example:
 
 ```typescript
-// Node groups
-type NodeGroup = "assets" | "models";
-
 const nodeGroups = {
   assets: {
     label: "Assets",
     color: "cat3_80",
     description: "Find here all the available assets.",
     icon: <Heart />,
+    items: [{ type: "asset", label: "Asset" }],
   },
   models: {
     label: "ML Model",
     color: "cat1_80",
     description: "Find here all the available models.",
     icon: <Favorite />,
+    items: [{ type: "model", label: "ML Model Prediction" }],
   },
-} satisfies HvFlowProps<NodeGroup>["nodeGroups"];
+};
 ```
 
-You can then create the sidebar by using the `HvFlowSidebar` component as a prop of the `HvFlow` component:
+You can then create the sidebar by using the `HvFlowSidebar` component as a property of the `HvFlow` component
+and by providing your `nodeGroups`:
 
 ```tsx
 <HvFlow
   nodeGroups={nodeGroups}
-  // ...
   sidebar={
     <HvFlowSidebar
       title="Add Node"
       description="Please choose within the options below"
-      open={open}
-      onClose={() => setOpen(false)}
     />
   }
+  // ...
 >
   (...)
 </HvFlow>
 ```
 
-However, node groups are not mandatory. If you don't pass a `nodeGroups` prop to the `HvFlow` component, then all node types will be listed
-in the sidebar in a simple list of nodes.
+If you want your nodes to be listed without being divided into groups, you can add the `flatten` property in the `HvFlowSidebar`.
 
 ## Layout <a id="layout" />
 
@@ -125,42 +134,44 @@ component and shares the same API.
 
 ## Custom nodes and node types <a id="custom-nodes-and-node-types" />
 
-The `HvFlowNode` component allows you to create your own nodes. It provides a base for your own custom nodes and is not to be used directly as a node on the flow.
-There are a few properties that should be set on your node `meta` property: the label, and, optionally, the id of the group it belongs to.
+The `HvFlowNode` component allows you to create your own nodes.
+It provides a base for your own custom nodes and is not to be used directly as a node on the flow.
+
+If you have defined `nodeGroups`, `groupId` should also be set on the node, to simplify its customization.
+By providing `groupId`, the `color`, `icon`, and `title` properties will be automatically set
+using the values defined by the node group. Otherwise, you can set `color`, `icon`, `title` directly on the node.
+
 The parameters and the list of inputs and outputs are passed as a property of the `HvFlowNode` component.
 
 Find an example of a custom node below.
 
 ```tsx
-import {
-  HvFlowNode,
-  HvFlowNodeFC,
-  HvFlowNodeTypeMeta,
-} from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 export const CustomNode: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
-      description="CustomNode description"
       expanded
+      groupId="models"
+      description="ML Model Prediction description"
       inputs={[
         {
           label: "Data",
           isMandatory: true,
-          accepts: ["prediction", "detection"],
+          accepts: ["data"],
         },
       ]}
       outputs={[
         {
-          label: "Insight",
+          label: "Prediction",
           isMandatory: true,
-          provides: "insight",
+          provides: "prediction",
         },
       ]}
       params={[
         {
-          id: "myParam",
-          label: "Parameter",
+          id: "param",
+          label: "Select an option",
           type: "select",
           options: [
             { id: "option1", label: "Option 1" },
@@ -170,35 +181,9 @@ export const CustomNode: HvFlowNodeFC = (props) => {
         },
       ]}
       {...props}
-    >
-      <div>Node content</div>
-    </HvFlowNode>
+    />
   );
 };
-
-CustomNode.meta = {
-  label: "CustomNode",
-  groupId: "someNodeGroup",
-} satisfies HvFlowNodeTypeMeta;
-```
-
-If you don't set a group id for any given node, then it will be added to a `Default` group that will serve as a repository to all nodes
-that are not in a group. This default group is customizable via the `defaultGroupProps` on the `HvFlowSidebar` component as shown below.
-
-```tsx
-<HvFlow
-  sidebar={
-    <HvFlowSidebar
-      defaultGroupProps={{
-        label: "All",
-        color: "cat11_80",
-        description: "This is for all the nodes that don't have groupId",
-      }}
-    />
-  }
->
-  (...)
-</HvFlow>
 ```
 
 ## Inputs and outputs <a id="inputs-and-outputs" />
@@ -264,6 +249,7 @@ interface HvFlowNodeSelectParam {
   id: string;
   label: string;
   multiple?: boolean;
+  // Prefer using an array of objects
   options?: string[] | { id: string; label: string }[];
 }
 
@@ -312,8 +298,8 @@ const defaultActions: HvFlowDefaultActions[] = [
 ];
 
 <HvFlow
-  // ...
   defaultActions={defaultActions}
+  // ...
 >
   (...)
 </HvFlow>;
@@ -348,9 +334,9 @@ const handleAction = (event: React.SyntheticEvent, action: HvActionGeneric) => {
 };
 
 <HvFlowNode
-  title="Asset"
+  group="assets"
+  groupItem="asset"
   description="Asset description"
-  expanded
   maxVisibleActions={1}
   actions={[
     {
@@ -375,8 +361,8 @@ You can pass any content to the footer of the Node through the `footer` property
 
 ```tsx
 <HvFlowNode
-  (...)
   footer={<div>My footer content</div>}
+  // ...
 />
 ```
 
@@ -520,9 +506,10 @@ export const Asset: HvFlowNodeFC = (props) => {
         </HvDialogActions>
       </HvDialog>
       <HvFlowNode
-        title="Asset"
-        description="Asset asset description"
         expanded
+        group="assets"
+        groupItem="asset"
+        description="Asset description"
         maxVisibleActions={1}
         actions={[
           {
@@ -545,8 +532,8 @@ export const Asset: HvFlowNodeFC = (props) => {
         onAction={handleAction}
         params={[
           {
-            id: "asset",
-            label: "Asset",
+            id: "type",
+            label: "Select a type",
             type: "select",
             options: [
               { id: "asset1", label: "Asset 1" },
@@ -579,11 +566,6 @@ export const Asset: HvFlowNodeFC = (props) => {
     </>
   );
 };
-
-Asset.meta = {
-  label: "Asset",
-  groupId: "someNodeGroup",
-} satisfies HvFlowNodeTypeMeta;
 ```
 
 Other examples of custom nodes can be found on

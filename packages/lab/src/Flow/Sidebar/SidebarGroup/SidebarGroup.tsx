@@ -20,19 +20,9 @@ export { staticClasses as flowSidebarGroupClasses };
 
 export type HvFlowSidebarGroupClasses = ExtractNames<typeof useClasses>;
 
-export type HvFlowSidebarGroupNode = {
-  type: string;
-  label: string;
-  data?: unknown;
-};
-
-export type HvFlowSidebarGroupNodes = HvFlowSidebarGroupNode[];
-
 export interface HvFlowSidebarGroupProps extends HvFlowNodeGroup {
   /** Group id. */
   id: string;
-  /** Group nodes. */
-  nodes: HvFlowSidebarGroupNodes;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowSidebarGroupClasses;
   /** Expand button props. */
@@ -44,7 +34,7 @@ export interface HvFlowSidebarGroupProps extends HvFlowNodeGroup {
 export const HvFlowSidebarGroup = ({
   id,
   label,
-  nodes,
+  items = [],
   color,
   description,
   icon,
@@ -57,13 +47,13 @@ export const HvFlowSidebarGroup = ({
   const { expandedNodeGroups, setExpandedNodeGroups } = useFlowContext();
 
   const opened = useMemo(
-    () => !!expandedNodeGroups?.find((groupId) => groupId === id),
+    () => !!expandedNodeGroups?.find((group) => group === id),
     [expandedNodeGroups, id],
   );
 
   const handleClick = useCallback(() => {
     setExpandedNodeGroups?.((prev) =>
-      opened ? prev.filter((groupId) => id !== groupId) : [...prev, id],
+      opened ? prev.filter((group) => id !== group) : [...prev, id],
     );
   }, [id, opened, setExpandedNodeGroups]);
 
@@ -71,9 +61,13 @@ export const HvFlowSidebarGroup = ({
     <li className={cx(css({ borderColor: getColor(color) }), classes.root)}>
       <div className={classes.titleContainer}>
         <div className={classes.labelContainer}>
-          <div className={classes.icon}>{icon}</div>
+          <div className={classes.icon} role="presentation">
+            {icon}
+          </div>
           <HvTypography component="p" variant="title4">
-            {nodes.length > 1 ? `${label} (${nodes.length})` : label}
+            {Object.keys(items).length > 1
+              ? `${label} (${Object.keys(items).length})`
+              : label}
           </HvTypography>
         </div>
         <HvButton
@@ -92,11 +86,11 @@ export const HvFlowSidebarGroup = ({
       )}
       {opened && (
         <div className={classes.itemsContainer}>
-          {nodes.map((obj) => (
+          {Object.entries(items).map(([itemId, item]) => (
             <HvFlowDraggableSidebarGroupItem
-              key={obj.type}
+              key={itemId}
               {...itemProps}
-              {...obj}
+              {...item}
             />
           ))}
         </div>

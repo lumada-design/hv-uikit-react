@@ -8,19 +8,17 @@ import {
 import {
   HvFlowNode,
   HvFlowNodeFC,
-  HvFlowNodeTypeMeta,
   useFlowInputNodes,
   useFlowNodeUtils,
 } from "@hitachivantara/uikit-react-lab";
 
-import type { NodeGroup } from ".";
 import { NodeData } from "./data";
 
 function filterDataByCountries(data, countriesToFilter: string[]) {
   return data.filter((item) => countriesToFilter.includes(item.country));
 }
 
-export const Filter: HvFlowNodeFC<NodeGroup> = (props) => {
+export const Filter: HvFlowNodeFC = (props) => {
   const { data } = props;
   const { setNodeData } = useFlowNodeUtils();
 
@@ -43,6 +41,8 @@ export const Filter: HvFlowNodeFC<NodeGroup> = (props) => {
   return (
     <HvFlowNode
       description="Filtering data"
+      group="transformations"
+      groupItem="filter"
       expanded
       inputs={[
         {
@@ -75,8 +75,3 @@ export const Filter: HvFlowNodeFC<NodeGroup> = (props) => {
     </HvFlowNode>
   );
 };
-
-Filter.meta = {
-  label: "Filter",
-  groupId: "transformations",
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

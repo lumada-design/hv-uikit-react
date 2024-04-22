@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { css } from "@emotion/css";
+import { useState } from "react";
 import {
   ExtractNames,
   HvActionsGeneric,
@@ -24,13 +23,6 @@ export { staticClasses as flowNodeClasses };
 
 export type HvFlowNodeClasses = ExtractNames<typeof useClasses>;
 
-export type HvFlowNodeDefaults = {
-  title?: string;
-  subTitle?: string;
-  color?: string;
-  icon?: React.ReactNode;
-};
-
 const DEFAULT_LABELS = {
   collapseLabel: "Collapse",
   expandLabel: "Expand",
@@ -53,12 +45,16 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
   actionsIconOnly?: HvActionsGenericProps["iconOnly"];
   /** Node maximum number of actions visible. */
   maxVisibleActions?: HvActionsGenericProps["maxVisibleActions"];
+  /** Node subtitle - this is typically the node "name" */
+  subtitle?: string;
+  /** Node group ID */
+  groupId?: string;
+  /** Node ID to match with the `nodeGroups`'s item */
+  nodeId?: string;
   /** Node expanded */
   expanded?: boolean;
   /** Node parameters */
   params?: HvFlowNodeParam[];
-  /** A set of node default values for when there are no groups to fetch this data from. */
-  nodeDefaults?: HvFlowNodeDefaults;
   /** Props to be passed to the expand parameters button. */
   expandParamsButtonProps?: HvButtonProps;
   /** Labels used on the node. */
@@ -73,39 +69,33 @@ export const HvFlowNode = ({
   id,
   type,
   headerItems,
-  description,
   actions,
   actionCallback, // TODO - remove in v6
   onAction,
   maxVisibleActions = 1,
   expanded = false,
   actionsIconOnly = true,
-  params,
-  nodeDefaults,
+  params: paramsProp,
   classes: classesProp,
   labels: labelsProps,
   children,
   expandParamsButtonProps,
   disableInlineEdit,
+  title: titleProp,
+  subtitle: subtitleProp,
+  description,
+  groupId,
+  nodeId,
+  color: colorProp,
+  icon: iconProp,
   ...props
 }: HvFlowNodeProps<unknown>) => {
   const { classes } = useClasses(classesProp);
-
-  const labels = useLabels(DEFAULT_LABELS, labelsProps);
-
   const [showParams, setShowParams] = useState(expanded);
-
+  const { nodeGroups, defaultActions } = useFlowContext();
+  const labels = useLabels(DEFAULT_LABELS, labelsProps);
   const node = useFlowNode();
-
   const { setNodeData } = useFlowNodeUtils();
-
-  const { nodeGroups, nodeTypes, defaultActions } = useFlowContext();
-
-  const subtitle =
-    node?.data.customNodeLabel ||
-    nodeTypes?.[type].meta?.label ||
-    nodeDefaults?.subTitle;
-  const groupId = nodeTypes?.[type].meta?.groupId;
 
   const inlineEditorWidth =
     actions === undefined ||
@@ -114,10 +104,18 @@ export const HvFlowNode = ({
       ? "100%"
       : `calc(200px - calc(${maxVisibleActions} * 32px + ${theme.spacing(2)}))`;
 
-  const group = (groupId && nodeGroups && nodeGroups[groupId]) || undefined;
-  const groupLabel = group?.label || nodeDefaults?.title;
-  const icon = group?.icon || nodeDefaults?.icon;
-  const color = group?.color || nodeDefaults?.color;
+  const nodeGroup = (groupId && nodeGroups && nodeGroups[groupId]) || undefined;
+  const nodeGroupItem =
+    nodeGroup?.items?.find((item) => item.id === nodeId) ||
+    nodeGroup?.items?.find((item) => item.nodeType === type) ||
+    undefined;
+
+  const title = titleProp || nodeGroup?.label;
+  const icon = iconProp || nodeGroup?.icon;
+  const color = colorProp || nodeGroup?.color;
+  const subtitle =
+    node?.data.customNodeLabel || subtitleProp || nodeGroupItem?.subtitle;
+  const params = paramsProp || nodeGroupItem?.params;
 
   const hasParams = !!(params && params.length > 0);
 
@@ -125,7 +123,7 @@ export const HvFlowNode = ({
     <HvFlowBaseNode
       id={id}
       type={type}
-      title={groupLabel}
+      title={title}
       icon={icon}
       color={color}
       nodeActions={defaultActions}
@@ -171,12 +169,10 @@ export const HvFlowNode = ({
               <HvInlineEditor
                 defaultValue={subtitle}
                 showIcon
+                style={{ width: inlineEditorWidth }}
                 classes={{
                   root: classes.inlineEditRoot,
                   button: classes.inlineEditButton,
-                  inputRoot: css({
-                    width: inlineEditorWidth,
-                  }),
                 }}
                 onBlur={(evt, value) =>
                   setNodeData((prev) => ({ ...prev, customNodeLabel: value }))

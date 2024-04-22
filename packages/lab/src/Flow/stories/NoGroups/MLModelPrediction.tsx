@@ -1,18 +1,14 @@
-import {
-  HvFlowNode,
-  HvFlowNodeFC,
-  HvFlowNodeTypeMeta,
-} from "@hitachivantara/uikit-react-lab";
+import { MachineLearning } from "@hitachivantara/uikit-react-icons";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 export const MLModelPrediction: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
+      title="ML Model"
+      subtitle="ML Model Prediction"
+      icon={<MachineLearning />}
       description="Anomaly Prediction description"
-      nodeDefaults={{
-        title: "ML Model Prediction",
-        subTitle: "ML Model Prediction",
-        color: "cat10_80",
-      }}
+      color="cat10_80"
       outputs={[
         {
           label: "Prediction",
@@ -31,7 +27,3 @@ export const MLModelPrediction: HvFlowNodeFC = (props) => {
     />
   );
 };
-
-MLModelPrediction.meta = {
-  label: "ML Model Prediction",
-} satisfies HvFlowNodeTypeMeta;
