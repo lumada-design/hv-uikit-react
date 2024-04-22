@@ -24,6 +24,9 @@ import {
   User,
 } from "@hitachivantara/uikit-react-icons";
 
+import { SliderMode as SliderModeStory } from "./stories/SliderMode";
+import SliderModeRaw from "./stories/SliderMode?raw";
+
 export default {
   title: "Widgets/Vertical Navigation",
   component: HvVerticalNavigation,
@@ -772,106 +775,11 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
 export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-    eyes: { include: true },
+    chromatic: { disableSnapshot: false, delay: 5000 },
+    eyes: { include: true, waitBeforeCapture: 5000 },
+    docs: { source: { code: SliderModeRaw } },
   },
-  render: () => {
-    const [navigationDataState, setNavigationDataState] = useState<
-      NavigationData[]
-    >([]);
-
-    useEffect(() => {
-      setNavigationDataState([
-        {
-          id: "menu1",
-          label: "Menu 1",
-          path: "",
-          icon: <Open />,
-          data: [
-            {
-              id: "menu1-1",
-              label: "Menu 1-1",
-              path: "",
-              icon: <Open />,
-              parent: null,
-            },
-            {
-              id: "menu1-2",
-              label: "Menu 1-2",
-              path: "",
-              icon: <BarChart />,
-              data: [
-                {
-                  id: "menu1-2-1",
-                  label: "Menu 1-2-1",
-                  path: "",
-                  icon: <Open />,
-                  parent: null,
-                },
-                {
-                  id: "menu1-2-2",
-                  label: "Menu 1-2-2",
-                  path: "",
-                  icon: <BarChart />,
-                  parent: null,
-                },
-                {
-                  id: "menu1-2-3",
-                  label: "Menu 1-2-3",
-                  path: "",
-                  icon: <Deploy />,
-                  parent: null,
-                },
-              ],
-              parent: null,
-            },
-            {
-              id: "menu1-3",
-              label: "Menu 1-3",
-              path: "",
-              icon: <Deploy />,
-              parent: null,
-            },
-          ],
-          parent: null,
-        },
-        {
-          id: "menu2",
-          label: "Menu 2 with a very big name that should be truncated",
-          path: "",
-          icon: <BarChart />,
-          parent: null,
-        },
-        {
-          id: "menu3",
-          label: "Menu 3",
-          path: "",
-          icon: <Deploy />,
-          parent: null,
-        },
-      ]);
-    }, []);
-
-    const [value, setValue] = useState("menu1-3");
-
-    return (
-      <div>
-        <div style={{ display: "flex", width: 220, height: 530 }}>
-          <HvVerticalNavigation open slider>
-            <HvVerticalNavigationHeader title="Menu" />
-            <HvVerticalNavigationTree
-              collapsible
-              defaultExpanded
-              aria-label="Example 4 Slider Mode"
-              selected={value}
-              onChange={(event, data) => setValue(data.id)}
-              data={navigationDataState}
-            />
-          </HvVerticalNavigation>
-        </div>
-      </div>
-    );
-  },
+  render: () => <SliderModeStory />,
 };
 
 export const MobileNavigation: StoryObj<HvVerticalNavigationProps> = {
