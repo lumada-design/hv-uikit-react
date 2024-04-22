@@ -110,7 +110,7 @@ export default defineConfig({
 
   /* Runs local server before starting the tests */
   webServer: {
-    command: "npm run build:doc && npx -y http-server dist -p 6006",
+    command: "npm run build:doc:test && npx -y http-server dist -p 6006",
     port: 6006,
     timeout: 500000,
   },

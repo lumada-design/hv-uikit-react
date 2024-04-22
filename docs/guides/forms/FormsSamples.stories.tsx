@@ -11,9 +11,6 @@ import ReactHookFormRaw from "./ReactHookForm?raw";
 
 const meta: Meta = {
   title: "Guides/Forms/Forms Guide",
-  parameters: {
-    docs: { autodocs: false },
-  },
 };
 
 export default meta;

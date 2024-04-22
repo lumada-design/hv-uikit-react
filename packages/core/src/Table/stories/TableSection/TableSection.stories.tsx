@@ -1,6 +1,5 @@
-import { expect } from "@storybook/jest";
 import { StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
+import { expect, userEvent, within } from "@storybook/test";
 
 import { CompleteTableSection } from "./CompleteTableSection";
 import CompleteTableSectionRaw from "./CompleteTableSection?raw";
@@ -58,7 +57,6 @@ export const PropsTableSectionStory: StoryObj = {
 
 export const EditableStory: StoryObj = {
   parameters: {
-    eyes: { include: false },
     docs: { source: { code: TableEditableRaw } },
   },
   render: () => <TableEditable />,

@@ -43,49 +43,56 @@ export const Main: StoryObj<typeof IconBase> = {
   },
 };
 
-export const CustomColors = () => (
-  <Bookmark
-    color={["brand", "secondary"]}
-    iconSize="M"
-    title="Click to bookmark"
-  />
-);
-
-CustomColors.parameters = {
-  docs: {
-    description: { story: "Overriding Icon colors with palette colors" },
-  },
-};
-
-export const Accessibility = () => (
-  <>
-    <Machine iconSize="M" />
-    <Level4 title="Warning!" iconSize="M" color="negative" />
-    <HvIconButton title="Close" onClick={() => {}}>
-      <Close />
-    </HvIconButton>
-  </>
-);
-
-Accessibility.parameters = {
-  docs: {
-    description: {
-      story:
-        'Icons have `role="none"` by default, hiding them from the accessibility tree. <br /> \
-        Semantic icons should be given a `title` label associated with their meaning. <br /> \
-        If icons trigger actions, they should be wrapped in a tooltip and a button. For this, use `HvIconButton` with the `title` attribute.',
+export const CustomColors = {
+  parameters: {
+    docs: {
+      description: { story: "Overriding Icon colors with palette colors" },
     },
   },
+  render: () => (
+    <Bookmark
+      color={["brand", "secondary"]}
+      iconSize="M"
+      title="Click to bookmark"
+    />
+  ),
 };
 
-export const CustomSize = () => (
-  <CheckboxCheck width={200} height={200} style={{ width: 240, height: 240 }} />
-);
-
-CustomSize.parameters = {
-  docs: {
-    description: { story: "Overrides Icon size using non standard sizes" },
+export const Accessibility = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Icons have `role="none"` by default, hiding them from the accessibility tree. <br /> \
+          Semantic icons should be given a `title` label associated with their meaning. <br /> \
+          If icons trigger actions, they should be wrapped in a tooltip and a button. For this, use `HvIconButton` with the `title` attribute.',
+      },
+    },
   },
+  render: () => (
+    <>
+      <Machine iconSize="M" />
+      <Level4 title="Warning!" iconSize="M" color="negative" />
+      <HvIconButton title="Close" onClick={() => {}}>
+        <Close />
+      </HvIconButton>
+    </>
+  ),
+};
+
+export const CustomSize = {
+  parameters: {
+    docs: {
+      description: { story: "Overrides Icon size using non standard sizes" },
+    },
+  },
+  render: () => (
+    <CheckboxCheck
+      width={200}
+      height={200}
+      style={{ width: 240, height: 240 }}
+    />
+  ),
 };
 
 export const IconSprites: StoryObj<HvIconSpriteProps> = {

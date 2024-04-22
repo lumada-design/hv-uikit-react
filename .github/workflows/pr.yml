@@ -28,5 +28,3 @@ jobs:
     secrets: inherit
     with:
       publish-folder: pr-${{ github.event.number }}
-      # Uncomment when Chromatic is always used in PRs (since it already builds the docs)
-      # publish-storybook: false

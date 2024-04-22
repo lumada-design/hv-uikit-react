@@ -3,17 +3,17 @@ import { css } from "@emotion/css";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvButton,
   HvFormStatus,
   HvTagProps,
   HvTagsInput,
   HvTagsInputProps,
   HvTypography,
   tagsInputClasses,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import countryNamesArray from "./countries";
+import { ControlledTagArray as ControlledTagArrayStory } from "./stories/ControlledTagArray";
+import ControlledTagArrayRaw from "./stories/ControlledTagArray?raw";
 
 const StyledMultilineTagsInput = styled(HvTagsInput)({
   [`& .${tagsInputClasses.tagsList}`]: {
@@ -152,68 +152,17 @@ export const ControlledStringArray: StoryObj<HvTagsInputProps> = {
     );
   },
 };
-const StyledButtonWrapper = styled("div")({
-  "& button": {
-    marginRight: theme.space.xs,
-    marginBottom: theme.spacing(4),
-  },
-});
 
-export const ControlledTagArray = () => {
-  const [currValueArr, setCurrValueArr] = useState<HvTagProps[]>([
-    { label: "tag 1", color: "#7ed69e" },
-    {
-      label: "tag 2 - click me!",
-      color: "#7eccd6",
-      type: "categorical",
-      onClick: () => alert("Hello"),
-    },
-    { label: "tag 3", color: "#eba000" },
-  ]);
-
-  return (
-    <>
-      <StyledButtonWrapper>
-        <HvButton
-          variant="secondarySubtle"
-          onClick={() => {
-            const newArray = [...currValueArr];
-            newArray.push({
-              label: `tag ${currValueArr.length + 1}`,
-              type: currValueArr.length % 2 === 0 ? "categorical" : "semantic",
-              color: currValueArr.length % 2 === 0 ? "#7eccd6" : "#eba000",
-            });
-            setCurrValueArr(newArray);
-          }}
-        >
-          Add tags
-        </HvButton>
-        <HvButton variant="secondarySubtle" onClick={() => setCurrValueArr([])}>
-          Clear tags
-        </HvButton>
-      </StyledButtonWrapper>
-
-      <HvTagsInput
-        label="Controlled with array of tags"
-        aria-label="Controlled with array of tags"
-        placeholder="Enter value"
-        value={currValueArr}
-        onChange={(event, value) => {
-          setCurrValueArr(value);
-        }}
-      />
-      <HvTypography variant="label">Current value:</HvTypography>
-      <HvTypography>{JSON.stringify(currValueArr)}</HvTypography>
-    </>
-  );
-};
-
-ControlledTagArray.parameters = {
-  docs: {
-    description: {
-      story: "Controlled Tags Input with Tags array",
+export const ControlledTagArray = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Controlled Tags Input with Tags array",
+      },
+      source: { code: ControlledTagArrayRaw },
     },
   },
+  render: () => <ControlledTagArrayStory />,
 };
 
 export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {

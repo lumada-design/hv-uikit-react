@@ -1,18 +1,15 @@
 import { Preview } from "@storybook/react";
 
 import DocsContainer from "./blocks/DocsContainer";
-import { DocsPage } from "./blocks/DocsPage";
 import ThemeDecorator from "./decorators/withThemeProvider";
 
 import "uno.css";
 
 export const parameters: Preview["parameters"] = {
   layout: "fullscreen",
-  actions: { argTypesRegex: "^on[A-Z].*" },
   docs: {
     source: { type: "dynamic" },
     container: DocsContainer,
-    page: DocsPage,
   },
   controls: {
     matchers: {
@@ -73,7 +70,6 @@ export const parameters: Preview["parameters"] = {
   chromatic: {
     disableSnapshot: true,
   },
-  eyes: { include: false },
   // Chromatic default viewport
   viewport: {
     viewports: {

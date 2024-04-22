@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { addons } from "@storybook/addons";
+import React, { useState } from "react";
 import {
   IconButton,
   TooltipLinkList,
   WithTooltip,
 } from "@storybook/components";
+import { addons, useChannel } from "@storybook/manager-api";
 import { Global } from "@storybook/theming";
 
 import { themes } from "../../../packages/styles/src";
 import { getManagerStyles } from "../../theme/styles/manager";
+import { ADDON_EVENT as MODE_ADDON_EVENT } from "../mode-selector/constants";
 import { ADDON_EVENT, ADDON_ID } from "./constants";
 import {
   getInitialTheme,
@@ -17,7 +18,7 @@ import {
   setLocalTheme,
 } from "./utils";
 
-const ThemeSelector = ({ api }) => {
+const ThemeSelector = () => {
   const managerStyles = getManagerStyles();
   const themesList = getThemesList(themes);
   const initialTheme = getInitialTheme(themesList);
@@ -37,20 +38,15 @@ const ThemeSelector = ({ api }) => {
 
   // listen for changes on the mode selector addon
   // to update the theme selector
-  useEffect(() => {
-    const channel = addons.getChannel();
-    channel.on("MODE_SELECT", switchMode);
-
-    return () => {
-      channel.off("MODE_SELECT", switchMode);
-    };
-  }, []);
+  useChannel({
+    [MODE_ADDON_EVENT]: switchMode,
+  });
 
   const switchTheme = (theme: Theme) => {
     setLocalTheme(theme.name);
     setSelectedTheme(theme);
 
-    api.emit(ADDON_EVENT, theme);
+    addons.getChannel().emit(ADDON_EVENT, theme);
   };
 
   const links = themesList.map((theme) => ({
@@ -73,9 +69,6 @@ const ThemeSelector = ({ api }) => {
           active={false}
           title="Select theme"
           style={{ width: 200 }}
-          placeholder="Select theme"
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
         >
           {`Theme: ${selectedTheme?.label}`}
         </IconButton>

@@ -1,8 +1,7 @@
 import { useCallback, useContext, useState } from "react";
 import { css } from "@emotion/css";
-import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
+import { expect, userEvent, within } from "@storybook/test";
 import isChromatic from "chromatic/isChromatic";
 import {
   HvAccordion,

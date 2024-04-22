@@ -1,7 +1,7 @@
 import React, { ComponentType, useEffect, useMemo, useState } from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { DocsContainer } from "@storybook/addon-docs";
-import { addons } from "@storybook/addons";
+import { addons } from "@storybook/preview-api";
 import { Global } from "@storybook/theming";
 import {
   HvProvider,
@@ -21,7 +21,13 @@ const components: Record<string, ComponentType> = {
       link
       component="a"
       style={{ color: theme.colors.primary }}
-      target={props.href?.includes("./?path=/docs/") ? undefined : "_self"}
+      target={
+        props.href?.includes("./?path=/docs/")
+          ? undefined
+          : props.href?.startsWith("#")
+            ? "_self"
+            : "_blank"
+      }
       {...props}
     />
   ),

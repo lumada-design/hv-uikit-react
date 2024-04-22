@@ -6,13 +6,9 @@ on:
     inputs:
       publish-folder:
         type: string
-      publish-storybook:
-        type: boolean
-        default: true
 
 env:
   PUBLISH_FOLDER: ${{ inputs.publish-folder || github.ref_name }}
-  PUBLISH_STORYBOOK: ${{ inputs.publish-storybook }}
 
 jobs:
   build-artifacts:
@@ -28,7 +24,6 @@ jobs:
         env:
           APP_BASE_PATH: /uikit-app/${{ env.PUBLISH_FOLDER }}/
           NEXTRA_BASE_PATH: /uikit-docs/${{ env.PUBLISH_FOLDER }}
-          PUBLISH_STORYBOOK: ${{ env.PUBLISH_STORYBOOK }}
 
   deploy-artifacts:
     name: Deploy
@@ -50,7 +45,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy Artifacts
-        if: ${{ (matrix.artifact != 'documentation') || (matrix.artifact == 'documentation' && env.PUBLISH_STORYBOOK == 'true') }}
         uses: ./.github/actions/deploy-artifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

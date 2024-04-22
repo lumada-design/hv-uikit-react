@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { IconButton } from "@storybook/components";
+import { addons, useAddonState, useStorybookApi } from "@storybook/manager-api";
 import { colors } from "@hitachivantara/uikit-styles";
 
 import { themes } from "../../theme";
 import { ADDON_EVENT, ADDON_ID } from "./constants";
 import { getInitialMode, Mode, setLocalMode } from "./utils";
 
-const ModeSelector = ({ api }) => {
+const ModeSelector = () => {
+  const api = useStorybookApi();
+
   const initialMode: Mode = getInitialMode();
 
-  const [selectedMode, setSelectedMode] = useState<Mode>(initialMode);
+  const [selectedMode, setSelectedMode] = useAddonState<Mode>(
+    "mode-selector",
+    initialMode,
+  );
 
   const switchMode = () => {
     const mode: Mode = selectedMode === "wicked" ? "dawn" : "wicked";
@@ -18,7 +24,7 @@ const ModeSelector = ({ api }) => {
     setSelectedMode(mode);
 
     api.setOptions({ theme: themes[mode] });
-    api.emit(ADDON_EVENT, mode);
+    addons.getChannel().emit(ADDON_EVENT, mode);
   };
 
   return (
@@ -30,9 +36,6 @@ const ModeSelector = ({ api }) => {
           : "Change theme to Wicked"
       }
       onClick={switchMode}
-      placeholder="Switch theme"
-      onPointerEnterCapture={undefined}
-      onPointerLeaveCapture={undefined}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

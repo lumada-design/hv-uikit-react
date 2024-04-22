@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import { useMediaQuery, useTheme } from "@mui/material";
-import { expect } from "@storybook/jest";
 import { StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
+import { expect, userEvent, within } from "@storybook/test";
 import {
   HvVerticalNavigation,
   HvVerticalNavigationAction,

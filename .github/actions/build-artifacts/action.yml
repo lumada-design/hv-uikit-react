@@ -11,14 +11,12 @@ runs:
       uses: ./.github/actions/install-dependencies
 
     - name: Build Documentation
-      if: ${{ env.PUBLISH_STORYBOOK }} == 'true'
       run: npm run build:doc
       env:
         NODE_OPTIONS: "--max_old_space_size=8192"
       shell: bash
 
     - name: Archive Documentation
-      if: ${{ env.PUBLISH_STORYBOOK }} == 'true'
       uses: actions/upload-artifact@v4
       with:
         name: documentation

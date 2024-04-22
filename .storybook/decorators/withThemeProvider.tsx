@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { addons } from "@storybook/addons";
+import { useChannel } from "@storybook/preview-api";
 import { Decorator } from "@storybook/react";
 import { Global } from "@storybook/theming";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
@@ -41,14 +41,9 @@ const ThemeDecorator: Decorator = (Story) => {
     setSelectedTheme(name);
   };
 
-  useEffect(() => {
-    const channel = addons.getChannel();
-    channel.on(ADDON_EVENT, switchTheme);
-
-    return () => {
-      channel.off(ADDON_EVENT, switchTheme);
-    };
-  }, []);
+  useChannel({
+    [ADDON_EVENT]: switchTheme,
+  });
 
   return (
     <>

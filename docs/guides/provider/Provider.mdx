@@ -1,4 +1,4 @@
-import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import { Canvas, Controls, Meta, Story } from "@storybook/addon-docs";
 import { ds3, HvProvider } from "@hitachivantara/uikit-react-core";
 
 import * as ProviderStories from "./Provider.stories";
@@ -32,4 +32,4 @@ Otherwise, the styling will not work properly. Please, find an example below.
 **UI Kit components will not work properly if the `HvProvider` is not configured correctly** since they will not be able to access the properties of the active theme.
 
 <Canvas of={ProviderStories.Main} />
-<ArgsTable of={HvProvider} />
+<Controls of={ProviderStories.Main} />
