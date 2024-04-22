@@ -43,6 +43,8 @@ export interface HvWizardActionsProps extends HvBaseProps {
   classes?: HvWizardActionsClasses;
   /** Function executed instead of default go to next page */
   handleBeforeNext?: () => void;
+  /** Function executed instead of default go to previous page */
+  handleBeforePrevious?: () => void;
 }
 
 export const HvWizardActions = ({
@@ -59,6 +61,7 @@ export const HvWizardActions = ({
     submit: "Submit",
   },
   handleBeforeNext,
+  handleBeforePrevious,
 }: HvWizardActionsProps) => {
   const { classes, css, cx } = useClasses(classesProp);
 
@@ -137,7 +140,13 @@ export const HvWizardActions = ({
           variant="secondaryGhost"
           className={classes.buttonWidth}
           disabled={tab <= 0}
-          onClick={() => setTab((t) => t - 1)}
+          onClick={() => {
+            if (handleBeforePrevious) {
+              handleBeforePrevious();
+            } else {
+              setTab((t) => t - 1);
+            }
+          }}
           startIcon={<Backwards />}
         >
           {labels.previous ?? "Previous"}
