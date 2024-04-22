@@ -2,11 +2,19 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import {
   HvButton,
+  HvDialog,
+  HvDialogActions,
+  HvDialogContent,
+  HvDialogTitle,
+  HvEmptyState,
   HvSection,
   HvTypography,
+  theme,
 } from "@hitachivantara/uikit-react-core";
+import { Info } from "@hitachivantara/uikit-react-icons";
 import {
-  HvDashboardNode,
+  HvDashboard,
+  HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeProps,
   HvFlowNodeTypeMeta,
@@ -25,7 +33,13 @@ interface DashboardData {
 const INSIGHTS_INPUT_ID = "insights";
 
 const classes = {
-  footer: css({ display: "flex", justifyContent: "center" }),
+  empty: css({
+    padding: theme.spacing("sm", 0, 0, 0),
+  }),
+  footer: css({
+    display: "flex",
+    justifyContent: "center",
+  }),
 };
 
 export const Dashboard: HvFlowNodeFC<NodeGroup, DashboardData> = (props) => {
@@ -165,34 +179,9 @@ export const Dashboard: HvFlowNodeFC<NodeGroup, DashboardData> = (props) => {
   }, [edges, persistChanges]);
 
   return (
-    <HvDashboardNode
+    <HvFlowNode
       description="Dashboard description"
-      open={config != null}
-      onClose={() => setConfig(undefined)}
-      onCancel={() => setConfig(undefined)}
-      onApply={() => {
-        updateLayout(config);
-        setConfig(undefined);
-      }}
-      dashboardProps={{
-        cols: config?.cols,
-        rowHeight: 100,
-        onLayoutChange: (ly) => {
-          setConfig((conf) => ({ ...conf!, layout: ly }));
-        },
-      }}
-      layout={config?.layout}
       inputs={inputs}
-      previewItems={config?.items?.map((item) => (
-        <div key={item.id} className="flex">
-          <HvSection
-            title={<HvTypography variant="title3">{item.label}</HvTypography>}
-          >
-            Predefined: <code>`{String(item.predefined ?? false)}`</code>;
-            Connected: <code>`{String(item.connected ?? false)}`</code>
-          </HvSection>
-        </div>
-      ))}
       footer={
         <HvButton
           size="sm"
@@ -206,7 +195,68 @@ export const Dashboard: HvFlowNodeFC<NodeGroup, DashboardData> = (props) => {
         footerContainer: classes.footer,
       }}
       {...props}
-    />
+    >
+      <HvDialog
+        open={config != null}
+        maxWidth="lg"
+        fullWidth
+        onClose={() => setConfig(undefined)}
+      >
+        <HvDialogTitle variant="info">Configure dashboard</HvDialogTitle>
+        <HvDialogContent indentContent>
+          Please configure the layout of your dashboard as needed.
+          {config?.layout && config?.layout?.length > 0 ? (
+            <HvDashboard
+              cols={config?.cols || 12}
+              layout={config?.layout}
+              compactType="vertical"
+              rowHeight={100}
+              margin={[16, 16]}
+              containerPadding={[0, 16]}
+              onLayoutChange={(ly) => {
+                setConfig((conf) => ({ ...conf!, layout: ly }));
+              }}
+            >
+              {config?.items?.map((item) => (
+                <div key={item.id} className="flex">
+                  <HvSection
+                    title={
+                      <HvTypography variant="title3">{item.label}</HvTypography>
+                    }
+                  >
+                    <pre>Predefined: {String(item.predefined ?? false)}</pre>
+                    <pre>Connected: {String(item.connected ?? false)}</pre>
+                  </HvSection>
+                </div>
+              ))}
+            </HvDashboard>
+          ) : (
+            <HvEmptyState
+              className={classes.empty}
+              icon={<Info />}
+              message="No visualizations connected to the dashboard."
+            />
+          )}
+        </HvDialogContent>
+        <HvDialogActions>
+          <HvButton
+            variant="primary"
+            onClick={() => {
+              updateLayout(config);
+              setConfig(undefined);
+            }}
+          >
+            Apply
+          </HvButton>
+          <HvButton
+            variant="secondarySubtle"
+            onClick={() => setConfig(undefined)}
+          >
+            Cancel
+          </HvButton>
+        </HvDialogActions>
+      </HvDialog>
+    </HvFlowNode>
   );
 };
 

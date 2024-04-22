@@ -40,6 +40,7 @@ export interface HvDashboardNodeProps
   dialogProps?: HvDialogProps;
 }
 
+/** @deprecated no longer supported. Instead create a custom node with `HvDialog` + `HvDashboard` */
 export const HvDashboardNode = (props: HvDashboardNodeProps) => {
   const {
     id,

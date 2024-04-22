@@ -2,12 +2,19 @@ import { useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import {
   HvButton,
+  HvDialog,
+  HvDialogActions,
+  HvDialogContent,
+  HvDialogTitle,
+  HvEmptyState,
   HvSection,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
+import { Info } from "@hitachivantara/uikit-react-icons";
 import {
-  HvDashboardNode,
+  HvDashboard,
+  HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeInput,
   HvFlowNodeTypeMeta,
@@ -46,6 +53,9 @@ const nodeInputs: HvFlowNodeInput[] = [
 ];
 
 const classes = {
+  empty: css({
+    padding: theme.spacing("sm", 0, 0, 0),
+  }),
   footer: css({
     display: "flex",
     gap: theme.space.sm,
@@ -100,33 +110,9 @@ export const Dashboard: HvFlowNodeFC<NodeGroup> = (props) => {
   };
 
   return (
-    <HvDashboardNode
+    <HvFlowNode
       description="Dashboard"
       inputs={nodeInputs}
-      open={open}
-      layout={config?.layout}
-      labels={{
-        emptyMessage: "No visualizations connected to the dashboard.",
-        dialogTitle: "Configure dashboard",
-        dialogSubtitle:
-          "Please configure the layout of your dashboard as needed.",
-        dialogApply: "Apply",
-        dialogCancel: "Cancel",
-      }}
-      onClose={handleClose}
-      onApply={handleApply}
-      onCancel={handleClose}
-      dashboardProps={{
-        cols: config?.cols,
-        onLayoutChange: (ly) => {
-          setConfig((conf) => ({ ...conf!, layout: ly }));
-        },
-      }}
-      previewItems={content?.map((item) => (
-        <div key={item.id} className="flex">
-          <PreviewRenderer {...item} />
-        </div>
-      ))}
       classes={{
         footerContainer: classes.footer,
       }}
@@ -147,7 +133,47 @@ export const Dashboard: HvFlowNodeFC<NodeGroup> = (props) => {
         </>
       }
       {...props}
-    />
+    >
+      <HvDialog open={open} maxWidth="lg" fullWidth onClose={handleClose}>
+        <HvDialogTitle variant="info">Configure dashboard</HvDialogTitle>
+        <HvDialogContent indentContent>
+          Please configure the layout of your dashboard as needed.
+          {config?.layout && config?.layout?.length > 0 ? (
+            <HvDashboard
+              cols={config?.cols || 12}
+              layout={config?.layout}
+              compactType="vertical"
+              rowHeight={80}
+              margin={[16, 16]}
+              containerPadding={[0, 16]}
+              onLayoutChange={(ly) => {
+                setConfig((conf) => ({ ...conf!, layout: ly }));
+              }}
+            >
+              {content?.map((item) => (
+                <div key={item.id} className="flex">
+                  <PreviewRenderer {...item} />
+                </div>
+              ))}
+            </HvDashboard>
+          ) : (
+            <HvEmptyState
+              className={classes.empty}
+              icon={<Info />}
+              message="No visualizations connected to the dashboard."
+            />
+          )}
+        </HvDialogContent>
+        <HvDialogActions>
+          <HvButton variant="primary" onClick={handleApply}>
+            Apply
+          </HvButton>
+          <HvButton variant="secondarySubtle" onClick={handleClose}>
+            Cancel
+          </HvButton>
+        </HvDialogActions>
+      </HvDialog>
+    </HvFlowNode>
   );
 };
 
