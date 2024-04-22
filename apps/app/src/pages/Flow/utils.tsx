@@ -44,7 +44,6 @@ export const useDatasets = () => {
 export const createDataset = ({
   label,
   description,
-  data,
 }: {
   label: string;
   description: string;
@@ -53,17 +52,14 @@ export const createDataset = ({
   const Dataset: HvFlowNodeFC = (props) => {
     return (
       <HvFlowNode
+        title="Dataset"
+        subtitle={label}
+        group="dataset"
         outputs={[{ label: "Dataset", isMandatory: true, provides: "dataset" }]}
         description={description}
         {...props}
       />
     );
-  };
-
-  Dataset.meta = {
-    label,
-    groupId: "dataset",
-    data,
   };
 
   return Dataset;
@@ -112,4 +108,13 @@ export const buildLayout = (
           : Math.floor(idx / perRow) * h,
     };
   });
+};
+
+export const toTitleCase = (string = "") => {
+  return string
+    .replace(/([A-Z])/g, " $1")
+    .replace(/^./, (s) => s.toUpperCase())
+    .trim()
+    .toLowerCase()
+    .replace(/\b(\w)/g, (s) => s.toUpperCase());
 };

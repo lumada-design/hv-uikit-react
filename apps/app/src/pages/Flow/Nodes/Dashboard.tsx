@@ -17,20 +17,20 @@ import {
   HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeInput,
-  HvFlowNodeTypeMeta,
-  useFlowContext,
 } from "@hitachivantara/uikit-react-lab";
 
 import {
   DASHBOARDS_STORAGE_KEY,
   DashboardSpecs,
   DashboardsStorage,
-  NodeGroup,
+  NodeData,
 } from "../types";
+
+import { toTitleCase } from "../utils";
 
 type PreviewProps = {
   id: string;
-  type: string;
+  type?: string;
   label: React.ReactNode;
   node: any;
 };
@@ -63,10 +63,8 @@ const classes = {
   }),
 };
 
-export const Dashboard: HvFlowNodeFC<NodeGroup> = (props) => {
+export const Dashboard: HvFlowNodeFC<NodeData> = (props) => {
   const { id } = props;
-
-  const { nodeTypes } = useFlowContext();
 
   const [open, setOpen] = useState(false);
   const [config, setConfig] = useState<DashboardSpecs>();
@@ -75,12 +73,11 @@ export const Dashboard: HvFlowNodeFC<NodeGroup> = (props) => {
     if (!config) return undefined;
 
     return config.items.map<PreviewProps>((node) => {
-      const nodeType = node.type!;
-      const label = nodeType && nodeTypes?.[nodeType].meta?.label;
+      const label = toTitleCase(node.type);
 
-      return { id: node.id, type: nodeType, label, node };
+      return { id: node.id, type: node.type, label, node };
     });
-  }, [config, nodeTypes]);
+  }, [config]);
 
   const handleOpenConfig = () => {
     // Get from local storage
@@ -112,6 +109,8 @@ export const Dashboard: HvFlowNodeFC<NodeGroup> = (props) => {
   return (
     <HvFlowNode
       description="Dashboard"
+      group="dashboard"
+      groupItem="dashboard"
       inputs={nodeInputs}
       classes={{
         footerContainer: classes.footer,
@@ -176,8 +175,3 @@ export const Dashboard: HvFlowNodeFC<NodeGroup> = (props) => {
     </HvFlowNode>
   );
 };
-
-Dashboard.meta = {
-  label: "Dashboard",
-  groupId: "dashboard",
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

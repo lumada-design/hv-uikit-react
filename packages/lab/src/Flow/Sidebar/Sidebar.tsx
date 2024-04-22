@@ -7,13 +7,11 @@ import {
   useDroppable,
 } from "@dnd-kit/core";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
-import { useDebounceCallback } from "usehooks-ts";
 import {
   ExtractNames,
   HvDrawer,
   HvDrawerProps,
   HvInput,
-  HvInputProps,
   HvTypography,
   useLabels,
   useUniqueId,
@@ -21,14 +19,13 @@ import {
 import { Add } from "@hitachivantara/uikit-react-icons";
 
 import { useFlowContext } from "../hooks";
-import { HvFlowNodeGroup } from "../types";
+import { HvFlowNodeGroups } from "../types";
 import { staticClasses, useClasses } from "./Sidebar.styles";
 import { HvFlowSidebarGroup } from "./SidebarGroup";
 import {
   HvFlowDraggableSidebarGroupItem,
   HvFlowSidebarGroupItem,
 } from "./SidebarGroup/SidebarGroupItem";
-import { buildGroups } from "./utils";
 
 export { staticClasses as flowSidebarClasses };
 
@@ -40,6 +37,8 @@ export interface HvFlowSidebarProps
   title?: string;
   /** Sidebar description. */
   description?: string;
+  /** Flatten sidebar items */
+  flatten?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowSidebarClasses;
   /** Labels used on the sidebar. */
@@ -50,8 +49,6 @@ export interface HvFlowSidebarProps
    * More information can be found in the [Dnd Kit documentation](https://docs.dndkit.com/api-documentation/draggable/drag-overlay).
    */
   dragOverlayProps?: DragOverlayProps;
-  /** Props to be applied to the default nodes group. */
-  defaultGroupProps?: HvFlowNodeGroup;
 }
 
 const DEFAULT_LABELS = {
@@ -67,28 +64,18 @@ export const HvFlowSidebar = ({
   description,
   anchor = "right",
   buttonTitle = "Close",
+  flatten = false,
   classes: classesProp,
   labels: labelsProps,
   dragOverlayProps,
-  defaultGroupProps,
   ...others
 }: HvFlowSidebarProps) => {
   const { classes } = useClasses(classesProp);
 
-  const { nodeGroups, nodeTypes, setExpandedNodeGroups } = useFlowContext();
+  const { nodeGroups, setExpandedNodeGroups } = useFlowContext();
 
-  const unfilteredGroups = useMemo(
-    () => buildGroups(nodeGroups, nodeTypes, defaultGroupProps),
-    [nodeGroups, nodeTypes, defaultGroupProps],
-  );
-
-  const [groups, setGroups] = useState(unfilteredGroups);
-  const [ndTypes, setNdTypes] = useState(nodeTypes);
-  const [draggingLabel, setDraggingLabel] = useState(undefined);
-
-  useEffect(() => {
-    setGroups(unfilteredGroups);
-  }, [unfilteredGroups]);
+  const [filterValue, setFilterValue] = useState("");
+  const [draggingLabel, setDraggingLabel] = useState<string>();
 
   const labels = useLabels(DEFAULT_LABELS, labelsProps);
 
@@ -116,46 +103,36 @@ export const HvFlowSidebar = ({
     onDragStart: handleDragStart,
   });
 
-  const handleSearch: HvInputProps["onChange"] = (event, value) => {
-    if (nodeGroups) {
-      const gps = value
-        ? Object.entries(unfilteredGroups).reduce((acc, curr) => {
-            // Filter nodes by search
-            const filteredNodes = curr[1].nodes.filter((obj) =>
-              obj.label.toLocaleLowerCase().includes(value.toLocaleLowerCase()),
+  const filteredGroups = useMemo(() => {
+    if (!filterValue || !nodeGroups) return nodeGroups || {};
+
+    return filterValue
+      ? Object.entries(nodeGroups).reduce<HvFlowNodeGroups>(
+          (acc, [groupId, group]) => {
+            // Filter items by search
+            const filteredItems = (group.items || []).filter((item) =>
+              item.label.toLowerCase().includes(filterValue.toLowerCase()),
             );
-            const nodesCount = filteredNodes.length;
+            const itemsCount = Object.keys(filteredItems).length;
 
             // Only show groups with nodes
-            if (nodesCount > 0) {
-              acc[curr[0]] = {
-                ...curr[1],
-                nodes: filteredNodes,
+            if (itemsCount > 0) {
+              acc[groupId] = {
+                ...group,
+                items: filteredItems,
               };
             }
 
             return acc;
-          }, {})
-        : unfilteredGroups;
+          },
+          {},
+        )
+      : nodeGroups;
+  }, [filterValue, nodeGroups]);
 
-      setGroups(gps);
-      setExpandedNodeGroups?.(value ? Object.keys(gps) : []);
-    } else if (nodeTypes) {
-      const filteredNodeTypes = {};
-      for (const [key, node] of Object.entries(nodeTypes)) {
-        if (
-          node.meta?.label
-            .toLocaleLowerCase()
-            .includes(value.toLocaleLowerCase())
-        ) {
-          filteredNodeTypes[key] = node;
-        }
-      }
-      setNdTypes(value ? filteredNodeTypes : nodeTypes);
-    }
-  };
-
-  const handleDebouncedSearch = useDebounceCallback(handleSearch, 500);
+  useEffect(() => {
+    setExpandedNodeGroups?.(filterValue ? Object.keys(filteredGroups) : []);
+  }, [filterValue, filteredGroups, setExpandedNodeGroups]);
 
   return (
     <HvDrawer
@@ -187,43 +164,36 @@ export const HvFlowSidebar = ({
             aria-label={labels?.searchAriaLabel}
             aria-controls={groupsElementId}
             aria-owns={groupsElementId}
-            onChange={handleDebouncedSearch}
+            onChange={(evt, val) => setFilterValue(val.trim())}
             inputProps={{ autoComplete: "off" }}
           />
-          {nodeGroups ? (
-            <ul id={groupsElementId} className={classes.groupsContainer}>
-              {Object.entries(groups).map((obj) => {
-                return (
-                  <HvFlowSidebarGroup
-                    key={obj[0]}
-                    id={obj[0]}
-                    expandButtonProps={{
-                      "aria-label": labels?.expandGroupButtonAriaLabel,
-                    }}
-                    itemProps={{
-                      "aria-roledescription": labels?.itemAriaRoleDescription,
-                    }}
-                    {...obj[1]}
+          <ul id={groupsElementId} className={classes.groupsContainer}>
+            {Object.entries(filteredGroups).map(([groupId, group]) => {
+              if (flatten) {
+                return (group.items || []).map((item, i) => (
+                  <HvFlowDraggableSidebarGroupItem
+                    key={`${item.id}-${i}`}
+                    aria-roledescription={labels?.itemAriaRoleDescription}
+                    {...item}
                   />
-                );
-              })}
-            </ul>
-          ) : (
-            ndTypes &&
-            Object.entries(ndTypes).map((obj) => {
+                ));
+              }
+
               return (
-                <HvFlowDraggableSidebarGroupItem
-                  key={obj[0]}
-                  id={obj[0]}
-                  type={obj[0]}
-                  label={obj[1]?.meta?.label || ""}
-                  data={obj[1]?.meta?.data}
-                  aria-roledescription={labels?.itemAriaRoleDescription}
-                  className={classes.nodeType}
+                <HvFlowSidebarGroup
+                  key={groupId}
+                  id={groupId}
+                  expandButtonProps={{
+                    "aria-label": labels?.expandGroupButtonAriaLabel,
+                  }}
+                  itemProps={{
+                    "aria-roledescription": labels?.itemAriaRoleDescription,
+                  }}
+                  {...group}
                 />
               );
-            })
-          )}
+            })}
+          </ul>
         </div>
       </div>
       <DragOverlay modifiers={[restrictToWindowEdges]} {...dragOverlayProps}>

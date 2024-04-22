@@ -19,11 +19,12 @@ import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 import { flowStyles } from "./base";
 import { staticClasses, useClasses } from "./Flow.styles";
 import { useNodeMetaRegistry } from "./FlowContext/NodeMetaContext";
-import { useFlowContext, useFlowInstance } from "./hooks";
+import { useFlowInstance } from "./hooks";
 import {
   HvFlowNodeInputGroup,
   HvFlowNodeMetaRegistry,
   HvFlowNodeOutputGroup,
+  HvFlowNodeTypes,
 } from "./types";
 
 export { staticClasses as flowClasses };
@@ -36,6 +37,8 @@ export interface HvDroppableFlowProps<
 > extends Omit<ReactFlowProps, "nodes" | "edges" | "nodeTypes"> {
   /** Flow content: background, controls, and minimap. */
   children?: React.ReactNode;
+  /** Flow nodes types. */
+  nodeTypes?: HvFlowNodeTypes<NodeData>;
   /** Flow nodes. */
   nodes?: Node<NodeData, NodeType>[];
   /** Flow edges. */
@@ -91,12 +94,10 @@ const validateEdge = (
   const outputs = nodeMetaRegistry[sourceId]?.outputs || [];
 
   const source = outputs
-    .map((out) => (out as HvFlowNodeOutputGroup).outputs || out)
-    .flat()
+    .flatMap((out) => (out as HvFlowNodeOutputGroup).outputs || out)
     .find((out) => out.id === sourceHandle);
   const target = inputs
-    .map((inp) => (inp as HvFlowNodeInputGroup).inputs || inp)
-    .flat()
+    .flatMap((inp) => (inp as HvFlowNodeInputGroup).inputs || inp)
     .find((inp) => inp.id === targetHandle);
 
   const sourceProvides = source?.provides || "";
@@ -139,6 +140,7 @@ export const HvDroppableFlow = ({
   onNodesChange: onNodesChangeProp,
   onEdgesChange: onEdgesChangeProp,
   defaultEdgeOptions: defaultEdgeOptionsProp,
+  nodeTypes,
   ...others
 }: HvDroppableFlowProps) => {
   const { classes, cx } = useClasses(classesProp);
@@ -146,8 +148,6 @@ export const HvDroppableFlow = ({
   const elementId = useUniqueId(id);
 
   const reactFlowInstance = useFlowInstance();
-
-  const { nodeTypes } = useFlowContext();
 
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);

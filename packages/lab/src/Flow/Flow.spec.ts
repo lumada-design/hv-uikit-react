@@ -218,10 +218,10 @@ test.describe("Connections", () => {
 
     const assetNode = await selectNode("Asset", "My Asset", false);
     await dragToPosition1(assetNode);
-    const lineChartNode = await selectNode("Insight", "LineChart", true);
+    const lineChartNode = await selectNode("Insight", "Line Chart", true);
     await dragToPosition3(lineChartNode);
 
-    await connectNodes("My Asset", "Sensor Group 2", "LineChart", "Data");
+    await connectNodes("My Asset", "Sensor Group 2", "Line Chart", "Data");
     await expect(
       flowCanvasLocator.getByRole("button", { name: "Edge" }),
     ).not.toBeVisible();

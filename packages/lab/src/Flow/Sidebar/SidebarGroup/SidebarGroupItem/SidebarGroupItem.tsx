@@ -24,32 +24,28 @@ export interface HvFlowSidebarGroupItemProps extends HvBaseProps {
 export const HvFlowSidebarGroupItem = forwardRef<
   HTMLDivElement,
   HvFlowSidebarGroupItemProps
->(
-  (
-    {
-      label,
-      isDragging,
-      classes: classesProp,
-      className,
-      ...others
-    }: HvFlowSidebarGroupItemProps,
-    ref,
-  ) => {
-    const { classes, cx } = useClasses(classesProp);
+>((props, ref) => {
+  const {
+    label,
+    isDragging,
+    classes: classesProp,
+    className,
+    ...others
+  } = props;
+  const { classes, cx } = useClasses(classesProp);
 
-    return (
-      <div
-        ref={ref}
-        className={cx(
-          classes.root,
-          { [classes.dragging]: isDragging },
-          className,
-        )}
-        {...others}
-      >
-        <HvTypography>{label}</HvTypography>
-        <Drag />
-      </div>
-    );
-  },
-);
+  return (
+    <div
+      ref={ref}
+      className={cx(
+        classes.root,
+        { [classes.dragging]: isDragging },
+        className,
+      )}
+      {...others}
+    >
+      <HvTypography>{label}</HvTypography>
+      <Drag />
+    </div>
+  );
+});

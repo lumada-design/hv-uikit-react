@@ -4,12 +4,9 @@ import {
   HvFlowNodeFC,
   HvFlowNodeInput,
   HvFlowNodeOutput,
-  HvFlowNodeTypeMeta,
   useFlowInstance,
   useFlowNodeUtils,
 } from "@hitachivantara/uikit-react-lab";
-
-import type { NodeGroup } from ".";
 
 // Inputs and outputs info
 export const types = {
@@ -58,7 +55,7 @@ export interface NodeData {
   outputs?: HvFlowNodeOutput[];
 }
 
-export const Asset: HvFlowNodeFC<NodeGroup, NodeData> = (props) => {
+export const Asset: HvFlowNodeFC<NodeData> = (props) => {
   const { data, id } = props;
 
   const curType = useRef(data.type);
@@ -88,6 +85,8 @@ export const Asset: HvFlowNodeFC<NodeGroup, NodeData> = (props) => {
 
   return (
     <HvFlowNode
+      group="assets"
+      groupItem="asset"
       params={[
         {
           id: "type",
@@ -106,8 +105,3 @@ export const Asset: HvFlowNodeFC<NodeGroup, NodeData> = (props) => {
     />
   );
 };
-
-Asset.meta = {
-  label: "Asset",
-  groupId: "assets",
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

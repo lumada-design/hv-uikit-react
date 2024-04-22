@@ -6,62 +6,58 @@ import { Favorite, Heart } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvFlowBackground } from "./Background";
-import { HvFlowControls, HvFlowControlsProps } from "./Controls";
-import { HvFlow } from "./Flow";
-import { HvFlowMinimap } from "./Minimap";
-import { HvFlowBaseNode } from "./Node";
-import { HvFlowSidebar } from "./Sidebar";
+import { HvFlowNodeGroups } from "./types";
 
-const nodeGroups = {
+const nodeGroups: HvFlowNodeGroups = {
   asset: {
     label: "Assets",
     color: "cat3_80",
     description: "This is my description 1.",
     icon: <Heart />,
+    items: [
+      { nodeType: "boomArm", label: "Boom Arm" },
+      { nodeType: "spaceMountain", label: "Space Mountain" },
+    ],
   },
   digitalTwin: {
     label: "Digital Twin",
     color: "cat2_80",
     description: "This is my description 2.",
     icon: <Favorite />,
+    items: [{ nodeType: "toyStory", label: "Toy Story" }],
   },
 };
+
 const BoomArm = (props) => (
   <HvFlowBaseNode
     title="Asset"
+    subtitle="Boom Arm"
     description="Boom Arm"
+    group="asset"
     color={theme.colors.cat3_40}
     {...props}
   />
 );
-BoomArm.meta = {
-  label: "Boom Arm",
-  groupId: "asset",
-};
 const ToyStory = (props) => (
   <HvFlowBaseNode
     title="Digital Twin"
+    subtitle="Toy Story"
     description="Toy Story"
+    group="digitalTwin"
     color={theme.colors.cat2_40}
     {...props}
   />
 );
-ToyStory.meta = {
-  label: "Toy Story",
-  groupId: "digitalTwin",
-};
 const SpaceMountain = (props) => (
   <HvFlowBaseNode
     title="Asset"
+    subtitle="Space Mountain"
     description="Space Mountain"
+    group="asset"
     color={theme.colors.cat3_40}
     {...props}
   />
 );
-SpaceMountain.meta = {
-  label: "Space Mountain",
-  groupId: "asset",
-};
 const nodeTypes = {
   boomArm: BoomArm,
   toyStory: ToyStory,

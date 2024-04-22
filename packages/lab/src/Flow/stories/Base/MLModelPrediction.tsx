@@ -1,16 +1,12 @@
-import {
-  HvFlowNode,
-  HvFlowNodeFC,
-  HvFlowNodeTypeMeta,
-} from "@hitachivantara/uikit-react-lab";
+import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
-import type { NodeGroup } from ".";
-
-export const MLModelPrediction: HvFlowNodeFC<NodeGroup> = (props) => {
+export const MLModelPrediction: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="Anomaly Prediction description"
       disableInlineEdit
+      group="models"
+      groupItem="prediction"
       inputs={[
         {
           label: "Sensor Data",
@@ -30,8 +26,3 @@ export const MLModelPrediction: HvFlowNodeFC<NodeGroup> = (props) => {
     />
   );
 };
-
-MLModelPrediction.meta = {
-  label: "ML Model Prediction",
-  groupId: "models",
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

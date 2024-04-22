@@ -3,13 +3,12 @@ import {
   HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeProps,
-  HvFlowNodeTypeMeta,
   useFlowInputNodes,
 } from "@hitachivantara/uikit-react-lab";
 
-import { NodeData, NodeGroup } from "../types";
+import { NodeData } from "../types";
 
-export const DonutChart: HvFlowNodeFC<NodeGroup> = (props) => {
+export const DonutChart: HvFlowNodeFC = (props) => {
   const inputNodes = useFlowInputNodes<NodeData>();
 
   const params: HvFlowNodeProps["params"] = useMemo(() => {
@@ -37,8 +36,10 @@ export const DonutChart: HvFlowNodeFC<NodeGroup> = (props) => {
 
   return (
     <HvFlowNode
-      params={params}
       description="Donut Chart"
+      group="visualization"
+      groupItem="donutChart"
+      params={params}
       expanded
       inputs={[
         {
@@ -59,13 +60,3 @@ export const DonutChart: HvFlowNodeFC<NodeGroup> = (props) => {
     />
   );
 };
-
-DonutChart.meta = {
-  label: "Donut Chart",
-  groupId: "visualization",
-  data: {
-    title: "",
-    measure: undefined,
-    groupBy: undefined,
-  },
-} satisfies HvFlowNodeTypeMeta<NodeGroup>;

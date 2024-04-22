@@ -11,7 +11,7 @@ import { ReactFlowProvider } from "reactflow";
 
 import { HvDroppableFlow, HvDroppableFlowProps } from "./DroppableFlow";
 import { HvFlowProvider } from "./FlowContext";
-import { HvFlowNodeAction, HvFlowNodeGroups, HvFlowNodeTypes } from "./types";
+import { HvFlowNodeAction, HvFlowNodeGroups } from "./types";
 
 export interface HvFlowProps<
   NodeGroups extends keyof any = string,
@@ -20,8 +20,6 @@ export interface HvFlowProps<
 > extends HvDroppableFlowProps<NodeType, NodeData> {
   /** Flow nodes groups. */
   nodeGroups?: HvFlowNodeGroups<NodeGroups>;
-  /** Flow nodes types. */
-  nodeTypes?: HvFlowNodeTypes<NodeGroups, NodeData>;
   /** Flow sidebar. */
   sidebar?: React.ReactNode;
   /** Flow default actions. */
@@ -45,7 +43,6 @@ export interface HvFlowProps<
  * DISCLAIMER: This component is a work in progress and there might be breaking changes.
  */
 export const HvFlow = ({
-  nodeTypes,
   nodeGroups,
   sidebar,
   defaultActions,
@@ -61,11 +58,7 @@ export const HvFlow = ({
   // HvFlowContext is our custom internal context.
   return (
     <ReactFlowProvider>
-      <HvFlowProvider
-        nodeGroups={nodeGroups}
-        nodeTypes={nodeTypes}
-        defaultActions={defaultActions}
-      >
+      <HvFlowProvider nodeGroups={nodeGroups} defaultActions={defaultActions}>
         <DndContext
           sensors={sensors}
           modifiers={[restrictToWindowEdges]}
