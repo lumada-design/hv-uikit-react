@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import { StoryObj } from "@storybook/react";
 import {
   HvCard,
   HvCardContent,
@@ -17,8 +18,8 @@ export default {
   title: "Guides/Layout",
 };
 
-export const Container = () => {
-  return (
+export const Container: StoryObj = {
+  render: () => (
     <HvContainer maxWidth="lg">
       <HvGlobalActions title="Details" />
       <HvContainer maxWidth="md">
@@ -36,40 +37,42 @@ export const Container = () => {
         </HvTypography>
       </HvContainer>
     </HvContainer>
-  );
+  ),
 };
 
-export const SimpleGrid = () => {
-  const { activeTheme } = useTheme();
+export const SimpleGrid: StoryObj = {
+  render: () => {
+    const { activeTheme } = useTheme();
 
-  return (
-    <HvSimpleGrid
-      cols={3}
-      breakpoints={[
-        {
-          maxWidth: activeTheme?.breakpoints.values.sm,
-          cols: 2,
-        },
-      ]}
-    >
-      {Array.from({ length: 9 }).map((v, i) => {
-        return (
-          <HvCard key={i} bgcolor="atmo1">
-            <HvCardHeader title={`Card ${i}`} />
-            <HvCardContent>
-              <HvTypography>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </HvTypography>
-            </HvCardContent>
-          </HvCard>
-        );
-      })}
-    </HvSimpleGrid>
-  );
+    return (
+      <HvSimpleGrid
+        cols={3}
+        breakpoints={[
+          {
+            maxWidth: activeTheme?.breakpoints.values.sm,
+            cols: 2,
+          },
+        ]}
+      >
+        {Array.from({ length: 9 }).map((v, i) => {
+          return (
+            <HvCard key={i} bgcolor="atmo1">
+              <HvCardHeader title={`Card ${i}`} />
+              <HvCardContent>
+                <HvTypography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </HvTypography>
+              </HvCardContent>
+            </HvCard>
+          );
+        })}
+      </HvSimpleGrid>
+    );
+  },
 };
 
-export const Grid = () => {
-  return (
+export const Grid: StoryObj = {
+  render: () => (
     <HvGrid columns="auto" container>
       <HvGrid item xs={4} sm={8} md={12}>
         <HvGlobalActions title="Dashboard" />
@@ -129,5 +132,5 @@ export const Grid = () => {
         </HvCard>
       </HvGrid>
     </HvGrid>
-  );
+  ),
 };

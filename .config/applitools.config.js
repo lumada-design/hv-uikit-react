@@ -19,4 +19,7 @@ module.exports = {
   ],
 
   testConcurrency: 20,
+
+  // Disable all stories globally (stories are to be enabled individually at the component or story level)
+  include: () => false,
 };
