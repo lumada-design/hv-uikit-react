@@ -15,18 +15,10 @@ export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
   semantic: {
     backgroundColor: theme.colors.containerBackgroundHover,
     "& $selectAll div": {
-      color: "inherit",
-
       "&:hover:not(:disabled)": {
         backgroundColor: theme.alpha("base_light", 0.3),
       },
-
-      "& *": {
-        color: "inherit",
-        backgroundColor: "transparent",
-      },
     },
-
     "& $selectAll:focus-within div": {
       backgroundColor: theme.alpha("base_light", 0.3),
     },
