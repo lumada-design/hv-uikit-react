@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.34.0 (2024-04-23)
+
+### Features
+
+- **Node:** add inline edit ([#4144](https://github.com/lumada-design/hv-uikit-react/issues/4144)) ([c54b181](https://github.com/lumada-design/hv-uikit-react/commit/c54b18181408cef687648270de2c81d8edb8920e))
+- **Wizard:** allow run custom validations on Wizard before going to previous page. DIG-1468 ([36e118b](https://github.com/lumada-design/hv-uikit-react/commit/36e118bd5c713187b761baef2e80198ad7f64fb7))
+
 ## [5.33.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.33.4...@hitachivantara/uikit-react-lab@5.33.5) (2024-04-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
