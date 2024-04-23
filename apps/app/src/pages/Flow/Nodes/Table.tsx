@@ -26,8 +26,7 @@ export const Table: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="Table"
-      group="visualization"
-      groupItem="table"
+      groupId="visualization"
       params={params}
       expanded
       inputs={[

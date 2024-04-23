@@ -37,8 +37,7 @@ export const DonutChart: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="Donut Chart"
-      group="visualization"
-      groupItem="donutChart"
+      groupId="visualization"
       params={params}
       expanded
       inputs={[

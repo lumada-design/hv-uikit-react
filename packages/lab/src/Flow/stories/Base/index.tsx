@@ -79,53 +79,51 @@ export const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available assets.",
     icon: <Cluster />,
-    items: {
-      asset: {
-        type: "asset",
-        label: "Asset",
-        data: {
-          asset: "option1",
-        },
+    items: [
+      {
+        nodeType: "asset",
+        label: "My Asset",
+        data: { asset: "option1" },
       },
-    },
+    ],
   },
   models: {
     label: "ML Model",
     color: "cat1_80",
     description: "Find here all the available ML models.",
     icon: <MachineLearning />,
-    items: {
-      prediction: {
-        type: "model",
+    items: [
+      {
+        nodeType: "model",
         label: "ML Model Prediction",
         data: { type: "prediction" },
       },
-      detection: {
-        type: "model",
+      {
+        nodeType: "model",
         label: "ML Model Detection",
         data: { type: "detection" },
       },
-    },
+    ],
   },
   insights: {
     label: "Insight",
     color: "cat6_80",
     description: "Find here all the available insights.",
     icon: <LineChartAlt />,
-    items: {
-      kpi: { type: "kpi", label: "KPI" },
-      lineChart: { type: "lineChart", label: "Line Chart" },
-      table: { type: "table", label: "Table" },
-    },
+    items: [
+      { nodeType: "kpi", label: "KPI" },
+      { nodeType: "lineChart", label: "Line Chart" },
+      { nodeType: "table", label: "Table" },
+    ],
   },
   dashboards: {
     label: "Dashboard",
     color: "cat2_80",
     description: "Find here all the available dashboards.",
     icon: <Cards />,
-    items: {
-      dashboard: {
-        type: "dashboard",
+    items: [
+      {
+        nodeType: "dashboard",
         label: "Dashboard",
         data: {
           config: {
@@ -134,7 +132,7 @@ export const nodeGroups = {
           },
         },
       },
-    },
+    ],
   },
 } satisfies HvFlowProps["nodeGroups"];
 

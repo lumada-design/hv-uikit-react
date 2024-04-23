@@ -6,8 +6,7 @@ export const Precipitation: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="Precipitation data"
-      group="sources"
-      groupItem="precipitation"
+      groupId="sources"
       expanded
       params={[
         {

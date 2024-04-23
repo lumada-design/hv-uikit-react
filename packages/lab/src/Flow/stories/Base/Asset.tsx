@@ -78,8 +78,7 @@ export const Asset: HvFlowNodeFC<AssetData> = (props) => {
         </HvDialogActions>
       </HvDialog>
       <HvFlowNode
-        group="assets"
-        groupItem="asset"
+        groupId="assets"
         description="Asset description"
         expanded
         maxVisibleActions={1}

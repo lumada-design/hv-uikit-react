@@ -4,8 +4,7 @@ export const LineChart: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="LineChart description"
-      group="insights"
-      groupItem="lineChart"
+      groupId="insights"
       inputs={[
         {
           label: "Data",

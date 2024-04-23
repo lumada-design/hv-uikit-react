@@ -40,29 +40,32 @@ export const classes = {
 
 export const nodeGroups = {
   assets: {
-    label: "Asset",
-    items: {
-      asset: { type: "asset", label: "Asset" },
-    },
+    label: "My Asset",
+    items: [{ nodeType: "asset", label: "My Asset" }],
   },
   models: {
     label: "Models",
-    items: {
-      prediction: {
-        type: "model",
+    items: [
+      {
+        nodeType: "model",
         label: "Model Prediction",
         data: { type: "prediction" },
       },
-      detection: {
-        type: "model",
+      {
+        nodeType: "model",
         label: "Model Detection",
         data: { type: "detection" },
       },
-    },
+    ],
   },
   insights: {
     label: "Insights",
-    items: { lineChart: { type: "lineChart", label: "Line Chart" } },
+    items: [
+      {
+        nodeType: "lineChart",
+        label: "Line Chart",
+      },
+    ],
   },
 } satisfies HvFlowProps["nodeGroups"];
 

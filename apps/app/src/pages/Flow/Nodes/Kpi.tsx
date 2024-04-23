@@ -43,8 +43,7 @@ export const Kpi: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="KPI"
-      group="visualization"
-      groupItem="kpi"
+      groupId="visualization"
       params={params}
       expanded
       inputs={[

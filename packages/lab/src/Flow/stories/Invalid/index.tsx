@@ -1,4 +1,4 @@
-import { ErrorBoundary } from "react-error-boundary";
+import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 import { css } from "@emotion/css";
 import {
   HvEmptyState,
@@ -49,7 +49,7 @@ export const classes = {
   }),
 };
 
-const fallbackRender = ({ error }) => {
+const FallbackState = ({ error }: FallbackProps) => {
   return (
     <HvEmptyState
       title="There was an error loading the flow"
@@ -81,7 +81,7 @@ export const Invalid = () => {
         title="New Flow"
       />
       <div className={classes.flow}>
-        <ErrorBoundary fallbackRender={fallbackRender}>
+        <ErrorBoundary fallbackRender={FallbackState}>
           <HvFlow
             // @ts-expect-error expected error due to the invalid state we're passing
             nodes={invalidState.nodes}

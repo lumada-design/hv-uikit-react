@@ -48,43 +48,35 @@ const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available inputs.",
     icon: <DataSource />,
-    items: {
-      json: {
-        type: "jsonInput",
+    items: [
+      {
+        nodeType: "jsonInput",
         label: "JSON Input",
-        data: {
-          jsonData: data,
-        },
+        data: { jsonData: data },
       },
-    },
+    ],
   },
   transformations: {
     label: "Transformation",
     color: "cat5_80",
     description: "Find here all the available transformations.",
     icon: <Operation />,
-    items: {
-      filter: {
-        type: "filter",
+    items: [
+      {
+        nodeType: "filter",
         label: "Filter",
       },
-    },
+    ],
   },
   visualizations: {
     label: "Visualization",
     color: "cat1_80",
     description: "Find here all the available visualizations.",
     icon: <LineChartAlt />,
-    items: {
-      lineChart: {
-        type: "lineChart",
-        label: "Line Chart",
-      },
-      barChart: {
-        type: "barChart",
-        label: "Bar Chart",
-      },
-    },
+    items: [
+      { nodeType: "lineChart", label: "Line Chart" },
+      { nodeType: "barChart", label: "Bar Chart" },
+    ],
   },
 } satisfies HvFlowProps["nodeGroups"];
 
@@ -101,19 +93,20 @@ const nodes = [
     },
     data: {
       jsonData: data,
+      nodeLabel: "JSON Input",
     },
   },
   {
     id: "lineChart",
     type: "lineChart",
     position: { x: 380, y: 20 },
-    data: {},
+    data: { nodeLabel: "Line Chart" },
   },
   {
     id: "barChart",
     type: "barChart",
     position: { x: 980, y: 20 },
-    data: {},
+    data: { nodeLabel: "Bar Chart" },
   },
   {
     id: "filter",
@@ -121,13 +114,14 @@ const nodes = [
     position: { x: 630, y: 600 },
     data: {
       jsonData: [],
+      nodeLabel: "Filter",
     },
   },
   {
     id: "barChartFiltered",
     type: "barChart",
     position: { x: 980, y: 600 },
-    data: {},
+    data: { nodeLabel: "Bar Chart" },
   },
 ] satisfies HvFlowProps<NodeGroup, NodeType>["nodes"];
 

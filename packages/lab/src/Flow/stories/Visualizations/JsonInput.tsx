@@ -5,7 +5,6 @@ export const JsonInput: HvFlowNodeFC = (props) => {
     <HvFlowNode
       description="Population Datakky7"
       groupId="inputs"
-      groupItem="json"
       outputs={[
         {
           label: "Json Data",

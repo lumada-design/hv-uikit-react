@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import {
   HvButton,
   HvGlobalActions,
@@ -17,14 +17,14 @@ import {
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
-import { baseNodeTypes, edges, nodeGroups, nodes } from "./config";
+import { edges, nodes, nodeTypes, useNodeGroups } from "./config";
 import {
   DASHBOARDS_STORAGE_KEY,
   DashboardSpecs,
   DashboardsStorage,
   LAYOUT_COLS,
 } from "./types";
-import { buildLayout, createDataset, useDatasets } from "./utils";
+import { buildLayout } from "./utils";
 
 /** Initial Layout */
 const layout = [
@@ -40,7 +40,7 @@ type Node = NonNullable<ReturnType<HvFlowInstance["getNode"]>>;
 type Edge = NonNullable<ReturnType<HvFlowInstance["getEdge"]>>;
 
 const Content = () => {
-  const { data } = useDatasets();
+  const nodeGroups = useNodeGroups();
 
   const [reactFlowInstance, setReactFlowInstance] = useState<HvFlowInstance>();
   const [open, setOpen] = useState(false);
@@ -99,32 +99,6 @@ const Content = () => {
       localStorage.removeItem(DASHBOARDS_STORAGE_KEY);
     };
   }, []);
-
-  const nodeTypes = useMemo(() => {
-    const nt: HvFlowProps["nodeTypes"] = { ...baseNodeTypes };
-
-    if (data) {
-      for (let i = 0; i < data.length; i++) {
-        const key = `dataset${data[i].id}`;
-
-        const Dataset = createDataset({
-          label: data[i].label,
-          description: data[i].label,
-          data: {
-            endpoint: data[i].url,
-            columns: data[i].columns.map((column) => ({
-              id: column,
-              label: column,
-            })),
-          },
-        });
-
-        nt[key] = Dataset;
-      }
-    }
-
-    return nt;
-  }, [data]);
 
   const handleEdgesChange: HvFlowProps["onEdgesChange"] = (changes) => {
     if (changes[0].type === "remove") {

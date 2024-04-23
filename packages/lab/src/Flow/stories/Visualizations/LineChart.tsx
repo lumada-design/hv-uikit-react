@@ -15,8 +15,7 @@ export const LineChart: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="Line Chart description"
-      group="visualizations"
-      groupItem="lineChart"
+      groupId="visualizations"
       expanded
       classes={{ root: css({ width: 500 }) }}
       inputs={[

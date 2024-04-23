@@ -75,14 +75,14 @@ const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available assets.",
     icon: <Heart />,
-    items: [{ type: "asset", label: "Asset" }],
+    items: [{ nodeType: "asset", label: "Asset" }],
   },
   models: {
     label: "ML Model",
     color: "cat1_80",
     description: "Find here all the available models.",
     icon: <Favorite />,
-    items: [{ type: "model", label: "ML Model Prediction" }],
+    items: [{ nodeType: "model", label: "ML Model Prediction" }],
   },
 };
 ```
@@ -334,8 +334,7 @@ const handleAction = (event: React.SyntheticEvent, action: HvActionGeneric) => {
 };
 
 <HvFlowNode
-  group="assets"
-  groupItem="asset"
+  groupId="assets"
   description="Asset description"
   maxVisibleActions={1}
   actions={[
@@ -507,8 +506,7 @@ export const Asset: HvFlowNodeFC = (props) => {
       </HvDialog>
       <HvFlowNode
         expanded
-        group="assets"
-        groupItem="asset"
+        groupId="assets"
         description="Asset description"
         maxVisibleActions={1}
         actions={[

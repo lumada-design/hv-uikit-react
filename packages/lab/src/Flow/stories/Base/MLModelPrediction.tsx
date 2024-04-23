@@ -5,8 +5,7 @@ export const MLModelPrediction: HvFlowNodeFC = (props) => {
     <HvFlowNode
       description="Anomaly Prediction description"
       disableInlineEdit
-      group="models"
-      groupItem="prediction"
+      groupId="models"
       inputs={[
         {
           label: "Sensor Data",

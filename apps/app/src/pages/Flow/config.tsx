@@ -1,97 +1,116 @@
+import { useMemo } from "react";
 import {
   Cards,
   LineChartAlt,
   Storage,
 } from "@hitachivantara/uikit-react-icons";
-import { HvFlowProps } from "@hitachivantara/uikit-react-lab";
+import { HvFlowNodeGroups, HvFlowProps } from "@hitachivantara/uikit-react-lab";
 
-import {
-  BarChart,
-  Dashboard,
-  DonutChart,
-  Kpi,
-  LineChart,
-  Table,
-} from "./Nodes";
+import { BarChart } from "./Nodes/BarChart";
+import { Dashboard } from "./Nodes/Dashboard";
+import { Dataset } from "./Nodes/Dataset";
+import { DonutChart } from "./Nodes/DonutChart";
+import { Kpi } from "./Nodes/Kpi";
+import { LineChart } from "./Nodes/LineChart";
+import { Table } from "./Nodes/Table";
 import { NodeGroup } from "./types";
+import { useDatasets } from "./utils";
 
 /** Node groups */
-export const nodeGroups = {
-  dataset: {
-    label: "Dataset",
-    color: "cat3_80",
-    description: "Find here all the available datasets.",
-    icon: <Storage />,
-    items: [{ nodeType: "datasetsteelwheels", label: "Steelwheels" }],
-  },
-  visualization: {
-    label: "Visualization",
-    color: "cat1_80",
-    description: "Find here all the available visualizations.",
-    icon: <LineChartAlt />,
-    items: [
-      {
-        nodeType: "lineChart",
-        label: "Line Chart",
-        data: {
-          title: "",
-          measure: undefined,
-          groupBy: undefined,
-          splitBy: undefined,
-        },
+export const useNodeGroups = () => {
+  const { data: datasets } = useDatasets();
+
+  return useMemo<HvFlowNodeGroups>(
+    () => ({
+      dataset: {
+        label: "Dataset",
+        color: "cat3_80",
+        description: "Find here all the available datasets.",
+        icon: <Storage />,
+        items: datasets.map((ds) => ({
+          nodeType: "dataset",
+          label: ds.label,
+          data: {
+            endpoint: ds.url,
+            columns: ds.columns.map((column) => ({
+              id: column,
+              label: column,
+            })),
+          },
+        })),
       },
-      {
-        nodeType: "barChart",
-        label: "Bar Chart",
-        data: {
-          title: "",
-          measure: undefined,
-          groupBy: undefined,
-          splitBy: undefined,
-        },
+      visualization: {
+        label: "Visualization",
+        color: "cat1_80",
+        description: "Find here all the available visualizations.",
+        icon: <LineChartAlt />,
+        items: [
+          {
+            nodeType: "lineChart",
+            label: "Line Chart",
+            data: {
+              title: "",
+              measure: undefined,
+              groupBy: undefined,
+              splitBy: undefined,
+            },
+          },
+          {
+            nodeType: "barChart",
+            label: "Bar Chart",
+            data: {
+              title: "",
+              measure: undefined,
+              groupBy: undefined,
+              splitBy: undefined,
+            },
+          },
+          {
+            nodeType: "donutChart",
+            label: "Donut Chart",
+            data: {
+              title: "",
+              measure: undefined,
+              groupBy: undefined,
+            },
+          },
+          {
+            nodeType: "kpi",
+            label: "KPI",
+            data: {
+              title: "",
+              unit: "",
+              measure: undefined,
+              aggregation: undefined,
+            },
+          },
+          {
+            nodeType: "table",
+            label: "Table",
+            data: {
+              title: "",
+              columns: undefined,
+              measure: "EMEA",
+            },
+          },
+        ],
       },
-      {
-        nodeType: "donutChart",
-        label: "Donut Chart",
-        data: {
-          title: "",
-          measure: undefined,
-          groupBy: undefined,
-        },
+      dashboard: {
+        label: "Dashboard",
+        color: "cat2_80",
+        description: "Find here all the available dashboards.",
+        icon: <Cards />,
+        items: [{ nodeType: "dashboard", label: "Dashboard" }],
       },
-      {
-        nodeType: "kpi",
-        label: "KPI",
-        data: {
-          title: "",
-          unit: "",
-          measure: undefined,
-          aggregation: undefined,
-        },
-      },
-      {
-        nodeType: "table",
-        label: "Table",
-        data: {
-          title: "",
-          columns: undefined,
-          measure: "EMEA",
-        },
-      },
-    ],
-  },
-  dashboard: {
-    label: "Dashboard",
-    color: "cat2_80",
-    description: "Find here all the available dashboards.",
-    icon: <Cards />,
-    items: [{ nodeType: "dashboard", label: "Dashboard" }],
-  },
-} satisfies HvFlowProps["nodeGroups"];
+    }),
+    [datasets],
+  );
+};
 
 /** Node types */
-export const baseNodeTypes = {
+export const nodeTypes = {
   dashboard: Dashboard,
+  dataset: Dataset,
   lineChart: LineChart,
   barChart: BarChart,
   kpi: Kpi,
@@ -99,7 +118,7 @@ export const baseNodeTypes = {
   table: Table,
 } satisfies HvFlowProps["nodeTypes"];
 
-export type NodeType = keyof typeof baseNodeTypes;
+export type NodeType = keyof typeof nodeTypes;
 
 /** Initial Flow */
 export const nodes = [
@@ -107,6 +126,7 @@ export const nodes = [
     id: "6",
     position: { x: -183, y: 191 },
     data: {
+      nodeLabel: "KPI",
       title: "Number of customers",
       unit: "",
       measure: "Customer",
@@ -118,6 +138,7 @@ export const nodes = [
     id: "4",
     position: { x: 144, y: -446 },
     data: {
+      nodeLabel: "KPI",
       title: "Number of products",
       unit: "",
       measure: "Product",
@@ -128,14 +149,17 @@ export const nodes = [
   {
     id: "e5ffe4f454c",
     position: { x: 727, y: 210 },
-    data: {},
+    data: {
+      nodeLabel: "Dashboard",
+    },
     type: "dashboard",
   },
   {
     id: "5ffe4f454c9",
     position: { x: -702, y: 173 },
     data: {
-      endpoint: "steelwheels",
+      nodeLabel: "Steelwheels 1",
+      endpoint: "steelwheels1",
       columns: [
         { id: "Territory", label: "Territory" },
         { id: "Country", label: "Country" },
@@ -154,12 +178,13 @@ export const nodes = [
         { id: "Sales", label: "Sales" },
       ],
     },
-    type: "datasetsteelwheels" as any,
+    type: "dataset",
   },
   {
     id: "ffe4f454c94",
     position: { x: -183, y: -448 },
     data: {
+      nodeLabel: "KPI",
       title: "Total of sales",
       unit: "$",
       measure: "Sales",
@@ -171,6 +196,7 @@ export const nodes = [
     id: "fe4f454c946",
     position: { x: -183, y: 786 },
     data: {
+      nodeLabel: "Bar Chart",
       title: "Sales per territory over the years",
       measure: ["Quantity"],
       groupBy: ["Territory"],
@@ -182,6 +208,7 @@ export const nodes = [
     id: "e4f454c9469",
     position: { x: 182, y: 191 },
     data: {
+      nodeLabel: "Line Chart",
       title: "Sales per country over the years",
       measure: ["Sales"],
       groupBy: ["Country"],
@@ -193,6 +220,7 @@ export const nodes = [
     id: "7",
     position: { x: 182, y: 786 },
     data: {
+      nodeLabel: "Table",
       title: "Sales per territory",
       measure: "EMEA",
     },
