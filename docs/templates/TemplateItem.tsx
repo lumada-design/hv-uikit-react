@@ -8,7 +8,7 @@ import {
 
 const getSourceUrl = (id: string) => {
   const key = id.replace(" ", "");
-  return `https://github.com/lumada-design/hv-uikit-react/tree/master/templates/${key}`;
+  return `https://github.com/lumada-design/hv-uikit-react/tree/master/packages/cli/src/templates/${key}`;
 };
 
 const TemplateItem = ({ storyId, image, href }) => {
