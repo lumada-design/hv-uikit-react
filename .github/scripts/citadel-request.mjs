@@ -72,7 +72,7 @@ const config = {
 };
 
 async function main() {
-  console.log("Sending the json request", config);
+  console.log("Sending the JSON scan request", config);
 
   try {
     const resp = await fetch(
@@ -88,7 +88,8 @@ async function main() {
       console.log("✅ SUCCESS");
       process.exit(0);
     } else {
-      console.error("❌ FAILED", resp.statusText);
+      console.error("❌ FAILED", resp.status, resp.statusText);
+      console.error(await resp.text());
       process.exit(1);
     }
   } catch (err) {
