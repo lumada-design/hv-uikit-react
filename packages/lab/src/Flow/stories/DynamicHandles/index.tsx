@@ -43,12 +43,7 @@ export const nodeGroups = {
     color: "cat3_80",
     description: "Find here all the available assets.",
     icon: <DataSource />,
-    items: {
-      asset: {
-        type: "asset",
-        label: "Asset",
-      },
-    },
+    items: [{ nodeType: "asset", label: "Asset" }],
   },
 } satisfies HvFlowProps["nodeGroups"];
 
@@ -66,6 +61,7 @@ const nodes: HvFlowProps["nodes"] = [
     position: { x: 539, y: 146 },
     data: {
       type: "type1",
+      nodeLabel: "Asset",
       inputs: [
         {
           label: "Data",
@@ -83,6 +79,7 @@ const nodes: HvFlowProps["nodes"] = [
     position: { x: 117, y: 147 },
     data: {
       type: "type2",
+      nodeLabel: "Asset",
       outputs: [{ label: "Data 3", provides: "data3" }],
       inputs: [],
     },

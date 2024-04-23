@@ -17,7 +17,6 @@ import {
   HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeProps,
-  HvFlowNodeTypeMeta,
   useFlowInstance,
   useFlowNodeInputEdges,
 } from "@hitachivantara/uikit-react-lab";
@@ -180,8 +179,7 @@ export const Dashboard: HvFlowNodeFC<DashboardData> = (props) => {
   return (
     <HvFlowNode
       description="Dashboard description"
-      group="dashboards"
-      groupItem="dashboard"
+      groupId="dashboards"
       inputs={inputs}
       footer={
         <HvButton

@@ -38,14 +38,14 @@ const initialState = {
       id: "1caf2381eaf",
       position: { x: 194, y: -160 },
       data: { asset: "option1", nodeLabel: "Custom Label" },
-      type: "Asset",
+      type: "asset",
     },
     {
       width: 250,
       height: 274,
       id: "caf2381eaf3",
       position: { x: 637, y: -367 },
-      data: { type: "prediction" },
+      data: { type: "prediction", nodeLabel: "ML Model Prediction" },
       type: "model",
     },
     {
@@ -53,7 +53,7 @@ const initialState = {
       height: 274,
       id: "af2381eaf37",
       position: { x: 643, y: 314 },
-      data: { type: "detection" },
+      data: { type: "detection", nodeLabel: "ML Model Detection" },
       type: "model",
     },
     {
@@ -61,7 +61,7 @@ const initialState = {
       height: 274,
       id: "f2381eaf379",
       position: { x: 1146, y: -444 },
-      data: {},
+      data: { nodeLabel: "KPI" },
       type: "kpi",
     },
     {
@@ -69,7 +69,7 @@ const initialState = {
       height: 274,
       id: "2381eaf3791",
       position: { x: 1144, y: -133 },
-      data: {},
+      data: { nodeLabel: "KPI" },
       type: "kpi",
     },
     {
@@ -77,7 +77,7 @@ const initialState = {
       height: 274,
       id: "381eaf37916",
       position: { x: 1142, y: 246 },
-      data: {},
+      data: { nodeLabel: "LineChart" },
       type: "lineChart",
     },
     {
@@ -85,7 +85,7 @@ const initialState = {
       height: 274,
       id: "81eaf379163",
       position: { x: 1146, y: 552 },
-      data: {},
+      data: { nodeLabel: "Table" },
       type: "table",
     },
     {
@@ -94,6 +94,7 @@ const initialState = {
       id: "1eaf3791634",
       position: { x: 1716, y: -129 },
       data: {
+        nodeLabel: "Dashboard",
         config: {
           items: [
             {

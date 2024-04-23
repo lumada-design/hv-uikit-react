@@ -11,6 +11,7 @@ import { Add, Backwards, DataSource } from "@hitachivantara/uikit-react-icons";
 import {
   HvFlow,
   HvFlowControls,
+  HvFlowGroupItem,
   HvFlowNode,
   HvFlowNodeFC,
   HvFlowNodeProps,
@@ -20,14 +21,10 @@ import {
 
 import { restrictToSample } from "../Base";
 
-interface NodeData {
-  groupItem?: string;
-}
-
 /** Create a generic node programmatically */
 const createNode = (nodeProps: Partial<HvFlowNodeProps>) => {
-  const Asset: HvFlowNodeFC<NodeData> = (props) => (
-    <HvFlowNode groupItem={props?.data?.groupItem} {...nodeProps} {...props} />
+  const Asset: HvFlowNodeFC = (props) => (
+    <HvFlowNode {...nodeProps} {...props} />
   );
   return Asset;
 };
@@ -47,7 +44,6 @@ const classes = {
   }),
 };
 
-const numberOfAssets = 40;
 const options = [
   { id: "way-side", label: "Way Side" },
   { id: "track", label: "Track" },
@@ -62,7 +58,7 @@ const nodeTypes = {
     params: [
       { id: "asset", label: "Select the asset", type: "select", options },
     ],
-    group: "assets",
+    groupId: "assets",
   }),
 } satisfies HvFlowProps["nodeTypes"];
 
@@ -73,16 +69,11 @@ const nodeGroups = {
     description:
       "Find here all the available assets. Scroll to see all the options.",
     icon: <DataSource />,
-    items: Object.fromEntries(
-      Array.from({ length: numberOfAssets }).map((_, index) => [
-        `asset${index + 1}`,
-        {
-          type: "asset",
-          label: `Asset ${index + 1}`,
-          data: { groupItem: `asset${index + 1}` },
-        },
-      ]),
-    ),
+    items: [...Array(40).keys()].map<HvFlowGroupItem>((index) => ({
+      nodeType: "asset",
+      label: `Asset ${index + 1}`,
+      data: { groupItem: `asset${index + 1}`, nodeLabel: `Asset ${index + 1}` },
+    })),
   },
 } satisfies HvFlowProps["nodeGroups"];
 

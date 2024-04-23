@@ -4,8 +4,7 @@ export const Table: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="Table description"
-      group="insights"
-      groupItem="table"
+      groupId="insights"
       inputs={[
         {
           label: "Data",

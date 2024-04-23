@@ -1,68 +1,43 @@
-import { useCallback } from "react";
 import { loadArrow } from "arquero";
 import useSWR from "swr";
-import { HvFlowNode, HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 import { DashboardSpecs, LAYOUT_COLS } from "./types";
 
 export const datasets = [
   {
-    id: "steelwheels",
+    id: "steelwheels1",
     url: "https://lumada-design.github.io/assets/steelwheels.arrow",
-    label: "Steelwheels",
+    label: "Steelwheels 1",
+  },
+  {
+    id: "steelwheels2",
+    url: "https://lumada-design.github.io/assets/steelwheels.arrow",
+    label: "Steelwheels 2",
   },
 ];
 
-export const useDatasets = () => {
-  const fetcher = useCallback(async () => {
-    const promises = datasets.map(async (dataset) => {
-      // @ts-ignore
-      return loadArrow(dataset.url);
-    });
+const fetchDatasets = async () => {
+  const promises = datasets.map(async (dataset) => {
+    // @ts-ignore
+    return loadArrow(dataset.url);
+  });
 
-    const tables = await Promise.all(promises);
+  const tables = await Promise.all(promises);
 
-    return tables.map((table, idx) => {
-      const { id, label, url } = datasets[idx];
+  return tables.map((table, idx) => {
+    const { id, label, url } = datasets[idx];
 
-      return {
-        id,
-        url,
-        label,
-        columns: table.columnNames(),
-      };
-    });
-  }, []);
-
-  const { data } = useSWR("/datasets", fetcher, { suspense: true });
-
-  return {
-    data,
-  };
+    return {
+      id,
+      url,
+      label,
+      columns: table.columnNames(),
+    };
+  });
 };
 
-export const createDataset = ({
-  label,
-  description,
-}: {
-  label: string;
-  description: string;
-  data: any;
-}) => {
-  const Dataset: HvFlowNodeFC = (props) => {
-    return (
-      <HvFlowNode
-        title="Dataset"
-        subtitle={label}
-        group="dataset"
-        outputs={[{ label: "Dataset", isMandatory: true, provides: "dataset" }]}
-        description={description}
-        {...props}
-      />
-    );
-  };
-
-  return Dataset;
+export const useDatasets = () => {
+  return useSWR("/datasets", fetchDatasets, { suspense: true });
 };
 
 export const buildLayout = (

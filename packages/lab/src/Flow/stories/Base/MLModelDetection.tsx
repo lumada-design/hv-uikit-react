@@ -4,8 +4,7 @@ export const MLModelDetection: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="Anomaly Detection description"
-      group="models"
-      groupItem="detection"
+      groupId="models"
       inputs={[
         {
           label: "Sensor Data",

@@ -4,8 +4,7 @@ export const KPI: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="KPI description"
-      group="insights"
-      groupItem="kpi"
+      groupId="insights"
       inputs={[
         {
           label: "Data",

@@ -194,7 +194,10 @@ export const HvDroppableFlow = ({
       });
 
       // Node data
-      const data = hvFlow?.data || {};
+      const data = {
+        nodeLabel: hvFlow?.label,
+        ...hvFlow?.data,
+      };
 
       // Node to add
       const newNode: Node = {

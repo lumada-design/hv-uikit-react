@@ -80,13 +80,11 @@ export const HvFlowSidebar = ({
   const labels = useLabels(DEFAULT_LABELS, labelsProps);
 
   const drawerElementId = useUniqueId(id);
-  const groupsElementId = useUniqueId(id);
+  const groupsElementId = useUniqueId();
 
   // The sidebar is droppable to distinguish between the canvas and the sidebar
   // Otherwise items dropped inside the sidebar will be added to the canvas
-  const { setNodeRef } = useDroppable({
-    id: drawerElementId,
-  });
+  const { setNodeRef } = useDroppable({ id: drawerElementId });
 
   const handleDragStart: DndContextProps["onDragStart"] = (event) => {
     if (event.active.data.current?.hvFlow) {
@@ -172,7 +170,7 @@ export const HvFlowSidebar = ({
               if (flatten) {
                 return (group.items || []).map((item, i) => (
                   <HvFlowDraggableSidebarGroupItem
-                    key={`${item.id}-${i}`}
+                    key={`${item.nodeType}-${i}`}
                     aria-roledescription={labels?.itemAriaRoleDescription}
                     {...item}
                   />

@@ -25,7 +25,6 @@ import {
   DashboardsStorage,
   NodeData,
 } from "../types";
-
 import { toTitleCase } from "../utils";
 
 type PreviewProps = {
@@ -109,8 +108,7 @@ export const Dashboard: HvFlowNodeFC<NodeData> = (props) => {
   return (
     <HvFlowNode
       description="Dashboard"
-      group="dashboard"
-      groupItem="dashboard"
+      groupId="dashboard"
       inputs={nodeInputs}
       classes={{
         footerContainer: classes.footer,

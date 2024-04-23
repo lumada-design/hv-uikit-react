@@ -20,9 +20,9 @@ export type HvFlowNodeTypes<NodeData = any> = Record<
 
 export interface HvFlowGroupItem<NodeData = any>
   extends Pick<HvFlowNodeProps, "params" | "subtitle"> {
-  id?: string;
   /** The node identifier registered in `nodeTypes` */
   nodeType: string;
+  label: string;
   data?: NodeData;
 }
 

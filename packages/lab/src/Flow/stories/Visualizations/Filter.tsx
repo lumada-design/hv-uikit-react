@@ -32,7 +32,8 @@ export const Filter: HvFlowNodeFC = (props) => {
   const handleCheck: HvCheckBoxGroupProps["onChange"] = (event, checked) => {
     if (!jsonData) return;
 
-    setNodeData(() => ({
+    setNodeData((prevData) => ({
+      ...prevData,
       checked,
       jsonData: filterDataByCountries(jsonData, checked),
     }));
@@ -41,8 +42,7 @@ export const Filter: HvFlowNodeFC = (props) => {
   return (
     <HvFlowNode
       description="Filtering data"
-      group="transformations"
-      groupItem="filter"
+      groupId="transformations"
       expanded
       inputs={[
         {
