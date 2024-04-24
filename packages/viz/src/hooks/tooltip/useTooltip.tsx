@@ -58,7 +58,9 @@ export const useTooltip = ({
   const renderTooltip = useCallback(
     (params: EChartsTooltipParams[]) => {
       const title =
-        params[0].seriesType === "treemap" || params[0].seriesType === "heatmap"
+        params[0].seriesType === "treemap" ||
+        params[0].seriesType === "heatmap" ||
+        params[0].seriesType === "boxplot"
           ? params[0].name
           : params[0].seriesType === "pie"
             ? params[0].seriesName
@@ -72,7 +74,8 @@ export const useTooltip = ({
         const measure = getMeasure(
           params[0].seriesType === "pie" ||
             params[0].seriesType === "treemap" ||
-            params[0].seriesType === "heatmap"
+            params[0].seriesType === "heatmap" ||
+            params[0].seriesType === "boxplot"
             ? params[0].name
             : horizontal
               ? params[0].dimensionNames[params[0].encode.x[0]]
@@ -176,13 +179,15 @@ export const useTooltip = ({
       if (typeof component === "function") {
         const values: HvChartTooltipParams = {
           title:
-            params[0].seriesType === "pie" ||
-            params[0].seriesType === "treemap" ||
-            params[0].seriesType === "heatmap"
-              ? params[0].seriesName
-              : horizontal
-                ? params[0].value[params[0].encode.y[0]]
-                : params[0].value[params[0].encode.x[0]],
+            params[0].seriesType === "boxplot"
+              ? params[0].name
+              : params[0].seriesType === "pie" ||
+                  params[0].seriesType === "treemap" ||
+                  params[0].seriesType === "heatmap"
+                ? params[0].seriesName
+                : horizontal
+                  ? params[0].value[params[0].encode.y[0]]
+                  : params[0].value[params[0].encode.x[0]],
           series: params.map((p) => {
             return {
               color: p.color,
