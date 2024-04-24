@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.64.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.64.3...@hitachivantara/uikit-react-core@5.64.4) (2024-04-24)
+
+### Bug Fixes
+
+- **BulkActions:** select all background color ([b282de6](https://github.com/lumada-design/hv-uikit-react/commit/b282de6e6fd23f436d28af0e88bf9efe4606d949))
+
 ## 5.64.3 (2024-04-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
