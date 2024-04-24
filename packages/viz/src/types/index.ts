@@ -18,6 +18,7 @@ export type {
   HvChartAggregation,
   HvConfusionMatrixMeasure,
   HvScatterPlotMeasure,
+  HvBoxplotMeasure,
 } from "./measures";
 export type { HvChartOrder, HvChartSortBy } from "./sort";
 export type { HvChartLegend } from "./legend";

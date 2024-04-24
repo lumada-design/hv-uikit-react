@@ -50,7 +50,6 @@ export const useData = ({
     } else {
       tableData = table(data);
     }
-
     const groupByFields = groupBy
       ? Array.isArray(groupBy)
         ? groupBy

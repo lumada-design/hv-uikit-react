@@ -53,6 +53,10 @@ export interface DonutFullMeasure extends BaseMeasure {}
 
 export interface ConfusionMatrixMeasure extends BaseMeasure {}
 
+export interface BoxplotMeasure
+  extends Omit<BaseMeasure, "agg" | "valueFormatter">,
+    Omit<AxisMeasure, "stack" | "sampling"> {}
+
 export interface ScatterPlotMeasure
   extends BaseMeasure,
     Pick<AxisMeasure, "yAxis"> {}
@@ -68,3 +72,5 @@ export type HvDonutChartMeasure = string | DonutFullMeasure;
 export type HvConfusionMatrixMeasure = string | ConfusionMatrixMeasure;
 
 export type HvScatterPlotMeasure = string | ScatterPlotMeasure;
+
+export type HvBoxplotMeasure = string | BoxplotMeasure;
