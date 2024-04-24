@@ -114,7 +114,7 @@ export const HvFlowNode = ({
   const icon = iconProp || nodeGroup?.icon;
   const color = colorProp || nodeGroup?.color;
   const subtitle =
-    node?.data.customNodeLabel || subtitleProp || nodeGroupItem?.subtitle;
+    node?.data.nodeLabel || subtitleProp || nodeGroupItem?.subtitle;
   const params = paramsProp || nodeGroupItem?.params;
 
   const hasParams = !!(params && params.length > 0);
@@ -175,7 +175,7 @@ export const HvFlowNode = ({
                   button: classes.inlineEditButton,
                 }}
                 onBlur={(evt, value) =>
-                  setNodeData((prev) => ({ ...prev, customNodeLabel: value }))
+                  setNodeData((prev) => ({ ...prev, nodeLabel: value }))
                 }
               />
             ))}
