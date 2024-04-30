@@ -68,6 +68,7 @@ export const HvScatterPlot = forwardRef<ReactECharts, HvScatterPlotProps>(
       groupBy,
       splitBy,
       sortBy,
+      filters,
       measures,
       seriesNameFormatter,
       legend,
@@ -79,7 +80,14 @@ export const HvScatterPlot = forwardRef<ReactECharts, HvScatterPlotProps>(
       ...others
     } = props;
 
-    const chartData = useData({ data, groupBy, measures, splitBy, sortBy });
+    const chartData = useData({
+      data,
+      groupBy,
+      measures,
+      splitBy,
+      sortBy,
+      filters,
+    });
 
     const chartDataset = useDataset(chartData);
 

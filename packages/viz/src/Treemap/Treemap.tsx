@@ -30,7 +30,7 @@ export interface HvTreemapChartClasses extends HvChartTooltipClasses {}
 export interface HvTreemapChartProps
   extends Omit<
     HvChartCommonProps,
-    "data" | "groupBy" | "sortBy" | "grid" | "legend" | "tooltip"
+    "data" | "groupBy" | "sortBy" | "grid" | "legend" | "tooltip" | "filters"
   > {
   /** The name of the treemap */
   name?: string;

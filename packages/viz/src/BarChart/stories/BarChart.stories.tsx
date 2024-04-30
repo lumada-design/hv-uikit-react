@@ -6,11 +6,15 @@ import {
   HvDropdown,
   HvDropDownMenu,
   HvListValue,
+  HvOption,
+  HvSelect,
+  HvSlider,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import {
   HvBarChart,
   HvBarChartProps,
+  HvChartFilter,
   HvLineChartProps,
 } from "@hitachivantara/uikit-react-viz";
 
@@ -493,4 +497,117 @@ export const CustomEchartsOptions: StoryObj<HvBarChartProps> = {
     },
   },
   render: () => <CustomEchartsOptionsStory />,
+};
+
+export const WithFiltering: StoryObj<HvBarChartProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "This sample illustrates how to filter the data using the `filters` prop.",
+      },
+    },
+  },
+  render: () => {
+    const data = [
+      {
+        label: "Portugal",
+        value: 3600,
+      },
+      {
+        label: "USA",
+        value: 1500,
+      },
+      {
+        label: "India",
+        value: 6700,
+      },
+      {
+        label: "China",
+        value: 4500,
+      },
+      {
+        label: "France",
+        value: 3200,
+      },
+      {
+        label: "UK",
+        value: 2700,
+      },
+      {
+        label: "Japan",
+        value: 5800,
+      },
+    ];
+
+    const [sales, setSales] = useState([0, 7000]);
+    const [country, setCountry] = useState(data.map((d) => d.label));
+
+    const handleSliderChange = (values) => {
+      setSales(values);
+    };
+
+    const handleCountryChange = (event, value) => {
+      setCountry(value.length > 0 ? value : data.map((d) => d.label));
+    };
+
+    const filters: HvChartFilter[] = [
+      {
+        field: "Country",
+        operation: "is",
+        value: country,
+      },
+      {
+        field: "Sales",
+        operation: "between",
+        value: [sales[0], sales[1]],
+      },
+    ];
+
+    return (
+      <>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            gap: 40,
+          }}
+        >
+          <HvSlider
+            minPointValue={0}
+            maxPointValue={7000}
+            values={sales}
+            onChange={handleSliderChange}
+            hideInput
+            label="Sales"
+            style={{ width: 400 }}
+          />
+          <HvSelect
+            multiple
+            name="countries"
+            label="Country"
+            placeholder="Select countries"
+            onChange={handleCountryChange}
+            style={{ width: 300 }}
+          >
+            {data.map(({ value, label }) => (
+              <HvOption key={value} value={label} label={label}>
+                {`${label}`}
+              </HvOption>
+            ))}
+          </HvSelect>
+        </div>
+        <HvBarChart
+          data={{
+            Country: data.map((item) => item.label),
+            Sales: data.map((item) => item.value),
+          }}
+          groupBy="Country"
+          measures="Sales"
+          filters={filters}
+        />
+      </>
+    );
+  },
 };

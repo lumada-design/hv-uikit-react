@@ -2,6 +2,7 @@ import type { EChartsType } from "echarts";
 import { Arrayable, HvExtraProps } from "@hitachivantara/uikit-react-core";
 
 import { HvChartAxis } from "./axis";
+import { HvChartFilter } from "./filter";
 import { HvChartData } from "./generic";
 import { HvChartGrid } from "./grid";
 import { HvChartLegend } from "./legend";
@@ -34,6 +35,8 @@ export interface HvChartCommonProps {
   groupBy: Arrayable<string>;
   /** Columns to use to sort the data points. */
   sortBy?: Arrayable<HvChartSortBy>;
+  /** Filters to apply to the data. */
+  filters?: Arrayable<HvChartFilter>;
   /** Tooltip options. */
   tooltip?: HvChartTooltip;
   /** Legend options. */

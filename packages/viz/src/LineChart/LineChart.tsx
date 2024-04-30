@@ -77,6 +77,7 @@ export const HvLineChart = forwardRef<ReactECharts, HvLineChartProps>(
       groupBy,
       splitBy,
       sortBy,
+      filters,
       measures,
       stack,
       seriesNameFormatter,
@@ -89,7 +90,14 @@ export const HvLineChart = forwardRef<ReactECharts, HvLineChartProps>(
       ...others
     } = props;
 
-    const chartData = useData({ data, groupBy, measures, splitBy, sortBy });
+    const chartData = useData({
+      data,
+      groupBy,
+      measures,
+      splitBy,
+      sortBy,
+      filters,
+    });
 
     const chartDataset = useDataset(chartData);
 

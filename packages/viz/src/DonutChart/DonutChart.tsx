@@ -59,6 +59,7 @@ export const HvDonutChart = forwardRef<ReactECharts, HvDonutChartProps>(
       tooltip,
       measure: measures,
       sortBy,
+      filters,
       grid,
       width,
       height,
@@ -68,7 +69,7 @@ export const HvDonutChart = forwardRef<ReactECharts, HvDonutChartProps>(
       ...others
     } = props;
 
-    const chartData = useData({ data, groupBy, measures, sortBy });
+    const chartData = useData({ data, groupBy, measures, sortBy, filters });
 
     const chartDataset = useDataset(chartData);
 

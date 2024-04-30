@@ -22,3 +22,4 @@ export type {
 export type { HvChartOrder, HvChartSortBy } from "./sort";
 export type { HvChartLegend } from "./legend";
 export type { HvChartHorizontalRangeSlider } from "./slider";
+export type { HvChartFilter, HvChartFilterOperation } from "./filter";

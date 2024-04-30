@@ -29,7 +29,7 @@ export type HvHeatmapData = Array<HvHeatmapItem>;
 export interface HvHeatmapProps
   extends Omit<
     HvChartCommonProps,
-    "data" | "groupBy" | "sortBy" | "grid" | "legend" | "tooltip"
+    "data" | "groupBy" | "sortBy" | "grid" | "legend" | "tooltip" | "filters"
   > {
   /** The name of the heatmap */
   name?: string;
