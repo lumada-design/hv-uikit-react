@@ -95,6 +95,7 @@ export const HvConfusionMatrix = forwardRef<
     measure,
     sortBy,
     splitBy,
+    filters,
     grid,
     data: dataProp,
     tooltip,
@@ -121,6 +122,7 @@ export const HvConfusionMatrix = forwardRef<
     measures: [measure],
     sortBy: sortBy ?? groupBy, // automatically orders x axis to create the confusion matrix
     splitBy,
+    filters,
     delta: typeof delta === "string" ? delta : undefined,
   });
 

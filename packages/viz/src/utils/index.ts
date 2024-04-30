@@ -3,6 +3,8 @@ import { Arrayable } from "@hitachivantara/uikit-react-core";
 import type {
   HvBarChartMeasures,
   HvChartAxisType,
+  HvChartFilter,
+  HvChartFilterOperation,
   HvDonutChartMeasure,
   HvLineChartMeasures,
 } from "..";
@@ -59,4 +61,40 @@ export const getMeasure = (
       return m.field === measureName;
     }) ?? measuresArray[0]
   );
+};
+
+export const getFilterFunction = (
+  operation: HvChartFilterOperation,
+  field: HvChartFilter["field"],
+  value: HvChartFilter["value"],
+): Function => {
+  switch (operation) {
+    case "is": {
+      const valueArray = Array.isArray(value) ? value : [value];
+      return (row: any) => valueArray.includes(row[field]);
+    }
+    case "isNot": {
+      const valueArray = Array.isArray(value) ? value : [value];
+      return (row: any) => !valueArray.includes(row[field]);
+    }
+    case "contains":
+      return (row: any) => row[field].includes(value);
+    case "greaterThan":
+      return (row: any) =>
+        row[field] > (Array.isArray(value) ? value[0] : value);
+    case "greaterThanOrEqual":
+      return (row: any) =>
+        row[field] >= (Array.isArray(value) ? value[0] : value);
+    case "lessThan":
+      return (row: any) =>
+        row[field] < (Array.isArray(value) ? value[0] : value);
+    case "lessThanOrEqual":
+      return (row: any) =>
+        row[field] <= (Array.isArray(value) ? value[0] : value);
+    case "between":
+      return (row: any) => row[field] >= value[0] && row[field] <= value[1];
+
+    default:
+      throw new Error("Unsupported operation");
+  }
 };

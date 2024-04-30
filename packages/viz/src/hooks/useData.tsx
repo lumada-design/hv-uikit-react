@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { desc, from, internal, not, table } from "arquero";
+import { desc, escape, from, internal, not, table } from "arquero";
 import type ColumnTable from "arquero/dist/types/table/column-table";
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
@@ -13,7 +13,7 @@ import {
   HvScatterPlotMeasure,
 } from "../types";
 import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
-import { getGroupKey } from "../utils";
+import { getFilterFunction, getGroupKey } from "../utils";
 
 const getAgFunc = (func: HvChartAggregation, field: string) =>
   func === "count" ? "count()" : `${func}(d["${field}"])`;
@@ -26,6 +26,7 @@ interface HvDataHookProps {
     | HvDonutChartMeasure;
   splitBy?: HvAxisChartCommonProps["splitBy"];
   sortBy?: HvChartCommonProps["sortBy"];
+  filters?: HvChartCommonProps["filters"];
   delta?: string;
 }
 
@@ -35,6 +36,7 @@ export const useData = ({
   measures,
   sortBy,
   splitBy,
+  filters,
   delta,
 }: HvDataHookProps): internal.ColumnTable => {
   const groupByKey = getGroupKey(groupBy);
@@ -165,6 +167,20 @@ export const useData = ({
       );
     }
 
+    // apply filters
+    if (filters) {
+      const filtersArray = Array.isArray(filters) ? filters : [filters];
+      // combine filter functions into a single function. only rows that pass all filters will be included
+      const combinedFilterFunction = (row) => {
+        return filtersArray.every((filter) => {
+          const { field, operation, value } = filter;
+          const filterFunction = getFilterFunction(operation, field, value);
+          return filterFunction(row);
+        });
+      };
+      tableData = tableData.filter(escape(combinedFilterFunction));
+    }
+
     // sort by sortBy fields
     if (Object.keys(sortByFields).length > 0) {
       tableData = tableData.orderby(
@@ -181,7 +197,7 @@ export const useData = ({
     }
 
     return tableData;
-  }, [data, groupBy, splitBy, measures, sortBy, delta, groupByKey]);
+  }, [data, groupBy, splitBy, measures, sortBy, delta, filters, groupByKey]);
 
   return chartData;
 };
