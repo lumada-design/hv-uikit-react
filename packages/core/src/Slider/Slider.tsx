@@ -66,7 +66,7 @@ export interface HvSliderProps
    */
   required?: boolean;
   /**
-   * What message to render when the value is required.
+   * Error message to render when the value is required.
    */
   requiredMessage?: string;
   /**
@@ -147,6 +147,10 @@ export interface HvSliderProps
    */
   maxPointValue?: number;
   /**
+   * Error message to render when the value is higher than maxPointValue or lower than minPointValue.
+   */
+  outOfRangeMessage?: string;
+  /**
    * The nax number of decimals if no format function is applied
    */
   markDigits?: number;
@@ -195,6 +199,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     knobProps,
     inputProps,
     requiredMessage = "The value is required",
+    outOfRangeMessage = "The value is out of range",
     noOverlap = true,
     hideInput = false,
     required = false,
@@ -263,7 +268,8 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
   const canShowError =
     ariaErrorMessage == null &&
     ((status !== undefined && statusMessage !== undefined) ||
-      (status === undefined && required));
+      // We always show an error when the value(s) are not between maxPointValue and minPointValue; and when required is true (set by user).
+      status === undefined);
 
   const isSingle: boolean = useMemo(
     () => isSingleSlider(valuesProp, defaultValues),
@@ -329,25 +335,37 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
 
   const performValidation = useCallback(() => {
     let invalid = false;
+    let requiredMsg = false;
 
     const newValidationState = knobsPositions.map((position) => {
-      if (position == null || Number.isNaN(position)) {
+      if (required && (position == null || Number.isNaN(position))) {
+        invalid = true;
+        requiredMsg = true;
+        return validationStates.invalid;
+      }
+
+      if (position < minPointValue || position > maxPointValue) {
         invalid = true;
         return validationStates.invalid;
       }
+
       return validationStates.valid;
     });
 
     setValidationState([...newValidationState]);
 
     if (invalid) {
-      setValidationMessage(requiredMessage);
+      setValidationMessage(requiredMsg ? requiredMessage : outOfRangeMessage);
       return;
     }
 
     setValidationMessage("");
   }, [
     knobsPositions,
+    maxPointValue,
+    minPointValue,
+    outOfRangeMessage,
+    required,
     requiredMessage,
     setValidationMessage,
     setValidationState,
