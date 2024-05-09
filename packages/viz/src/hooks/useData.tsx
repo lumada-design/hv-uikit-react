@@ -50,6 +50,21 @@ export const useData = ({
     } else {
       tableData = table(data);
     }
+
+    // Filter data right away
+    if (filters) {
+      const filtersArray = Array.isArray(filters) ? filters : [filters];
+      // combine filter functions into a single function. only rows that pass all filters will be included
+      const combinedFilterFunction = (row) => {
+        return filtersArray.every((filter) => {
+          const { field, operation, value } = filter;
+          const filterFunction = getFilterFunction(operation, field, value);
+          return filterFunction(row);
+        });
+      };
+      tableData = tableData.filter(escape(combinedFilterFunction));
+    }
+
     const groupByFields = groupBy
       ? Array.isArray(groupBy)
         ? groupBy
@@ -164,20 +179,6 @@ export const useData = ({
         { [groupByKey]: expression },
         { after: groupByFields[groupByFields.length - 1] },
       );
-    }
-
-    // apply filters
-    if (filters) {
-      const filtersArray = Array.isArray(filters) ? filters : [filters];
-      // combine filter functions into a single function. only rows that pass all filters will be included
-      const combinedFilterFunction = (row) => {
-        return filtersArray.every((filter) => {
-          const { field, operation, value } = filter;
-          const filterFunction = getFilterFunction(operation, field, value);
-          return filterFunction(row);
-        });
-      };
-      tableData = tableData.filter(escape(combinedFilterFunction));
     }
 
     // sort by sortBy fields
