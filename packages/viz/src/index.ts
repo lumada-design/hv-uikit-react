@@ -10,3 +10,5 @@ export * from "./Boxplot";
 export * from "./providers/Provider";
 
 export * from "./types";
+
+export { getHvArqueroCombinedFilters } from "./utils";

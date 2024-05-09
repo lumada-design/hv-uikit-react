@@ -13,7 +13,7 @@ import {
   HvScatterPlotMeasure,
 } from "../types";
 import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
-import { getFilterFunction, getGroupKey } from "../utils";
+import { getGroupKey, getHvArqueroCombinedFilters } from "../utils";
 
 const getAgFunc = (func: HvChartAggregation, field: string) =>
   func === "count" ? "count()" : `${func}(d["${field}"])`;
@@ -53,16 +53,14 @@ export const useData = ({
 
     // Filter data right away
     if (filters) {
-      const filtersArray = Array.isArray(filters) ? filters : [filters];
-      // combine filter functions into a single function. only rows that pass all filters will be included
-      const combinedFilterFunction = (row) => {
-        return filtersArray.every((filter) => {
-          const { field, operation, value } = filter;
-          const filterFunction = getFilterFunction(operation, field, value);
-          return filterFunction(row);
-        });
-      };
-      tableData = tableData.filter(escape(combinedFilterFunction));
+      tableData = tableData.filter(
+        escape((row) =>
+          getHvArqueroCombinedFilters(
+            row,
+            Array.isArray(filters) ? filters : [filters],
+          ),
+        ),
+      );
     }
 
     const groupByFields = groupBy
