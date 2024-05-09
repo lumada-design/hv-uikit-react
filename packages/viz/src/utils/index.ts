@@ -68,31 +68,118 @@ export const getFilterFunction = (
   field: HvChartFilter["field"],
   value: HvChartFilter["value"],
 ): Function => {
+  const valueArray = Array.isArray(value) ? value : [value];
+  if (valueArray.length === 0) return () => true;
+
   switch (operation) {
     case "is": {
-      const valueArray = Array.isArray(value) ? value : [value];
       return (row: any) => valueArray.includes(row[field]);
     }
     case "isNot": {
-      const valueArray = Array.isArray(value) ? value : [value];
       return (row: any) => !valueArray.includes(row[field]);
     }
     case "contains":
-      return (row: any) => row[field].includes(value);
+      return (row: any) => {
+        let include = false;
+        for (const val of valueArray) {
+          if (row[field].includes(val)) {
+            include = true;
+          }
+        }
+        return include;
+      };
+    case "notContains":
+      return (row: any) => {
+        let include = true;
+        for (const val of valueArray) {
+          if (row[field].includes(val)) {
+            include = false;
+          }
+        }
+        return include;
+      };
     case "greaterThan":
-      return (row: any) =>
-        row[field] > (Array.isArray(value) ? value[0] : value);
+      return (row: any) => {
+        let include = false;
+        for (const val of valueArray) {
+          if (row[field] > val) {
+            include = true;
+          }
+        }
+        return include;
+      };
     case "greaterThanOrEqual":
-      return (row: any) =>
-        row[field] >= (Array.isArray(value) ? value[0] : value);
+      return (row: any) => {
+        let include = false;
+        for (const val of valueArray) {
+          if (row[field] >= val) {
+            include = true;
+          }
+        }
+        return include;
+      };
     case "lessThan":
-      return (row: any) =>
-        row[field] < (Array.isArray(value) ? value[0] : value);
+      return (row: any) => {
+        let include = false;
+        for (const val of valueArray) {
+          if (row[field] < val) {
+            include = true;
+          }
+        }
+        return include;
+      };
     case "lessThanOrEqual":
-      return (row: any) =>
-        row[field] <= (Array.isArray(value) ? value[0] : value);
+      return (row: any) => {
+        let include = false;
+        for (const val of valueArray) {
+          if (row[field] <= val) {
+            include = true;
+          }
+        }
+        return include;
+      };
     case "between":
       return (row: any) => row[field] >= value[0] && row[field] <= value[1];
+    case "ends":
+      return (row: any) => {
+        let include = false;
+        for (const val of valueArray) {
+          if (String(row[field]).endsWith(String(val))) {
+            include = true;
+          }
+        }
+        return include;
+      };
+    case "notEnds":
+      return (row: any) => {
+        let include = true;
+        for (const val of valueArray) {
+          if (String(row[field]).endsWith(String(val))) {
+            include = false;
+          }
+        }
+        return include;
+      };
+    case "starts":
+      return (row: any) => {
+        let include = false;
+        for (const val of valueArray) {
+          if (String(row[field]).startsWith(String(val))) {
+            include = true;
+          }
+        }
+        return include;
+      };
+    case "notStarts":
+      return (row: any) => {
+        let include = true;
+        for (const val of valueArray) {
+          if (String(row[field]).startsWith(String(val))) {
+            include = false;
+          }
+        }
+        return include;
+      };
 
     default:
       throw new Error("Unsupported operation");
