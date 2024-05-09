@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.64.5 (2024-05-09)
+
+### Bug Fixes
+
+- **Slider:** our of range error message ([3cfeb30](https://github.com/lumada-design/hv-uikit-react/commit/3cfeb3079de778531a5f6759be5e5a8e08bcb9ef))
+
 ## [5.64.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.64.3...@hitachivantara/uikit-react-core@5.64.4) (2024-04-24)
 
 ### Bug Fixes
