@@ -185,3 +185,19 @@ export const getFilterFunction = (
       throw new Error("Unsupported operation");
   }
 };
+
+// Note: Exported to the users
+/**
+ * Combine filter functions into a single function. Only rows that pass all filters will be included.
+ * Should be used inside the `escape` function provided by Arquero.
+ * */
+export const getHvArqueroCombinedFilters = (
+  row: any,
+  filters: HvChartFilter[],
+) => {
+  return filters.every((filter) => {
+    const { field, operation, value } = filter;
+    const filterFunction = getFilterFunction(operation, field, value);
+    return filterFunction(row);
+  });
+};
