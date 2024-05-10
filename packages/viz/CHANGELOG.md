@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.12.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.11.1...@hitachivantara/uikit-react-viz@5.12.0) (2024-05-10)
+
+### Bug Fixes
+
+- filter chart data before any data manipulation ([baacc98](https://github.com/lumada-design/hv-uikit-react/commit/baacc98150b90a008d01af5ab1af5828efc6fc5c))
+
+### Features
+
+- getHvArqueroCombinedFilters exported to users ([a2dce44](https://github.com/lumada-design/hv-uikit-react/commit/a2dce44bc743e30d45bc695399b36ae9e48c96b4))
+- new filters added to visualizations ([78f7ae1](https://github.com/lumada-design/hv-uikit-react/commit/78f7ae1c0d728ce782435de4b79fcc88873cec86))
+
 ## [5.11.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.11.0...@hitachivantara/uikit-react-viz@5.11.1) (2024-05-09)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz
