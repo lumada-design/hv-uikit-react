@@ -58,6 +58,7 @@ export const HvBoxplot = forwardRef<ReactECharts, HvBoxplotProps>(
       tooltip,
       width,
       height,
+      filters,
       classes: classesProp,
       onOptionChange,
       ...others
@@ -108,7 +109,7 @@ export const HvBoxplot = forwardRef<ReactECharts, HvBoxplotProps>(
       ...yAxis,
     });
 
-    const chartBoxplot = useBoxplot({ data, groupBy, measures });
+    const chartBoxplot = useBoxplot({ data, groupBy, measures, filters });
 
     const chartOption = useOption({
       option: {

@@ -39,7 +39,7 @@ export interface HvHeatmapProps
   min: number;
   /** The max value of the Heatmap */
   max: number;
-  /** The X axis defintion */
+  /** The X axis definition */
   xAxis?: XAxis;
   /** The Y axis definition. */
   yAxis?: YAxis;
