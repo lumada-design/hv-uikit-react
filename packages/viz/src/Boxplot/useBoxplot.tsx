@@ -1,16 +1,22 @@
 import { useMemo } from "react";
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
-import { HvBoxplotMeasure, HvChartData } from "../types";
+import { HvBoxplotMeasure, HvChartData, HvChartFilter } from "../types";
 import { useBoxplotData } from "./useBoxplotData";
 
 interface HvDataHookProps {
   data: HvChartData;
   groupBy?: string;
   measures: Arrayable<HvBoxplotMeasure>;
+  filters?: Arrayable<HvChartFilter>;
 }
 
-export const useBoxplot = ({ data, groupBy, measures }: HvDataHookProps) => {
+export const useBoxplot = ({
+  data,
+  groupBy,
+  measures,
+  filters,
+}: HvDataHookProps) => {
   const measuresFields = useMemo(() => {
     if (measures == null) {
       return {};
@@ -43,6 +49,7 @@ export const useBoxplot = ({ data, groupBy, measures }: HvDataHookProps) => {
     data,
     groupBy,
     measures: measuresFields,
+    filters,
   });
 
   const boxplotData = useMemo(() => {

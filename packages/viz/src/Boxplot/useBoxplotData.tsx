@@ -1,19 +1,23 @@
 import { useMemo } from "react";
-import { from, internal, table } from "arquero";
+import { escape, from, internal, table } from "arquero";
 import type ColumnTable from "arquero/dist/types/table/column-table";
+import { Arrayable } from "@hitachivantara/uikit-react-core";
 
-import { HvChartData } from "../types";
+import { HvChartData, HvChartFilter } from "../types";
+import { getHvArqueroCombinedFilters } from "../utils";
 
 interface HvDataHookProps {
   data: HvChartData;
   groupBy?: string;
   measures: { [key: string]: string | undefined };
+  filters?: Arrayable<HvChartFilter>;
 }
 
 export const useBoxplotData = ({
   data,
   groupBy,
   measures,
+  filters,
 }: HvDataHookProps) => {
   const chartData = useMemo(() => {
     let tableData: ColumnTable;
@@ -23,6 +27,18 @@ export const useBoxplotData = ({
       tableData = from(data);
     } else {
       tableData = table(data);
+    }
+
+    // Filter data right away
+    if (filters) {
+      tableData = tableData.filter(
+        escape((row) =>
+          getHvArqueroCombinedFilters(
+            row,
+            Array.isArray(filters) ? filters : [filters],
+          ),
+        ),
+      );
     }
 
     const uniqueGroupBy = new Set(tableData.array(groupBy || "") as string[]);
@@ -39,7 +55,7 @@ export const useBoxplotData = ({
     });
 
     return results;
-  }, [data, groupBy, measures]);
+  }, [data, filters, groupBy, measures]);
 
   return chartData;
 };
