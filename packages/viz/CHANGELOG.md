@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.12.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.0...@hitachivantara/uikit-react-viz@5.12.1) (2024-05-11)
+
+### Bug Fixes
+
+- missing filters logic added to boxplot ([f9ad44d](https://github.com/lumada-design/hv-uikit-react/commit/f9ad44d7534904086b7f6de150467d4704cc499e))
+
 # [5.12.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.11.1...@hitachivantara/uikit-react-viz@5.12.0) (2024-05-10)
 
 ### Bug Fixes
