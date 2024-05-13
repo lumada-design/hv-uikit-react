@@ -1,6 +1,7 @@
 import { Preview } from "@storybook/react";
 
 import DocsContainer from "./blocks/DocsContainer";
+import { DocsPage } from "./blocks/DocsPage";
 import ThemeDecorator from "./decorators/withThemeProvider";
 
 import "uno.css";
@@ -10,6 +11,7 @@ export const parameters: Preview["parameters"] = {
   docs: {
     source: { type: "dynamic" },
     container: DocsContainer,
+    page: DocsPage,
   },
   controls: {
     matchers: {
