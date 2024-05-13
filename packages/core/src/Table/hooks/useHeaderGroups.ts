@@ -94,7 +94,12 @@ const getHeaderPropsHook = (props, { instance, column }) => {
 
     if (instance.hasStickyColumns) {
       if (isPlaceholder) {
+        nextProps.style.display = "inline-flex";
         nextProps.style.visibility = "hidden";
+      }
+
+      if (column.parent || isPlaceholder) {
+        nextProps.style.marginTop = `calc(var(--cell-height) * -1)`;
       }
 
       if (column.rowSpan > 1) {
