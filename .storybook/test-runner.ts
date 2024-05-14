@@ -16,6 +16,7 @@ const excludeStories = [
   "Visualizations/Treemap",
   "Visualizations/Heatmap",
   "Widgets/Code Editor",
+  "Tests/Visualizations",
 ];
 
 function getNodesIds(nodes: NodeResult[]) {
