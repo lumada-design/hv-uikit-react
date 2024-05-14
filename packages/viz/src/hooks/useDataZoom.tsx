@@ -6,23 +6,27 @@ interface HvDataZoomHookProps {
   showHorizontal?: boolean;
 }
 
-export const useDataZoom = ({ showHorizontal }: HvDataZoomHookProps) => {
+export const useDataZoom = ({
+  showHorizontal = false,
+}: HvDataZoomHookProps) => {
   const option = useMemo<Pick<HvEChartsOption, "dataZoom">>(() => {
     return {
-      dataZoom: [
-        {
-          show: showHorizontal ?? false,
-          type: "slider",
-          orient: "horizontal",
-        },
-        {
-          show: showHorizontal ?? false,
-          type: "inside",
-          orient: "horizontal",
-          zoomOnMouseWheel: "shift",
-          moveOnMouseWheel: true,
-        },
-      ],
+      dataZoom: showHorizontal
+        ? [
+            {
+              show: true,
+              type: "slider",
+              orient: "horizontal",
+            },
+            {
+              show: true,
+              type: "inside",
+              orient: "horizontal",
+              zoomOnMouseWheel: "shift",
+              moveOnMouseWheel: true,
+            },
+          ]
+        : [],
     };
   }, [showHorizontal]);
 

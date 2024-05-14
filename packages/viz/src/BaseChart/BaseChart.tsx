@@ -61,8 +61,9 @@ export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
 
       if (!instance) return;
 
+      // More info: https://echarts.apache.org/en/api.html#echartsInstance.setOption
       instance.setOption(option, {
-        replaceMerge: ["xAxis", "yAxis", "series", "dataset"],
+        replaceMerge: ["xAxis", "yAxis", "series", "dataset", "dataZoom"],
       });
     }, [theme, option]);
 
@@ -72,7 +73,7 @@ export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
         echarts={echarts}
         option={initialOption}
         theme={theme}
-        notMerge
+        notMerge // When true all the current components will be removed and new components will be created according to the new option
         style={{
           width: width ?? "100%",
           height: height ?? "100%",

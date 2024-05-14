@@ -40,6 +40,7 @@ const data = [
   { name: "Sarah", email: "a@a.com", var1: "123", var2: "123", test: "123" },
 ];
 
+/** This was created to test grouped headers with sticky columns */
 export const Main: StoryObj = {
   render: () => {
     const columns = useMemo<HvTableColumnConfig<any, string>[]>(
