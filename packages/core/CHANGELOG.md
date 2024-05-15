@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.64.6 (2024-05-15)
+
+### Bug Fixes
+
+- **table:** grouped columns with sticky table ([51ed7fb](https://github.com/lumada-design/hv-uikit-react/commit/51ed7fb9d2f0c77818d96f238fa765ed61cc4330))
+
 ## 5.64.5 (2024-05-09)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.12.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.1...@hitachivantara/uikit-react-viz@5.12.2) (2024-05-15)
+
+### Bug Fixes
+
+- reset chart horizontalRangeSlider ([9c483f1](https://github.com/lumada-design/hv-uikit-react/commit/9c483f1ab4c00da558e5e8e6ced17e668fcc801f))
+
 ## [5.12.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.0...@hitachivantara/uikit-react-viz@5.12.1) (2024-05-11)
 
 ### Bug Fixes

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.35.0 (2024-05-15)
+
+### Features
+
+- **flow:** address items configuration ([ee934b2](https://github.com/lumada-design/hv-uikit-react/commit/ee934b2abdf3d557f0547b21b86a0f7fd054c8ca))
+- **flow:** improve flow groups handling ([50fd12a](https://github.com/lumada-design/hv-uikit-react/commit/50fd12ae05e20dad5f41f8e986487882cf89fbf2))
+
 ## 5.34.2 (2024-05-09)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
