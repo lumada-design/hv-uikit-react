@@ -16,46 +16,28 @@ export type HvAccordionClasses = ExtractNames<typeof useClasses>;
 
 export interface HvAccordionProps
   extends HvBaseProps<HTMLDivElement, "onChange" | "children"> {
-  /**
-   * Content to be rendered
-   */
+  /** Content to be rendered. */
   children: React.ReactNode;
-  /**
-   * The accordion label button.
-   */
+  /** The accordion label button. */
   label?: string;
-  /**
-   * The function that will be executed whenever the accordion toggles it will receive the state of the accordion
-   */
+  /** The function that will be executed whenever the accordion toggles. It will receive the state of the accordion. */
   onChange?: (event: React.SyntheticEvent, value: boolean) => void;
-  /**
-   * Whether the accordion is open or not, if this property is defined the accordion must be fully controlled.
-   */
+  /** Whether the accordion is open or not. If this property is defined the accordion must be fully controlled. */
   expanded?: boolean;
-  /**
-   * When uncontrolled, defines the initial expanded state.
-   */
+  /** When uncontrolled, defines the initial expanded state. */
   defaultExpanded?: boolean;
-  /**
-   * An object containing props to be passed onto container holding the accordion children.
-   */
+  /** An object containing props to be passed onto container holding the accordion children. */
   containerProps?: React.HTMLAttributes<HTMLDivElement>;
-  /**
-   * Heading Level to apply to accordion button if ´undefined´ the button won't have a header wrapper.
-   */
+  /** Heading level to apply to accordion button. If ´undefined´ the button won't have a header wrapper. */
   headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
-  /**
-   * Is the accordion disabled.
-   */
+  /** Whether the accordion is disabled. */
   disabled?: boolean;
-  /**
-   * Typography variant for the label.
-   */
+  /** Typography variant for the label. */
   labelVariant?: HvTypographyVariants;
-  /**
-   * A Jss Object used to override or extend the styles applied.
-   */
+  /** A Jss Object used to override or extend the styles applied. */
   classes?: HvAccordionClasses;
+  /** Whether to disable the internal usage of `preventDefault` and `stopPropagation` when the `onChange` event is triggered. */
+  disableEventHandling?: boolean; // TODO - remove in v6 as this should be the default behavior: `preventDefault` and `stopPropagation` shouldn't be triggered internally
 }
 
 /**
@@ -75,6 +57,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
     defaultExpanded = false,
     containerProps,
     labelVariant = "label",
+    disableEventHandling,
     ...others
   } = useDefaultProps("HvAccordion", props);
 
@@ -99,10 +82,12 @@ export const HvAccordion = (props: HvAccordionProps) => {
   const handleClick = useCallback(
     (event: React.SyntheticEvent) => {
       handleAction(event);
-      event.preventDefault();
-      event.stopPropagation();
+      if (!disableEventHandling) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
     },
-    [handleAction],
+    [disableEventHandling, handleAction],
   );
 
   const handleKeyDown = useCallback(
@@ -127,12 +112,12 @@ export const HvAccordion = (props: HvAccordionProps) => {
           return;
       }
 
-      if (isEventHandled) {
+      if (isEventHandled && !disableEventHandling) {
         event.preventDefault();
         event.stopPropagation();
       }
     },
-    [handleAction],
+    [disableEventHandling, handleAction],
   );
 
   const accordionHeaderId = setId(id, "button");
