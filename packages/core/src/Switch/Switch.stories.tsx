@@ -61,7 +61,6 @@ export const Variants: StoryObj<HvSwitchProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => {
     const styles = {

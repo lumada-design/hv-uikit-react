@@ -82,7 +82,6 @@ export const Variants: StoryObj<HvDatePickerProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   decorators: [unsetDecorator],
   // For visual testing and a11y
@@ -220,7 +219,6 @@ export const RangeMode: StoryObj<HvDatePickerProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
@@ -312,7 +310,6 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {

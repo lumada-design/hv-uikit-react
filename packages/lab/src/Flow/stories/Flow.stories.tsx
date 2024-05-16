@@ -59,7 +59,6 @@ export const Main: StoryObj<HvFlowProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   // For visual testing
   play: async ({ canvasElement }) => {
@@ -87,7 +86,6 @@ export const InitialState: StoryObj<HvFlowProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => <InitialStateStory />,
 };

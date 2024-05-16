@@ -24,7 +24,6 @@
     "build:nextra": "npm run build -w apps/docs",
     "test": "lerna run test",
     "test:a11y": "node scripts/a11y.mjs",
-    "test:eyes": "npx eyes-storybook -f .config/applitools.config.js",
     "coverage": "lerna run coverage",
     "check": "npm-run-all --parallel prettier lint typecheck",
     "prettier": "prettier --log-level warn --check .",
@@ -41,7 +40,6 @@
     "lab:flow": "node scripts/flow-styles"
   },
   "devDependencies": {
-    "@applitools/eyes-storybook": "^3.50.0",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@dnd-kit/core": "^6.1.0",

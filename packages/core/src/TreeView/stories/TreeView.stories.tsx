@@ -41,7 +41,6 @@ export const Main: StoryObj<HvTreeViewProps<false>> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   // For visual testing
   play: async ({ canvasElement }) => {
@@ -81,7 +80,6 @@ export const DataObject: StoryObj<HvTreeViewProps<false>> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   // For visual testing
   play: async ({ canvasElement }) => {
@@ -121,7 +119,6 @@ export const VerticalNavigation: StoryObj<HvTreeViewProps<false>> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   // For visual testing
   play: async ({ canvasElement }) => {

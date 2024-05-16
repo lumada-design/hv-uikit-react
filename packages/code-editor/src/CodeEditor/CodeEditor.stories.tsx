@@ -129,7 +129,6 @@ export const Main: StoryObj<HvCodeEditorProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false, delay: 5000 },
-    eyes: { include: true, waitBeforeCapture: 5000 },
   },
   render: () => {
     const getModalStyle = () => {
@@ -205,7 +204,6 @@ export const YamlEditor: StoryObj<HvCodeEditorProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false, delay: 5000 },
-    eyes: { include: true, waitBeforeCapture: 5000 },
   },
   render: () => {
     return (

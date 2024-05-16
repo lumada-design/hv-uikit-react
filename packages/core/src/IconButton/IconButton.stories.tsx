@@ -53,7 +53,6 @@ export const Variants: StoryObj<HvIconButtonProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   decorators: [
     (Story) => (

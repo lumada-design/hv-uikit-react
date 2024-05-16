@@ -22,7 +22,6 @@ export const Main: StoryObj<HvPanelProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => {
     return (
@@ -47,7 +46,6 @@ export const FullWidth: StoryObj<HvPanelProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => {
     return (

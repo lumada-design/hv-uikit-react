@@ -38,7 +38,6 @@ export const Main: StoryObj<HvActionBarProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => {
     return (

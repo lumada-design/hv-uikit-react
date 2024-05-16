@@ -91,7 +91,6 @@ export const Variants: StoryObj<HvInputProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   decorators: [showcaseDecorator],
   args: {

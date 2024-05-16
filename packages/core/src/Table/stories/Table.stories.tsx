@@ -52,7 +52,6 @@ export const Main: StoryObj<HvTableProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -67,7 +66,6 @@ export const NoData: StoryObj<HvTableProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => <NoDataStory />,
 };
@@ -83,7 +81,6 @@ export const SimpleTable: StoryObj<HvTableProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => <SimpleTableStory />,
 };
@@ -98,7 +95,6 @@ export const GroupedRows: StoryObj<HvTableProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => <GroupedRowsStory />,
 };
@@ -126,7 +122,6 @@ export const ListRow: StoryObj<HvTableProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => <ListRowStory />,
 };
