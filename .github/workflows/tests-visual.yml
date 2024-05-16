@@ -15,10 +15,7 @@ env:
 jobs:
   chromatic:
     name: Chromatic
-    # For now, only run Chromatic when PRs have the visual tag or when it runs in the nightly (master branch)
-    if: ${{ contains(github.event.pull_request.labels.*.name, 'visual') || github.ref_name == 'master' }}
     runs-on: ubuntu-latest
-    continue-on-error: true
 
     steps:
       - name: Checkout
@@ -41,31 +38,9 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           forceRebuild: true
 
-      # Notify fail on Slack for the Nighly since the worklow won't fail if Chromatic does
-      - name: Notify Fail
-        id: notify
-        if: ${{ github.ref_name == 'master' && (steps.publish.outcome == 'failure' || steps.publish.outputs.changeCount != '0' || steps.publish.outputs.errorCount != '0') }}
-        uses: hbfernandes/slack-action@1.0
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          COLOR: "#C62828"
-        with:
-          args: |
-            {
-              "channel": "ui-kit-internal",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "color": "${{env.COLOR}}",
-                  "title": "Chromatic failed",
-                  "title_link": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
-                }
-              ]
-            }
-
       # Add red mark to workflow if it failed
       - name: Evaluate Fail
-        if: ${{ steps.notify.outcome != 'skipped' }}
+        if: ${{ steps.publish.outcome == 'failure' || steps.publish.outputs.changeCount != '0' || steps.publish.outputs.errorCount != '0' }}
         run: exit 1
 
   applitools:
