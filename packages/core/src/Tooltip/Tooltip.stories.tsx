@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { expect, userEvent, within } from "@storybook/test";
 import {
   HvAvatar,
   HvBox,
@@ -88,6 +89,17 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
         If the component doesn't do so, a workaround is to wrap it in a `div`.",
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  // Open tooltip for visual tests
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /concise/i });
+    await userEvent.hover(button);
+    const tooltip = await canvas.findByRole("tooltip");
+    await expect(tooltip).toBeInTheDocument();
   },
   render: () => (
     <HvBox
@@ -97,7 +109,11 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
         padding: "60px 0",
       }}
     >
-      <HvTooltip placement="right" title="Right placement">
+      <HvTooltip
+        placement="right"
+        title="Tooltips can showcase truncated text. The text should be concise and not
+        redundant."
+      >
         <HvButton>Button</HvButton>
       </HvTooltip>
       <HvTooltip placement="bottom" title="Bottom placement">
@@ -135,8 +151,16 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
-    eyes: { include: true, waitBeforeCapture: 5000 },
+    chromatic: { disableSnapshot: false },
+    eyes: { include: true },
+  },
+  // Open tooltip for visual tests
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /multiline content 1/i });
+    await userEvent.hover(button);
+    const tooltip = await canvas.findByRole("tooltip");
+    await expect(tooltip).toBeInTheDocument();
   },
   render: () => {
     const longTextTooltip = (
@@ -191,13 +215,13 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
           padding: "200px 20px 0",
         }}
       >
-        <HvTooltip open title={longTextTooltip}>
+        <HvTooltip title={longTextTooltip}>
           <HvButton variant="secondaryGhost">Long text tooltip</HvButton>
         </HvTooltip>
-        <HvTooltip open title={multilineContent1} useSingle={false}>
+        <HvTooltip title={multilineContent1} useSingle={false}>
           <HvButton variant="secondaryGhost">Multiline content 1</HvButton>
         </HvTooltip>
-        <HvTooltip open title={multilineContent2} useSingle={false}>
+        <HvTooltip title={multilineContent2} useSingle={false}>
           <HvButton variant="secondaryGhost">Multiline content 2</HvButton>
         </HvTooltip>
       </HvBox>
