@@ -1,164 +1,210 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { useState } from "react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
+import { HvDropdown } from "../Dropdown";
 import { HvTypography } from "../Typography";
 import { HvAccordion } from "./Accordion";
 
-const testAttributes = (component: HTMLElement) => {
+const Main = () => (
+  <>
+    <HvAccordion label="Analytics" headingLevel={1}>
+      <HvTypography>Views</HvTypography>
+    </HvAccordion>
+    <HvAccordion label="System">
+      <HvTypography>item 2</HvTypography>
+    </HvAccordion>
+    <HvAccordion label="Data">
+      <HvTypography>item 3</HvTypography>
+    </HvAccordion>
+  </>
+);
+
+const Controlled = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <HvAccordion
+      label="Analytics"
+      expanded={open}
+      onChange={() => setOpen(!open)}
+    >
+      <HvTypography>Views</HvTypography>
+    </HvAccordion>
+  );
+};
+
+const assertClosedEnabledButton = (
+  component: HTMLElement,
+  name?: string | RegExp,
+) => {
   expect(component).toBeInTheDocument();
   expect(component).toHaveAttribute("aria-expanded", "false");
   expect(component).toHaveAttribute("aria-disabled", "false");
+
+  if (name != null) {
+    expect(component).toHaveAccessibleName(name);
+  }
+};
+
+const assertClosedDisabledButton = (component: HTMLElement) => {
+  expect(component).toBeInTheDocument();
+  expect(component).toHaveAttribute("aria-expanded", "false");
+  expect(component).toHaveAttribute("aria-disabled", "true");
+};
+
+const assertShowHideWithMouse = async () => {
+  const user = userEvent.setup();
+  const analyticsItem = screen.getByRole("button", { name: /Analytics/i });
+  const analyticsContent = screen.getByText("Views");
+
+  assertClosedEnabledButton(analyticsItem);
+  expect(analyticsContent).not.toBeVisible();
+
+  await user.click(analyticsItem);
+  expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
+  expect(analyticsContent).toBeVisible();
+};
+
+const assertShowHideWithKeyboard = async () => {
+  const user = userEvent.setup();
+  const analyticsItem = screen.getByRole("button", { name: /Analytics/i });
+  const analyticsContent = screen.getByText("Views");
+
+  assertClosedEnabledButton(analyticsItem);
+  expect(analyticsContent).not.toBeVisible();
+
+  await user.tab();
+  expect(analyticsContent).not.toBeVisible();
+
+  await user.keyboard("{enter}");
+  expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
+  expect(analyticsContent).toBeVisible();
+
+  await user.keyboard("{enter}");
+  expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
+  expect(analyticsContent).not.toBeVisible();
 };
 
 describe("Accordion", () => {
-  describe("general structure", () => {
-    it("renders the component as expected", () => {
-      render(
-        <>
-          <HvAccordion label="Analytics" headingLevel={1}>
-            <HvTypography>item 1</HvTypography>
-          </HvAccordion>
-          <HvAccordion label="System" headingLevel={2}>
-            <HvTypography>item 2</HvTypography>
-          </HvAccordion>
-          <HvAccordion label="Data" headingLevel={2}>
-            <HvTypography>item 3</HvTypography>
-          </HvAccordion>
-        </>,
-      );
-      const analyticsItem = screen.getByRole("button", { name: /Analytics/i });
-      testAttributes(analyticsItem);
-      const systemItem = screen.getByRole("button", { name: /System/i });
-      testAttributes(systemItem);
-      const dataItem = screen.getByRole("button", { name: /Data/i });
-      testAttributes(dataItem);
-    });
+  it("renders the component as expected", () => {
+    render(<Main />);
+    const buttons = screen.getAllByRole("button");
+    expect(buttons).toHaveLength(3);
+    assertClosedEnabledButton(buttons[0], /Analytics/i);
+    assertClosedEnabledButton(buttons[1], /System/i);
+    assertClosedEnabledButton(buttons[2], /Data/i);
   });
 
-  describe("interactions", () => {
-    it("opens and closes the content", async () => {
-      const { getByRole, getByText } = render(
-        <>
-          <HvAccordion label="Analytics" headingLevel={1}>
-            <HvTypography>Views</HvTypography>
-          </HvAccordion>
-          <HvAccordion label="System" headingLevel={2}>
-            <HvTypography>item 2</HvTypography>
-          </HvAccordion>
-          <HvAccordion label="Data" headingLevel={2}>
-            <HvTypography>item 3</HvTypography>
-          </HvAccordion>
-        </>,
-      );
-      let analyticsItem = getByRole("button", { name: /Analytics/i });
-      const analyticsContent = getByText("Views");
-      expect(analyticsItem).toBeInTheDocument();
-      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-      expect(analyticsItem).toHaveAttribute("aria-disabled", "false");
-      userEvent.tab();
-      expect(analyticsContent).not.toHaveFocus();
-      fireEvent.click(analyticsItem); // open
-      await waitFor(() => {
-        analyticsItem = getByRole("button", { name: /Analytics/i });
-        expect(analyticsItem).toBeInTheDocument();
-      });
-      expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
-    });
+  it("shows and hides the content using the mouse when uncontrolled", async () => {
+    render(<Main />);
+    await assertShowHideWithMouse();
+  });
 
-    it("opens and closes the content using the keyboard", async () => {
-      const { getByRole, getByText } = render(
-        <>
-          <HvAccordion label="Analytics" headingLevel={1}>
-            <HvTypography>Views</HvTypography>
-          </HvAccordion>
-          <HvAccordion label="System" headingLevel={2}>
-            <HvTypography>item 2</HvTypography>
-          </HvAccordion>
-          <HvAccordion label="Data" headingLevel={2}>
-            <HvTypography>item 3</HvTypography>
-          </HvAccordion>
-        </>,
-      );
-      let analyticsItem = getByRole("button", { name: /Analytics/i });
-      const analyticsContent = getByText("Views");
-      expect(analyticsItem).toBeInTheDocument();
-      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-      expect(analyticsItem).toHaveAttribute("aria-disabled", "false");
-      expect(analyticsContent).not.toBeVisible();
-      fireEvent.keyDown(analyticsItem, { key: "Enter", keyCode: 13 }); // open
-      await waitFor(() => {
-        analyticsItem = getByRole("button", { name: /Analytics/i });
-        expect(analyticsContent).toBeVisible();
-      });
-      expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
-      userEvent.tab();
-      fireEvent.keyDown(analyticsItem, { key: "Enter", keyCode: 13 });
-      await waitFor(() => {
-        analyticsItem = getByRole("button", { name: /Analytics/i });
-      });
-      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-      userEvent.tab();
-    });
+  it("shows and hides the content using the keyboard when uncontrolled", async () => {
+    render(<Main />);
+    await assertShowHideWithKeyboard();
+  });
 
-    it("cannot open a disabled accordion", async () => {
-      const { getByRole, getByText } = render(
-        <>
-          <HvAccordion label="Analytics" headingLevel={1} disabled>
-            <HvTypography>Views</HvTypography>
-          </HvAccordion>
-          <HvAccordion label="System" headingLevel={2}>
-            <HvTypography>item 2</HvTypography>
-          </HvAccordion>
-          <HvAccordion label="Data" headingLevel={2} disabled>
-            <HvTypography>item 3</HvTypography>
-          </HvAccordion>
-        </>,
-      );
-      const analyticsItem = getByRole("button", { name: /Analytics/i });
-      const analyticsContent = getByText("Views");
-      expect(analyticsItem).toBeInTheDocument();
-      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-      expect(analyticsItem).toHaveAttribute("aria-disabled", "true");
-      userEvent.tab();
-      expect(analyticsContent).not.toHaveFocus();
-      fireEvent.click(analyticsItem); // try to open
-      await waitFor(() => {
-        expect(analyticsItem).toBeInTheDocument();
-        expect(analyticsContent).not.toBeVisible();
-      });
-      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-      expect(analyticsItem).toHaveAttribute("aria-disabled", "true");
-    });
+  it("shows and hides the content using the mouse when controlled", async () => {
+    render(<Controlled />);
+    await assertShowHideWithMouse();
+  });
 
-    it("cannot open a disabled accordion with keyboard", async () => {
-      const { getByRole, getByText } = render(
-        <>
-          <HvAccordion label="Analytics" headingLevel={1} disabled>
-            <HvTypography>Views</HvTypography>
-          </HvAccordion>
-          <HvAccordion label="System" headingLevel={2}>
-            <HvTypography>item 2</HvTypography>
-          </HvAccordion>
-          <HvAccordion label="Data" headingLevel={2} disabled>
-            <HvTypography>item 3</HvTypography>
-          </HvAccordion>
-        </>,
-      );
-      const analyticsItem = getByRole("button", { name: /Analytics/i });
-      const analyticsContent = getByText("Views");
-      expect(analyticsItem).toBeInTheDocument();
-      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-      expect(analyticsItem).toHaveAttribute("aria-disabled", "true");
-      userEvent.tab();
-      expect(analyticsContent).not.toHaveFocus();
-      fireEvent.keyDown(analyticsItem, { key: "Enter", keyCode: 13 }); // try to open
-      await waitFor(() => {
-        expect(analyticsItem).toBeInTheDocument();
-        expect(analyticsContent).not.toBeVisible();
-      });
-      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-      expect(analyticsItem).toHaveAttribute("aria-disabled", "true");
-    });
+  it("shows and hides the content using the keyboard when controlled", async () => {
+    render(<Controlled />);
+    await assertShowHideWithKeyboard();
+  });
+
+  it("doesn't open when disabled using the mouse", async () => {
+    const user = userEvent.setup();
+    render(
+      <HvAccordion label="Analytics" headingLevel={1} disabled>
+        <HvTypography>Views</HvTypography>
+      </HvAccordion>,
+    );
+
+    const analyticsItem = screen.getByRole("button", { name: /Analytics/i });
+    const analyticsContent = screen.getByText("Views");
+    assertClosedDisabledButton(analyticsItem);
+    expect(analyticsContent).not.toBeVisible();
+
+    await user.click(analyticsItem);
+    assertClosedDisabledButton(analyticsItem);
+    expect(analyticsContent).not.toBeVisible();
+  });
+
+  it("doesn't open when disabled using the keyboard", async () => {
+    const user = userEvent.setup();
+    render(
+      <HvAccordion label="Analytics" headingLevel={1} disabled>
+        <HvTypography>Views</HvTypography>
+      </HvAccordion>,
+    );
+
+    const analyticsItem = screen.getByRole("button", { name: /Analytics/i });
+    const analyticsContent = screen.getByText("Views");
+    assertClosedDisabledButton(analyticsItem);
+    expect(analyticsContent).not.toBeVisible();
+
+    await user.tab();
+    expect(analyticsContent).not.toBeVisible();
+
+    await user.keyboard("{enter}");
+    assertClosedDisabledButton(analyticsItem);
+    expect(analyticsContent).not.toBeVisible();
+  });
+
+  it("uses the right heading level when defined", () => {
+    render(<Main />);
+
+    const headings = screen.getAllByRole("heading");
+    expect(headings).toHaveLength(1);
+    expect(headings[0]).toHaveAccessibleName(/Analytics/i);
+  });
+
+  it("is opened at first when defaultExpand is set to true", async () => {
+    const user = userEvent.setup();
+    render(
+      <HvAccordion label="Analytics" defaultExpanded>
+        <HvTypography>Views</HvTypography>
+      </HvAccordion>,
+    );
+
+    const analyticsItem = screen.getByRole("button", { name: /Analytics/i });
+    const analyticsContent = screen.getByText("Views");
+    expect(analyticsItem).toBeInTheDocument();
+    expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
+    expect(analyticsItem).toHaveAttribute("aria-disabled", "false");
+    expect(analyticsContent).toBeVisible();
+
+    await user.click(analyticsItem);
+    assertClosedEnabledButton(analyticsItem);
+    expect(analyticsContent).not.toBeVisible();
+  });
+
+  it("disables the internal usage of `preventDefault` and `stopPropagation` when disableEventHandling is true", async () => {
+    const user = userEvent.setup();
+    const toggleSpy = vi.fn();
+    render(
+      <>
+        <HvAccordion label="Analytics">
+          <HvTypography>Views</HvTypography>
+        </HvAccordion>
+        <HvAccordion label="System" disableEventHandling>
+          <HvTypography>item 2</HvTypography>
+        </HvAccordion>
+        <HvDropdown defaultExpanded onToggle={toggleSpy} />
+      </>,
+    );
+
+    const analyticsItem = screen.getByRole("button", { name: /Analytics/i });
+    const systemItem = screen.getByRole("button", { name: /System/i });
+
+    await user.click(analyticsItem);
+    expect(toggleSpy).not.toHaveBeenCalled();
+
+    await user.click(systemItem);
+    expect(toggleSpy).toHaveBeenCalledOnce();
   });
 });
