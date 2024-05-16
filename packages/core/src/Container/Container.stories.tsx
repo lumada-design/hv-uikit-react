@@ -27,7 +27,6 @@ export const Main: StoryObj<HvContainerProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: (args) => {
     const classes = {

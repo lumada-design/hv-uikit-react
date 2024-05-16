@@ -53,7 +53,6 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: (args) => {
     const backButton = (
@@ -207,7 +206,6 @@ export const CustomContent: StoryObj<HvGlobalActionsProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => {
     const classes = {

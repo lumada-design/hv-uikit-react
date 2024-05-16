@@ -12,7 +12,6 @@ export const CompleteStory: StoryObj = {
     docs: { source: { code: TableCompleteRaw } },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false, delay: 5000 },
-    eyes: { include: true, waitBeforeCapture: 5000 },
   },
   render: () => <TableComplete />,
 };

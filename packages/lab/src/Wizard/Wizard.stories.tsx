@@ -105,7 +105,6 @@ export const Main: StoryObj<HvWizardProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
@@ -178,7 +177,6 @@ export const Skippable: StoryObj<HvWizardProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
@@ -248,7 +246,6 @@ export const ComponentBreakDown: StoryObj<HvWizardProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {

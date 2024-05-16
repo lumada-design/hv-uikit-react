@@ -21,7 +21,6 @@ export default {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false, delay: 5000 },
-    eyes: { include: true, waitBeforeCapture: 5000 },
   },
   decorators: [decorator],
 };

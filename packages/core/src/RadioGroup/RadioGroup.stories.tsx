@@ -43,7 +43,6 @@ export const Variants: StoryObj<HvRadioGroupProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => {
     const classes = {
@@ -88,9 +87,7 @@ export const Horizontal: StoryObj<HvRadioGroupProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
-
   render: () => {
     return (
       <HvRadioGroup

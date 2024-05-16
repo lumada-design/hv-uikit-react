@@ -59,7 +59,6 @@ export const Main: StoryObj<HvAppSwitcherProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: ({ layout }) => {
     const handlesActionSelectedCallback: HvAppSwitcherProps["isActionSelectedCallback"] =
@@ -96,7 +95,6 @@ export const ManyEntries: StoryObj<HvAppSwitcherProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => {
     const handlesActionSelectedCallback: HvAppSwitcherProps["isActionSelectedCallback"] =

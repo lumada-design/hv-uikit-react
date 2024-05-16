@@ -54,7 +54,6 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
     docs: { source: { code: MainRaw } },
   },
   render: (args) => <MainStory {...args} />,
@@ -72,7 +71,6 @@ export const TreeViewMode: StoryObj<HvVerticalNavigationProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => <TreeViewModeStory />,
 };
@@ -81,7 +79,6 @@ export const WithoutActions: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
     docs: { source: { code: WithoutActionsRaw } },
   },
   render: () => <WithoutActionsStory />,
@@ -91,7 +88,6 @@ export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
     docs: { source: { code: CollapsibleRaw } },
   },
   render: () => <CollapsibleStory />,
@@ -108,7 +104,6 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => <CollapsibleIconsStory />,
 };
@@ -125,7 +120,6 @@ export const CollapsibleIconsWithoutSubItems: StoryObj<HvVerticalNavigationProps
       },
       // Enables Chromatic snapshot
       chromatic: { disableSnapshot: false },
-      eyes: { include: true },
     },
     render: () => <CollapsibleIconsWithoutSubItemsStory />,
   };
@@ -142,7 +136,6 @@ export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigatio
       },
       // Enables Chromatic snapshot
       chromatic: { disableSnapshot: false },
-      eyes: { include: true },
     },
     // For visual testing and a11y
     play: async ({ canvasElement }) => {
@@ -160,7 +153,6 @@ export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false, delay: 5000 },
-    eyes: { include: true, waitBeforeCapture: 5000 },
     docs: { source: { code: SliderModeRaw } },
   },
   render: () => <SliderModeStory />,
@@ -177,7 +169,6 @@ export const MobileNavigation: StoryObj<HvVerticalNavigationProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => <MobileNavigationStory />,
 };

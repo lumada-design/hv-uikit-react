@@ -122,7 +122,6 @@ export const TheDesignSystemColumns: StoryObj<HvGridProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => {
     const width = useWidth();

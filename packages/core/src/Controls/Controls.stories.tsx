@@ -27,7 +27,6 @@ export const Main: StoryObj = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
     docs: { source: { code: ControlsRaw } },
   },
   render: () => <ControlsStory />,

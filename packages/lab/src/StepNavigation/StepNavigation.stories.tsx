@@ -109,7 +109,6 @@ export const Variants: StoryObj<HvStepNavigationProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
-    eyes: { include: true },
   },
   render: () => (
     <div
