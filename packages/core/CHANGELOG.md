@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.65.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.64.6...@hitachivantara/uikit-react-core@5.65.0) (2024-05-17)
+
+### Features
+
+- **accordion:** prop added to disable the internal usage of preventDefault and stopPropagation ([60c1a19](https://github.com/lumada-design/hv-uikit-react/commit/60c1a19958e49a3fc5ae3194b1d878d9ccd98f9e))
+
 ## 5.64.6 (2024-05-15)
 
 ### Bug Fixes
