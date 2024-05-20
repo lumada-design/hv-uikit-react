@@ -1,5 +1,5 @@
 {
   "projectId": "Project:66040297ad386b97be078cc9",
-  "buildScriptName": "build:doc:test",
+  "buildScriptName": "build:doc",
   "skip": "dependabot/**"
 }
