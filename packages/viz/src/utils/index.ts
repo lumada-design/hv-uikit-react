@@ -82,7 +82,7 @@ export const getFilterFunction = (
       return (row: any) => {
         let include = false;
         for (const val of valueArray) {
-          if (row[field].includes(val)) {
+          if (String(row[field]).includes(String(val))) {
             include = true;
           }
         }
@@ -92,7 +92,7 @@ export const getFilterFunction = (
       return (row: any) => {
         let include = true;
         for (const val of valueArray) {
-          if (row[field].includes(val)) {
+          if (String(row[field]).includes(String(val))) {
             include = false;
           }
         }
