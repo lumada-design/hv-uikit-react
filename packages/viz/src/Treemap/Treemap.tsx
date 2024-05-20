@@ -66,10 +66,6 @@ export const HvTreemapChart = forwardRef<ReactECharts, HvTreemapChartProps>(
 
     const option = useOption({
       option: {
-        title: {
-          text: name,
-          left: "center",
-        },
         series: [
           {
             name,
