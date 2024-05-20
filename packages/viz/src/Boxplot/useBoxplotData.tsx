@@ -1,10 +1,13 @@
 import { useMemo } from "react";
-import { escape, from, internal, table } from "arquero";
-import type ColumnTable from "arquero/dist/types/table/column-table";
+import { escape } from "arquero";
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
 import { HvChartData, HvChartFilter } from "../types";
-import { getHvArqueroCombinedFilters } from "../utils";
+import {
+  getHvArqueroCombinedFilters,
+  normalizeColumnName,
+  processTableData,
+} from "../utils";
 
 interface HvDataHookProps {
   data: HvChartData;
@@ -15,47 +18,47 @@ interface HvDataHookProps {
 
 export const useBoxplotData = ({
   data,
-  groupBy,
+  groupBy: groupByProp,
   measures,
-  filters,
+  filters: filtersProp,
 }: HvDataHookProps) => {
   const chartData = useMemo(() => {
-    let tableData: ColumnTable;
-    if (data instanceof internal.ColumnTable) {
-      tableData = data;
-    } else if (Array.isArray(data)) {
-      tableData = from(data);
-    } else {
-      tableData = table(data);
-    }
+    // Converting data to arquero table data and normalizing the columns name
+    const { data: processedData } = processTableData(data);
+    let tableData = processedData;
 
     // Filter data right away
-    if (filters) {
+    if (filtersProp) {
+      const filters = (
+        Array.isArray(filtersProp) ? filtersProp : [filtersProp]
+      ).map((filter) => ({
+        ...filter,
+        field: normalizeColumnName(filter.field), // normalize
+      }));
+
       tableData = tableData.filter(
-        escape((row) =>
-          getHvArqueroCombinedFilters(
-            row,
-            Array.isArray(filters) ? filters : [filters],
-          ),
-        ),
+        escape((row) => getHvArqueroCombinedFilters(row, filters)),
       );
     }
 
-    const uniqueGroupBy = new Set(tableData.array(groupBy || "") as string[]);
+    const normalizedGroupBy = normalizeColumnName(groupByProp || ""); // normalize
+    const uniqueGroupBy = new Set(
+      tableData.array(normalizedGroupBy) as string[],
+    );
 
     const results = {};
     uniqueGroupBy.forEach((group) => {
       results[group] = {};
       Object.keys(measures).forEach((measure) => {
         results[group][measure] = tableData
-          .params({ group, groupBy })
+          .params({ group, groupBy: normalizedGroupBy })
           .filter((d, $) => d[$.groupBy] === $.group)
-          .array(measure);
+          .array(normalizeColumnName(measure)); // normalize
       });
     });
 
     return results;
-  }, [data, filters, groupBy, measures]);
+  }, [data, filtersProp, groupByProp, measures]);
 
   return chartData;
 };

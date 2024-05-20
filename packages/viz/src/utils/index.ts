@@ -1,8 +1,11 @@
+import { from, internal, table } from "arquero";
+import type ColumnTable from "arquero/dist/types/table/column-table";
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
 import type {
   HvBarChartMeasures,
   HvChartAxisType,
+  HvChartData,
   HvChartFilter,
   HvChartFilterOperation,
   HvDonutChartMeasure,
@@ -200,4 +203,41 @@ export const getHvArqueroCombinedFilters = (
     const filterFunction = getFilterFunction(operation, field, value);
     return filterFunction(row);
   });
+};
+
+/**
+ * Normalizes a column name by replacing all characters that are not letters or numbers by "___"
+ */
+export const normalizeColumnName = (string: string) => {
+  return string.replace(/[^a-zA-Z0-9]/g, "__");
+};
+
+/**
+ * Converts data to a arquero data table and normalizes the column names for data processing.
+ * @param data Chart data
+ * @returns Processed data and reversed columns mapping to switch the columns to their original name
+ */
+export const processTableData = (data: HvChartData) => {
+  let tableData: ColumnTable;
+  if (data instanceof internal.ColumnTable) {
+    tableData = data;
+  } else if (Array.isArray(data)) {
+    tableData = from(data);
+  } else {
+    tableData = table(data);
+  }
+
+  // Normalize the column names to remove any special character and spaces since it can lead to errors during processing
+  const nameMapping = {};
+  const reversedNameMapping = {};
+  for (const column of tableData.columnNames()) {
+    const normalizedName = normalizeColumnName(column);
+    nameMapping[column] = normalizedName;
+    reversedNameMapping[normalizedName] = column;
+  }
+
+  return {
+    data: tableData.select(nameMapping),
+    mapping: reversedNameMapping,
+  };
 };
