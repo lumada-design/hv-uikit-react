@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useRef } from "react";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
 import { useControlled } from "../hooks/useControlled";
@@ -20,7 +20,7 @@ export interface HvAccordionProps
   children: React.ReactNode;
   /** The accordion label button. */
   label?: string;
-  /** The function that will be executed whenever the accordion toggles. It will receive the state of the accordion. */
+  /** The function that will be executed whenever the accordion toggles. Returns the state of the accordion. */
   onChange?: (event: React.SyntheticEvent, value: boolean) => void;
   /** Whether the accordion is open or not. If this property is defined the accordion must be fully controlled. */
   expanded?: boolean;
@@ -65,18 +65,20 @@ export const HvAccordion = (props: HvAccordionProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
+  // The isOpen and setIsOpen will only work if the component is uncontrolled
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
+  const { current: isControlled } = useRef(expanded !== undefined);
 
   const handleAction = useCallback(
     (event: React.SyntheticEvent) => {
       if (!disabled) {
-        onChange?.(event, isOpen);
+        onChange?.(event, isControlled ? !expanded : isOpen);
         setIsOpen(!isOpen);
         return true;
       }
       return false;
     },
-    [disabled, onChange, isOpen, setIsOpen],
+    [disabled, onChange, isControlled, expanded, isOpen, setIsOpen],
   );
 
   const handleClick = useCallback(

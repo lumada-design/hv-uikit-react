@@ -27,7 +27,7 @@ const Controlled = () => {
     <HvAccordion
       label="Analytics"
       expanded={open}
-      onChange={() => setOpen(!open)}
+      onChange={(event, value) => setOpen(value)}
     >
       <HvTypography>Views</HvTypography>
     </HvAccordion>
