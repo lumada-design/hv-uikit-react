@@ -25,11 +25,14 @@ echarts.use([BoxplotChart, TooltipComponent, VisualMapComponent]);
 export type HvBoxplotClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBoxplotProps
-  extends HvAxisChartCommonProps,
-    Omit<HvChartCommonProps, "groupBy"> {
+  extends Omit<
+      HvAxisChartCommonProps,
+      "splitBy" | "horizontalRangeSlider" | "seriesNameFormatter" | "stack"
+    >,
+    Omit<HvChartCommonProps, "groupBy" | "sortBy"> {
   /** The name of the heatmap */
   name?: string;
-  /**  Columns to measure on the chart. */
+  /** Columns to measure on the chart. */
   measures: Arrayable<HvBoxplotMeasure>;
   /** Columns to use to group the data. */
   groupBy?: string;
@@ -53,8 +56,6 @@ export const HvBoxplot = forwardRef<ReactECharts, HvBoxplotProps>(
       legend,
       measures,
       groupBy,
-      splitBy,
-      sortBy,
       tooltip,
       width,
       height,
