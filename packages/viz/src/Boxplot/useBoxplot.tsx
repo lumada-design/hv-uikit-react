@@ -18,12 +18,8 @@ export const useBoxplot = ({
   filters,
 }: HvDataHookProps) => {
   const measuresFields = useMemo(() => {
-    if (measures == null) {
-      return {};
-    }
-    if (typeof measures === "string") {
-      return { [measures]: undefined };
-    }
+    if (measures == null) return {};
+    if (typeof measures === "string") return { [measures]: undefined };
     if (Array.isArray(measures)) {
       return measures.reduce<{ [key: string]: string | undefined }>(
         (acc, value) => {
@@ -33,7 +29,6 @@ export const useBoxplot = ({
           } else {
             field = value.field;
           }
-
           return {
             ...acc,
             [field]: typeof value === "string" ? undefined : value.yAxis,

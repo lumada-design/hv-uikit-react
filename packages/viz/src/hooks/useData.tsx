@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { desc, escape, from, internal, not, table } from "arquero";
+import { desc, escape, internal, not } from "arquero";
 import type ColumnTable from "arquero/dist/types/table/column-table";
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
@@ -13,7 +13,12 @@ import {
   HvScatterPlotMeasure,
 } from "../types";
 import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
-import { getGroupKey, getHvArqueroCombinedFilters } from "../utils";
+import {
+  getGroupKey,
+  getHvArqueroCombinedFilters,
+  normalizeColumnName,
+  processTableData,
+} from "../utils";
 
 const getAgFunc = (func: HvChartAggregation, field: string) =>
   func === "count" ? "count()" : `${func}(d["${field}"])`;
@@ -36,97 +41,96 @@ export const useData = ({
   measures,
   sortBy,
   splitBy,
-  filters,
+  filters: filtersProp,
   delta,
 }: HvDataHookProps): internal.ColumnTable => {
   const groupByKey = getGroupKey(groupBy);
 
   const chartData = useMemo<ColumnTable>(() => {
-    let tableData: ColumnTable;
-    if (data instanceof internal.ColumnTable) {
-      tableData = data;
-    } else if (Array.isArray(data)) {
-      tableData = from(data);
-    } else {
-      tableData = table(data);
-    }
+    // Converting data to arquero table data and normalizing the columns name
+    const { data: processedData, mapping } = processTableData(data);
+    let tableData = processedData;
 
     // Filter data right away
-    if (filters) {
+    if (filtersProp) {
+      const filters = (
+        Array.isArray(filtersProp) ? filtersProp : [filtersProp]
+      ).map((filter) => ({
+        ...filter,
+        field: normalizeColumnName(filter.field), // normalize
+      }));
+
       tableData = tableData.filter(
-        escape((row) =>
-          getHvArqueroCombinedFilters(
-            row,
-            Array.isArray(filters) ? filters : [filters],
-          ),
-        ),
+        escape((row) => getHvArqueroCombinedFilters(row, filters)),
       );
     }
 
-    const groupByFields = groupBy
-      ? Array.isArray(groupBy)
-        ? groupBy
-        : [groupBy]
-      : [];
+    const groupByFields = (
+      groupBy ? (Array.isArray(groupBy) ? groupBy : [groupBy]) : []
+    ).map((value) => normalizeColumnName(value)); // normalize
 
-    const splitByFields = Array.isArray(splitBy)
-      ? splitBy
-      : splitBy != null
-        ? [splitBy]
-        : [];
+    const splitByFields = (
+      Array.isArray(splitBy) ? splitBy : splitBy != null ? [splitBy] : []
+    ).map((value) => normalizeColumnName(value)); // normalize
 
-    const measuresFields: { [key: string]: string } =
-      measures == null
-        ? {}
-        : typeof measures === "string"
-          ? { [measures]: getAgFunc("sum", measures) }
-          : Array.isArray(measures)
-            ? measures.reduce<{ [key: string]: string }>((acc, value) => {
-                let field: string;
-                let agFunction: HvChartAggregation;
-                if (typeof value === "string") {
-                  field = value;
-                  agFunction = "sum";
-                } else {
-                  field = value.field;
-                  agFunction = value.agg ?? "sum";
-                }
+    let measuresFields: { [key: string]: string } = {};
+    if (typeof measures === "string") {
+      const normalizedMeasure = normalizeColumnName(measures); // normalize
+      measuresFields[normalizedMeasure] = getAgFunc("sum", normalizedMeasure);
+    } else if (Array.isArray(measures)) {
+      measuresFields = measures.reduce<{ [key: string]: string }>(
+        (acc, value) => {
+          let field: string;
+          let agFunction: HvChartAggregation;
+          if (typeof value === "string") {
+            field = normalizeColumnName(value); // normalize
+            agFunction = "sum";
+          } else {
+            field = normalizeColumnName(value.field); // normalize
+            agFunction = value.agg ?? "sum";
+          }
+          return {
+            ...acc,
+            [field]: getAgFunc(agFunction, field),
+          };
+        },
+        {},
+      );
+    } else if (measures != null) {
+      const normalizedMeasure = normalizeColumnName(measures.field); // normalize
+      measuresFields[normalizedMeasure] = getAgFunc(
+        measures.agg ?? "sum",
+        normalizedMeasure,
+      );
+    }
 
-                return {
-                  ...acc,
-                  [field]: getAgFunc(agFunction, field),
-                };
-              }, {})
-            : {
-                [measures.field]: getAgFunc(
-                  measures.agg ?? "sum",
-                  measures.field,
-                ),
-              };
-
-    const sortByFields: { [key: string]: HvChartOrder } =
-      sortBy == null
-        ? {}
-        : typeof sortBy === "string"
-          ? { [sortBy]: "asc" }
-          : Array.isArray(sortBy)
-            ? sortBy.reduce<{ [key: string]: HvChartOrder }>((acc, value) => {
-                let field: string;
-                let orderFunction: HvChartOrder;
-                if (typeof value === "string") {
-                  field = value;
-                  orderFunction = "asc";
-                } else {
-                  field = value.field;
-                  orderFunction = value.order ?? "asc";
-                }
-
-                return {
-                  ...acc,
-                  [field]: orderFunction,
-                };
-              }, {})
-            : { [sortBy.field]: sortBy.order ?? "asc" };
+    let sortByFields: { [key: string]: HvChartOrder } = {};
+    if (typeof sortBy === "string") {
+      const normalizedSort = normalizeColumnName(sortBy); // normalize
+      sortByFields[normalizedSort] = "asc";
+    } else if (Array.isArray(sortBy)) {
+      sortByFields = sortBy.reduce<{ [key: string]: HvChartOrder }>(
+        (acc, value) => {
+          let field: string;
+          let orderFunction: HvChartOrder;
+          if (typeof value === "string") {
+            field = normalizeColumnName(value); // normalize;
+            orderFunction = "asc";
+          } else {
+            field = normalizeColumnName(value.field); // normalize
+            orderFunction = value.order ?? "asc";
+          }
+          return {
+            ...acc,
+            [field]: orderFunction,
+          };
+        },
+        {},
+      );
+    } else if (sortBy != null) {
+      const normalizedSort = normalizeColumnName(sortBy.field); // normalize
+      sortByFields[normalizedSort] = sortBy.order ?? "asc";
+    }
 
     const allFields = [
       ...groupByFields,
@@ -139,14 +143,15 @@ export const useData = ({
     if (delta) {
       const deltaExpression = Object.keys(measuresFields).reduce(
         (acc, curr) => {
+          const normalizedMeasure = normalizeColumnName(curr); // normalize
+          const normalizedDelta = normalizeColumnName(delta); // normalize
           return {
             ...acc,
-            [curr]: `d => d.${curr} - d.${delta}`,
+            [normalizedMeasure]: `d => d.${normalizedMeasure} - d.${normalizedDelta}`,
           };
         },
         {},
       );
-
       tableData = tableData.derive(deltaExpression);
     }
 
@@ -189,13 +194,33 @@ export const useData = ({
       );
     }
 
+    // Revert the normalized names to the ones given by the user
+    const reversedMapping = {};
+    for (const column of tableData.columnNames()) {
+      if (mapping[column] != null) {
+        reversedMapping[column] = mapping[column];
+      } else {
+        reversedMapping[column] = column;
+      }
+    }
+    tableData = tableData.select(reversedMapping);
+
     // if a derived field was created, remove the original fields
     if (groupByFields.length > 1) {
       tableData = tableData.select(not(...groupByFields));
     }
 
     return tableData;
-  }, [data, groupBy, splitBy, measures, sortBy, delta, filters, groupByKey]);
+  }, [
+    data,
+    filtersProp,
+    groupBy,
+    splitBy,
+    measures,
+    sortBy,
+    delta,
+    groupByKey,
+  ]);
 
   return chartData;
 };
