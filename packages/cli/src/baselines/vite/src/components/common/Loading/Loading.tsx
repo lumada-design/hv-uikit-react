@@ -1,4 +1,3 @@
-import React from "react";
 import { HvLoading } from "@hitachivantara/uikit-react-core";
 
 import classes from "./styles";
