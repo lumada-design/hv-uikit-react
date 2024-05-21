@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.12.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.3...@hitachivantara/uikit-react-viz@5.12.4) (2024-05-21)
+
+### Bug Fixes
+
+- values converted to string for contains and notContains filters ([dcf037c](https://github.com/lumada-design/hv-uikit-react/commit/dcf037c279e5b392c376da53697125ecdc3db521))
+
 ## [5.12.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.2...@hitachivantara/uikit-react-viz@5.12.3) (2024-05-17)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz
