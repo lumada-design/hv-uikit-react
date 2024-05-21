@@ -678,4 +678,24 @@ describe("getHvArqueroCombinedFilters", () => {
     const countries = tableData.array("Country");
     expect(countries).toEqual([]);
   });
+
+  it("should not apply filter if the field is not present in the dataset", () => {
+    const tableData = processFilters([
+      {
+        field: "MissingField",
+        operation: "contains",
+        value: "someString",
+      },
+    ]);
+    const countries = tableData.array("Country");
+    expect(countries).toEqual([
+      "Portugal",
+      "USA",
+      "India",
+      "China",
+      "France",
+      "UK",
+      "Japan",
+    ]);
+  });
 });
