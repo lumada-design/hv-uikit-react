@@ -17,6 +17,7 @@ import { useUniqueId } from "../hooks/useUniqueId";
 import { HvInputProps } from "../Input";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
+import { getElementById } from "../utils/document";
 import { setId } from "../utils/setId";
 import { sliderStyles, staticClasses, useClasses } from "./Slider.styles";
 import { HvSliderInput } from "./SliderInput/SliderInput";
@@ -537,9 +538,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
           visible={dragging}
           placement="top"
           overlayClassName={classes.sliderTooltip}
-          getTooltipContainer={() =>
-            document.getElementById(indexedHandleId || "") as HTMLElement
-          }
+          getTooltipContainer={() => getElementById(indexedHandleId)!}
         >
           <div
             id={indexedHandleId}

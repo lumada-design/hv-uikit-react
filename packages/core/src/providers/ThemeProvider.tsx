@@ -33,46 +33,40 @@ interface HvThemeProviderProps {
 export const HvThemeProvider = ({
   children,
   themes: themesList,
-  theme,
+  theme: themeProp,
   emotionCache,
-  colorMode,
+  colorMode: colorModeProp,
   themeRootId: rootId,
 }: HvThemeProviderProps) => {
-  const initTheme = parseTheme(themesList, theme, colorMode);
+  const [theme, setTheme] = useState(themeProp);
+  const [colorMode, setColorMode] = useState(colorModeProp);
 
-  const [parsedTheme, setParsedTheme] = useState(initTheme);
-  const [activeTheme, setActiveTheme] = useState(parsedTheme.theme);
-  const [selectedTheme, setSelectedTheme] = useState(parsedTheme.selectedTheme);
-  const [selectedMode, setThemeMode] = useState(parsedTheme.selectedMode);
-  const [colorModes, setColorModes] = useState(parsedTheme.colorModes);
-  const [themes, setThemes] = useState(themesList.map((t) => t.name));
+  const {
+    theme: activeTheme,
+    selectedTheme,
+    selectedMode,
+    colorModes,
+    colorScheme,
+  } = parseTheme(themesList, theme, colorMode);
+
+  const themes = themesList.map((t) => t.name);
+
+  // review in v6 so that theme/colorMode isn't both controlled & uncontrolled
+  useEffect(() => {
+    setTheme(themeProp);
+    setColorMode(colorModeProp);
+  }, [colorModeProp, themeProp]);
 
   useEffect(() => {
-    const pTheme = parseTheme(themesList, theme, colorMode);
-    setThemes(themesList.map((t) => t.name));
-    setParsedTheme(pTheme);
-  }, [themesList, theme, colorMode]);
-
-  useEffect(() => {
-    setActiveTheme(parsedTheme.theme);
-    setSelectedTheme(parsedTheme.selectedTheme);
-    setThemeMode(parsedTheme.selectedMode);
-    setColorModes(parsedTheme.colorModes);
-
-    setElementAttrs(
-      parsedTheme.selectedTheme,
-      parsedTheme.selectedMode,
-      parsedTheme.colorScheme,
-      rootId,
-    );
-  }, [parsedTheme, rootId]);
+    setElementAttrs(selectedTheme, selectedMode, colorScheme, rootId);
+  }, [colorScheme, rootId, selectedMode, selectedTheme]);
 
   const changeTheme = useCallback(
     (newTheme = selectedTheme, newMode = selectedMode) => {
-      const pTheme = parseTheme(themesList, newTheme, newMode);
-      setParsedTheme(pTheme);
+      setTheme(newTheme);
+      setColorMode(newMode);
     },
-    [selectedMode, selectedTheme, themesList],
+    [selectedMode, selectedTheme],
   );
 
   const value = useMemo<HvThemeContextValue>(
@@ -96,20 +90,20 @@ export const HvThemeProvider = ({
     ],
   );
 
-  const MuiTheme = createTheme({
-    components: {
-      MuiButtonBase: {
-        defaultProps: {
-          disableRipple: true,
+  const muiTheme = useMemo(() => {
+    return createTheme({
+      components: {
+        MuiButtonBase: {
+          defaultProps: {
+            disableRipple: true,
+          },
         },
       },
-    },
-    breakpoints: {
-      values: {
-        ...activeTheme.breakpoints.values,
+      breakpoints: {
+        ...activeTheme.breakpoints,
       },
-    },
-  });
+    });
+  }, [activeTheme.breakpoints]);
 
   const emotionCacheValue = useMemo(
     () => ({ cache: emotionCache }),
@@ -117,7 +111,7 @@ export const HvThemeProvider = ({
   );
 
   return (
-    <MuiThemeProvider theme={MuiTheme}>
+    <MuiThemeProvider theme={muiTheme}>
       <HvThemeContext.Provider value={value}>
         <EmotionContext.Provider value={emotionCacheValue}>
           {children}

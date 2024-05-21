@@ -5,7 +5,7 @@ import {
 } from "@hitachivantara/uikit-styles";
 
 import { HvCreateThemeProps, HvTheme } from "../types/theme";
-import { getElementById } from "./document";
+import { getContainerElement, getElementById } from "./document";
 
 /**
  * Sets the element attributes and style for a theme and color mode.
@@ -16,9 +16,7 @@ export const setElementAttrs = (
   colorScheme: string,
   themeRootId?: string,
 ) => {
-  const element = themeRootId
-    ? document.getElementById(themeRootId)
-    : document.body;
+  const element = getContainerElement(themeRootId);
 
   if (element) {
     element.setAttribute(`data-theme`, themeName);
