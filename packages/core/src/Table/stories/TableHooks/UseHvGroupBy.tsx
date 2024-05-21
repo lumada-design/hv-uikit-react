@@ -41,9 +41,15 @@ export const UseHvGroupBy = () => {
       <HvTable {...getTableProps()}>
         <HvTableHead>
           {headerGroups.map((headerGroup) => (
-            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+            <HvTableRow
+              {...headerGroup.getHeaderGroupProps()}
+              key={headerGroup.getHeaderGroupProps().key}
+            >
               {headerGroup.headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()}>
+                <HvTableHeader
+                  {...col.getHeaderProps()}
+                  key={col.getHeaderProps().key}
+                >
                   {col.render("Header")}
                 </HvTableHeader>
               ))}
@@ -53,19 +59,24 @@ export const UseHvGroupBy = () => {
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
+            const { key, ...rowProps } = row.getRowProps();
 
             return (
               <HvTableRow
-                {...row.getRowProps()}
+                key={key}
                 style={{
                   backgroundColor:
                     row.subRows.length > 0
                       ? theme.colors.atmo1
                       : theme.table.rowExpandBackgroundColor,
                 }}
+                {...rowProps}
               >
                 {row.cells.map((cell) => (
-                  <HvTableCell {...cell.getCellProps()}>
+                  <HvTableCell
+                    {...cell.getCellProps()}
+                    key={cell.getCellProps().key}
+                  >
                     {cell.isGrouped ? (
                       // If it's a grouped cell, add an expander and row count
                       <>

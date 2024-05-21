@@ -37,8 +37,9 @@ export const SelectableControlled = () => {
       })}
     >
       <div className={css({ display: "flex", gap: theme.space.sm })}>
-        {tags.map((tag) => (
+        {tags.map((tag, i) => (
           <HvTag
+            key={`${tag.label}-${i}`}
             label={tag.label}
             color={tag.bgColor}
             selectable

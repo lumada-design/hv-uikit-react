@@ -63,9 +63,15 @@ export const ColumnResize = () => {
       <HvTable {...getTableProps()}>
         <HvTableHead>
           {headerGroups.map((headerGroup) => (
-            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+            <HvTableRow
+              {...headerGroup.getHeaderGroupProps()}
+              key={headerGroup.getHeaderGroupProps().key}
+            >
               {headerGroup.headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps({ align: col.align })}>
+                <HvTableHeader
+                  {...col.getHeaderProps({ align: col.align })}
+                  key={col.getHeaderProps().key}
+                >
                   {col.render("Header")}
                 </HvTableHeader>
               ))}
@@ -75,12 +81,14 @@ export const ColumnResize = () => {
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
+            const { key, ...rowProps } = row.getRowProps();
 
             return (
-              <HvTableRow hover {...row.getRowProps()}>
+              <HvTableRow hover key={key} {...rowProps}>
                 {row.cells.map((cell) => (
                   <HvTableCell
                     {...cell.getCellProps({ align: cell.column.align })}
+                    key={cell.getCellProps().key}
                   >
                     {cell.render("Cell")}
                   </HvTableCell>

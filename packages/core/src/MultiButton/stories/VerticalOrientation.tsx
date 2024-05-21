@@ -3,12 +3,12 @@ import { HvButton, HvMultiButton } from "@hitachivantara/uikit-react-core";
 import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
 
 const buttons = [
-  { name: "Map", icon: <Map />, key: 1 },
-  { name: "Location", icon: <LocationPin />, key: 2 },
-  { name: "Map", icon: <Map />, key: 3 },
-  { name: "Location", icon: <LocationPin />, key: 4 },
-  { name: "Map", icon: <Map />, key: 5 },
-  { name: "Location", icon: <LocationPin />, key: 6 },
+  { name: "Map", icon: <Map /> },
+  { name: "Location", icon: <LocationPin /> },
+  { name: "Map", icon: <Map /> },
+  { name: "Location", icon: <LocationPin /> },
+  { name: "Map", icon: <Map /> },
+  { name: "Location", icon: <LocationPin /> },
 ];
 
 export const VerticalOrientation = () => {
@@ -26,7 +26,7 @@ export const VerticalOrientation = () => {
       <HvMultiButton vertical style={{ width: "32px" }}>
         {buttons.map(({ name, icon }, i) => (
           <HvButton
-            key={`${buttons[i].key}`}
+            key={`${name}-${i}`}
             aria-label={name}
             selected={selection.includes(i)}
             onClick={() => handleChange(i)}
@@ -38,7 +38,7 @@ export const VerticalOrientation = () => {
       <HvMultiButton vertical style={{ marginLeft: "20px", width: "120px" }}>
         {buttons.map(({ name, icon }, i) => (
           <HvButton
-            key={`${buttons[i].key}`}
+            key={`${name}-${i}`}
             aria-label={name}
             startIcon={icon}
             selected={selection.includes(i)}

@@ -167,22 +167,30 @@ export const CustomDropdown = () => {
             <HvTypography variant="title4">Column Types</HvTypography>
             <HvSelect label="User ID" placeholder="Select an option">
               {options.map((option) => (
-                <HvOption value={option.value}>{option.label}</HvOption>
+                <HvOption key={option.value} value={option.value}>
+                  {option.label}
+                </HvOption>
               ))}
             </HvSelect>
             <HvSelect label="Name" placeholder="Select an option">
               {options.map((option) => (
-                <HvOption value={option.value}>{option.label}</HvOption>
+                <HvOption key={option.value} value={option.value}>
+                  {option.label}
+                </HvOption>
               ))}
             </HvSelect>
             <HvSelect label="Email" placeholder="Select an option">
               {options.map((option) => (
-                <HvOption value={option.value}>{option.label}</HvOption>
+                <HvOption key={option.value} value={option.value}>
+                  {option.label}
+                </HvOption>
               ))}
             </HvSelect>
             <HvSelect label="Telephone" placeholder="Select an option">
               {options.map((option) => (
-                <HvOption value={option.value}>{option.label}</HvOption>
+                <HvOption key={option.value} value={option.value}>
+                  {option.label}
+                </HvOption>
               ))}
             </HvSelect>
             <HvSimpleGrid cols={2}>
