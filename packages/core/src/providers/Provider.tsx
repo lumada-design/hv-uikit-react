@@ -103,7 +103,7 @@ export const HvProvider = ({
   const scopedRootId = `${scopedRootPrefix}-${generatedId}`;
 
   // Themes
-  const themesList: (HvTheme | HvThemeStructure)[] = processThemes(themes);
+  const themesList = processThemes(themes);
 
   // Emotion cache
   // Moves UI Kit styles to the top of the <head> so they're loaded first

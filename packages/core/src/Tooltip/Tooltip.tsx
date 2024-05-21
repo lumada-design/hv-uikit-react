@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import Fade from "@mui/material/Fade";
 import Tooltip, {
   TooltipProps as MuiTooltipProps,
@@ -82,11 +82,19 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
 
   const { rootId } = useTheme();
   const { classes } = useClasses(classesProp);
+  const [container, setContainer] = useState(() =>
+    getElementById(containerId ?? rootId),
+  );
+
+  // force extra render to get the correct container DOM element
+  useEffect(() => {
+    setContainer(getElementById(containerId ?? rootId));
+  }, [containerId, rootId]);
 
   return (
     <Tooltip
       ref={ref}
-      open={open ?? undefined}
+      open={open}
       enterDelay={enterDelay}
       placement={placement}
       TransitionComponent={TransitionComponent}
@@ -97,9 +105,7 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
         popper: classes.popper,
       }}
       title={title}
-      PopperProps={{
-        container: getElementById(containerId || rootId),
-      }}
+      PopperProps={{ container }}
       {...others}
     >
       {children}

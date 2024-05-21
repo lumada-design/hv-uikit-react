@@ -28,6 +28,7 @@ import { HvListContainer } from "../ListContainer";
 import { HvPanel } from "../Panel";
 import { fixedForwardRef } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
+import { getContainerElement } from "../utils/document";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Select.styles";
 
@@ -270,11 +271,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         open={isOpen}
         keepMounted
         disablePortal={!enablePortal}
-        container={
-          enablePortal
-            ? document.getElementById(rootId || "") || document.body
-            : undefined
-        }
+        container={enablePortal ? getContainerElement(rootId) : undefined}
         anchorEl={buttonRef.current}
         className={classes.popper}
         placement={placement}
