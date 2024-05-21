@@ -130,9 +130,15 @@ export const Table = ({
         <HvTable {...getTableProps()}>
           <HvTableHead>
             {headerGroups.map((headerGroup) => (
-              <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              <HvTableRow
+                {...headerGroup.getHeaderGroupProps()}
+                key={headerGroup.getHeaderGroupProps().key}
+              >
                 {headerGroup.headers.map((col) => (
-                  <HvTableHeader {...col.getHeaderProps()}>
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    key={col.getHeaderProps().key}
+                  >
                     {col.render("Header")}
                   </HvTableHeader>
                 ))}
@@ -142,12 +148,16 @@ export const Table = ({
           <HvTableBody {...getTableBodyProps()}>
             {page.length > 0 ? (
               page.map((row) => {
+                const { key, ...rowProps } = row.getRowProps();
                 prepareRow(row);
 
                 return (
-                  <HvTableRow {...row.getRowProps()}>
+                  <HvTableRow key={key} {...rowProps}>
                     {row.cells.map((cell) => (
-                      <HvTableCell {...cell.getCellProps()}>
+                      <HvTableCell
+                        {...cell.getCellProps()}
+                        key={cell.getCellProps().key}
+                      >
                         {cell.render("Cell")}
                       </HvTableCell>
                     ))}

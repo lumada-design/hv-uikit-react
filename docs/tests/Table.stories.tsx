@@ -88,29 +88,21 @@ export const Main: StoryObj = {
         useHvTableSticky,
       );
 
-    const renderTableRow = (row) => {
-      prepareRow(row);
-
-      return (
-        <HvTableRow {...row.getRowProps()}>
-          {row.cells.map((cell) => (
-            <HvTableCell {...cell.getCellProps()}>
-              {cell.render("Cell")}
-            </HvTableCell>
-          ))}
-        </HvTableRow>
-      );
-    };
-
     return (
       <HvTableSection>
         <HvTableContainer tabIndex={0}>
           <HvTable {...getTableProps()}>
             <HvTableHead>
               {headerGroups.map((headerGroup) => (
-                <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                <HvTableRow
+                  {...headerGroup.getHeaderGroupProps()}
+                  key={headerGroup.getHeaderGroupProps().key}
+                >
                   {headerGroup.headers.map((col) => (
-                    <HvTableHeader {...col.getHeaderProps()}>
+                    <HvTableHeader
+                      {...col.getHeaderProps()}
+                      key={col.getHeaderProps().key}
+                    >
                       {col.render("Header")}
                     </HvTableHeader>
                   ))}
@@ -118,7 +110,23 @@ export const Main: StoryObj = {
               ))}
             </HvTableHead>
             <HvTableBody {...getTableBodyProps()}>
-              {rows.map(renderTableRow)}
+              {rows.map((row) => {
+                prepareRow(row);
+                const { key, ...rowProps } = row.getRowProps();
+
+                return (
+                  <HvTableRow key={key} {...rowProps}>
+                    {row.cells.map((cell) => (
+                      <HvTableCell
+                        {...cell.getCellProps()}
+                        key={cell.getCellProps().key}
+                      >
+                        {cell.render("Cell")}
+                      </HvTableCell>
+                    ))}
+                  </HvTableRow>
+                );
+              })}
             </HvTableBody>
           </HvTable>
         </HvTableContainer>

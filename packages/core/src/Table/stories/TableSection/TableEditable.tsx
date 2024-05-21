@@ -617,7 +617,7 @@ const Table = <T extends Data>({
     const formId = `edit-row-${row.original.id}`;
 
     return (
-      <Fragment key={`editable_row_group_${row?.original.id}`}>
+      <Fragment key={formId}>
         <HvTableRow
           className={classes.tableRowEditable}
           {...row?.getRowProps()}
@@ -625,6 +625,7 @@ const Table = <T extends Data>({
           {row.cells.map((cell) => (
             <HvTableCell
               {...cell.getCellProps()}
+              key={cell.getCellProps().key}
               style={{ borderBottom: `1px solid ${theme.colors.atmo4}` }}
             >
               {cell.render("Cell")}
@@ -740,7 +741,7 @@ const Table = <T extends Data>({
     ) : (
       <HvTableRow {...row.getRowProps()}>
         {row.cells.map((cell) => (
-          <HvTableCell {...cell.getCellProps()}>
+          <HvTableCell {...cell.getCellProps()} key={cell.getCellProps().key}>
             <HvOverflowTooltip data={cell.render("Cell")} />
           </HvTableCell>
         ))}
@@ -755,10 +756,14 @@ const Table = <T extends Data>({
           <HvTable {...getTableProps()} className={classes.tableRoot}>
             <HvTableHead>
               {headerGroups.map((headerGroup) => (
-                <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                <HvTableRow
+                  {...headerGroup.getHeaderGroupProps()}
+                  key={headerGroup.getHeaderGroupProps().key}
+                >
                   {headerGroup.headers.map((col) => (
                     <HvTableHeader
                       {...col.getHeaderProps()}
+                      key={col.getHeaderProps().key}
                       aria-hidden={col.variant === "actions" ? true : undefined}
                     >
                       {col.render("Header")}

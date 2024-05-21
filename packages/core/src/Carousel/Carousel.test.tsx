@@ -14,8 +14,8 @@ const setup = ({ title = "TITLE", numImages = 10, onChange = () => {} }) => {
       onChange={onChange}
       renderThumbnail={(i) => <img src={`/image-${i}`} alt={`label-${i}`} />}
     >
-      {Array.from(Array(numImages), (el, i) => (
-        <HvCarouselSlide src={`/image-${i}`} alt={`label-${i}`} />
+      {[...Array(numImages).keys()].map((i) => (
+        <HvCarouselSlide key={i} src={`/image-${i}`} alt={`label-${i}`} />
       ))}
     </HvCarousel>,
   );

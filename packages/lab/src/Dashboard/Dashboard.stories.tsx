@@ -135,7 +135,9 @@ export const DataDriven: StoryObj<HvDashboardProps> = {
             const Component = componentMap[type];
 
             if (!Component) {
-              return <div>❌ Cannot render {type} dashboard item</div>;
+              return (
+                <div key={item.id}>❌ Cannot render {type} dashboard item</div>
+              );
             }
 
             return (

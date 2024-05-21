@@ -29,9 +29,15 @@ export const UseHvSelectionControlled = () => {
       <HvTable {...getTableProps()}>
         <HvTableHead>
           {headerGroups.map((headerGroup) => (
-            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+            <HvTableRow
+              {...headerGroup.getHeaderGroupProps()}
+              key={headerGroup.getHeaderGroupProps().key}
+            >
               {headerGroup.headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()}>
+                <HvTableHeader
+                  {...col.getHeaderProps()}
+                  key={col.getHeaderProps().key}
+                >
                   {col.render("Header")}
                 </HvTableHeader>
               ))}
@@ -41,9 +47,11 @@ export const UseHvSelectionControlled = () => {
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row, index) => {
             prepareRow(row);
+            const { key, ...rowProps } = row.getRowProps();
 
             return (
               <HvTableRow
+                key={key}
                 onChange={(event) => {
                   const newData = [...data];
                   newData[index].selected = (
@@ -51,10 +59,13 @@ export const UseHvSelectionControlled = () => {
                   ).checked;
                   setData(newData);
                 }}
-                {...row.getRowProps()}
+                {...rowProps}
               >
                 {row.cells.map((cell) => (
-                  <HvTableCell {...cell.getCellProps()}>
+                  <HvTableCell
+                    {...cell.getCellProps()}
+                    key={cell.getCellProps().key}
+                  >
                     {cell.render("Cell")}
                   </HvTableCell>
                 ))}

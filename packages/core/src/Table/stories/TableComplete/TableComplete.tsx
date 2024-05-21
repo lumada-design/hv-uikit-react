@@ -254,11 +254,12 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
     }
 
     prepareRow(row);
+    const { key, ...rowProps } = row.getRowProps({ "aria-rowindex": i + 1 });
 
     return (
-      <HvTableRow {...row.getRowProps({ "aria-rowindex": i + 1 })}>
+      <HvTableRow key={key} {...rowProps}>
         {row.cells.map((cell) => (
-          <HvTableCell {...cell.getCellProps()}>
+          <HvTableCell {...cell.getCellProps()} key={cell.getCellProps().key}>
             {cell.render("Cell")}
           </HvTableCell>
         ))}
@@ -285,9 +286,15 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
           <HvTable {...getTableProps()}>
             <HvTableHead {...getTableHeadProps?.()}>
               {headerGroups.map((headerGroup) => (
-                <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                <HvTableRow
+                  {...headerGroup.getHeaderGroupProps()}
+                  key={headerGroup.getHeaderGroupProps().key}
+                >
                   {headerGroup.headers.map((col) => (
-                    <HvTableHeader {...col.getHeaderProps()}>
+                    <HvTableHeader
+                      {...col.getHeaderProps()}
+                      key={col.getHeaderProps().key}
+                    >
                       {col.render("Header")}
                     </HvTableHeader>
                   ))}

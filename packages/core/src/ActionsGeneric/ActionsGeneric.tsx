@@ -109,7 +109,6 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
       : (icon as Function)?.({ isDisabled: disabled });
 
     const commonButtonProps: HvButtonProps = {
-      key: actionId || idx,
       id: actionId,
       variant,
       className: classes.button,
@@ -118,18 +117,19 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
       ...other,
     };
 
+    const key = actionId || idx;
     const isIcon = iconOnly ?? iconOnlyProp;
 
     if (isIcon) {
       return (
-        <HvIconButton {...commonButtonProps} title={label}>
+        <HvIconButton key={key} {...commonButtonProps} title={label}>
           {renderedIcon}
         </HvIconButton>
       );
     }
 
     return (
-      <HvButton {...commonButtonProps} startIcon={renderedIcon}>
+      <HvButton key={key} {...commonButtonProps} startIcon={renderedIcon}>
         {label}
       </HvButton>
     );

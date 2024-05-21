@@ -66,18 +66,18 @@ export const ExpandColumnRenderer = () => {
   );
 
   const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
-    return pages.map((row, index) => {
+    return pages.map((row, i) => {
       prepareRow(row);
+      const { key, ...rowProps } = row.getRowProps({ "aria-rowindex": i + 1 });
 
       return (
-        <Fragment key={row.id}>
-          <HvTableRow
-            {...row.getRowProps({
-              "aria-rowindex": index + 1,
-            })}
-          >
+        <Fragment key={key}>
+          <HvTableRow {...rowProps}>
             {row.cells.map((cell) => (
-              <HvTableCell {...cell.getCellProps()}>
+              <HvTableCell
+                {...cell.getCellProps()}
+                key={cell.getCellProps().key}
+              >
                 {cell.render("Cell")}
               </HvTableCell>
             ))}

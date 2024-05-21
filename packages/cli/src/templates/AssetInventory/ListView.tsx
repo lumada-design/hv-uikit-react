@@ -32,14 +32,18 @@ export const ListView = ({ id, instance, columns }: ListViewProps) => {
         </HvTableHead>
         <HvTableBody withNavigation {...instance.getTableBodyProps()}>
           {instance.page.map((row) => {
+            const { key, ...rowProps } = row.getRowProps();
             instance.prepareRow(row);
             return (
-              <HvTableRow {...row.getRowProps()}>
-                {row.cells.map((cell) => (
-                  <HvTableCell {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </HvTableCell>
-                ))}
+              <HvTableRow key={key} {...rowProps}>
+                {row.cells.map((cell) => {
+                  const { key: cellKey, ...cellProps } = cell.getCellProps();
+                  return (
+                    <HvTableCell key={cellKey} {...cellProps}>
+                      {cell.render("Cell")}
+                    </HvTableCell>
+                  );
+                })}
               </HvTableRow>
             );
           })}
