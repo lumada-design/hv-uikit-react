@@ -200,7 +200,9 @@ export const getHvArqueroCombinedFilters = (
 ) => {
   return filters.every((filter) => {
     const { field, operation, value } = filter;
-    const filterFunction = getFilterFunction(operation, field, value);
+    const filterFunction = Object.hasOwn(row, field)
+      ? getFilterFunction(operation, field, value)
+      : () => true;
     return filterFunction(row);
   });
 };
