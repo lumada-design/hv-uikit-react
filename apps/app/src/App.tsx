@@ -1,4 +1,4 @@
-import { RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
   ds3,
   ds5,
@@ -6,9 +6,13 @@ import {
   pentahoPlus,
 } from "@hitachivantara/uikit-react-core";
 
-import { router } from "~/lib/routes";
+import { routes } from "./routes";
 
 import "~/lib/i18n";
+
+const router = createBrowserRouter(routes, {
+  basename: import.meta.env.BASE_URL,
+});
 
 const App = () => {
   return (

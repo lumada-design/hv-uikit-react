@@ -27,26 +27,26 @@ type GeneratorContextOptions = {
   isCodeEdit?: boolean;
 };
 
-type GeneratorContextProp = {
+type GeneratorContextValue = {
   customTheme: HvTheme | HvThemeStructure;
   updateCustomTheme: (
     changes: DeepPartial<HvTheme | HvThemeStructure>,
     options?: GeneratorContextOptions,
   ) => void;
 
-  open?: boolean;
-  setOpen?: Dispatch<SetStateAction<boolean>>;
+  open: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
 
-  tutorialOpen?: boolean;
-  setTutorialOpen?: Dispatch<SetStateAction<boolean>>;
+  tutorialOpen: boolean;
+  setTutorialOpen: Dispatch<SetStateAction<boolean>>;
 
-  currentStep?: number;
-  setCurrentStep?: Dispatch<SetStateAction<number>>;
+  currentStep: number;
+  setCurrentStep: Dispatch<SetStateAction<number>>;
 
   themeChanges?: Partial<HvTheme | HvThemeStructure>;
 };
 
-export const GeneratorContext = createContext<GeneratorContextProp | null>(
+export const GeneratorContext = createContext<GeneratorContextValue | null>(
   null,
 );
 
