@@ -1,8 +1,8 @@
 import {
   HvBulkActionsProps,
+  HvColor,
   HvControlsProps,
   HvRightControlProps,
-  HvSemanticColorKeys,
   HvSkeleton,
   HvTableColumnConfig,
   HvTooltip,
@@ -35,7 +35,7 @@ export interface AssetInventoryEntry {
   priority?: string;
   time?: string;
   temperature?: string;
-  statusColor?: HvSemanticColorKeys;
+  statusColor?: HvColor;
   image?: string;
 }
 
@@ -237,10 +237,14 @@ const getTime = (priority: string, index: number) => {
 const getPriority = (i: number) =>
   (i % 2 > 0 && "High") || (i % 2 < 0 && "Medium") || "Low";
 
-const getRandomStatus = (): HvSemanticColorKeys => {
-  return ["neutral", "positive", "negative", "warning"][
-    Math.floor(Math.random() * 5)
-  ] as HvSemanticColorKeys;
+const getRandomStatus = () => {
+  const colors = [
+    "neutral",
+    "positive",
+    "negative",
+    "warning",
+  ] satisfies HvColor[];
+  return colors[Math.floor(Math.random() * 5)];
 };
 
 export const createEntry = (i: number): AssetInventoryEntry => {

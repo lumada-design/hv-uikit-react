@@ -137,10 +137,7 @@ const common = {
   ...categorical,
 };
 
-/* -------------------------------------------------------------------------------------------------
- * Light palette
- * -----------------------------------------------------------------------------------------------*/
-
+// #region Light palette
 const accentLight = {
   secondary: "#414141",
   primary: "#2064B4",
@@ -200,10 +197,13 @@ const shadowLight = {
   shadow: "0 2px 12px rgba(65,65,65,0.12)",
 };
 
-/* -------------------------------------------------------------------------------------------------
- * Dark palette
- * -----------------------------------------------------------------------------------------------*/
+const utilsLight = {
+  backgroundColor: atmosphereLight.atmo2,
+  containerBackgroundHover: accentLight.primary_20,
+};
+// #endregion
 
+// #region Dark palette
 const accentDark = {
   secondary: "#CCCCCC",
   primary: "#639FE3",
@@ -263,6 +263,12 @@ const shadowDark = {
   shadow: "0 3px 5px rgba(0,0,0,.16)",
 };
 
+const utilsDark = {
+  backgroundColor: atmosphereDark.atmo2,
+  containerBackgroundHover: accentDark.primary_20,
+};
+// #endregion
+
 export const colors = {
   common,
   light: {
@@ -271,6 +277,7 @@ export const colors = {
     ...semanticLight,
     ...supportLight,
     ...shadowLight,
+    ...utilsLight,
   },
   dark: {
     ...accentDark,
@@ -278,9 +285,11 @@ export const colors = {
     ...semanticDark,
     ...supportDark,
     ...shadowDark,
+    ...utilsDark,
   },
 };
 
+// TODO: remove in favour of `HvColor`/`HvColorAny`?
 export type HvAccentColor = keyof typeof accentLight;
 export type HvAtmosphereColor = keyof typeof atmosphereLight;
 export type HvBaseColor = keyof typeof base;

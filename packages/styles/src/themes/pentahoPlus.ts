@@ -10,9 +10,9 @@ const pentahoPlus = makeTheme((theme) => ({
     modes: {
       dawn: {
         type: "light",
-        containerBackgroundHover: "#3358D419",
         ...colors.common,
         ...colors.light,
+        containerBackgroundHover: "#3358D419",
         backgroundColor: "#F1F5F9",
         atmo1: "#F8FAFC",
         atmo2: "#F1F5F9",
@@ -45,8 +45,6 @@ const pentahoPlus = makeTheme((theme) => ({
       },
       wicked: {
         type: "dark",
-        backgroundColor: colors.dark.atmo2,
-        containerBackgroundHover: colors.dark.primary_20,
         ...colors.common,
         ...colors.dark,
       },

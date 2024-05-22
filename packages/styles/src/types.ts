@@ -8,11 +8,9 @@ const flattenTokens = {
   ...tokens,
   colors: {
     type: "light",
-    backgroundColor: tokens.colors.light.atmo2,
-    containerBackgroundHover: tokens.colors.light.primary_20,
     ...tokens.colors.common,
     ...tokens.colors.light,
-  }, // Flatten colors and add background color
+  },
 };
 
 interface CSSProperties extends CSS.Properties<string | number> {}
@@ -143,11 +141,9 @@ export type HvThemeColorMode = "dawn" | "wicked";
 export type HvThemeColorModeType = "light" | "dark";
 
 // Theme color mode structure
-export type HvThemeColorModeStructure = HvThemeColors & {
-  backgroundColor: string;
-  containerBackgroundHover: string;
+export interface HvThemeColorModeStructure extends HvThemeColors {
   type: HvThemeColorModeType;
-};
+}
 
 // Theme structure
 export interface HvThemeStructure<Mode extends string = string>

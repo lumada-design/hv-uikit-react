@@ -105,12 +105,12 @@ export const parseTheme = (
   colorModes: string[];
   colorScheme: string;
 } => {
-  const names: string[] = themes.map((t) => t.name);
-  const selectedTheme: string = names.includes(theme) ? theme : names[0];
-  const themeStructure: HvThemeStructure =
+  const names = themes.map((t) => t.name);
+  const selectedTheme = names.includes(theme) ? theme : names[0];
+  const themeStructure =
     themes.find((t) => t.name === selectedTheme) || themes[0];
-  const colorModes: string[] = Object.keys(themeStructure.colors.modes);
-  const selectedMode: string = colorModes.includes(colorMode)
+  const colorModes = Object.keys(themeStructure.colors.modes);
+  const selectedMode = colorModes.includes(colorMode)
     ? colorMode
     : colorModes[0];
   const colorScheme = themeStructure.colors.modes[selectedMode].type;
