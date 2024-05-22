@@ -1,19 +1,16 @@
 import { lazy } from "react";
-import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
+import { Navigate, RouteObject } from "react-router-dom";
 
 /* eslint-disable import/no-relative-packages */
-// Templates
-const AssetInventory = lazy(
-  () => import("../../../../templates/AssetInventory"),
-);
-const ListView = lazy(() => import("../../../../templates/ListView"));
-const Form = lazy(() => import("../../../../templates/Form"));
-const DetailsView = lazy(() => import("../../../../templates/DetailsView"));
-const Dashboard = lazy(() => import("../../../../templates/Dashboard"));
-const Welcome = lazy(() => import("../../../../templates/Welcome"));
-const KanbanBoard = lazy(() => import("../../../../templates/KanbanBoard"));
+const AssetInventory = lazy(() => import("../../../templates/AssetInventory"));
+const ListView = lazy(() => import("../../../templates/ListView"));
+const Form = lazy(() => import("../../../templates/Form"));
+const DetailsView = lazy(() => import("../../../templates/DetailsView"));
+const Dashboard = lazy(() => import("../../../templates/Dashboard"));
+const Welcome = lazy(() => import("../../../templates/Welcome"));
+const KanbanBoard = lazy(() => import("../../../templates/KanbanBoard"));
 
-const routes: RouteObject[] = [
+export const routes: RouteObject[] = [
   {
     lazy: () => import("~/pages/layout/navigation"),
     children: [
@@ -42,7 +39,3 @@ const routes: RouteObject[] = [
     lazy: () => import("~/pages/Flow/DashboardPreview"),
   },
 ];
-
-export const router = createBrowserRouter(routes, {
-  basename: import.meta.env.BASE_URL,
-});
