@@ -9,15 +9,11 @@ const ds5 = makeTheme((theme) => ({
     modes: {
       dawn: {
         type: "light",
-        backgroundColor: colors.light.atmo2,
-        containerBackgroundHover: colors.light.primary_20,
         ...colors.common,
         ...colors.light,
       },
       wicked: {
         type: "dark",
-        backgroundColor: colors.dark.atmo2,
-        containerBackgroundHover: colors.dark.primary_20,
         ...colors.common,
         ...colors.dark,
       },

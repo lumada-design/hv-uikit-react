@@ -7,6 +7,8 @@ import type {
   HvSupportColor,
 } from "@hitachivantara/uikit-styles";
 
+// TODO: remove this file in v6, as these are (unused) legacy types
+// & promote usage of the more versatile `HvColor`/`HvColorAny` instead
 export type HvAccentColorKeys = HvAccentColor;
 export type HvAtmosphereColorKeys = HvAtmosphereColor;
 export type HvBaseColorKeys = HvBaseColor;

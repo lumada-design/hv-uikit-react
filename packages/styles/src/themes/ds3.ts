@@ -9,10 +9,10 @@ const ds3 = makeTheme((theme) => ({
     modes: {
       dawn: {
         type: "light",
-        backgroundColor: "#F0F0F0",
-        containerBackgroundHover: colors.light.atmo3,
         ...colors.common,
         ...colors.light,
+        backgroundColor: "#F0F0F0",
+        containerBackgroundHover: colors.light.atmo3,
         primary_80: "#477DBD",
         atmo2: "#F0F0F0",
         neutral: "#4D9284",
@@ -32,10 +32,10 @@ const ds3 = makeTheme((theme) => ({
       },
       wicked: {
         type: "dark",
-        backgroundColor: colors.dark.atmo2,
-        containerBackgroundHover: colors.dark.atmo3,
         ...colors.common,
         ...colors.dark,
+        backgroundColor: colors.dark.atmo2,
+        containerBackgroundHover: colors.dark.atmo3,
         positive: "#63A621",
         neutral: "#72CCCB",
         catastrophic: "#E26BD2",

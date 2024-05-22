@@ -1,12 +1,9 @@
-import {
-  HvAtmosphereColorKeys,
-  HvSemanticColorKeys,
-} from "@hitachivantara/uikit-react-core";
+import { HvColor } from "@hitachivantara/uikit-react-core";
 
 export type Column = {
   id: string;
   title: string;
-  color?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
+  color?: HvColor;
   icon?: React.ReactNode;
 };
 

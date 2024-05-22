@@ -92,8 +92,6 @@ const typographySpec: DeepString<HvThemeTypography> = {
 };
 
 const colorTokens = {
-  containerBackgroundHover: tokens.colors.light.primary_20,
-  backgroundColor: tokens.colors.light.atmo2,
   ...tokens.colors.common,
   ...tokens.colors.light,
 };
