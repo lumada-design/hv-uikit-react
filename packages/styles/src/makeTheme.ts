@@ -1,6 +1,6 @@
-import { theme } from "./theme";
+import { HvTheme, theme } from "./theme";
 import * as tokens from "./tokens";
-import type { HvCustomTheme, HvTheme, HvThemeStructure } from "./types";
+import type { HvCustomTheme, HvThemeStructure } from "./types";
 import { mergeTheme } from "./utils";
 
 /**

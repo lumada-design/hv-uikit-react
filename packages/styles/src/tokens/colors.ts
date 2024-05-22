@@ -135,6 +135,7 @@ const categorical = {
 const common = {
   ...base,
   ...categorical,
+  // TODO: add "base palette" colors?
 };
 
 // #region Light palette
@@ -262,6 +263,7 @@ const shadowDark = {
   shad1: "rgba(0,0,0,.16)",
   shadow: "0 3px 5px rgba(0,0,0,.16)",
 };
+// #endregion
 
 const utilsDark = {
   backgroundColor: atmosphereDark.atmo2,
