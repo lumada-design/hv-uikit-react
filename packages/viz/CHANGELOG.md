@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.12.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.4...@hitachivantara/uikit-react-viz@5.12.5) (2024-05-22)
+
+### Bug Fixes
+
+- **boxplot:** omit unused properties ([c5a62ac](https://github.com/lumada-design/hv-uikit-react/commit/c5a62ac6e805a2f633e5db55b27880e33933b596))
+- ignore filter if field is not present in the data set ([dc9b372](https://github.com/lumada-design/hv-uikit-react/commit/dc9b372a7bf0ac20267b74cfab026e84f04fd6b3))
+- normalize viz columns name ([1b550ca](https://github.com/lumada-design/hv-uikit-react/commit/1b550ca3effac824b6c5d40468b59ca69fc1212a))
+- **treemap:** remove unneeded title ([9fa3a49](https://github.com/lumada-design/hv-uikit-react/commit/9fa3a49a7ee088f813eb2d5f832c43fc3dcb03a2))
+
 ## [5.12.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.3...@hitachivantara/uikit-react-viz@5.12.4) (2024-05-21)
 
 ### Bug Fixes
