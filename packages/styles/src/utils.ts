@@ -204,8 +204,9 @@ export const getThemesVars = (themes: HvThemeStructure[]) => {
       const styleName = `[data-theme="${theme.name}"][data-color-mode="${colorMode}"]`;
       const themeName = `[data-theme="${theme.name}"]`;
 
-      // Extracting "components" and "name" because they shouldn't be mapped to CSS vars
-      const { components, name, colors, ...rest } = theme;
+      // extract properties that shouldn't be mapped to CSS variables
+      // @ts-expect-error align HvTheme <-> HvThemeStructure?
+      const { components, name, colors, palette, ...rest } = theme;
 
       const rgbColors = Object.entries(colors.modes[colorMode]).reduce(
         (acc, [key, value]) => {

@@ -1,13 +1,14 @@
 import * as tokens from "./tokens";
 import type { HvColorAny } from "./tokens";
+import { palette } from "./tokens/colorsPalette";
 import {
   DeepString,
-  HvTheme,
+  HvThemeColors,
   HvThemeComponents,
   HvThemeTypography,
   HvThemeTypographyProps,
-  HvThemeUtils,
   HvThemeVars,
+  SpacingValue,
 } from "./types";
 import {
   hasMultipleArgs,
@@ -112,7 +113,14 @@ const rgbVars = mapCSSVars({
   },
 });
 
-const spacing: HvThemeUtils["spacing"] = (...args) => {
+/**
+ * Utility function to generate spacing values from the theme.
+ *
+ * @example
+ * theme.spacing(2) // 16px (2*8px)
+ * theme.spacing("md", "inherit", "42px") // 24px inherit 42px
+ */
+const spacing = (...args: [SpacingValue[]] | SpacingValue[]) => {
   if (hasMultipleArgs(args)) {
     return args.map((arg) => spacingUtil(arg, themeVars)).join(" ");
   }
@@ -133,14 +141,30 @@ const spacing: HvThemeUtils["spacing"] = (...args) => {
   }
 };
 
-const alpha: HvThemeUtils["alpha"] = (color, factor) =>
+/**
+ * Utility function to apply an alpha channel to a color from the theme.
+ *
+ * @example
+ * theme.alpha("atmo1", 0.5) // rgb( R G B / 0.5)
+ */
+const alpha = (color: keyof HvThemeColors, factor: number | string) =>
   `rgb(${rgbVars.rgb[color]} / ${factor})`;
 
-export const theme: HvTheme = {
+/**
+ * UI Kit static theme object, containing values and utility functions that leverage the injected CSS variables.
+ * @returns string values that can be used as CSS values.
+ * @example
+ * theme.colors.brand // "var(--uikit-colors-brand)"
+ * theme.spacing("xs", "sm") // "var(--uikit-space-xs) var(--uikit-space-sm)"
+ */
+export const theme = {
   ...themeVars,
+  palette,
   spacing,
   alpha,
 };
+
+export type HvTheme = typeof theme;
 
 const getColorOrFallback = (color: HvColorAny | undefined) => {
   return (color && (theme.colors[color] as string)) || color;
