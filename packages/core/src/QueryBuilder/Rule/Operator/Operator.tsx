@@ -26,9 +26,9 @@ export const Operator = ({
     const attributeSpec =
       attribute && attributes ? attributes[attribute] : null;
     const options = attributeSpec
-      ? operators[attributeSpec.type].filter((o) =>
+      ? (operators[attributeSpec.type].filter((o) =>
           o.combinators.includes(combinator),
-        ) ?? []
+        ) ?? [])
       : [];
     return options.map((key) => ({
       id: key.operator,

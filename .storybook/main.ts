@@ -19,9 +19,7 @@ export default {
   core: {
     disableTelemetry: true,
   },
-  docs: {
-    autodocs: true,
-  },
+  docs: {},
   addons: [
     getAbsolutePath("@storybook/addon-controls"),
     getAbsolutePath("@storybook/addon-toolbars"),

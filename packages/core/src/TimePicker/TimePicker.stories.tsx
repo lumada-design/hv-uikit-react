@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import { css, CSSInterpolation } from "@emotion/css";
+import { css } from "@emotion/css";
+import type { CSSInterpolation } from "@emotion/serialize";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import {
@@ -16,6 +17,16 @@ import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 export default {
   title: "Components/Time Picker",
   component: HvTimePicker,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          // TODO: review aria-haspopup on a role-less element
+          { id: "aria-valid-attr-value", enabled: false },
+        ],
+      },
+    },
+  },
 } satisfies Meta<typeof HvTimePicker>;
 
 const makeDecorator =

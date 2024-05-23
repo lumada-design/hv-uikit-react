@@ -90,4 +90,5 @@ export const parameters: Preview["parameters"] = {
 export default {
   parameters,
   decorators: [ThemeDecorator],
+  tags: ["autodocs"],
 } satisfies Preview;

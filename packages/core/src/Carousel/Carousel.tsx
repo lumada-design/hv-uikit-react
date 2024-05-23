@@ -160,7 +160,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
   const canNext = controller?.canScrollNext() ?? false;
   const showTitle = !!title && (!xs || isFullscreen);
   const showFullscreen = showFullscreenProp ?? xs;
-  const height = isFullscreen ? "100%" : heightProp ?? "auto";
+  const height = isFullscreen ? "100%" : (heightProp ?? "auto");
   const showCounter = xs;
   const hideThumbnails = hideThumbnailsProp ?? (xs && !isFullscreen);
   const showThumbnails = !hideThumbnails && !!renderThumbnail;

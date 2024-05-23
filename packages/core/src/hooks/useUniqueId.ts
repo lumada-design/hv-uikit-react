@@ -24,5 +24,5 @@ export const useUniqueId = (
     if (!deterministicId) setId((reactId) => reactId ?? String(count++));
   }, [deterministicId, idPrefix]);
 
-  return deterministicId || (idPrefix ? idPrefix + id : id ?? "");
+  return deterministicId || (idPrefix ? idPrefix + id : (id ?? ""));
 };

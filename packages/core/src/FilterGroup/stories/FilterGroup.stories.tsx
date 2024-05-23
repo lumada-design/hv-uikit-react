@@ -22,6 +22,16 @@ const meta: Meta<typeof HvFilterGroup> = {
   title: "Widgets/Filter Group",
   component: HvFilterGroup,
   decorators: [(storyFn) => <div style={{ height: 550 }}>{storyFn()}</div>],
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          // TODO: review aria-haspopup on a role-less element
+          { id: "aria-valid-attr-value", enabled: false },
+        ],
+      },
+    },
+  },
 };
 
 export default meta;

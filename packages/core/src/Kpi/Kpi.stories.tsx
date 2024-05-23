@@ -40,6 +40,7 @@ const meta: Meta<typeof HvKpi> = {
         rules: [
           // disable react-google-chart's labelling elements without role
           { id: "aria-allowed-attr", enabled: false },
+          { id: "aria-prohibited-attr", enabled: false },
         ],
       },
     },

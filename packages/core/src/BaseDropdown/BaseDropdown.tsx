@@ -38,7 +38,8 @@ export { staticClasses as baseDropdownClasses };
 
 export type HvBaseDropdownClasses = ExtractNames<typeof useClasses>;
 
-export interface HvBaseDropdownProps extends HvBaseProps {
+export interface HvBaseDropdownProps
+  extends HvBaseProps<HTMLDivElement, "onToggle"> {
   /**
    * The role of the element that triggers the popup.
    *
@@ -346,6 +347,7 @@ const BaseDropdown = forwardRef<
               />
             )}
             <div
+              // TODO: review in v6. `containerId` needs to be on the role element (`children` has it)
               id={containerId}
               className={cx(classes.panel, {
                 [classes.panelOpenedUp]: popperPlacement?.includes("top"),

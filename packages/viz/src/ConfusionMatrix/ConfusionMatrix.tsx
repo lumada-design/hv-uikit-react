@@ -211,7 +211,7 @@ export const HvConfusionMatrix = forwardRef<
           : undefined,
       ...xAxis?.nameProps,
     },
-    data: chartData.array(groupByKey),
+    data: chartData.array(groupByKey) as any,
   });
 
   const chartSeries = useSeries({
