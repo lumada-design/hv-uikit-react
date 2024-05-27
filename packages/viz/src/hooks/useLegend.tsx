@@ -22,12 +22,10 @@ export const useLegend = ({
   direction = "horizontal",
 }: HvLegendHookProps) => {
   const option = useMemo<Pick<HvEChartsOption, "legend">>(() => {
-    const position: Record<string, string> = { y: positionProp?.y ?? "top" };
-    if (positionProp?.x != null && positionProp?.x !== "center") {
-      position[positionProp.x] = positionProp.x;
-    } else {
-      position.x = "center";
-    }
+    const position: Record<string, string> = {
+      y: positionProp?.y ?? "top",
+      x: positionProp?.x ?? "center",
+    };
 
     return {
       legend: {
