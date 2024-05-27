@@ -244,3 +244,60 @@ export const NoLabelNoInput: StoryObj<HvSliderProps> = {
     );
   },
 };
+
+export const DecimalValues: StoryObj<HvSliderProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "A slider with decimal values that illustrates how to use a scale other than 0 to 100.",
+      },
+    },
+  },
+  render: () => {
+    return (
+      <HvSlider
+        minPointValue={0.01}
+        maxPointValue={1}
+        markStep={10}
+        divisionQuantity={100}
+        hideInput
+        markDigits={2}
+      />
+    );
+  },
+};
+
+export const CustomValues: StoryObj<HvSliderProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "A slider with custom values.",
+      },
+    },
+  },
+  render: () => {
+    const [values, setValues] = useState([3]);
+    const formattedLabel = (label) => {
+      if (label === "1") return "Very Low";
+      if (label === "2") return "Low";
+      if (label === "3") return "Medium";
+      if (label === "4") return "High";
+      if (label === "5") return "Very High";
+    };
+
+    return (
+      <HvSlider
+        minPointValue={1}
+        maxPointValue={5}
+        markStep={1}
+        values={values}
+        onChange={setValues}
+        divisionQuantity={4}
+        hideInput
+        formatMark={(label) => formattedLabel(label)}
+        formatTooltip={(label) => formattedLabel(label)}
+      />
+    );
+  },
+};
