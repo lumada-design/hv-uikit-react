@@ -344,7 +344,10 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
         return validationStates.invalid;
       }
 
-      if (position < minPointValue || position > maxPointValue) {
+      const mappedPosition =
+        minPointValue + (position / 100) * (maxPointValue - minPointValue);
+
+      if (mappedPosition < minPointValue || mappedPosition > maxPointValue) {
         invalid = true;
         return validationStates.invalid;
       }
