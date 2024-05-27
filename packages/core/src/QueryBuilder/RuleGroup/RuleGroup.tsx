@@ -37,6 +37,7 @@ export const RuleGroup = ({
     labels,
     readOnly,
     disableConfirmation,
+    allowRepeatedAttributes,
   } = useQueryBuilderContext();
 
   const normalizedMaxDepth = maxDepth - 1;
@@ -159,20 +160,21 @@ export const RuleGroup = ({
               );
             }
 
-            const isInvalid =
-              combinator === "and" &&
-              rules.some((r, i) => {
-                if ("attribute" in r) {
-                  if (
-                    r.attribute === rule.attribute &&
-                    r.id !== rule.id &&
-                    i < index
-                  ) {
-                    return true;
+            const isInvalid = allowRepeatedAttributes
+              ? false
+              : combinator === "and" &&
+                rules.some((r, i) => {
+                  if ("attribute" in r) {
+                    if (
+                      r.attribute === rule.attribute &&
+                      r.id !== rule.id &&
+                      i < index
+                    ) {
+                      return true;
+                    }
                   }
-                }
-                return false;
-              });
+                  return false;
+                });
 
             return (
               <Rule
