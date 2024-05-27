@@ -70,12 +70,19 @@ export interface HvQueryBuilderProps {
   renderers?: HvQueryBuilderRenderers;
   /** Whether to opt-out of the confirmation dialogs shown before removing rules and rule groups. @default false. */
   disableConfirmation?: boolean;
+  /**
+   * Whether to allow attributes to be repeated in AND conditions.
+   * By default an error is shown when the selected attribute already exists in an AND conditions.
+   * @default false
+   */
+  allowRepeatedAttributes?: boolean; // TODO - review in v6: should we even have this validation? if needed, we should review its behavior.
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvQueryBuilderClasses;
 }
 
 // TODO - v6
 // - "range", "Empty", and "IsNotEmpty" operators with internal/built-in logic
+// - review query builder validation
 
 // Notes:
 // Deep clone is needed throughout the component to avoid undesired mutations in props, state, and ref values
@@ -95,6 +102,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     defaultValue,
     onChange,
     disableConfirmation = false,
+    allowRepeatedAttributes = false,
     operators = defaultOperators,
     combinators = defaultCombinators,
     maxDepth = 1,
@@ -157,6 +165,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       readOnly,
       renderers,
       disableConfirmation,
+      allowRepeatedAttributes,
       emptyRenderer,
     }),
     [
@@ -170,6 +179,7 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
       renderers,
       disableConfirmation,
       emptyRenderer,
+      allowRepeatedAttributes,
     ],
   );
 

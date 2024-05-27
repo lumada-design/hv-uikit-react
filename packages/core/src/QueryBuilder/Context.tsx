@@ -330,6 +330,7 @@ export interface HvQueryBuilderContextValue {
   initialTouched: boolean;
   readOnly: boolean;
   disableConfirmation: boolean;
+  allowRepeatedAttributes?: boolean;
   renderers?: HvQueryBuilderRenderers;
   emptyRenderer?: string[];
 }
@@ -345,6 +346,7 @@ export const HvQueryBuilderContext = createContext<HvQueryBuilderContextValue>({
   labels: defaultLabels,
   initialTouched: false,
   disableConfirmation: false,
+  allowRepeatedAttributes: false,
   readOnly: false,
 });
 

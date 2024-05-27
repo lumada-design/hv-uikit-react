@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 
@@ -257,6 +257,32 @@ const assertDefaultQuery = async () => {
   expect(removeGroupButtons).toHaveLength(2);
   expect(addConditionButtons).toHaveLength(3);
   expect(addGroupButtons).toHaveLength(1);
+};
+
+const setupDuplicatedAttributes = async () => {
+  const user = userEvent.setup();
+
+  // Add two conditions
+  const addButton = screen.getByRole("button", {
+    name: /Add condition/i,
+  });
+  await user.click(addButton);
+  await user.click(addButton);
+
+  // Select same attribute
+  const comboboxes = screen.getAllByRole("combobox", {
+    name: /Attribute/i,
+  });
+  await user.click(comboboxes[0]);
+  const firstOption = screen.getByRole("option", {
+    name: /Price/i,
+  });
+  await user.click(firstOption);
+  await user.click(comboboxes[1]);
+  const secondOption = screen.getByRole("option", {
+    name: /Price/i,
+  });
+  await user.click(secondOption);
 };
 
 describe("QueryBuilder", () => {
@@ -883,21 +909,13 @@ describe("QueryBuilder", () => {
     const querySpy = vi.fn();
     renderControlled({ value: defaultValueWithoutIds, onChange: querySpy });
 
-    // Update a value
-    await user.type(
-      screen.getAllByRole("textbox", { name: /value/i })[0],
-      "value",
-    );
-    expect(querySpy).toHaveBeenCalledTimes(1);
+    const inputs = screen.getAllByRole("textbox", { name: /value/i });
 
-    // Update an attribute
-    const attr = screen.getAllByRole("combobox", { name: /attribute/i })[0];
-    await user.click(attr);
-    const opt = await screen.findAllByRole("options")[0];
-    await user.click(opt);
-    waitFor(() => {
-      expect(querySpy).toHaveBeenCalledTimes(2);
-    });
+    // Update values
+    await user.type(inputs[0], "new value");
+    expect(querySpy).toHaveBeenCalledTimes(1);
+    await user.type(inputs[1], "another value");
+    expect(querySpy).toHaveBeenCalledTimes(2);
   });
 
   it("overrides labels", () => {
@@ -912,5 +930,32 @@ describe("QueryBuilder", () => {
       name: label,
     });
     expect(addButton).toBeInTheDocument();
+  });
+
+  it("only shows error when selecting an attribute that already exists in AND condition", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled();
+    await setupDuplicatedAttributes();
+
+    const warning = screen.getByRole("status");
+    expect(warning).toBeInTheDocument();
+    expect(warning).toHaveTextContent("Attribute already exists.");
+
+    // Change to OR
+    const orButton = screen.getByRole("button", { name: /OR/ });
+    await user.click(orButton);
+
+    const emptyWarning = screen.queryByRole("status");
+    expect(emptyWarning).not.toBeInTheDocument();
+    expect(emptyWarning).toBeNull();
+  });
+
+  it("doesn't show error when selecting an attribute that already exists in AND condition if allowRepeatedAttributes is true", async () => {
+    renderUncontrolled({ allowRepeatedAttributes: true });
+    await setupDuplicatedAttributes();
+
+    const warning = screen.queryByRole("status");
+    expect(warning).not.toBeInTheDocument();
+    expect(warning).toBeNull();
   });
 });
