@@ -148,8 +148,8 @@ export const Table = ({
           <HvTableBody {...getTableBodyProps()}>
             {page.length > 0 ? (
               page.map((row) => {
-                const { key, ...rowProps } = row.getRowProps();
                 prepareRow(row);
+                const { key, ...rowProps } = row.getRowProps();
 
                 return (
                   <HvTableRow key={key} {...rowProps}>
