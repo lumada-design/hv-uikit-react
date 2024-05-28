@@ -71,8 +71,8 @@ export const Table = ({ modelId }: TableProps) => {
           </HvTableHead>
           <HvTableBody {...instance.getTableBodyProps()}>
             {instance.page.map((row) => {
-              const { key, ...rowProps } = row.getRowProps();
               instance.prepareRow(row);
+              const { key, ...rowProps } = row.getRowProps();
               return (
                 <HvTableRow key={key} {...rowProps}>
                   {row.cells.map((cell) => {
