@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses(
   {
     root: {
       display: "block",
-      background: theme.colors.atmo1,
+      background: theme.colors.bgSurface,
       padding: `0px`,
       margin: "0",
       listStyle: "none",

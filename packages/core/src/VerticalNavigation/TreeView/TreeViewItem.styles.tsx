@@ -5,8 +5,8 @@ import { createClasses } from "../../utils/classes";
 import { outlineStyles } from "../../utils/focusUtils";
 
 const selected = {
-  background: theme.colors.atmo3,
-  borderLeft: `4px solid ${theme.colors.secondary}`,
+  background: theme.colors.bgAction,
+  borderLeft: `4px solid ${theme.colors.text}`,
 };
 
 const hover = {

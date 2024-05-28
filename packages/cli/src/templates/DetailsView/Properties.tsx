@@ -16,7 +16,7 @@ import { ModelDetails, useModelData } from "./data";
 import { MetadataItem } from "./MetadataItem";
 
 const ProgressBar = ({
-  color = "secondary",
+  color = "text",
   value,
 }: {
   color?: HvColor;
@@ -89,7 +89,7 @@ const entries: Partial<
     label: "Severity",
     Component: ({ value }) => (
       <div className={css({ display: "flex", alignItems: "center" })}>
-        <Caution color="warning_120" /> {value}
+        <Caution color="warningAction" /> {value}
       </div>
     ),
   },

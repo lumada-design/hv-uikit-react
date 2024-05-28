@@ -123,7 +123,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
   const accordionHeaderId = setId(id, "button");
   const accordionContainer = setId(id, "container");
   const accordionHeader = useMemo(() => {
-    const color = disabled ? "secondary_60" : undefined;
+    const color = disabled ? "textDisabled" : undefined;
 
     const accordionButton = (
       <HvTypography

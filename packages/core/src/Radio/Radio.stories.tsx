@@ -236,7 +236,7 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
         <HvGrid item xs={12} md={6}>
           <div
             className={css({
-              backgroundColor: theme.colors.negative_20,
+              backgroundColor: theme.colors.errorSubtle,
               color: theme.colors.base_dark,
               padding: theme.space.md,
             })}
@@ -291,7 +291,7 @@ export const Custom: StoryObj<HvRadioProps> = {
       checked: css({
         "& svg": {
           border: `1px solid ${theme.colors.warning}`,
-          backgroundColor: theme.colors.atmo1,
+          backgroundColor: theme.colors.bgSurface,
           color: theme.colors.warning,
         },
       }),

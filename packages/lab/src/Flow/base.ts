@@ -44,7 +44,7 @@ export const flowStyles = css`
   }
   .react-flow__edge-path,
   .react-flow__connection-path {
-    stroke: ${theme.colors.secondary};
+    stroke: ${theme.colors.text};
     stroke-width: 1;
     fill: none;
   }
@@ -235,10 +235,10 @@ export const flowStyles = css`
     padding: ${theme.space.sm};
     border-radius: ${theme.radii.round};
     width: 150px;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.text};
     text-align: center;
     border: 1px solid ${theme.colors.negative};
-    background-color: ${theme.colors.negative_20};
+    background-color: ${theme.colors.errorSubtle};
   }
   .react-flow__node-default::before {
     content: "Unknown node type";

@@ -10,7 +10,7 @@ const HitachiLogo = (props: React.SVGAttributes<SVGElement>) => {
       width={80}
       height={16}
       style={{ width: 72, height: 20 }}
-      fill={theme.colors.secondary}
+      fill={theme.colors.text}
       {...props}
     >
       <path d="M63.6,2.5c0,0,0,4.8,0,4.7H70c0,0,0-4.7,0-4.7s3.1,0,3.1,0c0,0,0,11.8,0,11.9H70c0,0,0-5.2,0-5.2c0,0-6.3,0-6.3,0c0,0,0,5.2,0,5.2h-3.1c0,0,0-11.9,0-11.9C60.5,2.5,63.6,2.5,63.6,2.5z" />

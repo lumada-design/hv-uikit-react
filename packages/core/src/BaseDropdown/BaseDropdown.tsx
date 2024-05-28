@@ -285,7 +285,7 @@ const BaseDropdown = forwardRef<
         {adornment || (
           <ExpanderComponent
             iconSize="XS"
-            color={disabled ? "secondary_60" : undefined}
+            color={disabled ? "textDisabled" : undefined}
             className={classes.arrow}
           />
         )}

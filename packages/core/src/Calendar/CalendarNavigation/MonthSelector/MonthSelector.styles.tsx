@@ -4,7 +4,7 @@ import { createClasses } from "../../../utils/classes";
 import { outlineStyles } from "../../../utils/focusUtils";
 
 const hover = {
-  backgroundColor: theme.colors.atmo3,
+  backgroundColor: theme.colors.bgAction,
   cursor: "pointer",
 };
 
@@ -19,7 +19,7 @@ export const { staticClasses, useClasses } = createClasses("HvMonthSelector", {
     flexFlow: "wrap",
     alignContent: "center",
     justifyContent: "space-evenly",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
   },
   rangeModeWidth: {},
   normalWidth: {},
@@ -47,11 +47,11 @@ export const { staticClasses, useClasses } = createClasses("HvMonthSelector", {
     },
   },
   calendarMonthlyCellSelected: {
-    backgroundColor: theme.colors.atmo3,
-    color: theme.colors.secondary,
+    backgroundColor: theme.colors.bgAction,
+    color: theme.colors.text,
     "&:hover": {
-      backgroundColor: theme.colors.atmo3,
-      color: theme.colors.secondary,
+      backgroundColor: theme.colors.bgAction,
+      color: theme.colors.text,
     },
   },
 });

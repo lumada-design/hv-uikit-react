@@ -5,14 +5,14 @@ import { createClasses } from "../utils/classes";
 export const { staticClasses, useClasses } = createClasses("HvHeader", {
   root: {
     height: theme.header.height,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     display: "flex",
     flexDirection: "column",
     width: "100%",
     boxSizing: "border-box",
     flexShrink: 0,
     zIndex: theme.zIndices.banner,
-    color: theme.colors.atmo1,
+    color: theme.colors.bgSurface, // TODO: 🎨
     boxShadow: theme.colors.shadow,
     borderTop: "none",
   },

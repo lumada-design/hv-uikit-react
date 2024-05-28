@@ -497,7 +497,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
           adornment={
             <Calendar
               className={classes.icon}
-              color={disabled ? "secondary_80" : undefined}
+              color={disabled ? "textDisabled" : undefined} // TODO: 🎨
             />
           }
           popperProps={{

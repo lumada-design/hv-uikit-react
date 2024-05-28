@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses("HvCard", {
   root: {
     overflow: "visible",
     position: "relative",
-    outline: `1px solid ${theme.colors.atmo4}`,
+    outline: `1px solid ${theme.colors.borderDivider}`,
     borderRadius: `0px 0px ${theme.radii.round} ${theme.radii.round}`,
     "&:focus-visible": {
       ...outlineStyles,
@@ -17,12 +17,12 @@ export const { staticClasses, useClasses } = createClasses("HvCard", {
     },
   },
   selected: {
-    outline: `1px solid ${theme.colors.secondary}`,
+    outline: `1px solid ${theme.colors.text}`,
     "&:hover": {
-      outline: `1px solid ${theme.colors.secondary}`,
+      outline: `1px solid ${theme.colors.text}`,
     },
     "&:focus": {
-      outline: `1px solid ${theme.colors.secondary}`,
+      outline: `1px solid ${theme.colors.text}`,
     },
   },
   selectable: {

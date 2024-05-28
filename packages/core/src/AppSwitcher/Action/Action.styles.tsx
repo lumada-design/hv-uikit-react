@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses(
       padding: `6px ${theme.space.xs}`,
 
       border: "none",
-      borderLeft: `solid 2px ${theme.colors.secondary}`,
+      borderLeft: `solid 2px ${theme.colors.text}`,
 
       cursor: "pointer",
 

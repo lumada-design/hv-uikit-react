@@ -18,11 +18,11 @@ export const { staticClasses, useClasses } = createClasses("HvDropdown", {
     whiteSpace: "nowrap",
   },
   placeholderClosed: {
-    color: theme.colors.secondary_80,
+    color: theme.colors.textSubtle,
   },
   selectionDisabled: {
     lineHeight: theme.space.md,
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
   },
   dropdown: {
     width: "100%",
@@ -39,12 +39,12 @@ export const { staticClasses, useClasses } = createClasses("HvDropdown", {
   dropdownListContainer: {},
   rootList: {},
   disabled: {
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
   },
   readOnly: {
     "& $dropdownHeader": {
-      border: `1px solid ${theme.colors.secondary_80}`,
-      backgroundColor: theme.colors.atmo1,
+      border: `1px solid ${theme.colors.textSubtle}`,
+      backgroundColor: theme.colors.bgSurface,
     },
   },
 });

@@ -29,7 +29,7 @@ const classes = {
   }),
   gridBottom: css({ padding: 0 }),
   span: css({
-    borderRight: `1px solid ${theme.colors.secondary}`,
+    borderRight: `1px solid ${theme.colors.text}`,
     paddingRight: theme.space.xs,
     marginRight: theme.space.xs,
   }),
@@ -40,13 +40,13 @@ const actions = [
   {
     id: "get",
     label: "Preview",
-    icon: <Preview color="secondary_60" />,
+    icon: <Preview color="textDisabled" />,
     disabled: true,
   },
   {
     id: "put",
     label: "Add",
-    icon: <Add color="secondary_60" />,
+    icon: <Add color="textDisabled" />,
     disabled: true,
   },
   { id: "delete", label: "Delete", icon: <Delete />, disabled: false },
@@ -68,7 +68,7 @@ export const AllComponents = () => {
   return (
     <HvCard
       style={{ width: 360 }}
-      bgcolor="atmo1"
+      bgcolor="bgSurface"
       icon={<Level3Bad color="negative" />}
       statusColor="negative"
       selected={checked}

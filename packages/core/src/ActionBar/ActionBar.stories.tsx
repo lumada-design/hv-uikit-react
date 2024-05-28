@@ -12,7 +12,7 @@ const containerDecorator: Decorator = (Story) => (
     className={css({
       position: "relative",
       margin: "auto",
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgSurface,
       height: "150px",
       width: "400px",
       display: "flex",

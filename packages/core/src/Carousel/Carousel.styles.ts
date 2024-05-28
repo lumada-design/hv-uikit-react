@@ -8,7 +8,7 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
     display: "flex",
     alignItems: "stretch",
     flexDirection: "column",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     margin: 0,
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
@@ -61,8 +61,8 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
     position: "relative",
     height: 32,
     justifyContent: "center",
-    backgroundColor: theme.colors.atmo2,
-    border: `1px solid ${theme.colors.atmo4}`,
+    backgroundColor: theme.colors.backgroundColor,
+    border: `1px solid ${theme.colors.borderDivider}`,
     gap: theme.space.xs,
     "&:has($dots)": {
       justifyContent: "center",
@@ -135,12 +135,12 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
     height: 5,
     margin: theme.space.xs,
     borderRadius: "50%",
-    backgroundColor: theme.colors.atmo4,
+    backgroundColor: theme.colors.borderDivider,
   },
   dotSelected: {
     width: 10,
     height: 10,
-    backgroundColor: theme.colors.secondary_80,
+    backgroundColor: theme.colors.textSubtle,
   },
 
   panel: {

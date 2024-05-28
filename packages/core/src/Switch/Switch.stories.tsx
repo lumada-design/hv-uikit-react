@@ -222,7 +222,7 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
         <HvGrid item xs={12} md={6}>
           <div
             className={css({
-              backgroundColor: theme.colors.negative_20,
+              backgroundColor: theme.colors.errorSubtle,
               color: theme.colors.base_dark,
               padding: theme.space.md,
             })}

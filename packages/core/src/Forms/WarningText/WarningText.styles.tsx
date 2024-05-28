@@ -6,7 +6,7 @@ export const { staticClasses, useClasses } = createClasses("HvWarningText", {
   root: { display: "none" },
   defaultIcon: { minWidth: "24px", width: "24px", height: "24px" },
   warningText: {
-    color: theme.colors.negative_120,
+    color: theme.colors.errorStrong,
     paddingRight: theme.space.xs,
   },
   show: { display: "flex" },

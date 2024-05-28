@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvCalendarHeader", {
   },
   invalid: {},
   headerDayOfWeek: {
-    color: theme.colors.secondary_80,
+    color: theme.colors.textSubtle,
   },
   headerDate: {},
   input: {},

@@ -10,7 +10,7 @@ export const { staticClasses, useClasses } = createClasses("HvSingleCalendar", {
   },
   calendarWrapper: {
     overflow: "hidden",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     padding: theme.spacing("sm"),
   },
   calendarGrid: {
@@ -18,33 +18,33 @@ export const { staticClasses, useClasses } = createClasses("HvSingleCalendar", {
     flexFlow: "wrap",
     width: "280px",
     "& $cellsInRange": {
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgAction,
       "& $startBookend": {
-        borderLeft: `1px solid ${theme.colors.secondary}`,
-        backgroundColor: theme.colors.atmo3,
+        borderLeft: `1px solid ${theme.colors.text}`,
+        backgroundColor: theme.colors.bgAction,
         "&:hover": {
-          borderRight: `1px solid ${theme.colors.secondary}`,
+          borderRight: `1px solid ${theme.colors.text}`,
         },
       },
     },
     "&:hover $cellsInRange": {
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgAction,
       "& $startBookend": {
-        borderLeft: `1px solid ${theme.colors.secondary}`,
+        borderLeft: `1px solid ${theme.colors.text}`,
         borderRight: "inherit",
       },
     },
     "& $cellsInRange:hover": {
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgAction,
       "& $calendarDate": {
-        borderRight: `1px solid ${theme.colors.secondary}`,
+        borderRight: `1px solid ${theme.colors.text}`,
       },
     },
     "& $cellsInRange:hover ~ $cellsInRange": {
-      backgroundColor: theme.colors.atmo1, // controls the right side of the hovered range
+      backgroundColor: theme.colors.bgSurface, // controls the right side of the hovered range
     },
     "& $cellsOutsideRange:hover ~ $cellsInRange": {
-      backgroundColor: theme.colors.atmo1, // control the right side when hovering outside of the range
+      backgroundColor: theme.colors.bgSurface, // control the right side when hovering outside of the range
     },
   },
   calendarDay: {
@@ -66,7 +66,7 @@ export const { staticClasses, useClasses } = createClasses("HvSingleCalendar", {
   startBookend: {},
   endBookend: {},
   cellsInRange: {
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.bgAction,
   },
   cellsOutsideRange: {},
   cellContainer: {},

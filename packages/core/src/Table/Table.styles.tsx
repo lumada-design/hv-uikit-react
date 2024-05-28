@@ -20,7 +20,7 @@ export const { staticClasses, useClasses } = createClasses("HvTable", {
   },
   stickyHeader: {},
   stickyColumns: {
-    backgroundColor: theme.colors.atmo2,
+    backgroundColor: theme.colors.backgroundColor,
     "&": {
       borderSpacing: 0,
     },

@@ -34,11 +34,11 @@ const getStatusIcon = (statusLevel?: number) => {
     case 1:
       return <Level1 color="neutral" />;
     case 2:
-      return <Level3Bad color="warning_120" />;
+      return <Level3Bad color="warningAction" />;
     case 3:
-      return <Level4 color="negative_80" />;
+      return <Level4 color="errorAction" />;
     case 4:
-      return <Level5 color="negative_120" />;
+      return <Level5 color="errorStrong" />;
     case 5:
       return <Level0Good color="positive" />;
     default:
@@ -73,7 +73,7 @@ export const TaskCard = ({ task, deleteTask }: TaskProps) => {
       {...listeners}
     >
       <HvCard
-        bgcolor="atmo1"
+        bgcolor="bgPaper"
         classes={{ root: classes.card, semanticBar: classes.cardSemanticBar }}
       >
         <HvCardHeader

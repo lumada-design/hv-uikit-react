@@ -8,7 +8,7 @@ const classes = {
   root: css({
     display: "flex",
     flexDirection: "column",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     width: "fit-content",
     minWidth: 220,
     boxShadow: theme.colors.shadow,
@@ -19,7 +19,7 @@ const classes = {
     flexDirection: "column",
   }),
   containerBorder: css({
-    borderBottom: `3px solid ${theme.colors.atmo2}`,
+    borderBottom: `3px solid ${theme.colors.bgPage}`,
   }),
   valuesContainer: css({
     display: "flex",
@@ -48,13 +48,13 @@ const classes = {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.semibold,
     fontSize: theme.fontSizes.sm,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
   }),
   text: css({
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.normal,
     fontSize: theme.fontSizes.sm,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
   }),
   icon: css({
     display: "flex",

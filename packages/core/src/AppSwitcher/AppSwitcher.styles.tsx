@@ -6,7 +6,7 @@ export const { staticClasses, useClasses } = createClasses("HvAppSwitcher", {
   root: {
     display: "flex",
     flexDirection: "column",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     overflow: "hidden",
 
     // we need to play with the 4px because of the focus ring

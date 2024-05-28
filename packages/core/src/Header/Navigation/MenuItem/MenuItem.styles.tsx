@@ -59,33 +59,33 @@ export const { staticClasses, useClasses } = createClasses(
       paddingTop: "4px",
       height: "100%",
       borderTop: "none",
-      borderBottom: `4px solid ${theme.colors.atmo2}`,
+      borderBottom: `4px solid ${theme.colors.atmo2}`, // TODO: 🎨
     },
     menubar: {
       marginTop: "0px",
       paddingBottom: "4px",
       paddingTop: "4px",
       height: "100%",
-      borderTop: `0px solid ${theme.colors.atmo1}`,
-      borderBottom: `${"4px"} solid ${theme.colors.atmo1}`,
+      borderTop: `0px solid ${theme.colors.bgSurface}`, // TODO: 🎨
+      borderBottom: `${"4px"} solid ${theme.colors.bgSurface}`, // TODO: 🎨
     },
     selected: {
       "&$menu": {
         marginTop: 0,
         paddingBottom: 0,
         borderTop: "none",
-        borderBottom: `4px solid ${theme.colors.secondary}`,
+        borderBottom: `4px solid ${theme.colors.text}`,
         paddingTop: "4px",
         height: "100%",
         "& > * > span": {
-          color: theme.colors.secondary,
+          color: theme.colors.text,
         },
       },
       "&$menubar": {
         marginTop: 0,
         paddingBottom: 0,
         borderTop: "none",
-        borderBottom: `4px solid ${theme.colors.secondary}`,
+        borderBottom: `4px solid ${theme.colors.text}`,
         paddingTop: "4px",
         height: "100%",
       },

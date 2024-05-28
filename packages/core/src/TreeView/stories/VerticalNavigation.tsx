@@ -26,8 +26,8 @@ const classes = {
     paddingLeft: `calc(${theme.space.sm} * var(--level))`,
   }),
   selected: css({
-    borderColor: theme.colors.secondary,
-    backgroundColor: theme.colors.atmo3,
+    borderColor: theme.colors.text,
+    backgroundColor: theme.colors.bgAction,
   }),
   label: css({
     display: "flex",

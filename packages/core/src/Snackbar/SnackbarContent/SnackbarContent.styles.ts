@@ -14,16 +14,16 @@ export const { useClasses, staticClasses } = createClasses(
       boxShadow: "none",
     },
     success: {
-      backgroundColor: theme.colors.positive_20,
+      backgroundColor: theme.colors.positiveSubtle,
     },
     error: {
-      backgroundColor: theme.colors.negative_20,
+      backgroundColor: theme.colors.errorSubtle,
     },
     default: {
-      backgroundColor: theme.colors.neutral_20,
+      backgroundColor: theme.colors.neutralSubtle,
     },
     warning: {
-      backgroundColor: theme.colors.warning_20,
+      backgroundColor: theme.colors.warningSubtle,
     },
     message: {
       padding: 0,

@@ -131,7 +131,7 @@ export const CustomControls = () => {
         {rows?.map((row) => {
           return (
             <HvCard
-              bgcolor="atmo1"
+              bgcolor="bgSurface"
               key={`${row?.values?.name}-row`}
               style={{ width: "100%" }}
             >

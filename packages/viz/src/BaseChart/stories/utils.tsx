@@ -5,7 +5,7 @@ import { theme } from "@hitachivantara/uikit-react-core";
 export const vizDecorator: Decorator = (Story) => (
   <div
     className={css({
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgSurface,
       padding: 20,
       display: "flex",
       flexDirection: "column",
@@ -19,7 +19,7 @@ export const vizDecorator: Decorator = (Story) => (
 export const confusionMatrixDecorator: Decorator = (Story) => (
   <div
     className={css({
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgSurface,
       padding: 20,
       display: "flex",
       flexDirection: "column",

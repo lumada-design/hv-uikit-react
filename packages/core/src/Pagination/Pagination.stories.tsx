@@ -16,7 +16,7 @@ const StyledBox = styled("div")({
     margin: "12px",
     textAlign: "center",
     borderRadius: "4px",
-    background: theme.colors.atmo1,
+    background: theme.colors.bgSurface,
   },
 });
 

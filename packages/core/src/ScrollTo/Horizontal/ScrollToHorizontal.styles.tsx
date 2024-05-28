@@ -11,7 +11,7 @@ export const { staticClasses, useClasses } = createClasses(
       listStyleType: "none",
       flexWrap: "wrap",
       backdropFilter: `blur(4px)`,
-      backgroundColor: theme.alpha("atmo2", 0.9),
+      backgroundColor: theme.alpha("backgroundColor", 0.9),
     },
     positionSticky: {
       position: "sticky",
