@@ -43,39 +43,21 @@ export type HvSliderClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSliderProps
   extends HvBaseProps<HTMLDivElement, "onChange" | "onBlur"> {
-  /**
-   * The slider name.
-   */
+  /** The slider name. */
   name?: string;
-  /**
-   * The label of the slider.
-   *
-   * If not provided, an aria-label or aria-labelledby must be inputted via sliderProps.
-   */
+  /** The label of the slider. If not provided, an aria-label or aria-labelledby must be inputted via sliderProps. */
   label?: React.ReactNode;
-  /**
-   * Indicates that the slider is disabled.
-   */
+  /** Indicates that the slider is disabled. */
   disabled?: boolean;
-  /**
-   * Indicates that the slider is not editable.
-   */
+  /** Indicates that the slider is not editable. */
   readOnly?: boolean;
-  /**
-   * Indicates that user slider is required on the form element.
-   */
+  /** Indicates that user slider is required on the form element. */
   required?: boolean;
-  /**
-   * Error message to render when the value is required.
-   */
+  /** Error message to render when the value is required. */
   requiredMessage?: string;
-  /**
-   * If `true` the input that controls the slider is hidden.
-   */
+  /** If `true` the input that controls the slider is hidden. */
   hideInput?: boolean;
-  /**
-   * Attributes applied to the slider element.
-   */
+  /** Attributes applied to the slider element. */
   sliderProps?: SliderProps;
   /**
    * The status of the slider element.
@@ -86,44 +68,32 @@ export interface HvSliderProps
    * or "invalid" after any change to the state.
    */
   status?: HvFormStatus | HvFormStatus[];
-  /**
-   * The error message to show when `status` is "invalid".
-   */
+  /** The error message to show when `status` is "invalid". */
   statusMessage?: React.ReactNode;
-  /**
-   * The values array to apply to the component
-   */
+  /** The values array to apply to the component */
   values?: number[];
-  /**
-   * The default values array to apply to the component
-   */
+  /** The default values array to apply to the component */
   defaultValues?: (number | undefined)[];
   /**
    * The object used to set the knob properties,
    * for every item in the array a new knob will be created.
    */
   knobProperties?: HvKnobProperty[];
-  /**
-   * The object used to set the mark properties individually.
-   */
+  /** The object used to set the mark properties individually. */
   markProperties?: HvMarkProperty[];
   /**
    * The function executed before a change will occur in the slider.
    * @deprecated It's always better to use onChange instead
    */
   onBeforeChange?: (value: number[]) => void;
-  /**
-   * The function executed while a change is occurring in the slider.
-   */
+  /** The function executed while a change is occurring in the slider. */
   onChange?: (value: number[]) => void;
   /**
    * The function executed after a change ocurred in the slider.
    * @deprecated It's always better to use onChange instead
    */
   onAfterChange?: (value: number[]) => void;
-  /**
-   * The function executed after a blur ocurred in the slider.
-   */
+  /** The function executed after a blur ocurred in the slider. */
   onBlur?: (
     event: React.FocusEvent,
     knobsValues: number[],
@@ -134,25 +104,15 @@ export interface HvSliderProps
    * example: if 10 divisions and a markstep of 2 there will be 5 marks.
    */
   markStep?: number;
-  /**
-   * How many subdivisions there are in the slider.
-   */
+  /** How many subdivisions there are in the slider. */
   divisionQuantity?: number;
-  /**
-   * The value of the first point in the slider from left to right.
-   */
+  /** The value of the first point in the slider from left to right. */
   minPointValue?: number;
-  /**
-   * The value of the last point in the slider from left to right.
-   */
+  /** The value of the last point in the slider from left to right. */
   maxPointValue?: number;
-  /**
-   * Error message to render when the value is higher than maxPointValue or lower than minPointValue.
-   */
+  /** Error message to render when the value is higher than maxPointValue or lower than minPointValue. */
   outOfRangeMessage?: string;
-  /**
-   * The nax number of decimals if no format function is applied
-   */
+  /** The max number of decimals if no format function is applied */
   markDigits?: number;
   /**
    * A formatting function used to add format to the marks in the track,
@@ -164,21 +124,13 @@ export interface HvSliderProps
    * the function receives the mark text
    */
   formatTooltip?: (label: React.ReactNode) => React.ReactNode;
-  /**
-   * If `true` the knobs can't have the same value, if `false` knobs can have the same value.
-   */
+  /** If `true` the knobs can't have the same value, if `false` knobs can have the same value. */
   noOverlap?: boolean;
-  /**
-   * Attributes applied to the input element.
-   */
+  /** Attributes applied to the input element. */
   inputProps?: HvInputProps[];
-  /**
-   * Attributes applied to the knob element.
-   */
+  /** Attributes applied to the knob element. */
   knobProps?: React.HTMLAttributes<HTMLDivElement>[];
-  /**
-   * The classes object to be applied into the root object.
-   */
+  /** The classes object to be applied into the root object. */
   classes?: HvSliderClasses;
 }
 

@@ -282,6 +282,64 @@ describe("Slider", () => {
       expect(warningText).not.toBeInTheDocument();
       expect(input).not.toBeInvalid();
     });
+
+    it("renders slider with decimal values (markDigits) correctly", async () => {
+      const outOfRangeMessage = "The value is out of range";
+      let warningText: HTMLElement | null = null;
+      render(
+        <HvSlider
+          label="Decimal Slider"
+          minPointValue={0.01}
+          maxPointValue={1}
+          markStep={10}
+          divisionQuantity={100}
+          markDigits={2}
+          formatMark={(label) => `Mark: ${label}`}
+        />,
+      );
+
+      // Test decimal marks
+      const marks = screen.getAllByText(/Mark:/i);
+      const marksContent = marks.map((mark) => mark.innerHTML);
+      expect(marks).toHaveLength(11);
+      expect(marksContent).toEqual([
+        "Mark: 0.01",
+        "Mark: 0.11",
+        "Mark: 0.21",
+        "Mark: 0.31",
+        "Mark: 0.41",
+        "Mark: 0.50",
+        "Mark: 0.60",
+        "Mark: 0.70",
+        "Mark: 0.80",
+        "Mark: 0.90",
+        "Mark: 1.00",
+      ]);
+
+      const input = screen.getByRole("textbox");
+      expect(input).toBeInTheDocument();
+
+      // Not out of range
+      fireEvent.change(input, { target: { value: 0.5 } });
+      fireEvent.blur(input);
+      warningText = screen.queryByText(outOfRangeMessage);
+      expect(warningText).not.toBeInTheDocument();
+      expect(input).not.toBeInvalid();
+
+      // Out of range (min)
+      fireEvent.change(input, { target: { value: 0 } });
+      fireEvent.blur(input);
+      warningText = await screen.findByText(outOfRangeMessage);
+      expect(warningText).toBeInTheDocument();
+      expect(input).toBeInvalid();
+
+      // Out of range (max)
+      fireEvent.change(input, { target: { value: 1.01 } });
+      fireEvent.blur(input);
+      warningText = await screen.findByText(outOfRangeMessage);
+      expect(warningText).toBeInTheDocument();
+      expect(input).toBeInvalid();
+    });
   });
 
   describe("Range", () => {
