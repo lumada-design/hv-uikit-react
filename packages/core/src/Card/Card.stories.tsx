@@ -29,7 +29,7 @@ export default meta;
 
 export const Main: StoryObj<HvCardProps> = {
   args: {
-    bgcolor: "atmo1",
+    bgcolor: "bgSurface",
     statusColor: "negative",
     selectable: false,
     selected: false,

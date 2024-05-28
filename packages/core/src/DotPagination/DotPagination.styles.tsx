@@ -19,7 +19,7 @@ export const { useClasses, staticClasses } = createClasses("HvDotPagination", {
     minWidth: 16,
 
     "&:hover": {
-      backgroundColor: theme.colors.neutral_20,
+      backgroundColor: theme.colors.neutralDimmed,
       borderRadius: "100%",
     },
   },

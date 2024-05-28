@@ -67,7 +67,7 @@ export const HvAppSwitcherAction = ({
     application;
 
   const color = getColor(
-    disabled ? "secondary_60" : application?.color,
+    disabled ? "textDisabled" : application?.color,
     "secondary",
   );
 

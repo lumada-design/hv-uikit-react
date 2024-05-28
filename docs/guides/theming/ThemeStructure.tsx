@@ -80,7 +80,7 @@ const styles = {
     height: "16px",
     width: "16px",
     marginRight: theme.space.xs,
-    border: `1px solid ${theme.colors.secondary}`,
+    border: `1px solid ${theme.colors.divider}`,
   }),
   positive: css({
     color: theme.colors.positive,

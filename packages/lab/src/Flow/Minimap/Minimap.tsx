@@ -13,23 +13,23 @@ export interface HvFlowMinimapProps<NodeData = any>
     MiniMapProps<NodeData>,
     "nodeColor" | "nodeStrokeColor" | "maskColor" | "maskStrokeColor"
   > {
-  /** Node color. Defaults to `atmo4`. */
+  /** Node color. @default `divider`. */
   nodeColor?: HvColorAny | GetMiniMapNodeAttribute<NodeData>;
-  /** Node stroke color. Defaults to `atmo4`. */
+  /** Node stroke color. @default `divider`. */
   nodeStrokeColor?: HvColorAny | GetMiniMapNodeAttribute<NodeData>;
-  /** Mask color. Defaults to `atmo3`. */
+  /** Mask color. @default `dividerSubtle`. */
   maskColor?: HvColorAny;
-  /** Mask stroke color. Defaults to `atmo3`. */
+  /** Mask stroke color. @default `dividerSubtle`. */
   maskStrokeColor?: HvColorAny;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowMinimapClasses;
 }
 
 export const HvFlowMinimap = ({
-  nodeColor = "atmo4",
-  maskColor = "atmo3",
-  maskStrokeColor = "atmo3",
-  nodeStrokeColor = "atmo4",
+  nodeColor = "divider",
+  maskColor = "dividerSubtle",
+  maskStrokeColor = "dividerSubtle",
+  nodeStrokeColor = "divider",
   classes: classesProp,
   className,
   ...others
@@ -40,15 +40,17 @@ export const HvFlowMinimap = ({
     <MiniMap
       className={cx(classes.root, className)}
       nodeColor={
-        typeof nodeColor === "string" ? getColor(nodeColor, "atmo4") : nodeColor
+        typeof nodeColor === "string"
+          ? getColor(nodeColor, "divider")
+          : nodeColor
       }
       nodeStrokeColor={
         typeof nodeStrokeColor === "string"
-          ? getColor(nodeStrokeColor, "atmo4")
+          ? getColor(nodeStrokeColor, "divider")
           : nodeStrokeColor
       }
-      maskColor={getColor(maskColor, "atmo3")}
-      maskStrokeColor={getColor(maskStrokeColor, "atmo3")}
+      maskColor={getColor(maskColor, "dividerSubtle")}
+      maskStrokeColor={getColor(maskStrokeColor, "dividerSubtle")}
       {...others}
     />
   );

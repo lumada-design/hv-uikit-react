@@ -5,7 +5,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { HvSize, theme } from "@hitachivantara/uikit-styles";
+import { HvSize } from "@hitachivantara/uikit-styles";
 
 import { HvAvatar } from "../Avatar/Avatar";
 import { HvBaseProps } from "../types/generic";
@@ -118,7 +118,7 @@ const Overflow = ({
       ) : (
         <HvAvatar
           size={size}
-          backgroundColor={theme.colors.atmo4}
+          backgroundColor="divider"
           classes={{
             avatar: css({
               [`&.HvAvatar-${size}`]: {

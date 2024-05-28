@@ -18,7 +18,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    border: `1px solid ${theme.colors.atmo4}`,
+    border: `1px solid ${theme.colors.divider}`,
     borderRadius: theme.radii.base,
     backgroundColor: theme.colors.atmo1,
     marginBottom: theme.space.xs,

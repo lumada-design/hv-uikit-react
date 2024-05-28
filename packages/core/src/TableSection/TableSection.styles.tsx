@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
   root: {},
   header: {
     // Only apply the border to divide the header and content when both are displayed
-    "+ div": { borderTop: `1px solid ${theme.colors.atmo3}` },
+    "+ div": { borderTop: `1px solid ${theme.colors.dividerSubtle}` },
   },
   actions: {
     right: theme.space.sm,
@@ -39,8 +39,8 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
     },
 
     [`& .${tableHeaderClasses.head}`]: {
-      backgroundColor: theme.colors.atmo2,
-      borderBottomColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgPage,
+      borderBottomColor: theme.colors.dividerSubtle,
       [`&.${tableHeaderClasses.variantCheckbox}`]: {
         borderRight: "none",
       },
@@ -57,7 +57,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
     },
 
     [`& .${tableCellClasses.root}`]: {
-      borderBottomColor: theme.colors.atmo3,
+      borderBottomColor: theme.colors.dividerSubtle,
     },
 
     [`& .${tableCellClasses.variantCheckbox}`]: {
@@ -71,15 +71,15 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
     [`& .${bulkActionsClasses.root}`]: {
       marginBottom: 0,
       border: "none",
-      borderBottom: `1px solid ${theme.colors.atmo3}`,
+      borderBottom: `1px solid ${theme.colors.dividerSubtle}`,
       padding: theme.spacing("xs", "sm"),
     },
 
     [`& .${paginationClasses.root}`]: {
       margin: 0,
-      backgroundColor: theme.colors.atmo2,
+      backgroundColor: theme.colors.bgPage,
       padding: theme.space.xs,
-      borderTop: `1px solid ${theme.colors.atmo3}`,
+      borderTop: `1px solid ${theme.colors.dividerSubtle}`,
     },
 
     [`& .${paginationClasses.pageSizeOptions}`]: {

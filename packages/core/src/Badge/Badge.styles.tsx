@@ -4,7 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 const labelBaseStyle: React.CSSProperties = {
   ...theme.typography.label,
   padding: "0 5px",
-  color: theme.colors.atmo1,
+  color: theme.colors.textDimmed,
   lineHeight: "16px",
 };
 
@@ -14,7 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvBadge", {
   badgePosition: {},
   badge: {
     borderRadius: theme.space.xs,
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.text,
     float: "left",
     minHeight: "8px",
     minWidth: "8px",

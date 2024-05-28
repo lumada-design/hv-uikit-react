@@ -25,9 +25,9 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     height: 50,
-    border: `1px solid ${theme.colors.atmo4}`,
+    border: `1px solid ${theme.colors.divider}`,
     borderBottom: "none",
-    background: theme.colors.atmo1,
+    background: theme.colors.bgSurface,
     padding: theme.space.xs,
   }),
 };

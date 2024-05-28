@@ -5,7 +5,7 @@ export const { useClasses, staticClasses } = createClasses("HvPanel", {
   root: {
     position: "relative",
     padding: theme.space.sm,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     overflow: "auto",
   },
 });

@@ -45,8 +45,8 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
     ...defaultColors,
   },
   accentColor: { DEFAULT: defaultColors.primary },
-  textColor: { DEFAULT: defaultColors.secondary },
-  backgroundColor: { DEFAULT: defaultColors.backgroundColor },
+  textColor: { DEFAULT: defaultColors.text },
+  backgroundColor: { DEFAULT: defaultColors.bgPage },
 
   // typography
   fontFamily: {

@@ -284,7 +284,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
           placement="right"
           adornment={
             <TimeIcon
-              color={disabled ? "secondary_60" : undefined}
+              color={disabled ? "textDisabled" : undefined}
               className={classes.icon}
             />
           }

@@ -36,7 +36,7 @@ const fadeIn = keyframes`
 
 export const { staticClasses, useClasses } = createClasses("HvSkeleton", {
   root: {
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.bgActive,
     width: "fit-content",
     "& > *": {
       visibility: "hidden",
@@ -68,7 +68,7 @@ export const { staticClasses, useClasses } = createClasses("HvSkeleton", {
       background: `linear-gradient(
             90deg,
             transparent,
-            ${theme.colors.atmo4},
+            ${theme.colors.divider},
             transparent
           )`,
       content: "''",

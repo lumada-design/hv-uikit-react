@@ -28,7 +28,7 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBoxGroup", {
   },
   invalid: {
     paddingBottom: theme.space.xs,
-    borderBottom: `1px solid ${theme.colors.negative}`,
+    borderBottom: `1px solid ${theme.colors.error}`,
   },
   selectAll: {},
   error: {},

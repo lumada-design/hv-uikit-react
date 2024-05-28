@@ -13,8 +13,8 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasPanelTab", {
     justifyContent: "center",
     flex: 1,
     borderRadius: "16px 16px 0 0",
-    backgroundColor: theme.colors.atmo2,
-    color: theme.colors.secondary_60,
+    backgroundColor: theme.colors.bgPage,
+    color: theme.colors.textDisabled,
     overflow: "hidden",
     width: "100%",
     boxShadow: "0px -2px 8px 0px #4141410F",
@@ -27,10 +27,10 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasPanelTab", {
       cursor: "pointer",
     },
     "&:focus": {
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgSurface,
     },
     [`&.${tabClasses.selected}`]: {
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgSurface,
       ...theme.typography.label,
     },
     "&:focus-visible": {

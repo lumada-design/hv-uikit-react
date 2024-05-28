@@ -7,13 +7,13 @@ export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
   root: {
     display: "flex",
     alignItems: "center",
-    border: `1px solid ${theme.colors.atmo4}`,
-    backgroundColor: theme.colors.atmo2,
+    border: `1px solid ${theme.colors.divider}`,
+    backgroundColor: theme.colors.bgPage,
     padding: theme.spacing("xs", "md"),
     marginBottom: theme.space.xs,
   },
   semantic: {
-    backgroundColor: theme.colors.containerBackgroundHover,
+    backgroundColor: theme.colors.bgHover,
     "& $selectAll div": {
       "&:hover:not(:disabled)": {
         backgroundColor: theme.alpha("base_light", 0.3),
@@ -37,7 +37,7 @@ export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
   selectAllPages: {},
   divider: {
     display: "flex",
-    backgroundColor: theme.colors.atmo4,
+    backgroundColor: theme.colors.divider,
     width: "1px",
     height: "32px",
     marginLeft: theme.space.sm,

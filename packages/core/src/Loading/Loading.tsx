@@ -47,7 +47,7 @@ export const HvLoading = (props: HvLoadingProps) => {
   const variant = `${size}${colorVariant}` as const;
 
   const inline = {
-    backgroundColor: getColor(color, small ? "secondary" : "brand"),
+    backgroundColor: getColor(color, small ? "text" : "brand"),
   };
   return (
     <div

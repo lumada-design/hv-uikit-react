@@ -247,7 +247,7 @@ export const Native: StoryObj<HvTimePickerProps> = {
           inputProps={{ type: "time", step: showSeconds ? 1 : 60 }}
           endAdornment={
             <TimeIcon
-              color={disabled ? "secondary_60" : undefined}
+              color={disabled ? "textDisabled" : undefined}
               onClick={() => ref.current?.showPicker()}
             />
           }

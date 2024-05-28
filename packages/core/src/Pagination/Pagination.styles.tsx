@@ -4,7 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { baseDropdownClasses } from "../BaseDropdown";
 import { inputClasses } from "../Input";
 
-const hoverColor = theme.colors.atmo3;
+const hoverColor = theme.colors.bgActive;
 
 export const { staticClasses, useClasses } = createClasses("HvPagination", {
   /** Styles applied to the component root class. */

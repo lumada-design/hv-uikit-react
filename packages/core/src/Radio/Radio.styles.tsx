@@ -15,12 +15,12 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     transitionDelay: "0ms",
 
     "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
       borderRadius: theme.radii.base,
     },
   },
   invalidContainer: {
-    borderBottom: `1px solid ${theme.colors.negative}`,
+    borderBottom: `1px solid ${theme.colors.error}`,
 
     "&:hover": {
       borderBottomLeftRadius: "0px",
@@ -30,7 +30,7 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
   disabled: {
     cursor: "not-allowed",
 
-    "& $label": { color: theme.colors.secondary_60, cursor: "not-allowed" },
+    "& $label": { color: theme.colors.textDisabled, cursor: "not-allowed" },
   },
   radio: {
     height: "32px",
@@ -41,7 +41,7 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     },
   },
   invalidRadio: {
-    borderBottom: `1px solid ${theme.colors.negative}`,
+    borderBottom: `1px solid ${theme.colors.error}`,
 
     "&:hover": {
       borderBottomLeftRadius: "0px",
@@ -60,7 +60,7 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     lineHeight: "32px",
     width: "100%",
   },
-  focusVisible: { backgroundColor: theme.colors.atmo3, ...outlineStyles },
+  focusVisible: { backgroundColor: theme.colors.bgActive, ...outlineStyles },
   checked: {},
   semantic: {},
 });

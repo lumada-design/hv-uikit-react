@@ -253,7 +253,7 @@ export const HvDropZone = (props: HvDropZoneProps) => {
               <Doc
                 iconSize="M"
                 className={classes.dropZoneAreaIcon}
-                color={disabled ? "secondary_60" : "secondary"}
+                color={disabled ? "textDisabled" : undefined}
               />
               <div className={classes.dropZoneAreaLabels}>
                 <HvTypography className={classes.dragText}>

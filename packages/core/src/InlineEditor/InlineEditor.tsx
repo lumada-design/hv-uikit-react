@@ -156,7 +156,7 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
           overrideIconColors={false}
           endIcon={
             <Edit
-              color="secondary_60"
+              color="textDisabled"
               className={cx(classes.icon, {
                 [classes.iconVisible]: showIcon,
               })}

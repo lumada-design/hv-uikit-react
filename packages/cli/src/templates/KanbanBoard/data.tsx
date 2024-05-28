@@ -12,25 +12,25 @@ export const columns: Column[] = [
     id: "col1",
     title: "Draft",
     color: "neutral",
-    icon: <Edit color="neutral" />,
+    Icon: Edit,
   },
   {
     id: "col2",
     title: "To Review",
-    color: "negative_80",
-    icon: <Copy color="negative_80" />,
+    color: "errorAction",
+    Icon: Copy,
   },
   {
     id: "col3",
     title: "In Review",
-    color: "warning_120",
-    icon: <Magnifier color="warning_120" />,
+    color: "warningAction",
+    Icon: Magnifier,
   },
   {
     id: "col4",
     title: "Reviewed",
-    color: "positive_80",
-    icon: <Success color="positive_80" />,
+    color: "successAction",
+    Icon: Success,
   },
 ];
 

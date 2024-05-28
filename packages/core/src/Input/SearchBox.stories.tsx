@@ -69,8 +69,8 @@ export const BasicSearch: StoryObj = {
       result: css({
         marginTop: 5,
         padding: 5,
-        color: theme.colors.secondary,
-        backgroundColor: theme.colors.atmo2,
+        color: theme.colors.text,
+        backgroundColor: theme.colors.bgPage,
       }),
       panel: css({ maxWidth: "610px", marginTop: "20px", padding: "5px" }),
     };
@@ -114,8 +114,8 @@ export const DynamicSearch: StoryObj = {
       result: css({
         marginTop: 5,
         padding: 5,
-        color: theme.colors.secondary,
-        backgroundColor: theme.colors.atmo2,
+        color: theme.colors.text,
+        backgroundColor: theme.colors.bgPage,
       }),
       panel: css({ maxWidth: "610px", marginTop: "20px", padding: "5px" }),
     };
@@ -169,10 +169,7 @@ export const DynamicSearch: StoryObj = {
               </div>
             ))}
             {results.length === 0 && (
-              <HvEmptyState
-                message="No data found"
-                icon={<Fail iconSize="S" color="secondary" />}
-              />
+              <HvEmptyState message="No data found" icon={<Fail />} />
             )}
           </HvPanel>
         )}
@@ -218,8 +215,8 @@ export const ScopedSearch: StoryObj = {
       result: css({
         marginTop: 5,
         padding: 5,
-        color: theme.colors.secondary,
-        backgroundColor: theme.colors.atmo2,
+        color: theme.colors.text,
+        backgroundColor: theme.colors.bgPage,
       }),
       panel: css({
         maxWidth: "610px",
@@ -308,10 +305,7 @@ export const ScopedSearch: StoryObj = {
               </div>
             ))}
             {results.length === 0 && (
-              <HvEmptyState
-                message="No data found"
-                icon={<Fail iconSize="S" color="secondary" />}
-              />
+              <HvEmptyState message="No data found" icon={<Fail />} />
             )}
           </HvPanel>
         )}
@@ -338,8 +332,8 @@ export const SearchAsYouType: StoryObj = {
       result: css({
         marginTop: 5,
         padding: 5,
-        color: theme.colors.secondary,
-        backgroundColor: theme.colors.atmo2,
+        color: theme.colors.text,
+        backgroundColor: theme.colors.bgPage,
       }),
       panel: css({
         maxWidth: "610px",
@@ -377,10 +371,7 @@ export const SearchAsYouType: StoryObj = {
             </div>
           ))}
           {results.length === 0 && (
-            <HvEmptyState
-              message="No countries found"
-              icon={<Fail iconSize="S" color="secondary" />}
-            />
+            <HvEmptyState message="No countries found" icon={<Fail />} />
           )}
         </HvPanel>
       </>

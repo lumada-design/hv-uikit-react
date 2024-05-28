@@ -12,15 +12,15 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
     borderRadius: theme.radii.base,
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
 
     "& svg": {
       width: 16,
       height: 16,
-      color: theme.colors.atmo1,
+      color: theme.colors.textDimmed,
       borderRadius: theme.radii.none,
-      border: `1px solid ${theme.colors.secondary}`,
+      border: `1px solid ${theme.colors.text}`,
     },
   },
   disabled: {
@@ -28,9 +28,9 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
       cursor: "not-allowed",
       pointerEvents: "initial",
       "& svg": {
-        color: theme.colors.atmo3,
-        borderColor: theme.colors.secondary_60,
-        backgroundColor: theme.colors.atmo3,
+        color: theme.colors.bgActive,
+        borderColor: theme.colors.textDisabled,
+        backgroundColor: theme.colors.bgActive,
       },
     },
   },
@@ -42,23 +42,23 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
   icon: {},
   checked: {
     "& svg": {
-      border: `1px solid ${theme.colors.secondary}`,
-      backgroundColor: theme.colors.secondary,
-      color: theme.colors.atmo1,
+      border: `1px solid ${theme.colors.text}`,
+      backgroundColor: theme.colors.text,
+      color: theme.colors.textDimmed,
     },
     "&$disabled": {
       "& svg": {
-        color: theme.colors.secondary_60,
+        color: theme.colors.textDisabled,
       },
     },
   },
   indeterminate: {
     "& svg": {
-      color: theme.colors.secondary,
+      color: theme.colors.text,
     },
     "&$disabled": {
       "& svg": {
-        color: theme.colors.secondary_60,
+        color: theme.colors.textDisabled,
       },
     },
   },

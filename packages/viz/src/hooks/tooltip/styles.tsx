@@ -6,7 +6,7 @@ export const { useClasses, staticClasses } = createClasses("HvChartTooltip", {
   singleTooltipRoot: {
     width: "fit-content",
     boxShadow: theme.colors.shadow,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     padding: theme.space.sm,
     display: "flex",
   },
@@ -14,30 +14,30 @@ export const { useClasses, staticClasses } = createClasses("HvChartTooltip", {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.semibold,
     fontSize: theme.fontSizes.sm,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
   },
   singleTooltipValue: {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.normal,
     fontSize: theme.fontSizes.sm,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
     marginLeft: theme.space.xs,
   },
   /** Multiple tooltip styles */
   multipleTooltipRoot: {
     width: "fit-content",
     boxShadow: theme.colors.shadow,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
   },
   multipleTooltipTitleContainer: {
     padding: `15px ${theme.space.sm}`,
-    borderBottom: `3px solid ${theme.colors.atmo2}`,
+    borderBottom: `3px solid ${theme.colors.bgPage}`,
   },
   multipleTooltipTitle: {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.semibold,
     fontSize: theme.fontSizes.sm,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
   },
   multipleTooltipValuesContainer: {
     display: "flex",
@@ -67,12 +67,12 @@ export const { useClasses, staticClasses } = createClasses("HvChartTooltip", {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.semibold,
     fontSize: theme.fontSizes.sm,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
   },
   multipleTooltipSeriesValue: {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.normal,
     fontSize: theme.fontSizes.sm,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
   },
 });

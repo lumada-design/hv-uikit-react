@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvTabs", {
     backgroundColor: "transparent",
     "& > div": {
       width: "100%",
-      backgroundColor: `${theme.colors.secondary}`,
+      backgroundColor: theme.colors.text,
     },
     height: 2,
   },

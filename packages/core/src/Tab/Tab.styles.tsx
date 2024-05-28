@@ -13,11 +13,11 @@ export const { staticClasses, useClasses } = createClasses("HvTab", {
     fontFamily: theme.fontFamily.body,
     ...(theme.typography.body as React.CSSProperties),
     "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
       borderRadius: theme.radii.base,
       "&::after": {
         height: "1px",
-        backgroundColor: theme.colors.atmo4,
+        backgroundColor: theme.colors.divider,
       },
     },
     "&$selected": {
@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses("HvTab", {
       letterSpacing: theme.typography.label.letterSpacing,
     },
     "&$disabled": {
-      color: theme.colors.secondary_60,
+      color: theme.colors.textDisabled,
       cursor: "not-allowed",
       pointerEvents: "all",
       opacity: 1,
@@ -42,7 +42,7 @@ export const { staticClasses, useClasses } = createClasses("HvTab", {
       top: "calc(100% - 1px)",
       height: "1px",
       width: "100%",
-      backgroundColor: theme.colors.atmo4,
+      backgroundColor: theme.colors.divider,
       content: "''",
     },
     // Override Mui styling: https://mui.com/material-ui/api/tab/#css

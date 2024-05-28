@@ -17,7 +17,7 @@ export const { staticClasses, useClasses } = createClasses("HvCalendar", {
           "& > div:nth-of-type(3)": {
             "& > div": {
               "& > div[data-calendar-cell='calendarCell']": {
-                backgroundColor: theme.colors.atmo1,
+                backgroundColor: theme.colors.bgSurface,
               },
             },
           },

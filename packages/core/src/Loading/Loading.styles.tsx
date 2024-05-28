@@ -37,7 +37,7 @@ const regularAnimation = keyframes`
   }
   50% { 
     transform: scale(1, 0.6); 
-    background-color: ${theme.colors.secondary};
+    background-color: ${theme.colors.text};
   }
 `;
 

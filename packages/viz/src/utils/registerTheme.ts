@@ -16,22 +16,22 @@ export const registerTheme = (
   const customAxis = {
     nameTextStyle: {
       ...baseText,
-      color: themeStructure?.colors.modes[mode].secondary_80,
+      color: themeStructure?.colors.modes[mode].textSubtle,
     },
     axisLine: {
       show: true,
       lineStyle: {
-        color: themeStructure?.colors.modes[mode].atmo3,
+        color: themeStructure?.colors.modes[mode].dividerSubtle,
       },
     },
     axisTick: {
       show: true,
       lineStyle: {
-        color: themeStructure?.colors.modes[mode].atmo3,
+        color: themeStructure?.colors.modes[mode].dividerSubtle,
       },
     },
     axisLabel: {
-      color: themeStructure?.colors.modes[mode].secondary_80,
+      color: themeStructure?.colors.modes[mode].textSubtle,
       fontWeight: themeStructure?.fontWeights.normal,
       fontSize: themeStructure?.fontSizes.sm,
       fontFamily: themeStructure?.fontFamily.body,
@@ -39,7 +39,7 @@ export const registerTheme = (
     splitLine: {
       show: true,
       lineStyle: {
-        color: themeStructure?.colors.modes[mode].atmo3,
+        color: themeStructure?.colors.modes[mode].dividerSubtle,
       },
     },
   };
@@ -109,16 +109,16 @@ export const registerTheme = (
         fontFamily: baseText.fontFamily,
       },
       itemStyle: {
-        borderColor: themeStructure?.colors.modes[mode].atmo3,
+        borderColor: themeStructure?.colors.modes[mode].dividerSubtle,
         borderWidth: 1,
       },
     },
     treemap: {
       breadcrumb: {
         itemStyle: {
-          color: themeStructure?.colors.modes[mode].secondary,
+          color: themeStructure?.colors.modes[mode].text,
           textStyle: {
-            color: themeStructure?.colors.modes[mode].atmo1,
+            color: themeStructure?.colors.modes[mode].textDimmed,
           },
         },
       },

@@ -30,7 +30,7 @@ export const Expandable = () => {
   const cardContentId = useUniqueId();
 
   return (
-    <HvCard className={classes.card} bgcolor="atmo1">
+    <HvCard className={classes.card} bgcolor="bgSurface">
       <HvCardHeader
         title={<HvTypography variant="title4">Header Title</HvTypography>}
         subheader={

@@ -11,7 +11,7 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
   disabled: {},
   readOnly: {},
   invalid: {
-    border: `1px solid ${theme.colors.negative}`,
+    border: `1px solid ${theme.colors.error}`,
   },
   labelContainer: {
     display: "flex",
@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
     zIndex: theme.zIndices.popover,
   },
   panel: {
-    border: `1px solid ${theme.colors.secondary}`,
+    border: `1px solid ${theme.colors.text}`,
     marginTop: -1,
     marginBottom: -1,
   },

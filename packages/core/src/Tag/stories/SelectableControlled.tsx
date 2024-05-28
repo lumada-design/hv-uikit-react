@@ -10,7 +10,7 @@ const tags = [
   },
   {
     label: "Asset 2",
-    color: theme.colors.negative_20,
+    color: theme.colors.errorDimmed,
     bgColor: "negative",
   },
   {
@@ -20,7 +20,7 @@ const tags = [
   },
   {
     label: "Asset 4",
-    color: theme.colors.atmo1,
+    color: theme.colors.textDimmed,
     bgColor: "positive",
   },
 ];

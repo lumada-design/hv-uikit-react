@@ -12,7 +12,7 @@ const { staticClasses, useClasses } = createClasses("HvLoadingContainer", {
     inset: 0,
     zIndex: theme.zIndices.overlay,
     transition: "background-color .2s ease",
-    backgroundColor: theme.alpha("atmo1", "var(--opacity, 0.8)"),
+    backgroundColor: theme.alpha("bgSurface", "var(--opacity, 0.8)"),
   },
 });
 

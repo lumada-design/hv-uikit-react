@@ -86,19 +86,12 @@ export const HvCodeEditor = ({
         inherit: true,
         rules: [],
         colors: {
-          "editor.background": colors?.atmo1 || "",
-          "editorLineNumber.foreground": colors?.secondary_60 || "",
+          "editor.background": colors?.bgSurface || "",
+          "editorLineNumber.foreground": colors?.textSubtle || "",
         },
       });
     });
-  }, [
-    monacoInstance,
-    colorModes,
-    selectedTheme,
-    colors?.type,
-    colors?.atmo1,
-    colors?.secondary_60,
-  ]);
+  }, [monacoInstance, colorModes, selectedTheme, colors]);
 
   useEffect(() => {
     handleActiveThemes();

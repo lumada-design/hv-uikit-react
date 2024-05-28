@@ -42,7 +42,7 @@ const iconWrapper = (icon: React.ReactNode) => (
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      border: `1px solid ${theme.colors.atmo1}`,
+      border: `1px solid ${theme.colors.textDimmed}`,
       borderRadius: theme.radii.circle,
     }}
   >
@@ -59,13 +59,13 @@ export const flowStatusesSpecs = {
     description: "Warning",
   },
   [flowStatuses[1]]: {
-    icon: iconWrapper(<Level3Bad color={["negative_80", "base_light"]} />),
-    color: theme.colors.negative_80,
+    icon: iconWrapper(<Level3Bad color={["errorAction", "base_light"]} />),
+    color: theme.colors.errorAction,
     description: "Error",
   },
   [flowStatuses[2]]: {
     icon: iconWrapper(<Level0Good color={["positive", "base_light"]} />),
-    color: theme.colors.positive,
+    color: theme.colors.success,
     description: "Success",
   },
 };

@@ -23,6 +23,6 @@ export const { staticClasses, useClasses } = createClasses("HvAdornment", {
   disabled: {
     "&$adornmentButton": { cursor: "not-allowed" },
     "&$adornmentIcon": { cursor: "not-allowed" },
-    "& svg *.color0": { fill: theme.colors.secondary_60 },
+    "& svg *.color0": { fill: theme.colors.textDisabled },
   },
 });

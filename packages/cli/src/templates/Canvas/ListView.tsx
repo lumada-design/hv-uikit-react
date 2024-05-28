@@ -24,9 +24,9 @@ const classes = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    border: `1px solid ${theme.colors.atmo3}`,
+    border: `1px solid ${theme.colors.dividerSubtle}`,
     borderRadius: "12px",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     padding: theme.space.xs,
     height: "unset",
     "&:focus-visible": {
@@ -43,7 +43,7 @@ const classes = {
     backgroundColor: theme.colors.cat6_60,
   }),
   dragging: css({
-    border: `2px solid ${theme.colors.primary_80}`,
+    border: `2px solid ${theme.colors.primaryAction}`,
   }),
 };
 

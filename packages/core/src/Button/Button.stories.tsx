@@ -260,7 +260,7 @@ export const Semantic: StoryObj<HvButtonProps> = {
         style={{
           display: "flex",
           gap: 20,
-          backgroundColor: theme.colors.neutral_20,
+          backgroundColor: theme.colors.neutralDimmed,
           padding: 20,
         }}
       >

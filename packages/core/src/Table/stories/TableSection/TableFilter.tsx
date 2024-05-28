@@ -48,8 +48,8 @@ const classes = {
   filtersContainer: css({
     display: "flex",
     width: "100%",
-    backgroundColor: theme.colors.warning_20,
-    border: `1px solid ${theme.colors.atmo3}`,
+    backgroundColor: theme.colors.warningDimmed,
+    border: `1px solid ${theme.colors.dividerSubtle}`,
     overflow: "hidden",
     animation: `${slide} 1.5s ease-in-out`,
   }),
@@ -72,15 +72,15 @@ const classes = {
     borderColor: "transparent",
     "&:hover": {
       borderColor: "transparent",
-      backgroundColor: theme.colors.primary_20,
+      backgroundColor: theme.colors.bgHover,
     },
     "&:focus-visible": {
       borderColor: "transparent",
     },
     [`&.${baseDropdownClasses.headerOpen}`]: {
-      borderColor: theme.colors.secondary,
+      borderColor: theme.colors.text,
       "&:hover": {
-        borderColor: theme.colors.secondary,
+        borderColor: theme.colors.text,
       },
     },
   }),

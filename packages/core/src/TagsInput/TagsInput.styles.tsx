@@ -33,21 +33,21 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   },
   disabled: {
     "& $tagsList": {
-      backgroundColor: theme.colors.atmo2,
-      border: `1px solid ${theme.colors.atmo4}`,
+      backgroundColor: theme.colors.bgPage,
+      border: `1px solid ${theme.colors.divider}`,
 
       "&:focus-within, &:hover": {
-        border: `1px solid ${theme.colors.atmo4}`,
+        border: `1px solid ${theme.colors.divider}`,
       },
     },
   },
   readOnly: {
     "& $tagsList": {
-      backgroundColor: theme.colors.atmo2,
-      border: `1px solid ${theme.colors.secondary_60}`,
+      backgroundColor: theme.colors.bgPage,
+      border: `1px solid ${theme.colors.textDisabled}`,
 
       "&:hover": {
-        border: `1px solid ${theme.colors.secondary_60}`,
+        border: `1px solid ${theme.colors.textDisabled}`,
       },
     },
   },
@@ -77,8 +77,8 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     flexDirection: "row",
     flexWrap: "wrap",
 
-    backgroundColor: theme.colors.atmo1,
-    border: `1px solid ${theme.colors.secondary_80}`,
+    backgroundColor: theme.colors.bgSurface,
+    border: `1px solid ${theme.colors.textSubtle}`,
     borderRadius: theme.radii.base,
 
     "&:hover": {
@@ -107,11 +107,11 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     },
 
     "&$error": {
-      border: `1px solid ${theme.colors.negative}`,
+      border: `1px solid ${theme.colors.error}`,
     },
 
     "&$invalid": {
-      border: `1px solid ${theme.colors.negative}`,
+      border: `1px solid ${theme.colors.error}`,
     },
   },
   tagInputContainerRoot: {

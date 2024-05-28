@@ -21,7 +21,7 @@ export const { staticClasses, useClasses } = createClasses("HvWizardTitle", {
     paddingRight: 18,
   },
   headerContainer: {
-    backgroundColor: theme.colors.atmo2,
+    backgroundColor: theme.colors.bgPage,
     "& h6": {
       fontSize: "16px",
       fontWeight: "bold",

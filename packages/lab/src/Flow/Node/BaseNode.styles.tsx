@@ -3,7 +3,7 @@ import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
   root: {
     borderRadius: theme.radii.round,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     boxShadow: theme.colors.shadow,
     minWidth: "250px",
     border: "1px solid var(--node-color)",
@@ -31,17 +31,17 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     display: "flex",
     justifyContent: "center",
     padding: theme.space.xs,
-    backgroundColor: theme.colors.atmo2,
-    borderTop: `1px solid ${theme.colors.atmo3}`,
-    borderBottom: `1px solid ${theme.colors.atmo3}`,
+    backgroundColor: theme.colors.bgPage,
+    borderTop: `1px solid ${theme.colors.dividerSubtle}`,
+    borderBottom: `1px solid ${theme.colors.dividerSubtle}`,
   },
   outputsTitleContainer: {
     display: "flex",
     justifyContent: "center",
     padding: theme.space.xs,
-    backgroundColor: theme.colors.atmo2,
-    borderTop: `1px solid ${theme.colors.atmo3}`,
-    borderBottom: `1px solid ${theme.colors.atmo3}`,
+    backgroundColor: theme.colors.bgPage,
+    borderTop: `1px solid ${theme.colors.dividerSubtle}`,
+    borderBottom: `1px solid ${theme.colors.dividerSubtle}`,
   },
   contentContainer: {},
   inputsContainer: {
@@ -85,10 +85,10 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
   handle: {
     zIndex: theme.zIndices.overlay,
     marginLeft: 2,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     height: 10,
     width: 10,
-    border: `1px solid ${theme.colors.secondary_60}`,
+    border: `1px solid ${theme.colors.textDisabled}`,
     "&.react-flow__handle-left": {
       left: -23,
     },
@@ -96,21 +96,21 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
       right: -21,
     },
     "&.react-flow__handle-connecting": {
-      backgroundColor: theme.colors.negative_20,
+      backgroundColor: theme.colors.errorDimmed,
     },
     "&.react-flow__handle-valid": {
-      backgroundColor: theme.colors.positive_20,
+      backgroundColor: theme.colors.successDimmed,
     },
     "::before": {
       fontSize: 14,
-      color: theme.colors.secondary_60,
+      color: theme.colors.textDisabled,
       content: '"+"',
       marginTop: -7,
       position: "absolute",
     },
   },
   handleConnected: {
-    backgroundColor: theme.colors.secondary_60,
+    backgroundColor: theme.colors.textDisabled,
     width: 8,
     height: 8,
 
@@ -124,10 +124,10 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     height: 10,
     margin: theme.spacing(0, theme.space.xs),
     borderRadius: theme.radii.circle,
-    backgroundColor: theme.colors.negative_20,
+    backgroundColor: theme.colors.errorDimmed,
   },
   footerContainer: {
     padding: theme.space.sm,
-    borderTop: `1px solid ${theme.colors.atmo3}`,
+    borderTop: `1px solid ${theme.colors.dividerSubtle}`,
   },
 });

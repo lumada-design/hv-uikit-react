@@ -32,5 +32,5 @@ export const { staticClasses, useClasses } = createClasses("HvSelectionList", {
       zIndex: 1,
     },
   },
-  invalid: { borderBottom: `1px solid ${theme.colors.negative}` },
+  invalid: { borderBottom: `1px solid ${theme.colors.error}` },
 });

@@ -77,7 +77,7 @@ const classes = {
     gap: theme.space.sm,
   }),
   tableRowEditable: css({
-    backgroundColor: theme.colors.containerBackgroundHover,
+    backgroundColor: theme.colors.bgHover,
   }),
   tableCellEditable: css({
     padding: 0,
@@ -94,15 +94,15 @@ const classes = {
     padding: `calc(${theme.space.xs} - 2px) 0 calc(${
       theme.space.xs
     } - 3px) ${theme.spacing(4)}`,
-    borderBottom: `1px solid ${theme.colors.atmo4}`,
+    borderBottom: `1px solid ${theme.colors.divider}`,
   }),
   editableActions: css({
     display: "flex",
     justifyContent: "flex-end",
-    borderBottom: `1px solid ${theme.colors.atmo4}`,
+    borderBottom: `1px solid ${theme.colors.divider}`,
   }),
   editableTableBorder: css({
-    borderBottom: `1px solid ${theme.colors.atmo4}`,
+    borderBottom: `1px solid ${theme.colors.divider}`,
   }),
   slide: css({
     overflow: "hidden",
@@ -113,7 +113,7 @@ const classes = {
     maxWidth: "160px",
   }),
   tableRoot: css({ tableLayout: "fixed" }),
-  selectBackground: css({ backgroundColor: theme.colors.atmo1 }),
+  selectBackground: css({ backgroundColor: theme.colors.bgSurface }),
   switchContainer: css({ display: "flex", alignItems: "center" }),
   switchRightLabel: css({ marginLeft: 10 }),
 };
@@ -626,7 +626,9 @@ const Table = <T extends Data>({
             <HvTableCell
               {...cell.getCellProps()}
               key={cell.getCellProps().key}
-              style={{ borderBottom: `1px solid ${theme.colors.atmo4}` }}
+              style={{
+                borderBottom: `1px solid ${theme.colors.divider}`,
+              }}
             >
               {cell.render("Cell")}
             </HvTableCell>

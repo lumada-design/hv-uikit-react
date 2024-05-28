@@ -114,7 +114,7 @@ export const Card: StoryObj<HvSkeletonProps> = {
         <div style={{ display: "flex", flexDirection: "row", gap: 10 }}>
           {Array.from({ length: 3 }).map((_, i) => (
             <HvCard
-              bgcolor="atmo1"
+              bgcolor="bgSurface"
               key={`card-${i}`}
               style={{ width: "100%" }}
               statusColor="sema0"

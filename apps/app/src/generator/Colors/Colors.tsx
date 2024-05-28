@@ -53,7 +53,7 @@ const Colors = (): JSX.Element => {
                   customTheme?.colors?.modes?.[selectedMode]?.backgroundColor
                 }
                 onChangeComplete={(color) =>
-                  colorChangedHandler("backgroundColor", color)
+                  colorChangedHandler("bgPage", color)
                 }
                 classes={{
                   root: css({

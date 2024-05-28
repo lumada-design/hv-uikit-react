@@ -103,7 +103,7 @@ export const CustomizedDotPagination: StoryObj<HvDotPaginationProps> = {
         width: "32px",
 
         "&:hover": {
-          backgroundColor: theme.colors.atmo3,
+          backgroundColor: theme.colors.bgActive,
           borderRadius: 0,
         },
       }),

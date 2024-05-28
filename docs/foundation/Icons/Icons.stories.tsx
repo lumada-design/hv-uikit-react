@@ -41,7 +41,7 @@ const disabledArgs = {
 export const Main: StoryObj<typeof IconBase> = {
   args: {
     size: "sm",
-    color: "secondary",
+    color: "text",
   },
   argTypes: {
     ...disabledArgs,
@@ -59,11 +59,7 @@ export const CustomColors = {
     },
   },
   render: () => (
-    <Bookmark
-      color={["brand", "secondary"]}
-      size="M"
-      title="Click to bookmark"
-    />
+    <Bookmark color={["brand", "text"]} size="M" title="Click to bookmark" />
   ),
 };
 
@@ -107,7 +103,7 @@ export const IconSprites: StoryObj<HvIconSpriteProps> = {
   args: {
     iconName: "CheckboxCheck",
     spriteUrl: "./assets/icons.svg",
-    color: "secondary",
+    color: "text",
     size: "sm",
   },
   argTypes: {

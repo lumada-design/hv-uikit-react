@@ -4,17 +4,17 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { buttonClasses } from "../Button";
 
 const disabledStyle = {
-  backgroundColor: theme.colors.atmo3,
-  borderColor: theme.colors.atmo3,
+  backgroundColor: theme.colors.bgDisabled,
+  borderColor: "transparent",
   [`&.${buttonClasses.subtle}`]: {
-    backgroundColor: theme.colors.atmo3,
-    borderColor: theme.colors.atmo3,
-    "&:hover": { backgroundColor: theme.colors.atmo3 },
+    backgroundColor: theme.colors.bgDisabled,
+    borderColor: "transparent",
+    "&:hover": { backgroundColor: theme.colors.bgDisabled },
   },
   [`&.${buttonClasses.ghost}`]: {
-    backgroundColor: theme.colors.atmo3,
-    borderColor: theme.colors.atmo3,
-    "&:hover": { backgroundColor: theme.colors.atmo3 },
+    backgroundColor: theme.colors.bgDisabled,
+    borderColor: "transparent",
+    "&:hover": { backgroundColor: theme.colors.bgDisabled },
   },
 };
 
@@ -38,7 +38,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropdownButton", {
     ...disabledStyle,
   },
   open: {
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
   },
   openUp: {
     borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,

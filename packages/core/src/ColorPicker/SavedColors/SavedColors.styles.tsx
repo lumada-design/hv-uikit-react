@@ -37,7 +37,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     alignItems: "center",
     height: 16,
     width: 16,
-    background: theme.colors.atmo1,
+    background: theme.colors.bgSurface,
     borderRadius: theme.radii.base,
   },
   removeButton: {

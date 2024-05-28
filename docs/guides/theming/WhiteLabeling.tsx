@@ -53,7 +53,7 @@ const turquoiseTheme = createTheme({
       dawn: {
         secondary: "#484349",
         primary: "#18A999",
-        containerBackgroundHover: "#ecfcfa",
+        bgHover: "#ecfcfa",
       },
     },
   },
@@ -100,7 +100,7 @@ const turquoiseTheme = createTheme({
             borderBottom: 0,
             "& > * > span": {
               color: "#F6F8FF",
-              backgroundColor: theme.colors.secondary,
+              backgroundColor: theme.colors.text,
               borderRadius: theme.radii.full,
             },
           },

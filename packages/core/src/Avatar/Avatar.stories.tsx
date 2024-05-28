@@ -28,8 +28,8 @@ export default meta;
 export const Main: StoryObj<HvAvatarProps> = {
   args: {
     size: "md",
-    backgroundColor: "secondary",
-    color: "atmo1",
+    backgroundColor: "text",
+    color: "textDimmed",
     variant: "circular",
     badge: "",
     status: "",
@@ -103,16 +103,16 @@ export const IconAvatars: StoryObj<HvAvatarProps> = {
     return (
       <>
         <HvAvatar>
-          <LogIn color="atmo1" iconSize="XS" />
+          <LogIn color="textDimmed" iconSize="XS" />
         </HvAvatar>
         <HvAvatar backgroundColor="positive">
-          <Archives color="atmo1" iconSize="XS" />
+          <Archives color="textDimmed" iconSize="XS" />
         </HvAvatar>
         <HvAvatar backgroundColor="neutral">
-          <Search color="atmo1" iconSize="XS" />
+          <Search color="textDimmed" iconSize="XS" />
         </HvAvatar>
         <HvAvatar backgroundColor="warning">
-          <Bookmark color="atmo1" iconSize="XS" />
+          <Bookmark color="textDimmed" iconSize="XS" />
         </HvAvatar>
       </>
     );
@@ -198,10 +198,10 @@ export const Status: StoryObj<HvAvatarProps> = {
         <HvAvatar size="md" status="negative">
           AB
         </HvAvatar>
-        <HvAvatar size="lg" status="atmo4" badge="atmo4">
+        <HvAvatar size="lg" status="textSubtle" badge="textSubtle">
           AB
         </HvAvatar>
-        <HvAvatar size="xl" status="#8CEB34" badge="#8CEB34">
+        <HvAvatar size="xl" status="hotpink" badge="hotpink">
           AB
         </HvAvatar>
       </>
@@ -229,7 +229,7 @@ export const Actions: StoryObj<HvAvatarProps> = {
           aria-label="External link"
         >
           <HvAvatar size="md">
-            <LinkIcon color="atmo1" />
+            <LinkIcon color="textDimmed" />
           </HvAvatar>
         </HvButton>
         <HvButton

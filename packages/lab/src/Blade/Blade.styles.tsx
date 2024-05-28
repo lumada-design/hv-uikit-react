@@ -16,10 +16,10 @@ export const { staticClasses, useClasses } = createClasses("HvBlade", {
 
     zIndex: 0,
 
-    color: theme.colors.secondary,
-    backgroundColor: theme.colors.atmo1,
+    color: theme.colors.text,
+    backgroundColor: theme.colors.bgSurface,
     borderRadius: theme.radii.round,
-    border: `1px solid ${theme.colors.atmo4}`,
+    border: `1px solid ${theme.colors.divider}`,
   },
   expanded: {},
 
@@ -43,11 +43,11 @@ export const { staticClasses, useClasses } = createClasses("HvBlade", {
 
     "&:focus": {
       outline: "none",
-      background: theme.colors.containerBackgroundHover,
+      background: theme.colors.bgHover,
     },
 
     "&:hover": {
-      background: theme.colors.containerBackgroundHover,
+      background: theme.colors.bgHover,
     },
 
     "&:focus-visible": {
@@ -76,7 +76,7 @@ export const { staticClasses, useClasses } = createClasses("HvBlade", {
 
   disabled: {
     cursor: "not-allowed",
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
 
     "&:focus": {
       background: "none",

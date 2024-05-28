@@ -8,7 +8,7 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
     padding: theme.space.sm,
     marginTop: 12,
     marginBottom: 32,
-    border: `1px solid ${theme.colors.atmo4}`,
+    border: `1px solid ${theme.colors.divider}`,
   },
   /** Styles applied to the top group container. */
   topGroup: {
@@ -31,8 +31,8 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
       width: 21,
       height: 36,
 
-      borderBottom: `1px solid ${theme.colors.atmo4}`,
-      borderLeft: `1px solid ${theme.colors.atmo4}`,
+      borderBottom: `1px solid ${theme.colors.divider}`,
+      borderLeft: `1px solid ${theme.colors.divider}`,
 
       top: -38,
       left: -38,
@@ -45,7 +45,7 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
       width: 32,
       height: "100%",
 
-      borderLeft: `1px solid ${theme.colors.atmo4}`,
+      borderLeft: `1px solid ${theme.colors.divider}`,
 
       top: 0,
       left: `calc(${theme.space.sm} + 2)`,
@@ -66,12 +66,14 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
   /** Styles applied to the remove button on the top group. */
   topRemoveButton: { position: "absolute", top: -16, right: -16 },
   /** Styles applied to the remove button when disabled on the top group. */
-  topRemoveButtonDisabled: { backgroundColor: theme.colors.atmo2 },
+  topRemoveButtonDisabled: {
+    backgroundColor: theme.colors.bgPage,
+  },
   /** Styles applied to the rules container. */
   rulesContainer: {},
   /** Styles applied to the sub rules container. */
   subRulesContainer: {
-    borderLeft: `1px solid ${theme.colors.atmo4}`,
+    borderLeft: `1px solid ${theme.colors.divider}`,
     marginLeft: theme.space.sm,
     marginBottom: theme.space.md,
     paddingLeft: theme.space.sm,
@@ -98,7 +100,7 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
   topRulesContainer: {},
   /** Styles applied to the background of buttons to remove transparency */
   buttonBackground: {
-    backgroundColor: theme.colors.atmo2,
+    backgroundColor: theme.colors.bgPage,
     display: "inline-flex",
   },
   createConditionButton: {

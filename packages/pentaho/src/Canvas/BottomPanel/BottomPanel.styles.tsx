@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses(
         display: "none",
       },
       "& $tab": {
-        backgroundColor: theme.colors.atmo1,
+        backgroundColor: theme.colors.bgSurface,
         ...theme.typography.label,
       },
     },

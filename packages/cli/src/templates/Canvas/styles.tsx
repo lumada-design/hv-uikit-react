@@ -8,11 +8,11 @@ export const classes = {
     // border style when a node is selected
     [`& .selected > div`]: {
       borderWidth: "2px",
-      borderColor: theme.colors.primary_80,
+      borderColor: theme.colors.primaryAction,
     },
   }),
   flowEmpty: css({ backgroundColor: "transparent" }),
-  flowEmptyMessage: css({ color: theme.colors.secondary_80 }),
+  flowEmptyMessage: css({ color: theme.colors.textSubtle }),
   tabLabel: css({ display: "flex", alignItems: "center" }),
   root: css({
     height: "100%",

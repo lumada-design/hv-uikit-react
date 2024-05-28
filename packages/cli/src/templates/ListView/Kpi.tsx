@@ -36,7 +36,7 @@ const classes = {
     alignItems: "center",
   }),
   selected: css({
-    outline: `1px solid ${theme.colors.secondary_60}`,
+    outline: `1px solid ${theme.colors.textDisabled}`,
   }),
   loading: css({
     margin: `${theme.space.xs} 0`,
@@ -83,7 +83,7 @@ export const Kpi = ({
       id={`kpi${status}`}
       selectable
       selected={status === kpiSelection}
-      bgcolor="atmo1"
+      bgcolor="bgPaper"
       statusColor={color}
       onClick={handleKpiClick}
       className={cx(classes.card, {

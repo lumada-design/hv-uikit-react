@@ -38,7 +38,7 @@ export const gridStyles = css`
   }
 
   .react-grid-item.react-grid-placeholder {
-    background: ${theme.colors.primary_20};
+    background: ${theme.colors.primaryDimmed};
     transition-duration: 100ms;
     z-index: 2;
     -webkit-user-select: none;

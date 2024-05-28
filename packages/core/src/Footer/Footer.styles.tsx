@@ -10,8 +10,8 @@ export const { staticClasses, useClasses } = createClasses("HvFooter", {
     height: 40,
     bottom: 0,
     zIndex: theme.zIndices.base,
-    backgroundColor: theme.colors.atmo1,
-    boxShadow: `0 -1px 0 ${theme.colors.atmo4}`,
+    backgroundColor: theme.colors.bgSurface,
+    boxShadow: `0 -1px 0 ${theme.colors.divider}`,
   },
   name: {},
   rightContainer: {
@@ -24,7 +24,7 @@ export const { staticClasses, useClasses } = createClasses("HvFooter", {
   separator: {
     width: 1,
     height: 16,
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.text,
     margin: `${theme.space.xs} ${theme.space.sm}`,
   },
   small: {

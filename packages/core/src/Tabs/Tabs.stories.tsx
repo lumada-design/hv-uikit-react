@@ -114,7 +114,7 @@ export const TextSize: StoryObj<HvTabsProps> = {
 
     const StyledHvTab = styled(HvTab)({
       minHeight: 48,
-      color: theme.colors.secondary,
+      color: theme.colors.text,
       fontSize: "22px",
       letterSpacing: "0.02em",
       lineHeight: "30px",
@@ -176,7 +176,7 @@ export const WithBadges: StoryObj<HvTabsProps> = {
       minHeight: 48,
       justifyContent: "center",
       "& div p": {
-        color: theme.colors.secondary,
+        color: theme.colors.text,
         fontSize: "22px",
         letterSpacing: "0.02em",
         lineHeight: "30px",

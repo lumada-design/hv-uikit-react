@@ -8,7 +8,7 @@ const classes = {
   root: css({
     display: "flex",
     flexDirection: "column",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     width: "fit-content",
     minWidth: 220,
     boxShadow: theme.colors.shadow,
@@ -19,7 +19,7 @@ const classes = {
     flexDirection: "column",
   }),
   containerBorder: css({
-    borderBottom: `3px solid ${theme.colors.atmo2}`,
+    borderBottom: `3px solid ${theme.colors.bgPage}`,
   }),
   valuesContainer: css({
     display: "flex",
@@ -48,13 +48,13 @@ const classes = {
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.semibold,
     fontSize: theme.fontSizes.sm,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
   }),
   text: css({
     fontFamily: theme.fontFamily.body,
     fontWeight: theme.fontWeights.normal,
     fontSize: theme.fontSizes.sm,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
   }),
   icon: css({
     display: "flex",
@@ -94,7 +94,7 @@ const renderSvgContent = (content: string) => `
 const iconSwitcher = (value: string) =>
   ({
     good: renderSvgContent(
-      `<path fill="${theme.colors.positive}" d="M6.387 12 4 9.613l.707-.707 1.613 1.613 4.65-5.58.768.641zM8 15a6.953 6.953 0 0 1-4.943-2.057A7.023 7.023 0 1 1 8 15m8-7a8 8 0 1 0-8 8 8 8 0 0 0 8-8z"></path>`,
+      `<path fill="${theme.colors.success}" d="M6.387 12 4 9.613l.707-.707 1.613 1.613 4.65-5.58.768.641zM8 15a6.953 6.953 0 0 1-4.943-2.057A7.023 7.023 0 1 1 8 15m8-7a8 8 0 1 0-8 8 8 8 0 0 0 8-8z"></path>`,
     ),
     average: renderSvgContent(
       `<g fill="${theme.colors.warning}"><path d="M8 0C3.58179 0 0 3.58173 0 8s3.58179 8 8 8 8-3.58173 8-8c-.00488-4.41626-3.58374-7.99506-8-8zm0 15c-3.86597 0-7-3.13403-7-7 0-3.86603 3.13403-7 7-7s7 3.13397 7 7c-.00439 3.86414-3.13574 6.99561-7 7z"></path><path d="M5 7.5h6v1H5z"></path></g>`,

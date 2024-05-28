@@ -16,11 +16,11 @@ import { NodeData } from "./Node";
 
 const classes = {
   dragging: css({
-    border: `2px solid ${theme.colors.primary_80}`,
+    border: `2px solid ${theme.colors.primaryAction}`,
   }),
   contentDragging: css({
     "&&:hover": {
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgSurface,
     },
   }),
   labelRoot: css({

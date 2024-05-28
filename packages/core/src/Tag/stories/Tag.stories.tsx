@@ -27,7 +27,7 @@ export const Main: StoryObj<HvTagProps> = {
     onClick: () => console.log("click"),
     onDelete: () => console.log("delete"),
     type: "semantic",
-    color: "neutral_20",
+    color: "neutralDimmed",
     disabled: false,
   },
   argTypes: {
@@ -59,9 +59,9 @@ export const Semantical: StoryObj<HvTagProps> = {
     return (
       <>
         <HvTag label="Informational" />
-        <HvTag color="positive_20" label="Success" />
-        <HvTag color="negative_20" label="Warning" />
-        <HvTag color="warning_20" label="Error" />
+        <HvTag color="successDimmed" label="Success" />
+        <HvTag color="errorDimmed" label="Warning" />
+        <HvTag color="warningDimmed" label="Error" />
       </>
     );
   },
@@ -131,21 +131,21 @@ export const WithDeleteAction: StoryObj<HvTagProps> = {
         />
         <HvTag
           label="Success"
-          color="positive_20"
+          color="successDimmed"
           onDelete={() => {
             alert("On Delete Action");
           }}
         />
         <HvTag
           label="Warning"
-          color="negative_20"
+          color="errorDimmed"
           onDelete={() => {
             alert("On Delete Action");
           }}
         />
         <HvTag
           label="Error"
-          color="warning_20"
+          color="warningDimmed"
           onDelete={() => {
             alert("On Delete Action");
           }}
@@ -236,12 +236,12 @@ export const Test: StoryObj = {
       <HvTag label="Informational" />
       <HvTag label="Informational" disabled />
       <HvTag label="This is a very very very very very very very very long text for a tag" />
-      <HvTag color="positive_20" label="Success" />
-      <HvTag color="negative_20" label="Warning" />
-      <HvTag color="warning_20" label="Error" />
+      <HvTag color="successDimmed" label="Success" />
+      <HvTag color="errorDimmed" label="Warning" />
+      <HvTag color="warningDimmed" label="Error" />
       <HvTag
         label="Success"
-        color="positive_20"
+        color="successDimmed"
         onDelete={() => {
           alert("On Delete Action");
         }}
@@ -254,8 +254,8 @@ export const Test: StoryObj = {
         label="Asset 2"
         selectable
         selected
-        color="negative"
-        classes={{ root: css({ color: theme.colors.negative_20 }) }}
+        color="error"
+        classes={{ root: css({ color: theme.colors.errorDimmed }) }}
       />
     </div>
   ),

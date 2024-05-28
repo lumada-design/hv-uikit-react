@@ -12,19 +12,22 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
     transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
 
     "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
       borderRadius: theme.radii.base,
     },
   },
   disabled: {
     cursor: "not-allowed",
-    "& $label": { color: theme.colors.secondary_60, cursor: "not-allowed" },
+    "& $label": {
+      color: theme.colors.textDisabled,
+      cursor: "not-allowed",
+    },
   },
   focusVisible: {
     ...outlineStyles,
 
     "& div": {
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgActive,
     },
 
     [`& $checkbox div > svg`]: {
@@ -33,7 +36,7 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
     },
   },
   invalidContainer: {
-    borderBottom: `1px solid ${theme.colors.negative}`,
+    borderBottom: `1px solid ${theme.colors.error}`,
 
     "&:hover": {
       borderBottomLeftRadius: "0px",
@@ -42,7 +45,7 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
   },
   checkbox: { height: "32px" },
   invalidCheckbox: {
-    borderBottom: `1px solid ${theme.colors.negative}`,
+    borderBottom: `1px solid ${theme.colors.error}`,
     borderBottomLeftRadius: "0px",
     borderBottomRightRadius: "0px",
   },

@@ -119,7 +119,7 @@ export const Controlled: StoryObj<HvSwitchProps> = {
           onChange={(_evt, newChecked) => setState(newChecked)}
         />
         <HvTypography
-          style={{ color: state ? theme.colors.positive : theme.colors.sema14 }}
+          style={{ color: state ? theme.colors.success : theme.colors.sema14 }}
         >
           The switch is {state ? "On" : "Off"}
         </HvTypography>
@@ -218,7 +218,7 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
         <HvGrid item xs={12} md={6}>
           <div
             className={css({
-              backgroundColor: theme.colors.negative_20,
+              backgroundColor: theme.colors.errorDimmed,
               color: theme.colors.base_dark,
               padding: theme.space.md,
             })}

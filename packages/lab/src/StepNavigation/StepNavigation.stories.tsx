@@ -7,7 +7,7 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 
 import { HvDefaultNavigation, HvStep, HvStepProps } from "./DefaultNavigation";
-import { dotClasses, HvDot, HvSimpleNavigation } from "./SimpleNavigation";
+import { HvDot, HvSimpleNavigation } from "./SimpleNavigation";
 
 type StepType = Pick<
   HvStepProps,
@@ -178,31 +178,33 @@ export const Customized: StoryObj<HvStepNavigationProps> = {
     },
   },
   render: () => {
-    const root = css({
-      backgroundColor: theme.colors.positive,
-      "&:hover": {
-        backgroundColor: theme.colors.positive,
-      },
-      [`&.${dotClasses.ghostDisabled}`]: {
-        backgroundColor: theme.colors.secondary,
-      },
-    });
-    const separator = css({
-      backgroundColor: theme.colors.positive,
-      height: 3,
-    });
-    const title = css({
-      color: theme.colors.secondary,
-    });
+    const classes = {
+      root: css({
+        backgroundColor: theme.colors.success,
+        "&:hover": {
+          backgroundColor: theme.colors.success,
+        },
+        "&&:disabled": {
+          backgroundColor: theme.colors.text,
+        },
+      }),
+      separator: css({
+        backgroundColor: theme.colors.success,
+        height: 3,
+      }),
+      title: css({
+        color: theme.colors.text,
+      }),
+    };
 
     return (
       <HvStepNavigation
         type="Simple"
         steps={steps.map((s) => ({
           ...s,
-          className: root,
-          separatorClassName: separator,
-          titleClassName: title,
+          className: classes.root,
+          separatorClassName: classes.separator,
+          titleClassName: classes.title,
         }))}
       />
     );

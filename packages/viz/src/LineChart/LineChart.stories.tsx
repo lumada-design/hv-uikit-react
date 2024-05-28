@@ -864,15 +864,15 @@ export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
             data: [{ yAxis: 3000, name: "Average" }],
             symbol: "none",
             itemStyle: {
-              color: colors?.secondary,
+              color: colors?.text,
             },
             label: {
-              color: colors?.secondary,
+              color: colors?.text,
             },
           };
           option.series[0].smooth = true;
           option.series[0].lineStyle = {
-            color: colors?.secondary_60,
+            color: colors?.textDisabled,
           };
           option.series[0].itemStyle = {
             color(params: any) {

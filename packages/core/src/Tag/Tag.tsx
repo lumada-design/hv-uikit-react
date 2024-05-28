@@ -111,7 +111,7 @@ export const HvTag = forwardRef<HTMLDivElement, HvTagProps>((props, ref) => {
     type === "categorical" ? getCategoricalColor(color, colors) : undefined;
 
   const backgroundColor =
-    (type === "semantic" && getColor(color, "neutral_20")) ||
+    (type === "semantic" && getColor(color, "neutralDimmed")) ||
     (type === "categorical" && `${categoricalBackgroundColor}30`) ||
     undefined;
 
@@ -123,7 +123,8 @@ export const HvTag = forwardRef<HTMLDivElement, HvTagProps>((props, ref) => {
     },
   });
 
-  const colorOverride = (disabled && ["atmo3", "secondary_60"]) || undefined;
+  const colorOverride =
+    (disabled && ["dividerSubtle", "textDisabled"]) || undefined;
 
   const avatarIcon = isSelected ? (
     <CheckboxCheck color={colorOverride} iconSize="XS" />

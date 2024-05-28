@@ -16,7 +16,7 @@ export const GroupedRows = () => {
   const data = makeData(8);
 
   const style = {
-    borderRight: `solid 1px ${theme.colors.atmo4}`,
+    borderRight: `solid 1px ${theme.colors.divider}`,
   };
 
   return (

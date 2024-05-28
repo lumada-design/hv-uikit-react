@@ -80,9 +80,9 @@ const baseline = {
   },
 
   ".uikit-root-element": {
-    backgroundColor: theme.colors.backgroundColor,
-    accentColor: theme.colors.secondary,
-    color: theme.colors.secondary,
+    backgroundColor: theme.colors.bgPage,
+    accentColor: theme.colors.text,
+    color: theme.colors.text,
     fontSize: theme.typography.body.fontSize,
     fontWeight: theme.typography.body.fontWeight,
     lineHeight: theme.typography.body.lineHeight,

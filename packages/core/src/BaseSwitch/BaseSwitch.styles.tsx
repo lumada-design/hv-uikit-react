@@ -14,7 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     borderRadius: theme.radii.base,
 
     "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
 
     // Higher CSS specificity here
@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
         transform: "translateX(16px)",
         "& + $track": {
           opacity: 1,
-          backgroundColor: theme.colors.secondary,
+          backgroundColor: theme.colors.text,
         },
         "&:hover": {
           backgroundColor: "transparent",
@@ -40,8 +40,8 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
       "& $switchBase": {
         "& + $track": {
           opacity: 1,
-          backgroundColor: theme.colors.atmo3,
-          border: `solid 1px ${theme.colors.secondary_60}`,
+          backgroundColor: theme.colors.bgActive,
+          border: `solid 1px ${theme.colors.textDisabled}`,
         },
       },
     },
@@ -65,16 +65,16 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     borderRadius: "15px",
     height: "16px",
     width: "32px",
-    border: `solid 1px ${theme.colors.secondary}`,
-    backgroundColor: theme.colors.atmo1,
+    border: `solid 1px ${theme.colors.text}`,
+    backgroundColor: theme.colors.bgSurface,
   },
   thumb: {
     position: "relative",
     left: "-9px",
     width: "12px",
     height: "12px",
-    border: `solid 1px ${theme.colors.secondary}`,
-    backgroundColor: theme.colors.atmo1,
+    border: `solid 1px ${theme.colors.text}`,
+    backgroundColor: theme.colors.bgSurface,
     marginLeft: "2px",
     marginTop: 0,
     boxShadow: "none",
@@ -88,8 +88,8 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     },
 
     "& $thumb": {
-      backgroundColor: theme.colors.atmo3,
-      border: `solid 1px ${theme.colors.secondary_60}`,
+      backgroundColor: theme.colors.bgActive,
+      border: `solid 1px ${theme.colors.textDisabled}`,
     },
   },
   readOnly: {},

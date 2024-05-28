@@ -3,10 +3,12 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvDialog", {
   root: {},
-  background: { background: theme.alpha("atmo4", 0.8) },
+  background: {
+    background: theme.colors.bgOverlay,
+  },
   paper: {
-    color: theme.colors.secondary,
-    backgroundColor: theme.colors.atmo1,
+    color: theme.colors.text,
+    backgroundColor: theme.colors.bgSurface,
     boxShadow: ["none", theme.colors.shadow],
     borderRadius: theme.radii.round,
   },
@@ -27,10 +29,10 @@ export const { staticClasses, useClasses } = createClasses("HvDialog", {
     borderTopStyle: "solid",
   },
   success: {
-    borderTopColor: theme.colors.positive,
+    borderTopColor: theme.colors.success,
   },
   error: {
-    borderTopColor: theme.colors.negative,
+    borderTopColor: theme.colors.error,
   },
   warning: {
     borderTopColor: theme.colors.warning,

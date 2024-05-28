@@ -15,7 +15,7 @@ export const { useClasses, staticClasses } = createClasses("HvProgressBar", {
     width: "100%",
   },
   progressBar: {
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.text,
   },
   progressBarLabel: {
     backgroundColor: "transparent",
@@ -26,15 +26,15 @@ export const { useClasses, staticClasses } = createClasses("HvProgressBar", {
     width: "100%",
   },
   progressDone: {
-    backgroundColor: theme.colors.positive,
+    backgroundColor: theme.colors.success,
   },
   progressBarContainer: {
     display: "flex",
     width: "100%",
     height: 4,
-    backgroundColor: theme.colors.atmo4,
+    backgroundColor: theme.colors.divider,
   },
   progressError: {
-    backgroundColor: theme.colors.negative,
+    backgroundColor: theme.colors.error,
   },
 });

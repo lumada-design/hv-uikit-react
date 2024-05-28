@@ -33,7 +33,7 @@ export const { staticClasses, useClasses } = createClasses(
       display: "flex",
       justifyContent: "center",
       boxShadow,
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgSurface,
       borderRadius: "0px 16px 16px 0px",
       position: "absolute",
       transition: "left 0.3s ease",

@@ -32,7 +32,7 @@ export const WithScroll: StoryObj<HvPanelProps> = {
   render: () => {
     return (
       <HvPanel style={{ width: 400, height: 400 }}>
-        <div style={{ height: 600, backgroundColor: theme.colors.atmo4 }} />
+        <div style={{ height: 600, backgroundColor: theme.colors.bgActive }} />
       </HvPanel>
     );
   },
@@ -59,7 +59,7 @@ export const FullWidth: StoryObj<HvPanelProps> = {
 };
 
 const Overlay = styled("div")({
-  backgroundColor: theme.colors.atmo3,
+  backgroundColor: theme.colors.bgActive,
   opacity: 0.8,
   width: "100%",
   padding: theme.space.md,

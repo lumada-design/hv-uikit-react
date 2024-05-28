@@ -56,7 +56,7 @@ const ColorsGroup = ({
   return (
     <div
       style={{
-        backgroundColor: theme.colors.backgroundColor,
+        backgroundColor: theme.colors.bgPage,
         padding: theme.space.xs,
       }}
     >

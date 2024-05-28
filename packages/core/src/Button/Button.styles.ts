@@ -15,11 +15,11 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
 
     // Background color common for almost all variants
     "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
     "&:focus-visible": {
       ...outlineStyles,
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
 
     // Default button - no size specified
@@ -39,12 +39,12 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   focusVisible: {},
   disabled: {
     cursor: "not-allowed",
-    color: theme.colors.secondary_60,
-    borderColor: theme.colors.atmo3,
-    backgroundColor: theme.colors.atmo3,
+    color: theme.colors.textDisabled,
+    borderColor: theme.colors.bgDisabled,
+    backgroundColor: theme.colors.bgDisabled,
     "&:hover, &:focus-visible": {
-      backgroundColor: theme.colors.atmo3,
-      borderColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgDisabled,
+      borderColor: theme.colors.bgDisabled,
     },
   },
   icon: {
@@ -123,7 +123,7 @@ export const getColoringStyle = (color: string, type?: string) => {
         : `${color}_140`) as keyof typeof theme.colors
     ];
   return {
-    color: theme.colors.atmo1,
+    color: theme.colors.textDimmed,
     backgroundColor: bg,
     borderColor: bg,
     "&:hover, &:focus-visible": {

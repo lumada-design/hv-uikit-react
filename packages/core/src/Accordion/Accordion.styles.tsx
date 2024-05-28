@@ -24,11 +24,11 @@ export const { staticClasses, useClasses } = createClasses("HvAccordion", {
 
     "&:focus": {
       outline: "none",
-      background: theme.colors.atmo3,
+      background: theme.colors.bgActive,
     },
 
     "&:hover": {
-      background: theme.colors.atmo3,
+      background: theme.colors.bgActive,
     },
 
     "&:focus-visible": {
@@ -39,7 +39,7 @@ export const { staticClasses, useClasses } = createClasses("HvAccordion", {
   },
   disabled: {
     cursor: "not-allowed",
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
 
     "&:focus": {
       background: "none",

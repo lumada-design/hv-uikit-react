@@ -143,7 +143,7 @@ export const SemanticConfusionMatrix: StoryObj<HvConfusionMatrixProps> = {
           },
           {
             label: "Neutral",
-            color: "atmo2",
+            color: "bgPage",
             value: 0,
           },
         ]}

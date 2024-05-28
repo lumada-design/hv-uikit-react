@@ -62,7 +62,7 @@ const formatDate = (date: Date) => date.toISOString().split("T")[0];
 const getOption = (opts: string[], i: number) => opts[i % opts.length];
 
 const getTagColor = (status: string) =>
-  status === "Closed" ? "negative_20" : "positive_20";
+  status === "Closed" ? "errorDimmed" : "successDimmed";
 
 const generateLongString = (value: string | undefined, i: number) =>
   i === 6

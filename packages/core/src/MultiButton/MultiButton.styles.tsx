@@ -14,7 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     zIndex: 0,
   },
   multiple: {
-    background: theme.colors.atmo2,
+    background: theme.colors.bgPage,
 
     // prevent the focus ring to be hidden by sibling hover background
     "&>.HvIsFocusVisible": {
@@ -28,59 +28,59 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       padding: 0,
       transition: "none",
       flex: "1 0 0px",
-      borderTop: `solid 1px ${theme.colors.atmo4}`,
-      borderBottom: `solid 1px ${theme.colors.atmo4}`,
+      borderTop: `solid 1px ${theme.colors.divider}`,
+      borderBottom: `solid 1px ${theme.colors.divider}`,
       borderLeft: "solid 1px transparent",
       borderRight: "solid 1px transparent",
       borderRadius: 0,
       fontWeight: theme.typography.body.fontWeight,
       fontSize: theme.typography.body.fontSize,
       "&:disabled": {
-        color: theme.colors.secondary_60,
-        borderTop: `solid 1px ${theme.colors.atmo4}`,
-        borderBottom: `solid 1px ${theme.colors.atmo4}`,
+        color: theme.colors.textDisabled,
+        borderTop: `solid 1px ${theme.colors.divider}`,
+        borderBottom: `solid 1px ${theme.colors.divider}`,
         "&:hover": {
-          borderTop: `solid 1px ${theme.colors.atmo4}`,
-          borderBottom: `solid 1px ${theme.colors.atmo4}`,
+          borderTop: `solid 1px ${theme.colors.divider}`,
+          borderBottom: `solid 1px ${theme.colors.divider}`,
           borderLeft: "solid 1px transparent",
           borderRight: "solid 1px transparent",
         },
       },
       "&$firstButton": {
-        borderLeft: `solid 1px ${theme.colors.atmo4}`,
+        borderLeft: `solid 1px ${theme.colors.divider}`,
         borderTopLeftRadius: theme.radii.base,
         borderBottomLeftRadius: theme.radii.base,
         "&:disabled": {
-          borderLeft: `solid 1px ${theme.colors.atmo4}`,
+          borderLeft: `solid 1px ${theme.colors.divider}`,
         },
       },
       "&$lastButton": {
-        borderRight: `solid 1px ${theme.colors.atmo4}`,
+        borderRight: `solid 1px ${theme.colors.divider}`,
         borderTopRightRadius: theme.radii.base,
         borderBottomRightRadius: theme.radii.base,
         "&:disabled": {
-          borderRight: `solid 1px ${theme.colors.atmo4}`,
+          borderRight: `solid 1px ${theme.colors.divider}`,
         },
         "&:disabled:hover": {
-          borderRight: `solid 1px ${theme.colors.atmo4}`,
+          borderRight: `solid 1px ${theme.colors.divider}`,
         },
       },
       "&:not($firstButton)": {
         marginLeft: "-1px",
       },
       "&$selected": {
-        background: theme.colors.atmo1,
+        background: theme.colors.bgSurface,
         ...theme.typography.label,
         borderRadius: theme.radii.base,
-        border: `solid 1px ${theme.colors.secondary}`,
+        border: `solid 1px ${theme.colors.text}`,
         zIndex: 2,
         "&:hover": {
-          background: theme.colors.atmo3,
+          background: theme.colors.bgActive,
           "&:not(:disabled)": {
-            border: `solid 1px ${theme.colors.secondary}`,
+            border: `solid 1px ${theme.colors.text}`,
           },
           "&:disabled": {
-            border: `solid 1px ${theme.colors.atmo4}`,
+            border: `solid 1px ${theme.colors.divider}`,
           },
         },
         // prevent the focus ring to be hidden by sibling hover background
@@ -90,16 +90,16 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
         },
         "&:disabled": {
           zIndex: 1,
-          color: theme.colors.secondary_60,
-          background: theme.colors.atmo1,
-          border: `solid 1px ${theme.colors.atmo4}`,
+          color: theme.colors.textDisabled,
+          background: theme.colors.bgSurface,
+          border: `solid 1px ${theme.colors.divider}`,
         },
       },
     },
   },
   splitGroup: {
     width: "fit-content",
-    background: theme.colors.atmo1,
+    background: theme.colors.bgSurface,
 
     // Button
     "& button$button": {
@@ -138,7 +138,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       zIndex: 2,
     },
   },
-  splitGroupDisabled: { background: theme.colors.atmo3 },
+  splitGroupDisabled: { background: theme.colors.bgDisabled },
   button: {},
   selected: {},
   vertical: {
@@ -147,34 +147,34 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     "& button$button": {
       minWidth: 32,
       width: "100%",
-      borderLeft: `solid 1px ${theme.colors.atmo4}`,
-      borderRight: `solid 1px ${theme.colors.atmo4}`,
+      borderLeft: `solid 1px ${theme.colors.divider}`,
+      borderRight: `solid 1px ${theme.colors.divider}`,
       borderTop: "solid 1px transparent",
       borderBottom: "solid 1px transparent",
       "&:disabled": {
-        color: theme.colors.secondary_60,
-        borderLeft: `solid 1px ${theme.colors.atmo4}`,
-        borderRight: `solid 1px ${theme.colors.atmo4}`,
+        color: theme.colors.textDisabled,
+        borderLeft: `solid 1px ${theme.colors.divider}`,
+        borderRight: `solid 1px ${theme.colors.divider}`,
         borderTop: "solid 1px transparent",
         borderBottom: "solid 1px transparent",
         "&:hover": {
-          borderLeft: `solid 1px ${theme.colors.atmo4}`,
-          borderRight: `solid 1px ${theme.colors.atmo4}`,
+          borderLeft: `solid 1px ${theme.colors.divider}`,
+          borderRight: `solid 1px ${theme.colors.divider}`,
           borderTop: "solid 1px transparent",
           borderBottom: "solid 1px transparent",
         },
       },
       "&$firstButton": {
-        borderTop: `solid 1px ${theme.colors.atmo4}`,
+        borderTop: `solid 1px ${theme.colors.divider}`,
         borderTopLeftRadius: theme.radii.base,
         borderTopRightRadius: theme.radii.base,
       },
       "&$lastButton": {
-        borderBottom: `solid 1px ${theme.colors.atmo4}`,
+        borderBottom: `solid 1px ${theme.colors.divider}`,
         borderBottomLeftRadius: theme.radii.base,
         borderBottomRightRadius: theme.radii.base,
         "&:disabled:hover": {
-          borderBottom: `solid 1px ${theme.colors.atmo4}`,
+          borderBottom: `solid 1px ${theme.colors.divider}`,
         },
       },
       "&:not($firstButton)": {
@@ -184,19 +184,19 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       "&$selected": {
         height: 32,
         width: `calc(100% + 2px) !important`,
-        background: theme.colors.atmo1,
+        background: theme.colors.bgSurface,
         ...theme.typography.label,
         borderRadius: theme.radii.base,
-        border: `solid 1px ${theme.colors.secondary}`,
+        border: `solid 1px ${theme.colors.text}`,
         zIndex: 2,
         "&:hover, &:focus": {
-          background: theme.colors.atmo3,
+          background: theme.colors.bgActive,
         },
         "&:disabled": {
           zIndex: 1,
-          color: theme.colors.secondary_60,
-          background: theme.colors.atmo1,
-          border: `solid 1px ${theme.colors.atmo4}`,
+          color: theme.colors.textDisabled,
+          background: theme.colors.bgSurface,
+          border: `solid 1px ${theme.colors.divider}`,
         },
       },
     },
@@ -216,7 +216,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     height: "calc(32px - 2px)",
   },
   splitDisabled: {
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
   },
   firstButton: {},
   lastButton: {},
@@ -237,9 +237,9 @@ export const getSplitContainerColor = (
 ) => ({
   color: getColoringStyle(color, type).color,
   backgroundColor: disabled
-    ? theme.colors.atmo3
+    ? theme.colors.bgDisabled
     : type === "subtle"
-      ? theme.colors.atmo1
+      ? theme.colors.bgSurface
       : "transparent",
 });
 
