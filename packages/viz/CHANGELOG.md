@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.12.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.8...@hitachivantara/uikit-react-viz@5.12.9) (2024-05-29)
+
+### Bug Fixes
+
+- viz legend position ([1deb1b2](https://github.com/lumada-design/hv-uikit-react/commit/1deb1b280ad286a0c507c86f5359dd34c3952d4f))
+
 ## [5.12.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.7...@hitachivantara/uikit-react-viz@5.12.8) (2024-05-28)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz

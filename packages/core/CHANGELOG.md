@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.66.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.65.3...@hitachivantara/uikit-react-core@5.66.0) (2024-05-29)
+
+### Features
+
+- **QueryBuilder:** prop added to disable default attribute validation ([49b0656](https://github.com/lumada-design/hv-uikit-react/commit/49b0656a85c78f0b9ca8e4d426adf86b63662249))
+
 ## [5.65.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.65.2...@hitachivantara/uikit-react-core@5.65.3) (2024-05-28)
 
 ### Bug Fixes
