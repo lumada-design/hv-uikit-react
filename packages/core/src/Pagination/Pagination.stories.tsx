@@ -4,11 +4,10 @@ import { Meta, StoryObj } from "@storybook/react";
 import {
   HvPagination,
   HvPaginationProps,
-  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-const StyledBox = styled(HvTypography)({
+const StyledBox = styled("div")({
   display: "flex",
   flexWrap: "wrap",
   "&>span": {
@@ -49,12 +48,9 @@ export const Main: StoryObj<HvPaginationProps> = {
       <>
         <StyledBox>
           {data.slice(pageSize * page, pageSize * (page + 1)).map((i) => (
-            <HvTypography key={i} component="span">
-              {`Item ${i + 1}`}
-            </HvTypography>
+            <span key={i}>{`Item ${i + 1}`}</span>
           ))}
         </StyledBox>
-        <p />
         <HvPagination
           pages={numPages}
           page={page}
@@ -62,8 +58,8 @@ export const Main: StoryObj<HvPaginationProps> = {
           canNext={page < numPages - 1}
           pageSize={pageSize}
           pageSizeOptions={pageSizeOptions}
-          onPageChange={(value) => setPage(value)}
-          onPageSizeChange={(value) => setPageSize(value)}
+          onPageChange={setPage}
+          onPageSizeChange={setPageSize}
           labels={{ pageSizeEntryName: "items" }}
         />
       </>

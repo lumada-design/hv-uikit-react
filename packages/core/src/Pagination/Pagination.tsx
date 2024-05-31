@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Hidden from "@mui/material/Hidden";
 import {
   Backwards,
@@ -14,11 +14,10 @@ import { HvInput, HvInputProps } from "../Input";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
-import { isKey } from "../utils/keyboardUtils";
+import { clamp } from "../utils/helpers";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Pagination.styles";
 import HvSelect, { Option } from "./Select";
-import { getSafePage, setColor, usePageInput } from "./utils";
 
 export { staticClasses as paginationClasses };
 
@@ -115,19 +114,19 @@ export const HvPagination = (props: HvPaginationProps) => {
     currentPageInputProps,
     ...others
   } = useDefaultProps("HvPagination", props);
-
-  const labels = useLabels(DEFAULT_LABELS, labelsProp);
-  const [pageInput, handleInputChange] = usePageInput(page);
   const { classes, cx } = useClasses(classesProp);
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
+
+  const [pageInput, setPageInput] = useState(page);
 
   const changePage = useCallback(
     (newPage: number) => {
-      const safePage: number = getSafePage(newPage, page, pages);
+      const safePage = Number.isNaN(newPage) ? page : clamp(newPage, pages - 1);
 
       onPageChange?.(safePage);
-      handleInputChange(null, safePage + 1);
+      setPageInput(safePage);
     },
-    [page, pages, onPageChange, handleInputChange],
+    [page, pages, onPageChange],
   );
 
   useEffect(() => {
@@ -137,18 +136,8 @@ export const HvPagination = (props: HvPaginationProps) => {
   }, [changePage, page, pages]);
 
   useEffect(() => {
-    if (pageInput !== page + 1) {
-      handleInputChange(null, page + 1);
-    }
-
-    // we only want to "fix" the input's display value when `page` property changed
-    // (either externally or when internally committed - onBlur or Enter),
-    // not while editing the input.
-    // breaking a rule of hooks isn't ideal and it's just a hack for fixing
-    // a bug preventing properly controlling of the `page` property.
-    // fixing it some other way would potentially introduce a breaking change.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [handleInputChange, page]);
+    setPageInput(page);
+  }, [page]);
 
   const renderPageJump = () => (
     <div className={classes.pageJump}>
@@ -165,12 +154,10 @@ export const HvPagination = (props: HvPaginationProps) => {
           input: classes?.pageSizeInput,
           inputRoot: classes?.pageSizeInputRoot,
         }}
-        onChange={(event, value) => handleInputChange(event, Number(value))}
-        value={String(pageInput)}
+        value={String(pageInput + 1)}
+        onChange={(event, value) => setPageInput(Number(value) - 1)}
         onBlur={(evt, value) => changePage(Number(value) - 1)}
-        onKeyDown={(evt, value) =>
-          isKey(evt, "Enter") && changePage(Number(value) - 1)
-        }
+        onEnter={(evt, value) => changePage(Number(value) - 1)}
         disabled={pageSize === 0}
         disableClear
         {...currentPageInputProps}
@@ -228,11 +215,7 @@ export const HvPagination = (props: HvPaginationProps) => {
           onClick={() => changePage(0)}
           title={labels?.firstPage || labels?.paginationFirstPageTitle}
         >
-          <Start
-            className={classes.icon}
-            color={setColor(!canPrevious)}
-            iconSize="XS"
-          />
+          <Start className={classes.icon} iconSize="XS" />
         </HvIconButton>
         <HvIconButton
           id={setId(id, "previousPage-button")}
@@ -241,11 +224,7 @@ export const HvPagination = (props: HvPaginationProps) => {
           onClick={() => changePage(page - 1)}
           title={labels?.previousPage || labels?.paginationPreviousPageTitle}
         >
-          <Backwards
-            className={classes.icon}
-            color={setColor(!canPrevious)}
-            iconSize="XS"
-          />
+          <Backwards className={classes.icon} iconSize="XS" />
         </HvIconButton>
         <div className={classes.pageInfo}>
           {showPageJump ? (
@@ -271,11 +250,7 @@ export const HvPagination = (props: HvPaginationProps) => {
           onClick={() => changePage(page + 1)}
           title={labels?.nextPage || labels?.paginationNextPageTitle}
         >
-          <Forwards
-            className={classes.icon}
-            color={setColor(!canNext)}
-            iconSize="XS"
-          />
+          <Forwards className={classes.icon} iconSize="XS" />
         </HvIconButton>
         <HvIconButton
           id={setId(id, "lastPage-button")}
@@ -284,11 +259,7 @@ export const HvPagination = (props: HvPaginationProps) => {
           onClick={() => changePage(pages - 1)}
           title={labels?.lastPage || labels?.paginationLastPageTitle}
         >
-          <End
-            className={classes.icon}
-            color={setColor(!canNext)}
-            iconSize="XS"
-          />
+          <End className={classes.icon} iconSize="XS" />
         </HvIconButton>
       </div>
     </div>
