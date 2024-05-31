@@ -156,8 +156,8 @@ export const HvPagination = (props: HvPaginationProps) => {
         }}
         value={String(pageInput + 1)}
         onChange={(event, value) => setPageInput(Number(value) - 1)}
-        onBlur={(evt, value) => changePage(Number(value) - 1)}
-        onEnter={(evt, value) => changePage(Number(value) - 1)}
+        onBlur={(evt, value) => changePage(Math.round(Number(value)) - 1)}
+        onEnter={(evt, value) => changePage(Math.round(Number(value)) - 1)}
         disabled={pageSize === 0}
         disableClear
         {...currentPageInputProps}
