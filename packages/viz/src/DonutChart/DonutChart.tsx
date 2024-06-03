@@ -69,7 +69,13 @@ export const HvDonutChart = forwardRef<ReactECharts, HvDonutChartProps>(
       ...others
     } = props;
 
-    const chartData = useData({ data, groupBy, measures, sortBy, filters });
+    const { data: chartData, mapping: measuresMapping } = useData({
+      data,
+      groupBy,
+      measures,
+      sortBy,
+      filters,
+    });
 
     const chartDataset = useDataset(chartData);
 
@@ -77,7 +83,7 @@ export const HvDonutChart = forwardRef<ReactECharts, HvDonutChartProps>(
       type: "pie",
       data: chartData,
       groupBy,
-      measures,
+      measuresMapping,
       radius: type === "thin" ? ["65%", "70%"] : ["55%", "70%"],
     });
 
@@ -91,7 +97,7 @@ export const HvDonutChart = forwardRef<ReactECharts, HvDonutChartProps>(
 
     const chartTooltip = useTooltip({
       ...tooltip,
-      measures,
+      measuresMapping,
       classes,
       nameFormatter: slicesNameFormatter,
     });

@@ -80,7 +80,7 @@ export const HvScatterPlot = forwardRef<ReactECharts, HvScatterPlotProps>(
       ...others
     } = props;
 
-    const chartData = useData({
+    const { data: chartData, mapping: measuresMapping } = useData({
       data,
       groupBy,
       measures,
@@ -107,7 +107,7 @@ export const HvScatterPlot = forwardRef<ReactECharts, HvScatterPlotProps>(
       type: "scatter",
       data: chartData,
       groupBy,
-      measures,
+      measuresMapping,
       nameFormatter: seriesNameFormatter,
     });
 
@@ -119,7 +119,7 @@ export const HvScatterPlot = forwardRef<ReactECharts, HvScatterPlotProps>(
     const chartTooltip = useTooltip({
       ...tooltip,
       trigger: "axis",
-      measures,
+      measuresMapping,
       classes,
     });
 

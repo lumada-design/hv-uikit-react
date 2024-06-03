@@ -129,6 +129,61 @@ export const WithArea: StoryObj<HvLineChartProps> = {
   },
 };
 
+export const AggregationFunction: StoryObj<HvLineChartProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "By default all the values for a measure are aggregated using the `sum` function. However, this can be changed depending on your needs.",
+      },
+    },
+  },
+  render: () => {
+    const format: HvLineChartProps["seriesNameFormatter"] = (value) => {
+      const parts = value?.split("_");
+      if (parts && parts?.length > 1) return `${parts[0]} (minimum)`;
+      return value || "";
+    };
+
+    return (
+      <HvLineChart
+        data={{
+          Year: [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+          ],
+          "Global Sales": [
+            5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119,
+            2146,
+          ],
+        }}
+        groupBy="Year"
+        measures={[
+          {
+            field: "Global Sales",
+            area: true,
+          },
+          {
+            field: "Global Sales",
+            agg: "min",
+          },
+        ]}
+        seriesNameFormatter={format}
+      />
+    );
+  },
+};
+
 export const MultipleLinesChart: StoryObj<HvLineChartProps> = {
   parameters: {
     docs: {

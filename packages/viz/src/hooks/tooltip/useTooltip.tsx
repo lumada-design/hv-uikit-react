@@ -1,16 +1,9 @@
 import { useCallback, useMemo } from "react";
-import { Arrayable, ExtractNames } from "@hitachivantara/uikit-react-core";
+import { ExtractNames } from "@hitachivantara/uikit-react-core";
 
-import {
-  HvBarChartMeasures,
-  HvChartTooltip,
-  HvChartTooltipParams,
-  HvDonutChartMeasure,
-  HvLineChartMeasures,
-  HvScatterPlotMeasure,
-} from "../../types";
+import { HvChartTooltip, HvChartTooltipParams } from "../../types";
 import { HvEChartsOption } from "../../types/common";
-import { getMeasure } from "../../utils";
+import { getMeasure, SingleMeasure } from "../../utils";
 import { useClasses } from "./styles";
 
 export type HvChartTooltipClasses = ExtractNames<typeof useClasses>;
@@ -27,9 +20,7 @@ interface EChartsTooltipParams {
 }
 
 interface HvTooltipHookProps {
-  measures?:
-    | Arrayable<HvLineChartMeasures | HvBarChartMeasures | HvScatterPlotMeasure>
-    | HvDonutChartMeasure;
+  measuresMapping?: Record<string, SingleMeasure>;
   trigger?: "item" | "axis";
   classes?: HvChartTooltipClasses;
   horizontal?: boolean;
@@ -42,7 +33,7 @@ interface HvTooltipHookProps {
 }
 
 export const useTooltip = ({
-  measures = [],
+  measuresMapping = {},
   classes,
   component,
   show = true,
@@ -80,7 +71,7 @@ export const useTooltip = ({
             : horizontal
               ? params[0].dimensionNames[params[0].encode.x[0]]
               : params[0].dimensionNames[params[0].encode.y[0]],
-          measures,
+          measuresMapping,
         );
 
         const value =
@@ -125,7 +116,7 @@ export const useTooltip = ({
                     : horizontal
                       ? s.dimensionNames[s.encode.x[0]]
                       : s.dimensionNames[s.encode.y[0]],
-                  measures,
+                  measuresMapping,
                 );
 
                 const value =
@@ -136,7 +127,7 @@ export const useTooltip = ({
                       : s.value[s.encode.y[0]];
 
                 const formattedValue =
-                  typeof measure !== "string" && measure.valueFormatter
+                  typeof measure !== "string" && measure?.valueFormatter
                     ? measure.valueFormatter(value)
                     : valueFormatter
                       ? valueFormatter(value)
@@ -167,7 +158,7 @@ export const useTooltip = ({
       hvClasses,
       horizontal,
       type,
-      measures,
+      measuresMapping,
       nameFormatter,
       titleFormatter,
       valueFormatter,

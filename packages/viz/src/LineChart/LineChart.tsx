@@ -90,7 +90,7 @@ export const HvLineChart = forwardRef<ReactECharts, HvLineChartProps>(
       ...others
     } = props;
 
-    const chartData = useData({
+    const { data: chartData, mapping: measuresMapping } = useData({
       data,
       groupBy,
       measures,
@@ -117,7 +117,7 @@ export const HvLineChart = forwardRef<ReactECharts, HvLineChartProps>(
       type: "line",
       data: chartData,
       groupBy,
-      measures,
+      measuresMapping,
       area,
       areaOpacity,
       emptyCellMode,
@@ -133,7 +133,7 @@ export const HvLineChart = forwardRef<ReactECharts, HvLineChartProps>(
     const chartTooltip = useTooltip({
       ...tooltip,
       trigger: "axis",
-      measures,
+      measuresMapping,
       classes,
     });
 

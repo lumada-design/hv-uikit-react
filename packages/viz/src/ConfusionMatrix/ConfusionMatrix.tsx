@@ -116,7 +116,7 @@ export const HvConfusionMatrix = forwardRef<
 
   const groupByKey = getGroupKey(groupBy);
 
-  const chartData = useData({
+  const { data: chartData } = useData({
     data: dataProp,
     groupBy,
     measures: [measure],
