@@ -1,6 +1,5 @@
 import { from, internal, table } from "arquero";
 import type ColumnTable from "arquero/dist/types/table/column-table";
-import { Arrayable } from "@hitachivantara/uikit-react-core";
 
 import type {
   HvBarChartMeasures,
@@ -8,6 +7,7 @@ import type {
   HvChartData,
   HvChartFilter,
   HvChartFilterOperation,
+  HvConfusionMatrixMeasure,
   HvDonutChartMeasure,
   HvLineChartMeasures,
 } from "..";
@@ -43,27 +43,29 @@ export const getLegendIcon = (icon: HvChartLegendIcon) => {
   }
 };
 
-export const getMeasure = (
-  name: string,
-  msr:
-    | Arrayable<HvLineChartMeasures | HvBarChartMeasures | HvScatterPlotMeasure>
-    | HvDonutChartMeasure,
-):
+export type SingleMeasure =
   | HvLineChartMeasures
   | HvBarChartMeasures
+  | HvScatterPlotMeasure
   | HvDonutChartMeasure
-  | HvScatterPlotMeasure => {
-  const measureName = name.split("_")[0];
-  const measuresArray = Array.isArray(msr) ? msr : [msr];
-  // find the measure in measures array or return the first one
-  return (
-    measuresArray.find((m) => {
-      if (typeof m === "string") {
-        return m === measureName;
-      }
-      return m.field === measureName;
-    }) ?? measuresArray[0]
-  );
+  | HvConfusionMatrixMeasure;
+
+export const getMeasure = (
+  name: string,
+  mapping: Record<string, SingleMeasure>,
+) => {
+  // find the key that matches the most number of characters
+  // we are not doing the first match because columns can be repeated if they use different agg functions
+  let measure: SingleMeasure | undefined;
+  let count = 0;
+  for (const key of Object.keys(mapping)) {
+    if (name.includes(key) && key.length >= count) {
+      count = key.length;
+      measure = mapping[key];
+    }
+  }
+  // return the found measure in measures array or return the first one
+  return measure ?? Object.values(mapping)[0];
 };
 
 export const getFilterFunction = (
@@ -208,7 +210,7 @@ export const getHvArqueroCombinedFilters = (
 };
 
 /**
- * Normalizes a column name by replacing all characters that are not letters or numbers by "___"
+ * Normalizes a column name by replacing all characters that are not letters or numbers by "__"
  */
 export const normalizeColumnName = (string: string) => {
   return string.replace(/[^a-zA-Z0-9]/g, "__");

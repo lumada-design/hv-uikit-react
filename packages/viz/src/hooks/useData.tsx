@@ -1,6 +1,5 @@
 import { useMemo } from "react";
-import { desc, escape, internal, not } from "arquero";
-import type ColumnTable from "arquero/dist/types/table/column-table";
+import { desc, escape, not } from "arquero";
 import { Arrayable } from "@hitachivantara/uikit-react-core";
 
 import {
@@ -8,6 +7,7 @@ import {
   HvChartAggregation,
   HvChartData,
   HvChartOrder,
+  HvConfusionMatrixMeasure,
   HvDonutChartMeasure,
   HvLineChartMeasures,
   HvScatterPlotMeasure,
@@ -18,6 +18,7 @@ import {
   getHvArqueroCombinedFilters,
   normalizeColumnName,
   processTableData,
+  SingleMeasure,
 } from "../utils";
 
 const getAgFunc = (func: HvChartAggregation, field: string) =>
@@ -28,7 +29,8 @@ interface HvDataHookProps {
   groupBy: HvChartCommonProps["groupBy"];
   measures:
     | Arrayable<HvLineChartMeasures | HvBarChartMeasures | HvScatterPlotMeasure>
-    | HvDonutChartMeasure;
+    | HvDonutChartMeasure
+    | HvConfusionMatrixMeasure;
   splitBy?: HvAxisChartCommonProps["splitBy"];
   sortBy?: HvChartCommonProps["sortBy"];
   filters?: HvChartCommonProps["filters"];
@@ -43,11 +45,11 @@ export const useData = ({
   splitBy,
   filters: filtersProp,
   delta,
-}: HvDataHookProps): internal.ColumnTable => {
+}: HvDataHookProps) => {
   const groupByKey = getGroupKey(groupBy);
 
-  const chartData = useMemo<ColumnTable>(() => {
-    // Converting data to arquero table data and normalizing the columns name
+  return useMemo(() => {
+    // Converting data to Arquero table data and normalizing the columns name
     const { data: processedData, mapping } = processTableData(data);
     let tableData = processedData;
 
@@ -73,43 +75,69 @@ export const useData = ({
       Array.isArray(splitBy) ? splitBy : splitBy != null ? [splitBy] : []
     ).map((value) => normalizeColumnName(value)); // normalize
 
-    let measuresFields: { [key: string]: string } = {};
+    // keeps track of fields (table columns) used as measures
+    const measuresFields: string[] = [];
+    // keeps track of the measures specs provided by the user for each derived column; non-normalized names are used as this will be exported;
+    const measuresMapping: Record<string, SingleMeasure> = {};
+    // defines the new columns to be derived and their agg function
+    let measuresColumns: Record<string, string> = {};
     if (typeof measures === "string") {
+      measuresMapping[measures] = measures;
       const normalizedMeasure = normalizeColumnName(measures); // normalize
-      measuresFields[normalizedMeasure] = getAgFunc("sum", normalizedMeasure);
+      measuresColumns[normalizedMeasure] = getAgFunc("sum", normalizedMeasure);
+      measuresFields.push(normalizedMeasure);
     } else if (Array.isArray(measures)) {
-      measuresFields = measures.reduce<{ [key: string]: string }>(
+      measuresColumns = measures.reduce<Record<string, string>>(
         (acc, value) => {
           let field: string;
           let agFunction: HvChartAggregation;
+          let columnName: string;
           if (typeof value === "string") {
+            measuresMapping[value] = value;
             field = normalizeColumnName(value); // normalize
             agFunction = "sum";
+            columnName = field;
           } else {
+            // finds out if there are more measures for the same field
+            const notUnique =
+              measures.filter((m) =>
+                typeof m === "string"
+                  ? m === value.field
+                  : m.field === value.field,
+              ).length > 1;
+            const appendAgg = notUnique && value.agg && value.agg !== "sum";
+            measuresMapping[
+              appendAgg ? `${value.field}_${value.agg}` : value.field
+            ] = value;
             field = normalizeColumnName(value.field); // normalize
             agFunction = value.agg ?? "sum";
+            columnName = appendAgg ? `${field}_${value.agg}` : field;
           }
+
+          measuresFields.push(field);
           return {
             ...acc,
-            [field]: getAgFunc(agFunction, field),
+            [columnName]: getAgFunc(agFunction, field),
           };
         },
         {},
       );
     } else if (measures != null) {
+      measuresMapping[measures.field] = measures;
       const normalizedMeasure = normalizeColumnName(measures.field); // normalize
-      measuresFields[normalizedMeasure] = getAgFunc(
+      measuresColumns[normalizedMeasure] = getAgFunc(
         measures.agg ?? "sum",
         normalizedMeasure,
       );
+      measuresFields.push(normalizedMeasure);
     }
 
-    let sortByFields: { [key: string]: HvChartOrder } = {};
+    let sortByFields: Record<string, HvChartOrder> = {};
     if (typeof sortBy === "string") {
       const normalizedSort = normalizeColumnName(sortBy); // normalize
       sortByFields[normalizedSort] = "asc";
     } else if (Array.isArray(sortBy)) {
-      sortByFields = sortBy.reduce<{ [key: string]: HvChartOrder }>(
+      sortByFields = sortBy.reduce<Record<string, HvChartOrder>>(
         (acc, value) => {
           let field: string;
           let orderFunction: HvChartOrder;
@@ -132,16 +160,12 @@ export const useData = ({
       sortByFields[normalizedSort] = sortBy.order ?? "asc";
     }
 
-    const allFields = [
-      ...groupByFields,
-      ...splitByFields,
-      ...Object.keys(measuresFields),
-    ];
+    const allFields = [...groupByFields, ...splitByFields, ...measuresFields];
 
     // --- Confusion matrix ---
     // Recalculate the measures columns according to the delta column
     if (delta) {
-      const deltaExpression = Object.keys(measuresFields).reduce(
+      const deltaExpression = Object.keys(measuresColumns).reduce(
         (acc, curr) => {
           const normalizedMeasure = normalizeColumnName(curr); // normalize
           const normalizedDelta = normalizeColumnName(delta); // normalize
@@ -152,6 +176,7 @@ export const useData = ({
         },
         {},
       );
+
       tableData = tableData.derive(deltaExpression);
     }
 
@@ -165,10 +190,10 @@ export const useData = ({
 
     if (splitByFields.length > 0) {
       // pivot by splitBy fields
-      tableData = tableData.pivot(splitByFields, measuresFields);
+      tableData = tableData.pivot(splitByFields, measuresColumns);
     } else {
       // if there is no splitBy fields, just aggregate measures fields
-      tableData = tableData.rollup(measuresFields);
+      tableData = tableData.rollup(measuresColumns);
     }
 
     // if grouped by multiple fields, create a new joint field
@@ -194,15 +219,27 @@ export const useData = ({
       );
     }
 
-    // Revert the normalized names to the ones given by the user
+    // revert the normalized names to the ones given by the user
     const reversedMapping = {};
     for (const column of tableData.columnNames()) {
       if (mapping[column] != null) {
+        // use the original name (not normalized)
         reversedMapping[column] = mapping[column];
       } else {
-        reversedMapping[column] = column;
+        const found = Object.entries(mapping).find(([key]) =>
+          column.includes(key),
+        );
+        if (found) {
+          const [key, value] = found;
+          // replace partially with the original name (not normalized)
+          reversedMapping[column] = column.replace(key, value as string);
+        } else {
+          // keep the current name
+          reversedMapping[column] = column;
+        }
       }
     }
+
     tableData = tableData.select(reversedMapping);
 
     // if a derived field was created, remove the original fields
@@ -210,7 +247,7 @@ export const useData = ({
       tableData = tableData.select(not(...groupByFields));
     }
 
-    return tableData;
+    return { data: tableData, mapping: measuresMapping };
   }, [
     data,
     filtersProp,
@@ -221,6 +258,4 @@ export const useData = ({
     delta,
     groupByKey,
   ]);
-
-  return chartData;
 };

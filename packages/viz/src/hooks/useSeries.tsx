@@ -6,14 +6,8 @@ import {
   PieSeriesOption,
   ScatterSeriesOption,
 } from "echarts/charts";
-import { Arrayable } from "@hitachivantara/uikit-react-core";
 
-import {
-  HvBarChartMeasures,
-  HvChartEmptyCellMode,
-  HvDonutChartMeasure,
-  HvLineChartMeasures,
-} from "../types";
+import { HvChartEmptyCellMode } from "../types";
 import {
   HvAxisChartCommonProps,
   HvChartCommonProps,
@@ -21,19 +15,16 @@ import {
 } from "../types/common";
 import {
   BarFullMeasure,
-  HvScatterPlotMeasure,
   LineFullMeasure,
   ScatterPlotMeasure,
 } from "../types/measures";
-import { getGroupKey, getMeasure } from "../utils";
+import { getGroupKey, getMeasure, SingleMeasure } from "../utils";
 
 interface HvSeriesHookProps {
   type: "line" | "bar" | "pie" | "scatter" | "treemap";
   data: internal.ColumnTable;
   groupBy: HvChartCommonProps["groupBy"];
-  measures:
-    | Arrayable<HvLineChartMeasures | HvBarChartMeasures | HvScatterPlotMeasure>
-    | HvDonutChartMeasure;
+  measuresMapping: Record<string, SingleMeasure>;
   area?: boolean;
   areaOpacity?: number;
   emptyCellMode?: HvChartEmptyCellMode;
@@ -47,14 +38,14 @@ export const useSeries = ({
   groupBy,
   type,
   data,
-  measures,
+  measuresMapping,
   nameFormatter,
   stack,
+  emptyCellMode,
+  radius,
   horizontal = false,
   area = false,
   areaOpacity = 0.5,
-  emptyCellMode,
-  radius,
 }: HvSeriesHookProps) => {
   const groupByKey = getGroupKey(groupBy);
 
@@ -65,13 +56,8 @@ export const useSeries = ({
       series: data
         .columnNames()
         .filter((c) => c !== groupByKey)
-        .map<
-          | LineSeriesOption
-          | BarSeriesOption
-          | PieSeriesOption
-          | ScatterSeriesOption
-        >((c) => {
-          const measure = getMeasure(c, measures);
+        .map((c) => {
+          const measure = getMeasure(c, measuresMapping);
 
           let pieOps: PieSeriesOption = {};
           let lineOps: LineSeriesOption = {};
@@ -193,17 +179,13 @@ export const useSeries = ({
             ...barOps,
             ...lineOps,
             ...scatterOps,
-          } as
-            | LineSeriesOption
-            | BarSeriesOption
-            | PieSeriesOption
-            | ScatterSeriesOption;
+          };
         }),
     };
   }, [
     data,
     groupByKey,
-    measures,
+    measuresMapping,
     type,
     nameFormatter,
     radius,

@@ -83,7 +83,7 @@ export const HvBarChart = forwardRef<ReactECharts, HvBarChartProps>(
       ...others
     } = props;
 
-    const chartData = useData({
+    const { data: chartData, mapping: measuresMapping } = useData({
       data,
       groupBy,
       sortBy,
@@ -114,7 +114,7 @@ export const HvBarChart = forwardRef<ReactECharts, HvBarChartProps>(
       type: "bar",
       data: chartData,
       groupBy,
-      measures,
+      measuresMapping,
       stack,
       nameFormatter: seriesNameFormatter,
       horizontal,
@@ -129,7 +129,7 @@ export const HvBarChart = forwardRef<ReactECharts, HvBarChartProps>(
     const chartTooltip = useTooltip({
       ...tooltip,
       trigger: "axis",
-      measures,
+      measuresMapping,
       classes,
       horizontal,
     });
