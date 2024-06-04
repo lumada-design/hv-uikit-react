@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.66.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.0...@hitachivantara/uikit-react-core@5.66.1) (2024-06-04)
+
+### Bug Fixes
+
+- **Pagination:** round float input values ([646eec1](https://github.com/lumada-design/hv-uikit-react/commit/646eec138f561f588caf1706748474ee264ce5e2))
+
 # [5.66.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.65.3...@hitachivantara/uikit-react-core@5.66.0) (2024-05-29)
 
 ### Features
