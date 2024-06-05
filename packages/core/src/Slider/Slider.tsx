@@ -285,21 +285,72 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
 
   const knobStyles = createKnobStyles(knobProperties);
 
+  /**
+   * Generates an object which posses the current value and position of the knobs.
+   *
+   * @param {Array} knobsCurrentPosition - An array containing the current positions of the knobs.
+   * @returns {Object} - An object with the positions and values of the knobs.
+   * @memberof HvSlider
+   */
+  const generateKnobsPositionAndValues = useCallback(
+    (
+      knobsCurrentPosition: number[],
+    ): { knobsPosition: number[]; knobsValues: number[] } => {
+      const newKnobsPosition: number[] = knobsCurrentPosition.slice();
+      const knobsValues: number[] = [];
+
+      let duplicatedValue: number | null = null;
+
+      const findDuplicated: number[] = newKnobsPosition.filter(
+        (item, index) => newKnobsPosition.indexOf(item) !== index,
+      );
+
+      if (noOverlap && findDuplicated.length > 0) {
+        [duplicatedValue] = findDuplicated;
+      }
+
+      newKnobsPosition.forEach((position, index, array) => {
+        const newArray: number[] = array;
+        let newPosition: number = position;
+
+        if (noOverlap && newPosition === duplicatedValue) {
+          const previousValue = knobsPositions[index];
+          if (previousValue !== newPosition) {
+            newPosition += newPosition > previousValue ? -1 : 1;
+            newArray[index] = newPosition;
+          }
+        }
+
+        knobsValues[index] = knobsPositionToScaledValue(
+          newPosition,
+          minPointValue,
+          stepValue,
+        );
+      }, this);
+
+      return {
+        knobsPosition: newKnobsPosition,
+        knobsValues,
+      };
+    },
+    [knobsPositions, minPointValue, noOverlap, stepValue],
+  );
+
   const performValidation = useCallback(() => {
     let invalid = false;
     let requiredMsg = false;
 
-    const newValidationState = knobsPositions.map((position) => {
-      if (required && (position == null || Number.isNaN(position))) {
+    const mappedValues =
+      generateKnobsPositionAndValues(knobsPositions).knobsValues;
+
+    const newValidationState = mappedValues.map((knobValue) => {
+      if (required && (knobValue == null || Number.isNaN(knobValue))) {
         invalid = true;
         requiredMsg = true;
         return validationStates.invalid;
       }
 
-      const mappedPosition =
-        minPointValue + (position / 100) * (maxPointValue - minPointValue);
-
-      if (mappedPosition < minPointValue || mappedPosition > maxPointValue) {
+      if (knobValue < minPointValue || knobValue > maxPointValue) {
         invalid = true;
         return validationStates.invalid;
       }
@@ -316,6 +367,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
 
     setValidationMessage("");
   }, [
+    generateKnobsPositionAndValues,
     knobsPositions,
     maxPointValue,
     minPointValue,
@@ -373,54 +425,6 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     setIsDraggingTrack(false);
   };
 
-  /**
-   * Generates an object which posses the current value and position of the knobs.
-   *
-   * @param {Array} knobsCurrentPosition - An array containing the current positions of the knobs.
-   * @returns {Object} - An object with the positions and values of the knobs.
-   * @memberof HvSlider
-   */
-  const generateKnobsPositionAndValues = (
-    knobsCurrentPosition: number[],
-  ): { knobsPosition: number[]; knobsValues: number[] } => {
-    const newKnobsPosition: number[] = knobsCurrentPosition.slice();
-    const knobsValues: number[] = [];
-
-    let duplicatedValue: number | null = null;
-
-    const findDuplicated: number[] = newKnobsPosition.filter(
-      (item, index) => newKnobsPosition.indexOf(item) !== index,
-    );
-
-    if (noOverlap && findDuplicated.length > 0) {
-      [duplicatedValue] = findDuplicated;
-    }
-
-    newKnobsPosition.forEach((position, index, array) => {
-      const newArray: number[] = array;
-      let newPosition: number = position;
-
-      if (noOverlap && newPosition === duplicatedValue) {
-        const previousValue = knobsPositions[index];
-        if (previousValue !== newPosition) {
-          newPosition += newPosition > previousValue ? -1 : 1;
-          newArray[index] = newPosition;
-        }
-      }
-
-      knobsValues[index] = knobsPositionToScaledValue(
-        newPosition,
-        minPointValue,
-        stepValue,
-      );
-    }, this);
-
-    return {
-      knobsPosition: newKnobsPosition,
-      knobsValues,
-    };
-  };
-
   const onBlurHandler = (event: React.FocusEvent) => {
     const knobs = generateKnobsPositionAndValues(knobsPositions);
 
@@ -451,7 +455,6 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     });
 
     if (disabled || readOnly) return;
-
     onChange?.(knobs.knobsValues);
 
     setKnobsPositions(knobs.knobsPosition);

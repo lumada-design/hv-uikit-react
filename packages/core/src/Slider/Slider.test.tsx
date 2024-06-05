@@ -77,6 +77,39 @@ const assertSingleSliderValueChange = async () => {
   expect(input).toHaveValue(eighty);
 };
 
+const assertOutOfRangeValidation = async (
+  max: string | number,
+  min: string | number,
+  inRangeValue: string | number,
+) => {
+  const outOfRangeMessage = "The value is out of range";
+  let warningText: HTMLElement | null = null;
+
+  const input = screen.getByRole("textbox");
+  expect(input).toBeInTheDocument();
+
+  fireEvent.change(input, { target: { value: max } });
+  fireEvent.blur(input);
+
+  warningText = await screen.findByText(outOfRangeMessage);
+  expect(warningText).toBeInTheDocument();
+  expect(input).toBeInvalid();
+
+  fireEvent.change(input, { target: { value: min } });
+  fireEvent.blur(input);
+
+  warningText = await screen.findByText(outOfRangeMessage);
+  expect(warningText).toBeInTheDocument();
+  expect(input).toBeInvalid();
+
+  fireEvent.change(input, { target: { value: inRangeValue } });
+  fireEvent.blur(input);
+
+  warningText = screen.queryByText(outOfRangeMessage);
+  expect(warningText).not.toBeInTheDocument();
+  expect(input).not.toBeInvalid();
+};
+
 describe("Slider", () => {
   describe("Single", () => {
     it("renders as expected", () => {
@@ -250,42 +283,28 @@ describe("Slider", () => {
       expect(input).not.toBeInvalid();
     });
 
-    it("renders error message when value typed is not between maxPointValue and minPointValue", async () => {
-      const max = "110";
-      const min = "-5";
-      const ten = "10";
-      const outOfRangeMessage = "The value is out of range";
-      let warningText: HTMLElement | null = null;
+    it("renders error message when value typed is not between maxPointValue and minPointValue for default values", async () => {
       render(<HvSlider label="Failure Rate" />);
-
-      const input = screen.getByRole("textbox");
-      expect(input).toBeInTheDocument();
-
-      fireEvent.change(input, { target: { value: max } });
-      fireEvent.blur(input);
-
-      warningText = await screen.findByText(outOfRangeMessage);
-      expect(warningText).toBeInTheDocument();
-      expect(input).toBeInvalid();
-
-      fireEvent.change(input, { target: { value: min } });
-      fireEvent.blur(input);
-
-      warningText = await screen.findByText(outOfRangeMessage);
-      expect(warningText).toBeInTheDocument();
-      expect(input).toBeInvalid();
-
-      fireEvent.change(input, { target: { value: ten } });
-      fireEvent.blur(input);
-
-      warningText = screen.queryByText(outOfRangeMessage);
-      expect(warningText).not.toBeInTheDocument();
-      expect(input).not.toBeInvalid();
+      await assertOutOfRangeValidation("110", "-5", "10");
     });
 
+    // Added since we had bugs related with the validation for different values
+    it("renders error message when value typed is not between maxPointValue and minPointValue for custom values", async () => {
+      render(
+        <HvSlider
+          defaultValues={[50]}
+          label="Test"
+          minPointValue={10}
+          maxPointValue={500}
+          markStep={98}
+          divisionQuantity={490}
+        />,
+      );
+      await assertOutOfRangeValidation("501", "5", "200");
+    });
+
+    // Added since we had bugs related with the validation for different values
     it("renders slider with decimal values (markDigits) correctly", async () => {
-      const outOfRangeMessage = "The value is out of range";
-      let warningText: HTMLElement | null = null;
       render(
         <HvSlider
           label="Decimal Slider"
@@ -316,29 +335,7 @@ describe("Slider", () => {
         "Mark: 1.00",
       ]);
 
-      const input = screen.getByRole("textbox");
-      expect(input).toBeInTheDocument();
-
-      // Not out of range
-      fireEvent.change(input, { target: { value: 0.5 } });
-      fireEvent.blur(input);
-      warningText = screen.queryByText(outOfRangeMessage);
-      expect(warningText).not.toBeInTheDocument();
-      expect(input).not.toBeInvalid();
-
-      // Out of range (min)
-      fireEvent.change(input, { target: { value: 0 } });
-      fireEvent.blur(input);
-      warningText = await screen.findByText(outOfRangeMessage);
-      expect(warningText).toBeInTheDocument();
-      expect(input).toBeInvalid();
-
-      // Out of range (max)
-      fireEvent.change(input, { target: { value: 1.01 } });
-      fireEvent.blur(input);
-      warningText = await screen.findByText(outOfRangeMessage);
-      expect(warningText).toBeInTheDocument();
-      expect(input).toBeInvalid();
+      await assertOutOfRangeValidation(1.01, 0, 0.5);
     });
   });
 
