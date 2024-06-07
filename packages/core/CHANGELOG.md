@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.66.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.1...@hitachivantara/uikit-react-core@5.66.2) (2024-06-07)
+
+### Bug Fixes
+
+- **slider:** out of range validation ([065d6e4](https://github.com/lumada-design/hv-uikit-react/commit/065d6e402f3f34b705fac155245472b30ba1067a))
+
 ## [5.66.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.0...@hitachivantara/uikit-react-core@5.66.1) (2024-06-04)
 
 ### Bug Fixes

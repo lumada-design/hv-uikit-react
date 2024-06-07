@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.12.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.10...@hitachivantara/uikit-react-viz@5.12.11) (2024-06-07)
+
+### Bug Fixes
+
+- same measure field with different agg function not overridden ([57be449](https://github.com/lumada-design/hv-uikit-react/commit/57be44995ba9d82bf1682d71831dba67d476895f))
+
 ## [5.12.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.9...@hitachivantara/uikit-react-viz@5.12.10) (2024-06-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz
