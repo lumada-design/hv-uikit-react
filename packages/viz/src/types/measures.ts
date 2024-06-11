@@ -10,7 +10,15 @@ export type HvChartSampling =
   | "lttb";
 
 /** Aggregation functions */
-export type HvChartAggregation = "sum" | "average" | "min" | "max" | "count";
+export type HvChartAggregation =
+  | "sum"
+  | "average"
+  | "min"
+  | "max"
+  | "count"
+  | "distinct"
+  | "median"
+  | "mode";
 
 interface BaseMeasure {
   /** Column name. */
