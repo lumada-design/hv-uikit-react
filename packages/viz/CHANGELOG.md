@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.13.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.11...@hitachivantara/uikit-react-viz@5.13.0) (2024-06-12)
+
+### Features
+
+- new agg functions added to viz ([a427376](https://github.com/lumada-design/hv-uikit-react/commit/a427376dfb9aca0a49a53833f42f3189dd156ebe))
+
 ## [5.12.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.12.10...@hitachivantara/uikit-react-viz@5.12.11) (2024-06-07)
 
 ### Bug Fixes
