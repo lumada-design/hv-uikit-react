@@ -31,10 +31,13 @@ export const scaledValueToKnobsPositionValue = (
   scaledValue: number | undefined,
   minPointValue: number,
   inverseStepValue: number,
-): number =>
-  typeof scaledValue === "number"
-    ? Math.floor((scaledValue - minPointValue) * inverseStepValue)
-    : NaN;
+): number => {
+  const val =
+    typeof scaledValue === "number"
+      ? Math.floor((scaledValue - minPointValue) * inverseStepValue)
+      : NaN;
+  return val;
+};
 
 /**
  * Transform the received knobs values into knob positions
@@ -78,15 +81,21 @@ export const knobsPositionsToKnobsValues = (
   knobPositions: number[],
   stepValue: number,
   minPointValue: number,
+  markDigits: number = 0,
 ): number[] => {
   const knobsValues: number[] = [];
 
   knobPositions.forEach((value, index) => {
-    knobsValues[index] = knobsPositionToScaledValue(
-      value,
-      minPointValue,
-      stepValue,
-    );
+    if (markDigits === 0) {
+      knobsValues[index] = value;
+    } else {
+      const scaledValue = knobsPositionToScaledValue(
+        value,
+        minPointValue,
+        stepValue,
+      );
+      knobsValues[index] = parseFloat(scaledValue?.toFixed(markDigits));
+    }
   });
 
   return knobsValues;
@@ -420,7 +429,7 @@ export const knobsValuesToString = (
   markDigits: number,
 ): string[] =>
   knobsValues.map((knobValue) =>
-    Number.isNaN(knobValue) ? "" : knobValue.toFixed(markDigits),
+    Number.isNaN(knobValue) ? "" : knobValue?.toFixed(markDigits),
   );
 
 export const stringValuesToKnobs = (inputsValues: string[]): number[] =>

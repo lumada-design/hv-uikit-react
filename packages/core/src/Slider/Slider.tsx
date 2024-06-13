@@ -30,7 +30,6 @@ import {
   ensureValuesConsistency,
   generateDefaultKnobProperties,
   isSingleSlider,
-  knobsPositionsToKnobsValues,
   knobsPositionToScaledValue,
   knobsValuesToKnobsPositions,
   scaledValueToKnobsPositionValue,
@@ -178,6 +177,10 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
 
   // Miscellaneous state
   const hasLabel = label != null;
+
+  const [inValues, setInValues] = useState<number[]>(
+    valuesProp.length > 0 ? valuesProp : (defaultValues as number[]),
+  );
 
   // Signals that the user has manually edited the input value
   const isDirty = useRef(false);
@@ -439,7 +442,10 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
    * executes the callback provided by the user with the values and position of the knobs,
    * also lock the value of the knob in case one is fixed.
    */
-  const onChangeHandler = (knobsPosition: number[]) => {
+  const onChangeHandler = (
+    knobsPosition: number[],
+    setValues: boolean = true,
+  ) => {
     isDirty.current = true;
 
     const knobs = generateKnobsPositionAndValues(knobsPosition);
@@ -456,7 +462,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
 
     if (disabled || readOnly) return;
     onChange?.(knobs.knobsValues);
-
+    if (setValues) setInValues(knobs.knobsValues);
     setKnobsPositions(knobs.knobsPosition);
   };
 
@@ -468,8 +474,8 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     );
 
     newKnobPositions = ensureValuesConsistency(newKnobPositions, index);
-
-    onChangeHandler(newKnobPositions);
+    setInValues(inputValues);
+    onChangeHandler(newKnobPositions, false);
   };
 
   /**
@@ -603,11 +609,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
             <HvSliderInput
               id={sliderInputId}
               label={label}
-              values={knobsPositionsToKnobsValues(
-                knobsPositions,
-                stepValue,
-                minPointValue,
-              )}
+              values={inValues}
               onChange={onInputChangeHandler}
               status={validationStatus}
               disabled={disabled}
