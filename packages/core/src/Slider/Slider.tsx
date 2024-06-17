@@ -200,6 +200,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
         markStep,
         divisionQuantity,
         minPointValue,
+        maxPointValue,
         stepValue,
         markDigits,
         !!disabled,
@@ -213,6 +214,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
       markProperties,
       markStep,
       minPointValue,
+      maxPointValue,
       stepValue,
     ],
   );
@@ -559,6 +561,16 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
     );
   };
 
+  const knobsValuesArray = knobsPositionsToKnobsValues(
+    knobsPositions,
+    stepValue,
+    minPointValue,
+  );
+
+  const knobsValues = knobsValuesArray.map((v) =>
+    Number(v.toFixed(markDigits)),
+  );
+
   return (
     <HvFormElement
       className={cx(
@@ -603,11 +615,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
             <HvSliderInput
               id={sliderInputId}
               label={label}
-              values={knobsPositionsToKnobsValues(
-                knobsPositions,
-                stepValue,
-                minPointValue,
-              )}
+              values={knobsValues}
               onChange={onInputChangeHandler}
               status={validationStatus}
               disabled={disabled}

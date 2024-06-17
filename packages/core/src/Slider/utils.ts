@@ -127,6 +127,7 @@ export const createMark = (
   markstep: number,
   divisionQuantity: number,
   minPointValue: number,
+  maxPointValue: number,
   stepValue: number,
   markDigits: number,
   disabled: boolean,
@@ -134,6 +135,8 @@ export const createMark = (
 ): Record<number, { label: string; style: React.CSSProperties }> => {
   const marks: Record<number, { label: string; style: React.CSSProperties }> =
     {};
+
+  const values: string[] = [];
 
   if (markProperties.length > 0) {
     markProperties.forEach((markProperty) => {
@@ -163,6 +166,7 @@ export const createMark = (
         stepValue,
       ).toFixed(markDigits);
 
+      values.push(labelValue as string);
       labelValue = formatMark?.(labelValue) || labelValue;
 
       marks[index] = disabled
@@ -174,6 +178,29 @@ export const createMark = (
           }
         : {
             label: `${labelValue}`,
+            style: {
+              ...styles.mark,
+            },
+          };
+    }
+
+    if (!values.includes(maxPointValue.toString())) {
+      const lastMarkPosition = knobsValuesToKnobsPositions(
+        [maxPointValue],
+        1 / stepValue,
+        minPointValue,
+      );
+
+      const lastMarkLabel = formatMark?.(maxPointValue.toFixed(markDigits));
+      marks[lastMarkPosition[0]] = disabled
+        ? {
+            label: `${lastMarkLabel}`,
+            style: {
+              ...styles.disabledMark,
+            },
+          }
+        : {
+            label: `${lastMarkLabel}`,
             style: {
               ...styles.mark,
             },
