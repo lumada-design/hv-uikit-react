@@ -89,9 +89,7 @@ export const Main: StoryObj<HvBulkActionsProps> = {
       checked: false,
     });
 
-    const [data, setData] = useState<SampleComponentDatum[]>(
-      Array.from(Array(8), (_, i) => addEntry(i)),
-    );
+    const [data, setData] = useState(() => [...Array(8).keys()].map(addEntry));
 
     const handleSelectAll = (_: any, checked = false) => {
       setData(data.map((el) => ({ ...el, checked })));
@@ -134,9 +132,7 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
       checked: false,
     });
 
-    const [data, setData] = useState<SampleComponentDatum[]>(
-      Array.from(Array(8), (_, i) => addEntry(i)),
-    );
+    const [data, setData] = useState(() => [...Array(8).keys()].map(addEntry));
 
     const handleSelectAll: HvBulkActionsProps["onSelectAll"] = (_, checked) => {
       setData(data.map((el) => ({ ...el, checked })));
@@ -201,7 +197,7 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
     await expect(canvas.getByRole("button", { name: /add/i })).toBeEnabled();
   },
   render: () => {
-    const pageSizeOptions: number[] = [4, 6, 12, 24, 48, 2000];
+    const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
 
     const addEntry = (i: number | string): SampleComponentDatum => ({
       id: i,
@@ -209,13 +205,9 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
       checked: false,
     });
 
-    const [data, setData] = useState<SampleComponentDatum[]>(
-      Array.from(Array(18), (_, i) => addEntry(i)),
-    );
-
-    const [page, setPage] = useState<number>(0);
-
-    const [pageSize, setPageSize] = useState<number>(pageSizeOptions[1]);
+    const [data, setData] = useState(() => [...Array(18).keys()].map(addEntry));
+    const [page, setPage] = useState(0);
+    const [pageSize, setPageSize] = useState(pageSizeOptions[1]);
 
     const handleSelectAllPages = (checked = true) => {
       setData(data.map((el) => ({ ...el, checked })));

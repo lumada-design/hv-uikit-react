@@ -25,10 +25,8 @@ const useDarkClass = <T extends HTMLElement = HTMLDivElement>(mode: string) => {
   return ref;
 };
 
-const ThemeDecorator: Decorator = (Story) => {
-  const initialTheme = getLocalTheme();
-
-  const [selectedTheme, setSelectedTheme] = useState(initialTheme);
+export const ThemeDecorator: Decorator = (Story) => {
+  const [selectedTheme, setSelectedTheme] = useState(getLocalTheme);
 
   const [theme, mode] = selectedTheme?.split("-") || ["ds5", "dawn"];
   const base = theme === "ds3" ? ds3 : ds5;
@@ -68,5 +66,3 @@ const ThemeDecorator: Decorator = (Story) => {
     </>
   );
 };
-
-export default ThemeDecorator;

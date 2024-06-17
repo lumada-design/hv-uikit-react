@@ -1,10 +1,6 @@
 import { useCallback, useEffect } from "react";
 import { Editor, EditorProps, useMonaco } from "@monaco-editor/react";
-import {
-  ExtractNames,
-  HvTheme,
-  useTheme,
-} from "@hitachivantara/uikit-react-core";
+import { ExtractNames, useTheme } from "@hitachivantara/uikit-react-core";
 
 import { staticClasses, useClasses } from "./CodeEditor.styles";
 
@@ -54,7 +50,7 @@ export const HvCodeEditor = ({
 }: HvCodeEditorProps) => {
   const { classes } = useClasses(classesProp);
 
-  const { activeTheme, selectedMode, selectedTheme, colorModes } = useTheme();
+  const { colors, selectedMode, selectedTheme, colorModes } = useTheme();
 
   const monaco = useMonaco();
 
@@ -64,37 +60,31 @@ export const HvCodeEditor = ({
     ...options,
   };
 
-  const defineActiveThemes = useCallback(
-    (themeName: string, modes: string[], theme?: HvTheme) => {
-      if (monaco) {
-        modes.forEach((mode) => {
-          monaco?.editor.defineTheme(`hv-${themeName}-${mode}`, {
-            base: theme?.colors.modes[mode].type === "light" ? "vs" : "vs-dark",
-            inherit: true,
-            rules: [],
-            colors: {
-              "editor.background": theme?.colors.modes[mode].atmo1 || "",
-              "editorLineNumber.foreground":
-                theme?.colors.modes[mode].secondary_60 || "",
-            },
-          });
-        });
-      }
-    },
-    [monaco],
-  );
+  const defineActiveThemes = useCallback(() => {
+    if (!monaco) return;
+
+    colorModes.forEach((mode) => {
+      monaco?.editor.defineTheme(`hv-${selectedTheme}-${mode}`, {
+        base: colors?.type === "light" ? "vs" : "vs-dark",
+        inherit: true,
+        rules: [],
+        colors: {
+          "editor.background": colors?.atmo1 || "",
+          "editorLineNumber.foreground": colors?.secondary_60 || "",
+        },
+      });
+    });
+  }, [monaco, colorModes, selectedTheme, colors]);
 
   useEffect(() => {
-    defineActiveThemes(selectedTheme, colorModes, activeTheme);
-  }, [selectedTheme, colorModes, activeTheme, defineActiveThemes]);
+    defineActiveThemes();
+  }, [selectedTheme, colorModes, defineActiveThemes]);
 
   return (
     <div className={classes.root}>
       <Editor
         options={mergedOptions}
-        beforeMount={() =>
-          defineActiveThemes(selectedTheme, colorModes, activeTheme)
-        }
+        beforeMount={defineActiveThemes}
         theme={`hv-${selectedTheme}-${selectedMode}`}
         {...editorProps}
         {...others}
