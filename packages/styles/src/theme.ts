@@ -1,9 +1,8 @@
 import * as tokens from "./tokens";
-import type { HvColorAny } from "./tokens";
+import type { HvColor, HvColorAny } from "./tokens";
 import { palette } from "./tokens/colorsPalette";
 import {
   DeepString,
-  HvThemeColors,
   HvThemeComponents,
   HvThemeTypography,
   HvThemeTypographyProps,
@@ -147,7 +146,7 @@ const spacing = (...args: [SpacingValue[]] | SpacingValue[]) => {
  * @example
  * theme.alpha("atmo1", 0.5) // rgb( R G B / 0.5)
  */
-const alpha = (color: keyof HvThemeColors, factor: number | string) =>
+const alpha = (color: HvColor, factor: number | string) =>
   `rgb(${rgbVars.rgb[color]} / ${factor})`;
 
 /**
@@ -167,7 +166,7 @@ export const theme = {
 export type HvTheme = typeof theme;
 
 const getColorOrFallback = (color: HvColorAny | undefined) => {
-  return (color && (theme.colors[color] as string)) || color;
+  return (color && theme.colors[color as HvColor]) || color;
 };
 
 /** Get a `color` from the theme palette, or `fallbackColor` if not found */

@@ -1,5 +1,6 @@
 import type {
   DeepString,
+  HvThemeBreakpoint,
   HvThemeStructure,
   HvThemeVars,
   SpacingValue,
@@ -10,7 +11,7 @@ export const spacingUtil = (value: SpacingValue, vars: HvThemeVars): string => {
     case "number":
       return `calc(${vars.space.base} * ${value}px)`;
     case "string":
-      return vars.space[value] || value;
+      return vars.space[value as HvThemeBreakpoint] || value;
     default:
       return value;
   }
@@ -25,14 +26,14 @@ export const spacingUtilOld = (
     case "number":
       return `${value}px`;
     case "string":
-      return vars.space[value] || value;
+      return vars.space[value as HvThemeBreakpoint] || value;
     default:
       return "0px";
   }
 };
 
 const toCSSVars = (obj: object, prefix = "--uikit") => {
-  const vars = {};
+  const vars: Record<string, string> = {};
 
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
@@ -59,7 +60,7 @@ export const mapCSSVars = <T extends object>(
   obj: T,
   prefix: string = "--uikit",
 ): DeepString<T> => {
-  const vars = {} as DeepString<T>;
+  const vars: DeepString<any> = {};
 
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
@@ -124,8 +125,8 @@ export const parseTheme = (
   };
 };
 
-export const getThemesList = (themes: object) => {
-  const list = {};
+export const getThemesList = (themes: Record<string, any>) => {
+  const list: Record<string, any> = {};
 
   Object.keys(themes).forEach((themeName) => {
     const theme = themes[themeName];
@@ -195,7 +196,7 @@ const colorToRgb = (color: string) => {
 };
 
 export const getThemesVars = (themes: HvThemeStructure[]) => {
-  const vars = {};
+  const vars: Record<string, any> = {};
 
   themes.forEach((theme) => {
     const colorModes = Object.keys(theme.colors.modes);
@@ -214,7 +215,7 @@ export const getThemesVars = (themes: HvThemeStructure[]) => {
           if (rgb) acc[key] = rgb;
           return acc;
         },
-        {},
+        {} as Record<string, string>,
       );
 
       vars[styleName] = toCSSVars({
