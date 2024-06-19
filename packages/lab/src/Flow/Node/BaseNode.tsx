@@ -1,12 +1,5 @@
-import React, {
-  isValidElement,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React from "react";
 import { Handle, NodeProps, NodeToolbar, Position } from "reactflow";
-import { uid } from "uid";
 import {
   ExtractNames,
   HvBaseProps,
@@ -14,16 +7,8 @@ import {
   HvTypography,
   useLabels,
 } from "@hitachivantara/uikit-react-core";
-import { Delete, Duplicate } from "@hitachivantara/uikit-react-icons";
-import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
-import { useNodeMetaRegistry } from "../FlowContext/NodeMetaContext";
-import { useFlowInstance } from "../hooks";
-import {
-  useFlowNode,
-  useFlowNodeInputEdges,
-  useFlowNodeOutputEdges,
-} from "../hooks/useFlowNode";
+import { HvUseNodeProps, useHvNode } from "../hooks";
 import {
   HvFlowNodeAction,
   HvFlowNodeInput,
@@ -33,7 +18,6 @@ import {
 } from "../types";
 import { staticClasses, useClasses } from "./BaseNode.styles";
 import {
-  identifyHandles,
   isConnected,
   isInputGroup,
   isOutputGroup,
@@ -52,20 +36,11 @@ export const DEFAULT_LABELS = {
 };
 
 export interface HvFlowBaseNodeProps<T = any>
-  extends Omit<HvBaseProps, "id">,
+  extends Omit<HvBaseProps, "id" | "color">,
+    Omit<HvUseNodeProps, "id">,
     NodeProps<T> {
-  /** Header title */
-  title?: string;
-  /** Header icon */
-  icon?: React.ReactNode;
-  /** Header color */
-  color?: HvColorAny;
   /** Header items */
   headerItems?: React.ReactNode;
-  /** Node inputs */
-  inputs?: (HvFlowNodeInput | HvFlowNodeInputGroup)[];
-  /** Node outputs */
-  outputs?: (HvFlowNodeOutput | HvFlowNodeOutputGroup)[];
   /** Node actions */
   nodeActions?: HvFlowNodeAction[];
   /** The content of the node footer */
@@ -78,92 +53,47 @@ export interface HvFlowBaseNodeProps<T = any>
 
 export const HvFlowBaseNode = ({
   id,
-  title,
+  title: titleProp,
   headerItems,
-  icon,
+  icon: iconProp,
   color: colorProp,
   inputs: inputsProp,
   outputs: outputsProp,
   nodeActions: nodeActionsProp,
   footer,
   classes: classesProp,
-  labels: labelsProps,
+  labels: labelsProp,
   className,
   children,
 }: HvFlowBaseNodeProps<unknown>) => {
-  const { registerNode, unregisterNode } = useNodeMetaRegistry();
+  const {
+    toggleShowActions,
+    getNodeToolbarProps,
+    handleDefaultAction,
+    nodeActions,
+    title,
+    icon,
+    color,
+    iconColor,
+    inputEdges,
+    inputs,
+    outputEdges,
+    outputs,
+    node,
+  } = useHvNode({
+    id,
+    title: titleProp,
+    inputs: inputsProp,
+    outputs: outputsProp,
+    icon: iconProp,
+    color: colorProp,
+    labels: labelsProp,
+    nodeActions: nodeActionsProp,
+  });
 
-  const labels = useLabels(DEFAULT_LABELS, labelsProps);
-
-  const inputs = useMemo(() => identifyHandles(inputsProp), [inputsProp]);
-
-  const outputs = useMemo(() => identifyHandles(outputsProp), [outputsProp]);
-
-  const nodeActions = useMemo(
-    () =>
-      nodeActionsProp || [
-        { id: "delete", label: labels?.deleteActionLabel, icon: <Delete /> },
-        {
-          id: "duplicate",
-          label: labels?.duplicateActionLabel,
-          icon: <Duplicate />,
-        },
-      ],
-    [labels?.deleteActionLabel, labels?.duplicateActionLabel, nodeActionsProp],
-  );
-
-  useEffect(() => {
-    registerNode(id, {
-      label: title || "",
-      inputs,
-      outputs,
-    });
-    return () => unregisterNode(id);
-  }, [id, title, inputs, outputs, registerNode, unregisterNode]);
-
-  const [showActions, setShowActions] = useState(false);
-  const reactFlowInstance = useFlowInstance();
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   const { classes, cx, css } = useClasses(classesProp);
-
-  const node = useFlowNode();
-  const inputEdges = useFlowNodeInputEdges();
-  const outputEdges = useFlowNodeOutputEdges();
-
-  const handleDefaultAction = useCallback(
-    (action: HvFlowNodeAction) => {
-      if (!node) return;
-
-      if (action.callback) {
-        action.callback(node);
-        return;
-      }
-
-      // built-in actions
-      switch (action.id) {
-        case "delete":
-          reactFlowInstance.deleteElements({ nodes: [node] });
-          break;
-        case "duplicate":
-          reactFlowInstance.addNodes([
-            {
-              ...node,
-              id: uid(),
-              position: {
-                x: node.position.x,
-                y: node.position.y + (node.height || 0) + 20,
-              },
-              selected: false,
-              zIndex: Number(theme.zIndices.overlay),
-            },
-          ]);
-          break;
-        default:
-          break;
-      }
-    },
-    [node, reactFlowInstance],
-  );
 
   const renderOutput = (output: HvFlowNodeOutput) => {
     const edgeConnected = isConnected(id, "source", output.id!, outputEdges);
@@ -211,11 +141,6 @@ export const HvFlowBaseNode = ({
 
   if (!node) return null;
 
-  const color = getColor(colorProp);
-  const iconColor = isValidElement(icon)
-    ? getColor(icon.props.color || "base_dark")
-    : getColor("base_dark");
-
   return (
     <div
       className={cx(
@@ -224,10 +149,10 @@ export const HvFlowBaseNode = ({
         classes.root,
         className,
       )}
-      onMouseEnter={() => setShowActions(true)}
-      onMouseLeave={() => setShowActions(false)}
+      onMouseEnter={toggleShowActions}
+      onMouseLeave={toggleShowActions}
     >
-      <NodeToolbar isVisible={showActions} offset={0}>
+      <NodeToolbar {...getNodeToolbarProps()}>
         {nodeActions?.map((action) => (
           <HvIconButton
             key={action.id}

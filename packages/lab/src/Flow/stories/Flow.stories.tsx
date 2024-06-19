@@ -9,6 +9,8 @@ import {
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
+import { BaseHook as BaseHookStory } from "./BaseHook";
+import BaseHookRaw from "./BaseHook?raw";
 import { CustomDrop as CustomDropStory } from "./CustomDrop";
 import CustomDropRaw from "./CustomDrop?raw";
 import { Dynamic as DynamicStory } from "./Dynamic";
@@ -174,4 +176,21 @@ export const InvalidFlow: StoryObj<HvFlowProps> = {
     },
   },
   render: () => <InvalidStory />,
+};
+
+export const BaseHook: StoryObj<HvFlowProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "This sample demonstrate the use of the `useHvNode` hook to create a node with a custom look and feel",
+      },
+      source: {
+        code: BaseHookRaw,
+      },
+    },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  render: () => <BaseHookStory />,
 };
