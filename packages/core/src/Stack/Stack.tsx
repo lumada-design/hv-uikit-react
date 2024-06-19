@@ -97,12 +97,15 @@ export const HvStack = (props: HvStackProps) => {
           }
           flexItem={processedDirection === "row"}
           role="separator"
+          classes={{
+            root: classes.divider,
+          }}
           {...dividerProps}
         />
       );
     }
     return divider;
-  }, [divider, dividerProps, processedDirection]);
+  }, [classes.divider, divider, dividerProps, processedDirection]);
 
   return (
     <div
