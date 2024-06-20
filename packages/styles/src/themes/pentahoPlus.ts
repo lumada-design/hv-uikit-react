@@ -370,10 +370,6 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
         disabled: {
-          backgroundColor: "#E2E8F0",
-          "&:hover": {
-            backgroundColor: "#E2E8F0",
-          },
           "&:active": {
             boxShadow: "none",
           },
@@ -392,10 +388,10 @@ const pentahoPlus = makeTheme((theme) => ({
           backgroundColor: theme.colors.atmo1,
           boxShadow: theme.colors.shadow,
           "&.HvButton-disabled": {
-            backgroundColor: "#E2E8F0",
+            backgroundColor: theme.colors.atmo3,
             boxShadow: "none",
             "&:hover": {
-              backgroundColor: "#E2E8F0",
+              backgroundColor: theme.colors.atmo3,
             },
             "&:active": {
               boxShadow: "none",
