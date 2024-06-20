@@ -458,6 +458,10 @@ const pentahoPlus = makeTheme((theme) => ({
             },
           },
         },
+        splitGroup: {
+          background: "transparent",
+        },
+        splitGroupDisabled: { background: "transparent" },
       },
     },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
