@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.66.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.3...@hitachivantara/uikit-react-core@5.66.4) (2024-06-20)
+
+### Bug Fixes
+
+- **Stack:** add theme color to the default divider ([f592699](https://github.com/lumada-design/hv-uikit-react/commit/f5926995070b7691696eb46c52f26c421fda4942))
+
 ## 5.66.3 (2024-06-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

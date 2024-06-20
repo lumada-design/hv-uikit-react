@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.30.0 (2024-06-20)
+
+### Features
+
+- **theme:** add new Pentaho+ palette colors, update theme, add dark mode ([d23b9e0](https://github.com/lumada-design/hv-uikit-react/commit/d23b9e09e35100f59897b6fefb50655754f48f20))
+
 # 5.29.0 (2024-04-17)
 
 ### Features
