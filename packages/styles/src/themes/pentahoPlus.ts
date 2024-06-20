@@ -403,12 +403,10 @@ const pentahoPlus = makeTheme((theme) => ({
     HvMultiButton: {
       classes: {
         multiple: {
-          backgroundColor: "#EEEEEE",
-          color: "#999999",
           borderRadius: 20,
           "& button.HvMultiButton-button": {
             border: "none",
-            backgroundColor: "transparent",
+            background: "transparent",
             "&.HvMultiButton-firstButton": {
               borderRadius: "20px 0 0 20px",
             },
@@ -419,7 +417,19 @@ const pentahoPlus = makeTheme((theme) => ({
               borderRadius: 20,
               border: "none",
               color: theme.colors.primary,
-              backgroundColor: theme.colors.atmo1,
+              background: theme.colors.atmo1,
+              "&:hover": {
+                "&:not(:disabled)": {
+                  border: "none",
+                },
+                "&:disabled": {
+                  border: "none",
+                  background: theme.colors.atmo1,
+                },
+              },
+              "&:disabled": {
+                border: "none",
+              },
             },
             "&:disabled": {
               border: "none",
@@ -431,12 +441,10 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
         vertical: {
-          backgroundColor: "#EEEEEE",
-          color: "#999999",
           borderRadius: 20,
           "& button.HvMultiButton-button": {
             border: "none",
-            backgroundColor: "transparent",
+            background: "transparent",
             "&.HvMultiButton-firstButton": {
               borderRadius: "20px 0 0 20px",
             },
@@ -447,7 +455,7 @@ const pentahoPlus = makeTheme((theme) => ({
               borderRadius: 20,
               border: "none",
               color: theme.colors.primary,
-              backgroundColor: theme.colors.atmo1,
+              background: theme.colors.atmo1,
             },
             "&:disabled": {
               border: "none",
