@@ -95,7 +95,7 @@ export interface HvSelectProps<
  * */
 export const HvSelect = fixedForwardRef(function HvSelect<
   OptionValue extends {},
-  Multiple extends boolean,
+  Multiple extends boolean = false,
 >(
   props: HvSelectProps<OptionValue, Multiple>,
   ref: React.Ref<HTMLButtonElement>,
