@@ -406,7 +406,7 @@ const pentahoPlus = makeTheme((theme) => ({
           borderRadius: 20,
           "& button.HvMultiButton-button": {
             border: "none",
-            background: "transparent",
+            backgroundColor: "transparent",
             "&.HvMultiButton-firstButton": {
               borderRadius: "20px 0 0 20px",
             },
@@ -417,14 +417,14 @@ const pentahoPlus = makeTheme((theme) => ({
               borderRadius: 20,
               border: "none",
               color: theme.colors.primary,
-              background: theme.colors.atmo1,
+              backgroundColor: theme.colors.atmo1,
               "&:hover": {
                 "&:not(:disabled)": {
                   border: "none",
                 },
                 "&:disabled": {
                   border: "none",
-                  background: theme.colors.atmo1,
+                  backgroundColor: theme.colors.atmo1,
                 },
               },
               "&:disabled": {
@@ -444,7 +444,7 @@ const pentahoPlus = makeTheme((theme) => ({
           borderRadius: 20,
           "& button.HvMultiButton-button": {
             border: "none",
-            background: "transparent",
+            backgroundColor: "transparent",
             "&.HvMultiButton-firstButton": {
               borderRadius: "20px 0 0 20px",
             },
@@ -455,7 +455,7 @@ const pentahoPlus = makeTheme((theme) => ({
               borderRadius: 20,
               border: "none",
               color: theme.colors.primary,
-              background: theme.colors.atmo1,
+              backgroundColor: theme.colors.atmo1,
             },
             "&:disabled": {
               border: "none",
@@ -463,9 +463,9 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
         splitGroup: {
-          background: "transparent",
+          backgroundColor: "transparent",
         },
-        splitGroupDisabled: { background: "transparent" },
+        splitGroupDisabled: { backgroundColor: "transparent" },
       },
     },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
