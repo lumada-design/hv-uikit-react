@@ -1,25 +1,17 @@
 import { useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import {
-  HvAccordion,
-  HvBox,
-  HvButton,
-  HvDropdown,
   HvInput,
-  HvListValue,
+  HvOption,
+  HvSelect,
   HvSimpleGrid,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import {
   icons as iconComponentList,
+  IconSize,
   pictograms as pictogramComponentList,
 } from "@hitachivantara/uikit-react-icons";
-
-import { iconCategories } from "./IconCategories";
-
-type IconCategory = keyof typeof iconCategories;
-
-const iconKeys = Object.keys(iconCategories) as IconCategory[];
 
 const iconList = { ...iconComponentList, ...pictogramComponentList };
 
@@ -46,13 +38,6 @@ const classes = {
     paddingBottom: "20px",
   }),
 };
-
-const dropdownSizes: HvListValue[] = [
-  { id: "0", label: "XS" },
-  { id: "1", label: "S", selected: true },
-  { id: "2", label: "M" },
-  { id: "3", label: "L" },
-];
 
 const Icon = ({ name, Component, iconSize }) => (
   <div className={classes.iconContainer} title={name}>
@@ -81,10 +66,7 @@ const Group = ({ iconSize, iconsLibrary }) => {
 
 const Library = () => {
   const [search, setSearch] = useState("");
-  const [iconSize, setIconSize] = useState<HvListValue>();
-  const [expandedCategories, setExpandedCategories] = useState(iconKeys);
-
-  const isAnyExpanded = expandedCategories.length > 0;
+  const [iconSize, setIconSize] = useState<IconSize>("S");
 
   const filteredIcons = useMemo(() => {
     if (!search) return iconList;
@@ -100,42 +82,19 @@ const Library = () => {
       );
   }, [search]);
 
-  const handleToggle = (category: IconCategory, open: boolean) => {
-    setExpandedCategories((prev) => {
-      const newValue = new Set(prev).add(category);
-      if (open) {
-        newValue.delete(category);
-      }
-
-      return [...newValue];
-    });
-  };
-
-  const handleAll = (option: boolean) => {
-    setExpandedCategories(option ? iconKeys : []);
-  };
-
-  const filterByCategory = (category: IconCategory) => {
-    const categoryKeys = iconCategories[category];
-
-    return Object.keys(filteredIcons)
-      .filter((key) => categoryKeys.includes(key))
-      .reduce((obj, key) => {
-        obj[key] = filteredIcons[key];
-        return obj;
-      }, {});
-  };
-
   return (
     <>
       <HvSimpleGrid spacing="sm" cols={2} className={classes.grid}>
-        <HvDropdown
+        <HvSelect
           label="Select icon size"
-          values={dropdownSizes}
-          multiSelect={false}
-          onChange={(item) => setIconSize(item as HvListValue)}
-          notifyChangesOnFirstRender
-        />
+          value={iconSize}
+          onChange={(evt, newValue) => setIconSize(newValue!)}
+        >
+          <HvOption value="XS">XS</HvOption>
+          <HvOption value="S">S</HvOption>
+          <HvOption value="M">M</HvOption>
+          <HvOption value="L">L</HvOption>
+        </HvSelect>
         <HvInput
           label="Search All Categories"
           aria-label="Search Icons"
@@ -144,34 +103,10 @@ const Library = () => {
           placeholder="Search"
           type="search"
         />
-        <HvButton
-          variant="secondarySubtle"
-          onClick={() => handleAll(!isAnyExpanded)}
-        >
-          {isAnyExpanded ? "Collapse All" : "Expand All"}
-        </HvButton>
       </HvSimpleGrid>
-      <HvBox>
-        {!search ? (
-          iconKeys.map((category) => (
-            <HvAccordion
-              key={`${category}Accordion`}
-              label={category}
-              expanded={expandedCategories.includes(category)}
-              onChange={(evt, open) => handleToggle(category, open)}
-            >
-              <Group
-                iconSize={iconSize?.label}
-                iconsLibrary={filterByCategory(category)}
-              />
-            </HvAccordion>
-          ))
-        ) : (
-          <div style={{ height: 600, overflowY: "auto" }}>
-            <Group iconSize={iconSize?.label} iconsLibrary={filteredIcons} />
-          </div>
-        )}
-      </HvBox>
+      <div style={{ height: 600, overflowY: "auto" }}>
+        <Group iconSize={iconSize} iconsLibrary={filteredIcons} />
+      </div>
     </>
   );
 };
