@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.30.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.30.0...@hitachivantara/uikit-styles@5.30.1) (2024-06-22)
+
+### Bug Fixes
+
+- **Button:** disabled pentaho styles in dark mode ([ddd8c5d](https://github.com/lumada-design/hv-uikit-react/commit/ddd8c5d2a25c9ce32518f60070fd7764c4f81504))
+- **MultiButton:** light and dark styles ([8d8545c](https://github.com/lumada-design/hv-uikit-react/commit/8d8545cae01184b96dd0c73f6f3d28f9d19b72d7))
+- **MultiButton:** split button pentaho styles ([37297c2](https://github.com/lumada-design/hv-uikit-react/commit/37297c28996b08bda6ca499d704c262971e1dde6))
+
 # 5.30.0 (2024-06-20)
 
 ### Features
