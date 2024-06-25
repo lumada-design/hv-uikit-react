@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.9.12...@hitachivantara/uikit-react-icons@5.10.0) (2024-06-25)
+
+### Features
+
+- **icons:** add Check & Contains icons ([e24f386](https://github.com/lumada-design/hv-uikit-react/commit/e24f386335a04b800b91a4c02b7c5c1e69099d1a))
+
 ## [5.9.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.9.11...@hitachivantara/uikit-react-icons@5.9.12) (2024-06-22)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons
