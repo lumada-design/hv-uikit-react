@@ -27,7 +27,7 @@ jobs:
         run: npm audit --workspaces --omit dev
 
       - name: Run Format
-        run: npm run prettier
+        run: npm run format
 
       - name: Run Lint
         run: npm run lint
