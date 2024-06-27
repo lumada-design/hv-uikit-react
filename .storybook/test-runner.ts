@@ -56,7 +56,7 @@ const config: TestRunnerConfig = {
     const validStories = excludeStories.filter((s) =>
       storyContext.title.includes(s),
     );
-    if (validStories.length != 0) return;
+    if (validStories.length !== 0) return;
 
     const specificA11yRules = [{ id: "color-contrast", enabled: false }];
 

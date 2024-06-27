@@ -1,11 +1,11 @@
 const STORAGE_KEY = "sb-uikit-theme";
 const DEFAULT_THEME = "ds5";
 
-export const setLocalTheme = (value: string): void => {
-  return localStorage?.setItem(STORAGE_KEY, value);
+export const setLocalTheme = (value: string) => {
+  localStorage?.setItem(STORAGE_KEY, value);
 };
 
-export const getLocalTheme = (): string | null => {
+export const getLocalTheme = () => {
   return localStorage?.getItem(STORAGE_KEY);
 };
 

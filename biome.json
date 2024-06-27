@@ -17,19 +17,27 @@
     "ignore": ["**/*.hbs", "**/package.json"]
   },
   "linter": {
-    "enabled": false,
+    "enabled": true,
     "ignore": ["packages/cli/**"],
     "rules": {
       "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
       "style": {
         "all": false
       },
+      "complexity": {
+        "all": false
+      },
       "correctness": {
-        "useExhaustiveDependencies": "warn"
+        "useExhaustiveDependencies": "off"
       },
       "performance": {},
       "suspicious": {
         "noExplicitAny": "off",
+        "noImplicitAnyLet": "off",
+        "noArrayIndexKey": "off",
         "noShadowRestrictedNames": "off"
       }
     }

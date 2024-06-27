@@ -23,16 +23,9 @@ export const useBoxplot = ({
     if (Array.isArray(measures)) {
       return measures.reduce<{ [key: string]: string | undefined }>(
         (acc, value) => {
-          let field: string | undefined;
-          if (typeof value === "string") {
-            field = value;
-          } else {
-            field = value.field;
-          }
-          return {
-            ...acc,
-            [field]: typeof value === "string" ? undefined : value.yAxis,
-          };
+          const field = typeof value === "string" ? value : value.field;
+          acc[field] = typeof value === "string" ? undefined : value.yAxis;
+          return acc;
         },
         {},
       );

@@ -58,7 +58,7 @@ export const hasMultipleArgs = <T extends any>(
 
 export const mapCSSVars = <T extends object>(
   obj: T,
-  prefix: string = "--uikit",
+  prefix = "--uikit",
 ): DeepString<T> => {
   const vars: DeepString<any> = {};
 
@@ -97,8 +97,8 @@ export const mergeTheme = (...objects: any[]) => {
 
 export const parseTheme = (
   themes: HvThemeStructure[],
-  theme: string = "",
-  colorMode: string = "",
+  theme = "",
+  colorMode = "",
 ): {
   theme: HvThemeStructure;
   selectedTheme: string;
