@@ -40,7 +40,7 @@ export type HvBaseProps<
 > = Omit<React.HTMLAttributes<E>, K>;
 
 /** This type allows to do a deep partial by applying the Partial type to each key recursively */
-export type DeepPartial<T> = T extends Object
+export type DeepPartial<T> = T extends {}
   ? Partial<{
       [P in keyof T]: DeepPartial<T[P]>;
     }>

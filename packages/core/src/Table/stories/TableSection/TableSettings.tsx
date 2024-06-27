@@ -187,8 +187,9 @@ const ColumnGroup = ({
         {columns.length > 0 && (
           <HvListContainer selectable role="list">
             <SortableContext items={columnsIds}>
-              {columns &&
-                columns.map((col) => <ColumnItem key={col.id} item={col} />)}
+              {columns?.map((col) => (
+                <ColumnItem key={col.id} item={col} />
+              ))}
             </SortableContext>
           </HvListContainer>
         )}

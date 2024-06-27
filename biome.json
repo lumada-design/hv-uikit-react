@@ -22,22 +22,32 @@
     "rules": {
       "recommended": true,
       "a11y": {
-        "noSvgWithoutTitle": "off"
+        "noSvgWithoutTitle": "off",
+        "useValidAriaRole": "off",
+        "useValidAriaValues": "off",
+        "useAltText": "off"
       },
       "style": {
-        "all": false
+        "useImportType": "off",
+        "noNonNullAssertion": "off",
+        "noUnusedTemplateLiteral": "off",
+        "useNumberNamespace": "off"
       },
       "complexity": {
-        "all": false
+        "useLiteralKeys": "off",
+        "noUselessSwitchCase": "off",
+        "noForEach": "off",
+        "noStaticOnlyClass": "off",
+        "noBannedTypes": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "off"
       },
-      "performance": {},
       "suspicious": {
         "noExplicitAny": "off",
         "noImplicitAnyLet": "off",
         "noArrayIndexKey": "off",
+        "noConfusingVoidType": "off",
         "noShadowRestrictedNames": "off"
       }
     }

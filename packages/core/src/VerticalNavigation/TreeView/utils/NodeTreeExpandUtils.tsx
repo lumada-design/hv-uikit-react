@@ -47,7 +47,7 @@ export class NodeTreeExpandUtils {
     if (visibleChildren) {
       const node = nodeMap[nodeId];
 
-      if (node && node.children) {
+      if (node?.children) {
         node.children.forEach((childId) =>
           toReturn.push(
             ...NodeTreeExpandUtils.getVisibleNodes(expanded, nodeMap, childId),

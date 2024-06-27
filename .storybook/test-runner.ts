@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "node:fs";
 import { getStoryContext, type TestRunnerConfig } from "@storybook/test-runner";
 import { NodeResult, Result } from "axe-core";
 import { configureAxe, getAxeResults, injectAxe } from "axe-playwright";

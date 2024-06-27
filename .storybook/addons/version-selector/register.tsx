@@ -8,7 +8,7 @@ addons.register(ADDON_ID, () => {
   addons.add(ADDON_ID, {
     title: ADDON_TITLE,
     type: types.TOOL,
-    match: ({ viewMode }) => !!(viewMode && viewMode.match(/^(story|docs)$/)),
+    match: ({ viewMode }) => !!viewMode?.match(/^(story|docs)$/),
     render: () => <VersionSelector />,
   });
 });

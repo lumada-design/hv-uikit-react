@@ -61,7 +61,6 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
 
   const panelActions = useMemo(
     () =>
-      applications &&
       applications?.map((application) => {
         if (application.name) {
           return (

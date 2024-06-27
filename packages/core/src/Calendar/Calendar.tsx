@@ -144,9 +144,9 @@ export const HvCalendar = (props: HvCalendarProps) => {
       minimumDate={minimumDate}
       maximumDate={maximumDate}
       onChange={onChange}
-      onInputChange={(evt, date) =>
-        onInputChange && onInputChange(evt, date, "left")
-      }
+      onInputChange={(evt, date) => {
+        onInputChange?.(evt, date, "left");
+      }}
       onVisibleDateChange={onVisibleDateChange}
       invalidDateLabel={invalidDateLabel}
       {...others}
@@ -165,9 +165,7 @@ export const HvCalendar = (props: HvCalendarProps) => {
         minimumDate={minimumDate}
         maximumDate={maximumDate}
         onChange={onChange}
-        onInputChange={(evt, date) =>
-          onInputChange && onInputChange(evt, date, "left")
-        }
+        onInputChange={(evt, date) => onInputChange?.(evt, date, "left")}
         onVisibleDateChange={(event, action, index) =>
           onVisibleDateChange?.(event, action, index, "left")
         }
@@ -185,9 +183,7 @@ export const HvCalendar = (props: HvCalendarProps) => {
         minimumDate={minimumDate}
         maximumDate={maximumDate}
         onChange={onChange}
-        onInputChange={(evt, date) =>
-          onInputChange && onInputChange(evt, date, "right")
-        }
+        onInputChange={(evt, date) => onInputChange?.(evt, date, "right")}
         onVisibleDateChange={(event, action, index) => {
           onVisibleDateChange?.(event, action, index, "right");
         }}

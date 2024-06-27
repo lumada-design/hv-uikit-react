@@ -92,7 +92,7 @@ const noop = () => {};
  * composed descendants for keyboard navigation.
  */
 export function useDescendant(descendant) {
-  const [, forceUpdate] = useState<{} | null>();
+  const [, forceUpdate] = useState<object | null>();
   const {
     registerDescendant = noop,
     unregisterDescendant = noop,
@@ -118,11 +118,9 @@ export function useDescendant(descendant) {
   // effect's dependency array works well enough.
   const someDescendantsHaveChanged = descendants.some(
     (newDescendant, position) => {
-      return (
-        previousDescendants && previousDescendants[position]
-        // previousDescendants[position].element !== newDescendant.element
-        // was not able to type check this, did not any difference
-      );
+      return previousDescendants?.[position];
+      // previousDescendants[position].element !== newDescendant.element
+      // was not able to type check this, did not any difference
     },
   );
 

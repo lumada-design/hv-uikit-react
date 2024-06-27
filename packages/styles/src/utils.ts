@@ -50,9 +50,7 @@ const toCSSVars = (obj: object, prefix = "--uikit") => {
   return vars;
 };
 
-export const hasMultipleArgs = <T extends any>(
-  args: T[] | [T[]],
-): args is T[] => {
+export const hasMultipleArgs = <T>(args: T[] | [T[]]): args is T[] => {
   return args.length > 1;
 };
 

@@ -102,7 +102,7 @@ export type TreeViewUsedEvents<TSignature extends TreeViewAnyPluginSignature> =
     MergePluginsProperty<TreeViewUsedPlugins<TSignature>, "events">;
 
 export type TreeViewPlugin<TSignature extends TreeViewAnyPluginSignature> = {
-  (options: TreeViewPluginOptions<TSignature>): TreeViewResponse;
+  (options: TreeViewPluginOptions<TSignature>): void | TreeViewResponse;
   getDefaultizedParams?: (
     params: TreeViewUsedParams<TSignature>,
   ) => TSignature["defaultizedParams"];

@@ -159,6 +159,7 @@ const calculateHeaderWidthsToTheRight = (headers, right = 0) => {
     }
 
     if (header.isVisible) {
+      // biome-ignore lint:
       right += header.totalWidth;
     }
   }
