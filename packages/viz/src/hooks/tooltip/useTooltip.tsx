@@ -102,9 +102,7 @@ export const useTooltip = ({
         <div class="${hvClasses?.multipleTooltipRoot}">
           <div class="${hvClasses?.multipleTooltipTitleContainer}">
             <div>
-              <p class="${
-                hvClasses?.multipleTooltipTitle
-              }">${formattedTitle}</p>
+              <p class="${hvClasses?.multipleTooltipTitle}">${formattedTitle}</p>
             </div>
           </div>
           <div class="${hvClasses?.multipleTooltipValuesContainer}">
