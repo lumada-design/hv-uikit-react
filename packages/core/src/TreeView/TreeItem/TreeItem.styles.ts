@@ -63,7 +63,10 @@ export const { staticClasses, useClasses } = createClasses("HvTreeItem", {
     flexShrink: 0,
     justifyContent: "center",
 
-    width: 16, // TODO: review
     marginRight: 4,
+    width: theme.space.sm,
+    ":empty": {
+      width: theme.space.xs,
+    },
   },
 });

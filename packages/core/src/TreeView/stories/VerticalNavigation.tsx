@@ -17,29 +17,45 @@ interface CustomTreeItemProps extends HvTreeItemProps {
   onOpen?: HvTreeItemProps["onClick"];
 }
 
+const classes = {
+  group: css({
+    marginLeft: 0,
+  }),
+  content: css({
+    borderLeft: "4px solid transparent",
+    paddingLeft: `calc(${theme.space.sm} * var(--level))`,
+  }),
+  selected: css({
+    borderColor: theme.colors.secondary,
+    backgroundColor: theme.colors.atmo3,
+  }),
+  label: css({
+    display: "flex",
+    alignItems: "center",
+  }),
+};
+
 const NavigationItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
   (props, ref) => {
     const { children, nodeId, label, onOpen, onClick, ...others } = props;
-    const { disabled, expanded } = useHvTreeItem(nodeId);
-
-    const level = nodeId.split("-").length - 1;
+    const { disabled, expanded, level } = useHvTreeItem(nodeId);
 
     return (
       <HvTreeItem
         ref={ref}
         nodeId={nodeId}
-        style={{ pointerEvents: disabled ? "none" : undefined }}
+        style={{
+          ["--level" as string]: level,
+          pointerEvents: disabled ? "none" : undefined,
+        }}
         classes={{
-          group: css({ marginLeft: 0 }),
-          content: css({ paddingLeft: 16 * level }),
-          selected: css({
-            borderLeft: `4px solid ${theme.colors.secondary}`,
-            backgroundColor: theme.colors.atmo3,
-          }),
+          group: classes.group,
+          content: classes.content,
+          selected: classes.selected,
         }}
         icon="" // remove left nav icon
         label={
-          <div className={css({ display: "flex", alignItems: "center" })}>
+          <div className={classes.label}>
             <HvTypography
               variant={children ? "label" : "body"}
               style={{ flex: 1 }}

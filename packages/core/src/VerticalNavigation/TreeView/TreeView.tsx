@@ -3,8 +3,8 @@ import { forwardRef, useCallback, useMemo, useRef, useState } from "react";
 import { useControlled } from "../../hooks/useControlled";
 import { useForkRef } from "../../hooks/useForkRef";
 import { useUniqueId } from "../../hooks/useUniqueId";
+import { DescendantProvider } from "../../TreeView/internals/DescendantProvider";
 import { ExtractNames } from "../../utils/classes";
-import { DescendantProvider } from "./descendants";
 import { staticClasses, useClasses } from "./TreeView.styles";
 import {
   NavigationMode,

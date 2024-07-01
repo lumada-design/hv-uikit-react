@@ -1,11 +1,13 @@
 import * as React from "react";
 
+import { DescendantContext } from "../internals/DescendantProvider";
 import { DefaultTreeViewPlugins } from "../internals/hooks/plugins";
 import { useTreeViewContext } from "../internals/TreeViewProvider";
 
 export function useHvTreeItem(nodeId: string) {
   const { instance, multiSelect } =
     useTreeViewContext<DefaultTreeViewPlugins>();
+  const { level = 0 } = React.useContext(DescendantContext);
 
   const expandable = instance ? instance.isNodeExpandable(nodeId) : false;
   const expanded = instance ? instance.isNodeExpanded(nodeId) : false;
@@ -59,6 +61,7 @@ export function useHvTreeItem(nodeId: string) {
 
   return {
     instance,
+    level,
     disabled,
     expanded,
     selected,

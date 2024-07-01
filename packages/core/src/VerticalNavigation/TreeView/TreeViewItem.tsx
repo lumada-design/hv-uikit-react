@@ -13,11 +13,14 @@ import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { useForkRef } from "../../hooks/useForkRef";
 import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { HvTooltip } from "../../Tooltip";
+import {
+  DescendantProvider,
+  useDescendant,
+} from "../../TreeView/internals/DescendantProvider";
 import { HvTypography } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
-import { DescendantProvider, useDescendant } from "./descendants";
 import { IconWrapper } from "./IconWrapper";
 import {
   TreeViewControlContext,
@@ -170,14 +173,14 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
       id = `${treeId}-${nodeId}`;
     }
 
-    const [treeitemElement, setTreeitemElement] = useState(null);
+    const [treeitemElement, setTreeitemElement] = useState<HTMLLIElement>();
     const contentRef = useRef<HTMLDivElement>(null);
     const handleRef = useForkRef(setTreeitemElement, ref);
 
     const descendant = useMemo(
       () => ({
-        element: treeitemElement,
-        id: nodeId,
+        element: treeitemElement!,
+        id: nodeId!,
       }),
       [nodeId, treeitemElement],
     );
