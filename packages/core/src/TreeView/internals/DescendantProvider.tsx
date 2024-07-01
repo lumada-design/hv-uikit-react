@@ -5,17 +5,6 @@ import { unstable_useEnhancedEffect as useEnhancedEffect } from "@mui/material/u
  *  Modified slightly to suit our purposes.
  */
 
-// To replace with .findIndex() once we stop IE11 support.
-function findIndex<T>(array: T[], comp: (item: T) => boolean) {
-  for (let i = 0; i < array.length; i += 1) {
-    if (comp(array[i])) {
-      return i;
-    }
-  }
-
-  return -1;
-}
-
 function binaryFindElement(
   array: TreeItemDescendant[],
   element: HTMLLIElement,
@@ -54,9 +43,12 @@ interface DescendantContextValue {
   unregisterDescendant?: (params: HTMLLIElement) => void;
   descendants?: TreeItemDescendant[];
   parentId?: string | null;
+  level?: number;
 }
 
-const DescendantContext = React.createContext<DescendantContextValue>({});
+export const DescendantContext = React.createContext<DescendantContextValue>({
+  level: 0,
+});
 
 function usePrevious<T>(value: T) {
   const ref = React.useRef<T | null>(null);
@@ -95,6 +87,7 @@ export function useDescendant(descendant: TreeItemDescendant) {
     unregisterDescendant = noop,
     descendants = [],
     parentId = null,
+    level = 0,
   } = React.useContext(DescendantContext);
 
   // This will initially return -1 because we haven't registered the descendant
@@ -102,8 +95,7 @@ export function useDescendant(descendant: TreeItemDescendant) {
   // index on the following render, and we will re-register descendants
   // so that everything is up-to-date before the user interacts with a
   // collection.
-  const index = findIndex(
-    descendants,
+  const index = descendants.findIndex(
     (item) => item.element === descendant.element,
   );
 
@@ -145,16 +137,17 @@ export function useDescendant(descendant: TreeItemDescendant) {
     descendant,
   ]);
 
-  return { parentId, index };
+  return { parentId, index, level };
 }
 
 interface DescendantProviderProps {
   id?: string;
+  level?: number;
   children: React.ReactNode;
 }
 
 export const DescendantProvider = (props: DescendantProviderProps) => {
-  const { children, id } = props;
+  const { children, id, level } = props;
 
   const [items, set] = React.useState<
     (TreeItemDescendant & { index: number })[]
@@ -223,8 +216,9 @@ export const DescendantProvider = (props: DescendantProviderProps) => {
       registerDescendant,
       unregisterDescendant,
       parentId: id,
+      level,
     }),
-    [items, registerDescendant, unregisterDescendant, id],
+    [items, registerDescendant, unregisterDescendant, id, level],
   );
 
   return (

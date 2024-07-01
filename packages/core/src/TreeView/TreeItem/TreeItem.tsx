@@ -111,7 +111,7 @@ export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
       [nodeId, treeItemElement],
     );
 
-    const { index, parentId } = useDescendant(descendant);
+    const { index, parentId, level } = useDescendant(descendant);
 
     const expandable = !!(Array.isArray(children) ? children.length : children);
     const expanded = instance ? instance.isNodeExpanded(nodeId) : false;
@@ -212,7 +212,7 @@ export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
           {...contentProps}
         />
         {children && (
-          <DescendantProvider id={nodeId}>
+          <DescendantProvider id={nodeId} level={level + 1}>
             <Collapse
               component="ul"
               role="group"
