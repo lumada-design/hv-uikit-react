@@ -9,7 +9,7 @@ import {
   Palette,
 } from "@hitachivantara/uikit-react-icons";
 
-import { Item } from "../types";
+import { Item } from "./types";
 
 export const sampleItems: Item[] = [
   { id: "item1", title: "Item 1", icon: <Ghost /> },
