@@ -144,9 +144,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   vertical: {
     flexDirection: "column",
     height: "auto",
-    btnSecondary: {
-      flex: "1 1 20px",
-    },
     "& button$button": {
       minWidth: 32,
       width: "100%",
