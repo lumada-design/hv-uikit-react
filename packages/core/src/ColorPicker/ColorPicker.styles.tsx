@@ -27,6 +27,7 @@ export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
     display: "flex",
     justifyContent: "center",
     padding: "16px",
+    backgroundColor: "transparent",
   },
   colorPicker: {
     width: "232px",
