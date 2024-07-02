@@ -5,6 +5,7 @@ import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import {
   HvFormElement,
   HvFormElementProps,
+  HvFormStatus,
   HvInfoMessage,
   HvLabel,
   HvWarningText,
@@ -234,7 +235,7 @@ export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
 
     const elementId = useUniqueId(id);
 
-    const [validationState, setValidationState] = useControlled(
+    const [validationState, setValidationState] = useControlled<HvFormStatus>(
       status,
       "standBy",
     );

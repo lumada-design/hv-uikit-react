@@ -98,7 +98,7 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
 
     const [focusVisible, setFocusVisible] = useState<boolean>(false);
 
-    const [validationState, setValidationState] = useControlled(
+    const [validationState, setValidationState] = useControlled<HvFormStatus>(
       status,
       "standBy",
     );

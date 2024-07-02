@@ -12,6 +12,7 @@ import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import {
   HvFormElement,
   HvFormElementProps,
+  HvFormStatus,
   HvInfoMessage,
   HvLabel,
   HvWarningText,
@@ -209,7 +210,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
     const [open, setOpen] = useState(false);
 
     const [validationMessage] = useControlled(statusMessage, "Required");
-    const [validationState] = useControlled(status, "standBy");
+    const [validationState] = useControlled<HvFormStatus>(status, "standBy");
 
     const placeholders = useMemo(
       () => ({

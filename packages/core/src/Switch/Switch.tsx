@@ -156,7 +156,7 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
       Boolean(defaultChecked),
     );
 
-    const [validationState, setValidationState] = useControlled(
+    const [validationState, setValidationState] = useControlled<HvFormStatus>(
       status,
       "standBy",
     );

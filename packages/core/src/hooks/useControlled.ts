@@ -6,12 +6,15 @@
 //    so the stacktrace shows the caller
 // 4. given that, the hook signature was simplified, no need for metadata
 
-import { SetStateAction, useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
-export const useControlled = (controlledProp: any, initialState: any) => {
+export const useControlled = <T>(
+  controlledProp: T | undefined,
+  initialState: T | (() => T),
+) => {
   const { current: isControlled } = useRef(controlledProp !== undefined);
   const [valueState, setValue] = useState(initialState);
-  const value = isControlled ? controlledProp : valueState;
+  const value = isControlled ? (controlledProp as T) : valueState;
 
   if (import.meta.env.DEV && isControlled !== (controlledProp !== undefined)) {
     // eslint-disable-next-line no-console
@@ -28,7 +31,7 @@ export const useControlled = (controlledProp: any, initialState: any) => {
   }
 
   const setValueIfUncontrolled = useCallback(
-    (newValue: SetStateAction<any>) => {
+    (newValue: React.SetStateAction<T>) => {
       if (!isControlled) {
         setValue(newValue);
       }
@@ -36,5 +39,5 @@ export const useControlled = (controlledProp: any, initialState: any) => {
     [isControlled],
   );
 
-  return [value, setValueIfUncontrolled];
+  return [value, setValueIfUncontrolled] as const;
 };

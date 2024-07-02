@@ -24,6 +24,8 @@ export interface HvInlineEditorProps
   extends HvBaseProps<HTMLDivElement, "onBlur" | "onChange"> {
   /** The value of the form element. */
   value?: string;
+  /** The default value of the form element. */
+  defaultValue?: string;
   /** Whether the Edit icon should always be visible */
   showIcon?: boolean;
   /** Component to use as the input. The component "inherit" from `HvBaseInput` (such as `HvInput` or `HvTextArea`) */
@@ -58,7 +60,7 @@ export const HvInlineEditor = (props: HvInlineEditorProps) => {
     className,
     classes: classesProp,
     value: valueProp,
-    defaultValue,
+    defaultValue = "",
     showIcon,
     component: InputComponent = HvInput,
     variant = "body",

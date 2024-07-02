@@ -170,7 +170,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
       defaultExpanded,
     );
 
-    const [selected, setSelectedState] = useControlled(
+    const [selected, setSelectedState] = useControlled<any>(
       selectedProp,
       defaultSelected,
     );
@@ -489,13 +489,11 @@ export const HvVerticalNavigationTreeView = forwardRef(
      */
     const toggleExpansion = useCallback(
       (event, value = focusedNodeId) => {
-        let newExpanded;
+        if (!value) return;
 
-        if (expanded.indexOf(value) !== -1) {
-          newExpanded = expanded.filter((id) => id !== value);
-        } else {
-          newExpanded = [value].concat(expanded);
-        }
+        const newExpanded = expanded.includes(value)
+          ? expanded.filter((id) => id !== value)
+          : [value].concat(expanded);
 
         if (onToggle) {
           onToggle(event, newExpanded);
