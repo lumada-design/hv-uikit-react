@@ -38,7 +38,6 @@ export const { useClasses, staticClasses } = createClasses("HvTimePicker", {
   icon: {},
 
   timePopperContainer: {
-    backgroundColor: theme.colors.atmo1,
     zIndex: 10,
     display: "flex",
     flexDirection: "row",

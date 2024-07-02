@@ -4,7 +4,6 @@ import { createClasses } from "../../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvSingleCalendar", {
   calendarContainer: {
-    backgroundColor: theme.colors.atmo1,
     width: "318px",
     minHeight: "440px",
     position: "relative",
