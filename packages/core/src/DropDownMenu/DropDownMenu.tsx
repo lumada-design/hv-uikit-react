@@ -1,9 +1,11 @@
-import { ChangeEvent, useMemo } from "react";
+import { ChangeEvent, forwardRef, useMemo } from "react";
+import { Placement } from "@popperjs/core";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
+import { useBaseDropdownContext } from "../BaseDropdown/BaseDropdownContext/BaseDropdownContext";
 import { HvButtonSize, HvButtonVariant } from "../Button";
-import { HvDropdownButton } from "../DropdownButton";
+import { HvDropdownButton, HvDropdownButtonProps } from "../DropdownButton";
 import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
@@ -65,6 +67,29 @@ export interface HvDropDownMenuProps
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvDropDownMenuClasses;
 }
+
+const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
+  (props, ref) => {
+    const { open, children, ...others } = props;
+
+    const { popperPlacement } = useBaseDropdownContext();
+
+    return (
+      <HvDropdownButton
+        icon
+        ref={ref}
+        open={open}
+        aria-expanded={open}
+        aria-label="Dropdown menu" // TODO - translate
+        aria-haspopup="menu"
+        placement={popperPlacement as Placement}
+        {...others}
+      >
+        {children}
+      </HvDropdownButton>
+    );
+  },
+);
 
 /**
  * A dropdown menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.
@@ -131,7 +156,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
       }}
       expanded={open && !disabled}
       component={
-        <HvDropdownButton
+        <HeaderComponent
           id={setId(id, "icon-button")}
           disabled={disabled}
           className={cx(classes.icon, {
@@ -140,13 +165,9 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
           size={size}
           variant={variant ?? category}
           open={open}
-          aria-expanded={open}
-          aria-label="Dropdown menu" // TODO - translate
-          aria-haspopup="menu"
-          icon
         >
           {icon || <MoreOptionsVertical role="presentation" />}
-        </HvDropdownButton>
+        </HeaderComponent>
       }
       placement={placement}
       variableWidth

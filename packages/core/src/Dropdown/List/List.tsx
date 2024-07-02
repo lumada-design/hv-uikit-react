@@ -1,8 +1,8 @@
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvActionBar } from "../../ActionBar";
-import BaseDropdownContext from "../../BaseDropdown/BaseDropdownContext";
+import { useBaseDropdownContext } from "../../BaseDropdown/BaseDropdownContext/BaseDropdownContext";
 import { HvButton } from "../../Button";
 import { HvCheckBox } from "../../CheckBox";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
@@ -135,7 +135,7 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
   const [list, setList] = useState<HvListValue[]>(clone(values));
   const [allSelected, setAllSelected] = useState<boolean>(false);
   const [anySelected, setAnySelected] = useState<boolean>(false);
-  const { width, height } = useContext(BaseDropdownContext);
+  const { width, height } = useBaseDropdownContext();
 
   const hasChanges = useMemo(() => {
     return String(getSelectedIds(values)) !== String(getSelectedIds(list));

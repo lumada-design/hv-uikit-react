@@ -32,6 +32,7 @@ import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./BaseDropdown.styles";
 import BaseDropdownContext from "./BaseDropdownContext";
+import { useBaseDropdownContext } from "./BaseDropdownContext/BaseDropdownContext";
 
 export { staticClasses as baseDropdownClasses };
 
@@ -127,44 +128,306 @@ export interface HvBaseDropdownProps extends HvBaseProps {
   ref?: React.Ref<HTMLDivElement>;
 }
 
+const BaseDropdown = forwardRef<
+  HTMLDivElement,
+  Omit<
+    HvBaseDropdownProps,
+    "popperProps" | "variableWidth" | "placement" | "onContainerCreation"
+  >
+>((props, ref) => {
+  const {
+    id: idProp,
+    className,
+    classes: classesProp,
+    children,
+    role,
+    placeholder,
+    component,
+    adornment,
+    expanded,
+    dropdownHeaderProps,
+    defaultExpanded,
+    disabled,
+    readOnly,
+    required,
+    disablePortal,
+    "aria-expanded": ariaExpandedProp,
+    "aria-label": ariaLabelProp,
+    "aria-labelledby": ariaLabelledByProp,
+    dropdownHeaderRef: dropdownHeaderRefProp,
+    onToggle,
+    onClickOutside,
+    ...others
+  } = props;
+
+  const { classes, cx } = useClasses(classesProp);
+
+  const {
+    popperPlacement,
+    popper,
+    popperElement,
+    referenceElement,
+    setPopperElement,
+    setReferenceElement,
+  } = useBaseDropdownContext();
+
+  const { rootId } = useTheme();
+
+  const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
+
+  const handleDropdownHeaderRefProp = useForkRef(
+    dropdownHeaderRefProp,
+    dropdownHeaderProps?.ref,
+  );
+  const handleDropdownHeaderRef = useForkRef(
+    setReferenceElement,
+    handleDropdownHeaderRefProp,
+  );
+
+  const ariaRole = role || (component == null ? "combobox" : undefined);
+
+  const ariaExpanded = ariaExpandedProp ?? (ariaRole ? !!isOpen : undefined);
+
+  const id = useUniqueId(idProp);
+  const containerId = setId(id, "children-container");
+
+  const headerControlArias = {
+    "aria-required": required ?? undefined,
+    "aria-readonly": readOnly ?? undefined,
+    "aria-disabled": disabled ?? undefined,
+
+    "aria-expanded": ariaExpanded,
+    "aria-owns": isOpen ? containerId : undefined,
+    "aria-controls": isOpen ? containerId : undefined,
+  } satisfies React.AriaAttributes;
+
+  const headerAriaLabels = {
+    "aria-label": ariaLabelProp,
+    "aria-labelledby": ariaLabelledByProp,
+  } satisfies React.AriaAttributes;
+
+  const extensionWidth = referenceElement
+    ? referenceElement?.offsetWidth
+    : "inherit";
+
+  const handleToggle = useCallback(
+    (event: any) => {
+      if (event && !isKey(event, "Tab")) {
+        event.preventDefault();
+      }
+
+      const notControlKey =
+        !!event?.code &&
+        !isOneOfKeys(event, ["Tab", "Enter", "Esc", "ArrowDown", "Space"]);
+
+      const ignoredCombinations =
+        (isKey(event, "Esc") && !isOpen) ||
+        (isKey(event, "ArrowDown") && isOpen) ||
+        (isKey(event, "Tab") && !isOpen);
+
+      if (disabled || notControlKey || ignoredCombinations) return;
+
+      const newOpen = !isOpen;
+
+      /* If about to close focus on the header component. */
+      setIsOpen(() => {
+        if (!newOpen) {
+          // Focus-ring won't be visible even if using the keyboard:
+          // https://github.com/WICG/focus-visible/issues/88
+          referenceElement?.focus({ preventScroll: true });
+        }
+
+        return newOpen;
+      });
+
+      onToggle?.(event, newOpen);
+    },
+    [isOpen, disabled, setIsOpen, onToggle, referenceElement],
+  );
+
+  const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
+
+  const defaultHeaderElement = (
+    <div
+      id={setId(id, "header")}
+      className={cx(classes.header, {
+        [classes.headerDisabled]: disabled,
+        [classes.headerReadOnly]: readOnly,
+        [classes.headerOpen]: isOpen,
+        [classes.headerOpenUp]: isOpen && popperPlacement?.includes("top"),
+        [classes.headerOpenDown]: isOpen && popperPlacement?.includes("bottom"),
+      })}
+      // TODO: review "textbox" role
+      role={ariaRole === "combobox" ? "textbox" : undefined}
+      {...headerAriaLabels}
+      style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
+      // Removes the element from the navigation sequence for keyboard focus if disabled
+      tabIndex={disabled ? -1 : 0}
+      ref={handleDropdownHeaderRef}
+      {...dropdownHeaderProps}
+    >
+      <div className={classes.selection}>
+        {placeholder && typeof placeholder === "string" ? (
+          <HvTypography
+            className={cx(classes.placeholder, {
+              [classes.selectionDisabled]: disabled,
+            })}
+            variant="body"
+          >
+            {placeholder}
+          </HvTypography>
+        ) : (
+          placeholder
+        )}
+      </div>
+      <div className={classes.arrowContainer}>
+        {adornment || (
+          <ExpanderComponent
+            iconSize="XS"
+            color={disabled ? "secondary_60" : undefined}
+            className={classes.arrow}
+          />
+        )}
+      </div>
+    </div>
+  );
+
+  const headerElement =
+    component && isValidElement(component)
+      ? cloneElement(component as React.ReactElement, {
+          ref: handleDropdownHeaderRef,
+          ...headerControlArias,
+        })
+      : defaultHeaderElement;
+
+  const containerComponent = (() => {
+    /**
+     *  Handle keyboard inside children container.
+     */
+    const handleContainerKeyDown: React.KeyboardEventHandler = (event) => {
+      if (isKey(event, "Esc")) {
+        handleToggle(event);
+      }
+      if (isKey(event, "Tab") && !event.shiftKey) {
+        const focusList = getFirstAndLastFocus(popperElement);
+        if (document.activeElement === focusList?.last) {
+          event.preventDefault();
+          focusList?.first?.focus();
+        }
+      }
+    };
+
+    const handleOutside: ClickAwayListenerProps["onClickAway"] = (event) => {
+      const isButtonClick = referenceElement?.contains(event.target as any);
+      if (!isButtonClick) {
+        onClickOutside?.(event);
+        setIsOpen(false);
+        onToggle?.(event, false);
+      }
+    };
+
+    const container = (
+      <div
+        ref={setPopperElement}
+        className={classes.container}
+        style={popper?.styles.popper}
+        {...popper?.attributes.popper}
+      >
+        <ClickAwayListener onClickAway={handleOutside}>
+          {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+          <div onKeyDown={handleContainerKeyDown}>
+            {popperPlacement?.includes("bottom") && (
+              <div
+                style={{ width: extensionWidth }}
+                className={cx(classes.inputExtensionOpen, {
+                  [classes.inputExtensionLeftPosition]:
+                    popperPlacement.includes("end"),
+                })}
+              />
+            )}
+            <div
+              id={containerId}
+              className={cx(classes.panel, {
+                [classes.panelOpenedUp]: popperPlacement?.includes("top"),
+                [classes.panelOpenedDown]: popperPlacement?.includes("bottom"),
+              })}
+            >
+              {children}
+            </div>
+            {popperPlacement?.includes("top") && (
+              <div
+                style={{ width: extensionWidth }}
+                className={cx(
+                  classes.inputExtensionOpen,
+                  classes.inputExtensionOpenShadow,
+                  {
+                    [classes.inputExtensionFloatRight]:
+                      popperPlacement.includes("end"),
+                    [classes.inputExtensionFloatLeft]:
+                      popperPlacement.includes("start"),
+                  },
+                )}
+              />
+            )}
+          </div>
+        </ClickAwayListener>
+      </div>
+    );
+
+    if (disablePortal) return container;
+
+    return createPortal(
+      container,
+      document.getElementById(rootId || "") || document.body,
+    );
+  })();
+
+  return (
+    <div className={classes.root}>
+      <div
+        ref={ref}
+        id={id}
+        className={cx(
+          classes.anchor,
+          { [classes.rootDisabled]: disabled },
+          className,
+        )}
+        {...(!readOnly && {
+          onKeyDown: handleToggle,
+          onClick: handleToggle,
+        })}
+        {...(ariaRole && {
+          role: ariaRole,
+          ...headerAriaLabels,
+          ...headerControlArias,
+        })}
+        // Removes the element from the navigation sequence for keyboard focus
+        tabIndex={-1}
+        {...others}
+      >
+        {headerElement}
+      </div>
+      {isOpen && containerComponent}
+    </div>
+  );
+});
+
 export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
   (props, ref) => {
     const {
-      id: idProp,
-      className,
-      classes: classesProp,
-      children,
-      role,
-      placeholder,
-      component,
-      adornment,
-      expanded,
-      dropdownHeaderProps,
-      defaultExpanded,
-      disabled,
-      readOnly,
-      required,
-      disablePortal,
+      popperProps = {},
       variableWidth,
       placement: placementProp = "right",
-      "aria-expanded": ariaExpandedProp,
-      "aria-label": ariaLabelProp,
-      "aria-labelledby": ariaLabelledByProp,
-      popperProps = {},
-      dropdownHeaderRef: dropdownHeaderRefProp,
-      onToggle,
-      onClickOutside,
       onContainerCreation,
       ...others
     } = useDefaultProps("HvBaseDropdown", props);
-    const { classes, cx } = useClasses(classesProp);
 
-    const { rootId } = useTheme();
+    const placement: Placement = `bottom-${
+      placementProp === "right" ? "start" : "end"
+    }`;
 
-    const [isOpen, setIsOpen] = useControlled(
-      expanded,
-      Boolean(defaultExpanded),
-    );
+    const { modifiers: popperPropsModifiers = [], ...otherPopperProps } =
+      popperProps;
 
     const [referenceElement, setReferenceElement] =
       useState<HTMLElement | null>(null);
@@ -176,67 +439,9 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       height?: number;
     }>({});
 
-    const handleDropdownHeaderRefProp = useForkRef(
-      dropdownHeaderRefProp,
-      dropdownHeaderProps?.ref,
-    );
-    const handleDropdownHeaderRef = useForkRef(
-      setReferenceElement,
-      handleDropdownHeaderRefProp,
-    );
-
-    const ariaRole = role || (component == null ? "combobox" : undefined);
-
-    const ariaExpanded = ariaExpandedProp ?? (ariaRole ? !!isOpen : undefined);
-
-    const id = useUniqueId(idProp);
-    const containerId = setId(id, "children-container");
-
-    const headerControlArias = {
-      "aria-required": required ?? undefined,
-      "aria-readonly": readOnly ?? undefined,
-      "aria-disabled": disabled ?? undefined,
-
-      "aria-expanded": ariaExpanded,
-      "aria-owns": isOpen ? containerId : undefined,
-      "aria-controls": isOpen ? containerId : undefined,
-    } satisfies React.AriaAttributes;
-
-    const headerAriaLabels = {
-      "aria-label": ariaLabelProp,
-      "aria-labelledby": ariaLabelledByProp,
-    } satisfies React.AriaAttributes;
-
-    const placement: Placement = `bottom-${
-      placementProp === "right" ? "start" : "end"
-    }`;
-
-    const extensionWidth = referenceElement
-      ? referenceElement?.offsetWidth
-      : "inherit";
-
-    const { modifiers: popperPropsModifiers = [], ...otherPopperProps } =
-      popperProps;
-
     const onFirstUpdate = useCallback(() => {
       onContainerCreation?.(popperElement);
     }, [onContainerCreation, popperElement]);
-
-    const widthCalculator = useCallback(
-      ({ state }: ModifierArguments<Options>) => {
-        state.styles.popper.width = `${state.rects.reference.width}px`;
-      },
-      [],
-    );
-
-    const widthCalculatorEffect = useCallback(
-      ({ state }: ModifierArguments<Options>) => {
-        state.elements.popper.style.width = `${
-          (state.elements.reference as any).offsetWidth
-        }px`;
-      },
-      [],
-    );
 
     const applyMaxSizeCalculator = useCallback(
       ({ state }: ModifierArguments<Options>) => {
@@ -256,6 +461,22 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
         };
       },
       [popperMaxSize],
+    );
+
+    const widthCalculator = useCallback(
+      ({ state }: ModifierArguments<Options>) => {
+        state.styles.popper.width = `${state.rects.reference.width}px`;
+      },
+      [],
+    );
+
+    const widthCalculatorEffect = useCallback(
+      ({ state }: ModifierArguments<Options>) => {
+        state.elements.popper.style.width = `${
+          (state.elements.reference as any).offsetWidth
+        }px`;
+      },
+      [],
     );
 
     const maxSizeCalculator = useCallback(
@@ -317,223 +538,31 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       ],
     );
 
-    const { styles: popperStyles, attributes } = usePopper(
-      referenceElement,
-      popperElement,
-      {
-        placement,
-        modifiers,
-        onFirstUpdate,
-        ...otherPopperProps,
-      },
+    const popper = usePopper(referenceElement, popperElement, {
+      placement,
+      modifiers,
+      onFirstUpdate,
+      ...otherPopperProps,
+    });
+
+    const value = useMemo(
+      () => ({
+        ...popperMaxSize,
+        popperPlacement:
+          popper?.attributes.popper?.["data-popper-placement"] ?? "bottom",
+        popper,
+        popperElement,
+        setPopperElement,
+        referenceElement,
+        setReferenceElement,
+      }),
+      [popper, popperElement, popperMaxSize, referenceElement],
     );
-
-    const popperPlacement =
-      (attributes.popper?.["data-popper-placement"] as Placement) ?? "bottom";
-
-    const handleToggle = useCallback(
-      (event: any) => {
-        if (event && !isKey(event, "Tab")) {
-          event.preventDefault();
-        }
-
-        const notControlKey =
-          !!event?.code &&
-          !isOneOfKeys(event, ["Tab", "Enter", "Esc", "ArrowDown", "Space"]);
-
-        const ignoredCombinations =
-          (isKey(event, "Esc") && !isOpen) ||
-          (isKey(event, "ArrowDown") && isOpen) ||
-          (isKey(event, "Tab") && !isOpen);
-
-        if (disabled || notControlKey || ignoredCombinations) return;
-
-        const newOpen = !isOpen;
-
-        /* If about to close focus on the header component. */
-        setIsOpen(() => {
-          if (!newOpen) {
-            // Focus-ring won't be visible even if using the keyboard:
-            // https://github.com/WICG/focus-visible/issues/88
-            referenceElement?.focus({ preventScroll: true });
-          }
-
-          return newOpen;
-        });
-
-        onToggle?.(event, newOpen);
-      },
-      [isOpen, disabled, setIsOpen, onToggle, referenceElement],
-    );
-
-    const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
-
-    const defaultHeaderElement = (
-      <div
-        id={setId(id, "header")}
-        className={cx(classes.header, {
-          [classes.headerDisabled]: disabled,
-          [classes.headerReadOnly]: readOnly,
-          [classes.headerOpen]: isOpen,
-          [classes.headerOpenUp]: isOpen && popperPlacement.includes("top"),
-          [classes.headerOpenDown]:
-            isOpen && popperPlacement.includes("bottom"),
-        })}
-        // TODO: review "textbox" role
-        role={ariaRole === "combobox" ? "textbox" : undefined}
-        {...headerAriaLabels}
-        style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
-        // Removes the element from the navigation sequence for keyboard focus if disabled
-        tabIndex={disabled ? -1 : 0}
-        ref={handleDropdownHeaderRef}
-        {...dropdownHeaderProps}
-      >
-        <div className={classes.selection}>
-          {placeholder && typeof placeholder === "string" ? (
-            <HvTypography
-              className={cx(classes.placeholder, {
-                [classes.selectionDisabled]: disabled,
-              })}
-              variant="body"
-            >
-              {placeholder}
-            </HvTypography>
-          ) : (
-            placeholder
-          )}
-        </div>
-        <div className={classes.arrowContainer}>
-          {adornment || (
-            <ExpanderComponent
-              iconSize="XS"
-              color={disabled ? "secondary_60" : undefined}
-              className={classes.arrow}
-            />
-          )}
-        </div>
-      </div>
-    );
-
-    const headerElement =
-      component && isValidElement(component)
-        ? cloneElement(component as React.ReactElement, {
-            ref: handleDropdownHeaderRef,
-            ...headerControlArias,
-          })
-        : defaultHeaderElement;
-
-    const containerComponent = (() => {
-      /**
-       *  Handle keyboard inside children container.
-       */
-      const handleContainerKeyDown: React.KeyboardEventHandler = (event) => {
-        if (isKey(event, "Esc")) {
-          handleToggle(event);
-        }
-        if (isKey(event, "Tab") && !event.shiftKey) {
-          const focusList = getFirstAndLastFocus(popperElement);
-          if (document.activeElement === focusList?.last) {
-            event.preventDefault();
-            focusList?.first?.focus();
-          }
-        }
-      };
-
-      const handleOutside: ClickAwayListenerProps["onClickAway"] = (event) => {
-        const isButtonClick = referenceElement?.contains(event.target as any);
-        if (!isButtonClick) {
-          onClickOutside?.(event);
-          setIsOpen(false);
-          onToggle?.(event, false);
-        }
-      };
-
-      const container = (
-        <div
-          ref={setPopperElement}
-          className={classes.container}
-          style={popperStyles.popper}
-          {...attributes.popper}
-        >
-          <ClickAwayListener onClickAway={handleOutside}>
-            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-            <div onKeyDown={handleContainerKeyDown}>
-              {popperPlacement.includes("bottom") && (
-                <div
-                  style={{ width: extensionWidth }}
-                  className={cx(classes.inputExtensionOpen, {
-                    [classes.inputExtensionLeftPosition]:
-                      popperPlacement.includes("end"),
-                  })}
-                />
-              )}
-              <BaseDropdownContext.Provider value={popperMaxSize}>
-                <div
-                  id={containerId}
-                  className={cx(classes.panel, {
-                    [classes.panelOpenedUp]: popperPlacement.includes("top"),
-                    [classes.panelOpenedDown]:
-                      popperPlacement.includes("bottom"),
-                  })}
-                >
-                  {children}
-                </div>
-              </BaseDropdownContext.Provider>
-              {popperPlacement.includes("top") && (
-                <div
-                  style={{ width: extensionWidth }}
-                  className={cx(
-                    classes.inputExtensionOpen,
-                    classes.inputExtensionOpenShadow,
-                    {
-                      [classes.inputExtensionFloatRight]:
-                        popperPlacement.includes("end"),
-                      [classes.inputExtensionFloatLeft]:
-                        popperPlacement.includes("start"),
-                    },
-                  )}
-                />
-              )}
-            </div>
-          </ClickAwayListener>
-        </div>
-      );
-
-      if (disablePortal) return container;
-
-      return createPortal(
-        container,
-        document.getElementById(rootId || "") || document.body,
-      );
-    })();
 
     return (
-      <div className={classes.root}>
-        <div
-          ref={ref}
-          id={id}
-          className={cx(
-            classes.anchor,
-            { [classes.rootDisabled]: disabled },
-            className,
-          )}
-          {...(!readOnly && {
-            onKeyDown: handleToggle,
-            onClick: handleToggle,
-          })}
-          {...(ariaRole && {
-            role: ariaRole,
-            ...headerAriaLabels,
-            ...headerControlArias,
-          })}
-          // Removes the element from the navigation sequence for keyboard focus
-          tabIndex={-1}
-          {...others}
-        >
-          {headerElement}
-        </div>
-        {isOpen && containerComponent}
-      </div>
+      <BaseDropdownContext.Provider value={value}>
+        <BaseDropdown ref={ref} {...others} />
+      </BaseDropdownContext.Provider>
     );
   },
 );

@@ -13,6 +13,8 @@ export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
   iconSelected: {
     boxShadow: theme.colors.shadow,
   },
-  menuListRoot: {},
+  menuListRoot: {
+    backgroundColor: "transparent",
+  },
   menuList: {},
 });

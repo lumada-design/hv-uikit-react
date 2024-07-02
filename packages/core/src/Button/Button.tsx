@@ -109,6 +109,7 @@ export const HvButton = fixedForwardRef(function HvButton<
     onClick: onClickProp,
     onMouseDown: onMouseDownProp,
     selected,
+    style,
     ...others
   } = useDefaultProps("HvButton", props);
   const { classes, css, cx } = useClasses(classesProp);
@@ -139,22 +140,31 @@ export const HvButton = fixedForwardRef(function HvButton<
     return result.map((x) => x.toLowerCase());
   }, [variant]);
 
+  const sizeStyles = useMemo(
+    () =>
+      size ? (icon ? getIconSizeStyles(size) : getSizeStyles(size)) : undefined,
+    [size, icon],
+  );
+
   return (
     <Component
       ref={ref}
+      style={{
+        ...style,
+        "--HvButton-height": sizeStyles ? sizeStyles.height : "32px",
+      }}
       className={cx(
         classes.root,
         type && classes[type],
         color && css(getColoringStyle(color, type)),
         classes[variant], // Placed after type and color CSS for DS3 override
-        size && !icon && css(getSizeStyles(size)),
         radius && css(getRadiusStyles(radius)),
         overrideIconColors && css(getOverrideColors()),
         {
           [classes.icon]: icon,
           [classes.disabled]: disabled,
         },
-        size && icon && css(getIconSizeStyles(size)),
+        sizeStyles && css(sizeStyles),
         className,
       )}
       onClick={handleClick}
