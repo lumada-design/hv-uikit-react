@@ -194,7 +194,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
 
     const elementId = useUniqueId(id);
 
-    const [validationState, setValidationState] = useControlled(
+    const [validationState, setValidationState] = useControlled<HvFormStatus>(
       status,
       "standBy",
     );

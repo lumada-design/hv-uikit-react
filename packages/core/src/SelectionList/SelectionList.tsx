@@ -153,7 +153,7 @@ export const HvSelectionList = forwardRef<
         () => getValueFromSelectedChildren(children, multiple),
   );
 
-  const [validationState, setValidationState] = useControlled(
+  const [validationState, setValidationState] = useControlled<HvFormStatus>(
     status,
     "standBy",
   );

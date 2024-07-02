@@ -194,9 +194,9 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
 
     const [value, setValue] = useControlled(valueProp, defaultValue);
 
-    const [validationState, setValidationState] = useControlled(
+    const [validationState, setValidationState] = useControlled<HvFormStatus>(
       status,
-      validationStates.standBy,
+      "standBy",
     );
     const [validationMessage, setValidationMessage] = useControlled(
       statusMessage,
@@ -268,18 +268,18 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * @param {boolean} end    - whether or not to set the cursor at the end of the array
      */
     const deleteTag = useCallback(
-      (tagPos, event, end) => {
+      (tagPos: number, event: any, end: boolean) => {
         const newTagsArr = [
           ...value.slice(0, tagPos),
           ...value.slice(tagPos + 1),
-        ];
+        ] as HvTagProps[];
         setValue(newTagsArr);
         setTagCursorPos(
           end ? newTagsArr.length : tagCursorPos > 0 ? tagCursorPos - 1 : 0,
         );
         inputRef.current?.focus();
         performValidation(newTagsArr);
-        onDelete?.(event, value[tagPos], tagPos);
+        onDelete?.(event, value[tagPos] as HvTagProps, tagPos);
         onChange?.(event, newTagsArr);
         skipReset.current = true;
       },
@@ -298,7 +298,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         event.preventDefault();
         if (tag !== "") {
           const newTag: HvTagProps = { label: tag, type: "semantic" };
-          const newTagsArr = [...value, newTag];
+          const newTagsArr = [...value, newTag] as HvTagProps[];
           setValue(newTagsArr);
           performValidation(newTagsArr);
           onAdd?.(event, newTag, newTagsArr.length - 1);

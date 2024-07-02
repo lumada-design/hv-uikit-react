@@ -150,7 +150,7 @@ export const HvBlades = (props: HvBladesProps) => {
           newValue.push(index);
         }
       } else {
-        newValue.push(...expanded);
+        newValue.push(...(expanded as number[]));
         if (isExpanded) {
           newValue.push(index);
         } else {
