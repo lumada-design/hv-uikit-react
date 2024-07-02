@@ -102,7 +102,7 @@ export const ItemCard = ({ item, style: overlayStyle }: ItemProps) => {
       {...listeners}
     >
       <div className={classes.itemTitle}>
-        {item.icon}
+        <div className={classes.icon}>{item.icon}</div>
         {item.title}
       </div>
       <Drag />

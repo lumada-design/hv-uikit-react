@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { Tab } from "@mui/base/Tab";
+import { Tabs } from "@mui/base/Tabs";
+import { TabsList } from "@mui/base/TabsList";
 import {
   ExtractNames,
   HvBaseProps,
@@ -45,29 +48,34 @@ export const HvCanvasTabs = (props: HvCanvasTabsProps) => {
     tabs?.[0]?.id || "none",
   );
 
-  const handleTabChange = (tabId) => {
-    onChange?.(tabId);
-    setSelectedTab(tabId);
+  const handleTabChange = (_, value) => {
+    onChange?.(value);
+    setSelectedTab(value);
   };
 
   return (
-    <div className={cx(classes.root, className)}>
-      {tabs?.map((tab) => (
-        <div
-          className={cx(classes.tab, tab.id === selectedTab ? "selected" : "")}
-          key={tab.id}
-          role="button"
-          onClick={() => handleTabChange(tab.id)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              handleTabChange(tab.id);
-            }
-          }}
-          tabIndex={0}
-        >
-          {tab.content}
-        </div>
-      ))}
-    </div>
+    <Tabs
+      value={selectedTab}
+      onChange={handleTabChange}
+      className={cx(classes.root, className)}
+      selectionFollowsFocus
+    >
+      <TabsList className={classes.list}>
+        {tabs?.map((tab) => (
+          <Tab
+            key={tab.id}
+            value={tab.id}
+            className={cx(
+              classes.tab,
+              tab.id === selectedTab ? "selected" : "",
+            )}
+            onChange={handleTabChange}
+            tabIndex={0}
+          >
+            {tab.content}
+          </Tab>
+        ))}
+      </TabsList>
+    </Tabs>
   );
 };
