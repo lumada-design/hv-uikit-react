@@ -25,7 +25,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     // Default button - no size specified
     fontFamily: theme.fontFamily.body,
     ...theme.typography.label,
-    height: "32px",
+    height: "var(--HvButton-height)",
     border: "1px solid currentcolor",
     borderRadius: theme.radii.base,
     padding: theme.spacing(0, "sm"),

@@ -384,7 +384,7 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
         subtle: {
-          border: "none",
+          borderColor: "transparent",
           backgroundColor: theme.colors.atmo1,
           boxShadow: theme.colors.shadow,
           "&.HvButton-disabled": {
@@ -466,6 +466,18 @@ const pentahoPlus = makeTheme((theme) => ({
           backgroundColor: "transparent",
         },
         splitGroupDisabled: { backgroundColor: "transparent" },
+      },
+    },
+    HvDropdownButton: {
+      classes: {
+        openUp: {
+          borderRadius:
+            "0px 0px calc(var(--HvButton-height) / 2) calc(var(--HvButton-height) / 2)",
+        },
+        openDown: {
+          borderRadius:
+            "calc(var(--HvButton-height) / 2) calc(var(--HvButton-height) / 2) 0px 0px",
+        },
       },
     },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
