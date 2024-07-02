@@ -403,62 +403,94 @@ const pentahoPlus = makeTheme((theme) => ({
     HvMultiButton: {
       classes: {
         multiple: {
-          borderRadius: 20,
+          borderRadius: theme.radii.full,
           "& button.HvMultiButton-button": {
-            border: "none",
-            backgroundColor: "transparent",
+            borderColor: "transparent",
             "&.HvMultiButton-firstButton": {
-              borderRadius: "20px 0 0 20px",
+              borderColor: "transparent",
+              borderRadius: `${theme.radii.full} 0 0 ${theme.radii.full}`,
+              "&:disabled": {
+                borderColor: "transparent",
+                "&:hover": {
+                  borderColor: "transparent",
+                },
+              },
             },
             "&.HvMultiButton-lastButton": {
-              borderRadius: "0 20px 20px 0",
+              borderColor: "transparent",
+              borderRadius: `0 ${theme.radii.full} ${theme.radii.full} 0`,
+              "&:disabled": {
+                borderColor: "transparent",
+                "&:hover": {
+                  borderColor: "transparent",
+                },
+              },
             },
             "&.HvMultiButton-selected": {
-              borderRadius: 20,
-              border: "none",
+              borderRadius: theme.radii.full,
+              borderColor: "transparent",
               color: theme.colors.primary,
               backgroundColor: theme.colors.atmo1,
               "&:hover": {
                 "&:not(:disabled)": {
-                  border: "none",
+                  borderColor: "transparent",
                 },
                 "&:disabled": {
-                  border: "none",
-                  backgroundColor: theme.colors.atmo1,
+                  borderColor: "transparent",
                 },
               },
               "&:disabled": {
-                border: "none",
+                borderColor: "transparent",
               },
             },
             "&:disabled": {
-              border: "none",
+              borderColor: "transparent",
               "&:hover": {
-                border: "none",
-                backgroundColor: "transparent",
+                borderColor: "transparent",
               },
+            },
+            "&:not(.HvMultiButton-firstButton)": {
+              marginLeft: 0,
             },
           },
         },
         vertical: {
-          borderRadius: 20,
+          borderRadius: theme.radii.full,
           "& button.HvMultiButton-button": {
-            border: "none",
-            backgroundColor: "transparent",
+            borderRadius: theme.radii.full,
+            borderColor: "transparent",
             "&.HvMultiButton-firstButton": {
-              borderRadius: "20px 0 0 20px",
+              borderRadius: theme.radii.full,
+              borderColor: "transparent",
+              "&:disabled": {
+                borderColor: "transparent",
+                "&:hover": { borderColor: "transparent" },
+              },
             },
             "&.HvMultiButton-lastButton": {
-              borderRadius: "0 20px 20px 0",
+              borderRadius: theme.radii.full,
+              borderColor: "transparent",
+              "&:disabled": {
+                borderColor: "transparent",
+                "&:hover": { borderColor: "transparent" },
+              },
             },
             "&.HvMultiButton-selected": {
-              borderRadius: 20,
-              border: "none",
+              borderRadius: theme.radii.full,
+              borderColor: "transparent",
               color: theme.colors.primary,
               backgroundColor: theme.colors.atmo1,
+              "&:disabled": {
+                borderColor: "transparent",
+                "&:hover": { borderColor: "transparent" },
+              },
             },
             "&:disabled": {
-              border: "none",
+              borderColor: "transparent",
+              "&:hover": { borderColor: "transparent" },
+            },
+            "&:not(.HvMultiButton-firstButton)": {
+              marginTop: 0,
             },
           },
         },
