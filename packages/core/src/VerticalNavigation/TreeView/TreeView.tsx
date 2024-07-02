@@ -84,7 +84,7 @@ export interface HvVerticalNavigationTreeViewProps {
    * @param {object} event The event source of the callback.
    * @param {array} nodeIds The ids of the expanded nodes (old and new).
    */
-  onToggle?: (event, nodeIds) => void;
+  onToggle?: (event: any, nodeIds: string[]) => void;
   /**
    * If `true`, will allow focus on disabled items.
    * @default false
@@ -108,17 +108,16 @@ export interface HvVerticalNavigationTreeViewProps {
   children?: React.ReactNode;
 }
 
-function isPrintableCharacter(string) {
+function isPrintableCharacter(string: string) {
   return string && string.length === 1 && string.match(/\S/);
 }
 
-function findNextFirstChar(firstChars, startIndex, char) {
-  for (let i = startIndex; i < firstChars.length; i += 1) {
-    if (char === firstChars[i]) {
-      return i;
-    }
-  }
-  return -1;
+function findNextFirstChar(
+  firstChars: string[],
+  startIndex: number,
+  char: string,
+) {
+  return firstChars.slice(startIndex).findIndex((c) => c === char);
 }
 
 function noopSelection() {
@@ -170,35 +169,35 @@ export const HvVerticalNavigationTreeView = forwardRef(
       defaultExpanded,
     );
 
-    const [selected, setSelectedState] = useControlled<any>(
+    const [selected, setSelectedState] = useControlled(
       selectedProp,
       defaultSelected,
     );
 
     const [focusedNodeId, setFocusedNodeId] = useState<string | null>(null);
 
-    const nodeMap = useRef({});
+    const nodeMap = useRef<Record<string, any>>({});
 
-    const firstCharMap = useRef({});
+    const firstCharMap = useRef<Record<string, any>>({});
 
     /*
      * Status Helpers
      */
     const isExpanded = useCallback(
-      (id) =>
+      (id: string) =>
         !collapsible ||
         (Array.isArray(expanded) ? expanded.indexOf(id) !== -1 : false),
       [collapsible, expanded],
     );
 
     const isExpandable = useCallback(
-      (id) =>
+      (id: string) =>
         collapsible && nodeMap.current[id] && nodeMap.current[id].expandable,
       [collapsible],
     );
 
     const isSelected = useCallback(
-      (id) =>
+      (id: string) =>
         selectable &&
         (Array.isArray(selected)
           ? selected.indexOf(id) !== -1
@@ -207,12 +206,12 @@ export const HvVerticalNavigationTreeView = forwardRef(
     );
 
     const isSelectable = useCallback(
-      (id) =>
+      (id: string) =>
         selectable && nodeMap.current[id] && nodeMap.current[id].selectable,
       [selectable],
     );
 
-    const isDisabled = useCallback((id) => {
+    const isDisabled = useCallback((id: string) => {
       let node = nodeMap.current[id];
 
       // This can be called before the node has been added to the node map.
@@ -235,14 +234,18 @@ export const HvVerticalNavigationTreeView = forwardRef(
     }, []);
 
     const isFocused = useCallback(
-      (id) => focusedNodeId === id,
+      (id: string) => focusedNodeId === id,
       [focusedNodeId],
     );
 
     const isChildSelected = useCallback(
       // the second part of the condition is to ensure that the id we're
       // looking at is actually of a child (ie, there's at least one "-")
-      (id) => selected.startsWith(id) && selected.includes("-"),
+      (id: string) => {
+        return Array<string>()
+          .concat(selected)
+          .some((s) => s.startsWith(id) && s.includes("-"));
+      },
       [selected],
     );
 
@@ -536,7 +539,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
 
     const handleRangeArrowSelect = useCallback(
       (event, nodes: { start?; next?; current? }) => {
-        let base = selected.slice();
+        let base = Array<string>().concat(selected);
         const { start, next, current } = nodes;
 
         if (!next || !current) {
@@ -584,12 +587,12 @@ export const HvVerticalNavigationTreeView = forwardRef(
 
     const handleRangeSelect = useCallback(
       (event, nodes: { start?; end?; current? }) => {
-        let base = selected.slice();
+        let base = Array<string>().concat(selected);
         const { start, end } = nodes;
         // If last selection was a range selection ignore nodes that were selected.
         if (lastSelectionWasRange.current) {
           base = base.filter(
-            (id) => currentRangeSelection.current.indexOf(id) === -1,
+            (id) => !currentRangeSelection.current.includes(id as any),
           );
         }
 
@@ -616,12 +619,9 @@ export const HvVerticalNavigationTreeView = forwardRef(
 
     const handleMultipleSelect = useCallback(
       (event, value) => {
-        let newSelected;
-        if (selected.indexOf(value) !== -1) {
-          newSelected = selected.filter((id) => id !== value);
-        } else {
-          newSelected = [value].concat(selected);
-        }
+        const newSelected = selected.includes(value)
+          ? (selected as string[]).filter((id) => id !== value)
+          : [value].concat(selected);
 
         if (onChange) {
           onChange(
@@ -806,6 +806,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
      * Event handlers and Navigation
      */
     const handleNextArrow = (event) => {
+      if (!focusedNodeId) return false;
       if (isExpandable(focusedNodeId)) {
         if (isExpanded(focusedNodeId)) {
           focusNextNode(event, focusedNodeId);
@@ -817,6 +818,7 @@ export const HvVerticalNavigationTreeView = forwardRef(
     };
 
     const handlePreviousArrow = (event) => {
+      if (!focusedNodeId) return false;
       if (isExpanded(focusedNodeId) && !isDisabled(focusedNodeId)) {
         toggleExpansion(event, focusedNodeId);
         return true;
