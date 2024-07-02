@@ -464,8 +464,35 @@ const pentahoPlus = makeTheme((theme) => ({
         },
         splitGroup: {
           backgroundColor: "transparent",
+          // Button
+          "& button.HvMultiButton-button": {
+            "&.HvMultiButton-firstButton": {
+              "& + div.HvMultiButton-splitContainer": {
+                marginLeft: 0,
+              },
+            },
+          },
+          // Dropdown Menu
+          "& .HvDropDownMenu-root": {
+            "&:has(.HvMultiButton-firstButton)": {
+              "& + div.HvMultiButton-splitContainer": {
+                marginRight: -1,
+              },
+            },
+          },
+          "& .HvMultiButton-button.HvMultiButton-firstButton > button": {
+            marginRight: -1,
+          },
+          "& .HvMultiButton-button.HvMultiButton-lastButton > button": {
+            marginLeft: -1,
+          },
         },
         splitGroupDisabled: { backgroundColor: "transparent" },
+        splitContainer: {
+          width: 1,
+          zIndex: theme.zIndices.docked,
+          "&&": { backgroundColor: "transparent" },
+        },
       },
     },
     HvDropdownButton: {
