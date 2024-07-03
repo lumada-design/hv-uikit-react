@@ -34,9 +34,9 @@ jobs:
           cd ${{ github.workspace }}/gh-docs
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git rm -r ${APP_PUBLISH_FOLDER}
-          git rm -r ${NEXTRA_PUBLISH_FOLDER}
-          git rm -r ${STORYBOOK_PUBLISH_FOLDER}
+          git rm -r --ignore-unmatch ${APP_PUBLISH_FOLDER}
+          git rm -r --ignore-unmatch ${NEXTRA_PUBLISH_FOLDER}
+          git rm -r --ignore-unmatch ${STORYBOOK_PUBLISH_FOLDER}
           git commit -m "${PUBLISH_MESSAGE}"
           git push
 
@@ -49,6 +49,7 @@ jobs:
           desc: Deployment for Stroybook documentation was pruned
 
       - name: Prune Deployment for Nextra Documentation
+        if: ${{ false }}
         uses: bobheadxi/deployments@v1
         with:
           step: deactivate-env

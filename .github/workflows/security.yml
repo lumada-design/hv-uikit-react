@@ -74,13 +74,9 @@ jobs:
         with:
           node-version: 18
 
-      # ==========================
-      # code-editor (npm package)
-      # ==========================
-
       # Install dependencies inside each package so blackduck can scan them
       # To do this we need to remove the package.json and package-lock.json from the root
-      - name: Prepare packages for Blackduck scan
+      - name: Prepare package for Blackduck scan
         uses: lumada-common-services/gh-composite-actions@1.9.0
         with:
           command: |
