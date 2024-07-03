@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { Background, BackgroundVariant, MiniMap } from "reactflow";
+import { BackgroundVariant } from "reactflow";
 import {
   HvButton,
   HvDropDownMenu,
@@ -26,6 +26,8 @@ import {
   HvCanvasTab,
   HvCanvasToolbar,
   HvFlow,
+  HvFlowBackground,
+  HvFlowMinimap,
 } from "@hitachivantara/uikit-react-lab";
 
 import { ListView } from "./ListView/ListView";
@@ -109,20 +111,14 @@ export const Main: StoryObj = {
           edges={eds}
           nodeTypes={nodeTypes}
         >
-          <Background
-            color={theme.palette.slate[950]}
+          <HvFlowBackground
+            color={theme.colors.secondary_80}
             variant={BackgroundVariant.Dots}
             gap={16}
+            style={{ color: "red" }}
           />
-          <MiniMap />
+          <HvFlowMinimap />
         </HvFlow>
-        <HvCanvasPanel
-          tabs={tabs}
-          onTabChange={(tabId) => setSelectedTab(tabId)}
-        >
-          {selectedTab === "1" && <TreeView />}
-          {selectedTab === "2" && <ListView />}
-        </HvCanvasPanel>
         <HvCanvasToolbar backButton={backButton} title={title}>
           <HvIconButton title="Undo">
             <Undo />
@@ -148,6 +144,13 @@ export const Main: StoryObj = {
             ]}
           />
         </HvCanvasToolbar>
+        <HvCanvasPanel
+          tabs={tabs}
+          onTabChange={(tabId) => setSelectedTab(tabId)}
+        >
+          {selectedTab === "1" && <TreeView />}
+          {selectedTab === "2" && <ListView />}
+        </HvCanvasPanel>
       </div>
     ) : (
       <HvLoading />

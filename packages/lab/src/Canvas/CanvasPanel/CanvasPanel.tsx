@@ -2,7 +2,6 @@ import { useCallback, useEffect } from "react";
 import {
   ExtractNames,
   HvBaseProps,
-  HvIconButton,
   useControlled,
   useDefaultProps,
   useTheme,
@@ -103,16 +102,19 @@ export const HvCanvasPanel = (props: HvCanvasPanelProps) => {
           [classes.open]: open,
           [classes.close]: !open,
         })}
+        onClick={handleTogglePanel}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            handleTogglePanel();
+          }
+        }}
+        aria-label={open ? "Close" : "Open"}
       >
-        <HvIconButton
-          title={open ? "Close" : "Open"}
-          onClick={handleTogglePanel}
-          variant="primaryGhost"
-        >
-          <div className={classes.handleButton}>
-            {open ? <Start /> : <End />}
-          </div>
-        </HvIconButton>
+        <div className={classes.handleButton}>
+          {open ? <Start color={["primary"]} /> : <End color={["primary"]} />}
+        </div>
       </div>
     </>
   );

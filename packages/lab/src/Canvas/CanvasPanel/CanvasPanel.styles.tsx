@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvCanvasPanel", {
   root: {
-    height: "100vh",
+    height: "100%",
     position: "absolute",
     top: 0,
     left: 0,
@@ -42,6 +42,9 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasPanel", {
     },
     "&$close": {
       left: 0,
+    },
+    "&:hover": {
+      cursor: "pointer",
     },
   },
   handleButton: {
