@@ -1,4 +1,4 @@
-name: Checks
+name: Tests
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ env:
 
 jobs:
   checks:
-    name: Static Tests
+    name: Static Checks
     runs-on: ubuntu-latest
 
     steps:

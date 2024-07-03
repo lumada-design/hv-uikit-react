@@ -10,9 +10,9 @@ env:
   RUN_URL: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
 
 jobs:
-  static-checks:
-    name: Static Checks
-    uses: ./.github/workflows/static-checks.yml
+  tests:
+    name: Tests
+    uses: ./.github/workflows/tests.yml
     secrets: inherit
 
   visual-tests:
@@ -22,7 +22,7 @@ jobs:
 
   notify-fail:
     name: Notify Fail
-    needs: [static-checks, visual-tests]
+    needs: [tests, visual-tests]
     if: failure()
     runs-on: ubuntu-latest
 
@@ -52,7 +52,7 @@ jobs:
   release:
     name: Release
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [static-checks, visual-tests]
+    needs: [tests, visual-tests]
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Release
