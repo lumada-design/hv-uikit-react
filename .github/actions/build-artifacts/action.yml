@@ -38,10 +38,12 @@ runs:
 
     # Bypassing Jekyll processing on GitHub Pages by adding .nojekyll to read folders that start with an underscore
     - name: Build Nextra Docs
+      if: ${{ false }}
       run: npm run build:nextra && touch ${{ github.workspace }}/apps/docs/out/.nojekyll
       shell: bash
 
     - name: Archive Nextra Docs
+      if: ${{ false }}
       uses: actions/upload-artifact@v4
       with:
         name: nextra-docs

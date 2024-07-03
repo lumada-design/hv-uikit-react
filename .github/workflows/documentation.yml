@@ -42,8 +42,8 @@ jobs:
             artifact: "documentation"
           - folder: "uikit-app"
             artifact: "app"
-          - folder: "uikit-docs"
-            artifact: "nextra-docs"
+          #- folder: "uikit-docs"
+          #  artifact: "nextra-docs"
 
     steps:
       - name: Checkout
