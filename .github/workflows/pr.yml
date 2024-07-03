@@ -18,6 +18,8 @@ jobs:
   visual-tests:
     name: Visual Tests
     uses: ./.github/workflows/tests-visual.yml
+    # Only run Chromatic when PRs have the "visual" tag
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'visual') }}
     secrets: inherit
     with:
       batch-id: pr-${{ github.event.number }}
