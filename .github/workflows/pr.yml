@@ -11,10 +11,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  static-checks:
-    name: Static Checks
-    uses: ./.github/workflows/static-checks.yml
-
   visual-tests:
     name: Visual Tests
     uses: ./.github/workflows/tests-visual.yml
@@ -23,6 +19,10 @@ jobs:
     secrets: inherit
     with:
       batch-id: pr-${{ github.event.number }}
+
+  tests:
+    name: Tests
+    uses: ./.github/workflows/tests.yml
 
   artifacts:
     name: Artifacts
