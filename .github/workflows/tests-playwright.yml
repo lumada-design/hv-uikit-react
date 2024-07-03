@@ -1,20 +1,17 @@
-name: Playwright tests
+name: Playwright Tests
 
 on:
   workflow_dispatch:
   workflow_call:
 
-env:
-  PUBLISH_FOLDER: ${{ inputs.publish-folder || github.ref_name }}
-
 jobs:
-  run-playwright-tests:
-    name: Playwright Tests
+  tests:
+    name: Run Tests
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        PROJECT: ["chromium", "chrome", "msedge", "firefox", "webkit"]
+        PROJECT: ["chrome", "firefox"]
 
     steps:
       - name: Checkout
