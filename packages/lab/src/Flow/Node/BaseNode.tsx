@@ -1,4 +1,3 @@
-import React from "react";
 import { Handle, NodeProps, NodeToolbar, Position } from "reactflow";
 import {
   ExtractNames,
@@ -8,9 +7,8 @@ import {
   useLabels,
 } from "@hitachivantara/uikit-react-core";
 
-import { HvUseNodeProps, useHvNode } from "../hooks";
+import { HvUseNodeParams, useHvNode } from "../hooks";
 import {
-  HvFlowNodeAction,
   HvFlowNodeInput,
   HvFlowNodeInputGroup,
   HvFlowNodeOutput,
@@ -37,12 +35,10 @@ export const DEFAULT_LABELS = {
 
 export interface HvFlowBaseNodeProps<T = any>
   extends Omit<HvBaseProps, "id" | "color">,
-    Omit<HvUseNodeProps, "id">,
+    Omit<HvUseNodeParams, "id">,
     NodeProps<T> {
   /** Header items */
   headerItems?: React.ReactNode;
-  /** Node actions */
-  nodeActions?: HvFlowNodeAction[];
   /** The content of the node footer */
   footer?: React.ReactNode;
   /** Labels used on the node. */
