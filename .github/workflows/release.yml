@@ -14,6 +14,7 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CHECKOUT_REF: ${{ github.event.client_payload.ref }}
       RELEASE_TYPE: ${{ github.event.client_payload.type }}
+      NPM_CONFIG_PROVENANCE: true
 
     outputs:
       published: ${{ steps.check-updates.outputs.published }}
@@ -78,6 +79,12 @@ jobs:
     with:
       publish-folder: ${{ github.ref_name }}
 
+  security-scans:
+    name: Security Scans
+    needs: [publish]
+    uses: ./.github/workflows/security.yml
+    secrets: inherit
+
   notify-release:
     name: Notify release
     runs-on: ubuntu-latest
@@ -129,16 +136,3 @@ jobs:
                 }
               ]
             }
-
-  security-scans:
-    name: Security Scans
-    needs: [publish-artifacts]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Security Scans
-        # repo scope personal token is required to generate a dispatch event
-        run: |
-          curl -X POST \
-            https://api.github.com/repos/${{ github.repository }}/dispatches \
-            -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
-            -d '{"event_type": "security"}'
