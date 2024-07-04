@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   ExtractNames,
   HvBaseProps,
@@ -38,43 +39,45 @@ export interface HvCanvasToolbarProps
 /**
  * A toolbar component to use in a canvas context.
  */
-export const HvCanvasToolbar = (props: HvCanvasToolbarProps) => {
-  const {
-    title: titleProp,
-    backButton,
-    labels: labelsProp,
-    className,
-    children,
-    backButtonProps,
-    classes: classesProp,
-    ...others
-  } = useDefaultProps("HvCanvasToolbar", props);
+export const HvCanvasToolbar = forwardRef<HTMLDivElement, HvCanvasToolbarProps>(
+  (props, ref) => {
+    const {
+      title: titleProp,
+      backButton,
+      labels: labelsProp,
+      className,
+      children,
+      backButtonProps,
+      classes: classesProp,
+      ...others
+    } = useDefaultProps("HvCanvasToolbar", props);
 
-  const { classes, cx } = useClasses(classesProp);
-  const labels = useLabels(DEFAULT_LABELS, labelsProp);
+    const { classes, cx } = useClasses(classesProp);
+    const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
-  const title =
-    typeof titleProp === "string" ? (
-      <HvTypography variant="title4">{titleProp}</HvTypography>
-    ) : (
-      titleProp
-    );
+    const title =
+      typeof titleProp === "string" ? (
+        <HvTypography variant="title4">{titleProp}</HvTypography>
+      ) : (
+        titleProp
+      );
 
-  return (
-    <div className={cx(classes.root, className)} {...others}>
-      <div className={classes.back}>
-        {backButton ?? (
-          <HvIconButton
-            title={labels.back}
-            variant="primaryGhost"
-            {...backButtonProps}
-          >
-            <Previous />
-          </HvIconButton>
-        )}
+    return (
+      <div ref={ref} className={cx(classes.root, className)} {...others}>
+        <div className={classes.back}>
+          {backButton ?? (
+            <HvIconButton
+              title={labels.back}
+              variant="primaryGhost"
+              {...backButtonProps}
+            >
+              <Previous />
+            </HvIconButton>
+          )}
+        </div>
+        <div className={classes.title}>{title}</div>
+        {children && <div className={classes.actions}>{children}</div>}
       </div>
-      <div className={classes.title}>{title}</div>
-      {children && <div className={classes.actions}>{children}</div>}
-    </div>
-  );
-};
+    );
+  },
+);

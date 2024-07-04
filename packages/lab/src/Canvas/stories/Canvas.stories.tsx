@@ -19,7 +19,7 @@ export const Main: StoryObj = {
       <div
         style={{
           width: "100%",
-          height: "100vh",
+          height: "calc(100vh - 32px)",
           position: "relative",
         }}
       >
@@ -41,10 +41,14 @@ export const Main: StoryObj = {
   // For visual testing
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const button = canvas.getByRole("button", {
+    const openBtn = canvas.getByRole("button", {
       name: /Open/i,
     });
-    await userEvent.click(button);
+    await userEvent.click(openBtn);
+    const toggleBtn = canvas.getByRole("button", {
+      name: /Toggle/i,
+    });
+    await userEvent.click(toggleBtn);
   },
   render: () => <MainStory />,
 };

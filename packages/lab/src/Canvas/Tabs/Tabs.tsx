@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Tabs, TabsProps } from "@mui/base/Tabs";
 import { TabsList } from "@mui/base/TabsList";
 import {
@@ -19,24 +20,27 @@ export interface HvCanvasTabsProps extends TabsProps {
 /**
  * A tabs component to use in a canvas context.
  */
-export const HvCanvasTabs = (props: HvCanvasTabsProps) => {
-  const {
-    selectionFollowsFocus = true,
-    children,
-    className,
-    classes: classesProp,
-    ...others
-  } = useDefaultProps("HvCanvasTabs", props);
+export const HvCanvasTabs = forwardRef<HTMLDivElement, HvCanvasTabsProps>(
+  (props, ref) => {
+    const {
+      selectionFollowsFocus = true,
+      children,
+      className,
+      classes: classesProp,
+      ...others
+    } = useDefaultProps("HvCanvasTabs", props);
 
-  const { classes, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-  return (
-    <Tabs
-      className={cx(classes.root, className)}
-      selectionFollowsFocus={selectionFollowsFocus}
-      {...others}
-    >
-      <TabsList className={classes.list}>{children}</TabsList>
-    </Tabs>
-  );
-};
+    return (
+      <Tabs
+        ref={ref}
+        className={cx(classes.root, className)}
+        selectionFollowsFocus={selectionFollowsFocus}
+        {...others}
+      >
+        <TabsList className={classes.list}>{children}</TabsList>
+      </Tabs>
+    );
+  },
+);

@@ -18,6 +18,7 @@ export const Main: StoryObj<HvCanvasTabsProps> = {
   args: { defaultValue: 0 },
   argTypes: {
     classes: { control: { disable: true } },
+    ref: { control: { disable: true } },
   },
   render: (args) => {
     return (

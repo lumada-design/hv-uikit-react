@@ -18,6 +18,8 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasTab", {
     overflow: "hidden",
     width: "100%",
     boxShadow: "0px -2px 8px 0px #4141410F",
+    paddingInlineEnd: 0,
+    paddingInlineStart: 0,
     "& svg .color0": {
       fill: "currentcolor",
     },
