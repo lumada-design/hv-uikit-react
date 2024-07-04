@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/test";
 import { BackgroundVariant } from "reactflow";
 import {
   HvButton,
   HvDropDownMenu,
   HvIconButton,
   HvInlineEditor,
-  HvLoading,
   theme,
 } from "@hitachivantara/uikit-react-core";
 import {
@@ -23,7 +23,6 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import {
   HvCanvasPanel,
-  HvCanvasTab,
   HvCanvasToolbar,
   HvFlow,
   HvFlowBackground,
@@ -36,8 +35,33 @@ import { TreeView } from "./TreeView";
 
 const meta: Meta = {
   title: "Lab/Canvas",
+  parameters: {
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
 };
 export default meta;
+
+const tabs = [
+  {
+    id: "1",
+    content: (
+      <>
+        <DataSource />
+        Add Data
+      </>
+    ),
+  },
+  {
+    id: "2",
+    content: (
+      <>
+        <Schema />
+        Model Structure
+      </>
+    ),
+  },
+];
 
 export const Main: StoryObj = {
   args: {
@@ -46,8 +70,15 @@ export const Main: StoryObj = {
   argTypes: {
     classes: { control: { disable: true } },
   },
+  // For visual testing
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", {
+      name: /Open/i,
+    });
+    await userEvent.click(button);
+  },
   render: () => {
-    const [tabs, setTabs] = useState<HvCanvasTab[]>([]);
     const [selectedTab, setSelectedTab] = useState<string>("1");
 
     const classes = {
@@ -72,30 +103,7 @@ export const Main: StoryObj = {
 
     const renderIcon = (Icon: React.ElementType) => () => <Icon />;
 
-    useEffect(() => {
-      setTabs([
-        {
-          id: "1",
-          content: (
-            <>
-              <DataSource />
-              Add Data
-            </>
-          ),
-        },
-        {
-          id: "2",
-          content: (
-            <>
-              <Schema />
-              Model Structure
-            </>
-          ),
-        },
-      ]);
-    }, []);
-
-    return tabs && tabs.length > 0 ? (
+    return (
       <div
         style={{
           width: "100%",
@@ -146,14 +154,12 @@ export const Main: StoryObj = {
         </HvCanvasToolbar>
         <HvCanvasPanel
           tabs={tabs}
-          onTabChange={(tabId) => setSelectedTab(tabId)}
+          onTabChange={(event, tabId) => setSelectedTab(tabId)}
         >
           {selectedTab === "1" && <TreeView />}
           {selectedTab === "2" && <ListView />}
         </HvCanvasPanel>
       </div>
-    ) : (
-      <HvLoading />
     );
   },
 };

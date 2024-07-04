@@ -37,10 +37,10 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasPanel", {
     position: "absolute",
     transition: "left 0.3s ease",
     top: `calc(50% - 86px)`,
-    "&$open": {
+    "&$handleOpen": {
       left: 320,
     },
-    "&$close": {
+    "&$handleClose": {
       left: 0,
     },
     "&:hover": {
@@ -53,4 +53,6 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasPanel", {
   },
   open: {},
   close: {},
+  handleOpen: {},
+  handleClose: {},
 });

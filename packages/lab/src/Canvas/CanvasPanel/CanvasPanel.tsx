@@ -4,6 +4,7 @@ import {
   HvBaseProps,
   useControlled,
   useDefaultProps,
+  useLabels,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { End, Start } from "@hitachivantara/uikit-react-icons";
@@ -15,6 +16,11 @@ export { staticClasses as canvasPanelClasses };
 
 export type HvCanvasPanelClasses = ExtractNames<typeof useClasses>;
 
+const DEFAULT_LABELS = {
+  open: "Open",
+  close: "Close",
+};
+
 export interface HvCanvasPanelProps extends HvBaseProps<HTMLDivElement> {
   /** Whether the panel is open or not. If this property is defined the panel must be fully controlled. */
   open?: boolean;
@@ -23,9 +29,14 @@ export interface HvCanvasPanelProps extends HvBaseProps<HTMLDivElement> {
   /** The tabs that should be visible on the canvas panel */
   tabs?: HvCanvasTab[];
   /** The function that will be executed whenever the panel toggles. It will receive the state of the accordion. */
-  onToggle?: (open: boolean) => void;
+  onToggle?: (
+    event: React.MouseEvent | React.KeyboardEvent,
+    open: boolean,
+  ) => void;
   /** The function that will be executed when a tab changes.It will receive the id of the selected tab. */
-  onTabChange?: (tabId: string) => void;
+  onTabChange?: (event: React.SyntheticEvent, tabId: string) => void;
+  /** An object containing all the labels. */
+  labels?: Partial<typeof DEFAULT_LABELS>;
   /* The content that will be rendered within canvas panel. */
   children?: React.ReactNode;
   /** A Jss Object used to override or extend the styles applied. */
@@ -42,6 +53,7 @@ export const HvCanvasPanel = (props: HvCanvasPanelProps) => {
     tabs,
     onToggle,
     onTabChange,
+    labels: labelsProp,
     className,
     children,
     classes: classesProp,
@@ -49,6 +61,7 @@ export const HvCanvasPanel = (props: HvCanvasPanelProps) => {
   } = useDefaultProps("HvCanvasPanel", props);
 
   const { classes, cx } = useClasses(classesProp);
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const { rootId, activeTheme } = useTheme();
 
   const [open, setOpen] = useControlled(openProp, Boolean(defaultOpened));
@@ -70,13 +83,13 @@ export const HvCanvasPanel = (props: HvCanvasPanelProps) => {
     setPanelWidth();
   }, [open, setPanelWidth]);
 
-  const handleTogglePanel = () => {
+  const handleTogglePanel = (event) => {
     setOpen((prev) => !prev);
-    onToggle?.(!open);
+    onToggle?.(event, !open);
   };
 
-  const handleTabChange = (tabId: string) => {
-    onTabChange?.(tabId);
+  const handleTabChange = (event, tabId) => {
+    onTabChange?.(event, tabId);
   };
 
   return (
@@ -99,18 +112,18 @@ export const HvCanvasPanel = (props: HvCanvasPanelProps) => {
       </div>
       <div
         className={cx(classes.handle, {
-          [classes.open]: open,
-          [classes.close]: !open,
+          [classes.handleOpen]: open,
+          [classes.handleClose]: !open,
         })}
         onClick={handleTogglePanel}
         role="button"
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
-            handleTogglePanel();
+            handleTogglePanel(e);
           }
         }}
-        aria-label={open ? "Close" : "Open"}
+        aria-label={open ? labels.close : labels.open}
       >
         <div className={classes.handleButton}>
           {open ? <Start color={["primary"]} /> : <End color={["primary"]} />}

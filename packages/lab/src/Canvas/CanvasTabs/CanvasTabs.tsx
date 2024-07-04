@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Tab } from "@mui/base/Tab";
-import { Tabs } from "@mui/base/Tabs";
+import { Tabs, TabsProps } from "@mui/base/Tabs";
 import { TabsList } from "@mui/base/TabsList";
 import {
   ExtractNames,
-  HvBaseProps,
   useDefaultProps,
 } from "@hitachivantara/uikit-react-core";
 
@@ -19,14 +18,11 @@ export type HvCanvasTab = {
   content: React.ReactNode;
 };
 
-export interface HvCanvasTabsProps
-  extends Omit<HvBaseProps<HTMLDivElement>, "onChange"> {
+export interface HvCanvasTabsProps extends Omit<TabsProps, "onChange"> {
   /** The list of tabs. */
-  tabs?: HvCanvasTab[];
+  tabs: HvCanvasTab[];
   /** Event handler to run when a tab is clicked. */
-  onChange: (tabId: string) => void;
-  /* The content that will be rendered within the blade. */
-  children?: React.ReactNode;
+  onChange?: (event: React.SyntheticEvent, tabId: string) => void;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvCanvasTabsClasses;
 }
@@ -40,6 +36,7 @@ export const HvCanvasTabs = (props: HvCanvasTabsProps) => {
     onChange,
     className,
     classes: classesProp,
+    ...others
   } = useDefaultProps("HvCanvasTabs", props);
 
   const { classes, cx } = useClasses(classesProp);
@@ -48,8 +45,8 @@ export const HvCanvasTabs = (props: HvCanvasTabsProps) => {
     tabs?.[0]?.id || "none",
   );
 
-  const handleTabChange = (_, value) => {
-    onChange?.(value);
+  const handleTabChange = (event, value) => {
+    onChange?.(event, value);
     setSelectedTab(value);
   };
 
@@ -59,16 +56,16 @@ export const HvCanvasTabs = (props: HvCanvasTabsProps) => {
       onChange={handleTabChange}
       className={cx(classes.root, className)}
       selectionFollowsFocus
+      {...others}
     >
       <TabsList className={classes.list}>
         {tabs?.map((tab) => (
           <Tab
             key={tab.id}
             value={tab.id}
-            className={cx(
-              classes.tab,
-              tab.id === selectedTab ? "selected" : "",
-            )}
+            className={cx(classes.tab, {
+              [classes.selected]: tab.id === selectedTab,
+            })}
             onChange={handleTabChange}
             tabIndex={0}
           >

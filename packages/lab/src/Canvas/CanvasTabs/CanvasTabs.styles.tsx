@@ -29,9 +29,10 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasTabs", {
     "&:focus": {
       backgroundColor: theme.colors.atmo1,
     },
-    "&.selected": {
+    "&$selected": {
       backgroundColor: theme.colors.atmo1,
       ...theme.typography.label,
     },
   },
+  selected: {},
 });

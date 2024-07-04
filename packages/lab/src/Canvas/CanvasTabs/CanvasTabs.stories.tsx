@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { Alert, Debug, Report } from "@hitachivantara/uikit-react-icons";
 import {
   HvCanvasTabs,
   HvCanvasTabsProps,
@@ -10,12 +11,42 @@ const meta: Meta<typeof HvCanvasTabs> = {
 };
 export default meta;
 
+const tabs = [
+  {
+    id: "1",
+    content: (
+      <>
+        <Report />
+        Tab 1
+      </>
+    ),
+  },
+  {
+    id: "2",
+    content: (
+      <>
+        <Alert />
+        Tab 2
+      </>
+    ),
+  },
+  {
+    id: "3",
+    content: (
+      <>
+        <Debug />
+        Tab 3
+      </>
+    ),
+  },
+];
+
 export const Main: StoryObj<HvCanvasTabsProps> = {
   args: {},
   argTypes: {
     classes: { control: { disable: true } },
   },
   render: () => {
-    return <>Tabs</>;
+    return <HvCanvasTabs tabs={tabs} />;
   },
 };
