@@ -27,7 +27,7 @@ const meta: Meta<typeof HvCanvasToolbar> = {
 export default meta;
 
 const classes = {
-  toolbar: css({ position: "relative" }),
+  toolbar: css({ position: "relative" }), // for Storybook purposes
 };
 
 export const Main: StoryObj<HvCanvasToolbarProps> = {
@@ -35,7 +35,10 @@ export const Main: StoryObj<HvCanvasToolbarProps> = {
     title: "Toolbar Title",
   },
   argTypes: {
+    backButton: { control: { disable: true } },
     classes: { control: { disable: true } },
+    labels: { control: { disable: true } },
+    backButtonProps: { control: { disable: true } },
   },
   render: (args) => {
     return (

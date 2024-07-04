@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   ExtractNames,
   HvBaseProps,
@@ -38,7 +39,7 @@ export interface HvCanvasPanelProps extends HvBaseProps<HTMLDivElement> {
     event: React.MouseEvent | React.KeyboardEvent,
     open: boolean,
   ) => void;
-  /** Callback triggered when a tab changes. */
+  /** Callback triggered when a tab changes/is clicked. */
   onTabChange?: (
     event: React.SyntheticEvent | null,
     tabId: string | number | null,
@@ -54,99 +55,104 @@ export interface HvCanvasPanelProps extends HvBaseProps<HTMLDivElement> {
 /**
  * A panel component to use in a canvas context.
  */
-export const HvCanvasPanel = (props: HvCanvasPanelProps) => {
-  const {
-    id: idProp,
-    tab: tabProp,
-    open: openProp,
-    defaultOpen = false,
-    tabs,
-    onToggle,
-    onTabChange,
-    labels: labelsProp,
-    className,
-    children,
-    classes: classesProp,
-    ...others
-  } = useDefaultProps("HvCanvasPanel", props);
+export const HvCanvasPanel = forwardRef<HTMLDivElement, HvCanvasPanelProps>(
+  (props, ref) => {
+    const {
+      id: idProp,
+      tab: tabProp,
+      open: openProp,
+      defaultOpen = false,
+      tabs,
+      onToggle,
+      onTabChange,
+      labels: labelsProp,
+      className,
+      children,
+      classes: classesProp,
+      ...others
+    } = useDefaultProps("HvCanvasPanel", props);
 
-  const id = useUniqueId(idProp);
+    const id = useUniqueId(idProp);
 
-  const { classes, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-  const labels = useLabels(DEFAULT_LABELS, labelsProp);
+    const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
-  const [open, setOpen] = useControlled(openProp, Boolean(defaultOpen));
-  const [selectedTab, setSelectedTab] = useControlled<string | number | null>(
-    tabProp,
-    tabs?.[0]?.id || "none",
-  );
+    const [open, setOpen] = useControlled(openProp, Boolean(defaultOpen));
+    const [selectedTab, setSelectedTab] = useControlled<string | number | null>(
+      tabProp,
+      tabs?.[0]?.id || "none",
+    );
 
-  const handleTogglePanel = (event: React.MouseEvent | React.KeyboardEvent) => {
-    setOpen((prev) => !prev);
-    onToggle?.(event, !open);
-  };
+    const handleTogglePanel = (
+      event: React.MouseEvent | React.KeyboardEvent,
+    ) => {
+      setOpen((prev) => !prev);
+      onToggle?.(event, !open);
+    };
 
-  const handleTabChange: HvCanvasTabsProps["onChange"] = (event, tabId) => {
-    setSelectedTab(tabId);
-    onTabChange?.(event, tabId);
-  };
+    const handleTabChange: HvCanvasTabsProps["onChange"] = (event, tabId) => {
+      setSelectedTab(tabId);
+      onTabChange?.(event, tabId);
+    };
 
-  return (
-    <>
-      <div
-        id={id}
-        className={cx(classes.root, className, {
-          [classes.open]: open,
-          [classes.close]: !open,
-        })}
-        {...others}
-      >
-        {tabs && (
-          <HvCanvasTabs
-            className={classes.tabs}
-            value={selectedTab}
-            onChange={handleTabChange}
-          >
-            {tabs.map((tab) => (
-              <HvCanvasTab
-                key={tab.id}
-                id={`${id}-${tab.id}`}
-                value={tab.id}
-                tabIndex={0}
-              >
-                {tab.content}
-              </HvCanvasTab>
-            ))}
-          </HvCanvasTabs>
-        )}
+    return (
+      <>
         <div
-          role={tabs ? "tabpanel" : undefined}
-          aria-labelledby={tabs ? `${id}-${selectedTab}` : undefined}
-          className={classes.content}
+          ref={ref}
+          id={id}
+          className={cx(classes.root, className, {
+            [classes.open]: open,
+            [classes.close]: !open,
+          })}
+          {...others}
         >
-          {children}
+          {tabs && (
+            <HvCanvasTabs
+              className={classes.tabs}
+              value={selectedTab}
+              onChange={handleTabChange}
+            >
+              {tabs.map((tab) => (
+                <HvCanvasTab
+                  key={tab.id}
+                  id={`${id}-${tab.id}`}
+                  value={tab.id}
+                  tabIndex={0}
+                >
+                  {tab.content}
+                </HvCanvasTab>
+              ))}
+            </HvCanvasTabs>
+          )}
+          <div
+            role={tabs ? "tabpanel" : undefined}
+            aria-labelledby={tabs ? `${id}-${selectedTab}` : undefined}
+            className={classes.content}
+          >
+            {children}
+          </div>
         </div>
-      </div>
-      <div
-        className={cx(classes.handle, {
-          [classes.handleOpen]: open,
-          [classes.handleClose]: !open,
-        })}
-        onClick={handleTogglePanel}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            handleTogglePanel(e);
-          }
-        }}
-        aria-label={open ? labels.close : labels.open}
-      >
-        <div className={classes.handleButton}>
-          {open ? <Start color={["primary"]} /> : <End color={["primary"]} />}
+        <div
+          className={cx(classes.handle, {
+            [classes.handleOpen]: open,
+            [classes.handleClose]: !open,
+          })}
+          onClick={handleTogglePanel}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              handleTogglePanel(e);
+            }
+          }}
+          aria-label={open ? labels.close : labels.open}
+        >
+          <div className={classes.handleButton}>
+            {open ? <Start color={["primary"]} /> : <End color={["primary"]} />}
+          </div>
         </div>
-      </div>
-    </>
-  );
-};
+      </>
+    );
+  },
+);

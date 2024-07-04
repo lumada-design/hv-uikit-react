@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Tab, TabProps } from "@mui/base/Tab";
 import {
   ExtractNames,
@@ -18,14 +19,18 @@ export interface HvCanvasTabProps extends TabProps {
 /**
  * The tab component to use inside `HvCanvasTabs`.
  */
-export const HvCanvasTab = (props: HvCanvasTabProps) => {
-  const {
-    classes: classesProp,
-    className,
-    ...others
-  } = useDefaultProps("HvCanvasTab", props);
+export const HvCanvasTab = forwardRef<HTMLButtonElement, HvCanvasTabProps>(
+  (props, ref) => {
+    const {
+      classes: classesProp,
+      className,
+      ...others
+    } = useDefaultProps("HvCanvasTab", props);
 
-  const { classes, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-  return <Tab className={cx(classes.root, className)} {...others} />;
-};
+    return (
+      <Tab ref={ref} className={cx(classes.root, className)} {...others} />
+    );
+  },
+);

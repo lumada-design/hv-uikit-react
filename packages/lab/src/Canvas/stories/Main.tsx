@@ -1,8 +1,11 @@
-import { useState } from "react";
-import { css, cx } from "@emotion/css";
+import { useMemo, useState } from "react";
+import { cx } from "@emotion/css";
 import { BackgroundVariant } from "reactflow";
 import {
   HvButton,
+  HvDialog,
+  HvDialogContent,
+  HvDialogTitle,
   HvDropDownMenu,
   HvIconButton,
   HvInlineEditor,
@@ -11,14 +14,17 @@ import {
 import {
   Backwards,
   Calendar,
-  DataSource,
+  Close,
+  DropUpXS,
+  Fullscreen,
   Plane,
   Redo,
-  Schema,
   Undo,
   User,
 } from "@hitachivantara/uikit-react-icons";
 import {
+  HvCanvasFloatingPanel,
+  HvCanvasFloatingPanelProps,
   HvCanvasPanel,
   HvCanvasToolbar,
   HvFlow,
@@ -27,57 +33,77 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 
 // The code is available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/Canvas/stories
-import { ListView } from "./ListView/ListView";
 import { eds, nds, nodeTypes } from "./nodes";
-import { TreeView } from "./TreeView";
-
-const classes = {
-  separator: css({
-    height: 30,
-    width: 1,
-    backgroundColor: theme.colors.atmo4,
-    margin: `0 ${theme.space.xs}`,
-  }),
-  flow: css({ width: "100%", height: "100vh" }),
-  toolbarFull: css({
-    left: 0,
-    right: 0,
-    marginLeft: "auto",
-    marginRight: "auto",
-    width: `calc(100% - 2 * ${theme.space.md})`,
-  }),
-  toolbarMin: css({
-    right: theme.space.md,
-    width: `calc(100% - 320px - 2 * ${theme.space.md})`,
-  }),
-};
-
-const tabs = [
-  {
-    id: "1",
-    content: (
-      <>
-        <DataSource />
-        Add Data
-      </>
-    ),
-  },
-  {
-    id: "2",
-    content: (
-      <>
-        <Schema />
-        Model Structure
-      </>
-    ),
-  },
-];
-
-const Separator = () => <div className={classes.separator} />;
+import { classes } from "./styles";
+import {
+  floatingPanelContent,
+  floatingPanelTabs,
+  panelContent,
+  panelTabs,
+  Separator,
+} from "./utils";
 
 export const MainStory = () => {
-  const [selectedTab, setSelectedTab] = useState<string>("1");
-  const [opened, setOpened] = useState(false);
+  // --- State for Canvas Panel
+  const [panelTab, setPanelTab] = useState(panelTabs[0].id);
+  const [panelOpened, setPanelOpened] = useState(false);
+
+  // --- State for Canvas Floating Panel
+  const [floatingPanelTab, setFloatingPanelTab] = useState(
+    floatingPanelTabs[0].id,
+  );
+  const [floatingPanelOpened, setFloatingPanelOpened] = useState(false);
+  const [floatingTabs, setFloatingTabs] =
+    useState<HvCanvasFloatingPanelProps["tabs"]>(floatingPanelTabs);
+  const [minimized, setMinimized] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
+
+  const handleCloseTab = (value: string | number) => {
+    const newFloatingTabs = floatingTabs.filter((tab) => tab.id !== value);
+    if (newFloatingTabs.length !== 0) {
+      setFloatingTabs(newFloatingTabs);
+      setFloatingPanelTab(newFloatingTabs[0].id as number);
+    } else {
+      setFloatingPanelOpened(false);
+    }
+  };
+
+  const handleChangeTab: HvCanvasFloatingPanelProps["onTabChange"] = (
+    event,
+    value,
+  ) => {
+    setFloatingPanelTab(value as number);
+  };
+
+  const handleAction: HvCanvasFloatingPanelProps["onAction"] = (
+    event,
+    action,
+    tabId,
+  ) => {
+    switch (action.id) {
+      case "close":
+        event.stopPropagation();
+        handleCloseTab(tabId);
+        break;
+      case "toggle":
+        if (minimized && floatingPanelTab !== tabId)
+          handleChangeTab(null, tabId);
+        setMinimized((prev) => !prev);
+        break;
+      case "fullscreen":
+        if (minimized && floatingPanelTab !== tabId)
+          handleChangeTab(null, tabId);
+        setFullscreen((prev) => !prev);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const dialogTitle = useMemo(
+    () => floatingPanelTabs.find((tab) => tab.id === floatingPanelTab)?.title,
+    [floatingPanelTab],
+  );
 
   return (
     <>
@@ -93,14 +119,13 @@ export const MainStory = () => {
           color={theme.colors.secondary_80}
           variant={BackgroundVariant.Dots}
           gap={16}
-          style={{ color: "red" }}
         />
         <HvFlowMinimap />
       </HvFlow>
       <HvCanvasToolbar
         className={cx({
-          [classes.toolbarFull]: !opened,
-          [classes.toolbarMin]: opened,
+          [classes.absoluteFull]: !panelOpened,
+          [classes.absoluteMin]: panelOpened,
         })}
         backButton={
           <HvButton aria-label="Back" icon>
@@ -117,7 +142,16 @@ export const MainStory = () => {
         </HvIconButton>
         <Separator />
         <HvButton variant="primary">Save</HvButton>
-        <HvButton variant="primaryGhost">Cancel</HvButton>
+        <HvButton
+          variant="primaryGhost"
+          onClick={() => {
+            setFloatingPanelOpened(!floatingPanelOpened);
+            setFloatingTabs(floatingPanelTabs);
+            setFloatingPanelTab(floatingPanelTabs[0].id);
+          }}
+        >
+          Toggle
+        </HvButton>
         <Separator />
         <HvDropDownMenu
           placement="right"
@@ -130,14 +164,65 @@ export const MainStory = () => {
         />
       </HvCanvasToolbar>
       <HvCanvasPanel
-        open={opened}
-        tabs={tabs}
-        onTabChange={(event, tabId) => setSelectedTab(tabId)}
-        onToggle={(event, value) => setOpened(value)}
+        open={panelOpened}
+        tabs={panelTabs}
+        tab={panelTab}
+        onTabChange={(event, value) => setPanelTab(value as number)}
+        onToggle={(event, value) => setPanelOpened(value)}
       >
-        {selectedTab === "1" && <TreeView />}
-        {selectedTab === "2" && <ListView />}
+        {panelContent[panelTab]}
       </HvCanvasPanel>
+      <HvCanvasFloatingPanel
+        className={cx({
+          [classes.absoluteFull]: !panelOpened,
+          [classes.absoluteMin]: panelOpened,
+        })}
+        open={floatingPanelOpened}
+        minimize={minimized}
+        tabs={floatingTabs}
+        tab={floatingPanelTab}
+        leftActions={[
+          {
+            id: "toggle",
+            label: minimized ? "Maximize" : "Minimize",
+            icon: (
+              <DropUpXS
+                style={{ rotate: !minimized ? "180deg" : undefined }}
+                className={classes.toggleIcon}
+              />
+            ),
+          },
+        ]}
+        rightActions={[
+          {
+            id: "fullscreen",
+            label: "Fullscreen",
+            icon: <Fullscreen />,
+          },
+          {
+            id: "close",
+            label: "Close",
+            icon: <Close />,
+          },
+        ]}
+        onTabChange={handleChangeTab}
+        onAction={handleAction}
+      >
+        {floatingPanelContent[floatingPanelTab]}
+      </HvCanvasFloatingPanel>
+      <HvDialog
+        fullWidth
+        maxWidth="lg"
+        open={fullscreen}
+        onClose={() => setFullscreen((prev) => !prev)}
+      >
+        <HvDialogTitle className={classes.dialogTitle}>
+          {dialogTitle}
+        </HvDialogTitle>
+        <HvDialogContent>
+          {floatingPanelContent[floatingPanelTab]}
+        </HvDialogContent>
+      </HvDialog>
     </>
   );
 };

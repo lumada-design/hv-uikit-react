@@ -15,6 +15,10 @@ export const Main: StoryObj<HvCanvasPanelProps> = {
   args: { defaultOpen: true },
   argTypes: {
     classes: { control: { disable: true } },
+    tabs: { control: { disable: true } },
+    tab: { control: { disable: true } },
+    labels: { control: { disable: true } },
+    children: { control: { disable: true } },
   },
   decorators: [
     (Story) => (
