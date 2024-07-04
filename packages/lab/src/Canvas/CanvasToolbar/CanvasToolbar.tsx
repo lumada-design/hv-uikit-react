@@ -5,6 +5,7 @@ import {
   HvIconButton,
   HvTypography,
   useDefaultProps,
+  useLabels,
 } from "@hitachivantara/uikit-react-core";
 import { Previous } from "@hitachivantara/uikit-react-icons";
 
@@ -14,13 +15,19 @@ export { staticClasses as canvasToolbarClasses };
 
 export type HvCanvasToolbarClasses = ExtractNames<typeof useClasses>;
 
+const DEFAULT_LABELS = {
+  back: "Back",
+};
+
 export interface HvCanvasToolbarProps
   extends HvBaseProps<HTMLDivElement, "title"> {
   /** Text to display in the component. */
   title: HvGlobalActionsProps["title"];
   /** User can pass in a fully customized button or false for when the back button should not be rendered. */
   backButton?: HvGlobalActionsProps["backButton"];
-  /* The content that will be rendered within the blade. */
+  /** An object containing all the labels. */
+  labels?: Partial<typeof DEFAULT_LABELS>;
+  /* The content that will be rendered within the toolbar. */
   children: React.ReactNode;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvCanvasToolbarClasses;
@@ -33,6 +40,7 @@ export const HvCanvasToolbar = (props: HvCanvasToolbarProps) => {
   const {
     title: titleProp,
     backButton,
+    labels: labelsProp,
     className,
     children,
     classes: classesProp,
@@ -40,6 +48,7 @@ export const HvCanvasToolbar = (props: HvCanvasToolbarProps) => {
   } = useDefaultProps("HvCanvasToolbar", props);
 
   const { classes, cx } = useClasses(classesProp);
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   const title =
     typeof titleProp === "string" ? (
@@ -52,7 +61,7 @@ export const HvCanvasToolbar = (props: HvCanvasToolbarProps) => {
     <div className={cx(classes.root, className)} {...others}>
       <div className={classes.back}>
         {backButton ?? (
-          <HvIconButton title="Back" variant="primaryGhost">
+          <HvIconButton title={labels.back} variant="primaryGhost">
             <Previous />
           </HvIconButton>
         )}
