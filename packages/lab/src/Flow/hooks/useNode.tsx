@@ -1,4 +1,10 @@
-import { isValidElement, useCallback, useMemo, useState } from "react";
+import {
+  isValidElement,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { NodeToolbarProps } from "reactflow";
 import { uid } from "uid";
 import { useLabels } from "@hitachivantara/uikit-react-core";
@@ -27,7 +33,7 @@ const DEFAULT_LABELS = {
   duplicateActionLabel: "Duplicate",
 };
 
-export interface HvUseNodeProps {
+export interface HvUseNodeParams {
   id: string;
   /** Node group ID */
   groupId?: string;
@@ -51,7 +57,7 @@ export interface HvUseNodeProps {
   nodeToolbarProps?: NodeToolbarProps;
 }
 
-export function useHvNode(props: HvUseNodeProps) {
+export function useHvNode(props: HvUseNodeParams) {
   const {
     id,
     title: titleProp,
@@ -67,13 +73,11 @@ export function useHvNode(props: HvUseNodeProps) {
   } = props;
 
   const { registerNode, unregisterNode } = useNodeMetaRegistry();
-
   const labels = useLabels(DEFAULT_LABELS, labelsProps);
-
   const inputs = useMemo(() => identifyHandles(inputsProp), [inputsProp]);
-
+  const inputEdges = useFlowNodeInputEdges();
   const outputs = useMemo(() => identifyHandles(outputsProp), [outputsProp]);
-
+  const outputEdges = useFlowNodeOutputEdges();
   const { nodeGroups } = useFlowContext();
 
   const node = useFlowNode();
@@ -105,7 +109,7 @@ export function useHvNode(props: HvUseNodeProps) {
     [nodeToolbarProps, showActions],
   );
 
-  const nodeActions = useMemo(
+  const nodeActions = useMemo<HvFlowNodeAction[]>(
     () =>
       nodeActionsProp || [
         { id: "delete", label: labels?.deleteActionLabel, icon: <Delete /> },
@@ -118,7 +122,7 @@ export function useHvNode(props: HvUseNodeProps) {
     [labels?.deleteActionLabel, labels?.duplicateActionLabel, nodeActionsProp],
   );
 
-  useMemo(() => {
+  useEffect(() => {
     registerNode(id, {
       label: title || "",
       inputs,
@@ -126,9 +130,6 @@ export function useHvNode(props: HvUseNodeProps) {
     });
     return () => unregisterNode(id);
   }, [id, title, inputs, outputs, registerNode, unregisterNode]);
-
-  const inputEdges = useFlowNodeInputEdges();
-  const outputEdges = useFlowNodeOutputEdges();
 
   const handleDefaultAction = useCallback(
     (action: HvFlowNodeAction) => {
@@ -165,25 +166,45 @@ export function useHvNode(props: HvUseNodeProps) {
     [node, reactFlowInstance],
   );
 
-  return {
-    // state
-    id,
-    title,
-    icon,
-    color,
-    iconColor,
-    subtitle,
-    inputs,
-    inputEdges,
-    outputs,
-    outputEdges,
-    node,
-    nodeActions,
-    showActions,
-    // prop getters
-    getNodeToolbarProps,
-    // actions
-    toggleShowActions,
-    handleDefaultAction,
-  };
+  return useMemo(
+    () => ({
+      // state
+      id,
+      title,
+      icon,
+      color,
+      iconColor,
+      subtitle,
+      inputs,
+      inputEdges,
+      outputs,
+      outputEdges,
+      node,
+      nodeActions,
+      showActions,
+      // prop getters
+      getNodeToolbarProps,
+      // actions
+      toggleShowActions,
+      handleDefaultAction,
+    }),
+    [
+      id,
+      title,
+      icon,
+      color,
+      iconColor,
+      subtitle,
+      inputs,
+      inputEdges,
+      outputs,
+      outputEdges,
+      node,
+      nodeActions,
+      showActions,
+      getNodeToolbarProps,
+      toggleShowActions,
+      handleDefaultAction,
+    ],
+  );
 }
