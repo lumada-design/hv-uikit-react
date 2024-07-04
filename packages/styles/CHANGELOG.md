@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.30.2 (2024-07-04)
+
+### Bug Fixes
+
+- multi button split pentaho styles ([c6bc86c](https://github.com/lumada-design/hv-uikit-react/commit/c6bc86c122d62024d0a6e744b1789a5d0b81aeff))
+- select and dropdown menu pentaho styles ([29de1dc](https://github.com/lumada-design/hv-uikit-react/commit/29de1dce5cdd2bd4abc121017a48593d9bca2637))
+- variant not working for multi button in pentaho theme ([fa1eb53](https://github.com/lumada-design/hv-uikit-react/commit/fa1eb53dc1840becb35301a8f24c23cf4c92b188))
+
 ## [5.30.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.30.0...@hitachivantara/uikit-styles@5.30.1) (2024-06-22)
 
 ### Bug Fixes

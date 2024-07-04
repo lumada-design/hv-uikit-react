@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.66.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.6...@hitachivantara/uikit-react-core@5.66.7) (2024-07-04)
+
+### Bug Fixes
+
+- background color overflowing border ([c26ff1d](https://github.com/lumada-design/hv-uikit-react/commit/c26ff1dff603cc055d620990b3b4e27bfbd140c5))
+- select and dropdown menu pentaho styles ([29de1dc](https://github.com/lumada-design/hv-uikit-react/commit/29de1dce5cdd2bd4abc121017a48593d9bca2637))
+- variant not working for multi button in pentaho theme ([fa1eb53](https://github.com/lumada-design/hv-uikit-react/commit/fa1eb53dc1840becb35301a8f24c23cf4c92b188))
+- **VerticalNavigation:** crash on empty selection ([930bd79](https://github.com/lumada-design/hv-uikit-react/commit/930bd79dbd4b80e7f351d3e7962da8b603baea62))
+
 ## [5.66.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.5...@hitachivantara/uikit-react-core@5.66.6) (2024-06-25)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
