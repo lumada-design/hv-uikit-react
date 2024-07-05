@@ -3,13 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [5.36.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.35.12...@hitachivantara/uikit-react-lab@5.36.0) (2024-07-05)
-
-### Features
-
-- add useBaseNode hook and demo nodes ([1639afd](https://github.com/lumada-design/hv-uikit-react/commit/1639afdae3d2e4f73ff8b724d88fe340f2e46591))
-- **Canvas:** add canvas panel, toolbar and tabs ([84596da](https://github.com/lumada-design/hv-uikit-react/commit/84596da8f48c7537b0c3183e6875254243d76f71))
-
 ## [5.35.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.35.11...@hitachivantara/uikit-react-lab@5.35.12) (2024-07-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
