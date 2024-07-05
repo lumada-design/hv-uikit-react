@@ -46,6 +46,27 @@ const ControlledPanel = ({
   );
 };
 
+const ControlledTabs = ({
+  onTabChange,
+  ...others
+}: Partial<HvCanvasPanelProps>) => {
+  const [tab, setTab] = useState(tabs[1].id);
+  return (
+    <HvCanvasPanel
+      tab={tab}
+      onTabChange={(e, v) => {
+        onTabChange?.(e, v);
+        setTab(v as string);
+      }}
+      tabs={tabs}
+      defaultOpen
+      {...others}
+    >
+      <HvButton>{label}</HvButton>
+    </HvCanvasPanel>
+  );
+};
+
 const expectSimplePanelClosed = () => {
   const openBtn = screen.getByRole("button", { name: "Open" });
   const content = screen.queryByRole("button", { name: label });
@@ -72,7 +93,7 @@ describe("CanvasPanel", () => {
     expect(tabList).toBeNull();
   });
 
-  it("shows and hides the content and tabs when toggled and defaultOpened is false", async () => {
+  it("shows and hides the content and tabs when toggled and defaultOpen is false", async () => {
     const user = userEvent.setup();
     const clickMock = vi.fn();
     renderSimplePanel({ onToggle: clickMock });
@@ -89,10 +110,10 @@ describe("CanvasPanel", () => {
     expectSimplePanelClosed();
   });
 
-  it("hides and shows the content and tabs when toggled and defaultOpened is true", async () => {
+  it("hides and shows the content and tabs when toggled and defaultOpen is true", async () => {
     const user = userEvent.setup();
     const clickMock = vi.fn();
-    renderSimplePanel({ onToggle: clickMock, defaultOpened: true });
+    renderSimplePanel({ onToggle: clickMock, defaultOpen: true });
     expectSimplePanelOpened();
 
     const closeBtn = screen.getByRole("button", { name: "Close" });
@@ -126,7 +147,7 @@ describe("CanvasPanel", () => {
   it("triggers onTabChange when a tab is clicked", async () => {
     const user = userEvent.setup();
     const clickMock = vi.fn();
-    renderSimplePanel({ onTabChange: clickMock, defaultOpened: true });
+    renderSimplePanel({ onTabChange: clickMock, defaultOpen: true });
 
     const panelTabs = screen.getAllByRole("tab");
     expect(panelTabs).toHaveLength(2);
@@ -160,5 +181,29 @@ describe("CanvasPanel", () => {
 
     const closeBtn = screen.getByRole("button", { name: closeLabel });
     expect(closeBtn).toBeInTheDocument();
+  });
+
+  it("can control selected tab", async () => {
+    const user = userEvent.setup();
+    const clickMock = vi.fn();
+    render(<ControlledTabs onTabChange={clickMock} />);
+
+    const panelTabs = screen.getAllByRole("tab");
+    expect(panelTabs).toHaveLength(2);
+    expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
+      tabs[1].content,
+    );
+    expect(screen.getByRole("tab", { selected: false })).toHaveTextContent(
+      tabs[0].content,
+    );
+
+    await user.click(panelTabs[0]);
+    expect(clickMock).toHaveBeenCalledOnce();
+    expect(screen.getByRole("tab", { selected: false })).toHaveTextContent(
+      tabs[1].content,
+    );
+    expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
+      tabs[0].content,
+    );
   });
 });
