@@ -10,13 +10,15 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasPanel", {
     boxShadow: "4px 0px 8px -4px color-mix(in srgb, #414141 12%, transparent)",
     zIndex: theme.zIndices.overlay,
     backgroundColor: "transparent",
-    transition: "width 0.3s ease",
+    transition: "visibility 0.3s ease, width 0.3s ease",
     overflow: "hidden",
     "&$open": {
       width: 320,
+      visibility: "visible",
     },
     "&$close": {
       width: 0,
+      visibility: "hidden",
     },
   },
   tabs: {},
