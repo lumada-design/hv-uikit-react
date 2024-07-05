@@ -12,7 +12,7 @@ const meta: Meta<typeof HvCanvasPanel> = {
 export default meta;
 
 export const Main: StoryObj<HvCanvasPanelProps> = {
-  args: { defaultOpened: true },
+  args: { defaultOpen: true },
   argTypes: {
     classes: { control: { disable: true } },
   },
