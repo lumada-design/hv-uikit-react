@@ -1,18 +1,27 @@
 {
   "name": "@hitachivantara/uikit-styles",
   "version": "5.30.2",
+  "private": false,
+  "author": "Hitachi Vantara UI Kit Team",
   "description": "UI Kit styling solution for the Next Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "author": "Hitachi Vantara UI Kit Team",
+  "main": "src/index.ts",
+  "sideEffects": false,
   "keywords": [
     "hitachi-vantara",
     "design-system",
     "ui-kit",
     "typescript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lumada-design/hv-uikit-react.git",
+    "directory": "packages/styles"
+  },
   "license": "Apache-2.0",
-  "main": "src/index.ts",
-  "sideEffects": false,
+  "bugs": {
+    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+  },
   "scripts": {
     "build": "npm run clean && vite build",
     "clean": "npx rimraf dist package",

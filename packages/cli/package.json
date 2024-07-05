@@ -1,6 +1,7 @@
 {
   "name": "@hitachivantara/hv-uikit-cli",
   "version": "1.16.6",
+  "private": false,
   "type": "module",
   "author": "Hitachi Vantara UI Kit Team",
   "description": "The Hitachi Vantara CLI for UI Kit apps.",
@@ -17,7 +18,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lumada-design/hv-uikit-react.git"
+    "url": "https://github.com/lumada-design/hv-uikit-react.git",
+    "directory": "packages/cli"
   },
   "bugs": {
     "url": "https://github.com/lumada-design/hv-uikit-react/issues"
