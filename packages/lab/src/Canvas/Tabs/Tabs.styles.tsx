@@ -1,4 +1,8 @@
-import { createClasses, theme } from "@hitachivantara/uikit-react-core";
+import {
+  createClasses,
+  outlineStyles,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses("HvCanvasTabs", {
   root: {
@@ -32,6 +36,9 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasTabs", {
     "&$selected": {
       backgroundColor: theme.colors.atmo1,
       ...theme.typography.label,
+    },
+    "&:focus-visible": {
+      ...outlineStyles,
     },
   },
   selected: {},
