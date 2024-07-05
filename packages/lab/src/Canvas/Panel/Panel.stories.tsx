@@ -12,25 +12,24 @@ const meta: Meta<typeof HvCanvasPanel> = {
 export default meta;
 
 export const Main: StoryObj<HvCanvasPanelProps> = {
-  args: {},
+  args: { defaultOpened: true },
   argTypes: {
     classes: { control: { disable: true } },
   },
-  render: (args) => {
-    return (
+  decorators: [
+    (Story) => (
       <div
         style={{
-          width: "100vh",
+          width: "100%",
           height: "100vh",
-          backgroundColor: theme.palette.slate[950],
+          backgroundColor: theme.colors.atmo3,
           margin: 0,
           padding: 0,
         }}
       >
-        <HvCanvasPanel defaultOpened {...args}>
-          Some content
-        </HvCanvasPanel>
+        {Story()}
       </div>
-    );
-  },
+    ),
+  ],
+  render: (args) => <HvCanvasPanel {...args}>Some content</HvCanvasPanel>,
 };

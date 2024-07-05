@@ -7,28 +7,28 @@ import {
   useDefaultProps,
 } from "@hitachivantara/uikit-react-core";
 
-import { staticClasses, useClasses } from "./CanvasTabs.styles";
+import { staticClasses, useClasses } from "./Tabs.styles";
 
 export { staticClasses as canvasTabsClasses };
 
 export type HvCanvasTabsClasses = ExtractNames<typeof useClasses>;
 
-export type HvCanvasTab = {
+export interface HvCanvasTab {
   id: string;
   content: React.ReactNode;
-};
+}
 
 export interface HvCanvasTabsProps extends Omit<TabsProps, "onChange"> {
-  /** The list of tabs. */
+  /** List of tabs. */
   tabs: HvCanvasTab[];
-  /** Event handler to run when a tab is clicked. */
-  onChange?: (event: React.SyntheticEvent, tabId: string) => void;
+  /** Event handler triggered when a tab is clicked. */
+  onChange?: (event: React.SyntheticEvent | null, tabId: string) => void;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvCanvasTabsClasses;
 }
 
 /**
- *
+ * A tabs component to use in a canvas context.
  */
 export const HvCanvasTabs = (props: HvCanvasTabsProps) => {
   const {
@@ -41,13 +41,11 @@ export const HvCanvasTabs = (props: HvCanvasTabsProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const [selectedTab, setSelectedTab] = useState<string>(
-    tabs?.[0]?.id || "none",
-  );
+  const [selectedTab, setSelectedTab] = useState(tabs?.[0]?.id || "none");
 
-  const handleTabChange = (event, value) => {
-    onChange?.(event, value);
-    setSelectedTab(value);
+  const handleTabChange: TabsProps["onChange"] = (event, value) => {
+    onChange?.(event, value as string);
+    setSelectedTab(value as string);
   };
 
   return (
@@ -66,7 +64,6 @@ export const HvCanvasTabs = (props: HvCanvasTabsProps) => {
             className={cx(classes.tab, {
               [classes.selected]: tab.id === selectedTab,
             })}
-            onChange={handleTabChange}
             tabIndex={0}
           >
             {tab.content}
