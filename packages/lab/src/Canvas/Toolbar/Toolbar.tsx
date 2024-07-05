@@ -1,7 +1,6 @@
 import {
   ExtractNames,
   HvBaseProps,
-  HvGlobalActionsProps,
   HvIconButton,
   HvTypography,
   useDefaultProps,
@@ -9,7 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Previous } from "@hitachivantara/uikit-react-icons";
 
-import { staticClasses, useClasses } from "./CanvasToolbar.styles";
+import { staticClasses, useClasses } from "./Toolbar.styles";
 
 export { staticClasses as canvasToolbarClasses };
 
@@ -22,9 +21,9 @@ const DEFAULT_LABELS = {
 export interface HvCanvasToolbarProps
   extends HvBaseProps<HTMLDivElement, "title"> {
   /** Text to display in the component. */
-  title: HvGlobalActionsProps["title"];
-  /** User can pass in a fully customized button or false for when the back button should not be rendered. */
-  backButton?: HvGlobalActionsProps["backButton"];
+  title: React.ReactNode;
+  /** Fully customized button or false for when the back button should not be rendered. */
+  backButton?: React.ReactNode;
   /** An object containing all the labels. */
   labels?: Partial<typeof DEFAULT_LABELS>;
   /* The content that will be rendered within the toolbar. */

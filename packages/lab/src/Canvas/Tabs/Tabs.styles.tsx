@@ -15,7 +15,7 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasTabs", {
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
-    borderRadius: `16px 16px 0 0 `,
+    borderRadius: "16px 16px 0 0",
     backgroundColor: theme.colors.atmo2,
     color: theme.colors.secondary_60,
     overflow: "hidden",

@@ -1,3 +1,3 @@
-export * from "./CanvasToolbar";
-export * from "./CanvasPanel";
-export * from "./CanvasTabs";
+export * from "./Toolbar";
+export * from "./Panel";
+export * from "./Tabs";

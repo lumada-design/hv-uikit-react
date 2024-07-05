@@ -42,7 +42,6 @@ const tabs = [
 ];
 
 export const Main: StoryObj<HvCanvasTabsProps> = {
-  args: {},
   argTypes: {
     classes: { control: { disable: true } },
   },
