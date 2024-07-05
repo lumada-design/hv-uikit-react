@@ -9,11 +9,9 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasToolbar", {
     alignItems: "center",
     borderRadius: theme.radii.full,
     backgroundColor: theme.colors.atmo1,
-    padding: theme.spacing(0, "md", 0, 0),
     position: "absolute",
     right: 0,
     top: 0,
-    margin: `0 0 0 ${theme.space.md}`,
     transition: "width 0.3s ease",
   },
   back: {
@@ -36,5 +34,6 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasToolbar", {
     display: "flex",
     flexWrap: "nowrap",
     overflow: "scroll",
+    paddingRight: theme.space.md,
   },
 });
