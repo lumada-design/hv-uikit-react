@@ -16,7 +16,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lumada-design/hv-uikit-react.git"
+    "url": "https://github.com/lumada-design/hv-uikit-react.git",
+    "directory": "packages/code-editor"
   },
   "license": "Apache-2.0",
   "bugs": {
