@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvButton, theme } from "@hitachivantara/uikit-react-core";
+import { HvButton } from "@hitachivantara/uikit-react-core";
 import {
   HvCanvasToolbar,
   HvCanvasToolbarProps,
@@ -27,9 +27,7 @@ const meta: Meta<typeof HvCanvasToolbar> = {
 export default meta;
 
 const classes = {
-  toolbar: css({
-    inset: theme.space.sm,
-  }),
+  toolbar: css({ position: "relative" }),
 };
 
 export const Main: StoryObj<HvCanvasToolbarProps> = {

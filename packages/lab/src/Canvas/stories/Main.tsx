@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { css } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import { BackgroundVariant } from "reactflow";
 import {
   HvButton,
@@ -13,7 +13,6 @@ import {
   Calendar,
   DataSource,
   Plane,
-  Pod,
   Redo,
   Schema,
   Undo,
@@ -40,6 +39,17 @@ const classes = {
     margin: `0 ${theme.space.xs}`,
   }),
   flow: css({ width: "100%", height: "100vh" }),
+  toolbarFull: css({
+    left: 0,
+    right: 0,
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: `calc(100% - 2 * ${theme.space.md})`,
+  }),
+  toolbarMin: css({
+    right: theme.space.md,
+    width: `calc(100% - 320px - 2 * ${theme.space.md})`,
+  }),
 };
 
 const tabs = [
@@ -67,6 +77,7 @@ const Separator = () => <div className={classes.separator} />;
 
 export const MainStory = () => {
   const [selectedTab, setSelectedTab] = useState<string>("1");
+  const [opened, setOpened] = useState(false);
 
   return (
     <>
@@ -87,6 +98,10 @@ export const MainStory = () => {
         <HvFlowMinimap />
       </HvFlow>
       <HvCanvasToolbar
+        className={cx({
+          [classes.toolbarFull]: !opened,
+          [classes.toolbarMin]: opened,
+        })}
         backButton={
           <HvButton aria-label="Back" icon>
             <Backwards />
@@ -99,10 +114,6 @@ export const MainStory = () => {
         </HvIconButton>
         <HvIconButton title="Redo">
           <Redo />
-        </HvIconButton>
-        <Separator />
-        <HvIconButton title="Add">
-          <Pod />
         </HvIconButton>
         <Separator />
         <HvButton variant="primary">Save</HvButton>
@@ -119,8 +130,10 @@ export const MainStory = () => {
         />
       </HvCanvasToolbar>
       <HvCanvasPanel
+        open={opened}
         tabs={tabs}
         onTabChange={(event, tabId) => setSelectedTab(tabId)}
+        onToggle={(event, value) => setOpened(value)}
       >
         {selectedTab === "1" && <TreeView />}
         {selectedTab === "2" && <ListView />}

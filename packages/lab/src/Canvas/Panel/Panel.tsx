@@ -1,11 +1,9 @@
-import { useCallback, useEffect } from "react";
 import {
   ExtractNames,
   HvBaseProps,
   useControlled,
   useDefaultProps,
   useLabels,
-  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { End, Start } from "@hitachivantara/uikit-react-icons";
 
@@ -62,26 +60,8 @@ export const HvCanvasPanel = (props: HvCanvasPanelProps) => {
 
   const { classes, cx } = useClasses(classesProp);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
-  const { rootId, activeTheme } = useTheme();
 
   const [open, setOpen] = useControlled(openProp, Boolean(defaultOpened));
-
-  const setPanelWidth = useCallback(() => {
-    if (rootId) {
-      document
-        .getElementById(rootId)
-        ?.style.setProperty(
-          "--canvas-panel-width",
-          !open
-            ? "0px"
-            : `${320 + (activeTheme ? parseInt(activeTheme.space.md, 10) : 24)}px`,
-        );
-    }
-  }, [activeTheme, open, rootId]);
-
-  useEffect(() => {
-    setPanelWidth();
-  }, [open, setPanelWidth]);
 
   const handleTogglePanel = (event: React.MouseEvent | React.KeyboardEvent) => {
     setOpen((prev) => !prev);
