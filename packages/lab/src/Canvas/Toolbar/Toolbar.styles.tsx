@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvCanvasToolbar", {
   root: {
-    width: "calc(100% - var(--canvas-panel-width))",
+    width: "100%",
     height: 54,
     display: "flex",
     alignItems: "center",

@@ -25,7 +25,7 @@ const classes = {
     margin: `0 ${theme.space.xs}`,
   }),
   toolbar: css({
-    inset: theme.space.sm,
+    position: "relative",
   }),
 };
 

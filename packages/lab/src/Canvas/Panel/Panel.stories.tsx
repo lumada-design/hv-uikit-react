@@ -22,7 +22,7 @@ export const Main: StoryObj<HvCanvasPanelProps> = {
         style={{
           width: "100%",
           height: "100vh",
-          backgroundColor: theme.colors.atmo3,
+          backgroundColor: theme.colors.atmo2,
           margin: 0,
           padding: 0,
         }}
