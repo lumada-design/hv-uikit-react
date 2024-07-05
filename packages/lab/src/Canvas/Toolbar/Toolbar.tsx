@@ -2,6 +2,7 @@ import {
   ExtractNames,
   HvBaseProps,
   HvIconButton,
+  HvIconButtonProps,
   HvTypography,
   useDefaultProps,
   useLabels,
@@ -27,7 +28,9 @@ export interface HvCanvasToolbarProps
   /** An object containing all the labels. */
   labels?: Partial<typeof DEFAULT_LABELS>;
   /* The content that will be rendered within the toolbar. */
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  /** Props for the default back button. */
+  backButtonProps?: Partial<HvIconButtonProps>;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvCanvasToolbarClasses;
 }
@@ -42,6 +45,7 @@ export const HvCanvasToolbar = (props: HvCanvasToolbarProps) => {
     labels: labelsProp,
     className,
     children,
+    backButtonProps,
     classes: classesProp,
     ...others
   } = useDefaultProps("HvCanvasToolbar", props);
@@ -60,7 +64,11 @@ export const HvCanvasToolbar = (props: HvCanvasToolbarProps) => {
     <div className={cx(classes.root, className)} {...others}>
       <div className={classes.back}>
         {backButton ?? (
-          <HvIconButton title={labels.back} variant="primaryGhost">
+          <HvIconButton
+            title={labels.back}
+            variant="primaryGhost"
+            {...backButtonProps}
+          >
             <Previous />
           </HvIconButton>
         )}
