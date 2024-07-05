@@ -29,6 +29,10 @@ export const Main: StoryObj = {
   ],
   parameters: {
     docs: {
+      description: {
+        story: `This sample exemplifies how the canvas components can be used.<br/>
+          \nDISCLAIMER: Canvas components are a work in progress and there might be breaking changes.`,
+      },
       source: {
         code: MainRaw,
       },
