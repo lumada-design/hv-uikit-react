@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.36.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.36.0...@hitachivantara/uikit-react-lab@5.36.1) (2024-07-06)
+
+### Bug Fixes
+
+- add missing focus styles ([47d543a](https://github.com/lumada-design/hv-uikit-react/commit/47d543a2351976d7c04eb371daa042ce9f075c7c))
+- remove unnecessary margin and padding affecting inset values ([03dcef3](https://github.com/lumada-design/hv-uikit-react/commit/03dcef31b760fef065e9871eed03f1b5a8927238))
+
 # [5.36.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.35.12...@hitachivantara/uikit-react-lab@5.36.0) (2024-07-05)
 
 ### Features

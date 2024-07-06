@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.24 (2024-07-06)
+
+**Note:** Version bump only for package @hitachivantara/uikit-uno-preset
+
 ## 0.2.23 (2024-07-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-uno-preset

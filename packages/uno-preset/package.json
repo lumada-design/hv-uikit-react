@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-uno-preset",
-  "version": "0.2.23",
+  "version": "0.2.24",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "UI Kit UnoCSS preset with the NEXT theme.",
@@ -35,7 +35,7 @@
     "@unocss/preset-uno": "^0.58.5"
   },
   "dependencies": {
-    "@hitachivantara/uikit-styles": "^5.30.2",
+    "@hitachivantara/uikit-styles": "^5.30.3",
     "@unocss/preset-rem-to-px": "^0.58.5",
     "unocss-preset-theme": "^0.12.0"
   },
