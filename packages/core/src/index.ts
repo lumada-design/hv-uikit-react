@@ -35,6 +35,7 @@ export {
 // Components that need to be loaded first because of mutual dependencies (preserve order)
 export * from "./Typography";
 export * from "./Box";
+export * from "./ButtonBase";
 export * from "./Focus";
 export * from "./ListContainer";
 export * from "./Forms/CharCounter";
