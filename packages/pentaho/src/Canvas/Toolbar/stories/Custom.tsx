@@ -15,7 +15,7 @@ import {
   Undo,
   User,
 } from "@hitachivantara/uikit-react-icons";
-import { HvCanvasToolbar } from "@hitachivantara/uikit-react-lab";
+import { HvCanvasToolbar } from "@hitachivantara/uikit-react-pentaho";
 
 const classes = {
   separator: css({

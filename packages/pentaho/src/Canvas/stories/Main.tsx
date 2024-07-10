@@ -23,14 +23,16 @@ import {
   User,
 } from "@hitachivantara/uikit-react-icons";
 import {
-  HvCanvasFloatingPanel,
-  HvCanvasFloatingPanelProps,
-  HvCanvasPanel,
-  HvCanvasToolbar,
   HvFlow,
   HvFlowBackground,
   HvFlowMinimap,
 } from "@hitachivantara/uikit-react-lab";
+import {
+  HvCanvasFloatingPanel,
+  HvCanvasFloatingPanelProps,
+  HvCanvasPanel,
+  HvCanvasToolbar,
+} from "@hitachivantara/uikit-react-pentaho";
 
 // The code is available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/Canvas/stories
 import { eds, nds, nodeTypes } from "./nodes";

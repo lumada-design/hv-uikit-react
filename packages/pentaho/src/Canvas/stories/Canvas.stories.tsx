@@ -5,7 +5,7 @@ import { MainStory } from "./Main";
 import MainRaw from "./Main?raw";
 
 const meta: Meta = {
-  title: "Lab/Canvas",
+  title: "Pentaho/Canvas",
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },

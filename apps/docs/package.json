@@ -14,6 +14,7 @@
     "@hitachivantara/uikit-react-lab": "*",
     "@hitachivantara/uikit-react-viz": "*",
     "@hitachivantara/uikit-styles": "*",
+    "@hitachivantara/uikit-react-pentaho": "*",
     "next": "^14.0.4",
     "nextra": "^2.13.2",
     "nextra-theme-docs": "^2.13.2",

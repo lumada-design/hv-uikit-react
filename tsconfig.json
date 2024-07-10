@@ -10,7 +10,8 @@
       "@hitachivantara/uikit-react-lab": ["packages/lab/src"],
       "@hitachivantara/uikit-react-shared": ["packages/shared/src"],
       "@hitachivantara/uikit-styles": ["packages/styles/src"],
-      "@hitachivantara/uikit-react-viz": ["packages/viz/src"]
+      "@hitachivantara/uikit-react-viz": ["packages/viz/src"],
+      "@hitachivantara/uikit-react-pentaho": ["packages/pentaho/src"]
     }
   },
   "include": [".config", ".storybook/**/*", "apps", "docs", "packages"],

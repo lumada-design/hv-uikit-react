@@ -1,5 +1,8 @@
-import { createClasses, outlineStyles } from "@hitachivantara/uikit-react-core";
-import { theme } from "@hitachivantara/uikit-styles";
+import {
+  createClasses,
+  outlineStyles,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses("HvCanvasPanel", {
   root: {

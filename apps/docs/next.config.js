@@ -18,6 +18,7 @@ module.exports = withNextra({
     "@hitachivantara/uikit-react-shared",
     "@hitachivantara/uikit-styles",
     "@hitachivantara/uikit-react-viz",
+    "@hitachivantara/uikit-react-pentaho",
   ],
   webpack: (config) => {
     config.module.rules.push({

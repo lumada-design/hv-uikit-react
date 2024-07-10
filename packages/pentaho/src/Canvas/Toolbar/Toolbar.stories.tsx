@@ -4,13 +4,13 @@ import { HvButton } from "@hitachivantara/uikit-react-core";
 import {
   HvCanvasToolbar,
   HvCanvasToolbarProps,
-} from "@hitachivantara/uikit-react-lab";
+} from "@hitachivantara/uikit-react-pentaho";
 
 import { CustomStory } from "./stories/Custom";
 import CustomRaw from "./stories/Custom?raw";
 
 const meta: Meta<typeof HvCanvasToolbar> = {
-  title: "Lab/Canvas/Toolbar",
+  title: "Pentaho/Canvas/Toolbar",
   component: HvCanvasToolbar,
   decorators: [
     (Story) => (
