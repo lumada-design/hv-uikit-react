@@ -70,8 +70,10 @@ const ControlledTabs = ({
 const expectSimplePanelClosed = () => {
   const openBtn = screen.getByRole("button", { name: "Open" });
   const content = screen.queryByRole("button", { name: label });
+  const tabPanel = screen.queryByRole("tabpanel");
   const tabList = screen.queryByRole("tablist");
   expect(content).toBeNull();
+  expect(tabPanel).toBeNull();
   expect(tabList).toBeNull();
   expect(openBtn).toBeInTheDocument();
 };
@@ -79,8 +81,11 @@ const expectSimplePanelClosed = () => {
 const expectSimplePanelOpened = () => {
   const closeBtn = screen.getByRole("button", { name: "Close" });
   const content = screen.getByRole("button", { name: label });
+  const tabPanel = screen.getByRole("tabpanel");
   const tabList = screen.getByRole("tablist");
   expect(content).not.toBeNull();
+  expect(tabPanel).not.toBeNull();
+  expect(tabPanel).toBeInTheDocument();
   expect(content).toBeInTheDocument();
   expect(tabList).toBeInTheDocument();
   expect(closeBtn).toBeInTheDocument();
@@ -150,7 +155,7 @@ describe("CanvasPanel", () => {
     renderSimplePanel({ onTabChange: clickMock, defaultOpen: true });
 
     const panelTabs = screen.getAllByRole("tab");
-    expect(panelTabs).toHaveLength(2);
+    expect(panelTabs).toHaveLength(tabs.length);
     expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
       tabs[0].content,
     );
@@ -189,7 +194,7 @@ describe("CanvasPanel", () => {
     render(<ControlledTabs onTabChange={clickMock} />);
 
     const panelTabs = screen.getAllByRole("tab");
-    expect(panelTabs).toHaveLength(2);
+    expect(panelTabs).toHaveLength(tabs.length);
     expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
       tabs[1].content,
     );
