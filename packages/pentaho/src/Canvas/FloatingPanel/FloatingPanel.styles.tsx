@@ -65,6 +65,6 @@ export const { staticClasses, useClasses } = createClasses(
       right: theme.space.xs,
       top: 8,
     },
-    content: {},
+    content: { borderTopRightRadius: "var(--right-border-radius)" },
   },
 );

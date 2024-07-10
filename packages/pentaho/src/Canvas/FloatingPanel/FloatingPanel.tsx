@@ -78,9 +78,16 @@ export const HvCanvasFloatingPanel = forwardRef<
 
   const id = useUniqueId(idProp);
 
+  // Tab resize detector: to position tab actions and set the panel top right border radius
   const { width: tabWidth = 0, ref: tabRef } = useResizeDetector({
     handleHeight: false,
   });
+  // Tab panel resize detector: to set the panel top right border radius
+  const { width: panelWidth = 0, ref: panelRef } = useResizeDetector({
+    handleHeight: false,
+  });
+
+  // Left actions resize detector: to position tab title according with actions
   const { width: leftActionWidth = 32, ref: leftActionRef } = useResizeDetector(
     {
       handleHeight: false,
@@ -90,6 +97,7 @@ export const HvCanvasFloatingPanel = forwardRef<
       },
     },
   );
+  // Right actions resize detector: to position tab title according with actions
   const { width: rightActionWidth = 32, ref: rightActionRef } =
     useResizeDetector({
       handleHeight: false,
@@ -200,9 +208,15 @@ export const HvCanvasFloatingPanel = forwardRef<
           : null}
       </div>
       <HvPanel
+        ref={panelRef}
         role="tabpanel"
         aria-labelledby={`${id}-${selectedTab}`}
         className={classes.content}
+        style={{
+          // @ts-ignore
+          "--right-border-radius":
+            tabWidth * tabs.length >= panelWidth ? "0px" : "16px",
+        }}
       >
         {children}
       </HvPanel>
