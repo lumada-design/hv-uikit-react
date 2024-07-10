@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import {
   ExtractNames,
   HvBaseProps,
+  HvPanel,
   useControlled,
   useDefaultProps,
   useLabels,
@@ -125,13 +126,13 @@ export const HvCanvasPanel = forwardRef<HTMLDivElement, HvCanvasPanelProps>(
               ))}
             </HvCanvasTabs>
           )}
-          <div
+          <HvPanel
             role={tabs ? "tabpanel" : undefined}
             aria-labelledby={tabs ? `${id}-${selectedTab}` : undefined}
             className={classes.content}
           >
             {children}
-          </div>
+          </HvPanel>
         </div>
         <div
           className={cx(classes.handle, {
