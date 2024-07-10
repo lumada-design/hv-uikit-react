@@ -2,7 +2,7 @@ import { css } from "@emotion/css";
 import {
   HvCanvasFloatingPanel,
   HvCanvasFloatingPanelProps,
-} from "@hitachivantara/uikit-react-lab";
+} from "@hitachivantara/uikit-react-pentaho";
 
 const tabs = [
   {

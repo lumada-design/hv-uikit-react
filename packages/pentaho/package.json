@@ -1,23 +1,22 @@
 {
-  "name": "@hitachivantara/uikit-react-lab",
-  "version": "5.36.1",
+  "name": "@hitachivantara/uikit-react-pentaho",
+  "version": "0.1.0",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
-  "description": "Contributed React components for the NEXT UI Kit.",
+  "description": "UI Kit Pentaho+ React components.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "main": "src/index.ts",
   "sideEffects": false,
   "keywords": [
     "hitachi-vantara",
-    "design-system",
     "ui-kit",
-    "react",
-    "typescript"
+    "typescript",
+    "pentaho"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/lumada-design/hv-uikit-react.git",
-    "directory": "packages/lab"
+    "directory": "packages/pentaho"
   },
   "license": "Apache-2.0",
   "bugs": {
@@ -41,19 +40,11 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@dnd-kit/core": "^6.1.0",
-    "@dnd-kit/modifiers": "^6.0.1",
     "@emotion/css": "^11.11.0",
     "@hitachivantara/uikit-react-core": "^5.66.9",
     "@hitachivantara/uikit-react-icons": "^5.10.2",
-    "@hitachivantara/uikit-styles": "^5.30.3",
     "@mui/base": "^5.0.0-beta.40",
-    "@types/react-grid-layout": "^1.3.5",
-    "react-grid-layout": "^1.4.4",
-    "reactflow": "^11.10.1",
-    "uid": "^2.0.2",
-    "usehooks-ts": "^2.16.0",
-    "zustand": "^4.5.2"
+    "react-resize-detector": "^8.1.0"
   },
   "devDependencies": {
     "@testing-library/react": "^14.1.2",
@@ -72,12 +63,12 @@
     "access": "public",
     "directory": "package",
     "main": "dist/cjs/index.cjs",
-    "module": "dist/esm/index.js",
+    "module": "dist/esm/index.mjs",
     "types": "dist/types/index.d.ts",
     "exports": {
       ".": {
         "require": "./dist/cjs/index.cjs",
-        "import": "./dist/esm/index.js"
+        "import": "./dist/esm/index.mjs"
       }
     }
   },

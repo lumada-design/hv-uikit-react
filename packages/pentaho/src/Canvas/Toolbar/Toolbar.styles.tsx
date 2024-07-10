@@ -1,5 +1,4 @@
-import { createClasses } from "@hitachivantara/uikit-react-core";
-import { theme } from "@hitachivantara/uikit-styles";
+import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses("HvCanvasToolbar", {
   root: {

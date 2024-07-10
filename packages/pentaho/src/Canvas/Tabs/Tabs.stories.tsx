@@ -4,10 +4,10 @@ import {
   HvCanvasTab,
   HvCanvasTabs,
   HvCanvasTabsProps,
-} from "@hitachivantara/uikit-react-lab";
+} from "@hitachivantara/uikit-react-pentaho";
 
 const meta: Meta<typeof HvCanvasTabs> = {
-  title: "Lab/Canvas/Tabs",
+  title: "Pentaho/Canvas/Tabs",
   component: HvCanvasTabs,
   // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvCanvasTab },

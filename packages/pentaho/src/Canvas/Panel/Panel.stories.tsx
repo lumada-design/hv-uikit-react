@@ -2,11 +2,11 @@ import { Meta, StoryObj } from "@storybook/react";
 import {
   HvCanvasPanel,
   HvCanvasPanelProps,
-} from "@hitachivantara/uikit-react-lab";
+} from "@hitachivantara/uikit-react-pentaho";
 import { theme } from "@hitachivantara/uikit-styles";
 
 const meta: Meta<typeof HvCanvasPanel> = {
-  title: "Lab/Canvas/Panel",
+  title: "Pentaho/Canvas/Panel",
   component: HvCanvasPanel,
 };
 export default meta;

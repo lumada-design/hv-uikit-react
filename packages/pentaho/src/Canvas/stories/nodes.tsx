@@ -1,6 +1,6 @@
 import { Handle, Position } from "reactflow";
+import { theme } from "@hitachivantara/uikit-react-core";
 import { HvFlowProps } from "@hitachivantara/uikit-react-lab";
-import { theme } from "@hitachivantara/uikit-styles";
 
 const Node = (props) => (
   <>
