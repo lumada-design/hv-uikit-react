@@ -35,7 +35,7 @@ const classes = {
     height: "100vh",
     [`& .HvFlowSidebarGroup-itemsContainer`]: {
       maxHeight: 300,
-      overflow: "scroll",
+      overflow: "auto",
     },
   }),
   globalActions: css({ paddingBottom: theme.space.md }),

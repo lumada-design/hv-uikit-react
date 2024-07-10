@@ -33,7 +33,7 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasToolbar", {
   actions: {
     display: "flex",
     flexWrap: "nowrap",
-    overflow: "scroll",
+    overflow: "auto",
     paddingRight: theme.space.md,
   },
 });
