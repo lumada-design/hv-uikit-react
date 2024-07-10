@@ -29,6 +29,11 @@ const navigation = [
         label: "Kanban Board",
         path: "/templates/kanban-board",
       },
+      {
+        id: "canvas",
+        label: "Canvas",
+        path: "/templates/canvas",
+      },
     ],
   },
   { id: "flow", label: "Flow", path: "/flow" },

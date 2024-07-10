@@ -11,6 +11,10 @@ export const HvFlowBackground = ({
   ...others
 }: HvFlowBackgroundProps) => {
   return (
-    <Background color={getColor(color, theme.colors.secondary)} {...others} />
+    <Background
+      color={getColor(color, theme.colors.secondary_80)}
+      gap={16}
+      {...others}
+    />
   );
 };
