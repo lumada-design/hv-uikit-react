@@ -81,7 +81,7 @@ export const HvCanvasPanel = forwardRef<HTMLDivElement, HvCanvasPanelProps>(
     const [open, setOpen] = useControlled(openProp, Boolean(defaultOpen));
     const [selectedTab, setSelectedTab] = useControlled<string | number | null>(
       tabProp,
-      tabs?.[0]?.id || "none",
+      tabs?.[0]?.id ?? "none",
     );
 
     const handleTogglePanel = (
