@@ -122,7 +122,7 @@ export const Table = ({
       classes={{
         content: css({
           height: "100%",
-          overflow: "scroll",
+          overflow: "auto",
         }),
       }}
     >
