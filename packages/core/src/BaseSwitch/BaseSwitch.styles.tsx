@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
         transform: "translateX(16px)",
         "& + $track": {
           opacity: 1,
-          backgroundColor: theme.colors.secondary, // TODO: 🎨
+          backgroundColor: theme.colors.text,
         },
         "&:hover": {
           backgroundColor: "transparent",

@@ -8,7 +8,7 @@ export const { staticClasses, useClasses } = createClasses("HvFlowSidebar", {
   },
   contentContainer: { padding: theme.spacing(0, "lg", "sm", "lg") },
   description: {
-    color: theme.colors.secondary_60, // TODO: 🎨
+    color: theme.colors.textSubtle,
   },
   searchRoot: {
     paddingTop: theme.space.sm,

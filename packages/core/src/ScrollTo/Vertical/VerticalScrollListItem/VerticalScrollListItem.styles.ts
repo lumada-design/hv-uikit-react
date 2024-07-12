@@ -25,7 +25,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
   },
   notSelected: {
     fontSize: 4,
-    color: theme.colors.secondary_60, // TODO: 🎨
+    color: theme.colors.textDisabled,
   },
   // TODO: remove in v6 (use classes.button)
   text: {},

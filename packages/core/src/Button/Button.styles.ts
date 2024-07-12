@@ -40,11 +40,11 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   disabled: {
     cursor: "not-allowed",
     color: theme.colors.textDisabled,
-    borderColor: theme.colors.borderSubtle, // TODO: 🎨 - should follow text? textDisabled
+    borderColor: theme.colors.bgDisabled,
     backgroundColor: theme.colors.bgDisabled,
     "&:hover, &:focus-visible": {
       backgroundColor: theme.colors.bgDisabled,
-      borderColor: theme.colors.borderSubtle, // TODO: 🎨 - should follow text? textDisabled
+      borderColor: theme.colors.bgDisabled,
     },
   },
   icon: {
@@ -123,7 +123,7 @@ export const getColoringStyle = (color: string, type?: string) => {
         : `${color}_140`) as keyof typeof theme.colors
     ];
   return {
-    color: theme.colors.bgSurface, // TODO: 🎨
+    color: theme.colors.textDimmed,
     backgroundColor: bg,
     borderColor: bg,
     "&:hover, &:focus-visible": {

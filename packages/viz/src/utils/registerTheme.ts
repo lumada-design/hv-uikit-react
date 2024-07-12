@@ -118,7 +118,7 @@ export const registerTheme = (
         itemStyle: {
           color: themeStructure?.colors.modes[mode].text,
           textStyle: {
-            color: themeStructure?.colors.modes[mode].bgSurface,
+            color: themeStructure?.colors.modes[mode].textDimmed,
           },
         },
       },

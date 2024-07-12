@@ -92,9 +92,9 @@ export const HvStep = ({
 
   const backgroundColor = getColor(state);
 
-  const color = state === "Pending" ? "atmo2" : undefined;
+  const color = state === "Pending" ? "bgPage" : undefined;
   const semantic = state !== "Pending" ? getSemantic(state) : undefined;
-  const status = state === "Current" ? "secondary_60" : undefined; // TODO: 🎨
+  const status = state === "Current" ? "textDisabled" : undefined; // TODO: 🎨
   const IconComponent = iconStateObject[state];
 
   return (

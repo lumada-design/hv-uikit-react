@@ -48,7 +48,7 @@ const border: React.CSSProperties = {
   width: "20px",
   height: "20px",
   borderRadius: "50%",
-  border: `2px solid ${theme.colors.bgSurface}`, // TODO: 🎨
+  border: `2px solid ${theme.colors.textDimmed}`,
   content: "''",
   position: "absolute",
   top: "-4px",
@@ -92,7 +92,7 @@ export const sliderStyles = {
   knobInner: {
     borderColor: "transparent",
     boxShadow: "none",
-    backgroundColor: theme.colors.secondary, // TODO: 🎨
+    backgroundColor: theme.colors.text,
     width: "16px",
     height: "16px",
   },
@@ -109,7 +109,7 @@ export const sliderStyles = {
     zIndex: "-1",
   },
   track: {
-    backgroundColor: theme.colors.secondary, // TODO: 🎨
+    backgroundColor: theme.colors.text,
     height: "3px",
     zIndex: "-1",
     marginTop: "-1px",

@@ -54,7 +54,7 @@ const classes = {
     borderRadius: theme.radii.full,
   }),
   handle: css({
-    backgroundColor: theme.colors.textSubtle, // TODO: 🎨
+    backgroundColor: theme.colors.textSubtle,
     border: `1px solid ${theme.colors.atmo1}`,
     height: 8,
     width: 8,

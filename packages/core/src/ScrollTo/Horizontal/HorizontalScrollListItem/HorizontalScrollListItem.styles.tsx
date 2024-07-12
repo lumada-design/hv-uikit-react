@@ -33,7 +33,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     height: 24,
     width: 24,
     fontSize: 4,
-    color: theme.colors.textDisabled, // TODO: 🎨
+    color: theme.colors.textDisabled,
 
     "& > span": {
       margin: "auto",

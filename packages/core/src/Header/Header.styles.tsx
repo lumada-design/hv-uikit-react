@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvHeader", {
     boxSizing: "border-box",
     flexShrink: 0,
     zIndex: theme.zIndices.banner,
-    color: theme.colors.bgSurface, // TODO: 🎨
+    color: theme.colors.textDimmed,
     boxShadow: theme.colors.shadow,
     borderTop: "none",
   },

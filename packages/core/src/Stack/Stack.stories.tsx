@@ -126,7 +126,7 @@ export const CustomDivider = {
     const StyledDivider = styled("div")({
       width: 150,
       height: 5,
-      border: `1px solid ${theme.colors.secondary_60}`, // TODO: 🎨
+      border: `1px solid ${theme.colors.textDimmed}`, // TODO: 🎨
       borderRadius: 5,
       backgroundColor: theme.colors.borderDivider,
       alignSelf: "center",

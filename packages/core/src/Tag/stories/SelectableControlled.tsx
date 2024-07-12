@@ -20,7 +20,7 @@ const tags = [
   },
   {
     label: "Asset 4",
-    color: theme.colors.bgSurface, // TODO: 🎨
+    color: theme.colors.textDimmed,
     bgColor: "positive",
   },
 ];

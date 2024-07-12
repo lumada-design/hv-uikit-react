@@ -59,15 +59,15 @@ export const { staticClasses, useClasses } = createClasses(
       paddingTop: "4px",
       height: "100%",
       borderTop: "none",
-      borderBottom: `4px solid ${theme.colors.atmo2}`, // TODO: 🎨
+      borderBottom: `4px solid ${theme.colors.borderDimmed}`,
     },
     menubar: {
       marginTop: "0px",
       paddingBottom: "4px",
       paddingTop: "4px",
       height: "100%",
-      borderTop: `0px solid ${theme.colors.bgSurface}`, // TODO: 🎨
-      borderBottom: `${"4px"} solid ${theme.colors.bgSurface}`, // TODO: 🎨
+      borderTop: `0px solid transparent`,
+      borderBottom: `4px solid transparent`,
     },
     selected: {
       "&$menu": {

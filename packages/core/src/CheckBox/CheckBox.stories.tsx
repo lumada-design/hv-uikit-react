@@ -261,14 +261,14 @@ export const Custom: StoryObj<HvCheckBoxProps> = {
         "& svg": {
           border: `1px solid ${theme.colors.warning}`,
           backgroundColor: theme.colors.warning,
-          color: theme.colors.bgSurface, // TODO: 🎨
+          color: theme.colors.textDimmed,
         },
       }),
       indeterminate: css({
         "& svg": {
           border: `1px solid ${theme.colors.warningStrong}`,
           backgroundColor: theme.colors.warningStrong,
-          color: theme.colors.bgSurface, // TODO: 🎨
+          color: theme.colors.textDimmed,
         },
       }),
     };

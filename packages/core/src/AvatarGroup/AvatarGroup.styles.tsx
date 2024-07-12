@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses("HvAvatarGroup", {
   root: {
     display: "flex",
     [`& .${avatarClasses.root}`]: {
-      border: `2px solid ${theme.colors.atmo2}`, // TODO: 🎨
+      border: `2px solid ${theme.colors.borderDimmed}`,
       boxSizing: "content-box",
     },
     "&$row": {

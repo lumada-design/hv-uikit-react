@@ -15,13 +15,13 @@ export const { staticClasses, useClasses } = createClasses("HvCodeEditor", {
     },
     "& .monaco-scrollable-element > .scrollbar > .slider": {
       borderRadius: "5px",
-      background: theme.colors.secondary_60, // TODO: 🎨
+      background: theme.colors.textDisabled,
     },
     "& .monaco-scrollable-element > .scrollbar > .slider:hover": {
-      background: theme.colors.secondary, // TODO: 🎨
+      background: theme.colors.text,
     },
     "& .monaco-scrollable-element > .scrollbar > .slider:active": {
-      background: theme.colors.secondary, // TODO: 🎨
+      background: theme.colors.text,
     },
     "& .monaco-scrollable-element > .visible": {
       background: theme.colors.bgSurface,
