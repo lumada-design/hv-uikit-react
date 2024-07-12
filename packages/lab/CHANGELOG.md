@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.37.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.36.2...@hitachivantara/uikit-react-lab@5.37.0) (2024-07-12)
+
+### Features
+
+- **FloatingPanel:** add floating panel component ([927d2da](https://github.com/lumada-design/hv-uikit-react/commit/927d2daf8fc4719dfce34a94c934d181a0b024df))
+- HvCanvasTab component added and leveraged ([04dc7f3](https://github.com/lumada-design/hv-uikit-react/commit/04dc7f3a7941a5ebc66eaef640259e2e01e7a10d))
+
 ## [5.36.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.36.1...@hitachivantara/uikit-react-lab@5.36.2) (2024-07-11)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

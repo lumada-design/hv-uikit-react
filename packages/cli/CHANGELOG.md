@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.16.8 (2024-07-12)
+
+**Note:** Version bump only for package @hitachivantara/hv-uikit-cli
+
 ## 1.16.7 (2024-07-06)
 
 **Note:** Version bump only for package @hitachivantara/hv-uikit-cli
