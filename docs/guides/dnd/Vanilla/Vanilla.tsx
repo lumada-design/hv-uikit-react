@@ -72,35 +72,34 @@ export const Vanilla = () => {
           <HvTypography variant="title4">To Do</HvTypography>
         </div>
         <HvListContainer>
-          {items &&
-            items?.map((item, index) => (
-              <div key={item.id}>
-                <HvListItem
-                  id={item.id}
-                  className={cx(classes.item, {
-                    [classes.itemDragging]:
-                      dragging && item.id === draggedItem?.id,
-                  })}
-                  draggable
-                  onDragStart={onDragStart}
-                  onDragEnd={onDragEnd}
-                  onDragOver={(e) => onDragOver(e, index)}
-                  onDragLeave={onDragLeave}
-                  onDrop={onDrop}
-                >
-                  <div className={classes.itemTitle}>
-                    {item.icon}
-                    {item.title}
-                  </div>
-                  <div className={classes.handle}>
-                    <Drag />
-                  </div>
-                </HvListItem>
-                {draggedOverIndex === index && (
-                  <div className={classes.placeholder} />
-                )}
-              </div>
-            ))}
+          {items?.map((item, index) => (
+            <div key={item.id}>
+              <HvListItem
+                id={item.id}
+                className={cx(classes.item, {
+                  [classes.itemDragging]:
+                    dragging && item.id === draggedItem?.id,
+                })}
+                draggable
+                onDragStart={onDragStart}
+                onDragEnd={onDragEnd}
+                onDragOver={(e) => onDragOver(e, index)}
+                onDragLeave={onDragLeave}
+                onDrop={onDrop}
+              >
+                <div className={classes.itemTitle}>
+                  {item.icon}
+                  {item.title}
+                </div>
+                <div className={classes.handle}>
+                  <Drag />
+                </div>
+              </HvListItem>
+              {draggedOverIndex === index && (
+                <div className={classes.placeholder} />
+              )}
+            </div>
+          ))}
         </HvListContainer>
       </div>
     </div>

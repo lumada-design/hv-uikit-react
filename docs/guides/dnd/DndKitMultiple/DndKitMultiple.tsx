@@ -136,8 +136,7 @@ export const ColumnContainer = ({ column, items }: ColumnContainerProps) => {
       </div>
       <HvListContainer selectable>
         <SortableContext items={itemsIds}>
-          {items &&
-            items?.map((item) => <ItemCard key={item.id} item={item} />)}
+          {items?.map((item) => <ItemCard key={item.id} item={item} />)}
         </SortableContext>
       </HvListContainer>
     </div>

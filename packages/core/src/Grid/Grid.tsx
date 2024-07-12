@@ -153,14 +153,10 @@ function getGridSpacing(spacing: HvGridProps["spacing"]) {
       gridSpacing = BREAKPOINT_GUTTERS[spacing];
     }
   } else if (typeof spacing === "object") {
-    gridSpacing = Object.keys(spacing).reduce(
-      (acc, breakpoint) => ({
-        ...acc,
-        [breakpoint]:
-          BREAKPOINT_GUTTERS[spacing[breakpoint]] ?? spacing[breakpoint],
-      }),
-      {},
-    );
+    gridSpacing = Object.keys(spacing).reduce((acc, bp) => {
+      acc[bp] = BREAKPOINT_GUTTERS[spacing[bp]] ?? spacing[bp];
+      return acc;
+    }, {});
   } else if (spacing === 0) {
     gridSpacing = { xs: 0 };
   } else {

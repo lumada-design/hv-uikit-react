@@ -9,7 +9,7 @@ export const getScrollTop = (
     return (
       window.scrollY ||
       window.pageYOffset ||
-      (document.documentElement && document.documentElement.scrollTop) ||
+      document.documentElement?.scrollTop ||
       document.body.scrollTop
     );
   }
@@ -54,7 +54,7 @@ export const horizontalScrollOffset = (
 export const scrollElement = (
   element: HTMLElement,
   container: HTMLElement | (Window & typeof globalThis),
-  offset: number = 0,
+  offset = 0,
   direction?: "row" | "column",
 ) => {
   if (direction === "row") {
@@ -81,8 +81,7 @@ export const isScrolledToTheBottom = (
   if (container === window) {
     // Accounting for cases where html/body are set to height:100%
     const scrollHeight =
-      (document.documentElement && document.documentElement.scrollHeight) ||
-      document.body.scrollHeight;
+      document.documentElement?.scrollHeight || document.body.scrollHeight;
 
     return containerScrollTop + window.innerHeight >= scrollHeight;
   }

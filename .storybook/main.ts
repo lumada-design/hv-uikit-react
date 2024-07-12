@@ -1,4 +1,4 @@
-import { dirname, join } from "path";
+import { dirname, join } from "node:path";
 import { StorybookConfig } from "@storybook/react-vite";
 import remarkGfm from "remark-gfm";
 import { mergeConfig } from "vite";
@@ -37,9 +37,9 @@ export default {
     },
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-links"),
-    __dirname + "/addons/version-selector",
-    __dirname + "/addons/theme-selector",
-    __dirname + "/addons/mode-selector",
+    `${__dirname}/addons/version-selector`,
+    `${__dirname}/addons/theme-selector`,
+    `${__dirname}/addons/mode-selector`,
   ],
   features: {},
   staticDirs: [

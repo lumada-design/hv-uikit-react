@@ -313,8 +313,8 @@ export const isSingleSlider = (
  * @memberof HvSlider
  */
 export const generateDefaultKnobProperties = (
-  numberOfKnobs: number = 1,
-  disabled: boolean = false,
+  numberOfKnobs = 1,
+  disabled = false,
   knobPropertiesProp?: HvKnobProperty[],
 ): HvKnobProperty[] => {
   let knobProperties = knobPropertiesProp || [];

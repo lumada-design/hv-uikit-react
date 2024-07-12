@@ -116,9 +116,9 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
     import.meta.env.DEV &&
     [
       Object.values(attributes || {}).map(({ type }) => type),
-      Object.values(operators || {})
-        .map((ops) => ops.map(({ operator }) => operator))
-        .flat(),
+      Object.values(operators || {}).flatMap((ops) =>
+        ops.map(({ operator }) => operator),
+      ),
     ]
       .flat()
       ?.find((key) => key === defaultRendererKey)

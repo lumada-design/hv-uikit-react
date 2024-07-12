@@ -74,7 +74,7 @@ export const HvHeaderMenuItem = (props: HvHeaderMenuItemProps) => {
 
   const { data } = item;
 
-  const hasSubLevel = data && data.length;
+  const hasSubLevel = data?.length;
 
   const isMenu = type === "menu";
 

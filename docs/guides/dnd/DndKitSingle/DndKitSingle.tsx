@@ -166,8 +166,7 @@ export const DndKitSingle = () => {
         </div>
         <HvListContainer selectable>
           <SortableContext items={itemsIds}>
-            {items &&
-              items?.map((item) => <ItemCard key={item.id} item={item} />)}
+            {items?.map((item) => <ItemCard key={item.id} item={item} />)}
           </SortableContext>
         </HvListContainer>
       </div>

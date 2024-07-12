@@ -28,7 +28,7 @@
     "build": "vite build",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "run-s clean build && npx clean-publish"
+    "prepublishOnly": "npm run build && npx clean-publish"
   },
   "peerDependencies": {
     "@unocss/core": "^0.58.5",
@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@unocss/preset-uno": "^0.58.5",
-    "npm-run-all": "^4.1.5",
     "vite": "^5.1.0"
   },
   "files": [

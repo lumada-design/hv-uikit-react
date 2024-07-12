@@ -91,16 +91,13 @@ export const HvWizard = ({
     return () => {
       if (!open) {
         setContext((c) =>
-          Object.entries(c).reduce(
-            (acc, [key, child]) => ({
-              ...acc,
-              [+key]: {
-                ...child,
-                touched: false,
-              },
-            }),
-            {} as HvWizardTabs,
-          ),
+          Object.entries(c).reduce<HvWizardTabs>((acc, [key, child]) => {
+            acc[+key] = {
+              ...child,
+              touched: false,
+            };
+            return acc;
+          }, {}),
         );
         setTab(0);
       }

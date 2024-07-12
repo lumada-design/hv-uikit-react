@@ -70,41 +70,40 @@ export const HvVerticalNavigationSlider = (
 
   return (
     <HvListContainer interactive id={id}>
-      {data &&
-        data.map((item) => (
-          <HvListItem
-            key={item.id}
-            classes={{
-              root: classes.root,
-              selected: classes.listItemSelected,
-              focus: classes.listItemFocus,
-            }}
-            onClick={(event) => {
-              onNavigateToTarget?.(event, item);
-            }}
-            aria-label={item.label}
-            aria-current={
-              selected === item.id ? (item.href ? "page" : true) : undefined
-            }
-            selected={selected === item.id}
-            startAdornment={item.icon ? <div>{item.icon}</div> : undefined}
-            endAdornment={
-              item.data && item.data.length > 0 ? (
-                <HvButton
-                  icon
-                  onClick={(event) => {
-                    onNavigateToChild?.(event, item);
-                  }}
-                  aria-label={forwardButtonAriaLabel}
-                >
-                  <DropRightXS />
-                </HvButton>
-              ) : undefined
-            }
-          >
-            <HvOverflowTooltip data={item.label} />
-          </HvListItem>
-        ))}
+      {data?.map((item) => (
+        <HvListItem
+          key={item.id}
+          classes={{
+            root: classes.root,
+            selected: classes.listItemSelected,
+            focus: classes.listItemFocus,
+          }}
+          onClick={(event) => {
+            onNavigateToTarget?.(event, item);
+          }}
+          aria-label={item.label}
+          aria-current={
+            selected === item.id ? (item.href ? "page" : true) : undefined
+          }
+          selected={selected === item.id}
+          startAdornment={item.icon ? <div>{item.icon}</div> : undefined}
+          endAdornment={
+            item.data && item.data.length > 0 ? (
+              <HvButton
+                icon
+                onClick={(event) => {
+                  onNavigateToChild?.(event, item);
+                }}
+                aria-label={forwardButtonAriaLabel}
+              >
+                <DropRightXS />
+              </HvButton>
+            ) : undefined
+          }
+        >
+          <HvOverflowTooltip data={item.label} />
+        </HvListItem>
+      ))}
     </HvListContainer>
   );
 };

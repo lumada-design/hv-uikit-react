@@ -139,13 +139,12 @@ const controlledSelectedEntry = (i: number): AssetEvent => {
   };
 };
 
-export const makeRenderersData = (len: number = 10) =>
+export const makeRenderersData = (len = 10) =>
   [...Array(len).keys()].map(newRendererEntry);
 
-export const makeData = (len: number = 10) =>
-  [...Array(len).keys()].map(makeEvent);
+export const makeData = (len = 10) => [...Array(len).keys()].map(makeEvent);
 
-export const makeSelectedData = (len: number = 10) =>
+export const makeSelectedData = (len = 10) =>
   [...Array(len).keys()].map(controlledSelectedEntry);
 
 // https://react-table-v7-docs.netlify.app/docs/api/useTable#column-options

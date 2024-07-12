@@ -99,7 +99,7 @@ export const HvCalendarCell = (props: HvCalendarCellProps) => {
           [classes.endBookend]: inMonth && endBookend && rangeMode,
         })}
       >
-        {value && value.getDate()}
+        {value?.getDate()}
       </HvTypography>
     </button>
   );

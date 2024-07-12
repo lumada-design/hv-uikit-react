@@ -52,10 +52,7 @@ const Colors = (): JSX.Element => {
               <HvColorPicker
                 iconOnly
                 defaultValue={
-                  customTheme &&
-                  customTheme.colors &&
-                  customTheme.colors.modes[selectedMode] &&
-                  customTheme.colors.modes?.[selectedMode].backgroundColor
+                  customTheme?.colors?.modes?.[selectedMode]?.backgroundColor
                 }
                 onChangeComplete={(color) =>
                   colorChangedHandler("backgroundColor", color)
@@ -121,13 +118,9 @@ const Colors = (): JSX.Element => {
                       <HvColorPicker
                         iconOnly
                         defaultValue={
-                          (customTheme &&
-                            customTheme.colors &&
-                            customTheme.colors.modes[selectedMode] &&
-                            customTheme.colors.modes?.[selectedMode][
-                              c as keyof HvThemeTokens["colors"]
-                            ]) ||
-                          groupColors[c]
+                          customTheme?.colors?.modes?.[selectedMode]?.[
+                            c as keyof HvThemeTokens["colors"]
+                          ] || groupColors[c]
                         }
                         onChangeComplete={(color) =>
                           colorChangedHandler(c, color)

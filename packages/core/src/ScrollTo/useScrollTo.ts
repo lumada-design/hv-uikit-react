@@ -14,11 +14,11 @@ interface HvScrollToOptionWithLink extends HvScrollToOption {
 }
 
 export const useScrollTo = (
-  selectedIndexProp: number = 0,
+  selectedIndexProp = 0,
   scrollElementId: string | undefined = undefined,
   navigationMode: "push" | "replace" | "none" = "push",
-  relativeLinks: boolean = false,
-  offset: number = 0,
+  relativeLinks = false,
+  offset = 0,
   options: HvScrollToOption[] = [],
   onChange:
     | ((

@@ -2,16 +2,6 @@ import { render } from "@testing-library/react";
 
 import { HvSimpleGrid } from "./SimpleGrid";
 
-export default {
-  title: "Tests/SimpleGrid",
-  parameters: {
-    docs: {
-      disable: true,
-      page: null,
-    },
-  },
-};
-
 describe("SimpleGrid", () => {
   it("correct render children", () => {
     const { getByTestId } = render(

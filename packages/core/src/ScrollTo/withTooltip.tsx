@@ -17,7 +17,7 @@ export const withTooltip = (
   label: string,
   componentType: React.ElementType,
   tooltipPosition: HvScrollToTooltipPositions = "top",
-  hideOnOverflow: boolean = true,
+  hideOnOverflow = true,
 ) => {
   const component = (props: HvTypographyProps) => (
     <HvTypography component={componentType} {...props}>

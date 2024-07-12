@@ -606,47 +606,46 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           onClick={onContainerClickHandler}
           ref={forkedContainerRef}
         >
-          {value &&
-            value.map((t, i) => {
-              const tag =
-                typeof t === "string"
-                  ? {
-                      label: t,
-                      type: "semantic",
-                    }
-                  : t;
-              const { label, type, ...otherProps } = tag;
-              return (
-                <HvListItem
-                  key={`${tag.label}-${i}`}
-                  tabIndex={-1}
-                  className={cx({ [classes.singleLine]: !multiline })}
+          {value?.map((t, i) => {
+            const tag =
+              typeof t === "string"
+                ? {
+                    label: t,
+                    type: "semantic",
+                  }
+                : t;
+            const { label, type, ...otherProps } = tag;
+            return (
+              <HvListItem
+                key={`${tag.label}-${i}`}
+                tabIndex={-1}
+                className={cx({ [classes.singleLine]: !multiline })}
+                classes={{
+                  gutters: classes.listItemGutters,
+                  root: classes.listItemRoot,
+                }}
+                id={setId(elementId, `tag-${i}`)}
+              >
+                <HvTag
+                  label={label}
+                  className={cx({
+                    [classes.tagSelected]: i === tagCursorPos,
+                  })}
                   classes={{
-                    gutters: classes.listItemGutters,
-                    root: classes.listItemRoot,
+                    chipRoot: classes.chipRoot,
                   }}
-                  id={setId(elementId, `tag-${i}`)}
-                >
-                  <HvTag
-                    label={label}
-                    className={cx({
-                      [classes.tagSelected]: i === tagCursorPos,
-                    })}
-                    classes={{
-                      chipRoot: classes.chipRoot,
-                    }}
-                    type={type}
-                    {...(!(readOnly || disabled || type === "categorical") && {
-                      onDelete: (event) => onDeleteTagHandler(event, i),
-                    })}
-                    deleteButtonProps={{
-                      tabIndex: -1,
-                    }}
-                    {...otherProps}
-                  />
-                </HvListItem>
-              );
-            })}
+                  type={type}
+                  {...(!(readOnly || disabled || type === "categorical") && {
+                    onDelete: (event) => onDeleteTagHandler(event, i),
+                  })}
+                  deleteButtonProps={{
+                    tabIndex: -1,
+                  }}
+                  {...otherProps}
+                />
+              </HvListItem>
+            );
+          })}
           {!(disabled || readOnly) && (
             <HvListItem
               className={cx(
