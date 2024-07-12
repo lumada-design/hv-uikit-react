@@ -1,6 +1,7 @@
 {
   "name": "@hitachivantara/uikit-uno-preset",
   "version": "0.2.25",
+  "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "UI Kit UnoCSS preset with the NEXT theme.",
@@ -63,7 +64,8 @@
     "withoutPublish": true,
     "tempDir": "package",
     "fields": [
-      "main"
+      "main",
+      "type"
     ],
     "files": [
       "tsconfig.json"

@@ -1,6 +1,7 @@
 {
   "name": "@hitachivantara/uikit-styles",
   "version": "5.31.0",
+  "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "UI Kit styling solution for the Next Design System.",
@@ -54,7 +55,8 @@
     "withoutPublish": true,
     "tempDir": "package",
     "fields": [
-      "main"
+      "main",
+      "type"
     ],
     "files": [
       "tsconfig.json"

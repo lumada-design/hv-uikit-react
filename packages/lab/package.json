@@ -1,6 +1,7 @@
 {
   "name": "@hitachivantara/uikit-react-lab",
   "version": "5.37.4",
+  "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Contributed React components for the NEXT UI Kit.",
@@ -81,7 +82,8 @@
     "withoutPublish": true,
     "tempDir": "package",
     "fields": [
-      "main"
+      "main",
+      "type"
     ],
     "files": [
       "tsconfig.json"

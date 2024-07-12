@@ -1,6 +1,7 @@
 {
   "name": "@hitachivantara/uikit-react-code-editor",
   "version": "5.2.180",
+  "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "A wrapper to the React Monaco editor (https://github.com/react-monaco-editor/react-monaco-editor) using the Hitachi Vantara's Design System styles.",
@@ -66,7 +67,8 @@
     "withoutPublish": true,
     "tempDir": "package",
     "fields": [
-      "main"
+      "main",
+      "type"
     ],
     "files": [
       "tsconfig.json"
