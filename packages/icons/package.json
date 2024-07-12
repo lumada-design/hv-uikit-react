@@ -1,6 +1,7 @@
 {
   "name": "@hitachivantara/uikit-react-icons",
   "version": "5.10.5",
+  "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "NEXT Design System icons packaged as a set of React components.",
@@ -30,8 +31,8 @@
     "optimize": "svgo -r -f assets assets",
     "preconvert": "npx rimraf src",
     "convert": "run-s convert:*",
-    "convert:svg": "tsx scripts/svgToReact.ts dir --input assets --output src",
-    "convert:sprites": "tsx scripts/svgToSprite.ts dir --input assets --output sprites",
+    "convert:svg": "tsx scripts/svgToReact.ts",
+    "convert:sprites": "tsx scripts/svgToSprite.ts",
     "convert:copy": "npx cpy \"lib/*\" \"src\"",
     "clean": "npx rimraf dist src sprites package",
     "prepare": "npm run convert",
@@ -58,8 +59,7 @@
     "recursive-readdir": "^2.2.3",
     "svgo": "^3.1.0",
     "tsx": "^4.6.2",
-    "vite": "^5.1.0",
-    "yargs": "^17.7.2"
+    "vite": "^5.1.0"
   },
   "files": [
     "dist"
@@ -81,7 +81,8 @@
     "withoutPublish": true,
     "tempDir": "package",
     "fields": [
-      "main"
+      "main",
+      "type"
     ],
     "files": [
       "tsconfig.json"

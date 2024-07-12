@@ -1,6 +1,8 @@
-/* eslint-disable no-console */
-const fs = require("node:fs");
-const path = require("node:path");
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const fixTitle = (filePath, title) => {
   const data = fs.readFileSync(filePath, "utf-8");
@@ -17,7 +19,7 @@ const fixStorybookTitle = () => {
     console.log("⏳ Fixing Storybook title.");
 
     const title = "NEXT UI Kit";
-    const storybookDist = path.resolve(__dirname, "../../dist");
+    const storybookDist = path.resolve(__dirname, "../dist");
     const htmlFile = `${storybookDist}/index.html`;
     const iframeFile = `${storybookDist}/iframe.html`;
 

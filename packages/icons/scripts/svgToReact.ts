@@ -2,26 +2,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { transform } from "@svgr/core";
-import recursive from "recursive-readdir";
-import yargs from "yargs";
 
 import { generateComponent } from "./generateComponent";
 import { extractColors, extractSize, replaceFill } from "./utils";
 
-// Argument setup
-const args = yargs // reading arguments from the command line
-  .option("output", { alias: "o" })
-  .option("input", { alias: "i" })
-  .option("rm-style", { default: false }).argv as any;
-
 // Resolve arguments
-const firstArg = args._[0];
-const secondArgs = args._[1] || "MyComponent";
-const inputPath = args.input;
-const outputPath = args.output as string;
-
-// Bootstrap base variables
-const svg = `./${firstArg}.svg`; // append the file extension
+const inputPath = "assets";
+const outputPath = "src";
 
 const componentOutputFolder = outputPath
   ? path.resolve(process.cwd(), outputPath)
@@ -151,16 +138,6 @@ const processFile = (file: string, subFolder = ".", depth = 0) => {
   }
 };
 
-const runUtilForAllInDir = () => {
-  recursive(`${process.cwd()}/${inputPath}`, (err, files) => {
-    if (err) {
-      console.log(err);
-      return;
-    } // Get out early if not found
-    files.forEach((file) => processFile(file));
-  });
-};
-
 const runUtilForJustFilesInDir = (
   folder: string,
   subFolder = ".",
@@ -193,10 +170,4 @@ fs.mkdir(outputPath, { recursive: true }, (err) => {
 
 fs.writeFile(path.resolve(process.cwd(), outputPath, `index.ts`), "", () => {});
 
-// Main entry point
-if (firstArg === "dir") {
-  if (secondArgs === "flatten") runUtilForAllInDir();
-  else runUtilForJustFilesInDir(`${process.cwd()}/${inputPath}`);
-} else {
-  runUtil(svg, secondArgs);
-}
+runUtilForJustFilesInDir(`${process.cwd()}/${inputPath}`);

@@ -15,5 +15,5 @@
     "",
     "^[./]"
   ],
-  "importOrderTypeScriptVersion": "4.9.5"
+  "importOrderTypeScriptVersion": "5.5.4"
 }

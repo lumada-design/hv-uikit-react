@@ -2,20 +2,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import recursive from "recursive-readdir";
-import yargs from "yargs";
 
 import { generateSymbol } from "./generateSymbol";
 import { extractColors, replaceFill } from "./utils";
 
-// Argument setup
-const args = yargs // reading arguments from the command line
-  .option("output", { alias: "o" })
-  .option("input", { alias: "i" }).argv as any;
-
 // Resolve arguments
-const firstArg = args._[0];
-const inputPath = args.input as string;
-const outputPath = args.output as string;
+const inputPath = "assets";
+const outputPath = "sprites";
 
 const outputFolder = outputPath
   ? path.resolve(process.cwd(), outputPath)
@@ -55,11 +48,7 @@ fs.mkdir(outputFolder, { recursive: true }, (err) => {
 
 // Create a sprite for each group of SVG files
 (async () => {
-  const svgPathsByGroup =
-    firstArg === "dir"
-      ? await getSvgPathsByGroup(inputPath)
-      : { icons: [inputPath] };
-
+  const svgPathsByGroup = await getSvgPathsByGroup(inputPath);
   for (const groupName in svgPathsByGroup) {
     if (Object.hasOwn(svgPathsByGroup, groupName)) {
       const svgPaths = svgPathsByGroup[groupName];

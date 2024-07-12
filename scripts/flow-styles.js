@@ -1,8 +1,9 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-console */
-const { execSync } = require("node:child_process");
-const fs = require("node:fs");
-const path = require("node:path");
+import { execSync } from "node:child_process";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const getReactFlowStyles = () => {
   try {
@@ -10,11 +11,11 @@ const getReactFlowStyles = () => {
 
     const reactFlowFile = path.resolve(
       __dirname,
-      "../../node_modules/reactflow/dist/style.css",
+      "../node_modules/reactflow/dist/style.css",
     );
     const filePath = path.resolve(
       __dirname,
-      "../../packages/lab/src/components/Flow/base.ts",
+      "../packages/lab/src/Flow/base.ts",
     );
 
     // Get styles
