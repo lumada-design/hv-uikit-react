@@ -89,7 +89,7 @@ export const HvFlowBaseNode = ({
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
-  const { classes, cx, css } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   const renderOutput = (output: HvFlowNodeOutput) => {
     const edgeConnected = isConnected(id, "source", output.id!, outputEdges);
@@ -139,9 +139,12 @@ export const HvFlowBaseNode = ({
 
   return (
     <div
+      style={{
+        // @ts-ignore
+        "--node-color": color,
+      }}
       className={cx(
         "nowheel", // Disables the default canvas pan behaviour when scrolling inside the node
-        css({ border: `1px solid ${color}` }),
         classes.root,
         className,
       )}
@@ -159,14 +162,13 @@ export const HvFlowBaseNode = ({
           </HvIconButton>
         ))}
       </NodeToolbar>
-      <div
-        className={cx(css({ backgroundColor: color }), classes.headerContainer)}
-      >
+      <div className={classes.headerContainer}>
         <div
-          className={cx(
-            classes.titleContainer,
-            css({ "& svg *.color0": { fill: iconColor } }),
-          )}
+          style={{
+            // @ts-ignore
+            "--icon-color": iconColor,
+          }}
+          className={classes.titleContainer}
         >
           {icon}
           <HvTypography

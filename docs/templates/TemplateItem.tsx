@@ -77,6 +77,11 @@ const templates = [
     img: "https://i.imgur.com/QQ0WvmN.png",
     href: "./?path=/docs/templates-welcome--docs",
   },
+  {
+    id: "Canvas",
+    img: "https://i.imgur.com/fViaBkg.png",
+    href: "./?path=/docs/templates-canvas--docs",
+  },
 ];
 
 export const TemplateItems = () => {

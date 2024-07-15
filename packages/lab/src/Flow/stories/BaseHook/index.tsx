@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { css } from "@emotion/css";
+import { NodeProps } from "reactflow";
 import {
   HvButton,
   HvGlobalActions,
@@ -19,6 +20,7 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import {
   HvFlow,
+  HvFlowBackground,
   HvFlowControls,
   HvFlowEmpty,
   HvFlowProps,
@@ -26,7 +28,6 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 
 import { restrictToSample } from "../Base";
-import { LayoutsProvider } from "../Base/LayoutsContext";
 // The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/BaseHook
 import { CustomEdge } from "./IconEdge";
 import { Node } from "./Node";
@@ -54,40 +55,34 @@ const initialState = {
   edges: [
     {
       source: "1caf2381eaf",
-      sourceHandle: "0",
+      sourceHandle: "leaves",
       target: "caf2381eaf3",
-      targetHandle: "0",
+      targetHandle: "teapot",
       id: "reactflow__edge-1caf2381eaf0-caf2381eaf30",
       type: "iconEdge",
     },
   ],
-  viewport: { x: 150, y: 300, zoom: 0.6 },
+  viewport: { x: 100, y: 500, zoom: 1 },
 };
 
-const LeavesNode = (props) => (
+const LeavesNode = (props: NodeProps) => (
   <Node
     groupId="leaves"
+    output={{ id: "leaves", label: "outputs" }}
     {...props}
-    outputs={[{ label: "outputs", provides: "leaves" }]}
-    inputs={[]}
   />
 );
 
-const WaterNode = (props) => (
-  <Node
-    groupId="water"
-    {...props}
-    outputs={[{ label: "outputs", provides: "water" }]}
-    inputs={[]}
-  />
+const WaterNode = (props: NodeProps) => (
+  <Node groupId="water" output={{ id: "water", label: "outputs" }} {...props} />
 );
 
-const TeapotNode = (props) => (
+const TeapotNode = (props: NodeProps) => (
   <Node
     groupId="teapot"
+    input={{ label: "inputs", id: "teapot" }}
+    output={{ label: "outputs", id: "tea" }}
     {...props}
-    inputs={[{ label: "inputs", accepts: ["leaves", "water"] }]}
-    outputs={[{ label: "outputs", provides: "tea" }]}
   />
 );
 
@@ -112,13 +107,13 @@ const nodeGroups = {
   },
 } satisfies HvFlowProps["nodeGroups"];
 
-export type NodeGroup = keyof typeof nodeGroups;
-
-export const nodeTypes: HvFlowProps["nodeTypes"] = {
+const nodeTypes = {
   leaves: LeavesNode,
   teapot: TeapotNode,
   water: WaterNode,
 } satisfies HvFlowProps["nodeTypes"];
+
+const edgeTypes = { iconEdge: CustomEdge } satisfies HvFlowProps["edgeTypes"];
 
 // Classes
 export const classes = {
@@ -127,29 +122,13 @@ export const classes = {
   flow: css({
     height: "calc(100% - 90px)",
   }),
+  customAction: css({ display: "flex", flexDirection: "row" }),
 };
 
-export const Flow = () => {
+export const BaseHook = () => {
   const { rootId } = useTheme();
 
   const [open, setOpen] = useState(false);
-
-  const CustomAction = (
-    <div className={css({ display: "flex", flexDirection: "row" })}>
-      <HvTypography
-        link
-        component="a"
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          setOpen(true);
-        }}
-      >
-        Add nodes
-      </HvTypography>
-      <HvTypography>&nbsp;to start building your flow.</HvTypography>
-    </div>
-  );
 
   return (
     <div className={classes.root}>
@@ -175,7 +154,7 @@ export const Flow = () => {
         <HvFlow
           nodes={initialState.nodes}
           edges={initialState.edges}
-          edgeTypes={{ iconEdge: CustomEdge }}
+          edgeTypes={edgeTypes}
           nodeTypes={nodeTypes}
           nodeGroups={nodeGroups}
           defaultViewport={initialState.viewport}
@@ -194,15 +173,27 @@ export const Flow = () => {
               }}
             />
           }
-          // Keeping track of flow updates
-          onFlowChange={(nds, eds) =>
-            console.log("Flow updated: ", { nodes: nds, edges: eds })
-          }
         >
+          <HvFlowBackground />
           <HvFlowControls />
           <HvFlowEmpty
             title="Empty Flow"
-            action={CustomAction}
+            action={
+              <div className={classes.customAction}>
+                <HvTypography
+                  link
+                  component="a"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpen(true);
+                  }}
+                >
+                  Add nodes
+                </HvTypography>
+                <HvTypography>&nbsp;to start building your flow.</HvTypography>
+              </div>
+            }
             icon={<Fail />}
           />
         </HvFlow>
@@ -210,9 +201,3 @@ export const Flow = () => {
     </div>
   );
 };
-
-export const BaseHook = () => (
-  <LayoutsProvider>
-    <Flow />
-  </LayoutsProvider>
-);

@@ -9,6 +9,7 @@ const DetailsView = lazy(() => import("../../../templates/DetailsView"));
 const Dashboard = lazy(() => import("../../../templates/Dashboard"));
 const Welcome = lazy(() => import("../../../templates/Welcome"));
 const KanbanBoard = lazy(() => import("../../../templates/KanbanBoard"));
+const Canvas = lazy(() => import("../../../templates/Canvas"));
 
 export const routes: RouteObject[] = [
   {
@@ -29,6 +30,7 @@ export const routes: RouteObject[] = [
           { path: "form", element: <Form /> },
           { path: "details-view", element: <DetailsView /> },
           { path: "kanban-board", element: <KanbanBoard /> },
+          { path: "canvas", element: <Canvas /> },
         ],
       },
       { path: "/*", lazy: () => import("~/pages/NotFound") },

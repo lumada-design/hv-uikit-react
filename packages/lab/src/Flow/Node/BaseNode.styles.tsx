@@ -6,6 +6,7 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     backgroundColor: theme.colors.atmo1,
     boxShadow: theme.colors.shadow,
     minWidth: "250px",
+    border: "1px solid var(--node-color)",
   },
   headerContainer: {
     padding: theme.spacing(0.5, 1),
@@ -15,11 +16,13 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     alignItems: "center",
     borderTopLeftRadius: "inherit",
     borderTopRightRadius: "inherit",
+    backgroundColor: "var(--node-color)",
   },
   titleContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    "& svg *.color0": { fill: "var(--icon-color)" },
   },
   title: {
     color: theme.colors.base_dark,
