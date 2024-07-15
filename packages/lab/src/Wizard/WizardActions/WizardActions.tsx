@@ -88,16 +88,13 @@ export const HvWizardActions = ({
 
   const handleSkip = useCallback(() => {
     setContext((c) =>
-      Object.entries(c).reduce(
-        (acc, [key, child]) => ({
-          ...acc,
-          [+key]: {
-            ...child,
-            valid: child?.valid !== false,
-          },
-        }),
-        {} as HvWizardTabs,
-      ),
+      Object.entries(c).reduce<HvWizardTabs>((acc, [key, child]) => {
+        acc[+key] = {
+          ...child,
+          valid: child?.valid !== false,
+        };
+        return acc;
+      }, {}),
     );
     setTab(lastPage);
   }, [setTab, lastPage, setContext]);

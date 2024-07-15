@@ -27,7 +27,7 @@
     "build": "npm run clean && vite build",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "run-s clean build && npx clean-publish"
+    "prepublishOnly": "npm run build && npx clean-publish"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
@@ -40,7 +40,6 @@
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
-    "npm-run-all": "^4.1.5",
     "vite": "^5.1.0"
   },
   "files": [

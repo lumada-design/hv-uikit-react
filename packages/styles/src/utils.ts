@@ -50,15 +50,13 @@ const toCSSVars = (obj: object, prefix = "--uikit") => {
   return vars;
 };
 
-export const hasMultipleArgs = <T extends any>(
-  args: T[] | [T[]],
-): args is T[] => {
+export const hasMultipleArgs = <T>(args: T[] | [T[]]): args is T[] => {
   return args.length > 1;
 };
 
 export const mapCSSVars = <T extends object>(
   obj: T,
-  prefix: string = "--uikit",
+  prefix = "--uikit",
 ): DeepString<T> => {
   const vars: DeepString<any> = {};
 
@@ -97,8 +95,8 @@ export const mergeTheme = (...objects: any[]) => {
 
 export const parseTheme = (
   themes: HvThemeStructure[],
-  theme: string = "",
-  colorMode: string = "",
+  theme = "",
+  colorMode = "",
 ): {
   theme: HvThemeStructure;
   selectedTheme: string;

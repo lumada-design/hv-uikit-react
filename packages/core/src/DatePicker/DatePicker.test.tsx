@@ -5,9 +5,7 @@ import { describe, expect, it, vi } from "vitest";
 import { makeUTCDate } from "../Calendar/utils";
 import { HvDatePicker } from "./DatePicker";
 
-export const Main = () => (
-  <HvDatePicker placeholder="Select date" aria-label="Date" />
-);
+const Main = () => <HvDatePicker placeholder="Select date" aria-label="Date" />;
 
 describe("HvDatePicker", () => {
   it("renders the dropdown", () => {

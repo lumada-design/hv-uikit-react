@@ -2,7 +2,7 @@ import { HvListValue } from "./types";
 
 const isItemSelected = (item: HvListValue, newItem: HvListValue) => {
   const selectionKey = item?.id ? "id" : "label";
-  const selectionElement = item && item[selectionKey];
+  const selectionElement = item?.[selectionKey];
   return newItem[selectionKey] === selectionElement;
 };
 

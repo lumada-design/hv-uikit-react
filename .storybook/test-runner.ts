@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "node:fs";
 import { getStoryContext, type TestRunnerConfig } from "@storybook/test-runner";
 import { NodeResult, Result } from "axe-core";
 import { configureAxe, getAxeResults, injectAxe } from "axe-playwright";
@@ -56,7 +56,7 @@ const config: TestRunnerConfig = {
     const validStories = excludeStories.filter((s) =>
       storyContext.title.includes(s),
     );
-    if (validStories.length != 0) return;
+    if (validStories.length !== 0) return;
 
     const specificA11yRules = [{ id: "color-contrast", enabled: false }];
 

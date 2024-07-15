@@ -13,11 +13,11 @@ const getSelectionPath = (
   data: HvHeaderNavigationItemProp[] | undefined,
   selectedId: string | undefined,
   selection: string[] = [],
-  idx: number = -1,
+  idx = -1,
   parent: HvHeaderNavigationItemProp[] = [],
 ): string[] => {
   data?.forEach((item: HvHeaderNavigationItemProp, i) => {
-    const hasData = item.data && item.data.length;
+    const hasData = item.data?.length;
 
     const isSelected = item.id === selectedId;
 

@@ -55,10 +55,8 @@ export const HvWizardContent = ({
         ? false
         : null;
     const valid = invalid ?? (index === 0 || null);
-    return {
-      ...acc,
-      [index]: { ...child.props, form: {}, valid, touched: index === 0 },
-    };
+    acc[index] = { ...child.props, form: {}, valid, touched: index === 0 };
+    return acc;
   }, {});
 
   const summaryRef = useRef<HTMLElement>();
@@ -107,21 +105,17 @@ export const HvWizardContent = ({
   useEffect(() => {
     if (tab && !context[tab]?.touched) {
       setContext((oldContext) =>
-        Object.entries(oldContext).reduce(
-          (acc, [key, childState]) => ({
-            ...acc,
-            ...(+key <= tab
+        Object.entries(oldContext).reduce((acc, [key, childState]) => {
+          acc[key] =
+            +key <= tab
               ? {
-                  [key]: {
-                    ...childState,
-                    touched: true,
-                    valid: childState?.valid ?? true,
-                  },
+                  ...childState,
+                  touched: true,
+                  valid: childState?.valid ?? true,
                 }
-              : { [key]: childState }),
-          }),
-          {},
-        ),
+              : childState;
+          return acc;
+        }, {}),
       );
     }
   }, [tab, context, setContext]);

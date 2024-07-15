@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import styled from "@emotion/styled";
 import {
   ExtractNames,
@@ -145,7 +144,7 @@ export const HvStepNavigation = ({
     separatorValues: { minWidth, maxWidth, getColor, height },
     stepValues: { minSize, maxSize, StepComponent },
   }: any) => {
-    const items = steps.reduce<ReactNode[]>(
+    const items = steps.reduce<React.ReactNode[]>(
       (acc, { state, title, separatorClassName, ...props }, index): any => {
         const containerSize = state === "Current" ? maxSize : minSize;
         const StepContainer = styledLi(containerSize);
@@ -194,9 +193,12 @@ export const HvStepNavigation = ({
               theme,
             ),
           );
-          return [...acc, stepElement, separatorElement];
+
+          acc.push(stepElement, separatorElement);
+          return acc;
         }
-        return [...acc, stepElement];
+        acc.push(stepElement);
+        return acc;
       },
       [],
     );

@@ -140,7 +140,7 @@ export function hvTagColumn<
   valueDataKey: keyof A,
   colorDataKey: keyof A,
   textColorDataKey: keyof A,
-  fromRowData: boolean = false,
+  fromRowData = false,
   tagProps?: HvTagProps,
 ): HvTableColumnConfig<D, H> {
   return {

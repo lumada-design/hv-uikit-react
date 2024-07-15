@@ -115,10 +115,8 @@ export const useData = ({
           }
 
           measuresFields.push(field);
-          return {
-            ...acc,
-            [columnName]: getAgFunc(agFunction, field),
-          };
+          acc[columnName] = getAgFunc(agFunction, field);
+          return acc;
         },
         {},
       );
@@ -148,10 +146,8 @@ export const useData = ({
             field = normalizeColumnName(value.field); // normalize
             orderFunction = value.order ?? "asc";
           }
-          return {
-            ...acc,
-            [field]: orderFunction,
-          };
+          acc[field] = orderFunction;
+          return acc;
         },
         {},
       );
@@ -169,10 +165,9 @@ export const useData = ({
         (acc, curr) => {
           const normalizedMeasure = normalizeColumnName(curr); // normalize
           const normalizedDelta = normalizeColumnName(delta); // normalize
-          return {
-            ...acc,
-            [normalizedMeasure]: `d => d.${normalizedMeasure} - d.${normalizedDelta}`,
-          };
+          acc[normalizedMeasure] =
+            `d => d.${normalizedMeasure} - d.${normalizedDelta}`;
+          return acc;
         },
         {},
       );

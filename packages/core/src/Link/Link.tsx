@@ -8,10 +8,7 @@ export { staticClasses as linkClasses };
 export type HvLinkClasses = ExtractNames<typeof useClasses>;
 
 export interface HvLinkProps extends HvBaseProps<HTMLAnchorElement, "onClick"> {
-  onClick?: (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    data: any,
-  ) => void | undefined;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>, data: any) => void;
   route?: string;
   data?: any;
   children: any;

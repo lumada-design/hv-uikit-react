@@ -174,7 +174,7 @@ export const HvFocus = ({
     setShowFocus(true);
     // give focus to child element if any focusable
 
-    if (childFocus && childFocus.focus) childFocus.focus();
+    childFocus?.focus?.();
     onFocusStrategy(evt);
   };
 

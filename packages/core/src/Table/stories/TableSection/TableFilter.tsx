@@ -211,14 +211,12 @@ export const TableFilter = () => {
   const handleFilters = (arrays?: HvFilterGroupValue) => {
     setSelectedFilters(arrays);
     const newFilters =
-      arrays
-        ?.map((array, idx) => ({
-          id: filters[idx].id,
-          value: array
-            .map((x) => filters[idx].data.find((i) => i.id === x)?.name)
-            .filter((v) => v),
-        }))
-        .flat() || [];
+      arrays?.flatMap((array, idx) => ({
+        id: filters[idx].id,
+        value: array
+          .map((x) => filters[idx].data.find((i) => i.id === x)?.name)
+          .filter((v) => v),
+      })) || [];
     setAllFilters?.(newFilters);
   };
 

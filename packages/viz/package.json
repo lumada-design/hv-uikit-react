@@ -30,7 +30,7 @@
     "test:ui": "vitest --ui",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "run-s clean build && npx clean-publish"
+    "prepublishOnly": "npm run build && npx clean-publish"
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.1",
@@ -49,7 +49,6 @@
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
-    "npm-run-all": "^4.1.5",
     "vite": "^5.1.0",
     "vitest": "^1.2.2"
   },

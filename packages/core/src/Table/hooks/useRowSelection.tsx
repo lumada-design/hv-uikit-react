@@ -177,7 +177,7 @@ export const defaultGetToggleRowSelectedProps = (props, meta) => {
   const { manualRowSelectedKey = "isSelected" } = instance;
   let checked = false;
 
-  if (row.original && row.original[manualRowSelectedKey]) {
+  if (row.original?.[manualRowSelectedKey]) {
     checked = true;
   } else {
     checked = row.isSelected;
@@ -429,7 +429,7 @@ function getRowIsSelected(row, selectedRowIds, getSubRows) {
 
   const subRows = getSubRows(row);
 
-  if (subRows && subRows.length) {
+  if (subRows?.length) {
     let allChildrenSelected = true;
     let someSelected = false;
 
@@ -564,9 +564,7 @@ export function useInstance(instance) {
           .some((id) => selectedRowIds[id]);
 
       isAllPageRowsSelected = !(
-        page &&
-        page.length &&
-        page.some(({ id }) => !selectedRowIds[id])
+        page?.length && page.some(({ id }) => !selectedRowIds[id])
       );
 
       if (isAllPageRowsSelected) {
@@ -583,8 +581,7 @@ export function useInstance(instance) {
         isAllSelectablePageRowsSelected =
           existsLockedRows &&
           !(
-            page &&
-            page.length &&
+            page?.length &&
             page
               .filter(({ id }) => !lockedSelectionRowIds[id])
               .some(({ id }) => !selectedRowIds[id])
@@ -593,17 +590,14 @@ export function useInstance(instance) {
         isAllSelectablePageRowsUnselected =
           !existsLockedRows ||
           !(
-            page &&
-            page.length &&
+            page?.length &&
             page
               .filter(({ id }) => !lockedSelectionRowIds[id])
               .some(({ id }) => selectedRowIds[id])
           );
 
         isNoPageRowsSelected = !(
-          page &&
-          page.length &&
-          page.some(({ id }) => selectedRowIds[id])
+          page?.length && page.some(({ id }) => selectedRowIds[id])
         );
       }
     }

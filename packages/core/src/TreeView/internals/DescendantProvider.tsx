@@ -108,8 +108,7 @@ export function useDescendant(descendant: TreeItemDescendant) {
   const someDescendantsHaveChanged = descendants.some(
     (newDescendant, position) => {
       return (
-        previousDescendants &&
-        previousDescendants[position] &&
+        previousDescendants?.[position] &&
         previousDescendants[position].element !== newDescendant.element
       );
     },

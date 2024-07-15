@@ -3,7 +3,7 @@ const SELECTORS =
 
 /** Gets the list of focusable elements. */
 export const getFocusableList = (node: any) =>
-  (node && node.querySelectorAll(SELECTORS)) || [];
+  node?.querySelectorAll(SELECTORS) || [];
 
 /** Auxiliary function to find adjacent nodes to focus. */
 export const getPrevNextFocus = (nodeId?: string) => {
