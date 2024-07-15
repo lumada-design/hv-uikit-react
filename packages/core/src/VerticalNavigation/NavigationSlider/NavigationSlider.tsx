@@ -2,7 +2,11 @@ import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "../../Button";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { HvListContainer, HvListItem } from "../../ListContainer";
+import {
+  HvListContainer,
+  HvListContainerProps,
+  HvListItem,
+} from "../../ListContainer";
 import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { ExtractNames } from "../../utils/classes";
 import { NavigationData } from "../VerticalNavigationContext";
@@ -12,14 +16,9 @@ export { staticClasses as verticalNavigationSliderClasses };
 
 export type HvVerticalNavigationSliderClasses = ExtractNames<typeof useClasses>;
 
-export interface HvVerticalNavigationSliderProps {
-  /**
-   * Id to be applied to the root node of the panel.
-   */
-  id?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied.
-   */
+export interface HvVerticalNavigationSliderProps
+  extends Omit<HvListContainerProps, "classes"> {
+  /** A Jss Object used to override or extend the styles applied. */
   classes?: HvVerticalNavigationSliderClasses;
   /**
    * An array containing the data for each menu item.
@@ -32,20 +31,14 @@ export interface HvVerticalNavigationSliderProps {
    * target - the behavior when opening an url.
    */
   data?: NavigationData[];
-  /**
-   * The selected item id.
-   */
+  /** The selected item id. */
   selected?: string;
-  /**
-   * Triggered when the item is clicked.
-   */
+  /** Triggered when the item is clicked. */
   onNavigateToTarget?: (
     event: React.MouseEvent<HTMLLIElement>,
     item: NavigationData,
   ) => void;
-  /**
-   * Triggered when the navigate to child button is clicked.
-   */
+  /** Triggered when the navigate to child button is clicked. */
   onNavigateToChild?: (
     event: React.MouseEvent<HTMLButtonElement>,
     item: NavigationData,
@@ -58,18 +51,24 @@ export const HvVerticalNavigationSlider = (
   props: HvVerticalNavigationSliderProps,
 ) => {
   const {
-    id,
+    className,
     classes: classesProp,
     data,
     selected,
     onNavigateToTarget,
     onNavigateToChild,
     forwardButtonAriaLabel = "Navigate to submenu",
+    ...others
   } = useDefaultProps("HvVerticalNavigationSlider", props);
-  const { classes } = useClasses(classesProp);
+
+  const { classes, cx } = useClasses(classesProp);
 
   return (
-    <HvListContainer interactive id={id}>
+    <HvListContainer
+      interactive
+      className={cx(classes.listContainer, className)}
+      {...others}
+    >
       {data?.map((item) => (
         <HvListItem
           key={item.id}
@@ -77,6 +76,7 @@ export const HvVerticalNavigationSlider = (
             root: classes.root,
             selected: classes.listItemSelected,
             focus: classes.listItemFocus,
+            disabled: classes.listItemDisabled,
           }}
           onClick={(event) => {
             onNavigateToTarget?.(event, item);
@@ -94,6 +94,7 @@ export const HvVerticalNavigationSlider = (
                 onClick={(event) => {
                   onNavigateToChild?.(event, item);
                 }}
+                className={classes.forwardButton}
                 aria-label={forwardButtonAriaLabel}
               >
                 <DropRightXS />

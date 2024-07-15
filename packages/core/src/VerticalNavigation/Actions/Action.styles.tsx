@@ -3,9 +3,9 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { createClasses } from "../../utils/classes";
 import { outlineStyles } from "../../utils/focusUtils";
 
-const hover = () => ({
+const hover = {
   background: theme.colors.containerBackgroundHover,
-});
+};
 
 export const { staticClasses, useClasses } = createClasses(
   "HvVerticalNavigationAction",
@@ -19,11 +19,10 @@ export const { staticClasses, useClasses } = createClasses(
       color: theme.colors.secondary,
 
       // hover
-      "&:hover": hover(),
-
+      "&:hover": { ...hover },
       "&:focus": {
         outline: "none",
-        ...hover(),
+        ...hover,
       },
 
       "&:focus-visible": {

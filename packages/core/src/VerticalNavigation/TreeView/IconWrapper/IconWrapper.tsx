@@ -1,9 +1,16 @@
-import { useContext } from "react";
+import { HvBaseProps } from "packages/core/src/types/generic";
 import { Forwards } from "@hitachivantara/uikit-react-icons";
 
 import { HvAvatar } from "../../../Avatar";
-import { VerticalNavigationContext } from "../../VerticalNavigationContext";
-import { SpacerDiv, StyledIconsContainer } from "./IconWrapper.styles";
+
+interface IconWrapperProps extends HvBaseProps {
+  icon?: React.ReactNode;
+  label?: string;
+  hasChildren?: boolean;
+  showAvatar?: boolean;
+  isOpen?: boolean;
+  hasAnyChildWithData?: boolean;
+}
 
 export const IconWrapper = ({
   icon,
@@ -11,28 +18,23 @@ export const IconWrapper = ({
   hasChildren,
   showAvatar,
   isOpen,
-}) => {
-  const { hasAnyChildWithData } = useContext(VerticalNavigationContext);
+  hasAnyChildWithData,
+  ...others
+}: IconWrapperProps) => {
   return (
-    <StyledIconsContainer hasAnyChildWithData={hasAnyChildWithData}>
+    <div {...others}>
       {showAvatar ? (
-        <HvAvatar
-          variant="square"
-          size="xs"
-          backgroundColor="secondary_80"
-          style={{ fontSize: "15px" }}
-        >
-          {label.substring(0, 1)}
+        <HvAvatar variant="square" size="xs" backgroundColor="secondary_80">
+          {label?.substring(0, 1)}
         </HvAvatar>
       ) : (
         icon
       )}
-
       {hasChildren && !isOpen ? (
         <Forwards iconSize="XS" />
       ) : (
-        hasAnyChildWithData && !isOpen && <SpacerDiv />
+        hasAnyChildWithData && !isOpen && <div />
       )}
-    </StyledIconsContainer>
+    </div>
   );
 };

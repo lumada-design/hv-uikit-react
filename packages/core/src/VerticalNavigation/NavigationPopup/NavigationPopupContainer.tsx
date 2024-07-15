@@ -1,13 +1,12 @@
+import { Popper } from "@mui/base";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 
+import { useTheme } from "../../hooks/useTheme";
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
+import { getContainerElement } from "../../utils/document";
 import { HvVerticalNavigation } from "../VerticalNavigation";
-import {
-  staticClasses,
-  StyledPopper,
-  useClasses,
-} from "./NavigationPopup.styles";
+import { staticClasses, useClasses } from "./NavigationPopup.styles";
 
 export { staticClasses as verticalNavigationPopupClasses };
 
@@ -24,16 +23,24 @@ export const NavigationPopupContainer = ({
   onClose,
   children,
   classes: classesProp,
+  className,
   ...others
 }: NavigationPopupContainerProps) => {
-  const { classes } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
-  const handleClickAway = () => {
-    onClose?.();
-  };
+  const { rootId } = useTheme();
+
+  const handleClickAway = () => onClose?.();
 
   return (
-    <StyledPopper open anchorEl={anchorEl} placement="right-start" {...others}>
+    <Popper
+      open
+      anchorEl={anchorEl}
+      placement="right-start"
+      container={getContainerElement(rootId)}
+      className={cx(classes.popper, classes.popup, className)}
+      {...others}
+    >
       <ClickAwayListener onClickAway={handleClickAway}>
         <div className={classes.container}>
           <HvVerticalNavigation open useIcons>
@@ -41,6 +48,6 @@ export const NavigationPopupContainer = ({
           </HvVerticalNavigation>
         </div>
       </ClickAwayListener>
-    </StyledPopper>
+    </Popper>
   );
 };

@@ -1,5 +1,7 @@
 import { useContext } from "react";
 
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { staticClasses, useClasses } from "./Actions.styles";
@@ -10,39 +12,27 @@ export type HvVerticalNavigationActionsClasses = ExtractNames<
   typeof useClasses
 >;
 
-export interface HvVerticalNavigationActionsProps {
-  /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied to the component.
-   */
+export interface HvVerticalNavigationActionsProps extends HvBaseProps {
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvVerticalNavigationActionsClasses;
-  /**
-   * Id to be applied to the actions container.
-   */
-  id?: string;
-  /**
-   * Node to be rendered
-   */
-  children?: React.ReactNode;
 }
 
-export const HvVerticalNavigationActions = ({
-  className,
-  classes: classesProp,
-  id,
-  children,
-  ...others
-}: HvVerticalNavigationActionsProps) => {
+export const HvVerticalNavigationActions = (
+  props: HvVerticalNavigationActionsProps,
+) => {
+  const {
+    className,
+    classes: classesProp,
+    children,
+    ...others
+  } = useDefaultProps("HvVerticalNavigationActions", props);
+
   const { classes, cx } = useClasses(classesProp);
 
   const { isOpen, useIcons } = useContext(VerticalNavigationContext);
 
   return (
     <div
-      id={id}
       className={cx(
         classes.root,
         {

@@ -19,14 +19,18 @@ export { staticClasses as verticalNavigationClasses };
 
 export type HvVerticalNavigationClasses = ExtractNames<typeof useClasses>;
 
+export type HvVerticalNavigationMode = "icon" | "simple";
+
+export type HvVerticalNavigationPosition =
+  | "static"
+  | "relative"
+  | "fixed"
+  | "absolute";
+
 export interface HvVerticalNavigationProps extends HvBaseProps<HTMLDivElement> {
-  /**
-   * A Jss Object used to override or extend the styles applied to the component.
-   */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvVerticalNavigationClasses;
-  /**
-   * Current State of the Vertical Navigation Collapse
-   */
+  /** Current State of the Vertical Navigation Collapse */
   open?: boolean;
   /**
    * Collapsed Mode for the Vertical Navigation, the default value is "simple".
@@ -34,9 +38,7 @@ export interface HvVerticalNavigationProps extends HvBaseProps<HTMLDivElement> {
    * @deprecated - `useIcons` property should be used instead.
    */
   collapsedMode?: HvVerticalNavigationMode;
-  /**
-   * Boolean to determine if treeview is in slider mode (for mobile navigation), the default value is false.
-   */
+  /** Boolean to determine if treeview is in slider mode (for mobile navigation), the default value is false. */
   slider?: boolean;
   /**
    * Boolean to determine if icons should be displayed in the navigation menu.
@@ -68,15 +70,10 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
     id,
     className,
     classes: classesProp,
-
     children,
-
     open = true,
-
     slider = false,
-
     useIcons = false,
-
     ...others
   } = useDefaultProps("HvVerticalNavigation", props);
   const { classes, cx } = useClasses(classesProp);
@@ -181,11 +178,3 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
 
   return content;
 };
-
-export type HvVerticalNavigationMode = "icon" | "simple";
-
-export type HvVerticalNavigationPosition =
-  | "static"
-  | "relative"
-  | "fixed"
-  | "absolute";

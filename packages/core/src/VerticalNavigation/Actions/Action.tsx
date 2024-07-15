@@ -1,6 +1,7 @@
 import { useCallback, useContext } from "react";
 
-import { HvTypography } from "../../Typography";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
+import { HvTypography, HvTypographyProps } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
@@ -11,55 +12,44 @@ export { staticClasses as actionClasses };
 
 export type HvVerticalNavigationActionClasses = ExtractNames<typeof useClasses>;
 
-export interface HvVerticalNavigationActionProps {
-  /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied to the component.
-   */
+export interface HvVerticalNavigationActionProps
+  extends Omit<HvTypographyProps, "classes" | "onClick"> {
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvVerticalNavigationActionClasses;
-  /**
-   * Id to be applied to the action.
-   */
-  id?: string;
-  /**
-   * Visual label.
-   */
+  /** Visual label. */
   label?: string;
-  /**
-   * Icon.
-   */
+  /** Icon. */
   icon?: React.ReactNode;
-  /**
-   * Callback called when clicked.
-   */
-  onClick?: React.MouseEventHandler<HTMLElement>;
+  /** Callback called when clicked. */
+  onClick?: (
+    event:
+      | React.KeyboardEvent<HTMLDivElement>
+      | React.MouseEvent<HTMLDivElement>,
+  ) => void;
 }
 
-export const HvVerticalNavigationAction = ({
-  className,
-  classes: classesProp,
-  id,
-  label = "",
-  icon,
-  onClick,
-  ...others
-}: HvVerticalNavigationActionProps) => {
+export const HvVerticalNavigationAction = (
+  props: HvVerticalNavigationActionProps,
+) => {
+  const {
+    className,
+    classes: classesProp,
+    id,
+    label = "",
+    icon,
+    onClick,
+    ...others
+  } = useDefaultProps("HvVerticalNavigationAction", props);
+
   const { isOpen } = useContext(VerticalNavigationContext);
 
   const { classes, cx } = useClasses(classesProp);
 
   const handleKeyDown = useCallback(
-    (event) => {
-      if (
-        onClick == null ||
-        (!isKey(event, "Enter") && !isKey(event, "Space"))
-      ) {
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (!onClick || (!isKey(event, "Enter") && !isKey(event, "Space"))) {
         return;
       }
-
       onClick(event);
     },
     [onClick],

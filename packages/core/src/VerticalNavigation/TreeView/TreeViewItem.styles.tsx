@@ -1,19 +1,17 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
+import { avatarClasses } from "../../Avatar";
 import { createClasses } from "../../utils/classes";
 import { outlineStyles } from "../../utils/focusUtils";
 
-const selected = () => ({
+const selected = {
   background: theme.colors.atmo3,
   borderLeft: `4px solid ${theme.colors.secondary}`,
-  "& *": {
-    background: theme.colors.atmo3,
-  },
-});
+};
 
-const hover = () => ({
+const hover = {
   background: theme.colors.containerBackgroundHover,
-});
+};
 
 export const { staticClasses, useClasses } = createClasses(
   "HvVerticalNavigationTreeViewItem",
@@ -56,14 +54,14 @@ export const { staticClasses, useClasses } = createClasses(
       "$expandable>&": {
         fontWeight: 600,
       },
-      "$selected>&": selected(),
+      "$selected>&": { ...selected },
       // hover
-      ":not($disabled>&):not($selected>&):hover": hover(),
+      ":not($disabled>&):not($selected>&):hover": { ...hover },
       ":not($disabled)$selected>&:hover": {},
 
       // focus
-      ":not($disabled>&):not($selected>&):focus-visible": hover(),
-      ":not($disabled>&):not($selected>&).focus-visible": hover(),
+      ":not($disabled>&):not($selected>&):focus-visible": { ...hover },
+      ":not($disabled>&):not($selected>&).focus-visible": { ...hover },
 
       "*:focus-visible $focused>&": {
         ...outlineStyles,
@@ -73,7 +71,7 @@ export const { staticClasses, useClasses } = createClasses(
         ...outlineStyles,
       },
       "$focused>&": {
-        ...hover(),
+        ...hover,
       },
 
       "&[disabled], &:active": {
@@ -136,6 +134,19 @@ export const { staticClasses, useClasses } = createClasses(
 
       "&$labelIcon": {
         maxWidth: "calc(100% - 64px)",
+      },
+    },
+    icon: {
+      display: "flex",
+      "> div:first-of-type": {
+        marginLeft: "var(--icon-margin-left)",
+      },
+      "> div:nth-of-type(2)": {
+        width: "14px",
+        marginLeft: "auto",
+      },
+      [`&& .${avatarClasses.root}`]: {
+        fontSize: "15px",
       },
     },
   },

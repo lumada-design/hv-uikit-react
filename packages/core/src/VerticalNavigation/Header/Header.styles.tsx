@@ -19,5 +19,7 @@ export const { staticClasses, useClasses } = createClasses(
         marginLeft: 0,
       },
     },
+    backButton: {},
+    title: {},
   },
 );
