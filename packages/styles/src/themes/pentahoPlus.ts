@@ -7,6 +7,7 @@ import {
   amber,
   blue,
   green,
+  neutral,
   orange,
   pink,
   red,
@@ -536,6 +537,168 @@ const pentahoPlus = makeTheme((theme) => ({
         openDown: {
           borderRadius:
             "calc(var(--HvButton-height) / 2) calc(var(--HvButton-height) / 2) 0px 0px",
+        },
+      },
+    },
+    HvVerticalNavigation: {
+      classes: {
+        root: {
+          background: slate[900],
+          borderRight: `1px solid ${slate[500]}`,
+          "& > :not(nav:first-of-type)": {
+            borderTop: `1px solid ${slate[500]}`,
+          },
+          "& > :only-child": {
+            padding: theme.space.sm,
+            "& .HvVerticalNavigationSlider-listContainer": { padding: 0 },
+          },
+        },
+        slider: {
+          "& > div:first-of-type": {
+            borderBottom: `1px solid ${slate[500]}`,
+          },
+        },
+      },
+    },
+    HvVerticalNavigationActions: {
+      classes: {
+        root: {
+          background: slate[900],
+        },
+      },
+    },
+    HvVerticalNavigationAction: {
+      classes: {
+        action: {
+          color: theme.colors.base_light,
+          borderRadius: "8px",
+          "& svg *.color0": { fill: theme.colors.base_light },
+          "&:hover": {
+            backgroundColor: slate[700],
+          },
+          "&:focus": {
+            backgroundColor: slate[700],
+          },
+        },
+      },
+    },
+    HvVerticalNavigationHeader: {
+      classes: {
+        root: {
+          "& svg *.color0": { fill: theme.colors.base_light },
+        },
+        backButton: {
+          "& svg *.color0": { fill: theme.colors.base_light },
+        },
+        collapseButton: {
+          "& svg *.color0": { fill: theme.colors.base_light },
+        },
+        title: {
+          color: theme.colors.base_light,
+        },
+      },
+    },
+    HvVerticalNavigationTree: {
+      classes: {
+        root: {
+          background: slate[900],
+        },
+        navigationPopup: {
+          color: theme.colors.base_light,
+        },
+      },
+    },
+    HvVerticalNavigationSlider: {
+      classes: {
+        root: {
+          minHeight: "32px",
+          borderLeft: "unset",
+          borderRadius: "8px",
+          color: theme.colors.base_light,
+          "& svg *.color0": { fill: theme.colors.base_light },
+          "&.HvIsFocused": {
+            backgroundColor: slate[700],
+          },
+          "&.HvListItem-interactive:not(.HvListItem-disabled):not(.HvListItem-selected):hover":
+            {
+              backgroundColor: slate[700],
+            },
+        },
+        listItemDisabled: {
+          color: neutral[500],
+          backgroundColor: neutral[800],
+          "& .HvListItem-startAdornment": { backgroundColor: "transparent" },
+          "& .HvListItem-endAdornment": { backgroundColor: "transparent" },
+          "&& svg *.color0": {
+            fill: neutral[500],
+          },
+        },
+        listItemSelected: {
+          background: blue[950],
+          borderLeft: "unset",
+        },
+        listItemFocus: {
+          background: slate[700],
+        },
+        forwardButton: {
+          "& svg *.color0": { fill: theme.colors.base_light },
+        },
+        listContainer: {
+          padding: theme.space.sm,
+        },
+      },
+    },
+    HvVerticalNavigationTreeView: {
+      classes: {
+        root: {
+          background: slate[900],
+        },
+      },
+    },
+    HvVerticalNavigationTreeViewItem: {
+      classes: {
+        content: {
+          borderLeft: "unset",
+          borderRadius: "8px",
+          "& svg *.color0": { fill: theme.colors.base_light },
+          ".HvVerticalNavigationTreeViewItem-selected>&": {
+            background: blue[950],
+            borderLeft: "unset",
+          },
+          ":not(.HvVerticalNavigationTreeViewItem-disabled>&):not(.HvVerticalNavigationTreeViewItem-selected>&):hover":
+            {
+              background: slate[700],
+            },
+          ":not(.HvVerticalNavigationTreeViewItem-disabled>&):not(.HvVerticalNavigationTreeViewItem-selected>&):focus-visible":
+            {
+              background: slate[700],
+            },
+          ":not(.HvVerticalNavigationTreeViewItem-disabled>&):not(.HvVerticalNavigationTreeViewItem-selected>&).focus-visible":
+            {
+              background: slate[700],
+            },
+          ".HvVerticalNavigationTreeViewItem-focused>&": {
+            background: slate[700],
+          },
+        },
+        label: {
+          color: theme.colors.base_light,
+        },
+        disabled: {
+          "& .HvVerticalNavigationTreeViewItem-label": {
+            color: neutral[500],
+          },
+          "& .HvVerticalNavigationTreeViewItem-content": {
+            background: neutral[800],
+            "& svg *.color0": {
+              fill: neutral[500],
+            },
+          },
+        },
+        icon: {
+          "& .HvAvatar-root": {
+            borderRadius: "8px",
+          },
         },
       },
     },
