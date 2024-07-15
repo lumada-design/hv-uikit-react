@@ -33,7 +33,7 @@ export const Container = ({
   const spacing = useHeaderSpacing();
 
   return (
-    <div className="flex pb-6 min-h-screen" style={{ paddingTop: spacing }}>
+    <div className="flex pb-2 min-h-screen" style={{ paddingTop: spacing }}>
       <HvContainer component="main" maxWidth={maxWidth} {...others}>
         <Suspense fallback={<Loading {...loadingProps} />}>{children}</Suspense>
       </HvContainer>

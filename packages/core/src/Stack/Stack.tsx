@@ -65,7 +65,7 @@ export const HvStack = (props: HvStackProps) => {
     classes: classesProp,
     className,
     children,
-    direction = "column",
+    direction: directionProp = "column",
     spacing = "sm",
     divider = false,
     withNavigation = false,
@@ -78,9 +78,9 @@ export const HvStack = (props: HvStackProps) => {
   const containerRef = useRef(null);
   const { breakpoints } = useTheme();
 
-  const processedDirection = useMemo(
-    () => getDirection(direction, width, breakpoints.keys),
-    [direction, width, breakpoints],
+  const direction = useMemo(
+    () => getDirection(directionProp, width, breakpoints.keys),
+    [directionProp, width, breakpoints],
   );
 
   /**
@@ -92,11 +92,8 @@ export const HvStack = (props: HvStackProps) => {
     if (typeof divider === "boolean" && divider) {
       return (
         <MuiDivider
-          orientation={
-            processedDirection === "column" ? "horizontal" : "vertical"
-          }
-          flexItem={processedDirection === "row"}
-          role="separator"
+          orientation={direction === "column" ? "horizontal" : "vertical"}
+          flexItem={direction === "row"}
           classes={{
             root: classes.divider,
           }}
@@ -105,14 +102,14 @@ export const HvStack = (props: HvStackProps) => {
       );
     }
     return divider;
-  }, [classes.divider, divider, dividerProps, processedDirection]);
+  }, [classes.divider, divider, dividerProps, direction]);
 
   return (
     <div
       ref={containerRef}
       className={cx(
         classes.root,
-        classes[processedDirection],
+        classes[direction],
         classes[spacing],
         className,
       )}
@@ -128,9 +125,7 @@ export const HvStack = (props: HvStackProps) => {
                 focusDisabled={false}
                 strategy="grid"
                 navigationJump={
-                  processedDirection === "column"
-                    ? 1
-                    : Children.count(children) || 0
+                  direction === "column" ? 1 : Children.count(children) || 0
                 }
                 filterClass="child"
               >

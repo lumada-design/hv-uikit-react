@@ -14,10 +14,8 @@ import { styles } from "./Colors.styles";
 import { getColorGroupName, getColors, groupsToShow } from "./utils";
 
 const Colors = (): JSX.Element => {
-  const { activeTheme, selectedMode } = useTheme();
+  const { colors, selectedMode } = useTheme();
   const { customTheme, updateCustomTheme } = useGeneratorContext();
-
-  const colors = activeTheme?.colors.modes[selectedMode];
 
   const colorChangedHandler = (colorName: string, colorValue: string) => {
     updateCustomTheme({

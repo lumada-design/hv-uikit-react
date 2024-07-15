@@ -110,7 +110,7 @@ export type SpacingValue = number | HvThemeBreakpoint | (string & {});
 export type HvThemeColors = typeof colors.common & typeof colors.light;
 
 // Base themes: DS3 and DS5
-export type HvBaseTheme = "ds3" | "ds5";
+export type HvBaseTheme = "ds3" | "ds5" | "pentahoPlus";
 
 // Theme color modes
 export type HvThemeColorMode = "dawn" | "wicked";

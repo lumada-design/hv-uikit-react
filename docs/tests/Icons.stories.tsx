@@ -1,5 +1,6 @@
 import { StoryObj } from "@storybook/react";
 import {
+  Abacus,
   HvIconSprite,
   HvIconSpriteProps,
   IconBaseProps,
@@ -16,52 +17,47 @@ export default {
 
 export const IconLibrary: StoryObj<IconBaseProps> = {
   args: {
+    iconSize: "M",
     color: ["secondary", "negative", "positive"],
   },
   render: (args) => (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {Object.entries(icons).map(([name, Icon], i) => (
-        <>
-          <Icon key={name} iconSize="M" {...args} />
-          {/* Visual test for icon size */}
-          {i === Object.entries(icons).length - 1 && (
-            <>
-              <Icon key={name} iconSize="XS" {...args} />
-              <Icon key={name} iconSize="S" {...args} />
-              <Icon key={name} iconSize="L" {...args} />
-            </>
-          )}
-        </>
-      ))}
-    </div>
+    <>
+      <div className="flex flex-wrap">
+        {Object.entries(icons).map(([name, Icon]) => (
+          <Icon key={name} {...args} />
+        ))}
+      </div>
+      <div className="flex">
+        {/* Visual test for icon size */}
+        <Abacus {...args} iconSize="XS" />
+        <Abacus {...args} iconSize="S" />
+        <Abacus {...args} iconSize="M" />
+        <Abacus {...args} iconSize="L" />
+      </div>
+    </>
   ),
 };
 
 export const IconSpriteLibrary: StoryObj<HvIconSpriteProps> = {
   args: {
+    iconSize: "M",
     spriteUrl: "./assets/icons.svg",
     color: ["secondary", "negative", "positive"],
   },
   render: (args) => (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {Object.entries(icons).map(([name], i) => (
-        <>
-          <HvIconSprite key={name} iconSize="M" {...args} iconName={name} />
-          {/* Visual test for icon size */}
-          {i === Object.entries(icons).length - 1 && (
-            <>
-              <HvIconSprite
-                key={name}
-                iconSize="XS"
-                {...args}
-                iconName={name}
-              />
-              <HvIconSprite key={name} iconSize="S" {...args} iconName={name} />
-              <HvIconSprite key={name} iconSize="L" {...args} iconName={name} />
-            </>
-          )}
-        </>
-      ))}
-    </div>
+    <>
+      <div className="flex flex-wrap">
+        {Object.keys(icons).map((name) => (
+          <HvIconSprite {...args} key={name} iconName={name} />
+        ))}
+      </div>
+      <div className="flex">
+        {/* Visual test for icon size */}
+        <HvIconSprite {...args} iconName="Abacus" iconSize="XS" />
+        <HvIconSprite {...args} iconName="Abacus" iconSize="S" />
+        <HvIconSprite {...args} iconName="Abacus" iconSize="M" />
+        <HvIconSprite {...args} iconName="Abacus" iconSize="L" />
+      </div>
+    </>
   ),
 };

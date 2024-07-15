@@ -12,8 +12,6 @@ export type HvCardMediaClasses = ExtractNames<typeof useClasses>;
 export interface HvCardMediaProps
   extends Omit<MuiCardMediaProps, "classes">,
     React.ImgHTMLAttributes<HTMLDivElement> {
-  /** Id to be applied to the root node. */
-  id?: string;
   /** The title of the media. */
   title?: string;
   /** The function that will be executed when this section is clicked. */
@@ -27,26 +25,20 @@ export interface HvCardMediaProps
 }
 
 export const HvCardMedia = ({
-  id,
   classes: classesProp,
   className,
   children,
-  title,
-  onClick,
   ...others
 }: HvCardMediaProps) => {
   const { classes } = useClasses(classesProp);
   return (
     <MuiCardMedia
-      id={id}
       classes={{
         root: classes.root,
         media: classes.media,
       }}
       className={className}
       role="img"
-      title={title}
-      onClick={onClick}
       {...others}
     >
       {children}

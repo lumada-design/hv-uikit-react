@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvBanner,
@@ -13,16 +12,12 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
-const StyledBanner = styled(HvBanner)({
-  position: "relative",
-  top: "0px",
-  marginBottom: 10,
-});
-const meta: Meta<typeof HvBanner> = {
+export default {
   title: "Components/Banner",
   component: HvBanner,
-};
-export default meta;
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
+  subcomponents: { HvBannerContent },
+} satisfies Meta<typeof HvBanner>;
 
 export const Main: StoryObj<HvBannerProps> = {
   args: {
@@ -40,7 +35,7 @@ export const Main: StoryObj<HvBannerProps> = {
     actionsCallback: { control: { disable: true } },
   },
   render: (args) => {
-    return <StyledBanner {...args} />;
+    return <HvBanner style={{ position: "relative", top: 0 }} {...args} />;
   },
 };
 

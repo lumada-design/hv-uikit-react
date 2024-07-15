@@ -18,7 +18,7 @@ const App = () => {
   return (
     <HvProvider
       themes={[ds3, ds5, pentahoPlus]}
-      theme="ds5"
+      theme="pentahoPlus"
       rootElementId="hv-root"
       cssTheme="scoped"
     >
