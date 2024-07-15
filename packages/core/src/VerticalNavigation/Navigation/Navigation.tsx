@@ -1,12 +1,16 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 
 import { useControlled } from "../../hooks/useControlled";
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
 import { uniqueId } from "../../utils/helpers";
 import { setId } from "../../utils/setId";
 import { NavigationPopupContainer } from "../NavigationPopup/NavigationPopupContainer";
-import { HvVerticalNavigationSlider } from "../NavigationSlider";
+import {
+  HvVerticalNavigationSlider,
+  HvVerticalNavigationSliderProps,
+} from "../NavigationSlider";
 import { getParentItemById } from "../NavigationSlider/utils/NavigationSlider.utils";
 import {
   HvVerticalNavigationTreeView,
@@ -25,44 +29,24 @@ export type HvVerticalNavigationTreeClasses = ExtractNames<typeof useClasses>;
 
 export interface HvVerticalNavigationTreeProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {
-  /**
-   * Id to be applied to the root node.
-   */
-  id?: string;
-  /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied.
-   */
+  /** A Jss Object used to override or extend the styles applied. */
   classes?: HvVerticalNavigationTreeClasses;
-  /**
-   * Modus operandi (role) of the widget instance.
-   */
+  /** Modus operandi (role) of the widget instance. */
   mode?: NavigationMode;
-  /**
-   * Can non-leaf nodes be collapsed / expanded.
-   */
+  /** Can non-leaf nodes be collapsed / expanded. */
   collapsible?: boolean;
-  /**
-   * The ID of the selected page.
-   */
+  /** The ID of the selected page. */
   selected?: string;
-  /**
-   * When uncontrolled, defines the initial selected page ID.
-   */
+  /** When uncontrolled, defines the initial selected page ID. */
   defaultSelected?: string;
-  /**
-   * Callback fired when a navigation item is selected.
-   *
-   * @param {object} event The event source of the callback.
-   * @param {object} page The data of the selected page.
-   */
-  onChange?: (event, page) => void;
-  /**
-   * Expanded nodes' ids.
-   */
+  /** Callback fired when a navigation item is selected. */
+  onChange?: (
+    event:
+      | React.MouseEvent<HTMLLIElement>
+      | React.KeyboardEvent<HTMLUListElement>,
+    page: NavigationData,
+  ) => void;
+  /** Expanded nodes' ids. */
   expanded?: string[];
   /**
    * When uncontrolled, defines the initial expanded nodes' ids.
@@ -73,13 +57,11 @@ export interface HvVerticalNavigationTreeProps
    * By default it expands the needed nodes to display the current selection, if any.
    */
   defaultExpanded?: string[] | boolean;
-  /**
-   * Callback fired when tree items are expanded/collapsed.
-   *
-   * @param {object} event The event source of the callback.
-   * @param {array} nodeIds The ids of the expanded nodes (old and new).
-   */
-  onToggle?: (event, nodeIds) => void;
+  /** Callback fired when tree items are expanded/collapsed. */
+  onToggle?: (
+    event: React.KeyboardEvent<HTMLUListElement>,
+    nodeIds: string[],
+  ) => void;
   /**
    * An array containing the data for each menu item.
    *
@@ -178,29 +160,26 @@ function pathToElement(data, targetId) {
   return path;
 }
 
-export const HvVerticalNavigationTree = ({
-  id,
+export const HvVerticalNavigationTree = (
+  props: HvVerticalNavigationTreeProps,
+) => {
+  const {
+    id,
+    className,
+    classes: classesProp,
+    data,
+    mode = "navigation",
+    collapsible = false,
+    expanded: expandedProp,
+    defaultExpanded,
+    onToggle,
+    selected: selectedProp,
+    defaultSelected,
+    onChange,
+    sliderForwardButtonAriaLabel = "Navigate to submenu",
+    ...others
+  } = useDefaultProps("HvVerticalNavigationTree", props);
 
-  className,
-  classes: classesProp,
-
-  data,
-
-  mode = "navigation",
-
-  collapsible = false,
-  expanded: expandedProp,
-  defaultExpanded,
-  onToggle,
-
-  selected: selectedProp,
-  defaultSelected,
-  onChange,
-
-  sliderForwardButtonAriaLabel = "Navigate to submenu",
-
-  ...others
-}: HvVerticalNavigationTreeProps) => {
   const { classes, cx } = useClasses(classesProp);
 
   const [selected, setSelected] = useControlled(selectedProp, defaultSelected);
@@ -246,13 +225,19 @@ export const HvVerticalNavigationTree = ({
   const [navigationPopup, setNavigationPopup] = useState<{
     // This value is needed to guarantee that the NavigationPopup is fully re-rendered with keeping any previous values
     uniqueKey: string;
-    anchorEl: HTMLButtonElement | null;
+    anchorEl: HTMLElement | null;
     fixedMode: boolean;
     data: NavigationData[];
   } | null>(null);
 
   const handleChange = useCallback(
-    (event, selectedId, selectedItem) => {
+    (
+      event:
+        | React.MouseEvent<HTMLLIElement>
+        | React.KeyboardEvent<HTMLUListElement>,
+      selectedId: string | string[],
+      selectedItem: NavigationData,
+    ) => {
       if (useIcons && !isOpen && selectedItem.data) {
         const currentEventTarget = event.currentTarget;
         setNavigationPopup((prevState) => {
@@ -263,14 +248,14 @@ export const HvVerticalNavigationTree = ({
                 uniqueKey: uniqueId(),
                 anchorEl: currentEventTarget,
                 fixedMode: true,
-                data: selectedItem.data,
+                data: selectedItem.data as NavigationData[],
               };
         });
 
         // We need this stopPropagation or else the Popup will close due to the clickaway being triggered
         event.stopPropagation();
       } else {
-        setSelected(selectedId);
+        setSelected(selectedId as string);
         setExpanded((prevState) => {
           if (!isOpen) {
             return [...prevState, ...pathToElement(data, selectedId)];
@@ -278,9 +263,7 @@ export const HvVerticalNavigationTree = ({
           return [...prevState];
         });
         setNavigationPopup(null);
-        if (onChange) {
-          onChange(event, selectedItem);
-        }
+        onChange?.(event, selectedItem);
       }
     },
     [onChange, setSelected, setExpanded, isOpen, useIcons, data],
@@ -307,12 +290,9 @@ export const HvVerticalNavigationTree = ({
   );
 
   const handleToggle = useCallback(
-    (event, newExpanded) => {
+    (event: React.KeyboardEvent<HTMLUListElement>, newExpanded: string[]) => {
       setExpanded(newExpanded);
-
-      if (onToggle) {
-        onToggle(event, newExpanded);
-      }
+      onToggle?.(event, newExpanded);
     },
     [onToggle, setExpanded],
   );
@@ -355,14 +335,10 @@ export const HvVerticalNavigationTree = ({
     }
   }, [withParentData, selected, setParentItem]);
 
-  // navigation slider
-  const navigateToTargetHandler = (event, selectedItem) => {
-    handleChange(event, selectedItem.id, selectedItem);
-  };
+  const navigateToTargetHandler: HvVerticalNavigationSliderProps["onNavigateToTarget"] =
+    (event, selectedItem) => handleChange(event, selectedItem.id, selectedItem);
 
-  const handleNavigationPopupClose = () => {
-    setNavigationPopup(null);
-  };
+  const handleNavigationPopupClose = () => setNavigationPopup(null);
 
   const handleStyledNavMouseLeave = () => {
     if (useIcons && !isOpen && !navigationPopup?.fixedMode) {
@@ -376,9 +352,10 @@ export const HvVerticalNavigationTree = ({
     }
   };
 
-  const handleNavigationPopupChange = (event, selectedItem) => {
-    handleChange(event, selectedItem.id, selectedItem);
-  };
+  const handleNavigationPopupChange: HvVerticalNavigationTreeProps["onChange"] =
+    (event, selectedItem) => {
+      handleChange(event, selectedItem.id, selectedItem);
+    };
 
   return (
     <nav

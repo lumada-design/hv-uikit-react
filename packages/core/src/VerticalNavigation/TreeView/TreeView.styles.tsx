@@ -11,7 +11,6 @@ export const { staticClasses, useClasses } = createClasses(
       padding: `0px`,
       margin: "0",
       listStyle: "none",
-
       outline: "none",
     },
   },

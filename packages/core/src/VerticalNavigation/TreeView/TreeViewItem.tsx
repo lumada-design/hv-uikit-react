@@ -185,7 +185,9 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
       [nodeId, treeitemElement],
     );
 
-    const { isOpen, useIcons } = useContext(VerticalNavigationContext);
+    const { isOpen, useIcons, hasAnyChildWithData } = useContext(
+      VerticalNavigationContext,
+    );
 
     const { index, parentId, level } = useDescendant(descendant);
 
@@ -485,6 +487,12 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
               hasChildren={hasChildren}
               showAvatar={!icon && useIcons}
               isOpen={isOpen}
+              hasAnyChildWithData={hasAnyChildWithData}
+              style={{
+                // @ts-ignore
+                "--icon-margin-left": hasAnyChildWithData ? "auto" : "unset",
+              }}
+              className={classes.icon}
             />
 
             {isOpen && (
@@ -503,37 +511,39 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         </HvTooltip>
       );
     }, [
-      id,
       href,
       target,
+      children,
+      isOpen,
+      disableTooltip,
+      disabled,
+      label,
+      id,
       cx,
       classes.content,
       classes.link,
       classes.minimized,
+      classes.icon,
       classes.label,
       classes.labelIcon,
       classes.labelExpandable,
-      disabled,
       handleClick,
       handleMouseDown,
-      expandable,
-      icon,
+      useIcons,
       level,
       collapsible,
       treeviewMode,
       handleFocus,
       selectable,
+      expandable,
       handleKeyDown,
       selected,
-      expanded,
-      label,
-      disableTooltip,
-      payload?.label,
-      children,
-      isOpen,
-      useIcons,
       isChildSelected,
       nodeId,
+      expanded,
+      payload?.label,
+      icon,
+      hasAnyChildWithData,
     ]);
 
     const renderedChildren = useMemo(
@@ -554,21 +564,27 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
       <li
         ref={handleRef}
         id={id ?? undefined}
-        className={cx(classes.node, {
-          [classes.disabled]: disabled,
-          [classes.expandable]: expandable,
-          [classes.collapsed]: expandable && !expanded,
-          [classes.expanded]: expandable && expanded,
-          [classes.selectable]: selectable && !disabled,
-          [classes.unselectable]: !disabled && !selectable,
-          [classes.selected]:
-            (!disabled && selectable && selected) ||
-            (!isOpen && useIcons && isChildSelected && isChildSelected(nodeId)),
-          [classes.unselected]: !disabled && selectable && !selected,
-          [classes.focused]: focused,
-          [classes.hide]: !isOpen && !useIcons,
+        className={cx(
+          classes.node,
+          {
+            [classes.disabled]: disabled,
+            [classes.expandable]: expandable,
+            [classes.collapsed]: expandable && !expanded,
+            [classes.expanded]: expandable && expanded,
+            [classes.selectable]: selectable && !disabled,
+            [classes.unselectable]: !disabled && !selectable,
+            [classes.selected]:
+              (!disabled && selectable && selected) ||
+              (!isOpen &&
+                useIcons &&
+                isChildSelected &&
+                isChildSelected(nodeId)),
+            [classes.unselected]: !disabled && selectable && !selected,
+            [classes.focused]: focused,
+            [classes.hide]: !isOpen && !useIcons,
+          },
           className,
-        })}
+        )}
         data-hasicon={icon != null ? true : undefined}
         {...(mode === "treeview" && {
           role: "treeitem",

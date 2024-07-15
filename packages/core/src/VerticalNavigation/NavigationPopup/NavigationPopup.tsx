@@ -1,6 +1,10 @@
+import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../types/generic";
 import { setId } from "../../utils/setId";
-import { HvVerticalNavigationTree } from "../Navigation";
+import {
+  HvVerticalNavigationTree,
+  HvVerticalNavigationTreeProps,
+} from "../Navigation";
 import { NavigationData } from "../VerticalNavigationContext";
 import { useClasses } from "./NavigationPopup.styles";
 import {
@@ -20,27 +24,31 @@ export interface HvVerticalNavigationPopupProps
   classes?: HvVerticalNavigationPopupClasses;
 }
 
-export const HvVerticalNavigationPopup = ({
-  id,
-  anchorEl,
-  fixedMode,
-  onClose,
-  data,
-  selected,
-  onChange,
-  classes: classesProp,
-  ...others
-}: HvVerticalNavigationPopupProps) => {
+export const HvVerticalNavigationPopup = (
+  props: HvVerticalNavigationPopupProps,
+) => {
+  const {
+    id,
+    anchorEl,
+    fixedMode,
+    onClose,
+    data,
+    selected,
+    onChange,
+    classes: classesProp,
+    ...others
+  } = useDefaultProps("HvVerticalNavigationPopup", props);
+
   const { classes } = useClasses(classesProp);
 
-  const handleChange = (event, selectedItem) => {
-    onChange(event, selectedItem.id, selectedItem);
-  };
+  const handleChange: HvVerticalNavigationTreeProps["onChange"] = (
+    event,
+    selectedItem,
+  ) => onChange(event, selectedItem.id, selectedItem);
 
   const handleMouseLeave = () => {
-    if (!fixedMode) {
-      onClose?.();
-    }
+    if (fixedMode) return;
+    onClose?.();
   };
 
   return (
