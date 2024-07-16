@@ -20,6 +20,8 @@ import { CollapsibleIconsWithCustomPopupStyles as CollapsibleIconsWithCustomPopu
 import CollapsibleIconsWithCustomPopupStylesRaw from "./stories/CollapsibleIconsWithCustomPopupStyles?raw";
 import { CollapsibleIconsWithoutSubItems as CollapsibleIconsWithoutSubItemsStory } from "./stories/CollapsibleIconsWithoutSubItems";
 import CollapsibleIconsWithoutSubItemsRaw from "./stories/CollapsibleIconsWithoutSubItems?raw";
+import { Custom as CustomStory } from "./stories/Custom";
+import CustomRaw from "./stories/Custom?raw";
 import { Main as MainStory } from "./stories/Main";
 import MainRaw from "./stories/Main?raw";
 import { MobileNavigation as MobileNavigationStory } from "./stories/MobileNavigation";
@@ -43,6 +45,11 @@ export default {
     HvVerticalNavigationTreeViewItem,
     HvVerticalNavigationSlider,
   },
+  decorators: [
+    (Story) => (
+      <div style={{ display: "flex", width: 220, height: 530 }}>{Story()}</div>
+    ),
+  ],
 };
 
 export const Main: StoryObj<HvVerticalNavigationProps> = {
@@ -171,4 +178,18 @@ export const MobileNavigation: StoryObj<HvVerticalNavigationProps> = {
     chromatic: { disableSnapshot: false },
   },
   render: () => <MobileNavigationStory />,
+};
+
+export const Custom: StoryObj<HvVerticalNavigationProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Example of a vertical navigation with customizations.",
+      },
+      source: { code: CustomRaw },
+    },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  render: () => <CustomStory />,
 };

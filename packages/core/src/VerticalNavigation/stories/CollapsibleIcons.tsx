@@ -101,29 +101,27 @@ export const CollapsibleIcons = () => {
   };
 
   return (
-    <div style={{ display: "flex", width: 220, height: 530 }}>
-      <HvVerticalNavigation open={show} useIcons>
-        <HvVerticalNavigationHeader
-          title="Menu"
-          onCollapseButtonClick={handleIsExpanded}
-          collapseButtonProps={{
-            "aria-label": "collapseButton",
-            "aria-expanded": show,
-          }}
-        />
-        <HvVerticalNavigationTree
-          collapsible
-          defaultExpanded
-          aria-label="Example 3 navigation"
-          selected={value}
-          onChange={(event, data) => setValue(data.id)}
-          data={navigationData}
-        />
-        <HvVerticalNavigationActions>
-          <HvVerticalNavigationAction label="Profile" icon={<User />} />
-          <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
-        </HvVerticalNavigationActions>
-      </HvVerticalNavigation>
-    </div>
+    <HvVerticalNavigation open={show} useIcons>
+      <HvVerticalNavigationHeader
+        title="Menu"
+        onCollapseButtonClick={handleIsExpanded}
+        collapseButtonProps={{
+          "aria-label": "collapseButton",
+          "aria-expanded": show,
+        }}
+      />
+      <HvVerticalNavigationTree
+        collapsible
+        defaultExpanded
+        aria-label="Example 3 navigation"
+        selected={value}
+        onChange={(event, data) => setValue(data.id)}
+        data={navigationData}
+      />
+      <HvVerticalNavigationActions>
+        <HvVerticalNavigationAction label="Profile" icon={<User />} />
+        <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
+      </HvVerticalNavigationActions>
+    </HvVerticalNavigation>
   );
 };

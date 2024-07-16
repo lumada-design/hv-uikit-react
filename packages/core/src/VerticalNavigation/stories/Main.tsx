@@ -62,25 +62,23 @@ export const Main = (props: HvVerticalNavigationProps) => {
   const [value, setValue] = useState("00");
 
   return (
-    <div style={{ display: "flex", width: 220, height: 530 }}>
-      <HvVerticalNavigation {...props}>
-        <HvVerticalNavigationTree
-          aria-label="Example 1 navigation"
-          selected={value}
-          onChange={(event, data) => {
-            if (data.id === "02-01-01") {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            setValue(data.id);
-          }}
-          data={navigationData}
-        />
-        <HvVerticalNavigationActions>
-          <HvVerticalNavigationAction label="Profile" icon={<User />} />
-          <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
-        </HvVerticalNavigationActions>
-      </HvVerticalNavigation>
-    </div>
+    <HvVerticalNavigation {...props}>
+      <HvVerticalNavigationTree
+        aria-label="Example 1 navigation"
+        selected={value}
+        onChange={(event, data) => {
+          if (data.id === "02-01-01") {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          setValue(data.id);
+        }}
+        data={navigationData}
+      />
+      <HvVerticalNavigationActions>
+        <HvVerticalNavigationAction label="Profile" icon={<User />} />
+        <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
+      </HvVerticalNavigationActions>
+    </HvVerticalNavigation>
   );
 };
