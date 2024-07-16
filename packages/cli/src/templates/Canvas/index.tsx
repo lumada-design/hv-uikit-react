@@ -188,7 +188,7 @@ const Page = () => {
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
         onInit={setFlowInstance}
-        /** Flow sidebar passed as prop to access the flow's Dnd context inside CanvasPanel */
+        /** Flow sidebar passed as prop to access the flow's Dnd context inside CanvasSidePanel */
         sidebar={
           <CanvasSidebar
             tabs={sidePanelTabs}

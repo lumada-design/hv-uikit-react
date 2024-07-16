@@ -8,14 +8,14 @@ import {
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { useTheme, useUniqueId } from "@hitachivantara/uikit-react-core";
 import {
-  HvCanvasPanel,
-  HvCanvasPanelProps,
+  HvCanvasSidePanel,
+  HvCanvasSidePanelProps,
 } from "@hitachivantara/uikit-react-pentaho";
 
 import { classes } from "./styles";
 import { restrictToSample } from "./utils";
 
-export const CanvasSidebar = (props: HvCanvasPanelProps) => {
+export const CanvasSidebar = (props: HvCanvasSidePanelProps) => {
   const { rootId } = useTheme();
 
   const [overlay, setOverlay] = useState<React.ReactNode>();
@@ -43,7 +43,7 @@ export const CanvasSidebar = (props: HvCanvasPanelProps) => {
 
   return (
     <>
-      <HvCanvasPanel
+      <HvCanvasSidePanel
         id={elementId}
         ref={setNodeRef}
         className={classes.panel}
