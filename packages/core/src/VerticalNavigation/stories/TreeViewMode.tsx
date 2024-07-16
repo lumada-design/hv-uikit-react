@@ -57,22 +57,20 @@ export const TreeViewMode = () => {
   const [value, setValue] = useState("01-01");
 
   return (
-    <div style={{ display: "flex", width: 220, height: 530 }}>
-      <HvVerticalNavigation>
-        <HvVerticalNavigationTree
-          mode="treeview"
-          collapsible
-          defaultExpanded
-          aria-label="Example 3 navigation"
-          selected={value}
-          onChange={(event, data) => setValue(data.id)}
-          data={navigationData}
-        />
-        <HvVerticalNavigationActions>
-          <HvVerticalNavigationAction label="Profile" icon={<User />} />
-          <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
-        </HvVerticalNavigationActions>
-      </HvVerticalNavigation>
-    </div>
+    <HvVerticalNavigation>
+      <HvVerticalNavigationTree
+        mode="treeview"
+        collapsible
+        defaultExpanded
+        aria-label="Example 3 navigation"
+        selected={value}
+        onChange={(event, data) => setValue(data.id)}
+        data={navigationData}
+      />
+      <HvVerticalNavigationActions>
+        <HvVerticalNavigationAction label="Profile" icon={<User />} />
+        <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
+      </HvVerticalNavigationActions>
+    </HvVerticalNavigation>
   );
 };

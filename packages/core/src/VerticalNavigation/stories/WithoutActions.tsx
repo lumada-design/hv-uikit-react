@@ -72,17 +72,15 @@ export const WithoutActions = () => {
   const [value, setValue] = useState("02-03-02");
 
   return (
-    <div style={{ display: "flex", width: 220 }}>
-      <HvVerticalNavigation>
-        <HvVerticalNavigationTree
-          aria-label="Example 1 navigation"
-          selected={value}
-          onChange={(event, data) => {
-            setValue(data.id);
-          }}
-          data={navigationData}
-        />
-      </HvVerticalNavigation>
-    </div>
+    <HvVerticalNavigation>
+      <HvVerticalNavigationTree
+        aria-label="Example 1 navigation"
+        selected={value}
+        onChange={(event, data) => {
+          setValue(data.id);
+        }}
+        data={navigationData}
+      />
+    </HvVerticalNavigation>
   );
 };

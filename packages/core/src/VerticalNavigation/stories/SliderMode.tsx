@@ -80,18 +80,16 @@ export const SliderMode = () => {
   const [value, setValue] = useState("menu1-3");
 
   return (
-    <div style={{ display: "flex", width: 220, height: 530 }}>
-      <HvVerticalNavigation open slider>
-        <HvVerticalNavigationHeader title="Menu" />
-        <HvVerticalNavigationTree
-          collapsible
-          defaultExpanded
-          aria-label="Example 4 Slider Mode"
-          selected={value}
-          onChange={(event, data) => setValue(data.id)}
-          data={navigationData}
-        />
-      </HvVerticalNavigation>
-    </div>
+    <HvVerticalNavigation open slider>
+      <HvVerticalNavigationHeader title="Menu" />
+      <HvVerticalNavigationTree
+        collapsible
+        defaultExpanded
+        aria-label="Example 4 Slider Mode"
+        selected={value}
+        onChange={(event, data) => setValue(data.id)}
+        data={navigationData}
+      />
+    </HvVerticalNavigation>
   );
 };
