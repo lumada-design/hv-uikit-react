@@ -14,16 +14,16 @@ import {
 
 import { HvCanvasTab } from "../Tab";
 import { HvCanvasTabs, HvCanvasTabsProps } from "../Tabs";
-import { staticClasses, useClasses } from "./FloatingPanel.styles";
+import { staticClasses, useClasses } from "./BottomPanel.styles";
 
-export { staticClasses as floatingPanelClasses };
+export { staticClasses as canvasBottomPanelClasses };
 
-export type HvCanvasFloatingPanelClasses = ExtractNames<typeof useClasses>;
+export type HvCanvasBottomPanelClasses = ExtractNames<typeof useClasses>;
 
-export interface HvCanvasFloatingPanelProps extends HvBaseProps {
-  /** Open state of the floating panel. */
+export interface HvCanvasBottomPanelProps extends HvBaseProps {
+  /** Open state of the bottom panel. */
   open?: boolean;
-  /** Minimize state of the floating panel tabs'. */
+  /** Minimize state of the bottom panel tabs'. */
   minimize?: boolean;
   /** List of tabs visible on the panel. */
   tabs: {
@@ -48,15 +48,15 @@ export interface HvCanvasFloatingPanelProps extends HvBaseProps {
     tabId: string | number,
   ) => void;
   /** A Jss Object used to override or extend the styles applied. */
-  classes?: HvCanvasFloatingPanelClasses;
+  classes?: HvCanvasBottomPanelClasses;
 }
 
 /**
- * A floating panel component to use in a canvas context.
+ * A bottom panel component to use in a canvas context.
  */
-export const HvCanvasFloatingPanel = forwardRef<
+export const HvCanvasBottomPanel = forwardRef<
   HTMLDivElement,
-  HvCanvasFloatingPanelProps
+  HvCanvasBottomPanelProps
 >((props, ref) => {
   const {
     id: idProp,
@@ -72,7 +72,7 @@ export const HvCanvasFloatingPanel = forwardRef<
     onTabChange,
     onAction,
     ...others
-  } = useDefaultProps("HvCanvasFloatingPanel", props);
+  } = useDefaultProps("HvCanvasBottomPanel", props);
 
   const { classes, cx } = useClasses(classesProp);
 

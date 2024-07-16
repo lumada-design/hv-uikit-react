@@ -5,10 +5,7 @@ import { describe, it, vi } from "vitest";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Close, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
-import {
-  HvCanvasFloatingPanel,
-  HvCanvasFloatingPanelProps,
-} from "./FloatingPanel";
+import { HvCanvasBottomPanel, HvCanvasBottomPanelProps } from "./BottomPanel";
 
 const panelTabs = [
   {
@@ -21,11 +18,11 @@ const panelTabs = [
   },
 ];
 
-const renderSimplePanel = (props?: Partial<HvCanvasFloatingPanelProps>) =>
+const renderSimplePanel = (props?: Partial<HvCanvasBottomPanelProps>) =>
   render(
-    <HvCanvasFloatingPanel {...props} tabs={panelTabs}>
+    <HvCanvasBottomPanel {...props} tabs={panelTabs}>
       Content
-    </HvCanvasFloatingPanel>,
+    </HvCanvasBottomPanel>,
   );
 
 const ControlledOpen = () => {
@@ -33,17 +30,17 @@ const ControlledOpen = () => {
   return (
     <>
       <HvButton onClick={() => setOpen((prev) => !prev)}>Toggle</HvButton>
-      <HvCanvasFloatingPanel tabs={panelTabs} open={open}>
+      <HvCanvasBottomPanel tabs={panelTabs} open={open}>
         Content
-      </HvCanvasFloatingPanel>
+      </HvCanvasBottomPanel>
     </>
   );
 };
 
-const ControlledTab = (props?: Partial<HvCanvasFloatingPanelProps>) => {
+const ControlledTab = (props?: Partial<HvCanvasBottomPanelProps>) => {
   const [tab, setTab] = useState(panelTabs[1].id);
   return (
-    <HvCanvasFloatingPanel
+    <HvCanvasBottomPanel
       {...props}
       tabs={panelTabs}
       tab={tab}
@@ -53,18 +50,18 @@ const ControlledTab = (props?: Partial<HvCanvasFloatingPanelProps>) => {
       }}
     >
       Content
-    </HvCanvasFloatingPanel>
+    </HvCanvasBottomPanel>
   );
 };
 
-const ControlledMinimize = (props?: Partial<HvCanvasFloatingPanelProps>) => {
+const ControlledMinimize = (props?: Partial<HvCanvasBottomPanelProps>) => {
   const [minimize, setMinimize] = useState(false);
   return (
     <>
       <HvButton onClick={() => setMinimize((prev) => !prev)}>Toggle</HvButton>
-      <HvCanvasFloatingPanel {...props} tabs={panelTabs} minimize={minimize}>
+      <HvCanvasBottomPanel {...props} tabs={panelTabs} minimize={minimize}>
         Content
-      </HvCanvasFloatingPanel>
+      </HvCanvasBottomPanel>
     </>
   );
 };
@@ -91,7 +88,7 @@ const expectPanelClosed = () => {
   expect(tabPanel).toBeNull();
 };
 
-describe("CanvasFloatingPanel", () => {
+describe("CanvasBottomPanel", () => {
   it("renders all components when opened", () => {
     renderSimplePanel({
       open: true,

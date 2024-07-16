@@ -1,19 +1,19 @@
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvCanvasFloatingPanel,
-  HvCanvasFloatingPanelProps,
+  HvCanvasBottomPanel,
+  HvCanvasBottomPanelProps,
 } from "@hitachivantara/uikit-react-pentaho";
 
 import { MainStory } from "./stories/Main";
 import MainRaw from "./stories/Main?raw";
 
-const meta: Meta<typeof HvCanvasFloatingPanel> = {
-  title: "Pentaho/Canvas/Floating Panel",
-  component: HvCanvasFloatingPanel,
+const meta: Meta<typeof HvCanvasBottomPanel> = {
+  title: "Pentaho/Canvas/Bottom Panel",
+  component: HvCanvasBottomPanel,
 };
 export default meta;
 
-export const Main: StoryObj<HvCanvasFloatingPanelProps> = {
+export const Main: StoryObj<HvCanvasBottomPanelProps> = {
   args: { open: true },
   argTypes: {
     tabs: { control: { disable: true } },

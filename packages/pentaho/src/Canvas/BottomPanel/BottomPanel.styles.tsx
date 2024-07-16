@@ -1,7 +1,7 @@
 import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses(
-  "HvCanvasFloatingPanel",
+  "HvCanvasBottomPanel",
   {
     root: {
       position: "absolute",

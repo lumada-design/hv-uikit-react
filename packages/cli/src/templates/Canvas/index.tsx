@@ -25,8 +25,8 @@ import {
   HvFlowEmpty,
 } from "@hitachivantara/uikit-react-lab";
 import {
-  HvCanvasFloatingPanel,
-  HvCanvasFloatingPanelProps,
+  HvCanvasBottomPanel,
+  HvCanvasBottomPanelProps,
   HvCanvasToolbar,
 } from "@hitachivantara/uikit-react-pentaho";
 
@@ -85,7 +85,7 @@ const Page = () => {
   const { selectedTable, openedTables, setOpenedTables, setSelectedTable } =
     useCanvasContext();
 
-  const floatingTabs = useMemo(
+  const bottomTabs = useMemo(
     () =>
       openedTables?.map((table) => ({
         id: table.id,
@@ -111,14 +111,14 @@ const Page = () => {
     }
   };
 
-  const handleChangeTab: HvCanvasFloatingPanelProps["onTabChange"] = (
+  const handleChangeTab: HvCanvasBottomPanelProps["onTabChange"] = (
     event,
     value,
   ) => {
     setSelectedTable?.(value as string);
   };
 
-  const handleAction: HvCanvasFloatingPanelProps["onAction"] = (
+  const handleAction: HvCanvasBottomPanelProps["onAction"] = (
     event,
     action,
     tabId,
@@ -170,13 +170,13 @@ const Page = () => {
     );
   };
 
-  const floatingPanelOpen = useMemo(
+  const bottomPanelOpen = useMemo(
     () =>
       !!openedTables &&
       openedTables.length > 0 &&
-      floatingTabs &&
-      floatingTabs.length > 0,
-    [floatingTabs, openedTables],
+      bottomTabs &&
+      bottomTabs.length > 0,
+    [bottomTabs, openedTables],
   );
 
   return (
@@ -233,15 +233,15 @@ const Page = () => {
           Execute
         </HvButton>
       </HvCanvasToolbar>
-      {floatingTabs && floatingPanelOpen && (
-        <HvCanvasFloatingPanel
+      {bottomTabs && bottomPanelOpen && (
+        <HvCanvasBottomPanel
           className={cx({
             [classes.fullWidth]: !sidePanelOpen,
             [classes.minWidth]: sidePanelOpen,
           })}
-          open={floatingPanelOpen}
+          open={bottomPanelOpen}
           minimize={minimize}
-          tabs={floatingTabs}
+          tabs={bottomTabs}
           tab={selectedTable}
           leftActions={[
             {
@@ -271,9 +271,9 @@ const Page = () => {
           onAction={handleAction}
         >
           <DataTable id={selectedTable} />
-        </HvCanvasFloatingPanel>
+        </HvCanvasBottomPanel>
       )}
-      {floatingPanelOpen && (
+      {bottomPanelOpen && (
         <HvDialog
           fullWidth
           maxWidth="lg"
@@ -281,7 +281,7 @@ const Page = () => {
           onClose={() => setFullscreen((prev) => !prev)}
         >
           <HvDialogTitle className={classes.dialogTitle}>
-            {floatingTabs?.find((x) => x.id === selectedTable)?.title}
+            {bottomTabs?.find((x) => x.id === selectedTable)?.title}
           </HvDialogTitle>
           <HvDialogContent>
             <DataTable id={selectedTable} />
