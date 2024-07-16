@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import { StoryObj } from "@storybook/react";
 import {
-  canvasPanelClasses,
+  canvasSidePanelClasses,
   canvasToolbarClasses,
 } from "@hitachivantara/uikit-react-pentaho";
 
@@ -17,7 +17,10 @@ const classes = {
   root: css({
     "& > div": { height: "calc(100vh - 40px)" },
     [`& .${canvasToolbarClasses.root}`]: { top: 8 },
-    [`& .${canvasPanelClasses.root}`]: { top: 8, height: "calc(100% - 8px)" },
+    [`& .${canvasSidePanelClasses.root}`]: {
+      top: 8,
+      height: "calc(100% - 8px)",
+    },
   }),
 };
 

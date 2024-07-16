@@ -1,5 +1,5 @@
 export * from "./Toolbar";
-export * from "./Panel";
+export * from "./SidePanel";
 export * from "./Tabs";
-export * from "./FloatingPanel";
+export * from "./BottomPanel";
 export * from "./Tab";

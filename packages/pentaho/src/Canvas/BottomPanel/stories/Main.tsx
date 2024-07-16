@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import {
-  HvCanvasFloatingPanel,
-  HvCanvasFloatingPanelProps,
+  HvCanvasBottomPanel,
+  HvCanvasBottomPanelProps,
 } from "@hitachivantara/uikit-react-pentaho";
 
 const tabs = [
@@ -17,8 +17,8 @@ const tabs = [
 
 const classes = { root: css({ position: "relative" }) }; // for Storybook purposes
 
-export const MainStory = (props: HvCanvasFloatingPanelProps) => (
-  <HvCanvasFloatingPanel {...props} className={classes.root} tabs={tabs}>
+export const MainStory = (props: HvCanvasBottomPanelProps) => (
+  <HvCanvasBottomPanel {...props} className={classes.root} tabs={tabs}>
     Content
-  </HvCanvasFloatingPanel>
+  </HvCanvasBottomPanel>
 );

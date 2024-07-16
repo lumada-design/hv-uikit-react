@@ -1,17 +1,17 @@
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvCanvasPanel,
-  HvCanvasPanelProps,
+  HvCanvasSidePanel,
+  HvCanvasSidePanelProps,
 } from "@hitachivantara/uikit-react-pentaho";
 import { theme } from "@hitachivantara/uikit-styles";
 
-const meta: Meta<typeof HvCanvasPanel> = {
-  title: "Pentaho/Canvas/Panel",
-  component: HvCanvasPanel,
+const meta: Meta<typeof HvCanvasSidePanel> = {
+  title: "Pentaho/Canvas/Side Panel",
+  component: HvCanvasSidePanel,
 };
 export default meta;
 
-export const Main: StoryObj<HvCanvasPanelProps> = {
+export const Main: StoryObj<HvCanvasSidePanelProps> = {
   args: { defaultOpen: true },
   argTypes: {
     classes: { control: { disable: true } },
@@ -35,5 +35,7 @@ export const Main: StoryObj<HvCanvasPanelProps> = {
       </div>
     ),
   ],
-  render: (args) => <HvCanvasPanel {...args}>Some content</HvCanvasPanel>,
+  render: (args) => (
+    <HvCanvasSidePanel {...args}>Some content</HvCanvasSidePanel>
+  ),
 };

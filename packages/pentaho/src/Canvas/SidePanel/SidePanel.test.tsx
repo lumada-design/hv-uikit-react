@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 
-import { HvCanvasPanel, HvCanvasPanelProps } from "./Panel";
+import { HvCanvasSidePanel, HvCanvasSidePanelProps } from "./SidePanel";
 
 const label = "Test";
 
@@ -19,20 +19,20 @@ const tabs = [
   },
 ];
 
-const renderSimplePanel = (props?: HvCanvasPanelProps) =>
+const renderSimplePanel = (props?: HvCanvasSidePanelProps) =>
   render(
-    <HvCanvasPanel {...props} tabs={tabs}>
+    <HvCanvasSidePanel {...props} tabs={tabs}>
       <HvButton>{label}</HvButton>
-    </HvCanvasPanel>,
+    </HvCanvasSidePanel>,
   );
 
 const ControlledPanel = ({
   onToggle,
   ...others
-}: Partial<HvCanvasPanelProps>) => {
+}: Partial<HvCanvasSidePanelProps>) => {
   const [opened, setOpened] = useState(false);
   return (
-    <HvCanvasPanel
+    <HvCanvasSidePanel
       open={opened}
       onToggle={(e, v) => {
         onToggle?.(e, v);
@@ -42,17 +42,17 @@ const ControlledPanel = ({
       {...others}
     >
       <HvButton>{label}</HvButton>
-    </HvCanvasPanel>
+    </HvCanvasSidePanel>
   );
 };
 
 const ControlledTabs = ({
   onTabChange,
   ...others
-}: Partial<HvCanvasPanelProps>) => {
+}: Partial<HvCanvasSidePanelProps>) => {
   const [tab, setTab] = useState(tabs[1].id);
   return (
-    <HvCanvasPanel
+    <HvCanvasSidePanel
       tab={tab}
       onTabChange={(e, v) => {
         onTabChange?.(e, v);
@@ -63,7 +63,7 @@ const ControlledTabs = ({
       {...others}
     >
       <HvButton>{label}</HvButton>
-    </HvCanvasPanel>
+    </HvCanvasSidePanel>
   );
 };
 
@@ -91,7 +91,7 @@ const expectSimplePanelOpened = () => {
   expect(closeBtn).toBeInTheDocument();
 };
 
-describe("CanvasPanel", () => {
+describe("CanvasSidePanel", () => {
   it("does not show tabs when not provided", () => {
     renderSimplePanel({ tabs: [] });
     const tabList = screen.queryByRole("tablist");
