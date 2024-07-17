@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.45 (2024-07-17)
+
+### Reverts
+
+- Revert "chore(release): publish" ([c4fae1b](https://github.com/lumada-design/hv-uikit-react/commit/c4fae1bf354a0f3c7f3db4f1b16d520380f0f85f))
+- Revert "chore(release): publish" ([ecea29c](https://github.com/lumada-design/hv-uikit-react/commit/ecea29c4ea42586e3c4f828492c7afecf375419e))
+- "chore(release): publish" ([a580a01](https://github.com/lumada-design/hv-uikit-react/commit/a580a0110faa7a2bc047bfa39d53ff2ddffba4bc))
+
 ## 5.1.44 (2024-07-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-shared
