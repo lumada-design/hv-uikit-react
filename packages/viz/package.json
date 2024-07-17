@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-viz",
-  "version": "5.13.9",
+  "version": "5.13.8",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Contributed React visualization components for the NEXT UI Kit.",
@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@emotion/css": "^11.11.0",
-    "@hitachivantara/uikit-react-core": "^5.66.11"
+    "@hitachivantara/uikit-react-core": "^5.66.10"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
