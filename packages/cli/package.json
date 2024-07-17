@@ -29,7 +29,7 @@
     "pretest": "node src/index.js create uikit-app -t Form,ListView",
     "test": "cd uikit-app",
     "posttest": "npx rimraf uikit-app",
-    "prepublishOnly": "run-s clean && npx clean-publish"
+    "prepublishOnly": "npm run clean && npx clean-publish"
   },
   "dependencies": {
     "chalk": "^5.2.0",
