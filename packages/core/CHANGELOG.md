@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.66.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.10...@hitachivantara/uikit-react-core@5.66.11) (2024-07-17)
+
+### Reverts
+
+- "chore(release): publish" ([a580a01](https://github.com/lumada-design/hv-uikit-react/commit/a580a0110faa7a2bc047bfa39d53ff2ddffba4bc))
+
 ## 5.66.10 (2024-07-12)
 
 ### Performance Improvements
