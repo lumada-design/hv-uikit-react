@@ -30,7 +30,7 @@
     "coverage": "vitest run --coverage",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "run-s clean build && npx clean-publish"
+    "prepublishOnly": "npm run build && npx clean-publish"
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.1",
