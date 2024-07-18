@@ -28,7 +28,7 @@ export const Header = () => {
   };
 
   const handleOpenTutorial = () => {
-    navigate("/home");
+    navigate("/");
     setTutorialOpen?.(true);
   };
 

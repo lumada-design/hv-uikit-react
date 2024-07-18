@@ -1,4 +1,5 @@
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 
 import { Container } from "~/components/common/Container";
@@ -11,9 +12,22 @@ import Sidebar from "~/generator/Sidebar";
 import { NavigationProvider } from "~/lib/context/navigation";
 import navigation from "~/lib/navigation";
 
+const useRootRedirect = () => {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const dashboard = searchParams.get("dashboard");
+    if (dashboard != null) {
+      navigate(`/dashboard-preview?id=${dashboard}`, { replace: true });
+    }
+  }, [searchParams, navigate]);
+};
+
 /** Navigation layout & provider */
 const Navigation = () => {
   const { selectedMode } = useTheme();
+  useRootRedirect();
 
   const {
     customTheme,

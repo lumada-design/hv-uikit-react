@@ -11,7 +11,8 @@ import { useNavigationContext } from "~/lib/context/navigation";
 const useHeaderSpacing = () => {
   const { activePath, navigation } = useNavigationContext();
 
-  const isFirstLevel = navigation?.some((item) => item.id === activePath?.id);
+  const isFirstLevel =
+    !activePath || navigation?.some((item) => item.id === activePath?.id);
 
   const headerSpacing = isFirstLevel
     ? `${theme.header.height}`
