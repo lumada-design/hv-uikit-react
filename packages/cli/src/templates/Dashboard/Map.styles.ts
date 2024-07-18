@@ -322,7 +322,7 @@ export const mapStyles = css`
   .leaflet-bar a:focus {
     background-color: #f4f4f4;
   }
-  .leaflet-bar a:first-child {
+  .leaflet-bar a:first-of-type {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
   }
@@ -342,7 +342,7 @@ export const mapStyles = css`
     height: 30px;
     line-height: 30px;
   }
-  .leaflet-touch .leaflet-bar a:first-child {
+  .leaflet-touch .leaflet-bar a:first-of-type {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
   }
@@ -470,12 +470,12 @@ export const mapStyles = css`
     background: rgba(255, 255, 255, 0.8);
     text-shadow: 1px 1px #fff;
   }
-  .leaflet-control-scale-line:not(:first-child) {
+  .leaflet-control-scale-line:not(:first-of-type) {
     border-top: 2px solid #777;
     border-bottom: none;
     margin-top: -2px;
   }
-  .leaflet-control-scale-line:not(:first-child):not(:last-child) {
+  .leaflet-control-scale-line:not(:first-of-type):not(:last-child) {
     border-bottom: 2px solid #777;
   }
 
