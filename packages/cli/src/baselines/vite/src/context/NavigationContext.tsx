@@ -1,10 +1,21 @@
-import { useMemo, createContext } from "react";
+import { createContext, useContext, useMemo } from "react";
+import { useLocation } from "react-router-dom";
 
-import { useNavigation } from "../hooks/useNavigation";
+export interface NavigationData {
+  id: string;
+  label: string;
+  path?: string;
+  data?: NavigationData[];
+}
 
-interface NavigationProviderProps {
+export interface NavigationProviderProps {
   children: React.ReactNode;
   navigation: NavigationData[];
+}
+
+export interface NavigationContextValue {
+  navigation?: NavigationData[];
+  activePath: NavigationData | undefined;
 }
 
 export const NavigationContext = createContext<NavigationContextValue>({
@@ -12,18 +23,30 @@ export const NavigationContext = createContext<NavigationContextValue>({
   activePath: undefined,
 });
 
+const getActivePath = (pathname: string, navigation: NavigationData[]) => {
+  return navigation.reduce((acc, item) => {
+    if (item.path === pathname) return item;
+    if (item.data) {
+      const found = item.data.find((child) => child.path === pathname);
+      if (found) return found;
+    }
+
+    return acc;
+  }, navigation[0]);
+};
+
 export const NavigationProvider = ({
   children,
   navigation,
 }: NavigationProviderProps) => {
-  const { activePath } = useNavigation(navigation);
+  const { pathname } = useLocation();
 
   const value = useMemo(
     () => ({
       navigation,
-      activePath,
+      activePath: getActivePath(pathname, navigation),
     }),
-    [activePath, navigation],
+    [navigation, pathname],
   );
 
   return (
@@ -32,3 +55,13 @@ export const NavigationProvider = ({
     </NavigationContext.Provider>
   );
 };
+
+export function useNavigationContext() {
+  const context = useContext(NavigationContext);
+  if (!context) {
+    throw new Error(
+      "useNavigationContext must be used within a NavigationProvider",
+    );
+  }
+  return context;
+}
