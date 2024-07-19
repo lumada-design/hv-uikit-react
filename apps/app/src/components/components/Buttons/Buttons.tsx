@@ -1,5 +1,4 @@
 import {
-  HvBox,
   HvButton,
   HvTypography,
   theme,
@@ -8,10 +7,10 @@ import { Draw, MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 
 export const Buttons = () => {
   return (
-    <HvBox
-      sx={{ display: "flex", flexDirection: "column", gap: theme.space.md }}
+    <div
+      style={{ display: "flex", flexDirection: "column", gap: theme.space.md }}
     >
-      <HvBox
+      <div
         style={{
           display: "flex",
           flexDirection: "column",
@@ -19,7 +18,7 @@ export const Buttons = () => {
         }}
       >
         <HvTypography variant="title4">Default</HvTypography>
-        <HvBox sx={{ display: "flex", gap: theme.space.md }}>
+        <div style={{ display: "flex", gap: theme.space.md }}>
           <HvButton
             variant="primary"
             onClick={() => alert("This can be triggered")}
@@ -39,10 +38,10 @@ export const Buttons = () => {
           <HvButton variant="secondaryGhost" startIcon={<Draw />}>
             Secondary Ghost
           </HvButton>
-        </HvBox>
-      </HvBox>
+        </div>
+      </div>
 
-      <HvBox
+      <div
         style={{
           display: "flex",
           flexDirection: "column",
@@ -50,7 +49,7 @@ export const Buttons = () => {
         }}
       >
         <HvTypography variant="title4">Disabled</HvTypography>
-        <HvBox sx={{ display: "flex", gap: theme.space.md }}>
+        <div style={{ display: "flex", gap: theme.space.md }}>
           <HvButton disabled variant="primary" startIcon={<Draw />}>
             Primary
           </HvButton>
@@ -76,9 +75,9 @@ export const Buttons = () => {
           >
             Secondary Ghost
           </HvButton>
-        </HvBox>
-      </HvBox>
-      <HvBox
+        </div>
+      </div>
+      <div
         style={{
           display: "flex",
           flexDirection: "column",
@@ -86,8 +85,8 @@ export const Buttons = () => {
         }}
       >
         <HvTypography variant="title4">Icons</HvTypography>
-        <HvBox
-          sx={{ display: "flex", gap: theme.space.md, alignItems: "center" }}
+        <div
+          style={{ display: "flex", gap: theme.space.md, alignItems: "center" }}
         >
           <HvButton icon variant="primary">
             <MoreOptionsVertical />
@@ -104,9 +103,9 @@ export const Buttons = () => {
           <HvButton icon variant="secondaryGhost">
             <MoreOptionsVertical />
           </HvButton>
-        </HvBox>
-      </HvBox>
-      <HvBox
+        </div>
+      </div>
+      <div
         style={{
           display: "flex",
           flexDirection: "column",
@@ -114,12 +113,12 @@ export const Buttons = () => {
         }}
       >
         <HvTypography variant="title4">Semantic</HvTypography>
-        <HvBox sx={{ backgroundColor: "#D3E3F6" }}>
+        <div style={{ backgroundColor: "#D3E3F6" }}>
           <HvButton variant="semantic" startIcon={<Draw />}>
             Semantic
           </HvButton>
-        </HvBox>
-      </HvBox>
-    </HvBox>
+        </div>
+      </div>
+    </div>
   );
 };

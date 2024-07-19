@@ -1,5 +1,4 @@
 import {
-  HvBox,
   HvLoading,
   HvTypography,
   theme,
@@ -7,34 +6,16 @@ import {
 
 export const Loading = () => {
   return (
-    <HvBox
-      css={{
-        display: "flex",
-        gap: "20px",
-        width: "80%",
-        margin: "auto",
-        alignItems: "center",
-        flexDirection: "row",
-        justifyContent: "space-between",
-      }}
-    >
-      <HvBox
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: theme.space.xs,
-          width: "100%",
-          justifyContent: "center",
-        }}
-      >
-        <HvBox css={{ width: 80 }}>
+    <div className="flex gap-sm w-80% m-auto items-center justify-between">
+      <div className="flex gap-xs w-full justify-center">
+        <div className="w-80px">
           <HvTypography variant="title4">Default</HvTypography>
-        </HvBox>
-        <HvBox sx={{ display: "flex", gap: theme.space.md }}>
+        </div>
+        <div className="flex gap-md">
           <HvLoading />
-        </HvBox>
-      </HvBox>
-      <HvBox
+        </div>
+      </div>
+      <div
         style={{
           display: "flex",
           flexDirection: "row",
@@ -43,13 +24,13 @@ export const Loading = () => {
           justifyContent: "center",
         }}
       >
-        <HvBox css={{ width: 80 }}>
+        <div className="w-80px">
           <HvTypography variant="title4">Small</HvTypography>
-        </HvBox>
-        <HvBox sx={{ display: "flex", gap: theme.space.md }}>
+        </div>
+        <div className="flex gap-md">
           <HvLoading small />
-        </HvBox>
-      </HvBox>
-    </HvBox>
+        </div>
+      </div>
+    </div>
   );
 };

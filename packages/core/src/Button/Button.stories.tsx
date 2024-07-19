@@ -1,7 +1,6 @@
 import { css } from "@emotion/css";
 import { StoryObj } from "@storybook/react";
 import {
-  HvBox,
   HvButton,
   HvButtonProps,
   theme,
@@ -43,15 +42,15 @@ export const Main: StoryObj<HvButtonProps> = {
 export const Variants: StoryObj<HvButtonProps> = {
   decorators: [
     (Story) => (
-      <HvBox
-        sx={{
+      <div
+        style={{
           display: "grid",
           gap: 20,
           gridTemplateColumns: "repeat(3, 140px)",
         }}
       >
         {Story()}
-      </HvBox>
+      </div>
     ),
   ],
   render: () => (
@@ -94,15 +93,15 @@ export const Variants: StoryObj<HvButtonProps> = {
 export const Sizes: StoryObj<HvButtonProps> = {
   decorators: [
     (Story) => (
-      <HvBox
-        sx={{
+      <div
+        style={{
           display: "flex",
           flexWrap: "wrap",
           gap: 10,
         }}
       >
         {Story()}
-      </HvBox>
+      </div>
     ),
   ],
   render: () => (
@@ -129,15 +128,15 @@ export const Sizes: StoryObj<HvButtonProps> = {
 export const FocusableWhenDisabled: StoryObj<HvButtonProps> = {
   decorators: [
     (Story) => (
-      <HvBox
-        sx={{
+      <div
+        style={{
           display: "grid",
           gap: 20,
           gridTemplateColumns: "repeat(3, 140px)",
         }}
       >
         {Story()}
-      </HvBox>
+      </div>
     ),
   ],
   parameters: {
@@ -230,8 +229,8 @@ export const Icons: StoryObj<HvButtonProps> = {
 export const Semantic: StoryObj<HvButtonProps> = {
   decorators: [
     (Story) => (
-      <HvBox
-        sx={{
+      <div
+        style={{
           display: "flex",
           gap: 20,
           backgroundColor: theme.colors.neutral_20,
@@ -239,7 +238,7 @@ export const Semantic: StoryObj<HvButtonProps> = {
         }}
       >
         {Story()}
-      </HvBox>
+      </div>
     ),
   ],
   render: () => (
@@ -281,7 +280,7 @@ export const CustomRootComponent: StoryObj<HvButtonProps> = {
   },
   decorators: [
     (Story) => (
-      <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>{Story()}</HvBox>
+      <div style={{ display: "flex", gap: 20, padding: 20 }}>{Story()}</div>
     ),
   ],
   render: () => (

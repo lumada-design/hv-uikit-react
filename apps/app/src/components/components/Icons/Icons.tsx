@@ -1,4 +1,3 @@
-import { HvBox } from "@hitachivantara/uikit-react-core";
 import {
   Bookmark,
   CheckboxCheck,
@@ -8,7 +7,7 @@ import {
 
 export const Icons = () => {
   return (
-    <HvBox sx={{ display: "flex", gap: 20 }}>
+    <div style={{ display: "flex", gap: 20 }}>
       <CheckboxCheck iconSize="XS" />
       <Bookmark
         color={["brand", "secondary"]}
@@ -18,6 +17,6 @@ export const Icons = () => {
       <Machine role="presentation" iconSize="M" />
       <CheckboxCheck height={60} width={60} style={{ width: 80, height: 80 }} />
       <Level5 iconSize="L" inverted role="img" title="Critical!" />
-    </HvBox>
+    </div>
   );
 };

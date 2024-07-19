@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import {
   ExtractNames,
   HvBaseProps,
-  HvBox,
   HvBreakpoints,
   HvTooltip,
   HvTypography,
@@ -283,8 +282,7 @@ export const HvStepNavigation = ({
       {...others}
     >
       {({ stepsWidth, navWidth, ...itemsProps }) => (
-        <HvBox
-          component="nav"
+        <nav
           style={{
             width: `${navWidth}px`,
             margin: 0,
@@ -292,7 +290,7 @@ export const HvStepNavigation = ({
           aria-label={ariaLabel}
         >
           {drawItems(itemsProps)}
-        </HvBox>
+        </nav>
       )}
     </StepNavigation>
   );

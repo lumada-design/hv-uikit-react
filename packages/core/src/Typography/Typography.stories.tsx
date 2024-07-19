@@ -1,6 +1,5 @@
 import { StoryObj } from "@storybook/react";
 import {
-  HvBox,
   HvTypography,
   HvTypographyProps,
   theme,
@@ -81,7 +80,7 @@ export const CustomRootComponent: StoryObj<HvTypographyProps> = {
   },
   render: () => {
     return (
-      <HvBox sx={{ display: "flex", gap: 20, padding: 20 }}>
+      <div style={{ display: "flex", gap: 20, padding: 20 }}>
         <HvTypography component="span">Typography</HvTypography>
         <HvTypography
           link
@@ -97,7 +96,7 @@ export const CustomRootComponent: StoryObj<HvTypographyProps> = {
         >
           Custom link
         </HvTypography>
-      </HvBox>
+      </div>
     );
   },
 };
