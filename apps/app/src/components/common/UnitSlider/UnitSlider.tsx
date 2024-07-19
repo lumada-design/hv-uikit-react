@@ -1,11 +1,9 @@
 import { css } from "@emotion/css";
 import {
-  HvBox,
   HvDropdown,
   HvListValue,
   HvSlider,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 export interface ScaleProps {
@@ -53,7 +51,7 @@ export const UnitSlider = ({
   };
 
   return (
-    <HvBox css={{ position: "relative", width: "100%" }}>
+    <div className="relative w-full">
       <HvSlider
         label={label}
         values={[defaultSize]}
@@ -81,22 +79,8 @@ export const UnitSlider = ({
           },
         ]}
       />
-      <HvBox
-        css={{
-          position: "absolute",
-          top: 0,
-          right: 0,
-          display: "flex",
-          gap: theme.space.sm,
-        }}
-      >
-        <HvBox
-          css={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
+      <div className="absolute top-0 right-0 flex gap-sm">
+        <div className="flex items-center">
           <HvTypography>
             {defaultSize?.toFixed(unit === "em" || unit === "rem" ? 1 : 0)}
           </HvTypography>
@@ -117,8 +101,8 @@ export const UnitSlider = ({
               }}
             />
           )}
-        </HvBox>
-      </HvBox>
-    </HvBox>
+        </div>
+      </div>
+    </div>
   );
 };

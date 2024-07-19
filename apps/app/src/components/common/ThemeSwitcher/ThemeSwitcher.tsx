@@ -1,5 +1,4 @@
 import {
-  HvBox,
   HvDropdown,
   HvListValue,
   useTheme,
@@ -10,9 +9,9 @@ export const ThemeSwitcher = () => {
     useTheme();
 
   return (
-    <HvBox css={{ display: "flex", gap: 20 }}>
+    <div className="flex gap-sm">
       <HvDropdown
-        css={{ width: 150 }}
+        className="w-150px"
         values={themes.map((name) => ({
           value: name,
           label: name,
@@ -23,7 +22,7 @@ export const ThemeSwitcher = () => {
         }
       />
       <HvDropdown
-        css={{ width: 150 }}
+        className="w-150px"
         values={colorModes.map((name) => ({
           value: name,
           label: name,
@@ -33,6 +32,6 @@ export const ThemeSwitcher = () => {
           changeTheme(selectedTheme, (mode as HvListValue).value)
         }
       />
-    </HvBox>
+    </div>
   );
 };

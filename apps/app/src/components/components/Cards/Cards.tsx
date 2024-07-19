@@ -1,5 +1,4 @@
 import {
-  HvBox,
   HvCard,
   HvCardContent,
   HvCardHeader,
@@ -10,7 +9,7 @@ import {
 
 export const Cards = () => {
   return (
-    <HvBox sx={{ display: "flex", flexDirection: "row", gap: theme.space.md }}>
+    <div style={{ display: "flex", flexDirection: "row", gap: theme.space.md }}>
       <HvCard
         bgcolor="atmo1"
         statusColor="negative"
@@ -59,6 +58,6 @@ export const Cards = () => {
           </div>
         </HvCardContent>
       </HvCard>
-    </HvBox>
+    </div>
   );
 };

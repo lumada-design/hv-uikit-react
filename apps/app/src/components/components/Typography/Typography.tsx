@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  HvBox,
   HvCheckBox,
   HvTypography,
   HvTypographyVariants,
@@ -24,9 +23,9 @@ export const Typography = () => {
   const [isDisabled, setIsDisabled] = useState(false);
 
   return (
-    <HvBox>
-      <HvBox
-        sx={{
+    <div>
+      <div
+        style={{
           marginBottom: theme.space.sm,
           display: "flex",
           flexDirection: "row",
@@ -38,27 +37,24 @@ export const Typography = () => {
           label="Disabled"
           onChange={() => setIsDisabled((c) => !c)}
         />
-      </HvBox>
-      <HvBox sx={{ marginBottom: theme.space.sm }}>
-        {variants.map((variant: HvTypographyVariants) => {
+      </div>
+      <div style={{ marginBottom: theme.space.sm }}>
+        {variants.map((variant) => {
           return (
-            <HvBox key={`key_${variant}`} sx={{ marginBottom: theme.space.xs }}>
-              <HvTypography variant="label" key={`label_${variant}`}>
-                {variant}
-              </HvTypography>
+            <div key={variant} style={{ marginBottom: theme.space.xs }}>
+              <HvTypography variant="label">{variant}</HvTypography>
               <br />
               <HvTypography
                 variant={variant}
-                key={variant}
                 link={isLink}
                 disabled={isDisabled}
               >
                 Welcome to NEXT Design System!
               </HvTypography>
-            </HvBox>
+            </div>
           );
         })}
-      </HvBox>
-    </HvBox>
+      </div>
+    </div>
   );
 };

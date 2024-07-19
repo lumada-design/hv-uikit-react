@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HvBox, HvInput } from "@hitachivantara/uikit-react-core";
+import { HvInput } from "@hitachivantara/uikit-react-core";
 import { Map } from "@hitachivantara/uikit-react-icons";
 
 import countryNamesArray from "./countries";
@@ -33,13 +33,13 @@ export const Input = () => {
         alignItems: "flex-start",
       }}
     >
-      <HvBox sx={{ width: "31%" }}>
+      <div style={{ width: "31%" }}>
         <HvInput label="Default" placeholder="Insert text" />
-      </HvBox>
-      <HvBox sx={{ width: "31%" }}>
+      </div>
+      <div style={{ width: "31%" }}>
         <HvInput label="Search" placeholder="Search" type="search" />
-      </HvBox>
-      <HvBox sx={{ width: "31%" }}>
+      </div>
+      <div style={{ width: "31%" }}>
         <HvInput
           id="input-disabled-sample"
           disabled
@@ -47,8 +47,8 @@ export const Input = () => {
           description="Please enter your name"
           placeholder="Insert name"
         />
-      </HvBox>
-      <HvBox sx={{ width: "31%" }}>
+      </div>
+      <div style={{ width: "31%" }}>
         <HvInput
           readOnly
           label="Readonly"
@@ -56,8 +56,8 @@ export const Input = () => {
           placeholder="Insert name"
           defaultValue="You can't change this..."
         />
-      </HvBox>
-      <HvBox sx={{ width: "31%" }}>
+      </div>
+      <div style={{ width: "31%" }}>
         <HvInput
           id="invalid-state-input"
           label="Invalid"
@@ -66,8 +66,8 @@ export const Input = () => {
           status="invalid"
           statusMessage="Oh no!"
         />
-      </HvBox>
-      <HvBox sx={{ width: "31%" }}>
+      </div>
+      <div style={{ width: "31%" }}>
         <HvInput
           id="suggestions"
           label="Select a country"
@@ -78,7 +78,7 @@ export const Input = () => {
           suggestionListCallback={suggestionHandler}
           endAdornment={<Map />}
         />
-      </HvBox>
+      </div>
     </div>
   );
 };

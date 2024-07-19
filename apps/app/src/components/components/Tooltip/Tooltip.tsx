@@ -1,5 +1,4 @@
 import {
-  HvBox,
   HvTooltip,
   HvTypography,
   theme,
@@ -19,13 +18,13 @@ export const Tooltip = () => {
   };
 
   return (
-    <HvBox sx={styling.placeholder}>
+    <div style={styling.placeholder}>
       <HvTooltip title="Tooltip content" useSingle>
         <HvTypography>Hover here</HvTypography>
       </HvTooltip>
       <HvTooltip title="Tooltip content" open>
         <p>{`I'm always showing a tooltip`}</p>
       </HvTooltip>
-    </HvBox>
+    </div>
   );
 };

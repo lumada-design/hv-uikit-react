@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import {
-  HvBox,
-  HvTagProps,
-  HvTagsInput,
-} from "@hitachivantara/uikit-react-core";
+import { HvTagProps, HvTagsInput } from "@hitachivantara/uikit-react-core";
 
 import countryNamesArray from "./countries";
 
@@ -35,10 +31,10 @@ export const TagsInput = () => {
         alignItems: "flex-start",
       }}
     >
-      <HvBox sx={{ width: "31%" }}>
+      <div style={{ width: "31%" }}>
         <HvTagsInput label="Default" placeholder="Insert text" />
-      </HvBox>
-      <HvBox sx={{ width: "31%" }}>
+      </div>
+      <div style={{ width: "31%" }}>
         <HvTagsInput
           label="Disabled"
           placeholder="Insert text"
@@ -58,32 +54,32 @@ export const TagsInput = () => {
           ]}
           disabled
         />
-      </HvBox>
-      <HvBox sx={{ width: "31%" }}>
+      </div>
+      <div style={{ width: "31%" }}>
         <HvTagsInput
           label="Readonly"
           placeholder="Insert text"
           value={["tag 1", "tag 2", "tag  3"]}
           readOnly
         />
-      </HvBox>
-      <HvBox sx={{ width: "31%" }}>
+      </div>
+      <div style={{ width: "31%" }}>
         <HvTagsInput
           label="Invalid"
           placeholder="Insert text"
           status="invalid"
           statusMessage="Oh no!"
         />
-      </HvBox>
-      <HvBox sx={{ width: "31%" }}>
+      </div>
+      <div style={{ width: "31%" }}>
         <HvTagsInput
           label="Multiline"
           placeholder="Insert text"
           multiline
           classes={{ tagsList: css({ width: "100%", height: 100 }) }}
         />
-      </HvBox>
-      <HvBox sx={{ width: "31%" }}>
+      </div>
+      <div style={{ width: "31%" }}>
         <HvTagsInput
           id="tags-list-12"
           label="Suggestions"
@@ -96,7 +92,7 @@ export const TagsInput = () => {
           value={currValueStr}
           suggestionListCallback={suggestionHandler}
         />
-      </HvBox>
+      </div>
     </div>
   );
 };

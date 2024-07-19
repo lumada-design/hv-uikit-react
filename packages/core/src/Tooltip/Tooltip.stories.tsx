@@ -2,7 +2,6 @@ import { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import {
   HvAvatar,
-  HvBox,
   HvButton,
   HvTooltip,
   HvTooltipProps,
@@ -26,8 +25,8 @@ export const Main: StoryObj<HvTooltipProps> = {
   },
   render: ({ open }) => {
     return (
-      <HvBox
-        sx={{
+      <div
+        style={{
           display: "flex",
           justifyContent: "space-around",
           paddingTop: 80,
@@ -39,7 +38,7 @@ export const Main: StoryObj<HvTooltipProps> = {
         <HvTooltip title="Grid View" open={open}>
           <HvButton variant="secondaryGhost">Tooltip open</HvButton>
         </HvTooltip>
-      </HvBox>
+      </div>
     );
   },
 };
@@ -54,8 +53,8 @@ export const Disabled: StoryObj<HvTooltipProps> = {
     },
   },
   render: () => (
-    <HvBox
-      sx={{
+    <div
+      style={{
         display: "flex",
         justifyContent: "space-around",
         paddingTop: 100,
@@ -76,7 +75,7 @@ export const Disabled: StoryObj<HvTooltipProps> = {
       >
         <HvButton variant="secondaryGhost">Hover ignored</HvButton>
       </HvTooltip>
-    </HvBox>
+    </div>
   ),
 };
 
@@ -101,8 +100,8 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
     await expect(tooltip).toBeInTheDocument();
   },
   render: () => (
-    <HvBox
-      sx={{
+    <div
+      style={{
         display: "flex",
         justifyContent: "space-around",
         padding: "60px 0",
@@ -136,7 +135,7 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
           UI Kit
         </HvTypography>
       </HvTooltip>
-    </HvBox>
+    </div>
   ),
 };
 
@@ -206,8 +205,8 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
     );
 
     return (
-      <HvBox
-        sx={{
+      <div
+        style={{
           display: "flex",
           justifyContent: "space-around",
           padding: "200px 20px 0",
@@ -222,7 +221,7 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
         <HvTooltip title={multilineContent2} useSingle={false}>
           <HvButton variant="secondaryGhost">Multiline content 2</HvButton>
         </HvTooltip>
-      </HvBox>
+      </div>
     );
   },
 };
