@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import {
+  HvActionGeneric,
   HvBulkActions,
   HvPagination,
   HvTable,
@@ -53,7 +54,7 @@ export const CompleteTableSection = () => {
   );
 
   const handleAction = useCallback(
-    (evt, action) => {
+    (evt: React.SyntheticEvent, action: HvActionGeneric) => {
       const selected = selectedFlatRows.map((el) => el.original);
 
       switch (action.id) {

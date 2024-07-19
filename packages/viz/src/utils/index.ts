@@ -144,7 +144,8 @@ export const getFilterFunction = (
         return include;
       };
     case "between":
-      return (row: any) => row[field] >= value[0] && row[field] <= value[1];
+      return (row: any) =>
+        row[field] >= valueArray[0] && row[field] <= valueArray[1];
     case "ends":
       return (row: any) => {
         let include = false;
@@ -232,8 +233,8 @@ export const processTableData = (data: HvChartData) => {
   }
 
   // Normalize the column names to remove any special character and spaces since it can lead to errors during processing
-  const nameMapping = {};
-  const reversedNameMapping = {};
+  const nameMapping: Record<string, string> = {};
+  const reversedNameMapping: Record<string, string> = {};
   for (const column of tableData.columnNames()) {
     const normalizedName = normalizeColumnName(column);
     nameMapping[column] = normalizedName;

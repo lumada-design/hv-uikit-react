@@ -1,5 +1,10 @@
 export class NodeTreeMapUtils {
-  static addNodeToNodeMap(nodeMap, nodeId, childrenIds, nodeData) {
+  static addNodeToNodeMap(
+    nodeMap: any,
+    nodeId: any,
+    childrenIds: any,
+    nodeData: any,
+  ) {
     const newMap = { ...nodeMap };
 
     const currentMap = newMap[nodeId];
@@ -8,7 +13,7 @@ export class NodeTreeMapUtils {
       children: childrenIds,
       ...nodeData,
     };
-    childrenIds.forEach((childId) => {
+    childrenIds.forEach((childId: any) => {
       const currentChildMap = newMap[childId];
       newMap[childId] = {
         ...currentChildMap,
@@ -19,7 +24,7 @@ export class NodeTreeMapUtils {
     return newMap;
   }
 
-  static removeNodeFromNodeMap(nodeMap, nodeId) {
+  static removeNodeFromNodeMap(nodeMap: any, nodeId: any) {
     const node = nodeMap[nodeId];
     if (node) {
       const newMap = { ...nodeMap };
@@ -28,7 +33,7 @@ export class NodeTreeMapUtils {
         const parentNode = newMap[node.parent];
         if (parentNode?.children) {
           const parentChildren = parentNode.children.filter(
-            (c) => c !== nodeId,
+            (c: any) => c !== nodeId,
           );
           newMap[node.parent] = {
             ...parentNode,

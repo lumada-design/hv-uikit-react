@@ -8,11 +8,11 @@
  * @returns The element that matches the requirement or null if none is found
  */
 const searchInCollection = (
-  collection,
-  childrenPropName,
-  propName,
-  propValue,
-) => {
+  collection: any,
+  childrenPropName: any,
+  propName: any,
+  propValue: any,
+): any => {
   if (collection[propName] === propValue) {
     return collection;
   }
@@ -38,7 +38,7 @@ const searchInCollection = (
  * @param navigationItemId - The id to be used on the search
  * @returns The navigation item with the specified id.
  */
-const getNavigationItemById = (navigationItems, navigationItemId) => {
+const getNavigationItemById = (navigationItems: any, navigationItemId: any) => {
   return searchInCollection(navigationItems, "data", "id", navigationItemId);
 };
 
@@ -49,7 +49,7 @@ const getNavigationItemById = (navigationItems, navigationItemId) => {
  * @param navigationItemId - The id to be used on the search
  * @returns The parent navigation item.
  */
-const getParentItemById = (navigationItems, navigationItemId) => {
+const getParentItemById = (navigationItems: any, navigationItemId: any) => {
   const parentId = getNavigationItemById(
     navigationItems,
     navigationItemId,
@@ -64,8 +64,8 @@ const getParentItemById = (navigationItems, navigationItemId) => {
  * @param parentItemId - The parent id to be added.
  * @returns The structure now filled with the parent id.
  */
-const fillDataWithParentId = (navigationItems, parentItemId?) => {
-  return navigationItems.map((item) => {
+const fillDataWithParentId = (navigationItems: any, parentItemId?: any) => {
+  return navigationItems.map((item: any) => {
     if (item?.data?.length > 0) {
       return {
         ...item,

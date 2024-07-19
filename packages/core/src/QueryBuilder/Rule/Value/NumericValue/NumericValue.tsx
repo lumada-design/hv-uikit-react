@@ -31,7 +31,10 @@ export const NumericValue = ({
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
   const onSingleValueChange = useCallback(
-    (_, data: string) => {
+    (
+      event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+      data: string,
+    ) => {
       const numericData = !data ? null : Number(data);
       dispatchAction({
         type: "set-value",
@@ -43,7 +46,11 @@ export const NumericValue = ({
   );
 
   const onRangeValueChange = useCallback(
-    (_, data: string, from = true) => {
+    (
+      event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+      data: string,
+      from = true,
+    ) => {
       const numericData = !data ? null : Number(data);
       const currentValue = value;
       const numericRange = {

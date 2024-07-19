@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import {
   HvBulkActions,
   HvPagination,
+  HvRowInstance,
   HvTable,
   HvTableBody,
   HvTableCell,
@@ -29,7 +30,7 @@ export const LockedSelection = () => {
       {
         id: "actions",
         variant: "actions",
-        Cell: ({ row }) => {
+        Cell: ({ row }: { row: HvRowInstance<AssetEvent> }) => {
           return (
             <HvToggleButton
               aria-label="Lock"

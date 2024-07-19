@@ -13,6 +13,7 @@ import {
   HvSwitch,
   HvTab,
   HvTabs,
+  HvTabsProps,
   HvTypography,
   tabsClasses,
   theme,
@@ -78,7 +79,7 @@ export const NestedClasses: StoryObj = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange = (_, newValue) => {
+    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
       setValue(newValue);
     };
 

@@ -25,7 +25,10 @@ export function isEqual(obj1: unknown, obj2: unknown) {
   if (keys1.length !== keys2.length) return false;
 
   for (const key of keys1) {
-    if (!isEqual(obj1[key], obj2[key])) return false;
+    if (
+      !isEqual(obj1[key as keyof typeof obj1], obj2[key as keyof typeof obj2])
+    )
+      return false;
   }
 
   return true;

@@ -11,7 +11,15 @@ const getSourceUrl = (id: string) => {
   return `https://github.com/lumada-design/hv-uikit-react/tree/master/packages/cli/src/templates/${key}`;
 };
 
-const TemplateItem = ({ storyId, image, href }) => {
+const TemplateItem = ({
+  storyId,
+  image,
+  href,
+}: {
+  storyId: string;
+  image: string;
+  href: string;
+}) => {
   return (
     <HvCard
       bgcolor="atmo1"

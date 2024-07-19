@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
 
@@ -20,7 +20,10 @@ export interface HvDialogProps
   /** Current state of the Dialog. */
   open?: boolean;
   /** Callback fired when the component requests to be closed. */
-  onClose?: (event: any, reason?: "escapeKeyDown" | "backdropClick") => void;
+  onClose?: (
+    event: React.MouseEvent<HTMLButtonElement> | {},
+    reason?: "escapeKeyDown" | "backdropClick",
+  ) => void;
   /** @inheritdoc */
   maxWidth?: MuiDialogProps["maxWidth"];
   /** @inheritdoc */
@@ -116,7 +119,9 @@ export const HvDialog = (props: HvDialogProps) => {
         title={buttonTitle}
         id={setId(id, "close")}
         className={classes.closeButton}
-        onClick={(event) => onClose?.(event, undefined)}
+        onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+          onClose?.(event, undefined)
+        }
       >
         <Close />
       </HvIconButton>

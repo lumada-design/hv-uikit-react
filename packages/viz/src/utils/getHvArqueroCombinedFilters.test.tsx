@@ -12,7 +12,7 @@ const data = {
 const processFilters = (filters: HvChartFilter[]) => {
   let tableData = table(data);
   tableData = tableData.filter(
-    escape((row) => getHvArqueroCombinedFilters(row, filters)),
+    escape((row: any) => getHvArqueroCombinedFilters(row, filters)),
   );
   return tableData;
 };

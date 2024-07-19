@@ -2,7 +2,7 @@ import { createContext, Dispatch, SetStateAction } from "react";
 
 export type HvWizardTab = {
   name?: string;
-  valid?: boolean;
+  valid?: boolean | null;
   mustValidate?: boolean;
   touched?: boolean;
   form?: any;

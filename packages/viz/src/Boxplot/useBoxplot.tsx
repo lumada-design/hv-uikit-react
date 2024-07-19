@@ -41,7 +41,7 @@ export const useBoxplot = ({
   });
 
   const boxplotData = useMemo(() => {
-    const setData = {};
+    const setData: Record<string, any[]> = {};
     Object.keys(measuresFields).forEach((m) => {
       setData[m] = [];
       Object.keys(chartData).forEach((key) => {
@@ -63,7 +63,8 @@ export const useBoxplot = ({
         transform: {
           type: "boxplot",
           config: {
-            itemNameFormatter: (params) => Object.keys(chartData)[params.value],
+            itemNameFormatter: (params: any) =>
+              Object.keys(chartData)[params.value],
           },
         },
       });

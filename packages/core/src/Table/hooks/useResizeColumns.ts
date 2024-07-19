@@ -24,7 +24,7 @@ export type UseHvResizeColumnsProps = (<
 // #endregion ##### TYPES #####
 
 // props target: <table><thead><tr><th>
-const getHeaderPropsHook = (props, { column }) => {
+const getHeaderPropsHook = (props: any, { column }: any) => {
   const resizerProps: NonNullable<UseHvResizeColumnProps["resizerProps"]> =
     column.getResizerProps?.() || {};
 
@@ -43,7 +43,7 @@ const getHeaderPropsHook = (props, { column }) => {
 };
 
 // props target: <table><tbody><tr><td>
-const getCellPropsHook = (props, { cell }) => {
+const getCellPropsHook = (props: any, { cell }: any) => {
   const nextProps: UseHvResizeTableCellProps = {
     resizable: cell.column.canResize,
     resizing: cell.column.isResizing,
@@ -52,7 +52,7 @@ const getCellPropsHook = (props, { cell }) => {
   return [props, nextProps];
 };
 
-const useInstanceHook = (instance) => {
+const useInstanceHook = (instance: any) => {
   ensurePluginOrder(
     instance.plugins,
     ["useResizeColumns"],

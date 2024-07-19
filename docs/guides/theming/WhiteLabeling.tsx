@@ -8,6 +8,7 @@ import {
   HvHeader,
   HvHeaderBrand,
   HvHeaderNavigation,
+  HvHeaderNavigationProps,
   HvProvider,
   HvTypography,
   theme,
@@ -123,7 +124,10 @@ export const WhiteLabeling = () => {
 
   const [selected, setSelected] = useState<string>("1");
 
-  const handleChange = (_, selectedItem) => {
+  const handleChange: HvHeaderNavigationProps["onClick"] = (
+    _,
+    selectedItem,
+  ) => {
     setSelected(selectedItem.id);
   };
 

@@ -262,7 +262,7 @@ export const WithTitle: StoryObj<HvListContainerProps> = {
 
 export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
   render: () => {
-    const initialSelection = {
+    const initialSelection: Record<number, boolean> = {
       0: false,
       1: false,
       2: false,
@@ -276,7 +276,7 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
         ...initialSelection,
       });
 
-      const flipSelection = (selectionToFlip) => {
+      const flipSelection = (selectionToFlip: [string, boolean][]) => {
         const updatedSelection = selectionToFlip.map((item) => {
           const updatedEntries = [item[0], !item[1]];
           return updatedEntries;
@@ -285,14 +285,14 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
         return updatedSelection;
       };
 
-      const getSelectedItemsCount = (selectionSet) => {
+      const getSelectedItemsCount = (selectionSet: typeof selectedItems) => {
         return Object.values(selectionSet).filter((e) => e === true).length;
       };
 
       const getUpdatedSelectionArray = (
-        initialSet,
-        selectionStart,
-        selectionEnd,
+        initialSet: typeof initialSelection,
+        selectionStart: number,
+        selectionEnd: number,
       ) => {
         return Object.fromEntries(
           flipSelection(
@@ -301,14 +301,14 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
         );
       };
 
-      const getIndexOfSelectedItem = (selectionSet) => {
+      const getIndexOfSelectedItem = (selectionSet: typeof selectedItems) => {
         const preExistingSelectedItems = Object.entries(selectionSet).filter(
           (e) => e[1] === true,
         )[0];
         return +preExistingSelectedItems[0];
       };
 
-      const setSelectionSet = (index) => {
+      const setSelectionSet = (index: number) => {
         let leftSet;
         let rightSet;
         let updatedArray;

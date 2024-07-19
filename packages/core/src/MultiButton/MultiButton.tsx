@@ -82,7 +82,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
         {
           [classes.multiple]: !split,
           [classes.vertical]: vertical,
-          [classes[variant]]: variant, // TODO - remove in v6
+          [classes[variant as keyof HvMultiButtonClasses]]: variant, // TODO - remove in v6
           [classes.splitGroup]: split,
           [classes.splitGroupDisabled]: split && disabled,
         },
@@ -114,7 +114,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
                   {
                     [classes.splitDisabled]: disabled,
                   },
-                  classes[variant], // TODO - remove in v6
+                  classes[variant as keyof HvMultiButtonClasses], // TODO - remove in v6
                 )}
               >
                 <div className={classes.split} />

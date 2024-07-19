@@ -118,9 +118,11 @@ const SelectRenderer = ({
   id,
   operator,
   value,
-  attribute,
+  attribute: attributeProp,
 }: HvQueryBuilderRendererProps<SelectValue>) => {
   const { dispatchAction } = useQueryBuilderContext();
+
+  const attribute = attributeProp as keyof typeof selectRenderers;
 
   const values = useMemo(
     () =>
@@ -212,10 +214,10 @@ const sliderRenderers = {
 
 const SliderRenderer = ({
   id,
-  attribute,
+  attribute: attributeProp,
 }: HvQueryBuilderRendererProps<SelectValue>) => {
   const { dispatchAction } = useQueryBuilderContext();
-
+  const attribute = attributeProp as keyof typeof sliderRenderers;
   return (
     <HvSlider
       required
@@ -239,10 +241,12 @@ const textContainsRenderers = {
 
 const TextContainsRenderer = ({
   id,
-  attribute,
+  attribute: attributeProp,
   value,
 }: HvQueryBuilderRendererProps<HvTagsInputProps["value"] | string>) => {
   const { dispatchAction } = useQueryBuilderContext();
+
+  const attribute = attributeProp as keyof typeof textContainsRenderers;
 
   // Clear value when "Contains" is unselected and the renderer unmounts
   useEffect(() => {

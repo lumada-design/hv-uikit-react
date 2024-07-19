@@ -37,7 +37,7 @@ export const useBoxplotData = ({
       }));
 
       tableData = tableData.filter(
-        escape((row) => getHvArqueroCombinedFilters(row, filters)),
+        escape((row: any) => getHvArqueroCombinedFilters(row, filters)),
       );
     }
 
@@ -46,13 +46,13 @@ export const useBoxplotData = ({
       tableData.array(normalizedGroupBy) as string[],
     );
 
-    const results = {};
+    const results: Record<string, Record<string, any[]>> = {};
     uniqueGroupBy.forEach((group) => {
       results[group] = {};
       Object.keys(measures).forEach((measure) => {
         results[group][measure] = tableData
           .params({ group, groupBy: normalizedGroupBy })
-          .filter((d, $) => d[$.groupBy] === $.group)
+          .filter((d: any, $: any) => d[$.groupBy] === $.group)
           .array(normalizeColumnName(measure)); // normalize
       });
     });

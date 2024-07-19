@@ -2,6 +2,7 @@ import { css, cx } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-react-core";
 import {
   HvBoxplot,
+  HvBoxplotProps,
   HvChartTooltipParams,
 } from "@hitachivantara/uikit-react-viz";
 
@@ -88,7 +89,7 @@ const renderTooltip = (params?: HvChartTooltipParams) => {
       </div>`;
 };
 
-export const CustomTooltip = ({ data }) => {
+export const CustomTooltip = ({ data }: { data: HvBoxplotProps["data"] }) => {
   return (
     <HvBoxplot
       name="Steel Wheels"

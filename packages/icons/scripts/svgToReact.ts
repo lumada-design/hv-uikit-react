@@ -27,7 +27,7 @@ const componentOutputFolder = outputPath
   ? path.resolve(process.cwd(), outputPath)
   : path.resolve(process.cwd());
 
-const knownSubfolders = {};
+const knownSubfolders: Record<string, boolean> = {};
 
 const transformToJsx = (svgCode: string) => {
   return transform.sync(svgCode, {
@@ -38,7 +38,7 @@ const transformToJsx = (svgCode: string) => {
   });
 };
 
-const writeFile = (processedSVG, fileName, subFolder = ".") => {
+const writeFile = (processedSVG: string, fileName: string, subFolder = ".") => {
   fs.mkdirSync(path.resolve(componentOutputFolder, subFolder), {
     recursive: true,
   });
@@ -161,7 +161,11 @@ const runUtilForAllInDir = () => {
   });
 };
 
-const runUtilForJustFilesInDir = (folder, subFolder = ".", depth = 0) => {
+const runUtilForJustFilesInDir = (
+  folder: string,
+  subFolder = ".",
+  depth = 0,
+) => {
   fs.readdir(folder, (err, files) => {
     if (err) {
       console.log(err);

@@ -67,7 +67,7 @@ const renderTooltip = (params?: HvChartTooltipParams) => {
   const value = params?.value;
 
   const valueToShow = value
-    ? `${days[value?.[1]]} - ${hours[value?.[0]]}`
+    ? `${days[Number(value[1])]} - ${hours[Number(value[0])]}`
     : "-";
 
   return `

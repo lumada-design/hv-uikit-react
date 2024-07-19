@@ -46,7 +46,9 @@ export const getContainerStyle = ({
     gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
     gap: theme.space[spacing],
     ...(breakpoints &&
-      getSortedBreakpoints(breakpoints).reduce((acc, breakpoint) => {
+      getSortedBreakpoints(breakpoints).reduce<
+        Record<string, React.CSSProperties>
+      >((acc, breakpoint) => {
         const property = "maxWidth" in breakpoint ? "max-width" : "min-width";
         const breakpointSize = size({
           size:

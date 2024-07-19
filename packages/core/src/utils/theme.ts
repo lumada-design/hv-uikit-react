@@ -84,6 +84,7 @@ export const createTheme = (
   // Fill new color modes with missing colors
   if (customizations) {
     Object.keys(customizedTheme.colors.modes).forEach((mode) => {
+      // @ts-ignore
       if (!themes[base].colors.modes[mode]) {
         customizedTheme.colors.modes[mode] = {
           ...themes[base].colors.modes.dawn,

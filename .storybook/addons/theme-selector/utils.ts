@@ -1,3 +1,5 @@
+import { HvThemeStructure, themes } from "../../../packages/styles/src";
+
 const STORAGE_KEY = "sb-uikit-theme";
 const DEFAULT_THEME = "ds5";
 
@@ -32,7 +34,7 @@ const toPascalCase = (str: string) =>
     (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(),
   );
 
-export const getThemesList = (themes) => {
+export const getThemesList = (themes: Record<string, HvThemeStructure>) => {
   const themesList: Theme[] = [];
 
   Object.keys(themes).forEach((themeName) => {

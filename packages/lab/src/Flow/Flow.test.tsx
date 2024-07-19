@@ -9,6 +9,7 @@ import {
   HvFlow,
   HvFlowBackground,
   HvFlowBaseNode,
+  HvFlowBaseNodeProps,
   HvFlowControls,
   HvFlowControlsProps,
   HvFlowMinimap,
@@ -36,31 +37,28 @@ const nodeGroups: HvFlowNodeGroups = {
   },
 };
 
-const BoomArm = (props) => (
+const BoomArm = (props: HvFlowBaseNodeProps) => (
   <HvFlowBaseNode
     title="Asset"
     subtitle="Boom Arm"
-    description="Boom Arm"
     groupId="asset"
     color={theme.colors.cat3_40}
     {...props}
   />
 );
-const ToyStory = (props) => (
+const ToyStory = (props: HvFlowBaseNodeProps) => (
   <HvFlowBaseNode
     title="Digital Twin"
     subtitle="Toy Story"
-    description="Toy Story"
     groupId="digitalTwin"
     color={theme.colors.cat2_40}
     {...props}
   />
 );
-const SpaceMountain = (props) => (
+const SpaceMountain = (props: HvFlowBaseNodeProps) => (
   <HvFlowBaseNode
     title="Asset"
     subtitle="Space Mountain"
-    description="Space Mountain"
     groupId="asset"
     color={theme.colors.cat3_40}
     {...props}

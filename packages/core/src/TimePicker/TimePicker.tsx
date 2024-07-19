@@ -22,7 +22,7 @@ import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
-import { Placeholder } from "./Placeholder";
+import { Placeholder, PlaceholderProps } from "./Placeholder";
 import { staticClasses, useClasses } from "./TimePicker.styles";
 import { Unit } from "./Unit";
 
@@ -212,7 +212,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
     const [validationMessage] = useControlled(statusMessage, "Required");
     const [validationState] = useControlled<HvFormStatus>(status, "standBy");
 
-    const placeholders = useMemo(
+    const placeholders: PlaceholderProps["placeholders"] = useMemo(
       () => ({
         hour: hoursPlaceholder,
         minute: minutesPlaceholder,

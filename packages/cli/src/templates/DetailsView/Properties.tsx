@@ -112,12 +112,13 @@ export const Properties = ({ editMode }: { editMode?: boolean }) => {
 
   const elements = Object.entries(entries).map(([key, entry]) => {
     const { label, Component, EditComponent, ...others } = entry;
-    const value = data[key];
+    const value = data[key as keyof ModelDetails];
     const ContentComponent = (editMode && EditComponent) || Component;
 
     return (
       <MetadataItem key={key} xs={12} sm={3} title={label} {...others}>
-        {(ContentComponent && <ContentComponent value={value} />) || value}
+        {(ContentComponent && <ContentComponent value={value} />) ||
+          (value as any)}
       </MetadataItem>
     );
   });

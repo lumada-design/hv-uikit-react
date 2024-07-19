@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { NodeTreeMapUtils } from ".";
 
 describe("NodeTreeMapUtils", () => {
-  let nodeMap;
+  let nodeMap: Record<string | number, object>;
 
   beforeEach(() => {
     nodeMap = {

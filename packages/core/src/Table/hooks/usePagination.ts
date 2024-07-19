@@ -41,7 +41,7 @@ export type UsePaginationProps = (<D extends object = Record<string, unknown>>(
 
 // #endregion ##### TYPES #####
 
-const useInstanceHook = (instance) => {
+const useInstanceHook = (instance: any) => {
   ensurePluginOrder(
     instance.plugins,
     [
@@ -68,7 +68,7 @@ const useInstanceHook = (instance) => {
   });
 };
 
-export const defaultGetHvPaginationProps = (props, { instance }) => {
+export const defaultGetHvPaginationProps = (props: any, { instance }: any) => {
   const {
     canPreviousPage,
     canNextPage,

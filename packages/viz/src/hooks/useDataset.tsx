@@ -7,7 +7,7 @@ export const useDataset = (data: internal.ColumnTable) => {
   return useMemo<Pick<HvEChartsOption, "dataset">>(() => {
     return {
       dataset: {
-        source: data.columnNames().reduce((acc, c) => {
+        source: data.columnNames().reduce<Record<string, any[]>>((acc, c) => {
           acc[c] = data.array(c);
           return acc;
         }, {}),

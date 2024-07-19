@@ -18,10 +18,7 @@ export interface HvWizardContainerProps
   /** Current state of the Wizard. */
   open: boolean;
   /** Function executed on close. */
-  handleClose: (
-    event: React.SyntheticEvent,
-    reason?: "escapeKeyDown" | "backdropClick",
-  ) => void;
+  handleClose: HvDialogProps["onClose"];
   /** A Jss Object used to override or extend the styles applied to the empty state Wizard. */
   classes?: HvWizardContainerClasses;
 }

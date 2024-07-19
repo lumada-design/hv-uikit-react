@@ -51,7 +51,7 @@ export type UseBulkActionsProps = (<D extends object = Record<string, unknown>>(
 
 // #endregion ##### TYPES #####
 
-const useInstanceHook = (instance) => {
+const useInstanceHook = (instance: any) => {
   const { plugins, page, toggleAllPageRowsSelected, toggleAllRowsSelected } =
     instance;
 
@@ -131,7 +131,7 @@ const useInstanceHook = (instance) => {
 };
 
 // TODO: fix typo in v6
-export const defaultgetHvBulkActionsProps = (props, { instance }) => {
+export const defaultgetHvBulkActionsProps = (props: any, { instance }: any) => {
   const {
     rows,
     initialRows,

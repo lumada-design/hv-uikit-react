@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { ModalProps } from "@mui/material/Modal";
 import {
   ExtractNames,
   HvBaseProps,
@@ -24,7 +23,10 @@ export interface HvWizardProps
   /** Current state of the Wizard. */
   open: boolean;
   /** Function executed on close. */
-  onClose: ModalProps["onClose"];
+  onClose: (
+    event: React.MouseEvent<HTMLButtonElement> | {},
+    reason?: "escapeKeyDown" | "backdropClick",
+  ) => void;
   /** Function executed on submit. */
   handleSubmit: (context: HvWizardTabs) => void;
   /** Title for the wizard. */
@@ -78,7 +80,10 @@ export const HvWizard = ({
   const [tab, setTab] = useState(0);
 
   const handleClose = useCallback(
-    (evt, reason) => {
+    (
+      evt: React.MouseEvent<HTMLButtonElement> | {},
+      reason?: "backdropClick" | "escapeKeyDown",
+    ) => {
       if (reason !== "backdropClick") {
         onClose?.(evt, reason);
       }

@@ -42,7 +42,11 @@ const DEFAULT_LABELS = {
   collapseRowButtonAriaLabel: "Collapse this row",
 };
 
-export const CellWithExpandButton = ({ row, cell, labels: labelsProp }) => {
+export const CellWithExpandButton = ({
+  row,
+  cell,
+  labels: labelsProp,
+}: any) => {
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   const { onClick } = row.getToggleRowExpandedProps();
@@ -70,7 +74,7 @@ export const CellWithExpandButton = ({ row, cell, labels: labelsProp }) => {
   );
 };
 
-const visibleColumnsHook = (columns, { instance }) => {
+const visibleColumnsHook = (columns: any, { instance }: any) => {
   if (instance.disableCreateExpandButton) {
     return columns;
   }
@@ -78,7 +82,7 @@ const visibleColumnsHook = (columns, { instance }) => {
   // add a button to first data column, unless it has a custom renderer
   // if so, add an extra column instead
   const firstDataColumnIndex = columns.findIndex(
-    (c) => c.id?.indexOf("_hv_") !== 0,
+    (c: any) => c.id?.indexOf("_hv_") !== 0,
   );
 
   if (firstDataColumnIndex !== -1) {
@@ -115,7 +119,7 @@ const visibleColumnsHook = (columns, { instance }) => {
   return columnsCopy;
 };
 
-const getRowPropsHook = (props, { row }) => {
+const getRowPropsHook = (props: any, { row }: any) => {
   const nextProps: UseHvRowExpandTableRowProps = {
     expanded: row.isExpanded,
   };

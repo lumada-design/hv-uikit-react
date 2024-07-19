@@ -8,7 +8,9 @@ import {
   HvListValue,
   HvOption,
   HvSelect,
+  HvSelectProps,
   HvSlider,
+  HvSliderProps,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import {
@@ -543,11 +545,14 @@ export const WithFiltering: StoryObj<HvBarChartProps> = {
     const [sales, setSales] = useState([0, 7000]);
     const [country, setCountry] = useState(data.map((d) => d.label));
 
-    const handleSliderChange = (values) => {
+    const handleSliderChange: HvSliderProps["onChange"] = (values) => {
       setSales(values);
     };
 
-    const handleCountryChange = (event, value) => {
+    const handleCountryChange: HvSelectProps<string, true>["onChange"] = (
+      event,
+      value,
+    ) => {
       setCountry(value.length > 0 ? value : data.map((d) => d.label));
     };
 

@@ -129,7 +129,7 @@ export const DynamicHandles = () => {
         ...nodeConfig,
         data: {
           ...nodeConfig.data,
-          type: value.label,
+          type: value.label as keyof typeof types,
         },
       });
     }

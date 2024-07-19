@@ -15,6 +15,7 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 
 import {
+  DataObject,
   delay,
   ServerPaginationProps,
   useServerPagination,
@@ -22,7 +23,7 @@ import {
 
 // --- Table data utils ---
 
-export interface ListViewEntry {
+export interface ListViewEntry extends DataObject {
   id?: string;
   name?: string;
   description?: string;
@@ -64,7 +65,7 @@ export const getColumns = (): HvTableColumnConfig<ListViewEntry, string>[] => [
     Header: "Status",
     accessor: "status",
     style: { width: 40 },
-    Cell: ({ value }) => getStatusIcon(value),
+    Cell: ({ value }: { value: any }) => getStatusIcon(value),
   },
   { Header: "Name", accessor: "name", style: { minWidth: 200 } },
   { Header: "Description", accessor: "description", style: { minWidth: 200 } },

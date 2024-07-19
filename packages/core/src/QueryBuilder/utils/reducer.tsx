@@ -1,6 +1,6 @@
 import { Reducer } from "react";
 
-import { Query, QueryAction } from "../types";
+import { HvQueryBuilderQueryRule, Query, QueryAction } from "../types";
 import { emptyGroup, emptyRule, findNodeById, findParentById } from "./index";
 
 const reducer: Reducer<Query, QueryAction> = (state, action) => {
@@ -64,7 +64,7 @@ const reducer: Reducer<Query, QueryAction> = (state, action) => {
       break;
     }
     case "set-attribute": {
-      const node = findNodeById(action.id, query);
+      const node = findNodeById(action.id, query) as HvQueryBuilderQueryRule;
       if (node && node.attribute !== action.attribute) {
         node.attribute = action.attribute ?? undefined;
 
@@ -82,6 +82,7 @@ const reducer: Reducer<Query, QueryAction> = (state, action) => {
       const node = findNodeById(action.id, query);
       if (node && "attribute" in node) {
         if (node.operator !== action.operator) {
+          // @ts-ignore
           node.operator = action.operator;
           if (action.value !== undefined) {
             node.value = action.value ?? undefined;

@@ -23,6 +23,7 @@ import {
   HvFlowBackground,
   HvFlowControls,
   HvFlowEmpty,
+  HvFlowProps,
 } from "@hitachivantara/uikit-react-lab";
 import {
   HvCanvasBottomPanel,
@@ -46,8 +47,8 @@ const nodeTypes = {
 const edgeTypes = {
   status: StatusEdge,
 };
-const initialNodes = [];
-const initialEdges = [];
+const initialNodes: HvFlowProps["nodes"] = [];
+const initialEdges: HvFlowProps["edges"] = [];
 
 const sidePanelTabs = [
   {

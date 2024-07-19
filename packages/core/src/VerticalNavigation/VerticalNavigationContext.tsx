@@ -24,15 +24,15 @@ interface VerticalNavigationContextValue {
   headerTitle?: string;
   setHeaderTitle?: React.Dispatch<React.SetStateAction<string | undefined>>;
 
-  parentItem?;
+  parentItem?: any;
   setParentItem?: React.Dispatch<React.SetStateAction<any>>;
-  withParentData?;
-  navigateToChildHandler?: (event, item) => void;
+  withParentData?: any;
+  navigateToChildHandler?: (event: any, item: any) => void;
   navigateToParentHandler?: () => void;
 
   parentData?: NavigationData[];
   setParentData?: React.Dispatch<React.SetStateAction<any>>;
-  parentSelected?;
+  parentSelected?: any;
   setParentSelected?: React.Dispatch<React.SetStateAction<any>>;
 
   hasAnyChildWithData?: boolean;

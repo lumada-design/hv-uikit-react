@@ -3,6 +3,7 @@ import { cx } from "@emotion/css";
 import {
   HvListContainer,
   HvListItem,
+  HvListItemProps,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Drag } from "@hitachivantara/uikit-react-icons";
@@ -15,23 +16,25 @@ export const Vanilla = () => {
   const [items, setItems] = useState<Item[]>(sampleItems.filter((i) => i.id));
   const [draggedItem, setDraggedItem] = useState<Item>();
   const [dragging, setDragging] = useState(false);
-  const [draggedOverIndex, setDraggedOverIndex] = useState(null);
+  const [draggedOverIndex, setDraggedOverIndex] = useState<number | null>(null);
 
-  const onDragStart = (event) => {
-    const draggedIndex = items?.findIndex((i) => i.id === event.target.id);
+  const onDragStart: HvListItemProps["onDragStart"] = (event) => {
+    const draggedIndex = items?.findIndex(
+      (i) => i.id === (event.target as any).id,
+    );
     if (draggedIndex === -1) return;
     setDragging(true);
     setDraggedItem(items[draggedIndex]);
   };
 
-  const onDragEnd = (event) => {
+  const onDragEnd: HvListItemProps["onDragEnd"] = (event) => {
     event.preventDefault();
     setDraggedItem(undefined);
     setDragging(false);
     setDraggedOverIndex(null);
   };
 
-  const onDragOver = (event, index) => {
+  const onDragOver = (event: React.DragEvent<HTMLLIElement>, index: number) => {
     event.preventDefault();
     setDraggedOverIndex(index);
   };
@@ -40,7 +43,7 @@ export const Vanilla = () => {
     setDraggedOverIndex(null);
   };
 
-  const onDrop = (event) => {
+  const onDrop: HvListItemProps["onDrop"] = (event) => {
     event.preventDefault();
 
     setDraggedOverIndex(null);

@@ -213,10 +213,10 @@ export const useTooltip = ({
         confine: false,
         show,
         trigger,
-        position: (point, params, dom, rect, size) => {
+        position: (point: any, params: any, dom: any, rect: any, size: any) => {
           return [point[0], point[1] - size.contentSize[1]];
         },
-        formatter: (params) => {
+        formatter: (params: any) => {
           const tooltipParams = Array.isArray(params) ? params : [params];
 
           return component

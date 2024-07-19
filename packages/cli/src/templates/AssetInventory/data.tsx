@@ -20,13 +20,14 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 
 import {
+  DataObject,
   ServerPaginationProps,
   useServerPagination,
 } from "./usePaginationData";
 
 // --- Table data utils ---
 
-export interface AssetInventoryEntry {
+export interface AssetInventoryEntry extends DataObject {
   id?: string;
   name?: string;
   eventType?: string;
@@ -54,7 +55,9 @@ const images = [
 
 const getRandomImage = () => images[Math.floor(Math.random() * images.length)];
 
-export const getStatusIcon = (color?: AssetInventoryEntry["statusColor"]) => {
+export const getStatusIcon = (
+  color?: AssetInventoryEntry["statusColor"] | string,
+) => {
   switch (color) {
     case "positive":
       return <Level0Good color="positive" />;
@@ -89,7 +92,7 @@ export const getColumns = (
     Header: "Status",
     accessor: "statusColor",
     style: { width: 60 },
-    Cell: ({ value }) =>
+    Cell: ({ value }: { value: any }) =>
       loading ? (
         <HvSkeleton width={32} height={32} variant="circle" animation="wave" />
       ) : (
@@ -102,7 +105,7 @@ export const getColumns = (
     Header: "Asset",
     accessor: "image",
     style: { maxWidth: 60 },
-    Cell: ({ value, row }) => {
+    Cell: ({ value, row }: { value: any; row: any }) => {
       return loading ? (
         <HvSkeleton width={60} height={40} variant="square" animation="wave" />
       ) : (
@@ -125,7 +128,7 @@ export const getColumns = (
     Header: "Title",
     accessor: "name",
     style: { minWidth: 140 },
-    Cell: ({ value }) => {
+    Cell: ({ value }: { value: any }) => {
       return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
     },
   },
@@ -133,35 +136,35 @@ export const getColumns = (
     Header: "Event Type",
     accessor: "eventType",
     style: { minWidth: 100 },
-    Cell: ({ value }) => {
+    Cell: ({ value }: { value: any }) => {
       return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
     },
   },
   {
     Header: "Severity",
     accessor: "severity",
-    Cell: ({ value }) => {
+    Cell: ({ value }: { value: any }) => {
       return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
     },
   },
   {
     Header: "Priority",
     accessor: "priority",
-    Cell: ({ value }) => {
+    Cell: ({ value }: { value: any }) => {
       return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
     },
   },
   {
     Header: "Time",
     accessor: "time",
-    Cell: ({ value }) => {
+    Cell: ({ value }: { value: any }) => {
       return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
     },
   },
   {
     Header: "Temperature",
     accessor: "temperature",
-    Cell: ({ value }) => {
+    Cell: ({ value }: { value: any }) => {
       return loading ? <HvSkeleton animation="wave" /> : <span>{value}</span>;
     },
   },

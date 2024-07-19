@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { Dispatch, SetStateAction, useMemo, useState } from "react";
 import { useColumnOrder } from "react-table";
 import {
   DndContext,
@@ -218,6 +218,17 @@ const myModifier: RestrictToSampleModifier = (rootId, { transform }) => {
   };
 };
 
+interface SettingsDialogProps {
+  tableColumns: HvTableColumnConfig<AssetEvent, string>[];
+  onOrderChange: (values: string[]) => void;
+  onColumnHide: (columnId: string, operation: "show" | "hide") => void;
+  setFixedColumns: Dispatch<SetStateAction<string[]>>;
+  settingsPanelId: string;
+  hiddenColumns: string[];
+  fixedColumns: string[];
+  columnOrder: (string | undefined)[];
+}
+
 const SettingsDialog = ({
   tableColumns,
   onOrderChange,
@@ -227,7 +238,7 @@ const SettingsDialog = ({
   hiddenColumns,
   fixedColumns,
   columnOrder,
-}) => {
+}: SettingsDialogProps) => {
   const [activeGroup, setActiveGroup] = useState<Group | null>(null);
   const [activeColumn, setActiveColumn] = useState<Column | null>(null);
 
@@ -245,13 +256,13 @@ const SettingsDialog = ({
 
   const [columns, setColumns] = useState<Column[]>(
     orderedColumns.map((c) => ({
-      id: c.accessor || "",
-      groupId: hiddenColumns.includes(c.accessor)
+      id: (c?.accessor as string) || "",
+      groupId: hiddenColumns.includes(c?.accessor as string)
         ? "hidden"
-        : fixedColumns.includes(c.accessor)
+        : fixedColumns.includes(c?.accessor as string)
           ? "fixed"
           : "visible",
-      title: c.Header || "",
+      title: c?.Header || "",
     })),
   );
 
@@ -489,12 +500,15 @@ export const TableSettings = () => {
     );
   };
 
-  const handleOrderChange = (order) => {
+  const handleOrderChange: SettingsDialogProps["onOrderChange"] = (order) => {
     setColumnOrder(order);
     setTableColumnOrder?.(order);
   };
 
-  const handleHideColumn = (columnId: string, operation: "show" | "hide") => {
+  const handleHideColumn: SettingsDialogProps["onColumnHide"] = (
+    columnId,
+    operation,
+  ) => {
     if (operation === "hide") {
       const newHiddenColumns = new Set([...hiddenColumns, columnId]);
       const newHiddenColumnsArray = Array.from(newHiddenColumns);

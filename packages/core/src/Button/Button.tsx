@@ -155,9 +155,9 @@ export const HvButton = fixedForwardRef(function HvButton<
       }}
       className={cx(
         classes.root,
-        type && classes[type],
+        type && classes[type as keyof HvButtonClasses],
         color && css(getColoringStyle(color, type)),
-        classes[variant], // Placed after type and color CSS for DS3 override
+        classes[variant as keyof HvButtonClasses], // Placed after type and color CSS for DS3 override
         radius && css(getRadiusStyles(radius)),
         overrideIconColors && css(getOverrideColors()),
         {

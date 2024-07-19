@@ -175,7 +175,7 @@ const EditableCell = ({
               defaultChecked={value === "Open"}
               onChange={() => {
                 if (row?.state?.isEditing && !row?.state?.isDirty) {
-                  row.setState?.((state: Object) => ({
+                  row.setState?.((state: object) => ({
                     ...state,
                     isDirty: true,
                   }));
@@ -206,7 +206,7 @@ const EditableCell = ({
               defaultValue={value}
               onChange={() => {
                 if (row?.state?.isEditing && !row?.state?.isDirty) {
-                  row.setState?.((state: Object) => ({
+                  row.setState?.((state: object) => ({
                     ...state,
                     isDirty: true,
                   }));
@@ -237,7 +237,7 @@ const EditableCell = ({
               defaultValue={value}
               onChange={() => {
                 if (row?.state?.isEditing && !row?.state?.isDirty) {
-                  row.setState?.((state: Object) => ({
+                  row.setState?.((state: object) => ({
                     ...state,
                     isDirty: true,
                   }));
@@ -264,7 +264,7 @@ const EditableCell = ({
               defaultValue={value}
               onChange={() => {
                 if (row?.state?.isEditing && !row?.state?.isDirty) {
-                  row.setState?.((state: Object) => ({
+                  row.setState?.((state: object) => ({
                     ...state,
                     isDirty: true,
                   }));
@@ -380,7 +380,7 @@ const Table = <T extends Data>({
         id: "view",
         variant: "actions",
         style: { width: "70px", maxWidth: "unset" },
-        Cell: ({ row }) => (
+        Cell: ({ row }: { row: HvRowInstance<T> }) => (
           <Fragment key={`${row.id}-view`}>
             {!row.state?.isEditing && (
               <HvButton
@@ -399,7 +399,7 @@ const Table = <T extends Data>({
       {
         id: "edit",
         variant: "actions",
-        Cell: (props) => {
+        Cell: (props: HvCellProps<T, string, any>) => {
           const { row, setRowState } = props;
           return (
             <Fragment key={`${row.id}-edit`}>
@@ -407,7 +407,7 @@ const Table = <T extends Data>({
                 <HvButton
                   icon
                   aria-label="Edit row"
-                  onClick={() => {
+                  onClick={(e) => {
                     setRowState?.(
                       [row.id],
                       (state: { isEditing: boolean }) => ({
@@ -415,7 +415,7 @@ const Table = <T extends Data>({
                         isEditing: !state.isEditing,
                       }),
                     );
-                    row.getToggleRowExpandedProps().onClick();
+                    row.getToggleRowExpandedProps?.().onClick?.(e);
                   }}
                 >
                   <Edit />
@@ -428,7 +428,7 @@ const Table = <T extends Data>({
       {
         id: "delete",
         variant: "actions",
-        Cell: ({ row }) => (
+        Cell: ({ row }: { row: HvRowInstance<T> }) => (
           <HvButton
             icon
             aria-label="Delete row"
@@ -539,7 +539,7 @@ const Table = <T extends Data>({
 
   const handleCancelEditRow = (row: HvRowInstance<T, string>) => {
     if (!row.state?.isDirty) {
-      row.setState?.((state) => ({
+      row.setState?.((state: object) => ({
         ...state,
         isEditing: false,
       }));
@@ -555,7 +555,7 @@ const Table = <T extends Data>({
             <HvButton
               variant="secondaryGhost"
               onClick={() => {
-                row.setState?.((state) => ({
+                row.setState?.((state: object) => ({
                   ...state,
                   isEditing: false,
                 }));
@@ -605,7 +605,7 @@ const Table = <T extends Data>({
         variant: "error",
       });
     } finally {
-      row.setState?.((state: Object) => ({
+      row.setState?.((state: object) => ({
         ...state,
         isEditing: false,
         isDirty: false,

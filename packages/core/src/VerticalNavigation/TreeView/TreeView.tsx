@@ -265,7 +265,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
     return lastNode;
   };
   const getFirstNode = () => getNavigableChildrenIds(null)[0];
-  const getParent = (id) => nodeMap.current[id].parentId;
+  const getParent = (id: any) => nodeMap.current[id].parentId;
 
   /**
    * This is used to determine the start and end of a selection range so
@@ -365,7 +365,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
     event:
       | React.KeyboardEvent<HTMLUListElement>
       | React.FocusEvent<HTMLUListElement>,
-    id,
+    id: any,
   ) => {
     if (id) {
       setFocusedNodeId(id);
@@ -376,11 +376,13 @@ export const HvVerticalNavigationTreeView = forwardRef<
     }
   };
 
-  const focusNextNode = (event: React.KeyboardEvent<HTMLUListElement>, id) =>
-    focus(event, getNextNode(id));
+  const focusNextNode = (
+    event: React.KeyboardEvent<HTMLUListElement>,
+    id: any,
+  ) => focus(event, getNextNode(id));
   const focusPreviousNode = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    id,
+    id: any,
   ) => focus(event, getPreviousNode(id));
   const focusFirstNode = (event: React.KeyboardEvent<HTMLUListElement>) =>
     focus(event, getFirstNode());
@@ -389,8 +391,8 @@ export const HvVerticalNavigationTreeView = forwardRef<
 
   const focusByFirstCharacter = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    id,
-    char,
+    id: any,
+    char: any,
   ) => {
     let start;
     let index;
@@ -450,7 +452,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
 
   const expandAllSiblings = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    id,
+    id: any,
   ) => {
     const map = nodeMap.current[id];
     const siblings = getChildrenIds(map.parentId);
@@ -471,14 +473,14 @@ export const HvVerticalNavigationTreeView = forwardRef<
   const lastSelectionWasRange = useRef(false);
   const currentRangeSelection = useRef<HTMLDivElement[]>([]);
 
-  const isDivElement = (element): element is HTMLDivElement => {
+  const isDivElement = (element: any): element is HTMLDivElement => {
     return (element as HTMLDivElement).nodeType === 1;
   };
 
   const handleRangeArrowSelect = useCallback(
     (
       event: React.KeyboardEvent<HTMLUListElement>,
-      nodes: { start?; next?; current? },
+      nodes: { start?: any; next?: any; current?: any },
     ) => {
       let base = Array<string>().concat(selected);
       const { start, next, current } = nodes;
@@ -524,7 +526,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
   const handleRangeSelect = useCallback(
     (
       event: React.KeyboardEvent<HTMLUListElement>,
-      nodes: { start?; end?; current? },
+      nodes: { start?: any; end?: any; current?: any },
     ) => {
       let base = Array<string>().concat(selected);
       const { start, end } = nodes;
@@ -555,7 +557,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
   );
 
   const handleMultipleSelect = useCallback(
-    (event: React.KeyboardEvent<HTMLUListElement>, value) => {
+    (event: React.KeyboardEvent<HTMLUListElement>, value: any) => {
       const newSelected = selected.includes(value)
         ? (selected as string[]).filter((id) => id !== value)
         : [value].concat(selected);
@@ -570,7 +572,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
   );
 
   const handleSingleSelect = useCallback(
-    (event: React.KeyboardEvent<HTMLUListElement>, value) => {
+    (event: React.KeyboardEvent<HTMLUListElement>, value: any) => {
       const newSelected = multiSelect ? [value] : value;
       if (onChange) {
         const nodeValue = nodeMap.current[newSelected]?.payload;
@@ -583,7 +585,11 @@ export const HvVerticalNavigationTreeView = forwardRef<
   );
 
   const selectNode = useCallback(
-    (event: React.KeyboardEvent<HTMLUListElement>, id, multiple = false) => {
+    (
+      event: React.KeyboardEvent<HTMLUListElement>,
+      id: any,
+      multiple = false,
+    ) => {
       if (id && isSelectable(id)) {
         if (multiple) {
           handleMultipleSelect(event, id);
@@ -604,7 +610,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
   const selectRange = useCallback(
     (
       event: React.KeyboardEvent<HTMLUListElement>,
-      nodes: { start?; end?; current?: HTMLDivElement | null },
+      nodes: { start?: any; end?: any; current?: HTMLDivElement | null },
       stacked = false,
     ) => {
       const { start = lastSelectedNode.current, end, current } = nodes;
@@ -620,7 +626,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
 
   const rangeSelectToFirst = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    id,
+    id: any,
   ) => {
     if (!lastSelectedNode.current) {
       lastSelectedNode.current = id;
@@ -636,7 +642,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
 
   const rangeSelectToLast = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    id,
+    id: any,
   ) => {
     if (!lastSelectedNode.current) {
       lastSelectedNode.current = id;
@@ -650,7 +656,10 @@ export const HvVerticalNavigationTreeView = forwardRef<
     });
   };
 
-  const selectNextNode = (event: React.KeyboardEvent<HTMLUListElement>, id) => {
+  const selectNextNode = (
+    event: React.KeyboardEvent<HTMLUListElement>,
+    id: any,
+  ) => {
     if (!isDisabled(getNextNode(id))) {
       selectRange(
         event,
@@ -665,7 +674,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
 
   const selectPreviousNode = (
     event: React.KeyboardEvent<HTMLUListElement>,
-    id,
+    id: any,
   ) => {
     if (!isDisabled(getPreviousNode(id))) {
       selectRange(
@@ -686,7 +695,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
   /*
    * Mapping Helpers
    */
-  const registerNode = useCallback((node) => {
+  const registerNode = useCallback((node: any) => {
     const {
       id,
       index,
@@ -712,7 +721,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
     };
   }, []);
 
-  const unregisterNode = useCallback((id) => {
+  const unregisterNode = useCallback((id: any) => {
     const newMap = { ...nodeMap.current };
     delete newMap[id];
     nodeMap.current = newMap;
@@ -730,11 +739,11 @@ export const HvVerticalNavigationTreeView = forwardRef<
     });
   }, []);
 
-  const mapFirstChar = useCallback((id, firstChar) => {
+  const mapFirstChar = useCallback((id: any, firstChar: any) => {
     firstCharMap.current[id] = firstChar;
   }, []);
 
-  const unMapFirstChar = useCallback((id) => {
+  const unMapFirstChar = useCallback((id: any) => {
     const newMap = { ...firstCharMap.current };
     delete newMap[id];
     firstCharMap.current = newMap;

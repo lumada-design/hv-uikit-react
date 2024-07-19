@@ -105,7 +105,7 @@ export interface HvVerticalNavigationTreeViewItemProps {
   disableTooltip?: boolean;
 }
 
-const preventSelection = (event, disabled) => {
+const preventSelection = (event: any, disabled: any) => {
   if (event.shiftKey || event.ctrlKey || event.metaKey || disabled) {
     // Prevent text selection
     event.preventDefault();
@@ -270,7 +270,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     }
 
     const handleFocus = useCallback(
-      (event) => {
+      (event: any) => {
         // DOM focus stays on the tree which manages focus with aria-activedescendant
         if (event.target === event.currentTarget) {
           (event.target.ownerDocument || document)
@@ -292,7 +292,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     );
 
     const handleExpansion = useCallback(
-      (event) => {
+      (event: any) => {
         if (!disabled) {
           if (treeviewMode && !focused && focus) {
             focus(event, nodeId);
@@ -326,7 +326,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     );
 
     const handleSelection = useCallback(
-      (event) => {
+      (event: any) => {
         if (selectable && !disabled) {
           if (treeviewMode && !focused && focus) {
             focus(event, nodeId);
@@ -358,7 +358,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     );
 
     const handleMouseDown = useCallback(
-      (event) => {
+      (event: any) => {
         preventSelection(event, disabled);
 
         if (onMouseDown) {
@@ -369,7 +369,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     );
 
     const handleClick = useCallback(
-      (event) => {
+      (event: any) => {
         if (!disabled) {
           if (expandable && isOpen) {
             handleExpansion(event);
@@ -396,7 +396,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     );
 
     const handleKeyDown = useCallback(
-      (event) => {
+      (event: any) => {
         let isEventHandled = false;
         const { key } = event;
 

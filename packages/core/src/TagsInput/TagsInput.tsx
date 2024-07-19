@@ -1,4 +1,4 @@
-import {
+import React, {
   forwardRef,
   useCallback,
   useEffect,
@@ -16,10 +16,12 @@ import {
   HvCharCounter,
   HvCharCounterProps,
   HvFormElement,
+  HvFormElementProps,
   HvFormStatus,
   HvInfoMessage,
   HvLabel,
   HvSuggestions,
+  HvSuggestionsProps,
   HvWarningText,
 } from "../Forms";
 import validationStates from "../Forms/FormElement/validationStates";
@@ -69,36 +71,31 @@ export interface HvTagsInputProps
   /** The function that will be executed onChange. */
   onChange?: (
     event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.KeyboardEvent<HTMLInputElement>
-      | React.MouseEvent<HTMLButtonElement>
-      | React.MouseEvent<HTMLElement, MouseEvent>
-      | React.KeyboardEventHandler<HTMLElement>,
+      | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
+      | React.MouseEvent
+      | React.KeyboardEvent<HTMLUListElement>
+      | React.FocusEvent<HTMLDivElement>,
     value: HvTagProps[],
   ) => void;
   /** The function that will be executed when the element is focused. */
-  onFocus?: (event: React.FocusEvent<HTMLInputElement>, value: string) => void;
+  onFocus?: (event: React.FocusEvent<HTMLDivElement>, value: string) => void;
   /** The function that will be executed when the element is blurred. */
-  onBlur?: (event: React.FocusEvent<HTMLInputElement>, value: string) => void;
+  onBlur?: (event: React.FocusEvent<HTMLDivElement>, value: string) => void;
   /** The function that will be executed when a tag is deleted. */
   onDelete?: (
     event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.KeyboardEvent<HTMLInputElement>
-      | React.MouseEvent<HTMLButtonElement>
-      | React.MouseEvent<HTMLElement, MouseEvent>
-      | React.KeyboardEventHandler<HTMLElement>,
+      | React.KeyboardEvent<HTMLUListElement>
+      | React.MouseEvent<HTMLElement>,
     value: HvTagProps,
     index: number,
   ) => void;
   /** The function that will be executed when a tag is added. */
   onAdd?: (
     event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.KeyboardEvent<HTMLInputElement>
-      | React.MouseEvent<HTMLButtonElement>
-      | React.MouseEvent<HTMLElement, MouseEvent>
-      | React.KeyboardEventHandler<HTMLElement>,
+      | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
+      | React.MouseEvent
+      | React.KeyboardEvent<HTMLUListElement>
+      | React.FocusEvent<HTMLDivElement>,
     value: HvTagProps,
     index: number,
   ) => void;
@@ -236,7 +233,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
     );
 
     const performValidation = useCallback(
-      (currValue) => {
+      (currValue: HvTagProps[]) => {
         if (
           maxTagsQuantity !== null &&
           maxTagsQuantity !== undefined &&
@@ -268,7 +265,13 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * @param {boolean} end    - whether or not to set the cursor at the end of the array
      */
     const deleteTag = useCallback(
-      (tagPos: number, event: any, end: boolean) => {
+      (
+        tagPos: number,
+        event:
+          | React.KeyboardEvent<HTMLUListElement>
+          | React.MouseEvent<HTMLElement>,
+        end: boolean,
+      ) => {
         const newTagsArr = [
           ...value.slice(0, tagPos),
           ...value.slice(tagPos + 1),
@@ -294,7 +297,14 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * @param {string}  tag    - the string for the tag
      */
     const addTag = useCallback(
-      (event, tag) => {
+      (
+        event:
+          | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
+          | React.MouseEvent
+          | React.KeyboardEvent<HTMLUListElement>
+          | React.FocusEvent<HTMLDivElement>,
+        tag: React.ReactNode,
+      ) => {
         event.preventDefault();
         if (tag !== "") {
           const newTag: HvTagProps = { label: tag, type: "semantic" };
@@ -351,7 +361,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
     };
 
     const getSuggestions = useCallback(
-      (li) => {
+      (li: number) => {
         // TODO Replace with ref
         const listEl = document.getElementById(
           setId(elementId, "suggestions-list") || "",
@@ -374,7 +384,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * Fills of the suggestion array.
      */
     const suggestionHandler = useCallback(
-      (val) => {
+      (val: string) => {
         const suggestionsArray = suggestionListCallback?.(val);
         if (suggestionsArray?.[0]?.label) {
           setSuggestionValues(suggestionsArray);
@@ -388,20 +398,23 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
     /**
      * Executes the user callback adds the selection to the state and clears the suggestions.
      */
-    const suggestionSelectedHandler = (event, item) => {
-      addTag(event, item.value || item.label);
+    const suggestionSelectedHandler: HvSuggestionsProps["onSuggestionSelected"] =
+      (event, item) => {
+        addTag(event, item.value || item.label);
 
-      // set the input value (only when value is uncontrolled)
-      setTagInput(item.value || item.label);
+        // set the input value (only when value is uncontrolled)
+        setTagInput((item.value || item.label) as string); // TODO - in v6 review all types: this is not a string but a React.ReactNode
 
-      focusInput();
-      suggestionClearHandler();
-    };
+        focusInput();
+        suggestionClearHandler();
+      };
 
     /**
      * Handler for the `onKeyDown` event on the suggestions component
      */
-    const onSuggestionKeyDown = (event) => {
+    const onSuggestionKeyDown = (
+      event: React.KeyboardEvent<HTMLDivElement>,
+    ) => {
       if (isKey(event, "Esc")) {
         suggestionClearHandler();
         focusInput();
@@ -414,7 +427,10 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * Handler for the `onChange` event on the tag input
      */
     const onChangeHandler = useCallback(
-      (_, input) => {
+      (
+        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+        input: string,
+      ) => {
         setTagInput(input);
 
         if (canShowSuggestions) {
@@ -434,8 +450,12 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * Handler for the `onKeyDown` event on the form element
      */
     const onInputKeyDownHandler = useCallback(
-      (event) => {
-        if (!canShowSuggestions && commitTagOn.includes(event.code)) {
+      (
+        event:
+          | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
+          | React.MouseEvent,
+      ) => {
+        if (!canShowSuggestions && commitTagOn.includes((event as any).code)) {
           addTag(event, tagInput);
         }
       },
@@ -446,7 +466,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * Handler for the `onKeyDown` event on the list container.
      */
     const onKeyDownHandler = useCallback(
-      (event) => {
+      (event: React.KeyboardEvent<HTMLUListElement>) => {
         if (tagInput === "") {
           switch (event.code) {
             case "ArrowLeft":
@@ -516,7 +536,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * Handler for the `onDelete` event on the tag component
      */
     const onDeleteTagHandler = useCallback(
-      (event, i) => {
+      (event: React.MouseEvent<HTMLElement>, i: number) => {
         deleteTag(i, event, true);
         setValidationState(validationStates.standBy);
       },
@@ -532,7 +552,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       setTagCursorPos(value.length);
     }, [value.length]);
 
-    const onBlurHandler = (evt) => {
+    const onBlurHandler: HvFormElementProps["onBlur"] = (evt) => {
       blurTimeout.current = setTimeout(() => {
         if (commitOnBlur) {
           addTag(evt, tagInput);
@@ -541,7 +561,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       }, 250);
     };
 
-    const onFocusHandler = (evt) => {
+    const onFocusHandler: HvFormElementProps["onFocus"] = (evt) => {
       clearTimeout(blurTimeout.current);
       onFocus?.(evt, tagInput);
     };
@@ -634,7 +654,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
                   classes={{
                     chipRoot: classes.chipRoot,
                   }}
-                  type={type}
+                  type={type as HvTagProps["type"]}
                   {...(!(readOnly || disabled || type === "categorical") && {
                     onDelete: (event) => onDeleteTagHandler(event, i),
                   })}

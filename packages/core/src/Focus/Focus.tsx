@@ -43,6 +43,15 @@ export interface HvFocusProps extends HvBaseProps<HTMLElement, "children"> {
   classes?: HvFocusClasses;
 }
 
+interface Focuses {
+  first: Element;
+  last: Element;
+  previous: Element;
+  next: Element;
+  fall: Element;
+  jump: Element;
+}
+
 export const HvFocus = ({
   classes: classesProp,
   children,
@@ -74,7 +83,7 @@ export const HvFocus = ({
     return focuses;
   };
 
-  const setTabIndex = (el, tabIndex = 0) => {
+  const setTabIndex = (el: any, tabIndex = 0) => {
     if (!el) return;
     const elChildFocus = getFocusableChildren(el)[0];
     if (elChildFocus) {
@@ -96,12 +105,12 @@ export const HvFocus = ({
     setTabIndex(firstSelected, 0);
   };
 
-  const clearTabSiblings = (el) => {
+  const clearTabSiblings = (el: any) => {
     getFocuses().forEach((focus) => setTabIndex(focus, -1));
     setTabIndex(el, 0);
   };
 
-  const onFocusStrategy = (evt) => {
+  const onFocusStrategy = (evt: any) => {
     if (strategy === "listbox") {
       clearTabSiblings(evt.currentTarget);
     }
@@ -120,7 +129,7 @@ export const HvFocus = ({
     }
   };
 
-  const config = (el) => {
+  const config = (el: any) => {
     const { tabIndex } = configuration;
     if (!el || hasRunConfig) return;
     if (strategy === "card") {
@@ -134,7 +143,7 @@ export const HvFocus = ({
 
     const focusableChildren = getFocusableChildren(el);
     if (focusableChildren.length) {
-      focusableChildren.forEach((child) => setTabIndex(child, -1));
+      focusableChildren.forEach((child: any) => setTabIndex(child, -1));
       setChildFocus(focusableChildren[0]);
     }
 
@@ -142,7 +151,7 @@ export const HvFocus = ({
     setHasRunConfig(true);
   };
 
-  const addFocusClass = (evt) => {
+  const addFocusClass = (evt: any) => {
     if (!useFalseFocus) {
       // evt.currentTarget.classList.add(classes.focused);
       classes.focused
@@ -169,7 +178,7 @@ export const HvFocus = ({
     }
   };
 
-  const onFocus = (evt) => {
+  const onFocus = (evt: any) => {
     addFocusClass(evt);
     setShowFocus(true);
     // give focus to child element if any focusable
@@ -184,7 +193,7 @@ export const HvFocus = ({
     onBlurStrategy();
   };
 
-  const onMouseDown = (evt) => {
+  const onMouseDown = (evt: any) => {
     const hasCard = !!evt.currentTarget?.querySelector(".HvIsCardGridElement");
     if (strategy === "grid" && hasCard) return;
 
@@ -199,7 +208,11 @@ export const HvFocus = ({
     }
   };
 
-  const focusAndUpdateIndex = (nextFocus, previousFocus, focusesList) => {
+  const focusAndUpdateIndex = (
+    nextFocus: Element,
+    previousFocus: any,
+    focusesList: Element[],
+  ) => {
     if (focusesList?.includes(previousFocus)) {
       setTabIndex(previousFocus, -1);
     }
@@ -207,7 +220,11 @@ export const HvFocus = ({
     setFocusTo(nextFocus);
   };
 
-  const getEnabledKeys = (currentFocusIndex, jump, listSize) => ({
+  const getEnabledKeys = (
+    currentFocusIndex: number,
+    jump: number,
+    listSize: number,
+  ) => ({
     right:
       (currentFocusIndex + 1) % jump === 0 ||
       currentFocusIndex + 1 > listSize - 1,
@@ -219,11 +236,11 @@ export const HvFocus = ({
   });
 
   const onGridKeyDownHandler = (
-    evt,
-    focuses,
-    focusesList,
-    currentFocusIndex,
-    jump,
+    evt: any,
+    focuses: Focuses,
+    focusesList: Element[],
+    currentFocusIndex: number,
+    jump: number,
   ) => {
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
@@ -312,7 +329,11 @@ export const HvFocus = ({
     }
   };
 
-  const onVerticalArrangementHandler = (evt, focuses, focusesList) => {
+  const onVerticalArrangementHandler = (
+    evt: any,
+    focuses: Focuses,
+    focusesList: Element[],
+  ) => {
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
     if (
@@ -363,7 +384,7 @@ export const HvFocus = ({
     }
   };
 
-  const onSingleHandler = (evt) => {
+  const onSingleHandler = (evt: any) => {
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
     if (
@@ -381,7 +402,7 @@ export const HvFocus = ({
     evt.currentTarget.click();
   };
 
-  const onKeyDown = (evt) => {
+  const onKeyDown = (evt: any) => {
     if (rootRef?.current == null) {
       // operating outside of a composite widget
       // nothing to manage, just style and trigger clicks
@@ -399,7 +420,7 @@ export const HvFocus = ({
 
     const currentFocus = focusesList.indexOf(evt.currentTarget);
 
-    const focuses = {
+    const focuses: Focuses = {
       first: focusesList[0],
       last: focusesList[focusesList.length - 1],
       previous: focusesList[currentFocus - 1],
@@ -424,13 +445,13 @@ export const HvFocus = ({
     onVerticalArrangementHandler(evt, focuses, focusesList);
   };
 
-  const onKeyUp = (evt) => {
+  const onKeyUp = (evt: any) => {
     if (isBrowser("firefox")) evt.preventDefault();
   };
 
   if (disabled) return children;
 
-  const focusWrapper = (childrenToWrap) => (
+  const focusWrapper = (childrenToWrap: React.ReactNode) => (
     <div className={classes.externalReference}>
       {childrenToWrap}
       {showFocus && <div className={classes.falseFocus} />}

@@ -77,10 +77,10 @@ export interface HvVerticalNavigationTreeProps
 }
 
 const createListHierarchy = (
-  items,
-  id,
+  items: NavigationData[],
+  id: string | undefined,
   classes?: HvVerticalNavigationTreeClasses,
-  mouseEnterHandler?: (event, item) => void,
+  mouseEnterHandler?: (event: any, item: any) => void,
   disableTooltip = false,
 ) =>
   items.map((item) => {
@@ -95,7 +95,7 @@ const createListHierarchy = (
       target,
     } = item;
 
-    const itemMouseEnterHandler = (event) => {
+    const itemMouseEnterHandler = (event: any) => {
       mouseEnterHandler?.(event, item);
     };
 
@@ -128,16 +128,16 @@ const createListHierarchy = (
     );
   });
 
-const getAllParents = (items) => {
+const getAllParents = (items: any) => {
   const parents = items.filter(
-    (item) => item.data != null && item.data.length > 0,
+    (item: any) => item.data != null && item.data.length > 0,
   );
-  const childParents = parents.flatMap((item) => getAllParents(item.data));
+  const childParents = parents.flatMap((item: any) => getAllParents(item.data));
 
   return [...parents, ...childParents];
 };
 
-function pathToElement(data, targetId) {
+function pathToElement(data: any, targetId: any) {
   const path: string[] = [];
 
   if (data != null && data.length > 0) {
@@ -270,7 +270,7 @@ export const HvVerticalNavigationTree = (
   );
 
   const treeViewItemMouseEnterHandler = useCallback(
-    (event, item) => {
+    (event: any, item: any) => {
       const isCollapsed = useIcons && !isOpen;
 
       if (isCollapsed && item.data && !navigationPopup?.fixedMode) {

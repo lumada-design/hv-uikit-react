@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { SortingRule } from "react-table";
 import {
   HvEmptyState,
   HvTableCell,
@@ -8,7 +9,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 
-export const EmptyRow = ({ height }) => (
+export const EmptyRow = ({ height }: React.CSSProperties) => (
   <HvTableRow>
     <HvTableCell colSpan={100} style={{ height }}>
       <HvEmptyState message="No data to display" icon={<Ban />} />
@@ -268,7 +269,11 @@ export const useToggleIndex = (initialState: number) => {
   return [index, toggleState] as const;
 };
 
-const simpleSortBy = (a: AssetEvent, b: AssetEvent, sortBy) => {
+const simpleSortBy = (
+  a: Record<string, any>,
+  b: Record<string, any>,
+  sortBy: SortingRule<string>,
+) => {
   const { id, desc } = sortBy;
   return desc ? b[id] - a[id] : a[id] - b[id];
 };

@@ -22,14 +22,14 @@ interface TreeViewControlContextValue {
   treeId?: any;
   mode?: NavigationMode;
   collapsible?: boolean;
-  toggleExpansion?: (event, value?) => void;
+  toggleExpansion?: (event: any, value?: any) => void;
   multiSelect?: boolean;
-  selectNode?: (event, id, multiple?) => boolean;
+  selectNode?: (event: any, id: any, multiple?: any) => boolean;
   selectRange?: (event: any, nodes: any, stacked?: boolean) => void;
   disabledItemsFocusable?: boolean;
-  registerNode?: (node) => void;
-  unregisterNode?: (id) => void;
-  mapFirstChar?: (id, firstChar) => void;
-  unMapFirstChar?: (id, firstChar?) => void;
-  focus?: (id, firstChar) => void;
+  registerNode?: (node: any) => void;
+  unregisterNode?: (id: any) => void;
+  mapFirstChar?: (id: any, firstChar: any) => void;
+  unMapFirstChar?: (id: any, firstChar?: any) => void;
+  focus?: (id: any, firstChar: any) => void;
 }

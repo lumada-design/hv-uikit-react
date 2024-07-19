@@ -63,7 +63,7 @@ export const useData = ({
       }));
 
       tableData = tableData.filter(
-        escape((row) => getHvArqueroCombinedFilters(row, filters)),
+        escape((row: any) => getHvArqueroCombinedFilters(row, filters)),
       );
     }
 
@@ -161,16 +161,15 @@ export const useData = ({
     // --- Confusion matrix ---
     // Recalculate the measures columns according to the delta column
     if (delta) {
-      const deltaExpression = Object.keys(measuresColumns).reduce(
-        (acc, curr) => {
-          const normalizedMeasure = normalizeColumnName(curr); // normalize
-          const normalizedDelta = normalizeColumnName(delta); // normalize
-          acc[normalizedMeasure] =
-            `d => d.${normalizedMeasure} - d.${normalizedDelta}`;
-          return acc;
-        },
-        {},
-      );
+      const deltaExpression = Object.keys(measuresColumns).reduce<
+        Record<string, string>
+      >((acc, curr) => {
+        const normalizedMeasure = normalizeColumnName(curr); // normalize
+        const normalizedDelta = normalizeColumnName(delta); // normalize
+        acc[normalizedMeasure] =
+          `d => d.${normalizedMeasure} - d.${normalizedDelta}`;
+        return acc;
+      }, {});
 
       tableData = tableData.derive(deltaExpression);
     }
@@ -215,7 +214,7 @@ export const useData = ({
     }
 
     // revert the normalized names to the ones given by the user
-    const reversedMapping = {};
+    const reversedMapping: Record<string, string> = {};
     for (const column of tableData.columnNames()) {
       if (mapping[column] != null) {
         // use the original name (not normalized)

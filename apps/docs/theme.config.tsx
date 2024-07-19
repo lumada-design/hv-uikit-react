@@ -1,3 +1,4 @@
+import React from "react";
 import { useTheme } from "nextra-theme-docs";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 
@@ -33,7 +34,9 @@ export default {
     text: null,
     component: null,
   },
-  main: ({ children }) => <MainContainer>{children}</MainContainer>,
+  main: ({ children }: { children: React.ReactNode }) => (
+    <MainContainer>{children}</MainContainer>
+  ),
   primaryHue: 212,
   primarySaturation: 70,
 };

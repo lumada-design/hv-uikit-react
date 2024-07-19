@@ -1,6 +1,10 @@
 import { forwardRef, useRef } from "react";
 import { useDateSegment } from "@react-aria/datepicker";
-import { DateFieldState, DateSegment } from "@react-stately/datepicker";
+import {
+  DateFieldState,
+  DateSegment,
+  SegmentType,
+} from "@react-stately/datepicker";
 
 import { HvBaseProps } from "../types/generic";
 
@@ -21,7 +25,7 @@ const PlaceholderSegment = ({
 }: {
   segment: DateSegment;
   state: DateFieldState;
-  placeholder: string;
+  placeholder?: string;
 }) => {
   const ref = useRef(null);
   const { segmentProps } = useDateSegment(segment, state, ref);
@@ -37,10 +41,10 @@ const PlaceholderSegment = ({
   );
 };
 
-interface PlaceholderProps extends HvBaseProps<HTMLDivElement> {
+export interface PlaceholderProps extends HvBaseProps<HTMLDivElement> {
   name?: string;
   state: DateFieldState;
-  placeholders: { hour?: string; minute?: string; second?: string };
+  placeholders: Partial<Record<SegmentType, string>>;
 }
 
 export const Placeholder = forwardRef<HTMLDivElement, PlaceholderProps>(

@@ -14,8 +14,11 @@ import {
 
 import { NodeData } from "./data";
 
-function filterDataByCountries(data, countriesToFilter: string[]) {
-  return data.filter((item) => countriesToFilter.includes(item.country));
+function filterDataByCountries(
+  data: NodeData["jsonData"],
+  countriesToFilter: string[],
+) {
+  return data?.filter((item) => countriesToFilter.includes(item.country));
 }
 
 export const Filter: HvFlowNodeFC = (props) => {

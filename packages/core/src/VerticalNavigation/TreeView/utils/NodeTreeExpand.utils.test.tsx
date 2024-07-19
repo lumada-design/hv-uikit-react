@@ -94,7 +94,7 @@ describe("NodeTreeExpandUtils", () => {
 
   describe("expandAllSiblings", () => {
     it("at root", () => {
-      const expanded = [];
+      const expanded: [] = [];
       const result = NodeTreeExpandUtils.expandAllSiblings(
         expanded,
         nodeMap,

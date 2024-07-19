@@ -1,4 +1,9 @@
-import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
+import {
+  getColor,
+  HvColor,
+  HvColorAny,
+  theme,
+} from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
@@ -74,7 +79,7 @@ export const HvCard = (props: HvCardProps) => {
                   ? selected
                     ? theme.colors.secondary
                     : theme.colors.atmo4
-                  : theme.colors[statusColor],
+                  : theme.colors[statusColor as HvColor],
             }),
             classes.semanticBar,
           )}

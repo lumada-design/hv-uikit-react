@@ -1,3 +1,9 @@
+import {
+  HvQueryBuilderQuery,
+  HvQueryBuilderQueryGroup,
+  HvQueryBuilderQueryRule,
+} from "@hitachivantara/uikit-react-core";
+
 import dayjs, {
   formatToUTC,
   isDateTimeRange,
@@ -6,15 +12,20 @@ import dayjs, {
   validateDateTimeValues,
 } from "./utils";
 
-function isOr(rule) {
+interface MongoRule {
+  $and?: MongoRule[];
+  $or?: MongoRule[];
+}
+
+function isOr(rule: MongoRule) {
   return rule.$or !== undefined;
 }
 
-function isAnd(rule) {
+function isAnd(rule: MongoRule) {
   return rule.$and !== undefined;
 }
 
-const groupHasNoSubGroupsOrJustOneOR = (group) => {
+const groupHasNoSubGroupsOrJustOneOR = (group: HvQueryBuilderQueryGroup) => {
   let foundOr = false;
 
   for (let i = 0; i !== group.rules.length; ++i) {
@@ -31,7 +42,7 @@ const groupHasNoSubGroupsOrJustOneOR = (group) => {
   return true;
 };
 
-const ruleToMongo = (rule, timezone) => {
+const ruleToMongo = (rule: HvQueryBuilderQueryRule, timezone: string) => {
   if (rule.attribute == null) {
     return null;
   }
@@ -221,7 +232,7 @@ const ruleToMongo = (rule, timezone) => {
   return { [rule.attribute]: value };
 };
 
-const groupToMongo = (group, timezone) => {
+const groupToMongo = (group: HvQueryBuilderQuery, timezone: string) => {
   if (group.combinator == null) {
     throw new Error("missing combinator");
   }
@@ -234,10 +245,12 @@ const groupToMongo = (group, timezone) => {
     group.combinator === "and" &&
     (group.rules.length <= 1 || groupHasNoSubGroupsOrJustOneOR(group));
 
-  const initialValue = implicitAnd ? {} : { [`$${group.combinator}`]: [] };
+  const initialValue: MongoRule = implicitAnd
+    ? {}
+    : { [`$${group.combinator}`]: [] };
 
-  const mongo = group.rules.reduce((mongoRule, queryRule) => {
-    let rule;
+  const mongo = group.rules.reduce<MongoRule>((mongoRule, queryRule) => {
+    let rule: MongoRule | null = null;
 
     if ("attribute" in queryRule && queryRule.attribute != null) {
       rule = ruleToMongo(queryRule, timezone);
@@ -249,9 +262,9 @@ const groupToMongo = (group, timezone) => {
       if (implicitAnd) {
         Object.assign(mongoRule, rule);
       } else if (isAnd(mongoRule)) {
-        mongoRule.$and.push(rule);
+        mongoRule.$and?.push(rule);
       } else if (isOr(mongoRule)) {
-        mongoRule.$or.push(rule);
+        mongoRule.$or?.push(rule);
       }
     }
 
@@ -261,7 +274,7 @@ const groupToMongo = (group, timezone) => {
   return mongo;
 };
 
-export default (query, timezone = dayjs.tz.guess()) => {
+export default (query: HvQueryBuilderQuery, timezone = dayjs.tz.guess()) => {
   const isValid = !JSON.stringify(query, (key, value) =>
     value === undefined ? "undefined" : value,
   ).includes("undefined");

@@ -16,10 +16,7 @@ export type HvWizardActionsClasses = ExtractNames<typeof useClasses>;
 
 export interface HvWizardActionsProps extends HvBaseProps {
   /** Function to handle the cancel button. */
-  handleClose: (
-    event: React.SyntheticEvent,
-    reason?: "escapeKeyDown" | "backdropClick",
-  ) => void;
+  handleClose: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Function to handle the submit button. Also sends the current context state. */
   handleSubmit: (context: any) => void;
   /** An object containing all the labels for the wizard actions component. */

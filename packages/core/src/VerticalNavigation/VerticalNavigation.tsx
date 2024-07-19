@@ -112,7 +112,7 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
   }, [parentItem, setParentItem, withParentData]);
 
   const navigateToChildHandler = useCallback(
-    (event, item) => {
+    (event: any, item: any) => {
       setParentItem(getNavigationItemById(withParentData, item.id));
       event.stopPropagation();
     },

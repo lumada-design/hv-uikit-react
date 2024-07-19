@@ -368,7 +368,7 @@ export const CustomMultipleLinesChart: StoryObj<HvLineChartProps> = {
           </div>
         </div>
         <HvLineChart
-          data={chartData[country][time]}
+          data={chartData[country as keyof typeof chartData][time]}
           groupBy="time"
           measures={["Input Feed Rate", "Output Feed", "Availability"]}
         />
@@ -524,7 +524,7 @@ export const HorizontalRangeSlider: StoryObj<HvLineChartProps> = {
   },
   render: () => {
     const r = new Random();
-    const rand = (diff) => r.next() * diff - diff / 2;
+    const rand = (diff: number) => r.next() * diff - diff / 2;
 
     const generateDates = (num = 100, startDate = new Date(2020, 0)) =>
       Array.from(Array(num).keys()).map((i) =>
@@ -569,9 +569,9 @@ export const WithIntervalUpdates: StoryObj<HvLineChartProps> = {
   },
   render: () => {
     const r = new Random();
-    const rand = (diff) => r.next() * diff - diff / 2;
+    const rand = (diff: number) => r.next() * diff - diff / 2;
 
-    const generateDates = (initialDate, num = 200) =>
+    const generateDates = (initialDate: Date, num = 200) =>
       Array.from(Array(num).keys()).map((i) =>
         new Date(new Date(initialDate).setDate(initialDate.getDate() + i))
           .toISOString()
@@ -598,7 +598,7 @@ export const WithIntervalUpdates: StoryObj<HvLineChartProps> = {
 
     const [data, setData] = useState(generateData());
 
-    const addDaysToCurrentDate = (num) => {
+    const addDaysToCurrentDate = (num: number) => {
       const currentDay = new Date(date.current);
       date.current = new Date(currentDay.setDate(currentDay.getDate() + num));
     };
@@ -872,7 +872,7 @@ export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
             color: colors?.secondary_60,
           };
           option.series[0].itemStyle = {
-            color(params) {
+            color(params: any) {
               return params.data[1] > 3000
                 ? colors?.positive
                 : colors?.negative;

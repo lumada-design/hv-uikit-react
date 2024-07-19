@@ -1,4 +1,4 @@
-export const themeColors = {
+export const themeColors: Record<string, Record<string, string[]>> = {
   ds3: {
     Base: ["base_light", "base_dark"],
     Accent: ["secondary", "primary", "primary_80", "secondary_60", "brand"],

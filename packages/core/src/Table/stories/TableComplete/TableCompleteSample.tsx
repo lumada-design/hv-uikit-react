@@ -1,5 +1,8 @@
 import { useMemo } from "react";
-import { HvToggleButton } from "@hitachivantara/uikit-react-core";
+import {
+  HvRowInstance,
+  HvToggleButton,
+} from "@hitachivantara/uikit-react-core";
 import {
   Delete,
   Duplicate,
@@ -19,7 +22,7 @@ const useColumns = () => {
       {
         id: "lock",
         variant: "actions",
-        Cell: ({ row }) => (
+        Cell: ({ row }: { row: HvRowInstance<AssetEvent> }) => (
           <HvToggleButton
             aria-label="Lock"
             notSelectedIcon={<Unlock />}
