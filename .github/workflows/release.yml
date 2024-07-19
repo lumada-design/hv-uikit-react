@@ -1,13 +1,24 @@
 name: Release
 
 on:
-  repository_dispatch:
-    types: [release]
+  schedule:
+    - cron: "0 5 * * 1,4" # at 05:00 on monday,thursday
   workflow_dispatch:
 
 jobs:
+  tests:
+    name: Tests
+    uses: ./.github/workflows/tests.yml
+    secrets: inherit
+
+  visual-tests:
+    name: Visual Tests
+    uses: ./.github/workflows/tests-visual.yml
+    secrets: inherit
+
   publish:
-    name: Publish
+    name: Publish Packages
+    needs: [tests, visual-tests]
     runs-on: ubuntu-latest
 
     env:
