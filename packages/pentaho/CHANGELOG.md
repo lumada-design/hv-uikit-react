@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.1.2...@hitachivantara/uikit-react-pentaho@0.1.3) (2024-07-20)
+
+### Bug Fixes
+
+- pentaho package ESM export ([81d137f](https://github.com/lumada-design/hv-uikit-react/commit/81d137f67f14fa0d4d50c6a152ac073782d46ec7))
+
 ## [0.1.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.1.1...@hitachivantara/uikit-react-pentaho@0.1.2) (2024-07-17)
 
 ### Bug Fixes
