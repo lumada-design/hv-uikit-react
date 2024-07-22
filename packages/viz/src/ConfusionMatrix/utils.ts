@@ -108,9 +108,16 @@ export const useSeries = ({
           .columnNames()
           .filter((p) => p !== filterKey)
           .reduce((acc: (string | number)[][], c: string, j) => {
-            const row: (string | number)[][] = data
-              .array(c)
-              .reduce((racc, rv, i) => {
+            const row: (string | number)[][] = data.array(c).reduce(
+              (
+                racc: {
+                  value: any[];
+                  visualMap?: boolean;
+                  itemStyle?: object;
+                }[],
+                rv: any,
+                i: number,
+              ) => {
                 racc.push({
                   value: [data.array(filterKey)[i], c, rv != null ? rv : "-"],
                   ...(delta && {
@@ -121,7 +128,9 @@ export const useSeries = ({
                   }),
                 });
                 return racc;
-              }, []);
+              },
+              [],
+            );
 
             acc.push(...row);
             return acc;

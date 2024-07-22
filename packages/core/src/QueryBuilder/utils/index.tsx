@@ -73,7 +73,7 @@ export const setNodeIds = (
 export const findNodeById = (
   id: React.Key,
   node: HvQueryBuilderQueryGroup | HvQueryBuilderQueryRule,
-) => {
+): HvQueryBuilderQueryGroup | HvQueryBuilderQueryRule | null => {
   if (node.id === id) {
     return node;
   }
@@ -95,7 +95,7 @@ export const findParentById = (
   id: React.Key,
   node: HvQueryBuilderQueryGroup | HvQueryBuilderQueryRule,
   parent?: HvQueryBuilderQueryGroup,
-) => {
+): HvQueryBuilderQueryGroup | null => {
   if (node.id === id) {
     return parent ?? null;
   }

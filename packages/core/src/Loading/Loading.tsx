@@ -15,7 +15,7 @@ export interface HvLoadingProps extends HvBaseProps {
   /** Indicates if the component should be render in a small size. */
   small?: boolean;
   /** The label to be displayed.  */
-  label?: string | React.ReactNode;
+  label?: React.ReactNode;
   /** Whether the loading animation is hidden. */
   hidden?: boolean;
   /** Color applied to the bars. */

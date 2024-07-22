@@ -137,10 +137,10 @@ export const ResponsiveTable = () => {
                 .slice(1)
                 .map((key, i) => (
                   <HvTableCell
-                    key={`${row[key]}_${columns[i].Header}`}
+                    key={`${row[key as keyof typeof row]}_${columns[i].Header}`}
                     data-label={columns[i].Header}
                   >
-                    {row[key]}
+                    {row[key as keyof typeof row]}
                   </HvTableCell>
                 ))}
             </StyledResponsiveTableRow>

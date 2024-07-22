@@ -1,6 +1,6 @@
 import React, { ComponentType, useEffect, useMemo, useState } from "react";
 import { MDXProvider } from "@mdx-js/react";
-import { DocsContainer } from "@storybook/addon-docs";
+import { DocsContainer, DocsContainerProps } from "@storybook/addon-docs";
 import { addons } from "@storybook/preview-api";
 import { Global } from "@storybook/theming";
 import {
@@ -41,7 +41,13 @@ const components: Record<string, ComponentType> = {
   h6: (props) => <HvTypography component="h6" variant="title4" {...props} />,
 };
 
-export default ({ context, children }) => {
+export default ({
+  context,
+  children,
+}: {
+  children: React.ReactNode;
+  context: DocsContainerProps["context"];
+}) => {
   const initialMode = getInitialMode();
   const [mode, setMode] = useState(initialMode);
 

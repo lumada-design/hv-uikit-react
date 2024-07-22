@@ -3,6 +3,7 @@ import {
   HvTable,
   HvTableBody,
   HvTableCell,
+  HvTableColumnConfig,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
@@ -14,7 +15,7 @@ import {
 import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
 export const UseHvSortBy = () => {
-  const colSort = useMemo(() => {
+  const colSort: HvTableColumnConfig<AssetEvent>["sortType"] = useMemo(() => {
     const levels = ["minor", "average", "major", "critical"];
 
     return (rowA, rowB, columnId) => {

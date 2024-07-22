@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { ComponentType, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import {
   HvInput,
@@ -8,8 +8,10 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import {
+  IconBaseProps,
   icons as iconComponentList,
   IconSize,
+  IconType,
   pictograms as pictogramComponentList,
 } from "@hitachivantara/uikit-react-icons";
 
@@ -39,7 +41,15 @@ const classes = {
   }),
 };
 
-const Icon = ({ name, Component, iconSize }) => (
+const Icon = ({
+  name,
+  Component,
+  iconSize,
+}: {
+  name: string;
+  Component: ComponentType<IconBaseProps>;
+  iconSize: IconSize;
+}) => (
   <div className={classes.iconContainer} title={name}>
     <Component iconSize={iconSize} />
     <HvTypography variant="caption1" className={classes.text}>
@@ -48,7 +58,13 @@ const Icon = ({ name, Component, iconSize }) => (
   </div>
 );
 
-const Group = ({ iconSize, iconsLibrary }) => {
+const Group = ({
+  iconSize,
+  iconsLibrary,
+}: {
+  iconsLibrary: Record<string, IconType>;
+  iconSize: IconSize;
+}) => {
   const keys = Array.from(new Set([...Object.keys(iconsLibrary)])).sort();
   return (
     <div className={classes.group}>
@@ -73,13 +89,10 @@ const Library = () => {
 
     return Object.keys(iconList)
       .filter((key) => key.toLowerCase().includes(search.toLowerCase()))
-      .reduce(
-        (obj, key) => {
-          obj[key] = iconList[key];
-          return obj;
-        },
-        {} as typeof iconList,
-      );
+      .reduce<Record<string, IconType>>((obj, key) => {
+        obj[key] = iconList[key as keyof typeof iconList];
+        return obj;
+      }, {});
   }, [search]);
 
   return (

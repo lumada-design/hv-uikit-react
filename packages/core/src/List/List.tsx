@@ -62,7 +62,9 @@ export interface HvListProps
   onChange?: (value: HvListValue[]) => void;
   /** Call back fired when list item is selected. Returns selected item. */
   onClick?: (
-    event: React.ChangeEvent<HTMLLIElement>,
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLLIElement>,
     value: HvListValue,
   ) => void;
   /** If `true` the list items will show the selection state. */
@@ -136,7 +138,10 @@ export const HvList = (props: HvListProps) => {
     return ["menu", "menuitem"];
   }, [selectable, useSelector]);
 
-  const handleSelect = (evt, item) => {
+  const handleSelect = (
+    evt: React.ChangeEvent<HTMLInputElement> | React.MouseEvent<HTMLLIElement>,
+    item: HvListValue,
+  ) => {
     if (!item.path) evt.preventDefault();
     if (item.disabled) return;
 
@@ -164,13 +169,15 @@ export const HvList = (props: HvListProps) => {
     onChange?.(parsedList);
   };
 
-  const renderLeftIcon = (item) => {
+  const renderLeftIcon = (item: HvListValue) => {
     return isValidElement(item.icon)
       ? item.icon
-      : item.icon?.({
-          isSelected: item.selected,
-          isDisabled: item.disabled,
-        });
+      : typeof item.icon === "function"
+        ? item.icon?.({
+            isSelected: item.selected,
+            isDisabled: item.disabled,
+          })
+        : null;
   };
 
   const renderSelectAll = () => {
@@ -285,7 +292,13 @@ export const HvList = (props: HvListProps) => {
     }
   }, [listRef, selectedItemIndex]);
 
-  const renderVirtualizedListItem = ({ index, style }) => {
+  const renderVirtualizedListItem = ({
+    index,
+    style,
+  }: {
+    index: number;
+    style: Record<string, any>;
+  }) => {
     const item = filteredList[index];
     const tabIndex =
       item.tabIndex ||
@@ -366,7 +379,7 @@ export const HvList = (props: HvListProps) => {
           itemCount={filteredList.length}
           itemSize={condensed ? 32 : 40}
           innerElementType={ListContainer}
-          {...others}
+          {...(others as any)}
         >
           {renderVirtualizedListItem}
         </FixedSizeList>

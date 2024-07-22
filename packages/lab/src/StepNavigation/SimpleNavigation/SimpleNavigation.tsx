@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import {
   HvBaseProps,
   HvTheme,
+  HvTypographyVariants,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -35,7 +36,12 @@ export interface HvSimpleNavigationProps extends Omit<HvBaseProps, "children"> {
       state: HvDotProps["state"];
       rawTitle: string;
       number: number;
-    }) => { variant: string; title: string },
+    }) => {
+      variant?: HvTypographyVariants;
+      title?: string;
+      titleWidth?: number;
+      titleDisabled?: boolean;
+    },
   ) => ReactNode;
   /** Returns dynamic width values of the component (width, titleWidth, separatorWidth). */
   getDynamicValues: (stepsWidth: number) => {

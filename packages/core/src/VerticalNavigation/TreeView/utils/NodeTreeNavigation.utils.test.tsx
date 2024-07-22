@@ -83,7 +83,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("with children and expanded, should return first child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(
-        (nodeId) => nodeId === "A",
+        (nodeId: any) => nodeId === "A",
         nodeMap,
         "A",
       );
@@ -115,7 +115,7 @@ describe("NodeTreeNavigationUtils", () => {
   describe("getPreviousNode", () => {
     it("if first child, should return its parent", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
-        (nodeId) => nodeId === "A",
+        (nodeId: any) => nodeId === "A",
         nodeMap,
         "A1",
       );
@@ -145,7 +145,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if previous sibling has children and is expanded, should return its last child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
-        (nodeId) => nodeId === "A",
+        (nodeId: any) => nodeId === "A",
         nodeMap,
         "B",
       );
@@ -155,7 +155,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if previous sibling has grandchildren but its last child is collapsed, should return the last child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
-        (nodeId) => nodeId === "A",
+        (nodeId: any) => nodeId === "A",
         nodeMap,
         "B",
       );
@@ -165,7 +165,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if previous sibling has grandchildren and is expanded, should return its last grandchild", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
-        (nodeId) => nodeId === "A" || nodeId === "A3",
+        (nodeId: any) => nodeId === "A" || nodeId === "A3",
         nodeMap,
         "B",
       );
@@ -186,7 +186,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if last top node is expanded, return last child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
-        (nodeId) => nodeId === "C",
+        (nodeId: any) => nodeId === "C",
         nodeMap,
       );
 
@@ -215,7 +215,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if expanded, return its last child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
-        (nodeId) => nodeId === "A",
+        (nodeId: any) => nodeId === "A",
         nodeMap,
         "A",
       );
@@ -225,7 +225,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if last child is expanded, return the last grandchild", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
-        (nodeId) => nodeId === "A" || nodeId === "A3",
+        (nodeId: any) => nodeId === "A" || nodeId === "A3",
         nodeMap,
         "A",
       );

@@ -62,9 +62,9 @@ export type UseHvTableSticky = (<D extends object = Record<string, unknown>>(
 
 // #endregion ##### TYPES #####
 
-const isSticky = (value) => /left|right/i.test(value);
+const isSticky = (value: any) => /left|right/i.test(value);
 
-const getStickyValue = ({ sticky, parent }) => {
+const getStickyValue = ({ sticky, parent }: any) => {
   if (isSticky(sticky)) {
     return sticky;
   }
@@ -79,7 +79,7 @@ const getStickyValue = ({ sticky, parent }) => {
     const { columns } = parent;
     // check if any column in the same group is sticky
     if (columns?.length > 0) {
-      sticky = columns?.find((col) => col.sticky != null)?.sticky;
+      sticky = columns?.find((col: any) => col.sticky != null)?.sticky;
       if (isSticky(sticky)) {
         return sticky;
       }
@@ -89,7 +89,7 @@ const getStickyValue = ({ sticky, parent }) => {
   return undefined;
 };
 
-const updateColumnAndParent = (column, props) => {
+const updateColumnAndParent = (column: any, props: any) => {
   Object.assign(column, props);
 
   if (column.parent != null) {
@@ -97,12 +97,12 @@ const updateColumnAndParent = (column, props) => {
   }
 };
 
-const visibleColumnsHook = (columns, { instance }) => {
+const visibleColumnsHook = (columns: any, { instance }: any) => {
   const toTheLeft: any[] = [];
   const toTheRight: any[] = [];
   const others: any[] = [];
 
-  columns.forEach((column) => {
+  columns.forEach((column: any) => {
     const sticky = getStickyValue(column)?.toLowerCase();
 
     updateColumnAndParent(column, { sticky });
@@ -143,7 +143,7 @@ const visibleColumnsHook = (columns, { instance }) => {
   return [...toTheLeft, ...others, ...toTheRight];
 };
 
-const calculateHeaderWidthsToTheRight = (headers, right = 0) => {
+const calculateHeaderWidthsToTheRight = (headers: any, right = 0) => {
   if (!headers?.length) {
     return;
   }
@@ -164,7 +164,7 @@ const calculateHeaderWidthsToTheRight = (headers, right = 0) => {
   }
 };
 
-const useInstanceHook = (instance) => {
+const useInstanceHook = (instance: any) => {
   calculateHeaderWidthsToTheRight(instance.headers);
 
   const getInstance = useGetLatest(instance);
@@ -183,7 +183,7 @@ const getRowProps = () => ({
   },
 });
 
-const getCellProps = (header, isHeaderCell: boolean) => {
+const getCellProps = (header: any, isHeaderCell: boolean) => {
   const props: UseHvTableStickyCellProps & { style: React.CSSProperties } = {
     style: {
       display: "inline-flex",
@@ -203,6 +203,7 @@ const getCellProps = (header, isHeaderCell: boolean) => {
     const margin =
       header.sticky === "left" ? header.totalLeft : header.totalRight;
 
+    // @ts-ignore
     props.style[header.sticky] = `${margin}px`;
 
     if (header.isLastLeftSticky) {
@@ -244,7 +245,7 @@ const getCellProps = (header, isHeaderCell: boolean) => {
  */
 
 // props target: <table>
-const getTablePropsHook = (props, { instance }) => {
+const getTablePropsHook = (props: any, { instance }: any) => {
   const nextProps: UseHvTableStickyTableProps = {
     stickyHeader: instance.stickyHeader,
     stickyColumns: instance.hasStickyColumns,
@@ -254,7 +255,7 @@ const getTablePropsHook = (props, { instance }) => {
 };
 
 // props target: <table><thead>
-export const getTableHeadPropsHook = (props, { instance }) => {
+export const getTableHeadPropsHook = (props: any, { instance }: any) => {
   const nextProps = {
     stickyHeader: instance.stickyHeader,
   };
@@ -263,28 +264,28 @@ export const getTableHeadPropsHook = (props, { instance }) => {
 };
 
 // props target: <table><thead><tr>
-export const getHeaderGroupPropsHook = (props, { instance }) => {
+export const getHeaderGroupPropsHook = (props: any, { instance }: any) => {
   const nextProps = instance.hasStickyColumns ? getRowProps() : {};
 
   return [props, nextProps];
 };
 
 // props target: <table><thead><tr><th>
-const getHeaderPropsHook = (props, { instance, column }) => {
+const getHeaderPropsHook = (props: any, { instance, column }: any) => {
   const nextProps = instance.hasStickyColumns ? getCellProps(column, true) : {};
 
   return [props, nextProps];
 };
 
 // props target: <table><tbody><tr>
-const getRowPropsHook = (props, { instance }) => {
+const getRowPropsHook = (props: any, { instance }: any) => {
   const nextProps = instance.hasStickyColumns ? getRowProps() : {};
 
   return [props, nextProps];
 };
 
 // props target: <table><tbody><tr><td>
-const getCellPropsHook = (props, { instance, cell }) => {
+const getCellPropsHook = (props: any, { instance, cell }: any) => {
   const nextProps: UseHvTableStickyCellProps = instance.hasStickyColumns
     ? getCellProps(cell.column, false)
     : {};

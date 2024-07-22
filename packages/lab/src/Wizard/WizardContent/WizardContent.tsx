@@ -49,15 +49,18 @@ export const HvWizardContent = ({
 
   const arrayChildren = React.Children.toArray(children) as ChildElement[];
 
-  const initialContext = arrayChildren.reduce((acc, child, index) => {
-    const invalid =
-      "mustValidate" in child.props && child.props.mustValidate === true
-        ? false
-        : null;
-    const valid = invalid ?? (index === 0 || null);
-    acc[index] = { ...child.props, form: {}, valid, touched: index === 0 };
-    return acc;
-  }, {});
+  const initialContext = arrayChildren.reduce<HvWizardTabs>(
+    (acc, child, index) => {
+      const invalid =
+        "mustValidate" in child.props && child.props.mustValidate === true
+          ? false
+          : null;
+      const valid = invalid ?? (index === 0 || null);
+      acc[index] = { ...child.props, form: {}, valid, touched: index === 0 };
+      return acc;
+    },
+    {},
+  );
 
   const summaryRef = useRef<HTMLElement>();
   const resizedRef = useRef({ height: 0, width: 0 });
@@ -67,16 +70,15 @@ export const HvWizardContent = ({
   const [summaryWidth, setSummaryWidth] = useState(0);
   const [summaryLeft, setSummaryLeft] = useState(0);
 
-  const updateSummaryMeasures = useCallback((newSizes) => {
-    const modalWidth = newSizes.width;
-    const drawerWidth = modalWidth * DRAWER_PERCENTAGE;
-    setSummaryHeight(newSizes.height);
+  const updateSummaryMeasures = useCallback(({ height = 0, width = 0 }) => {
+    const drawerWidth = width * DRAWER_PERCENTAGE;
+    setSummaryHeight(height);
     setSummaryWidth(Math.max(drawerWidth, DRAWER_MIN_WIDTH));
-    setSummaryLeft(modalWidth - Math.max(drawerWidth, DRAWER_MIN_WIDTH));
+    setSummaryLeft(width - Math.max(drawerWidth, DRAWER_MIN_WIDTH));
 
     resizedRef.current = {
-      height: newSizes.height,
-      width: newSizes.width,
+      height,
+      width,
     };
   }, []);
 
@@ -105,17 +107,20 @@ export const HvWizardContent = ({
   useEffect(() => {
     if (tab && !context[tab]?.touched) {
       setContext((oldContext) =>
-        Object.entries(oldContext).reduce((acc, [key, childState]) => {
-          acc[key] =
-            +key <= tab
-              ? {
-                  ...childState,
-                  touched: true,
-                  valid: childState?.valid ?? true,
-                }
-              : childState;
-          return acc;
-        }, {}),
+        Object.entries(oldContext).reduce<HvWizardTabs>(
+          (acc, [key, childState]) => {
+            acc[Number(key)] =
+              +key <= tab
+                ? {
+                    ...childState,
+                    touched: true,
+                    valid: childState?.valid ?? true,
+                  }
+                : childState;
+            return acc;
+          },
+          {},
+        ),
       );
     }
   }, [tab, context, setContext]);

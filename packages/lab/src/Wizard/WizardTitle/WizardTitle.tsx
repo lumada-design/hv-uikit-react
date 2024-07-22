@@ -10,7 +10,7 @@ import { Report } from "@hitachivantara/uikit-react-icons";
 
 import { HvStepNavigation, HvStepNavigationProps } from "../../StepNavigation";
 import { HvStepProps } from "../../StepNavigation/DefaultNavigation";
-import { HvWizardContext } from "../WizardContext";
+import { HvWizardContext, HvWizardTab } from "../WizardContext";
 import { staticClasses, useClasses } from "./WizardTitle.styles";
 
 export { staticClasses as wizardTitleClasses };
@@ -33,13 +33,17 @@ export interface HvWizardTitleProps extends HvBaseProps {
   classes?: HvWizardTitleClasses;
 }
 
-const switchTabState = (state, currentTab, index) => {
-  if (state.loading) return "Pending";
+const switchTabState = (
+  state: HvWizardTab | undefined,
+  currentTab: number,
+  index: number,
+) => {
+  if (state?.loading) return "Pending";
   if (index === currentTab) return "Current";
-  if (state.valid) return "Completed";
-  if (state.disabled) return "Disabled";
-  if (state.valid === null) return "Enabled";
-  if (state.touched && state.valid === false) return "Failed";
+  if (state?.valid) return "Completed";
+  if (state?.disabled) return "Disabled";
+  if (state?.valid === null) return "Enabled";
+  if (state?.touched && state?.valid === false) return "Failed";
   return "Enabled";
 };
 

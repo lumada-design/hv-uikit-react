@@ -1,5 +1,10 @@
 export class NodeTreeNavigationUtils {
-  static getNextNode(isExpanded, nodeMap, nodeId, end = false) {
+  static getNextNode(
+    isExpanded: any,
+    nodeMap: any,
+    nodeId: any,
+    end = false,
+  ): any {
     const node = nodeMap[nodeId];
     const parent = nodeMap[node.parent];
 
@@ -30,7 +35,7 @@ export class NodeTreeNavigationUtils {
     return null;
   }
 
-  static getPreviousNode(isExpanded, nodeMap, nodeId) {
+  static getPreviousNode(isExpanded: any, nodeMap: any, nodeId: any) {
     const node = nodeMap[nodeId];
     const parent = nodeMap[node.parent];
 
@@ -53,7 +58,11 @@ export class NodeTreeNavigationUtils {
     return null;
   }
 
-  static getLastNode(isExpanded, nodeMap, nodeId: number | string = -1) {
+  static getLastNode(
+    isExpanded: any,
+    nodeMap: any,
+    nodeId: number | string = -1,
+  ): any {
     const node = nodeMap[nodeId];
     const open = nodeId === -1 || isExpanded(nodeId);
     if (open && node.children && node.children.length > 0) {
@@ -67,12 +76,17 @@ export class NodeTreeNavigationUtils {
     return nodeId;
   }
 
-  static getNodeByFirstCharacter(nodeMap, visibleNodes, nodeId, char) {
+  static getNodeByFirstCharacter(
+    nodeMap: any,
+    visibleNodes: any,
+    nodeId: any,
+    char: any,
+  ) {
     const lowercaseChar = char.toLowerCase();
 
-    let toFocus = null;
+    let toFocus: any = null;
     let useNext = false;
-    visibleNodes.forEach((nId) => {
+    visibleNodes.forEach((nId: any) => {
       const node = nodeMap[nId];
       const firstChar = node.label.substring(0, 1).toLowerCase();
 

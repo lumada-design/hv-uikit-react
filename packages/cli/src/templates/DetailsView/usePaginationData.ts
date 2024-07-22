@@ -3,9 +3,9 @@ import useSWR from "swr";
 
 // --- Types ---
 
-export interface ServerPaginationProps<
-  T extends object = Record<string, string | number>,
-> {
+type DataObject = Record<string, string | number | undefined>;
+
+export interface ServerPaginationProps<T extends DataObject = DataObject> {
   endpoint: string;
   db: T[];
   limit: number;
@@ -16,9 +16,7 @@ export interface ServerPaginationProps<
   search?: string;
 }
 
-export interface PaginationData<
-  T extends object = Record<string, string | number>,
-> {
+export interface PaginationData<T extends DataObject = DataObject> {
   data: T[];
   total: number;
   pages: number;
@@ -31,20 +29,19 @@ export const delay = (ms = 500) =>
     setTimeout(() => resolve("Time passed"), ms);
   });
 
-const searchObj = (entry: Record<string, string | number>, search: string) => {
+const searchObj = (entry: DataObject, search: string) => {
   return Object.keys(entry)
     .filter((key) => key !== "id" && key !== "statusColor")
     .find(
       (key) =>
-        entry[key].toString().toLowerCase().search(search.toLowerCase()) !== -1,
+        entry[key]?.toString().toLowerCase().search(search.toLowerCase()) !==
+        -1,
     )?.length;
 };
 
 // --- Pagination hook ---
 
-export function useServerPagination<
-  T extends object = Record<string, string | number>,
->({
+export function useServerPagination<T extends DataObject = DataObject>({
   endpoint,
   db,
   limit,
@@ -73,14 +70,11 @@ export function useServerPagination<
             let keep = true;
 
             if (search) {
-              keep = !!searchObj(
-                entry as Record<string, string | number>,
-                search,
-              );
+              keep = !!searchObj(entry, search);
             }
             if (filter && keep) {
               keep =
-                entry[filter.id].toString().toLowerCase() ===
+                entry[filter.id]?.toString().toLowerCase() ===
                 filter.value.toString().toLowerCase();
             }
 
@@ -94,14 +88,18 @@ export function useServerPagination<
           sort
             ? (a, b) => {
                 return order === "desc"
-                  ? b[sort].localeCompare(a[sort], undefined, {
-                      numeric: true,
-                      sensitivity: "base",
-                    })
-                  : a[sort].localeCompare(b[sort], undefined, {
-                      numeric: true,
-                      sensitivity: "base",
-                    });
+                  ? (b[sort] || "")
+                      .toString()
+                      .localeCompare((a[sort] || "").toString(), undefined, {
+                        numeric: true,
+                        sensitivity: "base",
+                      })
+                  : (a[sort] || "")
+                      .toString()
+                      .localeCompare((b[sort] || "").toString(), undefined, {
+                        numeric: true,
+                        sensitivity: "base",
+                      });
               }
             : undefined,
         )

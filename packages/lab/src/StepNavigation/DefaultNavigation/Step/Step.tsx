@@ -8,6 +8,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import {
   HourGlass,
+  IconSize,
+  IconType,
   Level0Good,
   Level3Bad,
 } from "@hitachivantara/uikit-react-icons";
@@ -43,6 +45,26 @@ export interface HvStepProps
   disabled?: boolean;
 }
 
+const iconSizeObject: Record<HvSize, IconSize> = {
+  xs: "XS",
+  sm: "XS",
+  md: "S",
+  lg: "M",
+  xl: "M",
+};
+
+const stateObject: Record<string, number> = {
+  Pending: 16,
+  Failed: 24,
+  Completed: 24,
+};
+
+const iconStateObject: Record<string, IconType> = {
+  Pending: HourGlass,
+  Failed: Level3Bad,
+  Completed: Level0Good,
+};
+
 /**
  * Step element of "Default" Step Navigation root component
  */
@@ -58,20 +80,8 @@ export const HvStep = ({
 }: HvStepProps) => {
   const { classes, cx } = useClasses(classesProp);
 
-  const iconSize = {
-    xs: "XS",
-    sm: "XS",
-    md: "S",
-    ml: "M",
-    xl: "M",
-  }[size];
-
-  const squareL = {
-    Pending: 16,
-    Failed: 24,
-    Completed: 24,
-  }[state];
-
+  const iconSize = iconSizeObject[size];
+  const squareL = stateObject[state];
   const svgSize = {
     xs: squareL - 8,
     sm: squareL,
@@ -85,12 +95,7 @@ export const HvStep = ({
   const color = state === "Pending" ? "atmo2" : undefined;
   const semantic = state !== "Pending" ? getSemantic(state) : undefined;
   const status = state === "Current" ? "secondary_60" : undefined;
-
-  const IconComponent = {
-    Pending: HourGlass,
-    Failed: Level3Bad,
-    Completed: Level0Good,
-  }[state];
+  const IconComponent = iconStateObject[state];
 
   return (
     <div

@@ -1,5 +1,5 @@
 export interface NodeData {
-  country?: string;
+  country?: keyof typeof data;
 }
 
 const months = [

@@ -81,7 +81,7 @@ export const HvHeatmap = forwardRef<ReactECharts, HvHeatmapProps>(
         const title = params?.title;
 
         const valueToShow = value
-          ? `${yAxis?.data?.[value?.[1]]} - ${xAxis?.data?.[value?.[0]]}: ${params?.series?.[0]?.name}`
+          ? `${yAxis?.data?.[Number(value[1])]} - ${xAxis?.data?.[Number(value[0])]}: ${params?.series?.[0]?.name}`
           : "-";
 
         return `

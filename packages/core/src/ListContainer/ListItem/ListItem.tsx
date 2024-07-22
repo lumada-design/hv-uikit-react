@@ -2,6 +2,7 @@ import {
   cloneElement,
   forwardRef,
   isValidElement,
+  ReactElement,
   useCallback,
   useContext,
   useMemo,
@@ -64,7 +65,7 @@ export interface HvListItemProps extends HvBaseProps<HTMLLIElement> {
 }
 
 const applyClassNameAndStateToElement = (
-  element: any,
+  element: React.ReactNode,
   selected: boolean | undefined,
   disabled: boolean | undefined,
   onClick: React.MouseEventHandler<HTMLLIElement>,
@@ -72,7 +73,7 @@ const applyClassNameAndStateToElement = (
 ) => {
   if (element == null) return null;
 
-  return cloneElement(element, {
+  return cloneElement(element as ReactElement, {
     className,
     checked: !!selected,
     disabled,
@@ -80,10 +81,13 @@ const applyClassNameAndStateToElement = (
   });
 };
 
-const applyClassNameToElement = (element, className?: string) => {
+const applyClassNameToElement = (
+  element: React.ReactNode,
+  className?: string,
+) => {
   if (element == null) return null;
 
-  return cloneElement(element, {
+  return cloneElement(element as ReactElement, {
     className,
   });
 };

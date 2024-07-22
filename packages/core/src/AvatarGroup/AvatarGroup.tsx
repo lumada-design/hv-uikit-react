@@ -77,6 +77,16 @@ const getFontSize = (size: HvAvatarGroupProps["size"]) => {
   }
 };
 
+interface OverflowProps {
+  direction: HvAvatarGroupProps["direction"];
+  childrenToShow: React.ReactNode[];
+  spacingValue: number;
+  overflowComponent?: (n: number) => React.ReactNode;
+  totalChildren: number;
+  maxVisible: number;
+  size: HvAvatarGroupProps["size"];
+}
+
 const Overflow = ({
   direction,
   childrenToShow,
@@ -85,7 +95,7 @@ const Overflow = ({
   totalChildren,
   maxVisible,
   size,
-}) => {
+}: OverflowProps) => {
   return (
     <div
       style={{

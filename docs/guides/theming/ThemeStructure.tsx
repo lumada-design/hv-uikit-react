@@ -31,8 +31,14 @@ const extractName = (name: string): string => {
   return name.replace("ds", "Design System ");
 };
 
-const defaultThemes = [...Object.keys(themes)].map((name) => ({
-  id: name,
+type ThemeName = keyof typeof themes;
+
+const defaultThemes: {
+  id: ThemeName;
+  label: string;
+  selected: boolean;
+}[] = [...Object.keys(themes)].map((name) => ({
+  id: name as ThemeName,
   label: extractName(name),
   selected: name === "ds5" || false,
 }));
@@ -109,7 +115,7 @@ const ThemeValue = ({
 );
 
 export const ThemeStructure = () => {
-  const [selectedTheme, setSelectedTheme] = useState<string | undefined>(
+  const [selectedTheme, setSelectedTheme] = useState<ThemeName | undefined>(
     defaultThemes.find((t) => t.selected)?.id,
   );
   const [showComponents, setShowComponents] = useState<boolean>(false);
@@ -146,7 +152,7 @@ export const ThemeStructure = () => {
   };
 
   const renderLevel = (
-    value: object | string | number,
+    value: object | string | number | undefined,
     label: string,
     level: number,
   ): ReactElement => {
@@ -168,9 +174,17 @@ export const ThemeStructure = () => {
         >
           {Object.keys(value).map((key) => {
             if (key === "classes") {
-              return renderClasses(value[key], key, level);
+              return renderClasses(
+                value[key as keyof typeof value],
+                key,
+                level,
+              );
             }
-            return renderLevel(value[key], key, level + 1);
+            return renderLevel(
+              value[key as keyof typeof value],
+              key,
+              level + 1,
+            );
           })}
         </HvAccordion>
       );
@@ -221,7 +235,7 @@ export const ThemeStructure = () => {
           classes={{ root: styles.dropdown }}
           onChange={(selected) => {
             const value = Array.isArray(selected) ? selected[0] : selected;
-            setSelectedTheme(value?.id?.toString());
+            setSelectedTheme(value?.id?.toString() as ThemeName);
           }}
           values={defaultThemes}
         />
@@ -244,7 +258,13 @@ export const ThemeStructure = () => {
             .filter(
               (p) => (showComponents || tokens.includes(p)) && p !== "name",
             )
-            .map((key) => renderLevel(themes[selectedTheme][key], key, 1))}
+            .map((key) =>
+              renderLevel(
+                themes[selectedTheme][key as keyof typeof themes.ds3],
+                key,
+                1,
+              ),
+            )}
         </div>
       )}
     </div>

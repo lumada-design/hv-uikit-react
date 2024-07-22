@@ -50,7 +50,7 @@ export const types = {
 
 // Node data type
 export interface NodeData {
-  type?: string;
+  type?: keyof typeof types;
   inputs?: HvFlowNodeInput[];
   outputs?: HvFlowNodeOutput[];
 }
@@ -62,7 +62,7 @@ export const Asset: HvFlowNodeFC<NodeData> = (props) => {
 
   const reactFlowInstance = useFlowInstance();
 
-  const { setNodeData } = useFlowNodeUtils();
+  const { setNodeData } = useFlowNodeUtils<NodeData>();
 
   useEffect(() => {
     if (data.type !== curType.current) {
@@ -70,7 +70,10 @@ export const Asset: HvFlowNodeFC<NodeData> = (props) => {
       curType.current = data.type;
 
       // Update inputs and outputs for the node
-      setNodeData((prev) => ({ ...prev, ...types[prev.type] }));
+      setNodeData((prev) => ({
+        ...prev,
+        ...(prev?.type ? types[prev.type] : {}),
+      }));
 
       // Clean up the edges for this node since the inputs and outputs changed
       reactFlowInstance?.setEdges((eds) =>

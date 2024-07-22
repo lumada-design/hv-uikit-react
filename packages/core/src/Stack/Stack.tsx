@@ -109,7 +109,7 @@ export const HvStack = (props: HvStackProps) => {
       ref={containerRef}
       className={cx(
         classes.root,
-        classes[direction],
+        classes[direction as keyof HvStackClasses],
         classes[spacing],
         className,
       )}

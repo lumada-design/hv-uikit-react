@@ -1,11 +1,11 @@
 import { HvColor } from "@hitachivantara/uikit-styles";
 
-const hexColorMap = {
+const hexColorMap: Record<string, HvColor> = {
   "#414141": "secondary",
   "#fff": "atmo1",
   "#f0f0f0": "atmo2",
   "#ccced0": "atmo4",
-} satisfies Record<string, HvColor>;
+};
 
 /**
  * Creates a full component string based upon provided svg data and a component name

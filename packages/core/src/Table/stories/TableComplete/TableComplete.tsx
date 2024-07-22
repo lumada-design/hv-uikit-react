@@ -152,7 +152,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
       id: "_actions",
       variant: "actions",
       style: { overflow: "hidden" },
-      Cell: ({ row }) => (
+      Cell: ({ row }: { row: HvRowInstance<T> }) => (
         <HvActionsGeneric
           actions={actions}
           disabled={actions.every((a) => a.disabled)}

@@ -21,7 +21,7 @@ export const withTooltip =
     tooltipProps?: Partial<HvTooltipProps>,
     tooltipContainerProps?: HvBaseProps,
   ) =>
-  (props) => {
+  (props: any) => {
     const [isHoverDisabled, setIsHoverDisabled] = useState<boolean | undefined>(
       false,
     );

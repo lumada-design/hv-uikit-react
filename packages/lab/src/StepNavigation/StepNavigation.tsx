@@ -15,7 +15,10 @@ import {
   HvDefaultNavigationProps,
   HvStepProps,
 } from "./DefaultNavigation";
-import { HvSimpleNavigation } from "./SimpleNavigation";
+import {
+  HvSimpleNavigation,
+  HvSimpleNavigationProps,
+} from "./SimpleNavigation";
 import { staticClasses, useClasses } from "./StepNavigation.styles";
 import { SEPARATOR_WIDTH, TITLE_MARGIN, TITLE_WIDTH } from "./utils";
 
@@ -91,24 +94,24 @@ export const HvStepNavigation = ({
     stepSize ?? (["xs", "sm"].includes(breakpoint) ? "sm" : "md");
   const hasTitles = showTitles ?? !["xs", "sm"].includes(breakpoint);
 
-  const styledLi = (containerSize) =>
+  const styledLi = (containerSize: any) =>
     styled("li")({
       width: containerSize,
       height: containerSize,
     });
 
-  const styledDiv = (containerSize) =>
+  const styledDiv = (containerSize: any) =>
     styled("div")({
       width: containerSize,
       height: containerSize,
     });
 
   const styledSeparatorElement = (
-    title,
-    separatorClassName,
-    separatorHeight,
-    separatorWidth,
-    backgroundColor,
+    title: string,
+    separatorClassName: string | undefined,
+    separatorHeight: any,
+    separatorWidth: any,
+    backgroundColor: any,
   ) => {
     const widthValue =
       separatorWidth -
@@ -221,7 +224,7 @@ export const HvStepNavigation = ({
     );
     const navWidth = Math.min(
       maxWidth,
-      next ? themeBreakpoints[next] : maxWidth,
+      next ? (themeBreakpoints as any)[next] : maxWidth,
     );
     const titleWidth =
       Number(hasTitles) * Math.ceil((navWidth + TITLE_MARGIN) / steps.length);
@@ -231,7 +234,9 @@ export const HvStepNavigation = ({
     return { width: navWidth, titleWidth, separatorWidth };
   };
 
-  const getTitles = (getTitleProps) =>
+  const getTitles: HvSimpleNavigationProps["getTitles"] = (
+    getTitleProps,
+  ): React.ReactNode =>
     hasTitles ? (
       <div className={classes.titles}>
         {steps.map(({ title: rawTitle, state, titleClassName }, index) => {
@@ -240,11 +245,11 @@ export const HvStepNavigation = ({
             title = rawTitle,
             titleWidth = 0,
             titleDisabled = false,
-          } = getTitleProps({
+          } = getTitleProps?.({
             state,
             rawTitle,
             number: index + 1,
-          });
+          }) ?? {};
 
           return (
             <HvTypography

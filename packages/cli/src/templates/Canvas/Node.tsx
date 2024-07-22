@@ -105,7 +105,9 @@ export const Node = ({ id, data = {} }: NodeProps<NodeData>) => {
     title: titleProp,
     subtitle: subtitleProp,
     color: colorProp,
-    icon: iconProp ? iconsMapping[iconProp] : undefined,
+    icon: iconProp
+      ? iconsMapping[iconProp as keyof typeof iconsMapping]
+      : undefined,
     inputs: inputProp ? [inputProp] : undefined,
     outputs: outputProp ? [outputProp] : undefined,
   });

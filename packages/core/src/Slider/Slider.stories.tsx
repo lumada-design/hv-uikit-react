@@ -278,7 +278,7 @@ export const CustomValues: StoryObj<HvSliderProps> = {
   },
   render: () => {
     const [values, setValues] = useState([3]);
-    const formattedLabel = (label) => {
+    const formattedLabel = (label: React.ReactNode) => {
       if (label === "1") return "Very Low";
       if (label === "2") return "Low";
       if (label === "3") return "Medium";

@@ -15,7 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "types": [
       "node",
       "jest",

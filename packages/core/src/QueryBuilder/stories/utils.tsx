@@ -1,27 +1,54 @@
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
+import {
+  HvQueryBuilderDateTimeRange,
+  HvQueryBuilderDateTimeStrings,
+  HvQueryBuilderNumericRange,
+  HvQueryBuilderQueryRule,
+} from "@hitachivantara/uikit-react-core";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-export const formatToUTC = (date, tz) => {
+export const formatToUTC = (date: string, tz: string) => {
   return dayjs.tz(date, tz).utc().format();
 };
 
-export function isNumericRange(value) {
-  return value.from !== undefined && value.to !== undefined;
+export function isNumericRange(
+  value: HvQueryBuilderQueryRule["value"],
+): value is HvQueryBuilderNumericRange {
+  return (
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    "from" in value &&
+    "to" in value
+  );
 }
 
-export function isDateTimeStrings(value) {
-  return value.date !== undefined && value.time !== undefined;
+export function isDateTimeStrings(
+  value: HvQueryBuilderQueryRule["value"],
+): value is HvQueryBuilderDateTimeStrings {
+  return (
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    "date" in value &&
+    "time" in value
+  );
 }
 
-export function isDateTimeRange(value) {
-  return value.start !== undefined && value.end !== undefined;
+export function isDateTimeRange(
+  value: HvQueryBuilderQueryRule["value"],
+): value is HvQueryBuilderDateTimeRange {
+  return (
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    "start" in value &&
+    "end" in value
+  );
 }
 
-export const parseDate = (date) => {
+export const parseDate = (date?: string) => {
   if (date != null) {
     return dayjs(date).toDate();
   }
@@ -29,7 +56,7 @@ export const parseDate = (date) => {
   return undefined;
 };
 
-export const parseTime = (time) => {
+export const parseTime = (time?: string) => {
   if (time != null) {
     const parts = time.split(":");
 
@@ -46,10 +73,10 @@ export const parseTime = (time) => {
 };
 
 export const validateDateTimeValues = (
-  startDate,
-  startTime,
-  endDate?,
-  endTime?,
+  startDate: string,
+  startTime: string,
+  endDate?: string,
+  endTime?: string,
 ) => {
   if (parseDate(startDate) == null) {
     return false;

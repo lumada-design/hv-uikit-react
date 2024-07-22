@@ -76,7 +76,9 @@ const ItemCard = forwardRef<HTMLLIElement, ItemCardProps>(
         {...others}
       >
         <div className={classes.itemTitle}>
-          <div className={classes.icon}>{iconsMapping[icon]}</div>
+          <div className={classes.icon}>
+            {iconsMapping[icon as keyof typeof iconsMapping]}
+          </div>
           <HvTypography variant="label">{title}</HvTypography>
         </div>
         <Drag />

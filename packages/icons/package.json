@@ -51,6 +51,7 @@
     "@svgr/plugin-jsx": "^8.1.0",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
+    "@types/recursive-readdir": "^2.2.4",
     "by-node-env": "^2.0.1",
     "cpy-cli": "^4.2.0",
     "npm-run-all2": "^6.2.0",

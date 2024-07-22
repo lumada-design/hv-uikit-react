@@ -103,6 +103,7 @@ export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
     id,
     defaultSelectedIndex = 0,
     scrollElementId,
+    // @ts-ignore
     href = true,
     navigationMode = href ? "push" : "none",
     relativeLinks = false,

@@ -4,11 +4,12 @@ const isObject = (val: any): val is Object =>
   val && typeof val === "object" && !Array.isArray(val);
 
 function merge<T>(target: T, source?: DeepPartial<T>) {
-  Object.keys(source || {}).forEach((key) => {
+  Object.keys(source || {}).forEach((keyProp) => {
+    const key = keyProp as keyof typeof source;
     if (isObject(target[key]) && isObject(source?.[key])) {
       merge(target[key], source?.[key]);
     } else {
-      target[key] = source?.[key];
+      (target as any)[key] = source?.[key];
     }
   });
 }

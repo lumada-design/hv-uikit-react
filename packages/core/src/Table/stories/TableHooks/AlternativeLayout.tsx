@@ -14,6 +14,7 @@ import {
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
+  HvTableProps,
   HvTableRow,
   HvTypography,
   useHvBulkActions,
@@ -25,7 +26,19 @@ import { Delete } from "@hitachivantara/uikit-react-icons";
 
 import { AssetEvent, makeData } from "../storiesUtils";
 
-const SampleTable = ({ columns, data, layoutHook, component }) => {
+interface SampleTableProps {
+  columns: HvTableColumnConfig<AssetEvent, string>[];
+  data: AssetEvent[];
+  layoutHook: any;
+  component: HvTableProps["component"];
+}
+
+const SampleTable = ({
+  columns,
+  data,
+  layoutHook,
+  component,
+}: SampleTableProps) => {
   const {
     getTableProps,
     getTableBodyProps,

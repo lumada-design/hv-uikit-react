@@ -1,4 +1,8 @@
 import React from "react";
+import { InputBaseComponentProps } from "@mui/material";
+
+import { HvFormElementContextValue } from "../context/FormElementContext";
+import { HvFormElementDescriptorsContextValue } from "../context/FormElementDescriptorsContext";
 
 interface Descriptor {
   id?: string;
@@ -14,7 +18,7 @@ interface Descriptor {
  *
  */
 const findDescriptors = (
-  children,
+  children: React.ReactNode,
   descriptors: {
     input: Descriptor[];
     label: Descriptor[];
@@ -33,12 +37,14 @@ const findDescriptors = (
     HvCalendarHeader: [],
   },
 ) => {
-  React.Children.forEach(children, (child) => {
+  React.Children.forEach(children, (child: any) => {
     if (child?.type?.formElementType && child.props?.id) {
-      descriptors[child.type.formElementType]?.push({
-        id: child.props?.id,
-        htmlFor: child.props?.htmlFor,
-      });
+      descriptors[child.type.formElementType as keyof typeof descriptors]?.push(
+        {
+          id: child.props?.id,
+          htmlFor: child.props?.htmlFor,
+        },
+      );
     }
 
     if (child?.type?.formElementType !== "formelement") {
@@ -50,33 +56,37 @@ const findDescriptors = (
 };
 
 const getIdReferenceListFor = (
-  formElementType,
-  descriptors,
-  filterFor = null,
+  formElementType: string,
+  descriptors: any,
+  filterFor: string | null = null,
 ) => {
   const referenceList = descriptors?.[formElementType]
-    ?.filter((d) => d.htmlFor !== filterFor)
-    ?.map((d) => d.id)
+    ?.filter((d: any) => d.htmlFor !== filterFor)
+    ?.map((d: any) => d.id)
     .join(" ")
     .trim();
 
   return referenceList !== "" ? referenceList : undefined;
 };
 
-const getIdReferenceFor = (formElementType, descriptors, filterFor = null) => {
+const getIdReferenceFor = (
+  formElementType: string,
+  descriptors: any,
+  filterFor = null,
+) => {
   const referenceList = descriptors?.[formElementType]
-    ?.filter((d) => d.htmlFor !== filterFor)
-    ?.map((d) => d.id)?.[0];
+    ?.filter((d: any) => d.htmlFor !== filterFor)
+    ?.map((d: any) => d.id)?.[0];
 
   return referenceList !== "" ? referenceList : undefined;
 };
 
 const buildFormElementPropsFromContext = (
-  name,
-  disabled,
-  readOnly,
-  required,
-  context,
+  name?: string,
+  disabled?: boolean,
+  readOnly?: boolean,
+  required?: boolean,
+  context?: HvFormElementContextValue,
 ) => {
   return {
     name: name || context?.elementName,
@@ -87,7 +97,12 @@ const buildFormElementPropsFromContext = (
   };
 };
 
-const buildAriaPropsFromContext = (props, context, isInvalid, inputId) => {
+const buildAriaPropsFromContext = (
+  props: InputBaseComponentProps,
+  context: HvFormElementDescriptorsContextValue,
+  isInvalid: boolean,
+  inputId?: string,
+) => {
   const arias: React.AriaAttributes = {
     "aria-labelledby":
       props?.["aria-labelledby"] !== undefined

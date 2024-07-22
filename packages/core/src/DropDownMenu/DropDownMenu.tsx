@@ -1,4 +1,4 @@
-import { ChangeEvent, forwardRef, useMemo } from "react";
+import { forwardRef, useMemo } from "react";
 import { Placement } from "@popperjs/core";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 
@@ -41,10 +41,19 @@ export interface HvDropDownMenuProps
   /** Disable the portal behavior. The children stay within it's parent DOM hierarchy. */
   disablePortal?: boolean;
   /** Function executed on toggle of the dropdown. Should receive the open status. */
-  onToggle?: (event: Event, open: boolean) => void;
+  onToggle?: (
+    event:
+      | Event
+      | React.KeyboardEvent<HTMLUListElement>
+      | React.ChangeEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLLIElement>,
+    open: boolean,
+  ) => void;
   /** Function executed in each onClick. Should received the clicked element. */
   onClick?: (
-    event: React.ChangeEvent<HTMLLIElement>,
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLLIElement>,
     value: HvListValue,
   ) => void;
   /** Keep the Dropdown Menu opened after clicking one option */
@@ -122,10 +131,15 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
 
   const listId = setId(id, "list");
 
-  const handleClose = (event: ChangeEvent) => {
+  const handleClose = (
+    event:
+      | React.KeyboardEvent<HTMLUListElement>
+      | React.ChangeEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLLIElement>,
+  ) => {
     // this will only run if uncontrolled
     setOpen(false);
-    onToggle?.(event as any, false);
+    onToggle?.(event, false);
   };
 
   // If the ESCAPE key is pressed inside the list, the close handler must be called.
@@ -133,7 +147,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
     if (isKey(event, "Tab")) {
       const node = event.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
       if (node) setTimeout(() => node.focus(), 0);
-      handleClose(event as any);
+      handleClose(event);
     }
     event.preventDefault();
   };

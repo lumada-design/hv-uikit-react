@@ -26,13 +26,14 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
 
   const items = loading
     ? Array.from({ length: 6 }).map((_, i) => ({
-        id: i,
+        id: String(i),
         name: "",
         eventType: "",
         severity: "",
         status: "",
         priority: "",
         image: "",
+        statusColor: "",
       }))
     : instance.page.map((p) => ({ ...p.original, id: p.id }));
 
@@ -53,7 +54,7 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
         return (
           <HvCard
             selectable
-            selected={selectedCardsIds.includes(rowId)}
+            selected={rowId ? selectedCardsIds.includes(rowId) : undefined}
             bgcolor="atmo1"
             key={item.id}
             style={{ width: "100%" }}
@@ -141,7 +142,11 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
             <HvActionBar>
               <HvSkeleton hidden={!loading} variant="square" animation={mode}>
                 <HvCheckBox
-                  onChange={() => instance.toggleRowSelected?.(rowId)}
+                  onChange={
+                    rowId
+                      ? () => instance.toggleRowSelected?.(rowId)
+                      : undefined
+                  }
                   checked={instance.selectedFlatRows.some(
                     (r) => r.id === rowId,
                   )}

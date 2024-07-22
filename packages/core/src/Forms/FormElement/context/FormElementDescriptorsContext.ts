@@ -1,9 +1,13 @@
 import React from "react";
 
-export const HvFormElementDescriptorsContext = React.createContext<{
+export interface HvFormElementDescriptorsContextValue {
   input?: any;
   label?: any;
-}>({});
+  descriptors?: any;
+}
+
+export const HvFormElementDescriptorsContext =
+  React.createContext<HvFormElementDescriptorsContextValue>({});
 
 export const HvFormElementDescriptorsContextProvider =
   HvFormElementDescriptorsContext.Provider;

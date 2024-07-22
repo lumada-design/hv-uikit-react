@@ -34,12 +34,12 @@ export default () => (
         setFieldTouched,
       } = props;
 
-      const parseStatus = (name) => {
+      const parseStatus = (name: keyof typeof values) => {
         return errors[name] && touched[name] ? "invalid" : "valid";
       };
 
-      const parseStatusMessage = (name) => {
-        return errors[name] && touched[name] ? errors[name] : "";
+      const parseStatusMessage = (name: keyof typeof values) => {
+        return errors[name] && touched[name] ? (errors[name] as string) : "";
       };
 
       const dropdownValues = useMemo(

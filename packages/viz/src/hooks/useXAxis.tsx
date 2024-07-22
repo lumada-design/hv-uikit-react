@@ -30,10 +30,10 @@ export const useXAxis = ({
       : undefined;
     const nameStyle =
       nameProps && nameStyleKeys
-        ? nameStyleKeys.reduce((acc, curr) => {
+        ? nameStyleKeys.reduce<Record<string, any>>((acc, curr) => {
             acc[curr] =
               (curr === "color" && colors?.[nameProps[curr] as string]) ||
-              nameProps[curr];
+              nameProps[curr as keyof typeof nameProps];
             return acc;
           }, {})
         : undefined;

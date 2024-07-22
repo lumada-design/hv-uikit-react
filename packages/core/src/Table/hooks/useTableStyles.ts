@@ -48,7 +48,7 @@ export type UseTableStylesProps = (<D extends object = Record<string, unknown>>(
 // #endregion ##### TYPES #####
 
 // props target: <table>
-const getTablePropsHook = (props, { instance }) => {
+const getTablePropsHook = (props: any, { instance }: any) => {
   const nextProps: UseHvTableStylesTableOptions = {
     component: instance.tableComponent,
   };
@@ -69,7 +69,7 @@ const getTablePropsHook = (props, { instance }) => {
 };
 
 // props target: <table><thead><tr><th>
-export const getHeaderFooterPropsHook = (props, { column }) => {
+export const getHeaderFooterPropsHook = (props: any, { column }: any) => {
   const nextProps: UseHvTableStylesColumnOptions = {
     variant: column.variant,
     align: column.align,
@@ -103,7 +103,7 @@ export const getHeaderFooterPropsHook = (props, { column }) => {
 };
 
 // props target: <table><tbody><tr>
-const getRowPropsHook = (props) => {
+const getRowPropsHook = (props: any) => {
   const nextProps: UseHvTableStylesTableRowProps = {
     hover: true,
   };
@@ -112,7 +112,7 @@ const getRowPropsHook = (props) => {
 };
 
 // props target: <table><tbody><tr><td>
-const getCellPropsHook = (props, { cell }) => {
+const getCellPropsHook = (props: any, { cell }: any) => {
   const nextProps: UseHvTableStylesTableCellProps = {
     variant: cell.column.variant,
     align: cell.column.align,

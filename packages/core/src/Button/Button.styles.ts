@@ -102,12 +102,26 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
 export const getColoringStyle = (color: string, type?: string) => {
   if (type)
     return {
-      color: theme.colors[color !== "warning" ? color : `${color}_140`],
+      color:
+        theme.colors[
+          (color !== "warning"
+            ? color
+            : `${color}_140`) as keyof typeof theme.colors
+        ],
     };
 
-  const bg = theme.colors[color !== "warning" ? color : `${color}_120`];
+  const bg =
+    theme.colors[
+      (color !== "warning"
+        ? color
+        : `${color}_120`) as keyof typeof theme.colors
+    ];
   const hoverBg =
-    theme.colors[color !== "warning" ? `${color}_80` : `${color}_140`];
+    theme.colors[
+      (color !== "warning"
+        ? `${color}_80`
+        : `${color}_140`) as keyof typeof theme.colors
+    ];
   return {
     color: theme.colors.atmo1,
     backgroundColor: bg,
@@ -134,7 +148,8 @@ const sizes = {
 
 export const getSizeStyles = (size: HvButtonSize) => {
   const { height, space, typography } = sizes[size];
-  const { color, ...typoProps } = theme.typography[typography];
+  const { color, ...typoProps } =
+    theme.typography[typography as keyof typeof theme.typography];
   return {
     height,
     padding: theme.spacing(0, space),

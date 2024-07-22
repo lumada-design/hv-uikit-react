@@ -121,7 +121,7 @@ const DEFAULT_LABELS = {
 
 const hideHeaderVariants = ["checkbox", "actions"];
 
-export const CellWithCheckBox = ({ row, labels: labelsProp }) => {
+export const CellWithCheckBox = ({ row, labels: labelsProp }: any) => {
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   const { onChange, checked, disabled, indeterminate } =
@@ -138,7 +138,7 @@ export const CellWithCheckBox = ({ row, labels: labelsProp }) => {
   );
 };
 
-const visibleColumnsHook = (columns) => {
+const visibleColumnsHook = (columns: any) => {
   const selectionColumn = {
     id: "_hv_selection",
     variant: "checkbox",
@@ -155,7 +155,7 @@ const visibleColumnsHook = (columns) => {
   return [selectionColumn, ...columns];
 };
 
-const getHeaderPropsHook = (props, { column }) => {
+const getHeaderPropsHook = (props: any, { column }: any) => {
   const nextProps: UseHvRowSelectionTableColumnProps = {};
 
   if (hideHeaderVariants.includes(column.variant)) {
@@ -164,7 +164,7 @@ const getHeaderPropsHook = (props, { column }) => {
   return [props, nextProps];
 };
 
-const getRowPropsHook = (props, { row }) => {
+const getRowPropsHook = (props: any, { row }: any) => {
   const nextProps: UseHvRowSelectionTableRowProps = {
     selected: row.isSelected,
   };
@@ -172,7 +172,7 @@ const getRowPropsHook = (props, { row }) => {
   return [props, nextProps];
 };
 
-export const defaultGetToggleRowSelectedProps = (props, meta) => {
+export const defaultGetToggleRowSelectedProps = (props: any, meta: any) => {
   const { instance, row } = meta;
   const { manualRowSelectedKey = "isSelected" } = instance;
   let checked = false;
@@ -186,7 +186,7 @@ export const defaultGetToggleRowSelectedProps = (props, meta) => {
   return [
     props,
     {
-      onChange: (e, check) => {
+      onChange: (e: any, check: any) => {
         row.toggleRowSelected(check ?? e?.target?.checked);
       },
       disabled: row.isSelectionLocked,
@@ -196,10 +196,13 @@ export const defaultGetToggleRowSelectedProps = (props, meta) => {
   ];
 };
 
-export const defaultGetToggleAllRowsSelectedProps = (props, { instance }) => [
+export const defaultGetToggleAllRowsSelectedProps = (
+  props: any,
+  { instance }: any,
+) => [
   props,
   {
-    onChange: (e) => {
+    onChange: (e: any) => {
       instance.toggleAllRowsSelected(e.target.checked);
     },
     checked: instance.isAllRowsSelected,
@@ -211,23 +214,28 @@ export const defaultGetToggleAllRowsSelectedProps = (props, { instance }) => [
 ];
 
 export const defaultGetToggleAllPageRowsSelectedProps = (
-  props,
-  { instance },
+  props: any,
+  { instance }: any,
 ) => [
   props,
   {
-    onChange(e) {
+    onChange(e: any) {
       instance.toggleAllPageRowsSelected(e.target.checked);
     },
     checked: instance.isAllPageRowsSelected,
     indeterminate: Boolean(
       !instance.isAllPageRowsSelected &&
-        instance.page.some(({ id }) => instance.state.selectedRowIds[id]),
+        instance.page.some(({ id }: any) => instance.state.selectedRowIds[id]),
     ),
   },
 ];
 
-export function reducer(state, action, previousState, instance) {
+export function reducer(
+  state: any,
+  action: any,
+  previousState: any,
+  instance: any,
+) {
   if (action.type === actions.init) {
     return {
       selectedRowIds: {},
@@ -304,7 +312,7 @@ export function reducer(state, action, previousState, instance) {
 
     const newSelectedRowIds = { ...state.selectedRowIds };
 
-    const handleRowById = (rowId) => {
+    const handleRowById = (rowId: any) => {
       const row = rowsById[rowId];
 
       if (!row.isGrouped) {
@@ -316,7 +324,7 @@ export function reducer(state, action, previousState, instance) {
       }
 
       if (selectSubRows && getSubRows(row)) {
-        getSubRows(row).forEach((subrow) => {
+        getSubRows(row).forEach((subrow: any) => {
           handleRowById(subrow.id);
         });
       }
@@ -344,7 +352,7 @@ export function reducer(state, action, previousState, instance) {
       typeof setSelected !== "undefined" ? setSelected : !isAllPageRowsSelected;
     const newSelectedRowIds = { ...state.selectedRowIds };
 
-    const handleRowById = (rowId) => {
+    const handleRowById = (rowId: any) => {
       const row = rowsById[rowId];
       const isSelectionLocked = state.lockedSelectionRowIds[rowId];
 
@@ -357,13 +365,13 @@ export function reducer(state, action, previousState, instance) {
       }
 
       if (selectSubRows && getSubRows(row)) {
-        getSubRows(row).forEach((subrow) => {
+        getSubRows(row).forEach((subrow: any) => {
           handleRowById(subrow.id);
         });
       }
     };
 
-    page.forEach((row) => handleRowById(row.id));
+    page.forEach((row: any) => handleRowById(row.id));
 
     return {
       ...state,
@@ -393,7 +401,7 @@ export function reducer(state, action, previousState, instance) {
 
     const newLockedSelectionRowIds = { ...state.lockedSelectionRowIds };
 
-    const handleRowById = (rowId) => {
+    const handleRowById = (rowId: any) => {
       const row = rowsById[rowId];
 
       if (!row.isGrouped) {
@@ -405,7 +413,7 @@ export function reducer(state, action, previousState, instance) {
       }
 
       if (selectSubRows && getSubRows(row)) {
-        getSubRows(row).forEach((subrow) => {
+        getSubRows(row).forEach((subrow: any) => {
           handleRowById(subrow.id);
         });
       }
@@ -422,7 +430,7 @@ export function reducer(state, action, previousState, instance) {
   return state;
 }
 
-function getRowIsSelected(row, selectedRowIds, getSubRows) {
+function getRowIsSelected(row: any, selectedRowIds: any, getSubRows: any) {
   if (selectedRowIds[row.id]) {
     return true;
   }
@@ -433,7 +441,7 @@ function getRowIsSelected(row, selectedRowIds, getSubRows) {
     let allChildrenSelected = true;
     let someSelected = false;
 
-    subRows.forEach((subRow) => {
+    subRows.forEach((subRow: any) => {
       // Bail out early if we know both of these
       if (someSelected && !allChildrenSelected) {
         return;
@@ -458,7 +466,7 @@ function getRowIsSelected(row, selectedRowIds, getSubRows) {
   return false;
 }
 
-export function useInstance(instance) {
+export function useInstance(instance: any) {
   const {
     data,
     rows,
@@ -490,7 +498,7 @@ export function useInstance(instance) {
   const selectedFlatRows = useMemo(() => {
     const selectedRows: any[] = [];
 
-    rows.forEach((row) => {
+    rows.forEach((row: any) => {
       const isSelected = selectSubRows
         ? getRowIsSelected(row, selectedRowIds, getSubRows)
         : !!selectedRowIds[row.id];
@@ -564,7 +572,7 @@ export function useInstance(instance) {
           .some((id) => selectedRowIds[id]);
 
       isAllPageRowsSelected = !(
-        page?.length && page.some(({ id }) => !selectedRowIds[id])
+        page?.length && page.some(({ id }: any) => !selectedRowIds[id])
       );
 
       if (isAllPageRowsSelected) {
@@ -574,7 +582,7 @@ export function useInstance(instance) {
           existsLockedRows &&
           page &&
           page.length &&
-          page.filter(({ id }) => !lockedSelectionRowIds[id]).length === 0;
+          page.filter(({ id }: any) => !lockedSelectionRowIds[id]).length === 0;
 
         isNoPageRowsSelected = false;
       } else {
@@ -583,8 +591,8 @@ export function useInstance(instance) {
           !(
             page?.length &&
             page
-              .filter(({ id }) => !lockedSelectionRowIds[id])
-              .some(({ id }) => !selectedRowIds[id])
+              .filter(({ id }: any) => !lockedSelectionRowIds[id])
+              .some(({ id }: any) => !selectedRowIds[id])
           );
 
         isAllSelectablePageRowsUnselected =
@@ -592,12 +600,12 @@ export function useInstance(instance) {
           !(
             page?.length &&
             page
-              .filter(({ id }) => !lockedSelectionRowIds[id])
-              .some(({ id }) => selectedRowIds[id])
+              .filter(({ id }: any) => !lockedSelectionRowIds[id])
+              .some(({ id }: any) => selectedRowIds[id])
           );
 
         isNoPageRowsSelected = !(
-          page?.length && page.some(({ id }) => selectedRowIds[id])
+          page?.length && page.some(({ id }: any) => selectedRowIds[id])
         );
       }
     }
@@ -619,17 +627,19 @@ export function useInstance(instance) {
   }, [dispatch, data]);
 
   const toggleAllRowsSelected = useCallback(
-    (value) => dispatch({ type: actions.toggleAllRowsSelected, value }),
+    (value: any) => dispatch({ type: actions.toggleAllRowsSelected, value }),
     [dispatch],
   );
 
   const toggleAllPageRowsSelected = useCallback(
-    (value) => dispatch({ type: actions.toggleAllPageRowsSelected, value }),
+    (value: any) =>
+      dispatch({ type: actions.toggleAllPageRowsSelected, value }),
     [dispatch],
   );
 
   const toggleRowSelected = useCallback(
-    (id, value) => dispatch({ type: actions.toggleRowSelected, id, value }),
+    (id: any, value: any) =>
+      dispatch({ type: actions.toggleRowSelected, id, value }),
     [dispatch],
   );
 
@@ -648,7 +658,7 @@ export function useInstance(instance) {
   );
 
   const toggleRowLockedSelection = useCallback(
-    (id, value) =>
+    (id: any, value: any) =>
       dispatch({ type: actions.toggleRowLockedSelection, id, value }),
     [dispatch],
   );
@@ -672,8 +682,8 @@ export function useInstance(instance) {
   });
 }
 
-export function prepareRow(row, { instance }) {
-  row.toggleRowSelected = (set) => instance.toggleRowSelected(row.id, set);
+export function prepareRow(row: any, { instance }: any) {
+  row.toggleRowSelected = (set: any) => instance.toggleRowSelected(row.id, set);
   row.getToggleRowSelectedProps = makePropGetter(
     instance.getHooks().getToggleRowSelectedProps,
     {
@@ -682,7 +692,7 @@ export function prepareRow(row, { instance }) {
     },
   );
 
-  row.toggleRowLockedSelection = (set) =>
+  row.toggleRowLockedSelection = (set: any) =>
     instance.toggleRowLockedSelection(row.id, set);
   row.isSelectionLocked =
     instance.state?.lockedSelectionRowIds?.[row.id] || false;

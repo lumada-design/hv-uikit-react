@@ -138,7 +138,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
         style={style}
         className={cx(
           classes.root,
-          classes[type],
+          classes[type as keyof HvTableHeaderClasses],
           type === "body" &&
             css({
               [`&.${staticClasses.sorted}`]: {
@@ -159,8 +159,12 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
             [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
             [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
             [classes.variantList]: tableContext.variant === "listrow",
-            [classes[`align${capitalize(align)}`]]: align !== "inherit",
-            [classes[`variant${capitalize(variant)}`]]: variant !== "default",
+            [classes[
+              `align${capitalize(align)}` as keyof HvTableHeaderClasses
+            ]]: align !== "inherit",
+            [classes[
+              `variant${capitalize(variant)}` as keyof HvTableHeaderClasses
+            ]]: variant !== "default",
           },
           className,
         )}
@@ -169,7 +173,9 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
       >
         <div
           className={cx(classes.headerContent, {
-            [classes[`alignFlex${capitalize(align)}`]]: align !== "inherit",
+            [classes[
+              `alignFlex${capitalize(align)}` as keyof HvTableHeaderClasses
+            ]]: align !== "inherit",
           })}
         >
           {isHeadCell && sortable && (

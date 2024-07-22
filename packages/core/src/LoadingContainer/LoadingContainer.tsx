@@ -32,11 +32,16 @@ export const HvLoadingContainer = (props: HvLoadingContainerProps) => {
     hidden,
     small,
     label,
-    "aria-label": ariaLabel = label || "Loading",
+    "aria-label": ariaLabelProp,
     opacity,
     ...others
   } = useDefaultProps("HvLoadingContainer", props);
   const { classes, cx } = useClasses(classesProp);
+
+  const ariaLabel =
+    ariaLabelProp || (typeof label === "string" && label)
+      ? (label as string)
+      : "Loading";
 
   return (
     <div className={cx(classes.root, className)} {...others}>

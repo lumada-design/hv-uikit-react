@@ -47,11 +47,12 @@ const RandomFormComponent = () => {
   };
 
   const toggleContextValid = useCallback(
-    (valid) => setContext({ ...context, [tab]: { ...context[tab], valid } }),
+    (valid: boolean) =>
+      setContext({ ...context, [tab]: { ...context[tab], valid } }),
     [context, setContext, tab],
   );
 
-  const handleFieldValue = (fieldName, fieldValue) => {
+  const handleFieldValue = (fieldName: string, fieldValue: string) => {
     let valid = false;
     setText(fieldValue);
 
@@ -259,11 +260,17 @@ export const ComponentBreakDown: StoryObj<HvWizardProps> = {
   render: () => {
     const [open, setOpen] = useState(false);
 
-    const handleClose = useCallback((evt, reason) => {
-      if (reason !== "backdropClick") {
-        setOpen(false);
-      }
-    }, []);
+    const handleClose = useCallback(
+      (
+        evt: React.MouseEvent<HTMLButtonElement> | {},
+        reason?: "backdropClick" | "escapeKeyDown",
+      ) => {
+        if (reason !== "backdropClick") {
+          setOpen(false);
+        }
+      },
+      [],
+    );
 
     const handleSubmit = useCallback(() => {
       setOpen(false);
