@@ -23,8 +23,7 @@ export const classes = {
     top: `calc(${theme.header.height} + ${theme.header.secondLevelHeight} + ${theme.space.md})`,
   }),
   fullWidth: css({
-    left: 0,
-    right: 0,
+    right: theme.space.md,
     marginLeft: "auto",
     marginRight: "auto",
     width: `calc(100% - 2 * ${theme.space.md})`,
