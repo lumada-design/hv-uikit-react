@@ -1,5 +1,5 @@
-import { forwardRef, useRef } from "react";
-import { useDraggable } from "@dnd-kit/core";
+import { forwardRef, useRef, useState } from "react";
+import { useDndMonitor, useDraggable } from "@dnd-kit/core";
 import { css, cx } from "@emotion/css";
 import {
   HvOverflowTooltip,
@@ -8,6 +8,7 @@ import {
   HvTreeView,
   theme,
   useForkRef,
+  useHvTreeItem,
 } from "@hitachivantara/uikit-react-core";
 import { DataSource, Drag, Table } from "@hitachivantara/uikit-react-icons";
 
@@ -69,8 +70,25 @@ const data = [
 
 export const TreeItem = forwardRef<HTMLLIElement, TreeItemProps>(
   (props, ref) => {
-    const { className, isDragging, children, nodeId, label, ...others } = props;
+    const {
+      className,
+      isDragging,
+      children,
+      nodeId,
+      label,
+      onKeyDown,
+      ...others
+    } = props;
     const Icon = children ? DataSource : Table;
+
+    const { handleExpansion } = useHvTreeItem(nodeId);
+
+    // Whether an item is being dragged or not
+    const [draggingActive, setDraggingActive] = useState<React.ReactNode>();
+    useDndMonitor({
+      onDragEnd: () => setDraggingActive(false),
+      onDragStart: () => setDraggingActive(true),
+    });
 
     return (
       <HvTreeItem
@@ -91,6 +109,21 @@ export const TreeItem = forwardRef<HTMLLIElement, TreeItemProps>(
             )}
           </div>
         }
+        // The following props enable drag and drop with keyboard
+        disableTreeFocus
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (onKeyDown) {
+            onKeyDown?.(event);
+            if (!isDragging) event.stopPropagation();
+            return;
+          }
+
+          // Expands item if possible when navigating with tab key
+          if (event.key === "Enter" && !draggingActive) {
+            handleExpansion(event as any);
+          }
+        }}
         {...others}
       >
         {children}

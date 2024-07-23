@@ -67,6 +67,8 @@ export interface HvTreeItemProps extends React.HTMLAttributes<HTMLElement> {
   TransitionComponent?: React.JSXElementConstructor<TransitionProps>;
   /** Props applied to the transition component */
   TransitionProps?: TransitionProps;
+  /** Whether to disable the following default behavior: when the item is focused, the focus is placed on the tree root. @default `false` */
+  disableTreeFocus?: boolean;
 }
 
 export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
@@ -86,6 +88,7 @@ export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
       ContentComponent: Component = DefaultContent,
       TransitionProps: transitionProps,
       ContentProps: contentProps,
+      disableTreeFocus = false,
       ...others
     } = useDefaultProps("HvTreeItem", props);
     const { classes, cx } = useClasses(classesProp);
@@ -157,7 +160,7 @@ export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
 
     const handleFocus = (event: React.FocusEvent<HTMLLIElement>) => {
       // DOM focus stays on the tree which manages focus with aria-activedescendant
-      if (event.target === event.currentTarget) {
+      if (event.target === event.currentTarget && !disableTreeFocus) {
         const rootElement: any =
           typeof event.target.getRootNode === "function"
             ? event.target.getRootNode()
