@@ -1,24 +1,27 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import styled from "@emotion/styled";
 import {
   HvDotPagination,
   HvPagination,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-const StyledBox = styled(HvTypography)({
-  display: "flex",
-  flexWrap: "wrap",
-  "&>span": {
-    width: "100px",
-    padding: "8px 12px",
-    margin: "12px",
-    textAlign: "center",
-    borderRadius: "4px",
-    background: "white",
-  },
-});
+const styles = {
+  container: css({ width: "100%", justifyContent: "center" }),
+  page: css({ textAlign: "center" }),
+  pagination: css({
+    display: "flex",
+    flexWrap: "wrap",
+    "&>span": {
+      width: "100px",
+      padding: "8px 12px",
+      margin: "12px",
+      textAlign: "center",
+      borderRadius: "4px",
+      background: "white",
+    },
+  }),
+};
 
 export const Pagination = () => {
   const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
@@ -31,13 +34,13 @@ export const Pagination = () => {
 
   return (
     <>
-      <StyledBox>
+      <HvTypography className={styles.pagination}>
         {data.slice(pageSize * page, pageSize * (page + 1)).map((i) => (
           <HvTypography key={i} component="span">
             {`Item ${i + 1}`}
           </HvTypography>
         ))}
-      </StyledBox>
+      </HvTypography>
       <p />
       <HvPagination
         id="pagination"
@@ -53,11 +56,6 @@ export const Pagination = () => {
       />
     </>
   );
-};
-
-const styles = {
-  container: css({ width: "100%", justifyContent: "center" }),
-  page: css({ textAlign: "center" }),
 };
 
 export const DotPagination = () => {

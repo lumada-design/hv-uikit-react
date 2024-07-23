@@ -11,7 +11,7 @@ import {
   DropLeft,
 } from "@hitachivantara/uikit-react-icons";
 
-const meta: Meta<typeof HvIconButton> = {
+const meta: Meta<HvIconButtonProps> = {
   title: "Components/Icon Button",
   component: HvIconButton,
 };

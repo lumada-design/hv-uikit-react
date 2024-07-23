@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvAdornment,
@@ -17,11 +17,9 @@ import {
   Success,
 } from "@hitachivantara/uikit-react-icons";
 
-const StyledButton = styled(HvButton)({
-  width: "250px",
-  height: "50px",
-  margin: "10px",
-});
+const classes = {
+  button: css({ width: "250px", height: "50px", margin: "10px" }),
+};
 
 const meta: Meta<typeof HvAdornment> = {
   title: "Guides/Forms/Form Element Blocks/Adornment",
@@ -109,20 +107,22 @@ export const DynamicAdornments: StoryObj<HvAdornmentProps> = {
             />
           </HvLabel>
         </HvFormElement>
-        <StyledButton
+        <HvButton
+          className={classes.button}
           onClick={() => {
             setStatus("valid");
           }}
         >
           Set valid
-        </StyledButton>
-        <StyledButton
+        </HvButton>
+        <HvButton
+          className={classes.button}
           onClick={() => {
             setStatus("invalid");
           }}
         >
           Set invalid
-        </StyledButton>
+        </HvButton>
       </>
     );
   },

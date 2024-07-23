@@ -98,7 +98,7 @@ export const NestedClasses: StoryObj = {
 
 // ----- Reusable components -----
 
-const StyledHvButton = styled(HvButton)({
+const StyledHvButton = styled<typeof HvButton<"button">>(HvButton)({
   textTransform: "uppercase",
 });
 

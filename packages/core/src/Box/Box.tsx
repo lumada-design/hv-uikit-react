@@ -1,22 +1,23 @@
-import { forwardRef } from "react";
 import { HvTheme, theme } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { PolymorphicComponentRef, PolymorphicRef } from "../types/generic";
-
-type SxProps = React.CSSProperties | ((theme: HvTheme) => React.CSSProperties);
-
-type HvBoxBaseProps<C extends React.ElementType> = PolymorphicComponentRef<
-  C,
-  { style?: React.CSSProperties; sx?: SxProps }
->;
+import {
+  fixedForwardRef,
+  PolymorphicComponentRef,
+  PolymorphicRef,
+} from "../types/generic";
 
 // v6 - This shouldn't be named HvBoxProps
-export type HvBoxProps = <C extends React.ElementType = "div">(
-  props: HvBoxBaseProps<C>,
-) => React.ReactElement | null;
+export type HvBoxProps<C extends React.ElementType = "div"> =
+  PolymorphicComponentRef<
+    C,
+    {
+      style?: React.CSSProperties;
+      sx?: React.CSSProperties | ((theme: HvTheme) => React.CSSProperties);
+    }
+  >;
 
-const sxFn = (sx: SxProps) => {
+const sxFn = (sx: HvBoxProps["sx"]) => {
   return typeof sx === "function" ? sx(theme) : sx;
 };
 
@@ -25,24 +26,21 @@ const sxFn = (sx: SxProps) => {
  * It can be used to add styles to the wrapped components.
  * It can also be used to create a layout using the flexbox properties.
  */
-export const HvBox: HvBoxProps = forwardRef(
-  <C extends React.ElementType = "div">(
-    props: HvBoxBaseProps<C>,
-    ref?: PolymorphicRef<C>,
-  ) => {
-    const {
-      style,
-      component: Component = "div",
-      sx,
-      children,
-      classes,
-      ...restProps
-    } = useDefaultProps("HvBox", props);
+export const HvBox = fixedForwardRef(function HvBox<
+  C extends React.ElementType = "div",
+>(props: HvBoxProps<C>, ref?: PolymorphicRef<C>) {
+  const {
+    style,
+    component: Component = "div",
+    sx,
+    children,
+    classes, // Extracted since useDefaultProps creates this prop even if it's not part of the component's API
+    ...restProps
+  } = useDefaultProps("HvBox", props);
 
-    return (
-      <Component style={sx ? sxFn(sx) : style} ref={ref} {...restProps}>
-        {children}
-      </Component>
-    );
-  },
-);
+  return (
+    <Component style={sx ? sxFn(sx) : style} ref={ref} {...restProps}>
+      {children}
+    </Component>
+  );
+});
