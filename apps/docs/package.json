@@ -12,9 +12,9 @@
     "@hitachivantara/uikit-react-core": "*",
     "@hitachivantara/uikit-react-icons": "*",
     "@hitachivantara/uikit-react-lab": "*",
+    "@hitachivantara/uikit-react-pentaho": "*",
     "@hitachivantara/uikit-react-viz": "*",
     "@hitachivantara/uikit-styles": "*",
-    "@hitachivantara/uikit-react-pentaho": "*",
     "next": "^14.0.4",
     "nextra": "^2.13.2",
     "nextra-theme-docs": "^2.13.2",
@@ -25,6 +25,6 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "string-replace-loader": "^3.1.0",
-    "typescript": "^4.9.5"
+    "typescript": "^5.5.4"
   }
 }

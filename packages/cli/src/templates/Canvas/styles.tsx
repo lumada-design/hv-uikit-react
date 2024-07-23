@@ -23,14 +23,14 @@ export const classes = {
     top: `calc(${theme.header.height} + ${theme.header.secondLevelHeight} + ${theme.space.md})`,
   }),
   fullWidth: css({
-    right: theme.space.md,
+    right: theme.space.lg,
     marginLeft: "auto",
     marginRight: "auto",
-    width: `calc(100% - 2 * ${theme.space.md})`,
+    width: `calc(100% - 2 * ${theme.space.lg})`,
   }),
   minWidth: css({
-    right: theme.space.md,
-    width: `calc(100% - 320px - 3 * ${theme.space.md})`,
+    right: theme.space.lg,
+    width: `calc(100% - 320px - 3 * ${theme.space.lg})`,
   }),
   panel: css({
     top: `calc(${theme.header.height} + ${theme.header.secondLevelHeight})`,

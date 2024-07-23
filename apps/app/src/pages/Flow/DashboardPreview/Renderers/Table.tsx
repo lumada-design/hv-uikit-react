@@ -74,7 +74,7 @@ export const Table = ({
     page,
     getHvPaginationProps,
     setFilter,
-  } = useHvData(
+  } = useHvData<any, string>(
     {
       data,
       columns,
