@@ -2,7 +2,7 @@ import { isValidElement } from "react";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
-import { HvDropDownMenu } from "../DropDownMenu";
+import { HvDropDownMenu, HvDropDownMenuProps } from "../DropDownMenu";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvIconButton } from "../IconButton";
 import { HvBaseProps } from "../types/generic";
@@ -58,6 +58,8 @@ export interface HvActionsGenericProps extends HvBaseProps {
   onAction?: (event: React.SyntheticEvent, action: HvActionGeneric) => void;
   /** The maximum number of visible actions before they're collapsed into a dropdown menu. */
   maxVisibleActions?: number;
+  /** Props to be applied to the dropdown menu. */
+  dropdownMenuProps?: Partial<HvDropDownMenuProps>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvActionsGenericClasses;
 }
@@ -75,8 +77,12 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
     onAction,
     maxVisibleActions = Infinity,
     iconOnly: iconOnlyProp,
+    dropdownMenuProps: dropdownMenuPropsProp,
     ...others
   } = useDefaultProps("HvActionsGeneric", props);
+
+  const { onClick: onClickDropdownMenu, ...dropdownMenuProps } =
+    dropdownMenuPropsProp || {};
 
   const variant = variantProp || category;
 
@@ -157,12 +163,14 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
           }}
           icon={<MoreOptionsVertical color={iconColor} />}
           placement="left"
-          onClick={(event, action) =>
-            handleCallback(event, idProp || "", action as HvActionGeneric)
-          }
+          onClick={(event, action) => {
+            handleCallback(event, idProp || "", action as HvActionGeneric);
+            onClickDropdownMenu?.(event, action);
+          }}
           dataList={actsDropdown}
           keepOpened={false}
           disablePortal={false}
+          {...dropdownMenuProps}
         />
       </>
     );
