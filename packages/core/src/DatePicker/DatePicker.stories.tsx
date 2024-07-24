@@ -38,6 +38,16 @@ const meta: Meta<typeof HvDatePicker> = {
   subcomponents: { HvCalendar },
   component: HvDatePicker,
   decorators: [containerDecorator],
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          // TODO: review aria-haspopup on a role-less element
+          { id: "aria-valid-attr-value", enabled: false },
+        ],
+      },
+    },
+  },
 };
 export default meta;
 

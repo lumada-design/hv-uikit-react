@@ -21,7 +21,7 @@ export type HvVerticalNavigationTreeViewClasses = ExtractNames<
 >;
 
 export interface HvVerticalNavigationTreeViewProps
-  extends HvBaseProps<HTMLUListElement, "onChange"> {
+  extends HvBaseProps<HTMLUListElement, "onChange" | "onToggle"> {
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvVerticalNavigationTreeViewClasses;
   /** Modus operandi (role) of the widget instance. */

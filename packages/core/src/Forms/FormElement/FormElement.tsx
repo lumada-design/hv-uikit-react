@@ -17,7 +17,7 @@ export type HvFormElementClasses = ExtractNames<typeof useClasses>;
 export type HvFormStatus = "standBy" | "valid" | "invalid" | "empty";
 
 export interface HvFormElementProps
-  extends HvBaseProps<HTMLDivElement, "onChange"> {
+  extends HvBaseProps<HTMLDivElement, "onChange" | "onToggle"> {
   /**
    * Name of the form element.
    *

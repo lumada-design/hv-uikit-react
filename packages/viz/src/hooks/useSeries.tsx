@@ -113,10 +113,10 @@ export const useSeries = ({
                 : undefined;
             const stackName =
               typeof measure !== "string"
-                ? (measure as LineFullMeasure | BarFullMeasure).stack ??
+                ? ((measure as LineFullMeasure | BarFullMeasure).stack ??
                   stack ??
-                  undefined
-                : stack ?? undefined;
+                  undefined)
+                : (stack ?? undefined);
 
             const axisOps = {
               sampling,
@@ -155,11 +155,11 @@ export const useSeries = ({
                   : emptyCellMode === "connect";
               const isArea =
                 typeof measure !== "string"
-                  ? (measure as LineFullMeasure).area ?? area
+                  ? ((measure as LineFullMeasure).area ?? area)
                   : area;
               const aOpacity =
                 typeof measure !== "string"
-                  ? (measure as LineFullMeasure).areaOpacity ?? areaOpacity
+                  ? ((measure as LineFullMeasure).areaOpacity ?? areaOpacity)
                   : areaOpacity;
 
               lineOps = {

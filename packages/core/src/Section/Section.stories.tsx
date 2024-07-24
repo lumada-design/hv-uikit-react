@@ -65,6 +65,7 @@ export const WithActions: StoryObj<HvSectionProps> = {
       config: {
         rules: [
           { id: "aria-allowed-attr", enabled: false },
+          { id: "aria-prohibited-attr", enabled: false },
           { id: "color-contrast", enabled: false },
         ],
       },

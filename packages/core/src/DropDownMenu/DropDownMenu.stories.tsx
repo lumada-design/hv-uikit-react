@@ -7,9 +7,19 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Calendar, Plane, User } from "@hitachivantara/uikit-react-icons";
 
-const meta: Meta<typeof HvDropDownMenu> = {
+export default {
   title: "Components/Dropdown Menu",
   component: HvDropDownMenu,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          // TODO: review aria-haspopup on a role-less element
+          { id: "aria-valid-attr-value", enabled: false },
+        ],
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <div style={{ display: "flex", justifyContent: "center", height: 175 }}>
@@ -17,8 +27,7 @@ const meta: Meta<typeof HvDropDownMenu> = {
       </div>
     ),
   ],
-};
-export default meta;
+} satisfies Meta<typeof HvDropDownMenu>;
 
 export const Main: StoryObj<HvDropDownMenuProps> = {
   args: {

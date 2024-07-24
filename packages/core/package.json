@@ -25,10 +25,8 @@
   },
   "scripts": {
     "build": "npm run clean && vite build",
-    "test": "vitest run",
-    "test:update": "vitest -u",
+    "test": "vitest",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build && npx clean-publish"
@@ -57,7 +55,7 @@
     "clsx": "^2.0.0",
     "dayjs": "^1.11.10",
     "detect-browser": "^5.3.0",
-    "embla-carousel-react": "^8.0.0-rc15",
+    "embla-carousel-react": "^8.1.3",
     "notistack": "^2.0.8",
     "rc-slider": "^10.5.0",
     "rc-tooltip": "^6.1.2",
@@ -68,14 +66,14 @@
     "react-window": "^1.8.10"
   },
   "devDependencies": {
-    "@testing-library/react": "^14.1.2",
+    "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.1",
     "@types/react": "^18.2.43",
     "@types/react-color": "^2.17.10",
     "@types/react-dom": "^18.2.17",
     "@types/react-window": "^1.8.8",
     "vite": "^5.1.0",
-    "vitest": "^1.2.2"
+    "vitest": "^2.0.4"
   },
   "files": [
     "dist"

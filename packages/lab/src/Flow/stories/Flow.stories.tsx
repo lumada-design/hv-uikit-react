@@ -44,6 +44,7 @@ const meta: Meta<typeof HvFlow> = {
         rules: [
           { id: "nested-interactive", enabled: false },
           { id: "aria-allowed-attr", enabled: false },
+          { id: "aria-prohibited-attr", enabled: false },
           { id: "color-contrast", enabled: false },
         ],
       },

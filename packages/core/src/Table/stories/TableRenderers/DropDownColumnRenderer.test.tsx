@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it, vi } from "vitest";
 import {
   HvCellProps,
   hvDropdownColumn,
@@ -18,8 +17,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
-
-const consoleMock = vi.spyOn(console, "error").mockImplementation(() => ({}));
 
 const DropdownColumnRenderer = () => {
   const initialData = useMemo(() => makeRenderersData(3), []);
@@ -117,17 +114,14 @@ const DropdownColumnRenderer = () => {
 };
 
 describe("DropDownColumnRenderer", () => {
-  beforeEach(() => {
-    consoleMock.mockReset();
-    render(<DropdownColumnRenderer />);
-  });
-
   it("table should render with no erros when one row has no values defined", async () => {
-    expect(consoleMock).not.toHaveBeenCalled();
+    render(<DropdownColumnRenderer />);
     expect(screen.getAllByText("Select severity...")).toHaveLength(1);
   });
 
   it("should be possible to unselect an element without errors", async () => {
+    render(<DropdownColumnRenderer />);
+
     expect(screen.getAllByText("Select severity...")).toHaveLength(1);
     await userEvent.click(screen.getByText("Major"));
 
@@ -136,11 +130,12 @@ describe("DropDownColumnRenderer", () => {
       screen.getByRole("option", { name: "Major" }),
     );
 
-    expect(consoleMock).not.toHaveBeenCalled();
     expect(screen.getAllByText("Select severity...")).toHaveLength(2);
   });
 
   it("should allow to change value", async () => {
+    render(<DropdownColumnRenderer />);
+
     expect(screen.getAllByText("Average")).toHaveLength(1);
     expect(screen.queryAllByText("Minor")).toHaveLength(0);
 

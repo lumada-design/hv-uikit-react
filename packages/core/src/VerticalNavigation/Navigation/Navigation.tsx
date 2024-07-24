@@ -28,7 +28,7 @@ export { staticClasses as verticalNavigationTreeClasses };
 export type HvVerticalNavigationTreeClasses = ExtractNames<typeof useClasses>;
 
 export interface HvVerticalNavigationTreeProps
-  extends HvBaseProps<HTMLDivElement, "onChange"> {
+  extends HvBaseProps<HTMLDivElement, "onChange" | "onToggle"> {
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvVerticalNavigationTreeClasses;
   /** Modus operandi (role) of the widget instance. */

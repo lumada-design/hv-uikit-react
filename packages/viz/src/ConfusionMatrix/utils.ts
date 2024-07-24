@@ -107,30 +107,25 @@ export const useSeries = ({
         data: data
           .columnNames()
           .filter((p) => p !== filterKey)
-          .reduce((acc: (string | number)[][], c: string, j) => {
-            const row: (string | number)[][] = data.array(c).reduce(
-              (
-                racc: {
-                  value: any[];
-                  visualMap?: boolean;
-                  itemStyle?: object;
-                }[],
-                rv: any,
-                i: number,
-              ) => {
-                racc.push({
-                  value: [data.array(filterKey)[i], c, rv != null ? rv : "-"],
-                  ...(delta && {
-                    visualMap: false,
-                    itemStyle: {
-                      color: getDeltaColor(rv, i === j),
-                    },
-                  }),
-                });
-                return racc;
-              },
-              [],
-            );
+          .reduce<(string | number)[][]>((acc, c, j) => {
+            const row: any = (data.array(c) as any[]).reduce<
+              {
+                value: any[];
+                visualMap?: boolean;
+                itemStyle?: object;
+              }[]
+            >((racc, rv, i) => {
+              racc.push({
+                value: [data.array(filterKey)[i], c, rv != null ? rv : "-"],
+                ...(delta && {
+                  visualMap: false,
+                  itemStyle: {
+                    color: getDeltaColor(rv, i === j),
+                  },
+                }),
+              });
+              return racc;
+            }, []);
 
             acc.push(...row);
             return acc;

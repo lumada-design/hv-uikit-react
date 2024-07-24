@@ -211,7 +211,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
     ? (value as OptionValue[])
         .map((v) => getOptionMetadata(v))
         .filter((v): v is SelectOption<OptionValue> => v !== undefined)
-    : getOptionMetadata(value as OptionValue) ?? null;
+    : (getOptionMetadata(value as OptionValue) ?? null);
 
   const isOpen = open && !!children;
 
@@ -268,6 +268,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         {defaultRenderValue(actualValue) ?? placeholder}
       </HvDropdownButton>
       <Popper
+        role="none"
         open={isOpen}
         keepMounted
         disablePortal={!enablePortal}

@@ -1,5 +1,6 @@
 import { useMemo } from "react";
-import { EmotionCache, css as emotionCss } from "@emotion/css";
+import type { EmotionCache } from "@emotion/cache";
+import { css as emotionCss } from "@emotion/css";
 import { RegisteredCache, serializeStyles } from "@emotion/serialize";
 import { getRegisteredStyles, insertStyles } from "@emotion/utils";
 import clsx from "clsx";

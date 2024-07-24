@@ -20,7 +20,7 @@ const Select = ({ param, data }: SelectProps) => {
   const handleChange: HvDropdownProps["onChange"] = (item) => {
     const newOpts = Array.isArray(item)
       ? item.map((x) => x.id as string)
-      : (item?.id as string) ?? undefined;
+      : ((item?.id as string) ?? undefined);
 
     setNodeData((prev) => ({ ...prev, [id]: newOpts }));
     setOpts(
