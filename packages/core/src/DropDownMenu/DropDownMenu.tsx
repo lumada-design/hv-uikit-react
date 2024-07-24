@@ -8,6 +8,7 @@ import { HvButtonSize, HvButtonVariant } from "../Button";
 import { HvDropdownButton, HvDropdownButtonProps } from "../DropdownButton";
 import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvList, HvListProps, HvListValue } from "../List";
 import { HvPanel } from "../Panel";
@@ -21,6 +22,10 @@ import { staticClasses, useClasses } from "./DropDownMenu.styles";
 export { staticClasses as dropDownMenuClasses };
 
 export type HvDropDownMenuClasses = ExtractNames<typeof useClasses>;
+
+const DEFAULT_LABELS = {
+  dropdownMenu: "Dropdown menu",
+};
 
 export interface HvDropDownMenuProps
   extends HvBaseProps<HTMLDivElement, "onClick" | "onToggle"> {
@@ -75,6 +80,8 @@ export interface HvDropDownMenuProps
   size?: HvButtonSize;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvDropDownMenuClasses;
+  /** An object containing all the labels. */
+  labels?: Partial<typeof DEFAULT_LABELS>;
 }
 
 const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
@@ -89,7 +96,6 @@ const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
         ref={ref}
         open={open}
         aria-expanded={open}
-        aria-label="Dropdown menu" // TODO - translate
         aria-haspopup="menu"
         placement={popperPlacement as Placement}
         {...others}
@@ -121,10 +127,14 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
     category = "secondaryGhost", // TODO - remove and update variant default in v6
     variant,
     size = "md",
+    labels: labelsProp,
     ...others
   } = useDefaultProps("HvDropDownMenu", props);
 
   const { classes, cx } = useClasses(classesProp);
+
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
+
   const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
   const id = useUniqueId(idProp);
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
@@ -179,6 +189,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
           size={size}
           variant={variant ?? category}
           open={open}
+          aria-label={labels.dropdownMenu}
         >
           {icon || <MoreOptionsVertical role="presentation" />}
         </HeaderComponent>
