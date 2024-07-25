@@ -10,6 +10,7 @@ import {
 import { Copy, Delete, MoveFile, Tag } from "@hitachivantara/uikit-react-icons";
 
 import { ButtonCard } from "./ButtonCard";
+import { ImageCard } from "./ImageCard";
 import { SimpleCard } from "./SimpleCard";
 import { SwitchCard } from "./SwitchCard";
 
@@ -62,6 +63,23 @@ export const StackStory = () => (
         description="Click here to get see how to migrate from a previous version of UI Kit."
         target="_parent"
         href="/?path=/docs/overview-migration-from-v4-x--docs"
+      />
+    </HvStack>
+    <HvStack withNavigation className={classes.stack}>
+      <ImageCard
+        title="Madeira"
+        description="description"
+        image="https://thetravelbible.com/wp-content/uploads/2022/12/what-to-do-madeira-islands-portugal-800x533.jpg"
+      />
+      <ImageCard
+        title="Azores"
+        description="description"
+        image="https://clean-energy-islands.ec.europa.eu/sites/default/files/styles/node_image/public/2019-03/Azores_Pixabay_Comanche0.jpg"
+      />
+      <ImageCard
+        title="Algarve"
+        description="description"
+        image="https://venturesailholidays.com/wp-content/uploads/Alrgave-Portugal.jpg"
       />
     </HvStack>
     <HvStack withNavigation className={classes.stack}>

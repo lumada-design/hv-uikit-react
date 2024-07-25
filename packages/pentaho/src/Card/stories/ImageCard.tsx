@@ -1,14 +1,15 @@
-import React from "react";
 import { css } from "@emotion/css";
-import { HvRadio, HvTypography, theme } from "@hitachivantara/uikit-react-core";
+import { HvTypography, theme } from "@hitachivantara/uikit-react-core";
 
 import { HvCard } from "../Card";
+import { HvCardMedia } from "../CardMedia";
 
 const classes = {
   root: css({
     display: "flex",
     flexDirection: "row",
     gap: theme.space.xs,
+    marginTop: theme.space.xs,
   }),
   content: css({
     display: "flex",
@@ -17,22 +18,21 @@ const classes = {
   }),
 };
 
-interface SimpleCardProps {
-  icon?: React.ReactNode;
+interface ImageCardProps {
   title: string;
   description?: string;
+  image: string;
 }
 
-export const SimpleCard = ({ icon, title, description }: SimpleCardProps) => {
+export const ImageCard = ({ title, description, image }: ImageCardProps) => {
   return (
     <HvCard>
+      <HvCardMedia src={image} />
       <div className={classes.root}>
-        {icon}
         <div className={classes.content}>
           <HvTypography variant="title4">{title}</HvTypography>
           <HvTypography variant="caption1">{description}</HvTypography>
         </div>
-        <HvRadio aria-label="Select" />
       </div>
     </HvCard>
   );
