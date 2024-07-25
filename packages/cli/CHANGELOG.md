@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.16.10...@hitachivantara/hv-uikit-cli@1.16.11) (2024-07-25)
+
+### Bug Fixes
+
+- drag and drop with keyboard for tree view panel in canvas template ([ca6b388](https://github.com/lumada-design/hv-uikit-react/commit/ca6b388ecbedf6bd132f5eb6fd9ef13854dfcc96))
+
 ## [1.16.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.16.9...@hitachivantara/hv-uikit-cli@1.16.10) (2024-07-20)
 
 ### Bug Fixes
