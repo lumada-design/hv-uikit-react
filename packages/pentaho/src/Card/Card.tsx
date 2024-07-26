@@ -31,7 +31,6 @@ export const HvCard = fixedForwardRef(function HvCard<
     classes: classesProp,
     className,
     component: Component = "div",
-    disabled = false,
     onClick: onClickProp,
     onMouseDown: onMouseDownProp,
     children,
@@ -39,13 +38,12 @@ export const HvCard = fixedForwardRef(function HvCard<
   } = useDefaultProps("HvCard", props);
 
   const { classes, cx } = useClasses(classesProp);
+
   const handleClick: HvCardProps["onClick"] = (e) => {
-    if (disabled) return;
     onClickProp?.(e);
   };
 
   const handleMouseDown: HvCardProps["onMouseDown"] = (e) => {
-    if (disabled) return;
     onMouseDownProp?.(e);
   };
 
