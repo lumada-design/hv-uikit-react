@@ -1,8 +1,6 @@
 import { css } from "@emotion/css";
 import { HvTypography, theme } from "@hitachivantara/uikit-react-core";
-
-import { HvCard } from "../Card";
-import { HvCardMedia } from "../CardMedia";
+import { HvCard, HvCardMedia } from "@hitachivantara/uikit-react-pentaho";
 
 const classes = {
   root: css({

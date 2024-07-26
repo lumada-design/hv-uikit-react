@@ -1,7 +1,6 @@
 import { css } from "@emotion/css";
 import { HvTypography, theme } from "@hitachivantara/uikit-react-core";
-
-import { HvCard } from "../Card";
+import { HvCard } from "@hitachivantara/uikit-react-pentaho";
 
 const classes = {
   switch: css({ position: "absolute", top: 8, right: 8 }),
@@ -17,19 +16,19 @@ const classes = {
   }),
 };
 
-export interface HvButtonCardProps
+export interface HvLinkCardProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   icon?: React.ReactNode;
   title: string;
   description?: string;
 }
 
-export const ButtonCard = ({
+export const LinkCard = ({
   icon,
   title,
   description,
   ...props
-}: HvButtonCardProps) => {
+}: HvLinkCardProps) => {
   return (
     <HvCard component="a" {...props}>
       <div className={classes.root}>

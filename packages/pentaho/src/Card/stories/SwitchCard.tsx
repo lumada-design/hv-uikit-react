@@ -5,8 +5,7 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-
-import { HvCard } from "../Card";
+import { HvCard } from "@hitachivantara/uikit-react-pentaho";
 
 const classes = {
   switch: css({ position: "absolute", top: 8, right: 8 }),

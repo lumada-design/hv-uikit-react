@@ -19,7 +19,10 @@ describe("HvCard", () => {
   it("renders an image in the Card", () => {
     render(
       <HvCard>
-        <HvCardMedia src="https://venturesailholidays.com/wp-content/uploads/Alrgave-Portugal.jpg" />
+        <HvCardMedia
+          src="https://venturesailholidays.com/wp-content/uploads/Alrgave-Portugal.jpg"
+          alt="image"
+        />
       </HvCard>,
     );
 

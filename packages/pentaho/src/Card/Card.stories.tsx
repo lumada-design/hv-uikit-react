@@ -1,5 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvCard, HvCardProps } from "@hitachivantara/uikit-react-pentaho";
+import {
+  HvCard,
+  HvCardMedia,
+  HvCardProps,
+} from "@hitachivantara/uikit-react-pentaho";
 
 import { StackStory } from "./stories/Stack";
 import StackRaw from "./stories/Stack?raw";
@@ -7,6 +11,8 @@ import StackRaw from "./stories/Stack?raw";
 const meta: Meta<typeof HvCard> = {
   title: "Pentaho/Card",
   component: HvCard,
+  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
+  subcomponents: { HvCardMedia },
 };
 export default meta;
 

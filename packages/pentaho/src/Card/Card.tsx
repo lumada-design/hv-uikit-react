@@ -31,30 +31,14 @@ export const HvCard = fixedForwardRef(function HvCard<
     classes: classesProp,
     className,
     component: Component = "div",
-    onClick: onClickProp,
-    onMouseDown: onMouseDownProp,
     children,
     ...others
   } = useDefaultProps("HvCard", props);
 
   const { classes, cx } = useClasses(classesProp);
 
-  const handleClick: HvCardProps["onClick"] = (e) => {
-    onClickProp?.(e);
-  };
-
-  const handleMouseDown: HvCardProps["onMouseDown"] = (e) => {
-    onMouseDownProp?.(e);
-  };
-
   return (
-    <Component
-      ref={ref}
-      className={cx(classes.root, className)}
-      onClick={handleClick}
-      onMouseDown={handleMouseDown}
-      {...others}
-    >
+    <Component ref={ref} className={cx(classes.root, className)} {...others}>
       {children}
     </Component>
   );

@@ -9,8 +9,10 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Copy, Delete, MoveFile, Tag } from "@hitachivantara/uikit-react-icons";
 
-import { ButtonCard } from "./ButtonCard";
+// This files can be found in the following location:
+// https://github.com/lumada-design/hv-uikit-react/tree/master/packages/pentaho/src/Card/stories/
 import { ImageCard } from "./ImageCard";
+import { LinkCard } from "./LinkCard";
 import { SimpleCard } from "./SimpleCard";
 import { SwitchCard } from "./SwitchCard";
 
@@ -52,13 +54,13 @@ const iconWrapper = (icon: React.ReactNode, backgroundColor: HvColorAny) => (
 export const StackStory = () => (
   <div className={classes.root}>
     <HvStack withNavigation className={classes.stack}>
-      <ButtonCard
+      <LinkCard
         title="Get Started"
         description="Click here to get started with UI Kit."
         target="_parent"
         href="/?path=/docs/overview-get-started--docs"
       />
-      <ButtonCard
+      <LinkCard
         title="Migration Guide"
         description="Click here to get see how to migrate from a previous version of UI Kit."
         target="_parent"
