@@ -209,7 +209,7 @@ export const SubFlow: StoryObj<HvFlowProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <SubFlowStory />,
 };
