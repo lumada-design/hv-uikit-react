@@ -1,18 +1,25 @@
 /* eslint-env jest */
 
 import { fireEvent, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 
-import { HvCarousel, HvCarouselSlide } from ".";
+import { HvCarousel, HvCarouselProps, HvCarouselSlide } from ".";
 
 Element.prototype.scrollIntoView = vi.fn();
 
-const setup = ({ title = "TITLE", numImages = 10, onChange = () => {} }) => {
+const setup = ({
+  title = "TITLE",
+  numImages = 10,
+  onChange = () => {},
+  ...others
+}: HvCarouselProps & { numImages?: number }) => {
   return render(
     <HvCarousel
       title={title}
       onChange={onChange}
       renderThumbnail={(i) => <img src={`/image-${i}`} alt={`label-${i}`} />}
+      {...others}
     >
       {[...Array(numImages).keys()].map((i) => (
         <HvCarouselSlide key={i} src={`/image-${i}`} alt={`label-${i}`} />
@@ -73,5 +80,45 @@ describe("<HvCarousel>", () => {
     expect(screen.getByText(`4 / ${numImages}`)).toBeInTheDocument();
     expect(mockChange).toHaveBeenCalledTimes(1);
     expect(mockChange).toHaveBeenCalledWith(3);
+  });
+
+  it("triggers onFullscreen when clicking the fullscreen action", async () => {
+    const user = userEvent.setup();
+    const mockFullscreen = vi.fn();
+    setup({ showFullscreen: true, onFullscreen: mockFullscreen });
+
+    const fullscreenBtn = screen.getByRole("button", { name: "Fullscreen" });
+    await user.click(fullscreenBtn);
+    expect(mockFullscreen).toHaveBeenCalledTimes(1);
+
+    const closeFullscreenBtn = screen.getByRole("button", { name: "Close" });
+    await user.click(closeFullscreenBtn);
+    expect(mockFullscreen).toHaveBeenCalledTimes(2);
+  });
+
+  it("can override labels", async () => {
+    const user = userEvent.setup();
+    setup({
+      showFullscreen: true,
+      labels: {
+        backwards: "Backwards1",
+        close: "Close1",
+        forwards: "Forwards1",
+        fullscreen: "Fullscreen1",
+      },
+    });
+
+    const fullscreenBtn = screen.getByRole("button", { name: "Fullscreen1" });
+    expect(fullscreenBtn).toBeInTheDocument();
+
+    const forwardsBtn = screen.getByRole("button", { name: "Forwards1" });
+    expect(forwardsBtn).toBeInTheDocument();
+
+    const backwardsBtn = screen.getByRole("button", { name: "Backwards1" });
+    expect(backwardsBtn).toBeInTheDocument();
+
+    await user.click(fullscreenBtn);
+    const closeFullscreenBtn = screen.getByRole("button", { name: "Close1" });
+    expect(closeFullscreenBtn).toBeInTheDocument();
   });
 });
