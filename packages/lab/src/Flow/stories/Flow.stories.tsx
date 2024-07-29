@@ -25,6 +25,8 @@ import { Main as MainStory } from "./Main";
 import MainRaw from "./Main?raw";
 import { NoGroups as NoGroupStory } from "./NoGroups";
 import NoGroupsRaw from "./NoGroups?raw";
+import { SubFlow as SubFlowStory } from "./SubFlow";
+import SubFlowRaw from "./SubFlow?raw";
 import { Visualizations as VisualizationsStory } from "./Visualizations";
 import VisualizationsRaw from "./Visualizations?raw";
 
@@ -194,4 +196,20 @@ export const BaseHook: StoryObj<HvFlowProps> = {
     chromatic: { disableSnapshot: false },
   },
   render: () => <BaseHookStory />,
+};
+
+export const SubFlow: StoryObj<HvFlowProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "This sample demonstrate the use of a sub flow",
+      },
+      source: {
+        code: SubFlowRaw,
+      },
+    },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
+  },
+  render: () => <SubFlowStory />,
 };
