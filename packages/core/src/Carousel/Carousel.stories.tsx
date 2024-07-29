@@ -37,6 +37,8 @@ export const Main: StoryObj<HvCarouselProps> = {
     actions: { control: { disable: true } },
     children: { control: { disable: true } },
     carouselOptions: { control: { disable: true } },
+    onFullscreen: { control: { disable: true } },
+    labels: { control: { disable: true } },
   },
   render: (args: Partial<HvCarouselProps>) => {
     const images = [

@@ -2,10 +2,16 @@ import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "../Button";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useLabels } from "../hooks/useLabels";
 import { HvPaginationProps } from "../Pagination";
 import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 import { useClasses } from "./Carousel.styles";
+
+const DEFAULT_LABELS = {
+  backwards: "Backwards",
+  forwards: "Forwards",
+};
 
 interface HvCarouselControlsProps
   extends HvBaseProps<HTMLDivElement>,
@@ -15,6 +21,8 @@ interface HvCarouselControlsProps
   actions?: React.ReactNode;
   onPreviousClick?: React.MouseEventHandler<HTMLButtonElement>;
   onNextClick?: React.MouseEventHandler<HTMLButtonElement>;
+  /** Labels used on the component. */
+  labels?: Partial<typeof DEFAULT_LABELS>;
 }
 
 export const HvCarouselControls = (props: HvCarouselControlsProps) => {
@@ -27,10 +35,13 @@ export const HvCarouselControls = (props: HvCarouselControlsProps) => {
     canPrevious,
     canNext,
     actions,
+    labels: labelsProps,
     onPreviousClick,
     onNextClick,
   } = useDefaultProps("HvCarouselControls", props);
   const { classes, cx } = useClasses(classesProp, false);
+
+  const labels = useLabels(DEFAULT_LABELS, labelsProps);
 
   const selectedIndex = page || 0;
   const numSlides = pages;
@@ -53,7 +64,7 @@ export const HvCarouselControls = (props: HvCarouselControlsProps) => {
           <HvButton
             icon
             disabled={!canPrevious}
-            aria-label="Backwards"
+            aria-label={labels.backwards}
             onClick={onPreviousClick}
           >
             <Backwards iconSize="XS" />
@@ -64,7 +75,7 @@ export const HvCarouselControls = (props: HvCarouselControlsProps) => {
           <HvButton
             icon
             disabled={!canNext}
-            aria-label="Forwards"
+            aria-label={labels.forwards}
             onClick={onNextClick}
           >
             <Forwards iconSize="XS" />

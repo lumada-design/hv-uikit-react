@@ -10,8 +10,9 @@ import {
 import { HvButton } from "../Button";
 import { HvContainer } from "../Container";
 import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useLabels } from "../hooks/useLabels";
 import { useTheme } from "../hooks/useTheme";
-import { HvIconButton } from "../IconButton";
+import { HvIconButton, HvIconButtonProps } from "../IconButton";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
@@ -23,6 +24,13 @@ import { HvCarouselThumbnails } from "./CarouselThumbnails";
 export { staticClasses as carouselClasses };
 
 export type HvCarouselClasses = ExtractNames<typeof useClasses>;
+
+const DEFAULT_LABELS = {
+  close: "Close",
+  fullscreen: "Fullscreen",
+  backwards: "Backwards",
+  forwards: "Forwards",
+};
 
 export interface HvCarouselProps
   extends HvBaseProps<HTMLDivElement, "title" | "onChange"> {
@@ -60,6 +68,13 @@ export interface HvCarouselProps
   renderThumbnail?: (index: number) => React.ReactNode;
   /** The callback fired when the active slide changes. */
   onChange?: (index: number) => void;
+  /** The callback fired fullscreen is toggled. */
+  onFullscreen?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    isFullscreen: boolean,
+  ) => void;
+  /** Labels used on the component. */
+  labels?: Partial<typeof DEFAULT_LABELS>;
 }
 
 /**
@@ -83,13 +98,16 @@ export const HvCarousel = (props: HvCarouselProps) => {
     hideThumbnails: hideThumbnailsProp,
     controlsPosition: controlsPositionProp,
     thumbnailsPosition: thumbnailsPositionProp,
+    labels: labelsProps,
     carouselOptions,
     renderThumbnail,
     onChange,
+    onFullscreen,
     ...others
   } = useDefaultProps("HvCarousel", props);
   const { activeTheme } = useTheme();
   const { classes, css, cx } = useClasses(classesProp);
+  const labels = useLabels(DEFAULT_LABELS, labelsProps);
   const thumbnailsRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -156,6 +174,11 @@ export const HvCarousel = (props: HvCarouselProps) => {
     setSelectedIndex((currentIndex) => clamp(currentIndex, numSlides));
   }, [numSlides, controller]);
 
+  const handleFullscreen: HvIconButtonProps["onClick"] = (event) => {
+    onFullscreen?.(event, !isFullscreen);
+    setIsFullscreen((curr) => !curr);
+  };
+
   const canPrev = controller?.canScrollPrev() ?? false;
   const canNext = controller?.canScrollNext() ?? false;
   const showTitle = !!title && (!xs || isFullscreen);
@@ -178,8 +201,8 @@ export const HvCarousel = (props: HvCarouselProps) => {
       {actionsProp}
       {showFullscreen && (
         <HvIconButton
-          title={isFullscreen ? "Close" : "Fullscreen"}
-          onClick={() => setIsFullscreen((curr) => !curr)}
+          title={isFullscreen ? labels.close : labels.fullscreen}
+          onClick={handleFullscreen}
           className={classes.closeButton}
         >
           {isFullscreen ? <Close /> : <Fullscreen />}
@@ -199,6 +222,10 @@ export const HvCarousel = (props: HvCarouselProps) => {
       onPreviousClick={handlePrevious}
       onNextClick={handleNext}
       actions={actionsPosition === "controls" && actions}
+      labels={{
+        backwards: labels.backwards,
+        forwards: labels.forwards,
+      }}
     />
   );
 
@@ -251,7 +278,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
               icon
               disabled={!canPrev}
               variant="secondarySubtle"
-              aria-label="Backwards"
+              aria-label={labels.backwards}
               onClick={handlePrevious}
             >
               <Backwards iconSize="XS" />
@@ -260,7 +287,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
               icon
               disabled={!canNext}
               variant="secondarySubtle"
-              aria-label="Forwards"
+              aria-label={labels.forwards}
               onClick={handleNext}
             >
               <Forwards iconSize="XS" />
