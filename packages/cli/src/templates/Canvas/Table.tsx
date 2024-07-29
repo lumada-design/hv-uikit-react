@@ -147,7 +147,7 @@ export const DataTable = ({ id }: DataTableProps) => {
     prepareRow(row);
 
     return (
-      <HvTableRow {...row.getRowProps()}>
+      <HvTableRow {...row.getRowProps()} key={row.getRowProps().key}>
         {row.cells.map((cell) => (
           <HvTableCell {...cell.getCellProps()} key={cell.getCellProps().key}>
             {cell.render("Cell")}

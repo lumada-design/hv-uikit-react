@@ -18,7 +18,7 @@ export const Main: StoryObj<HvCanvasBottomPanelProps> = {
   argTypes: {
     tabs: { control: { disable: true } },
     classes: { control: { disable: true } },
-    tab: { control: { disable: true } },
+    selectedTabId: { control: { disable: true } },
     leftActions: { control: { disable: true } },
     rightActions: { control: { disable: true } },
   },

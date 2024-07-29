@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-react-core";
+import { actionsGenericClasses, theme } from "@hitachivantara/uikit-react-core";
 
 export const classes = {
   flow: css({
@@ -37,10 +37,6 @@ export const classes = {
     height: `calc(100% - ${theme.header.height} - ${theme.header.secondLevelHeight})`,
   }),
   toggleIcon: css({ transition: "rotate 0.2s ease" }),
-  titleContainer: css({
-    display: "flex",
-    width: "100%",
-  }),
   titleRoot: css({
     display: "flex",
     width: "100%",
@@ -49,5 +45,10 @@ export const classes = {
   dialogTitle: css({
     ...theme.typography.label,
     "& div > div": { margin: 0, padding: 0 },
+  }),
+  rightActions: css({
+    [`& .${actionsGenericClasses.button}:not(:last-child)`]: {
+      marginRight: 0,
+    },
   }),
 };
