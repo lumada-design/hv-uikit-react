@@ -5,10 +5,14 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { HvCard } from "@hitachivantara/uikit-react-pentaho";
+import { HvCard, HvCardSection } from "@hitachivantara/uikit-react-pentaho";
 
 const classes = {
-  switch: css({ position: "absolute", top: 8, right: 8 }),
+  switch: css({
+    position: "absolute",
+    top: 8,
+    right: 8,
+  }),
   root: css({
     display: "flex",
     flexDirection: "row",
@@ -36,20 +40,22 @@ export const SwitchCard = ({
 
   return (
     <HvCard>
-      <div className={classes.root}>
-        <div>{icon}</div>
-        <div className={classes.content}>
-          <HvTypography variant="title4">{title}</HvTypography>
-          <HvTypography variant="caption1">{description}</HvTypography>
-          {open && children}
+      <HvCardSection>
+        <div className={classes.root}>
+          <div>{icon}</div>
+          <div className={classes.content}>
+            <HvTypography variant="title4">{title}</HvTypography>
+            <HvTypography variant="caption1">{description}</HvTypography>
+            {open && children}
+          </div>
+          <div className={classes.switch}>
+            <HvSwitch
+              aria-label="Show content"
+              onChange={() => setOpen((p) => !p)}
+            />
+          </div>
         </div>
-        <div className={classes.switch}>
-          <HvSwitch
-            aria-label="Show content"
-            onChange={() => setOpen((p) => !p)}
-          />
-        </div>
-      </div>
+      </HvCardSection>
     </HvCard>
   );
 };

@@ -1,9 +1,13 @@
 import { css } from "@emotion/css";
 import { HvTypography, theme } from "@hitachivantara/uikit-react-core";
-import { HvCard } from "@hitachivantara/uikit-react-pentaho";
+import { HvCard, HvCardSection } from "@hitachivantara/uikit-react-pentaho";
 
 const classes = {
-  switch: css({ position: "absolute", top: 8, right: 8 }),
+  switch: css({
+    position: "absolute",
+    top: 8,
+    right: 8,
+  }),
   root: css({
     display: "flex",
     flexDirection: "row",
@@ -31,13 +35,15 @@ export const LinkCard = ({
 }: HvLinkCardProps) => {
   return (
     <HvCard component="a" {...props}>
-      <div className={classes.root}>
-        <div>{icon}</div>
-        <div className={classes.content}>
-          <HvTypography variant="title4">{title}</HvTypography>
-          <HvTypography variant="caption1">{description}</HvTypography>
+      <HvCardSection>
+        <div className={classes.root}>
+          <div>{icon}</div>
+          <div className={classes.content}>
+            <HvTypography variant="title4">{title}</HvTypography>
+            <HvTypography variant="caption1">{description}</HvTypography>
+          </div>
         </div>
-      </div>
+      </HvCardSection>
     </HvCard>
   );
 };

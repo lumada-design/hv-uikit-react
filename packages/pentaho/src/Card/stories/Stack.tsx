@@ -70,7 +70,6 @@ export const StackStory = () => (
     <HvStack withNavigation className={classes.stack}>
       <ImageCard
         title="Madeira"
-        description="description"
         image="https://thetravelbible.com/wp-content/uploads/2022/12/what-to-do-madeira-islands-portugal-800x533.jpg"
       />
       <ImageCard
@@ -79,7 +78,6 @@ export const StackStory = () => (
         image="https://clean-energy-islands.ec.europa.eu/sites/default/files/styles/node_image/public/2019-03/Azores_Pixabay_Comanche0.jpg"
       />
       <ImageCard
-        title="Algarve"
         description="description"
         image="https://venturesailholidays.com/wp-content/uploads/Alrgave-Portugal.jpg"
       />

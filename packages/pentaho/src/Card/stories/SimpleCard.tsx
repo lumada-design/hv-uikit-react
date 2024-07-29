@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/css";
 import { HvRadio, HvTypography, theme } from "@hitachivantara/uikit-react-core";
-import { HvCard } from "@hitachivantara/uikit-react-pentaho";
+import { HvCard, HvCardSection } from "@hitachivantara/uikit-react-pentaho";
 
 const classes = {
   root: css({
@@ -25,14 +25,16 @@ interface SimpleCardProps {
 export const SimpleCard = ({ icon, title, description }: SimpleCardProps) => {
   return (
     <HvCard>
-      <div className={classes.root}>
-        {icon}
-        <div className={classes.content}>
-          <HvTypography variant="title4">{title}</HvTypography>
-          <HvTypography variant="caption1">{description}</HvTypography>
+      <HvCardSection>
+        <div className={classes.root}>
+          {icon}
+          <div className={classes.content}>
+            <HvTypography variant="title4">{title}</HvTypography>
+            <HvTypography variant="caption1">{description}</HvTypography>
+          </div>
+          <HvRadio aria-label="Select" />
         </div>
-        <HvRadio aria-label="Select" />
-      </div>
+      </HvCardSection>
     </HvCard>
   );
 };
