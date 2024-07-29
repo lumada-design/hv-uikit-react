@@ -33,6 +33,10 @@ const classes = {
     overflow: "hidden",
     textOverflow: "ellipsis",
   }),
+  title: css({
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  }),
   content: css({
     display: "flex",
     flexDirection: "column",
@@ -67,7 +71,11 @@ export const FactTable = ({
           {icon}
           <HvOverflowTooltip
             data={
-              <HvTypography variant="title4" component="p">
+              <HvTypography
+                variant="title4"
+                component="p"
+                className={classes.title}
+              >
                 {title}
               </HvTypography>
             }

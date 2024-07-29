@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { css, cx } from "@emotion/css";
 import {
+  HvButton,
   HvDropDownMenu,
   HvListValue,
   HvOverflowTooltip,
@@ -8,6 +9,7 @@ import {
   theme,
   useUniqueId,
 } from "@hitachivantara/uikit-react-core";
+import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
 const classes = {
   root: css({
@@ -26,7 +28,6 @@ const classes = {
     borderBottom: `1px solid ${theme.colors.atmo3}`,
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
     backgroundColor: theme.colors.atmo1,
     alignItems: "center",
   }),
@@ -35,6 +36,10 @@ const classes = {
     flexDirection: "row",
     alignItems: "center",
     maxWidth: "80%",
+  }),
+  title: css({
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   }),
   content: css({
     display: "flex",
@@ -75,6 +80,8 @@ export interface LevelProps {
   children?: React.ReactNode;
   actions?: HvListValue[];
   classes?: Record<string, string>;
+  collapsible?: boolean;
+  collapsed?: boolean;
 }
 
 export const Level = ({
@@ -83,8 +90,12 @@ export const Level = ({
   title,
   children,
   actions = [],
+  collapsible = false,
+  collapsed = false,
   classes: classesProp,
 }: LevelProps) => {
+  const [showContent, setShowContent] = useState(!collapsed);
+
   const id = useUniqueId(idProp);
 
   const hasChildren = !!children;
@@ -103,15 +114,32 @@ export const Level = ({
               <HvTypography
                 variant={hasChildren ? "title4" : "body"}
                 component="p"
+                className={classes.title}
               >
                 {title}
               </HvTypography>
             }
           />
         </div>
-        {actions && <HvDropDownMenu dataList={actions} />}
+        {actions && (
+          <HvDropDownMenu
+            dataList={actions}
+            classes={{ root: css({ marginLeft: "auto" }) }}
+          />
+        )}
+        {collapsible && (
+          <HvButton
+            icon
+            onClick={() => setShowContent((p) => !p)}
+            aria-label={showContent ? "Collapse" : "Expand"}
+          >
+            {showContent ? <DropUpXS /> : <DropDownXS />}
+          </HvButton>
+        )}
       </div>
-      {hasChildren && <div className={classes.content}>{children}</div>}
+      {hasChildren && showContent && (
+        <div className={classes.content}>{children}</div>
+      )}
     </div>
   );
 };
