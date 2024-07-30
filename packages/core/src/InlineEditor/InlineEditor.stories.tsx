@@ -4,17 +4,17 @@ import {
   HvContainer,
   HvGrid,
   HvInlineEditor,
-  HvInlineEditorProps,
+  HvInput,
   HvTypographyVariants,
 } from "@hitachivantara/uikit-react-core";
 
-const meta: Meta<typeof HvInlineEditor> = {
+const meta: Meta<typeof HvInlineEditor<typeof HvInput>> = {
   title: "Components/Inline Editor",
   component: HvInlineEditor,
 };
 export default meta;
 
-export const Main: StoryObj<HvInlineEditorProps> = {
+export const Main: StoryObj<typeof HvInlineEditor> = {
   args: {
     showIcon: false,
     variant: "body",
@@ -31,7 +31,7 @@ export const Main: StoryObj<HvInlineEditorProps> = {
   },
 };
 
-export const Disabled: StoryObj<HvInlineEditorProps> = {
+export const Disabled: StoryObj<typeof HvInlineEditor<typeof HvInput>> = {
   render: () => {
     return (
       <div style={{ width: 300 }}>
