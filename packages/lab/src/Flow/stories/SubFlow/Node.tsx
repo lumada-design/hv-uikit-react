@@ -15,11 +15,11 @@ const classes = {
     borderRadius: "16px",
   }),
   levelRoot: css({
-    padding: theme.spacing(0, "xs", 0, "xs"),
     boxShadow: theme.colors.shadow,
     borderWidth: 0,
   }),
   levelHeader: css({
+    padding: theme.spacing(0, "xs", 0, "xs"),
     boxShadow: theme.colors.shadow,
     borderWidth: 0,
   }),
