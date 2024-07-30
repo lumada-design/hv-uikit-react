@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { Edit } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton, HvButtonProps } from "../Button";
@@ -20,7 +20,7 @@ export { staticClasses as inlineEditorClasses };
 
 export type HvInlineEditorClasses = ExtractNames<typeof useClasses>;
 
-export interface HvInlineEditorProps
+export interface HvInlineEditorProps<T extends React.ElementType>
   extends HvBaseProps<HTMLDivElement, "onBlur" | "onChange"> {
   /** The value of the form element. */
   value?: string;
@@ -29,7 +29,7 @@ export interface HvInlineEditorProps
   /** Whether the Edit icon should always be visible */
   showIcon?: boolean;
   /** Component to use as the input. The component "inherit" from `HvBaseInput` (such as `HvInput` or `HvTextArea`) */
-  component?: React.ElementType;
+  component?: T;
   /** Variant of the HvTypography to display */
   variant?: HvTypographyVariants;
   /** Called when the input is blurred. */
@@ -55,7 +55,10 @@ export interface HvInlineEditorProps
  * An Inline Editor allows the user to edit a record without making a major switch
  * between viewing and editing, making it an efficient method of updating a record.
  */
-export const HvInlineEditor = (props: HvInlineEditorProps) => {
+export const HvInlineEditor = <T extends React.ElementType>(
+  props: HvInlineEditorProps<T> &
+    Omit<React.ComponentProps<T>, keyof HvInlineEditorProps<T>>,
+) => {
   const {
     className,
     classes: classesProp,
