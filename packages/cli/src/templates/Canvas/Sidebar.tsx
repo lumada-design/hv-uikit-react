@@ -47,6 +47,9 @@ export const CanvasSidebar = (props: HvCanvasSidePanelProps) => {
         id={elementId}
         ref={setNodeRef}
         className={classes.panel}
+        labels={{
+          open: "Click to Add Nodes & View Files",
+        }}
         {...props}
       />
       {/** Shown when the dragged item leaves the sidebar to drop it in the canvas */}

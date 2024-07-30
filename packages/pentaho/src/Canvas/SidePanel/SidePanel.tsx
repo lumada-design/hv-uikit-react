@@ -2,13 +2,14 @@ import { forwardRef } from "react";
 import {
   ExtractNames,
   HvBaseProps,
+  HvIconButton,
   HvPanel,
   useControlled,
   useDefaultProps,
   useLabels,
   useUniqueId,
 } from "@hitachivantara/uikit-react-core";
-import { End, Start } from "@hitachivantara/uikit-react-icons";
+import { End } from "@hitachivantara/uikit-react-icons";
 
 import { HvCanvasPanelTab } from "../PanelTab";
 import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "../PanelTabs";
@@ -138,25 +139,17 @@ export const HvCanvasSidePanel = forwardRef<
           {children}
         </HvPanel>
       </div>
-      <div
+      <HvIconButton
+        variant="primaryGhost"
+        title={open ? labels.close : labels.open}
+        onClick={handleTogglePanel}
         className={cx(classes.handle, {
           [classes.handleOpen]: open,
           [classes.handleClose]: !open,
         })}
-        onClick={handleTogglePanel}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            handleTogglePanel(e);
-          }
-        }}
-        aria-label={open ? labels.close : labels.open}
       >
-        <div className={classes.handleButton}>
-          {open ? <Start color={["primary"]} /> : <End color={["primary"]} />}
-        </div>
-      </div>
+        <End style={{ rotate: open ? "180deg" : undefined }} />
+      </HvIconButton>
     </>
   );
 });

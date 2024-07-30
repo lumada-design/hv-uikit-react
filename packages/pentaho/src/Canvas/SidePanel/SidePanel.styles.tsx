@@ -1,8 +1,4 @@
-import {
-  createClasses,
-  outlineStyles,
-  theme,
-} from "@hitachivantara/uikit-react-core";
+import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses(
   "HvCanvasSidePanel",
@@ -48,16 +44,6 @@ export const { staticClasses, useClasses } = createClasses(
       "&$handleClose": {
         left: 0,
       },
-      "&:hover": {
-        cursor: "pointer",
-      },
-      "&:focus-visible": {
-        ...outlineStyles,
-      },
-    },
-    handleButton: {
-      top: "calc(50% - 16px)",
-      position: "absolute",
     },
     open: {},
     close: {},
