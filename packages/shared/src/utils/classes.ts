@@ -6,10 +6,7 @@ export type ExtractNames<
   T extends (...args: any) => { classes: Record<string, any>; cx: any },
 > = Partial<ReturnType<T>["classes"]>;
 
-export const getClasses = <T extends string, N extends string>(
-  keys: T[],
-  name: N,
-) => {
+const getClasses = <T extends string, N extends string>(keys: T[], name: N) => {
   const classesObj: Record<string, string> = {};
   keys.forEach((key: string) => {
     classesObj[key] = `${name}-${key}`;
@@ -34,7 +31,7 @@ const deepRenameKeys = <T extends object>(
 };
 
 /** Given a `stylesObj`, replaces its keys' `$myClass` with `.{name}-myClass`. */
-export const replace$ = <T extends object>(stylesObj: T, name: string): T => {
+const replace$ = <T extends object>(stylesObj: T, name: string): T => {
   return deepRenameKeys(stylesObj, (key) => {
     const matches = key.match(/\$\w+/g);
     if (!matches?.length) return key;
