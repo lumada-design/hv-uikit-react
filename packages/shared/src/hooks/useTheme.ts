@@ -1,10 +1,7 @@
 import { useContext, useMemo } from "react";
-import { HvTheme } from "@hitachivantara/uikit-react-shared";
 
-import {
-  HvThemeContext,
-  HvThemeContextValue,
-} from "../providers/ThemeProvider";
+import { HvThemeContext, HvThemeContextValue } from "../context/ThemeContext";
+import { HvTheme } from "../types/theme";
 
 export const useTheme = (): HvThemeContextValue & {
   /** Colors of the currently active theme and mode */
