@@ -3,14 +3,17 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
-import { HvCanvasTab } from "../Tab/Tab";
-import { HvCanvasTabs, HvCanvasTabsProps } from "./Tabs";
+import { HvCanvasPanelTab } from "../PanelTab/PanelTab";
+import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "./PanelTabs";
 
-const Controlled = ({ onChange, ...others }: Partial<HvCanvasTabsProps>) => {
+const Controlled = ({
+  onChange,
+  ...others
+}: Partial<HvCanvasPanelTabsProps>) => {
   const [selected, setSelected] = useState(2);
 
   return (
-    <HvCanvasTabs
+    <HvCanvasPanelTabs
       value={selected}
       onChange={(e, v) => {
         onChange?.(e, v);
@@ -18,21 +21,21 @@ const Controlled = ({ onChange, ...others }: Partial<HvCanvasTabsProps>) => {
       }}
       {...others}
     >
-      <HvCanvasTab value={0}>Tab 1</HvCanvasTab>
-      <HvCanvasTab value={1}>Tab 2</HvCanvasTab>
-      <HvCanvasTab value={2}>Tab 3</HvCanvasTab>
-    </HvCanvasTabs>
+      <HvCanvasPanelTab value={0}>Tab 1</HvCanvasPanelTab>
+      <HvCanvasPanelTab value={1}>Tab 2</HvCanvasPanelTab>
+      <HvCanvasPanelTab value={2}>Tab 3</HvCanvasPanelTab>
+    </HvCanvasPanelTabs>
   );
 };
 
 describe("CanvasTabs", () => {
   it("renders tabs", () => {
     render(
-      <HvCanvasTabs>
-        <HvCanvasTab value={0}>Tab 1</HvCanvasTab>
-        <HvCanvasTab value={1}>Tab 2</HvCanvasTab>
-        <HvCanvasTab value={2}>Tab 3</HvCanvasTab>
-      </HvCanvasTabs>,
+      <HvCanvasPanelTabs>
+        <HvCanvasPanelTab value={0}>Tab 1</HvCanvasPanelTab>
+        <HvCanvasPanelTab value={1}>Tab 2</HvCanvasPanelTab>
+        <HvCanvasPanelTab value={2}>Tab 3</HvCanvasPanelTab>
+      </HvCanvasPanelTabs>,
     );
     const tabList = screen.getByRole("tablist");
     const allTabs = screen.getAllByRole("tab");
@@ -49,11 +52,11 @@ describe("CanvasTabs", () => {
     const user = userEvent.setup();
     const clickMock = vi.fn();
     render(
-      <HvCanvasTabs defaultValue={0} onChange={clickMock}>
-        <HvCanvasTab value={0}>Tab 1</HvCanvasTab>
-        <HvCanvasTab value={1}>Tab 2</HvCanvasTab>
-        <HvCanvasTab value={2}>Tab 3</HvCanvasTab>
-      </HvCanvasTabs>,
+      <HvCanvasPanelTabs defaultValue={0} onChange={clickMock}>
+        <HvCanvasPanelTab value={0}>Tab 1</HvCanvasPanelTab>
+        <HvCanvasPanelTab value={1}>Tab 2</HvCanvasPanelTab>
+        <HvCanvasPanelTab value={2}>Tab 3</HvCanvasPanelTab>
+      </HvCanvasPanelTabs>,
     );
     expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
       "Tab 1",

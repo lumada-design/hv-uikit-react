@@ -5,7 +5,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-export const { staticClasses, useClasses } = createClasses("HvCanvasTab", {
+export const { staticClasses, useClasses } = createClasses("HvCanvasPanelTab", {
   root: {
     height: "100%",
     display: "flex",

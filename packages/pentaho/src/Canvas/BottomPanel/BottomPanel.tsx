@@ -12,8 +12,8 @@ import {
   useUniqueId,
 } from "@hitachivantara/uikit-react-core";
 
-import { HvCanvasTab } from "../Tab";
-import { HvCanvasTabs, HvCanvasTabsProps } from "../Tabs";
+import { HvCanvasPanelTab } from "../PanelTab";
+import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "../PanelTabs";
 import { staticClasses, useClasses } from "./BottomPanel.styles";
 
 export { staticClasses as canvasBottomPanelClasses };
@@ -117,7 +117,10 @@ export const HvCanvasBottomPanel = forwardRef<
     tabs[0].id,
   );
 
-  const handleTabChange: HvCanvasTabsProps["onChange"] = (event, tabId) => {
+  const handleTabChange: HvCanvasPanelTabsProps["onChange"] = (
+    event,
+    tabId,
+  ) => {
     setSelectedTab(tabId);
     onTabChange?.(event, tabId);
   };
@@ -139,7 +142,7 @@ export const HvCanvasBottomPanel = forwardRef<
       {...others}
     >
       <div className={classes.tabsRoot}>
-        <HvCanvasTabs
+        <HvCanvasPanelTabs
           style={{
             // @ts-ignore
             "--left-actions-width": `${leftActionWidth}px`,
@@ -149,7 +152,7 @@ export const HvCanvasBottomPanel = forwardRef<
           value={selectedTab}
         >
           {tabs.map((tab, index) => (
-            <HvCanvasTab
+            <HvCanvasPanelTab
               ref={index === 0 ? tabRef : undefined}
               key={tab.id}
               id={`${id}-${tab.id}`}
@@ -157,10 +160,10 @@ export const HvCanvasBottomPanel = forwardRef<
               className={classes.tab}
             >
               <div className={classes.tabTitle}>{tab.title}</div>
-            </HvCanvasTab>
+            </HvCanvasPanelTab>
           ))}
-        </HvCanvasTabs>
-        {/* For accessibility purposes, these buttons cannot be children of a tablist so they are rendered as HvCanvasTabs sibling. */}
+        </HvCanvasPanelTabs>
+        {/* For accessibility purposes, these buttons cannot be children of a tablist so they are rendered as HvCanvasPanelTabs sibling. */}
         {(leftActions || rightActions) && !overflowing
           ? tabs.map((tab, index) => {
               const btnsDisabled = selectedTab !== tab.id && !minimize;

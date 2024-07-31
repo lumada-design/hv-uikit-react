@@ -10,8 +10,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { End, Start } from "@hitachivantara/uikit-react-icons";
 
-import { HvCanvasTab } from "../Tab";
-import { HvCanvasTabs, HvCanvasTabsProps } from "../Tabs";
+import { HvCanvasPanelTab } from "../PanelTab";
+import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "../PanelTabs";
 import { staticClasses, useClasses } from "./SidePanel.styles";
 
 export { staticClasses as canvasSidePanelClasses };
@@ -93,7 +93,10 @@ export const HvCanvasSidePanel = forwardRef<
     onToggle?.(event, !open);
   };
 
-  const handleTabChange: HvCanvasTabsProps["onChange"] = (event, tabId) => {
+  const handleTabChange: HvCanvasPanelTabsProps["onChange"] = (
+    event,
+    tabId,
+  ) => {
     setSelectedTab(tabId);
     onTabChange?.(event, tabId);
   };
@@ -110,22 +113,22 @@ export const HvCanvasSidePanel = forwardRef<
         {...others}
       >
         {tabs && (
-          <HvCanvasTabs
+          <HvCanvasPanelTabs
             className={classes.tabs}
             value={selectedTab}
             onChange={handleTabChange}
           >
             {tabs.map((tab) => (
-              <HvCanvasTab
+              <HvCanvasPanelTab
                 key={tab.id}
                 id={`${id}-${tab.id}`}
                 value={tab.id}
                 tabIndex={0}
               >
                 {tab.content}
-              </HvCanvasTab>
+              </HvCanvasPanelTab>
             ))}
-          </HvCanvasTabs>
+          </HvCanvasPanelTabs>
         )}
         <HvPanel
           role={tabs ? "tabpanel" : undefined}
