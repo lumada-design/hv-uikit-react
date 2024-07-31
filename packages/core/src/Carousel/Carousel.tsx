@@ -6,12 +6,12 @@ import {
   Forwards,
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
+import { useTheme } from "@hitachivantara/uikit-react-shared";
 
 import { HvButton } from "../Button";
 import { HvContainer } from "../Container";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
-import { useTheme } from "../hooks/useTheme";
 import { HvIconButton, HvIconButtonProps } from "../IconButton";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";

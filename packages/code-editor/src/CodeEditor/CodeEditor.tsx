@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react";
 import { Editor, EditorProps, useMonaco } from "@monaco-editor/react";
-import { ExtractNames, useTheme } from "@hitachivantara/uikit-react-core";
+import { ExtractNames, useTheme } from "@hitachivantara/uikit-react-shared";
 
 import { staticClasses, useClasses } from "./CodeEditor.styles";
 

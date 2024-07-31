@@ -1,5 +1,4 @@
 import type { EChartsType } from "echarts";
-import { Arrayable, HvExtraProps } from "@hitachivantara/uikit-react-core";
 
 import { HvChartAxis } from "./axis";
 import { HvChartFilter } from "./filter";
@@ -12,19 +11,21 @@ import { HvChartTooltip } from "./tooltip";
 
 // Note: These types should not be exported at the moment since they can change over time.
 
+export type Arrayable<T> = T | T[];
+
 // The "EChartsOption" type is set as "any" which is not very helpful.
 // This type was created to have something a little bit more specific.
 export type HvEChartsOption = Record<string, any>;
 
-// Echarts doesn't provide much information about the params properties so we extend HvExtraProps
-interface EventParams extends HvExtraProps {
+// Echarts doesn't provide much information about the params properties so we extend any object
+interface EventParams extends Record<string, any> {
   componentIndex?: number;
   componentType?: string;
   dataIndex?: number;
   value?: any;
   targetType?: string;
   type?: string;
-  event?: HvExtraProps;
+  event?: Record<string, any>;
 }
 
 /** Props common among all charts. */

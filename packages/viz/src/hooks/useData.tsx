@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { desc, escape, not } from "arquero";
-import { Arrayable } from "@hitachivantara/uikit-react-core";
 
 import {
   HvBarChartMeasures,
@@ -12,7 +11,11 @@ import {
   HvLineChartMeasures,
   HvScatterPlotMeasure,
 } from "../types";
-import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
+import {
+  Arrayable,
+  HvAxisChartCommonProps,
+  HvChartCommonProps,
+} from "../types/common";
 import {
   getGroupKey,
   getHvArqueroCombinedFilters,

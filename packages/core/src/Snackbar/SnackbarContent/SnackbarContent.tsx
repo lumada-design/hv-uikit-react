@@ -2,6 +2,7 @@ import { forwardRef, isValidElement } from "react";
 import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
+import { useTheme } from "@hitachivantara/uikit-react-shared";
 
 import {
   HvActionGeneric,
@@ -10,7 +11,6 @@ import {
 } from "../../ActionsGeneric";
 import { HvButtonVariant } from "../../Button";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { useTheme } from "../../hooks/useTheme";
 import { ExtractNames } from "../../utils/classes";
 import { iconVariant } from "../../utils/iconVariant";
 import { setId } from "../../utils/setId";

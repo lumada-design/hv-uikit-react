@@ -18,11 +18,11 @@ import {
   Placement,
 } from "@popperjs/core";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
+import { useTheme } from "@hitachivantara/uikit-react-shared";
 
 import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useForkRef } from "../hooks/useForkRef";
-import { useTheme } from "../hooks/useTheme";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";

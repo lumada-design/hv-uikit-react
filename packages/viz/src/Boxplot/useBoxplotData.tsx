@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { escape } from "arquero";
-import { Arrayable } from "@hitachivantara/uikit-react-core";
 
 import { HvChartData, HvChartFilter } from "../types";
+import { Arrayable } from "../types/common";
 import {
   getHvArqueroCombinedFilters,
   normalizeColumnName,

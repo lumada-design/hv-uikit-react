@@ -1,5 +1,6 @@
+import { useTheme } from "@hitachivantara/uikit-react-shared";
+
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { useTheme } from "../hooks/useTheme";
 import {
   fixedForwardRef,
   PolymorphicComponentRef,

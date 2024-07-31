@@ -1,8 +1,9 @@
+import { useTheme } from "@hitachivantara/uikit-react-shared";
+
 import { HvActionsGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
 import { HvCheckBox, HvCheckBoxProps } from "../CheckBox";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { useTheme } from "../hooks/useTheme";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";

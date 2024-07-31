@@ -37,9 +37,7 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@emotion/css": "^11.11.0",
-    "@hitachivantara/uikit-react-core": "^5.66.14",
-    "@hitachivantara/uikit-react-icons": "^5.10.5",
+    "@hitachivantara/uikit-react-shared": "^5.1.45",
     "@hitachivantara/uikit-styles": "^5.31.0",
     "@monaco-editor/react": "^4.5.1"
   },

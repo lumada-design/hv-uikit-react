@@ -7,7 +7,7 @@ import {
   VisualMapComponent,
 } from "echarts/components";
 import * as echarts from "echarts/core";
-import { Arrayable, ExtractNames } from "@hitachivantara/uikit-react-core";
+import { ExtractNames } from "@hitachivantara/uikit-react-shared";
 
 import { HvBaseChart } from "../BaseChart";
 import {
@@ -21,6 +21,7 @@ import {
   useYAxis,
 } from "../hooks";
 import {
+  Arrayable,
   HvChartCommonProps,
   HvChartXAxis,
   HvChartYAxis,

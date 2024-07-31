@@ -1,5 +1,5 @@
 import { createContext, useMemo } from "react";
-import { HvTheme, useTheme } from "@hitachivantara/uikit-react-core";
+import { HvTheme, useTheme } from "@hitachivantara/uikit-react-shared";
 
 import { registerTheme } from "../utils/registerTheme";
 

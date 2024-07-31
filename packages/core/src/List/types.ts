@@ -1,6 +1,4 @@
-import { HvExtraProps } from "../types/generic";
-
-export interface HvListValue extends HvExtraProps {
+export interface HvListValue extends Record<string, any> {
   id?: string | number;
   label: React.ReactNode;
   searchValue?: string;

@@ -1,7 +1,7 @@
-import { Popper } from "@mui/base";
+import { Popper } from "@mui/base/Popper";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
+import { useTheme } from "@hitachivantara/uikit-react-shared";
 
-import { useTheme } from "../../hooks/useTheme";
 import { HvBaseProps } from "../../types/generic";
 import { ExtractNames } from "../../utils/classes";
 import { getContainerElement } from "../../utils/document";

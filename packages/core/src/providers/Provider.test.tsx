@@ -1,9 +1,9 @@
 import { queryHelpers, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
+import { useTheme } from "@hitachivantara/uikit-react-shared";
 import { ds3, ds5 } from "@hitachivantara/uikit-styles";
 
-import { useTheme } from "../hooks/useTheme";
 import { createTheme } from "../utils/theme";
 import { HvProvider } from "./Provider";
 

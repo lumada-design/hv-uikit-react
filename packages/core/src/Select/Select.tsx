@@ -10,6 +10,7 @@ import {
 import { useControlled, useForkRef } from "@mui/material/utils";
 import type { Placement } from "@popperjs/core";
 import clsx from "clsx";
+import { useTheme } from "@hitachivantara/uikit-react-shared";
 
 import { HvButtonProps } from "../Button";
 import { HvDropdownButton } from "../DropdownButton";
@@ -22,7 +23,6 @@ import {
   HvWarningText,
 } from "../Forms";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { useTheme } from "../hooks/useTheme";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListContainer } from "../ListContainer";
 import { HvPanel } from "../Panel";

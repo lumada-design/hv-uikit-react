@@ -1,5 +1,5 @@
 import { Children, forwardRef } from "react";
-import { css } from "@emotion/css";
+import { useCss } from "@hitachivantara/uikit-react-shared";
 import { HvSize, theme } from "@hitachivantara/uikit-styles";
 
 import { HvAvatar } from "../Avatar/Avatar";
@@ -96,6 +96,8 @@ const Overflow = ({
   maxVisible,
   size,
 }: OverflowProps) => {
+  const { css } = useCss();
+
   return (
     <div
       style={{

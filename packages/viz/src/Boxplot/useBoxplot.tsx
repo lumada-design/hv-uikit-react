@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import { Arrayable } from "@hitachivantara/uikit-react-core";
 
 import { HvBoxplotMeasure, HvChartData, HvChartFilter } from "../types";
+import { Arrayable } from "../types/common";
 import { useBoxplotData } from "./useBoxplotData";
 
 interface HvDataHookProps {

@@ -1,5 +1,5 @@
 import React from "react";
-import { InputBaseComponentProps } from "@mui/material";
+import { InputBaseComponentProps } from "@mui/material/InputBase";
 
 import { HvFormElementContextValue } from "../context/FormElementContext";
 import { HvFormElementDescriptorsContextValue } from "../context/FormElementDescriptorsContext";

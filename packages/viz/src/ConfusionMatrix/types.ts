@@ -1,4 +1,4 @@
-import type { HvColorAny } from "@hitachivantara/uikit-react-core";
+import type { HvColorAny } from "@hitachivantara/uikit-styles";
 
 export interface HvConfusionMatrixColorScale {
   color: HvColorAny;
