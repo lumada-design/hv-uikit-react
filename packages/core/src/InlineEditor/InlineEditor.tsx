@@ -1,10 +1,10 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { Edit } from "@hitachivantara/uikit-react-icons";
+import { useTheme } from "@hitachivantara/uikit-react-shared";
 
 import { HvButton, HvButtonProps } from "../Button";
 import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
-import { useTheme } from "../hooks/useTheme";
 import { HvInput, HvInputProps } from "../Input";
 import { HvBaseProps } from "../types/generic";
 import {

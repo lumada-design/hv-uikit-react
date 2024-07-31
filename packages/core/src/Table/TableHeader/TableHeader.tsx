@@ -1,10 +1,10 @@
 import { forwardRef, useContext, useMemo } from "react";
 import { alpha, hexToRgb } from "@mui/material/styles";
+import { useTheme } from "@hitachivantara/uikit-react-shared";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvButton, HvButtonProps } from "../../Button";
 import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { useTheme } from "../../hooks/useTheme";
 import { HvTypography, HvTypographyProps } from "../../Typography";
 import { ExtractNames } from "../../utils/classes";
 import { capitalize } from "../../utils/helpers";

@@ -46,11 +46,11 @@ export type DeepPartial<T> = T extends {}
     }>
   : T;
 
-/** This type combines the HvExtraProps and DeepPartial types */
+/** This type extends DeepPartial to allow any extra properties */
 export type HvExtraDeepPartialProps<T> = Partial<{
-  [P in keyof T]: DeepPartial<T[P]> & HvExtraProps;
+  [P in keyof T]: DeepPartial<T[P]> & Record<string, any>;
 }> &
-  HvExtraProps;
+  Record<string, any>;
 
 export type Arrayable<T> = T | T[];
 

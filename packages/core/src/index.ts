@@ -1,3 +1,4 @@
+export { useCss, useTheme } from "@hitachivantara/uikit-react-shared";
 export {
   theme,
   themes,
@@ -120,14 +121,12 @@ export * from "./Skeleton";
 export * from "./hooks/useClickOutside";
 export * from "./hooks/useComputation";
 export * from "./hooks/useControlled";
-export * from "./hooks/useCss";
 export * from "./hooks/useDefaultProps";
 export * from "./hooks/useEnhancedEffect";
 export * from "./hooks/useForkRef";
 export * from "./hooks/useImageLoaded";
 export * from "./hooks/useIsMounted";
 export * from "./hooks/useLabels";
-export * from "./hooks/useTheme";
 export * from "./hooks/useUniqueId";
 export * from "./hooks/useWidth";
 

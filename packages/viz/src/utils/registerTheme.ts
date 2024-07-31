@@ -1,5 +1,5 @@
 import * as echarts from "echarts/core";
-import { HvTheme } from "@hitachivantara/uikit-react-core";
+import { HvTheme } from "@hitachivantara/uikit-react-shared";
 
 export const registerTheme = (
   name: string,

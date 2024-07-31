@@ -1,4 +1,4 @@
-import { CSSObject } from "@emotion/serialize";
+import type { CSSObject } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../utils/classes";
@@ -39,7 +39,7 @@ export const getContainerStyle = ({
   breakpoints?: Breakpoint[];
   spacing: Spacing;
   cols?: number;
-}): CSSObject => {
+}) => {
   return {
     boxSizing: "border-box",
     display: "grid",
@@ -69,5 +69,5 @@ export const getContainerStyle = ({
 
         return acc;
       }, {})),
-  };
+  } satisfies CSSObject;
 };

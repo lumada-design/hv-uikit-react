@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
+import { useCss } from "@hitachivantara/uikit-react-shared";
 
-import { useCss } from "../../hooks/useCss";
 import { createClasses, ExtractNames } from "../../utils/classes";
 import { useHvTreeItem } from "./useHvTreeItem";
 

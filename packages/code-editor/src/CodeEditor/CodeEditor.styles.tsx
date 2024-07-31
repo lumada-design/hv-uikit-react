@@ -1,4 +1,4 @@
-import { createClasses } from "@hitachivantara/uikit-react-core";
+import { createClasses } from "@hitachivantara/uikit-react-shared";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvCodeEditor", {

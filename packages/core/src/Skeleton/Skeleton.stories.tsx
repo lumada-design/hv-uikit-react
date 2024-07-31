@@ -18,8 +18,8 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-import { CustomSkeleton } from "./CustomSkeleton";
-import CustomSkeletonRaw from "./CustomSkeleton?raw";
+import { CustomSkeleton } from "./stories/CustomSkeleton";
+import CustomSkeletonRaw from "./stories/CustomSkeleton?raw";
 
 const meta: Meta<typeof HvSkeleton> = {
   title: "Components/Skeleton",

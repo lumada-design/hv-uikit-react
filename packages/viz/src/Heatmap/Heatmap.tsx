@@ -3,7 +3,7 @@ import ReactECharts from "echarts-for-react/lib/core";
 import { HeatmapChart } from "echarts/charts";
 import { TooltipComponent, VisualMapComponent } from "echarts/components";
 import * as echarts from "echarts/core";
-import { ExtractNames, useTheme } from "@hitachivantara/uikit-react-core";
+import { ExtractNames, useTheme } from "@hitachivantara/uikit-react-shared";
 
 import { HvBaseChart } from "../BaseChart";
 import {

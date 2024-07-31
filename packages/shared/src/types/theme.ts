@@ -3,13 +3,18 @@ import {
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
-// This type allows to pass undetermined extra props to components
+/**
+ * This type allows to pass undetermined extra props to components
+ * @deprecated use Record<string, {type}> */
 export type HvExtraProps = { [key: string]: any };
 
-// This type allows to pass undetermined extra props to components recursively
+/**
+ * This type allows to pass undetermined extra props to components recursively
+ * @deprecated internal use only
+ */
 export type HvExtraDeepProps<T> = {
-  [P in keyof T]: T[P] & HvExtraProps;
-} & HvExtraProps;
+  [P in keyof T]: T[P] & Record<string, any>;
+} & Record<string, any>;
 
 /**
  * Theme structure
@@ -17,7 +22,7 @@ export type HvExtraDeepProps<T> = {
 export type HvTheme = HvExtraDeepProps<Omit<HvThemeStructure, "colors">> & {
   colors: {
     modes: {
-      [key: string]: HvThemeColorModeStructure & { [key: string]: string };
+      [key: string]: HvThemeColorModeStructure & Record<string, string>;
     };
   };
 };

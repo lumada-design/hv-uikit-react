@@ -11,7 +11,6 @@ import {
   TooltipComponent,
 } from "echarts/components";
 import * as echarts from "echarts/core";
-import { Arrayable } from "@hitachivantara/uikit-react-core";
 
 import { HvBaseChart } from "../BaseChart";
 import {
@@ -28,7 +27,11 @@ import {
   useYAxis,
 } from "../hooks";
 import { HvBarChartMeasures } from "../types";
-import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
+import {
+  Arrayable,
+  HvAxisChartCommonProps,
+  HvChartCommonProps,
+} from "../types/common";
 
 // Register chart components
 echarts.use([

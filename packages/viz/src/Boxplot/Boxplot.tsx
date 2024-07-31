@@ -3,7 +3,7 @@ import ReactECharts from "echarts-for-react/lib/core";
 import { BoxplotChart } from "echarts/charts";
 import { TooltipComponent, VisualMapComponent } from "echarts/components";
 import * as echarts from "echarts/core";
-import { Arrayable, ExtractNames } from "@hitachivantara/uikit-react-core";
+import { ExtractNames } from "@hitachivantara/uikit-react-shared";
 
 import { HvBaseChart } from "../BaseChart";
 import {
@@ -15,7 +15,11 @@ import {
   useYAxis,
 } from "../hooks";
 import { HvBoxplotMeasure, HvChartTooltip } from "../types";
-import { HvAxisChartCommonProps, HvChartCommonProps } from "../types/common";
+import {
+  Arrayable,
+  HvAxisChartCommonProps,
+  HvChartCommonProps,
+} from "../types/common";
 import { useClasses } from "./Boxplot.styles";
 import { useBoxplot } from "./useBoxplot";
 

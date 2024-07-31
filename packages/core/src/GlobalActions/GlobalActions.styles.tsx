@@ -1,4 +1,4 @@
-import { CSSInterpolation } from "@emotion/serialize";
+import type { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { createClasses } from "../utils/classes";

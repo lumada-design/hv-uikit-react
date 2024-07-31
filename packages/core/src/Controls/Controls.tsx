@@ -5,7 +5,7 @@ import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvMultiButton } from "../MultiButton";
 import { HvTableInstance } from "../Table/hooks/useTable";
-import { HvBaseProps, HvExtraProps } from "../types/generic";
+import { HvBaseProps } from "../types/generic";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { HvControlsContextProvider } from "./context/ControlsContext";
@@ -15,7 +15,7 @@ export { staticClasses as controlsClasses };
 
 export type HvControlsClasses = ExtractNames<typeof useClasses>;
 
-export interface HvControlsViewConfiguration extends HvExtraProps {
+export interface HvControlsViewConfiguration extends Record<string, any> {
   id?: string;
   label?: string;
   icon?: React.ReactNode;
