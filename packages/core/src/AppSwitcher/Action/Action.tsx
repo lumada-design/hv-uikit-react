@@ -1,10 +1,10 @@
 import { useCallback, useState } from "react";
-import { Info } from "@hitachivantara/uikit-react-icons";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import type { ExtractNames } from "@hitachivantara/uikit-react-utils";
 import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvAvatar } from "../../Avatar";
 import { useUniqueId } from "../../hooks/useUniqueId";
+import { HvIcon } from "../../icons";
 import { HvListItem } from "../../ListContainer";
 import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { HvTooltip } from "../../Tooltip";
@@ -159,7 +159,12 @@ export const HvAppSwitcherAction = ({
 
         {description && (
           <HvTooltip title={description}>
-            <Info className={classes.iconInfo} id={descriptionElementId} />
+            <HvIcon
+              name="Info"
+              compact
+              className={classes.iconInfo}
+              id={descriptionElementId}
+            />
           </HvTooltip>
         )}
       </HvTypography>

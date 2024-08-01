@@ -7,13 +7,13 @@ import {
   useRef,
 } from "react";
 import { FixedSizeList } from "react-window";
-import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvCheckBox } from "../CheckBox";
+import { HvIcon } from "../icons";
 import { HvLink } from "../Link";
 import {
   HvListContainer,
@@ -264,7 +264,7 @@ export const HvList = (props: HvListProps) => {
         startAdornment={startAdornment}
         endAdornment={
           item.showNavIcon && (
-            <DropRightXS className={classes.box} iconSize="XS" />
+            <HvIcon name="CaretRight" className={classes.box} size="xs" />
           )
         }
         {...otherProps}

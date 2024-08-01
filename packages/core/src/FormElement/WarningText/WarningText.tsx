@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Fail } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { HvIcon } from "../../icons";
 import { HvBaseProps } from "../../types/generic";
 import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../context";
@@ -60,7 +60,7 @@ export const HvWarningText = (props: HvWarningTextProps) => {
   const id = idProp ?? setId(context.id, "error");
   const showWarning = visible && !disabled;
   const adornment = adornmentProp || (
-    <Fail size="xs" className={classes.defaultIcon} />
+    <HvIcon name="Fail" size="xs" className={classes.defaultIcon} />
   );
 
   return (

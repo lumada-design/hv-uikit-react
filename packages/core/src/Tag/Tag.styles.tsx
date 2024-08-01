@@ -17,6 +17,11 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     "&,:hover,:focus-visible": {
       backgroundColor: "var(--tagColor)",
     },
+    "& div:has($deleteIcon)": {
+      // ensure icon container doesn't grow into $label
+      width: "max-content",
+      lineHeight: 0,
+    },
   },
   hasIcon: {
     paddingLeft: 2,
@@ -66,9 +71,9 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     color: "inherit",
   },
   deleteIcon: {
-    width: 16,
-    height: 16,
-    "&:hover": {
+    margin: 0,
+    padding: 2,
+    ":hover": {
       backgroundColor: theme.colors.bgHover,
     },
   },

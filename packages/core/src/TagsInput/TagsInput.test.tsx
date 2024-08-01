@@ -38,7 +38,7 @@ describe("TagsInput examples", () => {
       expect(clickableButtons.length).toBe(5);
 
       const lastTag = clickableButtons[4];
-      fireEvent.click(lastTag.querySelector("[data-name=CloseXS]")!);
+      fireEvent.click(lastTag.querySelector("[data-name=Close]")!);
 
       expect((await screen.findAllByRole("button")).length).toBe(4);
       expect(tagsInput).toHaveValue(uncommittedText);
@@ -120,7 +120,7 @@ describe("TagsInput Component", () => {
     const clickableButtons = screen.getAllByRole("button");
     expect(clickableButtons.length).toBe(2);
     const [, tag2] = clickableButtons;
-    fireEvent.click(tag2.querySelector("[data-name=CloseXS]")!);
+    fireEvent.click(tag2.querySelector("[data-name=Close]")!);
 
     const remainingButtons = await screen.findAllByRole("button");
     expect(onChangeSpy).toHaveBeenCalledWith(expect.any(Object), [
@@ -241,7 +241,7 @@ describe("TagsInput Component", () => {
     expect(clickableButtons.length).toBe(0);
 
     // in readonly mode the button shouldn't have the close icon
-    expect(document.querySelector("[data-name=CloseXS]")).toBeNull();
+    expect(document.querySelector("[data-name=Close]")).toBeNull();
   });
 
   it("should call the suggestions callback when the input is changed", () => {

@@ -1,6 +1,5 @@
-import { MoreOptionsHorizontal } from "@hitachivantara/uikit-react-icons";
-
 import { HvDropDownMenu, HvDropDownMenuProps } from "../DropDownMenu";
+import { HvIcon } from "../icons";
 import { setId } from "../utils/setId";
 
 export const removeExtension = (label: string) =>
@@ -27,7 +26,7 @@ export const pathWithSubMenu = (
     nbrElemToSubMenu,
     <HvDropDownMenu
       id={setId(id, "submenu")}
-      icon={<MoreOptionsHorizontal iconSize="S" color="text" />}
+      icon={<HvIcon name="DotsHorizontal" />}
       dataList={subMenuList}
       {...dropDownMenuProps}
       onClick={onClick != null ? handleClick : undefined}
