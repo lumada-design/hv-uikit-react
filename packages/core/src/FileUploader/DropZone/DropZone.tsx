@@ -1,5 +1,4 @@
 import { useContext, useRef, useState } from "react";
-import { Doc } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -13,6 +12,7 @@ import {
 } from "../../FormElement";
 import { useLabels } from "../../hooks/useLabels";
 import { useUniqueId } from "../../hooks/useUniqueId";
+import { HvIcon } from "../../icons";
 import { uniqueId } from "../../utils/helpers";
 import { setId } from "../../utils/setId";
 import { HvFileData, HvFilesAddedEvent } from "../File";
@@ -236,7 +236,11 @@ export const HvDropZone = (props: HvDropZoneProps) => {
             </div>
           ) : (
             <>
-              <Doc size="M" className={classes.dropZoneAreaIcon} />
+              <HvIcon
+                name="Doc"
+                size="md"
+                className={classes.dropZoneAreaIcon}
+              />
               <div className={classes.dropZoneAreaLabels}>
                 <div className={classes.dragText}>
                   {labels?.drag}

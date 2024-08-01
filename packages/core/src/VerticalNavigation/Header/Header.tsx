@@ -1,11 +1,11 @@
 import { useContext, useMemo } from "react";
-import { Backwards, Forwards, Menu } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../../Button";
+import { HvIcon } from "../../icons";
 import { HvBaseProps } from "../../types/generic";
 import { HvTypography } from "../../Typography";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
@@ -67,8 +67,10 @@ export const HvVerticalNavigationHeader = (
 
   if (!shouldShowTitle) return null;
 
-  const openIcon = openIconProp ?? (!useIcons ? <Menu /> : <Forwards />);
-  const closeIcon = closeIconProp ?? <Backwards />;
+  const openIcon = openIconProp ?? (
+    <HvIcon name={useIcons ? "Forwards" : "Menu"} />
+  );
+  const closeIcon = closeIconProp ?? <HvIcon name="Backwards" />;
 
   const handleClickBack = () => navigateToParentHandler?.();
 
@@ -94,7 +96,7 @@ export const HvVerticalNavigationHeader = (
           aria-label="Back"
           {...otherBackButtonProps}
         >
-          <Backwards iconSize="XS" />
+          <HvIcon name="Backwards" size="xs" />
         </HvButton>
       )}
       {isOpen && (

@@ -1,6 +1,6 @@
-import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
+import { HvIcon } from "../../icons";
 import { staticClasses, useClasses } from "./PathElement.styles";
 
 export { staticClasses as pathElementClasses };
@@ -24,7 +24,9 @@ export const HvPathElement = ({
     <li className={classes.centerContainer}>
       {children}
       {!last && (
-        <DropRightXS
+        <HvIcon
+          name="CaretRight"
+          size="xs"
           className={classes.separatorContainer}
           color="textDisabled"
         />

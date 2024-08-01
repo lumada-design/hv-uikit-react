@@ -5,6 +5,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../../Button";
+import { HvIcon } from "../../icons";
 import { HvTypography, HvTypographyProps } from "../../Typography";
 import { capitalize } from "../../utils/helpers";
 import {
@@ -15,7 +16,7 @@ import {
 import TableContext from "../TableContext";
 import { TableSectionContext } from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableHeader.styles";
-import { getSortIcon, isParagraph } from "./utils";
+import { getSortIconName, isParagraph } from "./utils";
 
 export { staticClasses as tableHeaderClasses };
 
@@ -107,11 +108,6 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
 
     const scope = scopeProp ?? (isHeadCell ? "col" : "row");
 
-    const Sort = useMemo(
-      () => getSortIcon(sorted && sortDirection),
-      [sorted, sortDirection],
-    );
-
     const Component =
       component || tableContext?.components?.Th || defaultComponent;
 
@@ -169,7 +165,10 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
               aria-label="Sort"
               {...sortButtonProps}
             >
-              <Sort className={classes.sortIcon} />
+              <HvIcon
+                name={getSortIconName(sorted && sortDirection)}
+                className={classes.sortIcon}
+              />
             </HvButton>
           )}
           <HvTypography

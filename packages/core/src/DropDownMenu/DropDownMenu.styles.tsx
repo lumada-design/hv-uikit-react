@@ -2,7 +2,12 @@ import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
-  root: {},
+  root: {
+    flexShrink: 0,
+    "& > div": {
+      height: "inherit",
+    },
+  },
   /** @deprecated use `classes.root` instead */
   container: {},
   baseContainer: {

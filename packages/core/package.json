@@ -41,7 +41,6 @@
   "dependencies": {
     "@emotion/cache": "^11.11.0",
     "@emotion/serialize": "^1.1.2",
-    "@hitachivantara/uikit-react-icons": "^5.14.5",
     "@hitachivantara/uikit-react-shared": "^5.3.30",
     "@hitachivantara/uikit-react-utils": "^0.2.31",
     "@hitachivantara/uikit-styles": "^5.44.3",

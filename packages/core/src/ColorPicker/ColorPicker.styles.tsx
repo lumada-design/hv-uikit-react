@@ -37,8 +37,10 @@ export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
     },
   },
   dropdownRootIconOnly: {
-    width: 32,
-    height: 32,
+    "&,& .HvBaseDropdown-arrowContainer": {
+      width: 32,
+      height: 32,
+    },
     "& .HvBaseDropdown-selection": {
       padding: 0,
     },

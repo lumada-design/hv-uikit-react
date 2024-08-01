@@ -1,10 +1,10 @@
 import { useCallback } from "react";
-import { Add, Delete, Info } from "@hitachivantara/uikit-react-icons";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton } from "../../Button";
 import { HvEmptyState } from "../../EmptyState";
 import { HvIconButton } from "../../IconButton";
+import { HvIcon } from "../../icons";
 import { HvMultiButton } from "../../MultiButton";
 import { HvTypography } from "../../Typography";
 import { useQueryBuilderContext } from "../Context";
@@ -51,7 +51,7 @@ export const RuleGroup = ({
             dispatchAction({ type: "add-rule", id });
           }}
           disabled={readOnly}
-          startIcon={<Add />}
+          startIcon={<HvIcon name="Add" />}
         >
           {level === 0 && labels.query?.addRule?.label != null
             ? labels.query?.addRule?.label
@@ -66,7 +66,7 @@ export const RuleGroup = ({
               dispatchAction({ type: "add-group", id });
             }}
             disabled={readOnly}
-            startIcon={<Add />}
+            startIcon={<HvIcon name="Add" />}
           >
             {level === 0 && labels.query?.addGroup?.label != null
               ? labels.query?.addGroup?.label
@@ -135,7 +135,8 @@ export const RuleGroup = ({
           }
           disabled={readOnly}
         >
-          <Delete
+          <HvIcon
+            name="Delete"
             className={cx({ [classes.topRemoveButtonDisabled]: readOnly })}
           />
         </HvIconButton>
@@ -224,7 +225,7 @@ export const RuleGroup = ({
               )}
             </>
           }
-          icon={<Info />}
+          icon={<HvIcon name="Info" />}
         />
       )}
       <div

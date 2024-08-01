@@ -1,10 +1,7 @@
-import {
-  DropLeftXS as DropLeftIcon,
-  DropRightXS as DropRightIcon,
-} from "@hitachivantara/uikit-react-icons";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton } from "../../../Button";
+import { HvIcon } from "../../../icons";
 import { HvBaseProps } from "../../../types/generic";
 import { setId } from "../../../utils/setId";
 import { staticClasses, useClasses } from "./Navigation.styles";
@@ -37,7 +34,7 @@ export const Navigation = ({
         })}
         onClick={onNavigatePrevious}
       >
-        <DropLeftIcon />
+        <HvIcon name="CaretRight" size="xs" rotate />
       </HvButton>
 
       <HvButton
@@ -62,7 +59,7 @@ export const Navigation = ({
         })}
         onClick={onNavigateNext}
       >
-        <DropRightIcon />
+        <HvIcon name="CaretRight" size="xs" />
       </HvButton>
     </div>
   );

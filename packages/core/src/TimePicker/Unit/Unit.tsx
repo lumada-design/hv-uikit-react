@@ -1,12 +1,9 @@
 import { DateFieldState, DateSegment } from "@react-stately/datepicker";
-import {
-  DropUpXS as AddTimeIcon,
-  DropDownXS as SubtractTimeIcon,
-} from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvBaseInput, HvBaseInputProps } from "../../BaseInput";
 import { HvButton } from "../../Button";
+import { HvIcon } from "../../icons";
 import { useClasses } from "./Unit.styles";
 
 interface UnitProps {
@@ -37,7 +34,9 @@ export const Unit = ({
 
   return (
     <div className={classes.root}>
-      {type !== "literal" && <AddTimeIcon onClick={onAdd} />}
+      {type !== "literal" && (
+        <HvIcon name="CaretDown" size="xs" rotate onClick={onAdd} />
+      )}
       {type === "literal" && <div className={classes.separator}>{text}</div>}
       {type === "dayPeriod" && (
         <HvButton icon className={classes.periodToggle} onClick={onAdd}>
@@ -68,7 +67,9 @@ export const Unit = ({
           inputProps={{ autoComplete: "off", type: "number" }}
         />
       )}
-      {type !== "literal" && <SubtractTimeIcon onClick={onSub} />}
+      {type !== "literal" && (
+        <HvIcon name="CaretDown" size="xs" onClick={onSub} />
+      )}
     </div>
   );
 };

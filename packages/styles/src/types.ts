@@ -21,6 +21,8 @@ export type HvThemeTokens = typeof flattenTokens;
 export type HvThemeComponentsProps<ComponentNames extends string = string> = {
   /** Component properties to override */
   components?: Record<ComponentNames, Record<string, any>>;
+  /** Record of icon names and their path, to override the default icons */
+  icons?: Record<string, string> & { viewBox: string };
 };
 
 /** Theme components */

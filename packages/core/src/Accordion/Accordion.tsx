@@ -1,5 +1,4 @@
 import { forwardRef, useCallback, useMemo } from "react";
-import { DropUpXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -7,6 +6,7 @@ import {
 
 import { HvButtonBase } from "../ButtonBase";
 import { useExpandable } from "../hooks/useExpandable";
+import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography, HvTypographyVariants } from "../Typography";
 import { staticClasses, useClasses } from "./Accordion.styles";
@@ -98,7 +98,7 @@ export const HvAccordion = forwardRef<
         onClick={handleClick}
         variant={labelVariant}
       >
-        <DropUpXS rotate={!isOpen} />
+        <HvIcon name="CaretDown" rotate={isOpen} size="xs" />
         {label}
       </HvTypography>
     );

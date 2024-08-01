@@ -3,7 +3,6 @@ import type { SnackbarProps as MuiSnackbarProps } from "@mui/material/Snackbar";
 import SnackbarContent, {
   type SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
-import { Close } from "@hitachivantara/uikit-react-icons";
 import {
   createClasses,
   useDefaultProps,
@@ -14,6 +13,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvActionsGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { HvButton, HvButtonProps } from "../Button";
+import { HvIcon } from "../icons";
 import { iconVariant } from "./iconVariant";
 
 const { useClasses } = createClasses("HvCallout", {
@@ -52,7 +52,9 @@ const { useClasses } = createClasses("HvCallout", {
     overflow: "hidden",
     wordBreak: "break-word",
   },
-  messageIcon: {},
+  messageIcon: {
+    lineHeight: 0,
+  },
   messageTitle: {
     display: "block",
     fontWeight: theme.fontWeights.semibold,
@@ -196,7 +198,7 @@ export const HvCallout = forwardRef<
                 onClick={(evt) => onClose?.(evt, "clickaway")}
                 {...actionProps}
               >
-                <Close size="XS" />
+                <HvIcon size="xs" name="Close" />
               </HvButton>
             )}
             {showCustomActions && actionsContent}
