@@ -1015,10 +1015,9 @@ const ds3 = makeTheme((theme) => ({
           [`&& .HvPagination-pageSizeInputRoot`]: {
             height: 32,
           },
-          [`& .HvPagination-icon > svg`]: {
-            width: 16,
-            height: 16,
-          },
+        },
+        icon: {
+          fontSize: 16,
         },
         pageSizeOptions: {
           height: 32,
@@ -1426,13 +1425,8 @@ const ds3 = makeTheme((theme) => ({
         },
         topGutter: { paddingTop: "8px" },
         defaultIcon: {
-          minWidth: "32px",
-          width: "32px",
-          height: "32px",
-          "& svg": {
-            height: "16px",
-            width: "16px",
-          },
+          fontSize: 16,
+          margin: 8,
         },
       },
     },

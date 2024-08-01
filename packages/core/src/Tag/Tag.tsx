@@ -1,5 +1,4 @@
 import { cloneElement, forwardRef, isValidElement } from "react";
-import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import {
   mergeStyles,
   useDefaultProps,
@@ -15,6 +14,7 @@ import {
 import { HvCheckBoxIcon } from "../BaseCheckBox/CheckBoxIcon";
 import { HvButtonBase, HvButtonBaseProps } from "../ButtonBase";
 import { useControlled } from "../hooks/useControlled";
+import { HvIcon } from "../icons";
 import { HvTypography } from "../Typography";
 import { isDeleteKey } from "../utils/keyboardUtils";
 import { staticClasses, useClasses } from "./Tag.styles";
@@ -132,12 +132,15 @@ export const HvTag = forwardRef<
         onClick: handleDeleteClick,
       })
     ) : (
-      <CloseXS
-        size="XS"
-        onClick={handleDeleteClick}
-        className={cx(classes.deleteIcon, classes.button, classes.tagButton)}
-        {...deleteButtonProps}
-      />
+      <div>
+        <HvIcon
+          compact
+          name="Close"
+          onClick={handleDeleteClick as any}
+          className={cx(classes.deleteIcon, classes.button, classes.tagButton)}
+          {...(deleteButtonProps as any)}
+        />
+      </div>
     );
 
   return (
