@@ -24,6 +24,9 @@ const classes = {
   }),
   stack: css({
     width: 350,
+    "& .HvFocus-root": {
+      borderRadius: theme.space.sm,
+    },
   }),
   tags: css({
     display: "flex",
@@ -121,8 +124,8 @@ export const StackStory = () => (
         <div className={classes.tags}>
           <HvTypography variant="caption1">Last used:</HvTypography>
           <div>
-            <HvTag label="Testing" />
-            <HvTag label="Lorem ipsum" />
+            <HvTag label="Testing" tabIndex={-1} />
+            <HvTag label="Lorem ipsum" tabIndex={-1} />
           </div>
         </div>
       </SwitchCard>
@@ -138,8 +141,8 @@ export const StackStory = () => (
         <div className={classes.tags}>
           <HvTypography variant="caption1">Last used:</HvTypography>
           <div>
-            <HvTag label="Testing" />
-            <HvTag label="Lorem ipsum" />
+            <HvTag label="Testing" tabIndex={-1} />
+            <HvTag label="Lorem ipsum" tabIndex={-1} />
           </div>
         </div>
       </SwitchCard>

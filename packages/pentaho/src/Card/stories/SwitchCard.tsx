@@ -42,17 +42,18 @@ export const SwitchCard = ({
     <HvCard>
       <HvCardSection>
         <div className={classes.root}>
+          <div className={classes.switch}>
+            <HvSwitch
+              aria-label="Show content"
+              onChange={() => setOpen((p) => !p)}
+              tabIndex={0}
+            />
+          </div>
           <div>{icon}</div>
           <div className={classes.content}>
             <HvTypography variant="title4">{title}</HvTypography>
             <HvTypography variant="caption1">{description}</HvTypography>
             {open && children}
-          </div>
-          <div className={classes.switch}>
-            <HvSwitch
-              aria-label="Show content"
-              onChange={() => setOpen((p) => !p)}
-            />
           </div>
         </div>
       </HvCardSection>
