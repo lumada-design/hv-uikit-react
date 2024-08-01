@@ -1,10 +1,10 @@
 import { useSlotProps } from "@mui/base/utils";
-import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { DropXS } from "../icons";
 import { fixedForwardRef, HvBaseProps } from "../types/generic";
 import {
   DEFAULT_TREE_VIEW_PLUGINS,
@@ -59,8 +59,8 @@ export const HvTreeView = fixedForwardRef(function HvTreeView<
     selected,
     defaultSelected,
     disableSelection,
-    defaultCollapseIcon = <DropDownXS />,
-    defaultExpandIcon = <DropRightXS />,
+    defaultCollapseIcon = <DropXS rotation="down" />,
+    defaultExpandIcon = <DropXS rotation="right" />,
     defaultEndIcon,
     defaultParentIcon,
     onNodeSelect,

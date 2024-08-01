@@ -7,8 +7,8 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { Box, Check, Partial } from "../icons";
 import { staticClasses, useClasses } from "./BaseCheckBox.styles";
-import { Box, Check, Partial } from "./icons";
 
 export { staticClasses as baseCheckBoxClasses };
 
@@ -86,12 +86,10 @@ export interface HvBaseCheckBoxProps
   classes?: HvBaseCheckBoxClasses;
 }
 
-const getSelectorIcons = () => {
-  return {
-    checkbox: <Box />,
-    checkboxPartial: <Partial />,
-    checkboxChecked: <Check />,
-  };
+const icons = {
+  checkbox: <Box compact />,
+  checkboxPartial: <Partial compact />,
+  checkboxChecked: <Check compact />,
 };
 
 /**
@@ -127,8 +125,6 @@ export const HvBaseCheckBox = forwardRef<
   const { classes, cx } = useClasses(classesProp);
 
   const [focusVisible, setFocusVisible] = useState<boolean>(false);
-
-  const icons = getSelectorIcons();
 
   const onChangeCallback = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {

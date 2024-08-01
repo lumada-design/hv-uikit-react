@@ -9,13 +9,6 @@ import {
 } from "react";
 import { useForkRef } from "@mui/material/utils";
 import {
-  CloseXS,
-  Preview,
-  PreviewOff,
-  Search,
-  Success,
-} from "@hitachivantara/uikit-react-icons";
-import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
@@ -52,6 +45,7 @@ import { useControlled } from "../hooks/useControlled";
 import { useIsMounted } from "../hooks/useIsMounted";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
+import { Close, Preview, PreviewOff, Search, Success } from "../icons";
 import { HvTooltip } from "../Tooltip";
 import { fixedForwardRef } from "../types/generic";
 import { isKey } from "../utils/keyboardUtils";
@@ -602,7 +596,7 @@ export const HvInput = fixedForwardRef(function HvInput<
         onClick={handleClear}
         aria-label={labels?.clearButtonLabel}
         aria-controls={setId(elementId, "input")}
-        icon={<CloseXS />}
+        icon={<Close />}
       />
     );
   }, [

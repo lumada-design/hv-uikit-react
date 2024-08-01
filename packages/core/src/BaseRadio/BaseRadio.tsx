@@ -5,8 +5,8 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { Selected, Unselected } from "../icons";
 import { staticClasses, useClasses } from "./BaseRadio.styles";
-import { Selected, Unselected } from "./icons";
 
 export { staticClasses as baseRadioClasses };
 
@@ -85,11 +85,9 @@ export interface HvBaseRadioProps
   onBlur?: (event: React.FocusEvent<any>) => void;
 }
 
-export const getSelectorIcons = () => {
-  return {
-    radio: <Unselected />,
-    radioChecked: <Selected />,
-  };
+const icons = {
+  radio: <Unselected compact />,
+  radioChecked: <Selected compact />,
 };
 
 /**
@@ -140,8 +138,6 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
       },
       [onBlur],
     );
-
-    const icons = getSelectorIcons();
 
     const onLocalChange = useCallback(
       (evt: React.ChangeEvent<HTMLInputElement>) => {

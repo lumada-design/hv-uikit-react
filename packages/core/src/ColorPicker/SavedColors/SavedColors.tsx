@@ -1,13 +1,12 @@
-// @types/react-color seems to be broken
-// @ts-ignore
+// @ts-expect-error: @types/react-color seems to be broken
 import { Swatch } from "react-color/lib/components/common";
-import { Add, CloseXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { HvButton } from "../../Button";
+import { HvIconButton } from "../../IconButton";
+import { Add, Close } from "../../icons";
 import { staticClasses, useClasses } from "./SavedColors.styles";
 
 export { staticClasses as colorPickerSavedColorsClasses };
@@ -45,15 +44,14 @@ export const SavedColors = (props: SavedColorsProps) => {
 
   return (
     <div className={classes.root}>
-      <HvButton
+      <HvIconButton
         className={classes.addButton}
         variant="secondarySubtle"
-        icon
         onClick={onAddColor}
-        aria-label={addButtonAriaLabel}
+        title={addButtonAriaLabel}
       >
-        <Add aria-hidden />
-      </HvButton>
+        <Add compact />
+      </HvIconButton>
       {colors.map((color, index) => (
         <div
           key={`saved-color-${color}-${index}`}
@@ -69,14 +67,14 @@ export const SavedColors = (props: SavedColorsProps) => {
             />
           </div>
           <div className={classes.removeButtonRoot}>
-            <HvButton
+            <HvIconButton
               className={classes.removeButton}
               variant="secondarySubtle"
               onClick={() => onRemoveColor(color, index)}
-              aria-label={deleteButtonAriaLabel}
+              title={deleteButtonAriaLabel}
             >
-              <CloseXS aria-hidden iconSize="XS" />
-            </HvButton>
+              <Close compact size="xs" />
+            </HvIconButton>
           </div>
         </div>
       ))}

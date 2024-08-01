@@ -1,11 +1,11 @@
-import { Close } from "@hitachivantara/uikit-react-icons";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import {
   HvActionsGeneric,
   HvActionsGenericProps,
 } from "../../../ActionsGeneric";
-import { HvButton } from "../../../Button";
+import { HvIconButton } from "../../../IconButton";
+import { Close } from "../../../icons";
 import { HvBaseProps } from "../../../types/generic";
 import { staticClasses, useClasses } from "./ActionContainer.styles";
 
@@ -43,16 +43,15 @@ export const HvActionContainer = (props: HvActionContainerProps) => {
   const { classes } = useClasses(classesProp);
   return (
     <div className={classes.actionContainer}>
-      <HvButton
-        icon
+      <HvIconButton
         className={classes.closeAction}
         variant="semantic"
-        aria-label="Close"
+        title="Close"
         onClick={onClose}
         {...others}
       >
-        <Close iconSize="XS" className={classes.iconContainer} color="base2" />
-      </HvButton>
+        <Close size="xs" className={classes.iconContainer} />
+      </HvIconButton>
       {action && (
         <div className={classes.actionsInnerContainer}>
           <HvActionsGeneric

@@ -1,5 +1,4 @@
 import { forwardRef, isValidElement } from "react";
-import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -8,6 +7,7 @@ import {
 import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
 import { HvDropDownMenu, HvDropDownMenuProps } from "../DropDownMenu";
 import { HvIconButton } from "../IconButton";
+import { MoreOptionsVertical } from "../icons";
 import { HvBaseProps } from "../types/generic";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./ActionsGeneric.styles";

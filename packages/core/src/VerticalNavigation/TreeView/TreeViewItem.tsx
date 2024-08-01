@@ -7,7 +7,6 @@ import {
   useRef,
   useState,
 } from "react";
-import { DropDownXS, Forwards } from "@hitachivantara/uikit-react-icons";
 import {
   mergeStyles,
   useDefaultProps,
@@ -16,6 +15,7 @@ import {
 
 import { HvAvatar } from "../../Avatar";
 import { useForkRef } from "../../hooks/useForkRef";
+import { DropXS } from "../../icons";
 import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { HvTooltip } from "../../Tooltip";
 import {
@@ -507,7 +507,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                 useIcons && icon
               )}
               {hasChildren && !isOpen ? (
-                <Forwards iconSize="XS" />
+                <DropXS size="xs" rotation="right" />
               ) : (
                 hasAnyChildWithData && !isOpen && <div />
               )}
@@ -524,9 +524,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
               </div>
             )}
 
-            {isOpen && expandable && (
-              <DropDownXS color="currentcolor" rotate={expanded} />
-            )}
+            {isOpen && expandable && <DropXS rotation={!expanded} />}
           </HvTypography>
         </HvTooltip>
       );

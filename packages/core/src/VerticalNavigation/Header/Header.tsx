@@ -1,11 +1,11 @@
 import { useContext, useMemo } from "react";
-import { Backwards, Forwards, Menu } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../../Button";
+import { Backwards, Forwards, Menu } from "../../icons";
 import { HvBaseProps } from "../../types/generic";
 import { HvTypography } from "../../Typography";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
@@ -94,7 +94,7 @@ export const HvVerticalNavigationHeader = (
           aria-label="Back"
           {...otherBackButtonProps}
         >
-          <Backwards iconSize="XS" />
+          <Backwards size="xs" />
         </HvButton>
       )}
       {isOpen && (

@@ -20,18 +20,6 @@ export interface HvMessageContainerProps
   icon?: React.ReactNode;
   /** The message to display. */
   message?: React.ReactNode;
-  /**
-   * Actions to display on message.
-   *
-   * @deprecated Use `actions` instead.
-   * */
-  actionsOnMessage?: HvActionsGenericProps["actions"];
-  /**
-   * The callback function called when an action is triggered, receiving `actionsOnMessage` as parameter.
-   *
-   * @deprecated Use `onAction` instead.
-   * */
-  actionsOnMessageCallback?: HvActionsGenericProps["actionsCallback"];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvMessageContainerClasses;
 }
@@ -40,8 +28,6 @@ export const HvMessageContainer = ({
   id,
   classes: classesProp,
   icon,
-  actionsOnMessage, // TODO - remove in v6
-  actionsOnMessageCallback, // TODO - remove in v6
   actions,
   onAction,
   message,
@@ -50,11 +36,11 @@ export const HvMessageContainer = ({
 
   return (
     <>
-      {icon && <div className={classes.iconContainer}>{icon}</div>}
+      {icon}
       <HvTypography id={setId(id, "message-text")} className={classes.message}>
         {message}
       </HvTypography>
-      {(actionsOnMessage ?? actions) && (
+      {actions && (
         <div
           id={setId(id, "message-actions")}
           className={classes.actionMessageContainer}
@@ -62,8 +48,7 @@ export const HvMessageContainer = ({
           <HvActionsGeneric
             id={id}
             variant="semantic"
-            actions={actionsOnMessage ?? actions}
-            actionsCallback={actionsOnMessageCallback}
+            actions={actions}
             onAction={onAction}
           />
         </div>

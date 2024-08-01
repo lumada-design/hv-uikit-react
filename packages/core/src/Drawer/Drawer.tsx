@@ -1,12 +1,12 @@
 import { forwardRef } from "react";
 import MuiDrawer, { DrawerProps as MuiDrawerProps } from "@mui/material/Drawer";
-import { Close } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvIconButton } from "../IconButton";
+import { Close } from "../icons";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Drawer.styles";
 

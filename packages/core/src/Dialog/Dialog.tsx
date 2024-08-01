@@ -1,6 +1,5 @@
 import { useCallback, useMemo } from "react";
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
-import { Close } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   useTheme,
@@ -8,6 +7,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvIconButton } from "../IconButton";
+import { Close } from "../icons";
 import { getElementById } from "../utils/document";
 import { setId } from "../utils/setId";
 import { DialogContext } from "./context";
@@ -125,7 +125,7 @@ export const HvDialog = (props: HvDialogProps) => {
           onClose?.(event, undefined)
         }
       >
-        <Close />
+        <Close compact />
       </HvIconButton>
       <DialogContext.Provider value={contextValue}>
         {children}

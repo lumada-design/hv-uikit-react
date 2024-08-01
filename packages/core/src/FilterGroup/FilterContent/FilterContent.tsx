@@ -1,5 +1,4 @@
 import { forwardRef, useContext, useMemo, useRef, useState } from "react";
-import { Filters } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   useTheme,
@@ -10,6 +9,7 @@ import { HvActionBar } from "../../ActionBar";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../../BaseDropdown";
 import { HvButton, HvButtonVariant } from "../../Button";
 import { HvFormStatus } from "../../FormElement";
+import { Filters } from "../../icons";
 import { HvTypography } from "../../Typography";
 import { setId } from "../../utils/setId";
 import { HvFilterGroupCounter } from "../Counter";

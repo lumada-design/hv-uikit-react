@@ -35,12 +35,14 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   },
   /** applied to the _left_ icon container */
   startIcon: {
+    flexShrink: 0,
     marginLeft: theme.spacing(-1),
     marginTop: -1,
     marginBottom: -1,
   },
   /** applied to the _right_ icon container */
   endIcon: {
+    flexShrink: 0,
     marginRight: theme.spacing(-1),
     marginTop: -1,
     marginBottom: -1,
