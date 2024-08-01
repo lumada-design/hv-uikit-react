@@ -8,12 +8,6 @@ import {
 } from "react";
 import useCarousel from "embla-carousel-react";
 import {
-  Backwards,
-  Close,
-  Forwards,
-  Fullscreen,
-} from "@hitachivantara/uikit-react-icons";
-import {
   clamp,
   useDefaultProps,
   useTheme,
@@ -24,6 +18,7 @@ import { HvButton } from "../Button";
 import { HvContainer } from "../Container";
 import { useLabels } from "../hooks/useLabels";
 import { HvIconButton, HvIconButtonProps } from "../IconButton";
+import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { staticClasses, useClasses } from "./Carousel.styles";
@@ -217,7 +212,11 @@ export const HvCarousel = forwardRef<
           onClick={handleFullscreen}
           className={classes.closeButton}
         >
-          {isFullscreen ? <Close /> : <Fullscreen />}
+          {isFullscreen ? (
+            <HvIcon name="Close" />
+          ) : (
+            <HvIcon name="Fullscreen" />
+          )}
         </HvIconButton>
       )}
     </div>
@@ -294,7 +293,7 @@ export const HvCarousel = forwardRef<
               aria-label={labels.backwards}
               onClick={handlePrevious}
             >
-              <Backwards iconSize="XS" />
+              <HvIcon name="Chevron" rotation size="xs" />
             </HvButton>
             <HvButton
               icon
@@ -303,7 +302,7 @@ export const HvCarousel = forwardRef<
               aria-label={labels.forwards}
               onClick={handleNext}
             >
-              <Forwards iconSize="XS" />
+              <HvIcon name="Chevron" size="xs" />
             </HvButton>
           </div>
         )}

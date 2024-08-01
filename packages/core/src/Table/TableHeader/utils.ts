@@ -1,20 +1,13 @@
-import {
-  SortAscendingXS,
-  SortDescendingXS,
-  SortXS,
-} from "@hitachivantara/uikit-react-icons";
-
-export const getSortIcon = (dir?: string | false) => {
+export const getSortIconName = (dir?: string | false) => {
   switch (dir) {
     case "ascending":
-      return SortAscendingXS;
+      return "SortAscendingXS";
     case "descending":
-      return SortDescendingXS;
+      return "SortDescendingXS";
     default:
-      return SortXS;
+      return "SortXS";
   }
 };
-
 export const isParagraph = (children: React.ReactNode) => {
   return typeof children === "string" && /\s/.test(children);
 };

@@ -157,7 +157,6 @@ export * from "./utils/keyboardUtils";
 export * from "./utils/multiSelectionEventHandler";
 export * from "./utils/Random";
 export * from "./utils/setId";
-export * from "./utils/sizes";
 export * from "./utils/theme";
 export * from "./utils/useSavedState";
 export * from "./utils/wrapperTooltip";

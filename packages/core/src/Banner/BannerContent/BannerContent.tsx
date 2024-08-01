@@ -2,11 +2,11 @@ import { forwardRef } from "react";
 import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
-import { Close } from "@hitachivantara/uikit-react-icons";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvActionsGeneric, HvActionsGenericProps } from "../../ActionsGeneric";
 import { HvButton, HvButtonProps } from "../../Button";
+import { HvIcon } from "../../icons";
 import { iconVariant } from "../../utils/iconVariant";
 import { setId } from "../../utils/setId";
 import { HvBannerActionPosition, HvBannerVariant } from "../types";
@@ -127,7 +127,7 @@ export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
                 onClick={onClose}
                 {...actionProps}
               >
-                <Close size="XS" />
+                <HvIcon name="Close" size="xs" />
               </HvButton>
               {actions && effectiveActionsPosition === "bottom-right" && (
                 <div className={classes.actionsInnerContainer}>
