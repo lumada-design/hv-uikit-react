@@ -7,8 +7,8 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { HvIcon } from "../icons";
 import { staticClasses, useClasses } from "./BaseCheckBox.styles";
-import { Box, Check, Partial } from "./icons";
 
 export { staticClasses as baseCheckBoxClasses };
 
@@ -87,9 +87,9 @@ export interface HvBaseCheckBoxProps
 }
 
 const icons = {
-  checkbox: <Box />,
-  checkboxPartial: <Partial />,
-  checkboxChecked: <Check />,
+  checkbox: <HvIcon name="Box" compact />,
+  checkboxPartial: <HvIcon name="Partial" compact />,
+  checkboxChecked: <HvIcon name="Check" compact />,
 };
 
 /**

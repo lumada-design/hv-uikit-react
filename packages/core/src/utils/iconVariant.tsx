@@ -1,27 +1,17 @@
-import {
-  Caution,
-  Fail,
-  IconBaseProps,
-  Info,
-  Success,
-} from "@hitachivantara/uikit-react-icons";
+import { HvColorAny } from "@hitachivantara/uikit-styles";
 
+import { HvIcon } from "../icons";
 import type { HvCalloutVariant } from "./Callout";
 
-export const iconVariant = (
-  variant: HvCalloutVariant,
-  color?: IconBaseProps["color"],
-) => {
-  switch (variant) {
-    case "success":
-      return <Success color={color} />;
-    case "warning":
-      return <Caution color={color} />;
-    case "error":
-      return <Fail color={color} />;
-    case "info":
-      return <Info color={color} />;
-    default:
-      return null;
-  }
+const variantIconMap = {
+  success: "Success",
+  warning: "Caution",
+  error: "Fail",
+  info: "Info",
+} as const;
+
+export const iconVariant = (variant: HvCalloutVariant, color?: HvColorAny) => {
+  if (variant === "default" || variant === "accent") return null;
+
+  return <HvIcon name={variantIconMap[variant]} color={color} />;
 };

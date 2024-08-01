@@ -66,8 +66,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     color: "inherit",
   },
   deleteIcon: {
-    width: 16,
-    height: 16,
+    margin: 2,
     "&:hover": {
       backgroundColor: theme.colors.bgHover,
     },
@@ -78,8 +77,8 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
   },
   // TODO: remove in favour of `hasIcon` once it's no longer needed
   icon: {
-    width: 12,
-    height: 12,
+    margin: 0,
+    border: `1px solid ${theme.colors.textSubtle}`,
   },
 
   /** @deprecated use `root` instead */

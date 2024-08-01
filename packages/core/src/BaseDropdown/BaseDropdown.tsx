@@ -11,7 +11,6 @@ import { PopperProps, usePopper } from "react-popper";
 import type { ClickAwayListenerProps } from "@mui/material/ClickAwayListener";
 import { useForkRef } from "@mui/material/utils";
 import { detectOverflow, Options, Placement } from "@popperjs/core";
-import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -19,6 +18,7 @@ import {
 
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
+import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { getFirstAndLastFocus } from "../utils/focusableElementFinder";
@@ -235,8 +235,6 @@ const BaseDropdown = forwardRef<
     [isOpen, disabled, setIsOpen, onToggle, referenceElement],
   );
 
-  const ExpanderComponent = isOpen ? DropUpXS : DropDownXS;
-
   const defaultHeaderElement = (
     <div
       id={setId(id, "header")}
@@ -272,9 +270,10 @@ const BaseDropdown = forwardRef<
       </div>
       <div className={classes.arrowContainer}>
         {adornment || (
-          <ExpanderComponent
-            iconSize="XS"
-            color={disabled ? "textDisabled" : undefined}
+          <HvIcon
+            name="CaretDown"
+            size="xs"
+            rotate={isOpen}
             className={classes.arrow}
           />
         )}
