@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.10.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.10.4...@hitachivantara/uikit-react-icons@5.10.5) (2024-08-01)
+
+### Bug Fixes
+
+- Check icon coloring ([4e15ba1](https://github.com/lumada-design/hv-uikit-react/commit/4e15ba16910a2889eb7efd35fbf24e0b7bfe7630))
+
 ## 5.10.4 (2024-07-25)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

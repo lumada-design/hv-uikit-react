@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.1.4...@hitachivantara/uikit-react-pentaho@0.2.0) (2024-08-01)
+
+### Features
+
+- canvas tab and tabs renamed to panel tabs and tab ([#4252](https://github.com/lumada-design/hv-uikit-react/issues/4252)) ([7d86766](https://github.com/lumada-design/hv-uikit-react/commit/7d86766eaeb3a1608468a35b666755eccb5a6df5))
+
 ## [0.1.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.1.3...@hitachivantara/uikit-react-pentaho@0.1.4) (2024-07-25)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-pentaho

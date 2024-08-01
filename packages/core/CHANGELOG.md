@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.66.14](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.13...@hitachivantara/uikit-react-core@5.66.14) (2024-08-01)
+
+### Bug Fixes
+
+- **Carousel:** missing labels override and fullscreen handler added ([40b3d0b](https://github.com/lumada-design/hv-uikit-react/commit/40b3d0b325aaccc7334f4099cde093a7e282dc85))
+
 ## [5.66.13](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.12...@hitachivantara/uikit-react-core@5.66.13) (2024-07-25)
 
 ### Bug Fixes
