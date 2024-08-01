@@ -1,4 +1,3 @@
-import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -6,6 +5,7 @@ import {
 
 import { HvButton } from "../Button";
 import { useLabels } from "../hooks/useLabels";
+import { HvIcon } from "../icons";
 import { HvPaginationProps } from "../Pagination";
 import { HvBaseProps } from "../types/generic";
 import { useClasses } from "./Carousel.styles";
@@ -69,7 +69,7 @@ export const HvCarouselControls = (props: HvCarouselControlsProps) => {
             aria-label={labels.backwards}
             onClick={onPreviousClick}
           >
-            <Backwards iconSize="XS" />
+            <HvIcon name="Backwards" size="xs" />
           </HvButton>
           <div className={classes.pageCounter}>
             {`${selectedIndex + 1} / ${numSlides}`}
@@ -80,7 +80,7 @@ export const HvCarouselControls = (props: HvCarouselControlsProps) => {
             aria-label={labels.forwards}
             onClick={onNextClick}
           >
-            <Forwards iconSize="XS" />
+            <HvIcon name="Forwards" size="xs" />
           </HvButton>
         </>
       )}

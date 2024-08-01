@@ -1,12 +1,12 @@
 import { forwardRef } from "react";
 import type { Placement } from "@popperjs/core";
-import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../Button";
+import { HvIcon } from "../icons";
 import { staticClasses, useClasses } from "./DropdownButton.styles";
 
 export { staticClasses as dropdownButtonClasses };
@@ -42,14 +42,21 @@ export const HvDropdownButton = forwardRef<
     open,
     icon,
     readOnly,
-    children,
+    children: childrenProp,
     variant,
     ...others
   } = useDefaultProps("HvDropdownButton", props);
 
   const { classes, cx } = useClasses(classesProp, false);
 
-  const endIcon = icon ? undefined : <DropDownXS size="XS" rotate={open} />;
+  const endIcon = !icon && <HvIcon name="CaretDown" size="xs" rotate={open} />;
+
+  const children =
+    childrenProp && typeof childrenProp === "string" ? (
+      <div className={classes.placeholder}>{childrenProp}</div>
+    ) : (
+      childrenProp
+    );
 
   return (
     <HvButton
@@ -71,13 +78,7 @@ export const HvDropdownButton = forwardRef<
       variant={open ? "secondarySubtle" : variant}
       {...others}
     >
-      <div className={cx({ [classes.selection]: !icon })}>
-        {children && typeof children === "string" ? (
-          <div className={classes.placeholder}>{children}</div>
-        ) : (
-          children
-        )}
-      </div>
+      {icon ? children : <div className={classes.selection}>{children}</div>}
     </HvButton>
   );
 });

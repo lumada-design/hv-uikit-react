@@ -1,13 +1,12 @@
-// @types/react-color seems to be broken
-// @ts-ignore
+// @ts-expect-error: @types/react-color seems to be broken
 import { Swatch } from "react-color/lib/components/common";
-import { Add, CloseXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvIconButton } from "../../IconButton";
+import { HvIcon } from "../../icons";
 import { staticClasses, useClasses } from "./SavedColors.styles";
 
 export { staticClasses as colorPickerSavedColorsClasses };
@@ -51,7 +50,7 @@ export const SavedColors = (props: SavedColorsProps) => {
         onClick={onAddColor}
         title={addButtonAriaLabel}
       >
-        <Add aria-hidden />
+        <HvIcon name="Add" compact />
       </HvIconButton>
       {colors.map((color, index) => (
         <div
@@ -74,7 +73,7 @@ export const SavedColors = (props: SavedColorsProps) => {
               onClick={() => onRemoveColor(color, index)}
               title={deleteButtonAriaLabel}
             >
-              <CloseXS aria-hidden iconSize="XS" />
+              <HvIcon name="Close" compact size="xs" />
             </HvIconButton>
           </div>
         </div>

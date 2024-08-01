@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -7,6 +6,7 @@ import {
 
 import { HvButton, HvButtonProps } from "../Button";
 import { useExpandable } from "../hooks/useExpandable";
+import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
 import { staticClasses, useClasses } from "./Section.styles";
 
@@ -94,7 +94,7 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
                 {...buttonProps}
                 {...expandButtonProps}
               >
-                <DropDownXS rotate={isOpen} />
+                <HvIcon name="CaretDown" size="xs" rotate={isOpen} />
               </HvButton>
             )}
             {title}

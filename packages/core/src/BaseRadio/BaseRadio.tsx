@@ -5,8 +5,8 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { HvIcon } from "../icons";
 import { staticClasses, useClasses } from "./BaseRadio.styles";
-import { Selected, Unselected } from "./icons";
 
 export { staticClasses as baseRadioClasses };
 
@@ -86,8 +86,8 @@ export interface HvBaseRadioProps
 }
 
 const icons = {
-  radio: <Unselected />,
-  radioChecked: <Selected />,
+  radio: <HvIcon name="Unselected" compact />,
+  radioChecked: <HvIcon name="Selected" compact />,
 };
 
 /**

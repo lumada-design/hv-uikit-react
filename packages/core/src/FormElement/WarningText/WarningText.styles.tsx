@@ -6,7 +6,7 @@ export const { staticClasses, useClasses } = createClasses("HvWarningText", {
     display: "none",
     color: theme.form.errorColor,
   },
-  defaultIcon: { minWidth: "24px", width: "24px", height: "24px" },
+  defaultIcon: { margin: 6 },
   warningText: {
     ...theme.typography.caption1,
     color: "inherit",
