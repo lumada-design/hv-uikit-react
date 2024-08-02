@@ -1,4 +1,8 @@
-import { createClasses, theme } from "@hitachivantara/uikit-react-core";
+import {
+  buttonClasses,
+  createClasses,
+  theme,
+} from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses(
   "HvCanvasBottomPanel",
@@ -33,12 +37,7 @@ export const { staticClasses, useClasses } = createClasses(
         right: `calc(100% - var(--right) + ${theme.space.xs})`,
       },
     },
-    overflowing: {
-      "& $tabTitle": {
-        paddingLeft: theme.space.sm,
-        paddingRight: theme.space.sm,
-      },
-    },
+    overflowing: {},
     tab: {
       display: "flex",
       alignItems: "center",
@@ -49,8 +48,8 @@ export const { staticClasses, useClasses } = createClasses(
       display: "flex",
       width: "100%",
       padding: theme.space.sm,
-      paddingLeft: `calc(var(--left-actions-width) + ${theme.space.xs})`,
-      paddingRight: `calc(var(--right-actions-width) + ${theme.space.xs})`,
+      paddingLeft: "var(--left-actions-width)",
+      paddingRight: "var(--right-actions-width)",
     },
     tabsRoot: {
       position: "relative",
@@ -64,6 +63,18 @@ export const { staticClasses, useClasses } = createClasses(
       position: "absolute",
       right: theme.space.xs,
       top: 8,
+    },
+    actionsDisabled: {
+      pointerEvents: "none",
+      [`&& .${buttonClasses.disabled}`]: {
+        pointerEvents: "none",
+        backgroundColor: "transparent",
+        borderColor: "transparent",
+        ":hover": {
+          backgroundColor: "transparent",
+          borderColor: "transparent",
+        },
+      },
     },
     content: { borderTopRightRadius: "var(--right-border-radius)" },
   },

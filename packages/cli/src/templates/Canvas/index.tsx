@@ -86,19 +86,17 @@ const Page = () => {
   const { selectedTable, openedTables, setOpenedTables, setSelectedTable } =
     useCanvasContext();
 
-  const bottomTabs = useMemo(
+  const bottomTabs: HvCanvasBottomPanelProps["tabs"] = useMemo(
     () =>
       openedTables?.map((table) => ({
         id: table.id,
-        title: (
+        title: (overflowing) => (
           <div className={classes.titleRoot}>
-            <Table />
-            <div className={classes.titleContainer}>
-              <HvOverflowTooltip data={table.label} />
-            </div>
+            {!overflowing && <Table />}
+            <HvOverflowTooltip data={table.label} />
           </div>
         ),
-      })),
+      })) ?? [],
     [openedTables],
   );
 
@@ -180,6 +178,33 @@ const Page = () => {
     [bottomTabs, openedTables],
   );
 
+  const leftActions = [
+    {
+      id: "toggle",
+      label: minimize ? "Maximize" : "Minimize",
+      icon: (
+        <DropUpXS
+          iconSize="XS"
+          style={{ rotate: !minimize ? "180deg" : undefined }}
+          className={classes.toggleIcon}
+        />
+      ),
+    },
+  ];
+
+  const rightActions = [
+    {
+      id: "fullscreen",
+      label: "Fullscreen",
+      icon: <Fullscreen iconSize="XS" />,
+    },
+    {
+      id: "close",
+      label: "Close",
+      icon: <Close iconSize="XS" />,
+    },
+  ];
+
   return (
     <div className={classes.root}>
       <HvFlow
@@ -234,40 +259,22 @@ const Page = () => {
           Execute
         </HvButton>
       </HvCanvasToolbar>
-      {bottomTabs && bottomPanelOpen && (
+      {bottomTabs.length > 0 && bottomPanelOpen && (
         <HvCanvasBottomPanel
           className={cx({
             [classes.fullWidth]: !sidePanelOpen,
             [classes.minWidth]: sidePanelOpen,
           })}
+          classes={{
+            rightActions: classes.rightActions,
+          }}
           open={bottomPanelOpen}
           minimize={minimize}
           tabs={bottomTabs}
-          tab={selectedTable}
-          leftActions={[
-            {
-              id: "toggle",
-              label: minimize ? "Maximize" : "Minimize",
-              icon: (
-                <DropUpXS
-                  style={{ rotate: !minimize ? "180deg" : undefined }}
-                  className={classes.toggleIcon}
-                />
-              ),
-            },
-          ]}
-          rightActions={[
-            {
-              id: "fullscreen",
-              label: "Fullscreen",
-              icon: <Fullscreen />,
-            },
-            {
-              id: "close",
-              label: "Close",
-              icon: <Close />,
-            },
-          ]}
+          selectedTabId={selectedTable}
+          leftActions={leftActions}
+          rightActions={rightActions}
+          overflowActions={[...leftActions, ...rightActions]}
           onTabChange={handleChangeTab}
           onAction={handleAction}
         >
@@ -282,7 +289,9 @@ const Page = () => {
           onClose={() => setFullscreen((prev) => !prev)}
         >
           <HvDialogTitle className={classes.dialogTitle}>
-            {bottomTabs?.find((x) => x.id === selectedTable)?.title}
+            {(
+              bottomTabs?.find((x) => x.id === selectedTable)?.title as Function
+            )(false)}
           </HvDialogTitle>
           <HvDialogContent>
             <DataTable id={selectedTable} />
