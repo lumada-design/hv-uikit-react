@@ -31,9 +31,13 @@ export const Main: StoryObj<HvCardProps> = {
   },
 };
 
-export const Stack: StoryObj<HvCardProps> = {
+export const CustomCards: StoryObj<HvCardProps> = {
   parameters: {
     docs: {
+      description: {
+        story:
+          "This story illustrates how to create custom cards making use of the `CardSection` and `CardMedia` subcomponents and the polymorphic characteristics of the `Card` component.",
+      },
       source: {
         code: StackRaw,
       },
