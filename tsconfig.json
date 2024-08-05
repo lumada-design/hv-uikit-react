@@ -3,15 +3,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": ["apps/app/src/*"],
       "@hitachivantara/uikit-react-code-editor": ["packages/code-editor/src"],
       "@hitachivantara/uikit-react-core": ["packages/core/src"],
       "@hitachivantara/uikit-react-icons": ["packages/icons/src"],
       "@hitachivantara/uikit-react-lab": ["packages/lab/src"],
+      "@hitachivantara/uikit-react-pentaho": ["packages/pentaho/src"],
       "@hitachivantara/uikit-react-shared": ["packages/shared/src"],
-      "@hitachivantara/uikit-styles": ["packages/styles/src"],
       "@hitachivantara/uikit-react-viz": ["packages/viz/src"],
-      "@hitachivantara/uikit-react-pentaho": ["packages/pentaho/src"]
+      "@hitachivantara/uikit-styles": ["packages/styles/src"],
+      "~/*": ["apps/app/src/*"]
     }
   },
   "include": [".config", ".storybook/**/*", "apps", "docs", "packages"],
