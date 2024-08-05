@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.16.12 (2024-08-05)
+
+### Bug Fixes
+
+- **BottomPanel:** tab title overflow ([#4248](https://github.com/lumada-design/hv-uikit-react/issues/4248)) ([23468a9](https://github.com/lumada-design/hv-uikit-react/commit/23468a935996384edcf867797bfb96d01f7f7356))
+
 ## [1.16.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.16.10...@hitachivantara/hv-uikit-cli@1.16.11) (2024-07-25)
 
 ### Bug Fixes

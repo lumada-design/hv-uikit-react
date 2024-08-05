@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.2.0...@hitachivantara/uikit-react-pentaho@0.3.0) (2024-08-05)
+
+### Bug Fixes
+
+- **BottomPanel:** tab title overflow ([#4248](https://github.com/lumada-design/hv-uikit-react/issues/4248)) ([23468a9](https://github.com/lumada-design/hv-uikit-react/commit/23468a935996384edcf867797bfb96d01f7f7356))
+
+### Features
+
+- **Card:** add Pentaho Card component ([#4243](https://github.com/lumada-design/hv-uikit-react/issues/4243)) ([b5e5ebb](https://github.com/lumada-design/hv-uikit-react/commit/b5e5ebba174b438e62bb1e4e62ba2c271916919e))
+
 # [0.2.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.1.4...@hitachivantara/uikit-react-pentaho@0.2.0) (2024-08-01)
 
 ### Features
