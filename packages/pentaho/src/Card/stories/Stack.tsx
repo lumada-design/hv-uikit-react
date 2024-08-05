@@ -9,7 +9,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Copy, Delete, MoveFile, Tag } from "@hitachivantara/uikit-react-icons";
 
-// This files can be found in the following location:
+// These files can be found in the following location:
 // https://github.com/lumada-design/hv-uikit-react/tree/master/packages/pentaho/src/Card/stories/
 import { ImageCard } from "./ImageCard";
 import { LinkCard } from "./LinkCard";
@@ -27,6 +27,12 @@ const classes = {
     "& .HvFocus-root": {
       borderRadius: theme.space.sm,
     },
+  }),
+  stackTitle: css({
+    height: 32,
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "center",
   }),
   tags: css({
     display: "flex",
@@ -57,6 +63,9 @@ const iconWrapper = (icon: React.ReactNode, backgroundColor: HvColorAny) => (
 export const StackStory = () => (
   <div className={classes.root}>
     <HvStack withNavigation className={classes.stack}>
+      <div className={classes.stackTitle}>
+        <HvTypography variant="title4">Link Cards</HvTypography>
+      </div>
       <LinkCard
         title="Get Started"
         description="Click here to get started with UI Kit."
@@ -71,6 +80,9 @@ export const StackStory = () => (
       />
     </HvStack>
     <HvStack withNavigation className={classes.stack}>
+      <div className={classes.stackTitle}>
+        <HvTypography variant="title4">Image Cards</HvTypography>
+      </div>
       <ImageCard
         title="Madeira"
         image="https://thetravelbible.com/wp-content/uploads/2022/12/what-to-do-madeira-islands-portugal-800x533.jpg"
@@ -86,6 +98,9 @@ export const StackStory = () => (
       />
     </HvStack>
     <HvStack withNavigation className={classes.stack}>
+      <div className={classes.stackTitle}>
+        <HvTypography variant="title4">Cards with custom content</HvTypography>
+      </div>
       <SimpleCard
         title="Move Data"
         description="Move data to the destination and delete it from the original source."
@@ -112,6 +127,9 @@ export const StackStory = () => (
       />
     </HvStack>
     <HvStack withNavigation className={classes.stack}>
+      <div className={classes.stackTitle}>
+        <HvTypography variant="title4">Cards with hidden content</HvTypography>
+      </div>
       <SwitchCard
         title="Tag Source"
         description="Add a tag so people know why the dt was moved."
