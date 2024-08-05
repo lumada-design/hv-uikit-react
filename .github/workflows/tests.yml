@@ -116,4 +116,4 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Run Build
-        run: npm run build
+        run: npm run build:app
