@@ -1,5 +1,5 @@
 // TODO: remove
 export {
   createClasses,
-  ExtractNames,
+  type ExtractNames,
 } from "@hitachivantara/uikit-react-shared";
