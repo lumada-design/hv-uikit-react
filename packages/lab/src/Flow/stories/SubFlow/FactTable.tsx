@@ -20,6 +20,7 @@ const classes = {
     height: "100%",
   }),
   header: css({
+    paddingLeft: theme.spacing("xs"),
     borderRadius: `${theme.radii.round} ${theme.radii.round} 0 0`,
     display: "flex",
     flexDirection: "row",

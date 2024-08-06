@@ -24,6 +24,7 @@ const classes = {
     height: "100%",
   }),
   header: css({
+    paddingLeft: theme.spacing("xs"),
     borderRadius: "16px 16px 0 0",
     borderBottom: `1px solid ${theme.colors.atmo3}`,
     display: "flex",
@@ -52,6 +53,9 @@ const classes = {
   childless: css({
     borderRadius: "16px",
     border: "unset",
+  }),
+  actions: css({
+    marginLeft: "auto",
   }),
 };
 
@@ -124,7 +128,7 @@ export const Level = ({
         {actions && (
           <HvDropDownMenu
             dataList={actions}
-            classes={{ root: css({ marginLeft: "auto" }) }}
+            classes={{ root: classes.actions }}
           />
         )}
         {collapsible && (

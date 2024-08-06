@@ -163,11 +163,13 @@ const FactTableNode = (props: NodeProps) => (
 const nodeGroups = {
   dimensionTable: {
     label: "Dimension Table",
+    color: "cat3",
     icon: <Leaf />,
     items: [{ nodeType: "dimensionTable", label: "Dimension Table" }],
   },
   factTable: {
     label: "Fact Table",
+    color: "cat2_40",
     icon: <Table />,
     items: [{ nodeType: "factTable", label: "Fact Table" }],
   },
