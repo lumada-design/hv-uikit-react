@@ -28,6 +28,7 @@ bin
 packages/icons/src
 packages/icons/sprites
 *.tgz
+.nx
 
 # tests
 coverage

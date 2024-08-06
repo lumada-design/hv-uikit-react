@@ -21,9 +21,6 @@ jobs:
 
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
-        env:
-          # Pulls all commits (needed for Chromatic)
-          FETCH_DEPTH: 0
 
       - name: Publish to Chromatic
         id: publish

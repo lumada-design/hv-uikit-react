@@ -38,35 +38,23 @@ jobs:
           # Pulls all commits (needed for semantic release to correctly version)
           # See https://github.com/semantic-release/semantic-release/issues/1526
           fetch-depth: "0"
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Fetch git tags
-        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+          fetch-tags: true
 
       - name: Publish Setup
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
       - name: Publish to NPM
         id: publish-npm
         env:
           NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: |
-          npm ci --include=dev 
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          if [[ "${{ github.ref_name }}" == "master" ]]; then
-            npm run publish:release 2>&1 | tee publish_logs.txt
-          elif [[ "${{ github.ref_name }}" == "next"* ]]; then
-            npm run publish:next 2>&1 | tee publish_logs.txt
-          else
-            echo "Invalid event type: ${{ github.ref_name }}"
-            exit 1
-          fi
+          npm run publish 2>&1 | tee publish_logs.txt
 
       - name: Check if packages were updated
         run: |
