@@ -97,7 +97,7 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
       input.focus();
       input.select();
     }
-  }, [editMode, inputRef]);
+  }, [editMode]);
 
   const handleClick = () => {
     setEditMode(true);
