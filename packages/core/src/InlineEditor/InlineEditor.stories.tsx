@@ -5,6 +5,7 @@ import {
   HvGrid,
   HvInlineEditor,
   HvInlineEditorProps,
+  HvInput,
   HvTypographyVariants,
 } from "@hitachivantara/uikit-react-core";
 
@@ -14,18 +15,18 @@ const meta: Meta<HvInlineEditorProps> = {
 };
 export default meta;
 
-export const Main: StoryObj<HvInlineEditorProps> = {
+export const Main: StoryObj<typeof HvInlineEditor<typeof HvInput>> = {
   args: {
     showIcon: false,
     variant: "body",
-  } as any,
+  },
   argTypes: {
     classes: { control: { disable: true } },
   },
   render: (args) => {
     return (
       <div style={{ width: 300 }}>
-        <HvInlineEditor {...(args as HvInlineEditorProps)} />
+        <HvInlineEditor {...args} />
       </div>
     );
   },
