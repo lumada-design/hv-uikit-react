@@ -5,5 +5,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { presetHv } from "@hitachivantara/uikit-uno-preset";
 
 export default defineConfig({
+  optimizeDeps: {
+    exclude: ["xmllint-wasm"],
+  },
   plugins: [react(), tsconfigPaths(), unoCSS({ presets: [presetHv()] })],
 });
