@@ -1,5 +1,10 @@
 name: Dependencies
 description: Install UI Kit dependencies
+inputs:
+  install:
+    description: "Whether to npm install dependencies"
+    required: false
+    default: "true"
 
 runs:
   using: "composite"
@@ -10,6 +15,7 @@ runs:
         node-version: 18
 
     - name: Install dependencies
+      if: ${{ inputs.install == 'true' }}
       # ensure dev dependencies are installed
       run: npm ci --include=dev
       shell: bash
