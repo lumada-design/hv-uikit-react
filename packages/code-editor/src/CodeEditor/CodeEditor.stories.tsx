@@ -1,21 +1,13 @@
-import { useState } from "react";
-import { css } from "@emotion/css";
-import { Modal } from "@mui/material";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvCodeEditor,
   HvCodeEditorProps,
 } from "@hitachivantara/uikit-react-code-editor";
-import {
-  HvIconButton,
-  HvTypography,
-  theme,
-} from "@hitachivantara/uikit-react-core";
-import {
-  Duplicate,
-  Fullscreen,
-  PopUp,
-} from "@hitachivantara/uikit-react-icons";
+
+import { MainStory } from "./stories/Main";
+import MainStoryRaw from "./stories/Main?raw";
+import { XmlStory } from "./stories/Xml";
+import XmlStoryRaw from "./stories/Xml?raw";
 
 const meta: Meta<typeof HvCodeEditor> = {
   title: "Widgets/Code Editor",
@@ -23,176 +15,15 @@ const meta: Meta<typeof HvCodeEditor> = {
 };
 export default meta;
 
-const Header = (props: {
-  fileName: string;
-  handleOpen: (value: boolean) => void;
-}) => {
-  const { fileName, handleOpen } = props;
-
-  const styles = {
-    headerItemsWrapper: css({
-      display: "flex",
-      alignItems: "center",
-    }),
-    codeEditorHeader: css({
-      height: 50,
-      border: `1px solid ${theme.colors.atmo4}`,
-      borderBottom: "none",
-      background: theme.colors.atmo1,
-      padding: theme.spacing("xs", "xs", "xs", "sm"),
-      display: "flex",
-      justifyContent: "space-between",
-    }),
-    codeEditorFileName: css({
-      margin: "5px 0px",
-    }),
-    codeEditorResetButton: css({
-      float: "right",
-    }),
-    paper: css({
-      position: "absolute",
-      width: "100%",
-      backgroundColor: "#FFF",
-      boxShadow:
-        "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
-    }),
-    buttonMargin: css({
-      marginLeft: theme.spacing("xs"),
-    }),
-  };
-
-  return (
-    <div className={styles.codeEditorHeader}>
-      <div className={styles.headerItemsWrapper}>
-        <HvTypography
-          className={styles.codeEditorFileName}
-          component="div"
-          variant="label"
-        >
-          {fileName}
-        </HvTypography>
-        <HvIconButton
-          title="Open in new window"
-          className={styles.buttonMargin}
-          component="a"
-          href="http://localhost:9001/iframe.html?id=components-code-editor--main"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <PopUp />
-        </HvIconButton>
-      </div>
-      <div className={styles.headerItemsWrapper}>
-        <HvIconButton
-          title="Fullscreen"
-          onClick={() => {
-            handleOpen(true);
-          }}
-        >
-          <Fullscreen />
-        </HvIconButton>
-        <HvIconButton title="Duplicate" className={styles.buttonMargin}>
-          <Duplicate />
-        </HvIconButton>
-      </div>
-    </div>
-  );
-};
-
-const defaultValueYaml =
-  'affinity: {}\nconfiguration:\n  helm: defaultTimeoutSeconds=120\nenv:\n  debug: "true"\n  hostname: foo.bar.com\nfullnameOverride: mySolution\nimage:\n  pullPolicy: IfNotPresent\n repository: foo.bar.com:5000/app\n';
-
-const defaultValueJson = `{
-    "glossary": {
-      "title": "example glossary",
-      "GlossDiv": {
-        "title": "S",
-        "GlossList": {   
-          "GlossEntry": {                    
-            "ID": "SGML",
-            "SortAs": "SGML",
-            "GlossTerm": "Standard Generalized Markup Language",
-            "Acronym": "SGML",
-            "Abbrev": "ISO 8879:1986",
-            "GlossDef": {                        
-              "para": "A meta-markup language, used to create markup languages such as DocBook.",
-              "GlossSeeAlso": ["GML", "XML"]                    
-            },
-            "GlossSee": "markup"                
-          }            
-        }        
-      }    
-    }
-  }`;
-
 export const Main: StoryObj<HvCodeEditorProps> = {
   parameters: {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false, delay: 5000 },
+    docs: {
+      source: { code: MainStoryRaw },
+    },
   },
-  render: () => {
-    const getModalStyle = () => {
-      return {
-        top: `54%`,
-        left: `52%`,
-        transform: `translate(-52%, -54%)`,
-      };
-    };
-
-    const [open, setOpen] = useState(false);
-    const [editorContent, setEditorContent] = useState(defaultValueJson);
-    const [modalStyle] = useState(getModalStyle);
-
-    const handleClose = () => {
-      setOpen(false);
-    };
-
-    const styles = {
-      paper: css({
-        position: "absolute",
-        width: "100%",
-        backgroundColor: "#FFF",
-        boxShadow:
-          "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
-      }),
-    };
-
-    const codeEditor = (height: number) => {
-      return (
-        <HvCodeEditor
-          height={height}
-          editorProps={{
-            language: "json",
-          }}
-          onChange={(input) => {
-            setEditorContent(input || "");
-          }}
-          value={editorContent}
-        />
-      );
-    };
-
-    const body = (
-      <div style={modalStyle} className={styles.paper}>
-        {codeEditor(500)}
-      </div>
-    );
-
-    return (
-      <>
-        <Header fileName="some file.json" handleOpen={setOpen} />
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-        >
-          {body}
-        </Modal>
-        {codeEditor(420)}
-      </>
-    );
-  },
+  render: () => <MainStory />,
 };
 
 export const YamlEditor: StoryObj<HvCodeEditorProps> = {
@@ -206,13 +37,24 @@ export const YamlEditor: StoryObj<HvCodeEditorProps> = {
     chromatic: { disableSnapshot: false, delay: 5000 },
   },
   render: () => {
+    const defaultValueYaml =
+      'affinity: {}\nconfiguration:\n  helm: defaultTimeoutSeconds=120\nenv:\n  debug: "true"\n  hostname: foo.bar.com\nfullnameOverride: mySolution\nimage:\n  pullPolicy: IfNotPresent\n repository: foo.bar.com:5000/app\n';
+
     return (
-      <HvCodeEditor
-        height={270}
-        language="yaml"
-        onChange={(input) => console.log(input)}
-        value={defaultValueYaml}
-      />
+      <HvCodeEditor height={270} language="yaml" value={defaultValueYaml} />
     );
   },
+};
+
+export const XMLEditor: StoryObj<HvCodeEditorProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "XML is one of the languages supported, and it can be enabled by setting the `language` property to `xml`. A XML schema can also be provided through the `xsdSchema` property. By providing a XML schema, the XML written will be validated against the schema showing errors. Providing a schema will also enable the code editor to show suggestions when opening a tag (`<`), writing an attribute, and when clicking on the CTRL and SPACE keys at the same time.",
+      },
+      source: { code: XmlStoryRaw },
+    },
+  },
+  render: () => <XmlStory />,
 };
