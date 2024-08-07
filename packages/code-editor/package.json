@@ -40,7 +40,8 @@
   "dependencies": {
     "@hitachivantara/uikit-react-shared": "^5.2.0",
     "@hitachivantara/uikit-styles": "^5.31.1",
-    "@monaco-editor/react": "^4.5.1"
+    "@monaco-editor/react": "^4.5.1",
+    "xmllint-wasm": "^4.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

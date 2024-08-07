@@ -1,8 +1,9 @@
-import { useCallback, useEffect } from "react";
-import { Editor, EditorProps, useMonaco } from "@monaco-editor/react";
+import { useCallback, useEffect, useRef } from "react";
+import { Editor, useMonaco, type EditorProps } from "@monaco-editor/react";
 import { ExtractNames, useTheme } from "@hitachivantara/uikit-react-shared";
 
 import { staticClasses, useClasses } from "./CodeEditor.styles";
+import { languagePlugins } from "./plugins";
 
 export { staticClasses as codeEditorClasses };
 
@@ -17,6 +18,8 @@ export interface HvCodeEditorProps extends EditorProps {
   defaultValue?: string;
   /** The properties of the editor object in Monaco. */
   options?: EditorProps["options"];
+  /** XSD schema used to validate the code editor content when the language is set to `xml`. */
+  xsdSchema?: string;
 }
 
 const defaultCodeEditorOptions: EditorProps["options"] = {
@@ -37,34 +40,41 @@ const defaultCodeEditorOptions: EditorProps["options"] = {
 };
 
 /**
- * A wrapper to the React Monaco editor (https://github.com/suren-atoyan/monaco-react) with our styles.
+ * A wrapper to the [**React Monaco editor**](https://github.com/suren-atoyan/monaco-react) with our styles.
  * Please make sure you follow the instructions (found in the repository) to include the component.
- * Additional information regarding Tab trapping in Monaco, can be found here: https://github.com/microsoft/monaco-editor/wiki/Monaco-Editor-Accessibility-Guide#tab-trapping.
+ * Additional information regarding Tab trapping in Monaco, can be found [**here**](https://github.com/microsoft/monaco-editor/wiki/Monaco-Editor-Accessibility-Guide#tab-trapping).
  */
 export const HvCodeEditor = ({
   classes: classesProp,
-  defaultValue,
   options,
   editorProps,
+  defaultLanguage,
+  language: languageProp,
+  xsdSchema,
+  onMount: onMountProp,
+  beforeMount: beforeMountProp,
   ...others
 }: HvCodeEditorProps) => {
   const { classes } = useClasses(classesProp);
 
-  const { colors, selectedMode, selectedTheme, colorModes } = useTheme();
+  const language = languageProp ?? defaultLanguage;
 
-  const monaco = useMonaco();
+  const editorRef = useRef(null);
 
   // Merges the 2 objects together, overriding defaults with passed in options
-  const mergedOptions = {
+  const mergedOptions: EditorProps["options"] = {
     ...defaultCodeEditorOptions,
     ...options,
   };
 
-  const defineActiveThemes = useCallback(() => {
-    if (!monaco) return;
+  const { colors, selectedMode, selectedTheme, colorModes } = useTheme();
+  const monacoInstance = useMonaco();
+
+  const handleActiveThemes = useCallback(() => {
+    if (!monacoInstance) return;
 
     colorModes.forEach((mode) => {
-      monaco?.editor.defineTheme(`hv-${selectedTheme}-${mode}`, {
+      monacoInstance?.editor.defineTheme(`hv-${selectedTheme}-${mode}`, {
         base: colors?.type === "light" ? "vs" : "vs-dark",
         inherit: true,
         rules: [],
@@ -74,18 +84,85 @@ export const HvCodeEditor = ({
         },
       });
     });
-  }, [monaco, colorModes, selectedTheme, colors]);
+  }, [
+    monacoInstance,
+    colorModes,
+    selectedTheme,
+    colors?.type,
+    colors?.atmo1,
+    colors?.secondary_60,
+  ]);
 
   useEffect(() => {
-    defineActiveThemes();
-  }, [selectedTheme, colorModes, defineActiveThemes]);
+    handleActiveThemes();
+  }, [handleActiveThemes]);
+
+  const handleBeforeMount: EditorProps["beforeMount"] = (monaco) => {
+    beforeMountProp?.(monaco);
+    handleActiveThemes();
+  };
+
+  const handleMount: EditorProps["onMount"] = (editor, monaco) => {
+    editorRef.current = editor;
+    onMountProp?.(editor, monaco);
+
+    // Get language plugin
+    const languagePlugin = language ? languagePlugins[language] : undefined;
+
+    if (!languagePlugin) return;
+
+    // Register language
+    monaco.languages.register({ id: language });
+
+    const {
+      completionProvider,
+      editorOptions,
+      keyDownListener,
+      validationMarker,
+    } = languagePlugin;
+
+    // Update options
+    if (editorOptions)
+      editor.updateOptions({
+        ...options,
+        ...editorOptions,
+      });
+
+    // Register completion provider
+    if (completionProvider)
+      monaco.languages.registerCompletionItemProvider(
+        language,
+        completionProvider(monaco, xsdSchema),
+      );
+
+    // Validate content and get error markers
+    if (validationMarker)
+      editor.onDidChangeModelContent(async () => {
+        const model = editor.getModel();
+        const content = model.getValue();
+        const validation = await validationMarker(
+          content,
+          editor,
+          monaco,
+          xsdSchema,
+        );
+        monaco.editor.setModelMarkers(model, language, validation);
+      });
+
+    // Listen for key down events
+    if (keyDownListener)
+      editor.onKeyDown((event: any) => keyDownListener(event, editor, monaco));
+  };
 
   return (
     <div className={classes.root}>
       <Editor
         options={mergedOptions}
-        beforeMount={defineActiveThemes}
         theme={`hv-${selectedTheme}-${selectedMode}`}
+        language={languageProp}
+        defaultLanguage={defaultLanguage}
+        beforeMount={handleBeforeMount}
+        onMount={handleMount}
         {...editorProps}
         {...others}
       />
