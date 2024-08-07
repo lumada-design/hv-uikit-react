@@ -13,13 +13,14 @@ const classes = {
     maxHeight: 300,
     overflow: "auto",
     borderRadius: "16px",
+    boxShadow: theme.colors.shadow,
   }),
   levelRoot: css({
     boxShadow: theme.colors.shadow,
     borderWidth: 0,
   }),
   levelHeader: css({
-    padding: theme.spacing(0, "xs", 0, "xs"),
+    padding: theme.spacing("4px", "xs", "4px", "xs"),
     boxShadow: theme.colors.shadow,
     borderWidth: 0,
   }),

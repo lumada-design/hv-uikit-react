@@ -24,7 +24,7 @@ const classes = {
     height: "100%",
   }),
   header: css({
-    paddingLeft: theme.spacing("xs"),
+    padding: theme.spacing("2px", "xs", "2px", "xs"),
     borderRadius: "16px 16px 0 0",
     borderBottom: `1px solid ${theme.colors.atmo3}`,
     display: "flex",
@@ -51,6 +51,7 @@ const classes = {
     gap: theme.spacing("xs"),
   }),
   childless: css({
+    padding: theme.spacing(0, 0, 0, "xs"),
     borderRadius: "16px",
     border: "unset",
   }),
