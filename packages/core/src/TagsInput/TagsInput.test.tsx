@@ -94,6 +94,12 @@ describe("TagsInput Component", () => {
     expect(clickableButtons.length).toBe(2);
   });
 
+  it("renders a custom adornment", () => {
+    render(<HvTagsInput endAdornment={<div>endAdornment</div>} />);
+
+    expect(screen.getByText("endAdornment")).toBeInTheDocument();
+  });
+
   it("should trigger the delete callback on click", async () => {
     const onChangeSpy = vi.fn();
     const onDeleteSpy = vi.fn();
