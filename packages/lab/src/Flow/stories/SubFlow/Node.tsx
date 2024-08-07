@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import { css, cx } from "@emotion/css";
 import { NodeProps as ReactFlowNodeProps } from "reactflow";
-import { theme } from "@hitachivantara/uikit-styles";
+import { theme } from "@hitachivantara/uikit-react-core";
+import { useHvNode } from "@hitachivantara/uikit-react-lab";
 
-import { useHvNode } from "../../hooks";
 import { FactTable } from "./FactTable";
 import { HierarchyData, Level } from "./Level";
 
