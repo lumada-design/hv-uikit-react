@@ -6,7 +6,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material/InputBase";
 import { useForkRef } from "@mui/material/utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
@@ -29,11 +28,10 @@ import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useIsMounted } from "../hooks/useIsMounted";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { HvInput } from "../Input";
+import { HvInput, HvInputProps } from "../Input";
 import { HvListContainer, HvListItem } from "../ListContainer";
 import { HvTag, HvTagProps } from "../Tag";
-import { HvTagSuggestion, HvValidationMessages } from "../types/forms";
-import { HvBaseProps } from "../types/generic";
+import { HvTagSuggestion } from "../types/forms";
 import { ExtractNames } from "../utils/classes";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
@@ -44,30 +42,15 @@ export { staticClasses as tagsInputClasses };
 export type HvTagsInputClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTagsInputProps
-  extends HvBaseProps<
-    HTMLElement,
-    "onChange" | "onBlur" | "onFocus" | "onKeyDown" | "color" | "defaultValue"
+  extends Omit<
+    HvInputProps,
+    "onChange" | "onBlur" | "onFocus" | "onKeyDown" | "value" | "defaultValue"
   > {
-  /** The form element name. */
-  name?: string;
   /** The value of the form element. */
   value?: string[] | HvTagProps[];
   /** When uncontrolled, defines the initial input value. */
   defaultValue?: string[] | HvTagProps[];
-  /**
-   * The label of the form element.
-   * The form element must be labeled for accessibility reasons.
-   * If not provided, an aria-label or aria-labelledby must be inputted via inputProps.
-   */
-  label?: React.ReactNode;
-  /** Provide additional descriptive text for the form element. */
-  description?: React.ReactNode;
-  /** Indicates that the form element is disabled. */
-  disabled?: boolean;
-  /** Indicates that the form element is not editable. */
-  readOnly?: boolean;
-  /** Indicates that the form element is required. */
-  required?: boolean;
+
   /** The function that will be executed onChange. */
   onChange?: (
     event:
@@ -99,30 +82,18 @@ export interface HvTagsInputProps
     value: HvTagProps,
     index: number,
   ) => void;
-  /** The placeholder value of the input. */
-  placeholder?: string;
   /** If `true` the character counter isn't shown even if maxTagsQuantity is set. */
   hideCounter?: boolean;
   /** Text between the current char counter and max value. */
   middleCountLabel?: string;
   /** The maximum allowed length of the characters, if this value is null no check will be performed. */
   maxTagsQuantity?: number;
-  /** Attributes applied to the input element. */
-  inputProps?: MuiInputBaseComponentProps;
-  /** If `true` it should autofocus. */
-  autoFocus?: boolean;
   /** If `true` the component is resizable. */
   resizable?: boolean;
   /** Props passed to the HvCharCount component. */
   countCharProps?: Partial<HvCharCounterProps>;
   /** If `true` the component is in multiline mode. */
   multiline?: boolean;
-  /** The status of the form element. */
-  status?: HvFormStatus;
-  /** The error message to show when `status` is "invalid". */
-  statusMessage?: React.ReactNode;
-  /** An Object containing the various texts associated with the input. */
-  validationMessages?: HvValidationMessages;
   /** An array of strings that represent the character used to input a tag. This character is the string representation of the event.code from the input event. */
   commitTagOn?: string[];
   /** If `true` the tag will be committed when the blur event occurs. */
@@ -166,10 +137,9 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       hideCounter = false,
       middleCountLabel = "/",
       maxTagsQuantity,
-      autoFocus = false,
       resizable = true,
-      inputProps = {},
-      countCharProps = {},
+      inputProps,
+      countCharProps,
       multiline = false,
       status,
       statusMessage,
@@ -337,7 +307,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
               container.getBoundingClientRect().width / 2 +
               element.getBoundingClientRect().width / 2
             : 0;
-        }, 50);
+        }, 10);
 
         element?.focus();
       }
@@ -558,7 +528,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           addTag(evt, tagInput);
         }
         onBlur?.(evt, tagInput);
-      }, 250);
+      }, 10);
     };
 
     const onFocusHandler: HvFormElementProps["onFocus"] = (evt) => {
@@ -692,7 +662,6 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
                 onChange={onChangeHandler}
                 onKeyDown={onInputKeyDownHandler}
                 placeholder={value.length === 0 ? placeholder : ""}
-                autoFocus={autoFocus}
                 className={cx({
                   [classes.singleLine]: !multiline,
                 })}
@@ -716,7 +685,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
 
                   ...inputProps,
                 }}
-                inputRef={inputRef}
+                ref={inputRef}
                 {...others}
               />
             </HvListItem>
