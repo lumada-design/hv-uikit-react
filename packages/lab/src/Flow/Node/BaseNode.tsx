@@ -140,7 +140,7 @@ export const HvFlowBaseNode = ({
   return (
     <div
       style={{
-        // @ts-ignore
+        // @ts-expect-error csstype doesn't support CSS vars
         "--node-color": color,
       }}
       className={cx(
@@ -165,7 +165,7 @@ export const HvFlowBaseNode = ({
       <div className={classes.headerContainer}>
         <div
           style={{
-            // @ts-ignore
+            // @ts-expect-error csstype doesn't support CSS vars
             "--icon-color": iconColor,
           }}
           className={classes.titleContainer}

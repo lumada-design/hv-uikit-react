@@ -26,10 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBoxGroup", {
   horizontal: {
     flexDirection: "row",
     flexWrap: "wrap",
-
-    "&>*:not(:first-of-type)": {
-      marginLeft: theme.space.sm,
-    },
+    gap: theme.space.sm,
   },
   invalid: {
     paddingBottom: theme.space.xs,

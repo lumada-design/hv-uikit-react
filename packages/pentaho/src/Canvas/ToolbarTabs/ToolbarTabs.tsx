@@ -302,7 +302,7 @@ export const HvCanvasToolbarTabs = forwardRef<
                 <div
                   key={tab.id}
                   style={{
-                    // @ts-ignore
+                    // @ts-expect-error csstype doesn't support CSS vars
                     "--full-tab-width": `calc(${tabWidth}px + ${BORDER_WIDTH}px)`,
                     "--right": `calc(${num} * var(--full-tab-width))`,
                     "--editor-width": `calc(var(--full-tab-width) - ${tab.icon ? 2 : 1} * ${ICON_WIDTH}px - ${theme.space.xs})`,
@@ -334,7 +334,7 @@ export const HvCanvasToolbarTabs = forwardRef<
                   <HvIconButton
                     key={tab.id}
                     style={{
-                      // @ts-ignore
+                      // @ts-expect-error csstype doesn't support CSS vars
                       "--close-color": btnDisabled
                         ? theme.colors.secondary_60
                         : theme.colors.primary,

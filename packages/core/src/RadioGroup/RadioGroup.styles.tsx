@@ -26,10 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvRadioGroup", {
   horizontal: {
     flexDirection: "row",
     flexWrap: "wrap",
-    "&>*:not(:first-of-type)": {
-      marginLeft: theme.space.sm,
-    },
-    width: `calc(100% + ${theme.space.sm})`, // Compensate the negative margin left which increases the width
+    gap: theme.space.sm,
   },
   invalid: {
     paddingBottom: theme.space.xs,

@@ -163,7 +163,7 @@ export const HvCanvasBottomPanel = forwardRef<
       <div className={classes.tabsRoot}>
         <HvCanvasPanelTabs
           style={{
-            // @ts-ignore
+            // @ts-expect-error csstype doesn't support CSS vars
             "--left-actions-width":
               overflowing || !leftActions
                 ? theme.space.sm
@@ -201,7 +201,7 @@ export const HvCanvasBottomPanel = forwardRef<
                 <div
                   key={tab.id}
                   style={{
-                    // @ts-ignore
+                    // @ts-expect-error csstype doesn't support CSS vars
                     "--tab-width": `${tabWidth}px`,
                     "--right": `calc((${index} + 1) * var(--tab-width))`,
                     "--left": `calc(${index} * var(--tab-width))`,
@@ -274,7 +274,7 @@ export const HvCanvasBottomPanel = forwardRef<
         aria-labelledby={`${id}-${selectedTab}`}
         className={classes.content}
         style={{
-          // @ts-ignore
+          // @ts-expect-error csstype doesn't support CSS vars
           "--right-border-radius":
             tabWidth * tabs.length >= panelWidth ? "0px" : "16px",
         }}
