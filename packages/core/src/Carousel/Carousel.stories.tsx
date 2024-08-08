@@ -43,10 +43,10 @@ export const Main: StoryObj<HvCarouselProps> = {
   render: (args: Partial<HvCarouselProps>) => {
     const images = [
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
-      "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
+      "https://thetravelbible.com/wp-content/uploads/2022/12/what-to-do-madeira-islands-portugal-800x533.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
       "https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg",
-      "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
+      "https://clean-energy-islands.ec.europa.eu/sites/default/files/styles/node_image/public/2019-03/Azores_Pixabay_Comanche0.jpg",
       "https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w",
       "https://i1.adis.ws/i/canon/pro-landscape-photography-business-2_b76782acce404672b7d351dc98937699?$media-collection-full-dt-jpg$",
     ];
@@ -81,10 +81,10 @@ export const Actions: StoryObj<HvCarouselProps> = {
     const [index, setIndex] = useState(0);
     const [images, setImages] = useState([
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
-      "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
+      "https://thetravelbible.com/wp-content/uploads/2022/12/what-to-do-madeira-islands-portugal-800x533.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
       "https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg",
-      "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
+      "https://clean-energy-islands.ec.europa.eu/sites/default/files/styles/node_image/public/2019-03/Azores_Pixabay_Comanche0.jpg",
     ]);
 
     return (
@@ -185,10 +185,10 @@ export const Options: StoryObj<HvCarouselProps> = {
     const startIndex = 2;
     const images = [
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
-      "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
+      "https://thetravelbible.com/wp-content/uploads/2022/12/what-to-do-madeira-islands-portugal-800x533.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
       "https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg",
-      "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
+      "https://clean-energy-islands.ec.europa.eu/sites/default/files/styles/node_image/public/2019-03/Azores_Pixabay_Comanche0.jpg",
       "https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w",
       "https://i1.adis.ws/i/canon/pro-landscape-photography-business-2_b76782acce404672b7d351dc98937699?$media-collection-full-dt-jpg$",
     ];
@@ -226,10 +226,10 @@ export const CustomContent: StoryObj<HvCarouselProps> = {
   render: () => {
     const images = [
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
-      "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
+      "https://thetravelbible.com/wp-content/uploads/2022/12/what-to-do-madeira-islands-portugal-800x533.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
       "https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg",
-      "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
+      "https://clean-energy-islands.ec.europa.eu/sites/default/files/styles/node_image/public/2019-03/Azores_Pixabay_Comanche0.jpg",
       "https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w",
       "https://i1.adis.ws/i/canon/pro-landscape-photography-business-2_b76782acce404672b7d351dc98937699?$media-collection-full-dt-jpg$",
     ];
