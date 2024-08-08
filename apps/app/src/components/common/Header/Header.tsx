@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
@@ -9,7 +9,7 @@ import {
   HvHeaderNavigation,
   HvIconButton,
 } from "@hitachivantara/uikit-react-core";
-import { Menu } from "@hitachivantara/uikit-react-icons";
+import { Debug, Menu } from "@hitachivantara/uikit-react-icons";
 
 import logo from "~/assets/logo.png";
 import { useGeneratorContext } from "~/generator/GeneratorContext";
@@ -53,6 +53,11 @@ export const Header = () => {
       />
 
       <HvHeaderActions>
+        {import.meta.env.DEV && (
+          <HvIconButton title="Test page" component={NavLink} to="/test">
+            <Debug />
+          </HvIconButton>
+        )}
         <HvButton
           variant="secondaryGhost"
           onClick={handleOpenTutorial}
