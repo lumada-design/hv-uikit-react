@@ -8,7 +8,6 @@ export * from "./Buttons";
 export * from "./Calendar";
 export * from "./Cards";
 export * from "./CheckBox";
-export * from "./Controls";
 export * from "./Dialogs";
 export * from "./DropDownMenu";
 export * from "./EmptyState";

@@ -2,15 +2,14 @@ import { useEffect } from "react";
 import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 
-import { Container } from "~/components/common/Container";
-import { Header } from "~/components/common/Header";
-import { Tutorial } from "~/components/common/Tutorial";
+import { Container } from "~/components/Container";
+import { Header } from "~/components/Header";
+import { Tutorial } from "~/components/Tutorial";
 import GeneratorProvider, {
   useGeneratorContext,
 } from "~/generator/GeneratorContext";
 import Sidebar from "~/generator/Sidebar";
 import { NavigationProvider } from "~/lib/context/navigation";
-import navigation from "~/lib/navigation";
 
 const useRootRedirect = () => {
   const [searchParams] = useSearchParams();
@@ -51,7 +50,7 @@ const Navigation = () => {
         colorMode={selectedMode}
         cssBaseline="none" // the main provider already applies the baseline styles globally
       >
-        <NavigationProvider navigation={navigation}>
+        <NavigationProvider>
           {tutorialOpen && (
             <Tutorial
               setTutorialOpen={setTutorialOpen}

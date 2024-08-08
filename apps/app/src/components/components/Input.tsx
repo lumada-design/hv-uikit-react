@@ -2,7 +2,7 @@ import { useState } from "react";
 import { HvInput } from "@hitachivantara/uikit-react-core";
 import { Map } from "@hitachivantara/uikit-react-icons";
 
-import countryNamesArray from "./countries";
+import countryNamesArray from "./data/countries";
 
 export const Input = () => {
   const [value, setValue] = useState("");
