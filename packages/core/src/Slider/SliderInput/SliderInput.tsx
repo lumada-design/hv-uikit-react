@@ -87,7 +87,9 @@ export const HvSliderInput = ({
     <div className={cx(classes.inputRoot, className)} {...others}>
       {inputValues.map((value, index) => (
         <div key={setId(id, index)} className={classes.inputContainer}>
-          {index !== 0 && <Remove color={disabled ? ["atmo4"] : undefined} />}
+          {index !== 0 && (
+            <Remove color={disabled ? "secondary_60" : undefined} />
+          )}
           <HvInput
             id={setId(id, index)}
             aria-label={`${label}-${index}`}

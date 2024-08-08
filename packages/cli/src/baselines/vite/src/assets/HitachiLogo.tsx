@@ -1,18 +1,13 @@
-import { theme } from "@hitachivantara/uikit-styles";
-
-const HitachiLogo = (props: React.SVGAttributes<SVGElement>) => {
+export const HitachiLogo = ({ ...others }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      x="0px"
-      y="0px"
+      role="img"
       viewBox="0 0 80 16"
-      xmlSpace="preserve"
-      width={80}
-      height={16}
-      style={{ width: 72, height: 20 }}
-      fill={theme.colors.secondary}
-      {...props}
+      width={72}
+      fill="currentColor"
+      {...others}
     >
+      <title>Logo</title>
       <path d="M63.6,2.5c0,0,0,4.8,0,4.7H70c0,0,0-4.7,0-4.7s3.1,0,3.1,0c0,0,0,11.8,0,11.9H70c0,0,0-5.2,0-5.2c0,0-6.3,0-6.3,0c0,0,0,5.2,0,5.2h-3.1c0,0,0-11.9,0-11.9C60.5,2.5,63.6,2.5,63.6,2.5z" />
       <path d="M33.9,2.5c0,0,0,2,0,2h-4.8v9.8h-3.1V4.5h-4.8v-2C21.1,2.5,33.9,2.5,33.9,2.5z" />
       <path d="M46,14.3c0,0-3.5,0-3.5,0l-1-2.6h-5.9c0,0-1,2.6-1,2.6h-3.5l5.5-11.9h3.8L46,14.3z M38.6,4.5l-2.2,5.4h4.4L38.6,4.5" />
@@ -30,5 +25,3 @@ const HitachiLogo = (props: React.SVGAttributes<SVGElement>) => {
     </svg>
   );
 };
-
-export default HitachiLogo;

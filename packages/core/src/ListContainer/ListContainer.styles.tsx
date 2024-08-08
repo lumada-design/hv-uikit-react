@@ -1,5 +1,8 @@
 import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvListContainer", {
-  root: {},
+  root: {
+    overflow: "clip",
+    overflowClipMargin: 4,
+  },
 });

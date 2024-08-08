@@ -48,6 +48,7 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
   headerDisabled: {
     cursor: "not-allowed",
     pointerEvents: "none",
+    color: theme.colors.secondary_60,
     border: `1px solid ${theme.colors.secondary_60}`,
     background: theme.colors.atmo2,
     "&:hover": {
@@ -57,6 +58,7 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
   headerReadOnly: {
     cursor: "not-allowed",
     pointerEvents: "none",
+    color: theme.colors.secondary_80,
     border: `1px solid ${theme.colors.secondary_60}`,
     background: theme.colors.atmo2,
     userSelect: "text",
@@ -79,16 +81,13 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     boxSizing: "border-box",
     paddingLeft: theme.space.xs,
     paddingRight: theme.sizes.sm,
+    color: "inherit",
   },
+  selectionDisabled: {},
   placeholder: {
     display: "block",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-    ...theme.typography.body,
     color: theme.colors.secondary_80,
   },
-  selectionDisabled: { color: theme.colors.secondary_60 },
   panel: {
     position: "relative",
 

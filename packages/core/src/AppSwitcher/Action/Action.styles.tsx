@@ -9,7 +9,6 @@ export const { staticClasses, useClasses } = createClasses(
       width: "100%",
       maxWidth: 280,
       minHeight: 52,
-      marginRight: theme.space.sm,
     },
     icon: { display: "flex", minWidth: 40, justifyContent: "center" },
     iconUrl: { width: 32 },

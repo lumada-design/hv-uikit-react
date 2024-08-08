@@ -1,13 +1,8 @@
-import {
-  getColor,
-  HvColor,
-  HvColorAny,
-  theme,
-} from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
+import { ExtractNames, mergeStyles } from "../utils/classes";
 import { staticClasses, useClasses } from "./Card.styles";
 
 export { staticClasses as cardClasses };
@@ -41,6 +36,7 @@ export interface HvCardProps extends HvBaseProps {
 export const HvCard = (props: HvCardProps) => {
   const {
     classes: classesProp,
+    style,
     className,
     children,
     icon,
@@ -51,16 +47,23 @@ export const HvCard = (props: HvCardProps) => {
     ...others
   } = useDefaultProps("HvCard", props);
 
-  const { classes, css, cx } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
+
+  const barColor =
+    (statusColor !== "sema0" && statusColor) ||
+    (selected && "secondary") ||
+    "atmo4";
 
   return (
     <div
+      style={mergeStyles(style, {
+        "--bg-color": getColor(bgcolor),
+        "--bar-height": `${selected ? 4 : 2}px`,
+        "--bar-color": getColor(barColor),
+      })}
       className={cx(
         "HvIsCardGridElement",
         classes.root,
-        css({
-          backgroundColor: getColor(bgcolor),
-        }),
         {
           [classes.selectable]: selectable,
           [classes.selected]: selected,
@@ -70,20 +73,7 @@ export const HvCard = (props: HvCardProps) => {
       {...others}
     >
       <div className={classes.semanticContainer}>
-        <div
-          className={cx(
-            css({
-              height: selected ? 4 : 2,
-              backgroundColor:
-                statusColor === "sema0"
-                  ? selected
-                    ? theme.colors.secondary
-                    : theme.colors.atmo4
-                  : theme.colors[statusColor as HvColor],
-            }),
-            classes.semanticBar,
-          )}
-        />
+        <div className={classes.semanticBar} />
         <div className={classes.icon}>{icon}</div>
       </div>
       {children}

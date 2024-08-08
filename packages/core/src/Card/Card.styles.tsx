@@ -9,6 +9,7 @@ export const { staticClasses, useClasses } = createClasses("HvCard", {
     position: "relative",
     outline: `1px solid ${theme.colors.atmo4}`,
     borderRadius: `0px 0px ${theme.radii.round} ${theme.radii.round}`,
+    backgroundColor: "var(--bg-color)",
     "&:focus-visible": {
       ...outlineStyles,
     },
@@ -42,6 +43,8 @@ export const { staticClasses, useClasses } = createClasses("HvCard", {
     right: theme.space.xs,
   },
   semanticBar: {
+    backgroundColor: "var(--bar-color)",
+    height: "var(--bar-height)",
     width: "100%",
     top: -1,
     right: 0,

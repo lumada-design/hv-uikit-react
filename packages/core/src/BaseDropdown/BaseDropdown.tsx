@@ -267,14 +267,13 @@ const BaseDropdown = forwardRef<
       ref={handleDropdownHeaderRef}
       {...dropdownHeaderProps}
     >
-      <div className={classes.selection}>
+      <div
+        className={cx(classes.selection, {
+          [classes.selectionDisabled]: disabled,
+        })}
+      >
         {placeholder && typeof placeholder === "string" ? (
-          <HvTypography
-            className={cx(classes.placeholder, {
-              [classes.selectionDisabled]: disabled,
-            })}
-            variant="body"
-          >
+          <HvTypography noWrap className={classes.placeholder}>
             {placeholder}
           </HvTypography>
         ) : (

@@ -20,7 +20,6 @@ import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { useSavedState } from "../utils/useSavedState";
@@ -410,17 +409,8 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
       </HvActionBar>
     );
 
-    const renderInput = (dateString: string) => {
-      return (
-        <HvTypography
-          className={cx(classes.inputText, { [classes.dateText]: dateString })}
-          variant="label"
-        >
-          {dateString || placeholder || ""}
-        </HvTypography>
-      );
-    };
     const dateValue = rangeMode ? { startDate, endDate } : startDate;
+    const dateString = getDateLabel(dateValue, rangeMode, locale);
 
     const hasLabel = label != null;
     const hasDescription = description != null;
@@ -483,6 +473,9 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
             panel: classes.panel,
             header: cx({ [classes.dropdownHeaderInvalid]: isStateInvalid }),
             headerOpen: classes.dropdownHeaderOpen,
+            placeholder: cx(classes.inputText, {
+              [classes.dateText]: dateString,
+            }),
           }}
           readOnly={readOnly}
           disabled={disabled}
@@ -493,13 +486,8 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
           onToggle={handleToggle}
           onClickOutside={handleCalendarClose}
           onContainerCreation={focusOnContainer}
-          placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
-          adornment={
-            <Calendar
-              className={classes.icon}
-              color={disabled ? "secondary_80" : undefined}
-            />
-          }
+          placeholder={dateString || placeholder || ""}
+          adornment={<Calendar className={classes.icon} color="currentcolor" />}
           popperProps={{
             modifiers: [
               { name: "preventOverflow", enabled: escapeWithReference },
