@@ -16,7 +16,7 @@ export const { staticClasses, useClasses } = createClasses(
       justifyContent: "flex-start",
       alignItems: "center",
       height: "32px",
-      color: theme.colors.secondary,
+      color: theme.colors.text,
 
       // hover
       "&:hover": { ...hover },

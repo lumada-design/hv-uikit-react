@@ -21,7 +21,7 @@ const classes = {
     alignItems: "center",
     justifyContent: "center",
     borderRadius: "16px",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     boxShadow: theme.colors.shadow,
     borderWidth: "1px",
     minWidth: "200px",
@@ -50,11 +50,11 @@ const classes = {
     backgroundColor: "var(--color)",
   }),
   nodeToolbar: css({
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     borderRadius: theme.radii.full,
   }),
   handle: css({
-    backgroundColor: theme.colors.secondary_80,
+    backgroundColor: theme.colors.textSubtle,
     border: `1px solid ${theme.colors.atmo1}`,
     height: 8,
     width: 8,

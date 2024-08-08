@@ -24,7 +24,7 @@ export const IconWrapper = ({
   return (
     <div {...others}>
       {showAvatar ? (
-        <HvAvatar variant="square" size="xs" backgroundColor="secondary_80">
+        <HvAvatar variant="square" size="xs" backgroundColor="textSubtle">
           {label?.substring(0, 1)}
         </HvAvatar>
       ) : (

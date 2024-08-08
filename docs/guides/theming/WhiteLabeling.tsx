@@ -100,7 +100,7 @@ const turquoiseTheme = createTheme({
             borderBottom: 0,
             "& > * > span": {
               color: "#F6F8FF",
-              backgroundColor: theme.colors.secondary,
+              backgroundColor: theme.colors.text,
               borderRadius: theme.radii.full,
             },
           },

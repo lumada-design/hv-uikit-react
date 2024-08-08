@@ -25,7 +25,7 @@ export const Main: StoryObj<HvTagProps> = {
     onClick: () => console.log("click"),
     onDelete: () => console.log("delete"),
     type: "semantic",
-    color: "neutral_20",
+    color: "neutralSubtle",
     disabled: false,
   },
   argTypes: {
@@ -57,9 +57,9 @@ export const Semantical: StoryObj<HvTagProps> = {
     return (
       <>
         <HvTag label="Informational" />
-        <HvTag color="positive_20" label="Success" />
-        <HvTag color="negative_20" label="Warning" />
-        <HvTag color="warning_20" label="Error" />
+        <HvTag color="positiveSubtle" label="Success" />
+        <HvTag color="errorSubtle" label="Warning" />
+        <HvTag color="warningSubtle" label="Error" />
       </>
     );
   },
@@ -129,21 +129,21 @@ export const WithDeleteAction: StoryObj<HvTagProps> = {
         />
         <HvTag
           label="Success"
-          color="positive_20"
+          color="positiveSubtle"
           onDelete={() => {
             alert("On Delete Action");
           }}
         />
         <HvTag
           label="Warning"
-          color="negative_20"
+          color="errorSubtle"
           onDelete={() => {
             alert("On Delete Action");
           }}
         />
         <HvTag
           label="Error"
-          color="warning_20"
+          color="warningSubtle"
           onDelete={() => {
             alert("On Delete Action");
           }}

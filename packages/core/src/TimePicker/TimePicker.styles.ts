@@ -22,7 +22,7 @@ export const { useClasses, staticClasses } = createClasses("HvTimePicker", {
     gap: 1,
   },
   placeholderDisabled: {
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
   },
 
   dropdownHeader: {},

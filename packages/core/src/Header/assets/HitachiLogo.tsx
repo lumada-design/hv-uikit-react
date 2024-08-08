@@ -10,7 +10,7 @@ export const HitachiLogo = ({ ...others }: React.SVGProps<SVGSVGElement>) => {
       width={80}
       height={16}
       style={{ width: 72, height: 20 }}
-      fill={theme.colors.secondary}
+      fill={theme.colors.text}
       {...others}
     >
       <title>Logo</title>

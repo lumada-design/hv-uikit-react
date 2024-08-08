@@ -34,7 +34,7 @@ export const ThemeDecorator: Decorator = (Story) => {
   const containerRef = useDarkClass(mode);
 
   const storyStyles = getStoryStyles(
-    base.colors.modes[mode as "wicked" | "dawn"].atmo2,
+    base.colors.modes[mode as "wicked" | "dawn"].backgroundColor,
   );
 
   const switchTheme = ({ name }: Theme) => {

@@ -42,12 +42,12 @@ export const { staticClasses, useClasses } = createClasses("HvDatePicker", {
     },
   },
   inputText: {
-    color: theme.colors.secondary_80,
+    color: theme.colors.textSubtle,
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
   },
   dateText: {
-    color: theme.colors.secondary,
+    color: theme.colors.text,
   },
 });

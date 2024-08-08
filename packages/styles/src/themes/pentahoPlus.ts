@@ -56,6 +56,8 @@ const pentahoPlus = makeTheme((theme) => ({
         neutral_20: sky[100],
         shadow: `0px 2px 4px -1px color-mix(in srgb, ${slate[700]} 8%, transparent)`,
         shad1: `color-mix(in srgb, ${slate[700]} 8%, transparent)`,
+
+        primaryAction: blue[500],
       },
       wicked: {
         type: "dark",
@@ -377,10 +379,10 @@ const pentahoPlus = makeTheme((theme) => ({
         },
         primary: {
           "&:hover": {
-            backgroundColor: theme.colors.primary_80,
+            backgroundColor: theme.colors.primaryAction,
           },
           "&:active": {
-            backgroundColor: theme.colors.primary_80,
+            backgroundColor: theme.colors.primaryAction,
             boxShadow: `inset 0 1px 2px 0 #0000004D`, // 4D = 30% opacity
           },
         },

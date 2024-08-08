@@ -199,8 +199,57 @@ const shadowLight = {
 };
 
 const utilsLight = {
+  // #region semantic
+  primaryAction: accentLight.primary_80,
+  primarySubtle: accentLight.primary_20,
+  neutralSubtle: semanticLight.neutral_20,
+
+  positiveAction: semanticLight.positive_80,
+  positiveStrong: semanticLight.positive_120,
+  positiveSubtle: semanticLight.positive_20,
+  warningAction: semanticLight.warning_120,
+  warningStrong: semanticLight.warning_140,
+  warningSubtle: semanticLight.warning_20,
+  errorAction: semanticLight.negative_80,
+  errorStrong: semanticLight.negative_120,
+  errorSubtle: semanticLight.negative_20,
+  // #endregion
+
+  // #region text
+  text: accentLight.secondary,
+  textSubtle: accentLight.secondary_80, // textMuted
+  textDisabled: accentLight.secondary_60,
+  textDimmed: atmosphereLight.atmo1,
+  textLink: accentLight.primary,
+  textLinkActive: accentLight.primary,
+  textLinkVisited: accentLight.primary,
+  // #endregion
+
+  // #region borders
+  borderDivider: atmosphereLight.atmo4, // borders, hrs, etc.
+  borderStrong: atmosphereLight.atmo4,
+  borderSubtle: atmosphereLight.atmo3,
+  borderDimmed: atmosphereLight.atmo2,
+  borderTable: atmosphereLight.atmo4,
+  // #endregion
+
+  // #region backgrounds
+  bgPage: atmosphereLight.atmo2,
+  bgSurface: atmosphereLight.atmo1, // surfaces (Header, Tooltip, Dialog, Drawer, etc.)
+  bgAction: atmosphereLight.atmo3,
+  bgActive: atmosphereLight.atmo3,
+  bgDisabled: atmosphereLight.atmo3, // ❓ atmo4 ❓
+  bgHover: accentLight.primary_20,
+  bgOverlay: `color-mix(in srgb, ${atmosphereLight.atmo4} 80%, transparent)`,
+  // #endregion
+
+  // #region compat
   backgroundColor: atmosphereLight.atmo2,
   containerBackgroundHover: accentLight.primary_20,
+  // #endregion
+
+  focusOutline: "none",
+  focusShadow: `0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)`,
 };
 // #endregion
 
@@ -266,8 +315,57 @@ const shadowDark = {
 // #endregion
 
 const utilsDark = {
+  // #region semantic
+  primaryAction: accentDark.primary_80,
+  primarySubtle: accentDark.primary_20,
+  neutralSubtle: semanticDark.neutral_20,
+
+  positiveAction: semanticDark.positive_80,
+  positiveStrong: semanticDark.positive_120,
+  positiveSubtle: semanticDark.positive_20,
+  warningAction: semanticDark.warning_120,
+  warningStrong: semanticDark.warning_140,
+  warningSubtle: semanticDark.warning_20,
+  errorAction: semanticDark.negative_80,
+  errorStrong: semanticDark.negative_120,
+  errorSubtle: semanticDark.negative_20,
+  // #endregion
+
+  // #region text
+  text: accentDark.secondary,
+  textSubtle: accentDark.secondary_80,
+  textDisabled: accentDark.secondary_60,
+  textDimmed: atmosphereDark.atmo1,
+  textLink: accentDark.primary,
+  textLinkActive: accentDark.primary,
+  textLinkVisited: accentDark.primary,
+  // #endregion
+
+  // #region borders
+  borderDivider: atmosphereDark.atmo4,
+  borderStrong: atmosphereDark.atmo4,
+  borderSubtle: atmosphereDark.atmo3,
+  borderDimmed: atmosphereDark.atmo2,
+  borderTable: atmosphereDark.atmo4,
+  // #endregion
+
+  // #region backgrounds
+  bgPage: atmosphereDark.atmo2,
+  bgSurface: atmosphereDark.atmo1,
+  bgAction: atmosphereDark.atmo3,
+  bgActive: atmosphereDark.atmo3,
+  bgDisabled: atmosphereDark.atmo3, // ❓ atmo4 ❓
+  bgHover: accentDark.primary_20,
+  bgOverlay: `color-mix(in srgb, ${atmosphereDark.atmo4} 80%, transparent)`,
+  // #endregion
+
+  // #region compat
   backgroundColor: atmosphereDark.atmo2,
   containerBackgroundHover: accentDark.primary_20,
+  // #endregion
+
+  focusOutline: "none",
+  focusShadow: `0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)`,
 };
 // #endregion
 

@@ -4,7 +4,7 @@ import { baseDropdownClasses } from "../BaseDropdown";
 import { inputClasses } from "../Input";
 import { createClasses } from "../utils/classes";
 
-const hoverColor = theme.colors.atmo3;
+const hoverColor = theme.colors.bgAction;
 
 export const { staticClasses, useClasses } = createClasses("HvPagination", {
   /** Styles applied to the component root class. */

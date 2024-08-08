@@ -144,7 +144,7 @@ const spacing = (...args: [SpacingValue[]] | SpacingValue[]) => {
  * Utility function to apply an alpha channel to a color from the theme.
  *
  * @example
- * theme.alpha("atmo1", 0.5) // rgb( R G B / 0.5)
+ * theme.alpha("warning", 0.5) // rgb( R G B / 0.5)
  */
 const alpha = (color: HvColor, factor: number | string) =>
   `rgb(${rgbVars.rgb[color]} / ${factor})`;

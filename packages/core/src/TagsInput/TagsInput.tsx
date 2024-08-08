@@ -676,7 +676,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
                 !!isTagSelected &&
                   css({
                     [`& .${baseInputClasses.inputRoot}`]: {
-                      backgroundColor: theme.colors.atmo1,
+                      backgroundColor: theme.colors.bgSurface,
                     },
                   }),
               )}

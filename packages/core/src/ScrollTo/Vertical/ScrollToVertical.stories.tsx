@@ -50,7 +50,7 @@ export const Main: StoryObj<HvScrollToVerticalProps> = {
         width: "calc(100% - 60px)",
         "& > div": {
           minHeight: 400,
-          backgroundColor: theme.colors.atmo3,
+          backgroundColor: theme.colors.bgAction,
           outline: "none",
         },
       }),

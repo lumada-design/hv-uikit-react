@@ -67,7 +67,7 @@ export const UseHvGroupBy = () => {
                 style={{
                   backgroundColor:
                     row.subRows.length > 0
-                      ? theme.colors.atmo1
+                      ? theme.colors.bgSurface
                       : theme.table.rowExpandBackgroundColor,
                 }}
                 {...rowProps}

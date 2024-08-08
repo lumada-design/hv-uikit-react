@@ -14,7 +14,7 @@ const style = {
   justifyContent: "center",
   alignItems: "center",
   color: theme.colors.base_dark,
-  backgroundColor: theme.colors.neutral_20,
+  backgroundColor: theme.colors.neutralSubtle,
   minHeight: 80,
 };
 

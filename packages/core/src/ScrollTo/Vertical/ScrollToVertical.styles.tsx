@@ -14,7 +14,7 @@ export const { staticClasses, useClasses } = createClasses(
       flexWrap: "wrap",
       flexDirection: "column",
       backdropFilter: `blur(4px)`,
-      backgroundColor: theme.alpha("atmo2", 0.9),
+      backgroundColor: theme.alpha("backgroundColor", 0.9),
     },
     positionAbsolute: {
       width: "32px",

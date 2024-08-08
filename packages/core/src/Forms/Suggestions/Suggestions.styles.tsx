@@ -5,7 +5,7 @@ import { createClasses } from "../../utils/classes";
 export const { staticClasses, useClasses } = createClasses("HvSuggestions", {
   root: { position: "relative" },
   list: {
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     boxShadow: theme.colors.shadow,
     padding: theme.space.xs,
     width: "100%",

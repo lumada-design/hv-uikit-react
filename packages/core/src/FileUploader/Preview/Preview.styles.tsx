@@ -19,7 +19,7 @@ export const { staticClasses, useClasses } = createClasses(
       display: "none",
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: theme.colors.primary_20,
+      backgroundColor: theme.colors.containerBackgroundHover,
       opacity: "1",
       borderRadius: theme.radii.base,
     },

@@ -293,7 +293,9 @@ const Components = () => {
                 onClick={() => handleClick(c.id)}
                 labelProps={{
                   // checked labels only scroll to element
-                  style: { color: c.selected ? undefined : theme.colors.atmo4 },
+                  style: {
+                    color: c.selected ? undefined : theme.colors.borderDivider,
+                  },
                   onClick: (event) => {
                     event.preventDefault();
                     event.stopPropagation();

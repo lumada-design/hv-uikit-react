@@ -13,7 +13,7 @@ export const { staticClasses, useClasses } = createClasses("HvStack", {
     flexDirection: "row",
   },
   divider: {
-    borderColor: theme.colors.atmo4,
+    borderColor: theme.colors.borderDivider,
   },
   xs: {
     gap: theme.space.xs,

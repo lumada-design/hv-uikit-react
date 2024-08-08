@@ -18,7 +18,7 @@ export default {
 export const IconLibrary: StoryObj<IconBaseProps> = {
   args: {
     iconSize: "M",
-    color: ["secondary", "negative", "positive"],
+    color: ["text", "negative", "positive"],
   },
   render: (args) => (
     <>
@@ -42,7 +42,7 @@ export const IconSpriteLibrary: StoryObj<HvIconSpriteProps> = {
   args: {
     iconSize: "M",
     spriteUrl: "./assets/icons.svg",
-    color: ["secondary", "negative", "positive"],
+    color: ["text", "negative", "positive"],
   },
   render: (args) => (
     <>

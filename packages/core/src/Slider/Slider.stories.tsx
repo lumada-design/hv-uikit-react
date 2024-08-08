@@ -92,6 +92,7 @@ export const RangeSlider: StoryObj<HvSliderProps> = {
           </HvButton>
         </div>
         <HvSlider
+          disabled
           label="Failure Rate"
           values={values}
           onChange={setValues}

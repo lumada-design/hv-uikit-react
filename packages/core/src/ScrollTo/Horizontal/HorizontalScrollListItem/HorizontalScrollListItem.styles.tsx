@@ -33,7 +33,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     height: 24,
     width: 24,
     fontSize: 4,
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
 
     "& > span": {
       margin: "auto",
@@ -45,6 +45,6 @@ export const { staticClasses, useClasses } = createClasses(name, {
   },
   bulletSelected: {
     fontSize: 6,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
   },
 });

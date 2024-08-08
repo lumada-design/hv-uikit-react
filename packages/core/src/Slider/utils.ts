@@ -320,19 +320,19 @@ export const generateDefaultKnobProperties = (
   let knobProperties = knobPropertiesProp || [];
 
   const defaultKnobStyles = {
-    color: theme.colors.secondary,
-    hoverColor: theme.colors.secondary,
-    trackColor: theme.colors.secondary,
-    dragColor: theme.colors.secondary,
-    knobRingColor: theme.colors.atmo1,
+    color: theme.colors.text,
+    hoverColor: theme.colors.text,
+    trackColor: theme.colors.text,
+    dragColor: theme.colors.text,
+    knobRingColor: theme.colors.textDimmed,
   };
 
   const disabledKnobStyles = {
-    color: theme.colors.secondary_60,
-    hoverColor: theme.colors.secondary_60,
-    trackColor: theme.colors.secondary_60,
-    dragColor: theme.colors.secondary_60,
-    knobRingColor: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
+    hoverColor: theme.colors.textDisabled,
+    trackColor: theme.colors.textDisabled,
+    dragColor: theme.colors.textDisabled,
+    knobRingColor: theme.colors.textDisabled,
   };
 
   if (knobProperties.length > 0) {

@@ -49,7 +49,7 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
         padding: "0 20px",
         "& > div": {
           minHeight: 400,
-          backgroundColor: theme.colors.atmo3,
+          backgroundColor: theme.colors.bgAction,
           outline: "none",
         },
       }),

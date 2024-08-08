@@ -1,12 +1,7 @@
 import { forwardRef } from "react";
 import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 import { User } from "@hitachivantara/uikit-react-icons";
-import {
-  getColor,
-  HvColorAny,
-  HvSize,
-  theme,
-} from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny, HvSize } from "@hitachivantara/uikit-styles";
 
 import { useAvatarGroupContext } from "../AvatarGroup/AvatarGroupContext";
 import { useDefaultProps } from "../hooks/useDefaultProps";
@@ -71,8 +66,8 @@ export const HvAvatar = forwardRef<any, HvAvatarProps>((props, ref) => {
     children: childrenProp,
     component = "div",
     size: sizeProp,
-    backgroundColor = "secondary",
-    color = "atmo1",
+    backgroundColor = "text",
+    color = "textDimmed",
     src,
     srcSet,
     sizes,
@@ -132,22 +127,19 @@ export const HvAvatar = forwardRef<any, HvAvatarProps>((props, ref) => {
   }
 
   if (!hasImgNotFailing) {
-    inlineStyle.backgroundColor = getColor(
-      backgroundColor,
-      theme.colors.secondary,
-    );
-    inlineStyle.color = getColor(color, theme.colors.atmo1);
+    inlineStyle.backgroundColor = getColor(backgroundColor, "text");
+    inlineStyle.color = getColor(color, "textDimmed");
   }
 
   const statusInlineStyle: React.CSSProperties = {};
   if (status) {
     // set the status border. we're using the boxShadow property to set the border
     // to be inside the container and not on its edge.
-    const statusColor = getColor(status, theme.colors.positive);
+    const statusColor = getColor(status, "positive");
     statusInlineStyle.boxShadow = `inset 0px 0px 0px 2px ${statusColor}`;
   }
 
-  const badgeColor = getColor(badge || "", theme.colors.positive);
+  const badgeColor = getColor(badge || "", "positive");
 
   return (
     <div ref={ref} className={classes.container} {...others}>

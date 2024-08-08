@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses("HvWizardContent", {
     top: 0,
     minWidth: 280,
     boxShadow: theme.colors.shadow,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgSurface,
     transition: "transform 0.3s",
     transitionTimingFunction: "ease-in-out",
     overflowY: "scroll",

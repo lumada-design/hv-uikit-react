@@ -31,7 +31,7 @@ const actions = [
 
 export const NoActions = () => {
   return (
-    <HvCard bgcolor="atmo1" style={{ width: "500px" }}>
+    <HvCard bgcolor="bgSurface" style={{ width: "500px" }}>
       <HvCardHeader title="Advanced Server DS120" subheader="QTFCR27520007" />
       <HvCardContent>
         <Grid container>

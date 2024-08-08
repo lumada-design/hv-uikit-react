@@ -32,7 +32,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     verticalAlign: "top",
     overflow: "visible",
     boxShadow: "none",
-    borderLeft: `1px solid ${theme.colors.atmo3}`,
+    borderLeft: `1px solid ${theme.colors.bgAction}`,
   },
   leftSidePanel: {
     display: "inline-block",

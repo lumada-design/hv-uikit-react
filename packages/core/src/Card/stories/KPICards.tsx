@@ -33,7 +33,10 @@ const classes = {
     paddingBottom: theme.space.sm,
     paddingLeft: 0,
   }),
-  card: css({ margin: theme.space.sm, backgroundColor: theme.colors.atmo1 }),
+  card: css({
+    margin: theme.space.sm,
+    backgroundColor: theme.colors.bgSurface,
+  }),
 };
 
 const getKpiLabels = (score: string) => ({

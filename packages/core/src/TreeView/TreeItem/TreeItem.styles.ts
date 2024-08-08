@@ -33,7 +33,7 @@ export const { staticClasses, useClasses } = createClasses("HvTreeItem", {
   },
   expanded: {},
   selected: {
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.bgAction,
   },
   focused: {
     backgroundColor: theme.colors.containerBackgroundHover,
@@ -43,9 +43,9 @@ export const { staticClasses, useClasses } = createClasses("HvTreeItem", {
   },
   disabled: {
     cursor: "not-allowed",
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
     "& $label": {
-      color: theme.colors.secondary_60,
+      color: theme.colors.textDisabled,
     },
   },
   label: {

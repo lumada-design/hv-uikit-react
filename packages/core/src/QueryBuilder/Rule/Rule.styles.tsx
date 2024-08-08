@@ -28,8 +28,8 @@ export const { useClasses, staticClasses } = createClasses(
         width: "17px",
         height: "39px",
 
-        borderBottom: `1px solid ${theme.colors.atmo4}`,
-        borderLeft: `1px solid ${theme.colors.atmo4}`,
+        borderBottom: `1px solid ${theme.colors.borderDivider}`,
+        borderLeft: `1px solid ${theme.colors.borderDivider}`,
 
         top: 0,
         left: `calc(-1 * 17px)`,
@@ -43,7 +43,7 @@ export const { useClasses, staticClasses } = createClasses(
         width: "17px",
         height: "100%",
 
-        borderLeft: `1px solid ${theme.colors.atmo4}`,
+        borderLeft: `1px solid ${theme.colors.borderDivider}`,
 
         top: 0,
         left: `calc(-1 * 17px)`,

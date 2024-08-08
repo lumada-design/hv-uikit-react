@@ -43,6 +43,8 @@ export const ColumnContainer = ({
     transform: CSS.Transform.toString(transform),
   };
 
+  const { Icon } = column;
+
   return (
     <div
       ref={setNodeRef}
@@ -57,7 +59,7 @@ export const ColumnContainer = ({
       <div className={classes.column}>
         <div className={classes.columnHeader} {...attributes} {...listeners}>
           <div className={classes.columnTitle}>
-            {column.icon}
+            <Icon color={column.color} />
             <HvTypography variant="title3">{column.title}</HvTypography>
             <div className={classes.count}>{tasks?.length}</div>
           </div>

@@ -115,7 +115,7 @@ const Overflow = ({
       ) : (
         <HvAvatar
           size={size}
-          backgroundColor={theme.colors.atmo4}
+          backgroundColor={theme.colors.borderDivider}
           classes={{
             avatar: css({
               [`&.HvAvatar-${size}`]: {

@@ -10,15 +10,15 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     verticalAlign: "inherit",
     textAlign: "left",
     padding: theme.spacing(0, 1, 0, 4),
-    borderBottom: `1px solid ${theme.colors.atmo4}`,
+    borderBottom: `1px solid ${theme.colors.borderTable}`,
   },
   head: {
     paddingTop: 8,
     verticalAlign: "top",
     ...theme.typography.label,
     transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-    backgroundColor: theme.colors.atmo1,
-    borderBottom: `1px solid ${theme.colors.atmo4}`,
+    backgroundColor: theme.colors.bgSurface,
+    borderBottom: `1px solid ${theme.colors.borderTable}`,
 
     "*:first-of-type > &": {
       height: "var(--first-row-cell-height)",
@@ -71,11 +71,17 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
       borderLeft: 0,
     },
   },
-  stickyColumnMostLeft: { borderRight: `solid 1px ${theme.colors.atmo4}` },
-  stickyColumnLeastRight: { borderLeft: `solid 1px ${theme.colors.atmo4}` },
-  groupColumnMostLeft: { borderLeft: `solid 1px ${theme.colors.atmo4}` },
+  stickyColumnMostLeft: {
+    borderRight: `solid 1px ${theme.colors.borderTable}`,
+  },
+  stickyColumnLeastRight: {
+    borderLeft: `solid 1px ${theme.colors.borderTable}`,
+  },
+  groupColumnMostLeft: {
+    borderLeft: `solid 1px ${theme.colors.borderTable}`,
+  },
   groupColumnMostRight: {
-    borderRight: `solid 1px ${theme.colors.atmo4}`,
+    borderRight: `solid 1px ${theme.colors.borderTable}`,
     // due to the ":has()" selector not being supported in browsers,
     // this need to be managed with inline styles
     // To be uncommented when not needed (see comment in src/Table/hooks/useSticky.js)
@@ -102,7 +108,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
       boxShadow: "none",
       backgroundColor: "transparent",
       "&:hover": {
-        backgroundColor: theme.colors.primary_20,
+        backgroundColor: theme.colors.containerBackgroundHover,
       },
     },
   },
@@ -119,14 +125,14 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     padding: 0,
     width: 32,
     maxWidth: 32,
-    borderRight: `solid 1px ${theme.colors.atmo4}`,
+    borderRight: `solid 1px ${theme.colors.borderTable}`,
   },
   variantExpand: {},
   variantActions: {
     padding: 0,
     width: 32,
     maxWidth: 32,
-    borderLeft: `solid 1px ${theme.colors.atmo4}`,
+    borderLeft: `solid 1px ${theme.colors.borderTable}`,
   },
   variantNone: { padding: 0 },
   variantList: {
@@ -138,8 +144,8 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
       height: 16,
     },
   },
-  resizable: { borderRight: `solid 1px ${theme.colors.atmo4}` },
-  resizing: { borderRight: `solid 2px ${theme.colors.secondary}` },
+  resizable: { borderRight: `solid 1px ${theme.colors.borderTable}` },
+  resizing: { borderRight: `solid 2px ${theme.colors.text}` },
   resizer: {
     display: "inline-block",
     width: 10,

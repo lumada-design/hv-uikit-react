@@ -146,7 +146,7 @@ export const HvInlineEditor = (props: HvInlineEditorProps) => {
           overrideIconColors={false}
           endIcon={
             <Edit
-              color="secondary_60"
+              color="textDisabled"
               className={cx(classes.icon, {
                 [classes.iconVisible]: showIcon,
               })}

@@ -55,7 +55,7 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
           <HvCard
             selectable
             selected={rowId ? selectedCardsIds.includes(rowId) : undefined}
-            bgcolor="atmo1"
+            bgcolor="bgPaper"
             key={item.id}
             style={{ width: "100%" }}
             statusColor={statusColor}

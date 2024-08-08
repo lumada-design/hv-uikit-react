@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { Info } from "@hitachivantara/uikit-react-icons";
-import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvAvatar } from "../../Avatar";
 import { useUniqueId } from "../../hooks/useUniqueId";
@@ -66,9 +66,10 @@ export const HvAppSwitcherAction = ({
   const { name, description, disabled, iconElement, iconUrl, url, target } =
     application;
 
-  const color = disabled
-    ? theme.colors.secondary_60
-    : getColor(application?.color, theme.colors.secondary);
+  const color = getColor(
+    disabled ? "textDisabled" : application?.color,
+    "text",
+  );
 
   const [validIconUrl, setValidIconUrl] = useState<boolean>(true);
 

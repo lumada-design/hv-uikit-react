@@ -69,8 +69,8 @@ export const HvCodeEditor = ({
         inherit: true,
         rules: [],
         colors: {
-          "editor.background": colors?.atmo1 || "",
-          "editorLineNumber.foreground": colors?.secondary_60 || "",
+          "editor.background": colors?.bgSurface || "",
+          "editorLineNumber.foreground": colors?.textSubtle || "", // TODO: 🎨
         },
       });
     });
