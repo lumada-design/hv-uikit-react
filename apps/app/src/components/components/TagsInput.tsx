@@ -2,7 +2,7 @@ import { useState } from "react";
 import { css } from "@emotion/css";
 import { HvTagProps, HvTagsInput } from "@hitachivantara/uikit-react-core";
 
-import countryNamesArray from "./countries";
+import countryNamesArray from "./data/countries";
 
 export const TagsInput = () => {
   const [currValueStr, setCurrValueStr] = useState<HvTagProps[]>([]);

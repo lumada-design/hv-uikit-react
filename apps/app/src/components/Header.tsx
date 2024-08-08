@@ -14,12 +14,11 @@ import { Debug, Menu } from "@hitachivantara/uikit-react-icons";
 import logo from "~/assets/logo.png";
 import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { useNavigationContext } from "~/lib/context/navigation";
-import navigation from "~/lib/navigation";
 
 export const Header = () => {
   const navigate = useNavigate();
   const theme = useTheme();
-  const { activePath } = useNavigationContext();
+  const { activePath, navigation } = useNavigationContext();
   const { setOpen, open, setTutorialOpen } = useGeneratorContext();
 
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));

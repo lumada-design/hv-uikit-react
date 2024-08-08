@@ -1,6 +1,8 @@
 import { createContext, useContext, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 
+import navigationData from "../navigation";
+
 export interface NavigationData {
   id: string;
   label: string;
@@ -10,11 +12,10 @@ export interface NavigationData {
 
 export interface NavigationProviderProps {
   children: React.ReactNode;
-  navigation: NavigationData[];
 }
 
 export interface NavigationContextValue {
-  navigation?: NavigationData[];
+  navigation: NavigationData[];
   activePath: NavigationData | undefined;
 }
 
@@ -35,18 +36,15 @@ const getActivePath = (pathname: string, navigation: NavigationData[]) => {
   }, navigation[0]);
 };
 
-export const NavigationProvider = ({
-  children,
-  navigation,
-}: NavigationProviderProps) => {
+export const NavigationProvider = ({ children }: NavigationProviderProps) => {
   const { pathname } = useLocation();
 
   const value = useMemo(
     () => ({
-      navigation,
-      activePath: getActivePath(pathname, navigation),
+      navigation: navigationData,
+      activePath: getActivePath(pathname, navigationData),
     }),
-    [navigation, pathname],
+    [pathname],
   );
 
   return (
