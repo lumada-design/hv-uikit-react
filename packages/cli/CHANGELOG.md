@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.13](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.16.12...@hitachivantara/hv-uikit-cli@1.16.13) (2024-08-08)
+
+### Performance Improvements
+
+- remove core dependency in viz & code-editor ([27ede92](https://github.com/lumada-design/hv-uikit-react/commit/27ede92f7e198924655247cb576867c027286c3d))
+
 ## 1.16.12 (2024-08-05)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-code-editor",
-  "version": "5.2.180",
+  "version": "5.2.181",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -38,8 +38,8 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@hitachivantara/uikit-react-shared": "^5.1.45",
-    "@hitachivantara/uikit-styles": "^5.31.0",
+    "@hitachivantara/uikit-react-shared": "^5.2.0",
+    "@hitachivantara/uikit-styles": "^5.31.1",
     "@monaco-editor/react": "^4.5.1"
   },
   "devDependencies": {

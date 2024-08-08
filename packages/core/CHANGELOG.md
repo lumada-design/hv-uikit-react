@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.67.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.14...@hitachivantara/uikit-react-core@5.67.0) (2024-08-08)
+
+### Bug Fixes
+
+- **classes:** add explicit type export ([6b990b3](https://github.com/lumada-design/hv-uikit-react/commit/6b990b3732c1e601421932f8109737c250196b55))
+- fixedForwardRef types in typescript@4 ([c2c63df](https://github.com/lumada-design/hv-uikit-react/commit/c2c63df5b8f52caf219ee5294a6caad6ba3502ff))
+
+### Features
+
+- canvas toolbar tabs component added ([9c53fdd](https://github.com/lumada-design/hv-uikit-react/commit/9c53fddce00a4020251959e7859fcea862d79681))
+- **shared:** add useTheme & classes utils ([c4a3828](https://github.com/lumada-design/hv-uikit-react/commit/c4a38283466f691ee64b1218b43b8ad5bc8a3506))
+
+### Performance Improvements
+
+- remove core dependency in viz & code-editor ([27ede92](https://github.com/lumada-design/hv-uikit-react/commit/27ede92f7e198924655247cb576867c027286c3d))
+
 ## [5.66.14](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.13...@hitachivantara/uikit-react-core@5.66.14) (2024-08-01)
 
 ### Bug Fixes

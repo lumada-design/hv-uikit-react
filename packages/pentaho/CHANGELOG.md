@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.3.0...@hitachivantara/uikit-react-pentaho@0.4.0) (2024-08-08)
+
+### Features
+
+- canvas toolbar tabs component added ([9c53fdd](https://github.com/lumada-design/hv-uikit-react/commit/9c53fddce00a4020251959e7859fcea862d79681))
+
 # [0.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.2.0...@hitachivantara/uikit-react-pentaho@0.3.0) (2024-08-05)
 
 ### Bug Fixes
