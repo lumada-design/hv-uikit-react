@@ -6,7 +6,11 @@ import { HvButton, HvButtonProps } from "../Button";
 import { useControlled } from "../hooks/useControlled";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvInput, HvInputProps } from "../Input";
-import { fixedForwardRef, HvBaseProps, PolymorphicRef } from "../types/generic";
+import {
+  fixedForwardRef,
+  PolymorphicComponentRef,
+  PolymorphicRef,
+} from "../types/generic";
 import {
   HvTypography,
   HvTypographyProps,
@@ -20,37 +24,37 @@ export { staticClasses as inlineEditorClasses };
 
 export type HvInlineEditorClasses = ExtractNames<typeof useClasses>;
 
-export interface HvInlineEditorProps<
-  C extends React.ElementType = typeof HvInput,
-> extends HvBaseProps<HTMLDivElement, "onBlur" | "onChange"> {
-  /** The value of the form element. */
-  value?: string;
-  /** The default value of the form element. */
-  defaultValue?: string;
-  /** Whether the Edit icon should always be visible */
-  showIcon?: boolean;
-  /** Component to use as the input. The component "inherit" from `HvBaseInput` (such as `HvInput` or `HvTextArea`) */
-  component?: C;
-  /** Variant of the HvTypography to display */
-  variant?: HvTypographyVariants;
-  /** Called when the input is blurred. */
-  onBlur?: (
-    event: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>,
-    value: string,
-  ) => void;
-  /** Called when the input value changes. */
-  onChange?: (event: React.SyntheticEvent, value: string) => void;
-  /** Props passed to the HvButton component */
-  buttonProps?: HvButtonProps;
-  /** Props passed to the HvTypography text component */
-  typographyProps?: HvTypographyProps;
-  /** Whether the editor is disabled or not. */
-  disabled?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: HvInlineEditorClasses;
-  /** The placeholder value of the input. */
-  placeholder?: string;
-}
+export type HvInlineEditorProps<C extends React.ElementType = typeof HvInput> =
+  PolymorphicComponentRef<
+    C,
+    {
+      /** The value of the form element. */
+      value?: string;
+      /** The default value of the form element. */
+      defaultValue?: string;
+      /** Whether the Edit icon should always be visible */
+      showIcon?: boolean;
+      /** Variant of the HvTypography to display */
+      variant?: HvTypographyVariants;
+      /** Called when the input is blurred. */
+      onBlur?: (
+        event: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>,
+        value: string,
+      ) => void;
+      /** Called when the input value changes. */
+      onChange?: (event: React.SyntheticEvent, value: string) => void;
+      /** Props passed to the HvButton component */
+      buttonProps?: HvButtonProps;
+      /** Props passed to the HvTypography text component */
+      typographyProps?: HvTypographyProps;
+      /** Whether the editor is disabled or not. */
+      disabled?: boolean;
+      /** A Jss Object used to override or extend the styles applied to the empty state component. */
+      classes?: HvInlineEditorClasses;
+      /** The placeholder value of the input. */
+      placeholder?: string;
+    }
+  >;
 
 /**
  * An Inline Editor allows the user to edit a record without making a major switch
@@ -58,11 +62,7 @@ export interface HvInlineEditorProps<
  */
 export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
   C extends React.ElementType = typeof HvInput,
->(
-  props: HvInlineEditorProps<C> &
-    Omit<React.ComponentProps<C>, keyof HvInlineEditorProps<C>>,
-  ref: PolymorphicRef<C>,
-) {
+>(props: HvInlineEditorProps<C>, ref: PolymorphicRef<C>) {
   const {
     className,
     classes: classesProp,
