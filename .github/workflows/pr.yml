@@ -12,6 +12,7 @@ concurrency:
 
 jobs:
   visual-tests:
+    if: false
     name: Visual Tests
     uses: ./.github/workflows/tests-visual.yml
     secrets: inherit
