@@ -1,173 +1,79 @@
 /* eslint-disable no-console */
-import fs from "node:fs";
-import path from "node:path";
+import fs from "node:fs/promises";
+import { parse, resolve } from "node:path";
 import { transform } from "@svgr/core";
 
 import { generateComponent } from "./generateComponent";
 import { extractColors, extractSize, replaceFill } from "./utils";
 
-// Resolve arguments
-const inputPath = "assets";
-const outputPath = "src";
-
-const componentOutputFolder = outputPath
-  ? path.resolve(process.cwd(), outputPath)
-  : path.resolve(process.cwd());
-
-const knownSubfolders: Record<string, boolean> = {};
-
-const transformToJsx = (svgCode: string) => {
-  return transform.sync(svgCode, {
+const transformToJsx = (fileData: string, iconName: string) => {
+  const svgJsx = transform.sync(fileData, {
     plugins: ["@svgr/plugin-jsx"],
     jsxRuntime: "automatic",
     // we only care about the JSX part of the generated React component
     template: (vars, { tpl }) => tpl`${vars.jsx}`,
   });
+
+  // TODO: simplify this logic
+  const viewBox = extractSize(svgJsx);
+  const colorArray = extractColors(svgJsx);
+  const jsxSvgFixedColors = replaceFill(svgJsx, colorArray)
+    // remove svg tag, keeping only the content
+    .replace(/<svg.*?>(.*?)<\/svg>;/s, "$1");
+
+  // Wrap it up in a React component
+  return generateComponent(jsxSvgFixedColors, iconName, colorArray, viewBox);
 };
 
-const writeFile = (processedSVG: string, fileName: string, subFolder = ".") => {
-  fs.mkdirSync(path.resolve(componentOutputFolder, subFolder), {
-    recursive: true,
-  });
+/** Converts all SVGs in `inputDir` to JSX & writes result to `outputFile` */
+async function convertSvgFiles(inputDir: string, outputFile: string) {
+  const files = await fs.readdir(resolve(inputDir), { withFileTypes: true });
+  const svgFiles = files.filter((f) => f.isFile() && f.name.endsWith(".svg"));
 
-  const file = path.resolve(
-    componentOutputFolder,
-    subFolder,
-    `${fileName}.tsx`,
+  const data = await Promise.all(
+    svgFiles.map(async (f) => ({
+      name: `${parse(f.name).name}`.replace(/[-.]g/, ""),
+      data: await fs.readFile(resolve(inputDir, f.name), "utf-8"),
+    })),
   );
 
-  fs.writeFile(file, processedSVG, { flag: "w" }, (err) => {
-    if (err) {
-      console.error(`Output file ${file} not writable ${err.code}`);
-    }
-  });
+  const headers = `import { createHvIcon } from "./IconBase";`;
+  const output = data.map((f) => transformToJsx(f.data, f.name)).join("");
 
-  const exportName = fileName.split(".").join("");
-  const exportString = `export { ${exportName} } from "./${fileName}";\n`;
+  await fs.writeFile(resolve(outputFile), `${headers}\n${output}`);
+}
 
-  if (subFolder === ".") {
-    fs.appendFile(
-      path.resolve(componentOutputFolder, `icons.ts`),
-      exportString,
-      () => {},
-    );
-  } else {
-    fs.appendFile(
-      path.resolve(componentOutputFolder, subFolder, `index.ts`),
-      exportString,
-      () => {},
-    );
-  }
+const makeHeaders = (name: string) => `
+export * from "./${name}";
+import * as ${name} from "./${name}";
+export { ${name} };
+`;
 
-  if (!knownSubfolders[subFolder]) {
-    knownSubfolders[subFolder] = true;
+async function main() {
+  const inputPath = "assets";
+  const outputPath = "src";
 
-    if (subFolder === ".") {
-      fs.appendFile(
-        path.resolve(componentOutputFolder, `index.ts`),
-        [
-          `export * from "./IconBase";`,
-          `export * from "./IconSprite";`,
-          "\n",
-          `export * from "./icons";`,
-          `import * as icons from "./icons";`,
-          `export { icons };`,
-          "\n",
-        ].join("\n"),
-        () => {},
-      );
-    } else {
-      const subFolderName = subFolder.replace("./", "");
-      fs.appendFile(
-        path.resolve(componentOutputFolder, subFolder, "..", `index.ts`),
-        [
-          `export * from "${subFolder}";`,
-          `import * as ${subFolderName} from "${subFolder}";`,
-          `export { ${subFolderName} };`,
-          "\n",
-        ].join("\n"),
-        () => {},
-      );
-    }
-  }
-};
+  await fs.mkdir(resolve(outputPath), { recursive: true });
 
-const runUtil = (
-  fileToRead: string,
-  iconName: string,
-  subFolder = ".",
-  depth = 0,
-) => {
-  fs.readFile(fileToRead, "utf8", (err, fileData) => {
-    if (err) {
-      console.error(err);
-      return;
-    } // exit early
+  await convertSvgFiles(inputPath, `${outputPath}/icons.tsx`);
 
-    let output = transformToJsx(fileData);
+  const files = await fs.readdir(inputPath, { withFileTypes: true });
+  const subDirs = files.filter((f) => f.isDirectory()).map((f) => f.name);
 
-    const viewBox = extractSize(output);
-    const colorArray = extractColors(output);
+  await Promise.all(
+    subDirs.map((dir) =>
+      convertSvgFiles(`${inputPath}/${dir}`, `${outputPath}/${dir}.tsx`),
+    ),
+  );
 
-    output = replaceFill(output, colorArray)
-      // remove svg tag, keeping only the content
-      .replace(/<svg.*?>(.*?)<\/svg>;/s, "$1");
+  const allDirs = ["icons", ...subDirs];
 
-    // Wrap it up in a React component
-    output = generateComponent(
-      output,
-      iconName,
-      colorArray,
-      viewBox,
-      `${".".repeat(depth + 1)}`,
-    );
-    writeFile(output, iconName, subFolder);
-  });
-};
+  const indexFile = `
+export * from "./IconBase";
+export * from "./IconSprite";
+${allDirs.map(makeHeaders).join("")}
+`;
+  await fs.writeFile(resolve("src/index.ts"), indexFile);
+}
 
-const isFolder = (dirPath: string) =>
-  fs.existsSync(dirPath) && fs.lstatSync(dirPath).isDirectory();
-
-const processFile = (file: string, subFolder = ".", depth = 0) => {
-  const extension = path.extname(file);
-  const fileName = path.basename(file, extension);
-
-  if (extension === ".svg") {
-    const componentName = fileName.replace(/[-.]g/, "");
-    runUtil(file, componentName, subFolder, depth);
-  }
-};
-
-const runUtilForJustFilesInDir = (
-  folder: string,
-  subFolder = ".",
-  depth = 0,
-) => {
-  fs.readdir(folder, (err, files) => {
-    if (err) {
-      console.log(err);
-      return;
-    } // Get out early if not found
-
-    files.forEach((file) => {
-      const filePath = path.resolve(folder, file);
-      if (!isFolder(filePath)) {
-        processFile(filePath, subFolder, depth);
-      } else {
-        runUtilForJustFilesInDir(
-          filePath,
-          `${subFolder}/${path.basename(file)}`,
-          depth + 1,
-        );
-      }
-    });
-  });
-};
-
-fs.mkdir(outputPath, { recursive: true }, (err) => {
-  if (err) throw err;
-});
-
-fs.writeFile(path.resolve(process.cwd(), outputPath, `index.ts`), "", () => {});
-
-runUtilForJustFilesInDir(`${process.cwd()}/${inputPath}`);
+main();

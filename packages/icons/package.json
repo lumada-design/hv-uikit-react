@@ -25,16 +25,12 @@
     "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
   "scripts": {
+    "optimize": "svgo -r -f assets assets",
+    "convert": "tsx scripts/svgToReact.ts && tsx scripts/svgToSprite.ts",
     "prebuild": "run-s clean convert",
     "build": "vite build",
     "postbuild": "npx cpy \"sprites\" \"dist\"",
-    "optimize": "svgo -r -f assets assets",
-    "preconvert": "npx rimraf src",
-    "convert": "run-s convert:*",
-    "convert:svg": "tsx scripts/svgToReact.ts",
-    "convert:sprites": "tsx scripts/svgToSprite.ts",
-    "convert:copy": "npx cpy \"lib/*\" \"src\"",
-    "clean": "npx rimraf dist src sprites package",
+    "clean": "npx rimraf dist sprites package",
     "prepare": "npm run convert",
     "prepublishOnly": "npm run build && npx clean-publish"
   },
