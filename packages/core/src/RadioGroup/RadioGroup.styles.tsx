@@ -5,9 +5,8 @@ import { createClasses } from "../utils/classes";
 export const { staticClasses, useClasses } = createClasses("HvRadioGroup", {
   root: {
     display: "inline-block",
-    padding: 0,
-    margin: 0,
-    overflow: "hidden",
+    overflow: "clip",
+    overflowClipMargin: 4,
     verticalAlign: "top",
   },
   label: { marginBottom: theme.space.xs },
@@ -26,10 +25,7 @@ export const { staticClasses, useClasses } = createClasses("HvRadioGroup", {
   horizontal: {
     flexDirection: "row",
     flexWrap: "wrap",
-    "&>*:not(:first-of-type)": {
-      marginLeft: theme.space.sm,
-    },
-    width: `calc(100% + ${theme.space.sm})`, // Compensate the negative margin left which increases the width
+    gap: theme.space.sm,
   },
   invalid: {
     paddingBottom: theme.space.xs,

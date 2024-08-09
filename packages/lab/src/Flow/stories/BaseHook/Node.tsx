@@ -89,7 +89,7 @@ export const Node = ({ id, groupId = "teapot", input, output }: NodeProps) => {
   return (
     <div
       style={{
-        // @ts-ignore
+        // @ts-expect-error csstype doesn't support CSS vars
         "--color": color,
       }}
       className={cx("nowheel", classes.root)}

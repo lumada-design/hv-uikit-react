@@ -1,16 +1,10 @@
-import { theme } from "@hitachivantara/uikit-styles";
-
 export const HitachiLogo = ({ ...others }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      x="0px"
-      y="0px"
+      role="img"
       viewBox="0 0 80 16"
-      xmlSpace="preserve"
-      width={80}
-      height={16}
-      style={{ width: 72, height: 20 }}
-      fill={theme.colors.secondary}
+      width={72}
+      fill="currentColor"
       {...others}
     >
       <title>Logo</title>

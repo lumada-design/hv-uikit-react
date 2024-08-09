@@ -5,7 +5,7 @@ import { HvSize, theme } from "@hitachivantara/uikit-styles";
 import { HvAvatar } from "../Avatar/Avatar";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
+import { ExtractNames, mergeStyles } from "../utils/classes";
 import { staticClasses, useClasses } from "./AvatarGroup.styles";
 import { HvAvatarGroupProvider } from "./AvatarGroupContext";
 
@@ -167,14 +167,15 @@ export const HvAvatarGroup = forwardRef<HTMLDivElement, HvAvatarGroupProps>(
         className={cx(
           classes.root,
           classes[direction],
-          { [classes.highlight]: highlight },
-          { [classes.toBack]: toBack },
+          {
+            [classes.highlight]: highlight,
+            [classes.toBack]: toBack,
+          },
           className,
         )}
-        style={{
-          ["--spacing" as string]: `-${spacingValue}px`,
-          ...style,
-        }}
+        style={mergeStyles(style, {
+          "--spacing": `-${spacingValue}px`,
+        })}
         ref={ref}
         {...others}
       >

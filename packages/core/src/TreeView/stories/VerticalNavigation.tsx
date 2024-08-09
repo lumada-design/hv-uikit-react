@@ -45,7 +45,8 @@ const NavigationItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
         ref={ref}
         nodeId={nodeId}
         style={{
-          ["--level" as string]: level,
+          // @ts-expect-error csstype doesn't support CSS vars
+          "--level": level,
           pointerEvents: disabled ? "none" : undefined,
         }}
         classes={{

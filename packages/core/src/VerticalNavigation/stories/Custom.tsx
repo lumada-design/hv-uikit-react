@@ -72,7 +72,7 @@ export const Custom = () => {
       <div
         className={classes.header}
         style={{
-          // @ts-ignore
+          // @ts-expect-error csstype doesn't support CSS vars
           "--header-alignment": collapsed ? "center" : "stretch",
         }}
       >

@@ -1,7 +1,7 @@
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvLoading, HvLoadingProps } from "../Loading";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
+import { ExtractNames, mergeStyles } from "../utils/classes";
 import { staticClasses, useClasses } from "./LoadingContainer.styles";
 
 export { staticClasses as loadingContainerClasses };
@@ -52,7 +52,7 @@ export const HvLoadingContainer = (props: HvLoadingContainerProps) => {
         label={label}
         hidden={hidden}
         aria-label={ariaLabel}
-        style={opacity ? { ["--opacity" as string]: opacity } : undefined}
+        style={mergeStyles({}, { "--opacity": opacity })}
       />
       {children}
     </div>
