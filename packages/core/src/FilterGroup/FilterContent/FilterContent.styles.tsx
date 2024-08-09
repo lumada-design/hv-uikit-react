@@ -36,13 +36,11 @@ export const { staticClasses, useClasses } = createClasses(name, {
   },
   leftSidePanel: {
     display: "inline-block",
-    width: `calc(50% - ${theme.space.sm} - ${theme.space.sm} + 8px)`,
-    height: `calc(100% - ${theme.space.sm} - ${theme.space.sm} + 8px)`,
+    width: "50%",
+    height: "100%",
     verticalAlign: "top",
     maxHeight: "calc(500px - 75px)",
     minHeight: "calc(370px - 75px)",
-    padding: 4,
-    margin: `calc(${theme.spacing("sm")} - 4px)`,
   },
   actionBar: {},
   space: {

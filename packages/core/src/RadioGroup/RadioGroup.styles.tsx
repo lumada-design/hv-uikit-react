@@ -5,9 +5,8 @@ import { createClasses } from "../utils/classes";
 export const { staticClasses, useClasses } = createClasses("HvRadioGroup", {
   root: {
     display: "inline-block",
-    padding: 0,
-    margin: 0,
-    overflow: "hidden",
+    overflow: "clip",
+    overflowClipMargin: 4,
     verticalAlign: "top",
   },
   label: { marginBottom: theme.space.xs },

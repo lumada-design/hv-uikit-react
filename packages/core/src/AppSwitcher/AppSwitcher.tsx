@@ -112,7 +112,11 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
             }}
           />
         ))}
-      <HvListContainer disableGutters className={classes.actionsContainer}>
+      <HvListContainer
+        condensed
+        disableGutters
+        className={classes.actionsContainer}
+      >
         {panelActions}
       </HvListContainer>
       {footer && (
