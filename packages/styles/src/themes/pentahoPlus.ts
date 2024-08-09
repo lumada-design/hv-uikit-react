@@ -361,6 +361,22 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvInlineEditor: {
+      classes: {
+        root: {
+          "& .HvButton-root": {
+            borderRadius: "2px",
+
+            "&:focus": {
+              borderColor: theme.colors.secondary,
+            },
+          },
+          "& .HvBaseInput-inputRoot": {
+            borderRadius: "2px",
+          },
+        },
+      },
+    },
     HvButton: {
       classes: {
         root: {
