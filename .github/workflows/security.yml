@@ -40,10 +40,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
         with:
-          node-version: 18
+          install: false
 
       - name: Request Citadel scan
         run: .github/scripts/citadel-request.mjs
@@ -69,10 +69,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
         with:
-          node-version: 18
+          install: false
 
       # Install dependencies inside each package so blackduck can scan them
       # To do this we need to remove the package.json and package-lock.json from the root

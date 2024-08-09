@@ -82,10 +82,44 @@ jobs:
     uses: ./.github/workflows/security.yml
     secrets: inherit
 
+  publish-github:
+    name: Publish GitHub Release
+    needs: [publish]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: "0"
+          fetch-tags: true
+
+      - name: Publish Setup
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+        with:
+          install: false
+
+      - name: Tag Release
+        # Tag according to core's version, erroring (expectedly) when no new version
+        run: |
+          VERSION=v$(npm pkg get version -w @hitachivantara/uikit-react-core | sed -n 's/.*"@hitachivantara\/uikit-react-core": "\(.*\)".*/\1/p')
+          git tag -a $VERSION -m "Version $VERSION"
+          git push --tags
+
+      - name: Create GitHub Release
+        run: npx changelogithub@0.13
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   notify-release:
     name: Notify release
     runs-on: ubuntu-latest
-    needs: [publish-documentation]
+    needs: [publish-github]
 
     env:
       DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ github.ref_name }}/
@@ -105,6 +139,13 @@ jobs:
               branch: "${{ github.ref_name }}"
             })
 
+            const tags = await github.repos.listTags({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 1
+            });
+            const latestTag = tags.data[0].name;
+
             const commitMessage = branch.data.commit.commit.message
             const slackMessage = commitMessage.replace('chore(release): publish', '')
               .replace(/\n/g, "\\n")
@@ -113,6 +154,7 @@ jobs:
               .replace(/\f/g, "\\f")
               
             core.exportVariable("SLACK_MESSAGE", slackMessage)
+            core.exportVariable("LATEST_TAG", latestTag)
 
       - name: Notify release
         uses: hbfernandes/slack-action@1.0
@@ -126,8 +168,8 @@ jobs:
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
-                  "author_name": "New UI-Kit artifacts are available",
-                  "title": "More details https://github.com/${{github.repository}}/releases",
+                  "author_name": "New UI-Kit Release is available",
+                  "title": "https://github.com/${{github.repository}}/releases/${{env.LATEST_TAG}}",
                   "text": "${{env.SLACK_MESSAGE}}",
                   "footer": "${{env.DOCUMENTATION_URL}}"
                 }
