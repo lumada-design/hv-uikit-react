@@ -16,15 +16,11 @@ export const generateComponent = (
   iconName: string,
   colorArray: string[],
   viewBox: string,
-  basePath = "..",
 ) => {
   const palette = colorArray.map((c) => `"${hexColorMap[c] || c}"`).join(",");
+  const finalOutput = /(\/>.*){2,}/.test(svgOutput)
+    ? `<>${svgOutput}</>`
+    : svgOutput;
 
-  return `import { createHvIcon } from "${basePath}/IconBase";
-
-export const ${iconName} = createHvIcon(
-  "${iconName}", "${viewBox}", [${palette}],
-  <>${svgOutput}</>,
-);
-`;
+  return `export const ${iconName} = createHvIcon("${iconName}", "${viewBox}", [${palette}], ${finalOutput});\n`;
 };
