@@ -1,5 +1,7 @@
 import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
+const boxShadow = `4px 0px 8px -4px ${theme.alpha("base_dark", "12%")}`;
+
 export const { staticClasses, useClasses } = createClasses(
   "HvCanvasSidePanel",
   {
@@ -8,8 +10,7 @@ export const { staticClasses, useClasses } = createClasses(
       position: "absolute",
       top: 0,
       left: 0,
-      boxShadow:
-        "4px 0px 8px -4px color-mix(in srgb, #414141 12%, transparent)",
+      boxShadow,
       backgroundColor: "transparent",
       transition: "visibility 0.3s ease, width 0.3s ease",
       overflow: "hidden",
@@ -31,8 +32,7 @@ export const { staticClasses, useClasses } = createClasses(
       width: "35px",
       display: "flex",
       justifyContent: "center",
-      boxShadow:
-        "4px 0px 8px -4px color-mix(in srgb, #414141 12%, transparent)",
+      boxShadow,
       backgroundColor: theme.colors.atmo1,
       borderRadius: "0px 16px 16px 0px",
       position: "absolute",
