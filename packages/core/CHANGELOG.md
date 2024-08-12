@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.67.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.67.0...@hitachivantara/uikit-react-core@5.67.1) (2024-08-12)
+
+### Bug Fixes
+
+- **HvInlineEditor:** typescript attribute recognition ([2647c11](https://github.com/lumada-design/hv-uikit-react/commit/2647c11b4e12023594525dc5019a596dfa5ad540))
+- **TagsInput:** inherit types from HvInput ([0d48bb4](https://github.com/lumada-design/hv-uikit-react/commit/0d48bb40b59ba07544ab65b0c9f7b17ddb650614))
+
 # [5.67.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.66.14...@hitachivantara/uikit-react-core@5.67.0) (2024-08-08)
 
 ### Bug Fixes

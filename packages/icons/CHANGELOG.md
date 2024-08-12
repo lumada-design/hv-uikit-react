@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.10.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.10.6...@hitachivantara/uikit-react-icons@5.10.7) (2024-08-12)
+
+### Performance Improvements
+
+- **icons:** optimize icons, scripts, merge declarations ([#4265](https://github.com/lumada-design/hv-uikit-react/issues/4265)) ([0d041db](https://github.com/lumada-design/hv-uikit-react/commit/0d041dbd167f079aa757666327639751325c309b))
+
 ## [5.10.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.10.5...@hitachivantara/uikit-react-icons@5.10.6) (2024-08-08)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

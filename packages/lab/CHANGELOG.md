@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.38.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.37.5...@hitachivantara/uikit-react-lab@5.38.0) (2024-08-12)
+
+### Bug Fixes
+
+- header spacing ([7932738](https://github.com/lumada-design/hv-uikit-react/commit/793273813706c89a411b200e647b99bec5fd9fa1))
+
+### Features
+
+- add collapsible mode ([ae9cb64](https://github.com/lumada-design/hv-uikit-react/commit/ae9cb64433323fdecc6a98d974f732f262681a3b))
+- add sub group sample nodes ([93c5373](https://github.com/lumada-design/hv-uikit-react/commit/93c537346b1559ef18bcf755fa07b4163a46e49f))
+
 ## [5.37.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.37.4...@hitachivantara/uikit-react-lab@5.37.5) (2024-08-08)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
