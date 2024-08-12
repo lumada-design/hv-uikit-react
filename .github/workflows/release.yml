@@ -27,6 +27,9 @@ jobs:
       RELEASE_TYPE: ${{ github.event.client_payload.type }}
       NPM_CONFIG_PROVENANCE: true
 
+    outputs:
+      NEW_VERSION: ${{ steps.version.outputs.NEW_VERSION }}
+
     permissions:
       contents: write
       id-token: write
@@ -53,6 +56,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: |
+          VERSION=v$(npm pkg get version -ws | sed -n 's/.*uikit-react-core": "\(.*\)".*/\1/p')
+          echo "CURRENT_VERSION=$VERSION" >> "$GITHUB_ENV"
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           npm run publish 2>&1 | tee publish_logs.txt
 
@@ -68,6 +73,27 @@ jobs:
             exit 1
           fi
 
+      - name: Set NEW_VERSION
+        id: version
+        # Outputs the NEW_VERSION if there is one, or empty otherwise
+        run: |
+          VERSION=v$(npm pkg get version -ws | sed -n 's/.*uikit-react-core": "\(.*\)".*/\1/p'
+          echo "NEW_VERSION=$( [ "$CURRENT_VERSION" = "$VERSION" ] && echo "" || echo "$VERSION" )" >> "$GITHUB_OUTPUT"
+
+      - name: Tag Release
+        if: steps.version.outputs.NEW_VERSION
+        env:
+          VERSION: ${{steps.version.outputs.NEW_VERSION}}
+        run: |
+          git tag -a $VERSION -m "Version $VERSION"
+          git push --tags
+
+      - name: Create GitHub Release
+        if: steps.version.outputs.NEW_VERSION
+        run: npx changelogithub@0.13
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   publish-documentation:
     name: Publish Documentation
     needs: [publish]
@@ -82,47 +108,15 @@ jobs:
     uses: ./.github/workflows/security.yml
     secrets: inherit
 
-  publish-github:
-    name: Publish GitHub Release
-    needs: [publish]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: "0"
-          fetch-tags: true
-
-      - name: Publish Setup
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Install Dependencies
-        uses: ./.github/actions/install-dependencies
-        with:
-          install: false
-
-      - name: Tag Release
-        # Tag according to core's version, erroring (expectedly) when no new version
-        run: |
-          VERSION=v$(npm pkg get version -w @hitachivantara/uikit-react-core | sed -n 's/.*"@hitachivantara\/uikit-react-core": "\(.*\)".*/\1/p')
-          git tag -a $VERSION -m "Version $VERSION"
-          git push --tags
-
-      - name: Create GitHub Release
-        run: npx changelogithub@0.13
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   notify-release:
     name: Notify release
     runs-on: ubuntu-latest
-    needs: [publish-github]
+    needs: [publish]
+    if: needs.publish.outputs.NEW_VERSION
 
     env:
       DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ github.ref_name }}/
+      VERSION: ${{ needs.publish.outputs.NEW_VERSION }}
 
     steps:
       - name: Checkout
@@ -139,12 +133,6 @@ jobs:
               branch: "${{ github.ref_name }}"
             })
 
-            const tags = await github.repos.listTags({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              per_page: 1
-            });
-            const latestTag = tags.data[0].name;
 
             const commitMessage = branch.data.commit.commit.message
             const slackMessage = commitMessage.replace('chore(release): publish', '')
@@ -154,7 +142,6 @@ jobs:
               .replace(/\f/g, "\\f")
               
             core.exportVariable("SLACK_MESSAGE", slackMessage)
-            core.exportVariable("LATEST_TAG", latestTag)
 
       - name: Notify release
         uses: hbfernandes/slack-action@1.0
@@ -169,7 +156,7 @@ jobs:
                 {
                   "mrkdwn_in": ["text"],
                   "author_name": "New UI-Kit Release is available",
-                  "title": "https://github.com/${{github.repository}}/releases/${{env.LATEST_TAG}}",
+                  "title": "https://github.com/${{github.repository}}/releases/${{env.VERSION}}",
                   "text": "${{env.SLACK_MESSAGE}}",
                   "footer": "${{env.DOCUMENTATION_URL}}"
                 }
