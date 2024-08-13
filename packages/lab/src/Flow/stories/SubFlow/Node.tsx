@@ -1,8 +1,12 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { css, cx } from "@emotion/css";
 import { NodeProps as ReactFlowNodeProps } from "reactflow";
 import { theme } from "@hitachivantara/uikit-react-core";
-import { useHvNode } from "@hitachivantara/uikit-react-lab";
+import {
+  useFlowNodeGetIntersections,
+  useFlowNodeUtils,
+  useHvNode,
+} from "@hitachivantara/uikit-react-lab";
 
 import { FactTable } from "./FactTable";
 import { HierarchyData, Level } from "./Level";
@@ -48,15 +52,35 @@ interface NodeProps extends ReactFlowNodeProps {
 }
 
 export const Node = ({ id: idProp, groupId, hierarchyData }: NodeProps) => {
-  const { title, icon, id } = useHvNode({
+  const { title, icon, id, node } = useHvNode({
     id: idProp,
     groupId,
   });
+
+  const intersections = useFlowNodeGetIntersections(id);
+  const { setNodeParent } = useFlowNodeUtils(id);
+
+  const [draggingFlag, setDraggingFlag] = useState(false);
 
   const sublevels = useMemo(
     () => hierarchyData.map((level) => renderItem(level)),
     [hierarchyData],
   );
+
+  useEffect(() => {
+    if (!node) return;
+    if (node.dragging && !draggingFlag) {
+      setDraggingFlag(true);
+    }
+    if (!node.dragging && draggingFlag) {
+      const groupIntersections = intersections.filter(
+        (n) => n.type === "group" && n.id !== node.parentId,
+      );
+      if (Array.isArray(groupIntersections) && groupIntersections.length >= 1)
+        groupIntersections.forEach((elem) => setNodeParent(elem));
+      setDraggingFlag(false);
+    }
+  }, [draggingFlag, intersections, node, setNodeParent]);
 
   return (
     <div className={cx("nowheel", classes.root)}>

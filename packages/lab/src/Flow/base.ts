@@ -232,13 +232,10 @@ export const flowStyles = css`
   .react-flow__node-input,
   .react-flow__node-output,
   .react-flow__node-group {
-    padding: ${theme.space.sm};
-    border-radius: ${theme.radii.round};
-    width: 150px;
+    border-radius: 0px 16px 16px 16px;
+    border: unset;
     color: ${theme.colors.secondary};
     text-align: center;
-    border: 1px solid ${theme.colors.negative};
-    background-color: ${theme.colors.negative_20};
   }
   .react-flow__node-default::before {
     content: "Unknown node type";
@@ -248,7 +245,6 @@ export const flowStyles = css`
   .react-flow__node-input.selectable:hover,
   .react-flow__node-output.selectable:hover,
   .react-flow__node-group.selectable:hover {
-    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.08);
   }
   .react-flow__node-default.selectable.selected,
   .react-flow__node-default.selectable:focus,
@@ -270,7 +266,6 @@ export const flowStyles = css`
   .react-flow__nodesselection-rect,
   .react-flow__selection {
     background: rgba(0, 89, 220, 0.08);
-    border: 1px dotted rgba(0, 89, 220, 0.8);
   }
   .react-flow__nodesselection-rect:focus,
   .react-flow__nodesselection-rect:focus-visible,
@@ -372,9 +367,9 @@ export const flowStyles = css`
   }
   /* line styles */
   .react-flow__resize-control.line {
-    border-color: ${theme.colors.primary};
+    border-color: ${theme.colors.primary_80};
     border-width: 0;
-    border-style: solid;
+    border-style: dashed;
   }
   .react-flow__resize-control.line.left,
   .react-flow__resize-control.line.right {

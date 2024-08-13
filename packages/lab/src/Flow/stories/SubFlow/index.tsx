@@ -14,6 +14,7 @@ import {
   Add,
   Backwards,
   Column,
+  Cube,
   DataFlow,
   Fail,
   Leaf,
@@ -31,15 +32,25 @@ import {
 import { restrictToSample } from "../Base";
 import { HierarchyData } from "./Level";
 import { Node } from "./Node";
+import { NodeGroup } from "./NodeGroup";
 
 // Initial state
 const initialState = {
   nodes: [
     {
+      width: 400,
+      height: 400,
+      id: "testGroup",
+      position: { x: 0, y: 0 },
+      positionAbsolute: { x: 0, y: 0 },
+      data: {},
+      type: "group",
+    },
+    {
       width: 250,
       height: 365,
       id: "1caf2381eaf",
-      position: { x: 194, y: -160 },
+      position: { x: 194, y: 160 },
       data: {},
       type: "dimensionTable",
     },
@@ -47,7 +58,7 @@ const initialState = {
       width: 250,
       height: 274,
       id: "caf2381eaf3",
-      position: { x: 637, y: -367 },
+      position: { x: 637, y: 367 },
       data: {},
       type: "factTable",
     },
@@ -160,6 +171,10 @@ const FactTableNode = (props: NodeProps) => (
   <Node groupId="factTable" hierarchyData={factTableDataObject} {...props} />
 );
 
+const CubeNodeGroup = (props: NodeProps) => (
+  <NodeGroup {...props} groupId="groupNode" />
+);
+
 const nodeGroups = {
   dimensionTable: {
     label: "Dimension Table",
@@ -173,11 +188,18 @@ const nodeGroups = {
     icon: <Table />,
     items: [{ nodeType: "factTable", label: "Fact Table" }],
   },
+  groupNode: {
+    label: "Group Node",
+    color: "cat2_40",
+    icon: <Cube />,
+    items: [{ nodeType: "group", label: "Group Node" }],
+  },
 } satisfies HvFlowProps["nodeGroups"];
 
 const nodeTypes = {
   dimensionTable: DimTableNode,
   factTable: FactTableNode,
+  group: CubeNodeGroup,
 } satisfies HvFlowProps["nodeTypes"];
 
 // Classes
