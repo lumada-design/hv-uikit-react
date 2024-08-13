@@ -1,9 +1,3 @@
-// TODO: remove
-export {
-  createClasses,
-  type ExtractNames,
-} from "@hitachivantara/uikit-react-shared";
-
 function stripNullish<T extends Record<string, unknown>>(obj: T) {
   return Object.entries(obj).reduce<Record<string, unknown>>(
     (acc, [key, value]) => {
@@ -16,7 +10,11 @@ function stripNullish<T extends Record<string, unknown>>(obj: T) {
   );
 }
 
-/** @internal */
+/**
+ * Utility that merges the `style` prop (`styleProp`) with an external `style` object.
+ *
+ * The external object accepts CSS vars (`--var`) and removes empty style entries.
+ */
 export const mergeStyles = (
   styleProp: React.CSSProperties | undefined,
   styles: Record<string, any>,

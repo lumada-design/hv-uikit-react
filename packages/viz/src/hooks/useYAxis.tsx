@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from "react";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import { useTheme } from "@hitachivantara/uikit-react-utils";
 
 import { HvChartAxisType } from "../types";
 import { HvEChartsOption, YAxis } from "../types/common";

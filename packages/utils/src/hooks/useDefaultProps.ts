@@ -1,8 +1,10 @@
 import { useMemo } from "react";
-import { useCss, useTheme } from "@hitachivantara/uikit-react-shared";
+
+import { useCss } from "./useCss";
+import { useTheme } from "./useTheme";
 
 /** Filter out `undefined` entries from `props` object. */
-export function filterProps(props: Record<string, any>) {
+function filterProps(props: Record<string, any>) {
   return Object.keys(props).reduce(
     (acc, key) => {
       if (props[key] !== undefined) {

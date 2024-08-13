@@ -1,13 +1,10 @@
 import { useMemo } from "react";
-import type { EmotionCache } from "@emotion/cache";
-import { css as emotionCss } from "@emotion/css";
-import { RegisteredCache, serializeStyles } from "@emotion/serialize";
+import { serializeStyles, type RegisteredCache } from "@emotion/serialize";
 import { getRegisteredStyles, insertStyles } from "@emotion/utils";
 import clsx from "clsx";
+import { useEmotionCache } from "@hitachivantara/uikit-react-shared";
 
-import { useEmotionCache } from "./useEmotionCache";
-
-type CSS = typeof emotionCss;
+type CSS = any;
 
 function getRef(args: any[]) {
   if (args.length !== 1) {
@@ -45,7 +42,7 @@ const cssFactory = (() => {
     return rawClassName + css(registeredStyles);
   }
 
-  function innerCssFactory(cache: EmotionCache) {
+  function innerCssFactory(cache: ReturnType<typeof useEmotionCache>) {
     const css: CSS = (...styles: any) => {
       const { ref, args } = getRef(styles);
       const serialized = serializeStyles(args, cache.registered);

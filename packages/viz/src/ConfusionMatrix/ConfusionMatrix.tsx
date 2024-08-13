@@ -7,7 +7,7 @@ import {
   VisualMapComponent,
 } from "echarts/components";
 import * as echarts from "echarts/core";
-import { ExtractNames } from "@hitachivantara/uikit-react-shared";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseChart } from "../BaseChart";
 import {
