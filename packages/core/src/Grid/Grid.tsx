@@ -1,9 +1,11 @@
 import { forwardRef } from "react";
 import MuiGrid, { GridProps as MuiGridProps } from "@mui/material/Grid";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useWidth } from "../hooks/useWidth";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Grid.styles";
 
 export { staticClasses as gridClasses };

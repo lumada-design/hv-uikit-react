@@ -1,10 +1,12 @@
 import { isValidElement } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvDropDownMenuProps } from "../DropDownMenu";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./BreadCrumb.styles";
 import { HvBreadCrumbPage } from "./Page";
 import { HvPathElement } from "./PathElement";

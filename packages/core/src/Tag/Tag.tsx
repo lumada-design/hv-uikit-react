@@ -5,12 +5,14 @@ import {
   CheckboxCheck,
   CloseXS,
 } from "@hitachivantara/uikit-react-icons";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Tag.styles";
 
 export { staticClasses as tagClasses };

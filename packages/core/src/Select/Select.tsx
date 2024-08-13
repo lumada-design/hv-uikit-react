@@ -10,7 +10,11 @@ import {
 import { useControlled, useForkRef } from "@mui/material/utils";
 import type { Placement } from "@popperjs/core";
 import clsx from "clsx";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButtonProps } from "../Button";
 import { HvDropdownButton } from "../DropdownButton";
@@ -22,12 +26,10 @@ import {
   HvLabel,
   HvWarningText,
 } from "../Forms";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListContainer } from "../ListContainer";
 import { HvPanel } from "../Panel";
 import { fixedForwardRef } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { getContainerElement } from "../utils/document";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Select.styles";

@@ -1,17 +1,19 @@
 import { forwardRef } from "react";
 import { ColorState } from "react-color";
 import { Checkbox, ColorPicker } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseDropdown } from "../BaseDropdown";
 import { HvDropdownProps } from "../Dropdown";
 import { HvFormElement, HvInfoMessage, HvLabel } from "../Forms";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvPanel } from "../Panel";
 import { HvTypography } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./ColorPicker.styles";
 import { Picker } from "./Picker";

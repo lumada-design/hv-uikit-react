@@ -1,4 +1,5 @@
-import { useDefaultProps } from "../hooks/useDefaultProps";
+import { useDefaultProps } from "@hitachivantara/uikit-react-utils";
+
 import { useLabels } from "../hooks/useLabels";
 import { HvBaseProps } from "../types/generic";
 import { setId } from "../utils/setId";

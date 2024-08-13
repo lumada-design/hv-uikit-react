@@ -1,10 +1,12 @@
 import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
 import Collapse from "@mui/material/Collapse";
 import { TransitionProps } from "@mui/material/transitions";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { useForkRef } from "../../hooks/useForkRef";
-import { ExtractNames } from "../../utils/classes";
 import {
   DescendantProvider,
   TreeItemDescendant,

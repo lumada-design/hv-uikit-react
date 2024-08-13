@@ -1,9 +1,9 @@
 import { useContext } from "react";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvListContainer, HvListItem } from "../../ListContainer";
 import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { HvPanel } from "../../Panel";
-import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import { HvFilterGroupCounter } from "../Counter";
 import { HvFilterGroupContext } from "../FilterGroupContext";

@@ -1,9 +1,11 @@
 import MuiDialogTitle, {
   DialogTitleProps as MuiDialogTitleProps,
 } from "@mui/material/DialogTitle";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { ExtractNames } from "../../utils/classes";
 import { iconVariant } from "../../utils/iconVariant";
 import { useDialogContext } from "../context";
 import { staticClasses, useClasses } from "./Title.styles";

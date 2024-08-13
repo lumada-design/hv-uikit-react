@@ -7,6 +7,10 @@ import {
   useTimeFieldState,
 } from "@react-stately/datepicker";
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import {
@@ -18,9 +22,7 @@ import {
   HvWarningText,
 } from "../Forms";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { Placeholder, PlaceholderProps } from "./Placeholder";
 import { staticClasses, useClasses } from "./TimePicker.styles";

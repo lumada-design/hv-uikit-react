@@ -7,6 +7,10 @@ import {
   useState,
 } from "react";
 import { useForkRef } from "@mui/material/utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseInput, HvBaseInputProps } from "../BaseInput";
 import {
@@ -32,10 +36,8 @@ import validationStates, {
   isInvalid,
 } from "../Forms/FormElement/validationStates";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvValidationMessages } from "../types/forms";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./TextArea.styles";
 

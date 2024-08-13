@@ -1,8 +1,11 @@
-import { useDefaultProps } from "../hooks/useDefaultProps";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
+
 import { useLabels } from "../hooks/useLabels";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Kpi.styles";
 
 export { staticClasses as kpiClasses };

@@ -1,6 +1,7 @@
 import { forwardRef, useContext, useEffect, useRef, useState } from "react";
 import MuiPopper from "@mui/material/Popper";
 import { useForkRef } from "@mui/material/utils";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import {
   HvClickOutsideEvent,
@@ -9,7 +10,6 @@ import {
 import { HvListItem } from "../../ListContainer";
 import { HvSelectionList } from "../../SelectionList";
 import { HvBaseProps } from "../../types/generic";
-import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../FormElement";
 import { staticClasses, useClasses } from "./Suggestions.styles";

@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../../types/generic";
-import { ExtractNames } from "../../utils/classes";
 import { staticClasses, useClasses } from "./TableContainer.styles";
 
 export { staticClasses as tableContainerClasses };

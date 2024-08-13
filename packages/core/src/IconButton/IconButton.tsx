@@ -1,5 +1,6 @@
+import { useDefaultProps } from "@hitachivantara/uikit-react-utils";
+
 import { HvButton, HvButtonProps } from "../Button";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvTooltip, HvTooltipProps } from "../Tooltip";
 import {
   fixedForwardRef,

@@ -1,4 +1,4 @@
-import { createClasses } from "../utils/classes";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 
 export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
   root: {},

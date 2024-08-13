@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { Fail } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../types/generic";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../FormElement";
 import { staticClasses, useClasses } from "./WarningText.styles";

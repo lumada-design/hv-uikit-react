@@ -8,9 +8,12 @@ import {
 } from "react";
 import { FixedSizeList } from "react-window";
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvCheckBox } from "../CheckBox";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvLink } from "../Link";
 import {
   HvListContainer,
@@ -21,7 +24,6 @@ import { HvOverflowTooltip } from "../OverflowTooltip";
 import { HvRadio } from "../Radio";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./List.styles";
 import { HvListLabels, HvListValue } from "./types";

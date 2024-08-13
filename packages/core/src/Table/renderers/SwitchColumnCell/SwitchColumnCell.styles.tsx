@@ -1,4 +1,4 @@
-import { createClasses } from "../../../utils/classes";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 
 const switchStyle = {
   cursor: "pointer",

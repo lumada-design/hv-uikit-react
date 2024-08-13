@@ -1,9 +1,11 @@
 import { forwardRef } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvSection, HvSectionProps } from "../Section";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./TableSection.styles";
 
 export { staticClasses as tableSectionClasses };

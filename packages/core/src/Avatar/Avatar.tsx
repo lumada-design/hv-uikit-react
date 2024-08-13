@@ -2,6 +2,10 @@ import { forwardRef } from "react";
 import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 import { User } from "@hitachivantara/uikit-react-icons";
 import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
+import {
   getColor,
   HvColorAny,
   HvSize,
@@ -9,10 +13,8 @@ import {
 } from "@hitachivantara/uikit-styles";
 
 import { useAvatarGroupContext } from "../AvatarGroup/AvatarGroupContext";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useImageLoaded } from "../hooks/useImageLoaded";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { decreaseSize } from "../utils/sizes";
 import { staticClasses, useClasses } from "./Avatar.styles";
 

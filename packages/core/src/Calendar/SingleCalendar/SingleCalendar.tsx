@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
 import { HvCalendarHeader } from "../CalendarHeader/CalendarHeader";

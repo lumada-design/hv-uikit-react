@@ -1,4 +1,4 @@
-import { createClasses } from "../utils/classes";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 
 export const { staticClasses, useClasses } = createClasses("HvTextArea", {
   root: { display: "inline-block", width: "100%" },

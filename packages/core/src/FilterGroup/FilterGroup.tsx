@@ -1,4 +1,8 @@
 import { forwardRef } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import {
   HvFormElement,
@@ -9,10 +13,8 @@ import {
   HvWarningText,
 } from "../Forms";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import {
   HvFilterGroupContent,

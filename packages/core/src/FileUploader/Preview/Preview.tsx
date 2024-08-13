@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { Preview } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../../Button";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { ExtractNames } from "../../utils/classes";
 import { staticClasses, useClasses } from "./Preview.styles";
 
 export { staticClasses as fileUploaderPreviewClasses };

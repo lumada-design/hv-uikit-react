@@ -1,7 +1,9 @@
 import { useContext } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { ExtractNames } from "../../utils/classes";
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { HvFilterGroupFilters, HvFilterGroupValue } from "../types";
 import { staticClasses, useClasses } from "./Counter.styles";

@@ -1,9 +1,11 @@
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { range } from "../utils/helpers";
 import { staticClasses, useClasses } from "./Loading.styles";
 

@@ -2,10 +2,10 @@ import {
   DropLeftXS as DropLeftIcon,
   DropRightXS as DropRightIcon,
 } from "@hitachivantara/uikit-react-icons";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton } from "../../../Button";
 import { HvBaseProps } from "../../../types/generic";
-import { ExtractNames } from "../../../utils/classes";
 import { setId } from "../../../utils/setId";
 import { staticClasses, useClasses } from "./Navigation.styles";
 

@@ -18,15 +18,17 @@ import {
   Placement,
 } from "@popperjs/core";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useForkRef } from "../hooks/useForkRef";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { getFirstAndLastFocus } from "../utils/focusableElementFinder";
 import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";

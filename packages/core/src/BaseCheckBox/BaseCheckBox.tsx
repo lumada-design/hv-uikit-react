@@ -2,9 +2,11 @@ import { forwardRef, useCallback, useState } from "react";
 import MuiCheckbox, {
   CheckboxProps as MuiCheckboxProps,
 } from "@mui/material/Checkbox";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./BaseCheckBox.styles";
 import { Box, Check, Partial } from "./icons";
 

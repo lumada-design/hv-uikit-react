@@ -1,11 +1,13 @@
 import React, { useCallback, useMemo } from "react";
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvIconButton } from "../IconButton";
-import { ExtractNames } from "../utils/classes";
 import { getElementById } from "../utils/document";
 import { setId } from "../utils/setId";
 import { DialogContext } from "./context";

@@ -1,8 +1,10 @@
 import { forwardRef, useCallback, useState } from "react";
 import MuiRadio, { RadioProps as MuiRadioProps } from "@mui/material/Radio";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./BaseRadio.styles";
 import { Selected, Unselected } from "./icons";
 

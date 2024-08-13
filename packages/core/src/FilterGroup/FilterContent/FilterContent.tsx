@@ -1,14 +1,16 @@
 import { forwardRef, useContext, useMemo, useRef, useState } from "react";
 import { Filters } from "@hitachivantara/uikit-react-icons";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvActionBar } from "../../ActionBar";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../../BaseDropdown";
 import { HvButton, HvButtonVariant } from "../../Button";
 import { HvFormStatus } from "../../Forms";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import { HvFilterGroupCounter } from "../Counter";
 import type { HvFilterGroupLabels } from "../FilterGroup";

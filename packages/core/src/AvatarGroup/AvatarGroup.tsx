@@ -1,11 +1,14 @@
 import { Children, forwardRef } from "react";
-import { useCss } from "@hitachivantara/uikit-react-shared";
+import {
+  mergeStyles,
+  useCss,
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 import { HvSize, theme } from "@hitachivantara/uikit-styles";
 
 import { HvAvatar } from "../Avatar/Avatar";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames, mergeStyles } from "../utils/classes";
 import { staticClasses, useClasses } from "./AvatarGroup.styles";
 import { HvAvatarGroupProvider } from "./AvatarGroupContext";
 

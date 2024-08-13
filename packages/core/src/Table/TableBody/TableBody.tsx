@@ -5,11 +5,11 @@ import {
   useContext,
   useRef,
 } from "react";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvFocus } from "../../Focus";
 import { useForkRef } from "../../hooks/useForkRef";
 import { HvBaseProps } from "../../types/generic";
-import { ExtractNames } from "../../utils/classes";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableBody.styles";

@@ -1,7 +1,10 @@
-import { useDefaultProps } from "../../hooks/useDefaultProps";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
+
 import { HvBaseProps } from "../../types/generic";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { staticClasses, useClasses } from "./Brand.styles";
 
 export { staticClasses as headerBrandClasses };

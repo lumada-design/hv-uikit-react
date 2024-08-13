@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { Info } from "@hitachivantara/uikit-react-icons";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvAvatar } from "../../Avatar";
@@ -9,7 +10,6 @@ import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { HvTooltip } from "../../Tooltip";
 import { HvBaseProps } from "../../types/generic";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { staticClasses, useClasses } from "./Action.styles";
 
 export { staticClasses as appSwitcherActionClasses };

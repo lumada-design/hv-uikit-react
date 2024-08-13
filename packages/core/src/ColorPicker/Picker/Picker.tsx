@@ -7,11 +7,13 @@ import {
   RGBColor,
 } from "react-color";
 import { Hue, Saturation } from "react-color/lib/components/common";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { Fields } from "../Fields";
 import { staticClasses, useClasses } from "./Picker.styles";
 

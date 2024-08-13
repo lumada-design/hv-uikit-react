@@ -6,6 +6,10 @@ import {
   useMemo,
   useRef,
 } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvCheckBox } from "../CheckBox";
 import {
@@ -16,10 +20,8 @@ import {
   HvWarningText,
 } from "../Forms";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { multiSelectionEventHandler } from "../utils/multiSelectionEventHandler";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./CheckBoxGroup.styles";

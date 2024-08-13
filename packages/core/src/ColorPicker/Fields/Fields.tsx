@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { HSLColor, HSVColor, RGBColor } from "react-color";
 // @ts-ignore
 import * as color from "react-color/lib/helpers/color";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvInput } from "../../Input";
-import { ExtractNames } from "../../utils/classes";
 import { staticClasses, useClasses } from "./Fields.styles";
 
 export { staticClasses as colorPickerFieldsClasses };

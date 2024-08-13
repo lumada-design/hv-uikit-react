@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Remove } from "@hitachivantara/uikit-react-icons";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvFormStatus } from "../../Forms";
 import { HvInput, HvInputProps } from "../../Input";
 import { HvBaseProps } from "../../types/generic";
-import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import { knobsValuesToString, stringValuesToKnobs } from "../utils";
 import { staticClasses, useClasses } from "./SliderInput.styles";

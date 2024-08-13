@@ -1,9 +1,11 @@
 import { useSlotProps } from "@mui/base/utils";
 import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { fixedForwardRef, HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import {
   DEFAULT_TREE_VIEW_PLUGINS,
   DefaultTreeViewPluginParameters,

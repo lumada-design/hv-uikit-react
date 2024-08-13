@@ -1,5 +1,6 @@
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+
 import { HvTypography } from "../../../Typography";
-import { ExtractNames } from "../../../utils/classes";
 import { isKey } from "../../../utils/keyboardUtils";
 import { ViewMode } from "../../enums";
 import { DateRangeProp, VisibilitySelectorActions } from "../../types";

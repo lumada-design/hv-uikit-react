@@ -1,4 +1,5 @@
-import { createClasses } from "../utils/classes";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
+
 import { outlineStyles } from "../utils/focusUtils";
 
 const EXTRA_SMALL = { container: "32px", avatar: "24px" };

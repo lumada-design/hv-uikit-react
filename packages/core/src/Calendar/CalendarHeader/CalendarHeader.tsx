@@ -3,16 +3,18 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import localeData from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
   HvFormElementValueContext,
 } from "../../Forms";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvInput, HvInputProps } from "../../Input";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
 import { DateRangeProp } from "../types";

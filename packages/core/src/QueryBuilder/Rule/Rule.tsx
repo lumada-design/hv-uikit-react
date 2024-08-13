@@ -2,11 +2,13 @@ import { useMemo } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Delete } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvGrid } from "../../Grid";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvIconButton } from "../../IconButton";
-import { ExtractNames } from "../../utils/classes";
 import { useQueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";

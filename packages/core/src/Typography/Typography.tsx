@@ -1,12 +1,14 @@
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import {
   fixedForwardRef,
   PolymorphicComponentRef,
   PolymorphicRef,
 } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Typography.styles";
 import {
   HvTypographyLegacyVariants,

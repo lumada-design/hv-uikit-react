@@ -1,9 +1,11 @@
 import { useContext } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../../types/generic";
 import { HvTypography } from "../../../Typography";
-import { ExtractNames } from "../../../utils/classes";
 import { isKey } from "../../../utils/keyboardUtils";
 import { Bar } from "../MenuBar/Bar";
 import { HvHeaderNavigationItemProp } from "../useSelectionPath";

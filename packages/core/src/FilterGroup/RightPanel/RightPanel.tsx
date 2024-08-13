@@ -1,11 +1,11 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvCheckBox } from "../../CheckBox";
 import { HvInput } from "../../Input";
 import { HvList, HvListProps } from "../../List";
 import { HvPanel } from "../../Panel";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { staticClasses, useClasses } from "./RightPanel.styles";

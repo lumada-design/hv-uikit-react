@@ -6,16 +6,18 @@ import {
   Forwards,
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButton } from "../Button";
 import { HvContainer } from "../Container";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
 import { HvIconButton, HvIconButtonProps } from "../IconButton";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { clamp } from "../utils/helpers";
 import { staticClasses, useClasses } from "./Carousel.styles";
 import { HvCarouselControls } from "./CarouselControls";

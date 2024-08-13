@@ -1,7 +1,11 @@
-import { useDefaultProps } from "../hooks/useDefaultProps";
+import {
+  mergeStyles,
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
+
 import { HvLoading, HvLoadingProps } from "../Loading";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames, mergeStyles } from "../utils/classes";
 import { staticClasses, useClasses } from "./LoadingContainer.styles";
 
 export { staticClasses as loadingContainerClasses };

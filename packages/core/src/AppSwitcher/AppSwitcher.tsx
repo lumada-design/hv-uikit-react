@@ -1,12 +1,14 @@
 import { useMemo } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvListContainer } from "../ListContainer";
 import { HvOverflowTooltip } from "../OverflowTooltip";
 import { HvPanel } from "../Panel";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { HvAppSwitcherAction, HvAppSwitcherActionApplication } from "./Action";
 import { staticClasses, useClasses } from "./AppSwitcher.styles";
 
