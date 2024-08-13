@@ -41,13 +41,9 @@ export const { staticClasses, useClasses } = createClasses("HvDatePicker", {
       marginRight: theme.space.xs,
     },
   },
-  inputText: {
-    color: theme.colors.secondary_80,
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-  },
+  inputText: {},
   dateText: {
-    color: theme.colors.secondary,
+    color: "inherit",
+    fontWeight: theme.typography.label.fontWeight,
   },
 });

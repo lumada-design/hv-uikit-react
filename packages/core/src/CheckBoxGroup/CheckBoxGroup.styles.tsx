@@ -5,9 +5,8 @@ import { createClasses } from "../utils/classes";
 export const { staticClasses, useClasses } = createClasses("HvCheckBoxGroup", {
   root: {
     display: "inline-block",
-    padding: 4,
-    margin: -4,
-    overflow: "hidden",
+    overflow: "clip",
+    overflowClipMargin: 4,
     verticalAlign: "top",
   },
   label: { marginBottom: theme.space.xs },
@@ -26,10 +25,7 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBoxGroup", {
   horizontal: {
     flexDirection: "row",
     flexWrap: "wrap",
-
-    "&>*:not(:first-of-type)": {
-      marginLeft: theme.space.sm,
-    },
+    gap: theme.space.sm,
   },
   invalid: {
     paddingBottom: theme.space.xs,

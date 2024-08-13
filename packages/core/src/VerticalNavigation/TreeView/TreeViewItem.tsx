@@ -489,7 +489,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
               isOpen={isOpen}
               hasAnyChildWithData={hasAnyChildWithData}
               style={{
-                // @ts-ignore
+                // @ts-expect-error csstype doesn't support CSS vars
                 "--icon-margin-left": hasAnyChildWithData ? "auto" : "unset",
               }}
               className={classes.icon}

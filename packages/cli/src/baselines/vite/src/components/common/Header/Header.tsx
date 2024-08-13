@@ -11,7 +11,7 @@ import {
   HvHeaderNavigationProps,
 } from "@hitachivantara/uikit-react-core";
 
-import HitachiLogo from "../../../assets/HitachiLogo";
+import { HitachiLogo } from "../../../assets/HitachiLogo";
 import { NavigationContext } from "../../../context/NavigationContext";
 // @ts-expect-error TODO
 import navigation from "../../../lib/navigation";

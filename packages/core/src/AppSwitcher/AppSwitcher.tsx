@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvListContainer } from "../ListContainer";
 import { HvOverflowTooltip } from "../OverflowTooltip";
+import { HvPanel } from "../Panel";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { ExtractNames } from "../utils/classes";
@@ -88,7 +89,7 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
   );
 
   return (
-    <div
+    <HvPanel
       className={cx(
         classes.root,
         classes[layout],
@@ -112,7 +113,11 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
             }}
           />
         ))}
-      <HvListContainer disableGutters className={classes.actionsContainer}>
+      <HvListContainer
+        condensed
+        disableGutters
+        className={classes.actionsContainer}
+      >
         {panelActions}
       </HvListContainer>
       {footer && (
@@ -124,6 +129,6 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
           {footer}
         </HvTypography>
       )}
-    </div>
+    </HvPanel>
   );
 };

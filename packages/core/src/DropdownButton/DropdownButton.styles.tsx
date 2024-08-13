@@ -50,7 +50,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropdownButton", {
     color: "inherit",
     flex: 1,
     textAlign: "start",
-    overflow: "clip visible",
+    overflow: "auto",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
   },
