@@ -958,4 +958,73 @@ describe("QueryBuilder", () => {
     expect(warning).not.toBeInTheDocument();
     expect(warning).toBeNull();
   });
+
+  it("accepts decimal numbers in numeric input", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled({
+      defaultValue: {
+        combinator: "and",
+        rules: [
+          {
+            attribute: "price",
+            operator: "notEqual",
+            value: 12,
+          },
+        ],
+      },
+    });
+
+    const textbox = screen.getByRole("textbox", {
+      name: /value/i,
+    });
+
+    await user.type(textbox, ".55");
+
+    const error = screen.queryByRole("status");
+    expect(textbox).toHaveValue("12.55");
+    expect(error).not.toBeInTheDocument();
+  });
+
+  it("accepts decimal numbers in range numeric input", async () => {
+    const user = userEvent.setup();
+    renderUncontrolled({
+      defaultValue: {
+        combinator: "and",
+        rules: [
+          {
+            attribute: "price",
+            operator: "range",
+            value: {
+              from: 12,
+              to: 20,
+            },
+          },
+        ],
+      },
+    });
+
+    const fromTextbox = screen.getByRole("textbox", {
+      name: "From",
+    });
+    const toTextbox = screen.getByRole("textbox", {
+      name: "To",
+    });
+
+    await user.type(fromTextbox, ".55");
+    await user.type(toTextbox, ".55");
+
+    let error = screen.queryByRole("status");
+    expect(fromTextbox).toHaveValue("12.55");
+    expect(toTextbox).toHaveValue("20.55");
+    expect(error).not.toBeInTheDocument();
+
+    await user.clear(fromTextbox);
+    await user.type(fromTextbox, "9.5");
+    await user.clear(toTextbox);
+    await user.type(toTextbox, "9.4");
+
+    error = screen.getByRole("status");
+    expect(error).toBeInTheDocument();
+    expect(error).toHaveTextContent("Needs to be greater.");
+  });
 });

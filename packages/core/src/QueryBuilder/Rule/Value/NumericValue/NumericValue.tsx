@@ -35,11 +35,10 @@ export const NumericValue = ({
       event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
       data: string,
     ) => {
-      const numericData = !data ? null : Number(data);
       dispatchAction({
         type: "set-value",
         id,
-        value: Number.isNaN(numericData) ? data : numericData,
+        value: data ?? null,
       });
     },
     [dispatchAction, id],
@@ -51,16 +50,15 @@ export const NumericValue = ({
       data: string,
       from = true,
     ) => {
-      const numericData = !data ? null : Number(data);
       const currentValue = value;
       const numericRange = {
         from: currentValue?.from,
         to: currentValue?.to,
       };
       if (from) {
-        numericRange.from = Number.isNaN(numericData) ? data : numericData;
+        numericRange.from = data ?? null;
       } else {
-        numericRange.to = Number.isNaN(numericData) ? data : numericData;
+        numericRange.to = data ?? null;
       }
       dispatchAction({
         type: "set-value",
