@@ -1,15 +1,9 @@
 import { tabClasses } from "@mui/base/Tab";
-import {
-  baseInputClasses,
-  createClasses,
-  theme,
-} from "@hitachivantara/uikit-react-core";
+import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
-export const ICON_WIDTH = 16;
 export const MIN_TAB_WIDTH = 120;
 const MAX_TAB_WIDTH = 220;
 const TAB_HEIGHT = 32;
-const TAB_LABEL_HEIGHT = 24;
 
 export const { staticClasses, useClasses } = createClasses(
   "HvCanvasToolbarTabs",
@@ -26,12 +20,12 @@ export const { staticClasses, useClasses } = createClasses(
       transition: "width 0.3s ease",
     },
     tabsContainer: {
-      position: "relative",
       display: "flex",
     },
     tabsList: {
       height: TAB_HEIGHT,
       background: theme.colors.atmo1,
+      borderEndStartRadius: theme.radii.base,
     },
     tab: {
       width: `clamp(${MIN_TAB_WIDTH}px, 100%, ${MAX_TAB_WIDTH}px)`,
@@ -45,72 +39,26 @@ export const { staticClasses, useClasses } = createClasses(
         backgroundColor: theme.colors.containerBackgroundHover,
         borderColor: theme.colors.atmo4,
       },
+      "&:first-of-type": { borderEndStartRadius: theme.radii.base },
     },
     tabContent: {
+      position: "relative",
       height: TAB_HEIGHT,
       display: "flex",
       justifyContent: "space-between",
-      position: "relative",
+      alignItems: "center",
       width: "100%",
       padding: theme.space.xs,
-      "& > div:first-of-type:not($tabIcon)": {
-        visibility: "hidden",
-      },
-      "& > div:nth-of-type(2)": {
-        visibility: "hidden",
-        minWidth: `calc(${MIN_TAB_WIDTH}px - ${theme.space.xs} - 2 * ${ICON_WIDTH}px)`,
-        maxWidth: `calc(${MAX_TAB_WIDTH}px - ${theme.space.xs} - 2 * ${ICON_WIDTH}px)`,
-      },
-      "& > div:nth-of-type(3)": {
-        visibility: "hidden",
-        marginRight: `calc(-1 * ${theme.space.xs})`,
-      },
     },
     tabIcon: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      width: ICON_WIDTH,
+      width: 16,
     },
-    closeButton: {
-      position: "absolute",
-      top: 0,
-      right: "calc(100% - var(--right))",
-      color: "var(--close-color)",
-    },
-    tabLabel: {
-      position: "absolute",
-      width: `calc(var(--editor-width) - ${theme.space.xs})`,
-      right: `calc(100% - var(--right) + ${ICON_WIDTH}px + ${theme.space.sm})`,
-      height: TAB_LABEL_HEIGHT,
-      top: 4.5,
-      padding: 0,
-      "&:not($activeTabLabel)": {
-        ...theme.typography.body,
-        color: theme.colors.secondary_60,
-        background: "none",
-        cursor: "pointer",
-        paddingLeft: theme.space.xs,
-      },
-    },
-    selectedTabLabel: {
-      "& div": {
-        ...theme.typography.label,
-        color: theme.colors.primary,
-      },
-    },
-    activeTabLabel: {
-      "& button": {
-        height: TAB_LABEL_HEIGHT,
-        minHeight: TAB_LABEL_HEIGHT,
-        backgroundColor: "transparent",
-        "& p": { ...theme.typography.label, color: theme.colors.primary },
-        "& span": { display: "none" },
-      },
-      [`&& .${baseInputClasses.inputRoot}`]: {
-        height: TAB_LABEL_HEIGHT,
-        minHeight: TAB_LABEL_HEIGHT,
-      },
+    closeIconContainer: {
+      marginRight: `calc(-1 * ${theme.space.xs})`,
+      width: 32,
     },
     tabDivider: {
       position: "absolute",

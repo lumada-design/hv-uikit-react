@@ -16,7 +16,6 @@ export default meta;
 
 export const Main: StoryObj<HvCanvasToolbarTabsProps> = {
   args: {
-    allowTabEdit: false,
     icon: (
       <Leaf
         // Only for testing purposes

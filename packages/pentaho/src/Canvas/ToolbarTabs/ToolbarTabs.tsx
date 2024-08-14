@@ -6,10 +6,8 @@ import {
   HvButton,
   HvButtonProps,
   HvDropDownMenu,
-  HvIconButton,
-  HvInlineEditor,
   HvOverflowTooltip,
-  theme,
+  HvTypography,
   uniqueId,
   useControlled,
   useDefaultProps,
@@ -18,19 +16,13 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import {
   AddAlt,
-  Close,
   CloseXS,
   MoreOptionsHorizontal,
 } from "@hitachivantara/uikit-react-icons";
 
 import { HvCanvasPanelTab } from "../PanelTab";
 import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "../PanelTabs";
-import {
-  ICON_WIDTH,
-  MIN_TAB_WIDTH,
-  staticClasses,
-  useClasses,
-} from "./ToolbarTabs.styles";
+import { MIN_TAB_WIDTH, staticClasses, useClasses } from "./ToolbarTabs.styles";
 
 export { staticClasses as canvasToolbarTabsClasses };
 
@@ -138,6 +130,7 @@ export const HvCanvasToolbarTabs = forwardRef<
 
   const rootWidthLimitReached = useRef(false);
 
+  // TODO - REVIEW THE LOGIC TO ADD THE DROPDOWN
   const groupTabs = useCallback(
     (allTabs: ToolbarTabsTab[]): GroupedTabs => {
       let fullTabWidth = MIN_TAB_WIDTH;
@@ -223,7 +216,7 @@ export const HvCanvasToolbarTabs = forwardRef<
     handleChangeTabs?.(event, newTabs);
   };
 
-  const handleClose = (
+  /* const handleClose = (
     event: React.MouseEvent<HTMLButtonElement>,
     tabId: string,
   ) => {
@@ -238,9 +231,9 @@ export const HvCanvasToolbarTabs = forwardRef<
     if (hiddenTabs.length === 1) rootWidthLimitReached.current = false;
 
     handleChangeTabs(event, newTabs);
-  };
+  }; */
 
-  const handleEdit = (
+  /* const handleEdit = (
     event: React.SyntheticEvent,
     value: string,
     tabId: string,
@@ -248,7 +241,7 @@ export const HvCanvasToolbarTabs = forwardRef<
     handleChangeTabs(
       event,
       tabs.map((tab) => (tab.id === tabId ? { ...tab, label: value } : tab)),
-    );
+    ); */
 
   return (
     <div
@@ -258,13 +251,15 @@ export const HvCanvasToolbarTabs = forwardRef<
     >
       <div className={classes.tabsContainer}>
         {visibleTabs.length > 0 && (
-          <>
-            <HvCanvasPanelTabs
-              classes={{ list: classes.tabsList }}
-              value={selectedTab}
-              onChange={handleChangeSelectedTab}
-            >
-              {visibleTabs.map((tab, index) => (
+          <HvCanvasPanelTabs
+            classes={{ list: classes.tabsList }}
+            value={selectedTab}
+            onChange={handleChangeSelectedTab}
+          >
+            {visibleTabs.map((tab, index) => {
+              const btnDisabled = selectedTab !== tab.id;
+
+              return (
                 <HvCanvasPanelTab
                   key={tab.id}
                   ref={index === 0 ? tabRef : undefined}
@@ -272,100 +267,32 @@ export const HvCanvasToolbarTabs = forwardRef<
                   className={classes.tab}
                   value={tab.id}
                   tabIndex={0}
-                  aria-label={tab.label}
                 >
                   <div className={classes.tabContent}>
-                    <div
-                      className={cx({
-                        [classes.tabIcon]: !!tab.icon,
-                      })}
-                    >
-                      {tab.icon}
+                    {tab.icon && (
+                      <div className={classes.tabIcon}>{tab.icon}</div>
+                    )}
+                    {btnDisabled ? (
+                      <HvOverflowTooltip data={tab.label} />
+                    ) : (
+                      /** TODO - Create the custom inline editor for the tabs */
+                      <HvTypography contentEditable={allowTabEdit}>
+                        {tab.label}
+                      </HvTypography>
+                    )}
+                    {/** TODO - Implement delete like tags: through click and keyboard */}
+                    <div className={classes.closeIconContainer}>
+                      <CloseXS iconSize="XS" />
                     </div>
-
-                    {/* Invisible components added in order for the tab width to go between max/min as some inner components are absolutely positioned */}
-                    <div role="none">{tab.label}</div>
-                    <div role="none">
-                      <Close />
-                    </div>
-
                     {selectedTab !== tab.id &&
                       visibleTabs[index + 1]?.id !== selectedTab && (
                         <div className={classes.tabDivider} />
                       )}
                   </div>
                 </HvCanvasPanelTab>
-              ))}
-            </HvCanvasPanelTabs>
-            {/* For accessibility purposes, interactive elements cannot be children of a tablist or tab so they are rendered as HvCanvasTabs sibling. */}
-            {visibleTabs.map((tab, index) => {
-              const btnDisabled = selectedTab !== tab.id;
-              const num = index + 1;
-              return (
-                <div
-                  key={tab.id}
-                  style={{
-                    // @ts-ignore
-                    "--full-tab-width": `calc(${tabWidth}px + ${BORDER_WIDTH}px)`,
-                    "--right": `calc(${num} * var(--full-tab-width))`,
-                    "--editor-width": `calc(var(--full-tab-width) - ${tab.icon ? 2 : 1} * ${ICON_WIDTH}px - ${theme.space.sm})`,
-                  }}
-                >
-                  {btnDisabled || !allowTabEdit ? (
-                    <button
-                      type="button"
-                      className={cx(classes.tabLabel, {
-                        [classes.selectedTabLabel]: !btnDisabled,
-                      })}
-                      onClick={(event) =>
-                        handleChangeSelectedTab(event, tab.id)
-                      }
-                      aria-label={tab.label}
-                      tabIndex={-1}
-                    >
-                      <HvOverflowTooltip data={tab.label} />
-                    </button>
-                  ) : (
-                    <HvInlineEditor
-                      className={cx(classes.tabLabel, classes.activeTabLabel)}
-                      aria-label={tab.label}
-                      value={tab.label === "" ? undefined : tab.label}
-                      buttonProps={{ size: "sm" }}
-                      onChange={(event, value) =>
-                        handleEdit(event, value, tab.id)
-                      }
-                      onBlur={(event, value) => {
-                        handleEdit(
-                          event,
-                          value && value !== ""
-                            ? value
-                            : DEFAULT_LABELS.undefined,
-                          tab.id,
-                        );
-                      }}
-                    />
-                  )}
-                  <HvIconButton
-                    key={tab.id}
-                    style={{
-                      // @ts-ignore
-                      "--close-color": btnDisabled
-                        ? theme.colors.secondary_60
-                        : theme.colors.primary,
-                    }}
-                    className={classes.closeButton}
-                    title={labels.close}
-                    variant="primaryGhost"
-                    onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
-                      handleClose(event, tab.id)
-                    }
-                  >
-                    <CloseXS />
-                  </HvIconButton>
-                </div>
               );
             })}
-          </>
+          </HvCanvasPanelTabs>
         )}
         {hiddenTabs.length > 0 && (
           <HvDropDownMenu
