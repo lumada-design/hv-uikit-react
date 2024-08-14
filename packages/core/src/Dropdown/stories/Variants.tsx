@@ -13,5 +13,6 @@ export const Variants = () => (
     <HvDropdown disabled label="Disabled" values={values} />
     <HvDropdown readOnly label="Read-only" values={values} />
     <HvDropdown status="invalid" label="Invalid" values={values} />
+    <HvDropdown label="Empty" />
   </>
 );
