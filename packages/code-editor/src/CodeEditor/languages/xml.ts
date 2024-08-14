@@ -70,6 +70,7 @@ const getLastOpenedTag = (content: string) => {
           closingTags[closingTags.length - 1] !== tag
         ) {
           // Last open tag found
+          // biome-ignore lint:
           content = content.substring(tagPosition);
           return content.indexOf(">") === -1 ? tag : undefined;
         }
@@ -79,6 +80,7 @@ const getLastOpenedTag = (content: string) => {
       }
 
       // Remove the last closed tag and continue processing the rest of the content
+      // biome-ignore lint:
       content = content.substring(0, tagPosition);
     }
   }

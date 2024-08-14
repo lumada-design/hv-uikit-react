@@ -26,12 +26,11 @@
     "test": "lerna run test -- --run",
     "test:a11y": "node scripts/a11y.mjs",
     "test:coverage": "lerna run test -- --run --coverage",
-    "check": "npm-run-all --parallel prettier lint typecheck",
-    "prettier": "prettier --log-level warn --check .",
-    "prettier:fix": "prettier --write .",
-    "lint": "eslint . --ext .ts,.tsx --cache",
-    "lint:fix": "npm run lint -- --fix",
-    "lint-staged": "lint-staged",
+    "check": "biome lint && npm run prettier && npm run typecheck",
+    "format": "prettier --log-level warn --check .",
+    "format:fix": "prettier --log-level warn --write .",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --write",
     "typecheck": "lerna run typecheck",
     "depcheck": "npx -y owasp-dependency-check --project uikit -o reports --cveStartYear 2015",
     "publish-dry": "lerna publish --no-push --registry \"http://localhost:4873/\"",
@@ -40,6 +39,7 @@
     "lab:flow": "node scripts/flow-styles"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@dnd-kit/core": "^6.1.0",
@@ -73,8 +73,6 @@
     "@types/node": "^20.11.6",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^2.0.4",
     "@vitest/ui": "^2.0.4",
@@ -86,25 +84,12 @@
     "clsx": "^2.0.0",
     "echarts": "^5.4.3",
     "echarts-for-react": "^3.0.2",
-    "eslint": "^8.55.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^18.0.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-ssr-friendly": "^1.3.0",
-    "eslint-plugin-storybook": "^0.8.0",
     "formik": "^2.4.5",
     "html-react-parser": "^3.0.16",
     "husky": "^8.0.3",
     "jsdom": "^24.0.0",
     "leaflet": "^1.9.4",
     "lerna": "^8.1.7",
-    "lint-staged": "^15.2.2",
-    "npm-run-all2": "^6.2.2",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "pretty-quick": "^4.0.0",
@@ -129,23 +114,6 @@
     "yup": "^1.3.2",
     "zod": "^3.22.4",
     "zustand": "^4.4.7"
-  },
-  "overrides": {
-    "eslint-plugin-jsx-a11y": {
-      "aria-query": "^5.3.0"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --ext .ts,.tsx --cache",
-      "pretty-quick --staged"
-    ]
   },
   "commitlint": {
     "extends": [

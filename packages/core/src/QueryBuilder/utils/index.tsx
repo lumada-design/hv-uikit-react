@@ -28,6 +28,7 @@ export const clearNodeIds = (
   const rule = { ...original };
 
   if ((!full && rule.id?.toString().startsWith(ID_PREFIX)) || full) {
+    // biome-ignore lint/performance/noDelete: <explanation>
     delete rule.id;
   }
 

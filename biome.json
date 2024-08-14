@@ -1,0 +1,55 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "defaultBranch": "main"
+  },
+  "organizeImports": {
+    "enabled": false
+  },
+  "formatter": {
+    "enabled": false,
+    "formatWithErrors": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "attributePosition": "auto",
+    "ignore": ["**/*.hbs", "**/package.json"]
+  },
+  "linter": {
+    "enabled": true,
+    "ignore": ["packages/cli/**"],
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "off",
+        "useValidAriaRole": "off",
+        "useValidAriaValues": "off",
+        "useAltText": "off"
+      },
+      "style": {
+        "useImportType": "off",
+        "noNonNullAssertion": "off",
+        "noUnusedTemplateLiteral": "off",
+        "useNumberNamespace": "off"
+      },
+      "complexity": {
+        "useLiteralKeys": "off",
+        "noUselessSwitchCase": "off",
+        "noForEach": "off",
+        "noStaticOnlyClass": "off",
+        "noBannedTypes": "off"
+      },
+      "correctness": {
+        "useExhaustiveDependencies": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noImplicitAnyLet": "off",
+        "noArrayIndexKey": "off",
+        "noConfusingVoidType": "off",
+        "noShadowRestrictedNames": "off"
+      }
+    }
+  }
+}

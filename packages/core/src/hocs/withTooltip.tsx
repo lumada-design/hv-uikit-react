@@ -14,7 +14,7 @@ const styles: { truncate: React.CSSProperties } = {
 export const withTooltip =
   (
     Component: React.FunctionComponent,
-    // eslint-disable-next-line @typescript-eslint/default-param-last
+    // biome-ignore lint/style/useDefaultParameterLast: <explanation>
     label = "",
     placement: HvTooltipPlacementType,
     hideTooltip?: (event: React.MouseEvent<HTMLDivElement>) => boolean,
