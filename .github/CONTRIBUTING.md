@@ -1,6 +1,8 @@
 # Contribution guidelines
 
-We welcome contributions to our project. Here are a few guidelines that will help you along the way:
+We welcome contributions to our project. You can help us fixing bugs or submit any new ideas, as [pull requests](#submitting-a-pull-request) or as [GitHub issues](#submitting-an-issue).
+
+Here are a few guidelines that will help you along the way:
 
 - [Getting started](#getting-started)
 - [Question or problem?](#question-or-problem)
@@ -29,7 +31,7 @@ Use GitHub issues for bug reports and feature requests or one of our available c
 
 <h2 id="new-components">New components</h2>
 
-New components should be contributed to the `lab` package in `packages/lab/src/components/<COMPONENT_NAME>`.
+New components should be contributed to the `lab` package in `packages/lab/src/<COMPONENT_NAME>`.
 
 Check out our [Component Guidelines](./?path=/docs/overview-community-component-guidelines--docs) for a guide on how to structure components, and the [submitting a pull request](#submitting-a-pull-request) on how to contribute it.
 

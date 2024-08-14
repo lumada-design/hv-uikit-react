@@ -14,7 +14,7 @@
 ![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![React](https://img.shields.io/badge/react-17|18-blue.svg)
 ![Node](https://img.shields.io/badge/node-16|18-brightgreen.svg)
-![Master Nightly](https://github.com/lumada-design/hv-uikit-react/workflows/Master%20Nightly/badge.svg)
+[![Nightly](https://github.com/lumada-design/hv-uikit-react/actions/workflows/nightly.yml/badge.svg)](https://github.com/lumada-design/hv-uikit-react/actions/workflows/nightly.yml)
 
 </div>
 
@@ -33,7 +33,7 @@ Check the [project status](https://lumada-design.github.io/uikit/master/?path=/d
 
 ## Installation 🚀
 
-The fastest way to setup a new **NEXT UI Kit** project is by using [`hv-uikit-cli`](https://github.com/lumada-design/hv-uikit-cli/). Follow the link for usage documentation.
+The fastest way to setup a new **NEXT UI Kit** project is by using [`hv-uikit-cli`](./packages/cli). Follow the link for usage documentation.
 
 ```sh
 npx @hitachivantara/hv-uikit-cli@latest create
@@ -60,11 +60,7 @@ See our documentation site [here](https://lumada-design.github.io/uikit/master/)
 
 ## Contributing
 
-Please check out our [Contribution Guidelines](/CONTRIBUTING.md) and let's build a better UI Kit together.
-
-We welcome all contributions. You can help us fixing bugs or submit any new ideas, as [pull requests](https://github.com/lumada-design/hv-uikit-react/blob/master/CONTRIBUTING.md#submitting-a-pull-request) or as [GitHub issues](https://github.com/lumada-design/hv-uikit-react/blob/master/CONTRIBUTING.md#submitting-an-issue).
-
-Join and support the project!
+Please check out our [Contribution Guidelines](/.github/CONTRIBUTING.md) and let's build a better UI Kit together!
 
 ## Contributors 🤟
 
