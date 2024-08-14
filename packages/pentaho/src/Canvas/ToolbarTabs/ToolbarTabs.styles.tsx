@@ -5,7 +5,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-export const ICON_WIDTH = 32;
+export const ICON_WIDTH = 16;
 export const MIN_TAB_WIDTH = 120;
 const MAX_TAB_WIDTH = 220;
 const TAB_HEIGHT = 32;
@@ -70,6 +70,7 @@ export const { staticClasses, useClasses } = createClasses(
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      width: ICON_WIDTH,
     },
     closeButton: {
       position: "absolute",
@@ -79,15 +80,23 @@ export const { staticClasses, useClasses } = createClasses(
     },
     tabLabel: {
       position: "absolute",
-      width: "var(--editor-width)",
-      right: `calc(100% - var(--right) + ${ICON_WIDTH}px)`,
+      width: `calc(var(--editor-width) - ${theme.space.xs})`,
+      right: `calc(100% - var(--right) + ${ICON_WIDTH}px + ${theme.space.sm})`,
       height: TAB_LABEL_HEIGHT,
       top: 4.5,
+      padding: 0,
       "&:not($activeTabLabel)": {
         ...theme.typography.body,
         color: theme.colors.secondary_60,
         background: "none",
         cursor: "pointer",
+        paddingLeft: theme.space.xs,
+      },
+    },
+    selectedTabLabel: {
+      "& div": {
+        ...theme.typography.label,
+        color: theme.colors.primary,
       },
     },
     activeTabLabel: {
@@ -118,6 +127,9 @@ export const { staticClasses, useClasses } = createClasses(
     },
     dropdownMenu: {
       margin: theme.spacing(0, "sm"),
+    },
+    dropdownMenuListRoot: {
+      maxHeight: 220,
     },
   },
 );

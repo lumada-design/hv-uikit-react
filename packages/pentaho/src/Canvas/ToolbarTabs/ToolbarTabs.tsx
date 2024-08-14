@@ -59,6 +59,8 @@ export interface HvCanvasToolbarTabsProps
   selectedTabId?: string;
   /** Defines the icon to be placed before the label when a new tab is created. If not defined, no icon is used. */
   icon?: React.ReactNode;
+  /** Defines whether or not the tabs are editable. */
+  allowTabEdit?: boolean;
   /** Callback triggered when a tab changes/is clicked. */
   onTabChange?: (
     event: React.SyntheticEvent | null,
@@ -95,6 +97,7 @@ export const HvCanvasToolbarTabs = forwardRef<
     className,
     selectedTabId: selectedTabIdProp,
     icon: iconProp,
+    allowTabEdit = true,
     tabs: tabsProp,
     defaultTabs: defaultTabsProp = [],
     labels: labelsProp,
@@ -305,13 +308,15 @@ export const HvCanvasToolbarTabs = forwardRef<
                     // @ts-ignore
                     "--full-tab-width": `calc(${tabWidth}px + ${BORDER_WIDTH}px)`,
                     "--right": `calc(${num} * var(--full-tab-width))`,
-                    "--editor-width": `calc(var(--full-tab-width) - ${tab.icon ? 2 : 1} * ${ICON_WIDTH}px - ${theme.space.xs})`,
+                    "--editor-width": `calc(var(--full-tab-width) - ${tab.icon ? 2 : 1} * ${ICON_WIDTH}px - ${theme.space.sm})`,
                   }}
                 >
-                  {btnDisabled ? (
+                  {btnDisabled || !allowTabEdit ? (
                     <button
                       type="button"
-                      className={classes.tabLabel}
+                      className={cx(classes.tabLabel, {
+                        [classes.selectedTabLabel]: !btnDisabled,
+                      })}
                       onClick={(event) =>
                         handleChangeSelectedTab(event, tab.id)
                       }
@@ -324,11 +329,20 @@ export const HvCanvasToolbarTabs = forwardRef<
                     <HvInlineEditor
                       className={cx(classes.tabLabel, classes.activeTabLabel)}
                       aria-label={tab.label}
-                      value={tab.label}
+                      value={tab.label === "" ? undefined : tab.label}
                       buttonProps={{ size: "sm" }}
                       onChange={(event, value) =>
                         handleEdit(event, value, tab.id)
                       }
+                      onBlur={(event, value) => {
+                        handleEdit(
+                          event,
+                          value && value !== ""
+                            ? value
+                            : DEFAULT_LABELS.undefined,
+                          tab.id,
+                        );
+                      }}
                     />
                   )}
                   <HvIconButton
@@ -356,6 +370,7 @@ export const HvCanvasToolbarTabs = forwardRef<
         {hiddenTabs.length > 0 && (
           <HvDropDownMenu
             className={classes.dropdownMenu}
+            classes={{ menuListRoot: classes.dropdownMenuListRoot }}
             dataList={hiddenTabs}
             icon={<MoreOptionsHorizontal />}
             labels={{ dropdownMenu: labels.dropdownMenu }}
