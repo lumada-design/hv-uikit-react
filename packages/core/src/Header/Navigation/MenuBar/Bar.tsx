@@ -1,8 +1,10 @@
 import { useContext } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../../types/generic";
-import { ExtractNames } from "../../../utils/classes";
 import { HvHeaderNavigationItemProp } from "../useSelectionPath";
 import { SelectionContext } from "../utils/SelectionContext";
 import { staticClasses, useClasses } from "./Bar.styles";

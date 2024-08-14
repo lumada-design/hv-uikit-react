@@ -1,10 +1,12 @@
 import { forwardRef } from "react";
 import type { Placement } from "@popperjs/core";
 import { DropDownXS } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../Button";
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./DropdownButton.styles";
 
 export { staticClasses as dropdownButtonClasses };

@@ -5,6 +5,10 @@ import {
   InputBaseProps,
   InputBaseComponentProps as MuiInputBaseComponentProps,
 } from "@mui/material/InputBase";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import {
@@ -13,8 +17,6 @@ import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
 } from "../Forms";
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./BaseInput.styles";
 
 export { staticClasses as baseInputClasses };

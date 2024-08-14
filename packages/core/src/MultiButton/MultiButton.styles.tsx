@@ -1,9 +1,9 @@
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvButtonSize } from "../Button";
 import { getColoringStyle, getSizeStyles } from "../Button/Button.styles";
 import { dropDownMenuClasses } from "../DropDownMenu";
-import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   root: {

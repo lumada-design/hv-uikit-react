@@ -1,7 +1,7 @@
 import type { CSSObject } from "@emotion/serialize";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "../utils/classes";
 import { Breakpoint, Spacing } from "./types";
 
 export const { staticClasses, useClasses } = createClasses("HvSimpleGrid", {

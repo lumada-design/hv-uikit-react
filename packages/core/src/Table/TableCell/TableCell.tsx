@@ -1,7 +1,9 @@
 import { forwardRef, useContext } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { ExtractNames } from "../../utils/classes";
 import { capitalize } from "../../utils/helpers";
 import {
   HvTableCellAlign,

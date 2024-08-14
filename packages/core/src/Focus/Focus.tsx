@@ -1,8 +1,8 @@
 import { cloneElement, useState } from "react";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../types/generic";
 import { isBrowser } from "../utils/browser";
-import { ExtractNames } from "../utils/classes";
 import { ConditionalWrapper } from "../utils/ConditionalWrapper";
 import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
 import { staticClasses, useClasses } from "./Focus.styles";

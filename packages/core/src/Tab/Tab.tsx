@@ -1,7 +1,9 @@
 import Tab, { TabProps as MuiTabProps } from "@mui/material/Tab";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Tab.styles";
 
 export { staticClasses as tabClasses };

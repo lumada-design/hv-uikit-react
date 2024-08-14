@@ -7,11 +7,13 @@ import {
   useContext,
   useMemo,
 } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvFocus } from "../../Focus";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../types/generic";
-import { ExtractNames } from "../../utils/classes";
 import HvListContext from "../ListContext";
 import { staticClasses, useClasses } from "./ListItem.styles";
 

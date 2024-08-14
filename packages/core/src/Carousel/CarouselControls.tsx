@@ -1,11 +1,13 @@
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButton } from "../Button";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
 import { HvPaginationProps } from "../Pagination";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { useClasses } from "./Carousel.styles";
 
 const DEFAULT_LABELS = {

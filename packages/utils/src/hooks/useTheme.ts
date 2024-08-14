@@ -1,15 +1,19 @@
 import { useContext, useMemo } from "react";
+import {
+  HvThemeContext,
+  type HvTheme,
+  type HvThemeContextValue,
+} from "@hitachivantara/uikit-react-shared";
 
-import { HvThemeContext, HvThemeContextValue } from "../context/ThemeContext";
-import { HvTheme } from "../types/theme";
-
-export const useTheme = (): HvThemeContextValue & {
+interface ThemeContextValue extends HvThemeContextValue {
   /** Colors of the currently active theme and mode */
   colors?: HvTheme["colors"]["modes"]["mode"];
-} => {
+}
+
+export const useTheme = () => {
   const context = useContext(HvThemeContext);
 
-  return useMemo(() => {
+  return useMemo<ThemeContextValue>(() => {
     const { activeTheme, selectedMode } = context;
     return { ...context, colors: activeTheme?.colors.modes?.[selectedMode] };
   }, [context]);

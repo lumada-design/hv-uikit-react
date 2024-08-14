@@ -1,7 +1,9 @@
 import { forwardRef, useMemo, useRef } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Table.styles";
 import TableContext from "./TableContext";
 

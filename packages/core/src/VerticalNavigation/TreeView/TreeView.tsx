@@ -1,12 +1,14 @@
 import { forwardRef, useCallback, useMemo, useRef, useState } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { useControlled } from "../../hooks/useControlled";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { useForkRef } from "../../hooks/useForkRef";
 import { useUniqueId } from "../../hooks/useUniqueId";
 import { DescendantProvider } from "../../TreeView/internals/DescendantProvider";
 import { HvBaseProps } from "../../types/generic";
-import { ExtractNames } from "../../utils/classes";
 import { staticClasses, useClasses } from "./TreeView.styles";
 import {
   NavigationMode,

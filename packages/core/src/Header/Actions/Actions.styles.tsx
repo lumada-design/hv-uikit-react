@@ -1,7 +1,7 @@
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { buttonClasses } from "../../Button";
-import { createClasses } from "../../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvHeader-Actions", {
   root: {

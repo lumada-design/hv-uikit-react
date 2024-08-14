@@ -1,4 +1,5 @@
-import { useDefaultProps } from "../../../hooks/useDefaultProps";
+import { useDefaultProps } from "@hitachivantara/uikit-react-utils";
+
 import { HvBaseProps } from "../../../types/generic";
 import { HvHeaderMenuItem } from "../MenuItem";
 import { HvHeaderNavigationItemProp } from "../useSelectionPath";

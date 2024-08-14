@@ -1,12 +1,14 @@
 import { forwardRef } from "react";
 import { Down, Up } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../Button";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Section.styles";
 

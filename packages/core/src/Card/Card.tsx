@@ -1,8 +1,11 @@
+import {
+  mergeStyles,
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames, mergeStyles } from "../utils/classes";
 import { staticClasses, useClasses } from "./Card.styles";
 
 export { staticClasses as cardClasses };

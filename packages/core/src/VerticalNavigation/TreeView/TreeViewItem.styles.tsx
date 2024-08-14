@@ -1,7 +1,7 @@
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { avatarClasses } from "../../Avatar";
-import { createClasses } from "../../utils/classes";
 import { outlineStyles } from "../../utils/focusUtils";
 
 const selected = {

@@ -7,13 +7,13 @@ import {
   SnackbarProviderProps,
   useSnackbar,
 } from "notistack";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import {
   HvSnackbarContent,
   HvSnackbarContentProps,
 } from "../Snackbar/SnackbarContent";
 import { HvSnackbarVariant } from "../Snackbar/types";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./SnackbarProvider.styles";
 
 export { staticClasses as snackbarProviderClasses };

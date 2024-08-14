@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
 import { DeepPartial } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { isEqual } from "../utils/helpers";
 import { ConfirmationDialog } from "./ConfirmationDialog";
 import {

@@ -5,9 +5,9 @@ import MuiSnackbar, {
   SnackbarCloseReason,
   SnackbarOrigin,
 } from "@mui/material/Snackbar";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvActionGeneric, HvActionsGenericProps } from "../ActionsGeneric";
-import { ExtractNames } from "../utils/classes";
 import { capitalize } from "../utils/helpers";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Snackbar.styles";

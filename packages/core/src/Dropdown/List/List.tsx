@@ -1,15 +1,17 @@
 import { useEffect, useMemo, useState } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvActionBar } from "../../ActionBar";
 import { useBaseDropdownContext } from "../../BaseDropdown/BaseDropdownContext/BaseDropdownContext";
 import { HvButton } from "../../Button";
 import { HvCheckBox } from "../../CheckBox";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvInput } from "../../Input";
 import { HvList, HvListProps, HvListValue } from "../../List";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import type { HvDropdownLabels } from "../Dropdown";
 import { getSelected } from "../utils";

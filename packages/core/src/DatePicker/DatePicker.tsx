@@ -1,6 +1,10 @@
 import { forwardRef, useEffect, useRef } from "react";
 import { useForkRef } from "@mui/material/utils";
 import { Calendar } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvActionBar } from "../ActionBar";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
@@ -17,10 +21,8 @@ import {
   isInvalid,
 } from "../Forms";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { useSavedState } from "../utils/useSavedState";
 import { staticClasses, useClasses } from "./DatePicker.styles";

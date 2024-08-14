@@ -1,10 +1,12 @@
 import MuiDialogContent, {
   DialogContentProps as MuiDialogContentProps,
 } from "@mui/material/DialogContent";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { staticClasses, useClasses } from "./Content.styles";
 
 export { staticClasses as dialogContentClasses };

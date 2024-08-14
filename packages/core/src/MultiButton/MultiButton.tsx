@@ -6,11 +6,13 @@ import {
   ReactElement,
   useMemo,
 } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButtonSize, HvButtonVariant } from "../Button";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import {
   getSplitContainerColor,

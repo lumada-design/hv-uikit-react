@@ -1,6 +1,9 @@
-import { useDefaultProps } from "../hooks/useDefaultProps";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
+
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Link.styles";
 
 export { staticClasses as linkClasses };

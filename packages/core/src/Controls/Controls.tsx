@@ -1,12 +1,14 @@
 import { Children } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButton } from "../Button";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvMultiButton } from "../MultiButton";
 import { HvTableInstance } from "../Table/hooks/useTable";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { HvControlsContextProvider } from "./context/ControlsContext";
 import { staticClasses, useClasses } from "./Controls.styles";

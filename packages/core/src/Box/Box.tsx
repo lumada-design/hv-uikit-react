@@ -1,6 +1,6 @@
+import { useDefaultProps } from "@hitachivantara/uikit-react-utils";
 import { HvTheme, theme } from "@hitachivantara/uikit-styles";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import {
   fixedForwardRef,
   PolymorphicComponentRef,

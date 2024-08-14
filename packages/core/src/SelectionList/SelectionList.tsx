@@ -8,17 +8,19 @@ import {
   useRef,
 } from "react";
 import { useForkRef } from "@mui/material/utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvFormElement, HvFormStatus } from "../Forms/FormElement";
 import { HvInfoMessage } from "../Forms/InfoMessage";
 import { HvLabel } from "../Forms/Label";
 import { HvWarningText } from "../Forms/WarningText";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListContainer } from "../ListContainer";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { isKey } from "../utils/keyboardUtils";
 import { multiSelectionEventHandler } from "../utils/multiSelectionEventHandler";
 import { setId } from "../utils/setId";

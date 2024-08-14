@@ -38,7 +38,7 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@hitachivantara/uikit-react-shared": "^5.2.0",
+    "@hitachivantara/uikit-react-utils": "^0.1.0",
     "@hitachivantara/uikit-styles": "^5.31.1",
     "@monaco-editor/react": "^4.5.1",
     "xmllint-wasm": "^4.0.2"

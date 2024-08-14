@@ -3,10 +3,12 @@ import Fade from "@mui/material/Fade";
 import Tooltip, {
   TooltipProps as MuiTooltipProps,
 } from "@mui/material/Tooltip";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { getElementById } from "../utils/document";
 import { staticClasses, useClasses } from "./Tooltip.styles";
 

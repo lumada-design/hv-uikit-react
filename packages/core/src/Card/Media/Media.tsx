@@ -1,8 +1,8 @@
 import MuiCardMedia, {
   CardMediaProps as MuiCardMediaProps,
 } from "@mui/material/CardMedia";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
-import { ExtractNames } from "../../utils/classes";
 import { staticClasses, useClasses } from "./Media.styles";
 
 export { staticClasses as cardMediaClasses };

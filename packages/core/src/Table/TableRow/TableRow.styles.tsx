@@ -1,6 +1,6 @@
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "../../utils/classes";
 import { getBorderStyles } from "../utils/utils";
 
 export const { staticClasses, useClasses } = createClasses("HvTableRow", {

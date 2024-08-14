@@ -1,7 +1,6 @@
 import { snackbarClasses } from "@mui/material/Snackbar";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { createClasses } from "../utils/classes";
 
 export const { useClasses, staticClasses } = createClasses("HvSnackbar", {
   root: {},

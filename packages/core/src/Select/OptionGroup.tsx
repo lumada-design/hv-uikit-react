@@ -1,9 +1,11 @@
 import { forwardRef } from "react";
 import { OptionGroup, OptionGroupProps } from "@mui/base/OptionGroup";
+import {
+  createClasses,
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { createClasses, ExtractNames } from "../utils/classes";
 
 const { staticClasses, useClasses } = createClasses("HvOptionGroup", {
   root: {

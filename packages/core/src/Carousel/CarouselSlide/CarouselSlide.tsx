@@ -1,4 +1,5 @@
-import { ExtractNames } from "../../utils/classes";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+
 import { useClasses } from "./CarouselSlide.styles";
 
 export type HvCarouselSlideClasses = ExtractNames<typeof useClasses>;

@@ -1,6 +1,5 @@
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { createClasses } from "../utils/classes";
 
 export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
   /** Styles applied to the component root class. */

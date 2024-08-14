@@ -1,8 +1,10 @@
 import { useContext } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvTypography, HvTypographyProps } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../FormElement";
 import { staticClasses, useClasses } from "./InfoMessage.styles";

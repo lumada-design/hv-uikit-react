@@ -1,7 +1,10 @@
-import { useDefaultProps } from "../hooks/useDefaultProps";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
+
 import { HvBaseProps } from "../types/generic";
 import { HvTypography, HvTypographyProps } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { clamp } from "../utils/helpers";
 import { staticClasses, useClasses } from "./ProgressBar.styles";
 

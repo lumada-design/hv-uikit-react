@@ -1,10 +1,10 @@
 import { forwardRef } from "react";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../Button";
 import { HvPaginationProps } from "../Pagination";
 import { HvStack } from "../Stack";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { useClasses } from "./Carousel.styles";
 
 interface HvCarouselThumbnailsProps

@@ -8,15 +8,17 @@ import {
 } from "react";
 import Slider, { SliderProps, SliderRef } from "rc-slider";
 import Tooltip from "rc-tooltip";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvFormElement, HvFormStatus, HvLabel, HvWarningText } from "../Forms";
 import validationStates from "../Forms/FormElement/validationStates";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvInputProps } from "../Input";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { getElementById } from "../utils/document";
 import { setId } from "../utils/setId";
 import { sliderStyles, staticClasses, useClasses } from "./Slider.styles";

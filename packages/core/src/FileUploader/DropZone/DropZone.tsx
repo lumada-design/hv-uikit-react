@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
 import { Doc } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvInfoMessage, HvLabel } from "../../Forms";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { useUniqueId } from "../../hooks/useUniqueId";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { uniqueId } from "../../utils/helpers";
 import { setId } from "../../utils/setId";
 import { HvFileData, HvFilesAddedEvent } from "../File";

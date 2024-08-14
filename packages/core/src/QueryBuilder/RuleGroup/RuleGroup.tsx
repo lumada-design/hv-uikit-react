@@ -1,12 +1,12 @@
 import { useCallback } from "react";
 import { Add, Delete, Info } from "@hitachivantara/uikit-react-icons";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton } from "../../Button";
 import { HvEmptyState } from "../../EmptyState";
 import { HvIconButton } from "../../IconButton";
 import { HvMultiButton } from "../../MultiButton";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { useQueryBuilderContext } from "../Context";
 import { useClasses } from "../QueryBuilder.styles";
 import { Rule } from "../Rule";

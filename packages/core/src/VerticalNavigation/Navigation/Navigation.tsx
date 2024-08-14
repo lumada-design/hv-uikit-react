@@ -1,9 +1,11 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { useControlled } from "../../hooks/useControlled";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../types/generic";
-import { ExtractNames } from "../../utils/classes";
 import { uniqueId } from "../../utils/helpers";
 import { setId } from "../../utils/setId";
 import { NavigationPopupContainer } from "../NavigationPopup/NavigationPopupContainer";

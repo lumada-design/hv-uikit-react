@@ -1,0 +1,74 @@
+{
+  "name": "@hitachivantara/uikit-react-utils",
+  "version": "0.1.0",
+  "type": "module",
+  "private": false,
+  "author": "Hitachi Vantara UI Kit Team",
+  "description": "UI Kit utilities package.",
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "keywords": [
+    "hitachi-vantara",
+    "design-system",
+    "ui-kit",
+    "react",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lumada-design/hv-uikit-react.git",
+    "directory": "packages/utils"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+  },
+  "scripts": {
+    "build": "npm run clean && vite build",
+    "clean": "npx rimraf dist package",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npx clean-publish"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "@emotion/serialize": "^1.1.2",
+    "@emotion/utils": "^1.4.0",
+    "@hitachivantara/uikit-react-shared": "^5.2.0",
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "vite": "^5.1.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "directory": "package",
+    "main": "dist/cjs/index.cjs",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "exports": {
+      ".": {
+        "require": "./dist/cjs/index.cjs",
+        "import": "./dist/esm/index.js"
+      }
+    }
+  },
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package",
+    "fields": [
+      "main"
+    ],
+    "files": [
+      "tsconfig.json"
+    ]
+  }
+}

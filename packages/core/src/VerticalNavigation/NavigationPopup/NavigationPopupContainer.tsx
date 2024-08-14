@@ -1,9 +1,8 @@
 import { Popper } from "@mui/base/Popper";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../../types/generic";
-import { ExtractNames } from "../../utils/classes";
 import { getContainerElement } from "../../utils/document";
 import { HvVerticalNavigation } from "../VerticalNavigation";
 import { staticClasses, useClasses } from "./NavigationPopup.styles";

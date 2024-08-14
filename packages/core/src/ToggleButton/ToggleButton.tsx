@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
+import { useDefaultProps } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton } from "../Button";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 
 export interface HvToggleButtonProps

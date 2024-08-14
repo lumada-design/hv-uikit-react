@@ -1,12 +1,14 @@
 import { isValidElement } from "react";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
 import { HvDropDownMenu, HvDropDownMenuProps } from "../DropDownMenu";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvIconButton } from "../IconButton";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./ActionsGeneric.styles";
 

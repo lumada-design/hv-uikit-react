@@ -1,7 +1,7 @@
 import { chipClasses } from "@mui/material/Chip";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { createClasses } from "../utils/classes";
 import { outlineStyles } from "../utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvTag", {

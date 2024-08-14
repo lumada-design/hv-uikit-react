@@ -1,10 +1,12 @@
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import {
   getBreakpointStyles,
   staticClasses,

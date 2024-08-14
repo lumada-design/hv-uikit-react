@@ -1,9 +1,11 @@
 import MuiDialogActions, {
   DialogActionsProps as MuiDialogActionsProps,
 } from "@mui/material/DialogActions";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { ExtractNames } from "../../utils/classes";
 import { useDialogContext } from "../context";
 import { staticClasses, useClasses } from "./Actions.styles";
 

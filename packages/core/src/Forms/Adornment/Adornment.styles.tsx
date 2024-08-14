@@ -1,4 +1,5 @@
-import { createClasses } from "../../utils/classes";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
+
 import { outlineStyles } from "../../utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvAdornment", {

@@ -1,10 +1,13 @@
-import { useDefaultProps } from "../../../hooks/useDefaultProps";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
+
 import {
   HvOverflowTooltip,
   HvOverflowTooltipProps,
 } from "../../../OverflowTooltip";
 import { HvBaseProps } from "../../../types/generic";
-import { ExtractNames } from "../../../utils/classes";
 import { setId } from "../../../utils/setId";
 import { staticClasses, useClasses } from "./HorizontalScrollListItem.styles";
 

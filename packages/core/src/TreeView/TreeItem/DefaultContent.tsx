@@ -1,7 +1,10 @@
 import { forwardRef } from "react";
-import { useCss } from "@hitachivantara/uikit-react-shared";
+import {
+  createClasses,
+  useCss,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { createClasses, ExtractNames } from "../../utils/classes";
 import { useHvTreeItem } from "./useHvTreeItem";
 
 export const { useClasses } = createClasses("HvTreeContent", {

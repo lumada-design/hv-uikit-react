@@ -17,6 +17,10 @@ import {
   Search,
   Success,
 } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseInput, HvBaseInputProps } from "../BaseInput";
 import {
@@ -45,14 +49,12 @@ import {
 } from "../Forms";
 import validationStates from "../Forms/FormElement/validationStates";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useIsMounted } from "../hooks/useIsMounted";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvTooltip } from "../Tooltip";
 import { HvInputSuggestion, HvValidationMessages } from "../types/forms";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Input.styles";

@@ -7,6 +7,10 @@ import React, {
   useState,
 } from "react";
 import { useForkRef } from "@mui/material/utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { baseInputClasses } from "../BaseInput";
@@ -25,14 +29,12 @@ import {
 } from "../Forms";
 import validationStates from "../Forms/FormElement/validationStates";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useIsMounted } from "../hooks/useIsMounted";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvInput, HvInputProps } from "../Input";
 import { HvListContainer, HvListItem } from "../ListContainer";
 import { HvTag, HvTagProps } from "../Tag";
 import { HvTagSuggestion } from "../types/forms";
-import { ExtractNames } from "../utils/classes";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./TagsInput.styles";

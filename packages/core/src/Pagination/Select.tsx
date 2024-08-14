@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { useDefaultProps } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvListItem, HvListItemProps } from "../ListContainer";
 import { HvPanel } from "../Panel";
 import { HvSelectionList, HvSelectionListProps } from "../SelectionList";

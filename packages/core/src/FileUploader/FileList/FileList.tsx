@@ -1,5 +1,8 @@
-import { useDefaultProps } from "../../hooks/useDefaultProps";
-import { ExtractNames } from "../../utils/classes";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
+
 import { setId } from "../../utils/setId";
 import { HvFile, HvFileData, HvFileRemovedEvent } from "../File";
 import { staticClasses, useClasses } from "./FileList.styles";

@@ -2,9 +2,9 @@ import { forwardRef } from "react";
 import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvActionsGenericProps } from "../../ActionsGeneric";
-import { ExtractNames } from "../../utils/classes";
 import { iconVariant } from "../../utils/iconVariant";
 import { HvBannerActionPosition, HvBannerVariant } from "../types";
 import { HvActionContainer, HvActionContainerProps } from "./ActionContainer";

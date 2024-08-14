@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from "react";
 import type ColumnTable from "arquero/dist/types/table/column-table";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import { useTheme } from "@hitachivantara/uikit-react-utils";
 
 import { HvChartXAxis } from "../types/common";
 import {

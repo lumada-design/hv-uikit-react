@@ -3,13 +3,15 @@ import MuiDivider, {
   DividerProps as MuiDividerProps,
 } from "@mui/material/Divider";
 import { useTheme } from "@mui/material/styles";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 import { HvBreakpoints } from "@hitachivantara/uikit-styles";
 
 import { HvFocus } from "../Focus";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useWidth } from "../hooks/useWidth";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Stack.styles";
 
 export { staticClasses as stackClasses };

@@ -7,8 +7,8 @@ import {
   useMemo,
   useState,
 } from "react";
+import { useDefaultProps } from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { isEqual } from "../utils/helpers";
 import { useSavedState } from "../utils/useSavedState";
 import { HvFilterGroupFilters, HvFilterGroupValue } from "./types";

@@ -1,3 +1,4 @@
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { bulkActionsClasses } from "../BulkActions";
@@ -6,7 +7,6 @@ import { tableCellClasses } from "../Table/TableCell";
 import { tableContainerClasses } from "../Table/TableContainer";
 import { tableHeaderClasses } from "../Table/TableHeader";
 import { tableRowClasses } from "../Table/TableRow";
-import { createClasses } from "../utils/classes";
 
 export const { staticClasses, useClasses } = createClasses("HvTableSection", {
   root: {},

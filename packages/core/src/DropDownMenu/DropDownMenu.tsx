@@ -1,19 +1,21 @@
 import { forwardRef, useMemo } from "react";
 import { Placement } from "@popperjs/core";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import { useBaseDropdownContext } from "../BaseDropdown/BaseDropdownContext/BaseDropdownContext";
 import { HvButtonSize, HvButtonVariant } from "../Button";
 import { HvDropdownButton, HvDropdownButtonProps } from "../DropdownButton";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvList, HvListProps, HvListValue } from "../List";
 import { HvPanel } from "../Panel";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { getPrevNextFocus } from "../utils/focusableElementFinder";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";

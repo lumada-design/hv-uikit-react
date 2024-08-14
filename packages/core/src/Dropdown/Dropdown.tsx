@@ -1,5 +1,9 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { useForkRef } from "@mui/material/utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import {
@@ -12,12 +16,10 @@ import {
   isInvalid,
 } from "../Forms";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListValue } from "../List";
 import { HvTypography } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Dropdown.styles";
 import { HvDropdownList, HvDropdownListProps } from "./List";

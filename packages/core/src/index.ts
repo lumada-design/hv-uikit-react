@@ -1,4 +1,3 @@
-export { useCss, useTheme } from "@hitachivantara/uikit-react-shared";
 export {
   theme,
   themes,
@@ -24,6 +23,14 @@ export type {
   // SIZES
   HvSize,
 } from "@hitachivantara/uikit-styles";
+
+export {
+  createClasses,
+  useCss,
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 // Components that need to be loaded first because of mutual dependencies (preserve order)
 export * from "./Typography";
@@ -121,7 +128,6 @@ export * from "./Skeleton";
 export * from "./hooks/useClickOutside";
 export * from "./hooks/useComputation";
 export * from "./hooks/useControlled";
-export * from "./hooks/useDefaultProps";
 export * from "./hooks/useEnhancedEffect";
 export * from "./hooks/useForkRef";
 export * from "./hooks/useImageLoaded";
@@ -142,7 +148,6 @@ export * from "./hocs/withTooltip";
 
 export * from "./utils/browser";
 export * from "./utils/checkValidHexColorValue";
-export * from "./utils/classes";
 export * from "./utils/focusableElementFinder";
 export * from "./utils/focusUtils";
 export * from "./utils/getComponentName";

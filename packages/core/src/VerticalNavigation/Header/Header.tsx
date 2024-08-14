@@ -1,11 +1,13 @@
 import { useContext, useMemo } from "react";
 import { Backwards, Forwards, Menu } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../../Button";
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvBaseProps } from "../../types/generic";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { staticClasses, useClasses } from "./Header.styles";
 

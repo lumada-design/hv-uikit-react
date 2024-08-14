@@ -1,8 +1,8 @@
 import MuiCardContent, {
   CardContentProps as MuiCardContentProps,
 } from "@mui/material/CardContent";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
-import { ExtractNames } from "../../utils/classes";
 import { staticClasses, useClasses } from "./Content.styles";
 
 export { staticClasses as cardContentClasses };

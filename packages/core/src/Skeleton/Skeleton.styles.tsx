@@ -1,7 +1,6 @@
 import { keyframes } from "@emotion/react";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { createClasses } from "../utils/classes";
 
 const pulse = keyframes`
   0%, 100% {

@@ -1,10 +1,13 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { Edit } from "@hitachivantara/uikit-react-icons";
-import { useTheme } from "@hitachivantara/uikit-react-shared";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../Button";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvInput, HvInputProps } from "../Input";
 import {
   fixedForwardRef,
@@ -16,7 +19,6 @@ import {
   HvTypographyProps,
   HvTypographyVariants,
 } from "../Typography";
-import { ExtractNames } from "../utils/classes";
 import { isKey } from "../utils/keyboardUtils";
 import { staticClasses, useClasses } from "./InlineEditor.styles";
 

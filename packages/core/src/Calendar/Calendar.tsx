@@ -1,8 +1,10 @@
 import { useContext } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvFormElementContext, HvFormElementValueContext } from "../Forms";
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Calendar.styles";
 import { HvSingleCalendar } from "./SingleCalendar";

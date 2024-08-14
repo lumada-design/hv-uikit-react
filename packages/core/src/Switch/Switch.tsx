@@ -1,5 +1,9 @@
 import { forwardRef, useCallback } from "react";
 import { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseSwitch } from "../BaseSwitch";
 import {
@@ -11,9 +15,7 @@ import {
 } from "../Forms";
 import { isInvalid } from "../Forms/FormElement/validationStates";
 import { useControlled } from "../hooks/useControlled";
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { ExtractNames } from "../utils/classes";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Switch.styles";
 

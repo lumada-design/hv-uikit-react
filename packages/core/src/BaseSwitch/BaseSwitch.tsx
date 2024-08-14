@@ -1,8 +1,10 @@
 import { forwardRef, useCallback, useState } from "react";
 import MuiSwitch, { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./BaseSwitch.styles";
 
 export { staticClasses as baseSwitchClasses };

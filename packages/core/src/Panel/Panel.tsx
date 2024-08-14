@@ -1,8 +1,10 @@
 import { forwardRef } from "react";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./Panel.styles";
 
 export { staticClasses as panelClasses };

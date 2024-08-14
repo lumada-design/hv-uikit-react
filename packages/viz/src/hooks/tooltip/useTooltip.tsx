@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from "react";
-import { ExtractNames } from "@hitachivantara/uikit-react-shared";
+import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvChartTooltip, HvChartTooltipParams } from "../../types";
 import { HvEChartsOption } from "../../types/common";

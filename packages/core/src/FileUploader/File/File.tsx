@@ -1,10 +1,12 @@
 import { Close, Fail, Success } from "@hitachivantara/uikit-react-icons";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../../hooks/useDefaultProps";
 import { HvIconButton } from "../../IconButton";
 import { HvProgressBar } from "../../ProgressBar";
 import { HvTypography } from "../../Typography";
-import { ExtractNames } from "../../utils/classes";
 import { convertUnits } from "../utils";
 import { staticClasses, useClasses } from "./File.styles";
 

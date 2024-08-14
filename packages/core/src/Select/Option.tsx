@@ -2,11 +2,14 @@ import { useRef } from "react";
 import { OptionOwnProps } from "@mui/base/Option";
 import { useOption } from "@mui/base/useOption";
 import { useForkRef } from "@mui/material/utils";
+import {
+  createClasses,
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
-import { useDefaultProps } from "../hooks/useDefaultProps";
 import { HvListItem, HvListItemProps } from "../ListContainer";
 import { fixedForwardRef } from "../types/generic";
-import { createClasses, ExtractNames } from "../utils/classes";
 import { outlineStyles } from "../utils/focusUtils";
 
 const { staticClasses, useClasses } = createClasses("HvOption", {
