@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.38.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.38.0...@hitachivantara/uikit-react-lab@5.38.1) (2024-08-15)
+
+### Bug Fixes
+
+- styles across components ([#4263](https://github.com/lumada-design/hv-uikit-react/issues/4263)) ([59f16c4](https://github.com/lumada-design/hv-uikit-react/commit/59f16c4e540d83a919937e53e0c4286144f51a61))
+
 # [5.38.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.37.5...@hitachivantara/uikit-react-lab@5.38.0) (2024-08-12)
 
 ### Bug Fixes

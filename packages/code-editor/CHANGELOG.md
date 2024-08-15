@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.2.181...@hitachivantara/uikit-react-code-editor@5.3.0) (2024-08-15)
+
+### Features
+
+- **CodeEditor:** intellisense support for xml ([b8dd9d4](https://github.com/lumada-design/hv-uikit-react/commit/b8dd9d4c1a656fa4e162f53a7e42d9b94bd4e382))
+- **utils:** add `@hitachivantara/uikit-react-utils` package ([#4273](https://github.com/lumada-design/hv-uikit-react/issues/4273)) ([2a271a2](https://github.com/lumada-design/hv-uikit-react/commit/2a271a2e4385fe3ca48fd419d1651b54f26381b8))
+
 ## [5.2.181](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.2.180...@hitachivantara/uikit-react-code-editor@5.2.181) (2024-08-08)
 
 ### Performance Improvements

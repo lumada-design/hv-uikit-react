@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.32.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.31.1...@hitachivantara/uikit-styles@5.32.0) (2024-08-15)
+
+### Features
+
+- **InlineEditor:** add Pentaho Plus styles ([1af580e](https://github.com/lumada-design/hv-uikit-react/commit/1af580e0c44283844cad3c25c83a86c06af5e3ab))
+
 ## [5.31.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.31.0...@hitachivantara/uikit-styles@5.31.1) (2024-08-08)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.68.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.67.1...@hitachivantara/uikit-react-core@5.68.0) (2024-08-15)
+
+### Bug Fixes
+
+- **QueryBuilder:** decimal values for numeric value ([63f9e98](https://github.com/lumada-design/hv-uikit-react/commit/63f9e9807f21eddb7a30cc18ebbcb537d594d571))
+- styles across components ([#4263](https://github.com/lumada-design/hv-uikit-react/issues/4263)) ([59f16c4](https://github.com/lumada-design/hv-uikit-react/commit/59f16c4e540d83a919937e53e0c4286144f51a61))
+
+### Features
+
+- **utils:** add `@hitachivantara/uikit-react-utils` package ([#4273](https://github.com/lumada-design/hv-uikit-react/issues/4273)) ([2a271a2](https://github.com/lumada-design/hv-uikit-react/commit/2a271a2e4385fe3ca48fd419d1651b54f26381b8))
+
 ## [5.67.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.67.0...@hitachivantara/uikit-react-core@5.67.1) (2024-08-12)
 
 ### Bug Fixes
