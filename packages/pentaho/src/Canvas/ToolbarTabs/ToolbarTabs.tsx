@@ -7,7 +7,6 @@ import {
   HvButtonProps,
   HvDropDownMenu,
   HvOverflowTooltip,
-  HvTypography,
   uniqueId,
   useControlled,
   useDefaultProps,
@@ -22,6 +21,7 @@ import {
 
 import { HvCanvasPanelTab } from "../PanelTab";
 import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "../PanelTabs";
+import { ToolbarTabEditor } from "./ToolbarTabEditor";
 import { MIN_TAB_WIDTH, staticClasses, useClasses } from "./ToolbarTabs.styles";
 
 export { staticClasses as canvasToolbarTabsClasses };
@@ -233,15 +233,15 @@ export const HvCanvasToolbarTabs = forwardRef<
     handleChangeTabs(event, newTabs);
   }; */
 
-  /* const handleEdit = (
-    event: React.SyntheticEvent,
+  const handleEdit = (
+    event: React.FormEvent<Element>,
     value: string,
     tabId: string,
   ) =>
     handleChangeTabs(
       event,
       tabs.map((tab) => (tab.id === tabId ? { ...tab, label: value } : tab)),
-    ); */
+    );
 
   return (
     <div
@@ -257,8 +257,7 @@ export const HvCanvasToolbarTabs = forwardRef<
             onChange={handleChangeSelectedTab}
           >
             {visibleTabs.map((tab, index) => {
-              const btnDisabled = selectedTab !== tab.id;
-
+              const btnSelected = selectedTab === tab.id;
               return (
                 <HvCanvasPanelTab
                   key={tab.id}
@@ -270,15 +269,31 @@ export const HvCanvasToolbarTabs = forwardRef<
                 >
                   <div className={classes.tabContent}>
                     {tab.icon && (
-                      <div className={classes.tabIcon}>{tab.icon}</div>
+                      <div className={classes.tabIconContainer}>{tab.icon}</div>
                     )}
-                    {btnDisabled ? (
-                      <HvOverflowTooltip data={tab.label} />
+                    {!btnSelected || !allowTabEdit ? (
+                      <HvOverflowTooltip
+                        classes={{
+                          tooltipAnchor: classes.tabLabel,
+                        }}
+                        data={tab.label}
+                      />
                     ) : (
-                      /** TODO - Create the custom inline editor for the tabs */
-                      <HvTypography contentEditable={allowTabEdit}>
-                        {tab.label}
-                      </HvTypography>
+                      <ToolbarTabEditor
+                        className={classes.tabLabelEditorRoot}
+                        classes={{
+                          label: cx(classes.tabLabel, classes.tabLabelEditor),
+                        }}
+                        value={tab.label}
+                        onChange={(event, value) =>
+                          handleEdit(event, value, tab.id)
+                        }
+                        onBlur={(event, value) =>
+                          handleEdit(event, value, tab.id)
+                        }
+                        // We don't want the arrow keys to trigger the tab navigation
+                        onKeyDown={(e) => e.stopPropagation()}
+                      />
                     )}
                     {/** TODO - Implement delete like tags: through click and keyboard */}
                     <div className={classes.closeIconContainer}>

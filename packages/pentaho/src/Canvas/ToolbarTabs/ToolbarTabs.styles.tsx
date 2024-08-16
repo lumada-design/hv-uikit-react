@@ -1,9 +1,15 @@
 import { tabClasses } from "@mui/base/Tab";
 import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
+import { toolbarTabEditorClasses } from "./ToolbarTabEditor";
+
 export const MIN_TAB_WIDTH = 120;
 const MAX_TAB_WIDTH = 220;
 const TAB_HEIGHT = 32;
+const CLOSE_ICON_SIZE = 32;
+const TAB_ICON_SIZE = 16;
+const TAB_PADDING = theme.space.xs;
+const TAB_COLOR = "#EFF6FF"; // TODO - change HEX for token when available (dark/light)
 
 export const { staticClasses, useClasses } = createClasses(
   "HvCanvasToolbarTabs",
@@ -34,31 +40,61 @@ export const { staticClasses, useClasses } = createClasses(
       borderRadius: "10px 10px 0 0",
       boxShadow: "none",
       backgroundColor: theme.colors.atmo1,
+      "&:first-of-type": { borderEndStartRadius: theme.radii.base },
       [`&.${tabClasses.selected}`]: {
         color: theme.colors.primary,
-        backgroundColor: theme.colors.containerBackgroundHover,
+        backgroundColor: TAB_COLOR,
         borderColor: theme.colors.atmo4,
       },
-      "&:first-of-type": { borderEndStartRadius: theme.radii.base },
+      [`&:hover:not(.${tabClasses.selected}), &:focus:not(.${tabClasses.selected})`]:
+        {
+          borderRadius: 0,
+          backgroundColor: TAB_COLOR,
+          borderColor: TAB_COLOR,
+          "&:first-of-type": { borderEndStartRadius: theme.radii.base },
+        },
+
+      // Hide icon when editor is hovered and focused
+      [`&:has($tabLabelEditor:hover) $tabIconContainer, &:has(.${toolbarTabEditorClasses.edit}) $tabIconContainer`]:
+        {
+          display: "none",
+        },
+      // Hide close when editor is focused
+      [`&:has(.${toolbarTabEditorClasses.edit}) $closeIconContainer`]: {
+        display: "none",
+      },
+    },
+    tabLabel: {
+      "&:not($tabLabelEditor)": {
+        margin: theme.spacing(0, "xs"),
+      },
+    },
+    tabLabelEditorRoot: {}, // TODO - FIX WIDTH
+    tabLabelEditor: {
+      color: theme.colors.primary,
     },
     tabContent: {
       position: "relative",
       height: TAB_HEIGHT,
       display: "flex",
-      justifyContent: "space-between",
+      justifyContent: "flex-start",
       alignItems: "center",
       width: "100%",
-      padding: theme.space.xs,
+      padding: TAB_PADDING,
     },
-    tabIcon: {
+    tabIconContainer: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      width: 16,
+      width: TAB_ICON_SIZE,
     },
     closeIconContainer: {
-      marginRight: `calc(-1 * ${theme.space.xs})`,
-      width: 32,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      marginLeft: "auto",
+      marginRight: theme.spacing(-1),
+      width: CLOSE_ICON_SIZE,
     },
     tabDivider: {
       position: "absolute",
