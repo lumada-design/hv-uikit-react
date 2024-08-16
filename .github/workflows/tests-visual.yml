@@ -7,6 +7,9 @@ on:
       batch-id:
         type: string
 
+env:
+  IS_PR: ${{inputs.batch-id && 'true' || 'false' }}
+
 jobs:
   chromatic:
     name: Chromatic
@@ -29,8 +32,9 @@ jobs:
           configFile: .config/chromatic.config.json
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           forceRebuild: true
+          # Perform Checks on "background" in PRs, succeeding ✅ even with visual changes
+          exitOnceUploaded: ${{env.IS_PR}}
 
-      # Add red mark to workflow if it failed
-      - name: Evaluate Fail
+      - name: Fail on visual changes
         if: ${{ steps.publish.outcome == 'failure' || steps.publish.outputs.changeCount != '0' || steps.publish.outputs.errorCount != '0' }}
         run: exit 1

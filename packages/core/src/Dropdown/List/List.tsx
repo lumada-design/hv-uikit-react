@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  mergeStyles,
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
@@ -126,12 +127,12 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
     notifyChangesOnFirstRender = false,
     hasTooltips = false,
     singleSelectionToggle,
-    height: dropdownHeight,
+    height: heightProp,
     maxHeight,
     virtualized = false,
     ...others
   } = useDefaultProps("HvDropdownList", props);
-  const { classes, cx, css } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   const [searchStr, setSearchStr] = useState<string>("");
   const [list, setList] = useState<HvListValue[]>(clone(values));
@@ -332,6 +333,10 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
   };
 
   const showList = valuesExist(values);
+  /** bottom margin + Panel padding + Search size + SelectAll + ActionBar size */
+  const elementsSize = theme.spacing(
+    5 + 2 + (showSearch ? 5 : 0) + (showList && multiSelect ? 4 + 6 : 0),
+  );
 
   return (
     <div className={classes.rootList}>
@@ -342,30 +347,15 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
         {showList && (
           <HvList
             id={setId(id, "list")}
+            style={mergeStyles(undefined, {
+              height: heightProp,
+              "--maxW": width,
+              "--maxH": maxHeight ?? `calc(${height}px - ${elementsSize})`,
+            })}
             classes={{
-              root: cx(
-                classes.dropdownListContainer,
-                css({
-                  maxWidth: width,
-                  maxHeight:
-                    maxHeight ??
-                    `calc(${height}px - 32px - ${theme.space.xs} - ${theme.space.sm})`,
-                  overflow: "auto",
-                  padding: 4,
-                  margin: -4,
-                }),
-                dropdownHeight &&
-                  css({
-                    height: dropdownHeight,
-                  }),
-                virtualized &&
-                  css({
-                    maxWidth: "inherit",
-                    maxHeight: "inherit",
-                    overflow: "inherit",
-                    padding: 0,
-                  }),
-              ),
+              root: cx(classes.dropdownListContainer, {
+                [classes.virtualized]: virtualized,
+              }),
             }}
             values={list}
             multiSelect={multiSelect}
@@ -377,7 +367,7 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
             selectable
             condensed
             singleSelectionToggle={singleSelectionToggle}
-            height={dropdownHeight}
+            height={heightProp}
             virtualized={virtualized}
             {...others}
           />

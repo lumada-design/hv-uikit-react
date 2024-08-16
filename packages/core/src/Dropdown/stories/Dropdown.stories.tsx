@@ -10,22 +10,14 @@ import {
 
 import { CustomDropdown as CustomDropdownStory } from "./CustomDropdown";
 import CustomDropdownRaw from "./CustomDropdown?raw";
-import { Empty as EmptyStory } from "./Empty";
-import EmptyRaw from "./Empty?raw";
 import { ExternalErrorMessage as ExternalErrorMessageStory } from "./ExternalErrorMessage";
 import ExternalErrorMessageRaw from "./ExternalErrorMessage?raw";
-import { Main as MainStory } from "./Main";
-import MainRaw from "./Main?raw";
 import { MultiSelection as MultiSelectionStory } from "./MultiSelection";
 import MultiSelectionRaw from "./MultiSelection?raw";
-import { SingleSelectionWithSearch as SingleSelectionWithSearchStory } from "./SingleSelectionWithSearch";
-import SingleSelectionWithSearchRaw from "./SingleSelectionWithSearch?raw";
 import { Variants as VariantsStory } from "./Variants";
 import VariantsRaw from "./Variants?raw";
 import { Virtualized as VirtualizedStory } from "./Virtualized";
 import VirtualizedRaw from "./Virtualized?raw";
-import { WithDefinedHeight as WithDefinedHeightStory } from "./WithDefinedHeight";
-import WithDefinedHeightRaw from "./WithDefinedHeight?raw";
 import { WithIcons as WithIconsStory } from "./WithIcons";
 import WithIconsRaw from "./WithIcons?raw";
 
@@ -42,17 +34,12 @@ export default {
 
 export const Main: StoryObj<HvDropdownProps> = {
   args: {
-    multiSelect: true,
-    showSearch: true,
+    multiSelect: false,
+    showSearch: false,
     disabled: false,
     readOnly: false,
     required: false,
-    defaultExpanded: true,
-    notifyChangesOnFirstRender: false,
-    hasTooltips: false,
-    variableWidth: false,
     singleSelectionToggle: false,
-    virtualized: false,
     status: "valid",
   },
   argTypes: {
@@ -64,16 +51,18 @@ export const Main: StoryObj<HvDropdownProps> = {
     widthDecorator,
     (Story) => <div style={{ minHeight: 400 }}>{Story()}</div>,
   ],
-  parameters: {
-    docs: {
-      source: {
-        code: MainRaw,
-      },
-    },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
-  render: (args) => <MainStory {...args} />,
+  render: (args) => (
+    <HvDropdown
+      {...args}
+      label="Select values"
+      values={[
+        { label: "value 1" },
+        { label: "value 2", selected: true },
+        { label: "value 3" },
+        { label: "value 4" },
+      ]}
+    />
+  ),
 };
 
 export const Variants: StoryObj<HvDropdownProps> = {
@@ -130,47 +119,29 @@ export const WithIcons: StoryObj<HvDropdownProps> = {
   render: () => <WithIconsStory />,
 };
 
-export const Empty: StoryObj<HvDropdownProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Dropdown with no values",
-      },
-      source: {
-        code: EmptyRaw,
-      },
-    },
-  },
-  decorators: [widthDecorator],
-  render: () => <EmptyStory />,
-};
-
 export const MultiSelection: StoryObj<HvDropdownProps> = {
-  parameters: {
-    docs: {
-      source: {
-        code: MultiSelectionRaw,
-      },
-    },
-  },
-  decorators: [widthDecorator],
-  render: () => <MultiSelectionStory />,
-};
-
-export const SingleSelectionWithSearch: StoryObj<HvDropdownProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          "Single selection Dropdown with search and less than 10 elements",
+          "Dropdown example with multiple selection (`multiSelect`) and search (`showSearch`). <br />\
+          The Dropdown automatically expands to fit the available height. this can be configured using the `height` (or `maxHeight`) props.",
       },
       source: {
-        code: SingleSelectionWithSearchRaw,
+        code: MultiSelectionRaw,
       },
     },
+    // Enables Chromatic snapshot
+    chromatic: { disableSnapshot: false },
   },
   decorators: [widthDecorator],
-  render: () => <SingleSelectionWithSearchStory />,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const picker = canvas.getByRole("combobox");
+    await userEvent.click(picker);
+    await expect(canvas.getByRole("list")).toBeInTheDocument();
+  },
+  render: () => <MultiSelectionStory />,
 };
 
 export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
@@ -186,22 +157,6 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
     },
   },
   render: () => <ExternalErrorMessageStory />,
-};
-
-export const WithDefinedHeight: StoryObj<HvDropdownProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Dropdown's height can be configured using `height` (or `maxHeight`). Note: only validated in the single selection use-case.",
-      },
-      source: {
-        code: WithDefinedHeightRaw,
-      },
-    },
-  },
-  decorators: [widthDecorator],
-  render: () => <WithDefinedHeightStory />,
 };
 
 export const Virtualized: StoryObj<HvDropdownProps> = {
