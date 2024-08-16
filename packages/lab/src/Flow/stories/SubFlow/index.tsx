@@ -38,8 +38,8 @@ import { NodeGroup } from "./NodeGroup";
 const initialState = {
   nodes: [
     {
-      width: 400,
-      height: 400,
+      width: 500,
+      height: 300,
       id: "testGroup",
       position: { x: 0, y: 0 },
       positionAbsolute: { x: 0, y: 0 },
@@ -50,7 +50,7 @@ const initialState = {
       width: 250,
       height: 365,
       id: "1caf2381eaf",
-      position: { x: 194, y: 160 },
+      position: { x: 0, y: 360 },
       data: {},
       type: "dimensionTable",
     },
@@ -58,7 +58,7 @@ const initialState = {
       width: 250,
       height: 274,
       id: "caf2381eaf3",
-      position: { x: 637, y: 367 },
+      position: { x: 637, y: 0 },
       data: {},
       type: "factTable",
     },
@@ -190,7 +190,7 @@ const nodeGroups = {
   },
   groupNode: {
     label: "Group Node",
-    color: "cat2_40",
+    color: "primary_20",
     icon: <Cube />,
     items: [{ nodeType: "group", label: "Group Node" }],
   },

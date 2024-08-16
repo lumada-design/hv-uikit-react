@@ -4,7 +4,6 @@ import { NodeProps as ReactFlowNodeProps } from "reactflow";
 import { theme } from "@hitachivantara/uikit-react-core";
 import {
   useFlowNodeGetIntersections,
-  useFlowNodeUtils,
   useHvNode,
 } from "@hitachivantara/uikit-react-lab";
 
@@ -30,17 +29,23 @@ const classes = {
   }),
 };
 
-const renderItem = ({ label, children, type, ...others }: HierarchyData) => {
+const renderItem = ({
+  label,
+  children,
+  type,
+  id,
+  ...others
+}: HierarchyData) => {
   if (type === "level") {
     return (
-      <Level title={label} {...others}>
+      <Level title={label} {...others} key={id} id={id}>
         {children?.map(renderItem)}
       </Level>
     );
   }
 
   return (
-    <FactTable title={label} {...others}>
+    <FactTable title={label} {...others} key={id} id={id}>
       {children?.map(renderItem)}
     </FactTable>
   );
@@ -52,13 +57,12 @@ interface NodeProps extends ReactFlowNodeProps {
 }
 
 export const Node = ({ id: idProp, groupId, hierarchyData }: NodeProps) => {
-  const { title, icon, id, node } = useHvNode({
+  const { title, icon, id, node, setNodeParent } = useHvNode({
     id: idProp,
     groupId,
   });
 
   const intersections = useFlowNodeGetIntersections(id);
-  const { setNodeParent } = useFlowNodeUtils(id);
 
   const [draggingFlag, setDraggingFlag] = useState(false);
 
@@ -78,6 +82,9 @@ export const Node = ({ id: idProp, groupId, hierarchyData }: NodeProps) => {
       );
       if (Array.isArray(groupIntersections) && groupIntersections.length >= 1)
         groupIntersections.forEach((elem) => setNodeParent(elem));
+      else {
+        setNodeParent();
+      }
       setDraggingFlag(false);
     }
   }, [draggingFlag, intersections, node, setNodeParent]);

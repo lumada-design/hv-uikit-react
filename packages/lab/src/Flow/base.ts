@@ -232,8 +232,6 @@ export const flowStyles = css`
   .react-flow__node-input,
   .react-flow__node-output,
   .react-flow__node-group {
-    border-radius: 0px 16px 16px 16px;
-    border: unset;
     color: ${theme.colors.secondary};
     text-align: center;
   }
@@ -258,7 +256,6 @@ export const flowStyles = css`
   .react-flow__node-group.selectable.selected,
   .react-flow__node-group.selectable:focus,
   .react-flow__node-group.selectable:focus-visible {
-    box-shadow: 0 0 0 0.5px #1a192b;
   }
   .react-flow__node-group {
     background-color: rgba(240, 240, 240, 0.25);

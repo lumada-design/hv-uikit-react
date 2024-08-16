@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { css, cx } from "@emotion/css";
 import {
   NodeResizeControl,
@@ -13,20 +14,28 @@ import {
 import { Fullscreen } from "@hitachivantara/uikit-react-icons";
 import { useHvNode } from "@hitachivantara/uikit-react-lab";
 
+const dashedBorder = `1px dashed ${theme.colors.atmo4}`;
+const containerBorderRadius = "0 16px 16px 16px";
+const minWidth = 300;
+const minHeight = 200;
+
 const classes = {
   root: css({
     display: "flex",
-    minWidth: 200,
-    minHeight: 200,
     width: "100%",
     height: "100%",
     backgroundColor: theme.colors.atmo1,
-    borderRadius: "0 16px 16px 16px",
+    borderRadius: containerBorderRadius,
+    minWidth,
+    minHeight,
+    border: `1px solid transparent`,
   }),
   content: css({
-    borderRadius: "0 16px 16px 16px",
+    display: "flex",
+    borderRadius: containerBorderRadius,
     backgroundColor: theme.colors.primary_20,
     width: "100%",
+    border: dashedBorder,
   }),
   header: css({
     display: "flex",
@@ -34,7 +43,7 @@ const classes = {
     height: "100%",
     padding: theme.spacing("2px", "xs", "2px", "xs"),
     borderRadius: "16px 16px 0 0",
-    border: `1px dashed ${theme.colors.primary_80}`,
+    border: dashedBorder,
     borderBottom: "none",
     flexDirection: "row",
     alignItems: "center",
@@ -43,7 +52,7 @@ const classes = {
   headerBackground: css({
     display: "flex",
     position: "absolute",
-    top: "-35px",
+    top: "-34px",
     backgroundColor: theme.colors.atmo1,
     borderRadius: "16px 16px 0 0",
     borderBottom: "none",
@@ -63,24 +72,57 @@ interface NodeProps extends ReactFlowNodeProps {
 }
 
 export const NodeGroup = ({ id: idProp, groupId, actions = [] }: NodeProps) => {
-  const { title, icon, id } = useHvNode({
+  const { title, icon, id, node, intersections, setNodeParent } = useHvNode({
     id: idProp,
     groupId,
   });
+
+  const [draggingFlag, setDraggingFlag] = useState(false);
+
+  useEffect(() => {
+    if (!node) return;
+    if (node.dragging && !draggingFlag) {
+      setDraggingFlag(true);
+    }
+    if (!node.dragging && draggingFlag) {
+      const groupIntersections = intersections.filter(
+        (n) => n.type === "group" && n.id !== node.parentId,
+      );
+      if (Array.isArray(groupIntersections) && groupIntersections.length >= 1)
+        setNodeParent(groupIntersections[groupIntersections.length - 1]);
+      setDraggingFlag(false);
+    }
+  }, [draggingFlag, intersections, node, setNodeParent]);
 
   return (
     <div id={id} className={cx("nowheel", classes.root)}>
       <NodeResizer
         lineStyle={{
-          borderStyle: "dashed",
-          borderRadius: "0 16px 16px 16px",
+          // borderStyle: "dashed",
+          borderColor: "transparent",
+          borderRadius: containerBorderRadius,
         }}
+        minWidth={minWidth}
+        minHeight={minHeight}
       />
-      <NodeResizeControl position="top-right">
-        <Fullscreen style={{ position: "relative", left: -40 }} />
+      <NodeResizeControl position="top-right" minWidth={300} minHeight={200}>
+        <div
+          style={{
+            position: "relative",
+            left: -50,
+            bottom: -20,
+            display: "inline-block",
+            border: dashedBorder,
+            borderRadius: theme.radii.round,
+          }}
+        >
+          <Fullscreen />
+        </div>
       </NodeResizeControl>
-      <div className={cx(classes.headerBackground, css({ zIndex: 0 }))}>
-        <div className={cx(classes.header, css({ zIndex: 0 }))}>
+      <div
+        className={cx(classes.headerBackground, css({ zIndex: node?.zIndex }))}
+      >
+        <div className={cx(classes.header)}>
           {icon}
           <HvTypography
             variant="title4"

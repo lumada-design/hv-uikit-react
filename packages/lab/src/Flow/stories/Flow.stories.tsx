@@ -202,7 +202,8 @@ export const SubFlow: StoryObj<HvFlowProps> = {
   parameters: {
     docs: {
       description: {
-        story: "This sample demonstrate the use of a sub flow",
+        story:
+          "This sample demonstrate the use of a sub flow to create groups of nodes. Drag the node to the group node to add it, drag out of it to remove it.",
       },
       source: {
         code: SubFlowRaw,

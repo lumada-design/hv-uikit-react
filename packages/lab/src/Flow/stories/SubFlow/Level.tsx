@@ -106,7 +106,7 @@ export const Level = ({
   const hasChildren = !!children;
 
   return (
-    <div className={cx(classes.root, classesProp?.root)} id={id} key={id}>
+    <div className={cx(classes.root, classesProp?.root)} id={id}>
       <div
         className={cx(classes.header, classesProp?.header, {
           [classes.childless]: !hasChildren,

@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from "react";
 import {
+  CoordinateExtent,
   Edge,
   Node,
   ReactFlowState,
@@ -138,7 +139,7 @@ export function useFlowNodeUtils<NodeData = any>(id?: string) {
   );
 
   const setNodeParent = useCallback(
-    (node: Node<any>) => {
+    (node?: Node<any>, extent?: "parent" | CoordinateExtent) => {
       if (!nodeId) return;
 
       reactFlowInstance.setNodes((nodes) => {
@@ -146,9 +147,11 @@ export function useFlowNodeUtils<NodeData = any>(id?: string) {
           if (n.id === nodeId) {
             return {
               ...n,
-              parentId: node.id,
-              extent: "parent",
-              position: relativePosition(node.position, n.position),
+              parentId: node ? node.id : undefined,
+              extent,
+              position: node
+                ? relativePosition(node.position, n.position)
+                : (n.positionAbsolute ?? n.position),
             };
           }
           return n;
