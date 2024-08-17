@@ -243,6 +243,24 @@ export const HvCanvasToolbarTabs = forwardRef<
       tabs.map((tab) => (tab.id === tabId ? { ...tab, label: value } : tab)),
     );
 
+  const handleDeleteTab = (event: any, tabId: string) => {
+    const newTabs = tabs.filter((tab) => tab.id !== tabId);
+
+    if (tabId === selectedTab) {
+      const currentIndex = tabs.findIndex((tab) => tab.id === tabId);
+      const newIndex = currentIndex - 1 < 0 ? 0 : currentIndex - 1;
+      handleChangeSelectedTab(event, newTabs[newIndex]?.id ?? "none");
+    }
+
+    handleChangeTabs(event, newTabs);
+  };
+
+  const handleKeyDownTab = (event: React.KeyboardEvent, tabId: string) => {
+    if (event.key === "Delete" || event.key === "Backspace") {
+      handleDeleteTab(event, tabId);
+    }
+  };
+
   return (
     <div
       ref={rootForkedRef}
@@ -266,6 +284,7 @@ export const HvCanvasToolbarTabs = forwardRef<
                   className={classes.tab}
                   value={tab.id}
                   tabIndex={0}
+                  onKeyDown={(event) => handleKeyDownTab(event, tab.id)}
                 >
                   <div className={classes.tabContent}>
                     {tab.icon && (
@@ -295,9 +314,11 @@ export const HvCanvasToolbarTabs = forwardRef<
                         onKeyDown={(e) => e.stopPropagation()}
                       />
                     )}
-                    {/** TODO - Implement delete like tags: through click and keyboard */}
                     <div className={classes.closeIconContainer}>
-                      <CloseXS iconSize="XS" />
+                      <CloseXS
+                        iconSize="XS"
+                        onClick={(event) => handleDeleteTab(event, tab.id)}
+                      />
                     </div>
                     {selectedTab !== tab.id &&
                       visibleTabs[index + 1]?.id !== selectedTab && (

@@ -95,6 +95,10 @@ export const { staticClasses, useClasses } = createClasses(
       marginLeft: "auto",
       marginRight: theme.spacing(-1),
       width: CLOSE_ICON_SIZE,
+      "&:hover": {
+        backgroundColor: theme.colors.containerBackgroundHover,
+        borderRadius: theme.radii.circle,
+      },
     },
     tabDivider: {
       position: "absolute",
