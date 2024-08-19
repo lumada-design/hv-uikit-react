@@ -253,7 +253,7 @@ export const Multiple: StoryObj<HvSectionProps> = {
                   if (open) {
                     return [...ids, s.id];
                   }
-                  return [...ids.filter((i) => i !== s.id)];
+                  return ids.filter((i) => i !== s.id);
                 })
               }
             >

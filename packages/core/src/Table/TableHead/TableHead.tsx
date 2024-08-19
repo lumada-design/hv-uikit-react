@@ -3,7 +3,10 @@ import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../../types/generic";
 import TableContext from "../TableContext";
-import TableSectionContext from "../TableSectionContext";
+import {
+  TableSectionContext,
+  TableSectionContextValue,
+} from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableHead.styles";
 
 export { staticClasses as tableHeadClasses };
@@ -31,7 +34,7 @@ export interface HvTableHeadProps
 
 const tableSectionContext = {
   type: "head",
-};
+} satisfies TableSectionContextValue;
 
 const defaultComponent = "thead";
 

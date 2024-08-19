@@ -6,7 +6,7 @@ import {
 
 import { HvBaseProps } from "../../types/generic";
 import TableContext from "../TableContext";
-import TableSectionContext from "../TableSectionContext";
+import { TableSectionContext } from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableRow.styles";
 
 export { staticClasses as tableRowClasses };

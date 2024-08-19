@@ -10,13 +10,10 @@ const calcSize = (size: number, isLarger = false) =>
   isLarger ? size + 8 : size;
 
 export const getColorVars = (colorArray: string[]) => {
-  return colorArray.reduce(
-    (acc, value, index) => {
-      acc[`--color-${index}`] = value;
-      return acc;
-    },
-    {} as Record<string, string>,
-  );
+  return colorArray.reduce<Record<string, string>>((acc, value, index) => {
+    acc[`--color-${index}`] = value;
+    return acc;
+  }, {});
 };
 
 /** sizes for the <svg> icon */

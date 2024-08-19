@@ -65,7 +65,7 @@ const Group = ({
   iconsLibrary: Record<string, IconType>;
   iconSize: IconSize;
 }) => {
-  const keys = Array.from(new Set([...Object.keys(iconsLibrary)])).sort();
+  const keys = Array.from(new Set(Object.keys(iconsLibrary))).sort();
   return (
     <div className={classes.group}>
       {keys.map((icon) => (

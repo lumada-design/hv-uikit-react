@@ -216,7 +216,7 @@ export const ConfusionMatrixWithoutValues: StoryObj<HvConfusionMatrixProps> = {
 export const LandscapeFormat: StoryObj<HvConfusionMatrixProps> = {
   render: () => {
     const base = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
-    const prediction = base.reduce((acc: string[], curr: string) => {
+    const prediction = base.reduce<string[]>((acc, curr) => {
       acc.push(...Array.from(Array(base.length), () => curr));
       return acc;
     }, []);

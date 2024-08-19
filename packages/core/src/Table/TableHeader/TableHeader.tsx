@@ -16,7 +16,7 @@ import {
   HvTableCellVariant,
 } from "../Table";
 import TableContext from "../TableContext";
-import TableSectionContext from "../TableSectionContext";
+import { TableSectionContext } from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableHeader.styles";
 import { getSortIcon, isParagraph } from "./utils";
 

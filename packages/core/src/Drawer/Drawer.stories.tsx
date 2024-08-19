@@ -75,7 +75,7 @@ export const Main: StoryObj<HvDrawerProps> = {
           </HvDialogTitle>
           <HvDialogContent className={classes.drawerContent}>
             <HvTypography tabIndex={0}>
-              {[...new Array(30)]
+              {[...Array(30)]
                 .map(
                   () => `Cras mattis consectetur purus sit amet fermentum. 
                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. 

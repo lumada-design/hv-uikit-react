@@ -29,23 +29,22 @@ export const useColorScale = ({
 
     if (custom && typeof custom[0] === "object") {
       return {
-        pieces: (custom as HvConfusionMatrixColorScale[]).reduce(
-          (acc: HvConfusionMatrixColorScale[], curr) => {
-            acc.push({
-              ...curr,
-              color: colors?.[curr.color] || curr.color,
-            });
-            return acc;
-          },
-          [],
-        ),
+        pieces: (custom as HvConfusionMatrixColorScale[]).reduce<
+          HvConfusionMatrixColorScale[]
+        >((acc, curr) => {
+          acc.push({
+            ...curr,
+            color: colors?.[curr.color] || curr.color,
+          });
+          return acc;
+        }, []),
       };
     }
 
     const flatData = data
       .columnNames()
       .filter((p) => p !== filterKey)
-      .reduce((acc: number[], c: string) => {
+      .reduce<number[]>((acc, c) => {
         acc.push(...data.array(c));
         return acc;
       }, []);
