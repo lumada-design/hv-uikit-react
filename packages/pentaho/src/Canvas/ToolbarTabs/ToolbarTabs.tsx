@@ -7,6 +7,7 @@ import {
   HvButtonProps,
   HvDropDownMenu,
   HvOverflowTooltip,
+  isKey,
   uniqueId,
   useControlled,
   useDefaultProps,
@@ -216,23 +217,6 @@ export const HvCanvasToolbarTabs = forwardRef<
     handleChangeTabs?.(event, newTabs);
   };
 
-  /* const handleClose = (
-    event: React.MouseEvent<HTMLButtonElement>,
-    tabId: string,
-  ) => {
-    const newTabs = tabs.filter((tab) => tab.id !== tabId);
-
-    if (tabId === selectedTab) {
-      const currentIndex = tabs.findIndex((tab) => tab.id === tabId);
-      const newIndex = currentIndex - 1 < 0 ? 0 : currentIndex - 1;
-      handleChangeSelectedTab(event, newTabs[newIndex]?.id ?? "none");
-    }
-
-    if (hiddenTabs.length === 1) rootWidthLimitReached.current = false;
-
-    handleChangeTabs(event, newTabs);
-  }; */
-
   const handleEdit = (
     event: React.FormEvent<Element>,
     value: string,
@@ -252,13 +236,14 @@ export const HvCanvasToolbarTabs = forwardRef<
       handleChangeSelectedTab(event, newTabs[newIndex]?.id ?? "none");
     }
 
+    if (hiddenTabs.length === 1) rootWidthLimitReached.current = false;
+
     handleChangeTabs(event, newTabs);
   };
 
   const handleKeyDownTab = (event: React.KeyboardEvent, tabId: string) => {
-    if (event.key === "Delete" || event.key === "Backspace") {
+    if (isKey(event, "Delete") || isKey(event, "Backspace"))
       handleDeleteTab(event, tabId);
-    }
   };
 
   return (
@@ -317,7 +302,10 @@ export const HvCanvasToolbarTabs = forwardRef<
                     <div className={classes.closeIconContainer}>
                       <CloseXS
                         iconSize="XS"
-                        onClick={(event) => handleDeleteTab(event, tab.id)}
+                        onClick={(event) => {
+                          handleDeleteTab(event, tab.id);
+                          event.stopPropagation();
+                        }}
                       />
                     </div>
                     {selectedTab !== tab.id &&
