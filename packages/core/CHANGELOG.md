@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.68.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.68.0...@hitachivantara/uikit-react-core@5.68.1) (2024-08-19)
+
+### Bug Fixes
+
+- **Dropdown:** default `maxHeight` with `multiSelect`/`showSearch` ([#4275](https://github.com/lumada-design/hv-uikit-react/issues/4275)) ([0c37a4a](https://github.com/lumada-design/hv-uikit-react/commit/0c37a4a78483cb789102f6d19907290a4e4f811b))
+
 # [5.68.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.67.1...@hitachivantara/uikit-react-core@5.68.0) (2024-08-15)
 
 ### Bug Fixes
