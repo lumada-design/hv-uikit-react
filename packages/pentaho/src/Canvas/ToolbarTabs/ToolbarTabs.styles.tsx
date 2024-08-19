@@ -34,7 +34,8 @@ export const { staticClasses, useClasses } = createClasses(
       borderEndStartRadius: theme.radii.base,
     },
     tab: {
-      width: `clamp(${MIN_TAB_WIDTH}px, 100%, ${MAX_TAB_WIDTH}px)`,
+      maxWidth: MAX_TAB_WIDTH,
+      minWidth: MIN_TAB_WIDTH,
       border: `1px solid ${theme.colors.atmo1}`,
       borderBottom: "none",
       borderRadius: "10px 10px 0 0",
@@ -69,9 +70,19 @@ export const { staticClasses, useClasses } = createClasses(
         margin: theme.spacing(0, "xs"),
       },
     },
-    tabLabelEditorRoot: {}, // TODO - FIX WIDTH
     tabLabelEditor: {
       color: theme.colors.primary,
+
+      maxWidth: `calc(${MAX_TAB_WIDTH}px - 2 * ${TAB_PADDING} - ${TAB_ICON_SIZE}px - ${CLOSE_ICON_SIZE}px)`,
+      minWidth: `calc(${MIN_TAB_WIDTH}px - 2 * ${TAB_PADDING} - ${TAB_ICON_SIZE}px - ${CLOSE_ICON_SIZE}px)`,
+      [`&.${toolbarTabEditorClasses.edit}`]: {
+        maxWidth: `calc(${MAX_TAB_WIDTH}px - 2 * ${TAB_PADDING})`,
+        minWidth: `calc(${MIN_TAB_WIDTH}px - 2 * ${TAB_PADDING})`,
+      },
+      [`&:hover:not(.${toolbarTabEditorClasses.edit})`]: {
+        maxWidth: `calc(${MAX_TAB_WIDTH}px - 2 * ${TAB_PADDING} - ${CLOSE_ICON_SIZE}px)`,
+        minWidth: `calc(${MIN_TAB_WIDTH}px - 2 * ${TAB_PADDING} - ${CLOSE_ICON_SIZE}px)`,
+      },
     },
     tabContent: {
       position: "relative",

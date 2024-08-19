@@ -131,7 +131,6 @@ export const HvCanvasToolbarTabs = forwardRef<
 
   const rootWidthLimitReached = useRef(false);
 
-  // TODO - REVIEW THE LOGIC TO ADD THE DROPDOWN
   const groupTabs = useCallback(
     (allTabs: ToolbarTabsTab[]): GroupedTabs => {
       let fullTabWidth = MIN_TAB_WIDTH;
@@ -284,7 +283,6 @@ export const HvCanvasToolbarTabs = forwardRef<
                       />
                     ) : (
                       <ToolbarTabEditor
-                        className={classes.tabLabelEditorRoot}
                         classes={{
                           label: cx(classes.tabLabel, classes.tabLabelEditor),
                         }}
@@ -304,6 +302,8 @@ export const HvCanvasToolbarTabs = forwardRef<
                         iconSize="XS"
                         onClick={(event) => {
                           handleDeleteTab(event, tab.id);
+
+                          // We don't want the click to select the tab also
                           event.stopPropagation();
                         }}
                       />
