@@ -1,6 +1,7 @@
-import { forwardRef, useCallback, useMemo, useRef } from "react";
+import { forwardRef, useMemo } from "react";
 import { useResizeDetector } from "react-resize-detector";
 import {
+  clamp,
   ExtractNames,
   HvBaseProps,
   HvButton,
@@ -23,7 +24,13 @@ import {
 import { HvCanvasPanelTab } from "../PanelTab";
 import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "../PanelTabs";
 import { ToolbarTabEditor } from "./ToolbarTabEditor";
-import { MIN_TAB_WIDTH, staticClasses, useClasses } from "./ToolbarTabs.styles";
+import {
+  DROPDOWN_MENU_WIDTH,
+  MAX_TAB_WIDTH,
+  MIN_TAB_WIDTH,
+  staticClasses,
+  useClasses,
+} from "./ToolbarTabs.styles";
 
 export { staticClasses as canvasToolbarTabsClasses };
 
@@ -70,14 +77,6 @@ export interface HvCanvasToolbarTabsProps
   classes?: HvCanvasToolbarTabsClasses;
 }
 
-interface GroupedTabs {
-  hiddenTabs: ToolbarTabsTab[];
-  visibleTabs: ToolbarTabsTab[];
-}
-
-const DROPDOWN_MENU_WIDTH = 64;
-const BORDER_WIDTH = 2;
-
 /**
  * A toolbar tabs component to use in a canvas context.
  */
@@ -104,15 +103,6 @@ export const HvCanvasToolbarTabs = forwardRef<
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
-  // Tab resize detector: to know when to use the dropdown menu
-  const { width: tabWidth = 0, ref: tabRef } = useResizeDetector({
-    handleHeight: false,
-    refreshMode: "debounce",
-    refreshOptions: {
-      leading: true,
-    },
-  });
-
   // Actions resize detector: to know when to use the dropdown menu
   const { width: actionsWidth = 0, ref: actionsRef } = useResizeDetector({
     handleHeight: false,
@@ -127,63 +117,6 @@ export const HvCanvasToolbarTabs = forwardRef<
   const [selectedTab, setSelectedTab] = useControlled<string | null>(
     selectedTabIdProp,
     tabs?.[0]?.id ?? "none",
-  );
-
-  const rootWidthLimitReached = useRef(false);
-
-  const groupTabs = useCallback(
-    (allTabs: ToolbarTabsTab[]): GroupedTabs => {
-      let fullTabWidth = MIN_TAB_WIDTH;
-
-      const rootScrollWidth = rootRef.current?.scrollWidth ?? 0;
-      if (rootScrollWidth - rootWidth >= 1 || rootWidthLimitReached.current) {
-        fullTabWidth = tabWidth + BORDER_WIDTH;
-        rootWidthLimitReached.current = true;
-      }
-
-      const totalWidth = allTabs.length * fullTabWidth + DROPDOWN_MENU_WIDTH;
-
-      if (tabWidth > 0 && totalWidth > rootWidth - actionsWidth) {
-        const visibleCount = Math.floor(
-          (rootWidth - actionsWidth - DROPDOWN_MENU_WIDTH) / fullTabWidth,
-        );
-        const temporaryHiddenTabs = allTabs.slice(visibleCount);
-        const selectedTabHiddenIndex = temporaryHiddenTabs.findIndex(
-          (tab) => tab.id === selectedTab,
-        );
-        const excludedTabIndex = visibleCount - 1;
-        const shouldShuffle = selectedTabHiddenIndex !== -1 && visibleCount > 0;
-
-        if (shouldShuffle) {
-          return {
-            visibleTabs: [
-              ...tabs.slice(0, excludedTabIndex),
-              temporaryHiddenTabs[selectedTabHiddenIndex],
-            ].filter((tab) => tab),
-            hiddenTabs: [
-              tabs[excludedTabIndex],
-              ...temporaryHiddenTabs.filter(
-                (tab, i) => i !== selectedTabHiddenIndex,
-              ),
-            ].filter((tab) => tab),
-          };
-        }
-        return {
-          visibleTabs: tabs.slice(0, visibleCount),
-          hiddenTabs: temporaryHiddenTabs,
-        };
-      }
-      return {
-        visibleTabs: allTabs,
-        hiddenTabs: [],
-      };
-    },
-    [actionsWidth, rootRef, rootWidth, selectedTab, tabWidth, tabs],
-  );
-
-  const { hiddenTabs, visibleTabs } = useMemo(
-    () => groupTabs(tabs),
-    [groupTabs, tabs],
   );
 
   const rootForkedRef = useForkRef(ref, rootRef);
@@ -235,8 +168,6 @@ export const HvCanvasToolbarTabs = forwardRef<
       handleChangeSelectedTab(event, newTabs[newIndex]?.id ?? "none");
     }
 
-    if (hiddenTabs.length === 1) rootWidthLimitReached.current = false;
-
     handleChangeTabs(event, newTabs);
   };
 
@@ -244,6 +175,55 @@ export const HvCanvasToolbarTabs = forwardRef<
     if (isKey(event, "Delete") || isKey(event, "Backspace"))
       handleDeleteTab(event, tabId);
   };
+
+  const { tabWidth, hiddenTabs, visibleTabs } = useMemo(() => {
+    let availableWidth = rootWidth - actionsWidth;
+    let calculatedTabWidth = availableWidth / tabs.length;
+    let clamped = clamp(calculatedTabWidth, MAX_TAB_WIDTH, MIN_TAB_WIDTH);
+
+    // Overflowing
+    if (calculatedTabWidth < MIN_TAB_WIDTH) {
+      availableWidth -= DROPDOWN_MENU_WIDTH;
+      const visibleCount = Math.floor(availableWidth / MIN_TAB_WIDTH);
+      calculatedTabWidth = availableWidth / visibleCount;
+      clamped = clamp(calculatedTabWidth, MAX_TAB_WIDTH, MIN_TAB_WIDTH);
+
+      const temporaryHiddenTabs = tabs.slice(visibleCount);
+      const selectedTabHiddenIndex = temporaryHiddenTabs.findIndex(
+        (tab) => tab.id === selectedTab,
+      );
+      const excludedTabIndex = visibleCount - 1;
+      const shouldShuffle = selectedTabHiddenIndex !== -1 && visibleCount > 0;
+
+      if (shouldShuffle) {
+        return {
+          tabWidth: clamped,
+          visibleTabs: [
+            ...tabs.slice(0, excludedTabIndex),
+            temporaryHiddenTabs[selectedTabHiddenIndex],
+          ].filter((tab) => tab),
+          hiddenTabs: [
+            tabs[excludedTabIndex],
+            ...temporaryHiddenTabs.filter(
+              (tab, i) => i !== selectedTabHiddenIndex,
+            ),
+          ].filter((tab) => tab),
+        };
+      }
+
+      return {
+        tabWidth: clamped,
+        visibleTabs: tabs.slice(0, visibleCount),
+        hiddenTabs: temporaryHiddenTabs,
+      };
+    }
+
+    return {
+      tabWidth: clamped,
+      visibleTabs: tabs,
+      hiddenTabs: [],
+    };
+  }, [actionsWidth, rootWidth, selectedTab, tabs]);
 
   return (
     <div
@@ -262,8 +242,10 @@ export const HvCanvasToolbarTabs = forwardRef<
               const btnSelected = selectedTab === tab.id;
               return (
                 <HvCanvasPanelTab
+                  style={{
+                    width: tabWidth,
+                  }}
                   key={tab.id}
-                  ref={index === 0 ? tabRef : undefined}
                   id={String(tab.id)}
                   className={classes.tab}
                   value={tab.id}
@@ -299,6 +281,8 @@ export const HvCanvasToolbarTabs = forwardRef<
                     )}
                     <div className={classes.closeIconContainer}>
                       <CloseXS
+                        aria-hidden
+                        data-testid="delete-icon" // For testing purposes
                         iconSize="XS"
                         onClick={(event) => {
                           handleDeleteTab(event, tab.id);
@@ -320,8 +304,10 @@ export const HvCanvasToolbarTabs = forwardRef<
         )}
         {hiddenTabs.length > 0 && (
           <HvDropDownMenu
-            className={classes.dropdownMenu}
-            classes={{ menuListRoot: classes.dropdownMenuListRoot }}
+            classes={{
+              container: classes.dropdownMenuContainer,
+              menuListRoot: classes.dropdownMenuListRoot,
+            }}
             dataList={hiddenTabs}
             icon={<MoreOptionsHorizontal />}
             labels={{ dropdownMenu: labels.dropdownMenu }}

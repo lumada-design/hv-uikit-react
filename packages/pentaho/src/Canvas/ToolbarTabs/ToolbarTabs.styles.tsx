@@ -4,7 +4,8 @@ import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 import { toolbarTabEditorClasses } from "./ToolbarTabEditor";
 
 export const MIN_TAB_WIDTH = 120;
-const MAX_TAB_WIDTH = 220;
+export const MAX_TAB_WIDTH = 220;
+export const DROPDOWN_MENU_WIDTH = 64;
 const TAB_HEIGHT = 32;
 const CLOSE_ICON_SIZE = 32;
 const TAB_ICON_SIZE = 16;
@@ -22,7 +23,6 @@ export const { staticClasses, useClasses } = createClasses(
       backgroundColor: theme.colors.atmo1,
       boxShadow: theme.colors.shadow,
       borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
-      gap: theme.space.sm,
       transition: "width 0.3s ease",
     },
     tabsContainer: {
@@ -34,8 +34,7 @@ export const { staticClasses, useClasses } = createClasses(
       borderEndStartRadius: theme.radii.base,
     },
     tab: {
-      maxWidth: MAX_TAB_WIDTH,
-      minWidth: MIN_TAB_WIDTH,
+      boxSizing: "border-box",
       border: `1px solid ${theme.colors.atmo1}`,
       borderBottom: "none",
       borderRadius: "10px 10px 0 0",
@@ -72,17 +71,6 @@ export const { staticClasses, useClasses } = createClasses(
     },
     tabLabelEditor: {
       color: theme.colors.primary,
-
-      maxWidth: `calc(${MAX_TAB_WIDTH}px - 2 * ${TAB_PADDING} - ${TAB_ICON_SIZE}px - ${CLOSE_ICON_SIZE}px)`,
-      minWidth: `calc(${MIN_TAB_WIDTH}px - 2 * ${TAB_PADDING} - ${TAB_ICON_SIZE}px - ${CLOSE_ICON_SIZE}px)`,
-      [`&.${toolbarTabEditorClasses.edit}`]: {
-        maxWidth: `calc(${MAX_TAB_WIDTH}px - 2 * ${TAB_PADDING})`,
-        minWidth: `calc(${MIN_TAB_WIDTH}px - 2 * ${TAB_PADDING})`,
-      },
-      [`&:hover:not(.${toolbarTabEditorClasses.edit})`]: {
-        maxWidth: `calc(${MAX_TAB_WIDTH}px - 2 * ${TAB_PADDING} - ${CLOSE_ICON_SIZE}px)`,
-        minWidth: `calc(${MIN_TAB_WIDTH}px - 2 * ${TAB_PADDING} - ${CLOSE_ICON_SIZE}px)`,
-      },
     },
     tabContent: {
       position: "relative",
@@ -124,8 +112,10 @@ export const { staticClasses, useClasses } = createClasses(
       alignItems: "center",
       gap: theme.space.sm,
     },
-    dropdownMenu: {
-      margin: theme.spacing(0, "sm"),
+    dropdownMenuContainer: {
+      width: DROPDOWN_MENU_WIDTH,
+      display: "flex",
+      justifyContent: "center",
     },
     dropdownMenuListRoot: {
       maxHeight: 220,
