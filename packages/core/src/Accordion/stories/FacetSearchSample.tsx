@@ -12,7 +12,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 // used to fill option with mock data
 const optionFiller = (size: number) => {
-  return new Array(size).fill(`Option`);
+  return Array(size).fill(`Option`);
 };
 
 const data = {

@@ -79,18 +79,16 @@ describe("NodeTreeMapUtils", () => {
       expect(Object.is(nodeMap, result)).toBe(false);
       expect(result).toEqual({
         ...nodeMap,
-        ...{
-          Z: {
-            label: "Z",
-            path: "something",
-            children: ["Z1", "Z2"],
-          },
-          Z1: {
-            parent: "Z",
-          },
-          Z2: {
-            parent: "Z",
-          },
+        Z: {
+          label: "Z",
+          path: "something",
+          children: ["Z1", "Z2"],
+        },
+        Z1: {
+          parent: "Z",
+        },
+        Z2: {
+          parent: "Z",
         },
       });
     });

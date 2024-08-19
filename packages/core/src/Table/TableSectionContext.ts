@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
-export type TableSectionContextProps = {
-  type?: string;
+import type { HvTableCellType } from "./Table";
+
+export type TableSectionContextValue = {
+  type?: HvTableCellType;
   filterClassName?: string;
 };
 
-const TableSectionContext = createContext<TableSectionContextProps>({});
-
-export default TableSectionContext;
+export const TableSectionContext = createContext<TableSectionContextValue>({});

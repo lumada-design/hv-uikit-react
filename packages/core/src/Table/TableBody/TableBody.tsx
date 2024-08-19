@@ -11,7 +11,10 @@ import { HvFocus } from "../../Focus";
 import { useForkRef } from "../../hooks/useForkRef";
 import { HvBaseProps } from "../../types/generic";
 import TableContext from "../TableContext";
-import TableSectionContext from "../TableSectionContext";
+import {
+  TableSectionContext,
+  TableSectionContextValue,
+} from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableBody.styles";
 
 export { staticClasses as tableBodyClasses };
@@ -38,7 +41,7 @@ export interface HvTableBodyProps
 const tableSectionContext = {
   type: "body",
   filterClassName: "_grid",
-};
+} satisfies TableSectionContextValue;
 
 const defaultComponent = "tbody";
 

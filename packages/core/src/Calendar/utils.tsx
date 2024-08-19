@@ -167,7 +167,7 @@ export const getMonthNamesList = (
 ) => {
   const options = { month: representationValue, timeZone: "UTC" };
 
-  return [...new Array(12)].map((n, index) => {
+  return [...Array(12).keys()].map((index) => {
     const auxDate = makeUTCDate(1970, index, 1);
     return capitalize(Intl.DateTimeFormat(locale, options).format(auxDate));
   });
@@ -185,7 +185,7 @@ export const getWeekdayNamesList = (locale: string) => {
     timeZone: "UTC",
   });
 
-  return [...new Array(7)].map((n, index) => {
+  return [...Array(7).keys()].map((index) => {
     return formatter.format(makeUTCDate(1970, 0, 4 + index));
   });
 };
@@ -240,15 +240,15 @@ export const createDatesArray = (month: number, year: number) => {
   const prevMonthDays = getMonthDays(prevMonthYear.month, prevMonthYear.year);
 
   // Creates the arrays for the dates for previous, current and next months
-  const prevMonthDates = [...new Array(daysFromPrevMonth)].map((n, index) => {
+  const prevMonthDates = [...Array(daysFromPrevMonth).keys()].map((index) => {
     const day = index + 1 + (prevMonthDays - daysFromPrevMonth);
     return new Date(prevMonthYear.year, prevMonthYear.month - 1, day);
   });
-  const currentMonthDates = [...new Array(monthDays)].map((n, index) => {
+  const currentMonthDates = [...Array(monthDays).keys()].map((index) => {
     const day = index + 1;
     return new Date(year, month - 1, day);
   });
-  const nextMonthDates = [...new Array(daysFromNextMonth)].map((n, index) => {
+  const nextMonthDates = [...Array(daysFromNextMonth).keys()].map((index) => {
     const day = index + 1;
     return new Date(nextMonthYear.year, nextMonthYear.month - 1, day);
   });

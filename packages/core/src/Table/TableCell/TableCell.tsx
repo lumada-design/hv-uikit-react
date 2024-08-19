@@ -11,7 +11,7 @@ import {
   HvTableCellVariant,
 } from "../Table";
 import TableContext from "../TableContext";
-import TableSectionContext from "../TableSectionContext";
+import { TableSectionContext } from "../TableSectionContext";
 import { staticClasses, useClasses } from "./TableCell.styles";
 
 export { staticClasses as tableCellClasses };

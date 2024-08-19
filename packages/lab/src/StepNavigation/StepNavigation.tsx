@@ -152,13 +152,11 @@ export const HvStepNavigation = ({
         const StepContainer = styledLi(containerSize);
         const Step = styledDiv(Math.max(containerSize, 30));
         const stepProps = {
-          ...{
-            size: stepSizeKey,
-            state,
-            title,
-            number: index + 1,
-            ...props,
-          },
+          size: stepSizeKey,
+          state,
+          title,
+          number: index + 1,
+          ...props,
         };
         const stepElement = (
           <StepContainer key={`step-${title}`} className={classes.li}>

@@ -64,15 +64,11 @@ export function createClasses<Name extends string, ClassName extends string>(
   ) {
     const { cx, css } = useCss();
 
-    const mergeClasses = (key: string) =>
-      cx(
-        addStatic && `${name}-${key}`,
-        css(styles[key as keyof typeof styles]),
-        classesProp?.[key as keyof typeof classesProp],
-      );
+    const mergeClasses = (key: ClassName) =>
+      cx(addStatic && `${name}-${key}`, css(styles[key]), classesProp?.[key]);
 
     const classes = Object.fromEntries(
-      Object.keys(styles).map((key) => [key, mergeClasses(key)]),
+      Object.keys(styles).map((key) => [key, mergeClasses(key as ClassName)]),
     ) as { [P in ClassName]: string };
 
     return { classes, css, cx };
