@@ -86,7 +86,7 @@ jobs:
           VERSION: ${{steps.version.outputs.NEW_VERSION}}
         run: |
           git tag -a $VERSION -m "Version $VERSION"
-          git push $VERSION
+          git push origin $VERSION
 
       - name: Create GitHub Release
         if: steps.version.outputs.NEW_VERSION
