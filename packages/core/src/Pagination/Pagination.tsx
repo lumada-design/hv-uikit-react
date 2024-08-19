@@ -7,6 +7,7 @@ import {
   Start,
 } from "@hitachivantara/uikit-react-icons";
 import {
+  clamp,
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
@@ -16,7 +17,6 @@ import { HvIconButton } from "../IconButton";
 import { HvInput, HvInputProps } from "../Input";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import { clamp } from "../utils/helpers";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Pagination.styles";
 import HvSelect, { Option } from "./Select";

@@ -7,6 +7,7 @@ import {
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
 import {
+  clamp,
   useDefaultProps,
   useTheme,
   type ExtractNames,
@@ -18,7 +19,6 @@ import { useLabels } from "../hooks/useLabels";
 import { HvIconButton, HvIconButtonProps } from "../IconButton";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import { clamp } from "../utils/helpers";
 import { staticClasses, useClasses } from "./Carousel.styles";
 import { HvCarouselControls } from "./CarouselControls";
 import { HvCarouselThumbnails } from "./CarouselThumbnails";

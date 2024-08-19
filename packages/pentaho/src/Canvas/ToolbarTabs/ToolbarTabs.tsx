@@ -1,7 +1,6 @@
 import { forwardRef, useMemo } from "react";
 import { useResizeDetector } from "react-resize-detector";
 import {
-  clamp,
   ExtractNames,
   HvBaseProps,
   HvButton,
@@ -20,6 +19,7 @@ import {
   CloseXS,
   MoreOptionsHorizontal,
 } from "@hitachivantara/uikit-react-icons";
+import { clamp } from "@hitachivantara/uikit-react-utils";
 
 import { HvCanvasPanelTab } from "../PanelTab";
 import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "../PanelTabs";

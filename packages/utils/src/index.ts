@@ -5,3 +5,4 @@ export * from "./hooks/useDefaultProps";
 export * from "./hooks/useTheme";
 export * from "./utils/classes";
 export * from "./utils/styles";
+export * from "./utils/clamp";

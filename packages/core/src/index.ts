@@ -161,4 +161,4 @@ export * from "./utils/sizes";
 export * from "./utils/theme";
 export * from "./utils/useSavedState";
 export * from "./utils/wrapperTooltip";
-export { uniqueId, clamp } from "./utils/helpers";
+export { uniqueId } from "./utils/helpers";
