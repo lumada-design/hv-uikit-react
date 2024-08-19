@@ -25,41 +25,13 @@ const Sample = (props: Partial<HvCanvasToolbarTabsProps>) => (
 );
 
 describe("CanvasToolbarTabs", () => {
-  it("can override labels", async () => {
-    const user = userEvent.setup();
-    render(
-      <Sample
-        labels={{
-          close: "Close 1",
-          create: "Create 1",
-          undefined: "Name the tab",
-        }}
-      />,
-    );
-
-    const closeBtn = screen.getAllByRole("button", {
-      name: "Close 1",
-    });
-    const createBtn = screen.getByRole("button", {
-      name: "Create 1",
-    });
-    expect(closeBtn).toHaveLength(3);
-    expect(createBtn).toBeInTheDocument();
-    await user.click(createBtn);
-
-    const newTab = screen.getByRole("tab", { selected: true });
-    expect(newTab).toHaveAttribute("aria-label", "Name the tab 4");
-  });
-
   it("triggers onTabChange and onChange when removing the selected tab", async () => {
     const user = userEvent.setup();
     const onTabChangeMock = vi.fn();
     const onChangeMock = vi.fn();
     render(<Sample onTabChange={onTabChangeMock} onChange={onChangeMock} />);
 
-    const closeBtn = screen.getAllByRole("button", {
-      name: "Close",
-    });
+    const closeBtn = screen.getAllByTestId("delete-icon");
     await user.click(closeBtn[0]);
     expect(onTabChangeMock).toHaveBeenCalledTimes(1);
     expect(onChangeMock).toHaveBeenCalledTimes(1);
@@ -71,9 +43,7 @@ describe("CanvasToolbarTabs", () => {
     const onChangeMock = vi.fn();
     render(<Sample onTabChange={onTabChangeMock} onChange={onChangeMock} />);
 
-    const closeBtn = screen.getAllByRole("button", {
-      name: "Close",
-    });
+    const closeBtn = screen.getAllByTestId("delete-icon");
     await user.click(closeBtn[1]);
     expect(onTabChangeMock).not.toHaveBeenCalled();
     expect(onChangeMock).toHaveBeenCalledTimes(1);
@@ -98,15 +68,14 @@ describe("CanvasToolbarTabs", () => {
     const onChangeMock = vi.fn();
     render(<Sample onChange={onChangeMock} />);
 
-    const editButton = screen.getByRole("button", { name: "Tab 1" });
-    await user.click(editButton);
-    const input = screen.getByRole("textbox");
-    await user.clear(input);
+    const labelEditor = screen.getByText("Tab 1");
+    await user.click(labelEditor);
+    await user.clear(labelEditor);
     const newLabel = "My new label";
-    await user.type(input, newLabel);
+    await user.type(labelEditor, newLabel);
 
     const selectedTab = screen.getByRole("tab", { selected: true });
-    expect(selectedTab).toHaveAttribute("aria-label", newLabel);
+    expect(selectedTab).toHaveTextContent(newLabel);
     expect(onChangeMock).toHaveBeenCalledTimes(newLabel.length + 1); // +1 for .clear()
   });
 
@@ -116,7 +85,7 @@ describe("CanvasToolbarTabs", () => {
     render(<Sample onTabChange={onTabChangeMock} />);
 
     // Change selected tab
-    const secondTab = screen.getByRole("button", {
+    const secondTab = screen.getByRole("tab", {
       name: "Tab 2",
     });
     await user.click(secondTab);

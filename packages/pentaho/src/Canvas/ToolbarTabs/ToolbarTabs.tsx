@@ -39,7 +39,6 @@ export type HvCanvasToolbarTabsClasses = ExtractNames<typeof useClasses>;
 const DEFAULT_LABELS = {
   create: "Create new",
   undefined: "Undefined",
-  close: "Close",
   dropdownMenu: "Dropdown menu",
 };
 
