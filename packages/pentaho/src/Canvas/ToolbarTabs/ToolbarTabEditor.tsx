@@ -10,7 +10,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Edit } from "@hitachivantara/uikit-react-icons";
 
-// TODO - Extract component in the future when we have more specs and is used in more components
+// TODO - Extract component in the future: when we have more specs and/or is used in other components
 
 const { staticClasses, useClasses } = createClasses(
   "HvCanvasToolbarTabs-editor",
@@ -97,6 +97,7 @@ export const ToolbarTabEditor = ({
   onBlur: onBlurProp,
   onKeyDown: onKeyDownProp,
   onChange: onChangeProp,
+  onFocus: onFocusProp,
   ...others
 }: ToolbarTabEditorProps) => {
   const { cx, classes } = useClasses(classesProp);
@@ -170,6 +171,12 @@ export const ToolbarTabEditor = ({
     onKeyDownProp?.(event);
   };
 
+  const handleFocus: HvTypographyProps["onFocus"] = (event) => {
+    setCachedValue(value);
+    setIsEditing(true);
+    onFocusProp?.(event);
+  };
+
   return (
     <div id={id} className={cx(classes.root, className)}>
       <HvTypography
@@ -182,6 +189,8 @@ export const ToolbarTabEditor = ({
         onClick={handleClick}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}
+        onFocus={handleFocus}
+        tabIndex={0}
         // Using children is unstable in React for contentEditable so the value is rendered through dangerouslySetInnerHTML
         dangerouslySetInnerHTML={{
           __html: value,
