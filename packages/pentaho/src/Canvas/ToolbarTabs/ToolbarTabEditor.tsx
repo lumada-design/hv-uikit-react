@@ -72,6 +72,8 @@ interface ToolbarTabEditorProps
   value?: string;
   /** The default value of the component. */
   defaultValue?: string;
+  /** Whether the editor is in edit mode. When used, the prop has to be controlled. */
+  edit?: boolean;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: ToolbarTabEditorClasses;
   /** Called the field is blurred. */
@@ -84,11 +86,14 @@ interface ToolbarTabEditorProps
     event: React.FormEvent<Element> | React.KeyboardEvent<Element>,
     value: string,
   ) => void;
+  /** Called the `edit` prop changes. */
+  onEditChange?: (value: boolean) => void;
 }
 
 export const ToolbarTabEditor = ({
   id,
   className,
+  edit: editProp,
   value: valueProp,
   defaultValue: defaultValueProp = "",
   classes: classesProp,
@@ -97,7 +102,7 @@ export const ToolbarTabEditor = ({
   onBlur: onBlurProp,
   onKeyDown: onKeyDownProp,
   onChange: onChangeProp,
-  onFocus: onFocusProp,
+  onEditChange: onEditChangeProp,
   ...others
 }: ToolbarTabEditorProps) => {
   const { cx, classes } = useClasses(classesProp);
@@ -106,7 +111,7 @@ export const ToolbarTabEditor = ({
 
   const [value, setValue] = useControlled(valueProp, defaultValueProp);
   const [cachedValue, setCachedValue] = useState(value);
-  const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useControlled(editProp, false);
 
   const moveCursorToEnd = () => {
     if (!contentEditableRef.current) return;
@@ -126,6 +131,11 @@ export const ToolbarTabEditor = ({
     element.scrollLeft = 0;
   };
 
+  const changeEdit = (edit: boolean) => {
+    setIsEditing(edit);
+    onEditChangeProp?.(edit);
+  };
+
   // Update cursor when value updates: otherwise it goes to the start
   useLayoutEffect(() => {
     if (isEditing) moveCursorToEnd();
@@ -140,14 +150,14 @@ export const ToolbarTabEditor = ({
 
   const handleClick: HvTypographyProps["onClick"] = (event) => {
     setCachedValue(value);
-    setIsEditing(true);
+    changeEdit(true);
     onClickProp?.(event);
   };
 
   const handleBlur = (
     event: React.FocusEvent<Element> | React.KeyboardEvent<Element>,
   ) => {
-    setIsEditing(false);
+    changeEdit(false);
     scrollContentToStart();
 
     // Never leave the field empty
@@ -162,19 +172,13 @@ export const ToolbarTabEditor = ({
       // Blur field
       handleBlur(event);
     } else if (isKey(event, "Esc")) {
-      setIsEditing(false);
+      changeEdit(false);
 
       // Cancel editing
       setValue(cachedValue);
       onChangeProp?.(event, cachedValue);
     }
     onKeyDownProp?.(event);
-  };
-
-  const handleFocus: HvTypographyProps["onFocus"] = (event) => {
-    setCachedValue(value);
-    setIsEditing(true);
-    onFocusProp?.(event);
   };
 
   return (
@@ -189,8 +193,6 @@ export const ToolbarTabEditor = ({
         onClick={handleClick}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}
-        onFocus={handleFocus}
-        tabIndex={0}
         // Using children is unstable in React for contentEditable so the value is rendered through dangerouslySetInnerHTML
         dangerouslySetInnerHTML={{
           __html: value,

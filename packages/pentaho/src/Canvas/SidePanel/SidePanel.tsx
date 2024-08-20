@@ -124,7 +124,6 @@ export const HvCanvasSidePanel = forwardRef<
                 key={tab.id}
                 id={`${id}-${tab.id}`}
                 value={tab.id}
-                tabIndex={0}
               >
                 {tab.content}
               </HvCanvasPanelTab>

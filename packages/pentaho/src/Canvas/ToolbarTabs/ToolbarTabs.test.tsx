@@ -37,6 +37,18 @@ describe("CanvasToolbarTabs", () => {
     expect(onChangeMock).toHaveBeenCalledTimes(1);
   });
 
+  it("triggers onTabChange and onChange when removing the selected tab with keyboard", async () => {
+    const user = userEvent.setup();
+    const onTabChangeMock = vi.fn();
+    const onChangeMock = vi.fn();
+    render(<Sample onTabChange={onTabChangeMock} onChange={onChangeMock} />);
+
+    await user.keyboard("{tab}");
+    await user.keyboard("{delete}");
+    expect(onTabChangeMock).toHaveBeenCalledTimes(1);
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
+  });
+
   it("only triggers onChange when removing a non-selected tab", async () => {
     const user = userEvent.setup();
     const onTabChangeMock = vi.fn();
@@ -89,6 +101,17 @@ describe("CanvasToolbarTabs", () => {
       name: "Tab 2",
     });
     await user.click(secondTab);
+    expect(onTabChangeMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("triggers onTabChange when changing tab with keyboard", async () => {
+    const user = userEvent.setup();
+    const onTabChangeMock = vi.fn();
+    render(<Sample onTabChange={onTabChangeMock} />);
+
+    // Change selected tab
+    await user.keyboard("{tab}");
+    await user.keyboard("{arrowright}");
     expect(onTabChangeMock).toHaveBeenCalledTimes(1);
   });
 });

@@ -13,6 +13,11 @@ const goToControlledSample = (page: Page) =>
     "./iframe.html?args=&id=pentaho-canvas-toolbar-tabs--controlled&viewMode=story",
   );
 
+const goToNotEditableSample = (page: Page) =>
+  page.goto(
+    "./iframe.html?args=&id=pentaho-canvas-toolbar-tabs--not-editable&viewMode=story",
+  );
+
 test.beforeEach(async ({ page }) => {
   page.setViewportSize({ width: 650, height: 500 });
 });
@@ -81,6 +86,21 @@ test("renames selected tab when controlled", async ({ page }) => {
 
   selectedTab = page.getByRole("tab", { selected: true });
   await expect(selectedTab).toContainText("My new label");
+});
+
+test("renames selected tab when using the keyboard", async ({ page }) => {
+  await goToUncontrolledSample(page);
+
+  let selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
+
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Enter");
+  await page.keyboard.type("1");
+  await page.keyboard.press("Enter");
+
+  selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab1");
 });
 
 test("adds tab and then changes selected tab and creates dropdown menu if needed when uncontrolled", async ({
@@ -235,6 +255,29 @@ test("closes selected tab and then changes selected tab when controlled", async 
   expect(await page.getByRole("tab").all()).toHaveLength(0);
 });
 
+test("closes selected tab and then changes selected tab when using the keyboard", async ({
+  page,
+}) => {
+  await goToUncontrolledSample(page);
+
+  let selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
+
+  // Close first tab
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Delete"); // through delete
+
+  const tabList = page.getByRole("tablist");
+  selectedTab = page.getByRole("tab", { selected: true });
+  await expect(tabList).toBeVisible();
+  await expect(selectedTab).toContainText("My tab with a very long label");
+  expect(await page.getByRole("tab").all()).toHaveLength(1);
+
+  // Close remaining tab
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Backspace"); // through backspace
+});
+
 test("changes selected tab when uncontrolled", async ({ page }) => {
   await goToUncontrolledSample(page);
 
@@ -268,6 +311,20 @@ test("changes selected tab when controlled", async ({ page }) => {
 
   selectedTab = page.getByRole("tab", { selected: true });
   await expect(selectedTab).toContainText("Undefined 1");
+});
+
+test("changes selected tab when using the keyboard", async ({ page }) => {
+  await goToUncontrolledSample(page);
+
+  let selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
+
+  // Change selected tab
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("ArrowRight");
+
+  selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My tab with a very long label");
 });
 
 test("selects previous tab when tab is closed", async ({ page }) => {
@@ -331,4 +388,19 @@ test("adds tab with icon when defined", async ({ page }) => {
 
   const leaf = page.getByTestId("leaf");
   await expect(leaf).toBeVisible();
+});
+
+test("can't rename selected tab when allowTabEdit is set to false", async ({
+  page,
+}) => {
+  await goToNotEditableSample(page);
+
+  const selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("Tab 1");
+
+  const labelEditor = page.getByText("Tab 1");
+  await labelEditor.click();
+  await labelEditor
+    .fill("My new label")
+    .catch((err) => expect(String(err)).toContain("attempting fill action"));
 });

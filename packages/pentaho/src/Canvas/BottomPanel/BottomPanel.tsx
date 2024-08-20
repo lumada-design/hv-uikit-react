@@ -183,7 +183,6 @@ export const HvCanvasBottomPanel = forwardRef<
               id={`${id}-${tab.id}`}
               value={tab.id}
               className={classes.tab}
-              tabIndex={0}
             >
               <div className={classes.tabTitle}>
                 {typeof tab.title === "function"

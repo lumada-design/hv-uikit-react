@@ -1,4 +1,4 @@
-import { forwardRef, useMemo } from "react";
+import { forwardRef, useMemo, useState } from "react";
 import { useResizeDetector } from "react-resize-detector";
 import {
   ExtractNames,
@@ -117,6 +117,7 @@ export const HvCanvasToolbarTabs = forwardRef<
     selectedTabIdProp,
     tabs?.[0]?.id ?? "none",
   );
+  const [isEditing, setIsEditing] = useState(false);
 
   const rootForkedRef = useForkRef(ref, rootRef);
 
@@ -171,8 +172,15 @@ export const HvCanvasToolbarTabs = forwardRef<
   };
 
   const handleKeyDownTab = (event: React.KeyboardEvent, tabId: string) => {
-    if (isKey(event, "Delete") || isKey(event, "Backspace"))
+    if (isKey(event, "Delete") || isKey(event, "Backspace")) {
       handleDeleteTab(event, tabId);
+
+      // We don't want the click to also select the tab
+      event.stopPropagation();
+    } else if (isKey(event, "Enter")) {
+      // Activate edit label mode
+      setIsEditing(true);
+    }
   };
 
   const { tabWidth, hiddenTabs, visibleTabs } = useMemo(() => {
@@ -248,7 +256,6 @@ export const HvCanvasToolbarTabs = forwardRef<
                   id={String(tab.id)}
                   className={classes.tab}
                   value={tab.id}
-                  tabIndex={0}
                   onKeyDown={(event) => handleKeyDownTab(event, tab.id)}
                 >
                   <div className={classes.tabContent}>
@@ -268,6 +275,8 @@ export const HvCanvasToolbarTabs = forwardRef<
                           label: cx(classes.tabLabel, classes.tabLabelEditor),
                         }}
                         value={tab.label}
+                        edit={isEditing}
+                        onEditChange={setIsEditing}
                         onChange={(event, value) =>
                           handleEdit(event, value, tab.id)
                         }
@@ -286,7 +295,7 @@ export const HvCanvasToolbarTabs = forwardRef<
                         onClick={(event) => {
                           handleDeleteTab(event, tab.id);
 
-                          // We don't want the click to select the tab also
+                          // We don't want the click to also select the tab
                           event.stopPropagation();
                         }}
                       />
