@@ -63,7 +63,11 @@ export interface HvBaseSwitchProps
   /**
    * The callback fired when the switch is pressed.
    */
-  onChange?: (event: React.ChangeEvent, checked: boolean, value: any) => void;
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean,
+    value: any,
+  ) => void;
   /**
    * Properties passed on to the input element.
    */
