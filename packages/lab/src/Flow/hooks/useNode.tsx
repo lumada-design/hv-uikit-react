@@ -24,8 +24,8 @@ import { useFlowContext } from "./useFlowContext";
 import { useFlowInstance } from "./useFlowInstance";
 import {
   useFlowNode,
-  useFlowNodeGetIntersections,
   useFlowNodeInputEdges,
+  useFlowNodeIntersections,
   useFlowNodeOutputEdges,
   useFlowNodeUtils,
 } from "./useFlowNode";
@@ -81,7 +81,7 @@ export function useHvNode(props: HvUseNodeParams) {
   const outputs = useMemo(() => identifyHandles(outputsProp), [outputsProp]);
   const outputEdges = useFlowNodeOutputEdges();
   const { nodeGroups } = useFlowContext();
-  const intersections = useFlowNodeGetIntersections();
+  const intersections = useFlowNodeIntersections();
   const { setNodeParent, setNodeData } = useFlowNodeUtils();
 
   const node = useFlowNode();

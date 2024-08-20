@@ -170,7 +170,7 @@ export function useFlowNodeUtils<NodeData = any>(id?: string) {
   );
 }
 
-export function useFlowNodeGetIntersections<NodeData = any>(id?: string) {
+export function useFlowNodeIntersections<NodeData = any>(id?: string) {
   const nodeId = useNodeId(id);
   const node = useFlowNode(nodeId ?? "");
   const reactFlowInstance = useFlowInstance<NodeData>();

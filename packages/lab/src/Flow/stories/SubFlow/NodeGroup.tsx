@@ -64,6 +64,18 @@ const classes = {
   actions: css({
     marginLeft: "auto",
   }),
+  nodeResizeIcon: css({
+    position: "relative",
+    left: -50,
+    bottom: -20,
+    display: "inline-block",
+    border: dashedBorder,
+    borderRadius: theme.radii.round,
+  }),
+  nodeResizeLine: {
+    borderColor: "transparent",
+    borderRadius: containerBorderRadius,
+  },
 };
 
 interface NodeProps extends ReactFlowNodeProps {
@@ -77,14 +89,19 @@ export const NodeGroup = ({ id: idProp, groupId, actions = [] }: NodeProps) => {
     groupId,
   });
 
+  /** this variable is used to only run the logic when the dragging has stopped by saving the previous state */
   const [draggingFlag, setDraggingFlag] = useState(false);
 
   useEffect(() => {
     if (!node) return;
     if (node.dragging && !draggingFlag) {
+      /** when node was still (draggingFlag == false)
+       * and dragging has started change the flag to true */
       setDraggingFlag(true);
     }
     if (!node.dragging && draggingFlag) {
+      /**  when node was being dragged (draggingFlag == true)
+       * and has stopped run logic to check intersections */
       const groupIntersections = intersections.filter(
         (n) => n.type === "group" && n.id !== node.parentId,
       );
@@ -97,32 +114,19 @@ export const NodeGroup = ({ id: idProp, groupId, actions = [] }: NodeProps) => {
   return (
     <div id={id} className={cx("nowheel", classes.root)}>
       <NodeResizer
-        lineStyle={{
-          // borderStyle: "dashed",
-          borderColor: "transparent",
-          borderRadius: containerBorderRadius,
-        }}
+        lineStyle={classes.nodeResizeLine}
         minWidth={minWidth}
         minHeight={minHeight}
       />
       <NodeResizeControl position="top-right" minWidth={300} minHeight={200}>
-        <div
-          style={{
-            position: "relative",
-            left: -50,
-            bottom: -20,
-            display: "inline-block",
-            border: dashedBorder,
-            borderRadius: theme.radii.round,
-          }}
-        >
+        <div className={classes.nodeResizeIcon}>
           <Fullscreen />
         </div>
       </NodeResizeControl>
       <div
         className={cx(classes.headerBackground, css({ zIndex: node?.zIndex }))}
       >
-        <div className={cx(classes.header)}>
+        <div className={classes.header}>
           {icon}
           <HvTypography
             variant="title4"
@@ -140,7 +144,6 @@ export const NodeGroup = ({ id: idProp, groupId, actions = [] }: NodeProps) => {
         </div>
       </div>
       <div className={classes.content} />
-      <div />
     </div>
   );
 };

@@ -230,7 +230,15 @@ export const flowStyles = css`
   }
   .react-flow__node-default,
   .react-flow__node-input,
-  .react-flow__node-output,
+  .react-flow__node-output {
+    padding: ${theme.space.sm};
+    border-radius: ${theme.radii.round};
+    width: 150px;
+    color: ${theme.colors.secondary};
+    text-align: center;
+    border: 1px solid ${theme.colors.negative};
+    background-color: ${theme.colors.negative_20};
+  }
   .react-flow__node-group {
     color: ${theme.colors.secondary};
     text-align: center;

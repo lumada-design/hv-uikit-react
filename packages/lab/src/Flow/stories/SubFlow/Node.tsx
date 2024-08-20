@@ -3,7 +3,7 @@ import { css, cx } from "@emotion/css";
 import { NodeProps as ReactFlowNodeProps } from "reactflow";
 import { theme } from "@hitachivantara/uikit-react-core";
 import {
-  useFlowNodeGetIntersections,
+  useFlowNodeIntersections,
   useHvNode,
 } from "@hitachivantara/uikit-react-lab";
 
@@ -62,8 +62,9 @@ export const Node = ({ id: idProp, groupId, hierarchyData }: NodeProps) => {
     groupId,
   });
 
-  const intersections = useFlowNodeGetIntersections(id);
+  const intersections = useFlowNodeIntersections(id);
 
+  /** this variable is used to only run the logic when the dragging has stopped by saving the previous state */
   const [draggingFlag, setDraggingFlag] = useState(false);
 
   const sublevels = useMemo(
@@ -73,9 +74,11 @@ export const Node = ({ id: idProp, groupId, hierarchyData }: NodeProps) => {
 
   useEffect(() => {
     if (!node) return;
+    /** when node was still (draggingFlag == false) and dragging has started change the flag to true */
     if (node.dragging && !draggingFlag) {
       setDraggingFlag(true);
     }
+    /**  when node was being dragged (draggingFlag == true) and has stopped run logic to check intersections */
     if (!node.dragging && draggingFlag) {
       const groupIntersections = intersections.filter(
         (n) => n.type === "group" && n.id !== node.parentId,
