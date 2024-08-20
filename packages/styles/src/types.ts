@@ -61,6 +61,7 @@ export type HvThemeComponents = {
 };
 
 // Theme typography
+// TODO: allow arbitrary `CSSProperties` overrides
 export type HvThemeTypographyProps = Pick<
   CSSProperties,
   | "color"
@@ -71,34 +72,21 @@ export type HvThemeTypographyProps = Pick<
   | "textDecoration"
 >;
 
+type TypographyVariants =
+  | "display"
+  | "title1"
+  | "title2"
+  | "title3"
+  | "title4"
+  | "label"
+  | "body"
+  | "captionLabel"
+  | "caption1"
+  | "caption2"
+  | (string & {});
+
 export type HvThemeTypography = {
-  typography: {
-    // DS5
-    display: HvThemeTypographyProps;
-    title1: HvThemeTypographyProps;
-    title2: HvThemeTypographyProps;
-    title3: HvThemeTypographyProps;
-    title4: HvThemeTypographyProps;
-    label: HvThemeTypographyProps;
-    body: HvThemeTypographyProps;
-    captionLabel: HvThemeTypographyProps;
-    caption1: HvThemeTypographyProps;
-    caption2: HvThemeTypographyProps;
-    // LEGACY UNMAPPABLE (DS3)
-    ["5xlTitle"]: HvThemeTypographyProps;
-    ["4xlTitle"]: HvThemeTypographyProps;
-    xxlTitle: HvThemeTypographyProps;
-    lTitle: HvThemeTypographyProps;
-    sTitle: HvThemeTypographyProps;
-    xxsTitle: HvThemeTypographyProps;
-    sectionTitle: HvThemeTypographyProps;
-    placeholderText: HvThemeTypographyProps;
-    link: HvThemeTypographyProps;
-    disabledText: HvThemeTypographyProps;
-    selectedNavText: HvThemeTypographyProps;
-    vizTextDisabled: HvThemeTypographyProps;
-    xsInlineLink: HvThemeTypographyProps;
-  };
+  typography: Record<TypographyVariants, HvThemeTypographyProps>;
 };
 
 // Breakpoints
