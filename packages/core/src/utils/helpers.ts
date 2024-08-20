@@ -10,10 +10,6 @@ export const capitalize = (string = "") => {
   return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 };
 
-export const clamp = (value: number, max = 100, min = 0) => {
-  return Math.min(Math.max(value, min), max);
-};
-
 export function isEqual(obj1: unknown, obj2: unknown) {
   if (!obj1 || !obj2 || typeof obj1 !== "object" || typeof obj2 !== "object") {
     return obj1 === obj2;

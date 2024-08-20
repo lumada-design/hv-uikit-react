@@ -1,11 +1,11 @@
 import {
+  clamp,
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../types/generic";
 import { HvTypography, HvTypographyProps } from "../Typography";
-import { clamp } from "../utils/helpers";
 import { staticClasses, useClasses } from "./ProgressBar.styles";
 
 export { staticClasses as progressBarClasses };

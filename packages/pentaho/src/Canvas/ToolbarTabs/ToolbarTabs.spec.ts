@@ -13,8 +13,13 @@ const goToControlledSample = (page: Page) =>
     "./iframe.html?args=&id=pentaho-canvas-toolbar-tabs--controlled&viewMode=story",
   );
 
+const goToNotEditableSample = (page: Page) =>
+  page.goto(
+    "./iframe.html?args=&id=pentaho-canvas-toolbar-tabs--not-editable&viewMode=story",
+  );
+
 test.beforeEach(async ({ page }) => {
-  page.setViewportSize({ width: 700, height: 500 });
+  page.setViewportSize({ width: 650, height: 500 });
 });
 
 test("renders all components when they are tabs", async ({ page }) => {
@@ -29,15 +34,10 @@ test("renders all components when they are tabs", async ({ page }) => {
 
   await expect(createBtn).toBeVisible();
   await expect(tabList).toBeVisible();
-  await expect(selectedTab).toHaveAttribute("aria-label", "My first tab");
-  await expect(otherTab).toHaveAttribute(
-    "aria-label",
-    "My tab with a very long label",
-  );
+  await expect(selectedTab).toContainText("My first tab");
+  await expect(otherTab).toContainText("My tab with a very long label");
   expect(await page.getByRole("tab").all()).toHaveLength(2);
-  expect(await page.getByRole("button", { name: "Close" }).all()).toHaveLength(
-    2,
-  );
+  expect(await page.getByTestId("delete-icon").all()).toHaveLength(2);
 });
 
 test("renders all components when they are no tabs", async ({ page }) => {
@@ -51,25 +51,22 @@ test("renders all components when they are no tabs", async ({ page }) => {
   await expect(createBtn).toBeVisible();
   await expect(tabList).not.toBeVisible();
   expect(await page.getByRole("tab").all()).toHaveLength(0);
-  expect(await page.getByRole("button", { name: "Close" }).all()).toHaveLength(
-    0,
-  );
+  expect(await page.getByTestId("delete-icon").all()).toHaveLength(0);
 });
 
 test("renames selected tab when uncontrolled", async ({ page }) => {
   await goToUncontrolledSample(page);
 
   let selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "My first tab");
+  await expect(selectedTab).toContainText("My first tab");
 
-  const editButton = page.getByRole("button", { name: "My first tab" });
-  await editButton.click();
-
-  const input = page.getByRole("textbox");
-  await input.fill("My new label");
+  const labelEditor = page.getByText("My first tab");
+  await labelEditor.click();
+  await labelEditor.fill("My new label");
+  await page.keyboard.press("Enter");
 
   selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "My new label");
+  await expect(selectedTab).toContainText("My new label");
 });
 
 test("renames selected tab when controlled", async ({ page }) => {
@@ -82,16 +79,30 @@ test("renames selected tab when controlled", async ({ page }) => {
   await createBtn.click();
 
   let selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "Undefined 1");
+  await expect(selectedTab).toContainText("Undefined 1");
 
-  const editButton = page.getByRole("button", { name: "Undefined 1" });
-  await editButton.click();
-
-  const input = page.getByRole("textbox");
-  await input.fill("My new label");
+  const labelEditor = page.getByText("Undefined 1");
+  await labelEditor.click();
+  await labelEditor.fill("My new label");
+  await page.keyboard.press("Enter");
 
   selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "My new label");
+  await expect(selectedTab).toContainText("My new label");
+});
+
+test("renames selected tab when using the keyboard", async ({ page }) => {
+  await goToUncontrolledSample(page);
+
+  let selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
+
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Enter");
+  await page.keyboard.type("1");
+  await page.keyboard.press("Enter");
+
+  selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab1");
 });
 
 test("adds tab and then changes selected tab and creates dropdown menu if needed when uncontrolled", async ({
@@ -106,14 +117,14 @@ test("adds tab and then changes selected tab and creates dropdown menu if needed
   await createBtn.click();
 
   // Rename new tab
-  const editButton = page.getByRole("button", { name: "Undefined" });
-  await editButton.click();
-  const input = page.getByRole("textbox");
-  await input.fill("My new label");
+  const labelEditor = page.getByText("Undefined 3");
+  await labelEditor.click();
+  await labelEditor.fill("My new label");
+  await page.keyboard.press("Enter");
 
   // Not overflowing
   let selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "My new label");
+  await expect(selectedTab).toContainText("My new label");
   expect(await page.getByRole("tab").all()).toHaveLength(3);
 
   // Add second tab
@@ -121,7 +132,7 @@ test("adds tab and then changes selected tab and creates dropdown menu if needed
 
   // Overflowing
   selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "Undefined 4");
+  await expect(selectedTab).toContainText("Undefined 4");
   expect(await page.getByRole("tab").all()).toHaveLength(3);
   const dropdownMenu = page.getByRole("button", { name: "Dropdown menu" });
   await dropdownMenu.click();
@@ -146,14 +157,14 @@ test("adds tab and then changes selected tab and creates dropdown menu if needed
   await createBtn.click();
 
   // Rename last tab
-  let editButton = page.getByRole("button", { name: "Undefined 3" });
-  await editButton.click();
-  let input = page.getByRole("textbox");
-  await input.fill("My new label");
+  let labelEditor = page.getByText("Undefined 3");
+  await labelEditor.click();
+  await labelEditor.fill("My new label");
+  await page.keyboard.press("Enter");
 
   // Not overflowing
   let selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "My new label");
+  await expect(selectedTab).toContainText("My new label");
   expect(await page.getByRole("tab").all()).toHaveLength(3);
 
   // Add fourth tab
@@ -161,7 +172,7 @@ test("adds tab and then changes selected tab and creates dropdown menu if needed
 
   // Overflowing
   selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "Undefined 4");
+  await expect(selectedTab).toContainText("Undefined 4");
   expect(await page.getByRole("tab").all()).toHaveLength(3);
   let dropdownMenu = page.getByRole("button", { name: "Dropdown menu" });
   await dropdownMenu.click();
@@ -172,17 +183,17 @@ test("adds tab and then changes selected tab and creates dropdown menu if needed
   ]);
 
   // Rename last tab
-  editButton = page.getByRole("button", { name: "Undefined 4" });
-  await editButton.click();
-  input = page.getByRole("textbox");
-  await input.fill("My other new label");
+  labelEditor = page.getByText("Undefined 4");
+  await labelEditor.click();
+  await labelEditor.fill("My other new label");
+  await page.keyboard.press("Enter");
 
   // Add fifth tab
   await createBtn.click();
 
   // Overflowing
   selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "Undefined 5");
+  await expect(selectedTab).toContainText("Undefined 5");
   expect(await page.getByRole("tab").all()).toHaveLength(3);
   dropdownMenu = page.getByRole("button", { name: "Dropdown menu" });
   await dropdownMenu.click();
@@ -200,23 +211,20 @@ test("closes selected tab and then changes selected tab when uncontrolled", asyn
   await goToUncontrolledSample(page);
 
   let selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "My first tab");
+  await expect(selectedTab).toContainText("My first tab");
 
   // Close first tab
-  let closeBtn = page.getByRole("button", { name: "Close" }).first();
+  let closeBtn = page.getByTestId("delete-icon").first();
   await closeBtn.click();
 
   const tabList = page.getByRole("tablist");
   selectedTab = page.getByRole("tab", { selected: true });
   await expect(tabList).toBeVisible();
-  await expect(selectedTab).toHaveAttribute(
-    "aria-label",
-    "My tab with a very long label",
-  );
+  await expect(selectedTab).toContainText("My tab with a very long label");
   expect(await page.getByRole("tab").all()).toHaveLength(1);
 
   // Close remaining tab
-  closeBtn = page.getByRole("button", { name: "Close" }).first();
+  closeBtn = page.getByTestId("delete-icon").first();
   await closeBtn.click();
   expect(await page.getByRole("tab").all()).toHaveLength(0);
 });
@@ -234,41 +242,59 @@ test("closes selected tab and then changes selected tab when controlled", async 
   await createBtn.click();
 
   let selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "Undefined 2");
+  await expect(selectedTab).toContainText("Undefined 2");
 
   // Close selected tab
-  let closeBtn = page.getByRole("button", { name: "Close" }).nth(1);
+  let closeBtn = page.getByTestId("delete-icon").nth(1);
   await closeBtn.click();
 
   const tabList = page.getByRole("tablist");
   selectedTab = page.getByRole("tab", { selected: true });
   await expect(tabList).toBeVisible();
-  await expect(selectedTab).toHaveAttribute("aria-label", "Undefined 1");
+  await expect(selectedTab).toContainText("Undefined 1");
   expect(await page.getByRole("tab").all()).toHaveLength(1);
 
   // Close remaining tab
-  closeBtn = page.getByRole("button", { name: "Close" }).first();
+  closeBtn = page.getByTestId("delete-icon").first();
   await closeBtn.click();
   expect(await page.getByRole("tab").all()).toHaveLength(0);
+});
+
+test("closes selected tab and then changes selected tab when using the keyboard", async ({
+  page,
+}) => {
+  await goToUncontrolledSample(page);
+
+  let selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
+
+  // Close first tab
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Delete"); // through delete
+
+  const tabList = page.getByRole("tablist");
+  selectedTab = page.getByRole("tab", { selected: true });
+  await expect(tabList).toBeVisible();
+  await expect(selectedTab).toContainText("My tab with a very long label");
+  expect(await page.getByRole("tab").all()).toHaveLength(1);
+
+  // Close remaining tab
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Backspace"); // through backspace
 });
 
 test("changes selected tab when uncontrolled", async ({ page }) => {
   await goToUncontrolledSample(page);
 
   let selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "My first tab");
+  await expect(selectedTab).toContainText("My first tab");
 
   // Change selected tab
-  const secondTab = page.getByRole("button", {
-    name: "My tab with a very long label",
-  });
-  await secondTab.click();
+  const labelEditor = page.getByText("My tab with a very long label");
+  await labelEditor.click();
 
   selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute(
-    "aria-label",
-    "My tab with a very long label",
-  );
+  await expect(selectedTab).toContainText("My tab with a very long label");
 });
 
 test("changes selected tab when controlled", async ({ page }) => {
@@ -282,46 +308,49 @@ test("changes selected tab when controlled", async ({ page }) => {
   await createBtn.click();
 
   let selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "Undefined 2");
+  await expect(selectedTab).toContainText("Undefined 2");
 
   // Change selected tab
-  const tab = page.getByRole("button", {
-    name: "Undefined 1",
-  });
-  await tab.click();
+  const labelEditor = page.getByText("Undefined 1");
+  await labelEditor.click();
 
   selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "Undefined 1");
+  await expect(selectedTab).toContainText("Undefined 1");
+});
+
+test("changes selected tab when using the keyboard", async ({ page }) => {
+  await goToUncontrolledSample(page);
+
+  let selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
+
+  // Change selected tab
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("ArrowRight");
+
+  selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My tab with a very long label");
 });
 
 test("selects previous tab when tab is closed", async ({ page }) => {
   await goToUncontrolledSample(page);
 
   let selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "My first tab");
+  await expect(selectedTab).toContainText("My first tab");
 
   // Change selected tab
-  const secondTab = page.getByRole("button", {
-    name: "My tab with a very long label",
-  });
-  await secondTab.click();
+  const labelEditor = page.getByText("My tab with a very long label");
+  await labelEditor.click();
 
   selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute(
-    "aria-label",
-    "My tab with a very long label",
-  );
+  await expect(selectedTab).toContainText("My tab with a very long label");
 
   // Close selected tab
-  const closeBtn = page
-    .getByRole("button", {
-      name: "Close",
-    })
-    .nth(1);
+  const closeBtn = page.getByTestId("delete-icon").nth(1);
   await closeBtn.click();
 
   selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "My first tab");
+  await expect(selectedTab).toContainText("My first tab");
 });
 
 test("selects next tab when tab with no previous tab is closed", async ({
@@ -330,33 +359,24 @@ test("selects next tab when tab with no previous tab is closed", async ({
   await goToUncontrolledSample(page);
 
   let selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute("aria-label", "My first tab");
+  await expect(selectedTab).toContainText("My first tab");
 
   // Close selected tab
-  const closeBtn = page
-    .getByRole("button", {
-      name: "Close",
-    })
-    .first();
+  const closeBtn = page.getByTestId("delete-icon").first();
   await closeBtn.click();
 
   selectedTab = page.getByRole("tab", { selected: true });
-  await expect(selectedTab).toHaveAttribute(
-    "aria-label",
-    "My tab with a very long label",
-  );
+  await expect(selectedTab).toContainText("My tab with a very long label");
 });
 
 test("can close any tab", async ({ page }) => {
   await goToUncontrolledSample(page);
 
-  const firstCloseBtn = page.getByRole("button", { name: "Close" }).first();
-  const secondCloseBtn = page.getByRole("button", { name: "Close" }).nth(1);
+  const firstCloseBtn = page.getByTestId("delete-icon").first();
+  const secondCloseBtn = page.getByTestId("delete-icon").nth(1);
   await expect(firstCloseBtn).toBeEnabled();
   await expect(secondCloseBtn).toBeEnabled();
-  expect(await page.getByRole("button", { name: "Close" }).all()).toHaveLength(
-    2,
-  );
+  expect(await page.getByTestId("delete-icon").all()).toHaveLength(2);
   await secondCloseBtn.click();
   await firstCloseBtn.click();
   expect(await page.getByRole("tab").all()).toHaveLength(0);
@@ -373,4 +393,33 @@ test("adds tab with icon when defined", async ({ page }) => {
 
   const leaf = page.getByTestId("leaf");
   await expect(leaf).toBeVisible();
+});
+
+test("can't rename selected tab when allowTabEdit is set to false", async ({
+  page,
+}) => {
+  await goToNotEditableSample(page);
+
+  const selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("Tab 1");
+
+  const labelEditor = page.getByText("Tab 1");
+  await labelEditor.click();
+  await labelEditor
+    .fill("My new label")
+    .catch((err) => expect(String(err)).toContain("attempting fill action"));
+});
+
+test("uses previous value when trying to clear a tab label", async ({
+  page,
+}) => {
+  await goToUncontrolledSample(page);
+
+  const labelEditor = page.getByText("My first tab");
+  await labelEditor.click();
+  await labelEditor.clear();
+  await page.keyboard.press("Enter");
+
+  const selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
 });

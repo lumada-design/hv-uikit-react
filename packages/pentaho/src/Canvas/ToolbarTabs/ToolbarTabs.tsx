@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useMemo, useRef } from "react";
+import { forwardRef, useMemo, useState } from "react";
 import { useResizeDetector } from "react-resize-detector";
 import {
   ExtractNames,
@@ -6,10 +6,8 @@ import {
   HvButton,
   HvButtonProps,
   HvDropDownMenu,
-  HvIconButton,
-  HvInlineEditor,
   HvOverflowTooltip,
-  theme,
+  isKey,
   uniqueId,
   useControlled,
   useDefaultProps,
@@ -18,15 +16,17 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import {
   AddAlt,
-  Close,
   CloseXS,
   MoreOptionsHorizontal,
 } from "@hitachivantara/uikit-react-icons";
+import { clamp } from "@hitachivantara/uikit-react-utils";
 
 import { HvCanvasPanelTab } from "../PanelTab";
 import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "../PanelTabs";
+import { ToolbarTabEditor } from "./ToolbarTabEditor";
 import {
-  ICON_WIDTH,
+  DROPDOWN_MENU_WIDTH,
+  MAX_TAB_WIDTH,
   MIN_TAB_WIDTH,
   staticClasses,
   useClasses,
@@ -39,7 +39,6 @@ export type HvCanvasToolbarTabsClasses = ExtractNames<typeof useClasses>;
 const DEFAULT_LABELS = {
   create: "Create new",
   undefined: "Undefined",
-  close: "Close",
   dropdownMenu: "Dropdown menu",
 };
 
@@ -59,6 +58,8 @@ export interface HvCanvasToolbarTabsProps
   selectedTabId?: string;
   /** Defines the icon to be placed before the label when a new tab is created. If not defined, no icon is used. */
   icon?: React.ReactNode;
+  /** Defines whether or not the tabs are editable. */
+  allowTabEdit?: boolean;
   /** Callback triggered when a tab changes/is clicked. */
   onTabChange?: (
     event: React.SyntheticEvent | null,
@@ -75,14 +76,6 @@ export interface HvCanvasToolbarTabsProps
   classes?: HvCanvasToolbarTabsClasses;
 }
 
-interface GroupedTabs {
-  hiddenTabs: ToolbarTabsTab[];
-  visibleTabs: ToolbarTabsTab[];
-}
-
-const DROPDOWN_MENU_WIDTH = 64;
-const BORDER_WIDTH = 2;
-
 /**
  * A toolbar tabs component to use in a canvas context.
  */
@@ -95,6 +88,7 @@ export const HvCanvasToolbarTabs = forwardRef<
     className,
     selectedTabId: selectedTabIdProp,
     icon: iconProp,
+    allowTabEdit = true,
     tabs: tabsProp,
     defaultTabs: defaultTabsProp = [],
     labels: labelsProp,
@@ -107,15 +101,6 @@ export const HvCanvasToolbarTabs = forwardRef<
   const { classes, cx } = useClasses(classesProp);
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
-
-  // Tab resize detector: to know when to use the dropdown menu
-  const { width: tabWidth = 0, ref: tabRef } = useResizeDetector({
-    handleHeight: false,
-    refreshMode: "debounce",
-    refreshOptions: {
-      leading: true,
-    },
-  });
 
   // Actions resize detector: to know when to use the dropdown menu
   const { width: actionsWidth = 0, ref: actionsRef } = useResizeDetector({
@@ -132,63 +117,7 @@ export const HvCanvasToolbarTabs = forwardRef<
     selectedTabIdProp,
     tabs?.[0]?.id ?? "none",
   );
-
-  const rootWidthLimitReached = useRef(false);
-
-  const groupTabs = useCallback(
-    (allTabs: ToolbarTabsTab[]): GroupedTabs => {
-      let fullTabWidth = MIN_TAB_WIDTH;
-
-      const rootScrollWidth = rootRef.current?.scrollWidth ?? 0;
-      if (rootScrollWidth - rootWidth >= 1 || rootWidthLimitReached.current) {
-        fullTabWidth = tabWidth + BORDER_WIDTH;
-        rootWidthLimitReached.current = true;
-      }
-
-      const totalWidth = allTabs.length * fullTabWidth + DROPDOWN_MENU_WIDTH;
-
-      if (tabWidth > 0 && totalWidth > rootWidth - actionsWidth) {
-        const visibleCount = Math.floor(
-          (rootWidth - actionsWidth - DROPDOWN_MENU_WIDTH) / fullTabWidth,
-        );
-        const temporaryHiddenTabs = allTabs.slice(visibleCount);
-        const selectedTabHiddenIndex = temporaryHiddenTabs.findIndex(
-          (tab) => tab.id === selectedTab,
-        );
-        const excludedTabIndex = visibleCount - 1;
-        const shouldShuffle = selectedTabHiddenIndex !== -1 && visibleCount > 0;
-
-        if (shouldShuffle) {
-          return {
-            visibleTabs: [
-              ...tabs.slice(0, excludedTabIndex),
-              temporaryHiddenTabs[selectedTabHiddenIndex],
-            ].filter((tab) => tab),
-            hiddenTabs: [
-              tabs[excludedTabIndex],
-              ...temporaryHiddenTabs.filter(
-                (tab, i) => i !== selectedTabHiddenIndex,
-              ),
-            ].filter((tab) => tab),
-          };
-        }
-        return {
-          visibleTabs: tabs.slice(0, visibleCount),
-          hiddenTabs: temporaryHiddenTabs,
-        };
-      }
-      return {
-        visibleTabs: allTabs,
-        hiddenTabs: [],
-      };
-    },
-    [actionsWidth, rootRef, rootWidth, selectedTab, tabWidth, tabs],
-  );
-
-  const { hiddenTabs, visibleTabs } = useMemo(
-    () => groupTabs(tabs),
-    [groupTabs, tabs],
-  );
+  const [isEditing, setIsEditing] = useState(false);
 
   const rootForkedRef = useForkRef(ref, rootRef);
 
@@ -220,10 +149,17 @@ export const HvCanvasToolbarTabs = forwardRef<
     handleChangeTabs?.(event, newTabs);
   };
 
-  const handleClose = (
-    event: React.MouseEvent<HTMLButtonElement>,
+  const handleEdit = (
+    event: React.FormEvent<Element>,
+    value: string,
     tabId: string,
-  ) => {
+  ) =>
+    handleChangeTabs(
+      event,
+      tabs.map((tab) => (tab.id === tabId ? { ...tab, label: value } : tab)),
+    );
+
+  const handleDeleteTab = (event: any, tabId: string) => {
     const newTabs = tabs.filter((tab) => tab.id !== tabId);
 
     if (tabId === selectedTab) {
@@ -232,20 +168,69 @@ export const HvCanvasToolbarTabs = forwardRef<
       handleChangeSelectedTab(event, newTabs[newIndex]?.id ?? "none");
     }
 
-    if (hiddenTabs.length === 1) rootWidthLimitReached.current = false;
-
     handleChangeTabs(event, newTabs);
   };
 
-  const handleEdit = (
-    event: React.SyntheticEvent,
-    value: string,
-    tabId: string,
-  ) =>
-    handleChangeTabs(
-      event,
-      tabs.map((tab) => (tab.id === tabId ? { ...tab, label: value } : tab)),
-    );
+  const handleKeyDownTab = (event: React.KeyboardEvent, tabId: string) => {
+    if (isKey(event, "Delete") || isKey(event, "Backspace")) {
+      handleDeleteTab(event, tabId);
+
+      // We don't want the click to also select the tab
+      event.stopPropagation();
+    } else if (isKey(event, "Enter")) {
+      // Activate edit label mode
+      setIsEditing(true);
+    }
+  };
+
+  const { tabWidth, hiddenTabs, visibleTabs } = useMemo(() => {
+    let availableWidth = rootWidth - actionsWidth;
+    let calculatedTabWidth = availableWidth / tabs.length;
+    let clamped = clamp(calculatedTabWidth, MAX_TAB_WIDTH, MIN_TAB_WIDTH);
+
+    // Overflowing
+    if (calculatedTabWidth < MIN_TAB_WIDTH) {
+      availableWidth -= DROPDOWN_MENU_WIDTH;
+      const visibleCount = Math.floor(availableWidth / MIN_TAB_WIDTH);
+      calculatedTabWidth = availableWidth / visibleCount;
+      clamped = clamp(calculatedTabWidth, MAX_TAB_WIDTH, MIN_TAB_WIDTH);
+
+      const temporaryHiddenTabs = tabs.slice(visibleCount);
+      const selectedTabHiddenIndex = temporaryHiddenTabs.findIndex(
+        (tab) => tab.id === selectedTab,
+      );
+      const excludedTabIndex = visibleCount - 1;
+      const shouldShuffle = selectedTabHiddenIndex !== -1 && visibleCount > 0;
+
+      if (shouldShuffle) {
+        return {
+          tabWidth: clamped,
+          visibleTabs: [
+            ...tabs.slice(0, excludedTabIndex),
+            temporaryHiddenTabs[selectedTabHiddenIndex],
+          ].filter((tab) => tab),
+          hiddenTabs: [
+            tabs[excludedTabIndex],
+            ...temporaryHiddenTabs.filter(
+              (tab, i) => i !== selectedTabHiddenIndex,
+            ),
+          ].filter((tab) => tab),
+        };
+      }
+
+      return {
+        tabWidth: clamped,
+        visibleTabs: tabs.slice(0, visibleCount),
+        hiddenTabs: temporaryHiddenTabs,
+      };
+    }
+
+    return {
+      tabWidth: clamped,
+      visibleTabs: tabs,
+      hiddenTabs: [],
+    };
+  }, [actionsWidth, rootWidth, selectedTab, tabs]);
 
   return (
     <div
@@ -255,107 +240,82 @@ export const HvCanvasToolbarTabs = forwardRef<
     >
       <div className={classes.tabsContainer}>
         {visibleTabs.length > 0 && (
-          <>
-            <HvCanvasPanelTabs
-              classes={{ list: classes.tabsList }}
-              value={selectedTab}
-              onChange={handleChangeSelectedTab}
-            >
-              {visibleTabs.map((tab, index) => (
+          <HvCanvasPanelTabs
+            classes={{ list: classes.tabsList }}
+            value={selectedTab}
+            onChange={handleChangeSelectedTab}
+          >
+            {visibleTabs.map((tab, index) => {
+              const btnSelected = selectedTab === tab.id;
+              return (
                 <HvCanvasPanelTab
+                  style={{
+                    width: tabWidth,
+                  }}
                   key={tab.id}
-                  ref={index === 0 ? tabRef : undefined}
                   id={String(tab.id)}
                   className={classes.tab}
                   value={tab.id}
-                  tabIndex={0}
-                  aria-label={tab.label}
+                  onKeyDown={(event) => handleKeyDownTab(event, tab.id)}
                 >
                   <div className={classes.tabContent}>
-                    <div
-                      className={cx({
-                        [classes.tabIcon]: !!tab.icon,
-                      })}
-                    >
-                      {tab.icon}
-                    </div>
+                    {tab.icon && (
+                      <div className={classes.tabIconContainer}>{tab.icon}</div>
+                    )}
+                    {!btnSelected || !allowTabEdit ? (
+                      <HvOverflowTooltip
+                        classes={{
+                          tooltipAnchor: classes.tabLabel,
+                        }}
+                        data={tab.label}
+                      />
+                    ) : (
+                      <ToolbarTabEditor
+                        classes={{
+                          label: cx(classes.tabLabel, classes.tabLabelEditor),
+                        }}
+                        value={tab.label}
+                        edit={isEditing}
+                        onEditChange={setIsEditing}
+                        onChange={(event, value) =>
+                          handleEdit(event, value, tab.id)
+                        }
+                        onBlur={(event, value) =>
+                          handleEdit(event, value, tab.id)
+                        }
+                        // We don't want the arrow keys to trigger the tab navigation
+                        onKeyDown={(e) => e.stopPropagation()}
+                      />
+                    )}
+                    <div className={classes.closeIconContainer}>
+                      <CloseXS
+                        aria-hidden
+                        data-testid="delete-icon" // For testing purposes
+                        iconSize="XS"
+                        onClick={(event) => {
+                          handleDeleteTab(event, tab.id);
 
-                    {/* Invisible components added in order for the tab width to go between max/min as some inner components are absolutely positioned */}
-                    <div role="none">{tab.label}</div>
-                    <div role="none">
-                      <Close />
+                          // We don't want the click to also select the tab
+                          event.stopPropagation();
+                        }}
+                      />
                     </div>
-
                     {selectedTab !== tab.id &&
                       visibleTabs[index + 1]?.id !== selectedTab && (
                         <div className={classes.tabDivider} />
                       )}
                   </div>
                 </HvCanvasPanelTab>
-              ))}
-            </HvCanvasPanelTabs>
-            {/* For accessibility purposes, interactive elements cannot be children of a tablist or tab so they are rendered as HvCanvasTabs sibling. */}
-            {visibleTabs.map((tab, index) => {
-              const btnDisabled = selectedTab !== tab.id;
-              const num = index + 1;
-              return (
-                <div
-                  key={tab.id}
-                  style={{
-                    // @ts-ignore
-                    "--full-tab-width": `calc(${tabWidth}px + ${BORDER_WIDTH}px)`,
-                    "--right": `calc(${num} * var(--full-tab-width))`,
-                    "--editor-width": `calc(var(--full-tab-width) - ${tab.icon ? 2 : 1} * ${ICON_WIDTH}px - ${theme.space.xs})`,
-                  }}
-                >
-                  {btnDisabled ? (
-                    <button
-                      type="button"
-                      className={classes.tabLabel}
-                      onClick={(event) =>
-                        handleChangeSelectedTab(event, tab.id)
-                      }
-                      aria-label={tab.label}
-                      tabIndex={-1}
-                    >
-                      <HvOverflowTooltip data={tab.label} />
-                    </button>
-                  ) : (
-                    <HvInlineEditor
-                      className={cx(classes.tabLabel, classes.activeTabLabel)}
-                      aria-label={tab.label}
-                      value={tab.label}
-                      buttonProps={{ size: "sm" }}
-                      onChange={(event, value) =>
-                        handleEdit(event, value, tab.id)
-                      }
-                    />
-                  )}
-                  <HvIconButton
-                    key={tab.id}
-                    style={{
-                      // @ts-ignore
-                      "--close-color": btnDisabled
-                        ? theme.colors.secondary_60
-                        : theme.colors.primary,
-                    }}
-                    className={classes.closeButton}
-                    title={labels.close}
-                    variant="primaryGhost"
-                    onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
-                      handleClose(event, tab.id)
-                    }
-                  >
-                    <CloseXS />
-                  </HvIconButton>
-                </div>
               );
             })}
-          </>
+          </HvCanvasPanelTabs>
         )}
         {hiddenTabs.length > 0 && (
           <HvDropDownMenu
-            className={classes.dropdownMenu}
+            classes={{
+              container: classes.dropdownMenuContainer,
+              menuListRoot: classes.dropdownMenuListRoot,
+            }}
             dataList={hiddenTabs}
             icon={<MoreOptionsHorizontal />}
             labels={{ dropdownMenu: labels.dropdownMenu }}

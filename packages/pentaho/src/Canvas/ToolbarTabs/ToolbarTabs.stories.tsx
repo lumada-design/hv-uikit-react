@@ -64,3 +64,26 @@ export const Controlled: StoryObj<HvCanvasToolbarTabsProps> = {
   },
   render: () => <ControlledStory />,
 };
+
+export const NotEditable: StoryObj<HvCanvasToolbarTabsProps> = {
+  render: () => {
+    return (
+      <HvCanvasToolbarTabs
+        allowTabEdit={false}
+        icon={<Leaf />}
+        defaultTabs={[
+          {
+            id: "tab1",
+            label: "Tab 1",
+            icon: <Leaf />,
+          },
+          {
+            id: "tab2",
+            label: "Tab 2",
+            icon: <Leaf />,
+          },
+        ]}
+      />
+    );
+  },
+};

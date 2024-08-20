@@ -1,15 +1,16 @@
 import { tabClasses } from "@mui/base/Tab";
-import {
-  baseInputClasses,
-  createClasses,
-  theme,
-} from "@hitachivantara/uikit-react-core";
+import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
-export const ICON_WIDTH = 32;
+import { toolbarTabEditorClasses } from "./ToolbarTabEditor";
+
 export const MIN_TAB_WIDTH = 120;
-const MAX_TAB_WIDTH = 220;
+export const MAX_TAB_WIDTH = 220;
+export const DROPDOWN_MENU_WIDTH = 64;
 const TAB_HEIGHT = 32;
-const TAB_LABEL_HEIGHT = 24;
+const CLOSE_ICON_SIZE = 32;
+const TAB_ICON_SIZE = 16;
+const TAB_PADDING = theme.space.xs;
+const TAB_COLOR = "#EFF6FF"; // TODO - change HEX for token when available (dark/light)
 
 export const { staticClasses, useClasses } = createClasses(
   "HvCanvasToolbarTabs",
@@ -22,85 +23,80 @@ export const { staticClasses, useClasses } = createClasses(
       backgroundColor: theme.colors.atmo1,
       boxShadow: theme.colors.shadow,
       borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
-      gap: theme.space.sm,
       transition: "width 0.3s ease",
     },
     tabsContainer: {
-      position: "relative",
       display: "flex",
     },
     tabsList: {
       height: TAB_HEIGHT,
       background: theme.colors.atmo1,
+      borderEndStartRadius: theme.radii.base,
     },
     tab: {
-      width: `clamp(${MIN_TAB_WIDTH}px, 100%, ${MAX_TAB_WIDTH}px)`,
+      boxSizing: "border-box",
       border: `1px solid ${theme.colors.atmo1}`,
       borderBottom: "none",
       borderRadius: "10px 10px 0 0",
       boxShadow: "none",
       backgroundColor: theme.colors.atmo1,
+      "&:first-of-type": { borderEndStartRadius: theme.radii.base },
       [`&.${tabClasses.selected}`]: {
         color: theme.colors.primary,
-        backgroundColor: theme.colors.containerBackgroundHover,
+        backgroundColor: TAB_COLOR,
         borderColor: theme.colors.atmo4,
       },
+      [`&:hover:not(.${tabClasses.selected}), &:focus:not(.${tabClasses.selected})`]:
+        {
+          borderRadius: 0,
+          backgroundColor: TAB_COLOR,
+          borderColor: TAB_COLOR,
+          "&:first-of-type": { borderEndStartRadius: theme.radii.base },
+        },
+
+      // Hide icon when editor is hovered and focused
+      [`&:has($tabLabelEditor:hover) $tabIconContainer, &:has(.${toolbarTabEditorClasses.edit}) $tabIconContainer`]:
+        {
+          display: "none",
+        },
+      // Hide close when editor is focused
+      [`&:has(.${toolbarTabEditorClasses.edit}) $closeIconContainer`]: {
+        display: "none",
+      },
+    },
+    tabLabel: {
+      "&:not($tabLabelEditor)": {
+        margin: theme.spacing(0, "xs"),
+      },
+    },
+    tabLabelEditor: {
+      color: theme.colors.primary,
     },
     tabContent: {
+      position: "relative",
       height: TAB_HEIGHT,
       display: "flex",
-      justifyContent: "space-between",
-      position: "relative",
+      justifyContent: "flex-start",
+      alignItems: "center",
       width: "100%",
-      padding: theme.space.xs,
-      "& > div:first-of-type:not($tabIcon)": {
-        visibility: "hidden",
-      },
-      "& > div:nth-of-type(2)": {
-        visibility: "hidden",
-        minWidth: `calc(${MIN_TAB_WIDTH}px - ${theme.space.xs} - 2 * ${ICON_WIDTH}px)`,
-        maxWidth: `calc(${MAX_TAB_WIDTH}px - ${theme.space.xs} - 2 * ${ICON_WIDTH}px)`,
-      },
-      "& > div:nth-of-type(3)": {
-        visibility: "hidden",
-        marginRight: `calc(-1 * ${theme.space.xs})`,
-      },
+      padding: TAB_PADDING,
     },
-    tabIcon: {
+    tabIconContainer: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      width: TAB_ICON_SIZE,
     },
-    closeButton: {
-      position: "absolute",
-      top: 0,
-      right: "calc(100% - var(--right))",
-      color: "var(--close-color)",
-    },
-    tabLabel: {
-      position: "absolute",
-      width: "var(--editor-width)",
-      right: `calc(100% - var(--right) + ${ICON_WIDTH}px)`,
-      height: TAB_LABEL_HEIGHT,
-      top: 4.5,
-      "&:not($activeTabLabel)": {
-        ...theme.typography.body,
-        color: theme.colors.secondary_60,
-        background: "none",
-        cursor: "pointer",
-      },
-    },
-    activeTabLabel: {
-      "& button": {
-        height: TAB_LABEL_HEIGHT,
-        minHeight: TAB_LABEL_HEIGHT,
-        backgroundColor: "transparent",
-        "& p": { ...theme.typography.label, color: theme.colors.primary },
-        "& span": { display: "none" },
-      },
-      [`&& .${baseInputClasses.inputRoot}`]: {
-        height: TAB_LABEL_HEIGHT,
-        minHeight: TAB_LABEL_HEIGHT,
+    closeIconContainer: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      marginLeft: "auto",
+      marginRight: theme.spacing(-1),
+      width: CLOSE_ICON_SIZE,
+      "&:hover": {
+        backgroundColor: theme.colors.containerBackgroundHover,
+        borderRadius: theme.radii.circle,
       },
     },
     tabDivider: {
@@ -116,8 +112,13 @@ export const { staticClasses, useClasses } = createClasses(
       alignItems: "center",
       gap: theme.space.sm,
     },
-    dropdownMenu: {
-      margin: theme.spacing(0, "sm"),
+    dropdownMenuContainer: {
+      width: DROPDOWN_MENU_WIDTH,
+      display: "flex",
+      justifyContent: "center",
+    },
+    dropdownMenuListRoot: {
+      maxHeight: 220,
     },
   },
 );
