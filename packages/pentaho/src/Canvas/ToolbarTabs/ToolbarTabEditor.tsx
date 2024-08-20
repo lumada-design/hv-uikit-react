@@ -161,7 +161,7 @@ export const ToolbarTabEditor = ({
     scrollContentToStart();
 
     // Never leave the field empty
-    const newValue = value || cachedValue;
+    const newValue = value.trim() || cachedValue;
     setValue(newValue);
 
     onBlurProp?.(event, newValue);

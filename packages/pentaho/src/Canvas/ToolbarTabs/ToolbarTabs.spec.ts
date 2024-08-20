@@ -63,6 +63,7 @@ test("renames selected tab when uncontrolled", async ({ page }) => {
   const labelEditor = page.getByText("My first tab");
   await labelEditor.click();
   await labelEditor.fill("My new label");
+  await page.keyboard.press("Enter");
 
   selectedTab = page.getByRole("tab", { selected: true });
   await expect(selectedTab).toContainText("My new label");
@@ -83,6 +84,7 @@ test("renames selected tab when controlled", async ({ page }) => {
   const labelEditor = page.getByText("Undefined 1");
   await labelEditor.click();
   await labelEditor.fill("My new label");
+  await page.keyboard.press("Enter");
 
   selectedTab = page.getByRole("tab", { selected: true });
   await expect(selectedTab).toContainText("My new label");
@@ -118,6 +120,7 @@ test("adds tab and then changes selected tab and creates dropdown menu if needed
   const labelEditor = page.getByText("Undefined 3");
   await labelEditor.click();
   await labelEditor.fill("My new label");
+  await page.keyboard.press("Enter");
 
   // Not overflowing
   let selectedTab = page.getByRole("tab", { selected: true });
@@ -157,6 +160,7 @@ test("adds tab and then changes selected tab and creates dropdown menu if needed
   let labelEditor = page.getByText("Undefined 3");
   await labelEditor.click();
   await labelEditor.fill("My new label");
+  await page.keyboard.press("Enter");
 
   // Not overflowing
   let selectedTab = page.getByRole("tab", { selected: true });
@@ -182,6 +186,7 @@ test("adds tab and then changes selected tab and creates dropdown menu if needed
   labelEditor = page.getByText("Undefined 4");
   await labelEditor.click();
   await labelEditor.fill("My other new label");
+  await page.keyboard.press("Enter");
 
   // Add fifth tab
   await createBtn.click();
@@ -403,4 +408,18 @@ test("can't rename selected tab when allowTabEdit is set to false", async ({
   await labelEditor
     .fill("My new label")
     .catch((err) => expect(String(err)).toContain("attempting fill action"));
+});
+
+test("uses previous value when trying to clear a tab label", async ({
+  page,
+}) => {
+  await goToUncontrolledSample(page);
+
+  const labelEditor = page.getByText("My first tab");
+  await labelEditor.click();
+  await labelEditor.clear();
+  await page.keyboard.press("Enter");
+
+  const selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
 });
