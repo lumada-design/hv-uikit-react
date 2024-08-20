@@ -106,11 +106,14 @@ const themeVars: HvThemeVars = mapCSSVars({
   ...typographySpec,
 });
 
-const rgbVars = mapCSSVars({
-  rgb: {
-    ...colorTokens,
-  },
-});
+function getColorOrFallback(color?: HvColorAny) {
+  return themeVars.colors[color as HvColor] || color;
+}
+
+/** Get a `color` from the theme palette, or `fallbackColor` if not found */
+export function getColor(color?: HvColorAny, fallbackColor?: HvColorAny) {
+  return getColorOrFallback(color) || getColorOrFallback(fallbackColor);
+}
 
 /**
  * Utility function to generate spacing values from the theme.
@@ -141,13 +144,28 @@ const spacing = (...args: [SpacingValue[]] | SpacingValue[]) => {
 };
 
 /**
+ * Utility function to mix two colors. Accepts theme and CSS colors.
+ *
+ * @example
+ * theme.mix("atmo1", 0.7) // 70% atmo1, 30% transparent
+ * theme.mix("cat1", "60%", "orange") // 60% cat1, 30% orange
+ */
+const mix = (
+  color1: HvColorAny,
+  factor: string | number,
+  color2: HvColorAny = "transparent",
+) => {
+  const percent = typeof factor === "number" ? `${factor * 100}%` : factor;
+  return `color-mix(in srgb, ${getColor(color1)} ${percent}, ${getColor(color2)})`;
+};
+
+/**
  * Utility function to apply an alpha channel to a color from the theme.
  *
  * @example
  * theme.alpha("atmo1", 0.5) // rgb( R G B / 0.5)
  */
-const alpha = (color: HvColor, factor: number | string) =>
-  `rgb(${rgbVars.rgb[color]} / ${factor})`;
+const alpha = (color: HvColor, factor: number | string) => mix(color, factor);
 
 /**
  * UI Kit static theme object, containing values and utility functions that leverage the injected CSS variables.
@@ -164,13 +182,3 @@ export const theme = {
 };
 
 export type HvTheme = typeof theme;
-
-const getColorOrFallback = (color: HvColorAny | undefined) => {
-  return (color && theme.colors[color as HvColor]) || color;
-};
-
-/** Get a `color` from the theme palette, or `fallbackColor` if not found */
-export const getColor = (
-  color: HvColorAny | undefined,
-  fallbackColor?: HvColorAny,
-) => getColorOrFallback(color) || getColorOrFallback(fallbackColor);
