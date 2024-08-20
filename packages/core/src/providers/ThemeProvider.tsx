@@ -91,7 +91,36 @@ export const HvThemeProvider = ({
   );
 
   const muiTheme = useMemo(() => {
+    const colors = activeTheme.colors.modes[colorMode];
     return createTheme({
+      spacing: activeTheme.space.base,
+      typography: {
+        fontFamily: activeTheme.fontFamily.body,
+      },
+      palette: {
+        primary: { main: colors.primary },
+        success: { main: colors.positive },
+        warning: { main: colors.warning },
+        error: { main: colors.negative },
+        info: { main: colors.primary },
+        text: {
+          primary: colors.secondary,
+          secondary: colors.secondary_80,
+          disabled: colors.secondary_60,
+        },
+        background: {
+          default: colors.atmo2,
+          paper: colors.atmo1,
+        },
+        divider: colors.atmo4,
+        action: {
+          active: colors.primary,
+          hover: colors.primary_80,
+          selected: colors.primary_80,
+          disabled: colors.secondary_60,
+          disabledBackground: colors.atmo3,
+        },
+      },
       components: {
         MuiButtonBase: {
           defaultProps: {
@@ -99,11 +128,9 @@ export const HvThemeProvider = ({
           },
         },
       },
-      breakpoints: {
-        ...activeTheme.breakpoints,
-      },
+      breakpoints: activeTheme.breakpoints,
     });
-  }, [activeTheme.breakpoints]);
+  }, [activeTheme, colorMode]);
 
   const emotionCacheValue = useMemo(
     () => ({ cache: emotionCache }),
