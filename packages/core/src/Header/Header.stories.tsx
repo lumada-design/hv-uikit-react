@@ -314,3 +314,41 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
     );
   },
 };
+
+export const Test: StoryObj = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+    docs: { disable: true },
+    a11y: {
+      config: {
+        rules: [
+          { id: "landmark-no-duplicate-banner", enabled: false },
+          { id: "landmark-unique", enabled: false },
+        ],
+      },
+    },
+  },
+  render: () => (
+    <div
+      style={{ padding: 20, display: "flex", flexDirection: "column", gap: 20 }}
+    >
+      <HvHeader position="relative">
+        <HvHeaderBrand logo={<HitachiLogo />} name="Lumada App" />
+        <HvHeaderNavigation data={navigationDataMain} />
+        <HvHeaderActions>
+          <HvButton icon aria-label="Open Notifications panel">
+            <HvBadge count={1} icon={<Alert />} />
+          </HvButton>
+          <HvButton onClick={() => {}} aria-label="Open User panel" icon>
+            <User />
+          </HvButton>
+        </HvHeaderActions>
+      </HvHeader>
+
+      <HvHeader position="relative">
+        <HvHeaderBrand name="Lumada App" />
+        <HvHeaderNavigation data={navigationDataMain} selected="3-1" />
+      </HvHeader>
+    </div>
+  ),
+};
