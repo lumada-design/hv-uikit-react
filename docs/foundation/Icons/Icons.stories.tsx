@@ -1,12 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { HvIconButton } from "@hitachivantara/uikit-react-core";
 import {
+  Abacus,
   Bookmark,
   CheckboxCheck,
   Close,
   HvIconSprite,
   HvIconSpriteProps,
   IconBase,
+  IconBaseProps,
+  icons,
   Level4,
   Machine,
 } from "@hitachivantara/uikit-react-icons";
@@ -114,4 +117,59 @@ export const IconSprites: StoryObj<HvIconSpriteProps> = {
   render: (args) => {
     return <HvIconSprite {...args} />;
   },
+};
+
+export const Test: StoryObj<IconBaseProps> = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+    docs: { disable: true },
+  },
+  args: {
+    iconSize: "M",
+    color: ["secondary", "negative", "positive"],
+  },
+  render: (args) => (
+    <>
+      <div className="flex flex-wrap">
+        {Object.entries(icons).map(([name, Icon]) => (
+          <Icon key={name} {...args} />
+        ))}
+      </div>
+      <div className="flex">
+        {/* Visual test for icon size */}
+        <Abacus {...args} iconSize="XS" />
+        <Abacus {...args} iconSize="S" />
+        <Abacus {...args} iconSize="M" />
+        <Abacus {...args} iconSize="L" />
+      </div>
+    </>
+  ),
+};
+
+export const TestSprites: StoryObj<HvIconSpriteProps> = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+    docs: { disable: true },
+  },
+  args: {
+    iconSize: "M",
+    spriteUrl: "./assets/icons.svg",
+    color: ["secondary", "negative", "positive"],
+  },
+  render: (args) => (
+    <>
+      <div className="flex flex-wrap">
+        {Object.keys(icons).map((name) => (
+          <HvIconSprite {...args} key={name} iconName={name} />
+        ))}
+      </div>
+      <div className="flex">
+        {/* Visual test for icon size */}
+        <HvIconSprite {...args} iconName="Abacus" iconSize="XS" />
+        <HvIconSprite {...args} iconName="Abacus" iconSize="S" />
+        <HvIconSprite {...args} iconName="Abacus" iconSize="M" />
+        <HvIconSprite {...args} iconName="Abacus" iconSize="L" />
+      </div>
+    </>
+  ),
 };

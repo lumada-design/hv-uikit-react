@@ -9,7 +9,9 @@ const hideExtraTests = async (page: Page) => {
 };
 
 const goToControlledSample = async (page: Page) => {
-  page.goto("./iframe.html?args=&id=tests-bottom-panel--main&viewMode=story");
+  page.goto(
+    "./iframe.html?args=&id=pentaho-canvas-bottom-panel--test&viewMode=story",
+  );
   await hideExtraTests(page);
 };
 

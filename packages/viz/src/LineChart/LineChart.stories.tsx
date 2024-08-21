@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
+import { expect, userEvent, within } from "@storybook/test";
 import { loadArrow } from "arquero";
 import {
+  HvButton,
   HvCheckBox,
   HvDropdown,
   HvDropDownMenu,
@@ -884,6 +886,71 @@ export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
           return option;
         }}
       />
+    );
+  },
+};
+
+/** This tests if the horizontal slider resets when removed */
+export const Test: StoryObj = {
+  parameters: {
+    chromatic: { disableSnapshot: false, delay: 5000 },
+    docs: { disable: true },
+  },
+  decorators: [
+    (Story) => (
+      <div className={css({ height: 500, padding: 20 })}>{Story()}</div>
+    ),
+  ],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const hideBtn = canvas.getByRole("button", { name: "Hide" });
+    await userEvent.click(hideBtn);
+    const showBtn = canvas.getByRole("button", { name: "Show" });
+    expect(showBtn).toBeInTheDocument();
+  },
+  render: () => {
+    const [show, setShow] = useState(true);
+
+    return (
+      <>
+        <HvButton onClick={() => setShow((prev) => !prev)}>
+          {show ? "Hide" : "Show"}
+        </HvButton>
+        <HvLineChart
+          data={{
+            Month: [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+            ],
+            "Sales Target": [
+              5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119,
+              2146,
+            ],
+          }}
+          groupBy="Month"
+          measures="Sales Target"
+          onOptionChange={(option) => {
+            if (show) {
+              option.dataZoom = [
+                { ...option.dataZoom[0], end: 80, start: 50 }, // Setting data zoom because it was not possible through "play"
+                option.dataZoom[1],
+              ];
+            }
+            return option;
+          }}
+          horizontalRangeSlider={{ show }}
+        />
+      </>
     );
   },
 };

@@ -100,3 +100,47 @@ export const CustomRootComponent: StoryObj<HvTypographyProps> = {
     );
   },
 };
+
+export const Test: StoryObj = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+    docs: { disable: true },
+  },
+  render: () => (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: theme.space.sm,
+      }}
+    >
+      {typographyVariants.map((variant) => (
+        <div key={variant}>
+          <HvTypography variant="label">{variant}</HvTypography>
+          <br />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <HvTypography variant={variant}>
+              Welcome to NEXT Design System!
+            </HvTypography>
+            <HvTypography variant={variant} disabled>
+              Welcome to NEXT Design System!
+            </HvTypography>
+            <HvTypography
+              variant={variant}
+              link
+              component="a"
+              href="https://lumada-design.github.io/uikit/master"
+            >
+              Welcome to NEXT Design System!
+            </HvTypography>
+          </div>
+        </div>
+      ))}
+    </div>
+  ),
+};

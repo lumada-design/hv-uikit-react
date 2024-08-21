@@ -1,10 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
 import {
   ds3,
+  ds5,
   HvContainer,
   HvInput,
   HvProvider,
   HvProviderProps,
+  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -75,6 +77,35 @@ export const Main: StoryObj<HvProviderProps> = {
           </HvProvider>
         </div>
       </div>
+    );
+  },
+};
+
+export const Test: StoryObj = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+    docs: { disable: true },
+  },
+
+  render: () => {
+    return (
+      <HvProvider
+        themes={[ds3, ds5]}
+        theme="ds5"
+        rootElementId="hv-root"
+        cssTheme="scoped"
+        cssBaseline="scoped"
+      >
+        <HvProvider
+          themes={[ds3, ds5]}
+          theme="ds5"
+          rootElementId="hv-root"
+          cssTheme="scoped"
+          cssBaseline="scoped"
+        >
+          <HvTypography variant="display">Sample text</HvTypography>
+        </HvProvider>
+      </HvProvider>
     );
   },
 };
