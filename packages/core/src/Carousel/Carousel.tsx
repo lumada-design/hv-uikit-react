@@ -113,7 +113,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
   const thumbnailsRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const isDs3 = activeTheme?.name === "ds3";
+  const isDs3 = activeTheme?.base === "ds3";
   const actionsPosition = isDs3 ? "header" : "controls";
   const controlsPosition = controlsPositionProp ?? (isDs3 ? "bottom" : "top");
   const thumbnailsPosition = thumbnailsPositionProp ?? "bottom";
