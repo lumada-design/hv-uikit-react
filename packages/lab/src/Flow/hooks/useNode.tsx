@@ -25,7 +25,9 @@ import { useFlowInstance } from "./useFlowInstance";
 import {
   useFlowNode,
   useFlowNodeInputEdges,
+  useFlowNodeIntersections,
   useFlowNodeOutputEdges,
+  useFlowNodeUtils,
 } from "./useFlowNode";
 
 const DEFAULT_LABELS = {
@@ -79,6 +81,8 @@ export function useHvNode(props: HvUseNodeParams) {
   const outputs = useMemo(() => identifyHandles(outputsProp), [outputsProp]);
   const outputEdges = useFlowNodeOutputEdges();
   const { nodeGroups } = useFlowContext();
+  const intersections = useFlowNodeIntersections();
+  const { setNodeParent, setNodeData } = useFlowNodeUtils();
 
   const node = useFlowNode();
 
@@ -182,11 +186,14 @@ export function useHvNode(props: HvUseNodeParams) {
       node,
       nodeActions,
       showActions,
+      intersections,
       // prop getters
       getNodeToolbarProps,
       // actions
       toggleShowActions,
       handleDefaultAction,
+      setNodeData,
+      setNodeParent,
     }),
     [
       id,
@@ -202,9 +209,12 @@ export function useHvNode(props: HvUseNodeParams) {
       node,
       nodeActions,
       showActions,
+      intersections,
       getNodeToolbarProps,
       toggleShowActions,
       handleDefaultAction,
+      setNodeData,
+      setNodeParent,
     ],
   );
 }

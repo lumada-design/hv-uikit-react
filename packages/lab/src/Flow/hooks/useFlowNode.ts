@@ -1,16 +1,28 @@
 import { useCallback, useMemo } from "react";
 import {
+  CoordinateExtent,
   Edge,
   Node,
   ReactFlowState,
   useEdges,
   useNodes,
   useStore,
+  XYPosition,
 } from "reactflow";
 import { shallow } from "zustand/shallow";
 
 import { useFlowInstance } from "./useFlowInstance";
 import { useNodeId } from "./useNodeId";
+
+/** Uses coordinates to create the relative position vector */
+function relativePosition(positionA?: XYPosition, positionB?: XYPosition) {
+  if (positionA && positionB)
+    return {
+      x: positionB.x - positionA.x,
+      y: positionB.y - positionA.y,
+    };
+  return { x: 0, y: 0 };
+}
 
 /** Retrieves the node instance */
 export function useFlowNode<T extends Node = Node>(id?: string) {
@@ -126,10 +138,42 @@ export function useFlowNodeUtils<NodeData = any>(id?: string) {
     [nodeId, reactFlowInstance],
   );
 
+  const setNodeParent = useCallback(
+    (node?: Node<any>, extent?: "parent" | CoordinateExtent) => {
+      if (!nodeId) return;
+
+      reactFlowInstance.setNodes((nodes) => {
+        return nodes.map((n) => {
+          if (n.id === nodeId) {
+            return {
+              ...n,
+              parentId: node ? node.id : undefined,
+              extent,
+              position: node
+                ? relativePosition(node.position, n.position)
+                : (n.positionAbsolute ?? n.position),
+            };
+          }
+          return n;
+        });
+      });
+    },
+    [nodeId, reactFlowInstance],
+  );
+
   return useMemo(
     () => ({
       setNodeData,
+      setNodeParent,
     }),
-    [setNodeData],
+    [setNodeData, setNodeParent],
   );
+}
+
+export function useFlowNodeIntersections<NodeData = any>(id?: string) {
+  const nodeId = useNodeId(id);
+  const node = useFlowNode(nodeId ?? "");
+  const reactFlowInstance = useFlowInstance<NodeData>();
+
+  return node ? reactFlowInstance.getIntersectingNodes(node, false) : [];
 }
