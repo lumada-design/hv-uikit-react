@@ -290,7 +290,6 @@ export const HvCanvasToolbarTabs = forwardRef<
                     <div className={classes.closeIconContainer}>
                       <CloseXS
                         aria-hidden
-                        data-testid="delete-icon" // For testing purposes
                         iconSize="XS"
                         onClick={(event) => {
                           handleDeleteTab(event, tab.id);
