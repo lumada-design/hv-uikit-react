@@ -10,7 +10,7 @@ const TAB_HEIGHT = 32;
 const CLOSE_ICON_SIZE = 32;
 const TAB_ICON_SIZE = 16;
 const TAB_PADDING = theme.space.xs;
-const TAB_COLOR = "#EFF6FF"; // TODO - change HEX for token when available (dark/light)
+const TAB_COLOR = theme.palette.blue[50]; // TODO - dark theme color
 
 export const { staticClasses, useClasses } = createClasses(
   "HvCanvasToolbarTabs",
