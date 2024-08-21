@@ -28,23 +28,57 @@ const renderSimplePanel = (props?: Partial<HvCanvasBottomPanelProps>) =>
     </HvCanvasBottomPanel>,
   );
 
+const assertSelectedTab = (val: string) =>
+  expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(val);
+
+const assertUnselectedTabCount = (val: number) =>
+  expect(screen.getAllByRole("tab", { selected: false })).toHaveLength(val);
+
 describe("CanvasBottomPanel", () => {
   it("triggers onTabChange when changing the selected tab", async () => {
     const user = userEvent.setup();
     const clickMock = vi.fn();
     renderSimplePanel({ onTabChange: clickMock });
-
     const tabs = screen.getAllByRole("tab");
-    expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
-      "Tab 1",
-    );
-    expect(screen.getAllByRole("tab", { selected: false })).toHaveLength(1);
+    assertSelectedTab("Tab 1");
+    assertUnselectedTabCount(1);
+
     await user.click(tabs[1]);
-    expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
-      "Tab 2",
-    );
-    expect(screen.getAllByRole("tab", { selected: false })).toHaveLength(1);
+    assertSelectedTab("Tab 2");
+    assertUnselectedTabCount(1);
     expect(clickMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("triggers onTabChange when changing the selected tab with the keyboard", async () => {
+    const user = userEvent.setup();
+    const clickMock = vi.fn();
+    renderSimplePanel({ onTabChange: clickMock });
+    assertSelectedTab("Tab 1");
+    assertUnselectedTabCount(1);
+
+    await user.keyboard("{tab}");
+    await user.keyboard("{arrowright}");
+    assertSelectedTab("Tab 2");
+    assertUnselectedTabCount(1);
+    expect(clickMock).toHaveBeenCalledTimes(1);
+
+    await user.keyboard("{arrowleft}");
+    assertSelectedTab("Tab 1");
+    assertUnselectedTabCount(1);
+    expect(clickMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("doesn't trigger onTabChange when only using the tab key to navigate", async () => {
+    const user = userEvent.setup();
+    const clickMock = vi.fn();
+    renderSimplePanel({ onTabChange: clickMock });
+    assertSelectedTab("Tab 1");
+    assertUnselectedTabCount(1);
+
+    await user.keyboard("{tab}");
+    await user.keyboard("{tab}");
+    assertSelectedTab("Tab 1");
+    assertUnselectedTabCount(1);
   });
 
   it("triggers onAction when an action is clicked", async () => {
@@ -58,6 +92,18 @@ describe("CanvasBottomPanel", () => {
     await user.click(dropdownMenu[0]);
     const menuItem = screen.getByRole("menuitem", { name: "Action" });
     await user.click(menuItem);
+    expect(clickMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("triggers onAction when an action is clicked with keyboard", async () => {
+    const user = userEvent.setup();
+    const clickMock = vi.fn();
+    renderSimplePanel({ onAction: clickMock });
+
+    await user.keyboard("{tab}");
+    await user.keyboard("{tab}");
+    await user.keyboard("{enter}");
+    await user.keyboard("{enter}");
     expect(clickMock).toHaveBeenCalledTimes(1);
   });
 });
