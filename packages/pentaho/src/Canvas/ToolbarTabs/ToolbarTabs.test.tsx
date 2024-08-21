@@ -31,8 +31,10 @@ describe("CanvasToolbarTabs", () => {
     const onChangeMock = vi.fn();
     render(<Sample onTabChange={onTabChangeMock} onChange={onChangeMock} />);
 
-    const closeBtn = screen.getAllByTestId("delete-icon");
-    await user.click(closeBtn[0]);
+    const closeBtn = screen
+      .getAllByRole("tab")[0]
+      .querySelector("[data-name=CloseXS]");
+    await user.click(closeBtn!);
     expect(onTabChangeMock).toHaveBeenCalledTimes(1);
     expect(onChangeMock).toHaveBeenCalledTimes(1);
   });
@@ -55,8 +57,10 @@ describe("CanvasToolbarTabs", () => {
     const onChangeMock = vi.fn();
     render(<Sample onTabChange={onTabChangeMock} onChange={onChangeMock} />);
 
-    const closeBtn = screen.getAllByTestId("delete-icon");
-    await user.click(closeBtn[1]);
+    const closeBtn = screen
+      .getAllByRole("tab")[1]
+      .querySelector("[data-name=CloseXS]");
+    await user.click(closeBtn!);
     expect(onTabChangeMock).not.toHaveBeenCalled();
     expect(onChangeMock).toHaveBeenCalledTimes(1);
   });

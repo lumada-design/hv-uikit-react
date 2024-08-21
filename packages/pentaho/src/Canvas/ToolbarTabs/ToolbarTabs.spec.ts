@@ -37,7 +37,7 @@ test("renders all components when they are tabs", async ({ page }) => {
   await expect(selectedTab).toContainText("My first tab");
   await expect(otherTab).toContainText("My tab with a very long label");
   expect(await page.getByRole("tab").all()).toHaveLength(2);
-  expect(await page.getByTestId("delete-icon").all()).toHaveLength(2);
+  expect(await page.locator("[data-name=CloseXS]").all()).toHaveLength(2);
 });
 
 test("renders all components when they are no tabs", async ({ page }) => {
@@ -51,7 +51,7 @@ test("renders all components when they are no tabs", async ({ page }) => {
   await expect(createBtn).toBeVisible();
   await expect(tabList).not.toBeVisible();
   expect(await page.getByRole("tab").all()).toHaveLength(0);
-  expect(await page.getByTestId("delete-icon").all()).toHaveLength(0);
+  expect(await page.locator("[data-name=CloseXS]").all()).toHaveLength(0);
 });
 
 test("renames selected tab when uncontrolled", async ({ page }) => {
@@ -214,7 +214,7 @@ test("closes selected tab and then changes selected tab when uncontrolled", asyn
   await expect(selectedTab).toContainText("My first tab");
 
   // Close first tab
-  let closeBtn = page.getByTestId("delete-icon").first();
+  let closeBtn = page.locator("[data-name=CloseXS]").first();
   await closeBtn.click();
 
   const tabList = page.getByRole("tablist");
@@ -224,7 +224,7 @@ test("closes selected tab and then changes selected tab when uncontrolled", asyn
   expect(await page.getByRole("tab").all()).toHaveLength(1);
 
   // Close remaining tab
-  closeBtn = page.getByTestId("delete-icon").first();
+  closeBtn = page.locator("[data-name=CloseXS]").first();
   await closeBtn.click();
   expect(await page.getByRole("tab").all()).toHaveLength(0);
 });
@@ -245,7 +245,7 @@ test("closes selected tab and then changes selected tab when controlled", async 
   await expect(selectedTab).toContainText("Undefined 2");
 
   // Close selected tab
-  let closeBtn = page.getByTestId("delete-icon").nth(1);
+  let closeBtn = page.locator("[data-name=CloseXS]").nth(1);
   await closeBtn.click();
 
   const tabList = page.getByRole("tablist");
@@ -255,7 +255,7 @@ test("closes selected tab and then changes selected tab when controlled", async 
   expect(await page.getByRole("tab").all()).toHaveLength(1);
 
   // Close remaining tab
-  closeBtn = page.getByTestId("delete-icon").first();
+  closeBtn = page.locator("[data-name=CloseXS]").first();
   await closeBtn.click();
   expect(await page.getByRole("tab").all()).toHaveLength(0);
 });
@@ -346,7 +346,7 @@ test("selects previous tab when tab is closed", async ({ page }) => {
   await expect(selectedTab).toContainText("My tab with a very long label");
 
   // Close selected tab
-  const closeBtn = page.getByTestId("delete-icon").nth(1);
+  const closeBtn = page.locator("[data-name=CloseXS]").nth(1);
   await closeBtn.click();
 
   selectedTab = page.getByRole("tab", { selected: true });
@@ -362,7 +362,7 @@ test("selects next tab when tab with no previous tab is closed", async ({
   await expect(selectedTab).toContainText("My first tab");
 
   // Close selected tab
-  const closeBtn = page.getByTestId("delete-icon").first();
+  const closeBtn = page.locator("[data-name=CloseXS]").first();
   await closeBtn.click();
 
   selectedTab = page.getByRole("tab", { selected: true });
@@ -372,11 +372,11 @@ test("selects next tab when tab with no previous tab is closed", async ({
 test("can close any tab", async ({ page }) => {
   await goToUncontrolledSample(page);
 
-  const firstCloseBtn = page.getByTestId("delete-icon").first();
-  const secondCloseBtn = page.getByTestId("delete-icon").nth(1);
+  const firstCloseBtn = page.locator("[data-name=CloseXS]").first();
+  const secondCloseBtn = page.locator("[data-name=CloseXS]").nth(1);
   await expect(firstCloseBtn).toBeEnabled();
   await expect(secondCloseBtn).toBeEnabled();
-  expect(await page.getByTestId("delete-icon").all()).toHaveLength(2);
+  expect(await page.locator("[data-name=CloseXS]").all()).toHaveLength(2);
   await secondCloseBtn.click();
   await firstCloseBtn.click();
   expect(await page.getByRole("tab").all()).toHaveLength(0);
