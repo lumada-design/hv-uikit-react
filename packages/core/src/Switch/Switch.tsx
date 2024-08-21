@@ -99,7 +99,11 @@ export interface HvSwitchProps
   /**
    * The callback fired when the switch is pressed.
    */
-  onChange?: (event: React.ChangeEvent, checked: boolean, value: any) => void;
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean,
+    value: any,
+  ) => void;
   /**
    * Properties passed on to the input element.
    */
@@ -166,7 +170,7 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
     const [validationMessage] = useControlled(statusMessage, "Required");
 
     const onLocalChange = useCallback(
-      (evt: React.ChangeEvent, newChecked: boolean) => {
+      (evt: React.ChangeEvent<HTMLInputElement>, newChecked: boolean) => {
         setIsChecked(() => {
           // this will only run if uncontrolled
           if (required && !newChecked) {
