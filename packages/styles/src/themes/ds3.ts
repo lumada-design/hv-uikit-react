@@ -464,7 +464,10 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           padding: theme.spacing(0, "xs"),
-          "&:not(.HvButton-icon)": { minWidth: "70px" },
+          minWidth: "70px",
+        },
+        icon: {
+          minWidth: "unset",
         },
         secondarySubtle: {
           backgroundColor: theme.colors.atmo1,

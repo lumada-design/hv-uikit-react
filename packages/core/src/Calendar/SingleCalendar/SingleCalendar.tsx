@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
+import { HvPanel } from "../../Panel";
 import { HvTypography } from "../../Typography";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
@@ -131,48 +132,46 @@ export const HvSingleCalendar = ({
   };
 
   return (
-    <div className={cx(classes.calendarContainer, className)} {...others}>
-      <div id={id} className={classes.calendarWrapper}>
-        <HvCalendarHeader
-          id={setId(id, "header")}
-          locale={locale}
-          onChange={handleInputChange}
-          showEndDate={showEndDate && !isDateSelectionMode}
-          showDayOfWeek={showDayOfWeek}
-          invalidDateLabel={invalidDateLabel}
-        />
-        {calViewMode === "calendar" && (
-          <div>
-            <HvComposedNavigation
-              id={id}
-              locale={locale}
-              onChange={onVisibleDateChange}
-              onViewModeChange={setCalViewMode}
-              visibleYear={visibleYear || today.getFullYear()}
-              visibleMonth={visibleMonth || today.getMonth() + 1}
-            />
-            <div
-              className={classes.calendarGrid}
-              // @ts-ignore TODO: review
-              aria-controls={HvCalendarHeader?.[0]?.id}
-            >
-              {listWeekdayNames.map(renderWeekLabel)}
-              {calModel.dates.map(renderCalendarDate)}
-            </div>
-          </div>
-        )}
-        {calViewMode === "monthly" && (
-          <HvMonthSelector
+    <HvPanel id={id} className={cx(classes.root, className)} {...others}>
+      <HvCalendarHeader
+        id={setId(id, "header")}
+        locale={locale}
+        onChange={handleInputChange}
+        showEndDate={showEndDate && !isDateSelectionMode}
+        showDayOfWeek={showDayOfWeek}
+        invalidDateLabel={invalidDateLabel}
+      />
+      {calViewMode === "calendar" && (
+        <>
+          <HvComposedNavigation
             id={id}
             locale={locale}
             onChange={onVisibleDateChange}
             onViewModeChange={setCalViewMode}
+            visibleYear={visibleYear || today.getFullYear()}
             visibleMonth={visibleMonth || today.getMonth() + 1}
-            rangeMode={rangeMode}
           />
-        )}
-      </div>
-    </div>
+          <div
+            className={classes.calendarGrid}
+            // @ts-ignore TODO: review
+            aria-controls={HvCalendarHeader?.[0]?.id}
+          >
+            {listWeekdayNames.map(renderWeekLabel)}
+            {calModel.dates.map(renderCalendarDate)}
+          </div>
+        </>
+      )}
+      {calViewMode === "monthly" && (
+        <HvMonthSelector
+          id={id}
+          locale={locale}
+          onChange={onVisibleDateChange}
+          onViewModeChange={setCalViewMode}
+          visibleMonth={visibleMonth || today.getMonth() + 1}
+          rangeMode={rangeMode}
+        />
+      )}
+    </HvPanel>
   );
 };
 

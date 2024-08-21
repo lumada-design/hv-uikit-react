@@ -2,20 +2,12 @@ import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvSingleCalendar", {
-  calendarContainer: {
-    width: "318px",
-    minHeight: "440px",
-    position: "relative",
-  },
-  calendarWrapper: {
+  root: {
     overflow: "hidden",
-    backgroundColor: theme.colors.atmo1,
-    padding: theme.spacing("sm"),
   },
   calendarGrid: {
-    display: "flex",
-    flexFlow: "wrap",
-    width: "280px",
+    display: "grid",
+    gridTemplateColumns: "repeat(7, 1fr)",
     "& $cellsInRange": {
       backgroundColor: theme.colors.atmo3,
       "& $startBookend": {

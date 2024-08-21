@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvCalendarHeader", {
   root: {
-    paddingBottom: theme.space.md,
+    paddingBottom: theme.space.sm,
 
     "&$invalid": {
       paddingBottom: 0,
